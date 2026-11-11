@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Environmental Science",
  "award": "A.S. T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=92",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-science-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8995,
+  "input_tokens": 11423,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8995,
-    "output_tokens": 3581,
+    "input_tokens": 11423,
+    "output_tokens": 2873,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,35 @@
     "model": null
    }
   ],
-  "output_tokens": 3581,
+  "output_tokens": 2873,
   "output_tokens_details": {
-   "thinking_tokens": 1195
+   "thinking_tokens": 813
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1076,
- "ms": 28827,
- "seconds": 29.2,
+ "cost_usd": 0.10315,
+ "ms": 22017,
+ "seconds": 22.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 27,
    "listed": 27,
-   "share": 0.852,
-   "missing": [
-    "ECONC2001",
-    "ECONC2001H",
-    "ESCI1",
-    "GEOL10"
-   ],
-   "unexplained": [
-    "ESCI1",
-    "GEOL10"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "ECOND2",
-    "ECOND2H",
-    "ESCID1",
-    "GEOLD10"
-   ],
-   "flagged": [
-    "ECOND2",
-    "ECOND2H"
-   ],
-   "pass": false
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -112,12 +96,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -133,7 +117,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science for Transfer (A.S.-T.) Degree Environmental Science for Transfer",
+   "section_heading": "Environmental Science for Transfer",
    "measure": "units",
    "total_units": {
     "min": 56,
@@ -154,69 +138,15 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate knowledge of how human activities impact the environment through the use of scientific skills"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "ECON D002",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON D002H",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "ESCI D001",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "GEOL D010",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "STAT C1000H",
-        "units": 5,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
     "name": "Science Option 1",
     "rule": "all",
     "minimum": null,
-    "option_group": "Science option",
+    "option_group": "Science",
     "stated": {
      "min": 28,
      "max": 28
@@ -287,7 +217,7 @@
     "name": "Science Option 2",
     "rule": "all",
     "minimum": null,
-    "option_group": "Science option",
+    "option_group": "Science",
     "stated": {
      "min": 21,
      "max": 21
@@ -342,10 +272,62 @@
     ]
    },
    {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18,
+     "max": 18
+    },
+    "courses": [
+     {
+      "code": "ECONC2001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONC2001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOL 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
     "name": "Math Option 1",
     "rule": "all",
     "minimum": null,
-    "option_group": "Math option",
+    "option_group": "Math",
     "stated": {
      "min": 10,
      "max": 10
@@ -383,7 +365,7 @@
     "name": "Math Option 2",
     "rule": "all",
     "minimum": null,
-    "option_group": "Math option",
+    "option_group": "Math",
     "stated": {
      "min": 5,
      "max": 5
@@ -399,10 +381,10 @@
     ]
    },
    {
-    "name": "Physic Option 1",
+    "name": "Physics Option 1",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics option",
+    "option_group": "Physics",
     "stated": {
      "min": 15,
      "max": 15
@@ -432,10 +414,10 @@
     ]
    },
    {
-    "name": "Physic Option 2",
+    "name": "Physics Option 2",
     "rule": "all",
     "minimum": null,
-    "option_group": "Physics option",
+    "option_group": "Physics",
     "stated": {
      "min": 12,
      "max": 12
@@ -459,25 +441,16 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ECON C2001",
-    "why": "not in the text; catalog prints ECON D002 Principles of Microeconomics instead (likely same course, older number)"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "not in the text; catalog prints ECON D002H Principles of Microeconomics - HONORS instead (likely same course, older number)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Units are quarter units (De Anza is on the quarter system); degree total printed as 'Total Required: 90 Units'.",
-   "'Required Core: (56 - 71 Units)' heads the whole major including the science, math and physics options (18 + 21-28 + 5-10 + 12-15 = 56-71), so it is recorded as total_units; the plain core block's stated is left null.",
-   "Option headings print totals: 'Select one science option: (21 - 28 Units)', 'Select one Math option: (5 - 10 Units)', 'Select one Physics option: (12 - 15 Units)'.",
-   "Core course codes are printed run together in the text ('ECOND002.', 'ECOND002H', 'ESCID001.', 'GEOLD010.', 'STATC1000', 'STATC1000H'); recorded with a space after the subject. ECON D002/D002H are marked catalog additions because the closed list names ECON C2001/C2001H; reviewer should confirm they are the same course renumbered.",
-   "Electives: 'Additional California General Education Transfer Curriculum (Cal-GETC) AND CSU-transferable electives as needed to reach at least 90 units'; no GE units printed.",
-   "Text at the top of page 92 (E S courses, 'Required Core: (25 Units)', 'Total Required: 90 Units') belongs to a preceding Environmental Studies program and was not used; the following Facility and Sustainable Building Management COA section was also ignored.",
-   "Section is marked 'New' and 'Online Option'."
+   "Units are quarter units (De Anza is on the quarter system); Total Required 90 units, Major Required 56-71 Credits.",
+   "The opening text about 180 quarter units, upper-division GE and baccalaureate requirements appears to belong to a De Anza bachelor's degree page, not this A.S.-T; it was not used.",
+   "Honors versions listed as separate rows were recorded as alternatives of their non-honors course, per the note that students receive credit for only one cross-listed or honors course.",
+   "Parent group totals printed on the option headings (Science 21-28, Math 5-10, Physics 12-15) are not recorded on a block; each option block carries its own printed total.",
+   "Remaining units to reach 90 are filled by additional Cal-GETC and CSU-transferable electives; no units printed for them.",
+   "The catalog text is cut off at the end in the duplicated XML requirements listing (during Physics Option 1); the human-readable listing above it is complete.",
+   "No program learning outcomes or careers are printed; Program Employment Potential is N/A."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

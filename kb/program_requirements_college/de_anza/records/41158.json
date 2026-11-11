@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Introduction to Computer Science",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/introduction-to-computer-science-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6786,
+  "input_tokens": 7347,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6786,
-    "output_tokens": 1139,
+    "input_tokens": 7347,
+    "output_tokens": 1054,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1139,
+  "output_tokens": 1054,
   "output_tokens_details": {
-   "thinking_tokens": 380
+   "thinking_tokens": 324
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04992,
- "ms": 11156,
- "seconds": 11.5,
+ "cost_usd": 0.05047,
+ "ms": 9840,
+ "seconds": 10.0,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Introduction to Computer Science (Certificate of Completion)",
+   "section_heading": "Program Requirements",
    "measure": "hours",
    "total_units": {
     "min": 132,
@@ -121,10 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Use the Unix/Linux Operating System utilities and shell features for basic file manipulation, networking, and communication",
-    "Design, code, document, analyze, debug, and test introductory level Python programs"
-   ],
+   "outcomes": [],
    "careers": [
     "software engineering",
     "computer science",
@@ -152,12 +149,12 @@
     ]
    },
    {
-    "name": "List A",
-    "rule": "choose_units",
-    "minimum": 66,
-    "option_group": null,
+    "name": "List A - Complete one option: Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
     "stated": {
-     "min": 66,
+     "min": 90,
      "max": 90
     },
     "courses": [
@@ -174,7 +171,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "List A - Complete one option: Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 66,
+     "max": 66
+    },
+    "courses": [
      {
       "code": "CIS 318A",
       "units": 66,
@@ -188,12 +197,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section; the section heading is not printed in the text and was inferred from the description ('Certificate of Completion in Introduction to Computer Science').",
-   "List A prints no explicit selection rule; read as choose 66 hours (66-90 Hours stated): either CIS 318A (66) or CIS 311 (66) with its required companion CIS 311X (24). The catalog states students taking CIS D311 must also take CIS D311X.",
-   "The co-requisite note prints the codes as 'CIS D311' and 'CIS D311X' (with D prefix), taken to mean CIS 311 and CIS 311X.",
-   "'or related fields' in the career sentence was not recorded as a career.",
-   "The text following the total (Project Management Practitioner) belongs to a different certificate and was not read."
+   "Award is a noncredit Certificate of Completion; all figures are hours as printed ('Total Required: 132 - 156 Hours'). The metadata 'Min Units: 132.0' / 'Max Units: 156.0' match these hours.",
+   "List A printed total is 66 - 90 hours; Option 1 (90 hours) and Option 2 (66 hours) recorded as separate blocks in option_group 'List A'.",
+   "The text before 'Program Requirements' describes general Bachelor of Science degree requirements and does not belong to this noncredit certificate; it was ignored.",
+   "No program learning outcomes are printed in the text; the text is cut off at the end ('Progra'), so outcomes may appear later on the page."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

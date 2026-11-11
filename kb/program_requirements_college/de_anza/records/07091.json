@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Automotive Powertrain Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=60",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-powertrain-technology-fall-2025",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11924,
+  "input_tokens": 7417,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11924,
-    "output_tokens": 1673,
+    "input_tokens": 7417,
+    "output_tokens": 1302,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1673,
+  "output_tokens": 1302,
   "output_tokens_details": {
-   "thinking_tokens": 706
+   "thinking_tokens": 466
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08116,
- "ms": 15898,
- "seconds": 16.3,
+ "cost_usd": 0.05571,
+ "ms": 11495,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -96,17 +96,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
@@ -117,7 +117,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science (A.S.) Degree Automotive Powertrain Technology",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 44.5,
@@ -138,18 +138,15 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate knowledge of the overall operation of an automotive transmission and differential",
-    "Identify the basic electrical circuits and diagnose automotive electrical systems",
-    "Apply the basic principles of physics as they work in the automotive industry"
-   ],
+   "outcomes": [],
    "careers": [
-    "automotive transmission and differential repair"
+    "automotive transmission and differential repair",
+    "automotive technician"
    ]
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -213,12 +210,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes without leading zeros (AUTO 53A, AUTO 63A, AUTO 63D, AUTO 60A, AUTO 60B); these match closed-list AUTO 053A, 063A, 063D, 060A, 060B, so none is a catalog addition.",
-   "total_units taken from 'Required Core: (44.5 Units)', the only major total printed; the section's 'Total Required: 90 Units' is the whole degree with GE and electives (quarter units), recorded as degree_total.",
-   "Degree requires De Anza GE or Cal-GETC plus 'electives as needed to reach at least 90 units'; no GE or elective units printed.",
-   "The A.S. section shares its program learning outcomes with the COA-A section for the same program.",
-   "The text at the top of page 60 (degree with AUTO 60C, AUTO 64, AUTO 64HP, 49 units) belongs to a preceding program whose heading is cut off; it was not used."
+   "De Anza is on the quarter system; units are quarter units (degree total 90).",
+   "Catalog prints codes without leading zero (AUTO 53A, 60A, 60B, 63A, 63D); matched to closed-list codes AUTO 053A, 060A, 060B, 063A, 063D and treated as the same courses.",
+   "The opening text about Bachelor of Science degree requirements is general college policy, not this A.S. program, and was not used.",
+   "Degree requires De Anza GE or Cal-GETC plus electives as needed to reach at least 90 units; no GE or elective unit figures are printed.",
+   "No program learning outcomes are printed in the text.",
+   "Careers drawn from program description ('entry-level position in automotive transmission and differential repair') and the line about 'students seeking to enter the automotive technician workforce'; reviewer may confirm."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

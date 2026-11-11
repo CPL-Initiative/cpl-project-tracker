@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Registered Nurse (RN)",
  "award": "A.S. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=136",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/registered-nurse-rn-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10995,
+  "input_tokens": 12737,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10995,
-    "output_tokens": 4636,
+    "input_tokens": 12737,
+    "output_tokens": 4170,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4636,
+  "output_tokens": 4170,
   "output_tokens_details": {
-   "thinking_tokens": 1788
+   "thinking_tokens": 1427
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1367,
- "ms": 36385,
- "seconds": 36.8,
+ "cost_usd": 0.13435,
+ "ms": 47842,
+ "seconds": 48.3,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science (A.S.) Degree Registered Nurse (RN)",
+   "section_heading": "Registered Nurse (RN)",
    "measure": "units",
    "total_units": {
     "min": 104,
@@ -132,7 +132,7 @@
   },
   "blocks": [
    {
-    "name": "Prerequisite - List A",
+    "name": "Prerequisite - List A:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -158,7 +158,7 @@
     ]
    },
    {
-    "name": "Prerequisite - List B",
+    "name": "Prerequisite - List B:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -203,7 +203,7 @@
       "catalog_addition": false
      },
      {
-      "code": "PSYC C1000",
+      "code": "PSYCC1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -212,7 +212,7 @@
     ]
    },
    {
-    "name": "Prerequisite - List C",
+    "name": "Prerequisite - List C:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -222,12 +222,12 @@
     },
     "courses": [
      {
-      "code": "ENGL C1000",
+      "code": "ENGLC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ENGL C1000H",
+        "code": "ENGLC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -244,7 +244,7 @@
     ]
    },
    {
-    "name": "Prerequisite - List D",
+    "name": "Prerequisite - List D:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -254,12 +254,12 @@
     },
     "courses": [
      {
-      "code": "COMM C1000",
+      "code": "COMMC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "COMM C1000H",
+        "code": "COMMC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -282,7 +282,7 @@
     ]
    },
    {
-    "name": "Prerequisite - List E",
+    "name": "Prerequisite - List E:",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -314,7 +314,7 @@
     ]
    },
    {
-    "name": "Required Core",
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -483,15 +483,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text at the top of page 136 (Mathematics, Anthropology/Sociology, English, Communications lists and a 25-unit Required Core ending 'Total Required: 73 Units') is the tail of a preceding program, likely another nursing award (e.g., LVN-to-RN); it was not read for this A.S. RN record.",
-   "Units are quarter units. total_units 104 is the printed 'Total Required: 104 Units', which includes Prerequisite Lists A-E (50 units) plus the 54-unit Required Core.",
-   "The catalog prints the psychology prerequisite as 'PSYCC 1000'; recorded as PSYC C1000 (closed-list match), treating the printed form as a spacing typo. Reviewer should confirm.",
-   "Catalog codes BIOL 40A/40B/40C, NURS 91A etc., COMM 10H and ANTH 2H were matched to closed-list zero-padded codes (BIOL 040A, NURS 091A, COMM 010H, ANTH 002H).",
-   "'At least 90 degree-applicable quarter units, including required major courses and GE courses' is a general A.S. requirement, not printed as this award's total; degree_total left null.",
-   "GE: students complete one of the GE patterns listed at deanza.edu/articulation/ge-requirements; for Nursing A.S., specific De Anza GE courses are required (Area 2 Math 4 units, Area 3 Arts and Humanities 4 units, Area 6 Ethnic Studies 4 units, one unit Area 7 PE/PEA); Areas 1A, 1B, 4 and 5 are satisfied by prerequisites and major courses. No GE unit total printed; ge_pattern recorded as De Anza General Education.",
-   "Prerequisite Lists C, D and E were read as choose one course each (each list's stated units equal one course). The note 'Complete one of the following or its equivalent before or during the first quarter of the RN Program' follows List E and appears to apply to List E.",
-   "Careers left empty: the section names no career field beyond the RN licensure itself."
+   "Units are quarter units. The page prints 'Major Required: 104 Credits' and 'Total Required: 104 Units'; the block totals (7+29+5+5+4+54) sum to 104.",
+   "The 90-quarter-unit sentence is the general rule for all De Anza associate degrees, not a printed total for this award, so degree_total is null.",
+   "GE: page says 'Additional A.S. Nursing De Anza general education requirements are required' and lists GE Areas 2, 3, 6 (4 units each) and one unit from Area 7; no GE unit total is printed, so ge_units is null.",
+   "Lists C, D and E offer alternatives each worth the list's stated units; only List E carries an explicit 'Complete one of the following' note. Lists C and D were read as choose one course because each list's stated total (5) equals one course. Honors twins were recorded as alternatives.",
+   "Catalog codes differ in format from the closed list (BIOL 40A vs BIOL 040A, COMM 10H vs COMM 010H, ANTH 2H vs ANTH 002H, NURS 91A vs NURS 091A, PSYCC1000 vs PSYC C1000); treated as the same courses.",
+   "Page header shows tags 'New', 'Online Option', 'Noncredit', 'New for Spring 2026' and 'Pending state approval', while the metadata says Program Status: Approved and Proposal Start: Fall 2026; the program is credit (units), so measure is units.",
+   "ESL 5 is printed with the title 'Academic Reading and Composition' vs closed list 'Advanced Composition and Reading'.",
+   "No careers are named beyond the license/title (RN); careers left empty.",
+   "The trailing XML copy of the requirements is cut off mid-List B; the readable list above it was used."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

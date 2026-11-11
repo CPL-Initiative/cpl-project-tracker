@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Illustration",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=53",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/illustration-fall-2025v2",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11873,
+  "input_tokens": 7918,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11873,
-    "output_tokens": 3626,
+    "input_tokens": 7918,
+    "output_tokens": 2044,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,41 +30,52 @@
     "model": null
    }
   ],
-  "output_tokens": 3626,
+  "output_tokens": 2044,
   "output_tokens_details": {
-   "thinking_tokens": 1420
+   "thinking_tokens": 505
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12001,
- "ms": 42760,
- "seconds": 43.2,
+ "cost_usd": 0.07255,
+ "ms": 16182,
+ "seconds": 16.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 17,
    "listed": 20,
-   "share": 1.0,
-   "missing": [],
-   "unexplained": [],
+   "share": 0.85,
+   "missing": [
+    "FTV17G",
+    "FTV67A",
+    "FTV70A"
+   ],
+   "unexplained": [
+    "FTV17G",
+    "FTV67A",
+    "FTV70A"
+   ],
    "none_placed": false,
-   "pass": true
+   "pass": false
   },
   "invented": {
-   "count": 2,
+   "count": 5,
    "codes": [
     "ARTS16A",
-    "ARTS57"
+    "ARTS57",
+    "F/TVD17G",
+    "F/TVD67A",
+    "F/TVD70A"
    ],
    "flagged": [
     "ARTS16A",
     "ARTS57"
    ],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
    "pass": false,
@@ -81,19 +92,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.0,
+     52.0
+    ],
+    "stated": [
+     51.0,
+     52.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 8,
+   "program": 0,
    "courses": 0,
-   "count": 8,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -109,11 +134,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts (A.A.) Degree Illustration",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 51,
+    "max": 52
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,16 +155,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate proficiency in both traditional analog techniques and digital illustration tools, mastering a diverse range of media, including drawing, painting, printmaking and digital software such as Adobe Photoshop, Illustrator and other emerging digital tools",
-    "Exhibit a strong foundation in artistic expression and visual storytelling, leveraging their understanding of composition, color theory and narrative development to create engaging and impactful illustrations across various genres and media",
-    "Demonstrate the ability to seamlessly integrate analog and digital media, utilizing traditional techniques alongside digital enhancements to push the boundaries of creativity and explore innovative approaches to illustration",
-    "Demonstrate adaptability and innovation in their artistic practice, embracing emerging technologies and experimenting with new tools and techniques to continuously evolve and expand their creative repertoire",
-    "Employ critical thinking and problem-solving skills to conceptualize, plan and execute illustration projects, analyzing visual challenges and developing creative solutions that effectively communicate concepts, emotions and narratives",
-    "Exhibit professionalism and collaboration in their interactions with clients, colleagues and collaborators, effectively communicating ideas, receiving and incorporating feedback, and meeting project deadlines and requirements",
-    "Develop a professional portfolio showcasing their illustration projects, demonstrating their technical skills, creativity and versatility as visual storytellers, and effectively presenting their work to potential clients, employers and artistic communities",
-    "Demonstrate awareness of ethical considerations and cultural perspectives in illustration, respecting diverse viewpoints, representing characters and narratives authentically and sensitively, and adhering to industry standards and best practices"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -271,21 +287,21 @@
       "catalog_addition": true
      },
      {
-      "code": "F / TV 17G",
+      "code": "F/TVD017G",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "F / TV 67A",
+      "code": "F/TVD067A",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "F / TV 70A",
+      "code": "F/TVD070A",
       "units": 3,
       "units_max": null,
       "alternatives": [],
@@ -336,15 +352,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read the A.A. Degree section only; the preceding Certificate of Achievement-Advanced in Illustration prints the same lists with Total Required: 51 - 52 Units.",
-   "Total Required: 90 Units (quarter units) is the whole-degree total including GE and electives, recorded as degree_total; the page prints no major total, so total_units is null (block totals sum to 51-52 but this was not recorded).",
-   "The line 'Additional completion of one of the following general education patterns ... AND electives as needed to reach at least 90 units' appears at the top of pages 53 and 54 like a running header; read as applying to this degree. The JOUR 62E line at the top of page 53 belongs to a preceding program and was ignored.",
-   "Required Core list is split across the page break between pages 53 and 54 (ARTS 63 and ARTS 86 on page 54).",
-   "List A (7 - 8 Units) and List B (4 Units) read as choose-units rules with the low end as minimum.",
-   "ARTS 16A and ARTS 57 are not in the closed list and are marked catalog additions.",
-   "No careers named; the description mentions 'freelance opportunities' and 'your unique voice as an illustrator' but no explicit career list, so careers left empty."
+   "Text before 'Program Requirements' (180 quarter units, upper-division GE) appears to belong to a bachelor's degree program, not this A.A.; it was ignored.",
+   "Total units: 'Major Required: 51-52 Credits' recorded as total_units; 'Total Required: 90 Units' recorded as degree_total (quarter units).",
+   "Catalog prints F/TVD017G, F/TVD067A, F/TVD070A; treated as matching closed-list F TV 017G, F TV 067A, F TV 070A (subject prefix differs).",
+   "HUMI 1H recorded as honors alternative to HUMI 1 per the cross-listed/honors note; matches closed-list HUMI 001H.",
+   "List A printed as (7 - 8 Units) with no explicit selection rule; read as choose units, minimum 7.",
+   "Program description is cut off; no program learning outcomes or careers appear in the provided text."
   ]
  },
- "extracted_run": 39114559952,
- "read_run": "39046890834"
+ "extracted_run": "43056325121"
 }

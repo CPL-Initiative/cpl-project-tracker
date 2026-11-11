@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Art History",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=50",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/art-history-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12625,
+  "input_tokens": 8388,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12625,
-    "output_tokens": 2961,
+    "input_tokens": 8388,
+    "output_tokens": 2634,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2961,
+  "output_tokens": 2634,
   "output_tokens_details": {
-   "thinking_tokens": 951
+   "thinking_tokens": 836
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10972,
- "ms": 22544,
- "seconds": 23.2,
+ "cost_usd": 0.08623,
+ "ms": 21632,
+ "seconds": 21.9,
  "parts": null,
  "error": null,
  "score": {
@@ -55,15 +55,9 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "INTL21",
-    "INTL22"
-   ],
-   "flagged": [
-    "INTL21",
-    "INTL22"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -85,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -106,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Art History Certificate of Achievement-Advanced (heading not in the extracted text; section begins 'Completion of the Art History Certificate of Achievement-Advanced...')",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 44,
@@ -127,17 +121,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Analyze artworks on the basis of social, cultural, political, economic and ethnic contexts and issues relevant to women’s and gender studies",
-    "Demonstrate critical thinking and visual literacy skills through oral and written communication, including those used to analyze, evaluate and synthesize primary and secondary sources",
-    "Analyze artistic traditions through a cross-cultural perspective and in a global context",
-    "Apply technical processes of studio art in written assignments in the field of Art History"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -175,7 +164,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "List A:",
     "rule": "choose_units",
     "minimum": 12,
     "option_group": null,
@@ -186,6 +175,20 @@
     "courses": [
      {
       "code": "ARTS 1B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2H",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTS 2J",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -203,37 +206,11 @@
        }
       ],
       "catalog_addition": false
-     },
-     {
-      "code": "INTL 21",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ARTS 2H",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "INTL 22",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ARTS 2J",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": true
      }
     ]
    },
    {
-    "name": "List B",
+    "name": "List B:",
     "rule": "choose_units",
     "minimum": 12,
     "option_group": null,
@@ -280,7 +257,7 @@
     ]
    },
    {
-    "name": "List C",
+    "name": "List C:",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -313,7 +290,7 @@
     ]
    },
    {
-    "name": "List D",
+    "name": "List D:",
     "rule": "choose_units",
     "minimum": 8,
     "option_group": null,
@@ -384,13 +361,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section's heading falls before the extracted text (likely on page 49); the text read starts with the Art History Certificate of Achievement-Advanced description and ends at 'Total Required: 44 Units'.",
-   "The catalog calls this award a Certificate of Achievement-Advanced; De Anza counts in quarter units, and 44 quarter units fits the 24Q to fewer than 45Q range of the named award.",
-   "Lists A-D print only a unit total ('List A: (12 Units)' etc.) with no explicit 'select' wording; read as choose_units with the printed total as minimum.",
-   "Cross-listed pairs (e.g. ARTS 3TC / WMST 3C) recorded as one course with the other as alternative; catalog notes students receive credit for only one version.",
-   "INTL 21 and INTL 22 are printed as cross-listed versions of ARTS 2H and ARTS 2J but are not in the closed list; marked catalog_addition.",
-   "The same outcomes list is printed for the A.A. degree in Art History; the outcomes recorded are those printed in this certificate's section."
+   "The page labels this award a Certificate of Achievement-Advanced (COA-A) of 44 quarter units; De Anza is on the quarter system, and 44 quarter units falls within the requested 24Q to fewer than 45Q range. Units are quarter units.",
+   "The opening text about Bachelor of Science degree requirements is general catalog boilerplate, not part of this certificate, and was not used.",
+   "Cross-listed pairs (ARTS 3TC/WMST 3C, CETH 13/ARTS 2F, ASAM 40/ARTS 2G) were recorded as one entry with an alternative, per the note that students receive credit for only one version. With these pairs, the Required Core of two courses matches its 8 units.",
+   "Lists A-D print no selection wording. Each was read as choose_units at its printed unit total because it lists more courses than its units require. The block totals (8+12+12+4+8) equal the stated 44.",
+   "Catalog codes omit leading zeros (e.g., ARTS 3TC, ARTS 1B); they were matched to the closed list's ARTS 03TC, ARTS 001B, etc.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

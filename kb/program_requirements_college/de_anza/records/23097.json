@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Global Studies",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=98",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-fall-2026v2",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14297,
+  "input_tokens": 10417,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14297,
-    "output_tokens": 5562,
+    "input_tokens": 10417,
+    "output_tokens": 5682,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,26 +30,30 @@
     "model": null
    }
   ],
-  "output_tokens": 5562,
+  "output_tokens": 5682,
   "output_tokens_details": {
-   "thinking_tokens": 1278
+   "thinking_tokens": 1504
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.16843,
- "ms": 42228,
- "seconds": 42.6,
+ "cost_usd": 0.15531,
+ "ms": 44226,
+ "seconds": 44.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 63,
+   "placed": 60,
    "listed": 63,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.952,
+   "missing": [
+    "ECON1",
+    "ECON1H",
+    "ES1"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -57,14 +61,14 @@
   "invented": {
    "count": 3,
    "codes": [
-    "PERS1",
-    "PERS2",
-    "PERS3"
+    "ECONC2002",
+    "ECONC2002H",
+    "ESD1"
    ],
    "flagged": [
-    "PERS1",
-    "PERS2",
-    "PERS3"
+    "ECONC2002",
+    "ECONC2002H",
+    "ESD1"
    ],
    "pass": true
   },
@@ -87,12 +91,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -108,7 +112,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Global Studies Certificate of Achievement-Advanced",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 36,
@@ -129,11 +133,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Integrate information about the environment, cultures, histories, politics, arts and economics of people around the world and explain their interdependence and interconnectedness",
-    "Demonstrate cultural competence through the ability to interact effectively in international and multicultural settings based on an integrated understanding of global issues and perspectives",
-    "Demonstrate proficiency in a foreign language"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -161,11 +161,11 @@
       "catalog_addition": false
      },
      {
-      "code": "E S 1",
+      "code": "E SD001.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "INTL 5",
@@ -258,17 +258,17 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 1",
+      "code": "ECONC2002",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 1H",
+        "code": "ECONC2002H",
         "units": 4,
-        "catalog_addition": false
+        "catalog_addition": true
        }
       ],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
       "code": "GEO 10",
@@ -280,9 +280,9 @@
     ]
    },
    {
-    "name": "Option 1",
-    "rule": "choose_units",
-    "minimum": 15,
+    "name": "List C - World Language - Option 1",
+    "rule": "all",
+    "minimum": null,
     "option_group": "List C - World Language",
     "stated": {
      "min": 15,
@@ -313,7 +313,7 @@
     ]
    },
    {
-    "name": "Option 2",
+    "name": "List C - World Language - Option 2",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -353,9 +353,9 @@
     ]
    },
    {
-    "name": "Option 3",
-    "rule": "choose_units",
-    "minimum": 15,
+    "name": "List C - World Language - Option 3",
+    "rule": "all",
+    "minimum": null,
     "option_group": "List C - World Language",
     "stated": {
      "min": 15,
@@ -386,9 +386,9 @@
     ]
    },
    {
-    "name": "Option 4",
-    "rule": "choose_units",
-    "minimum": 15,
+    "name": "List C - World Language - Option 4",
+    "rule": "all",
+    "minimum": null,
     "option_group": "List C - World Language",
     "stated": {
      "min": 15,
@@ -419,7 +419,7 @@
     ]
    },
    {
-    "name": "Option 5",
+    "name": "List C - World Language - Option 5",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -473,7 +473,7 @@
     ]
    },
    {
-    "name": "Option 6",
+    "name": "List C - World Language - Option 6",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -513,7 +513,7 @@
     ]
    },
    {
-    "name": "Option 7",
+    "name": "List C - World Language - Option 7",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -567,42 +567,9 @@
     ]
    },
    {
-    "name": "Option 8",
-    "rule": "choose_units",
-    "minimum": 15,
-    "option_group": "List C - World Language",
-    "stated": {
-     "min": 15,
-     "max": 15
-    },
-    "courses": [
-     {
-      "code": "PERS 1",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PERS 2",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PERS 3",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Option 9",
-    "rule": "choose_units",
-    "minimum": 15,
+    "name": "List C - World Language - Option 8",
+    "rule": "all",
+    "minimum": null,
     "option_group": "List C - World Language",
     "stated": {
      "min": 15,
@@ -633,9 +600,9 @@
     ]
    },
    {
-    "name": "Option 10",
-    "rule": "choose_units",
-    "minimum": 15,
+    "name": "List C - World Language - Option 9",
+    "rule": "all",
+    "minimum": null,
     "option_group": "List C - World Language",
     "stated": {
      "min": 15,
@@ -666,7 +633,7 @@
     ]
    },
    {
-    "name": "Option 11",
+    "name": "List C - World Language - Option 10",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -720,7 +687,7 @@
     ]
    },
    {
-    "name": "Option 12",
+    "name": "List C - World Language - Option 11",
     "rule": "choose_units",
     "minimum": 15,
     "option_group": "List C - World Language",
@@ -775,17 +742,31 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "E S 1",
+    "why": "catalog prints the code as 'E SD001.' (same title, Introduction to Environmental Studies); recorded as printed with catalog_addition true"
+   },
+   {
+    "code": "ECON 1",
+    "why": "catalog prints ECONC2002 (likely common course number ECON C2002, same title Principles of Macroeconomics) instead"
+   },
+   {
+    "code": "ECON 001H",
+    "why": "catalog prints ECONC2002H (honors, same title) instead"
+   }
+  ],
   "notes": [
-   "The extracted text begins with the certificate's description; its printed heading is not in the text. Section identified as the Global Studies Certificate of Achievement-Advanced (Total Required: 36 Units), which matches the closed list (List B courses ANTH 2, ECON 1, GEO 10 and the language options). The A.A. degree section that follows was not used.",
-   "Units are quarter units; 36 quarter units fits the 24Q to fewer than 45Q award range.",
-   "Honors alternatives are recorded as printed (COMM 7H, HIST 3AH/3BH/3CH, ANTH 2H, ECON 1H); they correspond to closed-list codes COMM 007H, HIST 03AH/03BH/03CH, ANTH 002H, ECON 001H, so they are not marked as catalog additions.",
-   "List A and List B each state 4 units over a list of 4-unit courses; recorded as choose_units 4 (effectively one course).",
-   "List C - World Language: 'Complete one option: (15 Units)'. Each option states 15 units; options listing more than three 5-unit courses (German, Japanese, Korean, Mandarin, Spanish, Vietnamese) were recorded as choose_units 15 since the listed courses exceed 15 units. Reviewer may confirm whether a specific sequence is intended.",
-   "PERS 1, PERS 2, PERS 3 (Option 8, Persian) are not in the closed list and are marked as catalog additions.",
-   "The description says the program 'prepares students for careers as citizens of the world'; this names no occupation or career field, so careers is left empty.",
-   "The same three Program Learning Outcomes are printed for the A.A. degree as well; those recorded here are from the certificate section."
+   "The text opens with a fragment of baccalaureate degree requirements (180 quarter units, upper-division GE, De Anza GE/Cal-GETC); it does not belong to this certificate and was ignored, so ge_pattern and degree totals are null.",
+   "Page metadata gives Award Type 'Certificate of Achievement-Advanced (COA-A)', 36 units (quarter), Min/Max Units 36.0; 'Major Required: 36 Credits' and 'Total Required: 36 Units' recorded as total_units 36.",
+   "'E SD001.' appears garbled; it is likely E S 1 (Introduction to Environmental Studies) from the closed list. Reviewer should confirm.",
+   "ECONC2002/ECONC2002H appear to be California common course numbers replacing ECON 1/ECON 1H; recorded as catalog additions.",
+   "List A and List B each state 4 units with honors twins listed separately; read as choose one course (4 units), honors versions recorded as alternatives.",
+   "List C options each state 15 units. Options with exactly three 5-unit courses are recorded as 'all'; options listing more than 15 units of courses (German, Japanese, Korean, Mandarin, Spanish, Vietnamese) are recorded as choose_units 15, since the catalog prints 15 units but more courses; reviewer should check which courses are actually required.",
+   "Program description mentions elective options/areas of study, but no elective list appears in the requirements text.",
+   "The description says the program 'prepares students for careers as citizens of the world'; this was not read as naming a career or occupation, so careers is empty.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39115772038"
+ "extracted_run": "43056325121"
 }

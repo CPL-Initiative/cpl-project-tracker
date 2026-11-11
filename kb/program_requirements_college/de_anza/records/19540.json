@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Network Administration",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=77",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/network-administration-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11942,
+  "input_tokens": 7653,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11942,
-    "output_tokens": 1886,
+    "input_tokens": 7653,
+    "output_tokens": 1484,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1886,
+  "output_tokens": 1484,
   "output_tokens_details": {
-   "thinking_tokens": 621
+   "thinking_tokens": 407
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08549,
- "ms": 15758,
- "seconds": 16.2,
+ "cost_usd": 0.06029,
+ "ms": 12932,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement-Advanced (COA-A) Network Administration",
+   "section_heading": "Program Requirements (Program Title: Network Administration, Certificate of Achievement-Advanced)",
    "measure": "units",
    "total_units": {
     "min": 40.5,
@@ -121,12 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Use UNIX/LINUX utilities and shell features for file manipulation and communication",
-    "Create algorithms and code, document, debug and test shell scripts that interact with the UNIX/LINUX OS",
-    "Create algorithms to solve introductory-level problems using C programming and shell scripting or Perl languages",
-    "Identify networking components and protocols in the context of architectures and technologies for LAN, WAN and Internet networks"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -234,12 +229,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints two Network Administration certificates: a Certificate of Achievement (COA, 22.5 units) and a Certificate of Achievement-Advanced (COA-A, 40.5-41 units). De Anza uses quarter units; the award category 16S/24Q to fewer than 30S/45Q fits the 40.5-41 quarter-unit COA-A (22.5 Q is below 24Q), and the closed list (CIS 18A, 18B, 22A, 22B/22BH, 45A, 67B, 31) matches the COA-A, so the COA-A section was read. Reviewer should confirm.",
-   "The COA (22.5 units) section lists CIS 4, CIS 6, CIS 67A, CIS 108, CIS 170F; CIS 4 and CIS 108 are not in the closed list, further suggesting the closed list belongs to the COA-A.",
-   "List A prints no explicit 'select one' instruction; its stated range of 4.5-5 units with courses of 4.5 and 5 units was read as choose one course.",
-   "Closed-list codes are stored with leading zeros (e.g., CIS 018A); the catalog prints CIS 18A etc. These were matched as the same courses.",
-   "No careers are named in the COA-A section."
+   "The text opens with general Bachelor of Science degree requirements (180 quarter units, GE rules) that do not belong to this certificate; they were ignored.",
+   "The catalog prints the award as Certificate of Achievement-Advanced (COA-A) at 40.5-41 quarter units, which fits the 24Q-to-under-45Q range of the named award.",
+   "CIS 22BH is printed as a separate row in the Required Core, but the core sums to its stated 36 units only when CIS 22BH is treated as the honors twin of CIS 22B (the page notes students get credit for only one version), so it is recorded as an alternative.",
+   "Catalog codes omit the leading zero used in the closed list (CIS 18A = CIS 018A, CIS 22A = CIS 022A, CIS 45A = CIS 045A, CIS 67A = CIS 067A, etc.); they were matched as the same courses.",
+   "List A has no explicit 'choose' wording; its stated 4.5-5 units implies one course from the list.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

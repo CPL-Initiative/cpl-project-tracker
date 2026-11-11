@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Applied Artificial Intelligence",
  "award": "A.S. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=128",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/applied-artificial-intelligence-fall-2026v2v3v4",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13511,
+  "input_tokens": 10534,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13511,
-    "output_tokens": 1560,
+    "input_tokens": 10534,
+    "output_tokens": 3515,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1560,
+  "output_tokens": 3515,
   "output_tokens_details": {
-   "thinking_tokens": 306
+   "thinking_tokens": 1020
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08524,
- "ms": 12634,
- "seconds": 13.1,
+ "cost_usd": 0.11244,
+ "ms": 26925,
+ "seconds": 27.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 23,
    "listed": 23,
-   "share": 0.0,
-   "missing": [
-    "CIS11",
-    "CIS111X",
-    "CIS17A",
-    "CIS17B",
-    "CIS22C",
-    "CIS22CH",
-    "CIS40",
-    "CIS41A",
-    "CIS41B",
-    "CIS44A",
-    "CIS44F",
-    "CIS44H",
-    "CIS51",
-    "CIS64B",
-    "CIS64C",
-    "CIS64G",
-    "CIS67",
-    "CIS7",
-    "CIS78",
-    "CIS80",
-    "CIS82Y",
-    "STATC1000",
-    "STATC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -88,14 +64,32 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    40.5,
+    44.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    90.0,
+    90.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
-   ]
+    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.5,
+     44.0
+    ],
+    "stated": [
+     40.5,
+     44.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -107,150 +101,389 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 40.5,
+    "max": 44
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 90,
+    "max": 90
    },
    "ge_units": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [
+    "entry-level AI-related positions"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CIS 017A",
-    "why": "not in the text; Applied Artificial Intelligence section not in the excerpt"
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 25.5,
+     "max": 25.5
+    },
+    "courses": [
+     {
+      "code": "CIS 17A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 17B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 40",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 51",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 67",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 82Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 017B",
-    "why": "not in the text; Applied Artificial Intelligence section not in the excerpt"
+    "name": "List A - Option 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 9.5,
+     "max": 9.5
+    },
+    "courses": [
+     {
+      "code": "CIS 7",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 022C",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 22C), another program"
+    "name": "List A - Option 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List A",
+    "stated": {
+     "min": 6.5,
+     "max": 6.5
+    },
+    "courses": [
+     {
+      "code": "CIS 11",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 111X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 041A",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 41A), another program"
+    "name": "List B - Option 1 - Deep Learning",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "List B",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 78",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 80",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 041B",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 41B), another program"
+    "name": "List B - Option 2 - Data Analytics",
+    "rule": "choose_units",
+    "minimum": 8.5,
+    "option_group": "List B",
+    "stated": {
+     "min": 8.5,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 44A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64G",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 044A",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 44A), another program"
+    "name": "List B - Option 3 - Software Engineering",
+    "rule": "choose_units",
+    "minimum": 9,
+    "option_group": "List B",
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 22C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 22CH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 41A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 41B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44H",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CIS 044F",
-    "why": "named only in the Liberal Arts (Business and CIS Emphasis) section (as CIS 44F), another program"
-   },
-   {
-    "code": "CIS 044H",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 064B",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 64B), another program"
-   },
-   {
-    "code": "CIS 064C",
-    "why": "named only in the Liberal Arts emphasis sections (as CIS 64C), another program"
-   },
-   {
-    "code": "CIS 064G",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 082Y",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 11",
-    "why": "named only in the Liberal Arts (Business and CIS Emphasis) section, another program"
-   },
-   {
-    "code": "CIS 111X",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 22CH",
-    "why": "named only in the Liberal Arts emphasis sections, another program"
-   },
-   {
-    "code": "CIS 40",
-    "why": "named only in the Liberal Arts emphasis sections, another program"
-   },
-   {
-    "code": "CIS 51",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 67",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 7",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 78",
-    "why": "not in the text"
-   },
-   {
-    "code": "CIS 80",
-    "why": "not in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in the Liberal Arts (Business and CIS Emphasis) section, another program"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "named only in the Liberal Arts (Business and CIS Emphasis) section, another program"
+    "name": "List B - Option 4 - General",
+    "rule": "choose_units",
+    "minimum": 8.5,
+    "option_group": "List B",
+    "stated": {
+     "min": 8.5,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CIS 22C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CIS 22CH",
+        "units": 4.5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 41A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 41B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44F",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 44H",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64B",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64C",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 64G",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 78",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 80",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The provided catalog text (pages 128-130) does not contain the Applied Artificial Intelligence A.S. Degree section. It contains only the Liberal Arts A.A. Degree (Business and Computer Information Systems Emphasis) and Liberal Arts A.A. Degree (Science, Math and Engineering Emphasis) sections, which belong to other programs, so no requirements, totals, outcomes or careers were recorded.",
-   "section_heading left empty because no heading for this award appears in the text; a reviewer should fetch the correct catalog page for Applied Artificial Intelligence A.S.",
-   "Several closed-list courses (e.g., CIS 11, CIS 22C/22CH, CIS 40, CIS 41A, CIS 41B, CIS 44A, CIS 44F, CIS 64B, CIS 64C, STAT C1000/C1000H) appear in the Liberal Arts emphasis lists but were not placed since those sections are for a different award."
+   "Units are quarter units; the degree total printed is 90 units ('Total Required: 90 Units') and the major total is 'Major Required: 40.5-44 Credits'.",
+   "The text begins with generic Bachelor of Science degree requirements (180 quarter units) that do not belong to this A.S. award; ignored.",
+   "List A (6.5 - 9.5 units) and List B (8.5 - 9 units) group totals are printed for the whole 'complete one option' choice; recorded per option block instead.",
+   "List A Option 1 prints STATC1000 and STATC1000H as separate rows; read the honors version as an alternative since the 9.5-unit total counts only one statistics course.",
+   "CIS 22CH read as the honors alternative to CIS 22C in Options 3 and 4.",
+   "Options 2, 3 and 4 of List B list more courses than their unit totals; read as choose-units blocks using the printed minimum.",
+   "Catalog codes such as 'CIS 17A' match closed-list 'CIS 017A' (leading zero format difference); not marked as additions.",
+   "GE pattern plus 'electives as needed to reach at least 90 units'; no elective units printed.",
+   "No program learning outcomes printed in the text. The trailing XML requirements copy is cut off mid-List B Option 2."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

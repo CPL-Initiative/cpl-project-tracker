@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Automotive Technology Management",
  "award": "Baccalaureate of Science (B.S.) Degree.",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=64",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-technology-management-fall-2025",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6776,
+  "input_tokens": 7528,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6776,
-    "output_tokens": 1830,
+    "input_tokens": 7528,
+    "output_tokens": 1964,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,30 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1830,
+  "output_tokens": 1964,
   "output_tokens_details": {
-   "thinking_tokens": 684
+   "thinking_tokens": 623
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0637,
- "ms": 15978,
- "seconds": 16.6,
+ "cost_usd": 0.06939,
+ "ms": 17696,
+ "seconds": 17.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 12,
    "listed": 12,
-   "share": 0.75,
-   "missing": [
-    "BUS615",
-    "BUS620",
-    "EWRT610"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -65,36 +61,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    45.0,
-    45.0
+    60.0,
+    60.0
    ],
    "stated": [
-    45.0,
-    45.0
+    180.0,
+    180.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the De Anza General Education pattern or Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     45.0,
-     45.0
+     60.0,
+     60.0
     ],
     "stated": [
-     180.0,
-     180.0
+     60.0,
+     60.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [],
-    "fill": [
-     135.0,
-     135.0
-    ]
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -102,39 +96,39 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Automotive Technology Management (Baccalaureate of Science)",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": 45,
-    "max": 45
+    "min": 60,
+    "max": 60
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "De Anza General Education pattern or Cal-GETC",
    "degree_total": {
     "min": 180,
     "max": 180
@@ -144,14 +138,8 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate the required skills for effective entry-level management in the automotive repair industry",
-    "Demonstrate knowledge of leadership, ethics, critical thinking, and all forms of communication in business and life",
-    "Recognize and value the intricacies of working and living in a multicultural world by demonstrating gratefulness of diversity"
-   ],
-   "careers": [
-    "entry-level management"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -228,31 +216,53 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "Required Core - Upper-Division General Education",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 15,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BUS 615",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 620",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EWRT 610",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BUS 615",
-    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
-   },
-   {
-    "code": "BUS 620",
-    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
-   },
-   {
-    "code": "EWRT 610",
-    "why": "listed under Required Core - Upper-Division General Education (15 Units); general education, not the major"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "No separate section heading is printed in the extracted text; section_heading uses the program and award name.",
-   "total_units is the printed 'Required Core - Upper-Division Major: (45 Units)'; degree_total is 'Total Required: 180 Units' (quarter units).",
-   "BUS 615, BUS 620 and EWRT 610 are required by name but printed as 'Required Core - Upper-Division General Education: (15 Units)'; they were kept out of blocks as general education. A reviewer may prefer to record them as a required block.",
-   "The page states at least 15 units of upper-division GE and at least 39 units of lower-division GE; no named GE pattern and no single GE total, so ge_pattern and ge_units are null.",
-   "'Lower-Division Electives (as needed to reach 180 units)' sets electives_fill_degree true.",
-   "The program description does not say whether the outcomes list is shared with other awards; it appears specific to this B.S."
+   "Units are quarter units.",
+   "The catalog prints 'Major Required: 60 Credits', which equals the 45-unit upper-division major core plus the 15-unit required upper-division GE core; total_units records 60. The upper-division GE courses (BUS 615, BUS 620, EWRT 610) are named, required courses counted in the 60-unit major, so they are recorded as a block despite being labeled General Education; reviewer should confirm.",
+   "Degree total 'Total Required: 180 Units' recorded in degree_total. Lower-division electives are 'as needed to reach 180 units' with no units printed, so electives_fill_degree is true.",
+   "GE: student completes De Anza GE or Cal-GETC for lower-division GE (CSU GE or IGETC accepted if already certified). Page states at least 15 upper-division GE units and at least 39 lower-division GE units, and a minimum of 54 GE units overall; no single printed units figure for the GE pattern itself, so ge_units left null.",
+   "General B.S. requirements also describe 60 upper-division units, 90 lower-division units meeting associate degree requirements, and 30 additional lower-division units.",
+   "No program learning outcomes appear in the text; the excerpt is cut off at the end of the program metadata ('|| Mi'), so outcomes may exist beyond the excerpt.",
+   "No specific careers or job titles are named; the description mentions employment and entry-level management needs of dealerships, independent repair shops, municipalities and fleets within the automotive industry, which was not recorded as a career list.",
+   "The award type is printed as 'Bachelor of Science (B.S.) Degree'; source URL references fall 2025 though catalog year is 2026-2027."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

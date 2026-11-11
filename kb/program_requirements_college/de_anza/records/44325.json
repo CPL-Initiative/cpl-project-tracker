@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Global Studies",
  "award": "A.A- T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=101",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/global-studies-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7867,
+  "input_tokens": 11044,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7867,
-    "output_tokens": 3146,
+    "input_tokens": 11044,
+    "output_tokens": 3086,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3146,
+  "output_tokens": 3086,
   "output_tokens_details": {
-   "thinking_tokens": 1176
+   "thinking_tokens": 1060
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09439,
- "ms": 25093,
- "seconds": 25.5,
+ "cost_usd": 0.1059,
+ "ms": 25386,
+ "seconds": 25.6,
  "parts": null,
  "error": null,
  "score": {
@@ -50,8 +50,8 @@
    "listed": 29,
    "share": 0.931,
    "missing": [
-    "ECONC2001",
-    "ECONC2001H"
+    "ECON1",
+    "ECON1H"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -60,12 +60,12 @@
   "invented": {
    "count": 2,
    "codes": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "flagged": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "pass": true
   },
@@ -74,7 +74,7 @@
    "status": "incomplete",
    "computed": [
     28.0,
-    33.0
+    34.0
    ],
    "stated": [
     90.0,
@@ -84,19 +84,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     28.0,
+     34.0
+    ],
+    "stated": [
+     28.0,
+     34.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -115,8 +129,8 @@
    "section_heading": "Global Studies for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 34
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -133,12 +147,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Identify, analyze, and offer potential solutions to major global challenges from multiple perspectives and worldviews",
-    "Identify and analyze multiple perspectives on globalization",
-    "Differentiate multiple perspectives on globalization and have a greater understanding of global citizenship",
-    "Explain the interconnectedness of global decisions and events"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -239,12 +248,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 1",
+      "code": "ECONC2001",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 1H",
+        "code": "ECONC2001H",
         "units": 4,
         "catalog_addition": false
        }
@@ -252,12 +261,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 2",
+      "code": "ECONC2002",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 2H",
+        "code": "ECONC2002H",
         "units": 4,
         "catalog_addition": true
        }
@@ -368,22 +377,23 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ECON C2001",
-    "why": "Catalog prints ECON 2 (Principles of Microeconomics) instead; likely the same course under its common course number"
+    "code": "ECON 1",
+    "why": "not in the text; the catalog prints Principles of Macroeconomics as ECONC2002 (common course number), recorded as a catalog addition"
    },
    {
-    "code": "ECON C2001H",
-    "why": "Catalog prints ECON 2H (Principles of Microeconomics - Honors) instead; likely the same course under its common course number"
+    "code": "ECON 001H",
+    "why": "not in the text; the catalog prints the honors macroeconomics course as ECONC2002H, recorded as a catalog addition"
    }
   ],
   "notes": [
-   "Units are quarter units; 'Total Required: 90 Units' is recorded as degree_total since it includes Cal-GETC and electives; no major total is printed.",
-   "List A is subdivided into areas with printed ranges: Area 1 Culture and Society (0-12), Area 2 Geography (0-8), Area 3 Economics (0-8), Area 4 Politics (0-8), Area 5 Humanities (0-10). The five courses must come from four different areas; recorded as one choose_courses block.",
-   "Area 1 note: Students taking HIST D003B or HIST D03BH must also take HIST D003C or HIST D03CH.",
-   "Catalog codes like ANTH 2H, HIST 3BH, ECON 1H were matched to closed-list codes ANTH 002H, HIST 03BH, ECON 001H (numbering format differences).",
-   "ECON 2 / ECON 2H marked as catalog additions because the closed list carries ECON C2001 / C2001H; reviewer should confirm they are the same course.",
-   "Cal-GETC and CSU-transferable electives fill the remainder to at least 90 units; no GE unit figure is printed."
+   "List A is recorded as one choose-5-courses block (20-26 units); the catalog divides it into five areas and requires the five courses to come from four different areas: Area 1 Culture and Society (0-12 units: ANTH 2/2H, HIST 3B/3BH, HIST 3C/3CH), Area 2 Geography (0-8: GEO 1, 4, 10), Area 3 Economics (0-8: ECONC2001/2001H, ECONC2002/2002H), Area 4 Politics (0-8: POLI 2, 3), Area 5 Humanities (0-10: FREN 3, GERM 3, GERM 4, ITAL 3, JAPN 3, MAND 4-6, SPAN 3-6).",
+   "Area 1 rule: students taking HIST D003B or HIST D03BH must also take HIST D003C or HIST D03CH.",
+   "Honors versions are recorded as alternatives per the note that students receive credit for only one cross-listed or honors course.",
+   "Units are quarter units. Major total printed as 'Major Required: 28-34 Credits'; 'Total Required: 90 Units' recorded as degree_total. Cal-GETC and CSU-transferable electives fill the rest to at least 90 units; no GE unit figure printed.",
+   "The opening text about Bachelor of Science degree requirements belongs to general catalog material, not this A.A.-T.; it was ignored.",
+   "The XML program-requirements copy is cut off mid-Area 5, but the earlier printed list is complete.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

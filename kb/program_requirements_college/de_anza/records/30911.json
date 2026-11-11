@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Mathematics",
  "award": "A.S. T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=134",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/mathematics-2-0-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8047,
+  "input_tokens": 7497,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8047,
-    "output_tokens": 1355,
+    "input_tokens": 7497,
+    "output_tokens": 1563,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1355,
+  "output_tokens": 1563,
   "output_tokens_details": {
-   "thinking_tokens": 410
+   "thinking_tokens": 348
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05929,
- "ms": 11715,
- "seconds": 12.1,
+ "cost_usd": 0.06125,
+ "ms": 13198,
+ "seconds": 13.4,
  "parts": null,
  "error": null,
  "score": {
@@ -55,17 +55,31 @@
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "CIS22A",
+    "CIS35A",
+    "CIS36A",
+    "CIS40",
+    "CIS41A",
+    "PHYS4A"
+   ],
+   "flagged": [
+    "CIS22A",
+    "CIS35A",
+    "CIS36A",
+    "CIS40",
+    "CIS41A",
+    "PHYS4A"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    30.0,
-    30.0
+    34.5,
+    36.0
    ],
    "stated": [
     90.0,
@@ -75,19 +89,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     34.5,
+     36.0
+    ],
+    "stated": [
+     34.5,
+     36.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -103,11 +131,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Mathematics for Transfer",
+   "section_heading": "Mathematics 2.0 for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 34.5,
+    "max": 36
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,9 +152,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Be prepared for successful entry into upper division courses in mathematics"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -136,8 +162,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 20,
-     "max": 20
+     "min": 30,
+     "max": 30
     },
     "courses": [
      {
@@ -191,19 +217,7 @@
        }
       ],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 10,
-     "max": 10
-    },
-    "courses": [
+     },
      {
       "code": "MATH 2A",
       "units": 5,
@@ -231,17 +245,72 @@
       "catalog_addition": false
      }
     ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4.5,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "CIS 22A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 35A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 36A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 40",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CIS 41A",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYS 4A",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog codes (e.g., MATH 1A, MATH 1AH) are matched to closed-list codes with zero-padding (MATH 001A, MATH 01AH); treated as the same courses, not catalog additions.",
-   "List A prints 10 units and lists exactly two 5-unit courses, so both are read as required (rule 'all'); reviewer may confirm.",
-   "'Total Required: 90 Units' (quarter units) is read as the whole-degree total including Cal-GETC and CSU-transferable electives; no separate major total is printed (Required Core 20 + List A 10 are printed only as block totals).",
-   "Cal-GETC units are not printed; electives fill to at least 90 units with no units stated.",
-   "The text after this section (Music A.A.) belongs to another program and was ignored."
+   "Catalog codes (e.g., MATH 1A, MATH 1AH) were matched to closed-list codes (MATH 001A, MATH 01AH); same courses, different formatting.",
+   "Honors versions are listed as separate rows in the catalog; recorded as alternatives per the note that students receive credit for only one version.",
+   "List A prints no explicit selection rule; read as choose one course given the stated 4.5-6 units, which matches one course (4.5 or 6 units).",
+   "Units are quarter units; degree total is 90 units with 'Additional Cal-GETC AND CSU-transferable electives as needed to reach at least 90 units'.",
+   "The text at the top about Bachelor of Science degree requirements appears to belong to a different section/program and was ignored.",
+   "Program description is truncated; no outcomes or careers printed in the supplied text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Ethnic Studies",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=108",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/ethnic-studies-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12950,
+  "input_tokens": 9003,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12950,
-    "output_tokens": 4412,
+    "input_tokens": 9003,
+    "output_tokens": 3498,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 4412,
+  "output_tokens": 3498,
   "output_tokens_details": {
-   "thinking_tokens": 1216
+   "thinking_tokens": 1047
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14004,
- "ms": 33068,
- "seconds": 33.4,
+ "cost_usd": 0.10597,
+ "ms": 26069,
+ "seconds": 26.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 40,
+   "placed": 42,
    "listed": 42,
-   "share": 0.952,
-   "missing": [
-    "AFAM12A",
-    "AFAM12B"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "HIST18A",
-    "HIST18B"
-   ],
-   "flagged": [
-    "HIST18A",
-    "HIST18B"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -88,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -109,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement (COA) Ethnic Studies",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -130,13 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Critically examine and articulate concepts such as race and racism, racialization, ethnicity, equity, ethno-centrism, eurocentrism, white supremacy, antiblackness, self-determination, liberation, decolonization, sovereignty, imperialism, settler colonialism, exploitation colonialism, xenophobia, intersectionalityx and anti-racism as studied in any one or more of the core four disciplines (Native American Studies, African American Studies, Asian American Studies, and Chicanx or Latinx Studies) or similar fields",
-    "Apply theory and knowledge produced by one or more of the core four disciplines (i.e., Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies) or similar fields that describe an understanding of epistemologies, critical events, histories, cultures, cultural identity, cultural philosophies, intellectual traditions, contributions, lived experiences, generational trauma and all manner of struggles of those groups with a particular emphasis on systemic oppression, identity formation, agency and group affirmation",
-    "Critically analyze the intersection of race, racism and white supremacy as they relate to class, gender, sexuality, sexual orientation, social status, religion, spirituality, national origin, immigration status, ability, tribal citizenship, sovereignty, language or age, in Native American, African American, Asian American, Chicanx or Latinx or similar communities in the United States",
-    "Critically examine, in historical and intersectional context, how struggle, resistance and the quest for justice (including racial, social, educational, political or economic justice), solidarity and liberation, as experienced and enacted by Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies and similar fields, as people of color in the United States, are relevant to current and structural issues. Such issues may be communal, national, international and transnational politics, for example, in immigration, reparations, settler-colonialism, multiculturalism or language policies",
-    "Describe and actively engage with anti-racist, abolitionist, anti-colonial and anti-imperial thought, issues, practices and movements in Native American Studies, Chicanx or Latinx Studies, African American Studies, Asian American Studies and similar fields as people of color in the United States seeking to build a just and equitable society"
-   ],
+   "outcomes": [],
    "careers": [
     "community organizing",
     "nonprofit organizations",
@@ -218,6 +203,20 @@
     "courses": [
      {
       "code": "AFAM 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 12A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 12B",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -380,20 +379,6 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 18A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 18B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "NAIS 11",
       "units": 4,
       "units_max": null,
@@ -472,25 +457,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AFAM 012A",
-    "why": "not in this section; the Ethnic Studies list prints only HIST 18A (shown as cross-listed with AFAM 12A in the Intercultural Studies section)"
-   },
-   {
-    "code": "AFAM 012B",
-    "why": "not in this section; the Ethnic Studies list prints only HIST 18B (shown as cross-listed with AFAM 12B in the Intercultural Studies section)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Units are De Anza quarter units; total printed as 'Total Required: 20 Units'.",
-   "List B may also be completed with List A courses not already taken; those List A courses are not repeated in the List B block.",
-   "ASAM 30 matched to closed-list entry 'ASAM030' (same course, code formatted differently).",
-   "HIST 18A and HIST 18B are not in the closed list; elsewhere in the catalog they are cross-listed with AFAM 12A/12B, which are in the closed list but not printed in this section.",
-   "Closed-list title for NAIS 12 ('Native American History') differs from the catalog title ('Ethnic Studies and the Historical Experiences of Native Americans').",
-   "In the first outcome, 'ethno-centrism' was joined across a hyphenated line break; 'intersectionalityx' copied as printed.",
-   "Careers list taken from the description's fields of work ('community organizing, nonprofit organizations, educational institutions, public policy, public service or business'); reviewer may judge whether these count as career fields."
+   "Units are quarter units (De Anza is on the quarter system); total 20 quarter units printed as 'Total Required: 20 Units' and 'Major Required: 20 Credits'.",
+   "The text before 'Program Requirements' (180 quarter units, upper-division GE, etc.) belongs to a baccalaureate degree section and was not used for this certificate.",
+   "List B may also be completed with List A courses not already taken; only the printed List B courses are recorded in that block.",
+   "Cross-listed pairs printed as consecutive rows (AFAM 25/WMST 25, ASAM 20/ELIT 24, ASAM 22/WMST 22, CETH 29/ADMJ 29, CHLX 26/WMST 26, WMST 8/CETH 8, WMST 29/CETH 19) were recorded as alternatives, since the catalog states students receive credit for only one cross-listed course.",
+   "Catalog prints AFAM 12A, AFAM 12B and ASAM 30; treated as the closed-list AFAM 012A, AFAM 012B and ASAM030 (formatting differences), so catalog_addition is false. Reviewer should confirm.",
+   "Catalog titles differ from closed list for NAIS 12 and NAIS 31; codes match.",
+   "Careers recorded from the program description's list of professional areas (community organizing, nonprofit organizations, etc.); reviewer may judge whether these are career fields.",
+   "No program learning outcomes appear in the text; the program description is cut off mid-sentence."
   ]
  },
- "extracted_run": "39115772038"
+ "extracted_run": "43056325121"
 }

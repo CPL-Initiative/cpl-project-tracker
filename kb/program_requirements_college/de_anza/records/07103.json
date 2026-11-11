@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Private Security",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=48",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/private-security-fall-2026v2",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10411,
+  "input_tokens": 8723,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10411,
-    "output_tokens": 3157,
+    "input_tokens": 8723,
+    "output_tokens": 2824,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3157,
+  "output_tokens": 2824,
   "output_tokens_details": {
-   "thinking_tokens": 1171
+   "thinking_tokens": 937
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10478,
- "ms": 23903,
- "seconds": 24.7,
+ "cost_usd": 0.09137,
+ "ms": 21687,
+ "seconds": 22.1,
  "parts": null,
  "error": null,
  "score": {
@@ -57,15 +57,9 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "PARA54",
-    "SOC54"
-   ],
-   "flagged": [
-    "PARA54",
-    "SOC54"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -83,19 +77,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     38.0
+    ],
+    "stated": [
+     38.0,
+     38.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -111,11 +119,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts (A.A.) Degree Private Security",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 38,
+    "max": 38
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,11 +140,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Identify the components of the criminal justice system and describe how each is fundamental to criminology procedures",
-    "Identify the elements of a crime based on a factual situation",
-    "Construct a professional report of a crime utilizing report criteria"
-   ],
+   "outcomes": [],
    "careers": [
     "private security field"
    ]
@@ -269,18 +273,7 @@
       "code": "ADMJ 54",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "PARA 54",
-        "units": 4,
-        "catalog_addition": true
-       },
-       {
-        "code": "SOC 54",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -401,16 +394,18 @@
   "missing_explained": [
    {
     "code": "ADMJ 64",
-    "why": "named only in the Certificate of Achievement-Advanced section"
+    "why": "not in the text; only ADMJ 64X, 64Y, 64Z are listed"
    }
   ],
   "notes": [
-   "Catalog codes ADMJ 64X/64Y/64Z, ADMJ 74A, PARA 74A, PSYC 74A, ADMJ 90A, PARA 90A were matched to closed-list codes printed with a leading zero (ADMJ 064X, ADMJ 074A, etc.).",
-   "PARA 54 and SOC 54 are printed as cross-listings of ADMJ 54 but are not in the closed list; marked as catalog additions.",
-   "'Total Required: 90 Units' is recorded as degree_total (quarter units, includes GE and electives); the page prints no separate major total. Required Core (16) and List A (22) are the printed block totals.",
-   "The line 'Additional completion of one of the following general education patterns: De Anza General Education or Cal-GETC AND electives as needed to reach at least 90 units' appears at the top of page 49, displaced by layout; read as belonging to the A.A. section.",
-   "List A begins on page 48 (ADMJ 6) and continues on page 49."
+   "The text opens with generic Bachelor of Science degree requirements (180 quarter units); these were ignored as they do not belong to this A.A. award.",
+   "Units are quarter units; degree total of 90 is printed as 'Total Required: 90 Units' (also Min/Max Units 90.0).",
+   "Cross-listed courses printed as consecutive rows (e.g., ADMJ 1 / POLI 10) were recorded as alternatives, per the note that students receive credit for only one version; Required Core 16 units = four 4-unit courses.",
+   "List A prints '(22 Units)' with no explicit selection wording; read as choose 22 units from the list.",
+   "Catalog codes without leading zeros (ADMJ 64X, 74A, 90A; PARA 74A, 90A; PSYC 74A) were matched to closed-list codes ADMJ 064X, 074A, 090A, etc.",
+   "GE pattern and electives 'as needed to reach at least 90 units' have no printed units; ge_units null and electives_fill_degree true.",
+   "No program learning outcomes printed."
   ]
  },
- "extracted_run": "39115772038"
+ "extracted_run": "43056325121"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Law Enforcement",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-enforcement-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13048,
+  "input_tokens": 9075,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13048,
-    "output_tokens": 3691,
+    "input_tokens": 9075,
+    "output_tokens": 3294,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3691,
+  "output_tokens": 3294,
   "output_tokens_details": {
-   "thinking_tokens": 1340
+   "thinking_tokens": 1102
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12601,
- "ms": 28313,
- "seconds": 28.9,
+ "cost_usd": 0.10218,
+ "ms": 36604,
+ "seconds": 37.1,
  "parts": null,
  "error": null,
  "score": {
@@ -55,15 +55,9 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "PARA54",
-    "SOC54"
-   ],
-   "flagged": [
-    "PARA54",
-    "SOC54"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -81,19 +75,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     46.0,
+     52.0
+    ],
+    "stated": [
+     46.0,
+     52.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -109,11 +117,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Law Enforcement A.A. Degree (no heading printed in the extracted text; section begins 'The A.A. degree in Law Enforcement...')",
+   "section_heading": "Law Enforcement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 46,
+    "max": 52
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,11 +138,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Identify the responsibilities of each component of the criminal justice system",
-    "Analyze the issues and theories of ethical standards and unethical conduct that are unique to the criminal justice field",
-    "Construct a professional report of a crime utilizing report criteria"
-   ],
+   "outcomes": [],
    "careers": [
     "criminal justice field"
    ]
@@ -327,18 +331,7 @@
       "code": "ADMJ 54",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "PARA 54",
-        "units": 4,
-        "catalog_addition": true
-       },
-       {
-        "code": "SOC 54",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -458,13 +451,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading for the Law Enforcement A.A. is not in the extracted text (it likely sits on the previous page); the section starts with 'The A.A. degree in Law Enforcement...'.",
-   "De Anza uses quarter units; 'Total Required: 90 Units' covers GE and electives ('electives as needed to reach at least 90 units'), so it is recorded as degree_total. No major total is printed (Core 32 + List A 14-20).",
-   "List A prints only '(14 - 20 Units)' with no explicit selection rule; recorded as choose_units with a minimum of 14.",
-   "The catalog prints ADMJ 90A, PARA 90A, ADMJ 74A, PARA 74A, PSYC 74A and ADMJ 64X/Y/Z without the leading zero the closed list uses (ADMJ 090A etc.). These are treated as matching closed-list courses.",
-   "PARA 54 and SOC 54 (cross-listed with ADMJ 54) are not in the closed list and are marked as catalog additions.",
-   "Cross-listed courses get credit for only one version; they are recorded as alternatives."
+   "The text opens with generic Bachelor of Science degree requirements (180 quarter units) that do not belong to this A.A. award; they were ignored.",
+   "De Anza counts quarter units; the A.A. degree total printed is 90 units and 'Major Required: 46-52 Credits'.",
+   "The catalog prints codes without leading zeros (ADMJ 90A, PARA 90A, ADMJ 64X/64Y/64Z, ADMJ 74A, PARA 74A, PSYC 74A); the closed list stores them as 090A, 064X, 074A etc. They were treated as the same courses (catalog_addition false).",
+   "Cross-listed versions printed as separate rows (e.g., ADMJ 1 / POLI 10) were recorded as alternatives of one entry, per the note that students receive credit for only one version.",
+   "List A prints 14-20 units with no explicit selection sentence; recorded as choose_units with minimum 14.",
+   "Electives as needed to reach at least 90 units: no elective units printed, so electives_fill_degree is true. No GE units printed.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Intercultural Studies",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=110",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intercultural-studies-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14014,
+  "input_tokens": 10310,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14014,
-    "output_tokens": 4893,
+    "input_tokens": 10310,
+    "output_tokens": 4628,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4893,
+  "output_tokens": 4628,
   "output_tokens_details": {
-   "thinking_tokens": 1521
+   "thinking_tokens": 1378
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.15392,
- "ms": 37352,
- "seconds": 37.8,
+ "cost_usd": 0.1338,
+ "ms": 34462,
+ "seconds": 35.1,
  "parts": null,
  "error": null,
  "score": {
@@ -55,15 +55,9 @@
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "HIST18A",
-    "HIST18B"
-   ],
-   "flagged": [
-    "HIST18A",
-    "HIST18B"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -81,19 +75,33 @@
    "ge": null,
    "why": [
     "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     44.0,
+     44.0
+    ],
+    "stated": [
+     44.0,
+     44.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -109,11 +117,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts (A.A.) Degree Intercultural Studies",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 44,
+    "max": 44
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,11 +138,7 @@
     "max": null
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Critically analyze social and political phenomena based on social constructs of race, class, ethnicity, gender, sexuality and identity to express cultural competence in local and global contexts",
-    "Articulate the values, experiences and contributions of historically marginalized populations",
-    "Demonstrate ability to interact in the workplace, community and other social contexts with sensitivity to individual and group-dynamic issues arising from political, economic and cultural experiences and positions"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -218,26 +222,14 @@
       "code": "AFAM 12A",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "HIST 18A",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "AFAM 12B",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "HIST 18B",
-        "units": 4,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -596,13 +588,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading is cut off before the excerpt (text begins mid-description on page 110); the heading recorded is inferred from the description ('the A.A. degree in Intercultural Studies') and the catalog's heading style for neighboring programs.",
-   "'Total Required: 90 Units' (quarter units) is printed after the page says GE (De Anza GE or Cal-GETC) AND electives as needed to reach at least 90 units are additionally required, so it is recorded as degree_total; no major total is printed (Core 16 + List A 28 = 44 not stated as a total), so total_units is null.",
-   "List A (28 units) is printed as sub-areas each with a 0-N unit range: African American Area (0-24), Asian American Area (0-28), Chicano Area (0-20), Latin American Area (0-8), Multicultural Area (0-28), Native American Area (0-24). Recorded as one choose_units block of 28 units with all area courses in catalog order; areas impose only maximums.",
-   "Catalog prints codes without leading zeros (e.g., ARTS 2F, HIST 16A, ASAM 30, ICS 77X, COMM 7H, HIST 3AH); these were matched to the closed list forms (ARTS 002F, HIST 016A, ASAM030, ICS 077X, COMM 007H, HIST 03AH).",
-   "HIST 18A and HIST 18B (cross-listed with AFAM 12A/12B) are not in the closed list and are marked catalog additions.",
-   "Catalog notes students receive credit for only one version of cross-listed/honors courses."
+   "The text before 'Program Requirements' (180 quarter units, upper-division courses, upper-division GE) appears to belong to a baccalaureate program on the same page, not to this A.A.; it was not used.",
+   "De Anza is on the quarter system; all units are quarter units. 'Major Required: 44 Credits' recorded as total_units; 'Total Required: 90 Units' (also Min/Max Units 90.0) recorded as degree_total.",
+   "List A (28 units) is subdivided into areas with per-area unit ranges: African American Area 0-24, Asian American Area 0-28, Chicano Area 0-20, Latin American Area 0-8, Multicultural Area 0-28, Native American Area 0-24. These are recorded as one choose_units block of 28 units in catalog order; the per-area maxima are additional constraints a reviewer should check.",
+   "Cross-listed/honors pairs recorded as alternatives (students receive credit for only one version): CETH 13/ARTS 2F, COMM 7/COMM 7H, ASAM 20/ELIT 24, CETH 29/ADMJ 29, HIST 3A/3AH, HIST 3B/3BH, HIST 3C/3CH, ICS 17/ICS 17H, WMST 8/CETH 8.",
+   "Catalog codes print without leading zeros (e.g., AFAM 12A, ASAM 30, ICS 77X) while the closed list uses AFAM 012A, ASAM030, ICS 077X; treated as the same courses.",
+   "GE: De Anza General Education or Cal-GETC, no GE units printed; electives as needed to reach at least 90 units, so electives_fill_degree is true.",
+   "No program learning outcomes or careers are printed in the text; the text is cut off at 'Advisory Boar'."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }
