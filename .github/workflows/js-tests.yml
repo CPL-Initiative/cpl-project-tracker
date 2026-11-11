@@ -41,6 +41,19 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The suite on main (Sky and COBIx, 2026-11-11, #3111 lesson 3). A push made
+  # with the built-in token starts no workflow, so the nightly's own commits and
+  # every other bot commit reached main untested: on 2026-11-11 the nightly
+  # rewrote kb/status/commons.json from a builder a PR had changed, and main was
+  # red with no run to say so. The dashboard's completion and one daily schedule
+  # test main's head after those commits; the gate below skips the suite when
+  # that head already passed, so a quiet day costs a gate and the lints.
+  # workflow-failure-watch.yml alerts on a red run of either.
+  workflow_run:
+    workflows: ["Daily CPL Dashboard"]
+    types: [completed]
+  schedule:
+    - cron: '41 17 * * *'   # ~10:41 AM PT, after the 3-cron ladder's latest delayed landing
 
 # A superseded run is wasted compute: this job is ~10 minutes, and a session
 # that pushes three times to one PR leaves two of them grinding to completion
@@ -74,6 +87,10 @@ env:
 jobs:
   gate:
     runs-on: ubuntu-latest
+    # actions: read for the already-tested lookup on a run of main's head.
+    permissions:
+      contents: read
+      actions: read
     outputs:
       decision: ${{ steps.gate.outputs.decision }}
     steps:
@@ -94,13 +111,26 @@ jobs:
       # anything unrecognized runs the suite (scripts/js_suite_gate.sh holds
       # the rule; tests/js_suite_gate_test.py pins its boundary both ways).
       # On push to main there is no base to diff against and the full suite
-      # always runs.
+      # always runs. A scheduled or workflow_run run tests main's head, and
+      # skips the suite when a run of this workflow already passed on that
+      # commit; a failed lookup runs it.
       - name: Decide whether the full JS suite runs
         id: gate
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+          EVENT: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$BASE_SHA" ]; then
+          if [ "$EVENT" = schedule ] || [ "$EVENT" = workflow_run ]; then
+            n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow js-tests.yml --commit "$GITHUB_SHA" \
+                  --status success --limit 5 --json databaseId -q 'length' 2>/dev/null || echo "")
+            if [ -n "$n" ] && [ "$n" -gt 0 ]; then
+              echo "main's head $GITHUB_SHA already passed this workflow ($n run(s))"
+              decision=skip
+            else
+              decision=run
+            fi
+          elif [ -z "$BASE_SHA" ]; then
             decision=run
           else
             git fetch --no-tags --depth=1 origin "$BASE_SHA"
@@ -1156,7 +1186,7 @@ jobs:
           [ "$LINTS" = success ] || { echo "::error::the lints job did not succeed ($LINTS)"; ok=false; }
           case "$DECISION:$SUITE" in
             run:success) echo "suite: every shard passed" ;;
-            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate)" ;;
+            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate), or main's head already passed" ;;
             *) echo "::error::suite result '$SUITE' under gate decision '$DECISION'"; ok=false ;;
           esac
           $ok

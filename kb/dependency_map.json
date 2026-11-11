@@ -31277,7 +31277,9 @@
   },
   "js-tests.yml": {
    "name": "JS tests",
-   "crons": [],
+   "crons": [
+    "41 17 * * *"
+   ],
    "scripts": [
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
@@ -31441,7 +31443,9 @@
    "adds": [],
    "push": null,
    "deploys": [],
-   "chain": [],
+   "chain": [
+    "Daily CPL Dashboard"
+   ],
    "urls": []
   },
   "k10-disclosure-check.yml": {

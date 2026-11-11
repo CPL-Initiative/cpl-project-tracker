@@ -47,6 +47,8 @@ closes the PR path only; THIS lane stays open by design.
 | `weekly-reflections-summary.yml` | `0 15 * * 1` | main (cron checkout) | `reflections/summary.json` |
 | `workplan-goals-seed-apply.yml` | dispatch-only | main | `kb/workplan_goals_validation.md`, `kb/workplan_goals_seed_plan.md`, `kb/workplan_goals_seed_out/` |
 
+`js-tests.yml` deploys after "Daily CPL Dashboard" by workflow NAME — runner-token pushes fire no
+push triggers, so this name edge is the only deploy path for cron commits.
 `pages.yml` deploys after "Daily CPL Dashboard", "cos-authority-sync" by workflow NAME — runner-token pushes fire no
 push triggers, so this name edge is the only deploy path for cron commits.
 
