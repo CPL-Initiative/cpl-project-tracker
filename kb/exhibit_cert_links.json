@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-11T14:43:28+00:00",
+ "_reference_generated_at": "2026-11-11T17:42:04+00:00",
  "counts": {
   "certs_linked": 234,
   "titles_linked": 278,
@@ -2605,13 +2605,6 @@
     "ITC4247"
    ]
   },
-  "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4256"
-   ]
-  },
   "Building Plans Examiner": {
    "relation": "holds",
    "rule": "all",
@@ -3382,6 +3375,13 @@
    "rule": "all",
    "certs": [
     "ITC6013"
+   ]
+  },
+  "Medium/Heavy Truck Parts Specialist (ASE P1 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4256"
    ]
   },
   "Microsoft Certified Solutions Associate (MCSA) — Windows Server": {

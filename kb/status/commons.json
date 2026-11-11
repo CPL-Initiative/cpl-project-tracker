@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-11T15:43:09Z",
+ "written_at": "2026-11-11T17:45:56Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2577,
-     "of": 5613,
-     "words": "titles carry a review stamp (1,236 a person's, 1,341 a cohort's); 2,746 credentials, 2,286 of 3,054 records stamped",
+     "n": 2680,
+     "of": 5716,
+     "words": "titles carry a review stamp (1,236 a person's, 1,444 a cohort's); 2,748 credentials, 2,289 of 3,057 records stamped",
      "open": "#exhibits/list"
     },
     {
      "n": 1236,
-     "of": 5613,
+     "of": 5716,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -150,22 +150,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-11T15:43:03Z",
+    "at": "2026-11-11T17:40:48Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5613,
-    "stamped": 2577,
+    "titles": 5716,
+    "stamped": 2680,
     "person": 1236,
-    "cohort": 1341,
-    "credentials": 2746,
+    "cohort": 1444,
+    "credentials": 2748,
     "confirmed": 1236,
-    "records": 3054,
-    "records_stamped": 2286,
+    "records": 3057,
+    "records_stamped": 2289,
     "saved_at": "2026-11-11T15:43:03Z",
-    "fold_at": "2026-11-11T06:24:41Z",
-    "map_titles": 5086,
-    "unclassified": 280,
+    "fold_at": "2026-11-11T17:40:48Z",
+    "map_titles": 5087,
+    "unclassified": 178,
     "left_map": 807,
     "below_80": 1123,
     "below_60": 237
@@ -265,7 +265,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-11T14:44:28+00:00",
+    "at": "2026-11-11T17:43:01+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -477,7 +477,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-11T14:42:09Z",
+    "at": "2026-11-11T17:40:45Z",
     "every_hours": 24
    },
    "facts": {
@@ -763,34 +763,34 @@
     {
      "name": "classifier",
      "placed": 945,
-     "untouched": 821,
+     "untouched": 869,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
      "by_procedure": 19,
-     "left": 48,
+     "left": 0,
      "looked": 57
     },
     {
      "name": "course-identity",
      "placed": 192,
-     "untouched": 167,
+     "untouched": 168,
      "kept": 0,
      "renamed": 24,
      "moved": 0,
      "by_procedure": 0,
-     "left": 1,
+     "left": 0,
      "looked": 24
     },
     {
      "name": "brand-family",
      "placed": 115,
-     "untouched": 54,
+     "untouched": 108,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 54,
+     "left": 0,
      "looked": 2
     },
     {
@@ -851,12 +851,12 @@
    ],
    "total": {
     "placed": 1319,
-    "untouched": 1085,
+    "untouched": 1188,
     "kept": 23,
     "renamed": 84,
     "moved": 0,
     "by_procedure": 24,
-    "left": 103,
+    "left": 0,
     "looked": 107
    }
   },
@@ -957,25 +957,33 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 1,
-   "of": 1,
+   "n": 2,
+   "of": 2,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 1 exhibit title",
+   "title": "Another look at 2 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "ase"
+    "ase",
+    "numerals"
    ],
    "cards": [
     {
-     "id": "7487be0172f2",
-     "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+     "id": "5dcc165d855e",
+     "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
      "keys": [
       "_UNCLASSIFIED::Noncredit for AUTO P1"
      ]
+    },
+    {
+     "id": "47c90f286f99",
+     "current": "Elementary French I",
+     "keys": [
+      "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
+     ]
     }
    ],
-   "at": "2026-11-11T14:46:46Z"
+   "at": "2026-11-11T17:45:23Z"
   },
   {
    "kind": "job",
@@ -990,24 +998,32 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 1,
-  "of": 1,
+  "n": 2,
+  "of": 2,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 1 exhibit title",
+  "title": "Another look at 2 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "ase"
+   "ase",
+   "numerals"
   ],
   "cards": [
    {
-    "id": "7487be0172f2",
-    "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+    "id": "5dcc165d855e",
+    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
     "keys": [
      "_UNCLASSIFIED::Noncredit for AUTO P1"
     ]
+   },
+   {
+    "id": "47c90f286f99",
+    "current": "Elementary French I",
+    "keys": [
+     "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
+    ]
    }
   ],
-  "at": "2026-11-11T14:46:46Z"
+  "at": "2026-11-11T17:45:23Z"
  }
 }

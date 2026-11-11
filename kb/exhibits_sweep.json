@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-11T14:46:46Z",
+ "generated_at": "2026-11-11T17:45:23Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -54,16 +54,16 @@
  ],
  "counts": {
   "ase": 1,
-  "numerals": 0,
+  "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 1,
+ "local_titles": 2,
  "cards": [
   {
-   "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+   "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
    "proposed": "Medium/Heavy Truck Parts Specialist (ASE P1)",
    "rules": [
     "ase"
@@ -79,11 +79,38 @@
      "credit": ""
     }
    ],
-   "id": "7487be0172f2",
+   "id": "5dcc165d855e",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary French I",
+   "proposed": "Elementary French 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "French 1-Elementary French 1st Quarter",
+     "colleges": [
+      "De Anza College"
+     ],
+     "course": "",
+     "credit": "5 hours in Elementary French (First Quarter)"
+    }
+   ],
+   "id": "47c90f286f99",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 6,
+   "proposed_issuer": "California Community Colleges",
    "current_locals": 1,
    "moves_all": true
   }

@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-11
 
-Generated: `2026-11-11T14:44:58Z`
+Generated: `2026-11-11T17:43:30Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -11,8 +11,8 @@ Generated: `2026-11-11T14:44:58Z`
 | V1 | No two renames target the same new name | PASS ✓ |
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
-| — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
+| — | Queued collisions (non-blocking — wait for a curator decision) | 35 |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
@@ -20,11 +20,64 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 
 ## Clean renames (would land on apply)
 
-_None today._ Infrastructure populates the moment a curator enters a rename.
+| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
+|---|---|---|---:|---:|---|
+| `ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)` | → | `ASE Certificate Bundles` | 2 | 2 | ✓ |
+| `Automotive Air Conditioner` | → | `Heating and Air Conditioning (ASE A7 standards)` | 1 | 1 | ✓ |
+| `Automotive Braking Systems` | → | `Brakes (ASE A5 standards)` | 2 | 0 | ✓ |
+| `Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems 1 (ASE A6 standards)` | 1 | 0 | ✓ |
+| `Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems 2 (ASE A6 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` | → | `Automatic Transmission/Transaxle (ASE A2 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems (ASE A6 standards)` | 3 | 0 | ✓ |
+| `Automotive Technology (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` | → | `Light Vehicle Diesel Engines (ASE A9 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` | → | `Advanced Engine Performance Specialist (ASE L1 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` | → | `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)` | 1 | 0 | ✓ |
+| `Engine Performance 2 (ASE A8 Engine Performance)` | → | `Engine Performance 2 (ASE A8 standards)` | 1 | 0 | ✓ |
+| `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` | → | `Manual Drive Train and Axles (ASE A3 standards)` | 1 | 0 | ✓ |
+| `Suspension and Steering (ASE A4 Suspension and Steering)` | → | `Suspension and Steering (ASE A4 standards)` | 3 | 2 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 
-_None._
+Each row's proposed new title already exists as a key in `credentials.json`. Policy: non-blocking decision queue — these wait (clean renames + confirmed merges apply without them) until the curator picks a non-colliding target or explicitly confirms the merge in the CER triage lane (PR-5b/2).
+
+| Old | → | New (collides) | Existing records on target | Why queued |
+|---|---|---|---:|---|
+| `ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE A8 + L1 — Engine Performance and Advanced Engine Performance` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A1, A6, A8, L1` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A2, A3, A6` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A4, A5` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A4, A5, A6` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A6 or T6 + L3` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — A6, A8, L1` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — L2, T8, SP/2 HD` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T2, T5, T7, T8 + MACS/609` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T2, T6, T8 + Snap-on 604` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T2, T8` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T3, T4, T5, T8` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T3, T8, SP/2 HD` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T4, T8, SP/2 HD` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T5, T8` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T5, T8, SP/2 HD` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T6, T8 + Snap-on 604` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Bundle — T7, T8 + MACS/609` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Certification (any A1–A8)` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE G1 + ALI Lift It Right Bundle` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Master Automobile Technician` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Master Automobile Technician (A1–A8 + L1)` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Master Automobile Technician (A1–A8) or L3` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `ASE Master Medium/Heavy Truck Technician (T1–T8)` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `Advanced Electrical and Electronic Systems` | → | `ASE Certificate Bundles` | 0 | intra_batch_same_target |
+| `Automotive Technology (ASE A7 Heating and Air Conditioning)` | → | `Heating and Air Conditioning (ASE A7 standards)` | 0 | intra_batch_same_target |
+| `Heating and Air Conditioning` | → | `Heating and Air Conditioning (ASE A7 standards)` | 0 | intra_batch_same_target |
+| `Automotive Technology (ASE A5 Brakes)` | → | `Brakes (ASE A5 standards)` | 0 | intra_batch_same_target |
+| `Engine Performance (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 0 | intra_batch_same_target |
+| `Engine Performance 1 (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 0 | intra_batch_same_target |
 
 ## Skipped
 
