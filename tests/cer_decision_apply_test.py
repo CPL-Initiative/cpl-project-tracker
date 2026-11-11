@@ -491,6 +491,21 @@ for p in plans:
         ok, pl = False, str(e)
     check("%s loads: ruling, a bot cohort, CER and unclassified rows only" % name, ok, pl)
 
+# ── every committed plan sits in a directory cer-decision-apply.yml accepts ───
+# Run 43104136989 (S638, 2026-11-11) failed at the workflow's input check: three plans were committed under
+# "<date>-s638..." names its `case "$PLAN_DIR"` pattern rejects. The patterns are read from the workflow itself.
+import fnmatch  # noqa: E402
+import re  # noqa: E402
+with open(os.path.join(ROOT, ".github", "workflows", "cer-decision-apply.yml"), encoding="utf-8") as fh:
+    wf = fh.read()
+m = re.search(r'case "\$PLAN_DIR" in\s*\n\s*([^\n]+?)\)\s*;;', wf)
+patterns = m.group(1).split("|") if m else []
+check("the workflow's plan_dir case pattern is found", bool(patterns))
+for p in plans:
+    rel = os.path.relpath(os.path.dirname(p), ROOT).replace(os.sep, "/")
+    check("%s is a plan_dir the workflow accepts" % rel,
+          any(fnmatch.fnmatchcase(rel, pat.strip()) for pat in patterns), patterns)
+
 passed = 0
 for name, ok, why in results:
     print(f"{'  ok' if ok else 'FAIL'}  {name}" + ("" if ok else f"  — {why}"))

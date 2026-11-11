@@ -36,13 +36,14 @@ check("the view reads the run log and the Commons figures", /kb\/status\/exhibit
 const ex = COMMONS.rows.filter((r) => r.key === "exhibit")[0];
 check("the Commons row carries the auditor's tallies the view reads",
   ex && ["map_titles", "unclassified", "left_map", "below_80", "below_60"].every((k) => typeof ex.facts[k] === "number"));
-check("the Commons row's counts open Exhibits' List, left-MAP its own List filter (S574), the procedures Exhibits' Rules (Sheet 148, link-retire)",
-  // An issue that reads zero is left out (S540), so the row carries some of the three, in this order.
+check("the Commons row's counts open Exhibits' List, no-Common-SUBJ and left-MAP their own List filters (S574, S638), the procedures Exhibits' Rules (Sheet 148, link-retire)",
+  // An issue that reads zero is left out (S540), so the row carries some of the four, in the builder's order.
   ex && ex.pair[0].open === "#exhibits/list" && ex.issues.length > 0
-  && (function () { var order = ["#exhibits/held", "#exhibits/conflict", "#exhibits/list/left"], at = -1;
+  && (function () { var order = ["#exhibits/held", "#exhibits/conflict", "#exhibits/list/nosubj", "#exhibits/list/left"], at = -1;
       return ex.issues.every(function (i) { var k = order.indexOf(i.open); var ok = k > at; at = k; return ok; }); })()
   && ex.procedures[0].open === "#exhibits/rules");
-check("the builder writes those links", /"open": tab \+ "\/held"/.test(BUILDER) && /"open": tab \+ "\/conflict"/.test(BUILDER) && /"open": tab \+ "\/rules"/.test(BUILDER));
+check("the builder writes those links", /"open": tab \+ "\/held"/.test(BUILDER) && /"open": tab \+ "\/conflict"/.test(BUILDER)
+  && /"open": tab \+ "\/list\/nosubj"/.test(BUILDER) && /"open": tab \+ "\/rules"/.test(BUILDER));
 const css = SRC.slice(SRC.indexOf("function ensureCss()"), SRC.indexOf("function mount("));
 check("the injected CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(css.replace(/#tab-credential-reference/g, "").replace(/#cx-/g, "")));
 check("the injected CSS uses tokens", /var\(--cobalt\)/.test(css) && /var\(--border\)/.test(css) && /var\(--text-muted\)/.test(css));
