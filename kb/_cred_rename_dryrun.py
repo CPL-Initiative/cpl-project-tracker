@@ -27,6 +27,12 @@ rename). A confirm naming a DIFFERENT target than the current override is
 stale and stays queued; a merge whose target is itself retitled in the same
 batch stays queued (chain hazard). NEVER inferred, never auto-merged.
 
+One pass (#3110 build step 1, 2026-11-11): when several sources retitle to the same NEW name, the
+source with no merge confirm leads (a plain rename that creates the title) and every source whose
+`unified_title_merge_confirm` names that new title folds into it in the same apply. Only an
+unconfirmed sibling still waits as `intra_batch_same_target`. `issuer_preview` in the alias map shows
+each fold group's issuer under kb/fold_issuer.py's rules.
+
 Re-runnable. Daily cron runs this as a report-only step so the queue stays
 visible (and the artifact gets committed daily). Apply is a separate
 manual `workflow_dispatch` event (Cred-Ref PR-5b/1).
@@ -44,10 +50,16 @@ from __future__ import annotations
 import json
 import os
 from collections import defaultdict
+import sys
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402
+
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
+RELATED = os.path.join(HERE, "exhibits_related.json")
+FAMILIES = os.path.join(HERE, "reference", "credential_families.json")  # owned by the family-tag converter
 UNIFIED_TITLES = os.path.join(HERE, "unified_titles.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
@@ -119,10 +131,21 @@ def main():
         and (v or {}).get("unified_title_override") != o
     }
 
+    # A title saved into a declared family title (Sam's ruling C) is held here, before the twin and
+    # collision lanes, with or without a merge confirm: it never becomes a group's lead (a clean rename
+    # that would mint the family name as a credential) nor a collision a curator could confirm into a merge.
+    families = fold_issuer.family_titles(FAMILIES)
+    held_early = []
+
     for old_ut, ov in sorted(overrides.items()):
         new_ut = (ov or {}).get("unified_title_override")
         if not new_ut:
             continue  # only iterating renames; non-rename overrides are PR-5a's job
+        if new_ut in families and new_ut != old_ut:
+            held_early.append({"old": old_ut, "target": new_ut,
+                               "kind": "merge" if (ov or {}).get("unified_title_merge_confirm") == new_ut
+                               else "rename", "why": fold_issuer.FAMILY_HELD_LINE})
+            continue
         if new_ut == old_ut:
             skipped.append({
                 "old_unified_title": old_ut,
@@ -193,11 +216,63 @@ def main():
     for new_ut, sources in target_groups.items():
         if len(sources) < 2:
             continue
-        sources.sort(key=lambda o: ((overrides.get(o) or {}).get("reviewed_at")
-                                    or "", o))
+        # The lead is a source with no merge confirm (the one that creates the title); the earliest
+        # saved among those, or among all when every source confirmed. An entry's reviewed_at is its
+        # latest field's, so an issuer edited after the batch must not make a sibling the lead.
+        # Saved-at is the rename row's own stamp where the overlay carries one (field_reviews).
+        def _saved(o):
+            e = overrides.get(o) or {}
+            st = (e.get("field_reviews") or {}).get("unified_title_override") or {}
+            return st.get("at") or e.get("reviewed_at") or ""
+        sources.sort(key=lambda o: (
+            (overrides.get(o) or {}).get("unified_title_merge_confirm") == new_ut, _saved(o), o))
         for o in sources[1:]:
             del renames_clean[o]
             ov = overrides.get(o) or {}
+            # Only when the lead has a credentials.json record: a lead with none creates no key, so
+            # the fold would find no target (it then waits as below, as before the one-pass apply).
+            if ov.get("unified_title_merge_confirm") == new_ut and sources[0] in credentials:
+                # One-pass apply (#3110 build step 1): the curator already confirmed this sibling's
+                # merge into the title the group's lead creates, so it folds in the same run. The
+                # apply re-keys the lead first (rekey_credentials), then folds (fold_credentials), so
+                # the target exists by the time the fold reads it. A sibling with no confirm still
+                # waits, as below.
+                merges_confirmed[o] = new_ut
+                merge_details.append({
+                    "old_unified_title": o,
+                    "merge_into": new_ut,
+                    "same_run_lead": sources[0],
+                    "records_folding": len(credentials.get(o) or []),
+                    "existing_records_on_target": len(credentials.get(sources[0]) or []),
+                    "raw_titles": len(raw_titles_by_ut.get(o, [])),
+                    "articulations": art_records_by_ut.get(o, 0),
+                    "confirmed_by": ov.get("reviewed_by"),
+                    "confirmed_at": ov.get("reviewed_at"),
+                })
+                continue
+            if ov.get("unified_title_merge_confirm") == new_ut:
+                # Confirmed, but the lead that creates the title has no credentials.json record, so this
+                # run makes no key to fold into. Said plainly: it does not become a collision on its
+                # own later, and the fold's issuer rules never run for this group until a person acts.
+                collisions.append({
+                    "old_unified_title": o,
+                    "proposed_new_title": new_ut,
+                    "reason": "lead_has_no_credentials_record",
+                    "first_of_group": sources[0],
+                    "existing_credential_records": 0,
+                    "rename_would_touch": {
+                        "raw_titles_in_unified_titles_json": len(raw_titles_by_ut.get(o, [])),
+                        "articulation_records": art_records_by_ut.get(o, 0),
+                        "credentials_json_key_exists": o in credentials,
+                    },
+                    "reviewed_by": ov.get("reviewed_by"),
+                    "reviewed_at": ov.get("reviewed_at"),
+                    "policy": ("held: its merge into %r is confirmed, but that title is created by %r, which "
+                               "has no credentials.json record, so no key exists to fold into. Nothing is "
+                               "folded and the confirm is not applied. A person gives the lead a record, or "
+                               "points this title's confirm at a title that exists." % (new_ut, sources[0])),
+                })
+                continue
             collisions.append({
                 "old_unified_title": o,
                 "proposed_new_title": new_ut,
@@ -215,6 +290,19 @@ def main():
                            "regular collision (confirmable in the CER strip) "
                            "once the group's first rename lands"),
             })
+
+    # ── Family titles: a fold into one is not a merge (Sam's ruling C) ──────
+    renames_clean, merges_confirmed, held_family = fold_issuer.hold_family_folds(
+        renames_clean, merges_confirmed, families)
+    held_family = held_early + held_family
+    held_old = {h["old"] for h in held_family}
+    merge_details = [m for m in merge_details if m["old_unified_title"] not in held_old]
+
+    # ── Issuer preview (kb/fold_issuer.py) ───────────────────────────────────
+    # What each fold group's issuer will be, decided by the same rules the apply runs. A preview only:
+    # the apply recomputes it on the fresh overlay and freezes it into its receipt.
+    issuer_plan = fold_issuer.plan(renames_clean, merges_confirmed, overrides, credentials,
+                                   fold_issuer.path_tallies(_load(RELATED, {})))
 
     # ── V1/V2/V3 validation gates ─────────────────────────────────────────────
     # V1 — every clean rename target is unique among the proposed set
@@ -268,6 +356,7 @@ def main():
                 1 for v in overrides.values() if (v or {}).get("unified_title_override")),
             "clean_renames": len(renames_clean),
             "confirmed_merges": len(merges_confirmed),
+            "held_as_family_tags": len(held_family),
             "collisions": len(collisions),
             "skipped": len(skipped),
             "renames_of_titles_with_no_credentials_record": len(no_credential_record),
@@ -282,6 +371,15 @@ def main():
         # target (dedupe on issuer+trainer) and re-keys raws + articulations.
         "merges": merges_confirmed,
         "merge_details": merge_details,
+        # Saved folds into a declared family title (kb/reference/credential_families.json): not merges, never
+        # folded; the family-tag converter turns these rows into family tags.
+        "held_family": held_family,
+        # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
+        "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
+                               "conflict": g["resolution"]["conflict"],
+                               "humans": g["resolution"]["humans"],
+                               "exceptions": g["exceptions"]}
+                           for t, g in issuer_plan.items()},
     }
     with open(os.path.join(OUT_DIR, "alias_map.json"), "w", encoding="utf-8") as f:
         json.dump(alias_map_payload, f, indent=2, ensure_ascii=False)
@@ -309,6 +407,13 @@ def main():
                     intra_batch_collisions, v2_blocked, v3_blocked,
                     raw_titles_by_ut, art_records_by_ut, credentials,
                     apply_safe)
+    if held_family:
+        fam = ["## Held: folds into a family title", ""]
+        fam += ["- `%s` (%s) into `%s`: %s" % (h["old"], h["kind"], h["target"], h["why"]) for h in held_family]
+        md = md.replace("## Clean renames (would land on apply)",
+                        "\n".join(fam) + "\n\n## Clean renames (would land on apply)", 1)
+    md = md.replace("## Clean renames (would land on apply)",
+                    _render_issuer_md(issuer_plan) + "## Clean renames (would land on apply)", 1)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
         f.write(md)
 
@@ -324,6 +429,22 @@ def main():
     print(f"  V3 (target collision):   {'PASS' if v3_pass else f'FAIL ({len(v3_blocked)})'}")
     print(f"  apply-safe:              {apply_safe}")
     print(f"  wrote: {OUT_DIR}/{{report.md, alias_map.json, collisions.json}}")
+
+
+def _render_issuer_md(issuer_plan):
+    """The fold groups' issuer preview: which rule decides each, conflicts, and exceptions for a person."""
+    lines = ["## Issuer of each folded title (preview, kb/fold_issuer.py)", ""]
+    if not issuer_plan:
+        lines += ["_No folds._", ""]
+        return "\n".join(lines) + "\n"
+    lines.append("Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disagreement). "
+                 "Rule 2, cert form: the target's issuer stays and a folded college record is dropped. "
+                 "Rule 3, additive.")
+    lines.append("")
+    for target, g in issuer_plan.items():
+        lines += fold_issuer.receipt_lines(g["resolution"], None, g["exceptions"])
+    lines.append("")
+    return "\n".join(lines) + "\n"
 
 
 def _render_md(renames_clean, merge_details, collisions, skipped,
@@ -399,6 +520,14 @@ def _render_md(renames_clean, merge_details, collisions, skipped,
         for c in collisions:
             lines.append(f"| `{c['old_unified_title']}` | → | `{c['proposed_new_title']}` "
                          f"| {c['existing_credential_records']} | {c.get('reason', '')} |")
+        held = [c for c in collisions if c.get("reason") == "lead_has_no_credentials_record"]
+        if held:
+            lines.append("")
+            lines.append("**Held for a person** (the merge is confirmed, but the title it merges into would "
+                         "be created by a title with no credentials.json record):")
+            lines.append("")
+            for c in held:
+                lines.append(f"- `{c['old_unified_title']}`: {c['policy']}")
     lines.append("")
     lines.append("## Skipped")
     lines.append("")

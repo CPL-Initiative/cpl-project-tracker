@@ -29,6 +29,14 @@ public.kb_curation:
        DELETE, not PATCH (run #4's 8×409 lesson). A 409 on a merge PATCH
        falls back to the same supersede-DELETE.
 
+  This script never updates or deletes an issuer row for the fold's issuer
+  decision (#3116 redesign): kb/_cred_fold_resolution_write.py writes one
+  issuer_resolution row per folded target before this step, and every reader
+  resolves the moved rows through kb/fold_issuer.py effective_issuer(). Every
+  logged op carries the row as it stood (before_row, validated_* included),
+  and a retry writes supabase_log-<UTC>.json beside the first log, so
+  kb/_cred_rename_undo.py --supabase-plan can write the reversal.
+
 Why DELETE + PATCH (not single PATCH-all):
   * The unified_title_override row's PURPOSE is fulfilled by the apply —
     keeping it under the new key would re-fire on the next dry-run as a
@@ -68,6 +76,8 @@ import urllib.request
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402  (RESOLUTION_FIELD: a resolution row is never PATCHed onto another)
 OUT_ROOT = os.path.join(HERE, "cred_rename_out")
 KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 
@@ -88,7 +98,12 @@ def _find_latest_snapshot():
             candidates.append((name, path))
     if not candidates:
         return None
-    candidates.sort(reverse=True)  # YYYY-MM-DD lex order = chronological
+    # <date>, then <date>-2, -3 … -10: by date, then by the same-day number (a string sort put -10
+    # before -9).
+    def order(c):
+        date_part, n = c[0][:10], c[0][11:]
+        return (date_part, int(n) if n.isdigit() else 1)
+    candidates.sort(key=order, reverse=True)
     return candidates[0]
 
 
@@ -104,7 +119,8 @@ def fetch_credential_review_rows() -> dict:
     docs/kb-notes/methodology-paginate-postgrest-reads.md; 138 rows today).
     """
     qs = urllib.parse.urlencode({
-        "select": "course_id,field,value,reviewer_email,reviewed_at",
+        # validated_at / validated_by too: a deleted row's before_row must restore it exactly.
+        "select": "course_id,field,value,reviewer_email,reviewed_at,validated_at,validated_by",
         "course_id": f"like.{KEY_PREFIX}%",
         "order": "course_id.asc,field.asc",
     })
@@ -195,6 +211,24 @@ def patch_row(old_course_id: str, new_course_id: str, field: str) -> dict:
                 "error": str(e)[:200]}
 
 
+ROW_COLS = ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")
+
+
+def _before(row):
+    """The row as it stood, every column the undo needs to put it back exactly."""
+    return {k: (row or {}).get(k) for k in ROW_COLS}
+
+
+def _next_log_path(folder):
+    """supabase_log.json, or supabase_log-<UTC>.json when a run already wrote one: a retry never
+    overwrites the first run's before-rows, which are the undo's input."""
+    first = os.path.join(folder, "supabase_log.json")
+    if not os.path.exists(first):
+        return first
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    return os.path.join(folder, f"supabase_log-{stamp}.json")
+
+
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
@@ -212,6 +246,7 @@ def main():
 
     print(f"[cred_rename_apply_supabase] {datetime.now(timezone.utc).isoformat()}")
     print(f"  snapshot: {date_stamp} ({len(renames)} renames, {len(merges)} merges)")
+    log_path = _next_log_path(os.path.join(OUT_ROOT, date_stamp))
 
     existing = fetch_credential_review_rows()
     print(f"  existing _CREDENTIAL_REVIEW::* course_ids in Supabase: {len(existing)}")
@@ -244,12 +279,12 @@ def main():
         for row in rows_for_old:
             field = row.get("field") or ""
             if field == "unified_title_override" or (
-                    kind == "merge" and field == "unified_title_merge_confirm"):
-                # Decision fulfilled — drop it. Per the ADR, the alias_map
-                # snapshot at kb/cred_rename_out/<date>/ is the canonical
-                # audit trail of "this rename/merge happened on this date."
+                    field == "unified_title_merge_confirm"
+                    and (kind == "merge" or row.get("value") == new_ut)):
+                # Decision fulfilled — drop it. A lead's own confirm naming the title it creates
+                # (an all-confirmed group) is fulfilled too; moved, it would point at itself.
                 res = delete_row(old_cid, field)
-            elif kind == "merge" and field in target_fields:
+            elif field in target_fields and (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD):
                 # The merge target already carries this field — its curator
                 # data wins; a PATCH would violate the (course_id, field) PK.
                 res = delete_row(old_cid, field)
@@ -261,7 +296,7 @@ def main():
                 res = patch_row(old_cid, new_cid, field)
                 if res.get("status") == "ok":
                     target_fields.add(field)
-                elif kind == "merge" and "409" in str(res.get("error") or ""):
+                elif (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD) and "409" in str(res.get("error") or ""):
                     # Defensive backstop for live-claim drift (e.g. a curator
                     # save landing mid-run): the target row exists, so the
                     # source row is superseded — drop it instead of stranding
@@ -270,15 +305,17 @@ def main():
                     res["superseded_by_target"] = True
                     res["via"] = "409_fallback"
                     target_fields.add(field)
+            # The row as it stood, so kb/_cred_rename_undo.py --supabase-plan can put it back.
+            res["before_row"] = _before(row)
             log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
             if res.get("status") == "ok":
                 ok += 1
             else:
                 fail += 1
 
-    # Persist the per-row log next to the snapshot so a future operator
-    # can see exactly what landed (and replay failed rows individually).
-    log_path = os.path.join(OUT_ROOT, date_stamp, "supabase_log.json")
+    # The issuer decision is NOT carried here (the #3116 redesign): the fold's one issuer_resolution
+    # row per target was written by kb/_cred_fold_resolution_write.py before this step, and every
+    # reader resolves the moved rows through fold_issuer.effective_issuer().
     log_payload = {
         "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "alias_map_snapshot": alias_path,
