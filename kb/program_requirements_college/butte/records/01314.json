@@ -141,7 +141,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Identify and explain the difference among the six areas law.",
     "Demonstrate workflow processes of a legal environment.",
@@ -265,5 +265,14 @@
    "The description states the AS requires completing the LOA Certificate and the LOA Certificate of Achievement plus GE and any electives required."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

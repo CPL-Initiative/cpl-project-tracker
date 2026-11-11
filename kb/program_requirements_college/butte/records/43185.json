@@ -137,7 +137,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
     "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
@@ -293,5 +293,14 @@
    "Program learning outcomes are printed once for the program and recorded for this A.S. award."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

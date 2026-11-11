@@ -141,7 +141,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply knowledge of medical terminology to perform outpatient/physician diagnostic coding, and determine outpatient/procedural coding based on the abstraction of medical records.",
     "Analyze and interpret medical information and apply sound decision-making skills pertaining to the appropriate ICD and CPT codes needed to maximize compensation for services rendered.",
@@ -155,7 +155,8 @@
     "Medical Records Administrative Assistant",
     "Insurance Verification Specialist",
     "Medical Intake Specialist"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -293,5 +294,20 @@
    "Description says AS students complete the MOA Certificate and MOA Certificate of Achievement plus GE and electives."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Meets Area 5"
+  }
+ ],
+ "read_run": "38981247046"
 }

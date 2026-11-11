@@ -141,7 +141,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Safely and accurately use all equipment and products relating to the Cosmetology industry.",
     "Demonstrate the most current methods and procedures using professional tools and equipment within the Cosmetology industry.",
@@ -243,5 +243,14 @@
    "GE pattern recorded as Butte GE from 'Map (Butte GE)' and the 'Butte Local' fragment. The map also suggests taking a Cal-GETC course for electives."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

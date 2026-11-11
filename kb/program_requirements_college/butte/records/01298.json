@@ -61,34 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    51.0,
-    51.0
+    44.0,
+    44.0
    ],
    "stated": [
-    60.0,
-    62.0
+    44.0,
+    44.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Butte Local, Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     44.0,
-     44.0
+     72.0,
+     72.0
     ],
     "stated": [
-     44.0,
-     44.0
+     60.0,
+     62.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -113,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,10 +136,10 @@
     "max": 62
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Explain the relevance of the central components of the food system in the context of the three pillars of sustainability.",
     "Apply fundamental principles of plant and soil science to agriculture production and integrated pest management systems.",
@@ -149,7 +151,8 @@
    "careers": [
     "agriculture service industry",
     "agriculture education"
-   ]
+   ],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -344,5 +347,32 @@
    "Careers read from the description: 'Employment is found on ranches and farms, as well as the vast agriculture service industry. Career opportunities also exist with governmental agencies and non-profits as well as agriculture education.' Ranches/farms, governmental agencies and non-profits were read as employers rather than career fields; reviewer may wish to add them."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Meets Area 4"
+  }
+ ],
+ "read_run": "38981247046"
 }

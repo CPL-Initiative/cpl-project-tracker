@@ -65,8 +65,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.5,
     25.5
@@ -76,24 +76,28 @@
     24.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.5-25.5; the catalog states 21.5-24.5"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     21.5,
-     25.5
+     55.5,
+     59.5
     ],
     "stated": [
      60.0,
      69.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     0.5,
+     13.5
     ]
    }
   },
@@ -119,7 +123,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,10 +144,10 @@
     "max": 69
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Identify and describe major concepts, theoretical principles, history and evolution, and current trends in kinesiology.",
     "Describe physical activity as it relates to physiological responses and adaptations to exercise.",
@@ -470,5 +474,26 @@
    "Map recommendations (STAT C1000/C1000E, KIN 11, POLS C1000, HIST 18/26/C1001) are advisory and not recorded as blocks."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "GE Pattern(s): Cal-GETC (https://butte.curriqunet.com/catalog/iq/25389/28399/27604: Butte AA-T and AS-T pages: 'GE Pattern(s): Cal-GETC' above 'Map (Cal-GETC)' (History AA-T 31000; college page read 42957477366); Butte College Cal-GETC Requirements: 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

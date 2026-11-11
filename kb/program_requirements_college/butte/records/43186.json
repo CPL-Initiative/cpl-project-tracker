@@ -62,20 +62,24 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    51.0,
-    51.0
+    72.0,
+    72.0
    ],
    "stated": [
     60.0,
     63.0
    ],
    "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Butte Local pattern, but no units for it"
+   "ge": [
+    21.0,
+    21.0
    ],
+   "why": [
+    "the blocks and general education come to 72.0-72.0, past the 60.0-63.0 the catalog prints for the degree"
+   ],
+   "fill": null,
    "major": {
     "pass": true,
     "status": "equal",
@@ -134,10 +138,10 @@
     "max": 63
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Adhere to standards of professional practice and practice within legal, ethical and regulatory framework.",
     "Demonstrate effective verbal, non-verbal, and written communication using compassion and cultural awareness resulting in trusting relationships.",
@@ -262,5 +266,26 @@
    "Program Learning Outcomes are printed for the program as a whole; the A.S. degree is the only award on the page."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

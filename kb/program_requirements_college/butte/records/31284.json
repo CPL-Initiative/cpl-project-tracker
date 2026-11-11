@@ -67,34 +67,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
     33.0
    ],
    "stated": [
-    60.0,
-    64.0
+    30.0,
+    33.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Butte Local, Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     30.0,
-     33.0
+     51.0,
+     54.0
     ],
     "stated": [
-     30.0,
-     33.0
+     60.0,
+     64.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     6.0,
+     13.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,17 +145,18 @@
     "max": 64
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Identify and demonstrate the visualization techniques, ideation processes, and the tools and materials used to develop concepts for the video games and entertainment industries.",
     "List and describe the formal and dramatic elements that comprise a well- designed video game and conceptualize and refine an idea for a video game.",
     "Design and implement computer algorithms and applications using basic computation, input and output, control structures, and a variety of data structures in an object oriented programming language.",
     "Use a variety of artistic and technical techniques and tools to translate ideas into multimedia presentations."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -300,5 +306,32 @@
    "MSP 9 and MSP 45 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Meets Area 3"
+  }
+ ],
+ "read_run": "38981247046"
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 192,
  "with_closed_list": 168,
- "started": "2026-11-11T04:58:22Z",
+ "started": "2026-11-11T06:37:41Z",
  "curriqunet": {
   "catalog": 14,
   "view_prefix": "https://butte.curriqunet.com/Catalog//iq/",
@@ -25,7 +25,7 @@
  "pages_read": 246,
  "banner_h1": null,
  "loads": 1171,
- "seconds": 5600.7,
+ "seconds": 5660.6,
  "found": 165,
  "by_method": {
   "no_closed_list": 24,
@@ -131,7 +131,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28078/28202",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28078/28202",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -141,7 +141,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28286",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28286",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28286",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -151,7 +151,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28198",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28198",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28198",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -161,7 +161,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28240",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28240",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28240",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -171,7 +171,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28242",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28242",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28242",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -181,7 +181,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28192",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28192",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28192",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -191,7 +191,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28244",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28244",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28244",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -201,7 +201,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28247",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28247",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28247",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -211,7 +211,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28335",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28335",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -221,7 +221,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28232",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28232",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28232",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -231,7 +231,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28235",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28235",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28235",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -241,7 +241,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28238",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28238",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28238",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -251,7 +251,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28291",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28291",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28291",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -261,7 +261,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28225",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28225",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -271,7 +271,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28349",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28349",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -281,7 +281,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28222",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28222",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28222",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -291,7 +291,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28296",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28296",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -301,7 +301,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28308",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28308",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28308",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -311,7 +311,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28094/28255",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28094/28255",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -321,7 +321,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28301",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28301",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -331,7 +331,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28258",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28258",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28258",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -341,7 +341,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28287",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28287",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28287",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -351,7 +351,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28284",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28284",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -361,7 +361,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28196",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28196",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28196",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -371,7 +371,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28312",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28312",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28312",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -381,7 +381,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28204",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28204",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -391,7 +391,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28342",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28342",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28342",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -401,7 +401,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28313",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28313",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -411,7 +411,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28223",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28223",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -421,7 +421,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28290",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28290",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28290",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -431,7 +431,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28210",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28210",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -441,7 +441,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28311",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28311",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28311",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -451,7 +451,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28249",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28249",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28249",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -461,7 +461,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -471,7 +471,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28162/28332",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28162/28332",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28162/28332",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -481,7 +481,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28213",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28213",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28213",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -491,7 +491,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28216",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28216",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28216",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -501,7 +501,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28285",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28285",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28285",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -511,7 +511,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28188",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28188",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28188",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -521,7 +521,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28200",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28200",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28200",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -531,7 +531,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28406",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28406",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28406",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -541,7 +541,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28245",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28245",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28245",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -551,7 +551,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28248",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28248",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28248",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -561,7 +561,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28336",
     "coverage": 0.909,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28336",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28336",
     "was_coverage": 0.909,
     "was_method": "sitemap_page"
    },
@@ -571,7 +571,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28234",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28234",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28234",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -581,7 +581,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28237",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28237",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28237",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -591,7 +591,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28239",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28239",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28239",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -601,7 +601,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28343",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28343",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28343",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -611,7 +611,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28314",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28314",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28314",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -621,7 +621,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28292",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28292",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28292",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -631,7 +631,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28226",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28226",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28226",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -641,7 +641,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28106/28275",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28106/28275",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28106/28275",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -651,7 +651,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28350",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28350",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28350",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -661,7 +661,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28224",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28224",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28224",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -671,7 +671,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28326",
     "coverage": 0.909,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28326",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28326",
     "was_coverage": 0.909,
     "was_method": "sitemap_page"
    },
@@ -681,7 +681,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28323",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28323",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28323",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -691,7 +691,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28114/28359",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28114/28359",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28114/28359",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -701,7 +701,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28297",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28297",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28297",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -711,7 +711,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28254",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28254",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28254",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -721,7 +721,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28208",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28208",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28208",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -731,7 +731,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28212",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28212",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28212",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -741,7 +741,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28302",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28302",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28302",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -751,7 +751,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28259",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28259",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28259",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -761,7 +761,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28138/28306",
     "coverage": 0.917,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28138/28306",
     "was_coverage": 0.917,
     "was_method": "sitemap_page"
    },
@@ -771,7 +771,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28206",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28206",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -781,7 +781,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28289",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28289",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28289",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -791,7 +791,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28270",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28270",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28270",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -801,7 +801,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28265",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28265",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28265",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -811,7 +811,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28262",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28262",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28262",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -821,7 +821,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28269",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28269",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28269",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -831,7 +831,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28264",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28264",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28264",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -841,7 +841,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28168/28334",
     "coverage": 0.909,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28168/28334",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28168/28334",
     "was_coverage": 0.909,
     "was_method": "sitemap_page"
    },
@@ -851,7 +851,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28288",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28288",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28288",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -861,7 +861,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28276",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28276",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28276",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -871,7 +871,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28267",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28267",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28267",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -881,7 +881,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28166/28331",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28166/28331",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28166/28331",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -891,7 +891,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28252",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28252",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -901,7 +901,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -911,7 +911,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28221",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28221",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28221",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -921,7 +921,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28130/28304",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28130/28304",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28130/28304",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -931,7 +931,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
     "coverage": 0.8,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
     "was_coverage": 0.8,
     "was_method": "sitemap_page"
    },
@@ -941,7 +941,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28176/28345",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28176/28345",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28176/28345",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -951,7 +951,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28398",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28398",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28398",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -961,7 +961,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28142/28361",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28142/28361",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28142/28361",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -971,7 +971,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28315",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28315",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -981,7 +981,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28132/28305",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28132/28305",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28132/28305",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -991,7 +991,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28303",
     "coverage": 0.75,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28303",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28303",
     "was_coverage": 0.75,
     "was_method": "sitemap_page"
    },
@@ -1001,7 +1001,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28317",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28317",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28317",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1011,7 +1011,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28140/28307",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28140/28307",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1021,7 +1021,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28316",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28316",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1031,7 +1031,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28219",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28219",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1041,7 +1041,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28112/28279",
     "coverage": 0.938,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28112/28279",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28112/28279",
     "was_coverage": 0.938,
     "was_method": "sitemap_page"
    },
@@ -1051,7 +1051,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28186",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28186",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1061,7 +1061,7 @@
     "award": null,
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/28363",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28158/28363",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/28363",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1071,7 +1071,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28110/28278",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28110/28278",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28110/28278",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1081,7 +1081,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28241",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28241",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28241",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1091,7 +1091,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28283",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28283",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28283",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1101,7 +1101,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28128/28298",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28128/28298",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28128/28298",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1111,7 +1111,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28251",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28251",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28251",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1121,7 +1121,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28340",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28340",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28340",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1131,7 +1131,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28134/28364",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28134/28364",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28134/28364",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1141,7 +1141,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28178/28347",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28178/28347",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28178/28347",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1151,7 +1151,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28217",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28217",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1161,7 +1161,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28218",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28218",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1171,7 +1171,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28263",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28263",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28263",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1181,7 +1181,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28148/28365",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28148/28365",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28148/28365",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1191,7 +1191,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28080/28514",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28080/28514",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28080/28514",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1201,7 +1201,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28369",
     "coverage": 0.923,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28369",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28369",
     "was_coverage": 0.923,
     "was_method": "sitemap_page"
    },
@@ -1211,7 +1211,7 @@
     "award": "Certificate of Achievement requiring 60+S/90+Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1221,7 +1221,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28367",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28367",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28367",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1231,7 +1231,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28230",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28230",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28230",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1241,7 +1241,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28378",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28378",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28378",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1251,7 +1251,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28372",
     "coverage": 0.857,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28372",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28372",
     "was_coverage": 0.857,
     "was_method": "sitemap_page"
    },
@@ -1261,7 +1261,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28355",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28355",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28355",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1271,7 +1271,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28377",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28377",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28377",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1281,7 +1281,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28353",
     "coverage": 0.889,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28353",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28353",
     "was_coverage": 0.889,
     "was_method": "sitemap_page"
    },
@@ -1291,7 +1291,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28228",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28228",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1301,7 +1301,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28373",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28373",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1311,7 +1311,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28354",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28354",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28354",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1321,7 +1321,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28368",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28368",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28368",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1331,7 +1331,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28229",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28229",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28229",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1341,7 +1341,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28227",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28227",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1351,7 +1351,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1361,7 +1361,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27560",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27560",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27560",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1371,7 +1371,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/27576",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27576",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/27576",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1381,7 +1381,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27552",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27552",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27552",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1391,7 +1391,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27592",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27592",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27592",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1401,7 +1401,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27600",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27600",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1411,7 +1411,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28402/27536",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28402/27536",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1421,7 +1421,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28243",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28243",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28243",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1431,7 +1431,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28388",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28388",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28388",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1441,7 +1441,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28397",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28397",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28397",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1451,7 +1451,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1461,7 +1461,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28381",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28381",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1471,7 +1471,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28382",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28382",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1481,7 +1481,7 @@
     "award": "Noncredit program",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/27508",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28158/27508",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/27508",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1491,7 +1491,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28257",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28257",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1501,7 +1501,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25399/28165/28025/27891",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25399/28165/28025/27891",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25399/28165/28025/27891",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1511,7 +1511,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27529",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27529",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27529",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1521,7 +1521,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27545",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27545",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27545",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1531,7 +1531,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27533",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27533",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27533",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1541,7 +1541,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27537",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27537",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27537",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1551,7 +1551,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27541",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27541",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27541",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1561,7 +1561,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27531",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27531",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27531",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1571,7 +1571,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27535",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27535",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27535",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1581,7 +1581,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27547",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27547",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27547",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1591,7 +1591,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27543",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27543",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27543",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1601,7 +1601,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27549",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27549",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27549",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1611,7 +1611,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27515",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27515",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27515",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1621,7 +1621,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27519",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27519",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27519",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1631,7 +1631,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27517",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27517",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27517",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1641,7 +1641,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27539",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27539",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27539",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1651,7 +1651,7 @@
     "award": "A.A. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27601",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27601",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1661,7 +1661,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27603",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27603",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27603",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1671,7 +1671,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27605",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27605",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27605",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1681,7 +1681,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27551",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27551",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27551",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1691,7 +1691,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28435",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28435",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28435",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1701,7 +1701,7 @@
     "award": "A.A- T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28428/28534",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28428/28534",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1711,7 +1711,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28460",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28460",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28460",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1721,7 +1721,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28444",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28444",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28444",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1731,7 +1731,7 @@
     "award": "A.S. Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28443",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28443",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28443",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1741,7 +1741,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28469",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28469",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28469",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1751,7 +1751,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1761,7 +1761,7 @@
     "award": "A.S. T Degree",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    },
@@ -1771,11 +1771,11 @@
     "award": "Noncredit program",
     "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28548",
     "coverage": 1.0,
-    "was_url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548",
+    "was_url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28548",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
   ]
  },
- "run": "42962429245"
+ "run": "42973457189"
 }
