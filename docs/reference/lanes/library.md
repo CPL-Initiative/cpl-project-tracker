@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-10
+updated: 2026-11-11
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -155,14 +155,20 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **NEXT 0, Sam's test of #3077 (2026-11-10):** his request `71931018` (*Adding CPL Coordinator & Noncredit Lead to MAP*)
-  holds no document. On the live site he drops the PDF on its card (Add a document), presses Draft it now, opens the
-  draft, presses Publish it, then List publicly; dispatch `library-publish.yml` after Publish rather than wait three
-  hours. `library-revise-draft` is deployed (cpl-chat-deploy run 42885369380). **Blocked on Pages:** every
-  `pages.yml` deploy since 16:53 UTC times out at `deploy-pages`' fixed 10-minute wait in `syncing_files`, including
-  after #3088 cut the artifact from 1.6 GB to 374 MB (run 42897745399). So the served `library.js` predates #3077.
-  Next try: dispatch one fresh `pages.yml`; if it times out again, the sync is slow on GitHub's side or by file count,
-  not size (see `docs/library_lessons.md`, tender-fermi).
+- **NEXT 0, pictures in a piece (Sam, 2026-11-11):** his request `71931018` (*Adding CPL Coordinator & Noncredit Lead to MAP*)
+  drafted from the Library (Draft 1, 2026-11-10 23:18Z; *"looks great and worked from the library--yay!!!"*), and
+  *"the visual didn't include any of the map screenshots from the pdf that the user will need to know how to navigate
+  map. i'd like to edit it in the library (not here)"*. The Library reads words only: `readWords` keeps no picture, the
+  drafter refuses an image tag, the publisher writes one HTML file. Build: the pictures a PDF's pages hold, found and
+  cropped in the browser with the vendored pdf.js (the rendered page, so the deck's red boxes stay), reviewed on the card
+  (alt text, trim, cover) before anything is saved, placed by the drafter under the steps they show, written beside the
+  page by `library_publish.py`. COBIx's recipe for a session (`pdftoppm -r 200`, crop, captions, full size on a click,
+  alt text, the review step) is the same result by hand. Slide 4 shows people's email addresses in both screens.
+- **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
+  when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
+  no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,
+  `new_piece` kept for the publisher), the piece's documents stay on the record, the card counts Draft 2, 3, and
+  *Start over from the brief* sits in the box (it replaces Draft it again). Test: `library_any_file` E2.
 - **Owed to COBIx on the next Library change:** the `style=` entity pattern in either quote or unquoted
   (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS), and `tests/pages_size_guard.test.js` walking `kb/` minus
   `kb/receipts`.

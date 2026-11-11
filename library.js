@@ -1178,8 +1178,10 @@
     return !!((r.brief && r.brief.say) || r.refresh_note || sourceList(r).some(function (x) { return (!x.url && x.text) || googleLink(x.url); }));
   }
   function newPieceBlock(r) {
-    var rs = regenState(r), g = r.regen || {}, line = "", why = "", next = [];
+    var rs = regenState(r), g = r.regen || {}, line = "", why = "", next = [], extra = "";
+    var box = state.cardBox && state.cardBox.id === r.id ? state.cardBox : null;
     if (!rs || rs === "waiting") {
+      if (rs === "waiting" && g.based_on_draft && r.refresh_note) line = esc("Changes to make to the draft: " + r.refresh_note);
       if (canDraftNew(r)) {
         next.push('<form data-draftnowform="' + esc(r.id) + '">' + nameOrField("dn-by-", r.id) +
           '<button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">Draft it now</button></form>");
@@ -1189,12 +1191,15 @@
       next.push('<label class="lib-word" for="nd-file-' + esc(r.id) + '">Add a document</label><input id="nd-file-' + esc(r.id) + '" class="lib-vh" type="file" data-newdoc="' + esc(r.id) + '">');
       why += " Drop a Word, PowerPoint or Excel file, a PDF or captions on this card to add its words.";
     } else if (rs === "ready") {
-      line = esc("Draft 1 is ready to review" + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". Nothing is public yet.");
+      line = esc("Draft " + draftNumber(r) + " is ready to review" + (g.ready_at ? " (" + stamp(g.ready_at) + ")" : "") + ". Nothing is public yet.");
+      // Changes after the first draft (Sam, 2026-11-11: "there doesn't appear to be any way to add new instructions"):
+      // Ask for changes opens the card's box, and Claude drafts them on top of this draft.
       next.push(openDraftWord(r, true),
+        word("data-revise", r.id, "Ask for changes", false, "to " + r.title),
         '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) +
-          '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish it</button></form>",
-        word("data-redraft", r.id, "Draft it again", false, r.title));
-      why = "Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
+          '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish it</button></form>");
+      why = "Ask for changes says what to add, cut or reword, and Claude drafts it on top of this draft. Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
+      if (g.based_on_draft) extra = changedHtml(r);
     } else if (rs === "approved") {
       line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
         ". The next scheduled run puts it on its page (every three hours); then List publicly on its card.");
@@ -1202,9 +1207,12 @@
     }
     var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
-      (line ? '<p class="now">' + line + "</p>" : "") + (why ? '<p class="why">' + esc(why) + "</p>" : "") +
-      (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "") + msg + "</div>";
+      (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
+      (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
+      (box ? "" : extra) + msg + "</div>";
   }
+  // A new piece's drafts count from 1: each earlier draft kept under regen.earlier adds one.
+  function draftNumber(r) { var e = r.regen && r.regen.earlier; return (Array.isArray(e) ? e.length : 0) + 1; }
   // A document added on a Requested card: read here, then saved to the record's documents at once.
   function addNewPieceFile(id, file) {
     var r = byId(id);
@@ -1223,13 +1231,6 @@
       });
     }, function () { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); })
       .catch(function (e) { sayOn(id, e.message, true); render(); });
-  }
-  function redraft(id) {
-    var r = byId(id);
-    if (!isNewPiece(r) || regenState(r) !== "ready") return;
-    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: null, updated_by: storedAuthor() || null } })
-      .then(function () { return load(); }).then(function () { return draftNow(id, storedAuthor()); })
-      .catch(function (e) { state.busy = false; sayOn(id, e.message, true); render(); });
   }
   function stateBlock(r) {
     if (isNewPiece(r)) return newPieceBlock(r);
@@ -1278,6 +1279,8 @@
   // Can this piece be drafted here, for the box's mode? A draft known only by its claude.ai link, a SharePoint
   // file or a piece with no Pages copy goes to a session.
   function boxDraftsHere(r, mode) {
+    // A piece not yet public drafts here from its own draft, or again from its brief.
+    if (isNewPiece(r)) return mode === "more" ? !!(r.regen && r.regen.draft_id) : true;
     if (!(r.slug && r.url && r.url.indexOf(PUBLIC_PAGE) === 0) || sharePointOnly(r)) return false;
     var g = r.regen || {};
     if (mode === "more") return !!g.draft_id;
@@ -1286,7 +1289,9 @@
   }
   function cardBoxHtml(r, box) {
     var g = r.regen || {}, pv = publicVersion(r), mode = box.mode, here = boxDraftsHere(r, mode === "fresh" ? "revise" : mode);
-    var head = mode === "more" ? "More changes to " + (pv ? "Version " + (pv + 1) + " (the draft)" : "the draft")
+    var isNew = isNewPiece(r);
+    var head = isNew ? (mode === "fresh" ? "Draft " + r.title + " again, starting over from the brief" : "Changes to Draft " + draftNumber(r) + " of " + r.title)
+      : mode === "more" ? "More changes to " + (pv ? "Version " + (pv + 1) + " (the draft)" : "the draft")
       : mode === "change" ? "Change what you asked for " + r.title
       : mode === "fresh" ? "Revise " + r.title + ", starting over from " + (pv ? "Version " + pv : "the public copy")
       : "Revise " + r.title + (pv ? ", Version " + pv : "");
@@ -1295,14 +1300,17 @@
     if (mode === "more" && r.refresh_note) asked.push((g.requested_by || "The team") + ", " + stamp(g.requested_at) + ": " + String(r.refresh_note).replace(/\u2026 The whole instructions are under Documents to work from\.$/, "\u2026"));
     var docs = state.src.cb || [];
     var by = storedAuthor();
-    var note = mode === "more"
+    var note = isNew
+      ? (mode === "fresh" ? "Claude drafts the page again from the brief, the documents and what you say here, in about a minute. The draft you have stays in the record. Nothing is public until you press Publish it."
+                          : "Claude drafts the changes on top of the draft in about a minute and checks its accessibility. The draft you have stays in the record. Nothing is public until you press Publish it.")
+      : mode === "more"
       ? (here ? "Claude drafts the new changes on top of the draft in about a minute and checks its accessibility. The draft you have stays in the record."
               : "A Claude session makes these changes on top of the draft; the request saves now, and the card says when the new draft is back.")
       : here ? "Claude drafts the changes onto the public page in about a minute and checks its accessibility. " + (pv ? "Version " + pv + " stays public until you replace it." : "The public copy stays until you replace it.")
       : "A Claude session makes the revision from the piece's source; the request saves now, and the card says when the draft is back. Never add a student's record.";
     return '<form class="lib-cbox" data-cboxform="' + esc(r.id) + '" aria-labelledby="cb-h-' + esc(r.id) + '"><h4 id="cb-h-' + esc(r.id) + '">' + esc(head) + "</h4>" +
       (asked.length ? '<div><p class="why">Asked so far</p>' + asked.map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("") + "</div>" : "") +
-      '<div class="lib-field"><label for="cb-instr-' + esc(r.id) + '">What to change</label><textarea id="cb-instr-' + esc(r.id) + '" rows="3" placeholder="The wording, the figures, the layout, what to add or cut">' +
+      '<div class="lib-field"><label for="cb-instr-' + esc(r.id) + '">' + (isNew && mode === "fresh" ? "What to do differently" : "What to change") + '</label><textarea id="cb-instr-' + esc(r.id) + '" rows="3" placeholder="The wording, the figures, the layout, what to add or cut">' +
       esc(box.prefill || (mode === "change" ? (r.refresh_note || "") : "")) + "</textarea></div>" +
       (docs.length ? '<div><p class="why">Documents to work from</p><ul class="lib-srcs">' + docs.map(function (x, i) {
         return "<li>" + srcWords(x) + ' <button type="button" class="lib-word" data-srcdel="cb:' + i + '">Remove<span class="lib-vh"> ' + esc(x.title) + "</span></button></li>";
@@ -1315,7 +1323,7 @@
         ? '<p class="why">as ' + esc(by) + ' <button type="button" class="lib-word" data-cbname="' + esc(r.id) + '">change</button></p>'
         : '<div class="lib-field"><label for="cb-by-' + esc(r.id) + '">Your name</label><input id="cb-by-' + esc(r.id) + '" type="text" required autocomplete="name" value="' + esc(by) + '"></div>') +
       '<div class="lib-next"><button type="submit" class="lib-word lead"' + (state.busy ? " disabled" : "") + ">" + (here ? "Draft it now" : "Send to a session") + "</button>" +
-      (mode === "more" ? word("data-startover", r.id, "Start over from " + (pv ? "Version " + pv : "the public copy")) : "") +
+      (mode === "more" ? word("data-startover", r.id, "Start over from " + (isNew ? "the brief" : pv ? "Version " + pv : "the public copy")) : "") +
       word("data-cboxcancel", r.id, "Cancel") + "</div>" +
       '<p class="why">' + esc(note) + "</p></form>";
   }
@@ -1336,7 +1344,8 @@
     state.cbDocs = false; state.cbName = false;
     // More changes start clean: the documents the draft was made from are already in it, and handing them over
     // again would have Claude apply them twice. The record keeps their titles with the earlier draft.
-    state.src.cb = state.cardBox.mode === "more" ? [] : sourceList(r).slice();
+    // A piece not yet public keeps its documents on the record: Start over from the brief drafts from them again.
+    state.src.cb = state.cardBox.mode === "more" && !isNewPiece(r) ? [] : sourceList(r).slice();
     say(""); render();
     var t = document.getElementById("cb-instr-" + id);
     if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } if (t.scrollIntoView) t.scrollIntoView({ block: "center" }); }
@@ -1387,13 +1396,15 @@
     if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
     rememberAuthor(by);
     var regen = box.mode === "fresh" ? { requested_at: new Date().toISOString(), requested_by: by, publish: "show" } : moreRegen(r, by);
+    // A new piece that starts over keeps the list of its earlier drafts, so the next one is numbered after them.
+    if (box.mode === "fresh" && isNewPiece(r)) { var kept = moreRegen(r, by).earlier; if (kept && kept.length) regen.earlier = kept; }
     var body = { refresh_note: note || null, sources: list, regen: regen, updated_by: by };
     state.cardBox = null; state.src.cb = [];
     return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       return load();
     }).then(function () {
       var fresh = byId(id);
-      if (here && fresh && canDraftHere(fresh)) return draftNow(id, by);
+      if (here && fresh && (canDraftHere(fresh) || (isNewPiece(fresh) && regenState(fresh) === "waiting"))) return draftNow(id, by);
       sayOn(id, sharePointOnly(Object.assign({}, r, { sources: list }))
         ? "Saved. " + SP_INSTEAD
         : "Saved. A Claude session makes this one: Copy the request starts it now, or the next scheduled run picks it up.");
@@ -3641,7 +3652,6 @@
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if ((v = b.getAttribute("data-draftopen"))) openDraft(v);
-      else if ((v = b.getAttribute("data-redraft"))) redraft(v);
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
