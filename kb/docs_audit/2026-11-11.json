@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1460,
-    "bytes": 14749812,
+    "bytes": 14749846,
     "over_budget": 3,
     "handoff_max": 638,
     "always_loaded_files": 1,
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 535590,
+        "bytes": 535624,
         "over": 2
       },
       "handoff": {
@@ -62,10 +62,10 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 26561,
-      "bytes": 4564939647,
-      "heavy_bytes": 3299074424,
-      "heavy_share": 0.723,
+      "files": 26564,
+      "bytes": 4583136000,
+      "heavy_bytes": 3317270743,
+      "heavy_share": 0.724,
       "ignore_filters": [
         "agent-ab46696b8b0c2064b/kb/receipts",
         "agent-ab46696b8b0c2064b/kb/program_requirements_college",
@@ -201,20 +201,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2117928974,
+        "bytes": 2136174623,
         "kind": "dir"
       },
-      "message": "directory totals 2,117,928,974 B inside the vault"
+      "message": "directory totals 2,136,174,623 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146599235,
+        "bytes": 146549905,
         "kind": "dir"
       },
-      "message": "directory totals 146,599,235 B inside the vault"
+      "message": "directory totals 146,549,905 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -951,11 +951,11 @@
       "fixable": false,
       "path": "docs/session_638_handoff.md",
       "detail": {
-        "commits_since": 8,
+        "commits_since": 13,
         "budget": 6,
         "handoff": "session_638_handoff.md"
       },
-      "message": "8 commit(s) have landed since `docs/session_638_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "13 commit(s) have landed since `docs/session_638_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
