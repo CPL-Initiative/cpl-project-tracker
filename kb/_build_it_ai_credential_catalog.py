@@ -378,8 +378,23 @@ SOC_MAJOR_CIP = {"11": "52.0101", "13": "52.0101", "21": "44.0701", "29": "51.00
                  "47": "46.0401", "49": "47.0303", "53": "49.0205"}
 
 
+# A test series a person has placed by name, tried before every other source, so a word in a test's name cannot carry
+# the series to another trade's subject. Sam, 2026-11-11, on ASE's Military Tactical Wheeled Vehicle series: "so the
+# hvac mil should be in auto not hvac subj". The name rules above would send MIL7 (Heating, Ventilation & Air
+# Conditioning) to 47.0201 HVAC and MIL6 (Electrical/Electronic Systems) to 46.0302 Electrician; the whole series is
+# automotive, 47.0604. (issuer pattern, name pattern, CIP code, who ruled).
+ASE_SERIES_CIP = [
+    (r"Automotive Service Excellence", r"\bMIL\d\b|Military Tactical Wheeled Vehicle", "47.0604",
+     "Sam, 2026-11-11"),
+]
+_ASE_SERIES_RX = [(re.compile(i, re.I), re.compile(n, re.I), c, who) for i, n, c, who in ASE_SERIES_CIP]
+
+
 def field_cip(name, ctdl=None, issuer=""):
     """(code, source) for a credential outside IT, or (None, None)."""
+    for irx, nrx, code, who in _ASE_SERIES_RX:
+        if irx.search(issuer or "") and nrx.search(name or ""):
+            return code, "rule (test series, %s)" % who
     ipt = (ctdl or {}).get("instructional_program_type") or []
     for o in ipt:
         code = (o.get("code") or "").strip()
@@ -641,7 +656,7 @@ def build(root=ROOT):
     lic_path = os.path.join(root, "kb", "reference", "california_occupational_licenses.json")
     licenses = load_json(lic_path) if os.path.exists(lic_path) else {"licenses": []}
     cip_titles = load_cip_titles(os.path.join(root, "kb", "reference", "CIPCode2020.csv"))
-    for rules in CIP_RULES.values():
+    for rules in list(CIP_RULES.values()) + [[(i, c) for i, _n, c, _w in ASE_SERIES_CIP]]:
         for _p, code in rules:
             if code not in cip_titles:
                 raise SystemExit(f"CIP_RULES names {code}, which is not a live CIP 2020 code")

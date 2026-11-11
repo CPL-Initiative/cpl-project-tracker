@@ -1,0 +1,41 @@
+{
+ "about": "Phase 3 of 3, the mirror ('3 yes'). Runs only AFTER cred-rename-apply.yml has created the three standards titles (a fresh credential_reference_data.js lists Brakes (ASE A5 standards), Heating and Air Conditioning (ASE A7 standards) and Engine Performance (ASE A8 standards) as titles, not display names). Run earlier, the fold would create them first and turn Sam's renames into merges. The five credit-by-exam exhibits under the three cert titles, each a 2026-05-20 machine draft no person placed, move to the standards titles: MAPCXS-B3 (Chaffey, Brakes) to A5 standards; MAPCXS-BAAC (Chaffey, Basic Automotive Air Conditioning Systems) to A7 standards; MAPCBEN-EP (Engine Performance), MAPCxS-EPIA1 (Engine Performance I AUTO 018 Cx) and MAPCxS-EPIA (Engine Performance II AUTO 029 Cx) (Copper Mountain, San Diego Miramar) to A8 standards. Insert-only; each holds unless its kb/unified_titles.json entry is still that unreviewed draft. Two raw spellings under A7 and A8 in the reference ('Credit by Exam AUTO A7 Heating and Air Conditioning', '... A8 Engine Performance') carry the stale_kb_entry tag and no live exhibit, so they are left.",
+ "ruling": "Sam Lee, in session 2026-11-11 (SkyTamarind, S638; cpl_memory sam-ase-mil-certs-and-cx-to-standards-2026-11-11, sam-ic-exhibits-go-to-cert-title-2026-11-11, sam-cert-name-first-2026-11-11): 'ASE MIL3 test is the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification... if there are any exhibits with ASE MIL in the title, adjust the canonical title to match the official ASE titles'; an industry-certification exhibit under a '(ASE ... standards)' title goes to the cert title, and ('3 yes') the credit-by-exam exhibits under the A5, A7 and A8 cert titles go to the standards titles; then his authorization the same day for the conductor and COBIx to settle the emptied titles without bringing them back to him. Superseding his own 2026-10-31 to 11-11 saves by his word (CLAUDE.md Rule 8); written by SkyTamarind's worker",
+ "cohort": "cer-s638@bot",
+ "read_by_session": {
+  "at": "2026-11-11",
+  "how": "NOT a live read: the committed overlays kb/unclassified_assignments.json and kb/credential_review_overlay.json (synced ~17:40Z). The conductor runs 00_fresh_reads.sql and the workflow's dry run before the commit."
+ },
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Brakes",
+   "field": "unified_title_assignment",
+   "value": "Brakes (ASE A5 standards)",
+   "over_machine_draft": "ASE A5 — Brakes"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+   "field": "unified_title_assignment",
+   "value": "Heating and Air Conditioning (ASE A7 standards)",
+   "over_machine_draft": "ASE A7 — Heating and Air Conditioning"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Engine Performance",
+   "field": "unified_title_assignment",
+   "value": "Engine Performance (ASE A8 standards)",
+   "over_machine_draft": "ASE A8 — Engine Performance"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
+   "field": "unified_title_assignment",
+   "value": "Engine Performance (ASE A8 standards)",
+   "over_machine_draft": "ASE A8 — Engine Performance"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx",
+   "field": "unified_title_assignment",
+   "value": "Engine Performance (ASE A8 standards)",
+   "over_machine_draft": "ASE A8 — Engine Performance"
+  }
+ ]
+}
