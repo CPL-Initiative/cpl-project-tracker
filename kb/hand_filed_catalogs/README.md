@@ -76,3 +76,12 @@ names, refuses it when the hash differs from the record, and stamps who fetched 
 when and the hash on the report and on each record's source.
 `kb/_program_requirements_college.py` (`hand_filed`, `pin`, `read_hand_filed`); guard:
 `tests/program_requirements_college_test.py`.
+
+## Retired records
+
+`retired/` holds a record the harvest no longer reads, kept for its history. The reader looks only at
+`<slug>.json` in this folder, so a record moved there is out of the read.
+
+- `retired/de_anza_2025-2026.json` (S636, 2026-11-11): De Anza publishes its 2026-2027 catalog on eLumen
+  (`deanza.elumenapp.com`), which answers the reader (COBIx, #3096; page read 43013608134). The registry row moved
+  to it on Sam's word (`kb/migrations/2026-11-11_de_anza_catalog_2026_27.sql`).

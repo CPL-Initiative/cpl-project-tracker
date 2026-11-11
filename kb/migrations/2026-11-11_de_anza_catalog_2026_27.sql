@@ -1,6 +1,5 @@
--- STAGED, NOT APPLIED (2026-11-11 12:10Z). The session's permission check refused the push that would have applied
--- this, so it waits on Sam's word (CLAUDE.md, the hold list: a permission-check denial). kb/migrations/.apply does
--- not name this file. With it goes retiring kb/hand_filed_catalogs/de_anza.json, or the reader keeps the PDF.
+-- APPLIED on Sam's word in session, 2026-11-11 ~12:50Z: "go de anza". The session's permission check had refused
+-- the first push that would have applied it, so it was staged and asked of him.
 --
 -- S636 SkyAntennae, 2026-11-11. De Anza College's catalog row moves from the hand-filed 2025-2026 PDF to the
 -- college's own 2026-2027 catalog on eLumen.
