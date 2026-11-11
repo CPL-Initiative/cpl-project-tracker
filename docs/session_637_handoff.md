@@ -114,6 +114,16 @@ mark #3105 ready and squash-merge it on a green `test`.
   the four other references' run logs, a decision sheet for the record of this run's calls.
 - This session's check-in at 14:11Z may merge #3105 if both jobs have landed; if #3105 is already merged, skip that.
 
+### Last word, 14:20Z: both runner jobs landed
+
+- **Redwoods' display is applied** (run 43023439796, build 0874a3a15f22): 17,557 of 17,560 written, 0 errors, the 3
+  Monterey Peninsula rows missing as before.
+- **De Anza's free capture found 1 of 243 programs** on the 2026-2027 eLumen catalog (run 43024817869: 259 pages read,
+  242 not found; `kb/program_requirements_college/de_anza/capture_preview.json`). The catalog answers; the reader does
+  not yet find De Anza's program pages. COBIx reported 47 degree hubs: read `el_hub_slugs` and `el_program_slugs`
+  against two hub pages with a free page read before any extraction. **Do not extract until the capture finds the
+  programs.** De Anza's 212 live rows (2025-26) are untouched and still displayed.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
