@@ -954,6 +954,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/cpl_funding.js` | modules: `scripts/build_funding_faq.js` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
@@ -985,6 +986,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/athl_four_remint_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
+| `tests/browser_install_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/budget_section_first_light_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_payload_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_cpl_universe_members_test.py` | workflows: `js-tests.yml` | — |
@@ -1367,5 +1369,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 838 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 840 file
 datasets · 195 external services · 548 consumers · 65 workflows · 40 tabs.
