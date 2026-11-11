@@ -1,0 +1,30 @@
+{
+ "_readme": "S637 SkyPorpoise, 2026-11-11. De Anza's free capture on its 2026-2027 eLumen catalog (run 43024817869) found each program's page by its title and award (242 near misses, each 'the page's code tokens name 0 of N listed courses') and matched none of the course codes. The state's file lists ACCT 001A; the 2025-2026 PDF printed MATH D001A on its GE page. A finding to verify before any reader change: how do two program pages print their course codes? No model call.",
+ "college": "De Anza College",
+ "questions": {
+  "printed_codes": "How does a 2026-2027 program page print a course code: ACCT 1A, ACCT 001A, ACCT D001A, or another form?"
+ },
+ "keywords": [
+  "\\b[A-Z]{2,5}\\s*[A-Z]?0*\\d{1,3}[A-Z]{0,2}\\b[^<\"]{0,60}",
+  "[Uu]nits[^<\"]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/accounting-fall-2026",
+   "answers": ["printed_codes"],
+   "network": true,
+   "network_hosts": ["api-prod.elumenapp.com"],
+   "network_find": ["ACCT", "Financial Accounting"]
+  },
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/music-fall-2026",
+   "answers": ["printed_codes"],
+   "network": true,
+   "network_hosts": ["api-prod.elumenapp.com"],
+   "network_find": ["MUSI", "Music"]
+  }
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "De Anza College's own 2026-2027 catalog (deanza.elumenapp.com), served on its catalog vendor's domain, with the vendor's API its pages call (api-prod.elumenapp.com)"
+ }
+}
