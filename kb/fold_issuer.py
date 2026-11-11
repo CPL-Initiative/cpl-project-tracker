@@ -705,6 +705,47 @@ def family_titles(path):
     return out
 
 
+# ── Emptied titles (Sky and COBIx, 2026-11-11, #3110) ────────────────────────────────────────────────────
+# A plan that moves a title's last exhibit away leaves the title empty: no kb/unified_titles.json raw maps to
+# it, the fold's own test for "holds no exhibit" (kb/_fold_unclassified.py, the revise lane). A plan never
+# retires a person's saved row on such a title; the readers ignore it instead. Here: a saved rename or merge
+# whose SOURCE holds no exhibit is held out of the plan in the dry run and again in the apply, so it leads
+# no group, joins no fold, and its issuer row never reaches rule 1. The same rows act again once a raw maps
+# to the title.
+
+EMPTIED_HELD_LINE = "held: the title holds no exhibit, so its saved rows stay in place and do nothing"
+EMPTIED_LEAD_HELD_LINE = ("held: the rename that would create this target is held (its title holds no exhibit); "
+                          "the next dry run plans the group again")
+
+
+def titles_holding_exhibits(unified_titles):
+    """Every unified title some kb/unified_titles.json raw maps to."""
+    return {(v or {}).get("unified_title") for v in (unified_titles or {}).values()
+            if isinstance(v, dict) and (v or {}).get("unified_title")}
+
+
+def hold_emptied_folds(renames, merges, holding):
+    """Split out every rename or merge whose source title holds no exhibit (not in `holding`, from
+    titles_holding_exhibits). Returns (renames, merges, held), held a list of {"old", "target", "kind", "why"}."""
+    held = []
+    keep_r, keep_m = {}, {}
+    for kind, src, keep in (("rename", renames, keep_r), ("merge", merges, keep_m)):
+        for o, t in sorted((src or {}).items()):
+            if o in holding:
+                keep[o] = t
+            else:
+                held.append({"old": o, "target": t, "kind": kind, "why": EMPTIED_HELD_LINE})
+    # A held rename that led its group creates no target, so a confirmed sibling folding into that target waits
+    # with it: kept, it would fail the apply's merge-target check and stop the whole batch. A fresh dry run, which
+    # holds the emptied title before it picks a lead, plans the group again.
+    lost = {h["target"] for h in held if h["kind"] == "rename"} - set(keep_r.values())
+    for o, t in sorted(keep_m.items()):
+        if t in lost:
+            del keep_m[o]
+            held.append({"old": o, "target": t, "kind": "merge", "why": EMPTIED_LEAD_HELD_LINE})
+    return keep_r, keep_m, held
+
+
 def hold_family_folds(renames, merges, families):
     """Split out every rename or merge whose target is a family title. Returns (renames, merges, held),
     held a list of {"old", "target", "kind", "why"}."""

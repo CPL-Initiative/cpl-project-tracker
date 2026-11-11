@@ -405,6 +405,9 @@ jobs:
       # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
       - name: CER decision applier holds a curator's row
         run: python3 tests/cer_decision_apply_test.py
+      # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
+      - name: CER decision applier undoes what landed, not what echoed
+        run: python3 tests/cer_decision_apply_retry_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94
@@ -462,6 +465,10 @@ jobs:
         run: python3 tests/fold_issuer_resolution_test.py
       - name: The fold issuer resolver is defined once
         run: python3 tests/fold_issuer_single_source_test.py
+      # A person's saved fold rows on a title that holds no exhibit do nothing (Sky and COBIx, #3110): no fold, no
+      # issuer conflict, no rename, and the apply stays safe; the same rows act again once a raw maps to the title.
+      - name: Saved rows on an emptied title are ignored
+        run: python3 tests/emptied_title_guard_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder

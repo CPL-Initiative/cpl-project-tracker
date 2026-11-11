@@ -48,8 +48,28 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
 - **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
   guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
   `<date>-<2-9>` only (run 43104136989 refused the first names); #3120 renamed them `kb/cer_decisions_out/2026-11-11`,
-  `-2`, `-3`. **Phase 1 applied** (run 43109363928; 14 rows under `cer-s638@bot`; rollback `mode=rollback` on
-  `2026-11-11`).
+  `-2`, `-3`. **Phases 1 and 2 applied** (22:13Z and 22:26Z; receipts in each folder): every insert, replace and
+  exhibit re-point stands. They also retired 17 rows on the titles they emptied; **the 13 a person saved are restored
+  by `kb/cer_decisions_out/2026-11-11-4`** (12 of Sam's as slee@cccco.edu, and Automotive Air Conditioner's July issuer
+  row as map@rccd.edu), and the 4 July `reviewed_marker` ticks stay retired. The applier's `reinstates` put a row back
+  exactly as its receipt kept it, under the person's own reviewer and stamp, insert-only; `while_emptied` holds the
+  plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
+  fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
+  deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
+- **The applier's undo never reads a write's echo (S639 review, #3123).** `Rest._call` retries a request whose response
+  was lost, and the retry echoes nothing for a write that landed. So the receipt is `pending` with the planned lists
+  before the first write, a fresh read files each row after the writes, and `--rollback` works from the planned lists
+  of every receipt (pending ones too), each step guarded by live value and reviewer (and stamp) and read back
+  (`tests/cer_decision_apply_retry_test.py`, a PostgREST-level fake). `load_plan` refuses a retire of a person's row
+  but a `reviewed_marker` unless the plan names `ruling_allows_retire_of_saved_rows`; applied plans load for rollback.
+- **Readers ignore a saved row on an emptied title** (a title no `kb/unified_titles.json` raw maps to, the fold's own
+  test). `fold_issuer.hold_emptied_folds` keeps its saved fold out of the rename dry run and the apply (`held_emptied`
+  in the alias map), so it leads no fold, raises no issuer conflict (Heating and Air Conditioning's 15:47Z issuer) and
+  renames nothing; the same rows act again once a raw maps to the title (`tests/emptied_title_guard_test.py`). The
+  nightly fold reads only `_UNCLASSIFIED::` rows, and `effective_issuer` resolves only a title a fold targeted. The
+  fold's `credential_retires` list these titles' panel rows under `panel_rows_left`: they stay where they are.
+  **DECIDED (Sky and COBIx, 2026-11-11, #3110):** a plan never retires a person's saved row on an emptied title;
+  readers ignore it.
 - **Exhibit subject fill (#3119):** `kb/_exhibit_subject_fill.py` gives a credential with no Common SUBJ the subject of
   the courses colleges credit for it (several colleges first, then one), else its issuer family's; title words, TOP and
   CIP never decide. First live run (cer-procedures run 43104720166, 21:41Z): 747 `subj_override` and 747 `subj_source`
@@ -73,7 +93,13 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   ASE plan retires it); ASE Certification (any A1-A8); ASE C1 or G1 (either test qualifies; agreed with COBIx on #3111).
 - **NEXT, in order:** (0) the family tags: once the S639 PR is on `main`, dispatch `credential-family-apply.yml`
   `mode=dry-run`; a correct summary reads *24 to write, 0 already written, 7 held for Sam, 0 conflicts; set
-  `<hash>` (24 tags)*; then `mode=commit expect=<hash>`, the 12-character hash that line printed; then `daily-dashboard.yml` carries the family onto `kb/credentials.json`; (1) phase 2 (`-2`): its dry run was dispatched 22:16Z; read it, commit if 0 held; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
+  `<hash>` (24 tags)*; then `mode=commit expect=<hash>`, the 12-character hash that line printed; then `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
+  fold into ASE Certificate Bundles on an emptied title, which the converter must leave as it is); (1) the next nightly fold, then the
+  restore (`-4`): dry run, then commit, before anything else touches these titles; to undo both, roll back `-4` before
+  phase 1 (the other order is safe too: `-4`'s undo leaves what phase 1's put back); (2) the retired names as search
+  aliases of where their exhibits went (Automotive Air Conditioner and Heating and Air Conditioning to the A7 and MIL7
+  titles, Automotive Braking Systems to MIL3 and MIL4): `kb/credential_aliases.py` reads only applied rename
+  snapshots, never the fold's `credential_retires`, so none resolves today; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
   #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
   plan phase 3 (`-3`); (5) the owed decision sheet; (6) the rename batch proposing
   "ASE Certificate Bundles: A4 + A5" titles, for Sam's one approval; (7) the credentials still without a subject, as one
@@ -84,6 +110,7 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   one batch each (`cert_naming.FAMILIES`).
 - Tests: `tests/credential_family_test.py`, `tests/credential_family_apply_test.py`,
   `tests/cert_naming_test.py`, `tests/exhibits_related.test.js`, `tests/fold_issuer_resolution_test.py`,
+  `tests/emptied_title_guard_test.py`, `tests/cer_decision_apply_test.py`, `tests/cer_decision_apply_retry_test.py`,
   `tests/issuer_resolution_parity.test.js`, `tests/exhibit_progress.test.js`.
 
 ## The redesign (2026-10-30, side session beside S531)

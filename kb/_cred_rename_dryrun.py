@@ -121,14 +121,21 @@ def main():
     skipped = []              # list of dicts with skip reason
     no_credential_record = [] # rename of a unified_title with no credentials.json entry
 
+    # A saved fold on a title that holds no exhibit (no raw maps to it) is held below, before the twin
+    # and collision lanes, so it leads no group, joins no fold and its issuer row never reaches rule 1
+    # (Sky and COBIx, 2026-11-11, #3110). The same rows act again once a raw maps to the title.
+    holding = fold_issuer.titles_holding_exhibits(unified_titles)
+
     # Every override that carries a title rename, keyed by source — used by
     # the merge-target chain guard below (a confirmed merge must not target a
     # credential that is itself being renamed/merged away in the same batch).
+    # A held emptied title renames nothing this batch, so it is no chain.
     retitled_sources = {
         o: (v or {}).get("unified_title_override")
         for o, v in overrides.items()
         if (v or {}).get("unified_title_override")
         and (v or {}).get("unified_title_override") != o
+        and o in holding
     }
 
     # A title saved into a declared family title (Sam's ruling C) is held here, before the twin and
@@ -136,11 +143,17 @@ def main():
     # that would mint the family name as a credential) nor a collision a curator could confirm into a merge.
     families = fold_issuer.family_titles(FAMILIES)
     held_early = []
+    held_emptied = []
 
     for old_ut, ov in sorted(overrides.items()):
         new_ut = (ov or {}).get("unified_title_override")
         if not new_ut:
             continue  # only iterating renames; non-rename overrides are PR-5a's job
+        if new_ut != old_ut and old_ut not in holding:
+            held_emptied.append({"old": old_ut, "target": new_ut,
+                                 "kind": "merge" if (ov or {}).get("unified_title_merge_confirm") == new_ut
+                                 else "rename", "why": fold_issuer.EMPTIED_HELD_LINE})
+            continue
         if new_ut in families and new_ut != old_ut:
             held_early.append({"old": old_ut, "target": new_ut,
                                "kind": "merge" if (ov or {}).get("unified_title_merge_confirm") == new_ut
@@ -357,6 +370,7 @@ def main():
             "clean_renames": len(renames_clean),
             "confirmed_merges": len(merges_confirmed),
             "held_as_family_tags": len(held_family),
+            "held_emptied_titles": len(held_emptied),
             "collisions": len(collisions),
             "skipped": len(skipped),
             "renames_of_titles_with_no_credentials_record": len(no_credential_record),
@@ -374,6 +388,8 @@ def main():
         # Saved folds into a declared family title (kb/reference/credential_families.json): not merges, never
         # folded; the family-tag converter turns these rows into family tags.
         "held_family": held_family,
+        # Saved folds on a title that holds no exhibit: left in kb_curation, never folded (#3110).
+        "held_emptied": held_emptied,
         # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
         "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
                                "conflict": g["resolution"]["conflict"],
@@ -412,6 +428,11 @@ def main():
         fam += ["- `%s` (%s) into `%s`: %s" % (h["old"], h["kind"], h["target"], h["why"]) for h in held_family]
         md = md.replace("## Clean renames (would land on apply)",
                         "\n".join(fam) + "\n\n## Clean renames (would land on apply)", 1)
+    if held_emptied:
+        emp = ["## Held: saved folds on a title that holds no exhibit", ""]
+        emp += ["- `%s` (%s) into `%s`: %s" % (h["old"], h["kind"], h["target"], h["why"]) for h in held_emptied]
+        md = md.replace("## Clean renames (would land on apply)",
+                        "\n".join(emp) + "\n\n## Clean renames (would land on apply)", 1)
     md = md.replace("## Clean renames (would land on apply)",
                     _render_issuer_md(issuer_plan) + "## Clean renames (would land on apply)", 1)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
@@ -423,6 +444,7 @@ def main():
     print(f"  clean renames:           {len(renames_clean)}")
     print(f"  confirmed merges:        {len(merges_confirmed)}")
     print(f"  collisions:              {len(collisions)}")
+    print(f"  held (title empty):      {len(held_emptied)}")
     print(f"  skipped (no-op):         {len(skipped)}")
     print(f"  V1 (intra-batch):        {'PASS' if v1_pass else f'FAIL ({len(intra_batch_collisions)})'}")
     print(f"  V2 (source exists):      {'PASS' if v2_pass else f'FAIL ({len(v2_blocked)})'}")
