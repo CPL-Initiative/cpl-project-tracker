@@ -82,37 +82,11 @@
    "program": 12,
    "courses": 0,
    "count": 12,
-   "not_verbatim": [
-    "analyze compositional principles as they apply to three-dimensional form and space.",
-    "create sculpture utilizing basic traditional and contemporary techniques.",
-    "demonstrate the proper and safe use of various tools such as carving tools and saws.",
-    "demonstrate building three-dimensional forms using various materials and tools.",
-    "utilize tools and technology such as forms, molds, band saws, and a variety of adhesives.",
-    "describe the proper technique for applying plaster and clay to armatures.",
-    "evaluate sketches as they relate to three-dimensional designs.",
-    "define the properties of sculptural form and space.",
-    "demonstrate creative abilities.",
-    "create sculpture(s) based on a variety of source material.",
-    "cite traditional and non-traditional working techniques as they apply to three-dimensional functional and non-functional art forms.",
-    "express creativity through a process of conception, design, execution, finish, and presentation."
-   ],
-   "why": [
-    "not in the catalog text as printed: analyze compositional principles as they apply to three-dimensional form and spa",
-    "not in the catalog text as printed: create sculpture utilizing basic traditional and contemporary techniques.",
-    "not in the catalog text as printed: demonstrate the proper and safe use of various tools such as carving tools and s",
-    "not in the catalog text as printed: demonstrate building three-dimensional forms using various materials and tools.",
-    "not in the catalog text as printed: utilize tools and technology such as forms, molds, band saws, and a variety of a",
-    "not in the catalog text as printed: describe the proper technique for applying plaster and clay to armatures.",
-    "not in the catalog text as printed: evaluate sketches as they relate to three-dimensional designs.",
-    "not in the catalog text as printed: define the properties of sculptural form and space.",
-    "not in the catalog text as printed: demonstrate creative abilities.",
-    "not in the catalog text as printed: create sculpture(s) based on a variety of source material.",
-    "not in the catalog text as printed: cite traditional and non-traditional working techniques as they apply to three-d",
-    "not in the catalog text as printed: express creativity through a process of conception, design, execution, finish, a"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -122,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -227,6 +201,5 @@
    "The course descriptions that follow the section, ART 101 through ART 365, are catalog course listings and are not program requirements."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

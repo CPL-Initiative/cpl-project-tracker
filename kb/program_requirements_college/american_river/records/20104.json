@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "create a business plan that covers all facets of operating a business.",
-    "organize and manage the different business functions necessary for ongoing operations.",
-    "appraise and evaluate business opportunities."
-   ],
-   "why": [
-    "not in the catalog text as printed: create a business plan that covers all facets of operating a business.",
-    "not in the catalog text as printed: organize and manage the different business functions necessary for ongoing opera",
-    "not in the catalog text as printed: appraise and evaluate business opportunities."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -303,6 +295,5 @@
    "No career information is printed in this certificate's section."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

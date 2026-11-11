@@ -82,29 +82,11 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [
-    "Identify the functions of management and apply them in business situations.",
-    "Analyze written communication.",
-    "Evaluate and apply the basic concepts of marketing in both for-profit and non-profit organization.",
-    "Develop leadership skills and abilities that are effective in managing a multicultural workforce.",
-    "Apply commonly used computer application programs to create relevant business documents.",
-    "Apply business mathematics in order to analyze data and solve business problems.",
-    "Explain small business practices such as record-keeping, financing, marketing, and creating a business plan.",
-    "Compose effective business documents."
-   ],
-   "why": [
-    "not in the catalog text as printed: Identify the functions of management and apply them in business situations.",
-    "not in the catalog text as printed: Analyze written communication.",
-    "not in the catalog text as printed: Evaluate and apply the basic concepts of marketing in both for-profit and non-pr",
-    "not in the catalog text as printed: Develop leadership skills and abilities that are effective in managing a multicu",
-    "not in the catalog text as printed: Apply commonly used computer application programs to create relevant business do",
-    "not in the catalog text as printed: Apply business mathematics in order to analyze data and solve business problems.",
-    "not in the catalog text as printed: Explain small business practices such as record-keeping, financing, marketing, a",
-    "not in the catalog text as printed: Compose effective business documents."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -114,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -344,6 +326,5 @@
    "No career information is printed in the General Business Certificate section."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

@@ -96,8 +96,10 @@
   },
   "careers": {
    "count": 19,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "retail/industrial sales"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "major only",
@@ -296,6 +298,5 @@
    "ECON C2002 (alternative to BUS 110) is not in the closed list; marked catalog_addition. Closed list has ECON 302, likely its predecessor."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

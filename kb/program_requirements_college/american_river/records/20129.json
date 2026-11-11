@@ -84,8 +84,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -175,6 +175,5 @@
    "Total Units: 30 recorded as the certificate total."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

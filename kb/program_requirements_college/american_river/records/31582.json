@@ -94,10 +94,8 @@
   },
   "careers": {
    "count": 9,
-   "not_verbatim": [
-    "3D animation industries"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -238,6 +236,5 @@
    "Careers are read from the Career Information paragraph, which names industries (film, game, broadcast, medical, legal, engineering, Web, fine art, 3D animation industries) rather than job titles; reviewer may wish to confirm these count as career fields."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

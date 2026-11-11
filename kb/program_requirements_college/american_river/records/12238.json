@@ -73,8 +73,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     3.0,
     16.0
@@ -84,10 +84,8 @@
     34.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    15.0,
-    31.0
+   "why": [
+    "the blocks sum to 3.0-16.0; the catalog states 31.0-34.0"
    ]
   },
   "repeated": {
@@ -115,7 +113,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -425,6 +423,5 @@
    "The SLO list includes concentration header bullets ('WINDOWS CONCENTRATION:', 'CISCO CONCENTRATION:', 'LINUX/UNIX CONCENTRATION:') which were omitted as they are not outcomes; outcomes are grouped by concentration in that order (3 Windows, 5 Cisco, 2 Linux/Unix)."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

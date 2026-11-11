@@ -82,15 +82,11 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "participate in quality improvement activities to measure patient outcomes, identify hazards and errors, and improve care."
-   ],
-   "why": [
-    "not in the catalog text as printed: participate in quality improvement activities to measure patient outcomes, ident"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -342,6 +338,5 @@
    "Career Information section cites BLS employment outlook for registered nurses; career entry taken from program description."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

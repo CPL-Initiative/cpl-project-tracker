@@ -61,21 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    53.0,
-    53.0
+    37.0,
+    37.0
    ],
    "stated": [
     53.0,
     53.0
    ],
    "against": "program",
-   "why": [],
-   "ge_included": [
-    16.0,
-    16.0
+   "why": [
+    "the blocks sum to 37.0-37.0; the catalog states 53.0-53.0"
    ]
   },
   "repeated": {
@@ -100,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -310,6 +308,5 @@
    "Section read is the Master Teacher Certificate only; the Site Supervisor and Teacher certificates printed after it were ignored."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

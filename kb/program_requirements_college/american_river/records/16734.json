@@ -90,10 +90,8 @@
   },
   "careers": {
    "count": 7,
-   "not_verbatim": [
-    "industrial mechanical/electrical systems technician"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "major only",
@@ -236,6 +234,5 @@
    "Other sections on these pages (Design Technology, Engineering Technology, Mechatronics Certificate, Basic Mechatronics, CADD Operator certificates) were ignored."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

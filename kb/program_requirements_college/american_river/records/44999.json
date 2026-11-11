@@ -82,31 +82,11 @@
    "program": 9,
    "courses": 0,
    "count": 9,
-   "not_verbatim": [
-    "analyze the use of the figure in historical context.",
-    "compose two-dimensional and three-dimensional works of art using the figure as the main subject.",
-    "critique and analyze works of art where the primary subject matter is the figure, using theory and technique as the basis.",
-    "evaluate trends of figurative art in contemporary uses.",
-    "utilize a variety of techniques to create works with figurative images.",
-    "develop an understanding of basic anatomy of the human form.",
-    "analyze the use of portraiture throughout history.",
-    "develop an understanding of the basic anatomy of the human face.",
-    "construct and create an initial portfolio of artworks using the figure as the primary subject."
-   ],
-   "why": [
-    "not in the catalog text as printed: analyze the use of the figure in historical context.",
-    "not in the catalog text as printed: compose two-dimensional and three-dimensional works of art using the figure as t",
-    "not in the catalog text as printed: critique and analyze works of art where the primary subject matter is the figure",
-    "not in the catalog text as printed: evaluate trends of figurative art in contemporary uses.",
-    "not in the catalog text as printed: utilize a variety of techniques to create works with figurative images.",
-    "not in the catalog text as printed: develop an understanding of basic anatomy of the human form.",
-    "not in the catalog text as printed: analyze the use of portraiture throughout history.",
-    "not in the catalog text as printed: develop an understanding of the basic anatomy of the human face.",
-    "not in the catalog text as printed: construct and create an initial portfolio of artworks using the figure as the pr"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -116,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -217,6 +197,5 @@
    "ART 306 is printed as 'Same As: ARTNM 320' in the course description. It is not listed as an alternative in the requirements table, so it was not recorded as one."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

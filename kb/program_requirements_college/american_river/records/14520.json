@@ -82,41 +82,11 @@
    "program": 14,
    "courses": 0,
    "count": 14,
-   "not_verbatim": [
-    "evaluate potential problems associated with electrostatic discharge (ESD).",
-    "analyze and troubleshoot basic electronic circuits.",
-    "compare and contrast series and parallel resistive, capacitive, and inductive devices.",
-    "analyze the differences between surface-mount techniques and through-hole techniques.",
-    "analyze and describe the components of a complete telecommunication system.",
-    "design an office building telecommunication system using fiber optics and copper cable.",
-    "examine and evaluate the decibel losses and gains in a complete fiber optic communication system.",
-    "assess safety hazards when working with fiber optic systems and associated test equipment.",
-    "perform repairs and adjustments to electronic communication systems according to factory specifications.",
-    "install epoxy, hotmelt, anaerobic, and mechanical connectors on multimode fiber optic cable.",
-    "prepare cost estimates for fiber optic and copper network installation using computer software.",
-    "identify and diagram schematic symbols used in industrial electronic and electrical applications.",
-    "analyze aviation, marine and commercial communication systems that are covered in the FCC General Class Radiotelephone license examination.",
-    "apply FCC rules and regulations governing commercial, aviation, and marine communication systems to practical communication systems."
-   ],
-   "why": [
-    "not in the catalog text as printed: evaluate potential problems associated with electrostatic discharge (ESD).",
-    "not in the catalog text as printed: analyze and troubleshoot basic electronic circuits.",
-    "not in the catalog text as printed: compare and contrast series and parallel resistive, capacitive, and inductive de",
-    "not in the catalog text as printed: analyze the differences between surface-mount techniques and through-hole techni",
-    "not in the catalog text as printed: analyze and describe the components of a complete telecommunication system.",
-    "not in the catalog text as printed: design an office building telecommunication system using fiber optics and copper",
-    "not in the catalog text as printed: examine and evaluate the decibel losses and gains in a complete fiber optic comm",
-    "not in the catalog text as printed: assess safety hazards when working with fiber optic systems and associated test ",
-    "not in the catalog text as printed: perform repairs and adjustments to electronic communication systems according to",
-    "not in the catalog text as printed: install epoxy, hotmelt, anaerobic, and mechanical connectors on multimode fiber ",
-    "not in the catalog text as printed: prepare cost estimates for fiber optic and copper network installation using com",
-    "not in the catalog text as printed: identify and diagram schematic symbols used in industrial electronic and electri",
-    "not in the catalog text as printed: analyze aviation, marine and commercial communication systems that are covered i",
-    "not in the catalog text as printed: apply FCC rules and regulations governing commercial, aviation, and marine commu"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -126,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -255,6 +225,5 @@
    "Stated block total taken from 'Total Units: 32'; the nine listed courses sum to 32."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

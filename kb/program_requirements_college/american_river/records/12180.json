@@ -84,34 +84,16 @@
    "program": 7,
    "courses": 0,
    "count": 7,
-   "not_verbatim": [
-    "apply techniques of structured programming.",
-    "design programs using object-oriented methodology.",
-    "analyze problems related to computer programming.",
-    "design algorithms to solve problems related to programming.",
-    "develop specifications of an information system based on requirements.",
-    "compare alternative implementations of programmed solutions using a variety of criteria.",
-    "describe how programming fits in the context of the development of an information system."
-   ],
-   "why": [
-    "not in the catalog text as printed: apply techniques of structured programming.",
-    "not in the catalog text as printed: design programs using object-oriented methodology.",
-    "not in the catalog text as printed: analyze problems related to computer programming.",
-    "not in the catalog text as printed: design algorithms to solve problems related to programming.",
-    "not in the catalog text as printed: develop specifications of an information system based on requirements.",
-    "not in the catalog text as printed: compare alternative implementations of programmed solutions using a variety of c",
-    "not in the catalog text as printed: describe how programming fits in the context of the development of an informatio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
-   "not_verbatim": [
-    "computer fields"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -343,6 +325,5 @@
    "Careers were taken from the Career Information paragraph, which describes people already in 'the information technology or computer fields'. It names no specific job titles."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

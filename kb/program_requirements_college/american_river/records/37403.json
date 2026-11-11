@@ -82,41 +82,21 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "create drawn and painted images using traditional and digital media",
-    "research and develop visual content with an understanding of the client's target audience",
-    "develop and produce visual solutions that meet the needs of a client within a deadline",
-    "analyze and apply color schemes to communicate a message that meets the client's needs",
-    "research modern art and illustration history, applying concepts to illustrations to effectively communicate visually within contemporary culture",
-    "compile a portfolio that demonstrates skill with both traditional and digital media and client based concept development"
-   ],
-   "why": [
-    "not in the catalog text as printed: create drawn and painted images using traditional and digital media",
-    "not in the catalog text as printed: research and develop visual content with an understanding of the client's target",
-    "not in the catalog text as printed: develop and produce visual solutions that meet the needs of a client within a de",
-    "not in the catalog text as printed: analyze and apply color schemes to communicate a message that meets the client's",
-    "not in the catalog text as printed: research modern art and illustration history, applying concepts to illustrations",
-    "not in the catalog text as printed: compile a portfolio that demonstrates skill with both traditional and digital me"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 7,
-   "not_verbatim": [
-    "editorial",
-    "advertising",
-    "technical and book illustration",
-    "set design",
-    "product design"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -223,6 +203,5 @@
    "Careers split from 'Career opportunities include editorial, advertising, technical and book illustration, 3D modeling and texturing, animation, set design, and product design'; 'editorial' and 'advertising' likely refer to illustration types."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

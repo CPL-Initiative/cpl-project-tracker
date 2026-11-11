@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
     20.0,
     20.0
@@ -85,10 +85,8 @@
     37.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    17.0,
-    17.0
+   "why": [
+    "the blocks sum to 20.0-20.0; the catalog states 37.0-37.0"
    ]
   },
   "repeated": {
@@ -116,7 +114,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -390,6 +388,5 @@
    "No career information printed in the provided portion for this award."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

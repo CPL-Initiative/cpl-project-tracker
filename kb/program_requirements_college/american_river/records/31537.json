@@ -82,41 +82,21 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [
-    "research and demonstrate application of the principles of animation to tell a story with meaning through movement.",
-    "create the motions, gestures, and expressions of three-dimensional computer graphics characters and objects.",
-    "critique animation and regularly improve upon demonstration reels.",
-    "create a portfolio-quality animation demonstration reel.",
-    "create animation from live reference, video reference, and from hand-drawn imagery.",
-    "create animation in various 2D and 3D software programs and apply the principles regardless of the software differences.",
-    "block-in movements in rough animation and show for approval in a weekly review.",
-    "finish work for approval in a timely manner."
-   ],
-   "why": [
-    "not in the catalog text as printed: research and demonstrate application of the principles of animation to tell a st",
-    "not in the catalog text as printed: create the motions, gestures, and expressions of three-dimensional computer grap",
-    "not in the catalog text as printed: critique animation and regularly improve upon demonstration reels.",
-    "not in the catalog text as printed: create a portfolio-quality animation demonstration reel.",
-    "not in the catalog text as printed: create animation from live reference, video reference, and from hand-drawn image",
-    "not in the catalog text as printed: create animation in various 2D and 3D software programs and apply the principles",
-    "not in the catalog text as printed: block-in movements in rough animation and show for approval in a weekly review.",
-    "not in the catalog text as printed: finish work for approval in a timely manner."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 9,
-   "not_verbatim": [
-    "entrepreneurial"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -277,6 +257,5 @@
    "Careers taken from the Career Information paragraph, which names fields/industries (film, game, broadcast, and local industries such as medical, legal, engineering, Web, fine art, entrepreneurial); it also mentions 'an entry level position in any of the animation industries'."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

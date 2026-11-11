@@ -82,19 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "demonstrate safe working practices in a field construction environment.",
-    "demonstrate proper selection, use, care, preparation, and handling of the carpenter's tools of the trade.",
-    "develop interpersonal skills with customers, co-workers, and different trades-workers."
-   ],
-   "why": [
-    "not in the catalog text as printed: demonstrate safe working practices in a field construction environment.",
-    "not in the catalog text as printed: demonstrate proper selection, use, care, preparation, and handling of the carpen",
-    "not in the catalog text as printed: develop interpersonal skills with customers, co-workers, and different trades-wo"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -104,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -292,6 +284,5 @@
    "The 'Career Information' block printed just before the Level I heading (mentioning 'Carpenter technicians') belongs to the preceding Carpenter Apprenticeship Certificate; the Level I career text is the one after its outcomes ('Carpenters are in high demand')."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

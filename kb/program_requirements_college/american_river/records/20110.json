@@ -82,29 +82,11 @@
    "program": 16,
    "courses": 0,
    "count": 16,
-   "not_verbatim": [
-    "demonstrate competency in basic Microsoft Windows and Linux operating system terminology, command line interface commands, account management, and file management and storage.",
-    "define networking terminology, protocols, industry standard models, and best practices for configuring network operating system services.",
-    "configure and implement basic data security methods for protecting servers, workstations and networks from unauthorized access.",
-    "evaluate and demonstrate basic procedures for troubleshooting and replacing field replaceable components in microcomputers.",
-    "implement, evaluate and troubleshoot a transmission control protocol/internet protocol (TCP/IP) addressing scheme.",
-    "define, implement, evaluate and troubleshoot the most common utilities and protocols of the TCP/IP suite.",
-    "design, evaluate, construct and implement a routed network using TCP/IP and industry standard routing protocols and state of the technology routing equipment, in a wired or wireless configuration.",
-    "install, configure, monitor, manage, backup, and customize a Microsoft Windows server."
-   ],
-   "why": [
-    "not in the catalog text as printed: demonstrate competency in basic Microsoft Windows and Linux operating system ter",
-    "not in the catalog text as printed: define networking terminology, protocols, industry standard models, and best pra",
-    "not in the catalog text as printed: configure and implement basic data security methods for protecting servers, work",
-    "not in the catalog text as printed: evaluate and demonstrate basic procedures for troubleshooting and replacing fiel",
-    "not in the catalog text as printed: implement, evaluate and troubleshoot a transmission control protocol/internet pr",
-    "not in the catalog text as printed: define, implement, evaluate and troubleshoot the most common utilities and proto",
-    "not in the catalog text as printed: design, evaluate, construct and implement a routed network using TCP/IP and indu",
-    "not in the catalog text as printed: install, configure, monitor, manage, backup, and customize a Microsoft Windows s"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -114,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -372,6 +354,5 @@
    "The outcomes list spans pages 436-437."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

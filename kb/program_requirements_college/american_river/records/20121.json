@@ -82,43 +82,21 @@
    "program": 9,
    "courses": 0,
    "count": 9,
-   "not_verbatim": [
-    "demonstrate safe working practices in a field construction environment.",
-    "demonstrate proper selection, use, care, preparation, and handling of the carpenter's tools of the trade.",
-    "analyze, interpret, and apply national building codes relating to carpentry.",
-    "analyze and interpret residential and commercial construction blueprints.",
-    "evaluate, layout, and construct various systems such as floor, wall, roof, and concrete form.",
-    "evaluate and layout a building site using architectural and other related drawings.",
-    "calculate elevations by using an engineer's rod and various leveling devices.",
-    "estimate and order material for construction projects.",
-    "identify and select appropriate materials for each phase of construction."
-   ],
-   "why": [
-    "not in the catalog text as printed: demonstrate safe working practices in a field construction environment.",
-    "not in the catalog text as printed: demonstrate proper selection, use, care, preparation, and handling of the carpen",
-    "not in the catalog text as printed: analyze, interpret, and apply national building codes relating to carpentry.",
-    "not in the catalog text as printed: analyze and interpret residential and commercial construction blueprints.",
-    "not in the catalog text as printed: evaluate, layout, and construct various systems such as floor, wall, roof, and c",
-    "not in the catalog text as printed: evaluate and layout a building site using architectural and other related drawin",
-    "not in the catalog text as printed: calculate elevations by using an engineer's rod and various leveling devices.",
-    "not in the catalog text as printed: estimate and order material for construction projects.",
-    "not in the catalog text as printed: identify and select appropriate materials for each phase of construction."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
-   "not_verbatim": [
-    "Carpenter technicians"
-   ],
-   "pass": false
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -313,6 +291,5 @@
    "Career Information text at top of page 173 follows this certificate's outcomes and precedes the Level I heading, so it was read as belonging to this certificate."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

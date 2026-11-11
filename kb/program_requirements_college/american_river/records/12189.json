@@ -61,21 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    45.0,
-    45.0
+    29.0,
+    29.0
    ],
    "stated": [
     45.0,
     45.0
    ],
    "against": "program",
-   "why": [],
-   "ge_included": [
-    16.0,
-    16.0
+   "why": [
+    "the blocks sum to 29.0-29.0; the catalog states 45.0-45.0"
    ]
   },
   "repeated": {
@@ -100,7 +98,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -236,6 +234,5 @@
    "Career text: 'employment as a teacher in publicly funded early care and education programs ... work as a teacher in a privately funded early care and education program, as well as in a before-and-after school-age program'; recorded the job title 'teacher' once."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }

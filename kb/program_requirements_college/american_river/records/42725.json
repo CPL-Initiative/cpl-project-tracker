@@ -82,17 +82,11 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [
-    "describe the therapeutic process especially in terms of how learning occurs and strategies for effective lesson delivery for the school-aged population.",
-    "explain service provision differences between clinic and educational therapeutic models for the school-aged population."
-   ],
-   "why": [
-    "not in the catalog text as printed: describe the therapeutic process especially in terms of how learning occurs and ",
-    "not in the catalog text as printed: explain service provision differences between clinic and educational therapeutic"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -238,6 +232,5 @@
    "The block's stated total of 30 is the certificate's printed Total Units."
   ]
  },
- "extracted_run": 43019771268,
- "read_run": "39047245752"
+ "extracted_run": "39047245752"
 }
