@@ -1149,3 +1149,10 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
 5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.
+
+## S636 SkyAntennae (2026-11-11): the apply reports an issuer a changed override leaves behind
+
+- `promote_issuers` fills or appends and never removes, so S634's changed override for 10-Key Data Entry left the old issuer in `kb/credentials.json` until the reference was edited by hand (`cpl_memory` `p-credential-review-apply-never-removes-issuer`).
+- `stale_override_issuers` (#3100) names each issuer an override once appended (`classified_by` *curator (CER issuing-agency override)*) that no current primary or additional override names, and the apply prints them. It removes nothing: one credential may rightly carry several issuers (Rule 4), and the apply cannot tell a replaced issuer from a second rightful one. A record the override filled in place carries no mark of it and is not read.
+- Measured on the live files, 2026-11-11: 166 appended records, none stale. Guard: `tests/credential_review_stale_issuer_test.py`.
+- **Not built:** a retire path that removes an issuer. It needs a rule for when one issuer replaces another, which is a person's call.

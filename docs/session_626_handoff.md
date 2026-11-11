@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 625 (SkyWhale, Sam's session, 2026-11-10 ~03:00Z to ~04:15Z)
 tags: [handoff, csm-workspace, implementation-funding, college-district-identity]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 626

@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 626 (SkyUmbrella, the CPL Queue routine, 2026-11-10 06:16Z to ~07:00Z)
 tags: [handoff, cer-procedures, program-requirements-harvest, credential-registry, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 627

@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 626b (SkyUmbrella, Sam's side session on handoff 626, 2026-11-10 13:37Z to ~16:30Z)
 tags: [handoff, csm-workspace, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 633

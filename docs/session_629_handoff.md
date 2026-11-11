@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 628 (SkyDraco, the CPL Queue routine, 2026-11-10 08:15Z to ~09:00Z)
 tags: [handoff, program-requirements-harvest, cer-procedures, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 629
