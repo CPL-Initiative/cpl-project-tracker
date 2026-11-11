@@ -1194,13 +1194,15 @@
     }
     return out;
   }
+  // The bytes are the type they claim (a WebP opens RIFF, a PNG its own signature), read from the base64's first letters.
+  function picLooksRight(mime, b64) { return mime === "image/webp" ? /^UklGR/.test(b64) : mime === "image/png" ? /^iVBORw0KGgo/.test(b64) : false; }
   // A canvas as a picture row's bytes: WebP where the browser writes it, PNG where it does not; smaller if too heavy.
   function encodeCanvas(c) {
     for (var tries = 0; tries < 4; tries++) {
       var u = c.toDataURL("image/webp", 0.9);
       if (u.indexOf("data:image/webp;base64,") !== 0) u = c.toDataURL("image/png");
       var m = /^data:(image\/(?:webp|png));base64,([A-Za-z0-9+/=]+)$/.exec(u);
-      if (!m) return null;
+      if (!m || !picLooksRight(m[1], m[2])) return null;
       if (m[2].length <= PIC_B64_MAX) return { mime: m[1], data: m[2], width: c.width, height: c.height };
       var k = document.createElement("canvas");
       k.width = Math.round(c.width * 0.7); k.height = Math.round(c.height * 0.7);
@@ -1290,7 +1292,7 @@
     if (!all.length) return "";
     var open = state.picOpen === r.id, P = state.picsFor[r.id];
     var head = '<p class="why">' + esc(picsWord(live.length) + " from its documents" + (all.length > live.length ? ", " + (all.length - live.length) + " left out" : "") +
-      ". Claude places each under the steps it shows. Look at each before you publish: a screen can show a name or an address.") + "</p>" +
+      ". Claude places each under the steps it shows. Look at each before you publish: a screen can show a name or an address, and a picture once published stays in the site's history even after it is covered or left out.") + "</p>" +
       '<div class="lib-next">' + word("data-picsopen", r.id, open ? "Close the pictures" : "Check the pictures", false, "of " + r.title) + "</div>";
     if (!open) return '<div class="lib-pics">' + head + "</div>";
     if (!P.data) { loadPics(r.id, true); return '<div class="lib-pics">' + head + '<p class="why" role="status">Reading the pictures\u2026</p></div>'; }
@@ -1657,7 +1659,7 @@
     var r = byId(id);
     if (!r || regenState(r) !== "approved") return;
     var regen = {};
-    Object.keys(r.regen).forEach(function (k) { if (k !== "approved_at" && k !== "approved_by") regen[k] = r.regen[k]; });
+    Object.keys(r.regen).forEach(function (k) { if (k !== "approved_at" && k !== "approved_by" && k !== "pictures_checked_by" && k !== "pictures_checked_at") regen[k] = r.regen[k]; });
     regen.publish = "show";
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: storedAuthor() || "the team" } }).then(function () {
       sayOn(id, "Kept. The public copy stays as it is, and the draft stays ready to review."); return load();
@@ -3716,6 +3718,8 @@
     var regen = {};
     Object.keys(r.regen).forEach(function (k) { regen[k] = r.regen[k]; });
     regen.approved_at = new Date().toISOString(); regen.approved_by = by;
+    // The tick is recorded with the approval (COBIx on #3095): library_publish.py publishes pictures only with it.
+    if (pk && pk.checked) { regen.pictures_checked_by = by; regen.pictures_checked_at = regen.approved_at; }
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
       sayOn(id, isNewPiece(r) ? "Approved. It goes up on its own page within three hours; then List publicly on its card." : "Approved. The draft becomes the public copy within three hours.");
       return load().then(function () { focusState(id); });

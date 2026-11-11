@@ -57,7 +57,7 @@ function loadModule(rows, pics, fetchFn) {
   w.localStorage.setItem("cpl_library_author", "Sam");
   // jsdom draws nothing: a canvas that answers as a browser's would.
   w.HTMLCanvasElement.prototype.getContext = function () { return { drawImage: function () {}, fillRect: function () {} }; };
-  w.HTMLCanvasElement.prototype.toDataURL = function (t) { return "data:" + (t === "image/webp" ? "image/webp" : "image/png") + ";base64," + "QUJD".repeat(40); };
+  w.HTMLCanvasElement.prototype.toDataURL = function (t) { return "data:" + (t === "image/webp" ? "image/webp;base64,UklGR" : "image/png;base64,iVBORw0KGgo") + "QUJD".repeat(40); };
   const s = w.document.createElement("script"); s.textContent = SRC; w.document.body.appendChild(s);
   return { w: w, doc: w.document, writes: writes, held: held, M: w.CPL_LIBRARY, root: w.document.getElementById("library-root") };
 }
@@ -177,7 +177,9 @@ const FIG = (n) => '<figure class="shot"><a href="img/' + n + '.webp" target="_b
     box.checked = true;
     m.root.querySelector('form[data-regenokform="n1"]').dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
     await until(() => m.writes.some((x) => x.body.regen && x.body.regen.approved_at));
-    check("D ⭐ with the box ticked, Publish it approves the draft", m.writes.some((x) => x.body.regen && x.body.regen.approved_at && x.body.regen.new_piece === true));
+    check("D ⭐ with the box ticked, Publish it approves the draft and records who checked the pictures",
+      m.writes.some((x) => x.body.regen && x.body.regen.approved_at && x.body.regen.new_piece === true && x.body.regen.pictures_checked_by === "Sam" && x.body.regen.pictures_checked_at === x.body.regen.approved_at));
+    check("D the card says a published picture stays in the site's history", /once published stays in the site's history/.test(m.root.textContent));
     const none = loadModule([ready], []); await none.M.activate(); await tick(); await tick();
     check("D a draft with no pictures asks for no box", !none.doc.getElementById("ro-pics-n1") && !none.root.querySelector('[data-picsopen="n1"]'));
   }
@@ -193,6 +195,7 @@ const FIG = (n) => '<figure class="shot"><a href="img/' + n + '.webp" target="_b
   {
     const fn = fs.readFileSync("chatbox/supabase/functions/library-revise-draft/index.ts", "utf8");
     check("F ⭐ the function reads the piece's pictures with the caller's credential, never one left out", /cpl_library_pictures\?library_id=eq\.\$\{libraryId\}&left_out=is\.false/.test(fn));
+    check("F a picture whose bytes are not the type it claims is not sent to the model", /p\.mime === "image\/webp" && \/\^UklGR\/\.test\(p\.data\)/.test(fn));
     check("F ⭐ it shows them to the model as images and adds the picture rules", /type: "image", source: \{ type: "base64"/.test(fn) && (fn.match(/pictures\.length \? PICTURE_RULES : ""/g) || []).length === 2);
     check("F ⭐ markers are placed after the model's work passed its checks, on both paths", /const done = applyEdits\(page, ans\.edits\);[\s\S]{0,200}placePictures\(done\.html/.test(fn) && /buildNewPage\(starter, r\.slug, ans\);[\s\S]{0,300}placePictures\(built\.html/.test(fn));
     const sql = fs.readFileSync("kb/migrations/2026-11-11_library_pictures.sql", "utf8");

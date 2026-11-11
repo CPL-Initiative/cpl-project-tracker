@@ -109,7 +109,24 @@ check(lp.added_risks(lp.strip_figures("<p>a</p>"), lp.strip_figures("<p>a</p>" +
       "a revision that adds a picture is no new source")
 check(lp.added_risks("<p>a</p>", '<p>a</p><img src="https://x.example/a.png">') != [], "one that adds any other image still is")
 wf = open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), ".github", "workflows", "library-publish.yml")).read()
-check("git add library/*/img/" in wf, "the publish run commits the picture files")
+check("git add -A library/*/img/" in wf, "the publish run commits the picture files, and their removal")
+# COBIx on #3095: a picture left out after publishing must leave the site, and the tick box must reach the record.
+import pathlib  # noqa: E402
+import tempfile  # noqa: E402
+with tempfile.TemporaryDirectory() as td:
+    folder = pathlib.Path(td)
+    (folder / "img").mkdir()
+    for nm in ("1.webp", "3.webp", "notes.txt"):
+        (folder / "img" / nm).write_bytes(b"x")
+    gone = [p.name for p in lp.stale_pictures(folder, {"img/1.webp": b"x"})]
+    check(gone == ["3.webp"], "a picture the page no longer shows is deleted from its folder; nothing else is touched")
+    check(lp.stale_pictures(folder / "none", {}) == [], "a page with no picture folder has nothing to delete")
+src = open(lp.__file__).read()
+check("for old in stale_pictures(page.parent, files):" in src and "old.unlink()" in src, "--write deletes them")
+check(not lp.pictures_checked(N) and lp.pictures_checked({"regen": {"pictures_checked_by": "Sam", "pictures_checked_at": "t"}})
+      and not lp.pictures_checked({"regen": {"pictures_checked_by": " ", "pictures_checked_at": "t"}}),
+      "an approval says who checked the pictures, or it does not count")
+check("if files and not pictures_checked(r):" in src, "--write skips a draft with pictures nobody is recorded as checking")
 
 if fails:
     print("\n%d check(s) failed" % len(fails))

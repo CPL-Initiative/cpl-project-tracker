@@ -211,7 +211,9 @@ async function readPictures(libraryId: string, cred: Record<string, string>): Pr
   const res = await rest(`cpl_library_pictures?library_id=eq.${libraryId}&left_out=is.false&select=n,mime,data,width,height,page,source_title,alt&order=n.asc&limit=${MAX_PICTURES}`, cred).catch(() => null);
   if (!res || !res.ok) return [];
   const rows = await res.json().catch(() => []);
-  return (Array.isArray(rows) ? rows : []).filter((p: any) => p && (p.mime === "image/webp" || p.mime === "image/png") && /^[A-Za-z0-9+/=]+$/.test(String(p.data || "")));
+  return (Array.isArray(rows) ? rows : []).filter((p: any) => p && /^[A-Za-z0-9+/=]+$/.test(String(p.data || "")) &&
+    // The bytes are the type they claim, or the picture is not sent (a mismatch would refuse the whole request).
+    ((p.mime === "image/webp" && /^UklGR/.test(p.data)) || (p.mime === "image/png" && /^iVBORw0KGgo/.test(p.data))));
 }
 function userContent(ask: string, pictures: any[]): unknown {
   if (!pictures.length) return ask;

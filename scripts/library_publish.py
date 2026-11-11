@@ -258,6 +258,23 @@ def place_pictures(page, pictures):
     return FIGURE.sub(one, page or ""), files
 
 
+def pictures_checked(record):
+    """True when the approval says who looked at the pictures (COBIx on #3095: the card's tick box was the only
+    gate). A draft carrying figures is published only with it. Pure."""
+    g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
+    return bool(str(g.get("pictures_checked_by") or "").strip()) and bool(g.get("pictures_checked_at"))
+
+
+def stale_pictures(folder, files):
+    """Picture files in a page's img/ folder that the page being written no longer shows (COBIx on #3095: a picture
+    left out after publishing stayed served at its address). -> the paths to delete."""
+    img = folder / "img"
+    if not img.is_dir():
+        return []
+    keep = {name.split("/", 1)[1] for name in files}
+    return sorted(p for p in img.iterdir() if p.is_file() and re.match(r"^\d{1,2}\.(webp|png)$", p.name) and p.name not in keep)
+
+
 def is_new_piece(record):
     g = record.get("regen") if isinstance(record.get("regen"), dict) else {}
     return bool(g.get("new_piece"))
@@ -347,6 +364,9 @@ def write_phase(today):
         if FIGURE.search(d.get("html") or ""):
             pics = api(f"cpl_library_pictures?library_id=eq.{r['id']}&select=n,mime,data,width,height,left_out") or []
             d["html"], files = place_pictures(d["html"], pics)
+            if files and not pictures_checked(r):
+                skipped.append(f"{r['slug']}: draft {d['id']} carries pictures and its approval does not say who checked them")
+                continue
         if is_new_piece(r):
             bad = main_problems(strip_figures(d.get("html") or ""))
             if bad:
@@ -363,6 +383,8 @@ def write_phase(today):
             out = page.parent / name
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_bytes(data)
+        for old in stale_pictures(page.parent, files):
+            old.unlink()
         up = record_update(r, d, today)
         RECEIPTS.mkdir(parents=True, exist_ok=True)
         (RECEIPTS / f"{today}-{r['slug']}.json").write_text(

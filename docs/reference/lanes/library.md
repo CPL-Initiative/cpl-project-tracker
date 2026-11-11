@@ -168,9 +168,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   a marker, `<p>[[picture N: alt text]]</p>`; `pictures.mjs` turns each into the one fixed figure, so the allowlist and
   the frozen sources stand. The card shows the pictures (*Check the pictures*: Cover or crop, which rewrites the bytes,
   and Leave it out); Publish it and Replace the public copy wait for the box that says they were checked;
-  `library_publish.py` writes `library/<slug>/img/<n>.webp`. A PowerPoint is saved as PDF first. COBIx's session
+  `library_publish.py` writes `library/<slug>/img/<n>.webp`, deletes a picture file the page no longer shows, and
+  skips a draft with pictures whose approval does not carry `regen.pictures_checked_by` (COBIx on #3095). A picture
+  once published stays in the repo's history: a name in one needs a history purge (Rule 5), so the check before
+  publishing is the gate. A PowerPoint is saved as PDF first. COBIx's session
   recipe (`pdftoppm -r 200`, crop, captions, full size on a click, alt text, the review step) is the same result by
-  hand. Tests: `library_pictures` (36), `library_publish_test.py`.
+  hand. Tests: `library_pictures` (38), `library_publish_test.py`.
 - **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
   when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
   no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,
