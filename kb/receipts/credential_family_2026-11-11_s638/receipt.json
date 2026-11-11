@@ -1,5 +1,5 @@
 {
- "_about": "Receipt for plan.sql: the live rows it read (full images, the before-values of every row it deletes), what each title becomes, and what it holds for Sam. Written before the plan runs.",
+ "_about": "The S638 read (2026-11-11) of Sam's saved fold rows, made for a plan.sql that never ran: it deleted his fold rows and opened with a temporary table the execute_sql guard blocks. Retired in S639; it wrote nothing and its convert/held lists (25/6) predate holding ASE C1 or G1. The write is .github/workflows/credential-family-apply.yml (kb/_family_tag_apply.py), which reads live at dispatch, inserts only credential_family rows beside the fold rows, and lands its applied_*.json and rolled_back_*.json receipts in this folder.",
  "source": "Sam, 2026-11-11, in session: each ASE bundle stays its own title and carries the family (cpl_memory sam-bundle-family-is-a-field-2026-11-11); his saved folds are read as family tags.",
  "cohort": "credential-family-s638@bot",
  "rows_read": 61,

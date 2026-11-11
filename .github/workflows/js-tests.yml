@@ -885,6 +885,8 @@ jobs:
           python3 tests/statewide_cid_hold_test.py
           # A credential family is a field, never a fold: the conversion plan, the sync, the aliases (Sam, 2026-11-11).
           python3 tests/credential_family_test.py
+          # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
+          python3 tests/credential_family_apply_test.py
           # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.
           python3 tests/credential_family_fold_contact_test.py
           # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
