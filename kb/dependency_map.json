@@ -28283,14 +28283,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 134
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 159
+     "line": 165
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

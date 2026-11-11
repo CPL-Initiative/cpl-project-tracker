@@ -101,7 +101,25 @@ def standards_body(title):
 
 def _is_body(issuer, body):
     n = norm(issuer)
-    return bool(body) and (n == norm(body) or "automotive service excellence" in n)
+    return bool(body) and (n == norm(body) or n == "ase" or "automotive service excellence" in n)
+
+
+def ts(s):
+    """A sortable instant from a kb_curation or overlay stamp ("2026-11-11T15:26:54Z",
+    "2026-11-11 15:26:55.029+00", "...+00:00"); "" sorts first. Strings with different offsets or a
+    "Z" do not compare in order, so every rule-1 comparison goes through this."""
+    from datetime import datetime, timezone
+    s = (s or "").strip()
+    if not s:
+        return datetime.min.replace(tzinfo=timezone.utc)
+    t = s.replace(" ", "T", 1).replace("Z", "+00:00")
+    t = re.sub(r"([+-]\d\d)$", r"\1:00", t)
+    try:
+        d = datetime.fromisoformat(t)
+    except ValueError:
+        m = re.match(r"^(.*?\.\d{1,6})\d*([+-].*)?$", t)
+        d = datetime.fromisoformat(m.group(1) + (m.group(2) or "")) if m else datetime.min
+    return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
 
 
 def _stamp(entry, field):
@@ -144,16 +162,16 @@ def resolve(target, members, overlay, target_exists_before=True):
     titles = list(dict.fromkeys([target] + [t for t, _ in members]))
     saves = [a for t, _ in members for f in FOLD_FIELDS
              for a in [_fold_at(overlay.get(t), f)] if a]
-    fold_at = min(saves) if saves else ""
+    fold_at = min(saves, key=ts) if saves else ""
     humans, older, additional = [], [], []
     for t in titles:
         got = _stamp(overlay.get(t), "issuing_agency_override")
         if got and is_person(got[1]):
             row = {"title": t, "issuer": got[0], "by": got[1], "at": got[2], "own": t in own}
             # Set with the fold: its own stamp at or after the group's earliest fold save.
-            (humans if (got[2] and fold_at and got[2] >= fold_at) else older).append(row)
+            (humans if (got[2] and fold_at and ts(got[2]) >= ts(fold_at)) else older).append(row)
         extra = _stamp(overlay.get(t), "issuing_agency_additional_override")
-        if extra and is_person(extra[1]) and extra[2] and fold_at and extra[2] >= fold_at:
+        if extra and is_person(extra[1]) and extra[2] and fold_at and ts(extra[2]) >= ts(fold_at):
             additional += [x.strip() for x in extra[0].split("|") if x.strip()]
     before = None
     for t in own:
@@ -164,9 +182,9 @@ def resolve(target, members, overlay, target_exists_before=True):
     out = {"target": target, "rule": "additive", "winner": None, "winner_from": None,
            "humans": humans, "older_people": older, "fold_saved_at": fold_at,
            "target_override_before": before, "conflict": None, "additional": additional,
-           "drop_body": None}
+           "drop_body": None, "target_exists_before": bool(target_exists_before)}
     if humans:
-        win = sorted(humans, key=lambda h: (h["at"], h["title"]))[-1]
+        win = sorted(humans, key=lambda h: (ts(h["at"]), h["title"]))[-1]
         out["rule"] = "reviewer"
         out["winner"] = canonical_issuer(win["issuer"])
         out["winner_from"] = win
@@ -199,11 +217,14 @@ def plan(renames, merges, overlay, credentials, tallies=None):
     out = {}
     for target, members in sorted(groups.items()):
         res = resolve(target, members, overlay or {}, target_exists_before=target in creds)
-        own = (creds.get(target) or []) + [r for t, role in members if role == "lead"
-                                           for r in creds.get(t) or []]
-        group_recs = own + [r for t, role in members if role == "merge" for r in creds.get(t) or []]
-        if res["rule"] == "cert-form" and not own:
-            res["rule"], res["fell_back"] = "additive", "nothing on the target to keep"
+        own_pre = creds.get(target) or []
+        folding = [r for t, _ in members for r in creds.get(t) or []]
+        group_recs = own_pre + folding
+        # Rule 2 keeps the target's own records and every folded record that is not the college's; with
+        # none of either there is nothing to keep, whichever source happens to lead.
+        if res["rule"] == "cert-form" and not own_pre and all(is_system(r.get("issuing_agency"))
+                                                              for r in folding):
+            res["rule"], res["fell_back"] = "additive", "no record on the group but the college's"
         if res["rule"] == "standards" and not any(is_system(r.get("issuing_agency")) for r in group_recs):
             res["rule"], res["fell_back"] = "additive", "no college record in the group to keep"
             res["drop_body"] = None
@@ -213,20 +234,31 @@ def plan(renames, merges, overlay, credentials, tallies=None):
     return out
 
 
-def _person_note(src, rec):
-    by = rec.get("reviewed_by")
+def _person_note(src, rec, res=None):
+    """The receipt's note for a record a person set, or None. A record's own reviewed_by names the
+    person when the curation stamped it; when it does not (the override matched a machine record, so
+    nothing was filled), a person's override in the group naming the same issuer does."""
+    by, at = rec.get("reviewed_by"), rec.get("reviewed_at")
     if not is_person(by):
-        return None
+        hit = next((h for h in (res or {}).get("humans", []) + (res or {}).get("older_people", [])
+                    if norm(canonical_issuer(h["issuer"])) == norm(canonical_issuer(rec.get("issuing_agency")))),
+                   None)
+        if not hit:
+            return None
+        by, at = hit["by"], hit["at"]
     return {"from_title": src, "issuing_agency": rec.get("issuing_agency"),
-            "training_agency": rec.get("training_agency"), "by": by, "at": rec.get("reviewed_at"),
-            "before": rec}
+            "training_agency": rec.get("training_agency"), "by": by, "at": at, "before": rec}
 
 
 def fold_records(res, existing, moving):
-    """Apply a resolution to credential records. existing: the target's records (after any lead rename);
-    moving: [(source title, [records])] for the merges. Returns (records, log)."""
+    """Apply a resolution to credential records. existing: the target's records after any lead rename
+    (the target's own when it existed before the run, else the lead's); moving: [(source title,
+    [records])] for the merges. Rules 2 and 2b never drop the target's own pre-existing records, and
+    treat a same-run lead's like any folded title's. Returns (records, log)."""
     def key(r):
         return (norm(r.get("issuing_agency")), norm(r.get("training_agency")))
+
+    own_pre = res.get("target_exists_before", True)
 
     log = {"kept": 0, "moved": 0, "deduped": 0, "dropped": [], "reissued": [], "people": []}
     rule = res["rule"]
@@ -241,7 +273,7 @@ def fold_records(res, existing, moving):
                 if norm(canonical_issuer(was)) not in keep:
                     log["reissued"].append({"from_title": src, "before": was, "after": res["winner"],
                                             "training_agency": rec.get("training_agency")})
-                    note = _person_note(src, rec)
+                    note = _person_note(src, rec, res)
                     if note:
                         log["people"].append(dict(note, op="reissued", after=res["winner"]))
                     rec["issuing_agency"] = res["winner"]
@@ -260,7 +292,9 @@ def fold_records(res, existing, moving):
         return out, log
 
     def drops(src, rec):
-        if rule == "cert-form" and src != res["target"] and is_system(rec.get("issuing_agency")):
+        if src == res["target"] and own_pre:
+            return None  # the target's own records stay under rules 2 and 2b
+        if rule == "cert-form" and is_system(rec.get("issuing_agency")):
             return "the target is the certification; the college shows on its exhibit's path"
         if rule == "standards" and _is_body(rec.get("issuing_agency"), res.get("drop_body")):
             return "the target is the college's course taught to the standard; the certifying body " \
@@ -274,7 +308,7 @@ def fold_records(res, existing, moving):
             if why:
                 log["dropped"].append({"from_title": src, "issuing_agency": rec.get("issuing_agency"),
                                        "training_agency": rec.get("training_agency"), "why": why})
-                note = _person_note(src, rec)
+                note = _person_note(src, rec, res)
                 if note:
                     log["people"].append(dict(note, op="dropped"))
                 continue
@@ -295,6 +329,16 @@ def drop_issuer(res, issuer):
     if res.get("rule") == "standards":
         return _is_body(issuer, res.get("drop_body"))
     return False
+
+
+def keep_part(res, issuer):
+    """Whether one issuer named in an issuing_agency_additional_override survives the resolution on the
+    target: under rule 1 only the winner and the additional issuers set with the fold; under rules 2 and
+    2b everything but the dropped issuer."""
+    if res.get("rule") == "reviewer":
+        keep = {norm(res.get("winner"))} | {norm(canonical_issuer(a)) for a in res.get("additional") or []}
+        return norm(canonical_issuer(issuer)) in keep
+    return not drop_issuer(res, issuer)
 
 
 def path_tallies(related_doc):

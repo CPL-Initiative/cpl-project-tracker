@@ -100,7 +100,12 @@ def _find_latest_snapshot():
             candidates.append((name, path))
     if not candidates:
         return None
-    candidates.sort(reverse=True)  # YYYY-MM-DD lex order = chronological
+    # <date>, then <date>-2, -3 … -10: by date, then by the same-day number (a string sort put -10
+    # before -9).
+    def order(c):
+        date_part, n = c[0][:10], c[0][11:]
+        return (date_part, int(n) if n.isdigit() else 1)
+    candidates.sort(key=order, reverse=True)
     return candidates[0]
 
 
@@ -116,7 +121,8 @@ def fetch_credential_review_rows() -> dict:
     docs/kb-notes/methodology-paginate-postgrest-reads.md; 138 rows today).
     """
     qs = urllib.parse.urlencode({
-        "select": "course_id,field,value,reviewer_email,reviewed_at",
+        # validated_at / validated_by too: a deleted row's before_row must restore it exactly.
+        "select": "course_id,field,value,reviewer_email,reviewed_at,validated_at,validated_by",
         "course_id": f"like.{KEY_PREFIX}%",
         "order": "course_id.asc,field.asc",
     })
@@ -207,37 +213,96 @@ def patch_row(old_course_id: str, new_course_id: str, field: str) -> dict:
                 "error": str(e)[:200]}
 
 
-def set_issuer(course_id: str, value: str, reviewer: str, reviewed_at: str, exists: bool) -> dict:
-    """The issuer carry's one write: a guarded UPDATE of the target's issuing_agency_override when the
-    row exists, else an INSERT that does nothing on conflict. The caller logs the before-row."""
-    body = {"value": value, "reviewer_email": reviewer, "reviewed_at": reviewed_at}
-    if exists:
-        qs = urllib.parse.urlencode({"course_id": f"eq.{course_id}",
-                                     "field": "eq.issuing_agency_override"})
-        req = urllib.request.Request(
-            f"{URL}/rest/v1/kb_curation?{qs}", method="PATCH",
-            headers={"apikey": KEY, "Authorization": f"Bearer {KEY}",
-                     "Content-Type": "application/json", "Prefer": "return=representation"},
-            data=json.dumps(body).encode("utf-8"))
-        op = "issuer_update"
-    else:
+ROW_COLS = ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")
+
+
+def _before(row):
+    """The row as it stood, every column the undo needs to put it back exactly."""
+    return {k: (row or {}).get(k) for k in ROW_COLS}
+
+
+def _guard_qs(course_id, field, before):
+    """PostgREST filters matching the exact row read: course_id and field, plus its value and stamp."""
+    q = {"course_id": f"eq.{course_id}", "field": f"eq.{field}"}
+    if before is not None:
+        v = before.get("value")
+        q["value"] = "is.null" if v is None else f"eq.{v}"
+        if before.get("reviewed_at"):
+            q["reviewed_at"] = f"eq.{before['reviewed_at']}"
+    return urllib.parse.urlencode(q)
+
+
+def read_row(course_id: str, field: str):
+    """The one row as it is now (the write-time read, CLAUDE.md Rule 10), or None."""
+    qs = urllib.parse.urlencode({"select": "course_id,field," + ",".join(ROW_COLS),
+                                 "course_id": f"eq.{course_id}", "field": f"eq.{field}"})
+    req = urllib.request.Request(f"{URL}/rest/v1/kb_curation?{qs}",
+                                 headers={"apikey": KEY, "Authorization": f"Bearer {KEY}",
+                                          "Accept": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        rows = json.load(r) or []
+    return rows[0] if rows else None
+
+
+def guarded_write(op: str, course_id: str, field: str, before, body=None) -> dict:
+    """One carry write, guarded on the row it read. op: "update" (PATCH body where the row still holds
+    before's value and stamp), "delete" (the same guard), or "insert" (POST, nothing on conflict).
+    rows_affected 0 means the row changed since the read: status "conflict", nothing written."""
+    hdr = {"apikey": KEY, "Authorization": f"Bearer {KEY}", "Prefer": "return=representation"}
+    if op == "insert":
         req = urllib.request.Request(
             f"{URL}/rest/v1/kb_curation", method="POST",
-            headers={"apikey": KEY, "Authorization": f"Bearer {KEY}",
-                     "Content-Type": "application/json",
-                     "Prefer": "return=representation,resolution=ignore-duplicates"},
-            data=json.dumps({"course_id": course_id, "field": "issuing_agency_override",
-                             **body}).encode("utf-8"))
-        op = "issuer_insert"
+            headers=dict(hdr, **{"Content-Type": "application/json",
+                                 "Prefer": "return=representation,resolution=ignore-duplicates"}),
+            data=json.dumps({"course_id": course_id, "field": field, **(body or {})}).encode("utf-8"))
+    else:
+        req = urllib.request.Request(
+            f"{URL}/rest/v1/kb_curation?{_guard_qs(course_id, field, before)}",
+            method="PATCH" if op == "update" else "DELETE",
+            headers=dict(hdr, **({"Content-Type": "application/json"} if op == "update" else {})),
+            data=json.dumps(body).encode("utf-8") if op == "update" else None)
+    out = {"course_id": course_id, "field": field, "op": "issuer_" + op}
     try:
         with urllib.request.urlopen(req, timeout=30) as r:
             got = json.load(r)
             n = len(got) if isinstance(got, list) else 0
-        return {"course_id": course_id, "field": "issuing_agency_override", "op": op,
-                "status": "ok", "rows_affected": n, "after_row": body}
     except Exception as e:
-        return {"course_id": course_id, "field": "issuing_agency_override", "op": op,
-                "status": "fail", "error": str(e)[:200]}
+        return dict(out, status="fail", error=str(e)[:200])
+    if not n:
+        return dict(out, status="conflict", rows_affected=0,
+                    reason="the row changed since it was read; left as it is")
+    return dict(out, status="ok", rows_affected=n, after_row=body)
+
+
+def _next_log_path(folder):
+    """supabase_log.json, or supabase_log-<UTC>.json when a run already wrote one: a retry never
+    overwrites the first run's before-rows, which are the undo's input."""
+    first = os.path.join(folder, "supabase_log.json")
+    if not os.path.exists(first):
+        return first
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+    return os.path.join(folder, f"supabase_log-{stamp}.json")
+
+
+def _carry_write(log, counts, cid, field, before, op, body=None, **why):
+    """Re-read the row, write only if it is still the row the decision was made on, and log it."""
+    try:
+        fresh = read_row(cid, field)
+    except Exception as e:
+        res = {"course_id": cid, "field": field, "op": "issuer_" + op, "status": "fail",
+               "error": "write-time read failed: " + str(e)[:160]}
+    else:
+        if _before(fresh) != _before(before) if before is not None else fresh is not None:
+            res = {"course_id": cid, "field": field, "op": "issuer_" + op, "status": "conflict",
+                   "rows_affected": 0, "reason": "the row changed since the pre-fetch; left as it is",
+                   "now_row": _before(fresh) if fresh else None}
+        else:
+            res = guarded_write(op, cid, field, before, body)
+    res["before_row"] = _before(before) if before is not None else None
+    res.update(why)
+    log.append({"kind": "issuer", **res})
+    counts[res["status"]] = counts.get(res["status"], 0) + 1
+    return res
 
 
 def main():
@@ -257,14 +322,36 @@ def main():
 
     print(f"[cred_rename_apply_supabase] {datetime.now(timezone.utc).isoformat()}")
     print(f"  snapshot: {date_stamp} ({len(renames)} renames, {len(merges)} merges)")
-
-    existing = fetch_credential_review_rows()
-    print(f"  existing _CREDENTIAL_REVIEW::* course_ids in Supabase: {len(existing)}")
+    log_path = _next_log_path(os.path.join(OUT_ROOT, date_stamp))
 
     log = []
-    ok = 0
-    fail = 0
+    counts = {}
     no_op = 0
+
+    def write_log(extra=None):
+        payload = {
+            "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            "alias_map_snapshot": alias_path,
+            "renames_processed": len(renames),
+            "merges_processed": len(merges),
+            "ok": counts.get("ok", 0),
+            "fail": counts.get("fail", 0),
+            "conflict": counts.get("conflict", 0),
+            "no_op": no_op,
+            "log": log,
+        }
+        payload.update(extra or {})
+        with open(log_path, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+
+    try:
+        existing = fetch_credential_review_rows()
+    except Exception as e:
+        write_log({"fetch_failed": str(e)[:300]})
+        sys.exit(f"kb_curation read failed, nothing written: {e}")
+    print(f"  existing _CREDENTIAL_REVIEW::* course_ids in Supabase: {len(existing)}")
+
     # (kind, old, new): merges additionally drop the fulfilled merge-confirm
     # row and never PATCH into a field the target already carries.
     work = [("rename", o, n) for o, n in renames.items()] \
@@ -276,8 +363,11 @@ def main():
     # sibling (run #4, 2026-07-08: the 4-source ASE A6 fold, 8 fails).
     claimed = {cid: {r.get("field") for r in rows}
                for cid, rows in existing.items()}
-    # LIVE rows by course_id and field, moved as PATCHes land (the issuer carry reads the target's).
+    # LIVE rows by course_id and field, moved as PATCHes land (the issuer carry reads the target's),
+    # and which target fields this run moved in: rules 2 and 2b act only on those, never on the
+    # target's own pre-existing rows (which the JSON fold keeps too).
     live = {cid: {r.get("field"): dict(r) for r in rows} for cid, rows in existing.items()}
+    moved = {}
     for kind, old_ut, new_ut in work:
         old_cid = f"{KEY_PREFIX}{old_ut}"
         new_cid = f"{KEY_PREFIX}{new_ut}"
@@ -291,10 +381,10 @@ def main():
         for row in rows_for_old:
             field = row.get("field") or ""
             if field == "unified_title_override" or (
-                    kind == "merge" and field == "unified_title_merge_confirm"):
-                # Decision fulfilled — drop it. Per the ADR, the alias_map
-                # snapshot at kb/cred_rename_out/<date>/ is the canonical
-                # audit trail of "this rename/merge happened on this date."
+                    field == "unified_title_merge_confirm"
+                    and (kind == "merge" or row.get("value") == new_ut)):
+                # Decision fulfilled — drop it. A lead's own confirm naming the title it creates
+                # (an all-confirmed group) is fulfilled too; moved, it would point at itself.
                 res = delete_row(old_cid, field)
             elif kind == "merge" and field in target_fields:
                 # The merge target already carries this field — its curator
@@ -318,74 +408,72 @@ def main():
                     res["via"] = "409_fallback"
                     target_fields.add(field)
             # The row as it stood, so kb/_cred_rename_undo.py --supabase-plan can put it back.
-            res["before_row"] = {k: row.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
+            res["before_row"] = _before(row)
             if res.get("op") == "patch" and res.get("status") == "ok":
-                live.setdefault(new_cid, {})[field] = dict(row)
+                live.setdefault(new_cid, {})[field] = dict(row, course_id=new_cid)
+                moved.setdefault(new_cid, set()).add(field)
             log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
-            if res.get("status") == "ok":
-                ok += 1
-            else:
-                fail += 1
+            st = res.get("status") if res.get("status") == "ok" else "fail"
+            counts[st] = counts.get(st, 0) + 1
 
     # ── Issuer precedence carry (kb/fold_issuer.py, #3110 build step 1) ──
-    # The JSON apply froze each fold group's decision into the snapshot. Where a
-    # person's explicit issuer won (rule 1), the target's issuing_agency_override
-    # ends on that value, in the reference spelling, under that person's stamp;
-    # the row's before-value is logged (Rule 10 a2). Rules 2 and 3 change no
-    # override: the moves above already kept the target's.
+    # The JSON apply froze each fold group's decision into the snapshot. Every
+    # write below re-reads its row first and is guarded on the value and stamp
+    # it read (Rule 10: a person's newer edit always wins); a row that changed
+    # is left alone and logged as a conflict. Each write logs the before-row.
     for target, g in sorted((doc.get("issuer_resolution") or {}).items()):
         res_ = g.get("resolution") or {}
+        rule = res_.get("rule")
         cid = f"{KEY_PREFIX}{target}"
-        if res_.get("rule") in ("cert-form", "standards"):
-            # Rules 2 and 2b drop an issuer from the target. An override naming it that landed on the
-            # target (the lead's, moved above) would put it back at the next sync, so it goes too,
-            # logged with its before-row.
-            cur = (live.get(cid) or {}).get("issuing_agency_override")
-            if cur and fold_issuer.drop_issuer(res_, cur.get("value")):
-                res = delete_row(cid, "issuing_agency_override")
-                res["before_row"] = {k: cur.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
-                res["dropped_by_rule"] = res_.get("rule")
-                log.append({"kind": "issuer", **res})
-                ok, fail = (ok + 1, fail) if res.get("status") == "ok" else (ok, fail + 1)
-            continue
-        if res_.get("rule") != "reviewer" or not res_.get("winner"):
-            continue
-        win = res_.get("winner_from") or {}
-        cur = (live.get(cid) or {}).get("issuing_agency_override")
-        if cur and cur.get("value") == res_["winner"]:
-            log.append({"kind": "issuer", "course_id": cid, "op": "skip",
-                        "reason": "target override already the winner"})
-            continue
-        res = set_issuer(cid, res_["winner"], win.get("by"), win.get("at"), exists=bool(cur))
-        res["before_row"] = ({k: cur.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
-                             if cur else None)
-        res["winner_from_title"] = win.get("title")
-        log.append({"kind": "issuer", **res})
-        if res.get("status") == "ok":
-            ok += 1
-        else:
-            fail += 1
+        rows = live.get(cid) or {}
+        mine = moved.get(cid) or set()
+        if rule in ("cert-form", "standards"):
+            # Rules 2 and 2b drop an issuer from the target. An override naming it that this fold moved
+            # onto the target would put it back at the next sync, so it goes too.
+            cur = rows.get("issuing_agency_override")
+            if cur and "issuing_agency_override" in mine and fold_issuer.drop_issuer(res_, cur.get("value")):
+                _carry_write(log, counts, cid, "issuing_agency_override", cur, "delete", dropped_by_rule=rule)
+        if rule == "reviewer" and res_.get("winner"):
+            win = res_.get("winner_from") or {}
+            cur = rows.get("issuing_agency_override")
+            if cur and cur.get("value") == res_["winner"]:
+                log.append({"kind": "issuer", "course_id": cid, "op": "skip",
+                            "reason": "target override already the winner"})
+            elif (cur and fold_issuer.is_person(cur.get("reviewer_email"))
+                  and fold_issuer.ts(cur.get("reviewed_at")) > fold_issuer.ts(win.get("at"))):
+                log.append({"kind": "issuer", "course_id": cid, "op": "skip", "status": "conflict",
+                            "reason": "a person saved this override after the winner; the newer edit wins",
+                            "before_row": _before(cur)})
+                counts["conflict"] = counts.get("conflict", 0) + 1
+            else:
+                body = {"value": res_["winner"], "reviewer_email": win.get("by"),
+                        "reviewed_at": win.get("at")}
+                _carry_write(log, counts, cid, "issuing_agency_override", cur,
+                             "update" if cur else "insert", body, winner_from_title=win.get("title"))
+        if rule in ("reviewer", "cert-form", "standards"):
+            # The additional override carries issuers too, and the next sync appends every one of them:
+            # keep only the parts the resolution keeps. Rules 2 and 2b touch only a row this fold moved.
+            cur = rows.get("issuing_agency_additional_override")
+            if cur and (rule == "reviewer" or "issuing_agency_additional_override" in mine):
+                parts = [p.strip() for p in (cur.get("value") or "").split("|") if p.strip()]
+                kept = [p for p in parts if fold_issuer.keep_part(res_, p)]
+                if kept != parts:
+                    if kept:
+                        body = {"value": " | ".join(kept), "reviewer_email": cur.get("reviewer_email"),
+                                "reviewed_at": cur.get("reviewed_at")}
+                        _carry_write(log, counts, cid, "issuing_agency_additional_override", cur, "update",
+                                     body, dropped_parts=[p for p in parts if p not in kept], rule=rule)
+                    else:
+                        _carry_write(log, counts, cid, "issuing_agency_additional_override", cur, "delete",
+                                     dropped_parts=parts, rule=rule)
 
-    # Persist the per-row log next to the snapshot so a future operator
-    # can see exactly what landed (and replay failed rows individually).
-    log_path = os.path.join(OUT_ROOT, date_stamp, "supabase_log.json")
-    log_payload = {
-        "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "alias_map_snapshot": alias_path,
-        "renames_processed": len(renames),
-        "merges_processed": len(merges),
-        "ok": ok,
-        "fail": fail,
-        "no_op": no_op,
-        "log": log,
-    }
-    with open(log_path, "w", encoding="utf-8") as f:
-        json.dump(log_payload, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"  ok={ok}  fail={fail}  no_op_aliases={no_op}")
+    write_log()
+    ok, fail, conflict = counts.get("ok", 0), counts.get("fail", 0), counts.get("conflict", 0)
+    print(f"  ok={ok}  fail={fail}  conflict={conflict}  no_op_aliases={no_op}")
     print(f"  log: {log_path}")
-    if fail:
-        sys.exit(f"{fail} row operations failed — inspect {log_path}.")
+    if fail or conflict:
+        sys.exit(f"{fail} row operation(s) failed and {conflict} left for a newer edit — inspect {log_path}. "
+                 f"The kb files and kb_curation may disagree until a person settles them.")
 
 
 if __name__ == "__main__":

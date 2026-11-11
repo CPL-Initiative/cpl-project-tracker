@@ -217,7 +217,9 @@ def main():
         for o in sources[1:]:
             del renames_clean[o]
             ov = overrides.get(o) or {}
-            if ov.get("unified_title_merge_confirm") == new_ut:
+            # Only when the lead has a credentials.json record: a lead with none creates no key, so
+            # the fold would find no target (it then waits as below, as before the one-pass apply).
+            if ov.get("unified_title_merge_confirm") == new_ut and sources[0] in credentials:
                 # One-pass apply (#3110 build step 1): the curator already confirmed this sibling's
                 # merge into the title the group's lead creates, so it folds in the same run. The
                 # apply re-keys the lead first (rekey_credentials), then folds (fold_credentials), so

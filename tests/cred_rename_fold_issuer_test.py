@@ -158,6 +158,78 @@ RELATED = {"titles": [
 ]}
 
 
+class FakeDB:
+    """kb_curation in memory, wired into kb/_cred_rename_apply_supabase.py's five calls, with PostgREST's
+    guard semantics: a guarded write affects 0 rows when the row no longer holds the guarded value."""
+
+    def __init__(self, mod):
+        self.rows, self.calls, self.before_write = {}, [], None
+        mod.KEY = "test"
+        mod.fetch_credential_review_rows = self.fetch
+        mod.delete_row, mod.patch_row = self.delete, self.patch
+        mod.read_row, mod.guarded_write = self.read, self.guarded
+
+    def add(self, title, **fields):
+        for f, (v, by, at) in fields.items():
+            cid = "_CREDENTIAL_REVIEW::" + title
+            self.rows[(cid, f)] = {"course_id": cid, "field": f, "value": v, "reviewer_email": by,
+                                   "reviewed_at": at, "validated_at": None, "validated_by": None}
+
+    def validate(self, title, field, by):
+        r = self.rows[("_CREDENTIAL_REVIEW::" + title, field)]
+        r["validated_at"], r["validated_by"] = "2026-11-01T00:00:00Z", by
+
+    def get(self, title, field):
+        return self.rows.get(("_CREDENTIAL_REVIEW::" + title, field))
+
+    def fetch(self):
+        out = {}
+        for r in self.rows.values():
+            out.setdefault(r["course_id"], []).append(dict(r))
+        return out
+
+    def delete(self, cid, field):
+        self.calls.append(("delete", cid, field))
+        n = 1 if self.rows.pop((cid, field), None) else 0
+        return {"course_id": cid, "field": field, "op": "delete", "status": "ok", "rows_affected": n}
+
+    def patch(self, old, new, field):
+        self.calls.append(("patch", old, new, field))
+        if (new, field) in self.rows:
+            return {"old_course_id": old, "new_course_id": new, "field": field, "op": "patch",
+                    "status": "fail", "error": "HTTP Error 409: Conflict"}
+        r = self.rows.pop((old, field), None)
+        if r:
+            self.rows[(new, field)] = dict(r, course_id=new)
+        return {"old_course_id": old, "new_course_id": new, "field": field, "op": "patch",
+                "status": "ok", "rows_affected": 1 if r else 0}
+
+    def read(self, cid, field):
+        if self.before_write:
+            hook, self.before_write = self.before_write, None
+            hook()
+        r = self.rows.get((cid, field))
+        return dict(r) if r else None
+
+    def guarded(self, op, cid, field, before, body=None):
+        self.calls.append(("guarded", op, cid, field))
+        cur = self.rows.get((cid, field))
+        out = {"course_id": cid, "field": field, "op": "issuer_" + op}
+        if op == "insert":
+            if cur:
+                return dict(out, status="conflict", rows_affected=0)
+            self.rows[(cid, field)] = dict({"course_id": cid, "field": field, "validated_at": None,
+                                            "validated_by": None}, **body)
+            return dict(out, status="ok", rows_affected=1, after_row=body)
+        if not cur or cur["value"] != before["value"] or cur["reviewed_at"] != before["reviewed_at"]:
+            return dict(out, status="conflict", rows_affected=0)
+        if op == "delete":
+            del self.rows[(cid, field)]
+        else:
+            cur.update(body)
+        return dict(out, status="ok", rows_affected=1, after_row=body)
+
+
 def write(path, obj):
     with open(path, "w", encoding="utf-8") as f:
         json.dump(obj, f, indent=2, ensure_ascii=False)
@@ -188,7 +260,7 @@ try:
     dry.RELATED = app.RELATED = paths["exhibits_related.json"]
     dry.OUT_DIR = app.DRYRUN_OUT = dry_out
     app.ALIAS_PATH = os.path.join(dry_out, "alias_map.json")
-    app.OUT_ROOT = out_root
+    app.OUT_ROOT = sup.OUT_ROOT = out_root
 
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
@@ -271,46 +343,32 @@ try:
 
     # ── same-day second apply keeps the first receipt ────────────────────
     check("receipt dir: a same-day folder name", outs[-1].startswith(app.TODAY))
+    with contextlib.redirect_stdout(io.StringIO()):
+        app.main()  # re-dispatch: everything already applied
+    check("finding 9: an apply that changes nothing writes no new receipt",
+          sorted(os.listdir(out_root)) == outs, str(os.listdir(out_root)))
 
-    # ── the Supabase carry, against a fake PostgREST ─────────────────────
-    calls = []
-
-    def fake_fetch():
-        def rows(t, **f):
-            return [{"course_id": "_CREDENTIAL_REVIEW::" + t, "field": k, "value": v,
-                     "reviewer_email": by, "reviewed_at": at} for k, (v, by, at) in f.items()]
-        out = {}
-        for r in (rows("Automotive Air Conditioner",
-                       issuing_agency_override=(ASE, MAP, "2026-07-09T00:07:08Z"),
-                       unified_title_override=(HAC_T, SAM, "2026-11-11T15:26:54Z"))
-                  + rows("Heating and Air Conditioning",
-                         issuing_agency_override=("California Community College Chancellor's Office", SAM,
-                                                  "2026-11-11T15:47:58Z"),
-                         unified_title_override=(HAC_T, SAM, "2026-11-11T15:26:55Z"),
-                         unified_title_merge_confirm=(HAC_T, SAM, "2026-11-11T15:26:55Z"))
-                  + rows("Automotive Braking Systems", issuing_agency_override=(ASE, MAP, JUL),
-                         unified_title_override=(BR_T, SAM, F1))):
-            out.setdefault(r["course_id"], []).append(r)
-        return out
-
-    def fake_delete(cid, field):
-        calls.append(("delete", cid, field))
-        return {"course_id": cid, "field": field, "op": "delete", "status": "ok", "rows_affected": 1}
-
-    def fake_patch(old, new, field):
-        calls.append(("patch", old, new, field))
-        return {"old_course_id": old, "new_course_id": new, "field": field, "op": "patch",
-                "status": "ok", "rows_affected": 1}
-
-    def fake_set(cid, value, by, at, exists):
-        calls.append(("issuer", cid, value, by, exists))
-        return {"course_id": cid, "field": "issuing_agency_override",
-                "op": "issuer_update" if exists else "issuer_insert", "status": "ok", "rows_affected": 1,
-                "after_row": {"value": value, "reviewer_email": by, "reviewed_at": at}}
-
-    sup.KEY, sup.OUT_ROOT = "test", out_root
-    sup.fetch_credential_review_rows, sup.delete_row, sup.patch_row, sup.set_issuer = (
-        fake_fetch, fake_delete, fake_patch, fake_set)
+    # ── the Supabase carry, against a fake kb_curation ───────────────────
+    db = FakeDB(sup)
+    db.add("Automotive Air Conditioner", issuing_agency_override=(ASE, MAP, JUL),
+           unified_title_override=(HAC_T, SAM, F1))
+    db.add("Heating and Air Conditioning",
+           issuing_agency_override=("California Community College Chancellor's Office", SAM, "2026-11-11T15:47:58Z"),
+           unified_title_override=(HAC_T, SAM, F2), unified_title_merge_confirm=(HAC_T, SAM, F2))
+    db.add("Automotive Braking Systems", issuing_agency_override=(ASE, MAP, JUL),
+           unified_title_override=(BR_T, SAM, F1))
+    db.validate("Automotive Braking Systems", "issuing_agency_override", "faculty@college.edu")
+    # Finding 0: a merge source's additional override naming ASE, moved onto a standards title.
+    db.add("Automotive Brakes Lab", issuing_agency_additional_override=(ASE, MAP, JUL),
+           unified_title_override=(BR_T, SAM, F2), unified_title_merge_confirm=(BR_T, SAM, F2))
+    # Findings 1 and 11: a cert-form target's own college override, set by a person before the fold.
+    db.add("Brakes (ASE A5)", issuing_agency_override=(CCC, MAP, "2026-10-01T00:00:00Z"))
+    db.add("Automotive Technology (ASE A5 Brakes)", issuing_agency_override=(CCC, MAP, "2026-07-07T20:44:36Z"),
+           unified_title_override=("Brakes (ASE A5)", SAM, F2),
+           unified_title_merge_confirm=("Brakes (ASE A5)", SAM, F2))
+    # Minor 4: an all-confirmed group's lead carries a confirm naming the title it creates.
+    db.add("Automotive Technology (ASE A8 Engine Performance)", unified_title_override=(EP_T, SAM, F1),
+           unified_title_merge_confirm=(EP_T, SAM, F1))
     with contextlib.redirect_stdout(io.StringIO()):
         try:
             sup.main()
@@ -318,26 +376,92 @@ try:
             pass
     tgt = "_CREDENTIAL_REVIEW::" + HAC_T
     check("carry: the lead's ASE override moves to the new title",
-          ("patch", "_CREDENTIAL_REVIEW::Automotive Air Conditioner", tgt, "issuing_agency_override") in calls)
+          ("patch", "_CREDENTIAL_REVIEW::Automotive Air Conditioner", tgt, "issuing_agency_override") in db.calls)
     check("carry: the target's override is set to Sam's issuer under his stamp",
-          ("issuer", tgt, CCC, SAM, True) in calls, str([c for c in calls if c[0] == "issuer"]))
+          db.get(HAC_T, "issuing_agency_override")["value"] == CCC
+          and db.get(HAC_T, "issuing_agency_override")["reviewer_email"] == SAM)
     slog = read(os.path.join(rdir, "supabase_log.json"))
-    iss = [e for e in slog["log"] if e.get("kind") == "issuer" and e.get("op") == "issuer_update"]
+    iss = [e for e in slog["log"] if e.get("kind") == "issuer" and e.get("op") == "issuer_update"
+           and e["course_id"] == tgt]
     check("carry: the log keeps the before-row of the override it replaced",
           iss and iss[0]["before_row"]["value"] == ASE and iss[0]["before_row"]["reviewer_email"] == MAP)
-    dropped = [e for e in slog["log"] if e.get("kind") == "issuer" and e.get("dropped_by_rule") == "standards"]
-    check("carry: rule 2b deletes the ASE override the lead moved onto the standards title, logged",
-          dropped and dropped[0]["course_id"] == "_CREDENTIAL_REVIEW::" + BR_T
-          and dropped[0]["before_row"]["reviewer_email"] == MAP)
+    check("carry: rule 2b deletes the ASE override the lead moved onto the standards title",
+          db.get(BR_T, "issuing_agency_override") is None)
+    check("finding 0: rule 2b removes ASE from an additional override this fold moved in",
+          db.get(BR_T, "issuing_agency_additional_override") is None)
+    check("findings 1/11: rule 2 never deletes the target's own pre-existing override",
+          (db.get("Brakes (ASE A5)", "issuing_agency_override") or {}).get("value") == CCC)
+    check("minor 4: a lead's confirm naming the title it creates is deleted, not moved onto it",
+          db.get(EP_T, "unified_title_merge_confirm") is None)
+    check("finding 4: a deleted row's before_row keeps validated_at and validated_by",
+          any(e.get("before_row", {}).get("validated_by") == "faculty@college.edu" for e in slog["log"]))
     sql, cannot = undo.supabase_plan(slog)
+    check("undo plan: the issuer update goes back to ASE, guarded on the value it wrote",
+          ("set value = '%s'" % ASE) in sql and ("and value = '%s'" % CCC) in sql)
     check("undo plan: the override rule 2b deleted comes back under its person's stamp",
           "values ('_CREDENTIAL_REVIEW::%s', 'issuing_agency_override', '%s', '%s'" % (BR_T, ASE, MAP) in sql)
-    check("undo plan: the issuer update goes back to ASE", "set value = '%s'" % ASE.replace("'", "''") in sql)
-    check("undo plan: a deleted row comes back insert-only",
-          "insert into kb_curation" in sql and "on conflict do nothing" in sql)
-    check("undo plan: a moved row moves back",
-          "set course_id = '_CREDENTIAL_REVIEW::Automotive Air Conditioner'" in sql)
+    check("finding 4: the restored row keeps validated_at and validated_by",
+          "'faculty@college.edu'" in sql)
+    check("finding 5: a moved row moves back only while it still holds the moved value",
+          "set course_id = '_CREDENTIAL_REVIEW::Automotive Air Conditioner' where course_id = '%s' and "
+          "field = 'issuing_agency_override' and value = '%s'" % (tgt, ASE) in sql)
     check("undo plan: every op this log holds is reversible", not cannot)
+    ins_sql, _ = undo.supabase_plan({"log": [{"op": "issuer_insert", "status": "ok", "rows_affected": 1,
+                                              "course_id": "C", "field": "issuing_agency_override",
+                                              "after_row": {"value": "ASE", "reviewer_email": SAM}}]})
+    check("findings 5/13: an inserted issuer is deleted only while it is the row the apply wrote",
+          "and value = 'ASE' and reviewer_email = '%s'" % SAM in ins_sql)
+
+    # Finding 3: a retry writes beside the first log, and the plan reads every log.
+    with contextlib.redirect_stdout(io.StringIO()):
+        try:
+            sup.main()
+        except SystemExit:
+            pass
+    logs = sorted(n for n in os.listdir(rdir) if n.startswith("supabase_log"))
+    check("finding 3: a retry never overwrites the first run's log",
+          len(logs) == 2 and read(os.path.join(rdir, "supabase_log.json")) == slog, str(logs))
+    with contextlib.redirect_stdout(io.StringIO()):
+        undo.main([rdir, "--supabase-plan"])
+    allsql = open(os.path.join(rdir, "undo_supabase.sql"), encoding="utf-8").read()
+    check("finding 3: --supabase-plan reverses the first run's ops after a retry",
+          "values ('_CREDENTIAL_REVIEW::%s', 'issuing_agency_override'" % BR_T in allsql)
+
+    # Finding 10: a person's edit that lands after the pre-fetch is never overwritten.
+    db2 = FakeDB(sup)
+    db2.add("Automotive Air Conditioner", issuing_agency_override=(ASE, MAP, JUL),
+            unified_title_override=(HAC_T, SAM, F1))
+    db2.add("Heating and Air Conditioning",
+            issuing_agency_override=("California Community College Chancellor's Office", SAM, "2026-11-11T15:47:58Z"),
+            unified_title_override=(HAC_T, SAM, F2), unified_title_merge_confirm=(HAC_T, SAM, F2))
+    db2.before_write = lambda: db2.add(HAC_T, issuing_agency_override=("NATEF", SAM, "2026-11-11T17:00:00Z"))
+    with contextlib.redirect_stdout(io.StringIO()):
+        code = None
+        try:
+            sup.main()
+        except SystemExit as e:
+            code = e.code
+    check("finding 10: an edit after the pre-fetch survives the carry",
+          db2.get(HAC_T, "issuing_agency_override")["value"] == "NATEF")
+    check("finding 10 / 12: the run reports the conflict and exits non-zero", bool(code))
+    db3 = FakeDB(sup)
+    db3.add("Automotive Air Conditioner", issuing_agency_override=("NATEF", SAM, "2026-11-11T17:00:00Z"),
+            unified_title_override=(HAC_T, SAM, F1))
+    db3.add("Heating and Air Conditioning",
+            issuing_agency_override=("California Community College Chancellor's Office", SAM, "2026-11-11T15:47:58Z"),
+            unified_title_override=(HAC_T, SAM, F2), unified_title_merge_confirm=(HAC_T, SAM, F2))
+    with contextlib.redirect_stdout(io.StringIO()):
+        try:
+            sup.main()
+        except SystemExit:
+            pass
+    check("finding 10: a person's override newer than the frozen winner wins",
+          db3.get(HAC_T, "issuing_agency_override")["value"] == "NATEF")
+
+    # Finding 12: the workflow fails closed.
+    wf = open(os.path.join(ROOT, ".github/workflows/cred-rename-apply.yml"), encoding="utf-8").read()
+    check("finding 12: the Supabase step's outcome is read, and a failed carry fails the job",
+          "id: supa" in wf and "steps.supa.outcome == 'failure'" in wf and "exit 1" in wf.split("steps.supa.outcome == 'failure'")[1][:600])
 
     # ── undo ─────────────────────────────────────────────────────────────
     with contextlib.redirect_stdout(io.StringIO()):
@@ -367,6 +491,73 @@ try:
             refused = bool(e.code)
     check("undo: a value changed since the apply refuses the run", refused)
     check("undo: a refused run writes nothing", read(paths["credentials.json"]) == c)
+    with contextlib.redirect_stdout(io.StringIO()):
+        undo.main([rdir2, "--apply", "--force"])
+    c2, u2 = read(paths["credentials.json"]), read(paths["unified_titles.json"])
+    check("finding 6: --force skips the drifted fold group whole (no source restored beside its target)",
+          "Heating and Air Conditioning" not in c2 and "Automotive Air Conditioner" not in c2
+          and u2["HVAC NC"]["unified_title"] == HAC_T, str([k for k in c2 if "Air Cond" in k]))
+    check("finding 6: --force still reverses the groups that did not drift",
+          "Automotive Technology (ASE A5 Brakes)" in c2 and u2["AUTO 101 Brakes"]["unified_title"]
+          == "Automotive Technology (ASE A5 Brakes)")
+
+    # ── finding 7: a same-run lead with no credentials record ────────────
+    write(paths["credentials.json"], {"Sib": [rec(CCC)], "Other": [rec(CCC)]})
+    write(paths["unified_titles.json"], {"r1": {"unified_title": "Lead"}, "r2": {"unified_title": "Sib"},
+                                         "r3": {"unified_title": "Other"}})
+    write(paths["coci_articulations.json"], {"articulations": []})
+    write(paths["credential_review_overlay.json"], {"overrides": {
+        "Lead": ov(unified_title_override=("New Title", SAM, F1)),
+        "Sib": ov(unified_title_override=("New Title", SAM, F2), unified_title_merge_confirm=("New Title", SAM, F2)),
+        "Other": ov(unified_title_override=("Other Renamed", SAM, F2))}})
+    with contextlib.redirect_stdout(io.StringIO()):
+        dry.main()
+    a7 = read(os.path.join(dry_out, "alias_map.json"))
+    q7 = {x["old_unified_title"]: x["reason"] for x in read(os.path.join(dry_out, "collisions.json"))["collisions"]}
+    check("finding 7: a sibling whose lead has no credentials record waits, as before the one-pass apply",
+          "Sib" not in a7["merges"] and q7.get("Sib") == "intra_batch_same_target", json.dumps(q7))
+    check("finding 7: the rest of the batch still applies", a7["renames"].get("Other") == "Other Renamed")
+    a7["merges"] = {"Sib": "New Title"}  # a stale map that slipped past the dry-run
+    write(os.path.join(dry_out, "alias_map.json"), a7)
+    before7 = open(paths["credentials.json"], encoding="utf-8").read()
+    exited = False
+    with contextlib.redirect_stdout(io.StringIO()):
+        try:
+            app.main()
+        except SystemExit:
+            exited = True
+    check("finding 7: the apply refuses before writing anything",
+          exited and open(paths["credentials.json"], encoding="utf-8").read() == before7)
+
+    # ── finding 8: rule 2 does not depend on which source leads ──────────
+    outs8 = []
+    for lead_recs, sib_recs in (([rec(CCC)], [rec(ASE)]), ([rec(ASE)], [rec(CCC)])):
+        cr = {"L": lead_recs, "S": sib_recs}
+        pl = fold_issuer.plan({"L": "Brakes (ASE A5)"}, {"S": "Brakes (ASE A5)"}, {}, cr)
+        r8 = pl["Brakes (ASE A5)"]["resolution"]
+        recs8, _ = fold_issuer.fold_records(r8, lead_recs, [("S", sib_recs)])
+        outs8.append(sorted({x["issuing_agency"] for x in recs8}))
+    check("finding 8: a cert-form title created in the run ends with ASE whichever source leads",
+          outs8 == [[ASE], [ASE]], str(outs8))
+
+    # ── finding 2: a person's override names a record that carries no reviewer ──
+    r2 = {"target": "Engine Repair (ASE A1 standards)", "rule": "standards", "drop_body": ASE,
+          "target_exists_before": False, "humans": [],
+          "older_people": [{"title": "ASE A1 — Engine Repair", "issuer": ASE, "by": MAP, "at": JUL}]}
+    _, log2 = fold_issuer.fold_records(r2, [], [("ASE A1 — Engine Repair", [dict(rec(ASE), reviewed_by=None)])])
+    check("finding 2: a dropped record is named as person-set from the override's stamp",
+          log2["people"] and log2["people"][0]["by"] == MAP and log2["people"][0]["at"] == JUL)
+
+    # ── minor 0 and 2: stamps and receipt folders compare in order ───────
+    check("minor 0: stamps with different offsets compare as instants",
+          fold_issuer.ts("2026-11-11 15:26:55.029+00") > fold_issuer.ts("2026-11-11T15:26:54Z")
+          and fold_issuer.ts("2026-11-11T08:00:00-08:00") > fold_issuer.ts("2026-11-11T15:59:59Z"))
+    for n in ("2026-11-11", "2026-11-11-9", "2026-11-11-10"):
+        os.makedirs(os.path.join(tmp, "order", n), exist_ok=True)
+        write(os.path.join(tmp, "order", n, "alias_map.json"), {})
+    sup.OUT_ROOT = os.path.join(tmp, "order")
+    check("minor 2: the tenth same-day receipt is the newest", sup._find_latest_snapshot()[0] == "2026-11-11-10")
+    sup.OUT_ROOT = out_root
 
     # ── the overlay stamp ────────────────────────────────────────────────
     entry = {"issuing_agency_override": "X", "reviewed_by": "someone@bot", "reviewed_at": "2026-01-01",

@@ -419,8 +419,9 @@ def _render_validation_md(snap, results, issuer_plan=None, full_results=None):
     lines.append("")
     lines.append("`python3 kb/_cred_rename_undo.py <this folder>` puts back every value this apply "
                  "changed, renames and merges alike, from `undo.json` beside this receipt; it refuses a "
-                 "value changed since, unless `--force`. `--supabase-plan` writes the kb_curation "
-                 "reversal from `supabase_log.json` as SQL for a person to run under Rule 10.")
+                 "value changed since, unless `--force`, which skips each drifted fold group whole. "
+                 "`--supabase-plan` writes the kb_curation reversal from every `supabase_log*.json` "
+                 "as guarded SQL for a person to run under Rule 10.")
     lines.append("")
     return "\n".join(lines) + "\n"
 
@@ -435,6 +436,14 @@ def main():
     overlay = (_load_optional(OVERLAY).get("overrides") or {})
     issuer_plan = fold_issuer.plan(renames, merges, overlay, creds_before,
                                    fold_issuer.path_tallies(_load_optional(RELATED)))
+    # Every merge target must exist once the renames land, checked BEFORE any file is written: a
+    # same-run lead with no credentials.json record creates no key, and finding that out after the
+    # re-key left credentials.json half-applied and every later dispatch failing.
+    after_keys = set(creds_before) | {n for o, n in renames.items() if o in creds_before}
+    missing = sorted({t for o, t in merges.items() if o in creds_before and t not in after_keys})
+    if missing:
+        sys.exit(f"Merge-target drift: {missing[:3]} will not exist after the renames (a same-run lead "
+                 f"with no credentials.json record?). Nothing written. Re-run the dry-run and resolve.")
     creds_res = rekey_credentials(renames)
     print(f"  credentials.json:        rekeyed={creds_res['rekeyed']}, "
           f"already_applied={creds_res['already_applied']}, "
@@ -461,7 +470,18 @@ def main():
     results["coci_articulations.json"] = art_res
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_after = json.load(f)
+    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]):
+        # A re-dispatch after a failed Supabase step finds everything applied. A new <date>-N snapshot
+        # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay.
+        print("  nothing changed (already applied): no new receipt; the newest snapshot stays the "
+              "Supabase step's input")
+        return
+    groups = defaultdict(list)
+    for o, n in combined.items():
+        groups[n].append(o)
     undo = {
+        # Each fold group (a target and every title renamed or merged onto it) undoes as one unit.
+        "groups": {n: sorted(os_) for n, os_ in sorted(groups.items())},
         "_about": "Every value kb/_cred_rename_apply.py changed in this apply, before and after. "
                   "kb/_cred_rename_undo.py reverses it. A key absent before (a rename's new title) or "
                   "after (a folded or renamed-away title) is null.",
@@ -480,6 +500,7 @@ def main():
                   f"becomes {c['winner']}")
     out_dir = write_snapshot(alias_doc, results, undo, issuer_plan)
     print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md}}")
+    return out_dir
 
 
 def _load_optional(path):
