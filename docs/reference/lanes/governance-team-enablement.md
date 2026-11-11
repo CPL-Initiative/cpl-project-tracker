@@ -1,7 +1,7 @@
 ---
 title: "Governance & team enablement — lane state"
 created: 2026-08-28
-updated: 2026-10-21
+updated: 2026-11-11
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -20,6 +20,12 @@ related:
 **What this lane is:** Decision rights (who decides what), acceptance standards per input, and which cadences actually run — plus onboarding as the team grows past Sam.
 
 **Conductor mode (Sam, 2026-11-11, S638):** a session Sam names the conductor plans with COBIx, hands each concern to its own worker, checks, reviews and merges; it runs from [`docs/reference/conductor_mode.md`](../conductor_mode.md), whose Settings block every handoff copies under `## Conductor settings` (lint `handoff_missing_conductor_settings`).
+
+**DECIDED (Sam, in session S639, 2026-11-11; `sam-cobix-relay-confirms-2026-11-11`):** a ruling COBIx relays is confirmed and recorded as Sam's, with his verbatim words and "relayed by COBIx" as where they reached the session; the conductor takes COBIx's findings and information as given and pushes back only where it disagrees. Sam's words: "confirmation can count in this session or relayed from cobix--remember, ask forgiveness, not permission:)" and "trust what cobix says and only push back if you disagree with his recommendation, action, information. Forward motion is good motion." The two-rounds rule and the hold list in `CLAUDE.md` stand.
+
+**DECIDED (Sam, in session S639, 2026-11-11; `sam-sheet-carries-conductor-decisions-2026-11-11`):** the decision sheet carries the conductor's decisions, never asks. Sam's words: "Remember on the Decision Sheet that I want your decisions on it, not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force multiplier:)" Each card reads Decided, Evidence, and Carried out with how to reverse it; the chips are Fine, Change it and Revisit later; an outward send or a go-live is a card that opens on "Waits for my send or go". First built as [Open Asks Sheet 181](https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx). Mechanics: [`conductor_mode`](../conductor_mode.md), *Recording and Sam*.
+
+**DECIDED, the Pierce question is closed (Sam, 2:52 PM PT 2026-11-11, relayed by COBIx, #3111 comment 6809029855; `sam-pierce-drop-was-its-own-cleanup-2026-11-11`):** "the pierce change was due to corrections they made to a big bathc upload of cx, ap, ib cpl already awarded to students in the sis but batch uploaded to map--needed to be cleaned up after they did it. nothing to worry about." Nothing goes to MAP or ITPI.
 
 
 ## Owned rows — DR-24, DR-25, DR-26 (2026-09-08)

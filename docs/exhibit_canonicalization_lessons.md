@@ -1422,3 +1422,36 @@ certification. The notes show in the Rules view, never on a card.
 - **Process faults:** GitHub's runner queue stalled CI from about 20:17Z to 21:20Z and a worker pushed an empty commit
   to restart it (the PR rules forbid it); a container restart at about 19:00Z (worker reports recovered from
   transcripts); disk reached 95% with 4.4 GB worker checkouts. The conductor's rules: `docs/reference/conductor_mode.md`.
+
+## Moved from the lane (S639): the Exhibits tab and CPL-AI, as they stood on 2026-11-11
+
+**The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
+doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an
+exhibit*; `#exhibits/held`, `/conflict` and `/credentials` open one place, read once per visit, and the Commons' CER row
+links them (#2612). A List row's side panel (the Credentials view retired into it, 2026-11-03) sets the issuer and training
+sites (each with its college), saved as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
+stands (`tests/credential_review_sites_test.py`); `field:kb_curation.training_sites_override` maps to DR-07. The panel
+reads `kb/exhibits_adoption.json`: each college's lines and units, the course a could-adopt college already teaches,
+the peer median. **Could adopt never reads the TOP and C-ID overlap** (Sam, 2026-09-24; Rule 7; KB note
+`methodology-a-fold-carries-the-folded-tabs-rulings`). EACR's matrix, filters, exports and Create Handout live on the
+public Credential Catalog. Not built: sites for a title new to the reference, and the *Held titles by group* table. **The review card (Sam, 2026-10-31, #2620):** Change to Proposed Title, Keep Current Title, Teach a rule, Back, Skip; the local title in bold. Back reopens this visit's cards, naming the save, and a new choice replaces it. *Accept all proposed titles (N)* asks first and leaves a conflict, or a title someone already saved, as it is.
+
+**CPL-AI (SkyLantern, 2026-11-06; detail in `docs/library_lessons.md`).** Sam's words: host it all, frozen (*"make sure
+we can host all the data, which for now will not have any further updates"*); join the 115; fix the seven titles; name
+the pairs on the List; and *"I do want the CPL-AI recs on public view"* (answers Sheet 147 card 5). **State:**
+`kb/cpl_ai/hosted/` holds all 33,232 pairs with full reports (`kb/_harvest_cpl_ai_reports.py`, `kb/_build_cpl_ai_hosted.py
+--check`); `kb/cpl_ai/exhibit_join.json` (`kb/_build_cpl_ai_join.py --check`, a reason per call; a curator's correction
+wins): 46 exact, 8 related, 61 none once tonight's fold lands. Exhibits shows them at `#exhibits/cpl-ai` and on each List
+row (`#exhibits/list/cplai`, #2853). The seven title moves are written (`kb/cer_decisions_out/2026-11-06/`) and the nightly fold re-points the
+five titles. **Sam's "1 yes, 2 yes" is applied (SkyBeacon, #2855):** the applier's guarded retire path, the four retired Spanish rows and the two confirmed merges are in the lessons, *Moved from the lane (S634)*.
+**The Catalog's badges and a college's first
+view are live with the next daily run (SkyBeacon, #2856):** *Statewide recommendation* (152 credentials across every
+credit status) and *CPL-AI course match* (43) on cards, the List's Recommended column and the panel; the Recommendations
+filter; a single college pick opens on *Recommended credentials <college> could adopt* (no award there, an aligned course
+there: the course mapped in MAP or CPL-AI's Strong evidence and Faculty interpretation courses), each with Request Quick
+Adopt (42 for Allan Hancock); the panel's CPL-AI section with a college picker and the full recommendation read in place
+from `kb/cpl_ai/hosted/shards/`. The builder writes `library/adopt/adopt_ai.json`, read after first paint. Sam's words: *"like badges on the credential"*; *"If you're Allan Hancock College and you open the cred catalog and
+select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
+Request Adopt buttons on all their local aligned courses."* **The ask rule is live (#2854):** *Ask us to prioritize* only
+where no college has articulated the credential, the *Worth a faculty review* cards included; an articulated one offers
+Request Quick Adopt. **Add your credential is built (#2860, DR-32, live 2026-11-06):** an empty search offers *Add it*; `credential_submission_add()` is INSERT-only; a reviewer Verifies, Merges, Declines or Reopens in Exhibits Requests; verified ones join the Catalog. **Ruled (Sam, Open Asks Sheet 167 card 1, 2026-11-07):** credit based on a college's own course exam is Credit by Exam and the college is the issuer; credit based on the certificate from the vendor's own exam names the vendor (his words, the seven corrected triage titles and El Camino's four CompTIA courses: lessons, *Moved from the lane (S634)*). **Quick Adopt (2026-11-07):** a Strong evidence course in the panel, at a college without the award, offers Request Quick Adopt. Sierra's CPL-AI answers: live 2026-11-07 ([`sierra-retrieval-corpus`](sierra-retrieval-corpus.md)). **Next:** the Department of Insurance's license types (`data_sources`; the sandbox cannot reach the site).
