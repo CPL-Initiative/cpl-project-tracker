@@ -82,11 +82,29 @@
    "program": 8,
    "courses": 0,
    "count": 8,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "assess the ways to start a business and which form of business organization should be used",
+    "explain the importance of a business plan, a financial plan, and a marketing plan",
+    "apply principles of management and marketing relevant to the small business",
+    "plan and execute strategies for working with multiple documents, templates, and macros, and apply techniques for using and editing pre-designed styles",
+    "plan, construct, test, and evaluate worksheets that are efficient, accurate, and professional using a spreadsheet application",
+    "create commonly used printed marketing documents using desktop publishing software",
+    "evaluate web page content needs and design a web page",
+    "generate and interpret various reports and financial statements in appropriate bookkeeping software"
+   ],
+   "why": [
+    "not in the catalog text as printed: assess the ways to start a business and which form of business organization shou",
+    "not in the catalog text as printed: explain the importance of a business plan, a financial plan, and a marketing pla",
+    "not in the catalog text as printed: apply principles of management and marketing relevant to the small business",
+    "not in the catalog text as printed: plan and execute strategies for working with multiple documents, templates, and ",
+    "not in the catalog text as printed: plan, construct, test, and evaluate worksheets that are efficient, accurate, and",
+    "not in the catalog text as printed: create commonly used printed marketing documents using desktop publishing softwa",
+    "not in the catalog text as printed: evaluate web page content needs and design a web page",
+    "not in the catalog text as printed: generate and interpret various reports and financial statements in appropriate b"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 0,
@@ -96,7 +114,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -210,5 +228,6 @@
    "The Student Learning Outcomes recorded are those printed directly under the Computer Applications for Small Business Certificate requirements."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }

@@ -82,11 +82,21 @@
    "program": 13,
    "courses": 0,
    "count": 13,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "apply principles of time management, cost control, and decision making to managerial responsibilities.",
+    "create portfolios of fashion, wedding, and portrait photographs.",
+    "explain how retailers use merchandise management decisions to implement their retail strategy, including planning, buying, pricing, branding, and promoting their merchandise.",
+    "critique customer buying behavior and how it relates to fashion choices."
+   ],
+   "why": [
+    "not in the catalog text as printed: apply principles of time management, cost control, and decision making to manage",
+    "not in the catalog text as printed: create portfolios of fashion, wedding, and portrait photographs.",
+    "not in the catalog text as printed: explain how retailers use merchandise management decisions to implement their re",
+    "not in the catalog text as printed: critique customer buying behavior and how it relates to fashion choices."
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 10,
@@ -96,7 +106,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -290,5 +300,6 @@
    "Only the Fashion Merchandising Certificate section was read; the other fashion certificates on pages 580-582 were ignored."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": 43019771268,
+ "read_run": "39047245752"
 }
