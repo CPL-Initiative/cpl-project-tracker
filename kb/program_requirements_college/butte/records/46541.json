@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,10 +117,10 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Define, understand, and apply concepts of limits, differentiation, and integration to authentic problems.",
     "Apply methods of matrix transformations to solve both practical and theoretical problems.",
@@ -243,5 +240,26 @@
    "The map's recommendations of POLS C1000 and HIST 18, HIST 26 or HIST C1001 concern CSU US graduation requirements (GE), not the major, and were not recorded."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "GE Pattern(s): Cal-GETC (https://butte.curriqunet.com/catalog/iq/25389/28399/27604: Butte AA-T and AS-T pages: 'GE Pattern(s): Cal-GETC' above 'Map (Cal-GETC)' (History AA-T 31000; college page read 42957477366); Butte College Cal-GETC Requirements: 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }

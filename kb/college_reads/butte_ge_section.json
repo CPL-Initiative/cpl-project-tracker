@@ -1,0 +1,33 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Butte College, second read. The first (butte_ge_units, run 42957477366) showed that no degree page prints a unit figure for its pattern: each prints 'GE Pattern(s): Butte Local, Cal-GETC' (or Cal-GETC alone) and a term map, 'Map (Butte GE)' or 'Map (Cal-GETC)', whose lines read 'Area 1A Choice (See GE Guide)' and 'Elective ... Only necessary if the 60 units needed to graduate have not been completed'. The catalog's navigation lists a General Education section. This read asks the start page for the navigation data its own scripts fetch, to find that section's node, before a read of the section itself. No model call.",
+ "college": "Butte College",
+ "questions": {
+  "ge_node": "Which node of the catalog's navigation is General Education, and what are its child pages?"
+ },
+ "keywords": [
+  "General Education",
+  "Butte Local",
+  "Cal-GETC",
+  "GE Guide",
+  "[Uu]nits"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/Catalog/",
+   "answers": [
+    "ge_node"
+   ],
+   "network": true,
+   "network_find": [
+    "General Education",
+    "Academic Program Types"
+   ]
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&navigationtypeId=1",
+   "answers": [
+    "ge_node"
+   ]
+  }
+ ]
+}

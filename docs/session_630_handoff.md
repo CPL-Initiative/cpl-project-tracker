@@ -4,6 +4,8 @@ date: 2026-11-10
 session: the second Session 624 session (SkyCocoon), Sam's and then Malone's, 2026-11-10 01:43Z to ~11:30Z
 tags: [handoff, csm-workspace, commons, implementation-funding, mock]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 630

@@ -62,19 +62,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    62.0,
-    62.0
+    83.0,
+    83.0
    ],
    "stated": [
     83.0,
     89.0
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    21.0,
+    21.0
+   ],
    "why": [
-    "the record names the degree total and the Butte Local pattern, but no units for it"
+    "the blocks and general education sum to 83.0-83.0; the catalog prints 83.0-89.0 for the degree"
    ],
    "major": {
     "pass": true,
@@ -134,8 +137,8 @@
     "max": 89
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -286,5 +289,20 @@
    "Career entry 'Manufacturing industry' is drawn from 'prepare students for productive futures in the Manufacturing industry'; the description also mentions a managerial capacity in manufacturing but names no specific job titles."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  }
+ ],
+ "read_run": "38981247046"
 }

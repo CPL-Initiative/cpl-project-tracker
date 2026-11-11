@@ -3061,6 +3061,18 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     return 0
 
 
+def same_address(a: str, b: str) -> bool:
+    """Two spellings of one page's address: the same but for letter case and a doubled slash in
+    the path. S636: Butte's registry address became .../Catalog//iq/25371, so the capture spelled
+    every entry /Catalog//iq/<root>/<section>/<node> where the filed records say /catalog/iq/...,
+    and the moved-page guard held all 165 records out of a reconcile (run 42962429245: 0 changed).
+    own_heading_kept still asks the fresh text for the record's own heading before it trusts one."""
+    def norm(u):
+        p = urllib.parse.urlparse(u or "")
+        return (p.netloc.lower(), re.sub(r"/{2,}", "/", p.path).lower().rstrip("/"), p.query)
+    return bool(a) and bool(b) and norm(a) == norm(b)
+
+
 def own_heading_kept(src: dict, filed: dict) -> bool:
     """A record the capture now starts on another page of the same file, whose fresh text still
     prints the record's own heading, is about the same program. S530: LA Valley's capture now
@@ -3070,7 +3082,7 @@ def own_heading_kept(src: dict, filed: dict) -> bool:
     `before` scope matches it; a record placing no course read another program's page."""
     import _program_requirements_reconcile as R
     new = ((src.get("source") or {}).get("url") or "").split("#")[0]
-    if not new or new != (filed.get("source_url") or "").split("#")[0]:
+    if not new or not same_address(new, (filed.get("source_url") or "").split("#")[0]):
         return False
     rec = filed.get("record") if isinstance(filed.get("record"), dict) else {}
     if not any(b.get("courses") for b in rec.get("blocks") or []):

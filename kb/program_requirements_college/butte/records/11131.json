@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,10 +117,10 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Assess the applications of a Language Arts AA Degree for personal advancement in educational and/or professional goals.",
     "Identify, employ and evaluate different frameworks and perspectives for analyzing and interpreting literature or communication artifacts. These frameworks may include political, socioeconomic, geographical, ethnic, cultural, ecological, psychoanalytical, historical, gender, sexuality, and genre development.",
@@ -131,7 +128,8 @@
     "Define ethical communication and explain the principles that it encompasses, regardless the discipline, language or medium.",
     "Research, organize and create written, oral, and non-verbal messages using appropriate resources."
    ],
-   "careers": []
+   "careers": [],
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -420,5 +418,32 @@
    "The map notes 'Department recommends STAT C1000 or STAT C1000E' for the Area 2 GE choice. Neither course is in the closed list or the major, so neither was recorded."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "GE Pattern(s): Butte Local (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "Meets Area 1"
+  }
+ ],
+ "read_run": "38981247046"
 }

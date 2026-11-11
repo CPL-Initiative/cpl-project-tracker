@@ -1,0 +1,45 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Butte College, fifth read. The fourth (butte_local_ge_guide, run 42960669526) listed the General Education link list's two items: 27734 'Butte College Local' and 27604 'Cal-GETC', each with one child body page (the cq_view on the list itself returned no text). This read opens each item as an entry of that list (cq_view: the item's page and its child pages joined, printed whole), and lists each item's children in case the view prints nothing. Asked: the Local GE Guide's areas, each area's units and any total; Cal-GETC's the same. No model call.",
+ "college": "Butte College",
+ "questions": {
+  "local_ge_units": "What do the Butte College Local GE Guide and the Cal-GETC guide print: areas, each area's units, and a total?"
+ },
+ "keywords": [
+  "Area",
+  "[Uu]nits",
+  "Total",
+  "minimum",
+  "Graduation Requirement",
+  "both"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25389/28399/27734",
+   "answers": [
+    "local_ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25389/28399/27604",
+   "answers": [
+    "local_ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27734",
+   "answers": [
+    "local_ge_units"
+   ]
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=27604",
+   "answers": [
+    "local_ge_units"
+   ]
+  }
+ ]
+}

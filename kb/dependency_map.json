@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 834,
+  "file_datasets": 835,
   "external_services": 195,
   "consumers": 547,
   "workflows": 65,
@@ -22542,6 +22542,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/credential_review_stale_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/csr_confirm_authority_test.py": {
    "consumers": [
     {
@@ -25844,7 +25857,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3209
+     "line": 3221
     }
    ],
    "main_committers": []
@@ -25856,7 +25869,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3296
+     "line": 3308
     }
    ],
    "main_committers": []
@@ -30674,6 +30687,7 @@
     "tests/adopt_align_build_test.py",
     "tests/credential_catalog_widening_test.py",
     "tests/credential_review_sites_test.py",
+    "tests/credential_review_stale_issuer_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",

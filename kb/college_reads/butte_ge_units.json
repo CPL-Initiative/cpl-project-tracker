@@ -1,0 +1,70 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Butte College passes 87 of 164 (program_record_machine_pass); 78 fail arithmetic and 72 of those are degrees that read incomplete: each names the degree's 60 and the pattern 'Butte Local, Cal-GETC' (local) or Cal-GETC (transfer) with no units for it (01298 Agriculture Science A.S.: major 44, degree electives 7, degree total 60-62, ge_units empty). Butte holds no reconcile steps. This read asks, on the catalog's own JSON as the capture reads it (catalog 14), what five degree pages print about the general education pattern, its units and the degree total, and looks on the catalog's start page for the page that prints the Butte Local pattern's units, before any step. Pages: 01298 Agriculture Science A.S. (28078/28202); 11128 Ceramics A.A. (28084/28223); 31000 History AA-T (28138/28306); 31042 Administration of Justice AS-T (28070/28206); 44349 Mathematics and Science A.S., which reads unequal (27607/27517). No model call.",
+ "college": "Butte College",
+ "questions": {
+  "ge_units": "What does the page print about the general education pattern (Butte Local, Cal-GETC) and its units, and does it print a degree total?",
+  "local_ge_units": "Where does the catalog print the Butte Local general education pattern, and how many units does it ask?"
+ },
+ "keywords": [
+  "Cal-GETC",
+  "CalGETC",
+  "Butte Local",
+  "Local",
+  "General Education",
+  "[Uu]nits",
+  "Total",
+  "60",
+  "Elective"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27517",
+   "answers": [
+    "ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/",
+   "answers": [
+    "local_ge_units"
+   ],
+   "expand": true,
+   "links": "General Education|Graduation|Degree|Requirement|GE",
+   "follow": "General Education|Graduation Requirements|Associate Degree Requirements"
+  }
+ ]
+}

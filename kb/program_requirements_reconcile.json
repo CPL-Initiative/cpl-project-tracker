@@ -838,6 +838,49 @@
      "pattern": "Elective\\s+units\\s+must\\s+be\\s+degree\\s+applicable"
     }
    ]
+  },
+  "Butte College": {
+   "why": "S636 SkyAntennae, 2026-11-11. Butte College passed 87 of 164; 72 of its 77 failures were degrees that read incomplete: each page prints 'GE Pattern(s): Butte Local, Cal-GETC' (or Cal-GETC alone) and a term map whose lines read 'Area 1A Choice (See GE Guide)', with no units for the pattern (college page read 42957477366, kb/college_reads/butte_ge_units.json). The catalog's General Education section prints both totals in its own words (college page read 42961405888, kb/college_reads/butte_ge_guides.json): the Butte College Local GE Guide, 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern' (seven areas, one course of 3 semester units each); Butte College Cal-GETC Requirements, 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern'. A local degree takes the Local pattern's 21 (its map is 'Map (Butte GE)'); a transfer degree takes Cal-GETC's 34. Two flags from each degree page's own map: the elective line's note 'Only necessary if the 60 units needed to graduate have not been completed' (electives fill the degree), and, on a local degree, 'Meets Area 4.' beside a course of the major (a course counts for the major and the pattern both; a transfer degree reads so already, Sheet 82 card 2). Simulated with the scorer on the filed records: 58 of the 71 failing degrees read equal. The local graduation requirement's 2 units stay out: the guide exempts many programs and lets its courses double count with a GE area. Session call, recorded as a cpl_memory decision; reversible by deleting this entry. First reconcile with these steps (run 42973457189, after the same_address fix; run 42962429245 changed none): 88 records changed, 135 of 165 pass (was 87). Eight degrees stayed incomplete: their captured text carries the term map, titled 'Map (Butte GE)', without the 'GE Pattern(s)' line, so each pattern also reads the map's own title (the awards gate keeps Cal-GETC to transfer degrees and the Local pattern to local ones).",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "GE\\s+Pattern\\(s\\):\\s*Cal-?GETC|Map\\s+\\(Cal-?GETC\\)",
+     "source": "https://butte.curriqunet.com/catalog/iq/25389/28399/27604",
+     "source_words": "Butte AA-T and AS-T pages: 'GE Pattern(s): Cal-GETC' above 'Map (Cal-GETC)' (History AA-T 31000; college page read 42957477366); Butte College Cal-GETC Requirements: 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern' (college page read 42961405888)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 21,
+      "max": 21
+     },
+     "awards": "local",
+     "pattern": "GE\\s+Pattern\\(s\\):\\s*Butte\\s+Local|Map\\s+\\(Butte\\s+GE\\)",
+     "source": "https://butte.curriqunet.com/catalog/iq/25389/28399/27734",
+     "source_words": "Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888)"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "awards": "associate",
+     "pattern": "Only\\s+necessary\\s+if\\s+the\\s+60\\s+units\\s+needed\\s+to\\s+graduate\\s+have\\s+not\\s+been\\s+completed"
+    },
+    {
+     "kind": "set",
+     "field": "ge_overlap",
+     "value": true,
+     "awards": "local",
+     "pattern": "Meets\\s+Area\\s+\\d"
+    }
+   ]
   }
  }
 }

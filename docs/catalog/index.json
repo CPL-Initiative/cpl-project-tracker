@@ -16222,7 +16222,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-01"
+     "updated": "2026-11-11"
     },
     {
      "created": "2026-08-28",
@@ -16716,8 +16716,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 597,
+   "count": 598,
    "docs": [
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "n": 637,
+     "path": "docs/session_637_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements-harvest",
+      "cer-procedures",
+      "library",
+      "csm-workspace",
+      "commons"
+     ],
+     "title": "Session 637 handoff: Butte 87 to 138 of 164 and displayed, the reconcile's address guard, a stale-issuer report",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-10",
      "governs": [],
@@ -26844,5 +26862,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1442
+ "total": 1443
 }

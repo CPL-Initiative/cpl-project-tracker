@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 633 (SkySilverDollar, Sam's session on handoff 633, 2026-11-10 17:23Z to ~18:40Z)
 tags: [handoff, program-requirements-harvest, cer-procedures, csm-workspace]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 634
