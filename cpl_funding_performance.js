@@ -4,26 +4,26 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-11-10",
+ "as_of": "2026-11-11",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51431,
-  "pa": 46602,
+  "pe": 51568,
+  "pa": 46738,
   "ppa": 121,
-  "p2": 3624,
-  "p3": 16889,
+  "p2": 3625,
+  "p3": 16891,
   "pp": 8,
   "ppe": 133,
-  "pac": 5324,
-  "ptc": 4647,
-  "pe_u": 1610834.45,
-  "pa_u": 285384.4,
+  "pac": 5325,
+  "ptc": 4648,
+  "pe_u": 1618490.95,
+  "pa_u": 286133.9,
   "ppa_u": 751.5,
   "ppe_u": 7145.5,
-  "pac_u": 38182.2,
-  "ptc_u": 31813.95,
-  "p3_u": 84878.65,
+  "pac_u": 38183.7,
+  "ptc_u": 31815.45,
+  "p3_u": 84924.65,
   "pp_u": 79.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -535,10 +535,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 46
   },
   "Crafton Hills": {
-   "pe": 24,
-   "pe_u": 1226.0,
-   "pa": 24,
-   "pa_u": 168.0,
+   "pe": 26,
+   "pe_u": 1350.0,
+   "pa": 26,
+   "pa_u": 182.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -983,25 +983,28 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 45
   },
   "Irvine": {
-   "pe": 221,
-   "pe_u": 9638.0,
-   "pa": 220,
-   "pa_u": 660.0,
+   "pe": 222,
+   "pe_u": 9639.5,
+   "pa": 221,
+   "pa_u": 661.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
    "p2": 0,
-   "p3": 0,
-   "p3_u": 0.0,
+   "p3": null,
+   "p3_suppressed": true,
+   "p3_u": 1.5,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 26.0,
-   "pac": 0,
-   "pac_u": 0.0,
-   "ptc": 0,
-   "ptc_u": 0.0,
+   "pac": null,
+   "pac_suppressed": true,
+   "pac_u": 1.5,
+   "ptc": null,
+   "ptc_suppressed": true,
+   "ptc_u": 1.5,
    "nc_exh": 0,
    "nc_course": 0,
    "nc_cdcp": 40
@@ -1487,16 +1490,16 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Moreno Valley": {
-   "pe": 2549,
-   "pe_u": 55230.0,
-   "pa": 2220,
-   "pa_u": 13439.0,
+   "pe": 2555,
+   "pe_u": 55385.0,
+   "pa": 2225,
+   "pa_u": 13528.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
-   "p2": 503,
-   "p3": 2153,
-   "p3_u": 12838.5,
+   "p2": 504,
+   "p3": 2154,
+   "p3_u": 12883.0,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -2140,10 +2143,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 56
   },
   "Santa Rosa": {
-   "pe": 444,
-   "pe_u": 19298.0,
-   "pa": 444,
-   "pa_u": 1776.0,
+   "pe": 445,
+   "pe_u": 19330.0,
+   "pa": 445,
+   "pa_u": 1780.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 4.0,
@@ -2327,10 +2330,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Southwestern": {
-   "pe": 572,
-   "pe_u": 37161.0,
-   "pa": 553,
-   "pa_u": 2769.0,
+   "pe": 699,
+   "pe_u": 44505.0,
+   "pa": 680,
+   "pa_u": 3410.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 10.0,
@@ -2894,8 +2897,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Crafton Hills": {
    "Military": {
-    "pe": 24,
-    "pa": 24,
+    "pe": 26,
+    "pa": 26,
     "p3": 0
    }
   },
@@ -3116,6 +3119,14 @@ window.CPL_FUNDING_PERF = {
    }
   },
   "Irvine": {
+   "Credit By Exam": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
    "Industry Certification": {
     "pe": null,
     "pe_suppressed": true,
@@ -3123,10 +3134,10 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": null,
-    "pa": 220,
+    "pe": 220,
+    "pa": null,
     "p3": 0,
-    "pe_suppressed": true
+    "pa_suppressed": true
    }
   },
   "LA City": {
@@ -3535,6 +3546,21 @@ window.CPL_FUNDING_PERF = {
     "pa": 741,
     "p3": 741
    },
+   "Credit By Exam | Industry Certification": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
+   },
+   "Credit By Exam | Industry Certification | Portfolio Review": {
+    "pe": null,
+    "pe_suppressed": true,
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": null,
+    "p3_suppressed": true
+   },
    "Credit By Exam | Portfolio Review": {
     "pe": null,
     "pe_suppressed": true,
@@ -3544,14 +3570,14 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 143,
-    "pa": 143,
+    "pe": 146,
+    "pa": 145,
     "p3": 132
    },
    "Industry Certification | Military": {
-    "pe": 16,
-    "pa": 16,
-    "p3": 16
+    "pe": 17,
+    "pa": 17,
+    "p3": 17
    },
    "Industry Certification | Military | Portfolio Review": {
     "pe": null,
@@ -3586,9 +3612,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1047,
-    "pa": 1047,
-    "p3": 991
+    "pe": 1046,
+    "pa": 1046,
+    "p3": 990
    },
    "Standardized Assessment": {
     "pe": 265,
@@ -4106,8 +4132,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Rosa": {
    "Military": {
-    "pe": 444,
-    "pa": 444,
+    "pe": 445,
+    "pa": 445,
     "p3": 0
    }
   },
@@ -4188,8 +4214,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Southwestern": {
    "Military": {
-    "pe": 553,
-    "pa": 553,
+    "pe": 680,
+    "pa": 680,
     "p3": 0
    }
   },
@@ -4310,13 +4336,13 @@ window.CPL_FUNDING_PERF = {
  },
  "cpl_types_statewide": {
   "Credit By Exam": {
-   "pe": 11464,
-   "pa": 11107,
-   "p3": 10669
+   "pe": 11465,
+   "pa": 11108,
+   "p3": 10670
   },
   "Credit By Exam | Industry Certification": {
-   "pe": 45,
-   "pa": 43,
+   "pe": 46,
+   "pa": 44,
    "p3": 24
   },
   "Credit By Exam | Industry Certification | Military | Portfolio Review": {
@@ -4385,14 +4411,14 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1463,
-   "pa": 1442,
+   "pe": 1466,
+   "pa": 1444,
    "p3": 1214
   },
   "Industry Certification | Military": {
-   "pe": 59,
-   "pa": 58,
-   "p3": 33
+   "pe": 60,
+   "pa": 59,
+   "p3": 34
   },
   "Industry Certification | Military | Portfolio Review": {
    "pe": null,
@@ -4419,8 +4445,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Industry Certification | Portfolio Review": {
-   "pe": 28,
-   "pa": 26,
+   "pe": 29,
+   "pa": 27,
    "p3": 20
   },
   "Industry Certification | Standardized Assessment": {
@@ -4432,9 +4458,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 30683,
-   "pa": 27633,
-   "p3": 2672
+   "pe": 30812,
+   "pa": 27762,
+   "p3": 2671
   },
   "Military | Other": {
    "pe": null,
@@ -4489,14 +4515,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1610834.45,
-   "pa_u": 285384.4,
-   "p3_u": 84878.65
+   "pe_u": 1618490.95,
+   "pa_u": 286133.9,
+   "p3_u": 84924.65
   },
   "map": {
-   "pe_u": 1617979.95,
-   "pa_u": 286135.9,
-   "p3_u": 84958.15
+   "pe_u": 1625636.45,
+   "pa_u": 286885.4,
+   "p3_u": 85004.15
   },
   "ratio": {
    "pe_u": 1.0044,
@@ -4523,9 +4549,9 @@ window.CPL_FUNDING_PERF = {
   "Riverside": false,
   "El Camino": true,
   "Coastline": true,
+  "Southwestern": true,
   "Fresno City": true,
   "Mt San Antonio": true,
-  "Southwestern": true,
   "San Bernardino": false,
   "Desert": true,
   "Santa Ana": true,
@@ -4585,8 +4611,8 @@ window.CPL_FUNDING_PERF = {
   "Columbia": false,
   "Redwoods": false,
   "Madera": true,
-  "Alameda": true,
   "Crafton Hills": false,
+  "Alameda": true,
   "American River": false,
   "Los Medanos": true,
   "Compton": false,
@@ -4621,7 +4647,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-11-10",
+ "vet_star_as_of": "2026-11-11",
  "vet_star_threshold": 0.75,
  "vet_star_n": 68,
  "vet_jst": {
@@ -4715,6 +4741,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 1087,
    "pct": 5.7819
   },
+  "Southwestern": {
+   "vets": 675,
+   "jst": 973,
+   "pct": 1.4415
+  },
   "Fresno City": {
    "vets": 709,
    "jst": 803,
@@ -4724,11 +4755,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 729,
    "jst": 733,
    "pct": 1.0055
-  },
-  "Southwestern": {
-   "vets": 675,
-   "jst": 723,
-   "pct": 1.0711
   },
   "San Bernardino": {
    "vets": 1078,
@@ -4772,8 +4798,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santa Rosa": {
    "vets": 591,
-   "jst": 445,
-   "pct": 0.753
+   "jst": 446,
+   "pct": 0.7547
   },
   "Sierra": {
    "vets": 344,
@@ -5025,15 +5051,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 50,
    "pct": 0.8475
   },
+  "Crafton Hills": {
+   "vets": 637,
+   "jst": 26,
+   "pct": 0.0408
+  },
   "Alameda": {
    "vets": 21,
    "jst": 30,
    "pct": 1.4286
-  },
-  "Crafton Hills": {
-   "vets": 637,
-   "jst": 24,
-   "pct": 0.0377
   },
   "American River": {
    "vets": 311,

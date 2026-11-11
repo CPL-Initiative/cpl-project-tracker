@@ -46,8 +46,8 @@
    "name": "Funding model",
    "page": "funding-model/index.html",
    "audience": "public",
-   "last": "2026-11-06",
-   "outcome": "S590: npm run a11y light (9 widths) and dark, plus the How to meet it dialog: all pass. First Light: one raw hex, #FFFFFF on body in @media print, kept on purpose (paper prints white whatever the theme; --surface-opaque would follow a dark swap). Wiring: the view reads no shared dataset. No fix needed."
+   "last": "2026-11-11",
+   "outcome": "Wiring: reads no shared dataset. First Light: one raw hex outside :root (the print rule's white page) now a --print-paper token; no other raw hex, no glyph in rendered text (the warning marks are CSS comments). npm run a11y: funding-model, -sierra, -howto, -mycpl all pass (axe 4.10.2, 9 widths). Light only, as a public page."
   },
   {
    "id": "cobi:dashboard",

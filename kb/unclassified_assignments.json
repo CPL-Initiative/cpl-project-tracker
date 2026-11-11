@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-10T20:24:05Z",
-  "count": 2421,
+  "_synced_at": "2026-11-11T06:24:41Z",
+  "count": 2427,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3124,9 +3124,10 @@
     },
     "ASL 53 American Sign Language IV": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "American Sign Language IV"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:54.742+00:00",
+      "unified_title": "Intermediate American Sign Language 2",
+      "supersedes": "American Sign Language IV"
     },
     "ASNT Level 1 Thermal (Infrared) Thermography Certification": {
       "issuing_agency": "American Society for Nondestructive Testing (ASNT)",
@@ -6171,21 +6172,24 @@
     },
     "COSM 211  Manicuring and Pedicuring I": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Manicuring and Pedicuring I"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:01.902+00:00",
+      "unified_title": "Manicuring and Pedicuring 1",
+      "supersedes": "Manicuring and Pedicuring I"
     },
     "COSM 215 Facials I": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Facials I"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:58.878+00:00",
+      "unified_title": "Facials 1",
+      "supersedes": "Facials I"
     },
     "COSM 223 Hairstyling Services/Haircutting II": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Hairstyling Services/Haircutting II"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:00.574+00:00",
+      "unified_title": "Hairstyling Services/Haircutting 2",
+      "supersedes": "Hairstyling Services/Haircutting II"
     },
     "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
       "unified_title": "C++ Certified Associate Programmer (CPA)",
@@ -7131,6 +7135,12 @@
       "unified_title": "Plant Propagation",
       "supersedes": "Credit by Exam"
     },
+    "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:01.862617+00:00",
+      "unified_title": "Introduction to Food Safety"
+    },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -7534,6 +7544,12 @@
       "reviewed_at": "2026-11-01T22:15:19.627+00:00",
       "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
       "supersedes": "Patient-Centered Care 3 and Transition to Professional Practice"
+    },
+    "Credit by Exam-- CFPL ABT 132": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
+      "unified_title": "Agricultural Business and Technology"
     },
     "Credit by Exam-Elementary American Sign Language 1": {
       "issuing_agency": "California Community Colleges",
@@ -11304,6 +11320,12 @@
       "reviewed_at": "2026-10-31T15:30:48.260073+00:00",
       "unified_title": "Introduction to Hospitality Management"
     },
+    "Introduction to Law Enforcement/Corrections": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:41.499859+00:00",
+      "unified_title": "Introduction to Corrections"
+    },
     "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -11430,6 +11452,12 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
       "unified_title": "Introduction to Reporting and Newswriting"
+    },
+    "JOURN 062 Survey of Mass Media": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:04.492808+00:00",
+      "unified_title": "Introduction to Mass Communications"
     },
     "JOURN 069 Multimedia Reporting for Journalists": {
       "issuing_agency": "California Community Colleges",
@@ -12779,6 +12807,12 @@
       "reviewed_at": "2026-11-09T17:53:55.099685+00:00",
       "unified_title": "Nursing Care of Children and Families"
     },
+    "Nursing Care of the childbearing family": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:07.475067+00:00",
+      "unified_title": "Nursing Care of the Childbearing Family"
+    },
     "Nursing Fundamentals - Credit by Exam (NURS 220 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -13755,6 +13789,12 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
       "unified_title": "Intro to Renewable Energy"
+    },
+    "Report Writing": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:56.14337+00:00",
+      "unified_title": "Report Writing"
     },
     "Report Writing for Law Enforcement": {
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
