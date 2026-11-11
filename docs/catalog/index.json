@@ -16732,8 +16732,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 598,
+   "count": 599,
    "docs": [
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "n": 638,
+     "path": "docs/session_638_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 638 handoff (from SkyPorpoise, S637)",
+     "type": null,
+     "updated": "2026-11-11"
+    },
     {
      "created": "2026-11-11",
      "governs": [],
@@ -26878,5 +26892,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1444
+ "total": 1445
 }
