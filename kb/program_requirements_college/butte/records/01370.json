@@ -65,34 +65,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    37.0,
-    37.0
+    26.0,
+    26.0
    ],
    "stated": [
-    60.0,
-    66.0
+    26.0,
+    26.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Butte GE pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     26.0,
-     26.0
+     58.0,
+     58.0
     ],
     "stated": [
-     26.0,
-     26.0
+     60.0,
+     66.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "fill": [
+     2.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -117,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,8 +143,8 @@
     "max": 66
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -243,14 +248,20 @@
    "GE pattern recorded as Butte GE from 'Map (Butte GE)' and the 'Butte Local' fragment. The map also suggests taking a Cal-GETC course for electives."
   ]
  },
- "extracted_run": 42973457189,
+ "extracted_run": 42985449223,
  "reconciled": [
   {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "Map (Butte GE) (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
   }
  ],
- "read_run": "38981247046"
+ "read_run": 42973457189
 }

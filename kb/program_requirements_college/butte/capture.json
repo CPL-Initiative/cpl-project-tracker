@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 192,
  "with_closed_list": 168,
- "started": "2026-11-11T06:37:41Z",
+ "started": "2026-11-11T08:16:43Z",
  "curriqunet": {
   "catalog": 14,
   "view_prefix": "https://butte.curriqunet.com/Catalog//iq/",
@@ -25,7 +25,7 @@
  "pages_read": 246,
  "banner_h1": null,
  "loads": 1171,
- "seconds": 5660.6,
+ "seconds": 5488.0,
  "found": 165,
  "by_method": {
   "no_closed_list": 24,
@@ -1777,5 +1777,5 @@
    }
   ]
  },
- "run": "42973457189"
+ "run": "42985449223"
 }
