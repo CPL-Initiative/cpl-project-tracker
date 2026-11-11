@@ -608,5 +608,160 @@
       "reviewed_at": "2026-11-11T15:26:55.029+00:00"
     }
   ],
-  "result": "pending"
+  "result": "written",
+  "insert_echo": 24,
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A1, A6, A8, L1",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A2, A3, A6",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5, A6",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A6 or T6 + L3",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A6, A8, L1",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — L2, T8, SP/2 HD",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T8",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T4, T5, T8",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T8, SP/2 HD",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T4, T8, SP/2 HD",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8, SP/2 HD",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, T8 + Snap-on 604",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T7, T8 + MACS/609",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE G1 + ALI Lift It Right Bundle",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "missing": [],
+  "read_back": {
+    "to_write": 0,
+    "written": 24,
+    "set": "038293de0093",
+    "conflicts": []
+  }
 }
