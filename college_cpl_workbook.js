@@ -273,30 +273,40 @@
       (e.adopter_names || []).concat(e.potential_names || []).forEach(function (n2) { swNames[n2] = 1; });
     });
     var swCollege = findName(Object.keys(swNames), asked) || asked;
-    var existing = [], existingBy = {}, adoptedTitles = {};
+    /* A family title (kb/test_mix.py: two or more distinct test mixes, "ASE Certificate Bundles") comes as one
+     * card per mix, each carrying test_mix and test_mix_key. Adoption keys by the title plus the mix, so a
+     * college that articulated A4+A5 is not read as having adopted T2+T8, and is offered it (Sam's bundle
+     * rule, #3110, 2026-11-11). Every other title keys by the title alone, as before. */
+    function akey(e) { return e.unified_title + (e.test_mix_key ? "\u0001" + e.test_mix_key : ""); }
+    function tname(e) { return e.unified_title + (e.test_mix ? " (" + e.test_mix + ")" : ""); }
+    var existing = [], existingBy = {}, adoptedTitles = {}, adoptedKeys = {};
     sw.exhibits.forEach(function (e) {
       if ((e.adopter_names || []).indexOf(swCollege) < 0) return;
-      adoptedTitles[e.unified_title] = 1;
+      adoptedKeys[akey(e)] = 1;
+      if (!e.test_mix_key) adoptedTitles[e.unified_title] = 1;
       if (EXAM_RE.test(e.unified_title)) return;
       ((e.adopter_rec_idx || {})[swCollege] || []).forEach(function (i) {
         var rec = (e.credit_recs || [])[i] || {};
         var cid = codeKey(rec.course, "");
         var c = byId[cid];
-        existing.push({ ids: (e.exhibit_ids || []).join(", "), title: e.unified_title, type: e.cpl_type,
+        existing.push({ ids: (e.exhibit_ids || []).join(", "), title: tname(e), mix: e.test_mix || "", type: e.cpl_type,
           credit: rec.credit || "", disc: e.discipline || "", course: cid, courseTitle: c ? c.title : "(not in COCI list)",
           units: (e.adopter_units || {})[swCollege], issuer: e.issuing_agency || "",
           origin: e.collaborative_type === "CCC Collaborative" ? "Adopted statewide credit recommendation"
             : e.collaborative_type === "Local" ? "College-created (local) exhibit" : e.collaborative_type + " exhibit" });
-        (existingBy[cid] = existingBy[cid] || []).push(e.unified_title);
+        (existingBy[cid] = existingBy[cid] || []).push(tname(e));
       });
     });
 
     // ── statewide candidates and peer evidence per course ───────────────
     var swByTitle = {};
     var candidates = sw.exhibits.filter(function (e) {
-      return STATEWIDE_TYPES[e.collaborative_type] && !EXAM_RE.test(e.unified_title) && !adoptedTitles[e.unified_title];
+      return STATEWIDE_TYPES[e.collaborative_type] && !EXAM_RE.test(e.unified_title) && !adoptedTitles[e.unified_title] && !adoptedKeys[akey(e)];
     });
-    candidates.forEach(function (e) { swByTitle[e.unified_title] = e; });
+    // A title's last card, as before; a family title keeps every mix's card.
+    candidates.forEach(function (e) {
+      swByTitle[e.unified_title] = e.test_mix_key ? (swByTitle[e.unified_title] || []).concat([e]) : [e];
+    });
     /* "Request Adopt": the link opens MAP's CPL Opportunities page searched
      * for the exhibit ID, given only for an ID the page's own API listed when
      * kb/_verify_map_exhibit_links.py last ran. */
@@ -330,8 +340,8 @@
         if (EXAM_RE.test(ent.c) || adoptedTitles[ent.c]) return;
         var peers = (ent.g || []).map(fixName).filter(function (g) { return g !== college && g !== swCollege && g !== asked; });
         if (!peers.length) return;
-        var e = swByTitle[ent.c];
-        if (e) { if (!c.sw.some(function (x) { return x.e === e; })) c.sw.push({ e: e, ent: ent, peers: peers }); }
+        var es = swByTitle[ent.c];
+        if (es) es.forEach(function (e) { if (!c.sw.some(function (x) { return x.e === e; })) c.sw.push({ e: e, ent: ent, peers: peers }); });
         else c.peer.push({ ent: ent, peers: peers });
       });
       var ts = topSource(c.top);
@@ -339,10 +349,10 @@
       c.apprentice = /apprentic/i.test(c.title) || c.top.replace(/\./g, "").indexOf("0952") === 0;
     });
     var reached = {};
-    courses.forEach(function (c) { c.sw.forEach(function (x) { reached[x.e.unified_title] = 1; }); });
+    courses.forEach(function (c) { c.sw.forEach(function (x) { reached[akey(x.e)] = 1; }); });
     var titleRows = {};
     candidates.forEach(function (e) {
-      if (reached[e.unified_title]) return;
+      if (reached[akey(e)]) return;
       var topics = {};
       (e.credit_recs || []).forEach(function (r) {
         topics[String(r.credit || "").replace(/^\s*[\d.\-–\s]*(or\s+[\d.]+\s*)?(semester\s*)?(hours?|units?)\s*(in|of)?\s*/i, "").trim()] = 1;
@@ -356,7 +366,7 @@
           if (shared) { hits.push({ c: c, topic: keys[i], shared: shared }); c.swTitle.push({ e: e, topic: keys[i] }); break; }
         }
       });
-      titleRows[e.unified_title] = hits;
+      titleRows[akey(e)] = hits;
     });
 
     // ── tiers and priority ───────────────────────────────────────────────
@@ -384,7 +394,7 @@
       var fam = {};
       cs.forEach(function (c) { if (c.family) fam[c.src] = (fam[c.src] || 0) + 1; });
       var swNames = {};
-      cs.forEach(function (c) { c.sw.forEach(function (x) { swNames[x.e.unified_title] = 1; }); });
+      cs.forEach(function (c) { c.sw.forEach(function (x) { swNames[tname(x.e)] = 1; }); });
       var nEx = cs.filter(function (c) { return c.existing.length; }).length;
       var nOpp = cs.filter(function (c) { return c.sw.length || c.peer.length || c.swTitle.length; }).length;
       var exp = [];
@@ -407,19 +417,19 @@
     var swRows = [];
     var pathRows = {};
     courses.forEach(function (c) {
-      c.sw.forEach(function (x) { (pathRows[x.e.unified_title] = pathRows[x.e.unified_title] || []).push({ c: c, x: x }); });
+      c.sw.forEach(function (x) { (pathRows[akey(x.e)] = pathRows[akey(x.e)] || []).push({ c: c, x: x }); });
     });
     candidates.slice().sort(function (a, b) {
-      return String(a.discipline || "").localeCompare(String(b.discipline || "")) || a.unified_title.localeCompare(b.unified_title);
+      return String(a.discipline || "").localeCompare(String(b.discipline || "")) || tname(a).localeCompare(tname(b));
     }).forEach(function (e) {
       var related = e.cpl_type === "Military" ? "Military training: " + (e.issuing_agency || "military")
         : /Apprenticeship/.test(e.collaborative_type) ? "Apprenticeship: " + (e.issuing_agency || "")
         : e.cpl_type + ": " + (e.issuing_agency || "issuer not recorded");
       var lk = linkFor(e);
-      var base = { title: e.unified_title, ids: (e.exhibit_ids || []).join(", "), crId: lk.ids.length ? lk.ids.join(", ") : (e.exhibit_ids || [])[0] || "",
+      var base = { title: tname(e), mix: e.test_mix || "", ids: (e.exhibit_ids || []).join(", "), crId: lk.ids.length ? lk.ids.join(", ") : (e.exhibit_ids || [])[0] || "",
         ctype: e.collaborative_type, type: e.cpl_type, disc: e.discipline || "", related: related, adopters: e.adopters,
         median: e.peer_units_median, link: lk.link, chips: lk.chips, linkStatus: lk.status };
-      var paths = pathRows[e.unified_title] || [], titles = titleRows[e.unified_title] || [];
+      var paths = pathRows[akey(e)] || [], titles = titleRows[akey(e)] || [];
       paths.forEach(function (p) {
         swRows.push(Object.assign({}, base, { course: p.c.id + " " + p.c.title, courseId: p.c.id, units: p.c.units, cn: p.c.cn,
           tier: "Needs validation: aligned via peer articulation", couldAdopt: "Yes",
@@ -450,12 +460,12 @@
     }).map(function (c) {
       var sources = [], proposals = [], swcr = [], steps = [];
       c.sw.forEach(function (x) {
-        swcr.push(x.e.unified_title + " [" + (x.e.exhibit_ids || []).slice(0, 2).join(", ") + "]: " + x.peers.length + " peer college(s)");
-        sources.push(x.e.cpl_type + ": " + x.e.unified_title + " (" + (x.e.issuing_agency || x.e.collaborative_type) + ")");
+        swcr.push(tname(x.e) + " [" + (x.e.exhibit_ids || []).slice(0, 2).join(", ") + "]: " + x.peers.length + " peer college(s)");
+        sources.push(x.e.cpl_type + ": " + tname(x.e) + " (" + (x.e.issuing_agency || x.e.collaborative_type) + ")");
       });
       c.swTitle.forEach(function (x) {
-        swcr.push(x.e.unified_title + " [" + (x.e.exhibit_ids || []).slice(0, 2).join(", ") + "]: title match only");
-        sources.push(x.e.cpl_type + ": " + x.e.unified_title);
+        swcr.push(tname(x.e) + " [" + (x.e.exhibit_ids || []).slice(0, 2).join(", ") + "]: title match only");
+        sources.push(x.e.cpl_type + ": " + tname(x.e));
       });
       if (swcr.length) {
         proposals.push("Adopt an existing statewide credit recommendation in MAP");
@@ -486,7 +496,7 @@
       var lk = lead ? linkFor(lead) : { link: "", ids: [], status: "" };
       var why = [];
       c.sw.slice(0, 2).forEach(function (x) {
-        why.push(x.peers.length + " peer college(s) articulate " + x.e.unified_title + " to common course " + c.ident + ", which includes " + c.id);
+        why.push(x.peers.length + " peer college(s) articulate " + tname(x.e) + " to common course " + c.ident + ", which includes " + c.id);
       });
       peers.slice(0, 2).forEach(function (x) {
         why.push(x.peers.length + " peer college(s) articulate " + x.ent.c + " to common course " + c.ident);
@@ -495,7 +505,7 @@
       if (!why.length) why.push(c.apprentice ? "Apprenticeship course: journey-level training may evidence its outcomes"
         : "TOP area " + (c.family || c.topTitle) + " has documented prior-learning sources; no peer articulation yet");
       return { couldAdopt: lead ? "Yes" : "No", crId: lead ? (lk.ids.length ? lk.ids.join(", ") : (lead.exhibit_ids || [])[0] || "") : "",
-        crTitle: lead ? lead.unified_title : "", crDisc: lead ? lead.discipline || "" : "",
+        crTitle: lead ? tname(lead) : "", crDisc: lead ? lead.discipline || "" : "",
         exhibitIds: lead ? (lead.exhibit_ids || []).join(", ") : "", why: why.join("\n"),
         link: lk.link, linkStatus: lead ? lk.status : "No statewide CR for this course",
         programs: c.programs.slice(0, 3).map(function (p) { return p.program_title + " (" + p.award + ")"; }).join("; ")
@@ -533,13 +543,13 @@
         tiers: count(courses, "tier"), priority: count(opps, "priority"),
         coverage: count(programs.filter(function (p) { return p.status === "Active"; }), "coverage"),
         nCandidates: candidates.length,
-        nCandidatesReached: candidates.filter(function (e) { return (pathRows[e.unified_title] || []).length || (titleRows[e.unified_title] || []).length; }).length,
+        nCandidatesReached: candidates.filter(function (e) { return (pathRows[akey(e)] || []).length || (titleRows[akey(e)] || []).length; }).length,
         areas: Object.keys(areas).map(function (k) { return [k, areas[k].High, areas[k].Medium, areas[k].Low]; })
           .sort(function (a, b) { return (b[1] * 100 + b[2] * 10 + b[3]) - (a[1] * 100 + a[2] * 10 + a[3]); }).slice(0, 14),
         verifiedAt: verDate, nVerified: candidates.filter(function (e) { return linkFor(e).ids.length; }).length,
-        topStatewide: candidates.filter(function (e) { return (pathRows[e.unified_title] || []).length; })
+        topStatewide: candidates.filter(function (e) { return (pathRows[akey(e)] || []).length; })
           .sort(function (a, b) { return b.adopters - a.adopters; }).slice(0, 15)
-          .map(function (e) { return [e.unified_title, e.discipline || "", e.adopters, e.peer_units_median, pathRows[e.unified_title].length]; }),
+          .map(function (e) { return [tname(e), e.discipline || "", e.adopters, e.peer_units_median, pathRows[akey(e)].length]; }),
         statewideGenerated: sw.generated_at || ""
       }
     };

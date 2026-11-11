@@ -223,6 +223,15 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
 
+      # ── The title each ASE local exhibit sits under, before any fold (#3110, 2026-11-11) ─
+      # A credential fold rewrites a raw title's common title in place, and the old
+      # title is the cleanest statement of a bundle's test mix. kb/test_mix.py reads it
+      # from kb/reference/exhibit_prior_titles.json so Request Quick Adopt and the
+      # could-adopt lists group a family title ("ASE Certificate Bundles") by mix.
+      # Reads statewide_data.js only; non-fatal.
+      - name: Record each ASE exhibit's prior title
+        run: python3 kb/_record_prior_titles.py || echo "::warning title=Prior titles not recorded::kb/_record_prior_titles.py exited non-zero; a fold before the next run loses its bundles' test mixes. Check the step log."
+
       # ── COCI C-ID claims that four signals call a mis-entry (SkyHarbor, 2026-11-06) ─
       # Moreno Valley's HES 1 Health Science claimed HIST 150, so Basic Military
       # Training read as a peer path to every world history course. Writes
@@ -642,6 +651,7 @@ jobs:
           git add kb/discipline_cpl_rollup.json 2>/dev/null || true
           # Cred-Ref PR-5a: credential-review curator-edit overlay
           git add kb/credential_review_overlay.json 2>/dev/null || true
+          git add kb/reference/exhibit_prior_titles.json 2>/dev/null || true
           # OQ-08: governance drift candidates (what's missing from the register)
           git add kb/governance_candidates.json 2>/dev/null || true
           # Common CR Reference: the ranked curation worklist the tab fetches.

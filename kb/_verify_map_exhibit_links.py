@@ -87,6 +87,21 @@ def by_title(sw, found):
     return dict(sorted((t, sorted(v)) for t, v in out.items()))
 
 
+def mix_by_id(sw, found):
+    """Exhibit ID -> its test mix in plain words, for the IDs under a family title only (kb/test_mix.py;
+    "ASE Certificate Bundles"). map_links.js draws the mix beside each Request Quick Adopt chip, so a
+    college's A4+A5 bundle never reads as its T2+T8 one (Sam's bundle rule, #3110, 2026-11-11). The MAP
+    link itself stays keyed by the exhibit ID."""
+    out = {}
+    for e in sw["exhibits"]:
+        if not e.get("test_mix_key"):
+            continue
+        for i in e.get("exhibit_ids", []):
+            if i.upper() in found:
+                out[i.upper()] = e.get("test_mix") or ""
+    return dict(sorted(out.items()))
+
+
 def write(out):
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
@@ -98,6 +113,7 @@ def retitle(sw):
     to MAP: the daily data can rename a common title between MAP checks."""
     out = json.load(open(OUT, encoding="utf-8"))
     out["by_title"] = by_title(sw, out["found"])
+    out["mix_by_id"] = mix_by_id(sw, out["found"])
     write(out)
     print(f"{OUT}: by_title rebuilt, {len(out['by_title'])} titles")
 
@@ -115,6 +131,7 @@ def recheck(wanted, sw):
     out["checked"] = len(wanted)
     out["rechecked_at"] = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")
     out["by_title"] = by_title(sw, out["found"])
+    out["mix_by_id"] = mix_by_id(sw, out["found"])
     write(out)
     print(f"{OUT}: rechecked {len(todo)}; {len(out['found'])} listed, {len(out['not_found'])} not")
 
@@ -179,6 +196,7 @@ def main():
         "pages_unread": skipped,
     }
     out["by_title"] = by_title(sw, out["found"])
+    out["mix_by_id"] = mix_by_id(sw, out["found"])
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=1, ensure_ascii=False)
         f.write("\n")

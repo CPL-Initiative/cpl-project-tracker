@@ -6429,6 +6429,26 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         "collab_types": [],  # all constituent Collaborative Type values (CCC-precedence label)
     })
 
+    # ── A family title groups by test mix (Sam's bundle rule, #3110, 2026-11-11) ──
+    # Every local ASE bundle folds into "ASE Certificate Bundles", and each stays a local
+    # exhibit with its own test mix. Grouped by the title alone, a college that articulated
+    # A4+A5 read as having adopted T2+T8, on the surfaces colleges see. kb/test_mix.py reads
+    # each exhibit's mix and names the family titles from the data (two or more distinct coded
+    # mixes); every other title keeps the key it had, so its card is unchanged.
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "kb"))
+    import test_mix as _test_mix
+    _ident_cache = {}
+
+    def _ident(raw_title):
+        if raw_title not in _ident_cache:
+            _ident_cache[raw_title] = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
+        return _ident_cache[raw_title]
+
+    _mix_by = _test_mix.adoption_keys(
+        [(_ident(row[i_title] or "")["unified_title"], (row[i_eid] or "").strip(), (row[i_title] or "").strip())
+         for row in exhibit_rows if (row[i_eid] or "").strip() and (row[i_title] or "").strip()],
+        _test_mix.load_prior())
+
     for row in exhibit_rows:
         eid = (row[i_eid] or "").strip()
         raw_title = row[i_title] or ""
@@ -6438,7 +6458,8 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
         cpl = (row[i_cpl] or "").strip()
         collab = (row[i_collab] or "").strip()
 
-        ident = _classify_exhibit(raw_title, unified_lookup, issuer_pick)
+        ident = _ident(raw_title)
+        mix = _mix_by.get((ident["unified_title"], eid.upper())) or {}
         # EACR PR-2 (2026-06-01): Collaborative Type dropped from the key so a
         # credential's Local + CCC (+ Industry/etc.) cards merge into ONE; the raw
         # collab values are collected on the group for a CCC-precedence label below.
@@ -6446,8 +6467,11 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
             ident["unified_title"],
             ident["issuing_agency"],
             cpl,
+            mix.get("key", ""),
         )
         e = all_exhibits[group_key]
+        if mix:
+            e["test_mix"] = mix["label"]
         e["collab_types"].append(collab)
         e["eids"].add(eid)
         e["raw_titles"].add(title)
@@ -6514,7 +6538,7 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
     from collections import Counter as _Counter
     results = []
     for group_key, e in all_exhibits.items():
-        unified_title, issuing_agency, cpl_type = group_key
+        unified_title, issuing_agency, cpl_type, mix_key = group_key
         adopters = e["adopters"]
         tops_sorted = sorted(e["tops"])
         map_top = tops_sorted[0] if tops_sorted else ""
@@ -6638,6 +6662,11 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
                                          if c in e["adopter_units"]], default=0.0), 2),
             "rec_units_total": round(sum(_rec_units(r["credit"]) for r in e["credit_recs"]), 2),
         })
+        if mix_key:
+            # Only a family title's card carries these: the mix in plain words, and the key its
+            # readers group adoption by (kb/test_mix.py adopt_key: the title plus the mix).
+            results[-1]["test_mix"] = e.get("test_mix", "")
+            results[-1]["test_mix_key"] = mix_key
 
     # Sort: exhibits with most potential first, then by adopters descending
     results.sort(key=lambda x: (-x["potential"], -x["adopters"]))

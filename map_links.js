@@ -55,6 +55,7 @@
         "background:var(--surface-subtle);border:1px solid var(--border);text-decoration:underline;}" +
       ".cpl-mapchip:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}" +
       ".cpl-mapmore{color:var(--text-muted);}" +
+      ".cpl-mapmix{margin-left:0.35rem;font-weight:400;color:var(--text-body);}" +
       ".cpl-ml-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;" +
         "clip:rect(0 0 0 0);white-space:nowrap;border:0;}";
     document.head.appendChild(st);
@@ -76,23 +77,29 @@
   // statewide recommendations call it too.
   function url(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
 
+  // A family title's test mix for one ID ("A4, A5"), or "" (kb/test_mix.py; Sam's bundle rule, #3110).
+  function mixOf(id) { return (index.mix_by_id || {})[String(id).toUpperCase()] || ""; }
+
   function chip(id) {
     var rec = index.found[String(id).toUpperCase()] || {};
-    var college = rec.college || "";
+    var college = rec.college || "", mix = mixOf(id);
     return '<a class="cpl-mapchip" href="' + esc(url(id)) +
       '" target="_blank" rel="noopener">' + esc(college ? short(college) : "View in MAP") +
+      (mix ? '<span class="cpl-mapmix">' + esc(mix) + "</span>" : "") +
       '<span class="cpl-ml-sr"> (' + (college ? "built by " + esc(college) + "; " : "") +
+      (mix ? "tests " + esc(mix) + "; " : "") +
       "opens MAP searched for " + esc(id) + ")</span></a>";
   }
 
-  // The line for one common title: one chip per building college, its first ID.
+  // The line for one common title: one chip per building college, its first ID. Under a family title,
+  // one per college and test mix, so a college's A4+A5 bundle and its T2+T8 bundle are two chips.
   function lineHtml(title) {
     if (!index) return "";
     var ids = index.by_title[title] || [], seen = {}, firsts = [];
     ids.forEach(function (id) {
       var rec = index.found[String(id).toUpperCase()];
       if (!rec) return;
-      var who = rec.college || id;
+      var who = (rec.college || id) + "\u0001" + mixOf(id);
       if (seen[who]) return;
       seen[who] = 1;
       firsts.push(id);

@@ -872,6 +872,8 @@ jobs:
           python3 tests/eacr_matrix_payload_test.py
           # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
           python3 tests/statewide_cid_hold_test.py
+          # A family title groups adoption by test mix; every other title as before (#3110, 2026-11-11).
+          python3 tests/statewide_test_mix_test.py
           # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
           python3 tests/cid_claim_audit_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
