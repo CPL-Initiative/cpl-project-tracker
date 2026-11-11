@@ -28,13 +28,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28078/28202",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28078/28202",
    "title": "AS Degree in Agriculture Science",
    "h1": "AS Degree in Agriculture Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -71,13 +74,16 @@
    "EH74"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28286",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28286",
    "title": "Certificate of Achievement in Landscape/Turfgrass Technician",
    "h1": "Certificate of Achievement in Landscape/Turfgrass Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in landscape/turfgrass technician",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -107,13 +113,16 @@
    "WLD20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28198",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28198",
    "title": "AS Degree in Mechanized Agriculture",
    "h1": "AS Degree in Mechanized Agriculture",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -134,13 +143,16 @@
    "CHEM2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28240",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28240",
    "title": "AS Degree in Biological Science",
    "h1": "AS Degree in Biological Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -165,13 +177,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28242",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28242",
    "title": "AS Degree in Business Administration",
    "h1": "AS Degree in Business Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -201,13 +216,16 @@
    "BUS8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28192",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28192",
    "title": "AS Degree in Accounting",
    "h1": "AS Degree in Accounting",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -243,13 +261,16 @@
    "ECONC2001"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28244",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28244",
    "title": "AS Degree in Business Management",
    "h1": "AS Degree in Business Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -284,13 +305,16 @@
    "MSP74"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28247",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28247",
    "title": "AS Degree in Marketing",
    "h1": "AS Degree in Marketing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -322,13 +346,16 @@
    "RLS60"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28335",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28335",
    "title": "AS Degree in Real Estate",
    "h1": "AS Degree in Real Estate",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -356,13 +383,16 @@
    "BCIS85"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28232",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28232",
    "title": "AS Degree in Business Information Worker",
    "h1": "AS Degree in Business Information Worker",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -389,13 +419,16 @@
    "BUS8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28235",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28235",
    "title": "AS Degree in Legal Office Administration",
    "h1": "AS Degree in Legal Office Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -424,13 +457,16 @@
    "HIM76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28238",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28238",
    "title": "AS Degree in Medical Office Administration",
    "h1": "AS Degree in Medical Office Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -480,13 +516,16 @@
    "MATH20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28291",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28291",
    "title": "AS Degree in Civil Engineering Technology",
    "h1": "AS Degree in Civil Engineering Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -517,13 +556,16 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28225",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28225",
    "title": "AS Degree in Automotive Technology",
    "h1": "AS Degree in Automotive Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -572,13 +614,16 @@
    "WLD99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28349",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28349",
    "title": "AS Degree in Welding Technology",
    "h1": "AS Degree in Welding Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -610,13 +655,16 @@
    "PHO4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28222",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28222",
    "title": "AA Degree in Arts",
    "h1": "AA Degree in Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -705,13 +753,16 @@
    "FASH99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28296",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28296",
    "title": "AS Degree in Fashion Merchandising",
    "h1": "AS Degree in Fashion Merchandising",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -745,13 +796,16 @@
    "MATHC2220"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28308",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28308",
    "title": "AS Degree in Mathematics",
    "h1": "AS Degree in Mathematics",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -800,13 +854,16 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28094/28255",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28094/28255",
    "title": "AS Degree in Chemistry",
    "h1": "AS Degree in Chemistry",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
@@ -832,13 +889,16 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28301",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28301",
    "title": "AS Degree in Fire Technology",
    "h1": "AS Degree in Fire Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -873,13 +933,16 @@
    "COS29"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28258",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28258",
    "title": "AS Degree in Cosmetology",
    "h1": "AS Degree in Cosmetology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -917,13 +980,16 @@
    "EH70"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28287",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28287",
    "title": "Certificate of Achievement in Nursery Technician",
    "h1": "Certificate of Achievement in Nursery Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in nursery technician",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -958,13 +1024,16 @@
    "EH99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28284",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28284",
    "title": "AS Degree in Environmental Horticulture",
    "h1": "AS Degree in Environmental Horticulture",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -1002,13 +1071,16 @@
    "WLD20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28196",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28196",
    "title": "Certificate of Achievement in Heavy Equipment Operator Technician",
    "h1": "Certificate of Achievement in Heavy Equipment Operator Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in heavy equipment operator technician",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1041,13 +1113,16 @@
    "RTVF12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28312",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28312",
    "title": "AS Degree in Graphic Design for Print",
    "h1": "AS Degree in Graphic Design for Print",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -1075,13 +1150,16 @@
    "COMMC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28204",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28204",
    "title": "AS Degree in Administration of Justice",
    "h1": "AS Degree in Administration of Justice",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -1104,13 +1182,16 @@
    "RTVF55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28342",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28342",
    "title": "AS Degree in Radio-TV-Film: Video Production",
    "h1": "AS Degree in Radio-TV-Film: Video Production",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1146,13 +1227,16 @@
    "RTVF40"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28313",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28313",
    "title": "AS Degree in Multimedia Studies",
    "h1": "AS Degree in Multimedia Studies",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -1203,13 +1287,16 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28223",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28223",
    "title": "AA Degree in Ceramics",
    "h1": "AA Degree in Ceramics",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -1258,13 +1345,16 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28290",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28290",
    "title": "AA Degree in Language Arts",
    "h1": "AA Degree in Language Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 33,
@@ -1307,13 +1397,16 @@
    "POS12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28210",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28210",
    "title": "AS Degree in Court Personnel/Pre-law",
    "h1": "AS Degree in Court Personnel/Pre-law",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -1372,13 +1465,16 @@
    "RTVF12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28311",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28311",
    "title": "AA Degree in Graphic Design",
    "h1": "AA Degree in Graphic Design",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1406,13 +1502,16 @@
    "ECONC2001"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28249",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28249",
    "title": "Certificate of Achievement in Retail Management",
    "h1": "Certificate of Achievement in Retail Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in retail management",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1429,13 +1528,16 @@
    "FN2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
    "title": "AS Degree in Accelerated Track Registered Nursing",
    "h1": "AS Degree in Accelerated Track Registered Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -1467,13 +1569,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28162/28332",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28162/28332",
    "title": "AS Degree in Environmental Science",
    "h1": "AS Degree in Environmental Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -1507,13 +1612,16 @@
    "AJ8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28213",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28213",
    "title": "AS Degree in Criminal Justice",
    "h1": "AS Degree in Criminal Justice",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -1543,13 +1651,16 @@
    "AJLE141"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28216",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28216",
    "title": "Certificate of Achievement in Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
    "h1": "Certificate of Achievement in Law Enforcement Academy - Basic/Fish and Wildlife Emphasis",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in law enforcement academy - basic/fish and wildlife emphasis",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1601,13 +1712,16 @@
    "EH99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28285",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28285",
    "title": "Certificate of Achievement in Environmental Horticulture",
    "h1": "Certificate of Achievement in Environmental Horticulture",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in environmental horticulture",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1633,13 +1747,16 @@
    "AGS40"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28188",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28188",
    "title": "Certificate of Achievement in Agriculture Business",
    "h1": "Certificate of Achievement in Agriculture Business",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in agriculture business",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1664,13 +1781,16 @@
    "WLD20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28074/28200",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28074/28200",
    "title": "Certificate of Achievement in Mechanized Agriculture",
    "h1": "Certificate of Achievement in Mechanized Agriculture",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in mechanized agriculture",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1697,13 +1817,16 @@
    "BUS64"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28406",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28406",
    "title": "Certificate of Achievement in Accounting",
    "h1": "Certificate of Achievement in Accounting",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in accounting",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1730,13 +1853,16 @@
    "ECONC2001"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28245",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28245",
    "title": "Certificate of Achievement in Business Management",
    "h1": "Certificate of Achievement in Business Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in business management",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1764,13 +1890,16 @@
    "ECONC2001"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28248",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28248",
    "title": "Certificate of Achievement in Marketing",
    "h1": "Certificate of Achievement in Marketing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in marketing",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1796,13 +1925,16 @@
    "RLS40"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28172/28336",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28172/28336",
    "title": "Certificate of Achievement in Real Estate",
    "h1": "Certificate of Achievement in Real Estate",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in real estate",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1830,13 +1962,16 @@
    "BCIS85"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28234",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28234",
    "title": "Certificate of Achievement in Business Information Worker",
    "h1": "Certificate of Achievement in Business Information Worker",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in business information worker",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1863,13 +1998,16 @@
    "BUS8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28237",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28237",
    "title": "Certificate of Achievement in Legal Office Administration",
    "h1": "Certificate of Achievement in Legal Office Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in legal office administration",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1898,13 +2036,16 @@
    "HIM76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28092/28239",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28092/28239",
    "title": "Certificate of Achievement in Medical Office Administration",
    "h1": "Certificate of Achievement in Medical Office Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in medical office administration",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1927,13 +2068,16 @@
    "RTVF55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28343",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28343",
    "title": "Certificate of Achievement in Radio-TV-Film: Video Production",
    "h1": "Certificate of Achievement in Radio-TV-Film: Video Production",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in radio-tv-film: video production",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1969,13 +2113,16 @@
    "RTVF40"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28150/28314",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28150/28314",
    "title": "Certificate of Achievement in Multimedia Studies",
    "h1": "Certificate of Achievement in Multimedia Studies",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in multimedia studies",
+    "section_fit": 1.0
    }
   },
   "listed": 20,
@@ -1999,13 +2146,16 @@
    "MATH20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/28292",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/28292",
    "title": "Certificate of Achievement in Civil Engineering Technology",
    "h1": "Certificate of Achievement in Civil Engineering Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in civil engineering technology",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2036,13 +2186,16 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28226",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28226",
    "title": "Certificate of Achievement in Automotive Technology",
    "h1": "Certificate of Achievement in Automotive Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in automotive technology",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2065,13 +2218,16 @@
    "MATH20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28106/28275",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28106/28275",
    "title": "Certificate of Achievement in Drafting and CAD Technology",
    "h1": "Certificate of Achievement in Drafting and CAD Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in drafting and cad technology",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2103,13 +2259,16 @@
    "WLD56"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28182/28350",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28182/28350",
    "title": "Certificate of Achievement in Welding Technology",
    "h1": "Certificate of Achievement in Welding Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in welding technology",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2132,13 +2291,16 @@
    "ART99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28224",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28224",
    "title": "Certificate of Achievement in Ceramics",
    "h1": "Certificate of Achievement in Ceramics",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in ceramics",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2164,13 +2326,16 @@
    "NSG89"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28326",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28326",
    "title": "Certificate of Achievement in Registered Nursing: LVN to ADN",
    "h1": "Certificate of Achievement in Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in registered nursing: lvn to adn",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2202,13 +2367,16 @@
    "NSG49"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28323",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28323",
    "title": "Certificate of Achievement in Licensed Vocational Nursing",
    "h1": "Certificate of Achievement in Licensed Vocational Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in licensed vocational nursing",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -2226,13 +2394,16 @@
    "EMS171"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28114/28359",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28114/28359",
    "title": "Certificate of Achievement in Paramedic",
    "h1": "Certificate of Achievement in Paramedic",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in paramedic",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2256,13 +2427,16 @@
    "FASH99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28124/28297",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28124/28297",
    "title": "Certificate of Achievement in Fashion Merchandising",
    "h1": "Certificate of Achievement in Fashion Merchandising",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in fashion merchandising",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2286,13 +2460,16 @@
    "CDF80"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28254",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28254",
    "title": "Certificate of Achievement in Early Childhood Education",
    "h1": "Certificate of Achievement in Early Childhood Education",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in early childhood education",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2319,13 +2496,16 @@
    "AJ99"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28208",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28208",
    "title": "Certificate of Achievement in Administration of Justice",
    "h1": "Certificate of Achievement in Administration of Justice",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in administration of justice",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2352,13 +2532,16 @@
    "ENGLC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28212",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28212",
    "title": "Certificate of Achievement in Court Personnel/Pre-law",
    "h1": "Certificate of Achievement in Court Personnel/Pre-law",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in court personnel/pre-law",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2387,13 +2570,16 @@
    "POLSC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28302",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28302",
    "title": "Certificate of Achievement in Fire Technology",
    "h1": "Certificate of Achievement in Fire Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in fire technology",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2417,13 +2603,16 @@
    "COS29"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28104/28259",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28104/28259",
    "title": "Certificate of Achievement in Cosmetology",
    "h1": "Certificate of Achievement in Cosmetology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in cosmetology",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2462,13 +2651,16 @@
    "HISTC1002"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28138/28306",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28138/28306",
    "title": "AA-T Degree in History",
    "h1": "AA-T Degree in History",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in history",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2495,13 +2687,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28070/28206",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28070/28206",
    "title": "AS-T Degree in Administration of Justice",
    "h1": "AS-T Degree in Administration of Justice",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in administration of justice",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2532,13 +2727,16 @@
    "ENGLC1002"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28118/28289",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28118/28289",
    "title": "AA-T Degree in English",
    "h1": "AA-T Degree in English",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in english",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -2566,13 +2764,16 @@
    "CSCI76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28270",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28270",
    "title": "Certificate of Achievement in Computer System Administration",
    "h1": "Certificate of Achievement in Computer System Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in computer system administration",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2596,13 +2797,16 @@
    "CSCI65"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28265",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28265",
    "title": "Certificate of Achievement in Computer Programming",
    "h1": "Certificate of Achievement in Computer Programming",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in computer programming",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2630,13 +2834,16 @@
    "RTVF30"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28262",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28262",
    "title": "AS Degree in Computer Animation and Game Development",
    "h1": "AS Degree in Computer Animation and Game Development",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2664,13 +2871,16 @@
    "CSCI76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28269",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28269",
    "title": "AS Degree in Computer System Administration",
    "h1": "AS Degree in Computer System Administration",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -2694,13 +2904,16 @@
    "CSCI65"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28264",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28264",
    "title": "AS Degree in Computer Programming",
    "h1": "AS Degree in Computer Programming",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -2726,13 +2939,16 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28168/28334",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28168/28334",
    "title": "AA-T Degree in Psychology",
    "h1": "AA-T Degree in Psychology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in psychology",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2775,13 +2991,16 @@
    "PSC10"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28288",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28288",
    "title": "Certificate of Achievement in Plant Protection",
    "h1": "Certificate of Achievement in Plant Protection",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in plant protection",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -2810,13 +3029,16 @@
    "DRAM9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28276",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28276",
    "title": "AA-T Degree in Theatre Arts",
    "h1": "AA-T Degree in Theatre Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in theatre arts",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -2840,13 +3062,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28267",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28267",
    "title": "AS-T Degree in Computer Science",
    "h1": "AS-T Degree in Computer Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in computer science",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2872,13 +3097,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28166/28331",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28166/28331",
    "title": "AA-T Degree in Political Science",
    "h1": "AA-T Degree in Political Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in political science",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -2902,13 +3130,16 @@
    "CDF80"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28252",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28252",
    "title": "AS-T Degree in Early Childhood Education",
    "h1": "AS-T Degree in Early Childhood Education",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in early childhood education",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -2931,13 +3162,16 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
    "title": "AS-T Degree in Physics 2.0",
    "h1": "AS-T Degree in Physics 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in physics 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2965,13 +3199,16 @@
    "PHO2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28221",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28221",
    "title": "AA-T Degree in Art History",
    "h1": "AA-T Degree in Art History",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in art history",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2996,17 +3233,20 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28130/28304",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28130/28304",
    "title": "AA-T Degree in Geography",
    "h1": "AA-T Degree in Geography",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in geography",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
-  "text_chars": 3745
+  "text_chars": 3859
  },
  {
   "control_number": "31953",
@@ -3026,13 +3266,16 @@
    "PHYS41"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
    "title": "AS-T Degree in Mathematics 2.0",
    "h1": "AS-T Degree in Mathematics 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in mathematics 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3059,13 +3302,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28176/28345",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28176/28345",
    "title": "AA-T Degree in Sociology",
    "h1": "AA-T Degree in Sociology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in sociology",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3095,13 +3341,16 @@
    "PHO2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28084/28398",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28084/28398",
    "title": "AA-T Degree in Studio Arts",
    "h1": "AA-T Degree in Studio Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in studio arts",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -3154,13 +3403,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28142/28361",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28142/28361",
    "title": "AA-T Degree in Kinesiology",
    "h1": "AA-T Degree in Kinesiology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in kinesiology",
+    "section_fit": 1.0
    }
   },
   "listed": 37,
@@ -3193,13 +3445,16 @@
    "MUS88"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28315",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28315",
    "title": "AA-T Degree in Music",
    "h1": "AA-T Degree in Music",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in music",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -3222,13 +3477,16 @@
    "MATHC2220"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28132/28305",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28132/28305",
    "title": "AS-T Degree in Geology",
    "h1": "AS-T Degree in Geology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in geology",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3247,13 +3505,16 @@
    "FSC107"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28126/28303",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28126/28303",
    "title": "Certificate of Achievement in Firefighter I and II Academy",
    "h1": "Certificate of Achievement in Firefighter I and II Academy",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in firefighter i and ii academy",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3282,13 +3543,16 @@
    "RTVF30"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28317",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28317",
    "title": "Certificate of Achievement in Recording Arts",
    "h1": "Certificate of Achievement in Recording Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in recording arts",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3317,13 +3581,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28140/28307",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28140/28307",
    "title": "AA-T Degree in Journalism",
    "h1": "AA-T Degree in Journalism",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in journalism",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3352,13 +3619,16 @@
    "RTVF30"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28316",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28316",
    "title": "AS Degree in Recording Arts",
    "h1": "AS Degree in Recording Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3376,13 +3646,16 @@
    "AJLE140"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28219",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28219",
    "title": "Certificate of Achievement in Law Enforcement Academy - Basic",
    "h1": "Certificate of Achievement in Law Enforcement Academy - Basic",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in law enforcement academy - basic",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3413,13 +3686,16 @@
    "PSC12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28112/28279",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28112/28279",
    "title": "AA-T Degree in Elementary Teacher Education",
    "h1": "AA-T Degree in Elementary Teacher Education",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in elementary teacher education",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3445,13 +3721,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28076/28186",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28076/28186",
    "title": "AS-T Degree in Agriculture Business",
    "h1": "AS-T Degree in Agriculture Business",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in agriculture business",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3473,13 +3752,16 @@
    "OLS329"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/28363",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/28363",
    "title": "Noncredit Certificate of Completion in Occupational and Life Skills",
    "h1": "Noncredit Certificate of Completion in Occupational and Life Skills",
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -3511,13 +3793,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28110/28278",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28110/28278",
    "title": "AA-T Degree in Economics",
    "h1": "AA-T Degree in Economics",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in economics",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3544,17 +3829,20 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28088/28241",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28088/28241",
    "title": "AS-T Degree in Biology",
    "h1": "AS-T Degree in Biology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in biology",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
-  "text_chars": 3140
+  "text_chars": 3137
  },
  {
   "control_number": "35061",
@@ -3578,13 +3866,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28122/28283",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28122/28283",
    "title": "AS-T Degree in Agriculture Plant Science",
    "h1": "AS-T Degree in Agriculture Plant Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in agriculture plant science",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3611,13 +3902,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28128/28298",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28128/28298",
    "title": "AS-T Degree in Nutrition and Dietetics",
    "h1": "AS-T Degree in Nutrition and Dietetics",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in nutrition and dietetics",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3646,13 +3940,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28251",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28251",
    "title": "AA-T Degree in Child and Adolescent Development",
    "h1": "AA-T Degree in Child and Adolescent Development",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in child and adolescent development",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3677,13 +3974,16 @@
    "RTVF55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28170/28340",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28170/28340",
    "title": "AS-T Degree in Film, Television and Electronic Media",
    "h1": "AS-T Degree in Film, Television and Electronic Media",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in film, television and electronic media",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3709,13 +4009,16 @@
    "HIM76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28134/28364",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28134/28364",
    "title": "Certificate of Achievement in Medical Coding",
    "h1": "Certificate of Achievement in Medical Coding",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in medical coding",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3738,13 +4041,16 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28178/28347",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28178/28347",
    "title": "AA-T Degree in Spanish",
    "h1": "AA-T Degree in Spanish",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in spanish",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3761,13 +4067,16 @@
    "AJLE100"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28217",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28217",
    "title": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
    "h1": "AS Degree in Law Enforcement Academy - Basic/State Parks Emphasis",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 1,
@@ -3785,13 +4094,16 @@
    "AJLE130"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28072/28218",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28072/28218",
    "title": "Certificate of Achievement in Law Enforcement Academy - Basic/State Parks Emphasis",
    "h1": "Certificate of Achievement in Law Enforcement Academy - Basic/State Parks Emphasis",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in law enforcement academy - basic/state parks emphasis",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3822,13 +4134,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/28263",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/28263",
    "title": "AS Degree in Computer Information Systems",
    "h1": "AS Degree in Computer Information Systems",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -3857,13 +4172,16 @@
    "SOC20"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28148/28365",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28148/28365",
    "title": "AA Degree in Multicultural and Gender Studies",
    "h1": "AA Degree in Multicultural and Gender Studies",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -3896,13 +4214,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28080/28514",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28080/28514",
    "title": "AS-T Degree in Public Health",
    "h1": "AS-T Degree in Public Health",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -3930,13 +4251,16 @@
    "HVAC43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28369",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28369",
    "title": "Certificate of Achievement in HVACR",
    "h1": "Certificate of Achievement in HVACR",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in hvacr",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -3968,13 +4292,16 @@
    "MFG46"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
    "title": "Certificate of Achievement in Advanced Manufacturing",
    "h1": "Certificate of Achievement in Advanced Manufacturing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced manufacturing",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -3996,13 +4323,16 @@
    "HVAC43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28367",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28367",
    "title": "Certificate of Achievement in Commercial HVACR",
    "h1": "Certificate of Achievement in Commercial HVACR",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial hvacr",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4035,13 +4365,16 @@
    "WLD18"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28230",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28230",
    "title": "Certificate of Achievement in Diesel Technology",
    "h1": "Certificate of Achievement in Diesel Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in diesel technology",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -4065,13 +4398,16 @@
    "MFG46"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28378",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28378",
    "title": "Certificate of Achievement in Production Management",
    "h1": "Certificate of Achievement in Production Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in production management",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4093,13 +4429,16 @@
    "HVAC23"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28372",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28372",
    "title": "Certificate of Achievement in Residential HVACR",
    "h1": "Certificate of Achievement in Residential HVACR",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in residential hvacr",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4130,13 +4469,16 @@
    "PHYS41"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28355",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28355",
    "title": "Certificate of Achievement in Construction Management",
    "h1": "Certificate of Achievement in Construction Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in construction management",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -4160,13 +4502,16 @@
    "MFG26"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28377",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28377",
    "title": "Certificate of Achievement in Manufacturing Operations",
    "h1": "Certificate of Achievement in Manufacturing Operations",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in manufacturing operations",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -4190,13 +4535,16 @@
    "CNST5"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28353",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28353",
    "title": "Certificate of Achievement in Applied Construction",
    "h1": "Certificate of Achievement in Applied Construction",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in applied construction",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -4230,13 +4578,16 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28228",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28228",
    "title": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "h1": "Certificate of Achievement in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in automotive technology - honda, professional automotive career training (pact)",
+    "section_fit": 0.857
    }
   },
   "listed": 18,
@@ -4268,13 +4619,16 @@
    "MFG46"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28373",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28373",
    "title": "AS Degree in Advanced Manufacturing",
    "h1": "AS Degree in Advanced Manufacturing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -4304,17 +4658,20 @@
    "PHYS41"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28354",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28354",
    "title": "AS Degree in Construction Management",
    "h1": "AS Degree in Construction Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
-  "text_chars": 4546
+  "text_chars": 4615
  },
  {
   "control_number": "38058",
@@ -4339,13 +4696,16 @@
    "ITEC55"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/28368",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/28368",
    "title": "AS Degree in HVACR",
    "h1": "AS Degree in HVACR",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -4378,13 +4738,16 @@
    "WLD18"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28229",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28229",
    "title": "AS Degree in Diesel Technology",
    "h1": "AS Degree in Diesel Technology",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4418,13 +4781,16 @@
    "AUT9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28086/28227",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28086/28227",
    "title": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "h1": "AS Degree in Automotive Technology - Honda, Professional Automotive Career Training (PACT)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -4444,13 +4810,16 @@
    "MFG16"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/28374",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/28374",
    "title": "Certificate of Achievement in Advanced Manufacturing",
    "h1": "Certificate of Achievement in Advanced Manufacturing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced manufacturing",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4469,13 +4838,16 @@
    "HVAC33"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27560",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27560",
    "title": "Certificate of Achievement in HVACR Level III",
    "h1": "Certificate of Achievement in HVACR Level III",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in hvacr level iii",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4495,13 +4867,16 @@
    "MFG26"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28144/27576",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28144/27576",
    "title": "Certificate of Achievement in Advanced Manufacturing Level II",
    "h1": "Certificate of Achievement in Advanced Manufacturing Level II",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in advanced manufacturing level ii",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4520,13 +4895,16 @@
    "HVAC43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28136/27552",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28136/27552",
    "title": "Certificate of Achievement in HVACR Level IV",
    "h1": "Certificate of Achievement in HVACR Level IV",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in hvacr level iv",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4556,13 +4934,16 @@
    "CSCI76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27592",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27592",
    "title": "Certificate of Achievement in Cyber-Security Practitioner",
    "h1": "Certificate of Achievement in Cyber-Security Practitioner",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in cyber-security practitioner",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -4592,13 +4973,16 @@
    "CSCI76"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28100/27600",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28100/27600",
    "title": "AS Degree in Cyber-Security Practitioner",
    "h1": "AS Degree in Cyber-Security Practitioner",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4621,13 +5005,16 @@
    "PHIL8"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28402/27536",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28402/27536",
    "title": "AA-T Degree in Philosophy",
    "h1": "AA-T Degree in Philosophy",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in philosophy",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4655,13 +5042,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28243",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28243",
    "title": "AS-T Degree in Business Administration 2.0",
    "h1": "AS-T Degree in Business Administration 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in business administration 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -4682,13 +5072,16 @@
    "ACCT4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28068/28388",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28068/28388",
    "title": "Certificate of Achievement in Professional Accountant",
    "h1": "Certificate of Achievement in Professional Accountant",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in professional accountant",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4710,13 +5103,16 @@
    "BUS46"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28090/28397",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28090/28397",
    "title": "Certificate of Achievement in Project Management",
    "h1": "Certificate of Achievement in Project Management",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in project management",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -4749,13 +5145,16 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28380",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28380",
    "title": "AS Degree in Accelerated Track Registered Nursing",
    "h1": "AS Degree in Accelerated Track Registered Nursing",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -4783,13 +5182,16 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28381",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28381",
    "title": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
    "h1": "AS Degree in Accelerated Track Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -4816,13 +5218,16 @@
    "NSG9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28156/28382",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28156/28382",
    "title": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
    "h1": "Certificate of Achievement in Accelerated Track Registered Nursing: LVN to ADN",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in accelerated track registered nursing: lvn to adn",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4842,13 +5247,16 @@
    "OLS341"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28158/27508",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28158/27508",
    "title": "Noncredit Certificate of Completion in Navigating Workplace Success",
    "h1": "Noncredit Certificate of Completion in Navigating Workplace Success",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificate of completion in navigating workplace success",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
@@ -4874,13 +5282,16 @@
    "RTVF12"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28257",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28257",
    "title": "AA-T Degree in Communication Studies 2.0",
    "h1": "AA-T Degree in Communication Studies 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in communication studies 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4914,13 +5325,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25399/28165/28025/27891",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25399/28165/28025/27891",
    "title": "Health Occupations Preparation (AS Degree)",
    "h1": "Health Occupations Preparation (AS Degree)",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -4950,13 +5364,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27529",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27529",
    "title": "AS Degree in Civil Engineering",
    "h1": "AS Degree in Civil Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -4989,13 +5406,16 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27545",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27545",
    "title": "AS Degree in Mechatronic Engineering",
    "h1": "AS Degree in Mechatronic Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 17,
@@ -5025,13 +5445,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27533",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27533",
    "title": "AS Degree in Computer Engineering",
    "h1": "AS Degree in Computer Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 14,
@@ -5060,13 +5483,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27537",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27537",
    "title": "AS Degree in Electrical Engineering",
    "h1": "AS Degree in Electrical Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 13,
@@ -5094,13 +5520,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27541",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27541",
    "title": "AS Degree in Mechanical Engineering",
    "h1": "AS Degree in Mechanical Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -5123,13 +5552,16 @@
    "GEOL32"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27531",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27531",
    "title": "Certificate of Achievement in Civil Engineering",
    "h1": "Certificate of Achievement in Civil Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in civil engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5151,13 +5583,16 @@
    "ENGR17"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27535",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27535",
    "title": "Certificate of Achievement in Computer Engineering",
    "h1": "Certificate of Achievement in Computer Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in computer engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5182,13 +5617,16 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27547",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27547",
    "title": "Certificate of Achievement in Mechatronic Engineering",
    "h1": "Certificate of Achievement in Mechatronic Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in mechatronic engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5210,13 +5648,16 @@
    "MATH32"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27543",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27543",
    "title": "Certificate of Achievement in Mechanical Engineering",
    "h1": "Certificate of Achievement in Mechanical Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in mechanical engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5242,13 +5683,16 @@
    "PHYS42"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27549",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27549",
    "title": "Certificate of Achievement in Engineering Fundamentals",
    "h1": "Certificate of Achievement in Engineering Fundamentals",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in engineering fundamentals",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5323,13 +5767,16 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27515",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27515",
    "title": "AA Degree in Arts and Humanities",
    "h1": "AA Degree in Arts and Humanities",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 59,
@@ -5397,13 +5844,16 @@
    "SOCIC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27519",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27519",
    "title": "AA Degree in Social Science",
    "h1": "AA Degree in Social Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 52,
@@ -5457,13 +5907,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/27607/27517",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/27607/27517",
    "title": "AS Degree in Mathematics and Science",
    "h1": "AS Degree in Mathematics and Science",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 38,
@@ -5484,13 +5937,16 @@
    "MATH32"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27539",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27539",
    "title": "Certificate of Achievement in Electrical Engineering",
    "h1": "Certificate of Achievement in Electrical Engineering",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in electrical engineering",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5528,13 +5984,16 @@
    "MUS92"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27601",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27601",
    "title": "AA Degree in Music",
    "h1": "AA Degree in Music",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 22,
@@ -5567,13 +6026,16 @@
    "MUS88"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27603",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27603",
    "title": "Certificate of Achievement in Music",
    "h1": "Certificate of Achievement in Music",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in music",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -5594,13 +6056,16 @@
    "MUS89"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/27605",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/27605",
    "title": "Certificate of Achievement in Music Theory and Composition",
    "h1": "Certificate of Achievement in Music Theory and Composition",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in music theory and composition",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5641,13 +6106,16 @@
    "PHYS41"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28116/27551",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28116/27551",
    "title": "Certificate of Achievement in Engineering Support Technician",
    "h1": "Certificate of Achievement in Engineering Support Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in engineering support technician",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5667,13 +6135,16 @@
    "COMMC1000"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28098/28435",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28098/28435",
    "title": "Certificate of Achievement in Speech and Debate",
    "h1": "Certificate of Achievement in Speech and Debate",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in speech and debate",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -5712,13 +6183,16 @@
    "SWHS2"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28428/28534",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28428/28534",
    "title": "AA-T Degree in Social Work and Human Services",
    "h1": "AA-T Degree in Social Work and Human Services",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "aa-t degree in social work and human services",
+    "section_fit": 1.0
    }
   },
   "listed": 23,
@@ -5743,13 +6217,16 @@
    "MUS90"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28152/28460",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28152/28460",
    "title": "Certificate of Achievement in Commercial Music",
    "h1": "Certificate of Achievement in Commercial Music",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in commercial music",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5772,13 +6249,16 @@
    "CNST5"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28444",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28444",
    "title": "Certificate of Achievement in Concrete Industry Technician",
    "h1": "Certificate of Achievement in Concrete Industry Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in concrete industry technician",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -5812,13 +6292,16 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28102/28443",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28102/28443",
    "title": "AS Degree in Concrete Industry Technician",
    "h1": "AS Degree in Concrete Industry Technician",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 18,
@@ -5847,13 +6330,16 @@
    "DRAM9"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28108/28469",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28108/28469",
    "title": "Certificate of Achievement in Theatre Arts",
    "h1": "Certificate of Achievement in Theatre Arts",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement in theatre arts",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5879,13 +6365,16 @@
    "PHYS43"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28164/28538",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28164/28538",
    "title": "AS-T Degree in Physics 2.0",
    "h1": "AS-T Degree in Physics 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in physics 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5910,13 +6399,16 @@
    "PHYS41"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28146/28526",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28146/28526",
    "title": "AS-T Degree in Mathematics 2.0",
    "h1": "AS-T Degree in Mathematics 2.0",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "as-t degree in mathematics 2.0",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5936,13 +6428,16 @@
    "CDF325"
   ],
   "source": {
-   "url": "https://butte.curriqunet.com/catalog/iq/25398/28096/28548",
+   "url": "https://butte.curriqunet.com/Catalog//iq/25398/28096/28548",
    "title": "Noncredit Certificate of Completion in Early Childhood Education",
    "h1": "Noncredit Certificate of Completion in Early Childhood Education",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "noncredit certificate of completion in early childhood education",
+    "section_fit": 0.75
    }
   },
   "listed": 4,
