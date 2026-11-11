@@ -4,13 +4,12 @@ sam-bundle-family-is-a-field-2026-11-11).
 Each ASE bundle stays its own canonical title and carries the family "ASE Certificate Bundles"; his 31 saved
 folds are read as family tags. Guards:
   1. kb/test_mix.py reads a bundle's tests; an "or" and a non-ASE part stay as written;
-  2. kb/_family_tag_plan.py converts the 25 bundle titles and holds the six for Sam, untouched;
-  3. its plan.sql, run on a fixture table with kb_curation's real columns (reviewer_label generated, as the
-     2026-11-09 migration made it), tags each bundle and removes its fold rows; a title whose rows changed since the
-     read is skipped whole (no half-converted title) and listed; rollback.sql restores the table exactly, never
-     names a generated column, and skips whole a title a person has saved on since;
-  4. after the plan no unified_title_override is left for a bundle, so no fold runs and every title, and every
-     adoption read by title, stays as it was;
+  2. kb/_family_tag_plan.py converts the 24 bundle titles and holds the seven for Sam, untouched ("ASE C1 or G1"
+     joined the held any-one-test titles, agreed with COBIx on #3111); the write itself is
+     tests/credential_family_apply_test.py;
+  3. it gives insert rows of the family field only, one per converted title, and none for a held title;
+  4. Sam's fold rows stay beside the tags, and the rename's family hold (kb/fold_issuer.py hold_family_folds) keeps
+     every one of them out of the fold, so every title, and every adoption read by title, stays as it was;
   5. the nightly sync carries the family onto kb/credentials.json and takes it off again after a rollback;
   6. kb/credential_aliases.py gives a member its tests as aliases, so A4 finds both A4 bundles;
   7. the field is mapped in kb/governance_surface_map.json;
@@ -22,9 +21,7 @@ Run from the repo root: python3 tests/credential_family_test.py
 """
 import json
 import os
-import re
 import shutil
-import sqlite3
 import sys
 import tempfile
 
@@ -59,7 +56,8 @@ SAVED = [LEAD, "Advanced Electrical and Electronic Systems", "ASE A2 + A3 + A6 �
          "ASE Master Medium/Heavy Truck Technician (T1–T8)"]
 HELD = {"Advanced Electrical and Electronic Systems", "ASE Certification (any A1–A8)", "ASE Master Automobile Technician",
         "ASE Master Automobile Technician (A1–A8 + L1)", "ASE Master Automobile Technician (A1–A8) or L3",
-        "ASE Master Medium/Heavy Truck Technician (T1–T8)"}
+        "ASE Master Medium/Heavy Truck Technician (T1–T8)",
+        "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"}
 
 # ── 1. the tests a title names ──────────────────────────────────────────
 check("a bundle's tests read as codes", test_mix.from_title("ASE Bundle — A4, A5")["label"] == "A4, A5")
@@ -85,116 +83,35 @@ fams = ftp.families()
 check("the family is declared", FAM in fams and fams[FAM]["issuer"].endswith("(ASE)"))
 p = ftp.plan(ROWS, fams)
 conv = {it["title"] for it in p["convert"]}
-check("25 bundle titles convert", len(conv) == 25 and LEAD in conv and "ASE Bundle — A4, A5" in conv)
-check("the six titles Sam keeps or that are not bundles are held, untouched", {it["title"] for it in p["held"]} == HELD)
-check("each converted title deletes only its own fold rows",
-      all({r["field"] for r in it["rows"]} <= set(ftp.FOLD_FIELDS) for it in p["convert"]))
+check("24 bundle titles convert", len(conv) == 24 and LEAD in conv and "ASE Bundle — A4, A5" in conv)
+check("the seven titles Sam keeps or that are not bundles are held, untouched", {it["title"] for it in p["held"]} == HELD)
+check("ASE C1 or G1 is held as an any-one-test title, by the generator's data",
+      "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair" in ftp.HOLD
+      and "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair" not in conv)
 
-# ── 3. the SQL on a fixture table ───────────────────────────────────────
-PG = re.compile(r"::timestamptz")
+# ── 3. the insert rows ──────────────────────────────────────────────────
+tags, written, conflicts = ftp.tag_rows(p, ROWS)
+check("one insert row per converted title, of the family field only, and nothing else",
+      {t["course_id"][len(ftp.PREFIX):] for t in tags} == conv and len(tags) == 24
+      and all(set(t) == {"course_id", "field", "value"} and t["field"] == "credential_family" and t["value"] == FAM
+              for t in tags) and not written and not conflicts)
+check("a held title gives no row", not any(t["course_id"][len(ftp.PREFIX):] in HELD for t in tags))
+check("the generator writes no SQL", not hasattr(ftp, "plan_sql") and not hasattr(ftp, "rollback_sql"))
 
+# ── 4. the fold rows stay, and no fold runs ─────────────────────────────
+import fold_issuer  # noqa: E402
 
-COLS = ("course_id", "field", "value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")
-
-
-def table(rows):
-    """kb_curation as it stands: reviewer_label is generated (2026-11-09_kb_curation_reviewer_label.sql), so an insert
-    that names it fails here as it fails in Postgres."""
-    db = sqlite3.connect(":memory:")
-    db.execute("attach ':memory:' as public")
-    db.execute("create table public.kb_curation (course_id text not null, field text not null, value text, "
-               "reviewer_email text not null, "
-               "reviewed_at text not null default (strftime('%Y-%m-%dT%H:%M:%f+00:00','now')), "
-               "validated_at text, validated_by text, "
-               "reviewer_label text generated always as (case when reviewer_email is null then null "
-               "when reviewer_email like '%@bot' then reviewer_email else 'a reviewer' end) stored, "
-               "primary key (course_id, field))")
-    for r in rows:
-        db.execute("insert into public.kb_curation (%s) values (%s)" % (", ".join(COLS), ", ".join("?" * len(COLS))),
-                   tuple(r.get(c) for c in COLS))
-    return db
-
-
-def dump(db):
-    return sorted(db.execute("select course_id, field, value, reviewer_email, reviewed_at, validated_at, validated_by, "
-                             "reviewer_label from public.kb_curation"))
-
-
-def run(db, sql):
-    """Runs the generated SQL with only Postgres's cast syntax removed."""
-    db.executescript(PG.sub("", sql))
-
-
-def tagged_in(rows):
-    return {c[len(ftp.PREFIX):] for c, f, v, who, *_ in rows if f == "credential_family" and v == FAM and who == ftp.CREDENTIAL_FAMILY_COHORT}
-
-
-def folds_in(rows):
-    return {(c[len(ftp.PREFIX):], f) for c, f, *_ in rows if f in ftp.FOLD_FIELDS}
-
-
-sql_plan, sql_back = ftp.plan_sql(p), ftp.rollback_sql(p)
-check("rollback.sql never names a generated column", "reviewer_label" not in sql_back and "reviewer_label" not in sql_plan)
-
-T28, A45, T58 = "ASE Bundle — T2, T8", "ASE Bundle — A4, A5", "ASE Bundle — T5, T8"
-live = [dict(r) for r in ROWS]
-for r in live:
-    # Sam re-saves one bundle's override after the read, and another bundle's merge confirm.
-    if r["course_id"] == ftp.PREFIX + T28 and r["field"] == "unified_title_override":
-        r["reviewed_at"] = "2026-11-11T18:00:00+00:00"
-    if r["course_id"] == ftp.PREFIX + A45 and r["field"] == "unified_title_merge_confirm":
-        r["reviewed_at"] = "2026-11-11T18:01:00+00:00"
-# A third bundle already holds a credential_family row a person set.
-live.append({"course_id": ftp.PREFIX + T58, "field": "credential_family", "value": FAM, "reviewer_email": "slee@cccco.edu",
-             "reviewed_at": "2026-11-11T18:02:00+00:00", "validated_at": None, "validated_by": None})
-db = table(live)
-start = dump(db)
-run(db, sql_plan)
-after = dump(db)
-tagged, left = tagged_in(after), folds_in(after)
-moved = {T28, A45, T58}
-check("plan.sql tags each bundle under the cohort, but no title whose rows changed since the read", tagged == conv - moved)
-check("…and removes the fold rows of every tagged bundle", not any(t in tagged for t, _ in left))
-check("a title whose override changed keeps both its rows: its merge confirm is not deleted alone",
-      {(T28, "unified_title_override"), (T28, "unified_title_merge_confirm")} <= left)
-check("a title whose merge confirm changed keeps both its rows and gains no family",
-      {(A45, "unified_title_override"), (A45, "unified_title_merge_confirm")} <= left and A45 not in tagged)
-check("a title that already holds a family row keeps its fold rows", {(T58, "unified_title_override"), (T58, "unified_title_merge_confirm")} <= left)
-check("the held titles keep both their rows", all((t, "unified_title_override") in left for t in HELD)
-      and all((t, "unified_title_merge_confirm") in left for t in HELD))
-check("another field's row on a bundle is untouched", any(f == "issuing_agency_override" for c, f, *_ in after))
-skipped = sorted(db.execute("select count(*) from sqlite_temp_master where name = ?", (ftp.SKIP,)))
-check("the plan drops its skip list when done", skipped == [(0,)])
-# The skip list the read-back names: run the plan's statements up to its read-back on a fresh copy.
-db2 = table(live)
-body = PG.sub("", sql_plan).split("\n-- Read back")[0].replace("begin;", "")
-db2.executescript(body)
-listed = {c[len(ftp.PREFIX):] for c, in db2.execute("select course_id from %s" % ftp.SKIP)}
-check("the skipped titles are listed, and only they", listed == moved)
-run(db, sql_back)
-check("rollback.sql restores the table exactly, on the table with the generated column", dump(db) == start)
-
-# A person saves on a converted title after the plan: the rollback leaves that title whole and restores the rest.
-db = table(ROWS)
-start = dump(db)
-run(db, sql_plan)
-db.execute("insert into public.kb_curation (course_id, field, value, reviewer_email, reviewed_at) values (?,?,?,?,?)",
-           (ftp.PREFIX + A45, "unified_title_override", "ASE Certificate Bundles: A4 + A5", "slee@cccco.edu", "2026-11-12T00:00:00+00:00"))
-run(db, sql_back)
-end = dump(db)
-check("rollback skips whole a title saved on since: it keeps the person's row and its family row",
-      (A45, "unified_title_override") in folds_in(end) and (A45, "unified_title_merge_confirm") not in folds_in(end)
-      and A45 in tagged_in(end))
-check("…and restores every other title exactly", [r for r in end if not r[0].endswith(A45)] == [r for r in start if not r[0].endswith(A45)])
-
-# ── 4. no fold, so no title moves ───────────────────────────────────────
-db = table(ROWS)
-run(db, ftp.plan_sql(p))
 overrides = {}
-for c, f, v, who, ts, *_ in dump(db):
-    overrides.setdefault(c[len(ftp.PREFIX):], {})[f] = v
-check("after the plan no bundle carries a rename override, so the dry run folds none and every title stays",
-      not any("unified_title_override" in overrides.get(t, {}) for t in conv))
+for r in ROWS:
+    overrides.setdefault(r["course_id"][len(ftp.PREFIX):], {})[r["field"]] = r["value"]
+for t in tags:
+    overrides[t["course_id"][len(ftp.PREFIX):]]["credential_family"] = t["value"]
+renames = {t: v["unified_title_override"] for t, v in overrides.items()
+           if v.get("unified_title_override") and v.get("unified_title_merge_confirm") != v["unified_title_override"]}
+merges = {t: v["unified_title_merge_confirm"] for t, v in overrides.items() if v.get("unified_title_merge_confirm")}
+keep_r, keep_m, held_f = fold_issuer.hold_family_folds(renames, merges, fold_issuer.family_titles(ftp.FAMILIES))
+check("every saved fold into the family title is held by the rename's family hold, so no title moves",
+      not keep_r and not keep_m and {h["old"] for h in held_f} == set(SAVED))
 
 # ── 5. the nightly sync ─────────────────────────────────────────────────
 tmp = tempfile.mkdtemp()
@@ -235,9 +152,9 @@ check("the field is mapped in the governance surface map", "field:kb_curation.cr
 import _build_exhibits_related as rel  # noqa: E402
 
 EXC = {t for t in conv if test_mix.exception(t)}
-check("the members the parser cannot code fully are the twelve with an 'or' or a non-ASE part",
-      len(EXC) == 12 and {"ASE Bundle — A6 or T6 + L3", "ASE Bundle — T7, T8 + MACS/609", "ASE G1 + ALI Lift It Right Bundle",
-                          "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"} <= EXC
+check("the members the parser cannot code fully are the eleven with an 'or' or a non-ASE part (C1 or G1 is held)",
+      len(EXC) == 11 and {"ASE Bundle — A6 or T6 + L3", "ASE Bundle — T7, T8 + MACS/609",
+                          "ASE G1 + ALI Lift It Right Bundle"} <= EXC
       and "ASE Bundle — A4, A5" not in EXC)
 check("a non-ASE part joins with 'with', an 'or' stays inside its part",
       test_mix.exception("ASE Bundle — T7, T8 + MACS/609") == {"title": "ASE Bundle — T7, T8 + MACS/609", "mix": "T7, T8 + MACS/609",
@@ -252,9 +169,13 @@ _lj, _fm = rel.load_json, rel.credential_aliases.family_members
 try:
     def lj(root, path, default=None):
         got = _lj(root, path, default)
-        if path == "kb/credential_review_overlay.json" and got:
-            # As after the plan runs: the converted titles hold no fold rows.
-            got = dict(got, overrides={t: v for t, v in (got.get("overrides") or {}).items() if t not in conv})
+        if path == "kb/credential_review_overlay.json":
+            # As after the tags land: Sam's fold rows stay beside them, so every member still holds its saved fold.
+            ov = dict((got or {}).get("overrides") or {})
+            for t in conv:
+                ov[t] = dict(ov.get(t) or {}, unified_title_override=FAM, unified_title_merge_confirm=FAM,
+                             credential_family=FAM)
+            got = dict(got or {}, overrides=ov)
         return got
     rel.load_json = lj
     rel.credential_aliases.family_members = lambda root=".": {t: {"family": FAM, "aliases": test_mix.components(t)} for t in conv}

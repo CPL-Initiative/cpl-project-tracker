@@ -55,14 +55,21 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   CIP never decide. First live run (cer-procedures run 43104720166, 21:41Z): 747 `subj_override` and 747 `subj_source`
   rows under `exhibit-subject-s638@bot`; undo is the cohort delete. `kb/exhibit_subject_out/worklist.json` lists the
   rest (362 credentials, 429 exhibits, 70 with a suggestion); the Commons' Exhibit card counts `no_subject`.
-- **A credential family is a field, never a fold (#3117, merged):** `kb/reference/credential_families.json` and
-  `kb/_family_tag_plan.py`; plan `kb/receipts/credential_family_2026-11-11_s638/` converts 25 and holds 6. ASE bundles
-  keep their titles (Sam: *"A, C as recommended"*).
+- **A credential family is a field, never a fold (#3117, merged; the write, S639):** `kb/reference/credential_families.json`
+  declares the family; `kb/_family_tag_plan.py` gives insert rows, never SQL: 24 titles take `credential_family = ASE
+  Certificate Bundles`, 7 are held. ASE bundles keep their titles (Sam: *"A, C as recommended"*). Sam's 31 saved fold
+  rows stay beside the tags, never edited or deleted; `kb/fold_issuer.py` `hold_family_folds` (called by
+  `_cred_rename_dryrun.py` and `_cred_rename_apply.py`) holds any fold whose target is a family title, and the rename
+  batch (`_build_exhibits_related.py`) reads a member's fold into its family as no rename. The write is
+  `credential-family-apply.yml` (`kb/_family_tag_apply.py`): it reads live at dispatch, inserts only under
+  `credential-family-s638@bot`, refuses on a conflict (a pending merge confirm naming a member as its target, or a
+  member's family row holding another value), and lands receipts in `kb/receipts/credential_family_2026-11-11_s638/`.
+  Undo: `mode=rollback` removes exactly the cohort's rows. #3117's `plan.sql` never ran and is retired.
 - **Held for Sam (his call, outward naming):** four ASE Master titles; Advanced Electrical and Electronic Systems (the
-  ASE plan retires it); ASE Certification (any A1-A8).
-- **NEXT, in order:** (0) the family plan (not run; 47 KB, opens with a temp table, which the `execute_sql` guard
-  blocks): regenerate from a fresh live read (`kb/_family_tag_plan.py --rows`), apply by a route with a receipt, confirm
-  one count of `credential-family-s638@bot`; (1) phase 2 (`-2`): its dry run was dispatched 22:16Z; read it, commit if 0 held; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
+  ASE plan retires it); ASE Certification (any A1-A8); ASE C1 or G1 (either test qualifies; agreed with COBIx on #3111).
+- **NEXT, in order:** (0) the family tags: once the S639 PR is on `main`, dispatch `credential-family-apply.yml`
+  `mode=dry-run`; a correct summary reads *24 to write, 0 already written, 7 held for Sam, 0 conflicts*; then
+  `mode=commit expect=24`; then `daily-dashboard.yml` carries the family onto `kb/credentials.json`; (1) phase 2 (`-2`): its dry run was dispatched 22:16Z; read it, commit if 0 held; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
   #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
   plan phase 3 (`-3`); (5) the owed decision sheet; (6) the rename batch proposing
   "ASE Certificate Bundles: A4 + A5" titles, for Sam's one approval; (7) the credentials still without a subject, as one
@@ -71,7 +78,8 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   move (130 titles, with the 10 duplicate spellings and the *alifornia Veterinary Medical Association* typo); (11) a
   Review step for the 181 college-issued titles holding an industry-certification exhibit. Then CompTIA, AWS, NCCER as
   one batch each (`cert_naming.FAMILIES`).
-- Tests: `tests/cert_naming_test.py`, `tests/exhibits_related.test.js`, `tests/fold_issuer_resolution_test.py`,
+- Tests: `tests/credential_family_test.py`, `tests/credential_family_apply_test.py`,
+  `tests/cert_naming_test.py`, `tests/exhibits_related.test.js`, `tests/fold_issuer_resolution_test.py`,
   `tests/issuer_resolution_parity.test.js`, `tests/exhibit_progress.test.js`.
 
 ## The redesign (2026-10-30, side session beside S531)

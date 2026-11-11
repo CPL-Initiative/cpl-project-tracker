@@ -143,7 +143,10 @@ def build(root="."):
                 # proposal, so one leads and the other folds into it. Nothing moves until a person approves the batch.
                 fam_name = members[t]["family"]
                 to = test_mix.family_title(fam_name, t)
-                if approved or not to or to == t or (ov.get("cert_rename_kept") or "") == to:
+                # A member's saved fold into its family title is the family tag, never an approved rename (Sam,
+                # 2026-11-11): his fold rows stay beside the tag, so they must not hide the family-form proposal.
+                renamed = approved and ov.get("unified_title_override") != fam_name
+                if renamed or not to or to == t or (ov.get("cert_rename_kept") or "") == to:
                     continue   # approved, no mix, already named so, or this proposal was declined
                 mix = test_mix.parts(t) or {"tests": [], "with": []}
                 exc = test_mix.exception(t)
