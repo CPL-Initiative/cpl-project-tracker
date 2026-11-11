@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 844,
+  "file_datasets": 849,
   "external_services": 195,
-  "consumers": 549,
+  "consumers": 551,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3345,
+     "line": 3383,
      "tabs": [
       "exhibits"
      ]
@@ -1495,7 +1495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 131,
+     "line": 132,
      "tabs": [
       "exhibits"
      ]
@@ -1597,7 +1597,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5293,
+     "line": 5345,
      "tabs": [
       "credential-reference"
      ]
@@ -2084,7 +2084,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 162,
+     "line": 163,
      "tabs": [
       "exhibits"
      ]
@@ -3677,7 +3677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3819,
+     "line": 3871,
      "tabs": [
       "credential-reference"
      ]
@@ -6115,7 +6115,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2684,
+     "line": 2721,
      "tabs": [
       "exhibits"
      ]
@@ -6319,7 +6319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3337,
+     "line": 3375,
      "tabs": [
       "exhibits"
      ]
@@ -6412,7 +6412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3618,
+     "line": 3656,
      "tabs": [
       "exhibits"
      ]
@@ -6458,7 +6458,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5655,
+     "line": 5707,
      "tabs": [
       "credential-reference"
      ]
@@ -7299,7 +7299,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5773,
+     "line": 5825,
      "tabs": [
       "credential-reference"
      ]
@@ -7333,7 +7333,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 490,
+     "line": 502,
      "tabs": [
       "map-export"
      ]
@@ -8149,7 +8149,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5656,
+     "line": 5708,
      "tabs": [
       "credential-reference"
      ]
@@ -8185,7 +8185,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3907,
+     "line": 3945,
      "tabs": [
       "exhibits"
      ]
@@ -8433,7 +8433,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 126,
+     "line": 127,
      "tabs": [
       "exhibits"
      ]
@@ -8868,6 +8868,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:issuer_resolution.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:jev_ccr_title_rung_calibration_<date>_s282.json": {
@@ -9621,6 +9634,19 @@
    "consumers": [
     {
      "id": "workflow:course-title-cleanup-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_cred_fold_resolution_write.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -10610,7 +10636,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 160,
+     "line": 161,
      "tabs": [
       "exhibits"
      ]
@@ -10647,7 +10673,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5394,
+     "line": 5446,
      "tabs": [
       "credential-reference"
      ]
@@ -10657,7 +10683,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 161,
+     "line": 162,
      "tabs": [
       "exhibits"
      ]
@@ -10933,14 +10959,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 65
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -13210,7 +13243,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5030,
+     "line": 5082,
      "tabs": [
       "credential-reference"
      ]
@@ -13348,7 +13381,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2479,
+     "line": 2516,
      "tabs": [
       "exhibits"
      ]
@@ -13520,7 +13553,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 72
+     "line": 91
     }
    ],
    "producers": [
@@ -13541,7 +13574,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 121,
+     "line": 122,
      "tabs": [
       "exhibits"
      ]
@@ -13678,14 +13711,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 72
     },
     {
      "id": "script:kb/_apply_credential_review.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 70
+     "line": 72
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -13702,11 +13735,18 @@
      "line": 314
     },
     {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    },
+    {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 60
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -13739,7 +13779,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 640,
+     "line": 682,
      "tabs": [
       "credential-reference"
      ]
@@ -13756,14 +13796,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 73
     },
     {
      "id": "script:kb/_apply_credential_review.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 71
+     "line": 73
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -13826,14 +13866,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 81
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 64
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -14913,7 +14960,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 643,
+     "line": 685,
      "tabs": [
       "credential-reference"
      ]
@@ -14923,7 +14970,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3359,
+     "line": 3397,
      "tabs": [
       "exhibits"
      ]
@@ -14982,7 +15029,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 129,
+     "line": 130,
      "tabs": [
       "exhibits"
      ]
@@ -15034,7 +15081,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2474,
+     "line": 2511,
      "tabs": [
       "exhibits"
      ]
@@ -15222,7 +15269,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2865,
+     "line": 2903,
      "tabs": [
       "exhibits"
      ]
@@ -15238,7 +15285,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 139,
+     "line": 140,
      "tabs": [
       "exhibits"
      ]
@@ -15249,6 +15296,20 @@
      "direction": "read",
      "how": "literal",
      "line": 50
+    },
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
+    },
+    {
+     "id": "script:kb/_cred_rename_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
     }
    ],
    "producers": [
@@ -15371,7 +15432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 137,
+     "line": 138,
      "tabs": [
       "exhibits"
      ]
@@ -15646,7 +15707,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 511,
+     "line": 553,
      "tabs": [
       "credential-reference"
      ]
@@ -15683,7 +15744,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5053,
+     "line": 5105,
      "tabs": [
       "credential-reference"
      ]
@@ -19059,7 +19120,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 500,
+     "line": 542,
      "tabs": [
       "credential-reference"
      ]
@@ -19095,7 +19156,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 489,
+     "line": 531,
      "tabs": [
       "credential-reference"
      ]
@@ -19154,7 +19215,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 637,
+     "line": 679,
      "tabs": [
       "credential-reference"
      ]
@@ -19241,14 +19302,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 82
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 63
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -22802,6 +22870,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cred_rename_fold_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/credential_catalog_widening_test.py": {
    "consumers": [
     {
@@ -23193,6 +23274,32 @@
    "main_committers": []
   },
   "file:tests/exhibits_sweep_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/fold_issuer_resolution_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/fold_issuer_single_source_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -25766,7 +25873,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 500,
+     "line": 501,
      "tabs": [
       "exhibits"
      ]
@@ -25796,7 +25903,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 388,
+     "line": 389,
      "tabs": [
       "exhibits"
      ]
@@ -27651,7 +27758,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 476,
+     "line": 477,
      "tabs": [
       "exhibits"
      ]
@@ -27666,7 +27773,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 499,
+     "line": 500,
      "tabs": [
       "exhibits"
      ]
@@ -28177,7 +28284,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 381,
+     "line": 420,
      "tabs": [
       "credential-reference"
      ]
@@ -28187,7 +28294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 423,
+     "line": 424,
      "tabs": [
       "exhibits"
      ]
@@ -28197,7 +28304,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 634,
+     "line": 635,
      "tabs": [
       "exhibits"
      ]
@@ -28278,7 +28385,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 125
     },
     {
      "id": "script:kb/_apply_curation.py",
@@ -28309,18 +28416,39 @@
      "line": 682
     },
     {
+     "id": "script:kb/_cred_fold_resolution_write.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 70
+    },
+    {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 132
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 147
+     "line": 163
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 289
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -30650,6 +30778,7 @@
     "kb/_apply_credential_review.py",
     "kb/_cred_rename_dryrun.py",
     "kb/_cred_rename_apply.py",
+    "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
     "kb/_build_remint_blast_radius.py",
     "kb/_build_ccr_cpl.py"
@@ -31014,6 +31143,9 @@
     "tests/exhibits_review_build_test.py",
     "tests/exhibits_sweep_build_test.py",
     "tests/cert_naming_test.py",
+    "tests/cred_rename_fold_issuer_test.py",
+    "tests/fold_issuer_resolution_test.py",
+    "tests/fold_issuer_single_source_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/adopt_align_build_test.py",

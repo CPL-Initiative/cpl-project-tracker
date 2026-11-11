@@ -83,6 +83,8 @@
   "field:kb_curation.unified_title_supersedes": "DR-07",
   "field:kb_curation.title_sweep_kept": "DR-07",
   "field:kb_curation.cert_rename_kept": "DR-07",
+  "field:kb_curation.issuer_resolution": "DR-34",
+  "workflow:cred-rename-apply.yml": "DR-34",
   "field:kb_curation.cer_procedure_request": "DR-07",
   "field:kb_curation.cer_procedure_built": "DR-07",
   "field:kb_curation.cer_procedure_switch": "DR-07",

@@ -29,6 +29,7 @@ What each write shape requires of its receipt:
 | Guarded UPDATE (reviewed plan only) | per-row key + BEFORE-value of every changed column | re-apply the before-images |
 | DELETE | sessions do not bulk-delete; a reviewed plan that authorizes one must put FULL row images in the receipt | re-insert the row images |
 | Nightly procedure save (INSERT-only, `cer-procedure-<id>@bot`; `kb/_cer_procedures.py --save on`) | the receipt in `kb/cer_procedures_out/saved/` (every row, its cohort, the live rows that held) | `kb/_cer_procedures.py --undo <id>`: one DELETE by that procedure's cohort, receipted; a row the daily fold already carried into `kb/unified_titles.json` carries the cohort as `reviewed_by`, and the fold commit that carried it is reverted |
+| Credential fold issuer resolution (INSERT one row per folded target, field `issuer_resolution`, cohort `cred-fold-s638@bot`; `kb/_cred_fold_resolution_write.py`, a step of `cred-rename-apply.yml`) | `kb/cred_rename_out/<fold>/alias_map.json` `resolution_rows` (each value, its fold id) and `resolution_log*.json` (each insert, and the before-value of any earlier cohort row a later fold onto the same target replaced) | `kb/_cred_rename_undo.py <receipt> --apply --supabase-plan`: the JSON undo, `undone.json` (the nightly ignores the fold at once), and SQL that deletes the cohort's rows for that fold and moves the folded rows back, each statement guarded and raising when it matches nothing. No issuer row a person wrote is changed by the fold, so none needs restoring |
 
 ## The procedure
 
