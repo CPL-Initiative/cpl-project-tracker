@@ -62,7 +62,10 @@ const RELATED = { schema: 1, generated_at: "2026-11-11T07:55:00Z",
     row("Automotive Technology (ASE A5 Brakes)", "Brakes (ASE A5)", "program-first", CCC, 7, 6, { merge: true, twins: ["ASE A5 — Brakes"] }),
     row("ASE P1 — Medium/Heavy Truck Parts Specialist", "Medium/Heavy Truck Parts Specialist (ASE P1)", "code-first", ASE, 3, 2),
     row("ASE Bundle — P1, P2", "", "several", ASE, 1, 1)] }],
-  waiting: ["CompTIA", "AWS", "NCCER"] };
+  waiting: ["CompTIA", "AWS", "NCCER"],
+  // A credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family).
+  families: { "ASE Certificate Bundles": { issuer: ASE, about: "A college's own set of ASE tests.",
+    members: { "ASE Bundle — P1, P2": ["ASE P1", "ASE P2"] } } } };
 
 function load(opts) {
   opts = opts || {};
@@ -125,6 +128,8 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   let li = item(t.d, "ASE P1 — Medium/Heavy Truck Parts Specialist");
   check("a title shows its issuer, its local titles and that it is in the reference",
     new RegExp(ASE.replace(/[()]/g, "\\$&") + " · 3 local titles · In the reference").test(txt(li)));
+  check("a family member names its family on its row, in words", /· Family: ASE Certificate Bundles/.test(txt(item(t.d, "ASE Bundle — P1, P2")))
+    && !/Family:/.test(txt(item(t.d, "ASE P2 — Automobile Parts Specialist"))));
   check("a proposed title says it is not in the reference yet", /1 local title · Proposed, not in the reference yet/.test(txt(item(t.d, "Parts Counter Specialist (ASE P2)"))));
   check("an old-format title is marked Rename pending, with the title proposed for it",
     /Rename pending: Medium\/Heavy Truck Parts Specialist \(ASE P1\)/.test(txt(li)) && /Rename pending/.test(txt(item(t.d, "ASE A5 — Brakes"))));
@@ -172,6 +177,11 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
     && t.M._aseOf("Phase Change", "Phase Change lab", "") === null);
   check("a renamed title is found by the names it carried: the List's search words hold them",
     t.M._akaOf("Guitar 1").join("|") === "Guitar I|Class Guitar" && /akaOf\(r\.ut\)\.join/.test(src));
+  check("the List finds a member by its family and its tests, and filters to the family with its count",
+    t.M._famOf("ASE Bundle — P1, P2").aliases.join("|") === "ASE P1|ASE P2" && t.M._famOf("ASE P2 — Automobile Parts Specialist") === null
+    && /famOf\(r\.ut\)\.name \+ " \| " \+ famOf\(r\.ut\)\.aliases\.join/.test(src)
+    && /if \(L\.fam && !\(famOf\(r\.ut\) && famOf\(r\.ut\)\.name === L\.fam\)\) return false;/.test(src)
+    && /"Showing the family " \+ famWords\(L\.fam\)/.test(src));
 
   // ── the rename batch ──
   t = load({ signedIn: true });

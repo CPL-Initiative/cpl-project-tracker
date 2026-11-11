@@ -60,6 +60,13 @@ certificate.
    field (130 titles), in one data PR with receipts, with the 10 duplicate issuer spellings and the
    *alifornia Veterinary Medical Association* typo.
 6. **The ITPI ask** (a mirrored or not flag for credit by exam, an apprenticeship path, an adapted-from link) is Sam's.
+7. **A family is a field on a title, never a fold** (Sam, 2026-11-11, in session; `cpl_memory`
+   `sam-bundle-family-is-a-field-2026-11-11`). Each ASE bundle stays its own canonical title, with its own adoption, and
+   carries `family: ASE Certificate Bundles`; each test it names is a search alias, so a student who holds A4 finds every
+   bundle with A4. `kb/reference/credential_families.json` declares the families, `kb_curation` `credential_family`
+   tags a title (carried into `kb/credentials.json` by the nightly sync), and `kb/_family_tag_plan.py` turns his 31
+   saved bundle folds into tags with a receipt and a rollback. A fold put unlike bundles on one card, and nine surfaces
+   then read an A4+A5 college as holding T2+T8. The ASE Master titles stay their own titles.
 
 ## What is built, and what is not
 

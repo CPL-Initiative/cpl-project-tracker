@@ -778,6 +778,15 @@
           o.words = relWords(o.t + " " + o.aka.join(" "));
           idx.push(o); by[o.t] = o;
         });
+        // The credential families (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family; its tests
+        // are search aliases). title -> { name, aliases }; name -> member count.
+        var fam = {}, famN = {};
+        Object.keys(d.families || {}).forEach(function (name) {
+          var mem = (d.families[name] || {}).members || {};
+          famN[name] = Object.keys(mem).length;
+          Object.keys(mem).forEach(function (t) { fam[t] = { name: name, aliases: mem[t] || [] }; });
+        });
+        state.rel.fam = fam; state.rel.famN = famN;
         state.rel.data = d; state.rel.idx = idx; state.rel.by = by; state.rel.error = null;
         return reconcileRename(d);
       })
@@ -806,6 +815,10 @@
     if (!lines.length) return null;
     return el("span", { cls: "exh-muted exh-small exh-rel-paths" }, ["Local exhibits: " + lines.join("; ")]);
   }
+  /* A title's credential family, or null. */
+  function famOf(title) { return (state.rel.fam && state.rel.fam[title]) || null; }
+  function famCount(name) { return (state.rel.famN && state.rel.famN[name]) || 0; }
+  function famWords(name) { var n = famCount(name); return name + ", " + fmt(n) + (n === 1 ? " title" : " titles"); }
   /* The titles a credential carried before a rename or a merge: the List's finder searches them too. */
   function akaOf(title) { var o = state.rel.by && state.rel.by[title]; return o ? o.aka : []; }
   function aseCodesIn(text) {
@@ -895,8 +908,9 @@
           body.appendChild(ul);
         }
         var r = x.o, pend = renamePending(r.t);
+        var rf = famOf(r.t);
         var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
-          r.proposed ? "Proposed, not in the reference yet" : "In the reference"].join(" · ");
+          r.proposed ? "Proposed, not in the reference yet" : "In the reference"].concat(rf ? ["Family: " + rf.name] : []).join(" · ");
         var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta }),
           pathsNode(r.paths, r.issuer)]);
         if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
@@ -3138,6 +3152,7 @@
         if (L.f === "left" && !listLeft(r).length) return false;
         if (L.f === "cplai" && !listCplAi(r).length) return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
+        if (L.fam && !(famOf(r.ut) && famOf(r.ut).name === L.fam)) return false;
         return true;
       },
       /* A filter whose data is still unread shows no count, never a 0 (S343): the suggested folds come with the AI
@@ -3165,6 +3180,8 @@
           + " | " + (r.raw_variants || []).map(function (v) { return v.r; }).join(" | ")
           // A title it carried before a rename or a merge (Sam, 2026-11-11: an old title stays a search alias).
           + " | " + akaOf(r.ut).join(" | ")
+          // Its family and the tests it names, as search aliases ("ASE A4" finds every bundle with A4).
+          + " | " + (famOf(r.ut) ? famOf(r.ut).name + " | " + famOf(r.ut).aliases.join(" | ") : "")
           + " | " + listCplAi(r).map(function (c) { return "CPL-AI " + c.title; }).join(" | ");
       },
       afterBar: function (wrap) {
@@ -3202,6 +3219,8 @@
               + fmt(sc.colleges) + (sc.colleges === 1 ? " college" : " colleges") + " so far, reaching " + fmt(sc.credentials_reached)
               + " credentials. A hint, never a decision: select a row and Move it if the match is right." }));
         }
+        if (L.fam) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-famline" }, ["Showing the family " + famWords(L.fam)
+          + ". Each title stays its own credential, adopted on its own. ", word("Clear", function () { L.fam = null; L.limit = LIST_LIMIT; render(); })]));
         if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
           + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
       },
@@ -3213,6 +3232,9 @@
           : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
             word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
         else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+        var fm = famOf(r.ut);
+        if (fm) out.push(el("span", { cls: "exh-l-sub exh-l-fam" }, ["Family: ", word(famWords(fm.name), function () {
+          L.fam = fm.name; L.f = ""; L.open = null; L.limit = LIST_LIMIT; render(); }, { "aria-label": "Show the family " + fm.name })]));
         if (col) out.push(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
         var om = listOutcomeHints(r);
         if (om.length) out.push(el("span", { cls: "exh-l-sub exh-l-om", text: "Outcomes match: "
@@ -4413,6 +4435,6 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
-    _renameCount: renameCount, _akaOf: akaOf, loadRenameStudents: loadRenameStudents
+    _renameCount: renameCount, _akaOf: akaOf, _famOf: famOf, loadRenameStudents: loadRenameStudents
   };
 })();

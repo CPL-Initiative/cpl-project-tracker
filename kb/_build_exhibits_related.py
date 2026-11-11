@@ -79,6 +79,7 @@ def build(root="."):
     sweep = load_json(root, "kb/exhibits_sweep.json", {}) or {}
     overlay = (load_json(root, "kb/credential_review_overlay.json", {}) or {}).get("overrides") or {}
     aka = credential_aliases.load(root)
+    members = credential_aliases.family_members(root)
 
     locals_of, ids_of = collections.defaultdict(list), collections.defaultdict(list)
     for raw, e in ut.items():
@@ -141,6 +142,8 @@ def build(root="."):
                 continue   # approved: the credential rename dry-run carries it from here
             if got["proposed"] and (ov.get("cert_rename_kept") or "") == got["proposed"]:
                 continue   # skipped: this proposal was declined
+            if t in members:
+                continue   # a family member keeps its own title (Sam, 2026-11-11): nothing to rename
             if t in on_card:
                 left += 1   # its own card in Another look decides it
                 continue
@@ -199,10 +202,22 @@ def build(root="."):
         "paths": {k: {"words": w, "assessed_by": who} for k, (w, who) in exhibit_paths.PATHS.items()},
         "issuers": issuers,
         "titles": titles,
+        # The declared credential families (kb/reference/credential_families.json) and their member titles, each with
+        # its component tests as search aliases (kb/credential_aliases.py family_members; Sam, 2026-11-11).
+        "families": families_payload(root, members),
         "pending": pending,
         "batches": batches,
         "waiting": waiting,
     }
+
+
+def families_payload(root, members):
+    declared = (load_json(root, "kb/reference/credential_families.json", {}) or {}).get("families") or {}
+    out = {}
+    for name, f in sorted(declared.items()):
+        mem = {t: m["aliases"] for t, m in sorted(members.items(), key=lambda kv: kv[0].lower()) if m["family"] == name}
+        out[name] = {"issuer": f.get("issuer", ""), "about": f.get("about", ""), "members": mem}
+    return out
 
 
 def main(argv=None):
@@ -214,7 +229,7 @@ def main(argv=None):
     data = build(a.root)
     path = a.out if os.path.isabs(a.out) else os.path.join(a.root, a.out)
     old = load_json(a.root, a.out, {}) if not os.path.isabs(a.out) else {}
-    if old and all(old.get(k) == data[k] for k in ("titles", "pending", "batches", "issuers", "waiting", "rule")):
+    if old and all(old.get(k) == data[k] for k in ("titles", "pending", "batches", "issuers", "waiting", "rule", "families")):
         data["generated_at"] = old.get("generated_at", data["generated_at"])
     with open(path, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, separators=(",", ":"))

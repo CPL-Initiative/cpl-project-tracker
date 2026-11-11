@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 843,
+  "file_datasets": 842,
   "external_services": 195,
   "consumers": 550,
   "workflows": 65,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3329,
+     "line": 3351,
      "tabs": [
       "exhibits"
      ]
@@ -1107,7 +1107,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1131,
+     "line": 1121,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -1607,7 +1607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 965,
+     "line": 974,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -2939,7 +2939,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 703,
+     "line": 693,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5616,7 +5616,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1101,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -5836,7 +5836,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1103,
+     "line": 1093,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -6115,7 +6115,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2669,
+     "line": 2683,
      "tabs": [
       "exhibits"
      ]
@@ -6190,7 +6190,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13247
+     "line": 13222
     }
    ],
    "served": true,
@@ -6319,7 +6319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3321,
+     "line": 3343,
      "tabs": [
       "exhibits"
      ]
@@ -6412,7 +6412,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3602,
+     "line": 3624,
      "tabs": [
       "exhibits"
      ]
@@ -6780,7 +6780,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13581
+     "line": 13556
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7353,7 +7353,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7399
+     "line": 7370
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -7367,7 +7367,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 342
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -7585,7 +7585,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13188
+     "line": 13163
     }
    ],
    "served": true,
@@ -8116,7 +8116,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13244
+     "line": 13219
     }
    ],
    "served": true,
@@ -8178,7 +8178,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3891,
+     "line": 3913,
      "tabs": [
       "exhibits"
      ]
@@ -8214,7 +8214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10255
+     "line": 10230
     }
    ],
    "producers": [
@@ -8714,7 +8714,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13805
+     "line": 13780
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8760,7 +8760,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13825
+     "line": 13800
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -10021,19 +10021,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:kb/_record_prior_titles.py": {
-   "consumers": [
-    {
-     "id": "workflow:daily-dashboard.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/_rekey_kb_curation_supabase.py": {
    "consumers": [
     {
@@ -10717,7 +10704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8922
+     "line": 8897
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -11144,7 +11131,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8455
+     "line": 8430
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -11490,7 +11477,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9039
+     "line": 9014
     }
    ],
    "producers": [
@@ -11511,7 +11498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6891
+     "line": 6862
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -11999,7 +11986,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7003
+     "line": 6974
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -12375,7 +12362,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6891
+     "line": 6862
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -12821,14 +12808,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9004
+     "line": 8979
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9004
+     "line": 8979
     }
    ],
    "producers": [
@@ -12849,7 +12836,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7684
+     "line": 7655
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -13043,7 +13030,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8664
+     "line": 8639
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -13341,7 +13328,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2476,
+     "line": 2490,
      "tabs": [
       "exhibits"
      ]
@@ -13664,7 +13651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7422
+     "line": 7393
     },
     {
      "id": "script:kb/_apply_credential_review.py",
@@ -13946,6 +13933,13 @@
      "direction": "read",
      "how": "literal",
      "line": 61
+    },
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "producers": [
@@ -13971,7 +13965,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8540
+     "line": 8515
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -14174,7 +14168,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10185
+     "line": 10160
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -14291,7 +14285,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8103
+     "line": 8078
     },
     {
      "id": "script:kb/_anchor_rekey_apply.py",
@@ -14528,7 +14522,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6950
+     "line": 6921
     },
     {
      "id": "script:kb/_build_cpl_by_discipline.py",
@@ -14922,7 +14916,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3343,
+     "line": 3365,
      "tabs": [
       "exhibits"
      ]
@@ -15026,7 +15020,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2471,
+     "line": 2485,
      "tabs": [
       "exhibits"
      ]
@@ -15183,7 +15177,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2850,
+     "line": 2864,
      "tabs": [
       "exhibits"
      ]
@@ -16542,7 +16536,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9055
+     "line": 9030
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -16854,7 +16848,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7472
+     "line": 7443
     }
    ],
    "served": true,
@@ -16877,7 +16871,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8701
+     "line": 8676
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -17007,7 +17001,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8391
+     "line": 8366
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -17044,7 +17038,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8733
+     "line": 8708
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -17181,7 +17175,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8885
+     "line": 8860
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -17516,6 +17510,33 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/reference/credential_families.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_apply_credential_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 107
+    },
+    {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 215
+    },
+    {
+     "id": "script:kb/_family_tag_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 41
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/credential_registry_national_sample.json": {
    "consumers": [
     {
@@ -17567,27 +17588,6 @@
    ],
    "served": true,
    "main_committers": []
-  },
-  "file:kb/reference/exhibit_prior_titles.json": {
-   "consumers": [
-    {
-     "id": "script:kb/test_mix.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 38
-    }
-   ],
-   "producers": [
-    {
-     "by": "workflow:daily-dashboard.yml",
-     "how": "commit-to-main"
-    }
-   ],
-   "served": true,
-   "main_committers": [
-    "workflow:daily-dashboard.yml"
-   ]
   },
   "file:kb/reference/handout_logos.json": {
    "consumers": [
@@ -17686,7 +17686,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 343
+     "line": 344
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -17754,7 +17754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8463
+     "line": 8438
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -18643,7 +18643,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9746
+     "line": 9721
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -19147,7 +19147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 341
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -21808,7 +21808,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1102,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -21829,14 +21829,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7354
+     "line": 7325
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13016
+     "line": 12991
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -21930,13 +21930,6 @@
      "line": 806
     },
     {
-     "id": "script:kb/_record_prior_titles.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 60
-    },
-    {
      "id": "script:kb/_seed_college_short_names.py",
      "kind": "script",
      "direction": "read",
@@ -21976,7 +21969,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 141
+     "line": 124
     }
    ],
    "producers": [
@@ -22008,7 +22001,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13246
+     "line": 13221
     }
    ],
    "served": true,
@@ -22031,14 +22024,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13046
+     "line": 13021
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13046
+     "line": 13021
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -22772,6 +22765,19 @@
    "main_committers": []
   },
   "file:tests/credential_catalog_widening_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_family_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -23897,19 +23903,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:tests/statewide_test_mix_test.py": {
-   "consumers": [
-    {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:tests/stop_hook_git_check_test.py": {
    "consumers": [
     {
@@ -24421,7 +24414,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13248
+     "line": 13223
     }
    ],
    "served": true,
@@ -24434,7 +24427,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1102,
+     "line": 1092,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24455,7 +24448,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6843
+     "line": 6814
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -24521,7 +24514,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8416
+     "line": 8391
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -24651,14 +24644,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10307
+     "line": 10282
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10307
+     "line": 10282
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -24703,14 +24696,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9658
+     "line": 9633
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9658
+     "line": 9633
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24780,14 +24773,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10391
+     "line": 10366
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10391
+     "line": 10366
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -24843,7 +24836,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1101,
+     "line": 1091,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -24864,14 +24857,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10379
+     "line": 10354
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10379
+     "line": 10354
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -24983,14 +24976,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10343
+     "line": 10318
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10343
+     "line": 10318
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -25085,14 +25078,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10187
+     "line": 10162
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10187
+     "line": 10162
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -28247,7 +28240,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 120
     },
     {
      "id": "script:kb/_apply_curation.py",
@@ -29285,7 +29278,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1088,
+     "line": 1078,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -29368,7 +29361,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1083,
+     "line": 1073,
      "tabs": [
       "college-briefing",
       "cpl-pathways"
@@ -30698,7 +30691,6 @@
     "kb/_apply_college_short_names.py",
     "generate_reports.js",
     "excel_to_dashboard.py",
-    "kb/_record_prior_titles.py",
     "kb/_audit_cid_claims.py",
     "kb/_build_governance_candidates.py",
     "kb/_build_peer_articulations.py",
@@ -30782,7 +30774,6 @@
     "kb/remint_blast_worklist.json",
     "kb/discipline_cpl_rollup.json",
     "kb/credential_review_overlay.json",
-    "kb/reference/exhibit_prior_titles.json",
     "kb/governance_candidates.json",
     "kb/cr_reference_worklist.json",
     "kb/unclassified_assignments.json",
@@ -31035,7 +31026,7 @@
     "tests/top_code_lookup_code4_test.py",
     "tests/eacr_matrix_payload_test.py",
     "tests/statewide_cid_hold_test.py",
-    "tests/statewide_test_mix_test.py",
+    "tests/credential_family_test.py",
     "tests/cid_claim_audit_test.py",
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",

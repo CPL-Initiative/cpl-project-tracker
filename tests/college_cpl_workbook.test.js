@@ -329,43 +329,6 @@ check("print leaves out the side panel and the controls", /@media print \{ \.cpo
 check("the page writes its address from the state and starts a picked college fresh",
   /W\.pageState\(first \? location\.search : ""\)/.test(page) && /history\.replaceState\(null, "", W\.pageQuery\(b\.college, s2\)/.test(page));
 
-// 10. a family title adopts by test mix (Sam's bundle rule, #3110, 2026-11-11): every local ASE bundle folds into
-// "ASE Certificate Bundles", and each stays a local exhibit with its own mix. A college that articulated A4+A5 is
-// not shown as having adopted T2+T8, and is offered it. The cards are what excel_to_dashboard.py writes for a family
-// title: one per mix, with test_mix and test_mix_key.
-const FAM = "ASE Certificate Bundles";
-const swFam = { generated_at: "2026-11-11", exhibits: statewide.exhibits.concat([
-  { unified_title: FAM, test_mix: "A4, A5", test_mix_key: "codes:A4,A5", exhibit_ids: ["MAPICI-ASE(42-1-001"],
-    collaborative_type: "Industry", cpl_type: "Industry Certification", discipline: "Auto", issuing_agency: "ASE", adopters: 1,
-    adopter_names: [COLLEGE], potential_names: [], credit_recs: [{ course: "PLUMB 166", credit: "5 hours in Suspension and Brakes" }],
-    adopter_rec_idx: { "Test River College": [0] }, adopter_units: { "Test River College": 5 } },
-  { unified_title: FAM, test_mix: "T2, T8", test_mix_key: "codes:T2,T8", exhibit_ids: ["MAPICI-ATT+-1-001"],
-    collaborative_type: "Industry", cpl_type: "Industry Certification", discipline: "Auto", issuing_agency: "ASE", adopters: 1,
-    adopter_names: ["Peer B"], potential_names: [COLLEGE], credit_recs: [{ course: "DSL 1", credit: "4 hours in Diesel Engines" }] }
-]) };
-const bf = W.build({ college: COLLEGE, today: "2026-11-11", lookup: lookup, members: members, aligned: aligned,
-  statewide: swFam, programs: programs, catalog: [],
-  verified: { checked_at: "2026-11-11T19:00Z", found: { "MAPICI-ATT+-1-001": { title: "ASE T2, T8, + Residency Units", college: "Peer B" } } } });
-check("the college's A4+A5 bundle is its existing exhibit, its mix named beside the title",
-  bf.existing.some(function (e) { return e.title === FAM + " (A4, A5)" && e.mix === "A4, A5"; }));
-check("…and it is never read as having articulated T2+T8",
-  !bf.existing.some(function (e) { return /T2, T8/.test(e.title); }));
-check("T2+T8 is offered as could-adopt under the family title, with its mix",
-  bf.swRows.some(function (r) { return r.title === FAM + " (T2, T8)" && r.mix === "T2, T8" && r.crId === "MAPICI-ATT+-1-001"; }));
-check("…and the A4+A5 bundle it already holds is not offered again",
-  !bf.swRows.some(function (r) { return /A4, A5/.test(r.title); }));
-// A title with no mix keys exactly as before: the same build without the family cards gives the same rows.
-const strip = function (rows) { return rows.filter(function (r) { return r.title.indexOf(FAM) !== 0; }).map(function (r) { return r.title + "|" + r.courseId + "|" + r.couldAdopt; }).join("\n"); };
-const bNoFam = W.build({ college: COLLEGE, today: "2026-11-11", lookup: lookup, members: members, aligned: aligned,
-  statewide: statewide, programs: programs, catalog: [], verified: { checked_at: "2026-11-11T19:00Z", found: {} } });
-check("every other title's rows are unchanged by a family title beside it", strip(bf.swRows) === strip(bNoFam.swRows) && strip(bNoFam.swRows).length > 0);
-// Two cards of one ordinary title (no test_mix_key) still read as one title: holding one blocks the other, as before.
-const swTwin = { exhibits: statewide.exhibits.concat([{ unified_title: "CompTIA Server+", exhibit_ids: ["MAPCXS-CS3-1-001"],
-  collaborative_type: "CCC Collaborative", cpl_type: "Credit By Exam", adopter_names: ["Peer A"], potential_names: [COLLEGE], credit_recs: [] }]) };
-const bt = W.build({ college: COLLEGE, today: "x", lookup: lookup, members: members, aligned: aligned, statewide: swTwin, programs: programs, catalog: [] });
-check("a non-family title groups exactly as before: its second card is not offered to a college that holds the first",
-  !bt.swRows.some(function (r) { return r.title === "CompTIA Server+"; }));
-
 setTimeout(function () {
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

@@ -408,6 +408,15 @@
       + '<p class="says">' + says + "</p>" + (evidence(c) ? '<p class="ev">' + esc(evidence(c)) + "</p>" : "") + (articulated(c) ? "" : reqWord(c)) + "</article>";
   }
 
+  /* Its credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family), a quiet line:
+     the family, how many of its titles are listed, and a word that searches for the family. */
+  function famLine(c) {
+    if (!c.fam) return "";
+    var n = (D.families || {})[c.fam] || 0;
+    return '<p class="meta fam">One of ' + plural(n, "title", "titles") + " in the family " + esc(c.fam) + ". "
+      + '<button type="button" class="word dd" data-q="' + esc(c.fam) + '">Show the family</button></p>';
+  }
+
   function card(c, sc) {
     if (c.std !== "awarded") return otherCard(c);
     var types = (c.y || []).map(function (i) { return D.types[i]; }).join(", ");
@@ -421,7 +430,7 @@
     if (here.length) pills += '<span class="pill here">Earns credit here: ' + esc(here.map(function (a) { return D.colleges[a[0]][1] + " (" + units(a[1]) + ")"; }).join(", ")) + "</span>";
     if (mine.length) pills += '<span class="pill could">Already teaches a matching course: ' + esc(mine.map(function (x) { return D.colleges[x[0]][1] + (x[1] ? ": " + x[1] : ""); }).join("; ")) + "</span>";
     return '<article class="cred"><h3><button type="button" data-open="' + c._i + '">' + esc(c.t) + "</button></h3>"
-      + (meta ? '<p class="meta">' + esc(meta) + "</p>" : "") + badges(c, false) + '<p class="says">' + esc(says) + "</p>"
+      + (meta ? '<p class="meta">' + esc(meta) + "</p>" : "") + famLine(c) + badges(c, false) + '<p class="says">' + esc(says) + "</p>"
       + (pills ? '<div class="pills">' + pills + "</div>" : "") + (here.length ? "" : quickAdopt(c, sc)) + (n ? "" : reqWord(c)) + "</article>";
   }
 

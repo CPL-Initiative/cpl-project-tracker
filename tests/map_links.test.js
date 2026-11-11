@@ -80,30 +80,8 @@ setTimeout(() => {
   const d = fs.readFileSync("CPL_Dashboard.html", "utf8"), ix = fs.readFileSync("index.html", "utf8");
   check("both COBI pages load map_links.js", d.indexOf('<script src="map_links.js"></script>') > 0 && ix.indexOf('<script src="map_links.js"></script>') > 0);
 
-  // A family title (kb/test_mix.py, "ASE Certificate Bundles"): one chip per college AND test mix, the mix in
-  // plain words beside the builder, so a college's A4+A5 bundle never reads as its T2+T8 one (#3110).
-  const F = boot({ ok: true, status: 200, json: () => Promise.resolve({
-    found: { "MAPICI-ASE(42-1-001": { college: "Los Angeles Pierce College" }, "MAPICI-ATT+-1-001": { college: "Los Angeles Trade Technical College" },
-      "MAPICI-ATT+1-1-001": { college: "Los Angeles Trade Technical College" }, "MAPICI-ATT+2-1-001": { college: "Los Angeles Trade Technical College" } },
-    by_title: { "ASE Certificate Bundles": ["MAPICI-ASE(42-1-001", "MAPICI-ATT+-1-001", "MAPICI-ATT+1-1-001", "MAPICI-ATT+2-1-001"] },
-    mix_by_id: { "MAPICI-ASE(42-1-001": "A4, A5", "MAPICI-ATT+-1-001": "T2, T8", "MAPICI-ATT+1-1-001": "T2, T8", "MAPICI-ATT+2-1-001": "T5, T8" } }) });
-  F.document.getElementById("host").innerHTML = F.CPL_MAP_LINKS.placeholder("ASE Certificate Bundles");
-  setTimeout(() => {
-    const fc = Array.from(F.document.querySelectorAll("a.cpl-mapchip"));
-    check("a family title draws one chip per college and test mix: LATTC's T2+T8 and T5+T8 are two chips, its two T2+T8 IDs one",
-      fc.length === 3);
-    check("each family chip shows its mix in plain words beside the builder",
-      fc.map((a) => a.querySelector(".cpl-mapmix") && a.querySelector(".cpl-mapmix").textContent).join("|") === "A4, A5|T2, T8|T5, T8");
-    check("…and opens MAP searched for its own exhibit ID", /\?Exhibit=MAPICI-ASE\(42-1-001&View=Non-Military$/.test(fc[0].getAttribute("href")));
-    check("…and names the tests for a screen reader", /tests T2, T8; opens MAP searched for MAPICI-ATT\+-1-001/.test(fc[1].textContent));
-    check("the mix is styled with tokens only", /\.cpl-mapmix\{[^}]*color:var\(--text-body\);\}/.test(A.document.getElementById("cpl-maplinks-css").textContent));
-    finish();
-  }, 100);
-}, 100);
-
-function finish() {
   let pass = 0;
   for (const [n, k] of results) { console.log((k ? "PASS" : "FAIL") + "  " + n); if (k) pass++; }
   console.log(`\n${pass}/${results.length} assertions passed`);
   process.exit(pass === results.length ? 0 : 1);
-}
+}, 100);
