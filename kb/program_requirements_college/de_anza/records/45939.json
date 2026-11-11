@@ -1,15 +1,15 @@
 {
  "college": "De Anza College",
- "control_number": "35730",
- "shape": "certificate",
- "title": "Environmental Resource Management and Pollution Prevention",
- "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=91",
+ "control_number": "45939",
+ "shape": "noncredit",
+ "title": "Multimedia and Visual Communication",
+ "award": "Noncredit program",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/multimedia-and-visual-communication-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11632,
+  "input_tokens": 7447,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11632,
-    "output_tokens": 1248,
+    "input_tokens": 7447,
+    "output_tokens": 1222,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,28 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1248,
+  "output_tokens": 1222,
   "output_tokens_details": {
-   "thinking_tokens": 401
+   "thinking_tokens": 340
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07149,
- "ms": 12612,
- "seconds": 13.0,
+ "cost_usd": 0.05423,
+ "ms": 11061,
+ "seconds": 11.3,
  "parts": null,
  "error": null,
  "score": {
-  "measure": "units",
+  "measure": "hours",
   "coverage": {
-   "placed": 7,
-   "listed": 8,
-   "share": 0.875,
-   "missing": [
-    "ES64"
-   ],
+   "placed": 9,
+   "listed": 9,
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -66,12 +64,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    20.0,
-    20.0
+    180.0,
+    204.0
    ],
    "stated": [
-    20.0,
-    20.0
+    180.0,
+    204.0
    ],
    "against": "program",
    "why": []
@@ -81,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 5,
    "not_verbatim": [],
    "pass": true
   },
@@ -102,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement (COA) Environmental Resource Management and Pollution Prevention",
-   "measure": "units",
+   "section_heading": "Multimedia and Visual Communication",
+   "measure": "hours",
    "total_units": {
-    "min": 20,
-    "max": 20
+    "min": 180,
+    "max": 204
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,11 +121,13 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Identify fundamental environmental management/pollution prevention issues and apply sustainable solutions"
-   ],
+   "outcomes": [],
    "careers": [
-    "entry-level environmental management or pollution prevention specialists"
+    "photographers",
+    "videographers",
+    "graphic designers",
+    "digital media producers",
+    "content creators"
    ]
   },
   "blocks": [
@@ -137,27 +137,34 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 12,
-     "max": 12
+     "min": 144,
+     "max": 144
     },
     "courses": [
      {
-      "code": "E S 50",
-      "units": 4,
+      "code": "JOUR 362B",
+      "units": 36,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 61A",
-      "units": 4,
+      "code": "JOUR 362C",
+      "units": 36,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 61B",
-      "units": 4,
+      "code": "JOUR 362D",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JOUR 362E",
+      "units": 36,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -166,38 +173,45 @@
    },
    {
     "name": "List A",
-    "rule": "choose_units",
-    "minimum": 8,
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 8,
-     "max": 8
+     "min": 36,
+     "max": 60
     },
     "courses": [
      {
-      "code": "E S 62A",
-      "units": 4,
+      "code": "JOUR 362A",
+      "units": 36,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 62B",
-      "units": 4,
+      "code": "PHTG 301",
+      "units": 60,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 62C",
-      "units": 4,
+      "code": "PHTG 303",
+      "units": 60,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 62D",
-      "units": 4,
+      "code": "PHTG 304",
+      "units": 60,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHTG 305",
+      "units": 60,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -206,18 +220,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "E S 64",
-    "why": "named only in the COA-A and A.A. sections, not in the Certificate of Achievement requirements"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Catalog codes E S 61A, 61B, 62A-62D are matched to closed-list codes E S 061A, 061B, 062A-062D (leading zero formatting difference only).",
-   "De Anza is on the quarter system; the 20 units are quarter units, consistent with the award range 16S/24Q to fewer than 30S/45Q.",
-   "List A prints '(8 Units)' with no explicit selection wording; read as choose 8 units (two of the four 4-unit courses).",
-   "Careers entry copied as printed; it may be read as two titles (environmental management specialists, pollution prevention specialists)."
+   "Award is a noncredit Certificate of Completion counted in hours; all units fields hold hours as printed (course hours under the 'Units' column header).",
+   "List A prints no selection rule, only '(36 - 60 Hours)'; read as choose one course since the range matches a single course (36 or 60 hours) and the total 180-204 = 144 core + 36-60. Reviewer should confirm.",
+   "Total Required and Major Required both print 180-204 Hours; recorded as total_units.",
+   "The text preceding the program requirements describes Bachelor of Science degree requirements and appears to be general catalog boilerplate, not part of this award; it was ignored.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

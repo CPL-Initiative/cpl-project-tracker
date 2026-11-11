@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Community Impact",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=132",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-impact-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12605,
+  "input_tokens": 14351,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12605,
-    "output_tokens": 4334,
+    "input_tokens": 14351,
+    "output_tokens": 7146,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,135 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 4334,
+  "output_tokens": 7146,
   "output_tokens_details": {
-   "thinking_tokens": 1161
+   "thinking_tokens": 1772
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1371,
- "ms": 32188,
- "seconds": 32.9,
+ "cost_usd": 0.20032,
+ "ms": 51059,
+ "seconds": 51.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 105,
    "listed": 105,
-   "share": 0.0,
-   "missing": [
-    "ADMJ29",
-    "AFAM10",
-    "AFAM11",
-    "AFAM12A",
-    "AFAM12B",
-    "AFAM25",
-    "ARTS2F",
-    "ASAM1",
-    "ASAM10",
-    "ASAM11",
-    "ASAM12",
-    "ASAM13",
-    "ASAM20",
-    "ASAM21",
-    "ASAM22",
-    "ASAM30",
-    "ASAM32",
-    "BIOL10",
-    "BIOL10H",
-    "BIOL11",
-    "BIOL13",
-    "BIOL6C",
-    "BIOL6CH",
-    "CETH10",
-    "CETH11",
-    "CETH13",
-    "CETH19",
-    "CETH29",
-    "CETH50",
-    "CETH8",
-    "CHLX10",
-    "CHLX11",
-    "CHLX12",
-    "CHLX13",
-    "CHLX26",
-    "CHLX35",
-    "COMM7",
-    "COMM7H",
-    "COMM8",
-    "COMM8H",
-    "ECON3",
-    "ECON3H",
-    "ECONC2001",
-    "ECONC2001H",
-    "ELIT24",
-    "ES1",
-    "ES2",
-    "ES3",
-    "ES4",
-    "ES50",
-    "ESCI1",
-    "ESCI19",
-    "ESCI1L",
-    "ESL5",
-    "ESL6",
-    "GEO1",
-    "GEO10",
-    "GEO4",
-    "HIST16A",
-    "HIST16B",
-    "HIST7A",
-    "HIST7B",
-    "HUMI1",
-    "HUMI15",
-    "HUMI1H",
-    "ICS17",
-    "ICS17H",
-    "ICS19",
-    "ICS25",
-    "ICS27",
-    "ICS27H",
-    "ICS2A",
-    "ICS2B",
-    "ICS36",
-    "INTL1",
-    "INTL33",
-    "INTL5",
-    "KNES45",
-    "NAIS11",
-    "NAIS12",
-    "NAIS13",
-    "NAIS14",
-    "NAIS15",
-    "NAIS16",
-    "NAIS31",
-    "PHIL3",
-    "POLI15",
-    "POLI16",
-    "POLI17",
-    "POLI17H",
-    "POLI2",
-    "POLI3",
-    "POLI5",
-    "POLSC1000",
-    "POLSC1000H",
-    "SOC5",
-    "WMST1",
-    "WMST22",
-    "WMST24",
-    "WMST25",
-    "WMST26",
-    "WMST27",
-    "WMST29",
-    "WMST31",
-    "WMST8"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -167,29 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -201,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds no Community Impact section, only the end of another program's discipline elective lists ending 'Total Required: 90 Units'",
+   "section_heading": "Community Impact",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -226,438 +121,863 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze the impediments to community strength",
+    "Engage in activities that improve the community",
+    "Interpret reality thoughtfully"
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ADMJ 29",
-    "why": "not in the text"
-   },
-   {
-    "code": "AFAM 012A",
-    "why": "not in the text"
-   },
-   {
-    "code": "AFAM 012B",
-    "why": "not in the text"
-   },
-   {
-    "code": "AFAM 10",
-    "why": "not in the text"
-   },
-   {
-    "code": "AFAM 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "AFAM 25",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARTS 002F",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 10",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 12",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 13",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 20",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 21",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 22",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM 32",
-    "why": "not in the text"
-   },
-   {
-    "code": "ASAM030",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 006C",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 010H",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 06CH",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 10",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "BIOL 13",
-    "why": "not in the text"
-   },
-   {
-    "code": "CETH 10",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CETH 11",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CETH 13",
-    "why": "not in the text"
-   },
-   {
-    "code": "CETH 19",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CETH 29",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CETH 50",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CETH 8",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "CHLX 10",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLX 11",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLX 12",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLX 13",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLX 26",
-    "why": "not in the text"
-   },
-   {
-    "code": "CHLX 35",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM 007H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "COMM 008H",
-    "why": "not in the text"
-   },
-   {
-    "code": "COMM 7",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "COMM 8",
-    "why": "not in the text"
-   },
-   {
-    "code": "E S 1",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "E S 2",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "E S 3",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "E S 4",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "E S 50",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON 003H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ECON 3",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ECON C2001",
-    "why": "not in the text (another program lists ECON 2)"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "not in the text (another program lists ECON 2H)"
-   },
-   {
-    "code": "ELIT 24",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESCI 001L",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESCI 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESCI 19",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESL 5",
-    "why": "not in the text"
-   },
-   {
-    "code": "ESL 6",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEO 1",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "GEO 10",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "GEO 4",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "HIST 007A",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "HIST 007B",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "HIST 016A",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "HIST 016B",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "HUMI 001H",
-    "why": "not in the text"
-   },
-   {
-    "code": "HUMI 1",
-    "why": "not in the text"
-   },
-   {
-    "code": "HUMI 15",
-    "why": "not in the text"
-   },
-   {
-    "code": "ICS 002A",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 002B",
-    "why": "not in the text"
-   },
-   {
-    "code": "ICS 017H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 027H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 17",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 19",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 25",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 27",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "ICS 36",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "INTL 1",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "INTL 33",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "INTL 5",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "KNES 45",
-    "why": "not in the text"
-   },
-   {
-    "code": "NAIS 11",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "NAIS 12",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "NAIS 13",
-    "why": "not in the text"
-   },
-   {
-    "code": "NAIS 14",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "NAIS 15",
-    "why": "not in the text"
-   },
-   {
-    "code": "NAIS 16",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "NAIS 31",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "PHIL 3",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLI 017H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 15",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 16",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 17",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 2",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 3",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLI 5",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "POLS C1000H",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "SOC 5",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 1",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 22",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 24",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 25",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 26",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 27",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 29",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 31",
-    "why": "listed only under another program's 90-unit degree"
-   },
-   {
-    "code": "WMST 8",
-    "why": "listed only under another program's 90-unit degree"
+  "blocks": [
+   {
+    "name": "Intercultural Studies",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "AFAM 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 12A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 12B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFAM 25",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 20",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ELIT 24",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 21",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 22",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 22",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 30",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASAM 32",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTS 2F",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 29",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ADMJ 29",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CETH 50",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 26",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WMST 26",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHLX 35",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 7",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 7H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 7A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 7B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 16A",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST 16B",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 2A",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 2B",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 17H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 11",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 12",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 13",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 14",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NAIS 31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 36",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 27",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 17H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ICS 27H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 8",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CETH 8",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 24",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 27",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 29",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CETH 19",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 31",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Environmental Sustainability and Global Citizenship",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "BIOL 6C",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 6CH",
+        "units": 6,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 10",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 10H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 11",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 13",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E SD001.",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E SD002.",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E SD003.",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E SD004.",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "E SD050.",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON 3H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECONC2001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECONC2001H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 1L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESCI 19",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 6",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO 4",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEO 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HUMI 1H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMI 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 17H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ICS 19",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTL 33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 2",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 3",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 15",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 25",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 16",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 36",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 17",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ICS 27",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "POLI 17H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ICS 27H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLSC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "POLSC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WMST 1",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Information Literacy",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "COMM 8",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 8H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHIL 3",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Wellness and Lifelong Development",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "KNES 45",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog pages 132-133) does not contain the Community Impact Certificate of Achievement. It shows the tail of another program's elective lists grouped by discipline (each headed '(0 Units)'), followed by a GE requirement (De Anza GE or Cal-GETC, electives to reach at least 90 units) and 'Total Required: 90 Units'. That is a quarter-unit associate degree, not a certificate of 12 to fewer than 24 quarter units, so nothing was recorded from it.",
-   "The program heading for the listed courses is cut off before page 132; a reviewer should fetch the actual Community Impact certificate section, which is likely on another page of the PDF.",
-   "No outcomes or careers for Community Impact appear in the text."
+   "Units are quarter units; 'Major Required: 18-20 Credits' and 'Total Required: 18 - 20 Units' recorded as total_units 18-20.",
+   "Page shows a 'Noncredit' tag but prints quarter units, not hours, so measure is units. Description says 'Pending state approval' while the footer says 'Program Status: Approved'.",
+   "Catalog states cross-listed and honors versions earn credit for only one version, so cross-listed and honors pairs (e.g., AFAM 25/WMST 25, POLI 17/ICS 27/POLI 17H/ICS 27H) are recorded as one entry with alternatives.",
+   "Catalog codes differ in format from the closed list but name the same courses: AFAM 12A=AFAM 012A, ARTS 2F=ARTS 002F, ASAM 30=ASAM030, E SD001.=E S 1 (and E SD002., E SD003., E SD004., E SD050.), ECONC2001=ECON C2001, POLSC1000=POLS C1000, HIST 7A=HIST 007A, ICS 2A=ICS 002A, and so on. 'E SD001.' etc. are kept exactly as printed.",
+   "ICS 17, ICS 17H, ICS 19, POLI 15/ICS 25, POLI 16/ICS 36, POLI 17/ICS 27 (with honors) and WMST 1 appear in both the Intercultural Studies and Environmental Sustainability lists. It is not stated whether one course may satisfy both areas.",
+   "In Intercultural Studies, ICS 2A and ICS 2B are 2 units each, so both would be needed to reach 4 units.",
+   "Information Literacy (5 units) amounts to choosing one course (COMM 8/8H or PHIL 3).",
+   "The outcomes list is the program's single list, recorded for this certificate."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

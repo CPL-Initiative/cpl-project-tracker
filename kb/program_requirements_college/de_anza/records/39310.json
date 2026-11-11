@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "General Service Technician",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=301",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/general-service-technician-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7011,
+  "input_tokens": 7383,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7011,
-    "output_tokens": 739,
+    "input_tokens": 7383,
+    "output_tokens": 860,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 739,
+  "output_tokens": 860,
   "output_tokens_details": {
-   "thinking_tokens": 149
+   "thinking_tokens": 256
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04282,
- "ms": 6510,
- "seconds": 7.1,
+ "cost_usd": 0.04673,
+ "ms": 8391,
+ "seconds": 8.6,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Completion General Service Technician",
+   "section_heading": "Program Requirements",
    "measure": "hours",
    "total_units": {
     "min": 300,
@@ -121,10 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Perform basic engine service, cooling system maintenance and battery testing",
-    "Perform tire service including balancing, disc and drum brake service, and basic front and rear suspension service"
-   ],
+   "outcomes": [],
    "careers": [
     "entry-level technician"
    ]
@@ -181,9 +178,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Award is a noncredit Certificate of Completion counted in hours; all units fields hold hours as printed in the catalog.",
-   "The page also prints other noncredit certificates (Basic Engine Performance Technology, EV and Fuel Vehicle Safety, Intermediate Engine Performance Technology); only the General Service Technician section was read."
+   "The catalog labels the column 'Units', but the program counts in hours (Required Core 300 Hours; Total Required: 300 Hours). The per-course values are recorded as hours; they sum to 300.",
+   "The award is listed as a Certificate of Completion (noncredit). The Bachelor of Science degree text at the start of the extract is general catalog boilerplate and is not part of this program.",
+   "The text prints no program learning outcomes.",
+   "The career is taken from the program description: 'employment as an entry-level technician performing vehicle inspections, new car preparation and general automotive maintenance'."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

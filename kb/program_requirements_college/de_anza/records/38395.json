@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Psychology",
  "award": "A.A- T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=142",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7716,
+  "input_tokens": 11435,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7716,
-    "output_tokens": 3170,
+    "input_tokens": 11435,
+    "output_tokens": 3831,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,69 +30,84 @@
     "model": null
    }
   ],
-  "output_tokens": 3170,
+  "output_tokens": 3831,
   "output_tokens_details": {
-   "thinking_tokens": 1066
+   "thinking_tokens": 1699
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09426,
- "ms": 24983,
- "seconds": 25.3,
+ "cost_usd": 0.12236,
+ "ms": 30238,
+ "seconds": 30.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 28,
+   "placed": 30,
    "listed": 30,
-   "share": 0.933,
-   "missing": [
-    "ENGLC1003",
-    "ENGLC1003H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "EWRT1B",
-    "EWRT1BH"
-   ],
-   "flagged": [
-    "EWRT1B",
-    "EWRT1BH"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
-    34.0
+    35.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    35.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     75.0,
+     93.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     15.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -102,46 +117,40 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Psychology for Transfer",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 35
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 90,
+    "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
-   "electives_fill_degree": false,
-   "outcomes": [
-    "Apply the scientific method to the study of behavior and mental processes",
-    "Understand historical and contemporary perspectives of psychology and be able to apply these theories to real-world experiences",
-    "Prepare to apply psychological concepts and theories to local and global issues affecting all beings as well as the environment"
-   ],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [],
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "Required Core - Area 1",
+    "name": "Area 1",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -151,7 +160,7 @@
     },
     "courses": [
      {
-      "code": "PSYCC 1000",
+      "code": "PSYC C1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -167,7 +176,7 @@
     ]
    },
    {
-    "name": "Required Core - Area 2",
+    "name": "Area 2",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -319,17 +328,17 @@
       "catalog_addition": false
      },
      {
-      "code": "EWRT 1B",
+      "code": "ENGL C1003",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "EWRT 1BH",
+        "code": "ENGL C1003H",
         "units": 5,
-        "catalog_addition": true
+        "catalog_addition": false
        }
       ],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "MATH 1A",
@@ -403,26 +412,39 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ENGL C1003",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL C1003H",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "'PSYCC 1000' is printed as such in the catalog; it is read as closed-list PSYC C1000 (Introduction to Psychology, 4 units) and marked catalog_addition false.",
-   "Honors codes printed without zero padding (BIOL 10H, ANTH 2H, COMM 9H, MATH 1A/1AH) are read as closed-list BIOL 010H, ANTH 002H, COMM 009H, MATH 001A/MATH 01AH.",
-   "Required Core (14 - 15 Units) consists of Area 1 (10 units) and Area 2 (4 - 5 units); recorded as two blocks.",
-   "List B may be completed from List A courses not already taken; List C may be completed from List A or List B courses not already taken.",
-   "List C minimum of 2 courses inferred from the stated 8 - 10 units with 4-5 unit courses; the catalog does not print a course count.",
-   "EWRT 1B / EWRT 1BH are not in the closed list (closed list has ENGL C1003/C1003H, which may be their renumbered equivalents); recorded as catalog additions.",
-   "No total for the major, degree total, or GE pattern is printed in the provided text; the text ends at page 142 and may continue on the next page.",
-   "No careers are named in the section."
+   "The text opens with a Bachelor of Science degree requirements excerpt (180 quarter units) that belongs to a different program; it was ignored.",
+   "Area 1 and Area 2 sit under 'Required Core - Complete each area: (14 - 15 Units)'; the parent heading was not recorded as its own block.",
+   "The catalog prints codes without spaces (PSYCC1000, STATC1000, ENGLC1001); recorded with a space to match the closed list (PSYC C1000, STAT C1000, ENGL C1001, etc.).",
+   "Printed codes BIOL 10H, ANTH 2H, COMM 9H, MATH 1A, MATH 1AH match closed-list BIOL 010H, ANTH 002H, COMM 009H, MATH 001A, MATH 01AH (same titles and units); treated as closed-list courses, not catalog additions.",
+   "PSYC 15/SOC 15 and PSYC 12/WMST 12 are cross-listed (same title); recorded as alternatives since students receive credit for only one version.",
+   "List B may also be completed from List A courses not already taken; List C may be completed from List A or List B courses not already taken.",
+   "List C (8-10 units) read as two courses; note says only one course may be selected from MATH D001A, MATH D01AH or MATH D012 (note text is cut off in the requirements XML).",
+   "Units are quarter units. 'Major Required: 30-35 Credits' recorded as total_units; 'Total Required: 90 Units' recorded as degree_total. Remaining units are Cal-GETC and CSU-transferable electives 'as needed to reach at least 90 units'; no GE unit total printed.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

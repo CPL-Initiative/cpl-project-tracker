@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Painting",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=54",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/painting-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12250,
+  "input_tokens": 7895,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12250,
-    "output_tokens": 2003,
+    "input_tokens": 7895,
+    "output_tokens": 2092,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2003,
+  "output_tokens": 2092,
   "output_tokens_details": {
-   "thinking_tokens": 440
+   "thinking_tokens": 564
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08906,
- "ms": 15353,
- "seconds": 15.9,
+ "cost_usd": 0.07342,
+ "ms": 16164,
+ "seconds": 16.6,
  "parts": null,
  "error": null,
  "score": {
@@ -61,33 +61,53 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     52.0,
     52.0
    ],
    "stated": [
-    90.0,
-    90.0
+    52.0,
+    52.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     81.0,
+     93.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     9.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 6,
+   "program": 0,
    "courses": 0,
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -99,15 +119,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Painting",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 52,
+    "max": 52
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,19 +140,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Critically analyze and assess diverse historical and contemporary works of art, architecture and design",
-    "Create art that engages and builds on historical and contemporary practices, theories and materials",
-    "Translate concepts and visual experience into images and tactile forms",
-    "Present finished artwork for peer, professional or academic review",
-    "Evaluate and critique artwork and receive criticism from others",
-    "Express artistic concepts and intents in written and oral formats"
-   ],
-   "careers": []
+   "outcomes": [],
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -320,11 +334,35 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 54; the Painting heading itself is not printed in the text, so section_heading is taken from the program name. The section is the one preceding the Sculpture A.A. heading.",
-   "De Anza is on the quarter system; 'Total Required: 90 Units' covers GE and electives ('electives as needed to reach at least 90 units'), so it is recorded as degree_total. No separate major total is printed (block totals are 20 + 4 + 4 + 24).",
-   "Catalog codes (e.g., ARTS 4A, ARTS 3TE) match closed-list codes with zero-padding (ARTS 004A, ARTS 03TE); treated as the same courses.",
-   "List A, B and C are read as 'choose units' lists using their printed unit totals."
+   "De Anza counts quarter units; all units recorded as printed (quarter units).",
+   "The text opens with general Bachelor of Science degree requirements (180 quarter units etc.), which are not this A.A. award's requirements and were ignored.",
+   "Catalog codes (e.g., ARTS 4A, ARTS 3TE) were matched to closed-list codes with zero-padding (ARTS 004A, ARTS 03TE); not treated as catalog additions.",
+   "'Major Required: 52 Credits' recorded as total_units; 'Total Required: 90 Units' recorded as degree_total. Electives are 'as needed to reach at least 90 units' with no units printed.",
+   "The catalog prints no unit total for the GE pattern, so ge_units is null.",
+   "List A, List B and List C print unit totals (4, 4, 24) but no explicit 'select' wording; read as choose-units blocks.",
+   "No program learning outcomes or careers are printed; the description mentions software 'used by artists and designers' but does not name these as careers for the program, so careers left empty."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

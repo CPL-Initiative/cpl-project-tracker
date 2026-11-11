@@ -1,0 +1,47 @@
+{
+ "_readme": "S638 worker for SkyTamarind, 2026-11-11. De Anza's 2025-2026 records failed the degree check 71 times as 'incomplete' against the 90-quarter-unit degree: the record names the degree total and a GE pattern (De Anza GE 53, Cal-GETC 14, CSU GE 4) with no units for the pattern. The extraction on the 2026-2027 eLumen catalog (run 43056325121) is expected to carry the same gap. COBIx reports Local GE 29-41 quarter units and Cal-GETC 45-58 (handoff 637, unverified). This read asks De Anza's own pages for those figures, so a ge_units step rests on the college's words: two degree pages (a local A.A. and an A.A.-T), the Cal-GETC page, and the articulation GE page on daweb2 (www.deanza.edu answers the reader 403; blocked_sources). No model call.",
+ "college": "De Anza College",
+ "questions": {
+  "ge_units": "What does De Anza print for the units of its local GE pattern (AA/AS) and of Cal-GETC, in quarter units?",
+  "degree_words": "How does a 2026-2027 degree page word its total and its GE requirement (90 units, GE pattern, electives as needed)?"
+ },
+ "keywords": [
+  "General Education[^<\"]{0,160}",
+  "Cal-GETC[^<\"]{0,160}",
+  "[^<\"]{0,100}\\b\\d{2}(?:\\.\\d)?\\s*(?:-\\s*\\d{2}(?:\\.\\d)?\\s*)?(?:quarter\\s*)?units[^<\"]{0,100}",
+  "[Mm]inimum[^<\"]{0,120}units[^<\"]{0,80}",
+  "Total[^<\"]{0,40}[Uu]nits[^<\"]{0,60}"
+ ],
+ "pages": [
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/business-administration-fall-2026",
+   "answers": ["degree_words", "ge_units"],
+   "network": true,
+   "network_hosts": ["api-prod.elumenapp.com"],
+   "network_find": ["General Education", "Cal-GETC", "Total", "units"]
+  },
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/psychology-for-transfer-fall-2026",
+   "answers": ["degree_words", "ge_units"],
+   "network": true,
+   "network_hosts": ["api-prod.elumenapp.com"],
+   "network_find": ["General Education", "Cal-GETC", "Total", "units"]
+  },
+  {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cal-getc-fall-2026",
+   "answers": ["ge_units"],
+   "network": true,
+   "network_hosts": ["api-prod.elumenapp.com"],
+   "network_find": ["Cal-GETC", "units", "Area"]
+  },
+  {
+   "url": "https://daweb2.deanza.edu/articulation/ge-requirements",
+   "answers": ["ge_units"],
+   "links": "General Education|GE|Breadth|Cal-GETC|AA|AS|pdf",
+   "follow": "General Education|Breadth|Cal-GETC|AA/AS"
+  }
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "De Anza College's own 2026-2027 catalog (deanza.elumenapp.com), served on its catalog vendor's domain, with the vendor's API its pages call (api-prod.elumenapp.com)"
+ }
+}

@@ -296,6 +296,30 @@ check("another block asking for units changes nothing",
 check("a heading the page does not print changes nothing",
       R.reconcile(sem, "FIRST SEMESTER only", ALA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
 
+print("De Anza's GE patterns (S638; college page read 43062313447)")
+DA = "De Anza College"
+da_text = ("Total Required: 90 Units. De Anza General Education or California General Education Transfer Curriculum "
+           "(Cal-GETC) and electives as needed to reach at least 90 units.")
+da = {"program": {"ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
+                  "ge_units": {"min": None, "max": None}, "degree_total": {"min": 90, "max": 90},
+                  "electives_fill_degree": True}, "blocks": []}
+loc, loc_notes = R.reconcile(da, da_text, DA, "A.A. Degree", steps=R.load_steps())
+trn, _n = R.reconcile(dict(da, program=dict(da["program"], ge_pattern="Cal-GETC")), "Cal-GETC and electives", DA,
+                      "A.A- T Degree", steps=R.load_steps())
+check("a local degree keeps the local pattern's printed 29-41, a transfer degree Cal-GETC's 45-58",
+      loc["program"]["ge_units"] == {"min": 29, "max": 41} and trn["program"]["ge_units"] == {"min": 45, "max": 58})
+check("'electives as needed to reach at least 90 units' makes the 90 a floor; a page without the words keeps it exact",
+      loc["program"].get("degree_total_minimum") is True and not trn["program"].get("degree_total_minimum"))
+# 46339 (S638): a 64-unit major with the local 29-41 runs past the 90; the page calls the 90 a floor, so it meets it.
+big = json.loads(json.dumps(loc)); big["blocks"] = [{"name": "Major", "rule": "all", "courses": [{"code": "X 1", "units": 64}]}]
+check("a major past the floor with its GE range meets the 90",
+      S.score(big, [{"code": "X 1", "units": 64}], da_text, "A.S. Degree")["arithmetic"]["pass"])
+check("the note cites the college's own page", any("29–41 quarter units" in n["words"] for n in loc_notes))
+check("a certificate takes neither", R.reconcile(da, da_text, DA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
+                  "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

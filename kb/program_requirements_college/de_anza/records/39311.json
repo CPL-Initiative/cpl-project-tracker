@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Smog Technician",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=302",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/smog-technician-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6589,
+  "input_tokens": 7311,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6589,
-    "output_tokens": 694,
+    "input_tokens": 7311,
+    "output_tokens": 749,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 694,
+  "output_tokens": 749,
   "output_tokens_details": {
-   "thinking_tokens": 191
+   "thinking_tokens": 208
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04024,
- "ms": 6324,
- "seconds": 6.6,
+ "cost_usd": 0.04422,
+ "ms": 8451,
+ "seconds": 8.7,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Completion Smog Technician",
+   "section_heading": "Program Requirements",
    "measure": "hours",
    "total_units": {
     "min": 222,
@@ -121,14 +121,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Perform a complete California state smog inspection"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -164,10 +162,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Program is measured in hours; the catalog prints 'Total Required: 222 Hours' and 'Required Core: (222 Hours)'.",
-   "The description says the certificate prepares students for 'an entry-level position in the automotive repair industry performing California state smog inspections'. No specific job title is named, so careers is left empty; a reviewer may wish to check this.",
-   "The text following the Smog Technician section (Business Software Applications, CIS courses) belongs to a different program and was not read."
+   "Noncredit Certificate of Completion counted in hours; the column is headed 'Units' but the block and totals state hours (Required Core 222 Hours, Major Required 222 Hours, Total Required 222 Hours).",
+   "The text opens with general Bachelor of Science degree requirements that do not belong to this noncredit program; they were ignored.",
+   "The description mentions 'an entry-level position in the automotive repair industry performing California state smog inspections', but names no specific job title, so careers is left empty. A reviewer may want to check this.",
+   "No program learning outcomes are printed in the text, which is cut off at the end (the 'Stage 8: Artic...' field)."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Law, Public Policy, and Society",
  "award": "A.A- T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=47",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/law-public-policy-and-society-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13271,
+  "input_tokens": 12565,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13271,
-    "output_tokens": 4711,
+    "input_tokens": 12565,
+    "output_tokens": 5018,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4711,
+  "output_tokens": 5018,
   "output_tokens_details": {
-   "thinking_tokens": 1427
+   "thinking_tokens": 1702
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1473,
- "ms": 34588,
- "seconds": 34.9,
+ "cost_usd": 0.15062,
+ "ms": 38357,
+ "seconds": 38.7,
  "parts": null,
  "error": null,
  "score": {
@@ -50,8 +50,8 @@
    "listed": 43,
    "share": 0.953,
    "missing": [
-    "ECONC2001",
-    "ECONC2001H"
+    "ECON1",
+    "ECON1H"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -60,31 +60,47 @@
   "invented": {
    "count": 2,
    "codes": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "flagged": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     47.0,
     51.0
    ],
    "stated": [
-    90.0,
-    90.0
+    47.0,
+    51.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     92.0,
+     109.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -108,15 +124,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts for Transfer (A.A.-T.) Degree Law, Public Policy, and Society for Transfer",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 47,
+    "max": 51
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,8 +145,8 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -141,7 +157,8 @@
     "Define and assess the critical role of both group and individual action in democratic decision-making",
     "Identify and evaluate how laws and the legal system affect the development and implementation of public policy and social control"
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -281,12 +298,12 @@
     },
     "courses": [
      {
-      "code": "ENGL C1000",
+      "code": "ENGLC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ENGL C1000H",
+        "code": "ENGLC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -319,12 +336,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ENGL C1001",
+      "code": "ENGLC1001",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ENGL C1001H",
+        "code": "ENGLC1001H",
         "units": 5,
         "catalog_addition": false
        }
@@ -370,12 +387,12 @@
       "catalog_addition": false
      },
      {
-      "code": "STAT C1000",
+      "code": "STATC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "STAT C1000H",
+        "code": "STATC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -433,12 +450,12 @@
     },
     "courses": [
      {
-      "code": "POLS C1000",
+      "code": "POLSC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "POLS C1000H",
+        "code": "POLSC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -472,12 +489,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 1",
+      "code": "ECONC2001",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 1H",
+        "code": "ECONC2001H",
         "units": 4,
         "catalog_addition": false
        }
@@ -485,12 +502,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 2",
+      "code": "ECONC2002",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 2H",
+        "code": "ECONC2002H",
         "units": 4,
         "catalog_addition": true
        }
@@ -558,22 +575,46 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ECON C2001",
-    "why": "catalog prints ECON 2 (Principles of Microeconomics) instead; likely the pre-common-course-numbering code"
+    "code": "ECON 1",
+    "why": "not in the text; List A Area 3 prints ECONC2002 Principles of Macroeconomics instead"
    },
    {
-    "code": "ECON C2001H",
-    "why": "catalog prints ECON 2H (Principles of Microeconomics - HONORS) instead; likely the pre-common-course-numbering code"
+    "code": "ECON 001H",
+    "why": "not in the text; List A Area 3 prints ECONC2002H instead"
    }
   ],
   "notes": [
-   "De Anza is on the quarter system; units are quarter units. 'Total Required: 90 Units' is recorded as degree_total (includes Cal-GETC and CSU-transferable electives as needed to reach at least 90 units); no major total is printed.",
-   "List A is printed as seven Areas (Area 1 ADMJ/Criminal Justice: ADMJ 6; Area 2 Business: BUS 18; Area 3 Economics: ECON 1/1H, ECON 2/2H; Area 4 Political Science: POLI 2, POLI 5; Area 5 Public Policy: SOC 20; Area 6 Diversity: ANTH 2/2H, CETH 10, SOC 29; Area 7 College Success: HUMA 20). The two courses must come from two different Areas and not already be taken; recorded as one choose-2 block.",
-   "Catalog prints honors/older codes without leading zeros (PHIL 8H, PHIL 7H, COMM 8H, COMM 10H, COMM 15H, ECON 1H, HIST 17B, HIST 17C, ANTH 2H); matched to closed-list PHIL 008H, PHIL 007H, COMM 008H, COMM 010H, COMM 015H, ECON 001H, HIST 017B, HIST 017C, ANTH 002H.",
-   "COMM 8/8H appears in both Oral Communication and Critical Thinking blocks; catalog note: 'COMM D008. or COMM D008H may not be selected if already taken from Required Core - Oral Communications.'",
-   "BUS 18 appears both in Required Core - Understanding the Law and List A Area 2; List A requires courses not already taken.",
-   "Cross-listed courses (ADMJ 1/POLI 10, ADMJ 75/PARA 75/POLI 75, PSYC 15/SOC 15) recorded as alternatives; credit given for only one version."
+   "Units are quarter units; 'Major Required: 47-51 Credits' recorded as total_units and 'Total Required: 90 Units' as degree_total. Cal-GETC and CSU-transferable electives fill the rest to 90 units; no GE unit figure printed.",
+   "The catalog lists cross-listed and honors versions as separate rows with a note that credit is given for only one version; these were recorded as alternatives (ADMJ 1/POLI 10; ADMJ 75/PARA 75/POLI 75; PSYC 15/SOC 15; honors twins).",
+   "Each 'Required Core' area with several distinct courses was read as choose one course, based on the printed area unit totals (e.g. 4-5 units).",
+   "Catalog prints codes without leading zeros or spaces (PHIL 8H, COMM 8H, ANTH 2H, HIST 17B, ENGLC1000, STATC1000, POLSC1000, ECONC2001); these were matched to closed-list codes PHIL 008H, COMM 008H, ANTH 002H, HIST 017B, ENGL C1000, etc.",
+   "ECONC2002 and ECONC2002H are not in the closed list (closed list has ECON 1/ECON 001H Principles of Macroeconomics); recorded as catalog additions.",
+   "List A is organized into seven Areas (1 Administration of Justice: ADMJ 6; 2 Business: BUS 18; 3 Economics: ECONC2001/H, ECONC2002/H; 4 Political Science: POLI 2, POLI 5; 5 Public Policy: SOC 20; 6 Diversity: ANTH 2/2H, CETH 10, SOC 29; 7 College Success: HUMA 20). The two courses must come from two different Areas and not already be taken; recorded as a single choose-2 block.",
+   "BUS 18 appears both in Required Core - Understanding the Law and List A Area 2; it may count only once.",
+   "Catalog note: 'COMM D008. or COMM D008H may not be selected if already taken from Required Core - Oral Communications.'",
+   "Program learning outcomes are printed for this program as a whole and recorded for this award."
   ]
  },
- "extracted_run": "39115772038"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }
