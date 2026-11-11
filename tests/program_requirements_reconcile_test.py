@@ -306,8 +306,14 @@ da = {"program": {"ge_pattern": "De Anza General Education or California General
 loc, loc_notes = R.reconcile(da, da_text, DA, "A.A. Degree", steps=R.load_steps())
 trn, _n = R.reconcile(dict(da, program=dict(da["program"], ge_pattern="Cal-GETC")), "Cal-GETC and electives", DA,
                       "A.A- T Degree", steps=R.load_steps())
-check("a local degree takes the local pattern's 29, a transfer degree Cal-GETC's 45",
-      loc["program"]["ge_units"] == {"min": 29, "max": 29} and trn["program"]["ge_units"] == {"min": 45, "max": 45})
+check("a local degree keeps the local pattern's printed 29-41, a transfer degree Cal-GETC's 45-58",
+      loc["program"]["ge_units"] == {"min": 29, "max": 41} and trn["program"]["ge_units"] == {"min": 45, "max": 58})
+check("'electives as needed to reach at least 90 units' makes the 90 a floor; a page without the words keeps it exact",
+      loc["program"].get("degree_total_minimum") is True and not trn["program"].get("degree_total_minimum"))
+# 46339 (S638): a 64-unit major with the local 29-41 runs past the 90; the page calls the 90 a floor, so it meets it.
+big = json.loads(json.dumps(loc)); big["blocks"] = [{"name": "Major", "rule": "all", "courses": [{"code": "X 1", "units": 64}]}]
+check("a major past the floor with its GE range meets the 90",
+      S.score(big, [{"code": "X 1", "units": 64}], da_text, "A.S. Degree")["arithmetic"]["pass"])
 check("the note cites the college's own page", any("29–41 quarter units" in n["words"] for n in loc_notes))
 check("a certificate takes neither", R.reconcile(da, da_text, DA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
 check("a figure the reading filed stands",

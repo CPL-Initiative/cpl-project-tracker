@@ -2473,7 +2473,7 @@ DA = ('<table class="program-group table"><tbody>'
       '<tr><td class="fix-code">HORT 001 F</td><td>a code printed with its spaces</td></tr>'
       '<tr><td class="fix-code">MATH C1000</td><td>a common course number</td></tr>'
       '<tr><td class="course-name">ACCTD001A in prose outside a code cell</td></tr></tbody></table>')
-da_text = C.el_text(DA)
+da_text = C.el_text(DA, True)
 for want in ("ACCT 1A", "ACCT 1AH", "ACCT 90", "ACCT 105", "BUS 18", "MUSI 3A", "ACCT 87AI"):
     check(re.search(r"(?m)^%s " % re.escape(want), da_text), "a packed fix-code cell reads %s: %r" % (want, da_text[:300]))
 check("HORT 001 F" in da_text and "MATH C1000" in da_text, "a code printed with its space is left as printed")
@@ -2490,20 +2490,42 @@ DA2 = ('<table><tbody><tr><td class="fix-code">C DD010G</td><td>x</td></tr>'
        '<tr><td class="fix-code">F/TVD02AH</td><td>x</td></tr>'
        '<tr><td class="fix-code">F/TVD020</td><td>x</td></tr>'
        '<tr><td class="fix-code">MATH C1000</td><td>x</td></tr></tbody></table>')
-da2 = C.el_text(DA2)
+da2 = C.el_text(DA2, True)
 for want in ("C D 10G", "E S 1", "F/TV 2AH", "F/TV 20"):
     check(re.search(r"(?m)^%s " % re.escape(want), da2), "a packed subject with a space or slash reads %s: %r" % (want, da2[:200]))
 check("MATH C1000" in da2, "a common course number is still left as printed")
 import _program_requirements_score as SC  # noqa: E402
 _listed = {"CD10G": 3.0, "ES1": 4.0, "FTV2AH": 4.0, "ACCT1A": 5.0}
-check([SC.listed_key(c, _listed) for c in ("C DD010G", "E SD001.", "F/TVD02AH", "ACCTD001A")] == ["CD10G", "ES1", "FTV2AH", "ACCT1A"],
+check([SC.listed_key(c, _listed, True) for c in ("C DD010G", "E SD001.", "F/TVD02AH", "ACCTD001A")] == ["CD10G", "ES1", "FTV2AH", "ACCT1A"],
       "the scorer reads a record's packed code as the listed course it names")
-check(SC.listed_key("ESD6", {"ES6": 4.0}) == "ESD6" and SC.listed_key("BUSD018.", {"BUS9": 4.0}) not in {"BUS9", "BUS18"},
+check(SC.listed_key("ESD6", {"ES6": 4.0}, True) == "ESD6" and SC.listed_key("BUSD018.", {"BUS9": 4.0}, True) not in {"BUS9", "BUS18"},
       "and only when the state's file lists that course")
 _sc = SC.score({"program": {"total_units": {"min": 3, "max": 3}},
                 "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "C DD010G", "units": 3}]}]},
-               [{"code": "C D 10G", "units": 3}], text="Total 3 units")
+               [{"code": "C D 10G", "units": 3}], text="Total 3 units", packed=True)
 check(_sc["invented"]["pass"] and _sc["coverage"]["pass"], "a packed code is neither invented nor its course missing: %r" % (_sc["invented"],))
+# Review of #3109: the unpacking is De Anza's alone. Other eLumen colleges keep plain zero-filled codes in the same
+# cell (Lemoore AOJ001, Modesto AG249), and a looser reading cut them to AO 1 and A 249.
+PLAIN = "<table><tbody>%s</tbody></table>" % "".join(
+    '<tr><td class="fix-code">%s</td><td>x</td></tr>' % c for c in ("AOJ001", "AG249", "BUS510", "ADJU201"))
+for got in (C.el_text(PLAIN), C.el_text(PLAIN, True)):
+    for c in ("AOJ001", "AG249", "BUS510", "ADJU201"):
+        check(re.search(r"(?m)^%s\b" % c, got), "a plain code in a fix-code cell comes through as printed (%s): %r" % (c, got[:200]))
+check("C DD010G" in C.el_text(DA2) and "ACCTD001A" in C.el_text(DA), "a host that packs no codes reads the cell as given")
+check(C.el_packed_host("https://deanza.elumenapp.com/catalog/2026-2027")
+      and not C.el_packed_host("https://lemoore.elumenapp.com/catalog/2026-2027"),
+      "De Anza's host packs its codes; another eLumen host does not")
+_lem = {"program": {"total_units": {"min": 3, "max": 3}},
+        "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ENGR025", "units": 3}]}]}
+check(not SC.score(_lem, [{"code": "ENG 25", "units": 3}], text="Total 3 units")["invented"]["pass"]
+      and not SC.score(_lem, [{"code": "ENG 25", "units": 3}], text="Total 3 units", packed=True)["invented"]["pass"],
+      "at Lemoore, ENGR025 is no ENG 25: still invented, with or without the packed reading")
+check(not SC.score({"program": {"total_units": {"min": 3, "max": 3}},
+                    "blocks": [{"name": "R", "rule": "all", "courses": [{"code": "C DD010G", "units": 3}]}]},
+                   [{"code": "C D 10G", "units": 3}], text="Total 3 units")["invented"]["pass"],
+      "a college whose entry names no packed_codes reads no packed code")
+import _program_requirements_reconcile as RC  # noqa: E402
+check(RC.packed_codes("De Anza College") and not RC.packed_codes("Lemoore College"), "De Anza's entry names packed_codes")
 
 if failures:
     print("FAIL: %d" % len(failures))

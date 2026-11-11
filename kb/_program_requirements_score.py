@@ -180,8 +180,10 @@ def alternatives(course: dict) -> list[dict]:
 # An eLumen publish call's packed code (De Anza, S637-S638): a fixed-width subject that keeps its
 # spaces and slash, a campus letter, four characters of number. A record read before the reader
 # unpacked it carries it as printed (C DD010G, E SD001., F/TVD02AH); the scorer reads it as the
-# listed course it names (C D 10G), and only when the state's file lists that course.
-PACKED_CODE = re.compile(r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)[A-Z](\d{2,3}[A-Z.]{0,2})")
+# listed course it names (C D 10G), and only when the state's file lists that course. Only at a
+# college whose reconcile entry says packed_codes, and only on De Anza's campus letter D: elsewhere
+# the same reading names another real course (Lemoore's ENGR025 is no ENG 25; review of #3109).
+PACKED_CODE = re.compile(r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)D(\d{2,3}[A-Z.]{0,2})")
 
 
 def unpacked_code(code: str | None) -> str | None:
@@ -195,9 +197,10 @@ def unpacked_code(code: str | None) -> str | None:
     return "%s %s" % (m.group(1), num.rstrip(".").lstrip("0") or "0")
 
 
-def listed_key(code: str | None, listed: dict) -> str:
+def listed_key(code: str | None, listed: dict, packed: bool = False) -> str:
+    """_listed_key, then, at a college that packs its codes, the listed course a packed code names."""
     k = _listed_key(code, listed)
-    if k in listed:
+    if k in listed or not packed:
         return k
     u = unpacked_code(code)
     if u:
@@ -711,7 +714,7 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
-          aliases: dict | None = None) -> dict:
+          aliases: dict | None = None, packed: bool = False) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass. award is the
     state file's award, which names an associate degree for transfer. aliases is the
@@ -722,7 +725,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         if k:
             listed[k] = _num(c.get("units"))
     record = with_prefix_aliases(record, listed, aliases)
-    placed = [(listed_key(e.get("code"), listed), e, b) for _, e, b in placed_codes(record)]
+    placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
 
     missing = sorted(k for k in listed if k not in placed_keys)

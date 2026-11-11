@@ -17,7 +17,8 @@
   "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)",
   "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535); parent_from_block (S590) first gives a block of one course and its alternatives, read 'all' with one stated figure, that figure where the course has none (the heading line carries it: 'Select one of the following: 2 \u00b7 WORK 96 \u00b7 or WORK 99')",
   "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)",
-  "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units"
+  "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units",
+  "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course"
  },
  "colleges": {
   "College of the Redwoods": {
@@ -911,32 +912,41 @@
    ]
   },
   "De Anza College": {
-   "why": "S638, 2026-11-11, a worker for SkyTamarind. De Anza's 2026-2027 extraction (run 43056325121) passed 132 of 221; 66 of its 80 arithmetic failures were degrees that read incomplete: each names the 90-quarter-unit degree total and a GE pattern ('De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)' on a local A.A. or A.S., 'Cal-GETC' on a transfer degree) with no units for it. The college's 2026-2027 GE pages print both totals (college page read 43062313447, kb/college_reads/de_anza_ge_units_2026.json): Local AA/AS GE 'Complete all seven areas for a total of 29\u201341 quarter units'; Cal-GETC 'Complete all six areas for a total of 45\u201358 quarter units'. A local degree takes the local pattern's figure (the Butte precedent: a degree offering either pattern is met by the local one); a transfer degree takes Cal-GETC's. Each takes its range's low end, the reading Sheet 144 card 2 gave a list's printed units (its floor): the range spans the areas' course units, and the low end completes the pattern. Simulated on the filed records with the scorer's degree_check: the floor clears 64 of the 66 degrees; the full ranges would clear 40, since a range's high end carries a major past the 90. The floor is an open counting call (floor or range) for Sam or the conductor; reversible by deleting this entry.",
+   "why": "S638, 2026-11-11, a worker for SkyTamarind. De Anza's 2026-2027 extraction (run 43056325121) passed 132 of 221. 21 of its 23 invented failures were codes the eLumen feed packs with a subject that keeps its space or slash (C DD010G, E SD001., F/TVD02AH), hence packed_codes. 66 of its 80 arithmetic failures were degrees that read incomplete: each names the 90-quarter-unit degree total and a GE pattern ('De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)' on a local A.A. or A.S., 'Cal-GETC' on a transfer degree) with no units for it. The college's 2026-2027 GE pages print both totals (college page read 43062313447, kb/college_reads/de_anza_ge_units_2026.json): Local AA/AS GE 'Complete all seven areas for a total of 29\u201341 quarter units'; Cal-GETC 'Complete all six areas for a total of 45\u201358 quarter units'. A local degree takes the local pattern's range (the Butte precedent: a degree offering either pattern is met by the local one); a transfer degree takes Cal-GETC's. Each record keeps the printed range. The degree page's 'electives as needed to reach at least 90 units' makes the 90 a floor (degree_total_minimum), as Columbia's, Cerritos's and Redwoods' steps read theirs. Conductor's call (SkyTamarind, S638), reversing a floor reading of the GE ranges; reversible by deleting this entry.",
    "awards": "associate",
+   "packed_codes": true,
    "steps": [
     {
      "kind": "set",
      "field": "ge_units",
      "value": {
       "min": 45,
-      "max": 45
+      "max": 58
      },
      "awards": "transfer",
      "pattern": "Cal-?GETC|California\\s+General\\s+Education\\s+Transfer\\s+Curriculum",
      "source": "https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html",
-     "source_words": "De Anza College Cal-GETC 2026\u20132027: 'Complete all six areas for a total of 45\u201358 quarter units.' (college page read 43062313447); the low end taken as the pattern's figure"
+     "source_words": "De Anza College Cal-GETC 2026\u20132027: 'Complete all six areas for a total of 45\u201358 quarter units.' (college page read 43062313447)"
     },
     {
      "kind": "set",
      "field": "ge_units",
      "value": {
       "min": 29,
-      "max": 29
+      "max": 41
      },
      "awards": "local",
      "pattern": "De\\s+Anza\\s+(?:Local\\s+)?(?:AA/AS\\s+)?General\\s+Education",
      "source": "https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html",
-     "source_words": "De Anza Local AA/AS General Education 2026\u20132027: 'Complete all seven areas for a total of 29\u201341 quarter units.' (college page read 43062313447); the low end taken as the pattern's figure"
+     "source_words": "De Anza Local AA/AS General Education 2026\u20132027: 'Complete all seven areas for a total of 29\u201341 quarter units.' (college page read 43062313447)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "awards": "associate",
+     "pattern": "electives\\s+as\\s+needed\\s+to\\s+reach\\s+at\\s+least\\s+90\\s+units",
+     "source_words": "De Anza degree pages: 'electives as needed to reach at least 90 units' (2025-2026 catalog, kb/college_reads/deanza_degree_total.json): the 90 is a floor that electives make up"
     }
    ]
   }

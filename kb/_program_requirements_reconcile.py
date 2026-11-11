@@ -103,6 +103,13 @@ def prefix_aliases(college: str, steps: dict | None = None) -> dict | None:
     return out or None
 
 
+def packed_codes(college: str, steps: dict | None = None) -> bool:
+    """Whether the college's catalog packs its course codes (De Anza's eLumen feed, S637-S638),
+    so the scorer reads a filed record's packed code as the listed course it names."""
+    conf = (steps if steps is not None else load_steps()).get(college) or {}
+    return bool(conf.get("packed_codes"))
+
+
 def course_renumbers(college: str, steps: dict | None = None) -> dict:
     """{the file's code, normalized: the catalog's code, its subject spaced from its number}:
     what the capture looks for on the page in place of a renumbered listed course. The space
