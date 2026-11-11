@@ -1564,15 +1564,19 @@ def el_hub_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
 # BUS 18, MUSI 3A), and a content call never runs it, so the capture found each of 242 programs'
 # pages by title and award and counted none of their courses (run 43024817869). Only a fix-code
 # cell in that packed shape is rewritten; a code a college prints with its space is left alone.
+# The subject is a fixed-width field that keeps its own spaces and slash (S638, extraction
+# 43056325121): C DD010G is C D 10G, E SD001. is E S 1, F/TVD02AH is F/TV 2AH. Read with letters
+# alone, those three subjects' codes stayed packed and scored as invented. A number whose stop
+# the cell drops (F/TVD020) is three digits.
 EL_FIX_CODE = re.compile(r'(<td\b[^>]*\bclass=\\?"[^">]*\bfix-code\b[^">]*\\?"[^>]*>)\s*'
-                         r"([A-Z&]{2,8})[A-Z](\d{2,3}[A-Z.]{1,2})\s*(?=</td)", re.I)
+                         r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)[A-Z](\d{2,3}[A-Z.]{0,2})\s*(?=</td)", re.I)
 
 
 def el_fix_codes(html_text: str) -> str:
     """A packed course code in a fix-code cell, as the page's script shows it."""
     def fix(m):
         num = m.group(3)
-        if len(num) != 4:
+        if len(num) != 4 and not (len(num) == 3 and num.isdigit()):
             return m.group(0)
         return "%s%s %s" % (m.group(1), m.group(2).upper(), num.rstrip(".").lstrip("0") or "0")
     return EL_FIX_CODE.sub(fix, html_text or "")

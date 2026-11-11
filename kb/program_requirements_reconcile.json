@@ -909,6 +909,36 @@
      "pattern": "Meets\\s+Area\\s+\\d"
     }
    ]
+  },
+  "De Anza College": {
+   "why": "S638, 2026-11-11, a worker for SkyTamarind. De Anza's 2026-2027 extraction (run 43056325121) passed 132 of 221; 66 of its 80 arithmetic failures were degrees that read incomplete: each names the 90-quarter-unit degree total and a GE pattern ('De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)' on a local A.A. or A.S., 'Cal-GETC' on a transfer degree) with no units for it. The college's 2026-2027 GE pages print both totals (college page read 43062313447, kb/college_reads/de_anza_ge_units_2026.json): Local AA/AS GE 'Complete all seven areas for a total of 29\u201341 quarter units'; Cal-GETC 'Complete all six areas for a total of 45\u201358 quarter units'. A local degree takes the local pattern's figure (the Butte precedent: a degree offering either pattern is met by the local one); a transfer degree takes Cal-GETC's. Each takes its range's low end, the reading Sheet 144 card 2 gave a list's printed units (its floor): the range spans the areas' course units, and the low end completes the pattern. Simulated on the filed records with the scorer's degree_check: the floor clears 64 of the 66 degrees; the full ranges would clear 40, since a range's high end carries a major past the 90. The floor is an open counting call (floor or range) for Sam or the conductor; reversible by deleting this entry.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 45,
+      "max": 45
+     },
+     "awards": "transfer",
+     "pattern": "Cal-?GETC|California\\s+General\\s+Education\\s+Transfer\\s+Curriculum",
+     "source": "https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html",
+     "source_words": "De Anza College Cal-GETC 2026\u20132027: 'Complete all six areas for a total of 45\u201358 quarter units.' (college page read 43062313447); the low end taken as the pattern's figure"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 29,
+      "max": 29
+     },
+     "awards": "local",
+     "pattern": "De\\s+Anza\\s+(?:Local\\s+)?(?:AA/AS\\s+)?General\\s+Education",
+     "source": "https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html",
+     "source_words": "De Anza Local AA/AS General Education 2026\u20132027: 'Complete all seven areas for a total of 29\u201341 quarter units.' (college page read 43062313447); the low end taken as the pattern's figure"
+    }
+   ]
   }
  }
 }

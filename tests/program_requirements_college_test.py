@@ -2483,6 +2483,27 @@ da_prog = C.with_renumbers([{"closed_list": [{"code": c} for c in ("ACCT 001A", 
 check(C.net_hits(da_prog["closed_list"], C.page_codes(da_text)) == 6,
       "the state file's ACCT 001A, ACCT 01AH and BUS 018 are counted on the page: %r" % (sorted(C.page_codes(da_text)),))
 check(C.net_hits(da_prog["closed_list"], C.page_codes(C.cq_text(DA))) == 0, "and none was counted before the cell was read as shown")
+# S638 (extraction 43056325121): the subject is a fixed-width field that keeps its spaces and slash, so C D,
+# E S and F/TV stayed packed and 23 records failed as invented; a number whose stop the cell drops is 3 digits.
+DA2 = ('<table><tbody><tr><td class="fix-code">C DD010G</td><td>x</td></tr>'
+       '<tr><td class="fix-code">E SD001.</td><td>x</td></tr>'
+       '<tr><td class="fix-code">F/TVD02AH</td><td>x</td></tr>'
+       '<tr><td class="fix-code">F/TVD020</td><td>x</td></tr>'
+       '<tr><td class="fix-code">MATH C1000</td><td>x</td></tr></tbody></table>')
+da2 = C.el_text(DA2)
+for want in ("C D 10G", "E S 1", "F/TV 2AH", "F/TV 20"):
+    check(re.search(r"(?m)^%s " % re.escape(want), da2), "a packed subject with a space or slash reads %s: %r" % (want, da2[:200]))
+check("MATH C1000" in da2, "a common course number is still left as printed")
+import _program_requirements_score as SC  # noqa: E402
+_listed = {"CD10G": 3.0, "ES1": 4.0, "FTV2AH": 4.0, "ACCT1A": 5.0}
+check([SC.listed_key(c, _listed) for c in ("C DD010G", "E SD001.", "F/TVD02AH", "ACCTD001A")] == ["CD10G", "ES1", "FTV2AH", "ACCT1A"],
+      "the scorer reads a record's packed code as the listed course it names")
+check(SC.listed_key("ESD6", {"ES6": 4.0}) == "ESD6" and SC.listed_key("BUSD018.", {"BUS9": 4.0}) not in {"BUS9", "BUS18"},
+      "and only when the state's file lists that course")
+_sc = SC.score({"program": {"total_units": {"min": 3, "max": 3}},
+                "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "C DD010G", "units": 3}]}]},
+               [{"code": "C D 10G", "units": 3}], text="Total 3 units")
+check(_sc["invented"]["pass"] and _sc["coverage"]["pass"], "a packed code is neither invented nor its course missing: %r" % (_sc["invented"],))
 
 if failures:
     print("FAIL: %d" % len(failures))

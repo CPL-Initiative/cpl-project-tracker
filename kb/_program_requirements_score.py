@@ -177,7 +177,37 @@ def alternatives(course: dict) -> list[dict]:
     return out
 
 
+# An eLumen publish call's packed code (De Anza, S637-S638): a fixed-width subject that keeps its
+# spaces and slash, a campus letter, four characters of number. A record read before the reader
+# unpacked it carries it as printed (C DD010G, E SD001., F/TVD02AH); the scorer reads it as the
+# listed course it names (C D 10G), and only when the state's file lists that course.
+PACKED_CODE = re.compile(r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)[A-Z](\d{2,3}[A-Z.]{0,2})")
+
+
+def unpacked_code(code: str | None) -> str | None:
+    """A packed eLumen code as the page's script shows it, or None."""
+    m = PACKED_CODE.fullmatch((code or "").strip().upper())
+    if not m:
+        return None
+    num = m.group(2)
+    if len(num) != 4 and not (len(num) == 3 and num.isdigit()):
+        return None
+    return "%s %s" % (m.group(1), num.rstrip(".").lstrip("0") or "0")
+
+
 def listed_key(code: str | None, listed: dict) -> str:
+    k = _listed_key(code, listed)
+    if k in listed:
+        return k
+    u = unpacked_code(code)
+    if u:
+        ku = _listed_key(u, listed)
+        if ku in listed:
+            return ku
+    return k
+
+
+def _listed_key(code: str | None, listed: dict) -> str:
     """A placed code's key in the closed list: its normal form, or the listed code it
     names once a subject's slash is set aside. The state's file stores some slashed
     subjects without the slash (Crafton Hills' CNAN633, which its page prints CNA/N 633,

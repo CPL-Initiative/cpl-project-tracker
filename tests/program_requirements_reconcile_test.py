@@ -296,6 +296,24 @@ check("another block asking for units changes nothing",
 check("a heading the page does not print changes nothing",
       R.reconcile(sem, "FIRST SEMESTER only", ALA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
 
+print("De Anza's GE patterns (S638; college page read 43062313447)")
+DA = "De Anza College"
+da_text = ("Total Required: 90 Units. De Anza General Education or California General Education Transfer Curriculum "
+           "(Cal-GETC) and electives as needed to reach at least 90 units.")
+da = {"program": {"ge_pattern": "De Anza General Education or California General Education Transfer Curriculum (Cal-GETC)",
+                  "ge_units": {"min": None, "max": None}, "degree_total": {"min": 90, "max": 90},
+                  "electives_fill_degree": True}, "blocks": []}
+loc, loc_notes = R.reconcile(da, da_text, DA, "A.A. Degree", steps=R.load_steps())
+trn, _n = R.reconcile(dict(da, program=dict(da["program"], ge_pattern="Cal-GETC")), "Cal-GETC and electives", DA,
+                      "A.A- T Degree", steps=R.load_steps())
+check("a local degree takes the local pattern's 29, a transfer degree Cal-GETC's 45",
+      loc["program"]["ge_units"] == {"min": 29, "max": 29} and trn["program"]["ge_units"] == {"min": 45, "max": 45})
+check("the note cites the college's own page", any("29–41 quarter units" in n["words"] for n in loc_notes))
+check("a certificate takes neither", R.reconcile(da, da_text, DA, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
+                  "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
