@@ -85,6 +85,20 @@ certificate.
   enforces it on `kb/credentials.json`, so a partial state repairs itself the next night. The Exhibits editor shows
   the winner with the line *Set by the fold on <date>* and names any stored row it superseded; saving there writes a
   person's row, which wins by its stamp.
+- **Built: what makes the stored decision undoable** (#3116, third review). A resolution row stands only once its
+  fold's receipt is on `main` (`fold_issuer.applied_fold_ids` reads the fold id in each committed `undo.json`): a
+  row from an apply that never landed is inert. When the apply does not land, the workflow's failure step takes the
+  rows back, marks the receipt `apply_failed.json` and commits the receipt alone, so the undo has its logs. A later
+  fold onto the same target carries the earlier one's dropped issuers and winner forward unless a person re-saved
+  them after it; the replaced value stays in `resolution_log.json`. A person's clear is a stamped empty row, which
+  the resolver honors like any newer row; both editors write one on a folded title. `decided_at` is the latest
+  `reviewed_at` among the rows the apply read (COBIx's guard), so precedence compares the rows' own stamps; the
+  receipt also names the runner's read time. The undo runs its `kb_curation` half first, the resolution rows before
+  the moved rows, so the browser drops the fold at once; a row a person changed since is left and reported, and a
+  rerun finishes a half-done undo.
+- **Still open: a server-set stamp.** The editors send `reviewed_at` from the browser's clock, so a curator whose
+  clock runs slow can still lose to a fold by minutes. The durable fix is a trigger that sets `reviewed_at` to
+  `now()` on every anon or authenticated write to `kb_curation`. That is a schema change, queued for Governance.
 - **Read-only so far.** No field stores a path or an assessor: both are derived at build time. MAP's id agrees with its
   own type code on all but 22 of about 7,000 civilian ids (COBIx, #3110).
 - **Not built, each its own PR through Governance:** an issuer registry (official name, one short tag, aliases); the

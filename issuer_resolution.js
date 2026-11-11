@@ -10,7 +10,8 @@
      otherwise the fold's winner stands, the dropped issuers are struck and the kept additional issuers stay,
      each in the reference spelling, with no second copy of the winner under another spelling.
 
-   "Saved after" reads the row's stamp alone: the anon key cannot read reviewer_email, and the fold writes no issuer
+   A row stored with an empty value and a stamp is a person's clear and counts as a newer decision; the editors write
+   one (never a DELETE) on a title the fold decided. "Saved after" reads the row's stamp alone: the anon key cannot read reviewer_email, and the fold writes no issuer
    row. tests/issuer_resolution_parity.test.js feeds the same cases to this file and to the Python resolver and fails
    on any difference, so the two cannot drift. Loaded by both HTMLs before credential_reference.js. */
 (function (root) {
@@ -72,7 +73,9 @@
     var dropped = {};
     (resolution.dropped || []).forEach(function (x) { dropped[norm(canonical(x))] = 1; });
     var superseded = [], primary;
-    var newerP = !!pv && ts(p.at) > dec;
+    // The stamp alone decides: a row saved after the fold decided wins even with an empty value (a person
+    // cleared the issuer), so the fold's winner never comes back over a person's later clear.
+    var newerP = !!p.at && ts(p.at) > dec;
     if (newerP) primary = canonical(pv);
     else if (winner) {
       primary = winner;
@@ -82,7 +85,7 @@
       superseded.push({ field: PRIMARY, value: pv, at: p.at || "" });
     } else primary = pv ? canonical(pv) : "";
     var parts;
-    if (av && ts(a.at) > dec) parts = dedupe(split(av), [primary]);
+    if (a.at && ts(a.at) > dec) parts = dedupe(split(av), [primary]);
     else {
       var all = split(av);
       var kept = all.filter(function (x) { return !dropped[norm(canonical(x))]; });

@@ -131,10 +131,21 @@ def main():
         and (v or {}).get("unified_title_override") != o
     }
 
+    # A title saved into a declared family title (Sam's ruling C) is held here, before the twin and
+    # collision lanes, with or without a merge confirm: it never becomes a group's lead (a clean rename
+    # that would mint the family name as a credential) nor a collision a curator could confirm into a merge.
+    families = fold_issuer.family_titles(FAMILIES)
+    held_early = []
+
     for old_ut, ov in sorted(overrides.items()):
         new_ut = (ov or {}).get("unified_title_override")
         if not new_ut:
             continue  # only iterating renames; non-rename overrides are PR-5a's job
+        if new_ut in families and new_ut != old_ut:
+            held_early.append({"old": old_ut, "target": new_ut,
+                               "kind": "merge" if (ov or {}).get("unified_title_merge_confirm") == new_ut
+                               else "rename", "why": fold_issuer.FAMILY_HELD_LINE})
+            continue
         if new_ut == old_ut:
             skipped.append({
                 "old_unified_title": old_ut,
@@ -282,7 +293,8 @@ def main():
 
     # ── Family titles: a fold into one is not a merge (Sam's ruling C) ──────
     renames_clean, merges_confirmed, held_family = fold_issuer.hold_family_folds(
-        renames_clean, merges_confirmed, fold_issuer.family_titles(FAMILIES))
+        renames_clean, merges_confirmed, families)
+    held_family = held_early + held_family
     held_old = {h["old"] for h in held_family}
     merge_details = [m for m in merge_details if m["old_unified_title"] not in held_old]
 

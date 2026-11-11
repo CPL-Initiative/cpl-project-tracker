@@ -69,7 +69,9 @@ class DB:
         self.wire()
 
     def wire(self):
-        sup.KEY = resw.KEY = acr.KEY = "test"
+        sup.KEY = resw.KEY = acr.KEY = undo.KEY = "test"
+        undo.rest = self.rest
+        resw.delete_own = self.delete_own
         sup.fetch_credential_review_rows = self.fetch
         sup.delete_row, sup.patch_row = self.delete, self.patch
         resw.insert_ignore, resw.get_row, resw.replace_own = self.insert_ignore, self.get, self.replace_own
@@ -99,6 +101,46 @@ class DB:
             self.rows[(new, field)] = dict(r, course_id=new)
         return {"old_course_id": old, "new_course_id": new, "field": field, "op": "patch",
                 "status": "ok", "rows_affected": 1 if r else 0}
+
+    def rest(self, method, path, body=None, prefer=""):
+        """The undo's PostgREST calls on kb_curation, with eq./is.null filters."""
+        from urllib.parse import parse_qsl
+        self.rest_calls = getattr(self, "rest_calls", []) + [(method, path)]
+        q = dict(parse_qsl(path.split("?", 1)[1])) if "?" in path else {}
+        q.pop("select", None)
+
+        def match(r):
+            for k, v in q.items():
+                want = None if v == "is.null" else v[3:]
+                if r.get(k) != want:
+                    return False
+            return True
+        hits = [k for k, r in self.rows.items() if match(r)]
+        if method == "GET":
+            return [dict(self.rows[k]) for k in hits]
+        if method == "DELETE":
+            return [self.rows.pop(k) for k in hits]
+        if method == "PATCH":
+            out = []
+            for k in hits:
+                r = dict(self.rows[k], **body)
+                nk = (r["course_id"], r["field"])
+                if nk != k and nk in self.rows:
+                    raise RuntimeError("HTTP Error 409: Conflict")
+                del self.rows[k]
+                self.rows[nk] = r
+                out.append(r)
+            return out
+        if (body["course_id"], body["field"]) in self.rows:
+            return []
+        self.rows[(body["course_id"], body["field"])] = dict(body)
+        return [body]
+
+    def delete_own(self, cid, field, value):
+        r = self.rows.get((cid, field))
+        if r and r.get("reviewer_email") == fi.COHORT and r.get("value") == value:
+            return [self.rows.pop((cid, field))]
+        return []
 
     def insert_ignore(self, row):
         if row["course_id"] in self.fail_insert_for:
@@ -322,9 +364,12 @@ try:
     check("i6: the files are back", env.read("credentials.json") == json.loads(s0["credentials.json"])
           and env.read("unified_titles.json") == json.loads(s0["unified_titles.json"]))
     check("i6: undone.json voids the fold for the nightly", os.path.isfile(os.path.join(rdir, "undone.json")))
-    # A person runs undo_supabase.sql in the same window (its statements are checked below): the rows come
-    # back as they were before the apply, the cohort's resolution rows gone.
-    db.rows = copy.deepcopy(rows0)
+    # The undo ran the kb_curation half itself, first (round 3, items 6 and 7): the rows are back as they
+    # were before the apply and the cohort's resolution rows are gone, so the browser agrees too.
+    check("i6: the undo put kb_curation back as it was before the apply, the resolution rows first",
+          db.rows == rows0 and db.rest_calls and db.rest_calls[0][0] == "DELETE"
+          and "issuer_resolution" in db.rest_calls[0][1],
+          json.dumps(sorted(set(db.rows) ^ set(rows0)))[:400] + " " + str(db.rest_calls[:2])[:300])
     env.nightly()
     check("i6: the next nightly leaves the restored files alone (the resolution is void)",
           env.read("credentials.json") == json.loads(s0["credentials.json"]),
@@ -338,8 +383,8 @@ try:
     check("still_open 4: a moved row moves back only while value, reviewer and stamp still match",
           "set course_id = '%sAutomotive Air Conditioner' where course_id = '%s%s' and field = 'issuing_agency_override' "
           "and value = '%s' and reviewer_email = '%s' and reviewed_at = '%s'" % (P, P, H, ASE, MAP, JUL) in sql)
-    check("still_open 5: every guarded statement raises when it matches nothing",
-          stmts and all("get diagnostics n = row_count; if n = 0 then raise exception" in x for x in stmts)
+    check("still_open 5 (round 3 item 7): a guarded statement that matches nothing is reported and the rest run",
+          stmts and all("get diagnostics n = row_count; if n = 0 then raise notice" in x for x in stmts)
           and len(stmts) == sum(1 for x in sql.splitlines() if x.strip() and not x.startswith(("--", "begin", "commit"))))
     env.close()
 
@@ -423,6 +468,10 @@ try:
     lg, nf = resw.write_rows([{"course_id": P + "Brakes (ASE A5)", "field": "issuer_resolution",
                                "value": {"fold_id": "other@x", "decided_at": "2026-11-13T00:00:00Z"}}], "2026-11-13T00:00:00Z")
     check("i5: a row under any other reviewer is never replaced; the write fails", nf == 1 and lg[0]["status"] == "fail")
+    first_fid = fi.parse_resolution(first)["fold_id"]
+    second = fi.parse_resolution(json.loads(json.dumps(rep[0]["after_row"]["value"])))
+    check("r3 item 3: the replacing resolution names the one it carries forward",
+          first_fid in (second.get("carried_from") or []), json.dumps(second)[:300])
     env.close()
 
     # ── Sam's ruling C: a fold into a declared family title is not a merge ──
@@ -463,6 +512,169 @@ try:
     check("family: the apply holds it even when the alias map names it", "ASE Bundle — A4, A5" in envf.read("credentials.json"))
     check("family: an absent file means no families", fi.family_titles(os.path.join(envf.dir, "missing.json")) == set())
     envf.close()
+
+    # ══ Round 3 (S638, 2026-11-11): the third review's confirmed findings ══════════════════════════════
+    # item 2: a resolution row is inert until its fold's receipt is committed.
+    gate = tempfile.mkdtemp(prefix="fold_gate_")
+    try:
+        r_orphan = {"rule": "reviewer", "winner": AWS, "dropped": [CCC], "kept_additional": [],
+                    "decided_at": "2026-11-11T16:00:00Z", "fold_id": "2026-11-11@2026-11-11T16:05:00Z"}
+        entry = {"issuing_agency_override": CCC, "issuer_resolution": json.dumps(r_orphan),
+                 "field_reviews": {"issuing_agency_override": {"by": MAP, "at": JUL}}}
+        ovs = {"T": dict(entry)}
+        check("r3 item 2: a resolution whose fold has no committed receipt is inert",
+              acr.apply_resolutions(ovs, gate) == {} and ovs["T"].get("issuing_agency_override") == CCC, json.dumps(ovs)[:300])
+        os.makedirs(os.path.join(gate, "2026-11-11"))
+        json.dump({"fold_id": r_orphan["fold_id"]}, open(os.path.join(gate, "2026-11-11", "undo.json"), "w"))
+        ovs = {"T": dict(entry)}
+        check("r3 item 2: the same row stands once the receipt names its fold",
+              "T" in acr.apply_resolutions(ovs, gate) and ovs["T"].get("issuing_agency_override") == AWS)
+        json.dump({}, open(os.path.join(gate, "2026-11-11", fi.APPLY_FAILED), "w"))
+        ovs = {"T": dict(entry)}
+        check("r3 item 2: a receipt marked apply_failed.json does not make it stand",
+              acr.apply_resolutions(ovs, gate) == {})
+    finally:
+        shutil.rmtree(gate, ignore_errors=True)
+    # item 2: the failure step takes back the rows a partial step 3b wrote, and marks the receipt.
+    creds0, ut0, db, H = hvac_fixture()
+    env = Env(creds0, ut0, db)
+    db.fail_insert_for = {P + "Welding Cert"}
+    failed = env.workflow(db)
+    rdir = env.receipt()
+    wrote = [k for k, v in db.rows.items() if k[1] == "issuer_resolution"]
+    with contextlib.redirect_stdout(io.StringIO()):
+        resw.main(["--rollback", rdir])
+    check("r3 item 2: a partial step 3b left rows, and --rollback takes every one back",
+          failed == "resolution" and wrote and not [k for k in db.rows if k[1] == "issuer_resolution"], str(wrote))
+    check("r3 item 2: the receipt is marked apply_failed.json, and its fold never counts as applied",
+          os.path.isfile(os.path.join(rdir, fi.APPLY_FAILED)) and not fi.applied_fold_ids(env.out)
+          and os.path.isfile(os.path.join(rdir, "resolution_rollback_log.json")))
+    env.close()
+    wf = open(os.path.join(ROOT, ".github/workflows/cred-rename-apply.yml"), encoding="utf-8").read()
+    fstep = wf[wf.index("name: Take back the resolutions and commit the receipt"):]
+    check("r3 item 2: the workflow's failure step rolls back and commits the receipt alone, never after the kb files land",
+          "if: failure() && steps.json.outputs.receipt != '' && steps.commit.outcome != 'success'" in fstep
+          and "--rollback" in fstep and 'git add "$RECEIPT"' in fstep and "git reset --hard origin/main" in fstep)
+    rb = wf[wf.index("name: Rebuild the files derived from the credential keys"):]
+    check("r3 item 2: a crash rebuilding the derived files no longer keeps the receipt off main",
+          "continue-on-error: true" in rb[:rb.index("run:")])
+
+    # item 3: a second fold onto the same target keeps what the first struck (the reviewer's scenario).
+    T = "Engine Repair (ASE A1)"
+    r1 = {"v": 1, "target": T, "rule": "reviewer", "winner": AWS, "dropped": [CCC], "kept_additional": [],
+          "decided_at": "2026-11-11T16:00:00Z", "fold_id": "f1"}
+    t_entry = {"issuing_agency_override": CCC,
+               "field_reviews": {"issuing_agency_override": {"by": "ashley@rccd.edu", "at": "2026-07-01T00:00:00Z"}}}
+    g2 = {"resolution": {"target": T, "rule": "additive", "winner": None, "additional": []}}
+    r2_old = fi.resolution_value(g2, [rec(AWS), rec("NCCER")], [rec(AWS), rec("NCCER")], "2026-11-12T00:00:00Z", "f2")
+    check("r3 item 3 (before): without the earlier resolution, Ashley's struck row comes back",
+          fi.effective_issuer(t_entry, r2_old).get("issuing_agency_override") == CCC)
+    r2 = fi.resolution_value(g2, [rec(AWS), rec("NCCER")], [rec(AWS), rec("NCCER")], "2026-11-12T00:00:00Z", "f2",
+                             [r1], [t_entry])
+    e2 = fi.effective_issuer(t_entry, r2)
+    check("r3 item 3: the second fold carries the first's dropped issuer and winner forward",
+          CCC in r2["dropped"] and r2["winner"] == AWS and r2["carried_from"] == ["f1"]
+          and e2.get("issuing_agency_override") == AWS, json.dumps(r2))
+    readded = dict(t_entry, field_reviews={"issuing_agency_override": {"by": SAM, "at": "2026-11-11T17:00:00Z"}})
+    r2b = fi.resolution_value(g2, [rec(AWS)], [rec(AWS)], "2026-11-12T00:00:00Z", "f2", [r1], [readded])
+    check("r3 item 3: an issuer a person saved after the first fold is not carried as dropped",
+          CCC not in r2b["dropped"] and r2b["winner"] is None, json.dumps(r2b))
+
+    # item 5: decided_at is the latest reviewed_at among the rows read, and the receipt lists both times.
+    creds0, ut0, db, H = hvac_fixture()
+    env = Env(creds0, ut0, db)
+    env.workflow(db)
+    latest = max((r["reviewed_at"] for r in copy.deepcopy(hvac_fixture()[2].rows).values()), key=fi.ts)
+    v = fi.parse_resolution(db.get(P + H, "issuer_resolution")["value"])
+    md = open(os.path.join(env.receipt(), "validation.md"), encoding="utf-8").read()
+    check("r3 item 5: decided_at is the rows' latest reviewed_at, not the runner's clock",
+          v["decided_at"] == latest and v.get("read_at") and v["read_at"] != latest, json.dumps(v)[:300])
+    check("r3 item 5: the receipt names both times", latest in md and v["read_at"] in md)
+
+    # items 6 and 7: the undo runs kb_curation first; a person's later edit is left and reported; a rerun
+    # finishes; a network error stops before the files.
+    env.nightly()
+    rdir = env.receipt()
+    mv = db.rows[(P + H, "issuing_agency_override")]
+    mv["value"], mv["reviewed_at"] = "A person's later pick", "2026-11-12T09:00:00Z"
+    files_folded = env.files()
+    real_rest = db.rest
+
+    def down(*a, **k):
+        raise RuntimeError("HTTP Error 503")
+    undo.rest = down
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        try:
+            code = undo.main([rdir, "--apply"])
+        except SystemExit as e:
+            code = e.code
+    check("r3 item 7: kb_curation unreachable: the undo stops before writing a file",
+          code and env.files()["credentials.json"] == files_folded["credentials.json"], str(code)[:200])
+    undo.rest = real_rest
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        try:
+            code = undo.main([rdir, "--apply"])
+        except SystemExit as e:
+            code = e.code
+    out = buf.getvalue()
+    check("r3 item 6: the undo deletes the fold's resolution rows, so every reader (the browser too) drops the fold",
+          not [k for k in db.rows if k[1] == "issuer_resolution"], str([k for k in db.rows if k[1] == "issuer_resolution"]))
+    check("r3 item 7: a row a person changed after the apply is left as they made it and reported, not a stop",
+          code in (0, None) and db.get(P + H, "issuing_agency_override")["value"] == "A person's later pick"
+          and "LEFT " + P + H in out, out[-600:])
+    check("r3 item 7: the other moved rows went back", db.get(P + "Brake Lab", "unified_title_override") is not None)
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        try:
+            code = undo.main([rdir, "--apply"])
+        except SystemExit as e:
+            code = e.code
+    check("r3 item 7: a rerun finishes cleanly (what is back reads as already)", code in (0, None)
+          and "already" in buf.getvalue(), buf.getvalue()[-400:])
+    env.close()
+
+    # item 8: a lead rename whose title already holds a resolution row (an earlier fold onto it).
+    L, NT = "Lead Old Title", "New Common Title"
+    db = DB()
+    db.add(L, "issuer_resolution", json.dumps({"decided_at": "2026-11-01T00:00:00Z", "fold_id": "old@x"}),
+           fi.COHORT, "2026-11-01T00:00:00Z")
+    db.add(L, "unified_title_override", NT, SAM, F1)
+    db.add("Sibling", "unified_title_override", NT, SAM, F2)
+    db.add("Sibling", "unified_title_merge_confirm", NT, SAM, F2)
+    env = Env({L: [rec(AWS)], "Sibling": [rec(AWS)]}, {"a": {"unified_title": L}, "b": {"unified_title": "Sibling"}}, db)
+    failed = env.workflow(db)
+    slog = json.load(open(os.path.join(env.receipt(), "supabase_log.json"), encoding="utf-8"))
+    bad = [e for e in slog["log"] if e.get("status") not in ("ok", None) and e.get("op") != "skip"]
+    check("r3 item 8: the lead's old resolution row is superseded, not PATCHed into a 409",
+          failed is None and not bad and db.get(P + L, "issuer_resolution") is None
+          and db.get(P + NT, "issuer_resolution") is not None, json.dumps(bad)[:400])
+    env.close()
+
+    # item 9: a title saved into a declared family title is held, with or without a merge confirm, and
+    # never becomes the twin group's lead (a clean rename minting the family name).
+    FAM = "ASE Certificate Bundles"
+    db = DB()
+    held_titles = ["ASE Certification (any A1–A8)", "ASE A2+A3", "ASE Master Auto", "ASE Master Truck",
+                   "ASE Master Collision", "Advanced Electrical and Electronic Systems"]
+    for t in held_titles:
+        db.add(t, "unified_title_override", FAM, SAM, F1)
+    db.add("ASE Master Auto", "unified_title_merge_confirm", FAM, SAM, F1)
+    env = Env({t: [rec(ASE)] for t in held_titles}, {str(i): {"unified_title": t} for i, t in enumerate(held_titles)}, db)
+    json.dump({"families": [FAM]}, open(dry.FAMILIES, "w"))
+    env.nightly()
+    with contextlib.redirect_stdout(io.StringIO()):
+        dry.main()
+    am = json.load(open(os.path.join(env.dry, "alias_map.json"), encoding="utf-8"))
+    coll = json.load(open(os.path.join(env.dry, "collisions.json"), encoding="utf-8"))
+    coll = coll if isinstance(coll, list) else (coll.get("collisions") or [])
+    check("r3 item 9: no rename or merge into the family title, and no collision a curator could confirm",
+          FAM not in (am.get("renames") or {}).values() and FAM not in (am.get("merges") or {}).values()
+          and not [c for c in coll if c.get("proposed_new_title") == FAM], json.dumps(am.get("renames"))[:300])
+    check("r3 item 9: all six are held as family tags", sorted(h["old"] for h in am.get("held_family") or [])
+          == sorted(held_titles), json.dumps(am.get("held_family"))[:300])
+    env.close()
 
     # ── the resolver's spelling and duplicate rules ───────────────────────
     e = fi.effective_issuer({"issuing_agency_additional_override": "ccc | American Welding Society (AWS) | AWS",

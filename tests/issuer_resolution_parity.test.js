@@ -25,6 +25,13 @@ const CASES = [
   { name: "the winner under another spelling is not an additional", p: null, a: [CO + " | American Welding Society (AWS)", "2026-07-09T00:07:08Z"], r: res() },
   { name: "a newer additional stands as written, minus the winner", p: null, a: ["ccc | NATEF", "2026-11-12T00:00:00Z"], r: res() },
   { name: "no resolution: rows as stored", p: ["NATEF", "2026-11-11T15:00:00Z"], a: ["X | Y", "2026-11-11T15:00:00Z"], r: null },
+  // A person's clear (#3116 round 3): an empty value stamped after decided_at is a newer decision; the fold's winner
+  // and its kept additional do not come back.
+  { name: "a person clears the primary after the fold", p: ["", "2026-11-11T16:00:01Z"], a: null, r: res({ kept_additional: ["K Org"] }), want: { issuer: "", set_by_fold: false } },
+  { name: "a person clears the additional after the fold", p: null, a: ["", "2026-11-11T16:00:01Z"], r: res({ kept_additional: ["K Org"] }), want: { issuer2: "" } },
+  { name: "an empty row saved before the fold leaves the winner", p: ["", "2026-11-11T15:00:00Z"], a: null, r: res() },
+  // Inside one millisecond the two sides read the same instant (Python held microseconds, JavaScript milliseconds).
+  { name: "a stamp 400 microseconds after decided_at is the same millisecond", p: ["NATEF", "2026-11-11 16:00:00.029400+00"], a: null, r: res({ decided_at: "2026-11-11T16:00:00.029Z" }) },
   { name: "additive with nothing dropped", p: ["NATEF", "2026-11-11T15:00:00Z"], a: null, r: res({ rule: "additive", winner: null, dropped: [] }) }
 ];
 
@@ -63,6 +70,11 @@ if (py) {
   CASES.forEach(function (c, i) {
     const a = JSON.stringify(jsOut(c)), b = JSON.stringify(py[i]);
     check("parity: " + c.name, a === b, "js " + a + " / py " + b);
+    // A case that names its answer holds both sides to it, so parity on a shared wrong answer still fails.
+    if (c.want) Object.keys(c.want).forEach(function (k) {
+      check("expected " + k + ": " + c.name, jsOut(c)[k] === c.want[k] && py[i][k] === c.want[k],
+            "want " + JSON.stringify(c.want[k]) + "; js " + a + " / py " + b);
+    });
   });
 }
 check("the editor line names the fold's date", R.foldLine({ setByFold: true, decidedAt: DEC }) === "Set by the fold on 2026-11-11");

@@ -76,6 +76,8 @@ import urllib.request
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402  (RESOLUTION_FIELD: a resolution row is never PATCHed onto another)
 OUT_ROOT = os.path.join(HERE, "cred_rename_out")
 KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 
@@ -282,7 +284,7 @@ def main():
                 # Decision fulfilled — drop it. A lead's own confirm naming the title it creates
                 # (an all-confirmed group) is fulfilled too; moved, it would point at itself.
                 res = delete_row(old_cid, field)
-            elif kind == "merge" and field in target_fields:
+            elif field in target_fields and (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD):
                 # The merge target already carries this field — its curator
                 # data wins; a PATCH would violate the (course_id, field) PK.
                 res = delete_row(old_cid, field)
@@ -294,7 +296,7 @@ def main():
                 res = patch_row(old_cid, new_cid, field)
                 if res.get("status") == "ok":
                     target_fields.add(field)
-                elif kind == "merge" and "409" in str(res.get("error") or ""):
+                elif (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD) and "409" in str(res.get("error") or ""):
                     # Defensive backstop for live-claim drift (e.g. a curator
                     # save landing mid-run): the target row exists, so the
                     # source row is superseded — drop it instead of stranding

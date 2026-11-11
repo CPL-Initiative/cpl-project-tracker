@@ -374,6 +374,13 @@ def _render_validation_md(snap, results, issuer_plan=None, full_results=None):
     lines.append("")
     lines.append(f"Applied: `{NOW_ISO}`")
     lines.append("")
+    rows = snap.get("resolution_rows") or []
+    if rows:
+        v = rows[0].get("value") or {}
+        lines.append(f"Issuer resolutions decided at `{v.get('decided_at')}` (the latest reviewed_at among the "
+                     f"rows read); the runner read them at `{v.get('read_at')}`. A row saved after decided_at "
+                     f"wins over the fold.")
+        lines.append("")
     lines.append(f"**{len(snap.get('renames') or {})} renames + "
                  f"{len(snap.get('merges') or {})} confirmed merges applied** "
                  f"across credentials.json + unified_titles.json + "
@@ -519,20 +526,34 @@ def main():
                   f"becomes {c['winner']}")
     out_dir = _out_dir()
     fold_id = "%s@%s" % (os.path.basename(out_dir), NOW_ISO)
-    # decided_at: when the rows this apply decided on were read from kb_curation (the overlay's sync,
-    # step 1 of the workflow), so a row a person saves after that read wins over this fold.
+    # decided_at: the latest reviewed_at among the rows this apply read (COBIx's guard): one stamp source,
+    # the rows' own, so a runner's clock never decides against a person's stamp. The runner's read time is
+    # kept beside it (read_at) for the receipt. The durable fix is a server-set stamp (a schema change for
+    # the Governance queue; docs/reference/canonical_credential_model.md).
     ovdoc = _load_optional(OVERLAY)
-    decided_at = ovdoc.get("_read_at") or ovdoc.get("_synced_at") or NOW_ISO
+    read_at = ovdoc.get("_read_at") or ovdoc.get("_synced_at") or NOW_ISO
+    decided_at = ovdoc.get("_max_reviewed_at") or read_at
+    # The resolutions already in force on each group's titles: this apply's row replaces the target's, and
+    # a merged title's is deleted with its rows, so their decisions carry forward (fold_issuer.resolution_value).
+    applied, undone = fold_issuer.applied_fold_ids(OUT_ROOT), fold_issuer.undone_fold_ids(OUT_ROOT)
     resolution_rows = []
     for t, g in sorted(issuer_plan.items()):
         titles = [t] + [m for m, _ in g["members"]]
         before = [r for x in titles for r in creds_before.get(x) or []]
-        value = fold_issuer.resolution_value(g, before, creds_after.get(t) or [], decided_at, fold_id)
+        priors = [p for x in titles
+                  for p in [fold_issuer.parse_resolution((overlay.get(x) or {}).get(fold_issuer.RESOLUTION_FIELD))]
+                  if fold_issuer.in_force(p, x, applied, undone)]
+        value = fold_issuer.resolution_value(g, before, creds_after.get(t) or [], decided_at, fold_id,
+                                             priors, [overlay.get(x) for x in titles if overlay.get(x)])
+        value["read_at"] = read_at
         resolution_rows.append({"course_id": "_CREDENTIAL_REVIEW::" + t, "field": fold_issuer.RESOLUTION_FIELD,
                                 "value": value, "reviewer_email": fold_issuer.COHORT})
     undo["fold_id"] = fold_id
     out_dir = write_snapshot(alias_doc, results, undo, issuer_plan, out_dir, resolution_rows)
     print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md}}")
+    if os.environ.get("GITHUB_OUTPUT"):  # the workflow's failure step rolls back this receipt's rows
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write("receipt=%s\n" % os.path.relpath(out_dir, os.path.dirname(HERE)))
     return out_dir
 
 

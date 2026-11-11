@@ -471,7 +471,7 @@ try:
         undo.main([rdir])  # dry run writes nothing
     check("undo: a dry run writes nothing", read(paths["credentials.json"]) == creds)
     with contextlib.redirect_stdout(io.StringIO()):
-        undo.main([rdir, "--apply"])
+        undo.main([rdir, "--apply", "--json-only"])
     check("undo: credentials.json is back", read(paths["credentials.json"]) == CREDS)
     check("undo: unified_titles.json is back", read(paths["unified_titles.json"]) == UT)
     check("undo: coci_articulations.json is back", read(paths["coci_articulations.json"]) == ARTS)
@@ -489,13 +489,13 @@ try:
     refused = False
     with contextlib.redirect_stdout(io.StringIO()):
         try:
-            undo.main([rdir2, "--apply"])
+            undo.main([rdir2, "--apply", "--json-only"])
         except SystemExit as e:
             refused = bool(e.code)
     check("undo: a value changed since the apply refuses the run", refused)
     check("undo: a refused run writes nothing", read(paths["credentials.json"]) == c)
     with contextlib.redirect_stdout(io.StringIO()):
-        undo.main([rdir2, "--apply", "--force"])
+        undo.main([rdir2, "--apply", "--force", "--json-only"])
     c2, u2 = read(paths["credentials.json"]), read(paths["unified_titles.json"])
     check("finding 6: --force skips the drifted fold group whole (no source restored beside its target)",
           "Heating and Air Conditioning" not in c2 and "Automotive Air Conditioner" not in c2

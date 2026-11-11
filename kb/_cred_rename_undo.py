@@ -7,23 +7,27 @@ receipt: every value it changed, before and after, in kb/credentials.json (by ke
 (by raw title) and kb/coci_articulations.json (by course_id + exhibit_id). This script puts each back.
 
   python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11            # dry run: what would change
-  python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11 --apply    # write the three files
+  python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11 --apply    # kb_curation first, then the files
   python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11 --supabase-plan
-        # write undo_supabase.sql, for a person to run (Rule 10); with --apply, both
+        # write undo_supabase.sql, the same reversal as SQL for a person to run (Rule 10)
 
 The fold's issuer decision lives in kb_curation as one issuer_resolution row per folded target (cohort
-fold_issuer.COHORT, #3116). --apply also writes undone.json beside the receipt, naming the fold's id: the
-nightly sync then ignores that fold's resolution rows at once, so the JSON undo stands even before a person
-runs the SQL that deletes them. The nightly enforces a resolution on credentials.json; the undo counts a
+fold_issuer.COHORT, #3116). --apply (SUPABASE_SERVICE_KEY set) runs the kb_curation half FIRST: it deletes
+the fold's resolution rows, so every reader, the browser's included, drops the fold at once, then moves
+each moved row back, each guarded on the row the apply left. A row a person changed since is left as they
+made it and reported (undo_supabase_log-<UTC>.json), never a stop; a network error stops before the
+files. A rerun finishes a half-done undo: what is already back reads as "already". Then the files, and
+undone.json beside the receipt, naming the fold's id, so the Python readers ignore the fold even if a
+resolution row was left. Without the key, --apply refuses unless --json-only. The nightly enforces a resolution on credentials.json; the undo counts a
 value the enforcement produced from the apply's own "after" as unchanged, never as drift.
 
 Safety: a value that changed since the apply is drift, and the undo refuses the whole run unless --force,
 which skips each drifted fold group WHOLE (a target and every title renamed or merged onto it); the SQL
 plan leaves out the same groups' row moves, so the two halves agree. Undo the newest apply first.
 
-The SQL: every statement is guarded on the row the apply left (value, reviewer_email and reviewed_at for a
-moved row; the cohort and fold id for a resolution row), and each runs in a block that raises when it
-matches nothing, so a row a person changed since stops the plan loudly instead of being skipped in silence.
+The SQL plan: the same ops, each guarded on the row the apply left (value, reviewer_email and reviewed_at
+for a moved row; the cohort and the written value for a resolution row), each in a block that raises a
+notice when it matches nothing and lets the rest run.
 """
 from __future__ import annotations
 
@@ -163,10 +167,11 @@ def _is(col, v):
 
 
 def _loud(stmt, what):
-    """One guarded statement that raises when it matches nothing: a row a person changed since the apply
-    stops the plan, never a silent no-op (the transaction then rolls back whole)."""
-    return ("do $$ declare n int; begin %s get diagnostics n = row_count; if n = 0 then raise exception "
-            "'undo stopped: %s changed since the apply; nothing in this plan was written'; end if; end $$;"
+    """One guarded statement that reports when it matches nothing: a row a person changed since the apply
+    is left as they made it and named in a notice, and the rest of the plan still runs, so a rerun after a
+    half-done undo finishes it instead of failing on the same row every time."""
+    return ("do $$ declare n int; begin %s get diagnostics n = row_count; if n = 0 then raise notice "
+            "'undo left alone: %s (already undone, or changed since the apply)'; end if; end $$;"
             % (stmt, what.replace("'", "''").replace("%", "%%")))
 
 
@@ -177,13 +182,14 @@ def _insert(cid, field, before):
                _q(before.get("reviewed_at")), _q(before.get("validated_at")), _q(before.get("validated_by"))))
 
 
-def supabase_plan(log_doc, skip_titles=(), resolution_logs=(), fold_id=None):
-    """SQL reversing the row moves (supabase_log*.json payloads, oldest first) newest op first, then the
-    fold's resolution rows. skip_titles: the fold groups --force skipped; their moves stay. Returns
-    (sql, unreversible)."""
+def supabase_ops(log_doc, skip_titles=(), resolution_logs=()):
+    """The kb_curation reversal as ops, in the order they run: the fold's resolution rows FIRST (so every
+    reader, the browser's included, stops applying the fold at once), newest first, then the row moves
+    (supabase_log*.json payloads, oldest first) newest op first. skip_titles: the fold groups --force
+    skipped; their rows stay. Returns (ops, unreversible)."""
     docs = log_doc if isinstance(log_doc, list) else [log_doc]
     skip = set(skip_titles or ())
-    out, cannot = [], []
+    ops, cannot = [], []
     for doc in reversed(list(resolution_logs or [])):
         for e in reversed(doc.get("log") or []):
             if e.get("status") != "ok" or e.get("op") not in ("insert", "replace"):
@@ -191,48 +197,138 @@ def supabase_plan(log_doc, skip_titles=(), resolution_logs=(), fold_id=None):
             cid, field = e["course_id"], e["field"]
             if cid.split("::", 1)[-1] in skip:
                 continue
-            after = e.get("after_row") or {}
+            after = (e.get("after_row") or {}).get("value")
             if e["op"] == "insert":
-                out.append(_loud("delete from kb_curation where course_id = %s and field = %s and %s and %s;"
-                                 % (_q(cid), _q(field), _is("reviewer_email", fold_issuer.COHORT),
-                                    _is("value", after.get("value"))), "the fold's resolution on " + cid))
+                ops.append({"op": "res_delete", "course_id": cid, "field": field, "after": after})
             else:
-                b = e.get("before_row") or {}
-                out.append(_loud("update kb_curation set value = %s, reviewed_at = %s where course_id = %s and "
-                                 "field = %s and %s and %s;"
-                                 % (_q(b.get("value")), _q(b.get("reviewed_at")), _q(cid), _q(field),
-                                    _is("reviewer_email", fold_issuer.COHORT), _is("value", after.get("value"))),
-                                 "the fold's resolution on " + cid))
+                ops.append({"op": "res_restore", "course_id": cid, "field": field, "after": after,
+                            "before": e.get("before_row") or {}})
     for doc in reversed(docs):
-        for e in reversed(doc.get("log") or []):
+        for e in reversed((doc or {}).get("log") or []):
             if e.get("status") != "ok" or not e.get("rows_affected"):
                 continue
             if (e.get("old_ut") in skip) or (e.get("new_ut") in skip):
                 continue
-            op = e.get("op")
             before = e.get("before_row")
-            if op == "patch":
-                if not before:
-                    cannot.append(e)
-                    continue
-                out.append(_loud("update kb_curation set course_id = %s where course_id = %s and field = %s "
-                                 "and %s and %s and %s;"
-                                 % (_q(e["old_course_id"]), _q(e["new_course_id"]), _q(e["field"]),
-                                    _is("value", before.get("value")),
-                                    _is("reviewer_email", before.get("reviewer_email")),
-                                    _is("reviewed_at", before.get("reviewed_at"))),
-                                 "%s / %s" % (e["new_course_id"], e["field"])))
-            elif op == "delete":
-                if not before:
-                    cannot.append(e)
-                    continue
-                out.append(_loud(_insert(e["course_id"], e["field"], before),
-                                 "%s / %s (a row is there now)" % (e["course_id"], e["field"])))
+            if e.get("op") in ("patch", "delete") and not before:
+                cannot.append(e)
+                continue
+            if e.get("op") == "patch":
+                ops.append({"op": "move_back", "old_course_id": e["old_course_id"],
+                            "new_course_id": e["new_course_id"], "field": e["field"], "before": before})
+            elif e.get("op") == "delete":
+                ops.append({"op": "reinsert", "course_id": e["course_id"], "field": e["field"], "before": before})
+    return ops, cannot
+
+
+def _op_sql(o):
+    if o["op"] == "res_delete":
+        return _loud("delete from kb_curation where course_id = %s and field = %s and %s and %s;"
+                     % (_q(o["course_id"]), _q(o["field"]), _is("reviewer_email", fold_issuer.COHORT),
+                        _is("value", o["after"])), "the fold's resolution on " + o["course_id"])
+    if o["op"] == "res_restore":
+        b = o["before"]
+        return _loud("update kb_curation set value = %s, reviewed_at = %s where course_id = %s and field = %s "
+                     "and %s and %s;" % (_q(b.get("value")), _q(b.get("reviewed_at")), _q(o["course_id"]),
+                                         _q(o["field"]), _is("reviewer_email", fold_issuer.COHORT),
+                                         _is("value", o["after"])), "the fold's resolution on " + o["course_id"])
+    b = o["before"]
+    if o["op"] == "move_back":
+        return _loud("update kb_curation set course_id = %s where course_id = %s and field = %s and %s and %s "
+                     "and %s;" % (_q(o["old_course_id"]), _q(o["new_course_id"]), _q(o["field"]),
+                                  _is("value", b.get("value")), _is("reviewer_email", b.get("reviewer_email")),
+                                  _is("reviewed_at", b.get("reviewed_at"))),
+                     "%s / %s" % (o["new_course_id"], o["field"]))
+    return _loud(_insert(o["course_id"], o["field"], b), "%s / %s (a row is there now)" % (o["course_id"], o["field"]))
+
+
+def supabase_plan(log_doc, skip_titles=(), resolution_logs=(), fold_id=None):
+    """The same reversal as SQL, for a person to run under Rule 10 when the undo cannot reach Supabase
+    itself. Returns (sql, unreversible)."""
+    ops, cannot = supabase_ops(log_doc, skip_titles, resolution_logs)
+    docs = log_doc if isinstance(log_doc, list) else [log_doc]
     head = docs[0].get("alias_map_snapshot") if docs and docs[0] else "a credential rename apply"
-    sql = ("-- Reverses %s (kb/_cred_rename_undo.py)%s. One transaction: any guard that matches nothing "
-           "raises, and nothing is written.\nbegin;\n%s\ncommit;\n"
-           % (head, (" fold " + fold_id) if fold_id else "", "\n".join(out)))
+    sql = ("-- Reverses %s (kb/_cred_rename_undo.py)%s. Each statement is guarded on the row the apply "
+           "left; one that matches nothing raises a notice and the rest still run, so a rerun finishes a "
+           "half-done undo.\nbegin;\n%s\ncommit;\n"
+           % (head, (" fold " + fold_id) if fold_id else "", "\n".join(_op_sql(o) for o in ops)))
     return sql, cannot
+
+
+# ── Running the reversal itself (PostgREST, service_role) ───────────────────────────────────────────────
+URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
+KEY = os.environ.get("SUPABASE_SERVICE_KEY")
+
+
+def rest(method, path, body=None, prefer="return=representation"):
+    """One PostgREST call; returns the rows (a list). Tests replace this."""
+    import urllib.request
+    req = urllib.request.Request(
+        f"{URL}/rest/v1/{path}", method=method,
+        headers={"apikey": KEY, "Authorization": f"Bearer {KEY}", "Content-Type": "application/json",
+                 "Accept": "application/json", "Prefer": prefer},
+        data=json.dumps(body).encode("utf-8") if body is not None else None)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        got = json.load(r)
+    return got if isinstance(got, list) else []
+
+
+def _qs(**eq):
+    import urllib.parse
+    return urllib.parse.urlencode({k: ("is.null" if v is None else f"eq.{v}") for k, v in eq.items()})
+
+
+def _current(cid, field):
+    rows = rest("GET", "kb_curation?select=course_id,field,value,reviewer_email,reviewed_at&" + _qs(course_id=cid, field=field))
+    return rows[0] if rows else None
+
+
+def run_op(o):
+    """Run one op. Returns {"status": "ok" | "already" | "left", ...}; a network error raises."""
+    if o["op"] == "res_delete":
+        if rest("DELETE", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
+                                               reviewer_email=fold_issuer.COHORT, value=o["after"])):
+            return {"status": "ok"}
+        return {"status": "already"} if _current(o["course_id"], o["field"]) is None else \
+            {"status": "left", "why": "the resolution row changed since the apply (a later fold?)"}
+    if o["op"] == "res_restore":
+        b = o["before"]
+        if rest("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
+                                              reviewer_email=fold_issuer.COHORT, value=o["after"]),
+                {"value": b.get("value"), "reviewed_at": b.get("reviewed_at")}):
+            return {"status": "ok"}
+        cur = _current(o["course_id"], o["field"])
+        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
+            {"status": "left", "why": "the resolution row changed since the apply"}
+    b = o["before"]
+    if o["op"] == "move_back":
+        try:
+            got = rest("PATCH", "kb_curation?" + _qs(course_id=o["new_course_id"], field=o["field"],
+                                                     value=b.get("value"), reviewer_email=b.get("reviewer_email"),
+                                                     reviewed_at=b.get("reviewed_at")),
+                       {"course_id": o["old_course_id"]})
+        except Exception as e:
+            if "409" not in str(e):
+                raise
+            return {"status": "left", "why": "the old title holds that field again"}
+        if got:
+            return {"status": "ok"}
+        cur = _current(o["old_course_id"], o["field"])
+        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
+            {"status": "left", "why": "a person changed the moved row since the apply"}
+    row = {k: b.get(k) for k in ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")}
+    row.update(course_id=o["course_id"], field=o["field"])
+    if rest("POST", "kb_curation", row, "return=representation,resolution=ignore-duplicates"):
+        return {"status": "ok"}
+    cur = _current(o["course_id"], o["field"])
+    return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
+        {"status": "left", "why": "a row is there now"}
+
+
+def run_supabase(ops):
+    """Every op, in order. A row a person changed is left and reported, never a stop; a network error
+    stops the run (the JSON half then does not run). Returns the log."""
+    return [dict(o, **run_op(o)) for o in ops]
 
 
 def _logs(folder, prefix):
@@ -248,6 +344,9 @@ def main(argv=None):
     ap.add_argument("--force", action="store_true",
                     help="skip drifted fold groups (whole groups, in the files and the SQL) instead of refusing")
     ap.add_argument("--supabase-plan", action="store_true", help="write undo_supabase.sql")
+    ap.add_argument("--json-only", action="store_true",
+                    help="with --apply and no SUPABASE_SERVICE_KEY: write the files anyway and leave kb_curation "
+                         "to undo_supabase.sql")
     a = ap.parse_args(argv)
     up = os.path.join(a.receipt, "undo.json")
     if not os.path.isfile(up):
@@ -266,14 +365,36 @@ def main(argv=None):
                  f"written. --force skips those whole groups, in the files and in the SQL.")
     if skipped:
         print(f"  skipped fold groups, left folded in the files and in the SQL plan: {sorted(skipped)}")
+    slogs, rlogs = _logs(a.receipt, "supabase_log"), _logs(a.receipt, "resolution_log")
     if a.supabase_plan:
-        sql, cannot = supabase_plan(_logs(a.receipt, "supabase_log"), skipped,
-                                    _logs(a.receipt, "resolution_log"), undo.get("fold_id"))
+        sql, cannot = supabase_plan(slogs, skipped, rlogs, undo.get("fold_id"))
         with open(os.path.join(a.receipt, "undo_supabase.sql"), "w", encoding="utf-8") as f:
             f.write(sql)
         print(f"wrote {a.receipt}/undo_supabase.sql; {len(cannot)} op(s) not reversible (no before_row)")
     print(f"[cred_rename_undo] {len(changes)} value(s) to put back"
           + ("" if a.apply else " (dry run; --apply writes)"))
+    if a.apply and not KEY and not a.json_only:
+        sys.exit("--apply runs the kb_curation half first, so it needs SUPABASE_SERVICE_KEY. Without it the "
+                 "moved rows keep reaching the nightly while the files are undone; --json-only accepts that "
+                 "window (then run undo_supabase.sql from --supabase-plan).")
+    if a.apply and KEY:
+        # The kb_curation half runs FIRST: the resolution rows go (every reader, the browser's too, drops the
+        # fold at once), then the moved rows go back, so no nightly sees the files undone and the rows folded.
+        ops, cannot = supabase_ops(slogs, skipped, rlogs)
+        try:
+            log = run_supabase(ops)
+        except Exception as e:
+            sys.exit(f"kb_curation unreachable ({str(e)[:200]}); nothing in the files was written. Rerun: the "
+                     f"rows already put back read as already undone.")
+        from datetime import datetime, timezone
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        _write(os.path.join(a.receipt, "undo_supabase_log-%s.json" % stamp),
+               {"log": log, "not_reversible": cannot})
+        left = [x for x in log if x["status"] == "left"]
+        print(f"  kb_curation: {sum(x['status'] == 'ok' for x in log)} put back, "
+              f"{sum(x['status'] == 'already' for x in log)} already, {len(left)} left as a person made them")
+        for x in left:
+            print(f"  LEFT {x.get('course_id') or x.get('new_course_id')} / {x['field']}: {x['why']}")
     if a.apply:
         if changes:
             apply_undo(changes, creds, ut, arts)

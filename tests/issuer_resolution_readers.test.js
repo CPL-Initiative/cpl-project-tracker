@@ -190,7 +190,19 @@ const ROWS = [
     F.resolve(m2);
     check("credential_reference: a row saved one second after decided_at wins, no fold line",
       m2["Emergency Medical Technician"].issuer_override === "Riverside County EMS" && F.lines(m2["Emergency Medical Technician"].issuer_fold).length === 0);
+    // A person's clear after the fold (#3116 round 3): an empty row stamped after decided_at is their decision; the
+    // fold's winner and its kept additional issuers do not come back.
+    const m3 = { "Emergency Medical Technician": { issuer_override: "", issuer_overridden_at: "2026-11-11T16:00:01Z",
+      issuer2_override: "", issuer2_overridden_at: "2026-11-11T16:00:01Z",
+      issuer_resolution: JSON.stringify(Object.assign(JSON.parse(RES), { kept_additional: ["K Org"] })) } };
+    F.resolve(m3);
+    const r3 = m3["Emergency Medical Technician"];
+    check("credential_reference: a person's clear after the fold stands (no winner, no kept additional)",
+      !r3.issuer_override && !r3.issuer2_override && !r3.issuer_fold.setByFold, JSON.stringify(r3));
     const src2 = fs.readFileSync("credential_reference.js", "utf8");
+    const grid = src2.slice(src2.indexOf("function saveGridRowCore"), src2.indexOf("var trainerVal", src2.indexOf("function saveGridRowCore")));
+    check("credential_reference: clearing the additional issuers on a folded title saves a stamped empty row, not a DELETE",
+      /extraJoined \|\| ov\.issuer_resolution\s*\?\s*saveOverride\(ut, FIELD_ISSUER2_OVERRIDE, extraJoined\)/.test(grid), grid.slice(-400));
     check("credential_reference: a save writes its own stamp", /reviewed_at: new Date\(\)\.toISOString\(\)/.test(src2.slice(src2.indexOf("function saveOverride"), src2.indexOf("function clearOverride"))));
   }
 

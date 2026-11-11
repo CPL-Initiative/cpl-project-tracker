@@ -119,7 +119,10 @@ def ts(s):
     except ValueError:
         m = re.match(r"^(.*?\.\d{1,6})\d*([+-].*)?$", t)
         d = datetime.fromisoformat(m.group(1) + (m.group(2) or "")) if m else datetime.min
-    return d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+    d = d if d.tzinfo else d.replace(tzinfo=timezone.utc)
+    # Milliseconds, as JavaScript's Date holds them (issuer_resolution.js ts): a Postgres stamp carries
+    # microseconds, and comparing them here alone made the two resolvers disagree inside one millisecond.
+    return d.replace(microsecond=d.microsecond // 1000 * 1000)
 
 
 def _stamp(entry, field):
@@ -451,19 +454,49 @@ def parse_resolution(value):
     return got if isinstance(got, dict) and got.get("decided_at") else None
 
 
-def resolution_value(group, records_before, records_after, decided_at, fold_id):
+def resolution_value(group, records_before, records_after, decided_at, fold_id, priors=(), entries=()):
     """The issuer_resolution row's value for one fold group. records_before: every credential record in
     the group before the apply (target and every folded title); records_after: the target's records after.
     The dropped issuers are exactly the ones the fold removed, so a target's own record the fold kept is
-    never struck by the nightly."""
+    never struck by the nightly.
+
+    priors: the resolutions already in force on the group's titles (an earlier fold onto the target, or
+    onto a title folding in). The primary key holds one resolution per target, so this one replaces them,
+    and it carries their decisions forward: an issuer an earlier fold dropped stays dropped, and its winner
+    stands when this fold names none, unless this fold keeps that issuer, or a person saved an issuer row
+    naming it after the earlier fold decided (entries: the group's overlay entries). The replaced row's
+    value is the write's before_row in resolution_log.json."""
     res = group["resolution"]
     before = {canonical_issuer(r.get("issuing_agency")) for r in records_before if r.get("issuing_agency")}
     after = {norm(canonical_issuer(r.get("issuing_agency"))) for r in records_after if r.get("issuing_agency")}
-    return {"v": 1, "target": res["target"], "rule": res["rule"],
-            "winner": canonical_issuer(res["winner"]) if res.get("winner") else None,
-            "dropped": sorted(i for i in before if norm(i) not in after),
-            "kept_additional": sorted({canonical_issuer(a) for a in res.get("additional") or []}),
-            "decided_at": decided_at, "fold_id": fold_id}
+    winner = canonical_issuer(res["winner"]) if res.get("winner") else None
+    kept = sorted({canonical_issuer(a) for a in res.get("additional") or []})
+    dropped = {i for i in before if norm(i) not in after}
+    carried = []
+    for prior in sorted([p for p in priors or () if p], key=lambda p: ts(p.get("decided_at"))):
+        pdec = ts(prior.get("decided_at"))
+        later, later_primary = set(), False
+        for e in entries or ():
+            for f in (PRIMARY, ADDITIONAL):
+                r = _raw_row(e, f)
+                if r["at"] and ts(r["at"]) > pdec:
+                    later |= {norm(canonical_issuer(x)) for x in _split(r["value"])}
+                    later_primary = later_primary or f == PRIMARY
+        keep = {norm(winner)} | {norm(k) for k in kept} | after | later
+        for d in prior.get("dropped") or []:
+            if norm(canonical_issuer(d)) not in keep:
+                dropped.add(canonical_issuer(d))
+        pw = prior.get("winner")
+        if not winner and pw and not later_primary and norm(canonical_issuer(pw)) not in {norm(x) for x in dropped}:
+            winner = canonical_issuer(pw)
+        if prior.get("fold_id"):
+            carried.append(prior["fold_id"])
+    out = {"v": 1, "target": res["target"], "rule": res["rule"], "winner": winner,
+           "dropped": sorted(i for i in dropped if norm(i) != norm(winner)),
+           "kept_additional": kept, "decided_at": decided_at, "fold_id": fold_id}
+    if carried:
+        out["carried_from"] = carried
+    return out
 
 
 def _split(v):
@@ -478,6 +511,23 @@ def _dedupe(parts, also_not=()):
             seen.add(norm(c))
             out.append(c)
     return out
+
+
+def _raw_row(entry, field):
+    """One issuer field's stored row as {value, by, at}. A row stored with an empty value keeps its stamp:
+    that is a person's clear, a decision the resolver honors like any other newer row. No row at all is
+    {"value": "", "by": "", "at": ""}."""
+    entry = entry or {}
+    raw = (entry.get("issuer_raw") or {}).get(field)
+    if raw is not None:
+        return {"value": (raw.get("value") or "").strip(), "by": raw.get("by") or "", "at": raw.get("at") or ""}
+    got = _stamp(entry, field)
+    if got:
+        return {"value": got[0], "by": got[1], "at": got[2]}
+    st = (entry.get("field_reviews") or {}).get(field)
+    if st:
+        return {"value": "", "by": st.get("by") or "", "at": st.get("at") or ""}
+    return {"value": "", "by": "", "at": ""}
 
 
 def effective_issuer(entry, resolution):
@@ -498,10 +548,11 @@ def effective_issuer(entry, resolution):
     dropped = {norm(canonical_issuer(x)) for x in resolution.get("dropped") or []}
     raw, superseded = {}, []
     for f in (PRIMARY, ADDITIONAL):
-        got = _stamp(e, f)
-        raw[f] = {"value": got[0], "by": got[1], "at": got[2]} if got else {"value": "", "by": "", "at": ""}
+        raw[f] = _raw_row(e, f)
     p = raw[PRIMARY]
-    newer_p = bool(p["value"]) and ts(p["at"]) > dec
+    # The stamp alone decides: a row saved after the fold decided wins even when its value is empty (a
+    # person cleared the issuer), so the fold's winner never comes back over a person's later clear.
+    newer_p = bool(p["at"]) and ts(p["at"]) > dec
     if newer_p:
         primary = canonical_issuer(p["value"])
     elif winner:
@@ -514,7 +565,7 @@ def effective_issuer(entry, resolution):
     else:
         primary = canonical_issuer(p["value"]) if p["value"] else ""
     a = raw[ADDITIONAL]
-    if a["value"] and ts(a["at"]) > dec:
+    if a["at"] and ts(a["at"]) > dec:
         parts = _dedupe(_split(a["value"]), [primary])
     else:
         kept = [x for x in _split(a["value"]) if norm(canonical_issuer(x)) not in dropped]
@@ -596,6 +647,36 @@ def voided(resolution, title, undone):
     """True when an undo voided this resolution for this title."""
     fid = (resolution or {}).get("fold_id")
     return fid in undone and title not in undone[fid]
+
+
+APPLY_FAILED = "apply_failed.json"
+
+
+def applied_fold_ids(out_root):
+    """The folds whose apply landed: the fold_id in each committed kb/cred_rename_out/<dir>/undo.json,
+    leaving out a folder the workflow's failure step marked apply_failed.json (its receipt is committed so
+    the undo can read it, but the kb files never changed). A resolution row whose fold is not here is
+    inert: a failed or unpushed apply wrote it, and no reader enforces it on titles that never folded."""
+    import glob
+    import json
+    import os
+    out = set()
+    for p in glob.glob(os.path.join(out_root, "*", "undo.json")):
+        if os.path.exists(os.path.join(os.path.dirname(p), APPLY_FAILED)):
+            continue
+        try:
+            fid = json.load(open(p, encoding="utf-8")).get("fold_id")
+        except (OSError, ValueError):
+            continue
+        if fid:
+            out.add(fid)
+    return out
+
+
+def in_force(resolution, title, applied, undone):
+    """True when a resolution stands for this title: its fold landed (applied_fold_ids) and no undo voided
+    it. The nightly, the trail crew and the next apply's carry-forward all read resolutions through this."""
+    return bool(resolution) and resolution.get("fold_id") in applied and not voided(resolution, title, undone)
 
 
 # ── Family titles (Sam's ruling C, 2026-11-11, relayed by the S638 conductor) ─────────────────────────────

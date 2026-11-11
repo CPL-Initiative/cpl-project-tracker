@@ -1597,7 +1597,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5342,
+     "line": 5345,
      "tabs": [
       "credential-reference"
      ]
@@ -3677,7 +3677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3868,
+     "line": 3871,
      "tabs": [
       "credential-reference"
      ]
@@ -6458,7 +6458,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5704,
+     "line": 5707,
      "tabs": [
       "credential-reference"
      ]
@@ -7299,7 +7299,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5822,
+     "line": 5825,
      "tabs": [
       "credential-reference"
      ]
@@ -8142,7 +8142,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5705,
+     "line": 5708,
      "tabs": [
       "credential-reference"
      ]
@@ -10653,7 +10653,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5443,
+     "line": 5446,
      "tabs": [
       "credential-reference"
      ]
@@ -10953,7 +10953,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 41
+     "line": 45
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -13223,7 +13223,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5079,
+     "line": 5082,
      "tabs": [
       "credential-reference"
      ]
@@ -13860,7 +13860,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 39
+     "line": 43
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -15692,7 +15692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5102,
+     "line": 5105,
      "tabs": [
       "credential-reference"
      ]
@@ -19244,7 +19244,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 40
+     "line": 44
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -28335,21 +28335,35 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 67
+     "line": 70
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 130
+     "line": 132
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 161
+     "line": 163
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 282
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 289
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",

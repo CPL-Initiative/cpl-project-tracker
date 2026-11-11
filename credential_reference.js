@@ -2148,7 +2148,10 @@
     var extraBase = splitIssuers(ov.issuer2_override || "").join(" | ");
     var extraChanged = extraJoined !== extraBase;
     if (extraChanged) {
-      writes.push(extraJoined
+      // On a title a fold decided, a clear is a stamped empty row, never a DELETE: the resolver
+      // (issuer_resolution.js) reads it as the person's newer decision, and a deleted row would let the
+      // fold's kept additional issuers come back.
+      writes.push(extraJoined || ov.issuer_resolution
         ? saveOverride(ut, FIELD_ISSUER2_OVERRIDE, extraJoined)
         : clearOverride(ut, FIELD_ISSUER2_OVERRIDE));
     }

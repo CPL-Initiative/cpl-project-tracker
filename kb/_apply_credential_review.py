@@ -292,11 +292,15 @@ CRED_OUT_ROOT = os.path.join(HERE, "cred_rename_out")  # the fold receipts (undo
 def apply_resolutions(overrides, out_root=None):
     """Resolve every title's issuer rows against its fold resolution, in place (kb/fold_issuer.py
     effective_issuer, the one resolver). Returns {title: resolution} for enforce_resolutions."""
-    undone = fold_issuer.undone_fold_ids(out_root or CRED_OUT_ROOT)
+    root = out_root or CRED_OUT_ROOT
+    undone = fold_issuer.undone_fold_ids(root)
+    # A resolution row stands only when its fold's receipt is committed (fold_issuer.applied_fold_ids): a
+    # failed or unpushed apply's row is inert, never enforced on titles that never folded.
+    applied = fold_issuer.applied_fold_ids(root)
     resolutions = {}
     for ut, entry in list(overrides.items()):
         res = fold_issuer.parse_resolution(entry.get(fold_issuer.RESOLUTION_FIELD))
-        if res and not fold_issuer.voided(res, ut, undone):
+        if fold_issuer.in_force(res, ut, applied, undone):
             resolutions[ut] = res
             overrides[ut] = fold_issuer.effective_issuer(entry, res)
     return resolutions
@@ -453,6 +457,9 @@ def main():
         # When the rows were read: the credential rename apply records it as its resolutions'
         # decided_at, so a row saved after this read wins over the fold.
         "_read_at": read_at,
+        # The latest reviewed_at among the rows read (COBIx's guard, #3116): the apply's decided_at, so the
+        # precedence compares one stamp source (the rows' own) and never the runner's clock against them.
+        "_max_reviewed_at": max((r.get("reviewed_at") or "" for r in rows), key=fold_issuer.ts, default=""),
         "count": len(overrides),
         "rename_overrides_recorded_not_applied": rename_count,
         "overrides": dict(sorted(overrides.items())),
