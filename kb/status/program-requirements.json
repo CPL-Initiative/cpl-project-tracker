@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T10:25:36Z",
+  "written_at": "2026-11-11T11:42:21Z",
   "session": 636,
   "moniker": "SkyAntennae",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_637_handoff.md",
   "next_step": {
-    "title": "The sweep's next college",
-    "text": "Butte is displayed at 138 of 164 records passing, up from 87. The sweep takes the college with the next largest gap, listed live first; Orange Coast and Los Angeles City are next by failing records. De Anza waits on Sam's two hand-filed GE sheets."
+    "title": "De Anza, on the route COBIx found",
+    "text": "Butte is displayed at 138 of 164 records passing, up from 87. De Anza no longer waits on Sam: COBIx found its general education sheets on a second De Anza host and a 2026-2027 catalog on the college's catalog vendor. The sweep takes De Anza next, then the college with the next largest gap."
   },
   "calls": [
     {
@@ -229,18 +229,6 @@
         "at": "2026-11-10",
         "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
       }
-    },
-    {
-      "title": "Will Sam hand-file De Anza's two GE sheets?",
-      "text": "deanza.edu refuses the reader, and the catalog links two separate GE sheets without printing a pattern's units, so 73 degrees fail for want of GE units.",
-      "if_no_reply": "De Anza waits and the sweep moves on.",
-      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-10",
-        "words": "I will file them, on Open Asks Sheet 180 card 5."
-      }
     }
   ],
   "notes": {
@@ -262,6 +250,10 @@
     {
       "at": "2026-11-11T10:21:00Z",
       "text": "Display build 052fb9eac1b5 is applied: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds."
+    },
+    {
+      "at": "2026-11-11T12:05:00Z",
+      "text": "De Anza no longer waits on Sam's hand-filed sheets: COBIx found the general education sheets on a second De Anza host and reported a 2026-2027 catalog on the college's catalog vendor. A procedure for refused reads is in the queue's rules: other hosts, the publisher's copy, an archive copy, then a comment to COBIx, before any card."
     }
   ],
   "headline": [

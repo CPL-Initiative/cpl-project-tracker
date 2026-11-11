@@ -66,7 +66,8 @@ each time.
 ## Open work, in order (built from the lanes)
 
 1. **`program-requirements-harvest`:** the sweep's next college (step 12), listed live first. By failing records
-   after Glendale (parked) and De Anza (waits on Sam's two GE sheets in `catalog-files`): Orange Coast 72, Los
+   after Glendale (parked): De Anza first (it no longer waits on Sam: COBIx's #3083 and #3096 give `daweb2.deanza.edu`
+   and a 2026-2027 eLumen catalog), then Orange Coast 72, Los
    Angeles City 67, Victor Valley 60, San Bernardino Valley 54, Berkeley City 54. Butte's 27 left stand as filed
    (25 read `unequal` inside the map's printed range). The nightly SLO read runs as `--next` names it.
 2. **`library` NEXT 0:** Sam's List publicly for request `71931018`, and the link from the public funding dashboard

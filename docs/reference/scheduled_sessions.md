@@ -363,6 +363,8 @@ is his standing preference there too.
    host; dispatch with `college=`. At the checkpoint, count what moved to passing against the stopping rule and park a
    college when it says so. When every college is loaded, parked or waiting, the step ends in one line naming the next
    one due and when. It never writes MAP or hand-edits a record (a misread is a reading-procedure fix).
+   **A refused read, here or at step 11, follows [`blocked_sources`](blocked_sources.md) before it becomes a card:** the
+   college's other hosts, the publisher's copy, an archive copy, then a comment that mentions `cobi-cto` (Sam, 2026-11-10).
 
 **The handoff's open work is built from the lanes, not copied from the last handoff** (S583, 2026-11-05). Each lane a
 session worked in the past week that still carries a NEXT goes on the list, or the handoff says by slug why it waits.
