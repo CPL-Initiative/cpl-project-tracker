@@ -52,7 +52,7 @@ jobs:
       - name: Install Playwright + Chromium, pypdf, pdfminer
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
 
       - name: Read the sequence
         env:

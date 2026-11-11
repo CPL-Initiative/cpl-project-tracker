@@ -177,7 +177,7 @@ jobs:
         if: inputs.harvest != ''
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (a no-op without a record)
         if: inputs.harvest != ''
         run: python3 kb/_program_requirements_college.py pin --college "${{ inputs.harvest }}"

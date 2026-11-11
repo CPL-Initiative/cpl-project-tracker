@@ -46,7 +46,7 @@ jobs:
       - name: Install Playwright + Chromium
         run: |
           pip install --quiet playwright
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
 
       - name: Check framing
         env:

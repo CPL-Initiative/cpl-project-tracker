@@ -50,7 +50,7 @@ jobs:
       - name: Install Playwright + Chromium, pypdf, pdfminer (the capture's readers)
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (a no-op without a record)
         run: python3 kb/_program_requirements_college.py pin --college "${{ inputs.college }}"
       - name: Capture the college (free; the page text and closed list the first reader saw)

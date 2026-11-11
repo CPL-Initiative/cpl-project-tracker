@@ -137,7 +137,7 @@ jobs:
       - name: Install Playwright + Chromium, pypdf, pdfminer
         run: |
           pip install --quiet playwright pypdf pdfminer.six
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)
         run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
       - name: Capture
