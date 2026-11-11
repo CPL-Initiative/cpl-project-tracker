@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Humanities",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=107",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/humanities-fall-2022",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6942,
+  "input_tokens": 7689,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6942,
-    "output_tokens": 1644,
+    "input_tokens": 7689,
+    "output_tokens": 1299,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1644,
+  "output_tokens": 1299,
   "output_tokens_details": {
-   "thinking_tokens": 387
+   "thinking_tokens": 282
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06065,
- "ms": 13068,
- "seconds": 13.4,
+ "cost_usd": 0.05674,
+ "ms": 11458,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 6,
+   "program": 0,
    "courses": 0,
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement in Humanities",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -121,14 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Synthesize critical, empathetic, creative, cooperative and independent thinking skills",
-    "Demonstrate the ability, both orally and in writing, to analyze meaning within various modes of cultural production in relation to their political, economic, social and religious context",
-    "Formulate knowledge of the deep connections between and within the complexities of diverse historical periods and cultural traditions as a framework for a dynamic understanding of the contemporary world",
-    "Develop the practice of thinking through moral and ethical problems and examining one’s own assumptions",
-    "Deepen sources of wisdom through a complex understanding of how others have dealt with failures, successes, adversities and triumphs",
-    "Cultivate the capacity for personal, as well as social change"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -243,12 +236,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-description on page 107; the section's actual heading is not visible. 'Certificate of Achievement in Humanities' is taken from the description text.",
-   "List A is printed with '(20 Units)' and 'Total Required: 20 Units' but no explicit 'select' instruction; read as choose 20 units (five 4-unit courses) from the list.",
-   "The catalog prints a 20-unit total, while the award category on file is 8S/12Q to fewer than 16S/24Q units; reviewer should check this mismatch.",
-   "Honors codes are printed as HUMI 1H, HUMI 9H, HUMI 18H; the closed list stores them as HUMI 001H, HUMI 009H, HUMI 018H. Treated as the same courses (catalog_addition false).",
-   "Careers: the text mentions only 'a wide variety of majors and professional careers', with no specific career named."
+   "The text opens with general Bachelor of Science degree requirements (180 quarter units, GE rules) that belong to another part of the catalog, not to this certificate; they were ignored.",
+   "List A prints '(20 Units)' with no explicit 'select' wording; read as choose 20 units from the list, consistent with 'Major Required: 20 Credits' and 'Total Required: 20 Units' (Max/Min Units 20.0).",
+   "Honors versions HUMI 1H, 9H and 18H were recorded as alternatives to HUMI 1, 9 and 18 per the note that students receive credit for only one version; they match closed-list codes HUMI 001H, 009H and 018H (zero-padded), so catalog_addition is false.",
+   "Units are quarter units.",
+   "No program learning outcomes are printed in the text; the description mentions 'professional careers' generally but names no specific career."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

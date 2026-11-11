@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "CNC Programming - CAD-CAM",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=85",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/cnc-programming-cad-cam-fall-2024",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10858,
+  "input_tokens": 7858,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10858,
-    "output_tokens": 1458,
+    "input_tokens": 7858,
+    "output_tokens": 1527,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1458,
+  "output_tokens": 1527,
   "output_tokens_details": {
-   "thinking_tokens": 421
+   "thinking_tokens": 523
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07259,
- "ms": 17462,
- "seconds": 19.2,
+ "cost_usd": 0.06197,
+ "ms": 13153,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "CNC Programming - CAD/CAM Certificate of Achievement",
+   "section_heading": "CNC Programming - CAD/CAM",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -121,11 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Design and construct 2D, 3D, lathe, horizontal and multi-axis part geometry",
-    "Select tools and produce tool paths with constructed and imported geometry",
-    "Verify tool paths and create word address programs for CNC machines"
-   ],
+   "outcomes": [],
    "careers": [
     "entry-level programmers"
    ]
@@ -246,11 +242,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section; the printed heading for this certificate (likely on page 84) is not in the text, so section_heading is taken from the description's own naming of the award.",
-   "Lists C and D print a 5-unit total over several 5-unit courses without an explicit 'select' instruction; read as choose 5 units (one course) from each, which matches the printed Total Required of 20 units. Reviewer should confirm.",
-   "Catalog prints codes without the leading zero (DMT 87E vs closed list DMT 087E); treated as the same courses.",
-   "Units are quarter units (De Anza is on the quarter system); 20 quarter units fits the 12Q-24Q award range."
+   "Catalog prints codes without the leading zero (DMT 87E etc.); matched to closed-list codes DMT 087E etc. and treated as the same courses.",
+   "Lists C and D each print '(5 Units)' over several 5-unit courses; read as choose 5 units (one course) from each list. Lists A and B hold a single required course each.",
+   "Total stated as 'Major Required: 20 Credits' / 'Total Required: 20 Units' (quarter units); Max/Min Units 20.0 in metadata.",
+   "The text opens with general Bachelor of Science degree requirements unrelated to this certificate; ignored.",
+   "Description mentions a career ladder to a Certificate of Achievement-Advanced or A.S. degree in CNC Machinist; not recorded as requirements.",
+   "No program learning outcomes printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

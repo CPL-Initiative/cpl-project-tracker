@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T12:39:46Z",
-  "session": 636,
-  "moniker": "SkyAntennae",
+  "written_at": "2026-11-11T16:07:30Z",
+  "session": 637,
+  "moniker": "SkyPorpoise",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_637_handoff.md",
+  "handoff": "docs/session_638_handoff.md",
   "next_step": {
-    "title": "Redwoods' reread and display, then De Anza on Sam's word",
-    "text": "Redwoods reads 59 of 73 on the branch, up from 53, on the general education sheet COBIx found. De Anza's 2026-2027 catalog is verified on its catalog vendor's site; the change to its registry row waits on Sam's word. A test of asking COBIx for a blocked file is under way with American River's catalog."
+    "title": "De Anza: read the free capture, then the extraction's cost",
+    "text": "De Anza's 2026-2027 catalog packs each course code in its data feed and shows it spaced on the page. The reader now reads the code as the page shows it. A free capture is running on the branch. If it finds the programs, Sam hears the extraction's expected cost against his standing forty dollar go before anything paid runs."
   },
   "calls": [
     {
@@ -236,14 +236,6 @@
   },
   "changes": [
     {
-      "at": "2026-11-11T04:56:00Z",
-      "text": "Butte: its catalog's General Education guides print both totals, 21 units for the Butte Local pattern and 34 for Cal-GETC, so four reconcile steps were written on the catalog's own words. Five free page reads found them; no figure is summed."
-    },
-    {
-      "at": "2026-11-11T06:35:00Z",
-      "text": "The reconcile now treats one page address spelled two ways as the same page when the page still prints the record's own heading. Butte's first reconcile had changed nothing for that reason."
-    },
-    {
       "at": "2026-11-11T09:53:00Z",
       "text": "Butte: two rereads replaced 92 rows with no errors; 138 of 164 records pass, up from 87. No row a person had checked was touched, and each receipt holds the values before."
     },
@@ -258,6 +250,14 @@
     {
       "at": "2026-11-11T12:30:00Z",
       "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
+    },
+    {
+      "at": "2026-11-11T15:15:00Z",
+      "text": "De Anza: the first capture on its new catalog found 242 program pages and counted none of their courses. The catalog's feed writes ACCTD001A where the page shows ACCT 1A. The reader now reads the code as shown."
+    },
+    {
+      "at": "2026-11-11T15:55:00Z",
+      "text": "Thirteen workflows install the browser through one script, after the runners could not reach Ubuntu's package servers and three runs failed before reading a page."
     }
   ],
   "headline": [

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Community Service Officer",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=45",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/community-service-officer-fall-2024",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12110,
+  "input_tokens": 7674,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12110,
-    "output_tokens": 1823,
+    "input_tokens": 7674,
+    "output_tokens": 1784,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1823,
+  "output_tokens": 1784,
   "output_tokens_details": {
-   "thinking_tokens": 709
+   "thinking_tokens": 600
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0849,
- "ms": 14617,
+ "cost_usd": 0.06638,
+ "ms": 14963,
  "seconds": 15.1,
  "parts": null,
  "error": null,
@@ -85,12 +85,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -106,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement-Advanced (COA-A) Community Service Officer",
+   "section_heading": "Community Service Officer",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -127,14 +127,9 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Identify the responsibilities of each component of the criminal justice system as they relate to laws, investigations, and rules of evidence",
-    "Obtain the knowledge to investigate crimes, traffic accidents, and other public safety hazards",
-    "Develop the skills to complete factual and concise investigations and investigative reports",
-    "Obtain the knowledge and capabilities to establish positive interactions and develop partnerships between law enforcement and the community"
-   ],
+   "outcomes": [],
    "careers": [
-    "Community Service Officers (CSOs)"
+    "Community Service Officers"
    ]
   },
   "blocks": [
@@ -256,11 +251,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "De Anza counts in quarter units; the certificate is printed as Certificate of Achievement-Advanced with Total Required: 27 - 28 Units.",
-   "List A prints no explicit selection rule, only '(3 - 4 Units)'; read as choose one of the two courses (4 or 3 units).",
-   "Closed list stores ADMJ/PARA/PSYC 074A and ADMJ/PARA 090A with a leading zero; the catalog prints 74A and 90A, treated as the same courses.",
-   "ADMJ 1 / POLI 10 is not in the closed list and is recorded as a catalog addition."
+   "The catalog text opens with general Bachelor of Science degree boilerplate that does not belong to this certificate; it was ignored.",
+   "Cross-listed versions printed as separate rows (ADMJ 1/POLI 10; ADMJ 3/PARA 3/POLI 13; ADMJ 74A/PARA 74A/PSYC 74A; ADMJ 90A/PARA 90A) are recorded as alternatives, per the note that students receive credit for only one version. Six core courses at 4 units match the stated 24 units.",
+   "Catalog prints ADMJ 74A, PARA 74A, PSYC 74A, ADMJ 90A, PARA 90A; the closed list stores them zero-padded (ADMJ 074A, etc.). They are treated as the same courses, not catalog additions.",
+   "ADMJ 1 and POLI 10 (Introduction to Administration of Justice) are not in the closed list and are marked as catalog additions.",
+   "List A has no printed selection rule; read as choose one course, matching its 3-4 unit range and the 27-28 unit total.",
+   "The catalog metadata lists the award type as Certificate of Achievement-Advanced (COA-A), with Min Units 27.0 and Max Units 28.0, matching the stated total.",
+   "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

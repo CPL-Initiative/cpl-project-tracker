@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Automotive Chassis Technology",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=299",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-technology-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8205,
+  "input_tokens": 7369,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8205,
-    "output_tokens": 915,
+    "input_tokens": 7369,
+    "output_tokens": 935,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 915,
+  "output_tokens": 935,
   "output_tokens_details": {
-   "thinking_tokens": 290
+   "thinking_tokens": 299
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05112,
- "ms": 8475,
- "seconds": 8.9,
+ "cost_usd": 0.04818,
+ "ms": 8949,
+ "seconds": 9.2,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Completion Automotive Chassis Technology",
+   "section_heading": "Program Requirements",
    "measure": "hours",
    "total_units": {
     "min": 324,
@@ -121,9 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Perform undercar inspections and repair suspension, steering, hydraulic and active braking systems"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -171,11 +169,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit Certificate of Completion counted in hours; course hours and the 324-hour total are taken from the catalog, not the state file's 0 units.",
-   "The description says the certificate prepares students for 'an entry-level position in automotive undercar inspection and repair procedures'. This was not recorded as a named career; a reviewer may wish to add it.",
-   "The page prints several Automotive Technology noncredit certificates in a row. Only the Automotive Chassis Technology section was read.",
-   "Elsewhere on the page, the outcomes printed for the Alternative Fuels Technology and Automotive Body Electrical certificates appear swapped. This does not affect this record."
+   "The award is a noncredit Certificate of Completion counted in hours ('Required Core: (324 Hours)', 'Total Required: 324 Hours'); course figures are hours even though the column header reads 'Units'. The metadata's 'Max Units: 324.0' and 'Min Units: 324.0' also give 324.",
+   "The text before 'Program Requirements' is general catalog boilerplate about Bachelor of Science degree requirements and is not part of this award's requirements.",
+   "No program learning outcomes are printed.",
+   "The description mentions preparing for 'an entry-level position in automotive undercar inspection and repair procedures', and the metadata 'Program Header' reads 'Noncredit: Automotive Technician'. Neither is clearly named as a career for this program, so careers is left empty; a reviewer may want to check this."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

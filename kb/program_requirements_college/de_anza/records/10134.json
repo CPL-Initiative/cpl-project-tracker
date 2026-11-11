@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Medical Transcribing with Editing",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=105",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/medical-transcribing-with-editing-fall-2022",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10216,
+  "input_tokens": 7750,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10216,
-    "output_tokens": 1401,
+    "input_tokens": 7750,
+    "output_tokens": 1282,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1401,
+  "output_tokens": 1282,
   "output_tokens_details": {
-   "thinking_tokens": 328
+   "thinking_tokens": 258
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06888,
- "ms": 11768,
- "seconds": 12.2,
+ "cost_usd": 0.05664,
+ "ms": 11623,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -83,12 +83,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement (COA) Medical Transcribing with Editing",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 26,
@@ -125,9 +125,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Be eligible to be employed in a medical facility, hospital, clinic, doctor’s office or research center"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
@@ -245,11 +243,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints HTEC 60G, 60H, 74A, 74B, 74C, 96G; the closed list stores them with a leading zero (HTEC 060G, 060H, 074A, 074B, 074C, 096G). Treated as the same courses, not catalog additions.",
-   "HTEC 60A Basic Medical Terminology (3 units) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
-   "Required Core lists 14 courses summing to 26 units, matching the printed 'Total Required: 26 Units'.",
-   "The outcome names workplaces (medical facility, hospital, clinic, doctor’s office, research center), not job titles; no careers recorded."
+   "The text before 'Program Requirements' is generic Bachelor of Science degree boilerplate and does not belong to this certificate; it was ignored.",
+   "The catalog prints codes without leading zeros (HTEC 60G, 74A, 96G); these were matched to the closed list's HTEC 060G, 074A, 096G etc.",
+   "HTEC 60A (Basic Medical Terminology, 3 units) is in the Required Core but not in the closed list; recorded as a catalog addition.",
+   "Units are De Anza quarter units; total stated as 26 (Required Core 26, Major Required 26, Total Required 26, Min/Max Units 26.0).",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

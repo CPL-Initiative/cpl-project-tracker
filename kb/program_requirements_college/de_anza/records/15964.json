@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
  "award": "A.A. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=131",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/liberal-arts-social-and-behavioral-sciences-emphasis-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 18013,
+  "input_tokens": 18125,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 18013,
-    "output_tokens": 13761,
+    "input_tokens": 18125,
+    "output_tokens": 13204,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,68 +30,42 @@
     "model": null
    }
   ],
-  "output_tokens": 13761,
+  "output_tokens": 13204,
   "output_tokens_details": {
-   "thinking_tokens": 3123
+   "thinking_tokens": 1922
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.34727,
- "ms": 98725,
- "seconds": 99.6,
+ "cost_usd": 0.33658,
+ "ms": 137498,
+ "seconds": 137.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 228,
+   "placed": 230,
    "listed": 232,
-   "share": 0.983,
+   "share": 0.991,
    "missing": [
-    "ASAM33",
-    "ECONC2001",
-    "ECONC2001H",
-    "GEO6"
+    "ECON1",
+    "ECON1H"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 14,
+   "count": 2,
    "codes": [
-    "ECON2",
-    "ECON2H",
-    "HIST18A",
-    "HIST18B",
-    "ICS37",
-    "INTL8",
-    "PARA54",
-    "POLI60A",
-    "POLI60B",
-    "POLI60C",
-    "SOC54",
-    "SOSC60A",
-    "SOSC60B",
-    "SOSC60C"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "flagged": [
-    "ECON2",
-    "ECON2H",
-    "HIST18A",
-    "HIST18B",
-    "ICS37",
-    "INTL8",
-    "PARA54",
-    "POLI60A",
-    "POLI60B",
-    "POLI60C",
-    "SOC54",
-    "SOSC60A",
-    "SOSC60B",
-    "SOSC60C"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "pass": true
   },
@@ -99,44 +73,57 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
     27.0,
     27.0
    ],
-   "stated": [
-    90.0,
-    90.0
-   ],
-   "against": "degree",
-   "ge": null,
+   "against": "program",
    "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     27.0,
-     27.0
-    ],
-    "stated": [
-     27.0,
-     27.0
-    ],
-    "against": "program",
-    "why": []
-   }
+    "'Administration of Justice' chooses units but names no minimum",
+    "'African American Studies' chooses units but names no minimum",
+    "'Anthropology' chooses units but names no minimum",
+    "'Arts' chooses units but names no minimum",
+    "'Asian American Studies' chooses units but names no minimum",
+    "'Business' chooses units but names no minimum",
+    "'Career Life Planning' chooses units but names no minimum",
+    "'Chicanx/Latinx Studies' chooses units but names no minimum",
+    "'Child Development' chooses units but names no minimum",
+    "'Communication Studies' chooses units but names no minimum",
+    "'Comparative Ethnic Studies' chooses units but names no minimum",
+    "'Computer Information Systems' chooses units but names no minimum",
+    "'Economics' chooses units but names no minimum",
+    "'Education' chooses units but names no minimum",
+    "'Environmental Studies' chooses units but names no minimum",
+    "'Film and Television Production' chooses units but names no minimum",
+    "'Geography' chooses units but names no minimum",
+    "'History' chooses units but names no minimum",
+    "'Human Development' chooses units but names no minimum",
+    "'Intercultural Studies' chooses units but names no minimum",
+    "'International Studies' chooses units but names no minimum",
+    "'Journalism' chooses units but names no minimum",
+    "'Mathematics' chooses units but names no minimum",
+    "'Native American and Indigenous Studies' chooses units but names no minimum",
+    "'Paralegal' chooses units but names no minimum",
+    "'Political Science' chooses units but names no minimum",
+    "'Psychology' chooses units but names no minimum",
+    "'Sociology' chooses units but names no minimum",
+    "'Women’s Studies' chooses units but names no minimum"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -152,7 +139,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts (A.A.) Degree Liberal Arts (Social and Behavioral Sciences Emphasis)",
+   "section_heading": "Liberal Arts (Social and Behavioral Sciences Emphasis)",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -169,24 +156,19 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Demonstrate the use of effective language and speech communication skills",
-    "Analyze and solve problems by using thoughtful and logical reasoning skills",
-    "Recognize and value the complexities of living in a multicultural world by demonstrating an appreciation of diversity in its many forms",
-    "Display behaviors that promote the mental and physical well-being of self and others",
-    "Identify basic and foundational theories, concepts and practices in the comprehensive area of emphasis"
-   ],
-   "careers": []
+   "outcomes": [],
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "Program Requirements",
+    "name": "Administration of Justice",
     "rule": "choose_units",
-    "minimum": 27,
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -353,7 +335,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "African American Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "AFAM 10",
       "units": 4,
@@ -388,7 +382,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Anthropology",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "ANTH 2",
       "units": 4,
@@ -450,14 +456,38 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Arts",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "ARTS 3TC",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Asian American Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "ASAM 1",
       "units": 4,
@@ -515,12 +545,43 @@
       "catalog_addition": false
      },
      {
+      "code": "ASAM 33",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Business",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
       "code": "BUS 21",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Career Life Planning",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "CLP 5",
       "units": 3,
@@ -534,7 +595,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Chicanx/Latinx Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "CHLX 10",
       "units": 4,
@@ -562,196 +635,220 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Child Development",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "C D 10G",
+      "code": "C DD010G",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 10H",
+      "code": "C DD010H",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 12",
+      "code": "C DD012.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 50",
+      "code": "C DD050.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 51A",
+      "code": "C DD051A",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 52",
+      "code": "C DD052.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 53",
+      "code": "C DD053.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 54",
+      "code": "C DD054.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 55",
+      "code": "C DD055.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 56",
+      "code": "C DD056.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 57",
+      "code": "C DD057.",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 58",
+      "code": "C DD058.",
       "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 59G",
+      "code": "C DD059G",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 59H",
+      "code": "C DD059H",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 60",
+      "code": "C DD060.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 61",
+      "code": "C DD061.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 63",
+      "code": "C DD063.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 64",
+      "code": "C DD064.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 67",
+      "code": "C DD067.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 68",
+      "code": "C DD068.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 70",
+      "code": "C DD070.",
       "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 71",
+      "code": "C DD071.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 72",
+      "code": "C DD072.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 73",
+      "code": "C DD073.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 74",
+      "code": "C DD074.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 75",
+      "code": "C DD075.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "C D 90",
+      "code": "C DD090.",
       "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Communication Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "COMM 7",
       "units": 4,
@@ -790,7 +887,19 @@
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Comparative Ethnic Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "CETH 8",
       "units": 4,
@@ -832,21 +941,45 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Computer Information Systems",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "CIS 2",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Economics",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "ECON 1",
+      "code": "ECONC2001",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 1H",
+        "code": "ECONC2001H",
         "units": 4,
         "catalog_addition": false
        }
@@ -854,12 +987,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 2",
+      "code": "ECONC2002",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 2H",
+        "code": "ECONC2002H",
         "units": 4,
         "catalog_addition": true
        }
@@ -892,7 +1025,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Education",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "EDUC 1",
       "units": 3,
@@ -906,55 +1051,91 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Environmental Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "E S 1",
+      "code": "E SD001.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 2",
+      "code": "E SD002.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 3",
+      "code": "E SD003.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 4",
+      "code": "E SD004.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "E S 6",
+      "code": "E SD006.",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Film and Television Production",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "F TV 10",
+      "code": "F/TVD010.",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "F TV 10H",
+        "code": "F/TVD010H",
         "units": 4,
         "catalog_addition": false
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Geography",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "GEO 1",
       "units": 4,
@@ -977,12 +1158,31 @@
       "catalog_addition": false
      },
      {
-      "code": "GEO 10",
+      "code": "GEO 6",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
+     {
+      "code": "GEO 10",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "History",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "HIST 3A",
       "units": 4,
@@ -1155,20 +1355,6 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 18A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 18B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "HIST 19A",
       "units": 4,
       "units_max": null,
@@ -1181,7 +1367,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Human Development",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "HUMA 10",
       "units": 4,
@@ -1208,7 +1406,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Intercultural Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "ICS 2A",
       "units": 2,
@@ -1269,14 +1479,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "ICS 37",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
+     }
+    ]
+   },
+   {
+    "name": "International Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "INTL 1",
       "units": 4,
@@ -1292,26 +1507,43 @@
       "catalog_addition": false
      },
      {
-      "code": "INTL 8",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "INTL 33",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Journalism",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "JOUR 2",
       "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Mathematics",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "MATH 17",
       "units": 5,
@@ -1327,18 +1559,30 @@
       "catalog_addition": false
      },
      {
-      "code": "STAT C1000",
+      "code": "STATC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "STAT C1000H",
+        "code": "STATC1000H",
         "units": 5,
         "catalog_addition": false
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Native American and Indigenous Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "NAIS 11",
       "units": 4,
@@ -1373,7 +1617,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Paralegal",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "PARA 3",
       "units": 4,
@@ -1385,13 +1641,7 @@
       "code": "PARA 9",
       "units": 4,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "POLI 9",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -1407,13 +1657,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "PARA 54",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "PARA 67",
@@ -1442,7 +1685,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Political Science",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "POLI 2",
       "units": 4,
@@ -1459,6 +1714,13 @@
      },
      {
       "code": "POLI 5",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLI 9",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -1520,27 +1782,6 @@
       "catalog_addition": false
      },
      {
-      "code": "POLI 60A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLI 60B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLI 60C",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "POLI 75",
       "units": 4,
       "units_max": null,
@@ -1548,20 +1789,32 @@
       "catalog_addition": false
      },
      {
-      "code": "POLS C1000",
+      "code": "POLSC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "POLS C1000H",
+        "code": "POLSC1000H",
         "units": 5,
         "catalog_addition": false
        }
       ],
       "catalog_addition": false
-     },
+     }
+    ]
+   },
+   {
+    "name": "Psychology",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
-      "code": "PSYC C1000",
+      "code": "PSYCC1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -1664,28 +1917,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "SOSC 60A",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOSC 60B",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOSC 60C",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
+     }
+    ]
+   },
+   {
+    "name": "Sociology",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "SOC 1",
       "units": 4,
@@ -1755,14 +1999,19 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "SOC 54",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
+     }
+    ]
+   },
+   {
+    "name": "Women’s Studies",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
      {
       "code": "WMST 1",
       "units": 4,
@@ -1866,35 +2115,44 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ASAM 33",
-    "why": "not in the text"
+    "code": "ECON 1",
+    "why": "not in the text; Economics list prints ECONC2002 Principles of Macroeconomics instead"
    },
    {
-    "code": "GEO 6",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON C2001",
-    "why": "not in the text; catalog prints ECON 2 (likely the earlier number of this course)"
-   },
-   {
-    "code": "ECON C2001H",
-    "why": "not in the text; catalog prints ECON 2H (likely the earlier number of this course)"
+    "code": "ECON 001H",
+    "why": "not in the text; Economics list prints ECONC2002H Principles of Macroeconomics - HONORS instead"
    }
   ],
   "notes": [
-   "The catalog lists courses under subject headings each printed as '(0 Units)'; the description states 'Students complete a minimum of 27 units from one of the four emphasis areas'. All subject lists are recorded as one choose_units block of 27 units; subject headings were not kept as separate blocks.",
-   "total_units 27 is taken from the description's 'minimum of 27 units' for the emphasis area; no separate major total is printed.",
-   "degree_total 90 is from 'Total Required: 90 Units' at the end of the section (De Anza quarter units). GE pattern is De Anza General Education or Cal-GETC, with 'electives as needed to reach at least 90 units'; no GE units printed.",
-   "The PHYS 10 / PHYS 50 lines and 'Total Required: 90 Units' at the top of page 131 belong to the preceding program and were not recorded.",
-   "HIST 3A and HIST 3AH are printed as two separate rows (the HIST 3AH row reads as an 'or HONORS' pair); likewise ICS 17 and ICS 17H. Each is recorded as one course with its honors twin as alternative.",
-   "HIST 3B / HIST 3BH row prints both titles as HONORS; treated as regular/honors pair.",
-   "The Film and Television row is printed 'F / TV 10 / F / TV 10H' (extraction artifact); recorded as F TV 10 with alternative F TV 10H.",
-   "Psychology's first row is printed 'PSYCC 1000'; recorded as PSYC C1000 (Introduction to Psychology).",
-   "PARA 9 / POLI 9 is printed as one row; POLI 9 recorded as an alternative. Many courses are cross-listed (e.g., ADMJ/PARA/POLI, SOC/WMST); the catalog says students receive credit for only one version.",
-   "Codes printed without leading zeros (e.g., ADMJ 74A, C D 10G, ASAM 30) are matched to the closed list's zero-padded codes and not marked as additions.",
-   "No careers are named in the section."
+   "De Anza counts quarter units. The page prints 'Major Required: 27 Credits' (recorded as total_units) and 'Total Required: 90 Units' (recorded as degree_total), plus De Anza GE or Cal-GETC and electives as needed to reach at least 90 units (electives_fill_degree true).",
+   "Each subject-area list is printed with '(0 Units)' and no per-list rule; the text does not state how the 27 units must be chosen across the lists (e.g., any combination or a distribution). Blocks are recorded as choose_units with minimum null and stated null; reviewer should verify the selection rule.",
+   "Honors versions are recorded as alternatives of their base course per the note that students receive credit for only one version. Cross-listed courses (e.g., ADMJ 3/PARA 3/POLI 13, ADMJ 10/SOC 10, PSYC 15/SOC 15, WMST 12/PSYC 12, WMST 28/SOC 28) appear in separate subject blocks; credit is given for only one version.",
+   "Child Development, Environmental Studies and Film/TV codes are printed in a garbled form (e.g., 'C DD012.', 'E SD001.', 'F/TVD010.'); recorded as printed and matched to closed-list C D, E S and F TV courses.",
+   "ECONC2002 and ECONC2002H are not in the closed list (catalog additions); closed list has ECON 1/ECON 001H for Principles of Macroeconomics.",
+   "The beginning of the text contains Bachelor of Science degree requirements unrelated to this A.A. award; ignored. The program description is cut off at the end of the text.",
+   "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

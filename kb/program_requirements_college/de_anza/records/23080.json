@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Chassis and Powertrain",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=62",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/automotive-chassis-and-powertrain-fall-2026v2",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11403,
+  "input_tokens": 7701,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11403,
-    "output_tokens": 1656,
+    "input_tokens": 7701,
+    "output_tokens": 1441,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,46 @@
     "model": null
    }
   ],
-  "output_tokens": 1656,
+  "output_tokens": 1441,
   "output_tokens_details": {
-   "thinking_tokens": 420
+   "thinking_tokens": 384
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07873,
- "ms": 13155,
- "seconds": 13.6,
+ "cost_usd": 0.05962,
+ "ms": 11836,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 12,
    "listed": 12,
-   "share": 0.917,
-   "missing": [
-    "AUTO60"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "AUTO53B"
-   ],
-   "flagged": [
-    "AUTO53B"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    49.5,
-    49.5
+    56.5,
+    56.5
    ],
    "stated": [
-    49.5,
-    49.5
+    56.5,
+    56.5
    ],
    "against": "program",
    "why": []
@@ -85,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -106,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement-Advanced (COA-A) Automotive Chassis and Powertrain",
+   "section_heading": "Automotive Chassis and Powertrain",
    "measure": "units",
    "total_units": {
-    "min": 49.5,
-    "max": 49.5
+    "min": 56.5,
+    "max": 56.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,13 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Perform undercar inspections and repair suspension, steering, hydraulic and active braking systems",
-    "Demonstrate overall operation of an automotive transmission and differential as it relates to service, diagnosis and repair",
-    "Identify basic electrical circuits and diagnose automotive electrical circuit systems",
-    "Apply the basic principles of physics as they work in the automotive industry",
-    "Use written and oral communication skills to write repair orders and speak with customers"
-   ],
+   "outcomes": [],
    "careers": [
     "automotive repair industry"
    ]
@@ -145,8 +133,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 49.5,
-     "max": 49.5
+     "min": 56.5,
+     "max": 56.5
     },
     "courses": [
      {
@@ -157,15 +145,15 @@
       "catalog_addition": false
      },
      {
-      "code": "AUTO 53B",
+      "code": "AUTO 57A",
       "units": 2,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "AUTO 57A",
-      "units": 2,
+      "code": "AUTO 60",
+      "units": 9,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -237,20 +225,17 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AUTO 60",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Catalog labels this award Certificate of Achievement-Advanced (COA-A); units are quarter units (De Anza is on the quarter system).",
-   "Closed-list codes use zero-padded numbers (e.g., AUTO 053A); matched to catalog codes printed as AUTO 53A etc.",
-   "AUTO 53B (Automotive Electromechanical Systems, 2 units) is printed in the required core but absent from the closed list; recorded as a catalog addition.",
-   "Program prerequisite: Approved Automotive Technology Course Sequence Contract. Recommended one year of automotive educational experience (high school, ROP or AUTO 50 series) is not a specific course and was not recorded as a block.",
-   "The A.S. degree in Automotive Chassis and Powertrain that follows prints the same outcomes and core; only the certificate section was read.",
-   "Career entry taken from 'prepares students for an entry-level position in the automotive repair industry'; reviewer may judge whether this counts as a career field."
+   "The text opens with general Bachelor of Science degree requirements, which belong to another part of the catalog and were ignored.",
+   "Catalog codes omit the leading zero (AUTO 53A), while the closed list writes AUTO 053A. These were matched as the same courses.",
+   "Units are quarter units. The total of 56.5 is printed as the Required Core figure, 'Major Required: 56.5 Credits' and 'Total Required: 56.5 Units'.",
+   "The page lists the award type as Certificate of Achievement-Advanced (COA-A).",
+   "The page names one prerequisite: an Approved Automotive Technology Course Sequence Contract.",
+   "The page recommends one year of automotive educational experience, such as De Anza's AUTO 50 series. This is a recommended background, not a specific course, so no recommended block was recorded.",
+   "No program learning outcomes are printed.",
+   "The career entry was read from 'prepares students for an entry-level position in the automotive repair industry'. A reviewer should check whether this counts as a career field."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

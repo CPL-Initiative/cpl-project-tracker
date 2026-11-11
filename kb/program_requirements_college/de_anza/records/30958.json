@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Intermediate Engine Performance Technology",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=61",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/intermediate-engine-performance-technology-fall-2022",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7422,
+  "input_tokens": 7338,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7422,
-    "output_tokens": 784,
+    "input_tokens": 7338,
+    "output_tokens": 992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 784,
+  "output_tokens": 992,
   "output_tokens_details": {
-   "thinking_tokens": 212
+   "thinking_tokens": 397
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04537,
- "ms": 7728,
- "seconds": 8.1,
+ "cost_usd": 0.04919,
+ "ms": 9058,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement (COA) Intermediate Engine Performance Technology",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -121,11 +121,9 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Interpret and analyze automotive ignition, fuel and ignition systems"
-   ],
+   "outcomes": [],
    "careers": [
-    "entry-level technician"
+    "entry-level technician in vehicle ignition, fuel and ignition systems"
    ]
   },
   "blocks": [
@@ -166,10 +164,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes as AUTO 60C/60D/60E; the closed list stores them as AUTO 060C/060D/060E. Treated as the same courses (leading-zero formatting), so catalog_addition is false.",
-   "Units are quarter units (De Anza is on the quarter system); the 18-unit total fits the 12Q to fewer than 24Q award range.",
-   "The page also prints other certificates (Autonomous and Electric Vehicle Technician, Basic Engine Performance Technology, Smog Technician); only the Intermediate Engine Performance Technology section was read."
+   "The catalog prints the codes as AUTO 60C, 60D and 60E. The closed list stores them as AUTO 060C, 060D and 060E. They were matched as the same courses, not as catalog additions.",
+   "The opening text about Bachelor of Science degree requirements is general catalog boilerplate. It does not apply to this certificate and was ignored.",
+   "Units are quarter units. 'Total Required: 18 Units' and 'Max/Min Units: 18.0' agree with the Required Core total.",
+   "No program learning outcomes are printed in the text.",
+   "The page describes the program's audience as 'practicing apprentices and technicians, auto enthusiasts and students seeking to enter the automotive technician workforce'. This was not recorded as a career."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

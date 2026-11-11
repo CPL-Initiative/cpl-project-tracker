@@ -1156,3 +1156,21 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 - `stale_override_issuers` (#3100) names each issuer an override once appended (`classified_by` *curator (CER issuing-agency override)*) that no current primary or additional override names, and the apply prints them. It removes nothing: one credential may rightly carry several issuers (Rule 4), and the apply cannot tell a replaced issuer from a second rightful one. A record the override filled in place carries no mark of it and is not read.
 - Measured on the live files, 2026-11-11: 166 appended records, none stale. Guard: `tests/credential_review_stale_issuer_test.py`.
 - **Not built:** a retire path that removes an issuer. It needs a rule for when one issuer replaces another, which is a person's call.
+
+## S637 (SkyPorpoise, 2026-11-11): related titles, certification names, the rename batch, the canonical model
+
+- **Sam's rulings this run, in order.** The title format (*"Use the cert's official name first and the code in
+  parentheses"*; #3108). At 06:20 PT, relayed by COBIx and confirmed by him in session: *"Keep the college as issuer on
+  the P1 title"*. At 06:50 PT on #3110: the canonical title carries the credential's issuer and each local exhibit its
+  path and assessor, which replaced the 06:20 note; then rulings 3 to 6 (bundles, the AWS and ACE tags, trainers, the
+  ITPI ask). `docs/reference/canonical_credential_model.md`, DR-34 (#3114).
+- **A ruling on a model question can move within the hour.** The issuer was built, tested and recorded twice. Build
+  the reversible half until the ruling is marked final (Sky's reply on #3111, item 2).
+- **A test that pins a dated ruling tells you when you are about to reverse it.** `tests/exhibits.test.js` failed on
+  *"a course aligned to an ASE test keeps the proposal's issuer"* (Sam, 2026-10-31) the moment the format filled ASE.
+  That stopped a silent reversal in #3108; #3114 changed the same test on his word.
+- **The rename path already existed.** Approving the batch writes `unified_title_override` and
+  `unified_title_merge_confirm`; the dry run renames the earliest-saved title of a group and queues the rest as
+  merges, so the title that leads is saved a second earlier.
+- **A merge keeps every distinct issuer** (`fold_credentials` dedupes on issuer and trainer only). Folding a
+  college-issued title into an ASE title leaves two issuer records. Fix that before the 16 merges apply (Sky on #3110).
