@@ -153,6 +153,21 @@ const ROWS = [
   check("exhibits: the overlay read asks for the resolution field", q && /issuer_resolution/.test(decodeURIComponent(q.url)),
     t.calls.filter((c) => /kb_curation/.test(c.url)).map((c) => decodeURIComponent(c.url)).join(" | ").slice(0, 400));
 
+  // ── exhibits.js: a title with a family (#3117) and a fold resolution (#3116) shows both, each saying its own thing ──
+  t = await boot({ hash: "#exhibits/list", signedIn: true, curation: ROWS.concat([
+    { course_id: P + "Emergency Medical Technician", field: "credential_family", value: "ASE Certificate Bundles", reviewed_at: "2026-11-11T17:00:00Z" }]) });
+  check("exhibits: the overlay reads the family beside the resolution", t.M._state.cs.overlay["Emergency Medical Technician"].family === "ASE Certificate Bundles"
+    && t.M._state.cs.overlay["Emergency Medical Technician"].issuer === "NREMT", JSON.stringify(t.M._state.cs.overlay["Emergency Medical Technician"]));
+  titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
+  const famLine = txt(panel(t.d).querySelector(".exh-pn-fam"));
+  ed().open = true; await settle();
+  const both = Array.from(ed().querySelectorAll(".exh-fold-line")).map(txt);
+  check("exhibits: the panel names the family and the editor keeps the fold line",
+    famLine === "Family: ASE Certificate Bundles. This title stays its own credential, adopted on its own."
+    && both[0] === "Set by the fold on 2026-11-11", famLine + " | " + JSON.stringify(both));
+  check("exhibits: the family line says nothing of the issuer, the fold line nothing of the family",
+    !/issu|fold/i.test(famLine) && !both.some((x) => /famil/i.test(x)));
+
   // ── map_export.js: the export takes the resolved issuer ──
   {
     const dom = new JSDOM('<!doctype html><html><body><div id="map-export-root"></div></body></html>', { url: "https://example.org/", runScripts: "dangerously" });

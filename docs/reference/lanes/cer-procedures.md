@@ -47,21 +47,24 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   The guarded writes and the undo have run only against a test double.
 - **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
   guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
-  `<date>-<2-9>` only (run 43104136989 refused the three S638 folders, nothing written); #3120 renames them.
+  `<date>-<2-9>` only (run 43104136989 refused the first names); #3120 renamed them `kb/cer_decisions_out/2026-11-11`,
+  `-2`, `-3`.
 - **Exhibit subject fill (#3119):** `kb/_exhibit_subject_fill.py` gives a credential with no Common SUBJ the subject of
   the courses colleges credit for it (several colleges first, then one), else its issuer family's; title words, TOP and
   CIP never decide. First live run (cer-procedures run 43104720166, 21:41Z): 747 `subj_override` and 747 `subj_source`
   rows under `exhibit-subject-s638@bot`; undo is the cohort delete. `kb/exhibit_subject_out/worklist.json` lists the
   rest (362 credentials, 429 exhibits, 70 with a suggestion); the Commons' Exhibit card counts `no_subject`.
-- **A credential family is a field, never a fold (#3117, open):** `kb/reference/credential_families.json` and
+- **A credential family is a field, never a fold (#3117, merged):** `kb/reference/credential_families.json` and
   `kb/_family_tag_plan.py`; plan `kb/receipts/credential_family_2026-11-11_s638/` converts 25 and holds 6. ASE bundles
   keep their titles (Sam: *"A, C as recommended"*).
 - **Held for Sam (his call, outward naming):** four ASE Master titles; Advanced Electrical and Electronic Systems (the
   ASE plan retires it); ASE Certification (any A1-A8).
-- **NEXT, in order:** (1) merge #3120, then `cer-decision-apply.yml` dry-run then commit on the ASE plan, phase 1 then
-  phase 2; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
+- **NEXT, in order:** (0) the family plan (not run; 47 KB, opens with a temp table, which the `execute_sql` guard
+  blocks): regenerate from a fresh live read (`kb/_family_tag_plan.py --rows`), apply by a route with a receipt, confirm
+  one count of `credential-family-s638@bot`; (1) read phase 1's commit (run 43109363928; dry run 5 write, 9 replace, 11
+  retire, 0 held), then phase 2 (`-2`), dry run then commit; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
   #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
-  plan phase 3; (5) merge #3117 and run the family plan from a fresh live read (25 tags); (6) the rename batch proposing
+  plan phase 3 (`-3`); (5) the owed decision sheet; (6) the rename batch proposing
   "ASE Certificate Bundles: A4 + A5" titles, for Sam's one approval; (7) the credentials still without a subject, as one
   batch (try a web search on an anomaly first, Sam 2026-11-11); (8) the hourly trigger for the fold apply; (9) the issuer
   registry (official name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (10) the trainer

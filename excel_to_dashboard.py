@@ -7955,6 +7955,7 @@ def export_credential_reference():
                 issuer_all.append(_ia)
                 _iseen.add(_ia)
         trainer_val = primary.get("training_agency")
+        family_val = next((c.get("family") for c in creds if c.get("family")), "")
         # Every distinct training site across the records, emitted only when >1
         # (the issuers pattern); a curator's list (the Exhibits panel's
         # training_sites, resolved by kb/_apply_credential_review.py) replaces it
@@ -8017,6 +8018,9 @@ def export_credential_reference():
             **({"issuers": issuer_all} if len(issuer_all) > 1 else {}),
             "trainer": trainer_val,
             **({"trainers": trainer_all} if len(trainer_all) > 1 else {}),
+            # The credential family the title belongs to (Sam, 2026-11-11: each ASE bundle stays its own title
+            # and carries the family; kb/_apply_credential_review.py promote_families). Emitted only when set.
+            **({"family": family_val} if family_val else {}),
             "conf_title": conf_modal,
             "conf_issuer": primary.get("confidence_issuer", 0),
             "quality_flag": qflag_val,

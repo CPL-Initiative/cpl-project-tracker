@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T22:05:58Z",
+  "written_at": "2026-11-11T22:12:31Z",
   "session": 638,
   "moniker": "SkyTamarind",
   "run": "Sam's session",
@@ -464,18 +464,18 @@
     {
       "day": "2026-11-11",
       "active": 20282,
-      "complete": 13747,
+      "complete": 13777,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-11T11:12:00Z"
+    "at": "2026-11-12T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-11",
-    "gaps": 3014,
+    "gaps": 3005,
     "parts": {
       "links": {
         "catalog": [
@@ -492,7 +492,7 @@
         ]
       },
       "roep": [
-        19156,
+        19147,
         20282
       ],
       "coci": [

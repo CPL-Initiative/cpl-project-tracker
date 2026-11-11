@@ -653,7 +653,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json` | none found | scripts: `kb/_ib_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json` | scripts: `kb/_ib_fold_apply.py` | — |
 | `kb/credential_review_overlay.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_fold_unclassified.py` | scripts: `kb/_apply_credential_review.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
-| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_cpl_ai_join.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_cred_rename_undo.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/credentials.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_audit_exhibits.py`, `kb/_build_commons_status.py`, `kb/_build_cpl_ai_join.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_cred_rename_undo.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/_verify_issuer_preseed.py`, `kb/classify_exhibits.py`, `kb/credential_aliases.py` | scripts: `kb/_apply_credential_review.py`, `kb/_curation_credentials_01.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/crnc_mirrors.json` | scripts: `excel_to_dashboard.py`, `kb/_detect_crnc_mirrors.py`, `kb/_rekey_crnc_mirrors.py` | — |
 | `kb/crossdisc_out/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/csr_out/confirm` | none found | committed by: `csr-confirm.yml` |
@@ -794,6 +794,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/credential_engine_top50.json` | scripts: `kb/_build_adopt_page.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_fetch_ce_top50.py` | scripts: `kb/_fetch_ce_top50.py` |
 | `kb/reference/credential_engine_top50_ctids.json` | scripts: `kb/_fetch_ce_top50.py` | — |
 | `kb/reference/credential_engine_top50_map_check.json` | scripts: `kb/_build_adopt_page.py`, `kb/_build_it_ai_credential_catalog.py` | — |
+| `kb/reference/credential_families.json` | scripts: `kb/_apply_credential_review.py`, `kb/_build_exhibits_related.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_family_tag_plan.py` | — |
 | `kb/reference/credential_registry_national_sample.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/csr_quarterly_baseline.json` | scripts: `kb/_csr_quarterly_probe.py` | — |
 | `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
@@ -1029,6 +1030,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cred_rename_fold_issuer_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_catalog_widening_test.py` | workflows: `js-tests.yml` | — |
+| `tests/credential_family_fold_contact_test.py` | workflows: `js-tests.yml` | — |
+| `tests/credential_family_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_reference_statewide_basis_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_review_sites_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_review_stale_issuer_test.py` | workflows: `js-tests.yml` | — |
@@ -1379,5 +1382,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 850 file
-datasets · 195 external services · 551 consumers · 65 workflows · 40 tabs.
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 853 file
+datasets · 195 external services · 553 consumers · 65 workflows · 40 tabs.
