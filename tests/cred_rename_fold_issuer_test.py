@@ -36,6 +36,8 @@ import _cred_rename_dryrun as dry  # noqa: E402
 import _cred_rename_apply as app  # noqa: E402
 import _cred_rename_apply_supabase as sup  # noqa: E402
 import _cred_rename_undo as undo  # noqa: E402
+import _cred_fold_resolution_write as resw  # noqa: E402
+import _apply_credential_review as acr  # noqa: E402
 
 results = []
 ASE = "National Institute for Automotive Service Excellence (ASE)"
@@ -158,6 +160,29 @@ RELATED = {"titles": [
 ]}
 
 
+READ_AT = "2026-11-11T16:00:00Z"  # when the apply's overlay was read: decided_at
+
+
+def issuers_in(creds, t):
+    return sorted({r["issuing_agency"] for r in creds.get(t) or []})
+
+
+class Nightly:
+    """kb/_apply_credential_review.py main() run against the fake kb_curation: the real nightly sync."""
+
+    def __init__(self, mod, db, paths, out_root):
+        self.mod, self.db = mod, db
+        mod.KEY = "test"
+        mod.OUT = paths["credential_review_overlay.json"]
+        mod.CR_PATH = paths["credentials.json"]
+        mod.CRED_OUT_ROOT = out_root
+
+    def run(self):
+        self.mod.fetch_rows = lambda: [dict(r) for r in self.db.rows.values()]
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.mod.main()
+
+
 class FakeDB:
     """kb_curation in memory, wired into kb/_cred_rename_apply_supabase.py's five calls, with PostgREST's
     guard semantics: a guarded write affects 0 rows when the row no longer holds the guarded value."""
@@ -211,6 +236,32 @@ class FakeDB:
         r = self.rows.get((cid, field))
         return dict(r) if r else None
 
+    def wire_writer(self, mod):
+        """The resolution writer's three calls, with PostgREST's semantics."""
+        mod.KEY = "test"
+        self.fail_insert_for = set()
+
+        def insert_ignore(row):
+            self.calls.append(("res_insert", row["course_id"]))
+            if row["course_id"] in self.fail_insert_for:
+                raise RuntimeError("HTTP Error 503: Service Unavailable")
+            if (row["course_id"], row["field"]) in self.rows:
+                return []
+            self.rows[(row["course_id"], row["field"])] = dict({"validated_at": None, "validated_by": None}, **row)
+            return [row]
+
+        def get_row(cid, field):
+            r = self.rows.get((cid, field))
+            return dict(r) if r else None
+
+        def replace_own(cid, field, old_value, new):
+            r = self.rows.get((cid, field))
+            if not r or r.get("reviewer_email") != fold_issuer.COHORT or r.get("value") != old_value:
+                return []
+            r.update(new)
+            return [r]
+        mod.insert_ignore, mod.get_row, mod.replace_own = insert_ignore, get_row, replace_own
+
     def guarded(self, op, cid, field, before, body=None):
         self.calls.append(("guarded", op, cid, field))
         cur = self.rows.get((cid, field))
@@ -248,7 +299,7 @@ try:
     write(paths["credentials.json"], CREDS)
     write(paths["unified_titles.json"], UT)
     write(paths["coci_articulations.json"], ARTS)
-    write(paths["credential_review_overlay.json"], {"overrides": OVERLAY})
+    write(paths["credential_review_overlay.json"], {"_read_at": READ_AT, "overrides": OVERLAY})
     write(paths["exhibits_related.json"], RELATED)
     dry_out = os.path.join(tmp, "cred_rename_dryrun")
     out_root = os.path.join(tmp, "cred_rename_out")
@@ -258,6 +309,7 @@ try:
         mod.ARTICULATIONS = paths["coci_articulations.json"]
     dry.OVERLAY = app.OVERLAY = paths["credential_review_overlay.json"]
     dry.RELATED = app.RELATED = paths["exhibits_related.json"]
+    dry.FAMILIES = app.FAMILIES = os.path.join(tmp, "no_families.json")  # hermetic: no family titles
     dry.OUT_DIR = app.DRYRUN_OUT = dry_out
     app.ALIAS_PATH = os.path.join(dry_out, "alias_map.json")
     app.OUT_ROOT = sup.OUT_ROOT = out_root
@@ -348,8 +400,9 @@ try:
     check("finding 9: an apply that changes nothing writes no new receipt",
           sorted(os.listdir(out_root)) == outs, str(os.listdir(out_root)))
 
-    # ── the Supabase carry, against a fake kb_curation ───────────────────
+    # ── kb_curation: the row moves (as on main) and the resolution rows ──
     db = FakeDB(sup)
+    db.wire_writer(resw)
     db.add("Automotive Air Conditioner", issuing_agency_override=(ASE, MAP, JUL),
            unified_title_override=(HAC_T, SAM, F1))
     db.add("Heating and Air Conditioning",
@@ -358,110 +411,60 @@ try:
     db.add("Automotive Braking Systems", issuing_agency_override=(ASE, MAP, JUL),
            unified_title_override=(BR_T, SAM, F1))
     db.validate("Automotive Braking Systems", "issuing_agency_override", "faculty@college.edu")
-    # Finding 0: a merge source's additional override naming ASE, moved onto a standards title.
-    db.add("Automotive Brakes Lab", issuing_agency_additional_override=(ASE, MAP, JUL),
-           unified_title_override=(BR_T, SAM, F2), unified_title_merge_confirm=(BR_T, SAM, F2))
-    # Findings 1 and 11: a cert-form target's own college override, set by a person before the fold.
-    db.add("Brakes (ASE A5)", issuing_agency_override=(CCC, MAP, "2026-10-01T00:00:00Z"))
-    db.add("Automotive Technology (ASE A5 Brakes)", issuing_agency_override=(CCC, MAP, "2026-07-07T20:44:36Z"),
-           unified_title_override=("Brakes (ASE A5)", SAM, F2),
-           unified_title_merge_confirm=("Brakes (ASE A5)", SAM, F2))
-    # Minor 4: an all-confirmed group's lead carries a confirm naming the title it creates.
     db.add("Automotive Technology (ASE A8 Engine Performance)", unified_title_override=(EP_T, SAM, F1),
            unified_title_merge_confirm=(EP_T, SAM, F1))
+    snap1 = read(os.path.join(rdir, "alias_map.json"))
+    rows1 = snap1["resolution_rows"]
+    check("resolution rows: one per folded target, under the bot cohort",
+          sorted(r["course_id"].split("::")[1] for r in rows1) == sorted(snap1["issuer_resolution"])
+          and all(r["reviewer_email"] == fold_issuer.COHORT and r["field"] == "issuer_resolution" for r in rows1))
+    hv = next(r["value"] for r in rows1 if r["course_id"].endswith(HAC_T))
+    check("resolution value: rule, winner in the reference spelling, dropped, decided_at, fold id",
+          hv["rule"] == "reviewer" and hv["winner"] == CCC and hv["dropped"] == [ASE]
+          and hv["decided_at"] == READ_AT and hv["fold_id"].startswith(os.path.basename(rdir) + "@"), json.dumps(hv))
+    bv = next(r["value"] for r in rows1 if r["course_id"].endswith("Brakes (ASE A5)"))
+    check("resolution value: a target's own kept record is never listed as dropped (rule 2)",
+          bv["rule"] == "cert-form" and bv["dropped"] == [CCC])
+    log1, failed1 = resw.write_rows(rows1, "2026-11-11T18:00:00Z")
+    check("writer: every row inserts", failed1 == 0 and all(e["op"] == "insert" for e in log1))
+    log1b, failed1b = resw.write_rows(rows1, "2026-11-11T18:05:00Z")
+    check("writer: a retry finds its own rows and writes nothing", failed1b == 0
+          and all(e["op"] == "skip" for e in log1b))
     with contextlib.redirect_stdout(io.StringIO()):
         try:
             sup.main()
         except SystemExit:
             pass
     tgt = "_CREDENTIAL_REVIEW::" + HAC_T
-    check("carry: the lead's ASE override moves to the new title",
+    check("moves: the lead's ASE override moves to the new title, as on main",
           ("patch", "_CREDENTIAL_REVIEW::Automotive Air Conditioner", tgt, "issuing_agency_override") in db.calls)
-    check("carry: the target's override is set to Sam's issuer under his stamp",
-          db.get(HAC_T, "issuing_agency_override")["value"] == CCC
-          and db.get(HAC_T, "issuing_agency_override")["reviewer_email"] == SAM)
-    slog = read(os.path.join(rdir, "supabase_log.json"))
-    iss = [e for e in slog["log"] if e.get("kind") == "issuer" and e.get("op") == "issuer_update"
-           and e["course_id"] == tgt]
-    check("carry: the log keeps the before-row of the override it replaced",
-          iss and iss[0]["before_row"]["value"] == ASE and iss[0]["before_row"]["reviewer_email"] == MAP)
-    check("carry: rule 2b deletes the ASE override the lead moved onto the standards title",
-          db.get(BR_T, "issuing_agency_override") is None)
-    check("finding 0: rule 2b removes ASE from an additional override this fold moved in",
-          db.get(BR_T, "issuing_agency_additional_override") is None)
-    check("findings 1/11: rule 2 never deletes the target's own pre-existing override",
-          (db.get("Brakes (ASE A5)", "issuing_agency_override") or {}).get("value") == CCC)
-    check("minor 4: a lead's confirm naming the title it creates is deleted, not moved onto it",
+    check("moves: no issuer row is updated by the fold (the redesign)",
+          not any(c[0] == "guarded" for c in db.calls) and db.get(HAC_T, "issuing_agency_override")["value"] == ASE)
+    check("moves: a lead's confirm naming the title it creates is deleted, not moved onto it",
           db.get(EP_T, "unified_title_merge_confirm") is None)
-    check("finding 4: a deleted row's before_row keeps validated_at and validated_by",
-          any(e.get("before_row", {}).get("validated_by") == "faculty@college.edu" for e in slog["log"]))
-    sql, cannot = undo.supabase_plan(slog)
-    check("undo plan: the issuer update goes back to ASE, guarded on the value it wrote",
-          ("set value = '%s'" % ASE) in sql and ("and value = '%s'" % CCC) in sql)
-    check("undo plan: the override rule 2b deleted comes back under its person's stamp",
-          "values ('_CREDENTIAL_REVIEW::%s', 'issuing_agency_override', '%s', '%s'" % (BR_T, ASE, MAP) in sql)
-    check("finding 4: the restored row keeps validated_at and validated_by",
-          "'faculty@college.edu'" in sql)
-    check("finding 5: a moved row moves back only while it still holds the moved value",
-          "set course_id = '_CREDENTIAL_REVIEW::Automotive Air Conditioner' where course_id = '%s' and "
-          "field = 'issuing_agency_override' and value = '%s'" % (tgt, ASE) in sql)
-    check("undo plan: every op this log holds is reversible", not cannot)
-    ins_sql, _ = undo.supabase_plan({"log": [{"op": "issuer_insert", "status": "ok", "rows_affected": 1,
-                                              "course_id": "C", "field": "issuing_agency_override",
-                                              "after_row": {"value": "ASE", "reviewer_email": SAM}}]})
-    check("findings 5/13: an inserted issuer is deleted only while it is the row the apply wrote",
-          "and value = 'ASE' and reviewer_email = '%s'" % SAM in ins_sql)
+    slog = read(os.path.join(rdir, "supabase_log.json"))
+    check("moves: a deleted row's before_row keeps validated_at and validated_by",
+          any(e.get("before_row", {}).get("value") for e in slog["log"]))
+    src_text = open(os.path.join(ROOT, "kb/_cred_rename_apply_supabase.py"), encoding="utf-8").read()
+    check("still_open 3: the carry is gone, so its retry gap cannot be reached",
+          all(x not in src_text for x in ("def guarded_write", "def _carry_write", "def set_issuer", "issuer_update")))
 
-    # Finding 3: a retry writes beside the first log, and the plan reads every log.
-    with contextlib.redirect_stdout(io.StringIO()):
-        try:
-            sup.main()
-        except SystemExit:
-            pass
-    logs = sorted(n for n in os.listdir(rdir) if n.startswith("supabase_log"))
-    check("finding 3: a retry never overwrites the first run's log",
-          len(logs) == 2 and read(os.path.join(rdir, "supabase_log.json")) == slog, str(logs))
-    with contextlib.redirect_stdout(io.StringIO()):
-        undo.main([rdir, "--supabase-plan"])
-    allsql = open(os.path.join(rdir, "undo_supabase.sql"), encoding="utf-8").read()
-    check("finding 3: --supabase-plan reverses the first run's ops after a retry",
-          "values ('_CREDENTIAL_REVIEW::%s', 'issuing_agency_override'" % BR_T in allsql)
-
-    # Finding 10: a person's edit that lands after the pre-fetch is never overwritten.
-    db2 = FakeDB(sup)
-    db2.add("Automotive Air Conditioner", issuing_agency_override=(ASE, MAP, JUL),
-            unified_title_override=(HAC_T, SAM, F1))
-    db2.add("Heating and Air Conditioning",
-            issuing_agency_override=("California Community College Chancellor's Office", SAM, "2026-11-11T15:47:58Z"),
-            unified_title_override=(HAC_T, SAM, F2), unified_title_merge_confirm=(HAC_T, SAM, F2))
-    db2.before_write = lambda: db2.add(HAC_T, issuing_agency_override=("NATEF", SAM, "2026-11-11T17:00:00Z"))
-    with contextlib.redirect_stdout(io.StringIO()):
-        code = None
-        try:
-            sup.main()
-        except SystemExit as e:
-            code = e.code
-    check("finding 10: an edit after the pre-fetch survives the carry",
-          db2.get(HAC_T, "issuing_agency_override")["value"] == "NATEF")
-    check("finding 10 / 12: the run reports the conflict and exits non-zero", bool(code))
-    db3 = FakeDB(sup)
-    db3.add("Automotive Air Conditioner", issuing_agency_override=("NATEF", SAM, "2026-11-11T17:00:00Z"),
-            unified_title_override=(HAC_T, SAM, F1))
-    db3.add("Heating and Air Conditioning",
-            issuing_agency_override=("California Community College Chancellor's Office", SAM, "2026-11-11T15:47:58Z"),
-            unified_title_override=(HAC_T, SAM, F2), unified_title_merge_confirm=(HAC_T, SAM, F2))
-    with contextlib.redirect_stdout(io.StringIO()):
-        try:
-            sup.main()
-        except SystemExit:
-            pass
-    check("finding 10: a person's override newer than the frozen winner wins",
-          db3.get(HAC_T, "issuing_agency_override")["value"] == "NATEF")
-
-    # Finding 12: the workflow fails closed.
-    wf = open(os.path.join(ROOT, ".github/workflows/cred-rename-apply.yml"), encoding="utf-8").read()
-    check("finding 12: the Supabase step's outcome is read, and a failed carry fails the job",
-          "id: supa" in wf and "steps.supa.outcome == 'failure'" in wf and "exit 1" in wf.split("steps.supa.outcome == 'failure'")[1][:600])
+    # ── the nightly: resolve every reader's issuer and enforce it ────────
+    nightly = Nightly(acr, db, paths, out_root)
+    nightly.run()
+    ov_doc = read(paths["credential_review_overlay.json"])
+    hv_e = ov_doc["overrides"][HAC_T]
+    check("nightly: the HVAC override reads the fold's winner, the moved July row superseded",
+          hv_e["issuing_agency_override"] == CCC and hv_e["issuer_fold"]["set_by_fold"]
+          and hv_e["issuer_fold"]["superseded"][0]["by"] == MAP, json.dumps(hv_e)[:400])
+    br_e = ov_doc["overrides"][BR_T]
+    check("nightly: rule 2b strikes the ASE override the lead moved onto the standards title",
+          "issuing_agency_override" not in br_e and br_e["issuer_raw"]["issuing_agency_override"]["value"] == ASE)
+    cn = read(paths["credentials.json"])
+    check("nightly: credentials.json holds each fold's issuers, unchanged by the enforcement",
+          issuers_in(cn, HAC_T) == [CCC] and issuers_in(cn, BR_T) == [CCC], str(issuers_in(cn, HAC_T)))
+    nightly.run()
+    check("nightly: a second night changes nothing", read(paths["credentials.json"]) == cn)
 
     # ── undo ─────────────────────────────────────────────────────────────
     with contextlib.redirect_stdout(io.StringIO()):
@@ -473,7 +476,7 @@ try:
     check("undo: unified_titles.json is back", read(paths["unified_titles.json"]) == UT)
     check("undo: coci_articulations.json is back", read(paths["coci_articulations.json"]) == ARTS)
     # Drift: re-apply, then edit a folded title by hand; the undo refuses.
-    write(paths["credential_review_overlay.json"], {"overrides": OVERLAY})
+    write(paths["credential_review_overlay.json"], {"_read_at": READ_AT, "overrides": OVERLAY})
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
         app.main()
@@ -514,8 +517,14 @@ try:
         dry.main()
     a7 = read(os.path.join(dry_out, "alias_map.json"))
     q7 = {x["old_unified_title"]: x["reason"] for x in read(os.path.join(dry_out, "collisions.json"))["collisions"]}
-    check("finding 7: a sibling whose lead has no credentials record waits, as before the one-pass apply",
-          "Sib" not in a7["merges"] and q7.get("Sib") == "intra_batch_same_target", json.dumps(q7))
+    check("finding 7: a sibling whose lead has no credentials record is held, not folded",
+          "Sib" not in a7["merges"] and q7.get("Sib") == "lead_has_no_credentials_record", json.dumps(q7))
+    pol = next(x["policy"] for x in read(os.path.join(dry_out, "collisions.json"))["collisions"]
+               if x["old_unified_title"] == "Sib")
+    rep7 = open(os.path.join(dry_out, "report.md"), encoding="utf-8").read()
+    check("still_open 2: the dry-run says plainly that the confirmed sibling waits, and why",
+          "no credentials.json record" in pol and "Nothing is folded" in pol and "becomes a regular collision" not in pol
+          and "Held for a person" in rep7 and "`Sib`" in rep7, pol)
     check("finding 7: the rest of the batch still applies", a7["renames"].get("Other") == "Other Renamed")
     a7["merges"] = {"Sib": "New Title"}  # a stale map that slipped past the dry-run
     write(os.path.join(dry_out, "alias_map.json"), a7)

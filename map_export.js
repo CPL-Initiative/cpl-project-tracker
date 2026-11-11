@@ -100,7 +100,7 @@
   // payload with an "overlay unavailable" note.
   function fetchOverlay() {
     var PAGE = 1000;
-    var url = REST + "/kb_curation?select=course_id,field,value"
+    var url = REST + "/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(KEY_PREFIX) + "%25"
       + "&order=course_id.asc,field.asc";
     var out = [];
@@ -124,9 +124,21 @@
         if (!t) return;
         var rec = m[t] = m[t] || {};
         if (row.field === "unified_title_override") rec.utitle = row.value || "";
-        else if (row.field === "issuing_agency_override") rec.issuer = row.value || "";
-        else if (row.field === "issuing_agency_additional_override") rec.issuer2 = row.value || "";
+        else if (row.field === "issuing_agency_override") { rec.issuer = row.value || ""; rec.issuerAt = row.reviewed_at || ""; }
+        else if (row.field === "issuing_agency_additional_override") { rec.issuer2 = row.value || ""; rec.issuer2At = row.reviewed_at || ""; }
         else if (row.field === "training_agency_override") rec.trainer = row.value || "";
+        else if (row.field === "issuer_resolution") rec.resolution = row.value || "";
+      });
+      // A credential fold's issuer resolution (#3116) resolves the issuer rows through issuer_resolution.js, the
+      // one browser port of kb/fold_issuer.py: a struck issuer is left out, so the baked (folded) issuer exports.
+      var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+      if (R) Object.keys(m).forEach(function (t) {
+        var rec = m[t], res = R.parse(rec.resolution);
+        if (!res) return;
+        var got = R.resolve({ issuing_agency_override: { value: rec.issuer || "", at: rec.issuerAt || "" },
+                              issuing_agency_additional_override: { value: rec.issuer2 || "", at: rec.issuer2At || "" } }, res);
+        if (got.issuer) rec.issuer = got.issuer; else delete rec.issuer;
+        if (got.issuer2) rec.issuer2 = got.issuer2; else delete rec.issuer2;
       });
       return { ok: true, map: m };
     }).catch(function () { return { ok: false, map: {} }; });

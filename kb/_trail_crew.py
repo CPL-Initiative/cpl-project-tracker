@@ -114,7 +114,19 @@ def apply_overlay(rows, overlay_path):
         key = (r.get("course_id") or "")
         if not key.startswith(prefix):
             continue
-        ov[key[len(prefix):]][r.get("field")] = r.get("value") or ""
+        e = ov[key[len(prefix):]]
+        e[r.get("field")] = r.get("value") or ""
+        e.setdefault("field_reviews", {})[r.get("field")] = {"by": r.get("reviewer_email") or "",
+                                                             "at": r.get("reviewed_at") or ""}
+    # A fold's issuer resolution (#3116) resolves the issuer rows through the one resolver.
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import fold_issuer
+    undone = fold_issuer.undone_fold_ids(os.path.join(os.path.dirname(os.path.abspath(__file__)), "cred_rename_out"))
+    for t, e in list(ov.items()):
+        res = fold_issuer.parse_resolution(e.get(fold_issuer.RESOLUTION_FIELD))
+        if res and not fold_issuer.voided(res, t, undone):
+            # A struck override leaves the key out, so the baked issuer (credentials.json, folded) stands.
+            ov[t] = fold_issuer.effective_issuer(e, res)
     n_t = n_i = 0
     for row in rows:
         o = ov.get(row["ut"])

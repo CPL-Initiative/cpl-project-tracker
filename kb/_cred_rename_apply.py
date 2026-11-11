@@ -73,6 +73,7 @@ import fold_issuer  # noqa: E402
 
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
 RELATED = os.path.join(HERE, "exhibits_related.json")
+FAMILIES = os.path.join(HERE, "reference", "credential_families.json")
 DRYRUN_OUT = os.path.join(HERE, "cred_rename_dryrun")
 ALIAS_PATH = os.path.join(DRYRUN_OUT, "alias_map.json")
 OUT_ROOT = os.path.join(HERE, "cred_rename_out")
@@ -341,18 +342,21 @@ def _out_dir():
     return out_dir
 
 
-def write_snapshot(alias_doc, results, undo=None, issuer_plan=None):
-    out_dir = _out_dir()
+def write_snapshot(alias_doc, results, undo=None, issuer_plan=None, out_dir=None, resolution_rows=None):
+    out_dir = out_dir or _out_dir()
     # Frozen alias_map (the rollback basis).
     snap = dict(alias_doc)
     snap["_applied_at"] = NOW_ISO
     snap["_apply_results"] = {f: {k: v for k, v in r.items() if not k.startswith("_")}
                               for f, r in results.items()}
-    # The issuer decision per fold group, frozen: kb/_cred_rename_apply_supabase.py carries it onto
-    # kb_curation, and kb/_cred_rename_undo.py reads its before-values.
+    # The issuer decision per fold group, frozen for the receipt and the undo.
     snap["issuer_resolution"] = {t: {"resolution": g["resolution"], "exceptions": g["exceptions"],
                                      "members": g["members"]}
                                  for t, g in (issuer_plan or {}).items()}
+    # The rows kb/_cred_fold_resolution_write.py writes to kb_curation, one per folded target
+    # (field issuer_resolution, cohort fold_issuer.COHORT). Nothing else in kb_curation changes for
+    # the issuer: the nightly enforces these (kb/_apply_credential_review.py).
+    snap["resolution_rows"] = resolution_rows or []
     _atomic_write_json(os.path.join(out_dir, "alias_map.json"), snap)
     # undo.json — the exact before/after of every value this apply changed (kb/_cred_rename_undo.py).
     if undo is not None:
@@ -395,6 +399,12 @@ def _render_validation_md(snap, results, issuer_plan=None, full_results=None):
         for old, target in sorted((snap.get("merges") or {}).items()):
             lines.append(f"| `{old}` | ⇒ `{target}` |")
     lines.append("")
+    if snap.get("held_family"):
+        lines.append("## Held: folds into a family title (never folded)")
+        lines.append("")
+        for h in snap["held_family"]:
+            lines.append(f"- `{h['old']}` ({h['kind']}) into `{h['target']}`: {h['why']}")
+        lines.append("")
     lines.append("## Issuer of each folded title (kb/fold_issuer.py)")
     lines.append("")
     if not issuer_plan:
@@ -428,6 +438,15 @@ def _render_validation_md(snap, results, issuer_plan=None, full_results=None):
 
 def main():
     alias_doc, renames, merges = load_alias_map()
+    # A fold into a declared family title is never applied (Sam's ruling C), whatever the alias map says.
+    renames, merges, held_family = fold_issuer.hold_family_folds(renames, merges, fold_issuer.family_titles(FAMILIES))
+    for h in held_family:
+        print(f"  {h['old']} into {h['target']}: {h['why']}")
+    alias_doc = dict(alias_doc, renames=renames, merges=merges,
+                     held_family=(alias_doc.get("held_family") or []) + held_family)
+    if not renames and not merges:
+        print("  nothing to apply once the family folds are held")
+        return
     print(f"[cred_rename_apply] {TODAY} — applying {len(renames)} rename(s) "
           f"+ {len(merges)} confirmed merge(s)")
     with open(CREDENTIALS, encoding="utf-8") as f:
@@ -498,7 +517,21 @@ def main():
             c = g["resolution"]["conflict"]
             print(f"  issuer conflict: {t}: target override {c['target_override_before']['issuer']} "
                   f"becomes {c['winner']}")
-    out_dir = write_snapshot(alias_doc, results, undo, issuer_plan)
+    out_dir = _out_dir()
+    fold_id = "%s@%s" % (os.path.basename(out_dir), NOW_ISO)
+    # decided_at: when the rows this apply decided on were read from kb_curation (the overlay's sync,
+    # step 1 of the workflow), so a row a person saves after that read wins over this fold.
+    ovdoc = _load_optional(OVERLAY)
+    decided_at = ovdoc.get("_read_at") or ovdoc.get("_synced_at") or NOW_ISO
+    resolution_rows = []
+    for t, g in sorted(issuer_plan.items()):
+        titles = [t] + [m for m, _ in g["members"]]
+        before = [r for x in titles for r in creds_before.get(x) or []]
+        value = fold_issuer.resolution_value(g, before, creds_after.get(t) or [], decided_at, fold_id)
+        resolution_rows.append({"course_id": "_CREDENTIAL_REVIEW::" + t, "field": fold_issuer.RESOLUTION_FIELD,
+                                "value": value, "reviewer_email": fold_issuer.COHORT})
+    undo["fold_id"] = fold_id
+    out_dir = write_snapshot(alias_doc, results, undo, issuer_plan, out_dir, resolution_rows)
     print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md}}")
     return out_dir
 

@@ -73,9 +73,18 @@ certificate.
   course taught to the standard, *Brakes (ASE A5 standards)*, keeps the college and drops the certifying body's
   record. Otherwise every issuer is kept. The receipt names the rule for each title, any record a person set that a
   rule dropped (who and when, its before-value kept), and an exception for a person wherever the college stays
-  issuer on a title holding industry-certification exhibits; an exception does not block. The same rules carry the
-  `kb_curation` override. A lead and its confirmed siblings apply in one run, and `kb/_cred_rename_undo.py`
-  reverses an apply from its receipt.
+  issuer on a title holding industry-certification exhibits; an exception does not block. A lead and its confirmed
+  siblings apply in one run, and `kb/_cred_rename_undo.py` reverses an apply from its receipt.
+- **Built: the decision is stored, never written over a person's row** (#3116). The apply writes one
+  `issuer_resolution` row per folded target in `kb_curation`, under the bot cohort `cred-fold-s638@bot`: the rule, the
+  winner, the issuers the fold dropped, the additional issuers it kept, and `decided_at`, when the apply read the rows it
+  decided on. It updates and deletes no issuer row a person wrote. Every reader resolves a title's issuer rows through
+  one resolver, `effective_issuer` in `kb/fold_issuer.py`, ported once to the browser as `issuer_resolution.js`: an
+  issuer row saved after `decided_at` wins; otherwise the winner stands, the dropped issuers are struck and the kept
+  additional issuers stay, in the reference spelling. The nightly sync applies it while it builds the overlay and
+  enforces it on `kb/credentials.json`, so a partial state repairs itself the next night. The Exhibits editor shows
+  the winner with the line *Set by the fold on <date>* and names any stored row it superseded; saving there writes a
+  person's row, which wins by its stamp.
 - **Read-only so far.** No field stores a path or an assessor: both are derived at build time. MAP's id agrees with its
   own type code on all but 22 of about 7,000 civilian ids (COBIx, #3110).
 - **Not built, each its own PR through Governance:** an issuer registry (official name, one short tag, aliases); the

@@ -339,6 +339,8 @@
             rec.issuer2_override = row.value || "";
             rec.issuer2_overridden_by = row.reviewer_email;
             rec.issuer2_overridden_at = row.reviewed_at;
+          } else if (row.field === "issuer_resolution") {
+            rec.issuer_resolution = row.value || "";
           } else if (row.field === FIELD_TRAINER_OVERRIDE) {
             rec.trainer_override = row.value || "";
             rec.trainer_overridden_by = row.reviewer_email;
@@ -361,9 +363,46 @@
             rec.cpltype_overridden_at = row.reviewed_at;
           }
         });
+        resolveFoldIssuers(m);
         return m;
       })
       .catch(function () { return {}; });
+  }
+  // The fold resolution's two steps, for tests/issuer_resolution_readers.test.js.
+  if (typeof window !== "undefined") window.CPL_CER_ISSUER_FOLD = { resolve: resolveFoldIssuers, lines: issuerFoldLines };
+  /* The plain lines under an issuer the fold decided: "Set by the fold on <date>", then each stored row it
+     superseded, "Superseded: <value>, saved <date>". A save writes a newer row, which wins by its stamp. */
+  function issuerFoldLines(fold) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R || !fold) return [];
+    var out = [], line = R.foldLine(fold);
+    if (line) out.push(line);
+    (fold.superseded || []).forEach(function (s) {
+      out.push("Superseded: " + s.value + (s.at ? ", saved " + String(s.at).slice(0, 10) : ""));
+    });
+    return out;
+  }
+  /* A credential fold's issuer resolution (#3116): the issuer rows resolve through the one browser resolver,
+     issuer_resolution.js, the port of kb/fold_issuer.py effective_issuer(). A struck override is removed, so the
+     reference's own (folded) issuer shows; the fold's winner shows as the override; issuer_fold drives the
+     "Set by the fold on <date>" line and names the stored rows it superseded. */
+  function resolveFoldIssuers(m) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R) return m;
+    Object.keys(m).forEach(function (t) {
+      var rec = m[t], res = R.parse(rec.issuer_resolution);
+      if (!res) return;
+      var got = R.resolve({
+        issuing_agency_override: { value: rec.issuer_override || "", at: rec.issuer_overridden_at || "" },
+        issuing_agency_additional_override: { value: rec.issuer2_override || "", at: rec.issuer2_overridden_at || "" }
+      }, res);
+      if (got.issuer) rec.issuer_override = got.issuer; else delete rec.issuer_override;
+      if (got.issuer2) rec.issuer2_override = got.issuer2; else delete rec.issuer2_override;
+      if (got.fold.setByFold) { rec.issuer_overridden_at = got.fold.decidedAt; rec.issuer_overridden_by = ""; }
+      else if (!got.issuer) { delete rec.issuer_overridden_at; delete rec.issuer_overridden_by; }
+      rec.issuer_fold = got.fold;
+    });
+    return m;
   }
 
   // The Initiated sign-off (a reviewed_marker row per credential) retired on
@@ -390,7 +429,10 @@
           course_id: KEY_PREFIX + unifiedTitle,
           field: field,
           value: value,
-          reviewer_email: sess.email
+          reviewer_email: sess.email,
+          // A save is a new decision with its own stamp: an issuer saved after a fold decided wins
+          // over the fold (issuer_resolution.js), which an upsert keeping the old stamp would hide.
+          reviewed_at: new Date().toISOString()
         })
       });
     });
@@ -801,6 +843,7 @@
         r.primary_issuer = ov.issuer_override || null;
         r.issuer_overridden_by = ov.issuer_overridden_by;
         r.issuer_overridden_at = ov.issuer_overridden_at;
+        r.issuer_fold = ov.issuer_fold || null;
       } else if (r._original_primary_issuer !== undefined) {
         r.primary_issuer = r._original_primary_issuer;
         delete r.original_primary_issuer;
@@ -2472,7 +2515,13 @@
           title: "All recorded certifying bodies:\n" + r.issuers.join("\n")
         }, ["+" + (r.issuers.length - 1)]));
       }
-      if (r.issuer_overridden_at) {
+      var foldLine = issuerFoldLines(r.issuer_fold);
+      if (foldLine.length) {
+        foldLine.forEach(function (txt) {
+          issuerTd.appendChild(el("span", { class: "cr-fold-line",
+            style: "display:block;font-size:.8rem;color:var(--text-muted)" }, [txt]));
+        });
+      } else if (r.issuer_overridden_at) {
         issuerTd.appendChild(el("span", { class: "cr-override-marker",
           title: "Issuing agency curated · originally: " +
                  (r.original_primary_issuer || "(none)")

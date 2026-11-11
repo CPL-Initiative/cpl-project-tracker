@@ -125,8 +125,13 @@ def ts(s):
 def _stamp(entry, field):
     """(value, reviewer, reviewed_at) of one field row. The overlay carries each field row's own stamp
     (field_reviews) since this module; without it the entry's latest stands in for the reviewer, and the
-    time is unknown ("")."""
+    time is unknown (""). An entry the resolver already resolved keeps the raw rows in issuer_raw, and
+    the fold decides on those."""
     entry = entry or {}
+    raw = (entry.get("issuer_raw") or {}).get(field)
+    if raw is not None:
+        return ((raw.get("value") or "").strip(), raw.get("by") or "", raw.get("at") or "") \
+            if (raw.get("value") or "").strip() else None
     value = (entry.get(field) or "").strip()
     if not value:
         return None
@@ -406,3 +411,232 @@ def receipt_lines(res, log=None, exc=None):
                      f"certification exhibit(s) under {', '.join('`%s`' % x for x in e['from_titles'])}; "
                      f"issuer {e['issuer']}")
     return lines
+
+
+# ── The enforced resolution (#3116 redesign, S638 conductor, 2026-11-11) ────────────────────────────────
+#
+# The apply never updates or deletes an issuer row a person wrote. It writes ONE row per folded target,
+# field issuer_resolution under the cohort below, whose value is resolution_value()'s JSON. Every reader
+# resolves a title's issuer rows through effective_issuer(), the one definition: the JavaScript port is
+# issuer_resolution.js, held to this one by tests/issuer_resolution_parity.test.js, and a second Python
+# copy fails tests/fold_issuer_single_source_test.py. The nightly sync (kb/_apply_credential_review.py)
+# applies it while it builds the overlay and enforces it on kb/credentials.json (enforce_records), so a
+# partial state repairs itself the next night.
+#
+# The rule: an issuer row saved after the fold decided (decided_at, the time the apply read the rows it
+# decided on) wins, because it is a newer decision. Otherwise the fold's winner stands, the issuers the
+# fold dropped are struck, and the additional issuers the fold kept stay, all in the reference spelling,
+# with no second copy of the winner under another spelling. "Saved after" is read from the row's stamp
+# alone: the browser's anon key cannot read reviewer_email (kb/migrations/2026-11-09_kb_curation_hide_
+# reviewer_email.sql), and the fold itself never writes an issuer row, so a later issuer row is a later
+# decision either way.
+
+RESOLUTION_FIELD = "issuer_resolution"
+COHORT = "cred-fold-s638@bot"
+PRIMARY = "issuing_agency_override"
+ADDITIONAL = "issuing_agency_additional_override"
+
+
+def parse_resolution(value):
+    """The resolution dict from an issuer_resolution row's value (a JSON string or a dict), or None."""
+    if not value:
+        return None
+    if isinstance(value, dict):
+        return value if value.get("decided_at") else None
+    import json
+    try:
+        got = json.loads(value)
+    except (ValueError, TypeError):
+        return None
+    return got if isinstance(got, dict) and got.get("decided_at") else None
+
+
+def resolution_value(group, records_before, records_after, decided_at, fold_id):
+    """The issuer_resolution row's value for one fold group. records_before: every credential record in
+    the group before the apply (target and every folded title); records_after: the target's records after.
+    The dropped issuers are exactly the ones the fold removed, so a target's own record the fold kept is
+    never struck by the nightly."""
+    res = group["resolution"]
+    before = {canonical_issuer(r.get("issuing_agency")) for r in records_before if r.get("issuing_agency")}
+    after = {norm(canonical_issuer(r.get("issuing_agency"))) for r in records_after if r.get("issuing_agency")}
+    return {"v": 1, "target": res["target"], "rule": res["rule"],
+            "winner": canonical_issuer(res["winner"]) if res.get("winner") else None,
+            "dropped": sorted(i for i in before if norm(i) not in after),
+            "kept_additional": sorted({canonical_issuer(a) for a in res.get("additional") or []}),
+            "decided_at": decided_at, "fold_id": fold_id}
+
+
+def _split(v):
+    return [p.strip() for p in (v or "").split("|") if p.strip()]
+
+
+def _dedupe(parts, also_not=()):
+    seen, out = {norm(x) for x in also_not if x}, []
+    for p in parts:
+        c = canonical_issuer(p)
+        if norm(c) not in seen:
+            seen.add(norm(c))
+            out.append(c)
+    return out
+
+
+def effective_issuer(entry, resolution):
+    """A title's overlay entry with its issuer rows resolved against the newest fold resolution.
+
+    entry      an overlay entry: issuing_agency_override, issuing_agency_additional_override, and their
+               stamps in field_reviews (the shape kb/_apply_credential_review.py writes)
+    resolution parse_resolution()'s dict, or None
+
+    Returns a new entry. The issuer fields hold the resolved values; issuer_raw keeps the rows as stored
+    (the fold decides on those); issuer_fold says what the fold set and which stored rows it superseded,
+    for the editor's "Set by the fold on <date>" line. With no resolution the entry comes back as is."""
+    e = dict(entry or {})
+    if not resolution:
+        return e
+    dec = ts(resolution.get("decided_at"))
+    winner = canonical_issuer(resolution.get("winner")) if resolution.get("winner") else None
+    dropped = {norm(canonical_issuer(x)) for x in resolution.get("dropped") or []}
+    raw, superseded = {}, []
+    for f in (PRIMARY, ADDITIONAL):
+        got = _stamp(e, f)
+        raw[f] = {"value": got[0], "by": got[1], "at": got[2]} if got else {"value": "", "by": "", "at": ""}
+    p = raw[PRIMARY]
+    newer_p = bool(p["value"]) and ts(p["at"]) > dec
+    if newer_p:
+        primary = canonical_issuer(p["value"])
+    elif winner:
+        primary = winner
+        if p["value"] and norm(canonical_issuer(p["value"])) != norm(winner):
+            superseded.append(dict(p, field=PRIMARY))
+    elif p["value"] and norm(canonical_issuer(p["value"])) in dropped:
+        primary = ""
+        superseded.append(dict(p, field=PRIMARY))
+    else:
+        primary = canonical_issuer(p["value"]) if p["value"] else ""
+    a = raw[ADDITIONAL]
+    if a["value"] and ts(a["at"]) > dec:
+        parts = _dedupe(_split(a["value"]), [primary])
+    else:
+        kept = [x for x in _split(a["value"]) if norm(canonical_issuer(x)) not in dropped]
+        if len(kept) != len(_split(a["value"])):
+            superseded.append(dict(a, field=ADDITIONAL))
+        parts = _dedupe(kept + list(resolution.get("kept_additional") or []), [primary])
+    if primary:
+        e[PRIMARY] = primary
+    else:
+        e.pop(PRIMARY, None)
+    if parts:
+        e[ADDITIONAL] = " | ".join(parts)
+    else:
+        e.pop(ADDITIONAL, None)
+    e["issuer_raw"] = raw
+    e["issuer_fold"] = {"fold_id": resolution.get("fold_id"), "decided_at": resolution.get("decided_at"),
+                        "rule": resolution.get("rule"), "winner": winner,
+                        "set_by_fold": bool(winner) and not newer_p, "superseded": superseded}
+    return e
+
+
+def enforce_records(records, resolution, entry=None):
+    """Credential records with a resolution enforced: a record naming a dropped issuer goes (unless the
+    resolved entry names that issuer again, a newer decision), every issuer is spelled the reference way
+    and held once, and a fold winner still in force with no record gets one. Returns (records, changes)."""
+    if not resolution:
+        return list(records or []), []
+    e = entry or {}
+    named = {norm(canonical_issuer(x)) for x in [e.get(PRIMARY)] + _split(e.get(ADDITIONAL)) if x}
+    fold = e.get("issuer_fold") or {}
+    winner = canonical_issuer(resolution.get("winner")) if resolution.get("winner") else None
+    if fold and not fold.get("set_by_fold"):
+        winner = None  # a newer row decided the primary; the fold's winner no longer stands
+    dropped = {norm(canonical_issuer(x)) for x in resolution.get("dropped") or []} - named
+    out, seen, changes = [], set(), []
+    for r in records or []:
+        r = dict(r)
+        iss = r.get("issuing_agency")
+        c = canonical_issuer(iss) if iss else iss
+        if iss and norm(c) in dropped:
+            changes.append({"op": "removed", "issuing_agency": iss})
+            continue
+        if iss and c != iss:
+            changes.append({"op": "respelled", "before": iss, "after": c})
+            r["issuing_agency"] = c
+        k = (norm(r.get("issuing_agency")), norm(r.get("training_agency")))
+        if k in seen:
+            changes.append({"op": "deduped", "issuing_agency": r.get("issuing_agency")})
+            continue
+        seen.add(k)
+        out.append(r)
+    if winner and not any(norm(r.get("issuing_agency")) == norm(winner) for r in out):
+        out.insert(0, {"issuing_agency": winner, "training_agency": None, "confidence_issuer": 1.0,
+                       "classified_by": "the fold's issuer resolution (kb/fold_issuer.py)",
+                       "reviewed_by": COHORT, "reviewed_at": resolution.get("decided_at")})
+        changes.append({"op": "added_winner", "issuing_agency": winner})
+    return out, changes
+
+
+def undone_fold_ids(out_root):
+    """Folds an undo voided: {fold_id: titles whose group the undo skipped (still folded)}, read from
+    kb/cred_rename_out/<dir>/undone.json. The nightly ignores those folds' resolution rows except on the
+    skipped titles, so the JSON undo stands even before the cohort rows are deleted."""
+    import glob
+    import json
+    import os
+    out = {}
+    for p in glob.glob(os.path.join(out_root, "*", "undone.json")):
+        try:
+            doc = json.load(open(p, encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        for fid in doc.get("fold_ids") or []:
+            out.setdefault(fid, set()).update(doc.get("skipped_groups") or [])
+    return out
+
+
+def voided(resolution, title, undone):
+    """True when an undo voided this resolution for this title."""
+    fid = (resolution or {}).get("fold_id")
+    return fid in undone and title not in undone[fid]
+
+
+# ── Family titles (Sam's ruling C, 2026-11-11, relayed by the S638 conductor) ─────────────────────────────
+# An ASE bundle stays its own title and gets a family field, so a saved fold whose target is a declared
+# family title is not a merge: the dry-run and the apply hold it out of the plan, and another worker's
+# converter turns those saved rows into family tags. The list lives in kb/reference/credential_families.json,
+# owned by that worker; an absent file means no families.
+
+FAMILY_HELD_LINE = "held: the target is a family title; these rows become family tags"
+
+
+def family_titles(path):
+    """The declared family titles from kb/reference/credential_families.json: a list of titles, or of
+    {"title": ...}, or {"families": that list}. An absent or unreadable file is no families."""
+    import json
+    try:
+        doc = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return set()
+    items = doc.get("families", doc.get("titles", [])) if isinstance(doc, dict) else doc
+    out = set()
+    for x in items or []:
+        t = x.get("title") if isinstance(x, dict) else x
+        if isinstance(t, str) and t.strip():
+            out.add(t.strip())
+    return out
+
+
+def hold_family_folds(renames, merges, families):
+    """Split out every rename or merge whose target is a family title. Returns (renames, merges, held),
+    held a list of {"old", "target", "kind", "why"}."""
+    held = []
+    keep_r, keep_m = {}, {}
+    for o, t in sorted((renames or {}).items()):
+        if t in families:
+            held.append({"old": o, "target": t, "kind": "rename", "why": FAMILY_HELD_LINE})
+        else:
+            keep_r[o] = t
+    for o, t in sorted((merges or {}).items()):
+        if t in families:
+            held.append({"old": o, "target": t, "kind": "merge", "why": FAMILY_HELD_LINE})
+        else:
+            keep_m[o] = t
+    return keep_r, keep_m, held

@@ -59,6 +59,7 @@ import fold_issuer  # noqa: E402
 
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
 RELATED = os.path.join(HERE, "exhibits_related.json")
+FAMILIES = os.path.join(HERE, "reference", "credential_families.json")  # owned by the family-tag converter
 UNIFIED_TITLES = os.path.join(HERE, "unified_titles.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
@@ -238,6 +239,29 @@ def main():
                     "confirmed_at": ov.get("reviewed_at"),
                 })
                 continue
+            if ov.get("unified_title_merge_confirm") == new_ut:
+                # Confirmed, but the lead that creates the title has no credentials.json record, so this
+                # run makes no key to fold into. Said plainly: it does not become a collision on its
+                # own later, and the fold's issuer rules never run for this group until a person acts.
+                collisions.append({
+                    "old_unified_title": o,
+                    "proposed_new_title": new_ut,
+                    "reason": "lead_has_no_credentials_record",
+                    "first_of_group": sources[0],
+                    "existing_credential_records": 0,
+                    "rename_would_touch": {
+                        "raw_titles_in_unified_titles_json": len(raw_titles_by_ut.get(o, [])),
+                        "articulation_records": art_records_by_ut.get(o, 0),
+                        "credentials_json_key_exists": o in credentials,
+                    },
+                    "reviewed_by": ov.get("reviewed_by"),
+                    "reviewed_at": ov.get("reviewed_at"),
+                    "policy": ("held: its merge into %r is confirmed, but that title is created by %r, which "
+                               "has no credentials.json record, so no key exists to fold into. Nothing is "
+                               "folded and the confirm is not applied. A person gives the lead a record, or "
+                               "points this title's confirm at a title that exists." % (new_ut, sources[0])),
+                })
+                continue
             collisions.append({
                 "old_unified_title": o,
                 "proposed_new_title": new_ut,
@@ -255,6 +279,12 @@ def main():
                            "regular collision (confirmable in the CER strip) "
                            "once the group's first rename lands"),
             })
+
+    # ── Family titles: a fold into one is not a merge (Sam's ruling C) ──────
+    renames_clean, merges_confirmed, held_family = fold_issuer.hold_family_folds(
+        renames_clean, merges_confirmed, fold_issuer.family_titles(FAMILIES))
+    held_old = {h["old"] for h in held_family}
+    merge_details = [m for m in merge_details if m["old_unified_title"] not in held_old]
 
     # ── Issuer preview (kb/fold_issuer.py) ───────────────────────────────────
     # What each fold group's issuer will be, decided by the same rules the apply runs. A preview only:
@@ -314,6 +344,7 @@ def main():
                 1 for v in overrides.values() if (v or {}).get("unified_title_override")),
             "clean_renames": len(renames_clean),
             "confirmed_merges": len(merges_confirmed),
+            "held_as_family_tags": len(held_family),
             "collisions": len(collisions),
             "skipped": len(skipped),
             "renames_of_titles_with_no_credentials_record": len(no_credential_record),
@@ -328,6 +359,9 @@ def main():
         # target (dedupe on issuer+trainer) and re-keys raws + articulations.
         "merges": merges_confirmed,
         "merge_details": merge_details,
+        # Saved folds into a declared family title (kb/reference/credential_families.json): not merges, never
+        # folded; the family-tag converter turns these rows into family tags.
+        "held_family": held_family,
         # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
         "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
                                "conflict": g["resolution"]["conflict"],
@@ -361,6 +395,11 @@ def main():
                     intra_batch_collisions, v2_blocked, v3_blocked,
                     raw_titles_by_ut, art_records_by_ut, credentials,
                     apply_safe)
+    if held_family:
+        fam = ["## Held: folds into a family title", ""]
+        fam += ["- `%s` (%s) into `%s`: %s" % (h["old"], h["kind"], h["target"], h["why"]) for h in held_family]
+        md = md.replace("## Clean renames (would land on apply)",
+                        "\n".join(fam) + "\n\n## Clean renames (would land on apply)", 1)
     md = md.replace("## Clean renames (would land on apply)",
                     _render_issuer_md(issuer_plan) + "## Clean renames (would land on apply)", 1)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
@@ -469,6 +508,14 @@ def _render_md(renames_clean, merge_details, collisions, skipped,
         for c in collisions:
             lines.append(f"| `{c['old_unified_title']}` | → | `{c['proposed_new_title']}` "
                          f"| {c['existing_credential_records']} | {c.get('reason', '')} |")
+        held = [c for c in collisions if c.get("reason") == "lead_has_no_credentials_record"]
+        if held:
+            lines.append("")
+            lines.append("**Held for a person** (the merge is confirmed, but the title it merges into would "
+                         "be created by a title with no credentials.json record):")
+            lines.append("")
+            for c in held:
+                lines.append(f"- `{c['old_unified_title']}`: {c['policy']}")
     lines.append("")
     lines.append("## Skipped")
     lines.append("")

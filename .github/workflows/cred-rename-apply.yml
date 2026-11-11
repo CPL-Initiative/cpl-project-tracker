@@ -22,10 +22,11 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 # One pass (#3110 build step 1): a lead that creates a title and the siblings
 # whose merge into it is already confirmed apply in the same run; a second
 # dispatch is no longer needed. Each fold group's issuer follows
-# kb/fold_issuer.py (a person's issuer wins, else a certification-format
-# target keeps its issuer, else additive), in both the kb files and the
-# kb_curation carry. The receipt kb/cred_rename_out/<date>/ now holds undo.json;
-# kb/_cred_rename_undo.py reverses an apply from it.
+# kb/fold_issuer.py's four rules in the kb files, and is stored in kb_curation
+# as ONE issuer_resolution row per folded target (step 3b), never by updating
+# or deleting a person's issuer row; the nightly sync enforces it. The receipt
+# kb/cred_rename_out/<date>/ holds undo.json; kb/_cred_rename_undo.py reverses
+# an apply from it.
 #
 # statewide_data.js and the MAP link verify file are NOT rebuilt here.
 # statewide_data.js is written by the full excel_to_dashboard.py run, which
@@ -115,14 +116,25 @@ jobs:
       - name: Apply credential renames to kb files
         run: python kb/_cred_rename_apply.py
 
+      # ── Step 3b: the fold's issuer resolutions ────────────────────
+      # One issuer_resolution row per folded target (kb/fold_issuer.py,
+      # cohort cred-fold-s638@bot), written BEFORE the row moves and before
+      # anything commits. No issuer row a person wrote is updated or deleted;
+      # every reader and the nightly resolve and enforce these rows. A failure
+      # here fails the job: the steps below do not run and nothing commits.
+      # Idempotent: a retry finds its own rows and writes nothing.
+      - name: Write the fold's issuer resolutions to kb_curation
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python kb/_cred_fold_resolution_write.py
+
       # ── Step 4: apply Supabase row migration ──────────────────────
-      # The kb files are final once step 3 lands, so they still commit when
-      # this step fails, but the job then FAILS (the last step below): a failed
-      # or partial carry, including a write skipped because a person edited the
-      # row (a conflict), leaves kb_curation and the kb files disagreeing until
-      # someone re-runs kb/_cred_rename_apply_supabase.py or settles it by hand.
-      # A retry writes supabase_log-<UTC>.json beside the first log; the undo
-      # reads them all.
+      # Moves each folded title's kb_curation rows onto its new title, as
+      # before the redesign. The kb files are final once step 3 lands and the
+      # resolutions are written, so they still commit when this step fails, but
+      # the job then FAILS (the last step below) until someone re-runs
+      # kb/_cred_rename_apply_supabase.py. A retry writes supabase_log-<UTC>.json
+      # beside the first log; the undo reads them all.
       - name: Apply Supabase kb_curation row migration
         id: supa
         continue-on-error: true
@@ -147,9 +159,9 @@ jobs:
         run: |
           set -euo pipefail
           if [ "$SUPA_OUTCOME" = "success" ]; then
-            SUPA_LINE="Supabase kb_curation rows migrated in same window — log: kb/cred_rename_out/<date>/supabase_log*.json. unified_title_override rows DELETEd (fulfilled); other override rows PATCHed to new course_id; the issuer carry per kb/fold_issuer.py."
+            SUPA_LINE="Supabase kb_curation rows migrated in same window — log: kb/cred_rename_out/<date>/supabase_log*.json. unified_title_override rows DELETEd (fulfilled); other override rows PATCHed to new course_id. Issuer resolutions: kb/cred_rename_out/<date>/resolution_log*.json."
           else
-            SUPA_LINE="Supabase kb_curation carry FAILED or partial (outcome: $SUPA_OUTCOME); the kb files and kb_curation may disagree. Re-run kb/_cred_rename_apply_supabase.py and read kb/cred_rename_out/<date>/supabase_log*.json."
+            SUPA_LINE="Supabase kb_curation row moves FAILED or partial (outcome: $SUPA_OUTCOME); the kb files and kb_curation may disagree. Re-run kb/_cred_rename_apply_supabase.py and read kb/cred_rename_out/<date>/supabase_log*.json."
           fi
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -184,11 +196,11 @@ jobs:
           done
           exit 1
 
-      # Fail closed: the job never reads success while the carry failed or left a conflict.
-      - name: Fail when the kb_curation carry did not finish
+      # Fail closed: the job never reads success while the row moves failed.
+      - name: Fail when the kb_curation row moves did not finish
         if: steps.supa.outcome == 'failure'
         run: |
-          echo "::error::The kb_curation carry failed or left a conflict; the next sync can put back an issuer the fold removed. Read kb/cred_rename_out/<date>/supabase_log*.json and re-run kb/_cred_rename_apply_supabase.py."
+          echo "::error::The kb_curation row moves failed; the folded titles keep rows under their old keys until the retry. Read kb/cred_rename_out/<date>/supabase_log*.json and re-run kb/_cred_rename_apply_supabase.py."
           exit 1
 
       - name: Summary
