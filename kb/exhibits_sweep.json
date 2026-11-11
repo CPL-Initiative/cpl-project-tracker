@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-10T20:28:45Z",
+ "generated_at": "2026-11-11T06:29:17Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -41,118 +41,33 @@
   }
  ],
  "counts": {
-  "ase": 0,
-  "numerals": 4,
+  "ase": 1,
+  "numerals": 0,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 4,
+ "local_titles": 1,
  "cards": [
   {
-   "current": "American Sign Language IV",
-   "proposed": "Intermediate American Sign Language 2",
+   "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+   "proposed": "Automotive Technology (ASE P1 Medium/Heavy Truck Parts Specialist)",
    "rules": [
-    "numerals",
-    "language"
+    "ase"
    ],
    "why": [
-    "Roman numerals become Arabic",
-    "“ASL 53 American Sign Language IV” reads as intermediate level 2"
+    "ASE P1's official name is Medium/Heavy Truck Parts Specialist"
    ],
    "locals": [
     {
-     "raw": "ASL 53 American Sign Language IV",
-     "colleges": [
-      "Berkeley City College"
-     ],
-     "course": "ASL 053",
-     "credit": "4 hours in American Sign Language IV"
+     "raw": "Noncredit for AUTO P1",
+     "colleges": [],
+     "course": "",
+     "credit": ""
     }
    ],
-   "id": "460caa647cd9",
-   "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 2,
-   "proposed_issuer": "California Community Colleges",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Facials I",
-   "proposed": "Facials 1",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 215 Facials I",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 215",
-     "credit": "1 hour in Facials I"
-    }
-   ],
-   "id": "0f4e3168f278",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Hairstyling Services/Haircutting II",
-   "proposed": "Hairstyling Services/Haircutting 2",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 223 Hairstyling Services/Haircutting II",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 223",
-     "credit": "1 hour in Hairstyling Services/Haircutting II"
-    }
-   ],
-   "id": "9df782749a76",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Manicuring and Pedicuring I",
-   "proposed": "Manicuring and Pedicuring 1",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 211  Manicuring and Pedicuring I",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 211",
-     "credit": "1 hour in Manicuring and Pedicuring I"
-    }
-   ],
-   "id": "fb1bda479521",
+   "id": "e899695cd7aa",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,

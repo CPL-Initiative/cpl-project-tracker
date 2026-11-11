@@ -1,0 +1,236 @@
+{
+  "folded": [
+    {
+      "raw": "Credit By Exam- CFPL ABT 130 Intro to Food Safety",
+      "assigned": "Introduction to Food Safety",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:01.862617+00:00"
+    },
+    {
+      "raw": "Credit by Exam-- CFPL ABT 132",
+      "assigned": "Agricultural Business and Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:26.041469+00:00"
+    },
+    {
+      "raw": "Introduction to Law Enforcement/Corrections",
+      "assigned": "Introduction to Corrections",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:41.499859+00:00"
+    },
+    {
+      "raw": "JOURN 062 Survey of Mass Media",
+      "assigned": "Introduction to Mass Communications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:04.492808+00:00"
+    },
+    {
+      "raw": "Nursing Care of the childbearing family",
+      "assigned": "Nursing Care of the Childbearing Family",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:07.475067+00:00"
+    },
+    {
+      "raw": "Report Writing",
+      "assigned": "Report Writing",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:56.14337+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [
+    {
+      "raw": "ASL 53 American Sign Language IV",
+      "assigned": "Intermediate American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:54.742+00:00",
+      "spellings": [
+        "ASL 53 American Sign Language IV"
+      ],
+      "disagreeing": [
+        "ASL 53 American Sign Language IV"
+      ],
+      "displaced": [
+        "American Sign Language IV"
+      ],
+      "supersedes": "American Sign Language IV"
+    },
+    {
+      "raw": "COSM 211  Manicuring and Pedicuring I",
+      "assigned": "Manicuring and Pedicuring 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:01.902+00:00",
+      "spellings": [
+        "COSM 211  Manicuring and Pedicuring I"
+      ],
+      "disagreeing": [
+        "COSM 211  Manicuring and Pedicuring I"
+      ],
+      "displaced": [
+        "Manicuring and Pedicuring I"
+      ],
+      "supersedes": "Manicuring and Pedicuring I"
+    },
+    {
+      "raw": "COSM 215 Facials I",
+      "assigned": "Facials 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:58.878+00:00",
+      "spellings": [
+        "COSM 215 Facials I"
+      ],
+      "disagreeing": [
+        "COSM 215 Facials I"
+      ],
+      "displaced": [
+        "Facials I"
+      ],
+      "supersedes": "Facials I"
+    },
+    {
+      "raw": "COSM 223 Hairstyling Services/Haircutting II",
+      "assigned": "Hairstyling Services/Haircutting 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:00.574+00:00",
+      "spellings": [
+        "COSM 223 Hairstyling Services/Haircutting II"
+      ],
+      "disagreeing": [
+        "COSM 223 Hairstyling Services/Haircutting II"
+      ],
+      "displaced": [
+        "Hairstyling Services/Haircutting II"
+      ],
+      "supersedes": "Hairstyling Services/Haircutting II"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Facials I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Facials 1"
+    },
+    {
+      "title": "Hairstyling Services/Haircutting II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Hairstyling Services/Haircutting 2"
+    },
+    {
+      "title": "Manicuring and Pedicuring I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Manicuring and Pedicuring 1"
+    }
+  ],
+  "credential_retired": [
+    {
+      "title": "American Sign Language IV",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-10",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Intermediate American Sign Language 2"
+      ]
+    }
+  ],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Credit By Exam- CFPL ABT 130 Intro to Food Safety",
+      "assigned": "Introduction to Food Safety",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:01.862617+00:00"
+    },
+    {
+      "raw": "Credit by Exam-- CFPL ABT 132",
+      "assigned": "Agricultural Business and Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:26.041469+00:00"
+    },
+    {
+      "raw": "JOURN 062 Survey of Mass Media",
+      "assigned": "Introduction to Mass Communications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:04.492808+00:00"
+    },
+    {
+      "raw": "Nursing Care of the childbearing family",
+      "assigned": "Nursing Care of the Childbearing Family",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:07.475067+00:00"
+    },
+    {
+      "raw": "Report Writing",
+      "assigned": "Report Writing",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:56.14337+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 1,
+  "audit_pruned": 6,
+  "unified_titles_count": 5613
+}

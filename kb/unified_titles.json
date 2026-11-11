@@ -62232,36 +62232,48 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "ASL 53 American Sign Language IV": {
-    "unified_title": "American Sign Language IV",
+    "unified_title": "Intermediate American Sign Language 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:16:54.742+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language IV",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language IV' on 2026-11-11."
   },
   "COSM 211  Manicuring and Pedicuring I": {
-    "unified_title": "Manicuring and Pedicuring I",
+    "unified_title": "Manicuring and Pedicuring 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:17:01.902+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Manicuring and Pedicuring I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Manicuring and Pedicuring I' on 2026-11-11."
   },
   "COSM 215 Facials I": {
-    "unified_title": "Facials I",
+    "unified_title": "Facials 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:16:58.878+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Facials I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Facials I' on 2026-11-11."
   },
   "COSM 223 Hairstyling Services/Haircutting II": {
-    "unified_title": "Hairstyling Services/Haircutting II",
+    "unified_title": "Hairstyling Services/Haircutting 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:17:00.574+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Hairstyling Services/Haircutting II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Hairstyling Services/Haircutting II' on 2026-11-11."
   },
   "GRART 112 Creative Process and Solutions": {
     "unified_title": "Creative Process and Solutions",
@@ -62346,5 +62358,57 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
     "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+    "unified_title": "Introduction to Food Safety",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:01.862617+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Credit by Exam-- CFPL ABT 132": {
+    "unified_title": "Agricultural Business and Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Introduction to Law Enforcement/Corrections": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:23:41.499859+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "JOURN 062 Survey of Mass Media": {
+    "unified_title": "Introduction to Mass Communications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:04.492808+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "JOUR 100"
+    }
+  },
+  "Nursing Care of the childbearing family": {
+    "unified_title": "Nursing Care of the Childbearing Family",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:07.475067+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Report Writing": {
+    "unified_title": "Report Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:23:56.14337+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }
