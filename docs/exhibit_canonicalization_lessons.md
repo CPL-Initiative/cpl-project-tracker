@@ -1342,3 +1342,83 @@ the two Wheel Alignment titles into one (2 confirmed merges, apply_safe).
 - **A lookup can end with no body to save.** Los Angeles Pierce's two doctorate exhibits name no conferring university
   in MAP, so the rows stand and the question goes to the college through its CSM.
 
+## Moved from the lane (S638): certification naming and the fold, as S637 and S638 built them
+
+**Sam's ruling, 2026-11-11** (the card for *Noncredit for AUTO P1*, which kept returning to Another look): *"Use the
+cert's official name first and the code in parentheses: 'Medium/Heavy Truck Parts Specialist (ASE P1)'. Don't put the
+program name in front, so 'Automotive Technology (...)' is out. Students search by the cert name, and colleges adopt by
+it."* It supersedes the 2026-10-31 form (*Automotive Technology (ASE A7 Heating and Air Conditioning)*). The rule's notes
+carry why a noncredit course with a certification's title can qualify for CPL (credit by exam mirrored; credit by exam
+not mirrored, a CX notation and a grade on the credit course; the industry certification through an existing
+articulation): all three point to the same canonical title, so a cert-named noncredit title folds under the
+certification. The notes show in the Rules view, never on a card.
+
+- **The format lives in `kb/cert_naming.py`** (the ASE table, `ase_read`, `canonical`, the rule's words and notes).
+  Another look's `rule_ase` proposes it and gives a title already in it no card again; Review's builder puts a new
+  proposal in it and keeps the older wording as *Also proposed*; the classifier reads it in the skill's Rule 5h and the
+  `ase-paren` procedure.
+- **Related titles:** every Review card and Another look card has a side panel (`kb/exhibits_related.json`,
+  `kb/_build_exhibits_related.py`, nightly and daily after the sweep): the same test, the same series, then ASE's other
+  titles, each with its issuer, its local titles, *In the reference* or *Proposed*, and **Use this title**, which fills
+  the title and the issuer that title carries. A card outside ASE lists titles by issuer and shared words.
+- **The rename batch** (`#exhibits/rename-batch`, a Review tile): no title in the reference is renamed by a card or a
+  builder. The batch lists each ASE title not in the format (68 on 2026-11-11, 33 with a proposed title; the 35 bundles,
+  masters and uncoded titles carry none and stay unless Sam writes one). Approving writes `_CREDENTIAL_REVIEW::`
+  `unified_title_override`, and `unified_title_merge_confirm` where two titles are one certification (ASE's own title
+  leads, saved a second earlier, so the dry run renames it and folds the rest on the next apply); a skipped row writes
+  `cert_rename_kept` (DR-07). Until decided, the panel marks a title *Rename pending*.
+- **Aliases:** `kb/credential_aliases.py` reads the applied snapshots under `kb/cred_rename_out/`; the List's finder and
+  the public Credential Catalog (`aka`) find a credential by a title it used to carry.
+- **The canonical credential model (Sam's six rulings on #3110, 2026-11-11; DR-34;
+  [`docs/reference/canonical_credential_model.md`](../canonical_credential_model.md)):** the canonical title carries the credential's
+  issuer and each local exhibit its path and assessor, read from the MAP exhibit id (`kb/exhibit_paths.py`). A title in
+  the format fills its issuer with ASE; the panel and each batch row show a title's exhibits by path (*9 by industry
+  certification, assessed by ASE; 2 by credit by exam, assessed by the college*). This replaced his 06:20 PT note
+  *"Keep the college as issuer on the P1 title"* and S637's decision to leave the issuer to the card. The hold on the
+  16 merges ends with this display, the condition he set.
+- **NEXT (rulings 3 to 5):** no canonical title for a college's set of tests (the 30 bundle rows stay without a
+  proposal; ASE Master stays); *AWS* is the American Welding Society and *ACE* the American Council on Education
+  (recounted 20 to 4 and 29 to 3), the other body spelled out, before the AWS batch; high schools, districts, ROPs and
+  JATCs move from issuer to trainer (130 titles) in one data PR with receipts, with the 10 duplicate spellings and the
+  *alifornia Veterinary Medical Association* typo.
+- **The fold keeps one issuer, in one pass (#3110 build step 1, S638):** `kb/fold_issuer.py` is the one rule set for
+  the JSON fold, in order: (1) a person's issuer saved at or after the group's earliest
+  fold save wins (newest on a disagreement, the target's before-value in the receipt; the July map@rccd.edu
+  overrides are ordinary records); (2) a cert-form target keeps its issuer and drops the folded college record;
+  (2b) a "(ASE … standards)" target keeps the college and drops ASE; (3) additive. The college kept as issuer on a
+  title holding IC exhibits is an exception line, never a block; a person-set record a rule drops is named. A lead and its confirmed siblings apply in one dispatch (the lead is the source with no
+  confirm). `kb/_cred_rename_undo.py <receipt>` reverses an apply from `undo.json` (refuses drift) and
+  `--supabase-plan` writes the `kb_curation` reversal as guarded SQL. The decision is stored as one
+  `issuer_resolution` row per folded target (cohort `cred-fold-s638@bot`, written before the row moves and the
+  commit); no issuer row a person wrote is changed. Every reader resolves through `effective_issuer`
+  (`issuer_resolution.js` in the browser): an issuer saved after `decided_at` wins. The nightly enforces it on
+  `kb/credentials.json`. Tests: `tests/cred_rename_fold_issuer_test.py`, `tests/fold_issuer_resolution_test.py`,
+  `tests/fold_issuer_single_source_test.py`, `tests/issuer_resolution_parity.test.js`,
+  `tests/issuer_resolution_readers.test.js`.
+- **NEXT:** after the precedence PR merges, read `kb/cred_rename_dryrun/alias_map.json`'s summary and its
+  `issuer_preview`, then dispatch `cred-rename-apply.yml` once, then `daily-dashboard.yml` (statewide_data.js is
+  rebuilt there, never in the apply). Then turn on the next family in `cert_naming.FAMILIES`
+  with its table of official names (CompTIA, AWS, NCCER, one batch each). Sierra's corpus does not read aliases yet.
+- Tests: `tests/cert_naming_test.py` (42), `tests/exhibits_related.test.js` (57); `npm run a11y -- exhibits-related
+  exhibits-rename-batch` and their dark targets.
+
+## 2026-11-11 (S638 SkyTamarind): a conductor's day, and what broke
+
+- **Three reviews before a redesign (#3116).** Independent readers by dimension, with a second reader trying to refute
+  each finding, found 14, then 8, then 8 more faults in the fold's issuer precedence. The fix was a redesign: record the
+  decision as one `issuer_resolution` row (`cred-fold-s638@bot`) and stop updating people's rows. Reviews also found
+  9 and 5 on #3117 and 2 on #3109, one a blocker: the unpacking of packed course codes would have rewritten codes at
+  every other eLumen college; it is gated to De Anza.
+- **A workflow's folder rule is part of the plan's contract.** `cer-decision-apply.yml` refused the three ASE plan
+  folders (`2026-11-11-s638`, `-b2`, `-c`; run 43104136989, nothing written): it accepts `<date>` or `<date>-<2-9>`.
+  #3120 renames them.
+- **A builder change broke `main` after a green PR (#3119).** KB note
+  `methodology-a-pr-that-changes-a-builder-runs-the-builder`.
+- **The subject fill's first live run** (run 43104720166, 21:41Z): 747 credentials took a Common SUBJ (709 from
+  courses at one college, 29 from several colleges, 9 from the issuer family, as reported by a worker), 747
+  `subj_override` plus 747 `subj_source` rows under `exhibit-subject-s638@bot`; the worklist leaves 362.
+- **A web search answers an anomaly before Sam does.** ASE MIL3 is the Military Tactical Wheeled Vehicle (TWV) Drive
+  Train certification; Sam found it as the first search result.
+- **Process faults:** GitHub's runner queue stalled CI from about 20:17Z to 21:20Z and a worker pushed an empty commit
+  to restart it (the PR rules forbid it); a container restart at about 19:00Z (worker reports recovered from
+  transcripts); disk reached 95% with 4.4 GB worker checkouts. The conductor's rules: `docs/reference/conductor_mode.md`.

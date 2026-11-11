@@ -524,6 +524,20 @@ check("handoff drops lane: silent with NO git repo (fail-soft)",
       da.rule_handoff_drops_active_lane(_d) is None)
 _sh.rmtree(_d)
 
+# ── handoff_missing_conductor_settings ────────────────────────────────────
+# S638 (2026-11-11): Sam ruled the conductor settings go into every handoff.
+_d = _tf.mkdtemp(); _os.makedirs(_os.path.join(_d, "docs", "reference"))
+open(_os.path.join(_d, "docs", "session_9_handoff.md"), "w").write("# You are Session 9\n")
+check("conductor settings: silent before conductor_mode.md exists",
+      da.rule_handoff_missing_conductor_settings(_d) is None)
+open(_os.path.join(_d, "docs", "reference", "conductor_mode.md"), "w").write("# Conductor\n")
+check("conductor settings: fires when the newest handoff lacks the block",
+      (da.rule_handoff_missing_conductor_settings(_d) or {}).get("path") == "docs/session_9_handoff.md")
+open(_os.path.join(_d, "docs", "session_9_handoff.md"), "w").write("# You\n\n## Conductor settings\n- x\n")
+check("conductor settings: silent when the block is there",
+      da.rule_handoff_missing_conductor_settings(_d) is None)
+_sh.rmtree(_d)
+
 # ── self_corrected_word_pair ──────────────────────────────────────────────
 # The sweeper ate its own rule: `american_spelling` rewrote `whilst`/`amongst`
 # INSIDE the parenthetical that named them, leaving "while (not while)" in the

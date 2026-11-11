@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T16:07:30Z",
-  "session": 637,
-  "moniker": "SkyPorpoise",
+  "written_at": "2026-11-11T22:05:58Z",
+  "session": 638,
+  "moniker": "SkyTamarind",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_638_handoff.md",
+  "handoff": "docs/session_639_handoff.md",
   "next_step": {
-    "title": "De Anza: read the free capture, then the extraction's cost",
-    "text": "De Anza's 2026-2027 catalog packs each course code in its data feed and shows it spaced on the page. The reader now reads the code as the page shows it. A free capture is running on the branch. If it finds the programs, Sam hears the extraction's expected cost against his standing forty dollar go before anything paid runs."
+    "title": "De Anza: load the 24 programs still absent",
+    "text": "De Anza's 2026-2027 catalog now reads with its packed course codes and its GE ranges, and 205 of 221 records pass. The next run loads the 24 programs not yet filed, then the 15 older records Sheet 118 card 1 covers, then the display. Sixteen records still fail the machine checks."
   },
   "calls": [
     {
@@ -236,6 +236,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-11T19:50:45Z",
+      "text": "De Anza on its 2026-2027 catalog merged: course codes read as the page prints them, for De Anza alone, and the GE ranges with the 90 units as a minimum. 205 of 221 records pass the machine checks. The extraction cost $17.15 of Sam's standing forty dollar go. Two rereads replaced 197 live De Anza records; each receipt holds the values before."
+    },
+    {
       "at": "2026-11-11T09:53:00Z",
       "text": "Butte: two rereads replaced 92 rows with no errors; 138 of 164 records pass, up from 87. No row a person had checked was touched, and each receipt holds the values before."
     },
@@ -250,14 +254,6 @@
     {
       "at": "2026-11-11T12:30:00Z",
       "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
-    },
-    {
-      "at": "2026-11-11T15:15:00Z",
-      "text": "De Anza: the first capture on its new catalog found 242 program pages and counted none of their courses. The catalog's feed writes ACCTD001A where the page shows ACCT 1A. The reader now reads the code as shown."
-    },
-    {
-      "at": "2026-11-11T15:55:00Z",
-      "text": "Thirteen workflows install the browser through one script, after the runners could not reach Ubuntu's package servers and three runs failed before reading a page."
     }
   ],
   "headline": [

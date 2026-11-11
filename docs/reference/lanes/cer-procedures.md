@@ -27,65 +27,49 @@ stripped the issuer from 156 of 1,115 saved joined answers; the grouping keeps a
 Read the next nightly report's `classifier_run.answered` and `errors` after it lands. Also #2924: the procedures report
 `kb/cer_procedures_out/latest.json` is served by Pages again (it 404'd for Exhibits, the CER tab and the progress).
 
-## Certification naming, related titles and the rename batch (S637, 2026-11-11)
+## Certification naming, the fold, the subject fill and the ASE plans (S637, S638; 2026-11-11)
 
-**Sam's ruling, 2026-11-11** (the card for *Noncredit for AUTO P1*, which kept returning to Another look): *"Use the
-cert's official name first and the code in parentheses: 'Medium/Heavy Truck Parts Specialist (ASE P1)'. Don't put the
-program name in front, so 'Automotive Technology (...)' is out. Students search by the cert name, and colleges adopt by
-it."* It supersedes the 2026-10-31 form (*Automotive Technology (ASE A7 Heating and Air Conditioning)*). The rule's notes
-carry why a noncredit course with a certification's title can qualify for CPL (credit by exam mirrored; credit by exam
-not mirrored, a CX notation and a grade on the credit course; the industry certification through an existing
-articulation): all three point to the same canonical title, so a cert-named noncredit title folds under the
-certification. The notes show in the Rules view, never on a card.
+The S637 build record (Sam's title ruling, the rename batch, related titles, aliases, the canonical model, the fold
+precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S638)*. What stands:
 
-- **The format lives in `kb/cert_naming.py`** (the ASE table, `ase_read`, `canonical`, the rule's words and notes).
-  Another look's `rule_ase` proposes it and gives a title already in it no card again; Review's builder puts a new
-  proposal in it and keeps the older wording as *Also proposed*; the classifier reads it in the skill's Rule 5h and the
-  `ase-paren` procedure.
-- **Related titles:** every Review card and Another look card has a side panel (`kb/exhibits_related.json`,
-  `kb/_build_exhibits_related.py`, nightly and daily after the sweep): the same test, the same series, then ASE's other
-  titles, each with its issuer, its local titles, *In the reference* or *Proposed*, and **Use this title**, which fills
-  the title and the issuer that title carries. A card outside ASE lists titles by issuer and shared words.
-- **The rename batch** (`#exhibits/rename-batch`, a Review tile): no title in the reference is renamed by a card or a
-  builder. The batch lists each ASE title not in the format (68 on 2026-11-11, 33 with a proposed title; the 35 bundles,
-  masters and uncoded titles carry none and stay unless Sam writes one). Approving writes `_CREDENTIAL_REVIEW::`
-  `unified_title_override`, and `unified_title_merge_confirm` where two titles are one certification (ASE's own title
-  leads, saved a second earlier, so the dry run renames it and folds the rest on the next apply); a skipped row writes
-  `cert_rename_kept` (DR-07). Until decided, the panel marks a title *Rename pending*.
-- **Aliases:** `kb/credential_aliases.py` reads the applied snapshots under `kb/cred_rename_out/`; the List's finder and
-  the public Credential Catalog (`aka`) find a credential by a title it used to carry.
-- **The canonical credential model (Sam's six rulings on #3110, 2026-11-11; DR-34;
-  [`docs/reference/canonical_credential_model.md`](../canonical_credential_model.md)):** the canonical title carries the credential's
-  issuer and each local exhibit its path and assessor, read from the MAP exhibit id (`kb/exhibit_paths.py`). A title in
-  the format fills its issuer with ASE; the panel and each batch row show a title's exhibits by path (*9 by industry
-  certification, assessed by ASE; 2 by credit by exam, assessed by the college*). This replaced his 06:20 PT note
-  *"Keep the college as issuer on the P1 title"* and S637's decision to leave the issuer to the card. The hold on the
-  16 merges ends with this display, the condition he set.
-- **NEXT (rulings 3 to 5):** no canonical title for a college's set of tests (the 30 bundle rows stay without a
-  proposal; ASE Master stays); *AWS* is the American Welding Society and *ACE* the American Council on Education
-  (recounted 20 to 4 and 29 to 3), the other body spelled out, before the AWS batch; high schools, districts, ROPs and
-  JATCs move from issuer to trainer (130 titles) in one data PR with receipts, with the 10 duplicate spellings and the
-  *alifornia Veterinary Medical Association* typo.
-- **The fold keeps one issuer, in one pass (#3110 build step 1, S638):** `kb/fold_issuer.py` is the one rule set for
-  the JSON fold, in order: (1) a person's issuer saved at or after the group's earliest
-  fold save wins (newest on a disagreement, the target's before-value in the receipt; the July map@rccd.edu
-  overrides are ordinary records); (2) a cert-form target keeps its issuer and drops the folded college record;
-  (2b) a "(ASE … standards)" target keeps the college and drops ASE; (3) additive. The college kept as issuer on a
-  title holding IC exhibits is an exception line, never a block; a person-set record a rule drops is named. A lead and its confirmed siblings apply in one dispatch (the lead is the source with no
-  confirm). `kb/_cred_rename_undo.py <receipt>` reverses an apply from `undo.json` (refuses drift) and
-  `--supabase-plan` writes the `kb_curation` reversal as guarded SQL. The decision is stored as one
-  `issuer_resolution` row per folded target (cohort `cred-fold-s638@bot`, written before the row moves and the
-  commit); no issuer row a person wrote is changed. Every reader resolves through `effective_issuer`
-  (`issuer_resolution.js` in the browser): an issuer saved after `decided_at` wins. The nightly enforces it on
-  `kb/credentials.json`. Tests: `tests/cred_rename_fold_issuer_test.py`, `tests/fold_issuer_resolution_test.py`,
-  `tests/fold_issuer_single_source_test.py`, `tests/issuer_resolution_parity.test.js`,
-  `tests/issuer_resolution_readers.test.js`.
-- **NEXT:** after the precedence PR merges, read `kb/cred_rename_dryrun/alias_map.json`'s summary and its
-  `issuer_preview`, then dispatch `cred-rename-apply.yml` once, then `daily-dashboard.yml` (statewide_data.js is
-  rebuilt there, never in the apply). Then turn on the next family in `cert_naming.FAMILIES`
-  with its table of official names (CompTIA, AWS, NCCER, one batch each). Sierra's corpus does not read aliases yet.
-- Tests: `tests/cert_naming_test.py` (42), `tests/exhibits_related.test.js` (57); `npm run a11y -- exhibits-related
-  exhibits-rename-batch` and their dark targets.
+- **Titles:** the certification's official name first, the code in parentheses (*Medium/Heavy Truck Parts Specialist
+  (ASE P1)*; Sam, 2026-11-11; `kb/cert_naming.py`). No card or builder renames a reference title; only the rename batch
+  (`#exhibits/rename-batch`) does, by Sam's approval. Old titles stay search aliases (`kb/credential_aliases.py`). The
+  canonical title carries the issuer, each local exhibit its path and assessor
+  (`docs/reference/canonical_credential_model.md`, DR-34). The ASE Military Tactical Wheeled Vehicle series MIL1 to MIL8
+  carries ASE's official titles, and `ASE_SERIES_CIP` places MIL and A6/A7/T6/T7 in automotive (#3118; Sam: *"so the
+  hvac mil should be in auto not hvac subj"*).
+- **The fold keeps one issuer, in one pass (#3116):** `kb/fold_issuer.py` holds the rules in order: (1) a person's
+  issuer saved at or after the group's earliest fold save wins, (2) a cert-form target keeps its issuer, (2b) an "(ASE
+  ... standards)" target keeps the college, (3) additive. The decision is one `issuer_resolution` row per folded target
+  (cohort `cred-fold-s638@bot`); no issuer row a person wrote is changed; every reader resolves through
+  `effective_issuer` (`issuer_resolution.js` in the browser). `kb/_cred_rename_undo.py <receipt>` reverses an apply.
+  The guarded writes and the undo have run only against a test double.
+- **The applier for CER decision plans** (`kb/_cer_decision_apply.py`, `cer-decision-apply.yml`) has a `reviewed_at`
+  guard, a `because` line and `over_machine_draft` (#3118). The workflow accepts a plan folder named `<date>` or
+  `<date>-<2-9>` only (run 43104136989 refused the three S638 folders, nothing written); #3120 renames them.
+- **Exhibit subject fill (#3119):** `kb/_exhibit_subject_fill.py` gives a credential with no Common SUBJ the subject of
+  the courses colleges credit for it (several colleges first, then one), else its issuer family's; title words, TOP and
+  CIP never decide. First live run (cer-procedures run 43104720166, 21:41Z): 747 `subj_override` and 747 `subj_source`
+  rows under `exhibit-subject-s638@bot`; undo is the cohort delete. `kb/exhibit_subject_out/worklist.json` lists the
+  rest (362 credentials, 429 exhibits, 70 with a suggestion); the Commons' Exhibit card counts `no_subject`.
+- **A credential family is a field, never a fold (#3117, open):** `kb/reference/credential_families.json` and
+  `kb/_family_tag_plan.py`; plan `kb/receipts/credential_family_2026-11-11_s638/` converts 25 and holds 6. ASE bundles
+  keep their titles (Sam: *"A, C as recommended"*).
+- **Held for Sam (his call, outward naming):** four ASE Master titles; Advanced Electrical and Electronic Systems (the
+  ASE plan retires it); ASE Certification (any A1-A8).
+- **NEXT, in order:** (1) merge #3120, then `cer-decision-apply.yml` dry-run then commit on the ASE plan, phase 1 then
+  phase 2; (2) the next nightly fold; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
+  #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
+  plan phase 3; (5) merge #3117 and run the family plan from a fresh live read (25 tags); (6) the rename batch proposing
+  "ASE Certificate Bundles: A4 + A5" titles, for Sam's one approval; (7) the credentials still without a subject, as one
+  batch (try a web search on an anomaly first, Sam 2026-11-11); (8) the hourly trigger for the fold apply; (9) the issuer
+  registry (official name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (10) the trainer
+  move (130 titles, with the 10 duplicate spellings and the *alifornia Veterinary Medical Association* typo); (11) a
+  Review step for the 181 college-issued titles holding an industry-certification exhibit. Then CompTIA, AWS, NCCER as
+  one batch each (`cert_naming.FAMILIES`).
+- Tests: `tests/cert_naming_test.py`, `tests/exhibits_related.test.js`, `tests/fold_issuer_resolution_test.py`,
+  `tests/issuer_resolution_parity.test.js`, `tests/exhibit_progress.test.js`.
 
 ## The redesign (2026-10-30, side session beside S531)
 
@@ -151,54 +135,9 @@ from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_
 `kb/exhibits_adoption.json`, and **settled means a local title under the credential carries a review stamp**, a person's
 or a cohort's. It offers both CSVs and Create Handout, writes nothing but the asks, remembers no filter, and `?college=`
 follows the pick. Today's shape is the port below.
-**The Credential Catalog, ported from the mock (SkyAerial, 2026-11-06; Sam: "I think it would make a good beginning for
-our credential registry", then "let's roll with this"; the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds, eight
-versions in one morning).** `library/adopt/` now runs the full width; three figure tiles beside the title open what they
-count (1,260 earn credit at a college, 101 colleges award it, 7,389 not yet evaluated; the tile count is his call, "101 is
-right") and **follow every filter but Credit status** (SkyLantern, Sam 2026-11-06: Computer and Information Sciences reads
-68 · 44 · 997; with a college pick the first two count what earns credit there), and a tile keeps the filters when it opens; *Start with* names five kinds of learner; every filter is a multi-select picker (College with a district heading
-only where a district has more than one college; Region under *Strong Workforce* and *ASCCC*; Field; *How credit is
-given*; **Credit status**, Show folded into it); the list groups under field headers, the largest work fields first and
-the exams (AP, IB, CLEP, DSST) last; a **List** view drills down (issuer searches, field and type filter, the count opens
-the awarding table) **one line a credential** (SkyLantern, Sam 2026-11-06): Credit status is its own column, *Ask us to
-prioritize* the last column on the right (its *Ask* and the asked count), a long cell ends in an ellipsis with the whole
-text in its title, and the List scrolls in a box a screen tall that **lazy-loads** the next 72 as the reader nears its end
-(the cards too, against the window; Show more stays only where the browser lacks IntersectionObserver). **Worth a faculty
-review sits above the results**, its 28 cards in a box about two rows tall; the matrix's cells open a side panel (**A** marks a college
-that could adopt; a column heading picks the college); the panel resizes from its left edge and the browser keeps the
-width; the Library's eleven photos cycle with *Pause photos*; the intro says *many*, and no public string says a bare
-MAP or CPL. **Credit status in public words, the Commons' curation words beside them:** Earns credit at a college
-(Awarded somewhere, 1,260) · Earns credit here / Earns credit elsewhere, could be added here (the two college-relative
-values, replacing Show) · Known to a college, no credit yet (In MAP, no articulation yet, 12) · Being reviewed (Held for
-title review, 1,171) · Not yet evaluated (Harvested, no exhibit yet, 7,389, the nightly watch's
-`kb/it_ai_credential_catalog.json`). Data: `kb/_build_adopt_page.py` also writes `adopt_more.json` (the other statuses,
-read after the first paint); `kb/_build_adopt_align.py` writes `adopt_align.json`, the **analysis for faculty** (issuer
-skill areas from `kb/reference/industry_credential_skills.json` against `public.course_outcomes`, an illustrative
-word-overlap score labeled so; the Foundation and ASCCC method, or a TypeSafe Jev Score per skill area, replaces it; Jev
-already runs the harvest, `tests/jev_harvest_test.py`). Both run daily. Tests `public_adopt` (91),
-`adopt_align_build_test.py` (9), `adopt_page_build_test.py` (32); `npm run a11y -- public-adopt public-adopt-dark
-public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluation** ships with the routes that exist
-today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
-source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
-
-**RULED and built (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note; built by SkyLoop the same
-afternoon): the statewide route is a public request to prioritize review, never an evaluation promise.** His words:
-*"Reframe it as a public request to prioritize review of a credential. The idea is that we could collect requests to help us
-better prioritize our work without promising any one person that we would evaluate their credential--that would be left to
-the discretion of local colleges."* The page's word is **Ask us to prioritize this credential** (the panel's heading, every
-card's chip; *Ask us to prioritize* on a List row's 0); the panel's statewide paragraph says each request raises the
-credential in the Initiative's order, that evaluation rests with a college's faculty, and that no reply is sent. The form
-takes the credential (fixed), an optional college (prefilled from the pick) and an optional email, and posts to **one
-INSERT-only SECURITY DEFINER function**, `credential_priority_request()`, which validates, bounds, drops a repeat from the
-same email within a day, and returns the count; `credential_priority_counts()` is the one public read (credential and n,
-nothing else) and paints the count beside the credential on its card, its List row and the panel's heading (the count is
-the signal). The table `credential_priority_requests` has no public policy; the team reads rows behind the phrase or a
-reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), applied
-16:21Z by `supabase-migrate.yml` from `kb/migrations/.apply` (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`;
-the MCP's apply had waited on a confirmation and timed out, Rule 10 c); read back live: anon executes the two functions and
-holds no insert on the table, RLS on. Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
-mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
-(81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).
+**The Credential Catalog's port from the mock (SkyAerial, 2026-11-06) and the statewide request route (Sheet 162,
+DR-31, `credential_priority_request()`)** moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane
+(S638)*. Ruled and standing: the statewide route is a public request to prioritize review, never an evaluation promise.
 
 **The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
 functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public

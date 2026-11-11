@@ -1118,6 +1118,33 @@ def rule_handoff_drops_active_lane(root):
     }
 
 
+# ── handoff_missing_conductor_settings ───────────────────────────────────────
+# WHY (S638, 2026-11-11): Sam ran the session as a conductor and ruled its
+# settings (effort per worker, the review cap) go into every handoff "from here
+# on out". A habit a session must remember fails, so the lint checks it: once
+# docs/reference/conductor_mode.md exists, the newest handoff carries a
+# "Conductor settings" heading.
+def rule_handoff_missing_conductor_settings(root):
+    """The newest handoff omits the conductor settings block."""
+    docs = os.path.join(root, "docs")
+    if not os.path.isfile(os.path.join(docs, "reference", "conductor_mode.md")):
+        return None
+    ns = [(int(m.group(1)), f) for f in os.listdir(docs) if (m := HANDOFF_RE.match(f))]
+    if not ns:
+        return None
+    newest = max(ns)[1]
+    text = open(os.path.join(docs, newest), encoding="utf-8").read()
+    if re.search(r"^#+\s*Conductor settings", text, re.M | re.I):
+        return None
+    return {
+        "rule": "handoff_missing_conductor_settings", "fixable": False,
+        "path": f"docs/{newest}", "detail": {},
+        "message": (f"`docs/{newest}` has no `Conductor settings` heading. Copy the "
+                    "Settings block from docs/reference/conductor_mode.md into the "
+                    "handoff, with the date of Sam's latest change (S638)."),
+    }
+
+
 # ── esl_monthly_pass_due ─────────────────────────────────────────────────────
 # WHY (2026-09-27, S295): Sam's verdict on item 8 of the ESL merging sheet
 # (2026-09-26) made folding new ESL identities a MONTHLY pass that a session
@@ -1974,6 +2001,10 @@ def main():
     dropped = rule_handoff_drops_active_lane(ROOT)
     if dropped:
         findings.append(dropped)
+
+    no_settings = rule_handoff_missing_conductor_settings(ROOT)
+    if no_settings:
+        findings.append(no_settings)
 
     esl_due = rule_esl_monthly_pass_due(ROOT)
     if esl_due:

@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 849,
+  "file_datasets": 850,
   "external_services": 195,
   "consumers": 551,
   "workflows": 65,
@@ -7675,6 +7675,19 @@
      "direction": "read",
      "how": "literal",
      "line": 655
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/conductor_mode.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_docs_audit.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1130
     }
    ],
    "served": false,
