@@ -468,6 +468,8 @@ jobs:
       # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
       - name: Credential panel training sites
         run: python3 tests/credential_review_sites_test.py
+      - name: A replaced issuer override is reported, never removed (S636)
+        run: python3 tests/credential_review_stale_issuer_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

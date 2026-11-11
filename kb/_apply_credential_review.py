@@ -254,7 +254,7 @@ def promote_issuers(overrides):
                     "confidence_issuer": 1.0,
                     "confidence_trainer": 0.9,
                     "classified_at": today,
-                    "classified_by": "curator (CER issuing-agency override)",
+                    "classified_by": OVERRIDE_APPENDED,
                     "reviewed_at": entry.get("reviewed_at"),
                     "reviewed_by": entry.get("reviewed_by"),
                     "_notes": "Additional issuing agency from a Curate-panel "
@@ -267,6 +267,33 @@ def promote_issuers(overrides):
             json.dump(cr, f, indent=2, ensure_ascii=False)
             f.write("\n")
     return fills, adds, missing
+
+
+OVERRIDE_APPENDED = "curator (CER issuing-agency override)"
+
+
+def stale_override_issuers(overrides, cr):
+    """Issuers an override once appended that no current override names (S636).
+    promote_issuers never removes: an override changed from A to B leaves A in
+    kb/credentials.json beside B (S634, 10-Key Data Entry; cpl_memory
+    p-credential-review-apply-never-removes-issuer). This only REPORTS them, so
+    the change that edits the override can edit the reference too; it removes
+    nothing, because one credential may rightly carry several issuers (Rule 4)
+    and only a person can say which this is. A record the override filled in
+    place (the first record) carries no mark of it and is not read here."""
+    out = []
+    for ut, entry in sorted((overrides or {}).items()):
+        named = [(entry.get("issuing_agency_override") or "").strip()]
+        named += [x.strip() for x in (entry.get("issuing_agency_additional_override") or "").split("|")]
+        named = [{"issuing_agency": n} for n in named if n]
+        if not named:
+            continue
+        for rec in (cr or {}).get(ut) or []:
+            iss = (rec.get("issuing_agency") or "").strip()
+            if rec.get("classified_by") == OVERRIDE_APPENDED and iss \
+                    and not _issuer_present(_norm_issuer(iss), named):
+                out.append({"title": ut, "issuer": iss})
+    return out
 
 
 def promote_trainers(overrides):
@@ -376,6 +403,15 @@ def main():
               f"{len(adds)} appended {[(a['title'], a['issuer']) for a in adds]}, "
               f"{len(missing_cred)} title(s) with no credential record skipped "
               f"{missing_cred[:5]}")
+    try:
+        stale = stale_override_issuers(overrides, json.load(open(CR_PATH, encoding="utf-8")))
+    except (OSError, ValueError):
+        stale = []
+    if stale:
+        print(f"Issuers an override appended that no current override names, left in "
+              f"credentials.json ({len(stale)}): {[(x['title'], x['issuer']) for x in stale]}. "
+              f"Nothing is removed here; edit kb/credentials.json in the same change if the "
+              f"override replaced them.")
     t_fills, t_missing = promote_trainers(overrides)
     if t_fills or t_missing:
         print(f"Mode A3 trainer promotion → credentials.json: "
