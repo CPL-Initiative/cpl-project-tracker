@@ -1,11 +1,11 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-11T15:43:01Z",
+ "_generated_at": "2026-11-11T21:41:24Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 280,
+ "queue": 178,
  "saved_not_folded": 0,
- "waiting": 280,
- "proposed": 243,
+ "waiting": 178,
+ "proposed": 141,
  "needs_you_count": 177,
  "not_yet_asked": 0,
  "fold_held": 0,
@@ -21,28 +21,12 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 63,
+   "settled": 1,
    "held": 20,
    "sample": [
     [
-     "AP 2-D Art and Design - Score of 3 or higher",
-     "AP 2-D Art and Design"
-    ],
-    [
-     "AP 3-D Art and Design - Score of 3 or higher",
-     "AP 3-D Art and Design"
-    ],
-    [
-     "AP Art History - Score of 3 or higher",
-     "AP Art History"
-    ],
-    [
-     "AP Calculus AB - Score of 3 or higher",
-     "AP Calculus AB"
-    ],
-    [
-     "AP Calculus BC/AB Subscore - Score of 3 or higher",
-     "AP Calculus AB"
+     "AP Government Exam",
+     "AP United States Government and Politics"
     ]
    ]
   },
@@ -102,7 +86,7 @@
     "words": "the Journeyman Certificate- Apprenticeship Carpentry family and the DIR DAS carpenter page (occupation 2180)",
     "skill": "Rule 5e"
    },
-   "settled": 4,
+   "settled": 0,
    "held": 65,
    "sample": []
   },
@@ -132,14 +116,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 40,
+   "settled": 0,
    "held": 78,
-   "sample": [
-    [
-     "French 1-Elementary French 1st Quarter",
-     "Elementary French I"
-    ]
-   ]
+   "sample": []
   },
   {
    "id": "high-school-rop",
@@ -198,7 +177,7 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 3,
+   "settled": 0,
    "held": 0,
    "sample": []
   },
@@ -213,7 +192,7 @@
     "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to later exhibit titles in parens after the title",
     "skill": "Rule 5h"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 22,
    "sample": []
   },
@@ -228,7 +207,7 @@
     "words": "Many exhibits use I, II, III and I skipped adjusting some of those to 1,2,3 for consistency.",
     "skill": "Rule 5h"
    },
-   "settled": 2,
+   "settled": 0,
    "held": 24,
    "sample": []
   },
@@ -243,7 +222,7 @@
     "words": "look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and intermediate should be often 2,3 or 2A,2B",
     "skill": "Rule 5h"
    },
-   "settled": 2,
+   "settled": 0,
    "held": 0,
    "sample": []
   },
@@ -258,7 +237,7 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 13,
+   "settled": 0,
    "held": 33,
    "sample": []
   },
@@ -273,7 +252,7 @@
     "words": "it is better to over merge and give faculty the chance to pull them out rather than the other way around. It's easier to respond to a decision than to make one.",
     "skill": null
    },
-   "settled": 5,
+   "settled": 0,
    "held": 60,
    "sample": []
   },
@@ -287,38 +266,12 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 48,
+   "settled": 0,
    "held": 177,
-   "sample": [
-    [
-     "Noncredit Course for AUTO P1",
-     "Powertrains: Modifications for Performance"
-    ],
-    [
-     "Noncredit Course for AVI 110",
-     "Drone Coding and Piloting"
-    ],
-    [
-     "Noncredit Course for BUSN 33",
-     "Personal and Family Financial Planning Fundamentals"
-    ],
-    [
-     "Noncredit Course for CIS 100",
-     "AI (Artificial Intelligence) in the Workplace"
-    ],
-    [
-     "Noncredit Course for ENG 110",
-     "Craft of the Sentence"
-    ]
-   ]
+   "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 15,
-  "answered": 15,
-  "errors": [],
-  "cost_usd": 2.84
- },
+ "classifier_run": null,
  "needs_you": [
   {
    "raw_title": "Credit By Exam- CFPL ABT 135",
