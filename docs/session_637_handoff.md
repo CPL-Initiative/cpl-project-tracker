@@ -81,6 +81,25 @@ test that you can access what he provides to see if the loop is closed and the t
    records), the registry fixes in its section 3, `course-outline-index.yml` discovery on the five curriQunet hosts.
    **#3083 has no reply from Sky yet**; the answer sits on #3096. Post a short pointer there.
 
+### Where that stretch ended (13:00Z)
+
+- **The loop closed.** Run 43019771268 pinned American River's catalog from the college's own address: 8,010,776 bytes,
+  the sha256 COBIx gave. Reported on #3096 and #3083; the Los Rios row is in `blocked_sources.md`. Sky adopted COBIx's
+  source packets and asked for the other three Los Rios colleges and the next five in the sweep: **read #3096 first**.
+- **American River's new edition reworded 23 programs' outcomes or careers.** The rescored records were not kept or
+  posted. NEXT: `step=read`, `extract=1`, `force=` these control numbers (about $1.50), then load and reread:
+  `04542,04551,12180,12186,14520,16734,16817,20099,20104,20110,20117,20121,20132,31537,31582,35640,37403,40100,40111,42725,44962,44999,46434`.
+- **Redwoods is live: 59 of 68 rows passing** (reread 43021039908, 18 replaced, no error). Display build 0874a3a15f22
+  was dispatched at 12:47Z; confirm its applied record under `kb/receipts/` (17,557 of 17,560 expected).
+- **De Anza: applied on Sam's "go de anza"** (migration run 43023582603; the row reads eLumen, 2026-2027; the hand-filed
+  record is in `kb/hand_filed_catalogs/retired/`). A free capture was dispatched at 12:58Z (`step=read`, `extract=0`).
+  NEXT: read its found count in `kb/program_requirements_college/de_anza/summary.json`; extract under the $40 go; load
+  (the 212 live rows are 2025-26 records: the reread replaces unchecked rows, and rows the new catalog no longer files
+  follow Sheet 118 card 1); a `ge_units` step from the `daweb2` GE pages; refresh the builder's dated registry read
+  (`kb/program_requirements_pilot/registry_read.json`) for De Anza before the display build.
+- **#3105 is open.** If this session did not merge it, merge it on a green `test` once the De Anza capture's commit is on
+  the branch.
+
 ## Decisions to honor
 
 - Sam, this run: the opening line only. No card was asked or answered; no sheet was built.
