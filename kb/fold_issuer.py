@@ -714,6 +714,8 @@ def family_titles(path):
 # to the title.
 
 EMPTIED_HELD_LINE = "held: the title holds no exhibit, so its saved rows stay in place and do nothing"
+EMPTIED_LEAD_HELD_LINE = ("held: the rename that would create this target is held (its title holds no exhibit); "
+                          "the next dry run plans the group again")
 
 
 def titles_holding_exhibits(unified_titles):
@@ -733,6 +735,14 @@ def hold_emptied_folds(renames, merges, holding):
                 keep[o] = t
             else:
                 held.append({"old": o, "target": t, "kind": kind, "why": EMPTIED_HELD_LINE})
+    # A held rename that led its group creates no target, so a confirmed sibling folding into that target waits
+    # with it: kept, it would fail the apply's merge-target check and stop the whole batch. A fresh dry run, which
+    # holds the emptied title before it picks a lead, plans the group again.
+    lost = {h["target"] for h in held if h["kind"] == "rename"} - set(keep_r.values())
+    for o, t in sorted(keep_m.items()):
+        if t in lost:
+            del keep_m[o]
+            held.append({"old": o, "target": t, "kind": "merge", "why": EMPTIED_LEAD_HELD_LINE})
     return keep_r, keep_m, held
 
 

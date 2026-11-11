@@ -307,7 +307,8 @@ for label, mutate in [
 
 # ── a retire is a guarded DELETE of a named curator row; rollback puts it back ──
 SAM = "curator@rccd.edu"
-RPLAN = {"ruling": "retire ruling", "cohort": "exhibits-s0@bot", "rows": [], "retires": [
+RPLAN = {"ruling": "retire ruling", "cohort": "exhibits-s0@bot", "rows": [],
+         "ruling_allows_retire_of_saved_rows": "test: Sam's 1 yes on his spent overrides", "retires": [
     {"course_id": P + "Spanish 1", "field": "unified_title_override", "value": "Elementary Spanish I",
      "reviewer_email": SAM},
     {"course_id": P + "Spanish 1", "field": "unified_title_merge_confirm", "value": "Elementary Spanish I",
@@ -612,13 +613,33 @@ for p in glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json
            and not str(x.get("reviewer_email", "")).endswith("@bot")]
     check("%s retires no person's saved row but a reviewed_marker" % os.path.relpath(p, ROOT), not bad, bad)
 
+# ── load_plan itself refuses a retire of a person's saved row, unless the plan names the ruling (#3110) ──
+for ph in ("2026-11-11", "2026-11-11-2"):
+    try:
+        app.load_plan(os.path.join(ROOT, "kb", "cer_decisions_out", ph))
+        refused = False
+    except SystemExit as e:
+        refused = "reviewed_marker" in str(e)
+    check("load_plan refuses %s's retires of Sam's rows outside a rollback" % ph, refused)
+    check("%s still loads for its rollback" % ph,
+          bool(app.load_plan(os.path.join(ROOT, "kb", "cer_decisions_out", ph), history=True)["retires"]))
+d = plan_dir(dict(RPLAN, ruling_allows_retire_of_saved_rows=""))
+try:
+    app.load_plan(d)
+    refused = False
+except SystemExit:
+    refused = True
+check("a blank ruling_allows_retire_of_saved_rows allows nothing", refused)
+shutil.rmtree(d)
+
 # ── the committed plans are valid ones ───────────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))
 for p in plans:
     name = os.path.relpath(p, ROOT)
-    try:
-        pl = app.load_plan(os.path.dirname(p))
+    applied = bool(glob.glob(os.path.join(os.path.dirname(p), "applied_*.json")))
+    try:  # an applied plan is history: it loads for its rollback even where a later rule refuses it
+        pl = app.load_plan(os.path.dirname(p), history=applied)
         ok = bool(pl["ruling"]) and pl["cohort"].endswith("@bot")
     except SystemExit as e:
         ok, pl = False, str(e)

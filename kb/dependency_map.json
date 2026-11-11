@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 854,
+  "file_datasets": 856,
   "external_services": 195,
   "consumers": 553,
   "workflows": 65,
@@ -5008,7 +5008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 436
+     "line": 515
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -19342,7 +19342,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 280
+     "line": 302
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -21444,6 +21444,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:rolled_back_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cer_decision_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 500
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/catalog_framing.py": {
    "consumers": [
     {
@@ -22633,6 +22646,19 @@
    "main_committers": []
   },
   "file:tests/cer_classifier_rules_size_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/cer_decision_apply_retry_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28513,7 +28539,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 101
+     "line": 114
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -31239,6 +31265,7 @@
     "tests/csr_confirm_authority_test.py",
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
+    "tests/cer_decision_apply_retry_test.py",
     "tests/cer_procedures_test.py",
     "tests/cer_classifier_rules_size_test.py",
     "tests/ap_official_titles_test.py",

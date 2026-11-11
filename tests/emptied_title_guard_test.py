@@ -108,11 +108,11 @@ try:
     app.ALIAS_PATH = os.path.join(dry_out, "alias_map.json")
     app.OUT_ROOT = out_root
 
-    def setup(ut):
+    def setup(ut, overlay=OVERLAY):
         write(paths["credentials.json"], CREDS)
         write(paths["unified_titles.json"], ut)
         write(paths["coci_articulations.json"], {"articulations": []})
-        write(paths["credential_review_overlay.json"], {"_read_at": "2026-11-11T23:00:00Z", "overrides": OVERLAY})
+        write(paths["credential_review_overlay.json"], {"_read_at": "2026-11-11T23:00:00Z", "overrides": overlay})
         write(paths["exhibits_related.json"], {"titles": []})
         with contextlib.redirect_stdout(io.StringIO()):
             dry.main()
@@ -172,6 +172,27 @@ try:
     check("apply: a merge of an emptied title in a stale alias map is held, not folded",
           creds.get(HAC) == CREDS[HAC] and fold_issuer.EMPTIED_HELD_LINE in buf.getvalue(), buf.getvalue()[-300:])
 
+    # ── a stale alias map whose held lead had a confirmed sibling: held, not an aborted batch (S639 review) ──
+    write(paths["credentials.json"], CREDS)
+    write(paths["unified_titles.json"], UT_EMPTIED)  # the earlier apply re-keyed the lead's raw
+    write(app.ALIAS_PATH, dict(amap, renames={HAC: "Heating and Air Conditioning (new)"},
+                               merges={LEAD: "Heating and Air Conditioning (new)"}))
+    shutil.rmtree(out_root, ignore_errors=True)
+    buf = io.StringIO()
+    refused = run_apply(buf)
+    check("apply: a confirmed sibling of a held lead waits with it; the batch does not stop at the merge-target check",
+          refused is None and read(paths["credentials.json"]) == CREDS
+          and fold_issuer.EMPTIED_LEAD_HELD_LINE in buf.getvalue(), str(refused)[:200] + buf.getvalue())
+
+    # ── a held emptied rename is no chain: a confirmed merge INTO that title still folds (S639 review) ──
+    shutil.rmtree(out_root, ignore_errors=True)
+    amap3, coll3 = setup(UT_EMPTIED, dict(OVERLAY, Untouched=ov(unified_title_override=(HAC, SAM, F1),
+                                                                unified_title_merge_confirm=(HAC, SAM, F1))))
+    check("dry run: a merge into an emptied title whose own rename is held is confirmed, not a chain collision",
+          amap3["merges"].get("Untouched") == HAC
+          and not [c for c in coll3["collisions"] if c["old_unified_title"] == "Untouched"],
+          json.dumps(coll3["collisions"])[:300])
+
     # ── the same rows act again once the title holds an exhibit ──────────
     shutil.rmtree(out_root, ignore_errors=True)
     amap2, _ = setup(dict(UT_EMPTIED, **{"HVAC NC": {"unified_title": HAC}, "AUTO 52": {"unified_title": ABS}}))
@@ -186,6 +207,14 @@ try:
     r, m, h = fold_issuer.hold_emptied_folds({"A": "X", "B": "Y"}, {"C": "X"}, {"A"})
     check("helper: keeps a source that holds an exhibit, holds the rest",
           r == {"A": "X"} and m == {} and [x["old"] for x in h] == ["B", "C"])
+    # A held lead creates no target: its confirmed sibling waits with it, so the apply's merge-target check never
+    # stops the batch (S639 review). A second rename to the same target still creates it, so the merge stays.
+    r, m, h = fold_issuer.hold_emptied_folds({"L": "T"}, {"S": "T", "Q": "U"}, {"S", "Q"})
+    check("helper: a confirmed merge into a held lead's target waits with it; another merge stays",
+          r == {} and m == {"Q": "U"} and ("S", fold_issuer.EMPTIED_LEAD_HELD_LINE) in {(x["old"], x["why"]) for x in h},
+          json.dumps(h))
+    r, m, h = fold_issuer.hold_emptied_folds({"L": "T", "K": "T"}, {"S": "T"}, {"K", "S"})
+    check("helper: a merge stays while a kept rename still creates its target", r == {"K": "T"} and m == {"S": "T"})
     check("helper: titles_holding_exhibits reads the raws' unified titles",
           fold_issuer.titles_holding_exhibits({"a": {"unified_title": "T"}, "b": {}, "c": None}) == {"T"})
 finally:

@@ -121,14 +121,21 @@ def main():
     skipped = []              # list of dicts with skip reason
     no_credential_record = [] # rename of a unified_title with no credentials.json entry
 
+    # A saved fold on a title that holds no exhibit (no raw maps to it) is held below, before the twin
+    # and collision lanes, so it leads no group, joins no fold and its issuer row never reaches rule 1
+    # (Sky and COBIx, 2026-11-11, #3110). The same rows act again once a raw maps to the title.
+    holding = fold_issuer.titles_holding_exhibits(unified_titles)
+
     # Every override that carries a title rename, keyed by source — used by
     # the merge-target chain guard below (a confirmed merge must not target a
     # credential that is itself being renamed/merged away in the same batch).
+    # A held emptied title renames nothing this batch, so it is no chain.
     retitled_sources = {
         o: (v or {}).get("unified_title_override")
         for o, v in overrides.items()
         if (v or {}).get("unified_title_override")
         and (v or {}).get("unified_title_override") != o
+        and o in holding
     }
 
     # A title saved into a declared family title (Sam's ruling C) is held here, before the twin and
@@ -136,10 +143,6 @@ def main():
     # that would mint the family name as a credential) nor a collision a curator could confirm into a merge.
     families = fold_issuer.family_titles(FAMILIES)
     held_early = []
-    # A saved fold on a title that holds no exhibit (no raw maps to it) is held here too, before the twin
-    # and collision lanes, so it leads no group, joins no fold and its issuer row never reaches rule 1
-    # (Sky and COBIx, 2026-11-11, #3110). The same rows act again once a raw maps to the title.
-    holding = fold_issuer.titles_holding_exhibits(unified_titles)
     held_emptied = []
 
     for old_ut, ov in sorted(overrides.items()):

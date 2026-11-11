@@ -53,7 +53,15 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   by `kb/cer_decisions_out/2026-11-11-4`** (12 of Sam's as slee@cccco.edu, and Automotive Air Conditioner's July issuer
   row as map@rccd.edu), and the 4 July `reviewed_marker` ticks stay retired. The applier's `reinstates` put a row back
   exactly as its receipt kept it, under the person's own reviewer and stamp, insert-only; `while_emptied` holds the
-  plan until the fold has emptied the title; `--rollback` deletes exactly those rows.
+  plan until the committed map shows the title empty (the committed `kb/unified_titles.json`, which only the nightly
+  fold moves; a commit is refused off origin/main's current copy, and the workflow checks out main); `--rollback`
+  deletes exactly those rows, and leaves one that phase 1's own rollback has since found in place or put back.
+- **The applier's undo never reads a write's echo (S639 review, #3123).** `Rest._call` retries a request whose response
+  was lost, and the retry echoes nothing for a write that landed. So the receipt is `pending` with the planned lists
+  before the first write, a fresh read files each row after the writes, and `--rollback` works from the planned lists
+  of every receipt (pending ones too), each step guarded by live value and reviewer (and stamp) and read back
+  (`tests/cer_decision_apply_retry_test.py`, a PostgREST-level fake). `load_plan` refuses a retire of a person's row
+  but a `reviewed_marker` unless the plan names `ruling_allows_retire_of_saved_rows`; applied plans load for rollback.
 - **Readers ignore a saved row on an emptied title** (a title no `kb/unified_titles.json` raw maps to, the fold's own
   test). `fold_issuer.hold_emptied_folds` keeps its saved fold out of the rename dry run and the apply (`held_emptied`
   in the alias map), so it leads no fold, raises no issuer conflict (Heating and Air Conditioning's 15:47Z issuer) and

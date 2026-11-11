@@ -27,9 +27,19 @@ Rule 10, enforced here rather than by recall:
     holds that row (a rename whose key is a pending merge target fights the curator);
   - the INSERT ignores duplicates on (course_id, field), so a row a curator adds between the read
     and the write wins;
-  - the receipt is written BEFORE the INSERT; --rollback deletes only rows still carrying this
-    cohort's reviewer_email and the value it wrote. Once cred-rename-apply has consumed an
-    override, the rename's own alias map is the record (kb/cred_rename_out/<date>/).
+  - the receipt is written as `pending`, naming every row the run plans to write, BEFORE the first
+    write, and a re-run after a died run writes a fresh one. A write's echo is never the record:
+    Rest._call retries a request whose response was lost, and the retry echoes nothing for a write
+    that landed. So after the writes a fresh read files each planned row (inserted, put back,
+    replaced, retired, or not), and --rollback works from every receipt's planned lists, pending
+    ones included: each step guarded by the live value and reviewer (and stamp where named), each
+    outcome read back, so a row a person saved since stays and is reported (S639 review, PR #3123).
+    --rollback deletes only rows still carrying this cohort's reviewer_email and the value it
+    wrote. Once cred-rename-apply has consumed an override, the rename's own alias map is the
+    record (kb/cred_rename_out/<date>/).
+  - a plan retires no person's saved row but a reviewed_marker tick unless it names the ruling in
+    `ruling_allows_retire_of_saved_rows` (Sky and COBIx, 2026-11-11, #3110). load_plan refuses
+    it; a plan applied before the rule still loads for its rollback.
   - a REPLACE is a guarded UPDATE, and only where the plan says so (Rule 10a): a row carrying
     `replaces: {value, reviewer_email}` names the live row it supersedes, and the ruling that lets
     it. It changes only while that row still holds exactly that value from that reviewer; anything
@@ -50,8 +60,11 @@ Rule 10, enforced here rather than by recall:
     each row with `from_receipt` (an applied_*.json under kb/cer_decisions_out/) and its whole before-row (value,
     reviewer_email, reviewed_at, and validated_* when set), and load_plan refuses an entry that differs from the
     receipt. Insert-only with the person's own reviewer_email and stamp, so a row written since wins (it holds the
-    plan). `while_emptied` holds it while a kb/unified_titles.json raw still maps to the title. --rollback deletes
-    exactly the rows it put back, guarded by value, reviewer and stamp, so a person's later save stays. Sky and
+    plan). `while_emptied` holds it while a raw in the COMMITTED kb/unified_titles.json still maps to the title: the
+    nightly fold is what moves raws, so the committed map is the record, and a commit is refused unless the file is
+    origin/main's current one (the workflow checks out main, so there it is). --rollback deletes exactly the rows
+    it put back, guarded by value, reviewer and stamp, so a person's later save stays, and leaves a row that a
+    rollback of the plan it restored (its from_receipt's folder) has since found in place or put back. Sky and
     COBIx, 2026-11-11 (#3110): a plan never retires a person's saved row on an emptied title; readers ignore it
     (kb/fold_issuer.py hold_emptied_folds). This restores the rows the S638 ASE plans retired.
 
@@ -157,7 +170,9 @@ class Rest:
         return self._call("DELETE", params, prefer="return=representation")
 
 
-def load_plan(plan_dir):
+def load_plan(plan_dir, history=False):
+    """The plan, validated. `history` (a rollback) loads a plan applied before a rule it now breaks: its receipt is
+    the record, and undoing it must stay possible."""
     with open(os.path.join(plan_dir, "plan.json"), encoding="utf-8") as fh:
         plan = json.load(fh)
     rows = plan.get("rows") or []
@@ -229,6 +244,13 @@ def load_plan(plan_dir):
             raise SystemExit("a retire removes a curator's row; this cohort's own rows go by --rollback: %r" % r)
         if r.get("reviewed_at") is not None and _instant(r["reviewed_at"]) is None:
             raise SystemExit("a retire's reviewed_at is an ISO timestamp: %r" % r)
+        # Sky and COBIx, 2026-11-11 (#3110): a plan never retires a person's saved row; the readers ignore a saved row
+        # on an emptied title. Only the CER's reviewed tick goes with its title, unless the plan names the ruling.
+        allow = plan.get("ruling_allows_retire_of_saved_rows")
+        if not history and field != "reviewed_marker" and not COHORT_RE.match(r["reviewer_email"]) \
+                and not (isinstance(allow, str) and allow.strip()):
+            raise SystemExit("a plan retires no person's saved row but a reviewed_marker tick (#3110), unless it names "
+                             "the ruling in ruling_allows_retire_of_saved_rows: %r" % r)
         if (cid, field) in seen:
             raise SystemExit("a (course_id, field) appears twice, or is both written and retired: %r" % ((cid, field),))
         seen.add((cid, field))
@@ -398,8 +420,8 @@ def check(plan, rest, ut=None):
             state, why = "held", "holds %r (by %s, %s); a row written since wins" % (
                 now.get("value"), now.get("reviewer_email"), now.get("reviewed_at"))
         elif r.get("while_emptied") and title in holding:
-            state, why = "held", "the title still holds an exhibit (a kb/unified_titles.json raw maps to it); " \
-                                 "wait for the fold that empties it"
+            state, why = "held", "the title still holds an exhibit (a raw in the committed kb/unified_titles.json " \
+                                 "maps to it); held until the committed map shows the title empty"
         elif fights:
             state, why = "held", "a pending merge confirm on %s names this title" % fights[0]["course_id"]
         else:
@@ -430,61 +452,173 @@ def write_receipt(plan_dir, name, body):
         fh.write("\n")
 
 
-def run(plan_dir, mode, rest, out=print):
-    plan = load_plan(plan_dir)
-    if mode == "rollback":
-        receipts = sorted(glob.glob(os.path.join(plan_dir, "applied_*.json")))
-        written, replaced, retired, put_back = [], [], [], []
-        for p in receipts:
-            with open(p, encoding="utf-8") as fh:
-                rec = json.load(fh)
-            written.extend(rec.get("inserted") or [])
-            replaced.extend(rec.get("replaced") or [])
-            retired.extend(rec.get("retired") or [])
-            put_back.extend(rec.get("put_back") or [])
-        if not written and not replaced and not retired and not put_back:
-            out("nothing to roll back: no receipt records an insert or a replace")
-            return 0
-        ts = stamp()
-        removed, gone, restored, moved = [], [], [], []
-        for r in written:
-            got = rest.delete(r, plan["cohort"])
-            (removed if got else gone).append({k: r[k] for k in ("course_id", "field", "value")})
-        for r in replaced:
-            b = r["before"]
-            got = rest.replace(r["course_id"], r["field"], r["value"], plan["cohort"],
-                               {"value": b["value"], "reviewer_email": b["reviewer_email"],
-                                "reviewed_at": b.get("reviewed_at")})
-            (restored if got else moved).append({k: r[k] for k in ("course_id", "field", "value")})
-        reinstated, taken = [], []
-        for r in retired:
-            b = r["before"]
-            row = {"course_id": r["course_id"], "field": r["field"], "value": b["value"],
-                   "reviewer_email": b["reviewer_email"]}
-            row.update({k: b[k] for k in ("reviewed_at", "validated_at", "validated_by") if b.get(k) is not None})
-            got = rest.insert([row])
-            (reinstated if got else taken).append({k: row[k] for k in ("course_id", "field", "value")})
-        # A reinstate's undo deletes exactly the row it put back: that value, that person, that save. A person
-        # who saved the title again since has a new stamp, and that save stays.
-        unput, kept = [], []
-        for r in put_back:
-            got = rest.delete({"course_id": r["course_id"], "field": r["field"], "value": r["value"],
-                               "reviewed_at": r["reviewed_at"]}, r["reviewer_email"])
-            (unput if got else kept).append({k: r[k] for k in ("course_id", "field", "value", "reviewer_email",
-                                                               "reviewed_at")})
-        body = {"table": TABLE, "mode": "rollback", "at": ts, "cohort": plan["cohort"],
-                "removed": removed, "already_gone": gone,
-                "restored": restored, "changed_since": moved,
-                "reinstated": reinstated, "taken_since": taken}
-        if put_back:
-            body.update({"reinstates_undone": unput, "reinstates_changed_since": kept})
-        write_receipt(plan_dir, "rolled_back_%s.json" % ts, body)
-        out("rollback: %d removed, %d already gone (consumed by the rename, or changed by a curator); "
-            "%d restored to the curator's value, %d changed since; %d retired rows reinstated, %d taken since"
-            % (len(removed), len(gone), len(restored), len(moved), len(reinstated), len(taken))
-            + ("; %d reinstated rows removed again, %d saved again since and left" % (len(unput), len(kept))
-               if put_back else ""))
+def _key(r):
+    return (r["course_id"], r["field"])
+
+
+def _live(rest, keys):
+    """A fresh read of every (course_id, field) named."""
+    live = {}
+    for cid in sorted({k[0] for k in keys}):
+        for x in rest.rows_for(cid) or []:
+            live[(x["course_id"], x["field"])] = x
+    return live
+
+
+def _holds(now, value, email, at=None):
+    """The live row holds exactly this value from this reviewer (and, when `at` is named, this save)."""
+    return now is not None and now.get("value") == value and now.get("reviewer_email") == email \
+        and (at is None or _instant(at) == _instant(now.get("reviewed_at")))
+
+
+def ut_matches_main():
+    """(True, "") while kb/unified_titles.json here is origin/main's current one; else (False, why). A while_emptied
+    reinstate reads the committed map, which only the nightly fold moves, so a commit runs on main's head of it.
+    cer-decision-apply.yml checks out main, so there it always is; a local run on an older checkout is refused."""
+    import subprocess
+
+    def git(*args):
+        return subprocess.run(["git", "-C", REPO] + list(args), check=True, capture_output=True, text=True,
+                              timeout=180).stdout.strip()
+    try:
+        git("fetch", "-q", "origin", "main")
+        want = git("rev-parse", "FETCH_HEAD:kb/unified_titles.json")
+        have = git("hash-object", UT_PATH)
+    except (OSError, subprocess.SubprocessError) as e:
+        return False, "could not read origin/main's kb/unified_titles.json (%s)" % e
+    if not want or want != have:
+        return False, "kb/unified_titles.json here (%s) is not origin/main's current one (%s)" % (have[:12], want[:12])
+    return True, ""
+
+
+def _put_back_later(back, since):
+    """The rollback of the plan whose retire this reinstate undid (its from_receipt's folder), run since the reinstate,
+    that found this row in place or put it back: that undo wants the row there, so this one leaves it."""
+    src = back.get("from_receipt")
+    if not isinstance(src, str):
+        return None
+    for p in sorted(glob.glob(os.path.join(REPO, os.path.dirname(src), "rolled_back_*.json"))):
+        with open(p, encoding="utf-8") as fh:
+            rec = json.load(fh)
+        if (rec.get("at") or "") >= since and any(  # stamps are to the second; one in the same second counts
+                (x.get("course_id"), x.get("field")) == _key(back)
+                for x in (rec.get("reinstated") or []) + (rec.get("already_in_place") or [])):
+            return os.path.relpath(p, REPO).replace(os.sep, "/")
+    return None
+
+
+def rollback(plan_dir, plan, rest, out):
+    """Undo every commit receipt in the folder, pending ones included, from what each PLANNED to write (rows,
+    replaces[].before, retires, reinstates), never from a write's echo, which a retried request loses. Each step is
+    guarded by the live row's value and reviewer (and stamp where one is named), and every outcome is read back."""
+    rows, swaps, drops, backs = {}, {}, {}, {}
+    for p in sorted(glob.glob(os.path.join(plan_dir, "applied_*.json"))):
+        with open(p, encoding="utf-8") as fh:
+            rec = json.load(fh)
+        for r in rec.get("rows", rec.get("inserted")) or []:
+            rows.setdefault(_key(r), r)
+        for r in rec.get("replaces", rec.get("replaced")) or []:
+            swaps.setdefault(_key(r), r)
+        for r in rec.get("retires", rec.get("retired")) or []:
+            drops.setdefault(_key(r), r)
+        for r in rec.get("reinstates", rec.get("put_back")) or []:
+            backs.setdefault(_key(r), dict(r, _at=rec.get("at") or ""))
+    if not (rows or swaps or drops or backs):
+        out("nothing to roll back: no receipt plans an insert, a replace, a retire or a reinstate")
         return 0
+    cohort = plan["cohort"]
+    keys = set(rows) | set(swaps) | set(drops) | set(backs)
+    pre = _live(rest, keys)
+    ts = stamp()
+    did = {"rows": [], "swaps": [], "drops": [], "backs": []}
+    gone, not_replaced, moved, in_place, taken, never_back, kept, left_for = [], [], [], [], [], [], [], []
+
+    def brief(r, *extra):
+        return {k: r[k] for k in ("course_id", "field", "value") + extra}
+
+    for k, r in rows.items():
+        if _holds(pre.get(k), r["value"], cohort):
+            rest.delete(r, cohort)
+            did["rows"].append(r)
+        else:
+            gone.append(brief(r))
+    for k, r in swaps.items():
+        b, now = r["before"], pre.get(k)
+        if _holds(now, r["value"], cohort):
+            rest.replace(r["course_id"], r["field"], r["value"], cohort,
+                         {"value": b["value"], "reviewer_email": b["reviewer_email"],
+                          "reviewed_at": b.get("reviewed_at")})
+            did["swaps"].append(r)
+        elif _holds(now, b["value"], b["reviewer_email"]):
+            not_replaced.append(brief(r))
+        else:
+            moved.append(brief(r))
+    for k, r in drops.items():
+        b, now = r["before"], pre.get(k)
+        row = {"course_id": r["course_id"], "field": r["field"], "value": b["value"],
+               "reviewer_email": b["reviewer_email"]}
+        row.update({x: b[x] for x in ("reviewed_at", "validated_at", "validated_by") if b.get(x) is not None})
+        if now is None:
+            rest.insert([row])
+            did["drops"].append(row)
+        elif _holds(now, b["value"], b["reviewer_email"], b.get("reviewed_at")):
+            in_place.append(brief(row))
+        else:
+            taken.append(brief(row))
+    for k, r in backs.items():
+        now = pre.get(k)
+        if _holds(now, r["value"], r["reviewer_email"], r["reviewed_at"]):
+            later = _put_back_later(r, r["_at"])
+            if later:
+                left_for.append(dict(brief(r, "reviewer_email"), by=later))
+                continue
+            rest.delete({"course_id": r["course_id"], "field": r["field"], "value": r["value"],
+                         "reviewed_at": now.get("reviewed_at")}, r["reviewer_email"])
+            did["backs"].append(r)
+        elif now is None:
+            never_back.append(brief(r, "reviewer_email"))
+        else:
+            kept.append(brief(r, "reviewer_email", "reviewed_at"))
+    post = _live(rest, keys)
+    removed, restored, reinstated, unput, still = [], [], [], [], []
+    for r in did["rows"]:
+        now = post.get(_key(r))
+        (removed if now is None else still if _holds(now, r["value"], cohort) else moved).append(brief(r))
+    for r in did["swaps"]:
+        b, now = r["before"], post.get(_key(r))
+        (restored if _holds(now, b["value"], b["reviewer_email"]) else still if _holds(now, r["value"], cohort)
+         else moved).append(brief(r))
+    for r in did["drops"]:  # a re-insert whose response was lost and retried is there now: reinstated, not taken
+        (reinstated if _holds(post.get(_key(r)), r["value"], r["reviewer_email"], r.get("reviewed_at"))
+         else taken).append(brief(r))
+    for r in did["backs"]:
+        now = post.get(_key(r))
+        (unput if now is None else still if _holds(now, r["value"], r["reviewer_email"], r["reviewed_at"])
+         else kept).append(brief(r, "reviewer_email", "reviewed_at"))
+    body = {"table": TABLE, "mode": "rollback", "at": ts, "cohort": cohort,
+            "removed": removed, "already_gone": gone,
+            "restored": restored, "changed_since": moved, "never_replaced": not_replaced,
+            "reinstated": reinstated, "taken_since": taken, "already_in_place": in_place,
+            "still_there": still}
+    if backs:
+        body.update({"reinstates_undone": unput, "reinstates_changed_since": kept,
+                     "reinstates_never_put_back": never_back, "reinstates_left_for_a_later_rollback": left_for})
+    write_receipt(plan_dir, "rolled_back_%s.json" % ts, body)
+    out("rollback: %d removed, %d already gone (consumed by the rename, or changed by a curator); "
+        "%d restored to the curator's value, %d changed since; %d retired rows reinstated, %d taken since"
+        % (len(removed), len(gone), len(restored), len(moved), len(reinstated), len(taken))
+        + ("; %d reinstated rows removed again, %d saved again since and left, %d left for a later rollback that "
+           "put them back" % (len(unput), len(kept), len(left_for)) if backs else "")
+        + ("; %d never changed by the commit" % (len(not_replaced) + len(in_place) + len(never_back))
+           if not_replaced or in_place or never_back else "")
+        + ("; %d STILL THERE after a guarded step" % len(still) if still else ""))
+    return 1 if still else 0
+
+
+def run(plan_dir, mode, rest, out=print):
+    plan = load_plan(plan_dir, history=(mode == "rollback"))
+    if mode == "rollback":
+        return rollback(plan_dir, plan, rest, out)
 
     states = check(plan, rest)
     for s in states:
@@ -495,6 +629,7 @@ def run(plan_dir, mode, rest, out=print):
     swaps = [s for s in states if s["state"] == "replace"]
     drops = [s for s in states if s["state"] == "retire"]
     backs = [s for s in states if s["state"] == "reinstate"]
+    emptied = any(r.get("while_emptied") for r in plan.get("reinstates") or [])
     if mode == "dry-run":
         out("dry run: %d to write, %d to replace, %d to retire, %d already written, %d already retired, %d held; "
             "nothing written"
@@ -502,7 +637,9 @@ def run(plan_dir, mode, rest, out=print):
                sum(s["state"] == "retired" for s in states), len(held))
             + ("; %d to reinstate, %d already reinstated" % (len(backs), sum(s["state"] == "reinstated"
                                                                              for s in states))
-               if plan.get("reinstates") else ""))
+               if plan.get("reinstates") else "")
+            + ("; a reinstate is held until the committed kb/unified_titles.json shows its title empty"
+               if emptied else ""))
         return 1 if held else 0
 
     if mode != "commit":
@@ -513,50 +650,64 @@ def run(plan_dir, mode, rest, out=print):
     if not todo and not swaps and not drops and not backs:
         out("nothing to write: every row already holds its value")
         return 0
+    if emptied and backs:
+        ok, why = ut_matches_main()
+        if not ok:
+            out("REFUSED: a while_emptied reinstate reads the committed map, and %s; nothing written" % why)
+            return 1
     ts = stamp()
-    name = "applied_%s.json" % ts
+    name, n = "applied_%s.json" % ts, 2
+    while os.path.exists(os.path.join(plan_dir, name)):  # a re-run after a died run keeps the died run's receipt
+        name, n = "applied_%s_%d.json" % (ts, n), n + 1  # sorts after the first
     rows = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"],
              "reviewer_email": plan["cohort"]} for s in todo]
     planned_swaps = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"],
                       "reviewer_email": plan["cohort"], "before": s["live"]} for s in swaps]
     planned_drops = [{"course_id": s["course_id"], "field": s["field"], "value": s["value"], "before": s["live"],
                       "because": s.get("because"), "guard_at": s.get("guard_at")} for s in drops]
+    planned_backs = [dict(s["row"]) for s in backs]
+    # The receipt names everything the run will write, as `pending`, BEFORE the first write: a run that dies part-way
+    # still leaves the planned lists --rollback undoes.
     receipt = {"table": TABLE, "mode": "commit", "at": ts, "ruling": plan["ruling"],
                "cohort": plan["cohort"], "read": states, "rows": rows, "replaces": planned_swaps,
                "retires": planned_drops, "result": "pending"}
-    planned_backs = [dict(s["row"]) for s in backs]
     if planned_backs:
         receipt["reinstates"] = [dict(r, from_receipt=s["from_receipt"]) for r, s in zip(planned_backs, backs)]
     write_receipt(plan_dir, name, receipt)
-    got = (rest.insert(rows) or []) if rows else []
-    keys = {(g.get("course_id"), g.get("field")) for g in got}
-    receipt["inserted"] = [r for r in rows if (r["course_id"], r["field"]) in keys]
-    receipt["skipped_as_duplicate"] = [r for r in rows if (r["course_id"], r["field"]) not in keys]
+    # Each write is guarded or insert-only, and its echo is ignored: a request retried after a lost response echoes
+    # nothing for a write that landed. A fresh read below says what landed.
+    if rows:
+        rest.insert(rows)
     if planned_backs:
-        # Insert-only with the person's own reviewer_email and stamp; a row there now wins. The receipt keeps each
-        # row as the table returned it (its own spelling of the stamp), which --rollback deletes and nothing else.
-        back = {(g.get("course_id"), g.get("field")): g for g in (rest.insert(planned_backs) or [])}
-        receipt["put_back"] = [dict(r, reviewed_at=(back[(r["course_id"], r["field"])].get("reviewed_at")
-                                                    or r["reviewed_at"]))
-                               for r in planned_backs if (r["course_id"], r["field"]) in back]
-        receipt["put_back_skipped"] = [r for r in planned_backs if (r["course_id"], r["field"]) not in back]
-        write_receipt(plan_dir, name, receipt)
+        rest.insert(planned_backs)  # the person's own reviewer_email and stamp; a row there now wins
     now_iso = datetime.datetime.now(datetime.timezone.utc).isoformat()
-    receipt["replaced"], receipt["replace_missed"] = [], []
     for sw in planned_swaps:
         b = sw["before"]
-        got = rest.replace(sw["course_id"], sw["field"], b["value"], b["reviewer_email"],
-                           {"value": sw["value"], "reviewer_email": plan["cohort"], "reviewed_at": now_iso})
-        (receipt["replaced"] if got else receipt["replace_missed"]).append(sw)
-    receipt["retired"], receipt["retire_missed"] = [], []
+        rest.replace(sw["course_id"], sw["field"], b["value"], b["reviewer_email"],
+                     {"value": sw["value"], "reviewer_email": plan["cohort"], "reviewed_at": now_iso})
     for dr in planned_drops:
         b = dr["before"]
         target = {"course_id": dr["course_id"], "field": dr["field"], "value": b["value"]}
         if dr.get("guard_at"):
             target["reviewed_at"] = b.get("reviewed_at")  # the live row's own spelling of the instant the guard matched
-        got = rest.delete(target, b["reviewer_email"])
-        (receipt["retired"] if got else receipt["retire_missed"]).append(dr)
-        write_receipt(plan_dir, name, receipt)
+        rest.delete(target, b["reviewer_email"])
+    live = _live(rest, [_key(r) for r in rows + planned_swaps + planned_drops + planned_backs])
+    receipt["inserted"] = [r for r in rows if _holds(live.get(_key(r)), r["value"], plan["cohort"])]
+    receipt["skipped_as_duplicate"] = [r for r in rows if r not in receipt["inserted"]]
+    if planned_backs:
+        # The receipt keeps each row as the table holds it (its own spelling of the stamp).
+        receipt["put_back"] = [dict(r, reviewed_at=live[_key(r)].get("reviewed_at") or r["reviewed_at"])
+                               for r in planned_backs
+                               if _holds(live.get(_key(r)), r["value"], r["reviewer_email"], r["reviewed_at"])]
+        done = {_key(r) for r in receipt["put_back"]}
+        receipt["put_back_skipped"] = [r for r in planned_backs if _key(r) not in done]
+    receipt["replaced"] = [sw for sw in planned_swaps if _holds(live.get(_key(sw)), sw["value"], plan["cohort"])]
+    receipt["replace_missed"] = [sw for sw in planned_swaps if sw not in receipt["replaced"]]
+    receipt["retire_missed"] = [dr for dr in planned_drops if _holds(
+        live.get(_key(dr)), dr["before"]["value"], dr["before"]["reviewer_email"],
+        dr["before"].get("reviewed_at") if dr.get("guard_at") else None)]
+    receipt["retired"] = [dr for dr in planned_drops if dr not in receipt["retire_missed"]]
+    write_receipt(plan_dir, name, receipt)
     after = check(plan, rest)
     ok = settled(after)
     receipt["read_back"] = after

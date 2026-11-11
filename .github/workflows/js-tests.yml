@@ -405,6 +405,9 @@ jobs:
       # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
       - name: CER decision applier holds a curator's row
         run: python3 tests/cer_decision_apply_test.py
+      # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
+      - name: CER decision applier undoes what landed, not what echoed
+        run: python3 tests/cer_decision_apply_retry_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94

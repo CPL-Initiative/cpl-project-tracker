@@ -957,6 +957,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `review_<date>.json` | scripts: `kb/_program_requirements_load.py` | — |
 | `reviewer_signin.js` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `roadmap_archive*.md` | scripts: `kb/_consolidation_loss_audit.py` | — |
+| `rolled_back_*.json` | scripts: `kb/_cer_decision_apply.py` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
 | `scripts/cpl_funding.js` | modules: `scripts/build_funding_faq.js` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
@@ -1006,6 +1007,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/ccr_universe_members_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ccr_universe_orbits_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_classifier_rules_size_test.py` | workflows: `js-tests.yml` | — |
+| `tests/cer_decision_apply_retry_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cert_naming_test.py` | workflows: `js-tests.yml` | — |
@@ -1383,5 +1385,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 854 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 856 file
 datasets · 195 external services · 553 consumers · 65 workflows · 40 tabs.
