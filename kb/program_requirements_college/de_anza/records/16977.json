@@ -46,55 +46,55 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 39,
+   "placed": 40,
    "listed": 40,
-   "share": 0.975,
-   "missing": [
-    "FTV20"
-   ],
-   "unexplained": [
-    "FTV20"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "F/TVD20"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     27.0,
     33.0
    ],
    "stated": [
-    90.0,
-    90.0
+    27.0,
+    33.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     27.0,
-     33.0
+     56.0,
+     74.0
     ],
     "stated": [
-     27.0,
-     33.0
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     16.0,
+     34.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,8 +140,8 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -151,7 +151,8 @@
     "Apply media literacy skills to explain the communication process and detect media bias",
     "Summarize steps appropriate to gain employment in a mass communications industry"
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -490,5 +491,26 @@
    "The description names transfer disciplines (journalism, mass communications, public relations, advertising) and internship settings, but no explicit careers. careers was left empty; a reviewer may want to check this."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

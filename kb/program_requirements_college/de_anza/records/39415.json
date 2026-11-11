@@ -61,34 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     28.0,
     29.0
    ],
    "stated": [
-    90.0,
-    90.0
+    28.0,
+    29.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     28.0,
-     29.0
+     73.0,
+     87.0
     ],
     "stated": [
-     28.0,
-     29.0
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     3.0,
+     17.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,12 +140,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -991,5 +998,26 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

@@ -46,31 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 22,
    "listed": 22,
-   "share": 0.864,
-   "missing": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
-   "unexplained": [
-    "FTV17G",
-    "FTV67A",
-    "FTV70A"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "F/TVD17G",
-    "F/TVD67A",
-    "F/TVD70A"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -108,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -337,5 +325,6 @@
    "Program description is cut off mid-sentence; no outcomes or careers appear in the supplied text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

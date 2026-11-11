@@ -46,63 +46,65 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 32,
+   "placed": 33,
    "listed": 35,
-   "share": 0.914,
+   "share": 0.943,
    "missing": [
     "ECON1",
-    "ECON1H",
-    "ES1"
+    "ECON1H"
    ],
-   "unexplained": [
-    "ES1"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ECONC2002",
-    "ECONC2002H",
-    "ESD1"
+    "ECONC2002H"
    ],
    "flagged": [
     "ECONC2002",
     "ECONC2002H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     29.0,
     31.0
    ],
    "stated": [
-    90.0,
-    90.0
+    29.0,
+    30.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "meets": true,
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     29.0,
-     31.0
+     74.0,
+     89.0
     ],
     "stated": [
-     29.0,
-     30.0
+     90.0,
+     90.0
     ],
-    "against": "program",
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
     "why": [],
-    "meets": true
+    "minimum": true,
+    "fill": [
+     1.0,
+     16.0
+    ]
    }
   },
   "repeated": {
@@ -127,7 +129,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -148,12 +150,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -440,5 +443,26 @@
    "No program learning outcomes or careers printed; Program Employment Potential is N/A."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

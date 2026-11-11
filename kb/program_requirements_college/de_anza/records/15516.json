@@ -46,37 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 141,
+   "placed": 146,
    "listed": 146,
-   "share": 0.966,
-   "missing": [
-    "ES2",
-    "ES50",
-    "ES56",
-    "ES58",
-    "ES64"
-   ],
-   "unexplained": [
-    "ES2",
-    "ES50",
-    "ES56",
-    "ES58",
-    "ES64"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "ESD2",
-    "ESD50",
-    "ESD56",
-    "ESD58",
-    "ESD64"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -94,20 +76,26 @@
     "the blocks sum to 0.0-0.0; the catalog states 27.0-27.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     0.0,
-     0.0
+     29.0,
+     41.0
     ],
     "stated": [
      90.0,
      90.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     49.0,
+     61.0
     ]
    }
   },
@@ -154,12 +142,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -1383,5 +1372,26 @@
    "No program learning outcomes or careers are printed (Program Employment Potential: N/A)."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

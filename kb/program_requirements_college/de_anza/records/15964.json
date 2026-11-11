@@ -46,131 +46,28 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 196,
+   "placed": 230,
    "listed": 232,
-   "share": 0.845,
+   "share": 0.991,
    "missing": [
-    "CD10G",
-    "CD10H",
-    "CD12",
-    "CD50",
-    "CD51A",
-    "CD52",
-    "CD53",
-    "CD54",
-    "CD55",
-    "CD56",
-    "CD57",
-    "CD58",
-    "CD59G",
-    "CD59H",
-    "CD60",
-    "CD61",
-    "CD63",
-    "CD64",
-    "CD67",
-    "CD68",
-    "CD70",
-    "CD71",
-    "CD72",
-    "CD73",
-    "CD74",
-    "CD75",
-    "CD90",
     "ECON1",
-    "ECON1H",
-    "ES1",
-    "ES2",
-    "ES3",
-    "ES4",
-    "ES6",
-    "FTV10",
-    "FTV10H"
+    "ECON1H"
    ],
-   "unexplained": [
-    "CD10G",
-    "CD10H",
-    "CD12",
-    "CD50",
-    "CD51A",
-    "CD52",
-    "CD53",
-    "CD54",
-    "CD55",
-    "CD56",
-    "CD57",
-    "CD58",
-    "CD59G",
-    "CD59H",
-    "CD60",
-    "CD61",
-    "CD63",
-    "CD64",
-    "CD67",
-    "CD68",
-    "CD70",
-    "CD71",
-    "CD72",
-    "CD73",
-    "CD74",
-    "CD75",
-    "CD90",
-    "ES1",
-    "ES2",
-    "ES3",
-    "ES4",
-    "ES6",
-    "FTV10",
-    "FTV10H"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 36,
+   "count": 2,
    "codes": [
-    "CDD10G",
-    "CDD10H",
-    "CDD12",
-    "CDD50",
-    "CDD51A",
-    "CDD52",
-    "CDD53",
-    "CDD54",
-    "CDD55",
-    "CDD56",
-    "CDD57",
-    "CDD58",
-    "CDD59G",
-    "CDD59H",
-    "CDD60",
-    "CDD61",
-    "CDD63",
-    "CDD64",
-    "CDD67",
-    "CDD68",
-    "CDD70",
-    "CDD71",
-    "CDD72",
-    "CDD73",
-    "CDD74",
-    "CDD75",
-    "CDD90",
     "ECONC2002",
-    "ECONC2002H",
-    "ESD1",
-    "ESD2",
-    "ESD3",
-    "ESD4",
-    "ESD6",
-    "F/TVD10",
-    "F/TVD10H"
+    "ECONC2002H"
    ],
    "flagged": [
     "ECONC2002",
     "ECONC2002H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -259,12 +156,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -2235,5 +2133,26 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

@@ -46,36 +46,22 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 54,
+   "placed": 58,
    "listed": 60,
-   "share": 0.9,
+   "share": 0.967,
    "missing": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
     "JAPN1",
     "SPAN1"
    ],
-   "unexplained": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "F/TVD2A",
-    "F/TVD2AH",
-    "F/TVD2B",
-    "F/TVD2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -709,5 +695,6 @@
    "The description names engagement contexts ('international travel, law, business, and nonprofit or nongovernmental organizations') and fields of study, but no explicit careers, so careers was left empty."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

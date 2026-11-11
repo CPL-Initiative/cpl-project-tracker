@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 48,
+   "placed": 49,
    "listed": 49,
-   "share": 0.98,
-   "missing": [
-    "ES6"
-   ],
-   "unexplained": [
-    "ES6"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ESD6"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -508,5 +502,6 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

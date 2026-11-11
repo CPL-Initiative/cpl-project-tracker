@@ -300,7 +300,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.842,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS10A",
    "ARTS10B",
@@ -323,6 +323,12 @@
    "ARTS55B",
    "ARTS8",
    "ASAM40",
+   "FTV23",
+   "FTV26",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
    "HUMI1",
    "HUMI15",
    "HUMI1H",
@@ -349,7 +355,7 @@
    }
   },
   "listed": 38,
-  "text_chars": 6197
+  "text_chars": 6187
  },
  {
   "control_number": "05970",
@@ -357,10 +363,12 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.882,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS53",
    "BUS56",
+   "FTV20",
+   "FTV26",
    "JOUR2",
    "PHTG2",
    "PHTG21",
@@ -389,7 +397,7 @@
    }
   },
   "listed": 17,
-  "text_chars": 4717
+  "text_chars": 4713
  },
  {
   "control_number": "05971",
@@ -397,7 +405,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS12",
    "ARTS4A",
@@ -414,6 +422,7 @@
    "ARTS85",
    "ARTS86",
    "CIS89A",
+   "FTV20",
    "JOUR61A",
    "JOUR62B",
    "JOUR62D",
@@ -434,7 +443,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 5037
+  "text_chars": 5035
  },
  {
   "control_number": "05980",
@@ -674,12 +683,54 @@
   "title": "Child Development",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD51B",
+   "CD52",
+   "CD53",
+   "CD54",
+   "CD55",
+   "CD56",
+   "CD57",
+   "CD58",
+   "CD59G",
+   "CD59H",
+   "CD60",
+   "CD61",
+   "CD63",
+   "CD64",
+   "CD67",
+   "CD68",
+   "CD71",
+   "CD72",
+   "CD73",
+   "CD74",
+   "CD75",
+   "EDUC1",
+   "PSYC10G",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2025",
+   "title": "Associate in Arts (A.A.) Degree Child Development",
+   "h1": "Associate in Arts (A.A.) Degree Child Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "associate in arts (a.a.) degree child development",
+    "section_fit": 1.0
+   }
+  },
   "listed": 29,
-  "text_chars": 0
+  "text_chars": 15804
  },
  {
   "control_number": "05996",
@@ -854,12 +905,85 @@
   "title": "Film/TV: Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ARTS1A",
+   "FTV1",
+   "FTV10",
+   "FTV10H",
+   "FTV17G",
+   "FTV17H",
+   "FTV1H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV29",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2AW",
+   "FTV2B",
+   "FTV2BH",
+   "FTV2BW",
+   "FTV2C",
+   "FTV2CH",
+   "FTV2CW",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV3A",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV48S",
+   "FTV48T",
+   "FTV48U",
+   "FTV48V",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV7",
+   "FTV70A",
+   "FTV71J",
+   "FTV74",
+   "FTV78W",
+   "FTV78X",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J",
+   "PHTG1",
+   "THEA1",
+   "THEA80A",
+   "THEA80B"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026v2",
+   "title": "Associate in Arts (A.A.) Degree Film/TV: Production",
+   "h1": "Associate in Arts (A.A.) Degree Film/TV: Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "associate in arts (a.a.) degree film/tv: production",
+    "section_fit": 1.0
+   }
+  },
   "listed": 64,
-  "text_chars": 0
+  "text_chars": 7042
  },
  {
   "control_number": "07091",
@@ -898,12 +1022,41 @@
   "title": "Environmental Resource Management and Pollution Prevention",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES1",
+   "ES4",
+   "ES50",
+   "ES56",
+   "ES6",
+   "ES61A",
+   "ES61B",
+   "ES61L",
+   "ES62A",
+   "ES62B",
+   "ES62C",
+   "ES62D",
+   "ES63",
+   "ES64",
+   "ESCI1",
+   "ESCI1L"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2025",
+   "title": "Associate in Arts (A.A.) Degree Environmental Resource Management and Pollution Prevention",
+   "h1": "Associate in Arts (A.A.) Degree Environmental Resource Management and Pollution Prevention",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "associate in arts (a.a.) degree environmental resource management and pollution prevention",
+    "section_fit": 1.0
+   }
+  },
   "listed": 16,
-  "text_chars": 0
+  "text_chars": 5172
  },
  {
   "control_number": "07101",
@@ -976,7 +1129,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.98,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ11",
    "ADMJ25",
@@ -991,6 +1144,7 @@
    "ADMJ90A",
    "BUS18",
    "CETH29",
+   "ES6",
    "PARA11",
    "PARA25",
    "PARA3",
@@ -1041,7 +1195,7 @@
    }
   },
   "listed": 49,
-  "text_chars": 6177
+  "text_chars": 6174
  },
  {
   "control_number": "07103",
@@ -1107,12 +1261,69 @@
   "title": "Film/TV: Animation",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.957,
+  "codes_found": [
+   "ARTS10A",
+   "ARTS12",
+   "ARTS15A",
+   "ARTS16A",
+   "ARTS4A",
+   "ARTS4C",
+   "ARTS54",
+   "ARTS8",
+   "ARTS85",
+   "FTV1",
+   "FTV10",
+   "FTV10H",
+   "FTV17G",
+   "FTV17H",
+   "FTV1H",
+   "FTV20",
+   "FTV27",
+   "FTV29",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
+   "FTV2C",
+   "FTV2CH",
+   "FTV30",
+   "FTV31",
+   "FTV3A",
+   "FTV56A",
+   "FTV66A",
+   "FTV67A",
+   "FTV68A",
+   "FTV6A",
+   "FTV7",
+   "FTV70A",
+   "FTV71J",
+   "FTV72G",
+   "FTV72H",
+   "FTV72J",
+   "FTV74",
+   "FTV88",
+   "PHTG4",
+   "PHTG57A",
+   "PHTG58A",
+   "THEA80A"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2026",
+   "title": "Associate in Arts (A.A.) Degree Film/TV: Animation",
+   "h1": "Associate in Arts (A.A.) Degree Film/TV: Animation",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "associate in arts (a.a.) degree film/tv: animation",
+    "section_fit": 1.0
+   }
+  },
   "listed": 46,
-  "text_chars": 0
+  "text_chars": 6048
  },
  {
   "control_number": "10108",
@@ -1660,12 +1871,52 @@
   "title": "Energy Management and Building Science",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS3",
+   "CIS79",
+   "ES1",
+   "ES4",
+   "ES50",
+   "ES51A",
+   "ES51B",
+   "ES51C",
+   "ES58",
+   "ES61B",
+   "ES62C",
+   "ES62D",
+   "ES69",
+   "ES69A",
+   "ES70",
+   "ES71",
+   "ES78",
+   "ES79",
+   "ES81",
+   "ES81C",
+   "ES82",
+   "ES83",
+   "ES95",
+   "ESCI1",
+   "MATH114",
+   "MET10",
+   "PHYS10"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025v2",
+   "title": "Associate in Science (A.S.) Degree Energy Management and Building Science",
+   "h1": "Associate in Science (A.S.) Degree Energy Management and Building Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science (a.s.) degree energy management and building science",
+    "section_fit": 1.0
+   }
+  },
   "listed": 27,
-  "text_chars": 0
+  "text_chars": 13022
  },
  {
   "control_number": "10416",
@@ -2013,12 +2264,45 @@
   "title": "Child Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD52",
+   "CD53",
+   "CD54",
+   "CD55",
+   "CD56",
+   "CD57",
+   "CD58",
+   "CD61",
+   "CD63",
+   "CD64",
+   "CD68",
+   "CD71",
+   "CD72",
+   "PSYC10G",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022v2",
+   "title": "Certificate of Achievement (COA) Child Development",
+   "h1": "Certificate of Achievement (COA) Child Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement (coa) child development",
+    "section_fit": 0.667
+   }
+  },
   "listed": 20,
-  "text_chars": 0
+  "text_chars": 5147
  },
  {
   "control_number": "12869",
@@ -2057,12 +2341,48 @@
   "title": "Early Intervention/Special Education Assistant",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD52",
+   "CD53",
+   "CD54",
+   "CD55",
+   "CD56",
+   "CD57",
+   "CD58",
+   "CD60",
+   "CD61",
+   "CD63",
+   "CD64",
+   "CD68",
+   "CD71",
+   "CD73",
+   "CD75",
+   "CD90",
+   "PSYC10G",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-intervention-special-education-assistant-fall-2026",
+   "title": "Certificate of Achievement-Advanced (COA-A) Early Intervention/Special Education Assistant",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Early Intervention/Special Education Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) early intervention/special education assistant",
+    "section_fit": 0.714
+   }
+  },
   "listed": 23,
-  "text_chars": 0
+  "text_chars": 5528
  },
  {
   "control_number": "15516",
@@ -2070,7 +2390,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.966,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH1",
    "ANTH1H",
@@ -2158,6 +2478,11 @@
    "ENGR37",
    "ENGR37L",
    "ENGR45",
+   "ES2",
+   "ES50",
+   "ES56",
+   "ES58",
+   "ES64",
    "ESCI1",
    "ESCI19",
    "ESCI1L",
@@ -2236,7 +2561,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.845,
+  "coverage": 0.991,
   "codes_found": [
    "ADMJ1",
    "ADMJ10",
@@ -2286,6 +2611,33 @@
    "ASAM30",
    "ASAM33",
    "BUS21",
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD52",
+   "CD53",
+   "CD54",
+   "CD55",
+   "CD56",
+   "CD57",
+   "CD58",
+   "CD59G",
+   "CD59H",
+   "CD60",
+   "CD61",
+   "CD63",
+   "CD64",
+   "CD67",
+   "CD68",
+   "CD70",
+   "CD71",
+   "CD72",
+   "CD73",
+   "CD74",
+   "CD75",
+   "CD90",
    "CETH10",
    "CETH11",
    "CETH19",
@@ -2313,6 +2665,13 @@
    "ECONC2001H",
    "EDUC1",
    "EDUC46",
+   "ES1",
+   "ES2",
+   "ES3",
+   "ES4",
+   "ES6",
+   "FTV10",
+   "FTV10H",
    "GEO1",
    "GEO10",
    "GEO4",
@@ -2457,7 +2816,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.895,
+  "coverage": 0.984,
   "codes_found": [
    "AFAM11",
    "ANTH16",
@@ -2581,6 +2940,10 @@
    "ENGLC1002",
    "ENGLC1003",
    "ENGLC1003H",
+   "ES3",
+   "ES4",
+   "ES51A",
+   "ES51B",
    "ESL6",
    "EWRT30",
    "EWRT40",
@@ -2589,6 +2952,30 @@
    "FREN1",
    "FREN2",
    "FREN3",
+   "FTV1",
+   "FTV17H",
+   "FTV1H",
+   "FTV20",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2AW",
+   "FTV2B",
+   "FTV2BH",
+   "FTV2BW",
+   "FTV2C",
+   "FTV2CH",
+   "FTV2CW",
+   "FTV3A",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV66A",
+   "FTV67A",
+   "FTV7",
+   "FTV71J",
+   "FTV74",
+   "FTV8",
+   "FTV88",
    "GERM1",
    "GERM2",
    "GERM3",
@@ -2764,7 +3151,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.922,
+  "coverage": 0.983,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -2793,10 +3180,17 @@
    "COMM7H",
    "ECONC2001",
    "ECONC2001H",
+   "ES1",
+   "ES6",
    "ESCI19",
    "FREN1",
    "FREN2",
    "FREN3",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
+   "FTV42",
    "GEO1",
    "GEO10",
    "GERM1",
@@ -3027,7 +3421,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.975,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ29",
    "ARTS53",
@@ -3046,6 +3440,7 @@
    "EWRT65AX",
    "EWRT68A",
    "EWRT68AX",
+   "FTV20",
    "JOUR2",
    "JOUR21A",
    "JOUR21B",
@@ -3083,7 +3478,7 @@
    }
   },
   "listed": 40,
-  "text_chars": 14067
+  "text_chars": 14065
  },
  {
   "control_number": "18004",
@@ -3213,12 +3608,32 @@
   "title": "Environmental Resource Management and Pollution Prevention",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES50",
+   "ES61A",
+   "ES61B",
+   "ES62A",
+   "ES62B",
+   "ES62C",
+   "ES62D"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+   "title": "Certificate of Achievement-Advanced (COA-A) Environmental Resource Management and Pollution Prevention",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Environmental Resource Management and Pollution Prevention",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) environmental resource management and pollution prevention",
+    "section_fit": 0.714
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4554
  },
  {
   "control_number": "19523",
@@ -3257,36 +3672,94 @@
   "title": "Early Childhood Mental Health",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD58",
+   "CD72",
+   "CD73",
+   "CD74",
+   "CD75",
+   "PSYC10G"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-mental-health-fall-2026",
+   "title": "Certificate of Achievement (COA) Early Childhood Mental Health",
+   "h1": "Certificate of Achievement (COA) Early Childhood Mental Health",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement (coa) early childhood mental health",
+    "section_fit": 0.8
+   }
+  },
   "listed": 7,
-  "text_chars": 0
+  "text_chars": 4294
  },
  {
   "control_number": "19531",
   "title": "Energy Management and Building Science",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES4",
+   "ES51A",
+   "ES51B",
+   "ES51C",
+   "ES69A",
+   "ES81",
+   "ES81C",
+   "ES82",
+   "ES83"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+   "title": "Certificate of Achievement-Advanced (COA-A) Energy Management and Building Science",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Energy Management and Building Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) energy management and building science",
+    "section_fit": 0.667
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 4704
  },
  {
   "control_number": "19532",
   "title": "Energy Management and Building Science",
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES4",
+   "ES82",
+   "ES83"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/energy-management-and-building-science-fall-2025",
+   "title": "Certificate of Achievement-Advanced (COA-A) Energy Management and Building Science",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Energy Management and Building Science",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) energy management and building science",
+    "section_fit": 0.667
+   }
+  },
   "listed": 3,
-  "text_chars": 0
+  "text_chars": 4405
  },
  {
   "control_number": "19534",
@@ -3576,12 +4049,85 @@
   "title": "Film/TV: Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.938,
+  "codes_found": [
+   "ARTS1A",
+   "FTV1",
+   "FTV10",
+   "FTV10H",
+   "FTV17G",
+   "FTV17H",
+   "FTV1H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV29",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2AW",
+   "FTV2B",
+   "FTV2BH",
+   "FTV2BW",
+   "FTV2C",
+   "FTV2CH",
+   "FTV2CW",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV3A",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV48S",
+   "FTV48T",
+   "FTV48U",
+   "FTV48V",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV7",
+   "FTV70A",
+   "FTV71J",
+   "FTV74",
+   "FTV78W",
+   "FTV78X",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J",
+   "PHTG1",
+   "THEA1",
+   "THEA80A",
+   "THEA80B"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+   "title": "Certificate of Achievement-Advanced (COA-A) Film/TV: Production",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Film/TV: Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) film/tv: production",
+    "section_fit": 0.6
+   }
+  },
   "listed": 64,
-  "text_chars": 0
+  "text_chars": 7042
  },
  {
   "control_number": "23070",
@@ -4128,7 +4674,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS12",
    "ARTS4A",
@@ -4145,6 +4691,7 @@
    "ARTS85",
    "ARTS86",
    "CIS89A",
+   "FTV20",
    "JOUR61A",
    "JOUR62B",
    "JOUR62D",
@@ -4165,7 +4712,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 5037
+  "text_chars": 5035
  },
  {
   "control_number": "23092",
@@ -4226,12 +4773,49 @@
   "title": "Child Development",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD52",
+   "CD53",
+   "CD54",
+   "CD55",
+   "CD56",
+   "CD57",
+   "CD58",
+   "CD59G",
+   "CD59H",
+   "CD60",
+   "CD61",
+   "CD63",
+   "CD64",
+   "CD67",
+   "CD68",
+   "CD71",
+   "EDUC1",
+   "PSYC10G",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/child-development-fall-2022",
+   "title": "Certificate of Achievement-Advanced (COA-A) Child Development",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Child Development",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) child development",
+    "section_fit": 0.5
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 5532
  },
  {
   "control_number": "23094",
@@ -4239,7 +4823,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.98,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ11",
    "ADMJ25",
@@ -4254,6 +4838,7 @@
    "ADMJ90A",
    "BUS18",
    "CETH29",
+   "ES6",
    "PARA11",
    "PARA25",
    "PARA3",
@@ -4304,7 +4889,7 @@
    }
   },
   "listed": 49,
-  "text_chars": 6177
+  "text_chars": 6174
  },
  {
   "control_number": "23095",
@@ -4452,12 +5037,13 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 0.968,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
    "COMM7",
    "COMM7H",
+   "ES1",
    "FREN1",
    "FREN2",
    "FREN3",
@@ -4529,7 +5115,7 @@
    }
   },
   "listed": 63,
-  "text_chars": 7434
+  "text_chars": 7431
  },
  {
   "control_number": "30618",
@@ -5177,12 +5763,76 @@
   "title": "Film/TV: Screenwriting",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 0.962,
+  "codes_found": [
+   "ARTS1A",
+   "FTV1",
+   "FTV10",
+   "FTV10H",
+   "FTV1H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV29",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
+   "FTV2C",
+   "FTV2CH",
+   "FTV2CW",
+   "FTV30",
+   "FTV31",
+   "FTV39",
+   "FTV3A",
+   "FTV41",
+   "FTV42",
+   "FTV43",
+   "FTV44A",
+   "FTV44B",
+   "FTV56A",
+   "FTV57A",
+   "FTV57B",
+   "FTV59",
+   "FTV60B",
+   "FTV60C",
+   "FTV64A",
+   "FTV64B",
+   "FTV64C",
+   "FTV65",
+   "FTV6A",
+   "FTV7",
+   "FTV78W",
+   "FTV78X",
+   "FTV8",
+   "FTV92",
+   "FTV98G",
+   "FTV98H",
+   "FTV98J",
+   "HUMI1",
+   "HUMI15",
+   "HUMI1H",
+   "HUMI2",
+   "PHTG1",
+   "THEA1"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-screenwriting-fall-2026",
+   "title": "Associate in Arts (A.A.) Degree Film/TV: Screenwriting",
+   "h1": "Associate in Arts (A.A.) Degree Film/TV: Screenwriting",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "aa",
+    "section_line": "associate in arts (a.a.) degree film/tv: screenwriting",
+    "section_fit": 1.0
+   }
+  },
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 6300
  },
  {
   "control_number": "31498",
@@ -5286,12 +5936,37 @@
   "title": "Film/TV: Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV1",
+   "FTV10",
+   "FTV10H",
+   "FTV1H",
+   "FTV20",
+   "FTV22",
+   "FTV23",
+   "FTV26",
+   "FTV27",
+   "FTV39",
+   "FTV57A",
+   "FTV6A"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-production-fall-2026",
+   "title": "Certificate of Achievement-Advanced (COA-A) Film/TV: Production",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Film/TV: Production",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) film/tv: production",
+    "section_fit": 0.6
+   }
+  },
   "listed": 12,
-  "text_chars": 0
+  "text_chars": 5215
  },
  {
   "control_number": "31511",
@@ -5418,7 +6093,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 0.914,
+  "coverage": 0.943,
   "codes_found": [
    "ADMJ29",
    "ANTH2",
@@ -5427,6 +6102,7 @@
    "CETH29",
    "ECONC2001",
    "ECONC2001H",
+   "ES1",
    "GEO10",
    "HIST3C",
    "HIST3CH",
@@ -5467,19 +6143,43 @@
    }
   },
   "listed": 35,
-  "text_chars": 13513
+  "text_chars": 13510
  },
  {
   "control_number": "32006",
   "title": "Early Childhood Education",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CD10G",
+   "CD10H",
+   "CD12",
+   "CD50",
+   "CD51A",
+   "CD52",
+   "CD54",
+   "CD64",
+   "CD68",
+   "PSYC10G",
+   "PSYC10H"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/early-childhood-education-for-transfer-fall-2025",
+   "title": "Associate in Science for Transfer (A.S.-T.) Degree Early Childhood Education for Transfer",
+   "h1": "Associate in Science for Transfer (A.S.-T.) Degree Early Childhood Education for Transfer",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "associate in science for transfer (a.s.-t.) degree early childhood education for transfer",
+    "section_fit": 0.75
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4558
  },
  {
   "control_number": "33329",
@@ -5944,12 +6644,33 @@
   "title": "Environmental Resource Management and Pollution Prevention",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ES50",
+   "ES61A",
+   "ES61B",
+   "ES62A",
+   "ES62B",
+   "ES62C",
+   "ES62D",
+   "ES64"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/environmental-resource-management-and-pollution-prevention-fall-2022v2",
+   "title": "Certificate of Achievement-Advanced (COA-A) Environmental Resource Management and Pollution Prevention",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Environmental Resource Management and Pollution Prevention",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) environmental resource management and pollution prevention",
+    "section_fit": 0.714
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4649
  },
  {
   "control_number": "35776",
@@ -6026,36 +6747,119 @@
   "title": "Facility and Sustainable Building Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS56",
+   "BUS65",
+   "BUS85",
+   "ES58",
+   "ES69A",
+   "ES70",
+   "ES71",
+   "ES78",
+   "ES82"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+   "title": "Certificate of Achievement-Advanced (COA-A) Facility and Sustainable Building Management",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Facility and Sustainable Building Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) facility and sustainable building management",
+    "section_fit": 0.667
+   }
+  },
   "listed": 9,
-  "text_chars": 0
+  "text_chars": 4333
  },
  {
   "control_number": "35923",
   "title": "Facility and Sustainable Building Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS56",
+   "BUS65",
+   "BUS85",
+   "ES58",
+   "ES69A",
+   "ES70",
+   "ES71",
+   "ES78",
+   "ES81",
+   "ES82",
+   "ES83"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2",
+   "title": "Certificate of Achievement-Advanced (COA-A) Facility and Sustainable Building Management",
+   "h1": "Certificate of Achievement-Advanced (COA-A) Facility and Sustainable Building Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement-advanced (coa-a) facility and sustainable building management",
+    "section_fit": 0.667
+   }
+  },
   "listed": 11,
-  "text_chars": 0
+  "text_chars": 4622
  },
  {
   "control_number": "35924",
   "title": "Facility and Sustainable Building Management",
   "award": "A.S. Degree",
   "shape": "degree",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT105",
+   "ACCT88",
+   "BUS49",
+   "BUS56",
+   "BUS65",
+   "BUS85",
+   "CIS3",
+   "CIS79",
+   "ES4",
+   "ES51A",
+   "ES51B",
+   "ES51C",
+   "ES58",
+   "ES62A",
+   "ES64",
+   "ES69",
+   "ES69A",
+   "ES70",
+   "ES71",
+   "ES78",
+   "ES81",
+   "ES82",
+   "ES83",
+   "REST53"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/facility-and-sustainable-building-management-fall-2025v2v3",
+   "title": "Associate in Science (A.S.) Degree Facility and Sustainable Building Management",
+   "h1": "Associate in Science (A.S.) Degree Facility and Sustainable Building Management",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "as",
+    "section_line": "associate in science (a.s.) degree facility and sustainable building management",
+    "section_fit": 1.0
+   }
+  },
   "listed": 24,
-  "text_chars": 0
+  "text_chars": 5344
  },
  {
   "control_number": "36263",
@@ -6063,7 +6867,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.892,
+  "coverage": 0.904,
   "codes_found": [
    "ADMJ29",
    "AFAM10",
@@ -6083,6 +6887,7 @@
    "COMM15H",
    "COMM17",
    "COMM17H",
+   "ES2",
    "ICS17",
    "ICS17H",
    "ICS25",
@@ -6154,7 +6959,7 @@
    }
   },
   "listed": 83,
-  "text_chars": 8728
+  "text_chars": 8725
  },
  {
   "control_number": "36264",
@@ -6162,7 +6967,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.946,
+  "coverage": 0.985,
   "codes_found": [
    "ACCT1A",
    "ACCT1AH",
@@ -6266,6 +7071,11 @@
    "ECON5",
    "ECONC2001",
    "ECONC2001H",
+   "ES62A",
+   "ES62B",
+   "ES62C",
+   "ES69",
+   "ES69A",
    "LIB1",
    "LIB53",
    "MATH11",
@@ -7622,12 +8432,33 @@
   "title": "Film/TV: Animation",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FTV17G",
+   "FTV17H",
+   "FTV66A",
+   "FTV67A",
+   "FTV68A",
+   "FTV6A",
+   "FTV70A",
+   "FTV72G"
+  ],
+  "source": {
+   "url": "https://deanza.elumenapp.com/catalog/2026-2027/program/film-tv-animation-fall-2024",
+   "title": "Certificate of Achievement (COA) Film/TV: Animation",
+   "h1": "Certificate of Achievement (COA) Film/TV: Animation",
+   "text_from": "innerText",
+   "label": {
+    "award": 1,
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "certificate of achievement (coa) film/tv: animation",
+    "section_fit": 0.75
+   }
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 4410
  },
  {
   "control_number": "41792",
@@ -7728,13 +8559,17 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.733,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS2B",
    "ARTS2C",
    "FREN1",
    "FREN2",
    "FREN3",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
    "GEO4",
    "HIST6C",
    "HIST6CH",
@@ -7756,7 +8591,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 4756
+  "text_chars": 4750
  },
  {
   "control_number": "41859",
@@ -7764,13 +8599,15 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.857,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
    "ANTH6",
    "COMM16",
    "COMM16H",
+   "FTV2A",
+   "FTV2AH",
    "GEO4",
    "GERM1",
    "GERM2",
@@ -7793,7 +8630,7 @@
    }
   },
   "listed": 14,
-  "text_chars": 4559
+  "text_chars": 4556
  },
  {
   "control_number": "41860",
@@ -7801,7 +8638,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -7812,6 +8649,8 @@
    "COMM16H",
    "COMM7",
    "COMM7H",
+   "FTV2B",
+   "FTV2BH",
    "GEO4",
    "HIST6C",
    "HIST6CH",
@@ -7836,7 +8675,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4945
+  "text_chars": 4942
  },
  {
   "control_number": "41861",
@@ -7890,7 +8729,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.875,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -7899,6 +8738,8 @@
    "COMM16H",
    "COMM7",
    "COMM7H",
+   "FTV2A",
+   "FTV2AH",
    "GEO4",
    "INTL5",
    "JOUR2",
@@ -7921,7 +8762,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 4646
+  "text_chars": 4643
  },
  {
   "control_number": "41863",
@@ -7929,7 +8770,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.917,
+  "coverage": 1.0,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -7944,6 +8785,8 @@
    "COMM16H",
    "COMM7",
    "COMM7H",
+   "FTV2B",
+   "FTV2BH",
    "GEO4",
    "INTL5",
    "JOUR2",
@@ -7968,7 +8811,7 @@
    }
   },
   "listed": 24,
-  "text_chars": 5237
+  "text_chars": 5234
  },
  {
   "control_number": "41864",
@@ -7976,7 +8819,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.9,
+  "coverage": 0.967,
   "codes_found": [
    "ANTH2",
    "ANTH2H",
@@ -8000,6 +8843,10 @@
    "COMM7H",
    "FREN2",
    "FREN3",
+   "FTV2A",
+   "FTV2AH",
+   "FTV2B",
+   "FTV2BH",
    "GEO4",
    "GERM2",
    "GERM3",
@@ -8047,7 +8894,7 @@
    }
   },
   "listed": 60,
-  "text_chars": 7124
+  "text_chars": 7118
  },
  {
   "control_number": "41885",
@@ -9154,7 +10001,7 @@
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.864,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS12",
    "ARTS14A",
@@ -9171,6 +10018,9 @@
    "ARTS63",
    "ARTS8",
    "ARTS86",
+   "FTV17G",
+   "FTV67A",
+   "FTV70A",
    "HUMI1",
    "HUMI16",
    "HUMI1H",
@@ -9190,7 +10040,7 @@
    }
   },
   "listed": 22,
-  "text_chars": 4933
+  "text_chars": 4930
  },
  {
   "control_number": "45562",
@@ -9242,7 +10092,7 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "sitemap_page",
-  "coverage": 0.85,
+  "coverage": 1.0,
   "codes_found": [
    "ARTS12",
    "ARTS14A",
@@ -9257,6 +10107,9 @@
    "ARTS63",
    "ARTS8",
    "ARTS86",
+   "FTV17G",
+   "FTV67A",
+   "FTV70A",
    "HUMI1",
    "HUMI16",
    "HUMI1H",
@@ -9276,7 +10129,7 @@
    }
   },
   "listed": 20,
-  "text_chars": 4933
+  "text_chars": 4930
  },
  {
   "control_number": "45564",
@@ -9649,7 +10502,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.952,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ29",
    "AFAM10",
@@ -9696,6 +10549,11 @@
    "ECONC2001",
    "ECONC2001H",
    "ELIT24",
+   "ES1",
+   "ES2",
+   "ES3",
+   "ES4",
+   "ES50",
    "ESCI1",
    "ESCI19",
    "ESCI1L",
@@ -10119,7 +10977,7 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 0.987,
+  "coverage": 1.0,
   "codes_found": [
    "ADMJ29",
    "AFAM10",
@@ -10139,6 +10997,7 @@
    "COMM15H",
    "COMM17",
    "COMM17H",
+   "ES2",
    "GEO6",
    "ICS17",
    "ICS17H",
@@ -10212,7 +11071,7 @@
    }
   },
   "listed": 77,
-  "text_chars": 8728
+  "text_chars": 8725
  },
  {
   "control_number": "46568",

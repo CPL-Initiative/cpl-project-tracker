@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,8 +117,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -395,5 +392,20 @@
    "No careers listed: text names licensure (NCLEX-RN) and Registered Nurse only in the program title/outcomes, not as a stated career list."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  }
+ ],
+ "read_run": "43056325121"
 }

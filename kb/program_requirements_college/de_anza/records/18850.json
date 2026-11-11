@@ -61,34 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     54.5,
     54.5
    ],
    "stated": [
-    90.0,
-    90.0
+    54.5,
+    54.5
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     54.5,
-     54.5
+     83.5,
+     95.5
     ],
     "stated": [
-     54.5,
-     54.5
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     6.5
+    ]
    }
   },
   "repeated": {
@@ -113,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,15 +140,16 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
    "outcomes": [],
    "careers": [
     "CNC setup persons",
     "machine operators"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -361,5 +368,26 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

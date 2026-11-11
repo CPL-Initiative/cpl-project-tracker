@@ -46,37 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 100,
+   "placed": 105,
    "listed": 105,
-   "share": 0.952,
-   "missing": [
-    "ES1",
-    "ES2",
-    "ES3",
-    "ES4",
-    "ES50"
-   ],
-   "unexplained": [
-    "ES1",
-    "ES2",
-    "ES3",
-    "ES4",
-    "ES50"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 5,
-   "codes": [
-    "ESD1",
-    "ESD2",
-    "ESD3",
-    "ESD4",
-    "ESD50"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -114,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -996,5 +978,6 @@
    "The outcomes list is the program's single list, recorded for this certificate."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

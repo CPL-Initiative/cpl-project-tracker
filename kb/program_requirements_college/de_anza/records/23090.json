@@ -46,25 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 21,
-   "share": 0.952,
-   "missing": [
-    "FTV20"
-   ],
-   "unexplained": [
-    "FTV20"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "F/TVD20"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -102,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -326,5 +320,6 @@
    "No program learning outcomes or careers printed; the description says only that the program prepares students for the workforce."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

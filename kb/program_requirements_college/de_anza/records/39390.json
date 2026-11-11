@@ -70,34 +70,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     47.0,
     51.0
    ],
    "stated": [
-    90.0,
-    90.0
+    47.0,
+    51.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     47.0,
-     51.0
+     92.0,
+     109.0
     ],
     "stated": [
-     47.0,
-     51.0
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -122,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,8 +145,8 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -155,7 +157,8 @@
     "Define and assess the critical role of both group and individual action in democratic decision-making",
     "Identify and evaluate how laws and the legal system affect the development and implementation of public policy and social control"
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -592,5 +595,26 @@
    "Program learning outcomes are printed for this program as a whole and recorded for this award."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

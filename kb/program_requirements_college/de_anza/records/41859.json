@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 12,
+   "placed": 14,
    "listed": 14,
-   "share": 0.857,
-   "missing": [
-    "FTV2A",
-    "FTV2AH"
-   ],
-   "unexplained": [
-    "FTV2A",
-    "FTV2AH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "F/TVD2A",
-    "F/TVD2AH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -264,5 +255,6 @@
    "No program learning outcomes or careers are printed in the text; the catalog text is cut off after 'Min Uni'."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

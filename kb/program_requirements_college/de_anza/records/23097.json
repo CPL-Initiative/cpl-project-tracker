@@ -46,29 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 60,
+   "placed": 61,
    "listed": 63,
-   "share": 0.952,
+   "share": 0.968,
    "missing": [
     "ECON1",
-    "ECON1H",
-    "ES1"
+    "ECON1H"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ECONC2002",
-    "ECONC2002H",
-    "ESD1"
+    "ECONC2002H"
    ],
    "flagged": [
     "ECONC2002",
-    "ECONC2002H",
-    "ESD1"
+    "ECONC2002H"
    ],
    "pass": true
   },
@@ -768,5 +765,6 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

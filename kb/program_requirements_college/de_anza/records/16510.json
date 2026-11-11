@@ -46,80 +46,64 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 107,
+   "placed": 114,
    "listed": 116,
-   "share": 0.922,
+   "share": 0.983,
    "missing": [
     "ECON1",
-    "ECON1H",
-    "ES1",
-    "ES6",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV42"
+    "ECON1H"
    ],
-   "unexplained": [
-    "ES1",
-    "ES6",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV42"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 9,
+   "count": 2,
    "codes": [
     "ECONC2002",
-    "ECONC2002H",
-    "ESD1",
-    "ESD6",
-    "F/TVD2A",
-    "F/TVD2AH",
-    "F/TVD2B",
-    "F/TVD2BH",
-    "F/TVD42"
+    "ECONC2002H"
    ],
    "flagged": [
     "ECONC2002",
     "ECONC2002H"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     53.0,
     68.0
    ],
    "stated": [
-    90.0,
-    90.0
+    53.0,
+    68.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the De Anza General Education or California General Education Transfer Curriculum (Cal-GETC) pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     53.0,
-     68.0
+     82.0,
+     109.0
     ],
     "stated": [
-     53.0,
-     68.0
+     90.0,
+     90.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     29.0,
+     41.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -144,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -165,12 +149,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": true,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -1200,5 +1185,26 @@
    "The structured XML program-requirements dump at the end of the text is cut off mid-List B; the readable requirements list above it is complete and was used."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

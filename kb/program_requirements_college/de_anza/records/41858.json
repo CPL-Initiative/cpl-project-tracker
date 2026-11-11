@@ -46,34 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 15,
    "listed": 15,
-   "share": 0.733,
-   "missing": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
-   "unexplained": [
-    "FTV2A",
-    "FTV2AH",
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 4,
-   "codes": [
-    "F/TVD2A",
-    "F/TVD2AH",
-    "F/TVD2B",
-    "F/TVD2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -111,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -279,5 +264,6 @@
    "No program learning outcomes printed in the text."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

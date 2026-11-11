@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 22,
+   "placed": 24,
    "listed": 24,
-   "share": 0.917,
-   "missing": [
-    "FTV2B",
-    "FTV2BH"
-   ],
-   "unexplained": [
-    "FTV2B",
-    "FTV2BH"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "F/TVD2B",
-    "F/TVD2BH"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -339,5 +330,6 @@
    "Careers: 'civil service' and 'private sector' taken from 'future study or work in civil service or the private sector'; the description's study areas (Anthropology, History, Law, Chicanx Studies, Business) and engagement areas (travel, law, business, nongovernmental organizations) were not recorded as careers."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "read_run": "43056325121"
 }

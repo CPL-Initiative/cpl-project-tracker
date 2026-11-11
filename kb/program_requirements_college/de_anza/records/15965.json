@@ -22,43 +22,15 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 239,
+   "placed": 267,
    "listed": 315,
-   "share": 0.759,
+   "share": 0.848,
    "missing": [
-    "ES3",
-    "ES4",
-    "ES51A",
-    "ES51B",
-    "FTV1",
-    "FTV17H",
-    "FTV1H",
-    "FTV20",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2AW",
     "FTV2AWH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV2BW",
     "FTV2BWH",
-    "FTV2C",
-    "FTV2CH",
-    "FTV2CW",
     "FTV2CWH",
-    "FTV3A",
-    "FTV41",
-    "FTV42",
-    "FTV43",
-    "FTV66A",
-    "FTV67A",
-    "FTV7",
-    "FTV71J",
-    "FTV74",
     "FTV75G",
     "FTV75K",
-    "FTV8",
-    "FTV88",
     "PHIL20B",
     "PHIL20C",
     "PHIL24",
@@ -104,77 +76,21 @@
     "WMST49"
    ],
    "unexplained": [
-    "ES3",
-    "ES4",
-    "ES51A",
-    "ES51B",
-    "FTV1",
-    "FTV17H",
-    "FTV1H",
-    "FTV20",
-    "FTV2A",
-    "FTV2AH",
-    "FTV2AW",
     "FTV2AWH",
-    "FTV2B",
-    "FTV2BH",
-    "FTV2BW",
     "FTV2BWH",
-    "FTV2C",
-    "FTV2CH",
-    "FTV2CW",
-    "FTV2CWH",
-    "FTV3A",
-    "FTV41",
-    "FTV42",
-    "FTV43",
-    "FTV66A",
-    "FTV67A",
-    "FTV7",
-    "FTV71J",
-    "FTV74",
-    "FTV8",
-    "FTV88"
+    "FTV2CWH"
    ],
    "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 33,
+   "count": 5,
    "codes": [
-    "ESD3",
-    "ESD4",
-    "ESD51A",
-    "ESD51B",
-    "F/TVD1",
-    "F/TVD17H",
-    "F/TVD1H",
-    "F/TVD20",
-    "F/TVD2A",
-    "F/TVD2AH",
-    "F/TVD2AW",
     "F/TVD2AWH",
-    "F/TVD2B",
-    "F/TVD2BH",
-    "F/TVD2BW",
     "F/TVD2BWH",
-    "F/TVD2C",
-    "F/TVD2CH",
-    "F/TVD2CW",
     "F/TVD2CWH",
-    "F/TVD3A",
     "F/TVD4",
-    "F/TVD41",
-    "F/TVD42",
-    "F/TVD43",
-    "F/TVD5",
-    "F/TVD66A",
-    "F/TVD67A",
-    "F/TVD7",
-    "F/TVD71J",
-    "F/TVD74",
-    "F/TVD8",
-    "F/TVD88"
+    "F/TVD5"
    ],
    "flagged": [
     "F/TVD4",
@@ -215,10 +131,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -241,8 +154,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -2658,5 +2571,20 @@
    "Read in 2 parts, because one reply could not hold the whole record."
   ]
  },
- "extracted_run": "43056325121"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  }
+ ],
+ "read_run": "43056325121"
 }
