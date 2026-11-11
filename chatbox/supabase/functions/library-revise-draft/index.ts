@@ -37,7 +37,7 @@
 // ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY. LIBRARY_REVISE_MODEL overrides the model.
 // Governance: kb/governance_surface_map.json, function:library-revise-draft.
 
-import { applyEdits, frameKept, parseAnswer } from "./apply_edits.mjs";
+import { applyEdits, frameKept, parseAnswer, unstamp } from "./apply_edits.mjs";
 import { readingText, SIERRA_MAX } from "./sierra_text.mjs";
 import { buildNewPage, googleExport, parseNewAnswer, STARTER_SLUG } from "./new_page.mjs";
 import { MAX_PICTURES, PICTURE_RULES, placePictures } from "./pictures.mjs";
@@ -139,12 +139,12 @@ Deno.serve(async (req) => {
     const bd = await rest(`cpl_library_drafts?id=eq.${baseDraft}&library_id=eq.${r.id}&select=html`, cred);
     const rows = bd.ok ? await bd.json() : [];
     if (!rows[0] || !rows[0].html) return reply(409, { error: "The draft this builds on could not be read, so a session revises it: Copy the request." });
-    page = rows[0].html; basedOn = "draft " + baseDraft;
+    page = unstamp(rows[0].html); basedOn = "draft " + baseDraft;
     pageWords = isNew ? `The draft of a new page, not yet public (it will be published at ${pageUrl})` : `The draft of the page, not yet public (it will replace ${pageUrl})`;
   } else {
     const pr = await fetch(pageUrl).catch(() => null);
     if (!pr || !pr.ok) return reply(409, { error: "This piece has no public copy on GitHub Pages to revise from, so a session revises it: Copy the request." });
-    page = await pr.text();
+    page = unstamp(await pr.text());
   }
   if (page.length > MAX_PAGE) return reply(413, { error: "The page is too large to revise here; a session revises it." });
 
@@ -269,7 +269,7 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   const starterUrl = PAGES + STARTER_SLUG + "/";
   const sr = await fetch(starterUrl).catch(() => null);
   if (!sr || !sr.ok) return reply(502, { error: "The starter page could not be read from GitHub Pages. Try again in a minute, or Copy the brief for a session." });
-  const starter = await sr.text();
+  const starter = unstamp(await sr.text());
   const docs = docsText(pasted, google.read);
   const unopened = linked.filter((x: any) => !google.read.some((y) => y.url === x.url));
   const pictures = await readPictures(r.id, cred);

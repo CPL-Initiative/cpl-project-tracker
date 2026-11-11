@@ -121,7 +121,11 @@ with tempfile.TemporaryDirectory() as td:
     gone = [p.name for p in lp.stale_pictures(folder, {"img/1.webp": b"x"})]
     check(gone == ["3.webp"], "a picture the page no longer shows is deleted from its folder; nothing else is touched")
     check(lp.stale_pictures(folder / "none", {}) == [], "a page with no picture folder has nothing to delete")
+check(lp.unstamp('<script src="../../sierra/sidebar.js?v=ec58e874" defer></script><link href="a.css?v=0123abcd">')
+      == '<script src="../../sierra/sidebar.js" defer></script><link href="a.css">', "a draft read off Pages loses its version stamps before it is written")
+check(lp.unstamp('<a href="https://x.example/p?v=12345678">x</a>') == '<a href="https://x.example/p?v=12345678">x</a>', "and nothing else changes")
 src = open(lp.__file__).read()
+check('d["html"] = unstamp(' in src, "--write takes the stamps off")
 check("for old in stale_pictures(page.parent, files):" in src and "old.unlink()" in src, "--write deletes them")
 check(not lp.pictures_checked(N) and lp.pictures_checked({"regen": {"pictures_checked_by": "Sam", "pictures_checked_at": "t"}})
       and not lp.pictures_checked({"regen": {"pictures_checked_by": " ", "pictures_checked_at": "t"}}),

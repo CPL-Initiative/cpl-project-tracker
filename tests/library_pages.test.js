@@ -30,6 +30,7 @@ const os = require("os");
 const { execFileSync } = require("child_process");
 
 const ROOT = path.join(__dirname, "..");
+const OFFICE_ADDRESSES = ["map@rccd.edu", "mapsupport@theinfotechpartners.com"];
 const results = [];
 function check(name, cond, why) { results.push([name, !!cond, why]); }
 
@@ -90,6 +91,13 @@ for (const p of pages) {
     return EMAIL.test(c.innerHTML);
   }).length;
   blocks.forEach((b) => b.remove());
+  // An office's own address may also stand as a help link (Sam's first piece drafted on its card, 2026-11-11: MAP's
+  // support and general addresses, from the deck's Resources slide). Only these two, and only as the text of their
+  // own mailto link; a person's address anywhere outside a card's contacts is still a leak.
+  cd.querySelectorAll('a[href^="mailto:"]').forEach((a) => {
+    const t = a.textContent.trim();
+    if (OFFICE_ADDRESSES.indexOf(t) >= 0 && a.getAttribute("href") === "mailto:" + t) a.remove();
+  });
   const rest = cd.documentElement.outerHTML.replace(/data:[^"]+/g, "");
   check(`(3) ${p.slug}: ⭐ no email address but a card's named contacts, each its own mailto link`,
     linked && !loose && !EMAIL.test(rest),

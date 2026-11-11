@@ -227,6 +227,10 @@ const FIG = (n) => '<figure class="shot"><a href="img/' + n + '.webp" target="_b
     check("F a picture whose bytes are not the type it claims is not sent to the model", /p\.mime === "image\/webp" && \/\^UklGR\/\.test\(p\.data\)/.test(fn));
     check("F ⭐ it shows them to the model as images and adds the picture rules", /type: "image", source: \{ type: "base64"/.test(fn) && (fn.match(/pictures\.length \? PICTURE_RULES : ""/g) || []).length === 2);
     check("F ⭐ markers are placed after the model's work passed its checks, on both paths", /const done = applyEdits\(page, ans\.edits\);[\s\S]{0,200}placePictures\(done\.html/.test(fn) && /buildNewPage\(starter, r\.slug, ans\);[\s\S]{0,300}placePictures\(built\.html/.test(fn));
+    // The first piece published from the card carried sidebar.js?v=ec58e874 into the repo: the starter was read off Pages.
+    check("F ⭐ a page read off Pages loses its version stamps before a draft is made from it",
+      ae.unstamp('<script src="../../sierra/sidebar.js?v=ec58e874" defer></script>') === '<script src="../../sierra/sidebar.js" defer></script>' &&
+      /const starter = unstamp\(await sr\.text\(\)\)/.test(fn) && /page = unstamp\(await pr\.text\(\)\)/.test(fn) && /page = unstamp\(rows\[0\]\.html\)/.test(fn));
     const sql = fs.readFileSync("kb/migrations/2026-11-11_library_pictures.sql", "utf8");
     check("F ⭐ the table is the team's to read, add and change; nobody deletes; the service role only reads",
       /grant select, insert, update on public\.cpl_library_pictures to anon, authenticated;/.test(sql) && /grant select on public\.cpl_library_pictures to service_role;/.test(sql) &&

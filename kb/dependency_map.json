@@ -6,7 +6,7 @@
   "edge_functions": 14,
   "file_datasets": 834,
   "external_services": 195,
-  "consumers": 546,
+  "consumers": 547,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -8809,14 +8809,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 350
+     "line": 356
     },
     {
      "id": "script:scripts/library_publish.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 350
+     "line": 356
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -21395,6 +21395,13 @@
      "line": 1769
     },
     {
+     "id": "page:library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 226
+    },
+    {
      "id": "page:library/adopt/index.html",
      "kind": "page",
      "direction": "read",
@@ -27081,7 +27088,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 347
     }
    ],
    "main_committers": []
