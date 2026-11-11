@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 579,
+   "count": 580,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3148,6 +3148,24 @@
      "title": "A Postgres md5 proves a transcribed jsonb copy",
      "type": "methodology",
      "updated": "2026-10-07"
+    },
+    {
+     "created": "2026-11-11",
+     "governs": [
+      "kb/status/commons.json",
+      "tests/exhibit_progress.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-pr-that-changes-a-builder-runs-the-builder.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "generated-files",
+      "commons"
+     ],
+     "title": "A PR that changes a builder of a committed file runs the builder",
+     "type": "methodology",
+     "updated": "2026-11-11"
     },
     {
      "created": "2026-09-17",
@@ -15770,7 +15788,7 @@
   },
   {
    "blurb": "Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per \u00a711 roadmap lane under `reference/lanes/`. PULL \u2014 read the one lane you are working.",
-   "count": 68,
+   "count": 69,
    "docs": [
     {
      "created": "2026-08-28",
@@ -16432,6 +16450,21 @@
      "updated": ""
     },
     {
+     "created": "2026-11-11",
+     "governs": [],
+     "path": "docs/reference/conductor_mode.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "conductor",
+      "governance-team-enablement",
+      "scheduled-sessions"
+     ],
+     "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
+     "type": null,
+     "updated": "2026-11-11"
+    },
+    {
      "created": "2026-08-29",
      "governs": [
       "kb/_context_budget.py",
@@ -16747,8 +16780,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 599,
+   "count": 600,
    "docs": [
+    {
+     "created": "2026-11-11",
+     "governs": [],
+     "n": 639,
+     "path": "docs/session_639_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 639 handoff (from SkyTamarind, S638)",
+     "type": null,
+     "updated": "2026-11-11"
+    },
     {
      "created": "2026-11-11",
      "governs": [],
@@ -26907,5 +26954,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1446
+ "total": 1449
 }

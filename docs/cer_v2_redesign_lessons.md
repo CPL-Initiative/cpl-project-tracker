@@ -1174,3 +1174,54 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
   merges, so the title that leads is saved a second earlier.
 - **A merge keeps every distinct issuer** (`fold_credentials` dedupes on issuer and trainer only). Folding a
   college-issued title into an ASE title leaves two issuer records. Fix that before the 16 merges apply (Sky on #3110).
+
+## Moved from the lane (S638): the Credential Catalog port and the statewide request route, as they stood
+
+**The Credential Catalog, ported from the mock (SkyAerial, 2026-11-06; Sam: "I think it would make a good beginning for
+our credential registry", then "let's roll with this"; the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds, eight
+versions in one morning).** `library/adopt/` now runs the full width; three figure tiles beside the title open what they
+count (1,260 earn credit at a college, 101 colleges award it, 7,389 not yet evaluated; the tile count is his call, "101 is
+right") and **follow every filter but Credit status** (SkyLantern, Sam 2026-11-06: Computer and Information Sciences reads
+68 · 44 · 997; with a college pick the first two count what earns credit there), and a tile keeps the filters when it opens; *Start with* names five kinds of learner; every filter is a multi-select picker (College with a district heading
+only where a district has more than one college; Region under *Strong Workforce* and *ASCCC*; Field; *How credit is
+given*; **Credit status**, Show folded into it); the list groups under field headers, the largest work fields first and
+the exams (AP, IB, CLEP, DSST) last; a **List** view drills down (issuer searches, field and type filter, the count opens
+the awarding table) **one line a credential** (SkyLantern, Sam 2026-11-06): Credit status is its own column, *Ask us to
+prioritize* the last column on the right (its *Ask* and the asked count), a long cell ends in an ellipsis with the whole
+text in its title, and the List scrolls in a box a screen tall that **lazy-loads** the next 72 as the reader nears its end
+(the cards too, against the window; Show more stays only where the browser lacks IntersectionObserver). **Worth a faculty
+review sits above the results**, its 28 cards in a box about two rows tall; the matrix's cells open a side panel (**A** marks a college
+that could adopt; a column heading picks the college); the panel resizes from its left edge and the browser keeps the
+width; the Library's eleven photos cycle with *Pause photos*; the intro says *many*, and no public string says a bare
+MAP or CPL. **Credit status in public words, the Commons' curation words beside them:** Earns credit at a college
+(Awarded somewhere, 1,260) · Earns credit here / Earns credit elsewhere, could be added here (the two college-relative
+values, replacing Show) · Known to a college, no credit yet (In MAP, no articulation yet, 12) · Being reviewed (Held for
+title review, 1,171) · Not yet evaluated (Harvested, no exhibit yet, 7,389, the nightly watch's
+`kb/it_ai_credential_catalog.json`). Data: `kb/_build_adopt_page.py` also writes `adopt_more.json` (the other statuses,
+read after the first paint); `kb/_build_adopt_align.py` writes `adopt_align.json`, the **analysis for faculty** (issuer
+skill areas from `kb/reference/industry_credential_skills.json` against `public.course_outcomes`, an illustrative
+word-overlap score labeled so; the Foundation and ASCCC method, or a TypeSafe Jev Score per skill area, replaces it; Jev
+already runs the harvest, `tests/jev_harvest_test.py`). Both run daily. Tests `public_adopt` (91),
+`adopt_align_build_test.py` (9), `adopt_page_build_test.py` (32); `npm run a11y -- public-adopt public-adopt-dark
+public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluation** ships with the routes that exist
+today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
+source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
+
+**RULED and built (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note; built by SkyLoop the same
+afternoon): the statewide route is a public request to prioritize review, never an evaluation promise.** His words:
+*"Reframe it as a public request to prioritize review of a credential. The idea is that we could collect requests to help us
+better prioritize our work without promising any one person that we would evaluate their credential--that would be left to
+the discretion of local colleges."* The page's word is **Ask us to prioritize this credential** (the panel's heading, every
+card's chip; *Ask us to prioritize* on a List row's 0); the panel's statewide paragraph says each request raises the
+credential in the Initiative's order, that evaluation rests with a college's faculty, and that no reply is sent. The form
+takes the credential (fixed), an optional college (prefilled from the pick) and an optional email, and posts to **one
+INSERT-only SECURITY DEFINER function**, `credential_priority_request()`, which validates, bounds, drops a repeat from the
+same email within a day, and returns the count; `credential_priority_counts()` is the one public read (credential and n,
+nothing else) and paints the count beside the credential on its card, its List row and the panel's heading (the count is
+the signal). The table `credential_priority_requests` has no public policy; the team reads rows behind the phrase or a
+reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), applied
+16:21Z by `supabase-migrate.yml` from `kb/migrations/.apply` (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`;
+the MCP's apply had waited on a confirmation and timed out, Rule 10 c); read back live: anon executes the two functions and
+holds no insert on the table, RLS on. Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
+mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
+(81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).

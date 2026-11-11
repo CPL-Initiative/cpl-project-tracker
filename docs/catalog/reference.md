@@ -15,7 +15,7 @@ related:
 
 Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build-status pare-downs, and one file per §11 roadmap lane under `reference/lanes/`. PULL — read the one lane you are working.
 
-68 document(s).
+69 document(s).
 
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
@@ -67,6 +67,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Blocked sources: what a session does before a refused read becomes a card for Sam](../reference/blocked_sources.md) | — | `blocked_sources.md` | 2026-11-11 | 2026-11-11 |
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [COBIx on pull requests: the review loop without Sam in the middle](../reference/cobix_pr_loop.md) | — | `cobix_pr_loop.md` |  |  |
+| [Conductor mode — how a session runs workers, COBIx and the merge gate](../reference/conductor_mode.md) | — | `conductor_mode.md` | 2026-11-11 | 2026-11-11 |
 | [Context-pressure hook — install and mechanics](../reference/context_pressure_hook.md) | — | `context_pressure_hook.md` | 2026-08-29 |  |
 | [Data sources: the register of datasets that could fill a Commons gap](../reference/data_sources.md) | — | `data_sources.md` | 2026-11-04 | 2026-11-06 |
 | [Data-write rollback — undoing a bulk write to a shared Supabase table](../reference/data_write_rollback.md) | — | `data_write_rollback.md` | 2026-08-30 |  |

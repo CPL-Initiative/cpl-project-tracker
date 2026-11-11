@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 634,
-  "moniker": "SkyBackward",
+  "session": 638,
+  "moniker": "SkyTamarind",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_635_handoff.md",
+  "handoff": "docs/session_639_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,13 +33,29 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T22:22:22Z",
+  "written_at": "2026-11-11T22:05:58Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The next re-analysis request",
-    "text": "The next press of the re-analyze box runs the code checks, then the Jev runner. Two doctorate exhibits from Los Angeles Pierce keep the issuer Graduate Level Institution of Higher Education until the college names the university; that is a question for its CSM."
+    "title": "Apply the ASE plan, then the five standards folds",
+    "text": "Once the plan folders carry names the apply workflow accepts, the ASE plan runs as a dry run and then for real, phase 1 then phase 2. Then the five standards folds run the new issuer rule live for the first time, and the family plan tags 25 bundle titles."
   },
   "changes": [
+    {
+      "at": "2026-11-11T21:41:00Z",
+      "text": "The nightly run gave 747 credentials a Common SUBJ from the courses colleges credit for them or their issuer family, under the cohort exhibit-subject-s638@bot. Removing the cohort undoes it. 362 credentials still have no subject."
+    },
+    {
+      "at": "2026-11-11T21:33:36Z",
+      "text": "The ASE Military Tactical Wheeled Vehicle series, MIL1 to MIL8, carries ASE's official titles and sits in automotive. The three plans that re-point the ASE titles are committed and not yet applied."
+    },
+    {
+      "at": "2026-11-11T21:19:50Z",
+      "text": "A fold records its issuer decision as one row and changes no issuer a person saved. It applies in one pass and has an undo."
+    },
+    {
+      "at": "2026-11-11T16:56:18Z",
+      "text": "A saved fold reads Saved, waiting for apply, or Applied, in the Folds view."
+    },
     {
       "at": "2026-11-10T20:11:00Z",
       "text": "10-Key Data Entry's issuer now reads California Community Colleges alone: both exhibits are Modesto's own course by credit by exam (Sam's ruling, Open Asks Sheet 180 card 6). The receipt holds the earlier value. Pull request 3087 merged."

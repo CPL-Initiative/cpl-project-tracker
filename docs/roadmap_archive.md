@@ -239,3 +239,6 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 - 2026-11-09 (SkyCigar): the Docket steps 1-3, call 9 lifted, TRUNCATE revoked, CSMs on the reviewer list; handoff 621.
 - 2026-11-08 SkySunflower (S612, Sam's session): the anchor re-key applied, 20 keys and 21 crosswalk pointers (#2938); funding tests twice as fast (#2939); the CCR seed re-check reads course descriptions and TOP (#2940); Open Asks Sheets 173 and 174 (CPLBrain#723); handoff 613, full checkpoint.
 - 2026-11-08 SkyTadpole (S611, Sam's session): S604's five PRs merged; its staged memory rows written (#2931); Exhibits Queue (#2933), the List panel trail (#2934) and the anchor re-key dry run (#2935) shipped; the key sketch held for Sam (#2932); Open Asks Sheet 171; KB note `methodology-read-a-documents-era-from-its-keys`; full checkpoint.
+
+<!-- moved from docs/INDEX.md Update history, S638 -->
+- 2026-11-09 (S621 SkyBlackEye): the funding rollout day (Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, the CSM funding door); handoff 622.
