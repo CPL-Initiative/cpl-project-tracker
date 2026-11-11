@@ -40,6 +40,7 @@
 import { applyEdits, frameKept, parseAnswer } from "./apply_edits.mjs";
 import { readingText, SIERRA_MAX } from "./sierra_text.mjs";
 import { buildNewPage, googleExport, parseNewAnswer, STARTER_SLUG } from "./new_page.mjs";
+import { MAX_PICTURES, PICTURE_RULES, placePictures } from "./pictures.mjs";
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANON = Deno.env.get("SUPABASE_ANON_KEY") || "";
@@ -149,6 +150,7 @@ Deno.serve(async (req) => {
 
   const docs = docsText(pasted, fromGoogle.read);
   const unopened = linked.filter((x: any) => !fromGoogle.read.some((y) => y.url === x.url));
+  const pictures = await readPictures(r.id, cred);
   // Fix 1 (Sam, 2026-11-05: "build fixes 1-3"): the model is told Sierra's budget and the page's length against it.
   const sierraBefore = readingText(page).length;
   const ask = `${pageWords}:\n<page>\n${page}\n</page>\n\n` +
@@ -162,7 +164,7 @@ Deno.serve(async (req) => {
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": Deno.env.get("ANTHROPIC_API_KEY") || "", "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: MODEL, max_tokens: 16000, system: INSTRUCTIONS, messages: [{ role: "user", content: ask }] }),
+    body: JSON.stringify({ model: MODEL, max_tokens: 16000, system: INSTRUCTIONS + (pictures.length ? PICTURE_RULES : ""), messages: [{ role: "user", content: userContent(ask, pictures) }] }),
   }).catch(() => null);
   if (!res || !res.ok) {
     const t = res ? await res.text().catch(() => "") : "";
@@ -175,6 +177,9 @@ Deno.serve(async (req) => {
   if (ans.error) return reply(502, { error: ans.error + " Try again." });
   const done = applyEdits(page, ans.edits);
   if (done.error) return reply(422, { error: done.error, summary: ans.summary });
+  // The model's markers become figures here, after its edits passed their checks.
+  const pics = placePictures(done.html, pictures);
+  done.html = pics.html;
   const lost = frameKept(page, done.html);
   if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
 
@@ -185,7 +190,7 @@ Deno.serve(async (req) => {
     body: JSON.stringify({
       library_id: r.id, slug: r.slug, html: done.html, based_on: basedOn, made_by: by, model: MODEL,
       summary: ans.summary || null, edits: done.applied,
-      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g, sierra,
+      request: { refresh_note: r.refresh_note || null, sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)), regen: g, sierra, pictures: pics.placed,
         // Each edit as Was and Now, so the card's What changed shows them (Version 22).
         pairs: (Array.isArray(ans.edits) ? ans.edits : []).slice(0, 40).map((e: any) => ({ was: String(e?.old ?? "").slice(0, 400), now: String(e?.new ?? "").slice(0, 400) })) },
     }),
@@ -196,8 +201,29 @@ Deno.serve(async (req) => {
   const regen = { ...g, ...(isNew ? { new_piece: true } : {}), ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
   const up = await rest(`cpl_library?id=eq.${id}`, cred, { method: "PATCH", body: JSON.stringify({ regen, updated_by: by }) });
   if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
-  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", new_piece: isNew || undefined, sierra, model: MODEL, usage: out?.usage || null });
+  return reply(200, { draft_id: draft.id, summary: ans.summary, edits: done.applied, replaces_now: g.publish === "replace", new_piece: isNew || undefined, pictures: pics.placed.length, sierra, model: MODEL, usage: out?.usage || null });
 });
+
+// ── Pictures (Sam, 2026-11-11: "assemble the pics together with the text from the get go") ────
+// The pictures the Library tab cropped from the piece's documents, read with the caller's own credential. The model
+// sees each one and writes only a marker for where it goes; pictures.mjs builds the figure.
+async function readPictures(libraryId: string, cred: Record<string, string>): Promise<any[]> {
+  const res = await rest(`cpl_library_pictures?library_id=eq.${libraryId}&left_out=is.false&select=n,mime,data,width,height,page,source_title,alt&order=n.asc&limit=${MAX_PICTURES}`, cred).catch(() => null);
+  if (!res || !res.ok) return [];
+  const rows = await res.json().catch(() => []);
+  return (Array.isArray(rows) ? rows : []).filter((p: any) => p && /^[A-Za-z0-9+/=]+$/.test(String(p.data || "")) &&
+    // The bytes are the type they claim, or the picture is not sent (a mismatch would refuse the whole request).
+    ((p.mime === "image/webp" && /^UklGR/.test(p.data)) || (p.mime === "image/png" && /^iVBORw0KGgo/.test(p.data))));
+}
+function userContent(ask: string, pictures: any[]): unknown {
+  if (!pictures.length) return ask;
+  const parts: any[] = [{ type: "text", text: ask + "\n\nThe pictures this piece holds follow." }];
+  for (const p of pictures) {
+    parts.push({ type: "text", text: `Picture ${p.n} (from ${String(p.source_title || "a document").slice(0, 200)}${p.page ? ", page " + p.page : ""}):` });
+    parts.push({ type: "image", source: { type: "base64", media_type: p.mime, data: p.data } });
+  }
+  return parts;
+}
 
 // ── Documents: what was pasted, and the Google files read by their links ──────────────────────
 function docsText(pasted: any[], google: { title: string; text: string }[]): string {
@@ -246,6 +272,7 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   const starter = await sr.text();
   const docs = docsText(pasted, google.read);
   const unopened = linked.filter((x: any) => !google.read.some((y) => y.url === x.url));
+  const pictures = await readPictures(r.id, cred);
   const today = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric", timeZone: "America/Los_Angeles" });
   const ask = `The starter page (${starterUrl}), for its look and pattern only; none of its words belong on the new page:\n<starter>\n${starter}\n</starter>\n\n` +
     `Sierra's reading budget: ${SIERRA_MAX.toLocaleString("en-US")} characters of text.\nToday is ${today}.\n\n` +
@@ -259,7 +286,7 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   const res = await fetch("https://api.anthropic.com/v1/messages", {
     method: "POST",
     headers: { "x-api-key": Deno.env.get("ANTHROPIC_API_KEY") || "", "anthropic-version": "2023-06-01", "content-type": "application/json" },
-    body: JSON.stringify({ model: MODEL, max_tokens: 16000, system: NEW_INSTRUCTIONS, messages: [{ role: "user", content: ask }] }),
+    body: JSON.stringify({ model: MODEL, max_tokens: 16000, system: NEW_INSTRUCTIONS + (pictures.length ? PICTURE_RULES : ""), messages: [{ role: "user", content: userContent(ask, pictures) }] }),
   }).catch(() => null);
   if (!res || !res.ok) {
     const t = res ? await res.text().catch(() => "") : "";
@@ -272,6 +299,9 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   if (ans.error) return reply(502, { error: ans.error + " Try again." });
   const built = buildNewPage(starter, r.slug, ans);
   if (built.error) return reply(422, { error: built.error, summary: ans.summary });
+  // The allowlist ran on the model's <main> inside buildNewPage; its markers become figures here.
+  const pics = placePictures(built.html as string, pictures);
+  built.html = pics.html;
   const lost = frameKept(starter, built.html);
   if (lost.length) return reply(422, { error: "The draft was not stored: it dropped " + lost.join(", ") + ".", summary: ans.summary });
   const sierra = { before: 0, after: readingText(built.html).length, max: SIERRA_MAX };
@@ -282,7 +312,7 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
       summary: ans.summary || null, edits: 0,
       request: { new_piece: true, brief: brief.say || null, refresh_note: r.refresh_note || null,
         sources: pasted.map((x: any) => x.title || "pasted").concat(linked.map((x: any) => x.title || x.url)),
-        google_closed: google.closed, regen: g, sierra, title: ans.title },
+        google_closed: google.closed, regen: g, sierra, title: ans.title, pictures: pics.placed },
     }),
   });
   if (!ins.ok) return reply(502, { error: "The draft could not be stored (" + ins.status + ")." });
@@ -290,5 +320,5 @@ async function draftNew(r: any, g: any, brief: any, pasted: any[], linked: any[]
   const regen = { ...g, new_piece: true, ready_at: new Date().toISOString(), draft_id: draft.id, draft_url: null, drafted_by: by, drafted_with: "library-revise-draft" };
   const up = await rest(`cpl_library?id=eq.${r.id}`, cred, { method: "PATCH", body: JSON.stringify({ regen, updated_by: by }) });
   if (!up.ok) return reply(502, { error: "The draft is stored, but the card could not be updated (" + up.status + ")." });
-  return reply(200, { draft_id: draft.id, summary: ans.summary, new_piece: true, title: ans.title, google_closed: google.closed, sierra, model: MODEL, usage: out?.usage || null });
+  return reply(200, { draft_id: draft.id, summary: ans.summary, new_piece: true, title: ans.title, google_closed: google.closed, pictures: pics.placed.length, sierra, model: MODEL, usage: out?.usage || null });
 }

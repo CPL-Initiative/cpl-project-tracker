@@ -86,6 +86,7 @@
   // once someone presses Replace the public copy.
   var REVISE_DRAFT_URL = SUPABASE_URL + "/functions/v1/library-revise-draft";
   var DRAFTS_URL = SUPABASE_URL + "/rest/v1/cpl_library_drafts";
+  var PICS_URL = SUPABASE_URL + "/rest/v1/cpl_library_pictures";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
@@ -146,7 +147,7 @@
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, moreOpen: false, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
-    view: "list", src: {},
+    view: "list", src: {}, picsFor: {}, pics: { ls: [], cb: [] }, picOpen: null, picEdit: null,
     pick: null, use: null, rem: null, autoDraft: true,
     piece: null, pieceUse: null,
     // Version 22 (Sam, 2026-11-05: "Version 22 looks better"): revising happens on the card
@@ -413,6 +414,15 @@
       R + " .lib-next{display:flex;flex-wrap:wrap;gap:6px 22px;align-items:baseline;}",
       R + " .lib-next form{display:inline-flex;flex-wrap:wrap;gap:6px 10px;align-items:baseline;margin:0;}",
       R + " .lib-next input{font:inherit;padding:4px 8px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface-opaque);color:var(--text-body);}",
+      R + " .lib-pics{display:grid;gap:8px;}",
+      R + " .lib-piclist{list-style:none;margin:0;padding:0;display:grid;gap:16px;}",
+      R + " .lib-pic{display:grid;gap:8px;padding:12px;border:1px solid var(--border);border-radius:8px;background:var(--surface-subtle);}",
+      R + " .lib-pic p{margin:0;}",
+      R + " .lib-pic.out img{opacity:.35;}",
+      R + " .lib-picwrap{position:relative;justify-self:start;max-width:100%;touch-action:none;}",
+      R + " .lib-picwrap img{display:block;max-width:100%;height:auto;border:1px solid var(--border);}",
+      R + " .lib-picbox{position:absolute;border:2px dashed var(--cobalt);background:color-mix(in srgb,var(--cobalt) 18%,transparent);pointer-events:none;}",
+      R + " .lib-picnums{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px;}",
       R + " .lib-cbox,.lib-changed{padding:14px;border:1px solid var(--border);border-radius:8px;background:var(--surface-subtle);display:grid;gap:10px;}",
       R + " .lib-cbox h4,.lib-changed h4{margin:0;font-family:'Playfair Display',Georgia,serif;font-size:1.08rem;color:var(--text-strong);}",
       R + " .lib-cbox p,.lib-changed p{margin:0;}",
@@ -1131,8 +1141,15 @@
   }
   function openDraft(draftId) {
     var w = window.open("", "_blank");
-    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html,slug", { headers: headers() })
+    return window.fetch(DRAFTS_URL + "?id=eq." + encodeURIComponent(draftId) + "&select=html,slug,library_id", { headers: headers() })
       .then(function (res) { if (!res.ok) throw new Error("The draft could not be read (" + res.status + ")."); return res.json(); })
+      .then(function (rows) {
+        if (!rows || !rows[0] || !rows[0].library_id || !FIGURE_RE.test(rows[0].html || "")) { FIGURE_RE.lastIndex = 0; return rows; }
+        FIGURE_RE.lastIndex = 0;
+        return window.fetch(PICS_URL + "?library_id=eq." + encodeURIComponent(rows[0].library_id) + "&select=n,mime,data,left_out", { headers: headers() })
+          .then(function (res) { return res.ok ? res.json() : []; }, function () { return []; })
+          .then(function (pics) { rows[0].html = draftWithPictures(rows[0].html, pics); return rows; });
+      })
       .then(function (rows) {
         if (!rows || !rows[0]) throw new Error("The draft is not there.");
         if (!w) throw new Error("The browser blocked the new tab. Allow pop-ups for this site, then Open the draft again.");
@@ -1145,6 +1162,216 @@
         d.title = "Draft: " + (rows[0].slug || "Library piece");
         d.querySelector("iframe").srcdoc = draftDoc(rows[0].html, rows[0].slug);
       }).catch(function (e) { if (w) w.close(); say(e.message, true); render(); });
+  }
+
+  // ── Pictures (Sam, 2026-11-11) ──────────────────────────────────────────────────────────────
+  // "the visual didn't include any of the map screenshots from the pdf that the user will need to know how to
+  // navigate map", then "it would be even better if you ... just assemble the pics together with the text from the
+  // get go". A PDF's pictures are found here, in the browser: pdf.js names where each image sits on its page, the
+  // page is drawn at 200 dots an inch and cropped to that place, so a box or arrow the deck drew on top of a screen
+  // stays in the picture. Each one is a row of cpl_library_pictures; library-revise-draft shows them to Claude, who
+  // places each under the steps it shows. The card shows every picture before publishing: Cover or crop, Leave it out.
+  var PIC_MAX = 12, PIC_EDGE = 1600, PIC_B64_MAX = 1300000;
+  var FIGURE_RE = /<figure class="shot"><a href="img\/(\d{1,2})\.(webp|png)" target="_blank" rel="noopener"><img src="img\/\1\.\2" alt="[^"<>]*" width="\d{1,5}" height="\d{1,5}" loading="lazy"><\/a><\/figure>/g;
+  function mulMatrix(m, t) {
+    return [m[0] * t[0] + m[2] * t[1], m[1] * t[0] + m[3] * t[1], m[0] * t[2] + m[2] * t[3], m[1] * t[2] + m[3] * t[3], m[0] * t[4] + m[2] * t[5] + m[4], m[1] * t[4] + m[3] * t[5] + m[5]];
+  }
+  // Where a page's images sit, in page points from its top left: the pictures worth keeping are between a
+  // twenty-fifth and three fifths of the page (a logo is smaller, a background larger).
+  function pictureBoxes(ops, OPS, vw, vh) {
+    var ctm = [1, 0, 0, 1, 0, 0], stack = [], out = [];
+    for (var i = 0; i < ops.fnArray.length; i++) {
+      var f = ops.fnArray[i], a = ops.argsArray[i];
+      if (f === OPS.save) stack.push(ctm.slice());
+      else if (f === OPS.restore) ctm = stack.pop() || ctm;
+      else if (f === OPS.transform) ctm = mulMatrix(ctm, a);
+      else if (f === OPS.paintImageXObject || f === OPS.paintInlineImageXObject) {
+        var w = Math.abs(ctm[0]) + Math.abs(ctm[2]), h = Math.abs(ctm[1]) + Math.abs(ctm[3]);
+        var x = Math.min(ctm[4], ctm[4] + ctm[0] + ctm[2]), y = Math.min(ctm[5], ctm[5] + ctm[1] + ctm[3]);
+        var share = (w * h) / (vw * vh);
+        if (share >= 0.04 && share <= 0.6 && w >= 60 && h >= 40) out.push({ x: x, top: vh - y - h, w: w, h: h });
+      }
+    }
+    return out;
+  }
+  // The bytes are the type they claim (a WebP opens RIFF, a PNG its own signature), read from the base64's first letters.
+  function picLooksRight(mime, b64) { return mime === "image/webp" ? /^UklGR/.test(b64) : mime === "image/png" ? /^iVBORw0KGgo/.test(b64) : false; }
+  // A canvas as a picture row's bytes: WebP where the browser writes it, PNG where it does not; smaller if too heavy.
+  function encodeCanvas(c) {
+    for (var tries = 0; tries < 4; tries++) {
+      var u = c.toDataURL("image/webp", 0.9);
+      if (u.indexOf("data:image/webp;base64,") !== 0) u = c.toDataURL("image/png");
+      var m = /^data:(image\/(?:webp|png));base64,([A-Za-z0-9+/=]+)$/.exec(u);
+      if (!m || !picLooksRight(m[1], m[2])) return null;
+      if (m[2].length <= PIC_B64_MAX) return { mime: m[1], data: m[2], width: c.width, height: c.height };
+      var k = document.createElement("canvas");
+      k.width = Math.round(c.width * 0.7); k.height = Math.round(c.height * 0.7);
+      k.getContext("2d").drawImage(c, 0, 0, k.width, k.height);
+      c = k;
+    }
+    return null;
+  }
+  // -> a promise of the file's pictures; never rejects (a file with none, or a reader that cannot say, gives []).
+  function readPictures(file, title) {
+    if (!file || extOf(file.name) !== "pdf" || !file.arrayBuffer) return Promise.resolve([]);
+    var out = [];
+    return loadPdfJs().then(function (lib) {
+      if (!lib.OPS) return [];
+      return file.arrayBuffer().then(function (b) { return lib.getDocument({ data: new Uint8Array(b), isEvalSupported: false }).promise; }).then(function (doc) {
+        var step = function (n) {
+          if (n > doc.numPages || out.length >= PIC_MAX) return out;
+          return doc.getPage(n).then(function (pg) {
+            if (!pg.getOperatorList || !pg.getViewport || !pg.render) return null;
+            var v1 = pg.getViewport({ scale: 1 });
+            return pg.getOperatorList().then(function (ops) {
+              var boxes = pictureBoxes(ops, lib.OPS, v1.width, v1.height);
+              if (!boxes.length) return null;
+              var scale = Math.min(200 / 72, PIC_EDGE / Math.max.apply(null, boxes.map(function (r) { return Math.max(r.w, r.h); })));
+              var vp = pg.getViewport({ scale: scale }), c = document.createElement("canvas");
+              c.width = Math.ceil(vp.width); c.height = Math.ceil(vp.height);
+              return pg.render({ canvasContext: c.getContext("2d"), viewport: vp }).promise.then(function () {
+                boxes.forEach(function (r) {
+                  if (out.length >= PIC_MAX) return;
+                  var pad = 4, k = document.createElement("canvas");
+                  var sx = Math.max(0, Math.round((r.x - pad) * scale)), sy = Math.max(0, Math.round((r.top - pad) * scale));
+                  k.width = Math.min(c.width - sx, Math.round((r.w + 2 * pad) * scale)); k.height = Math.min(c.height - sy, Math.round((r.h + 2 * pad) * scale));
+                  if (k.width < 40 || k.height < 40) return;
+                  k.getContext("2d").drawImage(c, sx, sy, k.width, k.height, 0, 0, k.width, k.height);
+                  var e = encodeCanvas(k);
+                  if (!e) return;
+                  e.page = n; e.source_title = String(title || titleFromName(file.name) || file.name).slice(0, 200);
+                  e.pic_key = [e.source_title.slice(0, 120), n, e.width, e.height, e.data.length].join("|");
+                  out.push(e);
+                });
+              });
+            });
+          }).then(function () { return step(n + 1); });
+        };
+        return step(1);
+      });
+    }).then(function () { return out; }, function () { return out; });
+  }
+  function picsWord(n) { return n === 1 ? "1 picture" : n + " pictures"; }
+  // Add pictures to a record: the ones it does not already hold, numbered after its last. -> how many were added.
+  function savePictures(id, pics, by) {
+    if (!id || !pics || !pics.length) return Promise.resolve(0);
+    return window.fetch(PICS_URL + "?library_id=eq." + encodeURIComponent(id) + "&select=n,pic_key,left_out", { headers: headers() })
+      .then(function (res) { return res.ok ? res.json() : []; })
+      .then(function (rows) {
+        rows = (Array.isArray(rows) ? rows : []).filter(function (x) { return x && typeof x.n === "number"; });
+        var keys = {}, last = 0, live = 0;
+        rows.forEach(function (x) { keys[x.pic_key] = true; last = Math.max(last, x.n || 0); if (!x.left_out) live += 1; });
+        var add = pics.filter(function (x) { return !keys[x.pic_key]; }).slice(0, Math.max(0, PIC_MAX - live));
+        if (!add.length) return 0;
+        var body = add.map(function (x, i) {
+          return { library_id: id, n: last + i + 1, mime: x.mime, data: x.data, width: x.width, height: x.height, page: x.page || null,
+            source_title: x.source_title || null, pic_key: x.pic_key, added_by: by || storedAuthor() || "the team" };
+        });
+        return window.fetch(PICS_URL, { method: "POST", headers: headers({ "Content-Type": "application/json", Prefer: "return=minimal" }), body: JSON.stringify(body) })
+          .then(function (res) { if (!res.ok) return 0; delete state.picsFor[id]; return add.length; });
+      }).catch(function () { return 0; });
+  }
+  // A record's pictures, read once without their bytes for the card's line; with them when the panel opens.
+  function loadPics(id, withData) {
+    var have = state.picsFor[id];
+    if (have && (have.loading || (have.list && (!withData || have.data)))) return;
+    state.picsFor[id] = { loading: true, list: have && have.list };
+    window.fetch(PICS_URL + "?library_id=eq." + encodeURIComponent(id) + "&select=id,n,mime,width,height,page,source_title,left_out" + (withData ? ",data" : "") + "&order=n.asc", { headers: headers() })
+      .then(function (res) { if (!res.ok) throw new Error("The pictures could not be read (" + res.status + ")."); return res.json(); })
+      .then(function (rows) { state.picsFor[id] = { list: (Array.isArray(rows) ? rows : []).filter(function (x) { return x && typeof x.n === "number" && x.width > 0 && x.height > 0 && (x.mime === "image/webp" || x.mime === "image/png"); }), data: !!withData }; if (state.picsFor[id].list.length || withData) render(); })
+      .catch(function (e) { state.picsFor[id] = { list: [], error: e.message }; });
+  }
+  function picsOf(r) { var p = state.picsFor[r.id]; return p && p.list ? p.list : []; }
+  function livePics(r) { return picsOf(r).filter(function (x) { return !x.left_out; }); }
+  function picSrc(x) { return "data:" + x.mime + ";base64," + x.data; }
+  // The card's pictures: one line, and a panel that shows each picture whole with what can be done to it.
+  function picsBlock(r) {
+    if (!(isNewPiece(r) || regenState(r))) return "";
+    if (!state.picsFor[r.id]) { loadPics(r.id, false); return ""; }
+    var all = picsOf(r), live = livePics(r);
+    if (!all.length) return "";
+    var open = state.picOpen === r.id, P = state.picsFor[r.id];
+    var head = '<p class="why">' + esc(picsWord(live.length) + " from its documents" + (all.length > live.length ? ", " + (all.length - live.length) + " left out" : "") +
+      ". Claude places each under the steps it shows. Look at each before you publish: a screen can show a name or an address, and a picture once published stays in the site's history even after it is covered or left out.") + "</p>" +
+      '<div class="lib-next">' + word("data-picsopen", r.id, open ? "Close the pictures" : "Check the pictures", false, "of " + r.title) + "</div>";
+    if (!open) return '<div class="lib-pics">' + head + "</div>";
+    if (!P.data) { loadPics(r.id, true); return '<div class="lib-pics">' + head + '<p class="why" role="status">Reading the pictures\u2026</p></div>'; }
+    var ed = state.picEdit && state.picEdit.id === r.id ? state.picEdit : null;
+    return '<div class="lib-pics">' + head + '<ul class="lib-piclist">' + all.map(function (x) {
+      var name = "Picture " + x.n, from = (x.source_title || "a document") + (x.page ? ", page " + x.page : "");
+      var editing = ed && ed.n === x.n;
+      return '<li class="lib-pic' + (x.left_out ? " out" : "") + '"><p><b>' + esc(name) + "</b> \u00b7 " + esc(from) + (x.left_out ? " \u00b7 Left out" : "") + "</p>" +
+        '<div class="lib-picwrap" data-picarea="' + esc(r.id + ":" + x.n) + '"><img src="' + esc(picSrc(x)) + '" alt="' + esc(name + ", from " + from) + '" width="' + x.width + '" height="' + x.height + '">' +
+        (editing ? '<div class="lib-picbox" id="pb-' + esc(r.id) + '"></div>' : "") + "</div>" +
+        (editing
+          ? '<form class="lib-picform" data-picform="' + esc(r.id + ":" + x.n) + '"><p class="why">Drag across the picture, or type the part: each number is a percent of the picture.</p><div class="lib-picnums">' +
+            [["l", "From the left"], ["t", "From the top"], ["w", "Width"], ["h", "Height"]].map(function (f) {
+              return '<div class="lib-field"><label for="pe-' + f[0] + "-" + esc(r.id) + '">' + f[1] + '</label><input id="pe-' + f[0] + "-" + esc(r.id) + '" data-picnum="' + f[0] + '" type="number" min="0" max="100" step="1" value="' + Math.round(ed[f[0]]) + '"></div>';
+            }).join("") + '</div><div class="lib-next"><button type="button" class="lib-word lead" data-piccover="' + esc(r.id + ":" + x.n) + '">Cover this part</button>' +
+            '<button type="button" class="lib-word" data-piccrop="' + esc(r.id + ":" + x.n) + '">Keep only this part</button>' + word("data-piccancel", r.id, "Cancel") + "</div></form>"
+          : '<div class="lib-next">' + (x.left_out ? word("data-picback", r.id + ":" + x.n, "Put it back", false, name)
+              : word("data-picedit", r.id + ":" + x.n, "Cover or crop", false, name) + word("data-picout", r.id + ":" + x.n, "Leave it out", false, name)) + "</div>") +
+        "</li>";
+    }).join("") + "</ul></div>";
+  }
+  function picRow(id, n) { var r = byId(id); return r ? picsOf(r).filter(function (x) { return x.n === n; })[0] : null; }
+  function patchPic(id, x, body, done) {
+    body.changed_by = storedAuthor() || "the team";
+    return window.fetch(PICS_URL + "?id=eq." + encodeURIComponent(x.id), { method: "PATCH", headers: headers({ "Content-Type": "application/json", Prefer: "return=minimal" }), body: JSON.stringify(body) })
+      .then(function (res) {
+        if (!res.ok) throw new Error("The picture was not changed (" + res.status + ").");
+        Object.keys(body).forEach(function (k) { x[k] = body[k]; });
+        sayOn(id, done); render();
+      }).catch(function (e) { sayOn(id, e.message, true); render(); });
+  }
+  function setPicOut(key, out) {
+    var id = key.split(":")[0], n = parseInt(key.split(":")[1], 10), x = picRow(id, n);
+    if (x) patchPic(id, x, { left_out: !!out }, out ? "Picture " + n + " is left out: the draft and the published page show it nowhere." : "Picture " + n + " is back.");
+  }
+  function openPicEdit(key) {
+    var id = key.split(":")[0], n = parseInt(key.split(":")[1], 10);
+    state.picEdit = { id: id, n: n, l: 0, t: 0, w: 100, h: 100 }; render(); drawPicBox();
+    var f = document.getElementById("pe-l-" + id); if (f) f.focus();
+  }
+  function drawPicBox() {
+    var ed = state.picEdit, b = ed && document.getElementById("pb-" + ed.id);
+    if (!b) return;
+    b.style.left = ed.l + "%"; b.style.top = ed.t + "%"; b.style.width = ed.w + "%"; b.style.height = ed.h + "%";
+  }
+  function clampPicEdit() {
+    var ed = state.picEdit, c = function (v, lo, hi) { v = parseFloat(v); return isFinite(v) ? Math.min(hi, Math.max(lo, v)) : lo; };
+    ed.l = c(ed.l, 0, 99); ed.t = c(ed.t, 0, 99); ed.w = c(ed.w, 1, 100 - ed.l); ed.h = c(ed.h, 1, 100 - ed.t);
+  }
+  // Cover paints the part gray; Keep only this part crops to it. Either way the picture's bytes are rewritten, so
+  // what was covered or cut is gone from the record, not hidden.
+  function applyPicEdit(key, what) {
+    var id = key.split(":")[0], n = parseInt(key.split(":")[1], 10), x = picRow(id, n), ed = state.picEdit;
+    if (!x || !x.data || !ed) return;
+    clampPicEdit();
+    var img = new window.Image();
+    img.onload = function () {
+      var W = img.naturalWidth || x.width, H = img.naturalHeight || x.height;
+      var bx = Math.round(W * ed.l / 100), by = Math.round(H * ed.t / 100), bw = Math.max(1, Math.round(W * ed.w / 100)), bh = Math.max(1, Math.round(H * ed.h / 100));
+      var c = document.createElement("canvas"), g;
+      if (what === "crop") { c.width = bw; c.height = bh; c.getContext("2d").drawImage(img, bx, by, bw, bh, 0, 0, bw, bh); }
+      else { c.width = W; c.height = H; g = c.getContext("2d"); g.drawImage(img, 0, 0); g.fillStyle = "rgb(107,114,128)"; g.fillRect(bx, by, bw, bh); }
+      var e = encodeCanvas(c);
+      if (!e) { sayOn(id, "The picture could not be rewritten in this browser.", true); render(); return; }
+      state.picEdit = null;
+      patchPic(id, x, e, what === "crop" ? "Picture " + n + " is cropped to that part." : "That part of picture " + n + " is covered.");
+    };
+    img.onerror = function () { sayOn(id, "The picture could not be read.", true); render(); };
+    img.src = picSrc(x);
+  }
+  // A draft shows its pictures from the record (they reach library/<slug>/img/ only when published): each figure's
+  // address becomes the picture itself, and a figure whose picture was left out is dropped.
+  function draftWithPictures(html, pics) {
+    var by = {};
+    (pics || []).forEach(function (x) { if (!x.left_out && x.data) by[x.n] = x; });
+    return String(html || "").replace(FIGURE_RE, function (fig, n) {
+      var x = by[parseInt(n, 10)];
+      return x ? fig.replace(/ src="img\/[^"]*"/, function () { return ' src="' + picSrc(x) + '"'; }).replace(/ href="img\/[^"]*" target="_blank" rel="noopener"/, "") : "";
+    });
   }
 
   // ── Version 22: a piece's revision lives on its card (Sam, 2026-11-05) ─────────────────────
@@ -1196,7 +1423,7 @@
       // Ask for changes opens the card's box, and Claude drafts them on top of this draft.
       next.push(openDraftWord(r, true),
         word("data-revise", r.id, "Ask for changes", false, "to " + r.title),
-        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) +
+        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) + picsGate(r) +
           '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Publish it</button></form>");
       why = "Ask for changes says what to add, cut or reword, and Claude drafts it on top of this draft. Publish it puts the page at its own address on the CPL Initiative's site; List publicly then adds it to the public library.";
       if (g.based_on_draft) extra = changedHtml(r);
@@ -1209,7 +1436,7 @@
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra) + msg + "</div>";
+      (box ? "" : extra + picsBlock(r)) + msg + "</div>";
   }
   // A new piece's drafts count from 1: each earlier draft kept under regen.earlier adds one.
   function draftNumber(r) { var e = r.regen && r.regen.earlier; return (Array.isArray(e) ? e.length : 0) + 1; }
@@ -1221,12 +1448,16 @@
     sayOn(id, "Reading " + name + "\u2026"); render();
     readWords(file).then(function (text) {
       if (!text) { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); return; }
-      var list = sourceList(r).slice();
-      if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
-      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      var list = sourceList(r).slice(), words = String(text).slice(0, SRC_TEXT_MAX);
+      // The same document dropped again adds its pictures and no second copy of its words.
+      var again = list.some(function (x) { return !x.url && x.text === words; });
+      if (!again && list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      if (!again) list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: words, added_by: storedAuthor() || null, added_on: today() });
       if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
       return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { sources: list, updated_by: storedAuthor() || null } }).then(function () {
-        sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). Press Draft it now.");
+        return readPictures(file).then(function (pics) { return savePictures(id, pics); });
+      }).then(function (added) {
+        sayOn(id, "Added " + name + " (" + wordCount(text) + " words read" + (added ? ", " + picsWord(added) + " found" : "") + "). Press Draft it now.");
         return load().then(function () { focusState(id); });
       });
     }, function () { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); })
@@ -1258,7 +1489,7 @@
     } else if (rs === "ready") {
       line = esc(readyLine(r));
       next.push(openDraftWord(r, true),
-        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) +
+        '<form data-regenokform="' + esc(r.id) + '">' + nameOrField("ro-by-", r.id) + picsGate(r) +
           '<button type="submit" class="lib-word"' + (state.busy ? " disabled" : "") + ">Replace the public copy</button></form>",
         word("data-revise", r.id, "Ask for more changes", false, r.title));
       extra = changedHtml(r);
@@ -1270,7 +1501,7 @@
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra) + msg + requestBox(r) + "</div>";
+      (box ? "" : extra + picsBlock(r)) + msg + requestBox(r) + "</div>";
   }
   function requestWord(r, lead, label) {
     return '<button type="button" class="lib-word' + (lead ? " lead" : "") + '" data-request="' + esc(r.id) + '">' +
@@ -1341,7 +1572,7 @@
     ensureShown(r);
     if (state.view === "list") openInList(id);
     state.cardBox = { id: id, mode: mode || (regenState(r) === "ready" ? "more" : regenState(r) === "waiting" ? "change" : "revise"), prefill: prefill || "" };
-    state.cbDocs = false; state.cbName = false;
+    state.cbDocs = false; state.cbName = false; state.pics.cb = [];
     // More changes start clean: the documents the draft was made from are already in it, and handing them over
     // again would have Claude apply them twice. The record keeps their titles with the earlier draft.
     // A piece not yet public keeps its documents on the record: Start over from the brief drafts from them again.
@@ -1351,7 +1582,7 @@
     if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } if (t.scrollIntoView) t.scrollIntoView({ block: "center" }); }
   }
   function closeCardBox(focusId) {
-    state.cardBox = null; state.src.cb = []; render();
+    state.cardBox = null; state.src.cb = []; state.pics.cb = []; render();
     var b = focusId && document.getElementById("lib-st-" + focusId); if (b && b.focus) b.focus();
   }
   function focusState(id) {
@@ -1363,11 +1594,19 @@
     var name = file.name, ext = extOf(name);
     var take = function (text) {
       if (!String(text || "").trim()) { sayOn(id, unreadWords(name, ext), true); render(); return; }
-      var list = (state.src.cb || []).slice();
-      if (list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
-      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      var list = (state.src.cb || []).slice(), words = String(text).slice(0, SRC_TEXT_MAX);
+      var again = list.some(function (x) { return !x.url && x.text === words; });
+      if (!again && list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      if (!again) list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: words, added_by: storedAuthor() || null, added_on: today() });
       if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
       state.src.cb = list; state.cbDocs = true; sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). It saves with the request."); render();
+      readPictures(file).then(function (pics) {
+        if (!pics.length || !state.cardBox || state.cardBox.id !== id) return;
+        state.pics.cb = state.pics.cb.concat(pics).slice(0, PIC_MAX);
+        var t = document.getElementById("cb-instr-" + id), typed = t ? t.value : null;
+        sayOn(id, "Added " + name + " (" + wordCount(text) + " words read, " + picsWord(pics.length) + " found). They save with the request, and Claude places each picture under the steps it shows."); render();
+        var t2 = document.getElementById("cb-instr-" + id); if (t2 && typed !== null) t2.value = typed;
+      });
     };
     var fail = function () { take(""); };
     sayOn(id, "Reading " + name + "…"); render();
@@ -1386,7 +1625,9 @@
     if (link) list.push({ title: (titleFromName(link) || link).slice(0, 200), url: link, text: null, added_by: by, added_on: on });
     var here = boxDraftsHere(r, box.mode === "fresh" ? "revise" : box.mode);
     var pasted = list.some(function (x) { return !x.url && x.text; });
-    if (here && !instr && !pasted) { sayOn(id, "Say what to change, or add a document's words, so Claude has something to draft.", true); render(); return; }
+    var newPics = state.pics.cb.slice();
+    if (here && !instr && !pasted && !newPics.length) { sayOn(id, "Say what to change, or add a document's words, so Claude has something to draft.", true); render(); return; }
+    if (!instr && newPics.length && box.mode !== "fresh") instr = "Add the pictures under the steps they show.";
     var note = instr;
     if (note.length > NOTE_MAX) {
       list.push({ title: "Instructions from " + by + ", " + fmtDate(on), url: null, text: note.slice(0, SRC_TEXT_MAX), added_by: by, added_on: on });
@@ -1399,8 +1640,10 @@
     // A new piece that starts over keeps the list of its earlier drafts, so the next one is numbered after them.
     if (box.mode === "fresh" && isNewPiece(r)) { var kept = moreRegen(r, by).earlier; if (kept && kept.length) regen.earlier = kept; }
     var body = { refresh_note: note || null, sources: list, regen: regen, updated_by: by };
-    state.cardBox = null; state.src.cb = [];
+    state.cardBox = null; state.src.cb = []; state.pics.cb = [];
     return write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
+      return savePictures(id, newPics, by);
+    }).then(function () {
       return load();
     }).then(function () {
       var fresh = byId(id);
@@ -1416,7 +1659,7 @@
     var r = byId(id);
     if (!r || regenState(r) !== "approved") return;
     var regen = {};
-    Object.keys(r.regen).forEach(function (k) { if (k !== "approved_at" && k !== "approved_by") regen[k] = r.regen[k]; });
+    Object.keys(r.regen).forEach(function (k) { if (k !== "approved_at" && k !== "approved_by" && k !== "pictures_checked_by" && k !== "pictures_checked_at") regen[k] = r.regen[k]; });
     regen.publish = "show";
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: storedAuthor() || "the team" } }).then(function () {
       sayOn(id, "Kept. The public copy stays as it is, and the draft stays ready to review."); return load();
@@ -2806,6 +3049,9 @@
     readWords(pk.file).then(function (text) {
       state.busy = false;
       if (!String(text || "").trim()) { stop(); return; }
+      // The file's pictures wait here and are saved with the record when Start makes it.
+      state.pics.ls = [];
+      readPictures(pk.file).then(function (pics) { state.pics.ls = pics; });
       openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() },
         "Read " + wordCount(text) + " words from " + pk.name + ".");
     }, stop);
@@ -2846,6 +3092,8 @@
       var row = Array.isArray(saved) ? saved[0] : saved;
       var id = row && row.id;
       if (id) state.briefShown[id] = true;
+      var held = state.pics.ls; state.pics.ls = [];
+      if (id && held.length) savePictures(id, held, f.by).then(function (n) { if (n) { sayOn(id, picsWord(n) + " found in the document: Claude places each under the steps it shows."); render(); } });
       say("Requested: " + f.title + " (" + (KIND[f.kind] || f.kind) + "). " + (note ? note + " " : "") + "Press Draft it now on its card and Claude drafts it here in about a minute; Copy the brief still hands it to a session.");
       // The panel empties for the next piece (render restores typed values, so the fields are cleared first).
       Array.prototype.forEach.call(document.querySelectorAll("[id^='ls-'], #lc-instr, #lc-link"), function (n) { if (n.tagName !== "DETAILS" && n.id !== "ls-by") n.value = n.tagName === "SELECT" ? (n.id === "ls-seen" ? "team" : "") : ""; });
@@ -3286,7 +3534,7 @@
       "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
       "The repos keep only the source that rebuilds each piece.</p>" +
-      "<p>Create or Remediate a Document saves a new piece as a Requested record when you press Start, or remediates a file in this browser. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Create or Remediate a Document saves a new piece as a Requested record when you press Start, or remediates a file in this browser. A PDF's pictures (the screens in a deck saved as PDF) come with its words: Claude places each under the steps it shows, and the card shows every picture to cover, crop or leave out before you publish. To revise a piece already here, press Revise on its card: say what to change, and Claude drafts it on the card in about a minute (a web page with a public copy) or a session rebuilds it (a deck, a document, a file on SharePoint). The card then shows what changed and its accessibility check; Replace the public copy makes it public. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
@@ -3455,15 +3703,23 @@
 
   // Replace the public copy: the draft on the card becomes the public copy in the next
   // run. The request keeps everything it had and gains who approved it, and when.
+  // A draft with pictures is published only once someone says they looked at them (a screen can show a name).
+  function picsGate(r) {
+    return livePics(r).length ? '<label class="lib-check" for="ro-pics-' + esc(r.id) + '"><input type="checkbox" id="ro-pics-' + esc(r.id) + '"> I checked each picture: no name, personal address or student record shows</label>' : "";
+  }
   function approveRegen(id) {
     var r = byId(id);
     if (!r || regenState(r) !== "ready") return;
+    var pk = document.getElementById("ro-pics-" + id);
+    if (pk && !pk.checked) { sayOn(id, "Check the pictures first, then tick the box beside " + (isNewPiece(r) ? "Publish it" : "Replace the public copy") + ".", true); render(); return; }
     var n = document.getElementById("ro-by-" + id), by = (n ? n.value.trim() : "") || storedAuthor();
     if (!by) { sayOn(id, "Add your name, so the record says who approved the draft.", true); render(); return; }
     rememberAuthor(by);
     var regen = {};
     Object.keys(r.regen).forEach(function (k) { regen[k] = r.regen[k]; });
     regen.approved_at = new Date().toISOString(); regen.approved_by = by;
+    // The tick is recorded with the approval (COBIx on #3095): library_publish.py publishes pictures only with it.
+    if (pk && pk.checked) { regen.pictures_checked_by = by; regen.pictures_checked_at = regen.approved_at; }
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: { regen: regen, updated_by: by } }).then(function () {
       sayOn(id, isNewPiece(r) ? "Approved. It goes up on its own page within three hours; then List publicly on its card." : "Approved. The draft becomes the public copy within three hours.");
       return load().then(function () { focusState(id); });
@@ -3535,7 +3791,29 @@
   function wire(root) {
     if (wired) return;
     wired = true;
+    // Drag across a picture being covered or cropped: the part follows the pointer, and the numbers follow the part.
+    var picDrag = null;
+    var picAt = function (e, area) {
+      var b = area.getBoundingClientRect();
+      return { x: Math.min(100, Math.max(0, (e.clientX - b.left) / (b.width || 1) * 100)), y: Math.min(100, Math.max(0, (e.clientY - b.top) / (b.height || 1) * 100)) };
+    };
+    var picMove = function (e) {
+      if (!picDrag || !state.picEdit) return;
+      var at = picAt(e, picDrag.area), ed = state.picEdit;
+      ed.l = Math.min(picDrag.x, at.x); ed.t = Math.min(picDrag.y, at.y); ed.w = Math.max(1, Math.abs(at.x - picDrag.x)); ed.h = Math.max(1, Math.abs(at.y - picDrag.y));
+      drawPicBox();
+      ["l", "t", "w", "h"].forEach(function (k) { var f = document.getElementById("pe-" + k + "-" + ed.id); if (f) f.value = Math.round(ed[k]); });
+    };
+    root.addEventListener("pointerdown", function (e) {
+      var area = e.target.closest ? e.target.closest("[data-picarea]") : null, ed = state.picEdit;
+      if (!area || !ed || area.getAttribute("data-picarea") !== ed.id + ":" + ed.n) return;
+      e.preventDefault();
+      var at = picAt(e, area); picDrag = { area: area, x: at.x, y: at.y };
+    });
+    root.addEventListener("pointermove", picMove);
+    root.addEventListener("pointerup", function (e) { picMove(e); picDrag = null; });
     root.addEventListener("input", function (e) {
+      if (e.target.getAttribute && e.target.getAttribute("data-picnum") && state.picEdit) { state.picEdit[e.target.getAttribute("data-picnum")] = parseFloat(e.target.value) || 0; clampPicEdit(); drawPicBox(); return; }
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
       else if (e.target.id === "lc-piece") {
         var pr0 = pieceByLabel(e.target.value);
@@ -3652,6 +3930,13 @@
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if ((v = b.getAttribute("data-draftopen"))) openDraft(v);
+      else if ((v = b.getAttribute("data-picsopen"))) { state.picOpen = state.picOpen === v ? null : v; state.picEdit = null; render(); }
+      else if ((v = b.getAttribute("data-picout"))) setPicOut(v, true);
+      else if ((v = b.getAttribute("data-picback"))) setPicOut(v, false);
+      else if ((v = b.getAttribute("data-picedit"))) openPicEdit(v);
+      else if ((v = b.getAttribute("data-piccover"))) applyPicEdit(v, "cover");
+      else if ((v = b.getAttribute("data-piccrop"))) applyPicEdit(v, "crop");
+      else if (b.getAttribute("data-piccancel")) { state.picEdit = null; render(); }
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
@@ -3791,6 +4076,8 @@
     render: render,
     load: load,
     _state: state,
+    _pictureBoxes: pictureBoxes,
+    _draftWithPictures: draftWithPictures,
     _flagsOf: flagsOf,
     _collegePair: collegePair,
     _kindFromWords: kindFromWords,

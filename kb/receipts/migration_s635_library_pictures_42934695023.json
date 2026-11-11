@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-11_library_pictures.sql",
+ "name": "s635_library_pictures",
+ "version": "20261111005645",
+ "sha256": "123c8c9e697656646f57b6d10085de8ff06fd52ed725543a170965b22ad0e177",
+ "run": "42934695023",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

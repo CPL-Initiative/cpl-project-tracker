@@ -155,15 +155,25 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **NEXT 0, pictures in a piece (Sam, 2026-11-11):** his request `71931018` (*Adding CPL Coordinator & Noncredit Lead to MAP*)
-  drafted from the Library (Draft 1, 2026-11-10 23:18Z; *"looks great and worked from the library--yay!!!"*), and
-  *"the visual didn't include any of the map screenshots from the pdf that the user will need to know how to navigate
-  map. i'd like to edit it in the library (not here)"*. The Library reads words only: `readWords` keeps no picture, the
-  drafter refuses an image tag, the publisher writes one HTML file. Build: the pictures a PDF's pages hold, found and
-  cropped in the browser with the vendored pdf.js (the rendered page, so the deck's red boxes stay), reviewed on the card
-  (alt text, trim, cover) before anything is saved, placed by the drafter under the steps they show, written beside the
-  page by `library_publish.py`. COBIx's recipe for a session (`pdftoppm -r 200`, crop, captions, full size on a click,
-  alt text, the review step) is the same result by hand. Slide 4 shows people's email addresses in both screens.
+- **NEXT 0, Sam's test of pictures (2026-11-11):** on his request `71931018` he presses Ask for changes, adds the PDF
+  again (its words are not saved twice), and Draft it now; Draft 2 carries the five MAP screens. Before Publish it,
+  slide 4's two screens need Cover or crop: the users table shows three vendor staff addresses and the Edit dialog a
+  teammate's test address. Dispatch `library-publish.yml` after Publish.
+- **Pictures in a piece (Sam, 2026-11-11, S635):** *"the visual didn't include any of the map screenshots from the pdf
+  that the user will need to know how to navigate map. i'd like to edit it in the library (not here)"*, then *"it would
+  be even better if you ... just assemble the pics together with the text from the get go"*. A PDF's pictures are found
+  in the browser (`readPictures`: pdf.js names where each image sits, the rendered page is cropped there at 200 dpi, so
+  a deck's red boxes stay; a logo and a background are skipped) and saved as rows of `cpl_library_pictures`
+  (`kb/migrations/2026-11-11_library_pictures.sql`). `library-revise-draft` shows them to the model, which writes only
+  a marker, `<p>[[picture N: alt text]]</p>`; `pictures.mjs` turns each into the one fixed figure, so the allowlist and
+  the frozen sources stand. The card shows the pictures (*Check the pictures*: Cover or crop, which rewrites the bytes,
+  and Leave it out); Publish it and Replace the public copy wait for the box that says they were checked;
+  `library_publish.py` writes `library/<slug>/img/<n>.webp`, deletes a picture file the page no longer shows, and
+  skips a draft with pictures whose approval does not carry `regen.pictures_checked_by` (COBIx on #3095). A picture
+  once published stays in the repo's history: a name in one needs a history purge (Rule 5), so the check before
+  publishing is the gate. A PowerPoint is saved as PDF first. COBIx's session
+  recipe (`pdftoppm -r 200`, crop, captions, full size on a click, alt text, the review step) is the same result by
+  hand. Tests: `library_pictures` (38), `library_publish_test.py`.
 - **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
   when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
   no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,

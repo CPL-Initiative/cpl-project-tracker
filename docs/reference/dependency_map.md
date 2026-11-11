@@ -36,7 +36,7 @@ closes the PR path only; THIS lane stays open by design.
 | `docket-process.yml` | `33 5 * * *` | main | `kb/` |
 | `esl-sheet-apply.yml` | dispatch-only | main | — |
 | `funding-config-edit-apply.yml` | dispatch-only | main | — |
-| `library-publish.yml` | `41 */3 * * *` | main | `library/*/index.html`, `kb/receipts/library_publish/` |
+| `library-publish.yml` | `41 */3 * * *` | main | `library/*/index.html`, `kb/receipts/library_publish/`, `library/*/img/` |
 | `moc-crosswalk-sync.yml` | `17 8 5 * *` | main (cron checkout) | `kb/reference/moc_crosswalk.json` |
 | `overmerge-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/overmerge_out/`, `kb/overmerge_apply/`, `kb/row_audit/` |
 | `phase-1e-apply.yml` | dispatch-only | main | `kb/coci_minted_courses.json`, `kb/coci_minted_singletons.json`, `kb/coci_minted_memberships.json`, `kb/coci_articulations.json`, `kb/coci_unified_courses.json`, `kb/coci_curation.json`, `kb/discipline_canonical_subj4.json`, `kb/subj4_dryrun/`, `kb/subj4_apply/`, `kb/row_audit/` |
@@ -93,6 +93,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_reports` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` |
 | `cpl_library` | tabs: `letters`, `library` · scripts: `scripts/library_publish.py` | tabs: `library` |
 | `cpl_library_drafts` | tabs: `library` | — |
+| `cpl_library_pictures` | tabs: `library` | tabs: `library` |
 | `cpl_memory` | tabs: `memory` · scripts: `kb/_memory_audit.py` | tabs: `memory` |
 | `cpl_memory_log` | none found | tabs: `memory` |
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
@@ -859,6 +860,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
 | `library.js` | pages: `CPL_Dashboard.html` | — |
+| `library/*/img` | none found | committed by: `library-publish.yml` |
 | `library/*/index.html` | none found | committed by: `library-publish.yml` |
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
 | `library/adopt/adopt_ai.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
@@ -1361,5 +1363,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 111 Supabase tables · 63 RPCs · 14 edge functions · 833 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 834 file
 datasets · 195 external services · 546 consumers · 65 workflows · 40 tabs.
