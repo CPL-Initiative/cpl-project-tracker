@@ -1,0 +1,637 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-11T22-26-13Z",
+  "ruling": "Sam Lee, in session 2026-11-11 (SkyTamarind, S638; cpl_memory sam-ase-mil-certs-and-cx-to-standards-2026-11-11, sam-ic-exhibits-go-to-cert-title-2026-11-11, sam-cert-name-first-2026-11-11): 'ASE MIL3 test is the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification... if there are any exhibits with ASE MIL in the title, adjust the canonical title to match the official ASE titles'; an industry-certification exhibit under a '(ASE ... standards)' title goes to the cert title, and ('3 yes') the credit-by-exam exhibits under the A5, A7 and A8 cert titles go to the standards titles; then his authorization the same day for the conductor and COBIx to settle the emptied titles without bringing them back to him. Superseding his own 2026-10-31 to 11-11 saves by his word (CLAUDE.md Rule 8); written by SkyTamarind's worker",
+  "cohort": "cer-s638@bot",
+  "read": [
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "state": "replace",
+      "why": "replaces 'Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:28.793018+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "state": "replace",
+      "why": "replaces 'Automotive Electrical/Electronics I' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Automotive Electrical/Electronics I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:03.493942+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "state": "replace",
+      "why": "replaces 'Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:29.103869+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "state": "replace",
+      "why": "replaces 'Automotive Electrical/Electronics II' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Automotive Electrical/Electronics II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:04.866031+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_assignment",
+      "value": "ASE A8 — Engine Performance",
+      "state": "replace",
+      "why": "replaces 'Engine Performance 2 (ASE A8 Engine Performance)' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_supersedes",
+      "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "state": "replace",
+      "why": "replaces 'Engine Performance II' (by slee@cccco.edu), as the ruling says",
+      "live": {
+        "value": "Engine Performance II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Electrical/Electronic Systems 1 (ASE A6 standards)' (by slee@cccco.edu), as the ruling says",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": {
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Electrical/Electronic Systems 2 (ASE A6 standards)' (by slee@cccco.edu), as the ruling says",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": {
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "retire": true,
+      "state": "retire",
+      "why": "retires 'Engine Performance 2 (ASE A8 standards)' (by slee@cccco.edu), as the ruling says",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": {
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retire",
+      "why": "retires '1' (by map@rccd.edu), as the ruling says",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.456371",
+      "live": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.456371+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retire",
+      "why": "retires '1' (by map@rccd.edu), as the ruling says",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.541392",
+      "live": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.541392+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retire",
+      "why": "retires '1' (by map@rccd.edu), as the ruling says",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-07-10T14:07:19.461611",
+      "live": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.461611+00:00",
+        "validated_at": null,
+        "validated_by": null
+      }
+    }
+  ],
+  "rows": [],
+  "replaces": [
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:28.793018+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:03.493942+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:29.103869+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:04.866031+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_assignment",
+      "value": "ASE A8 — Engine Performance",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_supersedes",
+      "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Engine Performance II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    }
+  ],
+  "retires": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "before": {
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "before": {
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "before": {
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.456371+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.456371"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.541392+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.541392"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.461611+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-07-10T14:07:19.461611"
+    }
+  ],
+  "result": "written",
+  "inserted": [],
+  "skipped_as_duplicate": [],
+  "replaced": [
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:28.793018+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics I",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:03.493942+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-07-08T00:04:29.103869+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Automotive Electrical/Electronics II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-10-31T18:53:04.866031+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_assignment",
+      "value": "ASE A8 — Engine Performance",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_supersedes",
+      "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "reviewer_email": "cer-s638@bot",
+      "before": {
+        "value": "Engine Performance II",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-01T22:11:14.035+00:00"
+      }
+    }
+  ],
+  "replace_missed": [],
+  "retired": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "before": {
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "before": {
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "before": {
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-11-11T15:26:54.029000"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.456371+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.456371"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.541392+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.541392"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "before": {
+        "value": "1",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.461611+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-07-10T14:07:19.461611"
+    }
+  ],
+  "retire_missed": [],
+  "read_back": [
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "ASE A6 — Electrical/Electronic Systems",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Automotive Electrical/Electronics I",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_assignment",
+      "value": "ASE A6 — Electrical/Electronic Systems",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "ASE A6 — Electrical/Electronic Systems",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC-Automotive Electrical/Electronics II",
+      "field": "unified_title_supersedes",
+      "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_assignment",
+      "value": "ASE A8 — Engine Performance",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "ASE A8 — Engine Performance",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::IC- Engine Performance II",
+      "field": "unified_title_supersedes",
+      "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Engine Performance 2 (ASE A8 Engine Performance)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-11T22:26:13.659848+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-11-11T15:26:54.029000",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IAEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.456371",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEI goes to ASE A6)",
+      "guard_at": "2026-07-10T14:07:19.541392",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "reviewed_marker",
+      "value": "1",
+      "retire": true,
+      "state": "retired",
+      "why": "already gone",
+      "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IEPI goes to ASE A8)",
+      "guard_at": "2026-07-10T14:07:19.461611",
+      "live": null
+    }
+  ]
+}
