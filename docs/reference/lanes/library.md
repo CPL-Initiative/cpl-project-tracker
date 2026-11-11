@@ -31,23 +31,7 @@ Schema: `kb/supabase_cpl_library.sql`. Test: `tests/library.test.js`.
 
 ✅ **A piece's link beside a file** (2026-11-09, #3000): moved verbatim to the lessons, *Moved from the lane (tender-fermi, 2026-11-10)*.
 
-✅ **Any file, and a new piece drafted on its card (Sam, 2026-11-10, #3077).** *"when I dropped the Adding CPL
-Coordinator and Noncredit Lead in MAP pdf of a ppt, apparently it didn't upload, but I wasn't aware until cobix hunted
-that down"*; *"I can drop files when starting at the beginning, but not when revising"*; *"need to be able to handle
-office docs, pdfs, google slides, videos"*; and (2026-11-09) *"I haven't been able to successfully create a doc from
-there yet--always need some sort of out side intervention"*. Causes: a PDF or deck picked as background was never read
-and the record saved with `sources: []` (record `71931018`); a card's Revise box had no drop target; a new piece had no
-drafter. Now:
-- **One reader, `readWords`**, for every box: Word, PowerPoint (slides and notes), Excel, PDF (pdf.js 4.10.38 under
-  `vendor/pdfjs/`, loaded only for a PDF), captions (.vtt, .srt), text. A file with no words (a scan, a video, an old
-  .ppt) saves nothing and says why. A video's words come only from its captions or a transcript.
-- **Drop targets:** the top box, a card's Revise box, and a Requested card (*Add a document* saves the words at once).
-- **Google Docs, Slides, Sheets:** a link with instructions is a document to work from; `library-revise-draft` reads
-  its plain-text export when the file is shared by link (docs.google.com only).
-- **Draft it now on a Requested piece:** `library-revise-draft` writes Draft 1 from the starter page (the noncredit
-  visual's frame, `new_page.mjs`, which keeps the frame and refuses scripts); **Publish it** approves it;
-  `library_publish.py` makes `library/<slug>/` as Version 1 (`regen.new_piece`). Then List publicly, as for any piece.
-- Tests: `library_any_file` (33), `library` (288), `library_publish_test.py`.
+✅ **Any file, and a new piece drafted on its card** (Sam, 2026-11-10, #3077: one reader `readWords`, drop targets, Google links, Draft it now, Publish it; tests `library_any_file`, `library`, `library_publish_test.py`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 
 ✅ **Start a piece is built** (2026-10-06, as mockup version 2 shows it). The brief form
 (kind, now including spreadsheet; working title; occasion; needed by; for; what it must
@@ -76,20 +60,7 @@ the reader's own Dark click), eleven hero photos cycling with *Pause photos*; CL
 one departure. The full record, his words and the photo list moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S483, later)*.
 
-✅ **The team phrase lists publicly too (Sam, 2026-10-23 18:50Z, his own call, reversing
-2026-10-20; built S458):** *"can you set the Library page to be editable with Team phrase and not
-just magic link? I want the team to be able to make their artifacts public on the public library."*
-`cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`, anon holds EXECUTE on
-it, the tab's switch sends the phrase when there is no reviewer token, and `listed_by` reads the
-name given, else the sign-in's email, else *team phrase*. The guard trigger and the governance
-dismissal say the same. Applied by `supabase-migrate.yml` run 40011678930 (19:32Z; the schema file
-is re-runnable; receipt `kb/receipts/migration_cpl_library_public_team_phrase_2026_10_23_s458_40011678930.json`),
-and read back live: anon, authenticated and service_role hold EXECUTE, the function reads
-`team_pass_ok()`, the trigger's message names the phrase, the ledger holds the row. The tab's
-`library.js` reaches COBI with the merge of #2390 (Pages serves `main`); until then the page still
-asks for a sign-in. `cpl_memory` `sam-library-public-listing-with-team-phrase-2026-10-23`. The
-workflow it serves (Sam, 2026-10-23): Ashley makes a college's CPL Pathways visual, files it here,
-lists it publicly and gives the college the link as the CSM team meets with them.
+✅ **The team phrase lists publicly too** (Sam, 2026-10-23; `cpl_library_set_public()` takes `team_pass_ok()` or `is_allowed_reviewer()`): moved verbatim to the lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 
 ✅ **Who a piece is made for (Sam's Open Asks Sheet 120, 2026-10-23; built S459):** `for_kind` (college, district,
 agency, vendor, co, other), `for_category` (Other's typed category) and `for_name` under one check; the tab filters on
@@ -155,33 +126,32 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 
 ## Next
 
-- **NEXT 0, Sam's test of pictures (2026-11-11):** on his request `71931018` he presses Ask for changes, adds the PDF
-  again (its words are not saved twice), and Draft it now; Draft 2 carries the five MAP screens. Before Publish it,
-  slide 4's two screens need Cover or crop: the users table shows three vendor staff addresses and the Edit dialog a
-  teammate's test address. Dispatch `library-publish.yml` after Publish.
-- **Pictures in a piece (Sam, 2026-11-11, S635):** *"the visual didn't include any of the map screenshots from the pdf
-  that the user will need to know how to navigate map. i'd like to edit it in the library (not here)"*, then *"it would
-  be even better if you ... just assemble the pics together with the text from the get go"*. A PDF's pictures are found
-  in the browser (`readPictures`: pdf.js names where each image sits, the rendered page is cropped there at 200 dpi, so
-  a deck's red boxes stay; a logo and a background are skipped) and saved as rows of `cpl_library_pictures`
-  (`kb/migrations/2026-11-11_library_pictures.sql`). `library-revise-draft` shows them to the model, which writes only
-  a marker, `<p>[[picture N: alt text]]</p>`; `pictures.mjs` turns each into the one fixed figure, so the allowlist and
-  the frozen sources stand. The card shows the pictures (*Check the pictures*: Cover or crop, which rewrites the bytes,
-  and Leave it out); Publish it and Replace the public copy wait for the box that says they were checked;
-  `library_publish.py` writes `library/<slug>/img/<n>.webp`, deletes a picture file the page no longer shows, and
-  skips a draft with pictures whose approval does not carry `regen.pictures_checked_by` (COBIx on #3095). A picture
-  once published stays in the repo's history: a name in one needs a history purge (Rule 5), so the check before
-  publishing is the gate. A PowerPoint is saved as PDF first. COBIx's session
-  recipe (`pdftoppm -r 200`, crop, captions, full size on a click, alt text, the review step) is the same result by
-  hand. Tests: `library_pictures` (38), `library_publish_test.py`.
+- **Sam's test of pictures passed (2026-11-11):** request `71931018` drafted with its five MAP screens under their
+  steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
+  `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
+  the link from the public funding dashboard that his brief asks for.
+- **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
+  saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
+  or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
+  picture once published stays in the repo's history. A PowerPoint is saved as PDF first. Tests: `library_pictures`
+  (44). The full record: lessons, *Moved from the lane (SkyWhirlpool, 2026-11-11)*.
 - **Changes after the first draft (Sam, 2026-11-11, S635):** *"there doesn't appear to be any way to add new instructions
   when I click edit in the library side bar"*. A new piece's ready draft offered Open, Publish it and Draft it again, and
   no box. Now **Ask for changes** opens the card's box; `library-revise-draft` edits that draft (`regen.based_on_draft`,
   `new_piece` kept for the publisher), the piece's documents stay on the record, the card counts Draft 2, 3, and
   *Start over from the brief* sits in the box (it replaces Draft it again). Test: `library_any_file` E2.
 - **Owed to COBIx on the next Library change:** the `style=` entity pattern in either quote or unquoted
-  (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS), and `tests/pages_size_guard.test.js` walking `kb/` minus
-  `kb/receipts`.
+  (`apply_edits.mjs` RISKS, `library_publish.py` _RISKS); `tests/pages_size_guard.test.js` walking `kb/` minus
+  `kb/receipts`; Leave it out on a published picture opens a request that replaces the public copy (the file stays
+  served until the piece's next publish); a replace-at-once draft with pictures shows the box and a publish step (the
+  run skips it every pass); the box's line counts the pictures kept (`fresh.length`), not found.
+- **A draft read off Pages drops its version stamps (2026-11-11, #3097):** Pages serves local scripts as
+  `x.js?v=<hash>`; the starter and a public page are read from Pages, so the first card-published piece carried the
+  stamp into the repo and `library_pages.test.js` failed on `main`. `unstamp` in `apply_edits.mjs` and
+  `library_publish.py`. That test also lets MAP's two office addresses stand as help links (`OFFICE_ADDRESSES`).
+- **The box says what it did beside its field (Sam, 2026-11-11, #3097):** *"the text showing they uploaded is below
+  the window of view and I thought nothing happened when I first clicked"*. The line shows inside the card's box under
+  the document field; a file added twice says so and saves its words and pictures once.
 - **Create is one form** (Sam, 2026-11-06: *"it opens up a secondary view and process after clicking start. need to
   simplify and clean this up"*): a new piece's working title and your name sit in the panel, the rest of the old brief
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
