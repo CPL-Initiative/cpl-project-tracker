@@ -1261,7 +1261,8 @@
         rows = (Array.isArray(rows) ? rows : []).filter(function (x) { return x && typeof x.n === "number"; });
         var keys = {}, last = 0, live = 0;
         rows.forEach(function (x) { keys[x.pic_key] = true; last = Math.max(last, x.n || 0); if (!x.left_out) live += 1; });
-        var add = pics.filter(function (x) { return !keys[x.pic_key]; }).slice(0, Math.max(0, PIC_MAX - live));
+        // Neither a picture the record holds nor the same picture twice in one batch (Sam's PDF, added twice).
+        var add = pics.filter(function (x) { if (keys[x.pic_key]) return false; keys[x.pic_key] = true; return true; }).slice(0, Math.max(0, PIC_MAX - live));
         if (!add.length) return 0;
         var body = add.map(function (x, i) {
           return { library_id: id, n: last + i + 1, mime: x.mime, data: x.data, width: x.width, height: x.height, page: x.page || null,
@@ -1436,7 +1437,7 @@
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra + picsBlock(r)) + msg + "</div>";
+      (box ? "" : extra + picsBlock(r) + msg) + "</div>";
   }
   // A new piece's drafts count from 1: each earlier draft kept under regen.earlier adds one.
   function draftNumber(r) { var e = r.regen && r.regen.earlier; return (Array.isArray(e) ? e.length : 0) + 1; }
@@ -1501,7 +1502,7 @@
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra + picsBlock(r)) + msg + requestBox(r) + "</div>";
+      (box ? "" : extra + picsBlock(r) + msg) + requestBox(r) + "</div>";
   }
   function requestWord(r, lead, label) {
     return '<button type="button" class="lib-word' + (lead ? " lead" : "") + '" data-request="' + esc(r.id) + '">' +
@@ -1550,6 +1551,10 @@
         ? '<div class="lib-field"><label for="cb-file-' + esc(r.id) + '">Add a document to work from, or drop it on this box: a Word document, a deck, a PDF or a text file is read here</label><input id="cb-file-' + esc(r.id) + '" data-cbfile="' + esc(r.id) + '" type="file"></div>' +
           '<div class="lib-field"><label for="cb-link-' + esc(r.id) + '">or paste its link</label><input id="cb-link-' + esc(r.id) + '" type="url" placeholder="A web page or a Claude page; SharePoint is closed to a session"></div>'
         : '<div class="lib-next">' + word("data-cbdocs", r.id, "Add a document to work from") + "</div>") +
+      // What the box just did (a file read, its pictures found, a refusal) shows here, beside the field that caused it
+      // (Sam, 2026-11-11: the line sat below the window, "I thought nothing happened when I first clicked", so he
+      // added the file twice).
+      (state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status" id="cb-msg-' + esc(r.id) + '">' + esc(state.message) + "</p>" : "") +
       (by && !state.cbName
         ? '<p class="why">as ' + esc(by) + ' <button type="button" class="lib-word" data-cbname="' + esc(r.id) + '">change</button></p>'
         : '<div class="lib-field"><label for="cb-by-' + esc(r.id) + '">Your name</label><input id="cb-by-' + esc(r.id) + '" type="text" required autocomplete="name" value="' + esc(by) + '"></div>') +
@@ -1581,6 +1586,10 @@
     var t = document.getElementById("cb-instr-" + id);
     if (t) { try { t.focus({ preventScroll: true }); } catch (e) { t.focus(); } if (t.scrollIntoView) t.scrollIntoView({ block: "center" }); }
   }
+  function showBoxLine(id) {
+    var m = document.getElementById("cb-msg-" + id);
+    if (m && m.scrollIntoView) m.scrollIntoView({ block: "nearest" });
+  }
   function closeCardBox(focusId) {
     state.cardBox = null; state.src.cb = []; state.pics.cb = []; render();
     var b = focusId && document.getElementById("lib-st-" + focusId); if (b && b.focus) b.focus();
@@ -1599,17 +1608,22 @@
       if (!again && list.length >= SRC_MAX) { sayOn(id, "A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
       if (!again) list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: words, added_by: storedAuthor() || null, added_on: today() });
       if (JSON.stringify(list).length > SRC_BYTES_MAX) { sayOn(id, "The documents together run past what a record holds. Remove one, or paste the part the piece needs.", true); render(); return; }
-      state.src.cb = list; state.cbDocs = true; sayOn(id, "Added " + name + " (" + wordCount(text) + " words read). It saves with the request."); render();
+      state.src.cb = list; state.cbDocs = true; sayOn(id, again ? name + " is already here; its words are not added twice." : "Added " + name + " (" + wordCount(text) + " words read). It saves with the request."); render(); showBoxLine(id);
       readPictures(file).then(function (pics) {
         if (!pics.length || !state.cardBox || state.cardBox.id !== id) return;
-        state.pics.cb = state.pics.cb.concat(pics).slice(0, PIC_MAX);
+        var held = {};
+        state.pics.cb.forEach(function (x) { held[x.pic_key] = true; });
+        var fresh = pics.filter(function (x) { return !held[x.pic_key]; });
+        if (!fresh.length) return;
+        state.pics.cb = state.pics.cb.concat(fresh).slice(0, PIC_MAX);
         var t = document.getElementById("cb-instr-" + id), typed = t ? t.value : null;
         sayOn(id, "Added " + name + " (" + wordCount(text) + " words read, " + picsWord(pics.length) + " found). They save with the request, and Claude places each picture under the steps it shows."); render();
         var t2 = document.getElementById("cb-instr-" + id); if (t2 && typed !== null) t2.value = typed;
+        showBoxLine(id);
       });
     };
     var fail = function () { take(""); };
-    sayOn(id, "Reading " + name + "…"); render();
+    sayOn(id, "Reading " + name + "…"); render(); showBoxLine(id);
     readWords(file).then(take, fail);
   }
   // The box's one press: save the request, then draft it here when this piece can be (Fable's advice, Sam's
