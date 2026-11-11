@@ -19,6 +19,24 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 #      override rows' course_id to the new identity.
 #   5. Commit + push the mutated kb files + frozen alias_map snapshot.
 #
+# One pass (#3110 build step 1): a lead that creates a title and the siblings
+# whose merge into it is already confirmed apply in the same run; a second
+# dispatch is no longer needed. Each fold group's issuer follows
+# kb/fold_issuer.py (a person's issuer wins, else a certification-format
+# target keeps its issuer, else additive), in both the kb files and the
+# kb_curation carry. The receipt kb/cred_rename_out/<date>/ now holds undo.json;
+# kb/_cred_rename_undo.py reverses an apply from it.
+#
+# statewide_data.js and the MAP link verify file are NOT rebuilt here.
+# statewide_data.js is written by the full excel_to_dashboard.py run, which
+# also regenerates the dashboard HTML (Rule 1) and reads the master workbook
+# and live Supabase; daily-dashboard.yml owns that run, and a second writer of
+# those artifacts is what the artifact policy and Rule 6 rule out. After an
+# apply, dispatch daily-dashboard.yml (it queues behind this run on the shared
+# concurrency group) and let it publish.
+#
+# workflow_dispatch stays the only trigger: no schedule, no automatic start.
+#
 # Going light vs Phase 1e: this workflow has 5 steps, not 7 — no
 # post-apply re-dry-run (V4 in-apply already validates), no auditor
 # cleanup-receipt re-run (no rename-outcome invariant exists). Trust the
@@ -82,6 +100,13 @@ jobs:
           n = len(doc.get('renames') or {}) + len(doc.get('merges') or {})
           if n == 0:
               print("::warning::Dry-run produced 0 renames/merges — apply is a no-op")
+          for t, p in sorted((doc.get('issuer_preview') or {}).items()):
+              if p.get('conflict'):
+                  print(f"::notice title=Issuer conflict::{t}: the target's override "
+                        f"{p['conflict']['target_override_before']['issuer']} becomes {p['winner']}")
+              for e in p.get('exceptions') or []:
+                  print(f"::warning title=Issuer exception for a person::{t}: {e['ic_exhibits']} "
+                        f"industry-certification exhibit(s), issuer {e['issuer']} (does not block)")
           print(f"apply gate OK — {len(doc.get('renames') or {})} renames "
                 f"+ {len(doc.get('merges') or {})} confirmed merges to apply")
           EOF

@@ -66,6 +66,14 @@ certificate.
 - **Built:** the format (`kb/cert_naming.py`); the path and assessor read from the MAP id (`kb/exhibit_paths.py`),
   carried per title in `kb/exhibits_related.json` and drawn in the related-titles panel and the rename batch; a title
   in the format fills its issuer with ASE.
+- **Built: the fold keeps one issuer** (#3110 build step 1, `kb/fold_issuer.py`). When the credential rename apply
+  folds titles, a person's explicit issuer on any title in the group wins (the newest when two people disagree; a
+  conflict with the target's override keeps its before-value in the receipt). Otherwise a target in the
+  certification format keeps its issuer and the folded college record is dropped, since the college now shows on
+  its exhibit's path. Otherwise every issuer is kept. A college issuer that a person puts on a merged title holding
+  industry-certification exhibits is listed as an exception for a person; it does not block. The same rules
+  carry the `kb_curation` override. A lead and its confirmed siblings apply in one run, and
+  `kb/_cred_rename_undo.py` reverses an apply from its receipt.
 - **Read-only so far.** No field stores a path or an assessor: both are derived at build time. MAP's id agrees with its
   own type code on all but 22 of about 7,000 civilian ids (COBIx, #3110).
 - **Not built, each its own PR through Governance:** an issuer registry (official name, one short tag, aliases); the

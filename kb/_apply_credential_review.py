@@ -101,6 +101,7 @@ FIELDS = {
 }
 DECISION_ONLY = {"cert_rename_kept"}
 TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
+ISSUER_FIELDS = {"issuing_agency_override", "issuing_agency_additional_override"}
 
 
 def fetch_rows():
@@ -368,6 +369,11 @@ def main():
             stamps.setdefault(ut, {})[field] = row.get("reviewed_at") or ""
         if field == "unified_title_override" and row.get("value"):
             rename_count += 1
+        # Who set each issuer, per field: the fold's issuer precedence (kb/fold_issuer.py) tells a
+        # person's issuer from a bot cohort's by this stamp, never by the entry's latest reviewer.
+        if field in ISSUER_FIELDS:
+            entry.setdefault("field_reviews", {})[field] = {
+                "by": row.get("reviewer_email"), "at": row.get("reviewed_at")}
         # Latest reviewer/timestamp wins (matches _apply_curation.py).
         if field in DECISION_ONLY:
             continue

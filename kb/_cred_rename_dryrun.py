@@ -27,6 +27,12 @@ rename). A confirm naming a DIFFERENT target than the current override is
 stale and stays queued; a merge whose target is itself retitled in the same
 batch stays queued (chain hazard). NEVER inferred, never auto-merged.
 
+One pass (#3110 build step 1, 2026-11-11): when several sources retitle to the same NEW name, the
+source with no merge confirm leads (a plain rename that creates the title) and every source whose
+`unified_title_merge_confirm` names that new title folds into it in the same apply. Only an
+unconfirmed sibling still waits as `intra_batch_same_target`. `issuer_preview` in the alias map shows
+each fold group's issuer under kb/fold_issuer.py's rules.
+
 Re-runnable. Daily cron runs this as a report-only step so the queue stays
 visible (and the artifact gets committed daily). Apply is a separate
 manual `workflow_dispatch` event (Cred-Ref PR-5b/1).
@@ -44,10 +50,15 @@ from __future__ import annotations
 import json
 import os
 from collections import defaultdict
+import sys
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402
+
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
+RELATED = os.path.join(HERE, "exhibits_related.json")
 UNIFIED_TITLES = os.path.join(HERE, "unified_titles.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
@@ -193,11 +204,34 @@ def main():
     for new_ut, sources in target_groups.items():
         if len(sources) < 2:
             continue
-        sources.sort(key=lambda o: ((overrides.get(o) or {}).get("reviewed_at")
-                                    or "", o))
+        # The lead is a source with no merge confirm (the one that creates the title); the earliest
+        # saved among those, or among all when every source confirmed. An entry's reviewed_at is its
+        # latest field's, so an issuer edited after the batch must not make a sibling the lead.
+        sources.sort(key=lambda o: (
+            (overrides.get(o) or {}).get("unified_title_merge_confirm") == new_ut,
+            (overrides.get(o) or {}).get("reviewed_at") or "", o))
         for o in sources[1:]:
             del renames_clean[o]
             ov = overrides.get(o) or {}
+            if ov.get("unified_title_merge_confirm") == new_ut:
+                # One-pass apply (#3110 build step 1): the curator already confirmed this sibling's
+                # merge into the title the group's lead creates, so it folds in the same run. The
+                # apply re-keys the lead first (rekey_credentials), then folds (fold_credentials), so
+                # the target exists by the time the fold reads it. A sibling with no confirm still
+                # waits, as below.
+                merges_confirmed[o] = new_ut
+                merge_details.append({
+                    "old_unified_title": o,
+                    "merge_into": new_ut,
+                    "same_run_lead": sources[0],
+                    "records_folding": len(credentials.get(o) or []),
+                    "existing_records_on_target": len(credentials.get(sources[0]) or []),
+                    "raw_titles": len(raw_titles_by_ut.get(o, [])),
+                    "articulations": art_records_by_ut.get(o, 0),
+                    "confirmed_by": ov.get("reviewed_by"),
+                    "confirmed_at": ov.get("reviewed_at"),
+                })
+                continue
             collisions.append({
                 "old_unified_title": o,
                 "proposed_new_title": new_ut,
@@ -215,6 +249,12 @@ def main():
                            "regular collision (confirmable in the CER strip) "
                            "once the group's first rename lands"),
             })
+
+    # ── Issuer preview (kb/fold_issuer.py) ───────────────────────────────────
+    # What each fold group's issuer will be, decided by the same rules the apply runs. A preview only:
+    # the apply recomputes it on the fresh overlay and freezes it into its receipt.
+    issuer_plan = fold_issuer.plan(renames_clean, merges_confirmed, overrides, credentials,
+                                   fold_issuer.path_tallies(_load(RELATED, {})))
 
     # ── V1/V2/V3 validation gates ─────────────────────────────────────────────
     # V1 — every clean rename target is unique among the proposed set
@@ -282,6 +322,12 @@ def main():
         # target (dedupe on issuer+trainer) and re-keys raws + articulations.
         "merges": merges_confirmed,
         "merge_details": merge_details,
+        # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
+        "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
+                               "conflict": g["resolution"]["conflict"],
+                               "humans": g["resolution"]["humans"],
+                               "exceptions": g["exceptions"]}
+                           for t, g in issuer_plan.items()},
     }
     with open(os.path.join(OUT_DIR, "alias_map.json"), "w", encoding="utf-8") as f:
         json.dump(alias_map_payload, f, indent=2, ensure_ascii=False)
@@ -309,6 +355,8 @@ def main():
                     intra_batch_collisions, v2_blocked, v3_blocked,
                     raw_titles_by_ut, art_records_by_ut, credentials,
                     apply_safe)
+    md = md.replace("## Clean renames (would land on apply)",
+                    _render_issuer_md(issuer_plan) + "## Clean renames (would land on apply)", 1)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
         f.write(md)
 
@@ -324,6 +372,22 @@ def main():
     print(f"  V3 (target collision):   {'PASS' if v3_pass else f'FAIL ({len(v3_blocked)})'}")
     print(f"  apply-safe:              {apply_safe}")
     print(f"  wrote: {OUT_DIR}/{{report.md, alias_map.json, collisions.json}}")
+
+
+def _render_issuer_md(issuer_plan):
+    """The fold groups' issuer preview: which rule decides each, conflicts, and exceptions for a person."""
+    lines = ["## Issuer of each folded title (preview, kb/fold_issuer.py)", ""]
+    if not issuer_plan:
+        lines += ["_No folds._", ""]
+        return "\n".join(lines) + "\n"
+    lines.append("Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disagreement). "
+                 "Rule 2, cert form: the target's issuer stays and a folded college record is dropped. "
+                 "Rule 3, additive.")
+    lines.append("")
+    for target, g in issuer_plan.items():
+        lines += fold_issuer.receipt_lines(g["resolution"], None, g["exceptions"])
+    lines.append("")
+    return "\n".join(lines) + "\n"
 
 
 def _render_md(renames_clean, merge_details, collisions, skipped,

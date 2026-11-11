@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 840,
+  "file_datasets": 841,
   "external_services": 195,
-  "consumers": 548,
+  "consumers": 549,
   "workflows": 65,
   "data_js_files": 71,
   "tabs": 40
@@ -10913,14 +10913,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 82
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 64
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -13500,7 +13507,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 72
+     "line": 90
     }
    ],
    "producers": [
@@ -13682,11 +13689,18 @@
      "line": 314
     },
     {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    },
+    {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 60
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -13806,14 +13820,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 80
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 63
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -15197,6 +15218,20 @@
      "direction": "read",
      "how": "literal",
      "line": 50
+    },
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
+    },
+    {
+     "id": "script:kb/_cred_rename_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
     }
    ],
    "producers": [
@@ -19169,14 +19204,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 81
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 62
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -22718,6 +22760,19 @@
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/cred_rename_fold_issuer_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28193,7 +28248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 116
     },
     {
      "id": "script:kb/_apply_curation.py",
@@ -28228,14 +28283,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 125
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 147
+     "line": 156
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -30920,6 +30975,7 @@
     "tests/exhibits_review_build_test.py",
     "tests/exhibits_sweep_build_test.py",
     "tests/cert_naming_test.py",
+    "tests/cred_rename_fold_issuer_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/adopt_align_build_test.py",

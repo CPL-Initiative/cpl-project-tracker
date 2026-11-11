@@ -451,6 +451,10 @@ jobs:
       # title carries it, nothing in the reference renamed without the approved batch, an old title kept as an alias.
       - name: Certification naming and the rename batch
         run: python3 tests/cert_naming_test.py
+      # Fold issuer precedence and the one-pass apply (#3110 build step 1): a person's issuer wins, a cert-form target
+      # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
+      - name: Credential fold issuer precedence and undo
+        run: python3 tests/cred_rename_fold_issuer_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder

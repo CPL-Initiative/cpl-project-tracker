@@ -29,6 +29,15 @@ public.kb_curation:
        DELETE, not PATCH (run #4's 8×409 lesson). A 409 on a merge PATCH
        falls back to the same supersede-DELETE.
 
+  Then the issuer carry (kb/fold_issuer.py, #3110 build step 1): for each fold
+  group where a person's explicit issuer won, the target's
+  issuing_agency_override is set to that value in the reference spelling,
+  under that person's reviewer_email and reviewed_at. Without it a person's
+  issuer on a merge source was dropped whenever the target already carried an
+  override (Heating and Air Conditioning, 2026-11-11). Every logged op carries
+  the row as it stood (before_row), so kb/_cred_rename_undo.py --supabase-plan
+  can write the reversal.
+
 Why DELETE + PATCH (not single PATCH-all):
   * The unified_title_override row's PURPOSE is fulfilled by the apply —
     keeping it under the new key would re-fire on the next dry-run as a
@@ -195,6 +204,39 @@ def patch_row(old_course_id: str, new_course_id: str, field: str) -> dict:
                 "error": str(e)[:200]}
 
 
+def set_issuer(course_id: str, value: str, reviewer: str, reviewed_at: str, exists: bool) -> dict:
+    """The issuer carry's one write: a guarded UPDATE of the target's issuing_agency_override when the
+    row exists, else an INSERT that does nothing on conflict. The caller logs the before-row."""
+    body = {"value": value, "reviewer_email": reviewer, "reviewed_at": reviewed_at}
+    if exists:
+        qs = urllib.parse.urlencode({"course_id": f"eq.{course_id}",
+                                     "field": "eq.issuing_agency_override"})
+        req = urllib.request.Request(
+            f"{URL}/rest/v1/kb_curation?{qs}", method="PATCH",
+            headers={"apikey": KEY, "Authorization": f"Bearer {KEY}",
+                     "Content-Type": "application/json", "Prefer": "return=representation"},
+            data=json.dumps(body).encode("utf-8"))
+        op = "issuer_update"
+    else:
+        req = urllib.request.Request(
+            f"{URL}/rest/v1/kb_curation", method="POST",
+            headers={"apikey": KEY, "Authorization": f"Bearer {KEY}",
+                     "Content-Type": "application/json",
+                     "Prefer": "return=representation,resolution=ignore-duplicates"},
+            data=json.dumps({"course_id": course_id, "field": "issuing_agency_override",
+                             **body}).encode("utf-8"))
+        op = "issuer_insert"
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            got = json.load(r)
+            n = len(got) if isinstance(got, list) else 0
+        return {"course_id": course_id, "field": "issuing_agency_override", "op": op,
+                "status": "ok", "rows_affected": n, "after_row": body}
+    except Exception as e:
+        return {"course_id": course_id, "field": "issuing_agency_override", "op": op,
+                "status": "fail", "error": str(e)[:200]}
+
+
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
@@ -231,6 +273,8 @@ def main():
     # sibling (run #4, 2026-07-08: the 4-source ASE A6 fold, 8 fails).
     claimed = {cid: {r.get("field") for r in rows}
                for cid, rows in existing.items()}
+    # LIVE rows by course_id and field, moved as PATCHes land (the issuer carry reads the target's).
+    live = {cid: {r.get("field"): dict(r) for r in rows} for cid, rows in existing.items()}
     for kind, old_ut, new_ut in work:
         old_cid = f"{KEY_PREFIX}{old_ut}"
         new_cid = f"{KEY_PREFIX}{new_ut}"
@@ -270,11 +314,42 @@ def main():
                     res["superseded_by_target"] = True
                     res["via"] = "409_fallback"
                     target_fields.add(field)
+            # The row as it stood, so kb/_cred_rename_undo.py --supabase-plan can put it back.
+            res["before_row"] = {k: row.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
+            if res.get("op") == "patch" and res.get("status") == "ok":
+                live.setdefault(new_cid, {})[field] = dict(row)
             log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
             if res.get("status") == "ok":
                 ok += 1
             else:
                 fail += 1
+
+    # ── Issuer precedence carry (kb/fold_issuer.py, #3110 build step 1) ──
+    # The JSON apply froze each fold group's decision into the snapshot. Where a
+    # person's explicit issuer won (rule 1), the target's issuing_agency_override
+    # ends on that value, in the reference spelling, under that person's stamp;
+    # the row's before-value is logged (Rule 10 a2). Rules 2 and 3 change no
+    # override: the moves above already kept the target's.
+    for target, g in sorted((doc.get("issuer_resolution") or {}).items()):
+        res_ = g.get("resolution") or {}
+        if res_.get("rule") != "reviewer" or not res_.get("winner"):
+            continue
+        cid = f"{KEY_PREFIX}{target}"
+        win = res_.get("winner_from") or {}
+        cur = (live.get(cid) or {}).get("issuing_agency_override")
+        if cur and cur.get("value") == res_["winner"]:
+            log.append({"kind": "issuer", "course_id": cid, "op": "skip",
+                        "reason": "target override already the winner"})
+            continue
+        res = set_issuer(cid, res_["winner"], win.get("by"), win.get("at"), exists=bool(cur))
+        res["before_row"] = ({k: cur.get(k) for k in ("value", "reviewer_email", "reviewed_at")}
+                             if cur else None)
+        res["winner_from_title"] = win.get("title")
+        log.append({"kind": "issuer", **res})
+        if res.get("status") == "ok":
+            ok += 1
+        else:
+            fail += 1
 
     # Persist the per-row log next to the snapshot so a future operator
     # can see exactly what landed (and replay failed rows individually).
