@@ -1,0 +1,50 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Redwoods' 2026-2027 CRGE pattern sheet prints 'CRGE Units Required 21', 'Major Requirements and Elective Units 18+' and 'Minimum Degree Units for Associate 60' (read 43013608134, redwoods_crge_sheet.json; COBIx's finding on #3096, verified). A reconcile step keys on the program page's own words, so this read asks four local degree pages what they print about general education, electives and the degree's total: Personal Wellness A.S. 44463, Forestry and Natural Resources Technology A.S. 01796, Registered Nursing A.S. 01831 (78-81 printed), Liberal Arts: Business A.A. 18231. No model call.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "local_words": "What does the local degree page print about general education (CR-GE), electives, and the degree's total units?"
+ },
+ "keywords": [
+  "General Education",
+  "CR-?GE",
+  "GE ",
+  "[Ee]lective",
+  "Total",
+  "60",
+  "[Uu]nits",
+  "[Dd]egree"
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "College of the Redwoods's own 2026-2027 catalog (redwoods.elumenapp.com), served on its catalog vendor's domain"
+ },
+ "pages": [
+  {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/personal-wellness-fall-2025",
+   "answers": [
+    "local_words"
+   ],
+   "expand": true
+  },
+  {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/forestry-and-natural-resources-technology-fall-2025",
+   "answers": [
+    "local_words"
+   ],
+   "expand": true
+  },
+  {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/registered-nursing-fall-2026",
+   "answers": [
+    "local_words"
+   ],
+   "expand": true
+  },
+  {
+   "url": "https://redwoods.elumenapp.com/catalog/2026-2027/program/liberal-arts-business-fall-2026",
+   "answers": [
+    "local_words"
+   ],
+   "expand": true
+  }
+ ]
+}
