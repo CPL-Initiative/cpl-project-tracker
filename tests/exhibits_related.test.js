@@ -304,7 +304,7 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   check("a family member whose fold rows the conversion removed reads Family set, never Unreviewed",
     t.M._listStatus({ ut: MEM }) === "Family set" && t.M._listStatus({ ut: "Security Operations" }) === "Unreviewed");
   check("the List reads the family live from kb_curation too", /FIELD_CRED_FAMILY = "credential_family"/.test(src)
-    && /FIELD_MERGE_CONFIRM, FIELD_CRED_FAMILY\]\.join/.test(src) && /row\.field === FIELD_CRED_FAMILY\) o\.family/.test(src));
+    && /FIELD_MERGE_CONFIRM,[A-Z_, ]*FIELD_CRED_FAMILY\]\.join/.test(src) && /row\.field === FIELD_CRED_FAMILY\) o\.family/.test(src));
   stepTile(t.d, "Rename batch").click(); await settle();
   const fx = t.d.querySelector("section.exh-famx");
   check("Review lists the family's titles to code by hand, as one card", fx && txt(fx.querySelector("h3")) === FAMN + ": titles to code by hand (1)"

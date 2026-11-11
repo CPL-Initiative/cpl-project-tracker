@@ -67,6 +67,8 @@ import urllib.request
 from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import fold_issuer  # noqa: E402
 OUT = os.path.join(HERE, "credential_review_overlay.json")
 CR_PATH = os.path.join(HERE, "credentials.json")
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
@@ -102,10 +104,18 @@ FIELDS = {
     # sam-bundle-family-is-a-field-2026-11-11). value = a family declared in kb/reference/credential_families.json.
     # promote_families() carries it onto the title's records in kb/credentials.json; it changes no identity.
     "credential_family",
+    # A credential fold's issuer decision (#3116): one row per folded target under the bot cohort
+    # fold_issuer.COHORT, its value fold_issuer.resolution_value()'s JSON. apply_resolutions() resolves
+    # the title's issuer rows through it; it stamps nothing as reviewed.
+    "issuer_resolution",
 }
-DECISION_ONLY = {"cert_rename_kept", "credential_family"}
+DECISION_ONLY = {"cert_rename_kept", "credential_family", "issuer_resolution"}
 FAMILIES_PATH = os.path.join(HERE, "reference", "credential_families.json")
 TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
+# Fields whose own row stamp the fold's issuer precedence reads (kb/fold_issuer.py): who set an issuer
+# and when, and when the fold itself was saved (rule 1 counts only an issuer set with the fold).
+STAMPED_FIELDS = {"issuing_agency_override", "issuing_agency_additional_override",
+                  "unified_title_override", "unified_title_merge_confirm"}
 
 
 def fetch_rows():
@@ -281,6 +291,49 @@ def promote_issuers(overrides):
 
 
 OVERRIDE_APPENDED = "curator (CER issuing-agency override)"
+CRED_OUT_ROOT = os.path.join(HERE, "cred_rename_out")  # the fold receipts (undone.json voids a fold)
+
+
+def apply_resolutions(overrides, out_root=None):
+    """Resolve every title's issuer rows against its fold resolution, in place (kb/fold_issuer.py
+    effective_issuer, the one resolver). Returns {title: resolution} for enforce_resolutions."""
+    root = out_root or CRED_OUT_ROOT
+    undone = fold_issuer.undone_fold_ids(root)
+    # A resolution row stands only when its fold's receipt is committed (fold_issuer.applied_fold_ids): a
+    # failed or unpushed apply's row is inert, never enforced on titles that never folded.
+    applied = fold_issuer.applied_fold_ids(root)
+    resolutions = {}
+    for ut, entry in list(overrides.items()):
+        res = fold_issuer.parse_resolution(entry.get(fold_issuer.RESOLUTION_FIELD))
+        if fold_issuer.in_force(res, ut, applied, undone):
+            resolutions[ut] = res
+            overrides[ut] = fold_issuer.effective_issuer(entry, res)
+    return resolutions
+
+
+def enforce_resolutions(overrides, resolutions, cr_path=None):
+    """Enforce each resolution on kb/credentials.json every night: remove records naming a dropped
+    issuer, set the winner, one spelling each. promote_issuers only ever adds, so without this a partial
+    state (a nightly between a failed apply and its retry) would be locked in. Writes only on change;
+    returns {title: changes}."""
+    path = cr_path or CR_PATH
+    try:
+        cr = json.load(open(path, encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}
+    out = {}
+    for ut, res in resolutions.items():
+        if ut not in cr:
+            continue
+        recs, changes = fold_issuer.enforce_records(cr[ut], res, overrides.get(ut))
+        if changes:
+            cr[ut] = recs
+            out[ut] = changes
+    if out:
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(cr, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+    return out
 
 
 def stale_override_issuers(overrides, cr):
@@ -380,6 +433,7 @@ def promote_families(overrides, cr_path=CR_PATH, families_path=FAMILIES_PATH):
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
+    read_at = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
     rows = fetch_rows()
 
     overrides = {}
@@ -403,6 +457,11 @@ def main():
             stamps.setdefault(ut, {})[field] = row.get("reviewed_at") or ""
         if field == "unified_title_override" and row.get("value"):
             rename_count += 1
+        # Each field row's own stamp: the fold's issuer precedence (kb/fold_issuer.py) reads who set an
+        # issuer and when, and when the fold was saved, from it, never from the entry's latest reviewer.
+        if field in STAMPED_FIELDS:
+            entry.setdefault("field_reviews", {})[field] = {
+                "by": row.get("reviewer_email"), "at": row.get("reviewed_at")}
         # Latest reviewer/timestamp wins (matches _apply_curation.py).
         if field in DECISION_ONLY:
             continue
@@ -413,6 +472,10 @@ def main():
         sites = resolve_sites(entry, stamps.get(ut, {}))
         if sites is not None:
             entry["training_sites"] = sites
+    # The fold's issuer resolutions (#3116): every title's issuer rows resolve through the one resolver
+    # here, before anything reads them, so excel_to_dashboard.py, stale_override_issuers and
+    # promote_issuers below all see resolved values. A resolution an undo voided is ignored.
+    resolutions = apply_resolutions(overrides)
 
     out = {
         "_about": (
@@ -426,6 +489,12 @@ def main():
         ),
         "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
         "_synced_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        # When the rows were read: the credential rename apply records it as its resolutions'
+        # decided_at, so a row saved after this read wins over the fold.
+        "_read_at": read_at,
+        # The latest reviewed_at among the rows read (COBIx's guard, #3116): the apply's decided_at, so the
+        # precedence compares one stamp source (the rows' own) and never the runner's clock against them.
+        "_max_reviewed_at": max((r.get("reviewed_at") or "" for r in rows), key=fold_issuer.ts, default=""),
         "count": len(overrides),
         "rename_overrides_recorded_not_applied": rename_count,
         "overrides": dict(sorted(overrides.items())),
@@ -455,6 +524,10 @@ def main():
               f"credentials.json ({len(stale)}): {[(x['title'], x['issuer']) for x in stale]}. "
               f"Nothing is removed here; edit kb/credentials.json in the same change if the "
               f"override replaced them.")
+    enforced = enforce_resolutions(overrides, resolutions)
+    if enforced:
+        print(f"Fold resolutions enforced on credentials.json ({len(enforced)} title(s)): "
+              f"{[(t, [c['op'] + ' ' + str(c.get('issuing_agency') or c.get('after')) for c in ch]) for t, ch in enforced.items()][:10]}")
     t_fills, t_missing = promote_trainers(overrides)
     if t_fills or t_missing:
         print(f"Mode A3 trainer promotion → credentials.json: "

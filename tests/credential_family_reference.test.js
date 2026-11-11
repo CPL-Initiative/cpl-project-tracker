@@ -3,7 +3,8 @@
 // the family "ASE Certificate Bundles". Guards:
 //   1. a member's row names its family in plain words on the quiet context line; a title in no family shows none;
 //   2. the open row says the family and that the title stays its own credential;
-//   3. a search for the family name returns every member and nothing else (the family is a search alias).
+//   3. a search for the family name returns every member and nothing else (the family is a search alias);
+//   4. a member whose issuer the fold decided (#3116) shows the family line and "Set by the fold on <date>" both.
 //
 // Run from repo root: `npm test` (or `node tests/credential_family_reference.test.js`).
 const fs = require("fs");
@@ -21,7 +22,15 @@ const rows = [
   { ut: "Brakes (ASE A5)", raw_count: 1, articulations: [], audit_tags: {}, audit_tag_total: 0 },
 ];
 
-function makeDom() {
+const P = "_CREDENTIAL_REVIEW::";
+const RES = JSON.stringify({ rule: "reviewer", winner: "National Institute for Automotive Service Excellence (ASE)", dropped: ["ASE"],
+  kept_additional: [], decided_at: "2026-11-11T16:00:00Z", fold_id: "2026-11-11@2026-11-11T16:05:00Z" });
+const LIVE = [
+  { course_id: P + "ASE Bundle — A4, A5", field: "issuing_agency_override", value: "ASE", reviewed_at: "2026-07-09T00:07:08Z" },
+  { course_id: P + "ASE Bundle — A4, A5", field: "issuer_resolution", value: RES, reviewed_at: "2026-11-11T16:06:00Z" }
+];
+
+function makeDom(live) {
   const html = `<!DOCTYPE html><html><body>
   <div id="tab-credential-reference">
     <div id="cr-toolbar"></div><div id="cr-summary"></div><div id="cr-table-wrap"></div>
@@ -29,7 +38,11 @@ function makeDom() {
   const dom = new JSDOM(html, { runScripts: "dangerously", url: "https://example.org/" });
   const { window } = dom;
   window.CPL_CREDENTIAL_REFERENCE = { _generated_at: "t", top_categories: {}, unified_titles: rows };
-  window.fetch = function () { return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve([]) }); };
+  window.fetch = function (url) {
+    const body = live && /kb_curation/.test(String(url)) ? JSON.parse(JSON.stringify(live)) : [];
+    return Promise.resolve({ ok: true, status: 200, headers: { get: () => null }, json: () => Promise.resolve(body) });
+  };
+  if (live) window.eval(fs.readFileSync("issuer_resolution.js", "utf8"));
   window.eval(src);
   return window;
 }
@@ -57,6 +70,16 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
   const shown = Array.from(d.querySelectorAll("tr.cr-row")).map((tr) => txt(tr.querySelector("button.cr-title-toggle")));
   check("a search for the family returns every member and nothing else",
     shown.length === 2 && shown.indexOf("ASE Bundle — A4, A5") >= 0 && shown.indexOf("ASE Bundle — T2, T8") >= 0);
+
+  {
+    const w2 = makeDom(LIVE);
+    await sleep(200);
+    const d2 = w2.document;
+    const r2 = Array.from(d2.querySelectorAll("tr.cr-row")).find((tr) => txt(tr).indexOf("ASE Bundle — A4, A5") >= 0);
+    const fold = Array.from((r2 && r2.querySelectorAll(".cr-fold-line")) || []).map(txt);
+    check("a member the fold decided shows its family and the fold's line both",
+      txt(r2 && r2.querySelector(".cr-ctx-fam")) === "Family: " + FAM && fold[0] === "Set by the fold on 2026-11-11");
+  }
 
   let pass = 0;
   for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }

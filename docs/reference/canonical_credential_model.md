@@ -73,6 +73,39 @@ certificate.
 - **Built:** the format (`kb/cert_naming.py`); the path and assessor read from the MAP id (`kb/exhibit_paths.py`),
   carried per title in `kb/exhibits_related.json` and drawn in the related-titles panel and the rename batch; a title
   in the format fills its issuer with ASE.
+- **Built: the fold keeps one issuer** (#3110 build step 1, `kb/fold_issuer.py`), by four rules in order. First, an
+  issuer a person set as part of the fold decision wins: its own save is at or after the group's earliest fold save,
+  and the newest wins when two people disagree. An older issuer a person set is an ordinary record. Second, a target
+  in the certification format, *Brakes (ASE A5)*, keeps its issuer and drops the folded college record. Third, a
+  course taught to the standard, *Brakes (ASE A5 standards)*, keeps the college and drops the certifying body's
+  record. Otherwise every issuer is kept. The receipt names the rule for each title, any record a person set that a
+  rule dropped (who and when, its before-value kept), and an exception for a person wherever the college stays
+  issuer on a title holding industry-certification exhibits; an exception does not block. A lead and its confirmed
+  siblings apply in one run, and `kb/_cred_rename_undo.py` reverses an apply from its receipt.
+- **Built: the decision is stored, never written over a person's row** (#3116). The apply writes one
+  `issuer_resolution` row per folded target in `kb_curation`, under the bot cohort `cred-fold-s638@bot`: the rule, the
+  winner, the issuers the fold dropped, the additional issuers it kept, and `decided_at`, when the apply read the rows it
+  decided on. It updates and deletes no issuer row a person wrote. Every reader resolves a title's issuer rows through
+  one resolver, `effective_issuer` in `kb/fold_issuer.py`, ported once to the browser as `issuer_resolution.js`: an
+  issuer row saved after `decided_at` wins; otherwise the winner stands, the dropped issuers are struck and the kept
+  additional issuers stay, in the reference spelling. The nightly sync applies it while it builds the overlay and
+  enforces it on `kb/credentials.json`, so a partial state repairs itself the next night. The Exhibits editor shows
+  the winner with the line *Set by the fold on <date>* and names any stored row it superseded; saving there writes a
+  person's row, which wins by its stamp.
+- **Built: what makes the stored decision undoable** (#3116, third review). A resolution row stands only once its
+  fold's receipt is on `main` (`fold_issuer.applied_fold_ids` reads the fold id in each committed `undo.json`): a
+  row from an apply that never landed is inert. When the apply does not land, the workflow's failure step takes the
+  rows back, marks the receipt `apply_failed.json` and commits the receipt alone, so the undo has its logs. A later
+  fold onto the same target carries the earlier one's dropped issuers and winner forward unless a person re-saved
+  them after it; the replaced value stays in `resolution_log.json`. A person's clear is a stamped empty row, which
+  the resolver honors like any newer row; both editors write one on a folded title. `decided_at` is the latest
+  `reviewed_at` among the rows the apply read (COBIx's guard), so precedence compares the rows' own stamps; the
+  receipt also names the runner's read time. The undo runs its `kb_curation` half first, the resolution rows before
+  the moved rows, so the browser drops the fold at once; a row a person changed since is left and reported, and a
+  rerun finishes a half-done undo.
+- **Still open: a server-set stamp.** The editors send `reviewed_at` from the browser's clock, so a curator whose
+  clock runs slow can still lose to a fold by minutes. The durable fix is a trigger that sets `reviewed_at` to
+  `now()` on every anon or authenticated write to `kb_curation`. That is a schema change, queued for Governance.
 - **Read-only so far.** No field stores a path or an assessor: both are derived at build time. MAP's id agrees with its
   own type code on all but 22 of about 7,000 civilian ids (COBIx, #3110).
 - **Not built, each its own PR through Governance:** an issuer registry (official name, one short tag, aliases); the
