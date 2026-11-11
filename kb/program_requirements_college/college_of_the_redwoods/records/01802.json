@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,8 +117,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -271,5 +268,20 @@
    "No general education pattern or whole-degree total is printed; 44 is the program requirements total."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 43018781168,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "A.S. Degree (\n44.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096))"
+  }
+ ],
+ "read_run": "38979396148"
 }
