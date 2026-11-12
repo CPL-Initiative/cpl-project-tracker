@@ -26,6 +26,7 @@ import os
 import shutil
 import sys
 import tempfile
+import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KB = os.path.join(ROOT, "kb")
@@ -65,6 +66,10 @@ plans = ruled_renames.load()
 ids = [p["plan_id"] for p in plans]
 check("the standards plan loads beside Sheet 181's, each id once",
       ids.count(PLAN_ID) == 1 and ids.count("sheet181-2026-11-12") == 1 and len(ids) == len(set(ids)))
+# An apply dispatched with an empty only_plan carries every committed plan, so a plan file lands only on purpose: the
+# next ruled plan adds its id here.
+check("the committed ruled plans are exactly Sheet 181's and the standards plan",
+      sorted(ids) == ["sheet181-2026-11-12", PLAN_ID], ids)
 plan = next(p for p in plans if p["plan_id"] == PLAN_ID)
 check("the plan names Sam's words, the memory row and who decided",
       '"A, C as recommended"' in plan["ruling"] and "sam-ic-exhibits-go-to-cert-title-2026-11-11" in plan["ruling"]
@@ -85,6 +90,27 @@ check("each restored title with a standards fold is left out as emptied",
 check("the standards folds ruling A does not name are left out with that reason",
       {x["new"] for x in left.values() if "names the A5, A7 and A8" in x["why"]} & {A5, A7, A8} == set()
       and len([x for x in left.values() if "names the A5, A7 and A8" in x["why"]]) == 7)
+check("each left-out reason says what it says once",
+      all(x["why"].count("holds no exhibit") <= 1 for x in plan["left_out"]))
+
+# The builder gates what its reason claims: a source holding an industry-certification exhibit (MAP's IC path) or
+# issued by anyone but the college system is left out with that reason and never written as an entry (ruling A).
+fx_over = {t: {"unified_title_override": A5, "reviewed_by": "slee@cccco.edu", "reviewed_at": "2026-11-11T15:26:54Z"}
+           for t in ("IC source", "ASE source", "College source")}
+fx_cr = {"IC source": [{"issuing_agency": COLLEGE}],
+         "ASE source": [{"issuing_agency": "National Institute for Automotive Service Excellence (ASE)"}],
+         "College source": [{"issuing_agency": COLLEGE}]}
+fx_ut = {"r1": {"unified_title": "IC source", "source_exhibit_ids": ["MAPICO-IBS-1-001"]},
+         "r2": {"unified_title": "ASE source", "source_exhibit_ids": ["MAPCXS-B3-1-001"]},
+         "r3": {"unified_title": "College source", "source_exhibit_ids": ["MAPCBEN-ABS-1-001"]}}
+fx = builder.build(fx_over, fx_cr, fx_ut)
+fx_left = {x["old"]: x["why"] for x in fx["left_out"]}
+check("the builder leaves out a source holding an industry-certification exhibit, naming it",
+      "IC source" in fx_left and "industry-certification" in fx_left["IC source"] and "MAPICO-IBS-1-001" in fx_left["IC source"])
+check("the builder leaves out a source issued by anyone but the college system, naming the issuer",
+      "ASE source" in fx_left and "Automotive Service Excellence" in fx_left["ASE source"])
+check("only the college's own exams become an entry",
+      [(e["old"], e["new"], e["kind"]) for e in fx["entries"]] == [("College source", A5, "rename")])
 
 
 # ── the files as they stood before this plan was applied ───────────────────────────────────────────────
@@ -186,6 +212,108 @@ try:
     check("no restored title's record changed", all(cr.get(t) == pre_cr.get(t) for t in RESTORE))
     snap = json.load(open(os.path.join(rdir, "alias_map.json"), encoding="utf-8"))
     check("the apply's snapshot holds exactly the four", dict(snap["renames"], **snap["merges"]) == {e["old"]: e["new"] for e in E})
+
+    # ── 6. the kb_curation row move and its undo, on rows shaped like the live ones ─────────────────────────
+    # Sam's seven fold rows (from the plan's evidence, so this holds after the apply's sync drops them) and the
+    # subject fill's bot rows on three of the four sources (exhibit-subject-s638@bot); nothing on the three targets
+    # (the conductor's live read, 04:41Z 2026-11-12).
+    BOT = "exhibit-subject-s638@bot"
+    live = {}
+    for e in E:
+        for f in FOLD_ROWS:
+            ev = e["evidence"].get(f)
+            if ev:
+                live[(sup.KEY_PREFIX + e["old"], f)] = {"value": ev["value"], "reviewer_email": ev["by"],
+                                                        "reviewed_at": ev["at"], "validated_at": None,
+                                                        "validated_by": None}
+    for o, subj in ((EXPECT[1][0], "AUTO"), (EXPECT[2][0], "AUTO"), (EXPECT[3][0], "AUTO")):
+        for f, v in (("subj_override", subj), ("subj_source", "courses at one college")):
+            live[(sup.KEY_PREFIX + o, f)] = {"value": v, "reviewer_email": BOT, "reviewed_at": "2026-11-11T21:41:27+00:00",
+                                             "validated_at": None, "validated_by": None}
+    start = {k: dict(v) for k, v in live.items()}
+    check("the live-shaped store holds thirteen rows: Sam's seven and six bot subject rows",
+          len(start) == 13 and sum(v["reviewer_email"] == "slee@cccco.edu" for v in start.values()) == 7)
+
+    def match(q):
+        cond = {k: (None if v == "is.null" else v[3:]) for k, v in q.items() if k != "select"}
+        return [k for k, v in live.items()
+                if all((k[0] if c == "course_id" else k[1] if c == "field" else v.get(c)) == want
+                       for c, want in cond.items())]
+
+    def fake_rest(method, path, body=None, prefer=""):
+        q = {k: v[0] for k, v in urllib.parse.parse_qs(path.partition("?")[2]).items()}
+        keys = match(q)
+        if method == "GET":
+            return [dict(live[k], course_id=k[0], field=k[1]) for k in keys]
+        if method == "DELETE":
+            return [dict(live.pop(k), course_id=k[0], field=k[1]) for k in keys]
+        if method == "PATCH":
+            out = []
+            for k in keys:
+                nk = (body.get("course_id", k[0]), k[1])
+                if nk != k and nk in live:
+                    raise Exception("HTTP Error 409: Conflict")
+                live[nk] = live.pop(k)
+                out.append(dict(live[nk], course_id=nk[0], field=nk[1]))
+            return out
+        k = (body["course_id"], body["field"])
+        if k in live:
+            return []
+        live[k] = {c: body.get(c) for c in ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")}
+        return [dict(live[k], course_id=k[0], field=k[1])]
+
+    def fetch():
+        out = {}
+        for (cid, f), v in live.items():
+            out.setdefault(cid, []).append(dict(v, course_id=cid, field=f))
+        return out
+
+    def delete(cid, field):
+        n = len(fake_rest("DELETE", "kb_curation?" + urllib.parse.urlencode({"course_id": "eq." + cid, "field": "eq." + field})))
+        return {"course_id": cid, "field": field, "op": "delete", "status": "ok", "rows_affected": n}
+
+    def patch(old, new, field):
+        try:
+            n = len(fake_rest("PATCH", "kb_curation?" + urllib.parse.urlencode({"course_id": "eq." + old, "field": "eq." + field}),
+                              {"course_id": new}))
+        except Exception as e:
+            return {"op": "patch", "status": "fail", "error": str(e)}
+        return {"old_course_id": old, "new_course_id": new, "field": field, "op": "patch", "status": "ok", "rows_affected": n}
+
+    sup.KEY, sup.fetch_credential_review_rows, sup.delete_row, sup.patch_row = "test", fetch, delete, patch
+    with contextlib.redirect_stdout(io.StringIO()):
+        try:
+            sup.main()
+            moved_ok = True
+        except SystemExit as e:
+            moved_ok = not e.code
+    check("the row move finishes with every op landed", moved_ok)
+    log = json.load(open(os.path.join(rdir, "supabase_log.json"), encoding="utf-8"))
+    L = {(x.get("course_id") or x.get("old_course_id"), x.get("field")): x for x in log["log"]}
+    K = sup.KEY_PREFIX
+    check("the A7 and the A8 lead's subject rows move to their standards titles",
+          all(L[(K + o, f)]["op"] == "patch" and L[(K + o, f)]["new_course_id"] == K + n
+              for o, n in ((EXPECT[1][0], A7), (EXPECT[2][0], A8)) for f in ("subj_override", "subj_source"))
+          and all((K + n, f) in live for n in (A7, A8) for f in ("subj_override", "subj_source")))
+    check("the A8 merge source's subject rows fan in as supersede-deletes, never patched over the lead's",
+          all(L[(K + EXPECT[3][0], f)]["op"] == "delete" and L[(K + EXPECT[3][0], f)].get("superseded_by_target")
+              for f in ("subj_override", "subj_source"))
+          and live[(K + A8, "subj_override")]["reviewed_at"] == start[(K + EXPECT[2][0], "subj_override")]["reviewed_at"])
+    check("Sam's seven fold rows are deleted as fulfilled, and nothing else of a person's is touched",
+          sorted(k for k, x in L.items() if x["op"] == "delete" and x["before_row"]["reviewer_email"] == "slee@cccco.edu")
+          == sorted(k for k, v in start.items() if v["reviewer_email"] == "slee@cccco.edu")
+          and not any(k[0] == K + o for k in live for o in olds))
+    ops_u, cannot = undo.supabase_ops(undo._logs(rdir, "supabase_log"))
+    real_rest, undo.rest = undo.rest, fake_rest
+    try:
+        ran = undo.run_supabase(ops_u)
+    finally:
+        undo.rest = real_rest
+    check("the undo runs every op and leaves none it cannot reverse",
+          not cannot and len(ops_u) == 13 and all(r["status"] == "ok" for r in ran), [r for r in ran if r["status"] != "ok"][:2])
+    check("the undo puts all thirteen rows back, each with its own reviewer and stamp, and nothing on the targets",
+          live == start, sorted(set(live) ^ set(start))[:3])
+    restore()
 
     rows = {}
     for t in olds | RESTORE | {A5, A7, A8}:

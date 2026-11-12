@@ -124,7 +124,7 @@
    "old": "Automotive Braking Systems",
    "new": "Brakes (ASE A5 standards)",
    "kind": "rename",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
@@ -136,37 +136,37 @@
    "old": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
    "new": "Electrical/Electronic Systems 1 (ASE A6 standards)",
    "kind": "rename",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
    "new": "Electrical/Electronic Systems 2 (ASE A6 standards)",
    "kind": "rename",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Engine Performance 1 (ASE A8 Engine Performance)",
    "new": "Engine Performance (ASE A8 standards)",
    "kind": "merge",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Engine Performance 2 (ASE A8 Engine Performance)",
    "new": "Engine Performance 2 (ASE A8 standards)",
    "kind": "rename",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Automotive Air Conditioner",
    "new": "Heating and Air Conditioning (ASE A7 standards)",
    "kind": "rename",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Heating and Air Conditioning",
    "new": "Heating and Air Conditioning (ASE A7 standards)",
    "kind": "merge",
-   "why": "the title holds no exhibit: held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
   },
   {
    "old": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",

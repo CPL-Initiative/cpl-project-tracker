@@ -36,6 +36,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import exhibit_paths  # noqa: E402
 import fold_issuer  # noqa: E402
 
 OUT = os.path.join(HERE, "cred_rename_plans", "2026-11-12_standards.json")
@@ -51,6 +52,8 @@ DECIDED_AT = "2026-11-11T21:33:36Z"
 RULED_TARGETS = ("Brakes (ASE A5 standards)", "Heating and Air Conditioning (ASE A7 standards)",
                  "Engine Performance (ASE A8 standards)")
 OVERRIDE, CONFIRM = "unified_title_override", "unified_title_merge_confirm"
+# Ruling A folds only a college's own exams into a standards title: the source's issuer is the college system.
+COLLEGE = "California Community Colleges"
 
 
 def _load(path, default):
@@ -70,12 +73,27 @@ def _is_standards(title):
     return bool(title) and "(ASE " in title and title.endswith(" standards)")
 
 
+def _not_college_exams(old, credentials, ids_by_ut):
+    """Why a source is not ruling A's to fold (an industry-certification exhibit, or an issuer other than the college
+    system), or "" when it is. Ruling A sends an industry-certification exhibit to the cert title, never here."""
+    ic = sorted(i for i in ids_by_ut.get(old) or [] if exhibit_paths.path_of(i) == "ic")
+    if ic:
+        return ("holds an industry-certification exhibit (%s): ruling A sends it to the cert title, so the fold "
+                "waits for a person" % ", ".join(ic))
+    iss = sorted({(r or {}).get("issuing_agency") or "" for r in credentials.get(old) or []} - {COLLEGE})
+    if iss:
+        return ("its issuer is %s, not %s: ruling A folds only a college's own exams, so the fold waits for a person"
+                % (", ".join(repr(i) for i in iss), COLLEGE))
+    return ""
+
+
 def build(overrides, credentials, unified_titles):
     holding = fold_issuer.titles_holding_exhibits(unified_titles)
-    raws = collections.defaultdict(list)
+    raws, ids_by_ut = collections.defaultdict(list), collections.defaultdict(list)
     for raw, v in (unified_titles or {}).items():
         if isinstance(v, dict) and v.get("unified_title"):
             raws[v["unified_title"]].append(raw)
+            ids_by_ut[v["unified_title"]].extend(v.get("source_exhibit_ids") or [])
     groups, left_out = collections.defaultdict(list), []
     for old, e in sorted((overrides or {}).items()):
         new = (e or {}).get(OVERRIDE)
@@ -84,12 +102,14 @@ def build(overrides, credentials, unified_titles):
         kind = "merge" if (e or {}).get(CONFIRM) == new else "rename"
         if old not in holding:
             left_out.append({"old": old, "new": new, "kind": kind,
-                             "why": "the title holds no exhibit: " + fold_issuer.EMPTIED_HELD_LINE
+                             "why": fold_issuer.EMPTIED_HELD_LINE
                                     + " (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"})
         elif new not in RULED_TARGETS:
             left_out.append({"old": old, "new": new, "kind": kind,
                              "why": "ruling A names the A5, A7 and A8 standards titles only; Sam's saved fold stays "
                                     "as it is and waits for its own scope"})
+        elif _not_college_exams(old, credentials, ids_by_ut):
+            left_out.append({"old": old, "new": new, "kind": kind, "why": _not_college_exams(old, credentials, ids_by_ut)})
         else:
             groups[new].append(old)
     entries = []
