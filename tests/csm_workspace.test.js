@@ -115,6 +115,31 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   const items = W._reviewItems(T.csm.snapshot().rows.find((r) => r.key === COLLEGE), "part").items;
   check("3b: the review names the domain (the form's) and the title Other as Check this, with no line about a decline",
     items[0].s === "form" && /mtsac\.edu/.test(items[0].d) && items[1].s === "check" && !items.some((i) => /declin/i.test(i.t + " " + i.d)));
+  {
+    const rv = root.querySelector('[data-verdict="part"]').closest(".review");
+    const pills = Array.from(rv.querySelectorAll(".pill")).map(flat);
+    check("3b2: the review uses three status words, the lines to check lead, and the met ones fold under one line",
+      pills.length > 0 && pills.every((p) => /^(Met|Check this|Not met)$/.test(p)) && !/Checked by the form|Does not meet|>Meets</.test(rv.innerHTML) &&
+      !!rv.querySelector('ul[data-reqs="need"] input[data-check]') && !rv.querySelector('details.reqdone input[data-check]') &&
+      /already met, with nothing for you to check/.test(flat(rv.querySelector("details.reqdone > summary"))) &&
+      rv.querySelectorAll('ul[data-reqs="need"] .pill').length + rv.querySelectorAll('details.reqdone .pill').length === items.length, pills.join("|"));
+    check("3b3: the review names the minimum condition it settles", /^Accepting this meets the minimum condition/.test(flat(rv.querySelector('[data-settles="part"]'))),
+      flat(rv.querySelector('[data-settles="part"]')));
+  }
+  {
+    const cw = root.querySelector('[data-condx="open"]');
+    check("3b4: Funding conditions explained sits under the summary and its panel is shut", !!cw && !!root.querySelector(".today + .today-more [data-condx]") &&
+      root.querySelector("#cw-condx").hasAttribute("hidden"));
+    cw.click();
+    const px = root.querySelector("#cw-condx");
+    const snapRows = T.csm.snapshot().rows, partLabel = snapRows[0].conds.find((c) => c.kind === "part").label;
+    check("3b5: it opens a panel that names each condition in the funding tab's own words and says how it is met, who settles it and what the dashboard does",
+      !px.hasAttribute("hidden") && flat(px.querySelector('[data-condx-kind="part"] h3')) === partLabel.trim() &&
+      px.querySelectorAll(".condx > li").length >= 2 && Array.from(px.querySelectorAll(".condx > li")).every((li) =>
+        /How a college meets it: /.test(flat(li)) && /Who settles it: /.test(flat(li)) && /On this dashboard: /.test(flat(li))), flat(px).slice(0, 300));
+    root.querySelector('[data-condx="close"]').click();
+    check("3b6: Close shuts it", root.querySelector("#cw-condx").hasAttribute("hidden"));
+  }
   check("3c: with no scrolling asked, Deny is open and Accept waits on the checks", !!accept() && accept().disabled && !deny().disabled &&
     /checks? left before Accept/.test(flat(root.querySelector('[data-gate="part"]'))) && !/Scroll/.test(flat(root)) && !/IntersectionObserver/.test(SRC));
   Array.from(root.querySelectorAll('[data-verdict="part"]')[0].closest(".review").querySelectorAll("input[data-check]")).forEach((b) => {
@@ -217,10 +242,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const tbl = rec().querySelector("table.facts");
     const cell = (re, n) => { const tr = Array.prototype.find.call(tbl.querySelectorAll("tbody tr"), (r) => re.test(flat(r.querySelector("th")))); return tr ? flat(tr.cells[n]) : null; };
     check("5d1: the conditions are a table: three column headers, each condition a row header",
-      !!tbl && Array.prototype.map.call(tbl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Condition|Status|Email" &&
+      !!tbl && Array.prototype.map.call(tbl.querySelectorAll('thead th[scope="col"]'), flat).join("|") === "Condition|Status|Next step" &&
       tbl.querySelectorAll('tbody th[scope="row"]').length === tbl.querySelectorAll("tbody tr").length && tbl.querySelectorAll("tbody tr").length >= 2);
-    check("5d2: a confirmation waiting on the team says so and its email comes after the review; the coordinator is status only",
-      cell(/onfirmation/, 1) === "Waiting on the team" && cell(/onfirmation/, 2) === "After the review" && cell(/oordinator/, 2) === "Status only",
+    check("5d2: a confirmation waiting on the team says so and names the team's review as the next step; a coordinator not met is the college's to update in MAP, and the old column's words are gone",
+      cell(/onfirmation/, 1) === "Waiting on the team" && cell(/onfirmation/, 2) === "The team reviews the request" &&
+      /^(None|None yet|The college updates MAP)$/.test(cell(/oordinator/, 2)) && !/Status only|When not met|After the review/.test(flat(tbl)),
       [cell(/onfirmation/, 1), cell(/onfirmation/, 2), cell(/oordinator/, 2)].join("|"));
     const visit = () => rec().querySelector(".visit");
     check("5d3: Recommended action for a waiting request is the review, already open below with no button to press, and no email is due",
@@ -269,7 +295,21 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     check("5d8: confirmed, the acceptance sent, and no Noncredit CPL Lead in MAP: the lead ask is due and is the recommended action",
       d.W._recTpl(row("ZC", true)) === "lead" && d.W._recOf(row("ZC", true)).reason === "Send the Noncredit CPL Lead ask" && d.W._needsYou(row("ZC", true)));
     check("5d9: not yet confirmed and no Noncredit CPL Lead: one email carries both asks",
-      d.W._recTpl(row("ZN", false)) === "both" && d.W._recOf(row("ZN", false)).reason === "Send both in one email");
+      d.W._recTpl(row("ZN", false)) === "both" && d.W._recOf(row("ZN", false)).reason === "Send one email asking for both" &&
+      /ZN has not sent a participation confirmation, and MAP shows no Noncredit CPL Lead/.test(d.W._recOf(row("ZN", false)).why));
+    // A copy or a draft that was never marked Sent (asked in session, 2026-11-12): the email stops being due for 14
+    // days, and the record keeps offering Sent, so the reviewer who sent it from Outlook has something to press.
+    log.push({ id: 9101, college: "ZQ", kind: "email", body: "Email copied: CPL Implementation Funding: a participation confirmation for ZQ, to q@b.edu.", created_at: new Date().toISOString() });
+    const dq = d.W._draftedOf(row("ZQ", false));
+    check("5d9a: a copied request is no longer due, and the record says it is copied and not yet marked as sent",
+      d.W._recTpl(row("ZQ", false)) === null && !!dq && dq.tpl === "nudge" && dq.how === "Copied" &&
+      d.W._recOf(row("ZQ", false)).reason === "Mark the email as sent" && /not yet marked as sent\. Once the email has gone out, press Sent\./.test(d.W._nextStep(row("ZQ", false))),
+      JSON.stringify(dq));
+    check("5d9b: once the college confirms, the copy asks for nothing", d.W._draftedOf(row("ZQ", true)) === null);
+    log.push({ id: 9102, college: "ZQ", kind: "email", body: "Nudge sent: " + dq.rest, created_at: new Date(Date.now() + 1000).toISOString() });
+    check("5d9c: Sent after the copy closes it: the receipt carries the copy's subject and address, and nothing is offered again",
+      d.W._draftedOf(row("ZQ", false)) === null && /^CPL Implementation Funding: a participation confirmation for ZQ, to q@b\.edu\.$/.test(dq.rest));
+    log.splice(log.length - 2, 2);
     log.push({ id: 911, college: "ZN", kind: "email", body: "Nudge sent: CPL Implementation Funding: two steps for ZN, to a@b.edu.", created_at: new Date().toISOString() });
     log.push({ id: 912, college: "ZC", kind: "email", body: "Noncredit CPL Lead ask sent: x", created_at: new Date().toISOString() });
     check("5d10: once sent, neither is due again for 14 days, and the both-in-one receipt counts as the nudge and as the lead ask",
