@@ -318,6 +318,66 @@ check("the retire ledger holds the 2026-11-12 retires a later run's report dropp
 src = open(os.path.join(ROOT, "kb", "_fold_unclassified.py"), encoding="utf-8").read()
 check("the fold appends each apply's retires to the ledger", "credential_aliases.append_retires(" in src)
 
+# ── 7: a returned title is acknowledged, or reported (COBIx, issue comment 6827701373, points 1 and 2) ──
+# Without the list, any writer that puts a moved title back into kb/credentials.json joins returned() silently and the
+# live rule keeps it forever. The comparison is pinned on a fixture; the seed is pinned on the repo's own data.
+import io  # noqa: E402
+check("the comparison: a returned title no entry names is reported, a listed one is not, an entry with no title counts for nothing",
+      ca.unacknowledged_of(["B", "A", "C"], [{"title": "A"}, {"title": " "}, {"why": "no title"}]) == ["B", "C"]
+      and ca.unacknowledged_of(["A"], [{"title": " A "}]) == [] and ca.unacknowledged_of([], []) == [])
+tmp7 = tempfile.mkdtemp(prefix="cred-title-returned-")
+try:
+    snap(tmp7, "2026-07-08", "2026-07-08T12:00:00Z", {"Put Back": "Successor", "Kept Back": "Successor"})
+    live(tmp7, ["Put Back", "Kept Back", "Successor"])
+    write(os.path.join(tmp7, ca.ACKNOWLEDGED), {"acknowledged": [{"title": "Kept Back", "brought_back_by": "a curator",
+                                                                 "brought_back_at": "2026-10-18", "why": "held"}]})
+    check("fixture: an unlisted returned title is unacknowledged, a listed one is not",
+          ca.returned(tmp7) == ["Kept Back", "Put Back"] and ca.unacknowledged(tmp7) == ["Put Back"], ca.unacknowledged(tmp7))
+    out = io.StringIO()
+    os.environ.pop("GITHUB_ACTIONS", None)
+    got = ca.warn_unacknowledged(tmp7, out)
+    check("fixture: the check warns on the unlisted title, names the file, and counts it",
+          got == ["Put Back"] and "WARN" in out.getvalue() and "'Put Back'" in out.getvalue()
+          and "Kept Back" not in out.getvalue().split("returned titles:")[0] and "1 not acknowledged" in out.getvalue(), out.getvalue())
+    os.environ["GITHUB_ACTIONS"] = "true"
+    out = io.StringIO()
+    ca.warn_unacknowledged(tmp7, out)
+    os.environ.pop("GITHUB_ACTIONS", None)
+    check("fixture: under Actions the warning is a ::warning:: annotation (non-blocking), never an ::error::",
+          out.getvalue().startswith("::warning file=kb/returned_titles_acknowledged.json::") and "::error" not in out.getvalue())
+    rl = ca.review_list(tmp7)
+    check("fixture: the unlisted title goes on the Exhibits review list, said in plain words, ahead of the listed one",
+          [(r["title"], r["kind"]) for r in rl] == [("Kept Back", "brought back"), ("Put Back", "brought back, not acknowledged")]
+          and "no record of who brought it back" in rl[1]["words"] and "a curator" in rl[0]["words"], rl)
+    rep = ca.table(tmp7)["report"]
+    check("fixture: the table's report carries unacknowledged and the review list, and --check still ignores the report",
+          rep["unacknowledged"] == ["Put Back"] and len(rep["review_list"]) == 2
+          and ca._checked(json.dumps(ca.table(tmp7))) == ca._checked(json.dumps(dict(ca.table(tmp7), report={}))))
+    os.remove(os.path.join(tmp7, ca.ACKNOWLEDGED))
+    check("fixture: with no acknowledged file every returned title is unacknowledged",
+          ca.unacknowledged(tmp7) == ["Kept Back", "Put Back"])
+finally:
+    shutil.rmtree(tmp7, ignore_errors=True)
+
+ack = json.load(open(os.path.join(ROOT, ca.ACKNOWLEDGED), encoding="utf-8"))["acknowledged"]
+SEED = [("Automotive Electrical Schematic Diagnosis", "2026-10-18", "AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam"),
+        ("Automotive Electronics", "2026-10-18", "AUTO 60B: Automotive Electronics - Credit By Exam"),
+        ("Automotive Suspension, Steering and Alignment", "2026-10-18", "AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam")]
+check("the acknowledged file is append-only: its first three entries are the seed, as committed",
+      [(e["title"], e["brought_back_at"]) for e in ack[:3]] == [(t, d) for t, d, _ in SEED]
+      and all(raw in e["why"] and "map@rccd.edu" in e["brought_back_by"] and "not recorded" in e["why"]
+              for e, (_, _, raw) in zip(ack, SEED)), [e.get("title") for e in ack[:3]])
+check("every entry says who, when and why (or not recorded)",
+      all((e.get(k) or "").strip() for e in ack for k in ("title", "brought_back_by", "brought_back_at", "why", "acknowledged_by", "acknowledged_at")))
+check("the seeded entries match returned() today: 3 returned, 0 unacknowledged",
+      sorted(e["title"] for e in ack[:3]) == ca.returned(ROOT) and ca.unacknowledged(ROOT) == [], ca.unacknowledged(ROOT))
+rep = json.load(open(os.path.join(ROOT, ca.TABLE), encoding="utf-8"))["report"]
+kinds = [r["kind"] for r in rep.get("review_list") or []]
+check("the committed review list is the report's returned, dead ends and dead retires",
+      len(kinds) == len(rep["returned"]) + len(rep["dead_ends"]) + len(rep["dead_retires"])
+      and rep.get("unacknowledged") == [] and kinds.count("brought back") == len(rep["returned"]), kinds)
+check("--check passes (a warning never fails the lints job)", ca.main(["--check"]) == 0)
+
 failed = [n for n, ok in results if not ok]
 print(f"\n{len(results) - len(failed)}/{len(results)} passed")
 sys.exit(1 if failed else 0)

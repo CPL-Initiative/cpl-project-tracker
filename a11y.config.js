@@ -1818,6 +1818,27 @@ async function seedTeamPhrases(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// First Light as a reviewer sees it (S642, #3153): the tab draws its sets only for a personal sign-in, so the
+// signed-out cobi sweep measures the sign-in box. The seed holds a reviewer session, closes the greeting, and
+// opens one view by its address. Every file the views read is local, so nothing is stubbed.
+async function seedFirstLight(page, theme, view) {
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc",
+        email: "seed@example.org", exp: Date.now() + 3600 * 1000 }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.evaluate((v) => { location.hash = "first-light/" + v; }, view);
+  await page.waitForFunction(() => !!window.CPL_FIRST_LIGHT_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => window.CPL_FIRST_LIGHT_TAB.activate());
+  await page.waitForFunction(() => !!document.querySelector("#first-light-root .flt-grid"), null, { timeout: 20000 });
+  await page.waitForTimeout(300);
+}
+
 // Admin as a reviewer sees it (S368 UI pass): the tab is gated, so the signed-out cobi sweep
 // measures the gate. The seed holds a reviewer session and stubs the two reads that need one,
 // cobi_rls_gates() and cobi_live_session. The gate fixture gives each table the tab's surface
@@ -3145,6 +3166,39 @@ module.exports = {
   /* ── Admin, signed in as a reviewer (S368) ─────────────────────────────
      The arrange list, the inventory, the gate badges, Blast Radius and the
      live-session control paint only for a reviewer; the cobi sweep is signed out. */
+  /* ── First Light, signed in as a reviewer (S642, #3153) ──────────────── */
+  "first-light-paintings": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the daily paintings",
+    routes: [{ hash: "first-light/paintings", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "paintings"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-paintings-dark": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the daily paintings, dark",
+    routes: [{ hash: "first-light/paintings", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "dark", "paintings"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-photos": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the photos that cycle on COBI's views",
+    routes: [{ hash: "first-light/photos", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "photos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-sierra": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: Sierra's set",
+    routes: [{ hash: "first-light/sierra", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "sierra"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "admin-reviewer": {
     file: "index.html",
     title: "Admin signed in as a reviewer, one item open for rename and sites",

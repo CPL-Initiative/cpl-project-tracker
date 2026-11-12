@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "PRE-ALLIED HEALTH",
  "award": "A.S. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=106",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=105",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7263,
+  "input_tokens": 8585,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7263,
-    "output_tokens": 1819,
+    "input_tokens": 8585,
+    "output_tokens": 2528,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,99 +30,110 @@
     "model": null
    }
   ],
-  "output_tokens": 1819,
+  "output_tokens": 2528,
   "output_tokens_details": {
-   "thinking_tokens": 592
+   "thinking_tokens": 1001
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06543,
- "ms": 15355,
- "seconds": 15.7,
+ "cost_usd": 0.0849,
+ "ms": 20101,
+ "seconds": 20.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 14,
    "listed": 15,
-   "share": 0.0,
+   "share": 0.933,
    "missing": [
-    "ANATOMY1",
-    "CHEM101",
-    "CHEM60",
-    "COMMC1000",
-    "ENGLC1000",
-    "FAM&CS21",
-    "HEALTH2",
-    "HEALTH21",
-    "HEALTH8",
-    "MICRO1",
-    "MICRO20",
-    "PHYSIOL1",
-    "PSYCC1000",
-    "SOC1",
-    "STATC1000"
+    "COMMC1000"
    ],
-   "unexplained": [],
-   "none_placed": true,
+   "unexplained": [
+    "COMMC1000"
+   ],
+   "none_placed": false,
    "pass": false
   },
   "invented": {
-   "count": 0,
-   "codes": [],
+   "count": 1,
+   "codes": [
+    "COMMC10000"
+   ],
    "flagged": [],
-   "pass": true
+   "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    26.0,
+    28.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     44.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     5.0,
+     16.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "Pre-Allied Health",
+   "section_heading": "Pre-Allied Health Associate of Science (AS) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,86 +142,224 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
+    "min": 18,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Demonstrate proficiency in various laboratory techniques and methods.",
+    "Work safely in a laboratory or clinical setting.",
+    "Apply biological concepts as it relates to health and disease.",
+    "Describe anatomical structures."
+   ],
+   "careers": [
+    "nursing",
+    "dental hygiene",
+    "occupational therapy",
+    "physical therapy",
+    "pharmacy",
+    "radiologic technologies",
+    "physician assistant",
+    "chiropractic"
+   ],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 13
+    },
+    "courses": [
+     {
+      "code": "ANATOMY 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSIOL 001",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICRO 020",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 1: SELECT ONE COURSE",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CHEM 060",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "AREA 2: SELECT THREE COURSES",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C10000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAM &CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HEALTH 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog codes use leading zeros (ANATOMY 001, MICRO 020, etc.); treated as the closed-list codes ANATOMY 1, MICRO 20, etc., so catalog_addition is false.",
+   "AS section prints 'COMM C10000 (FORMERLY COMM 101) INTRODUCTION TO PUBLIC SPEAKING'; this appears to be a misprint of COMM C1000 (the certificate section prints COMM C1000). Recorded as printed with catalog_addition false; reviewer should confirm.",
+   "The heading 'ELECTIVE COURSES (14-15 UNITS)' covers Area 1 and Area 2 together; no separate unit total is printed for either area, so stated is null on both.",
+   "Degree total printed as 'Total Units: Minimum of 60'; recorded as degree_total 60. No general education pattern or GE units are named in this section.",
+   "The same program student learning outcomes are printed in both the AS and Certificate of Achievement sections; recorded from the AS section.",
+   "Careers recorded are the allied health programs/fields named in the description ('such as nursing, dental hygiene, ...'); the transfer majors Nursing, Kinesiology, Nutrition were not recorded as careers.",
+   "CHEM 101 carries a footnote: CHEM 060 or high school chemistry is a prerequisite."
+  ]
+ },
+ "extracted_run": "43212072618",
+ "source_sha": "ad6cde3585ffc6f6",
+ "source_codes": [
+  "ANATOMY1",
+  "CHEM101",
+  "CHEM60",
+  "COMMC1000",
+  "ENGLC1000",
+  "FAM&CS21",
+  "HEALTH2",
+  "HEALTH21",
+  "HEALTH8",
+  "MICRO1",
+  "MICRO20",
+  "PHYSIOL1",
+  "PSYCC1000",
+  "SOC1",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "now": {
+    "min": 18,
+    "max": 27
+   },
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58))"
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ANATOMY 1",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "PHYSIOL 1",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "MICRO 1",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "MICRO 20",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "CHEM 60",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "CHEM 101",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "COMM C1000",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "ENGL C1000",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "FAM &CS 21",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "HEALTH 2",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "HEALTH 8",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "HEALTH 21",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "SOC 1",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in the Certificate of Achievement section; A.S. section not in text"
-   }
-  ],
-  "notes": [
-   "The supplied text (catalog page 106) contains only the 'Pre-Allied Health Certificate of Achievement' section (Major Units: 20-22; State Code 38860). No A.S. Degree section for Pre-Allied Health appears in the text, so no blocks, totals, outcomes or careers were recorded for the A.S. award. section_heading holds only the program heading printed on the page; it is not the A.S. section's heading. The A.S. section is likely on an adjacent page (e.g., page 107) and should be checked.",
-   "For reference, the certificate section prints: Required Courses (12-13 units): ANATOMY 001 4, PHYSIOL 001 4, MICRO 001 5 or MICRO 020 4; List A, select one (5 units): CHEM 060 5 or CHEM 101 5; List B, select one (3-4 units): COMM C1000, ENGL C1000, FAM &CS 021, HEALTH 002, HEALTH 008, HEALTH 021, PSYC C1000, SOC 001 (3 each), STAT C1000 4. If the A.S. major matches, these blocks would apply.",
-   "The certificate section prints four program student learning outcomes and names allied health programs (nursing, dental hygiene, occupational therapy, physical therapy, pharmacy, radiologic technologies, physician assistant, chiropractic). These were not recorded because they belong to the certificate section, not the A.S. section."
-  ]
- },
- "extracted_run": "39006380342"
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
+  }
+ ]
 }

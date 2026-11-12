@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "FRENCH LANGUAGE AND CIVILIZATION – ELEMENTARY LEVEL",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=129",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9136,
+  "input_tokens": 8444,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9136,
-    "output_tokens": 905,
+    "input_tokens": 8444,
+    "output_tokens": 688,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,34 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 905,
+  "output_tokens": 688,
   "output_tokens_details": {
-   "thinking_tokens": 248
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05464,
- "ms": 8614,
- "seconds": 9.0,
+ "cost_usd": 0.04754,
+ "ms": 6290,
+ "seconds": 6.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 4,
    "listed": 4,
-   "share": 0.0,
-   "missing": [
-    "FRENCH1",
-    "FRENCH10",
-    "FRENCH2",
-    "FRENCH7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -66,30 +61,31 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    16.0,
+    16.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    16.0,
+    16.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -100,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ABOUT OUR CAREER AND ACADEMIC PATHWAYS",
+   "section_heading": "French Language and Civilization - Elementary Level Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 16,
+    "max": 16
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,35 +121,72 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Speak French at the ACTFL (American Council on the Teaching of Foreign Languages) Proficiency Novice High Level.",
+    "Write French at the ACTFL Proficiency Novice High Level.",
+    "Listen and comprehend spoken French discourse at the ACTFL Proficiency Novice High Level.",
+    "Read and comprehend written French discourse at the ACTFL Proficiency Novice High Level.",
+    "Define fundamental aspects of French culture at the ACTFL Novice Level."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "FRENCH 1",
-    "why": "French certificate section not in the text; FRENCH 001 appears only in another program's humanities course list"
-   },
-   {
-    "code": "FRENCH 2",
-    "why": "French certificate section not in the text; FRENCH 002 appears only in another program's humanities course list"
-   },
-   {
-    "code": "FRENCH 7",
-    "why": "French certificate section not in the text; FRENCH 007 appears only in another program's humanities course list"
-   },
-   {
-    "code": "FRENCH 10",
-    "why": "French certificate section not in the text; FRENCH 010 appears only in another program's humanities course list"
+    "name": "REQUIRED COURSES (16 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 16,
+     "max": 16
+    },
+    "courses": [
+     {
+      "code": "FRENCH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 125) does not contain the section for the French Language and Civilization – Elementary Level Certificate of Achievement. It holds only part of another program's elective list (English, French, History, Humanities, Japanese, Korean, Music, Philosophy and other courses, ending 'OR ANY COURSES NOT LISTED ABOVE APPROVED FOR LACCD GE AREA 3; CAL-GETC AREA 3A, 3B; CSU GE-BREADTH AREA C1, C2; IGETC AREA 3A, 3B'), which looks like a Humanities or Liberal Arts area-of-emphasis list.",
-   "No requirements, totals, outcomes or careers were recorded because the award's own section is not in the text. A reviewer should find the French certificate's section on another page of the 2026-27 catalog.",
-   "The section_heading is the running page header printed on the page, not the award's heading."
+   "Catalog prints codes with leading zeros (FRENCH 001, 002, 007, 010); matched to closed-list FRENCH 1, 2, 7, 10.",
+   "The section has no career, occupation or job title; it mentions only 'employment, and professional advancement', so careers is empty.",
+   "The Intermediate Level certificate and the Japanese programs that follow on page 130 were not read for this record."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "d4cb03234b3e38a8",
+ "source_codes": [
+  "FRENCH1",
+  "FRENCH10",
+  "FRENCH2",
+  "FRENCH7"
+ ],
+ "source_coverage": 1.0
 }

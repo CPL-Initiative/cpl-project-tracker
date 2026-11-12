@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "CIS: Computer Networking Management",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=430",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=429",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11960,
+  "input_tokens": 12183,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11960,
-    "output_tokens": 4667,
+    "input_tokens": 12183,
+    "output_tokens": 5990,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,38 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 4667,
+  "output_tokens": 5990,
   "output_tokens_details": {
-   "thinking_tokens": 1876
+   "thinking_tokens": 2806
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14118,
- "ms": 38295,
- "seconds": 38.6,
+ "cost_usd": 0.16853,
+ "ms": 49782,
+ "seconds": 50.1,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 29,
    "listed": 29,
-   "share": 0.621,
-   "missing": [
-    "BUS310",
-    "CISA315",
-    "CISC320",
-    "CISC323",
-    "CISC350",
-    "CISC361",
-    "CISN340",
-    "CISS310",
-    "ENGLC1000",
-    "ENGLC1000H",
-    "ESLW340"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -74,18 +62,15 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    3.0,
-    16.0
+    17.0,
+    31.0
    ],
-   "stated": [
-    31.0,
-    34.0
-   ],
-   "against": "program",
+   "stated": null,
+   "against": null,
    "why": [
-    "the blocks sum to 3.0-16.0; the catalog states 31.0-34.0"
+    "the record names no total"
    ]
   },
   "repeated": {
@@ -120,8 +105,8 @@
    "section_heading": "A.S. in CIS: Computer Networking Management",
    "measure": "units",
    "total_units": {
-    "min": 31,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -161,15 +146,106 @@
   },
   "blocks": [
    {
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 14,
+     "max": 15
+    },
+    "courses": [
+     {
+      "code": "BUS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ESLW 340",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISA 315",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 320",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 323",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 350",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISC 361",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISS 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
     "name": "CISCO Concentration",
     "rule": "all",
     "minimum": null,
     "option_group": "Concentration",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 17.5,
+     "max": 18.5
     },
     "courses": [
+     {
+      "code": "CISC 324",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 340",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "CISN 341",
       "units": 3.5,
@@ -194,13 +270,46 @@
     ]
    },
    {
+    "name": "CISCO Concentration: [CISN 110 and CISN 111] or CISN 119",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": "Concentration",
+    "stated": {
+     "min": 3,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "CISN 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 111",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CISN 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
     "name": "Linux Concentration",
     "rule": "all",
     "minimum": null,
     "option_group": "Concentration",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 17,
+     "max": 17
     },
     "courses": [
      {
@@ -286,8 +395,8 @@
     "minimum": null,
     "option_group": "Concentration",
     "stated": {
-     "min": null,
-     "max": null
+     "min": 19,
+     "max": 19
     },
     "courses": [
      {
@@ -368,60 +477,50 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BUS 310",
-    "why": "not in this section of the text; appears only in the Database Management section (core requirements likely on the cut-off previous page)"
-   },
-   {
-    "code": "CISA 315",
-    "why": "not in this section of the text; appears only in Database Management and IT Technician sections (core likely on cut-off previous page)"
-   },
-   {
-    "code": "CISC 320",
-    "why": "not in this section of the text; appears only in other programs' sections (core likely on cut-off previous page)"
-   },
-   {
-    "code": "CISC 323",
-    "why": "not in this section of the text; appears only in other programs' sections (core likely on cut-off previous page)"
-   },
-   {
-    "code": "CISC 350",
-    "why": "not in the text; likely in core requirements on cut-off previous page"
-   },
-   {
-    "code": "CISC 361",
-    "why": "not in this section of the text; appears only in the IT Technician section (core likely on cut-off previous page)"
-   },
-   {
-    "code": "CISN 340",
-    "why": "not in this section of the text; likely in the start of the CISCO Concentration on cut-off previous page"
-   },
-   {
-    "code": "CISS 310",
-    "why": "not in the text; likely in core requirements on cut-off previous page"
-   },
-   {
-    "code": "ENGL C1000",
-    "why": "not in this section of the text; likely an alternative in core on cut-off previous page"
-   },
-   {
-    "code": "ENGL C1000H",
-    "why": "not in the text; likely an alternative in core on cut-off previous page"
-   },
-   {
-    "code": "ESLW 340",
-    "why": "not in the text; likely an alternative in core on cut-off previous page"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The text begins mid-section on page 430: the section heading, program description, core degree requirements and the start of the CISCO Concentration (page 429) are not included. Section heading is inferred from the catalog's pattern ('A.S. in CIS: ...') and the closing paragraph naming 'The CIS: Computer Networking Management Associate in Science (A.S.) degree'.",
-   "CISCO Concentration block is partial: only CISN 341, CISN 342 and CISS 330 are visible; the printed concentration units are 17.5-18.5, suggesting earlier courses and possibly a choice that were cut off.",
-   "Each concentration is one option (option_group 'Concentration'); the Linux and Windows concentrations each consist of their required block plus their 'minimum of 3 units' choice block, which belong together rather than being alternatives to each other.",
-   "Printed concentration units: CISCO 17.5-18.5, Linux 17, Windows 19; printed Total Units per concentration: CISCO 31.5-33.5, Linux 31-32, Windows 33-34. total_units 31-34 spans the lowest and highest printed concentration totals; reviewer should check.",
-   "Degree completed with Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true, degree_total left null as boilerplate minimum.",
-   "The SLO list includes concentration header bullets ('WINDOWS CONCENTRATION:', 'CISCO CONCENTRATION:', 'LINUX/UNIX CONCENTRATION:') which were omitted as they are not outcomes; outcomes are grouped by concentration in that order (3 Windows, 5 Cisco, 2 Linux/Unix)."
+   "The degree requires the core (14-15 units) plus one of three concentrations (CISCO, Linux, Windows). All blocks tagged option_group 'Concentration' belong to one of the three concentrations; the student completes every block of a single concentration (the CISCO option is the two CISCO blocks, Linux the two Linux blocks, Windows the two Windows blocks). Reviewer should check this grouping.",
+   "CISCO concentration prints '[CISN 110 and CISN 111] or CISN 119' (3-4 units); recorded as a separate choose_units block with minimum 3, but the actual rule is either both CISN 110 and CISN 111, or CISN 119 alone. The concentration's printed total 17.5-18.5 is placed on the main CISCO block and includes this choice.",
+   "Linux concentration printed units 17 and Windows concentration printed units 19 are recorded on the main block of each; these printed figures appear to exclude the 3-unit choose lists (totals 31-32 and 33-34 imply the concentration plus core).",
+   "The catalog prints a separate Total Units for each concentration (CISCO 31.5-33.5, Linux 31-32, Windows 33-34) and no single total for the award, so total_units is left null.",
+   "BUS 310 row prints '3 - 4' for the group (BUS 310 or ENGL C1000 or ENGL C1000H or ESLW 340); BUS 310 itself is printed as (3), so units recorded as 3 and the alternatives carry their own units.",
+   "The degree statement says the degree is completed with the Local GE Pattern or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this is the standard ARC sentence, so degree_total left null and electives_fill_degree set true.",
+   "The outcomes list includes concentration headings as bullets ('WINDOWS CONCENTRATION:', 'CISCO CONCENTRATION:', 'LINUX/UNIX CONCENTRATION:'); these are not outcomes and were omitted. Outcomes 1-3 are Windows, 4-8 Cisco, 9-10 Linux/Unix.",
+   "Careers taken from the 'Career Information' section on page 431 that follows this degree's section."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43212067552",
+ "source_sha": "0bef0b1fcd9b64b5",
+ "source_codes": [
+  "BUS310",
+  "CISA315",
+  "CISC320",
+  "CISC323",
+  "CISC324",
+  "CISC350",
+  "CISC361",
+  "CISN110",
+  "CISN111",
+  "CISN119",
+  "CISN120",
+  "CISN121",
+  "CISN122",
+  "CISN300",
+  "CISN302",
+  "CISN307",
+  "CISN308",
+  "CISN340",
+  "CISN341",
+  "CISN342",
+  "CISP370",
+  "CISP400",
+  "CISS310",
+  "CISS330",
+  "CISS341",
+  "CISS342",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ESLW340"
+ ],
+ "source_coverage": 1.0
 }

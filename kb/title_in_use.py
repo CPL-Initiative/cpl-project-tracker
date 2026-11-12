@@ -1,0 +1,279 @@
+#!/usr/bin/env python3
+"""title_in_use.py — the title already in use for a held exhibit: a statewide exhibit first, then the most used.
+
+Sam, in session, 2026-11-12 (cpl_memory `sam-classifier-suggests-title-in-use-2026-11-12`): "also think about how you
+could apply this to your intelligence moving forward...being able to suggest the best canonical title based on what's
+in use...". The card that prompted it: American River's "Firefighter Recruit Academy Certificate" (California State
+Fire Training) was proposed the new title "Firefighter Academy" while the reference already holds the statewide exhibit
+"Firefighter 1" with 11 local titles. He said it should be renamed "Firefighter 1".
+
+This is the Python side of ONE rule. exhibits.js holds the other side (relatedFor and relAligned, #3160), which names
+the title on the Review card; kb/_build_exhibits_review.py calls this module to make it the proposal. The two are
+pinned to the same fixtures and the same constants by tests/fixtures/title_in_use_cases.json, which
+tests/title_in_use_test.py and tests/title_in_use_parity.test.js both read: a change to one side that the other does
+not follow fails a test. The rule, in words (the JS comment above relAligned says the same):
+
+  (a) A title in the reference that is itself a statewide exhibit is that exhibit ("self"); nothing else is named.
+  (b) A candidate is in the reference, shares the card's words (an ASE card: the same test code), and has the card's
+      own issuer. A title from another issuer is never named, however many words it shares.
+  (c) Several statewide candidates: the one with the most local titles is named only on a clear lead, at least
+      STATEWIDE_LEAD times the local titles of the next one; else none.
+  (d) None statewide, and the card's own title not in the reference (g): the most used candidate, with at least
+      POPULAR_MIN local titles and more than every other candidate; a tie names none. Outside an ASE test, every word
+      of the candidate's own title (earlier titles left out) is a word of the card's title. Two shared words are not
+      enough, and a longer title holding all the card's words is another thing (measured over the 177 held titles,
+      2026-11-12: "Emergency Medical Services (EMS 10)" named Emergency Medical Responder; "Principles of Emergency
+      Services" named Principles of Fire and Emergency Services Safety and Survival, another course).
+  (e) Outside an ASE test, a card whose title ends in a course code in parentheses ("Administration of Justice
+      (AJ 54)") is one course: a candidate must carry the same code, or it is not named, statewide or most used
+      (measured: AJ 54, 60, 63 and 64 all named Introduction to Administration of Justice; ESL 220A to 231B all
+      named English as a Second Language).
+  (f) Levels: the card and the candidate name the same levels (numbers, a number and one letter A to H, roman
+      numerals I to X read as numbers, so "Firefighter I" is "Firefighter 1"; "Level 4" and "Year 2" by their
+      number). Firefighter 2 never names Firefighter 1, and Level 1 never joins Level 4. A card naming no level may
+      reach a statewide title that names one only through (c)'s clear lead (Firefighter Academy names Firefighter 1,
+      11 local titles against Firefighter 1A's 2); a most-used title must name the same levels.
+  (g) A card whose own title is already in the reference keeps it: only a statewide title with the same words and
+      the same levels is named, never a most-used one.
+  (h) The issuer is the card box's (issuer_for: a title in ASE's form reads ASE), except where the caller passes
+      own_issuer: a credit-by-exam card keeps its college issuer (kb/_build_exhibits_review.py).
+  Order, both sides: local titles descending, colleges descending, then the lowercased title by code point.
+
+Never reads TOP, never calls a model or the network. "Statewide" is fact-sheet/statewide_recs.js, the list the List's
+Basis column and the card read.
+"""
+import json
+import os
+import re
+
+POPULAR_MIN = 3
+STATEWIDE_LEAD = 3
+LOCAL_ISSUER = "California Community Colleges"
+ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)"
+# exhibits.js REL_STOP: words that never make two titles related.
+STOP = frozenset(["and", "the", "of", "in", "for", "to", "a", "an", "by", "on", "with", "or", "credit", "exam",
+                  "noncredit", "certification", "certificate", "course", "level", "introduction", "intro", "basic",
+                  "advanced"])
+
+STATEWIDE = "in_use_statewide"
+MOST_USED = "in_use_most_used"
+SELF = "self"
+
+_A = re.ASCII
+_WORD = re.compile(r"[a-z][a-z0-9+#]{2,}", _A)
+_ASE_CODE = re.compile(r"(?:^|[^A-Za-z0-9])([A-Z]\d|xEV)(?![A-Za-z0-9])", _A)
+_ASE_TOKEN = re.compile(r"(?:^|[^A-Za-z])ASE(?![A-Za-z])", _A)
+_ASE_CERT_TITLE = re.compile(r"^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive "
+                             r"Service Excellence\b)", re.I | _A)
+_ASE_CERT_FORM = re.compile(r"\(ASE\s+(?:[A-Z]\d|xEV)\)\s*$", _A)
+_ASE_ISSUER_WORDS = re.compile(r"Automotive Service Excellence", re.I)
+
+
+def rel_words(text):
+    """exhibits.js relWords: the words of a title, stop words out, a plural "s" or "es" off."""
+    out = set()
+    for w in _WORD.findall(str(text or "").lower()):
+        if w not in STOP:
+            out.add(re.sub(r"(?:es|s)$", "", w))
+    return out
+
+
+def ase_codes_in(text):
+    out = []
+    for c in _ASE_CODE.findall(text or ""):
+        if c not in out:
+            out.append(c)
+    return out
+
+
+def ase_issuer(title):
+    """exhibits.js aseIssuer: a title in ASE's own form names ASE as its issuer."""
+    t = title or ""
+    return ASE_ISSUER if _ASE_CERT_TITLE.search(t) or _ASE_CERT_FORM.search(t) else ""
+
+
+def issuer_for(title, issuer):
+    """exhibits.js issuerFor: the issuer the card's box shows for a title."""
+    return ase_issuer(title) or issuer or ""
+
+
+def ase_of(title, raw, issuer):
+    """exhibits.js aseOf: the ASE test a card is about, {"code"} ("" when none is named), or None for a non-ASE card."""
+    t, r = title or "", raw or ""
+    is_ase = (bool(ase_issuer(t)) or re.search(r"\(ASE\s", t, _A) or _ASE_ISSUER_WORDS.search(issuer or "")
+              or _ASE_TOKEN.search(r) or re.search(r"\bAUTO\w*\s+[A-Z]\d\b", r, _A))
+    if not is_ase:
+        return None
+    m = (re.search(r"\(ASE\s+([A-Z]\d|xEV)", t, _A) or re.search(r"^\s*ASE\s+([A-Z]\d|xEV)\b", t, _A)
+         or re.search(r"\bAUTO\w*\s+([A-Z]\d)\b", r, _A)
+         or re.search(r"(?:^|[^A-Za-z])ASE[^A-Za-z0-9]+(?:\w+\s+)?\(?([A-Z]\d)\b", r, _A))
+    return {"code": m.group(1) if m else ""}
+
+
+def entry(t, issuer, locals_, adopted, proposed=False, aka=()):
+    """One title in the index, the fields exhibits.js loadRelated reads from a kb/exhibits_related.json row."""
+    aka = list(aka or [])
+    ase = bool(_ASE_ISSUER_WORDS.search(issuer or "")) or bool(_ASE_TOKEN.search(t))
+    return {"t": t, "issuer": issuer or "", "locals": locals_ or 0, "adopted": adopted or 0, "proposed": bool(proposed),
+            "aka": aka, "ase": ase, "codes": ase_codes_in(t) if ase else [], "words": rel_words(t + " " + " ".join(aka))}
+
+
+def index_from_related(d):
+    """The index from a kb/exhibits_related.json-shaped object: titles [t, issuer index, locals, adopted, proposed,
+    aka, ...]. The parity fixture uses this shape, so both sides read the same rows."""
+    issuers = d.get("issuers") or []
+    out = []
+    for row in d.get("titles") or []:
+        iss = issuers[row[1]] if len(row) > 1 and isinstance(row[1], int) and 0 <= row[1] < len(issuers) else ""
+        out.append(entry(row[0], iss, row[2] if len(row) > 2 else 0, row[3] if len(row) > 3 else 0,
+                         (row[4] if len(row) > 4 else 0) == 1, row[5] if len(row) > 5 else []))
+    return out
+
+
+def index_from_reference(credentials, unified_titles, adoption=None, aka=None):
+    """The index over the reference only (kb/credentials.json keys and every title kb/unified_titles.json maps a raw to):
+    the same titles, issuers and counts kb/_build_exhibits_related.py writes for its in-the-reference rows. A title only
+    proposed is left out; the rule never names one."""
+    locals_of = {}
+    for raw, e in (unified_titles or {}).items():
+        t = ((e or {}).get("unified_title") or "").strip() if isinstance(e, dict) else ""
+        if t and raw.strip():
+            locals_of[t] = locals_of.get(t, 0) + 1
+    out = []
+    for t in sorted(set(credentials or {}) | set(locals_of), key=str.lower):
+        recs = (credentials or {}).get(t) or [{}]
+        iss = (((recs[0] if isinstance(recs, list) and recs else {}) or {}).get("issuing_agency") or "").strip()
+        adopted = len(((adoption or {}).get(t) or {}).get("a") or {})
+        out.append(entry(t, iss, locals_of.get(t, 0), adopted, False, (aka or {}).get(t) or []))
+    return out
+
+
+def statewide_from_js(path):
+    """The titles fact-sheet/statewide_recs.js names (window.CPL_STATEWIDE_RECS = {title: [...]})."""
+    if not os.path.exists(path):
+        return set()
+    with open(path, encoding="utf-8") as f:
+        src = f.read()
+    start = src.find("{")
+    if start < 0:
+        return set()
+    return set(json.loads(src[start:src.rindex("}") + 1]))
+
+
+_PAREN_CODE = re.compile(r"\(\s*([A-Z]{2,6})\s+([A-Z0-9]{1,6})\s*\)\s*$", _A)
+
+
+def paren_code(title):
+    """(e)'s course code: "AJ 54" for "Administration of Justice (AJ 54)", else ""."""
+    m = _PAREN_CODE.search(title or "")
+    return m.group(1) + " " + m.group(2) if m else ""
+
+
+# (f)'s level tokens: a number, a number and one letter A to H ("1A"), or a roman numeral I to X read as its number.
+# exhibits.js LEVEL_TOKEN is the same pattern; no lookbehind, so a browser without it reads it too.
+_LEVEL = re.compile(r"(?:^|[^A-Za-z0-9])(?:(\d+)([A-Ha-h])?|(X|IX|VIII|VII|VI|V|IV|III|II|I))(?![A-Za-z0-9])", _A)
+_ROMAN = {"I": 1, "II": 2, "III": 3, "IV": 4, "V": 5, "VI": 6, "VII": 7, "VIII": 8, "IX": 9, "X": 10}
+
+
+def level_tokens(title):
+    """The levels a title names: "Firefighter 1A" -> {"1A"}, "Firefighter II" -> {"2"}, "Level 4" -> {"4"}."""
+    out = set()
+    for num, letter, roman in _LEVEL.findall(title or ""):
+        if roman:
+            out.add(str(_ROMAN[roman]))
+        else:
+            out.add(str(int(num)) + letter.upper())
+    return out
+
+
+def words_within(card, cand):
+    """(d)'s word test: every word of the candidate's own title is a word of the card's title."""
+    return bool(card) and bool(cand) and cand <= card
+
+
+def use_key(o):
+    """The one order both sides use: local titles descending, then colleges descending, then the lowercased title by
+    code point (never a locale's collation)."""
+    return (-o["locals"], -o["adopted"], o["t"].lower())
+
+
+def related(index, title, raw, issuer):
+    """exhibits.js relatedFor: the titles beside a card, each with its tier. Returns {"family", "code", "rows"}, rows
+    [{"o", "tier"}] in the JS order."""
+    fam = ase_of(title, raw, issuer)
+    rows = []
+    if fam:
+        code = fam["code"]
+        series = code[0] if code else ""
+        for o in index:
+            if not o["ase"]:
+                continue
+            tier = 0 if code and code in o["codes"] else 1 if series and any(c[0] == series for c in o["codes"]) else 2
+            rows.append({"o": o, "tier": tier, "rank": len(o["codes"]) if tier == 0 else 0})
+        rows.sort(key=lambda x: (x["tier"], x["rank"], -x["o"]["locals"], x["o"]["t"].lower()))
+        return {"family": "ASE", "code": code, "rows": rows}
+    words, iss = rel_words(title), (issuer or "").strip()
+    named = bool(iss) and iss != LOCAL_ISSUER
+    for o in index:
+        n = len(words & o["words"])
+        same = named and o["issuer"] == iss
+        tier = 0 if same and n else 1 if (n >= 2 or (n and n == len(words))) else 2 if same else -1
+        if tier >= 0:
+            rows.append({"o": o, "tier": tier, "rank": -n})
+    rows.sort(key=lambda x: (x["tier"], x["rank"], -x["o"]["locals"], x["o"]["t"].lower()))
+    return {"family": "", "code": "", "rows": rows}
+
+
+def aligned(got, card_title, card_issuer, statewide, index=None):
+    """exhibits.js relAligned: {"kind": "self" | in_use_statewide | in_use_most_used, "o"} or None. `index` is the
+    whole index (exhibits.js state.rel.by), for the card's own title; without it, the related rows stand in."""
+    t0, iss = (card_title or "").strip(), (card_issuer or "").strip()
+    own = next((o for o in (index if index is not None else [x["o"] for x in got["rows"]]) if o["t"] == t0), None)
+    if t0 and own is not None and not own["proposed"] and t0 in statewide:
+        return {"kind": SELF, "o": own}
+    if not iss:
+        return None
+    in_ref = own is not None and not own["proposed"]
+    mine, levels = rel_words(t0), level_tokens(t0)
+    near = [x for x in got["rows"] if not x["o"]["proposed"] and x["o"]["t"] != t0 and x["o"]["issuer"] == iss
+            and (x["tier"] == 0 if got["family"] else x["tier"] <= 1)]
+    code = "" if got["family"] else paren_code(t0)
+    if code:
+        near = [x for x in near if paren_code(x["o"]["t"]) == code]
+
+    def by_use(x):
+        return use_key(x["o"])
+
+    # (f) the same levels; a card naming none may reach a statewide title that names one, under (c)'s lead alone.
+    sw = sorted((x for x in near if x["o"]["t"] in statewide
+                 and (not levels or level_tokens(x["o"]["t"]) == levels)), key=by_use)
+    if in_ref:
+        # (g) a card already on a reference title keeps it, unless a statewide title has the same words and levels.
+        sw = [x for x in sw if rel_words(x["o"]["t"]) == mine and level_tokens(x["o"]["t"]) == levels]
+    if sw:
+        if len(sw) > 1 and sw[0]["o"]["locals"] < STATEWIDE_LEAD * sw[1]["o"]["locals"]:
+            return None
+        return {"kind": STATEWIDE, "o": sw[0]["o"]}
+    if in_ref:
+        return None
+    pool = [x for x in near if level_tokens(x["o"]["t"]) == levels
+            and (got["family"] or words_within(mine, rel_words(x["o"]["t"])))]
+    if not pool:
+        return None
+    top = sorted(pool, key=by_use)[0]
+    if top["o"]["locals"] < POPULAR_MIN:
+        return None
+    if any(x is not top and x["o"]["locals"] >= top["o"]["locals"] for x in pool):
+        return None
+    return {"kind": MOST_USED, "o": top["o"]}
+
+
+def in_use(index, statewide, title, raw, issuer, own_issuer=False):
+    """The title in use for a card proposing `title` under `issuer` (the box's issuer, issuer_for), or None.
+    `own_issuer` (h): a credit-by-exam card keeps its own issuer; a title in ASE's form does not make ASE its issuer,
+    and an ASE card that is credit by exam names nothing: a precedent sits the other way (a credit-by-exam AUTO A1
+    title is under ASE A1 in the reference), so where such a card belongs is Sam's call (the review of #3168)."""
+    if own_issuer and ase_of(title, raw, issuer):
+        return None
+    iss = (issuer or "") if own_issuer else issuer_for(title, issuer)
+    return aligned(related(index, title, raw, iss), title, iss, statewide, index)

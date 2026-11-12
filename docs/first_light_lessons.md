@@ -404,3 +404,16 @@ session cannot reach it), and a page whose marks save to its own store for a ses
 - **One write at a time per document.** Two quick clicks on one painting would overlap writes; `save()` now queues each painting's writes.
 - **A local preview without a charset garbles a middle dot** ("Â·"); the published skeleton declares UTF-8, and the tag line now joins with a comma.
 - **First Light's current set includes Ansel Adams's photograph** "The Tetons and the Snake River"; Sam may drop it in the gallery.
+
+## 2026-11-12 (S642 SkyKestrel): a tab for the rotation, and Sam's marks
+
+- Sam asked for a COBI tab to edit First Light and to list the hero photos that cycle on the public views. Phase A
+  (#3162) shows them and writes nothing; editing is phase B, so a read-only tab could ship the same morning while
+  COBIx read the editing design. The hero photos had three copies; `library/photos/hero_photos.json` is now the one
+  list, and a drift test holds the copies to it until phase B removes them.
+- The tab joins the menu visible to everyone until a `cobi_nav` row narrows it; its row sets `magic_link`, the rung its
+  own pane checks. A new reviewer tab needs that row in the same session.
+- Sam's 318 gallery marks were applied on #3159 (drafted for him): the rotation grows from 89 to 271. Most new entries
+  lack a date or a collection, which the Commons records do not carry; they read "undated" and "Collection not
+  recorded" rather than a guess.
+

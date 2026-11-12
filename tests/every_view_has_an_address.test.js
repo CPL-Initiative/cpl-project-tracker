@@ -31,7 +31,8 @@ const TABS = [
   ["college-briefing", ["college_briefing.js"]], ["cpl-pathways", ["cpl_pathways.js"]], ["cpl-news", ["cpl_news.js"]],
   ["nc-learning-partners", ["nc_learning_partners.js"]], ["gr-priorities", ["gr_priorities.js"]], ["commons", ["commons.js"]],
   ["map-data-quality", ["map_data_quality.js", "map_cleanup_views.js"]], ["admin", ["admin.js"]],
-  ["activities-projects", ["dashboard_filters.js"]], ["contracts", ["contracts.js"]], ["map-queue", ["map_team_queue.js"]]
+  ["activities-projects", ["dashboard_filters.js"]], ["contracts", ["contracts.js"]], ["map-queue", ["map_team_queue.js"]],
+  ["first-light", ["first_light_tab.js"]]
 ];
 const READS_OWN_ROUTE = { "exhibits": 1, "cr-reference": 1, "program-requirements": 1, "credential-reference": 1, "canonical-subj4": 1, "coci-lookup": 1, "letters": 1 };
 

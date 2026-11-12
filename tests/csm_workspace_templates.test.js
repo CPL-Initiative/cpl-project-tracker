@@ -56,7 +56,7 @@ function setup(signedIn) {
 }
 
 (async function () {
-  const { window, doc, W, root } = setup(true);
+  const { window, doc, T, W, root } = setup(true);
   W._state.view = "all"; W._state.sel = COLLEGE; W.paint();
 
   // ── 1. the shipped wording ──
@@ -95,10 +95,29 @@ function setup(signedIn) {
     word().getAttribute("aria-expanded") === "false" && !pn());
   clickEl(window, word());
   const pick = () => root.querySelector("#cw-tpls-id"), subj = () => root.querySelector("#cw-tpls-subj"), body = () => root.querySelector("#cw-tpls-body");
-  check("5b: opened, the pane offers the four emails the dashboard writes, the lead ask first, with the shipped wording and the words that fill in",
-    !!pn() && Array.prototype.map.call(pick().options, (o) => o.value).join() === "lead,both,nudge,follow" && pick().value === "lead" &&
+  check("5b: opened, the pane offers every email the page writes (six), the lead ask first, with the shipped wording and the words that fill in",
+    !!pn() && Array.prototype.map.call(pick().options, (o) => o.value).join() === "lead,both,nudge,accept,request_follow,follow" && pick().value === "lead" &&
     subj().value === "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for {college}" && /\{close_title\}/.test(body().value) &&
     /The wording the dashboard ships with\./.test(flat(pn())) && /\{deadline\}/.test(flat(pn())) && !!pn().querySelector('label[for="cw-tpls-body"]'));
+  // Asked in session, 2026-11-12: "make sure that every single Email template is contained in the Email Template
+  // editor". The acceptance and the follow-up on a request are the funding tab's emails; they are edited here too, and
+  // the funding tab writes from the saved wording.
+  {
+    const choose = (v) => { pick().value = v; pick().dispatchEvent(new window.Event("change", { bubbles: true })); };
+    choose("accept");
+    const fd = T.csm.templateDefaults();
+    check("5b2: the acceptance opens with the funding tab's own wording and the words it fills in",
+      /\{request\} accepted for \{college\}/.test(subj().value) && fd.accept.indexOf(subj().value) >= 0 && /\{date\}/.test(body().value) &&
+      /\{request\} participation confirmation, or noncredit attestation/.test(flat(pn())) && !/\{deadline\}/.test(flat(pn().querySelector(".tplform"))) &&
+      /Implementation Funding writes this email from the same saved wording/.test(flat(pn())));
+    choose("request_follow");
+    check("5b3: the follow-up on a request under review opens with its wording", /a follow-up on the \{request\} for \{college\}/.test(subj().value) && /\{note\}/.test(body().value));
+    check("5b4: every wording the record's Template menu offers has a place here (Blank has none to keep)",
+      ["accept", "accept_nc", "follow", "nudge", "lead", "both"].every((id) => pick().querySelector('option[value="' + (id === "accept_nc" ? "accept" : id) + '"]')) &&
+      (function () { const m = /var TEMPLATES = \[([\s\S]*?)\];/.exec(SRC); return !!m && (m[1].match(/\{ id: "[a-z_]+"/g) || []).join() ===
+        '{ id: "accept",{ id: "accept_nc",{ id: "follow",{ id: "nudge",{ id: "lead",{ id: "both",{ id: "blank"'; })());
+    choose("lead");
+  }
   check("5c: the preview shows the chosen college's email", /Preview for Pasadena/.test(flat(pn().querySelector("details.tplprev summary"))) &&
     /for Pasadena/.test(flat(pn().querySelector("details.tplprev"))));
 

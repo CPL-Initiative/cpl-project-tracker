@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "SPANISH LANGUAGE AND CIVILIZATION: INTERMEDIATE LEVEL",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9553,
+  "input_tokens": 6536,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9553,
-    "output_tokens": 1270,
+    "input_tokens": 6536,
+    "output_tokens": 1012,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1270,
+  "output_tokens": 1012,
   "output_tokens_details": {
-   "thinking_tokens": 419
+   "thinking_tokens": 269
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06361,
- "ms": 10524,
- "seconds": 11.1,
+ "cost_usd": 0.04638,
+ "ms": 8708,
+ "seconds": 9.2,
  "parts": null,
  "error": null,
  "score": {
@@ -181,13 +181,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Intermediate Level Certificate of Achievement section on catalog page 135 (PDF page 136); the Elementary Level certificate and Spanish AA sections on the same pages were ignored.",
-   "Catalog prints codes with leading zeros (SPANISH 003, 004, 007, 009, 010); these match closed-list SPANISH 3, 4, 7, 9, 10.",
-   "SPANISH 009 units printed as '.3' (dot leader artifact); recorded as 3.",
-   "Outcomes rejoined across hyphenated line breaks (e.g. 'For - eign' as 'Foreign', 'Profi - ciency' as 'Proficiency').",
-   "The description mentions 'employment, and professional advancement' but names no specific career, so careers is empty."
+   "Catalog prints codes zero-padded (SPANISH 003, 004, 007, 009, 010); matched to closed-list SPANISH 3, 4, 7, 9, 10.",
+   "Outcome text rejoined across PDF hyphenation line breaks ('For -eign' -> 'Foreign', 'Profi -ciency' -> 'Proficiency').",
+   "No careers named; description mentions only 'employment, and professional advancement'."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "f97d5e284b4a2068",
+ "source_codes": [
+  "SPANISH10",
+  "SPANISH3",
+  "SPANISH4",
+  "SPANISH7",
+  "SPANISH9"
+ ],
+ "source_coverage": 1.0
 }

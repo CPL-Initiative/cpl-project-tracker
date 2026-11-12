@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Pathway to Citizenship",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=346",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8155,
+  "input_tokens": 6208,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8155,
-    "output_tokens": 633,
+    "input_tokens": 6208,
+    "output_tokens": 655,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 633,
+  "output_tokens": 655,
   "output_tokens_details": {
-   "thinking_tokens": 193
+   "thinking_tokens": 203
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04528,
- "ms": 6731,
- "seconds": 7.0,
+ "cost_usd": 0.03793,
+ "ms": 6694,
+ "seconds": 6.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "ESLCVCS13CE",
-    "ESLCVCS14CE"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,26 +61,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 0 Units, 3 Hrs, 0 Units, 3 Hrs"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    108.0,
+    108.0
+   ],
+   "stated": [
+    108.0,
+    108.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -95,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "NONCREDIT COURSES",
+   "section_heading": "Pathway to Citizenship Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 108,
+    "max": 108
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,26 +121,52 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Students express their understanding of American History and Government in a mock oral interview.",
+    "Students recall critical elements of American History and Government in the written exam of the Naturalization test."
+   ],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "ESLCVCS 013CE",
-    "why": "only a course description in the text; no requirements section for this program"
-   },
-   {
-    "code": "ESLCVCS 014CE",
-    "why": "only a course description in the text; no requirements section for this program"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESLCVCS 013CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESLCVCS 014CE",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 346) is the noncredit course descriptions list, not the Pathway to Citizenship program section, so no blocks, total, outcomes or careers are recorded. A reviewer should locate the program's own requirements page.",
-   "Measure set to hours because this is a noncredit program; the text prints no program hours. The course entries print 0 Units and Lec 3 Hrs (ESLCVCS 013CE and 014CE), which may be weekly lecture hours rather than total hours.",
-   "ESLCVCS 015CE (ESL AND CIVICS VI) is described on the same page but is not in the closed list. Whether it belongs to this program is not stated."
+   "The catalog titles this award a Certificate of Competency (noncredit). Its total is printed as 'Total Lecture Hrs: 108', so the measure is hours and total_units is 108.",
+   "Hyphenated line breaks in the outcomes ('Gov -ernment') were read as single words ('Government')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "67800b94547b9e2d",
+ "source_codes": [
+  "ESLCVCS13CE",
+  "ESLCVCS14CE"
+ ],
+ "source_coverage": 1.0
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # The daily dashboard's build, written once (COBIx #3110 finding 8, S641). .github/workflows/daily-dashboard.yml
-# runs it as one step, "Build the dashboard and its kb files"; when the push meets a rebase conflict, the
-# "Commit and push to main" step resets to the new origin/main and runs it again FROM THAT TREE, once.
+# runs it as one step, "Build the dashboard and its kb files"; when the push meets a rebase conflict, or a clean
+# rebase that changes a build input, the commit step resets to the new origin/main and reruns it FROM THAT TREE.
 # dependency-map: inline (kb/_build_dependency_map.py reads these commands as the workflow's own)
 #
 # Each block below was one workflow step, kept in the same order, with its comments. `step NAME [SECRET ...]`

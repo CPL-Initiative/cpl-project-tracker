@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-12_first_light_marks.sql",
+ "name": "s643_first_light_marks",
+ "version": "20261112213152",
+ "sha256": "888c6c0d639e58a9e7d387b1f3b9bcc9eff22ca3eff9c961c1c0e85e870f7838",
+ "run": "43310349633",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

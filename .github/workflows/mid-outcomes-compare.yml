@@ -1,0 +1,52 @@
+name: MID outcomes compare (read-only)
+# MID re-clustering Step 1 (#2962, S642): kb/_mid_outcomes_compare.py reads public.course_outcomes through
+# PostgREST (GET only, Range-paginated) beside the committed members and descriptions, and writes the dated
+# comparison under kb/status/. It writes no table, no M-ID and no generated artifact. This job commits only
+# kb/status/mid_outcomes_compare_<date>.md and .json, to the branch it was dispatched on.
+#
+# Dispatch only: no schedule, no push trigger. The job holds no secret: course_outcomes grants select to anon
+# (chatbox/supabase_course_outcomes.sql), so it reads with the public anon key every COBI page already ships
+# (reviewer_signin.js), passed as SUPABASE_ANON_KEY. A missing key, or a read short of the table's exact count,
+# fails the step; it never falls back to the committed reads (COBIx on #3165, 2026-11-12).
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mid-outcomes-compare-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Compare against the live table (anon key, read-only)
+        run: |
+          SUPABASE_ANON_KEY=$(sed -n 's/.*var SUPABASE_ANON = "\([^"]*\)".*/\1/p' reviewer_signin.js | head -1)
+          if [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "::error::No anon key found in reviewer_signin.js; the live read does not fall back."; exit 1
+          fi
+          export SUPABASE_ANON_KEY
+          python3 kb/_mid_outcomes_compare.py --source live
+
+      - name: Commit the report only
+        run: |
+          git add kb/status/mid_outcomes_compare_*.md kb/status/mid_outcomes_compare_*.json
+          if git diff --cached --quiet; then echo "No change to the report."; exit 0; fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git commit -m "MID outcomes compare: the dated report (#2962, dispatch ${GITHUB_RUN_ID})"
+          for i in 1 2 3; do
+            git pull --rebase -q origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            sleep 10
+          done
+          exit 1

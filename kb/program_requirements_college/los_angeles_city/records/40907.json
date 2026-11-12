@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "ADULT BASIC EDUCATION",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7450,
+  "input_tokens": 6733,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7450,
-    "output_tokens": 758,
+    "input_tokens": 6733,
+    "output_tokens": 452,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 758,
+  "output_tokens": 452,
   "output_tokens_details": {
-   "thinking_tokens": 240
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04496,
- "ms": 7793,
- "seconds": 8.1,
+ "cost_usd": 0.03597,
+ "ms": 4575,
+ "seconds": 4.7,
  "parts": null,
  "error": null,
  "score": {
@@ -158,10 +158,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit certificate of competency counted in hours; total from 'Total Lecture Hrs: 153', which equals the 36 + 117 hours printed beside the two required courses.",
-   "The heading reads 'REQUIRED COURSE' (singular), but two courses are listed under it; both are recorded as required.",
-   "The page also prints Academic Preparation and College Readiness Math Fundamentals I certificates; those sections were not read."
+   "Measured in hours: 'Total Lecture Hrs: 153'; course hours 36 + 117 match the stated total.",
+   "The following section (College Readiness Math Fundamentals I) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "a162f35d30f3edce",
+ "source_codes": [
+  "BSICSKL23CE",
+  "BSICSKL34CE"
+ ],
+ "source_coverage": 1.0
 }

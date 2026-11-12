@@ -1,0 +1,165 @@
+name: Sierra ghost-row delete (chatbox_credentials)
+
+# Removes the ghost rows of Supabase chatbox_credentials, Sierra's credential table: live rows whose unified_title
+# credential_reference_data.js no longer holds. kb/_sync_credential_catalog.py (credential-catalog-sync.yml) upserts
+# by unified_title and never deletes, so a renamed, merged or retired title stays live and Sierra, the College
+# Briefing and CPL Pathways read it as current. Sam, Open Asks Sheet 183 card 6, 12:17Z 2026-11-12: "delete"
+# (cpl_memory d-sheet-183-replies-2026-11-12).
+#
+# workflow_dispatch only; no schedule and no automatic delete anywhere: the sync stays upsert-only.
+#   mode=plan   reads the table, writes kb/receipts/chatbox_ghost_delete_<UTC>/plan.json (the ghosts' full
+#               before-rows), deletes nothing. Read its summary line in the log and the plan before an apply.
+#   mode=apply  plan_dir=<that directory>, confirm_count=<the plan's ghost_count>. Refuses a wrong count, a reference
+#               whose sha256 is not the plan's (the daily run rebuilds the reference at 06:17, 09:17 and 12:17 UTC,
+#               so plan and apply in one window between them), more than 15% of live rows, or a reference under
+#               2,000 titles. Holds a ghost whose alias successor's live raw_variants lack its old name until the
+#               sync has written it (sync first, then delete; allow_unaliased overrides). Files apply_log.json before the first delete and applied.json from a fresh read.
+#   mode=undo   plan_dir=<that directory>: re-inserts the before-rows ON CONFLICT DO NOTHING, files undone.json.
+# Every mode commits its receipt directory to main, also when the script exits 1.
+#
+# concurrency: credential-catalog-sync, the group of credential-catalog-sync.yml, the one writer of this table, so
+# a delete and the nightly upsert (13:20 UTC) never run at once. Not the daily-dashboard group: this writes no file
+# the daily reads, and that group's membership is pinned (tests/apply_concurrency_test.py). GitHub keeps one pending
+# run per group, so dispatch this while no sync is waiting in the group.
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "plan (read, write the receipt, delete nothing), apply, or undo"
+        required: true
+        default: plan
+        type: choice
+        options: [plan, apply, undo]
+      plan_dir:
+        description: "apply / undo: the receipt directory a plan run committed (kb/receipts/chatbox_ghost_delete_<UTC>)"
+        required: false
+        default: ""
+        type: string
+      confirm_count:
+        description: "apply: the plan's ghost_count, exactly"
+        required: false
+        default: ""
+        type: string
+      allow_unaliased:
+        description: "apply: delete a ghost even when its alias successor's raw_variants lack its old name (off: run the sync first)"
+        required: false
+        default: false
+        type: boolean
+
+concurrency:
+  group: credential-catalog-sync
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+
+      - name: Check the inputs
+        env:
+          MODE: ${{ inputs.mode }}
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          CONFIRM: ${{ inputs.confirm_count }}
+        run: |
+          set -euo pipefail
+          if [ "$MODE" = "plan" ]; then
+            echo "mode plan: reads the table and writes a receipt; deletes nothing."
+            exit 0
+          fi
+          case "$PLAN_DIR" in
+            kb/receipts/chatbox_ghost_delete_20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]T[0-9][0-9]-[0-9][0-9]-[0-9][0-9]Z) ;;
+            *) echo "::error::plan_dir must be kb/receipts/chatbox_ghost_delete_<YYYY-MM-DDTHH-MM-SSZ>"; exit 1 ;;
+          esac
+          if [ ! -f "$PLAN_DIR/plan.json" ]; then
+            echo "::error::$PLAN_DIR/plan.json is not on main"
+            exit 1
+          fi
+          if [ "$MODE" = "apply" ]; then
+            case "$CONFIRM" in
+              ''|*[!0-9]*) echo "::error::confirm_count must be the plan's ghost_count, a whole number"; exit 1 ;;
+            esac
+          fi
+          echo "inputs OK: $MODE $PLAN_DIR"
+
+      - name: Run kb/_chatbox_ghost_delete.py
+        id: run
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          MODE: ${{ inputs.mode }}
+          PLAN_DIR: ${{ inputs.plan_dir }}
+          CONFIRM: ${{ inputs.confirm_count }}
+          ALLOW_UNALIASED: ${{ inputs.allow_unaliased }}
+        run: |
+          set -euo pipefail
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
+            echo "::error::SUPABASE_SERVICE_KEY not set"
+            exit 1
+          fi
+          EXTRA=""
+          if [ "$ALLOW_UNALIASED" = "true" ]; then EXTRA="--allow-unaliased"; fi
+          case "$MODE" in
+            plan)  python3 kb/_chatbox_ghost_delete.py plan ;;
+            apply) python3 kb/_chatbox_ghost_delete.py apply --plan "$PLAN_DIR" --confirm-count "$CONFIRM" $EXTRA ;;
+            undo)  python3 kb/_chatbox_ghost_delete.py undo --plan "$PLAN_DIR" ;;
+          esac
+
+      # Before the commit, so a lost push still keeps apply_log.json, applied.json and undone.json with the run.
+      - name: Upload the receipt directory
+        if: always() && steps.run.outputs.receipt_dir != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: chatbox-ghost-delete-receipt-${{ github.run_id }}
+          path: ${{ steps.run.outputs.receipt_dir }}
+          if-no-files-found: warn
+          retention-days: 90
+
+      - name: Commit the receipt
+        if: always() && steps.run.outputs.receipt_dir != ''
+        env:
+          RECEIPT: ${{ steps.run.outputs.receipt_dir }}
+          MODE: ${{ inputs.mode }}
+          OUTCOME: ${{ steps.run.outcome }}
+        run: |
+          set -euo pipefail
+          test -d "$RECEIPT" || { echo "no receipt directory written"; exit 0; }
+          cp -r "$RECEIPT" "$RUNNER_TEMP/receipt"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main && git reset --hard origin/main
+            rm -rf "$RECEIPT" && mkdir -p "$RECEIPT" && cp -r "$RUNNER_TEMP/receipt/." "$RECEIPT/"
+            git add "$RECEIPT"
+            if git diff --cached --quiet; then
+              echo "The receipt is already on main."
+              exit 0
+            fi
+            git commit -m "Sierra ghost rows: $MODE receipt ($RECEIPT, outcome $OUTCOME)" \
+              -m "chatbox_credentials ghost-row delete (Sam, Open Asks Sheet 183 card 6). plan.json holds the full before-rows; applied.json and undone.json come from a fresh read. Undo: chatbox-ghost-delete.yml mode=undo plan_dir=$RECEIPT."
+            if git push origin HEAD:main; then
+              echo "Pushed on attempt $attempt."
+              exit 0
+            fi
+            sleep $((attempt * 2))
+          done
+          echo "::error::The receipt could not be pushed; it is in this run's log only."
+          exit 1
+
+      - name: Fail when the script did
+        if: steps.run.outcome == 'failure'
+        run: |
+          echo "::error::kb/_chatbox_ghost_delete.py exited non-zero; read its last lines above and the committed receipt."
+          exit 1

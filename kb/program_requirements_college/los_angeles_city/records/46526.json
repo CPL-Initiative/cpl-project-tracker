@@ -1,0 +1,400 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "46526",
+ "shape": "adt",
+ "title": "Chicana/o Studies, Latina/o Studies",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=177",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 13384,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 13384,
+    "output_tokens": 2943,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2943,
+  "output_tokens_details": {
+   "thinking_tokens": 869
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.1124,
+ "ms": 22241,
+ "seconds": 22.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 22,
+   "listed": 22,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     58.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     2.0,
+     8.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Chicana/o Studies, Latina/o Studies Associate in Arts (AA-T) Degree",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CalGETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 34,
+    "max": 34
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Analyze the historical experiences of Chicana/o/x peoples from indigenous roots through Spanish colonization, Mexican independence, U.S. conquest, and contemporary times, demonstrating understanding of continuity and change over time",
+    "Apply intersectional frameworks and decolonial methodologies to examine how race, class, gender, sexuality, citizenship status, and other social categories shape Chicana/o/x experiences and identities.",
+    "Interpret and evaluate diverse forms of Chicana/o/x cultural production including literature, visual arts, music, film, and performance, recognizing their role in resistance, identity formation, and community building.",
+    "Conduct research using appropriate academic sources and community-based methodologies, and effectively communicate findings through written, oral, and multimedia formats using discipline-specific terminology.",
+    "Examine contemporary issues affecting Chicana/o/x and Latina/o/x communities (including education, immigration, labor, health, and environmental justice) and evaluate strategies for social transformation and community empowerment.",
+    "Compare and contrast the Chicana/o/x experience with other racial/ethnic groups in the United States and analyze transnational connections with Mexico, Latin America, and global indigenous movements."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED CORE (9 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CHICANO 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST A: COMPLETE ONE COURSE (3-5 UNITS TOTAL)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "CHICANO 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGLISH 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILOS 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 002",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIST B: COMPLETE TWO COURSES (6-10 UNITS TOTAL)",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "CHICANO 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPANISH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "CHICANO 007 and CHICANO 044 appear in both List A and List B; List B allows them only if not already used for List A.",
+   "degree_total 60 taken from the award header 'Total Units: Minimum of 60'; ge_units 34 from the ADT requirement text 'CalGETC ... (34 semester/45 quarter units)'.",
+   "The overview calls it an 'eighteen-unit degree' while the header prints Major Units 18-24; total_units recorded as 18-24.",
+   "Closed-list codes matched despite formatting differences (e.g., AFROAM005 = AFRO AM 005, HISTC1001 = HIST C1001, CHICANO 4 = CHICANO 004).",
+   "No careers are named in this program's section."
+  ]
+ },
+ "extracted_run": "43212072618",
+ "source_sha": "c01012ad6b4d32be",
+ "source_codes": [
+  "AFROAM5",
+  "CHICANO4",
+  "CHICANO44",
+  "CHICANO47",
+  "CHICANO7",
+  "CHICANO8",
+  "ENGLC1001",
+  "ENGLISH102",
+  "FRENCH3",
+  "FRENCH4",
+  "GEOG2",
+  "HISTC1001",
+  "HISTC1002",
+  "HISTORY86",
+  "HISTORY87",
+  "PHILOS5",
+  "POLSC1000",
+  "SPANISH1",
+  "SPANISH10",
+  "SPANISH2",
+  "SPANISH3",
+  "SPANISH4"
+ ],
+ "source_coverage": 1.0
+}

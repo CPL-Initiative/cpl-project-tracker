@@ -1,0 +1,33 @@
+{
+ "_readme": "The photos that cycle at the top of three views, in play order, one list (Sam, 2026-11-12, #3153: \"this is where we should list our photos we cycle on our cobi views as well\"). COBI's First Light tab (first_light_tab.js) reads it. The three views still carry their own copies of this order until phase B points them here; tests/first_light_tab.test.js fails if any copy differs from this file. file is relative to library/photos/. On the public views every photo is decorative (alt=\"\", aria-hidden); alt here describes each photo for the First Light tab only. The first is the student from Malone's page; the other ten are the Career Education toolkit photos Sam supplied (Sheet 124 card 1), cropped 4:3.",
+ "pace_ms": 7000,
+ "views": [
+  {"id": "library", "name": "CPL Library", "page": "library/index.html"},
+  {"id": "credential-catalog", "name": "Credential Catalog", "page": "library/adopt/index.html"},
+  {"id": "cpl-pathways", "name": "CPL Pathways (statewide view)", "page": "cpl_pathways.js"}
+ ],
+ "photos": [
+  {"file": "hero-student-1.jpg", "width": 598, "height": 448, "source": "Malone's CPL/AI page", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A smiling student with long dark hair in a denim jacket, palm trees and a campus building behind her."},
+  {"file": "hero-architecture.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "An instructor unrolls building plans for three students at a drafting table among architecture models."},
+  {"file": "hero-welding-2.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A student in safety glasses and work gloves hammers glowing metal on an anvil beside a forge."},
+  {"file": "hero-biotech.jpg", "width": 1200, "height": 900, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A student in a lab coat and gloves smiles beside a microscope, two classmates working behind her."},
+  {"file": "hero-construction.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A student in safety glasses fits a wood frame together as an instructor looks on, a circular saw in front."},
+  {"file": "hero-health.jpg", "width": 922, "height": 692, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A dental student in a mask, loupes and a disposable gown works with instruments in gloved hands."},
+  {"file": "hero-fashion.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "Three fashion students lean over a cutting table, one explaining as the others watch."},
+  {"file": "hero-transportation.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A student in safety glasses and a shop shirt turns over a vehicle starter motor in his hands."},
+  {"file": "hero-manufacturing.jpg", "width": 1200, "height": 900, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "Three people in welding helmets at a steel table, sparks flying from the work in front of them."},
+  {"file": "hero-ict.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "Two students at a computer workstation, one typing while the other watches the screen."},
+  {"file": "hero-welding-1.jpg", "width": 1001, "height": 750, "source": "Career Education toolkit", "plays": ["library", "credential-catalog", "cpl-pathways"],
+   "alt": "A welder in a helmet, leather jacket and red gloves cuts steel held by clamps, sparks falling below."}
+ ]
+}
