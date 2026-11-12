@@ -457,11 +457,16 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   t = load({ signedIn: true });
   await t.M.boot(); await settle();
   check("the first card is the Proposed one, its issuer the proposal's", current(t.d) === DM && t.d.getElementById("exh-issuer").value === "Local High School");
-  // Sam, later the same day: "Agree on your call on the college as issuer". A course aligned to a test keeps its
-  // own issuer; only the certification's title names ASE.
-  title(t.d).value = "Engine Performance (ASE A8)"; title(t.d).dispatchEvent(new t.w.Event("input"));
+  // Sam, later the same day: "Agree on your call on the college as issuer". A course aligned to a test, its own
+  // name leading and the test in parentheses with its words, keeps its own issuer; the certification's title names ASE.
+  title(t.d).value = "Engine Performance 1 (ASE A8 Engine Performance)"; title(t.d).dispatchEvent(new t.w.Event("input"));
   const aseNote = Array.from(t.d.querySelectorAll(".exh-canon p")).find(function (p) { return /Issuer filled: the title is an ASE certification/.test(txt(p)); });
   check("a course aligned to an ASE test keeps the proposal's issuer", t.d.getElementById("exh-issuer").value === "Local High School" && aseNote && aseNote.hidden);
+  // Sam, 2026-11-11 (#3110 ruling 1): the canonical title carries the credential's issuer. "Engine Performance (ASE A8)"
+  // is the certification's own name in the 2026-11-11 format, so it names ASE; the college shows on its local exhibit.
+  title(t.d).value = "Engine Performance (ASE A8)"; title(t.d).dispatchEvent(new t.w.Event("input"));
+  check("the certification's name in the new format fills the issuer box with ASE",
+    t.d.getElementById("exh-issuer").value === "National Institute for Automotive Service Excellence (ASE)" && !aseNote.hidden);
   title(t.d).value = "ASE A8 — Engine Performance"; title(t.d).dispatchEvent(new t.w.Event("input"));
   check("an ASE certification's title fills the issuer box with ASE and says why",
     t.d.getElementById("exh-issuer").value === "National Institute for Automotive Service Excellence (ASE)" && !aseNote.hidden);
@@ -481,7 +486,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   t.M._state.drafts[AP] = { title: "ASE A5 — Brakes" };
   let bi = t.M._bulkItems(t.M._shown()).find(function (it) { return it.raw === AP; });
   check("Accept all gives an ASE certification's title its ASE issuer", bi && bi.issuer === "National Institute for Automotive Service Excellence (ASE)");
-  t.M._state.drafts[AP] = { title: "Brakes (ASE A5)" };
+  t.M._state.drafts[AP] = { title: "Automotive Technology (ASE A5 Brakes)" };
   bi = t.M._bulkItems(t.M._shown()).find(function (it) { return it.raw === AP; });
   check("and keeps a course's issuer", bi && bi.issuer === "College Board");
   check("one letter offers nothing; a word start sorts ahead of a match inside a word",
@@ -489,8 +494,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     && t.M._nameMatches(["Western Training Co", "Training Center West", "Untrained"], "train").join("|") === "Training Center West|Western Training Co|Untrained");
   check("training sites to pick from come from the file and the held titles' sites",
     t.M._nameOptions("sites").indexOf("Kern County JATC") !== -1 && t.M._nameOptions("issuers").indexOf("National Institute for Automotive Service Excellence (ASE)") !== -1);
-  check("ASE reads only at the head of a certification's title", t.M._aseIssuer("Phase Change") === "" && t.M._aseIssuer("Automotive Service Excellence G1") !== ""
-    && t.M._aseIssuer("Engine Performance (ASE A8)") === "" && t.M._aseIssuer("ASE G1 — Auto Maintenance and Light Repair") !== "");
+  check("ASE reads at the head of a certification's title, or as its code alone in closing parentheses", t.M._aseIssuer("Phase Change") === "" && t.M._aseIssuer("Automotive Service Excellence G1") !== ""
+    && t.M._aseIssuer("Engine Performance 1 (ASE A8 Engine Performance)") === "" && t.M._aseIssuer("Engine Performance (ASE A8)") !== "" && t.M._aseIssuer("ASE G1 — Auto Maintenance and Light Repair") !== "");
   delete REVIEW.issuers; delete REVIEW.sites;
 
   // the file could not be read

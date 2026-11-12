@@ -15,10 +15,14 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-597 document(s).
+601 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 640 | [Session 640 handoff (from SkyQuail, S639)](../session_640_handoff.md) | 2026-11-12 |
+| 639 | [Session 639 handoff (from SkyTamarind, S638)](../session_639_handoff.md) | 2026-11-11 |
+| 638 | [Session 638 handoff (from SkyPorpoise, S637)](../session_638_handoff.md) | 2026-11-11 |
+| 637 | [Session 637 handoff: Butte 87 to 138 of 164 and displayed, the reconcile's address guard, a stale-issuer report](../session_637_handoff.md) | 2026-11-11 |
 | 636 | [Session 636 handoff: Sheet 180's rulings carried out (CCR seed confirm, Las Positas, Alameda, the issuers), the dashboard's sign-in](../session_636_handoff.md) | 2026-11-10 |
 | 635 | [Session 635 handoff: the Library reads any file and drafts a new piece on its card; Pages deploys are timing out](../session_635_handoff.md) | 2026-11-10 |
 | 634 | [Session 634 handoff: Las Positas and De Anza merged, the exhibit re-analysis's Jev runner, Open Asks Sheet 180](../session_634_handoff.md) | 2026-11-10 |

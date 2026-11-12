@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 631 (SkyMayall, the CPL Queue routine, 2026-11-10 13:20Z to ~13:55Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 632

@@ -1,0 +1,3102 @@
+{
+ "schema": 1,
+ "_about": "Credentials with no Common SUBJ after the subject fill (kb/_exhibit_subject_fill.py), each with why, and a suggested subject from its title words where one exists. A suggestion is never a decision: title words were wrong on ASE MIL7 (Sam, 2026-11-11). The Commons' Exhibit card counts `no_subject`.",
+ "rule": "A credential with no Common SUBJ takes the subject of the courses colleges credit for it (over half of them, several colleges first, then one), else its issuer family's; title words, TOP and CIP never decide; a family or certification link that names another subject holds it for a person; a subject already on the title always wins.",
+ "written_at": "2026-11-11T21:41:28Z",
+ "mode": "on",
+ "live_read": true,
+ "by_rung": {
+  "courses, several colleges": 29,
+  "courses, one college": 709,
+  "issuer family": 9
+ },
+ "written": 747,
+ "not_yet_written": 0,
+ "no_subject": 362,
+ "left": 362,
+ "left_exhibits": 429,
+ "suggested": 70,
+ "not_held": [
+  "Theater Arts"
+ ],
+ "items": [
+  {
+   "title": "3D Digital Modeling",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-3DMH-1-001"
+   ],
+   "suggested": "MAKR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "AAG Industry Recognized Training",
+   "why": "no signal",
+   "issuer": "Automotive Apprenticeship Group (AAG)",
+   "exhibits": [
+    "MAPICI-AIRT-1-001"
+   ]
+  },
+  {
+   "title": "ACE Certified Personal Trainer",
+   "why": "no signal",
+   "issuer": "American Council on Exercise (ACE)",
+   "exhibits": [
+    "MAPICI-ACOE-1-001"
+   ]
+  },
+  {
+   "title": "AP French Literature",
+   "why": "no signal",
+   "issuer": "College Board",
+   "exhibits": [
+    "MAPSAS-AFL2-1-001",
+    "MAPSAS-AFL7-1-001"
+   ]
+  },
+  {
+   "title": "AP Latin Literature",
+   "why": "no signal",
+   "issuer": "College Board",
+   "exhibits": [
+    "MAPSAS-AL-L-1-001",
+    "MAPSAS-ALL-1-001",
+    "MAPSAS-ALL1-1-001"
+   ]
+  },
+  {
+   "title": "AP Russian Language and Culture",
+   "why": "no signal",
+   "issuer": "College Board",
+   "exhibits": [
+    "MAPSAS-ARL&-1-001"
+   ]
+  },
+  {
+   "title": "AWS B2.2/B2.2M Brazing Performance Qualification",
+   "why": "held: the issuer family or a certification link names another subject",
+   "issuer": "American Welding Society (AWS)",
+   "exhibits": [
+    "MAPICI-AWSB-1-001"
+   ],
+   "courses": "HVAC",
+   "family": [
+    "WELD"
+   ],
+   "votes": {
+    "HVAC": 1
+   }
+  },
+  {
+   "title": "Acute Medical/Surgical and Nursing of the Childbearing Family",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-RAMA-1-001"
+   ]
+  },
+  {
+   "title": "Adobe Illustrator 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Adobe InDesign 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Adobe Photoshop 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Adobe Photoshop Basics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G3AP-1-001"
+   ],
+   "suggested": "BSKL",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Adult CPR & Standard First Aid",
+   "why": "no signal",
+   "issuer": "American Red Cross / American Heart Association (varies)",
+   "exhibits": [
+    "MAPICI-HFA-1-001"
+   ]
+  },
+  {
+   "title": "Advanced CAD Modeling and Applications",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-CJU--1-001",
+    "MAPCXH-D-1-001",
+    "MAPCXH-RCHS-1-001"
+   ]
+  },
+  {
+   "title": "Agricultural Safety",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-N1AS-1-001"
+   ]
+  },
+  {
+   "title": "Agricultural and Industrial Technical Skills",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AAAI-1-001"
+   ]
+  },
+  {
+   "title": "Applications in Crime Analysis",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AJ3-1-1-001"
+   ]
+  },
+  {
+   "title": "Applied Graphic Design 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G1AG-1-001"
+   ]
+  },
+  {
+   "title": "Apprenticeship Work Experience",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-AWE-1-001"
+   ],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Arboriculture/Urban Forestry",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [],
+   "suggested": "ENVR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Art History",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRN-CCAH-1-001"
+   ]
+  },
+  {
+   "title": "Asian Art History",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-EFA8-1-001"
+   ]
+  },
+  {
+   "title": "AutoCAD Beginning",
+   "why": "no signal",
+   "issuer": "Autodesk",
+   "exhibits": [
+    "MAPPRP-AI-1-001"
+   ]
+  },
+  {
+   "title": "Autodesk Certified Professional",
+   "why": "no signal",
+   "issuer": "Autodesk",
+   "exhibits": [
+    "MAPICI-ACP(-1-001"
+   ]
+  },
+  {
+   "title": "Autodesk Certified User",
+   "why": "no signal",
+   "issuer": "Autodesk",
+   "exhibits": [
+    "MAPICI-ACU(-1-001"
+   ]
+  },
+  {
+   "title": "Basic Frame Scaffold",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICA-CSCC-1-001"
+   ]
+  },
+  {
+   "title": "Basic Mechanical Blueprint Reading",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-BMBR-1-001"
+   ]
+  },
+  {
+   "title": "Building Automation System (BAS) Certification — Manufacturer/Vendor",
+   "why": "no signal",
+   "issuer": "Johnson Controls Training Institute",
+   "exhibits": [
+    "MAPICI-MSBA-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Building Plans Examiner",
+   "why": "no signal",
+   "issuer": "International Code Council",
+   "exhibits": [
+    "MAPICI-BPE-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "C-4 Boiler, Hot Water Heating and Steam Fitting Contractor",
+   "why": "no signal",
+   "issuer": "Contractors State License Board (CSLB)",
+   "exhibits": [
+    "MAPICI-CBHW-1-001"
+   ],
+   "suggested": "HVAC",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "CAD/CAM Engineering",
+   "why": "no signal",
+   "issuer": "Lake Elsinore Unified School District (LEUSD)",
+   "exhibits": [
+    "MAPCxH-CEH-1-001"
+   ]
+  },
+  {
+   "title": "CAD/CAM Engineering Advanced",
+   "why": "no signal",
+   "issuer": "Lake Elsinore Unified School District (LEUSD)",
+   "exhibits": [
+    "MAPCxH-ACEH-1-001"
+   ]
+  },
+  {
+   "title": "CNC Operation",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-CO-1-001"
+   ]
+  },
+  {
+   "title": "CNPS Certified Field Botanist",
+   "why": "no signal",
+   "issuer": "California Native Plant Society (CNPS)",
+   "exhibits": [
+    "MAPICI-CFBC-1-001"
+   ],
+   "suggested": "ETHA",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "CPR for Healthcare Providers",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "California Building Code Certification",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-CBCC-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "California Residential Code Certification",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-CRCC-1-001"
+   ]
+  },
+  {
+   "title": "Career Exploration in Criminal Justice",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AJ0-10-1-001"
+   ],
+   "suggested": "CRIM",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Careers",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRI-AP-1-001"
+   ]
+  },
+  {
+   "title": "Carpentry: General Certificate of Achievement",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICA-CGCO-1-001"
+   ],
+   "suggested": "CARP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Certified Bloodstain Pattern Analyst (CBPA)",
+   "why": "no signal",
+   "issuer": "International Association for Identification (IAI)",
+   "exhibits": [
+    "MAPICI-CBPA-1-001"
+   ]
+  },
+  {
+   "title": "Certified Building Official",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-CBO(-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Certified Crime Scene Investigator (CCSI)",
+   "why": "no signal",
+   "issuer": "International Association for Identification (IAI)",
+   "exhibits": [
+    "MAPICI-CCSI-1-001"
+   ]
+  },
+  {
+   "title": "Certified Footwear Examiner (CFE)",
+   "why": "no signal",
+   "issuer": "International Association for Identification (IAI)",
+   "exhibits": [
+    "MAPICI-CFE(-1-001"
+   ]
+  },
+  {
+   "title": "Certified Forensic Photographer (CFP)",
+   "why": "no signal",
+   "issuer": "International Association for Identification (IAI)",
+   "exhibits": [
+    "MAPICI-CFP(-1-001"
+   ]
+  },
+  {
+   "title": "Certified Latent Print Examiner (CLPE)",
+   "why": "no signal",
+   "issuer": "International Association for Identification (IAI)",
+   "exhibits": [
+    "MAPICI-CLPE-1-001"
+   ]
+  },
+  {
+   "title": "Certified Nursing Assistant (CNA)",
+   "why": "no signal",
+   "issuer": "California Department of Public Health (CDPH)",
+   "exhibits": [
+    "MAPICI-CNA(-1-001"
+   ]
+  },
+  {
+   "title": "Chamber Choir",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Class Piano — Beginning 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-CP-B-1-001"
+   ]
+  },
+  {
+   "title": "Clinical Psychology Doctorate",
+   "why": "no signal",
+   "issuer": "Graduate Level Institution of Higher Education",
+   "exhibits": [
+    "MAPICI-CPP2-1-001"
+   ],
+   "suggested": "PSYC",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Commercial Building Inspector",
+   "why": "no signal",
+   "issuer": "International Code Council",
+   "exhibits": [
+    "MAPICI-CBI1-1-001"
+   ]
+  },
+  {
+   "title": "Commercial Mechanical Inspector",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-CMI-1-001"
+   ]
+  },
+  {
+   "title": "Commercial Refrigeration Systems",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-ICRS-1-001"
+   ]
+  },
+  {
+   "title": "Computer-Aided Drafting 2",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District (CNUSD)",
+   "exhibits": [
+    "MAPCxH-CAD2-1-001"
+   ]
+  },
+  {
+   "title": "Concept Art and Design for Entertainment Media",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-CAH-1-001"
+   ]
+  },
+  {
+   "title": "Construction Apprenticeship",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICA-CA2U-1-001",
+    "MAPICA-CA4U-1-001",
+    "MAPICA-CA6U-1-001"
+   ]
+  },
+  {
+   "title": "Construction Industry Certification",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Creative Process and Solutions",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G1CP-1-001"
+   ]
+  },
+  {
+   "title": "Criminal Intelligence and Data Analysis",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXI-AJ3--1-001"
+   ],
+   "suggested": "CSIS",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Culinary Production and Operations",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXA-C0-1-001"
+   ]
+  },
+  {
+   "title": "Culture and Zero Waste",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-S2CA-1-001"
+   ]
+  },
+  {
+   "title": "DSLR and Lighting for Professional Production 1 Beginning",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "DSST A History of the Vietnam War",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DAHO-1-001",
+    "MAPSAS-DAHO1-1-001"
+   ]
+  },
+  {
+   "title": "DSST A History of the Vietnam War / Civil War and Reconstruction",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DTCW-1-001"
+   ]
+  },
+  {
+   "title": "DSST Art of the Western World",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-D:AO-1-001",
+    "MAPSAS-DAOT-1-001",
+    "MAPSAS-DAOT1-1-001"
+   ]
+  },
+  {
+   "title": "DSST Business Mathematics",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DBM-1-001",
+    "MAPSAS-DE-B-1-001"
+   ]
+  },
+  {
+   "title": "DSST Computing and Information Technology",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DCAI-1-001",
+    "MAPSAS-DE-I-1-001"
+   ]
+  },
+  {
+   "title": "DSST Foundations of Education",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DFOE-1-001"
+   ]
+  },
+  {
+   "title": "DSST Fundamentals of Counseling",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DFOC1-1-001"
+   ],
+   "suggested": "COUN",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "DSST Fundamentals of Cybersecurity",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DFOC2-1-001"
+   ]
+  },
+  {
+   "title": "DSST General Anthropology",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DGA-1-001",
+    "MAPSAS-DGA1-1-001"
+   ],
+   "suggested": "ANTH",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "DSST Health and Human Development",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DHAH-1-001",
+    "MAPSAS-DHAH1-1-001",
+    "MAPSAS-DPS5-1-001"
+   ]
+  },
+  {
+   "title": "DSST Here's to Your Health",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DHTY-1-001"
+   ]
+  },
+  {
+   "title": "DSST History of the Soviet Union",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DHOT-1-001"
+   ]
+  },
+  {
+   "title": "DSST Human Resource Management",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DE-H-1-001",
+    "MAPSAS-DHRM-1-001"
+   ]
+  },
+  {
+   "title": "DSST Introduction to Geography",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DHG-1-001",
+    "MAPSAS-DITG-1-001"
+   ],
+   "suggested": "GEOG",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "DSST Introduction to Law Enforcement",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-D:IT1-1-001",
+    "MAPSAS-DITL-1-001"
+   ]
+  },
+  {
+   "title": "DSST Management Information Systems",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DMIS-1-001"
+   ]
+  },
+  {
+   "title": "DSST Math for Liberal Arts",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DMFL-1-001",
+    "MAPSAS-DMFL1-1-001"
+   ]
+  },
+  {
+   "title": "DSST Money and Banking",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DMAB-1-001"
+   ]
+  },
+  {
+   "title": "DSST Organizational Behavior",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DE-O-1-001",
+    "MAPSAS-DOB-1-001"
+   ]
+  },
+  {
+   "title": "DSST Personal Finance",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DPF-1-001"
+   ]
+  },
+  {
+   "title": "DSST Physical Geography",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DPG-1-001"
+   ]
+  },
+  {
+   "title": "DSST Principles of Advanced English Composition",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DPOA-1-001"
+   ]
+  },
+  {
+   "title": "DSST Principles of Physical Science 1",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-D:PO-1-001",
+    "MAPSAS-DPOP-1-001"
+   ]
+  },
+  {
+   "title": "DSST Principles of Supervision",
+   "why": "courses split",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DB5P-1-001",
+    "MAPSAS-DB5P1-1-001",
+    "MAPSAS-DPOS1-1-001"
+   ],
+   "votes": {
+    "MGMT": 1,
+    "BUSI": 1
+   }
+  },
+  {
+   "title": "DSST Substance Abuse",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DSA-1-001"
+   ]
+  },
+  {
+   "title": "DSST Technical Writing",
+   "why": "no signal",
+   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "exhibits": [
+    "MAPSAS-DTW-1-001"
+   ]
+  },
+  {
+   "title": "Dance",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRN-CCD-1-001"
+   ],
+   "suggested": "DANC",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Darkroom 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-P72-1-001"
+   ]
+  },
+  {
+   "title": "Defense Language Proficiency Test (DLPT) — Russian",
+   "why": "no signal",
+   "issuer": "Defense Language Institute (DLI)",
+   "exhibits": [
+    "MAPSAM-RDLP-1-001",
+    "MAPSAM-RDLP1-1-001",
+    "MAPSAM-RDLP4-1-001",
+    "MAPSAM-RDLP5-1-001"
+   ]
+  },
+  {
+   "title": "Diesel Electrical/Electronic Systems",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-CBED4-1-001"
+   ]
+  },
+  {
+   "title": "Digital Documents (Adobe InDesign)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G3DD-1-001"
+   ],
+   "suggested": "MAKR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Digital Photography in Law Enforcement",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-LEAT-1-001"
+   ]
+  },
+  {
+   "title": "Digital Systems and Computer Logic 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-DSAC-1-001"
+   ]
+  },
+  {
+   "title": "Digital Techniques",
+   "why": "no signal",
+   "issuer": "Project Lead The Way",
+   "exhibits": [
+    "MAPCxH-DEH-1-001",
+    "MAPCxH-DEH1-1-001",
+    "MAPCxH-DEH2-1-001"
+   ]
+  },
+  {
+   "title": "Electric Motors and Controls",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-E0EM-1-001"
+   ]
+  },
+  {
+   "title": "Electrical Fundamentals",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-M0EF-1-001"
+   ]
+  },
+  {
+   "title": "Electronic Circuits",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-E0EC-1-001"
+   ],
+   "suggested": "ELCT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Electronic Surveillance and Tracking",
+   "why": "no signal",
+   "issuer": "Federal Law Enforcement Training Centers (FLETC)",
+   "exhibits": [
+    "MAPICI-FLET-1-001"
+   ],
+   "suggested": "ELCT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Elementary Armenian 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-A1BA1-1-001"
+   ]
+  },
+  {
+   "title": "Elementary Armenian 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-A2HA1-1-001"
+   ]
+  },
+  {
+   "title": "Elements of Plant Science",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AEOP-1-001"
+   ]
+  },
+  {
+   "title": "Elevator Constructor Apprenticeship — Work Experience",
+   "why": "no signal",
+   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+   "exhibits": [],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Eligibility and Case Management",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-S0EA-1-001"
+   ]
+  },
+  {
+   "title": "Emergency Management Experience (Lower Division)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-HP(-1-001"
+   ]
+  },
+  {
+   "title": "Emergency Management Experience (Upper Division)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRO-EME(-1-001"
+   ]
+  },
+  {
+   "title": "Emergency Medical Technician (EMT) Certification",
+   "why": "no signal",
+   "issuer": "California Emergency Medical Services Authority (EMSA)",
+   "exhibits": [],
+   "suggested": "EMST",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Engineering Drawing",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-ED-1-001"
+   ]
+  },
+  {
+   "title": "Engineering Graphics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-E-1-001"
+   ]
+  },
+  {
+   "title": "English as a Second Language",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [],
+   "suggested": "ESLN",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Fieldwork Experience for the Helping Professions",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXA-SW&H2-1-001"
+   ]
+  },
+  {
+   "title": "Fire Hydraulics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-F3-F1-1-001"
+   ]
+  },
+  {
+   "title": "First Aid, Cardiopulmonary Resuscitation (CPR) and Basic Emergency Care",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-FACR-1-001"
+   ]
+  },
+  {
+   "title": "Fluid Power",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-IFP-1-001"
+   ]
+  },
+  {
+   "title": "Forensic Photography",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-A14-1-001"
+   ],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Forensic Science Advanced",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-A10-1-001"
+   ]
+  },
+  {
+   "title": "Foundations of Design 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-ED1-2-1-001"
+   ]
+  },
+  {
+   "title": "Foundations of Design 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-E1-F-1-001"
+   ]
+  },
+  {
+   "title": "Fundamentals of Biotechnology",
+   "why": "courses split",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-BF-1-001",
+    "MAPCXS-B0FO-1-001"
+   ],
+   "votes": {
+    "BIOL": 1,
+    "BIOT": 1
+   },
+   "suggested": "BIOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Fundamentals of Radiologic Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-FORT-1-001"
+   ]
+  },
+  {
+   "title": "GIAC Certified Forensic Examiner (GCFE) or Certified Forensic Analyst (GCFA)",
+   "why": "no signal",
+   "issuer": "Global Information Assurance Certification (GIAC)",
+   "exhibits": [
+    "MAPICI-SCFF-1-001"
+   ]
+  },
+  {
+   "title": "Game Design",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-GDH-1-001",
+    "MAPCxH-GDPH-1-001",
+    "MAPCxH-VG1P1-1-001"
+   ]
+  },
+  {
+   "title": "Game Design Advanced",
+   "why": "no signal",
+   "issuer": "Colton-Redlands-Yucaipa ROP",
+   "exhibits": [
+    "MAPCxH-VGD2-1-001"
+   ]
+  },
+  {
+   "title": "Game Scripting",
+   "why": "no signal",
+   "issuer": "Riverside Unified School District",
+   "exhibits": [
+    "MAPCxH-DGDH-1-001",
+    "MAPCxH-GSH-1-001",
+    "MAPCxH-RIGS-1-001",
+    "MAPCxH-VG2G-1-001"
+   ]
+  },
+  {
+   "title": "Generic Credit by Exam — San Diego Miramar College",
+   "why": "courses split",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCBES-CBEM-1-001"
+   ],
+   "votes": {
+    "FIRE": 9,
+    "CRIM": 3,
+    "CDEV": 13,
+    "BSOT": 7,
+    "EMST": 1,
+    "AUTO": 7,
+    "BIOL": 2,
+    "BUSI": 2,
+    "AVIA": 1,
+    "PARA": 1
+   }
+  },
+  {
+   "title": "Generic Credit by Exam — San Jose City College",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-C1CB-1-001"
+   ]
+  },
+  {
+   "title": "Graphic Design Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G1GD-1-001"
+   ]
+  },
+  {
+   "title": "Graphic Design for Multimedia",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-M4-1-001"
+   ]
+  },
+  {
+   "title": "Graphics in Motion Introduction to Animation",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G1GI-1-001"
+   ],
+   "suggested": "GFCD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Greenhouse, Nursery, and Garden Center Management",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "HVAC - Heating and Control Systems",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-IH-H-1-001"
+   ],
+   "suggested": "HVAC",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Health Science",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-NACO2-1-001"
+   ]
+  },
+  {
+   "title": "Heat Pump Inverters",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-HPI-1-001"
+   ]
+  },
+  {
+   "title": "High Performance Electric Water Heaters",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-EWH-1-001"
+   ]
+  },
+  {
+   "title": "History of Games",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-BOVG-1-001",
+    "MAPCxH-HOVG-1-001"
+   ]
+  },
+  {
+   "title": "Homicide Investigation",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-A13-1-001"
+   ]
+  },
+  {
+   "title": "Horticultural & Landscape Photography",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-H9-1-001"
+   ],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Human Anatomy and Physiology 3",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "IB Global Politics HL",
+   "why": "no signal",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAS-IGP-1-001"
+   ]
+  },
+  {
+   "title": "IB Language A: Language and Literature HL",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAH-ILAL1-1-001",
+    "MAPSAS-I:LA1-1-001",
+    "MAPSAS-IEL(1-1-001",
+    "MAPSAS-ILAL11-1-001",
+    "MAPSAS-ILAL13-1-001",
+    "MAPSAS-ILAL15-1-001",
+    "MAPSAS-ILAL17-1-001",
+    "MAPSAS-ILAL19-1-001",
+    "MAPSAS-ILAL20-1-001",
+    "MAPSAS-ILAL22-1-001",
+    "MAPSAS-ILAL24-1-001",
+    "MAPSAS-ILAL29-1-001",
+    "MAPSAS-ILAL3-1-001",
+    "MAPSAS-ILAL31-1-001",
+    "MAPSAS-ILAL33-1-001",
+    "MAPSAS-ILAL34-1-001",
+    "MAPSAS-ILAL37-1-001",
+    "MAPSAS-ILAL7-1-001"
+   ]
+  },
+  {
+   "title": "IB Language A: Language and Literature HL (Non-English)",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAS-ILAL1-1-001",
+    "MAPSAS-ILAL26-1-001",
+    "MAPSAS-ILAL28-1-001",
+    "MAPSAS-ILAL5-1-001",
+    "MAPSAS-ILAL9-1-001"
+   ]
+  },
+  {
+   "title": "IB Language A: Literature HL",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAH-ILAL-1-001",
+    "MAPSAS-I:LA-1-001",
+    "MAPSAS-IEL(-1-001",
+    "MAPSAS-ILAL10-1-001",
+    "MAPSAS-ILAL12-1-001",
+    "MAPSAS-ILAL14-1-001",
+    "MAPSAS-ILAL16-1-001",
+    "MAPSAS-ILAL18-1-001",
+    "MAPSAS-ILAL2-1-001",
+    "MAPSAS-ILAL21-1-001",
+    "MAPSAS-ILAL23-1-001",
+    "MAPSAS-ILAL30-1-001",
+    "MAPSAS-ILAL32-1-001",
+    "MAPSAS-ILAL35-1-001",
+    "MAPSAS-ILAL36-1-001",
+    "MAPSAS-ILAL6-1-001"
+   ]
+  },
+  {
+   "title": "IB Language B HL",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAH-ILB(-1-001",
+    "MAPSAH-ILB(1-1-001",
+    "MAPSAS-IEBH2-1-001",
+    "MAPSAS-ILB(-1-001",
+    "MAPSAS-ILB(1-1-001",
+    "MAPSAS-ILB--1-001",
+    "MAPSAS-ILB-1-1-001",
+    "MAPSAS-ILB-2-1-001",
+    "MAPSAS-ILB1-1-001"
+   ]
+  },
+  {
+   "title": "IB Mathematics: Analysis and Approaches HL",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAH-IMH--1-001",
+    "MAPSAS-I:MA-1-001",
+    "MAPSAS-IM(A-1-001",
+    "MAPSAS-IMA&-1-001",
+    "MAPSAS-IMA&2-1-001",
+    "MAPSAS-IMAA-1-001",
+    "MAPSAS-IMAA10-1-001",
+    "MAPSAS-IMAA12-1-001",
+    "MAPSAS-IMAA15-1-001",
+    "MAPSAS-IMAA2-1-001",
+    "MAPSAS-IMAA4-1-001",
+    "MAPSAS-IMAA6-1-001",
+    "MAPSAS-IMAA8-1-001",
+    "MAPSAS-IMHA-1-001"
+   ],
+   "suggested": "MATH",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "IB Mathematics: Applications and Interpretation HL",
+   "why": "credited to a GE area",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAH-IMHA-1-001",
+    "MAPSAS-I:MA1-1-001",
+    "MAPSAS-IM(A1-1-001",
+    "MAPSAS-IMA&1-1-001",
+    "MAPSAS-IMAA1-1-001",
+    "MAPSAS-IMAA11-1-001",
+    "MAPSAS-IMAA13-1-001",
+    "MAPSAS-IMAA14-1-001",
+    "MAPSAS-IMAA16-1-001",
+    "MAPSAS-IMAA3-1-001",
+    "MAPSAS-IMAA5-1-001",
+    "MAPSAS-IMAA7-1-001",
+    "MAPSAS-IMAA9-1-001",
+    "MAPSAS-IMHA1-1-001"
+   ],
+   "suggested": "MATH",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "IB Philosophy HL",
+   "why": "no signal",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAS-IPH12-1-001"
+   ],
+   "suggested": "PHIL",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "IB Social and Cultural Anthropology HL",
+   "why": "no signal",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAS-ISAC-1-001"
+   ]
+  },
+  {
+   "title": "IB World Religions SL",
+   "why": "no signal",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "exhibits": [
+    "MAPSAS-IWRH-1-001"
+   ]
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 110",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 120",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 121",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 130",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 131",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 140",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 141",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 150",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — ELECT 151",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": []
+  },
+  {
+   "title": "IBEW/NECA Electrical Apprenticeship — Work Experience",
+   "why": "no signal",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "exhibits": [],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "ISA Certified Arborist",
+   "why": "no signal",
+   "issuer": "International Society of Arboriculture (ISA)",
+   "exhibits": [
+    "MAPICI-ICA-1-001"
+   ]
+  },
+  {
+   "title": "Industrial Power Transmission",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-IIPT-1-001"
+   ]
+  },
+  {
+   "title": "Industrial Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-I1-1-001"
+   ]
+  },
+  {
+   "title": "Infant and Toddler Care and Curriculum",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-IATC-1-001"
+   ]
+  },
+  {
+   "title": "Instrumentation and Process Control",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-E0IA-1-001"
+   ]
+  },
+  {
+   "title": "Internetworking and TCP/IP",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXO-IAT-1-001"
+   ]
+  },
+  {
+   "title": "Internship and Work Experience",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-IAWE-1-001"
+   ],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Internship in Computer Network Systems Engineering",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-IICN-1-001"
+   ]
+  },
+  {
+   "title": "Intro to Addiction Studies: Addiction and the Community",
+   "why": "no signal",
+   "issuer": "California Consortium of Addiction Programs and Professionals (CCAPP)",
+   "exhibits": [
+    "MAPICI-ATSC-1-001"
+   ]
+  },
+  {
+   "title": "Intro to Renewable Energy",
+   "why": "no signal",
+   "issuer": "Local High School",
+   "exhibits": [
+    "MAPCXH-RES-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Art History",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-EFA1-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to CNC Programming",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-ITCP-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Computer Hardware Systems 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-ITCH-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Construction",
+   "why": "no signal",
+   "issuer": "San Bernardino City Unified School District",
+   "exhibits": [
+    "MAPCxH-BT&C-1-001",
+    "MAPCxH-CT1&-1-001",
+    "MAPCxH-CT1H-1-001",
+    "MAPCxH-RCTL-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Digital Video Production",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-M6-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Direct and Alternating Current Circuits",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-ITDA-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Drafting and CAD",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-I0IT-1-001"
+   ],
+   "suggested": "DRAF",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Introduction to Dramatic Arts",
+   "why": "subject not in the Common Subjects Reference",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-EFT1-1-001"
+   ],
+   "discipline_not_held": "Theater Arts",
+   "suggested": "THTR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Introduction to Electronics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-ITE--1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Energy Surveying",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Introduction to Engineering Design/Graphics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-BVR-3-1-001",
+    "MAPCXH-BVR-4-1-001",
+    "MAPCXH-EITE-1-001",
+    "MAPCXH-SBHS1-1-001",
+    "MAPCXH-SBHS2-1-001",
+    "MAPCXH-SGHS3-1-001",
+    "MAPCXH-UUSD-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Engineering and Architectural Design",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-ITE&1-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Forensic Science",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AJ1-1-1-001",
+    "MAPCXS-DE-A9-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Geospatial Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-G1-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Information Systems Security",
+   "why": "courses split",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-C0IT-1-001",
+    "MAPICS-CITI-1-001"
+   ],
+   "votes": {
+    "ITIS": 1,
+    "ROBO": 1
+   }
+  },
+  {
+   "title": "Introduction to Legal Research and Terminology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-CBEI5-1-001"
+   ],
+   "suggested": "PARA",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Introduction to Mechanical Principles",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-ITMP-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Medical Assisting",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICP-M3-I-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Microprocessors and Interfacing",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-ITMA-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Multimedia Computer Applications",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-M3-1-001",
+    "MAPPRO-PR-M-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Paralegal Studies",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-CBEI4-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Photography",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-P5-1-001"
+   ],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Introduction to Plant Science (with Laboratory)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-C01-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Radiologic Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-ITRT-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Social Work and Human Services",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-S0IT1-1-001"
+   ],
+   "suggested": "SOCS",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Introduction to Soil Science",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-S0IT-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Spanish English Translation",
+   "why": "no signal",
+   "issuer": "Riverside Unified School District",
+   "exhibits": [
+    "MAPCXH-ITE&-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Systems and Network Cybersecurity",
+   "why": "no signal",
+   "issuer": "Local High School",
+   "exhibits": [
+    "MAPCXH-C1IT-1-001"
+   ]
+  },
+  {
+   "title": "Introduction to Workplace Safety",
+   "why": "no signal",
+   "issuer": "Inland Empire Electrical Training Center",
+   "exhibits": [
+    "MAPICI-IIEE-1-001"
+   ]
+  },
+  {
+   "title": "Iron Workers Apprenticeship — Work Experience",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 1",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 2",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P1-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 3",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P2-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 4",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P3-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 5",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P4-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 6",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P5-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 7",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P6-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Reinforcing, Period 8",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-RA4P7-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 1",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 2",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P1-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 3",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P2-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 4",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P3-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 5",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P4-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 6",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P5-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 7",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P6-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Structural, Period 8",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPICA-SA4P7-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Apprenticeship — Welding 1",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-IWI-1-001"
+   ],
+   "suggested": "WELD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Ironworker Architectural 2",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-IAI-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Architectural 3",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-IAI1-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Structural Precast Concrete",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-ISPC-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Structural Steel 1",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-SSI-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Structural Steel 2",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-ISSI-1-001"
+   ]
+  },
+  {
+   "title": "Ironworker Structural, Architectural and Ornamental 1",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-SAOI-1-001"
+   ],
+   "suggested": "HORT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Ironworker Welding 3",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-IWI1-1-001"
+   ],
+   "suggested": "WELD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Journal of Arts and Literature",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Journeyman Certificate- Apprenticeship Carpentry, Millwrighting",
+   "why": "no signal",
+   "issuer": "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+   "exhibits": [
+    "MAPICA-ACMA-1-001",
+    "MAPICA-ACMC-1-001",
+    "MAPICA-JCAC1-1-001",
+    "MAPICA-JCAC2-1-001"
+   ],
+   "suggested": "CARP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Landscape Design: Perspective Sketching",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-H92-1-001"
+   ]
+  },
+  {
+   "title": "Landscape Design: Planting",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-H6-1-001"
+   ]
+  },
+  {
+   "title": "Landscape Irrigation Systems",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Landscape and Turfgrass Management",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Landscaping with Edibles",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-H91-1-001"
+   ]
+  },
+  {
+   "title": "LiUNA Laborers' Construction Apprenticeship",
+   "why": "no signal",
+   "issuer": "Laborers' International Union of North America (LiUNA)",
+   "exhibits": []
+  },
+  {
+   "title": "Licensed Vocation Nurse (LVN) Certification",
+   "why": "no signal",
+   "issuer": "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)",
+   "exhibits": [
+    "MAPICI-LVN(1-1-001"
+   ],
+   "suggested": "VNRS",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Maker Innovation",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-N1MI-1-001"
+   ]
+  },
+  {
+   "title": "Marine Technology Apprenticeship Work Experience",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Math for Construction Trades",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-C2MF-1-001"
+   ]
+  },
+  {
+   "title": "Math for Engineering Technology",
+   "why": "no signal",
+   "issuer": "Riverside Unified School District",
+   "exhibits": [
+    "MAPCxH-POEH-1-001"
+   ]
+  },
+  {
+   "title": "Mechanical Plans Examiner",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-MPE-1-001"
+   ]
+  },
+  {
+   "title": "Mechatronics 1",
+   "why": "no signal",
+   "issuer": "Colton-Redlands-Yucaipa ROP",
+   "exhibits": [
+    "MAPCxH-M1H-1-001"
+   ]
+  },
+  {
+   "title": "Mechatronics 2",
+   "why": "no signal",
+   "issuer": "Colton-Redlands-Yucaipa ROP",
+   "exhibits": [
+    "MAPCxH-M2H-1-001"
+   ]
+  },
+  {
+   "title": "Medical Assisting Practicum",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-M3MA-1-001"
+   ]
+  },
+  {
+   "title": "Metal Building Erection 1 / Foreman Training",
+   "why": "no signal",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "exhibits": [
+    "MAPCXA-MBEI-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Modern Art History",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-EFA7-1-001"
+   ]
+  },
+  {
+   "title": "Museum & Gallery Techniques",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-PA6-1-001"
+   ]
+  },
+  {
+   "title": "Musical Theater Workshop 1",
+   "why": "subject not in the Common Subjects Reference",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-T2-M-1-001"
+   ],
+   "discipline_not_held": "Theater Arts"
+  },
+  {
+   "title": "NATE Ground Source Heat Pump Loop Installer",
+   "why": "no signal",
+   "issuer": "North American Technician Excellence (NATE)",
+   "exhibits": [
+    "MAPICI-NGSH-1-001"
+   ]
+  },
+  {
+   "title": "NCCER CORE Curriculum - Introduction to Basic Construction Skills",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCC--1-001"
+   ],
+   "suggested": "BSKL",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "NCCER Certification (unspecified)",
+   "why": "no signal",
+   "issuer": "National Center for Construction Education and Research (NCCER)",
+   "exhibits": [
+    "MAPICI-NCFC-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Commercial Carpenter Journey Level",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCCJ-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Commercial Electrician Level 1",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCEL-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Commercial Electrician Level 2",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCEL1-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Commercial Electrician Level 3",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCEL2-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Commercial Electrician Level 4/Journey Level",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCEL3-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Construction Foreman Management",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCFM-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Construction Superintendent Management",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NCSM-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Industrial Carpenter Journey Level",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NICJ-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Industrial Electrician Level 1",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NIEL-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Industrial Electrician Level 2",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NIEL1-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Industrial Electrician Level 3",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NIEL2-1-001"
+   ]
+  },
+  {
+   "title": "NCCER Industrial Electrician Level 4/Journey Level",
+   "why": "no signal",
+   "issuer": "NCCER",
+   "exhibits": [
+    "MAPICI-NIEL3-1-001"
+   ]
+  },
+  {
+   "title": "Networking Fundamentals",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPMM-N-1-001"
+   ]
+  },
+  {
+   "title": "Nursing Process Advanced Medical-Surgical",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-N2PA-1-001"
+   ]
+  },
+  {
+   "title": "OSHA Safety Training",
+   "why": "no signal",
+   "issuer": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "exhibits": [
+    "MAPICI-C1IC-1-001"
+   ]
+  },
+  {
+   "title": "Occupational Safety and Health Administration (OSHA) Standards for General Industry",
+   "why": "no signal",
+   "issuer": "Lake Elsinore Unified School District",
+   "exhibits": [
+    "MAPCxH-HSAW-1-001"
+   ]
+  },
+  {
+   "title": "Offender Profiling in Criminal Investigations",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AJ1--1-001"
+   ]
+  },
+  {
+   "title": "Operational Amplifiers and Linear Integrated Circuits",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-OAAL-1-001"
+   ]
+  },
+  {
+   "title": "PC Operating Systems",
+   "why": "courses split",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-POS-1-001",
+    "MAPPRA-POS(-1-001"
+   ],
+   "votes": {
+    "COMP": 1,
+    "ITIS": 1
+   }
+  },
+  {
+   "title": "Paramedic Clinical Occupational Work Experience",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Paramedic Field Internship",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Paramedic Laboratory 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Paramedic Laboratory 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Paramedic Theory 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Paramedic Theory 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Personal Training",
+   "why": "courses split",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-EFK6-1-001",
+    "MAPICI-H3PT-1-001"
+   ],
+   "votes": {
+    "HLTH": 1,
+    "KINE": 1
+   }
+  },
+  {
+   "title": "Pest Control Adviser (PCA) License",
+   "why": "no signal",
+   "issuer": "California Department of Pesticide Regulation (DPR)",
+   "exhibits": [
+    "MAPICI-PCA(-1-001"
+   ]
+  },
+  {
+   "title": "Pharmacology and Pharmacy Calculations",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRI-PR-P-1-001"
+   ],
+   "suggested": "PHMT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Philharmonic Orchestra",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Photography (PHOT 5 — local)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Photography (PHOT 6A — local)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Photojournalism",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-P2-1-001"
+   ]
+  },
+  {
+   "title": "Photoshop Advanced",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G3AP1-1-001"
+   ]
+  },
+  {
+   "title": "Photoshop for Photographers",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-P6-1-001"
+   ]
+  },
+  {
+   "title": "Pilates 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Police Patrol Operations",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Portrait Photography",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCBEN-PP-1-001"
+   ],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Prevention and Care of Athletic Injuries Lab",
+   "why": "no signal",
+   "issuer": "William S. Hart Union High School District",
+   "exhibits": [
+    "MAPCXH-CHAT-1-001",
+    "MAPCXH-CHAT1-1-001"
+   ]
+  },
+  {
+   "title": "Principles of Engineering",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-EPOE-1-001",
+    "MAPCXH-SBHS-1-001",
+    "MAPCXH-SGHS-1-001",
+    "MAPCXH-SGHS1-1-001",
+    "MAPCXH-SGHS2-1-001",
+    "MAPCXH-UUSD1-1-001"
+   ]
+  },
+  {
+   "title": "Principles of Investigation",
+   "why": "no signal",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "exhibits": [
+    "MAPPRS-A13-1-001"
+   ]
+  },
+  {
+   "title": "Print Reading and Shop Practice",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXN-PRAS-1-001"
+   ],
+   "suggested": "READ",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Professional Internship Education",
+   "why": "no signal",
+   "issuer": "Century High School",
+   "exhibits": [
+    "MAPCXH-PIEO-1-001"
+   ]
+  },
+  {
+   "title": "Programmable Logic Controllers Advanced",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-E0AP-1-001"
+   ]
+  },
+  {
+   "title": "Public Health Career Experience Internship",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-PHCE-1-001"
+   ]
+  },
+  {
+   "title": "Public Safety: Emergency Medical Response",
+   "why": "no signal",
+   "issuer": "American Red Cross",
+   "exhibits": [
+    "MAPICI-PSEM-1-001"
+   ]
+  },
+  {
+   "title": "Radiographic Positioning 1A",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-RP1--1-001"
+   ]
+  },
+  {
+   "title": "Refrigerant Usage Certification and R-410A Safety",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-IRUC-1-001"
+   ]
+  },
+  {
+   "title": "Remote Sensing & Digital Image Processing",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-G5-1-001"
+   ],
+   "suggested": "MAKR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Research Methods & Statistics in Criminal Justice",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-AJ3--1-001"
+   ],
+   "suggested": "CRIM",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Residential Building Inspector",
+   "why": "no signal",
+   "issuer": "International Code Council",
+   "exhibits": [
+    "MAPICI-RBI-1-001"
+   ],
+   "suggested": "CBIT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Residential Construction 1",
+   "why": "no signal",
+   "issuer": "Local High School",
+   "exhibits": [
+    "MAPCXH-RC1-1-001"
+   ]
+  },
+  {
+   "title": "Residential Construction 2",
+   "why": "no signal",
+   "issuer": "Local High School",
+   "exhibits": [
+    "MAPCXH-RC2-1-001"
+   ]
+  },
+  {
+   "title": "Residential Mechanical Inspector",
+   "why": "no signal",
+   "issuer": "International Code Council (ICC)",
+   "exhibits": [
+    "MAPICI-RMI-1-001"
+   ]
+  },
+  {
+   "title": "Residential Plans Examiner",
+   "why": "no signal",
+   "issuer": "International Code Council",
+   "exhibits": [
+    "MAPICI-RPE-1-001"
+   ]
+  },
+  {
+   "title": "Restaurant Math",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-C0RM-1-001"
+   ],
+   "suggested": "RMGT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Resume Review (Work Experience)",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPOA-R-1-001"
+   ],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Revit 1-Architectural Drafting",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-AD1A-1-001"
+   ]
+  },
+  {
+   "title": "Robotics for Manufacturing",
+   "why": "no signal",
+   "issuer": "Corona-Norco Unified School District",
+   "exhibits": [
+    "MAPCxH-R1H-1-001"
+   ]
+  },
+  {
+   "title": "Scripting for Security Management",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXO-SFSM-1-001"
+   ]
+  },
+  {
+   "title": "Semiconductor Circuits",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-SC-C-1-001"
+   ]
+  },
+  {
+   "title": "Semiconductor Circuits 2",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCxS-SCI--1-001"
+   ]
+  },
+  {
+   "title": "Sketchup for Landscape Designers",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-H61-1-001"
+   ]
+  },
+  {
+   "title": "Small Engine Repair and Maintenance",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-ASER-1-001"
+   ]
+  },
+  {
+   "title": "Social Work and Human Services Seminar",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXA-SW&H1-1-001"
+   ],
+   "suggested": "SOCS",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Solidworks Advanced Solid Modeling",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-SASM-1-001"
+   ]
+  },
+  {
+   "title": "Solidworks Intermediate Solid Modeling",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-SISM-1-001"
+   ]
+  },
+  {
+   "title": "Sprinkler Fitter Apprenticeship",
+   "why": "no signal",
+   "issuer": "United Association (UA)",
+   "exhibits": [
+    "MAPCXA-SFA-1-001"
+   ]
+  },
+  {
+   "title": "Studio Photography Techniques 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-P73-1-001"
+   ],
+   "suggested": "PHOT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Sustainable Materials Management and Zero Waste in Business",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-S4SM-1-001"
+   ]
+  },
+  {
+   "title": "Swim Fitness 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Swimming 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Teacher Training Practicum",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRS-CTT3-1-001"
+   ]
+  },
+  {
+   "title": "Theatre Arts",
+   "why": "subject not in the Common Subjects Reference",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPPRA-TAPR-1-001",
+    "MAPPRN-CCTA-1-001"
+   ],
+   "discipline_not_held": "Theater Arts",
+   "suggested": "THTR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Transportation Management",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-B2-1-001",
+    "MAPCXH-JHH--1-001",
+    "MAPCXH-JHH-1-1-001",
+    "MAPCXH-JHHS-1-001",
+    "MAPCXS-TM2-1-001"
+   ],
+   "suggested": "TRNS",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Typography",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G13-1-001"
+   ]
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship Work Experience",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": [],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 100",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 101",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 110",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 111",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 120",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 121",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 130",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 131",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 140",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SHME 141",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 100",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 101",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 110",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 111",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 120",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 121",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 130",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 131",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "UA Local 342 Plumbers/Pipefitters Apprenticeship — SMTEC 140",
+   "why": "no signal",
+   "issuer": "United Association (UA) Local 342",
+   "exhibits": []
+  },
+  {
+   "title": "Understanding Street and Prison Gangs",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-A11-1-001"
+   ]
+  },
+  {
+   "title": "University of California Master Gardener Certification",
+   "why": "no signal",
+   "issuer": "University of California Agriculture and Natural Resources (UC ANR)",
+   "exhibits": [
+    "MAPICI-UOCM-1-001"
+   ]
+  },
+  {
+   "title": "User Experience Design Tools and Applications",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-D0UE-1-001"
+   ]
+  },
+  {
+   "title": "Vector Graphics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-DE-M5-1-001"
+   ],
+   "suggested": "GFCD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Ventilation and Air Conditioning Systems",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-IH-V-1-001"
+   ],
+   "suggested": "HVAC",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Veterinary Physiology, Anatomy, and Terminology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXH-AVPA-1-001"
+   ],
+   "suggested": "VETT",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Video Game Development",
+   "why": "no signal",
+   "issuer": "Riverside Unified School District (RUSD)",
+   "exhibits": [
+    "MAPCxH-VGDH-1-001"
+   ]
+  },
+  {
+   "title": "Video Gaming 1 / Computer Programming and Game Design",
+   "why": "no signal",
+   "issuer": "Moreno Valley Unified School District (MVUSD)",
+   "exhibits": [
+    "MAPCxH-VG1P-1-001"
+   ]
+  },
+  {
+   "title": "Vocal Jazz Ensemble",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Wall Forming",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICA-CCFC-1-001"
+   ],
+   "suggested": "CARP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Water Resources and Conservation",
+   "why": "no signal",
+   "issuer": "Sonoma-Marin Saving Water Partnership (QWEL)",
+   "exhibits": [
+    "MAPICI-QWEL-1-001"
+   ],
+   "suggested": "ENVR",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Web Graphics",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G4WG1-1-001"
+   ],
+   "suggested": "GFCD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Web Graphics and Animation",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G4WG-1-001"
+   ],
+   "suggested": "GFCD",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Website Design",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXS-G1WD-1-001"
+   ]
+  },
+  {
+   "title": "Weight Training 1",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": []
+  },
+  {
+   "title": "Wildland Fire Technology",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICI-WFT-1-001"
+   ]
+  },
+  {
+   "title": "Work Experience",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPICA-F1WE-1-001",
+    "MAPOH-WEHS-1-001"
+   ],
+   "suggested": "WEXP",
+   "suggested_from": "title words (a suggestion, never a decision)"
+  },
+  {
+   "title": "Work Experience Education",
+   "why": "no signal",
+   "issuer": "California Community Colleges",
+   "exhibits": [
+    "MAPCXA-SW&H-1-001"
+   ]
+  },
+  {
+   "title": "Yoga 1",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": []
+  },
+  {
+   "title": "Zumba 1",
+   "why": "no signal",
+   "issuer": "",
+   "exhibits": []
+  }
+ ]
+}

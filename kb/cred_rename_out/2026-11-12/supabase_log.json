@@ -1,0 +1,1379 @@
+{
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-11-12/alias_map.json",
+  "renames_processed": 22,
+  "merges_processed": 2,
+  "_state": "filed",
+  "_applied_at": "2026-11-12T00:54:51Z",
+  "ok": 73,
+  "fail": 0,
+  "no_op": 0,
+  "carried": 0,
+  "log": [
+    {
+      "old_ut": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A2 + A3 + A6",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "new_ut": "ASE Certificate Bundles: A2 + A3",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A2 + A3",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "new_ut": "ASE Certificate Bundles: A2 + A3",
+      "kind": "rename",
+      "field": "issuing_agency_override",
+      "before_row": {
+        "value": "National Institute for Automotive Service Excellence (ASE)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-08T21:37:08.655418+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A2 + A3",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "new_ut": "ASE Certificate Bundles: A2 + A3",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "new_ut": "ASE Certificate Bundles: A8 + L1",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A8 + L1",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "new_ut": "ASE Certificate Bundles: A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "new_ut": "ASE Certificate Bundles: A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "new_ut": "ASE Certificate Bundles: A9 + L2",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A9 + L2",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "new_ut": "ASE Certificate Bundles: A9 + L2",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "new_ut": "ASE Certificate Bundles: A9 + L2",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A1, A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A1, A6, A8, L1",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A1, A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A1, A6, A8, L1",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A1, A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A1, A6, A8, L1",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5",
+      "new_ut": "ASE Certificate Bundles: A4 + A5",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A4 + A5",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5",
+      "new_ut": "ASE Certificate Bundles: A4 + A5",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A4 + A5",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5",
+      "new_ut": "ASE Certificate Bundles: A4 + A5",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A4 + A5",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5",
+      "new_ut": "ASE Certificate Bundles: A4 + A5",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5",
+      "new_ut": "ASE Certificate Bundles: A4 + A5",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5, A6",
+      "new_ut": "ASE Certificate Bundles: A4 + A5 + A6",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5, A6",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A4 + A5 + A6",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5, A6",
+      "new_ut": "ASE Certificate Bundles: A4 + A5 + A6",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5, A6",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A4, A5, A6",
+      "new_ut": "ASE Certificate Bundles: A4 + A5 + A6",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A4, A5, A6",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A6 + A8 + L1",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A6, A8, L1",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A6 + A8 + L1",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A6 + A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A6, A8, L1",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A6, A8, L1",
+      "new_ut": "ASE Certificate Bundles: A6 + A8 + L1",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A6, A8, L1",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — L2, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — L2, T8, SP/2 HD",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — L2, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — L2, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — L2, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — L2, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T8",
+      "new_ut": "ASE Certificate Bundles: T2 + T8",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T8",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T2 + T8",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T8",
+      "new_ut": "ASE Certificate Bundles: T2 + T8",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T2, T8",
+      "new_ut": "ASE Certificate Bundles: T2 + T8",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T2, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T4, T5, T8",
+      "new_ut": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T4, T5, T8",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T4, T5, T8",
+      "new_ut": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T4, T5, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T4, T5, T8",
+      "new_ut": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T4, T5, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T8, SP/2 HD",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T3, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T3, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T4, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T4, T8, SP/2 HD",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T4, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T4, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T4, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T4, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8",
+      "new_ut": "ASE Certificate Bundles: T5 + T8",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T5 + T8",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8",
+      "new_ut": "ASE Certificate Bundles: T5 + T8",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8",
+      "new_ut": "ASE Certificate Bundles: T5 + T8",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8, SP/2 HD",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T5, T8, SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T5, T8, SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "new_ut": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, T8 + Snap-on 604",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, T8 + Snap-on 604",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T6, T8 + Snap-on 604",
+      "new_ut": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T6, T8 + Snap-on 604",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T7, T8 + MACS/609",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T7, T8 + MACS/609",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — T7, T8 + MACS/609",
+      "new_ut": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — T7, T8 + MACS/609",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE G1 + ALI Lift It Right Bundle",
+      "new_ut": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE G1 + ALI Lift It Right Bundle",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE G1 + ALI Lift It Right Bundle",
+      "new_ut": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE G1 + ALI Lift It Right Bundle",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE G1 + ALI Lift It Right Bundle",
+      "new_ut": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE G1 + ALI Lift It Right Bundle",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "new_ut": "ASE Certificate Bundles: L1 + L2",
+      "kind": "rename",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "new_course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: L1 + L2",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "new_ut": "ASE Certificate Bundles: L1 + L2",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "new_ut": "ASE Certificate Bundles: L1 + L2",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A2, A3, A6",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "merge",
+      "field": "credential_family",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "credential-family-s638@bot",
+        "reviewed_at": "2026-11-11T23:38:25.224259+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A2, A3, A6",
+      "op": "delete",
+      "superseded_by_target": true,
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "ASE Bundle — A2, A3, A6",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "merge",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A2, A3, A6",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Bundle — A2, A3, A6",
+      "new_ut": "ASE Certificate Bundles: A2 + A3 + A6",
+      "kind": "merge",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Bundle — A2, A3, A6",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "new_ut": "ASE Master Automobile Technician",
+      "kind": "merge",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Master Automobile Technician (A1–A8 + L1)",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    },
+    {
+      "old_ut": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "new_ut": "ASE Master Automobile Technician",
+      "kind": "merge",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::ASE Master Automobile Technician (A1–A8 + L1)",
+      "op": "keep",
+      "status": "ok",
+      "rows_affected": 0,
+      "reason": "a fold into a family title: a family tag, left in place"
+    }
+  ]
+}

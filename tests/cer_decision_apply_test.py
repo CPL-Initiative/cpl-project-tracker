@@ -73,9 +73,14 @@ class FakeRest:
             x.update(body)
         return [dict(x) for x in hit]
 
+    deleted_with_stamp = None
+
     def delete(self, row, cohort):
+        if row.get("reviewed_at"):
+            self.deleted_with_stamp = (self.deleted_with_stamp or []) + [row["reviewed_at"]]
         hit = [x for x in self.rows if x["course_id"] == row["course_id"] and x["field"] == row["field"]
-               and x["value"] == row["value"] and x.get("reviewer_email") == cohort]
+               and x["value"] == row["value"] and x.get("reviewer_email") == cohort
+               and (not row.get("reviewed_at") or x.get("reviewed_at") == row["reviewed_at"])]
         self.rows = [x for x in self.rows if x not in hit]
         return hit
 
@@ -302,7 +307,8 @@ for label, mutate in [
 
 # ── a retire is a guarded DELETE of a named curator row; rollback puts it back ──
 SAM = "curator@rccd.edu"
-RPLAN = {"ruling": "retire ruling", "cohort": "exhibits-s0@bot", "rows": [], "retires": [
+RPLAN = {"ruling": "retire ruling", "cohort": "exhibits-s0@bot", "rows": [],
+         "ruling_allows_retire_of_saved_rows": "test: Sam's 1 yes on his spent overrides", "retires": [
     {"course_id": P + "Spanish 1", "field": "unified_title_override", "value": "Elementary Spanish I",
      "reviewer_email": SAM},
     {"course_id": P + "Spanish 1", "field": "unified_title_merge_confirm", "value": "Elementary Spanish I",
@@ -373,17 +379,286 @@ for label, mutate in [
     check("the plan refuses " + label, refused)
     shutil.rmtree(d)
 
+# ── a guard on the save time: a person who saved the same value again has saved it again (S638) ──
+GPLAN = copy.deepcopy(RPLAN)
+GPLAN["retires"][0].update(reviewed_at="2026-10-27T12:29:38+00", because="the fold's source is empty")
+d = plan_dir(GPLAN)
+r = FakeRest(SP, plan_dir=d)
+code, lines = run(d, "commit", r)
+rec = json.load(open(glob.glob(os.path.join(d, "applied_*.json"))[0]))
+check("a retire naming its save time matches that instant in another spelling (+00 against Z) and goes",
+      code == 0 and len(r.rows) == 1, lines)
+check("the receipt carries the retire's because beside the whole row",
+      rec["retired"][0]["because"] == "the fold's source is empty" and rec["retired"][0]["before"]["reviewed_at"]
+      == "2026-10-27T12:29:38Z", rec.get("retired"))
+check("the DELETE itself names the save time, so a save between the read and the write survives it",
+      r.deleted_with_stamp == ["2026-10-27T12:29:38Z"], r.deleted_with_stamp)
+code, lines = run(d, "rollback", r)
+check("rollback reinstates a guarded retire", code == 0 and len([x for x in r.rows if x["reviewer_email"] == SAM]) == 2)
+shutil.rmtree(d)
+d = plan_dir(GPLAN)
+r = FakeRest([dict(SP[0], reviewed_at="2026-11-11T09:00:00Z"), SP[1], SP[2]], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a retire naming its save time holds when the same value was saved again later; nothing removed",
+      code == 1 and len(r.rows) == 3 and any("saved again" in l for l in lines), lines)
+shutil.rmtree(d)
+MK = {"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [], "retires": [
+    {"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+     "reviewed_at": "2026-07-10T14:07:19.539922", "because": "the title is empty"}]}
+d = plan_dir(MK)
+r = FakeRest([{"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+               "reviewed_at": "2026-07-10T14:07:19.539922+00:00"}], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a title's reviewed_marker may be retired (a naive stamp reads as UTC), and comes back on rollback",
+      code == 0 and r.rows == [] and run(d, "rollback", r)[0] == 0 and len(r.rows) == 1, lines)
+shutil.rmtree(d)
+U = "_UNCLASSIFIED::"
+SPL ={"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [
+    {"course_id": U + "IC-Brakes", "field": "unified_title_assignment", "value": "Brakes (ASE A5)",
+     "replaces": {"value": "Brake Course", "reviewer_email": SAM, "reviewed_at": "2026-10-31T18:52:59.978032+00:00"}},
+    {"course_id": U + "IC-Brakes", "field": "unified_title_supersedes", "value": "Brake Course"}]}
+d = plan_dir(SPL)
+r = FakeRest([{"course_id": U + "IC-Brakes", "field": "unified_title_assignment", "value": "Brake Course",
+               "reviewer_email": SAM, "reviewed_at": "2026-11-01T00:00:00+00:00"}], plan_dir=d)
+code, lines = run(d, "dry-run", r)
+check("a replace naming its save time holds when the person saved that value again", code == 1
+      and any("saved again" in l for l in lines), lines)
+shutil.rmtree(d)
+
+# ── an assignment over an unreviewed machine draft (S638): insert-only, held unless the draft still stands ──
+tmp = tempfile.mkdtemp()
+app.UT_PATH = os.path.join(tmp, "unified_titles.json")
+UT = {"Brakes": {"unified_title": "ASE A5 — Brakes", "classified_by": "a batch classify", "reviewed_by": None},
+      "Brakes ": {"unified_title": "ASE A5 — Brakes", "classified_by": "a batch classify", "reviewed_by": None},
+      "Person Placed": {"unified_title": "X", "classified_by": "curator (CER unclassified-triage)",
+                        "reviewed_by": SAM}}
+json.dump(UT, open(app.UT_PATH, "w"))
+MPL = {"ruling": "r", "cohort": "exhibits-s0@bot", "rows": [
+    {"course_id": U + "Brakes", "field": "unified_title_assignment", "value": "Brakes (ASE A5 standards)",
+     "over_machine_draft": "ASE A5 — Brakes"}]}
+d = plan_dir(MPL)
+r = FakeRest([], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("an assignment over a machine draft writes one row under the cohort, both whitespace twins unreviewed",
+      code == 0 and r.rows == [{"course_id": U + "Brakes", "field": "unified_title_assignment",
+                                "value": "Brakes (ASE A5 standards)", "reviewer_email": "exhibits-s0@bot"}], lines)
+code, lines = run(d, "rollback", r)
+check("rollback removes it by the cohort", code == 0 and r.rows == [], lines)
+shutil.rmtree(d)
+for label, ut_edit in [("a person reviewed it since", lambda u: u["Brakes"].update(reviewed_by=SAM)),
+                       ("the draft moved to another title", lambda u: u["Brakes "].update(unified_title="Other")),
+                       ("no entry holds it", lambda u: (u.pop("Brakes"), u.pop("Brakes ")))]:
+    u = copy.deepcopy(UT)
+    ut_edit(u)
+    json.dump(u, open(app.UT_PATH, "w"))
+    d = plan_dir(MPL)
+    r = FakeRest([], plan_dir=d)
+    code, lines = run(d, "commit", r)
+    check("an assignment over a machine draft holds when " + label, code == 1 and r.rows == [], lines)
+    shutil.rmtree(d)
+json.dump(UT, open(app.UT_PATH, "w"))
+for label, mutate in [
+    ("a machine-draft assignment that also replaces a row",
+     lambda p: p["rows"][0].update(replaces={"value": "Y", "reviewer_email": SAM})),
+    ("a machine-draft assignment naming no draft", lambda p: p["rows"][0].update(over_machine_draft="")),
+    ("a machine-draft assignment beside a supersedes",
+     lambda p: p["rows"].append({"course_id": U + "Brakes", "field": "unified_title_supersedes", "value": "Z"})),
+    ("a reviewed_marker written rather than retired",
+     lambda p: p["rows"].append({"course_id": P + "Spanish 1", "field": "reviewed_marker", "value": "1"})),
+    ("a retire whose reviewed_at is not a time",lambda p: p.update(retires=[dict(RPLAN["retires"][0], reviewed_at="soon")])),
+]:
+    bad = copy.deepcopy(MPL)
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+shutil.rmtree(tmp)
+app.UT_PATH = os.path.join(ROOT, "kb", "unified_titles.json")
+
+# ── a reinstate puts back exactly the row an earlier receipt retired; rollback takes exactly it back ──
+# Sky and COBIx, 2026-11-11 (#3110): a plan never retires a person's saved row on an emptied title; readers ignore
+# it. The S638 plans had retired Sam's rows; kb/cer_decisions_out/2026-11-11-4 restores them through this path.
+tmp = tempfile.mkdtemp()
+real_repo, real_root = app.REPO, app.RECEIPT_ROOT
+app.REPO, app.RECEIPT_ROOT = tmp, os.path.join(tmp, "kb", "cer_decisions_out")
+os.makedirs(os.path.join(app.RECEIPT_ROOT, "2026-11-11"))
+HAC = P + "Heating and Air Conditioning"
+SAMROW = {"course_id": HAC, "field": "issuing_agency_override", "value": "California Community College Chancellor's Office",
+          "reviewer_email": "slee@cccco.edu", "reviewed_at": "2026-11-11T15:47:58.805608+00:00"}
+OVR = {"course_id": HAC, "field": "unified_title_override", "value": "Heating and Air Conditioning (ASE A7 standards)",
+       "reviewer_email": "slee@cccco.edu", "reviewed_at": "2026-11-11T15:26:55.029+00:00"}
+MARK = {"course_id": HAC, "field": "reviewed_marker", "value": "1", "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-10T14:07:19.539922+00:00"}
+RCPT = "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+with open(os.path.join(tmp, RCPT), "w", encoding="utf-8") as fh:
+    json.dump({"retired": [{"course_id": x["course_id"], "field": x["field"], "value": x["value"],
+                            "before": dict({k: x[k] for k in ("value", "reviewer_email", "reviewed_at")},
+                                           validated_at=None, validated_by=None)} for x in (SAMROW, OVR, MARK)]}, fh)
+
+
+def back_plan(*rows, **extra):
+    return dict({"ruling": "restore ruling", "cohort": "cer-s639@bot", "rows": [],
+                 "reinstates": [dict(x, from_receipt=RCPT) for x in rows]}, **extra)
+
+
+UTP = os.path.join(tmp, "ut.json")
+with open(UTP, "w", encoding="utf-8") as fh:
+    json.dump({"MIL7": {"unified_title": "Military Tactical Wheeled Vehicle (ASE MIL7)"}}, fh)
+app.UT_PATH = UTP
+d = plan_dir(back_plan(SAMROW, OVR))
+r = FakeRest([{"course_id": P + "Other", "field": "unified_title_override", "value": "Z",
+               "reviewer_email": "curator@rccd.edu", "reviewed_at": "2026-11-01T00:00:00Z"}], plan_dir=d)
+code, lines = run(d, "dry-run", r)
+check("a reinstate dry run reports 2 to reinstate and writes nothing",
+      code == 0 and r.inserts == 0 and any("2 to reinstate, 0 already reinstated" in l for l in lines), lines)
+code, lines = run(d, "commit", r)
+rec = json.load(open(glob.glob(os.path.join(d, "applied_*.json"))[0]))
+got = {(x["field"], x["reviewer_email"], x["reviewed_at"]) for x in r.rows if x["course_id"] == HAC}
+check("commit puts both rows back under the person's own reviewer and stamp, never the cohort",
+      code == 0 and got == {(SAMROW["field"], "slee@cccco.edu", SAMROW["reviewed_at"]),
+                            (OVR["field"], "slee@cccco.edu", OVR["reviewed_at"])}, lines)
+check("the receipt names what it put back, written before the insert, and reads back settled",
+      len(rec["put_back"]) == 2 and rec["result"] == "written" and r.receipt_before_insert is True
+      and all(x["from_receipt"] == RCPT for x in rec["reinstates"]), rec.get("result"))
+code, lines = run(d, "commit", r)
+check("a second commit finds them reinstated and writes nothing",
+      code == 0 and any("nothing to write" in l for l in lines), lines)
+# Sam saves the override again after the restore: the undo leaves his new save.
+for x in r.rows:
+    if x["course_id"] == HAC and x["field"] == "unified_title_override":
+        x["reviewed_at"] = "2026-11-12T09:00:00+00:00"
+code, lines = run(d, "rollback", r)
+left = {(x["field"], x["reviewed_at"]) for x in r.rows if x["course_id"] == HAC}
+check("rollback deletes exactly the reinstated row still as put back, and leaves a person's later save",
+      code == 0 and left == {("unified_title_override", "2026-11-12T09:00:00+00:00")}
+      and any("1 reinstated rows removed again, 1 saved again since and left" in l for l in lines), lines)
+check("rollback leaves every other row", any(x["course_id"] == P + "Other" for x in r.rows))
+shutil.rmtree(d)
+
+d = plan_dir(back_plan(SAMROW))
+r = FakeRest([dict(SAMROW, value="National Institute for Automotive Service Excellence (ASE)",
+                   reviewed_at="2026-11-12T08:00:00Z")], plan_dir=d)
+code, lines = run(d, "commit", r)
+check("a row written since holds the reinstate; nothing written",
+      code == 1 and r.inserts == 0 and any("REFUSED" in l for l in lines), lines)
+shutil.rmtree(d)
+
+with open(UTP, "w", encoding="utf-8") as fh:
+    json.dump({"HVAC NC": {"unified_title": "Heating and Air Conditioning"}}, fh)
+d = plan_dir(back_plan(dict(SAMROW, while_emptied=True)))
+r = FakeRest(plan_dir=d)
+code, lines = run(d, "commit", r)
+check("while_emptied holds the reinstate while a raw still maps to the title",
+      code == 1 and r.inserts == 0 and any("still holds an exhibit" in l for l in lines), lines)
+shutil.rmtree(d)
+
+for label, mutate in [
+    ("a reinstate whose value differs from its receipt", lambda p: p["reinstates"][0].update(value="Something else")),
+    ("a reinstate under another reviewer", lambda p: p["reinstates"][0].update(reviewer_email="someone@rccd.edu")),
+    ("a reinstate with another stamp", lambda p: p["reinstates"][0].update(reviewed_at="2026-11-11T15:48:00Z")),
+    ("a reinstate of a row the receipt did not retire", lambda p: p["reinstates"][0].update(field="training_agency_override")),
+    ("a reinstate naming a receipt outside the plans", lambda p: p["reinstates"][0].update(from_receipt="kb/x.json")),
+    ("a reinstate under the cohort's own name", lambda p: p["reinstates"][0].update(reviewer_email="cer-s639@bot")),
+    ("a reinstate with no stamp", lambda p: p["reinstates"][0].pop("reviewed_at")),
+]:
+    bad = copy.deepcopy(back_plan(SAMROW))
+    mutate(bad)
+    d = plan_dir(bad)
+    try:
+        app.load_plan(d)
+        refused = False
+    except SystemExit:
+        refused = True
+    check("the plan refuses " + label, refused)
+    shutil.rmtree(d)
+d = plan_dir(back_plan(SAMROW, MARK))
+try:
+    app.load_plan(d)
+    ok = True
+except SystemExit as e:
+    ok = str(e)
+check("a reviewed_marker the receipt kept may be reinstated too (the plan decides which)", ok is True, ok)
+shutil.rmtree(d)
+app.REPO, app.RECEIPT_ROOT = real_repo, real_root
+app.UT_PATH = os.path.join(ROOT, "kb", "unified_titles.json")
+shutil.rmtree(tmp)
+
+# ── the committed restore puts back every person's row the S638 plans retired, markers aside ──
+REST = os.path.join(ROOT, "kb", "cer_decisions_out", "2026-11-11-4")
+retired = []
+for ph in ("2026-11-11", "2026-11-11-2"):
+    for p in glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", ph, "applied_*.json")):
+        retired += json.load(open(p, encoding="utf-8")).get("retired") or []
+want = {(x["course_id"], x["field"]) for x in retired if x["field"] != "reviewed_marker"}
+restore = app.load_plan(REST)
+have = {(x["course_id"], x["field"]) for x in restore["reinstates"]}
+check("the restore names every retired row but the reviewed_marker ticks (13), and only those",
+      have == want and len(have) == 13, sorted(want ^ have))
+check("the restore carries all 12 of Sam's slee@cccco.edu rows",
+      sum(x["reviewer_email"] == "slee@cccco.edu" for x in restore["reinstates"]) == 12)
+check("every restore entry waits for its title to hold no exhibit",
+      all(x.get("while_emptied") is True for x in restore["reinstates"]))
+
+# ── a plan not yet applied retires no person's saved row but a reviewed_marker tick ──
+for p in glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json")):
+    if glob.glob(os.path.join(os.path.dirname(p), "applied_*.json")):
+        continue  # applied history; its receipt is the record
+    pl = json.load(open(p, encoding="utf-8"))
+    bad = [x for x in pl.get("retires") or [] if x.get("field") != "reviewed_marker"
+           and not str(x.get("reviewer_email", "")).endswith("@bot")]
+    check("%s retires no person's saved row but a reviewed_marker" % os.path.relpath(p, ROOT), not bad, bad)
+
+# ── load_plan itself refuses a retire of a person's saved row, unless the plan names the ruling (#3110) ──
+for ph in ("2026-11-11", "2026-11-11-2"):
+    try:
+        app.load_plan(os.path.join(ROOT, "kb", "cer_decisions_out", ph))
+        refused = False
+    except SystemExit as e:
+        refused = "reviewed_marker" in str(e)
+    check("load_plan refuses %s's retires of Sam's rows outside a rollback" % ph, refused)
+    check("%s still loads for its rollback" % ph,
+          bool(app.load_plan(os.path.join(ROOT, "kb", "cer_decisions_out", ph), history=True)["retires"]))
+d = plan_dir(dict(RPLAN, ruling_allows_retire_of_saved_rows=""))
+try:
+    app.load_plan(d)
+    refused = False
+except SystemExit:
+    refused = True
+check("a blank ruling_allows_retire_of_saved_rows allows nothing", refused)
+shutil.rmtree(d)
+
 # ── the committed plans are valid ones ───────────────────────────────────────
 plans = glob.glob(os.path.join(ROOT, "kb", "cer_decisions_out", "*", "plan.json"))
 check("a committed plan exists", bool(plans))
 for p in plans:
     name = os.path.relpath(p, ROOT)
-    try:
-        pl = app.load_plan(os.path.dirname(p))
+    applied = bool(glob.glob(os.path.join(os.path.dirname(p), "applied_*.json")))
+    try:  # an applied plan is history: it loads for its rollback even where a later rule refuses it
+        pl = app.load_plan(os.path.dirname(p), history=applied)
         ok = bool(pl["ruling"]) and pl["cohort"].endswith("@bot")
     except SystemExit as e:
         ok, pl = False, str(e)
     check("%s loads: ruling, a bot cohort, CER and unclassified rows only" % name, ok, pl)
+
+# ── every committed plan sits in a directory cer-decision-apply.yml accepts ───
+# Run 43104136989 (S638, 2026-11-11) failed at the workflow's input check: three plans were committed under
+# "<date>-s638..." names its `case "$PLAN_DIR"` pattern rejects. The patterns are read from the workflow itself.
+import fnmatch  # noqa: E402
+import re  # noqa: E402
+with open(os.path.join(ROOT, ".github", "workflows", "cer-decision-apply.yml"), encoding="utf-8") as fh:
+    wf = fh.read()
+m = re.search(r'case "\$PLAN_DIR" in\s*\n\s*([^\n]+?)\)\s*;;', wf)
+patterns = m.group(1).split("|") if m else []
+check("the workflow's plan_dir case pattern is found", bool(patterns))
+for p in plans:
+    rel = os.path.relpath(os.path.dirname(p), ROOT).replace(os.sep, "/")
+    check("%s is a plan_dir the workflow accepts" % rel,
+          any(fnmatch.fnmatchcase(rel, pat.strip()) for pat in patterns), patterns)
 
 passed = 0
 for name, ok, why in results:

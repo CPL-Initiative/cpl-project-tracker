@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "LVN Transition to RN",
  "award": "A.S. Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=135",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/lvn-transition-to-rn-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12715,
+  "input_tokens": 12290,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12715,
-    "output_tokens": 3653,
+    "input_tokens": 12290,
+    "output_tokens": 3821,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 3653,
+  "output_tokens": 3821,
   "output_tokens_details": {
-   "thinking_tokens": 1515
+   "thinking_tokens": 1591
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12392,
- "ms": 30785,
+ "cost_usd": 0.12558,
+ "ms": 30989,
  "seconds": 31.3,
  "parts": null,
  "error": null,
@@ -94,16 +94,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Science (A.S.) Degree LVN Transition to RN",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
     "min": 73,
@@ -114,14 +111,14 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "De Anza General Education",
+   "ge_pattern": "De Anza General Education (A.S. Nursing requirements)",
    "degree_total": {
     "min": null,
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 29,
+    "max": 41
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -132,7 +129,7 @@
   },
   "blocks": [
    {
-    "name": "Prerequisite",
+    "name": "Prerequisite:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -177,7 +174,7 @@
       "catalog_addition": false
      },
      {
-      "code": "PSYC C1000",
+      "code": "PSYCC1000",
       "units": 4,
       "units_max": null,
       "alternatives": [],
@@ -186,28 +183,9 @@
     ]
    },
    {
-    "name": "Mathematics",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": 5,
-     "max": 5
-    },
-    "courses": [
-     {
-      "code": "MATH 114",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Anthropology/Sociology",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Anthropology/Sociology:",
+    "rule": "choose_units",
+    "minimum": 4,
     "option_group": null,
     "stated": {
      "min": 4,
@@ -237,9 +215,9 @@
     ]
    },
    {
-    "name": "English",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "Communications:",
+    "rule": "choose_units",
+    "minimum": 5,
     "option_group": null,
     "stated": {
      "min": 5,
@@ -247,44 +225,12 @@
     },
     "courses": [
      {
-      "code": "ENGL C1000",
+      "code": "COMMC1000",
       "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ENGL C1000H",
-        "units": 5,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "ESL 5",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Communications",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 5,
-     "max": 5
-    },
-    "courses": [
-     {
-      "code": "COMM C1000",
-      "units": 5,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "COMM C1000H",
+        "code": "COMMC1000H",
         "units": 5,
         "catalog_addition": false
        }
@@ -307,7 +253,58 @@
     ]
    },
    {
-    "name": "Required Core",
+    "name": "English:",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGLC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGLC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 5",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mathematics:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 5,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "MATH 114",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Core:",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -385,17 +382,30 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints the psychology course as 'PSYCC 1000'; recorded as PSYC C1000 (closed-list code), treating it as a misprint.",
-   "The 'Prerequisite (48 Units)' heading lists only 29 units of courses; 48 appears to include the Mathematics, Anthropology/Sociology, English and Communications blocks (29+5+4+5+5=48). Prerequisite 48 + Required Core 25 = Total Required 73.",
-   "The Communications block prints COMM C1000 and COMM C1000H on separate rows but with an 'or' honors title; recorded as one choice with an honors alternative.",
-   "Codes printed without zero padding (BIOL 40A, NURS 94L, ANTH 2H, COMM 10H, etc.) are matched to the closed-list zero-padded codes.",
-   "The section states generic Nursing A.S. rules: at least 90 degree-applicable quarter units including major and GE courses; this boilerplate is repeated for the RN degree, so it was not recorded as degree_total.",
-   "GE: students complete one of the De Anza GE patterns; Nursing A.S. degrees specifically require De Anza GE Area 2 (4 units), Area 3 (4 units), Area 6 (4 units) and one unit of Area 7 PE/PEA. Cal-GETC is also referenced.",
-   "Math requirement may also be met by higher-level math or a qualifying assessment score for MATH D114.",
-   "The program learning outcomes are identical to those printed for the Registered Nurse (RN) A.S. degree.",
-   "No careers recorded: the text describes eligibility for NCLEX-RN licensure but does not name a career in a careers statement; reviewer may consider 'Registered Nurse'.",
-   "Units are quarter units."
+   "Total 73 taken from 'Major Required: 73 Credits' / 'Total Required: 73 Units'; Prerequisite (48) + Required Core (25) = 73.",
+   "The 'Prerequisite: (48 Units)' total includes the nested Anthropology/Sociology, Communications, English and Mathematics groups (structured data nests them inside it); the six directly listed prerequisite courses sum to 29 units. Stated 48 recorded on the Prerequisite block as printed.",
+   "Mathematics: catalog allows MATH 114 'or higher level mathematics, or get a qualifying score for MATH D114 on De Anza's mathematics assessment test'; recorded as a single required course with this alternative path noted.",
+   "Catalog prints codes without leading zeros (BIOL 40A, ANTH 2H, COMM 10H, NURS 94L, NURS 94A, NURS 95L, NURS 96L, NURS 96A) and without spaces (PSYCC1000, COMMC1000, ENGLC1000); treated as matching closed-list codes BIOL 040A, ANTH 002H, COMM 010H, NURS 094L, etc.",
+   "Degree total not recorded: the 90 quarter-unit figure is a generic A.S. degree requirement sentence, not printed as this award's total. GE: 'Additional A.S. Nursing De Anza general education requirements are required' (GE Areas 2, 3, 6 and one unit of Area 7); no GE unit total printed for the award.",
+   "Page header shows tags 'Noncredit', 'New for Spring 2026' and 'Pending state approval', while the program metadata says Program Status Approved, Award Type A.S. Degree, Proposal Start Fall 2026; reviewer should confirm status.",
+   "Catalog text is cut off mid-way through the structured program-requirements XML; the printed requirement tables above it are complete.",
+   "No careers listed: text names licensure (NCLEX-RN) and Registered Nurse only in the program title/outcomes, not as a stated career list."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29,
+    "max": 41
+   },
+   "words": "De Anza General Education (https://daweb2.deanza.edu/articulation/general-education/local-ge/2026-2027.html: De Anza Local AA/AS General Education 2026–2027: 'Complete all seven areas for a total of 29–41 quarter units.' (college page read 43062313447))"
+  }
+ ],
+ "read_run": "43056325121"
 }

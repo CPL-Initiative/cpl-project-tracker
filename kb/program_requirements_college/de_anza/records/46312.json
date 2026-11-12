@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Elementary Mathematics Education",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=130",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/elementary-mathematics-education-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8268,
+  "input_tokens": 8698,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8268,
-    "output_tokens": 994,
+    "input_tokens": 8698,
+    "output_tokens": 1719,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,37 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 994,
+  "output_tokens": 1719,
   "output_tokens_details": {
-   "thinking_tokens": 305
+   "thinking_tokens": 539
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05295,
- "ms": 9580,
- "seconds": 10.0,
+ "cost_usd": 0.06917,
+ "ms": 15362,
+ "seconds": 15.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "EDUC46",
-    "MATH11",
-    "MATH11H",
-    "MATH44",
-    "MATH46",
-    "STATC1000",
-    "STATC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -69,26 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    20.0,
+    20.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -96,22 +89,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "(no Elementary Mathematics Education section in the text)",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 20,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,46 +121,89 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Display increasing confidence in their ability to use a range of speaking, listening and collaboration skills",
+    "Explain fundamental mathematical concepts—including number systems, operations, algebra, geometry and probability—in a way that supports conceptual understanding for elementary learners",
+    "Design and relate messages clearly for effective and appropriate oral communication",
+    "Apply problem-solving strategies and mathematical reasoning to real-world scenarios relevant to elementary education and everyday decision-making",
+    "Analyze, evaluate and respond competently to discourse by weighing research, examining evidence and using critical reasoning; use visual models, manipulatives and representations to support mathematical thinking and communication, particularly in the context of elementary math instruction",
+    "Demonstrate fluency with key topics from finite mathematics and liberal arts math, including logic, set theory, combinatorics and basic financial mathematics",
+    "Interpret and analyze data using basic statistical techniques relevant to classroom assessment and educational research",
+    "Communicate mathematical ideas clearly and accurately using appropriate language, notation and pedagogical techniques for diverse learners"
+   ],
+   "careers": [
+    "mathematics education at the elementary level"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "EDUC 46",
-    "why": "appears only in another program's subject-grouped course list; no Elementary Mathematics Education section in the text"
-   },
-   {
-    "code": "MATH 011H",
-    "why": "appears (as MATH 11H) only in another program's course list; no section for this award in the text"
-   },
-   {
-    "code": "MATH 11",
-    "why": "appears only in another program's course list; no section for this award in the text"
-   },
-   {
-    "code": "MATH 44",
-    "why": "appears only in another program's course list; no section for this award in the text"
-   },
-   {
-    "code": "MATH 46",
-    "why": "appears only in another program's course list; no section for this award in the text"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "appears only in another program's course list; no section for this award in the text"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "appears only in another program's course list; no section for this award in the text"
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "MATH 11",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 11H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 44",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 46",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "EDUC 46",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (PDF page 130) has no heading or requirements for the Elementary Mathematics Education Certificate of Achievement. It shows the middle of a long list of courses grouped by subject (CIS, Education, Engineering, Environmental Science, Mathematics, Physics, etc.), each subject headed '(0 Units)'. This list belongs to some other program, apparently a broad STEM or science award.",
-   "All seven closed-list courses do appear in that list: EDUC 46, MATH 11/11H, MATH 44, MATH 46 and STAT C1000/C1000H. They are not recorded as requirements of this certificate, because the text does not show them under this award's section.",
-   "A reviewer should check the adjacent catalog pages for the actual Elementary Mathematics Education certificate section; the page link may point to the wrong page."
+   "The catalog lists seven courses (each 5 units) under 'Required Core: (20 Units)' with no explicit 'or'. Based on the note that cross-listed/honors versions earn credit only once and the 20-unit total, MATH 11H was recorded as the honors alternative to MATH 11, EDUC 46 as the cross-listed alternative to MATH 46, and STATC1000H as the honors alternative to STATC1000, giving four required courses (20 units). Reviewer should confirm.",
+   "Catalog prints 'MATH 11H' while the closed list stores 'MATH 011H'; treated as the same course. 'STATC1000'/'STATC1000H' match closed-list STAT C1000/STAT C1000H.",
+   "The opening text about Bachelor of Science degree requirements (180 quarter units, GE patterns) appears to belong to a different program/page and was not used for this certificate.",
+   "Program metadata states Min Units 20.0 and Max Units 20.0, consistent with 'Total Required: 20 Units'.",
+   "PSLO list is printed for the program as a whole (separated by '**') and recorded for this certificate."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

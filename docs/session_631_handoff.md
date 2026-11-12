@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 630 (SkyCartwheel, the CPL Queue routine, 2026-11-10 12:16Z to ~12:45Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 631

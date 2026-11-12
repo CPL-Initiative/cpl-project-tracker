@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 627 (SkyBode, the CPL Queue routine, 2026-11-10 07:21Z to ~08:05Z)
 tags: [handoff, program-requirements-harvest, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 628

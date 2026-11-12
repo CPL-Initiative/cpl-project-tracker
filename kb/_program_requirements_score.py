@@ -177,7 +177,40 @@ def alternatives(course: dict) -> list[dict]:
     return out
 
 
-def listed_key(code: str | None, listed: dict) -> str:
+# An eLumen publish call's packed code (De Anza, S637-S638): a fixed-width subject that keeps its
+# spaces and slash, a campus letter, four characters of number. A record read before the reader
+# unpacked it carries it as printed (C DD010G, E SD001., F/TVD02AH); the scorer reads it as the
+# listed course it names (C D 10G), and only when the state's file lists that course. Only at a
+# college whose reconcile entry says packed_codes, and only on De Anza's campus letter D: elsewhere
+# the same reading names another real course (Lemoore's ENGR025 is no ENG 25; review of #3109).
+PACKED_CODE = re.compile(r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)D(\d{2,3}[A-Z.]{0,2})")
+
+
+def unpacked_code(code: str | None) -> str | None:
+    """A packed eLumen code as the page's script shows it, or None."""
+    m = PACKED_CODE.fullmatch((code or "").strip().upper())
+    if not m:
+        return None
+    num = m.group(2)
+    if len(num) != 4 and not (len(num) == 3 and num.isdigit()):
+        return None
+    return "%s %s" % (m.group(1), num.rstrip(".").lstrip("0") or "0")
+
+
+def listed_key(code: str | None, listed: dict, packed: bool = False) -> str:
+    """_listed_key, then, at a college that packs its codes, the listed course a packed code names."""
+    k = _listed_key(code, listed)
+    if k in listed or not packed:
+        return k
+    u = unpacked_code(code)
+    if u:
+        ku = _listed_key(u, listed)
+        if ku in listed:
+            return ku
+    return k
+
+
+def _listed_key(code: str | None, listed: dict) -> str:
     """A placed code's key in the closed list: its normal form, or the listed code it
     names once a subject's slash is set aside. The state's file stores some slashed
     subjects without the slash (Crafton Hills' CNAN633, which its page prints CNA/N 633,
@@ -611,10 +644,66 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
 
 
-def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> dict:
+# The term-length ratio of an hours range (Victor Valley, S639): a 16-week term against an 18-week one.
+TERM_RATIO = 8.0 / 9.0
+# The catalog prints hours to one decimal place ("96.0 - 108.0", "28-31.5"), so a printed low end
+# stands up to 0.05 from the exact eight ninths of its top. The 22 Victor Valley ranges that pass
+# land on it exactly (96 of 108, 296 of 333, 28 of 31.5); 40910's 7.6 of 8.6 sits 0.044 off, the
+# one-decimal printing of 7.644, and fails on its sum (7.3).
+TERM_TOL = 0.05
+
+
+def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
+    """A noncredit program whose catalog prints each course's hours once and the certificate's
+    total as a range whose low end is eight ninths of its top (Victor Valley, S639: "Total
+    Certificate Hours: 96.0 - 108.0" over WKPR 011, 012 and 014, each description "Lecture
+    Hours: 36.0"; college-page-read 43134526902). What rests on the catalog: the range and each
+    course's hours, as printed. What is the session's reading (the lane conductor's call, S639):
+    that a range in that ratio is one total across term lengths, 16 weeks against 18, so the top
+    is the total the printed courses allow; no page says so, and no page prints a course's low
+    end. This sits beside Sheet 120 card 1 (narrow) without reversing it: that reading still
+    governs every units record and any sum short of the top. A range in another ratio is another
+    cause and is left alone: a low end printed as a labeled minimum ("min 47 hours", Laney), or a
+    range that runs from a course that "need not be taken" which the record holds as required (De
+    Anza). Only a record measured in hours, a range whose low end is within TERM_TOL of eight
+    ninths of its top, every course and alternative carrying one figure (no units_max, no
+    repeats), every counted block a rule-all list or a choose-courses list with no printed
+    figure (no choose_units, fills_to, repeats, floors or option group, no open electives), and
+    a sum of one figure equal to the range's top."""
+    if measure(record) != "hours" or not stated[1] - stated[0] > TOL:
+        return False
+    if abs(stated[0] - stated[1] * TERM_RATIO) > TERM_TOL:
+        return False
+    if abs(lo - hi) > TOL or abs(hi - stated[1]) > TOL:
+        return False
+    # The sum must be the courses' own: no open electives added to it, and no block whose printed
+    # figure, fill, repeat or option group stands in for or moves the courses' sum (S639 review).
+    if _num((record.get("program") or {}).get("open_elective_units")):
+        return False
+    for b in record.get("blocks") or []:
+        if b.get("rule") == "recommended":
+            continue
+        if b.get("rule") not in ("all", "choose_courses") or b.get("option_group") or b.get("fills_to") \
+                or b.get("repeats") or b.get("floors"):
+            return False
+        if b.get("rule") == "choose_courses" and (_span(b.get("stated")) or _num(b.get("minimum")) is None):
+            return False
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                u = _num(entry.get("units"))
+                if (u is None or entry.get("times") is not None or entry.get("units_total") is not None
+                        or _num(entry.get("units_max")) not in (None, u)):
+                    return False
+    return True
+
+
+def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float,
+                    record: dict | None = None) -> dict:
     """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
     status and how. The rescorer reads it too (kb/_program_requirements_rescore.py),
-    so it never re-adds the blocks."""
+    so it never re-adds the blocks. record, where the caller holds it, lets an hours
+    record whose single-figure courses add to its printed range's top pass as
+    meets_top (hours_meets_top); the rescorers pass none, so a filed score is not moved."""
     if abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL:
         return {"pass": True, "status": "equal"}
     # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
@@ -631,6 +720,8 @@ def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: floa
     # totals and 9 electives-filled degrees read so; any total inside the span would pass 738.
     if abs(lo - stated[0]) <= TOL and hi > stated[1] + TOL:
         return {"pass": True, "status": "equal", "meets": True}
+    if record is not None and hours_meets_top(record, stated, lo, hi):
+        return {"pass": True, "status": "equal", "meets_top": True}
     return {"pass": False, "status": "unequal"}
 
 
@@ -681,7 +772,7 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
-          aliases: dict | None = None) -> dict:
+          aliases: dict | None = None, packed: bool = False) -> dict:
     """The automatic bars. text is the catalog text the record was read
     from; without it a record that states no figure cannot pass. award is the
     state file's award, which names an associate degree for transfer. aliases is the
@@ -692,7 +783,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         if k:
             listed[k] = _num(c.get("units"))
     record = with_prefix_aliases(record, listed, aliases)
-    placed = [(listed_key(e.get("code"), listed), e, b) for _, e, b in placed_codes(record)]
+    placed = [(listed_key(e.get("code"), listed, packed), e, b) for _, e, b in placed_codes(record)]
     placed_keys = {k for k, _, _ in placed}
 
     missing = sorted(k for k in listed if k not in placed_keys)
@@ -732,7 +823,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
                  "stated": list(stated), "against": "program", "why": reasons}
     else:
-        pv = program_verdict(prog, stated, lo, hi)
+        pv = program_verdict(prog, stated, lo, hi, record)
         ok = pv["pass"]
         # A certificate whose printed total includes the general education units it names
         # (San Joaquin Delta 05630, S424: "Minimum Units Required: 51" over a 35-unit major and
@@ -759,6 +850,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             arith["minimum"] = True
         if pv.get("meets"):
             arith["meets"] = True
+        if pv.get("meets_top"):
+            arith["meets_top"] = True
         if ge_included:
             arith["ge_included"] = list(ge)
             arith["computed"] = [round(lo + ge[0], 2), round(hi + ge[1], 2)]

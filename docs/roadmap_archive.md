@@ -233,3 +233,15 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## INDEX update history, moved 2026-11-10 (SkySilverDollar)
 
 - 2026-11-08 SkyCondor (S608, CPL Queue routine, 12:12Z): Columbia 52 to 78 of 82 passing, reread and displayed (#2917, carrying #2916 and #2915); Redwoods read by shape and a Cal-GETC 34 step for its transfer degrees, reconcile 42480098144 in flight (#2918); light checkpoint; `docs/session_609_handoff.md`.
+
+### INDEX update history, moved 2026-11-11 (S636)
+
+- 2026-11-09 (SkyCigar): the Docket steps 1-3, call 9 lifted, TRUNCATE revoked, CSMs on the reviewer list; handoff 621.
+- 2026-11-08 SkySunflower (S612, Sam's session): the anchor re-key applied, 20 keys and 21 crosswalk pointers (#2938); funding tests twice as fast (#2939); the CCR seed re-check reads course descriptions and TOP (#2940); Open Asks Sheets 173 and 174 (CPLBrain#723); handoff 613, full checkpoint.
+- 2026-11-08 SkyTadpole (S611, Sam's session): S604's five PRs merged; its staged memory rows written (#2931); Exhibits Queue (#2933), the List panel trail (#2934) and the anchor re-key dry run (#2935) shipped; the key sketch held for Sam (#2932); Open Asks Sheet 171; KB note `methodology-read-a-documents-era-from-its-keys`; full checkpoint.
+
+<!-- moved from docs/INDEX.md Update history, S638 -->
+- 2026-11-09 (S621 SkyBlackEye): the funding rollout day (Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, the CSM funding door); handoff 622.
+
+<!-- moved from docs/INDEX.md Update history, S639 -->
+- 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.

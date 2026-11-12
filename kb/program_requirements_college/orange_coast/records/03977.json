@@ -60,21 +60,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     63.0,
     63.0
    ],
    "stated": [
-    84.0,
-    84.0
+    63.0,
+    63.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     84.0,
+     84.0
+    ],
+    "stated": [
+     84.0,
+     84.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -109,8 +124,8 @@
    "section_heading": "Airframe & Powerplant, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 63,
+    "max": 63
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -123,8 +138,8 @@
     "max": 84
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -289,5 +304,32 @@
    "Outcome text printed 'AIRFRAME &amp; POWERPLANT' (HTML entity); recorded as '&'. The second outcome ends 'Federal Aviation.' as printed (apparently truncated). Outcomes are printed for the Aviation Maintenance Technology program as a whole and recorded for this award."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 63,
+    "max": 63
+   },
+   "words": "Total Major Units\t63"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "OCC AS General Education 1\t21"
+  }
+ ],
+ "read_run": "38670927724"
 }

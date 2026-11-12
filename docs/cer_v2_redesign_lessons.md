@@ -1149,3 +1149,107 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
 5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.
+
+## S636 SkyAntennae (2026-11-11): the apply reports an issuer a changed override leaves behind
+
+- `promote_issuers` fills or appends and never removes, so S634's changed override for 10-Key Data Entry left the old issuer in `kb/credentials.json` until the reference was edited by hand (`cpl_memory` `p-credential-review-apply-never-removes-issuer`).
+- `stale_override_issuers` (#3100) names each issuer an override once appended (`classified_by` *curator (CER issuing-agency override)*) that no current primary or additional override names, and the apply prints them. It removes nothing: one credential may rightly carry several issuers (Rule 4), and the apply cannot tell a replaced issuer from a second rightful one. A record the override filled in place carries no mark of it and is not read.
+- Measured on the live files, 2026-11-11: 166 appended records, none stale. Guard: `tests/credential_review_stale_issuer_test.py`.
+- **Not built:** a retire path that removes an issuer. It needs a rule for when one issuer replaces another, which is a person's call.
+
+## S637 (SkyPorpoise, 2026-11-11): related titles, certification names, the rename batch, the canonical model
+
+- **Sam's rulings this run, in order.** The title format (*"Use the cert's official name first and the code in
+  parentheses"*; #3108). At 06:20 PT, relayed by COBIx and confirmed by him in session: *"Keep the college as issuer on
+  the P1 title"*. At 06:50 PT on #3110: the canonical title carries the credential's issuer and each local exhibit its
+  path and assessor, which replaced the 06:20 note; then rulings 3 to 6 (bundles, the AWS and ACE tags, trainers, the
+  ITPI ask). `docs/reference/canonical_credential_model.md`, DR-34 (#3114).
+- **A ruling on a model question can move within the hour.** The issuer was built, tested and recorded twice. Build
+  the reversible half until the ruling is marked final (Sky's reply on #3111, item 2).
+- **A test that pins a dated ruling tells you when you are about to reverse it.** `tests/exhibits.test.js` failed on
+  *"a course aligned to an ASE test keeps the proposal's issuer"* (Sam, 2026-10-31) the moment the format filled ASE.
+  That stopped a silent reversal in #3108; #3114 changed the same test on his word.
+- **The rename path already existed.** Approving the batch writes `unified_title_override` and
+  `unified_title_merge_confirm`; the dry run renames the earliest-saved title of a group and queues the rest as
+  merges, so the title that leads is saved a second earlier.
+- **A merge keeps every distinct issuer** (`fold_credentials` dedupes on issuer and trainer only). Folding a
+  college-issued title into an ASE title leaves two issuer records. Fix that before the 16 merges apply (Sky on #3110).
+
+## Moved from the lane (S638): the Credential Catalog port and the statewide request route, as they stood
+
+**The Credential Catalog, ported from the mock (SkyAerial, 2026-11-06; Sam: "I think it would make a good beginning for
+our credential registry", then "let's roll with this"; the mock https://claude.ai/artifact/2r9apBWRRiaYS6CNqYy3Ds, eight
+versions in one morning).** `library/adopt/` now runs the full width; three figure tiles beside the title open what they
+count (1,260 earn credit at a college, 101 colleges award it, 7,389 not yet evaluated; the tile count is his call, "101 is
+right") and **follow every filter but Credit status** (SkyLantern, Sam 2026-11-06: Computer and Information Sciences reads
+68 · 44 · 997; with a college pick the first two count what earns credit there), and a tile keeps the filters when it opens; *Start with* names five kinds of learner; every filter is a multi-select picker (College with a district heading
+only where a district has more than one college; Region under *Strong Workforce* and *ASCCC*; Field; *How credit is
+given*; **Credit status**, Show folded into it); the list groups under field headers, the largest work fields first and
+the exams (AP, IB, CLEP, DSST) last; a **List** view drills down (issuer searches, field and type filter, the count opens
+the awarding table) **one line a credential** (SkyLantern, Sam 2026-11-06): Credit status is its own column, *Ask us to
+prioritize* the last column on the right (its *Ask* and the asked count), a long cell ends in an ellipsis with the whole
+text in its title, and the List scrolls in a box a screen tall that **lazy-loads** the next 72 as the reader nears its end
+(the cards too, against the window; Show more stays only where the browser lacks IntersectionObserver). **Worth a faculty
+review sits above the results**, its 28 cards in a box about two rows tall; the matrix's cells open a side panel (**A** marks a college
+that could adopt; a column heading picks the college); the panel resizes from its left edge and the browser keeps the
+width; the Library's eleven photos cycle with *Pause photos*; the intro says *many*, and no public string says a bare
+MAP or CPL. **Credit status in public words, the Commons' curation words beside them:** Earns credit at a college
+(Awarded somewhere, 1,260) · Earns credit here / Earns credit elsewhere, could be added here (the two college-relative
+values, replacing Show) · Known to a college, no credit yet (In MAP, no articulation yet, 12) · Being reviewed (Held for
+title review, 1,171) · Not yet evaluated (Harvested, no exhibit yet, 7,389, the nightly watch's
+`kb/it_ai_credential_catalog.json`). Data: `kb/_build_adopt_page.py` also writes `adopt_more.json` (the other statuses,
+read after the first paint); `kb/_build_adopt_align.py` writes `adopt_align.json`, the **analysis for faculty** (issuer
+skill areas from `kb/reference/industry_credential_skills.json` against `public.course_outcomes`, an illustrative
+word-overlap score labeled so; the Foundation and ASCCC method, or a TypeSafe Jev Score per skill area, replaces it; Jev
+already runs the harvest, `tests/jev_harvest_test.py`). Both run daily. Tests `public_adopt` (91),
+`adopt_align_build_test.py` (9), `adopt_page_build_test.py` (32); `npm run a11y -- public-adopt public-adopt-dark
+public-adopt-matrix public-adopt-list` (the last two new). **Request an evaluation** ships with the routes that exist
+today: the college route through *Find your college* and *Credit for Being You* (the portal is recorded as a Found data
+source, `docs/reference/data_sources.md`), and a statewide line that says the list is being set up.
+
+**RULED and built (Sam, Open Asks Sheet 162, 15:16Z 2026-11-06, his own call, in a note; built by SkyLoop the same
+afternoon): the statewide route is a public request to prioritize review, never an evaluation promise.** His words:
+*"Reframe it as a public request to prioritize review of a credential. The idea is that we could collect requests to help us
+better prioritize our work without promising any one person that we would evaluate their credential--that would be left to
+the discretion of local colleges."* The page's word is **Ask us to prioritize this credential** (the panel's heading, every
+card's chip; *Ask us to prioritize* on a List row's 0); the panel's statewide paragraph says each request raises the
+credential in the Initiative's order, that evaluation rests with a college's faculty, and that no reply is sent. The form
+takes the credential (fixed), an optional college (prefilled from the pick) and an optional email, and posts to **one
+INSERT-only SECURITY DEFINER function**, `credential_priority_request()`, which validates, bounds, drops a repeat from the
+same email within a day, and returns the count; `credential_priority_counts()` is the one public read (credential and n,
+nothing else) and paints the count beside the credential on its card, its List row and the panel's heading (the count is
+the signal). The table `credential_priority_requests` has no public policy; the team reads rows behind the phrase or a
+reviewer sign-in; nobody deletes. Migration `kb/migrations/2026-11-06_credential_priority_requests.sql` (+ rollback), applied
+16:21Z by `supabase-migrate.yml` from `kb/migrations/.apply` (receipt `kb/receipts/migration_credential_priority_requests_42251263756.json`;
+the MCP's apply had waited on a confirmation and timed out, Rule 10 c); read back live: anon executes the two functions and
+holds no insert on the table, RLS on. Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
+mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
+(81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).
+
+## Moved from the lane (S639, 2026-11-12)
+
+Moved verbatim from `docs/reference/lanes/cer-procedures.md` at the S639 checkpoint to bring the lane under its budget.
+
+**The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
+from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from
+`kb/exhibits_adoption.json`, and **settled means a local title under the credential carries a review stamp**, a person's
+or a cohort's. It offers both CSVs and Create Handout, writes nothing but the asks, remembers no filter, and `?college=`
+follows the pick. Today's shape is the port below.
+**The Credential Catalog's port from the mock (SkyAerial, 2026-11-06) and the statewide request route (Sheet 162,
+DR-31, `credential_priority_request()`)** moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane
+(S638)*. Ruled and standing: the statewide route is a public request to prioritize review, never an evaluation promise.
+
+**The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
+functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public
+face of the Exhibits reference plus the harvested lane).** Already there: the resizable side panel, drill-downs, the
+could-adopt courses behind a chip, Request Quick Adopt, the held and conflict queues, the industry lane, the SLO neighbor
+hints, procedure requests, and (SkyLoop, 2026-11-06) **the public requests as the Requests view** (`#exhibits/requests`):
+one line per credential, most asked first, the colleges named or *Statewide only*, emails counted and never shown, first
+and last asked; the views row counts the asks still new and Progress lists them with *Read them*; the read goes behind the
+phrase or a reviewer sign-in (`tests/exhibits_requests.test.js`, 19). **To add:** credit status as one band and filter
+across all four classes (held, conflict and industry are separate lanes today); routing a request to a college or the
+statewide list from its line (a status stamp, service role today); the analysis for faculty in the side panel; A for a
+could-adopt cell wherever a matrix shows; the table shape with 0 carrying the action. Public only: Start with, the photos,
+the portal hand-off.
+
+**Re-analysis (first run S626, 2026-11-10).** A press of the List's re-analyze box runs the checks (`kb/_exhibit_reanalysis_checks.py`; findings `kb/exhibits_reanalysis/<date>.json`, `latest.json`), then the Jev runner (`kb/_exhibit_reanalysis_jev.py` on `typesafe-smoke.yml`, input `reanalysis`): two questions, no gate, each answer Jev's probability for Sam's word. The findings panel under the box leads with what needs the sender's word. **Sheet 180's rulings are carried out (cards 3 and 6, 2026-11-10):** Wildland Fire-Basics reads *California State Fire Training (SFT)* (S633); 10-Key Data Entry's issuer reads *California Community Colleges* alone (S634, receipt `kb/receipts/kb_curation_10key_issuer_2026-11-10_s634.json`); CSTI, Johnson Controls Training Institute and Spaulding Marine Center stay as issuers. **DECIDED (S634):** the two *Graduate Level Institution of Higher Education* rows are Los Angeles Pierce's doctorate exhibits (MAP 63381, 64857); MAP names no conferring university, so Sam's rows stand until Pierce names one (ask its CSM). The Ph.D. exhibit sits under *Clinical Counseling Laws and Ethics*, a course it awards; the row is Sam's to move. `kb/_apply_credential_review.py` never removes an issuer; it names any a changed override leaves (`stale_override_issuers`); edit the reference too. The five verdicts are the exhibits' first calibration set. History: lessons, *Moved from the lane (S634)*. **NEXT:** the next request runs both.

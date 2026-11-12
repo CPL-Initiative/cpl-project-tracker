@@ -1,13 +1,25 @@
 {
  "schema": 1,
- "generated_at": "2026-11-10T20:28:45Z",
+ "generated_at": "2026-11-11T17:45:23Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
    "id": "ase",
    "label": "ASE",
    "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to later exhibit titles in parens after the title",
-   "tip": "An automotive course that prepares for an ASE test gets the test in parentheses after the title: Automotive Technology (ASE A7 Heating and Air Conditioning)."
+   "tip": "An automotive exhibit named for an ASE test takes the test's official name, then its code in parentheses: Medium/Heavy Truck Parts Specialist (ASE P1). The program name does not lead (Sam, 2026-11-11). A title already under an older form waits in the rename batch.",
+   "ruling": {
+    "who": "Sam",
+    "date": "2026-11-11",
+    "words": "Use the cert's official name first and the code in parentheses: \"Medium/Heavy Truck Parts Specialist (ASE P1)\". Don't put the program name in front, so \"Automotive Technology (...)\" is out. Students search by the cert name, and colleges adopt by it."
+   },
+   "notes": [
+    "Why a noncredit course with a certification's title can qualify for CPL. There are three paths.",
+    "Credit by exam, mirrored: credit and noncredit faculty agree on the assessment evidence, and the student is registered in the mirrored credit course and gets a grade.",
+    "Credit by exam, not mirrored: the student gets a CX CPL notation and a grade on the credit course.",
+    "Industry certification: the student earns the certification, possibly after the noncredit course, and gets credit through an existing articulation.",
+    "All three point to the same canonical certification title, so a cert-named noncredit title folds under the certification, not under the program."
+   ]
   },
   {
    "id": "numerals",
@@ -41,122 +53,64 @@
   }
  ],
  "counts": {
-  "ase": 0,
-  "numerals": 4,
+  "ase": 1,
+  "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 4,
+ "local_titles": 2,
  "cards": [
   {
-   "current": "American Sign Language IV",
-   "proposed": "Intermediate American Sign Language 2",
+   "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+   "proposed": "Medium/Heavy Truck Parts Specialist (ASE P1)",
    "rules": [
-    "numerals",
-    "language"
+    "ase"
    ],
    "why": [
-    "Roman numerals become Arabic",
-    "“ASL 53 American Sign Language IV” reads as intermediate level 2"
+    "ASE P1's official name is Medium/Heavy Truck Parts Specialist"
    ],
    "locals": [
     {
-     "raw": "ASL 53 American Sign Language IV",
-     "colleges": [
-      "Berkeley City College"
-     ],
-     "course": "ASL 053",
-     "credit": "4 hours in American Sign Language IV"
+     "raw": "Noncredit for AUTO P1",
+     "colleges": [],
+     "course": "",
+     "credit": ""
     }
    ],
-   "id": "460caa647cd9",
+   "id": "5dcc165d855e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary French I",
+   "proposed": "Elementary French 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "French 1-Elementary French 1st Quarter",
+     "colleges": [
+      "De Anza College"
+     ],
+     "course": "",
+     "credit": "5 hours in Elementary French (First Quarter)"
+    }
+   ],
+   "id": "47c90f286f99",
    "issuer": "California Community Colleges",
    "proposed_exists": true,
-   "proposed_locals": 2,
+   "proposed_locals": 6,
    "proposed_issuer": "California Community Colleges",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Facials I",
-   "proposed": "Facials 1",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 215 Facials I",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 215",
-     "credit": "1 hour in Facials I"
-    }
-   ],
-   "id": "0f4e3168f278",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Hairstyling Services/Haircutting II",
-   "proposed": "Hairstyling Services/Haircutting 2",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 223 Hairstyling Services/Haircutting II",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 223",
-     "credit": "1 hour in Hairstyling Services/Haircutting II"
-    }
-   ],
-   "id": "9df782749a76",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Manicuring and Pedicuring I",
-   "proposed": "Manicuring and Pedicuring 1",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "COSM 211  Manicuring and Pedicuring I",
-     "colleges": [
-      "Laney College"
-     ],
-     "course": "COSM 211",
-     "credit": "1 hour in Manicuring and Pedicuring I"
-    }
-   ],
-   "id": "fb1bda479521",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
    "current_locals": 1,
    "moves_all": true
   }

@@ -62,19 +62,22 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    49.5,
-    49.5
+    70.5,
+    70.5
    ],
    "stated": [
     70.5,
     76.5
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    21.0,
+    21.0
+   ],
    "why": [
-    "the record names the degree total and the Butte GE pattern, but no units for it"
+    "the blocks and general education sum to 70.5-70.5; the catalog prints 70.5-76.5 for the degree"
    ],
    "major": {
     "pass": true,
@@ -134,8 +137,8 @@
     "max": 76.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -301,5 +304,20 @@
    "Careers: only 'automotive technicians' (in Honda and Acura dealerships) is named; career information is otherwise referred to the department website."
   ]
  },
- "extracted_run": "38948140330"
+ "extracted_run": 42985449223,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "Map (Butte GE) (https://butte.curriqunet.com/catalog/iq/25389/28399/27734: Butte A.A. and A.S. pages: 'GE Pattern(s): Butte Local, Cal-GETC' above 'Map (Butte GE)' (Agriculture Science A.S. 01298; college page read 42957477366); Butte College Local GE Guide AA/AS Degree: 'Complete a minimum of 21 semester units of general education from the approved list according to the following pattern', Areas 1, 1B/C, 2, 3, 4, 5 and 6 each 'One course, 3 semester units' (college page read 42961405888))"
+  }
+ ],
+ "read_run": "38948140330"
 }

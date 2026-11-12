@@ -514,6 +514,12 @@ jobs:
       - name: Build the Exhibits tab's Another look
         run: python3 kb/_sweep_exhibit_titles.py --quiet || echo "::warning title=Another look not rebuilt::kb/_sweep_exhibit_titles.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
 
+      # The Review card's Related titles panel and the rename batch (Sam, 2026-11-11): every canonical title with
+      # its issuer and counts, and the ASE titles not yet named "<Official cert name> (ASE <code>)". Renames
+      # nothing; Sam approves the batch in Review. kb/exhibits_related.json; exhibits.js reads it.
+      - name: Build the Exhibits tab's related titles and rename batch
+        run: python3 kb/_build_exhibits_related.py --quiet || echo "::warning title=Related titles not rebuilt::kb/_build_exhibits_related.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
+
       # The List view's AI sort (Sam, 2026-11-01: "like with like in an alpha-like order"): every credential
       # grouped by the subject words its title shares, the groups A to Z. Reads the credential reference
       # this run wrote. kb/exhibits_ai_sort.json; exhibits.js reads it when AI sort is pressed.
@@ -658,6 +664,7 @@ jobs:
           git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
           # The Exhibits tab's Another look (kb/_sweep_exhibit_titles.py).
           git add kb/exhibits_sweep.json 2>/dev/null || true
+          git add kb/exhibits_related.json 2>/dev/null || true
           git add kb/exhibits_ai_sort.json 2>/dev/null || true
           git add kb/exhibit_cert_links.json 2>/dev/null || true
           git add kb/exhibit_slo_neighbors.json 2>/dev/null || true

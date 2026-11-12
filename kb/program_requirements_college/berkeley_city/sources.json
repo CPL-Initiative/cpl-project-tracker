@@ -462,7 +462,7 @@
    }
   },
   "listed": 21,
-  "text_chars": 2992
+  "text_chars": 2996
  },
  {
   "control_number": "11960",
@@ -767,70 +767,12 @@
   "title": "Social Sciences",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "AFRAM1",
-   "AFRAM31",
-   "ANTHR1",
-   "ANTHR13",
-   "ANTHR18",
-   "ANTHR2",
-   "ANTHR3",
-   "ASAME11",
-   "CHDEV51",
-   "ECON20",
-   "ECONC2001",
-   "ECONC2002",
-   "ETHST1",
-   "HIST19",
-   "HIST21",
-   "HIST2A",
-   "HIST2B",
-   "HIST31",
-   "HIST3A",
-   "HIST3B",
-   "HISTC1001",
-   "HISTC1002",
-   "LIS85",
-   "M/LAT31",
-   "M/LAT33",
-   "M/LAT34",
-   "POLSC1000",
-   "POSCI19",
-   "POSCI2",
-   "POSCI20",
-   "POSCI3",
-   "POSCI4",
-   "POSCI6",
-   "PSYCC1000",
-   "PSYCH21",
-   "PSYCH6",
-   "PSYCH61",
-   "SOC1",
-   "SOC13",
-   "SOC18",
-   "SOC2",
-   "SOC5",
-   "SOC7",
-   "SOC8",
-   "WS1"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40069",
-   "title": "Social Sciences - A.A. Degree",
-   "h1": "Social Sciences - A.A. Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "social sciences - a.a. degree",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 45,
-  "text_chars": 4809
+  "text_chars": 0
  },
  {
   "control_number": "19267",
@@ -1170,54 +1112,32 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40071",
-   "title": "Political Science - AA-T Degree",
-   "h1": "Political Science - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "political science - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 2654
+  "text_chars": 9035
  },
  {
   "control_number": "33181",
   "title": "Teacher's Aide",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CHDEV51",
-   "COMMC1000",
-   "EDUC1",
-   "EDUC18",
-   "EDUC97",
-   "EDUC98",
-   "EDUC99",
-   "ENGLC1000",
-   "PSYCH21"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40022",
-   "title": "Teacher's Aide - Certificate of Achievement",
-   "h1": "Teacher's Aide - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "teacher's aide - certificate of achievement",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 1910
+  "text_chars": 0
  },
  {
   "control_number": "33548",
@@ -1407,39 +1327,12 @@
   "title": "Multimedia Arts Core",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.824,
-  "codes_found": [
-   "MM/AN40A",
-   "MM/DI4",
-   "MM/MW1A",
-   "MM/MW1LA",
-   "MM/MW2",
-   "MM/MW2L",
-   "MM/MW4A",
-   "MM/MW4LA",
-   "MM/VI9A",
-   "MMART1",
-   "MMART110",
-   "MMART197",
-   "MMART3",
-   "MMART468"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39967/41007/40939/41092",
-   "title": "Multimedia Arts-Video Arts - AA Degree",
-   "h1": "Multimedia Arts-Video Arts - AA Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.667,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 17,
-  "text_chars": 3274
+  "text_chars": 0
  },
  {
   "control_number": "35507",
@@ -1465,9 +1358,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "academic composition skills - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1493,9 +1386,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "digital imaging - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1522,9 +1415,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "introduction to animation and game design - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1584,9 +1477,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esol advanced - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -1612,9 +1505,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esol high intermediate - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1625,28 +1518,12 @@
   "title": "Research Skills",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "LIS511",
-   "LIS512",
-   "LIS513"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40029",
-   "title": "Research Skills - Certificate of Competency",
-   "h1": "Research Skills - Certificate of Competency",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 3,
-  "text_chars": 2002
+  "text_chars": 0
  },
  {
   "control_number": "37808",
@@ -1681,9 +1558,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "introduction to motion graphics - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -1694,32 +1571,12 @@
   "title": "Studio Arts",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "sitemap_page",
-  "coverage": 0.778,
-  "codes_found": [
-   "ART20",
-   "ART22",
-   "ART4",
-   "ART46",
-   "ART47",
-   "ART50",
-   "MMART3"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39976",
-   "title": "Studio Arts - AA-T Degree",
-   "h1": "Studio Arts - AA-T Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "studio arts - aa-t degree",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 9,
-  "text_chars": 2586
+  "text_chars": 0
  },
  {
   "control_number": "37851",
@@ -1798,114 +1655,36 @@
   "title": "Video Arts Level II: Directing And Producing",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MM/VI15",
-   "MM/VI17",
-   "MM/VI1A",
-   "MM/VI1B",
-   "MM/VI5",
-   "MM/VI9B",
-   "MM/VI9C",
-   "MM/VI9D",
-   "MMART122B",
-   "MMART123",
-   "MMART197",
-   "MMART468"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40057",
-   "title": "Video Arts Level II: Directing And Producing - Certificate of Achievement",
-   "h1": "Video Arts Level II: Directing And Producing - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "video arts level ii: directing and producing - certificate of achievement",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 12,
-  "text_chars": 2426
+  "text_chars": 0
  },
  {
   "control_number": "37934",
   "title": "Video Arts Level I",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MM/VI20A",
-   "MM/VI20LA",
-   "MM/VI24A",
-   "MM/VI24LA",
-   "MM/VI25",
-   "MM/VI41",
-   "MM/VI42",
-   "MM/VI5",
-   "MM/VI9A",
-   "MMART110",
-   "MMART122B",
-   "MMART197",
-   "MMART468"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40056",
-   "title": "Video Arts Level I - Certificate of Achievement",
-   "h1": "Video Arts Level I - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "video arts level i - certificate of achievement",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 2332
+  "text_chars": 0
  },
  {
   "control_number": "37935",
   "title": "Video Arts Level II: Editing and Post-Production",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MM/VI15",
-   "MM/VI20B",
-   "MM/VI20C",
-   "MM/VI20D",
-   "MM/VI20LB",
-   "MM/VI20LC",
-   "MM/VI20LD",
-   "MM/VI24B",
-   "MM/VI24LB",
-   "MMART122B",
-   "MMART197",
-   "MMART468",
-   "MMART5A",
-   "MMDI15A"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40058",
-   "title": "Video Arts Level II: Editing and Post-Production  - Certificate of Achievement",
-   "h1": "Video Arts Level II: Editing and Post-Production  - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "video arts level ii: editing and post-production  - certificate of achievement",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 14,
-  "text_chars": 2503
+  "text_chars": 0
  },
  {
   "control_number": "37936",
@@ -1960,7 +1739,7 @@
    }
   },
   "listed": 30,
-  "text_chars": 4071
+  "text_chars": 2792
  },
  {
   "control_number": "38228",
@@ -2030,7 +1809,7 @@
    }
   },
   "listed": 15,
-  "text_chars": 2789
+  "text_chars": 2793
  },
  {
   "control_number": "38245",
@@ -2110,9 +1889,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "digital imaging: beginning digital photography - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2188,7 +1967,7 @@
    }
   },
   "listed": 16,
-  "text_chars": 2941
+  "text_chars": 2945
  },
  {
   "control_number": "39347",
@@ -2231,13 +2010,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.917,
   "codes_found": [
    "ANTHR3",
    "PSYCC1000",
    "PSYCH6",
    "SOC1",
-   "SOC120",
    "SOC13",
    "SOC18",
    "SOC2",
@@ -2247,20 +2025,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40073",
-   "title": "Sociology - AA-T Degree",
-   "h1": "Sociology - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "sociology - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
-  "text_chars": 2719
+  "text_chars": 9485
  },
  {
   "control_number": "39856",
@@ -2307,12 +2085,9 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.667,
   "codes_found": [
-   "SPAN1A",
    "SPAN1B",
-   "SPAN22A",
-   "SPAN22B",
    "SPAN2A",
    "SPAN2B",
    "SPAN38",
@@ -2320,20 +2095,20 @@
    "SPAN40"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40036",
-   "title": "Spanish - AA-T Degree",
-   "h1": "Spanish - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "spanish - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 2603
+  "text_chars": 4248
  },
  {
   "control_number": "41766",
@@ -2374,11 +2149,10 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.889,
   "codes_found": [
    "HUMAN30B",
    "PHIL1",
-   "PHIL11",
    "PHIL2",
    "PHIL20A",
    "PHIL20B",
@@ -2387,20 +2161,20 @@
    "WS35"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39975",
-   "title": "Philosophy - AA-T Degree",
-   "h1": "Philosophy - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "philosophy - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 9,
-  "text_chars": 2574
+  "text_chars": 5089
  },
  {
   "control_number": "41778",
@@ -2479,32 +2253,31 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.875,
   "codes_found": [
    "BIOL10",
    "PSYCC1000",
    "PSYCH21",
-   "PSYCH28",
    "PSYCH6",
    "PSYCH61",
    "SOC1",
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40072",
-   "title": "Psychology - AA-T Degree",
-   "h1": "Psychology - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "psychology - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
-  "text_chars": 2560
+  "text_chars": 11803
  },
  {
   "control_number": "41796",
@@ -2582,53 +2355,24 @@
   "title": "Social and Human Service Work Readiness",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "HUSV510B"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40074",
-   "title": "Social and Human Service Work Readiness - Certificate of Completion",
-   "h1": "Social and Human Service Work Readiness - Certificate of Completion",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 1,
-  "text_chars": 2172
+  "text_chars": 0
  },
  {
   "control_number": "41868",
   "title": "Tutor Training",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "EDUC510A",
-   "EDUC510B"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40023",
-   "title": "Tutor Training - Certificate of Completion",
-   "h1": "Tutor Training - Certificate of Completion",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
-   }
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 2,
-  "text_chars": 2133
+  "text_chars": 0
  },
  {
   "control_number": "41869",
@@ -2649,9 +2393,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "community health worker - certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2663,31 +2407,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.571,
   "codes_found": [
    "COMM6",
-   "HUSV120A",
-   "HUSV120B",
-   "HUSV121",
    "PSYCC1000",
    "SOC1",
    "SOC2"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40070",
-   "title": "Social Work and Human Services - Certificate of Achievement",
-   "h1": "Social Work and Human Services - Certificate of Achievement",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "social work and human services - certificate of achievement",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
-  "text_chars": 2486
+  "text_chars": 5692
  },
  {
   "control_number": "41902",
@@ -2727,7 +2468,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "sitemap_page",
-  "coverage": 1.0,
+  "coverage": 0.842,
   "codes_found": [
    "ANTHR3",
    "BIOL10",
@@ -2739,9 +2480,6 @@
    "ENGLC1001",
    "HISTC1001",
    "HISTC1002",
-   "HUSV120A",
-   "HUSV120B",
-   "HUSV121",
    "PSYCC1000",
    "PSYCH21",
    "SOC1",
@@ -2750,20 +2488,20 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40797",
-   "title": "Social Work and Human Services - AA-T Degree",
-   "h1": "Social Work and Human Services - AA-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "social work and human services - aa-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
-  "text_chars": 3254
+  "text_chars": 11351
  },
  {
   "control_number": "42838",
@@ -2781,20 +2519,20 @@
    "PHYS4C"
   ],
   "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40911",
-   "title": "Physics - AS-T Degree",
-   "h1": "Physics - AS-T Degree",
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41855",
+   "title": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
+   "h1": "California General Education Transfer Curriculum (Cal-GETC) - Certificate of Achievement",
    "text_from": "innerText",
    "label": {
     "award": 1,
-    "title": 1.0,
-    "section": "adt",
-    "section_line": "physics - as-t degree",
-    "section_fit": 1.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
-  "text_chars": 2326
+  "text_chars": 10764
  },
  {
   "control_number": "43006",
@@ -2852,9 +2590,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esol intermediate - certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2949,36 +2687,12 @@
   "title": "Virtual Production Fundamentals",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "MM/AN20A",
-   "MM/AN21A",
-   "MM/AN22B",
-   "MM/AN3A",
-   "MM/AN40A",
-   "MM/VI20A",
-   "MM/VI20LA",
-   "MM/VI9A",
-   "MMART3",
-   "MMART468",
-   "MMART5A"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41162",
-   "title": "Virtual Production Fundamentals - Certificate of Achievement",
-   "h1": "Virtual Production Fundamentals - Certificate of Achievement",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "coa",
-    "section_line": "virtual production fundamentals - certificate of achievement",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 11,
-  "text_chars": 2977
+  "text_chars": 0
  },
  {
   "control_number": "43827",
@@ -3344,48 +3058,12 @@
   "title": "Virtual Production",
   "award": "A.A. Degree",
   "shape": "degree",
-  "method": "sitemap_page",
-  "coverage": 1.0,
-  "codes_found": [
-   "CIS5",
-   "MM/AN20A",
-   "MM/AN20B",
-   "MM/AN21A",
-   "MM/AN21B",
-   "MM/AN22A",
-   "MM/AN22B",
-   "MM/AN23",
-   "MM/AN24",
-   "MM/AN30",
-   "MM/AN3A",
-   "MM/AN40A",
-   "MM/AN41A",
-   "MM/AN50",
-   "MM/AN55A",
-   "MM/VI20A",
-   "MM/VI20LA",
-   "MM/VI9A",
-   "MM/VI9B",
-   "MM/VI9C",
-   "MMART3",
-   "MMART468",
-   "MMART5A"
-  ],
-  "source": {
-   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41941",
-   "title": "Virtual Production - A.A. Degree",
-   "h1": "Virtual Production - A.A. Degree",
-   "text_from": "innerText",
-   "label": {
-    "award": 1,
-    "title": 1.0,
-    "section": "aa",
-    "section_line": "virtual production - a.a. degree",
-    "section_fit": 1.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 23,
-  "text_chars": 3640
+  "text_chars": 0
  },
  {
   "control_number": "46229",

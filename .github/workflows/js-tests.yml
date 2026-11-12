@@ -41,6 +41,19 @@ on:
   pull_request:
   push:
     branches: [main]
+  # The suite on main (Sky and COBIx, 2026-11-11, #3111 lesson 3). A push made
+  # with the built-in token starts no workflow, so the nightly's own commits and
+  # every other bot commit reached main untested: on 2026-11-11 the nightly
+  # rewrote kb/status/commons.json from a builder a PR had changed, and main was
+  # red with no run to say so. The dashboard's completion and one daily schedule
+  # test main's head after those commits; the gate below skips the suite when
+  # that head already passed, so a quiet day costs a gate and the lints.
+  # workflow-failure-watch.yml alerts on a red run of either.
+  workflow_run:
+    workflows: ["Daily CPL Dashboard"]
+    types: [completed]
+  schedule:
+    - cron: '41 17 * * *'   # ~10:41 AM PT, after the 3-cron ladder's latest delayed landing
 
 # A superseded run is wasted compute: this job is ~10 minutes, and a session
 # that pushes three times to one PR leaves two of them grinding to completion
@@ -74,6 +87,10 @@ env:
 jobs:
   gate:
     runs-on: ubuntu-latest
+    # actions: read for the already-tested lookup on a run of main's head.
+    permissions:
+      contents: read
+      actions: read
     outputs:
       decision: ${{ steps.gate.outputs.decision }}
     steps:
@@ -94,13 +111,26 @@ jobs:
       # anything unrecognized runs the suite (scripts/js_suite_gate.sh holds
       # the rule; tests/js_suite_gate_test.py pins its boundary both ways).
       # On push to main there is no base to diff against and the full suite
-      # always runs.
+      # always runs. A scheduled or workflow_run run tests main's head, and
+      # skips the suite when a run of this workflow already passed on that
+      # commit; a failed lookup runs it.
       - name: Decide whether the full JS suite runs
         id: gate
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha || '' }}
+          EVENT: ${{ github.event_name }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          if [ -z "$BASE_SHA" ]; then
+          if [ "$EVENT" = schedule ] || [ "$EVENT" = workflow_run ]; then
+            n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow js-tests.yml --commit "$GITHUB_SHA" \
+                  --status success --limit 5 --json databaseId -q 'length' 2>/dev/null || echo "")
+            if [ -n "$n" ] && [ "$n" -gt 0 ]; then
+              echo "main's head $GITHUB_SHA already passed this workflow ($n run(s))"
+              decision=skip
+            else
+              decision=run
+            fi
+          elif [ -z "$BASE_SHA" ]; then
             decision=run
           else
             git fetch --no-tags --depth=1 origin "$BASE_SHA"
@@ -405,6 +435,9 @@ jobs:
       # The reviewed CER write (sheet 19 card 1, 2026-10-02): a curator's row always wins.
       - name: CER decision applier holds a curator's row
         run: python3 tests/cer_decision_apply_test.py
+      # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
+      - name: CER decision applier undoes what landed, not what echoed
+        run: python3 tests/cer_decision_apply_retry_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94
@@ -447,6 +480,25 @@ jobs:
       # as a course number.
       - name: Exhibits Another look builder
         run: python3 tests/exhibits_sweep_build_test.py
+      # Certification naming (Sam, 2026-11-11): "<Official cert name> (ASE <code>)" for a new card, no card again once a
+      # title carries it, nothing in the reference renamed without the approved batch, an old title kept as an alias.
+      - name: Certification naming and the rename batch
+        run: python3 tests/cert_naming_test.py
+      # Fold issuer precedence and the one-pass apply (#3110 build step 1): a person's issuer wins, a cert-form target
+      # keeps its issuer, otherwise additive; a lead and its confirmed siblings fold in one run; the undo puts it back.
+      - name: Credential fold issuer precedence and undo
+        run: python3 tests/cred_rename_fold_issuer_test.py
+      # The fold's issuer decision stored as one issuer_resolution row per target and enforced nightly (#3116): the
+      # interleavings around decided_at, a failed insert, a nightly between a failed apply and its retry, a second fold,
+      # apply-nightly-undo; and the resolver defined once in Python and once in JavaScript.
+      - name: Credential fold issuer resolution, end to end
+        run: python3 tests/fold_issuer_resolution_test.py
+      - name: The fold issuer resolver is defined once
+        run: python3 tests/fold_issuer_single_source_test.py
+      # A person's saved fold rows on a title that holds no exhibit do nothing (Sky and COBIx, #3110): no fold, no
+      # issuer conflict, no rename, and the apply stays safe; the same rows act again once a raw maps to the title.
+      - name: Saved rows on an emptied title are ignored
+        run: python3 tests/emptied_title_guard_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder
@@ -468,6 +520,8 @@ jobs:
       # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
       - name: Credential panel training sites
         run: python3 tests/credential_review_sites_test.py
+      - name: A replaced issuer override is reported, never removed (S636)
+        run: python3 tests/credential_review_stale_issuer_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a
@@ -866,6 +920,12 @@ jobs:
           python3 tests/eacr_matrix_payload_test.py
           # A held COCI C-ID claim stays out of a statewide rec set (Sheet 164 card 2).
           python3 tests/statewide_cid_hold_test.py
+          # A credential family is a field, never a fold: the conversion plan, the sync, the aliases (Sam, 2026-11-11).
+          python3 tests/credential_family_test.py
+          # The family tags' write (S639): rows only, never SQL; 24 tagged, 7 held; a re-run is a no-op; the rollback is the cohort.
+          python3 tests/credential_family_apply_test.py
+          # Where the family meets the fold (#3116): the dry-run holds folds into a family title; a renamed member keeps its family.
+          python3 tests/credential_family_fold_contact_test.py
           # The C-ID claim audit decides on content, never on subject letters alone (Sam, 2026-11-07).
           python3 tests/cid_claim_audit_test.py
       # Beginning-ESL spot-check worklist (Session 188) — the description-level
@@ -1082,6 +1142,11 @@ jobs:
       # Pure-stdlib python.
       - name: Course outcomes read (outcomes as printed, slices, pages only)
         run: python3 tests/course_outcomes_read_test.py
+      # The exhibit subject fill (S638; Sam, in session 2026-11-11): MIL7 fills
+      # automotive from its course, a person's subject is never touched, undo
+      # takes exactly the cohort back, a second run inserts nothing. Pure-stdlib python.
+      - name: Exhibit subject fill (rungs, hold, receipt, undo)
+        run: python3 tests/exhibit_subject_fill_test.py
       # The course outcomes load (S374): one row per college the outline names, the
       # fingerprint checked, a receipt that rolls back, and the insert-only function
       # as the only write. Pure-stdlib python.
@@ -1092,6 +1157,10 @@ jobs:
       # an unproven host's full read. Pure-stdlib python.
       - name: Next SLO colleges (the order, the trial gate, the verdicts)
         run: python3 tests/next_slo_colleges_test.py
+      # One browser install for every workflow (2026-11-11, the runners' DNS fault): a workflow that writes
+      # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
+      - name: Browser install has one source
+        run: python3 tests/browser_install_single_source_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
@@ -1117,7 +1186,7 @@ jobs:
           [ "$LINTS" = success ] || { echo "::error::the lints job did not succeed ($LINTS)"; ok=false; }
           case "$DECISION:$SUITE" in
             run:success) echo "suite: every shard passed" ;;
-            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate)" ;;
+            skip:skipped) echo "suite: skipped — every changed file is docs-shaped (the E gate), or main's head already passed" ;;
             *) echo "::error::suite result '$SUITE' under gate decision '$DECISION'"; ok=false ;;
           esac
           $ok

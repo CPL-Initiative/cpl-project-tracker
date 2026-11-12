@@ -94,6 +94,7 @@
      27.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      10.0,
      13.0
@@ -152,7 +153,8 @@
     "Acquire the dance technical, composition, and performance skills necessary to transfer to a university program or similar advanced dance study program.",
     "Implement critical thinking skills and kinesthetic awareness in their observation, analysis, and interpretation of World Dance performances on stage or in media."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -516,5 +518,14 @@
    "Breadcrumb places the program under Kinesiology, Fitness and Wellness pathway while the URL lists Visual Arts, Design and Performing Arts."
   ]
  },
- "extracted_run": "39726645292"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AA GE\t60"
+  }
+ ],
+ "read_run": "39726645292"
 }

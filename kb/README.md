@@ -560,6 +560,15 @@ record per issuer.
 }
 ```
 
+A record may also carry **`family`** (since 2026-11-11, S638 and S639): the
+credential family its title belongs to, declared in
+`reference/credential_families.json` and carried from the `credential_family`
+field in `kb_curation` by `_apply_credential_review.py` (Mode A4), which also
+takes it off when the row is gone. A family is a field, never a fold: the
+title keeps its own records. Ruled renames live as plans in
+`cred_rename_plans/` (read by `ruled_renames.py`); each rename apply's receipt
+and undo land in `cred_rename_out/<date>/`.
+
 **Lookup semantics for the pipeline:**
 
 1. Resolve a raw title → unified title via

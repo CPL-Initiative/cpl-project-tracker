@@ -33,7 +33,7 @@ you move something out of this file, leave the line that says it is out there.
 
 Deep reference offloaded: `docs/reference/` — pipeline_reference ·
 kb_build_status · mid_lifecycle · troubleshooting · obsidian_vault_wiring ·
-finished_workstreams · skyview_invariants · live_session_banner ·
+finished_workstreams · [blocked_sources](docs/reference/blocked_sources.md) · skyview_invariants · live_session_banner ·
 [approval_prompt_hooks](docs/reference/approval_prompt_hooks.md) (the
 Allow-Once storm) ·
 [doctrine_provenance](docs/reference/doctrine_provenance.md) (the incidents
@@ -737,7 +737,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (last: [Open Asks Sheet 180](https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F), answered 2026-11-10; none open). An answer
+> (last: [Open Asks Sheet 181](https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx), answered 2026-11-11; none open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

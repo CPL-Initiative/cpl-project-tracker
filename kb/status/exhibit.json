@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 634,
-  "moniker": "SkyBackward",
+  "session": 639,
+  "moniker": "SkyQuail",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_635_handoff.md",
+  "handoff": "docs/session_640_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,20 +33,44 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T22:22:22Z",
+  "written_at": "2026-11-12T01:41:04Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The next re-analysis request",
-    "text": "The next press of the re-analyze box runs the code checks, then the Jev runner. Two doctorate exhibits from Los Angeles Pierce keep the issuer Graduate Level Institution of Higher Education until the college names the university; that is a question for its CSM."
+    "title": "Main green, then the five standards folds",
+    "text": "Once the family test fix merges and main is green, the daily run carries the two new family tags and the Sheet 181 renames onto the published files. Then the five standards folds run through the rename apply on their own small scope, with the restored rows checked to stay inert, and then ASE plan phase 3."
   },
   "changes": [
     {
-      "at": "2026-11-10T20:11:00Z",
-      "text": "10-Key Data Entry's issuer now reads California Community Colleges alone: both exhibits are Modesto's own course by credit by exam (Sam's ruling, Open Asks Sheet 180 card 6). The receipt holds the earlier value. Pull request 3087 merged."
+      "at": "2026-11-12T01:28:47Z",
+      "text": "Two more titles carry the ASE Certificate Bundles family as members any one of whose tests qualifies: ASE C1 or G1 and ASE Certification (any A1 to A8). 25 family tags are live under credential-family-s638@bot; the family apply's rollback undoes them."
     },
     {
-      "at": "2026-11-10T20:11:00Z",
-      "text": "The reference file now reads Wildland Fire-Basics' issuer in the long form saved earlier today; a changed issuer is not removed from the reference by the nightly apply, so it was edited by hand."
+      "at": "2026-11-12T00:54:43Z",
+      "text": "Sheet 181's ruled renames applied: 22 bundle titles now read ASE Certificate Bundles: A4 + A5 and the like, and two pairs merged into one title each. Sam's 47 fold rows stayed on the old titles, 25 rows moved to the new ones, and one bot family tag on a merged twin was removed. The receipt's undo puts every value back."
+    },
+    {
+      "at": "2026-11-12T00:46:52Z",
+      "text": "The 13 rows people had saved on the eight titles the ASE plans emptied are back, under their own reviewers and stamps: 12 of Sam's and one map@rccd.edu issuer row. The four July reviewed ticks stay retired."
+    },
+    {
+      "at": "2026-11-11T23:38:21Z",
+      "text": "24 ASE bundle titles carry the ASE Certificate Bundles family as a field, beside Sam's saved folds, which stay as they are."
+    },
+    {
+      "at": "2026-11-11T21:41:00Z",
+      "text": "The nightly run gave 747 credentials a Common SUBJ from the courses colleges credit for them or their issuer family, under the cohort exhibit-subject-s638@bot. Removing the cohort undoes it. 362 credentials still have no subject."
+    },
+    {
+      "at": "2026-11-11T21:33:36Z",
+      "text": "The ASE Military Tactical Wheeled Vehicle series, MIL1 to MIL8, carries ASE's official titles and sits in automotive. The three plans that re-point the ASE titles are committed and not yet applied."
+    },
+    {
+      "at": "2026-11-11T21:19:50Z",
+      "text": "A fold records its issuer decision as one row and changes no issuer a person saved. It applies in one pass and has an undo."
+    },
+    {
+      "at": "2026-11-11T16:56:18Z",
+      "text": "A saved fold reads Saved, waiting for apply, or Applied, in the Folds view."
     }
   ]
 }

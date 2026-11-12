@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-10T22:42:19Z",
-  "session": 634,
-  "moniker": "SkyBackward",
+  "written_at": "2026-11-12T01:45:19Z",
+  "session": 639,
+  "moniker": "SkyQuail",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_635_handoff.md",
+  "handoff": "docs/session_640_handoff.md",
   "next_step": {
-    "title": "The sweep's next college",
-    "text": "Las Positas and Alameda are displayed (pull request 3085 merged; 17,557 of 17,560 rows written, no errors). The sweep takes the next college with missing records. De Anza waits on Sam's two hand-filed GE sheets."
+    "title": "The colleges with the most failing records",
+    "text": "De Anza's 24 absent programs are loaded. A side session reads why Orange Coast's 72, Los Angeles City's 67 and Victor Valley's 60 records fail, most of them a general education pattern named with no units, then American River's 23 reworded programs and De Anza's older records and display."
   },
   "calls": [
     {
@@ -229,18 +229,6 @@
         "at": "2026-11-10",
         "words": "Count them, on Open Asks Sheet 180 card 4: A.A. 28 and A.S. 22, summed from the areas."
       }
-    },
-    {
-      "title": "Will Sam hand-file De Anza's two GE sheets?",
-      "text": "deanza.edu refuses the reader, and the catalog links two separate GE sheets without printing a pattern's units, so 73 degrees fail for want of GE units.",
-      "if_no_reply": "De Anza waits and the sweep moves on.",
-      "link": "https://claude.ai/artifact/2TG7xiCzNcAHyq5bQ1LL2F",
-      "link_text": "Open Sheet 180",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-11-10",
-        "words": "I will file them, on Open Asks Sheet 180 card 5."
-      }
     }
   ],
   "notes": {
@@ -248,16 +236,28 @@
   },
   "changes": [
     {
-      "at": "2026-11-10T20:33:00Z",
-      "text": "College of Alameda: the six semester layouts take the sum of their printed subtotals as the total, on Sam's ruling (Open Asks Sheet 180 card 2); 35 of 59 records pass, up from 29. Pull request 3086 merged."
+      "at": "2026-11-11T22:43:14Z",
+      "text": "De Anza's load filed the 24 programs not yet on file and kept the other 197; 221 records posted, 205 pass the machine checks. The receipt names the rows the load added."
     },
     {
-      "at": "2026-11-10T20:57:00Z",
-      "text": "Las Positas: local degrees take general education units of 28 for an A.A. and 22 for an A.S., summed from the areas the college's page prints, on Sam's ruling (Sheet 180 card 4); 181 of 193 records pass, up from 145. The reread replaced 52 rows with no errors."
+      "at": "2026-11-11T19:50:45Z",
+      "text": "De Anza on its 2026-2027 catalog merged: course codes read as the page prints them, for De Anza alone, and the GE ranges with the 90 units as a minimum. 205 of 221 records pass the machine checks. The extraction cost $17.15 of Sam's standing forty dollar go. Two rereads replaced 197 live De Anza records; each receipt holds the values before."
     },
     {
-      "at": "2026-11-10T22:23:00Z",
-      "text": "Display build 29e68f1d8dd2 is applied for both colleges: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds. Pull request 3085 merged."
+      "at": "2026-11-11T09:53:00Z",
+      "text": "Butte: two rereads replaced 92 rows with no errors; 138 of 164 records pass, up from 87. No row a person had checked was touched, and each receipt holds the values before."
+    },
+    {
+      "at": "2026-11-11T10:21:00Z",
+      "text": "Display build 052fb9eac1b5 is applied: 17,557 of 17,560 rows written, no errors; the 3 missing are Monterey Peninsula rows the table no longer holds."
+    },
+    {
+      "at": "2026-11-11T12:05:00Z",
+      "text": "De Anza no longer waits on Sam's hand-filed sheets: COBIx found the general education sheets on a second De Anza host and reported a 2026-2027 catalog on the college's catalog vendor. A procedure for refused reads is in the queue's rules: other hosts, the publisher's copy, an archive copy, then a comment to COBIx, before any card."
+    },
+    {
+      "at": "2026-11-11T12:30:00Z",
+      "text": "Redwoods: three steps for its local degrees, on the college's own 2026-2027 general education sheet (21 units, a 60-unit minimum) and its pages' words; 59 of 73 records pass on the branch, up from 53. The reread is dispatched."
     }
   ],
   "headline": [
@@ -464,16 +464,28 @@
       "active": 20282,
       "complete": 13696,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-11",
+      "active": 20282,
+      "complete": 13777,
+      "colleges": 114
+    },
+    {
+      "day": "2026-11-12",
+      "active": 20282,
+      "complete": 13779,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-11T06:12:00Z"
+    "at": "2026-11-12T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-10",
-    "gaps": 3014,
+    "day": "2026-11-12",
+    "gaps": 3005,
     "parts": {
       "links": {
         "catalog": [
@@ -490,11 +502,11 @@
         ]
       },
       "roep": [
-        19156,
+        19147,
         20282
       ],
       "coci": [
-        16142,
+        16144,
         20282
       ],
       "outcomes": {
@@ -503,12 +515,12 @@
           89192
         ],
         "plo": [
-          16142,
+          16144,
           20282
         ]
       },
       "careers": [
-        15106,
+        15108,
         20282
       ]
     }

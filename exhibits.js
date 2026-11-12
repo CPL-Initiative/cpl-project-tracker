@@ -98,13 +98,17 @@
   var CRED_DATA = "credential_reference_data.js";
   var CRED_PREFIX = "_CREDENTIAL_REVIEW::";
   var FIELD_CRED_ISSUER = "issuing_agency_override";
+  var FIELD_FOLD_RESOLUTION = "issuer_resolution";  // a fold's issuer decision (#3116, issuer_resolution.js)
   var FIELD_CRED_TRAINER = "training_agency_override";
   var FIELD_CRED_SITES = "training_sites_override";
+  var FIELD_CRED_SUBJ = "subj_override";       // the Common SUBJ the Catalog's editor or the subject fill stored
   // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
   // (credential_reference.js: display-only until the daily dry-run projects it and the reviewed apply re-keys).
   var FIELD_CRED_TITLE = "unified_title_override";
   /* A fold into an existing credential: the rename apply merges only when this names the exact target. */
   var FIELD_MERGE_CONFIRM = "unified_title_merge_confirm";
+  // A credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family).
+  var FIELD_CRED_FAMILY = "credential_family";
   // Your flag (Sam, 2026-11-01: "a flag for any row that persists until I clear it"): one row per credential, the
   // value the time it was set; clearing writes "" (an upsert, never a delete, so a refused write cannot pass as done).
   var FIELD_LIST_FLAG = "list_flag";
@@ -134,6 +138,11 @@
   var STEPS = ["Proposed", "Wording check", "Two issuers", CONFLICT];
   var SWEEP = "Another look";
   var SWEEP_URL = "kb/exhibits_sweep.json";
+  /* The titles beside a Review card and the rename batch (kb/_build_exhibits_related.py; Sam, 2026-11-11). */
+  var RELATED_URL = "kb/exhibits_related.json";
+  var RENAME = "Rename batch";
+  /* A rename batch row skipped: the proposal declined, so the batch does not offer it again. */
+  var FIELD_RENAME_KEPT = "cert_rename_kept";
   var FIELD_SUPERSEDES = "unified_title_supersedes";
   var FIELD_KEPT = "title_sweep_kept";
   var ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)";
@@ -141,6 +150,11 @@
      parentheses and keeps its college or school as issuer (Sam, 2026-10-31: "Agree on your call on the college as
      issuer"). */
   var ASE_CERT_TITLE = /^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive Service Excellence\b)/i;
+  /* The certification named the way Sam ruled on 2026-11-11 (kb/cert_naming.py): its official name first, its code in
+     parentheses, "Medium/Heavy Truck Parts Specialist (ASE P1)". The title carries the credential's issuer, ASE (his
+     ruling 1 on #3110 the same day, which replaced "keep the college as issuer on the P1 title"); the college that
+     gives the credit by its own exam shows on its local exhibit, as that exhibit's assessor. */
+  var ASE_CERT_FORM = /\(ASE\s+(?:[A-Z]\d|xEV)\)\s*$/;
   var OPTS_MAX = 8;
   var REQ_PREFIX = "_CER_PROCEDURE_REQUEST::";
   var FIELD_REQ = "cer_procedure_request";
@@ -159,6 +173,7 @@
     "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
     "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
     "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
+    "Rename batch": "Titles in the reference that are not named the way certifications now are: the official name first, the code in parentheses. Nothing is renamed until you approve the batch.",
     "Another look": "Titles already in the reference that still differ from their neighbors: an ASE test to name, Roman numerals, a language level, a course number left in, a level that disagrees, or two titles to fold. Built nightly."
   };
 
@@ -182,6 +197,9 @@
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null,
           drafts: {},
           adopt: null, adoptErr: false, open: null, links: null },
+    // Related titles and the rename batch: the file, its titles indexed, and this visit's edits and decisions.
+    rel: { data: null, error: null, idx: [], by: {}, all: null },
+    rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
     // The Commons' row and its run log, read fresh each visit (commonsFresh()).
     cm: null
   };
@@ -232,7 +250,7 @@
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
   /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
-  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") ? ASE_ISSUER : ""; }
+  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") || ASE_CERT_FORM.test(title || "") ? ASE_ISSUER : ""; }
   function issuerFor(title, issuer) { return aseIssuer(title) || issuer || ""; }
 
   /* ── names to pick from: the issuers and training sites already in the reference ── */
@@ -740,6 +758,405 @@
     });
   }
 
+  /* ── Related titles, and the rename batch (Sam, 2026-11-11) ──
+     The noncredit Automotive cards kept returning to Another look ("Noncredit for AUTO P1"): he went back and forth
+     because the card did not show which canonical titles already exist for the same certification. So every Review
+     card carries a side panel of the titles in its certification family, each with Use this title, and an exhibit
+     based on a certification is named by the certification: its official name first, its code in parentheses,
+     "Medium/Heavy Truck Parts Specialist (ASE P1)" (kb/cert_naming.py holds the rule and its notes). A title already
+     in the reference under an older form is never renamed from a card: kb/_build_exhibits_related.py lists them in
+     one rename batch, which Review shows as one card. Approving it writes each row's unified_title_override (and,
+     where two titles are one certification, unified_title_merge_confirm), the rows the credential rename dry-run and
+     apply already carry; a skipped row writes cert_rename_kept, the proposal declined. Until a row is decided the
+     panel marks its title "Rename pending". An approved rename keeps the old title as a search alias. */
+  function loadRelated() {
+    return fetch(RELATED_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) {
+        var idx = [], by = {};
+        (d.titles || []).forEach(function (row) {
+          var issuer = row[1] >= 0 ? (d.issuers || [])[row[1]] || "" : "";
+          var o = { t: row[0], issuer: issuer, locals: row[2] || 0, adopted: row[3] || 0, proposed: row[4] === 1, aka: row[5] || [], paths: row[6] || [] };
+          o.ase = /Automotive Service Excellence/i.test(issuer) || /(?:^|[^A-Za-z])ASE(?![A-Za-z])/.test(o.t);
+          o.codes = o.ase ? aseCodesIn(o.t) : [];
+          o.words = relWords(o.t + " " + o.aka.join(" "));
+          idx.push(o); by[o.t] = o;
+        });
+        // The credential families (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family; its tests
+        // are search aliases). title -> { name, aliases }; name -> member count.
+        var fam = {}, famN = {};
+        Object.keys(d.families || {}).forEach(function (name) {
+          var mem = (d.families[name] || {}).members || {};
+          famN[name] = Object.keys(mem).length;
+          Object.keys(mem).forEach(function (t) { fam[t] = { name: name, aliases: mem[t] || [] }; });
+        });
+        state.rel.fam = fam; state.rel.famN = famN;
+        state.rel.data = d; state.rel.idx = idx; state.rel.by = by; state.rel.error = null;
+        return reconcileRename(d);
+      })
+      .catch(function (e) { state.rel.data = null; state.rel.idx = []; state.rel.by = {}; state.rel.error = String(e && e.message || e); });
+  }
+  /* Each local exhibit's CPL path and who assessed the student (Sam's rulings on #3110, 2026-11-11: the canonical
+     title carries the credential's issuer, each local exhibit carries its path and assessor). The path is read from
+     the MAP exhibit id by kb/exhibit_paths.py; an industry certification or an exam score is assessed by the title's
+     issuer, a college's own exam or a portfolio by the college. One line a path: "9 by industry certification,
+     assessed by ASE". */
+  function shortIssuer(name) {
+    var m = /\(([^()]+)\)\s*$/.exec(name || "");
+    return m ? m[1] : (name || "");
+  }
+  function pathLines(paths, issuer) {
+    var defs = (state.rel.data && state.rel.data.paths) || {};
+    return (paths || []).map(function (p) {
+      var d = defs[p[0]] || { words: p[0], assessed_by: "" };
+      var who = d.assessed_by === "college" ? "the college"
+        : d.assessed_by === "issuer" ? (issuer && issuer !== LOCAL_ISSUER ? shortIssuer(issuer) : "the credential's issuer") : "";
+      return fmt(p[1]) + " by " + d.words + (who ? ", assessed by " + who : "");
+    });
+  }
+  function pathsNode(paths, issuer) {
+    var lines = pathLines(paths, issuer);
+    if (!lines.length) return null;
+    return el("span", { cls: "exh-muted exh-small exh-rel-paths" }, ["Local exhibits: " + lines.join("; ")]);
+  }
+  /* A title's credential family, or null. */
+  function famOf(title) { return (state.rel.fam && state.rel.fam[title]) || null; }
+  function famCount(name) { return (state.rel.famN && state.rel.famN[name]) || 0; }
+  function famWords(name) { var n = famCount(name); return name + ", " + fmt(n) + (n === 1 ? " title" : " titles"); }
+  /* The titles a credential carried before a rename or a merge: the List's finder searches them too. */
+  function akaOf(title) { var o = state.rel.by && state.rel.by[title]; return o ? o.aka : []; }
+  function aseCodesIn(text) {
+    var out = [], m, re = /(?:^|[^A-Za-z0-9])([A-Z]\d|xEV)(?![A-Za-z0-9])/g;
+    while ((m = re.exec(text || ""))) if (out.indexOf(m[1]) < 0) out.push(m[1]);
+    return out;
+  }
+  var REL_STOP = { and: 1, the: 1, of: 1, "in": 1, "for": 1, to: 1, a: 1, an: 1, by: 1, on: 1, with: 1, or: 1, credit: 1, exam: 1, noncredit: 1,
+    certification: 1, certificate: 1, course: 1, level: 1, introduction: 1, intro: 1, basic: 1, advanced: 1 };
+  function relWords(text) {
+    var out = {}, list = String(text || "").toLowerCase().match(/[a-z][a-z0-9+#]{2,}/g) || [];
+    list.forEach(function (w) { if (!REL_STOP[w]) out[w.replace(/(?:es|s)$/, "")] = 1; });
+    return out;
+  }
+  /* The ASE test a card is about: the code its title names, else the one its local title does (AUTO P1, ASE A5). */
+  function aseOf(title, raw, issuer) {
+    var t = title || "", r = raw || "";
+    var isAse = !!aseIssuer(t) || /\(ASE\s/.test(t) || /Automotive Service Excellence/i.test(issuer || "")
+      || /(?:^|[^A-Za-z])ASE(?![A-Za-z])/.test(r) || /\bAUTO\w*\s+[A-Z]\d\b/.test(r);
+    if (!isAse) return null;
+    var m = /\(ASE\s+([A-Z]\d|xEV)/.exec(t) || /^\s*ASE\s+([A-Z]\d|xEV)\b/.exec(t) || /\bAUTO\w*\s+([A-Z]\d)\b/.exec(r)
+      || /(?:^|[^A-Za-z])ASE[^A-Za-z0-9]+(?:\w+\s+)?\(?([A-Z]\d)\b/.exec(r);
+    return { code: m ? m[1] : "" };
+  }
+  var LOCAL_ISSUER = "California Community Colleges";
+  /* The existing titles beside a card, nearest first. ASE: the same test, then the same series, then ASE's other
+     titles. Any other card: the same issuer and shared words, then shared words alone. */
+  function relatedFor(title, raw, issuer, skip) {
+    var idx = state.rel.idx || [], out = [], fam = aseOf(title, raw, issuer);
+    var skipSet = {};
+    (skip || []).forEach(function (s) { if (s) skipSet[s] = 1; });
+    if (fam) {
+      var series = fam.code ? fam.code.charAt(0) : "";
+      idx.forEach(function (o) {
+        if (!o.ase || skipSet[o.t]) return;
+        var tier = fam.code && o.codes.indexOf(fam.code) >= 0 ? 0
+          : series && o.codes.some(function (c) { return c.charAt(0) === series; }) ? 1 : 2;
+        // The test alone before a bundle that holds it.
+        out.push({ o: o, tier: tier, rank: tier === 0 ? o.codes.length : 0 });
+      });
+      out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+      return { family: "ASE", code: fam.code, rows: out,
+        tiers: [fam.code ? "The same test, ASE " + fam.code : "", series ? "The same series, ASE " + series : "", "Other ASE titles"] };
+    }
+    var words = relWords(title), keys = Object.keys(words), iss = (issuer || "").trim();
+    var named = iss && iss !== LOCAL_ISSUER;
+    idx.forEach(function (o) {
+      if (skipSet[o.t]) return;
+      var n = 0;
+      keys.forEach(function (k) { if (o.words[k]) n++; });
+      var same = named && o.issuer === iss;
+      var tier = same && n ? 0 : (n >= 2 || (n && n === keys.length)) ? 1 : same ? 2 : -1;
+      if (tier >= 0) out.push({ o: o, tier: tier, rank: -n });
+    });
+    out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+    return { family: "", code: "", rows: out, tiers: ["The same issuer, words in common", "Words in common", "The same issuer"] };
+  }
+  function renamePending(title) {
+    var p = state.rel.data && state.rel.data.pending;
+    return p && Object.prototype.hasOwnProperty.call(p, title) && !state.rb.done[title] ? { to: p[title] } : null;
+  }
+  var REL_MAX = 8;
+  /* The side panel. o.title and o.issuer are the card's boxes; o.use(row) fills them. The list follows the title as
+     it is edited. */
+  function relatedPanel(o) {
+    var box = el("aside", { cls: "exh-rel", "aria-label": "Related titles" }, [el("h4", { cls: "exh-q exh-small", text: "Related titles" })]);
+    var body = el("div", { cls: "exh-rel-body" });
+    box.appendChild(body);
+    function draw() {
+      while (body.firstChild) body.removeChild(body.firstChild);
+      if (!state.rel.data) {
+        body.appendChild(el("p", { cls: "exh-muted exh-small", text: state.rel.error
+          ? "The titles in the reference could not be read (" + state.rel.error + ")." : "Reading the titles in the reference…" }));
+        return;
+      }
+      var got = relatedFor(o.title.value.trim(), o.raw, o.issuer.value.trim() || o.issuer0, o.skip);
+      body.appendChild(el("p", { cls: "exh-muted exh-small", text: got.family
+        ? "Canonical titles for " + got.family + (got.code ? " " + got.code : "") + " certifications. Fold this card into one, or keep the proposed title."
+        : "Canonical titles with the same issuer or the same words. Fold this card into one, or keep the proposed title." }));
+      if (!got.rows.length) { body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No title in the reference is close to this one." })); return; }
+      var rows = state.rel.all === o.key ? got.rows : got.rows.slice(0, REL_MAX), last = -1, ul = null;
+      rows.forEach(function (x) {
+        if (x.tier !== last) {
+          last = x.tier;
+          if (got.tiers[x.tier]) body.appendChild(el("h5", { cls: "exh-rel-tier", text: got.tiers[x.tier] }));
+          ul = el("ul", { cls: "exh-rel-list" });
+          body.appendChild(ul);
+        }
+        var r = x.o, pend = renamePending(r.t);
+        var rf = famOf(r.t);
+        var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
+          r.proposed ? "Proposed, not in the reference yet" : "In the reference"].concat(rf ? ["Family: " + rf.name] : []).join(" · ");
+        var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta }),
+          pathsNode(r.paths, r.issuer)]);
+        if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
+        if (r.t === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
+        else li.appendChild(word("Use this title", function () { o.use(r); draw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + r.t }));
+        ul.appendChild(li);
+      });
+      if (got.rows.length > REL_MAX) {
+        body.appendChild(word(state.rel.all === o.key ? "Show fewer" : "Show all " + fmt(got.rows.length), function () {
+          state.rel.all = state.rel.all === o.key ? null : o.key; draw();
+        }, { cls: "exh-w exh-small" }));
+      }
+    }
+    o.title.addEventListener("input", draw);
+    draw();
+    return box;
+  }
+  function withRelated(cardEl, o) { return el("div", { cls: "exh-with-rel" }, [cardEl, relatedPanel(o)]); }
+
+  /* The rename batch. */
+  function renameBatches() { return (state.rel.data && state.rel.data.batches) || []; }
+  function renameOpen(b) { return (b.rows || []).filter(function (r) { return !state.rb.done[r.current]; }); }
+  function renameCount() { return renameBatches().reduce(function (n, b) { return n + renameOpen(b).length; }, 0); }
+  function renameTitle(r) { var d = state.rb.drafts[r.current]; return (d != null ? d : r.proposed || "").replace(/\s+/g, " ").trim(); }
+  function renameSkipped(r) { var s = state.rb.skip[r.current]; return s != null ? s : false; }
+  /* A row is renamed when it has a title to take and is not skipped; a row with no title is left as it is. */
+  function renamePlan(b) {
+    var open = renameOpen(b), renames = [], skips = [], left = [];
+    open.forEach(function (r) {
+      var t = renameTitle(r);
+      if (renameSkipped(r)) { if (r.proposed) skips.push(r); else left.push(r); }
+      else if (t && t !== r.current) renames.push({ r: r, to: t });
+      else left.push(r);
+    });
+    // Two titles that take one name: the certification's own issuer leads, then the most local titles; the rest
+    // fold into it on a confirmed merge. A name already in the reference is a merge for every row.
+    var groups = {};
+    renames.forEach(function (x) { (groups[x.to] = groups[x.to] || []).push(x); });
+    Object.keys(groups).forEach(function (to) {
+      var have = state.rel.by[to], exists = !!(have && !have.proposed);
+      groups[to].sort(function (a, c) {
+        return (a.r.issuer !== b.issuer) - (c.r.issuer !== b.issuer) || c.r.locals - a.r.locals || a.r.current.localeCompare(c.r.current);
+      }).forEach(function (x, k) { x.merge = exists || k > 0; });
+    });
+    return { renames: renames, skips: skips, left: left };
+  }
+  function renameRows(email, plan, at) {
+    var rows = [], t0 = at ? new Date(at) : new Date();
+    var lead = t0.toISOString(), rest = new Date(t0.getTime() + 1000).toISOString();
+    plan.renames.forEach(function (x) {
+      var id = CRED_PREFIX + x.r.current, when = x.merge ? rest : lead;
+      rows.push({ course_id: id, field: FIELD_CRED_TITLE, value: x.to, reviewer_email: email, reviewed_at: when });
+      // The title that leads is saved first, so the dry run renames it and folds the others into it.
+      if (x.merge) rows.push({ course_id: id, field: FIELD_MERGE_CONFIRM, value: x.to, reviewer_email: email, reviewed_at: when });
+    });
+    plan.skips.forEach(function (r) {
+      rows.push({ course_id: CRED_PREFIX + r.current, field: FIELD_RENAME_KEPT, value: r.proposed, reviewer_email: email, reviewed_at: lead });
+    });
+    return rows;
+  }
+  function approveRename(b) {
+    var plan = renamePlan(b);
+    if (!plan.renames.length && !plan.skips.length) { state.note = "Nothing to save: every row is left as it is."; state.rb.ask = false; render(); return Promise.resolve(); }
+    state.rb.busy = true; render();
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return postRows(sess, renameRows(sess.email, plan));
+    }).then(function () {
+      plan.renames.forEach(function (x) { state.rb.done[x.r.current] = "renamed"; });
+      plan.skips.forEach(function (r) { state.rb.done[r.current] = "skipped"; });
+      state.rb.busy = false; state.rb.ask = false;
+      state.note = "Saved " + fmt(plan.renames.length) + " rename" + (plan.renames.length === 1 ? "" : "s")
+        + (plan.skips.length ? " and " + fmt(plan.skips.length) + " skipped" : "") + ". The daily dry run reads them and the rename apply moves "
+        + "the reference; each old title stays a search alias. Nothing a college or a student sees has changed yet.";
+      render();
+    }).catch(function (e) { state.rb.busy = false; failed(e); render(); });
+  }
+  /* A row decided since the file was built (an override or a skip saved on kb_curation) has left the batch. */
+  function reconcileRename(d) {
+    var key = anonKey(), since = d && d.generated_at, ids = [], byId = {};
+    ((d && d.batches) || []).forEach(function (b) { (b.rows || []).forEach(function (r) { byId[CRED_PREFIX + r.current] = r; }); });
+    ids = Object.keys(byId);
+    if (!key || !since || !ids.length) return Promise.resolve();
+    var quoted = ids.map(function (i) { return encodeURIComponent('"' + i.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); });
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
+      + "&field=in.(" + [FIELD_CRED_TITLE, FIELD_RENAME_KEPT].join(",") + ")"
+      + "&reviewed_at=gt." + encodeURIComponent(since) + "&course_id=in.(" + quoted.join(",") + ")";
+    return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": "0-999" } })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (rows) {
+        (rows || []).forEach(function (row) {
+          var r = byId[row.course_id];
+          if (!r || !row.value) return;
+          if (row.field === FIELD_CRED_TITLE && row.value !== r.current) state.rb.done[r.current] = "renamed";
+          if (row.field === FIELD_RENAME_KEPT && row.value === r.proposed) state.rb.done[r.current] = "skipped";
+        });
+      })
+      .catch(function () { /* the file's rows stand */ });
+  }
+  /* Students who hold credit under each title in the batch: an allowed reviewer only, k=10 in the database. */
+  function loadRenameStudents() {
+    var keys = [], ids = [];
+    renameBatches().forEach(function (b) {
+      (b.rows || []).forEach(function (r) { (r.ids || []).forEach(function (id) { keys.push(r.current); ids.push(id); }); });
+    });
+    return session().then(function (sess) {
+      if (!sess) { state.rb.students = null; state.rb.studentsWord = "signin"; return; }
+      if (!ids.length) { state.rb.students = {}; state.rb.studentsWord = "ok"; return; }
+      return fetch(SUPABASE_URL + "/rest/v1/rpc/exhibit_title_students", {
+        method: "POST", headers: headers(sess), body: JSON.stringify({ p_keys: keys, p_ids: ids })
+      }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) {
+          if (!rows.length) { state.rb.students = null; state.rb.studentsWord = "refused"; return; }
+          var by = {};
+          rows.forEach(function (row) { by[row.key] = { students: row.students, suppressed: !!row.suppressed }; });
+          state.rb.students = by; state.rb.studentsWord = "ok";
+        });
+    }).catch(function () { state.rb.students = null; state.rb.studentsWord = "error"; });
+  }
+  function renameStudents(r) {
+    var w = state.rb.studentsWord;
+    if (w !== "ok") return w === "signin" ? "Reviewers only" : w === "refused" ? "Reviewers only" : w === "error" ? "Not read" : "Reading";
+    var s = state.rb.students[r.current];
+    return !s ? "None" : s.suppressed ? "Fewer than 10" : s.students ? fmt(s.students) : "None";
+  }
+  function renameTile() {
+    var n = renameCount(), have = !!state.rel.data;
+    var b = el("button", {
+      type: "button", cls: "exh-step", "aria-pressed": state.filter === RENAME ? "true" : "false",
+      "data-tip": TIPS[RENAME], "aria-label": RENAME + ", " + (have ? fmt(n) : "not built yet") + ". " + TIPS[RENAME]
+    }, [el("span", { cls: "exh-sn", text: have ? fmt(n) : "–" }), el("span", { cls: "exh-sl", text: RENAME })]);
+    if (!have) b.disabled = true;
+    else b.addEventListener("click", function () { state.filter = RENAME; state.note = ""; state.rb.ask = false; render(); loadRenameStudents().then(render); });
+    return b;
+  }
+  function renameCard(b) {
+    var open = renameOpen(b), plan = renamePlan(b), rule = (state.rel.data && state.rel.data.rule) || {};
+    var box = el("section", { cls: "exh-card exh-rb", "aria-labelledby": "exh-rb-h-" + b.id });
+    box.appendChild(el("h3", { cls: "exh-q", id: "exh-rb-h-" + b.id, text: b.label + " titles to rename (" + fmt(open.length) + ")" }));
+    box.appendChild(el("p", { cls: "exh-small" }, ["Titles in the reference that do not read ", el("b", { text: b.format }), ". ",
+      rule.words ? el("span", { cls: "exh-muted", text: (rule.set_by || "Sam") + ", " + (rule.date || "") + ": “" + rule.words + "”" }) : null]));
+    box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Nothing is renamed until you approve. Edit a proposed title, or skip a row, before you do. "
+      + "An approved title keeps its old name as a search alias, and its local titles, colleges and students move with it. "
+      + "A row with no proposed title names more than one test or no test; it stays as it is unless you write a title. "
+      + "A title that folds into another keeps each local exhibit's own path and assessor, shown under it." }));
+    if (!open.length) { box.appendChild(el("p", { cls: "exh-empty", text: "Every title in this batch is decided." })); return box; }
+    var cols = el("colgroup", null, [["26%"], ["34%"], ["8%"], ["9%"], ["9%"], ["14%"]].map(function (w) { var c = el("col"); c.style.width = w[0]; return c; }));
+    var head = el("thead", null, [el("tr", null, ["Current title", "Proposed title", "Local titles", "Colleges", "Students", "Decision"].map(function (h) {
+      return el("th", { scope: "col", text: h });
+    }))]);
+    var tb = el("tbody");
+    open.forEach(function (r, i) {
+      var inp = el("input", { type: "text", cls: "exh-rb-in", id: "exh-rb-" + b.id + "-" + i, autocomplete: "off",
+        "aria-label": "Proposed title for " + r.current, placeholder: "No single certification name" });
+      inp.value = state.rb.drafts[r.current] != null ? state.rb.drafts[r.current] : r.proposed || "";
+      var skipped = renameSkipped(r);
+      var fate = el("span", { cls: "exh-small" });
+      function say() {
+        var t = renameTitle(r), x = null;
+        plan = renamePlan(b);
+        plan.renames.forEach(function (p) { if (p.r === r) x = p; });
+        fate.textContent = renameSkipped(r) ? (r.proposed ? "Skipped: keeps its title" : "Left as it is")
+          : !t || t === r.current ? "Left as it is" : x && x.merge ? "Renamed, and folded into the title of that name" : "Renamed";
+      }
+      inp.addEventListener("input", function () { state.rb.drafts[r.current] = inp.value; say(); count(); });
+      if (skipped) inp.disabled = true;
+      say();
+      tb.appendChild(el("tr", skipped ? { cls: "exh-rb-skip" } : null, [
+        el("th", { scope: "row" }, [el("span", { cls: "exh-rb-cur", text: r.current }),
+          el("span", { cls: "exh-muted exh-small", text: r.kind_label + (r.why ? ": " + r.why : "") + (r.issuer ? " · " + r.issuer : "") }),
+          pathsNode(r.paths, r.issuer)]),
+        el("td", null, [inp]),
+        el("td", { text: fmt(r.locals) }),
+        el("td", { text: r.adopted ? fmt(r.adopted) + " articulate it" : "None yet" }),
+        el("td", { text: renameStudents(r) }),
+        el("td", null, [fate, " ", word(skipped ? "Include" : "Skip", function () { state.rb.skip[r.current] = !skipped; state.rb.ask = false; render(); },
+          { cls: "exh-w exh-small", "aria-label": (skipped ? "Include " : "Skip ") + r.current })])]));
+    });
+    box.appendChild(el("div", { cls: "exh-rb-scroll", role: "region", tabindex: "0", "aria-label": b.label + " titles to rename" }, [
+      el("table", { cls: "exh-rb-table" }, [cols, head, tb])]));
+    var acts = el("div", { cls: "exh-acts" });
+    var go = word("", function () { state.rb.ask = true; render(); });
+    function count() {
+      plan = renamePlan(b);
+      go.textContent = "Approve the batch (" + fmt(plan.renames.length) + " rename" + (plan.renames.length === 1 ? "" : "s") + ")";
+    }
+    count();
+    if (!state.rb.ask) acts.appendChild(go);
+    else {
+      box.appendChild(el("p", { cls: "exh-small", role: "status" }, ["Save " + fmt(plan.renames.length) + " rename" + (plan.renames.length === 1 ? "" : "s")
+        + (plan.skips.length ? ", and " + fmt(plan.skips.length) + " skipped so they do not come back" : "") + "? "
+        + fmt(plan.renames.filter(function (x) { return x.merge; }).length) + " fold into another title of the same name. "
+        + fmt(plan.left.length) + " stay as they are, still in this batch."]));
+      acts.appendChild(word(state.rb.busy ? "Saving…" : "Save the batch", function () { if (!state.rb.busy) approveRename(b); }, state.rb.busy ? { disabled: "disabled" } : null));
+      acts.appendChild(word("Cancel", function () { state.rb.ask = false; render(); }));
+    }
+    box.appendChild(acts);
+    return box;
+  }
+  function renderRename(wrap) {
+    var d = state.rel.data, bs = renameBatches();
+    wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
+      + "One batch a certification issuer." + ((d.waiting || []).length ? " Waiting until this one is decided: " + d.waiting.join(", ") + "." : "") }));
+    wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.note || "" }));
+    if (state.rb.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
+      var mount = el("div", { cls: "exh-signin" });
+      wrap.appendChild(mount);
+      window.CPL_REVIEWER_SIGNIN.mountInto(mount, { title: "Sign in to approve",
+        blurb: "A reviewer's sign-in saves the batch and shows the students on each title.", returnTab: "exhibits" });
+    }
+    familyExceptionCards().forEach(function (c) { wrap.appendChild(c); });
+    if (!bs.length) { wrap.appendChild(el("p", { cls: "exh-empty", text: "No rename batch is built." })); return; }
+    bs.forEach(function (b) { wrap.appendChild(renameCard(b)); });
+  }
+  /* A family's members whose mix the parser cannot code fully, one list for a person to code (Sam's "family as a field",
+     as COBIx relayed it on #3110): an "or", or a part ASE does not award, which joins the bundle "with" its ASE tests.
+     Each carries the family all the same; the list only asks a person to say what the mix is. */
+  function familyExceptionCards() {
+    var fams = (state.rel.data && state.rel.data.families) || {}, out = [];
+    Object.keys(fams).forEach(function (name, i) {
+      var ex = fams[name].exceptions || [];
+      if (!ex.length) return;
+      var box = el("section", { cls: "exh-card exh-rb exh-famx", "aria-labelledby": "exh-famx-h-" + i });
+      box.appendChild(el("h3", { cls: "exh-q", id: "exh-famx-h-" + i, text: name + ": titles to code by hand (" + fmt(ex.length) + ")" }));
+      box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Each title carries the family. The parser could not code its tests fully: "
+        + "the mix holds an “or”, or a part that is not an ASE test. A part that is not an ASE test joins the bundle with its ASE tests. "
+        + "Say what each mix is; its proposed title waits in the batch below." }));
+      var cols = el("colgroup", null, ["40%", "24%", "18%", "18%"].map(function (w) { var c = el("col"); c.style.width = w; return c; }));
+      var head = el("thead", null, [el("tr", null, ["Title", "Its mix as written", "ASE tests", "With"].map(function (h) {
+        return el("th", { scope: "col", text: h }); }))]);
+      var tb = el("tbody");
+      ex.forEach(function (e) {
+        tb.appendChild(el("tr", null, [el("th", { scope: "row", text: e.title }), el("td", { text: e.mix }),
+          el("td", { text: (e.tests || []).join(", ") || "None" }), el("td", { text: (e.with || []).join(", ") || "Nothing else" })]));
+      });
+      box.appendChild(el("div", { cls: "exh-rb-scroll", role: "region", tabindex: "0", "aria-label": name + " titles to code by hand" }, [
+        el("table", { cls: "exh-rb-table" }, [cols, head, tb])]));
+      out.push(box);
+    });
+    return out;
+  }
+
   /* ── the actions ── */
   function decided(h, note, saved) {
     state.history.push({ raw: h.raw, saved: saved == null ? null : saved });
@@ -1070,7 +1487,13 @@
     box.appendChild(el("div", { cls: "exh-foot" }, [
       el("span", { text: (state.sw.cur + 1) + " of " + fmt(list.length) + " in " + SWEEP }),
       el("span", { text: next ? "Next: " + next.current + " → " + next.proposed : "" })]));
-    return box;
+    return withRelated(box, { key: "s:" + c.id, title: title, issuer: iss, issuer0: c.issuer, raw: (c.locals[0] || {}).raw || "", skip: [c.current],
+      use: function (r) {
+        title.value = r.t; state.sw.drafts[c.id] = r.t;
+        if (r.issuer) { iss.value = r.issuer; state.sw.issuers[c.id] = r.issuer; }
+        swShowAse();
+        title.focus();
+      } });
   }
   function renderBatch(wrap) {
     var list = sweepShown(), size = state.sw.batch ? state.sw.batch.length : 0, decided = size - list.length;
@@ -1329,7 +1752,15 @@
       el("span", { text: (state.cur + 1) + " of " + fmt(list.length) + (state.filter ? " in " + state.filter : "")
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
-    return c;
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [],
+      use: function (r) {
+        title.value = r.t;
+        // The title's own issuer comes with it, as if picked.
+        if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
+        keepDraft(); showAse(); exists.hidden = true;
+        state.note = "";
+        title.focus();
+      } });
   }
 
   function finder(list) {
@@ -1494,12 +1925,39 @@
     }).then(function () { cs.loading = null; });
     return cs.loading;
   }
+  /* A credential fold's issuer resolution (#3116): the issuer row resolves through issuer_resolution.js, the one
+     browser port of kb/fold_issuer.py effective_issuer(). A struck issuer leaves o.issuer unset, so the reference's
+     own (folded) issuer shows; the fold's winner shows as the issuer; o.fold drives the editor's plain line. */
+  function resolveFoldIssuers(m) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R) return m;
+    Object.keys(m).forEach(function (t) {
+      var o = m[t], res = R.parse(o.resolution);
+      if (!res) return;
+      var got = R.resolve({ issuing_agency_override: { value: o.issuer || "", at: o.issuerAt || "" } }, res);
+      if (got.issuer) o.issuer = got.issuer; else delete o.issuer;
+      o.fold = got.fold;
+    });
+    return m;
+  }
+  /* The editor's plain lines under the issuer: "Set by the fold on <date>", then each stored row it superseded. */
+  function foldLines(o) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R || !o || !o.fold) return [];
+    var out = [], line = R.foldLine(o.fold);
+    if (line) out.push(line);
+    (o.fold.superseded || []).forEach(function (s) {
+      if (s.field === "issuing_agency_override")
+        out.push("Superseded: " + s.value + (s.at ? ", saved " + String(s.at).slice(0, 10) : ""));
+    });
+    return out;
+  }
   /* The live _CREDENTIAL_REVIEW:: rows for the three fields, paginated (PostgREST caps a response at 1,000). */
   function loadCredOverlay() {
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM, FIELD_FOLD_RESOLUTION, FIELD_CRED_SUBJ, FIELD_CRED_FAMILY].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1514,14 +1972,18 @@
         var t = (row.course_id || "").slice(CRED_PREFIX.length);
         if (!t) return;
         var o = m[t] = m[t] || {};
-        if (row.field === FIELD_CRED_ISSUER) o.issuer = row.value || "";
+        if (row.field === FIELD_CRED_ISSUER) { o.issuer = row.value || ""; o.issuerAt = row.reviewed_at || ""; }
+        else if (row.field === FIELD_FOLD_RESOLUTION) o.resolution = row.value || "";
         else if (row.field === FIELD_CRED_TRAINER) { o.trainer = row.value; o.trainerAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
         else if (row.field === FIELD_LIST_GROUP) o.group = row.value || "";
         else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
+        else if (row.field === FIELD_CRED_SUBJ) o.subj = row.value || "";
+        else if (row.field === FIELD_CRED_FAMILY) o.family = row.value || "";
       });
+      resolveFoldIssuers(m);
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
   }
@@ -1552,7 +2014,10 @@
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
       method: "POST",
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
-      body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email })
+      // reviewed_at: a save is a new decision with its own stamp, so an issuer saved after a fold decided wins
+      // over the fold (issuer_resolution.js); an upsert that kept the old stamp would hide it.
+      body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email,
+                             reviewed_at: new Date().toISOString() })
     });
   }
   /* Many credentials, one field, one request: [[title, value], ...], each an upsert on (course_id, field). */
@@ -1560,7 +2025,7 @@
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
       method: "POST",
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
-      body: JSON.stringify(pairs.map(function (p) { return { course_id: CRED_PREFIX + p[0], field: field, value: p[1], reviewer_email: sess.email }; }))
+      body: JSON.stringify(pairs.map(function (p) { return { course_id: CRED_PREFIX + p[0], field: field, value: p[1], reviewer_email: sess.email, reviewed_at: new Date().toISOString() }; }))
     });
   }
 
@@ -1593,10 +2058,11 @@
       var o = cs.overlay[r.ut] = cs.overlay[r.ut] || {};
       var now = new Date().toISOString();
       writes.forEach(function (w) {
-        if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+        if (w[0] === FIELD_CRED_ISSUER) { o.issuer = w[1]; o.issuerAt = now; }
         else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
         else { o.sites = w[1]; o.sitesAt = now; }
       });
+      var one = {}; one[r.ut] = o; resolveFoldIssuers(one);  // a newer row: the person's save wins
       delete cs.drafts[r.ut];
       ui.changed();
       ui.setNote("Saved. The tabs show it now; the daily run writes it into the reference.");
@@ -2032,6 +2498,9 @@
     issuer.addEventListener("input", function () { d.issuer = issuer.value; });
     out.push(el("label", { cls: "exh-inbox", "for": pf + "issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
     out.push(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
+    foldLines(state.cs.overlay[r.ut]).forEach(function (txt) {
+      out.push(el("p", { cls: "exh-muted exh-small exh-fold-line", text: txt }));
+    });
     var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
     if (also.length) out.push(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
       + ". The Common Exhibit Reference edits a credential's other issuers." }));
@@ -2068,6 +2537,7 @@
     ["mine", "Your flags"],
     ["selected", "Selected"],
     ["bare", "No articulation"],
+    ["nosubj", "No Common SUBJ"],
     ["changed", "Changed this visit"],
     ["suggested", "Suggested folds"],
     ["outcomes", "Outcomes match"],
@@ -2223,18 +2693,63 @@
     var S = window.CPL_STATEWIDE_RECS;
     return (S ? !!S[r.ut] : !!r.statewide) ? "Statewide" : "Local";
   }
+  /* A saved fold is a reviewed row (Sam, 2026-11-11, #3110: he approved 35 folds, opened Folds waiting for the apply,
+     and every row read Unreviewed). Saving the decision is the review: a row whose saved rename or fold the reference
+     already carries (its title is now an old name of another credential, kb/exhibits_related.json's aka) reads Applied;
+     a saved rename or fold the apply has not reached reads Saved, waiting for apply. Only then the reference's stamp. */
+  var STATUS_SAVED = "Saved, waiting for apply", STATUS_APPLIED = "Applied";
+  function listAppliedTo(ut) {
+    var d = state.rel.data;
+    if (!d) return "";
+    if (state.rel._akaFor !== d) {
+      var m = {};
+      (state.rel.idx || []).forEach(function (o) { (o.aka || []).forEach(function (a) { if (a && a !== o.t) m[a] = o.t; }); });
+      state.rel._akaTo = m; state.rel._akaFor = d;
+    }
+    return state.rel._akaTo[ut] || "";
+  }
+  function listDecision(r) {
+    var to = listAppliedTo(r.ut);
+    if (to) return { status: STATUS_APPLIED, to: to };
+    var o = (state.cs.overlay || {})[r.ut] || {};
+    if (o.title && o.title !== r.ut) return { status: STATUS_SAVED, to: o.title, fold: !!(o.merge && o.merge === o.title) };
+    return null;
+  }
+  /* A title's family, read live (kb_curation credential_family) or from the reference build. The family row comes only from
+     a person's decision (Sam's 31 saved folds, read as family tags, #3117), so a title that carries one reads as reviewed:
+     the conversion deletes the only rows that stamped it, and it must not fall back to Unreviewed. */
+  var STATUS_FAMILY = "Family set";
+  function listFamily(r) {
+    var o = (state.cs.overlay || {})[r.ut] || {}, f = famOf(r.ut);
+    return o.family || (f ? f.name : "");
+  }
   function listStatus(r) {
+    var dec = listDecision(r);
+    if (dec) return dec.status;
+    if (listFamily(r)) return STATUS_FAMILY;
     var by = String(r.curated_by || "");
     if (!r.curated_at && !by) return "Unreviewed";
     return /@bot$/.test(by) ? "Cohort" : "Person";
   }
+  /* The Common SUBJ, read as the Catalog reads it (credential_reference.js subjOf; Sam, 2026-11-11): a stored
+     subj_override on _CREDENTIAL_REVIEW::<title> wins; else every articulation's subject token, M-ID and C-ID
+     alike, the Catalog's modal one first, then the rest by count. tests/exhibits_list_subject.test.js holds the two
+     readers to one answer. */
   function listSubj(r) {
-    var out = [];
+    var o = (state.cs.overlay || {})[r.ut] || {};
+    if (o.subj) return o.subj;
+    var counts = {}, order = [], best = "", bestN = 0;
     (r.articulations || []).forEach(function (a) {
-      var p = String(a.cid || "").split(" ")[0];
-      if (a.sys === "M-ID" && p && out.indexOf(p) === -1) out.push(p);
+      var tok = a && a.cid ? String(a.cid).split(/\s+/)[0] : "";
+      if (!/^[A-Za-z][A-Za-z-]{1,7}$/.test(tok)) return;
+      if (!counts[tok]) order.push(tok);
+      counts[tok] = (counts[tok] || 0) + 1;
+      if (counts[tok] > bestN) { bestN = counts[tok]; best = tok; }
     });
-    return out.join(", ");
+    if (!best) return "";
+    var rest = order.filter(function (t) { return t !== best; });
+    rest.sort(function (a, b) { return counts[b] - counts[a] || order.indexOf(a) - order.indexOf(b); });
+    return [best].concat(rest).join(", ");
   }
   function listCip(r) {
     var ad = credAdopt(r);
@@ -2389,12 +2904,13 @@
     var L = listState(), o = state.cs.overlay[r.ut] = state.cs.overlay[r.ut] || {};
     var now = new Date().toISOString();
     writes.forEach(function (w) {
-      if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+      if (w[0] === FIELD_CRED_ISSUER) { o.issuer = w[1]; o.issuerAt = now; }
       else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
       else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
       else if (w[0] === FIELD_MERGE_CONFIRM) o.merge = w[1];
       else if (w[0] === FIELD_CRED_TITLE) o.title = w[1];
     });
+    var one = {}; one[r.ut] = o; resolveFoldIssuers(one);  // a newer row: the person's save wins
     if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
   }
 
@@ -2616,7 +3132,12 @@
       }
       // The title's drawer shows inside the side panel, whose editor sets the issuer and training sites.
     } else if (name === "Status" || name === "Confidence") {
-      line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
+      var dec = listDecision(r);
+      if (dec && dec.status === STATUS_APPLIED) line("Applied: the reference now carries this title as an old name of " + dec.to + ".");
+      else if (dec) line("Saved: " + (dec.fold ? "the fold into " : "the rename to ") + dec.to
+        + " is the review. The apply runs it with no click from you.");
+      else if (listStatus(r) === STATUS_FAMILY) line("Family set: " + listFamily(r) + ", from a person's decision. The title stays its own credential, adopted on its own.");
+      else line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
       var tags = r.audit_tags || {};
       if (Object.keys(tags).length) { line("The audit's tags:"); list(Object.keys(tags).map(function (k) { return k.replace(/_/g, " ") + ": " + tags[k]; })); }
@@ -2717,6 +3238,7 @@
         if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
         if (L.f === "flagged" && !r.quality_flag) return false;
         if (L.f === "bare" && (r.articulations || []).length) return false;
+        if (L.f === "nosubj" && listSubj(r)) return false;
         if (L.f === "mine" && !listFlag(r)) return false;
         if (L.f === "outcomes" && !listOutcomeHints(r).length) return false;
         if (L.f === "waiting" && !listPendingFold(r)) return false;
@@ -2725,6 +3247,7 @@
         if (L.f === "left" && !listLeft(r).length) return false;
         if (L.f === "cplai" && !listCplAi(r).length) return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
+        if (L.fam && !(famOf(r.ut) && famOf(r.ut).name === L.fam)) return false;
         return true;
       },
       /* A filter whose data is still unread shows no count, never a 0 (S343): the suggested folds come with the AI
@@ -2750,6 +3273,10 @@
         return [r.ut, listTitle(r), cur.issuer, (r.issuers || []).join(" "), cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
           r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r)
           + " | " + (r.raw_variants || []).map(function (v) { return v.r; }).join(" | ")
+          // A title it carried before a rename or a merge (Sam, 2026-11-11: an old title stays a search alias).
+          + " | " + akaOf(r.ut).join(" | ")
+          // Its family and the tests it names, as search aliases ("ASE A4" finds every bundle with A4).
+          + " | " + (famOf(r.ut) ? famOf(r.ut).name + " | " + famOf(r.ut).aliases.join(" | ") : "")
           + " | " + listCplAi(r).map(function (c) { return "CPL-AI " + c.title; }).join(" | ");
       },
       afterBar: function (wrap) {
@@ -2773,6 +3300,10 @@
       },
       beforeTable: function (wrap) {
         var L = listState();
+        // The waiting folds, told plainly (#3110 step 2): saved, applied without a click, and gone from here once applied.
+        // Worded to hold whether a session or a schedule starts the apply.
+        if (L.f === "waiting") wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-waitline",
+          text: "These folds are saved, the apply runs them without a click from you, and each one leaves this list once it is applied." }));
         if (L.f === "outcomes") {
           var sd = L.slo, sc = (sd && sd.counts) || {};
           wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-sloline", text: sd === false
@@ -2783,6 +3314,8 @@
               + fmt(sc.colleges) + (sc.colleges === 1 ? " college" : " colleges") + " so far, reaching " + fmt(sc.credentials_reached)
               + " credentials. A hint, never a decision: select a row and Move it if the match is right." }));
         }
+        if (L.fam) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-famline" }, ["Showing the family " + famWords(L.fam)
+          + ". Each title stays its own credential, adopted on its own. ", word("Clear", function () { L.fam = null; L.limit = LIST_LIMIT; render(); })]));
         if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
           + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
       },
@@ -2794,6 +3327,9 @@
           : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
             word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
         else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+        var fm = famOf(r.ut);
+        if (fm) out.push(el("span", { cls: "exh-l-sub exh-l-fam" }, ["Family: ", word(famWords(fm.name), function () {
+          L.fam = fm.name; L.f = ""; L.open = null; L.limit = LIST_LIMIT; render(); }, { "aria-label": "Show the family " + fm.name })]));
         if (col) out.push(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
         var om = listOutcomeHints(r);
         if (om.length) out.push(el("span", { cls: "exh-l-sub exh-l-om", text: "Outcomes match: "
@@ -2950,6 +3486,10 @@
     var out = [h.title(listTitle(r)), h.meta([cur.issuer || "No issuer named", cip ? "CIP " + cip : "", n + " MAP title" + (n === 1 ? "" : "s"),
       art.length + " college" + (art.length === 1 ? "" : "s") + " articulate" + (art.length === 1 ? "s" : ""),
       could.length ? could.length + " could adopt" : "", "Students: " + st.word])];
+    // Its family (#3117), beside the issuer the fold may have set (#3116): the family names the set, the fold line the issuer.
+    var famName = listFamily(r);
+    if (famName) out.push(el2("p", { cls: "exh-muted exh-small exh-pn-fam", text: "Family: " + famName
+      + ". This title stays its own credential, adopted on its own." }));
     var gone = listLeft(r);
     if (gone.length) {
       out.push(h.heading(gone.length === 1 ? "A title that has left MAP" : "Titles that have left MAP"));
@@ -3279,8 +3819,16 @@
       c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Amended by " + [m.who, m.date].filter(Boolean).join(", ") + (m.words ? ": " : "") }),
         m.words ? "“" + m.words + "”" : ""]));
     });
+    if (p.notes && p.notes.length) c.appendChild(ruleNotes(p.notes));
     if (tally) c.appendChild(el("p", { cls: "exh-small exh-muted", text: "On the last run it settled " + fmt(tally.settled) + " and held " + fmt(tally.held) + " for a person." }));
     return c;
+  }
+  /* A rule's notes (Sam, 2026-11-11: "put this in the rule's notes, not on the card"): a lead line, the points
+     numbered, a closing line. */
+  function ruleNotes(notes) {
+    return el("div", { cls: "exh-small exh-rule-notes" }, [el("h5", { cls: "exh-rel-tier", text: "Notes" }),
+      el("p", { text: notes[0] }), el("ol", null, notes.slice(1, -1).map(function (n) { return el("li", { text: n }); })),
+      notes.length > 1 ? el("p", { text: notes[notes.length - 1] }) : null]);
   }
   function renderRules(wrap) {
     wrap.appendChild(viewsNav());
@@ -3316,6 +3864,8 @@
         var c = el("article", { cls: "exh-card exh-rq", "aria-label": r.label }, [el("h4", { cls: "exh-q", text: r.label }),
           el("p", { cls: "exh-rq-words", text: r.tip || "" })]);
         if (r.words) c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Sam, 2026-10-31: " }), "“" + r.words + "”"]));
+        if (r.ruling) c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: r.ruling.who + ", " + r.ruling.date + ": " }), "“" + r.ruling.words + "”"]));
+        if (r.notes && r.notes.length) c.appendChild(ruleNotes(r.notes));
         c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: fmt(n) + " card" + (n === 1 ? "" : "s") + " tonight. " }),
           n ? word("Open them", function () { state.view = "review"; state.filter = SWEEP; state.sw.rule = r.id; state.sw.cur = 0; render(); }, { cls: "exh-w exh-small" }) : null]));
         sl.appendChild(c);
@@ -3682,7 +4232,7 @@
         "held titles articulated to a course that names them", "The course names the proposal"),
       studentsTile()]));
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
-      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded"), sweepTile()]));
+      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded"), sweepTile(), renameTile()]));
     group.appendChild(steps);
     wrap.appendChild(group);
 
@@ -3690,6 +4240,10 @@
 
     if (state.filter === SWEEP && state.sw.data) {
       renderSweep(wrap);
+      return;
+    }
+    if (state.filter === RENAME && state.rel.data) {
+      renderRename(wrap);
       return;
     }
     var list = shown();
@@ -3873,6 +4427,29 @@
     ".exh-why ul { margin:0; padding-left:1.2em; display:grid; gap:4px; }",
     ".exh-locals li { overflow-wrap:anywhere; }",
     ".exh-strong { color:var(--text-strong); font-weight:600; }",
+    /* Related titles: beside the card at desktop widths, under it on a narrow screen. */
+    ".exh-with-rel { display:grid; grid-template-columns:minmax(0, 1fr); gap:16px; align-items:start; min-width:0; }",
+    "@media (min-width: 980px) { .exh-with-rel { grid-template-columns:minmax(0, 1fr) minmax(260px, 30%); } }",
+    ".exh-rel { background:var(--surface); border:1px solid var(--border); border-radius:8px; padding:clamp(12px, 2vw, 18px); display:grid; gap:10px; min-width:0; }",
+    ".exh-rel-body { display:grid; gap:8px; min-width:0; }",
+    ".exh-rel-body p { margin:0; }",
+    ".exh-rel-tier { margin:6px 0 0; font-size:.82rem; font-weight:600; color:var(--text-muted); }",
+    ".exh-rel-list { list-style:none; margin:0; padding:0; display:grid; gap:10px; }",
+    ".exh-rel-list li { display:grid; gap:2px; justify-items:start; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-rel-t { color:var(--text-strong); overflow-wrap:anywhere; }",
+    ".exh-rel-paths { overflow-wrap:anywhere; }",
+    ".exh-rb-table .exh-rel-paths { display:block; }",
+    ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",
+    ".exh-rule-notes p, .exh-rule-notes ol { margin:4px 0; }",
+    ".exh-rb-scroll { overflow-x:auto; min-width:0; }",
+    ".exh-rb-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.88rem; }",
+    ".exh-rb-table th, .exh-rb-table td { text-align:left; vertical-align:top; padding:8px 8px; border-bottom:1px solid var(--border); overflow-wrap:anywhere; font-weight:400; color:var(--text-body); }",
+    ".exh-rb-table thead th { font-weight:600; color:var(--text-muted); font-size:.82rem; }",
+    ".exh-rb-cur { display:block; color:var(--text-strong); font-weight:600; }",
+    ".exh-rb-in { width:100%; box-sizing:border-box; min-height:32px; font:inherit; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:4px 8px; }",
+    ".exh-rb-in:focus-visible { outline:2px solid var(--seal-blue); outline-offset:1px; }",
+    ".exh-rb-skip th .exh-rb-cur, .exh-rb-skip td { color:var(--text-muted); }",
+    "@media (max-width: 720px) { .exh-rb-table { min-width:640px; } }",
     "@media (prefers-reduced-motion: reduce) { .exh-wrap * { transition:none !important; } }"
   ].join("\n");
   function ensureCss() {
@@ -3888,6 +4465,7 @@
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null; state.qLens = "";
+    state.rb.ask = false; state.rel.all = null;
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
@@ -3896,7 +4474,7 @@
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
      the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
-  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["list", ""],
+  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], "rename-batch": ["review", RENAME], credentials: ["list", ""],
     rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], queue: ["queue", ""], requests: ["requests", ""], "cpl-ai": ["cpl-ai", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
@@ -3907,6 +4485,7 @@
     if (state.sw.batchMode) { state.sw.batch = null; state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false; }
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
+    if (state.filter === RENAME && state.rel.data) loadRenameStudents().then(render);
     if (r[0] === "queue") { state.qLens = parts[2] || ""; loadCredentials().then(render); }
     if (r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     if (r[0] === "requests") loadRequests().then(render);
@@ -3921,7 +4500,7 @@
     if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
     if (v === "queue") return "exhibits/queue/" + queueLens();
     if (v === "cpl-ai") return window.CPL_EXHIBITS_CPLAI ? window.CPL_EXHIBITS_CPLAI.address() : "exhibits/cpl-ai";
-    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? (state.sw.batchMode ? "another-look/batch" : "another-look") : "held");
+    if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? (state.sw.batchMode ? "another-look/batch" : "another-look") : state.filter === RENAME ? "rename-batch" : "held");
     return "exhibits";
   });
   function boot() {
@@ -3932,8 +4511,14 @@
     window.addEventListener("cpl-tab-activated", function (e) {
       if (e && e.detail && e.detail.tab === "exhibits") newVisit();
     });
-    window.addEventListener("cpl-session-changed", function () { loadStudents().then(render); });
-    return Promise.all([load(), loadSweep(), loadRules()]).then(function () { render(); return loadStudents(); }).then(render);
+    window.addEventListener("cpl-session-changed", function () {
+      loadStudents().then(render);
+      if (state.filter === RENAME) loadRenameStudents().then(render);
+    });
+    return Promise.all([load(), loadSweep(), loadRules(), loadRelated()]).then(function () {
+      render();
+      return Promise.all([loadStudents(), state.filter === RENAME ? loadRenameStudents() : null]);
+    }).then(render);
   }
 
   window.CPL_EXHIBITS = {
@@ -3947,6 +4532,8 @@
     loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
-    _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad
+    _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
+    loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    _renameCount: renameCount, _akaOf: akaOf, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

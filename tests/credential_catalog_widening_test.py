@@ -50,8 +50,57 @@ class FieldCip(unittest.TestCase):
 
     def test_every_rule_code_is_live(self):
         titles = b.load_cip_titles(os.path.join(REPO, "kb", "reference", "CIPCode2020.csv"))
-        codes = [c for _p, c in b.FIELD_RULES + b.ISSUER_FIELD_RULES] + list(b.SOC_MAJOR_CIP.values())
+        codes = [c for _p, c in b.FIELD_RULES + b.ISSUER_FIELD_RULES] + list(b.SOC_MAJOR_CIP.values()) \
+            + [c for _i, _n, c, _w in b.ASE_SERIES_CIP]
         self.assertEqual([c for c in codes if c not in titles], [])
+
+
+class AseMilitarySeriesIsAutomotive(unittest.TestCase):
+    """Sam, 2026-11-11: "so the hvac mil should be in auto not hvac subj". The name rules send any "Heating" or
+    "Air Conditioning" to 47.0201 HVAC and "Electrical" to 46.0302 Electrician; the Military Tactical Wheeled Vehicle
+    series is automotive, every test of it, by an explicit rule that runs first."""
+    ASE = "National Institute for Automotive Service Excellence"
+    COS = {  # CareerOneStop's own names for the eight tests (kb/reference/cos_certifications.json)
+        "MIL1": "ASE Military Tactical Wheeled Vehicle Certification - MIL1 Military Fundamentals",
+        "MIL2": "ASE Military Tactical Wheeled Vehicle Certification - MIL2 Diesel Engines",
+        "MIL3": "ASE Military Tactical Wheeled Vehicle Certification - MIL3 Drive Train",
+        "MIL4": "ASE Military Tactical Wheeled Vehicle Certification - MIL4 Chassis",
+        "MIL5": "ASE Military Tactical Wheeled Vehicle Certification - MIL5 Suspension, Steering, and Hydraulics",
+        "MIL6": "ASE Military Tactical Wheeled Vehicle Certification - MIL6 Electrical/ Electronic Systems",
+        "MIL7": "ASE Military Tactical Wheeled Vehicle Certification - MIL7 Heating, Ventilation & Air Conditioning (HVAC)",
+        "MIL8": "ASE Military Tactical Wheeled Vehicle Certification - MIL8 Preventive Maintenance Checks & Services (PMCS)",
+    }
+
+    def test_mil7_is_automotive_not_hvac(self):
+        code, src = b.field_cip(self.COS["MIL7"], None, self.ASE)
+        self.assertEqual(code, "47.0604")
+        self.assertNotEqual(code, "47.0201")
+        self.assertIn("Sam, 2026-11-11", src)
+
+    def test_every_test_of_the_series_is_automotive(self):
+        for c, name in self.COS.items():
+            self.assertEqual(b.field_cip(name, None, self.ASE)[0], "47.0604", c)
+        # the reference's own spelling of the titles places the same way
+        sys.path.insert(0, os.path.join(REPO, "kb"))
+        import cert_naming as cn
+        for c in cn.MIL:
+            self.assertEqual(b.field_cip(cn.ase_title(c), None, cn.ASE_ISSUER)[0], "47.0604", c)
+
+    def test_automobile_and_truck_tests_named_like_another_trade_are_automotive(self):
+        for name in ("Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
+                     "Automobile & Light Truck Certification - A7 Heating & Air Conditioning",
+                     "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
+                     "Medium-Heavy Truck Certification - T7 Heating, Ventilation & Air Conditioning (HVAC)"):
+            self.assertEqual(b.field_cip(name, None, self.ASE)[0], "47.0604", name)
+        # the diesel tests keep their diesel CIP, and a bus test is not swept in
+        self.assertEqual(b.field_cip("Medium-Heavy Truck Certification - T2 Diesel Engines", None, self.ASE)[0], "47.0605")
+        self.assertEqual(b.field_cip("School Bus Certification - S7 Air Conditioning Systems & Controls", None, self.ASE)[0],
+                         "47.0201")
+
+    def test_rule_is_held_to_the_series_and_its_issuer(self):
+        # another issuer's HVAC credential, and ASE's own building-trade-sounding names outside the series, keep the name rules
+        self.assertEqual(b.field_cip("EPA 608 Universal", None, "U.S. Environmental Protection Agency (EPA)")[0], "47.0201")
+        self.assertEqual(b.field_cip("Military Tactical Wheeled Vehicle Heating", None, "Some HVAC Board")[0], "47.0201")
 
 
 class IssuerAgrees(unittest.TestCase):

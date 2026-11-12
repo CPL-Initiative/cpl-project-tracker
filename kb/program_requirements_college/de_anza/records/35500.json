@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Economics",
  "award": "A.A- T Degree",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=87",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/economics-for-transfer-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9171,
+  "input_tokens": 10306,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9171,
-    "output_tokens": 3544,
+    "input_tokens": 10306,
+    "output_tokens": 3756,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3544,
+  "output_tokens": 3756,
   "output_tokens_details": {
-   "thinking_tokens": 1193
+   "thinking_tokens": 1227
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10756,
- "ms": 27353,
- "seconds": 27.8,
+ "cost_usd": 0.11634,
+ "ms": 29388,
+ "seconds": 29.8,
  "parts": null,
  "error": null,
  "score": {
@@ -50,8 +50,8 @@
    "listed": 29,
    "share": 0.931,
    "missing": [
-    "ECONC2001",
-    "ECONC2001H"
+    "ECON1",
+    "ECON1H"
    ],
    "unexplained": [],
    "none_placed": false,
@@ -60,43 +60,63 @@
   "invented": {
    "count": 2,
    "codes": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "flagged": [
-    "ECON2",
-    "ECON2H"
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     27.0,
     43.0
    ],
    "stated": [
-    90.0,
-    90.0
+    27.0,
+    43.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     72.0,
+     101.0
+    ],
+    "stated": [
+     90.0,
+     90.0
+    ],
+    "against": "degree",
+    "ge": [
+     45.0,
+     58.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     18.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -108,15 +128,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Economics for Transfer",
+   "section_heading": "Program Requirements",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 43
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,15 +149,13 @@
     "max": 90
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 45,
+    "max": 58
    },
    "electives_fill_degree": true,
-   "outcomes": [
-    "Develop a critical way of thinking with the goal of optimal decision-making in everyday life",
-    "Demonstrate the ability to analyze and understand the current economic situation using diverse economic theories and how they impact society’s well-being"
-   ],
-   "careers": []
+   "outcomes": [],
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -151,12 +169,12 @@
     },
     "courses": [
      {
-      "code": "ECON 1",
+      "code": "ECON C2001",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 1H",
+        "code": "ECON C2001H",
         "units": 4,
         "catalog_addition": false
        }
@@ -164,12 +182,12 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 2",
+      "code": "ECON C2002",
       "units": 4,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ECON 2H",
+        "code": "ECON C2002H",
         "units": 4,
         "catalog_addition": true
        }
@@ -456,22 +474,46 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ECON C2001",
-    "why": "catalog prints ECON 2 (Principles of Microeconomics) instead; likely the same course under its C-ID number"
+    "code": "ECON 1",
+    "why": "not in the text; the catalog prints ECON C2002 Principles of Macroeconomics instead (likely the renumbered course)"
    },
    {
-    "code": "ECON C2001H",
-    "why": "catalog prints ECON 2H (Principles of Microeconomics - HONORS) instead; likely the same course under its C-ID number"
+    "code": "ECON 001H",
+    "why": "not in the text; the catalog prints ECON C2002H Principles of Macroeconomics - HONORS instead (likely the renumbered course)"
    }
   ],
   "notes": [
-   "Catalog codes such as ECON 1H, MATH 1A, MATH 1AH, ACCT 1A were matched to closed-list codes ECON 001H, MATH 001A, MATH 01AH, ACCT 001A (zero-padded forms); ECON 2/ECON 2H were marked catalog additions since the closed list stores ECON C2001/C2001H.",
-   "The List B table is broken by a page break: MATH 1C/1CH, MATH 1D/1DH and MATH 2B/2BH appear on page 88 after the Cal-GETC/electives line; they were read as continuing List B. A note says students taking MATH D001C or MATH D01CH must also take MATH D001D or MATH D01DH to meet this requirement.",
-   "List B also allows courses from List A not already taken; its printed range is 4-10 units, recorded with minimum 4.",
-   "The page prints 'Total Required: 90 Units' and 'Cal-GETC AND CSU-transferable electives as needed to reach at least 90 units'; this is unusual for an associate degree (normally 60) and may be a catalog error. Recorded as printed in degree_total.",
-   "No major total is printed; total_units left null. No units printed for Cal-GETC.",
-   "No careers are named in the section."
+   "The text opens with Bachelor of Science degree requirements (180 quarter units, upper-division GE) that belong to another program or general boilerplate, not this A.A.-T.; ignored.",
+   "Catalog prints codes without spaces (ECONC2001, STATC1000); recorded with a space between subject and number. MATH/ACCT codes printed as MATH 1A, ACCT 1A etc. were matched to closed-list forms MATH 001A, ACCT 001A etc. (same courses, different padding); the XML uses MATHD001A/ACCTD001A forms.",
+   "ECON C2002 and ECON C2002H are not in the closed list (catalog_addition true); the closed list instead has ECON 1 / ECON 001H, presumably the pre-common-course-numbering Macroeconomics courses.",
+   "Honors versions are recorded as alternatives; the catalog notes students receive credit for only one version.",
+   "The parent heading 'Required Core - Math - Complete one option' prints (5 - 10 Units) and 'List A - Complete one option' prints (5 - 10 Units); these totals cover the option groups and are not recorded on an individual block.",
+   "List B: 'Complete from below or from List A (not already taken)' (4 - 10 Units); minimum recorded as 4. List A courses not already used may also count toward List B. Students taking MATH 1C or MATH 1CH must also take MATH 1D or MATH 1DH to meet this requirement.",
+   "Major Required: 27-43 Credits recorded as total_units; Total Required: 90 units (quarter units) recorded as degree_total. Additional Cal-GETC and CSU-transferable electives as needed to reach at least 90 units, so electives_fill_degree true; no GE unit count printed.",
+   "The trailing XML copy of the requirements is cut off mid-List A; the HTML-style listing above it is complete.",
+   "No program learning outcomes or careers are printed in the text (Program Employment Potential: N/A)."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": 43072075772,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 45,
+    "max": 58
+   },
+   "words": "Cal-GETC (https://daweb2.deanza.edu/articulation/general-education/calgetc/2026-2027.html: De Anza College Cal-GETC 2026–2027: 'Complete all six areas for a total of 45–58 quarter units.' (college page read 43062313447))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives as needed to reach at least 90 units"
+  }
+ ],
+ "read_run": "43056325121"
 }

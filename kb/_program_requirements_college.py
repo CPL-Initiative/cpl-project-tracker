@@ -136,8 +136,14 @@ def college_programs(college: str) -> list[dict]:
                      "&college=eq.%s&order=program_control_number,course_code" % P.q(college))
     import _program_requirements_reconcile as R
     conf = R.load_steps().get(college) or {}
-    return with_renumbers(group_programs(progs, rows), R.course_renumbers(college),
-                          conf.get("prefix_aliases"))
+    programs = with_renumbers(group_programs(progs, rows), R.course_renumbers(college),
+                              conf.get("prefix_aliases"))
+    if conf.get("tabs_with_prose"):
+        # The college's pages may name every course in an Overview sentence and keep the course
+        # list and its total in a hidden tab (Victor Valley's EMS certificates, S639; best_text).
+        for p in programs:
+            p["tabs_with_prose"] = True
+    return programs
 
 
 def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None = None) -> list[dict]:
@@ -524,7 +530,7 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
-        text, found, field = P.best_text(pg["got"], fb, fc, courses)
+        text, found, field = P.best_text(pg["got"], fb, fc, courses, bool(program.get("tabs_with_prose")))
         cov = P.coverage(found, courses)
         if cov < P.ACCEPT_SHARE:
             continue
@@ -1557,15 +1563,52 @@ def el_hub_slugs(html_text: str, catalog: str, host: str = "") -> list[str]:
     return out[:EL_MAX_MENU_HUBS]
 
 
-def el_text(html_text: str) -> str:
+# De Anza's 2026-2027 catalog (S637, page read 43044618275): a publish call writes each course
+# code packed, <td class="fix-code">ACCTD001A</td>, ACCTD01AH, ACCTD090., BUSD018., MUSID003A: the
+# subject, the campus letter, then four characters of number (zero-filled, a letter suffix or a
+# full stop). The page's own script rewrites the cell for a reader (ACCT 1A, ACCT 1AH, ACCT 90,
+# BUS 18, MUSI 3A), and a content call never runs it, so the capture found each of 242 programs'
+# pages by title and award and counted none of their courses (run 43024817869). Only a fix-code
+# cell in that packed shape is rewritten; a code a college prints with its space is left alone.
+# The subject is a fixed-width field that keeps its own spaces and slash (S638, extraction
+# 43056325121): C DD010G is C D 10G, E SD001. is E S 1, F/TVD02AH is F/TV 2AH. Read with letters
+# alone, those three subjects' codes stayed packed and scored as invented. A number whose stop
+# the cell drops (F/TVD020) is three digits. The campus letter is De Anza's D, and the rewrite runs
+# only on De Anza's host: other eLumen colleges keep plain zero-filled codes in the same cell
+# (Lemoore AOJ001, Modesto AG249), which a looser reading cut to AO 1 and A 249 (review of #3109).
+EL_PACKED_HOSTS = {"deanza.elumenapp.com"}
+EL_FIX_CODE = re.compile(r'(<td\b[^>]*\bclass=\\?"[^">]*\bfix-code\b[^">]*\\?"[^>]*>)\s*'
+                         r"([A-Z&](?:[A-Z&/ ]{0,6}[A-Z&/])?)D(\d{2,3}[A-Z.]{0,2})\s*(?=</td)", re.I)
+
+
+def el_packed_host(url: str | None) -> bool:
+    """Whether a catalog's publish calls pack their course codes (De Anza only)."""
+    return (urllib.parse.urlparse(url or "").netloc or "").lower() in EL_PACKED_HOSTS
+
+
+def el_fix_codes(html_text: str, packed: bool = True) -> str:
+    """A packed course code in a fix-code cell, as the page's script shows it; with
+    packed false, the page as given."""
+    if not packed:
+        return html_text or ""
+
+    def fix(m):
+        num = m.group(3)
+        if len(num) != 4 and not (len(num) == 3 and num.isdigit()):
+            return m.group(0)
+        return "%s%s %s" % (m.group(1), m.group(2).upper(), num.rstrip(".").lstrip("0") or "0")
+    return EL_FIX_CODE.sub(fix, html_text or "")
+
+
+def el_text(html_text: str, packed: bool = False) -> str:
     """A content call's page as the lines a reader sees, without styles, scripts
-    or icons."""
-    return cq_text(EL_STRIP.sub(" ", html_text or ""))
+    or icons. packed: the host packs its codes (el_packed_host)."""
+    return cq_text(EL_STRIP.sub(" ", el_fix_codes(html_text, packed)))
 
 
 def el_page(start: str, slug: str, html_text: str) -> dict | None:
     """One program's page in the shape assign() reads."""
-    text = el_text(html_text)
+    text = el_text(html_text, el_packed_host(start))
     if not text:
         return None
     m = EL_HEADING.search(EL_STRIP.sub(" ", html_text or ""))
@@ -2429,8 +2472,31 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> l
     return _pdf_pick(pages, program, courses)[0]
 
 
+def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) -> int:
+    """Where the cut at the control number's line starts once it keeps the heading printed above
+    that line (Los Angeles City, S639: 'Business Administration' / 'Associate of Arts (AA) Degree' /
+    'Major Units: 39  T otal Units: Minimum of 60' / '(State Code: 02718; ...)', the heading on
+    the page's first lines; the cut at the State Code line dropped the title and the degree total
+    the college's reconcile steps read). Only a college whose reconcile entry names
+    heading_above_code: at most its `lines` lines up, never a line its `stop` names (the running
+    header) and never a line naming a listed course, so the codes the text finds stay the same."""
+    if not conf or not conf.get("lines"):
+        return start
+    stop = re.compile(conf["stop"]) if conf.get("stop") else None
+    s = start
+    for _ in range(int(conf["lines"])):
+        if s <= 0:
+            break
+        prev = txt.rfind("\n", 0, s - 1) + 1
+        line = txt[prev:s - 1]
+        if not line.strip() or (stop and stop.search(line)) or P.find_codes(line, courses):
+            break
+        s = prev
+    return s
+
+
 def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None,
-             heading: dict | None = None) -> dict | None:
+             heading: dict | None = None, above: dict | None = None) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
@@ -2448,7 +2514,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
         cut = txt
         if n == 0 and cn_at >= 0:
             # From the start of the line that prints the control number: the heading.
-            cut = txt[txt.rfind("\n", 0, cn_at) + 1:]
+            cut = txt[heading_above(txt, txt.rfind("\n", 0, cn_at) + 1, above, courses):]
         elif n == 0 and head[0] == 1.0 and head[1] and head[2] > 0:
             cut = txt[head[2]:]
         # Only while the cut keeps every listed code the page names: Pierce prints the number
@@ -2646,6 +2712,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             pw.stop()
     pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
     listed = [p for p in programs if p["closed_list"]]
+    import _program_requirements_reconcile as R
+    above = (R.load_steps().get(college) or {}).get("heading_above_code")
 
     def accepted(pg: list[str]) -> int:
         return sum(1 for p in listed
@@ -2684,7 +2752,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]))
+                            (coded or {}).get(prog["control_number"]), above)
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
@@ -3035,7 +3103,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             got = dict(got, record=rec)
         try:
             sc = X.score(rec, src["closed_list"], src["text"], src.get("award"),
-                         R.prefix_aliases(src["college"])) if isinstance(rec, dict) else None
+                         R.prefix_aliases(src["college"]), R.packed_codes(src["college"])) if isinstance(rec, dict) else None
         except Exception as exc:   # one record the scorer cannot read never stops the others
             sc, got = None, dict(got, error="score: " + str(exc).splitlines()[0][:200])
         row = {"college": src["college"], "control_number": src["control_number"], "shape": src["shape"],
@@ -3061,6 +3129,18 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     return 0
 
 
+def same_address(a: str, b: str) -> bool:
+    """Two spellings of one page's address: the same but for letter case and a doubled slash in
+    the path. S636: Butte's registry address became .../Catalog//iq/25371, so the capture spelled
+    every entry /Catalog//iq/<root>/<section>/<node> where the filed records say /catalog/iq/...,
+    and the moved-page guard held all 165 records out of a reconcile (run 42962429245: 0 changed).
+    own_heading_kept still asks the fresh text for the record's own heading before it trusts one."""
+    def norm(u):
+        p = urllib.parse.urlparse(u or "")
+        return (p.netloc.lower(), re.sub(r"/{2,}", "/", p.path).lower().rstrip("/"), p.query)
+    return bool(a) and bool(b) and norm(a) == norm(b)
+
+
 def own_heading_kept(src: dict, filed: dict) -> bool:
     """A record the capture now starts on another page of the same file, whose fresh text still
     prints the record's own heading, is about the same program. S530: LA Valley's capture now
@@ -3070,7 +3150,7 @@ def own_heading_kept(src: dict, filed: dict) -> bool:
     `before` scope matches it; a record placing no course read another program's page."""
     import _program_requirements_reconcile as R
     new = ((src.get("source") or {}).get("url") or "").split("#")[0]
-    if not new or new != (filed.get("source_url") or "").split("#")[0]:
+    if not new or not same_address(new, (filed.get("source_url") or "").split("#")[0]):
         return False
     rec = filed.get("record") if isinstance(filed.get("record"), dict) else {}
     if not any(b.get("courses") for b in rec.get("blocks") or []):
@@ -3116,7 +3196,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
                              score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                           R.prefix_aliases(college)))
+                                           R.prefix_aliases(college), R.packed_codes(college)))
                 changed.append(filed["control_number"])
                 a = filed["score"]["arithmetic"]
                 print("%-6s reconciled %s; arith %s" % (filed["control_number"],
@@ -3127,7 +3207,7 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
                 # score carries the run too, or step=reread keeps the loaded row's old checks
                 # (LA City and Pierce, rereads 39018310349 and 39018312320: 0 replaced).
                 fresh = S.score(rec, src["closed_list"], src["text"], filed.get("award") or src.get("award"),
-                                R.prefix_aliases(college))
+                                R.prefix_aliases(college), R.packed_codes(college))
                 if fresh != filed.get("score"):
                     filed = dict(filed, score=fresh, read_run=filed.get("extracted_run"),
                                  extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)

@@ -11075,6 +11075,25 @@
    "hints": "5d81a49e3b",
    "asked": "2026-11-10"
   },
+  "Credit By Exam- CFPL ABT 135": {
+   "raw_title": "Credit By Exam- CFPL ABT 135",
+   "unified_title": "Agricultural Business and Technology (ABT 135)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ],
+   "_notes": "CFPL (Credit for Prior Learning) and the mechanism were stripped. Hartnell's ABT 135 course title could not be looked up in COCI, so the title falls back to discipline plus code; verify the course title. The cx hint kept the code and CFPL, so it was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "b3b305adf4",
+   "asked": "2026-11-11"
+  },
   "Credit by Exam": {
    "raw_title": "Credit by Exam",
    "unified_title": "Generic Credit by Exam — College of the Canyons",
@@ -11092,6 +11111,24 @@
    "rules": "e9d6bb7f8641",
    "hints": "07fae7c98c",
    "asked": "2026-10-31"
+  },
+  "Credit by Exam - ACADEMIC PLANNING": {
+   "raw_title": "Credit by Exam - ACADEMIC PLANNING",
+   "unified_title": "Academic Planning",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Mended the cx hint to title case. The exact Irvine Valley course title (CCN/C-ID/COCI) was not verified.",
+   "rules": "75e72fb99f8c",
+   "hints": "2149fb7000",
+   "asked": "2026-11-11"
   },
   "Credit by Exam - CalAPS - Fire Protection Organization": {
    "raw_title": "Credit by Exam - CalAPS - Fire Protection Organization",
@@ -11384,6 +11421,25 @@
    "rules": "d20f2caab9db",
    "hints": "c2a5f9252f",
    "asked": "2026-11-10"
+  },
+  "Credit by Exam-- CFPL ABT 133": {
+   "raw_title": "Credit by Exam-- CFPL ABT 133",
+   "unified_title": "Agricultural Business and Technology (ABT 133)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 1"
+   ],
+   "_notes": "CFPL and the mechanism were stripped. Hartnell's ABT 133 course title was not resolved, so the title falls back to discipline plus code; verify via COCI. The cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "e5cb5dcbd7",
+   "asked": "2026-11-11"
   },
   "Credit by Exam: Introduction to Criminal Justice": {
    "raw_title": "Credit by Exam: Introduction to Criminal Justice",
@@ -13376,6 +13432,101 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Elevators Training Center Apprenticeship Journeyperson": {
+   "raw_title": "Elevators Training Center Apprenticeship Journeyperson",
+   "unified_title": "Elevator Constructor Apprenticeship — Journeyperson",
+   "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+   "training_agency": "Elevators Training Center",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 4",
+    "apprenticeship-trades",
+    "Rule 7",
+    "join-when-likely-one"
+   ],
+   "_notes": "Follows the house Elevator Constructor Apprenticeship shape. The issuer is assumed to be NEIEP (IUEC program) and should be confirmed against the DAS sponsor for American River College's region.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Elevators Training Center Apprenticeship Level 1": {
+   "raw_title": "Elevators Training Center Apprenticeship Level 1",
+   "unified_title": "Elevator Constructor Apprenticeship — Level 1",
+   "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+   "training_agency": "Elevators Training Center",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 4",
+    "apprenticeship-trades",
+    "Rule 7",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The level does not map cleanly onto the NEIEP RC100–RC800 semester keys, so it is kept as a level. Confirm the issuer (NEIEP vs a local DAS sponsor).",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Elevators Training Center Apprenticeship Level 2": {
+   "raw_title": "Elevators Training Center Apprenticeship Level 2",
+   "unified_title": "Elevator Constructor Apprenticeship — Level 2",
+   "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+   "training_agency": "Elevators Training Center",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 4",
+    "apprenticeship-trades",
+    "Rule 7",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Elevators Training Center Apprenticeship Level 3": {
+   "raw_title": "Elevators Training Center Apprenticeship Level 3",
+   "unified_title": "Elevator Constructor Apprenticeship — Level 3",
+   "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+   "training_agency": "Elevators Training Center",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 4",
+    "apprenticeship-trades",
+    "Rule 7",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Elevators Training Center Apprenticeship Level 4": {
+   "raw_title": "Elevators Training Center Apprenticeship Level 4",
+   "unified_title": "Elevator Constructor Apprenticeship — Level 4",
+   "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+   "training_agency": "Elevators Training Center",
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 4",
+    "apprenticeship-trades",
+    "Rule 7",
+    "arabic-level-numerals"
+   ],
+   "_notes": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Energy Efficient Residential, Commercial and Industrial Air Conditioning - Credit by Exam (ACR 25 )": {
    "raw_title": "Energy Efficient Residential, Commercial and Industrial Air Conditioning - Credit by Exam (ACR 25 )",
    "unified_title": "Energy Efficient Residential, Commercial and Industrial Air Conditioning",
@@ -14412,6 +14563,24 @@
    "rules": "e9d6bb7f8641",
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
+  },
+  "Firefighter Recruit Academy Certificate": {
+   "raw_title": "Firefighter Recruit Academy Certificate",
+   "unified_title": "Firefighter 1 Academy",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": "varies by academy",
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Treated as a recruit academy and joined to the SFT Firefighter 1 Academy family. The academy provider is not named, so the trainer is set to 'varies by academy'.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
   },
   "Firefighter Training - Certification NWCG S-130": {
    "raw_title": "Firefighter Training - Certification NWCG S-130",
@@ -16700,6 +16869,891 @@
    "hints": "1a121fec64",
    "asked": "2026-10-31"
   },
+  "Industry Training Evidence for AJ 50": {
+   "raw_title": "Industry Training Evidence for AJ 50",
+   "unified_title": "Introduction to Administration of Justice",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit (IC type). Las Positas AJ 50 is believed to be Intro to Administration of Justice (C-ID AJ 110); verify. The issuer could instead be the training body, such as POST.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 54": {
+   "raw_title": "Industry Training Evidence for AJ 54",
+   "unified_title": "Administration of Justice (AJ 54)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only title. The Las Positas AJ 54 course title was not resolved, so the lookup is needed. The issuer could instead be the industry trainer (e.g. POST).",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 60": {
+   "raw_title": "Industry Training Evidence for AJ 60",
+   "unified_title": "Administration of Justice (AJ 60)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only title. The Las Positas AJ 60 course title was not resolved (possibly Criminal Law); the lookup is needed. Issuer uncertain.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 61": {
+   "raw_title": "Industry Training Evidence for AJ 61",
+   "unified_title": "Administration of Justice (AJ 61)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only title. The Las Positas AJ 61 course title was not resolved (possibly Criminal Evidence); the lookup is needed. Issuer uncertain.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 63": {
+   "raw_title": "Industry Training Evidence for AJ 63",
+   "unified_title": "Administration of Justice (AJ 63)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only title. The Las Positas AJ 63 course title was not resolved; the lookup is needed. Issuer uncertain.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 64": {
+   "raw_title": "Industry Training Evidence for AJ 64",
+   "unified_title": "Administration of Justice (AJ 64)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Code-only title. The Las Positas AJ 64 course title was not resolved; the lookup is needed. Issuer uncertain.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 66": {
+   "raw_title": "Industry Training Evidence for AJ 66",
+   "unified_title": "Administration of Justice (AJ 66)",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.35,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "The title is code-only. The Las Positas COCI title for AJ 66 was not available, so it falls back to the discipline plus code; a reviewer should swap in the course title. POST as issuer is a guess, because industry training for an AJ course is typically POST-certified.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AJ 68": {
+   "raw_title": "Industry Training Evidence for AJ 68",
+   "unified_title": "Administration of Justice (AJ 68)",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.35,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "The title is code-only. The Las Positas COCI title for AJ 68 was not available, so it falls back to the discipline plus code. Do not reuse CCSF's ADMJ 68 title, because the lookup is college-scoped. POST as issuer is a guess.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A1": {
+   "raw_title": "Industry Training Evidence for AUTO A1",
+   "unified_title": "Engine Repair (ASE A1)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A1 is titled for ASE A1, since its course codes mirror ASE test codes. Verify the COCI course title agrees with the test (the AUTO P1 caution); if it does not, use the course title with California Community Colleges as issuer.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A2": {
+   "raw_title": "Industry Training Evidence for AUTO A2",
+   "unified_title": "Automatic Transmission/Transaxle (ASE A2)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A2 aligns with ASE A2. Verify the course title agrees with the test, per the AUTO P1 caution.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A3": {
+   "raw_title": "Industry Training Evidence for AUTO A3",
+   "unified_title": "Manual Drive Train and Axles (ASE A3)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A3 aligns with ASE A3. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A4": {
+   "raw_title": "Industry Training Evidence for AUTO A4",
+   "unified_title": "Suspension and Steering (ASE A4)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A4 aligns with ASE A4. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A5": {
+   "raw_title": "Industry Training Evidence for AUTO A5",
+   "unified_title": "Brakes (ASE A5)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A5 aligns with ASE A5. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A6": {
+   "raw_title": "Industry Training Evidence for AUTO A6",
+   "unified_title": "Electrical/Electronic Systems (ASE A6)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A6 aligns with ASE A6. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A7": {
+   "raw_title": "Industry Training Evidence for AUTO A7",
+   "unified_title": "Heating and Air Conditioning (ASE A7)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A7 aligns with ASE A7. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A8": {
+   "raw_title": "Industry Training Evidence for AUTO A8",
+   "unified_title": "Engine Performance (ASE A8)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A8 aligns with ASE A8. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO A9": {
+   "raw_title": "Industry Training Evidence for AUTO A9",
+   "unified_title": "Light Vehicle Diesel Engines (ASE A9)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO A9 aligns with ASE A9. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO INT": {
+   "raw_title": "Industry Training Evidence for AUTO INT",
+   "unified_title": "Automotive Technology (AUTO INT)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.3,
+   "confidence_issuer": 0.35,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INT is unknown; it may be an internship or an introduction course. This falls back to the discipline plus code and needs the course title looked up.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO INTL": {
+   "raw_title": "Industry Training Evidence for AUTO INTL",
+   "unified_title": "Automotive Technology (AUTO INTL)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.3,
+   "confidence_issuer": 0.35,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INTL is unknown, so this falls back to the discipline plus code and needs the course title looked up.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO L1": {
+   "raw_title": "Industry Training Evidence for AUTO L1",
+   "unified_title": "Advanced Engine Performance Specialist (ASE L1)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO L1 aligns with ASE L1. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO L3": {
+   "raw_title": "Industry Training Evidence for AUTO L3",
+   "unified_title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "ase-paren",
+    "issuer-issues-the-card",
+    "mechanism-collapses",
+    "Rule 9"
+   ],
+   "_notes": "Assumes Las Positas AUTO L3 aligns with ASE L3. Verify the course title agrees with the test.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO SDR": {
+   "raw_title": "Industry Training Evidence for AUTO SDR",
+   "unified_title": "Automotive Specified Diagnostic and Repair",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Course-coded IC exhibit: 'Industry Training Evidence' is mechanism phrasing. AUTO SDR is read as Las Positas's Specified Diagnostic and Repair course and joined to the existing house title; the course title was not verified in COCI. The issuer could be BAR, since this is industry training evidence, so review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for AUTO SMOG": {
+   "raw_title": "Industry Training Evidence for AUTO SMOG",
+   "unified_title": "Smog Inspector - Level 1 Training",
+   "issuing_agency": "California Bureau of Automotive Repair (BAR)",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "brand-family",
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "AUTO SMOG is read as BAR smog-inspector training and joined to the house BAR family. The Las Positas course title is unverified, so this needs a COCI check.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for BUSN 65": {
+   "raw_title": "Industry Training Evidence for BUSN 65",
+   "unified_title": "Business (BUSN 65)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas BUSN 65. Discipline plus code is used as a fallback until that lookup is done.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CIS 66": {
+   "raw_title": "Industry Training Evidence for CIS 66",
+   "unified_title": "Computer Information Systems (CIS 66)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas CIS 66. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CNT 52": {
+   "raw_title": "Industry Training Evidence for CNT 52",
+   "unified_title": "Networking Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "Las Positas CNT 52 is believed to be Networking Fundamentals (Network+ prep), so it is joined to the house title. Verify in COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CNT 68": {
+   "raw_title": "Industry Training Evidence for CNT 68",
+   "unified_title": "Computer Networking Technology (CNT 68)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas CNT 68. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for CNT 7285": {
+   "raw_title": "Industry Training Evidence for CNT 7285",
+   "unified_title": "Computer Networking Technology (CNT 7285)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.3,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Unusual code, possibly a noncredit or vendor course, so it needs a COCI lookup. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 10": {
+   "raw_title": "Industry Training Evidence for EMS 10",
+   "unified_title": "Emergency Medical Services (EMS 10)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 10. Discipline plus code is used as a fallback. It may map to an EMR/EMT credential.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 11": {
+   "raw_title": "Industry Training Evidence for EMS 11",
+   "unified_title": "Emergency Medical Services (EMS 11)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 11. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 12": {
+   "raw_title": "Industry Training Evidence for EMS 12",
+   "unified_title": "Emergency Medical Services (EMS 12)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 12. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 13": {
+   "raw_title": "Industry Training Evidence for EMS 13",
+   "unified_title": "Emergency Medical Services (EMS 13)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 13. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 16": {
+   "raw_title": "Industry Training Evidence for EMS 16",
+   "unified_title": "Emergency Medical Services (EMS 16)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 16. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 17": {
+   "raw_title": "Industry Training Evidence for EMS 17",
+   "unified_title": "Emergency Medical Services (EMS 17)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 17. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 20": {
+   "raw_title": "Industry Training Evidence for EMS 20",
+   "unified_title": "Emergency Medical Services (EMS 20)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 20. Discipline plus code is used as a fallback. It may be the EMT course.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 30": {
+   "raw_title": "Industry Training Evidence for EMS 30",
+   "unified_title": "Emergency Medical Services (EMS 30)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.35,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Code-only title, so it needs a COCI lookup of Las Positas EMS 30. Discipline plus code is used as a fallback.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for EMS 70": {
+   "raw_title": "Industry Training Evidence for EMS 70",
+   "unified_title": "Emergency Medical Services (EMS 70)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas EMS 70 course title not verified, so the title falls back to the discipline-plus-code form. Run the COCI lookup. The issuer follows course-identity, but the industry training behind the evidence is unnamed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for FST 1": {
+   "raw_title": "Industry Training Evidence for FST 1",
+   "unified_title": "Principles of Emergency Services",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "FST 1 is presumed to align with C-ID FIRE 100, Principles of Emergency Services; verify against Las Positas COCI. The issuer follows course-identity because the external training is unnamed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for GDDM 53": {
+   "raw_title": "Industry Training Evidence for GDDM 53",
+   "unified_title": "Graphic Design and Digital Media (GDDM 53)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas GDDM 53 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for GDDM 54": {
+   "raw_title": "Industry Training Evidence for GDDM 54",
+   "unified_title": "Graphic Design and Digital Media (GDDM 54)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas GDDM 54 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for GDDM 64": {
+   "raw_title": "Industry Training Evidence for GDDM 64",
+   "unified_title": "Graphic Design and Digital Media (GDDM 64)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas GDDM 64 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for HORT 55": {
+   "raw_title": "Industry Training Evidence for HORT 55",
+   "unified_title": "Horticulture (HORT 55)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas HORT 55 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for HORT 56": {
+   "raw_title": "Industry Training Evidence for HORT 56",
+   "unified_title": "Horticulture (HORT 56)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas HORT 56 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for HORT 57": {
+   "raw_title": "Industry Training Evidence for HORT 57",
+   "unified_title": "Horticulture (HORT 57)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas HORT 57 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for HORT 59": {
+   "raw_title": "Industry Training Evidence for HORT 59",
+   "unified_title": "Horticulture (HORT 59)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas HORT 59 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for HORT 60": {
+   "raw_title": "Industry Training Evidence for HORT 60",
+   "unified_title": "Horticulture (HORT 60)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas HORT 60 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for KIN 6": {
+   "raw_title": "Industry Training Evidence for KIN 6",
+   "unified_title": "Kinesiology (KIN 6)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Course-coded exhibit; Las Positas KIN 6 title not verified, so the code-form fallback is used pending a COCI lookup.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for KIN YO1": {
+   "raw_title": "Industry Training Evidence for KIN YO1",
+   "unified_title": "Yoga 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "arabic-level-numerals",
+    "Rule 5c"
+   ],
+   "_notes": "KIN YO1 is read as Yoga 1 and joins the existing house title. The underlying industry training (e.g. a yoga teacher certification) is unnamed, so the issuer follows course-identity.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Industry Training Evidence for KIN ZUM1": {
+   "raw_title": "Industry Training Evidence for KIN ZUM1",
+   "unified_title": "Zumba 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.5,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "arabic-level-numerals",
+    "Rule 5c"
+   ],
+   "_notes": "KIN ZUM1 is read as Zumba 1 and joins the existing house title, which has no issuer. The issuer follows course-identity; a Zumba instructor license could argue for Zumba Fitness instead.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Industry for AJ 50": {
    "raw_title": "Industry for AJ 50",
    "unified_title": "Introduction to Administration of Justice",
@@ -18592,6 +19646,74 @@
    "hints": "07478f4c7f",
    "asked": "2026-10-31"
   },
+  "Ironworkers Union Apprenticeship Level 1": {
+   "raw_title": "Ironworkers Union Apprenticeship Level 1",
+   "unified_title": "Ironworker Apprenticeship — Level 1",
+   "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Ironworker apprenticeship at American River College. Level 1 cannot be mapped to the house Structural/Reinforcing Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor (likely the Northern California Ironworkers JATC).",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Ironworkers Union Apprenticeship Level 3": {
+   "raw_title": "Ironworkers Union Apprenticeship Level 3",
+   "unified_title": "Ironworker Apprenticeship — Level 3",
+   "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Ironworker apprenticeship at American River College. Level 3 cannot be mapped to the house Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Ironworkers Union Journeyperson": {
+   "raw_title": "Ironworkers Union Journeyperson",
+   "unified_title": "Ironworker Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 6"
+   ],
+   "_notes": "Title follows the house Ironworker Apprenticeship shape. The issuer is the house ironworker family's issuer; the regional ironworker JATC that the Division of Apprenticeship Standards names for American River College is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Ironworkers UnionApprenticeship Level 2": {
+   "raw_title": "Ironworkers UnionApprenticeship Level 2",
+   "unified_title": "Ironworker Apprenticeship — Level 2",
+   "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals"
+   ],
+   "_notes": "Fixed the missing space in the raw title. The title does not say whether Level 2 is the Structural or the Reinforcing track, so it was not folded into a house Period family. The DAS-named JATC issuer is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "It Essentials High School Articulation": {
    "raw_title": "It Essentials High School Articulation",
    "unified_title": "Cisco IT Essentials",
@@ -20164,6 +21286,843 @@
    "hints": "13736ac213",
    "asked": "2026-10-18"
   },
+  "Noncredit Course for ARHS 6": {
+   "raw_title": "Noncredit Course for ARHS 6",
+   "unified_title": "Museum & Gallery Techniques",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint was set aside because it leaves mechanism and code noise in the title. The catalog hint was taken: Las Positas ARHS 6 is matched to the house family Museum & Gallery Techniques. Verify this against the COCI course title.",
+   "rules": "75e72fb99f8c",
+   "hints": "1a42babda6",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A1": {
+   "raw_title": "Noncredit Course for AUTO A1",
+   "unified_title": "Engine Repair (ASE A1)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "This is a noncredit course coded for ASE test A1, so it folds under the certification name in the ASE-paren form. Confirm that the Las Positas course title agrees with A1, since AUTO P1 is a known mismatch. The issuer is CCC because this is the college's own exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "3f06d7781c",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A2": {
+   "raw_title": "Noncredit Course for AUTO A2",
+   "unified_title": "Automatic Transmission/Transaxle (ASE A2)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A2. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "6319dc102f",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A3": {
+   "raw_title": "Noncredit Course for AUTO A3",
+   "unified_title": "Manual Drive Train and Axles (ASE A3)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A3. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "44205a1d51",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A4": {
+   "raw_title": "Noncredit Course for AUTO A4",
+   "unified_title": "Suspension and Steering (ASE A4)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A4. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "7c59a8489c",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A5": {
+   "raw_title": "Noncredit Course for AUTO A5",
+   "unified_title": "Brakes (ASE A5)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A5. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "7c2f8e3a69",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A6": {
+   "raw_title": "Noncredit Course for AUTO A6",
+   "unified_title": "Electrical/Electronic Systems (ASE A6)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A6. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "38a000b1a6",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A7": {
+   "raw_title": "Noncredit Course for AUTO A7",
+   "unified_title": "Heating and Air Conditioning (ASE A7)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A7. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "fad3d4ea5b",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A8": {
+   "raw_title": "Noncredit Course for AUTO A8",
+   "unified_title": "Engine Performance (ASE A8)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A8. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "218b6bc1a2",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO A9": {
+   "raw_title": "Noncredit Course for AUTO A9",
+   "unified_title": "Light Vehicle Diesel Engines (ASE A9)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE A9. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "bd204e2b1d",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO INT": {
+   "raw_title": "Noncredit Course for AUTO INT",
+   "unified_title": "Automotive Technology (AUTO INT)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "AUTO INT names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INT.",
+   "rules": "75e72fb99f8c",
+   "hints": "3abd5085e5",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO INTL": {
+   "raw_title": "Noncredit Course for AUTO INTL",
+   "unified_title": "Automotive Technology (AUTO INTL)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "AUTO INTL names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INTL.",
+   "rules": "75e72fb99f8c",
+   "hints": "84323da41c",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO L1": {
+   "raw_title": "Noncredit Course for AUTO L1",
+   "unified_title": "Advanced Engine Performance Specialist (ASE L1)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.8,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "ase-paren",
+    "course-identity",
+    "Rule 5h"
+   ],
+   "_notes": "Course code taken to name ASE L1; 'Advanced' is kept in place as part of ASE's official name. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam.",
+   "rules": "75e72fb99f8c",
+   "hints": "94bdece66e",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO L3": {
+   "raw_title": "Noncredit Course for AUTO L3",
+   "unified_title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "ase-paren",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. AUTO L3 likely mirrors the ASE L3 hybrid/EV course, but the Las Positas COCI title is unverified and a course code names a test only when the course title agrees, so this needs review. The college issues its own exam, so the issuer is CCC.",
+   "rules": "75e72fb99f8c",
+   "hints": "5663ba4b40",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO P1": {
+   "raw_title": "Noncredit Course for AUTO P1",
+   "unified_title": "Powertrains: Modifications for Performance",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "ase-paren",
+    "Rule 5c"
+   ],
+   "_notes": "Per ase-paren, Las Positas AUTO P1 is the Powertrains course, not the ASE P1 parts test. The college course title is used and the cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "1677a68870",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO SDR": {
+   "raw_title": "Noncredit Course for AUTO SDR",
+   "unified_title": "Automotive Specified Diagnostic and Repair",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "SDR read as Specified Diagnostic and Repair, joining the existing house family. The COCI title is unverified.",
+   "rules": "75e72fb99f8c",
+   "hints": "de59583b99",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AUTO SMOG": {
+   "raw_title": "Noncredit Course for AUTO SMOG",
+   "unified_title": "Smog Check Inspector Training",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.5,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "This is a local smog course exam and is kept apart from the BAR license (Rule 8c). The exact Las Positas course title is unknown, so the title is a best guess for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "ce8f3ac15f",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for AVI 110": {
+   "raw_title": "Noncredit Course for AVI 110",
+   "unified_title": "Drone Coding and Piloting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog hint was mended: the 'Summer Camp' prefix was dropped to join the existing house family.",
+   "rules": "75e72fb99f8c",
+   "hints": "5d88d91f76",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for BUSN 33": {
+   "raw_title": "Noncredit Course for BUSN 33",
+   "unified_title": "Personal and Family Financial Planning Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "brand-family",
+    "Rule 5c"
+   ],
+   "_notes": "The catalog course title was mended to the existing house family form.",
+   "rules": "75e72fb99f8c",
+   "hints": "c086998e2f",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for CIS 100": {
+   "raw_title": "Noncredit Course for CIS 100",
+   "unified_title": "AI (Artificial Intelligence) in the Workplace",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "f116fcfb16",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ENG 110": {
+   "raw_title": "Noncredit Course for ENG 110",
+   "unified_title": "Craft of the Sentence",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "953e558bc2",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ENG 115": {
+   "raw_title": "Noncredit Course for ENG 115",
+   "unified_title": "Personalized Coaching for Academic Reading and Writing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "7a3ce34c74",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 113": {
+   "raw_title": "Noncredit Course for ESL 113",
+   "unified_title": "Speaking and Listening Fluency for Academic and Professional Purposes",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "8db329750e",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 123": {
+   "raw_title": "Noncredit Course for ESL 123",
+   "unified_title": "Oral Communication Intermediate",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "631451156d",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 126": {
+   "raw_title": "Noncredit Course for ESL 126",
+   "unified_title": "Pronunciation and Fluency Intermediate",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "e03f587883",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 133": {
+   "raw_title": "Noncredit Course for ESL 133",
+   "unified_title": "Oral Communication Beginning",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "level-words-last",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "54b46d7fee",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 136": {
+   "raw_title": "Noncredit Course for ESL 136",
+   "unified_title": "Pronunciation and Fluency",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "cc9bd6bca9",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 220A": {
+   "raw_title": "Noncredit Course for ESL 220A",
+   "unified_title": "English as a Second Language (ESL 220A)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "No catalog title is available for Las Positas ESL 220A, so the title uses the discipline plus code fallback; a COCI lookup is needed.",
+   "rules": "75e72fb99f8c",
+   "hints": "73a6abbe6a",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 220B": {
+   "raw_title": "Noncredit Course for ESL 220B",
+   "unified_title": "English as a Second Language (ESL 220B)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase 'Noncredit Course for', so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "0b4adc40e3",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 221A": {
+   "raw_title": "Noncredit Course for ESL 221A",
+   "unified_title": "English as a Second Language (ESL 221A)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "1c3c12af27",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 221B": {
+   "raw_title": "Noncredit Course for ESL 221B",
+   "unified_title": "English as a Second Language (ESL 221B)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "9992313833",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 230A": {
+   "raw_title": "Noncredit Course for ESL 230A",
+   "unified_title": "English as a Second Language (ESL 230A)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "12d5d78f15",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 230B": {
+   "raw_title": "Noncredit Course for ESL 230B",
+   "unified_title": "English as a Second Language (ESL 230B)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "1f94b873c3",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 231A": {
+   "raw_title": "Noncredit Course for ESL 231A",
+   "unified_title": "English as a Second Language (ESL 231A)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "b5dc454bc7",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for ESL 231B": {
+   "raw_title": "Noncredit Course for ESL 231B",
+   "unified_title": "English as a Second Language (ESL 231B)",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title.",
+   "rules": "75e72fb99f8c",
+   "hints": "286b7b2d57",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for FREN 1A": {
+   "raw_title": "Noncredit Course for FREN 1A",
+   "unified_title": "Elementary French 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "language-levels",
+    "Rule 5c"
+   ],
+   "_notes": "FREN 1A is the first elementary course, so it maps to the house family Elementary French 1. The catalog hint 'Beginning French' was restyled per language-levels.",
+   "rules": "75e72fb99f8c",
+   "hints": "051529aa69",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for FREN 1B": {
+   "raw_title": "Noncredit Course for FREN 1B",
+   "unified_title": "Elementary French 2",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "language-levels",
+    "Rule 5c"
+   ],
+   "_notes": "FREN 1B is the second elementary course, so it maps to the house family Elementary French 2.",
+   "rules": "75e72fb99f8c",
+   "hints": "a5d9f3e76b",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for KIN PL1": {
+   "raw_title": "Noncredit Course for KIN PL1",
+   "unified_title": "Pilates 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "KIN PL1 was read as Pilates level 1 and joined to the house family Pilates 1. The course title is inferred from the code and should be verified against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "15f3ceb2f9",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for KIN SW1": {
+   "raw_title": "Noncredit Course for KIN SW1",
+   "unified_title": "Swimming 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "KIN SW1 was read as Swimming level 1 and joined to the house family Swimming 1. The course title is inferred from the code and should be verified against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "1a34bd3b7c",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for KIN SWF1": {
+   "raw_title": "Noncredit Course for KIN SWF1",
+   "unified_title": "Swim Fitness 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "KIN SWF1 was read as Swim Fitness level 1 and joined to the house family Swim Fitness 1. The course title is inferred from the code and should be verified against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "7aaddc18a1",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for KIN YO1": {
+   "raw_title": "Noncredit Course for KIN YO1",
+   "unified_title": "Yoga 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "KIN YO1 was read as Yoga level 1 and joined to the house family Yoga 1. The course title is inferred from the code and should be verified against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "88d0926b11",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for MATH 100C": {
+   "raw_title": "Noncredit Course for MATH 100C",
+   "unified_title": "Concurrent Support for SLAM Mathematics",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the catalog hint, which matches an existing house family.",
+   "rules": "75e72fb99f8c",
+   "hints": "2e3e525fe5",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for MATH 101C": {
+   "raw_title": "Noncredit Course for MATH 101C",
+   "unified_title": "Concurrent Support for BSTEM Mathematics",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Used the catalog hint, which matches an existing house family.",
+   "rules": "75e72fb99f8c",
+   "hints": "81f9dd9a00",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for MUS 16": {
+   "raw_title": "Noncredit Course for MUS 16",
+   "unified_title": "Philharmonic Orchestra",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "Noncredit mirror of Las Positas MUS 16. Took the catalog hint 'Philharmonic Orchestra' over the cx hint, which kept the mechanism phrase and the course code.",
+   "rules": "75e72fb99f8c",
+   "hints": "b141e68fb1",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for MUS 45": {
+   "raw_title": "Noncredit Course for MUS 45",
+   "unified_title": "Chamber Choir",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "Noncredit mirror of Las Positas MUS 45. Took the catalog course title 'Chamber Choir' and set aside the cx hint.",
+   "rules": "75e72fb99f8c",
+   "hints": "ccc46eb75b",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for MUS 46": {
+   "raw_title": "Noncredit Course for MUS 46",
+   "unified_title": "Vocal Jazz Ensemble",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "Noncredit mirror of Las Positas MUS 46. Took the catalog course title 'Vocal Jazz Ensemble' and set aside the cx hint.",
+   "rules": "75e72fb99f8c",
+   "hints": "3e7be1e54c",
+   "asked": "2026-11-11"
+  },
+  "Noncredit Course for NKIN WT1": {
+   "raw_title": "Noncredit Course for NKIN WT1",
+   "unified_title": "Weight Training 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 9"
+   ],
+   "_notes": "No catalog match was found for NKIN WT1. Reading it as noncredit kinesiology weight training and joining the 'Weight Training 1' family is a guess; verify the course title in COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "75b13fb53f",
+   "asked": "2026-11-11"
+  },
   "Noncredit for ARHS 6": {
    "raw_title": "Noncredit for ARHS 6",
    "unified_title": "Museum & Gallery Techniques",
@@ -21009,6 +22968,1031 @@
    "hints": "74a559295b",
    "asked": "2026-11-05"
   },
+  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later. The issuer is the Northern CA committee, the discriminator against the joint-issuer family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Acoustical Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Acoustical Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one"
+   ],
+   "_notes": "The journeyperson completion is folded into the Northern CA trade family, since no Northern journeyperson family exists. It may warrant its own title, as the Southern CA journeyman certificates have.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Carpenter",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Carpenter",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Carpenter",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Carpenter",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Carpenter Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Carpenter",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one"
+   ],
+   "_notes": "The journeyperson completion is folded into the CTCNC Carpenter family, since no Northern journeyperson family exists. It may warrant its own title.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "The year is folded into the Drywall/Lather trade family; the Northern CA issuer discriminates it from the joint-issuer family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Year 2 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The house family's issuer is the joint NorCal/SoCal pair; this row uses CTCNC because the title names Nor Cal.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Year 3 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Year 4 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Drywall/Lather Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Drywall/Lather",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The journeyperson completion was joined with the Drywall/Lather apprenticeship family. Faculty may later split completion from in-progress years.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1": {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1",
+   "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Level 1 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2": {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2",
+   "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Level 2 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3": {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3",
+   "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Level 3 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The journeyperson completion was joined with the Hardwood Floor Layer apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Insulator",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Insulation Installer maps to the house Insulator apprenticeship family. Year 1 was folded in, since the family has no per-year split.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Insulator",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Insulation Installer maps to the house Insulator apprenticeship family. Year 2 was folded in.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Insulation Installer Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Insulator",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The journeyperson completion was joined with the Insulator apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 1 was folded in, since the family has no per-year split.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 2 was folded in.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 3 was folded in.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 4 was folded in.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.86,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "Rule 3",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "The Mill & Cabinet journeyperson folds into the existing CTCNC Cabinetmaker apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Millwright",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Millwright",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Millwright",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Millwright",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Millwright Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Millwright Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Millwright",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.86,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The journeyperson completion folds into the house Millwright apprenticeship family. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Modular Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Office Modular System Installer maps to the house CTCNC Modular Installer family, with the year level folded in.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Office Modular System Installer Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Office Modular System Installer Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Modular Installer",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "Office Modular System Installer journeyperson maps to the house CTCNC Modular Installer family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Pile Driver",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Pile Driver",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Pile Driver",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Pile Driver",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Pile Driver apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Pile Driver Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Pile Driver",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The journeyperson completion folds into the house CTCNC Pile Driver apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1": {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1",
+   "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2": {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2",
+   "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.93,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "join-when-likely-one",
+    "Rule 3",
+    "Rule 6"
+   ],
+   "_notes": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3": {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3",
+   "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "Joins the CTCNC house family. That family carries no year levels, so Year 3 folds in; faculty may split the years later. CTCNC both trains and issues.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4": {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4",
+   "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 3"
+   ],
+   "_notes": "Joins the CTCNC house family. That family carries no year levels, so Year 4 folds in; faculty may split the years later.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Scaffold Erector",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one"
+   ],
+   "_notes": "Journeyperson completion folds into the CTCNC Scaffold Erector apprenticeship family, which has no separate journey-level title; review whether journeyperson status deserves its own title.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Nor Cal Carpenters Training Shingler Journeyperson": {
+   "raw_title": "Nor Cal Carpenters Training Shingler Journeyperson",
+   "unified_title": "Carpenters Apprenticeship — Shingler",
+   "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one"
+   ],
+   "_notes": "Journeyperson completion folds into the CTCNC Shingler apprenticeship house family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Apprenticeship Journeyperson": {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Journeyperson",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "New journey-level title on the SMART sheet metal house shape. The NorCal Valley program is treated as the local JATC trainer; its exact DAS sponsor name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Apprenticeship Level 1": {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 1",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 1",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Level 1 is read as apprenticeship Year 1 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Apprenticeship Level 2": {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 2",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 2",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Level 2 is read as apprenticeship Year 2 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Apprenticeship Level 3": {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 3",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 3",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Level 3 is read as apprenticeship Year 3 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Apprenticeship Level 4": {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 4",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 4",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.72,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Level 4 is read as apprenticeship Year 4 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1": {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1",
+   "unified_title": "SMART Sheet Metal Service Technician Apprenticeship — Year 1",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "Service Technician is a distinct trade from building-trades sheet metal, so it gets its own title on the SMART house shape (Rule 4). Level is read as Year.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2": {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2",
+   "unified_title": "SMART Sheet Metal Service Technician Apprenticeship — Year 2",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3": {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3",
+   "unified_title": "SMART Sheet Metal Service Technician Apprenticeship — Year 3",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4": {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4",
+   "unified_title": "SMART Sheet Metal Service Technician Apprenticeship — Year 4",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "NorCal Valley Sheet Metal Service Technician Journeyperson": {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Journeyperson",
+   "unified_title": "SMART Sheet Metal Service Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "Northern California Valley Sheet Metal JATC",
+   "confidence_title": 0.68,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "New journey-level title for the Service Technician trade on the SMART house shape; the trainer name needs verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Nursing Care of Children and Families": {
    "raw_title": "Nursing Care of Children and Families",
    "unified_title": "Nursing Care of Children and Families",
@@ -21537,6 +24521,397 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Plumbers Pipefitters Apprenticeship Level 1": {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 1",
+   "unified_title": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 4",
+    "Rule 7"
+   ],
+   "_notes": "No local is named, so this does not join the UA Local 342 course-coded family. American River College suggests a Sacramento-area UA local, but the trainer is left open for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Apprenticeship Level 2": {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 2",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "Rule 5h",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Named on the house UA/IBEW apprenticeship shape. American River College suggests the Sacramento UA local (likely Local 447), but the title names no local or JATC. The issuer is the UA parent body; the local JATC sponsor needs verification against DAS.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Apprenticeship Level 3": {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 3",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor at American River College is not named and needs DAS verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Apprenticeship Level 4": {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 4",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor is not named and needs DAS verification.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Journeyperson": {
+   "raw_title": "Plumbers Pipefitters Journeyperson",
+   "unified_title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Journeyperson completion, named on the IBEW Journeyperson house shape. The journey card may be issued by DAS or the local JATC rather than the UA; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1": {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Level 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "The refrigeration service technician track is kept apart from the plumber/pipefitter track because it is a different scope (Rule 4). The UA local is not named; verify the sponsor.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2": {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Level 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3": {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Level 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4": {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Level 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson": {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson",
+   "unified_title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Journeyperson completion of the refrigeration track. The journey card may be issued by DAS or the JATC; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1": {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1",
+   "unified_title": "UA Steamfitter Apprenticeship — Level 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "The steamfitter track is split from the plumber/pipefitter and refrigeration tracks. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2": {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2",
+   "unified_title": "UA Steamfitter Apprenticeship — Level 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3": {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3",
+   "unified_title": "UA Steamfitter Apprenticeship — Level 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4": {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4",
+   "unified_title": "UA Steamfitter Apprenticeship — Level 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Steamfitter Journeyperson": {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Journeyperson",
+   "unified_title": "UA Steamfitter Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "Journeyperson completion of the steamfitter track. The journey card may be issued by DAS or the JATC; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Welder Apprenticeship Level 1": {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 1",
+   "unified_title": "UA Welder Apprenticeship — Level 1",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "arabic-level-numerals",
+    "issuer-issues-the-card",
+    "Rule 7"
+   ],
+   "_notes": "This is the UA welder apprenticeship track, not an AWS welder qualification, so it is not joined to the AWS families. The UA local sponsor is not named; verify.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Welder Apprenticeship Level 2": {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 2",
+   "unified_title": "Plumbers and Pipefitters Welder Apprenticeship — Level 2",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "Union welder apprenticeship stage kept distinct per level (IBEW Year-N house shape). Issuer is inferred as the UA plumbers/pipefitters union; the DAS-registered local JAC near American River College is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Welder Apprenticeship Level 3": {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 3",
+   "unified_title": "Plumbers and Pipefitters Welder Apprenticeship — Level 3",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Welder Apprenticeship Level 4": {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 4",
+   "unified_title": "Plumbers and Pipefitters Welder Apprenticeship — Level 4",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "arabic-level-numerals",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Plumbers Pipefitters Union Welder Journeyperson": {
+   "raw_title": "Plumbers Pipefitters Union Welder Journeyperson",
+   "unified_title": "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson",
+   "issuing_agency": "United Association (UA)",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.6,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "apprenticeship-trades",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "Journeyperson completion follows the IBEW '— Journeyperson' house shape. Issuer is inferred as the UA; the local JAC is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Portable Pumps and Water Use - Certification NWCG S-211": {
    "raw_title": "Portable Pumps and Water Use - Certification NWCG S-211",
    "unified_title": "S-211 Portable Pumps and Water Use",
@@ -21659,6 +25034,522 @@
    "rules": "d20f2caab9db",
    "hints": "755c905403",
    "asked": "2026-11-04"
+  },
+  "Portfolio Evidence for ARHS 6": {
+   "raw_title": "Portfolio Evidence for ARHS 6",
+   "unified_title": "Museum & Gallery Techniques",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Catalog hint (Las Positas ARHS 6) joins the existing family. The cx hint 'Evidence for ARHS 6' was set aside because it left the method word and course code in the title.",
+   "rules": "75e72fb99f8c",
+   "hints": "b6a2563535",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for ARTS 12A": {
+   "raw_title": "Portfolio Evidence for ARTS 12A",
+   "unified_title": "Oil/Acrylic Painting: Beginning 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals",
+    "mechanism-collapses"
+   ],
+   "_notes": "Catalog course title for ARTS 12A, with the Roman I made Arabic, joins the existing family. The cx hint was set aside.",
+   "rules": "75e72fb99f8c",
+   "hints": "6a6c2bb518",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for ARTS 2A": {
+   "raw_title": "Portfolio Evidence for ARTS 2A",
+   "unified_title": "Introduction to Drawing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "fb840a6b0a",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for ARTS 3A": {
+   "raw_title": "Portfolio Evidence for ARTS 3A",
+   "unified_title": "Figure and Composition 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "arabic-level-numerals",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "6cd05e8ae2",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for ARTS 7A": {
+   "raw_title": "Portfolio Evidence for ARTS 7A",
+   "unified_title": "Introduction to Watercolor Painting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "fd6d77b088",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 20": {
+   "raw_title": "Portfolio Evidence for BUSN 20",
+   "unified_title": "International Business",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "5c6a85bdf1",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 33": {
+   "raw_title": "Portfolio Evidence for BUSN 33",
+   "unified_title": "Personal and Family Financial Planning Fundamentals",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.86,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one",
+    "mechanism-collapses"
+   ],
+   "_notes": "Catalog title 'The Fundamentals of Personal and Family Financial Planning' joins the existing house family of the same course.",
+   "rules": "75e72fb99f8c",
+   "hints": "f949c7219a",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 40": {
+   "raw_title": "Portfolio Evidence for BUSN 40",
+   "unified_title": "Introduction to Business",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "86f9d35629",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 45": {
+   "raw_title": "Portfolio Evidence for BUSN 45",
+   "unified_title": "Entrepreneurship",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "928db8e185",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 48": {
+   "raw_title": "Portfolio Evidence for BUSN 48",
+   "unified_title": "Human Relations in Organizations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "25665c1028",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 52": {
+   "raw_title": "Portfolio Evidence for BUSN 52",
+   "unified_title": "Business Communication",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.87,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one",
+    "mechanism-collapses"
+   ],
+   "_notes": "Catalog title 'Business Communications' joins the existing 'Business Communication' family.",
+   "rules": "75e72fb99f8c",
+   "hints": "918dbaa69d",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 56": {
+   "raw_title": "Portfolio Evidence for BUSN 56",
+   "unified_title": "Introduction to Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Las Positas BUSN 56 course title from the catalog hint. Joins the existing family. The cx hint 'Evidence for BUSN 56' was set aside because it keeps mechanism words and a course code.",
+   "rules": "75e72fb99f8c",
+   "hints": "836c3a8064",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 58": {
+   "raw_title": "Portfolio Evidence for BUSN 58",
+   "unified_title": "Small Business Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Las Positas BUSN 58 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "1b3e66d066",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 61": {
+   "raw_title": "Portfolio Evidence for BUSN 61",
+   "unified_title": "QuickBooks Accounting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "Catalog hint 'Quickbooks Accounting' was mended to the house family's spelling 'QuickBooks Accounting'.",
+   "rules": "75e72fb99f8c",
+   "hints": "c67211994e",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 65": {
+   "raw_title": "Portfolio Evidence for BUSN 65",
+   "unified_title": "Federal Income Tax Accounting",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas BUSN 65 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "9d90180829",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for BUSN 88": {
+   "raw_title": "Portfolio Evidence for BUSN 88",
+   "unified_title": "Human Resources Management",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas BUSN 88 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "dd03afdcf9",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for ENG 19A": {
+   "raw_title": "Portfolio Evidence for ENG 19A",
+   "unified_title": "Journal of Arts and Literature",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "Catalog hint 'Journal of Arts and Literature A' was joined to the existing family without the section letter. ENG 19A is likely cross-listed with JAMS 19A, so both rows take this title.",
+   "rules": "75e72fb99f8c",
+   "hints": "5d891fbbdf",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for JAMS 12": {
+   "raw_title": "Portfolio Evidence for JAMS 12",
+   "unified_title": "Introduction to Photojournalism",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas JAMS 12 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "5945405f24",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for JAMS 19A": {
+   "raw_title": "Portfolio Evidence for JAMS 19A",
+   "unified_title": "Journal of Arts and Literature",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "join-when-likely-one"
+   ],
+   "_notes": "Cross-listed with ENG 19A. The trailing 'A' in the catalog hint was dropped to join the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "52c62089eb",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for JAMS 23": {
+   "raw_title": "Portfolio Evidence for JAMS 23",
+   "unified_title": "Digital Storytelling",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas JAMS 23 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "293371654c",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for JAMS 3": {
+   "raw_title": "Portfolio Evidence for JAMS 3",
+   "unified_title": "Introduction to Public Relations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas JAMS 3 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "04c3ce64db",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MKTG 50": {
+   "raw_title": "Portfolio Evidence for MKTG 50",
+   "unified_title": "Introduction to Marketing",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas MKTG 50 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "9e376c0c36",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MKTG 56": {
+   "raw_title": "Portfolio Evidence for MKTG 56",
+   "unified_title": "Marketing Strategies",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas MKTG 56 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "c2901ec641",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MKTG 61": {
+   "raw_title": "Portfolio Evidence for MKTG 61",
+   "unified_title": "Professional Selling",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas MKTG 61 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "b1cfb23644",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MUS 19": {
+   "raw_title": "Portfolio Evidence for MUS 19",
+   "unified_title": "Studies in Music Composition",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas MUS 19 course title from the catalog hint. Joins the existing family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4549d7a23a",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MUS 25": {
+   "raw_title": "Portfolio Evidence for MUS 25",
+   "unified_title": "Teaching Beginning Piano",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c"
+   ],
+   "_notes": "Las Positas MUS 25 course title from the catalog hint, joining the existing family. 'Beginning' stays in place because it modifies piano, not the title's subject.",
+   "rules": "75e72fb99f8c",
+   "hints": "59c6a8cab7",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MUS 27": {
+   "raw_title": "Portfolio Evidence for MUS 27",
+   "unified_title": "Teaching Intermediate Piano",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Portfolio exhibit for Las Positas MUS 27. Took the catalog hint (the college course title), which matches the existing CCC family. Set aside the cx hint, which kept method and code residue ('Evidence for'). Verify the course title against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "7efa35ecc6",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for MUS 35": {
+   "raw_title": "Portfolio Evidence for MUS 35",
+   "unified_title": "Introduction to Music Technology",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Portfolio exhibit for Las Positas MUS 35. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "36fc7b3cf4",
+   "asked": "2026-11-11"
+  },
+  "Portfolio Evidence for PHTO 72": {
+   "raw_title": "Portfolio Evidence for PHTO 72",
+   "unified_title": "Introduction to Photojournalism",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "Portfolio exhibit for Las Positas PHTO 72. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI.",
+   "rules": "75e72fb99f8c",
+   "hints": "9c8dbdd70c",
+   "asked": "2026-11-11"
   },
   "Portfolio Review - MULTIMD 100": {
    "raw_title": "Portfolio Review - MULTIMD 100",
@@ -22370,6 +26261,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-31"
   },
+  "Public Safety Leadership & Administration Experience BSEM-LD8": {
+   "raw_title": "Public Safety Leadership & Administration Experience BSEM-LD8",
+   "unified_title": "Public Safety Leadership and Administration Experience",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.65,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.5,
+   "procedures": [
+    "Rule 1",
+    "Rule 8",
+    "Rule 9"
+   ],
+   "_notes": "Stripped the local code BSEM-LD8, which looks like an emergency-management lower-division experience slot similar to the 'Emergency Management Experience' family. This is a work-experience credit with no identifiable issuing body, so the issuer is left null for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Public Safety: Emergency Medical Response": {
    "raw_title": "Public Safety: Emergency Medical Response",
    "unified_title": "Emergency Medical Responder (EMR)",
@@ -22994,6 +26903,114 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Sacramento Electrical Training Center Apprenticeship Level 1": {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 1",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 1",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Sacramento Electrical Training Center is the IBEW Local 340/NECA JATC. Mapped Level N to the house IBEW Year N family; the training center is the trainer. Confirm the level-to-year equivalence.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Sacramento Electrical Training Center Apprenticeship Level 2": {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 2",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 2",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 2 to IBEW Year 2; confirm the level-to-year equivalence.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Sacramento Electrical Training Center Apprenticeship Level 3": {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 3",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 3",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 3 to IBEW Year 3; confirm the level-to-year equivalence.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Sacramento Electrical Training Center Apprenticeship Level 4": {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 4",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 4",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 4 to IBEW Year 4; confirm the level-to-year equivalence.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Sacramento Electrical Training Center Apprenticeship Level 5": {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 5",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 5",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 5 to IBEW Year 5; confirm the level-to-year equivalence.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "Sacramento Electrical Training Center Journeyperson": {
+   "raw_title": "Sacramento Electrical Training Center Journeyperson",
+   "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Sacramento Electrical Training Center",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "join-when-likely-one",
+    "Rule 7"
+   ],
+   "_notes": "Journeyperson completion of the IBEW Local 340 JATC program (Sacramento Electrical Training Center), joined to the house IBEW journeyperson family.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
   "Scripting for Security Management": {
    "raw_title": "Scripting for Security Management",
    "unified_title": "Scripting for Security Management",
@@ -23321,6 +27338,92 @@
    "_notes": "The row names a generic high school without naming one, so the issuer is Local High School and the trainer is left open. 'Med' was expanded to Medicine, I was rendered as 1, and the articulation phrase was stripped.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "State Fire Training Fire Inspector 1 Certificate": {
+   "raw_title": "State Fire Training Fire Inspector 1 Certificate",
+   "unified_title": "Fire Inspector 1",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 4",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "State Fire Training Fire Inspector 1A Certificate": {
+   "raw_title": "State Fire Training Fire Inspector 1A Certificate",
+   "unified_title": "Fire Inspector 1A",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "State Fire Training Fire Inspector 1B Certificate": {
+   "raw_title": "State Fire Training Fire Inspector 1B Certificate",
+   "unified_title": "Fire Inspector 1B",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "State Fire Training Fire Inspector 2A Certificate": {
+   "raw_title": "State Fire Training Fire Inspector 2A Certificate",
+   "unified_title": "Fire Inspector 2A",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
+  },
+  "State Fire Training Fire Inspector 2B Certificate": {
+   "raw_title": "State Fire Training Fire Inspector 2B Certificate",
+   "unified_title": "Fire Inspector 2B",
+   "issuing_agency": "California State Fire Training (SFT)",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-11"
   },
   "State or County EMT Certification": {
    "raw_title": "State or County EMT Certification",

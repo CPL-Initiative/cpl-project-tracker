@@ -228,6 +228,10 @@ def row_exhibit(root):
         with open(folds[-1], encoding="utf-8") as f:
             fold_at = json.load(f).get("_generated_at")
     stamps = [t for t in (saved_at, fold_at) if t]
+    # Credentials with no Common SUBJ (Sam, in session 2026-11-11: "many of the exhibits don't have a subj"): the
+    # subject fill (kb/_exhibit_subject_fill.py, nightly in cer-procedures.yml) counts what is left; routine, so the
+    # day history carries its trend and a count that stops shrinking surfaces as stalled.
+    nosubj = figure(lambda: load_json(root, "kb/exhibit_subject_out/worklist.json"))
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
         # The card opens Exhibits' List (Sam, 2026-11-03); Progress is a word away. Held titles and the fold's
@@ -249,6 +253,12 @@ def row_exhibit(root):
              "carry": "unsure", "open": tab + "/conflict", "error": run["error"]},
             # Said so a reader knows the job (Sam, 2026-11-04: "I keep seeing those 622 mentioned but don't know what to do
             # with them, so if you can clarify on the commons card or link, that would help").
+            {"n": (nosubj["n"] or {}).get("no_subject") if nosubj["n"] is not None else None,
+             "words": "credentials with no Common SUBJ" + (
+                 " (%s exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait "
+                 "on a person in the worklist" % fmt((nosubj["n"] or {}).get("left_exhibits")) if nosubj["n"] else ""),
+             "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+             "carry": "routine", "open": tab + "/list/nosubj", "error": nosubj["error"]},
             {"n": left["n"], "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, "
                                       "or keep one a college may enter again",
              "owner": "a curator",
@@ -267,10 +277,11 @@ def row_exhibit(root):
                   "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,
                   "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),
                   "unclassified": (stats["n"] or {}).get("unclassified_in_map"),
-                  "left_map": left["n"], "below_80": below_80, "below_60": below_60},
+                  "left_map": left["n"], "below_80": below_80, "below_60": below_60,
+                  "no_subject": (nosubj["n"] or {}).get("no_subject") if nosubj["n"] is not None else None},
         "sources": ["kb/unified_titles.json", "kb/credentials.json", "kb/exhibit_audit/latest.json",
                     "kb/cer_procedures_out/latest.json", "kb/cer_procedures.json", "kb/cer_procedures_out/saved/",
-                    "kb/unclassified_fold/*/report.json"],
+                    "kb/unclassified_fold/*/report.json", "kb/exhibit_subject_out/worklist.json"],
     }
 
 

@@ -1,0 +1,37 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Butte College, fourth read. The third (butte_local_ge, run 42959627686) showed the General Education section (25389) holds one link list, node 28399, with two sub-items; the program types page (25391) says a local degree needs 'Completion of one general education pattern' and 'a minimum of two units from Self-Integration, Physical Education Activity, or Career Technical Education (CTE) Pathways Exploratory courses', and names 'the Butte College Local GE Guide in this catalog'. This read opens node 28399 and its child pages as the capture reads an entry (cq_view), and lists its children, to get the Local GE Guide's areas and units. No model call.",
+ "college": "Butte College",
+ "questions": {
+  "local_ge_units": "What does the Butte College Local GE Guide print: its areas, each area's units, and a total?"
+ },
+ "keywords": [
+  "Local GE",
+  "Cal-GETC",
+  "Area",
+  "[Uu]nits",
+  "Total",
+  "minimum"
+ ],
+ "pages": [
+  {
+   "url": "https://butte.curriqunet.com/catalog/iq/25389/25389/28399",
+   "answers": [
+    "local_ge_units"
+   ],
+   "cq_view": true,
+   "cq_catalog": 14
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getNavigation?id=14&parentId=28399",
+   "answers": [
+    "local_ge_units"
+   ]
+  },
+  {
+   "url": "https://butte.curriqunet.com/Catalog/_getPage?catalogId=14&id=28399",
+   "answers": [
+    "local_ge_units"
+   ]
+  }
+ ]
+}

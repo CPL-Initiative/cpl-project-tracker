@@ -9,9 +9,11 @@ correct". His five asks, each a rule here:
   ase        "Auto exhibits are most often aligned with ASE cert titles and I started adding those to
              later exhibit titles in parens after the title ... the local course corresponds to the ASE
              cert, so those should have the ASE parens." A local course named by an ASE test code
-             (Las Positas's AUTO A1 to L3), or whose title is an ASE test's name, gets
-             "(ASE <code> <official name>)"; a paren that names the wrong test or adds words to the
-             official name is corrected.
+             (Las Positas's AUTO A1 to L3), or whose title is an ASE test's name, takes the test's
+             official name and its code in parentheses, "Medium/Heavy Truck Parts Specialist (ASE P1)"
+             (Sam's ruling of 2026-11-11, kb/cert_naming.py: the program name does not lead); a paren
+             that names the wrong test or adds words to the official name is corrected. A title that
+             already names the right test in the older form is the rename batch's, never a card.
   numerals   "Many exhibits use I, II, III and I skipped adjusting some of those to 1,2,3 for
              consistency." Roman level numerals become Arabic, except where an issuer's official name
              carries them (State Fire Training's Firefighter I, Fire Officer, Fire Inspector ...).
@@ -68,6 +70,11 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 
+# ── ASE: the test names and the title format live in kb/cert_naming.py (Sam's ruling, 2026-11-11) ──
+sys.path.insert(0, HERE)
+import cert_naming  # noqa: E402
+ASE = cert_naming.ASE
+
 SCHEMA = 1
 OUT = "kb/exhibits_sweep.json"
 
@@ -75,8 +82,11 @@ RULES = [
     {"id": "ase", "label": "ASE",
      "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to "
               "later exhibit titles in parens after the title",
-     "tip": "An automotive course that prepares for an ASE test gets the test in parentheses after the title: "
-            "Automotive Technology (ASE A7 Heating and Air Conditioning)."},
+     "tip": "An automotive exhibit named for an ASE test takes the test's official name, then its code in "
+            "parentheses: Medium/Heavy Truck Parts Specialist (ASE P1). The program name does not lead "
+            "(Sam, 2026-11-11). A title already under an older form waits in the rename batch.",
+     "ruling": {"who": cert_naming.RULE["set_by"], "date": cert_naming.RULE["date"], "words": cert_naming.RULE["words"]},
+     "notes": cert_naming.RULE["notes"]},
     {"id": "numerals", "label": "Numerals",
      "words": "Many exhibits use I, II, III and I skipped adjusting some of those to 1,2,3 for consistency.",
      "tip": "Roman level numerals become 1, 2, 3. Official names that carry them, such as Firefighter I, keep them."},
@@ -101,28 +111,11 @@ RULES = [
 RULE_IDS = [r["id"] for r in RULES]
 RULE_IDS_ORDER = RULE_IDS
 
-# ── ASE (the National Institute for Automotive Service Excellence's test names) ──────────────────
-ASE = {
-    "A1": "Engine Repair", "A2": "Automatic Transmission/Transaxle", "A3": "Manual Drive Train and Axles",
-    "A4": "Suspension and Steering", "A5": "Brakes", "A6": "Electrical/Electronic Systems",
-    "A7": "Heating and Air Conditioning", "A8": "Engine Performance", "A9": "Light Vehicle Diesel Engines",
-    "G1": "Auto Maintenance and Light Repair", "L1": "Advanced Engine Performance Specialist",
-    "L2": "Electronic Diesel Engine Diagnosis Specialist", "L3": "Light Duty Hybrid/Electric Vehicle Specialist",
-    "L4": "Advanced Driver Assistance Systems Specialist", "C1": "Automobile Service Consultant",
-    "P1": "Medium/Heavy Truck Parts Specialist", "P2": "Automobile Parts Specialist", "X1": "Exhaust Systems",
-    "F1": "Alternate Fuels", "T1": "Gasoline Engines", "T2": "Diesel Engines", "T3": "Drive Train",
-    "T4": "Brakes", "T5": "Suspension and Steering", "T6": "Electrical/Electronic Systems",
-    "T7": "Heating, Ventilation and Air Conditioning", "T8": "Preventive Maintenance Inspection",
-    "B2": "Painting and Refinishing", "B3": "Non-Structural Analysis and Damage Repair",
-    "B4": "Structural Analysis and Damage Repair", "B5": "Mechanical and Electrical Components",
-    "B6": "Damage Analysis and Estimating",
-}
 # A course title matched to a test by its words alone reaches the light-vehicle tests only; a truck or
 # collision test needs its code named.
 ASE_BY_WORDS = ["A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9", "G1"]
 AUTO_SUBJ = re.compile(r"^(?:AUTO\w*|AUT|AT|ATEC|AUTEC|AUTOTEC|AUTORTK|AUME|AUTOMO|AST|A S T|VAUTO|AUBDY|ACRP)$", re.I)
 ASE_PAREN = re.compile(r"\s*\(ASE\s+([A-Z]\d|xEV)\b\s*([^)]*)\)\s*$")
-ASE_BASE = "Automotive Technology"
 # Words that say only that a title is automotive; a base made of nothing else adds nothing to the test's name.
 AUTO_GENERIC = {"automotive", "auto", "automobile", "system", "systems", "technology", "service", "services",
                 "and", "the", "of", "in", "for", "ase", "certification", "certificate", "exam", "credit", "by"}
@@ -475,7 +468,9 @@ def _is_auto(raw, ev_one, title):
 
 
 def rule_ase(raw, title, ev_one, local=True):
-    """Name the ASE test a course prepares for, after the title, the way Sam wrote it."""
+    """Name the ASE test an exhibit is based on: the test's official name, then its code in parentheses
+    (kb/cert_naming.py, Sam's ruling of 2026-11-11). A title that already names the right test in an older
+    form is left to the rename batch: this rule never moves a title for the form alone."""
     if not local or title.startswith("ASE ") or EXAM_BRAND.search(title):
         return None   # the ASE credential itself, another issuer's credential, or an exam brand
     have = ASE_PAREN.search(title)
@@ -500,16 +495,14 @@ def rule_ase(raw, title, ev_one, local=True):
             return None
         code = named.pop()
         how = f"the course is named for ASE {code}"
-    paren = f"(ASE {code} {ASE[code]})"
-    base = clean(ASE_PAREN.sub("", title))
-    if not (content(base, AUTO_GENERIC) - content(ASE[code], AUTO_GENERIC)) and not re.search(r"\b\d\b", base):
-        base = ASE_BASE
-    t = f"{base} {paren}"
+    t = cert_naming.ase_title(code)
     if t == title:
         return None
     if have and have.group(1) == code:
+        if clean(have.group(2)) == ASE[code]:
+            return None   # the right test in the older form: the rename batch's, never a card's
         return t, f"ASE {code}'s official name is {ASE[code]}"
-    return t, how
+    return t, how + "; the certification's name leads, its code in parentheses"
 
 
 LEVEL_TOKEN = re.compile(r"(?<![\d.])\b(?:(?P<code>[1-9][A-H])|(?P<kind>Year|Level|Period|Module|Part|Phase|Grade)\s+"
@@ -728,6 +721,9 @@ def build(root="."):
         groups[twin_key(t)].append(t)
     for key, ts in groups.items():
         if len(ts) < 2:
+            continue
+        # One ASE test under two forms is the rename batch's to settle, never a twin card.
+        if all(cert_naming.ase_read(t, issuers.get(t, "")) for t in ts):
             continue
         def weight(t):
             latest = max((reviewed.get(r) or "") for r in after[t])

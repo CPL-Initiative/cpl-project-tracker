@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Statistics",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=257",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/statistics-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11839,
+  "input_tokens": 8780,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11839,
-    "output_tokens": 775,
+    "input_tokens": 8780,
+    "output_tokens": 2058,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,67 +30,70 @@
     "model": null
    }
   ],
-  "output_tokens": 775,
+  "output_tokens": 2058,
   "output_tokens_details": {
-   "thinking_tokens": 155
+   "thinking_tokens": 779
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06286,
- "ms": 8766,
- "seconds": 9.7,
+ "cost_usd": 0.07628,
+ "ms": 17622,
+ "seconds": 17.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 9,
-   "share": 0.0,
+   "share": 0.667,
    "missing": [
-    "CIS11",
-    "CIS111X",
-    "MATH23",
-    "MATH4",
     "MATH79",
     "MATH79X",
-    "MATH79Y",
-    "STATC1000",
-    "STATC1000H"
+    "MATH79Y"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 3,
+   "codes": [
+    "MATH76",
+    "MATH76X",
+    "MATH76Y"
+   ],
+   "flagged": [
+    "MATH76",
+    "MATH76X",
+    "MATH76Y"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    22.5,
+    24.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    22.5,
+    24.5
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": false,
@@ -98,22 +101,22 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds only course descriptions (MATH, MET); no Statistics Certificate of Achievement section",
+   "section_heading": "Statistics",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 22.5,
+    "max": 24.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,53 +133,130 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Interpret and summarize univariate and multivariate data using appropriate descriptive statistics and graphical displays",
+    "Apply statistical methods such as hypothesis testing, confidence intervals, regression and ANOVA to analyze data in scientific, social and engineering contexts",
+    "Use computational tools and statistical software to perform data analysis and simulation, emphasizing reproducibility and accuracy",
+    "Design and execute a statistical investigation, including data collection, cleaning, modeling and interpretation, demonstrating awareness of ethical considerations",
+    "Evaluate critically the statistical arguments presented in academic studies, media or professional reports by identifying assumptions, limitations and potential sources of bias"
+   ],
+   "careers": [
+    "statistics",
+    "data analysis",
+    "research"
+   ]
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21.5,
+     "max": 21.5
+    },
+    "courses": [
+     {
+      "code": "CIS 11",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 111X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 4",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 23",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STATC1000",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STATC1000H",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_units",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 1,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "MATH 76",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 76X",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 76Y",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "CIS 11",
-    "why": "not in the text; no program requirements section supplied"
-   },
-   {
-    "code": "CIS 111X",
-    "why": "not in the text; no program requirements section supplied"
+    "code": "MATH 79",
+    "why": "not in the text; List A names MATH 76 instead"
    },
    {
     "code": "MATH 079X",
-    "why": "appears only as a course description (MATH 79X), not as a program requirement"
+    "why": "not in the text; List A names MATH 76X instead"
    },
    {
     "code": "MATH 079Y",
-    "why": "appears only as a course description (MATH 79Y), not as a program requirement"
-   },
-   {
-    "code": "MATH 23",
-    "why": "not in the text; no program requirements section supplied"
-   },
-   {
-    "code": "MATH 4",
-    "why": "not in the text; no program requirements section supplied"
-   },
-   {
-    "code": "MATH 79",
-    "why": "appears only as a course description, not as a program requirement"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only as a corequisite in the MATH 210X course description, not as a program requirement"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "named only as a corequisite in the MATH 210X course description, not as a program requirement"
+    "why": "not in the text; List A names MATH 76Y instead"
    }
   ],
   "notes": [
-   "The supplied catalog text (pages 257-258) contains only course descriptions for MATH and MET courses; the Statistics Certificate of Achievement requirements section is not present. The source page link likely points to the wrong page of the PDF; a reviewer should locate the program section in the Programs part of the 2025-2026 catalog.",
-   "No total units, blocks, outcomes or careers could be recorded from this text."
+   "The text opens with unrelated Bachelor of Science degree requirement boilerplate; only the Statistics Certificate of Achievement section was read.",
+   "Required Core prints six courses but a 21.5-unit total; STATC1000H is read as the honors twin of STATC1000 (the page notes credit for only one version), which makes the core 21.5 units exactly.",
+   "STATC1000 and STATC1000H are written as printed and correspond to closed-list STAT C1000 and STAT C1000H.",
+   "List A courses MATH 76, 76X, 76Y (Special Projects in Probability and Statistics) are not on the closed list; the closed list instead holds MATH 79, 079X, 079Y (Special Projects in Applied Mathematics). Reviewer should check whether these are renumbered equivalents.",
+   "The PSLO list is cut off: a sixth outcome begins 'Communicate statis' and is truncated, so it was not recorded.",
+   "Total Required 22.5-24.5 units matches the Min/Max Units metadata."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

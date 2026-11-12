@@ -61,10 +61,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    202.5,
+    202.5
    ],
    "stated": [
     204.0,
@@ -72,7 +72,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 202.5-202.5; the catalog states 204.0-229.5"
    ]
   },
   "repeated": {
@@ -141,21 +141,21 @@
     "courses": [
      {
       "code": "CDL 041",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CDL 042",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CDL 043",
-      "units": null,
+      "units": 94.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -173,5 +173,18 @@
    "The page prints no program learning outcomes."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "CDL 041": 54.0,
+    "CDL 042": 54.0,
+    "CDL 043": 94.5
+   },
+   "words": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json) (each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0')"
+  }
+ ],
+ "read_run": "38675237912"
 }

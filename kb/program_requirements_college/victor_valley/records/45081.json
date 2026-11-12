@@ -61,10 +61,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    9.0,
+    9.0
    ],
    "stated": [
     8.16,
@@ -72,7 +72,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 9.0-9.0; the catalog states 8.16-9.18"
    ]
   },
   "repeated": {
@@ -138,14 +138,14 @@
     "courses": [
      {
       "code": "EMC 040A",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMC 040B",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -161,5 +161,17 @@
    "No program learning outcomes or careers are printed in the text."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "EMC 040A": 4.5,
+    "EMC 040B": 4.5
+   },
+   "words": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json) (each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0')"
+  }
+ ],
+ "read_run": "38675237912"
 }

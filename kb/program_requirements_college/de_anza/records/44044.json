@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Project Management Practitioner",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/project-management-practitioner-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7787,
+  "input_tokens": 7268,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7787,
-    "output_tokens": 902,
+    "input_tokens": 7268,
+    "output_tokens": 925,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 902,
+  "output_tokens": 925,
   "output_tokens_details": {
-   "thinking_tokens": 166
+   "thinking_tokens": 264
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04919,
- "ms": 7863,
- "seconds": 8.1,
+ "cost_usd": 0.04757,
+ "ms": 11698,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -79,12 +79,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Completion Project Management Practitioner",
+   "section_heading": "Project Management Practitioner",
    "measure": "hours",
    "total_units": {
     "min": 240,
@@ -121,13 +121,7 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Manage projects by applying project management theory as defined by the Project Management Institute’s (PMI) Project Management Book of Knowledge (PMBOK)",
-    "Lead the creation of a project plan for an organization’s large-scale project with a large budget",
-    "Apply risk management techniques to a project to balance scope, quality, budget, scheduling and team morale",
-    "Write a vendor solicitation plan and use a collaborative approach for selecting vendors",
-    "Successfully manage a vendor through a project’s completion while providing all project participants with a clear picture of scope, quality, budget and schedule"
-   ],
+   "outcomes": [],
    "careers": [
     "project managers",
     "project management"
@@ -185,10 +179,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog labels this award a Certificate of Completion (noncredit); it is counted in hours, so all unit fields hold hours.",
-   "Page also prints Database Science Practitioner, Information Technology Technical Support and Introduction to Computer Science certificates; only the Project Management Practitioner section was read.",
-   "Course hours (60+48+48+36+48) sum to the printed 240-hour total."
+   "The award is printed as a Certificate of Completion (noncredit); the program is counted in hours: 'Required Core: (240 Hours)', 'Major Required: 240 Hours', 'Total Required: 240 Hours'. The table's column header reads 'Units' but the figures beside each course are hours (they sum to the stated 240 hours).",
+   "The text before 'Program Requirements' is generic Bachelor of Science degree boilerplate (180 quarter units, GE patterns) and does not apply to this noncredit certificate; it was ignored.",
+   "No program learning outcomes are printed in the text.",
+   "Metadata lists Max Units 240.0 and Min Units 240.0, consistent with the 240-hour total; Proposal Start is Fall 2026."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

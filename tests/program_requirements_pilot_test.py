@@ -1810,6 +1810,22 @@ check(PC_OWN.own_heading_kept(_bank_src, _bank_filed)
       and not PC_OWN.own_heading_kept({**_bank_src, "source": {"url": "https://www.lavc.edu/addendum.pdf#page=3"}}, _bank_filed)
       and not PC_OWN.own_heading_kept(_bank_src, {**_bank_filed, "record": {**_bank_rec, "blocks": []}}),
       "a moved record is kept only on the same file, with its own heading printed and a course placed")
+# S636: Butte's capture spelled each entry /Catalog//iq/... where the filed records say /catalog/iq/...
+# (reconcile 42962429245: 0 of 165 changed). One address spelled two ways is one page; another node is not.
+_butte_a = "https://butte.curriqunet.com/catalog/iq/25398/28078/28202"
+_butte_b = "https://butte.curriqunet.com/Catalog//iq/25398/28078/28202"
+_butte_rec = {"program": {"section_heading": "AS Degree in Agriculture Science"},
+              "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "AGS 20", "units": 3}]}]}
+_butte_filed = {"control_number": "01298", "award": "A.S. Degree", "source_url": _butte_a, "record": _butte_rec}
+_butte_src = {"control_number": "01298", "source": {"url": _butte_b},
+              "text": "AS Degree in Agriculture Science\nAbout the Program\nGE Pattern(s): Butte Local, Cal-GETC\nAGS 20 3.00"}
+check(PC_OWN.same_address(_butte_a, _butte_b)
+      and not PC_OWN.same_address(_butte_a, _butte_b[:-1] + "3")
+      and not PC_OWN.same_address(_butte_a, _butte_b.replace("butte.", "coa."))
+      and not PC_OWN.same_address(_butte_a, "")
+      and PC_OWN.own_heading_kept(_butte_src, _butte_filed)
+      and not PC_OWN.own_heading_kept({**_butte_src, "text": "AS Degree in Welding Technology\nAGS 20 3.00"}, _butte_filed),
+      "an address spelled with another case or a doubled slash is the same page, kept only with the record's heading")
 _tmp = tempfile.mkdtemp()
 os.makedirs(os.path.join(_tmp, "out", "sources")); os.makedirs(os.path.join(_tmp, "kept", "records"))
 json.dump(_bank_src, open(os.path.join(_tmp, "out", "sources", "02943.json"), "w"))

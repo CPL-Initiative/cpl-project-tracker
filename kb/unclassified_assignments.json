@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-10T20:24:05Z",
-  "count": 2421,
+  "_synced_at": "2026-11-12T00:24:15Z",
+  "count": 2531,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -329,6 +329,12 @@
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
       "unified_title": "AP 2-D Art and Design"
     },
+    "AP 2-D Art and Design - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP 2-D Art and Design"
+    },
     "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -351,6 +357,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-ap-fold-s536@bot",
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
+      "unified_title": "AP 3-D Art and Design"
+    },
+    "AP 3-D Art and Design - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP 3-D Art and Design"
     },
     "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
@@ -417,6 +429,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Art History"
+    },
+    "AP Art History - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Art History"
     },
     "AP Art History - Score of 3 or higher - HISTORICAL Type 1": {
@@ -575,6 +593,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Calculus AB"
     },
+    "AP Calculus AB - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Calculus AB"
+    },
     "AP Calculus AB - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -731,6 +755,12 @@
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
       "unified_title": "AP Calculus AB"
     },
+    "AP Calculus BC/AB Subscore - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Calculus AB"
+    },
     "AP Calculus BC/AB Subscore - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-ap-fold-s536@bot",
@@ -791,6 +821,12 @@
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
       "unified_title": "AP Chemistry"
     },
+    "AP Chemistry - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Chemistry"
+    },
     "AP Chemistry - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -845,6 +881,12 @@
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
       "unified_title": "AP Chinese Language and Culture"
     },
+    "AP Chinese Language and Culture - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Chinese Language and Culture"
+    },
     "AP Chinese Language and Culture - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -873,6 +915,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Comparative Government and Politics"
+    },
+    "AP Comparative Government and Politics - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Comparative Government and Politics"
     },
     "AP Comparative Government and Politics - Score of 3 or higher - HISTORICAL Type 1": {
@@ -977,6 +1025,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Computer Science Principles"
     },
+    "AP Computer Science Principles - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Computer Science Principles"
+    },
     "AP Computer Science Principles - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1005,6 +1059,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-ap-fold-s536@bot",
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
+      "unified_title": "AP Drawing"
+    },
+    "AP Drawing - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Drawing"
     },
     "AP Drawing - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1155,6 +1215,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP English Language and Composition"
     },
+    "AP English Language and Composition - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP English Language and Composition"
+    },
     "AP English Language and Composition - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1239,6 +1305,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP English Literature and Composition"
     },
+    "AP English Literature and Composition - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP English Literature and Composition"
+    },
     "AP English Literature and Composition - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1291,6 +1363,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Environmental Science"
+    },
+    "AP Environmental Science - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Environmental Science"
     },
     "AP Environmental Science - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1363,6 +1441,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP European History"
+    },
+    "AP European History - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP European History"
     },
     "AP European History - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1508,6 +1592,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP French Language and Culture"
     },
+    "AP French Language and Culture - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP French Language and Culture"
+    },
     "AP French Language and Culture - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1548,6 +1638,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP German Language and Culture"
+    },
+    "AP German Language and Culture - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP German Language and Culture"
     },
     "AP German Language and Culture - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1706,6 +1802,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Human Geography"
     },
+    "AP Human Geography - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Human Geography"
+    },
     "AP Human Geography - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1808,10 +1910,22 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Latin"
     },
+    "AP Latin - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Latin"
+    },
     "AP Latin - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Latin"
+    },
+    "AP Latin: Virgil - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Latin"
     },
     "AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1842,6 +1956,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Macroeconomics"
+    },
+    "AP Macroeconomics - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Macroeconomics"
     },
     "AP Macroeconomics - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1886,6 +2006,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Microeconomics"
     },
+    "AP Microeconomics - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Microeconomics"
+    },
     "AP Microeconomics - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -1908,6 +2034,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Music Theory"
+    },
+    "AP Music Theory - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Music Theory"
     },
     "AP Music Theory - Score of 3 or higher - HISTORICAL Type 1": {
@@ -1967,6 +2099,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-brand-family@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Physics 1: Algebra-Based"
+    },
+    "AP Physics 1: Algebra-Based - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Physics 1: Algebra-Based"
     },
     "AP Physics 1: Algebra-Based - Score of 3 - HISTORICAL Type 1": {
@@ -2029,10 +2167,22 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Physics 2: Algebra-Based"
     },
+    "AP Physics 2: Algebra-Based - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Physics 2: Algebra-Based"
+    },
     "AP Physics 2: Algebra-Based - Score of 3 - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Physics 2: Algebra-Based"
+    },
+    "AP Physics 2: Algebra-Based - Score of 4-5": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Physics 2: Algebra-Based"
     },
     "AP Physics 2: Algebra-Based - Score of 4-5 - HISTORICAL Type 1": {
@@ -2161,10 +2311,22 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Physics C: Electricity and Magnetism"
     },
+    "AP Physics C: Electricity and Magnetism - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Physics C: Electricity and Magnetism"
+    },
     "AP Physics C: Electricity and Magnetism - Score of 3 - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Physics C: Electricity and Magnetism"
+    },
+    "AP Physics C: Electricity and Magnetism - Score of 4-5": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Physics C: Electricity and Magnetism"
     },
     "AP Physics C: Electricity and Magnetism - Score of 4-5 - HISTORICAL Type 1": {
@@ -2191,10 +2353,22 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Physics C: Mechanics"
     },
+    "AP Physics C: Mechanics - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Physics C: Mechanics"
+    },
     "AP Physics C: Mechanics - Score of 3 - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Physics C: Mechanics"
+    },
+    "AP Physics C: Mechanics - Score of 4-5": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Physics C: Mechanics"
     },
     "AP Physics C: Mechanics - Score of 4-5 - HISTORICAL Type 1": {
@@ -2245,6 +2419,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Precalculus"
     },
+    "AP Precalculus - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Precalculus"
+    },
     "AP Precalculus - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -2293,6 +2473,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Psychology"
     },
+    "AP Psychology - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Psychology"
+    },
     "AP Psychology - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -2327,6 +2513,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Seminar"
+    },
+    "AP Seminar - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Seminar"
     },
     "AP Seminar - Score of 3 or higher - HISTORICAL Type 1": {
@@ -2431,10 +2623,22 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Spanish Language and Culture"
     },
+    "AP Spanish Language and Culture - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Spanish Language and Culture"
+    },
     "AP Spanish Language and Culture - Score of 3 - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Spanish Language and Culture"
+    },
+    "AP Spanish Language and Culture - Score of 4-5": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Spanish Language and Culture"
     },
     "AP Spanish Language and Culture - Score of 4-5 - HISTORICAL Type 1": {
@@ -2515,6 +2719,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Spanish Literature and Culture"
     },
+    "AP Spanish Literature and Culture - Score of 3": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP Spanish Literature and Culture"
+    },
     "AP Spanish Literature and Culture - Score of 3 - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -2579,6 +2789,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP Statistics"
+    },
+    "AP Statistics - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP Statistics"
     },
     "AP Statistics - Score of 3 or higher - HISTORICAL Type 1": {
@@ -2689,6 +2905,12 @@
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
       "unified_title": "AP United States Government and Politics"
     },
+    "AP U.S. Government and Politics - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AP United States Government and Politics"
+    },
     "AP U.S. Government and Politics - Score of 3 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-ap-fold-s536@bot",
@@ -2717,6 +2939,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-ap-fold-s536@bot",
       "reviewed_at": "2026-10-31T15:00:39.364633+00:00",
+      "unified_title": "AP United States History"
+    },
+    "AP U.S. History - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP United States History"
     },
     "AP U.S. History - Score of 3 or higher - HISTORICAL Type 1": {
@@ -2837,6 +3065,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "AP World History: Modern"
+    },
+    "AP World History: Modern - Score of 3 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "AP World History: Modern"
     },
     "AP World History: Modern - Score of 3 or higher - HISTORICAL Type 1": {
@@ -3124,9 +3358,10 @@
     },
     "ASL 53 American Sign Language IV": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "American Sign Language IV"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:54.742+00:00",
+      "unified_title": "Intermediate American Sign Language 2",
+      "supersedes": "American Sign Language IV"
     },
     "ASNT Level 1 Thermal (Infrared) Thermography Certification": {
       "issuing_agency": "American Society for Nondestructive Testing (ASNT)",
@@ -3574,6 +3809,11 @@
       "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
       "unified_title": "Athletic Training: Injury Prevention, Evaluation and Care"
     },
+    "Auto 617 Completion": {
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.634546+00:00"
+    },
     "Auto Service Excellence (ASE) ASE A7": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -3820,27 +4060,31 @@
     },
     "Automotive Service Excellence MIL3 - Drive Train": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:26:26.340646+00:00",
-      "unified_title": "Automotive Braking Systems"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
+      "supersedes": "Automotive Braking Systems"
     },
     "Automotive Service Excellence MIL4 - Chassis": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:26:27.295238+00:00",
-      "unified_title": "Automotive Braking Systems"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+      "supersedes": "Automotive Braking Systems"
     },
     "Automotive Service Excellence MIL6 - Electrical/Electronic Systems": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:26:28.859578+00:00",
-      "unified_title": "Advanced Electrical and Electronic Systems"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+      "supersedes": "Advanced Electrical and Electronic Systems"
     },
     "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:26:29.9207+00:00",
-      "unified_title": "Heating and Air Conditioning"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
+      "supersedes": "Heating and Air Conditioning"
     },
     "Automotive Service Excellence xEV": {
       "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
@@ -4802,6 +5046,12 @@
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
       "unified_title": "CLEP American Government"
     },
+    "CLEP American Government - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "CLEP American Government"
+    },
     "CLEP American Government - Score of 50 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -5430,6 +5680,12 @@
       "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
       "unified_title": "CLEP History of the United States I"
     },
+    "CLEP History, United States I - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "CLEP History of the United States 1"
+    },
     "CLEP History, United States I - Score of 50 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -5592,6 +5848,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "CLEP Introductory Business Law"
     },
+    "CLEP Introductory Business Law - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "CLEP Introductory Business Law"
+    },
     "CLEP Introductory Business Law - Score of 50 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -5620,6 +5882,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "preseed-v1@bot",
       "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
+      "unified_title": "CLEP Introductory Sociology"
+    },
+    "CLEP Introductory Sociology - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "CLEP Introductory Sociology"
     },
     "CLEP Introductory Sociology - Score of 50 or higher - HISTORICAL Type 1": {
@@ -5751,6 +6019,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "CLEP Principles of Management"
     },
+    "CLEP Principles of Management - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "CLEP Principles of Management"
+    },
     "CLEP Principles of Management - Score of 50 or higher - HISTORICAL Type 1": {
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -5761,6 +6035,12 @@
       "issuing_agency": "College Board",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "CLEP Principles of Marketing"
+    },
+    "CLEP Principles of Marketing - Score of 50 or higher": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "CLEP Principles of Marketing"
     },
     "CLEP Principles of Marketing - Score of 50 or higher - HISTORICAL Type 1": {
@@ -6171,21 +6451,24 @@
     },
     "COSM 211  Manicuring and Pedicuring I": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Manicuring and Pedicuring I"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:01.902+00:00",
+      "unified_title": "Manicuring and Pedicuring 1",
+      "supersedes": "Manicuring and Pedicuring I"
     },
     "COSM 215 Facials I": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Facials I"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:16:58.878+00:00",
+      "unified_title": "Facials 1",
+      "supersedes": "Facials I"
     },
     "COSM 223 Hairstyling Services/Haircutting II": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-      "unified_title": "Hairstyling Services/Haircutting II"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:00.574+00:00",
+      "unified_title": "Hairstyling Services/Haircutting 2",
+      "supersedes": "Hairstyling Services/Haircutting II"
     },
     "CPA – C++ CERTIFIED ASSOCIATE PROGRAMMER": {
       "unified_title": "C++ Certified Associate Programmer (CPA)",
@@ -7131,6 +7414,12 @@
       "unified_title": "Plant Propagation",
       "supersedes": "Credit by Exam"
     },
+    "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:01.862617+00:00",
+      "unified_title": "Introduction to Food Safety"
+    },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -7534,6 +7823,12 @@
       "reviewed_at": "2026-11-01T22:15:19.627+00:00",
       "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
       "supersedes": "Patient-Centered Care 3 and Transition to Professional Practice"
+    },
+    "Credit by Exam-- CFPL ABT 132": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
+      "unified_title": "Agricultural Business and Technology"
     },
     "Credit by Exam-Elementary American Sign Language 1": {
       "issuing_agency": "California Community Colleges",
@@ -9311,6 +9606,12 @@
       "reviewed_at": "2026-10-31T16:34:29.407448+00:00",
       "unified_title": "Fire Service Knowledge, Skills, and Training"
     },
+    "Fire Technology Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Technology"
+    },
     "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER": {
       "issuing_agency": "California State Fire Training (SFT)",
       "reviewed_by": "slee@cccco.edu",
@@ -9397,6 +9698,12 @@
       "unified_title": "Framing Ceilings and Soffits",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00"
+    },
+    "French 1-Elementary French 1st Quarter": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Elementary French I"
     },
     "French Level II": {
       "issuing_agency": "California Community Colleges",
@@ -9826,6 +10133,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "IB Biology HL"
     },
+    "IB Biology HL - Score of 5 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "IB Biology HL"
+    },
     "IB Biology HL - Score of 5 or higher - HISTORICAL Type 1": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -9866,6 +10179,12 @@
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "IB Economics HL"
+    },
+    "IB Economics HL - Score of 5 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "IB Economics HL"
     },
     "IB Economics HL - Score of 5 or higher - HISTORICAL Type 1": {
@@ -9980,6 +10299,12 @@
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "IB History HL"
+    },
+    "IB History - any region HL - Score of 5 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "IB History HL"
     },
     "IB History - any region HL - Score of 5 or higher - HISTORICAL Type 1": {
@@ -10114,6 +10439,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "IB Language A: Language and Literature HL"
     },
+    "IB Language A: Language and Literature HL - Score of 4 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "IB Language A: Language and Literature HL"
+    },
     "IB Language A: Language and Literature HL - Score of 4 or higher - HISTORICAL Type 1": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -10156,6 +10487,12 @@
       "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language B HL"
     },
+    "IB Language B - any language HL - Score of 4 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "IB Language B HL"
+    },
     "IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 1": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-ib-fold-skyinkberry@bot",
@@ -10179,6 +10516,12 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "IB Mathematics: Analysis and Approaches HL"
+    },
+    "IB Math Higher Level - Score of 4 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "IB Mathematics HL"
     },
     "IB Math Higher Level - Score of 4 or higher - HISTORICAL Type 1": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
@@ -10264,6 +10607,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "IB Physics HL"
     },
+    "IB Physics HL - Score of 5 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "IB Physics HL"
+    },
     "IB Physics HL - Score of 5 or higher - HISTORICAL Type 1": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -10280,6 +10629,12 @@
       "issuing_agency": "International Baccalaureate Organization (IBO)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "unified_title": "IB Psychology HL"
+    },
+    "IB Psychology HL - Score of 5 or higher": {
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
       "unified_title": "IB Psychology HL"
     },
     "IB Psychology HL - Score of 5 or higher - HISTORICAL Type 1": {
@@ -10392,17 +10747,17 @@
     },
     "IC- Automotive Electrical/Electronics I": {
       "issuing_agency": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:03.493942+00:00",
-      "unified_title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
-      "supersedes": "Automotive Electrical/Electronics I"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "supersedes": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)"
     },
     "IC- Engine Performance II": {
       "issuing_agency": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:14.035+00:00",
-      "unified_title": "Engine Performance 2 (ASE A8 Engine Performance)",
-      "supersedes": "Engine Performance II"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "unified_title": "ASE A8 — Engine Performance",
+      "supersedes": "Engine Performance 2 (ASE A8 Engine Performance)"
     },
     "IC- Introduction to Automotive Technology": {
       "issuing_agency": "California Community Colleges",
@@ -10429,18 +10784,18 @@
       "unified_title": "NCCER Welding Level 2"
     },
     "IC-Automotive Brake Systems": {
-      "issuing_agency": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-      "unified_title": "Automotive Technology (ASE A5 Brakes)",
-      "supersedes": "Automotive Brake Systems"
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "ASE A5 — Brakes",
+      "supersedes": "Automotive Technology (ASE A5 Brakes)"
     },
     "IC-Automotive Electrical/Electronics II": {
       "issuing_agency": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:04.866031+00:00",
-      "unified_title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
-      "supersedes": "Automotive Electrical/Electronics II"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems",
+      "supersedes": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"
     },
     "IC-Automotive Suspension, Steering and Alignment Systems": {
       "issuing_agency": "",
@@ -10450,10 +10805,10 @@
     },
     "IC-Engine Performance I": {
       "issuing_agency": "",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:09.387+00:00",
-      "unified_title": "Engine Performance 1 (ASE A8 Engine Performance)",
-      "supersedes": "Engine Performance I"
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "unified_title": "ASE A8 — Engine Performance",
+      "supersedes": "Engine Performance 1 (ASE A8 Engine Performance)"
     },
     "IC-Welding Level I": {
       "issuing_agency": "National Center for Construction Education and Research (NCCER)",
@@ -11304,6 +11659,12 @@
       "reviewed_at": "2026-10-31T15:30:48.260073+00:00",
       "unified_title": "Introduction to Hospitality Management"
     },
+    "Introduction to Law Enforcement/Corrections": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:41.499859+00:00",
+      "unified_title": "Introduction to Corrections"
+    },
     "Introduction to Mechanical Drafting - Credit by Exam (CADD 5 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -11430,6 +11791,12 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
       "unified_title": "Introduction to Reporting and Newswriting"
+    },
+    "JOURN 062 Survey of Mass Media": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:04.492808+00:00",
+      "unified_title": "Introduction to Mass Communications"
     },
     "JOURN 069 Multimedia Reporting for Journalists": {
       "issuing_agency": "California Community Colleges",
@@ -12484,6 +12851,96 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Non-Structural Collision Repair and Welding"
     },
+    "Noncredit Course for AUTO P1": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Powertrains: Modifications for Performance"
+    },
+    "Noncredit Course for AVI 110": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Drone Coding and Piloting"
+    },
+    "Noncredit Course for BUSN 33": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Personal and Family Financial Planning Fundamentals"
+    },
+    "Noncredit Course for CIS 100": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "AI (Artificial Intelligence) in the Workplace"
+    },
+    "Noncredit Course for ENG 110": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Craft of the Sentence"
+    },
+    "Noncredit Course for ENG 115": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Personalized Coaching for Academic Reading and Writing"
+    },
+    "Noncredit Course for ESL 113": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Speaking and Listening Fluency for Academic and Professional Purposes"
+    },
+    "Noncredit Course for ESL 123": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Oral Communication Intermediate"
+    },
+    "Noncredit Course for ESL 126": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Pronunciation and Fluency Intermediate"
+    },
+    "Noncredit Course for ESL 133": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Oral Communication Beginning"
+    },
+    "Noncredit Course for ESL 136": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Pronunciation and Fluency"
+    },
+    "Noncredit Course for FREN 1A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Elementary French 1"
+    },
+    "Noncredit Course for FREN 1B": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Elementary French 2"
+    },
+    "Noncredit Course for MATH 100C": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Concurrent Support for SLAM Mathematics"
+    },
+    "Noncredit Course for MATH 101C": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Concurrent Support for BSTEM Mathematics"
+    },
     "Noncredit for ARHS 6": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -12578,8 +13035,9 @@
     "Noncredit for AUTO P1": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:59:52.534182+00:00",
-      "unified_title": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)"
+      "reviewed_at": "2026-11-11T15:09:28.955+00:00",
+      "unified_title": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+      "supersedes": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)"
     },
     "Noncredit for AUTO SDR": {
       "issuing_agency": "California Community Colleges",
@@ -12773,11 +13231,41 @@
       "reviewed_at": "2026-11-06T20:33:00.986894+00:00",
       "unified_title": "Weight Training 1"
     },
+    "Nor Cal Carpenters Training Mill & Cabinet Makers Journeyperson": {
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Carpenters Apprenticeship — Cabinetmaker"
+    },
+    "Nor Cal Carpenters Training Millwright Journeyperson": {
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Carpenters Apprenticeship — Millwright"
+    },
+    "Nor Cal Carpenters Training Office Modular System Installer Journeyperson": {
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Carpenters Apprenticeship — Modular Installer"
+    },
+    "Nor Cal Carpenters Training Pile Driver Journeyperson": {
+      "issuing_agency": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Carpenters Apprenticeship — Pile Driver"
+    },
     "Nursing Care of Children and Families": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-11-09T17:53:55.099685+00:00",
       "unified_title": "Nursing Care of Children and Families"
+    },
+    "Nursing Care of the childbearing family": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:24:07.475067+00:00",
+      "unified_title": "Nursing Care of the Childbearing Family"
     },
     "Nursing Fundamentals - Credit by Exam (NURS 220 )": {
       "issuing_agency": "California Community Colleges",
@@ -13201,6 +13689,150 @@
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-06T20:33:13.609933+00:00",
       "unified_title": "Museum & Gallery Techniques"
+    },
+    "Portfolio Evidence for ARHS 6": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Museum & Gallery Techniques"
+    },
+    "Portfolio Evidence for ARTS 12A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Oil/Acrylic Painting: Beginning 1"
+    },
+    "Portfolio Evidence for ARTS 2A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Drawing"
+    },
+    "Portfolio Evidence for ARTS 3A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Figure and Composition 1"
+    },
+    "Portfolio Evidence for ARTS 7A": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Watercolor Painting"
+    },
+    "Portfolio Evidence for BUSN 20": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "International Business"
+    },
+    "Portfolio Evidence for BUSN 33": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Personal and Family Financial Planning Fundamentals"
+    },
+    "Portfolio Evidence for BUSN 40": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Business"
+    },
+    "Portfolio Evidence for BUSN 45": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Entrepreneurship"
+    },
+    "Portfolio Evidence for BUSN 48": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Human Relations in Organizations"
+    },
+    "Portfolio Evidence for BUSN 52": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Business Communication"
+    },
+    "Portfolio Evidence for BUSN 56": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Management"
+    },
+    "Portfolio Evidence for BUSN 58": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Small Business Management"
+    },
+    "Portfolio Evidence for BUSN 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "QuickBooks Accounting"
+    },
+    "Portfolio Evidence for BUSN 65": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Federal Income Tax Accounting"
+    },
+    "Portfolio Evidence for BUSN 88": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Human Resources Management"
+    },
+    "Portfolio Evidence for JAMS 12": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Photojournalism"
+    },
+    "Portfolio Evidence for JAMS 23": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Digital Storytelling"
+    },
+    "Portfolio Evidence for JAMS 3": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Public Relations"
+    },
+    "Portfolio Evidence for MKTG 50": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Introduction to Marketing"
+    },
+    "Portfolio Evidence for MKTG 56": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Marketing Strategies"
+    },
+    "Portfolio Evidence for MKTG 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Professional Selling"
+    },
+    "Portfolio Evidence for MUS 19": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Studies in Music Composition"
+    },
+    "Portfolio Evidence for MUS 25": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Teaching Beginning Piano"
     },
     "Portfolio Painting II (ART 228)": {
       "issuing_agency": "California Community Colleges",
@@ -13756,6 +14388,12 @@
       "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
       "unified_title": "Intro to Renewable Energy"
     },
+    "Report Writing": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T01:23:56.14337+00:00",
+      "unified_title": "Report Writing"
+    },
     "Report Writing for Law Enforcement": {
       "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "reviewed_by": "slee@cccco.edu",
@@ -14193,6 +14831,36 @@
       "reviewed_at": "2026-11-01T22:11:51.451+00:00",
       "unified_title": "Clinical Experience in Sports Medicine 1",
       "supersedes": "Clinical Experience in Sports Medicine I"
+    },
+    "State Fire Training Fire Inspector 1 Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Inspector 1"
+    },
+    "State Fire Training Fire Inspector 1A Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Inspector 1A"
+    },
+    "State Fire Training Fire Inspector 1B Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Inspector 1B"
+    },
+    "State Fire Training Fire Inspector 2A Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Inspector 2A"
+    },
+    "State Fire Training Fire Inspector 2B Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+      "unified_title": "Fire Inspector 2B"
     },
     "State or County EMT Certification": {
       "issuing_agency": "California Emergency Medical Services Authority (EMSA)",

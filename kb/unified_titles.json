@@ -8769,7 +8769,7 @@
     "_notes": null
   },
   "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx": {
-    "unified_title": "ASE Master Automobile Technician (A1–A8 + L1)",
+    "unified_title": "ASE Master Automobile Technician",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8782,7 +8782,7 @@
     "_notes": "Composite bundle covering all A-series plus L1 advanced engine performance — ASE Master Auto Technician."
   },
   "ASE Certifications: A1, A6, A8, L1+ Residency Units": {
-    "unified_title": "ASE Bundle — A1, A6, A8, L1",
+    "unified_title": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8796,7 +8796,7 @@
     "_notes": "Local LATTC composite bundle of multiple ASE subtests; kept as bundle since it's awarded together."
   },
   "ASE Certifications: A2, A3, A6 + Residency Units": {
-    "unified_title": "ASE Bundle — A2, A3, A6",
+    "unified_title": "ASE Certificate Bundles: A2 + A3 + A6",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8810,7 +8810,7 @@
     "_notes": "Local college composite bundle."
   },
   "ASE Certifications: A4, A5, A6 + Residency Units": {
-    "unified_title": "ASE Bundle — A4, A5, A6",
+    "unified_title": "ASE Certificate Bundles: A4 + A5 + A6",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8852,7 +8852,7 @@
     "_notes": "Alternative ASE bundle including L3 hybrid/electric specialist."
   },
   "ASE Certifications: A6, A8, L1 + Residency Units": {
-    "unified_title": "ASE Bundle — A6, A8, L1",
+    "unified_title": "ASE Certificate Bundles: A6 + A8 + L1",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8866,7 +8866,7 @@
     "_notes": "Local college composite bundle."
   },
   "ASE G1 and ALI - Lift it Right": {
-    "unified_title": "ASE G1 + ALI Lift It Right Bundle",
+    "unified_title": "ASE Certificate Bundles: G1 with ALI Lift It Right",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8879,7 +8879,7 @@
     "_notes": "Combined ASE G1 with ALI Lift It Right safety training — two co-issued credentials bundled."
   },
   "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — L2, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8920,7 +8920,7 @@
     "_notes": null
   },
   "ASE T2, T5, T7, T8, MACS or ASE 609 Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+    "unified_title": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8934,7 +8934,7 @@
     "_notes": "Composite bundle; MACS 609 EPA refrigerant cert co-required."
   },
   "ASE T2, T6, T8, Snap on 604 Meter Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+    "unified_title": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8948,7 +8948,7 @@
     "_notes": "Composite bundle including vendor-specific meter cert."
   },
   "ASE T2, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T8",
+    "unified_title": "ASE Certificate Bundles: T2 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8964,7 +8964,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T3, T4, T5, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T3, T4, T5, T8",
+    "unified_title": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8978,7 +8978,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T3, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T3, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8992,7 +8992,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T4, T8, SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T4, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9006,7 +9006,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T5, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T5, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9020,7 +9020,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T5, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T5, T8",
+    "unified_title": "ASE Certificate Bundles: T5 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9035,7 +9035,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T6, L2, Cummins ISX, SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9049,7 +9049,7 @@
     "_notes": "Composite bundle mixes ASE with vendor (Cummins) and SP/2."
   },
   "ASE T6, T8, Snap On 604 Meter Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T6, T8 + Snap-on 604",
+    "unified_title": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9063,7 +9063,7 @@
     "_notes": "Composite bundle with vendor meter cert."
   },
   "ASE T7, T8, MACS or ASE 609 Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T7, T8 + MACS/609",
+    "unified_title": "ASE Certificate Bundles: T7 + T8 with MACS/609",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -10840,17 +10840,16 @@
     "_notes": "Numbered course; topic unclear."
   },
   "Auto 617 Completion": {
-    "unified_title": "Automotive Air Conditioner",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T22:13:10.634546+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPICI-A6C9-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Numbered completion cert; topic unclear."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive Air Conditioner' (conf 0.5)."
   },
   "Auto 618 Completion": {
     "unified_title": "Automotive Fuel Systems",
@@ -11135,7 +11134,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A2 + A3 Certificates": {
-    "unified_title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+    "unified_title": "ASE Certificate Bundles: A2 + A3",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11291,7 +11290,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A8 + L1 Certificates": {
-    "unified_title": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+    "unified_title": "ASE Certificate Bundles: A8 + L1",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11343,7 +11342,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A9 & L2": {
-    "unified_title": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+    "unified_title": "ASE Certificate Bundles: A9 + L2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11538,7 +11537,7 @@
     "_notes": null
   },
   "Automotive Service Excellence L1 and L2 Certification": {
-    "unified_title": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+    "unified_title": "ASE Certificate Bundles: L1 + L2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11929,7 +11928,7 @@
     "_notes": "MLR likely refers to ASE Maintenance & Light Repair student curriculum; high-school-specific articulation."
   },
   "Automotive service excellence  A2, A3 and A6": {
-    "unified_title": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+    "unified_title": "ASE Certificate Bundles: A2 + A3 + A6",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42099,7 +42098,7 @@
     "_notes": "HS articulation exhibit; course code stripped."
   },
   "VAUTO 676: Automatic & Manual Transmissions & Transaxles": {
-    "unified_title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+    "unified_title": "ASE Certificate Bundles: A2 + A3",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -54444,26 +54443,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC- Automotive Electrical/Electronics I": {
-    "unified_title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:53:03.493942+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Electrical/Electronics I",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics I' on 2026-10-31."
+    "_revised_from": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)' on 2026-11-11."
   },
   "IC- Engine Performance II": {
-    "unified_title": "Engine Performance 2 (ASE A8 Engine Performance)",
+    "unified_title": "ASE A8 — Engine Performance",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:11:14.035+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Engine Performance II",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance II' on 2026-11-01."
+    "_revised_from": "Engine Performance 2 (ASE A8 Engine Performance)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Engine Performance 2 (ASE A8 Engine Performance)' on 2026-11-11."
   },
   "IC- Introduction to Automotive Technology": {
     "unified_title": "Introduction to Automotive Technology",
@@ -54498,26 +54497,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Automotive Brake Systems": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "ASE A5 — Brakes",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Brake Systems",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
+    "_revised_from": "Automotive Technology (ASE A5 Brakes)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Technology (ASE A5 Brakes)' on 2026-11-11."
   },
   "IC-Automotive Electrical/Electronics II": {
-    "unified_title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:53:04.866031+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Electrical/Electronics II",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics II' on 2026-10-31."
+    "_revised_from": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)' on 2026-11-11."
   },
   "IC-Automotive Suspension, Steering and Alignment Systems": {
     "unified_title": "Automotive Suspension, Steering and Alignment Systems",
@@ -54528,15 +54527,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Engine Performance I": {
-    "unified_title": "Engine Performance 1 (ASE A8 Engine Performance)",
+    "unified_title": "ASE A8 — Engine Performance",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:11:09.387+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Engine Performance I",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance I' on 2026-11-01."
+    "_revised_from": "Engine Performance 1 (ASE A8 Engine Performance)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Engine Performance 1 (ASE A8 Engine Performance)' on 2026-11-11."
   },
   "IC-Welding Level I": {
     "unified_title": "NCCER Welding Level 1",
@@ -58185,7 +58184,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Service Excellence (ASE) A4 and A5": {
-    "unified_title": "ASE Bundle — A4, A5",
+    "unified_title": "ASE Certificate Bundles: A4 + A5",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -58193,36 +58192,48 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Service Excellence MIL3 - Drive Train": {
-    "unified_title": "Automotive Braking Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:26.340646+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Braking Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Braking Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL4 - Chassis": {
-    "unified_title": "Automotive Braking Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:27.295238+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Braking Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Braking Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL6 - Electrical/Electronic Systems": {
-    "unified_title": "Advanced Electrical and Electronic Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:28.859578+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Advanced Electrical and Electronic Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Advanced Electrical and Electronic Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning": {
-    "unified_title": "Heating and Air Conditioning",
+    "unified_title": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:29.9207+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Heating and Air Conditioning",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Heating and Air Conditioning' on 2026-11-11."
   },
   "Automotive Service Excellence xEV": {
     "unified_title": "ASE xEV — Electrified Vehicle Safety",
@@ -60538,12 +60549,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO P1": {
-    "unified_title": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+    "unified_title": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:59:52.534182+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T15:09:28.955+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)' on 2026-11-11."
   },
   "Noncredit for AUTO SDR": {
     "unified_title": "Automotive Technology",
@@ -62232,36 +62246,48 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "ASL 53 American Sign Language IV": {
-    "unified_title": "American Sign Language IV",
+    "unified_title": "Intermediate American Sign Language 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:16:54.742+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language IV",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language IV' on 2026-11-11."
   },
   "COSM 211  Manicuring and Pedicuring I": {
-    "unified_title": "Manicuring and Pedicuring I",
+    "unified_title": "Manicuring and Pedicuring 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:17:01.902+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Manicuring and Pedicuring I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Manicuring and Pedicuring I' on 2026-11-11."
   },
   "COSM 215 Facials I": {
-    "unified_title": "Facials I",
+    "unified_title": "Facials 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:16:58.878+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Facials I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Facials I' on 2026-11-11."
   },
   "COSM 223 Hairstyling Services/Haircutting II": {
-    "unified_title": "Hairstyling Services/Haircutting II",
+    "unified_title": "Hairstyling Services/Haircutting 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-10",
+    "classified_at": "2026-11-11",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-11T01:17:00.574+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Hairstyling Services/Haircutting II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Hairstyling Services/Haircutting II' on 2026-11-11."
   },
   "GRART 112 Creative Process and Solutions": {
     "unified_title": "Creative Process and Solutions",
@@ -62346,5 +62372,881 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-10T15:51:40.259187+00:00",
     "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "Credit By Exam- CFPL ABT 130 Intro to Food Safety": {
+    "unified_title": "Introduction to Food Safety",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:01.862617+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Credit by Exam-- CFPL ABT 132": {
+    "unified_title": "Agricultural Business and Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Introduction to Law Enforcement/Corrections": {
+    "unified_title": "Introduction to Corrections",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:23:41.499859+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "JOURN 062 Survey of Mass Media": {
+    "unified_title": "Introduction to Mass Communications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:04.492808+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "title_anchor": {
+      "system": "C-ID",
+      "id": "JOUR 100"
+    }
+  },
+  "Nursing Care of the childbearing family": {
+    "unified_title": "Nursing Care of the Childbearing Family",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:24:07.475067+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Report Writing": {
+    "unified_title": "Report Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T01:23:56.14337+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "AP 2-D Art and Design - Score of 3 or higher": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP 3-D Art and Design - Score of 3 or higher": {
+    "unified_title": "AP 3-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Art History - Score of 3 or higher": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus AB - Score of 3 or higher": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Calculus BC/AB Subscore - Score of 3 or higher": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chemistry - Score of 3 or higher": {
+    "unified_title": "AP Chemistry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Chinese Language and Culture - Score of 3 or higher": {
+    "unified_title": "AP Chinese Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Comparative Government and Politics - Score of 3 or higher": {
+    "unified_title": "AP Comparative Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Computer Science Principles - Score of 3 or higher": {
+    "unified_title": "AP Computer Science Principles",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Drawing - Score of 3 or higher": {
+    "unified_title": "AP Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English Language and Composition - Score of 3 or higher": {
+    "unified_title": "AP English Language and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP English Literature and Composition - Score of 3 or higher": {
+    "unified_title": "AP English Literature and Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Environmental Science - Score of 3 or higher": {
+    "unified_title": "AP Environmental Science",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP European History - Score of 3 or higher": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP French Language and Culture - Score of 3 or higher": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP German Language and Culture - Score of 3 or higher": {
+    "unified_title": "AP German Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Human Geography - Score of 3 or higher": {
+    "unified_title": "AP Human Geography",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Latin - Score of 3 or higher": {
+    "unified_title": "AP Latin",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Latin: Virgil - Score of 3 or higher": {
+    "unified_title": "AP Latin",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Macroeconomics - Score of 3 or higher": {
+    "unified_title": "AP Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Microeconomics - Score of 3 or higher": {
+    "unified_title": "AP Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Music Theory - Score of 3 or higher": {
+    "unified_title": "AP Music Theory",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics 1: Algebra-Based - Score of 3": {
+    "unified_title": "AP Physics 1: Algebra-Based",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics 2: Algebra-Based - Score of 3": {
+    "unified_title": "AP Physics 2: Algebra-Based",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics 2: Algebra-Based - Score of 4-5": {
+    "unified_title": "AP Physics 2: Algebra-Based",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: Electricity and Magnetism - Score of 3": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: Electricity and Magnetism - Score of 4-5": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: Mechanics - Score of 3": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Physics C: Mechanics - Score of 4-5": {
+    "unified_title": "AP Physics C: Mechanics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Precalculus - Score of 3 or higher": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Psychology - Score of 3 or higher": {
+    "unified_title": "AP Psychology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Seminar - Score of 3 or higher": {
+    "unified_title": "AP Seminar",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture - Score of 3": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Language and Culture - Score of 4-5": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Spanish Literature and Culture - Score of 3": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP Statistics - Score of 3 or higher": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP U.S. Government and Politics - Score of 3 or higher": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP U.S. History - Score of 3 or higher": {
+    "unified_title": "AP United States History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "AP World History: Modern - Score of 3 or higher": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP American Government - Score of 50 or higher": {
+    "unified_title": "CLEP American Government",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States I - Score of 50 or higher": {
+    "unified_title": "CLEP History of the United States 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Introductory Business Law - Score of 50 or higher": {
+    "unified_title": "CLEP Introductory Business Law",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Introductory Sociology - Score of 50 or higher": {
+    "unified_title": "CLEP Introductory Sociology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Principles of Management - Score of 50 or higher": {
+    "unified_title": "CLEP Principles of Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Principles of Marketing - Score of 50 or higher": {
+    "unified_title": "CLEP Principles of Marketing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Fire Technology Certificate": {
+    "unified_title": "Fire Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "French 1-Elementary French 1st Quarter": {
+    "unified_title": "Elementary French I",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "IB Biology HL - Score of 5 or higher": {
+    "unified_title": "IB Biology HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Economics HL - Score of 5 or higher": {
+    "unified_title": "IB Economics HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB History - any region HL - Score of 5 or higher": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language A: Language and Literature HL - Score of 4 or higher": {
+    "unified_title": "IB Language A: Language and Literature HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Language B - any language HL - Score of 4 or higher": {
+    "unified_title": "IB Language B HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Math Higher Level - Score of 4 or higher": {
+    "unified_title": "IB Mathematics HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Physics HL - Score of 5 or higher": {
+    "unified_title": "IB Physics HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "IB Psychology HL - Score of 5 or higher": {
+    "unified_title": "IB Psychology HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Noncredit Course for AUTO P1": {
+    "unified_title": "Powertrains: Modifications for Performance",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for AVI 110": {
+    "unified_title": "Drone Coding and Piloting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for BUSN 33": {
+    "unified_title": "Personal and Family Financial Planning Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for CIS 100": {
+    "unified_title": "AI (Artificial Intelligence) in the Workplace",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ENG 110": {
+    "unified_title": "Craft of the Sentence",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ENG 115": {
+    "unified_title": "Personalized Coaching for Academic Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ESL 113": {
+    "unified_title": "Speaking and Listening Fluency for Academic and Professional Purposes",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ESL 123": {
+    "unified_title": "Oral Communication Intermediate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ESL 126": {
+    "unified_title": "Pronunciation and Fluency Intermediate",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ESL 133": {
+    "unified_title": "Oral Communication Beginning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for ESL 136": {
+    "unified_title": "Pronunciation and Fluency",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for FREN 1A": {
+    "unified_title": "Elementary French 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for FREN 1B": {
+    "unified_title": "Elementary French 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for MATH 100C": {
+    "unified_title": "Concurrent Support for SLAM Mathematics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Noncredit Course for MATH 101C": {
+    "unified_title": "Concurrent Support for BSTEM Mathematics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Journeyperson": {
+    "unified_title": "Carpenters Apprenticeship — Cabinetmaker",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Nor Cal Carpenters Training Millwright Journeyperson": {
+    "unified_title": "Carpenters Apprenticeship — Millwright",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Nor Cal Carpenters Training Office Modular System Installer Journeyperson": {
+    "unified_title": "Carpenters Apprenticeship — Modular Installer",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Nor Cal Carpenters Training Pile Driver Journeyperson": {
+    "unified_title": "Carpenters Apprenticeship — Pile Driver",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for ARHS 6": {
+    "unified_title": "Museum & Gallery Techniques",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for ARTS 12A": {
+    "unified_title": "Oil/Acrylic Painting: Beginning 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for ARTS 2A": {
+    "unified_title": "Introduction to Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for ARTS 3A": {
+    "unified_title": "Figure and Composition 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for ARTS 7A": {
+    "unified_title": "Introduction to Watercolor Painting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 20": {
+    "unified_title": "International Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 33": {
+    "unified_title": "Personal and Family Financial Planning Fundamentals",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 40": {
+    "unified_title": "Introduction to Business",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 45": {
+    "unified_title": "Entrepreneurship",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 48": {
+    "unified_title": "Human Relations in Organizations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 52": {
+    "unified_title": "Business Communication",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 56": {
+    "unified_title": "Introduction to Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 58": {
+    "unified_title": "Small Business Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 61": {
+    "unified_title": "QuickBooks Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 65": {
+    "unified_title": "Federal Income Tax Accounting",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for BUSN 88": {
+    "unified_title": "Human Resources Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for JAMS 12": {
+    "unified_title": "Introduction to Photojournalism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for JAMS 23": {
+    "unified_title": "Digital Storytelling",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for JAMS 3": {
+    "unified_title": "Introduction to Public Relations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for MKTG 50": {
+    "unified_title": "Introduction to Marketing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for MKTG 56": {
+    "unified_title": "Marketing Strategies",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for MKTG 61": {
+    "unified_title": "Professional Selling",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for MUS 19": {
+    "unified_title": "Studies in Music Composition",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Portfolio Evidence for MUS 25": {
+    "unified_title": "Teaching Beginning Piano",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "State Fire Training Fire Inspector 1 Certificate": {
+    "unified_title": "Fire Inspector 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "State Fire Training Fire Inspector 1A Certificate": {
+    "unified_title": "Fire Inspector 1A",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "State Fire Training Fire Inspector 1B Certificate": {
+    "unified_title": "Fire Inspector 1B",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "State Fire Training Fire Inspector 2A Certificate": {
+    "unified_title": "Fire Inspector 2A",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "State Fire Training Fire Inspector 2B Certificate": {
+    "unified_title": "Fire Inspector 2B",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-11",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

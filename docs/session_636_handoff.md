@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 634 (SkyBackward, Sam's session on handoff 634, 2026-11-10 19:57Z to ~22:40Z)
 tags: [handoff, commons, program-requirements-harvest, cer-procedures, csm-workspace]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 636

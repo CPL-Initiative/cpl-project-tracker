@@ -50,7 +50,7 @@ jobs:
       - name: Install Playwright + deps
         run: |
           pip install --quiet playwright openpyxl
-          python -m playwright install --with-deps chromium
+          bash scripts/install_browser.sh
 
       - name: Fetch Program-Course + Program files (all colleges)
         env:

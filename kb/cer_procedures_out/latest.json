@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-10T15:51:38Z",
- "procedures_hash": "d20f2caab9db",
- "queue": 20,
+ "_generated_at": "2026-11-11T21:41:24Z",
+ "procedures_hash": "75e72fb99f8c",
+ "queue": 178,
  "saved_not_folded": 0,
- "waiting": 20,
- "proposed": 19,
- "needs_you_count": 6,
+ "waiting": 178,
+ "proposed": 141,
+ "needs_you_count": 177,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,9 +21,14 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 1,
-   "sample": []
+   "settled": 1,
+   "held": 20,
+   "sample": [
+    [
+     "AP Government Exam",
+     "AP United States Government and Politics"
+    ]
+   ]
   },
   {
    "id": "statewide-catalog",
@@ -82,7 +87,7 @@
     "skill": "Rule 5e"
    },
    "settled": 0,
-   "held": 0,
+   "held": 65,
    "sample": []
   },
   {
@@ -111,30 +116,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 14,
-   "held": 4,
-   "sample": [
-    [
-     "ASL 53 American Sign Language IV",
-     "American Sign Language IV"
-    ],
-    [
-     "COSM 211  Manicuring and Pedicuring I",
-     "Manicuring and Pedicuring I"
-    ],
-    [
-     "COSM 215 Facials I",
-     "Facials I"
-    ],
-    [
-     "COSM 223 Hairstyling Services/Haircutting II",
-     "Hairstyling Services/Haircutting II"
-    ],
-    [
-     "GRART 112 Creative Process and Solutions",
-     "Creative Process and Solutions"
-    ]
-   ]
+   "settled": 0,
+   "held": 78,
+   "sample": []
   },
   {
    "id": "high-school-rop",
@@ -164,7 +148,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 1,
+   "held": 26,
    "sample": []
   },
   {
@@ -194,14 +178,14 @@
     "skill": "Rule 5g"
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   },
   {
    "id": "ase-paren",
    "name": "Name the ASE test",
    "kind": "guidance",
-   "rule": "An automotive course exhibit that prepares for an ASE test names the test in parentheses after the title, with its code and official name: Automotive Technology (ASE A7 Heating and Air Conditioning). A course code names a test only when the course's own title agrees with it (Las Positas's AUTO P1 is Powertrains, not the parts test). The ASE certification itself keeps its own name (ASE A7 — Heating and Air Conditioning).",
+   "rule": "An exhibit based on an ASE certification takes the certification's official name, then its code in parentheses: Medium/Heavy Truck Parts Specialist (ASE P1), Heating and Air Conditioning (ASE A7). The program name does not lead, so Automotive Technology (...) is out. A noncredit course titled for a certification folds under the certification, not under the program. A course code names a test only when the course's own title agrees with it (Las Positas's AUTO P1 is Powertrains, not the parts test). A title already in the reference under an older form (ASE A7 — Heating and Air Conditioning, Automotive Technology (ASE A7 Heating and Air Conditioning)) is renamed only by the approved rename batch.",
    "source": {
     "who": "Sam",
     "date": "2026-10-31",
@@ -209,7 +193,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 0,
+   "held": 22,
    "sample": []
   },
   {
@@ -224,7 +208,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 0,
+   "held": 24,
    "sample": []
   },
   {
@@ -254,7 +238,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 2,
+   "held": 33,
    "sample": []
   },
   {
@@ -269,7 +253,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 1,
+   "held": 60,
    "sample": []
   },
   {
@@ -283,93 +267,2311 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 6,
+   "held": 177,
    "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 1,
-  "answered": 1,
-  "errors": [],
-  "cost_usd": 0.37
- },
+ "classifier_run": null,
  "needs_you": [
   {
-   "raw_title": "Credit By Exam- CFPL ABT 130 Intro to Food Safety",
-   "why": "the classifier is unsure (0.82)",
-   "proposal": {
-    "title": "Introduction to Food Safety",
-    "issuer": "California Community Colleges",
-    "confidence": 0.82,
-    "note": "Mended the cx hint: dropped the mechanism phrase, the CFPL program tag and the ABT 130 course code, and expanded 'Intro' to 'Introduction' per Rule 5g. No CCN or C-ID title was confirmed for Hartnell ABT 130, so the title is the college's own course title."
-   },
-   "colleges": [
-    "Hartnell College"
-   ]
-  },
-  {
-   "raw_title": "Credit by Exam-- CFPL ABT 132",
+   "raw_title": "Credit By Exam- CFPL ABT 135",
    "why": "the classifier's title has a course code left in",
    "proposal": {
-    "title": "Agricultural Business and Technology (ABT 132)",
+    "title": "Agricultural Business and Technology (ABT 135)",
     "issuer": "California Community Colleges",
     "confidence": 0.45,
-    "note": "The title is code only, and the Hartnell ABT 132 course title could not be resolved from the text. The fallback is Discipline (code), reading ABT as Agricultural Business and Technology, which is assumed. A curator should look up Hartnell's COCI title. The hint's 'CFPL ABT 132' kept a course code, so it was set aside."
+    "note": "CFPL (Credit for Prior Learning) and the mechanism were stripped. Hartnell's ABT 135 course title could not be looked up in COCI, so the title falls back to discipline plus code; verify the course title. The cx hint kept the code and CFPL, so it was set aside."
    },
    "colleges": [
     "Hartnell College"
    ]
   },
   {
-   "raw_title": "Introduction to Law Enforcement/Corrections",
-   "why": "the classifier is unsure (0.40)",
+   "raw_title": "Credit by Exam - ACADEMIC PLANNING",
+   "why": "the classifier is unsure (0.70)",
    "proposal": {
-    "title": "Introduction to Law Enforcement/Corrections",
+    "title": "Academic Planning",
+    "issuer": "California Community Colleges",
+    "confidence": 0.7,
+    "note": "Mended the cx hint to title case. The exact Irvine Valley course title (CCN/C-ID/COCI) was not verified."
+   },
+   "colleges": [
+    "Irvine Valley College"
+   ]
+  },
+  {
+   "raw_title": "Credit by Exam-- CFPL ABT 133",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Agricultural Business and Technology (ABT 133)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "CFPL and the mechanism were stripped. Hartnell's ABT 133 course title was not resolved, so the title falls back to discipline plus code; verify via COCI. The cx hint was set aside."
+   },
+   "colleges": [
+    "Hartnell College"
+   ]
+  },
+  {
+   "raw_title": "Elevators Training Center Apprenticeship Journeyperson",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Elevator Constructor Apprenticeship — Journeyperson",
+    "issuer": "National Elevator Industry Educational Program (NEIEP)",
+    "confidence": 0.5,
+    "note": "Follows the house Elevator Constructor Apprenticeship shape. The issuer is assumed to be NEIEP (IUEC program) and should be confirmed against the DAS sponsor for American River College's region."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Elevators Training Center Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Elevator Constructor Apprenticeship — Level 1",
+    "issuer": "National Elevator Industry Educational Program (NEIEP)",
+    "confidence": 0.5,
+    "note": "The level does not map cleanly onto the NEIEP RC100–RC800 semester keys, so it is kept as a level. Confirm the issuer (NEIEP vs a local DAS sponsor)."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Elevators Training Center Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Elevator Constructor Apprenticeship — Level 2",
+    "issuer": "National Elevator Industry Educational Program (NEIEP)",
+    "confidence": 0.5,
+    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Elevators Training Center Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Elevator Constructor Apprenticeship — Level 3",
+    "issuer": "National Elevator Industry Educational Program (NEIEP)",
+    "confidence": 0.5,
+    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Elevators Training Center Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Elevator Constructor Apprenticeship — Level 4",
+    "issuer": "National Elevator Industry Educational Program (NEIEP)",
+    "confidence": 0.5,
+    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Firefighter Recruit Academy Certificate",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Firefighter 1 Academy",
+    "issuer": "California State Fire Training (SFT)",
+    "confidence": 0.7,
+    "note": "Treated as a recruit academy and joined to the SFT Firefighter 1 Academy family. The academy provider is not named, so the trainer is set to 'varies by academy'."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 50",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Introduction to Administration of Justice",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "Course-coded exhibit (IC type). Las Positas AJ 50 is believed to be Intro to Administration of Justice (C-ID AJ 110); verify. The issuer could instead be the training body, such as POST."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 54",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Administration of Justice (AJ 54)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Code-only title. The Las Positas AJ 54 course title was not resolved, so the lookup is needed. The issuer could instead be the industry trainer (e.g. POST)."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 60",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Administration of Justice (AJ 60)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Code-only title. The Las Positas AJ 60 course title was not resolved (possibly Criminal Law); the lookup is needed. Issuer uncertain."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 61",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Administration of Justice (AJ 61)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Code-only title. The Las Positas AJ 61 course title was not resolved (possibly Criminal Evidence); the lookup is needed. Issuer uncertain."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 63",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Administration of Justice (AJ 63)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Code-only title. The Las Positas AJ 63 course title was not resolved; the lookup is needed. Issuer uncertain."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 64",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Administration of Justice (AJ 64)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Code-only title. The Las Positas AJ 64 course title was not resolved; the lookup is needed. Issuer uncertain."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AJ 66",
+   "why": "the classifier is unsure (0.35)",
+   "proposal": {
+    "title": "Administration of Justice (AJ 66)",
     "issuer": "California Commission on Peace Officer Standards and Training (POST)",
-    "confidence": 0.4,
-    "note": "Industry Certification at Palo Verde with no named credential. The title is kept as written. POST is a weak guess because the row pairs with other law-enforcement rows. The corrections half could point instead to a CDCR/CPOST or BSCC academy near Blythe's prisons, so the issuer needs review."
+    "confidence": 0.35,
+    "note": "The title is code-only. The Las Positas COCI title for AJ 66 was not available, so it falls back to the discipline plus code; a reviewer should swap in the course title. POST as issuer is a guess, because industry training for an AJ course is typically POST-certified."
    },
    "colleges": [
-    "Palo Verde College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "JOURN 062 Survey of Mass Media",
-   "why": "the classifier is unsure (0.80)",
+   "raw_title": "Industry Training Evidence for AJ 68",
+   "why": "the classifier is unsure (0.35)",
    "proposal": {
-    "title": "Survey of Mass Media",
-    "issuer": "California Community Colleges",
-    "confidence": 0.8,
-    "note": "Accepted the hint: the course code was stripped and Laney's own course title kept. It is unverified whether JOURN 062 carries the C-ID JOUR 100 (Introduction to Mass Communication) or a CCN, which would outrank the local title on re-key."
+    "title": "Administration of Justice (AJ 68)",
+    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "confidence": 0.35,
+    "note": "The title is code-only. The Las Positas COCI title for AJ 68 was not available, so it falls back to the discipline plus code. Do not reuse CCSF's ADMJ 68 title, because the lookup is college-scoped. POST as issuer is a guess."
    },
    "colleges": [
-    "Laney College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "Nursing Care of the childbearing family",
-   "why": "the classifier is unsure (0.75)",
+   "raw_title": "Industry Training Evidence for AUTO A1",
+   "why": "the classifier is unsure (0.50)",
    "proposal": {
-    "title": "Nursing Care of the Childbearing Family",
-    "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "Credit by exam course content is kept with only the casing fixed. It may be the same course as the house family 'Nursing Care of the Childbearing Family and Newborn'. It is kept apart because the house title names the newborn and this one does not; a curator may merge them."
+    "title": "Engine Repair (ASE A1)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A1 is titled for ASE A1, since its course codes mirror ASE test codes. Verify the COCI course title agrees with the test (the AUTO P1 caution); if it does not, use the course title with California Community Colleges as issuer."
    },
    "colleges": [
-    "Mt. San Jacinto College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "Report Writing",
+   "raw_title": "Industry Training Evidence for AUTO A2",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Automatic Transmission/Transaxle (ASE A2)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A2 aligns with ASE A2. Verify the course title agrees with the test, per the AUTO P1 caution."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A3",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Manual Drive Train and Axles (ASE A3)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A3 aligns with ASE A3. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A4",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Suspension and Steering (ASE A4)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A4 aligns with ASE A4. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A5",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Brakes (ASE A5)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A5 aligns with ASE A5. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A6",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Electrical/Electronic Systems (ASE A6)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A6 aligns with ASE A6. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A7",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Heating and Air Conditioning (ASE A7)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A7 aligns with ASE A7. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A8",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Engine Performance (ASE A8)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A8 aligns with ASE A8. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO A9",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Light Vehicle Diesel Engines (ASE A9)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO A9 aligns with ASE A9. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO INT",
+   "why": "the classifier is unsure (0.30)",
+   "proposal": {
+    "title": "Automotive Technology (AUTO INT)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.3,
+    "note": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INT is unknown; it may be an internship or an introduction course. This falls back to the discipline plus code and needs the course title looked up."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO INTL",
+   "why": "the classifier is unsure (0.30)",
+   "proposal": {
+    "title": "Automotive Technology (AUTO INTL)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.3,
+    "note": "The title is code-only and maps to no ASE test. The Las Positas COCI title for AUTO INTL is unknown, so this falls back to the discipline plus code and needs the course title looked up."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO L1",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Engine Performance Specialist (ASE L1) Advanced",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO L1 aligns with ASE L1. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO L3",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+    "issuer": "National Institute for Automotive Service Excellence (ASE)",
+    "confidence": 0.5,
+    "note": "Assumes Las Positas AUTO L3 aligns with ASE L3. Verify the course title agrees with the test."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO SDR",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Automotive Specified Diagnostic and Repair",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "Course-coded IC exhibit: 'Industry Training Evidence' is mechanism phrasing. AUTO SDR is read as Las Positas's Specified Diagnostic and Repair course and joined to the existing house title; the course title was not verified in COCI. The issuer could be BAR, since this is industry training evidence, so review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for AUTO SMOG",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Smog Inspector - Level 1 Training",
+    "issuer": "California Bureau of Automotive Repair (BAR)",
+    "confidence": 0.55,
+    "note": "AUTO SMOG is read as BAR smog-inspector training and joined to the house BAR family. The Las Positas course title is unverified, so this needs a COCI check."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for BUSN 65",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Business (BUSN 65)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas BUSN 65. Discipline plus code is used as a fallback until that lookup is done."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for CIS 66",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Computer Information Systems (CIS 66)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas CIS 66. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for CNT 52",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Networking Fundamentals",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "Las Positas CNT 52 is believed to be Networking Fundamentals (Network+ prep), so it is joined to the house title. Verify in COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for CNT 68",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Computer Networking Technology (CNT 68)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas CNT 68. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for CNT 7285",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Computer Networking Technology (CNT 7285)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.3,
+    "note": "Unusual code, possibly a noncredit or vendor course, so it needs a COCI lookup. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 10",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 10)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 10. Discipline plus code is used as a fallback. It may map to an EMR/EMT credential."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 11",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 11)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 11. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 12",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 12)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 12. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 13",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 13)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 13. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 16",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 16)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 16. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 17",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 17)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 17. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 20",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 20)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 20. Discipline plus code is used as a fallback. It may be the EMT course."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 30",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 30)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.35,
+    "note": "Code-only title, so it needs a COCI lookup of Las Positas EMS 30. Discipline plus code is used as a fallback."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for EMS 70",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Emergency Medical Services (EMS 70)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas EMS 70 course title not verified, so the title falls back to the discipline-plus-code form. Run the COCI lookup. The issuer follows course-identity, but the industry training behind the evidence is unnamed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for FST 1",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Principles of Emergency Services",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "FST 1 is presumed to align with C-ID FIRE 100, Principles of Emergency Services; verify against Las Positas COCI. The issuer follows course-identity because the external training is unnamed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for GDDM 53",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Graphic Design and Digital Media (GDDM 53)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas GDDM 53 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for GDDM 54",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Graphic Design and Digital Media (GDDM 54)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas GDDM 54 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for GDDM 64",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Graphic Design and Digital Media (GDDM 64)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas GDDM 64 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for HORT 55",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Horticulture (HORT 55)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas HORT 55 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for HORT 56",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Horticulture (HORT 56)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas HORT 56 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for HORT 57",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Horticulture (HORT 57)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas HORT 57 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for HORT 59",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Horticulture (HORT 59)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas HORT 59 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for HORT 60",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Horticulture (HORT 60)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas HORT 60 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for KIN 6",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "Kinesiology (KIN 6)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "Course-coded exhibit; Las Positas KIN 6 title not verified, so the code-form fallback is used pending a COCI lookup."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for KIN YO1",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Yoga 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.55,
+    "note": "KIN YO1 is read as Yoga 1 and joins the existing house title. The underlying industry training (e.g. a yoga teacher certification) is unnamed, so the issuer follows course-identity."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Industry Training Evidence for KIN ZUM1",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Zumba 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "KIN ZUM1 is read as Zumba 1 and joins the existing house title, which has no issuer. The issuer follows course-identity; a Zumba instructor license could argue for Zumba Fitness instead."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Ironworkers Union Apprenticeship Level 1",
    "why": "the classifier is unsure (0.60)",
    "proposal": {
-    "title": "Criminal Justice Report Writing",
-    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "title": "Ironworker Apprenticeship — Level 1",
+    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
     "confidence": 0.6,
-    "note": "The bare title 'Report Writing' is an Industry Certification at Palo Verde alongside law-enforcement exhibits. It is joined to the POST house family 'Criminal Justice Report Writing' as the likely credential, but the subject area is inferred from that context and should be verified."
+    "note": "Ironworker apprenticeship at American River College. Level 1 cannot be mapped to the house Structural/Reinforcing Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor (likely the Northern California Ironworkers JATC)."
    },
    "colleges": [
-    "Palo Verde College"
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Ironworkers Union Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Ironworker Apprenticeship — Level 3",
+    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+    "confidence": 0.6,
+    "note": "Ironworker apprenticeship at American River College. Level 3 cannot be mapped to the house Period shape without knowing whether a level means a period or a year. The issuer is the house Iron Workers family pending the DAS JATC sponsor."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Ironworkers Union Journeyperson",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Ironworker Apprenticeship — Journeyperson",
+    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+    "confidence": 0.6,
+    "note": "Title follows the house Ironworker Apprenticeship shape. The issuer is the house ironworker family's issuer; the regional ironworker JATC that the Division of Apprenticeship Standards names for American River College is unverified."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Ironworkers UnionApprenticeship Level 2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Ironworker Apprenticeship — Level 2",
+    "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+    "confidence": 0.6,
+    "note": "Fixed the missing space in the raw title. The title does not say whether Level 2 is the Structural or the Reinforcing track, so it was not folded into a house Period family. The DAS-named JATC issuer is unverified."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ARHS 6",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Museum & Gallery Techniques",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "The cx hint was set aside because it leaves mechanism and code noise in the title. The catalog hint was taken: Las Positas ARHS 6 is matched to the house family Museum & Gallery Techniques. Verify this against the COCI course title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Engine Repair (ASE A1)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "This is a noncredit course coded for ASE test A1, so it folds under the certification name in the ASE-paren form. Confirm that the Las Positas course title agrees with A1, since AUTO P1 is a known mismatch. The issuer is CCC because this is the college's own exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Automatic Transmission/Transaxle (ASE A2)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A2. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Manual Drive Train and Axles (ASE A3)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A3. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A4",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Suspension and Steering (ASE A4)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A4. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A5",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Brakes (ASE A5)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A5. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A6",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Electrical/Electronic Systems (ASE A6)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A6. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A7",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Heating and Air Conditioning (ASE A7)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A7. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A8",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Engine Performance (ASE A8)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A8. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO A9",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Light Vehicle Diesel Engines (ASE A9)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE A9. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO INT",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Automotive Technology (AUTO INT)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.4,
+    "note": "AUTO INT names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INT."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO INTL",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Automotive Technology (AUTO INTL)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.4,
+    "note": "AUTO INTL names no ASE test and its course title is unknown, so the title falls back to the discipline plus local code form. Look up the Las Positas COCI title for AUTO INTL."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO L1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Engine Performance Specialist (ASE L1) Advanced",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "Course code taken to name ASE L1; 'Advanced' is kept in place as part of ASE's official name. Verify that the Las Positas course title agrees. The issuer is CCC because this is the college's own credit-by-exam."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO L3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. AUTO L3 likely mirrors the ASE L3 hybrid/EV course, but the Las Positas COCI title is unverified and a course code names a test only when the course title agrees, so this needs review. The college issues its own exam, so the issuer is CCC."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO SDR",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Automotive Specified Diagnostic and Repair",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "SDR read as Specified Diagnostic and Repair, joining the existing house family. The COCI title is unverified."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for AUTO SMOG",
+   "why": "the classifier is unsure (0.50)",
+   "proposal": {
+    "title": "Smog Check Inspector Training",
+    "issuer": "California Community Colleges",
+    "confidence": 0.5,
+    "note": "This is a local smog course exam and is kept apart from the BAR license (Rule 8c). The exact Las Positas course title is unknown, so the title is a best guess for review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 220A",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 220A)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.4,
+    "note": "No catalog title is available for Las Positas ESL 220A, so the title uses the discipline plus code fallback; a COCI lookup is needed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 220B",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 220B)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase 'Noncredit Course for', so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 221A",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 221A)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 221B",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 221B)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 230A",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 230A)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 230B",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 230B)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 231A",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 231A)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for ESL 231B",
+   "why": "the classifier's title has a course code left in",
+   "proposal": {
+    "title": "English as a Second Language (ESL 231B)",
+    "issuer": "California Community Colleges",
+    "confidence": 0.6,
+    "note": "The cx hint kept the mechanism phrase, so it was set aside. The Las Positas course title was not available, so the title falls back to discipline plus local code. A curator should look up the COCI title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for KIN PL1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Pilates 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "KIN PL1 was read as Pilates level 1 and joined to the house family Pilates 1. The course title is inferred from the code and should be verified against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for KIN SW1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Swimming 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "KIN SW1 was read as Swimming level 1 and joined to the house family Swimming 1. The course title is inferred from the code and should be verified against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for KIN SWF1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Swim Fitness 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "KIN SWF1 was read as Swim Fitness level 1 and joined to the house family Swim Fitness 1. The course title is inferred from the code and should be verified against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for KIN YO1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Yoga 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "KIN YO1 was read as Yoga level 1 and joined to the house family Yoga 1. The course title is inferred from the code and should be verified against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for MUS 16",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Philharmonic Orchestra",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Noncredit mirror of Las Positas MUS 16. Took the catalog hint 'Philharmonic Orchestra' over the cx hint, which kept the mechanism phrase and the course code."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for MUS 45",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Chamber Choir",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Noncredit mirror of Las Positas MUS 45. Took the catalog course title 'Chamber Choir' and set aside the cx hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for MUS 46",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Vocal Jazz Ensemble",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Noncredit mirror of Las Positas MUS 46. Took the catalog course title 'Vocal Jazz Ensemble' and set aside the cx hint."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Noncredit Course for NKIN WT1",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Weight Training 1",
+    "issuer": "California Community Colleges",
+    "confidence": 0.45,
+    "note": "No catalog match was found for NKIN WT1. Reading it as noncredit kinesiology weight training and joining the 'Weight Training 1' family is a guess; verify the course title in COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Acoustical Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.72,
+    "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later. The issuer is the Northern CA committee, the discriminator against the joint-issuer family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Acoustical Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.72,
+    "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Acoustical Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.72,
+    "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Acoustical Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.72,
+    "note": "The year is folded into the house trade family, whose titles carry no years; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Acoustical Journeyperson",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Acoustical Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.65,
+    "note": "The journeyperson completion is folded into the Northern CA trade family, since no Northern journeyperson family exists. It may warrant its own title, as the Southern CA journeyman certificates have."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.75,
+    "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.75,
+    "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.75,
+    "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.75,
+    "note": "The year is folded into the CTCNC Carpenter trade family; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Carpenter Journeyperson",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Carpenter",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.65,
+    "note": "The journeyperson completion is folded into the CTCNC Carpenter family, since no Northern journeyperson family exists. It may warrant its own title."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Drywall/Lather",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.72,
+    "note": "The year is folded into the Drywall/Lather trade family; the Northern CA issuer discriminates it from the joint-issuer family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Drywall/Lather",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Year 2 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The house family's issuer is the joint NorCal/SoCal pair; this row uses CTCNC because the title names Nor Cal."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Drywall/Lather",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Year 3 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Drywall/Lather",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Year 4 folded into the house Drywall/Lather apprenticeship family, which carries no per-year split. The issuer is CTCNC because the title names Nor Cal."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Drywall/Lather Journeyperson",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Drywall/Lather",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "The journeyperson completion was joined with the Drywall/Lather apprenticeship family. Faculty may later split completion from in-progress years."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Level 1 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Level 2 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Level 3 folded into the house Hardwood Floor Layer apprenticeship family, which carries no per-level split."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Hardwood Floor Layer Journeyperson",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Hardwood Floor Layer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "The journeyperson completion was joined with the Hardwood Floor Layer apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Insulator",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Insulation Installer maps to the house Insulator apprenticeship family. Year 1 was folded in, since the family has no per-year split."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Insulator",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Insulation Installer maps to the house Insulator apprenticeship family. Year 2 was folded in."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Insulation Installer Journeyperson",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Insulator",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "The journeyperson completion was joined with the Insulator apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Cabinetmaker",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 1 was folded in, since the family has no per-year split."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Cabinetmaker",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 2 was folded in."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Cabinetmaker",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 3 was folded in."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Cabinetmaker",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Mill & Cabinet Makers maps to the house Cabinetmaker apprenticeship family. Year 4 was folded in."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Millwright",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Millwright",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Millwright",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Millwright Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Millwright",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "The year level folds into the house Millwright apprenticeship family, which has no per-year split. Of the family's two listed issuers, CTCNC was chosen for this Nor Cal row."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Modular Installer",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Office Modular System Installer maps to the house CTCNC Modular Installer family, with the year level folded in."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Pile Driver",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Pile Driver",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Pile Driver",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Pile Driver",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Pile Driver apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Scaffold Erector",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 2",
+   "why": "the classifier is unsure (0.82)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Scaffold Erector",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.82,
+    "note": "The year level folds into the house CTCNC Scaffold Erector apprenticeship family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Scaffold Erector",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Joins the CTCNC house family. That family carries no year levels, so Year 3 folds in; faculty may split the years later. CTCNC both trains and issues."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Scaffold Erector",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.78,
+    "note": "Joins the CTCNC house family. That family carries no year levels, so Year 4 folds in; faculty may split the years later."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Scaffold Erector Journeyperson",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Scaffold Erector",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.75,
+    "note": "Journeyperson completion folds into the CTCNC Scaffold Erector apprenticeship family, which has no separate journey-level title; review whether journeyperson status deserves its own title."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Nor Cal Carpenters Training Shingler Journeyperson",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Carpenters Apprenticeship — Shingler",
+    "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+    "confidence": 0.8,
+    "note": "Journeyperson completion folds into the CTCNC Shingler apprenticeship house family."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Journeyperson",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New journey-level title on the SMART sheet metal house shape. The NorCal Valley program is treated as the local JATC trainer; its exact DAS sponsor name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 1",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "Level 1 is read as apprenticeship Year 1 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 2",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "Level 2 is read as apprenticeship Year 2 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 3",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "Level 3 is read as apprenticeship Year 3 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 4",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "Level 4 is read as apprenticeship Year 4 of the SMART house family, which is an assumption; the trainer is the NorCal Valley JATC, whose name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.68)",
+   "proposal": {
+    "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 1",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.68,
+    "note": "Service Technician is a distinct trade from building-trades sheet metal, so it gets its own title on the SMART house shape (Rule 4). Level is read as Year."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.68)",
+   "proposal": {
+    "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 2",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.68,
+    "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.68)",
+   "proposal": {
+    "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 3",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.68,
+    "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.68)",
+   "proposal": {
+    "title": "SMART Sheet Metal Service Technician Apprenticeship — Year 4",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.68,
+    "note": "Service Technician is a distinct trade, so it gets its own title on the SMART house shape. Level is read as Year."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "NorCal Valley Sheet Metal Service Technician Journeyperson",
+   "why": "the classifier is unsure (0.68)",
+   "proposal": {
+    "title": "SMART Sheet Metal Service Technician Apprenticeship — Journeyperson",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.68,
+    "note": "New journey-level title for the Service Technician trade on the SMART house shape; the trainer name needs verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Plumbers and Pipefitters Apprenticeship — Level 1",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "No local is named, so this does not join the UA Local 342 course-coded family. American River College suggests a Sacramento-area UA local, but the trainer is left open for review."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Plumbers/Pipefitters Apprenticeship — Level 2",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Named on the house UA/IBEW apprenticeship shape. American River College suggests the Sacramento UA local (likely Local 447), but the title names no local or JATC. The issuer is the UA parent body; the local JATC sponsor needs verification against DAS."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Plumbers/Pipefitters Apprenticeship — Level 3",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor at American River College is not named and needs DAS verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Plumbers/Pipefitters Apprenticeship — Level 4",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Level 2. The issuer is the UA parent; the local JATC sponsor is not named and needs DAS verification."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Journeyperson",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Plumbers/Pipefitters Apprenticeship — Journeyperson",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Journeyperson completion, named on the IBEW Journeyperson house shape. The journey card may be issued by DAS or the local JATC rather than the UA; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Refrigeration Service Technician Apprenticeship — Level 1",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "The refrigeration service technician track is kept apart from the plumber/pipefitter track because it is a different scope (Rule 4). The UA local is not named; verify the sponsor."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Refrigeration Service Technician Apprenticeship — Level 2",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Refrigeration Service Technician Apprenticeship — Level 3",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Refrigeration Service Technician Apprenticeship — Level 4",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Refrigeration Service Technician Apprenticeship — Journeyperson",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Journeyperson completion of the refrigeration track. The journey card may be issued by DAS or the JATC; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Steamfitter Apprenticeship — Level 1",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "The steamfitter track is split from the plumber/pipefitter and refrigeration tracks. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Steamfitter Apprenticeship — Level 2",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Steamfitter Apprenticeship — Level 3",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Steamfitter Apprenticeship — Level 4",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Same series as Steamfitter Level 1. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Steamfitter Journeyperson",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Steamfitter Apprenticeship — Journeyperson",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Journeyperson completion of the steamfitter track. The journey card may be issued by DAS or the JATC; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "UA Welder Apprenticeship — Level 1",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "This is the UA welder apprenticeship track, not an AWS welder qualification, so it is not joined to the AWS families. The UA local sponsor is not named; verify."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 2",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Union welder apprenticeship stage kept distinct per level (IBEW Year-N house shape). Issuer is inferred as the UA plumbers/pipefitters union; the DAS-registered local JAC near American River College is unconfirmed."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 3",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Welder Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Plumbers and Pipefitters Welder Apprenticeship — Level 4",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Union welder apprenticeship stage kept distinct per level. Issuer is inferred as the UA; the local JAC is unconfirmed."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Plumbers Pipefitters Union Welder Journeyperson",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Plumbers and Pipefitters Welder Apprenticeship — Journeyperson",
+    "issuer": "United Association (UA)",
+    "confidence": 0.6,
+    "note": "Journeyperson completion follows the IBEW '— Journeyperson' house shape. Issuer is inferred as the UA; the local JAC is unconfirmed."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio Evidence for ENG 19A",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Journal of Arts and Literature",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "Catalog hint 'Journal of Arts and Literature A' was joined to the existing family without the section letter. ENG 19A is likely cross-listed with JAMS 19A, so both rows take this title."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio Evidence for JAMS 19A",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Journal of Arts and Literature",
+    "issuer": "California Community Colleges",
+    "confidence": 0.75,
+    "note": "Cross-listed with ENG 19A. The trailing 'A' in the catalog hint was dropped to join the existing family."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio Evidence for MUS 27",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Teaching Intermediate Piano",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Portfolio exhibit for Las Positas MUS 27. Took the catalog hint (the college course title), which matches the existing CCC family. Set aside the cx hint, which kept method and code residue ('Evidence for'). Verify the course title against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio Evidence for MUS 35",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Introduction to Music Technology",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Portfolio exhibit for Las Positas MUS 35. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Portfolio Evidence for PHTO 72",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Introduction to Photojournalism",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Portfolio exhibit for Las Positas PHTO 72. Took the catalog hint (the course title) and set aside the cx strip residue. Verify the course title against COCI."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Public Safety Leadership & Administration Experience BSEM-LD8",
+   "why": "the classifier is unsure (0.65)",
+   "proposal": {
+    "title": "Public Safety Leadership and Administration Experience",
+    "issuer": "",
+    "confidence": 0.65,
+    "note": "Stripped the local code BSEM-LD8, which looks like an emergency-management lower-division experience slot similar to the 'Emergency Management Experience' family. This is a work-experience credit with no identifiable issuing body, so the issuer is left null for review."
+   },
+   "colleges": [
+    "Moreno Valley College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 1",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Year 1",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Sacramento Electrical Training Center is the IBEW Local 340/NECA JATC. Mapped Level N to the house IBEW Year N family; the training center is the trainer. Confirm the level-to-year equivalence."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 2",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Year 2",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 2 to IBEW Year 2; confirm the level-to-year equivalence."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 3",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Year 3",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 3 to IBEW Year 3; confirm the level-to-year equivalence."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 4",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Year 4",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 4 to IBEW Year 4; confirm the level-to-year equivalence."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Apprenticeship Level 5",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Year 5",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Sacramento Electrical Training Center is the IBEW Local 340 JATC. Mapped Level 5 to IBEW Year 5; confirm the level-to-year equivalence."
+   },
+   "colleges": [
+    "American River College"
+   ]
+  },
+  {
+   "raw_title": "Sacramento Electrical Training Center Journeyperson",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Journeyperson",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.75,
+    "note": "Journeyperson completion of the IBEW Local 340 JATC program (Sacramento Electrical Training Center), joined to the house IBEW journeyperson family."
+   },
+   "colleges": [
+    "American River College"
    ]
   }
  ]

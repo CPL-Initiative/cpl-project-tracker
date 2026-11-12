@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-11-10T20:23:51.030021+00:00",
+  "scraped_at": "2026-11-12T02:25:25.301300+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31385,
+    "jst": 31930,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
@@ -40,14 +40,14 @@
       "jst": 1566,
       "star": true
     },
+    "Moreno Valley College": {
+      "vets": 938,
+      "jst": 1077,
+      "star": true
+    },
     "San Diego Miramar College": {
       "vets": 1172,
       "jst": 1712,
-      "star": true
-    },
-    "Moreno Valley College": {
-      "vets": 938,
-      "jst": 1067,
       "star": true
     },
     "Bakersfield College": {
@@ -100,6 +100,11 @@
       "jst": 1087,
       "star": true
     },
+    "Southwestern College": {
+      "vets": 675,
+      "jst": 973,
+      "star": true
+    },
     "Fresno City College": {
       "vets": 709,
       "jst": 803,
@@ -108,11 +113,6 @@
     "Mt. San Antonio College": {
       "vets": 729,
       "jst": 733,
-      "star": true
-    },
-    "Southwestern College": {
-      "vets": 675,
-      "jst": 723,
       "star": true
     },
     "San Bernardino Valley College": {
@@ -124,6 +124,11 @@
       "vets": 264,
       "jst": 432,
       "star": true
+    },
+    "Saddleback College": {
+      "vets": 807,
+      "jst": 431,
+      "star": false
     },
     "Santa Ana College": {
       "vets": 392,
@@ -157,7 +162,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 591,
-      "jst": 445,
+      "jst": 446,
       "star": true
     },
     "Sierra College": {
@@ -244,11 +249,6 @@
       "vets": 60,
       "jst": 53,
       "star": true
-    },
-    "Saddleback College": {
-      "vets": 807,
-      "jst": 149,
-      "star": false
     },
     "College of the Sequoias": {
       "vets": 266,
@@ -410,15 +410,15 @@
       "jst": 50,
       "star": true
     },
+    "Crafton Hills College": {
+      "vets": 637,
+      "jst": 26,
+      "star": false
+    },
     "College of Alameda": {
       "vets": 21,
       "jst": 30,
       "star": true
-    },
-    "Crafton Hills College": {
-      "vets": 637,
-      "jst": 24,
-      "star": false
     },
     "American River College": {
       "vets": 311,

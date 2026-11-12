@@ -71,34 +71,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     44.0,
     48.0
    ],
    "stated": [
-    60.0,
-    60.0
+    44.0,
+    48.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 44.0-48.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     44.0,
-     48.0
+     65.0,
+     69.0
     ],
     "stated": [
-     44.0,
-     48.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -123,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -144,8 +146,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -162,7 +164,9 @@
     "First-Line Supervisors of Farming, Fishing, and Forestry Workers",
     "Forest and Conservation Technicians",
     "Forest and Conservation Workers"
-   ]
+   ],
+   "degree_total_minimum": true,
+   "ge_overlap": true
   },
   "blocks": [
    {
@@ -432,5 +436,32 @@
    "Text mentions DT 23, CIS 50, ART 42 only for the Geomatics Certificate of Achievement; not part of this degree."
   ]
  },
- "extracted_run": "38979396148"
+ "extracted_run": 43018781168,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "A.S. Degree (\n60.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: Redwoods local degree pages print their total in the title line, 'A.S. Degree ( 60.0 Credits )' (Personal Wellness 44463; college page read 43015726456), and no general education units. The college's 2026-2027 CRGE pattern sheet, linked from its counseling page: 'CRGE Units Required 21' (Areas 1A, 1B, 2, 3, 4, 5 and 6, 3 units each; college page read 43013608134; found by COBIx, #3096))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "A.S. Degree (\n60.0 Credits\n) (https://www.redwoods.edu/services/counseling/FINAL.%2026.27%20CRGE%20pattern%20Redwoods%20and%20list%20of%20titles..pdf: The same sheet: 'Major Requirements and Elective Units 18+', 'Minimum Degree Units for Associate 60' and 'Complete a minimum of 60 semester units of degree applicable coursework': the 60 a local degree's title prints is a floor that electives make up. A degree whose title prints another total (Registered Nursing 78.0 - 81.0, Construction Technology 63.5) keeps it as printed)"
+  },
+  {
+   "field": "ge_overlap",
+   "was": null,
+   "now": true,
+   "words": "can be double counted for GE requirements"
+  }
+ ],
+ "read_run": "38979396148"
 }

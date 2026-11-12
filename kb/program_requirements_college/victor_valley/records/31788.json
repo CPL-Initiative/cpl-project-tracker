@@ -68,34 +68,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     52.0,
+     60.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     42.0
+    ],
+    "why": [],
+    "within": true
    }
   },
   "repeated": {
@@ -120,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -141,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 42
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -332,5 +334,20 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 42
+   },
+   "words": "60 CSU transferable units;\nthe Cal-GETC pattern (https://catalog.vvc.edu/degrees-certificates/calgetc/calgetc-ca/: the Cal-GETC Certificate of Achievement's REQUIREMENTS tab, area by area to 'Area 6 - Ethnic Studies 3.0 ... Total Units 34-42' (college-page-read 43137395720))"
+  }
+ ],
+ "read_run": "38675237912"
 }

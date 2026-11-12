@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Foundations of Data Science",
  "award": "Noncredit program",
- "source_url": "https://www.deanza.edu/catalog/documents/dac_catalog_2025-2026.pdf#page=303",
+ "source_url": "https://deanza.elumenapp.com/catalog/2026-2027/program/foundations-of-data-science-fall-2026",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7769,
+  "input_tokens": 7276,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7769,
-    "output_tokens": 865,
+    "input_tokens": 7276,
+    "output_tokens": 902,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,35 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 865,
+  "output_tokens": 902,
   "output_tokens_details": {
-   "thinking_tokens": 248
+   "thinking_tokens": 209
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04838,
- "ms": 8286,
- "seconds": 8.8,
+ "cost_usd": 0.04714,
+ "ms": 7931,
+ "seconds": 8.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 5,
    "listed": 5,
-   "share": 0.0,
-   "missing": [
-    "CIS311",
-    "CIS311X",
-    "CIS340",
-    "CIS344A",
-    "CIS364G"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -67,14 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 558 Hours, 558 Hours, 330 Hours, 330 Hours"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    288.0,
+    288.0
+   ],
+   "stated": [
+    288.0,
+    288.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,8 +84,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_printed": false,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -98,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Program Requirements",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 288,
+    "max": 288
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,37 +124,65 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CIS 311",
-    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Introduction to Computer Science certificate (List A)."
-   },
-   {
-    "code": "CIS 311X",
-    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Introduction to Computer Science certificate (List A)."
-   },
-   {
-    "code": "CIS 340",
-    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner and Introduction to Computer Science certificates."
-   },
-   {
-    "code": "CIS 344A",
-    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner certificate."
-   },
-   {
-    "code": "CIS 364G",
-    "why": "Not placed: the text has no Foundations of Data Science section. Named only in the Database Science Practitioner certificate."
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 288,
+     "max": 288
+    },
+    "courses": [
+     {
+      "code": "CIS 311",
+      "units": 66,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 311X",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 340",
+      "units": 66,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 344A",
+      "units": 66,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 364G",
+      "units": 66,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The catalog text on page 303 has no section for the Foundations of Data Science noncredit program.",
-   "The sections it does print are four Certificates of Completion: Database Science Practitioner, Information Technology Technical Support, Introduction to Computer Science and Project Management Practitioner.",
-   "Those requirements were not attributed to this award, so no blocks, totals, outcomes or careers were recorded.",
-   "The Foundations of Data Science section is likely on a nearby page of the catalog PDF. A reviewer should locate it.",
-   "Measure is set to hours because the neighboring noncredit certificates count in hours."
+   "The award is counted in hours: 'Required Core: (288 Hours)', 'Major Required: 288 Hours', 'Total Required: 288 Hours'. The printed course hours (66+24+66+66+66) sum to the printed 288.",
+   "The catalog's 'Units' column header holds hours for these noncredit courses. The closed list's 0 units are not their hours.",
+   "The page's metadata gives Award Type: Certificate of Completion (noncredit), with Min/Max Units 288.0, matching the hours total.",
+   "The text at the top of the page (general Bachelor of Science degree requirements, GE patterns, 180 quarter units) is boilerplate unrelated to this noncredit certificate. It was ignored.",
+   "The text prints no program learning outcomes and names no careers.",
+   "The page's text is cut off at the end ('ASSIST File(s) - Trans'), within metadata fields only."
   ]
  },
- "extracted_run": "39046890834"
+ "extracted_run": "43056325121"
 }

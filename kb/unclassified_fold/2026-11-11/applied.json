@@ -1,0 +1,789 @@
+{
+  "folded": [
+    {
+      "raw": "AP 2-D Art and Design - Score of 3 or higher",
+      "assigned": "AP 2-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP 3-D Art and Design - Score of 3 or higher",
+      "assigned": "AP 3-D Art and Design",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Art History - Score of 3 or higher",
+      "assigned": "AP Art History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Calculus AB - Score of 3 or higher",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Calculus BC/AB Subscore - Score of 3 or higher",
+      "assigned": "AP Calculus AB",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Chemistry - Score of 3 or higher",
+      "assigned": "AP Chemistry",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Chinese Language and Culture - Score of 3 or higher",
+      "assigned": "AP Chinese Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Comparative Government and Politics - Score of 3 or higher",
+      "assigned": "AP Comparative Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Computer Science Principles - Score of 3 or higher",
+      "assigned": "AP Computer Science Principles",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Drawing - Score of 3 or higher",
+      "assigned": "AP Drawing",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP English Language and Composition - Score of 3 or higher",
+      "assigned": "AP English Language and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP English Literature and Composition - Score of 3 or higher",
+      "assigned": "AP English Literature and Composition",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Environmental Science - Score of 3 or higher",
+      "assigned": "AP Environmental Science",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP European History - Score of 3 or higher",
+      "assigned": "AP European History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP French Language and Culture - Score of 3 or higher",
+      "assigned": "AP French Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP German Language and Culture - Score of 3 or higher",
+      "assigned": "AP German Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Human Geography - Score of 3 or higher",
+      "assigned": "AP Human Geography",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Latin - Score of 3 or higher",
+      "assigned": "AP Latin",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Latin: Virgil - Score of 3 or higher",
+      "assigned": "AP Latin",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Macroeconomics - Score of 3 or higher",
+      "assigned": "AP Macroeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Microeconomics - Score of 3 or higher",
+      "assigned": "AP Microeconomics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Music Theory - Score of 3 or higher",
+      "assigned": "AP Music Theory",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics 1: Algebra-Based - Score of 3",
+      "assigned": "AP Physics 1: Algebra-Based",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics 2: Algebra-Based - Score of 3",
+      "assigned": "AP Physics 2: Algebra-Based",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics 2: Algebra-Based - Score of 4-5",
+      "assigned": "AP Physics 2: Algebra-Based",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics C: Electricity and Magnetism - Score of 3",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics C: Electricity and Magnetism - Score of 4-5",
+      "assigned": "AP Physics C: Electricity and Magnetism",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics C: Mechanics - Score of 3",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Physics C: Mechanics - Score of 4-5",
+      "assigned": "AP Physics C: Mechanics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Precalculus - Score of 3 or higher",
+      "assigned": "AP Precalculus",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Psychology - Score of 3 or higher",
+      "assigned": "AP Psychology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Seminar - Score of 3 or higher",
+      "assigned": "AP Seminar",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture - Score of 3",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Spanish Language and Culture - Score of 4-5",
+      "assigned": "AP Spanish Language and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Spanish Literature and Culture - Score of 3",
+      "assigned": "AP Spanish Literature and Culture",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP Statistics - Score of 3 or higher",
+      "assigned": "AP Statistics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP U.S. Government and Politics - Score of 3 or higher",
+      "assigned": "AP United States Government and Politics",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP U.S. History - Score of 3 or higher",
+      "assigned": "AP United States History",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "AP World History: Modern - Score of 3 or higher",
+      "assigned": "AP World History: Modern",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP American Government - Score of 50 or higher",
+      "assigned": "CLEP American Government",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP History, United States I - Score of 50 or higher",
+      "assigned": "CLEP History of the United States 1",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP Introductory Business Law - Score of 50 or higher",
+      "assigned": "CLEP Introductory Business Law",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP Introductory Sociology - Score of 50 or higher",
+      "assigned": "CLEP Introductory Sociology",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP Principles of Management - Score of 50 or higher",
+      "assigned": "CLEP Principles of Management",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "CLEP Principles of Marketing - Score of 50 or higher",
+      "assigned": "CLEP Principles of Marketing",
+      "issuer": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Fire Technology Certificate",
+      "assigned": "Fire Technology",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "French 1-Elementary French 1st Quarter",
+      "assigned": "Elementary French I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Biology HL - Score of 5 or higher",
+      "assigned": "IB Biology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Economics HL - Score of 5 or higher",
+      "assigned": "IB Economics HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB History - any region HL - Score of 5 or higher",
+      "assigned": "IB History HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Language A: Language and Literature HL - Score of 4 or higher",
+      "assigned": "IB Language A: Language and Literature HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Language B - any language HL - Score of 4 or higher",
+      "assigned": "IB Language B HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Math Higher Level - Score of 4 or higher",
+      "assigned": "IB Mathematics HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Physics HL - Score of 5 or higher",
+      "assigned": "IB Physics HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "IB Psychology HL - Score of 5 or higher",
+      "assigned": "IB Psychology HL",
+      "issuer": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO P1",
+      "assigned": "Powertrains: Modifications for Performance",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AVI 110",
+      "assigned": "Drone Coding and Piloting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for BUSN 33",
+      "assigned": "Personal and Family Financial Planning Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for CIS 100",
+      "assigned": "AI (Artificial Intelligence) in the Workplace",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ENG 110",
+      "assigned": "Craft of the Sentence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ENG 115",
+      "assigned": "Personalized Coaching for Academic Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 113",
+      "assigned": "Speaking and Listening Fluency for Academic and Professional Purposes",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 123",
+      "assigned": "Oral Communication Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 126",
+      "assigned": "Pronunciation and Fluency Intermediate",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 133",
+      "assigned": "Oral Communication Beginning",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for ESL 136",
+      "assigned": "Pronunciation and Fluency",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for FREN 1A",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for FREN 1B",
+      "assigned": "Elementary French 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for MATH 100C",
+      "assigned": "Concurrent Support for SLAM Mathematics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for MATH 101C",
+      "assigned": "Concurrent Support for BSTEM Mathematics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Mill & Cabinet Makers Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Cabinetmaker",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Millwright Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Millwright",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Office Modular System Installer Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Modular Installer",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Nor Cal Carpenters Training Pile Driver Journeyperson",
+      "assigned": "Carpenters Apprenticeship — Pile Driver",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ARHS 6",
+      "assigned": "Museum & Gallery Techniques",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ARTS 12A",
+      "assigned": "Oil/Acrylic Painting: Beginning 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ARTS 2A",
+      "assigned": "Introduction to Drawing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ARTS 3A",
+      "assigned": "Figure and Composition 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for ARTS 7A",
+      "assigned": "Introduction to Watercolor Painting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 20",
+      "assigned": "International Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 33",
+      "assigned": "Personal and Family Financial Planning Fundamentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 40",
+      "assigned": "Introduction to Business",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 45",
+      "assigned": "Entrepreneurship",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 48",
+      "assigned": "Human Relations in Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 52",
+      "assigned": "Business Communication",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 56",
+      "assigned": "Introduction to Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 58",
+      "assigned": "Small Business Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 61",
+      "assigned": "QuickBooks Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for BUSN 88",
+      "assigned": "Human Resources Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for JAMS 12",
+      "assigned": "Introduction to Photojournalism",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for JAMS 23",
+      "assigned": "Digital Storytelling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for JAMS 3",
+      "assigned": "Introduction to Public Relations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MKTG 50",
+      "assigned": "Introduction to Marketing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MKTG 56",
+      "assigned": "Marketing Strategies",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MKTG 61",
+      "assigned": "Professional Selling",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MUS 19",
+      "assigned": "Studies in Music Composition",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Portfolio Evidence for MUS 25",
+      "assigned": "Teaching Beginning Piano",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "State Fire Training Fire Inspector 1 Certificate",
+      "assigned": "Fire Inspector 1",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "State Fire Training Fire Inspector 1A Certificate",
+      "assigned": "Fire Inspector 1A",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "State Fire Training Fire Inspector 1B Certificate",
+      "assigned": "Fire Inspector 1B",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "State Fire Training Fire Inspector 2A Certificate",
+      "assigned": "Fire Inspector 2A",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "State Fire Training Fire Inspector 2B Certificate",
+      "assigned": "Fire Inspector 2B",
+      "issuer": "California State Fire Training (SFT)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [
+    {
+      "raw": "Noncredit for AUTO P1",
+      "assigned": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:09:28.955+00:00",
+      "spellings": [
+        "Noncredit for AUTO P1"
+      ],
+      "disagreeing": [
+        "Noncredit for AUTO P1"
+      ],
+      "displaced": [
+        "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)"
+      ],
+      "supersedes": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:59:52.534182+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)"
+    }
+  ],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "French 1-Elementary French 1st Quarter",
+      "assigned": "Elementary French I",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    },
+    {
+      "raw": "Noncredit Course for AUTO P1",
+      "assigned": "Powertrains: Modifications for Performance",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-11-11T15:43:03.87628+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 103,
+  "unified_titles_count": 5716
+}

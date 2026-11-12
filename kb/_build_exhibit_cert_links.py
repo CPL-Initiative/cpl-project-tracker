@@ -423,11 +423,14 @@ def build():
                 if unresolved:
                     links[ut]["unresolved"] = unresolved
             continue
-        m = re.search(r"\(ASE\s+([A-Z]{1,3}\d{1,2})\b[^)]*\)", ut)
+        m = re.search(r"\(ASE\s+([A-Z]{1,3}\d{1,2})\b([^)]*)\)", ut)
         if m and m.group(1) in names:
             cid = cert_for(m.group(1))
             if cid:
-                links[ut] = {"relation": "aligned", "rule": "all", "certs": [cid]}
+                # "Brakes (ASE A5)", the certification's name first and nothing after the code (Sam's ruling of
+                # 2026-11-11, kb/cert_naming.py), is the certification: it holds the test. A course name with the
+                # test and its words in parentheses is the older aligned form.
+                links[ut] = {"relation": "aligned" if m.group(2).strip() else "holds", "rule": "all", "certs": [cid]}
 
     holds = [u for u, l in links.items() if l["relation"] == "holds"]
     bundles = [u for u in holds if len(links[u]["certs"]) > 1]

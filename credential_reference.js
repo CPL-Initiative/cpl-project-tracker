@@ -339,6 +339,8 @@
             rec.issuer2_override = row.value || "";
             rec.issuer2_overridden_by = row.reviewer_email;
             rec.issuer2_overridden_at = row.reviewed_at;
+          } else if (row.field === "issuer_resolution") {
+            rec.issuer_resolution = row.value || "";
           } else if (row.field === FIELD_TRAINER_OVERRIDE) {
             rec.trainer_override = row.value || "";
             rec.trainer_overridden_by = row.reviewer_email;
@@ -361,9 +363,46 @@
             rec.cpltype_overridden_at = row.reviewed_at;
           }
         });
+        resolveFoldIssuers(m);
         return m;
       })
       .catch(function () { return {}; });
+  }
+  // The fold resolution's two steps, for tests/issuer_resolution_readers.test.js.
+  if (typeof window !== "undefined") window.CPL_CER_ISSUER_FOLD = { resolve: resolveFoldIssuers, lines: issuerFoldLines };
+  /* The plain lines under an issuer the fold decided: "Set by the fold on <date>", then each stored row it
+     superseded, "Superseded: <value>, saved <date>". A save writes a newer row, which wins by its stamp. */
+  function issuerFoldLines(fold) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R || !fold) return [];
+    var out = [], line = R.foldLine(fold);
+    if (line) out.push(line);
+    (fold.superseded || []).forEach(function (s) {
+      out.push("Superseded: " + s.value + (s.at ? ", saved " + String(s.at).slice(0, 10) : ""));
+    });
+    return out;
+  }
+  /* A credential fold's issuer resolution (#3116): the issuer rows resolve through the one browser resolver,
+     issuer_resolution.js, the port of kb/fold_issuer.py effective_issuer(). A struck override is removed, so the
+     reference's own (folded) issuer shows; the fold's winner shows as the override; issuer_fold drives the
+     "Set by the fold on <date>" line and names the stored rows it superseded. */
+  function resolveFoldIssuers(m) {
+    var R = (typeof window !== "undefined" && window.CPL_ISSUER_RESOLUTION) || null;
+    if (!R) return m;
+    Object.keys(m).forEach(function (t) {
+      var rec = m[t], res = R.parse(rec.issuer_resolution);
+      if (!res) return;
+      var got = R.resolve({
+        issuing_agency_override: { value: rec.issuer_override || "", at: rec.issuer_overridden_at || "" },
+        issuing_agency_additional_override: { value: rec.issuer2_override || "", at: rec.issuer2_overridden_at || "" }
+      }, res);
+      if (got.issuer) rec.issuer_override = got.issuer; else delete rec.issuer_override;
+      if (got.issuer2) rec.issuer2_override = got.issuer2; else delete rec.issuer2_override;
+      if (got.fold.setByFold) { rec.issuer_overridden_at = got.fold.decidedAt; rec.issuer_overridden_by = ""; }
+      else if (!got.issuer) { delete rec.issuer_overridden_at; delete rec.issuer_overridden_by; }
+      rec.issuer_fold = got.fold;
+    });
+    return m;
   }
 
   // The Initiated sign-off (a reviewed_marker row per credential) retired on
@@ -390,7 +429,10 @@
           course_id: KEY_PREFIX + unifiedTitle,
           field: field,
           value: value,
-          reviewer_email: sess.email
+          reviewer_email: sess.email,
+          // A save is a new decision with its own stamp: an issuer saved after a fold decided wins
+          // over the fold (issuer_resolution.js), which an upsert keeping the old stamp would hide.
+          reviewed_at: new Date().toISOString()
         })
       });
     });
@@ -551,6 +593,9 @@
       raw_count: b.raw_count || 0,
       primary_issuer: b.issuer || null,
       primary_trainer: b.trainer || null,
+      // The credential family the title belongs to (Sam, 2026-11-11: each ASE bundle stays its own title and carries
+      // the family; excel_to_dashboard.py export_credential_reference emits it only when set).
+      family: b.family || null,
       conf_modal: b.conf_title || 0,
       conf_issuer: b.conf_issuer || 0,
       conf_min: b.conf_title || 0,  // baked payload only carries modal
@@ -704,9 +749,11 @@
           confidence_trainer: c.confidence_trainer || 0,
           reviewed_at: c.reviewed_at || null,
           reviewed_by: c.reviewed_by || null,
+          family: c.family || null,
           _notes: c._notes || null,
         };
       });
+      row.family = (row.credentials.filter(function (c) { return c.family; })[0] || {}).family || null;
       // Derived fields for the table.
       row.raw_count = row.raw_variants.length;
       row.conf_min = Math.min.apply(null, row.confidences);
@@ -801,6 +848,7 @@
         r.primary_issuer = ov.issuer_override || null;
         r.issuer_overridden_by = ov.issuer_overridden_by;
         r.issuer_overridden_at = ov.issuer_overridden_at;
+        r.issuer_fold = ov.issuer_fold || null;
       } else if (r._original_primary_issuer !== undefined) {
         r.primary_issuer = r._original_primary_issuer;
         delete r.original_primary_issuer;
@@ -894,6 +942,8 @@
       var hit = row.unified_title.toLowerCase().indexOf(q) >= 0
         || (row.display_title && row.display_title.toLowerCase().indexOf(q) >= 0)
         || (row.primary_issuer && row.primary_issuer.toLowerCase().indexOf(q) >= 0)
+        // The family name is a search alias: "ASE Certificate Bundles" finds every member.
+        || (row.family && row.family.toLowerCase().indexOf(q) >= 0)
         || (row.raw_variants || []).some(function (v) {
           return v.raw_title.toLowerCase().indexOf(q) >= 0;
         });
@@ -2105,7 +2155,10 @@
     var extraBase = splitIssuers(ov.issuer2_override || "").join(" | ");
     var extraChanged = extraJoined !== extraBase;
     if (extraChanged) {
-      writes.push(extraJoined
+      // On a title a fold decided, a clear is a stamped empty row, never a DELETE: the resolver
+      // (issuer_resolution.js) reads it as the person's newer decision, and a deleted row would let the
+      // fold's kept additional issuers come back.
+      writes.push(extraJoined || ov.issuer_resolution
         ? saveOverride(ut, FIELD_ISSUER2_OVERRIDE, extraJoined)
         : clearOverride(ut, FIELD_ISSUER2_OVERRIDE));
     }
@@ -2369,6 +2422,9 @@
           return v.raw_title;
         }).join("\n") }, [rawFirst + rawMore]));
     }
+    // Its credential family, in plain words on the quiet context line (Sam, 2026-11-11: each bundle stays its own
+    // title and carries the family).
+    if (r.family) tchips.appendChild(el("span", { class: "cr-ctx-raw cr-ctx-fam" }, ["Family: " + r.family]));
     // ⇆ merge-suggestion chip — titles whose normalized signature collides
     // (likely the same credential entered twice). Click → inline panel;
     // merging routes through the standard confirm-merge flow.
@@ -2472,7 +2528,13 @@
           title: "All recorded certifying bodies:\n" + r.issuers.join("\n")
         }, ["+" + (r.issuers.length - 1)]));
       }
-      if (r.issuer_overridden_at) {
+      var foldLine = issuerFoldLines(r.issuer_fold);
+      if (foldLine.length) {
+        foldLine.forEach(function (txt) {
+          issuerTd.appendChild(el("span", { class: "cr-fold-line",
+            style: "display:block;font-size:.8rem;color:var(--text-muted)" }, [txt]));
+        });
+      } else if (r.issuer_overridden_at) {
         issuerTd.appendChild(el("span", { class: "cr-override-marker",
           title: "Issuing agency curated · originally: " +
                  (r.original_primary_issuer || "(none)")
@@ -4654,6 +4716,10 @@
     // retired 2026-10-18, Sheet 94 card 3). ──
     var flagRow = renderFlagRow(r);
     if (flagRow) div.appendChild(flagRow);
+
+    // ── Its credential family (Sam, 2026-11-11): the family is a field, never a fold. ──
+    if (r.family) div.appendChild(el("p", { class: "cr-fam-line" }, ["Family: " + r.family
+      + ". This title stays its own credential, adopted on its own; a search for the family finds every title in it."]));
 
     // ── System-level GE-Area credit for AP/IB/CLEP exams (2026-06-04). This
     // credit is set statewide (AP: AB 1985 / AA 17-20; IB+CLEP: title 5 §55052.5;

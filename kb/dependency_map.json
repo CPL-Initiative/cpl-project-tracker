@@ -4,10 +4,10 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 834,
+  "file_datasets": 861,
   "external_services": 195,
-  "consumers": 547,
-  "workflows": 65,
+  "consumers": 558,
+  "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -430,7 +430,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1508
+     "line": 1514
     }
    ],
    "main_committers": []
@@ -477,7 +477,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1464
+     "line": 1470
     }
    ],
    "main_committers": []
@@ -666,7 +666,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1403
+     "line": 1409
     }
    ],
    "main_committers": []
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2910,
+     "line": 3446,
      "tabs": [
       "exhibits"
      ]
@@ -1090,7 +1090,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1589
+     "line": 1637
     },
     {
      "id": "module:admin.js",
@@ -1207,7 +1207,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 286
+     "line": 297
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1495,7 +1495,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 130,
+     "line": 134,
      "tabs": [
       "exhibits"
      ]
@@ -1597,7 +1597,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5293,
+     "line": 5359,
      "tabs": [
       "credential-reference"
      ]
@@ -1607,7 +1607,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 965,
+     "line": 974,
      "pages": [
       "library/adopt/index.html"
      ]
@@ -1617,7 +1617,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 146
+     "line": 149
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -1780,7 +1780,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2221
+     "line": 2269
     }
    ],
    "main_committers": []
@@ -2084,7 +2084,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 151,
+     "line": 165,
      "tabs": [
       "exhibits"
      ]
@@ -2420,7 +2420,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1199
+     "line": 1247
     }
    ],
    "main_committers": []
@@ -2439,7 +2439,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1544
+     "line": 1592
     },
     {
      "id": "module:college_briefing.js",
@@ -2665,7 +2665,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1075
+     "line": 1094
     }
    ],
    "main_committers": []
@@ -2780,7 +2780,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1077
+     "line": 1096
     }
    ],
    "main_committers": []
@@ -2792,7 +2792,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1078
+     "line": 1097
     }
    ],
    "main_committers": []
@@ -2896,7 +2896,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1041
+     "line": 1047
     }
    ],
    "main_committers": []
@@ -3022,7 +3022,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1076
+     "line": 1095
     }
    ],
    "main_committers": []
@@ -3121,7 +3121,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1600
+     "line": 1648
     },
     {
      "id": "module:dashboard_filters.js",
@@ -3677,7 +3677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3819,
+     "line": 3881,
      "tabs": [
       "credential-reference"
      ]
@@ -4431,7 +4431,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1885
+     "line": 1933
     }
    ],
    "main_committers": []
@@ -4630,6 +4630,19 @@
      "direction": "read",
      "how": "literal",
      "line": 52
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>_sheet181.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 38
     }
    ],
    "served": false,
@@ -5008,7 +5021,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 515
     },
     {
      "id": "script:kb/_esl_monthly_pass.py",
@@ -5023,6 +5036,13 @@
      "direction": "read",
      "how": "literal",
      "line": 231
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 183
     },
     {
      "id": "script:kb/_funding_config_edit_apply.py",
@@ -5505,7 +5525,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1776
+     "line": 1824
     },
     {
      "id": "module:admin.js",
@@ -6115,7 +6135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2260,
+     "line": 2775,
      "tabs": [
       "exhibits"
      ]
@@ -6163,7 +6183,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 93
+     "line": 96
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -6190,7 +6210,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13218
+     "line": 13222
     }
    ],
    "served": true,
@@ -6319,7 +6339,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2902,
+     "line": 3438,
      "tabs": [
       "exhibits"
      ]
@@ -6412,7 +6432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3183,
+     "line": 3723,
      "tabs": [
       "exhibits"
      ]
@@ -6458,7 +6478,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5655,
+     "line": 5721,
      "tabs": [
       "credential-reference"
      ]
@@ -6656,7 +6676,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2160
+     "line": 2208
     },
     {
      "id": "module:college_briefing.js",
@@ -6780,7 +6800,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13552
+     "line": 13556
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -6869,7 +6889,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1259
+     "line": 1307
     },
     {
      "id": "module:cpl_funding.js",
@@ -7299,7 +7319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5773,
+     "line": 5839,
      "tabs": [
       "credential-reference"
      ]
@@ -7333,7 +7353,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 490,
+     "line": 502,
      "tabs": [
       "map-export"
      ]
@@ -7367,7 +7387,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 337
+     "line": 342
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -7445,6 +7465,13 @@
      "direction": "read",
      "how": "literal",
      "line": 30
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     },
     {
      "id": "script:kb/_preseed_null_issuers.py",
@@ -7585,7 +7612,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13159
+     "line": 13163
     }
    ],
    "served": true,
@@ -7668,6 +7695,19 @@
      "direction": "read",
      "how": "literal",
      "line": 655
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:docs/reference/conductor_mode.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_docs_audit.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1130
     }
    ],
    "served": false,
@@ -8116,7 +8156,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13215
+     "line": 13219
     }
    ],
    "served": true,
@@ -8142,7 +8182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5656,
+     "line": 5722,
      "tabs": [
       "credential-reference"
      ]
@@ -8178,7 +8218,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3462,
+     "line": 4012,
      "tabs": [
       "exhibits"
      ]
@@ -8214,7 +8254,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10226
+     "line": 10230
     }
    ],
    "producers": [
@@ -8426,7 +8466,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 125,
+     "line": 129,
      "tabs": [
       "exhibits"
      ]
@@ -8467,7 +8507,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 67
     },
     {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
@@ -8714,7 +8754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13776
+     "line": 13780
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8760,7 +8800,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13796
+     "line": 13800
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -8861,6 +8901,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:issuer_resolution.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:jev_ccr_title_rung_calibration_<date>_s282.json": {
@@ -9360,6 +9413,26 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_exhibits_related.py": {
+   "consumers": [
+    {
+     "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_exhibits_review.py": {
    "consumers": [
     {
@@ -9603,6 +9676,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_cred_fold_resolution_write.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_cred_rename_apply.py": {
    "consumers": [
     {
@@ -9731,6 +9817,32 @@
    "consumers": [
     {
      "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_exhibit_subject_fill.py": {
+   "consumers": [
+    {
+     "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_family_tag_apply.py": {
+   "consumers": [
+    {
+     "id": "workflow:credential-family-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -10503,7 +10615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 304
+     "line": 315
     },
     {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
@@ -10570,7 +10682,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 149,
+     "line": 163,
      "tabs": [
       "exhibits"
      ]
@@ -10607,7 +10719,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5394,
+     "line": 5460,
      "tabs": [
       "credential-reference"
      ]
@@ -10617,7 +10729,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 150,
+     "line": 164,
      "tabs": [
       "exhibits"
      ]
@@ -10634,7 +10746,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 304
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -10684,7 +10796,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8893
+     "line": 8897
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -10893,14 +11005,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 85
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 67
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 45
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -11047,7 +11166,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 627
+     "line": 620
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -11111,7 +11230,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8426
+     "line": 8430
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -11216,7 +11335,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 352
+     "line": 363
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -11457,7 +11576,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9010
+     "line": 9014
     }
    ],
    "producers": [
@@ -12788,14 +12907,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8975
+     "line": 8979
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 8975
+     "line": 8979
     }
    ],
    "producers": [
@@ -12947,7 +13066,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 104
+     "line": 107
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
@@ -13010,7 +13129,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8635
+     "line": 8639
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -13170,7 +13289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5030,
+     "line": 5096,
      "tabs": [
       "credential-reference"
      ]
@@ -13260,7 +13379,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 631
+     "line": 642
     }
    ],
    "served": false,
@@ -13308,7 +13427,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2091,
+     "line": 2561,
      "tabs": [
       "exhibits"
      ]
@@ -13328,7 +13447,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 64
     },
     {
      "id": "script:kb/_build_cpl_ai_join.py",
@@ -13365,7 +13484,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 65
     }
    ],
    "served": true,
@@ -13411,7 +13530,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 397
+     "line": 408
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13480,7 +13599,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 72
+     "line": 107
     }
    ],
    "producers": [
@@ -13501,7 +13620,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 120,
+     "line": 124,
      "tabs": [
       "exhibits"
      ]
@@ -13557,6 +13676,46 @@
    "main_committers": [
     "workflow:cred-rename-apply.yml"
    ]
+  },
+  "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_fold_resolution_write.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/cred_rename_out/2026-11-12/undo.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 365
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 363
+    },
+    {
+     "id": "script:kb/fold_issuer.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 664
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/credential_merges.json": {
    "consumers": [
@@ -13638,28 +13797,49 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 72
     },
     {
      "id": "script:kb/_apply_credential_review.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 70
+     "line": 72
+    },
+    {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 83
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 313
+     "line": 314
+    },
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 133
+    },
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 61
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -13692,7 +13872,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 640,
+     "line": 685,
      "tabs": [
       "credential-reference"
      ]
@@ -13709,14 +13889,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 73
     },
     {
      "id": "script:kb/_apply_credential_review.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 71
+     "line": 73
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -13740,18 +13920,32 @@
      "line": 39
     },
     {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
+    },
+    {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 312
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 801
+     "line": 820
+    },
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 134
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -13772,14 +13966,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 70
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 66
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -13808,6 +14009,13 @@
      "direction": "read",
      "how": "literal",
      "line": 42
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 116
     },
     {
      "id": "script:kb/_flag_hinky_exhibits.py",
@@ -13884,7 +14092,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 626
+     "line": 619
     },
     {
      "id": "script:kb/_verify_issuer_preseed.py",
@@ -13899,6 +14107,13 @@
      "direction": "read",
      "how": "literal",
      "line": 61
+    },
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
     }
    ],
    "producers": [
@@ -13924,7 +14139,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8511
+     "line": 8515
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -13975,7 +14190,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 868
+     "line": 879
     }
    ],
    "served": false,
@@ -13998,7 +14213,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 506
+     "line": 517
     }
    ],
    "producers": [
@@ -14055,7 +14270,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 507
+     "line": 518
     }
    ],
    "served": true,
@@ -14127,7 +14342,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10156
+     "line": 10160
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -14244,7 +14459,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8074
+     "line": 8078
     },
     {
      "id": "script:kb/_anchor_rekey_apply.py",
@@ -14300,7 +14515,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 485
+     "line": 496
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14315,6 +14530,13 @@
      "direction": "read",
      "how": "literal",
      "line": 282
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
     },
     {
      "id": "script:kb/_fl_stray_remint.py",
@@ -14550,7 +14772,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1013
+     "line": 1024
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -14607,19 +14829,6 @@
      "direction": "write",
      "how": "literal",
      "line": 366
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/esl_fold_spotcheck/2026-08-24/worklist.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_build_esl_fold_spotcheck.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 561
     }
    ],
    "served": true,
@@ -14865,7 +15074,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 643,
+     "line": 688,
      "tabs": [
       "credential-reference"
      ]
@@ -14875,7 +15084,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2924,
+     "line": 3460,
      "tabs": [
       "exhibits"
      ]
@@ -14899,7 +15108,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 315
+     "line": 316
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -14934,7 +15143,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 128,
+     "line": 132,
      "tabs": [
       "exhibits"
      ]
@@ -14952,6 +15161,13 @@
      "direction": "write",
      "how": "literal",
      "line": 60
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -14979,7 +15195,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2086,
+     "line": 2556,
      "tabs": [
       "exhibits"
      ]
@@ -15010,6 +15226,30 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibit_subject_out": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/exhibit_subject_out/worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 234
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/exhibits_adoption.json": {
    "consumers": [
     {
@@ -15034,7 +15274,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 335
+     "line": 338
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",
@@ -15044,11 +15284,25 @@
      "line": 46
     },
     {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 81
+    },
+    {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 65
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15129,7 +15383,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2441,
+     "line": 2957,
      "tabs": [
       "exhibits"
      ]
@@ -15137,6 +15391,55 @@
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/exhibits_related.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 142,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    },
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
+    },
+    {
+     "id": "script:kb/_cred_rename_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 63
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/exhibits_review.json": {
    "consumers": [
@@ -15151,18 +15454,25 @@
      ]
     },
     {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 63
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 629
+     "line": 622
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15204,7 +15514,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 64
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15236,7 +15546,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 136,
+     "line": 140,
      "tabs": [
       "exhibits"
      ]
@@ -15246,14 +15556,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 958
+     "line": 969
+    },
+    {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 82
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 79
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15504,7 +15821,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 511,
+     "line": 553,
      "tabs": [
       "credential-reference"
      ]
@@ -15541,7 +15858,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5053,
+     "line": 5119,
      "tabs": [
       "credential-reference"
      ]
@@ -15551,14 +15868,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 184
     },
     {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 610
+     "line": 621
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -16439,7 +16756,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9026
+     "line": 9030
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -16552,7 +16869,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 400
+     "line": 411
     }
    ],
    "served": false,
@@ -16664,7 +16981,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 641
+     "line": 660
     }
    ],
    "served": true,
@@ -16774,7 +17091,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8672
+     "line": 8676
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -16904,7 +17221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8362
+     "line": 8366
     },
     {
      "id": "script:kb/_apply_cid_claim_holds.py",
@@ -16941,7 +17258,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8704
+     "line": 8708
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -17078,7 +17395,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8856
+     "line": 8860
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -17353,14 +17670,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 178
+     "line": 181
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 639
+     "line": 658
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -17400,14 +17717,69 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 179
+     "line": 182
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 910
+     "line": 929
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/credential_families.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_apply_credential_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 113
+    },
+    {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 129
+    },
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 78
+    },
+    {
+     "id": "script:kb/_cred_rename_apply_supabase.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
+    },
+    {
+     "id": "script:kb/_cred_rename_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
+     "id": "script:kb/_family_tag_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    },
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 84
     }
    ],
    "served": true,
@@ -17518,6 +17890,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/reference/issuer_family_subject.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/map_college_roster_rules.json": {
    "consumers": [
     {
@@ -17562,7 +17947,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 339
+     "line": 344
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -17630,7 +18015,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8434
+     "line": 8438
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -17828,6 +18213,13 @@
      "direction": "read",
      "how": "literal",
      "line": 111
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     },
     {
      "id": "script:kb/_jev_next_steps.py",
@@ -18075,7 +18467,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 288
+     "line": 299
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -18198,7 +18590,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 715
+     "line": 726
     }
    ],
    "producers": [
@@ -18223,7 +18615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 318
+     "line": 329
     }
    ],
    "served": true,
@@ -18236,7 +18628,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 430
+     "line": 441
     }
    ],
    "served": true,
@@ -18249,7 +18641,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 236
+     "line": 240
     }
    ],
    "served": true,
@@ -18337,7 +18729,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 565
+     "line": 576
     }
    ],
    "served": true,
@@ -18519,7 +18911,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9717
+     "line": 9721
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -18818,11 +19210,18 @@
      "line": 51
     },
     {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 316
+     "line": 317
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -18843,7 +19242,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 623
+     "line": 616
     }
    ],
    "producers": [
@@ -18890,7 +19289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 500,
+     "line": 542,
      "tabs": [
       "credential-reference"
      ]
@@ -18926,7 +19325,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 489,
+     "line": 531,
      "tabs": [
       "credential-reference"
      ]
@@ -18936,7 +19335,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 304
+     "line": 305
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -18985,7 +19384,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 637,
+     "line": 682,
      "tabs": [
       "credential-reference"
      ]
@@ -19016,7 +19415,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 336
+     "line": 341
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -19026,11 +19425,18 @@
      "line": 190
     },
     {
+     "id": "script:kb/_build_exhibits_related.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
+    },
+    {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 310
+     "line": 311
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -19038,6 +19444,20 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 134
+    },
+    {
+     "id": "script:kb/_cer_decision_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 302
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -19065,14 +19485,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 84
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 65
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 44
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -19177,7 +19604,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 622
+     "line": 615
     },
     {
      "id": "script:kb/classify_exhibits.py",
@@ -19471,7 +19898,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 63
     }
    ],
    "producers": [
@@ -19550,7 +19977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 58
+     "line": 61
     },
     {
      "id": "script:kb/_build_cpl_ai_join.py",
@@ -19578,7 +20005,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 59
+     "line": 62
     }
    ],
    "producers": [
@@ -20346,7 +20773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 291
+     "line": 302
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -20862,7 +21289,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 629
+     "line": 640
     }
    ],
    "served": false,
@@ -21132,6 +21559,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:rolled_back_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cer_decision_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 500
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:scripts/catalog_framing.py": {
    "consumers": [
     {
@@ -21205,6 +21645,103 @@
      "direction": "read",
      "how": "global",
      "line": 50
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/install_browser.sh": {
+   "consumers": [
+    {
+     "id": "workflow:catalog-framing.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outcomes-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outline-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:course-outline-index.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:cpl-stories.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-course-fetch.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-sequence-ppm.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-source-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:second-reader.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:typesafe-smoke.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": true,
@@ -21601,7 +22138,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12987
+     "line": 12991
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -21650,7 +22187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 306
+     "line": 307
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -21720,7 +22257,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 628
+     "line": 621
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -21766,7 +22303,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13217
+     "line": 13221
     }
    ],
    "served": true,
@@ -21789,21 +22326,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13017
+     "line": 13021
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 13017
+     "line": 13021
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 308
+     "line": 309
     }
    ],
    "producers": [
@@ -22067,6 +22604,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/browser_install_single_source_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/budget_section_first_light_test.py": {
    "consumers": [
     {
@@ -22223,6 +22773,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cer_decision_apply_retry_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/cer_decision_apply_test.py": {
    "consumers": [
     {
@@ -22237,6 +22800,19 @@
    "main_committers": []
   },
   "file:tests/cer_procedures_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/cert_naming_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22503,7 +23079,59 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/cred_rename_fold_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/credential_catalog_widening_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_family_apply_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_family_fold_contact_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_family_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22530,6 +23158,19 @@
    "main_committers": []
   },
   "file:tests/credential_review_sites_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_review_stale_issuer_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22750,6 +23391,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/emptied_title_guard_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/esl_fold_spotcheck_test.py": {
    "consumers": [
     {
@@ -22854,6 +23508,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/exhibit_subject_fill_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/exhibits_review_build_test.py": {
    "consumers": [
     {
@@ -22868,6 +23535,32 @@
    "main_committers": []
   },
   "file:tests/exhibits_sweep_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/fold_issuer_resolution_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/fold_issuer_single_source_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24127,7 +24820,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13219
+     "line": 13223
     }
    ],
    "served": true,
@@ -24227,7 +24920,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8387
+     "line": 8391
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -24357,14 +25050,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10278
+     "line": 10282
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10278
+     "line": 10282
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -24409,14 +25102,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9629
+     "line": 9633
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9629
+     "line": 9633
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24486,14 +25179,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10362
+     "line": 10366
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10362
+     "line": 10366
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -24570,14 +25263,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10350
+     "line": 10354
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10350
+     "line": 10354
     },
     {
      "id": "script:kb/_audit_cid_claims.py",
@@ -24612,7 +25305,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 307
+     "line": 308
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -24689,14 +25382,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10314
+     "line": 10318
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10314
+     "line": 10318
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -24710,7 +25403,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 292
+     "line": 303
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24791,14 +25484,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10158
+     "line": 10162
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10158
+     "line": 10162
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -25441,7 +26134,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 485,
+     "line": 503,
      "tabs": [
       "exhibits"
      ]
@@ -25471,7 +26164,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 373,
+     "line": 391,
      "tabs": [
       "exhibits"
      ]
@@ -25844,7 +26537,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3209
+     "line": 3289
     }
    ],
    "main_committers": []
@@ -25856,7 +26549,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3296
+     "line": 3376
     }
    ],
    "main_committers": []
@@ -27319,14 +28012,14 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 895
+     "line": 943
     },
     {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 461,
+     "line": 479,
      "tabs": [
       "exhibits"
      ]
@@ -27341,7 +28034,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 484,
+     "line": 502,
      "tabs": [
       "exhibits"
      ]
@@ -27852,7 +28545,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 381,
+     "line": 420,
      "tabs": [
       "credential-reference"
      ]
@@ -27862,7 +28555,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 408,
+     "line": 426,
      "tabs": [
       "exhibits"
      ]
@@ -27872,10 +28565,17 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 619,
+     "line": 637,
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "module:kb/_family_tag_apply.py",
+     "kind": "module",
+     "direction": "write",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:map_export.js",
@@ -27953,7 +28653,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 109
+     "line": 130
     },
     {
      "id": "script:kb/_apply_curation.py",
@@ -27974,7 +28674,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 114
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -27984,18 +28684,39 @@
      "line": 682
     },
     {
+     "id": "script:kb/_cred_fold_resolution_write.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 70
+    },
+    {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 138
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 147
+     "line": 169
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 294
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 301
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -28031,6 +28752,20 @@
      "direction": "read",
      "how": "literal",
      "line": 50
+    },
+    {
+     "id": "script:kb/_exhibit_subject_fill.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 308
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 67
     },
     {
      "id": "script:kb/_overmerge_apply_supabase.py",
@@ -29979,6 +30714,7 @@
    "name": "Catalog framing check",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "scripts/catalog_framing.py"
    ],
    "adds": [],
@@ -30006,8 +30742,10 @@
    ],
    "scripts": [
     "kb/_cer_procedures.py",
+    "kb/_exhibit_subject_fill.py",
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
+    "kb/_build_exhibits_related.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -30019,8 +30757,10 @@
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
+    "kb/exhibits_related.json",
     "kb/status/commons.json",
-    "kb/status/commons_history.json"
+    "kb/status/commons_history.json",
+    "kb/exhibit_subject_out"
    ],
    "push": null,
    "deploys": [],
@@ -30098,6 +30838,7 @@
    "name": "College page read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_college_page_read.py",
     "kb/_description_units.py"
    ],
@@ -30144,6 +30885,7 @@
    "name": "Course outcomes read",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outcomes_read.py"
    ],
    "adds": [
@@ -30158,6 +30900,7 @@
    "name": "Course outline census",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_census.py"
    ],
    "adds": [
@@ -30172,6 +30915,7 @@
    "name": "Course outline index",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_course_outline_index.py"
    ],
    "adds": [
@@ -30291,6 +31035,7 @@
     "23 7 * * 1"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "tools/source_cpl_stories.mjs"
    ],
    "adds": [
@@ -30308,6 +31053,7 @@
     "kb/_apply_credential_review.py",
     "kb/_cred_rename_dryrun.py",
     "kb/_cred_rename_apply.py",
+    "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
     "kb/_build_remint_blast_radius.py",
     "kb/_build_ccr_cpl.py"
@@ -30344,6 +31090,18 @@
    ],
    "adds": [],
    "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "credential-family-apply.yml": {
+   "name": "Credential family apply",
+   "crons": [],
+   "scripts": [
+    "kb/_family_tag_apply.py"
+   ],
+   "adds": [],
+   "push": "main",
    "deploys": [],
    "chain": [],
    "urls": []
@@ -30426,6 +31184,7 @@
     "kb/_csr_trail.py",
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
+    "kb/_build_exhibits_related.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
@@ -30492,6 +31251,7 @@
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
+    "kb/exhibits_related.json",
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",
@@ -30612,7 +31372,9 @@
   },
   "js-tests.yml": {
    "name": "JS tests",
-   "crons": [],
+   "crons": [
+    "41 17 * * *"
+   ],
    "scripts": [
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
@@ -30659,6 +31421,7 @@
     "tests/csr_confirm_authority_test.py",
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
+    "tests/cer_decision_apply_retry_test.py",
     "tests/cer_procedures_test.py",
     "tests/cer_classifier_rules_size_test.py",
     "tests/ap_official_titles_test.py",
@@ -30669,11 +31432,17 @@
     "tests/docket_rulings_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/exhibits_sweep_build_test.py",
+    "tests/cert_naming_test.py",
+    "tests/cred_rename_fold_issuer_test.py",
+    "tests/fold_issuer_resolution_test.py",
+    "tests/fold_issuer_single_source_test.py",
+    "tests/emptied_title_guard_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/adopt_align_build_test.py",
     "tests/credential_catalog_widening_test.py",
     "tests/credential_review_sites_test.py",
+    "tests/credential_review_stale_issuer_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
     "tests/install_prompt_guards_test.py",
@@ -30727,6 +31496,9 @@
     "tests/top_code_lookup_code4_test.py",
     "tests/eacr_matrix_payload_test.py",
     "tests/statewide_cid_hold_test.py",
+    "tests/credential_family_test.py",
+    "tests/credential_family_apply_test.py",
+    "tests/credential_family_fold_contact_test.py",
     "tests/cid_claim_audit_test.py",
     "tests/esl_fold_spotcheck_test.py",
     "tests/esl_relevel_bands_test.py",
@@ -30758,13 +31530,17 @@
     "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
+    "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",
-    "tests/next_slo_colleges_test.py"
+    "tests/next_slo_colleges_test.py",
+    "tests/browser_install_single_source_test.py"
    ],
    "adds": [],
    "push": null,
    "deploys": [],
-   "chain": [],
+   "chain": [
+    "Daily CPL Dashboard"
+   ],
    "urls": []
   },
   "k10-disclosure-check.yml": {
@@ -30954,6 +31730,7 @@
     "23 8 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_fetch_program_course_files.py",
     "kb/_build_program_course_graph.py"
    ],
@@ -30971,6 +31748,7 @@
    "name": "Program requirements, one college",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_program_requirements_display_apply.py"
    ],
@@ -31001,6 +31779,7 @@
    "name": "Program requirements pilot",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_pilot.py"
    ],
    "adds": [],
@@ -31013,6 +31792,7 @@
    "name": "Program requirements pilot, sequence",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_sequence_ppm.py"
    ],
    "adds": [],
@@ -31027,6 +31807,7 @@
     "29 10 * * 0"
    ],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_source_census.py"
    ],
    "adds": [],
@@ -31055,6 +31836,7 @@
    "name": "Second reader (program requirements)",
    "crons": [],
    "scripts": [
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_second_reader.py"
    ],
@@ -31173,6 +31955,7 @@
     "kb/_jev_battery.py",
     "kb/_exhibit_reanalysis_jev.py",
     "kb/_typesafe_cr_trial.py",
+    "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
     "kb/_jev_harvest.py",
     "kb/_jev_agri_families.py"

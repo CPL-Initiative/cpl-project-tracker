@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-10T20:29:15Z",
+ "written_at": "2026-11-12T02:30:47Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13675,
+     "n": 13782,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 3268,
+     "n": 3146,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3339,
+     "n": 3354,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-10T12:36:57Z",
+    "at": "2026-11-11T17:53:38Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13675,
-    "failing": 3268,
-    "unread": 3339,
-    "records": 18567,
+    "complete": 13782,
+    "failing": 3146,
+    "unread": 3354,
+    "records": 18555,
     "colleges": 114,
-    "outside_active": 1624,
+    "outside_active": 1627,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2571,
-     "of": 5607,
-     "words": "titles carry a review stamp (1,226 a person's, 1,345 a cohort's); 2,742 credentials, 2,283 of 3,051 records stamped",
+     "n": 2681,
+     "of": 5716,
+     "words": "titles carry a review stamp (1,227 a person's, 1,454 a cohort's); 2,743 credentials, 2,281 of 3,051 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1226,
-     "of": 5607,
+     "n": 1227,
+     "of": 5716,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -118,15 +118,23 @@
    ],
    "issues": [
     {
-     "n": 6,
+     "n": 177,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
+     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 623,
+     "n": 362,
+     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+     "carry": "routine",
+     "open": "#exhibits/list/nosubj",
+     "error": null
+    },
+    {
+     "n": 809,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -150,25 +158,26 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-10T20:24:05Z",
+    "at": "2026-11-12T00:24:16Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5607,
-    "stamped": 2571,
-    "person": 1226,
-    "cohort": 1345,
-    "credentials": 2742,
-    "confirmed": 1226,
+    "titles": 5716,
+    "stamped": 2681,
+    "person": 1227,
+    "cohort": 1454,
+    "credentials": 2743,
+    "confirmed": 1227,
     "records": 3051,
-    "records_stamped": 2283,
-    "saved_at": "2026-11-10T15:51:40Z",
-    "fold_at": "2026-11-10T20:24:05Z",
-    "map_titles": 5090,
-    "unclassified": 106,
-    "left_map": 623,
-    "below_80": 1123,
-    "below_60": 237
+    "records_stamped": 2281,
+    "saved_at": "2026-11-11T15:43:03Z",
+    "fold_at": "2026-11-12T00:24:16Z",
+    "map_titles": 5087,
+    "unclassified": 180,
+    "left_map": 809,
+    "below_80": 1122,
+    "below_60": 236,
+    "no_subject": 362
    },
    "sources": [
     "kb/unified_titles.json",
@@ -177,7 +186,8 @@
     "kb/cer_procedures_out/latest.json",
     "kb/cer_procedures.json",
     "kb/cer_procedures_out/saved/",
-    "kb/unclassified_fold/*/report.json"
+    "kb/unclassified_fold/*/report.json",
+    "kb/exhibit_subject_out/worklist.json"
    ]
   },
   {
@@ -265,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-10T20:26:24+00:00",
+    "at": "2026-11-12T02:27:58+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -309,7 +319,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,960 of 9,433 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -353,23 +363,23 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-10T06:29:11Z",
+    "at": "2026-11-12T00:28:19Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9432,
+    "rows": 9433,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 461,
-    "settled_rows": 5959,
+    "settled_rows": 5960,
     "rule_wordings": 411,
-    "rule_rows": 4914,
+    "rule_rows": 4915,
     "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
@@ -382,17 +392,17 @@
      "50": {
       "settled": 46,
       "of": 50,
-      "rows": 4648
+      "rows": 4649
      },
      "100": {
       "settled": 78,
       "of": 100,
-      "rows": 5545
+      "rows": 5546
      },
      "250": {
       "settled": 153,
       "of": 250,
-      "rows": 6559
+      "rows": 6560
      }
     },
     "awaiting_look": 138,
@@ -477,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-10T20:24:03Z",
+    "at": "2026-11-12T02:25:40Z",
     "every_hours": 24
    },
    "facts": {
@@ -490,7 +500,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-10",
+    "scanned_at": "2026-11-12",
     "procedures_on": 6
    },
    "sources": [
@@ -513,7 +523,7 @@
    ],
    "pair": [
     {
-     "n": 7715,
+     "n": 7726,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -523,16 +533,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7715,
+    "credentials": 7726,
     "issuers": 1525,
     "in_map": 206,
     "articulated": 160,
-    "with_issuer_skills": 153,
-    "tech_giant": 556
+    "with_issuer_skills": 177,
+    "tech_giant": 567
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-10T00:00:00Z",
+    "at": "2026-11-11T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -598,7 +608,7 @@
    "links": [],
    "pair": [
     {
-     "n": 153,
+     "n": 177,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -608,11 +618,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 153
+    "with_issuer_skills": 177
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-10T00:00:00Z",
+    "at": "2026-11-11T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -657,9 +667,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 6,
+      "n": 177,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 5, the classifier's title has a course code left in 1)",
+      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
       "open": "#exhibits/held"
      },
      {
@@ -707,7 +717,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 623,
+      "n": 809,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -719,7 +729,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3268,
+    "n": 3146,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -727,10 +737,18 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3339,
+    "n": 3354,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
+   },
+   {
+    "ref": "exhibit",
+    "title": "Common Exhibit Reference",
+    "n": 362,
+    "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
+    "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
+    "open": "#exhibits/list/nosubj"
    },
    {
     "ref": "course",
@@ -741,7 +759,30 @@
     "open": "#coci-lookup/list/nodesc"
    }
   ],
-  "stalled": []
+  "stalled": [
+   {
+    "ref": "requirements",
+    "title": "Program Requirements",
+    "kind": "not_shrinking",
+    "n": 3354,
+    "was": 3349,
+    "since": "2026-11-05",
+    "words": "active programs with no record yet",
+    "owner": "the harvest",
+    "open": "#program-requirements/list/unread"
+   },
+   {
+    "ref": "course",
+    "title": "Common Course Reference",
+    "kind": "not_shrinking",
+    "n": 5750,
+    "was": 5750,
+    "since": "2026-11-05",
+    "words": "blank descriptions",
+    "owner": "the colleges' COCI entries",
+    "open": "#coci-lookup/list/nodesc"
+   }
+  ]
  },
  "confidence": [
   {
@@ -750,8 +791,8 @@
    "procedures": [
     {
      "name": "classifier",
-     "placed": 897,
-     "untouched": 821,
+     "placed": 945,
+     "untouched": 869,
      "kept": 4,
      "renamed": 53,
      "moved": 0,
@@ -761,19 +802,19 @@
     },
     {
      "name": "course-identity",
-     "placed": 191,
-     "untouched": 171,
+     "placed": 192,
+     "untouched": 168,
      "kept": 0,
-     "renamed": 20,
+     "renamed": 24,
      "moved": 0,
      "by_procedure": 0,
      "left": 0,
-     "looked": 20
+     "looked": 24
     },
     {
      "name": "brand-family",
-     "placed": 61,
-     "untouched": 54,
+     "placed": 115,
+     "untouched": 108,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
@@ -838,14 +879,14 @@
     }
    ],
    "total": {
-    "placed": 1216,
-    "untouched": 1089,
+    "placed": 1319,
+    "untouched": 1188,
     "kept": 23,
-    "renamed": 80,
+    "renamed": 84,
     "moved": 0,
     "by_procedure": 24,
     "left": 0,
-    "looked": 103
+    "looked": 107
    }
   },
   {
@@ -905,8 +946,8 @@
     },
     {
      "name": "rung 3",
-     "placed": 46,
-     "untouched": 46,
+     "placed": 45,
+     "untouched": 45,
      "kept": 0,
      "renamed": 0,
      "moved": 0,
@@ -917,8 +958,8 @@
     },
     {
      "name": "rung 4",
-     "placed": 41,
-     "untouched": 41,
+     "placed": 42,
+     "untouched": 42,
      "kept": 0,
      "renamed": 0,
      "moved": 0,
@@ -945,47 +986,33 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 4,
-   "of": 4,
+   "n": 2,
+   "of": 2,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 4 exhibit titles",
+   "title": "Another look at 2 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "language",
+    "ase",
     "numerals"
    ],
    "cards": [
     {
-     "id": "460caa647cd9",
-     "current": "American Sign Language IV",
+     "id": "5dcc165d855e",
+     "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
      "keys": [
-      "_UNCLASSIFIED::ASL 53 American Sign Language IV"
+      "_UNCLASSIFIED::Noncredit for AUTO P1"
      ]
     },
     {
-     "id": "0f4e3168f278",
-     "current": "Facials I",
+     "id": "47c90f286f99",
+     "current": "Elementary French I",
      "keys": [
-      "_UNCLASSIFIED::COSM 215 Facials I"
-     ]
-    },
-    {
-     "id": "9df782749a76",
-     "current": "Hairstyling Services/Haircutting II",
-     "keys": [
-      "_UNCLASSIFIED::COSM 223 Hairstyling Services/Haircutting II"
-     ]
-    },
-    {
-     "id": "fb1bda479521",
-     "current": "Manicuring and Pedicuring I",
-     "keys": [
-      "_UNCLASSIFIED::COSM 211  Manicuring and Pedicuring I"
+      "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
      ]
     }
    ],
-   "at": "2026-11-10T20:28:45Z"
+   "at": "2026-11-11T17:45:23Z"
   },
   {
    "kind": "job",
@@ -1000,46 +1027,32 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 4,
-  "of": 4,
+  "n": 2,
+  "of": 2,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 4 exhibit titles",
+  "title": "Another look at 2 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "language",
+   "ase",
    "numerals"
   ],
   "cards": [
    {
-    "id": "460caa647cd9",
-    "current": "American Sign Language IV",
+    "id": "5dcc165d855e",
+    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
     "keys": [
-     "_UNCLASSIFIED::ASL 53 American Sign Language IV"
+     "_UNCLASSIFIED::Noncredit for AUTO P1"
     ]
    },
    {
-    "id": "0f4e3168f278",
-    "current": "Facials I",
+    "id": "47c90f286f99",
+    "current": "Elementary French I",
     "keys": [
-     "_UNCLASSIFIED::COSM 215 Facials I"
-    ]
-   },
-   {
-    "id": "9df782749a76",
-    "current": "Hairstyling Services/Haircutting II",
-    "keys": [
-     "_UNCLASSIFIED::COSM 223 Hairstyling Services/Haircutting II"
-    ]
-   },
-   {
-    "id": "fb1bda479521",
-    "current": "Manicuring and Pedicuring I",
-    "keys": [
-     "_UNCLASSIFIED::COSM 211  Manicuring and Pedicuring I"
+     "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
     ]
    }
   ],
-  "at": "2026-11-10T20:28:45Z"
+  "at": "2026-11-11T17:45:23Z"
  }
 }

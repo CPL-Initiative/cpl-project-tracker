@@ -1,0 +1,21 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Berkeley City College, second read. The first (berkeley_city_capture_words, run 43138099241) found the rendered view pages (.../catalog/view//iq/...) now send the reader to a sign-in page ('Please provide the reason you are requesting access to CurriQunet Meta'), so this read takes each program page through the catalog's own JSON as the capture does (cq_view, catalog 10327). The first read's top navigation names 'Degree and Certificate Requirements' node 40739 and 'Transfer Information' node 40736, each with one child list; this read lists both and prints each node's own page. Pages: English AA-T 31138 (40014), Biology AS-T 41902 (40061), American Sign Language A.A. 01101 (39977), Fundamentals of Data Science A.S. 45941 (41937). No model call.",
+ "college": "Berkeley City College",
+ "questions": {
+  "ge_node": "Which child pages of Degree and Certificate Requirements (40739) and Transfer Information (40736) are the Cal-GETC page, the local A.A./A.S. general education pattern and the associate degree requirements?",
+  "adt_words": "What exactly does a transfer page print for general education, electives and the degree total, as the capture reads it?",
+  "local_words": "What exactly does a local degree page print for general education, electives and the degree total, and does it name a GE pattern or a minimum or double-count rule?",
+  "ge_units": "Does either section page print the units of Cal-GETC or of the local general education pattern, or a minimum-60 or electives sentence?"
+ },
+ "keywords": ["Cal-?GETC", "General Education", "Electives?", "\\b\\d+\\s*(?:semester\\s*)?units", "Total", "minimum", "double"],
+ "pages": [
+  {"url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=40739", "answers": ["ge_node"]},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=40736", "answers": ["ge_node"]},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40739", "answers": ["ge_units"]},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=40736", "answers": ["ge_units"]},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014", "answers": ["adt_words"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40061", "answers": ["adt_words"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39977", "answers": ["local_words"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41937", "answers": ["local_words"], "cq_view": true, "cq_catalog": 10327}
+ ]
+}

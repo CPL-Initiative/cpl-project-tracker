@@ -5,11 +5,11 @@
  "found": 165,
  "extracted": 165,
  "errors": 0,
- "passed_machine_checks": 87,
+ "passed_machine_checks": 138,
  "failed": {
   "coverage": 1,
   "invented": 0,
-  "arithmetic": 78,
+  "arithmetic": 27,
   "repeated": 0,
   "outcomes": 0
  },
@@ -21,7 +21,7 @@
    "title": "Noncredit Certificate of Competency in ESL",
    "award": null,
    "near_miss": {
-    "url": "https://butte.curriqunet.com/catalog/iq/25398/28120/28293",
+    "url": "https://butte.curriqunet.com/Catalog//iq/25398/28120/28293",
     "label": {
      "award": 0,
      "title": 1.0
@@ -47,7 +47,7 @@
    "title": "Cal-GETC",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://butte.curriqunet.com/catalog/iq/25399/28171/27949/27989",
+    "url": "https://butte.curriqunet.com/Catalog//iq/25399/28171/27949/27989",
     "label": {
      "award": 1,
      "title": 1.0
@@ -69,5 +69,5 @@
    }
   }
  ],
- "run": "38981247046"
+ "run": "42985449223"
 }

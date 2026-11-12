@@ -1,0 +1,43 @@
+{
+ "_readme": "S636 SkyAntennae, 2026-11-11. Redwoods' local degree pages, second read: the rendered pages keep PROGRAM REQUIREMENTS behind a toggle the reader did not open (run 43014508848: header and outcomes only, 'A.S. Degree ( 60.0 Credits )'). This read loads eLumen's content address for the same four programs, the call the harvest's capture makes, and prints the stretches around general education, electives, totals and credits, so a reconcile step for the CRGE sheet's 21 units keys on words the captured text holds. No model call.",
+ "college": "College of the Redwoods",
+ "questions": {
+  "local_words": "What does the local degree's captured text print about general education (CR-GE), electives, and the degree's total?"
+ },
+ "keywords": [
+  "[^<>\"]{0,200}(?:General Education|CR-?GE|GE Pattern|GE [Rr]equirement)[^<>\"]{0,200}",
+  "[^<>\"]{0,160}[Ee]lective[^<>\"]{0,160}",
+  "[^<>\"]{0,160}Total[^<>\"]{0,160}",
+  "[^<>\"]{0,120}Credits[^<>\"]{0,120}",
+  "[^<>\"]{0,120}\\b60(?:\\.0)?\\b[^<>\"]{0,120}"
+ ],
+ "outside_hosts": {
+  "elumenapp.com": "College of the Redwoods's own 2026-2027 catalog (redwoods.elumenapp.com), served by its catalog vendor's API (api-prod.elumenapp.com)"
+ },
+ "pages": [
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,personal-wellness-fall-2025?tenant=redwoods.elumenapp.com",
+   "answers": [
+    "local_words"
+   ]
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,forestry-and-natural-resources-technology-fall-2025?tenant=redwoods.elumenapp.com",
+   "answers": [
+    "local_words"
+   ]
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,registered-nursing-fall-2026?tenant=redwoods.elumenapp.com",
+   "answers": [
+    "local_words"
+   ]
+  },
+  {
+   "url": "https://api-prod.elumenapp.com/catalog/sites/publish/content/2026-2027,program,liberal-arts-business-fall-2026?tenant=redwoods.elumenapp.com",
+   "answers": [
+    "local_words"
+   ]
+  }
+ ]
+}

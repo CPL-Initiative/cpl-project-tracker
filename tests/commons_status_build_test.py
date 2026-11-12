@@ -74,10 +74,16 @@ check("Programs: the card and its counts open CPL Pathways' List, the issues its
       and [i["open"] for i in req["issues"]] == ["#program-requirements/list/fail", "#program-requirements/list/unread"][:len(req["issues"])],
       (req["links"], [p_["open"] for p_ in req["pair"]], [i["open"] for i in req["issues"]]))
 _ex = [r for r in rows if r["key"] == "exhibit"][0]
+_ns = [i for i in _ex["issues"] if i.get("open") == "#exhibits/list/nosubj"]
+check("Exhibits: credentials with no Common SUBJ is a routine count from the subject fill's worklist (S638), so the day history carries its trend",
+      len(_ns) == 1 and isinstance(_ns[0]["n"], int) and _ns[0]["carry"] == "routine"
+      and _ns[0]["n"] == json.load(open(os.path.join(ROOT, "kb", "exhibit_subject_out", "worklist.json")))["no_subject"],
+      _ns)
 check("Exhibits: the card and its counts open the List; held titles and conflicts keep Review; the procedures open Rules, never the retired CER",
       _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
       # S574: the titles that have left MAP open their own List filter, never the retired CER's whole list.
-      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left") for i in _ex["issues"])
+      # S638: the credentials with no Common SUBJ open the List's No Common SUBJ filter.
+      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left", "#exhibits/list/nosubj") for i in _ex["issues"])
       and _ex["procedures"][0]["open"] == "#exhibits/rules",
       (_ex["links"], [p_["open"] for p_ in _ex["pair"]], [i["open"] for i in _ex["issues"]], _ex["procedures"][0].get("open")))
 building = data.get("building", [])

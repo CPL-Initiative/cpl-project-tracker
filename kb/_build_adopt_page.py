@@ -54,6 +54,9 @@ import os
 import re
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import credential_aliases  # noqa: E402
+
 SCHEMA = 2
 OUT = "library/adopt/adopt_data.json"
 OUT_MORE = "library/adopt/adopt_more.json"
@@ -333,6 +336,8 @@ def cpl_ai(root, col_at):
 
 def build(root):
     adoption = load_json(root, "kb/exhibits_adoption.json") or {}
+    aka = credential_aliases.load(root)
+    members = credential_aliases.family_members(root)
     settled = settled_titles(load_json(root, "kb/unified_titles.json", {}))
     ref = load_js(root, "credential_reference_data.js")
     ref_by = {e.get("ut"): e for e in (ref.get("unified_titles") or []) if e.get("ut")}
@@ -380,6 +385,15 @@ def build(root):
                 types.append(t)
             ytypes.append(type_at[t])
         rec = {"t": ut, "a": sorted(art), "y": ytypes}
+        if aka.get(ut):
+            # The titles it carried before a rename or a merge: the search still finds it by them (Sam,
+            # 2026-11-11: "Approved renames keep the old title as a search alias").
+            rec["aka"] = aka[ut]
+        if ut in members:
+            # Its credential family (Sam, 2026-11-11: each ASE bundle stays its own title and carries the family): the
+            # card names it, and the search finds the title by the family and by each test it names ("ASE A4").
+            rec["fam"] = members[ut]["family"]
+            rec["aka"] = (rec.get("aka") or []) + members[ut]["aliases"] + [members[ut]["family"]]
         if r.get("issuer"):
             rec["i"] = r["issuer"]
         if e.get("s"):
@@ -458,6 +472,8 @@ def build(root):
                    "more_held": more["counts"]["held"], "more_harvested": more["counts"]["harvested"],
                    "more_inmap": more["counts"]["inmap"]},
         "colleges": colleges,
+        # Each credential family the cards name, and how many of its titles are listed here.
+        "families": {f: sum(1 for c in creds if c.get("fam") == f) for f in sorted({c["fam"] for c in creds if c.get("fam")})},
         "sectors": sectors,
         "types": types,
         "credentials": creds,

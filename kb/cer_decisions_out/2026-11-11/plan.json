@@ -1,0 +1,217 @@
+{
+ "about": "Phase 1 of 3. Runs BEFORE cred-rename-apply.yml. (a) Golden West's four ASE MIL exhibits leave the titles Sam's 2026-10-31 triage gave them (MAPICI-ASEM1 'MIL3 - Drive Train' and ASEM2 'MIL4 - Chassis' under Automotive Braking Systems, ASEM3 'MIL6' under Advanced Electrical and Electronic Systems, ASEM4 'MIL7' under Heating and Air Conditioning) for the MIL titles kb/cert_naming.py writes; kb/credentials.json already holds their ASE records (same PR), so the revise lane retires the old titles' records rather than moving them, and Sam's 15:47Z Chancellor's Office issuer never reaches MIL7. (b) The three industry-certification exhibits under the A5, A7 and A8 standards folds go to the cert titles: MAPICO-IBS (Mt. San Jacinto, IC-Automotive Brake Systems) to ASE A5 — Brakes, its issuer row from California Community Colleges to ASE so the fold does not append a college as an issuer of the certification (Sam's ruling 1 on issue #3110); MAPICO-IPI (IC-Engine Performance I) to ASE A8 — Engine Performance; MAPICI-A6C9 (Long Beach, Auto 617 Completion, a machine draft no person placed) to ASE A7 — Heating and Air Conditioning, insert-only through the fold's supersede lane. (d) Five titles are left with no exhibit: Automotive Braking Systems, Heating and Air Conditioning, Automotive Air Conditioner, Advanced Electrical and Electronic Systems and Engine Performance 1 (ASE A8 Engine Performance). The fold retires each (the revise lane drops the records of a title left with no raw, receipted in kb/unclassified_fold/<date>/; Automotive Air Conditioner's reviewed record stays orphaned, shown nowhere). Sam's saved rows on them retire here by guarded delete, each with why: once they are gone, cred-rename-apply can no longer carry the MIL exhibits into Brakes (ASE A5 standards) or Heating and Air Conditioning (ASE A7 standards). ORDER: this commit, then the next fold (daily-dashboard or cer-procedures), then cred-rename-apply.yml, then phase 3 (kb/cer_decisions_out/2026-11-11-3). Phase 2 (kb/cer_decisions_out/2026-11-11-2) is independent and may ride with this one. Every replace and retire names its row's own reviewed_at from the conductor's live read of 2026-11-11 20:15Z (kb/cer_decisions_out/2026-11-11/00_fresh_reads.sql); a row saved again since holds the whole commit, and the dry run prints the live stamp. The July reviewed_marker rows (map@rccd.edu) retire with their titles on the conductor's word of 20:15Z.",
+ "ruling": "Sam Lee, in session 2026-11-11 (SkyTamarind, S638; cpl_memory sam-ase-mil-certs-and-cx-to-standards-2026-11-11, sam-ic-exhibits-go-to-cert-title-2026-11-11, sam-cert-name-first-2026-11-11): 'ASE MIL3 test is the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification... if there are any exhibits with ASE MIL in the title, adjust the canonical title to match the official ASE titles'; an industry-certification exhibit under a '(ASE ... standards)' title goes to the cert title, and ('3 yes') the credit-by-exam exhibits under the A5, A7 and A8 cert titles go to the standards titles; then his authorization the same day for the conductor and COBIx to settle the emptied titles without bringing them back to him. Superseding his own 2026-10-31 to 11-11 saves by his word (CLAUDE.md Rule 8); written by SkyTamarind's worker",
+ "cohort": "cer-s638@bot",
+ "read_by_session": {
+  "at": "2026-11-11T20:15Z",
+  "how": "read-only select through the Supabase MCP tool by the conductor (SkyTamarind), 00_fresh_reads.sql: no other ASE MIL exhibit; no merge confirm targets an emptied title; cohort cer-s638@bot has written nothing; Auto 617 Completion and the five credit-by-exam keys hold no row; every replaced and retired row as this plan names it, with its own stamp."
+ },
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL3 - Drive Train",
+   "field": "unified_title_assignment",
+   "value": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
+   "replaces": {
+    "value": "Automotive Braking Systems",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31T16:26:26.340352"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL3 - Drive Train",
+   "field": "unified_title_supersedes",
+   "value": "Automotive Braking Systems"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL4 - Chassis",
+   "field": "unified_title_assignment",
+   "value": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+   "replaces": {
+    "value": "Automotive Braking Systems",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31T16:26:27.287716"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL4 - Chassis",
+   "field": "unified_title_supersedes",
+   "value": "Automotive Braking Systems"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+   "field": "unified_title_assignment",
+   "value": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+   "replaces": {
+    "value": "Advanced Electrical and Electronic Systems",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31T16:26:28.851438"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+   "field": "unified_title_supersedes",
+   "value": "Advanced Electrical and Electronic Systems"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+   "field": "unified_title_assignment",
+   "value": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
+   "replaces": {
+    "value": "Heating and Air Conditioning",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31T16:26:29.920700"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+   "field": "unified_title_supersedes",
+   "value": "Heating and Air Conditioning"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IC-Automotive Brake Systems",
+   "field": "unified_title_assignment",
+   "value": "ASE A5 — Brakes",
+   "replaces": {
+    "value": "Automotive Technology (ASE A5 Brakes)",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-07-08T00:04:29.062288"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IC-Automotive Brake Systems",
+   "field": "unified_title_supersedes",
+   "value": "Automotive Technology (ASE A5 Brakes)",
+   "replaces": {
+    "value": "Automotive Brake Systems",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31T18:52:59.978032"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IC-Automotive Brake Systems",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "replaces": {
+    "value": "California Community Colleges",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-07-08T00:04:29.060241"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IC-Engine Performance I",
+   "field": "unified_title_assignment",
+   "value": "ASE A8 — Engine Performance",
+   "replaces": {
+    "value": "Engine Performance 1 (ASE A8 Engine Performance)",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-11-01T22:11:09.387000"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IC-Engine Performance I",
+   "field": "unified_title_supersedes",
+   "value": "Engine Performance 1 (ASE A8 Engine Performance)",
+   "replaces": {
+    "value": "Engine Performance I",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-11-01T22:11:09.387000"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Auto 617 Completion",
+   "field": "unified_title_assignment",
+   "value": "ASE A7 — Heating and Air Conditioning",
+   "over_machine_draft": "Automotive Air Conditioner"
+  }
+ ],
+ "retires": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+   "field": "unified_title_override",
+   "value": "Brakes (ASE A5 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:54.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-ASEM1 and ASEM2 go to ASE MIL3 and MIL4)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+   "field": "unified_title_override",
+   "value": "Heating and Air Conditioning (ASE A7 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-ASEM4 goes to ASE MIL7)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+   "field": "unified_title_merge_confirm",
+   "value": "Heating and Air Conditioning (ASE A7 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-ASEM4 goes to ASE MIL7)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+   "field": "issuing_agency_override",
+   "value": "California Community College Chancellor's Office",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:47:58.805608",
+   "because": "the fold's source is empty; its intent, that a college exam taught to the ASE standard is issued by the college, is carried by rule 2b on Heating and Air Conditioning (ASE A7 standards)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+   "field": "unified_title_override",
+   "value": "Heating and Air Conditioning (ASE A7 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:54.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-A6C9 goes to ASE A7)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+   "field": "issuing_agency_override",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "map@rccd.edu",
+   "reviewed_at": "2026-07-09T00:07:08.979312",
+   "because": "the fold's source is empty; this row (map@rccd.edu, 2026-07-09) names ASE, which is already the issuer of ASE A7 — Heating and Air Conditioning, where MAPICI-A6C9 goes"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+   "field": "unified_title_override",
+   "value": "ASE Certificate Bundles",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-ASEM3 goes to ASE MIL6)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+   "field": "unified_title_merge_confirm",
+   "value": "ASE Certificate Bundles",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICI-ASEM3 goes to ASE MIL6)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+   "field": "unified_title_override",
+   "value": "Engine Performance (ASE A8 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IPI goes to ASE A8)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+   "field": "unified_title_merge_confirm",
+   "value": "Engine Performance (ASE A8 standards)",
+   "reviewer_email": "slee@cccco.edu",
+   "reviewed_at": "2026-11-11T15:26:55.029000",
+   "because": "the fold's source is empty: the title's only exhibit moves under this plan, so its saved fold has nothing to fold (MAPICO-IPI goes to ASE A8)"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+   "field": "reviewed_marker",
+   "value": "1",
+   "reviewer_email": "map@rccd.edu",
+   "reviewed_at": "2026-07-10T14:07:19.539922",
+   "because": "the title's last exhibit moves under this plan, so its July reviewed tick has no title left to mark (MAPICO-IPI goes to ASE A8)"
+  }
+ ]
+}

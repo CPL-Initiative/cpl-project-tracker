@@ -4,6 +4,8 @@ date: 2026-11-10
 session: 634b (SkyFermi, Sam's Library side session beside SkyBackward, 2026-11-10 ~17:50Z to ~21:05Z)
 tags: [handoff, library, pages]
 status: current
+superseded: true
+superseded_by: session_637_handoff.md
 ---
 
 # You are Session 635

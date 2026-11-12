@@ -61,34 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     19.0,
     19.0
    ],
    "stated": [
-    60.0,
-    68.0
+    19.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     19.0,
-     19.0
+     53.0,
+     53.0
     ],
     "stated": [
-     19.0,
-     19.0
+     60.0,
+     68.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     15.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,10 +139,10 @@
     "max": 68
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Converse and write in Spanish at the intermediate level with effective use of grammar, vocabulary, comprehensible pronunciation, and syntax on a range of topics such as personal and family lives, school or work, and current events.",
     "Read and understand authentic texts in Spanish such as letters, essays, newspaper articles, poems, and/ or short stories.",
@@ -230,5 +235,26 @@
    "The map notes 'Department recommends CMST 9 or ETHS 10' for an Area 4 choice; this is GE advice and was not recorded as a recommended block."
   ]
  },
- "extracted_run": "38981247046"
+ "extracted_run": 42973457189,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "GE Pattern(s): Cal-GETC (https://butte.curriqunet.com/catalog/iq/25389/28399/27604: Butte AA-T and AS-T pages: 'GE Pattern(s): Cal-GETC' above 'Map (Cal-GETC)' (History AA-T 31000; college page read 42957477366); Butte College Cal-GETC Requirements: 'Complete a minimum of 34 semester units of general education from the approved list according to the following pattern' (college page read 42961405888))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Only necessary if the 60 units needed to graduate have not been completed"
+  }
+ ],
+ "read_run": "38981247046"
 }
