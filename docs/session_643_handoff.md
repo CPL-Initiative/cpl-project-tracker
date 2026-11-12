@@ -31,8 +31,7 @@ the conductor's record and was not re-read.
 
 ## If you are the scheduled session (the CPL Queue routine)
 
-**Safe unattended, in this order,** each under Rule 10 and its playbook: the classifier branch (Open work 2), read its
-PR if one exists, else brief a fresh worker from the branch and the lane's NEXT (5a); then Open work 4 onward. **Waits for Sam, never merged or run by a session:** #3159 (his gallery marks applied; his to review and
+**Safe unattended, in this order,** each under Rule 10 and its playbook: Open work 2's follow-ups (the classifier merged after the checkpoint, #3168), then Open work 4 onward. **Waits for Sam, never merged or run by a session:** #3159 (his gallery marks applied; his to review and
 merge, COBIx's brief); the six re-clustering cases in `kb/status/mid_outcomes_compare_2026-11-12.md` (on `main`
 since #3165) want his rulings; the coverage notes to Malone and to MAP/ITPI (his send); analytics on public
 pages (his go); anything on the `CLAUDE.md` hold list. #2894 is his. [Open Asks Sheet 185](https://claude.ai/artifact/2PwwdsMScgRHsRirkZGDJc) is current (published 2026-11-12, store
@@ -78,7 +77,7 @@ plus `check_ledger`, `pages_size_guard` and the tab and nav inventory tests, and
 |---|---|---|
 | #3159 `claude/first-light-apply-marks-s642` | draft, head `27b5e0bb`, green `test` (*as reported*) | Sam's to review and merge |
 | #3165 `claude/mid-reclustering-step1-s642` | merged `a8eaec0b` 15:03Z, green `test`; COBIx verified the anon-key fix | done; his zero-row point is commons NEXT |
-| `claude/cer-proposal-titles-in-use-s642` | classifier worker; not finished at the checkpoint, no PR at 15:10Z | read its PR if one exists, else brief a fresh worker |
+| #3168 `claude/cer-proposal-titles-in-use-s642` | merged `98430524` at 16:04Z, after the checkpoint; one reader and COBIx reviewed it | Open work 2 |
 | First Light phase B | design on #3153 (comment 6826461825), waiting for COBIx's read | build at a quiet firing |
 | this checkpoint's PR `claude/checkpoint-s642` | open | merge on a green `test` |
 | #3157, #3158, #3160, #3162, #3164, #3166 | merged (below) | done |
@@ -151,10 +150,11 @@ Standing: a relayed ruling is confirmed; the sheet carries decisions, never asks
 
 1. **`commons` re-clustering NEXT:** (1) Sam's six rulings (Sheet 185 card 9); (2) price the model pass; (3) COBIx's
    optional point: the compare fails when a live read returns zero rows.
-2. **`cer-procedures` NEXT (5a), not finished at the checkpoint** (`claude/cer-proposal-titles-in-use-s642`, no PR at
-   15:10Z; read its PR if one exists, else brief a fresh worker from the branch and this line): the classifier proposes a title in use (statewide, then most used, same
-   issuer) and never an M-ID course title on an industry certification; its report counts the Proposed cards it
-   changes; review, then merge.
+2. **`cer-procedures` NEXT (5a), merged after the checkpoint (#3168, `98430524`, 16:04Z):** the proposal step takes a
+   same-issuer title in use before a new one and keeps a course title for credit by exam and college-issued exhibits;
+   63 of 177 held proposals changed, 38 flagged `needs_official_name`. Follow-ups: the 38 official names (a web search
+   each); Sam's read of the 30 Carpenters and 10 AUTO cards in `kb/status/cer_proposals_in_use_2026-11-12.md`;
+   COBIx's open point (`cbeCard` reads ids only). Confirm the next nightly run rebuilds `kb/exhibits_review.json` clean.
 3. **`sierra-page-redesign` NEXT:** (1) #3159 waits on Sam; (2) First Light phase B once COBIx reads the design, then
    the three pages read `hero_photos.json`.
 4. **`program-requirements-harvest` NEXT** (S641's lane; re-read it, it still lists (1)): (1) is done on `main` (#3155
