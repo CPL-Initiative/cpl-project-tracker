@@ -27,15 +27,13 @@ What this module does, for every rename and merge an apply makes:
     copy, so the file and the table agree;
   * undo_plan(), supabase_undo() and the undo ops put each value back from the planned lists, each guarded on the
     value and saver the re-point left, each filed from a read-back;
-  * repoint_only() re-runs both halves for an applied receipt (cred-rename-apply.yml's repoint_only input);
+  * history_moves() gives the apply every APPLIED rename, earlier applies included, each followed to the title live
+    now, so an apply re-points the machine values earlier applies left too, inside its own receipt;
   * old_titles_left() counts every old title still in kb/**/*.json as an exact JSON key or string value.
 
-  python3 kb/_cred_rename_repoint.py --repair kb/cred_rename_out/2026-11-12            # what would change
-  python3 kb/_cred_rename_repoint.py --repair kb/cred_rename_out/2026-11-12 --apply    # write files + receipt
-  python3 kb/_cred_rename_repoint.py --repoint-only kb/cred_rename_out/2026-11-12      # both halves (runner)
   python3 kb/_cred_rename_repoint.py --supabase kb/cred_rename_out/2026-11-12          # the kb_curation half
   python3 kb/_cred_rename_repoint.py --supabase-undo kb/cred_rename_out/2026-11-12     # take that half back
-  python3 kb/_cred_rename_repoint.py --undo kb/cred_rename_out/2026-10-01 [--apply]    # undo a repair's files
+  python3 kb/_cred_rename_repoint.py --undo kb/cred_rename_out/2026-10-01 [--apply]    # undo a receipt's re-points
   python3 kb/_cred_rename_repoint.py --count kb/cred_rename_out/2026-11-12             # write old_titles_left.json
   python3 kb/_cred_rename_repoint.py --count kb/cred_rename_out/2026-11-12 --check     # exit 1 when any is left
 
@@ -78,6 +76,9 @@ SPECS = (
     {"file": "kb/reference/map_cpl_opportunities_verified.json", "kind": "key", "container": "by_title",
      "writer": "kb/_verify_map_exhibit_links.py", "indent": 1,
      "why": "MAP's listed exhibit ids by common title; no workflow re-titles it after a rename"},
+    {"file": "kb/statewide_exhibit_categories.json", "kind": "key", "container": "titles", "scalar": True,
+     "writer": "kb/_seed_statewide_categories.py (an AI-assisted seed keyed by title)", "indent": 2,
+     "why": "each statewide title's program-area category; a re-run of its seed adds new titles and keeps old ones"},
     {"file": "kb/occupation_credential_map.json", "kind": "item", "container": "occupations", "list": "credentials",
      "field": "title", "reviewer": "curated_by", "indent": 1, "ascii": True, "newline": False,
      "why": "the curated occupation-to-credential rulings kb/_build_partner_crosswalk.py reads; each title must "
@@ -99,10 +100,20 @@ EXCLUDE_SEGMENT = re.compile(r"^(saved|\d{4}-\d{2}-\d{2}.*)$")
 EXCLUDE_SEGMENT_WHY = "a dated run folder or a saved/ receipt folder: a past run's record, kept as it was"
 # Lists that carry old titles on purpose: kb/credential_aliases.py load() output, each title's earlier names.
 ALIAS_SLOTS = {"kb/exhibits_related.json": "titles[*][5], the earlier titles kb/credential_aliases.py names"}
+# Fields that carry an earlier name on purpose, by file: the count never reads a value under them.
+EARLIER_NAME_FIELDS = {
+    "kb/it_ai_credential_catalog.json": ("formerly", "the vendor's earlier names of a credential, kept for search"),
+    "kb/reference/industry_credential_watch.json": ("formerly", "the earlier names the credential watch records"),
+    "kb/reference/cos_certifications.json": ("name", "CareerOneStop's own spelling of a certification, an outside "
+                                                    "catalog this repo never renames"),
+}
 
 
 def _is_alias_slot(rel, path):
-    return rel == "kb/exhibits_related.json" and len(path) >= 3 and path[0] == "titles" and path[2] == 5
+    if rel == "kb/exhibits_related.json" and len(path) >= 3 and path[0] == "titles" and path[2] == 5:
+        return True
+    f = EARLIER_NAME_FIELDS.get(rel)
+    return bool(f) and f[0] in path
 
 
 def _now():
@@ -160,7 +171,7 @@ def check_no_chain(moves):
                           "carries now (kb/credential_aliases.py moves) before re-pointing" % chain[0])
 
 
-def plan(moves, root=ROOT):
+def plan(moves, root=ROOT, origin=None):
     """moves: {old title: new title}, renames and merges together. Returns (changes, held_person_rows).
 
     A value or item change: {file, kind, key[, index], field, before, after, reviewer, reviewer_field[, via]}. A key
@@ -170,6 +181,16 @@ def plan(moves, root=ROOT):
     changes, held = [], []
     if root is None:
         return changes, held
+    changes, held = _plan(moves, root)
+    for c in changes + held:   # the apply whose rename retired the old title (history_moves)
+        old = c["before"] if c["kind"] != "key" else next((t for t, v in c["after"].items() if v is None), None)
+        if origin and old in origin:
+            c["from_apply"] = origin[old]
+    return changes, held
+
+
+def _plan(moves, root):
+    changes, held = [], []
     for spec in SPECS:
         doc = _read(root, spec["file"])
         if doc is None:
@@ -187,12 +208,15 @@ def plan(moves, root=ROOT):
                        "reviewer": e.get(rf) if rf else spec["writer"]}
                 if spec.get("mirror"):
                     row["via"] = VIA_KB_CURATION
-                if rf and rf not in e and spec.get("mirror"):
-                    # A copy written before the sync recorded the title's own saver: the live title row decides
-                    # (run_supabase), and the copy follows it at the re-read.
+                if rf and rf not in e and spec.get("mirror") and fold_issuer.is_bot(e.get("reviewed_by")):
+                    # A copy written before the sync recorded the title's own saver, whose newest saver is a bot:
+                    # the live title row decides (run_supabase), and the copy follows it at the re-read.
                     row["reviewer"] = None
                     row["saver"] = "not recorded in the copy; the live title row decides"
                     changes.append(row)
+                elif rf and rf not in e and spec.get("mirror"):
+                    held.append(dict(row, reviewer=e.get("reviewed_by"), why="the copy does not record who saved "
+                                     "the title, and its newest saver is %s; held" % (e.get("reviewed_by") or "no one")))
                 elif rf and not fold_issuer.is_bot(row["reviewer"]):
                     held.append(dict(row, why="%s saved this title; a rename never changes it, so it waits for a "
                                               "ruling" % (row["reviewer"] or "no saver named, so it")))
@@ -228,7 +252,17 @@ def plan(moves, root=ROOT):
                     by_target.setdefault(moves[old], []).append(old)
             for new, olds in sorted(by_target.items()):
                 before = {t: box.get(t) for t in [new] + olds}
-                merged = sorted({x for t in [new] + olds for x in (box.get(t) or [])})
+                if spec.get("scalar"):
+                    # One value per title: the target keeps its own; else every old title must agree on one.
+                    vals = {json.dumps(box[o], sort_keys=True) for o in olds}
+                    if new not in box and len(vals) > 1:
+                        held.append({"file": spec["file"], "kind": "key", "key": new, "before": before,
+                                     "after": before, "reviewer": spec["writer"], "reviewer_field": None,
+                                     "why": "the old titles carry different values; a person picks one"})
+                        continue
+                    merged = box[new] if new in box else box[olds[0]]
+                else:
+                    merged = sorted({x for t in [new] + olds for x in (box.get(t) or [])})
                 after = dict({o: None for o in olds}, **{new: merged})
                 changes.append({"file": spec["file"], "kind": "key", "key": new, "before": before, "after": after,
                                 "reviewer": spec["writer"], "reviewer_field": None})
@@ -285,7 +319,7 @@ def apply_changes(changes, root=ROOT):
                         box.pop(t, None)
                     else:
                         box[t] = v
-        if spec["kind"] == "key":
+        if spec["kind"] == "key" and not spec.get("scalar"):
             doc[spec["container"]] = dict(sorted(box.items()))
         _write(root, rel, doc, spec)
 
@@ -342,11 +376,6 @@ def receipts(folder):
         with open(os.path.join(folder, n), encoding="utf-8") as f:
             out.append(dict(json.load(f), _name=n))
     return out
-
-
-def _change_key(c):
-    return (c["file"], c["kind"], c["key"], c.get("index"), json.dumps(c.get("before"), sort_keys=True),
-            json.dumps(c.get("after"), sort_keys=True))
 
 
 def write_receipt(out_dir, moves, changes, held, root=ROOT, source="apply"):
@@ -540,6 +569,31 @@ def supabase_undo_ops(folder, skip_titles=()):
     return out
 
 
+def _back_state(o, cur):
+    """'back' (the old value under the saver the move kept), 'moved' (the new value under that saver), 'gone' or
+    'changed' (a person or another run saved the row since)."""
+    b = o["before"]
+    same = cur is not None and all(cur.get(k) == b.get(k) for k in ("reviewer_email", "reviewed_at"))
+    if cur is None:
+        return "gone"
+    if same and cur.get("value") == b.get("value"):
+        return "back"
+    if same and cur.get("value") == o["after"]:
+        return "moved"
+    return "changed"
+
+
+def live_drift(folder, skip_titles=(), rest_fn=None):
+    """Each moved row of the folder whose live row changed since the move (a person re-saved the title, or it is
+    gone), read-only: the full undo reads these BEFORE any file goes back, and holds each one's fold group."""
+    out = []
+    for o in supabase_undo_ops(folder, skip_titles):
+        st = _back_state(o, _live(o["course_id"], o["field"], rest_fn))
+        if st in ("changed", "gone"):
+            out.append(dict(o, title=o["after"], live=st))
+    return out
+
+
 def repoint_back(o, rest_fn=None):
     """Put one moved row back: read it; when it still holds the new title under the saver and save time the move
     kept, PATCH the old value back guarded on all three; then read it back and file what it holds. Returns
@@ -547,15 +601,7 @@ def repoint_back(o, rest_fn=None):
     rest_fn = rest_fn or rest
     b = o["before"]
     saver = {k: b.get(k) for k in ("reviewer_email", "reviewed_at")}
-
-    def state(cur):
-        if cur is None:
-            return "gone"
-        if cur.get("value") == b.get("value") and all(cur.get(k) == v for k, v in saver.items()):
-            return "back"
-        if cur.get("value") == o["after"] and all(cur.get(k) == v for k, v in saver.items()):
-            return "moved"
-        return "changed"
+    state = lambda cur: _back_state(o, cur)  # noqa: E731
     pre = state(_live(o["course_id"], o["field"], rest_fn))
     if pre == "back":
         return {"status": "already"}
@@ -590,64 +636,44 @@ def supabase_undo(folder, skip_titles=(), rest_fn=None, prefix="repoint_rollback
     return path, done
 
 
-# ── a receipt re-run (cred-rename-apply.yml repoint_only) ──────────────────────────────────────────────────────
+# ── every applied rename (the apply re-points what earlier applies left) ─────────────────────────────────────
 
-def applied_moves(folder, root=ROOT):
-    """The receipt's renames and merges, each resolved to the title it carries now through every applied snapshot
-    (kb/credential_aliases.py moves), so a re-point after a later rename lands on the current title. Refuses a folder
-    that does not exist, holds no alias_map.json, was never applied, did not land, or was undone."""
-    import credential_aliases
-    folder = os.path.normpath(folder)
-    out_root = os.path.normpath(os.path.join(root, "kb", "cred_rename_out"))
-    if os.path.dirname(os.path.abspath(folder)) != os.path.abspath(out_root):
-        raise SystemExit("%s is not a receipt folder under kb/cred_rename_out/" % folder)
-    snap_path = os.path.join(folder, "alias_map.json")
-    if not os.path.isdir(folder) or not os.path.isfile(snap_path):
-        raise SystemExit("%s holds no alias_map.json: no applied plan to re-point" % folder)
-    with open(snap_path, encoding="utf-8") as f:
-        snap = json.load(f)
-    if not snap.get("_applied_at"):
-        raise SystemExit("%s was never applied (no _applied_at): nothing to re-point" % folder)
-    for marker in ("apply_failed.json", "undone.json"):
-        if os.path.exists(os.path.join(folder, marker)):
-            raise SystemExit("%s holds %s: its apply is not on main, so nothing is re-pointed" % (folder, marker))
-    now = credential_aliases.moves(root)
-    renames, merges = snap.get("renames") or {}, snap.get("merges") or {}
-    if not renames and not merges:
-        raise SystemExit("%s holds no renames or merges" % folder)
-    res = lambda o, n: (now.get(o) or {}).get("now") or n  # noqa: E731
-    return {o: res(o, n) for o, n in renames.items()}, {o: res(o, n) for o, n in merges.items()}
+def _applied_order(name, snap):
+    m = re.match(r"^(\d{4}-\d{2}-\d{2})(?:-(\d+))?$", name)
+    return (snap.get("_applied_at") or "", m.group(1) if m else name, int(m.group(2) or 1) if m else 0)
 
 
-def file_half(folder, root=ROOT, source="repair", write=True):
-    """Plan and write the file re-points for an applied receipt, and file a receipt when the plan holds anything an
-    earlier receipt in the folder does not. Returns (changes, held, receipt path or None, filed rows)."""
-    renames, merges = applied_moves(folder, root)
-    moves = dict(renames, **merges)
-    changes, held = plan(moves, root)
-    known = {_change_key(c) for d in receipts(folder) for c in (d.get("planned") or []) + (
-        d.get("held_person_rows") or [])}
-    new = [c for c in changes + held if _change_key(c) not in known]
-    if not write or not new:
-        return changes, held, None, filed(changes, root)
-    apply_changes(changes, root)
-    path, rows = write_receipt(folder, moves, changes, held, root, source=source)
-    return changes, held, path, rows
-
-
-def repoint_only(folder, root=ROOT, rest_fn=None):
-    """The repoint_only run: the file half (a no-op when applied), then the kb_curation half for every planned row
-    move. Never runs the rename itself. Returns an exit code."""
-    changes, held, path, rows = file_half(folder, root, source="repoint_only")
-    print("[cred_rename_repoint] repoint_only %s: %d change(s), %d held, receipt %s"
-          % (folder, len(changes), len(held), path or "none (nothing new)"))
-    bad = not_landed(rows)
-    for c in bad:
-        print("::error title=Re-point did not land::%s %s filed %s" % (c["file"], c["key"], c["filed"]))
-    log, ops = run_supabase(folder, rest_fn)
-    for o in ops:
-        print("  %s %s: %s" % (o["status"], o["course_id"], o.get("why") or o.get("filed") or ""))
-    return 1 if bad or any(o["status"] == "fail" for o in ops) else 0
+def history_moves(out_root, current=None, live=None):
+    """{old title: title it carries now} for every APPLIED rename and merge, and {old title: the receipt folder of the
+    apply that retired it}. A receipt counts when its alias_map.json has _applied_at and it holds neither undone.json
+    nor apply_failed.json; receipts are taken in the order they were applied (_applied_at, then date and same-day
+    number, never the folder name's string order), then `current` (this apply's moves) on top. Each chain is followed
+    to its end. live: the credential keys after this apply; an old title that is live again, or a target that is not
+    live, is left out, so a value never moves onto a title no credential carries."""
+    snaps = []
+    for name in os.listdir(out_root) if os.path.isdir(out_root) else []:
+        folder = os.path.join(out_root, name)
+        path = os.path.join(folder, "alias_map.json")
+        if not os.path.isfile(path) or any(os.path.exists(os.path.join(folder, m))
+                                           for m in ("undone.json", "apply_failed.json")):
+            continue
+        with open(path, encoding="utf-8") as f:
+            snap = json.load(f)
+        if snap.get("_applied_at"):
+            snaps.append((_applied_order(name, snap), name, snap))
+    steps = [(name, dict(snap.get("renames") or {}, **(snap.get("merges") or {}))) for _, name, snap in sorted(snaps)]
+    if current:
+        steps.append(("this apply", dict(current)))
+    now, origin = {}, {}
+    for name, step in steps:
+        step = {o: n for o, n in step.items() if o and n and o != n}
+        for o in now:
+            if now[o] in step:
+                now[o] = step[now[o]]
+        for o, n in step.items():
+            now[o], origin[o] = n, name
+    out = {o: n for o, n in now.items() if o != n and (live is None or (n in live and o not in live))}
+    return out, {o: origin[o] for o in out}
 
 
 # ── the count ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -771,7 +797,8 @@ def old_titles_left(renames, merges, root=ROOT, virtual=None, skip=None):
             left.append({"location": _loc(rel, path), "title": title, "as": how})
     return {"count": len(left), "scope": COUNT_SCOPE, "locations": left, "kept": kept,
             "alias_entries_skipped": alias_skipped,
-            "excluded": dict(EXCLUDE_DIRS, **{"<dated or saved/ folder>": EXCLUDE_SEGMENT_WHY}, **ALIAS_SLOTS),
+            "excluded": dict(EXCLUDE_DIRS, **{"<dated or saved/ folder>": EXCLUDE_SEGMENT_WHY}, **ALIAS_SLOTS,
+                             **{"%s: %s" % (r, f): why for r, (f, why) in EARLIER_NAME_FIELDS.items()}),
             "not_counted_here": skip, "at": _now()}
 
 
@@ -858,8 +885,6 @@ def _print_plan(changes, held):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     g = ap.add_mutually_exclusive_group(required=True)
-    g.add_argument("--repair", metavar="RECEIPT", help="re-point what an applied rename left (dry run unless --apply)")
-    g.add_argument("--repoint-only", metavar="RECEIPT", help="the file half, then the kb_curation half (a runner)")
     g.add_argument("--supabase", metavar="RECEIPT", help="move the planned assignments' kb_curation rows")
     g.add_argument("--supabase-undo", metavar="RECEIPT", help="put the receipt's moved kb_curation rows back")
     g.add_argument("--undo", metavar="RECEIPT", help="put a receipt's re-pointed file values back (dry run unless "
@@ -870,21 +895,6 @@ def main(argv=None):
     ap.add_argument("--check", action="store_true")
     ap.add_argument("--root", default=ROOT)
     a = ap.parse_args(argv)
-    if a.repair:
-        changes, held, path, rows = file_half(a.repair, a.root, source="repair", write=a.apply)
-        _print_plan(changes, held)
-        print("[cred_rename_repoint] %d change(s), %d held%s" % (len(changes), len(held), "" if a.apply else
-                                                                  " (dry run; --apply writes)"))
-        if path:
-            print("  receipt: %s" % path)
-        bad = not_landed(rows) if a.apply else []
-        for c in bad:
-            print("::error title=Re-point did not land::%s %s filed %s" % (c["file"], c["key"], c["filed"]))
-        return 1 if bad else 0
-    if a.repoint_only:
-        if not KEY:
-            sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
-        return repoint_only(a.repoint_only, a.root)
     if a.supabase:
         if not KEY:
             sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")

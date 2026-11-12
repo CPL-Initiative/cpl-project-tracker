@@ -415,9 +415,17 @@ def main(argv=None):
     # since is drift, and holds its fold group whole like any other value.
     rp_root = repoint.root_of(CREDENTIALS)
     rp_todo, rp_drift, rp_absent = repoint.undo_plan(a.receipt, rp_root)
+    # Each saved assignment the apply moved through kb_curation, read live BEFORE any file goes back: a row a person
+    # re-saved since is drift, and holds its fold group like a file value would.
+    live = repoint.live_drift(a.receipt, rest_fn=lambda m, p, body=None: rest(m, p, body)) if KEY else []
+    if not KEY and repoint.supabase_undo_ops(a.receipt):
+        print("  the moved kb_curation rows were not read (no SUPABASE_SERVICE_KEY); a person's re-save is not checked")
     changes, drift, skipped = plan_undo(undo, creds, ut, arts, resolutions_of(snapshot),
-                                        {repoint.undo_title(c) for c in rp_drift})
+                                        {repoint.undo_title(c) for c in rp_drift} | {x["title"] for x in live})
     drift += [{"file": c["file"], "key": c["key"], "after": repoint.undo_title(c)} for c in rp_drift]
+    drift += [{"file": "kb_curation", "key": x["course_id"], "after": x["title"],
+               "held": "the live row changed since the move (%s): a person's re-save holds the group" % x["live"]}
+              for x in live]
     rp_back = [repoint.reverse(c) for c in rp_todo if repoint.undo_title(c) not in skipped]
     for c in rp_absent:
         print(f"  not in this tree, left: {c['file']} {c['key']}")

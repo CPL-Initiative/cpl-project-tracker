@@ -523,7 +523,12 @@ def main():
     results["coci_articulations.json"] = art_res
     # The saved assignments and title-keyed files still on an old title (kb/_cred_rename_repoint.py): a bot's row moves
     # with the rename, a person's is held for a ruling and never changed. The files beside CREDENTIALS only.
-    rp_changes, rp_held = repoint.plan(combined, rp_root)
+    # Every APPLIED rename, earlier applies' included, each followed to the title live now, so this apply re-points
+    # the machine values an earlier apply left too (each change names the apply it comes from, from_apply).
+    with open(CREDENTIALS, encoding="utf-8") as f:
+        live_keys = set(json.load(f))
+    rp_moves, rp_origin = repoint.history_moves(OUT_ROOT, combined, live_keys)
+    rp_changes, rp_held = repoint.plan(rp_moves, rp_root, rp_origin)
     repoint.apply_changes(rp_changes, rp_root)
     print(f"  saved assignments:       re-pointed={len(rp_changes)}, held (a person's row)={len(rp_held)}")
     for h in rp_held:
@@ -588,7 +593,7 @@ def main():
     undo["fold_id"] = fold_id
     out_dir = write_snapshot(alias_doc, results, undo, issuer_plan, out_dir, resolution_rows)
     # repoint.json: the planned re-points (the undo's input), each filed from a fresh read of its file.
-    _, rp_filed = repoint.write_receipt(out_dir, combined, rp_changes, rp_held, rp_root)
+    _, rp_filed = repoint.write_receipt(out_dir, rp_moves, rp_changes, rp_held, rp_root)
     print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md, repoint.json}}")
     if os.environ.get("GITHUB_OUTPUT"):  # the workflow's failure step rolls back this receipt's rows
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:

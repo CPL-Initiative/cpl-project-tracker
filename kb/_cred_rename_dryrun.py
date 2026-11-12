@@ -67,6 +67,7 @@ UNIFIED_TITLES = os.path.join(HERE, "unified_titles.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 ARTICULATIONS = os.path.join(HERE, "coci_articulations.json")
 OUT_DIR = os.path.join(HERE, "cred_rename_dryrun")
+OUT_ROOT = os.path.join(HERE, "cred_rename_out")   # the applied receipts the re-point preview follows
 
 TODAY = date.today().isoformat()
 NOW_ISO = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -358,7 +359,11 @@ def main(argv=None):
     # hold, and the old titles it would leave under kb/ (the apply's own count after its writes reads the same way).
     rp_root = repoint.root_of(CREDENTIALS)
     try:
-        rp_changes, rp_held = repoint.plan(dict(renames_clean, **merges_confirmed), rp_root)
+        # Every applied rename too (kb/_cred_rename_repoint.py history_moves), so the preview shows the machine values
+        # earlier applies left, each with the apply it comes from (from_apply).
+        rp_live = (set(credentials) - set(renames_clean) - set(merges_confirmed)) | set(renames_clean.values())
+        rp_moves, rp_origin = repoint.history_moves(OUT_ROOT, dict(renames_clean, **merges_confirmed), rp_live)
+        rp_changes, rp_held = repoint.plan(rp_moves, rp_root, rp_origin)
         would_leave = repoint.predict_left(renames_clean, merges_confirmed, rp_root)
         rp_chain = None
     except repoint.RenameChain as e:  # the apply would stop before writing; so does apply_safe below

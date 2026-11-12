@@ -17,7 +17,10 @@ applies each request's own eq filters:
   5. the kb_curation half: a lost PATCH response files landed from a read; a guard that misses files fail; a row
      already on the new title is filed and not written; the take-back and the undo read each row back, newest log
      first, and leave a row a person changed;
-  6. repoint_only refuses a folder that does not exist, sits outside kb/cred_rename_out/, or holds no applied plan;
+  6. the apply re-points what EARLIER applies left: every applied receipt in applied order (a same-day -2 after the
+     first, by _applied_at), an undone or failed one skipped, each chain followed to the title live now; the full
+     undo stops on a moved assignment a person re-saved, read live before any file goes back; the nightly sync
+     records the title's own saver;
   7. the old-title count, its --check, and the dry run's prediction;
   8. the workflow: the dashboard job alone holds actions: write, runs only after a push, fails on a failed lookup or
      dispatch; the apply's take-back reverses the row moves; a no-op run never fails on a missing count.
@@ -54,6 +57,7 @@ SUPER = OLD + ", C"   # a different title that holds OLD as a substring
 RAW = "Widget A and B"
 BOT_RAW, PERSON_RAW, NOREV_RAW, LEGACY_RAW = ("Widget A + B (bot)", "Widget AB (a person's title)",
                                               "Widget AB (no saver)", "Widget AB (copy before the saver field)")
+LEGACY_PERSON_RAW = "Widget AB (old copy, a person's)"
 BOT, BOT2, PERSON, SAM = "cer-procedure-classifier@bot", "fold-issuer@bot", "map@rccd.edu", "slee@cccco.edu"
 FAMILY = "Widget Certificate Bundles"
 T1 = "2026-10-31T14:01:01+00:00"
@@ -88,6 +92,7 @@ def tree(root, person=True):
         a[PERSON_RAW] = {"unified_title": OLD, "reviewed_by": BOT2, "reviewed_at": "2026-11-01T00:00:00+00:00",
                          "title_reviewed_by": PERSON, "title_reviewed_at": "2026-06-02T18:00:00+00:00"}
         a[NOREV_RAW] = {"unified_title": OLD, "reviewed_by": BOT2, "title_reviewed_by": None}
+        a[LEGACY_PERSON_RAW] = {"unified_title": OLD, "reviewed_by": PERSON}   # old shape, a person's newest save
     write(os.path.join(kb, "unclassified_assignments.json"), {"assignments": a, "sweep_kept": {}})
     write(os.path.join(kb, "cer_classified.json"), {"records": {BOT_RAW: {"raw_title": BOT_RAW, "unified_title": OLD},
                                                                 "Widget ABC": {"unified_title": SUPER}}})
@@ -129,6 +134,7 @@ def point(kb):
     dry.FAMILIES = app.FAMILIES = os.path.join(kb, "reference", "credential_families.json")
     dry.PLANS_DIR = app.PLANS_DIR = os.path.join(kb, "cred_rename_plans")
     dry.OUT_DIR = app.DRYRUN_OUT = os.path.join(kb, "cred_rename_dryrun")
+    dry.OUT_ROOT = os.path.join(kb, "cred_rename_out")
     app.ALIAS_PATH = os.path.join(dry.OUT_DIR, "alias_map.json")
     app.OUT_ROOT = os.path.join(kb, "cred_rename_out")
     undo.KEY = None
@@ -209,8 +215,9 @@ try:
         ("kb/cer_classified.json", BOT_RAW), ("kb/reference/map_cpl_opportunities_verified.json", NEW),
         ("kb/occupation_credential_map.json", "widget tech")]), pc)
     ph = sorted((h["file"], h["key"]) for h in prev.get("held_person_rows") or [])
-    check("dry run: previews the four held rows", ph == sorted([
+    check("dry run: previews the five held rows", ph == sorted([
         ("kb/unclassified_assignments.json", PERSON_RAW), ("kb/unclassified_assignments.json", NOREV_RAW),
+        ("kb/unclassified_assignments.json", LEGACY_PERSON_RAW),
         ("kb/occupation_credential_map.json", "widget lead"), ("kb/occupation_credential_map.json", "widget twin")]),
           ph)
     predicted = am.get("would_leave_old_titles") or {}
@@ -270,6 +277,7 @@ try:
     left = rp.old_titles_left({OLD: NEW}, {}, root)
     locs = sorted(x["location"] for x in left["locations"])
     want = sorted(["kb/unclassified_assignments.json:/assignments/%s/unified_title" % PERSON_RAW,
+                   "kb/unclassified_assignments.json:/assignments/%s/unified_title" % LEGACY_PERSON_RAW,
                    "kb/unclassified_assignments.json:/assignments/%s/unified_title" % NOREV_RAW,
                    "kb/occupation_credential_map.json:/occupations/widget lead/credentials[0]/title",
                    "kb/occupation_credential_map.json:/occupations/widget twin/credentials[0]/title"])
@@ -374,22 +382,105 @@ try:
         chained = True
     check("plan: a rename chain stops the plan before anything is written", chained)
 
-    # ── 6: repoint_only refusals ────────────────────────────────────────────────────────────────────────────────
-    out_root = os.path.join(kbc, "cred_rename_out")
-    write(os.path.join(out_root, "not-applied", "alias_map.json"), {"renames": {OLD: NEW}})
-    write(os.path.join(out_root, "failed", "alias_map.json"), {"renames": {OLD: NEW}, "_applied_at": "x"})
-    write(os.path.join(out_root, "failed", "apply_failed.json"), {})
-    write(os.path.join(tmp, "elsewhere", "alias_map.json"), {"renames": {OLD: NEW}, "_applied_at": "x"})
-    os.makedirs(os.path.join(out_root, "empty"))
-    rpo = lambda f: rp.repoint_only(f, clean, Fake({}))  # noqa: E731
-    check("repoint_only: refuses a folder that does not exist", refused(rpo, os.path.join(out_root, "nope")))
-    check("repoint_only: refuses a folder outside kb/cred_rename_out/", refused(rpo, os.path.join(tmp, "elsewhere")))
-    check("repoint_only: refuses a folder with no alias map", refused(rpo, os.path.join(out_root, "empty")))
-    check("repoint_only: refuses a plan never applied", refused(rpo, os.path.join(out_root, "not-applied")))
-    check("repoint_only: refuses an apply that did not land", refused(rpo, os.path.join(out_root, "failed")))
-    write(os.path.join(rcpt, "undone.json"), {})
-    check("repoint_only: refuses an apply that was undone", refused(rpo, rcpt))
-    os.remove(os.path.join(rcpt, "undone.json"))
+    # ── 6: every applied rename, in applied order ──────────────────────────────────────────────────────────────
+    hist = os.path.join(tmp, "hist")
+    write(os.path.join(hist, "2026-11-12-2", "alias_map.json"), {"renames": {"B": "C"},
+                                                                 "_applied_at": "2026-11-12T09:00:00Z"})
+    write(os.path.join(hist, "2026-11-12", "alias_map.json"), {"renames": {"A": "B"}, "_applied_at": "2026-11-12T01:00:00Z"})
+    write(os.path.join(hist, "2026-10-01", "alias_map.json"), {"renames": {"Q": "R"}, "_applied_at": "2026-10-01T22:00:00Z"})
+    write(os.path.join(hist, "2026-11-13", "alias_map.json"), {"renames": {"R": "S"}, "_applied_at": "2026-11-13T01:00:00Z"})
+    write(os.path.join(hist, "2026-11-13", "undone.json"), {})
+    write(os.path.join(hist, "2026-11-14", "alias_map.json"), {"renames": {"C": "D"}, "_applied_at": "x"})
+    write(os.path.join(hist, "2026-11-14", "apply_failed.json"), {})
+    write(os.path.join(hist, "2026-11-15", "alias_map.json"), {"renames": {"C": "E"}})   # never applied
+    hm, ho = rp.history_moves(hist)
+    check("history: two applies on one day resolve in applied order (the -2 folder after the first)",
+          hm.get("A") == "C" and hm.get("B") == "C" and ho.get("A") == "2026-11-12", hm)
+    write(os.path.join(hist, "2026-11-12-10", "alias_map.json"), {"renames": {"C": "D"},
+                                                                  "_applied_at": "2026-11-12T20:00:00Z"})
+    hm10, _ = rp.history_moves(hist)
+    check("history: a tenth same-day apply follows the second (applied time, never the folder name's order)",
+          hm10.get("A") == "D" and hm10.get("B") == "D", hm10)
+    shutil.rmtree(os.path.join(hist, "2026-11-12-10"))
+    check("history: an undone, a failed and a never-applied receipt are skipped", hm.get("Q") == "R"
+          and "R" not in hm and hm.get("A") == "C", hm)
+    hm2, _ = rp.history_moves(hist, {"C": "Z"}, live={"Z", "R"})
+    check("history: this apply's moves go on top, each chain lands on the title live now",
+          hm2 == {"A": "Z", "B": "Z", "C": "Z", "Q": "R"}, hm2)
+    hm3, _ = rp.history_moves(hist, None, live={"R", "B"})
+    check("history: a target not live, or an old title live again, is left out", hm3 == {"Q": "R"}, hm3)
+
+    # The apply carries an earlier apply's residue, in its own receipt, naming the apply it comes from.
+    point(kbc)
+    write(os.path.join(kbc, "cred_rename_out", "2026-01-02", "alias_map.json"),
+          {"renames": {"Gadget Old": "Other"}, "_applied_at": "2026-01-02T00:00:00Z"})
+    d = read(os.path.join(kbc, "cer_classified.json"))
+    d["records"]["Gadget raw"] = {"unified_title": "Gadget Old"}
+    write(os.path.join(kbc, "cer_classified.json"), d)
+    d = read(os.path.join(kbc, "credentials.json"))
+    d["Widget Two"] = [{"issuing_agency": "Widget Board"}]
+    write(os.path.join(kbc, "credentials.json"), d)
+    d = read(os.path.join(kbc, "unified_titles.json"))
+    d["Widget two raw"] = {"unified_title": "Widget Two", "reviewed_by": BOT}
+    write(os.path.join(kbc, "unified_titles.json"), d)
+    write(os.path.join(kbc, "credential_review_overlay.json"), {"overrides": {"Widget Two": {
+        "unified_title_override": "Widget Two B", "reviewed_by": SAM, "reviewed_at": "2026-11-11T15:00:00+00:00",
+        "field_reviews": {"unified_title_override": {"by": SAM, "at": "2026-11-11T15:00:00+00:00"}}}}})
+    quiet(dry.main)
+    dprev = read(os.path.join(dry.OUT_DIR, "alias_map.json"))["repoint_preview"]["changes"]
+    check("dry run: the preview shows an earlier apply's residue with the apply it comes from",
+          any(c["key"] == "Gadget raw" and c.get("from_apply") == "2026-01-02" for c in dprev), dprev)
+    quiet(app.main)
+    newest = sorted(n for n in os.listdir(os.path.join(kbc, "cred_rename_out")) if n.startswith("20"))[-1]
+    rr = read(os.path.join(kbc, "cred_rename_out", newest, "repoint.json"))
+    check("apply: an earlier apply's machine value is re-pointed in this apply's receipt",
+          read(os.path.join(kbc, "cer_classified.json"))["records"]["Gadget raw"]["unified_title"] == "Other"
+          and any(c["key"] == "Gadget raw" and c.get("from_apply") == "2026-01-02" for c in rr["planned"]),
+          rr["planned"])
+
+    # The full undo reads a moved assignment's live row before any file goes back.
+    fu = Fake({U(BOT_RAW): {"value": OLD, "reviewer_email": BOT, "reviewed_at": T1},
+               U(LEGACY_RAW): {"value": OLD, "reviewer_email": BOT, "reviewed_at": T1}})
+    rp.run_supabase(rcpt, fu)
+    fu.rows[U(BOT_RAW)].update(reviewer_email=PERSON, reviewed_at="2026-11-13T00:00:00+00:00")  # a person re-saves
+    undo.KEY = "test"
+    undo.rest = fu
+    d = read(p)
+    d["occupations"]["widget tech"]["curated_by"] = "skywalker-s120@bot"
+    write(p, d)
+    check("full undo: a moved assignment a person re-saved stops the undo before any file goes back",
+          refused(undo.main, [rcpt, "--apply"]) and NEW in read(os.path.join(kbc, "credentials.json"))
+          and fu.rows[U(BOT_RAW)]["value"] == NEW)
+    quiet(undo.main, [rcpt, "--apply", "--force"])
+    check("full undo --force: that fold group stays whole, the person's row as they saved it",
+          NEW in read(os.path.join(kbc, "credentials.json")) and fu.rows[U(BOT_RAW)]["value"] == NEW
+          and fu.rows[U(LEGACY_RAW)]["value"] == NEW, fu.rows)
+    undo.KEY = None
+
+    # The nightly sync records the title's own saver, whatever field a later save touched.
+    import _apply_unclassified_triage as tri
+    asg, _, _, _ = tri.build_assignments([
+        {"course_id": rp.UNCLASS + "R1", "field": "unified_title_assignment", "value": NEW, "reviewer_email": PERSON,
+         "reviewed_at": "2026-06-01T00:00:00+00:00"},
+        {"course_id": rp.UNCLASS + "R1", "field": "issuing_agency_assignment", "value": "Widget Board",
+         "reviewer_email": BOT, "reviewed_at": "2026-11-01T00:00:00+00:00"}])
+    check("sync: title_reviewed_by is the title row's saver, reviewed_by the newest of any field",
+          asg["R1"]["title_reviewed_by"] == PERSON and asg["R1"]["title_reviewed_at"] == "2026-06-01T00:00:00+00:00"
+          and asg["R1"]["reviewed_by"] == BOT, asg)
+
+    # A scalar title-keyed file moves its value; old titles with different values wait for a person.
+    sc = os.path.join(tmp, "sc")
+    write(os.path.join(sc, "kb", "statewide_exhibit_categories.json"), {"titles": {"O1": "Cat A", "O2": "Cat B",
+                                                                                   "O3": "Cat C", "N3": "Cat D"}})
+    ch, hl = rp.plan({"O1": "N1", "O2": "N2a", "O3": "N3"}, sc)
+    rp.apply_changes(ch, sc)
+    check("scalar keys: a value moves to an absent new title; a present one keeps its own",
+          read(os.path.join(sc, "kb", "statewide_exhibit_categories.json"))["titles"]
+          == {"N1": "Cat A", "N2a": "Cat B", "N3": "Cat D"} and not hl)
+    write(os.path.join(sc, "kb", "statewide_exhibit_categories.json"), {"titles": {"O1": "Cat A", "O2": "Cat B"}})
+    ch2, hl2 = rp.plan({"O1": "N9", "O2": "N9"}, sc)
+    check("scalar keys: two old titles with different values onto one new title are held",
+          not ch2 and len(hl2) == 1 and "different" in hl2[0]["why"], (ch2, hl2))
 
     # ── 7: the count and --check ────────────────────────────────────────────────────────────────────────────────
     lean = os.path.join(tmp, "lean")
@@ -400,12 +491,7 @@ try:
     lr = os.path.join(kbl, "cred_rename_out", sorted(os.listdir(os.path.join(kbl, "cred_rename_out")))[0])
     fk = Fake({U(BOT_RAW): {"value": OLD, "reviewer_email": BOT, "reviewed_at": T1},
                U(LEGACY_RAW): {"value": OLD, "reviewer_email": BOT, "reviewed_at": T1}})
-    code = quiet(rp.repoint_only, lr, lean, fk)
-    check("repoint_only: an applied receipt re-runs both halves, the file half a no-op, the rows moved",
-          code == 0 and fk.rows[U(BOT_RAW)]["value"] == NEW and fk.rows[U(LEGACY_RAW)]["value"] == NEW
-          and sorted(n for n in os.listdir(lr) if n.startswith("repoint")) == ["repoint.json",
-                                                                               "repoint_supabase_log.json"],
-          sorted(os.listdir(lr)))
+    rp.run_supabase(lr, fk)
     d = read(os.path.join(kbl, "unclassified_assignments.json"))
     for raw in (BOT_RAW, LEGACY_RAW):
         d["assignments"][raw]["unified_title"] = fk.rows[U(raw)]["value"]
@@ -417,6 +503,10 @@ try:
     code2 = quiet(rp.main, ["--count", lr, "--check"])
     check("count: --count writes the receipt and --check passes at 0", code == 0 and code2 == 0)
     check("count: --check with no receipt (a no-op run) passes", quiet(rp.main, ["--count", "", "--check"]) == 0)
+    write(os.path.join(kbl, "it_ai_credential_catalog.json"), {"credentials": [{"title": NEW, "formerly": [OLD]}]})
+    write(os.path.join(kbl, "reference", "cos_certifications.json"), {"certifications": [{"name": OLD}]})
+    check("count: a field that keeps an earlier name on purpose (formerly, an outside catalog's name) is not left",
+          rp.old_titles_left({OLD: NEW}, {}, lean)["count"] == 0, rp.old_titles_left({OLD: NEW}, {}, lean)["locations"])
     write(os.path.join(kbl, "planted.json"), {"note": {"title": OLD}})
     write(os.path.join(kbl, "somewhere", "2026-11-12", "report.json"), {"t": OLD})
     write(os.path.join(kbl, "cer_procedures_out", "saved", "saved_x.json"), {"t": OLD})
@@ -429,7 +519,7 @@ try:
     left = rp.old_titles_left({OLD: NEW}, {}, lean)
     locs = sorted(x["location"] for x in left["locations"])
     check("count: finds planted titles (ASCII escapes too), skips receipt, dated, saved/ folders and the alias slot",
-          locs == ["kb/ascii.json:/t", "kb/planted.json:/note/title"] and left["alias_entries_skipped"] == 1, locs)
+          locs == ["kb/ascii.json:/t", "kb/planted.json:/note/title"] and left["alias_entries_skipped"] == 3, locs)
     check("count: a person's fold into a family title is kept, not left",
           [k["location"] for k in left["kept"]] == ["kb/credential_review_overlay.json:/overrides/%s" % OLD], left)
     quiet(rp.main, ["--count", lr, "--root", lean])
@@ -468,21 +558,21 @@ steps = jobs["apply"]["steps"]
 names = [s.get("name") for s in steps]
 commit_i = names.index("Commit + push")
 crun = steps[commit_i]["run"]
-check("workflow: the dispatch is its own job, needing the jobs that push, run only once one pushed",
-      set(jobs["dashboard"]["needs"]) == {"apply", "repoint"}
-      and "needs.apply.outputs.pushed == 'true'" in jobs["dashboard"]["if"]
-      and "needs.repoint.outputs.pushed == 'true'" in jobs["dashboard"]["if"]
+check("workflow: the dispatch is its own job, needing the apply, run only once it pushed",
+      jobs["dashboard"]["needs"] == ["apply"] and "needs.apply.outputs.pushed == 'true'" in jobs["dashboard"]["if"]
       and jobs["apply"]["outputs"]["pushed"] == "${{ steps.commit.outputs.pushed }}")
 check("workflow: only the dashboard job holds actions: write, and its checkout keeps no token",
       jobs["dashboard"]["permissions"].get("actions") == "write"
-      and all("actions" not in (jobs[j].get("permissions") or {}) for j in ("apply", "repoint"))
+      and "actions" not in (jobs["apply"].get("permissions") or {})
       and jobs["dashboard"]["steps"][0]["with"].get("persist-credentials") is False)
 drun = jobs["dashboard"]["steps"][1]["run"]
 check("workflow: the dispatch fails on a failed lookup or a failed dispatch, and on another workflow's pending run",
-      "set -euo pipefail" in drun and "if ! n=$(gh run list" in drun
+      "set -euo pipefail" in drun and "if ! events=$(gh run list" in drun
       and "if ! gh workflow run daily-dashboard.yml --ref main" in drun and drun.count("exit 1") >= 3)
-check("workflow: the dispatch is not in the apply job", not any("gh workflow run" in (s.get("run") or "")
-                                                               for j in ("apply", "repoint") for s in jobs[j]["steps"]))
+check("workflow: the dispatch is not in the apply job",
+      not any("gh workflow run" in (s.get("run") or "") for s in jobs["apply"]["steps"]))
+check("workflow: a pending scheduled dashboard run does not stand in for a dispatch; a dispatched one does",
+      "--json status,event" in drun and '*" workflow_dispatch "*) ' in drun and "dispatch over it" in drun)
 check("workflow: the commit step sets pushed only after a push succeeded, never on a no-op",
       crun.index('echo "pushed=true"') > crun.index("if git push origin HEAD:main; then")
       and crun.index('echo "pushed=true"') > crun.index("No changes to commit"))
@@ -502,15 +592,12 @@ check("workflow: the count runs before the commit, and the commit carries the re
                                   "kb/occupation_credential_map.json",
                                   "kb/reference/map_cpl_opportunities_verified.json", "kb/exhibits_related.json")))
 inp = (wf.get(True) or wf.get("on"))["workflow_dispatch"]["inputs"]
-rsteps = jobs["repoint"]["steps"]
-check("workflow: repoint_only is an input; its job runs --repoint-only, commits the log, then the count",
-      "repoint_only" in inp and jobs["repoint"]["if"] == "inputs.repoint_only != ''"
-      and jobs["apply"]["if"] == "inputs.repoint_only == ''"
-      and any("--repoint-only" in (s.get("run") or "") for s in rsteps)
-      and "--check" in rsteps[-1]["run"] and "pushed=true" in next(s["run"] for s in rsteps if s.get("id") == "commit"))
-check("workflow: both writing jobs hold the daily-dashboard group and never cancel a running job",
-      all(jobs[j]["concurrency"] == {"group": "daily-dashboard", "cancel-in-progress": False}
-          for j in ("apply", "repoint")) and "concurrency" not in wf)
+check("workflow: one write path: no repoint_only input, no repoint job", set(inp) == {"only_plan"}
+      and set(jobs) == {"apply", "dashboard"} and "if" not in jobs["apply"])
+check("workflow: the apply holds the daily-dashboard group and never cancels a running job",
+      jobs["apply"]["concurrency"] == {"group": "daily-dashboard", "cancel-in-progress": False} and "concurrency" not in wf)
+check("workflow: the commit carries the re-keyed statewide categories",
+      "kb/statewide_exhibit_categories.json" in crun)
 dash = yaml.safe_load(open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8"))
 gate = dash["jobs"]["gate"]["steps"][0]["run"]
 check("dashboard: the gate runs every non-scheduled event, so the dispatched run is never skipped",

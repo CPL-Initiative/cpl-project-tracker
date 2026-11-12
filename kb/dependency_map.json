@@ -9007,7 +9007,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 89
     }
    ],
    "served": false,
@@ -10710,7 +10710,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 73
     }
    ],
    "producers": [
@@ -11072,7 +11072,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 807
+     "line": 834
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -13659,7 +13659,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 126
+     "line": 121
     }
    ],
    "producers": [
@@ -13906,7 +13906,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 60
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -14047,7 +14047,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 794
+     "line": 821
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -15504,7 +15504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 101
+     "line": 102
     }
    ],
    "producers": [
@@ -15983,6 +15983,13 @@
      "direction": "write",
      "how": "literal",
      "line": 73
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 105
     }
    ],
    "served": true,
@@ -16259,7 +16266,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 82
     }
    ],
    "producers": [
@@ -17725,6 +17732,13 @@
      "line": 67
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 107
+    },
+    {
      "id": "script:kb/_match_cos_authority.py",
      "kind": "script",
      "direction": "read",
@@ -17873,7 +17887,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 61
     },
     {
      "id": "script:kb/_family_tag_plan.py",
@@ -17988,6 +18002,13 @@
      "line": 69
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 106
+    },
+    {
      "id": "script:kb/_diff_credential_watch.py",
      "kind": "script",
      "direction": "read",
@@ -18062,7 +18083,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 76
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -18520,7 +18541,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 781
+     "line": 808
     }
    ],
    "producers": [
@@ -18655,6 +18676,13 @@
      "line": 142
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 79
+    },
+    {
      "id": "script:kb/_seed_statewide_categories.py",
      "kind": "script",
      "direction": "read",
@@ -18669,8 +18697,16 @@
      "line": 24
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/status/commons.json": {
    "consumers": [
@@ -19358,7 +19394,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 69
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -19641,7 +19677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 801
+     "line": 828
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -31231,18 +31267,14 @@
     "kb/unclassified_assignments.json",
     "kb/cer_classified.json",
     "kb/occupation_credential_map.json",
+    "kb/statewide_exhibit_categories.json",
     "kb/reference/map_cpl_opportunities_verified.json",
     "kb/exhibits_related.json",
     "kb/cred_rename_dryrun/",
     "kb/cred_rename_out/",
     "kb/remint_blast_worklist.json",
     "prototype/ccr_remint_blast.json",
-    "prototype/ccr_cpl.json",
-    "kb/unclassified_assignments.json",
-    "kb/cer_classified.json",
-    "kb/occupation_credential_map.json",
-    "kb/reference/map_cpl_opportunities_verified.json",
-    "kb/exhibits_related.json"
+    "prototype/ccr_cpl.json"
    ],
    "push": "main",
    "deploys": [],
