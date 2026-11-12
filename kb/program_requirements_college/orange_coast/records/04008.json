@@ -60,17 +60,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     67.5,
     67.5
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    67.5,
+    67.5
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     85.5,
+     85.5
+    ],
+    "stated": [
+     85.5,
+     85.5
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     18.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -92,20 +111,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Radiologic Technology, Associate in Science Degree (Program Sequence tab)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 67.5,
+    "max": 67.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -114,12 +130,12 @@
    },
    "ge_pattern": "OCC AS GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 85.5,
+    "max": 85.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -330,5 +346,44 @@
    "The description says 'Employment possibilities include hospitals, imaging centers, industry, and sales' — these are employment settings rather than named careers, so careers was left empty; a reviewer may wish to include them."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 67.5,
+    "max": 67.5
+   },
+   "words": "Total Program Units\t67.5"
+  },
+  {
+   "field": "degree_total",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 85.5,
+    "max": 85.5
+   },
+   "words": "General Education Breadth for AS Degree: 21 units 2, 3\t18.0\nTotal Units\t85.5"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 18
+   },
+   "words": "General Education Breadth for AS Degree: 21 units 2, 3\t18.0"
+  }
+ ],
+ "read_run": "38670927724"
 }
