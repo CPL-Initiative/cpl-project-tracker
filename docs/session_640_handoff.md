@@ -69,7 +69,7 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sa
 
 | PR | Branch | Worker | State |
 |---|---|---|---|
-| (fix) | `claude/family-test-after-rename-s639` | S639 worker | fixing the 2 red checks; not on `origin` at 01:40Z |
+| #3132 | `claude/family-test-after-rename-s639` | S639 worker (finished) | fixes the 2 red checks and a test that overwrote `kb/credentials.json`; open at 01:50Z, merges on a green `test` |
 | this checkpoint | `claude/checkpoint-s639` | S639 worker | draft; merge clear of any daily or apply run |
 | #3129 | `claude/session-639-handoff-djil98` | harvest side session | draft; the side handoff `docs/harvest_side_handoff_s639.md` |
 | #3102 | `claude/slo-shasta` | none | untouched |
