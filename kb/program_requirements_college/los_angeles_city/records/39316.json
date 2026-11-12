@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fixed Prosthodontics",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12565,
+  "input_tokens": 7873,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12565,
-    "output_tokens": 1326,
+    "input_tokens": 7873,
+    "output_tokens": 1187,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1326,
+  "output_tokens": 1187,
   "output_tokens_details": {
-   "thinking_tokens": 381
+   "thinking_tokens": 170
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07678,
- "ms": 10731,
- "seconds": 11.2,
+ "cost_usd": 0.05523,
+ "ms": 9715,
+ "seconds": 9.9,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Fixed Prosthodontics Certificate of Achievement",
+   "section_heading": "Fixed Prosthodontics",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -130,7 +130,7 @@
   },
   "blocks": [
    {
-    "name": "REQUIRED COURSES",
+    "name": "REQUIRED COURSES (30 UNITS)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -222,11 +222,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Closed list writes codes without spaces (e.g., DENTEK100); matched to catalog codes printed as 'DEN TEK 100' etc.",
+   "Closed-list codes DENTEK100, DENTEK102, DENTEK106, DENTEK108, DENTEK109, DENTEK111, DENTEK206, DENTEK208 are matched to the catalog's DEN TEK 100, 102, 106, 108, 109, 111, 206, 208 (spacing difference only).",
    "Printed course units sum to 30, matching 'Major Units: 30' and 'REQUIRED COURSES (30 UNITS)'.",
-   "The section names no careers; career language on the page belongs to other certificates (Digital Prosthetic Dentistry, Introduction to Fixed and Removable Prosthodontics)."
+   "The Removable Prosthodontics certificate printed after this section on the same page was not read.",
+   "Outcome 3 was hyphenated across a line break in the PDF ('multi -ple'); recorded as 'multiple'."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "8d31e57fa82c55b3",
+ "source_codes": [
+  "DENTEK100",
+  "DENTEK102",
+  "DENTEK106",
+  "DENTEK108",
+  "DENTEK109",
+  "DENTEK111",
+  "DENTEK185",
+  "DENTEK203",
+  "DENTEK206",
+  "DENTEK208",
+  "DENTEK285"
+ ],
+ "source_coverage": 1.0
 }

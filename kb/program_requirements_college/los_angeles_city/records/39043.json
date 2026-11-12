@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "WORKPLACE SUCCESS II - CREATIVE LEADERSHIP",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7647,
+  "input_tokens": 6873,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7647,
-    "output_tokens": 432,
+    "input_tokens": 6873,
+    "output_tokens": 430,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 432,
+  "output_tokens": 430,
   "output_tokens_details": {
    "thinking_tokens": 0
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.03923,
- "ms": 4534,
- "seconds": 4.9,
+ "cost_usd": 0.03609,
+ "ms": 3897,
+ "seconds": 4.2,
  "parts": null,
  "error": null,
  "score": {
@@ -159,8 +159,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total taken from 'Total Lecture Hrs: 108' printed under the Workplace Success II - Creative Leadership Certificate of Completion heading; the award is counted in hours."
+   "Total from 'Total Lecture Hrs: 108'; hours recorded in units fields.",
+   "The following section (American Language & Culture Series A) belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "b8319c5eee159dbf",
+ "source_codes": [
+  "BSICSKL72CE",
+  "BSICSKL79CE"
+ ],
+ "source_coverage": 1.0
 }

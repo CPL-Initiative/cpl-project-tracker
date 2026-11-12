@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "ASL-English Interpreter Preparation Program",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12121,
+  "input_tokens": 11982,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12121,
-    "output_tokens": 2602,
+    "input_tokens": 11982,
+    "output_tokens": 2635,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,57 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 2602,
+  "output_tokens": 2635,
   "output_tokens_details": {
-   "thinking_tokens": 968
+   "thinking_tokens": 596
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10052,
- "ms": 21794,
- "seconds": 22.2,
+ "cost_usd": 0.10063,
+ "ms": 20000,
+ "seconds": 20.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 27,
    "listed": 27,
-   "share": 0.0,
-   "missing": [
-    "DEAF318",
-    "DEAF352",
-    "DEAF355",
-    "DEAF370",
-    "INTRP300",
-    "INTRP301",
-    "INTRP303",
-    "INTRP305",
-    "INTRP307",
-    "INTRP310",
-    "INTRP312",
-    "INTRP314",
-    "INTRP320",
-    "INTRP325",
-    "INTRP330",
-    "INTRP332",
-    "INTRP334",
-    "INTRP336",
-    "INTRP338",
-    "INTRP340",
-    "INTRP342",
-    "INTRP344",
-    "INTRP349",
-    "INTRP350",
-    "INTRP352",
-    "INTRP354",
-    "INTRP356"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -89,34 +61,35 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    48.0,
+    48.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 6,
    "courses": 0,
-   "count": 0,
+   "count": 6,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -126,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "A.A. section not in the text; only the 'Certificate Requirements' section is printed",
+   "section_heading": "A.A. in ASL-English Interpreter Preparation Program",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 48,
+    "max": 48
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -150,129 +123,274 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "electives_fill_degree": true,
+   "outcomes": [
+    "discuss and apply knowledge of linguistic, cross-cultural, and interpretation theories.",
+    "demonstrate communicative competency in English and in ASL through effective communication in a variety of settings with Deaf and hearing participants of varying age, gender, and ethnicity.",
+    "appraise, identify, and apply personal, professional, and ethical decisions in a manner consistent with theoretical models and standard professional practices that align in service with the goal of the setting and Deaf and hearing participants.",
+    "demonstrate interpersonal competencies that foster effective communication and productive collaboration with colleagues, Deaf and hearing consumers, employers, and team members in an interpreting context.",
+    "formulate effective interpretations both consecutively and simultaneously following a practice profession framework.",
+    "develop an on-going professional action plan integrating interactions with Deaf related organizations, connections with interpreter employers, and the implications of certification on the provision of interpreting."
+   ],
+   "careers": [
+    "American Sign Language-English interpreters"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "DEAF 318",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
+    "name": "Degree Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DEAF 318",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 352",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 355",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DEAF 370",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 301",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 307",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 310",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 314",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 320",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 325",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 350",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 352",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 354",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 356",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "DEAF 352",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "DEAF 355",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "DEAF 370",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 300",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 301",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 303",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 305",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 307",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 310",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 312",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 314",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 320",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 325",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 330",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 332",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 334",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 336",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 338",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 340",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 342",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 344",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list"
-   },
-   {
-    "code": "INTRP 349",
-    "why": "A.A. section not in the text; named only in the certificate's 4-unit elective list (printed there as 'Introduction to Behavioral Health Interpreting')"
-   },
-   {
-    "code": "INTRP 350",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 352",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 354",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
-   },
-   {
-    "code": "INTRP 356",
-    "why": "A.A. section not in the text; named only under Certificate Requirements"
+    "name": "A minimum of 4 units from the following",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 4
+    },
+    "courses": [
+     {
+      "code": "INTRP 312",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 330",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 332",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 334",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 336",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 338",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 340",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 342",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 344",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "INTRP 349",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt starts on page 345 mid-description and prints only 'Certificate Requirements' (Total Units: 48). The A.A. degree section, likely on page 344, is not in the text, so no blocks were recorded for the A.A. A reviewer should check page 344.",
-   "The certificate list matches the closed list exactly: 17 required courses plus 'A minimum of 4 units from the following' (INTRP 312, 330, 332, 334, 336, 338, 340, 342, 344, 349). The A.A. major may be identical, but the text does not show it.",
-   "In the certificate list, INTRP 349 is titled 'Introduction to Behavioral Health Interpreting'. The state file title is 'Signing for Dependency Situations'.",
-   "Student Learning Outcomes (six bullets) and Career Information appear after the certificate's Enrollment Process, so they were read as belonging to the certificate section. They were not recorded for the A.A.; check whether the A.A. section prints the same outcomes.",
-   "Career Information names no specific job titles beyond 'American Sign Language-English interpreters'. It was not recorded because it appears in the certificate section."
+   "The elective list continues across the page break from page 343 to page 344; read as one 'A minimum of 4 units' block.",
+   "INTRP 349 is titled 'Introduction to Behavioral Health Interpreting' in the catalog but 'Signing for Dependency Situations' in the closed list; same code, recorded as closed-list course.",
+   "The degree sentence says 'plus sufficient electives for a total of at least 60 units'; recorded electives_fill_degree true and left degree_total null since it is stated as a minimum rather than a printed total for this award.",
+   "The certificate section (pages 344-346) prints the same requirements and 48-unit total; it was not used for this record. Its outcome text differs slightly ('Deaf and hearing participants' vs 'Deaf and hearing consumers'); outcomes here are from the A.A. section.",
+   "Careers: the Career Information section names only 'American Sign Language-English interpreters' as an occupation."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43212067552",
+ "source_sha": "954fb21fc76e8997",
+ "source_codes": [
+  "DEAF318",
+  "DEAF352",
+  "DEAF355",
+  "DEAF370",
+  "INTRP300",
+  "INTRP301",
+  "INTRP303",
+  "INTRP305",
+  "INTRP307",
+  "INTRP310",
+  "INTRP312",
+  "INTRP314",
+  "INTRP320",
+  "INTRP325",
+  "INTRP330",
+  "INTRP332",
+  "INTRP334",
+  "INTRP336",
+  "INTRP338",
+  "INTRP340",
+  "INTRP342",
+  "INTRP344",
+  "INTRP349",
+  "INTRP350",
+  "INTRP352",
+  "INTRP354",
+  "INTRP356"
+ ],
+ "source_coverage": 1.0
 }

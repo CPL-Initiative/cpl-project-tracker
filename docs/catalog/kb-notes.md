@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-581 document(s).
+583 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -189,6 +189,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A published asset with zero uptake is an outreach worklist, not a build backlog](../kb-notes/methodology-dormant-asset-worklist.md) | methodology | published | 2026-08-05 | 2026-08-05 |
 | [A ranking rule is a claim about where variance lives — re-derive it per corpus](../kb-notes/methodology-a-ranking-rule-is-a-claim-about-where-variance-lives.md) | methodology | internal | 2026-09-21 |  |
 | [A reader fix moves rows it was not aimed at, so compare each full read row by row](../kb-notes/methodology-a-reader-fix-moves-rows-it-was-not-aimed-at.md) | methodology | published | 2026-10-03 | 2026-10-03 |
+| [A rebuild runs the same build script, never an imitation of the runner](../kb-notes/methodology-a-rebuild-runs-the-same-build-script.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A receipt measures a worklist once; a lane recomputes it every build](../kb-notes/methodology-a-receipt-measures-a-worklist-once-a-lane-recomputes-it-live.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A receipt too large for the connector applies from the runner](../kb-notes/methodology-a-receipt-too-large-for-the-connector-applies-from-the-runner.md) | methodology | published | 2026-10-10 | 2026-10-10 |
 | [A red merge ref can be main's, and every open PR inherits it](../kb-notes/methodology-a-red-merge-ref-can-be-mains.md) | methodology | published | 2026-10-14 | 2026-10-14 |
@@ -251,6 +252,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A sweep scoped by a proxy leaves a shadow](../kb-notes/methodology-a-sweep-scoped-by-a-proxy-leaves-a-shadow.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A sweep sees only the states its seed reaches — seed through the code that paints them](../kb-notes/methodology-a-sweep-sees-only-the-states-its-seed-reaches.md) | methodology | published | 2026-10-09 | 2026-10-11 |
 | [A tag scan cannot see a fetch](../kb-notes/methodology-a-tag-scan-cannot-see-a-fetch.md) | methodology | published | 2026-08-19 | 2026-08-19 |
+| [A target at exactly the minimum size fails at fractional zoom](../kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A team-curated Supabase table needs team_pass_ok() on UPDATE too, not just SELECT + INSERT](../kb-notes/methodology-team-curated-table-needs-update-rls.md) | methodology | published | 2026-07-26 | 2026-07-26 |
 | [A test file is a memory budget, and the process boundary is the only allocator](../kb-notes/methodology-a-test-file-is-a-memory-budget.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A test must report a missing thing, not dereference it](../kb-notes/methodology-a-test-must-report-a-missing-thing-not-dereference-it.md) | methodology | published | 2026-08-25 | 2026-08-25 |

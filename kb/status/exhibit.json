@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 640,
-  "moniker": "SkyHeron",
-  "run": "Sam's session",
+  "session": 641,
+  "moniker": "SkyOtter",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_641_handoff.md",
+  "handoff": "docs/session_642_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,13 +33,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T05:54:18Z",
+  "written_at": "2026-11-12T12:38:32Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Resolve a stored title when it is read, then ASE plan phase 3",
-    "text": "Both standards plans are live. The next session and COBIx replace re-pointing saved values at apply time with resolving a stored title through the applied rename map when it is read, so no live row is rewritten. Then ASE plan phase 3 runs on a fresh read."
+    "title": "The apply side of read-time resolution, then Sierra's ghost rows at Sam's go",
+    "text": "A stored title now resolves when it is read. What remains for the apply side is the old-title count as a report, the dashboard job and the undo's newest-first guard, with the Fact Sheet's categories in their own pull request. The guarded delete of Sierra's ghost rows waits for Sam's go on Open Asks Sheet 184."
   },
   "changes": [
+    {
+      "at": "2026-11-12T07:47:00Z",
+      "text": "Stored credential titles resolve when they are read, through the applied renames, and retired names became search aliases. The pull request that re-pointed saved values at apply time was closed."
+    },
+    {
+      "at": "2026-11-12T06:30:30Z",
+      "text": "ASE plan phase 3 applied: five title assignments, read back five."
+    },
     {
       "at": "2026-11-12T05:48:04Z",
       "text": "The second standards plan applied: seven more ASE titles renamed to their standards form, L1, A2, A6, L3, A9, A3 and A4. Sam's seven approval rows the apply carried out were removed, each kept in the receipt, and twelve subject rows followed the titles. The receipt's undo runs before the first plan's."

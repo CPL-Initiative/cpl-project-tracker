@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Computer Science",
  "award": "A.S. T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=142",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12564,
+  "input_tokens": 12598,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12564,
-    "output_tokens": 2611,
+    "input_tokens": 12598,
+    "output_tokens": 2979,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2611,
+  "output_tokens": 2979,
   "output_tokens_details": {
-   "thinking_tokens": 930
+   "thinking_tokens": 1266
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10248,
- "ms": 21374,
- "seconds": 21.8,
+ "cost_usd": 0.10997,
+ "ms": 23667,
+ "seconds": 23.8,
  "parts": null,
  "error": null,
  "score": {
@@ -72,7 +72,26 @@
     32.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     66.0,
+     66.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -94,16 +113,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS — MAJOR CORE COURSES (32 UNITS)",
+   "section_heading": "Computer Science Associate in Science Degree for Transfer (AST)",
    "measure": "units",
    "total_units": {
     "min": 32,
@@ -114,14 +130,14 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -296,13 +312,32 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The extracted text begins mid-section on page 143; the award heading (Computer Science A.S.-T), its description, and any degree total/GE pattern statement appear to be on the preceding page and are not in the text. Section identified by its PSLOs and requirements, which match the closed list and precede the Computer Science AA section.",
-   "The heading 'COMPLETE ONE OF THE FOLLOWING PROGRAMMING COURSES' is printed above CS 130, CS 131 and CS 136 as well as the CS 113/116/119 'OR' rows; read CS 130, 131, 136 as required (consistent with the 32-unit total) and the choice as one of CS 113, CS 116, CS 119.",
-   "BIOLOGY 006 and BIOLOGY 007 are printed with leading zeros; they correspond to closed-list BIOLOGY 6 and BIOLOGY 7.",
-   "Footnotes name prerequisites CHEM 060 for CHEM 101 and MATH 260/260S for MATH 261; these are prerequisites, not requirements, and were not placed.",
-   "Total 32 units taken from the printed 'MAJOR CORE COURSES (32 UNITS)'. No degree total or GE units are printed in the extracted text for this award."
+   "The heading 'COMPLETE ONE OF THE FOLLOWING PROGRAMMING COURSES' is printed above CS 130, CS 131 and CS 136, but the 'OR' rows link only CS 113, CS 116 and CS 119; read CS 130/131/136 as required and the choice as one of CS 113/116/119. This gives 9+3+10+5+5 = 32 units, matching the printed major total of 32. Reviewer should confirm.",
+   "Degree total is printed as 'Total Units: Minimum of 60'; recorded as 60.",
+   "CalGETC units are printed as 34 semester/45 quarter units; recorded 34.",
+   "BIOLOGY 006 and BIOLOGY 007 are printed with leading zeros; they match closed-list BIOLOGY 6 and BIOLOGY 7.",
+   "Prerequisite footnotes name CHEM 060, MATH 260 and MATH 260S. These are prerequisites, not program requirements, and are not placed.",
+   "In the outcomes, words hyphenated across line breaks (e.g., 'expres -sions', 'multi-di -mensional', 'sort -ing', 'solu -tions', 'organiza -tion') were rejoined as single words.",
+   "The page also prints the Computer Science AA degree and other programs; only the AST section was read."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "fe821d98a5a51bf6",
+ "source_codes": [
+  "BIOLOGY6",
+  "BIOLOGY7",
+  "CHEM101",
+  "CS113",
+  "CS116",
+  "CS119",
+  "CS130",
+  "CS131",
+  "CS136",
+  "MATH261",
+  "MATH261S",
+  "MATH262",
+  "PHYSICS101",
+  "PHYSICS102"
+ ],
+ "source_coverage": 1.0
 }

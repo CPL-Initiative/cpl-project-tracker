@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Refrigeration Service Technician Apprenticeship",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7939,
+  "input_tokens": 9061,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7939,
-    "output_tokens": 3025,
+    "input_tokens": 9061,
+    "output_tokens": 2839,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3025,
+  "output_tokens": 2839,
   "output_tokens_details": {
-   "thinking_tokens": 835
+   "thinking_tokens": 568
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09226,
- "ms": 23786,
- "seconds": 24.5,
+ "cost_usd": 0.09302,
+ "ms": 21030,
+ "seconds": 21.3,
  "parts": null,
  "error": null,
  "score": {
@@ -61,29 +61,27 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    16.0,
-    16.0
+    56.0,
+    56.0
    ],
    "stated": [
-    48.0,
-    48.0
+    56.0,
+    56.0
    ],
    "against": "program",
-   "why": [
-    "'Course list (heading not in text)' chooses units but names no minimum"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 7,
+   "program": 10,
    "courses": 0,
-   "count": 7,
+   "count": 10,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -101,22 +99,22 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Refrigeration Service Technician Apprenticeship A.S. Degree",
+   "section_heading": "A.S. in Refrigeration Service Technician Apprenticeship",
    "measure": "units",
    "total_units": {
-    "min": 48,
-    "max": 48
+    "min": 56,
+    "max": 56
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -125,15 +123,18 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
-    "adjust and calibrate a variable air volume (VAV) box.",
-    "build control panels.",
-    "design a pneumatic control system.",
-    "create a wiring ladder diagram.",
-    "demonstrate the use of automatic systems inputs and outputs.",
-    "perform building automation system (BAS) installation, wiring, and testing.",
-    "apply safety guidelines to electrical control systems."
+    "explain safety hazards with Heating Ventilation Air Conditioning Refrigeration (HVACR) systems.",
+    "explain proper design, testing, and balancing of air distribution.",
+    "demonstrate the testing of fluid flow in piping systems.",
+    "explain electrical principles necessary for startup and testing.",
+    "identify proper documentation requirements to report findings during start, test, and balance operations.",
+    "prepare for the proctored UA STAR exam.",
+    "describe methods of maximizing energy efficiency of existing Heating Ventilation Air Conditioning Refrigeration (HVACR) equipment.",
+    "demonstrate a service technician's role in customer service.",
+    "list conditions of air on a psychrometric chart.",
+    "identify jobsite hazards."
    ],
    "careers": [
     "Refrigeration technicians"
@@ -141,13 +142,13 @@
   },
   "blocks": [
    {
-    "name": "Course list (heading not in text)",
+    "name": "A minimum of 40 units from the following",
     "rule": "choose_units",
-    "minimum": null,
+    "minimum": 40,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 40,
+     "max": 40
     },
     "courses": [
      {
@@ -406,12 +407,49 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text begins mid-table on page 211; the program heading and the rule/heading over the first course list (HVACR 101 through PLUMB 192) are on the preceding page and not in the text. section_heading is reconstructed from the program title and award, not printed in the excerpt.",
-   "The first list sums to 83 units, while the printed total is 48 units including a 16-unit work experience block, so the first list cannot be all required. It is recorded as choose_units with minimum null because its rule is not printed; 48 - 16 suggests 32 units, but this was not stated. A reviewer should check the previous page (possibly a choice between the HVACR and PLUMB course sets).",
-   "Closed-list codes written without a space (HVACR102, HVACR161, HVACR165, HVACR176, PLUMB298) were matched to the catalog's HVACR 102, HVACR 161, HVACR 165, HVACR 176, PLUMB 298.",
-   "No general education pattern or degree total with GE is printed in the excerpt; Total Units: 48 is recorded as the major total.",
-   "Careers: only 'Refrigeration technicians' is named in Career Information."
+   "Closed list stores HVACR102, HVACR161, HVACR165, HVACR176 and PLUMB298 without a space; treated as the same courses printed in the catalog as HVACR 102, HVACR 161, HVACR 165, HVACR 176 and PLUMB 298 (catalog_addition false).",
+   "The page says the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; read as electives_fill_degree true. degree_total left null because no explicit degree total is printed beyond this general 60-unit statement; reviewer may wish to record 60.",
+   "Work experience courses (HVACR 298, PLUMB 298, STMFT 298) are printed with a 0.5-6 unit range.",
+   "The Acoustical Installer Apprenticeship Certificate section that follows belongs to another program and was not read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43212067552",
+ "source_sha": "4bb880f7b45059b8",
+ "source_codes": [
+  "HVACR101",
+  "HVACR102",
+  "HVACR110",
+  "HVACR111",
+  "HVACR120",
+  "HVACR122",
+  "HVACR130",
+  "HVACR132",
+  "HVACR140",
+  "HVACR142",
+  "HVACR144",
+  "HVACR146",
+  "HVACR152",
+  "HVACR160",
+  "HVACR161",
+  "HVACR165",
+  "HVACR170",
+  "HVACR171",
+  "HVACR173",
+  "HVACR174",
+  "HVACR176",
+  "HVACR298",
+  "PLUMB101",
+  "PLUMB120",
+  "PLUMB161",
+  "PLUMB162",
+  "PLUMB180",
+  "PLUMB181",
+  "PLUMB182",
+  "PLUMB190",
+  "PLUMB191",
+  "PLUMB192",
+  "PLUMB298",
+  "STMFT298"
+ ],
+ "source_coverage": 1.0
 }

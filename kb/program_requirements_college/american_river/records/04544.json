@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Theatre Arts: Acting",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=945",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=941",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12744,
-    "output_tokens": 4256,
+    "output_tokens": 3976,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4256,
+  "output_tokens": 3976,
   "output_tokens_details": {
-   "thinking_tokens": 1285
+   "thinking_tokens": 1043
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1361,
- "ms": 32287,
- "seconds": 32.7,
+ "cost_usd": 0.1305,
+ "ms": 30415,
+ "seconds": 31.0,
  "parts": null,
  "error": null,
  "score": {
@@ -63,8 +63,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     28.0,
     28.0
@@ -74,8 +74,10 @@
     31.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 28.0-28.0; the catalog states 31.0-31.0"
+   "why": [],
+   "fill": [
+    3.0,
+    3.0
    ]
   },
   "repeated": {
@@ -103,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,7 +145,7 @@
   },
   "blocks": [
    {
-    "name": "Degree Requirements (required courses)",
+    "name": "Degree Requirements",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -510,19 +512,60 @@
   "missing_explained": [
    {
     "code": "TA 300",
-    "why": "not in the text; the requirements table appears to begin on the previous page (944), which is not included"
+    "why": "not in this section's text; appears only in the Technical Production A.A. section (possibly on page 940, which is not in the text)"
    }
   ],
   "notes": [
-   "The excerpt begins mid-table at page 945; the section heading (assumed 'A.A. in Theatre Arts: Acting') and possibly the first rows of the requirements table are on page 944 and not in the text. The listed blocks sum to 28 units against the printed Total Units: 31, consistent with a missing 3-unit row (likely TA 300 Introduction to the Theatre).",
-   "The '31' beside the second 'A minimum of 3 units' block is read as 3 units with footnote 1 ('Not used to fulfill other requirements for the major').",
-   "The 4th choose-units block also allows 'Any TAP (Theatre Arts Performance) course'; this is not recorded as a course code.",
-   "The last choose-units block also allows 'Any TA or TAP course not used to fulfill other requirements of the major'; not recorded as a course code.",
-   "Several TA courses (TA 356, 357, 362, 366) appear in two different choose blocks; a course may not count twice per footnote.",
-   "The degree text says the award requires the major plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree true, degree_total left null since no explicit award total is printed; GE units not printed.",
-   "No career information is printed in the A.A. Acting section; the career statement on page 947 belongs to the Acting Certificate and was not used.",
-   "Sections for A.A. Technical Production, Acting Certificate, Children's Theatre Certificate and Costuming Certificate were ignored."
+   "The text begins on page 941 mid-table; the section heading and any earlier rows (likely on page 940) are not in the text. Heading 'A.A. in Theatre Arts: Acting' is inferred from the closing paragraph naming the Theatre Arts: Acting A.A. degree, and the block name 'Degree Requirements' follows the pattern of the next section.",
+   "Printed block units sum to 28 (17 core + 2+3+2+2+2) while Total Units is 31; rows printed before page 941 (e.g., TA 300, 3 units, which is on the closed list) may be missing. Reviewer should check page 940.",
+   "The '31' after 'A minimum of 3 units from the following' is read as 3 with footnote 1 ('Not used to fulfill other requirements for the major').",
+   "The fifth block also allows 'Any TAP (Theatre Arts Performance) course'; the sixth block also allows 'Any TA or TAP course not used to fulfill other requirements of the major.' These open options are not recorded as course codes.",
+   "Degree requires the program plus Local GE or Cal-GETC plus sufficient electives for at least 60 units; no degree total or GE units printed for this award, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Career Information on page 943 belongs to the Acting Certificate, not the A.A. degree, so no careers are recorded."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43212067552",
+ "source_sha": "49ab75a3469db678",
+ "source_codes": [
+  "DANCE310",
+  "DANCE320",
+  "DANCE340",
+  "DANCE360",
+  "DANCE377",
+  "ENGLT380",
+  "ENGLT382",
+  "FASHN330",
+  "FASHN334",
+  "MUFHL321",
+  "MUIVI310",
+  "MUIVI390",
+  "MUP350",
+  "MUP370",
+  "MUSM342",
+  "TA300",
+  "TA344",
+  "TA350",
+  "TA351",
+  "TA356",
+  "TA357",
+  "TA362",
+  "TA366",
+  "TA370",
+  "TA375",
+  "TA377",
+  "TA390",
+  "TA404",
+  "TA406",
+  "TA420",
+  "TA422",
+  "TA424",
+  "TA430",
+  "TA433",
+  "TA434",
+  "TA435",
+  "TA437",
+  "TA440",
+  "TA466"
+ ],
+ "source_coverage": 1.0
 }

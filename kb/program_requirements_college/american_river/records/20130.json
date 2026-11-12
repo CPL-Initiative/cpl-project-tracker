@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Paramedic",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=833",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 7992,
-    "output_tokens": 1176,
+    "output_tokens": 1037,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1176,
+  "output_tokens": 1037,
   "output_tokens_details": {
-   "thinking_tokens": 548
+   "thinking_tokens": 449
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05549,
- "ms": 10452,
- "seconds": 10.9,
+ "cost_usd": 0.05271,
+ "ms": 10274,
+ "seconds": 10.5,
  "parts": null,
  "error": null,
  "score": {
@@ -99,7 +99,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement Paramedic Certificate",
+   "section_heading": "Certificate of Achievement – Paramedic Certificate",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -168,10 +168,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The certificate's requirements table is cut off at the end of page 834. Its total line is not in the text, so total_units is null. The A.S. section prints 'Total Units: 46' for the same four courses, but that total belongs to the degree section and was not copied.",
-   "Student Learning Outcomes and Career Information (licensure as a paramedic; fire department, rescue squad, private provider, industry, clinic or hospital) are printed only within the A.S. in Paramedic section, before the certificate heading. The certificate section's own outcomes and careers probably continue on page 835, which is not in the text. Outcomes and careers are left empty; a reviewer should check whether the certificate shares the A.S. list.",
-   "The A.S. degree section (Local GE or Cal-GETC, at least 60 units) is a separate award and was not recorded here."
+   "The certificate requirements table ends at the bottom of page 830; the text provided stops there, so the certificate's total line (and any outcomes or career section that may follow on page 831) is cut off. total_units is left null. The A.S. section prints 'Total Units: 46' for the same four courses, but that total belongs to the degree section.",
+   "Student Learning Outcomes and Career Information (licensure as a paramedic, working for a fire department, rescue squad, private provider, industry, clinic or hospital) are printed only within the A.S. in Paramedic section. They were not copied into this certificate record. A reviewer should check whether page 831 prints them for the certificate, or whether they apply to the program as a whole."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43212067552",
+ "source_sha": "add72dba0b99563e",
+ "source_codes": [
+  "PMED114",
+  "PMED115",
+  "PMED121",
+  "PMED131"
+ ],
+ "source_coverage": 1.0
 }

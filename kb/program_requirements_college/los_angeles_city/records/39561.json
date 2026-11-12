@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "PARALEGAL STUDIES",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10619,
+  "input_tokens": 13576,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10619,
-    "output_tokens": 2625,
+    "input_tokens": 13576,
+    "output_tokens": 2465,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2625,
+  "output_tokens": 2465,
   "output_tokens_details": {
-   "thinking_tokens": 736
+   "thinking_tokens": 671
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09498,
- "ms": 29457,
- "seconds": 29.8,
+ "cost_usd": 0.1036,
+ "ms": 18730,
+ "seconds": 18.9,
  "parts": null,
  "error": null,
  "score": {
@@ -148,7 +148,7 @@
   },
   "blocks": [
    {
-    "name": "REQUIRED COURSES",
+    "name": "REQUIRED COURSES (40 UNITS)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -284,7 +284,7 @@
     ]
    },
    {
-    "name": "ELECTIVE COURSES: SELECT TWO",
+    "name": "ELECTIVE COURSES: SELECT TWO (6 UNITS)",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -355,14 +355,38 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Paralegal Studies Certificate of Achievement section (Major Units: 46); the AA degree and Pathway to Law School sections on the same pages were ignored.",
-   "Required courses block continues across the page break from page 166 to 167; printed block total 40 units matches the listed courses (12 x 3 + 1 + 3).",
-   "LAW 010, LAW 051, LAW 003, LAW 018 and LAW 033 are not in the closed list and are marked as catalog additions.",
-   "The COMM C1000 / COMM 104 / 121 / 122 / 151 / 190 'OR' rows are recorded as one choice with alternatives.",
-   "Outcomes are identical to those printed for the AA degree; hyphenated line-break artifacts in the PDF text ('employ -ment', 'stu -dent’s') were read as single words.",
-   "Career entry 'paralegal' is taken from the description sentence 'The combination of courses produces a professional and competent paralegal.'"
+   "Catalog prints codes with leading zeros (e.g., LAW 001, CAOT 084); matched to closed-list codes LAW 1, CAOT 84, etc.",
+   "Major Units 46 = required 40 + electives 6.",
+   "The certificate's outcomes list is identical to the AA degree's list; recorded from the certificate section.",
+   "Required COMM course is a choice of one among COMM C1000, 104, 121, 122, 151, 190, recorded as one entry with alternatives.",
+   "LAW 010, LAW 051, LAW 003, LAW 018 and LAW 033 are not in the closed list (catalog additions)."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "f9374e28c04497cb",
+ "source_codes": [
+  "CAOT84",
+  "COMM104",
+  "COMM121",
+  "COMM122",
+  "COMM151",
+  "COMM190",
+  "COMMC1000",
+  "ENGLC1000",
+  "LAW1",
+  "LAW11",
+  "LAW12",
+  "LAW13",
+  "LAW14",
+  "LAW17",
+  "LAW19",
+  "LAW2",
+  "LAW35",
+  "LAW37",
+  "LAW38",
+  "LAW4",
+  "LAW7",
+  "LIBSCI101"
+ ],
+ "source_coverage": 1.0
 }
