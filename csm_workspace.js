@@ -1,5 +1,10 @@
 /* csm_workspace.js — the CSM Workspace tab (window.CPL_CSM_WORKSPACE), #csm-workspace.
  *
+ * THIS PAGE HAS A GUIDE, AND THE GUIDE FOLLOWS THE PAGE (Malone, 2026-11-12). A change to what a reviewer can press or
+ * read here fails tests/csm_workspace_guide_stamp.test.js until the Funding Follow-up Dashboard Guide is updated in the
+ * same change (https://claude.ai/artifact/XqJpfTdCWPhAkGFLA3gsBq; source and capture.js in
+ * CPLBrain/04-projects/cpl-initiative/funding-follow-up-guide/). That test's header has the steps.
+ *
  * Sam, 2026-11-02 (S554): "Can you publish a mock for a CSM workspace for handling the comms (notes, follow ups,
  * acceptances, etc.) for the colleges? Thinking of a tab linked from the internal view formatted like CPL Commons
  * with priority cards at top and action center below like a customer management system." The mock (version 11,
@@ -580,7 +585,7 @@
   // The email the college's state calls for: the one Ready to send holds, with both asks in one email where both are open.
   function recTpl(r) { var rd = readyOf(r); return rd === "nudge" && leadOpen(r) ? "both" : SENT[rd] ? rd : null; }
   function nextStep(r) {
-    if (state.view === "send" && readyOf(r)) return readyWords(r, readyOf(r));
+    if ((state.view === "accept" || state.view === "request") && readyOf(r) && readyOf(r) !== "wait") return readyWords(r, readyOf(r));
     // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
     // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
     var w = waitingKinds(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
@@ -607,8 +612,7 @@
      request waiting on the team, an email ready to send and a follow-up due today or earlier; every other college
      waits on the college. */
   function needsYou(r) {
-    var du = dueOf(r);
-    return waitingKinds(r).length > 0 || !!readyOf(r) || !!(du && du.follow_up_on <= today());
+    return toDo(r);
   }
   function pillsOf(r) {
     var p = [];
@@ -640,26 +644,43 @@
   /* The menu in two groups, the work first (Sam's "go" on COBIx's proposal, PR 2990's thread and issue 2989,
      2026-11-09: "having a prioritized set of easy buttons to push is always preferable"). To do holds the queues a CSM
      acts on; Browse holds the lists a CSM reads. No view was renamed; Qualifies spells out what it means. */
-  var GROUPS = [{ id: "todo", label: "To do" }, { id: "browse", label: "Browse" }];
+  /* THE LISTS, REDRAWN (asked in session, 2026-11-12: "the filters are many and the accuracy seems few"; a count of
+     14 colleges with a Noncredit CPL Lead met a filter that read 7). Each list was right by its own definition, but the
+     definitions overlapped and one question had no list: "All open items" left out the emails that were due and held
+     colleges with nothing to do, "Ready to send" held requests still under review, and a named Noncredit CPL Lead was
+     split across two lists of 7 (attestations waiting; the condition met) with no list of all 14.
+     Three groups now, each list named for exactly what it holds:
+       To do      what the team acts on. Everything to do is the four lists under it, a college counted once.
+       By stage   where a college stands. With Review a request these three hold every institution exactly once.
+       Look up    a fact about a college, whatever its stage. */
+  var GROUPS = [{ id: "todo", label: "To do" }, { id: "stage", label: "By stage" }, { id: "look", label: "Look up" }];
   function coordGap(r) { return r.conds.some(function (c) { return c.kind === "coord" && !c.met && !c.pending; }); }
+  function followDue(r) { var du = dueOf(r); return !!(du && du.follow_up_on <= today()); }
+  function acceptDue(r) { var rd = readyOf(r); return rd === "accept" || rd === "accept_nc"; }
+  // A request is to send when it is due, or when it was copied or drafted and never marked Sent.
+  function requestDue(r) { var rd = readyOf(r); return rd === "nudge" || rd === "lead" || !!draftedOf(r); }
+  function toDo(r) { return waitingKinds(r).length > 0 || acceptDue(r) || requestDue(r) || followDue(r); }
+  // A Noncredit CPL Lead named by any route: the role in MAP, an attestation accepted, or an attestation waiting.
+  function ncNamed(r) { return !!(r.nc && (r.nc.lead || r.nc.standing || r.nc.waiting)); }
   var VIEWS = {
-    open: { g: "todo", label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held" || !!dueOf(r); } },
-    send: { g: "todo", label: "Ready to send", keep: function (r) { return !!readyOf(r); } },
-    review: { g: "todo", label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
-    due: { g: "todo", label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
-    held: { g: "todo", label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
-    nc: { g: "todo", label: "Noncredit attestations waiting", keep: ncWaiting },
-    notyet: { g: "todo", label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
-    qual: { g: "browse", label: "Qualifies (all conditions met)", keep: function (r) { return stageOf(r) === "qual"; } },
-    confirmed: { g: "browse", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
-    coordmet: { g: "browse", label: "With a CPL Coordinator in MAP", keep: function (r) { return r.conds.some(function (c) { return c.kind === "coord" && c.met; }); } },
-    ncmet: { g: "browse", label: "With a Noncredit CPL Lead", keep: ncMet },
+    open: { g: "todo", label: "Everything to do", keep: toDo },
+    review: { g: "todo", label: "Review a request", keep: function (r) { return stageOf(r) === "waiting"; } },
+    accept: { g: "todo", label: "Send an acceptance", keep: acceptDue },
+    request: { g: "todo", label: "Send a request", keep: requestDue },
+    follow: { g: "todo", label: "Follow up", keep: followDue },
+    notyet: { g: "stage", label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
+    held: { g: "stage", label: "Confirmed, held by a condition", keep: function (r) { return stageOf(r) === "held"; } },
+    qual: { g: "stage", label: "Qualifies (every condition met)", keep: function (r) { return stageOf(r) === "qual"; } },
+    confirmed: { g: "look", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
+    ncnamed: { g: "look", label: "Named a Noncredit CPL Lead (MAP or attestation)", keep: ncNamed },
     // A missing coordinator is status only: no CSM email for it, and Sam chases the confirmed ones himself (issue 3010,
-    // his call 1), so both coordinator lists read under Browse. The first is the funding-held part of the second.
-    coord: { g: "browse", label: "Confirmed but missing the CPL Coordinator in MAP",
+    // his call 1). The first is the funding-held part of the second.
+    coord: { g: "look", label: "Confirmed, missing the CPL Coordinator in MAP",
       keep: function (r) { return r.part.confirmed && coordGap(r); } },
-    nocoord: { g: "browse", label: "No CPL Coordinator in MAP", keep: coordGap },
-    all: { g: "browse", label: "All institutions", keep: function () { return true; } } };
+    nocoord: { g: "look", label: "No CPL Coordinator in MAP", keep: coordGap },
+    all: { g: "look", label: "All institutions", keep: function () { return true; } } };
+  // An address saved before the lists were redrawn opens the list that now holds the same colleges, or the nearest.
+  var VIEW_WAS = { send: "open", due: "follow", nc: "review", ncmet: "ncnamed", coordmet: "all" };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
      items is the tab's first view, so it reports the bare tab. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
@@ -667,7 +688,7 @@
   });
   var READY_RANK = { accept: 1, accept_nc: 2, lead: 3, nudge: 4, wait: 5 };
   function sortRank(r) {
-    if (state.view === "send") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 6;
+    if (state.view === "accept" || state.view === "request") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 6;
     var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
     // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
     // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
@@ -909,7 +930,9 @@
       "</div>" + (list.length ? [["you", "Needs you", list.filter(needsYou)], ["col", "Waiting on the college", list.filter(function (r) { return !needsYou(r); })]]
         .filter(function (g) { return g[2].length; }).map(function (g) {
           // The live order stands inside each group (go-live note, item 5): sortRank, then the college's name.
-          return '<h3 class="qgroup" id="cw-qg-' + g[0] + '">' + g[1] + ' <span class="qgroup-n">' + g[2].length + '</span></h3>' +
+          // An h2: the list's groups are the page's first sections under its title (a11y: h1 to h3 skipped a level
+          // once Everything to do put Needs you on the signed-out view, 2026-11-12). The class carries the look.
+          return '<h2 class="qgroup" id="cw-qg-' + g[0] + '">' + g[1] + ' <span class="qgroup-n">' + g[2].length + '</span></h2>' +
             '<ul class="queue" data-group="' + g[0] + '" aria-labelledby="cw-qg-' + g[0] + '">' + g[2].map(function (r) {
               var ag = ageOf(r);
               return '<li><button type="button" class="row" data-sel="' + esc(r.key) + '"' + (r.key === state.sel ? ' aria-current="true"' : "") + ">" +
@@ -1274,7 +1297,38 @@
         "accepted as well.\n\nThe CPL Implementation Funding page explains each condition and how to send it: {funding_page}\n\nIf either is already on " +
         "its way, or if someone else at {college} should receive this note, a short reply will let us update our records.\n\nThe CPL Initiative team" }
   };
-  var TPL_EDITABLE = ["lead", "both", "nudge", "follow"];
+  /* EVERY EMAIL THE PAGE WRITES IS HERE (asked in session, 2026-11-12: the editor held four and the page wrote more).
+     The acceptance (one wording for the participation confirmation and the noncredit attestation, {request} naming
+     which) and the follow-up on a request under review are the funding tab's emails; their saved versions live in
+     the same store, and the funding tab writes from them too (setTemplates). Blank has no wording to keep. */
+  var TPL_EDITABLE = ["lead", "both", "nudge", "accept", "request_follow", "follow"];
+  var TPL_FUND = { accept: 1, request_follow: 1 };
+  var TPL_EDIT_LABEL = { nudge: "Request for the participation confirmation", both: "Request for the confirmation and the Noncredit CPL Lead, in one email",
+    lead: "Request for the Noncredit CPL Lead role in MAP", accept: "Acceptance (participation confirmation or noncredit attestation)",
+    request_follow: "Follow-up on a request under review", follow: "Follow-up on a condition still open" };
+  var TPL_FUND_WORDS = [
+    ["name", "the person the email is to"], ["college", "the college's name"],
+    ["request", "participation confirmation, or noncredit attestation with its year"],
+    ["date", "the day the college sent the request"],
+    ["note", "the CO Monitor's note, for you to rewrite for the college (follow-up only)"]];
+  function tplWordsOf(id) { return TPL_FUND[id] ? TPL_FUND_WORDS : TPL_WORDS; }
+  // The wording with nothing saved. The funding tab's two arrive as "Subject: ...", a blank line, then the message.
+  function tplDefault(id) {
+    if (TPL_DEFAULT[id]) return TPL_DEFAULT[id];
+    var d = F() && typeof F().templateDefaults === "function" ? F().templateDefaults() : null, t = String((d && d[id]) || "");
+    var m = /^subject:\s*(.*)\n+([\s\S]*)$/i.exec(t);
+    return m ? { subject: m[1].trim(), body: m[2].replace(/\s+$/, "") } : { subject: "", body: t };
+  }
+  // Hand the saved wording of the funding tab's two emails back to it, so its own Accept and Follow up write the same.
+  function tplPush() {
+    var f = F(); if (!f || typeof f.setTemplates !== "function" || !TPLS.loaded) return;
+    var out = {};
+    Object.keys(TPL_FUND).forEach(function (id) {
+      var last = tplRows(id)[0];
+      out[id] = last && !last.reset ? "Subject: " + last.subject + "\n\n" + last.body : null;
+    });
+    f.setTemplates(out);
+  }
   var TPL_WORDS = [
     ["name", "the person the email is to"], ["college", "the college's name"],
     ["deadline", "the sentence naming the confirmation deadline, or nothing when none is set"],
@@ -1282,16 +1336,17 @@
     ["close_title", "a sentence when the landing page lists a title close to Noncredit CPL Lead, or nothing"],
     ["open_items", "the CO Monitor's note, or the conditions still open (follow-up)"]];
   var TPLS = { rows: [], loaded: false, error: "", seq: 0, asked: false, busy: false };
-  function tplLabel(id) { for (var i = 0; i < TEMPLATES.length; i++) if (TEMPLATES[i].id === id) return TEMPLATES[i].label; return id; }
+  function tplLabel(id) { if (TPL_EDIT_LABEL[id]) return TPL_EDIT_LABEL[id]; for (var i = 0; i < TEMPLATES.length; i++) if (TEMPLATES[i].id === id) return TEMPLATES[i].label; return id; }
   function tplRows(id) { return TPLS.rows.filter(function (x) { return x.template_id === id; }); }
   // The wording in force: the newest saved version, unless it is a reset or none was saved.
   function tplOf(id) {
     var last = tplRows(id)[0];
-    return last && !last.reset ? { subject: last.subject, body: last.body, row: last } : { subject: TPL_DEFAULT[id].subject, body: TPL_DEFAULT[id].body, row: last || null };
+    var d = tplDefault(id);
+    return last && !last.reset ? { subject: last.subject, body: last.body, row: last } : { subject: d.subject, body: d.body, row: last || null };
   }
-  function tplUnknown(text) {
+  function tplUnknown(text, id) {
     var known = {}, bad = [];
-    TPL_WORDS.forEach(function (w) { known[w[0]] = 1; });
+    tplWordsOf(id).forEach(function (w) { known[w[0]] = 1; });
     String(text || "").replace(/\{([^{}\s]{1,40})\}/g, function (m, k) { if (!known[k] && bad.indexOf(m) < 0) bad.push(m); return m; });
     return bad;
   }
@@ -1359,19 +1414,21 @@
     var meta = t.row && !t.row.reset ? "Saved by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "."
       : t.row ? "Put back to the shipped wording by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "." : "The wording the dashboard ships with.";
     var prev = r ? (function () {
-      var v = tplVars(r, "the person on file", []);
+      var v = TPL_FUND[id] ? { name: "the person who sent it", college: r.name, request: "participation confirmation",
+        date: longDay(r.part.at || new Date().toISOString()), note: r.note || "Write what the college can do here." } : tplVars(r, "the person on file", []);
       return '<details class="tplprev"><summary>Preview for ' + esc(r.name) + "</summary><p class=\"k\">Subject</p><p>" + esc(tplFill(subj, v)) +
         '</p><p class="k">Message</p><pre class="tplpre">' + esc(tplFill(body, v)) + "</pre></details>";
     })() : "";
     return '<section class="sec pane tplpane" id="cw-tpls" aria-labelledby="cw-tpls-h"><div class="sec-h"><h2 id="cw-tpls-h">Email templates</h2>' +
-      '<p class="note">Saved changes reach every reviewer. The next email opened from a template starts from its saved wording; an email already open keeps its words.</p></div>' +
+      '<p class="note">Every email this page writes is here, ' + TPL_EDITABLE.length + ' in all. Saved changes reach every reviewer. The next email opened from a template starts from its saved wording; an email already open keeps its words.</p></div>' +
       '<form class="compose tplform" data-tplform="1" aria-labelledby="cw-tpls-h">' +
         '<div class="compose-row"><label for="cw-tpls-id">Template <select id="cw-tpls-id" data-tplpick="1">' + TPL_EDITABLE.map(function (k) {
           return '<option value="' + k + '"' + (k === id ? " selected" : "") + ">" + esc(tplLabel(k)) + "</option>"; }).join("") + "</select></label></div>" +
         '<p class="tpl-meta">' + esc(meta) + (d ? " You have unsaved changes." : "") + "</p>" +
         '<label for="cw-tpls-subj">Subject</label><input id="cw-tpls-subj" class="search" name="subject" type="text" maxlength="300" data-tpledit="subject" value="' + esc(subj) + '">' +
         '<label for="cw-tpls-body">Message</label><textarea id="cw-tpls-body" name="body" rows="16" maxlength="8000" data-tpledit="body">' + esc(body) + "</textarea>" +
-        '<p class="tpl-meta">Words in braces fill in for each college: ' + TPL_WORDS.map(function (w) { return "{" + w[0] + "} " + esc(w[1]); }).join("; ") + ".</p>" +
+        '<p class="tpl-meta">Words in braces fill in for each college: ' + tplWordsOf(id).map(function (w) { return "{" + w[0] + "} " + esc(w[1]); }).join("; ") + "." +
+          (TPL_FUND[id] ? " Implementation Funding writes this email from the same saved wording." : "") + "</p>" +
         '<p class="links"><button type="submit" class="word lead"' + (TPLS.busy ? " disabled" : "") + ">Save for every reviewer</button>" +
           (d ? '<button type="button" class="word" data-tpldiscard="1">Discard my changes</button>' : "") +
           (t.row && !t.row.reset ? '<button type="button" class="word" data-tplreset="1">Put back the shipped wording</button>' : "") + "</p>" +
@@ -1505,7 +1562,7 @@
         (sentBtn ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") + "</div>" +
       '<p class="tpl-meta"' + (open ? "" : " hidden") + ">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>" +
       '<p class="tpl-meta"' + (open ? "" : " hidden") + ">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each, with a follow-up a week out unless Edit email clears it." +
-      (sentBtn ? " A copy or a draft is not yet a sent email: once it has gone out, come back and press Sent. Sent records that you sent it, and the college leaves Ready to send." : "") + "</p></div>";
+      (sentBtn ? " A copy or a draft is not yet a sent email: once it has gone out, come back and press Sent. Sent records that you sent it, and the college leaves the emails to send." : "") + "</p></div>";
   }
   function allCc(m) {
     var seen = {}, out = [];
@@ -1620,8 +1677,8 @@
       return '<button type="button" class="metric" data-view="' + view + '" aria-pressed="' + (state.view === view) + '"><span class="num">' +
         S.rows.filter(VIEWS[view].keep).length + '</span><span class="lab">' + label + "</span></button>";
     };
-    return '<div class="today" role="group" aria-label="Today">' + go("review", "Waiting on the team") + go("send", "Ready to send") +
-      go("notyet", "Not yet confirmed") + go("held", "Confirmed and held") + go("qual", "Qualify") +
+    return '<div class="today" role="group" aria-label="Today">' + go("review", "Requests to review") + go("accept", "Acceptances to send") +
+      go("request", "Requests to send") + go("notyet", "Not yet confirmed") + go("held", "Confirmed and held") + go("qual", "Qualify") +
       (S.deadline ? '<p class="deadline"><span class="lab">Confirmation due</span><span class="date">' + esc(shortDate(S.deadline)) + "</span></p>" : "") + "</div>" +
       '<p class="links today-more"><button type="button" class="word" data-condx="open" aria-expanded="' + !!state.condx + '" aria-controls="cw-condx">Funding conditions explained</button></p>';
   }
@@ -1849,6 +1906,7 @@
     var f = F();
     if (!f) { el.innerHTML = '<p class="empty">Loading the Funding Follow-up Dashboard&hellip;</p>'; return; }
     S = f.snapshot();
+    tplPush();
     if (S.reviewer && !LOG.asked) loadLog();
     if (S.reviewer && !TPLS.asked) loadTemplates();
     if (S.reviewer && CT.state === "idle") loadContacts();
@@ -1929,7 +1987,7 @@
         // Either receipt can be undone (COBIx on PR 3050): the both-in-one email's receipt is the nudge's.
         if (state.sent) { delete state.sent[r.key + "|" + kind]; if (kind === "nudge") delete state.sent[r.key + "|both"]; }
         paint();
-        say("Noted that it bounced. " + r.name + " is back in Ready to send.");
+        say("Noted that it bounced. " + r.name + " is back among the emails to send.");
       });
       return;
     }
@@ -2118,7 +2176,7 @@
     var id = state.tplId, subject = String(fv(fm, "subject").value || "").trim(), body = String(fv(fm, "body").value || "").replace(/\s+$/, "");
     var said = function (m) { state.tplMsg = m; var x = document.getElementById("cw-tpls-said"); if (x) x.textContent = m; };
     if (!subject || !body.trim()) { said("A template needs a subject and a message."); return; }
-    var bad = tplUnknown(subject + "\n" + body);
+    var bad = tplUnknown(subject + "\n" + body, id);
     if (bad.length) { said("Not saved: " + bad.join(", ") + (bad.length === 1 ? " is not a word" : " are not words") + " the dashboard fills in. Use one of the words listed under the message."); return; }
     var dr = state.tplDraft[id] || null;
     TPLS.busy = true; paint();
@@ -2176,7 +2234,8 @@
      #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
   function arrive() {
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival(TAB) : null;
-    if (a && a[0] && Object.prototype.hasOwnProperty.call(VIEWS, a[0])) state.view = a[0];
+    var want = a && a[0] ? (VIEW_WAS[a[0]] || a[0]) : "";
+    if (want && Object.prototype.hasOwnProperty.call(VIEWS, want)) state.view = want;
   }
   function boot() {
     ensureCss();
@@ -2235,7 +2294,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _views: VIEWS, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },

@@ -89,8 +89,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       JSON.stringify(["rpc/funding_access_decide", "rpc/funding_access_pending", "rpc/is_funding_approver", "rpc/is_funding_reviewer"]) &&
     (SRC.match(/method: "POST"/g) || []).length === 3 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC) &&
     /fetch\(R\.url \+ "csm_templates", \{ method: "POST"/.test(SRC) && !/csm_templates[^"]*", \{ method: "(PATCH|DELETE)"/.test(SRC));
-  check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
-    flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
+  check("1f: the queue opens on Everything to do and picks the first, the college waiting on the team",
+    flat(root.querySelector(".showing")).indexOf("everything to do") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
 }
 
@@ -175,7 +175,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   // Sam, 2026-11-03: folded, Today stays in the header and each count filters the action center as its card does.
   const today = root.querySelector("header .today");
   check("5b2: Today sits in the header", !!today);
-  check("5b3: Today's counts are words for the cards' views", ["review", "held", "qual", "notyet"].every((v) => !!today.querySelector('button[data-view="' + v + '"]')));
+  check("5b3: Today's counts are words for the cards' views", ["review", "accept", "request", "held", "qual", "notyet"].every((v) => !!today.querySelector('button[data-view="' + v + '"]')));
   clickEl(window, today.querySelector('[data-view="held"]'));
   check("5b4: a Today count filters the action center and shows pressed", W._state.view === "held" &&
     root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true");
@@ -185,15 +185,15 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     const mets = Array.prototype.slice.call(m.root.querySelectorAll("header .today .metric"));
     const menu = {};
     Array.prototype.forEach.call(m.root.querySelectorAll("#cw-view option"), (o) => { menu[o.value] = (/\((\d+)\)$/.exec(o.textContent) || [])[1]; });
-    check("5b6: five metrics in the order the work goes, each a number above its label",
-      mets.map((b) => b.getAttribute("data-view")).join() === "review,send,notyet,held,qual" &&
+    check("5b6: six metrics, what to do and then where the colleges stand, each a number above its label",
+      mets.map((b) => b.getAttribute("data-view")).join() === "review,accept,request,notyet,held,qual" &&
       mets.every((b) => /^\d+$/.test(flat(b.querySelector(".num"))) && flat(b.querySelector(".lab")).length > 3 && b.firstElementChild.className === "num"));
     check("5b7: each metric's number is its menu view's own count, so the two cannot disagree",
       mets.every((b) => flat(b.querySelector(".num")) === menu[b.getAttribute("data-view")]), JSON.stringify(menu));
-    clickEl(m.window, m.root.querySelector('.metric[data-view="send"]'));
-    check("5b8: Ready to send is a metric, and it opens its list and shows pressed",
-      m.W._state.view === "send" && m.root.querySelector('.metric[data-view="send"]').getAttribute("aria-pressed") === "true" &&
-      m.root.querySelector("#cw-view").value === "send");
+    clickEl(m.window, m.root.querySelector('.metric[data-view="request"]'));
+    check("5b8: Requests to send is a metric, and it opens its list and shows pressed",
+      m.W._state.view === "request" && m.root.querySelector('.metric[data-view="request"]').getAttribute("aria-pressed") === "true" &&
+      m.root.querySelector("#cw-view").value === "request");
     const dl = m.root.querySelector("header .today .deadline");
     check("5b9: the deadline sits apart from the metrics, its label above its date, and is no button",
       !dl || (dl.tagName === "P" && /Confirmation due/.test(flat(dl.querySelector(".lab"))) && !!flat(dl.querySelector(".date"))));
@@ -202,6 +202,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   {
     const g = setup({ signedIn: true });
     const heads = () => Array.prototype.map.call(g.root.querySelectorAll("#cw-queue .qgroup"), (h) => flat(h));
+    g.W._state.view = "review"; g.W._state.sel = null; g.W.paint();
     check("5c1: the waiting request sits under Needs you, and a group with no college draws no heading",
       heads().join("|") === "Needs you 1" && !!g.root.querySelector('.queue[data-group="you"] .row[data-sel="' + COLLEGE + '"]') &&
       g.root.querySelector('.queue[data-group="you"]').getAttribute("aria-labelledby") === "cw-qg-you");
@@ -209,7 +210,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       flat(g.root.querySelector('.row[data-sel="' + COLLEGE + '"] .row-next')) === "Review the participation confirmation sent Nov 2, then accept or deny it.");
     const rowsNow = g.W._snapshot().rows;
     const nk = rowsNow.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
-    check("5c3: outside Ready to send, a college with no confirmation reads the email to send, never a pointer to another list",
+    check("5c3: outside the email lists, a college with no confirmation reads the email to send, never a pointer to another list",
       g.W._nextStep(rowsNow.find((r) => r.key === nk)) === "Send the request for the participation confirmation." && g.W._needsYou(rowsNow.find((r) => r.key === nk)));
     g.W._log().push({ id: 901, college: nk, activity: "funding", kind: "email", body: "Nudge sent: a participation confirmation for " + nk, created_at: "2026-11-09T10:00:00Z" });
     g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
@@ -225,8 +226,8 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
         order[0] === COLLEGE && order[1] === OTHER && order.length > 50 && g.W._readyOf(order[2]) === "nudge", order.slice(0, 3).join());
       const o = g.W._snapshot().rows.find((r) => r.key === OTHER);
       const here = g.W._nextStep(o);
-      g.W._state.view = "send";
-      check("5c7: the email that is due reads the same in Ready to send and in every other list",
+      g.W._state.view = "accept";
+      check("5c7: the email that is due reads the same in Send an acceptance and in every other list",
         here === g.W._nextStep(o) && /^Send the acceptance\./.test(here), here);
       g.W._state.view = "notyet"; g.W._state.sel = null; g.W.paint();
     }
@@ -430,7 +431,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       flat(R.querySelector("header h1")) === "Funding Follow-up Dashboard" && !/CSM Workspace/.test(flat(R)) && /#csm-workspace/.test(FUND));
     check("5f2: the Action center heading and the four-column board are gone; the metrics and the menu carry every count",
       !/Action center/.test(flat(R)) && !R.querySelector(".board") && !R.querySelector("[data-stage]") && !/Where the \d+ stand/.test(flat(R)) &&
-      R.querySelectorAll("header .metric").length === 5 && R.querySelectorAll("#cw-view option").length >= 10);
+      R.querySelectorAll("header .metric").length === 6 && R.querySelectorAll("#cw-view option").length >= 10);
     const open = () => R.querySelector('header [data-fund="open"]'), dr = () => R.querySelector("#cw-fund");
     check("5f3: Implementation Funding in the header is a word that opens a drawer, closed at first",
       !!open() && open().tagName === "BUTTON" && open().getAttribute("aria-expanded") === "false" && open().getAttribute("aria-controls") === "cw-fund" && dr().hidden);
@@ -487,27 +488,31 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
   check("5c: a metric opens its view, Nudge offered on Not yet confirmed",
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
-  check("5d: a new visit starts on All open items with nothing typed", W._state.view === "open" && W._state.q === "");
+  check("5d: a new visit starts on Everything to do with nothing typed", W._state.view === "open" && W._state.q === "");
 }
 
 // ── 5e. every view has an address (a sign-in link opens a new browser tab, so only the address survives) ─────
 {
   const { window, W, root } = setup({ signedIn: true, keeper: true, hash: "#csm-workspace/held" });
   const stash = () => { window.CPL_SESSION.stashReturnTab("csm-workspace"); return (JSON.parse(window.localStorage.getItem("cpl_sb_return_tab") || "{}")).tab; };
-  check("5e1: #csm-workspace/held opens Confirmed, still held", W._state.view === "held" && root.querySelector("#cw-view").value === "held");
+  check("5e1: #csm-workspace/held opens Confirmed, held by a condition", W._state.view === "held" && root.querySelector("#cw-view").value === "held");
   check("5e2: and reports it as the view a sign-in returns to", stash() === "csm-workspace/held");
   clickEl(window, root.querySelector('.metric[data-view="notyet"]'));
   check("5e3: another view reports its own address (the address still says held)", stash() === "csm-workspace/notyet" && window.location.hash === "#csm-workspace/held");
   const sel = root.querySelector("#cw-view"); sel.value = "open"; sel.dispatchEvent(new window.Event("change", { bubbles: true }));
-  check("5e4: All open items reports the bare tab", stash() === "csm-workspace");
+  check("5e4: Everything to do reports the bare tab", stash() === "csm-workspace");
   window.location.hash = "#csm-workspace/due";
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
-  check("5e5: a later visit reads its address after the reset", W._state.view === "due" && W._state.q === "");
+  check("5e5: a later visit reads its address after the reset, and an address saved before the lists were redrawn opens the list that replaced it",
+    W._state.view === "follow" && W._state.q === "");
+  window.location.hash = "#csm-workspace/accept";
+  window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
+  check("5e5b: a new list opens from its own address", W._state.view === "accept");
   window.location.hash = "#csm-workspace/nonsense";
   window.dispatchEvent(new window.CustomEvent("cpl-tab-activated", { detail: { tab: "csm-workspace" } }));
-  check("5e6: an unknown word keeps All open items", W._state.view === "open");
+  check("5e6: an unknown word keeps Everything to do", W._state.view === "open");
   const bare = setup({ signedIn: true, keeper: true, hash: "#csm-workspace" });
-  check("5e7: a bare #csm-workspace opens All open items", bare.W._state.view === "open" && bare.root.querySelector("#cw-view").value === "open");
+  check("5e7: a bare #csm-workspace opens Everything to do", bare.W._state.view === "open" && bare.root.querySelector("#cw-view").value === "open");
 }
 
 // ── 6. Rule 4 and the link from the internal view ────────────────────────────
@@ -560,7 +565,7 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
     !!root.querySelector('.queue .row[data-sel="' + OTHER + '"]') && /Follow-up due Nov 1/.test(flat(root.querySelector('.queue .row[data-sel="' + OTHER + '"]'))) &&
     /^Follow up: Called the VPAA's office/.test(W._nextStep(snapRow)));
   clickEl(window, root.querySelector("[data-logdone]"));
-  check("7h: Mark the follow-up done closes it, stamped, and the college leaves Follow-ups open",
+  check("7h: Mark the follow-up done closes it, stamped, and the college leaves Follow up",
     !!W._log()[0].done_at && W._log()[0].done_by === "co@cccco.edu" && !W._dueOf(snapRow));
   window.confirm = () => true;
   clickEl(window, root.querySelector("[data-logdel]"));
@@ -716,7 +721,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   /accept: function \(kind, key\) \{[\s\S]*?return Promise\.resolve\(p\)\.then\(function \(\) \{\s*return \{ ok: kind === "nc" \? ncAttestStanding\(ncAttestOf\(key\)\) : !!ELIG\.optin\[key\] \};/.test(FUND)
   && /return CSM_ACT\[action\]\(kind, key\);/.test(FUND));
 
-// ── 10. Ready to send (issue 2967, item 3): the email each college is due, and Sent drops it ─────────────────
+// ── 10. The emails that are due (issue 2967, item 3): the email each college is due, and Sent drops it ─────────────────
 {
   const { window, T, W, root } = setup({ signedIn: true });
   W._setContacts({
@@ -726,18 +731,22 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   const nudgeKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
   check("10a: waiting reads Accept first, confirmed with no receipt the acceptance, not yet confirmed the nudge",
     W._readyOf(COLLEGE) === "wait" && W._readyOf(OTHER) === "accept" && W._readyOf(nudgeKey) === "nudge");
-  W._state.view = "send"; W._state.sel = null; W.paint();
+  W._state.view = "accept"; W._state.sel = null; W.paint();
   const rows = Array.from(root.querySelectorAll(".queue .row")).map((b) => b.getAttribute("data-sel"));
-  check("10b: Ready to send lists the acceptances first and the waiting request last, with the step in words",
-    rows[0] === OTHER && rows[rows.length - 1] === COLLEGE &&
-    /^Send the acceptance\./.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"] .row-next'))) &&
-    /^Accept first/.test(flat(root.querySelector('.row[data-sel="' + COLLEGE + '"] .row-next'))));
+  check("10b: Send an acceptance lists the acceptance that is due with the step in words, and holds no request still under review",
+    rows[0] === OTHER && rows.indexOf(COLLEGE) < 0 && rows.indexOf(nudgeKey) < 0 &&
+    /^Send the acceptance\./.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"] .row-next'))));
+  W._state.view = "request"; W._state.sel = null; W.paint();
+  const reqRows = Array.from(root.querySelectorAll(".queue .row")).map((b) => b.getAttribute("data-sel"));
+  check("10b2: Send a request lists the colleges owed a request and neither the acceptance nor the request under review",
+    reqRows.indexOf(nudgeKey) >= 0 && reqRows.indexOf(OTHER) < 0 && reqRows.indexOf(COLLEGE) < 0);
+  W._state.view = "accept"; W._state.sel = null; W.paint();
   W._state.sel = OTHER; W.paint();
   const m = W._mail(OTHER);
   check("10c: the acceptance comes from the funding tab's own template, To the person on file, and keeps the record's draft apart",
     m.tpl === "accept" && m.to === "ana@pasadena.edu" && m.subject.length > 0 && !!W._state.mail[OTHER + "|send"] && !W._state.mail[OTHER] &&
     /return \{ to: m\.to, subject: m\.subject, text: m\.text \};/.test(FUND) && /acceptMail: csmAcceptMail/.test(FUND));
-  check("10d: Sent shows in Ready to send, beside Open in Outlook",
+  check("10d: Sent shows in Send an acceptance, beside Open in Outlook",
     !!root.querySelector('[data-mailact="sent"]') && /Open in Outlook/.test(flat(root.querySelector('[data-mailact="draft"]'))));
   clickEl(window, root.querySelector('[data-mailact="sent"]'));
   await tick();
@@ -774,7 +783,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
       primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
   const later = { key: LATER };
-  W._state.view = "send"; W._state.sel = null; W.paint();
+  W._state.view = "accept"; W._state.sel = null; W.paint();
   const first = root.querySelector(".queue .row");
   check("11a: an acceptance confirmed before the log went live leads the queue as Not received, with the resend in words",
     first && first.getAttribute("data-sel") === OTHER && /Not received/.test(flat(first.querySelector(".row-pills"))) &&
@@ -795,7 +804,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   clickEl(window, b);
   await tick();
   W._log()[0].created_at = "2026-11-09T18:05:00Z";
-  check("11f: It bounced writes its row and puts the college back in Ready to send",
+  check("11f: It bounced writes its row and puts the college back in Send an acceptance",
     W._log().some((x) => /^It bounced, Acceptance sent: /.test(x.body)) && W._readyOf(OTHER) === "accept" && !root.querySelector('[data-act="bounced"][data-kind="accept"]'));
   const pc = W._snapshot().rows.find((r) => r.key === OTHER);
   pc.nc = { standing: true, waiting: false, confirmedAt: "2026-11-09T17:00:00Z", fy: "2026-27" };
@@ -921,28 +930,45 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   const pairs = keys.map((k) => { const m = /\((\d+)\)$/.exec(opt(k).textContent); pick(k);
     return { k, n: m ? parseInt(m[1], 10) : -1, got: parseInt(flat(root.querySelector(".showing b")), 10) }; });
   check("14a: ⭐ every label's count is the length of the list it opens (" + pairs.map((p) => p.k + " " + p.n + "/" + p.got).join("; ") + ")",
-    pairs.length === 14 && pairs.every((p) => p.n === p.got));
-  check("14b: the counts are real figures here, not all zero", pairs.find((p) => p.k === "all").n > 100 && pairs.find((p) => p.k === "coordmet").n > 0);
-  pick("coordmet");
-  check("14c: With a CPL Coordinator in MAP lists the colleges that have one, confirmed or not",
-    listed().indexOf(COLLEGE) >= 0 && listed().indexOf(OTHER) < 0 && W._state.view === "coordmet");
-  check("14d: the count line keeps CPL and MAP in capitals, and carries no second count", /^\d+ with a CPL Coordinator in MAP$/.test(flat(root.querySelector(".showing"))));
+    pairs.length === 13 && pairs.every((p) => p.n === p.got));
+  const nOf = (k) => pairs.find((p) => p.k === k).n;
+  check("14b: the counts are real figures here, not all zero", nOf("all") > 100 && nOf("confirmed") > 0 && nOf("request") > 0);
+  // The lists were redrawn 2026-11-12 on "the filters are many and the accuracy seems few": these pin the divisions.
+  check("14b2: ⭐ By stage, with Review a request, holds every institution exactly once (" + [nOf("review"), nOf("notyet"), nOf("held"), nOf("qual")].join("+") + " = " + nOf("all") + ")",
+    nOf("review") + nOf("notyet") + nOf("held") + nOf("qual") === nOf("all"));
+  {
+    const rowsAll = W._snapshot().rows, V = W._views;
+    const inAny = rowsAll.filter((r) => ["review", "accept", "request", "follow"].some((k) => V[k].keep(r))).length;
+    check("14b3: ⭐ Everything to do is the four lists under it, a college counted once, and each of the four sits inside it",
+      inAny === nOf("open") && ["review", "accept", "request", "follow"].every((k) => nOf(k) <= nOf("open")) &&
+      rowsAll.every((r) => V.open.keep(r) === W._needsYou(r)));
+    check("14b4: no list holds a college that another to-do list should: an acceptance list has no request under review, a request list has no confirmed college owed only an acceptance",
+      rowsAll.filter(V.accept.keep).every((r) => r.part.confirmed || (r.nc && r.nc.standing)) &&
+      rowsAll.filter(V.request.keep).every((r) => !r.part.waiting));
+  }
+  pick("confirmed");
+  check("14c: Confirmed lists the confirmed college and not the one whose request waits",
+    listed().indexOf(OTHER) >= 0 && listed().indexOf(COLLEGE) < 0 && W._state.view === "confirmed");
+  pick("nocoord");
+  check("14d: the count line keeps CPL and MAP in capitals, and carries no second count", /^\d+ no CPL Coordinator in MAP$/.test(flat(root.querySelector(".showing"))));
   const groups = () => Array.from(root.querySelectorAll("#cw-view optgroup"));
   const vals = (g) => Array.from(g.querySelectorAll("option")).map((o) => o.value).join();
-  check("14x-a: the menu has two groups, To do then Browse", groups().map((g) => g.getAttribute("label")).join() === "To do,Browse");
-  check("14x-b: To do holds the work queues, in the agreed order", vals(groups()[0]) === "open,send,review,due,held,nc,notyet");
-  check("14x-c: Browse holds the lists, the two coordinator lists among them (status only; Sam chases); no Declined list",
-    vals(groups()[1]) === "qual,confirmed,coordmet,ncmet,coord,nocoord,all");
-  // Nothing reads a decline mark any more (S624): a row handed the old field stays in Ready to send.
+  check("14x-a: the menu has three groups: To do, By stage, Look up",
+    groups().map((g) => g.getAttribute("label").replace(/ \(.*$/, "")).join() === "To do,By stage,Look up");
+  check("14x-b: To do holds what the team acts on, named by the action", vals(groups()[0]) === "open,review,accept,request,follow");
+  check("14x-c: By stage holds the three stages beside Review a request; Look up holds the facts, the two coordinator lists among them (status only; Sam chases); no Declined list",
+    vals(groups()[1]) === "notyet,held,qual" && vals(groups()[2]) === "confirmed,ncnamed,coord,nocoord,all");
+  // Nothing reads a decline mark any more (S624): a row handed the old field stays owed its request.
   const anyKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
   const before = W._readyOf(anyKey);
   W._snapshot().rows.find((r) => r.key === anyKey).declined = "2026-11-01";
-  check("14x-c2: a row handed the old declined field stays in Ready to send", before === "nudge" && W._readyOf(anyKey) === "nudge");
+  check("14x-c2: a row handed the old declined field stays owed its request", before === "nudge" && W._readyOf(anyKey) === "nudge");
   delete W._snapshot().rows.find((r) => r.key === anyKey).declined;
   check("14x-d: every option sits in a group", root.querySelectorAll("#cw-view > option").length === 0);
   check("14x-e: the labels keep their names before the count",
-    /^Qualifies \(all conditions met\) \(\d+\)$/.test(opt("qual").textContent) && /^Follow-ups open \(\d+\)$/.test(opt("due").textContent) &&
-    /^Confirmed but missing the CPL Coordinator in MAP \(1\)$/.test(opt("coord").textContent) && /^With a Noncredit CPL Lead \(\d+\)$/.test(opt("ncmet").textContent));
+    /^Qualifies \(every condition met\) \(\d+\)$/.test(opt("qual").textContent) && /^Follow up \(\d+\)$/.test(opt("follow").textContent) &&
+    /^Confirmed, missing the CPL Coordinator in MAP \(1\)$/.test(opt("coord").textContent) &&
+    /^Named a Noncredit CPL Lead \(MAP or attestation\) \(\d+\)$/.test(opt("ncnamed").textContent));
   const none = W._snapshot().rows.filter((r) => r.conds.some((c) => c.kind === "coord" && !c.met && !c.pending)).map((r) => r.key);
   pick("nocoord");
   check("14x-f: No CPL Coordinator in MAP lists every college without one, confirmed or not (" + none.length + ")",
@@ -981,19 +1007,22 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   const opt = (v) => root.querySelector('#cw-view option[value="' + v + '"]');
   const pick = (v) => { const sel = root.querySelector("#cw-view"); sel.value = v; sel.dispatchEvent(new window.Event("change", { bubbles: true })); };
   const listed = () => Array.from(root.querySelectorAll(".queue .row[data-sel]")).map((b) => b.getAttribute("data-sel")).join();
-  check("15e: With a Noncredit CPL Lead counts the accepted attestation, and the waiting one counts as waiting",
-    opt("ncmet").textContent === "With a Noncredit CPL Lead (1)" && opt("nc").textContent === "Noncredit attestations waiting (1)");
-  pick("ncmet");
-  check("15f: and the list is that college", listed() === COLLEGE);
+  // One list for a named lead, by any route (asked 2026-11-12: 14 colleges had named one and no list showed more than 7).
+  check("15e: ⭐ Named a Noncredit CPL Lead counts the accepted attestation and the waiting one together",
+    opt("ncnamed").textContent === "Named a Noncredit CPL Lead (MAP or attestation) (2)");
+  pick("ncnamed");
+  check("15f: and the list is both colleges", listed().split(",").sort().join() === [COLLEGE, OTHER].sort().join());
+  pick("review");
+  check("15f2: the attestation still waiting is under Review a request", listed().split(",").indexOf(OTHER) >= 0);
   // Sam, 2026-11-09: the role in MAP meets the condition ("in MAP since itpi just added the field in map users. if they
   // attest, we can accept that now as well"). OTHER's form waits, and OTHER now holds the role on its MAP landing page.
   T._setElig(ELIG({ [OTHER]: true })); T.render(); W.paint();
   const pc2 = T.csm.snapshot().rows.find((r) => r.key === OTHER);
   check("15h: ⭐ a college with the role in MAP no longer reads as attestation waiting", pc2.nc.lead === true && pc2.nc.waiting === true &&
-    W._stageOf(pc2) !== "waiting" && opt("nc").textContent === "Noncredit attestations waiting (0)");
-  pick("ncmet");
-  check("15i: and it counts as having a Noncredit CPL Lead, beside the accepted attestation",
-    opt("ncmet").textContent === "With a Noncredit CPL Lead (2)" && listed().split(",").sort().join() === [COLLEGE, OTHER].sort().join());
+    W._stageOf(pc2) !== "waiting" && (pick("review"), listed().split(",").indexOf(OTHER) < 0));
+  pick("ncnamed");
+  check("15i: and it counts as having named a Noncredit CPL Lead, beside the accepted attestation",
+    /\(2\)$/.test(opt("ncnamed").textContent) && listed().split(",").sort().join() === [COLLEGE, OTHER].sort().join());
   pick("open");
   check("15j: its row carries no NC attestation waiting pill", !/NC attestation waiting/.test(flat(root.querySelector('.row[data-sel="' + OTHER + '"]') || root)));
   check("15k: the review for that form, if opened, says the role already meets the condition",

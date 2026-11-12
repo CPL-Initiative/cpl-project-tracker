@@ -77,11 +77,8 @@ all--we can just leave the confirmation blank as an indicator--save the step"*; 
 itpi just added the field in map users. if they attest, we can accept that now as well"*; the missing coordinators,
 *"since I made the problem, I will chase them"*.
 - **The priority cards are gone**, with their fold. Today's four counts stay in the header.
-- **The menu is two groups with a count beside every label.** **To do:** All open items, Ready to send, Waiting on the
-  team, Follow-ups open, Confirmed, still held, Noncredit attestations waiting, Not yet confirmed. **Browse:** Qualifies
-  (all conditions met), Confirmed, With a CPL Coordinator in MAP, With a Noncredit CPL Lead, Confirmed but missing the
-  CPL Coordinator in MAP (`#csm-workspace/coord`, the list Sam chases), No CPL Coordinator in MAP, All institutions.
-  A missing coordinator is status only: no CSM email for it.
+- **The menu, redrawn 2026-11-12 (below, *The lists*).** A missing coordinator is status only: no CSM email for it,
+  and `#csm-workspace/coord` is the list Sam chases.
 - **The exact MAP title *Noncredit CPL Lead* stands in for the whole noncredit attestation (Sam, in session 2026-11-10: *"Nc yes exact wor whole"*, then *"Word"*; COBIx had relayed it on #2999).** No form is needed and the form stays out under Scenario 4. The workspace reads it so since #3012 and its record reads *Noncredit share: complete*; the funding tab since #3033: the role meets `nc_team` as well as `nc_coord`, a college with the role is offered no form, counts as attested in the filter, and a form it left waiting shows no chip (guard `tests/cpl_funding_nc_lead_in_map.test.js`). The reviewer's confirmations panel still lists a form on file, so Accept and Reject stay reachable.
 - **The Noncredit CPL Lead is met by the role in MAP or an accepted attestation** (`ncMet`). A form still waiting at a
   college that holds the role asks nothing of the team (`ncWaiting`): no pill, no place in Waiting on the team.
@@ -107,7 +104,7 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
 
 **LIVE: the clarity mock, built (S624, 2026-11-10, on Sam's "go ahead and build it"; #3049, #3050 and the two after).**
 The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team does most of this work; the address
-stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is five metrics,
+stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is six metrics (2026-11-12),
 each opening its list, the deadline apart. The list sits in two groups, *Needs you* (a request waiting on the team, an
 email that is due, a follow-up due) above *Waiting on the college*, most pressing first; every row names the email or
 the date. The record is a table of conditions (Condition, Status, Next step), then *Recommended action* with the email as
@@ -171,6 +168,47 @@ immediately obvious what has happened yet or how each of those lines tracks with
 - **Rollback:** one squash commit; `git revert` of it restores every piece. No table, migration or stored value changed.
 Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
 
+**LIVE once its PR merges: the lists redrawn, every email in the editor, and the guide's stamp (2026-11-12, Malone in
+session).** His words: *"the filters are either not working or not corresponding to logical divisions ... I recently
+got a list of 14 colleges with Non-credit CPL leads from COBI, but in the NC attestation filter, it's only got 7 ...
+right now the filters are many and the accuracy seems few"*; and *"make sure that every single Email template is
+contained in the Email Template editor"*.
+- **What was wrong.** Every list counted what its code said, and the definitions overlapped. Read live 2026-11-12: 13
+  attestations (5 accepted, 8 waiting) and 3 colleges with the role in MAP, 14 colleges in all. *Noncredit
+  attestations waiting* read 7 (8 less Chaffey, which holds the role) and *With a Noncredit CPL Lead* read 7 (5
+  accepted and the 3 with the role, LA Mission in both); no list held the 14. *All open items* left out every email
+  that was due and held colleges with nothing to do; *Ready to send* held requests still under review.
+- **The lists (`VIEWS`, three `GROUPS`).** **To do:** Everything to do (`open`, the four under it, a college once),
+  Review a request (`review`), Send an acceptance (`accept`), Send a request (`request`, due or copied and never marked
+  Sent), Follow up (`follow`, due today or earlier). **By stage:** Not yet confirmed (`notyet`), Confirmed, held by a
+  condition (`held`), Qualifies (`qual`); with Review a request these hold every institution exactly once. **Look up:**
+  Confirmed, Named a Noncredit CPL Lead (`ncnamed`: the role in MAP, an attestation accepted or one waiting), the two
+  coordinator lists, All institutions. An address saved earlier opens its successor (`VIEW_WAS`: send, due, nc, ncmet,
+  coordmet). *Needs you* is Everything to do (`toDo`), so a copied request stays there until it is marked Sent.
+  The six metrics: Requests to review, Acceptances to send, Requests to send, Not yet confirmed, Confirmed and held,
+  Qualify. Guards 14b2 to 14b4 (the divisions), 15e to 15i, 5b6, 10b, 10b2.
+- **Read on live facts (2026-11-12, the page run on the live confirmation, coordinator and log rows):** 118
+  institutions; Review a request 5, Send an acceptance 14, Send a request 99, Follow up 0; Not yet confirmed 99, held
+  and Qualifies 14 between them, Confirmed 14. The noncredit lists could not be redrawn outside COBI (they wait on
+  the full funding settings); they are pinned by tests and by the arithmetic above. **`csm_log` holds 6 rows and no
+  Sent receipt**, so every confirmed college reads as owed its acceptance and every other as owed its request: the
+  to-do lists stay full until the team presses Sent, or *Log this Nudge* after a mail merge.
+- **Every email is in Email templates (`TPL_EDITABLE`, six).** The three requests, the follow-up on a condition, and
+  now the funding tab's two: the acceptance (one wording for the confirmation and the attestation) and the follow-up
+  on a request under review. Their saved versions live in `csm_templates` under `accept` and `request_follow`; the
+  funding tab reads them when a reviewer's data loads (`csmTplLoad`) and the dashboard hands them back after a save
+  (`setTemplates`), so both pages write the same words. With none saved the wording is the funding tab's own, and
+  *the response email* editor on Implementation Funding still sets that default: once a version is saved in the
+  dashboard, an edit there shows only after *Put back the shipped wording*. Guards `csm_workspace_templates` 5b to 5b4.
+- **The guide follows the page (`tests/csm_workspace_guide_stamp.test.js`).** Malone: *"Make a note somewhere to
+  automatically update this documentation whenever this page gets changed in functionality or layout."* The test
+  reads every control and label on the dashboard and fails when the set differs from the one the guide was written
+  against, naming what was added and removed; the fix is the guide's update and `--restamp` in the same change.
+- **DECIDED 2026-11-12 (in session, recorded here for Sam and Malone to revise):** a copied request counts as to do
+  until marked Sent; the list group headings are second-level headings; six metrics in place of five.
+- **Rollback:** one squash commit; no table or migration. A template saved under `accept` or `request_follow` is a
+  row in `csm_templates`, undone with *Put back the shipped wording*.
+
 ## NEXT
 
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
@@ -186,8 +224,7 @@ Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
    - **Open with Malone (the 2026-11-12 session):** whether the Noncredit CPL Lead attestation's review should keep its three
      extra requirements (the landing page, the assignment, the meetings) now that the role in MAP alone meets the
-     condition; whether a copied request belongs in *Needs you* until it is marked Sent; and whether *All open
-     items* should also hold the emails that are ready to send.
+     condition.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
