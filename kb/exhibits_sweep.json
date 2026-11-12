@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-12T06:40:09Z",
+ "generated_at": "2026-11-12T20:24:14Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -53,138 +53,17 @@
   }
  ],
  "counts": {
-  "ase": 12,
+  "ase": 7,
   "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
-  "fold": 0
+  "fold": 2
  },
- "local_titles": 28,
+ "local_titles": 16,
  "cards": [
   {
-   "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
-   "proposed": "Advanced Engine Performance Specialist (ASE L1)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE L1's official name is Advanced Engine Performance Specialist"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO L1",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "32e846a953d2",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
-   "proposed": "Automatic Transmission/Transaxle (ASE A2)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A2's official name is Automatic Transmission/Transaxle"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A2",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "b4d89140a157",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Brakes (ASE A5 standards)",
-   "proposed": "Brakes (ASE A5)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A5's official name is Brakes"
-   ],
-   "locals": [
-    {
-     "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "Automotive Brake Systems",
-     "colleges": [
-      "San Diego Miramar College"
-     ],
-     "course": "AUTO 176G",
-     "credit": "4 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "Automotive Brake Systems AUTO 036 Cx",
-     "colleges": [
-      "Copper Mountain College"
-     ],
-     "course": "AUTO 36",
-     "credit": "4 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "Brakes",
-     "colleges": [
-      "Chaffey College"
-     ],
-     "course": "AUTOTEC 417",
-     "credit": "4 hours in Brakes"
-    },
-    {
-     "raw": "Brakes - Credit by Exam (ATEC 14 )",
-     "colleges": [
-      "El Camino College"
-     ],
-     "course": "ATEC 14",
-     "credit": "4 hours in Brakes"
-    },
-    {
-     "raw": "Credit by Exam AUTO 106 Automotive Brake System",
-     "colleges": [
-      "Evergreen Valley College"
-     ],
-     "course": "AUTO 106",
-     "credit": "2 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "Noncredit for AUTO A5",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "a4fb41903c42",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 7,
-   "moves_all": true
-  },
-  {
-   "current": "Electrical/Electronic Systems (ASE A6 standards)",
+   "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
    "proposed": "Electrical/Electronic Systems (ASE A6)",
    "rules": [
     "ase"
@@ -212,91 +91,13 @@
      "credit": ""
     }
    ],
-   "id": "6205073ae16e",
+   "id": "430e821e4f43",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
    "current_locals": 3,
    "moves_all": true
-  },
-  {
-   "current": "Engine Performance (ASE A8 standards)",
-   "proposed": "Engine Performance (ASE A8)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A8's official name is Engine Performance"
-   ],
-   "locals": [
-    {
-     "raw": "Engine Performance",
-     "colleges": [
-      "San Diego Miramar College"
-     ],
-     "course": "AUTO 165G",
-     "credit": "4 hours in Engine Performance"
-    },
-    {
-     "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
-     "colleges": [
-      "El Camino College"
-     ],
-     "course": "ATEC 23",
-     "credit": "4 hours in Engine Performance"
-    },
-    {
-     "raw": "Engine Performance I AUTO 018 Cx",
-     "colleges": [
-      "Copper Mountain College"
-     ],
-     "course": "AUTO 18",
-     "credit": "4 hours in Engine Performance I"
-    },
-    {
-     "raw": "Noncredit for AUTO A8",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "2a47466ec9ca",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 5,
-   "moves_all": false
-  },
-  {
-   "current": "Engine Performance (ASE A8 standards)",
-   "proposed": "ASE A8 — Engine Performance",
-   "rules": [
-    "ase",
-    "fold"
-   ],
-   "why": [
-    "ASE A8's official name is Engine Performance",
-    "“Engine Performance (ASE A8)” holds different courses at Copper Mountain College; this one is “Engine Performance (ASE A8)”, a credential already"
-   ],
-   "locals": [
-    {
-     "raw": "Engine Performance II AUTO 029 Cx",
-     "colleges": [
-      "Copper Mountain College"
-     ],
-     "course": "AUTO 29",
-     "credit": "4 hours in Engine Performance II"
-    }
-   ],
-   "id": "e3f2df4e8376",
-   "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 12,
-   "proposed_issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "current_locals": 5,
-   "moves_all": false
   },
   {
    "current": "Heating and Air Conditioning (ASE A7 standards)",
@@ -506,6 +307,60 @@
    "proposed_issuer": "California Community Colleges",
    "current_locals": 1,
    "moves_all": true
+  },
+  {
+   "current": "Agricultural Business and Technology",
+   "proposed": "Introduction to Food Microbiology",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Agricultural Business and Technology” holds different courses at Hartnell College; this one is “Introduction to Food Microbiology”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam- CFPL ABT 135",
+     "colleges": [
+      "Hartnell College"
+     ],
+     "course": "ABT 135",
+     "credit": "1.5 hours in Introduction to Food Microbiology"
+    }
+   ],
+   "id": "ac293bc9e949",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Agricultural Business and Technology",
+   "proposed": "Food Safety Management",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Agricultural Business and Technology” holds different courses at Hartnell College; this one is “Food Safety Management”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam-- CFPL ABT 132",
+     "colleges": [
+      "Hartnell College"
+     ],
+     "course": "ABT 132",
+     "credit": "1.5 hours in Food Safety Management"
+    }
+   ],
+   "id": "8100a6573c4e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
   }
  ]
 }

@@ -746,6 +746,18 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   check("10c: the acceptance comes from the funding tab's own template, To the person on file, and keeps the record's draft apart",
     m.tpl === "accept" && m.to === "ana@pasadena.edu" && m.subject.length > 0 && !!W._state.mail[OTHER + "|send"] && !W._state.mail[OTHER] &&
     /return \{ to: m\.to, subject: m\.subject, text: m\.text \};/.test(FUND) && /acceptMail: csmAcceptMail/.test(FUND));
+  // Malone's screen, 2026-11-12 (Napa): the acceptance's subject was right and its message was the empty letter.
+  check("10c2: ⭐ the acceptance carries the funding tab's words, never the blank letter",
+    /Thank you for the participation confirmation/.test(m.body) && !/^Dear [^\n]*,\n\n\n\nThe CPL Initiative team$/.test(m.body) &&
+    /accepted|acknowledges/i.test(m.body) && /Thank you for the participation confirmation/.test(flat(root.querySelector("#cw-mail-pre"))), m.body);
+  {
+    const tsel = root.querySelector("#cw-tpl");
+    tsel.value = "blank"; tsel.dispatchEvent(new window.Event("change", { bubbles: true }));
+    check("10c3: Blank is still the empty letter", /^Dear [^\n]*,\n\n\n\nThe CPL Initiative team$/.test(W._mail(OTHER).body), W._mail(OTHER).body);
+    const t2 = root.querySelector("#cw-tpl");
+    t2.value = "accept"; t2.dispatchEvent(new window.Event("change", { bubbles: true }));
+    check("10c4: and choosing the acceptance again brings its words back", /Thank you for the participation confirmation/.test(W._mail(OTHER).body));
+  }
   check("10d: Sent shows in Send an acceptance, beside Open in Outlook",
     !!root.querySelector('[data-mailact="sent"]') && /Open in Outlook/.test(flat(root.querySelector('[data-mailact="draft"]'))));
   clickEl(window, root.querySelector('[data-mailact="sent"]'));

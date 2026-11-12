@@ -1486,7 +1486,10 @@
     if (TPL_DEFAULT[tplId]) {
       var made = tplRender(tplId, r, name, missing);
       subject = made.subject; body = made.body;
-    } else {
+    } else if (!body) {
+      // Blank alone. An acceptance arrives above with its words from the funding tab; this branch used to run for it
+      // too and wrote the empty letter over them (Malone's screen, 2026-11-12, Napa: "Dear ..., The CPL Initiative
+      // team" with nothing between, under a subject that was right).
       body = "Dear " + name + ",\n\n\n\nThe CPL Initiative team";
     }
     return { tpl: tplId, to: to || "", cc: cc.join(", "), more: [], subject: subject, body: body };

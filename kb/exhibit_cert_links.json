@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-12T11:52:19+00:00",
+ "_reference_generated_at": "2026-11-12T20:22:39+00:00",
  "counts": {
   "certs_linked": 238,
   "titles_linked": 275,
@@ -2492,6 +2492,13 @@
     "ITC4228"
    ]
   },
+  "Auto Electrical/Electronic Systems (ASE A6 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4236"
+   ]
+  },
   "Autodesk Certified User": {
    "relation": "holds",
    "rule": "all",
@@ -3000,13 +3007,6 @@
    "rule": "all",
    "certs": [
     "ITC1086"
-   ]
-  },
-  "Electrical/Electronic Systems (ASE A6 standards)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4236"
    ]
   },
   "Emergency Medical Technician (EMT) Certification": {
