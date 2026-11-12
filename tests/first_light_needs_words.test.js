@@ -14,7 +14,7 @@
 //       the three views' copies equal the list; (a) then fails on the result until the words are written;
 //   (d) ⭐ Drop is the takedown path: the next Apply removes the story photo from the list, all three views and disk;
 //   (e) no marks: nothing changes;
-//   (f) the workflow: an hourly look that reads one REST row before any checkout, one pull request at a time, the
+//   (f) the workflow: an hourly look that reads the pending rows before any checkout, one pull request at a time, the
 //       `test` run dispatched on the branch, the request stamped, no new credential, and nothing that merges;
 //   (g) the workflow is mapped in kb/governance_surface_map.json with a reason.
 //
@@ -60,7 +60,8 @@ function png(w, h) {
 }
 
 // ── (a) the repo as it stands ──────────────────────────────────────────────
-const SEL = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+const SEL0 = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+const SEL = Array.isArray(SEL0) ? SEL0 : SEL0.paintings;
 const HERO = JSON.parse(fs.readFileSync("library/photos/hero_photos.json", "utf8"));
 const bad = unwritten(SEL, HERO);
 check("(a) ⭐ every painting and photo that would ship has a written alt (no empty alt, no " + NEEDS + ")", bad.length === 0, bad.join("; "));
@@ -116,7 +117,10 @@ try {
   const pl = JSON.parse(run(["--plan", "--marks", mf, "--out", planFile]).trim().split("\n").pop());
   check("(c) the plan sees the change, one story to fetch, two items wanting words", pl.changed && pl.needs_browser && pl.needs_words === 2, JSON.stringify(pl));
   run(["--apply", "--plan", planFile, "--body", bodyFile]);
-  const sel2 = readT("tools/first_light_selection.json"), hero2 = readT("library/photos/hero_photos.json");
+  const selObj = readT("tools/first_light_selection.json"), sel2 = selObj.paintings, hero2 = readT("library/photos/hero_photos.json");
+  check("(c) ⭐ M2 the Apply records the highest mark it consumed, per set, in the committed files",
+    selObj.applied_through_mark_id === 3 && hero2.applied_through_mark_id === 5, JSON.stringify([selObj.applied_through_mark_id, hero2.applied_through_mark_id]));
+  check("(c) a hero photo dropped and named nowhere else leaves disk", !fs.existsSync(T("library/photos/" + HERO.photos[2].file)));
   check("(c) ⭐ the drop, the move and the add reach the selection",
     !sel2.some((e) => e.file === SEL[0].file) && sel2[0].file === SEL[5].file && sel2[sel2.length - 1].file === addP.file && sel2.length === SEL.length);
   const added = sel2[sel2.length - 1];
@@ -133,6 +137,7 @@ try {
   const [lib, adopt, pw] = copies(TMP);
   check("(c) ⭐ the three views' copies equal the new list", same(lib, want) && same(adopt, want) && same(pw, want), JSON.stringify([lib.length, adopt.length, pw && pw.length]));
   const b = build();
+  check("(b) M2 the manifest carries the paintings' applied number for the tab", /PAINTINGS\.applied_through_mark_id = 3;/.test(fs.readFileSync(T("first_light.js"), "utf8")));
   check("(b) ⭐ the builder holds the added painting out of the rotation", b.ok && manifestCount() === sel2.length - 1 && /Held out of the rotation/.test(b.out) &&
     fs.readFileSync(T("first_light.js"), "utf8").indexOf(NEEDS) === -1, b.out);
   check("(c) ⭐ the build then fails on the result until the words are written", unwritten(sel2, hero2).length === 2);
@@ -141,19 +146,53 @@ try {
 
   // Words written: the build passes and the painting joins the rotation.
   added.alt = "A test description of the added painting, long enough to read."; added.blurb = "A test blurb for the painting, at least thirty characters."; added.setting = "A test setting.";
-  fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify(sel2, null, 2));
+  const writeSel = (list) => fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify({ applied_through_mark_id: 3, paintings: list }, null, 2));
+  writeSel(sel2);
   const b2 = build();
   check("(b) once written, the painting joins the rotation", b2.ok && manifestCount() === sel2.length, b2.out);
-  const sel3 = readT("tools/first_light_selection.json");
+  const sel3 = readT("tools/first_light_selection.json").paintings;
   sel3[1].alt = "";
-  fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify(sel3, null, 2));
+  writeSel(sel3);
   check("(b) the builder still fails on an empty alt", !build().ok);
   check("(a) and so does the build check", unwritten(sel3, hero2).some((x) => x.indexOf("painting") === 0));
-  fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify(sel2, null, 2));
+  const sel4 = JSON.parse(JSON.stringify(sel2));
+  sel4.push({ file: "Not In The Pool At All.jpg", title: "Missing", artist: "A", year: "1900", museum: "M",
+    blurb: "A blurb long enough to pass the builder's length check.", setting: "S", alt: "A description long enough to pass." });
+  writeSel(sel4);
+  const b3 = build();
+  check("(b) the manifest's own URL stands in only for the four listed files; any other missing file still fails", !b3.ok && /Not In The Pool At All/.test(b3.out));
+  const BUILDER = fs.readFileSync("tools/build_first_light_manifest.mjs", "utf8");
+  check("(b) the four are listed by name with the reason beside them, and each use is logged",
+    (BUILDER.slice(BUILDER.indexOf("POOL_DROPPED = new Set(["), BUILDER.indexOf("]);", BUILDER.indexOf("POOL_DROPPED = new Set(["))).match(/\.jpg",/g) || []).length === 4 &&
+    /sourcing run 4 narrowed it/.test(BUILDER) && /kept the manifest's own URL \(POOL_DROPPED\)/.test(BUILDER));
+  // Sam merged, then removed the added painting by hand: the spent Add must not bring it back.
+  writeSel(sel2.filter((e) => e.file !== addP.file));
+
+  // A held key is printed only when it has a shape the table accepts.
+  const odd = "stories/`x`<b>.png";
+  run(["--plan", "--marks", writeMarks(marks.concat([{ id: 7, item_set: "photos", item_key: odd, mark: "add", collection: "my_cpl_story" }])), "--body", bodyFile]);
+  const body2 = fs.readFileSync(bodyFile, "utf8");
+  check("(c) a key the table would refuse is never printed in the pull request", body2.indexOf("<b>") === -1 && body2.indexOf("`x`") === -1 && /1 not shown/.test(body2), body2);
+  // Two stories whose photos land on one key: the second is refused, and the key is held.
+  const storiesFile = T("fact-sheet/cpl_stories.js"), storiesText = fs.readFileSync(storiesFile, "utf8");
+  const dup = JSON.parse(JSON.stringify(STORIES));
+  dup.stories.push(Object.assign({}, dup.stories[1], { name: "Somebody Else", img: dup.stories[1].img }));
+  fs.writeFileSync(storiesFile, "window.CPL_STORIES = " + JSON.stringify(dup) + ";\n");
+  const dkey = M.storyFile(dup.stories[1]);
+  const pd = JSON.parse(run(["--plan", "--marks", writeMarks([{ id: 50, item_set: "photos", item_key: dkey, mark: "add", collection: "my_cpl_story" }])]).trim().split("\n").pop());
+  check("(c) two stories sharing a key: the photo is held, never added under either name", !pd.changed && pd.held.indexOf(dkey) !== -1, JSON.stringify(pd));
+  fs.writeFileSync(storiesFile, storiesText);
 
   // ── (d) Drop takes a story photo down ────────────────────────────────────
-  run(["--apply", "--marks", writeMarks(marks.concat([{ id: 9, item_set: "photos", item_key: skey, mark: "drop", collection: "my_cpl_story" }]))]);
-  const hero3 = readT("library/photos/hero_photos.json");
+  // A page in the checkout still names one hero photo, so dropping it leaves its file on disk.
+  const named = HERO.photos[4].file;
+  fs.writeFileSync(T("library/other_page.html"), '<img src="photos/' + named + '" alt="kept">');
+  run(["--apply", "--marks", writeMarks(marks.concat([{ id: 9, item_set: "photos", item_key: skey, mark: "drop", collection: "my_cpl_story" },
+    { id: 10, item_set: "photos", item_key: named, mark: "drop", collection: "hero_photos" }]))]);
+  const hero3 = readT("library/photos/hero_photos.json"), sel5 = readT("tools/first_light_selection.json");
+  check("(d) ⭐ M2 a spent Add, removed by hand after the merge, stays out on the next Apply", !sel5.paintings.some((e) => e.file === addP.file) && sel5.applied_through_mark_id === 3);
+  check("(d) ⭐ M2 spent marks are not applied twice: the old Move does not pin again", sel5.paintings[0].file === SEL[5].file && hero3.applied_through_mark_id === 10);
+  check("(d) a dropped hero photo another page still names stays on disk", !hero3.photos.some((p) => p.file === named) && fs.existsSync(T("library/photos/" + named)));
   const [lib3, adopt3, pw3] = copies(TMP);
   check("(d) ⭐ a Drop removes the story photo from the list and every view", !hero3.photos.some((p) => p.file === skey) &&
     [lib3, adopt3, pw3].every((c) => !c.some((r) => r[0] === skey)));
@@ -171,26 +210,49 @@ try {
   const code = WF.split("\n").filter((l) => !/^\s*#/.test(l)).join("\n");
   const look = code.slice(code.indexOf("\n  look:"), code.indexOf("\n  apply:"));
   const apply = code.slice(code.indexOf("\n  apply:"));
+  const steps = apply.split(/\n      - /).slice(1);
+  const step = (name) => steps.find((x) => x.indexOf("name: " + name) === 0) || "";
+  const jobHead = apply.slice(0, apply.indexOf("\n    steps:"));
   check("(f) dispatch and an hourly schedule", /\n  workflow_dispatch:/.test(code) && /cron: '\d+ \* \* \* \*'/.test(code));
-  check("(f) ⭐ the look reads one pending row before any checkout", !/actions\/checkout/.test(look) && (look.match(/curl /g) || []).length === 1 &&
-    /first_light_apply_requests\?status=eq\.pending&select=id&order=id\.asc&limit=1/.test(look));
+  check("(f) ⭐ the look reads every pending request before any checkout", !/actions\/checkout/.test(look) && (look.match(/curl /g) || []).length === 1 &&
+    /first_light_apply_requests\?status=eq\.pending&select=id&order=id\.asc"/.test(look) && !/limit=/.test(look));
   check("(f) an absent table reads as nothing pending, not a failure", /exit 0/.test(look));
-  check("(f) the apply runs only on a pending request or a dispatch", /needs: look/.test(apply) && /if: needs\.look\.outputs\.id != '' \|\| github\.event_name == 'workflow_dispatch'/.test(apply));
+  check("(f) the apply runs only on a pending request or a dispatch", /needs: look/.test(apply) && /if: needs\.look\.outputs\.ids != '' \|\| github\.event_name == 'workflow_dispatch'/.test(apply));
   check("(f) ⭐ one Apply at a time", /concurrency:\s*\n\s*group: first-light-apply\s*\n\s*cancel-in-progress: false/.test(code));
-  check("(f) ⭐ a second Apply while a pull request is open builds on its branch and updates it",
-    /gh pr list --head "\$BRANCH" --base main --state open/.test(apply) && /git checkout -q -B "\$BRANCH" FETCH_HEAD/.test(apply) && /gh pr edit "\$OPEN_NUMBER"/.test(apply) && (apply.match(/gh pr create/g) || []).length === 1);
-  check("(f) ⭐ the `test` run is dispatched on the branch (no app token)", /gh workflow run js-tests\.yml --ref "\$BRANCH"/.test(apply) && /actions: write/.test(apply));
+  check("(f) one run serves every pending request: each is stamped", /id=in\.\(\$REQ_IDS\)&status=eq\.pending/.test(apply) && /\[!0-9,\]/.test(apply));
+  check("(f) ⭐ a second Apply while a pull request is open builds on its branch, updates it, and appends to its description",
+    /gh pr list -R "\$GITHUB_REPOSITORY" --head "\$BRANCH" --base main --state open/.test(apply) && /git checkout -q -B "\$BRANCH" FETCH_HEAD/.test(apply) &&
+    /gh pr view "\$OPEN_NUMBER"[^\n]*--json body/.test(apply) && /cat "\$RUNNER_TEMP\/body\.md"; \} > "\$RUNNER_TEMP\/body-all\.md"/.test(apply) &&
+    /gh pr edit "\$OPEN_NUMBER"[^\n]*--body-file "\$RUNNER_TEMP\/body-all\.md"/.test(apply) && (apply.match(/gh pr create/g) || []).length === 1);
+  check("(f) ⭐ the `test` run is dispatched on the branch (no app token)", /gh workflow run js-tests\.yml -R "\$GITHUB_REPOSITORY" --ref "\$BRANCH"/.test(apply) && /actions: write/.test(apply));
   check("(f) ⭐ nothing merges, approves or turns on auto-merge", !/gh pr (merge|review)|--auto\b|enable-auto|merge_pull_request/.test(code));
   const secrets = [...code.matchAll(/secrets\.([A-Z_]+)/g)].map((m) => m[1]);
-  check("(f) no new credential: only the service key other workflows use", secrets.length > 0 && secrets.every((s) => s === "SUPABASE_SERVICE_KEY"));
-  check("(f) the request is stamped, only while pending, even when the run fails",
-    /if: always\(\) && env\.REQ_ID != ''/.test(apply) && /-X PATCH "\$SUPABASE_URL\/rest\/v1\/first_light_apply_requests\?id=eq\.\$REQ_ID&status=eq\.pending"/.test(apply));
-  check("(f) it runs the tab's resolver and the manifest builder, and fetches story photos through the shared browser install",
-    /node tools\/first_light_apply\.mjs --plan/.test(apply) && /node tools\/build_first_light_manifest\.mjs/.test(apply) && /bash scripts\/install_browser\.sh node/.test(apply));
-  const sparse = (/sparse-checkout: \|\n([\s\S]*?)\n      - uses/.exec(apply) || [])[1] || "";
-  const need = ["first_light_tab.js", "tools/first_light_apply.mjs", "tools/build_first_light_manifest.mjs", "fact-sheet/cpl_stories.js", "library/photos/", "cpl_pathways.js", "scripts/install_browser.sh"];
-  check("(f) the sparse checkout holds every file the Apply reads and writes", need.every((f) => sparse.indexOf("/" + f) !== -1), sparse);
+  check("(f) no new credential: only the service key other workflows use", secrets.length > 0 && secrets.every((x) => x === "SUPABASE_SERVICE_KEY"));
+  // ⭐ M5: the name the workflow sets is the name the script reads.
   const APPLY_JS = fs.readFileSync("tools/first_light_apply.mjs", "utf8");
+  const readMarksSrc = APPLY_JS.slice(APPLY_JS.indexOf("async function readMarks"), APPLY_JS.indexOf("\n}\n", APPLY_JS.indexOf("async function readMarks")));
+  const wanted = [...new Set([...readMarksSrc.matchAll(/process\.env\.([A-Z_]+)/g)].map((m) => m[1]))];
+  const topEnv = (/\nenv:\n((?:  .*\n)+)/.exec(code) || [])[1] || "";
+  const planEnv = step("Plan from the marks");
+  const setIn = (block, n) => new RegExp("\\n\\s+" + n + ":\\s").test("\n" + block);
+  check("(f) ⭐ M5 every variable the script reads to reach the marks is set on the Plan step (or for the whole workflow)",
+    wanted.length >= 2 && wanted.every((n) => setIn(planEnv, n) || setIn(topEnv, n)), JSON.stringify(wanted));
+  check("(f) ⭐ M5 the Plan step hands the service key to the name the script reads", /SUPABASE_SERVICE_KEY: \$\{\{ secrets\.SUPABASE_SERVICE_KEY \}\}/.test(planEnv) && wanted.indexOf("SUPABASE_SERVICE_KEY") !== -1);
+  const keySteps = steps.filter((x) => /secrets\.SUPABASE_SERVICE_KEY/.test(x)).map((x) => x.split("\n")[0]);
+  const tokenSteps = steps.filter((x) => /github\.token/.test(x)).map((x) => x.split("\n")[0]);
+  check("(f) the service key only on the steps that read the marks or stamp a request",
+    JSON.stringify(keySteps) === JSON.stringify(["name: Plan from the marks", "name: Stamp the requests"]) && !/secrets\.|github\.token/.test(jobHead), JSON.stringify(keySteps));
+  check("(f) the token only on the steps that read the pull requests, push, open the pull request and dispatch",
+    JSON.stringify(tokenSteps) === JSON.stringify(["name: Find the one open pull request", "name: Push the branch and open or update the one pull request"]), JSON.stringify(tokenSteps));
+  check("(f) checkout keeps no token", /persist-credentials: false/.test(apply));
+  const copyAt = apply.indexOf("name: Copy the tools out of main"), openAt = apply.indexOf("name: Find the one open pull request");
+  const runs = [...apply.matchAll(/node ("?[^ \n]*(first_light_apply|build_first_light_manifest)\.mjs)/g)].map((m) => m[1]);
+  check("(f) ⭐ the tools run from main's copy, never from the open pull request's branch",
+    copyAt > 0 && copyAt < openAt && runs.length === 3 && runs.every((r) => r.indexOf('"$TOOLS/tools/') === 0) && /--root "\$GITHUB_WORKSPACE"/.test(apply), JSON.stringify(runs));
+  check("(f) it fetches story photos through the shared browser install", /bash scripts\/install_browser\.sh node/.test(apply));
+  const sparse = (/sparse-checkout: \|\n([\s\S]*?)\n      - uses/.exec(apply) || [])[1] || "";
+  const need = ["first_light_tab.js", "tools/first_light_apply.mjs", "tools/build_first_light_manifest.mjs", "fact-sheet/", "library/", "cpl_pathways.js", "scripts/install_browser.sh"];
+  check("(f) the sparse checkout holds every file the Apply reads and writes, and the served pages it searches", need.every((f) => sparse.indexOf("/" + f) !== -1), sparse);
   check("(f) ⭐ the script uses the tab's resolver, never a copy", /require\(path\.join\(HERE, "\.\.", "first_light_tab\.js"\)\)/.test(APPLY_JS) && /MARKS\.resolveSet\(/.test(APPLY_JS) && !/function resolveSet/.test(APPLY_JS));
 }
 

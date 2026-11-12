@@ -82,48 +82,63 @@ function newPainting(file, cand, gallery) {
 }
 
 function plan(marks) {
-  const sel = readJson("tools/first_light_selection.json");
+  // The selection is { applied_through_mark_id, paintings } once an Apply has run; a bare list before that.
+  const selFile = readJson("tools/first_light_selection.json");
+  const sel = Array.isArray(selFile) ? selFile : selFile.paintings;
+  const selApplied = Array.isArray(selFile) ? 0 : +selFile.applied_through_mark_id || 0;
   const hero = readJson("library/photos/hero_photos.json");
   const cand = new Map(readJson("tools/first_light_candidates.json").candidates.map((c) => [c.file, c]));
   const gallery = new Map(readJson("tools/first_light_gallery/index.json").paintings.map((g) => [g.file, g]));
   const st = stories();
 
-  const pr = MARKS.resolveSet(sel.map((e) => e.file), MARKS.forSet(marks, "paintings"));
+  // Marks at or below the committed applied_through_mark_id were consumed by a merged Apply and are spent.
+  const pr = MARKS.resolveSet(sel.map((e) => e.file), MARKS.forSet(marks, "paintings"), selApplied);
   const bySel = new Map(sel.map((e) => [e.file, e]));
   const held = [];
   const paintings = pr.list.map((k) => bySel.get(k) || newPainting(k, cand, gallery) || (held.push(k), null)).filter(Boolean);
 
-  const hr = MARKS.resolveSet(hero.photos.map((p) => p.file), MARKS.forSet(marks, "photos"));
+  const hr = MARKS.resolveSet(hero.photos.map((p) => p.file), MARKS.forSet(marks, "photos"), +hero.applied_through_mark_id || 0);
+  // Two stories whose photos would land on one key: the first keeps it, the second is refused.
+  const byKey = new Map(), dupes = new Set();
+  for (const x of st.list) { const k = MARKS.storyFile(x); if (!k) continue; if (byKey.has(k)) dupes.add(k); else byKey.set(k, x); }
   const byHero = new Map(hero.photos.map((p) => [p.file, p]));
   const viewIds = (hero.views || []).map((v) => v.id);
   const fetches = [];
   const photos = hr.list.map((k) => {
     if (byHero.has(k)) return byHero.get(k);
-    const s = st.list.find((x) => MARKS.storyFile(x) === k);
-    if (!s) { held.push(k); return null; }
+    const s = byKey.get(k);
+    if (!s || dupes.has(k)) { held.push(k); return null; }
     fetches.push({ file: k, url: s.img });
     // Only what MAP published: the name as printed and the story's page.
-    return { file: k, width: 0, height: 0, source: "My CPL Story", name: s.name, story_link: st.source, plays: viewIds, alt: NEEDS };
+    const link = /^https:\/\//.test(String(st.source || "")) ? st.source : MARKS.STORY_SOURCE;
+    return { file: k, width: 0, height: 0, source: "My CPL Story", name: s.name, story_link: link, plays: viewIds, alt: NEEDS };
   }).filter(Boolean);
 
   if (!paintings.length) fail("the marks would leave no painting in the rotation; refusing");
   if (!photos.length) fail("the marks would leave no hero photo; refusing");
   const keep = new Set(photos.map((p) => p.file));
+  // A dropped story photo leaves disk; a dropped photo outside stories/ leaves disk too when nothing else in the
+  // checkout names it (checked in apply(), after the three views' copies are rewritten).
   const removeFiles = hr.dropped.filter((k) => k.indexOf(MARKS.STORY_DIR) === 0);
+  const maybeRemove = hr.dropped.filter((k) => k.indexOf(MARKS.STORY_DIR) !== 0);
   // A story file on disk that the list no longer names is taken down too.
   const dir = P("library/photos/" + MARKS.STORY_DIR);
   if (fs.existsSync(dir)) for (const f of fs.readdirSync(dir)) { const k = MARKS.STORY_DIR + f; if (!keep.has(k) && !removeFiles.includes(k)) removeFiles.push(k); }
 
-  const label = (set, k) => set === "paintings" ? ((bySel.get(k) || newPainting(k, cand, gallery) || {}).title || k)
-    : ((byHero.get(k) || {}).name || (photos.find((p) => p.file === k) || {}).name || k);
+  // A label is a title or a name from the repo's own files, or a key of a shape the table accepts.
+  const label = (set, k) => (set === "paintings" ? (bySel.get(k) || newPainting(k, cand, gallery) || {}).title
+    : ((byHero.get(k) || {}).name || (photos.find((p) => p.file === k) || {}).name)) || (MARKS.keyOk(set, k) ? k : "a file whose name is not shown");
   const lines = (set, r) => [
-    ...r.added.map((k) => "Add " + label(set, k)),
+    ...r.added.filter((k) => !held.includes(k)).map((k) => "Add " + label(set, k)),
     ...r.dropped.map((k) => "Drop " + label(set, k)),
     ...r.moved.map((k) => "Move " + label(set, k) + " to number " + (r.list.indexOf(k) + 1))
   ];
   return {
-    changed: pr.changed || hr.changed || removeFiles.length > 0,
-    paintings, photos, fetches, removeFiles, held,
+    // Measured on what would be written, so a held key changes nothing.
+    changed: JSON.stringify(paintings.map((e) => e.file)) !== JSON.stringify(sel.map((e) => e.file)) ||
+      JSON.stringify(photos.map((p) => p.file)) !== JSON.stringify(hero.photos.map((p) => p.file)) || removeFiles.length > 0 || maybeRemove.length > 0,
+    paintings, photos, fetches, removeFiles, maybeRemove, held,
+    applied: { paintings: pr.appliedThrough, photos: hr.appliedThrough },
     needs_words: [...paintings.filter((p) => [p.blurb, p.setting, p.alt].includes(NEEDS)).map((p) => "painting: " + p.title),
       ...photos.filter((p) => p.alt === NEEDS).map((p) => "photo: " + (p.name || p.file))],
     summary: { paintings: lines("paintings", pr), photos: lines("photos", hr), counts: { paintings: paintings.length, photos: photos.length } }
@@ -215,12 +230,48 @@ async function apply(pl) {
     if (!fs.existsSync(P("library/photos/" + p.file))) fail("library/photos/" + p.file + " is missing");
     if (!p.width || !p.height) fail(p.file + ": no size");
   }
-  writeJson("tools/first_light_selection.json", pl.paintings);
+  // applied_through_mark_id: the highest mark this Apply consumed, per set. It reaches main only when Sam merges
+  // the pull request, so a pull request closed unmerged leaves the marks live.
+  writeJson("tools/first_light_selection.json", { applied_through_mark_id: pl.applied.paintings, paintings: pl.paintings });
+  hero.applied_through_mark_id = pl.applied.photos;
   hero.photos = pl.photos;
   writeJson("library/photos/hero_photos.json", hero);
   rewriteSlides("library/index.html", "photos/", pl.photos);
   rewriteSlides("library/adopt/index.html", "../photos/", pl.photos);
   rewritePathways(pl.photos);
+  for (const k of pl.maybeRemove || []) {
+    const f = P("library/photos/" + k);
+    if (!fs.existsSync(f)) continue;
+    const by = referencedBy(path.basename(k));
+    if (by.length) console.log("kept library/photos/" + k + ": still named in " + by.slice(0, 5).join(", "));
+    else { fs.unlinkSync(f); pl.removeFiles.push(k); console.log("removed library/photos/" + k + ": nothing in the checkout names it"); }
+  }
+}
+
+// Every text file in the checkout that names a file, except the hero list itself.
+function referencedBy(name) {
+  const out = [], skip = new Set([".git", "node_modules"]);
+  (function walk(dir) {
+    for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
+      if (skip.has(e.name)) continue;
+      const f = path.join(dir, e.name);
+      if (e.isDirectory()) { walk(f); continue; }
+      if (!/\.(html|js|mjs|css|json|md)$/.test(e.name) || f === P("library/photos/hero_photos.json")) continue;
+      if (fs.statSync(f).size > 20e6) continue;
+      if (fs.readFileSync(f, "utf8").indexOf(name) !== -1) out.push(path.relative(ROOT, f));
+    }
+  })(ROOT);
+  return out;
+}
+
+// A key printed in the pull request only when it has the shape the marks table accepts, and never raw markup.
+function showKey(k) {
+  const ok = MARKS.keyOk("photos", k) || MARKS.keyOk("paintings", k);
+  return ok ? "`" + String(k).replace(/`/g, "") + "`" : null;
+}
+function keys(list) {
+  const shown = list.map(showKey).filter(Boolean), hidden = list.length - shown.length;
+  return shown.join(", ") + (hidden ? (shown.length ? ", and " : "") + hidden + " not shown (a name the marks table would refuse)" : "");
 }
 
 function body(pl) {
@@ -230,13 +281,14 @@ function body(pl) {
     L.push("**" + t + "** (" + pl.summary.counts[k] + " after this change)");
     L.push(...(pl.summary[k].length ? pl.summary[k].map((x) => "- " + x) : ["- no change"]), "");
   }
-  if (pl.removeFiles.length) L.push("Story photos taken down: " + pl.removeFiles.map((f) => "`" + f + "`").join(", "), "");
+  if (pl.removeFiles.length) L.push("Photos taken off disk: " + keys(pl.removeFiles), "");
   if (pl.needs_words.length) {
     L.push("**Words wanted before review.** These carry `" + NEEDS + "` and the `test` check fails until a session writes them on this branch " +
       "(a painting's blurb, setting and alt, a photo's alt), written from the image. An added painting stays out of the rotation until then.");
     L.push(...pl.needs_words.map((x) => "- " + x), "");
   }
-  if (pl.held.length) L.push("Held, not found in the candidate pool or the stories file: " + pl.held.map((x) => "`" + x + "`").join(", "), "");
+  if (pl.held.length) L.push("Held, not found in the candidate pool or the stories file, or sharing a key with another story: " + keys(pl.held), "");
+  L.push("Marks consumed through id " + pl.applied.paintings + " (paintings) and " + pl.applied.photos + " (photos); merging records them as spent.", "");
   return L.join("\n");
 }
 

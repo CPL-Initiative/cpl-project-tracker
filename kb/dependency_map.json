@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 63,
   "edge_functions": 15,
-  "file_datasets": 889,
+  "file_datasets": 887,
   "external_services": 195,
   "consumers": 566,
   "workflows": 69,
@@ -25241,32 +25241,6 @@
    "served": true,
    "main_committers": []
   },
-  "file:tools/build_first_light_manifest.mjs": {
-   "consumers": [
-    {
-     "id": "workflow:first-light-apply.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:tools/first_light_apply.mjs": {
-   "consumers": [
-    {
-     "id": "workflow:first-light-apply.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:tools/first_light_candidates.json": {
    "consumers": [
     {
@@ -25274,7 +25248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 118
     }
    ],
    "producers": [
@@ -25293,7 +25267,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 119
     }
    ],
    "served": true,
@@ -28793,7 +28767,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 50
+     "line": 55
     }
    ],
    "main_committers": []
@@ -32072,9 +32046,7 @@
     "37 * * * *"
    ],
    "scripts": [
-    "tools/first_light_apply.mjs",
-    "scripts/install_browser.sh",
-    "tools/build_first_light_manifest.mjs"
+    "scripts/install_browser.sh"
    ],
    "adds": [
     "tools/first_light_selection.json",

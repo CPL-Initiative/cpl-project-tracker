@@ -13,14 +13,27 @@
 
 import fs from "node:fs";
 
-const ROOT = new URL("..", import.meta.url).pathname;
+// --root <dir> builds a checkout other than this script's own (first-light-apply.yml runs the script from main
+// against the Apply branch's files).
+const ri = process.argv.indexOf("--root");
+const ROOT = ri > 0 ? process.argv[ri + 1].replace(/\/?$/, "/") : new URL("..", import.meta.url).pathname;
 const sel = JSON.parse(fs.readFileSync(ROOT + "tools/first_light_selection.json", "utf8"));
 const entries = Array.isArray(sel) ? sel : sel.paintings;
+// The highest First Light mark a merged Apply consumed (tools/first_light_apply.mjs). The manifest carries it so
+// the First Light tab treats those marks as spent.
+const applied = Array.isArray(sel) ? 0 : +sel.applied_through_mark_id || 0;
 const cand = JSON.parse(fs.readFileSync(ROOT + "tools/first_light_candidates.json", "utf8"));
 const byFile = new Map(cand.candidates.map((c) => [c.file, c]));
-// A painting already in the rotation whose file the candidate pool no longer lists (a later sourcing run narrowed
-// the pool: four on 2026-11-12) keeps the URL the manifest already holds, which this builder copied from the pool
-// when it was added. Still never hand-typed.
+// Four paintings in the rotation that the candidate pool stopped listing when sourcing run 4 narrowed it to the
+// California categories (2026-11-12). Each keeps the URL the manifest already holds, which this builder copied from
+// the pool when the painting was added, so it is still never hand-typed. Only these four: any other file missing
+// from the pool still fails the build, and each use is logged.
+const POOL_DROPPED = new Set([
+  "Claude Monet, Water Lilies, ca. 1915-1926.jpg",
+  "John Constable, The White Horse, 1818-1819, NGA 1146.jpg",
+  "Ansel Adams - National Archives 79-AA-F13.jpg",
+  "Thomas Cole - The Voyage of Life Youth, 1839 (Albany Institute of History & Art).jpg",
+]);
 const CURRENT = fs.readFileSync(ROOT + "first_light.js", "utf8");
 const inManifest = new Map([...CURRENT.matchAll(/img: "([^"]+)"/g)].map((m) => {
   const at = m[1].indexOf("Special:FilePath/");
@@ -41,7 +54,11 @@ const waiting = [];
 entries.forEach((e, i) => {
   const where = `entry ${i} (${e.title || e.file || "??"})`;
   if (["blurb", "setting", "alt"].some((k) => String(e[k] || "").includes(NEEDS_WORDS))) { waiting.push(where); return; }
-  const c = byFile.get(e.file) || inManifest.get(e.file);
+  let c = byFile.get(e.file);
+  if (!c && POOL_DROPPED.has(e.file) && inManifest.has(e.file)) {
+    c = inManifest.get(e.file);
+    console.log(`${where}: not in the candidate pool; kept the manifest's own URL (POOL_DROPPED).`);
+  }
   if (!c) { errors.push(`${where}: file not in verified candidates → "${e.file}". Run the sourcing workflow or fix the exact Commons filename.`); return; }
   if (seen.has(e.file)) { errors.push(`${where}: duplicate image "${e.file}" (would repeat in rotation).`); return; }
   seen.add(e.file);
@@ -88,10 +105,10 @@ const body = out.map((p) =>
   "    }"
 ).join(",\n");
 
-const arrayText = "  var PAINTINGS = [\n" + body + "\n  ];";
+const arrayText = "  var PAINTINGS = [\n" + body + "\n  ];" + (applied ? `\n  PAINTINGS.applied_through_mark_id = ${applied};` : "");
 
 const js = fs.readFileSync(ROOT + "first_light.js", "utf8");
-const re = /(\/\* FL-MANIFEST:START[\s\S]*?\*\/)\s*var PAINTINGS = \[[\s\S]*?\];\s*(\/\* FL-MANIFEST:END \*\/)/;
+const re = /(\/\* FL-MANIFEST:START[\s\S]*?\*\/)\s*var PAINTINGS = \[[\s\S]*?\];(?:\s*PAINTINGS\.applied_through_mark_id = \d+;)?\s*(\/\* FL-MANIFEST:END \*\/)/;
 if (!re.test(js)) { console.error("Could not find the FL-MANIFEST sentinel block in first_light.js"); process.exit(1); }
 const next = js.replace(re, (_m, start, end) => `${start}\n${arrayText}\n  ${end}`);
 fs.writeFileSync(ROOT + "first_light.js", next);

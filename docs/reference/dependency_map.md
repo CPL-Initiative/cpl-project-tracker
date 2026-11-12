@@ -1178,8 +1178,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `thumbs-more.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `tmc/tmc_or_groups.json` | scripts: `tmc/_parse_tmc_pdfs.py` | — |
 | `tmc_builder.js` | pages: `CPL_Dashboard.html` | — |
-| `tools/build_first_light_manifest.mjs` | workflows: `first-light-apply.yml` | — |
-| `tools/first_light_apply.mjs` | workflows: `first-light-apply.yml` | — |
 | `tools/first_light_candidates.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-art.yml` |
 | `tools/first_light_gallery/california.json` | scripts: `scripts/fetch_gallery_thumbs.py` | — |
 | `tools/first_light_gallery/index.json` | none found | committed by: `first-light-gallery-thumbs.yml` |
@@ -1428,5 +1426,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 63 RPCs · 15 edge functions · 889 file
+Coverage: 115 Supabase tables · 63 RPCs · 15 edge functions · 887 file
 datasets · 195 external services · 566 consumers · 69 workflows · 41 tabs.

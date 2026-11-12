@@ -196,7 +196,7 @@ check("the suite can be dispatched on a branch (the First Light Apply PR, S643)"
 check("a dispatched run has no base, so the gate runs the full suite",
       'elif [ -z "$BASE_SHA" ]; then\n            decision=run' in yaml_only)
 check("first-light-apply.yml dispatches this workflow on its branch after pushing",
-      "gh workflow run js-tests.yml --ref \"$BRANCH\"" in open(os.path.join(REPO, ".github", "workflows", "first-light-apply.yml"), encoding="utf-8").read())
+      "gh workflow run js-tests.yml -R \"$GITHUB_REPOSITORY\" --ref \"$BRANCH\"" in open(os.path.join(REPO, ".github", "workflows", "first-light-apply.yml"), encoding="utf-8").read())
 check("the suite runs on a daily schedule",
       re.search(r"^  schedule:\n    - cron: '[^']+'", on_text, re.M) is not None)
 gate = job_block("gate") or ""
