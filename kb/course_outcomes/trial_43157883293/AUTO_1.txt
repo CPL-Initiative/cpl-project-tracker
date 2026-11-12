@@ -1,0 +1,155 @@
+Course Outline
+AUTO 1 - Vehicle Electrical Systems
+Course Information
+Effective Semester: Fall 2025
+Faculty Discipline:
+Diesel Mechanics
+Auto Mechanics
+Subject: AUTO
+Grading Basis: Letter Grade or P/NP
+Term (Weeks): 18
+Units and Hours
+Lecture Units:
+Lab/Clinical Units:
+WEE Units: 1.5
+Lecture Hours: 27.0
+Lab/Clinical Hours: 81.0
+Discussion Hours:
+WEE Hours:
+Total Units: 3.0
+Total Contact Hours: 108.0
+Total Outside-of-Class Hours: 54.0
+Total Student Learning Hours: 162
+Distance Education Hours: 162.0
+Repetition/Repeatability
+Requisites
+Catalog Course Description
+This course is designed to cover the basic theory of electricity and magnetism, as well as areas of operation, testing, and service of vehicle batteries, switches, relays, starters and starting systems, alternators, regulators, charging systems, and light circuits. The course includes electrical theory, repair procedures, and laboratory tasks. This course, along with the Introduction to Hybrid and Electric Vehicle Technology course, is designed to prepare students to become ASE certified in area A-6 and is required for Automotive majors. This course may be offered in a distance education format.
+Course Content
+Lecture Content:
+Introduction
+Principles of Electrical Systems
+Electrical Fundamentals
+Sources and Effects of Electricity
+Ohms Law and Circuits
+Electrical Components
+Wires and Connectors
+Meter Usage and Circuit Diagnosis
+Electrical Testing
+Voltage, Current, and Resistance Experiments
+Series Circuit Experiments
+Parallel and Series-Parallel Circuit Experiments
+Electrical Testing Procedures
+Batteries, Starting and Charging Systems
+Batteries
+Battery Procedures
+Starting System
+Starting System Procedures
+Charging System
+Charging System Procedures
+Final Exam
+Objectives
+Upon successful completion of this course, the student will be able to:
+General Electrical Principles
+Define current, voltage and resistance.
+Define the two theories of current flow.
+Define Ohm's Law.
+Define semiconductors and diodes.
+Define series and parallel circuits.
+Perform troubleshooting on electrical circuits.
+Perform troubleshooting with voltmeter, ohmmeter, and ammeter.
+
+Explain and discuss voltage drop testing.
+
+
+Battery Diagnosis and Service
+
+Explain battery state-of-charge test; determine needed service.
+
+Explain battery capacity (load, high-rate discharge) test; determine needed service.
+
+Explain how to maintain or restore electronic memory functions.
+
+Explain how to inspect, clean, fill, and replace a battery.
+
+Discuss slow and fast battery charging.
+
+Explain how to inspect and clean battery cables, connectors, clamps and hold-downs.
+
+Discuss how to start a vehicle using jumper cables with a battery or auxiliary power supply.
+
+
+Starting System Diagnosis and Repair
+
+Discuss and explain starter current draw testing.
+
+Discuss inspecting and testing starter relays and solenoids.
+
+Explain how to remove and reinstall a starter.
+
+Discuss starter bench testing.
+
+Explain how to inspect, test, and replace switches.  
+
+Evaluate a starter control circuit.
+
+
+Charging System Diagnosis and Repair
+
+Discuss and explain charging system diagnosis. 
+
+Discuss drive belt replacement and inspection. 
+
+Discuss voltage regulator testing and evaluation. 
+
+Explain alternator replacement procedures.
+
+Discuss undercharging, no-charge, and overcharge conditions.
+
+Student Learning Outcomes
+Broader than Objectives, SLOs are often comprised of what the student can do as a result of combining several course objectives.
+
+Analyze and diagnose an electrical circuit. Determine if the circuit is normal, shorted to power, shorted to ground, or open. 
+
+Methods of Instruction
+Audio/Visual Aids
+Computer Tutorials/Aids
+Demonstration
+Discussion
+Distance Education
+Group Exercises
+Guest Speakers
+Individualized Programs
+Lab
+Lecture
+Methods of Evaluation
+Assignments
+Class Participation
+Essay Exams
+Multiple Choice Exams
+Problem Solving Exams
+Short Answer/Fill-In Exams
+Representative Texts and Manuals
+
+Textbooks:
+
+Johanson, C, Auto Fundamentals , 13th, Tinley Park, IL, G-W, 2024, 9781685844103
+Reading and Writing Assignments
+Textbook Reading
+Skills Demonstration
+Library Research
+Problem Solving Exercise
+Computer
+Essay Writing
+Oral Presentation
+Group Projects
+Outside-of-Class Assignments
+Typical Assignment
+
+Students will use online software and diagnose an electrical circuit. After analyzing the circuit students will select a result and the software will score their answer. Students can repeat the diagnosis until a full understanding is achieved. 
+
+IDEAA/UDL
+IDEAA:
+IDEAA and UDL Review Statement:
+
+This course provides opportunities for students to connect the content to their personal experiences and fosters an inclusive environment through its flexibility, inclusivity, and accessible format. The course encourages discussions within the online Canvas component where students can share their individual experiences and applications of electrical concepts. Instructors will promote equity through students’ and guest speakers' broad range of human experiences. Instructors select technical topics/readings that diverse students can relate to, and that help a variety of students feel seen and valued, as well as consider and value other student/human perspectives. Students struggling in the course will be assisted by advanced students to support student success.

@@ -18,7 +18,8 @@ function check(name, cond) { results.push([name, !!cond]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
 
 // ── static: the pipeline around the file ──
-const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 const proc = fs.readFileSync(".github/workflows/cer-procedures.yml", "utf8");
 check("the daily run builds the sweep after the fold and commits it",
   /python3 kb\/_sweep_exhibit_titles\.py/.test(daily) && /git add kb\/exhibits_sweep\.json/.test(daily)

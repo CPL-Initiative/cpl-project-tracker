@@ -1,0 +1,135 @@
+Course Outline
+ACCT 101 - Basic Accounting I
+Course Information
+Effective Semester: Fall 2023
+Faculty Discipline:
+Management (Masters Required)
+Accounting (Masters Required)
+Business (Masters Required)
+Subject: ACCT
+Grading Basis: Letter Grade Only
+Term (Weeks): 18
+Units and Hours
+Lecture Units:
+Lab/Clinical Units:
+WEE Units: 0.5
+Lecture Hours: 45.0
+Lab/Clinical Hours: 27.0
+Discussion Hours:
+WEE Hours:
+Total Units: 3.0
+Total Contact Hours: 72.0
+Total Outside-of-Class Hours: 90.0
+Total Student Learning Hours: 162
+Distance Education Hours: 162.0
+Repetition/Repeatability
+Requisites
+Catalog Course Description
+This is an introductory accounting course covering the entire accounting cycle including transaction analysis, journalizing, posting, and preparation of financial statements. This course may be offered in a distance education format.
+Course Content
+Lecture Content:
+Fundamentals of Accounting
+Accounting Terms
+Organizations that work with accounting
+Constraints and guidelines
+Managing Finances
+Assets
+Liability
+Owner’s equity
+Revenue 
+Expense accounts
+The general journal and the general ledger
+T-accounts
+Debits
+Credits
+Trial balance 
+Financial statements
+Adjusting entries
+Closing entries and the post-closing trial balance
+Bank reconciliations
+Petty cash
+Employee earnings and deductions
+Employer payroll taxes
+Special journals
+Sales
+Purchases
+Cash receipts
+Cash payments
+Periodic and perpetual inventory systems
+Dealing with bad debt
+Working with Quickbooks
+Objectives
+Upon successful completion of this course, the student will be able to:
+
+Identify and properly use basic accounting terminology.
+
+State the fundamental accounting equation in the T-account format and label the debit, credit, plus and minus sides.
+
+Analyze business transactions using the rules of debit and credit in a double-entry accounting system and record in the appropriate journal.
+
+Post from the journal to the general ledger.
+
+Prepare three basic financial statements: balance sheet, income statement, statement of owner’s equity.
+Journalize and post adjusting, closing, and reversing entries.
+
+Reconcile a bank statement and prepare and record journal entries for the reconciling items.
+
+Prepare and record journal entries to establish and maintain a petty cash fund.
+
+Calculate employee earnings, determine deductions from gross pay, and calculate net pay. Prepare journal entries to record payroll.
+
+Analyze and record sales and purchase transactions of a merchandising business under both periodic and perpetual inventory systems.
+
+Understand and properly use the sales, purchases, cash receipts and cash payments special journals.
+
+Student Learning Outcomes
+Broader than Objectives, SLOs are often comprised of what the student can do as a result of combining several course objectives.
+
+Analyze five dissimilar business transactions in a double-entry accounting system and prepare general journal entries to record.
+
+Methods of Instruction
+Audio/Visual Aids
+Computer Tutorials/Aids
+Demonstration
+Discussion
+Distance Education
+Field Trips
+Group Exercises
+Guest Speakers
+Lab
+Lecture
+Methods of Evaluation
+Assignments
+Class Participation
+Essay Exams
+Multiple Choice Exams
+Problem Solving Exams
+Short Answer/Fill-In Exams
+Representative Texts and Manuals
+
+Textbooks:
+
+Long, Suzanne K., Intro to Accounting: Concepts & Applications, 1, AME Learning Inc., 2018, 9781989003138
+Reading and Writing Assignments
+Textbook Reading
+Skills Demonstration
+Library Research
+Problem Solving Exercise
+Computer
+Oral Presentation
+Group Projects
+Other
+Practice Set
+Outside-of-Class Assignments
+Typical Assignment
+
+In a General Journal, make the following transactions
+
+Record the payment of the utility bill.
+Record the entry to buy equipment for cash.
+Record the entry to pay the rent.
+IDEAA/UDL
+IDEAA:
+IDEAA and UDL Review Statement:
+
+This course connects the goal of equity, diversity, and inclusion to accounting. Students will be exposed to resources that connect them to accounting and finance organizations serving diverse groups, like NABA (The National Association of Black Accountants). This course will emphasize the importance of diversity, equity, and inclusion through the utilization of examples of diverse businesses with unique perspectives, inclusive of people with various backgrounds and expertise. Furthermore, students will be invited to guest speaker events representing professionals in the field from various racial, socioeconomic, cultural, and experiential backgrounds.

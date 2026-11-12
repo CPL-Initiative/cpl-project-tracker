@@ -352,7 +352,8 @@ block("(7) wiring", () => {
 
 // ── (8) The daily run builds it, and the generated-file check watches it ────
 block("(8) refresh path", () => {
-  const wf = read(".github/workflows/daily-dashboard.yml");
+  // The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+  const wf = read(".github/workflows/daily-dashboard.yml").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + read("scripts/daily_build.sh"));
   const recsAt = wf.indexOf("python3 fact-sheet/_build_statewide_recs.py");
   const catAt = wf.indexOf("python3 fact-sheet/_build_statewide_catalog.py");
   check("(8) the daily run rebuilds the catalog after the Fact Sheet's recs", recsAt > 0 && catAt > recsAt);

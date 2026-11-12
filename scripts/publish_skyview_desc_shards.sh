@@ -12,7 +12,7 @@
 #
 # Runs on the Actions runner (a session's sandbox cannot reach *.supabase.co):
 #   .github/workflows/skyview-desc-shards.yml   manual, any time
-#   .github/workflows/daily-dashboard.yml       after the artifacts rebuild
+#   .github/workflows/daily-dashboard.yml       after its push lands, from the pushed tree
 #
 # Needs SUPABASE_SERVICE_KEY (the service role bypasses RLS; the bucket has no
 # write policy for anon or authenticated on purpose). Never echoes the key.
