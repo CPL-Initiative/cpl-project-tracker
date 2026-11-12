@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 869,
+  "file_datasets": 870,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -19891,6 +19891,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kept_passing_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 3660
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kpi_cards.js": {
    "consumers": [
     {
@@ -26701,7 +26714,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3289
+     "line": 3680
     }
    ],
    "main_committers": []
@@ -26713,7 +26726,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3376
+     "line": 3767
     }
    ],
    "main_committers": []
