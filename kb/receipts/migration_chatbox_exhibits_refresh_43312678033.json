@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql",
+ "name": "chatbox_exhibits_refresh",
+ "version": "20261112214316",
+ "sha256": "8b6eff346dac5dfaf782ada3c5c9f807da2d1c00e5afb08fd5bd138ed56b588a",
+ "run": "43312678033",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
