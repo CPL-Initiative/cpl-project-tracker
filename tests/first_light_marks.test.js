@@ -102,6 +102,7 @@ function boot(opts) {
   w.eval(FL);
   w.CPL_FIRST_LIGHT.init();
   if (opts.paintingsApplied) w.CPL_FIRST_LIGHT.paintings.applied_through_mark_id = opts.paintingsApplied;
+  if (opts.paintingsHeld) w.CPL_FIRST_LIGHT.paintings.held_mark_ids = opts.paintingsHeld;
   w.eval(TAB);
   w.go = (tab) => { current = tab; w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab } })); };
   w.db = db;
@@ -152,6 +153,9 @@ const text = (w) => $(w, "#first-light-root").textContent;
   r = M.resolveSet(["a", "b"], [mk(3, "a", "drop"), mk(6, "b", "drop")], 4);
   check("(a) M2 only the marks above the applied number count, and the result names the new high mark",
     JSON.stringify(r.list) === '["a"]' && r.appliedThrough === 6);
+  r = M.resolveSet(["a"], [mk(2, "x", "add"), mk(3, "b", "drop")], 3, [2]);
+  check("(a) ⭐ a held Add below the threshold stays live (held_mark_ids), while the spent mark beside it does not",
+    JSON.stringify(r.list) === '["a","x"]' && r.added[0] === "x");
   r = M.resolveSet(["a"], [mk(1, "z", "keep")]);
   check("(a) Keep on an item not in the list leaves it out", JSON.stringify(r.list) === '["a"]');
 
@@ -335,6 +339,11 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const wp = boot({ hash: "#first-light/paintings", paintingsApplied: 2, gallery, marks: [{ id: 2, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" }] });
     wp.go("first-light"); await settle();
     check("(o) M2 the paintings read theirs from the manifest", /Nothing to apply/.test(text(wp)));
+    const wh = boot({ hash: "#first-light/paintings", paintingsApplied: 5, paintingsHeld: [4],
+      marks: [{ id: 4, item_set: "paintings", item_key: SEL[1].file, mark: "drop", collection: "rotation" }, { id: 5, item_set: "paintings", item_key: SEL[2].file, mark: "drop", collection: "rotation" }] });
+    wh.go("first-light"); await settle();
+    check("(o) a held mark below the threshold stays live in the tab; the spent one does not",
+      $$(wh, '[data-changes="paintings"] li').map((li) => li.textContent).join("|") === "Drop " + wh.CPL_FIRST_LIGHT.paintings[1].title);
     click(wp, $(wp, 'button[data-act="show-cand"]')); await settle();
     const cc = $(wp, '[data-grid="candidates"] .flt-card');
     check("(o) a candidate's image carries its title", cc.querySelector("img").getAttribute("alt") === cc.querySelector("h3").textContent);

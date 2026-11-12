@@ -76,12 +76,16 @@
     // baseKeys: the live list's keys in order. marks: rows of one set, any order (id rises with time).
     // appliedThrough: the highest mark id a merged Apply consumed for this set (the committed files'
     // applied_through_mark_id). Those marks are spent: the live list already holds their effect, so an item a
-    // person later removed by hand stays out and an old Move no longer pins.
-    function resolveSet(baseKeys, marks, appliedThrough) {
-      var spent = +appliedThrough || 0;
+    // person later removed by hand stays out and an old Move no longer pins. heldIds: the ids at or below it that
+    // the Apply did NOT apply (an Add whose item it could not find; the files' held_mark_ids); they stay live.
+    // Note: mark ids come from an identity column, and two inserts can commit out of id order in a very small
+    // window, so a mark committed just after an Apply read the table can carry an id below that Apply's threshold.
+    function resolveSet(baseKeys, marks, appliedThrough, heldIds) {
+      var spent = +appliedThrough || 0, held = {};
+      (heldIds || []).forEach(function (id) { held[+id] = true; });
       var inBase = {}, info = {}, extra = [];
       (baseKeys || []).forEach(function (k) { inBase[k] = true; });
-      (marks || []).filter(function (m) { return (+m.id || 0) > spent; }).sort(byId).forEach(function (m) {
+      (marks || []).filter(function (m) { return (+m.id || 0) > spent || held[+m.id]; }).sort(byId).forEach(function (m) {
         var k = m.item_key;
         if (!k) return;
         var it = info[k] || (info[k] = { membership: null, position: null, last: null, firstAdd: null });
@@ -370,10 +374,15 @@
   }
   function resolved(set) {
     var b = baseKeys(set);
-    return b && state.marks ? MARKS.resolveSet(b, MARKS.forSet(state.marks, set), appliedThrough(set)) : null;
+    return b && state.marks ? MARKS.resolveSet(b, MARKS.forSet(state.marks, set), appliedThrough(set), heldIds(set)) : null;
   }
   // The highest mark id the last merged Apply consumed, carried in the committed files: the manifest the builder
-  // writes (paintings) and hero_photos.json (photos). Marks at or below it are spent.
+  // writes (paintings) and hero_photos.json (photos). Marks at or below it are spent, except the held ones beside
+  // it. (Ids can commit out of order in a very small window; see resolveSet.)
+  function heldIds(set) {
+    var F = fl(), v = set === "paintings" ? F && F.paintings.held_mark_ids : state.hero && state.hero.held_mark_ids;
+    return Array.isArray(v) ? v : [];
+  }
   function appliedThrough(set) {
     if (set === "paintings") { var F = fl(); return F && F.paintings.applied_through_mark_id ? +F.paintings.applied_through_mark_id : 0; }
     return state.hero && state.hero.applied_through_mark_id ? +state.hero.applied_through_mark_id : 0;
