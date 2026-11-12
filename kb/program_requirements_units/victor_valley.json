@@ -1,0 +1,592 @@
+{
+ "_readme": "S639 harvest side session (second session), 2026-11-12. The hours each noncredit course description prints in Victor Valley College's 2026-2027 CourseLeaf catalog (catalog.vvc.edu/course-descriptions/<prefix>/), read by college-page-read 43134526902 (plan kb/college_reads/victor_valley_noncredit_hours.json, thirteen prefixes). A course printed at 0.0 Units carries its 'Lecture Hours' plus its 'Lab Hours', one figure each (WKPR 011: 'Lecture Hours: 36.0'; COSM 0101: 'Lecture Hours: 171.0; Lab Hours: 108.0', 279). A credit course is left out: its hours never price a noncredit record, and ESL 12A (3.0 Units, 54 hours) shares ESL 012A's normalized code (ESL12A, 108 hours). Keyed in norm_code form; 'words' quotes each description's heading and hours line. Parsed from the job log: each heading 'CODE  Title  (0.0 Units)' to the next, its 'Lecture Hours: n' and 'Lab Hours: n' added. The course_hours step of Victor Valley's reconcile entry reads this file (hours_file), only in a record measured in hours and never over a figure the reading gave.",
+ "college": "Victor Valley College",
+ "catalog": "https://catalog.vvc.edu/course-descriptions/",
+ "runs": [
+  "43134526902"
+ ],
+ "hours": {
+  "AHOM10": [
+   54.0,
+   54.0
+  ],
+  "AHOM19": [
+   54.0,
+   54.0
+  ],
+  "AHOM20": [
+   54.0,
+   54.0
+  ],
+  "AHOM201": [
+   54.0,
+   54.0
+  ],
+  "AHOM60": [
+   54.0,
+   54.0
+  ],
+  "AHOM70": [
+   54.0,
+   54.0
+  ],
+  "AHOM75": [
+   54.0,
+   54.0
+  ],
+  "AHOM751": [
+   54.0,
+   54.0
+  ],
+  "APE160": [
+   54.0,
+   54.0
+  ],
+  "APE166": [
+   54.0,
+   54.0
+  ],
+  "APE167": [
+   54.0,
+   54.0
+  ],
+  "APE183": [
+   54.0,
+   54.0
+  ],
+  "CDL40": [
+   14.4,
+   14.4
+  ],
+  "CDL41": [
+   54.0,
+   54.0
+  ],
+  "CDL42": [
+   54.0,
+   54.0
+  ],
+  "CDL43": [
+   94.5,
+   94.5
+  ],
+  "CDL48": [
+   13.6,
+   13.6
+  ],
+  "CDL56A": [
+   7.2,
+   7.2
+  ],
+  "CDL56B": [
+   7.2,
+   7.2
+  ],
+  "CDL9031": [
+   54.0,
+   54.0
+  ],
+  "CDL9032": [
+   27.0,
+   27.0
+  ],
+  "CDL9033": [
+   54.0,
+   54.0
+  ],
+  "COSM100": [
+   54.0,
+   54.0
+  ],
+  "COSM101": [
+   279.0,
+   279.0
+  ],
+  "COSM102": [
+   288.0,
+   288.0
+  ],
+  "COSM103": [
+   288.0,
+   288.0
+  ],
+  "COSM104": [
+   279.0,
+   279.0
+  ],
+  "COSM105": [
+   54.0,
+   54.0
+  ],
+  "COSM111": [
+   279.0,
+   279.0
+  ],
+  "COSM112": [
+   288.0,
+   288.0
+  ],
+  "COSM113": [
+   288.0,
+   288.0
+  ],
+  "COSM114": [
+   279.0,
+   279.0
+  ],
+  "COSM115": [
+   54.0,
+   54.0
+  ],
+  "COSM201A": [
+   225.0,
+   225.0
+  ],
+  "COSM201B": [
+   225.0,
+   225.0
+  ],
+  "COSM202": [
+   675.0,
+   675.0
+  ],
+  "COSM205": [
+   144.0,
+   144.0
+  ],
+  "COSM206": [
+   135.0,
+   135.0
+  ],
+  "COSM301": [
+   54.0,
+   54.0
+  ],
+  "EMC40A": [
+   4.5,
+   4.5
+  ],
+  "EMC40B": [
+   4.5,
+   4.5
+  ],
+  "EMC41A": [
+   2.8,
+   2.8
+  ],
+  "EMC41B": [
+   4.5,
+   4.5
+  ],
+  "EMC42A": [
+   6.2,
+   6.2
+  ],
+  "EMC42B": [
+   9.0,
+   9.0
+  ],
+  "EMC43A": [
+   6.2,
+   6.2
+  ],
+  "EMC43B": [
+   9.0,
+   9.0
+  ],
+  "EMC44A": [
+   1.17,
+   1.17
+  ],
+  "EMC44B": [
+   1.1,
+   1.1
+  ],
+  "EMC45A": [
+   9.0,
+   9.0
+  ],
+  "EMC45B": [
+   9.0,
+   9.0
+  ],
+  "EMC46A": [
+   4.0,
+   4.0
+  ],
+  "EMC46B": [
+   4.0,
+   4.0
+  ],
+  "EMC47A": [
+   16.0,
+   16.0
+  ],
+  "EMS50A": [
+   40.5,
+   40.5
+  ],
+  "EMS50B": [
+   27.0,
+   27.0
+  ],
+  "EMS61": [
+   18.0,
+   18.0
+  ],
+  "EMS61A": [
+   9.0,
+   9.0
+  ],
+  "EMS61B": [
+   27.0,
+   27.0
+  ],
+  "EMS85A": [
+   9.0,
+   9.0
+  ],
+  "EMS87A": [
+   124.0,
+   124.0
+  ],
+  "EMS87B": [
+   132.0,
+   132.0
+  ],
+  "EMS9086": [
+   5.0,
+   5.0
+  ],
+  "EMS9087": [
+   9.5,
+   9.5
+  ],
+  "ESL10": [
+   54.0,
+   54.0
+  ],
+  "ESL101": [
+   108.0,
+   108.0
+  ],
+  "ESL102": [
+   108.0,
+   108.0
+  ],
+  "ESL103": [
+   108.0,
+   108.0
+  ],
+  "ESL104": [
+   108.0,
+   108.0
+  ],
+  "ESL105": [
+   108.0,
+   108.0
+  ],
+  "ESL106": [
+   108.0,
+   108.0
+  ],
+  "ESL107": [
+   108.0,
+   108.0
+  ],
+  "ESL108": [
+   108.0,
+   108.0
+  ],
+  "ESL109": [
+   108.0,
+   108.0
+  ],
+  "ESL12": [
+   108.0,
+   108.0
+  ],
+  "ESL12A": [
+   108.0,
+   108.0
+  ],
+  "ESL12B": [
+   108.0,
+   108.0
+  ],
+  "ESL2": [
+   54.0,
+   54.0
+  ],
+  "ESL9100": [
+   108.0,
+   108.0
+  ],
+  "ESL9101": [
+   108.0,
+   108.0
+  ],
+  "ESL9200": [
+   108.0,
+   108.0
+  ],
+  "ESL9201": [
+   108.0,
+   108.0
+  ],
+  "ESL9300": [
+   108.0,
+   108.0
+  ],
+  "GUID40": [
+   9.0,
+   9.0
+  ],
+  "GUID41": [
+   9.0,
+   9.0
+  ],
+  "GUID42": [
+   9.0,
+   9.0
+  ],
+  "GUID49": [
+   18.0,
+   18.0
+  ],
+  "HLTH105": [
+   9.0,
+   9.0
+  ],
+  "HLTH106": [
+   9.0,
+   9.0
+  ],
+  "HLTH108": [
+   40.5,
+   40.5
+  ],
+  "HLTH109": [
+   40.5,
+   40.5
+  ],
+  "MNLO10": [
+   18.0,
+   18.0
+  ],
+  "MNLO20": [
+   13.5,
+   13.5
+  ],
+  "MNLO25": [
+   13.5,
+   13.5
+  ],
+  "MNLO28A": [
+   4.5,
+   4.5
+  ],
+  "MNLO28B": [
+   4.5,
+   4.5
+  ],
+  "PHT40": [
+   54.0,
+   54.0
+  ],
+  "PHT41": [
+   54.0,
+   54.0
+  ],
+  "PHT42": [
+   54.0,
+   54.0
+  ],
+  "PHT43": [
+   63.0,
+   63.0
+  ],
+  "PHT44": [
+   54.0,
+   54.0
+  ],
+  "PHT45": [
+   50.0,
+   50.0
+  ],
+  "PHT46": [
+   54.0,
+   54.0
+  ],
+  "PHT47": [
+   108.0,
+   108.0
+  ],
+  "PHT48": [
+   54.0,
+   54.0
+  ],
+  "PHT49": [
+   9.0,
+   9.0
+  ],
+  "PHT50": [
+   54.0,
+   54.0
+  ],
+  "PTS200": [
+   54.0,
+   54.0
+  ],
+  "PTS201": [
+   54.0,
+   54.0
+  ],
+  "WKPR10": [
+   36.0,
+   36.0
+  ],
+  "WKPR11": [
+   36.0,
+   36.0
+  ],
+  "WKPR12": [
+   36.0,
+   36.0
+  ],
+  "WKPR13": [
+   36.0,
+   36.0
+  ],
+  "WKPR14": [
+   36.0,
+   36.0
+  ],
+  "WKPR15": [
+   36.0,
+   36.0
+  ],
+  "WKPR16": [
+   36.0,
+   36.0
+  ]
+ },
+ "words": {
+  "AHOM10": "AHOM 010 · Advanced Clothing Construction · (0.0 Units) Lab Hours: 54.0",
+  "AHOM19": "AHOM 019 · Fundamentals of Sewing · (0.0 Units) Lab Hours: 54.0",
+  "AHOM20": "AHOM 020 · Beginning Clothing Construction · (0.0 Units) Lab Hours: 54.0",
+  "AHOM201": "AHOM 020.1 · Intermediate Clothing Construction · (0.0 Units) Lab Hours: 54.0",
+  "AHOM60": "AHOM 060 · Needlecraft and Design · (0.0 Units) Lab Hours: 54.0",
+  "AHOM70": "AHOM 070 · Uniquely Sewn Accessory Items · (0.0 Units) Lab Hours: 54.0",
+  "AHOM75": "AHOM 075 · Machine Quilting · (0.0 Units) Lab Hours: 54.0",
+  "AHOM751": "AHOM 075.1 · Machine Quilting II · (0.0 Units) Lab Hours: 54.0",
+  "APE160": "APE 0160 · Adapted Physical Exercise · (0.0 Units) Lab Hours: 54.0",
+  "APE166": "APE 0166 · Introduction to Adapted Cardiovascular Training · (0.0 Units) Lab Hours: 54.0",
+  "APE167": "APE 0167 · Introduction to Adapted Weight Training · (0.0 Units) Lab Hours: 54.0",
+  "APE183": "APE 0183 · Introduction to Adapted Walking for Fun Fitness · (0.0 Units) Lab Hours: 54.0",
+  "CDL40": "CDL 040 · Commerical Driver's License Orientation Preparation · (0.0 Units) Lecture Hours: 14.4",
+  "CDL41": "CDL 041 · Commercial Driver Training Permit Preparation · (0.0 Units) Lecture Hours: 54.0",
+  "CDL42": "CDL 042 · Class A Range and On-the-Road Lecture · (0.0 Units) Lecture Hours: 54.0",
+  "CDL43": "CDL 043 · Commercial Driver Training on Road Skills · (0.0 Units) Lecture Hours: 27.0 Lab Hours: 67.5",
+  "CDL48": "CDL 048 · CMV License Test Administration Preparation · (0.0 Units) Lecture Hours: 4.5 Lab Hours: 9.1",
+  "CDL56A": "CDL 056A · Passenger Endorsement Entry Level Driver Training (ELDT) Part A · (0.0 Units) Lecture Hours: 7.2",
+  "CDL56B": "CDL 056B · Passenger Endorsement Entry Level Driver Training (ELDT) Part B · (0.0 Units) Lecture Hours: 7.2",
+  "CDL9031": "CDL 9031 · Class B ELDT Theory and Commercial Learners Permit Prep · (0.0 Units) Lecture Hours: 54.0",
+  "CDL9032": "CDL 9032 · Class B ELDT Range and On-the-Road Lecture · (0.0 Units) Lecture Hours: 27.0",
+  "CDL9033": "CDL 9033 · Class B Road and Range Training Lab · (0.0 Units) Lab Hours: 54.0",
+  "COSM100": "COSM 0100 · Health & Safety Course · (0.0 Units) Lecture Hours: 54.0",
+  "COSM101": "COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0",
+  "COSM102": "COSM 0102 · Cosmetology Nail and Esthetics Technology · (0.0 Units) Lecture Hours: 99.0 Lab Hours: 189.0",
+  "COSM103": "COSM 0103 · Cosmetology Hair Science · (0.0 Units) Lecture Hours: 99.0 Lab Hours: 189.0",
+  "COSM104": "COSM 0104 · The Business of Cosmetology & Skills Review · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0",
+  "COSM105": "COSM 0105 · Cosmetology State Board Test Preparation · (0.0 Units) Lecture Hours: 54.0",
+  "COSM111": "COSM 0111 · Barbering Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0",
+  "COSM112": "COSM 0112 · Barbering Techniques and Hair Design Concepts · (0.0 Units) Lecture Hours: 99.0 Lab Hours: 189.0",
+  "COSM113": "COSM 0113 · Barbering Chemical Concepts · (0.0 Units) Lecture Hours: 99.0 Lab Hours: 189.0",
+  "COSM114": "COSM 0114 · The Business of Barbering and Skills Review · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0",
+  "COSM115": "COSM 0115 · Barbering State Board Test Preparation · (0.0 Units) Lecture Hours: 54.0",
+  "COSM201A": "COSM 0201A · Manicuring Academy A · (0.0 Units) Lecture Hours: 76.5 Lab Hours: 148.5",
+  "COSM201B": "COSM 0201B · Manicuring Academy B · (0.0 Units) Lecture Hours: 76.5 Lab Hours: 148.5",
+  "COSM202": "COSM 0202 · Esthetician Academy Concepts · (0.0 Units) Lecture Hours: 297.0 Lab Hours: 378.0",
+  "COSM205": "COSM 0205 · Barber Crossover · (0.0 Units) Lecture Hours: 90.0 Lab Hours: 54.0",
+  "COSM206": "COSM 0206 · Advanced Barber Crossover and Test Preparation · (0.0 Units) Lecture Hours: 81.0 Lab Hours: 54.0",
+  "COSM301": "COSM 0301 · Salon Management and Business Developmen · (0.0 Units) Lecture Hours: 54.0",
+  "EMC40A": "EMC 040A · Heartsaver First Aid, CPR, AED (Lecture) · (0.0 Units) Lecture Hours: 4.5",
+  "EMC40B": "EMC 040B · Heartsaver First Aid, CPR, AED (Hands-on) · (0.0 Units) Lab Hours: 4.5",
+  "EMC41A": "EMC 041A · Basic Life Support Provider BLS (Lecture) · (0.0 Units) Lecture Hours: 2.8",
+  "EMC41B": "EMC 041B · Basic Life Support BLS (Hands-on) · (0.0 Units) Lab Hours: 4.5",
+  "EMC42A": "EMC 042A · Advanced Cardiac Life Support ACLS (Lecture) · (0.0 Units) Lecture Hours: 6.2",
+  "EMC42B": "EMC 042B · Advanced Cardiac Life Support ACLS (Hands-on) · (0.0 Units) Lab Hours: 9.0",
+  "EMC43A": "EMC 043A · Pediatric Advanced Life Support PALS (Lecture) · (0.0 Units) Lecture Hours: 6.2",
+  "EMC43B": "EMC 043B · Pediatric Advanced Life Support PALS (Hands-on) · (0.0 Units) Lab Hours: 9.0",
+  "EMC44A": "EMC 044A · Stop the Bleed (Lecture) · (0.0 Units) Lecture Hours: 1.17",
+  "EMC44B": "EMC 044B · Stop the Bleed (Hands-on) · (0.0 Units) Lab Hours: 1.1",
+  "EMC45A": "EMC 045A · Prehospital Trauma Life Support Phtls (lecture) · (0.0 Units) Lecture Hours: 9.0",
+  "EMC45B": "EMC 045B · PreHospital Trauma Life Support PHTLS (Hands-on) · (0.0 Units) Lab Hours: 9.0",
+  "EMC46A": "EMC 046A · Neonatal Resuscitation Program (Lecture) · (0.0 Units) Lecture Hours: 4.0",
+  "EMC46B": "EMC 046B · Neonatal Resuscitation Program (Lab) · (0.0 Units) Lecture Hours: 4.0",
+  "EMC47A": "EMC 047A · Transport Professional Advanced Trauma Course (TPATC) · (0.0 Units) Lecture Hours: 16.0",
+  "EMS50A": "EMS 050A · Emergency Medical Responder Lecture · (0.0 Units) Lecture Hours: 40.5",
+  "EMS50B": "EMS 050B · Emergency Medical Responder Hands-on Skills · (0.0 Units) Lab Hours: 27.0",
+  "EMS61": "EMS 061 · Emergency Medical Technician Refresher · (0.0 Units) Lecture Hours: 9.0 Lab Hours: 9.0",
+  "EMS61A": "EMS 061A · Emergency Medical Tech Refresher (Lec) · (0.0 Units) Lecture Hours: 9.0",
+  "EMS61B": "EMS 061B · Emergency Medical Tech Refresher (Lab) · (0.0 Units) Lab Hours: 27.0",
+  "EMS85A": "EMS 085A · Advanced 12 Lead Ecg · (0.0 Units) Lecture Hours: 9.0",
+  "EMS87A": "EMS 087A · Critical Care Paramedic (Lecture/Lab) · (0.0 Units) Lecture Hours: 108.0 Lab Hours: 16.0",
+  "EMS87B": "EMS 087B · Critical Care Paramedic (Clinical) · (0.0 Units) Lab Hours: 132.0",
+  "EMS9086": "EMS 9086 · Paramedic Capstone Internship Orientation · (0.0 Units) Lab Hours: 5.0",
+  "EMS9087": "EMS 9087 · Paramedic Terminal Competencies · (0.0 Units) Lab Hours: 9.5",
+  "ESL10": "ESL 010 · Citizenship Preparation Level 1 · (0.0 Units) Lab Hours: 54.0",
+  "ESL101": "ESL 010.1 · Listening & Speaking Level 1 · (0.0 Units) Lab Hours: 108.0",
+  "ESL102": "ESL 010.2 · Reading and Writing Level 1 · (0.0 Units) Lab Hours: 108.0",
+  "ESL103": "ESL 010.3 · High Beginning Listening and Speaking Level 2 · (0.0 Units) Lab Hours: 108.0",
+  "ESL104": "ESL 010.4 · Reading and Writing Level 2 · (0.0 Units) Lab Hours: 108.0",
+  "ESL105": "ESL 010.5 · ESL Level 3 Low Intermediate Listening and Speaking · (0.0 Units) Lab Hours: 108.0",
+  "ESL106": "ESL 010.6 · Reading and Writing Low Intermediate Level 3 · (0.0 Units) Lab Hours: 108.0",
+  "ESL107": "ESL 010.7 · ESL Listening and Speaking Level 4 High Intermediate · (0.0 Units) Lab Hours: 108.0",
+  "ESL108": "ESL 010.8 · Writing/Grammar/Reading High Intermediate Level 4 · (0.0 Units) Lab Hours: 108.0",
+  "ESL109": "ESL 010.9 · ESL level 5 Bridge for College and Job Success · (0.0 Units) Lab Hours: 108.0",
+  "ESL12": "ESL 012 · Esl Basic Computer Literacy & Keyboard · (0.0 Units) Lab Hours: 108.0",
+  "ESL12A": "ESL 012A · Computer Literacy Skills Level 3 · (0.0 Units) Lab Hours: 108.0",
+  "ESL12B": "ESL 012B · Computer Literacy Skills Lvl 4 · (0.0 Units) Lab Hours: 108.0",
+  "ESL2": "ESL 02 · Citizenship Preparation Level 2 · (0.0 Units) Lab Hours: 54.0",
+  "ESL9100": "ESL 9100 · Listening & Speaking Level 1 · (0.0 Units) Lab Hours: 108.0",
+  "ESL9101": "ESL 9101 · Reading and Writing Level 1 · (0.0 Units) Lab Hours: 108.0",
+  "ESL9200": "ESL 9200 · High Beginning Listening and Speaking Level 2 · (0.0 Units) Lab Hours: 108.0",
+  "ESL9201": "ESL 9201 · Reading and Writing Level 2 · (0.0 Units) Lab Hours: 108.0",
+  "ESL9300": "ESL 9300 · ESL Level 3 Low Intermediate Listening and Speaking · (0.0 Units) Lab Hours: 108.0",
+  "GUID40": "GUID 040 · College Readiness · (0.0 Units) Lecture Hours: 9.0",
+  "GUID41": "GUID 041 · Career Exploration · (0.0 Units) Lecture Hours: 9.0",
+  "GUID42": "GUID 042 · Educational Planning · (0.0 Units) Lecture Hours: 9.0",
+  "GUID49": "GUID 049 · The Transfer Process · (0.0 Units) Lecture Hours: 18.0",
+  "HLTH105": "HLTH 0105 · Community Mental Health Preparation I · (0.0 Units) Lecture Hours: 9.0",
+  "HLTH106": "HLTH 0106 · Community Mental Health Preparation II · (0.0 Units) Lecture Hours: 9.0",
+  "HLTH108": "HLTH 0108 · Community Health Worker I · (0.0 Units) Lecture Hours: 40.5",
+  "HLTH109": "HLTH 0109 · Community Health Worker II · (0.0 Units) Lecture Hours: 40.5",
+  "MNLO10": "MNLO 010 · Forklift Operator · (0.0 Units) Lecture Hours: 18.0",
+  "MNLO20": "MNLO 020 · Forklift Operator Lab/Electric · (0.0 Units) Lab Hours: 13.5",
+  "MNLO25": "MNLO 025 · Forklift Operator Lab/Internal Combustion · (0.0 Units) Lab Hours: 13.5",
+  "MNLO28A": "MNLO 028A · Forklift Recertification Part I · (0.0 Units) Lecture Hours: 4.5",
+  "MNLO28B": "MNLO 028B · Forklift Recertification Part 2 · (0.0 Units) Lab Hours: 4.5",
+  "PHT40": "PHT 040 · Pharmacy Orientation & Pharmacy Calculat · (0.0 Units) Lecture Hours: 54.0",
+  "PHT41": "PHT 041 · Pharmacology - Part I · (0.0 Units) Lecture Hours: 54.0",
+  "PHT42": "PHT 042 · Pharmacy Law and Ethics · (0.0 Units) Lecture Hours: 54.0",
+  "PHT43": "PHT 043 · Pharmacy Sterile Compounding · (0.0 Units) Lecture Hours: 9.0 Lab Hours: 54.0",
+  "PHT44": "PHT 044 · Pharmacy Non-Sterile Compounding · (0.0 Units) Lab Hours: 54.0",
+  "PHT45": "PHT 045 · Pharmacology - Part II · (0.0 Units) Lecture Hours: 50.0",
+  "PHT46": "PHT 046 · Pharmacy Operations · (0.0 Units) Lecture Hours: 54.0",
+  "PHT47": "PHT 047 · Prescription Processing · (0.0 Units) Lecture Hours: 54.0 Lab Hours: 54.0",
+  "PHT48": "PHT 048 · Career Success · (0.0 Units) Lecture Hours: 54.0",
+  "PHT49": "PHT 049 · Pharmacy Technician Externship · (0.0 Units) Lecture Hours: 9.0",
+  "PHT50": "PHT 050 · Pharmacy Technician Certification Exam Prep Course · (0.0 Units) Lecture Hours: 54.0",
+  "PTS200": "PTS 0200 · Physical Therapy Terminology · (0.0 Units) Lecture Hours: 54.0",
+  "PTS201": "PTS 0201 · Introduction to Physical Therapy Aide · (0.0 Units) Lecture Hours: 54.0",
+  "WKPR10": "WKPR 010 · Personal Skills Assessment · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR11": "WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR12": "WKPR 012 · Decision Making and Problem Solving in the Workplace · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR13": "WKPR 013 · Career and Industry Landscape · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR14": "WKPR 014 · Comminication Skills in the Workforce · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR15": "WKPR 015 · Academic Preparation for the Workforce · (0.0 Units) Lecture Hours: 36.0",
+  "WKPR16": "WKPR 016 · Hriing Process and 21st Century Skills · (0.0 Units) Lecture Hours: 36.0"
+ }
+}

@@ -1,0 +1,66 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. West Valley College: 93 of 133 passing, no reconcile entry. 27 transfer degrees (AA-T, AS-T) name the degree's 60 (or 66) and Cal-GETC with no units, and 3 local degrees name 'WVC or Cal-GETC General Education patterns' with no units; every degree page the reading quoted prints no GE figure. This read prints, in the capture's own text, how a transfer page and a local page word their general education and electives, and follows the catalog's own links to the pages that state the units of the WVC GE pattern and of Cal-GETC, so a reconcile step can quote West Valley's own words. No model call.",
+ "college": "West Valley College",
+ "questions": {
+  "ge_units": "The units West Valley's catalog states for the WVC General Education pattern and for Cal-GETC, the words a transfer page and a local page use to name them, and whether the catalog prints the 60 as a minimum or an electives rule for degrees."
+ },
+ "keywords": [
+  "Cal-?GETC[^<\"]{0,200}",
+  "WVC[^<\"]{0,200}",
+  "[Gg]eneral [Ee]ducation[^<\"]{0,200}",
+  "[^<>\"]{0,120}\\b(?:18|19|21|22|24|25|27|30|34|60)\\b\\s*(?:semester\\s*)?units?[^<\"]{0,120}",
+  "[Tt]otal[^<\"]{0,80}[Uu]nits[^<\"]{0,60}",
+  "[Ee]lective[^<\"]{0,160}",
+  "[Mm]inimum[^<\"]{0,160}",
+  "unit program[^<\"]{0,120}"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/index.html",
+   "links": "General Education|Cal-?GETC|Graduation|Degree Requirements|Associate Degree|WVC GE",
+   "follow": "general-education|cal-?getc|graduation|degree-requirements|associate-degree"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/programs/sociology-associate-in-arts-degree-for-transfer.html",
+   "capture_view": true,
+   "links": "General Education|Cal-?GETC|Graduation|Degree Requirements",
+   "follow": "general-education|cal-?getc|graduation"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/programs/economics-associate-in-arts-degree-for-transfer.html",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/programs/geography-associate-in-arts-degree.html",
+   "capture_view": true,
+   "links": "General Education|WVC|Cal-?GETC|Graduation|Degree Requirements",
+   "follow": "general-education|graduation|degree-requirements|wvc"
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/programs/apparel-design-associate-in-science-degree.html",
+   "capture_view": true
+  },
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.westvalley.edu/catalog/programs/architecture-associate-in-science-degree.html",
+   "capture_view": true
+  }
+ ]
+}

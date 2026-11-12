@@ -3165,7 +3165,7 @@
      ],
      "title": "A PR that changes a builder of a committed file runs the builder",
      "type": "methodology",
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-09-17",
@@ -13843,7 +13843,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 100,
+   "count": 102,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15033,6 +15033,37 @@
      "updated": "2026-11-09"
     },
     {
+     "created": "2026-11-12",
+     "governs": [],
+     "path": "docs/harvest_side_handoff_s639.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "side-lane"
+     ],
+     "title": "Program requirements harvest \u2014 side-session handoff (S639, second session)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "path": "docs/harvest_wave3_diagnoses_s639.md",
+     "status": "internal",
+     "tags": [
+      "reference",
+      "program-requirements",
+      "harvest",
+      "diagnosis",
+      "side-lane"
+     ],
+     "title": "Program requirements harvest \u2014 wave 3 diagnoses (S639 side session)",
+     "type": null,
+     "updated": ""
+    },
+    {
      "created": "2026-07-16",
      "governs": [
       "kb/_build_program_course_graph.py",
@@ -15842,7 +15873,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-09-08",
@@ -16240,7 +16271,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16366,7 +16397,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16462,7 +16493,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-29",
@@ -16780,8 +16811,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 600,
+   "count": 601,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 640,
+     "path": "docs/session_640_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 640 handoff (from SkyQuail, S639)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-11",
      "governs": [],
@@ -26954,5 +26999,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1449
+ "total": 1452
 }

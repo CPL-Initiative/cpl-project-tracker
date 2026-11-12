@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -68,10 +68,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 580 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 100 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 102 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 69 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 600 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1449** | |
+| Session handoffs | 601 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1452** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-12 (S639 SkyQuail, conductor, Sam's session): five merges (#3122, #3123, #3124, #3126, #3127); the credential family live on 25 titles, the 13 saved rows restored, Sheet 181's renames applied; `main` red on two family checks after the apply; lane `cer-procedures` under budget; full checkpoint; handoff 640.
 - 2026-11-11 (S638 SkyTamarind, conductor, Sam's session): five merges (#3115, #3109, #3116, #3118, #3119), the subject fill's first live run, conductor mode (`docs/reference/conductor_mode.md`), the cer-procedures lane under its cap; handoff 639.
 - 2026-11-11 (S636 SkyAntennae, Sam's session): Butte 87 to 138 of 164 and displayed on the catalog's own GE totals, the reconcile's address guard, a stale-issuer report in the credential review apply, the harvest lane under its budget (#3100); handoff 637.
 - 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-10 (S633 SkySilverDollar, light): Las Positas (#3056) and De Anza (#3044) merged, the lanes onto the sheet (#3074), the exhibit re-analysis's Jev runner (#3076); Open Asks Sheet 180; handoff 634.
 - 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
 - 2026-11-10 (S624 SkyCocoon, light): the identity baseline (#3019), the funding tab's ended-access note (#3022), the decline pieces leave (#3023), a ruling can cross-list (#3025); handoff 625.
-- 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.

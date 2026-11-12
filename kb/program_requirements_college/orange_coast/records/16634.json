@@ -74,11 +74,29 @@
     40.0,
     41.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
-   ]
+    "the record names the degree total and the OCC A.S. GE Pattern pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     40.0,
+     41.0
+    ],
+    "stated": [
+     40.0,
+     41.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -100,10 +118,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -112,8 +127,8 @@
    "section_heading": "Advanced Baking and Pastry, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 40,
+    "max": 41
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -122,8 +137,8 @@
    },
    "ge_pattern": "OCC A.S. GE Pattern",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
@@ -287,5 +302,32 @@
    "Careers 'bakers', 'pastry cooks', 'pastry entrepreneurs' are taken from the program learning outcome text; the others from the overview."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 40,
+    "max": 41
+   },
+   "words": "Total Major Units\t40-41"
+  },
+  {
+   "field": "degree_total",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "OCC AS General Education: 21 Units 1,2\t17.0\nTransferable electives needed to satisfy 60-unit degree requirement\t3.0 - 2.0\nTotal Units\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

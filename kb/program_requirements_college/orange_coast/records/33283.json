@@ -60,26 +60,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
-    22.0
+    23.0
    ],
    "stated": [
     21.0,
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-22.0; the catalog states 21.0-23.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      55.0,
-     56.0
+     57.0
     ],
     "stated": [
      60.0,
@@ -92,7 +90,7 @@
     ],
     "why": [],
     "fill": [
-     4.0,
+     3.0,
      5.0
     ]
    }
@@ -119,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -319,5 +317,6 @@
    "The 'minimum of 18-semester units in the major' sentence is a general ADT rule, not this award's total; total_units uses 'Total Major Units 21-23'."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "read_run": "38670927724"
 }

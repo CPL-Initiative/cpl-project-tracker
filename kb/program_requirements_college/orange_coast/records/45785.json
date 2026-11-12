@@ -90,8 +90,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.0,
     40.0
@@ -101,25 +101,26 @@
     39.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-40.0; the catalog states 35.0-39.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     35.0,
-     40.0
+     69.0,
+     74.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-    ]
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -144,7 +145,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -166,7 +167,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -503,5 +504,20 @@
    "Catalog text begins mid-sentence (truncated at the start)."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (Cal-GETC)  1\tup to 34 (https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/: Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
+  }
+ ],
+ "read_run": "38670927724"
 }
