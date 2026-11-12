@@ -27,6 +27,7 @@ closes the PR path only; THIS lane stays open by design.
 | Workflow | Schedule | Push shape | Commits |
 |---|---|---|---|
 | `cer-decision-apply.yml` | dispatch-only | main | — |
+| `chatbox-ghost-delete.yml` | dispatch-only | main | — |
 | `cos-authority-sync.yml` | `17 8 3 * *` | main (cron checkout) | `kb/reference/cos_certifications.json`, `kb/cos_matches.json`, `kb/cos_match_out/` |
 | `course-title-cleanup-apply.yml` | dispatch-only | main | — |
 | `cpl-landing-pages.yml` | `37 14 * * 1` | main (cron checkout) | `chatbox/college_landing_pages.json` |
@@ -544,6 +545,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_ccr_seed_recheck_dryrun.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_cer_decision_apply.py` | workflows: `cer-decision-apply.yml` | — |
 | `kb/_cer_procedures.py` | workflows: `cer-procedures.yml` | — |
+| `kb/_chatbox_ghost_delete.py` | workflows: `chatbox-ghost-delete.yml` | — |
 | `kb/_college_contacts_harvest.py` | workflows: `college-contacts-harvest.yml` | — |
 | `kb/_college_page_read.py` | workflows: `college-page-read.yml` | — |
 | `kb/_course_outcomes_load.py` | workflows: `course-outcomes-load.yml` | — |
@@ -1030,6 +1032,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cert_naming_test.py` | workflows: `js-tests.yml` | — |
+| `tests/chatbox_ghost_delete_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cid_claim_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/clep_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cobi_live_banner.test.js` | workflows: `js-tests.yml` | — |
@@ -1050,6 +1053,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/course_title_cleanup_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/course_title_mojibake_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cred_rename_fold_issuer_test.py` | workflows: `js-tests.yml` | — |
+| `tests/credential_catalog_sync_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_catalog_widening_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_family_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_family_fold_contact_test.py` | workflows: `js-tests.yml` | — |
@@ -1406,8 +1410,9 @@ check these BY HAND before trusting an absence:
 - `cpl_session.js`
 - `cr_progress.js`
 - `exhibit_progress.js`
+- `kb/_chatbox_ghost_delete.py`
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 876 file
-datasets · 195 external services · 560 consumers · 66 workflows · 41 tabs.
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 879 file
+datasets · 195 external services · 561 consumers · 67 workflows · 41 tabs.

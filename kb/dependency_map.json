@@ -4,10 +4,10 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 876,
+  "file_datasets": 879,
   "external_services": 195,
-  "consumers": 560,
-  "workflows": 66,
+  "consumers": 561,
+  "workflows": 67,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -7572,7 +7572,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 51
     },
     {
      "id": "script:kb/_trail_crew.py",
@@ -9669,6 +9669,19 @@
    "consumers": [
     {
      "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_chatbox_ghost_delete.py": {
+   "consumers": [
+    {
+     "id": "workflow:chatbox-ghost-delete.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -22506,7 +22519,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 122
+     "line": 124
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -23080,6 +23093,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/chatbox_ghost_delete_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/cid_claim_audit_test.py": {
    "consumers": [
     {
@@ -23335,6 +23361,19 @@
    "main_committers": []
   },
   "file:tests/cred_rename_fold_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_catalog_sync_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27405,7 +27444,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 199
+     "line": 244
     }
    ],
    "main_committers": []
@@ -31080,6 +31119,18 @@
    "chain": [],
    "urls": []
   },
+  "chatbox-ghost-delete.yml": {
+   "name": "Sierra ghost-row delete (chatbox_credentials)",
+   "crons": [],
+   "scripts": [
+    "kb/_chatbox_ghost_delete.py"
+   ],
+   "adds": [],
+   "push": "main",
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "cobix-review.yml": {
    "name": "cobix-review",
    "crons": [],
@@ -31741,6 +31792,8 @@
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_decision_apply_retry_test.py",
+    "tests/chatbox_ghost_delete_test.py",
+    "tests/credential_catalog_sync_test.py",
     "tests/cer_procedures_test.py",
     "tests/cer_classifier_rules_size_test.py",
     "tests/ap_official_titles_test.py",
@@ -32653,6 +32706,7 @@
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",
+  "kb/_chatbox_ghost_delete.py",
   "kb/_program_requirements_extract.py",
   "scripts/supabase_migrate.py"
  ],

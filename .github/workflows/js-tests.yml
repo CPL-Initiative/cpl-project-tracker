@@ -438,6 +438,14 @@ jobs:
       # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
       - name: CER decision applier undoes what landed, not what echoed
         run: python3 tests/cer_decision_apply_retry_test.py
+      # Sierra's ghost-row delete (Sam, Open Asks Sheet 183 card 6): the plan finds exactly the ghosts, the apply's
+      # guards refuse, the receipt comes from a fresh read, the undo restores every column. Pure-stdlib python.
+      - name: Sierra ghost-row delete refuses, receipts and undoes
+        run: python3 tests/chatbox_ghost_delete_test.py
+      # The sync behind it: adopters and potential colleges kept apart, suppression inherited, and each retired
+      # title's old name on its live successor's raw_variants (Sam, 2026-11-11). Pure-stdlib python.
+      - name: Credential catalog sync (Sierra) keeps its rows and the retired names
+        run: python3 tests/credential_catalog_sync_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94
