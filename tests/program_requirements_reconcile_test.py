@@ -325,14 +325,20 @@ WV = "West Valley College"
 
 
 def _wv(cn):
+    """The filed record as the reading left it: a reconcile run's notes undone (each names what it was)."""
     with open(os.path.join(ROOT, "kb/program_requirements_college/west_valley/records/%s.json" % cn)) as fh:
-        return json.load(fh)
+        filed = json.load(fh)
+    rec = json.loads(json.dumps(filed["record"]))
+    for n in reversed(filed.get("reconciled") or []):
+        rec["program"][n["field"]] = n["was"]
+    return dict(filed, record=rec)
 
 
 # Sociology AA-T 30972 and Geography A.A. 07619, as the capture reads them (read 43138048261).
 wv_soc = ("Sociology\nAssociate in Arts Degree for Transfer\nStudents must complete the following requirements: 1. 60 "
           "semester or 90 quarter CSU-transferable units. 2. the California General Education Transfer Curriculum "
-          "pattern (Cal-GETC). 3. a minimum of 18 semester or 27 quarter units in the major\nTotal Major Units: 19 units\n"
+          "pattern (Cal-GETC). 3. a minimum of 18 semester or 27 quarter units in the major\n"
+          "Major Electives List A: Select two. (6 units)\nTotal Major Units: 19 units\n"
           "CSU transferable elective courses are required when the major units plus transfer GE units total is less "
           "than 60.")
 wv_geo = ("Geography\nAssociate in Arts Degree\nTotal Major Units: 22 units\nCompletion of WVC or Cal-GETC General "
@@ -359,13 +365,23 @@ check("a local A.A. naming 'WVC or Cal-GETC' takes neither",
       and R.reconcile(geo["record"], wv_soc, WV, geo["award"], steps=R.load_steps())[1] == [])
 check("a certificate takes neither",
       R.reconcile(soc["record"], wv_soc, WV, "Certificate of Achievement", steps=R.load_steps())[1] == [])
-check("a transfer page without the electives sentence keeps its 60 exact",
-      not R.reconcile(soc["record"], wv_soc.split("CSU transferable elective")[0], WV, soc["award"],
-                      steps=R.load_steps())[0]["program"].get("degree_total_minimum"))
+# Negative pages (review of #3137): a transfer page that names no Cal-GETC words, and one whose only 'elective'
+# is a major-electives heading, so neither step's pattern can be loosened unseen.
+wv_no_getc = wv_soc.replace("2. the California General Education Transfer Curriculum pattern (Cal-GETC). ", "")
+check("a transfer page naming no Cal-GETC words takes no general education figure",
+      R.reconcile(soc["record"], wv_no_getc, WV, soc["award"], steps=R.load_steps())[0]["program"]["ge_units"]
+      == soc["record"]["program"]["ge_units"])
+wv_no_floor = (wv_soc.split("CSU transferable elective")[0]
+               + "Major Electives List B (or any course not used above): select one elective course.\n"
+               + "A student with less than 60 units completed should meet with a counselor.")
+check("a transfer page with a Major Electives heading and 'less than 60' elsewhere keeps its 60 exact",
+      not R.reconcile(soc["record"], wv_no_floor, WV, soc["award"],
+                          steps=R.load_steps())[0]["program"].get("degree_total_minimum"))
 check("a figure the reading filed stands",
       R.reconcile({"program": dict(soc["record"]["program"], ge_units={"min": 37, "max": 39}),
                    "blocks": soc["record"]["blocks"]}, wv_soc, WV, soc["award"],
                   steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+
 print("Los Angeles City's degree headings (S639; college page read 43134671935)")
 LAC = "Los Angeles City College"
 LAC_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "los_angeles_city", "records")
