@@ -16,8 +16,8 @@ receipts and the lane files; a fact marked *as reported* came from the conductor
 ## First: is `main` green?
 
 At 01:30Z `main` was red: 2 of 30 checks in `tests/credential_family_test.py` fail since the rename apply
-(`da9f2f90`), because they read committed titles and expect the pre-rename state. A worker was fixing it on
-`claude/family-test-after-rename-s639`. **Check whether that PR merged and `main` is green** (`get_check_runs` on
+(`da9f2f90`), because they read committed titles and expect the pre-rename state. PR #3132 fixed the tests (three files) and merged
+at 02:02Z (`08fe27eb`); the conductor confirmed `test` green on its head. **Check whether that PR merged and `main` is green** (`get_check_runs` on
 `main`'s head, `test`). If not, the fix is yours before anything else, and the harvest side session holds its merges
 until it lands. Then dispatch `daily-dashboard.yml`: the two new family tags and the Sheet 181 renames are not on the
 published files yet (`kb/credentials.json` reads 23 `family` values; 25 are live).
