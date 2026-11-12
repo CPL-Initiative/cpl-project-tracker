@@ -268,13 +268,19 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("with neither a statewide nor a clearly most used title, no line and no mark",
     t.d.querySelector(".exh-align").hidden && !/Statewide exhibit|Most used/.test(txt(panel(t.d))));
   t = await boot({ noStatewide: true });
-  check("the statewide list unread, the card falls back to the most used title", /^A popular title for this is Firefighter 1 \(11 local titles/.test(txt(t.d.querySelector(".exh-align"))));
+  // Since the #3168 review's level rule (f): a card naming no level reaches a title naming one (Firefighter 1) only as
+  // the statewide exhibit's clear lead, so with the statewide list unread it is never offered as the most used title.
+  check("the statewide list unread, a levelled title is not offered as the most used one",
+    t.d.querySelector(".exh-align").hidden && !/Firefighter 1/.test(txt(t.d.querySelector(".exh-align"))), txt(t.d.querySelector(".exh-align")));
 
   // ── the #3160 review: the real files, four cards ──
   async function real(raw) { return boot({ real: true, card: realCard(raw) }); }
   t = await real("Firefighter Recruit Academy Certificate");
-  check("real data: Firefighter Academy still names Firefighter 1 (11 local titles against Firefighter 1A's 2, a clear lead)",
-    /^This looks like the statewide exhibit Firefighter 1 \(11 local titles/.test(txt(t.d.querySelector(".exh-align"))) && t.d.getElementById("exh-rel-target").value === "Firefighter 1",
+  // Since the S642 proposal step (kb/title_in_use.py), the pipeline proposes the statewide exhibit itself, so the card
+  // reads it as its own title; the old "Firefighter Academy" proposal is checked through the same rule just below.
+  check("real data: the recruit academy card now proposes Firefighter 1, the statewide exhibit (11 local titles against Firefighter 1A's 2)",
+    realCard("Firefighter Recruit Academy Certificate").title === "Firefighter 1"
+    && txt(t.d.querySelector(".exh-align")) === "This is a statewide exhibit." && t.d.getElementById("exh-rel-target").value === "Firefighter 1",
     txt(t.d.querySelector(".exh-align")));
   const fireLive = t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url) && /course_id=in\./.test(c.url); });
   check("real data: the live read goes in chunks, every URL short", fireLive.length >= 1 && t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url); })

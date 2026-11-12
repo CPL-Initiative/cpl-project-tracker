@@ -865,7 +865,7 @@
         // The test alone before a bundle that holds it.
         out.push({ o: o, tier: tier, rank: tier === 0 ? o.codes.length : 0 });
       });
-      out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+      out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || lowerCmp(a.o.t, b.o.t); });
       return { family: "ASE", code: fam.code, rows: out,
         tiers: [fam.code ? "The same test, ASE " + fam.code : "", series ? "The same series, ASE " + series : "", "Other ASE titles"] };
     }
@@ -879,7 +879,7 @@
       var tier = same && n ? 0 : (n >= 2 || (n && n === keys.length)) ? 1 : same ? 2 : -1;
       if (tier >= 0) out.push({ o: o, tier: tier, rank: -n });
     });
-    out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+    out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || lowerCmp(a.o.t, b.o.t); });
     return { family: "", code: "", rows: out, tiers: ["The same issuer, words in common", "Words in common", "The same issuer"] };
   }
   function renamePending(title) {
@@ -1032,27 +1032,83 @@
      (c) Several statewide candidates: the leader is named only on a clear lead, at least STATEWIDE_LEAD times the
          local titles of the next one (Firefighter 1, 11, over Firefighter 1A, 2); else none, and the panel still
          marks each one Statewide exhibit.
-     (d) None statewide: the most used candidate, by the same issuer rule, with at least POPULAR_MIN local titles and
-         more than every other candidate. */
+     (d) None statewide, and the card's title not in the reference: the most used candidate, by the same issuer rule,
+         with at least POPULAR_MIN local titles and more than every other candidate. Outside an ASE test, every word of
+         the candidate's own title (earlier titles left out) is a word of the card's title; two shared words are not
+         enough, and a longer title holding the card's words is another thing (FST 1, the review of #3168).
+     (e) Outside an ASE test, a card whose title ends in a course code in parentheses ("Administration of Justice
+         (AJ 54)") names only a candidate carrying the same code.
+     (f) Levels (levelKey): the card and the candidate name the same levels, roman numerals read as numbers; a card
+         naming none reaches a statewide title naming one only through (c)'s lead (Firefighter Academy names
+         Firefighter 1; Firefighter 2 never does).
+     (g) A card whose own title is in the reference keeps it: only a statewide title with the same words and levels.
+     (h) A credit-by-exam card keeps its own issuer (cardIssuerFor): its ASE-form title does not make ASE its issuer.
+     Order: local titles descending, colleges descending, the lowercased title by code point (useCmp, lowerCmp).
+     ONE rule with the pipeline: kb/title_in_use.py makes the same choice the Review proposal (kb/_build_exhibits_review.py,
+     Sam's ruling of 2026-11-12, "suggest the best canonical title based on what's in use"). Both sides read
+     tests/fixtures/title_in_use_cases.json (tests/title_in_use_test.py, tests/title_in_use_parity.test.js), which pins
+     these constants, REL_STOP and the choices; change both or a test fails. */
   var STATEWIDE_LEAD = 3;
+  var PAREN_CODE = /\(\s*([A-Z]{2,6})\s+([A-Z0-9]{1,6})\s*\)\s*$/;
+  function parenCode(t) { var m = PAREN_CODE.exec(t || ""); return m ? m[1] + " " + m[2] : ""; }
+  /* (f) the levels a title names: a number, a number and one letter A to H ("1A"), a roman numeral I to X read as its
+     number ("Firefighter I" is "Firefighter 1"). The same pattern as kb/title_in_use.py _LEVEL; no lookbehind. */
+  var LEVEL_TOKEN = /(?:^|[^A-Za-z0-9])(?:(\d+)([A-Ha-h])?|(X|IX|VIII|VII|VI|V|IV|III|II|I))(?![A-Za-z0-9])/g;
+  var ROMAN = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10 };
+  function levelKey(t) {
+    var out = {}, m;
+    LEVEL_TOKEN.lastIndex = 0;
+    while ((m = LEVEL_TOKEN.exec(t || ""))) {
+      out[m[3] ? String(ROMAN[m[3]]) : String(parseInt(m[1], 10)) + (m[2] || "").toUpperCase()] = 1;
+    }
+    return Object.keys(out).sort().join(" ");
+  }
+  function wordsKey(t) { return Object.keys(relWords(t)).sort().join(" "); }
+  /* (d) every word of the candidate's own title is a word of the card's. */
+  function wordsWithin(card, cand) {
+    var kc = Object.keys(cand);
+    return !!Object.keys(card).length && !!kc.length && kc.every(function (k) { return card[k]; });
+  }
+  /* The one order both sides use: local titles descending, colleges descending, then the lowercased title by code
+     point (never a locale's collation). */
+  /* kb/title_in_use.py in_use: the title in use for a card, under the box's issuer (issuerFor), or under its own
+     (ownIssuer, a credit-by-exam card, rule h), where an ASE card names nothing: a precedent sits the other way (a
+     credit-by-exam AUTO A1 title is under ASE A1), so where it belongs is Sam's call. */
+  function relInUse(title, raw, issuer, ownIssuer) {
+    var t = (title || "").trim();
+    if (ownIssuer && aseOf(t, raw, issuer)) return null;
+    var iss = ownIssuer ? (issuer || "").trim() : (issuerFor(t, issuer).trim() || issuer || "");
+    return relAligned(relatedFor(t, raw, iss, []), t, iss);
+  }
+  /* (h) every exhibit behind the card is credit by exam by its MAP id (kb/exhibit_paths.py: CX, Cx, CBE). */
+  function cbeCard(h) {
+    var ids = (h && h.ids) || [];
+    return ids.length > 0 && ids.every(function (i) { return /^(?:MAP|CPL)(?:CX|Cx|CBE)/.test(i); });
+  }
+  function lowerCmp(a, b) { a = a.toLowerCase(); b = b.toLowerCase(); return a < b ? -1 : a > b ? 1 : 0; }
+  function useCmp(a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || lowerCmp(a.o.t, b.o.t); }
   function relAligned(got, cardTitle, cardIssuer) {
     var t0 = (cardTitle || "").trim(), iss = (cardIssuer || "").trim();
     if (t0 && relInRef(t0) && relStatewide(t0)) return { kind: "self", o: state.rel.by[t0] };
     if (!iss) return null;
+    var inRef = relInRef(t0), mine = relWords(t0), mineKey = wordsKey(t0), levels = levelKey(t0);
+    var code = got.family ? "" : parenCode(t0);
     var near = got.rows.filter(function (x) {
-      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1);
+      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1)
+        && (!code || parenCode(x.o.t) === code);
     });
-    function byUse(a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || a.o.t.localeCompare(b.o.t); }
-    var sw = near.filter(function (x) { return relStatewide(x.o.t); }).sort(byUse);
+    // (f) the same levels; a card naming none may reach a statewide title that names one, under (c)'s lead alone.
+    var sw = near.filter(function (x) { return relStatewide(x.o.t) && (!levels || levelKey(x.o.t) === levels); }).sort(useCmp);
+    // (g) a card already on a reference title keeps it, unless a statewide title has the same words and levels.
+    if (inRef) sw = sw.filter(function (x) { return wordsKey(x.o.t) === mineKey && levelKey(x.o.t) === levels; });
     if (sw.length) {
       if (sw.length > 1 && sw[0].o.locals < STATEWIDE_LEAD * sw[1].o.locals) return null;
       return { kind: "statewide", o: sw[0].o };
     }
-    // The card's own title, when it is in the reference, competes too: a card already on the most used title is told
-    // nothing (a CompTIA Security+ card never names Network+).
-    var pool = near.concat(got.rows.filter(function (x) { return x.o.t === t0 && !x.o.proposed && x.o.issuer === iss; }));
-    var top = pool.slice().sort(byUse)[0];
-    if (!top || top.o.t === t0 || top.o.locals < POPULAR_MIN) return null;
+    if (inRef) return null;
+    var pool = near.filter(function (x) { return levelKey(x.o.t) === levels && (got.family || wordsWithin(mine, relWords(x.o.t))); });
+    var top = pool.slice().sort(useCmp)[0];
+    if (!top || top.o.locals < POPULAR_MIN) return null;
     if (pool.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
     return { kind: "popular", o: top.o };
   }
@@ -1616,8 +1672,13 @@
   /* Accept all proposed titles (Sam, 2026-10-31): every title in the list on screen takes its proposed
      title and issuer, a typed edit where there is one. A conflict with the reference stays for a person, and
      a title someone already saved keeps that save: the bulk word never overwrites a person's decision. */
+  /* A card whose official name is not on file (kb/_build_exhibits_review.py needs_official_name) is never accepted in
+     bulk: its title waits for a person on its own card (the review of #3168). */
+  function bulkNoName(list) {
+    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved && h.needs_official_name; }).length;
+  }
   function bulkItems(list) {
-    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved; }).map(function (h) {
+    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved && !h.needs_official_name; }).map(function (h) {
       var d = state.drafts[h.raw] || {};
       var title = String(d.title != null ? d.title : (h.title || "")).trim();
       return { h: h, raw: h.raw, title: title, issuer: String(d.issuer != null ? d.issuer : issuerFor(title, h.issuer)).trim() };
@@ -2077,6 +2138,10 @@
       keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
     });
     canon.appendChild(exists);
+    // Sam, 2026-11-12: a certification, license or training program takes its official name. When the repo holds none
+    // for it (kb/_build_exhibits_review.py needs_official_name), the card says so in words.
+    if (h.needs_official_name) canon.appendChild(el("p", { cls: "exh-muted exh-small exh-needs-name",
+      text: "The issuer's official name for this credential is not on file. Check this title against the issuer's own name." }));
     (h.alternates || []).forEach(function (alt) {
       canon.appendChild(el("p", { cls: "exh-muted exh-small" }, [
         (h.step === CONFLICT ? "The reference also names: " : "Also proposed: ") + alt + " ",
@@ -2087,8 +2152,9 @@
     var align = el("p", { cls: "exh-small exh-align" });
     function drawAlign() {
       while (align.firstChild) align.removeChild(align.firstChild);
-      var iss = issuer.value.trim() || h.issuer;
-      var a = state.rel.data ? relAligned(relatedFor(title.value.trim(), h.raw, iss, []), title.value, iss) : null;
+      // (h) a credit-by-exam card asks the rule under its own issuer, as the pipeline's proposal does, until a person types one.
+      var own = !issuerTyped && cbeCard(h);
+      var a = state.rel.data ? relInUse(title.value, h.raw, own ? h.issuer : (issuer.value.trim() || h.issuer), own) : null;
       align.hidden = !a;
       if (!a) return;
       align.appendChild(document.createTextNode(relAlignWords(a)));
@@ -2161,19 +2227,22 @@
     if (state.history.length) acts.appendChild(word("Back", back, { "aria-label": "Back to the previous title, " + state.history[state.history.length - 1].raw }));
     acts.appendChild(word("Skip", function () { skip(list); }));
     c.appendChild(acts);
-    var many = bulkItems(list);
+    var many = bulkItems(list), noName = bulkNoName(list);
+    var noNameWords = noName ? "The " + fmt(noName) + " whose official name is not on file stay for a card." : "";
     if (many.length > 1) {
       var bulk = el("div", { cls: "exh-bulk" });
       if (!state.bulkAsk) {
         bulk.appendChild(word("Accept all proposed titles (" + fmt(many.length) + ")", function () { state.bulkAsk = true; render(); },
           { cls: "exh-w exh-small", "aria-expanded": "false" }));
+        if (noName) bulk.appendChild(el("span", { cls: "exh-muted exh-small exh-bulk-noname", text: " " + noNameWords }));
       } else {
         var steps = {};
         many.forEach(function (it) { steps[it.h.step] = (steps[it.h.step] || 0) + 1; });
-        var held = list.length - many.length;
+        var held = list.length - many.length - noName;
         bulk.appendChild(el("p", { cls: "exh-small", role: "status" }, [
           "Save the proposed title and issuer for the " + fmt(many.length) + " titles in this list ("
           + Object.keys(steps).map(function (k) { return fmt(steps[k]) + " " + k; }).join(", ") + ")? An edit you typed on a card counts as its proposal."
+          + (noNameWords ? " " + noNameWords : "")
           + (held ? " The other " + fmt(held) + ", in conflict with the reference or saved earlier, stay as they are." : "")]));
         bulk.appendChild(el("div", { cls: "exh-acts" }, [
           word(state.bulkBusy ? "Saving…" : "Save all " + fmt(many.length), function () { if (!state.bulkBusy) acceptAll(list); },
@@ -5039,7 +5108,8 @@
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
-    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();
