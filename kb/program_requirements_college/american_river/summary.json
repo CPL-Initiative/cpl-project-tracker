@@ -5,16 +5,16 @@
  "found": 368,
  "extracted": 368,
  "errors": 0,
- "passed_machine_checks": 280,
+ "passed_machine_checks": 297,
  "failed": {
-  "coverage": 41,
+  "coverage": 33,
   "invented": 0,
-  "arithmetic": 85,
+  "arithmetic": 68,
   "repeated": 0,
   "outcomes": 5
  },
- "cost_usd": 29.85,
- "cost_per_program": 0.0811,
+ "cost_usd": 29.97,
+ "cost_per_program": 0.0814,
  "not_found": [],
- "run": "39049026449"
+ "run": "43212067552"
 }
