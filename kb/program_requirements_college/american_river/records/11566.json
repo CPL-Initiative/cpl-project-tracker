@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Gerontology: Advocacy and Social Policy",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=632",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11969,
+  "input_tokens": 11812,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11969,
-    "output_tokens": 2948,
+    "input_tokens": 11812,
+    "output_tokens": 3629,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,65 +30,69 @@
     "model": null
    }
   ],
-  "output_tokens": 2948,
+  "output_tokens": 3629,
   "output_tokens_details": {
-   "thinking_tokens": 1004
+   "thinking_tokens": 1417
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10684,
- "ms": 24840,
- "seconds": 25.3,
+ "cost_usd": 0.11983,
+ "ms": 31142,
+ "seconds": 31.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 15,
    "listed": 20,
-   "share": 0.45,
+   "share": 0.75,
    "missing": [
     "COMM321",
-    "COMM325",
-    "GERON303",
-    "GERON305",
-    "GERON306",
-    "GERON490",
     "HSER300",
     "HSER310",
     "HSER330",
-    "PSYC365",
-    "PSYC375"
+    "POLS304"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 6,
+   "codes": [
+    "COMMC1004",
+    "POLS302",
+    "SOC480",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
+   "flagged": [
+    "COMMC1004",
+    "POLS302",
+    "SOC480",
+    "SWCD300",
+    "SWCD310",
+    "SWCD330"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    12.0,
-    12.0
+    36.0,
+    36.0
    ],
    "stated": [
     36.0,
     36.0
    ],
    "against": "program",
-   "why": [],
-   "fill": [
-    24.0,
-    24.0
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -119,7 +123,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "A.A. in Gerontology: Advocacy and Social Policy",
+   "section_heading": "Gerontology: Advocacy and Social Policy Certificate",
    "measure": "units",
    "total_units": {
     "min": 36,
@@ -130,7 +134,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -139,7 +143,7 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "associate social conditions in the current and recent past with their potential impact on future aging cohorts.",
     "evaluate the impact of diversity in terms of race, ethnicity, religion, sex, gender and sexual orientation, and citizenship on well-being during aging and on aging outcomes.",
@@ -158,10 +162,95 @@
     "apply logic and evidence to support, organize, and deliver persuasive discourse."
    ],
    "careers": [
-    "Entry to mid-level advocacy and support positions"
+    "mid-level advocacy and support positions"
    ]
   },
   "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "COMM C1004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 325",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "SWCD 330",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 303",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 305",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 306",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GERON 490",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SWCD 300",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SWCD 310",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
    {
     "name": "A minimum of 3 units from the following",
     "rule": "choose_units",
@@ -215,9 +304,9 @@
       "units_max": null,
       "alternatives": [
        {
-        "code": "POLS 304",
+        "code": "POLS 302",
         "units": 3,
-        "catalog_addition": false
+        "catalog_addition": true
        },
        {
         "code": "POLS 330",
@@ -236,6 +325,11 @@
         "code": "SOC 300",
         "units": 3,
         "catalog_addition": false
+       },
+       {
+        "code": "SOC 480",
+        "units": 3,
+        "catalog_addition": true
        }
       ],
       "catalog_addition": false
@@ -247,77 +341,33 @@
   "missing_explained": [
    {
     "code": "COMM 321",
-    "why": "not in the text; section's core requirements printed on the preceding page (631), not provided"
-   },
-   {
-    "code": "COMM 325",
-    "why": "not in this section's provided text; core list on page 631 not provided (appears only in other Gerontology degrees' sections)"
-   },
-   {
-    "code": "GERON 303",
-    "why": "not in this section's provided text; core list on page 631 not provided"
-   },
-   {
-    "code": "GERON 305",
-    "why": "not in this section's provided text; core list on page 631 not provided"
-   },
-   {
-    "code": "GERON 306",
-    "why": "not in this section's provided text; core list on page 631 not provided"
-   },
-   {
-    "code": "GERON 490",
-    "why": "not in this section's provided text; core list on page 631 not provided"
+    "why": "not in the text; the certificate section lists COMM C1004 Interpersonal Communication instead (likely renumbered)"
    },
    {
     "code": "HSER 300",
-    "why": "not in the text; core list on page 631 not provided"
+    "why": "not in the text; the certificate section lists SWCD 300 instead (likely renamed subject)"
    },
    {
     "code": "HSER 310",
-    "why": "not in the text; core list on page 631 not provided"
+    "why": "not in the text; the certificate section lists SWCD 310 instead (likely renamed subject)"
    },
    {
     "code": "HSER 330",
-    "why": "not in the text; core list on page 631 not provided"
+    "why": "not in the text; the certificate section lists SWCD 330 as an alternative instead (likely renamed subject)"
    },
    {
-    "code": "PSYC 365",
-    "why": "not in this section's provided text; core list on page 631 not provided"
-   },
-   {
-    "code": "PSYC 375",
-    "why": "not in this section's provided text; core list on page 631 not provided"
+    "code": "POLS 304",
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The provided text begins on page 632 mid-table: the section heading, description and the core required courses of the Advocacy and Social Policy A.A. are on page 631, which was not provided. Only the last two elective blocks are recorded; the stated total of 36 units includes the unseen core. A reviewer should check page 631.",
-   "Section heading inferred from the pattern of the sibling sections ('A.A. in Gerontology: ...'); it is not printed in the provided text.",
-   "In the 9-unit block each row is an 'or' group of 3-unit courses; 9 units appears to require one course from each of the three rows.",
-   "The page says the degree requires the program, a GE pattern, 'plus sufficient electives for a total of at least 60 units'; recorded as electives_fill_degree, degree_total left null as it reads as the general degree minimum.",
-   "Sibling sections on pages 632-635 (Case Management and Social Services, Geriatric Health Care, Recreation) were not read for this record; they use SWCD and COMM C1004 codes in place of HSER and COMM 321.",
-   "Careers entry taken from the Career Information paragraph; settings listed there (agencies, organizations) are employers, not careers, and were not recorded."
+   "The requested award is the A.A. Degree, but the provided text contains only the 'Gerontology: Advocacy and Social Policy Certificate' section (pages 637-638); no A.A. degree section for this program appears. This record reads the certificate section as the closest available; a reviewer should verify against the A.A. degree section, which likely appears elsewhere in the catalog and may add general education and a degree total.",
+   "Total Units: 36 is the certificate total.",
+   "In the 9-unit choose list, courses are printed as 'or' rows (COMM C1000 or COMM 302 or COMM 311; POLS C1000 or POLS 302 or POLS 330; SJS 300 or SOC 300 or SOC 480); recorded as printed with alternatives, though the rule is simply a minimum of 9 units from the list.",
+   "Closed list uses older codes (HSER, COMM 321) where the catalog prints SWCD and COMM C1004; these catalog codes are marked as catalog additions.",
+   "The outcomes list is printed under the certificate section; the A.A. degree may share it but this cannot be confirmed from the text.",
+   "Page 637 begins with outcomes and career information belonging to a preceding program (apparently a Gerontology administration program), which were not used."
   ]
  },
- "extracted_run": "43212067552",
- "source_sha": "42f994e4bb8139ad",
- "source_codes": [
-  "COMM302",
-  "COMM311",
-  "COMM325",
-  "COMMC1000",
-  "GERON303",
-  "GERON305",
-  "GERON306",
-  "GERON490",
-  "GERON498",
-  "POLS304",
-  "POLS330",
-  "POLSC1000",
-  "PSYC365",
-  "PSYC375",
-  "SJS300",
-  "SOC300"
- ],
- "source_coverage": 0.8
+ "extracted_run": "39047245752"
 }
