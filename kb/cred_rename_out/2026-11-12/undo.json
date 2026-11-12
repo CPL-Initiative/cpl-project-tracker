@@ -1,0 +1,1340 @@
+{
+  "groups": {
+    "ASE Certificate Bundles: A1 + A6 + A8 + L1": [
+      "ASE Bundle — A1, A6, A8, L1"
+    ],
+    "ASE Certificate Bundles: A2 + A3": [
+      "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)"
+    ],
+    "ASE Certificate Bundles: A2 + A3 + A6": [
+      "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "ASE Bundle — A2, A3, A6"
+    ],
+    "ASE Certificate Bundles: A4 + A5": [
+      "ASE Bundle — A4, A5"
+    ],
+    "ASE Certificate Bundles: A4 + A5 + A6": [
+      "ASE Bundle — A4, A5, A6"
+    ],
+    "ASE Certificate Bundles: A6 + A8 + L1": [
+      "ASE Bundle — A6, A8, L1"
+    ],
+    "ASE Certificate Bundles: A8 + L1": [
+      "ASE A8 + L1 — Engine Performance and Advanced Engine Performance"
+    ],
+    "ASE Certificate Bundles: A9 + L2": [
+      "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced"
+    ],
+    "ASE Certificate Bundles: G1 with ALI Lift It Right": [
+      "ASE G1 + ALI Lift It Right Bundle"
+    ],
+    "ASE Certificate Bundles: L1 + L2": [
+      "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis"
+    ],
+    "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": [
+      "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD"
+    ],
+    "ASE Certificate Bundles: L2 + T8 with SP/2 HD": [
+      "ASE Bundle — L2, T8, SP/2 HD"
+    ],
+    "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": [
+      "ASE Bundle — T2, T5, T7, T8 + MACS/609"
+    ],
+    "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": [
+      "ASE Bundle — T2, T6, T8 + Snap-on 604"
+    ],
+    "ASE Certificate Bundles: T2 + T8": [
+      "ASE Bundle — T2, T8"
+    ],
+    "ASE Certificate Bundles: T3 + T4 + T5 + T8": [
+      "ASE Bundle — T3, T4, T5, T8"
+    ],
+    "ASE Certificate Bundles: T3 + T8 with SP/2 HD": [
+      "ASE Bundle — T3, T8, SP/2 HD"
+    ],
+    "ASE Certificate Bundles: T4 + T8 with SP/2 HD": [
+      "ASE Bundle — T4, T8, SP/2 HD"
+    ],
+    "ASE Certificate Bundles: T5 + T8": [
+      "ASE Bundle — T5, T8"
+    ],
+    "ASE Certificate Bundles: T5 + T8 with SP/2 HD": [
+      "ASE Bundle — T5, T8, SP/2 HD"
+    ],
+    "ASE Certificate Bundles: T6 + T8 with Snap-on 604": [
+      "ASE Bundle — T6, T8 + Snap-on 604"
+    ],
+    "ASE Certificate Bundles: T7 + T8 with MACS/609": [
+      "ASE Bundle — T7, T8 + MACS/609"
+    ],
+    "ASE Master Automobile Technician": [
+      "ASE Master Automobile Technician (A1–A8 + L1)"
+    ]
+  },
+  "_about": "Every value kb/_cred_rename_apply.py changed in this apply, before and after. kb/_cred_rename_undo.py reverses it. A key absent before (a rename's new title) or after (a folded or renamed-away title) is null.",
+  "_applied_at": "2026-11-12T00:54:43Z",
+  "credentials": {
+    "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined-subtest exhibit; preserved as triplet identity.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined-cert bucket; could also be split, but exhibit awards for the pair.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined cert pair — kept paired since the exhibit requires both.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Paired-cert exhibit; kept as combined identity.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — A1, A6, A8, L1": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local LATTC composite bundle of multiple ASE subtests; kept as bundle since it's awarded together.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — A2, A3, A6": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local college composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — A4, A5": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — A4, A5, A6": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local college composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — A6, A8, L1": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local college composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — L2, T8, SP/2 HD": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Bundle mixes ASE L2/T8 with SP/2 (industry safety/pollution program).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T2, T5, T7, T8 + MACS/609": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle; MACS 609 EPA refrigerant cert co-required. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T2, T6, T8 + Snap-on 604": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle including vendor-specific meter cert. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T2, T8": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T3, T4, T5, T8": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T3, T8, SP/2 HD": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T4, T8, SP/2 HD": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T5, T8": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T5, T8, SP/2 HD": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle mixes ASE with vendor (Cummins) and SP/2. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T6, T8 + Snap-on 604": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle with vendor meter cert. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Bundle — T7, T8 + MACS/609": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Certificate Bundles: A1 + A6 + A8 + L1": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local LATTC composite bundle of multiple ASE subtests; kept as bundle since it's awarded together.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A2 + A3": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined-cert bucket; could also be split, but exhibit awards for the pair.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A2 + A3 + A6": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined-subtest exhibit; preserved as triplet identity.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A4 + A5": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A4 + A5 + A6": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local college composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A6 + A8 + L1": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Local college composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A8 + L1": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined cert pair — kept paired since the exhibit requires both.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: A9 + L2": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Paired-cert exhibit; kept as combined identity.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: G1 with ALI Lift It Right": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": "Automotive Lift Institute (ALI)",
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined ASE G1 with ALI Lift It Right safety training — two co-issued credentials bundled.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: L1 + L2": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Paired-cert exhibit requiring both L1 and L2.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.8,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle mixes ASE with vendor (Cummins) and SP/2. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: L2 + T8 with SP/2 HD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Bundle mixes ASE L2/T8 with SP/2 (industry safety/pollution program).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle; MACS 609 EPA refrigerant cert co-required. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle including vendor-specific meter cert. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T2 + T8": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T3 + T4 + T5 + T8": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T3 + T8 with SP/2 HD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T4 + T8 with SP/2 HD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T5 + T8": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T5 + T8 with SP/2 HD": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle.",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T6 + T8 with Snap-on 604": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.85,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle with vendor meter cert. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE Certificate Bundles: T7 + T8 with MACS/609": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-05-20",
+          "reviewed_by": "samueltlee",
+          "_notes": "Composite bundle. | Issuer confirmed (credential curation 2026-05-20).",
+          "family": "ASE Certificate Bundles"
+        }
+      ]
+    },
+    "ASE G1 + ALI Lift It Right Bundle": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": "Automotive Lift Institute (ALI)",
+          "confidence_issuer": 0.9,
+          "confidence_trainer": 0.85,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Combined ASE G1 with ALI Lift It Right safety training — two co-issued credentials bundled.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.95,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Paired-cert exhibit requiring both L1 and L2.",
+          "family": "ASE Certificate Bundles"
+        }
+      ],
+      "after": null
+    },
+    "ASE Master Automobile Technician": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ],
+      "after": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.98,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": null
+        }
+      ]
+    },
+    "ASE Master Automobile Technician (A1–A8 + L1)": {
+      "before": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 0.95,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": null,
+          "reviewed_by": null,
+          "_notes": "Composite bundle covering all A-series plus L1 advanced engine performance — ASE Master Auto Technician."
+        }
+      ],
+      "after": null
+    }
+  },
+  "unified_titles": {
+    "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx": {
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    "ASE Certifications: A1, A6, A8, L1+ Residency Units": {
+      "before": "ASE Bundle — A1, A6, A8, L1",
+      "after": "ASE Certificate Bundles: A1 + A6 + A8 + L1"
+    },
+    "ASE Certifications: A2, A3, A6 + Residency Units": {
+      "before": "ASE Bundle — A2, A3, A6",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6"
+    },
+    "ASE Certifications: A4, A5, A6 + Residency Units": {
+      "before": "ASE Bundle — A4, A5, A6",
+      "after": "ASE Certificate Bundles: A4 + A5 + A6"
+    },
+    "ASE Certifications: A6, A8, L1 + Residency Units": {
+      "before": "ASE Bundle — A6, A8, L1",
+      "after": "ASE Certificate Bundles: A6 + A8 + L1"
+    },
+    "ASE G1 and ALI - Lift it Right": {
+      "before": "ASE G1 + ALI Lift It Right Bundle",
+      "after": "ASE Certificate Bundles: G1 with ALI Lift It Right"
+    },
+    "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "ASE Bundle — L2, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T8 with SP/2 HD"
+    },
+    "ASE T2, T5, T7, T8, MACS or ASE 609 Certification + Residency Units": {
+      "before": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609"
+    },
+    "ASE T2, T6, T8, Snap on 604 Meter Certification + Residency Units": {
+      "before": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604"
+    },
+    "ASE T2, T8, + Residency Units": {
+      "before": "ASE Bundle — T2, T8",
+      "after": "ASE Certificate Bundles: T2 + T8"
+    },
+    "ASE T3, T4, T5, T8, + Residency Units": {
+      "before": "ASE Bundle — T3, T4, T5, T8",
+      "after": "ASE Certificate Bundles: T3 + T4 + T5 + T8"
+    },
+    "ASE T3, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "ASE Bundle — T3, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T3 + T8 with SP/2 HD"
+    },
+    "ASE T4, T8, SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "ASE Bundle — T4, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T4 + T8 with SP/2 HD"
+    },
+    "ASE T5, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "ASE Bundle — T5, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T5 + T8 with SP/2 HD"
+    },
+    "ASE T5, T8, + Residency Units": {
+      "before": "ASE Bundle — T5, T8",
+      "after": "ASE Certificate Bundles: T5 + T8"
+    },
+    "ASE T6, L2, Cummins ISX, SP/2 HD Safety & Pollution Certifications + Residency Units": {
+      "before": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD"
+    },
+    "ASE T6, T8, Snap On 604 Meter Certification + Residency Units": {
+      "before": "ASE Bundle — T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T6 + T8 with Snap-on 604"
+    },
+    "ASE T7, T8, MACS or ASE 609 Certification + Residency Units": {
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609"
+    },
+    "Automotive Service Excellence (ASE) A2 + A3 Certificates": {
+      "before": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "after": "ASE Certificate Bundles: A2 + A3"
+    },
+    "Automotive Service Excellence (ASE) A8 + L1 Certificates": {
+      "before": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "after": "ASE Certificate Bundles: A8 + L1"
+    },
+    "Automotive Service Excellence (ASE) A9 & L2": {
+      "before": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "after": "ASE Certificate Bundles: A9 + L2"
+    },
+    "Automotive Service Excellence L1 and L2 Certification": {
+      "before": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "after": "ASE Certificate Bundles: L1 + L2"
+    },
+    "Automotive service excellence  A2, A3 and A6": {
+      "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6"
+    },
+    "VAUTO 676: Automatic & Manual Transmissions & Transaxles": {
+      "before": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "after": "ASE Certificate Bundles: A2 + A3"
+    },
+    "Automotive Service Excellence (ASE) A4 and A5": {
+      "before": "ASE Bundle — A4, A5",
+      "after": "ASE Certificate Bundles: A4 + A5"
+    }
+  },
+  "articulations": [
+    {
+      "course_id": "AUTO M1065",
+      "exhibit_id": "MAPCXN-V6A&-1-001",
+      "exhibit_title": "VAUTO 676: Automatic & Manual Transmissions & Transaxles",
+      "before": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "after": "ASE Certificate Bundles: A2 + A3"
+    },
+    {
+      "course_id": "AUTO M10NU",
+      "exhibit_id": "MAPICI-ASE(14-1-001",
+      "exhibit_title": "Automotive Service Excellence (ASE) A2 + A3 Certificates",
+      "before": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "after": "ASE Certificate Bundles: A2 + A3"
+    },
+    {
+      "course_id": "AUTO M10PI",
+      "exhibit_id": "MAPICI-AGAA-1-001",
+      "exhibit_title": "ASE G1 and ALI - Lift it Right",
+      "before": "ASE G1 + ALI Lift It Right Bundle",
+      "after": "ASE Certificate Bundles: G1 with ALI Lift It Right"
+    },
+    {
+      "course_id": "AUTO M10VY",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10WA",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10WR",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10YF",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10YG",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10QF",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M10QE",
+      "exhibit_id": "MAPCXI-ACAT-1-001",
+      "exhibit_title": "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx",
+      "before": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "after": "ASE Master Automobile Technician"
+    },
+    {
+      "course_id": "AUTO M11DL",
+      "exhibit_id": "MAPCXI-ACAA3-1-001",
+      "exhibit_title": "ASE Certifications: A6, A8, L1 + Residency Units",
+      "before": "ASE Bundle — A6, A8, L1",
+      "after": "ASE Certificate Bundles: A6 + A8 + L1"
+    },
+    {
+      "course_id": "AUTO M11DL",
+      "exhibit_id": "MAPICI-ACAA3-1-001",
+      "exhibit_title": "ASE Certifications: A6, A8, L1 + Residency Units",
+      "before": "ASE Bundle — A6, A8, L1",
+      "after": "ASE Certificate Bundles: A6 + A8 + L1"
+    },
+    {
+      "course_id": "AUTO M11DI",
+      "exhibit_id": "MAPCXI-ACAA1-1-001",
+      "exhibit_title": "ASE Certifications: A2, A3, A6 + Residency Units",
+      "before": "ASE Bundle — A2, A3, A6",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6"
+    },
+    {
+      "course_id": "AUTO M11DI",
+      "exhibit_id": "MAPICI-ACAA1-1-001",
+      "exhibit_title": "ASE Certifications: A2, A3, A6 + Residency Units",
+      "before": "ASE Bundle — A2, A3, A6",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6"
+    },
+    {
+      "course_id": "AUTO M11DI",
+      "exhibit_id": "MAPICI-ASEA2-1-001",
+      "exhibit_title": "Automotive service excellence  A2, A3 and A6",
+      "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6"
+    },
+    {
+      "course_id": "AUTO M11HG",
+      "exhibit_id": "MAPICI-ASE(15-1-001",
+      "exhibit_title": "Automotive Service Excellence (ASE) A8 + L1 Certificates",
+      "before": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "after": "ASE Certificate Bundles: A8 + L1"
+    },
+    {
+      "course_id": "AUTO M11JP",
+      "exhibit_id": "MAPCXI-ACAA-1-001",
+      "exhibit_title": "ASE Certifications: A1, A6, A8, L1+ Residency Units",
+      "before": "ASE Bundle — A1, A6, A8, L1",
+      "after": "ASE Certificate Bundles: A1 + A6 + A8 + L1"
+    },
+    {
+      "course_id": "AUTO M11JP",
+      "exhibit_id": "MAPICI-ACAA-1-001",
+      "exhibit_title": "ASE Certifications: A1, A6, A8, L1+ Residency Units",
+      "before": "ASE Bundle — A1, A6, A8, L1",
+      "after": "ASE Certificate Bundles: A1 + A6 + A8 + L1"
+    },
+    {
+      "course_id": "AUTO M11GN",
+      "exhibit_id": "MAPICI-ASE(9-1-001",
+      "exhibit_title": "Automotive Service Excellence (ASE) A9 & L2",
+      "before": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "after": "ASE Certificate Bundles: A9 + L2"
+    },
+    {
+      "course_id": "AUTO M11BG",
+      "exhibit_id": "MAPCXI-ACAA2-1-001",
+      "exhibit_title": "ASE Certifications: A4, A5, A6 + Residency Units",
+      "before": "ASE Bundle — A4, A5, A6",
+      "after": "ASE Certificate Bundles: A4 + A5 + A6"
+    },
+    {
+      "course_id": "AUTO M11BG",
+      "exhibit_id": "MAPICI-ACAA2-1-001",
+      "exhibit_title": "ASE Certifications: A4, A5, A6 + Residency Units",
+      "before": "ASE Bundle — A4, A5, A6",
+      "after": "ASE Certificate Bundles: A4 + A5 + A6"
+    },
+    {
+      "course_id": "AUTO M1211",
+      "exhibit_id": "MAPICI-ASEL-1-001",
+      "exhibit_title": "Automotive Service Excellence L1 and L2 Certification",
+      "before": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "after": "ASE Certificate Bundles: L1 + L2"
+    },
+    {
+      "course_id": "DIES M1009",
+      "exhibit_id": "MAPCXI-ATTT2-1-001",
+      "exhibit_title": "ASE T2, T6, T8, Snap on 604 Meter Certification + Residency Units",
+      "before": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604"
+    },
+    {
+      "course_id": "DIES M1009",
+      "exhibit_id": "MAPICI-ATTT2-1-001",
+      "exhibit_title": "ASE T2, T6, T8, Snap on 604 Meter Certification + Residency Units",
+      "before": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604"
+    },
+    {
+      "course_id": "DIES M1011",
+      "exhibit_id": "MAPCXI-ALTS-1-001",
+      "exhibit_title": "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — L2, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1011",
+      "exhibit_id": "MAPICI-ALTS-1-001",
+      "exhibit_title": "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — L2, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1011",
+      "exhibit_id": "MAPPRI-ALTS-1-001",
+      "exhibit_title": "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — L2, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1007",
+      "exhibit_id": "MAPCXI-ATT+1-1-001",
+      "exhibit_title": "ASE T2, T8, + Residency Units",
+      "before": "ASE Bundle — T2, T8",
+      "after": "ASE Certificate Bundles: T2 + T8"
+    },
+    {
+      "course_id": "DIES M1007",
+      "exhibit_id": "MAPCXI-ATTT1-1-001",
+      "exhibit_title": "ASE T2, T5, T7, T8, MACS or ASE 609 Certification + Residency Units",
+      "before": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609"
+    },
+    {
+      "course_id": "DIES M1007",
+      "exhibit_id": "MAPICI-ATT+1-1-001",
+      "exhibit_title": "ASE T2, T8, + Residency Units",
+      "before": "ASE Bundle — T2, T8",
+      "after": "ASE Certificate Bundles: T2 + T8"
+    },
+    {
+      "course_id": "DIES M1007",
+      "exhibit_id": "MAPICI-ATTT1-1-001",
+      "exhibit_title": "ASE T2, T5, T7, T8, MACS or ASE 609 Certification + Residency Units",
+      "before": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609"
+    },
+    {
+      "course_id": "DIES M1020",
+      "exhibit_id": "MAPCXI-ATTS-1-001",
+      "exhibit_title": "ASE T3, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T3, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T3 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1020",
+      "exhibit_id": "MAPCXI-ATTS1-1-001",
+      "exhibit_title": "ASE T4, T8, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T4, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T4 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1020",
+      "exhibit_id": "MAPICI-ATTS-1-001",
+      "exhibit_title": "ASE T3, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T3, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T3 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M1020",
+      "exhibit_id": "MAPICI-ATTS1-1-001",
+      "exhibit_title": "ASE T4, T8, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T4, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T4 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M10EH",
+      "exhibit_id": "MAPCXI-ATT+-1-001",
+      "exhibit_title": "ASE T2, T8, + Residency Units",
+      "before": "ASE Bundle — T2, T8",
+      "after": "ASE Certificate Bundles: T2 + T8"
+    },
+    {
+      "course_id": "DIES M10EH",
+      "exhibit_id": "MAPICI-ATT+-1-001",
+      "exhibit_title": "ASE T2, T8, + Residency Units",
+      "before": "ASE Bundle — T2, T8",
+      "after": "ASE Certificate Bundles: T2 + T8"
+    },
+    {
+      "course_id": "DIES M10CY",
+      "exhibit_id": "MAPCXI-ATLC-1-001",
+      "exhibit_title": "ASE T6, L2, Cummins ISX, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD"
+    },
+    {
+      "course_id": "DIES M10CY",
+      "exhibit_id": "MAPICI-ATLC-1-001",
+      "exhibit_title": "ASE T6, L2, Cummins ISX, SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "after": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD"
+    },
+    {
+      "course_id": "DIES M10ER",
+      "exhibit_id": "MAPCXI-ATTS3-1-001",
+      "exhibit_title": "ASE T6, T8, Snap On 604 Meter Certification + Residency Units",
+      "before": "ASE Bundle — T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T6 + T8 with Snap-on 604"
+    },
+    {
+      "course_id": "DIES M10ER",
+      "exhibit_id": "MAPICI-ATTS3-1-001",
+      "exhibit_title": "ASE T6, T8, Snap On 604 Meter Certification + Residency Units",
+      "before": "ASE Bundle — T6, T8 + Snap-on 604",
+      "after": "ASE Certificate Bundles: T6 + T8 with Snap-on 604"
+    },
+    {
+      "course_id": "DIES M10FY",
+      "exhibit_id": "MAPCXI-ATTM-1-001",
+      "exhibit_title": "ASE T7, T8, MACS or ASE 609 Certification + Residency Units",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609"
+    },
+    {
+      "course_id": "DIES M10FY",
+      "exhibit_id": "MAPICI-ATTM-1-001",
+      "exhibit_title": "ASE T7, T8, MACS or ASE 609 Certification + Residency Units",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609"
+    },
+    {
+      "course_id": "DIES M10EU",
+      "exhibit_id": "MAPCXI-ATT+2-1-001",
+      "exhibit_title": "ASE T5, T8, + Residency Units",
+      "before": "ASE Bundle — T5, T8",
+      "after": "ASE Certificate Bundles: T5 + T8"
+    },
+    {
+      "course_id": "DIES M10EU",
+      "exhibit_id": "MAPICI-ATT+2-1-001",
+      "exhibit_title": "ASE T5, T8, + Residency Units",
+      "before": "ASE Bundle — T5, T8",
+      "after": "ASE Certificate Bundles: T5 + T8"
+    },
+    {
+      "course_id": "DIES M10EU",
+      "exhibit_id": "MAPMM-ATT+-1-001",
+      "exhibit_title": "ASE T5, T8, + Residency Units",
+      "before": "ASE Bundle — T5, T8",
+      "after": "ASE Certificate Bundles: T5 + T8"
+    },
+    {
+      "course_id": "DIES M10EX",
+      "exhibit_id": "MAPCXI-ATTS2-1-001",
+      "exhibit_title": "ASE T5, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T5, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T5 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M10EX",
+      "exhibit_id": "MAPICI-ATTS2-1-001",
+      "exhibit_title": "ASE T5, T8 SP/2 HD Safety & Pollution Certifications + Residency Units",
+      "before": "ASE Bundle — T5, T8, SP/2 HD",
+      "after": "ASE Certificate Bundles: T5 + T8 with SP/2 HD"
+    },
+    {
+      "course_id": "DIES M10HN",
+      "exhibit_id": "MAPCXI-ATTT-1-001",
+      "exhibit_title": "ASE T3, T4, T5, T8, + Residency Units",
+      "before": "ASE Bundle — T3, T4, T5, T8",
+      "after": "ASE Certificate Bundles: T3 + T4 + T5 + T8"
+    },
+    {
+      "course_id": "DIES M10HN",
+      "exhibit_id": "MAPICI-ATTT-1-001",
+      "exhibit_title": "ASE T3, T4, T5, T8, + Residency Units",
+      "before": "ASE Bundle — T3, T4, T5, T8",
+      "after": "ASE Certificate Bundles: T3 + T4 + T5 + T8"
+    }
+  ],
+  "fold_id": "2026-11-12@2026-11-12T00:54:43Z"
+}

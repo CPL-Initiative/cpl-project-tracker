@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-12T00:40:24Z`
+Generated: `2026-11-12T00:54:42Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -20,7 +20,6 @@ Generated: `2026-11-12T00:40:24Z`
 |---|---|---:|---:|---:|---:|
 | `ASE Master Automobile Technician (A1–A8 + L1)` | ⇒ `ASE Master Automobile Technician` | 1 | 1 | 1 | 7 |
 | `ASE Bundle — A2, A3, A6` | ⇒ `ASE Certificate Bundles: A2 + A3 + A6` | 1 | 1 | 1 | 2 |
-| `Engine Performance (ASE A8 Engine Performance)` | ⇒ `Engine Performance (ASE A8 standards)` | 1 | 1 | 1 | 0 |
 
 ## Held: folds into a family title
 
@@ -30,6 +29,17 @@ Generated: `2026-11-12T00:40:24Z`
 - `ASE Master Automobile Technician` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Automobile Technician (A1–A8) or L3` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Medium/Heavy Truck Technician (T1–T8)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
+
+## Held: saved folds on a title that holds no exhibit
+
+- `Advanced Electrical and Electronic Systems` (merge) into `ASE Certificate Bundles`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Automotive Air Conditioner` (rename) into `Heating and Air Conditioning (ASE A7 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Automotive Braking Systems` (rename) into `Brakes (ASE A5 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)` (rename) into `Electrical/Electronic Systems 1 (ASE A6 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)` (rename) into `Electrical/Electronic Systems 2 (ASE A6 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Engine Performance 1 (ASE A8 Engine Performance)` (merge) into `Engine Performance (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Engine Performance 2 (ASE A8 Engine Performance)` (rename) into `Engine Performance 2 (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+- `Heating and Air Conditioning` (merge) into `Heating and Air Conditioning (ASE A7 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 
 ## Ruled on a decision sheet (kb/cred_rename_plans/)
 
@@ -64,7 +74,6 @@ Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disa
 
 - `ASE Certificate Bundles: A2 + A3 + A6` (rule 3, additive)
 - `ASE Master Automobile Technician` (rule 3, additive)
-- `Engine Performance (ASE A8 standards)` (rule 2b, taught to the standard)
 
 ## Clean renames (would land on apply)
 
@@ -92,16 +101,6 @@ Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disa
 | `ASE Bundle — T7, T8 + MACS/609` | → | `ASE Certificate Bundles: T7 + T8 with MACS/609` | 1 | 2 | ✓ |
 | `ASE G1 + ALI Lift It Right Bundle` | → | `ASE Certificate Bundles: G1 with ALI Lift It Right` | 1 | 1 | ✓ |
 | `ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis` | → | `ASE Certificate Bundles: L1 + L2` | 1 | 1 | ✓ |
-| `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` | → | `Automatic Transmission/Transaxle (ASE A2 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE A5 Brakes)` | → | `Brakes (ASE A5 standards)` | 6 | 2 | ✓ |
-| `Automotive Technology (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems (ASE A6 standards)` | 3 | 0 | ✓ |
-| `Automotive Technology (ASE A7 Heating and Air Conditioning)` | → | `Heating and Air Conditioning (ASE A7 standards)` | 2 | 0 | ✓ |
-| `Automotive Technology (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` | → | `Light Vehicle Diesel Engines (ASE A9 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` | → | `Advanced Engine Performance Specialist (ASE L1 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` | → | `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)` | 1 | 0 | ✓ |
-| `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` | → | `Manual Drive Train and Axles (ASE A3 standards)` | 1 | 0 | ✓ |
-| `Suspension and Steering (ASE A4 Suspension and Steering)` | → | `Suspension and Steering (ASE A4 standards)` | 3 | 2 | ✓ |
 
 ## Collisions (queued, non-blocking — curator decision required)
 
