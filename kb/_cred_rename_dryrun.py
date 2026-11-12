@@ -84,7 +84,11 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description="Credential-title rename dry-run.")
     ap.add_argument("--only-plan", default="", help="plan the renames and merges of this one ruled plan (its "
                     "plan_id under kb/cred_rename_plans/) and defer every other")
-    only_plan = (ap.parse_args(argv or []).only_plan or "").strip()
+    raw_plan = ap.parse_args(argv or []).only_plan or ""
+    only_plan = raw_plan.strip()
+    if raw_plan and not only_plan:
+        # A blank scope must never fall back to the unscoped run, which carries every planned rename.
+        raise SystemExit("--only-plan is blank (%r): name a plan_id, or leave it out to plan everything" % raw_plan)
     overlay = _load(OVERLAY, {"overrides": {}})
     overrides = (overlay.get("overrides") or {})
     unified_titles = _load(UNIFIED_TITLES, {})

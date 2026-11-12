@@ -235,6 +235,102 @@ def _next_log_path(folder):
     return os.path.join(folder, f"supabase_log-{stamp}.json")
 
 
+MATCH_COLS = ("value", "reviewer_email", "reviewed_at")
+
+
+def _same(row, before):
+    """True when a live row is the row as it stood (value, reviewer and save time)."""
+    return row is not None and all((row or {}).get(k) == (before or {}).get(k) for k in MATCH_COLS)
+
+
+def _live_index(grouped):
+    return {(r.get("course_id"), r.get("field")): r for rows in grouped.values() for r in rows}
+
+
+def file_op(op, live):
+    """What a planned move did, read from the live rows, never from the write's echo (a request whose response was
+    lost may have committed): "landed", "not_landed" (the row is still as it stood at its old key) or "changed" (a
+    person or another run changed it since). A keep or a skip is filed as itself."""
+    b = op.get("before_row") or {}
+    if op.get("op") == "patch":
+        at_old = _same(live.get((op["old_course_id"], op["field"])), b)
+        at_new = _same(live.get((op["new_course_id"], op["field"])), b)
+        return "landed" if at_new and not at_old else ("not_landed" if at_old else "changed")
+    if op.get("op") == "delete":
+        cur = live.get((op["course_id"], op["field"]))
+        return "landed" if cur is None else ("not_landed" if _same(cur, b) else "changed")
+    return op.get("op") or "skip"
+
+
+def _settle(op, filed):
+    """The log entry for a filed op: status ok when its move landed (or it was a keep or skip), fail otherwise."""
+    op = dict(op, filed=filed)
+    if op.get("op") in ("patch", "delete"):
+        op["status"] = "ok" if filed == "landed" else "fail"
+        op["rows_affected"] = 1 if filed == "landed" else 0
+    return op
+
+
+def plan_moves(renames, merges, existing, families):
+    """Every row operation the move will make, decided from one read and nothing written: a list of log entries, each
+    with the row as it stood (before_row). Fan-in is planned as it runs: the first source's move claims the target's
+    field, so a later sibling's same field is a supersede-delete (run #4's 8x409 lesson)."""
+    plan = []
+    work = [("rename", o, n) for o, n in renames.items()] + [("merge", o, t) for o, t in merges.items()]
+    claimed = {cid: {r.get("field") for r in rows} for cid, rows in existing.items()}
+    for kind, old_ut, new_ut in work:
+        old_cid, new_cid = f"{KEY_PREFIX}{old_ut}", f"{KEY_PREFIX}{new_ut}"
+        rows_for_old = existing.get(old_cid, [])
+        if not rows_for_old:
+            plan.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, "op": "skip",
+                         "reason": "no_rows_in_supabase"})
+            continue
+        target_fields = claimed.setdefault(new_cid, set())
+        for row in rows_for_old:
+            field = row.get("field") or ""
+            base = {"old_ut": old_ut, "new_ut": new_ut, "kind": kind, "field": field, "before_row": _before(row)}
+            if field in fold_issuer.FOLD_FIELDS and row.get("value") in families and row.get("value") != new_ut:
+                # A saved fold into a family title is a family tag (Sam's ruling C), never this rename's decision: a
+                # ruled plan (kb/ruled_renames.py) renamed the title over it. It stays where it is, never moved or
+                # deleted; on the old title, which holds no exhibit once the rename lands, readers ignore it.
+                plan.append(dict(base, course_id=old_cid, op="keep", status="ok", rows_affected=0,
+                                 reason="a fold into a family title: a family tag, left in place"))
+            elif field == "unified_title_override" or (
+                    field == "unified_title_merge_confirm" and (kind == "merge" or row.get("value") == new_ut)):
+                # Decision fulfilled: drop it. A lead's own confirm naming the title it creates (an all-confirmed
+                # group) is fulfilled too; moved, it would point at itself.
+                plan.append(dict(base, course_id=old_cid, op="delete"))
+            elif field in target_fields and (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD):
+                # The merge target already carries this field: its curator data wins; a PATCH would violate the
+                # (course_id, field) PK.
+                plan.append(dict(base, course_id=old_cid, op="delete", superseded_by_target=True))
+            else:
+                # Curator intent on other fields (issuer, trainer, quality flag, reviewed marker, the family tag)
+                # travels with the credential's identity: the new title is the credential, so the row moves to it.
+                plan.append(dict(base, old_course_id=old_cid, new_course_id=new_cid, op="patch"))
+                target_fields.add(field)
+    return plan
+
+
+def _prior_logs(folder, this_path):
+    out = []
+    for n in sorted(os.listdir(folder)) if os.path.isdir(folder) else []:
+        p = os.path.join(folder, n)
+        if n.startswith("supabase_log") and n.endswith(".json") and p != this_path:
+            try:
+                with open(p, encoding="utf-8") as f:
+                    out.append((n, json.load(f)))
+            except (OSError, ValueError):
+                continue
+    return out
+
+
+def _write_log(path, payload):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, indent=2, ensure_ascii=False)
+        f.write("\n")
+
+
 def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
@@ -252,104 +348,77 @@ def main():
 
     print(f"[cred_rename_apply_supabase] {datetime.now(timezone.utc).isoformat()}")
     print(f"  snapshot: {date_stamp} ({len(renames)} renames, {len(merges)} merges)")
-    log_path = _next_log_path(os.path.join(OUT_ROOT, date_stamp))
+    folder = os.path.join(OUT_ROOT, date_stamp)
+    log_path = _next_log_path(folder)
 
     existing = fetch_credential_review_rows()
     print(f"  existing _CREDENTIAL_REVIEW::* course_ids in Supabase: {len(existing)}")
+    live = _live_index(existing)
 
-    log = []
-    ok = 0
-    fail = 0
-    no_op = 0
-    # (kind, old, new): merges additionally drop the fulfilled merge-confirm
-    # row and never PATCH into a field the target already carries.
-    work = [("rename", o, n) for o, n in renames.items()] \
-         + [("merge", o, t) for o, t in merges.items()]
-    # LIVE per-target field claims. Seeded from the pre-fetch, updated as
-    # PATCHes land — several sources folding into ONE target (fan-in) is
-    # normal for confirmed merges, and the first source's PATCH creates the
-    # target row the pre-fetch never saw. A static set 409'd every later
-    # sibling (run #4, 2026-07-08: the 4-source ASE A6 fold, 8 fails).
-    claimed = {cid: {r.get("field") for r in rows}
-               for cid, rows in existing.items()}
-    families = fold_issuer.family_titles(FAMILIES)
-    for kind, old_ut, new_ut in work:
-        old_cid = f"{KEY_PREFIX}{old_ut}"
-        new_cid = f"{KEY_PREFIX}{new_ut}"
-        rows_for_old = existing.get(old_cid, [])
-        if not rows_for_old:
-            no_op += 1
-            log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind,
-                        "op": "skip", "reason": "no_rows_in_supabase"})
-            continue
-        target_fields = claimed.setdefault(new_cid, set())
-        for row in rows_for_old:
-            field = row.get("field") or ""
-            if field in fold_issuer.FOLD_FIELDS and row.get("value") in families and row.get("value") != new_ut:
-                # A saved fold into a family title is a family tag (Sam's ruling C), never this rename's decision: a
-                # ruled plan (kb/ruled_renames.py) renamed the title over it. It stays where it is, never moved or
-                # deleted; on the old title, which holds no exhibit once the rename lands, readers ignore it.
-                log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, "course_id": old_cid, "field": field,
-                            "op": "keep", "status": "ok", "rows_affected": 0,
-                            "reason": "a fold into a family title: a family tag, left in place",
-                            "before_row": _before(row)})
-                ok += 1
+    # A rerun after a partial run: every move an earlier log planned is filed again against this read, and the ones
+    # that landed are carried into this log, so the newest log names every move this snapshot made. A move that did
+    # not land is planned again below, from the row still at its old key.
+    carried, seen = [], set()
+    for name, prior in _prior_logs(folder, log_path):
+        for e in prior.get("log") or []:
+            if e.get("op") not in ("patch", "delete") or not e.get("before_row"):
                 continue
-            if field == "unified_title_override" or (
-                    field == "unified_title_merge_confirm"
-                    and (kind == "merge" or row.get("value") == new_ut)):
-                # Decision fulfilled — drop it. A lead's own confirm naming the title it creates
-                # (an all-confirmed group) is fulfilled too; moved, it would point at itself.
-                res = delete_row(old_cid, field)
-            elif field in target_fields and (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD):
-                # The merge target already carries this field — its curator
-                # data wins; a PATCH would violate the (course_id, field) PK.
-                res = delete_row(old_cid, field)
-                res["superseded_by_target"] = True
-            else:
-                # Migrate non-rename override to the new key (curator intent
-                # on issuer/trainer/quality_flag/reviewed_marker travels with
-                # the credential's identity).
-                res = patch_row(old_cid, new_cid, field)
-                if res.get("status") == "ok":
-                    target_fields.add(field)
-                elif (kind == "merge" or field == fold_issuer.RESOLUTION_FIELD) and "409" in str(res.get("error") or ""):
-                    # Defensive backstop for live-claim drift (e.g. a curator
-                    # save landing mid-run): the target row exists, so the
-                    # source row is superseded — drop it instead of stranding
-                    # an orphan under a dead key.
-                    res = delete_row(old_cid, field)
-                    res["superseded_by_target"] = True
-                    res["via"] = "409_fallback"
-                    target_fields.add(field)
-            # The row as it stood, so kb/_cred_rename_undo.py --supabase-plan can put it back.
-            res["before_row"] = _before(row)
-            log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, **res})
-            if res.get("status") == "ok":
-                ok += 1
-            else:
-                fail += 1
+            key = (e.get("op"), e.get("course_id") or e.get("old_course_id"), e.get("new_course_id"), e.get("field"))
+            filed = file_op(e, live)
+            if filed != "not_landed" and key not in seen:
+                seen.add(key)
+                carried.append(_settle(dict(e, carried_from=name), filed))
+
+    planned = plan_moves(renames, merges, existing, fold_issuer.family_titles(FAMILIES))
+    # The receipt before the first write: every planned move with its before_row, so the undo can reverse any of them
+    # whatever this run's responses say, even if it dies part-way.
+    base = {"alias_map_snapshot": alias_path, "renames_processed": len(renames), "merges_processed": len(merges)}
+    _write_log(log_path, dict(base, _state="pending", _planned_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                              log=carried + [dict(o, status="planned") if o["op"] in ("patch", "delete") else o
+                                             for o in planned]))
+
+    for o in planned:
+        if o["op"] == "delete":
+            o["echo"] = delete_row(o["course_id"], o["field"])
+        elif o["op"] == "patch":
+            res = patch_row(o["old_course_id"], o["new_course_id"], o["field"])
+            o["echo"] = res
+            if (res.get("status") != "ok" and (o["kind"] == "merge" or o["field"] == fold_issuer.RESOLUTION_FIELD)
+                    and "409" in str(res.get("error") or "")):
+                # Defensive backstop for live-claim drift (a curator save landing mid-run): the target row exists,
+                # so the source row is superseded; drop it instead of stranding an orphan under a dead key.
+                o.update(op="delete", course_id=o.pop("old_course_id"), superseded_by_target=True, via="409_fallback")
+                o.pop("new_course_id", None)
+                o["echo"] = delete_row(o["course_id"], o["field"])
+
+    # File what landed from a fresh read, never from the echoes.
+    after = _live_index(fetch_credential_review_rows())
+    log, ok, fail, no_op = list(carried), 0, 0, 0
+    for o in planned:
+        echo = o.pop("echo", None)
+        entry = _settle(o, file_op(o, after)) if o["op"] in ("patch", "delete") else o
+        if echo is not None:
+            entry["echo_status"] = echo.get("status")
+            if echo.get("error"):
+                entry["echo_error"] = echo["error"]
+        log.append(entry)
+    for e in log:
+        if e.get("op") == "skip":
+            no_op += 1
+        elif e.get("status") == "ok":
+            ok += 1
+        else:
+            fail += 1
 
     # The issuer decision is NOT carried here (the #3116 redesign): the fold's one issuer_resolution
     # row per target was written by kb/_cred_fold_resolution_write.py before this step, and every
     # reader resolves the moved rows through fold_issuer.effective_issuer().
-    log_payload = {
-        "_applied_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "alias_map_snapshot": alias_path,
-        "renames_processed": len(renames),
-        "merges_processed": len(merges),
-        "ok": ok,
-        "fail": fail,
-        "no_op": no_op,
-        "log": log,
-    }
-    with open(log_path, "w", encoding="utf-8") as f:
-        json.dump(log_payload, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    print(f"  ok={ok}  fail={fail}  no_op_aliases={no_op}")
+    _write_log(log_path, dict(base, _state="filed", _applied_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+                              ok=ok, fail=fail, no_op=no_op, carried=len(carried), log=log))
+    print(f"  ok={ok}  fail={fail}  no_op_aliases={no_op}  carried_from_earlier_logs={len(carried)}")
     print(f"  log: {log_path}")
     if fail:
-        sys.exit(f"{fail} row operations failed — inspect {log_path}.")
+        sys.exit(f"{fail} row operations did not land — inspect {log_path}.")
 
 
 if __name__ == "__main__":

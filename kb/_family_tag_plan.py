@@ -80,15 +80,21 @@ def member_kind(fams, family, title):
     return ANY_ONE_TEST if title in any_one_test(fams, family) else BUNDLE
 
 
-def plan(rows, fams, titles=None):
+def plan(rows, fams, titles=None, moved=None):
     """{"convert": [{title, family, member_kind, rows}], "held": [{title, family, why, rows}], "already": [{...,
     existing}], "gone": [{title, family, rows}]}. `rows` on each item are Sam's fold rows as read, kept for the
-    receipt; nothing deletes them. `titles`, when given, is the set of current credential titles."""
+    receipt; nothing deletes them. `titles`, when given, is the set of current credential titles. `moved`
+    (kb/credential_aliases.py moves) is where an applied rename took a title: the rename carries the family tag to the
+    new title (the new title is the bundle) while Sam's fold rows stay on the old one, so a tag found at the new title
+    counts as already written, keyed by the title the plan names, with `now_at` and `moved_by` saying where it lives."""
     by = {}
     for r in rows:
         cid = r.get("course_id") or ""
         if cid.startswith(PREFIX):
             by.setdefault(cid[len(PREFIX):], []).append(r)
+    tag_at = {cid[len(PREFIX):]: r for r in rows for cid in [r.get("course_id") or ""]
+              if cid.startswith(PREFIX) and r.get("field") == FAMILY_FIELD}
+    moved = moved or {}
     out = {"convert": [], "held": [], "already": [], "gone": []}
     for title in sorted(by):
         rs = by[title]
@@ -102,7 +108,13 @@ def plan(rows, fams, titles=None):
         if title == fam:
             continue
         if titles is not None and title not in titles:
-            out["gone"].append(item)
+            m = moved.get(title)
+            if tagged:
+                out["already"].append(dict(item, existing=tagged))   # the row move has not run yet
+            elif m and m["now"] in tag_at:
+                out["already"].append(dict(item, existing=[tag_at[m["now"]]], now_at=m["now"], moved_by=m["by"]))
+            else:
+                out["gone"].append(dict(item, now_at=m["now"]) if m else item)
         elif title in HOLD:
             out["held"].append(dict(item, why=HOLD[title]))
         elif item["member_kind"] != ANY_ONE_TEST and not test_mix.from_title(title):

@@ -5042,7 +5042,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 174
+     "line": 183
     },
     {
      "id": "script:kb/_funding_config_edit_apply.py",
@@ -13599,7 +13599,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 103
+     "line": 107
     }
    ],
    "producers": [
@@ -13975,7 +13975,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 113
+     "line": 116
     },
     {
      "id": "script:kb/_flag_hinky_exhibits.py",
@@ -14073,7 +14073,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 52
+     "line": 79
     }
    ],
    "producers": [
@@ -17739,7 +17739,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 57
+     "line": 84
     }
    ],
    "served": true,
@@ -28669,14 +28669,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 282
+     "line": 294
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 289
+     "line": 301
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -28725,7 +28725,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 67
     },
     {
      "id": "script:kb/_overmerge_apply_supabase.py",

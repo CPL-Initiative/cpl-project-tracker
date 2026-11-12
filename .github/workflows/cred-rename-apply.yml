@@ -93,6 +93,10 @@ jobs:
         env:
           ONLY_PLAN: ${{ inputs.only_plan }}
         run: |
+          if [ -n "${ONLY_PLAN:-}" ] && [ -z "$(printf '%s' "$ONLY_PLAN" | tr -d '[:space:]')" ]; then
+            echo "::error::only_plan is blank; name a plan_id, or leave it empty to apply every planned rename"
+            exit 1
+          fi
           if [ -n "${ONLY_PLAN:-}" ]; then
             python kb/_cred_rename_dryrun.py --only-plan "$ONLY_PLAN"
           else

@@ -64,6 +64,7 @@ check("a title missing from kb/credentials.json reads as gone and takes no tag",
       [it["title"] for it in ftp.plan(BASE, ftp.families(), _real_titles - {"ASE Bundle — A4, A5"})["gone"]]
       == ["ASE Bundle — A4, A5"])
 app.current_titles = lambda path=None: None
+app.current_moves = lambda root=None: {}   # no applied rename; section 9 sets one
 
 
 class Boom(Exception):
@@ -441,6 +442,56 @@ check("the final push runs always(), never on a dry run, and nothing force-pushe
 check("commit takes the set hash, never a count", "[0-9a-f]{12}" in wf and "--commit \"$EXPECT\"" in wf)
 gov = json.load(open(os.path.join(ROOT, "kb", "governance_surface_map.json"), encoding="utf-8"))
 check("the workflow is mapped in the governance surface map", "workflow:credential-family-apply.yml" in gov["mapped"])
+
+# ── 9. after a rename: the tag lives at the new title (Sheet 181's ruled renames, kb/ruled_renames.py) ────────
+# The rename's row move carries each member's family tag to its new title and leaves Sam's fold rows on the old one
+# (kb/_cred_rename_apply_supabase.py op keep); a merge's second tag goes, its target already holding one.
+PLAN181 = json.load(open(os.path.join(ROOT, "kb", "cred_rename_plans", "2026-11-12_sheet181.json"), encoding="utf-8"))
+MOVES = {e["old"]: {"now": e["new"], "by": ["2026-11-12"]} for e in PLAN181["entries"]}
+ALL_TITLES = set(json.load(open(os.path.join(ROOT, "kb", "credentials.json"), encoding="utf-8")))
+AFTER_TITLES = (ALL_TITLES - set(MOVES)) | {m["now"] for m in MOVES.values()}
+
+
+def renamed(rows):
+    out, at = [], set()
+    for x in rows:
+        t = x["course_id"][len(P):]
+        if x["field"] == "credential_family" and t in MOVES:
+            new = P + MOVES[t]["now"]
+            if new not in at:
+                out.append(dict(x, course_id=new))
+                at.add(new)
+            continue
+        out.append(dict(x))
+    return out
+
+
+d = tempfile.mkdtemp()
+try:
+    r, code, lines, err = committed(d)
+    h_before, _ = dry_hash(r.rows)
+    r.rows = renamed(r.rows)
+    app.current_titles, app.current_moves = (lambda path=None: AFTER_TITLES), (lambda root=None: MOVES)
+    h_after, lines = dry_hash(r.rows)
+    check("after the rename the dry run counts each tag at its new title as written: nothing to write, the same set "
+          "(the merged Master leaves the held list: it is no longer a credential)",
+          h_after == h_before and any("0 to write, 26 already written, 4 held for Sam, 0 conflicts" in l for l in lines),
+          lines[-1:])
+    rows_before_rollback = [dict(x) for x in r.rows]
+    code, lines = go("rollback", r, d)
+    rb = receipts(d, "rolled_back")[-1]
+    moved_titles = {x["course_id"][len(P):] for x in rb.get("moved_by_rename") or []}
+    check("the rollback after a rename finds each tag at its new title and removes it: no cohort row is left",
+          code == 0 and not cohort_rows(r) and moved_titles == set(MOVES) - {e["old"] for e in PLAN181["entries"]
+                                                                              if e.get("family") is None}, lines[-1:])
+    check("it says the tags were moved by the rename, never just already gone",
+          any("moved by rename 2026-11-12" in l for l in lines)
+          and all(x.get("now_at") for x in rb["already_gone"]) and len(rb["removed"]) == 25)
+    check("Sam's fold rows and every other row stay as they were",
+          state([x for x in r.rows]) == state([x for x in rows_before_rollback if x.get("reviewer_email") != COHORT]))
+finally:
+    app.current_titles, app.current_moves = (lambda path=None: None), (lambda root=None: {})
+    shutil.rmtree(d, ignore_errors=True)
 
 failed = [n for n, ok, _ in results if not ok]
 for n, ok, why in results:

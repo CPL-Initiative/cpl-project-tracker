@@ -233,6 +233,15 @@ try:
     except SystemExit as e:
         refused = "no such plan" in str(e.code)
     check("--only-plan refuses a plan id that is not committed", refused)
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            dry.main(["--only-plan", "   "])
+        blank = False
+    except SystemExit as e:
+        blank = "blank" in str(e.code)
+    wf = open(os.path.join(ROOT, ".github", "workflows", "cred-rename-apply.yml"), encoding="utf-8").read()
+    check("a blank only_plan is refused by the dry run and by the workflow, never run unscoped",
+          blank and "only_plan is blank" in wf and "tr -d '[:space:]'" in wf)
 
     # An entry on a title that is still a credential but holds no exhibit is held as emptied, never renamed.
     env = os.path.join(tmp, "emptied")

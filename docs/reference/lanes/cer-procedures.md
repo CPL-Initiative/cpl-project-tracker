@@ -104,9 +104,10 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   or G1* join the family as members any one of whose tests qualifies, declared under `any_one_test` in
   `kb/reference/credential_families.json`; the 24 bundle tags landed, receipt `applied_2026-11-11T23-38-21Z.json`):
   dispatch `credential-family-apply.yml` `mode=dry-run`; a correct summary reads *2 to write, 24 already written, 5
-  held for Sam, 0 conflicts; set `<hash>` (26 tags)*; then `mode=commit expect=<hash>`. Run it BEFORE (3): after the
-  renames, Sam's fold rows stay on the old titles, which the plan then lists as gone (no longer in
-  `kb/credentials.json`) and never tags; (0b) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
+  held for Sam, 0 conflicts; set `<hash>` (26 tags)* (4 held once (3) has merged the A1–A8 + L1 Master); then `mode=commit expect=<hash>`. Either order with (3) works: the
+  rename moves each tag to its new title (the new title is the bundle) and Sam's fold rows stay on the old one; the
+  family dry run counts a tag at the renamed title as written, and its rollback finds it there (`kb/credential_aliases.py`
+  `moves`); (0b) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
   fold into ASE Certificate Bundles on an emptied title, which the converter must leave as it is); (1) the next nightly fold, then the
   restore (`-4`): dry run, then commit, before anything else touches these titles; to undo both, roll back `-4` before
   phase 1 (the other order is safe too: `-4`'s undo leaves what phase 1's put back); (2) the retired names as search
@@ -120,8 +121,13 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   Truck Master, the any-one-test titles, *ASE Bundle — A6 or T6 + L3* and *ASE Master Automobile Technician (A1–A8) or
   L3* (L3 alone qualifies, so an L3 holder is no Master; S639 conductor) keep their titles, left for a person.
   The plan stands in for the rename rows because each title's slot holds Sam's family-tag fold, which no plan edits;
-  the row move leaves those rows in place (op `keep`). Read the dry-run's `ruled` and `issuer_preview` first, then
-  `daily-dashboard.yml`; undo is `kb/_cred_rename_undo.py` on the receipt; (4) ASE
+  the row move leaves those rows in place (op `keep`), logs every planned move with its before-row before the first
+  write, files what landed from a fresh read, and a rerun carries what landed. Read the dry-run's `ruled` and
+  `issuer_preview` first, then `daily-dashboard.yml`; undo is `kb/_cred_rename_undo.py` on the receipt, built from
+  the planned moves, each guarded on the live row; (3b) Sierra's `chatbox_credentials` keeps a retired title as a
+  ghost row after any rename: `kb/_sync_credential_catalog.py` `upsert` (line 198) only merges by `unified_title` and
+  never deletes or aliases a title the artifact dropped; a guarded delete of rows absent from
+  `credential_reference_data.js` (receipted, Rule 10) is the fix; (4) ASE
   plan phase 3 (`-3`); (6) the ASE rename batch now offers only titles outside the ruled
   plan; (7) the credentials still without a subject, as one
   batch (try a web search on an anomaly first, Sam 2026-11-11); (8) the hourly trigger for the fold apply; (9) the issuer
