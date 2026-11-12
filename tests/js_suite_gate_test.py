@@ -181,6 +181,29 @@ check("no paths-ignore/paths trigger filter (a skipped required check "
       "paths-ignore" not in yaml_only
       and not re.search(r"^\s+paths:", yaml_only, re.M))
 
+# ── 4. The suite runs on main (Sky and COBIx, 2026-11-11, #3111 lesson 3) ──
+# A push made with the built-in token starts no workflow, so `push: main` alone
+# leaves every bot commit untested. The dashboard's completion and a daily
+# schedule test main's head; the gate skips the suite on a head that passed.
+on_block = re.search(r"^on:\n((?:  .*\n|\s*\n)*)", yaml_only, re.M)
+on_text = on_block.group(1) if on_block else ""
+check("the suite triggers on push to main",
+      re.search(r"^  push:\n    branches: \[main\]", on_text, re.M) is not None)
+check("the suite runs after the nightly (workflow_run on Daily CPL Dashboard)",
+      "workflow_run:" in on_text and '"Daily CPL Dashboard"' in on_text)
+check("the suite runs on a daily schedule",
+      re.search(r"^  schedule:\n    - cron: '[^']+'", on_text, re.M) is not None)
+gate = job_block("gate") or ""
+check("a scheduled or workflow_run run skips a head that already passed",
+      "--commit \"$GITHUB_SHA\"" in gate and "--status success" in gate
+      and "actions: read" in gate)
+check("a push to main is never canceled by a later one (concurrency keys main on the SHA)",
+      "cancel-in-progress: ${{ github.event_name == 'pull_request' }}" in yaml_only)
+watch = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".github",
+                          "workflows", "workflow-failure-watch.yml"), encoding="utf-8").read()
+check("a red run started by the nightly alerts (failure watch accepts workflow_run on main)",
+      "github.event.workflow_run.event == 'workflow_run' && github.event.workflow_run.head_branch == 'main'" in watch)
+
 failed = 0
 for name, ok in results:
     print(("PASS " if ok else "FAIL ") + name)
