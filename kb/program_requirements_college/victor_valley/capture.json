@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 219,
  "with_closed_list": 201,
- "started": "2026-11-12T02:10:21Z",
+ "started": "2026-11-12T12:11:04Z",
  "scope": null,
  "sitemap": {
   "url": "https://catalog.vvc.edu/sitemap.xml",
@@ -20,7 +20,7 @@
  "child_pages": 0,
  "banner_h1": null,
  "loads": 356,
- "seconds": 1691.1,
+ "seconds": 1670.7,
  "found": 176,
  "by_method": {
   "no_closed_list": 18,
@@ -641,50 +641,13 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/victor_valley",
-  "kept": 172,
-  "programs": 4,
-  "list": [
-   {
-    "control_number": "38353",
-    "title": "Advanced Life Support Module 2",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38366",
-    "title": "Advanced Life Support Module 3",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38502",
-    "title": "Paramedic Internship",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   },
-   {
-    "control_number": "38503",
-    "title": "Advanced Life Support Module 1",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/",
-    "was_coverage": 1.0,
-    "was_method": "sitemap_page"
-   }
-  ]
+  "kept": 176,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
  },
- "run": "43139057384"
+ "run": "43215222441"
 }

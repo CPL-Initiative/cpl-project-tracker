@@ -794,6 +794,18 @@ function cellText(li, title) {
       check("process 6: no key set says the nightly run carries it out", /Not run: the processor's key is not set here\. The 05:33 UTC run/.test(txt(sec(p4))));
       const p5 = await procOpen(ANON, 200, { ok: true });
       check("process 7: signed out, there is no word to press", !sec(p5).querySelector("button.cmn-process"));
+      // The shared queue (S643): the function starts nothing while another run waits in group daily-dashboard.
+      const p6 = await procOpen(SIGNED, 409, { ok: false, reason: "busy_behind", workflow: "cer-decision-apply.yml" });
+      await p6.M.runProcessor();
+      check("process 8: another job waiting in the shared queue says nothing started, why, when to press again, and that the next scheduled run carries the rulings out",
+        /Not run: another job is waiting in the same queue, and starting the processor now would cancel it\. Press Process my rulings now again in a few minutes\. Otherwise the next scheduled run, at 05:33 UTC, carries the rulings out\./.test(txt(sec(p6)))
+        && !!sec(p6).querySelector("button.cmn-process:not([disabled])"), txt(sec(p6)));
+      const p7 = await procOpen(SIGNED, 502, { ok: false, reason: "queue_unread", status: 500 });
+      await p7.M.runProcessor();
+      check("process 9: an unread queue says nothing started and that the next scheduled run carries the rulings out",
+        /Not run: the processor could not read the queue it shares with other jobs, so it started nothing\. The next scheduled run, at 05:33 UTC, carries the rulings out\./.test(txt(sec(p7))), txt(sec(p7)));
+      check("process 10: the words for the shared queue carry no glyph",
+        !/[←-⯿\u{1F300}-\u{1FAFF}]/u.test(txt(sec(p6)) + txt(sec(p7))));
       check("case 15: the evidence fold draws no marker glyph, only its underlined word",
         /\.cmn-case-ev > summary \{ list-style:none;[^}]*text-decoration:underline/.test(src) && /\.cmn-case-ev > summary::-webkit-details-marker \{ display:none; \}/.test(src));
       check("case 14: the view's address names the case it opened on", /if \(BATCH\.pin\) return "commons\/case\/" \+ BATCH\.pin;/.test(src));

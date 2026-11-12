@@ -19,11 +19,23 @@
 // Rate: a run already queued or pending will read every ruling saved before it starts, so no second dispatch is
 // made; one in progress gets one more behind it (it may have read the rulings before the latest).
 //
+// The shared queue (COBIx on #3171, owed here in S643): docket-process.yml runs in concurrency group daily-dashboard
+// beside ten other workflows. GitHub keeps one running and one pending run per group, and a run that queues cancels
+// the one pending, whatever cancel-in-progress says. So a dispatch while another workflow's run waits in that group
+// would cancel it (an apply, a Library publish, the daily build). Before dispatching, the function reads the group's
+// queue through ../_shared/group_queue.mjs, the one check and the one list of the group's workflows that
+// library-publish-now imports too: another workflow's run waiting answers 409 "busy_behind" and dispatches nothing,
+// and a queue it cannot read answers 502 "queue_unread" and dispatches nothing. The 05:33 UTC run still carries the
+// rulings out.
+//
 // Deploy: cpl-chat-deploy.yml with function=docket-process, from main (verify_jwt off; the caller check above
 // authenticates).
 
+import { fileOf, readGroupQueue } from "../_shared/group_queue.mjs";
+
 const REPO = "CPL-Initiative/cpl-project-tracker";
 const WORKFLOW = "docket-process.yml";
+const REF = "main";
 const ORIGINS = ["https://cpl-initiative.github.io", "http://localhost", "http://127.0.0.1"];
 
 function cors(origin: string | null): Record<string, string> {
@@ -81,6 +93,8 @@ async function gh(path: string, token: string, init: RequestInit = {}): Promise<
   });
 }
 
+type GhRun = { id: number; path?: string; head_branch?: string; html_url?: string };
+
 Deno.serve(async (req) => {
   const origin = req.headers.get("origin");
   if (req.method === "OPTIONS") return new Response(null, { status: 204, headers: cors(origin) });
@@ -92,18 +106,17 @@ Deno.serve(async (req) => {
   const token = Deno.env.get("DOCKET_DISPATCH_TOKEN") || Deno.env.get("WORKPLAN_DISPATCH_TOKEN");
   if (!token) return reply(origin, 503, { ok: false, reason: "not_configured" });
 
+  // Every run waiting in the group (../_shared/group_queue.mjs). A queue the function cannot read is not dispatched
+  // into.
+  const q = await readGroupQueue((path: string) => gh(path, token),
+    (run: GhRun) => fileOf(run) === WORKFLOW && run.head_branch === REF);
+  if (q.refused) return reply(origin, 503, { ok: false, reason: "token_refused" });
+  if (q.unread) return reply(origin, 502, { ok: false, reason: "queue_unread", status: q.status });
   // A run already waiting reads every ruling saved before it starts.
-  for (const status of ["queued", "pending", "waiting"]) {
-    const r = await gh("/actions/workflows/" + WORKFLOW + "/runs?branch=main&per_page=1&status=" + status, token);
-    if (r.ok) {
-      const j = await r.json();
-      if ((j.total_count || 0) > 0) {
-        const run = j.workflow_runs && j.workflow_runs[0];
-        return reply(origin, 200, { ok: true, queued: true, already: true, run_url: run ? run.html_url : null, by: who });
-      }
-    } else if (r.status === 401 || r.status === 403) {
-      return reply(origin, 503, { ok: false, reason: "token_refused" });
-    }
+  if (q.ours) return reply(origin, 200, { ok: true, queued: true, already: true, run_url: q.ours.html_url || null, by: who });
+  // Another workflow's run waiting in the group would be cancelled by this one.
+  if (q.busy) {
+    return reply(origin, 409, { ok: false, reason: "busy_behind", workflow: fileOf(q.busy), run_url: q.busy.html_url || null, by: who });
   }
 
   const d = await gh("/actions/workflows/" + WORKFLOW + "/dispatches", token, {
