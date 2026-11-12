@@ -2,19 +2,19 @@
  "college": "Victor Valley College",
  "programs": 219,
  "with_closed_list": 201,
- "found": 178,
- "extracted": 178,
+ "found": 176,
+ "extracted": 177,
  "errors": 0,
- "passed_machine_checks": 108,
+ "passed_machine_checks": 136,
  "failed": {
   "coverage": 10,
   "invented": 0,
-  "arithmetic": 69,
+  "arithmetic": 40,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd": 10.34,
- "cost_per_program": 0.0581,
+ "cost_usd": 10.24,
+ "cost_per_program": 0.0578,
  "not_found": [
   {
    "control_number": "04946",
@@ -30,9 +30,9 @@
     "coverage": 0.023,
     "body": 0.0,
     "content": 0.0,
-    "net": 4,
+    "net": 5,
     "listed": 43,
-    "why": "coarse net: the page's code tokens name 4 of 43 listed courses",
+    "why": "coarse net: the page's code tokens name 5 of 43 listed courses",
     "error": null,
     "chars": {
      "body": 2837,
@@ -204,20 +204,20 @@
     "field": "innerText+tabs",
     "coverage": 0.333,
     "body": 0.0,
-    "content": 0.333,
+    "content": 0.0,
     "net": 2,
     "listed": 3,
     "why": "coverage 0.33 in innerText+tabs, below 0.50",
     "error": null,
     "chars": {
      "body": 2920,
-     "content": 6099,
-     "tabs": 250
+     "content": 6102,
+     "tabs": 254
     },
     "tab_panels": [
      [
       "REQUIREMENTS",
-      230
+      234
      ],
      [
       "PROGRAM MAP",
@@ -239,20 +239,20 @@
     "field": "innerText+tabs",
     "coverage": 0.25,
     "body": 0.0,
-    "content": 0.25,
+    "content": 0.0,
     "net": 2,
     "listed": 4,
     "why": "coverage 0.25 in innerText+tabs, below 0.50",
     "error": null,
     "chars": {
      "body": 2917,
-     "content": 6192,
-     "tabs": 349
+     "content": 6195,
+     "tabs": 353
     },
     "tab_panels": [
      [
       "REQUIREMENTS",
-      329
+      333
      ],
      [
       "PROGRAM MAP",
@@ -351,13 +351,13 @@
     "error": null,
     "chars": {
      "body": 2920,
-     "content": 6099,
-     "tabs": 250
+     "content": 6102,
+     "tabs": 254
     },
     "tab_panels": [
      [
       "REQUIREMENTS",
-      230
+      234
      ],
      [
       "PROGRAM MAP",
@@ -523,5 +523,5 @@
    }
   }
  ],
- "run": "38675237912"
+ "run": "43139057384"
 }

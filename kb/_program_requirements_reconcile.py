@@ -223,12 +223,22 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             continue
         if st["kind"] == "course_hours":
             # A noncredit program's course listed without hours, given them by the same call (S484):
-            # only in a record measured in hours, never over a figure the reading gave.
-            hours = {k: v for k, v in ((course_hours or {}).get("hours") or {}).items() if v}
+            # only in a record measured in hours, never over a figure the reading gave. A catalog
+            # that prints each course's hours only in its course descriptions (Victor Valley's
+            # CourseLeaf, S639) carries them in a committed file beside the read that printed them
+            # (hours_file), as Glendale's units_file does for units; the page's own call wins a code
+            # both give.
+            given = dict(st.get("hours") or {})
+            if st.get("hours_file"):
+                with open(os.path.join(HERE, st["hours_file"])) as fh:
+                    given.update(json.load(fh).get("hours") or {})
+            hours = {k: v for k, v in given.items() if v}
+            hours.update({k: v for k, v in ((course_hours or {}).get("hours") or {}).items() if v})
             filled = fill_course_hours(out, hours) if hours else {}
             if filled:
+                call = (course_hours or {}).get("call") or st.get("read")
                 notes.append({"field": "course_hours", "was": None, "now": filled,
-                              "words": "%s (%s)" % ((course_hours or {}).get("call"), st.get("source_words", ""))})
+                              "words": "%s (%s)" % (call, st.get("source_words", ""))})
             continue
         if st["kind"] == "or_units":
             # A CourseLeaf course list prints an alternative as its own row, "or WORK 99<tab>Career-Focused
@@ -562,6 +572,8 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 continue
             # A rule about a figure the reading already took (Los Angeles City, S639: the 60 a heading
             # prints is a floor only where the record holds that 60): a record without it is left alone.
+            # Victor Valley's Cal-GETC (S639) too: a transfer degree that names the 60, never one
+            # that holds its major alone.
             if st.get("only_with") and _empty(prog.get(st["only_with"])):
                 continue
             words = m.group(0).strip()

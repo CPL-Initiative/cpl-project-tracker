@@ -72,8 +72,7 @@
     25.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -330,5 +329,6 @@
    "The CIS 027 prerequisite note is cut off ('as a re') in the source text."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 43141644775,
+ "read_run": "39891604919"
 }

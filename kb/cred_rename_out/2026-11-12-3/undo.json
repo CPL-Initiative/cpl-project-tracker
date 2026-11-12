@@ -1,0 +1,310 @@
+{
+  "groups": {
+    "Advanced Engine Performance Specialist (ASE L1 standards)": [
+      "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)"
+    ],
+    "Automatic Transmission/Transaxle (ASE A2 standards)": [
+      "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)"
+    ],
+    "Electrical/Electronic Systems (ASE A6 standards)": [
+      "Automotive Technology (ASE A6 Electrical/Electronic Systems)"
+    ],
+    "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)": [
+      "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)"
+    ],
+    "Light Vehicle Diesel Engines (ASE A9 standards)": [
+      "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)"
+    ],
+    "Manual Drive Train and Axles (ASE A3 standards)": [
+      "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)"
+    ],
+    "Suspension and Steering (ASE A4 standards)": [
+      "Suspension and Steering (ASE A4 Suspension and Steering)"
+    ]
+  },
+  "_about": "Every value kb/_cred_rename_apply.py changed in this apply, before and after. kb/_cred_rename_undo.py reverses it. A key absent before (a rename's new title) or after (a folded or renamed-away title) is null.",
+  "_applied_at": "2026-11-12T05:48:00Z",
+  "credentials": {
+    "Advanced Engine Performance Specialist (ASE L1 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:47.177277+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Automatic Transmission/Transaxle (ASE A2 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:50.553384+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automatic Transmission/Transaxle"
+        }
+      ]
+    },
+    "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:50.553384+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automatic Transmission/Transaxle"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:33.863431+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Auto Electricity and Electronics"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:22.782544+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:47.177277+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:59:27.249684+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Electrical/Electronic Systems (ASE A6 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:33.863431+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Auto Electricity and Electronics"
+        }
+      ]
+    },
+    "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:59:27.249684+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    },
+    "Light Vehicle Diesel Engines (ASE A9 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:22.782544+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)"
+        }
+      ]
+    },
+    "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:51.957822+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Manual Drive Train and Axles"
+        }
+      ],
+      "after": null
+    },
+    "Manual Drive Train and Axles (ASE A3 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:51.957822+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Manual Drive Train and Axles"
+        }
+      ]
+    },
+    "Suspension and Steering (ASE A4 Suspension and Steering)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Suspension and Steering (ASE A4 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-02",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    }
+  },
+  "unified_titles": {
+    "Suspension and Steering": {
+      "before": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "after": "Suspension and Steering (ASE A4 standards)"
+    },
+    "Suspension and Steering Systems": {
+      "before": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "after": "Suspension and Steering (ASE A4 standards)"
+    },
+    "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
+      "before": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "after": "Electrical/Electronic Systems (ASE A6 standards)"
+    },
+    "AUTOTEC-15: Auto Electricity and Electronics": {
+      "before": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "after": "Electrical/Electronic Systems (ASE A6 standards)"
+    },
+    "Noncredit for AUTO A2": {
+      "before": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "after": "Automatic Transmission/Transaxle (ASE A2 standards)"
+    },
+    "Noncredit for AUTO A3": {
+      "before": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "after": "Manual Drive Train and Axles (ASE A3 standards)"
+    },
+    "Noncredit for AUTO A4": {
+      "before": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "after": "Suspension and Steering (ASE A4 standards)"
+    },
+    "Noncredit for AUTO A6": {
+      "before": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "after": "Electrical/Electronic Systems (ASE A6 standards)"
+    },
+    "Noncredit for AUTO A9": {
+      "before": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "after": "Light Vehicle Diesel Engines (ASE A9 standards)"
+    },
+    "Noncredit for AUTO L1": {
+      "before": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "after": "Advanced Engine Performance Specialist (ASE L1 standards)"
+    },
+    "Noncredit for AUTO L3": {
+      "before": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "after": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)"
+    }
+  },
+  "articulations": [
+    {
+      "course_id": "AUTO M1219",
+      "exhibit_id": "MAPCXS-SASS-1-001",
+      "exhibit_title": "Suspension and Steering Systems",
+      "before": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "after": "Suspension and Steering (ASE A4 standards)"
+    },
+    {
+      "course_id": "AUTO M11MM",
+      "exhibit_id": "MAPCBEN-SAS-1-001",
+      "exhibit_title": "Suspension and Steering",
+      "before": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "after": "Suspension and Steering (ASE A4 standards)"
+    }
+  ],
+  "fold_id": "2026-11-12-3@2026-11-12T05:48:00Z"
+}
