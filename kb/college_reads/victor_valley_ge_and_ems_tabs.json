@@ -1,0 +1,19 @@
+{
+ "_readme": "S639 harvest side session (second session), 2026-11-12, second read. Two questions on Victor Valley College's 2026-2027 CourseLeaf catalog. (1) Two transfer degrees, History AA-T 31788 and Communication Studies 2.0 AA-T 44287, name Cal-GETC and the 60 with no units for the pattern, and Nursing AS 04955 names VVC General Education: what the degree pages print for the pattern, and what the catalog's general education pages print for its units (the History page's links to them followed, and the Academic Disciplines page's general education links shown). (2) Four EMS certificates (38353, 38366, 38502, 38503) were read from the Overview tab alone: each page as the capture reads it, every tab panel and every panel the capture leaves out printed, to see why. No model call.",
+ "college": "Victor Valley College",
+ "questions": {
+  "ge_units": "What the transfer degree pages print for Cal-GETC, and what the catalog's CalGETC and VVC General Education pages print for the pattern's units or total.",
+  "ems_tabs": "What the four EMS certificate pages hold in each tab panel, and which panel the capture leaves out."
+ },
+ "keywords": ["CalGETC", "Cal-GETC", "General Education", "[Uu]nits", "Total", "semester", "minimum"],
+ "pages": [
+  {"url": "https://catalog.vvc.edu/degrees-certificates/history/history-aat/", "answers": ["ge_units"], "capture_view": true, "follow": "general.education|calgetc|cal-getc"},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/communication-studies/communication-studies-2-aat/", "answers": ["ge_units"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/nursing/nursing-as/", "answers": ["ge_units"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/", "answers": ["ge_units"], "links": "general.education|calgetc|cal-getc|graduation"},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/", "answers": ["ems_tabs"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/", "answers": ["ems_tabs"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/paramedic-internship-ca/", "answers": ["ems_tabs"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/", "answers": ["ems_tabs"], "capture_view": true}
+ ]
+}

@@ -72,8 +72,7 @@
     23.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -198,5 +197,6 @@
    "Program learning outcomes taken from the page's outcomes tab for this program."
   ]
  },
- "extracted_run": "39035604333"
+ "extracted_run": 43142245126,
+ "read_run": "39035604333"
 }

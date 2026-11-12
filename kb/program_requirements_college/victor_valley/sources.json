@@ -42,7 +42,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -83,7 +86,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -124,7 +130,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -163,7 +172,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -207,7 +219,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 12,
@@ -244,7 +259,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 15,
@@ -271,7 +289,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "level i: associate teacher certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -298,7 +319,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire fighter certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -331,7 +355,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -401,7 +428,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 51,
@@ -430,7 +460,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -474,7 +507,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical office certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -566,7 +602,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -600,7 +639,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "building inspection certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -635,7 +677,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -687,7 +732,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "level iii: site supervisor (pre school) certificate of achievement",
+    "section_fit": 0.6
    }
   },
   "listed": 18,
@@ -767,7 +815,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "administrative assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -796,7 +847,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "computer systems ii certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -825,7 +879,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "programming i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -882,7 +939,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 23,
@@ -924,7 +984,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 8,
@@ -976,7 +1039,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paralegal studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 19,
@@ -1013,7 +1079,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "aviation powerplant technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -1082,7 +1151,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 53,
@@ -1179,7 +1251,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 94,
@@ -1258,7 +1333,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 65,
@@ -1300,7 +1378,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "welding certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1328,7 +1409,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "medical assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -1360,7 +1444,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "respiratory therapy certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -1371,35 +1458,12 @@
   "title": "Nursing Licensure",
   "award": "Certificate of Achievement requiring 60+S/90+Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.867,
-  "codes_found": [
-   "BIOL211",
-   "BIOL221",
-   "BIOL231",
-   "CMST107",
-   "CMST108",
-   "COMMC1000",
-   "ENGLC1000",
-   "NURS221",
-   "NURS222",
-   "NURS223",
-   "NURS224",
-   "PSYC110",
-   "PSYCC1000"
-  ],
-  "source": {
-   "url": "https://catalog.vvc.edu//degrees-certificates/nursing/",
-   "title": "Nursing | Victor Valley College",
-   "h1": "Nursing",
-   "text_from": "innerText",
-   "label": {
-    "award": 0,
-    "title": 0.5
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 15,
-  "text_chars": 12067
+  "text_chars": 0
  },
  {
   "control_number": "20546",
@@ -1424,7 +1488,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paramedic certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1455,7 +1522,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "restaurant management certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -1485,7 +1555,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "criminal justice certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1512,7 +1585,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "mathematics, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -1546,7 +1622,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "sociology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -1574,7 +1653,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1610,7 +1692,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -1640,7 +1725,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "early childhood education, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -1672,7 +1760,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "political science, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -1700,7 +1791,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -1730,7 +1824,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "psychology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -1767,7 +1864,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -1844,7 +1944,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "kinesiology, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 66,
@@ -1885,7 +1988,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "construction and manufacturing technology/ building inspection certificate of achievement",
+    "section_fit": 0.4
    }
   },
   "listed": 7,
@@ -2027,7 +2133,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.8
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 143,
@@ -2077,7 +2186,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "light duty diesel technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2101,7 +2213,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2164,7 +2279,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "composite aerospace manufacturing certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -2200,7 +2318,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive detailer and porter certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2229,7 +2350,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "drafting technician i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -2257,7 +2381,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "architectural cadd technician i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -2285,7 +2412,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2314,7 +2444,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "cadd (computer aided design and drafting) technician i certificate of achievement",
+    "section_fit": 0.333
    }
   },
   "listed": 7,
@@ -2342,7 +2475,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -2365,7 +2501,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "emergency medical technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -2406,7 +2545,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 19,
@@ -2442,7 +2584,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -2498,7 +2643,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": "adt",
+    "section_line": "agricultural plant sciences, as-t",
+    "section_fit": 0.667
    }
   },
   "listed": 23,
@@ -2522,7 +2670,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "unix administrator certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -2553,7 +2704,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -2578,7 +2732,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "mysql database developer certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -2608,7 +2765,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "philosophy, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2640,7 +2800,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fire & emergency medical services foundation certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -2667,7 +2830,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2697,7 +2863,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photography certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -2721,11 +2890,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive electrical specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2629
+  "text_chars": 2660
  },
  {
   "control_number": "38353",
@@ -2742,14 +2914,17 @@
    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
    "title": "Advanced Life Support Module 2 Certificate of Achievement | Victor Valley College",
    "h1": "Advanced Life Support Module 2 Certificate of Achievement",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced life support module 2 certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3133
+  "text_chars": 3280
  },
  {
   "control_number": "38354",
@@ -2770,11 +2945,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive engine performance specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
-  "text_chars": 2667
+  "text_chars": 2671
  },
  {
   "control_number": "38355",
@@ -2814,14 +2992,17 @@
    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-3-ca/",
    "title": "Advanced Life Support Module 3 Certificate of Achievement | Victor Valley College",
    "h1": "Advanced Life Support Module 3 Certificate of Achievement",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced life support module 3 certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
-  "text_chars": 3118
+  "text_chars": 3239
  },
  {
   "control_number": "38368",
@@ -2841,11 +3022,14 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "automotive engine specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
-  "text_chars": 2624
+  "text_chars": 2628
  },
  {
   "control_number": "38502",
@@ -2862,14 +3046,17 @@
    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/paramedic-internship-ca/",
    "title": "Paramedic Internship Certificate of Achievement | Victor Valley College",
    "h1": "Paramedic Internship Certificate of Achievement",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "paramedic internship certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
-  "text_chars": 3209
+  "text_chars": 3362
  },
  {
   "control_number": "38503",
@@ -2887,14 +3074,17 @@
    "url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/advanced-life-support-module-1-ca/",
    "title": "Advanced Life Support Module 1 Certificate of Achievement | Victor Valley College",
    "h1": "Advanced Life Support Module 1 Certificate of Achievement",
-   "text_from": "innerText",
+   "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "advanced life support module 1 certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
-  "text_chars": 3230
+  "text_chars": 3460
  },
  {
   "control_number": "38516",
@@ -2917,7 +3107,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -2941,7 +3134,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "intermediate firefighter certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -2972,7 +3168,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "all risk firefighter certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3002,7 +3201,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "environmental horticulture and landscaping certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3050,7 +3252,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "wildland firefighter certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3081,7 +3286,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "applied developmental psychology certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3109,7 +3317,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital media - animation and motion graphics maya certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3137,7 +3348,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital media - animation and motion graphics 3ds max certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -3176,7 +3390,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 5,
@@ -3202,7 +3419,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "equine science specialist certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -3213,32 +3433,12 @@
   "title": "Irrigation and Water Management",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "sitemap_page",
-  "coverage": 0.769,
-  "codes_found": [
-   "AGNR121",
-   "AGNR123",
-   "AGNR131",
-   "AGNR140",
-   "AGNR150",
-   "AGNR152",
-   "AGNR153",
-   "AGNR170",
-   "AGNR172",
-   "AGNR175"
-  ],
-  "source": {
-   "url": "https://catalog.vvc.edu//degrees-certificates/agriculture-natural-resources/",
-   "title": "Agriculture and Natural Resources | Victor Valley College",
-   "h1": "Agriculture and Natural Resources",
-   "text_from": "innerText+tabs",
-   "label": {
-    "award": 0,
-    "title": 0.0
-   }
-  },
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 13,
-  "text_chars": 16474
+  "text_chars": 0
  },
  {
   "control_number": "39101",
@@ -3263,7 +3463,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ecological restoration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3316,7 +3519,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "agriculture and natural resources/ natural resource and environmental technology certificate of achievement",
+    "section_fit": 0.667
    }
   },
   "listed": 20,
@@ -3340,7 +3546,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic trainer aide i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3377,7 +3586,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "global competency certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 15,
@@ -3413,7 +3625,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
@@ -3447,7 +3662,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.667
+    "title": 0.667,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 20,
@@ -3472,7 +3690,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.0
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 3,
@@ -3521,7 +3742,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "dance teacher i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 34,
@@ -3555,7 +3779,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "nutrition and dietetics, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -3595,7 +3822,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 0.5
+    "title": 0.5,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 10,
@@ -3637,7 +3867,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -3665,7 +3898,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletic trainer aide ii certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -3689,7 +3925,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced life support provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3713,7 +3952,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic life support provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -3740,7 +3982,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "correctional science certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -3772,7 +4017,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "biology, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3803,7 +4051,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic framing and carpentry certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -3839,7 +4090,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "introduction to automotive drivability theory certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -3870,7 +4124,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "global studies, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3899,7 +4156,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "computer science, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -3931,7 +4191,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "coaching certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -3961,7 +4224,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "entrepreneurship certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 8,
@@ -3993,7 +4259,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "business administration 2.0, as-t",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -4040,7 +4309,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "art history, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 25,
@@ -4084,7 +4356,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "studio arts, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 24,
@@ -4108,7 +4383,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "apparel construction certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4137,7 +4415,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "american sign language certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -4160,7 +4441,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "law enforcement module ii basic course certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -4184,7 +4468,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "textile measurement and production certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4250,7 +4537,10 @@
    "text_from": "innerText",
    "label": {
     "award": 0,
-    "title": 0.333
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 21,
@@ -4276,7 +4566,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 4,
@@ -4301,7 +4594,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "commercial driver training certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4325,7 +4621,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "community mental health certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4358,7 +4657,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "office services certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -4385,7 +4687,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "ethnic studies certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4433,7 +4738,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "social justice studies: general, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 27,
@@ -4458,7 +4766,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "career success certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4482,7 +4793,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "career preparation certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4506,7 +4820,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "career and industry exploration certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4585,7 +4902,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "athletics certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 64,
@@ -4608,7 +4928,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "law enforcement module iii basic course certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -4636,7 +4959,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4664,7 +4990,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 6,
@@ -4688,7 +5017,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl level 1 low-beginning english language skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4711,7 +5043,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl level 3 low-intermediate english language skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4738,7 +5073,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 7,
@@ -4764,7 +5102,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronics technician ii certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -4791,7 +5132,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "electronics technician i certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -4816,7 +5160,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "manicuring academy certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -4840,7 +5187,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "barber crossover certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4864,7 +5214,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esthetician academy certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4888,7 +5241,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introductory cosmetology certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4912,7 +5268,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced barbering certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4936,7 +5295,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "introductory barbering certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4960,7 +5322,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "advanced cosmetology certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -4984,7 +5349,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate cosmetology certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5008,7 +5376,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "intermediate barbering certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5032,7 +5403,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "forklift class i, ii, & iii certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5056,7 +5430,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "forklift class iv & v certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5087,7 +5464,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "fitness specialist - personal trainer certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 10,
@@ -5110,7 +5490,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "hairstylist academy certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 1,
@@ -5134,7 +5517,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "community health worker certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5158,7 +5544,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl level 5 advanced english skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5191,7 +5580,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate career professional certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5226,7 +5618,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate management professional certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5259,7 +5654,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "real estate sales professional certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -5292,7 +5690,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 11,
@@ -5316,7 +5717,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "trauma life support provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5340,7 +5744,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "pediatric life support provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5365,7 +5772,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "new student onboarding certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5388,7 +5798,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "esl level 4 high intermediate english skills certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5428,7 +5841,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "communication studies 2.0, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 21,
@@ -5457,7 +5873,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "forensic science, biology concentration certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -5493,7 +5912,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "two-dimensional studio arts, certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 14,
@@ -5518,7 +5940,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "adapted fitness certification certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -5577,7 +6002,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 25,
@@ -5601,7 +6029,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "heartsaver first aid, cpr, aed provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5625,7 +6056,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 0,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 2,
@@ -5649,7 +6083,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "basic bleeding control provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -5684,7 +6121,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "case management with a cardiopulmonary focus certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5712,7 +6152,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 0.75
+    "title": 0.75,
+    "section": "coa",
+    "section_line": "expanded animation technician 3ds max certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5746,7 +6189,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "adt",
+    "section_line": "theatre arts, aa-t",
+    "section_fit": 1.0
    }
   },
   "listed": 12,
@@ -5780,7 +6226,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital animation artist maya certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5808,7 +6257,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "expanded animation technician maya certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5842,7 +6294,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "digital animation artist 3ds max certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 13,
@@ -5870,7 +6325,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic electrician technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5899,7 +6357,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic heating, ventilation, air conditioning and refrigeration (hvac/r) service technician certificate of achievement",
+    "section_fit": 0.556
    }
   },
   "listed": 7,
@@ -5926,7 +6387,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "critical care paramedic provider certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -5954,7 +6418,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "plumbing technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -5988,7 +6455,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "social work and human services assistant certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 17,
@@ -6020,7 +6490,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "sociological foundations certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 11,
@@ -6049,7 +6522,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "photovoltaic technician certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -6080,7 +6556,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "coa",
+    "section_line": "basic masonry and concrete certificate of achievement",
+    "section_fit": 1.0
    }
   },
   "listed": 9,
@@ -6104,7 +6583,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": "noncredit",
+    "section_line": "pharmacy principles certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -6139,7 +6621,10 @@
    "text_from": "innerText+tabs",
    "label": {
     "award": 1,
-    "title": 1.0
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
    }
   },
   "listed": 16,
