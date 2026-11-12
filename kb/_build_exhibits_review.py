@@ -142,6 +142,8 @@ def course_title_fits(ex, issuer=""):
     of #3168: AJ 61 keeps C-ID AJ 124's "Legal Aspects of Evidence"). Returns (fits, why not)."""
     paths = sorted({exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""})
     types = sorted(ex.get("types") or [])
+    if not paths and not types:
+        return True, ""   # no exhibit record says what path it is: an unknown is no evidence, so the course title stands
     cbe = is_credit_by_exam(ex)
     n = len(ex.get("recs") or [])
     if (cbe and n <= 1) or (issuer or "").strip() == title_in_use.LOCAL_ISSUER:
@@ -227,8 +229,11 @@ def settle(prop, raw, ex, index, statewide, names, in_reference, set_aside=""):
         if b and b["o"]["t"] != title:
             a = dict(b, kind=SRC_STATEWIDE) if b["kind"] == title_in_use.SELF else b
     if a and a["kind"] == title_in_use.SELF:
-        return dict(prop, source=SRC_STATEWIDE,
-                    in_use={"title": a["o"]["t"], "locals": a["o"]["locals"], "adopted": a["o"]["adopted"]})
+        # The proposal is itself a statewide exhibit: the card's source line says so, as it does for a join (COBIx, #3168).
+        out = dict(prop, source=SRC_STATEWIDE,
+                   in_use={"title": a["o"]["t"], "locals": a["o"]["locals"], "adopted": a["o"]["adopted"]})
+        out["from"] = "the statewide exhibit in use (%s)" % use_count(a["o"])
+        return out
     if a:
         o = a["o"]
         word = "the statewide exhibit in use" if a["kind"] == SRC_STATEWIDE else "the most used title in the reference"

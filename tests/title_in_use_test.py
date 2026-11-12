@@ -87,6 +87,8 @@ AUTOCX = "Noncredit Course for AUTO A5"
 AJ61 = "Industry Training Evidence for AJ 61"
 FST1 = "Industry Training Evidence for FST 1"
 CCC = "California Community Colleges"
+SELFCARD = "FIRE 1 academy local, new"
+UNKNOWN = "Some Exam With No Exhibit Record"
 
 
 def need(raw, title, issuer, **kw):
@@ -104,13 +106,15 @@ FIX = {
         need(WATCH, "cisco ccna", "Cisco"),
         need(TOPCARD, "Welding Shop Practice", "California Community Colleges"),
         need(AUTOCX, "Brakes (ASE A5)", CCC), need(AJ61, "Administration of Justice (AJ 61)", CCC),
-        need(FST1, "Principles of Emergency Services", CCC)]},
+        need(FST1, "Principles of Emergency Services", CCC), need(SELFCARD, "Firefighter 1", SFT),
+        need(UNKNOWN, "Some Exam Title", "Some Board")]},
     "kb/unclassified_suggestions.json": {"_generated_at": "2026-11-12T06:20:00Z", "aligned": {
         FIRE: {"kind": "mid", "id": "FIRE M1219", "title": "Firefighter Academy", "code": "FIRE 1500", "college": "American River College"},
         CBE: {"kind": "mid", "id": "COUN M1004", "title": "Academic Planning", "code": "COUN 1", "college": "Irvine Valley College"},
         UNION: {"kind": "mid", "id": "STMF M1010", "title": "Union Heritage", "code": "STMF 10", "college": "American River College"},
         ELEV: {"kind": "local", "id": "the course ELEVA 108", "title": "Advanced Topics in Elevators", "code": "ELEVA 108",
                "college": "American River College"},
+        UNKNOWN: {"kind": "mid", "id": "XMPL M1000", "title": "Example Course", "code": "XMPL 1", "college": "Norco College"},
         AJ61: {"kind": "cid", "id": "AJ 124", "title": "Legal Aspects of Evidence", "code": "AJ 61", "college": "Cosumnes River College"}}},
     "kb/unified_titles.json": dict(
         [("FF1 local %d" % i, {"unified_title": "Firefighter 1"}) for i in range(11)]
@@ -129,7 +133,7 @@ FIX = {
         "Principles of Fire and Emergency Services Safety and Survival": [{"issuing_agency": CCC}]},
     "kb/exhibit_audit/latest.json": {"generated_at": "2026-11-12T06:10:00Z", "title_cards": [
         {"raw_title": r, "unified_title": None, "tags": ["unclassified_in_map"]}
-        for r in [FIRE, CBE, UNION, P1, ELEV, WATCH, TOPCARD, AUTOCX, AJ61, FST1] + ["COBIx " + t for t in ACAD]]},
+        for r in [FIRE, CBE, UNION, P1, ELEV, WATCH, TOPCARD, AUTOCX, AJ61, FST1, SELFCARD, UNKNOWN] + ["COBIx " + t for t in ACAD]]},
     "kb/it_ai_credential_catalog.json": {"credentials": [
         {"issuer": "Cisco", "name": "Cisco CCNA"},
         {"issuer": "National Elevator Industry Educational Program", "name": "Certified Elevator Technician"}]},
@@ -243,6 +247,14 @@ check("a college-issued exhibit keeps its C-ID course title (AJ 61, Legal Aspect
 fs1 = held[FST1]
 check("FST 1 keeps its own reference title; no longer title takes it", fs1["title"] == "Principles of Emergency Services"
       and "in_use" not in fs1, (fs1["title"], fs1.get("in_use")))
+
+sc = held[SELFCARD]
+check("a proposal that is itself a statewide exhibit says so on its source line, as a join does (COBIx, #3168)",
+      sc["proposal_source"] == "in_use_statewide" and sc["from"] == "the statewide exhibit in use (11 local titles)", sc["from"])
+un = held[UNKNOWN]
+check("with no exhibit record, a course title is not set aside on no evidence (COBIx, #3168)",
+      un["title"] == "Example Course" and un["proposal_source"] == "course" and "course_title_set_aside" not in un,
+      (un["title"], un["proposal_source"]))
 
 # TOP is never consulted: changing every exhibit's TOP codes changes no proposal.
 ex2 = [dict(x, top_codes=["9999.99"], top_division="99") for x in EX]
