@@ -28,10 +28,11 @@ import sys
 import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(ROOT, "kb"))
+sys.path.insert(0, os.environ.get("TITLE_IN_USE_DIR") or os.path.join(ROOT, "kb"))   # a fail-first run points it elsewhere
 import title_in_use as T  # noqa: E402
+sys.path.insert(1, os.path.join(ROOT, "kb"))
 
-spec = importlib.util.spec_from_file_location("build_exhibits_review", os.path.join(ROOT, "kb", "_build_exhibits_review.py"))
+spec = importlib.util.spec_from_file_location("build_exhibits_review", os.environ.get("BUILD_EXHIBITS_REVIEW") or os.path.join(ROOT, "kb", "_build_exhibits_review.py"))
 B = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(B)
 
@@ -54,10 +55,22 @@ check("the stop words are the fixture's", sorted(T.STOP) == sorted(C["stop_words
 index = T.index_from_related(FX["related"])
 statewide = set(FX["statewide"])
 for case in FX["cases"]:
-    got = T.in_use(index, statewide, case["title"], case["raw"], case["issuer"])
+    try:
+        if case.get("own_issuer"):
+            got = T.in_use(index, statewide, case["title"], case["raw"], case["issuer"], own_issuer=True)
+        else:
+            got = T.in_use(index, statewide, case["title"], case["raw"], case["issuer"])
+    except TypeError as e:
+        got = {"kind": "error", "o": {"t": str(e)}}
     want = case["expect"]
     have = {"kind": got["kind"], "title": got["o"]["t"]} if got else None
     check("rule: " + case["why"], have == want, have)
+    if case.get("expect_order"):
+        rows = [x["o"]["t"] for x in T.related(index, case["title"], case["raw"], T.issuer_for(case["title"], case["issuer"]))["rows"]]
+        check("order: " + case["why"], rows[:len(case["expect_order"])] == case["expect_order"], rows[:6])
+check("level tokens: 1A, II as 2, Level 4, an ASE code names none",
+      (T.level_tokens("Firefighter 1A"), T.level_tokens("Firefighter II"), T.level_tokens("Level 4"), T.level_tokens("ASE A5"))
+      == ({"1A"}, {"2"}, {"4"}, set()) if hasattr(T, "level_tokens") else False)
 
 # ── 2. the builder ──
 SFT = "California State Fire Training (SFT)"
@@ -70,6 +83,10 @@ P1 = "Noncredit for AUTO P1"
 ELEV = "Elevators Training Center Apprenticeship Level 1"
 WATCH = "Cisco CCNA exam evidence"
 TOPCARD = "Welding Shop Practice by TOP"
+AUTOCX = "Noncredit Course for AUTO A5"
+AJ61 = "Industry Training Evidence for AJ 61"
+FST1 = "Industry Training Evidence for FST 1"
+CCC = "California Community Colleges"
 
 
 def need(raw, title, issuer, **kw):
@@ -85,26 +102,34 @@ FIX = {
         need(P1, "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)", "California Community Colleges"),
         need(ELEV, "Elevator Constructor Apprenticeship — Level 1", "National Elevator Industry Educational Program"),
         need(WATCH, "cisco ccna", "Cisco"),
-        need(TOPCARD, "Welding Shop Practice", "California Community Colleges")]},
+        need(TOPCARD, "Welding Shop Practice", "California Community Colleges"),
+        need(AUTOCX, "Brakes (ASE A5)", CCC), need(AJ61, "Administration of Justice (AJ 61)", CCC),
+        need(FST1, "Principles of Emergency Services", CCC)]},
     "kb/unclassified_suggestions.json": {"_generated_at": "2026-11-12T06:20:00Z", "aligned": {
         FIRE: {"kind": "mid", "id": "FIRE M1219", "title": "Firefighter Academy", "code": "FIRE 1500", "college": "American River College"},
         CBE: {"kind": "mid", "id": "COUN M1004", "title": "Academic Planning", "code": "COUN 1", "college": "Irvine Valley College"},
         UNION: {"kind": "mid", "id": "STMF M1010", "title": "Union Heritage", "code": "STMF 10", "college": "American River College"},
         ELEV: {"kind": "local", "id": "the course ELEVA 108", "title": "Advanced Topics in Elevators", "code": "ELEVA 108",
-               "college": "American River College"}}},
+               "college": "American River College"},
+        AJ61: {"kind": "cid", "id": "AJ 124", "title": "Legal Aspects of Evidence", "code": "AJ 61", "college": "Cosumnes River College"}}},
     "kb/unified_titles.json": dict(
         [("FF1 local %d" % i, {"unified_title": "Firefighter 1"}) for i in range(11)]
         + [("FF1A local %d" % i, {"unified_title": "Firefighter 1A"}) for i in range(2)]
         + [("FF1 Academy local %d" % i, {"unified_title": "Firefighter 1 Academy"}) for i in range(2)]
         + [("FI1A local %d" % i, {"unified_title": "Fire Inspector 1A"}) for i in range(2)]
-        + [("FI1B local %d" % i, {"unified_title": "Fire Inspector 1B"}) for i in range(2)]),
+        + [("FI1B local %d" % i, {"unified_title": "Fire Inspector 1B"}) for i in range(2)]
+        + [("ASE A5 local %d" % i, {"unified_title": "ASE A5 — Brakes"}) for i in range(14)]
+        + [("PES local", {"unified_title": "Principles of Emergency Services"})]
+        + [("PFES local %d" % i, {"unified_title": "Principles of Fire and Emergency Services Safety and Survival"}) for i in range(8)]),
     "kb/credentials.json": {
         "Firefighter 1": [{"issuing_agency": SFT}], "Firefighter 1A": [{"issuing_agency": SFT}],
         "Firefighter 1 Academy": [{"issuing_agency": SFT}], "Fire Inspector 1A": [{"issuing_agency": SFT}],
-        "Fire Inspector 1B": [{"issuing_agency": SFT}]},
+        "Fire Inspector 1B": [{"issuing_agency": SFT}], "ASE A5 — Brakes": [{"issuing_agency": ASE}],
+        "Principles of Emergency Services": [{"issuing_agency": CCC}],
+        "Principles of Fire and Emergency Services Safety and Survival": [{"issuing_agency": CCC}]},
     "kb/exhibit_audit/latest.json": {"generated_at": "2026-11-12T06:10:00Z", "title_cards": [
         {"raw_title": r, "unified_title": None, "tags": ["unclassified_in_map"]}
-        for r in [FIRE, CBE, UNION, P1, ELEV, WATCH, TOPCARD] + ["COBIx " + t for t in ACAD]]},
+        for r in [FIRE, CBE, UNION, P1, ELEV, WATCH, TOPCARD, AUTOCX, AJ61, FST1] + ["COBIx " + t for t in ACAD]]},
     "kb/it_ai_credential_catalog.json": {"credentials": [
         {"issuer": "Cisco", "name": "Cisco CCNA"},
         {"issuer": "National Elevator Industry Educational Program", "name": "Certified Elevator Technician"}]},
@@ -130,11 +155,19 @@ EX = [
     # TOP codes ride on every exhibit record; the proposal must not read them (Rule 7).
     {"exhibit_ids": ["MAPCXS-WSP-1-001"], "raw_titles": [TOPCARD], "adopter_names": ["Norco College"], "cpl_type": "Credit By Exam",
      "credit_recs": [{"course": "WELD 1", "credit": "3 hours"}], "top_codes": ["0956.50"]},
+    # A college's noncredit course for an ASE test, credit by exam by its MAPCX id (the review of #3168, item 3).
+    {"exhibit_ids": ["MAPCXN-NFAB-1-001"], "raw_titles": [AUTOCX], "adopter_names": ["Las Positas College"], "cpl_type": "Credit By Exam",
+     "credit_recs": [{"course": "AUTO 905", "credit": "0 hours in Brakes"}]},
+    # A college-issued industry-evidence exhibit: its C-ID course title stands (item 4).
+    {"exhibit_ids": ["MAPICI-IFA61-1-001"], "raw_titles": [AJ61], "adopter_names": ["Cosumnes River College"], "cpl_type": "Industry Certification",
+     "credit_recs": [{"course": "AJ 61", "credit": "3 hours in Evidence"}]},
+    {"exhibit_ids": ["MAPICI-IFF1-1-001"], "raw_titles": [FST1], "adopter_names": ["Cosumnes River College"], "cpl_type": "Industry Certification",
+     "credit_recs": [{"course": "FST 1", "credit": "3 hours"}]},
 ] + [{"exhibit_ids": ["MAPICA-FA%d-1-001" % i], "raw_titles": ["COBIx " + t], "adopter_names": ["Kern County"],
       "cpl_type": "Industry Certification", "credit_recs": []} for i, t in enumerate(ACAD)]
 STATEWIDE = {"generated_at": "2026-11-12T06:00:00", "exhibits": EX}
 RECS = {"Firefighter 1": [{"t": "3 hours", "id": "MAPICI-FF1-1-001"}], "Firefighter 1A": [], "Fire Inspector 1A": [],
-        "Fire Inspector 1B": []}
+        "Fire Inspector 1B": [], "ASE A5 — Brakes": []}
 
 
 def write(root, rel, obj, js=None):
@@ -199,6 +232,17 @@ check("a college course title (not only an M-ID) is set aside for an industry ce
 check("a catalog name that is a different credential is never put in its place", e.get("needs_official_name") is True)
 check("a local credit-by-exam title is never flagged for an official name", not held[TOPCARD].get("needs_official_name")
       and not c.get("needs_official_name"))
+
+a5 = held[AUTOCX]
+check("a credit-by-exam noncredit AUTO card keeps its proposal and its college issuer (never moved to ASE)",
+      (a5["title"], a5["issuer"], a5["proposal_source"]) == ("Brakes (ASE A5)", CCC, "classifier") and "in_use" not in a5, a5)
+aj = held[AJ61]
+check("a college-issued exhibit keeps its C-ID course title (AJ 61, Legal Aspects of Evidence)",
+      aj["title"] == "Legal Aspects of Evidence" and aj["from"] == "C-ID AJ 124" and aj["proposal_source"] == "course"
+      and "course_title_set_aside" not in aj, (aj["title"], aj["from"]))
+fs1 = held[FST1]
+check("FST 1 keeps its own reference title; no longer title takes it", fs1["title"] == "Principles of Emergency Services"
+      and "in_use" not in fs1, (fs1["title"], fs1.get("in_use")))
 
 # TOP is never consulted: changing every exhibit's TOP codes changes no proposal.
 ex2 = [dict(x, top_codes=["9999.99"], top_division="99") for x in EX]

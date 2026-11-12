@@ -124,18 +124,27 @@ def basis_of(aligned):
     return "the course " + aligned.get("code", "")
 
 
-def course_title_fits(ex):
+def is_credit_by_exam(ex):
+    """Every exhibit behind the local title is credit by exam: its MAP id (kb/exhibit_paths.py), else MAP's CPL type."""
+    paths = sorted({exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""})
+    types = ex.get("types") or []
+    return paths == ["cx"] if paths else (bool(types) and all(t == "Credit By Exam" for t in types))
+
+
+def course_title_fits(ex, issuer=""):
     """Sam, in session, 2026-11-12 (`sam-cert-title-official-name-not-mid-2026-11-12`): "The MID title works well for
     cx because those are single course exhibits...but many if not most industry certs like Firefighter 1, POST, Real
     Estate Sales, Comptia Network+ have several CRs and need a non-course based canonical title that best aligns with
     the official name of the cert or license or training program". A course's title names the exhibit only when every
     exhibit behind the local title is credit by exam (its MAP id, kb/exhibit_paths.py; MAP's CPL type where no id
-    names a path) and the exhibits carry at most one credit recommendation. Returns (fits, why not)."""
+    names a path) and the exhibits carry at most one credit recommendation. A college-issued exhibit (the proposal's
+    issuer is California Community Colleges) is a course of the college's, so its course title stands too (the review
+    of #3168: AJ 61 keeps C-ID AJ 124's "Legal Aspects of Evidence"). Returns (fits, why not)."""
     paths = sorted({exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""})
     types = sorted(ex.get("types") or [])
-    cbe = paths == ["cx"] if paths else (bool(types) and all(t == "Credit By Exam" for t in types))
+    cbe = is_credit_by_exam(ex)
     n = len(ex.get("recs") or [])
-    if cbe and n <= 1:
+    if (cbe and n <= 1) or (issuer or "").strip() == title_in_use.LOCAL_ISSUER:
         return True, ""
     if not cbe:
         kind = exhibit_paths.PATHS[paths[0]][0] if len(paths) == 1 else (types[0].lower() if len(types) == 1 else "")
@@ -197,15 +206,26 @@ def use_count(o):
     return words
 
 
-def settle(prop, raw, ex, index, statewide, names, in_reference):
+def settle(prop, raw, ex, index, statewide, names, in_reference, set_aside=""):
     """Sam's two rulings of 2026-11-12, after the course gate in proposal_of: (1) a title already in use, by the one
     rule exhibits.js also follows (kb/title_in_use.py), before a new one; (2) an industry certification, license or
     training program with nothing in use takes its official name where the repo holds one (kb/cert_naming.py, already
     applied by the caller; the credential watch's catalog), else keeps the classifier's title and is flagged
     `needs_official_name`. Returns the proposal with `source` and, where they apply, `in_use` and
-    `needs_official_name`. Never reads TOP, never calls a model or the network."""
+    `needs_official_name`. Never reads TOP, never calls a model or the network.
+
+    `set_aside`, the course title the gate refused, is asked of the rule too when the proposal's own title finds
+    nothing: it is never proposed, but it can point at the title in use (Firefighter Recruit Academy Certificate: the
+    classifier's Firefighter 1 Academy keeps itself under rule (g), and M-ID FIRE M1219's Firefighter Academy points
+    at the statewide Firefighter 1, Sam's call). A credit-by-exam card keeps its own issuer (rule (h); the review of
+    #3168): a college's noncredit course for an ASE test stays the college's."""
     title = prop["title"]
-    a = title_in_use.in_use(index, statewide, title, raw, prop.get("issuer", "")) if title else None
+    own = is_credit_by_exam(ex)
+    a = title_in_use.in_use(index, statewide, title, raw, prop.get("issuer", ""), own_issuer=own) if title else None
+    if not a and set_aside and set_aside != title:
+        b = title_in_use.in_use(index, statewide, set_aside, raw, prop.get("issuer", ""), own_issuer=own)
+        if b and b["o"]["t"] != title:
+            a = dict(b, kind=SRC_STATEWIDE) if b["kind"] == title_in_use.SELF else b
     if a and a["kind"] == title_in_use.SELF:
         return dict(prop, source=SRC_STATEWIDE,
                     in_use={"title": a["o"]["t"], "locals": a["o"]["locals"], "adopted": a["o"]["adopted"]})
@@ -446,7 +466,8 @@ def build(root):
         step = step_of(n)
         ex = by_raw.get(raw) or {"ids": [], "art": [], "types": [], "recs": []}
         aligned = aligned_all.get(raw) if step != CONFLICT else None
-        course_ok, course_why = course_title_fits(ex) if aligned else (True, "")
+        first = n.get("proposal") or (n.get("proposals") or [{}])[0] or {}
+        course_ok, course_why = course_title_fits(ex, first.get("issuer", "")) if aligned else (True, "")
         prop = proposal_of(n, aligned, course_ok)
         if step != CONFLICT:
             # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
@@ -456,7 +477,8 @@ def build(root):
             if formed != prop["title"]:
                 prop = dict(prop, alternates=[prop["title"]] + [a for a in prop.get("alternates") or [] if a != formed],
                             title=formed, source=SRC_OFFICIAL)
-            prop = settle(prop, raw, ex, index, statewide_titles, names_on_file, in_reference)
+            prop = settle(prop, raw, ex, index, statewide_titles, names_on_file, in_reference,
+                          set_aside=aligned["title"] if aligned and not course_ok else "")
         typed = [clean_college(c) for c in n.get("colleges") or []]
         art = ex["art"] or typed
         art_keys = {norm_college(c) for c in art}
