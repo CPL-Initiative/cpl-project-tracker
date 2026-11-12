@@ -320,6 +320,60 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("Victor Valley's noncredit course hours from the course descriptions (S639; college page read 43134526902)")
+VV = "Victor Valley College"
+VV_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "victor_valley", "records")
+
+
+def vv_filed(cn):
+    with open(os.path.join(VV_DIR, cn + ".json")) as fh:
+        return json.load(fh)
+
+
+# The page text as the capture reads Career Success 42728 (the read's own lines): a total, 0.0 beside each course.
+vv_text = ("[Tab: REQUIREMENTS]\nTotal Certificate Hours: 96.0 - 108.0\nCourse List\nCode\nTitle\nUnits\nRequired Courses\n"
+           "WKPR 011\tPersonal Growth, Development and Wellness\t0.0\nWKPR 012\tDecision Making and Problem Solving in the "
+           "Workplace\t0.0\nWKPR 014\tComminication Skills in the Workforce\t0.0\nTotal Units\t0")
+vv_steps = R.load_steps()
+check("Victor Valley's entry has no college-level awards gate (the Redwoods lesson) and one course_hours step",
+      not vv_steps[VV].get("awards") and [s["kind"] for s in vv_steps[VV]["steps"]] == ["course_hours"])
+with open(os.path.join(ROOT, "kb", vv_steps[VV]["steps"][0]["hours_file"])) as fh:
+    vv_hours = json.load(fh)
+check("the hours file keeps noncredit courses only: ESL 012A's 108, never ESL 12A's 54 (3.0 Units, one normalized code)",
+      vv_hours["hours"].get("ESL12A") == [108.0, 108.0] and vv_hours["hours"].get("WKPR11") == [36.0, 36.0]
+      and vv_hours["hours"].get("COSM101") == [279.0, 279.0] and "Lecture Hours: 36.0" in vv_hours["words"]["WKPR11"])
+cs = vv_filed("42728")
+new, notes = R.reconcile(cs["record"], vv_text, VV, cs["award"], steps=vv_steps)
+check("Career Success's three WKPR courses take the 36 hours each description prints",
+      [c["units"] for c in new["blocks"][0]["courses"]] == [36.0, 36.0, 36.0]
+      and notes and notes[0]["field"] == "course_hours" and "43134526902" in notes[0]["words"])
+arith = S.score(new, [], vv_text, cs["award"])["arithmetic"]
+check("108 meets only the top of 96.0 - 108.0, so it stays unequal (Sheet 120 card 1, narrow)",
+      arith["status"] == "unequal" and arith["computed"] == [108.0, 108.0] and not arith["pass"])
+check("the filed record is left as filed", cs["record"]["blocks"][0]["courses"][0]["units"] is None)
+for cn in ("42907", "43736"):
+    one = vv_filed(cn)
+    got, _n = R.reconcile(one["record"], "Total Certificate Hours: 216.0", VV, one["award"], steps=vv_steps)
+    check("%s: two 108-hour ESL courses add to 'Total Certificate Hours: 216.0' and pass arithmetic" % cn,
+          S.score(got, [], "Total Certificate Hours: 216.0", one["award"])["arithmetic"]["pass"])
+for cn in ("37006", "38352"):
+    # Sheet 85 card 4 (Sam, 2026-10-16): AUTO 82.0 printed with no units; stays as read, unchecked, shown, flagged.
+    one = vv_filed(cn)
+    got, n37 = R.reconcile(one["record"], "AUTO 82.0\tTotal Units\t22", VV, one["award"], steps=vv_steps)
+    check("%s (Sheet 85 card 4) is never changed: a credit record is not measured in hours" % cn,
+          n37 == [] and got is one["record"]
+          and [c["units"] for c in got["blocks"][0]["courses"] if c["code"] == "AUTO 82.0"] == [None])
+filled = json.loads(json.dumps(cs["record"]))
+filled["blocks"][0]["courses"][0]["units"] = 32
+got = R.reconcile(filled, vv_text, VV, cs["award"], steps=vv_steps)[0]
+check("an hours figure the reading gave stands", got["blocks"][0]["courses"][0]["units"] == 32
+      and got["blocks"][0]["courses"][1]["units"] == 36.0)
+units_rec = {"program": {"measure": "units", "total_units": {"min": 3, "max": 3}},
+             "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ESL 12A", "units": None}]}]}
+check("a credit record listing ESL 12A takes no hours", R.reconcile(units_rec, "x", VV, "A.A. Degree", steps=vv_steps)[1] == [])
+check("another college's hours record takes no Victor Valley hours",
+      R.reconcile(cs["record"], vv_text, "Hartnell College", cs["award"], steps=vv_steps)[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
