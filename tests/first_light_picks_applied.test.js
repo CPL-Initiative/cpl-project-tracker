@@ -73,4 +73,5 @@ for (const [name, ok, detail] of results) {
   console.log((ok ? "PASS " : "FAIL ") + name + (ok || !detail ? "" : " -> " + detail));
   if (!ok) failed++;
 }
+console.log("\nfirst_light_picks_applied.test.js: " + (results.length - failed) + "/" + results.length + " checks passed");
 process.exit(failed ? 1 : 0);
