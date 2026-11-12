@@ -3165,7 +3165,7 @@
      ],
      "title": "A PR that changes a builder of a committed file runs the builder",
      "type": "methodology",
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-09-17",
@@ -15873,7 +15873,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-09-08",
@@ -16397,7 +16397,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16493,7 +16493,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-29",
@@ -16811,8 +16811,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 600,
+   "count": 601,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 640,
+     "path": "docs/session_640_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 640 handoff (from SkyQuail, S639)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-11",
      "governs": [],
@@ -26985,5 +26999,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1451
+ "total": 1452
 }

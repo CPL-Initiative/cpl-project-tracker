@@ -1225,3 +1225,31 @@ the MCP's apply had waited on a confirmation and timed out, Rule 10 c); read bac
 holds no insert on the table, RLS on. Governance before shipping (Rule 10 a3): register row **DR-31**, `table:` and `rpc:credential_priority_request`
 mapped to it, the counts read dismissed with its privacy reason; the dependency map regenerated. Tests: `public_adopt`
 (81). **NEXT:** the Commons Exhibits List reads the rows as a queue item with its count (below).
+
+## Moved from the lane (S639, 2026-11-12)
+
+Moved verbatim from `docs/reference/lanes/cer-procedures.md` at the S639 checkpoint to bring the lane under its budget.
+
+**The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
+from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from
+`kb/exhibits_adoption.json`, and **settled means a local title under the credential carries a review stamp**, a person's
+or a cohort's. It offers both CSVs and Create Handout, writes nothing but the asks, remembers no filter, and `?college=`
+follows the pick. Today's shape is the port below.
+**The Credential Catalog's port from the mock (SkyAerial, 2026-11-06) and the statewide request route (Sheet 162,
+DR-31, `credential_priority_request()`)** moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane
+(S638)*. Ruled and standing: the statewide route is a public request to prioritize review, never an evaluation promise.
+
+**The Commons Exhibits List carries the same shape next (Sam, 2026-11-06: "make sure that any needed formatting or
+functionality from this mock is also reflected if needed on the commons exhibits"; the Credential Catalog is the public
+face of the Exhibits reference plus the harvested lane).** Already there: the resizable side panel, drill-downs, the
+could-adopt courses behind a chip, Request Quick Adopt, the held and conflict queues, the industry lane, the SLO neighbor
+hints, procedure requests, and (SkyLoop, 2026-11-06) **the public requests as the Requests view** (`#exhibits/requests`):
+one line per credential, most asked first, the colleges named or *Statewide only*, emails counted and never shown, first
+and last asked; the views row counts the asks still new and Progress lists them with *Read them*; the read goes behind the
+phrase or a reviewer sign-in (`tests/exhibits_requests.test.js`, 19). **To add:** credit status as one band and filter
+across all four classes (held, conflict and industry are separate lanes today); routing a request to a college or the
+statewide list from its line (a status stamp, service role today); the analysis for faculty in the side panel; A for a
+could-adopt cell wherever a matrix shows; the table shape with 0 carrying the action. Public only: Start with, the photos,
+the portal hand-off.
+
+**Re-analysis (first run S626, 2026-11-10).** A press of the List's re-analyze box runs the checks (`kb/_exhibit_reanalysis_checks.py`; findings `kb/exhibits_reanalysis/<date>.json`, `latest.json`), then the Jev runner (`kb/_exhibit_reanalysis_jev.py` on `typesafe-smoke.yml`, input `reanalysis`): two questions, no gate, each answer Jev's probability for Sam's word. The findings panel under the box leads with what needs the sender's word. **Sheet 180's rulings are carried out (cards 3 and 6, 2026-11-10):** Wildland Fire-Basics reads *California State Fire Training (SFT)* (S633); 10-Key Data Entry's issuer reads *California Community Colleges* alone (S634, receipt `kb/receipts/kb_curation_10key_issuer_2026-11-10_s634.json`); CSTI, Johnson Controls Training Institute and Spaulding Marine Center stay as issuers. **DECIDED (S634):** the two *Graduate Level Institution of Higher Education* rows are Los Angeles Pierce's doctorate exhibits (MAP 63381, 64857); MAP names no conferring university, so Sam's rows stand until Pierce names one (ask its CSM). The Ph.D. exhibit sits under *Clinical Counseling Laws and Ethics*, a course it awards; the row is Sam's to move. `kb/_apply_credential_review.py` never removes an issuer; it names any a changed override leaves (`stale_override_issuers`); edit the reference too. The five verdicts are the exhibits' first calibration set. History: lessons, *Moved from the lane (S634)*. **NEXT:** the next request runs both.
