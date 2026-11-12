@@ -20,7 +20,7 @@
  * GATE. A personal sign-in (CPL_SESSION, fresh). Everything this tab shows is a public file in the repo, so the
  * gate is about who the tab is for, not about protecting data: signed out, the pane offers the shared sign-in
  * box and draws no set. The menu hides the item from signed-out visitors through the cobi_nav row
- * (audience magic_link; kb/receipts/cobi_nav_first_light_magic_link_2026-11-12_s642.sql), the same rung.
+ * (audience magic_link; the receipt cobi_nav_first_light_magic_link_2026-11-12_s642.sql), the same rung.
  *
  * THE DOOR. This file loads with the page (it is small) so it can add one underlined word-link, "Edit the
  * rotation", to the painting-of-the-day window for a signed-in reviewer, opening #first-light/paintings.

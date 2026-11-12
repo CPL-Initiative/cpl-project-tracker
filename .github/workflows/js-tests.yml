@@ -155,7 +155,7 @@ jobs:
         shard: [1, 2, 3, 4, 5, 6]
     steps:
       # Everything but kb/receipts/ (1.6 GB of the 3.8 GB tree, measured
-      # 2026-10-29), which only two suites read, one file each: they are named
+      # 2026-10-29), which only three suites read, one file each: they are named
       # back in below. The full checkout took 2 min 33 s of every shard on 10-29.
       # A suite that starts reading another receipt fails here on ENOENT, so
       # name its file on a line of its own.
@@ -168,6 +168,7 @@ jobs:
             !/kb/receipts/*
             /kb/receipts/program_requirement_records_load_2026-10-04.sql
             /kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql
+            /kb/receipts/cobi_nav_first_light_magic_link_2026-11-12_s642.sql
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
