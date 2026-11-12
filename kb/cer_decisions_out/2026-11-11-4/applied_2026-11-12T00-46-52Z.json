@@ -1,0 +1,715 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-12T00-46-52Z",
+  "ruling": "Sky (the S639 conductor) and COBIx, 2026-11-11, on issue #3110 (comments 6805765536 point 2 and 6808678022), under Sam's hand-off of the emptied titles to them (cpl_memory sam-emptied-titles-settle-without-him-2026-11-11): a plan never retires a person's saved row on an emptied title; readers ignore it. Restores the person-saved rows the S638 plans retired; written by the S639 conductor's worker",
+  "cohort": "cer-s639@bot",
+  "read": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+      "field": "unified_title_override",
+      "value": "Brakes (ASE A5 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Brakes (ASE A5 standards)' (by slee@cccco.edu, 2026-11-11T15:26:54.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+        "field": "unified_title_override",
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Heating and Air Conditioning (ASE A7 standards)' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "unified_title_override",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_merge_confirm",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Heating and Air Conditioning (ASE A7 standards)' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "unified_title_merge_confirm",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "issuing_agency_override",
+      "value": "California Community College Chancellor's Office",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back \"California Community College Chancellor's Office\" (by slee@cccco.edu, 2026-11-11T15:47:58.805608+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "issuing_agency_override",
+        "value": "California Community College Chancellor's Office",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:47:58.805608+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Heating and Air Conditioning (ASE A7 standards)' (by slee@cccco.edu, 2026-11-11T15:26:54.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+        "field": "unified_title_override",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "issuing_agency_override",
+      "value": "National Institute for Automotive Service Excellence (ASE)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'National Institute for Automotive Service Excellence (ASE)' (by map@rccd.edu, 2026-07-09T00:07:08.979312+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+        "field": "issuing_agency_override",
+        "value": "National Institute for Automotive Service Excellence (ASE)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-09T00:07:08.979312+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'ASE Certificate Bundles' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+        "field": "unified_title_override",
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'ASE Certificate Bundles' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+        "field": "unified_title_merge_confirm",
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Engine Performance (ASE A8 standards)' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+        "field": "unified_title_override",
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_merge_confirm",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Engine Performance (ASE A8 standards)' (by slee@cccco.edu, 2026-11-11T15:26:55.029+00:00) from kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+        "field": "unified_title_merge_confirm",
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Electrical/Electronic Systems 1 (ASE A6 standards)' (by slee@cccco.edu, 2026-11-11T15:26:54.029+00:00) from kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "field": "unified_title_override",
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Electrical/Electronic Systems 2 (ASE A6 standards)' (by slee@cccco.edu, 2026-11-11T15:26:54.029+00:00) from kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "field": "unified_title_override",
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": null
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstate",
+      "why": "puts back 'Engine Performance 2 (ASE A8 standards)' (by slee@cccco.edu, 2026-11-11T15:26:54.029+00:00) from kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+        "field": "unified_title_override",
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": null
+    }
+  ],
+  "rows": [],
+  "replaces": [],
+  "retires": [],
+  "result": "written",
+  "reinstates": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+      "field": "unified_title_override",
+      "value": "Brakes (ASE A5 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_merge_confirm",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "issuing_agency_override",
+      "value": "California Community College Chancellor's Office",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:47:58.805608+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "issuing_agency_override",
+      "value": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T00:07:08.979312+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_merge_confirm",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json"
+    }
+  ],
+  "inserted": [],
+  "skipped_as_duplicate": [],
+  "put_back": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+      "field": "unified_title_override",
+      "value": "Brakes (ASE A5 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_merge_confirm",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "issuing_agency_override",
+      "value": "California Community College Chancellor's Office",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:47:58.805608+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "issuing_agency_override",
+      "value": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewer_email": "map@rccd.edu",
+      "reviewed_at": "2026-07-09T00:07:08.979312+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_merge_confirm",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+    }
+  ],
+  "put_back_skipped": [],
+  "replaced": [],
+  "replace_missed": [],
+  "retire_missed": [],
+  "retired": [],
+  "read_back": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+      "field": "unified_title_override",
+      "value": "Brakes (ASE A5 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Braking Systems",
+        "field": "unified_title_override",
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "unified_title_override",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "unified_title_merge_confirm",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "unified_title_merge_confirm",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+      "field": "issuing_agency_override",
+      "value": "California Community College Chancellor's Office",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning",
+        "field": "issuing_agency_override",
+        "value": "California Community College Chancellor's Office",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:47:58.805608+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "California Community College Chancellor's Office",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:47:58.805608+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "unified_title_override",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+        "field": "unified_title_override",
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+      "field": "issuing_agency_override",
+      "value": "National Institute for Automotive Service Excellence (ASE)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as map@rccd.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Air Conditioner",
+        "field": "issuing_agency_override",
+        "value": "National Institute for Automotive Service Excellence (ASE)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-09T00:07:08.979312+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "National Institute for Automotive Service Excellence (ASE)",
+        "reviewer_email": "map@rccd.edu",
+        "reviewed_at": "2026-07-09T00:07:08.979312+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+        "field": "unified_title_override",
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Advanced Electrical and Electronic Systems",
+        "field": "unified_title_merge_confirm",
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "ASE Certificate Bundles",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+        "field": "unified_title_override",
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+      "field": "unified_title_merge_confirm",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 1 (ASE A8 Engine Performance)",
+        "field": "unified_title_merge_confirm",
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11/applied_2026-11-11T22-13-10Z.json",
+      "live": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+        "field": "unified_title_override",
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": {
+        "value": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "field": "unified_title_override",
+      "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+        "field": "unified_title_override",
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": {
+        "value": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+      "field": "unified_title_override",
+      "value": "Engine Performance 2 (ASE A8 standards)",
+      "reinstate": true,
+      "state": "reinstated",
+      "why": "already holds the row as slee@cccco.edu saved it",
+      "row": {
+        "course_id": "_CREDENTIAL_REVIEW::Engine Performance 2 (ASE A8 Engine Performance)",
+        "field": "unified_title_override",
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      },
+      "from_receipt": "kb/cer_decisions_out/2026-11-11-2/applied_2026-11-11T22-26-13Z.json",
+      "live": {
+        "value": "Engine Performance 2 (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00"
+      }
+    }
+  ]
+}
