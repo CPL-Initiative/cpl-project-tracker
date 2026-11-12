@@ -1,6 +1,6 @@
-# Credential Rename Dry-Run — 2026-11-11
+# Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-11T22:53:43Z`
+Generated: `2026-11-12T00:26:47Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -18,11 +18,7 @@ Generated: `2026-11-11T22:53:43Z`
 
 | Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
 |---|---|---:|---:|---:|---:|
-| `Automotive Technology (ASE A7 Heating and Air Conditioning)` | ⇒ `Heating and Air Conditioning (ASE A7 standards)` | 1 | 1 | 2 | 0 |
-| `Heating and Air Conditioning` | ⇒ `Heating and Air Conditioning (ASE A7 standards)` | 2 | 1 | 1 | 0 |
-| `Automotive Technology (ASE A5 Brakes)` | ⇒ `Brakes (ASE A5 standards)` | 1 | 1 | 7 | 2 |
 | `Engine Performance (ASE A8 Engine Performance)` | ⇒ `Engine Performance (ASE A8 standards)` | 1 | 1 | 1 | 0 |
-| `Engine Performance 1 (ASE A8 Engine Performance)` | ⇒ `Engine Performance (ASE A8 standards)` | 1 | 1 | 1 | 0 |
 
 ## Held: folds into a family title
 
@@ -56,36 +52,25 @@ Generated: `2026-11-11T22:53:43Z`
 - `ASE Master Automobile Technician (A1–A8 + L1)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Automobile Technician (A1–A8) or L3` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Medium/Heavy Truck Technician (T1–T8)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
-- `Advanced Electrical and Electronic Systems` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 
 Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disagreement). Rule 2, cert form: the target's issuer stays and a folded college record is dropped. Rule 3, additive.
 
-- `Brakes (ASE A5 standards)` (rule 2b, taught to the standard)
-  - EXCEPTION for a person (rule 2b, taught to the standard): 3 industry-certification exhibit(s) under `Automotive Braking Systems`, `Automotive Technology (ASE A5 Brakes)`; issuer California Community Colleges
 - `Engine Performance (ASE A8 standards)` (rule 2b, taught to the standard)
-  - EXCEPTION for a person (rule 2b, taught to the standard): 1 industry-certification exhibit(s) under `Engine Performance 1 (ASE A8 Engine Performance)`; issuer California Community Colleges
-- `Heating and Air Conditioning (ASE A7 standards)` (rule 2b, taught to the standard)
-  - an older person-set issuer read as an ordinary record: National Institute for Automotive Service Excellence (ASE) on `Automotive Air Conditioner` (slee@cccco.edu, time unknown)
-  - an older person-set issuer read as an ordinary record: California Community College Chancellor's Office on `Heating and Air Conditioning` (slee@cccco.edu, time unknown)
-  - EXCEPTION for a person (rule 2b, taught to the standard): 2 industry-certification exhibit(s) under `Automotive Air Conditioner`, `Heating and Air Conditioning`; issuer California Community Colleges
 
 ## Clean renames (would land on apply)
 
 | Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
 |---|---|---|---:|---:|---|
-| `Automotive Air Conditioner` | → | `Heating and Air Conditioning (ASE A7 standards)` | 1 | 1 | ✓ |
-| `Automotive Braking Systems` | → | `Brakes (ASE A5 standards)` | 2 | 0 | ✓ |
-| `Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems 1 (ASE A6 standards)` | 1 | 0 | ✓ |
-| `Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems 2 (ASE A6 standards)` | 1 | 0 | ✓ |
 | `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` | → | `Automatic Transmission/Transaxle (ASE A2 standards)` | 1 | 0 | ✓ |
+| `Automotive Technology (ASE A5 Brakes)` | → | `Brakes (ASE A5 standards)` | 6 | 2 | ✓ |
 | `Automotive Technology (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems (ASE A6 standards)` | 3 | 0 | ✓ |
+| `Automotive Technology (ASE A7 Heating and Air Conditioning)` | → | `Heating and Air Conditioning (ASE A7 standards)` | 2 | 0 | ✓ |
 | `Automotive Technology (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 1 | 0 | ✓ |
 | `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` | → | `Light Vehicle Diesel Engines (ASE A9 standards)` | 1 | 0 | ✓ |
 | `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` | → | `Advanced Engine Performance Specialist (ASE L1 standards)` | 1 | 0 | ✓ |
 | `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` | → | `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)` | 1 | 0 | ✓ |
-| `Engine Performance 2 (ASE A8 Engine Performance)` | → | `Engine Performance 2 (ASE A8 standards)` | 1 | 0 | ✓ |
 | `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` | → | `Manual Drive Train and Axles (ASE A3 standards)` | 1 | 0 | ✓ |
 | `Suspension and Steering (ASE A4 Suspension and Steering)` | → | `Suspension and Steering (ASE A4 standards)` | 3 | 2 | ✓ |
 

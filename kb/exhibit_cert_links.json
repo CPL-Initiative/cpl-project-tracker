@@ -1,13 +1,13 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-11T17:42:04+00:00",
+ "_reference_generated_at": "2026-11-12T00:25:24+00:00",
  "counts": {
-  "certs_linked": 234,
+  "certs_linked": 238,
   "titles_linked": 278,
-  "holds": 262,
+  "holds": 266,
   "bundles": 51,
-  "aligned": 16,
+  "aligned": 12,
   "codes_not_in_catalog": [
    "G1"
   ]
@@ -419,6 +419,13 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
+  "ITC1519": {
+   "code": "MIL6",
+   "name": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems",
+   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL6 Electrical/ Electronic Systems",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
   "ITC1520": {
    "code": "A6",
    "name": "Electrical/Electronic Systems",
@@ -607,6 +614,27 @@
    "catalog_name": "NCCER HVAC, Level 1",
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
+  },
+  "ITC4224": {
+   "code": "MIL3",
+   "name": "Military Tactical Wheeled Vehicle – Drive Train",
+   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL3 Drive Train",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
+  "ITC4225": {
+   "code": "MIL4",
+   "name": "Military Tactical Wheeled Vehicle – Chassis",
+   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL4 Chassis",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
+  "ITC4227": {
+   "code": "MIL7",
+   "name": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning",
+   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL7 Heating, Ventilation & Air Conditioning (HVAC)",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
   },
   "ITC4229": {
    "code": "L4",
@@ -2535,20 +2563,6 @@
     "ITC2485"
    ]
   },
-  "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC1520"
-   ]
-  },
-  "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC1520"
-   ]
-  },
   "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
    "relation": "aligned",
    "rule": "all",
@@ -3090,20 +3104,6 @@
     "ITC4239"
    ]
   },
-  "Engine Performance 1 (ASE A8 Engine Performance)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4239"
-   ]
-  },
-  "Engine Performance 2 (ASE A8 Engine Performance)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4239"
-   ]
-  },
   "FAA Certified Flight Instructor — Instrument (CFII)": {
    "relation": "holds",
    "rule": "all",
@@ -3556,6 +3556,34 @@
    "rule": "all",
    "certs": [
     "ITC1959"
+   ]
+  },
+  "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4225"
+   ]
+  },
+  "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4224"
+   ]
+  },
+  "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1519"
+   ]
+  },
+  "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4227"
    ]
   },
   "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {

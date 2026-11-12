@@ -1,18 +1,18 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-11T21:41:29Z",
+ "written_at": "2026-11-12T00:27:54Z",
  "sources": {
   "procedures_run": "2026-11-11T21:41:24Z",
-  "suggestions": "2026-11-11T17:43:29Z",
-  "statewide": "2026-11-11T17:39:38",
-  "audit": "2026-11-11T17:43:09+00:00"
+  "suggestions": "2026-11-12T00:26:47Z",
+  "statewide": "2026-11-12T00:23:18",
+  "audit": "2026-11-12T00:26:27+00:00"
  },
  "tiles": {
   "names": {
    "n": 5716,
-   "of": 5894,
-   "waiting": 178
+   "of": 5896,
+   "waiting": 180
   },
   "aligned": {
    "n": 54,
@@ -188,7 +188,6 @@
   "California Bureau of Real Estate Appraisers (BREA)",
   "California Certifying Board for Medical Assistants (CCBMA)",
   "California Commission on Peace Officer Standards and Training (POST)",
-  "California Community College Chancellor's Office",
   "California Community Colleges",
   "California Conservation Corps",
   "California Consortium of Addiction Programs and Professionals (CCAPP)",
