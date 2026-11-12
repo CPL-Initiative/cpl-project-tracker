@@ -6,7 +6,7 @@ Failure modes, each observed before this file existed:
 1. TWO WRITERS PUSH THE SAME GENERATED FILES OUTSIDE ONE GROUP (finding 7). cer-procedures.yml commits four
    files the daily also commits (kb/exhibits_adoption.json, exhibits_review.json, exhibits_related.json,
    the Commons status file) from a group of its own. Pinned: on main it joins `daily-dashboard`, and every
-   workflow in that group keeps cancel-in-progress false (a cancelled apply leaves a half-written state).
+   workflow in that group keeps cancel-in-progress false (a canceled apply leaves a half-written state).
 
 2. A LOST PUSH ENDS THE RUN (finding 8). Run 43121820272 (2026-11-11 23:42Z) aborted its rebase on a conflict
    in kb/cred_rename_dryrun/report.md, a file it regenerates. The push loop is run here in a scratch repo:
