@@ -197,8 +197,12 @@ function storageKeys(w) {
   {
     const FN = fs.readFileSync("chatbox/supabase/functions/library-publish-now/index.ts", "utf8");
     const serve = FN.slice(FN.indexOf("Deno.serve("));
+    // The queue check and the group list live in one shared module, which docket-process imports too (S643).
+    const SHARED = fs.readFileSync("chatbox/supabase/functions/_shared/group_queue.mjs", "utf8");
+    check("E ⭐ the queue check and the group list come from the one shared module, and the function keeps no copy",
+      /^import \{ fileOf, readGroupQueue \} from "\.\.\/_shared\/group_queue\.mjs";$/m.test(FN) && !/const (GROUP|JOB_LEVEL|WAITING) = \[/.test(FN));
     // The one workflow it dispatches: WORKFLOW, and the only dispatch call names it.
-    const groupSrc = (/const GROUP = \[([\s\S]*?)\];/.exec(FN) || [])[1] || "";
+    const groupSrc = (/export const GROUP = \[([\s\S]*?)\];/.exec(SHARED) || [])[1] || "";
     const outside = FN.replace(/const GROUP = \[[\s\S]*?\];/, "").replace(/const JOB_LEVEL = \[[\s\S]*?\];/, "");
     const ymls = (outside.match(/"[A-Za-z0-9_.-]+\.yml"/g) || []).map((x) => x.slice(1, -1));
     const dispatches = FN.match(/\/dispatches"/g) || [];
@@ -213,13 +217,14 @@ function storageKeys(w) {
       if (mm) { inGroup.push(f); if (mm[1].length > 2) jobLevel.push(f); }
     });
     const listed = (groupSrc.match(/"[^"]+"/g) || []).map((x) => x.slice(1, -1)).sort();
-    const jobListed = (((/const JOB_LEVEL = \[([\s\S]*?)\];/.exec(FN) || [])[1] || "").match(/"[^"]+"/g) || []).map((x) => x.slice(1, -1)).sort();
+    const jobListed = (((/export const JOB_LEVEL = \[([\s\S]*?)\];/.exec(SHARED) || [])[1] || "").match(/"[^"]+"/g) || []).map((x) => x.slice(1, -1)).sort();
     check("E ⭐ GROUP holds exactly the workflows in concurrency group daily-dashboard", listed.join(",") === inGroup.join(",") && inGroup.length > 1, listed.join(",") + " vs " + inGroup.join(","));
     check("E JOB_LEVEL holds exactly those whose group sits on a job", jobListed.join(",") === jobLevel.join(","), jobListed.join(",") + " vs " + jobLevel.join(","));
     check("E ⭐ the queue is read before the dispatch, another workflow's waiting run answers 409 busy_behind, and an unread queue dispatches nothing",
-      serve.indexOf("/actions/runs?per_page=100&status=") > 0 && serve.indexOf("/actions/runs?per_page=100&status=") < serve.indexOf("/dispatches")
-      && /reason: "busy_behind"/.test(FN) && /return busyBehind\(origin, waiting\[0\], who\)/.test(serve) && (serve.match(/reason: "queue_unread"/g) || []).length === 3
-      && /status=in_progress/.test(serve) && /\/jobs\?per_page=100/.test(serve));
+      serve.indexOf("await readGroupQueue(") > 0 && serve.indexOf("await readGroupQueue(") < serve.indexOf("/dispatches")
+      && /reason: "busy_behind"/.test(FN) && /return busyBehind\(origin, q\.busy, who\)/.test(serve) && /if \(q\.unread\) return reply\(origin, 502, \{ ok: false, reason: "queue_unread"/.test(serve)
+      && SHARED.indexOf("/actions/runs?per_page=100&status=") > 0 && (SHARED.match(/return \{ unread: true, status: /g) || []).length === 3
+      && /return \{ busy: waiting\[0\] \}/.test(SHARED) && /status=in_progress/.test(SHARED) && /\/jobs\?per_page=100/.test(SHARED));
     check("E ⭐ the ref is fixed to main and the dispatch body carries nothing else", /const REF = "main";/.test(FN) && /body: JSON\.stringify\(\{ ref: REF \}\)/.test(FN) && !/inputs:/.test(FN));
     check("E ⭐ it takes nothing from the caller (the request body is never read)", !/req\.(json|text|formData|body)\b/.test(FN) && !/searchParams/.test(FN));
     check("E the reviewer check runs before the key is read or GitHub is called",
@@ -227,7 +232,7 @@ function storageKeys(w) {
     check("E a reviewer's session only: no team phrase, the anon key never dispatches",
       !/team_pass_ok|x-team-pass/.test(FN) && /bearer !== anon/.test(FN) && /if \(!who\) return reply\(origin, 401/.test(serve));
     check("E it reads no table and writes nothing (its one PostgREST call is the reviewer check)", (FN.match(/\/rest\/v1\//g) || []).length === 1 && /rpc\/" \+ name/.test(FN));
-    check("E the two-minute hold, and a run already waiting is reused", /HOLD_MS = 2 \* 60 \* 1000/.test(FN) && /reason: "too_soon"/.test(FN) && /const WAITING = \["queued", "pending", "waiting"\]/.test(FN)
+    check("E the two-minute hold, and a run already waiting is reused", /HOLD_MS = 2 \* 60 \* 1000/.test(FN) && /reason: "too_soon"/.test(FN) && /export const WAITING = \["queued", "pending", "waiting"\]/.test(SHARED)
       && /fileOf\(run\) === WORKFLOW && run\.head_branch === REF/.test(serve));
     check("E the key: LIBRARY_DISPATCH_TOKEN, else WORKPLAN_DISPATCH_TOKEN; without either, 503",
       /Deno\.env\.get\("LIBRARY_DISPATCH_TOKEN"\) \|\| Deno\.env\.get\("WORKPLAN_DISPATCH_TOKEN"\)/.test(FN) && /reason: "not_configured"/.test(FN));

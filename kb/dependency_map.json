@@ -595,14 +595,14 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 72
+     "line": 84
     },
     {
      "id": "edgefn:library-publish-now",
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 98
+     "line": 92
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1090,7 +1090,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 27
+     "line": 39
     },
     {
      "id": "edgefn:funding-door",
@@ -1104,7 +1104,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 53
+     "line": 47
     },
     {
      "id": "edgefn:library-revise-draft",
@@ -1878,7 +1878,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1328,
+     "line": 1332,
      "tabs": [
       "commons"
      ]
@@ -6379,7 +6379,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 887,
+     "line": 891,
      "tabs": [
       "commons"
      ]
@@ -27143,7 +27143,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1112,
+     "line": 1116,
      "tabs": [
       "commons"
      ]
@@ -29059,7 +29059,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 797,
+     "line": 801,
      "tabs": [
       "commons"
      ]
@@ -29069,7 +29069,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 780,
+     "line": 784,
      "tabs": [
       "commons"
      ]
@@ -30593,7 +30593,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1090,
+     "line": 1094,
      "tabs": [
       "commons"
      ]
