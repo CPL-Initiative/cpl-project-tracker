@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 1468,
-    "bytes": 14949364,
+    "bytes": 14949332,
     "over_budget": 2,
     "handoff_max": 641,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59974,
+    "always_loaded_bytes": 59968,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59974,
+        "bytes": 59968,
         "over": 0
       },
       "other": {
         "files": 151,
-        "bytes": 4607939,
+        "bytes": 4607692,
         "over": 1
       },
       "index": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 534557,
+        "bytes": 534561,
         "over": 1
       },
       "handoff": {
         "files": 602,
-        "bytes": 4150779,
+        "bytes": 4150996,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 26657,
-      "bytes": 4594520439,
+      "bytes": 4594519557,
       "heavy_bytes": 3319588694,
       "heavy_share": 0.723,
       "ignore_filters": [
@@ -160,13 +160,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 161227,
+        "bytes": 160980,
         "limit": 150000,
         "lane": "other",
-        "over_by": 11227,
+        "over_by": 10980,
         "ratio": 1.07
       },
-      "message": "161,227 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "160,980 B is 1.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {

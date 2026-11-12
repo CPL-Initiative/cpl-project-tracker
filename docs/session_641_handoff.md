@@ -25,7 +25,7 @@ check 4 fails on `main` on five titles and nothing runs it (Open work 4). The da
 
 Draft #3139 declared the whole queue as S640's scope, so firings stood down while it was live. [TO FILL: #3139 merged
 at …, or still open.] **Safe to run unattended, in this order,** each under Rule 10 and the playbook: Open work 1 to
-4 and 6 to 8. **Waits for Sam:** the guarded delete of Sierra's ghost rows (Sheet 182, *Waits for my send or go*);
+4 and 6 to 8. **Waits for Sam:** the guarded delete of Sierra's ghost rows ([Sheet 182](https://claude.ai/artifact/RQRFYXoMG4xZiq8LWPQoL2) card 6, *Waits for my send or go*; read its `replies` store first);
 the coverage notes to Malone and to MAP/ITPI (his send) and analytics on public pages (his go), both as handoff 640
 listed them; anything on the `CLAUDE.md` hold list. Routine step 11 reads Shasta's SLO trial (#3102, run 43157883293
 filed part 1 at 05:06Z): half or more parsed moves Shasta to read.
@@ -109,7 +109,7 @@ No S640 worker survives a new session. Brief a fresh one per open branch from it
 - **Sam, relayed by COBIx (#3110, comment 6813256997):** the conductor model and settings above
   (`sam-conductor-model-fable-5-2-2026-11-11`); "Yes, pick them up tonight." for the harvest's Next 1 to 4
   (`sam-harvest-next-steps-tonight-2026-11-11`).
-- **The S640 conductor's, each on Open Asks Sheet 182 for Sam to revise** [TO FILL: Sheet 182's link]:
+- **The S640 conductor's, each on [Open Asks Sheet 182](https://claude.ai/artifact/RQRFYXoMG4xZiq8LWPQoL2) (current, published about 05:50Z, its store empty) for Sam to revise; card 6 waits for his go on the ghost-row delete:**
   `d-standards-plan-four-entries-s640`, `d-rename-apply-drops-fulfilled-approvals-s640`,
   `d-standards-second-plan-s640`, `d-rename-apply-one-repoint-path-s640` (pending until #3140 merges),
   `d-pdf-reader-design-calls-s640`. The lanes carry each as a DECIDED line.
