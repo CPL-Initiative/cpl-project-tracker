@@ -30,7 +30,8 @@ Failure modes, each observed before this file existed:
    No conflict, so before S643 the commit carried outputs built from the old input. Pinned: a clean rebase that
    changes any path outside the commit step's `not_inputs` (docs/ and tests/) rebuilds once, by the same
    daily_rebuild; only those paths changed, nothing rebuilds; one rebuild a run, so an input that changes again
-   after it is pushed over with a warning, never a second rebuild. `not_inputs` is kept honest by a walk of
+   after it is pushed over with a warning, never a second rebuild; a failed input rebuild pushes the run's first
+   build, rebased, as before the rule (a failed conflict rebuild still exits 1). `not_inputs` is kept honest by a walk of
    every file the build runs (scripts/daily_build.sh's commands, their imports, the modules they load by path and
    the scripts they launch): one that names a path under either prefix, or walks the tree, fails here.
 
@@ -452,9 +453,15 @@ check("push: the bound: an input changed again after the rebuild is pushed over 
       and "a second input change" in r["log"] and r["src"] == "theirs again"
       and r["report"] == "v1 built from theirs; scrape of the first pass; key k9", (r["rc"], r["build"], r["log"], r["out"][-900:]))
 r = push_case(other_edits=INPUT, fail_build=True)
-check("push: a failed clean-rebase rebuild exits 1 with nothing pushed",
-      r["rc"] == 1 and r["build"] == 1 and not ours_landed(r) and "Daily rebuild failed" in r["out"],
-      (r["rc"], r["log"], r["out"][-600:]))
+check("push: a failed input rebuild publishes the run's first build, rebased, and says so",
+      r["rc"] == 0 and r["build"] == 1 and ours_landed(r) and r["report"] == "ours, first pass"
+      and r["src"] == "theirs" and "a merge to main" in r["log"] and "(rebuilt on " not in r["log"][0]
+      and "::warning title=Daily input rebuild failed; published the first build::" in r["out"]
+      and "Push succeeded on attempt 2." in r["out"], (r["rc"], r["report"], r["log"], r["out"][-600:]))
+r = push_case(other_edits=INPUT, fail_build=True, reject=5, land_at=5)
+check("push: a failed input rebuild on the last attempt still gets its push",
+      r["rc"] == 0 and ours_landed(r) and r["report"] == "ours, first pass"
+      and "Push succeeded on attempt 6." in r["out"], (r["rc"], r["report"], r["out"][-600:]))
 r = push_case(other_edits=INPUT, reject=5, land_at=5)
 check("push: a changed input first seen on the last attempt still pushes the rebuilt commit",
       r["rc"] == 0 and "Push succeeded on attempt 6." in r["out"] and r["build"] == 1
@@ -489,8 +496,9 @@ check("push: a second conflict pushes nothing and picks no side",
       not ours_landed(r) and r["log"][0] == "a second merge" and r["report"] == "theirs again", (r["log"], r["report"]))
 
 r = push_case(other_edits=CONFLICT, fail_build=True)
-check("push: a failed rebuilt command exits 1 with nothing pushed",
-      r["rc"] == 1 and r["build"] == 1 and not ours_landed(r) and r["report"] == "the other writer's report",
+check("push: a failed conflict rebuild still exits 1 with nothing pushed (no clean first build to fall back to)",
+      r["rc"] == 1 and r["build"] == 1 and not ours_landed(r) and r["report"] == "the other writer's report"
+      and "::error title=Daily rebuild failed::" in r["out"] and "published the first build" not in r["out"],
       (r["rc"], r["log"], r["out"][-600:]))
 
 r = push_case(other_edits=CONFLICT, reject=5, land_at=5)

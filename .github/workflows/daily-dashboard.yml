@@ -27,7 +27,8 @@ on:
 # of it is ever picked: the "Commit and push to main" step resets to the new main and runs that main's
 # scripts/daily_build.sh once more, inside this job, then pushes (COBIx #3110 finding 8, S641). A clean rebase
 # that changes any path the build may read (all but docs/ and tests/) rebuilds the same way (S643); one rebuild
-# a run, and an input that changes again after it is pushed over with a warning. Never by a
+# a run, and an input that changes again after it is pushed over with a warning; when that rebuild fails, the
+# run's first build is rebased and pushed, as before. Never by a
 # dispatch: a conflicted run that ends green having published nothing makes the gate stand the later rungs
 # down. A second conflict, or a failed rebuild, ends the run red with nothing pushed, so the later rungs stay
 # the backstop. The CustomReport fetch, the scrape and the MIL/JST fetch are reused in the rebuild unless
@@ -335,6 +336,7 @@ jobs:
           }
           echo "start=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           daily_rebuilt=0
+          why=
 
           stage
           if git diff --cached --quiet; then
@@ -377,6 +379,7 @@ jobs:
               fi
               git reset -q --hard "$pre"   # back to the run's commit, as an aborted rebase leaves it
               daily_rebuilt=1
+              why=input
               echo "::warning title=Daily push rebased over a changed input::Main changed $n_in build input(s) since ${base:0:8} with no conflict (first: $first_in). Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
               printf '%s\n' "$inputs" | sed -n '1,20s/^/  changed input: /p'
             else
@@ -399,11 +402,28 @@ jobs:
                 exit 1
               fi
               daily_rebuilt=1
+              why=conflict
               echo "::warning title=Daily push conflicted::Another writer changed a file this run built. Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
             fi
             if ! daily_rebuild; then
-              echo "::error title=Daily rebuild failed::The rebuild on the new main failed. Nothing is pushed; the later rungs of the ladder are the backstop."
-              exit 1
+              if [ "$why" = conflict ]; then
+                echo "::error title=Daily rebuild failed::The rebuild on the new main failed. Nothing is pushed; the later rungs of the ladder are the backstop."
+                exit 1
+              fi
+              # A failed rebuild on the input path never leaves the day worse than before the rule (S643, the
+              # conductor): the run's first build rebased cleanly a moment ago, so it is restored, rebased again
+              # and pushed, as every clean rebase was before. The one rebuild is spent. A conflict has no clean
+              # first build to fall back to, so it keeps its exit 1 above.
+              git reset -q --hard "$pre"
+              if ! git rebase origin/main; then
+                git rebase --abort 2>/dev/null || true
+                echo "::error title=Daily input rebuild failed::The rebuild failed and the first build no longer rebases cleanly. Nothing is pushed; the later rungs of the ladder are the backstop."
+                exit 1
+              fi
+              echo "::warning title=Daily input rebuild failed; published the first build::The rebuild on the new main failed. Pushing the run's first build, rebased; its outputs trail main's changed inputs until the next run."
+              if [ "$attempt" -eq "$max" ]; then max=$((max + 1)); fi
+              attempt=$((attempt + 1))
+              continue
             fi
             stage
             if git diff --cached --quiet; then
