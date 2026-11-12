@@ -1,0 +1,14 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Berkeley City College, third read. The second (berkeley_city_ge_pages, run 43138963119) listed one tab list under each section: 41810 under Degree and Certificate Requirements (40739, two tabs) and 41800 under Transfer Information (40736, nine tabs). Each section's own page prints only an introduction; Transfer Information says 'general education and elective courses for a total of 60 transferable units'. This read lists each tab list's tabs and opens each tab list as an entry (cq_view, the tabs joined as the capture joins a program's), so the Cal-GETC tab and the local GE pattern tab print whole. No model call.",
+ "college": "Berkeley City College",
+ "questions": {
+  "ge_units": "What do Berkeley City's tabs print for Cal-GETC and for the local A.A./A.S. general education pattern: areas, each area's units, a total, and any minimum-60, electives or double-count sentence?"
+ },
+ "keywords": ["Cal-?GETC", "General Education", "\\b\\d+\\s*(?:semester\\s*)?units", "Total", "minimum", "double", "Electives?"],
+ "pages": [
+  {"url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=41810", "answers": ["ge_units"]},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=41800", "answers": ["ge_units"]},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/40739/40739/41810", "answers": ["ge_units"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/40736/40736/41800", "answers": ["ge_units"], "cq_view": true, "cq_catalog": 10327}
+ ]
+}
