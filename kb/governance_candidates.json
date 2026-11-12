@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 15,
-    "scanned": 75
+    "dismissed": 16,
+    "scanned": 76
   },
   "candidates": [
     {
@@ -101,6 +101,14 @@
       "detail": "Scheduled: 33 5 * * *",
       "where": ".github/workflows/docket-process.yml",
       "why": "The Docket's processor (#2963 step 3; Sam's go in session 2026-11-09, \"yes, start step 3\", on the order Sky set out on #2963). A writer acting without a session: it carries out rulings a reviewer saved on Docket cases (field:kb_curation.docket_ruling). It adds no decision right: each case names the register row that owns its decision (`dr`), the ruling is that owner deciding, and the job runs only the commands the reviewed kb/docket/cases.json names for the choice ruled, only scripts on kb/_docket_process.py's ALLOWED list (each writes committed files it can undo from its own receipt), only with --apply beside --expect. It writes a receipt with its undo under kb/docket/receipts/ and commits to main behind the daily build (concurrency daily-dashboard). Nothing on the decision sheets' hold list reaches it."
+    },
+    {
+      "key": "workflow:first-light-apply.yml",
+      "kind": "cadence",
+      "label": "First Light apply",
+      "detail": "Scheduled: 37 * * * *",
+      "where": ".github/workflows/first-light-apply.yml",
+      "why": "The First Light tab's Apply (S643; #3153 comments 6826461825 and 6829695812). An hourly look reads one row of first_light_apply_requests before any checkout and ends there when nothing is pending; a pending request or a dispatch turns the reviewers' marks into ONE pull request (selection, hero list, the three views' copies, story photos) and dispatches js-tests.yml on it. No cadence row: no person owns a recurring outcome here, since the run does nothing until a reviewer presses Apply. No new decision right: the workflow never merges, approves or enables auto-merge, so what reaches the views is decided by Sam's merge of the pull request, recorded on GitHub. It holds no student data: painting files, hero photos, and My CPL Story photos MAP already publishes, carried with only the story's link and the name as MAP printed it."
     },
     {
       "key": "workflow:k10-disclosure-check.yml",
