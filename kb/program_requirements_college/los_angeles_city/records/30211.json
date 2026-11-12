@@ -61,34 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     36.0,
+     45.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     18.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     15.0,
+     24.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +140,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 27
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -144,7 +150,8 @@
     "Apply critical thinking skills to solve problems, to evaluate arguments, and to interpret information.",
     "Employ scientific inquiry methods to conduct and document meaningful research."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -536,6 +543,26 @@
    "Program student learning outcomes copied with hyphenated line breaks rejoined (e.g., 'read -ing' as 'reading')."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": 43136137275,
+ "read_run": 39018419466,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 27
+   },
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
+  }
+ ]
 }

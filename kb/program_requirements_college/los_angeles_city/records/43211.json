@@ -82,9 +82,8 @@
     29.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 28.0-30.0; the catalog states 28.0-29.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -103,9 +102,7 @@
     ],
     "why": [],
     "overlap": true
-   },
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   }
   },
   "repeated": {
    "codes": [],
@@ -408,6 +405,6 @@
    "Core sum: 19 units of fixed courses plus a 3-4 unit statistics choice gives 22-23, which matches the stated total. With List A at 6 units, this matches Major Units 28-29."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": 43136137275,
+ "read_run": 39018419466
 }

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T00:28:15Z",
+ "written_at": "2026-11-12T02:30:47Z",
  "rows": [
   {
    "key": "requirements",
@@ -100,7 +100,7 @@
     {
      "n": 2681,
      "of": 5716,
-     "words": "titles carry a review stamp (1,227 a person's, 1,454 a cohort's); 2,745 credentials, 2,281 of 3,053 records stamped",
+     "words": "titles carry a review stamp (1,227 a person's, 1,454 a cohort's); 2,743 credentials, 2,281 of 3,051 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -166,9 +166,9 @@
     "stamped": 2681,
     "person": 1227,
     "cohort": 1454,
-    "credentials": 2745,
+    "credentials": 2743,
     "confirmed": 1227,
-    "records": 3053,
+    "records": 3051,
     "records_stamped": 2281,
     "saved_at": "2026-11-11T15:43:03Z",
     "fold_at": "2026-11-12T00:24:16Z",
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T00:26:20+00:00",
+    "at": "2026-11-12T02:27:58+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -319,7 +319,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,960 of 9,434 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,960 of 9,433 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -344,7 +344,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -363,14 +363,14 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-10T06:29:11Z",
+    "at": "2026-11-12T00:28:19Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9434,
+    "rows": 9433,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
@@ -387,7 +387,7 @@
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1883,
-    "unsettled_rows": 3474,
+    "unsettled_rows": 3473,
     "head": {
      "50": {
       "settled": 46,
@@ -406,12 +406,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T00:24:14Z",
+    "at": "2026-11-12T02:25:40Z",
     "every_hours": 24
    },
    "facts": {
@@ -683,7 +683,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -946,8 +946,8 @@
     },
     {
      "name": "rung 3",
-     "placed": 46,
-     "untouched": 46,
+     "placed": 45,
+     "untouched": 45,
      "kept": 0,
      "renamed": 0,
      "moved": 0,
@@ -958,8 +958,8 @@
     },
     {
      "name": "rung 4",
-     "placed": 41,
-     "untouched": 41,
+     "placed": 42,
+     "untouched": 42,
      "kept": 0,
      "renamed": 0,
      "moved": 0,
