@@ -1,0 +1,3618 @@
+{
+ "college": "Victor Valley College",
+ "reread_run": "43145085368",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43139057384",
+ "at": "2026-11-12T03:03:02Z",
+ "posted": 39,
+ "batches": 2,
+ "skipped": [
+  {
+   "control_number": "04967",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "10799",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33025",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37442",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "38852",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40071",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40656",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42301",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "43115",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 39,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "07591",
+  "31788",
+  "38779",
+  "40909",
+  "40910",
+  "41994",
+  "42099",
+  "42419",
+  "42596",
+  "42728",
+  "42739",
+  "42740",
+  "42857",
+  "42907",
+  "43294",
+  "43295",
+  "43296",
+  "43297",
+  "43298",
+  "43299",
+  "43306",
+  "43307",
+  "43329",
+  "43449",
+  "43568",
+  "43590",
+  "43596",
+  "43736",
+  "44148",
+  "44149",
+  "44151",
+  "44214",
+  "44287",
+  "44878",
+  "45081",
+  "45082",
+  "45110",
+  "45880",
+  "46076"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 28,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Victor Valley College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43139057384;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 18,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHDV 100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 106",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 142",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 160",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 210",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 220",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 239",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 240",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Elective Specialization Courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "CHDV 111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 133",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 134",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 141",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 144",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHDV 145",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Site Supervisor"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 39,
+      "min": 39
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Level III: Site Supervisor (Pre School) Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 39,
+   "total_min": 39,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/child-development/site-supervisor-pre-school-ca/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Level III: Site Supervisor (pre-school)",
+   "control_number": "07591"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "HIST C1001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST C1002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "HIST 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "List B: Area 1 Diversity",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "HIST 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 131",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 155",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 157",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List B: Area 2",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2001",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "education",
+      "politics",
+      "the law",
+      "public administration",
+      "librarianship"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "REQUIREMENTS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/history/history-aat/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "History",
+   "control_number": "31788"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 11,
+    "placed": 9,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PSYC 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "PSYC 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 213",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Interpersonal Communication",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CMST 106",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Second Language",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 4
+      },
+      "courses": [
+       {
+        "code": "ASL 122",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 123",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 124",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ASL 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 101A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SPAN 101B",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "SPAN 101",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "behavior therapist",
+      "classroom paraeducator",
+      "job coach for persons with disabilities",
+      "Behavioral Therapist",
+      "Behavior Technician",
+      "Behavior Instructor",
+      "Behavior Interventionist",
+      "Child Care Worker",
+      "Shadow Aide",
+      "Behavioral Aide",
+      "Special Education Assistant",
+      "Instructional Assistant",
+      "Paraprofessional",
+      "Paraeducator"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Applied Developmental Psychology Certificate of Achievement",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 16,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/psychology/applied-developmental-psychology-ca/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Applied Developmental Psychology",
+   "control_number": "38779"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 042A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 042B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 26.2,
+      "min": 24.5
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Advanced Life Support Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 26.2,
+   "total_min": 24.5,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/advanced-life-support-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Advanced Life Support Provider",
+   "control_number": "40909"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 041A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 041B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 8.6,
+      "min": 7.6
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Life Support Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 8.6,
+   "total_min": 7.6,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/basic-life-support-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Basic Life Support Provider",
+   "control_number": "40910"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AHOM 020",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHOM 020.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "assistant apparel designer",
+      "assistant technical designer",
+      "tailor",
+      "apparel specialist"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Apparel Construction (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/apparel-construction-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Apparel Construction",
+   "control_number": "41994"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "AHOM 075",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AHOM 075.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "assistant textile engineer",
+      "assistant textile designer",
+      "assistant product developer",
+      "assistant interior designer"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 192
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Textile Measurement and Production (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 192,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/adult-home-economics/textile-measurement-production-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Textile Measurement and Production",
+   "control_number": "42099"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CDL 041",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDL 042",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CDL 043",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "local commercial drivers",
+      "over-the road drivers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 229.5,
+      "min": 204
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Commercial Driver Training Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 229.5,
+   "total_min": 204,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/commercial-drivers-license/commercial-driver-training-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Commercial Driver Training",
+   "control_number": "42419"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HLTH 0105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 0106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "counseling-related fields"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Community Mental Health Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 18,
+   "total_min": 16,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/health/community-mental-health-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Community Mental Health",
+   "control_number": "42596"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "WKPR 011",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WKPR 012",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WKPR 014",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Career Success Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-success-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Career Success",
+   "control_number": "42728"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "WKPR 015",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WKPR 016",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 72,
+      "min": 64
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Career Preparation Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 72,
+   "total_min": 64,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-preparation-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Career Preparation",
+   "control_number": "42739"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "WKPR 010",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "WKPR 013",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 72,
+      "min": 64
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Career and Industry Exploration Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 72,
+   "total_min": 64,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/work-force-preparation/career-industry-exploration-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Career and Industry Exploration",
+   "control_number": "42740"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 010.1",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 010.2",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 192
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Level 1 Low-​Beginning English Language Skills Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 192,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-1-low-beginning-english-language-skills-ccy/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "ESL Level 1 Low-Beginning English Language Skills",
+   "control_number": "42857"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 010.5",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ESL 010.6",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Level 3 Low-Intermediate English Language Skills Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-3-low-intermediate-english-language-skills-ccy/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "ESL Level 3 Low-Intermediate English Language Skills",
+   "control_number": "42907"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0201A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0201B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed manicurists",
+      "beauty school educators",
+      "manicuring product developers",
+      "freelance and special event hires",
+      "salon management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 504,
+      "min": 448
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Manicuring Academy (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 504,
+   "total_min": 448,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/manicuring-academy-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Manicuring Academy",
+   "control_number": "43294"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0205",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0206",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed barbers",
+      "barber school educators",
+      "barber product developers",
+      "freelance and special event hires",
+      "barbershop management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 279,
+      "min": 248
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Barber Crossover (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 279,
+   "total_min": 248,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/barber-crossover-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Barber Crossover",
+   "control_number": "43295"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0202",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed estheticians",
+      "beauty school educators",
+      "esthetics product developers",
+      "freelance and special event hires",
+      "salon management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 729,
+      "min": 648
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Esthetician Academy (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 729,
+   "total_min": 648,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/esthetician-academy-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Esthetician Academy",
+   "control_number": "43296"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hairstyling",
+      "manicuring",
+      "esthetics",
+      "self-employed cosmetologists",
+      "educators",
+      "freelance and special event hires",
+      "salon management and ownership",
+      "cosmetology product developers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 333,
+      "min": 296
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Introductory Cosmetology (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 333,
+   "total_min": 296,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-cosmetology-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Introductory Cosmetology",
+   "control_number": "43297"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0114",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0115",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed barbers",
+      "barber school educators",
+      "barber product developers",
+      "freelance and special event hires",
+      "barbershop management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 333,
+      "min": 296
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Advanced Barbering (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 333,
+   "total_min": 296,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-barbering-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Advanced Barbering",
+   "control_number": "43298"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0111",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed barbers",
+      "barber school educators",
+      "barber product developers",
+      "freelance and special event hires",
+      "barbershop management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 333,
+      "min": 296
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Introductory Barbering (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 333,
+   "total_min": 296,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/introductory-barbering-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Introductory Barbering",
+   "control_number": "43299"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hairstyling",
+      "manicuring",
+      "esthetics",
+      "self-employed cosmetologists",
+      "educators",
+      "freelance and special event hires",
+      "salon management and ownership",
+      "cosmetology product developers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 333,
+      "min": 296
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Advanced Cosmetology (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 333,
+   "total_min": 296,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/advanced-cosmetology-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Advanced Cosmetology",
+   "control_number": "43306"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "hairstyling",
+      "manicuring",
+      "esthetics",
+      "self-employed cosmetologists",
+      "educators",
+      "freelance and special event hires",
+      "salon management and ownership",
+      "cosmetology product developers"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 576,
+      "min": 512
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Intermediate Cosmetology Certificate of Completion (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 576,
+   "total_min": 512,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-cosmetology-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Intermediate Cosmetology",
+   "control_number": "43307"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0112",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0113",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed barbers",
+      "barber school educators",
+      "barber product developers",
+      "freelance and special event hires",
+      "barbershop management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 576,
+      "min": 512
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Intermediate Barbering (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 576,
+   "total_min": 512,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/intermediate-barbering-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Intermediate Barbering",
+   "control_number": "43329"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MNLO 010",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MNLO 020",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 31.5,
+      "min": 28
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Forklift Class I, II, & III Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 31.5,
+   "total_min": 28,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-i-ii-iii-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Forklift Class I, II, & III",
+   "control_number": "43449"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MNLO 010",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MNLO 025",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 31.5,
+      "min": 28
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Forklift Class IV & V Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 31.5,
+   "total_min": 28,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/manufacturing-logistics/forklift-iv-v-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Forklift Class IV, & V",
+   "control_number": "43568"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 1,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COSM 0100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COSM 0203",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "self-employed hairstylists",
+      "hairstyling product developers",
+      "freelance and special event hires",
+      "salon management and ownership"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 738,
+      "min": 656
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Hairstylist Academy (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 738,
+   "total_min": 656,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/cosmetology/hairstylist-academy-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Hairstylist Academy",
+   "control_number": "43590"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HLTH 0108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HLTH 0109",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "community health",
+      "social work",
+      "human services"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 81,
+      "min": 72
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Community Health Worker (Noncredit)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 81,
+   "total_min": 72,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/health/community-health-worker-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Community Health Worker",
+   "control_number": "43596"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 012A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ESL 010.9",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 216
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Level 5 Advanced English Skills Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 216,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-5-advanced-english-skills-ccy/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "ESL Level 5 Advanced English Skills",
+   "control_number": "43736"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 045A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 045B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 16.02,
+      "min": 16.02
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Trauma Life Support Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 16.02,
+   "total_min": 16.02,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/trauma-life-support-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Trauma Life Support Provider",
+   "control_number": "44148"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 043A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 043B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 16.02,
+      "min": 16.02
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Pediatric Life Support Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 16.02,
+   "total_min": 16.02,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/pediatric-life-support-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Pediatric Life Support Provider",
+   "control_number": "44149"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "GUID 040",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GUID 041",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GUID 042",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 18,
+      "min": 16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "New Student Onboarding Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 18,
+   "total_min": 16,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/guidance/new-student-onboarding-ccy/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "New Student Onboarding",
+   "control_number": "44151"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 1,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Course List",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ESL 010.7",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ESL 010.8",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 216,
+      "min": 192
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "ESL Level 4 High Intermediate English Skills Certificate of Competency",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 216,
+   "total_min": 192,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/english-second-language/esl-level-4-high-intermediate-english-skills-ccy/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "ESL Level 4 High Intermediate English Skills",
+   "control_number": "44214"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 21,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 106",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "CMST 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 105",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 110",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL C1002",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ENGL C1002H",
+          "units": null,
+          "catalog_addition": false
+         },
+         {
+          "code": "ENGL C1001H",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "JOUR 108",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CMST 188",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "CMST 107",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 180",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 181",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 184",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CMST 282",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "REQUIREMENTS",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/communication-studies/communication-studies-2-aat/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Communication Studies 2.0",
+   "control_number": "44287"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 3,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "APE 0160",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APE 0167",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "APE 0183",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 168.75,
+      "min": 150
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Adapted Fitness Certification Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 168.75,
+   "total_min": 150,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/adapted-physical-education/adapted-fitness-certification-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Adapted Fitness Certification",
+   "control_number": "44878"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 040A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 040B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 9.18,
+      "min": 8.16
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Heartsaver First Aid, CPR, AED Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 9.18,
+   "total_min": 8.16,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/heartsaver-first-aid-cpr-aed-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Heartsaver First Aid, CPR, AED Provider",
+   "control_number": "45081"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PTS 0200",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PTS 0201",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Physical Therapy Aide Certification of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/physical-therapy-services/physical-therapy-aide-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Physical Therapy Aide",
+   "control_number": "45082"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 044A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 044B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 4,
+      "min": 4
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Basic Bleeding Control Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 4,
+   "total_min": 4,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-certification/basic-bleeding-control-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Basic Bleeding Control Provider",
+   "control_number": "45110"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 5,
+    "placed": 5,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "EMC 047A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 046A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMC 046B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMS 087A",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "EMS 087B",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 280,
+      "min": 256
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Critical Care Paramedic Provider Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 280,
+   "total_min": 256,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/emergency-medical-services/critical-care-paramedic-provider-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Critical Care Paramedic Provider",
+   "control_number": "45880"
+  },
+  {
+   "award": "Noncredit program",
+   "checks": {
+    "listed": 2,
+    "placed": 2,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHT 040",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHT 042",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "pharmacy clerk",
+      "technician"
+     ],
+     "measure": "hours",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 108,
+      "min": 96
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Pharmacy Principles Certificate of Completion",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "hours",
+   "total_max": 108,
+   "total_min": 96,
+   "source_url": "https://catalog.vvc.edu//degrees-certificates/pharmacy-technician/pharmacy-principles-ccn/",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38675237912,
+   "program_title": "Pharmacy Principles",
+   "control_number": "46076"
+  }
+ ]
+}

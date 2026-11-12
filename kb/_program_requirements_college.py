@@ -136,8 +136,14 @@ def college_programs(college: str) -> list[dict]:
                      "&college=eq.%s&order=program_control_number,course_code" % P.q(college))
     import _program_requirements_reconcile as R
     conf = R.load_steps().get(college) or {}
-    return with_renumbers(group_programs(progs, rows), R.course_renumbers(college),
-                          conf.get("prefix_aliases"))
+    programs = with_renumbers(group_programs(progs, rows), R.course_renumbers(college),
+                              conf.get("prefix_aliases"))
+    if conf.get("tabs_with_prose"):
+        # The college's pages may name every course in an Overview sentence and keep the course
+        # list and its total in a hidden tab (Victor Valley's EMS certificates, S639; best_text).
+        for p in programs:
+            p["tabs_with_prose"] = True
+    return programs
 
 
 def with_renumbers(programs: list[dict], renumbers: dict, aliases: dict | None = None) -> list[dict]:
@@ -524,7 +530,7 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
             continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
-        text, found, field = P.best_text(pg["got"], fb, fc, courses)
+        text, found, field = P.best_text(pg["got"], fb, fc, courses, bool(program.get("tabs_with_prose")))
         cov = P.coverage(found, courses)
         if cov < P.ACCEPT_SHARE:
             continue

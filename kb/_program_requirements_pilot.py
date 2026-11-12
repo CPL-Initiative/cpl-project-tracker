@@ -683,8 +683,12 @@ def hidden_tabs_text(got: dict) -> str:
     return "\n\n".join(parts)
 
 
+# A course list's closing line as CourseLeaf prints it ("Total Units\t8", "Total Units 16.5").
+TOTAL_UNITS = re.compile(r"\bTotal\s+Units\b", re.I)
+
+
 def best_text(got: dict, found_body: dict, found_content: dict,
-              courses: list[dict] | None = None) -> tuple[str, dict, str]:
+              courses: list[dict] | None = None, tabs_with_prose: bool = False) -> tuple[str, dict, str]:
     """innerText is what a reader sees; textContent also holds a hidden tab
     (CourseLeaf keeps Requirements in a tab). With the program's courses:
     the visible text stands whenever it names ACCEPT_SHARE of them; short of
@@ -694,10 +698,25 @@ def best_text(got: dict, found_body: dict, found_content: dict,
     Program Requirements in a tab and hides a course index that names every
     course in the catalog, so "whichever names more" gave 378 of its 379
     programs the index to read and 367 records came back with no blocks (run
-    38105864413, S362). Without the courses the old rule stands."""
+    38105864413, S362). Without the courses the old rule stands.
+
+    tabs_with_prose (a college's reconcile entry opts in; Victor Valley, S639): an Overview
+    that names every course in a sentence ("This certificate is for successful completion of
+    EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology") reaches the share alone,
+    and the hidden REQUIREMENTS tab with the units and "Total Units 8" was never read
+    (college-page-read of victor_valley_ge_and_ems_tabs). Where the visible text prints no
+    "Total Units" line and a hidden tab names as many of the courses and prints one, the tabs
+    are appended as they are for any page short of the share."""
     if courses is not None:
         if coverage(found_body, courses) >= ACCEPT_SHARE:
-            return got.get("body") or "", found_body, "innerText"
+            tabs = hidden_tabs_text(got) if tabs_with_prose else ""
+            body = got.get("body") or ""
+            if tabs and TOTAL_UNITS.search(tabs) and not TOTAL_UNITS.search(body):
+                both = body + "\n\n" + tabs
+                found_both = find_codes(both, courses)
+                if len(find_codes(tabs, courses)) >= len(found_body):
+                    return both, found_both, "innerText+tabs"
+            return body, found_body, "innerText"
         tabs = hidden_tabs_text(got)
         if tabs:
             both = (got.get("body") or "") + "\n\n" + tabs
