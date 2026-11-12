@@ -323,10 +323,23 @@ check("a figure the reading filed stands",
 print("Los Angeles City's degree headings (S639; college page read 43134671935)")
 LAC = "Los Angeles City College"
 LAC_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "los_angeles_city", "records")
-with open(os.path.join(LAC_DIR, "02718.json")) as fh:
-    bus = json.load(fh)
-with open(os.path.join(LAC_DIR, "02729.json")) as fh:
-    cin = json.load(fh)
+
+
+def as_read(path):
+    """The filed record as the reading left it: a reconcile run files the record with its steps applied
+    and each note's prior value (reconcile 43138495821 filed 02718 with the 18-27 and the floor), so the
+    tests put each noted field back to what it was."""
+    with open(path) as fh:
+        filed = json.load(fh)
+    prog = filed["record"]["program"]
+    for n in filed.get("reconciled") or []:
+        if n.get("field") in prog or n.get("field") in ("ge_units", "degree_total_minimum"):
+            prog[n["field"]] = n.get("was")
+    return filed
+
+
+bus = as_read(os.path.join(LAC_DIR, "02718.json"))
+cin = as_read(os.path.join(LAC_DIR, "02729.json"))
 # pdf page 76 as pypdf gives it ("T otal" split), Business Administration's heading over its own certificate's.
 bus_text = ("LACC 2026-2027 COLLEGE CATALOG 75\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\nBusiness Administration\n"
             "Associate of Arts (AA) Degree\nMajor Units: 39  T otal Units: Minimum of 60\n"
@@ -389,8 +402,7 @@ check("with it the text keeps the title, the award and the 'Minimum of 60' line,
       and "ABOUT OUR CAREER" not in kept["text"])
 check("the codes the text finds stay the same (only their offsets move)",
       sorted(kept["found"]) == sorted(plain["found"]) and kept["coverage"] == plain["coverage"])
-with open(os.path.join(LAC_DIR, "02718.json")) as fh:
-    bus_filed = json.load(fh)
+bus_filed = as_read(os.path.join(LAC_DIR, "02718.json"))
 got, got_notes = R.reconcile(bus_filed["record"], kept["text"], LAC, bus_filed["award"], steps=R.load_steps())
 check("on the kept text the steps fire for Business Administration 02718; on the cut text they cannot",
       got_notes and R.reconcile(bus_filed["record"], plain["text"], LAC, bus_filed["award"], steps=R.load_steps())[1] == [])
@@ -402,8 +414,7 @@ at = C.heading_above(mid, start, lac_above, [{"code": "ENGLISH 270"}])
 check("the walk stops below a line naming a listed course",
       mid[at:].startswith("OR ANY LIST A COURSE") and "ENGLISH 270" not in mid[at:])
 check("no setting, no walk", C.heading_above(mid, start, None, []) == start)
-with open(os.path.join(LAC_DIR, "14274.json")) as fh:
-    rn = json.load(fh)
+rn = as_read(os.path.join(LAC_DIR, "14274.json"))
 rn_text = ("Registered Nursing\nAssociate of Science (AS) Degree\nMajor Units: 36  T otal Units: Minimum of 72\n"
            "(State Code: 14274; TOP Code: 123010)\n")
 check("Registered Nursing 14274's heading prints 'Minimum of 72': neither step reads it",
