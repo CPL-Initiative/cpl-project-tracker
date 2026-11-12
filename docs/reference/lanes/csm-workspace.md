@@ -200,6 +200,10 @@ contained in the Email Template editor"*.
   (`setTemplates`), so both pages write the same words. With none saved the wording is the funding tab's own, and
   *the response email* editor on Implementation Funding still sets that default: once a version is saved in the
   dashboard, an edit there shows only after *Put back the shipped wording*. Guards `csm_workspace_templates` 5b to 5b4.
+- **The acceptance's message was the empty letter (found on Malone's screen, 2026-11-12, Napa; fixed the same day).**
+  `seedMail` took the acceptance's words from the funding tab and then ran the Blank branch over them, so the preview
+  read *Dear ..., The CPL Initiative team* under a subject that was right. It had done so since the templates landed;
+  the guide's own screenshot showed it and was not read closely. Guards 10c2 to 10c4.
 - **The guide follows the page (`tests/csm_workspace_guide_stamp.test.js`).** Malone: *"Make a note somewhere to
   automatically update this documentation whenever this page gets changed in functionality or layout."* The test
   reads every control and label on the dashboard and fails when the set differs from the one the guide was written
