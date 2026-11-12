@@ -111,7 +111,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
-| `first_light_apply_requests` | tabs: `first-light` | tabs: `first-light` |
+| `first_light_apply_requests` | tabs: `first-light` · workflows: `first-light-apply.yml` | tabs: `first-light` |
 | `first_light_marks` | tabs: `first-light` | tabs: `first-light` |
 | `funding_access` | `edgefn:funding-door` | `edgefn:funding-door` |
 | `funding_access_requests` | none found | `edgefn:funding-door` |
@@ -430,7 +430,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_funding.js` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `scripts/k10_disclosure_check.py` | — |
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
-| `cpl_pathways.js` | pages: `CPL_Dashboard.html` | — |
+| `cpl_pathways.js` | pages: `CPL_Dashboard.html` | committed by: `first-light-apply.yml` |
 | `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `funding-model/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_writer.js` | pages: `CPL_Dashboard.html`, `kb-portal/index.html` | — |
@@ -488,7 +488,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fact_sheet_metrics.json` | pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `fact-sheet/_build_statewide_catalog.py` | committed by: `daily-dashboard.yml` |
 | `fetch_custom_report.py` | workflows: `daily-dashboard.yml`, `map-custom-report-load.yml` | — |
 | `fetch_veteran_jst.py` | workflows: `daily-dashboard.yml` | — |
-| `first_light.js` | pages: `CPL_Dashboard.html` | — |
+| `first_light.js` | pages: `CPL_Dashboard.html` | committed by: `first-light-apply.yml` |
 | `first_light_tab.js` | pages: `CPL_Dashboard.html` | — |
 | `funding-model/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `funding/_build_funding_ess.py` | workflows: `daily-dashboard.yml` | — |
@@ -900,7 +900,10 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/adopt/adopt_align.json` | scripts: `kb/_build_adopt_align.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_data.json` | tabs: `cpl-pathways`, `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
+| `library/adopt/index.html` | none found | committed by: `first-light-apply.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
+| `library/index.html` | none found | committed by: `first-light-apply.yml` |
+| `library/photos` | none found | committed by: `first-light-apply.yml` |
 | `library/photos/hero_photos.json` | tabs: `first-light` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
 | `library_remediate.js` | tabs: `library` | — |
@@ -989,7 +992,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
-| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
+| `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `first-light-apply.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
 | `scripts/k10_disclosure_check.py` | workflows: `k10-disclosure-check.yml` | — |
 | `scripts/library_publish.py` | workflows: `library-publish.yml` | — |
 | `scripts/publish_skyview_desc_shards.sh` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
@@ -1180,7 +1183,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tools/first_light_gallery/california.json` | scripts: `scripts/fetch_gallery_thumbs.py` | — |
 | `tools/first_light_gallery/index.json` | none found | committed by: `first-light-gallery-thumbs.yml` |
 | `tools/first_light_gallery/thumbs` | none found | committed by: `first-light-gallery-thumbs.yml` |
-| `tools/first_light_selection.json` | scripts: `scripts/fetch_gallery_thumbs.py` | — |
+| `tools/first_light_selection.json` | scripts: `scripts/fetch_gallery_thumbs.py` | committed by: `first-light-apply.yml` |
 | `tools/first_light_verify.json` | none found | committed by: `first-light-art.yml` |
 | `tools/source_cpl_stories.mjs` | workflows: `cpl-stories.yml` | — |
 | `tools/source_first_light_art.mjs` | workflows: `first-light-art.yml` | — |
@@ -1424,5 +1427,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 63 RPCs · 15 edge functions · 885 file
-datasets · 195 external services · 565 consumers · 68 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 63 RPCs · 15 edge functions · 888 file
+datasets · 195 external services · 566 consumers · 69 workflows · 41 tabs.
