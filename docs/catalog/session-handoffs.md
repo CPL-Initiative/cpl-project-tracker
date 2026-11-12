@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-600 document(s).
+601 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 640 | [Session 640 handoff (from SkyQuail, S639)](../session_640_handoff.md) | 2026-11-12 |
 | 639 | [Session 639 handoff (from SkyTamarind, S638)](../session_639_handoff.md) | 2026-11-11 |
 | 638 | [Session 638 handoff (from SkyPorpoise, S637)](../session_638_handoff.md) | 2026-11-11 |
 | 637 | [Session 637 handoff: Butte 87 to 138 of 164 and displayed, the reconcile's address guard, a stale-issuer report](../session_637_handoff.md) | 2026-11-11 |
