@@ -1,0 +1,186 @@
+name: First Light apply
+
+# The First Light tab's Apply (S643; design #3153 comments 6826461825 and 6829695812). A signed-in reviewer marks
+# paintings and photos in COBI's #first-light and presses Apply, which files a pending row in
+# first_light_apply_requests. This workflow turns the marks into ONE pull request. Sam merges it; nothing here
+# merges, approves or enables auto-merge.
+#
+#   look   (no checkout) one REST read: is a request pending? An hourly run with none ends here, in seconds,
+#          because Actions minutes are tight (COBIx finding 5). A table not yet in place reads as none.
+#   apply  a sparse checkout of the files it writes; tools/first_light_apply.mjs reads every mark through the
+#          tab's own resolver, writes tools/first_light_selection.json, library/photos/hero_photos.json, the three
+#          views' copies of it and the story photos (fetched here, as cpl-stories.yml does); the manifest builder
+#          runs; the one pull request from the branch first-light-apply is opened, or, while it is open, updated by
+#          a commit on its branch (so words a session wrote there stay); js-tests.yml is dispatched on the
+#          branch, since a push with the built-in token starts no workflow and a dispatch does (COBIx finding 3,
+#          fix a); the request row is stamped with the pull request's link, or with the run when it fails.
+#
+# No new credential: the built-in token and the SUPABASE_SERVICE_KEY secret other workflows already use.
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '37 * * * *'   # hourly; the look exits before any checkout when nothing is pending
+
+permissions:
+  contents: read
+
+# One Apply at a time: a second request waits for the first run, then updates the same pull request.
+concurrency:
+  group: first-light-apply
+  cancel-in-progress: false
+
+env:
+  SUPABASE_URL: https://hvuwhnbuahrtptokpqfh.supabase.co
+  BRANCH: first-light-apply
+
+jobs:
+  look:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    outputs:
+      id: ${{ steps.look.outputs.id }}
+    steps:
+      - name: Is an Apply pending? (one REST read, before any checkout)
+        id: look
+        env:
+          SB_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          set -uo pipefail
+          body=$(curl -sS --max-time 20 -w '\n%{http_code}' \
+            "$SUPABASE_URL/rest/v1/first_light_apply_requests?status=eq.pending&select=id&order=id.asc&limit=1" \
+            -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY")
+          code=$(printf '%s' "$body" | tail -n1)
+          if [ "$code" != "200" ]; then
+            echo "::notice::the request table answered HTTP $code; nothing to do"
+            echo "id=" >> "$GITHUB_OUTPUT"; exit 0
+          fi
+          id=$(printf '%s' "$body" | sed '$d' | jq -r '.[0].id // empty')
+          echo "pending request: ${id:-none}"
+          echo "id=$id" >> "$GITHUB_OUTPUT"
+
+  apply:
+    needs: look
+    if: needs.look.outputs.id != '' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      pull-requests: write
+      actions: write
+    env:
+      REQ_ID: ${{ needs.look.outputs.id }}
+      SB_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+      GH_TOKEN: ${{ github.token }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /first_light.js
+            /first_light_tab.js
+            /cpl_pathways.js
+            /fact-sheet/cpl_stories.js
+            /library/index.html
+            /library/adopt/index.html
+            /library/photos/
+            /scripts/install_browser.sh
+            /tools/build_first_light_manifest.mjs
+            /tools/first_light_apply.mjs
+            /tools/first_light_selection.json
+            /tools/first_light_candidates.json
+            /tools/first_light_gallery/index.json
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '20'
+
+      # A second Apply while the first pull request is open builds on that branch, so the words a session wrote
+      # there are kept; with no open pull request the branch starts again from main.
+      - name: Find the one open pull request
+        id: open
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          open=$(gh pr list --head "$BRANCH" --base main --state open --json number,url --jq '.[0] // empty')
+          if [ -n "$open" ]; then
+            git fetch -q --depth 20 origin "$BRANCH"
+            git checkout -q -B "$BRANCH" FETCH_HEAD
+            echo "number=$(jq -r .number <<<"$open")" >> "$GITHUB_OUTPUT"
+            echo "url=$(jq -r .url <<<"$open")" >> "$GITHUB_OUTPUT"
+            echo "building on the open pull request $(jq -r .url <<<"$open")"
+          else
+            git checkout -q -B "$BRANCH"
+            echo "no open pull request; building from main"
+          fi
+
+      - name: Plan from the marks
+        id: plan
+        run: |
+          set -euo pipefail
+          node tools/first_light_apply.mjs --plan --out "$RUNNER_TEMP/plan.json" | tee "$RUNNER_TEMP/plan.out"
+          echo "changed=$(jq -r .changed "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+          echo "fetch=$(jq -r '.fetches | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
+
+      - name: Install a browser for MAP's story photos (only when one is added)
+        if: steps.plan.outputs.changed == 'true' && steps.plan.outputs.fetch != '0'
+        run: |
+          npm init -y >/dev/null 2>&1
+          npm i playwright@1.47.2 >/dev/null 2>&1
+          bash scripts/install_browser.sh node
+          echo "FIRST_LIGHT_PLAYWRIGHT=$GITHUB_WORKSPACE/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+
+      - name: Write the files and rebuild the manifest
+        if: steps.plan.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          node tools/first_light_apply.mjs --apply --plan "$RUNNER_TEMP/plan.json" --body "$RUNNER_TEMP/body.md"
+          node tools/build_first_light_manifest.mjs
+
+      - name: Push the branch and open or update the one pull request
+        id: pr
+        if: steps.plan.outputs.changed == 'true'
+        env:
+          OPEN_NUMBER: ${{ steps.open.outputs.number }}
+          OPEN_URL: ${{ steps.open.outputs.url }}
+        run: |
+          set -euo pipefail
+          git add -A tools/first_light_selection.json first_light.js library/photos cpl_pathways.js library/index.html library/adopt/index.html
+          if git diff --cached --quiet; then echo "outcome=nothing" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git commit -q -m "First Light: apply the tab's marks (request ${REQ_ID:-by dispatch})" -m "Opened by first-light-apply.yml from first_light_marks. Sam merges; nothing auto-merges."
+          if [ -n "$OPEN_NUMBER" ]; then
+            git push origin "HEAD:$BRANCH"
+            gh pr edit "$OPEN_NUMBER" --body-file "$RUNNER_TEMP/body.md"
+            num=$OPEN_NUMBER; url=$OPEN_URL
+            echo "outcome=updated" >> "$GITHUB_OUTPUT"
+          else
+            # No open pull request: a branch left from a closed one is replaced.
+            git push --force origin "HEAD:$BRANCH"
+            url=$(gh pr create --base main --head "$BRANCH" --title "First Light: the tab's marks" --body-file "$RUNNER_TEMP/body.md")
+            num=${url##*/}
+            echo "outcome=opened" >> "$GITHUB_OUTPUT"
+          fi
+          echo "number=$num" >> "$GITHUB_OUTPUT"
+          echo "url=$url" >> "$GITHUB_OUTPUT"
+          # The PR's `test` check: a push with the built-in token starts no workflow; a dispatch does.
+          gh workflow run js-tests.yml --ref "$BRANCH"
+
+      - name: Stamp the request
+        if: always() && env.REQ_ID != ''
+        env:
+          OUTCOME: ${{ job.status != 'success' && 'failed' || (steps.plan.outputs.changed != 'true' && 'nothing') || steps.pr.outputs.outcome }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
+          PR_URL: ${{ steps.pr.outputs.url }}
+        run: |
+          set -euo pipefail
+          detail=""
+          [ "$OUTCOME" = failed ] && detail="the run failed; its log says why"
+          row=$(jq -nc --arg s "${OUTCOME:-failed}" --arg n "$PR_NUMBER" --arg u "$PR_URL" --arg r "$RUN_URL" --arg d "$detail" \
+            '{status:$s, handled_at:(now|todate), run_url:$r} + (if $n != "" then {pr_number:($n|tonumber)} else {} end)
+             + (if $u != "" then {pr_url:$u} else {} end) + (if $d != "" then {detail:$d} else {} end)')
+          curl -sS --fail --max-time 20 -X PATCH "$SUPABASE_URL/rest/v1/first_light_apply_requests?id=eq.$REQ_ID&status=eq.pending" \
+            -H "apikey: $SB_KEY" -H "Authorization: Bearer $SB_KEY" -H "Content-Type: application/json" -H "Prefer: return=minimal" \
+            -d "$row"
+          echo "request $REQ_ID stamped: $OUTCOME"

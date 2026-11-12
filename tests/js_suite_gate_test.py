@@ -191,6 +191,12 @@ check("the suite triggers on push to main",
       re.search(r"^  push:\n    branches: \[main\]", on_text, re.M) is not None)
 check("the suite runs after the nightly (workflow_run on Daily CPL Dashboard)",
       "workflow_run:" in on_text and '"Daily CPL Dashboard"' in on_text)
+check("the suite can be dispatched on a branch (the First Light Apply PR, S643)",
+      re.search(r"^  workflow_dispatch:\s*$", on_text, re.M) is not None)
+check("a dispatched run has no base, so the gate runs the full suite",
+      'elif [ -z "$BASE_SHA" ]; then\n            decision=run' in yaml_only)
+check("first-light-apply.yml dispatches this workflow on its branch after pushing",
+      "gh workflow run js-tests.yml --ref \"$BRANCH\"" in open(os.path.join(REPO, ".github", "workflows", "first-light-apply.yml"), encoding="utf-8").read())
 check("the suite runs on a daily schedule",
       re.search(r"^  schedule:\n    - cron: '[^']+'", on_text, re.M) is not None)
 gate = job_block("gate") or ""

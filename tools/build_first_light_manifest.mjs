@@ -18,14 +18,30 @@ const sel = JSON.parse(fs.readFileSync(ROOT + "tools/first_light_selection.json"
 const entries = Array.isArray(sel) ? sel : sel.paintings;
 const cand = JSON.parse(fs.readFileSync(ROOT + "tools/first_light_candidates.json", "utf8"));
 const byFile = new Map(cand.candidates.map((c) => [c.file, c]));
+// A painting already in the rotation whose file the candidate pool no longer lists (a later sourcing run narrowed
+// the pool: four on 2026-11-12) keeps the URL the manifest already holds, which this builder copied from the pool
+// when it was added. Still never hand-typed.
+const CURRENT = fs.readFileSync(ROOT + "first_light.js", "utf8");
+const inManifest = new Map([...CURRENT.matchAll(/img: "([^"]+)"/g)].map((m) => {
+  const at = m[1].indexOf("Special:FilePath/");
+  let f = "";
+  try { f = at < 0 ? "" : decodeURIComponent(m[1].slice(at + 17).split("?")[0]); } catch (e) { f = ""; }
+  return [f, { img: m[1] }];
+}));
 
 const errors = [];
 const seen = new Set();
 const out = [];
+// An entry the First Light tab's Apply added carries this fixed token in blurb, setting and alt until a session
+// writes the words on the pull request (tools/first_light_apply.mjs). It stays out of the rotation until then;
+// tests/first_light_needs_words.test.js fails the build while any selection entry still carries it in its alt.
+const NEEDS_WORDS = "__needs_words__";
+const waiting = [];
 
 entries.forEach((e, i) => {
   const where = `entry ${i} (${e.title || e.file || "??"})`;
-  const c = byFile.get(e.file);
+  if (["blurb", "setting", "alt"].some((k) => String(e[k] || "").includes(NEEDS_WORDS))) { waiting.push(where); return; }
+  const c = byFile.get(e.file) || inManifest.get(e.file);
   if (!c) { errors.push(`${where}: file not in verified candidates → "${e.file}". Run the sourcing workflow or fix the exact Commons filename.`); return; }
   if (seen.has(e.file)) { errors.push(`${where}: duplicate image "${e.file}" (would repeat in rotation).`); return; }
   seen.add(e.file);
@@ -80,3 +96,4 @@ if (!re.test(js)) { console.error("Could not find the FL-MANIFEST sentinel block
 const next = js.replace(re, (_m, start, end) => `${start}\n${arrayText}\n  ${end}`);
 fs.writeFileSync(ROOT + "first_light.js", next);
 console.log(`Built first_light.js manifest: ${out.length} paintings.`);
+if (waiting.length) console.log(`Held out of the rotation until their words are written (${NEEDS_WORDS}):\n` + waiting.map((x) => "  • " + x).join("\n"));

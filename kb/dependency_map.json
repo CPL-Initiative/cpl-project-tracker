@@ -4,10 +4,10 @@
   "supabase_tables": 115,
   "rpcs": 63,
   "edge_functions": 15,
-  "file_datasets": 884,
+  "file_datasets": 889,
   "external_services": 195,
-  "consumers": 565,
-  "workflows": 68,
+  "consumers": 566,
+  "workflows": 69,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -7096,6 +7096,12 @@
      "line": 0
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
+    }
+   ],
    "served": true,
    "main_committers": []
   },
@@ -8793,6 +8799,12 @@
      "direction": "read",
      "how": "markup",
      "line": 0
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -20346,6 +20358,17 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:library/adopt/index.html": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:library/cpl-opportunity/index.html": {
    "consumers": [
     {
@@ -20357,6 +20380,28 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:library/index.html": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:library/photos": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:library/photos/hero_photos.json": {
@@ -22059,6 +22104,13 @@
     },
     {
      "id": "workflow:cpl-stories.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:first-light-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -25189,6 +25241,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:tools/build_first_light_manifest.mjs": {
+   "consumers": [
+    {
+     "id": "workflow:first-light-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tools/first_light_apply.mjs": {
+   "consumers": [
+    {
+     "id": "workflow:first-light-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tools/first_light_candidates.json": {
    "consumers": [
     {
@@ -25251,6 +25329,12 @@
      "direction": "read",
      "how": "literal",
      "line": 113
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:first-light-apply.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -28693,6 +28777,13 @@
      "tabs": [
       "first-light"
      ]
+    },
+    {
+     "id": "workflow:first-light-apply.yml",
+     "kind": "workflow",
+     "direction": "read",
+     "how": "yaml",
+     "line": 50
     }
    ],
    "main_committers": []
@@ -31964,6 +32055,31 @@
    "deploys": [],
    "chain": [],
    "urls": []
+  },
+  "first-light-apply.yml": {
+   "name": "First Light apply",
+   "crons": [
+    "37 * * * *"
+   ],
+   "scripts": [
+    "tools/first_light_apply.mjs",
+    "scripts/install_browser.sh",
+    "tools/build_first_light_manifest.mjs"
+   ],
+   "adds": [
+    "tools/first_light_selection.json",
+    "first_light.js",
+    "library/photos",
+    "cpl_pathways.js",
+    "library/index.html",
+    "library/adopt/index.html"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": [
+    "https://hvuwhnbuahrtptokpqfh.supabase.co"
+   ]
   },
   "first-light-art.yml": {
    "name": "First Light art (source + verify)",
