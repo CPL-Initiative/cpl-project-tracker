@@ -1,0 +1,87 @@
+{
+  "_about": "Library publish receipt (scripts/library_publish.py): the record's before-values and the update --finish makes, guarded on updated_at; cpl_library_history also files the prior row. Roll back by writing the before-values and reverting the page's commit.",
+  "at": "2026-11-12",
+  "slug": "jst-how-to-obtain-and-upload-to-map-mwdq6m67",
+  "record_id": "7ca43e3c-3188-468e-946a-802101e4fbe7",
+  "draft_id": "567f441c-48ce-40fe-8ab9-e09b478d4ea0",
+  "page": "library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/index.html",
+  "before": {
+    "file_type": null,
+    "home": "not_filed",
+    "made_on": null,
+    "refresh_note": "This looks great. Now analyze the newly uploaded doc on uploading the batch jsts to MAP. add this new information and images to the end of the current visual and keep it as simple as possible. disregard any mention of ccaf or air force transcripts and focus only on jst uploads to map for this section. we do not need to add anything about processing the cpl plans in map after upload--just the upload process.",
+    "regen": {
+      "earlier": [
+        {
+          "note": null,
+          "draft_id": "3a73ddbf-71cf-4ae0-a1cd-ed51a9adfeb3",
+          "ready_at": "2026-11-12T15:53:28.587Z",
+          "documents": [
+            "Guide   CCCApply and JST Bulk Ordering PDF"
+          ],
+          "draft_url": null,
+          "requested_by": "Sam"
+        },
+        {
+          "note": "add in the screenshots and images needed to illustrate the process similar to the uploaded doc.",
+          "draft_id": "44006a11-d5a2-46fe-bd18-a72f0494e369",
+          "ready_at": "2026-11-12T15:59:12.104Z",
+          "documents": [
+            "Guide   CCCApply and JST Bulk Ordering PDF"
+          ],
+          "draft_url": null,
+          "requested_by": "Sam"
+        },
+        {
+          "note": "the images in the visual look good but the current arrangement of the text steps and images is not well aligned. Please reformat and keep everything in one column so the process starts at the top and works downward.",
+          "draft_id": "b6c2e91d-39d2-4dc5-b38d-056c416facf6",
+          "ready_at": "2026-11-12T16:06:20.603Z",
+          "documents": [
+            "Guide   CCCApply and JST Bulk Ordering PDF"
+          ],
+          "draft_url": null,
+          "requested_by": "Sam"
+        }
+      ],
+      "publish": "show",
+      "draft_id": "567f441c-48ce-40fe-8ab9-e09b478d4ea0",
+      "ready_at": "2026-11-12T16:11:15.932Z",
+      "draft_url": null,
+      "new_piece": true,
+      "drafted_by": "Sam",
+      "approved_at": "2026-11-12T16:12:00.015Z",
+      "approved_by": "Sam",
+      "drafted_with": "library-revise-draft",
+      "requested_at": "2026-11-12T16:10:47.513Z",
+      "requested_by": "Sam",
+      "based_on_draft": "b6c2e91d-39d2-4dc5-b38d-056c416facf6",
+      "pictures_checked_at": "2026-11-12T16:12:00.015Z",
+      "pictures_checked_by": "Sam"
+    },
+    "status": "requested",
+    "updated_at": "2026-11-12T16:12:00.40473+00:00",
+    "updated_by": null,
+    "url": null,
+    "version": null,
+    "versions": []
+  },
+  "update": {
+    "versions": [
+      {
+        "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/",
+        "date": "2026-11-12",
+        "label": "Version 1",
+        "status": "Current: I added a final section, Upload the JSTs to MAP, with five steps from logging in to the upload notice and Pictures 8 to 12. I updated the lede and the line that said the page did not show the upload. As you asked, I left out Air Force transcripts and anything about processing CPL plans after upload, including the notice's prompt to add missing exhibits. Pictures 8, 9, 11 and 12 show people's names (a user name in the MAP header, a student's name in a file name, and student names in the upload notices), so cover or crop them before publishing. Drafted from the card by Sam (draft 567f441c-48ce-40fe-8ab9-e09b478d4ea0); published the first public copy on Sam's approval."
+      }
+    ],
+    "refresh_note": null,
+    "regen": null,
+    "updated_by": "library-publish@bot",
+    "url": "https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/",
+    "version": "1",
+    "home": "web",
+    "file_type": "html",
+    "status": "draft",
+    "made_on": "2026-11-12"
+  }
+}

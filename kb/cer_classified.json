@@ -14920,6 +14920,48 @@
    "hints": "723532cdd1",
    "asked": "2026-10-29"
   },
+  "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
+   "raw_title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
+   "unified_title": "Modern Dance Techniques 1",
+   "issuing_agency": "CHAMPS High School",
+   "training_agency": "CHAMPS High School",
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.82,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "arabic-level-numerals",
+    "course-identity",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "_notes": "The cx hint was set aside because it kept the raw text and a CCC issuer. This is a named-school articulation (CHAMPS) aligned to Pierce DANCETQ 141, so it joins the existing 'Modern Dance Techniques 1' title with the school as issuer and trainer. The CHAMPS house family 'Modern Dance Techniques' carries no level and may need merging by a curator.",
+   "rules": "75e72fb99f8c",
+   "hints": "c20a3f582c",
+   "asked": "2026-11-12"
+  },
+  "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II": {
+   "raw_title": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
+   "unified_title": "Modern Dance Techniques 2",
+   "issuing_agency": "CHAMPS High School",
+   "training_agency": "CHAMPS High School",
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.82,
+   "procedures": [
+    "high-school-rop",
+    "local-trainer-is-agency",
+    "arabic-level-numerals",
+    "course-identity",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "_notes": "The cx hint was set aside because it kept the raw text and a CCC issuer. This is a named-school articulation (CHAMPS) aligned to Pierce DANCETQ 142, so it joins the existing 'Modern Dance Techniques 2' title with the school as issuer and trainer. Level II is written as 2.",
+   "rules": "75e72fb99f8c",
+   "hints": "fb3c5b9727",
+   "asked": "2026-11-12"
+  },
   "HIST 035: History of African Americans in the United States": {
    "raw_title": "HIST 035: History of African Americans in the United States",
    "unified_title": "History of African Americans in the United States",
