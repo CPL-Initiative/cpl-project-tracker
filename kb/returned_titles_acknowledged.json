@@ -1,0 +1,32 @@
+{
+ "_about": "Each credential title an in-force rename snapshot moved that is live again (kb/credential_aliases.py returned()), acknowledged: who brought it back, when and why. APPEND-ONLY: add an entry at the end, never edit or remove one (tests/credential_title_resolver_test.py, section 7, pins the seeded entries). A returned title this file does not list is unacknowledged: kb/credential_aliases.py --check warns on it (scripts/check_generated.sh and CI's lints job), puts it on Sam's Exhibits review list, and the Commons scorecard counts it (target 0). Asked by COBIx (issue comment 6827701373, point 1); seeded by S643. Where the record does not say, an entry says not recorded.",
+ "acknowledged": [
+  {
+   "title": "Automotive Electrical Schematic Diagnosis",
+   "moved": "kb/cred_rename_out/2026-07-08 merged it into ASE A6 — Electrical/Electronic Systems",
+   "brought_back_by": "the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu",
+   "brought_back_at": "2026-10-18",
+   "why": "A person's saved assignment, reviewed 2026-06-03 by map@rccd.edu, names this title for the local title \"AUTO 60A: Electrical Schematic Diagnosis- Credit By Exam\"; the fold kept the person's title over the merge target (kb/unclassified_fold/2026-10-18/report.json). The reviewer's reason is not recorded.",
+   "acknowledged_by": "S643 (SkyLark's worker), on COBIx's finding",
+   "acknowledged_at": "2026-11-12"
+  },
+  {
+   "title": "Automotive Electronics",
+   "moved": "kb/cred_rename_out/2026-07-08 merged it into ASE A6 — Electrical/Electronic Systems",
+   "brought_back_by": "the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu",
+   "brought_back_at": "2026-10-18",
+   "why": "A person's saved assignment, reviewed 2026-06-02 by map@rccd.edu, names this title for the local title \"AUTO 60B: Automotive Electronics - Credit By Exam\"; the fold kept the person's title over the merge target (kb/unclassified_fold/2026-10-18/report.json). The reviewer's reason is not recorded.",
+   "acknowledged_by": "S643 (SkyLark's worker), on COBIx's finding",
+   "acknowledged_at": "2026-11-12"
+  },
+  {
+   "title": "Automotive Suspension, Steering and Alignment",
+   "moved": "kb/cred_rename_out/2026-07-08 merged it into ASE A4 — Suspension and Steering",
+   "brought_back_by": "the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu",
+   "brought_back_at": "2026-10-18",
+   "why": "A person's saved assignment, reviewed 2026-06-02 by map@rccd.edu, names this title for the local title \"AUTO 62A: Automotive Suspension, Steering and Alignment - Credit By Exam\"; the fold kept the person's title over the merge target (kb/unclassified_fold/2026-10-18/report.json). The reviewer's reason is not recorded.",
+   "acknowledged_by": "S643 (SkyLark's worker), on COBIx's finding",
+   "acknowledged_at": "2026-11-12"
+  }
+ ]
+}

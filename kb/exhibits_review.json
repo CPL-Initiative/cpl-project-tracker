@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-12T20:24:13Z",
+ "written_at": "2026-11-12T20:44:45Z",
  "sources": {
   "procedures_run": "2026-11-12T16:21:44Z",
   "suggestions": "2026-11-12T20:24:07Z",
@@ -19,8 +19,74 @@
    "of": 170
   },
   "saved_not_folded": 0,
-  "settled_since_run": 9
+  "settled_since_run": 9,
+  "review_list": {
+   "n": 12,
+   "unacknowledged": 0
+  }
  },
+ "review_list": [
+  {
+   "title": "Automotive Electrical Schematic Diagnosis",
+   "kind": "brought back",
+   "words": "Renamed once and back in the reference, so it reads as itself. Brought back by the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu on 2026-10-18."
+  },
+  {
+   "title": "Automotive Electronics",
+   "kind": "brought back",
+   "words": "Renamed once and back in the reference, so it reads as itself. Brought back by the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu on 2026-10-18."
+  },
+  {
+   "title": "Automotive Suspension, Steering and Alignment",
+   "kind": "brought back",
+   "words": "Renamed once and back in the reference, so it reads as itself. Brought back by the nightly fold of 2026-10-18 (kb/_fold_unclassified.py, its supersede step, run 17:47Z), from a saved assignment by map@rccd.edu on 2026-10-18."
+  },
+  {
+   "title": "Art of Graphic Design I (High School Articulation)",
+   "kind": "dead end",
+   "words": "Renamed to “Art of Graphic Design I”, which is no longer in the reference."
+  },
+  {
+   "title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+   "kind": "dead end",
+   "words": "Renamed to “Electrical/Electronic Systems (ASE A6 standards)”, which is no longer in the reference."
+  },
+  {
+   "title": "Carpenters Apprenticeship — CARP 002",
+   "kind": "dead end",
+   "words": "Renamed to “Introduction to Apprenticeship II”, which is no longer in the reference."
+  },
+  {
+   "title": "Carpenters Apprenticeship — CARP 101",
+   "kind": "dead end",
+   "words": "Renamed to “Introduction to Apprenticeship I”, which is no longer in the reference."
+  },
+  {
+   "title": "Carpenters Apprenticeship — CARP 109",
+   "kind": "dead end",
+   "words": "Renamed to “Welding II”, which is no longer in the reference."
+  },
+  {
+   "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 284",
+   "kind": "dead end",
+   "words": "Renamed to “Welding II SMAW”, which is no longer in the reference."
+  },
+  {
+   "title": "Carpenters Training Committee for Northern California Apprenticeship — CARP 701",
+   "kind": "dead end",
+   "words": "Renamed to “Introduction to Acoustical Apprenticeship II”, which is no longer in the reference."
+  },
+  {
+   "title": "Plant Propagation",
+   "kind": "dead retire",
+   "words": "Retired into “Credit by Exam”, which is no longer in the reference, so it is no search alias. It is in the reference again itself."
+  },
+  {
+   "title": "Water Supply",
+   "kind": "dead retire",
+   "words": "Retired into “Credit by Exam”, which is no longer in the reference, so it is no search alias. It is in the reference again itself."
+  }
+ ],
  "steps": {
   "Proposed": 132,
   "Wording check": 36,
