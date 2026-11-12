@@ -1,0 +1,337 @@
+{
+  "folded": [],
+  "superseded": [
+    {
+      "raw": "Auto 617 Completion",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.634546+00:00",
+      "spellings": [
+        "Auto 617 Completion"
+      ],
+      "disagreeing": [
+        "Auto 617 Completion"
+      ],
+      "displaced": [
+        "Automotive Air Conditioner"
+      ]
+    }
+  ],
+  "revised": [
+    {
+      "raw": "Automotive Service Excellence MIL3 - Drive Train",
+      "assigned": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "Automotive Service Excellence MIL3 - Drive Train"
+      ],
+      "disagreeing": [
+        "Automotive Service Excellence MIL3 - Drive Train"
+      ],
+      "displaced": [
+        "Automotive Braking Systems"
+      ],
+      "supersedes": "Automotive Braking Systems"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL4 - Chassis",
+      "assigned": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "Automotive Service Excellence MIL4 - Chassis"
+      ],
+      "disagreeing": [
+        "Automotive Service Excellence MIL4 - Chassis"
+      ],
+      "displaced": [
+        "Automotive Braking Systems"
+      ],
+      "supersedes": "Automotive Braking Systems"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+      "assigned": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "Automotive Service Excellence MIL6 - Electrical/Electronic Systems"
+      ],
+      "disagreeing": [
+        "Automotive Service Excellence MIL6 - Electrical/Electronic Systems"
+      ],
+      "displaced": [
+        "Advanced Electrical and Electronic Systems"
+      ],
+      "supersedes": "Advanced Electrical and Electronic Systems"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+      "assigned": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning"
+      ],
+      "disagreeing": [
+        "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning"
+      ],
+      "displaced": [
+        "Heating and Air Conditioning"
+      ],
+      "supersedes": "Heating and Air Conditioning"
+    },
+    {
+      "raw": "IC- Automotive Electrical/Electronics I",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "spellings": [
+        "IC- Automotive Electrical/Electronics I"
+      ],
+      "disagreeing": [
+        "IC- Automotive Electrical/Electronics I"
+      ],
+      "displaced": [
+        "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)"
+      ],
+      "supersedes": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)"
+    },
+    {
+      "raw": "IC- Engine Performance II",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "spellings": [
+        "IC- Engine Performance II"
+      ],
+      "disagreeing": [
+        "IC- Engine Performance II"
+      ],
+      "displaced": [
+        "Engine Performance 2 (ASE A8 Engine Performance)"
+      ],
+      "supersedes": "Engine Performance 2 (ASE A8 Engine Performance)"
+    },
+    {
+      "raw": "IC-Automotive Brake Systems",
+      "assigned": "ASE A5 — Brakes",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "IC-Automotive Brake Systems"
+      ],
+      "disagreeing": [
+        "IC-Automotive Brake Systems"
+      ],
+      "displaced": [
+        "Automotive Technology (ASE A5 Brakes)"
+      ],
+      "supersedes": "Automotive Technology (ASE A5 Brakes)"
+    },
+    {
+      "raw": "IC-Automotive Electrical/Electronics II",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "spellings": [
+        "IC-Automotive Electrical/Electronics II"
+      ],
+      "disagreeing": [
+        "IC-Automotive Electrical/Electronics II"
+      ],
+      "displaced": [
+        "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"
+      ],
+      "supersedes": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"
+    },
+    {
+      "raw": "IC-Engine Performance I",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "spellings": [
+        "IC-Engine Performance I"
+      ],
+      "disagreeing": [
+        "IC-Engine Performance I"
+      ],
+      "displaced": [
+        "Engine Performance 1 (ASE A8 Engine Performance)"
+      ],
+      "supersedes": "Engine Performance 1 (ASE A8 Engine Performance)"
+    }
+  ],
+  "credential_moved": [],
+  "credential_retired": [
+    {
+      "title": "Advanced Electrical and Electronic Systems",
+      "records": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:26:28.859578+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)"
+      ]
+    },
+    {
+      "title": "Automotive Braking Systems",
+      "records": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:26:26.340646+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+        "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)"
+      ]
+    },
+    {
+      "title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:28.796211+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Automotive Electrical/Electronics I"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:29.103869+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Automotive Electrical/Electronics II"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "ASE A6 — Electrical/Electronic Systems"
+      ]
+    },
+    {
+      "title": "Engine Performance 1 (ASE A8 Engine Performance)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:29.194398+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Engine Performance I"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "ASE A8 — Engine Performance"
+      ]
+    },
+    {
+      "title": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:28.838412+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Engine Performance II"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "ASE A8 — Engine Performance"
+      ]
+    },
+    {
+      "title": "Heating and Air Conditioning",
+      "records": [
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:26:29.9207+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        },
+        {
+          "issuing_agency": "California Community College Chancellor's Office",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-11-11",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-11-11T15:47:58.805608+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)"
+      ]
+    }
+  ],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 1,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 0,
+  "unified_titles_count": 5716
+}

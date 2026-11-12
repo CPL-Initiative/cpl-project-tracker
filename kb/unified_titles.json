@@ -10840,17 +10840,16 @@
     "_notes": "Numbered course; topic unclear."
   },
   "Auto 617 Completion": {
-    "unified_title": "Automotive Air Conditioner",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-11T22:13:10.634546+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPICI-A6C9-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Numbered completion cert; topic unclear."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive Air Conditioner' (conf 0.5)."
   },
   "Auto 618 Completion": {
     "unified_title": "Automotive Fuel Systems",
@@ -54444,26 +54443,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC- Automotive Electrical/Electronics I": {
-    "unified_title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:53:03.493942+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Electrical/Electronics I",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics I' on 2026-10-31."
+    "_revised_from": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)' on 2026-11-11."
   },
   "IC- Engine Performance II": {
-    "unified_title": "Engine Performance 2 (ASE A8 Engine Performance)",
+    "unified_title": "ASE A8 — Engine Performance",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:11:14.035+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Engine Performance II",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance II' on 2026-11-01."
+    "_revised_from": "Engine Performance 2 (ASE A8 Engine Performance)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Engine Performance 2 (ASE A8 Engine Performance)' on 2026-11-11."
   },
   "IC- Introduction to Automotive Technology": {
     "unified_title": "Introduction to Automotive Technology",
@@ -54498,26 +54497,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Automotive Brake Systems": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "ASE A5 — Brakes",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Brake Systems",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
+    "_revised_from": "Automotive Technology (ASE A5 Brakes)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Technology (ASE A5 Brakes)' on 2026-11-11."
   },
   "IC-Automotive Electrical/Electronics II": {
-    "unified_title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "ASE A6 — Electrical/Electronic Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:53:04.866031+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Electrical/Electronics II",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics II' on 2026-10-31."
+    "_revised_from": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)' on 2026-11-11."
   },
   "IC-Automotive Suspension, Steering and Alignment Systems": {
     "unified_title": "Automotive Suspension, Steering and Alignment Systems",
@@ -54528,15 +54527,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Engine Performance I": {
-    "unified_title": "Engine Performance 1 (ASE A8 Engine Performance)",
+    "unified_title": "ASE A8 — Engine Performance",
     "confidence_title": 1.0,
-    "classified_at": "2026-11-02",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-11-01T22:11:09.387+00:00",
-    "reviewed_by": "slee@cccco.edu",
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": null,
-    "_revised_from": "Engine Performance I",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance I' on 2026-11-01."
+    "_revised_from": "Engine Performance 1 (ASE A8 Engine Performance)",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Engine Performance 1 (ASE A8 Engine Performance)' on 2026-11-11."
   },
   "IC-Welding Level I": {
     "unified_title": "NCCER Welding Level 1",
@@ -58193,36 +58192,48 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Service Excellence MIL3 - Drive Train": {
-    "unified_title": "Automotive Braking Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:26.340646+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Braking Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Braking Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL4 - Chassis": {
-    "unified_title": "Automotive Braking Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:27.295238+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Braking Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Automotive Braking Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL6 - Electrical/Electronic Systems": {
-    "unified_title": "Advanced Electrical and Electronic Systems",
+    "unified_title": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:28.859578+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Advanced Electrical and Electronic Systems",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Advanced Electrical and Electronic Systems' on 2026-11-11."
   },
   "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning": {
-    "unified_title": "Heating and Air Conditioning",
+    "unified_title": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:29.9207+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+    "reviewed_by": "cer-s638@bot",
+    "source_exhibit_ids": null,
+    "_revised_from": "Heating and Air Conditioning",
+    "_notes": "Another look (Exhibits tab): cer-s638@bot replaced 'Heating and Air Conditioning' on 2026-11-11."
   },
   "Automotive Service Excellence xEV": {
     "unified_title": "ASE xEV — Electrified Vehicle Safety",

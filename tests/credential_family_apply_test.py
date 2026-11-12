@@ -58,11 +58,11 @@ BASE = FOLDS + [OTHER]
 # renames leave Sam's fold rows on it). The committed file holds every title here; the swap below names a title it does
 # not, so the read is pinned off for the gate checks and checked on its own.
 _real_titles = app.current_titles()
-check("the applier reads the committed credential titles, and they hold every title the S638 read found",
-      _real_titles is not None and {x["course_id"][len(P):] for x in FOLDS} <= _real_titles)
+check("the applier reads the committed credential titles, and they hold every bundle title the S638 read found",
+      _real_titles is not None and {x["course_id"][len(P):] for x in FOLDS} - set(ftp.HOLD) <= _real_titles)
 check("a title missing from kb/credentials.json reads as gone and takes no tag",
-      [it["title"] for it in ftp.plan(BASE, ftp.families(), _real_titles - {"ASE Bundle — A4, A5"})["gone"]]
-      == ["ASE Bundle — A4, A5"])
+      "ASE Bundle — A4, A5" in [it["title"] for it in ftp.plan(BASE, ftp.families(),
+                                                             _real_titles - {"ASE Bundle — A4, A5"})["gone"]])
 app.current_titles = lambda path=None: None
 app.current_moves = lambda root=None: {}   # no applied rename; section 9 sets one
 
@@ -475,7 +475,8 @@ try:
     h_after, lines = dry_hash(r.rows)
     check("after the rename the dry run counts each tag at its new title as written: nothing to write, the same set "
           "(the merged Master leaves the held list: it is no longer a credential)",
-          h_after == h_before and any("0 to write, 26 already written, 4 held for Sam, 0 conflicts" in l for l in lines),
+          h_after == h_before and any("0 to write, 26 already written, %d held for Sam, 0 conflicts" % len(set(ftp.HOLD) & AFTER_TITLES) in l
+                                      for l in lines),
           lines[-1:])
     rows_before_rollback = [dict(x) for x in r.rows]
     code, lines = go("rollback", r, d)

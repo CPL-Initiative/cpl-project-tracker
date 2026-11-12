@@ -104,7 +104,7 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   or G1* join the family as members any one of whose tests qualifies, declared under `any_one_test` in
   `kb/reference/credential_families.json`; the 24 bundle tags landed, receipt `applied_2026-11-11T23-38-21Z.json`):
   dispatch `credential-family-apply.yml` `mode=dry-run`; a correct summary reads *2 to write, 24 already written, 5
-  held for Sam, 0 conflicts; set `<hash>` (26 tags)* (4 held once (3) has merged the A1–A8 + L1 Master); then `mode=commit expect=<hash>`. Either order with (3) works: the
+  held for Sam, 0 conflicts; set `<hash>` (26 tags)*; the held count is the four Masters plus the emptied title while its saved fold is in place (the restore, (1)), one fewer once (3) has merged the A1–A8 + L1 Master; then `mode=commit expect=<hash>`. Either order with (3) works: the
   rename moves each tag to its new title (the new title is the bundle) and Sam's fold rows stay on the old one; the
   family dry run counts a tag at the renamed title as written, and its rollback finds it there (`kb/credential_aliases.py`
   `moves`); (0b) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'

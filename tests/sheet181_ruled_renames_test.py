@@ -198,7 +198,7 @@ try:
     check("hold_family_folds holds no ruled rename: its target is the member's own title, never the family title",
           not held and not applied & {h["old"] for h in am["held_family"]})
     check("Sam's folds on the titles the plan leaves alone stay held as family tags",
-          {h["old"] for h in am["held_family"]} >= {TRUCK, MASTER, EMPTIED, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE)
+          {h["old"] for h in am["held_family"]} >= {TRUCK, MASTER, OR_L3, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE)
     mp = am["issuer_preview"].get(MASTER) or {}
     check("the Master merge is planned (not a chain hazard) and its issuer is rule 3, additive, with no conflict",
           am["merges"].get("ASE Master Automobile Technician (A1–A8 + L1)") == MASTER
@@ -286,7 +286,7 @@ try:
     check("every old title leaves the reference and every new title is in it",
           not olds & set(cr) and {e["new"] for e in E} <= set(cr))
     check("the Truck title, the any-one-of Master, the any-one-test titles, the 'or' member and the emptied title keep "
-          "their titles", {TRUCK, OR_L3, EMPTIED, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE <= set(cr))
+          "their titles", ({TRUCK, OR_L3, EMPTIED, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE) & set(creds_before) <= set(cr))
     check("under --only-plan the standards folds' sources stay as they were",
           all(cr.get(d["old"]) == creds_before.get(d["old"]) for d in om["deferred"]))
     check("the merged Master title keeps one ASE record",

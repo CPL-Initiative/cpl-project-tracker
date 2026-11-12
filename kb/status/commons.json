@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-11T21:41:34Z",
+ "written_at": "2026-11-12T00:28:15Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,13 +98,13 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2680,
+     "n": 2681,
      "of": 5716,
-     "words": "titles carry a review stamp (1,236 a person's, 1,444 a cohort's); 2,752 credentials, 2,289 of 3,061 records stamped",
+     "words": "titles carry a review stamp (1,227 a person's, 1,454 a cohort's); 2,745 credentials, 2,281 of 3,053 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1236,
+     "n": 1227,
      "of": 5716,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
@@ -134,7 +134,7 @@
      "error": null
     },
     {
-     "n": 807,
+     "n": 809,
      "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
      "owner": "a curator",
      "carry": "keep_call",
@@ -158,25 +158,25 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-11T17:40:48Z",
+    "at": "2026-11-12T00:24:16Z",
     "every_hours": 24
    },
    "facts": {
     "titles": 5716,
-    "stamped": 2680,
-    "person": 1236,
-    "cohort": 1444,
-    "credentials": 2752,
-    "confirmed": 1236,
-    "records": 3061,
-    "records_stamped": 2289,
+    "stamped": 2681,
+    "person": 1227,
+    "cohort": 1454,
+    "credentials": 2745,
+    "confirmed": 1227,
+    "records": 3053,
+    "records_stamped": 2281,
     "saved_at": "2026-11-11T15:43:03Z",
-    "fold_at": "2026-11-11T17:40:48Z",
+    "fold_at": "2026-11-12T00:24:16Z",
     "map_titles": 5087,
-    "unclassified": 178,
-    "left_map": 807,
-    "below_80": 1123,
-    "below_60": 237,
+    "unclassified": 180,
+    "left_map": 809,
+    "below_80": 1122,
+    "below_60": 236,
     "no_subject": 362
    },
    "sources": [
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-11T17:43:01+00:00",
+    "at": "2026-11-12T00:26:20+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -319,7 +319,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,959 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,960 of 9,434 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -344,7 +344,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 36,
+     "n": 37,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -370,16 +370,16 @@
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9432,
+    "rows": 9434,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 461,
-    "settled_rows": 5959,
+    "settled_rows": 5960,
     "rule_wordings": 411,
-    "rule_rows": 4914,
+    "rule_rows": 4915,
     "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
@@ -387,31 +387,31 @@
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1883,
-    "unsettled_rows": 3473,
+    "unsettled_rows": 3474,
     "head": {
      "50": {
       "settled": 46,
       "of": 50,
-      "rows": 4648
+      "rows": 4649
      },
      "100": {
       "settled": 78,
       "of": 100,
-      "rows": 5545
+      "rows": 5546
      },
      "250": {
       "settled": 153,
       "of": 250,
-      "rows": 6559
+      "rows": 6560
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 36,
+    "names_to_check": 37,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 297
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-11T17:40:45Z",
+    "at": "2026-11-12T00:24:14Z",
     "every_hours": 24
    },
    "facts": {
@@ -500,7 +500,7 @@
     "modal": 0,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-11",
+    "scanned_at": "2026-11-12",
     "procedures_on": 6
    },
    "sources": [
@@ -683,7 +683,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 36,
+      "n": 37,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -717,7 +717,7 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 807,
+      "n": 809,
       "words": "old titles no MAP exhibit uses any more: nothing breaks while they stay; retire each, or keep one a college may enter again",
       "owner": "a curator",
       "open": "#exhibits/list/left"
@@ -766,7 +766,7 @@
     "kind": "not_shrinking",
     "n": 3354,
     "was": 3349,
-    "since": "2026-11-04",
+    "since": "2026-11-05",
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -777,7 +777,7 @@
     "kind": "not_shrinking",
     "n": 5750,
     "was": 5750,
-    "since": "2026-11-04",
+    "since": "2026-11-05",
     "words": "blank descriptions",
     "owner": "the colleges' COCI entries",
     "open": "#coci-lookup/list/nodesc"
