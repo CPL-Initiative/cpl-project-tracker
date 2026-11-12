@@ -15677,7 +15677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 358
+     "line": 381
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -18459,6 +18459,13 @@
      "direction": "read",
      "how": "literal",
      "line": 132
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 459
     },
     {
      "id": "script:kb/_mq_title5_rename.py",
@@ -25338,6 +25345,13 @@
      "line": 31
     },
     {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 406
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -25611,7 +25625,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 347
+     "line": 370
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -25681,7 +25695,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 334
+     "line": 357
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -25831,7 +25845,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 333
+     "line": 356
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -27875,7 +27889,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 269
     }
    ],
    "main_committers": []

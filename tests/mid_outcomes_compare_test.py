@@ -11,6 +11,11 @@ The standing rules it must hold on a small fixture, each a way the comparison co
   6. Outcomes alone never make a split above limited (Sam, 2026-11-09: an SLO never overrides on its own).
   7. Two levels of one sequence are never proposed as a merge.
   8. The levels are Sam's three match levels (Sheet 181, 2026-11-11).
+  9. The live read: the anon key only, the exact count, and zero rows stop the run (COBIx on #3165).
+ 10. One district is one voice, for confirmations, splits and merges (COBIx on #2962, comment 6829696579).
+ 11. A level word and a numeral are both read; a lecture never merges with its laboratory.
+ 12. Exhibit reach counts credit by exam titled from the M-ID, never a certification (COBIx on #3111, 6827702046).
+ 13. The structural subject check reads subject codes, never TOP (CLAUDE.md Rule 7).
 
 Run from repo root: python3 tests/mid_outcomes_compare_test.py
 """
@@ -113,11 +118,13 @@ MEMBERS = {
 state = moc.run(ROWS, MEMBERS, {}, {}, "fixture", "2026-11-12")
 R = state["results"]
 
-# 1. The suite splits, strongly: the college files three codes, and descriptions and titles agree they differ.
+# 1. The suite splits: the college files three codes, and descriptions and titles agree they differ. Every group is
+# one college, so one voice (COBIx, 6829696579): partial, never strong (the district guard, check 10).
 s = R["AGAB M9001"]
 check("1 a same-college suite with distinct outcomes splits", s["cls"] == "Split")
 check("1 into three groups, one per course", len(s.get("groups") or []) == 3)
-check("1 at strong (same college, descriptions and titles disagree too)", s["level"] == "strong")
+check("1 at partial: descriptions and titles disagree too, but no group holds two districts' outlines",
+      s["level"] == "partial")
 check("1 each group proposes its course's own title",
       sorted(g["title"] for g in s["groups"]) == ["Ambassadors - Introduction", "Ambassadors - Public Relations",
                                                    "Ambassadors - Recruitment"])
@@ -193,10 +200,77 @@ check("9 a read with no exact count stops the run",
       raises(lambda: moc.outcome_rows_live(get_page=pager(live_rows, None), env={"SUPABASE_ANON_KEY": "a"})))
 check("9 a whole read across three pages returns every row",
       len(moc.outcome_rows_live(get_page=pager(live_rows, 2500), env={"SUPABASE_ANON_KEY": "a"})) == 2500)
+check("9 a live read that returns zero rows stops the run (an empty count matches an empty read)",
+      raises(lambda: moc.outcome_rows_live(get_page=pager([], 0), env={"SUPABASE_ANON_KEY": "a"})))
 wf = open(os.path.join(REPO, ".github", "workflows", "mid-outcomes-compare.yml")).read()
 check("9 the workflow names no service key", "SERVICE" not in wf and "secrets." not in wf)
 check("9 the workflow runs the live source with no fallback branch",
       "--source live" in wf and "else" not in wf)
+
+# 10. One district is one voice (COBIx on #2962, 6829696579): a pair of colleges inside one district never makes a
+# confirmation, a split or a merge above what one college alone could. A and B are put in one district here.
+ONE = {moc.norm_college(A): "Fixture District", moc.norm_college(B): "Fixture District"}
+TWO = {moc.norm_college(A): "Fixture District A", moc.norm_college(B): "Fixture District B"}
+DM = {
+    # BIO 1 (A) and BIOL 101 (B) teach alike; AG 31A (A) is another course from the same college.
+    "BIOL M9010": [mem(A, "BIO 1", "General Biology", desc=D_CELL), mem(B, "BIOL 101", "General Biology", desc=D_CELL),
+                   mem(A, "AG 31A", "Ambassadors - Introduction", desc=D_INTRO)],
+    # The same course at two colleges, minted as two M-IDs: a merge candidate.
+    "CELL M9011": [mem(A, "BIO 3", "Molecular Biology", desc=D_CELL)],
+    "CELL M9012": [mem(B, "BIOL 103", "Molecular Biology", desc=D_CELL)],
+    "BIOL M9002": MEMBERS["BIOL M9002"],
+}
+one = moc.run(ROWS, DM, {}, {}, "fixture", "2026-11-12", districts=ONE)
+two = moc.run(ROWS, DM, {}, {}, "fixture", "2026-11-12", districts=TWO)
+check("10 two colleges of two districts confirm at strong", two["results"]["BIOL M9002"]["level"] == "strong")
+check("10 the same two colleges inside one district confirm at limited, one voice",
+      one["results"]["BIOL M9002"]["level"] == "limited")
+check("10 a split whose group holds two districts' outlines is strong",
+      two["results"]["BIOL M9010"]["cls"] == "Split" and two["results"]["BIOL M9010"]["level"] == "strong")
+check("10 the same split with every group inside one district is partial (ITIS 140's shape)",
+      one["results"]["BIOL M9010"]["cls"] == "Split" and one["results"]["BIOL M9010"]["level"] == "partial")
+check("10 a merge across two districts is above limited",
+      (two["merges"].get(("CELL M9011", "CELL M9012")) or {}).get("level") in ("strong", "partial"))
+check("10 the same merge inside one district is limited (BIOL M1094/M1095's shape)",
+      (one["merges"].get(("CELL M9011", "CELL M9012")) or {}).get("level") == "limited")
+check("10 a college the crosswalk does not name is its own voice",
+      moc.voice_of({})("Nowhere College") != moc.voice_of({})("Elsewhere College"))
+dist, cw = moc.load_districts()
+check("10 the districts come from the committed identity crosswalk, and RCCD's colleges share one",
+      cw and "college_identity" in cw and len({dist.get(moc.norm_college(c)) for c in
+                                               ("Norco College", "Riverside City College", "Moreno Valley College")}) == 1
+      and dist.get(moc.norm_college("Norco College")) != dist.get(moc.norm_college("Shasta College")))
+
+# 11. Levels: the level word and the numeral are both read; a lecture never merges with its laboratory.
+check("11 Elementary Spanish II and Spanish: Beginning I are two levels",
+      moc.levels_differ("Elementary Spanish II", "Spanish: Beginning I"))
+check("11 a lecture and its laboratory never merge",
+      moc.levels_differ("Biological Anthropology", "Biological Anthropology Laboratory"))
+
+# 12. Exhibit reach: credit by exam titled from the M-ID counts; a certification and an exam under another title do
+# not (COBIx on #3111, 6827702046; Sam, 2026-11-12, a certification keeps its official name).
+AL = {"BIOL M9002": {"cbe": [["General Biology", "A college", 2], ["Plant Propagation", "A college", 1]],
+                     "cert": [["Lab Safety Certificate", "An issuer", 3]], "other": 0}}
+rr = moc.run(ROWS, DM, {}, {}, "fixture", "2026-11-12", aligned=AL, districts=TWO)["results"]["BIOL M9002"]
+check("12 credit by exam titled from the M-ID is its reach", [x[0] for x in rr["cbe"]] == ["General Biology"])
+check("12 credit by exam under another title reaches it but is not counted",
+      [x[0] for x in rr["cbe_other"]] == ["Plant Propagation"])
+check("12 a certification is shown and kept apart", [x[0] for x in rr["cert"]] == ["Lab Safety Certificate"])
+src = open(os.path.join(REPO, "kb", "_mid_outcomes_compare.py")).read()
+check("12 the aligned keys pass through kb/alias_chain.py", "alias_chain.pending_maps" in src
+      and "alias_chain.resolve_id(key" in src)
+
+# 13. The structural check reads subject codes, never TOP, and needs no outcome text.
+SM = {"MATH": "Mathematics", "CHEM": "Chemistry", "ALH": "Health Care Ancillaries"}
+SMEM = {"MATH 1": [mem(A, "MATH 13", "Finite Mathematics", top="1701.00"), mem(B, "MATH 12", "Finite Mathematics"),
+                   mem(C, "MATH 130", "Finite Mathematics"), mem(C, "CHEM 5", "Quantitative Analysis", top="1701.00"),
+                   mem(B, "ALH 9", "Finite Mathematics")]}
+so = moc.subject_outliers(SMEM, SM, {"MATH 1": {"title": "Finite Mathematics"}})
+check("13 a member from another subject is flagged", [o[1] for o in so["MATH 1"]["outliers"]] == ["CHEM 5"])
+check("13 a member whose title agrees with the M-ID's is a prefix, not flagged",
+      "ALH 9" not in [o[1] for o in so["MATH 1"]["outliers"]])
+check("13 the check never reads TOP", "top" not in moc.subject_outliers.__code__.co_names
+      and '"top"' not in __import__("inspect").getsource(moc.subject_outliers))
 
 failed = [name for name, ok in results if not ok]
 for name, ok in results:
