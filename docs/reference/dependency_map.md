@@ -412,6 +412,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_apply_college_short_names.py`, `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
+| `commons_ase.js` | tabs: `commons` | — |
 | `commons_list.js` | tabs: `canonical-subj4`, `coci-lookup`, `cpl-pathways`, `cr-reference`, `exhibits`, `library`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_look.js` | pages: `CPL_Dashboard.html` | — |
 | `commons_page.js` | tabs: `canonical-subj4`, `coci-lookup`, `cr-reference`, `exhibits`, `program-requirements` | — |
@@ -1396,11 +1397,12 @@ Files with network/read markers where nothing could be attributed —
 check these BY HAND before trusting an absence:
 
 - `chatbox/sync_program_courses.py`
+- `commons_ase.js`
 - `cpl_session.js`
 - `cr_progress.js`
 - `exhibit_progress.js`
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 870 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 871 file
 datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.
