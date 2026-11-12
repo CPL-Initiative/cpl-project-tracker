@@ -1,7 +1,7 @@
 -- first_light_marks + first_light_apply_requests: the First Light tab's marks and its Apply (S643 SkyLark, 2026-11-12).
 --
--- HELD: not named in kb/migrations/.apply. The conductor reviews it and points .apply here (or applies it through
--- the MCP) when the tab's marks UI ships; the tab says so in words while the tables are absent.
+-- Applied through kb/migrations/.apply (name s643_first_light_marks) after four readers reviewed it, by the
+-- conductor's decision; supabase-migrate.yml applies it on the push and commits the receipt to the branch.
 --
 -- Sam, 2026-11-12 (#3153, relayed by COBIx): "add a cobi tab so I can edit it", and "make it so I can add more
 -- photos from our my cpl story series or other collections". Design: #3153 comment 6826461825 (the conductor),
