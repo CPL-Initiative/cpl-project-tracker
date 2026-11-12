@@ -89,11 +89,7 @@
      21.0,
      21.0
     ],
-    "why": [],
-    "fill": [
-     0.0,
-     1.0
-    ]
+    "why": []
    }
   },
   "repeated": {
@@ -142,7 +138,7 @@
     "min": 21,
     "max": 21
    },
-   "electives_fill_degree": true,
+   "electives_fill_degree": false,
    "outcomes": [
     "Demonstrate entry-level skills in animation through completed portfolio level projects in both visual and written context related to Animation and Game Design.",
     "Describe, plan and evaluate design principles, aesthetic forms, historical context and social relevance of multimedia works.",
@@ -417,14 +413,5 @@
    "Program outcomes recorded from the 'Learning Outcome(s)' section of this award's page."
   ]
  },
- "extracted_run": 43141644775,
- "reconciled": [
-  {
-   "field": "electives_fill_degree",
-   "was": false,
-   "now": true,
-   "words": "General Education and Elective Courses\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
-  }
- ],
- "read_run": "39891604919"
+ "extracted_run": "39891604919"
 }

@@ -1031,9 +1031,19 @@
    ]
   },
   "Berkeley City College": {
-   "why": "S639 harvest side session, 2026-11-12. Berkeley City College passed 35 of 89 live rows. 14 local A.A. and A.S. degrees read unequal against the degree's total: each page prints one combined line under the major, as the capture reads it, 'Major Requirements 30 / General Education and Electives 30 / Total Units 60' (American Sign Language A.A. 01101; Fundamentals of Data Science A.S. 45941 prints 'General Education and Elective Units 20-24'; college page read 43138963119, kb/college_reads/berkeley_city_ge_pages.json), and the reading kept no general education figure, since the line is general education and electives together. The catalog's own Associate Degree Requirements tab (node 41811, college page read 43140339800, kb/college_reads/berkeley_city_ge_guides.json) gives both missing words for a local degree: 'If you are a candidate for the Associate degree (AA or AS), you must complete at least 60 units which include courses in a major, general education, and electives, as necessary. You must complete at least 18 units in general education', and 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' So two steps, on local degrees only: ge_units 18 and electives_fill_degree, keyed on the combined line. The combined figure itself is never read as general education. Simulated on the filed records: 35 to 49 of 89; 09073, 43214 and 46221 take both and still fail their own majors; no record that passed fails. The 21 transfer degrees wait: the catalog's Cal-GETC tab (node 41802, the same read) prints the pattern's areas with no units and no total, so no figure rests on Berkeley City's own words. Session call, recorded as a decision draft; reversible by deleting this entry.",
+   "why": "S639 harvest side session, 2026-11-12. Berkeley City College passed 35 of 89 live rows. 14 local A.A. and A.S. degrees read unequal against the degree's total: each page prints one combined line under the major, as the capture reads it, 'Major Requirements 30 / General Education and Electives 30 / Total Units 60' (American Sign Language A.A. 01101; Fundamentals of Data Science A.S. 45941 prints 'General Education and Elective Units 20-24'; college page read 43138963119, kb/college_reads/berkeley_city_ge_pages.json), and the reading kept no general education figure, since the line is general education and electives together. The catalog's own Associate Degree Requirements tab (node 41811, college page read 43140339800, kb/college_reads/berkeley_city_ge_guides.json) gives both missing words for a local degree: 'If you are a candidate for the Associate degree (AA or AS), you must complete at least 60 units which include courses in a major, general education, and electives, as necessary. You must complete at least 18 units in general education', and 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' So two steps, on local degrees only: ge_units 18 and electives_fill_degree, keyed on the combined line. The combined figure itself is never read as general education. The electives step runs first and only on a record with no general education figure, so a record the reading gave one keeps it and takes neither step. 16645 (Multimedia Arts - Animation and Game Design A.A.) holds the combined line's 21 as its general education units, by its own note; a curator should read that figure. Reconcile run 43141644775 measured 35 to 47 of 89 on fresh text, none that passed fails: 12 of the 14 read equal; 18597's page was not among the fresh capture's (no fresh text, so it stands as filed), and 37936's major and degree now read equal while its outcomes and careers checks fail on the fresh page's text; 09073, 43214 and 46221 take both steps and still fail their own majors. That run also gave 16645 the electives flag, and its filed record is restored, since the entry now holds the electives step off a record with a figure. The 21 transfer degrees wait: the catalog's Cal-GETC tab (node 41802, the same read) prints the pattern's areas with no units and no total, so no figure rests on Berkeley City's own words. Session call, recorded as a decision draft; reversible by deleting this entry.",
    "awards": "associate",
    "steps": [
+    {
+     "kind": "set",
+     "field": "electives_fill_degree",
+     "value": true,
+     "awards": "local",
+     "pattern": "General\\s+Education\\s+and\\s+Electives?(?:\\s+(?:Courses?|Units?))?\\s+\\d",
+     "source": "https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811",
+     "source_words": "Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800)",
+     "only_without": "ge_units"
+    },
     {
      "kind": "set",
      "field": "ge_units",
@@ -1045,15 +1055,6 @@
      "pattern": "General\\s+Education\\s+and\\s+Electives?(?:\\s+(?:Courses?|Units?))?\\s+\\d",
      "source": "https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811",
      "source_words": "Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800)"
-    },
-    {
-     "kind": "set",
-     "field": "electives_fill_degree",
-     "value": true,
-     "awards": "local",
-     "pattern": "General\\s+Education\\s+and\\s+Electives?(?:\\s+(?:Courses?|Units?))?\\s+\\d",
-     "source": "https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811",
-     "source_words": "Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800)"
     }
    ]
   }
