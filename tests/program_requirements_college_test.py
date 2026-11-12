@@ -2749,7 +2749,10 @@ try:
     os.makedirs(os.path.join(keep_dir, "records"))
     os.makedirs(os.path.join(out_dir, "sources"))
     pdf = "https://scc.example/c.pdf"
-    passing = {"pass": True, "coverage": {"share": 1.0}}
+    passing = {"pass": True, "coverage": {"pass": True, "share": 1.0}, "invented": {"pass": True},
+               "arithmetic": {"status": "equal"}}
+    failing = {"pass": False, "coverage": {"pass": False, "share": 0.0}, "invented": {"pass": True},
+               "arithmetic": {"status": "unequal"}}
     filed_recs = {
         "10": {"record": {"blocks": []}, "source_url": pdf + "#page=311", "extracted_run": 39049026449,
                "source_sha": "s10", "source_codes": ["A1"], "source_coverage": 1.0, "score": passing},
@@ -2761,11 +2764,36 @@ try:
                "score": passing},
         "15": {"record": {"blocks": []}, "source_url": pdf + "#page=333", "extracted_run": 39047070975,
                "score": {"pass": False, "coverage": {"share": 0.5}}},
+        # American River 39057 (S641 review): the filed record placed 0 of 16 from page 169.
+        "17": {"record": {"blocks": []}, "source_url": pdf + "#page=169", "extracted_run": 39047070975,
+               "score": failing},
+        # A passing record at the share the new window holds: a read gains nothing (12181, 20119).
+        "18": {"record": {"blocks": []}, "source_url": pdf + "#page=438", "extracted_run": 39047070975,
+               "score": passing},
+        # A passing record whose window opens on a list and covers more.
+        "19": {"record": {"blocks": []}, "source_url": pdf + "#page=70", "extracted_run": 39047070975,
+               "score": passing},
+        # score.pass is False on its outcomes alone: the live table counts it passing (call 3).
+        "20": {"record": {"blocks": []}, "source_url": pdf + "#page=80", "extracted_run": 39047070975,
+               "score": dict(passing, **{"pass": False, "outcomes": {"pass": False}})},
+        # score.pass is True on an unstated total: the live table does not count it passing (call 3).
+        "21": {"record": {"blocks": []}, "source_url": pdf + "#page=90", "extracted_run": 39047070975,
+               "score": dict(passing, arithmetic={"pass": True, "status": "unstated"})},
+        # A passing record whose source is not on file: no window share to compare, so no hold (call 4).
+        "22": {"record": {"blocks": []}, "source_url": pdf + "#page=95", "extracted_run": 39047070975,
+               "score": passing},
+        # A passing record the read will turn failing (call 2b), and one forced the same way.
+        "23": {"record": {"blocks": []}, "source_url": pdf + "#page=99", "extracted_run": 39047070975,
+               "score": passing},
+        "24": {"record": {"blocks": []}, "source_url": pdf + "#page=99", "extracted_run": 39047070975,
+               "score": passing},
     }
     for cn, body in filed_recs.items():
         open(os.path.join(keep_dir, "records", cn + ".json"), "w").write(json.dumps(dict(body, control_number=cn)))
-    json.dump([{"control_number": cn, "source": {"url": b["source_url"]}, "coverage": 1.0, "codes_found": ["A1"]}
-               for cn, b in filed_recs.items()], open(os.path.join(keep_dir, "sources.json"), "w"))
+    prev_cov = {"18": 0.929, "19": 0.8, "20": 0.8, "21": 0.8, "23": 0.8, "24": 0.8}
+    json.dump([{"control_number": cn, "source": {"url": b["source_url"]}, "coverage": prev_cov.get(cn, 1.0),
+                "codes_found": ["A1"]}
+               for cn, b in filed_recs.items() if cn != "22"], open(os.path.join(keep_dir, "sources.json"), "w"))
 
     def src_of(cn, page, sha=None, cov=1.0, **extra):
         return {"college": "Test College", "control_number": cn, "shape": "certificate", "title": "T" + cn,
@@ -2778,37 +2806,70 @@ try:
             src_of("13", 328, cov=0.917),                # passing record, worse window: held
             src_of("14", 328, cov=0.917),                # the same, forced: called
             src_of("15", 328, cov=0.917),                # a failing record is no reason to hold
-            src_of("16", 60, opens_on_list=True)]        # opens on a department's list: held
+            src_of("16", 60, opens_on_list=True),        # no record at all: always read (call 1)
+            src_of("17", 153, opens_on_list=True),       # a failing record a better window would fix: read
+            src_of("18", 428, cov=0.929, opens_on_list=True),  # passing, the same share: held_no_gain
+            src_of("19", 60, opens_on_list=True),        # passing, more from a list opening: held_opens_on_list
+            src_of("20", 81, cov=0.7),                   # passing by the live table: held_worse_window
+            src_of("21", 91, cov=0.7),                   # not passing by the live table: read
+            src_of("22", 96, cov=0.5),                   # no window share on file: read
+            src_of("23", 100),                           # read; comes back failing: the filed record stays
+            src_of("24", 100)]                           # the same, forced: the new record is filed
     for x in srcs:
         json.dump(x, open(os.path.join(out_dir, "sources", x["control_number"] + ".json"), "w"))
     wx3 = C.would_extract("Test College", srcs, folder=keep_dir)
+    held_of = lambda k: [(x["control_number"], x["coverage"], x["was_coverage"]) for x in wx3.get(k, [])]  # noqa: E731
     # The preview knows no forced numbers: 11 counts as kept there, and 14 as held, until a run forces them.
-    check(wx3["kept_moved"] == 2 and sorted(x["control_number"] for x in wx3["list"]) == ["12", "15"]
-          and [(x["control_number"], x["coverage"], x["was_coverage"]) for x in wx3["held_worse_window"]]
-          == [("13", 0.917, 1.0), ("14", 0.917, 1.0)]
-          and [x["control_number"] for x in wx3["held_opens_on_list"]] == ["16"],
-          "the preview lists a worse window with both coverages and a list opening apart, and sends neither: %r"
-          % {k: wx3[k] for k in ("kept", "kept_moved", "held_worse_window", "held_opens_on_list")})
+    check(wx3["kept_moved"] == 2
+          and held_of("held_worse_window") == [("13", 0.917, 1.0), ("14", 0.917, 1.0), ("20", 0.7, 0.8)]
+          and held_of("held_no_gain") == [("18", 0.929, 0.929)]
+          and held_of("held_opens_on_list") == [("19", 1.0, 0.8)],
+          "the preview holds only passing records: a worse window, the same share, a list opening: %r"
+          % {k: wx3.get(k) for k in ("kept_moved", "held_worse_window", "held_no_gain", "held_opens_on_list")})
+    check(sorted(x["control_number"] for x in wx3["list"]) == ["12", "15", "16", "17", "21", "22", "23", "24"],
+          "a failing record (39057), an absent one, one the live table does not count passing and one with no "
+          "window share on file are read: %r" % sorted(x["control_number"] for x in wx3["list"]))
     called = []
 
     def fake_call(src, key, *a, **k):
         called.append(src["control_number"])
-        return {"record": None, "model": None, "usage": None}
+        return {"record": {"program": {}, "blocks": []} if src["control_number"] in ("23", "24") else None,
+                "model": None, "usage": None}
+    _saved_score = XT.score
+    XT.score = lambda rec, *a, **k: dict(failing)
     XT.call = fake_call
     os.environ["SUPABASE_SERVICE_KEY"] = "test"
-    rc = C.extract(out_dir, 0, 1, "43200000000", 2, keep_dir, {"11", "14"})
+    try:
+        rc = C.extract(out_dir, 0, 1, "43200000000", 2, keep_dir, {"11", "14", "24"})
+    finally:
+        XT.score = _saved_score
     got = {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(os.path.join(out_dir, "records", "*.json"))}
-    check(rc == 0 and sorted(called) == ["11", "12", "14", "15"],
-          "the extraction asks the model for the new, the forced and the failing, and never for the moved "
-          "unchanged or the held: %r" % sorted(called))
+    check(rc == 0 and sorted(called) == ["11", "12", "14", "15", "16", "17", "21", "22", "23", "24"],
+          "the extraction asks the model for the new, the forced, the failing and the unprovable, and never for "
+          "the moved unchanged or the held: %r" % sorted(called))
     check(got["10"]["source_url"].endswith("#page=307") and got["10"]["page_moved_from"].endswith("#page=311")
           and got["10"]["extracted_run"] == 43200000000,
           "extract()'s moved branch writes the kept record on its new page with the run")
     check(got["12"].get("source_sha") == "s12" and got["12"].get("source_codes") == ["A1"]
           and got["12"].get("source_coverage") == 1.0,
           "a freshly extracted record carries its window's fingerprint, codes and coverage")
-    check(got["13"] == dict(filed_recs["13"], control_number="13") and "16" not in got,
-          "a held record stays as filed, so filing the run keeps it; a held program with no record writes none")
+    check(got["13"] == dict(filed_recs["13"], control_number="13") and got["18"] == dict(filed_recs["18"], control_number="18"),
+          "a held record stays as filed, so filing the run keeps it")
+    _kp = os.path.join(out_dir, "kept_passing_0.json")
+    kp = json.load(open(_kp)) if os.path.exists(_kp) else []
+    # 22's read returns no record at all, 23's a failing one: both passing records stay as filed.
+    check(got["23"] == dict(filed_recs["23"], control_number="23") and got["22"] == dict(filed_recs["22"], control_number="22")
+          and [x["control_number"] for x in kp] == ["22", "23"] and kp[0]["score"] is None
+          and (kp[1]["score"] or {}).get("arithmetic", {}).get("status") == "unequal" and kp[1]["filed_score"] == passing,
+          "a read that fails where the filed record passes leaves the filed record, listed with both scores: %r"
+          % [x["control_number"] for x in kp])
+    check(got["24"].get("extracted_run") == "43200000000" and got["24"]["score"]["arithmetic"]["status"] == "unequal",
+          "a forced control number files the new record all the same")
+    import _program_requirements_score as SC  # noqa: E402
+    _pl = getattr(SC, "passes_live", None)
+    check(_pl is not None and _pl(passing) and _pl(dict(passing, **{"pass": False}))
+          and not _pl(dict(passing, arithmetic={"status": "unstated", "pass": True})) and not _pl(None),
+          "passes_live is the live table's test: coverage, invented, arithmetic equal")
 finally:
     XT.call = _saved[0]
     if _saved[1] is None:

@@ -2567,7 +2567,7 @@ def pdf_opens_on_list(pages: list[str], run: list[int], cn_at: int, head: tuple,
     """A window that opens on a department's list of award titles: its first page names none of the
     listed courses, its heading line sits in the list, and the program's own heading is printed elsewhere
     (pdf_heading_elsewhere). The picker keeps such a window only when passing over the list named fewer
-    listed courses; the extraction holds it (held_opens_on_list) for a person to look at."""
+    listed courses; a passing record read from such a window is held (held(): held_opens_on_list)."""
     if not run or cn_at >= 0 or P.find_codes(pages[run[0]], courses):
         return False
     return _in_list(pages[run[0]], head) and pdf_heading_elsewhere(pages, run[0], program, courses)
@@ -2869,7 +2869,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
                 if best["opens_on_list"]:
-                    rec["source"]["opens_on_list"] = True   # the extraction holds it (held_opens_on_list)
+                    rec["source"]["opens_on_list"] = True   # held() holds a passing record read from it
                 if hf:
                     rec["source"]["hand_filed"] = {k: hf["meta"][k] for k in ("fetched_by", "fetched_at", "sha256")}
                 # The pages are the program's own: keep their text whole, not a window around the codes.
@@ -3264,30 +3264,37 @@ def unchanged(prev: dict | None, src: dict) -> bool:
 
 
 def held(path: str, prev: dict | None, src: dict) -> dict | None:
-    """Why a paid read of this source would make its program's record worse, or None (S640).
-    held_opens_on_list: the window opens on a department's list of award titles and its first page
-    names none of the listed courses (pdf_opens_on_list). held_worse_window: the filed record passes
-    the machine checks and the new window names a smaller share of the closed list than the window it
-    was extracted from (its source_coverage; else the filed source's coverage when that source names
-    the record's page; else the share the record places). A forced control number goes all the same."""
+    """Why a paid read of this source would gain nothing for, or make worse, a record that passes, or
+    None (S640; S641 review). A hold protects only a filed record that passes as the live table counts
+    it (passes_live); a failing or absent record is always read, whatever its window. Then, in order:
+    held_worse_window, the new window names a smaller share of the closed list than the window the
+    record was extracted from; held_no_gain, the same share, so a read can gain nothing;
+    held_opens_on_list, a larger share from a window that opens on a department's list of award titles
+    (pdf_opens_on_list). The share the record was extracted from is its source_coverage, else the
+    filed source's coverage when that source names the record's page. Window coverage is compared
+    only with window coverage: with neither, nothing is held, and the guard after the read
+    (kept_passing) keeps a passing record a read would make fail. A forced control number goes all
+    the same."""
+    from _program_requirements_score import passes_live
     cov = src.get("coverage") or 0
-    if (src.get("source") or {}).get("opens_on_list"):
-        return {"reason": "held_opens_on_list", "coverage": cov, "was_coverage": None}
     try:
         with open(path) as fh:
             rec = json.load(fh)
     except (OSError, ValueError):
         return None
-    sc = rec.get("score") or {}
-    if not isinstance(rec.get("record"), dict) or sc.get("pass") is not True:
+    if not isinstance(rec.get("record"), dict) or not passes_live(rec.get("score")):
         return None
     was = rec.get("source_coverage")
     if was is None and prev and (prev.get("source") or {}).get("url") == rec.get("source_url"):
         was = prev.get("coverage")
     if was is None:
-        was = (sc.get("coverage") or {}).get("share")
-    if was is not None and cov < was:
+        return None
+    if cov < was:
         return {"reason": "held_worse_window", "coverage": cov, "was_coverage": was}
+    if cov == was:
+        return {"reason": "held_no_gain", "coverage": cov, "was_coverage": was}
+    if (src.get("source") or {}).get("opens_on_list"):
+        return {"reason": "held_opens_on_list", "coverage": cov, "was_coverage": was}
     return None
 
 
@@ -3304,7 +3311,7 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
             prev = {x["control_number"]: x for x in json.load(fh)}
     from _program_requirements_extract import MIN_COVERAGE as bar
     out, kept, moved = [], 0, 0
-    holds: dict[str, list] = {"held_worse_window": [], "held_opens_on_list": []}
+    holds: dict[str, list] = {"held_worse_window": [], "held_no_gain": [], "held_opens_on_list": []}
     for r in recs:
         if (r.get("coverage") or 0) < bar or not r.get("text"):
             continue
@@ -3408,6 +3415,10 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
 
+    import threading
+    kept_list: list[dict] = []
+    kept_lock = threading.Lock()
+
     def one(src: dict) -> None:
         t0 = time.time()
         got = X.call(src, key)
@@ -3438,6 +3449,19 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                        source_coverage=src.get("coverage"))
         if notes:
             row["reconciled"] = notes
+        filed = kept_passing(keep_from, src["control_number"], sc, force)
+        if filed is not None:
+            # The read came back failing where the filed record passes (S641 review, call 2b): the filed
+            # record stays as filed, and the program is listed with both scores for a person.
+            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
+            with kept_lock:
+                kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
+                                  "award": src.get("award"), "source_url": row["source_url"],
+                                  "filed_source_url": filed.get("source_url"), "cost_usd": row["cost_usd"],
+                                  "score": sc, "filed_score": filed.get("score")})
+            print("%-6s kept_passing: the read fails where the filed record passes" % src["control_number"],
+                  flush=True)
+            return
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
             src["control_number"], "PASS" if sc and sc["pass"] else "fail",
@@ -3449,7 +3473,26 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         list(pool.map(one, mine))
+    if kept_list:
+        _write(os.path.join(out_dir, "kept_passing_%d.json" % shard),
+               sorted(kept_list, key=lambda x: x["control_number"]))
+        print("kept_passing: %d filed records kept where the read failed" % len(kept_list), flush=True)
     return 0
+
+
+def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: set[str] | None) -> dict | None:
+    """The filed record a read must not replace, or None: the filed record passes as the live table
+    counts it (passes_live) and the new one does not (S641 review, call 2b). A forced control number
+    takes the new record all the same."""
+    from _program_requirements_score import passes_live
+    if not keep_from or cn in (force or ()) or passes_live(new_score):
+        return None
+    try:
+        with open(os.path.join(keep_from, "records", cn + ".json")) as fh:
+            filed = json.load(fh)
+    except (OSError, ValueError):
+        return None
+    return filed if isinstance(filed.get("record"), dict) and passes_live(filed.get("score")) else None
 
 
 def same_address(a: str, b: str) -> bool:
@@ -3596,6 +3639,15 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
                           listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
+    # The programs whose read failed where the filed record passed, for a person (kept_passing).
+    kept = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_passing_*.json"))):
+        with open(path) as fh:
+            kept.extend(json.load(fh))
+    if os.path.exists(os.path.join(dest, "kept_passing.json")):
+        os.remove(os.path.join(dest, "kept_passing.json"))
+    if kept:
+        _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
     if records:
         _write(os.path.join(dest, "summary.json"), dict(summarize(records, report), run=run_id))
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))

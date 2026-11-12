@@ -561,6 +561,16 @@ def careers_check(record: dict, text: str | None) -> dict:
     return {"count": len(careers), "not_verbatim": bad, "pass": not bad}
 
 
+def passes_live(score: dict | None) -> bool:
+    """A record that passes as the live table counts it (program_requirement_records.checks):
+    every listed course placed (coverage), none invented, and the arithmetic equal. score["pass"]
+    asks more (repeats, outcomes, careers); the harvest's holds and its kept-passing guard judge a
+    filed record by this one definition (S641 review, call 3)."""
+    sc = score or {}
+    return ((sc.get("coverage") or {}).get("pass") is True and (sc.get("invented") or {}).get("pass") is True
+            and (sc.get("arithmetic") or {}).get("status") == "equal")
+
+
 def places_none(score: dict | None) -> bool:
     """A scored record that places none of its program's listed courses: the model
     read another program's page or a course-description listing. Sam, Open Asks
