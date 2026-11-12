@@ -227,6 +227,27 @@ const $$ = (w, sel) => Array.prototype.slice.call(w.document.querySelectorAll(se
     check("(h) every photo plays on all three views it lists", HERO.photos.every((p) => same(p.plays, HERO.views.map((v) => v.id))));
   }
 
+  // ── (j) the tab claims only its own module (COBIx on #3162) ───────────────
+  // The tab id matches first_light.js by the builders' naming convention, but that file is the overlay every
+  // visitor loads, which reads Wikimedia and writes cpl_reflections. Crediting it to a reviewer-only tab would
+  // hide a public writer from a "who else writes" check.
+  {
+    const sw = { COBI_ADMIN_SURFACE: null };
+    new Function("window", fs.readFileSync("cobi_admin_surface.js", "utf8"))(sw);
+    const entry = sw.COBI_ADMIN_SURFACE && sw.COBI_ADMIN_SURFACE.tabs && sw.COBI_ADMIN_SURFACE.tabs["first-light"];
+    check("(j) ⭐ the admin surface gives the tab its own module and no other", entry && JSON.stringify(entry.modules) === '["first_light_tab.js"]', JSON.stringify(entry && entry.modules));
+    check("(j) ⭐ the tab writes no table", entry && Array.isArray(entry.writes) && entry.writes.length === 0, JSON.stringify(entry && entry.writes));
+    const MAP = JSON.parse(fs.readFileSync("kb/dependency_map.json", "utf8"));
+    const find = (o, key) => { if (!o || typeof o !== "object") return null; if (o[key]) return o[key]; for (const k of Object.keys(o)) { const r = find(o[k], key); if (r) return r; } return null; };
+    const refl = find(MAP, "supabase:cpl_reflections");
+    const overlay = (refl && refl.consumers || []).filter((c) => c.id === "module:first_light.js");
+    check("(j) ⭐ the overlay's read and write of cpl_reflections stay on the page, not the tab",
+      overlay.length >= 2 && overlay.some((c) => c.direction === "write") && overlay.every((c) => (c.pages || []).indexOf("CPL_Dashboard.html") !== -1 && !(c.tabs || []).length),
+      JSON.stringify(overlay));
+    const BUILDER = fs.readFileSync("kb/_build_cobi_admin_surface.py", "utf8");
+    check("(j) the builder names first_light.js as a module the tab does not own", /"first-light":\s*\["first_light\.js"\]/.test(BUILDER.slice(BUILDER.indexOf("NOT_TAB_MODULES"))));
+  }
+
   // ── (i) Sierra's page today ──────────────────────────────────────────────
   {
     const page = fs.readFileSync("sierra/index.html", "utf8") + fs.readFileSync("sierra/sierra.js", "utf8") + fs.readFileSync("sierra/sierra.css", "utf8");

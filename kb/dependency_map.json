@@ -997,8 +997,8 @@
      "direction": "read",
      "how": "url",
      "line": 40,
-     "tabs": [
-      "first-light"
+     "pages": [
+      "CPL_Dashboard.html"
      ]
     },
     {
@@ -28292,8 +28292,8 @@
      "direction": "read",
      "how": "literal",
      "line": 947,
-     "tabs": [
-      "first-light"
+     "pages": [
+      "CPL_Dashboard.html"
      ]
     },
     {
@@ -28302,8 +28302,8 @@
      "direction": "write",
      "how": "literal",
      "line": 1234,
-     "tabs": [
-      "first-light"
+     "pages": [
+      "CPL_Dashboard.html"
      ]
     },
     {
@@ -30979,9 +30979,6 @@
   ],
   "exhibits_cpl_ai.js": [
    "exhibits"
-  ],
-  "first_light.js": [
-   "first-light"
   ],
   "first_light_tab.js": [
    "first-light"

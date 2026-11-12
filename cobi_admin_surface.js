@@ -722,13 +722,10 @@ window.COBI_ADMIN_SURFACE = {
     },
     "first-light": {
       "modules": [
-        "first_light.js",
         "first_light_tab.js"
       ],
       "reads": [],
-      "writes": [
-        "cpl_reflections"
-      ],
+      "writes": [],
       "rpcs": [],
       "measured": true
     }
