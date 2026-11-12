@@ -1,13 +1,13 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-12T02:27:00+00:00",
+ "_reference_generated_at": "2026-11-12T05:21:06+00:00",
  "counts": {
   "certs_linked": 238,
-  "titles_linked": 276,
+  "titles_linked": 275,
   "holds": 264,
   "bundles": 49,
-  "aligned": 12,
+  "aligned": 11,
   "codes_not_in_catalog": [
    "G1"
   ]
@@ -2517,32 +2517,11 @@
     "ITC4232"
    ]
   },
-  "Automotive Technology (ASE A5 Brakes)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4235"
-   ]
-  },
   "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
     "ITC4236"
-   ]
-  },
-  "Automotive Technology (ASE A7 Heating and Air Conditioning)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4237"
-   ]
-  },
-  "Automotive Technology (ASE A8 Engine Performance)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4238"
    ]
   },
   "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
@@ -2564,6 +2543,13 @@
    "rule": "all",
    "certs": [
     "ITC4246"
+   ]
+  },
+  "Brakes (ASE A5 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4235"
    ]
   },
   "Building Plans Examiner": {
@@ -3044,7 +3030,7 @@
     "ITC3564"
    ]
   },
-  "Engine Performance (ASE A8 Engine Performance)": {
+  "Engine Performance (ASE A8 standards)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
@@ -3126,6 +3112,13 @@
    "certs": [
     "ITC7651",
     "ITC7655"
+   ]
+  },
+  "Heating and Air Conditioning (ASE A7 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4237"
    ]
   },
   "IB Biology HL": {
