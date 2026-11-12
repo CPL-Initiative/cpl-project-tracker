@@ -20,7 +20,8 @@ const norm = (x) => String(x || "").trim().split(/\s+/).join(" ").toUpperCase();
 const holds = JSON.parse(fs.readFileSync("kb/reference/cid_claim_holds.json", "utf8")).holds;
 const art = JSON.parse(fs.readFileSync("kb/coci_articulations.json", "utf8"));
 const exp = fs.readFileSync("excel_to_dashboard.py", "utf8");
-const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 const peer = fs.readFileSync("kb/_build_peer_articulations.py", "utf8");
 
 check("each hold names its course, the claim, a home, four signals, and who held it when", holds.length >= 1 && holds.every((h) =>

@@ -206,9 +206,10 @@ def main():
           "grant execute on function public.cpl_funding_nc_counts() to service_role;" in sql)
     check("7b: the RPC returns no attestor, email or award count",
           not any(w in sql.split("select jsonb_build_object(")[1] for w in ("attestor", "email", "nc_awarded_count")))
-    wf = open(WORKFLOW, encoding="utf-8").read()
-    step = wf[wf.index("name: Build funding priority-metric actuals"):]
-    step = step[:step.index("- name:", 10)]
+    # The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+    wf = open(WORKFLOW, encoding="utf-8").read().replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read())
+    step = wf[wf.index('step "Build funding priority-metric actuals"'):]   # its block in scripts/daily_build.sh
+    step = step[:step.index('\nstep "', 10)]
     check("7c: the daily step hands the builder the service key", "SUPABASE_SERVICE_KEY" in step)
 
     # ── the retry on a cold RPC (S476) ──────────────────────────────────────
