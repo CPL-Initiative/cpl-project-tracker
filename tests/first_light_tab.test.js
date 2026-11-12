@@ -135,7 +135,7 @@ const $$ = (w, sel) => Array.prototype.slice.call(w.document.querySelectorAll(se
     const img0 = cards[0].querySelector("img");
     img0.dispatchEvent(new w.Event("error"));
     check("(b) an image that cannot load gives way to a plain panel", !cards[0].querySelector("img") && !!cards[0].querySelector(".flt-noimg"));
-    check("(b) the edit line opens the view", $(w, "#first-light-root").textContent.indexOf("Editing arrives next: add, drop and reorder here, and Apply opens a pull request.") !== -1);
+    check("(b) the edit line opens the view", $(w, "#first-light-root").textContent.indexOf("Mark a painting or photo Keep, Drop, Add or Move. Apply opens a pull request; Sam merges it, and nothing changes before then.") !== -1);
 
     w.location.hash = "#first-light/sierra"; w.go("first-light");
     await tick(); await tick();
@@ -236,7 +236,9 @@ const $$ = (w, sel) => Array.prototype.slice.call(w.document.querySelectorAll(se
     new Function("window", fs.readFileSync("cobi_admin_surface.js", "utf8"))(sw);
     const entry = sw.COBI_ADMIN_SURFACE && sw.COBI_ADMIN_SURFACE.tabs && sw.COBI_ADMIN_SURFACE.tabs["first-light"];
     check("(j) ⭐ the admin surface gives the tab its own module and no other", entry && JSON.stringify(entry.modules) === '["first_light_tab.js"]', JSON.stringify(entry && entry.modules));
-    check("(j) ⭐ the tab writes no table", entry && Array.isArray(entry.writes) && entry.writes.length === 0, JSON.stringify(entry && entry.writes));
+    // Phase B (S643) gives the tab its own two writes, the marks and the Apply request; tests/first_light_marks.test.js
+    // guards them. The overlay's cpl_reflections write still belongs to the page (below).
+    check("(j) ⭐ the tab writes only its own two tables", entry && JSON.stringify(entry.writes) === '["first_light_apply_requests","first_light_marks"]', JSON.stringify(entry && entry.writes));
     const MAP = JSON.parse(fs.readFileSync("kb/dependency_map.json", "utf8"));
     const find = (o, key) => { if (!o || typeof o !== "object") return null; if (o[key]) return o[key]; for (const k of Object.keys(o)) { const r = find(o[k], key); if (r) return r; } return null; };
     const refl = find(MAP, "supabase:cpl_reflections");

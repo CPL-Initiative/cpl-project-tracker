@@ -729,8 +729,13 @@ window.COBI_ADMIN_SURFACE = {
         "first_light_tab.js"
       ],
       "reads": [],
-      "writes": [],
-      "rpcs": [],
+      "writes": [
+        "first_light_apply_requests",
+        "first_light_marks"
+      ],
+      "rpcs": [
+        "is_allowed_reviewer"
+      ],
       "measured": true
     }
   }

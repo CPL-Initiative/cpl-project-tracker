@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-12_library_funding_followup_guide.sql
-name=library_funding_followup_guide
+file=kb/migrations/2026-11-12_first_light_marks.sql
+name=s643_first_light_marks
