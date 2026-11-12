@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T05:54:18Z",
-  "session": 640,
-  "moniker": "SkyHeron",
-  "run": "Sam's session",
+  "written_at": "2026-11-12T12:04:32Z",
+  "session": 641,
+  "moniker": "SkyOtter",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_641_handoff.md",
+  "handoff": "docs/session_642_handoff.md",
   "next_step": {
-    "title": "Rio Hondo's fresh reconcile, then the PDF reader's proofs",
-    "text": "Rio Hondo's first reconcile met server errors and read 34 of 328 pages, so a fresh one runs; when it files, the session measures it against main, rereads and merges. Then the PDF reader takes fresh capture-only proofs at five colleges against same-day baselines by main's reader, a review, and the merge; the paid re-extractions follow it."
+    "title": "The four colleges in flight on the new PDF reader",
+    "text": "American River and Los Angeles City have paid reads running on their own branches, Victor Valley's four EMS certificates are being read, and College of the Desert's capture runs against its same-day baseline. Each one's result is read, loaded or reread on its branch, counted live and merged; College of the Desert's comparison is filed before its paid read."
   },
   "calls": [
     {
@@ -235,6 +235,30 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-12T11:47:00Z",
+      "text": "Paid reads started on the new PDF reader: American River, 33 programs, about $2.80, and Los Angeles City, 145 programs, about $11.14, each on its own branch and under the $40 limit."
+    },
+    {
+      "at": "2026-11-12T11:30:00Z",
+      "text": "College of the Desert's catalog fetch limit was raised from 900 to 2,400 seconds: its 21 MB catalog ran past the old limit twice. A fresh capture on the new reader runs against a same-day baseline."
+    },
+    {
+      "at": "2026-11-12T11:22:00Z",
+      "text": "Shasta College's course outcomes loaded: 775 of 775 outlines read, 1,549 rows."
+    },
+    {
+      "at": "2026-11-12T11:16:00Z",
+      "text": "The PDF reader merged: a program that a renumbered catalog only moved keeps its record with no model call, a department's award list gives no heading, and a record that passes in full is replaced only by a read that passes in full."
+    },
+    {
+      "at": "2026-11-12T11:00:00Z",
+      "text": "De Anza College's outcomes trial is held: 11 of 12 pages came back empty, because its 2026-27 catalog does not answer the older course codes."
+    },
+    {
+      "at": "2026-11-12T07:24:00Z",
+      "text": "Rio Hondo College merged: transfer degrees take Cal-GETC's 34 units, summed from the catalog's printed areas; 276 of 288 records pass the machine checks."
+    },
     {
       "at": "2026-11-12T04:53:00Z",
       "text": "Berkeley City College merged: local degrees take the catalog's 18 general education units and its electives rule. The reread replaced 16 live records, none held; 48 of 89 pass the machine checks."

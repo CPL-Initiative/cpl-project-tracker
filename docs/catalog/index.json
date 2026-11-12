@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 581,
+   "count": 583,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3376,6 +3376,25 @@
      "updated": "2026-10-03"
     },
     {
+     "created": "2026-11-12",
+     "governs": [
+      "scripts/daily_build.sh",
+      ".github/workflows/daily-dashboard.yml",
+      "tests/apply_concurrency_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-rebuild-runs-the-same-build-script.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "workflows",
+      "governance"
+     ],
+     "title": "A rebuild runs the same build script, never an imitation of the runner",
+     "type": "methodology",
+     "updated": "2026-11-12"
+    },
+    {
      "created": "2026-09-04",
      "governs": [
       "excel_to_dashboard.py",
@@ -4575,6 +4594,23 @@
      "title": "A tag scan cannot see a fetch",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [
+      "tests/public_target_floor.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "target-size",
+      "library"
+     ],
+     "title": "A target at exactly the minimum size fails at fractional zoom",
+     "type": "methodology",
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-07-26",
@@ -16087,7 +16123,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16145,7 +16181,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16828,8 +16864,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 602,
+   "count": 603,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 642,
+     "path": "docs/session_642_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 642 handoff (from SkyOtter, S641)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -27030,5 +27080,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1454
+ "total": 1457
 }

@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -157,15 +157,22 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   folds under *More about it (optional)*, and Start saves the Requested record and opens its card with the brief. No
   second form. The kind the instructions name first wins (his noncredit visual had read as a Document). A new piece
   drafts on its card with Draft it now (2026-11-10, above).
-- **DSP Version 3** (S599; Sam's Revise of 2026-11-07 11:29Z): ELL IET Version 5's form, from the vault source, stored as
-  the card's draft (`kb/migrations/2026-11-07_library_dsp_v3_stored_draft.sql`). **NEXT:** Sam's Replace, or his next note.
+- **DSP Credit Starting Points is Version 3 in public, remediated (S641, #3151, `fb2d35b3`; Sam's Revise and remediate
+  of 2026-11-11 15:30Z, approved 15:31Z).** ELL IET Version 5's form, from the vault source. The record moved by guarded
+  UPDATE (version `3`, a fourth `versions` entry, `refresh_note` and `regen` emptied, `library-s641@bot`); receipt and
+  rollback `kb/receipts/cpl_library_dsp_v3_public_s641_2026-11-12.sql`.
+- **Public targets have a 25px floor (S641, #3151).** Eight targets at exactly `min-height:24px` measured 23.9 at 90% and
+  133% browser zoom: the shared header's Links, Light and Dark, and five Request Adopt links. The floor sits in the vault
+  sources (public header, the agency visual, tabs; CPLBrain `0e4b1091`), and seven other public pages, `library/index.html`
+  and `library/adopt/` took the header's lengths. Guard `tests/public_target_floor.test.js`. A new public page takes the
+  header's lengths, never `24px`.
 - Five shipped records (Revise from the card, S577; the Catalog in the Share menu, #2826; ELL IET Version 5 public; Version 5 in the library look and the dated public cards; the card's quick
   revise, #2824) moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (SkyLoop)*.
 - **The CPL Initiative overview** (`library/cpl-initiative-overview/`, record `cpl-initiative-overview`; Sam: *"publish the
   overview"*): in the public library's look, figures live from `live_metrics.json`; its own source, so revise it on its card.
   Every public page's header leads its Links with it (`header.html`; guarded in `tests/public_library.test.js`).
-- **Still open from the ELL IET and Coordinator Guide asks:** IACA's `regen` (Crystal Nasio, 2026-10-26) has no note or
-  sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z, Request Adopt
+- **Still open from the ELL IET and Coordinator Guide asks:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio, 2026-10-26) has no
+  note or sources: it waits on what she wants changed. The Coordinator Guide's request (Sam, 2026-11-05 12:36Z, Request Adopt
   links) is done (S605): Draft 2 at the same artifact, Request Quick Adopt for Basic Military Training and the seven
   statewide recommendations the most colleges adopted, the Credential Catalog in Resources; the record moves by
   `kb/migrations/2026-11-08_library_coordinator_guide_draft2.sql` (lessons, S605). ELL IET reads 33,971 of Sierra's 34,000 characters: room for anything

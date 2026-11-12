@@ -139,6 +139,26 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S641, and what worked
+
+- The 06:12Z firing stopped with no handoff, and the 10:12Z firing had no `list_sessions`. What worked: read every
+  channel (open PRs, `main`, runs, #3110, `cpl_memory`), watch `git ls-remote` for 23 minutes, then open a draft PR
+  declaring the queue before any other write (`scheduled_sessions.md`, *A session that stopped without a handoff*).
+- A bare `git fetch origin` on the shallow clone pulled over a gigabyte for 302 branches. Fetch a branch by name, with
+  `--depth`.
+- The conductor printed a load receipt's whole rollback string (1,549 ids) into its context. Read a receipt's keys and
+  counts, never its values.
+- A reviewer copied the repository (4.4 GB) into the scratchpad despite the brief. The round-two brief said why not, and
+  the conductor checks `du` on the scratchpad after each review.
+- `get_check_runs` with `perPage` 1 shows `test` first only once it has finished; while it runs another job is first.
+- A worker's change beyond its brief (narrowing #3135's call 2a) needed its own second reader, who found it bought a
+  paid read every run. One reader on a worker's delta is cheap, and here it paid.
+- Two PRs that regenerate `kb/dependency_map.json` merged in sequence cleanly; the third (#3152) conflicted. Merge them
+  one at a time and expect a `main` merge on the rest.
+- The conductor wrote "10:55Z" on #3110 for a note posted about 10:45Z. Read `date -u` first (S640's lesson, again).
+- Worked: replacing #3150's design after round one instead of patching an imitation of the runner; mutation checks by
+  workers; a proof dispatch right after merging a workflow change, while the session is there to revert it.
+
 ## What went wrong in S640, and what worked
 
 - Context went fast: 370,000 tokens in the first 85 minutes. Largest first: a review workflow's completion notice

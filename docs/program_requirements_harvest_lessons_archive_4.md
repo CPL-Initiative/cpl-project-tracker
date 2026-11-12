@@ -602,3 +602,301 @@ From *Course objectives too*, verbatim:
   only cleanup); read the job's middle before trusting the apply's row counts.
 - **The Rule 8 memory read, the handoff and the open PRs together told the state in one pass:** S456's comment on
   #2384 said which PR merged on green and which waited on what; nothing had to be re-derived.
+
+## Moved from the lessons (S641 compaction)
+
+Sections S456 through *Moved from the lane (S447 compaction)*, verbatim, as they stood on 2026-11-12.
+
+## S456 SkyYarrow (2026-10-23, Sam's session): card 1 carried out, a Coursedog tab's code names its award, a noncredit section
+
+- **A bulk delete's before-values receipt reads the rows outside the session's context.** Sheet 115 card 1's 17 rows
+  run to 779 KB of `to_jsonb(r)::text`; the migrate runner records at most 4,000 characters of a response, and a row
+  retyped by a model is no receipt. The rows were read through the Supabase MCP in queries whose answers exceed the
+  tool-result cap, which the harness saves to a file instead of the context; a script parsed each file, checked every
+  `md5(row_text)` against Postgres's `row_md5`, and wrote the receipt and the md5-guarded delete
+  (`kb/receipts/program_requirement_records_older_build_removed_2026-10-23_s456.{json,sql}`). The apply (run
+  39968114807) returned `removed 17`; a live count of the keys reads 0; the table holds 17,530. Victor Valley's
+  second department-list row (Irrigation and Water Management 38852) was already gone; Sierra 11965 and 21557 were
+  re-extracted by S455 and stay. No display rebuild: the build already left the rows out.
+- **A Coursedog tab's code names its award.** Hartnell's site read filed 7 of 96 records from a tab whose code names
+  another award: `label_score` reads "associate in science for transfer" as naming an A.S., so Biology A.S. 03537
+  shared "Biology for Transfer Degree (AS-T) - AST.BIO" with the A.S.-T. `cd_page` keeps the code's kind
+  (`cd_code_kind`, the letters `PDF_CODE_AWARD` already reads; a prefix at Hartnell, a suffix at Merced) and
+  `candidates()` turns the tab away, as `pdf_code_match` does; an award the codes cannot name reads as before. The
+  capture (39966331452): Biology and Administration of Justice A.S. read their own AS tabs, both certificates and
+  Agriculture Production's certificate their own CT tabs, and Psychology A.A., Spanish A.A. and Agriculture
+  Production A.S. read no page, which is right (S411 found the PDF prints none). Found 96 to 94, passing 59 to 60.
+- **A local degree may name Cal-GETC on its own tab.** With the gate, a Hartnell tab is one program's, so the
+  transfer-only restriction on the Cal-GETC step (S421's caution about a page spanning the sibling section) no longer
+  protects anything there; a second step, `awards: associate`, fills the figure where the tab prints the pattern.
+  Three records changed: Computer Science A.S. 08871 passes; Engineering A.S. 33851 now reads 70-87 against the
+  printed 71 and 17924 17-18 against 18, failures of the blocks, not the pattern. Proceeded on the recommendation;
+  Sheet 117 card 3.
+- **A department page heads a noncredit program's section.** `SECTION_AWARD` had no noncredit pattern, so
+  `section_match()` read no section for Sierra's Entrepreneurship for Makers 37810 though `candidates()` took the
+  Business page at coverage 1.0, and `page_winners()` gave the page to the credit awards. The pattern
+  (`\bnoncredit\b|certificate of (?:completion|competency)`) reads "Entrepreneurship for Makers" then "Noncredit
+  Certificate of Completion". Free capture 39967799242: found 107 to 109, page-claimed 15 to 13; 37810 and
+  Construction Fundamentals 38749 to extract; the two ESL noncredit (38991, 44028) still read no page.
+- **Run the capture's gates on a page read before changing the reader.** A `capture_view` log is the capture's own
+  text, so a page dict built from it (`body` and `content` the text, `codes` from `page_net`) runs
+  `C.candidates()`, `label_score()` and `section_match()` locally and names the gate that refuses the page; the
+  closed list comes from `coci_program_courses` through the Supabase MCP, since the sandbox cannot reach the
+  database. One run found the missing section pattern in a minute where the first reading of the log did not.
+- **A renamed program prints its old name under the new heading.** Sierra heads "Innovation and Entrepreneurship,
+  AA or AS Degree (formerly Business Entrepreneurship)" and its certificate "(formerly Interdisciplinary
+  Entrepreneurship)"; COCI's Interdisciplinary Entrepreneurship A.S. 15307 lists BUS 28, BUS 95 and IT 60, which no
+  section lists. The Mathematics and Physics A.S.-T (31226, 32010) lost their pages to the "2.0" transfer degrees
+  the catalog prints alone (45833, 46074). Reading no page is right for all three; the college's to settle in COCI.
+- **Hartnell's 37 arithmetic failures by `why`:** 8 name a GE pattern without units (the wrong-tab rows above, and
+  three own-tab local degrees naming Cal-GETC), 9 list a required course without units (7 noncredit programs whose
+  courses carry 0 credit hours, so the hours-measured record wants hours the vendor's `creditHours` cannot give;
+  HES 120 and the ABT courses the vendor did not price), 2 name no total (the two certificates on A.S. tabs), 18
+  sum against a stated total. Counting first kept a course-units fix from being written for a tab-assignment fault.
+
+## S455 SkyMonkeyflower (2026-10-23, the CPL Queue routine): Hartnell's course units from the vendor, Sierra's IT
+
+- **A Coursedog tab's course data is now a source field.** `cd_pages` listens for the `courses/search` POST each
+  Requirements tab makes as it loads and keeps `{code: [min, max]}` of `credits.creditHours` as the source's
+  `course_units` (with the call's address). A reconcile kind, `course_units`, fills a course or alternative the
+  record lists without units, and its note names the call. Hartnell's procedure takes the step.
+- **A noncredit course carries 0 credit hours.** The first reconcile (run 39946676559) wrote 0 units into Hartnell's
+  hours-measured noncredit programs (BUS 650: "the blocks sum to 0.0; the catalog states 216"). That filed run was
+  reverted; the step now skips a 0-hour course and any record whose measure is not units. Reconcile 39949570443: 86
+  records priced, none at 0; 59 pass the machine checks (44 before), arithmetic failures 51 to 37.
+- **The carry basis keeps every block,** so a curator's confirm of a record does not carry across a course_units
+  fill. That is the cautious result; the college test's carry check exempts the kind and says so.
+- **A short title word may abbreviate the heading's words.** The state names Sierra's "IT: Cybersecurity"; the IT
+  department page heads "Information Technology—Cybersecurity" then "AA or AS Degree" (page read 39946962141,
+  capture view). `with_acronyms` collapses a run of words (each four letters or more, so "intro to" never reads as
+  IT) whose initials spell a 2-4 letter title word. Free capture 39949602062: found 105 to 107 of 125, page-claimed
+  17 to 15, the two Cybersecurity awards to extract.
+- **IT: Business Information Worker (07963, 21537) is not in Sierra's 2026-2027 catalog.** The IT page lists Cloud
+  Computing, Cybersecurity, Data Analytics, IT Technician and Network Technician. Those two are the college's to
+  retire in COCI, never a reader gap.
+
+## S454 SkyBlazingStar (2026-10-23, the CPL Queue routine): Hartnell's GE units, Sierra's "AA or AS", the vendor's course units
+
+- **Hartnell's arithmetic failures were mostly GE, not course units.** Of the 85 records failing arithmetic after S451,
+  41 degrees failed only because the record names its GE pattern without units (28 Cal-GETC, 13 Local GE); about 22
+  lack a course's units. Count the `why` of each failure before choosing a fix (`score.arithmetic.why` in the records).
+- **Hartnell's reconcile steps** (`kb/program_requirements_reconcile.json`): transfer degrees set Cal-GETC to the
+  statewide 34 (Taft's step, Sheet 94 card 4 kept it); local degrees set Local GE to 23, the sum of the seven areas the
+  catalog PDF prints on pages 58-59 (Area 1 6 units, Areas 2-6 3 each, Area 7 2; read 39931207783), no total printed,
+  as Monterey's 24 is a sum. Reconcile run 39931703521 changed 50 records, 32 more now equal; reread 39933892215
+  replaced 50, 34 pass the machine checks (receipt with before-values under `kb/receipts/`).
+- **A Coursedog tab's own scripts carry the course units.** Page read 39930495321 (`network`, `network_hosts:
+  ["app.coursedog.com"]`): the Requirements tab POSTs `api/v1/cm/hartnell_colleague/courses/search/$filters?catalogId=...`
+  and each course carries `credits.creditHours.min` (ADJ1: 3); it also GETs the Cal-GETC requisite set with each area's
+  credits. The tab's course lines are not links (read 39924074351). NEXT for the ~22 records lacking a course's units:
+  have `cd_pages` keep that answer per page (a code to units map) and a reconcile kind fill an empty course unit from
+  it, citing the call.
+- **Sierra heads one section for two degrees "AA or AS".** Fire Technology's department page prints "Fire Technology"
+  then "AA or AS" (page read 39930677707, the capture view in the log; a read without `capture_view` prints only the
+  visible tab and found no heading, run 39931100230). `SECTION_AWARD` now reads that line for both the A.A. and the
+  A.S. Free capture 39931621162: found 92 to 105 of 125 with a closed list, page-claimed 25 to 17, not found 8 to 3;
+  13 programs to extract (Fire Technology, Computer Science, Photography, IT Technician, Graphic Design, Psychology
+  AA-T and the five Administration of Justice degrees).
+- **A long page-read log comes whole through `get_job_logs` with a large `tail_lines`:** the tool saves an oversize
+  answer to a file the session can grep, so `capture_view` on a 49,000-character page is readable.
+
+## S453 SkyFiddleneck (2026-10-23, the CPL Queue routine): San Mateo landed, the thin list re-measured, Hartnell's course pages
+
+- **San Mateo landed.** S452's branch (load 39917453080, 1 inserted, 55 kept; reread 39917922958) merged with display
+  build 2ab793e383e1 (#2372); `step=display` on `main` dispatched after the merge, queued behind Long Beach City's
+  504ae8333118 apply (run 39917479288).
+- **A thin college is measured against the programs with a closed list.** Records against `capture.json`'s
+  `programs` called Skyline thin (53 of 144, 37%), but 86 of its programs have no course list in the state's file
+  (`by_method.no_closed_list`), so it found 53 of 58 (91%). On `with_closed_list` only Canyons (160 of 264; its
+  missing 100 are noncredit programs its credit catalog does not carry, S442), Calbright (12 of 19) and Sierra (92 of
+  125, 25 page-claimed, CourseLeaf reader work) sit under 80 percent. No shared cause remains to fix by a re-run.
+- **Hartnell's course units:** page read plan `kb/college_reads/hartnell_course_units.json` (branch
+  `claude/hartnell-course-units-read-s453`) loads one Requirements tab and follows its `/courses/` links to see
+  whether a course page prints units (run 39924074351, still running at checkpoint; its job log is the answer, and S454 reads it before any reconcile code).
+
+## S452 SkyPoppy (2026-10-23, the CPL Queue routine): Long Beach City landed, three free captures, a display step that built nothing
+
+- **Long Beach City landed.** Its extraction (run 39891611701, started 02:48Z on `claude/harvest-long-beach-city-s449`)
+  filed at 06:00Z after about 3 h 12 m. Load 39910674748: 368 records, 349 posted, 7 inserted, 342 kept. Reread
+  39910973351: 11 posted, 4 replaced. Display build 504ae8333118 (17,510 programs, from 17,505) on
+  `claude/harvest-wave-s452` (#2370).
+- **`step=display` applies the committed build; it never builds one.** Dispatched on the wave branch before the
+  builder ran, it re-applied 25fe751ccd0a, already live from the 04:56Z run on `main` (run 39911664916, 6,940
+  written, no change). The order is the S420 one: `python3 kb/_build_roep_display.py` on the branch (about 90 s;
+  it needs `openpyxl`, which the sandbox lacks until `python3 -m pip install openpyxl`), commit
+  `cpl_pathways_roep_data.js` and the new `.sql.gz`, merge, then `step=display` on `main`.
+- **Free captures, measured against main.** East LA 137 of 234 on both (three programs' PDF page numbers moved,
+  coverage the same): nothing to extract. Marin 89 of 155 on both, `would_extract` empty. San Mateo 61 of 98
+  (from 60): Administration of Justice A.S.-T (31224) is new, extracted on `claude/harvest-san-mateo-s452`
+  (one program, well under $1); its load, reread and display ride the next wave. Cañada was skipped: its registry
+  row records a robots.txt refusal and its records come from the hand-filed copy.
+- **UI pass, Funding model page (#2369).** `npm run a11y funding-model` passed at all 9 widths; the page is
+  light-only by design and reads no shared dataset. The `#live-status` line painted `var(--ink-2,#5b544c)`, an
+  undefined token's raw-hex fallback; it now reads `var(--text-muted)`.
+
+## S451 (2026-10-23): Hartnell by its site, the S449 queue landed, one display build
+
+Sam opened S451 with the harvest queue ("keep going with the Commons PR harvest"); the Sheet 115 session (S450) had
+published the sheet and stopped. No decision from Sam this run; Sheet 115 card 1 had no reply, so the 25 older-build
+rows stand.
+
+- **Hartnell's vendor-hosted Coursedog catalog names the tab Requirements, and the site now reads 96 of 112.** Page read
+  39853502958 (S449) showed the tab link (`/programs/AA.ADD/requirements-ipyf8`) where Merced's catalog says Requisites;
+  page read 39891644835 showed the tab as the capture reads it: one course a line (`ADJ1: Introduction to
+  Administration of Justice`, `STATC1000: Introduction to Statistics`), no credits on the line, one "Total Required
+  Credits 60" at the foot, and a transfer degree's letters written `(AS-T)`. `CD_REQUISITES` knows either name,
+  `CD_TOTAL` trusts either total line for the direct read, and `cd_award_words` reads the hyphen. The free site read
+  (run 39892327918) listed 100, read 99 program pages (98 direct; `AA.SPA`, Spanish, missed) and found 96 of 112 where
+  the PDF found 73 (S410), page-claimed 8, not found 1 (High School Equivalency Preparation, noncredit). **So a Coursedog
+  catalog reads from its site by default** (`prefer_site`), and `route=pdf` keeps the PDF procedure step for one run;
+  Hartnell's procedure record still names the PDF step, set aside, not rewritten. Extraction 39895340003: 96 for $6.46,
+  10 passing the machine checks, 85 failing arithmetic because the tab prints no course units; the display builder
+  fills a course's units from the state's file (`units_from_state_file`), so the records place their courses and show
+  units. Load 39897654311: 24 inserted, 70 kept, 2 placing none. NEXT: a reconcile step that reads each course's units
+  from the catalog's course pages, so Hartnell's arithmetic check can pass.
+- **The S449 free captures, measured against main before any spend** (found / page-claimed / not found, main's in
+  parentheses): Berkeley City 90 / 6 / 1 (67 / 3 / 27), every one of the 23 regained a Multimedia Arts program, so
+  `cq_pages` on the current reader does read the Requirements child; Mt. San Antonio 397 / 11 / 20 (382 / 11 / 35),
+  16 new pages (noncredit ESL, HSE and vocational programs on `adult-basic-education/` and `esl/` pages, Administration
+  of Justice AS-T, Dance Teacher), 12 moved, 12 changed, 1 newly page-claimed (CIS Professional in Excel and Access);
+  Long Beach City 368 / 15 / 2 (367 / 14 / 4), 4 new, 4 moved (the Administration of Justice pages), 3 newly
+  page-claimed (two Computer Support Specialist awards, Business Information Worker, each keeping its loaded record);
+  Victor Valley 176 / 9 / 16 (178 / 7 / 16), nothing moved, the two department-list losses S449 explained. A preview's
+  `found` is a count and its `would_extract` list is the measure of what an extraction sends.
+- **An extraction sends only what moved; the summary's `cost_usd` sums the kept records' stored costs too.** Mt. San
+  Antonio's extraction (39891607837) kept 357 records filed from the same page and sent 40 (the log's line), in 95
+  seconds, yet its summary reads 397 extracted and $22.47: the kept records carry their 2026-10-15 costs. Read the
+  job log's `kept N records ...; M to extract` line for the spend, never the summary.
+- **Berkeley City extracted all 90 ($5.81), 34 passing; load 39895334688 inserted 23 and kept 66 (1 placing none);
+  reread 39895712663 replaced 66.** 56 fail arithmetic: a curriQunet Requirements tab prints codes without a total the
+  record can reconcile, as at the other curriQunet colleges.
+- **Palo Verde on its Acalog catalog:** load 39891599387 inserted 15 and kept 51 (the catalog moved, so every page
+  moved); reread 39891946981 replaced 51; 38 of 66 pass. **Cypress:** load 39891601778 inserted 17, kept 251, 6
+  placing none (the HVAC and Administration of Justice programs on department pages); reread 39891949270 replaced 1.
+- **The builder's dated registry read was five days behind the census.** The 2026-10-18 census had moved every row's
+  `census_run_id` and six catalogs (Palo Verde to Acalog; Miramar, Merritt, Berkeley City and Butte an `/iq/` tail;
+  College of the Desert from a custom page to CourseLeaf 2026-2027), and S444's mapper hosts sat on 37 rows. Re-read
+  through the Supabase MCP, all 114 rows, before the build. Four registry colleges hold no records and stay out of the
+  read (Diablo Valley, North Orange Continuing Education, San Jose City, Santiago Canyon).
+- **Mt. San Antonio:** extraction 39891607837 sent 40 (357 kept); load 39898177865 inserted 15, kept 368, 14 placing
+  none (the regained noncredit ESL, HSE and vocational programs read `adult-basic-education/` and `esl/` department
+  pages that list no course of theirs, so the load leaves them out); reread 39898856949 replaced 15, held 1. Long
+  Beach City's extraction (39891611701) was still running at the wave; it joins the next.
+- **Display build 25fe751ccd0a** covers Palo Verde, Cypress, Berkeley City, Hartnell and Mt. San Antonio: 17505 programs
+  (17,414 in be2635ed5b73). A PR that loads records without a build fails `tests/roep_display_test.py` (#2366, closed
+  into the wave PR for that reason): a college's load and its build travel together.
+- **#2365:** the page reader's `cq_view` and three S449 plans, merged on test green. **#2367**, the wave, merged on
+  test green after two lint rounds: a course outcomes test pinned Palo Verde's eLumen address (now Modesto Junior,
+  and Palo Verde's Acalog catalog is asserted refused), and the dependency map's line numbers had moved.
+
+## S449 SkyBuckwheat (2026-10-22): the queue after S448, Palo Verde's new catalog, a reader view for curriQunet
+
+Sam opened S449 with the standard line and said nothing more in session; the funding side session and a second
+side session (Scenario 4) ran beside it, one writer per file.
+
+- **Read the catalog as the capture reads it, for curriQunet too.** S447's rendered view of a Berkeley City iq
+  address showed the Summary tab alone, because the catalog draws its other tabs from JSON on a click. The page
+  reader's `cq_view` (a plan page with `cq_catalog`) now makes the capture's own calls through `cq_json`,
+  `cq_children` and `cq_page`, and prints the entry's navigation record, the child pages read and the joined text
+  with the coarse net's codes (page read 39849599506). The three credit Multimedia Arts certificates print every
+  code the state lists on a Requirements tab (Digital Photography 15 of 15, Animation Level I 13 of 13, Motion
+  Graphics 16 of 16, as `MM/DI 011`, `MM/AN 003A`, `MMART 197`); the noncredit twin prints `MM/DI 510`-`550`.
+  Main's capture of 2026-10-16 read Animation Level I's own page at 1 of 13, so it never read the Requirements
+  child. The entries sit under an untitled, hidden node (39968) inside section 39966, and `cq_pages` reads an
+  entry's children only when its navigation record says `haschildbodynavs`. The free capture on the current
+  reader (run 39853098819) is the test; its preview is on `claude/harvest-berkeley-city-s449`.
+- **Mt. San Jacinto's remaining gaps are the catalog's.** The capture view (page read 39849099432) of
+  `chemistry-ast` and `public-health-a.s.-t` shows Overview and Career Exploration alone: "The Chemistry, A.S.-T
+  is being revised [and] is not available to new students in the 2026-2027 academic year"; "The Public Health,
+  A.S.-T is currently being revised and is expected to be available shortly." The sitemap lists no own page for
+  Musical Theater (the theater-arts department prints Technical Theater and Theatre Arts), the office
+  administration certificates, Environmental Studies A.S., Mathematics A.S. or Culinary Arts & Hospitality A.A.;
+  Advanced Audio Technology reads the catalog's Audio Production. Five other MSJC transfer degrees with dotted
+  award slugs (`geology-a.s.-t`, `journalism-a.a.-t`) were found, so the slug reader needs no change. No reader
+  change; the 15 page-claimed and 22 not found stand.
+- **Palo Verde moved to an Acalog catalog, 2026-2027.** The census had moved its registry row from
+  `pvc.elumenapp.com` (2025-2026) to `catalog.paloverde.edu`; a free capture (run 39850074235) found 66 of 68
+  from 54, every program on a `preview_program.php` page, 13 gaining a page (Communication Studies 2.0, Alcohol
+  and Drug Studies A.A., the two Anthropology awards, the noncredit certificates). Extraction of all 66 runs
+  under the $40 go (run 39852997888); load, reread and display follow.
+- **A free capture under the S443-S447 rules at five colleges last captured 2026-10-10 to 10-15** (branches
+  `claude/harvest-<college>-s449`): Cypress 260 to 274 found (run 39848037321; HVAC and Administration of
+  Justice programs on department pages; 18 extracted, run 39853370754); Victor Valley 178 to 176 (below);
+  Mt. San Antonio and Long Beach City still capturing at the checkpoint.
+- **A department's course list is not a program's page, and the heading rules now refuse it.** Victor Valley's
+  Nursing Licensure certificate had read `degrees-certificates/nursing/` at 0.867 and Irrigation and Water
+  Management `agriculture-natural-resources/` at 0.769 (main's capture, 2026-10-15); the capture view (page read
+  39853165646) shows both pages print the department's course descriptions and a PROGRAMS tab the capture leaves
+  out, and the agriculture department lists no Irrigation and Water Management award at all. Under the
+  section-heading rules each page goes to a program a heading names, so both are page-claimed now: a correction,
+  not a loss. Their loaded records read a course list; they belong with the 25 below.
+- **Hartnell by its site: 0 of 105.** S411 had measured that the PDF prints 79 program codes where the site's
+  search lists 100, so the reader gained `route=site` (a dispatch input; `prefer_site()`; the procedure step
+  stands). The run (39850594534) listed 100 programs and loaded each program's page, but found a Requisites link
+  on none (`requisites_suffix` null, 60 missed): the vendor-hosted catalog names the tab otherwise or draws the
+  requirements from a data call. Page read 39853502958 prints two program pages' tab links and data calls.
+- **Ohlone's 15 low-coverage credit programs are not in the 2026-2027 guide under the state's lists.** The
+  guide's Associate in Arts in Art names about 18 ART courses where the state's Fine Arts A.A. lists 72 (art,
+  music and theater); its Computer Science A.S. (CS-102, CS-113, CS-116) is the near-miss page of the state's
+  Computer Studies A.A. (CNET 160A, CS 101, CS 146); page reads 39850460662 and 39853324740. The college's to
+  settle in COCI. The 18 noncredit certificates are on the college's noncredit web page (`/noncredit`), which
+  the chapter PDF does not carry. A keyword that the guide prints on earlier pages fills the fourteen-page cap
+  before the pages wanted: name the course codes the state lists, as the guide prints them, with `pdf_span`.
+- **Twenty-five live rows carry an older display build.** 19 are rows whose program is page-claimed in the
+  latest capture and whose filed record the newer extraction replaced (Sierra 11, Oxnard 2, MiraCosta 2,
+  Foothill, Orange Coast, Palomar, Ventura); 6 are filed records that place none of their listed courses
+  (Citrus 11244, Grossmont 32879, Moorpark 39413 and 45352, Orange Coast 22394, Santa Barbara City 32629), which
+  the builder leaves out under Sheet 62 card 1. Removing live rows is Sam's: Sheet 115 card 1.
+- **The Canonical SUBJ4 scope note is a paragraph** (#2360): its handbook link measured 15 px as a control inside
+  a div; as prose the engine reads it as an inline text link, which WCAG 2.2 exempts.
+
+## Moved from the lane (S449 compaction)
+
+**RULED (Sam, Open Asks Sheet 97 card 1, 2026-10-19 03:11Z, his own call: Build with Grok; `cpl_memory` `sam-sheet-97-second-reader-grok-2026-10-19`; https://claude.ai/artifact/1eWaN6UmVnKaJhGYTqQtfN):** a second reader, xAI's Grok, over the records that fail a machine check: the same text read by a second model, both readings scored by the scorer, agreement evidence and disagreement a known issue carrying both; first the 93 failing records at Cañada, Taft and San Joaquin Delta; public catalog text only. **Built (S421, #2246):** the function's version 11 takes `provider` (`anthropic` or `xai`; the same prompt, message and schema), `kb/_second_reader.py` reads a college's failing records from the page the first reading came from and scores both readings (`agree` · `second_passes` · `both_fail_same_checks` · `disagree`), and `second-reader.yml` runs it and uploads the comparison; nothing is written. **Waits on** two secrets only Sam sets on the Edge Function (`XAI_API_KEY`, `XAI_MODEL`; Sam's call 6, sheet 23: no model key in GitHub) and one deploy (`cpl-chat-deploy.yml`, `program-requirements-extract`; live is v10 of 2026-10-15). Then dispatch `second-reader.yml` with `college=Cañada College`. **Jev's sittings (S420-S421):** lessons, *Moved from the lane (S447 compaction)*.
+
+**S424 (#2256, #2258; Taft's renumbered BUSN 550/555; the four wrong-page rows; a Jev sitting asks only about the gating checks):** lessons S424. **A renumbered course (Merced, S423, #2253):** a college's `course_renumbers` (`kb/program_requirements_reconcile.json`) maps a catalog code to the state file's where both print the same title and units, each pair cited; the capture looks for the listed course by its printed code and the scorer reads it as the listed one, never where the file lists the printed code. Fable's advice: lessons S423. **NEXT:** Merced's last nine (each the college's to settle in COCI; the list is in lessons S423); Taft 30284 is on its own page in build e0407fdcb54b (its two footnote courses without units are a second-reader row); ✅ Sheet 98 card 1: Sam deleted Taft 38661 on 2026-10-21 (lessons S440). Card 2 *later*: **the second reader waits on the xAI API billing moving to the RCCD district card** (Sam, 2026-10-20), so the model rows wait (steps: lessons S424; `cpl_memory` `sam-sheet-98-rulings-2026-10-19`); Orange Coast 10278 passes (read live 2026-10-21).
+
+## S447 SkyBrittlebush (2026-10-22): an Administration of Justice address, a hyphenated code, Mt. San Jacinto and Santa Barbara City
+
+- **Read the sitemap before calling a program's page missing.** Both colleges' sitemaps (page read 39770285975)
+  list every missing program's own page: Mt. San Jacinto's `administration-justice-as`, `anthropology-aat`,
+  `history-aat`, `kinesiology-aat`; Santa Barbara City's seven `/justice-studies/administration-justice-*` pages.
+  The capture read the sitemap and dropped them itself, so the fault was the reader's filter, not the finding.
+- **`/administration` in `NOT_PROGRAM_PATH` dropped every Administration of Justice program (#2349).** The pattern
+  was meant for the college's administrators section and matched any address beginning with the word. Only a
+  whole `/administration/` segment is dropped now.
+- **A hyphen joins subject and number at Mt. San Jacinto (#2349).** The catalog prints `ANTH-102` and
+  `ANTH-C1001L`; `SUBJECT_TOKEN` read only a space, so every Requirements tab read as naming no course and was
+  dropped, while the Program Map tab (a sample sequence that mentions `ANTH 105` once in prose) was kept. 85 of 99
+  found programs had read the whole hidden page (textContent), and the transfer degrees lost their pages to the
+  general education pages. The capture view (page read 39773199040) showed it in one read.
+- **A transfer degree whose state list is far wider than its page loses on coverage.** Santa Barbara City's
+  Philosophy AA-T and Film, Television, and Electronic Media AS-T keep their Requirements tabs, but the state's file
+  lists 130 and 193 courses (the whole CSU humanities list), so their own pages name too small a share. No reader
+  change was made; it is the coverage gate, worth a rule only if it recurs.
+- **A plan reads one college.** `tests/college_page_read_test.py` fails a plan whose pages span two college
+  domains; split the capture view by college before committing it.
+- **Mt. San Jacinto, after #2349:** free capture 39775680177 found 115 (from 99), page-claimed 25 to 15, not found 28
+  to 22 (17 gained their page; Musical Theater A.A. lost its department page). Extraction 39779328144: 115 for
+  $9.18, 93 passing (from 74). Load 39782892386: 18 inserted, 94 kept, 3 placing none.
+- **Santa Barbara City, after #2349:** free capture 39775686975 found 254 (from 249), page-claimed 20 to 15 (six
+  Administration of Justice programs gained their pages; Physics A.S. lost one and keeps its loaded record).
+  Extraction 39782741424 re-extracted all 254 for $18.39, 210 passing (from 206); load 39788639887: 6 inserted, 241
+  kept, 7 placing none; reread 39789668568 replaced 8. Mt. San Jacinto's reread 39785231446 replaced 85.
+- **Display build be2635ed5b73** covers both colleges (17,414 statements in its receipt, against 17,391 for
+  0ad3c75bfa19 by the same count).
+- **Berkeley City's 27 unfound are all Multimedia Arts (page reads on `claude/s447-berkeley-city-read`, runs 39786898807,
+  39787382470, 39789714704, 39791941728, 39793778941).** The catalog lists the credit certificates (Digital Photography
+  40048, Animation Level I 40037, Motion Graphics 40043) beside noncredit Certificates of Completion, and the capture
+  read them: Animation Level I's own page named 1 of its 13 listed courses. The noncredit Requirements tabs print
+  `MM/DI 504A`, `MMART 505A`, `MM/DI 515A`, `MM/DI 550`; the state's file lists the credit certificates with `MMDI005`,
+  `MMDI015A`, `MM/DI 22`, `MMART 197`. A rendered view shows only the Summary tab (Requirements loads on a click), so
+  a credit page's codes need its Requirements node read through `_getNavigation` then `_getPage`. Not yet read.
+- **Saddleback's free capture (39748152661) moved nothing:** 314 found and 26 page-claimed against main's 321 and
+  19, with six pages lost to ECONNRESET; the seven newly page-claimed were never loaded. No extraction.
+- **Display build 0ad3c75bfa19 applied on main** (run 39766423451, 78 minutes; S446's build).
+
+## Moved from the lane (S447 compaction)
+
+**Jev's sittings (S420-S421):** `kb/_jev_harvest.py` via `typesafe-smoke.yml` `harvest=<college>`; run for Cañada (22 rows), Taft (24) and San Joaquin Delta (49), no errors, the whole sitting in seconds after the free capture. A session's verdicts beside each row are in `kb/jev_harvest_verdicts/<slug>.json` (Cañada: cause held on 16 of 16 settled; Taft: 15 of 21; Delta: 17 of 49, and the floor rule built from its misses cleared 41, S422). Jev's cause is reliable; its owner leans wrong the same way everywhere, naming the scorer or the extraction for a figure a procedure step supplies or a page the reader cut. No gate is set: these are a session's verdicts, not Sam's, and `GATES` takes precision 1.00 on a person's.
+
