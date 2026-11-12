@@ -15,7 +15,7 @@ related:
 
 Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` that is not a lessons doc or a session handoff.
 
-100 document(s).
+102 document(s).
 
 | Title | File | Created | Updated |
 |---|---|---|---|
@@ -81,6 +81,8 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [Program requirements harvest lessons — archive 2 (S360-S371)](../program_requirements_harvest_lessons_archive_2.md) | `program_requirements_harvest_lessons_archive_2.md` | 2026-10-15 | 2026-10-15 |
 | [Program requirements harvest lessons — archive 3 (S399-S415)](../program_requirements_harvest_lessons_archive_3.md) | `program_requirements_harvest_lessons_archive_3.md` | 2026-10-22 | 2026-10-30 |
 | [Program requirements harvest lessons — archive 4 (S419 onward)](../program_requirements_harvest_lessons_archive_4.md) | `program_requirements_harvest_lessons_archive_4.md` | 2026-11-08 | 2026-11-09 |
+| [Program requirements harvest — side-session handoff (S639, second session)](../harvest_side_handoff_s639.md) | `harvest_side_handoff_s639.md` | 2026-11-12 |  |
+| [Program requirements harvest — wave 3 diagnoses (S639 side session)](../harvest_wave3_diagnoses_s639.md) | `harvest_wave3_diagnoses_s639.md` | 2026-11-12 |  |
 | [Program-Course pipeline — continuation handoff (for a fresh session)](../program_course_pipeline_handoff.md) | `program_course_pipeline_handoff.md` | 2026-07-16 |  |
 | [Public/private repo split — scope](../public_private_repo_split_scope.md) | `public_private_repo_split_scope.md` | 2026-08-19 |  |
 | [Re-loading map_student_credit with its credit columns](../map_student_credit_reload.md) | `map_student_credit_reload.md` | 2026-08-10 | 2026-08-10 |

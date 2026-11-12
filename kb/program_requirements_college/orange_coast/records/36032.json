@@ -63,33 +63,36 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    21.0,
-    30.0
+    55.0,
+    64.0
    ],
    "stated": [
-    21.0,
-    25.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the blocks sum to 21.0-30.0; the catalog states 21.0-25.0"
+    "the blocks and general education come to 55.0-64.0, past the 60.0-60.0 the catalog prints for the degree"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "fill": null,
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
      21.0,
      30.0
     ],
     "stated": [
-     60.0,
-     60.0
+     21.0,
+     25.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -136,7 +139,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -437,5 +440,20 @@
    "Catalog titles differ slightly from the state file (e.g., GLST A102 'Global Issues' vs 'Introduction to Global Issues'; ENGL A161 'Since Renaissance' vs 'From Renaissance'); codes match."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (Cal-GETC) 1\tup to 34 (https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/: Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
+  }
+ ],
+ "read_run": "38670927724"
 }

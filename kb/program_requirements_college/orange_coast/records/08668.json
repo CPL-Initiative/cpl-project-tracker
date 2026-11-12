@@ -74,7 +74,21 @@
    "ge": null,
    "why": [
     "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     29.5,
+     29.5
+    ],
+    "stated": [
+     29.5,
+     29.5
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,8 +119,8 @@
    "section_heading": "Nutrition Education, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 29.5,
+    "max": 29.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,7 +142,8 @@
    ],
    "careers": [
     "Nutrition Education Assistants"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -242,5 +257,26 @@
    "The program outcome is printed under 'Program Learning Outcomes' on the A.S. page."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 29.5,
+    "max": 29.5
+   },
+   "words": "Total Major Units\t29.5"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

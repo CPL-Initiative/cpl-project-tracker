@@ -74,7 +74,21 @@
    "ge": null,
    "why": [
     "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     38.0
+    ],
+    "stated": [
+     38.0,
+     38.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,8 +119,8 @@
    "section_heading": "UX/UI Design, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 38,
+    "max": 38
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -255,5 +269,20 @@
    "Overview says to complete 'the Certificate of Achievement and Associate in Science Graduation Requirements', suggesting the major mirrors a certificate."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 38,
+    "max": 38
+   },
+   "words": "Total Major Units\t38"
+  }
+ ],
+ "read_run": "38670927724"
 }

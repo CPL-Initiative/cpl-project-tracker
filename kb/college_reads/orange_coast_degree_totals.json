@@ -1,0 +1,24 @@
+{
+ "_readme": "S639 (harvest side session), 2026-11-12. Orange Coast College: 51 of its 80 failing filed records are degrees whose arithmetic reads incomplete. The S396 steps read the REQUIREMENTS tab's 'OCC AS General Education 1,2 up to 21' and 'Total Minimum Degree Units - OCC AS GE 60' (read 38752570705, textContent), yet Accounting A.S. 03960, extracted on innerText+tabs, took the degree-total step and not the GE step, an A.A. names 'OCC AA General Education', and other degrees name no total at all. This read loads eight of the failing pages as the capture reads them (innerText plus the hidden tab panels, line for line), so the steps' patterns can be checked against the text they run on: Accounting A.S. 03960, Film & Television A.A. 03967, HVACR A.S. 03976, Airframe & Powerplant A.S. 03977, Horticulture A.S. 03954, Fashion Design A.S. 11634, Journalism AA-T 32179, Radiologic Technology A.S. 04008. One host, eight loads, no model call.",
+ "college": "Orange Coast College",
+ "questions": {
+  "degree_totals": "What does each degree page's REQUIREMENTS tab print, as the capture reads it, for the major's total, the general education pattern and its units (OCC AS GE, OCC AA GE, Cal-GETC), electives, and the degree's minimum total?"
+ },
+ "keywords": [
+  "Total Major Units",
+  "General Education",
+  "Total Minimum Degree Units",
+  "up to \\d+",
+  "[Ee]lectives"
+ ],
+ "pages": [
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/business-management-entrepreneurship/accounting/accounting-associate-science-degree/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/heating-ventilation-air-conditioning-refrigeration/heating-ventilation-air-conditioning-refrigeration-associate-science-degree/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/industrial-technology/aviation-maintenance-technology/airframe-powerplant-associate-science-degree/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/math-science-engineering/horticulture/horticulture-associate-science-degree/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/fashion/fashion-design-as/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/"},
+  {"answers": ["degree_totals"], "capture_view": true, "url": "https://catalog.cccd.edu/orange-coast/pathways/careers-healthcare/radiologic-technology/radiologic-technology-associate-science-degree/"}
+ ]
+}

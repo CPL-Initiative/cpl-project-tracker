@@ -63,7 +63,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    19.0,
+    20.0,
     24.0
    ],
    "stated": [
@@ -72,13 +72,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 19.0-24.0; the catalog states 18.0-24.0"
+    "the blocks sum to 20.0-24.0; the catalog states 18.0-24.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     73.0,
+     74.0,
      82.0
     ],
     "stated": [
@@ -377,5 +377,6 @@
    "Breadcrumb lists the program under Math, Science and Engineering while the URL path is social-science-humanities."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "read_run": "38670927724"
 }
