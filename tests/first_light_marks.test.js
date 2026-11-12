@@ -23,8 +23,8 @@
 //       name stays as MAP printed it and Drop takes it down;
 //   (j) Sierra stays held (Sam: "no images on sierra for now"): no marks there;
 //   (k) ⭐ the migration: insert only, reviewer-only RLS (never plain authenticated), no anon grant, functions closed
-//       to public, anon and authenticated after an explicit service_role grant, one pending request, and it is NOT
-//       named in kb/migrations/.apply (the conductor moves it);
+//       to public, anon and authenticated after an explicit service_role grant, one pending request, and
+//       kb/migrations/.apply names it, with its rollback beside it and named in its header;
 //   (l) the new write surface is mapped in kb/governance_surface_map.json with a reason that names the disclosure
 //       check, and the admin surface credits the tab with exactly these two writes;
 //   (m) presentation: every control an underlined word in a <button>, no glyph, no disabled button.
@@ -358,7 +358,12 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const code = SQL.split("\n").filter((l) => !/^\s*--/.test(l)).join("\n");
     const ROLL = fs.readFileSync("kb/migrations/2026-11-12_first_light_marks_rollback.sql", "utf8");
     const APPLY = fs.readFileSync("kb/migrations/.apply", "utf8");
-    check("(k) ⭐ the migration is not named in kb/migrations/.apply (the conductor moves it)", APPLY.indexOf("first_light_marks") === -1);
+    const trig = {};
+    APPLY.split("\n").forEach((l) => { const i = l.indexOf("="); if (i > 0) trig[l.slice(0, i).trim()] = l.slice(i + 1).trim(); });
+    check("(k) ⭐ kb/migrations/.apply names the migration under s643_first_light_marks",
+      trig.file === "kb/migrations/2026-11-12_first_light_marks.sql" && trig.name === "s643_first_light_marks", JSON.stringify(trig));
+    check("(k) ⭐ the rollback sits beside it and the migration's header names it",
+      fs.existsSync("kb/migrations/2026-11-12_first_light_marks_rollback.sql") && /-- Rollback: kb\/migrations\/2026-11-12_first_light_marks_rollback\.sql\./.test(SQL));
     check("(k) the rollback drops both tables and both functions", /drop table public\.first_light_marks;/.test(ROLL) && /drop table public\.first_light_apply_requests;/.test(ROLL) &&
       /drop function if exists public\.first_light_marks_stamp\(\)/.test(ROLL) && /drop function if exists public\.first_light_apply_requests_stamp\(\)/.test(ROLL));
     const policies = code.match(/create policy[\s\S]*?;/g) || [];
