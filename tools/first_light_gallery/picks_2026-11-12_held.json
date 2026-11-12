@@ -1,0 +1,9 @@
+{
+  "_note": "Add marks in picks_2026-11-12.json that were not applied to tools/first_light_selection.json, each with its reason (S642, #3153). All four are second copies of a painting that is already in the rotation, so applying them would show the same work twice. tests/first_light_picks_applied.test.js reads this file: an add mark must be in the selection or listed here.",
+  "held": {
+    "b58e6281f597": "Guy Rose - Carmel Dunes.jpg is the same painting as Guy Rose - Carmel Dunes (c. 1918-20).jpg (5f24c635d67a), already in the selection.",
+    "d520b2fdccd5": "WLA lacma Thomas Hill Emerald Bay Lake Tahoe.jpg is a gallery photograph of Thomas Hill - Emerald Bay, Lake Tahoe (1864).jpg (bbfd7ef19d9e), already in the selection.",
+    "40fffdf99307": "Cooper, The Lotus Pool, El Encanto, Santa Barbara.jpg is the same painting as the Reading Public Museum file of The Lotus Pool, added in this batch.",
+    "dbf4e2f11ba2": "Vernal Falls, Yosemite, by Thomas Hill, 1889.jpg is a photograph of Thomas Hill - Vernal Falls, Yosemite.jpg (White House Art Collection), added in this batch."
+  }
+}

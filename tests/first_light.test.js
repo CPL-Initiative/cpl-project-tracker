@@ -71,7 +71,10 @@ const SRC = fs.readFileSync("first_light.js", "utf8");
   }
   check("no painting repeats on consecutive days", noRepeat);
   const seen = new Set();
-  for (let d = 0; d < n; d++) seen.add(fl.paintingForDay(d).title);
+  // Count the painting objects, not their titles: plain titles repeat across
+  // painters ("Landscape", "California Landscape", "Yosemite"), and the gallery
+  // marks of 2026-10-13 brought several in (#3153).
+  for (let d = 0; d < n; d++) seen.add(fl.paintingForDay(d));
   check("every painting shows once within a full cycle", seen.size === n);
   const expected = (function () {
     const x = new Date();
