@@ -103,11 +103,8 @@
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 21.0-28.5; the catalog states 21.0-24.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -454,5 +451,6 @@
    "Catalog text is cut off mid-course description (LIT 144A) at the end."
   ]
  },
- "extracted_run": "38843465712"
+ "extracted_run": 43154073220,
+ "read_run": "38843465712"
 }

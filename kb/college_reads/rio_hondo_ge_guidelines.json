@@ -1,0 +1,20 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Rio Hondo College, second read. The first (rio_hondo_ge_units, run 43137946308) printed the transfer degree pages' own words: Sociology AA-T 24312 and Biology AS-T 24174 each end 'Cal-GETC Pattern (units will vary)' / 'Transferable Electives as needed to reach 60 transferable units' / 'DEGREE TOTAL 60 units', and their Summary says 'Completion of the California General Education Transfer Curriculum (Cal-GETC)'. No figure for Cal-GETC. The catalog's top navigation (_getNavigation?id=16&navigationtypeId=1) lists '7 - Degree & Certificate Guidelines' as node 22169 and '8 - Transfer' as node 22170, each a body page with no child list. This read prints each node's page JSON through the catalog's own _getPage call, with keywords narrowed to the general education figures, so the excerpts carry any sentence giving Cal-GETC's units. No model call.",
+ "college": "Rio Hondo College",
+ "questions": {
+  "cal_getc_units": "Does Rio Hondo's catalog print the units of the Cal-GETC pattern (section 7 or section 8), and in what words?",
+  "local_ge_units": "What does section 7 print for the Rio Hondo associate degree general education pattern and the 60-unit degree rule?"
+ },
+ "keywords": [
+  "Cal-?GETC",
+  "California General Education Transfer Curriculum",
+  "\\b3[0-9]\\b\\s*(?:semester\\s*)?units",
+  "\\b(?:18|19|2[0-9])\\b\\s*(?:semester\\s*)?units",
+  "minimum of \\d+",
+  "60 (?:semester|degree|transferable|CSU)"
+ ],
+ "pages": [
+  {"url": "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22169", "answers": ["local_ge_units", "cal_getc_units"]},
+  {"url": "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22170", "answers": ["cal_getc_units"]}
+ ]
+}

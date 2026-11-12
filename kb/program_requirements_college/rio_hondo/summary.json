@@ -2,14 +2,14 @@
  "college": "Rio Hondo College",
  "programs": 321,
  "with_closed_list": 301,
- "found": 292,
+ "found": 288,
  "extracted": 292,
  "errors": 0,
- "passed_machine_checks": 241,
+ "passed_machine_checks": 276,
  "failed": {
   "coverage": 5,
   "invented": 0,
-  "arithmetic": 50,
+  "arithmetic": 15,
   "repeated": 0,
   "outcomes": 0
  },
@@ -119,5 +119,5 @@
    }
   }
  ],
- "run": "38843465712"
+ "run": "43154073220"
 }

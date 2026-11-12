@@ -1,0 +1,22 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Rio Hondo College, third read. The second (rio_hondo_ge_guidelines, run 43138694150) printed section 8's heading 'California General Education Transfer Curriculum (Cal-GETC) For CSU & UC' and its opening sentences, and the excerpt stopped at the list that follows. The page's HTML writes a space as '&nbsp;' inside the JSON ('60 transferable semester\\u0026nbsp;units'), so a unit keyword written with a plain space missed it. This read prints the same _getPage call with keywords on the figures and on the HTML's own spacing, so the excerpts carry whatever section 8 prints for Cal-GETC's areas and any total. No model call.",
+ "college": "Rio Hondo College",
+ "questions": {
+  "cal_getc_units": "What does section 8 print under 'California General Education Transfer Curriculum (Cal-GETC) For CSU & UC': its areas, each area's units, and any total?"
+ },
+ "keywords": [
+  "\\b\\d{1,2}(?:\\\\u0026nbsp;|&nbsp;|\\s)+(?:semester|units)",
+  "thirty",
+  "Area(?:\\\\u0026nbsp;|&nbsp;|\\s)*[1-6]\\b",
+  "[Tt]otal(?:\\\\u0026nbsp;|&nbsp;|\\s)+(?:of|units)",
+  "For CSU"
+ ],
+ "pages": [
+  {
+   "url": "https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22170",
+   "answers": [
+    "cal_getc_units"
+   ]
+  }
+ ]
+}
