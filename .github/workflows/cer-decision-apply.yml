@@ -14,7 +14,10 @@ name: CER decision apply
 # dir and are pushed to main.
 #
 # concurrency: daily-dashboard -> serializes against the daily cron and cred-rename-apply.yml,
-# which both read kb_curation.
+# which both read kb_curation. The group sits on the apply job: the `check` job reads plan_dir
+# against main outside it, so a mistyped plan fails in seconds instead of after a wait in the
+# group (COBIx #3110 finding 9: runs 43104136989 and 43121987424 both failed on the name, the
+# second after about 10 minutes queued). The apply job repeats its own checks unchanged.
 
 on:
   workflow_dispatch:
@@ -30,13 +33,41 @@ on:
         type: choice
         options: [dry-run, commit, rollback]
 
-concurrency:
-  group: daily-dashboard
-  cancel-in-progress: false
-
 jobs:
-  apply:
+  check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout the plans on main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /kb/cer_decisions_out/
+      - name: Check plan_dir names a committed plan
+        env:
+          PLAN_DIR: ${{ inputs.plan_dir }}
+        run: |
+          set -euo pipefail
+          case "$PLAN_DIR" in
+            kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]|kb/cer_decisions_out/20[0-9][0-9]-[0-9][0-9]-[0-9][0-9]-[2-9]) ;;
+            *) echo "::error::plan_dir must be kb/cer_decisions_out/<YYYY-MM-DD>, or <YYYY-MM-DD>-<2-9> for a later plan that day"; exit 1 ;;
+          esac
+          if [ ! -f "$PLAN_DIR/plan.json" ]; then
+            echo "::error::$PLAN_DIR/plan.json is not on main"
+            exit 1
+          fi
+          echo "plan_dir OK: $PLAN_DIR/plan.json is on main"
+
+  apply:
+    needs: check
+    runs-on: ubuntu-latest
+    concurrency:
+      group: daily-dashboard
+      cancel-in-progress: false
     permissions:
       contents: write
     steps:
