@@ -13,7 +13,8 @@
 // The sources live in the vault (CPLBrain/04-projects/cpl-initiative): the public header that every
 // public piece carries, the agency visual's builder, and ELL IET's tab script, which DSP imports.
 // Found through CPL_VAULT_ROOT or ../CPLBrain, as scripts/check_generated.sh finds it; with no vault
-// beside the tracker the checks print NOT RUN (CI has no vault), and a session holding it runs them.
+// beside the tracker those checks print NOT RUN (CI has no vault), and a session holding it runs them.
+// The tracker's own built pages (library/*/index.html and library/index.html) are checked always, in CI too.
 // Run from repo root: `CPL_VAULT_ROOT=/path/to/CPLBrain node tests/public_target_floor.test.js`.
 const fs = require("fs");
 const path = require("path");
@@ -26,7 +27,7 @@ const vault = [process.env.CPL_VAULT_ROOT, path.join(ROOT, "..", "CPLBrain"), pa
   .filter(Boolean).find((v) => fs.existsSync(path.join(v, "04-projects", "cpl-initiative", "public-header", "header.html")));
 
 // A rule is a control rule when its selector ends at a link, a button or a tab.
-const CONTROL = /(^|[\s,>+~])(a|button)(\[[^\]]*\]|:[\w-]+(\([^)]*\))?)*\s*$|\[role="tab"\]|\.cplh-word|\.cplh-logo/;
+const CONTROL = /(^|[\s,>+~])(a|button)(\[[^\]]*\]|:[\w-]+(\([^)]*\))?)*\s*$|\[role="tab"\]|\.cplh-word|\.cplh-logo|^\.word$/;
 function floors(css) {
   const out = [];
   const re = /([^{}]+)\{([^{}]*)\}/g;
@@ -69,6 +70,29 @@ if (!vault) {
     check("dsp-training Version 3: ⭐ the built page's control floors are all 25px or more", f.length >= 5 && short.length === 0,
       short.map((x) => `${x.sel} ${x.prop}:${x.px}px`).join(" · ") || ("found " + f.length));
   }
+}
+
+// The tracker's own public pages, checked in CI: the header block in every library page that carries it,
+// and the library page's hand-adapted copy (its .cplh rules and the .word class its Links button uses).
+{
+  const LIB = path.join(ROOT, "library");
+  const START = "<!-- cpl-public-header:start", END = "<!-- cpl-public-header:end -->";
+  const pages = fs.readdirSync(LIB, { withFileTypes: true }).filter((d) => d.isDirectory())
+    .map((d) => path.join(LIB, d.name, "index.html")).filter((f) => fs.existsSync(f));
+  let seen = 0;
+  for (const f of pages) {
+    const h = fs.readFileSync(f, "utf8"), a = h.indexOf(START), b = h.indexOf(END);
+    if (a < 0 || b < a) continue;
+    seen++;
+    const fl = floors(h.slice(a, b)), short = fl.filter((x) => x.px < 25);
+    check(`${path.relative(ROOT, f)}: ⭐ the public header's controls set a 25px floor`, fl.length >= 3 && short.length === 0,
+      short.map((x) => `${x.sel} ${x.prop}:${x.px}px`).join(" · ") || ("found " + fl.length));
+  }
+  check("the header block is found on the library's pages (so the loop above checked something)", seen >= 5, "found " + seen);
+  const idx = fs.readFileSync(path.join(LIB, "index.html"), "utf8");
+  const fl = floors(idx).filter((x) => /\.cplh|\.word/.test(x.sel)), short = fl.filter((x) => x.px < 25);
+  check("library/index.html: ⭐ its adapted header and its .word controls (Links among them) set a 25px floor",
+    fl.length >= 4 && short.length === 0, short.map((x) => `${x.sel} ${x.prop}:${x.px}px`).join(" · ") || ("found " + fl.length));
 }
 
 // The matcher itself, on a fixed sample, so a broken regex cannot pass the checks above by finding nothing.
