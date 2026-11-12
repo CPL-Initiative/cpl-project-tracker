@@ -111,6 +111,8 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `entity_kind` | scripts: `kb/_identity_daily_check.py` | — |
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
+| `first_light_apply_requests` | tabs: `first-light` | tabs: `first-light` |
+| `first_light_marks` | tabs: `first-light` | tabs: `first-light` |
 | `funding_access` | `edgefn:funding-door` | `edgefn:funding-door` |
 | `funding_access_requests` | none found | `edgefn:funding-door` |
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |
@@ -208,7 +210,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `funding_access_status` | pages: `CPL_Dashboard.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
 | `funding_approvers_list` | tabs: `admin` | — |
 | `funding_approvers_set` | tabs: `admin` | — |
-| `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · `edgefn:cpl-chat` | — |
+| `is_allowed_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `first-light`, `implementation-funding` · `edgefn:cpl-chat` | — |
 | `is_funding_approver` | tabs: `csm-workspace` | — |
 | `is_funding_reviewer` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
@@ -317,7 +319,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py`, `kb/_subjects_list_recode.py` |
 | `cpl_pathways_roep_data.js` | `CPL_PATHWAYS_ROEP` | `kb/_build_roep_display.py` | tabs: `cpl-pathways` · modules: `a11y.config.js` · scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_display_apply.py` |
 | `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `exhibits`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/cpl-opportunity/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_adopt_page.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_exhibit_cert_links.py`, `kb/_build_exhibits_ai_sort.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_build_roep_display.py`, `kb/_exhibit_reanalysis_checks.py`, `kb/_exhibit_subject_fill.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_subjects_list_recode.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py`, `scripts/build_exhibits_list_preview.py` |
-| `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
+| `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `first-light`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | tabs: `exhibits` · pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_adopt_page.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_exhibits_review.py`, `kb/_build_occupation_cpl_crosswalk.py`, `scripts/build_exhibits_list_preview.py` |
 | `funding/nc_outcome_feasibility/2026-10-22/nc_shares_dump.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | none found |
 | `regional_cpl_opportunity_bay.js` | `CPL_REGIONAL_OPPS_BAY` | `kb/_emit_regional_opps_data.py` | none found |
@@ -1234,7 +1236,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `claude.ai` | tabs: `admin`, `canonical-subj4`, `exhibits` · modules: `a11y.config.js` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py`, `scripts/build_exhibits_list_preview.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `coci2.ccctechcenter.net` | scripts: `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
-| `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
+| `commons.wikimedia.org` | tabs: `first-light` · pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:funding-door`, `edgefn:library-publish-now`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `scripts/daily_build.sh` · workflows: `daily-dashboard.yml` |
@@ -1280,7 +1282,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.example` | modules: `a11y.config.js` |
-| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `implementation-funding` · modules: `a11y.config.js` · pages: `library/adopt/index.html` · scripts: `kb/_build_cpl_ai.py`, `kb/_harvest_cpl_ai_reports.py`, `kb/_seed_statewide_categories.py`, `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
+| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `exhibits`, `first-light`, `implementation-funding` · modules: `a11y.config.js` · pages: `library/adopt/index.html` · scripts: `kb/_build_cpl_ai.py`, `kb/_harvest_cpl_ai_reports.py`, `kb/_seed_statewide_categories.py`, `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
 | `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
 | `miracosta.edu` | tabs: `map-queue`, `map-users` |
@@ -1298,7 +1300,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `purl.org` | tabs: `library` |
 | `raw.github.com` | tabs: `library` |
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
-| `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | `edgefn:cpl-chat` |
+| `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | tabs: `first-light` · `edgefn:cpl-chat` |
 | `raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}` | scripts: `excel_to_dashboard.py` |
 | `rccd.curriqunet.com` | scripts: `kb/_course_outline_census.py`, `kb/_course_outline_index.py`, `kb/_program_requirements_college.py` |
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
@@ -1425,5 +1427,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 113 Supabase tables · 64 RPCs · 15 edge functions · 887 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 887 file
 datasets · 195 external services · 566 consumers · 68 workflows · 41 tabs.

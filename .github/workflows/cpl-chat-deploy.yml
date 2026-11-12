@@ -54,6 +54,13 @@ name: cpl-chat deploy
 # AND library-publish-now (S642, 2026-11-12): the Library card's "Publish now" dispatches
 # library-publish.yml. verify_jwt off for the same reason: it checks its caller (a
 # reviewer's session only) itself.
+#
+# SHARED CODE (S643): docket-process and library-publish-now import
+# ../_shared/group_queue.mjs, the one check of the daily-dashboard concurrency group's
+# queue. The CLI bundles a relative import into the function it deploys, so deploying
+# either one ships the shared file with it; the step below records its bytes too. A
+# folder whose name starts with "_" is never deployed as a function of its own, so
+# _shared is not on the list. A change to the shared file needs both functions deployed.
 
 on:
   workflow_dispatch:
@@ -105,6 +112,10 @@ jobs:
           echo "sha=$(sha256sum $F | cut -d' ' -f1)" >> "$GITHUB_OUTPUT"
           echo "Deploying $F — $(wc -c < $F) bytes, $(wc -l < $F) lines"
           sha256sum $F
+          # The shared modules it imports ship in the same bundle.
+          for S in $(grep -o '"\.\./_shared/[A-Za-z0-9_.-]*"' "$F" | tr -d '"' | sort -u); do
+            sha256sum "chatbox/supabase/functions/$FN/$S"
+          done
 
       - name: Set up Supabase CLI
         uses: supabase/setup-cli@v3

@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql
-name=chatbox_exhibits_refresh
+file=kb/migrations/2026-11-12_first_light_marks.sql
+name=s643_first_light_marks
