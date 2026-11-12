@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 863,
+  "file_datasets": 864,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -4583,7 +4583,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 129
+     "line": 142
     }
    ],
    "served": false,
@@ -4596,7 +4596,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 136
+     "line": 149
     }
    ],
    "served": false,
@@ -20152,7 +20152,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 119
+     "line": 132
     }
    ],
    "served": false,
@@ -21617,6 +21617,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:scripts/daily_gate.sh": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:scripts/fetch_gallery_thumbs.py": {
@@ -31191,6 +31204,7 @@
     "17 12 * * *"
    ],
    "scripts": [
+    "scripts/daily_gate.sh",
     "fetch_custom_report.py",
     "fetch_veteran_jst.py",
     "kb/_apply_curation.py",

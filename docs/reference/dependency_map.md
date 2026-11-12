@@ -967,6 +967,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `rolled_back_*.json` | scripts: `kb/_cer_decision_apply.py` | — |
 | `scripts/catalog_framing.py` | workflows: `catalog-framing.yml` | — |
 | `scripts/cpl_funding.js` | modules: `scripts/build_funding_faq.js` | — |
+| `scripts/daily_gate.sh` | workflows: `daily-dashboard.yml` | — |
 | `scripts/fetch_gallery_thumbs.py` | workflows: `first-light-gallery-thumbs.yml` | — |
 | `scripts/fetch_sierra_art.py` | workflows: `sierra-art-fetch.yml` | — |
 | `scripts/install_browser.sh` | workflows: `catalog-framing.yml`, `college-page-read.yml`, `course-outcomes-read.yml`, `course-outline-census.yml`, `course-outline-index.yml`, `cpl-stories.yml`, `program-course-fetch.yml`, `program-requirements-college.yml`, `program-requirements-pilot.yml`, `program-sequence-ppm.yml`, `program-source-census.yml`, `second-reader.yml`, `typesafe-smoke.yml` | — |
@@ -1395,5 +1396,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 863 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 864 file
 datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.

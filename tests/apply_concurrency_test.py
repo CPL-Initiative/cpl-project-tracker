@@ -116,6 +116,58 @@ crons = [c.get("cron") for c in on_block(daily).get("schedule") or []]
 check("daily: the 3-cron ladder is unchanged (Rule 1)",
       crons == ["17 6 * * *", "17 9 * * *", "17 12 * * *"], crons)
 
+# ── 2b. The stand-down check runs again once update-dashboard holds the group ─
+# A rung that passes the gate while another run is building waits in the group, then would build a second
+# time after that run succeeds (#3147 review). The gate and the recheck call one script, never two copies.
+GATE_CALL = "bash scripts/daily_gate.sh"
+gate_job = dj.get("gate") or {}
+gate_check = next((s for s in gate_job.get("steps") or [] if s.get("id") == "check"), {})
+check("daily: the gate calls the shared stand-down script", gate_check.get("run", "").strip() == GATE_CALL,
+      gate_check.get("run"))
+ud_steps = ud.get("steps") or []
+rc_i = next((i for i, s in enumerate(ud_steps) if s.get("id") == "recheck"), None)
+check("daily: update-dashboard rechecks with the same script, right after the checkout",
+      rc_i == 1 and ud_steps[rc_i].get("run", "").strip() == GATE_CALL
+      and "actions/checkout" in str(ud_steps[0].get("uses", "")), rc_i)
+check("daily: the stand-down query is written once, in the script (no inline copy in the workflow)",
+      "gh run list" not in open(os.path.join(WF, "daily-dashboard.yml"), encoding="utf-8").read())
+unguarded = [s.get("name") or s.get("uses") for s in ud_steps[(rc_i or 0) + 1:]
+             if "steps.recheck.outputs.run == 'true'" not in str(s.get("if", ""))]
+check("daily: every step after the recheck runs only when it says build", rc_i is not None and not unguarded,
+      unguarded)
+check("daily: update-dashboard may read runs for the recheck",
+      (ud.get("permissions") or {}).get("actions") == "read")
+
+GATE_GH = r"""#!/usr/bin/env bash
+[ "${GH_FAIL:-}" = 1 ] && exit 1
+echo "${GH_SUCCESSES:-0}"
+"""
+
+
+def gate_case(event, successes="0", gh_fail=False):
+    tmp = tempfile.mkdtemp(prefix="daily_gate_")
+    try:
+        os.makedirs(os.path.join(tmp, "bin"))
+        with open(os.path.join(tmp, "bin", "gh"), "w") as f:
+            f.write(GATE_GH)
+        os.chmod(os.path.join(tmp, "bin", "gh"), 0o755)
+        out = os.path.join(tmp, "out")
+        env = dict(os.environ, PATH=os.path.join(tmp, "bin") + os.pathsep + os.environ["PATH"], EVENT=event,
+                   GH_SUCCESSES=successes, GH_FAIL="1" if gh_fail else "", GITHUB_OUTPUT=out,
+                   GITHUB_REPOSITORY="o/r", GH_TOKEN="x")
+        subprocess.run(["bash", os.path.join(REPO, "scripts", "daily_gate.sh")], env=env, capture_output=True)
+        return open(out).read().strip() if os.path.exists(out) else ""
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
+
+
+check("stand-down script: a scheduled run on a day with a success stands down",
+      gate_case("schedule", "1") == "run=false")
+check("stand-down script: a scheduled run on a day with none builds", gate_case("schedule", "0") == "run=true")
+check("stand-down script: a failed lookup builds", gate_case("schedule", gh_fail=True) == "run=true")
+check("stand-down script: a dispatch builds even after a success",
+      gate_case("workflow_dispatch", "3") == "run=true")
+
 # ── 3. A conflicted run never ends green; the daily dispatches nothing ────────
 perms = [daily.get("permissions")] + [j.get("permissions") for j in dj.values()]
 check("daily: no `actions: write` anywhere in the workflow",
