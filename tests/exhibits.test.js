@@ -36,7 +36,8 @@ check("pane #tab-exhibits and mount #exhibits-root exist", /id="tab-exhibits" da
 check("boot wiring: onActivate('exhibits') loads exhibits.js", /onActivate\('exhibits'[\s\S]{0,300}loadScript\('exhibits\.js', 'CPL_EXHIBITS'/.test(cpl));
 const groupsSrc = fs.readFileSync("nav_groups.js", "utf8");
 check("nav_groups.js lists 'exhibits' after the Commons", /'commons', 'exhibits'/.test(groupsSrc));
-const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 const proc = fs.readFileSync(".github/workflows/cer-procedures.yml", "utf8");
 check("the daily run builds and commits the review files", /python3 kb\/_build_exhibits_review\.py/.test(daily)
   && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(daily));

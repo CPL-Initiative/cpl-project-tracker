@@ -84,7 +84,8 @@ check(bool(conf) and conf[0].get("on") is True, "the cohort confirm is on since 
 check(bool(conf) and "csr-confirm-authority@bot" in conf[0].get("rule", "") and "receipt" in conf[0].get("rule", ""),
       "the confirmation procedure names its cohort and its receipt")
 # The daily scan is on: the step the daily workflow runs.
-wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
+# The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read().replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read())
 check("python3 kb/_csr_trail.py --latest" in wf, "the daily workflow runs the scan with --latest")
 check("git add kb/csr_out/latest.json" in wf, "the daily workflow commits kb/csr_out/latest.json")
 check(wf.index("_csr_trail.py --latest") < wf.index("_build_commons_status.py"), "the scan runs before the Commons status build")
