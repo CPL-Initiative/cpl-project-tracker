@@ -67,9 +67,9 @@ ids = [p["plan_id"] for p in plans]
 check("the standards plan loads beside Sheet 181's, each id once",
       ids.count(PLAN_ID) == 1 and ids.count("sheet181-2026-11-12") == 1 and len(ids) == len(set(ids)))
 # An apply dispatched with an empty only_plan carries every committed plan, so a plan file lands only on purpose: the
-# next ruled plan adds its id here.
-check("the committed ruled plans are exactly Sheet 181's and the standards plan",
-      sorted(ids) == ["sheet181-2026-11-12", PLAN_ID], ids)
+# next ruled plan adds its id here (tests/standards_2_ruled_renames_test.py checks the same list).
+check("the committed ruled plans are exactly Sheet 181's and the two standards plans",
+      sorted(ids) == sorted(["sheet181-2026-11-12", PLAN_ID, "standards-2-2026-11-12"]), ids)
 plan = next(p for p in plans if p["plan_id"] == PLAN_ID)
 check("the plan names Sam's words, the memory row and who decided",
       '"A, C as recommended"' in plan["ruling"] and "sam-ic-exhibits-go-to-cert-title-2026-11-11" in plan["ruling"]
@@ -127,16 +127,21 @@ def restore():
 PRE_FILES = ("credentials.json", "unified_titles.json", "coci_articulations.json")
 
 
+# Both standards plans' entries: the files stand before either plan, so the builder and the scoped runs read the
+# state the plans were built on whichever of them main has applied.
+STD_OLDS = {e["old"] for p in plans if p["plan_id"].startswith("standards") for e in p["entries"]}
+
+
 def pre_apply(into):
-    """Copies of the committed files with every applied rename snapshot that carried an entry of this plan undone over
-    them (newest first). Before the apply the copies are the committed files as they are."""
+    """Copies of the committed files with every applied rename snapshot that carried an entry of either standards plan
+    undone over them (newest first). Before the applies the copies are the committed files as they are."""
     os.makedirs(into)
     for n in PRE_FILES:
         shutil.copy(os.path.join(KB, n), os.path.join(into, n))
     snaps = []
     for path in sorted(glob.glob(os.path.join(KB, "cred_rename_out", "*", "alias_map.json"))):
         doc = json.load(open(path, encoding="utf-8"))
-        if (doc.get("_applied_at") and (set(doc.get("renames") or {}) | set(doc.get("merges") or {})) & olds
+        if (doc.get("_applied_at") and (set(doc.get("renames") or {}) | set(doc.get("merges") or {})) & STD_OLDS
                 and os.path.isfile(os.path.join(os.path.dirname(path), "undo.json"))):
             snaps.append(os.path.dirname(path))
     undo.CREDENTIALS, undo.UNIFIED_TITLES, undo.ARTICULATIONS = (os.path.join(into, n) for n in PRE_FILES)
@@ -165,7 +170,10 @@ try:
     # them from the overlay, the plan is frozen and the builder has nothing left to read (as Sheet 181's).
     sam_folds = sum(1 for o in olds for f in FOLD_ROWS if (overlay.get(o) or {}).get(f))
     if all((overlay.get(e["old"]) or {}).get("unified_title_override") == e["new"] for e in E):
-        rebuilt = builder.build(overlay, pre_cr, pre_ut)
+        # As kb/_build_standards_rename_plan.py main() reads them: the adoption file carries the MAP ids the type gate
+        # reads for an exhibit kb/unified_titles.json carries none for.
+        rebuilt = builder.build(overlay, pre_cr, pre_ut, builder.PLANS["standards"],
+                                json.load(open(os.path.join(KB, "exhibits_adoption.json"), encoding="utf-8")))
         check("the builder reproduces the committed plan from the pre-apply files",
               rebuilt["entries"] == E and rebuilt["left_out"] == plan["left_out"] and rebuilt["plan_id"] == PLAN_ID)
 

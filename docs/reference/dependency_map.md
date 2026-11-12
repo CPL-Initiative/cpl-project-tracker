@@ -360,6 +360,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<date>.json` | scripts: `kb/_agri_family_remint.py` | — |
 | `<date>_sheet181.json` | scripts: `kb/_build_sheet181_rename_plan.py` | — |
 | `<date>_standards.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
+| `<date>_standards_2.json` | scripts: `kb/_build_standards_rename_plan.py` | — |
 | `CLAUDE.md` | scripts: `kb/_build_docs_index.py`, `kb/_consolidation_loss_audit.py`, `kb/_docs_audit.py`, `kb/_doctrine_scenarios.py`, `kb/doctrine.py` | — |
 | `CPL_Dashboard.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `prototype/check_contrast.py` | scripts: `excel_to_dashboard.py` · committed by: `daily-dashboard.yml` |
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
@@ -654,8 +655,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` · scripts: `kb/_exhibit_reanalysis_checks.py`, `scripts/build_exhibits_list_preview.py` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
-| `kb/cred_rename_out/2026-11-12/resolution_log.json` | scripts: `kb/_cred_fold_resolution_write.py` | — |
-| `kb/cred_rename_out/2026-11-12/undo.json` | scripts: `kb/_cred_rename_apply.py`, `kb/_cred_rename_undo.py`, `kb/fold_issuer.py` | — |
 | `kb/credential_merges.json` | scripts: `kb/_clep_fold_apply.py`, `kb/_ib_fold_apply.py`, `kb/_merge_credentials.py` | — |
 | `kb/credential_merges_out/2026-11-01/clep_kb_curation_update_receipt.json` | none found | scripts: `kb/_clep_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json` | none found | scripts: `kb/_ib_fold_apply.py` |
@@ -699,7 +698,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_slo_neighbors.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_slo_neighbors.py` | scripts: `kb/_build_exhibit_slo_neighbors.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibit_subject_out` | none found | committed by: `cer-procedures.yml` |
 | `kb/exhibit_subject_out/worklist.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py`, `scripts/next_slo_colleges.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
+| `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_standards_rename_plan.py`, `kb/_exhibit_subject_fill.py`, `scripts/build_exhibits_list_preview.py`, `scripts/next_slo_colleges.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_ai_sort.json` | scripts: `kb/_build_exhibit_slo_neighbors.py`, `kb/_build_exhibits_ai_sort.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibits_ai_sort.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibits_reanalysis/latest.json` | tabs: `exhibits` | — |
 | `kb/exhibits_related.json` | tabs: `exhibits` · scripts: `kb/_build_exhibits_related.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
@@ -1394,5 +1393,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 862 file
-datasets · 195 external services · 559 consumers · 66 workflows · 40 tabs.
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 861 file
+datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.
