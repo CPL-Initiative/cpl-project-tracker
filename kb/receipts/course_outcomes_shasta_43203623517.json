@@ -1,0 +1,9312 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "shasta",
+ "load_run": "43203623517",
+ "reads": [
+  "kb/course_outcomes/shasta/read_43168135589_p1of2.json",
+  "kb/course_outcomes/shasta/read_43168135589_p2of2.json"
+ ],
+ "posted": 1549,
+ "inserted": 1549,
+ "kept": 0,
+ "skipped": 0,
+ "skipped_rows": [],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 16891,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 101"
+  },
+  {
+   "id": 16892,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 101"
+  },
+  {
+   "id": 16893,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 103"
+  },
+  {
+   "id": 16894,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 103"
+  },
+  {
+   "id": 16895,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 194"
+  },
+  {
+   "id": 16896,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 194"
+  },
+  {
+   "id": 16897,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 4"
+  },
+  {
+   "id": 16898,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 4"
+  },
+  {
+   "id": 16899,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 106"
+  },
+  {
+   "id": 16900,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 106"
+  },
+  {
+   "id": 16901,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 16"
+  },
+  {
+   "id": 16902,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 16"
+  },
+  {
+   "id": 16903,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 18"
+  },
+  {
+   "id": 16904,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 18"
+  },
+  {
+   "id": 16905,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 21"
+  },
+  {
+   "id": 16906,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 21"
+  },
+  {
+   "id": 16907,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 23"
+  },
+  {
+   "id": 16908,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 23"
+  },
+  {
+   "id": 16909,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 30"
+  },
+  {
+   "id": 16910,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 30"
+  },
+  {
+   "id": 16911,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 45"
+  },
+  {
+   "id": 16912,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 45"
+  },
+  {
+   "id": 16913,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 59"
+  },
+  {
+   "id": 16914,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 59"
+  },
+  {
+   "id": 16915,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 11"
+  },
+  {
+   "id": 16916,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 11"
+  },
+  {
+   "id": 16917,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 13"
+  },
+  {
+   "id": 16918,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 13"
+  },
+  {
+   "id": 16919,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 15"
+  },
+  {
+   "id": 16920,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 15"
+  },
+  {
+   "id": 16921,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 17"
+  },
+  {
+   "id": 16922,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 17"
+  },
+  {
+   "id": 16923,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 19"
+  },
+  {
+   "id": 16924,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 19"
+  },
+  {
+   "id": 16925,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 21"
+  },
+  {
+   "id": 16926,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 21"
+  },
+  {
+   "id": 16927,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 1"
+  },
+  {
+   "id": 16928,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 1"
+  },
+  {
+   "id": 16929,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 6"
+  },
+  {
+   "id": 16930,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 6"
+  },
+  {
+   "id": 16931,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 72"
+  },
+  {
+   "id": 16932,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 72"
+  },
+  {
+   "id": 16933,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 9A"
+  },
+  {
+   "id": 16934,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 9A"
+  },
+  {
+   "id": 16935,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAB 53"
+  },
+  {
+   "id": 16936,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAB 53"
+  },
+  {
+   "id": 16937,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 11"
+  },
+  {
+   "id": 16938,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 11"
+  },
+  {
+   "id": 16939,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 15"
+  },
+  {
+   "id": 16940,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 15"
+  },
+  {
+   "id": 16941,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 19"
+  },
+  {
+   "id": 16942,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 19"
+  },
+  {
+   "id": 16943,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 316"
+  },
+  {
+   "id": 16944,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 316"
+  },
+  {
+   "id": 16945,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 130"
+  },
+  {
+   "id": 16946,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 130"
+  },
+  {
+   "id": 16947,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 23"
+  },
+  {
+   "id": 16948,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 23"
+  },
+  {
+   "id": 16949,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 31"
+  },
+  {
+   "id": 16950,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 31"
+  },
+  {
+   "id": 16951,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 33"
+  },
+  {
+   "id": 16952,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 33"
+  },
+  {
+   "id": 16953,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 371"
+  },
+  {
+   "id": 16954,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 371"
+  },
+  {
+   "id": 16955,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 48"
+  },
+  {
+   "id": 16956,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 48"
+  },
+  {
+   "id": 16957,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 52"
+  },
+  {
+   "id": 16958,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 52"
+  },
+  {
+   "id": 16959,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 61"
+  },
+  {
+   "id": 16960,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 61"
+  },
+  {
+   "id": 16961,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 94"
+  },
+  {
+   "id": 16962,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 94"
+  },
+  {
+   "id": 16963,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEQ 13"
+  },
+  {
+   "id": 16964,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEQ 13"
+  },
+  {
+   "id": 16965,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGMA 42"
+  },
+  {
+   "id": 16966,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGMA 42"
+  },
+  {
+   "id": 16967,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 1"
+  },
+  {
+   "id": 16968,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 1"
+  },
+  {
+   "id": 16969,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 102"
+  },
+  {
+   "id": 16970,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 102"
+  },
+  {
+   "id": 16971,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 104"
+  },
+  {
+   "id": 16972,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 104"
+  },
+  {
+   "id": 16973,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 11"
+  },
+  {
+   "id": 16974,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 11"
+  },
+  {
+   "id": 16975,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 50"
+  },
+  {
+   "id": 16976,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 50"
+  },
+  {
+   "id": 16977,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 52"
+  },
+  {
+   "id": 16978,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 52"
+  },
+  {
+   "id": 16979,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 55"
+  },
+  {
+   "id": 16980,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 55"
+  },
+  {
+   "id": 16981,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 6"
+  },
+  {
+   "id": 16982,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 6"
+  },
+  {
+   "id": 16983,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 61"
+  },
+  {
+   "id": 16984,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 61"
+  },
+  {
+   "id": 16985,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 65"
+  },
+  {
+   "id": 16986,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 65"
+  },
+  {
+   "id": 16987,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 70"
+  },
+  {
+   "id": 16988,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 70"
+  },
+  {
+   "id": 16989,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGPS 20"
+  },
+  {
+   "id": 16990,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGPS 20"
+  },
+  {
+   "id": 16991,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGPS 25"
+  },
+  {
+   "id": 16992,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGPS 25"
+  },
+  {
+   "id": 16993,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGVIT 80"
+  },
+  {
+   "id": 16994,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGVIT 80"
+  },
+  {
+   "id": 16995,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 101"
+  },
+  {
+   "id": 16996,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 101"
+  },
+  {
+   "id": 16997,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 103"
+  },
+  {
+   "id": 16998,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 103"
+  },
+  {
+   "id": 16999,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 104"
+  },
+  {
+   "id": 17000,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 104"
+  },
+  {
+   "id": 17001,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 110"
+  },
+  {
+   "id": 17002,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 110"
+  },
+  {
+   "id": 17003,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ANTH 14"
+  },
+  {
+   "id": 17004,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ANTH 14"
+  },
+  {
+   "id": 17005,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ANTH 25"
+  },
+  {
+   "id": 17006,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ANTH 25"
+  },
+  {
+   "id": 17007,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ARCH 3"
+  },
+  {
+   "id": 17008,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ARCH 3"
+  },
+  {
+   "id": 17009,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ARCH 5A"
+  },
+  {
+   "id": 17010,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ARCH 5A"
+  },
+  {
+   "id": 17011,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 12"
+  },
+  {
+   "id": 17012,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 12"
+  },
+  {
+   "id": 17013,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 15"
+  },
+  {
+   "id": 17014,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 15"
+  },
+  {
+   "id": 17015,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 21B"
+  },
+  {
+   "id": 17016,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 21B"
+  },
+  {
+   "id": 17017,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 26B"
+  },
+  {
+   "id": 17018,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 26B"
+  },
+  {
+   "id": 17019,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 26D"
+  },
+  {
+   "id": 17020,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 26D"
+  },
+  {
+   "id": 17021,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 29B"
+  },
+  {
+   "id": 17022,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 29B"
+  },
+  {
+   "id": 17023,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 29D"
+  },
+  {
+   "id": 17024,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 29D"
+  },
+  {
+   "id": 17025,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 31B"
+  },
+  {
+   "id": 17026,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 31B"
+  },
+  {
+   "id": 17027,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 31D"
+  },
+  {
+   "id": 17028,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 31D"
+  },
+  {
+   "id": 17029,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 35B"
+  },
+  {
+   "id": 17030,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 35B"
+  },
+  {
+   "id": 17031,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 45"
+  },
+  {
+   "id": 17032,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 45"
+  },
+  {
+   "id": 17033,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 47"
+  },
+  {
+   "id": 17034,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 47"
+  },
+  {
+   "id": 17035,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 50B"
+  },
+  {
+   "id": 17036,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 50B"
+  },
+  {
+   "id": 17037,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 55A"
+  },
+  {
+   "id": 17038,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 55A"
+  },
+  {
+   "id": 17039,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 55C"
+  },
+  {
+   "id": 17040,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 55C"
+  },
+  {
+   "id": 17041,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 70A"
+  },
+  {
+   "id": 17042,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 70A"
+  },
+  {
+   "id": 17043,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 70C"
+  },
+  {
+   "id": 17044,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 70C"
+  },
+  {
+   "id": 17045,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 72"
+  },
+  {
+   "id": 17046,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 72"
+  },
+  {
+   "id": 17047,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 17048,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 17049,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 1"
+  },
+  {
+   "id": 17050,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 1"
+  },
+  {
+   "id": 17051,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 2"
+  },
+  {
+   "id": 17052,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 2"
+  },
+  {
+   "id": 17053,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 3"
+  },
+  {
+   "id": 17054,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 3"
+  },
+  {
+   "id": 17055,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASTR 2"
+  },
+  {
+   "id": 17056,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASTR 2"
+  },
+  {
+   "id": 17057,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 1"
+  },
+  {
+   "id": 17058,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 1"
+  },
+  {
+   "id": 17059,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 132"
+  },
+  {
+   "id": 17060,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 132"
+  },
+  {
+   "id": 17061,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 150"
+  },
+  {
+   "id": 17062,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 150"
+  },
+  {
+   "id": 17063,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 162"
+  },
+  {
+   "id": 17064,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 162"
+  },
+  {
+   "id": 17065,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 176"
+  },
+  {
+   "id": 17066,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 176"
+  },
+  {
+   "id": 17067,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 21"
+  },
+  {
+   "id": 17068,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 21"
+  },
+  {
+   "id": 17069,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 1"
+  },
+  {
+   "id": 17070,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 1"
+  },
+  {
+   "id": 17071,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 10L"
+  },
+  {
+   "id": 17072,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 10L"
+  },
+  {
+   "id": 17073,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 12"
+  },
+  {
+   "id": 17074,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 12"
+  },
+  {
+   "id": 17075,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 5"
+  },
+  {
+   "id": 17076,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 5"
+  },
+  {
+   "id": 17077,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BOT 1"
+  },
+  {
+   "id": 17078,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BOT 1"
+  },
+  {
+   "id": 17079,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BOT 15L"
+  },
+  {
+   "id": 17080,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BOT 15L"
+  },
+  {
+   "id": 17081,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BOT 52"
+  },
+  {
+   "id": 17082,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BOT 52"
+  },
+  {
+   "id": 17083,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 11"
+  },
+  {
+   "id": 17084,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 11"
+  },
+  {
+   "id": 17085,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 150"
+  },
+  {
+   "id": 17086,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 150"
+  },
+  {
+   "id": 17087,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 158"
+  },
+  {
+   "id": 17088,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 158"
+  },
+  {
+   "id": 17089,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 171"
+  },
+  {
+   "id": 17090,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 171"
+  },
+  {
+   "id": 17091,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 321"
+  },
+  {
+   "id": 17092,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 321"
+  },
+  {
+   "id": 17093,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 323"
+  },
+  {
+   "id": 17094,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 323"
+  },
+  {
+   "id": 17095,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 51"
+  },
+  {
+   "id": 17096,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 51"
+  },
+  {
+   "id": 17097,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 64"
+  },
+  {
+   "id": 17098,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 64"
+  },
+  {
+   "id": 17099,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 84"
+  },
+  {
+   "id": 17100,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 84"
+  },
+  {
+   "id": 17101,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 92"
+  },
+  {
+   "id": 17102,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 92"
+  },
+  {
+   "id": 17103,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 10"
+  },
+  {
+   "id": 17104,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 10"
+  },
+  {
+   "id": 17105,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 120"
+  },
+  {
+   "id": 17106,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 120"
+  },
+  {
+   "id": 17107,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 15"
+  },
+  {
+   "id": 17108,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 15"
+  },
+  {
+   "id": 17109,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 176"
+  },
+  {
+   "id": 17110,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 176"
+  },
+  {
+   "id": 17111,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 301A"
+  },
+  {
+   "id": 17112,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 301A"
+  },
+  {
+   "id": 17113,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 39"
+  },
+  {
+   "id": 17114,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 39"
+  },
+  {
+   "id": 17115,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 41"
+  },
+  {
+   "id": 17116,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 41"
+  },
+  {
+   "id": 17117,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 44"
+  },
+  {
+   "id": 17118,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 44"
+  },
+  {
+   "id": 17119,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 55"
+  },
+  {
+   "id": 17120,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 55"
+  },
+  {
+   "id": 17121,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 6"
+  },
+  {
+   "id": 17122,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 6"
+  },
+  {
+   "id": 17123,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 71"
+  },
+  {
+   "id": 17124,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 71"
+  },
+  {
+   "id": 17125,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 77"
+  },
+  {
+   "id": 17126,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 77"
+  },
+  {
+   "id": 17127,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 91"
+  },
+  {
+   "id": 17128,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 91"
+  },
+  {
+   "id": 17129,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 110"
+  },
+  {
+   "id": 17130,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 110"
+  },
+  {
+   "id": 17131,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 156"
+  },
+  {
+   "id": 17132,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 156"
+  },
+  {
+   "id": 17133,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 160"
+  },
+  {
+   "id": 17134,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 160"
+  },
+  {
+   "id": 17135,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 163"
+  },
+  {
+   "id": 17136,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 163"
+  },
+  {
+   "id": 17137,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 10"
+  },
+  {
+   "id": 17138,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 10"
+  },
+  {
+   "id": 17139,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 17140,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 1A"
+  },
+  {
+   "id": 17141,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 2A"
+  },
+  {
+   "id": 17142,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 2A"
+  },
+  {
+   "id": 17143,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 70"
+  },
+  {
+   "id": 17144,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 70"
+  },
+  {
+   "id": 17145,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 71"
+  },
+  {
+   "id": 17146,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 71"
+  },
+  {
+   "id": 17147,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHIN 1"
+  },
+  {
+   "id": 17148,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHIN 1"
+  },
+  {
+   "id": 17149,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 13"
+  },
+  {
+   "id": 17150,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 13"
+  },
+  {
+   "id": 17151,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 15"
+  },
+  {
+   "id": 17152,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 15"
+  },
+  {
+   "id": 17153,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 17"
+  },
+  {
+   "id": 17154,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 17"
+  },
+  {
+   "id": 17155,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 20"
+  },
+  {
+   "id": 17156,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 20"
+  },
+  {
+   "id": 17157,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 31"
+  },
+  {
+   "id": 17158,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 31"
+  },
+  {
+   "id": 17159,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 33"
+  },
+  {
+   "id": 17160,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 33"
+  },
+  {
+   "id": 17161,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 60"
+  },
+  {
+   "id": 17162,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 60"
+  },
+  {
+   "id": 17163,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 62"
+  },
+  {
+   "id": 17164,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 62"
+  },
+  {
+   "id": 17165,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 66"
+  },
+  {
+   "id": 17166,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 66"
+  },
+  {
+   "id": 17167,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 72"
+  },
+  {
+   "id": 17168,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 72"
+  },
+  {
+   "id": 17169,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 90"
+  },
+  {
+   "id": 17170,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 90"
+  },
+  {
+   "id": 17171,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 94"
+  },
+  {
+   "id": 17172,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 94"
+  },
+  {
+   "id": 17173,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM 30"
+  },
+  {
+   "id": 17174,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM 30"
+  },
+  {
+   "id": 17175,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM 50"
+  },
+  {
+   "id": 17176,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM 50"
+  },
+  {
+   "id": 17177,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 17178,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 17179,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 140A"
+  },
+  {
+   "id": 17180,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 140A"
+  },
+  {
+   "id": 17181,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 148"
+  },
+  {
+   "id": 17182,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 148"
+  },
+  {
+   "id": 17183,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 46"
+  },
+  {
+   "id": 17184,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 46"
+  },
+  {
+   "id": 17185,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 48"
+  },
+  {
+   "id": 17186,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 48"
+  },
+  {
+   "id": 17187,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 55B"
+  },
+  {
+   "id": 17188,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 55B"
+  },
+  {
+   "id": 17189,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 55D"
+  },
+  {
+   "id": 17190,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 55D"
+  },
+  {
+   "id": 17191,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 159"
+  },
+  {
+   "id": 17192,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 159"
+  },
+  {
+   "id": 17193,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 172"
+  },
+  {
+   "id": 17194,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 172"
+  },
+  {
+   "id": 17195,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 373"
+  },
+  {
+   "id": 17196,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 373"
+  },
+  {
+   "id": 17197,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 46"
+  },
+  {
+   "id": 17198,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 46"
+  },
+  {
+   "id": 17199,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 49"
+  },
+  {
+   "id": 17200,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 49"
+  },
+  {
+   "id": 17201,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 55"
+  },
+  {
+   "id": 17202,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 55"
+  },
+  {
+   "id": 17203,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 65"
+  },
+  {
+   "id": 17204,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 65"
+  },
+  {
+   "id": 17205,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 73"
+  },
+  {
+   "id": 17206,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 73"
+  },
+  {
+   "id": 17207,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 94"
+  },
+  {
+   "id": 17208,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 94"
+  },
+  {
+   "id": 17209,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 16"
+  },
+  {
+   "id": 17210,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 16"
+  },
+  {
+   "id": 17211,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 20B"
+  },
+  {
+   "id": 17212,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 20B"
+  },
+  {
+   "id": 17213,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 20D"
+  },
+  {
+   "id": 17214,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 20D"
+  },
+  {
+   "id": 17215,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 30B"
+  },
+  {
+   "id": 17216,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 30B"
+  },
+  {
+   "id": 17217,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 30D"
+  },
+  {
+   "id": 17218,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 30D"
+  },
+  {
+   "id": 17219,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 40B"
+  },
+  {
+   "id": 17220,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 40B"
+  },
+  {
+   "id": 17221,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 40D"
+  },
+  {
+   "id": 17222,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 40D"
+  },
+  {
+   "id": 17223,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 161"
+  },
+  {
+   "id": 17224,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 161"
+  },
+  {
+   "id": 17225,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 164"
+  },
+  {
+   "id": 17226,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 164"
+  },
+  {
+   "id": 17227,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 169"
+  },
+  {
+   "id": 17228,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 169"
+  },
+  {
+   "id": 17229,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 48"
+  },
+  {
+   "id": 17230,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 48"
+  },
+  {
+   "id": 17231,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 94"
+  },
+  {
+   "id": 17232,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 94"
+  },
+  {
+   "id": 17233,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 11"
+  },
+  {
+   "id": 17234,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 11"
+  },
+  {
+   "id": 17235,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 13"
+  },
+  {
+   "id": 17236,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 13"
+  },
+  {
+   "id": 17237,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 20"
+  },
+  {
+   "id": 17238,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 20"
+  },
+  {
+   "id": 17239,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 23"
+  },
+  {
+   "id": 17240,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 23"
+  },
+  {
+   "id": 17241,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 25"
+  },
+  {
+   "id": 17242,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 25"
+  },
+  {
+   "id": 17243,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 30"
+  },
+  {
+   "id": 17244,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 30"
+  },
+  {
+   "id": 17245,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 32"
+  },
+  {
+   "id": 17246,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 32"
+  },
+  {
+   "id": 17247,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 34"
+  },
+  {
+   "id": 17248,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 34"
+  },
+  {
+   "id": 17249,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 40"
+  },
+  {
+   "id": 17250,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 40"
+  },
+  {
+   "id": 17251,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 42"
+  },
+  {
+   "id": 17252,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 42"
+  },
+  {
+   "id": 17253,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 44"
+  },
+  {
+   "id": 17254,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 44"
+  },
+  {
+   "id": 17255,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 1"
+  },
+  {
+   "id": 17256,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 1"
+  },
+  {
+   "id": 17257,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 147"
+  },
+  {
+   "id": 17258,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 147"
+  },
+  {
+   "id": 17259,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 16"
+  },
+  {
+   "id": 17260,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 16"
+  },
+  {
+   "id": 17261,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 2"
+  },
+  {
+   "id": 17262,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 2"
+  },
+  {
+   "id": 17263,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 22"
+  },
+  {
+   "id": 17264,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 22"
+  },
+  {
+   "id": 17265,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 27"
+  },
+  {
+   "id": 17266,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 27"
+  },
+  {
+   "id": 17267,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 3"
+  },
+  {
+   "id": 17268,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 3"
+  },
+  {
+   "id": 17269,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 52"
+  },
+  {
+   "id": 17270,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 52"
+  },
+  {
+   "id": 17271,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 60"
+  },
+  {
+   "id": 17272,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 60"
+  },
+  {
+   "id": 17273,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 8"
+  },
+  {
+   "id": 17274,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 8"
+  },
+  {
+   "id": 17275,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 17276,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 17277,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "EDUC 1"
+  },
+  {
+   "id": 17278,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "EDUC 1"
+  },
+  {
+   "id": 17279,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 10B"
+  },
+  {
+   "id": 17280,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 10B"
+  },
+  {
+   "id": 17281,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 11B"
+  },
+  {
+   "id": 17282,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 11B"
+  },
+  {
+   "id": 17283,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 13B"
+  },
+  {
+   "id": 17284,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 13B"
+  },
+  {
+   "id": 17285,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 16"
+  },
+  {
+   "id": 17286,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 16"
+  },
+  {
+   "id": 17287,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 18"
+  },
+  {
+   "id": 17288,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 18"
+  },
+  {
+   "id": 17289,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 20"
+  },
+  {
+   "id": 17290,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 20"
+  },
+  {
+   "id": 17291,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 31"
+  },
+  {
+   "id": 17292,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 31"
+  },
+  {
+   "id": 17293,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 401"
+  },
+  {
+   "id": 17294,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 401"
+  },
+  {
+   "id": 17295,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL C1000E"
+  },
+  {
+   "id": 17296,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL C1000E"
+  },
+  {
+   "id": 17297,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 17298,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL C1002"
+  },
+  {
+   "id": 17299,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGR 17"
+  },
+  {
+   "id": 17300,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGR 17"
+  },
+  {
+   "id": 17301,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGR 45"
+  },
+  {
+   "id": 17302,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGR 45"
+  },
+  {
+   "id": 17303,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 10"
+  },
+  {
+   "id": 17304,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 10"
+  },
+  {
+   "id": 17305,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 14"
+  },
+  {
+   "id": 17306,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 14"
+  },
+  {
+   "id": 17307,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 15"
+  },
+  {
+   "id": 17308,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 15"
+  },
+  {
+   "id": 17309,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 16L"
+  },
+  {
+   "id": 17310,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 16L"
+  },
+  {
+   "id": 17311,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 18"
+  },
+  {
+   "id": 17312,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 18"
+  },
+  {
+   "id": 17313,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 3"
+  },
+  {
+   "id": 17314,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 3"
+  },
+  {
+   "id": 17315,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 32L"
+  },
+  {
+   "id": 17316,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 32L"
+  },
+  {
+   "id": 17317,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 33L"
+  },
+  {
+   "id": 17318,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 33L"
+  },
+  {
+   "id": 17319,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 34L"
+  },
+  {
+   "id": 17320,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 34L"
+  },
+  {
+   "id": 17321,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 35L"
+  },
+  {
+   "id": 17322,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 35L"
+  },
+  {
+   "id": 17323,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 36L"
+  },
+  {
+   "id": 17324,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 36L"
+  },
+  {
+   "id": 17325,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 37L"
+  },
+  {
+   "id": 17326,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 37L"
+  },
+  {
+   "id": 17327,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 38L"
+  },
+  {
+   "id": 17328,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 38L"
+  },
+  {
+   "id": 17329,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 7"
+  },
+  {
+   "id": 17330,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 7"
+  },
+  {
+   "id": 17331,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 9"
+  },
+  {
+   "id": 17332,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 9"
+  },
+  {
+   "id": 17333,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESL 334"
+  },
+  {
+   "id": 17334,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESL 334"
+  },
+  {
+   "id": 17335,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ETHS 1"
+  },
+  {
+   "id": 17336,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ETHS 1"
+  },
+  {
+   "id": 17337,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ETHS 5"
+  },
+  {
+   "id": 17338,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ETHS 5"
+  },
+  {
+   "id": 17339,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FAID 132"
+  },
+  {
+   "id": 17340,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FAID 132"
+  },
+  {
+   "id": 17341,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FAID 332"
+  },
+  {
+   "id": 17342,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FAID 332"
+  },
+  {
+   "id": 17343,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FAID 75"
+  },
+  {
+   "id": 17344,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FAID 75"
+  },
+  {
+   "id": 17345,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FIRS 108"
+  },
+  {
+   "id": 17346,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FIRS 108"
+  },
+  {
+   "id": 17347,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FREN 1"
+  },
+  {
+   "id": 17348,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FREN 1"
+  },
+  {
+   "id": 17349,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 111"
+  },
+  {
+   "id": 17350,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 111"
+  },
+  {
+   "id": 17351,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 113"
+  },
+  {
+   "id": 17352,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 113"
+  },
+  {
+   "id": 17353,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 116"
+  },
+  {
+   "id": 17354,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 116"
+  },
+  {
+   "id": 17355,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 128"
+  },
+  {
+   "id": 17356,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 128"
+  },
+  {
+   "id": 17357,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 144"
+  },
+  {
+   "id": 17358,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 144"
+  },
+  {
+   "id": 17359,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 12"
+  },
+  {
+   "id": 17360,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 12"
+  },
+  {
+   "id": 17361,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 14"
+  },
+  {
+   "id": 17362,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 14"
+  },
+  {
+   "id": 17363,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 1A"
+  },
+  {
+   "id": 17364,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 1A"
+  },
+  {
+   "id": 17365,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 1B"
+  },
+  {
+   "id": 17366,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 1B"
+  },
+  {
+   "id": 17367,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 2A"
+  },
+  {
+   "id": 17368,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 2A"
+  },
+  {
+   "id": 17369,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 5"
+  },
+  {
+   "id": 17370,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 5"
+  },
+  {
+   "id": 17371,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 8"
+  },
+  {
+   "id": 17372,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 8"
+  },
+  {
+   "id": 17373,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 94"
+  },
+  {
+   "id": 17374,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 94"
+  },
+  {
+   "id": 17375,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GERM 2"
+  },
+  {
+   "id": 17376,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GERM 2"
+  },
+  {
+   "id": 17377,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HEOC 10"
+  },
+  {
+   "id": 17378,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HEOC 10"
+  },
+  {
+   "id": 17379,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 401"
+  },
+  {
+   "id": 17380,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 401"
+  },
+  {
+   "id": 17381,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 408"
+  },
+  {
+   "id": 17382,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 408"
+  },
+  {
+   "id": 17383,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 415"
+  },
+  {
+   "id": 17384,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 415"
+  },
+  {
+   "id": 17385,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 420"
+  },
+  {
+   "id": 17386,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 420"
+  },
+  {
+   "id": 17387,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 430"
+  },
+  {
+   "id": 17388,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 430"
+  },
+  {
+   "id": 17389,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 440"
+  },
+  {
+   "id": 17390,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 440"
+  },
+  {
+   "id": 17391,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 455A"
+  },
+  {
+   "id": 17392,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 455A"
+  },
+  {
+   "id": 17393,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 1A"
+  },
+  {
+   "id": 17394,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 1A"
+  },
+  {
+   "id": 17395,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 2"
+  },
+  {
+   "id": 17396,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 2"
+  },
+  {
+   "id": 17397,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 3"
+  },
+  {
+   "id": 17398,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 3"
+  },
+  {
+   "id": 17399,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 38"
+  },
+  {
+   "id": 17400,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 38"
+  },
+  {
+   "id": 17401,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 17402,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 17403,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 10"
+  },
+  {
+   "id": 17404,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 10"
+  },
+  {
+   "id": 17405,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 15"
+  },
+  {
+   "id": 17406,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 15"
+  },
+  {
+   "id": 17407,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 25"
+  },
+  {
+   "id": 17408,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 25"
+  },
+  {
+   "id": 17409,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 35"
+  },
+  {
+   "id": 17410,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 35"
+  },
+  {
+   "id": 17411,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 42"
+  },
+  {
+   "id": 17412,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 42"
+  },
+  {
+   "id": 17413,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 50"
+  },
+  {
+   "id": 17414,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 50"
+  },
+  {
+   "id": 17415,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 60"
+  },
+  {
+   "id": 17416,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 60"
+  },
+  {
+   "id": 17417,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 1"
+  },
+  {
+   "id": 17418,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 1"
+  },
+  {
+   "id": 17419,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 20"
+  },
+  {
+   "id": 17420,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 20"
+  },
+  {
+   "id": 17421,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 4"
+  },
+  {
+   "id": 17422,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 4"
+  },
+  {
+   "id": 17423,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 7"
+  },
+  {
+   "id": 17424,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 7"
+  },
+  {
+   "id": 17425,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 20"
+  },
+  {
+   "id": 17426,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 20"
+  },
+  {
+   "id": 17427,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 40"
+  },
+  {
+   "id": 17428,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 40"
+  },
+  {
+   "id": 17429,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 50"
+  },
+  {
+   "id": 17430,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 50"
+  },
+  {
+   "id": 17431,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 60"
+  },
+  {
+   "id": 17432,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 60"
+  },
+  {
+   "id": 17433,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 94"
+  },
+  {
+   "id": 17434,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 94"
+  },
+  {
+   "id": 17435,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUM 4"
+  },
+  {
+   "id": 17436,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUM 4"
+  },
+  {
+   "id": 17437,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 12"
+  },
+  {
+   "id": 17438,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 12"
+  },
+  {
+   "id": 17439,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 16"
+  },
+  {
+   "id": 17440,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 16"
+  },
+  {
+   "id": 17441,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 60"
+  },
+  {
+   "id": 17442,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 60"
+  },
+  {
+   "id": 17443,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 94"
+  },
+  {
+   "id": 17444,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 94"
+  },
+  {
+   "id": 17445,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 95B"
+  },
+  {
+   "id": 17446,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 95B"
+  },
+  {
+   "id": 17447,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 101"
+  },
+  {
+   "id": 17448,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 101"
+  },
+  {
+   "id": 17449,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 37"
+  },
+  {
+   "id": 17450,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 37"
+  },
+  {
+   "id": 17451,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 45"
+  },
+  {
+   "id": 17452,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 45"
+  },
+  {
+   "id": 17453,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 19"
+  },
+  {
+   "id": 17454,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 19"
+  },
+  {
+   "id": 17455,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 20"
+  },
+  {
+   "id": 17456,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 20"
+  },
+  {
+   "id": 17457,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 4"
+  },
+  {
+   "id": 17458,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 4"
+  },
+  {
+   "id": 17459,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JOUR 27"
+  },
+  {
+   "id": 17460,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JOUR 27"
+  },
+  {
+   "id": 17461,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "KINES 1"
+  },
+  {
+   "id": 17462,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "KINES 1"
+  },
+  {
+   "id": 17463,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 13"
+  },
+  {
+   "id": 17464,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 13"
+  },
+  {
+   "id": 17465,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 2A"
+  },
+  {
+   "id": 17466,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 2A"
+  },
+  {
+   "id": 17467,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 2B"
+  },
+  {
+   "id": 17468,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 2B"
+  },
+  {
+   "id": 17469,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 41A"
+  },
+  {
+   "id": 17470,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 41A"
+  },
+  {
+   "id": 17471,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 4A"
+  },
+  {
+   "id": 17472,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 4A"
+  },
+  {
+   "id": 17473,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 6"
+  },
+  {
+   "id": 17474,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 6"
+  },
+  {
+   "id": 17475,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 8"
+  },
+  {
+   "id": 17476,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 8"
+  },
+  {
+   "id": 17477,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 17478,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 17479,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MICR 1"
+  },
+  {
+   "id": 17480,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MICR 1"
+  },
+  {
+   "id": 17481,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 10"
+  },
+  {
+   "id": 17482,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 10"
+  },
+  {
+   "id": 17483,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 14"
+  },
+  {
+   "id": 17484,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 14"
+  },
+  {
+   "id": 17485,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 17"
+  },
+  {
+   "id": 17486,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 17"
+  },
+  {
+   "id": 17487,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 19"
+  },
+  {
+   "id": 17488,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 19"
+  },
+  {
+   "id": 17489,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 22A"
+  },
+  {
+   "id": 17490,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 22A"
+  },
+  {
+   "id": 17491,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 3"
+  },
+  {
+   "id": 17492,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 3"
+  },
+  {
+   "id": 17493,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 33"
+  },
+  {
+   "id": 17494,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 33"
+  },
+  {
+   "id": 17495,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 4"
+  },
+  {
+   "id": 17496,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 4"
+  },
+  {
+   "id": 17497,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 42"
+  },
+  {
+   "id": 17498,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 42"
+  },
+  {
+   "id": 17499,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 44"
+  },
+  {
+   "id": 17500,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 44"
+  },
+  {
+   "id": 17501,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 47"
+  },
+  {
+   "id": 17502,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 5"
+  },
+  {
+   "id": 17503,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 5"
+  },
+  {
+   "id": 17504,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NHIS 5"
+  },
+  {
+   "id": 17505,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NHIS 5"
+  },
+  {
+   "id": 17506,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NHIS 65"
+  },
+  {
+   "id": 17507,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NHIS 65"
+  },
+  {
+   "id": 17508,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 30"
+  },
+  {
+   "id": 17509,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 30"
+  },
+  {
+   "id": 17510,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 335"
+  },
+  {
+   "id": 17511,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 335"
+  },
+  {
+   "id": 17512,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 35"
+  },
+  {
+   "id": 17513,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 35"
+  },
+  {
+   "id": 17514,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 45"
+  },
+  {
+   "id": 17515,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 45"
+  },
+  {
+   "id": 17516,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 11"
+  },
+  {
+   "id": 17517,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 11"
+  },
+  {
+   "id": 17518,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 12B"
+  },
+  {
+   "id": 17519,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 12B"
+  },
+  {
+   "id": 17520,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 17A"
+  },
+  {
+   "id": 17521,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 17A"
+  },
+  {
+   "id": 17522,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 30A"
+  },
+  {
+   "id": 17523,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 30A"
+  },
+  {
+   "id": 17524,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 30C"
+  },
+  {
+   "id": 17525,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 30C"
+  },
+  {
+   "id": 17526,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 35"
+  },
+  {
+   "id": 17527,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 35"
+  },
+  {
+   "id": 17528,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 4"
+  },
+  {
+   "id": 17529,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 4"
+  },
+  {
+   "id": 17530,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 51B"
+  },
+  {
+   "id": 17531,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 51B"
+  },
+  {
+   "id": 17532,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 60"
+  },
+  {
+   "id": 17533,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 60"
+  },
+  {
+   "id": 17534,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 7"
+  },
+  {
+   "id": 17535,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 7"
+  },
+  {
+   "id": 17536,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 70B"
+  },
+  {
+   "id": 17537,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 70B"
+  },
+  {
+   "id": 17538,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 71"
+  },
+  {
+   "id": 17539,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 71"
+  },
+  {
+   "id": 17540,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 75"
+  },
+  {
+   "id": 17541,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 75"
+  },
+  {
+   "id": 17542,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 11"
+  },
+  {
+   "id": 17543,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 11"
+  },
+  {
+   "id": 17544,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 15"
+  },
+  {
+   "id": 17545,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 15"
+  },
+  {
+   "id": 17546,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 19"
+  },
+  {
+   "id": 17547,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 19"
+  },
+  {
+   "id": 17548,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 25"
+  },
+  {
+   "id": 17549,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 25"
+  },
+  {
+   "id": 17550,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 5"
+  },
+  {
+   "id": 17551,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 5"
+  },
+  {
+   "id": 17552,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 9"
+  },
+  {
+   "id": 17553,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 9"
+  },
+  {
+   "id": 17554,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHIL 6"
+  },
+  {
+   "id": 17555,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHIL 6"
+  },
+  {
+   "id": 17556,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHIL 8"
+  },
+  {
+   "id": 17557,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHIL 8"
+  },
+  {
+   "id": 17558,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHY 1"
+  },
+  {
+   "id": 17559,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHY 1"
+  },
+  {
+   "id": 17560,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 17561,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHYS 2B"
+  },
+  {
+   "id": 17562,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 17563,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHYS 4B"
+  },
+  {
+   "id": 17564,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "POLS 1"
+  },
+  {
+   "id": 17565,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "POLS 1"
+  },
+  {
+   "id": 17566,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "POLS 25"
+  },
+  {
+   "id": 17567,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "POLS 25"
+  },
+  {
+   "id": 17568,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 14"
+  },
+  {
+   "id": 17569,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 14"
+  },
+  {
+   "id": 17570,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 17"
+  },
+  {
+   "id": 17571,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 17"
+  },
+  {
+   "id": 17572,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 25"
+  },
+  {
+   "id": 17573,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 25"
+  },
+  {
+   "id": 17574,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 41"
+  },
+  {
+   "id": 17575,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 41"
+  },
+  {
+   "id": 17576,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 5"
+  },
+  {
+   "id": 17577,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 5"
+  },
+  {
+   "id": 17578,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 1"
+  },
+  {
+   "id": 17579,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 1"
+  },
+  {
+   "id": 17580,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 10L"
+  },
+  {
+   "id": 17581,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 10L"
+  },
+  {
+   "id": 17582,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 2"
+  },
+  {
+   "id": 17583,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 2"
+  },
+  {
+   "id": 17584,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 21"
+  },
+  {
+   "id": 17585,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 21"
+  },
+  {
+   "id": 17586,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 3"
+  },
+  {
+   "id": 17587,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 3"
+  },
+  {
+   "id": 17588,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 4"
+  },
+  {
+   "id": 17589,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 4"
+  },
+  {
+   "id": 17590,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 5"
+  },
+  {
+   "id": 17591,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 5"
+  },
+  {
+   "id": 17592,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 6"
+  },
+  {
+   "id": 17593,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 6"
+  },
+  {
+   "id": 17594,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 7"
+  },
+  {
+   "id": 17595,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 7"
+  },
+  {
+   "id": 17596,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 8"
+  },
+  {
+   "id": 17597,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 8"
+  },
+  {
+   "id": 17598,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 9"
+  },
+  {
+   "id": 17599,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 9"
+  },
+  {
+   "id": 17600,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 15"
+  },
+  {
+   "id": 17601,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 15"
+  },
+  {
+   "id": 17602,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 25"
+  },
+  {
+   "id": 17603,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 25"
+  },
+  {
+   "id": 17604,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 35"
+  },
+  {
+   "id": 17605,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 35"
+  },
+  {
+   "id": 17606,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 36"
+  },
+  {
+   "id": 17607,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 36"
+  },
+  {
+   "id": 17608,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 48"
+  },
+  {
+   "id": 17609,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 48"
+  },
+  {
+   "id": 17610,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOC 15"
+  },
+  {
+   "id": 17611,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOC 15"
+  },
+  {
+   "id": 17612,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOC 25"
+  },
+  {
+   "id": 17613,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOC 25"
+  },
+  {
+   "id": 17614,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOC 30"
+  },
+  {
+   "id": 17615,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOC 30"
+  },
+  {
+   "id": 17616,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 1"
+  },
+  {
+   "id": 17617,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 1"
+  },
+  {
+   "id": 17618,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 12"
+  },
+  {
+   "id": 17619,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 12"
+  },
+  {
+   "id": 17620,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 2"
+  },
+  {
+   "id": 17621,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 2"
+  },
+  {
+   "id": 17622,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 4"
+  },
+  {
+   "id": 17623,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 4"
+  },
+  {
+   "id": 17624,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 17625,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 17626,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "STU 110"
+  },
+  {
+   "id": 17627,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "STU 110"
+  },
+  {
+   "id": 17628,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 1"
+  },
+  {
+   "id": 17629,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 1"
+  },
+  {
+   "id": 17630,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 13"
+  },
+  {
+   "id": 17631,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 13"
+  },
+  {
+   "id": 17632,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 26"
+  },
+  {
+   "id": 17633,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 26"
+  },
+  {
+   "id": 17634,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 34"
+  },
+  {
+   "id": 17635,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 34"
+  },
+  {
+   "id": 17636,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 41"
+  },
+  {
+   "id": 17637,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 41"
+  },
+  {
+   "id": 17638,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 50"
+  },
+  {
+   "id": 17639,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 50"
+  },
+  {
+   "id": 17640,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 74"
+  },
+  {
+   "id": 17641,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 74"
+  },
+  {
+   "id": 17642,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 81"
+  },
+  {
+   "id": 17643,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 81"
+  },
+  {
+   "id": 17644,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "VOCN 161"
+  },
+  {
+   "id": 17645,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "VOCN 161"
+  },
+  {
+   "id": 17646,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 118"
+  },
+  {
+   "id": 17647,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 118"
+  },
+  {
+   "id": 17648,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 171"
+  },
+  {
+   "id": 17649,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 171"
+  },
+  {
+   "id": 17650,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 175"
+  },
+  {
+   "id": 17651,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 175"
+  },
+  {
+   "id": 17652,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 182"
+  },
+  {
+   "id": 17653,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 182"
+  },
+  {
+   "id": 17654,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 184"
+  },
+  {
+   "id": 17655,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 184"
+  },
+  {
+   "id": 17656,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 188"
+  },
+  {
+   "id": 17657,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 188"
+  },
+  {
+   "id": 17658,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 73"
+  },
+  {
+   "id": 17659,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 73"
+  },
+  {
+   "id": 17660,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WTT 102"
+  },
+  {
+   "id": 17661,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WTT 102"
+  },
+  {
+   "id": 17662,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WTT 104"
+  },
+  {
+   "id": 17663,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WTT 104"
+  },
+  {
+   "id": 17664,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ZOOL 1"
+  },
+  {
+   "id": 17665,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ZOOL 1"
+  },
+  {
+   "id": 17666,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 102"
+  },
+  {
+   "id": 17667,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 102"
+  },
+  {
+   "id": 17668,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 104"
+  },
+  {
+   "id": 17669,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 104"
+  },
+  {
+   "id": 17670,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ACCT 2"
+  },
+  {
+   "id": 17671,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ACCT 2"
+  },
+  {
+   "id": 17672,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 10"
+  },
+  {
+   "id": 17673,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 10"
+  },
+  {
+   "id": 17674,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 15"
+  },
+  {
+   "id": 17675,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 15"
+  },
+  {
+   "id": 17676,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 17"
+  },
+  {
+   "id": 17677,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 17"
+  },
+  {
+   "id": 17678,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 20"
+  },
+  {
+   "id": 17679,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 20"
+  },
+  {
+   "id": 17680,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 22"
+  },
+  {
+   "id": 17681,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 22"
+  },
+  {
+   "id": 17682,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 26"
+  },
+  {
+   "id": 17683,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 26"
+  },
+  {
+   "id": 17684,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 40"
+  },
+  {
+   "id": 17685,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 40"
+  },
+  {
+   "id": 17686,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADJU 46"
+  },
+  {
+   "id": 17687,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADJU 46"
+  },
+  {
+   "id": 17688,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 10"
+  },
+  {
+   "id": 17689,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 10"
+  },
+  {
+   "id": 17690,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 12"
+  },
+  {
+   "id": 17691,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 12"
+  },
+  {
+   "id": 17692,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 14"
+  },
+  {
+   "id": 17693,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 14"
+  },
+  {
+   "id": 17694,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 16"
+  },
+  {
+   "id": 17695,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 16"
+  },
+  {
+   "id": 17696,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 18"
+  },
+  {
+   "id": 17697,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 18"
+  },
+  {
+   "id": 17698,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 20"
+  },
+  {
+   "id": 17699,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 20"
+  },
+  {
+   "id": 17700,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ADS 94"
+  },
+  {
+   "id": 17701,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ADS 94"
+  },
+  {
+   "id": 17702,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 58"
+  },
+  {
+   "id": 17703,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 58"
+  },
+  {
+   "id": 17704,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 71"
+  },
+  {
+   "id": 17705,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 71"
+  },
+  {
+   "id": 17706,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AG 94"
+  },
+  {
+   "id": 17707,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AG 94"
+  },
+  {
+   "id": 17708,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAB 51"
+  },
+  {
+   "id": 17709,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAB 51"
+  },
+  {
+   "id": 17710,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAB 54"
+  },
+  {
+   "id": 17711,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAB 54"
+  },
+  {
+   "id": 17712,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 14"
+  },
+  {
+   "id": 17713,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 14"
+  },
+  {
+   "id": 17714,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 16"
+  },
+  {
+   "id": 17715,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 16"
+  },
+  {
+   "id": 17716,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGAS 30"
+  },
+  {
+   "id": 17717,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGAS 30"
+  },
+  {
+   "id": 17718,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 10"
+  },
+  {
+   "id": 17719,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 10"
+  },
+  {
+   "id": 17720,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 22"
+  },
+  {
+   "id": 17721,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 22"
+  },
+  {
+   "id": 17722,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 26"
+  },
+  {
+   "id": 17723,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 26"
+  },
+  {
+   "id": 17724,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 323"
+  },
+  {
+   "id": 17725,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 323"
+  },
+  {
+   "id": 17726,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 35"
+  },
+  {
+   "id": 17727,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 35"
+  },
+  {
+   "id": 17728,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 38"
+  },
+  {
+   "id": 17729,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 38"
+  },
+  {
+   "id": 17730,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 50"
+  },
+  {
+   "id": 17731,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 50"
+  },
+  {
+   "id": 17732,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 60"
+  },
+  {
+   "id": 17733,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 60"
+  },
+  {
+   "id": 17734,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEH 71"
+  },
+  {
+   "id": 17735,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEH 71"
+  },
+  {
+   "id": 17736,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEQ 12"
+  },
+  {
+   "id": 17737,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEQ 12"
+  },
+  {
+   "id": 17738,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGEQ 21"
+  },
+  {
+   "id": 17739,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGEQ 21"
+  },
+  {
+   "id": 17740,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGMA 44"
+  },
+  {
+   "id": 17741,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGMA 44"
+  },
+  {
+   "id": 17742,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 101"
+  },
+  {
+   "id": 17743,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 101"
+  },
+  {
+   "id": 17744,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 103"
+  },
+  {
+   "id": 17745,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 103"
+  },
+  {
+   "id": 17746,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 105"
+  },
+  {
+   "id": 17747,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 105"
+  },
+  {
+   "id": 17748,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 12"
+  },
+  {
+   "id": 17749,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 12"
+  },
+  {
+   "id": 17750,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 51"
+  },
+  {
+   "id": 17751,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 51"
+  },
+  {
+   "id": 17752,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 53"
+  },
+  {
+   "id": 17753,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 53"
+  },
+  {
+   "id": 17754,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 57"
+  },
+  {
+   "id": 17755,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 57"
+  },
+  {
+   "id": 17756,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 60"
+  },
+  {
+   "id": 17757,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 60"
+  },
+  {
+   "id": 17758,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 64"
+  },
+  {
+   "id": 17759,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 64"
+  },
+  {
+   "id": 17760,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 66"
+  },
+  {
+   "id": 17761,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 66"
+  },
+  {
+   "id": 17762,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGNR 94"
+  },
+  {
+   "id": 17763,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGNR 94"
+  },
+  {
+   "id": 17764,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGPS 24"
+  },
+  {
+   "id": 17765,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGPS 24"
+  },
+  {
+   "id": 17766,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGSA 56"
+  },
+  {
+   "id": 17767,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGSA 56"
+  },
+  {
+   "id": 17768,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AGVIT 81"
+  },
+  {
+   "id": 17769,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AGVIT 81"
+  },
+  {
+   "id": 17770,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 101L"
+  },
+  {
+   "id": 17771,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 101L"
+  },
+  {
+   "id": 17772,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 103L"
+  },
+  {
+   "id": 17773,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 103L"
+  },
+  {
+   "id": 17774,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ALH 104L"
+  },
+  {
+   "id": 17775,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ALH 104L"
+  },
+  {
+   "id": 17776,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ANAT 1"
+  },
+  {
+   "id": 17777,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ANAT 1"
+  },
+  {
+   "id": 17778,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ANTH 2"
+  },
+  {
+   "id": 17779,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ANTH 2"
+  },
+  {
+   "id": 17780,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ANTH C1001"
+  },
+  {
+   "id": 17781,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ANTH C1001"
+  },
+  {
+   "id": 17782,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ARCH 4A"
+  },
+  {
+   "id": 17783,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ARCH 4A"
+  },
+  {
+   "id": 17784,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 1"
+  },
+  {
+   "id": 17785,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 1"
+  },
+  {
+   "id": 17786,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 13"
+  },
+  {
+   "id": 17787,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 13"
+  },
+  {
+   "id": 17788,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 21A"
+  },
+  {
+   "id": 17789,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 21A"
+  },
+  {
+   "id": 17790,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 26A"
+  },
+  {
+   "id": 17791,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 26A"
+  },
+  {
+   "id": 17792,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 26C"
+  },
+  {
+   "id": 17793,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 26C"
+  },
+  {
+   "id": 17794,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 29A"
+  },
+  {
+   "id": 17795,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 29A"
+  },
+  {
+   "id": 17796,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 29C"
+  },
+  {
+   "id": 17797,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 29C"
+  },
+  {
+   "id": 17798,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 31A"
+  },
+  {
+   "id": 17799,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 31A"
+  },
+  {
+   "id": 17800,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 31C"
+  },
+  {
+   "id": 17801,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 31C"
+  },
+  {
+   "id": 17802,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 35A"
+  },
+  {
+   "id": 17803,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 35A"
+  },
+  {
+   "id": 17804,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 4"
+  },
+  {
+   "id": 17805,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 4"
+  },
+  {
+   "id": 17806,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 46"
+  },
+  {
+   "id": 17807,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 46"
+  },
+  {
+   "id": 17808,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 50A"
+  },
+  {
+   "id": 17809,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 50A"
+  },
+  {
+   "id": 17810,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 50C"
+  },
+  {
+   "id": 17811,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 50C"
+  },
+  {
+   "id": 17812,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 55B"
+  },
+  {
+   "id": 17813,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 55B"
+  },
+  {
+   "id": 17814,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 6"
+  },
+  {
+   "id": 17815,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 6"
+  },
+  {
+   "id": 17816,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 70B"
+  },
+  {
+   "id": 17817,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 70B"
+  },
+  {
+   "id": 17818,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 70D"
+  },
+  {
+   "id": 17819,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 70D"
+  },
+  {
+   "id": 17820,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ART 80A"
+  },
+  {
+   "id": 17821,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ART 80A"
+  },
+  {
+   "id": 17822,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 17823,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 17824,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 1L"
+  },
+  {
+   "id": 17825,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 1L"
+  },
+  {
+   "id": 17826,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 2L"
+  },
+  {
+   "id": 17827,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 2L"
+  },
+  {
+   "id": 17828,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASL 4"
+  },
+  {
+   "id": 17829,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASL 4"
+  },
+  {
+   "id": 17830,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ASTR 3"
+  },
+  {
+   "id": 17831,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ASTR 3"
+  },
+  {
+   "id": 17832,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 11"
+  },
+  {
+   "id": 17833,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 11"
+  },
+  {
+   "id": 17834,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 147"
+  },
+  {
+   "id": 17835,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 147"
+  },
+  {
+   "id": 17836,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 161"
+  },
+  {
+   "id": 17837,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 161"
+  },
+  {
+   "id": 17838,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 163"
+  },
+  {
+   "id": 17839,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 163"
+  },
+  {
+   "id": 17840,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 20"
+  },
+  {
+   "id": 17841,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 20"
+  },
+  {
+   "id": 17842,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "AUTO 94"
+  },
+  {
+   "id": 17843,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "AUTO 94"
+  },
+  {
+   "id": 17844,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 10"
+  },
+  {
+   "id": 17845,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 10"
+  },
+  {
+   "id": 17846,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 11"
+  },
+  {
+   "id": 17847,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 11"
+  },
+  {
+   "id": 17848,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 12L"
+  },
+  {
+   "id": 17849,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 12L"
+  },
+  {
+   "id": 17850,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BIOL 6"
+  },
+  {
+   "id": 17851,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BIOL 6"
+  },
+  {
+   "id": 17852,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BOT 15"
+  },
+  {
+   "id": 17853,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BOT 15"
+  },
+  {
+   "id": 17854,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BOT 50"
+  },
+  {
+   "id": 17855,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BOT 50"
+  },
+  {
+   "id": 17856,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 10"
+  },
+  {
+   "id": 17857,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 10"
+  },
+  {
+   "id": 17858,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 114"
+  },
+  {
+   "id": 17859,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 114"
+  },
+  {
+   "id": 17860,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 152"
+  },
+  {
+   "id": 17861,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 152"
+  },
+  {
+   "id": 17862,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 166"
+  },
+  {
+   "id": 17863,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 166"
+  },
+  {
+   "id": 17864,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 320"
+  },
+  {
+   "id": 17865,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 320"
+  },
+  {
+   "id": 17866,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 322"
+  },
+  {
+   "id": 17867,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 322"
+  },
+  {
+   "id": 17868,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 324"
+  },
+  {
+   "id": 17869,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 324"
+  },
+  {
+   "id": 17870,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 52"
+  },
+  {
+   "id": 17871,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 52"
+  },
+  {
+   "id": 17872,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 80"
+  },
+  {
+   "id": 17873,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 80"
+  },
+  {
+   "id": 17874,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 91"
+  },
+  {
+   "id": 17875,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 91"
+  },
+  {
+   "id": 17876,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BSOT 94"
+  },
+  {
+   "id": 17877,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BSOT 94"
+  },
+  {
+   "id": 17878,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 12"
+  },
+  {
+   "id": 17879,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 12"
+  },
+  {
+   "id": 17880,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 14"
+  },
+  {
+   "id": 17881,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 14"
+  },
+  {
+   "id": 17882,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 17"
+  },
+  {
+   "id": 17883,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 17"
+  },
+  {
+   "id": 17884,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 30"
+  },
+  {
+   "id": 17885,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 30"
+  },
+  {
+   "id": 17886,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 301B"
+  },
+  {
+   "id": 17887,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 301B"
+  },
+  {
+   "id": 17888,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 40"
+  },
+  {
+   "id": 17889,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 40"
+  },
+  {
+   "id": 17890,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 42"
+  },
+  {
+   "id": 17891,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 42"
+  },
+  {
+   "id": 17892,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 45"
+  },
+  {
+   "id": 17893,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 45"
+  },
+  {
+   "id": 17894,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 56"
+  },
+  {
+   "id": 17895,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 56"
+  },
+  {
+   "id": 17896,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 66"
+  },
+  {
+   "id": 17897,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 66"
+  },
+  {
+   "id": 17898,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 72"
+  },
+  {
+   "id": 17899,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 72"
+  },
+  {
+   "id": 17900,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "BUAD 80"
+  },
+  {
+   "id": 17901,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "BUAD 80"
+  },
+  {
+   "id": 17902,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 100"
+  },
+  {
+   "id": 17903,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 100"
+  },
+  {
+   "id": 17904,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 155"
+  },
+  {
+   "id": 17905,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 155"
+  },
+  {
+   "id": 17906,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 158"
+  },
+  {
+   "id": 17907,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 158"
+  },
+  {
+   "id": 17908,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 162"
+  },
+  {
+   "id": 17909,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 162"
+  },
+  {
+   "id": 17910,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CALS 94"
+  },
+  {
+   "id": 17911,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CALS 94"
+  },
+  {
+   "id": 17912,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 11"
+  },
+  {
+   "id": 17913,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 11"
+  },
+  {
+   "id": 17914,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 17915,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 1B"
+  },
+  {
+   "id": 17916,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 2B"
+  },
+  {
+   "id": 17917,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 2B"
+  },
+  {
+   "id": 17918,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 70A"
+  },
+  {
+   "id": 17919,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 70A"
+  },
+  {
+   "id": 17920,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CHEM 71A"
+  },
+  {
+   "id": 17921,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CHEM 71A"
+  },
+  {
+   "id": 17922,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 1"
+  },
+  {
+   "id": 17923,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 1"
+  },
+  {
+   "id": 17924,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 14"
+  },
+  {
+   "id": 17925,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 14"
+  },
+  {
+   "id": 17926,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 16"
+  },
+  {
+   "id": 17927,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 16"
+  },
+  {
+   "id": 17928,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 2"
+  },
+  {
+   "id": 17929,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 2"
+  },
+  {
+   "id": 17930,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 23"
+  },
+  {
+   "id": 17931,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 23"
+  },
+  {
+   "id": 17932,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 32"
+  },
+  {
+   "id": 17933,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 32"
+  },
+  {
+   "id": 17934,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 34"
+  },
+  {
+   "id": 17935,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 34"
+  },
+  {
+   "id": 17936,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 61"
+  },
+  {
+   "id": 17937,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 61"
+  },
+  {
+   "id": 17938,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 65"
+  },
+  {
+   "id": 17939,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 65"
+  },
+  {
+   "id": 17940,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 67"
+  },
+  {
+   "id": 17941,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 67"
+  },
+  {
+   "id": 17942,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 83"
+  },
+  {
+   "id": 17943,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 83"
+  },
+  {
+   "id": 17944,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CIS 92"
+  },
+  {
+   "id": 17945,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CIS 92"
+  },
+  {
+   "id": 17946,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM 20"
+  },
+  {
+   "id": 17947,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM 20"
+  },
+  {
+   "id": 17948,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM 40"
+  },
+  {
+   "id": 17949,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM 40"
+  },
+  {
+   "id": 17950,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM 54"
+  },
+  {
+   "id": 17951,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM 54"
+  },
+  {
+   "id": 17952,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 17953,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 17954,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 140B"
+  },
+  {
+   "id": 17955,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 140B"
+  },
+  {
+   "id": 17956,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 45"
+  },
+  {
+   "id": 17957,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 45"
+  },
+  {
+   "id": 17958,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 47"
+  },
+  {
+   "id": 17959,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 47"
+  },
+  {
+   "id": 17960,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 55A"
+  },
+  {
+   "id": 17961,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 55A"
+  },
+  {
+   "id": 17962,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 55C"
+  },
+  {
+   "id": 17963,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 55C"
+  },
+  {
+   "id": 17964,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CONS 94"
+  },
+  {
+   "id": 17965,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CONS 94"
+  },
+  {
+   "id": 17966,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 161"
+  },
+  {
+   "id": 17967,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 161"
+  },
+  {
+   "id": 17968,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 366"
+  },
+  {
+   "id": 17969,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 366"
+  },
+  {
+   "id": 17970,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 45"
+  },
+  {
+   "id": 17971,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 45"
+  },
+  {
+   "id": 17972,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 48"
+  },
+  {
+   "id": 17973,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 48"
+  },
+  {
+   "id": 17974,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 50"
+  },
+  {
+   "id": 17975,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 50"
+  },
+  {
+   "id": 17976,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 60"
+  },
+  {
+   "id": 17977,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 60"
+  },
+  {
+   "id": 17978,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 66"
+  },
+  {
+   "id": 17979,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 66"
+  },
+  {
+   "id": 17980,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "CULA 75"
+  },
+  {
+   "id": 17981,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "CULA 75"
+  },
+  {
+   "id": 17982,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 15"
+  },
+  {
+   "id": 17983,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 15"
+  },
+  {
+   "id": 17984,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 20A"
+  },
+  {
+   "id": 17985,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 20A"
+  },
+  {
+   "id": 17986,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 20C"
+  },
+  {
+   "id": 17987,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 20C"
+  },
+  {
+   "id": 17988,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 30A"
+  },
+  {
+   "id": 17989,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 30A"
+  },
+  {
+   "id": 17990,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 30C"
+  },
+  {
+   "id": 17991,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 30C"
+  },
+  {
+   "id": 17992,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 40A"
+  },
+  {
+   "id": 17993,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 40A"
+  },
+  {
+   "id": 17994,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DAN 40C"
+  },
+  {
+   "id": 17995,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DAN 40C"
+  },
+  {
+   "id": 17996,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 160"
+  },
+  {
+   "id": 17997,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 160"
+  },
+  {
+   "id": 17998,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 162"
+  },
+  {
+   "id": 17999,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 162"
+  },
+  {
+   "id": 18000,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 166"
+  },
+  {
+   "id": 18001,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 166"
+  },
+  {
+   "id": 18002,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 170"
+  },
+  {
+   "id": 18003,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 170"
+  },
+  {
+   "id": 18004,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DIES 49"
+  },
+  {
+   "id": 18005,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DIES 49"
+  },
+  {
+   "id": 18006,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 10"
+  },
+  {
+   "id": 18007,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 10"
+  },
+  {
+   "id": 18008,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 12"
+  },
+  {
+   "id": 18009,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 12"
+  },
+  {
+   "id": 18010,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 14"
+  },
+  {
+   "id": 18011,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 14"
+  },
+  {
+   "id": 18012,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 21"
+  },
+  {
+   "id": 18013,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 21"
+  },
+  {
+   "id": 18014,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 24"
+  },
+  {
+   "id": 18015,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 24"
+  },
+  {
+   "id": 18016,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 26"
+  },
+  {
+   "id": 18017,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 26"
+  },
+  {
+   "id": 18018,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 31"
+  },
+  {
+   "id": 18019,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 31"
+  },
+  {
+   "id": 18020,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 33"
+  },
+  {
+   "id": 18021,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 33"
+  },
+  {
+   "id": 18022,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 35"
+  },
+  {
+   "id": 18023,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 35"
+  },
+  {
+   "id": 18024,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 41"
+  },
+  {
+   "id": 18025,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 41"
+  },
+  {
+   "id": 18026,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 43"
+  },
+  {
+   "id": 18027,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 43"
+  },
+  {
+   "id": 18028,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "DNTL 45"
+  },
+  {
+   "id": 18029,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "DNTL 45"
+  },
+  {
+   "id": 18030,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 12"
+  },
+  {
+   "id": 18031,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 12"
+  },
+  {
+   "id": 18032,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 15"
+  },
+  {
+   "id": 18033,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 15"
+  },
+  {
+   "id": 18034,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 17"
+  },
+  {
+   "id": 18035,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 17"
+  },
+  {
+   "id": 18036,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 20"
+  },
+  {
+   "id": 18037,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 20"
+  },
+  {
+   "id": 18038,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 26"
+  },
+  {
+   "id": 18039,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 26"
+  },
+  {
+   "id": 18040,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 28"
+  },
+  {
+   "id": 18041,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 28"
+  },
+  {
+   "id": 18042,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 51"
+  },
+  {
+   "id": 18043,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 51"
+  },
+  {
+   "id": 18044,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 6"
+  },
+  {
+   "id": 18045,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 6"
+  },
+  {
+   "id": 18046,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 7"
+  },
+  {
+   "id": 18047,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 7"
+  },
+  {
+   "id": 18048,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECE 9"
+  },
+  {
+   "id": 18049,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECE 9"
+  },
+  {
+   "id": 18050,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 18051,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 18052,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 10A"
+  },
+  {
+   "id": 18053,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 10A"
+  },
+  {
+   "id": 18054,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 11A"
+  },
+  {
+   "id": 18055,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 11A"
+  },
+  {
+   "id": 18056,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 13A"
+  },
+  {
+   "id": 18057,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 13A"
+  },
+  {
+   "id": 18058,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 15"
+  },
+  {
+   "id": 18059,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 15"
+  },
+  {
+   "id": 18060,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 17"
+  },
+  {
+   "id": 18061,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 17"
+  },
+  {
+   "id": 18062,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 19"
+  },
+  {
+   "id": 18063,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 19"
+  },
+  {
+   "id": 18064,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 25"
+  },
+  {
+   "id": 18065,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 25"
+  },
+  {
+   "id": 18066,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL 36"
+  },
+  {
+   "id": 18067,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL 36"
+  },
+  {
+   "id": 18068,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 18069,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 18070,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 18071,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 18072,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 18073,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 18074,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ENGR 35"
+  },
+  {
+   "id": 18075,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ENGR 35"
+  },
+  {
+   "id": 18076,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 1"
+  },
+  {
+   "id": 18077,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 1"
+  },
+  {
+   "id": 18078,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 12"
+  },
+  {
+   "id": 18079,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 12"
+  },
+  {
+   "id": 18080,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 14L"
+  },
+  {
+   "id": 18081,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 14L"
+  },
+  {
+   "id": 18082,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 16"
+  },
+  {
+   "id": 18083,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 16"
+  },
+  {
+   "id": 18084,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 17"
+  },
+  {
+   "id": 18085,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 17"
+  },
+  {
+   "id": 18086,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 2"
+  },
+  {
+   "id": 18087,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 2"
+  },
+  {
+   "id": 18088,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 32"
+  },
+  {
+   "id": 18089,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 32"
+  },
+  {
+   "id": 18090,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 33"
+  },
+  {
+   "id": 18091,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 33"
+  },
+  {
+   "id": 18092,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 34"
+  },
+  {
+   "id": 18093,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 34"
+  },
+  {
+   "id": 18094,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 35"
+  },
+  {
+   "id": 18095,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 35"
+  },
+  {
+   "id": 18096,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 36"
+  },
+  {
+   "id": 18097,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 36"
+  },
+  {
+   "id": 18098,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 37"
+  },
+  {
+   "id": 18099,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 37"
+  },
+  {
+   "id": 18100,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 38"
+  },
+  {
+   "id": 18101,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 38"
+  },
+  {
+   "id": 18102,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 6"
+  },
+  {
+   "id": 18103,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 6"
+  },
+  {
+   "id": 18104,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESCI 8"
+  },
+  {
+   "id": 18105,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESCI 8"
+  },
+  {
+   "id": 18106,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESL 332"
+  },
+  {
+   "id": 18107,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESL 332"
+  },
+  {
+   "id": 18108,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ESL 336"
+  },
+  {
+   "id": 18109,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ESL 336"
+  },
+  {
+   "id": 18110,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ETHS 11"
+  },
+  {
+   "id": 18111,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ETHS 11"
+  },
+  {
+   "id": 18112,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "ETHS 8"
+  },
+  {
+   "id": 18113,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "ETHS 8"
+  },
+  {
+   "id": 18114,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FAID 133"
+  },
+  {
+   "id": 18115,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FAID 133"
+  },
+  {
+   "id": 18116,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FAID 375"
+  },
+  {
+   "id": 18117,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FAID 375"
+  },
+  {
+   "id": 18118,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FIRS 104"
+  },
+  {
+   "id": 18119,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FIRS 104"
+  },
+  {
+   "id": 18120,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FIRS 120"
+  },
+  {
+   "id": 18121,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FIRS 120"
+  },
+  {
+   "id": 18122,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FREN 2"
+  },
+  {
+   "id": 18123,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FREN 2"
+  },
+  {
+   "id": 18124,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 112"
+  },
+  {
+   "id": 18125,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 112"
+  },
+  {
+   "id": 18126,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 114"
+  },
+  {
+   "id": 18127,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 114"
+  },
+  {
+   "id": 18128,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 125"
+  },
+  {
+   "id": 18129,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 125"
+  },
+  {
+   "id": 18130,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "FTWO 132"
+  },
+  {
+   "id": 18131,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "FTWO 132"
+  },
+  {
+   "id": 18132,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 10"
+  },
+  {
+   "id": 18133,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 10"
+  },
+  {
+   "id": 18134,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 13"
+  },
+  {
+   "id": 18135,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 13"
+  },
+  {
+   "id": 18136,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 15"
+  },
+  {
+   "id": 18137,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 15"
+  },
+  {
+   "id": 18138,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 1AL"
+  },
+  {
+   "id": 18139,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 1AL"
+  },
+  {
+   "id": 18140,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 25"
+  },
+  {
+   "id": 18141,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 25"
+  },
+  {
+   "id": 18142,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 2B"
+  },
+  {
+   "id": 18143,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 2B"
+  },
+  {
+   "id": 18144,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 7"
+  },
+  {
+   "id": 18145,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 7"
+  },
+  {
+   "id": 18146,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GEOG 9"
+  },
+  {
+   "id": 18147,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GEOG 9"
+  },
+  {
+   "id": 18148,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "GERM 1"
+  },
+  {
+   "id": 18149,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "GERM 1"
+  },
+  {
+   "id": 18150,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HEOC 1"
+  },
+  {
+   "id": 18151,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HEOC 1"
+  },
+  {
+   "id": 18152,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HEOC 11"
+  },
+  {
+   "id": 18153,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HEOC 11"
+  },
+  {
+   "id": 18154,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 405"
+  },
+  {
+   "id": 18155,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 405"
+  },
+  {
+   "id": 18156,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 410"
+  },
+  {
+   "id": 18157,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 410"
+  },
+  {
+   "id": 18158,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 418"
+  },
+  {
+   "id": 18159,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 418"
+  },
+  {
+   "id": 18160,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 425"
+  },
+  {
+   "id": 18161,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 425"
+  },
+  {
+   "id": 18162,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 435"
+  },
+  {
+   "id": 18163,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 435"
+  },
+  {
+   "id": 18164,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 445"
+  },
+  {
+   "id": 18165,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 445"
+  },
+  {
+   "id": 18166,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIMS 455B"
+  },
+  {
+   "id": 18167,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIMS 455B"
+  },
+  {
+   "id": 18168,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 1B"
+  },
+  {
+   "id": 18169,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 1B"
+  },
+  {
+   "id": 18170,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 25"
+  },
+  {
+   "id": 18171,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 25"
+  },
+  {
+   "id": 18172,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 35"
+  },
+  {
+   "id": 18173,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 35"
+  },
+  {
+   "id": 18174,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST 40"
+  },
+  {
+   "id": 18175,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST 40"
+  },
+  {
+   "id": 18176,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 18177,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 18178,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 11"
+  },
+  {
+   "id": 18179,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 11"
+  },
+  {
+   "id": 18180,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 20"
+  },
+  {
+   "id": 18181,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 20"
+  },
+  {
+   "id": 18182,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 30"
+  },
+  {
+   "id": 18183,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 30"
+  },
+  {
+   "id": 18184,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 40"
+  },
+  {
+   "id": 18185,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 40"
+  },
+  {
+   "id": 18186,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 45"
+  },
+  {
+   "id": 18187,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 45"
+  },
+  {
+   "id": 18188,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 55"
+  },
+  {
+   "id": 18189,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 55"
+  },
+  {
+   "id": 18190,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HIT 7"
+  },
+  {
+   "id": 18191,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HIT 7"
+  },
+  {
+   "id": 18192,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 2"
+  },
+  {
+   "id": 18193,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 2"
+  },
+  {
+   "id": 18194,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 3"
+  },
+  {
+   "id": 18195,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 3"
+  },
+  {
+   "id": 18196,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HLTH 6"
+  },
+  {
+   "id": 18197,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HLTH 6"
+  },
+  {
+   "id": 18198,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 10"
+  },
+  {
+   "id": 18199,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 10"
+  },
+  {
+   "id": 18200,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 35"
+  },
+  {
+   "id": 18201,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 35"
+  },
+  {
+   "id": 18202,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 45"
+  },
+  {
+   "id": 18203,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 45"
+  },
+  {
+   "id": 18204,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 55"
+  },
+  {
+   "id": 18205,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 55"
+  },
+  {
+   "id": 18206,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HOSP 65"
+  },
+  {
+   "id": 18207,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HOSP 65"
+  },
+  {
+   "id": 18208,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUM 2"
+  },
+  {
+   "id": 18209,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUM 2"
+  },
+  {
+   "id": 18210,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUM 70"
+  },
+  {
+   "id": 18211,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUM 70"
+  },
+  {
+   "id": 18212,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 14"
+  },
+  {
+   "id": 18213,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 14"
+  },
+  {
+   "id": 18214,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 18"
+  },
+  {
+   "id": 18215,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 18"
+  },
+  {
+   "id": 18216,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 70"
+  },
+  {
+   "id": 18217,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 70"
+  },
+  {
+   "id": 18218,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "HUSV 95A"
+  },
+  {
+   "id": 18219,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "HUSV 95A"
+  },
+  {
+   "id": 18220,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 1"
+  },
+  {
+   "id": 18221,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 1"
+  },
+  {
+   "id": 18222,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 102"
+  },
+  {
+   "id": 18223,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 102"
+  },
+  {
+   "id": 18224,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "INDE 38"
+  },
+  {
+   "id": 18225,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "INDE 38"
+  },
+  {
+   "id": 18226,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 1"
+  },
+  {
+   "id": 18227,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 1"
+  },
+  {
+   "id": 18228,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 2"
+  },
+  {
+   "id": 18229,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 2"
+  },
+  {
+   "id": 18230,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JAPN 3"
+  },
+  {
+   "id": 18231,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JAPN 3"
+  },
+  {
+   "id": 18232,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JOUR 21"
+  },
+  {
+   "id": 18233,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JOUR 21"
+  },
+  {
+   "id": 18234,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "JOUR 29"
+  },
+  {
+   "id": 18235,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "JOUR 29"
+  },
+  {
+   "id": 18236,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "KINES 2"
+  },
+  {
+   "id": 18237,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "KINES 2"
+  },
+  {
+   "id": 18238,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 2"
+  },
+  {
+   "id": 18239,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 2"
+  },
+  {
+   "id": 18240,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 2AS"
+  },
+  {
+   "id": 18241,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 2AS"
+  },
+  {
+   "id": 18242,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 3AS"
+  },
+  {
+   "id": 18243,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 3AS"
+  },
+  {
+   "id": 18244,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 41B"
+  },
+  {
+   "id": 18245,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 41B"
+  },
+  {
+   "id": 18246,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 4B"
+  },
+  {
+   "id": 18247,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 4B"
+  },
+  {
+   "id": 18248,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 73"
+  },
+  {
+   "id": 18249,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 73"
+  },
+  {
+   "id": 18250,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH 9"
+  },
+  {
+   "id": 18251,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH 9"
+  },
+  {
+   "id": 18252,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 18253,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 18254,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 1"
+  },
+  {
+   "id": 18255,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 1"
+  },
+  {
+   "id": 18256,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 11"
+  },
+  {
+   "id": 18257,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 11"
+  },
+  {
+   "id": 18258,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 15"
+  },
+  {
+   "id": 18259,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 15"
+  },
+  {
+   "id": 18260,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 18"
+  },
+  {
+   "id": 18261,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 18"
+  },
+  {
+   "id": 18262,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 2"
+  },
+  {
+   "id": 18263,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 2"
+  },
+  {
+   "id": 18264,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 22B"
+  },
+  {
+   "id": 18265,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 22B"
+  },
+  {
+   "id": 18266,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 31"
+  },
+  {
+   "id": 18267,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 31"
+  },
+  {
+   "id": 18268,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 35"
+  },
+  {
+   "id": 18269,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 35"
+  },
+  {
+   "id": 18270,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 40"
+  },
+  {
+   "id": 18271,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 40"
+  },
+  {
+   "id": 18272,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 43"
+  },
+  {
+   "id": 18273,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 43"
+  },
+  {
+   "id": 18274,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 46"
+  },
+  {
+   "id": 18275,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 46"
+  },
+  {
+   "id": 18276,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "MUS 48"
+  },
+  {
+   "id": 18277,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "MUS 48"
+  },
+  {
+   "id": 18278,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NHIS 15"
+  },
+  {
+   "id": 18279,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NHIS 15"
+  },
+  {
+   "id": 18280,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NHIS 5L"
+  },
+  {
+   "id": 18281,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NHIS 5L"
+  },
+  {
+   "id": 18282,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 25"
+  },
+  {
+   "id": 18283,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 25"
+  },
+  {
+   "id": 18284,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 330"
+  },
+  {
+   "id": 18285,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 330"
+  },
+  {
+   "id": 18286,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 345"
+  },
+  {
+   "id": 18287,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 345"
+  },
+  {
+   "id": 18288,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 40"
+  },
+  {
+   "id": 18289,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 40"
+  },
+  {
+   "id": 18290,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "NUTR 50"
+  },
+  {
+   "id": 18291,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "NUTR 50"
+  },
+  {
+   "id": 18292,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 12A"
+  },
+  {
+   "id": 18293,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 12A"
+  },
+  {
+   "id": 18294,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 12C"
+  },
+  {
+   "id": 18295,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 12C"
+  },
+  {
+   "id": 18296,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 17B"
+  },
+  {
+   "id": 18297,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 17B"
+  },
+  {
+   "id": 18298,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 30B"
+  },
+  {
+   "id": 18299,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 30B"
+  },
+  {
+   "id": 18300,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 31"
+  },
+  {
+   "id": 18301,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 31"
+  },
+  {
+   "id": 18302,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 37"
+  },
+  {
+   "id": 18303,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 37"
+  },
+  {
+   "id": 18304,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 51A"
+  },
+  {
+   "id": 18305,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 51A"
+  },
+  {
+   "id": 18306,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 51C"
+  },
+  {
+   "id": 18307,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 51C"
+  },
+  {
+   "id": 18308,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 69"
+  },
+  {
+   "id": 18309,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 69"
+  },
+  {
+   "id": 18310,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 70A"
+  },
+  {
+   "id": 18311,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 70A"
+  },
+  {
+   "id": 18312,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 70C"
+  },
+  {
+   "id": 18313,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 70C"
+  },
+  {
+   "id": 18314,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 72"
+  },
+  {
+   "id": 18315,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 72"
+  },
+  {
+   "id": 18316,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PE 8"
+  },
+  {
+   "id": 18317,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PE 8"
+  },
+  {
+   "id": 18318,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 13"
+  },
+  {
+   "id": 18319,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 13"
+  },
+  {
+   "id": 18320,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 17"
+  },
+  {
+   "id": 18321,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 17"
+  },
+  {
+   "id": 18322,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 23"
+  },
+  {
+   "id": 18323,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 23"
+  },
+  {
+   "id": 18324,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 29"
+  },
+  {
+   "id": 18325,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 29"
+  },
+  {
+   "id": 18326,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PEAT 7"
+  },
+  {
+   "id": 18327,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PEAT 7"
+  },
+  {
+   "id": 18328,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHIL 14"
+  },
+  {
+   "id": 18329,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHIL 14"
+  },
+  {
+   "id": 18330,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHIL 7"
+  },
+  {
+   "id": 18331,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHIL 7"
+  },
+  {
+   "id": 18332,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHSC 1"
+  },
+  {
+   "id": 18333,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHSC 1"
+  },
+  {
+   "id": 18334,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 18335,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHYS 2A"
+  },
+  {
+   "id": 18336,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 18337,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHYS 4A"
+  },
+  {
+   "id": 18338,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 18339,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PHYS 4C"
+  },
+  {
+   "id": 18340,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "POLS 15"
+  },
+  {
+   "id": 18341,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "POLS 15"
+  },
+  {
+   "id": 18342,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 18343,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 18344,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 15"
+  },
+  {
+   "id": 18345,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 15"
+  },
+  {
+   "id": 18346,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 20"
+  },
+  {
+   "id": 18347,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 20"
+  },
+  {
+   "id": 18348,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 401"
+  },
+  {
+   "id": 18349,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 401"
+  },
+  {
+   "id": 18350,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC 46"
+  },
+  {
+   "id": 18351,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC 46"
+  },
+  {
+   "id": 18352,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 18353,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 18354,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 10"
+  },
+  {
+   "id": 18355,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 10"
+  },
+  {
+   "id": 18356,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 11"
+  },
+  {
+   "id": 18357,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 11"
+  },
+  {
+   "id": 18358,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 20"
+  },
+  {
+   "id": 18359,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 20"
+  },
+  {
+   "id": 18360,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 22"
+  },
+  {
+   "id": 18361,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 22"
+  },
+  {
+   "id": 18362,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 3L"
+  },
+  {
+   "id": 18363,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 3L"
+  },
+  {
+   "id": 18364,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 4L"
+  },
+  {
+   "id": 18365,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 4L"
+  },
+  {
+   "id": 18366,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 5L"
+  },
+  {
+   "id": 18367,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 5L"
+  },
+  {
+   "id": 18368,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 6L"
+  },
+  {
+   "id": 18369,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 6L"
+  },
+  {
+   "id": 18370,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 7L"
+  },
+  {
+   "id": 18371,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 7L"
+  },
+  {
+   "id": 18372,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 8L"
+  },
+  {
+   "id": 18373,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 8L"
+  },
+  {
+   "id": 18374,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "PTA 9L"
+  },
+  {
+   "id": 18375,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "PTA 9L"
+  },
+  {
+   "id": 18376,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 15P"
+  },
+  {
+   "id": 18377,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 15P"
+  },
+  {
+   "id": 18378,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 25P"
+  },
+  {
+   "id": 18379,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 25P"
+  },
+  {
+   "id": 18380,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 35P"
+  },
+  {
+   "id": 18381,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 35P"
+  },
+  {
+   "id": 18382,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 36P"
+  },
+  {
+   "id": 18383,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 36P"
+  },
+  {
+   "id": 18384,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "REGN 48P"
+  },
+  {
+   "id": 18385,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "REGN 48P"
+  },
+  {
+   "id": 18386,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 18387,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOC 2"
+  },
+  {
+   "id": 18388,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOC 3"
+  },
+  {
+   "id": 18389,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOC 3"
+  },
+  {
+   "id": 18390,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SOCI C1000"
+  },
+  {
+   "id": 18391,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SOCI C1000"
+  },
+  {
+   "id": 18392,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 11"
+  },
+  {
+   "id": 18393,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 11"
+  },
+  {
+   "id": 18394,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 19"
+  },
+  {
+   "id": 18395,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 19"
+  },
+  {
+   "id": 18396,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "SPAN 3"
+  },
+  {
+   "id": 18397,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "SPAN 3"
+  },
+  {
+   "id": 18398,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 18399,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 18400,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "STU 1"
+  },
+  {
+   "id": 18401,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "STU 1"
+  },
+  {
+   "id": 18402,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "STU 92"
+  },
+  {
+   "id": 18403,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "STU 92"
+  },
+  {
+   "id": 18404,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 12"
+  },
+  {
+   "id": 18405,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 12"
+  },
+  {
+   "id": 18406,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 23"
+  },
+  {
+   "id": 18407,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 23"
+  },
+  {
+   "id": 18408,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 30"
+  },
+  {
+   "id": 18409,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 30"
+  },
+  {
+   "id": 18410,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 38"
+  },
+  {
+   "id": 18411,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 38"
+  },
+  {
+   "id": 18412,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 42"
+  },
+  {
+   "id": 18413,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 42"
+  },
+  {
+   "id": 18414,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 70"
+  },
+  {
+   "id": 18415,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 70"
+  },
+  {
+   "id": 18416,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "THTR 8"
+  },
+  {
+   "id": 18417,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "THTR 8"
+  },
+  {
+   "id": 18418,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "VOCN 160"
+  },
+  {
+   "id": 18419,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "VOCN 160"
+  },
+  {
+   "id": 18420,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "VOCN 162"
+  },
+  {
+   "id": 18421,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "VOCN 162"
+  },
+  {
+   "id": 18422,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 170"
+  },
+  {
+   "id": 18423,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 170"
+  },
+  {
+   "id": 18424,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 174"
+  },
+  {
+   "id": 18425,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 174"
+  },
+  {
+   "id": 18426,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 178"
+  },
+  {
+   "id": 18427,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 178"
+  },
+  {
+   "id": 18428,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 183"
+  },
+  {
+   "id": 18429,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 183"
+  },
+  {
+   "id": 18430,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 186"
+  },
+  {
+   "id": 18431,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 186"
+  },
+  {
+   "id": 18432,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WELD 70"
+  },
+  {
+   "id": 18433,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WELD 70"
+  },
+  {
+   "id": 18434,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WTT 101"
+  },
+  {
+   "id": 18435,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WTT 101"
+  },
+  {
+   "id": 18436,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WTT 103"
+  },
+  {
+   "id": 18437,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WTT 103"
+  },
+  {
+   "id": 18438,
+   "kind": "objective",
+   "college": "Shasta College",
+   "course_code": "WTT 105"
+  },
+  {
+   "id": 18439,
+   "kind": "slo",
+   "college": "Shasta College",
+   "course_code": "WTT 105"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (16891, 16892, 16893, 16894, 16895, 16896, 16897, 16898, 16899, 16900, 16901, 16902, 16903, 16904, 16905, 16906, 16907, 16908, 16909, 16910, 16911, 16912, 16913, 16914, 16915, 16916, 16917, 16918, 16919, 16920, 16921, 16922, 16923, 16924, 16925, 16926, 16927, 16928, 16929, 16930, 16931, 16932, 16933, 16934, 16935, 16936, 16937, 16938, 16939, 16940, 16941, 16942, 16943, 16944, 16945, 16946, 16947, 16948, 16949, 16950, 16951, 16952, 16953, 16954, 16955, 16956, 16957, 16958, 16959, 16960, 16961, 16962, 16963, 16964, 16965, 16966, 16967, 16968, 16969, 16970, 16971, 16972, 16973, 16974, 16975, 16976, 16977, 16978, 16979, 16980, 16981, 16982, 16983, 16984, 16985, 16986, 16987, 16988, 16989, 16990, 16991, 16992, 16993, 16994, 16995, 16996, 16997, 16998, 16999, 17000, 17001, 17002, 17003, 17004, 17005, 17006, 17007, 17008, 17009, 17010, 17011, 17012, 17013, 17014, 17015, 17016, 17017, 17018, 17019, 17020, 17021, 17022, 17023, 17024, 17025, 17026, 17027, 17028, 17029, 17030, 17031, 17032, 17033, 17034, 17035, 17036, 17037, 17038, 17039, 17040, 17041, 17042, 17043, 17044, 17045, 17046, 17047, 17048, 17049, 17050, 17051, 17052, 17053, 17054, 17055, 17056, 17057, 17058, 17059, 17060, 17061, 17062, 17063, 17064, 17065, 17066, 17067, 17068, 17069, 17070, 17071, 17072, 17073, 17074, 17075, 17076, 17077, 17078, 17079, 17080, 17081, 17082, 17083, 17084, 17085, 17086, 17087, 17088, 17089, 17090, 17091, 17092, 17093, 17094, 17095, 17096, 17097, 17098, 17099, 17100, 17101, 17102, 17103, 17104, 17105, 17106, 17107, 17108, 17109, 17110, 17111, 17112, 17113, 17114, 17115, 17116, 17117, 17118, 17119, 17120, 17121, 17122, 17123, 17124, 17125, 17126, 17127, 17128, 17129, 17130, 17131, 17132, 17133, 17134, 17135, 17136, 17137, 17138, 17139, 17140, 17141, 17142, 17143, 17144, 17145, 17146, 17147, 17148, 17149, 17150, 17151, 17152, 17153, 17154, 17155, 17156, 17157, 17158, 17159, 17160, 17161, 17162, 17163, 17164, 17165, 17166, 17167, 17168, 17169, 17170, 17171, 17172, 17173, 17174, 17175, 17176, 17177, 17178, 17179, 17180, 17181, 17182, 17183, 17184, 17185, 17186, 17187, 17188, 17189, 17190, 17191, 17192, 17193, 17194, 17195, 17196, 17197, 17198, 17199, 17200, 17201, 17202, 17203, 17204, 17205, 17206, 17207, 17208, 17209, 17210, 17211, 17212, 17213, 17214, 17215, 17216, 17217, 17218, 17219, 17220, 17221, 17222, 17223, 17224, 17225, 17226, 17227, 17228, 17229, 17230, 17231, 17232, 17233, 17234, 17235, 17236, 17237, 17238, 17239, 17240, 17241, 17242, 17243, 17244, 17245, 17246, 17247, 17248, 17249, 17250, 17251, 17252, 17253, 17254, 17255, 17256, 17257, 17258, 17259, 17260, 17261, 17262, 17263, 17264, 17265, 17266, 17267, 17268, 17269, 17270, 17271, 17272, 17273, 17274, 17275, 17276, 17277, 17278, 17279, 17280, 17281, 17282, 17283, 17284, 17285, 17286, 17287, 17288, 17289, 17290, 17291, 17292, 17293, 17294, 17295, 17296, 17297, 17298, 17299, 17300, 17301, 17302, 17303, 17304, 17305, 17306, 17307, 17308, 17309, 17310, 17311, 17312, 17313, 17314, 17315, 17316, 17317, 17318, 17319, 17320, 17321, 17322, 17323, 17324, 17325, 17326, 17327, 17328, 17329, 17330, 17331, 17332, 17333, 17334, 17335, 17336, 17337, 17338, 17339, 17340, 17341, 17342, 17343, 17344, 17345, 17346, 17347, 17348, 17349, 17350, 17351, 17352, 17353, 17354, 17355, 17356, 17357, 17358, 17359, 17360, 17361, 17362, 17363, 17364, 17365, 17366, 17367, 17368, 17369, 17370, 17371, 17372, 17373, 17374, 17375, 17376, 17377, 17378, 17379, 17380, 17381, 17382, 17383, 17384, 17385, 17386, 17387, 17388, 17389, 17390, 17391, 17392, 17393, 17394, 17395, 17396, 17397, 17398, 17399, 17400, 17401, 17402, 17403, 17404, 17405, 17406, 17407, 17408, 17409, 17410, 17411, 17412, 17413, 17414, 17415, 17416, 17417, 17418, 17419, 17420, 17421, 17422, 17423, 17424, 17425, 17426, 17427, 17428, 17429, 17430, 17431, 17432, 17433, 17434, 17435, 17436, 17437, 17438, 17439, 17440, 17441, 17442, 17443, 17444, 17445, 17446, 17447, 17448, 17449, 17450, 17451, 17452, 17453, 17454, 17455, 17456, 17457, 17458, 17459, 17460, 17461, 17462, 17463, 17464, 17465, 17466, 17467, 17468, 17469, 17470, 17471, 17472, 17473, 17474, 17475, 17476, 17477, 17478, 17479, 17480, 17481, 17482, 17483, 17484, 17485, 17486, 17487, 17488, 17489, 17490, 17491, 17492, 17493, 17494, 17495, 17496, 17497, 17498, 17499, 17500, 17501, 17502, 17503, 17504, 17505, 17506, 17507, 17508, 17509, 17510, 17511, 17512, 17513, 17514, 17515, 17516, 17517, 17518, 17519, 17520, 17521, 17522, 17523, 17524, 17525, 17526, 17527, 17528, 17529, 17530, 17531, 17532, 17533, 17534, 17535, 17536, 17537, 17538, 17539, 17540, 17541, 17542, 17543, 17544, 17545, 17546, 17547, 17548, 17549, 17550, 17551, 17552, 17553, 17554, 17555, 17556, 17557, 17558, 17559, 17560, 17561, 17562, 17563, 17564, 17565, 17566, 17567, 17568, 17569, 17570, 17571, 17572, 17573, 17574, 17575, 17576, 17577, 17578, 17579, 17580, 17581, 17582, 17583, 17584, 17585, 17586, 17587, 17588, 17589, 17590, 17591, 17592, 17593, 17594, 17595, 17596, 17597, 17598, 17599, 17600, 17601, 17602, 17603, 17604, 17605, 17606, 17607, 17608, 17609, 17610, 17611, 17612, 17613, 17614, 17615, 17616, 17617, 17618, 17619, 17620, 17621, 17622, 17623, 17624, 17625, 17626, 17627, 17628, 17629, 17630, 17631, 17632, 17633, 17634, 17635, 17636, 17637, 17638, 17639, 17640, 17641, 17642, 17643, 17644, 17645, 17646, 17647, 17648, 17649, 17650, 17651, 17652, 17653, 17654, 17655, 17656, 17657, 17658, 17659, 17660, 17661, 17662, 17663, 17664, 17665, 17666, 17667, 17668, 17669, 17670, 17671, 17672, 17673, 17674, 17675, 17676, 17677, 17678, 17679, 17680, 17681, 17682, 17683, 17684, 17685, 17686, 17687, 17688, 17689, 17690, 17691, 17692, 17693, 17694, 17695, 17696, 17697, 17698, 17699, 17700, 17701, 17702, 17703, 17704, 17705, 17706, 17707, 17708, 17709, 17710, 17711, 17712, 17713, 17714, 17715, 17716, 17717, 17718, 17719, 17720, 17721, 17722, 17723, 17724, 17725, 17726, 17727, 17728, 17729, 17730, 17731, 17732, 17733, 17734, 17735, 17736, 17737, 17738, 17739, 17740, 17741, 17742, 17743, 17744, 17745, 17746, 17747, 17748, 17749, 17750, 17751, 17752, 17753, 17754, 17755, 17756, 17757, 17758, 17759, 17760, 17761, 17762, 17763, 17764, 17765, 17766, 17767, 17768, 17769, 17770, 17771, 17772, 17773, 17774, 17775, 17776, 17777, 17778, 17779, 17780, 17781, 17782, 17783, 17784, 17785, 17786, 17787, 17788, 17789, 17790, 17791, 17792, 17793, 17794, 17795, 17796, 17797, 17798, 17799, 17800, 17801, 17802, 17803, 17804, 17805, 17806, 17807, 17808, 17809, 17810, 17811, 17812, 17813, 17814, 17815, 17816, 17817, 17818, 17819, 17820, 17821, 17822, 17823, 17824, 17825, 17826, 17827, 17828, 17829, 17830, 17831, 17832, 17833, 17834, 17835, 17836, 17837, 17838, 17839, 17840, 17841, 17842, 17843, 17844, 17845, 17846, 17847, 17848, 17849, 17850, 17851, 17852, 17853, 17854, 17855, 17856, 17857, 17858, 17859, 17860, 17861, 17862, 17863, 17864, 17865, 17866, 17867, 17868, 17869, 17870, 17871, 17872, 17873, 17874, 17875, 17876, 17877, 17878, 17879, 17880, 17881, 17882, 17883, 17884, 17885, 17886, 17887, 17888, 17889, 17890, 17891, 17892, 17893, 17894, 17895, 17896, 17897, 17898, 17899, 17900, 17901, 17902, 17903, 17904, 17905, 17906, 17907, 17908, 17909, 17910, 17911, 17912, 17913, 17914, 17915, 17916, 17917, 17918, 17919, 17920, 17921, 17922, 17923, 17924, 17925, 17926, 17927, 17928, 17929, 17930, 17931, 17932, 17933, 17934, 17935, 17936, 17937, 17938, 17939, 17940, 17941, 17942, 17943, 17944, 17945, 17946, 17947, 17948, 17949, 17950, 17951, 17952, 17953, 17954, 17955, 17956, 17957, 17958, 17959, 17960, 17961, 17962, 17963, 17964, 17965, 17966, 17967, 17968, 17969, 17970, 17971, 17972, 17973, 17974, 17975, 17976, 17977, 17978, 17979, 17980, 17981, 17982, 17983, 17984, 17985, 17986, 17987, 17988, 17989, 17990, 17991, 17992, 17993, 17994, 17995, 17996, 17997, 17998, 17999, 18000, 18001, 18002, 18003, 18004, 18005, 18006, 18007, 18008, 18009, 18010, 18011, 18012, 18013, 18014, 18015, 18016, 18017, 18018, 18019, 18020, 18021, 18022, 18023, 18024, 18025, 18026, 18027, 18028, 18029, 18030, 18031, 18032, 18033, 18034, 18035, 18036, 18037, 18038, 18039, 18040, 18041, 18042, 18043, 18044, 18045, 18046, 18047, 18048, 18049, 18050, 18051, 18052, 18053, 18054, 18055, 18056, 18057, 18058, 18059, 18060, 18061, 18062, 18063, 18064, 18065, 18066, 18067, 18068, 18069, 18070, 18071, 18072, 18073, 18074, 18075, 18076, 18077, 18078, 18079, 18080, 18081, 18082, 18083, 18084, 18085, 18086, 18087, 18088, 18089, 18090, 18091, 18092, 18093, 18094, 18095, 18096, 18097, 18098, 18099, 18100, 18101, 18102, 18103, 18104, 18105, 18106, 18107, 18108, 18109, 18110, 18111, 18112, 18113, 18114, 18115, 18116, 18117, 18118, 18119, 18120, 18121, 18122, 18123, 18124, 18125, 18126, 18127, 18128, 18129, 18130, 18131, 18132, 18133, 18134, 18135, 18136, 18137, 18138, 18139, 18140, 18141, 18142, 18143, 18144, 18145, 18146, 18147, 18148, 18149, 18150, 18151, 18152, 18153, 18154, 18155, 18156, 18157, 18158, 18159, 18160, 18161, 18162, 18163, 18164, 18165, 18166, 18167, 18168, 18169, 18170, 18171, 18172, 18173, 18174, 18175, 18176, 18177, 18178, 18179, 18180, 18181, 18182, 18183, 18184, 18185, 18186, 18187, 18188, 18189, 18190, 18191, 18192, 18193, 18194, 18195, 18196, 18197, 18198, 18199, 18200, 18201, 18202, 18203, 18204, 18205, 18206, 18207, 18208, 18209, 18210, 18211, 18212, 18213, 18214, 18215, 18216, 18217, 18218, 18219, 18220, 18221, 18222, 18223, 18224, 18225, 18226, 18227, 18228, 18229, 18230, 18231, 18232, 18233, 18234, 18235, 18236, 18237, 18238, 18239, 18240, 18241, 18242, 18243, 18244, 18245, 18246, 18247, 18248, 18249, 18250, 18251, 18252, 18253, 18254, 18255, 18256, 18257, 18258, 18259, 18260, 18261, 18262, 18263, 18264, 18265, 18266, 18267, 18268, 18269, 18270, 18271, 18272, 18273, 18274, 18275, 18276, 18277, 18278, 18279, 18280, 18281, 18282, 18283, 18284, 18285, 18286, 18287, 18288, 18289, 18290, 18291, 18292, 18293, 18294, 18295, 18296, 18297, 18298, 18299, 18300, 18301, 18302, 18303, 18304, 18305, 18306, 18307, 18308, 18309, 18310, 18311, 18312, 18313, 18314, 18315, 18316, 18317, 18318, 18319, 18320, 18321, 18322, 18323, 18324, 18325, 18326, 18327, 18328, 18329, 18330, 18331, 18332, 18333, 18334, 18335, 18336, 18337, 18338, 18339, 18340, 18341, 18342, 18343, 18344, 18345, 18346, 18347, 18348, 18349, 18350, 18351, 18352, 18353, 18354, 18355, 18356, 18357, 18358, 18359, 18360, 18361, 18362, 18363, 18364, 18365, 18366, 18367, 18368, 18369, 18370, 18371, 18372, 18373, 18374, 18375, 18376, 18377, 18378, 18379, 18380, 18381, 18382, 18383, 18384, 18385, 18386, 18387, 18388, 18389, 18390, 18391, 18392, 18393, 18394, 18395, 18396, 18397, 18398, 18399, 18400, 18401, 18402, 18403, 18404, 18405, 18406, 18407, 18408, 18409, 18410, 18411, 18412, 18413, 18414, 18415, 18416, 18417, 18418, 18419, 18420, 18421, 18422, 18423, 18424, 18425, 18426, 18427, 18428, 18429, 18430, 18431, 18432, 18433, 18434, 18435, 18436, 18437, 18438, 18439);"
+}

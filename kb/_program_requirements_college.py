@@ -2225,15 +2225,65 @@ PDF_AWARD_PREFIX = {
 }
 
 
-def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
+# A department's list of its awards (American River's 2026-11-06 edition opens each department so:
+# "A.A.-T. in Art History" / "A.A.-T. in Studio Art" / "A.A. in Art" / "Figure Study Certificate" /
+# ... / "Sculpture Certificate" / "Dean: ..."; run 43134279776, S639). A line of that list names a
+# program's title and award as fully as its own heading does, and the window opening there held a
+# sibling's course table: picks opening on such a list rose from 31 to 89 and 22 records that passed
+# placed nothing. A line reads as an award title when it is short and opens on an award's letters
+# ("A.A. in", "AS-T in") or closes on a capital "Certificate" or "Degree" (any case after the capital,
+# so an all-capitals heading counts); three or more in a row, none repeating another of the run, are a
+# list. A title repeated below a list is the section's own heading. Prose that closes on a lower-case
+# "degree" or "certificate" ("Students may earn a degree") is no title. College of the Desert's pypdf
+# text prints the fi ligature ("Arborist Technician Certiﬁcate of Achievement"): it is folded first.
+PDF_AWARD_TITLE = re.compile(r"^A\.?\s?[AS]\.?(?:\s?-\s?T\.?)?\s+in\s+[A-Z]"     # the letters, as printed
+                             r"|\b(?:C(?i:ertificate)|D(?i:egree))(?:\s+(?i:of)\s+(?i:achievement|completion"
+                             r"|competency|accomplishment))?\s*$")
+PDF_AWARD_TITLE_CHARS = 90   # an award title in a list is a line this long or shorter
+PDF_AWARD_LIST_RUN = 3       # this many award titles in a row are a list
+PDF_LIGATURES = str.maketrans({"\ufb00": "ff", "\ufb01": "fi", "\ufb02": "fl", "\ufb03": "ffi", "\ufb04": "ffl"})
+# How far after a department's list the reader looks for the program's own heading. American River's
+# apprenticeship list on pdf page 153 heads sections as far as page 174 (run 43140065175, S640).
+PDF_LIST_REACH = 30
+
+
+def pdf_award_list_lines(lines: list[str]) -> set[int]:
+    """The indexes of the lines that sit in a list of award titles."""
+    out: set[int] = set()
+    run: list[int] = []
+    seen: set[str] = set()
+
+    def close():
+        if len(run) >= PDF_AWARD_LIST_RUN:
+            out.update(run)
+    for k, line in enumerate(lines):
+        raw = line.strip().translate(PDF_LIGATURES)
+        key = re.sub(r"\s+", " ", raw.lower())
+        if raw and len(raw) <= PDF_AWARD_TITLE_CHARS and PDF_AWARD_TITLE.search(raw) and key not in seen:
+            run.append(k)
+            seen.add(key)
+            continue
+        close()
+        run, seen = [], set()
+        if raw and len(raw) <= PDF_AWARD_TITLE_CHARS and PDF_AWARD_TITLE.search(raw):
+            # A title that repeats one of the run above it is a section heading: it opens no new run.
+            continue
+    close()
+    return out
+
+
+def pdf_heading(text: str, program: dict, skip_lists: bool = False) -> tuple[float, bool, int]:
     """(share of the title's words, whether the award is named, offset) for the
-    page line that names the title most fully, the award breaking a tie."""
+    page line that names the title most fully, the award breaking a tie.
+    skip_lists passes over a department's list of award titles (pdf_award_list_lines),
+    so a page that prints the list and then the program's own heading gives the heading."""
     tokens = P.title_tokens(program.get("title") or "")
     kind = P.award_kind(program.get("award"))
     pats = P.AWARD_WORDS.get(kind, [])
     prefix = PDF_AWARD_PREFIX.get(kind)
     best, pos = (0.0, False, -1), 0
     lines = (text or "").split("\n")
+    listed = pdf_award_list_lines(lines) if skip_lists else set()
 
     def share_of(low: str) -> float:
         return sum(1 for w in tokens if re.search(r"\b" + re.escape(w) + r"\b", low)) / len(tokens)
@@ -2243,14 +2293,14 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
         raw = line.strip()[:PDF_HEADING_CHARS]
         low = raw.lower()
         # A contents line ("Architectural Design ....... 2") names a program it does not hold.
-        if low and tokens and not PDF_LEADER.search(low):
+        if low and tokens and not PDF_LEADER.search(low) and k not in listed:
             share = share_of(low)
             award = any(re.search(a, low) for a in pats) or bool(prefix and prefix.match(raw))
             # A long title wraps onto a short next line ("CA  Human Relations in the" / "Workplace",
             # Cañada p155; S419): the wrapped tail counts toward the title, the award stays the line's.
             if share < 1.0 and k + 1 < len(lines):
                 tail = lines[k + 1].strip()
-                if 0 < len(tail) <= PDF_WRAP_CHARS:
+                if 0 < len(tail) <= PDF_WRAP_CHARS and k + 1 not in listed:
                     share = max(share, share_of(low + " " + tail.lower()))
             if (share, award) > best[:2]:
                 best = (share, award, pos)
@@ -2423,10 +2473,53 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
     College of San Francisco 53 of 55 picks placing no listed course had no
     heading, against 2 of 183 that had one, and most opened on description
     entries (S407)."""
+    memo: dict[int, bool] = {}
+    plain, listed = _pdf_pick_once(pages, program, courses, False, memo)
+    if not listed:
+        return plain
+    # A page whose best line sits in a department's list of award titles (S639). The list earns no
+    # heading, and the pick is made again; the new pick stands only while its window names at least
+    # as many of the program's listed courses as the pick it replaces (S640: American River's
+    # Acoustical Installer Apprenticeship A.A. 39057 kept its list page's run [153, 154, 155] at
+    # coverage 1.0, where passing over the list left page 155 alone at 0.562).
+    skipped, _ = _pdf_pick_once(pages, program, courses, True, memo)
+    if skipped[0] != plain[0] and _run_named(pages, skipped[0], courses) < _run_named(pages, plain[0], courses):
+        return plain
+    return skipped
+
+
+def _run_named(pages: list[str], run: list[int], courses: list[dict]) -> int:
+    """How many of the listed courses a run of pages names."""
+    return len(P.find_codes("\n".join(pages[k] for k in run), courses))
+
+
+def pdf_heading_elsewhere(pages: list[str], i: int, program: dict, courses: list[dict]) -> bool:
+    """Whether the program's own heading, title and award on a line naming no listed course and outside
+    any list of award titles, is printed below the list on page i or on one of the PDF_LIST_REACH pages
+    after it. A department's list names awards whose sections follow it (American River's Art list on
+    pdf page 308, Sculpture Certificate's own heading on 314). A program's own stacked headings ("Accounting,
+    Associate in Science Degree" / "Accounting Certificate of Achievement" / "Bookkeeping Certificate of
+    Achievement", the shared course table on the next page) are printed nowhere else, and they stay its heading."""
+    for j in range(i, min(len(pages), i + 1 + PDF_LIST_REACH)):
+        if _clean_heading(pages[j], pdf_heading(pages[j], program, skip_lists=True), courses):
+            return True
+    return False
+
+
+def _in_list(txt: str, head: tuple) -> bool:
+    """The heading's line sits in a list of award titles."""
+    return head[2] >= 0 and txt.count("\n", 0, head[2]) in pdf_award_list_lines(txt.split("\n"))
+
+
+def _pdf_pick_once(pages: list[str], program: dict, courses: list[dict], skip_lists: bool,
+                   memo: dict[int, bool]) -> tuple[tuple[list[int], int, tuple, bool], bool]:
+    """_pdf_pick()'s pick, with or without passing over a department's list, and whether a page's best
+    line sat in such a list (a page naming none of the listed courses, the program's own heading printed
+    elsewhere: pdf_heading_elsewhere)."""
     tokens = P.title_tokens(program.get("title") or "")
     pats = [re.compile(r"\b" + re.escape(w) + r"\b") for w in tokens]
     cn = program.get("control_number")
-    cands = []
+    cands, listed = [], False
     for i, txt in enumerate(pages):
         at = pdf_control_number(txt, cn)
         titled = bool(pats) and _titled(txt, pats)
@@ -2434,6 +2527,12 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
             continue
         n = len(P.find_codes(txt, courses))
         head = pdf_heading(txt, program)
+        if not n and _in_list(txt, head) and (memo[i] if i in memo else
+                                              memo.setdefault(i, pdf_heading_elsewhere(pages, i, program, courses))):
+            listed = True
+            if skip_lists:
+                # The list earns no heading. The program's own heading further down the page still does.
+                head = pdf_heading(txt, program, skip_lists=True)
         if not n:
             # A section whose heading closes one page and whose list opens the next (Cañada's "AS-T
             # Mathematics 2.0" on p215, its courses on p216; "AA  Ethnic Studies" p183/184; S419): the
@@ -2442,12 +2541,12 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
             # the picker took the course availability table that named the codes (p127, p95).
             if not (_clean_heading(txt, head, courses) and i + 1 < len(pages) and P.find_codes(pages[i + 1], courses)):
                 continue
-            n = len(P.find_codes("\n".join(pages[k] for k in _pdf_run(pages, i, courses)), courses))
+            n = _run_named(pages, _pdf_run(pages, i, courses), courses)
         s = n + (PDF_HEADING_BONUS if head[0] == 1.0 and head[1] else 0) + (PDF_CN_BONUS if at >= 0 else 0)
         clean = _clean_heading(txt, head, courses) or at >= 0
         cands.append((s, -i, i, at, head, titled, 0 if clean else 1 if not _descriptions(txt) else 2))
     if not cands:
-        return list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1), False
+        return (list(P.pick_pdf_pages(pages, program, courses) or []), -1, (0.0, False, -1), False), listed
     cands.sort(reverse=True)
 
     def run_from(best: int) -> list[int]:
@@ -2458,9 +2557,20 @@ def _pdf_pick(pages: list[str], program: dict, courses: list[dict]) -> tuple[lis
                 continue
             run = run_from(i)
             if P.coverage(P.find_codes("\n".join(pages[k] for k in run), courses), courses) >= P.ACCEPT_SHARE:
-                return run, at, head, titled
+                return (run, at, head, titled), listed
     _, _, i, at, head, titled, _ = cands[0]
-    return run_from(i), at, head, titled
+    return (run_from(i), at, head, titled), listed
+
+
+def pdf_opens_on_list(pages: list[str], run: list[int], cn_at: int, head: tuple, program: dict,
+                      courses: list[dict]) -> bool:
+    """A window that opens on a department's list of award titles: its first page names none of the
+    listed courses, its heading line sits in the list, and the program's own heading is printed elsewhere
+    (pdf_heading_elsewhere). The picker keeps such a window only when passing over the list named fewer
+    listed courses; a passing record read from such a window is held (held(): held_opens_on_list)."""
+    if not run or cn_at >= 0 or P.find_codes(pages[run[0]], courses):
+        return False
+    return _in_list(pages[run[0]], head) and pdf_heading_elsewhere(pages, run[0], program, courses)
 
 
 def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> list[int]:
@@ -2527,6 +2637,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
     first = (text.split("\n", 2) + ["", ""])[1].strip()
     return {"url": "%s#page=%d" % (url, run[0] + 1), "field": "pdf_pages", "found": found,
             "coverage": P.coverage(found, courses), "text": text,
+            "opens_on_list": not heading and pdf_opens_on_list(pages, run, cn_at, head, program, courses),
             "pages": [i + 1 for i in run], "extractor": extractor,
             "named": bool(head[0] == 1.0 and head[1]), "control_number_printed": cn_at >= 0, "titled": titled,
             "got": {"title": first[:PDF_HEADING_CHARS], "h1": first[:PDF_HEADING_CHARS]}}
@@ -2712,6 +2823,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             pw.stop()
     pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
     listed = [p for p in programs if p["closed_list"]]
+    furniture = None   # the running headers, found once the extractor is settled
     import _program_requirements_reconcile as R
     above = (R.load_steps().get(college) or {}).get("heading_above_code")
 
@@ -2756,16 +2868,22 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
+                if best["opens_on_list"]:
+                    rec["source"]["opens_on_list"] = True   # held() holds a passing record read from it
                 if hf:
                     rec["source"]["hand_filed"] = {k: hf["meta"][k] for k in ("fetched_by", "fetched_at", "sha256")}
                 # The pages are the program's own: keep their text whole, not a window around the codes.
                 rec["text"] = best["text"][:P.TEXT_CAP]
+                if furniture is None:
+                    furniture = pdf_furniture(pages)
+                rec["source"]["text_sha"] = window_sha(rec["text"], furniture)
                 # A capture-only read files the preview alone: each pick's opening shows whether it is the program's page.
                 report["pdf"].setdefault("picks", []).append(
                     {"control_number": prog["control_number"], "pages": best["pages"], "named": best["named"],
                      "code": ((coded or {}).get(prog["control_number"]) or {}).get("code"),
                      "cn_printed": best["control_number_printed"], "titled": best["titled"],
-                     "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220])})
+                     "coverage": round(best["coverage"], 3), "opens": re.sub(r"\s+", " ", best["text"][:220]),
+                     **({"opens_on_list": True} if best["opens_on_list"] else {})})
             else:
                 rec = source_record(college, prog, reg, None, "not_found")
                 if best:
@@ -2989,7 +3107,151 @@ def filed_from(path: str, src: dict) -> bool:
             rec = json.load(fh)
     except (OSError, ValueError):
         return False
-    return isinstance(rec.get("record"), dict) and rec.get("source_url") == (src.get("source") or {}).get("url")
+    return (isinstance(rec.get("record"), dict) and rec.get("source_url") == (src.get("source") or {}).get("url")
+            and same_text(rec, src))
+
+
+def same_text(rec: dict, src: dict) -> bool:
+    """A filed record that carries the fingerprint of the window it was extracted from (source_sha)
+    stands on the same page only while the new window has the same fingerprint: a reissued file can
+    keep a program on its page and change a unit figure or a total (S640). A record with no fingerprint
+    is judged as before, by its address, codes and coverage. A record kept so is copied as filed and
+    gains no fingerprint (one stamped now would vouch for text no model read), so the saving on moved
+    pages (moved_unchanged) starts with the next extraction of each program."""
+    return not rec.get("source_sha") or rec.get("source_sha") == (src.get("source") or {}).get("text_sha")
+
+
+PDF_FURNITURE_SHARE = 0.05   # a numbered line on this share of a catalog's pages may be a running header
+PDF_FURNITURE_MIN = 20        # and on at least this many
+PDF_FURNITURE_STEP = 0.8      # of which this share carry a number that keeps step with the page's
+PAGE_MARK = re.compile(r"^\[page \d+\]$")
+
+
+def _furniture_key(line: str) -> str:
+    return re.sub(r"\s+", " ", re.sub(r"\d+", "#", line)).strip().lower()
+
+
+def _bare_number(line: str) -> int | None:
+    """The number a line holding nothing but one number prints ("77", "- 77 -"), or None. A unit
+    figure or a total that pypdf put on its own line ("3", "18") has this shape too."""
+    if re.search(r"[^\W\d_]", line):
+        return None
+    nums = re.findall(r"\d+", line)
+    return int(nums[0]) if len(nums) == 1 and len(nums[0]) <= 4 else None
+
+
+def _edges(lines: list[str]) -> set[int]:
+    """The indexes of a page's first and last non-empty lines."""
+    full = [k for k, ln in enumerate(lines) if ln.strip()]
+    return {full[0], full[-1]} if full else set()
+
+
+def pdf_furniture(pages: list[str]) -> set[str]:
+    """The catalog's running headers and footers that carry its page number ("LACC 2026-2027 COLLEGE
+    CATALOG 75" on pdf page 76): each line shape, its numbers set aside, printed on PDF_FURNITURE_SHARE
+    of the pages and on PDF_FURNITURE_MIN of them, where on PDF_FURNITURE_STEP of those pages one of
+    its numbers is the pdf page's own number plus one fixed offset. Only those change when an edition
+    renumbers. A line repeated with numbers that do not follow the page ("Total Units: 12" beside
+    "Total Units: 27") is content, and a repeated line with no number is the same in both editions.
+    A line holding only a number is a page number only when proven (S640): it counts here only at
+    the edge of its page's text (the first or last non-empty line), and it is filed as "shape@offset",
+    so window_sha() drops it only at a page's edge and only when its value is that page's number plus
+    the offset. A unit figure or a total on its own line stays in the fingerprint."""
+    seen: dict[str, int] = {}
+    steps: dict[str, dict[int, int]] = {}
+    bare: set[str] = set()
+    for i, txt in enumerate(pages):
+        page_keys: dict[str, set[int]] = {}
+        lines = (txt or "").split("\n")
+        edge = _edges(lines)
+        for k, ln in enumerate(lines):
+            if not re.search(r"[^\W\d_]", ln):
+                v = _bare_number(ln)
+                if v is not None and k in edge:
+                    key = _furniture_key(ln)
+                    bare.add(key)
+                    page_keys.setdefault(key, set()).add(v - (i + 1))
+                continue
+            nums = [int(n) for n in re.findall(r"\d+", ln) if len(n) <= 4]
+            if not nums:
+                continue
+            key = _furniture_key(ln)
+            page_keys.setdefault(key, set()).update(n - (i + 1) for n in nums)
+        for key, offsets in page_keys.items():
+            seen[key] = seen.get(key, 0) + 1
+            for d in offsets:
+                steps.setdefault(key, {})[d] = steps.setdefault(key, {}).get(d, 0) + 1
+    floor = max(PDF_FURNITURE_MIN, PDF_FURNITURE_SHARE * len(pages))
+    out = set()
+    for k, n in seen.items():
+        step = steps.get(k) or {0: 0}
+        d = max(step, key=lambda x: step[x])
+        if n >= floor and step[d] >= PDF_FURNITURE_STEP * n:
+            out.add("%s@%d" % (k, d) if k in bare else k)
+    return out
+
+
+def window_sha(text: str, furniture: set[str]) -> str:
+    """The fingerprint of a program's page window: its text with the reader's page marks and the
+    catalog's running headers taken out, whitespace folded. Every other character counts, digits
+    included, so a course, a unit figure or a rule that changed changes it; a window that only moved
+    to other page numbers keeps it (S639: American River's edition 4 pages shorter). A line holding
+    only a number goes only at the edge of its page, under a "[page N]" mark, when it is N plus the
+    offset pdf_furniture() proved; text with no page mark keeps every such line."""
+    keep = []
+    page, seg = None, []
+
+    def flush():
+        edge = _edges(seg) if page is not None else set()
+        for k, ln in enumerate(seg):
+            if _furniture_key(ln) in furniture and re.search(r"[^\W\d_]", ln):
+                continue
+            v = _bare_number(ln)
+            if v is not None and k in edge and "%s@%d" % (_furniture_key(ln), v - page) in furniture:
+                continue
+            ln = re.sub(r"\s+", " ", ln).strip()
+            if ln:
+                keep.append(ln)
+    for ln in (text or "").split("\n"):
+        m = PAGE_MARK.match(ln.strip())
+        if m:
+            flush()
+            page, seg = int(re.search(r"\d+", ln).group()), []
+            continue
+        seg.append(ln)
+    flush()
+    return hashlib.sha256("\n".join(keep).encode("utf-8")).hexdigest()[:16]
+
+
+def moved_unchanged(path: str, src: dict) -> bool:
+    """A filed record whose program moved to other pages of the same file while its window's text did
+    not (S639, the renumbered edition: American River's run 43134279776 sent 154 moved programs to the
+    model for $12.99, 132 of them with the same codes and coverage). The proof is the record's own
+    fingerprint, filed when it was extracted (source_sha): the same text with the page marks and
+    running headers set aside, the same listed codes found and the same coverage. A record extracted
+    before the fingerprint has none and goes to the model, as every moved record did before."""
+    try:
+        with open(path) as fh:
+            rec = json.load(fh)
+    except (OSError, ValueError):
+        return False
+    b = src.get("source") or {}
+    a_url, b_url = rec.get("source_url") or "", b.get("url") or ""
+    return (isinstance(rec.get("record"), dict) and bool(rec.get("source_sha")) and a_url != b_url
+            and same_address(a_url.split("#")[0], b_url.split("#")[0])
+            and rec.get("source_sha") == b.get("text_sha")
+            and rec.get("source_codes") == src.get("codes_found")
+            and rec.get("source_coverage") == src.get("coverage"))
+
+
+def moved_record(path: str, src: dict, run_id) -> dict:
+    """The filed record kept on its program's new pages: its source address names them, the old one
+    is kept beside it, and the run stamps it so step=reread posts the new citation."""
+    with open(path) as fh:
+        rec = json.load(fh)
+    new = (src.get("source") or {}).get("url")
+    return dict(rec, source_url=new, page_moved_from=rec.get("source_url"), read_run=rec.get("extracted_run"),
+                extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id)
 
 
 def unchanged(prev: dict | None, src: dict) -> bool:
@@ -2999,6 +3261,43 @@ def unchanged(prev: dict | None, src: dict) -> bool:
     a, b = ((prev or {}).get("source") or {}), (src.get("source") or {})
     return bool(prev) and a.get("url") == b.get("url") and a.get("text_from") == b.get("text_from") \
         and prev.get("coverage") == src.get("coverage") and prev.get("codes_found") == src.get("codes_found")
+
+
+def held(path: str, prev: dict | None, src: dict) -> dict | None:
+    """Why a paid read of this source would gain nothing for, or make worse, a record that passes, or
+    None (S640; S641 review). A hold protects only a filed record that passes as the live table counts
+    it (passes_live); a failing or absent record is always read, whatever its window. Then, in order:
+    held_worse_window, the new window names a smaller share of the closed list than the window the
+    record was extracted from; held_no_gain, the same share, so a read can gain nothing (fingerprint
+    or not: a passing record's text changing at the same share is a refresh question for a catalog-year
+    rule, never the per-run fingerprint, which moves on unchanged text; the S641 conductor);
+    held_opens_on_list, a larger share from a window that opens on a department's list of award titles
+    (pdf_opens_on_list). The share the record was extracted from is its source_coverage, else the
+    filed source's coverage when that source names the record's page. Window coverage is compared
+    only with window coverage: with neither, nothing is held, and the guard after the read
+    (kept_passing) keeps a passing record a read would make fail. A forced control number goes all
+    the same."""
+    from _program_requirements_score import passes_live
+    cov = src.get("coverage") or 0
+    try:
+        with open(path) as fh:
+            rec = json.load(fh)
+    except (OSError, ValueError):
+        return None
+    if not isinstance(rec.get("record"), dict) or not passes_live(rec.get("score")):
+        return None
+    was = rec.get("source_coverage")
+    if was is None and prev and (prev.get("source") or {}).get("url") == rec.get("source_url"):
+        was = prev.get("coverage")
+    if was is None:
+        return None
+    if cov < was:
+        return {"reason": "held_worse_window", "coverage": cov, "was_coverage": was}
+    if cov == was:
+        return {"reason": "held_no_gain", "coverage": cov, "was_coverage": was}
+    if (src.get("source") or {}).get("opens_on_list"):
+        return {"reason": "held_opens_on_list", "coverage": cov, "was_coverage": was}
+    return None
 
 
 def would_extract(college: str, recs: list[dict], folder: str | None = None) -> dict:
@@ -3013,13 +3312,22 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
         with open(os.path.join(folder, "sources.json")) as fh:
             prev = {x["control_number"]: x for x in json.load(fh)}
     from _program_requirements_extract import MIN_COVERAGE as bar
-    out, kept = [], 0
+    out, kept, moved = [], 0, 0
+    holds: dict[str, list] = {"held_worse_window": [], "held_no_gain": [], "held_opens_on_list": []}
     for r in recs:
         if (r.get("coverage") or 0) < bar or not r.get("text"):
             continue
         cn = r["control_number"]
-        if filed_from(os.path.join(folder, "records", cn + ".json"), r) and unchanged(prev.get(cn), r):
+        path = os.path.join(folder, "records", cn + ".json")
+        if (filed_from(path, r) and unchanged(prev.get(cn), r)) or moved_unchanged(path, r):
             kept += 1
+            moved += moved_unchanged(path, r)
+            continue
+        h = held(path, prev.get(cn), r)
+        if h:
+            holds[h["reason"]].append({"control_number": cn, "title": r.get("title"), "award": r.get("award"),
+                                       "url": (r.get("source") or {}).get("url"), "coverage": h["coverage"],
+                                       "was_coverage": h["was_coverage"]})
             continue
         was = prev.get(cn) or {}
         out.append({"control_number": cn, "title": r.get("title"), "award": r.get("award"),
@@ -3027,7 +3335,7 @@ def would_extract(college: str, recs: list[dict], folder: str | None = None) -> 
                     "was_url": (was.get("source") or {}).get("url"), "was_coverage": was.get("coverage"),
                     "was_method": was.get("method")})
     return {"against": os.path.relpath(folder, os.path.dirname(HERE)) if prev else None,
-            "kept": kept, "programs": len(out), "list": out}
+            "kept": kept, "kept_moved": moved, "programs": len(out), "list": out, **holds}
 
 
 def forced(folder: str, tokens: str) -> set[str]:
@@ -3069,10 +3377,13 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
     # A record filed from the same page stays: only a program whose page
     # changed, or that has no record, goes to the model again.
-    kept = 0
-    if keep_from and os.path.isfile(os.path.join(keep_from, "sources.json")):
-        with open(os.path.join(keep_from, "sources.json")) as fh:
-            prev = {x["control_number"]: x for x in json.load(fh)}
+    kept = moved = 0
+    holds: list[str] = []
+    if keep_from:
+        prev = {}
+        if os.path.isfile(os.path.join(keep_from, "sources.json")):
+            with open(os.path.join(keep_from, "sources.json")) as fh:
+                prev = {x["control_number"]: x for x in json.load(fh)}
         fresh = []
         for src in sources:
             path = os.path.join(keep_from, "records", src["control_number"] + ".json")
@@ -3081,14 +3392,34 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 with open(path) as fh:
                     _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
                 kept += 1
+            elif src["control_number"] not in (force or ()) and moved_unchanged(path, src):
+                _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), moved_record(path, src, run_id))
+                kept += 1
+                moved += 1
+            elif src["control_number"] not in (force or ()) and held(path, prev.get(src["control_number"]), src):
+                # A paid read would make the record worse (would_extract lists it): the filed record
+                # stays as filed, so filing the run does not drop it, and the model is not asked.
+                h = held(path, prev.get(src["control_number"]), src)
+                if os.path.isfile(path):
+                    with open(path) as fh:
+                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                holds.append(src["control_number"])
+                print("%-6s %s cov %s, was %s" % (src["control_number"], h["reason"], h["coverage"], h["was_coverage"]),
+                      flush=True)
             else:
                 fresh.append(src)
         sources = fresh
-        print("kept %d records filed from the same page; %d to extract, %d of them forced"
-              % (kept, len(fresh), sum(1 for x in fresh if x["control_number"] in (force or ()))), flush=True)
+        print("kept %d records filed from the same page or moved with the same text (%d moved); held %d; %d to "
+              "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
+                                             sum(1 for x in fresh if x["control_number"] in (force or ()))),
+              flush=True)
     mine = shard_of(sources, shard, shards)
     print("extraction, shard %d of %d: %d of %d sources, %d at a time"
           % (shard + 1, shards, len(mine), len(sources), workers), flush=True)
+
+    import threading
+    kept_list: list[dict] = []
+    kept_lock = threading.Lock()
 
     def one(src: dict) -> None:
         t0 = time.time()
@@ -3113,8 +3444,26 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if (src.get("source") or {}).get("text_sha"):
+            # The window's fingerprint, its codes and coverage: what proves a later edition moved the
+            # program to other pages without changing it (moved_unchanged, S639).
+            row.update(source_sha=src["source"]["text_sha"], source_codes=src.get("codes_found"),
+                       source_coverage=src.get("coverage"))
         if notes:
             row["reconciled"] = notes
+        filed = kept_passing(keep_from, src["control_number"], sc, force)
+        if filed is not None:
+            # The read passes less than the filed record does (S641 review, call 2b; kept_passing): the filed
+            # record stays as filed, and the program is listed with both scores for a person.
+            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
+            with kept_lock:
+                kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
+                                  "award": src.get("award"), "source_url": row["source_url"],
+                                  "filed_source_url": filed.get("source_url"), "cost_usd": row["cost_usd"],
+                                  "score": sc, "filed_score": filed.get("score")})
+            print("%-6s kept_passing: the read passes less than the filed record" % src["control_number"],
+                  flush=True)
+            return
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
             src["control_number"], "PASS" if sc and sc["pass"] else "fail",
@@ -3126,7 +3475,40 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     from concurrent.futures import ThreadPoolExecutor
     with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
         list(pool.map(one, mine))
+    if kept_list:
+        _write(os.path.join(out_dir, "kept_passing_%d.json" % shard),
+               sorted(kept_list, key=lambda x: x["control_number"]))
+        print("kept_passing: %d filed records kept where the read failed" % len(kept_list), flush=True)
     return 0
+
+
+def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: set[str] | None) -> dict | None:
+    """The filed record a read must not replace, or None (S641 review, call 2b; the S641 conductor,
+    2026-11-12). A filed record that passes in full (score["pass"] and passes_live) is replaced only by a
+    read that also passes in full: a read that passes the live table's test and drops outcomes, careers
+    or repeats is worse. A filed record that passes as the live table counts it (passes_live) is
+    replaced only by a read that passes it too. A forced control number takes the new record all the same."""
+    if not keep_from or cn in (force or ()):
+        return None
+    try:
+        with open(os.path.join(keep_from, "records", cn + ".json")) as fh:
+            filed = json.load(fh)
+    except (OSError, ValueError):
+        return None
+    if not isinstance(filed.get("record"), dict):
+        return None
+    was = pass_grade(filed.get("score"))
+    return filed if was and pass_grade(new_score) < was else None
+
+
+def pass_grade(score: dict | None) -> int:
+    """2 for a record that passes in full (score["pass"] and passes_live), 1 for one that passes only as
+    the live table counts it (passes_live), 0 for one that fails. score["pass"] alone is not enough: it
+    can hold beside an unstated total, which the live table does not count passing."""
+    from _program_requirements_score import passes_live
+    if not passes_live(score):
+        return 0
+    return 2 if (score or {}).get("pass") is True else 1
 
 
 def same_address(a: str, b: str) -> bool:
@@ -3273,6 +3655,15 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
                           listed=len(src.get("closed_list") or []), text_chars=len(src.get("text") or "")))
     _write(os.path.join(dest, "sources.json"), index)
     _write(os.path.join(dest, "capture.json"), report)
+    # The programs whose read failed where the filed record passed, for a person (kept_passing).
+    kept = []
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_passing_*.json"))):
+        with open(path) as fh:
+            kept.extend(json.load(fh))
+    if os.path.exists(os.path.join(dest, "kept_passing.json")):
+        os.remove(os.path.join(dest, "kept_passing.json"))
+    if kept:
+        _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
     if records:
         _write(os.path.join(dest, "summary.json"), dict(summarize(records, report), run=run_id))
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))
