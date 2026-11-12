@@ -4648,6 +4648,32 @@
    "served": false,
    "main_committers": []
   },
+  "file:<date>_standards.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 49
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>_standards_2.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:CLAUDE.md": {
    "consumers": [
     {
@@ -13677,46 +13703,6 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
-  "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_fold_resolution_write.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 96
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/cred_rename_out/2026-11-12/undo.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_rename_apply.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 365
-    },
-    {
-     "id": "script:kb/_cred_rename_undo.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 363
-    },
-    {
-     "id": "script:kb/fold_issuer.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 664
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/credential_merges.json": {
    "consumers": [
     {
@@ -13826,6 +13812,13 @@
      "direction": "read",
      "how": "literal",
      "line": 133
+    },
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 237
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -13946,6 +13939,13 @@
      "direction": "read",
      "how": "literal",
      "line": 134
+    },
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 238
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -15296,6 +15296,13 @@
      "direction": "read",
      "how": "literal",
      "line": 65
+    },
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 119
     },
     {
      "id": "script:kb/_exhibit_subject_fill.py",
@@ -19451,6 +19458,13 @@
      "direction": "read",
      "how": "literal",
      "line": 134
+    },
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 118
     },
     {
      "id": "script:kb/_cer_decision_apply.py",

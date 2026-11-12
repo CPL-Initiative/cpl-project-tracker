@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-580 document(s).
+581 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -182,6 +182,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A presentation rule is the purest push case there is](../kb-notes/methodology-a-presentation-rule-is-the-purest-push-case.md) | methodology | published | 2026-08-29 | 2026-08-29 |
 | [A program's CIP labels the program, not the courses it lists](../kb-notes/methodology-a-program-cip-labels-the-program-not-its-courses.md) | methodology | published | 2026-09-25 | 2026-09-25 |
 | [A prompt that quotes the wrong sentence teaches it](../kb-notes/methodology-a-prompt-that-quotes-the-wrong-sentence-teaches-it.md) | methodology | published | 2026-10-02 | 2026-10-02 |
+| [A proof run needs a same-day baseline](../kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A proposal standing in for expert judgment needs two signals of different kinds](../kb-notes/methodology-two-signals-for-a-judgment-proposal.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance label must say why, not what](../kb-notes/methodology-a-provenance-label-must-say-why-not-what.md) | methodology | published | 2026-08-13 | 2026-08-13 |
 | [A provenance tier must encode what you could NOT check](../kb-notes/methodology-a-tier-must-encode-what-you-could-not-check.md) | methodology | published | 2026-08-09 | 2026-08-09 |

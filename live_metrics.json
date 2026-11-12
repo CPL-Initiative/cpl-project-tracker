@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-12T02:25:24.823Z",
+  "scraped_at": "2026-11-12T06:36:13.379Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -1058,14 +1058,14 @@
         },
         {
           "college": "Los Medanos College",
-          "students": 244,
+          "students": 245,
           "units": 105,
-          "avgUnits": 0.430327868852459,
+          "avgUnits": 0.42857142857142855,
           "transcriptionRate": 8.6,
-          "avgTranscribed": 0.036885245901639344,
+          "avgTranscribed": 0.036734693877551024,
           "criteriaMetCount": 0,
           "militaryStudents": 231,
-          "nonMilitaryStudents": 15,
+          "nonMilitaryStudents": 16,
           "apprenticeStudents": 4,
           "savings": 181650,
           "yearImpact": 637035,
@@ -1433,14 +1433,14 @@
         },
         {
           "college": "Chabot College",
-          "students": 66,
+          "students": 67,
           "units": 0,
           "avgUnits": 0,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
           "militaryStudents": 64,
-          "nonMilitaryStudents": 2,
+          "nonMilitaryStudents": 3,
           "apprenticeStudents": 0,
           "savings": 0,
           "yearImpact": 0,
@@ -1772,7 +1772,7 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,299",
+      "value": "60,301",
       "breakdowns": [
         {
           "label": "Military",
@@ -1780,7 +1780,7 @@
         },
         {
           "label": "Workforce/Other",
-          "value": "28,476"
+          "value": "28,478"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60299,
+    "Students": 60301,
     "Units": 288749.4,
     "TranscribedUnits": 85069.65,
     "Savings": 412131465.25,
     "YearImpact": 1664809303.3999999,
     "MilitaryStudents": 31930,
-    "NonMilitaryStudents": 28476,
+    "NonMilitaryStudents": 28478,
     "AprenticeStudents": 959,
-    "AverageUnits": 4.788626677059321,
-    "TranscribedAverage": 1.4107970281430868
+    "AverageUnits": 4.788467852937763,
+    "TranscribedAverage": 1.4107502363144888
   }
 }

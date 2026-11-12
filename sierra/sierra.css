@@ -17,12 +17,11 @@
    the library's values (library/index.html) under Sierra's own names, and every
    hex lives in a :root block.
 
-   Theme: the cpl_theme.js contract. No data-theme follows the OS; data-theme
-   "light" or "dark" (set in <head> from ?theme=, then the reader's stored
-   choice) wins. Each dark value is written twice, under the media query and
-   under the explicit attribute, so an explicit choice beats the OS in both
-   directions. Dark paper is the library's dark surface, so in the side bar she
-   meets the bar's own color. */
+   Theme: light by default, as the library is. The script in <head> always sets
+   data-theme: "dark" only from ?theme=dark or the reader's stored choice
+   (cpl_theme), "light" otherwise, so the OS setting never picks the theme and
+   the dark values live once, under :root[data-theme="dark"]. Dark paper is the
+   library's dark surface, so in the side bar she meets the bar's own color. */
 
 :root {
   --sierra-paper: #FFFFFF;        /* Sam: "White background for her as well" */

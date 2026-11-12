@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-12T02:28:29Z`
+Generated: `2026-11-12T06:38:49Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,13 +12,11 @@ Generated: `2026-11-12T02:28:29Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
-| Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
-|---|---|---:|---:|---:|---:|
-| `Engine Performance (ASE A8 Engine Performance)` | ⇒ `Engine Performance (ASE A8 standards)` | 1 | 1 | 1 | 0 |
+_None._ A queued collision becomes a confirmed merge when the curator clicks **✓ Confirm merge** in the CER triage lane (writes `unified_title_merge_confirm` naming the exact target).
 
 ## Held: folds into a family title
 
@@ -66,24 +64,11 @@ Generated: `2026-11-12T02:28:29Z`
 
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 
-Rule 1, reviewer: a person's explicit issuer in the group wins (newest on a disagreement). Rule 2, cert form: the target's issuer stays and a folded college record is dropped. Rule 3, additive.
-
-- `Engine Performance (ASE A8 standards)` (rule 2b, taught to the standard)
+_No folds._
 
 ## Clean renames (would land on apply)
 
-| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
-|---|---|---|---:|---:|---|
-| `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` | → | `Automatic Transmission/Transaxle (ASE A2 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE A5 Brakes)` | → | `Brakes (ASE A5 standards)` | 6 | 2 | ✓ |
-| `Automotive Technology (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems (ASE A6 standards)` | 3 | 0 | ✓ |
-| `Automotive Technology (ASE A7 Heating and Air Conditioning)` | → | `Heating and Air Conditioning (ASE A7 standards)` | 2 | 0 | ✓ |
-| `Automotive Technology (ASE A8 Engine Performance)` | → | `Engine Performance (ASE A8 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` | → | `Light Vehicle Diesel Engines (ASE A9 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` | → | `Advanced Engine Performance Specialist (ASE L1 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` | → | `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)` | 1 | 0 | ✓ |
-| `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` | → | `Manual Drive Train and Axles (ASE A3 standards)` | 1 | 0 | ✓ |
-| `Suspension and Steering (ASE A4 Suspension and Steering)` | → | `Suspension and Steering (ASE A4 standards)` | 3 | 2 | ✓ |
+_None today._ Infrastructure populates the moment a curator enters a rename.
 
 ## Collisions (queued, non-blocking — curator decision required)
 

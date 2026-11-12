@@ -20,6 +20,9 @@ task. handle anything that doesn't need me. only stop when you need a decision f
 
 ## Settings (Sam, 2026-11-11)
 
+- Conductor model: Fable 5.2 (`claude-fable-5-2`), working with COBIx (Sam, 2026-11-11, relayed by COBIx on #3110;
+  `cpl_memory` `sam-conductor-model-fable-5-2-2026-11-11`). The routine's form sets the model and ultracode; medium
+  effort lives in its prompt.
 - Ultracode on.
 - The conductor at medium effort.
 - Workers on Opus 5.5 (named in each Agent call, `model: opus`).
@@ -135,6 +138,32 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S640, and what worked
+
+- Context went fast: 370,000 tokens in the first 85 minutes. Largest first: a review workflow's completion notice
+  echoes its whole `args` (about 10,000 tokens each with a long context string); `get_check_runs` and
+  `list_workflow_runs` return full job and commit text; each PR subscription sends two long notices (about 6,000
+  tokens). What worked from 05:15Z: the review's context in a scratchpad file and a one-line `context` argument;
+  `get_check_runs` with `perPage` 1 or 2 (`test` lists first once it exists); `list_workflow_runs` filtered to
+  `status: in_progress, branch: main` to see whether an apply or the daily run is in flight.
+- The conductor wrote clock times from memory twice in notes to COBIx, five to twenty minutes off, and corrected both.
+  Read `date -u` before writing a time.
+- A capture that met HTTP 503s filed a partial read as if complete (Rio Hondo: 34 pages of 328), and the reconcile
+  measured against almost no fresh text. Check a capture's pages answered before reading its measure.
+- Three of #3135's five capture proofs compared against reads `main` filed a month earlier, so the drift was the
+  reader's. A proof run takes a same-day baseline by `main`'s reader on a scratch branch
+  (`docs/kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md`).
+- A second write path (#3140's hand-run SQL, then its separate job, then the apply itself) left a live row with no way
+  back or a replay on the wrong apply in each of five review rounds. A fix that needs a fourth round is a design to
+  replace; the conductor stopped #3140 and recommended read-time resolution.
+- `tests/partner_crosswalk_test.py` fails on `main` and no workflow runs it. A test outside every workflow goes red
+  unseen; the governance lane carries the fix.
+- Worked: disk held at four worktrees of 4.4 GB, with reviews reading refs (`git show`, `git diff`) and never copying,
+  and a finished worker's worktree removed once its PR merged or its branch was pushed with nothing left to resume.
+- Worked: readers by dimension, then a second reader on each finding: three breaks-the-undo findings on #3140, a
+  fingerprint that dropped bare unit figures on #3135.
+- Worked: a documents worker wrote the checkpoint while the conductor kept the Supabase and remote steps.
 
 ## What went wrong in S639
 
