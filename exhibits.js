@@ -1738,6 +1738,36 @@
       : w === "ok" ? "Too few to show" : "Reading";
     return tile("Students waiting", null, null, "students hold credit on titles still held", why, big);
   }
+  /* Sam's Exhibits review list (COBIx, issue comment 6827701373, point 2): the renamed titles a person should look at,
+     from kb/credential_aliases.py review_list() by way of the review file. A tile with the count, and the titles in
+     plain words under it; a returned title no one acknowledged says so first. */
+  var REVIEW_KINDS = [["brought back, not acknowledged", "brought back with no record", "brought back with no record"],
+    ["brought back", "brought back", "brought back"], ["dead end", "dead end", "dead ends"], ["dead retire", "dead retire", "dead retires"]];
+  function reviewKinds(list) {
+    return REVIEW_KINDS.slice(1).map(function (k) {   // the unacknowledged count follows on its own, against its target
+      var n = list.filter(function (r) { return r.kind === k[0]; }).length;
+      return n ? fmt(n) + " " + (n === 1 ? k[1] : k[2]) : "";
+    }).filter(Boolean).join(", ");
+  }
+  function reviewListTile(d) {
+    var list = d.review_list;
+    if (!list) return tile("Renamed titles", null, null, "renamed titles a person should look at", "", "Not built yet");
+    var t = (d.tiles || {}).review_list || {};
+    return tile("Renamed titles", list.length, null, "renamed titles a person should look at",
+      reviewKinds(list) + (list.length ? "; " + fmt(t.unacknowledged || 0) + " brought back with no record (target 0)" : ""));
+  }
+  function reviewListBox(d) {
+    var list = d.review_list || [];
+    if (!list.length) return null;
+    var order = REVIEW_KINDS.map(function (k) { return k[0]; });
+    var rows = list.slice().sort(function (a, b) { return order.indexOf(a.kind) - order.indexOf(b.kind); });
+    return el("details", { cls: "exh-l-rxmore exh-small" }, [
+      el("summary", { text: "The " + fmt(list.length) + " renamed title" + (list.length === 1 ? "" : "s") + " to look at" }),
+      el("ul", { cls: "exh-l-rxlist", "aria-label": "Renamed titles to look at" }, rows.map(function (r) {
+        return el("li", null, [el("span", { cls: "exh-strong", text: r.title }),
+          el("span", { cls: "exh-muted", text: ", " + r.kind + ". " }), r.words]);
+      }))]);
+  }
   function stepTile(step, label) {
     var n = step === "Saved, not folded" ? (state.data.tiles.saved_not_folded || 0) : stepCount(step);
     var b = el("button", {
@@ -4779,7 +4809,9 @@
         t.names ? fmt(t.names.waiting) + " wait for a title" : ""),
       tile("Aligned course", t.aligned && t.aligned.n, t.aligned && t.aligned.of,
         "held titles articulated to a course that names them", "The course names the proposal"),
-      studentsTile()]));
+      studentsTile(), reviewListTile(d)]));
+    var rlBox = reviewListBox(d);
+    if (rlBox) group.appendChild(rlBox);
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
       [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded"), sweepTile(), renameTile()]));
     group.appendChild(steps);

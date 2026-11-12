@@ -4,7 +4,7 @@
   "supabase_tables": 113,
   "rpcs": 63,
   "edge_functions": 15,
-  "file_datasets": 884,
+  "file_datasets": 885,
   "external_services": 195,
   "consumers": 565,
   "workflows": 68,
@@ -908,7 +908,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3995,
+     "line": 4025,
      "tabs": [
       "exhibits"
      ]
@@ -1242,7 +1242,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 297
+     "line": 320
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -5832,7 +5832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2068,
+     "line": 2098,
      "tabs": [
       "exhibits"
      ]
@@ -6215,7 +6215,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3319,
+     "line": 3349,
      "tabs": [
       "exhibits"
      ]
@@ -6435,7 +6435,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3987,
+     "line": 4017,
      "tabs": [
       "exhibits"
      ]
@@ -6528,7 +6528,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4272,
+     "line": 4302,
      "tabs": [
       "exhibits"
      ]
@@ -8326,7 +8326,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4561,
+     "line": 4591,
      "tabs": [
       "exhibits"
      ]
@@ -10776,7 +10776,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 315
+     "line": 338
     },
     {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
@@ -11496,7 +11496,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 363
+     "line": 386
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13540,7 +13540,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 642
+     "line": 665
     }
    ],
    "served": false,
@@ -13588,7 +13588,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3097,
+     "line": 3127,
      "tabs": [
       "exhibits"
      ]
@@ -13691,7 +13691,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 408
+     "line": 431
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -14033,6 +14033,13 @@
   "file:kb/credential_title_moves.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 239
+    },
+    {
      "id": "script:kb/credential_aliases.py",
      "kind": "script",
      "direction": "read",
@@ -14311,7 +14318,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 145
+     "line": 146
     }
    ],
    "producers": [
@@ -14388,7 +14395,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 879
+     "line": 902
     }
    ],
    "served": false,
@@ -14411,7 +14418,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 517
+     "line": 540
     }
    ],
    "producers": [
@@ -14468,7 +14475,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 518
+     "line": 541
     }
    ],
    "served": true,
@@ -14713,7 +14720,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 496
+     "line": 519
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14970,7 +14977,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1024
+     "line": 1047
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -15282,7 +15289,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4009,
+     "line": 4039,
      "tabs": [
       "exhibits"
      ]
@@ -15393,7 +15400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3092,
+     "line": 3122,
      "tabs": [
       "exhibits"
      ]
@@ -15588,7 +15595,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3506,
+     "line": 3536,
      "tabs": [
       "exhibits"
      ]
@@ -15768,7 +15775,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 969
+     "line": 992
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -16087,7 +16094,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 644
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -17101,7 +17108,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 411
+     "line": 434
     }
    ],
    "served": false,
@@ -18011,7 +18018,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 415
+     "line": 470
     }
    ],
    "served": true,
@@ -18641,6 +18648,26 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/returned_titles_acknowledged.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 307
+    },
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/row_audit": {
    "consumers": [],
    "producers": [
@@ -18699,7 +18726,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 299
+     "line": 322
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -18822,7 +18849,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 726
+     "line": 749
     }
    ],
    "producers": [
@@ -18847,7 +18874,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 329
+     "line": 352
     }
    ],
    "served": true,
@@ -18860,7 +18887,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 441
+     "line": 464
     }
    ],
    "served": true,
@@ -18873,7 +18900,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 240
+     "line": 249
     }
    ],
    "served": true,
@@ -18983,7 +19010,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 576
+     "line": 599
     }
    ],
    "served": true,
@@ -21077,7 +21104,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 302
+     "line": 325
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -21593,7 +21620,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 640
+     "line": 663
     }
    ],
    "served": false,
@@ -22474,7 +22501,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1969,
+     "line": 1999,
      "tabs": [
       "exhibits"
      ]
@@ -25734,7 +25761,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1970,
+     "line": 2000,
      "tabs": [
       "exhibits"
      ]
@@ -25901,7 +25928,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 326
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",

@@ -232,6 +232,15 @@ def row_exhibit(root):
     # subject fill (kb/_exhibit_subject_fill.py, nightly in cer-procedures.yml) counts what is left; routine, so the
     # day history carries its trend and a count that stops shrinking surfaces as stalled.
     nosubj = figure(lambda: load_json(root, "kb/exhibit_subject_out/worklist.json"))
+    # Sam's Exhibits review list and "nothing comes back by accident" as a number (COBIx, issue comment 6827701373,
+    # points 1 and 2): the renamed titles a person should look at, and the returned titles no one acknowledged in
+    # kb/returned_titles_acknowledged.json (target 0). Both from the resolver's report (kb/credential_aliases.py), the
+    # file the Review view's list is built from.
+    moves = figure(lambda: load_json(root, "kb/credential_title_moves.json")["report"])
+    mv = moves["n"] or {}
+    review_n = len(mv["review_list"]) if moves["n"] is not None and "review_list" in mv else None
+    unack_n = len(mv["unacknowledged"]) if moves["n"] is not None and "unacknowledged" in mv else None
+    review_err = moves["error"] or (None if review_n is not None else "the report has no review list")
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
         # The card opens Exhibits' List (Sam, 2026-11-03); Progress is a word away. Held titles and the fold's
@@ -263,6 +272,18 @@ def row_exhibit(root):
                                       "or keep one a college may enter again",
              "owner": "a curator",
              "carry": "keep_call", "open": tab + "/list/left", "error": left["error"]},
+            {"n": review_n,
+             "words": "renamed titles on the Exhibits review list (%s brought back, %s dead ends, %s dead retires); "
+                      "%s brought back with no record of who or why (target 0)"
+                      % (fmt(len(mv.get("returned") or [])), fmt(len(mv.get("dead_ends") or [])),
+                         fmt(len(mv.get("dead_retires") or [])), fmt(unack_n)) if review_n is not None
+                      else "renamed titles on the Exhibits review list",
+             "owner": "a curator (kb/credential_title_moves.json)",
+             "carry": "keep_call", "open": tab + "/held", "error": review_err},
+            # Read zero on a good day, so the filter below leaves it out; the review list's words carry the 0.
+            {"n": unack_n, "words": "returned titles no one acknowledged: back in the reference with no record of who "
+                                    "brought each back or why; retire it, or add it to kb/returned_titles_acknowledged.json",
+             "owner": "a curator", "carry": "keep_call", "open": tab + "/held", "error": review_err},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
@@ -278,10 +299,12 @@ def row_exhibit(root):
                   "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),
                   "unclassified": (stats["n"] or {}).get("unclassified_in_map"),
                   "left_map": left["n"], "below_80": below_80, "below_60": below_60,
-                  "no_subject": (nosubj["n"] or {}).get("no_subject") if nosubj["n"] is not None else None},
+                  "no_subject": (nosubj["n"] or {}).get("no_subject") if nosubj["n"] is not None else None,
+                  "review_list": review_n, "returned_unacknowledged": unack_n},
         "sources": ["kb/unified_titles.json", "kb/credentials.json", "kb/exhibit_audit/latest.json",
                     "kb/cer_procedures_out/latest.json", "kb/cer_procedures.json", "kb/cer_procedures_out/saved/",
-                    "kb/unclassified_fold/*/report.json", "kb/exhibit_subject_out/worklist.json"],
+                    "kb/unclassified_fold/*/report.json", "kb/exhibit_subject_out/worklist.json",
+                    "kb/credential_title_moves.json", "kb/returned_titles_acknowledged.json"],
     }
 
 
