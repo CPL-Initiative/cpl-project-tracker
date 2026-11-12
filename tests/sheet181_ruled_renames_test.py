@@ -21,6 +21,7 @@ The failure modes guarded:
 No network. Run from the repo root: python3 tests/sheet181_ruled_renames_test.py
 """
 import contextlib
+import glob
 import hashlib
 import io
 import json
@@ -179,8 +180,41 @@ def sha(path):
     return hashlib.sha256(open(path, "rb").read()).hexdigest()
 
 
+PRE_FILES = ("credentials.json", "unified_titles.json", "coci_articulations.json")
+
+
+def pre_apply(into):
+    """The three kb files as they stood before the plan was applied: copies of the committed files, with every applied
+    rename snapshot that carried a plan entry undone over them by kb/_cred_rename_undo.py (the 2026-11-12 apply,
+    da9f2f90, ran this plan live). Before an apply the copies are the committed files as they are."""
+    os.makedirs(into)
+    for n in PRE_FILES:
+        shutil.copy(os.path.join(KB, n), os.path.join(into, n))
+    snaps = []
+    for path in sorted(glob.glob(os.path.join(KB, "cred_rename_out", "*", "alias_map.json"))):
+        doc = json.load(open(path, encoding="utf-8"))
+        moved_ = set(doc.get("renames") or {}) | set(doc.get("merges") or {})
+        if doc.get("_applied_at") and moved_ & olds and os.path.isfile(os.path.join(os.path.dirname(path), "undo.json")):
+            snaps.append(os.path.dirname(path))
+    undo.CREDENTIALS, undo.UNIFIED_TITLES, undo.ARTICULATIONS = (os.path.join(into, n) for n in PRE_FILES)
+    undo.KEY = None
+    for k, s in enumerate(reversed(snaps)):   # newest first, each over a copy of its receipt
+        rc = os.path.join(into, "receipt%d" % k)
+        shutil.copytree(s, rc)
+        # --force: a group the nightly changed since stays folded, and the check below names its titles.
+        with contextlib.redirect_stdout(io.StringIO()):
+            undo.main([rc, "--apply", "--json-only", "--force"])
+    restore()
+    return {n: os.path.join(into, n) for n in PRE_FILES}, snaps
+
+
 try:
+    PRE, undone_snaps = pre_apply(os.path.join(tmp, "pre"))
+    pre_cr = json.load(open(PRE["credentials.json"], encoding="utf-8"))
+    check("the pre-apply files hold every plan title, whether or not the plan has been applied on main",
+          olds <= set(pre_cr), sorted(olds - set(pre_cr))[:3])
     over_sha = sha(dry.OVERLAY)
+    dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS = (PRE[n] for n in PRE_FILES)
     dry.OUT_DIR = os.path.join(tmp, "dry")
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
@@ -267,7 +301,7 @@ try:
     os.makedirs(work)
     for n in ("credentials.json", "unified_titles.json", "coci_articulations.json", "credential_review_overlay.json",
               "exhibits_related.json"):
-        shutil.copy(os.path.join(KB, n), os.path.join(work, n))
+        shutil.copy(PRE.get(n) or os.path.join(KB, n), os.path.join(work, n))
     W = {n: os.path.join(work, n) for n in os.listdir(work)}
     for m in (dry, app, undo):
         m.CREDENTIALS, m.UNIFIED_TITLES, m.ARTICULATIONS = (W["credentials.json"], W["unified_titles.json"],
