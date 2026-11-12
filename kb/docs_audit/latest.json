@@ -11,22 +11,22 @@
   },
   "summary": {
     "files": 1473,
-    "bytes": 15041532,
+    "bytes": 15043249,
     "over_budget": 2,
     "handoff_max": 643,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59968,
+    "always_loaded_bytes": 59971,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59968,
+        "bytes": 59971,
         "over": 0
       },
       "other": {
         "files": 151,
-        "bytes": 4648964,
+        "bytes": 4649684,
         "over": 1
       },
       "index": {
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 537516,
+        "bytes": 537487,
         "over": 1
       },
       "handoff": {
         "files": 604,
-        "bytes": 4183828,
+        "bytes": 4184851,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
       "oversized_doc": 2,
-      "vault_heavy_path": 75
+      "vault_heavy_path": 76
     },
     "vault": {
-      "files": 26766,
-      "bytes": 4652659094,
-      "heavy_bytes": 3376962655,
+      "files": 26771,
+      "bytes": 4657332303,
+      "heavy_bytes": 3381546310,
       "heavy_share": 0.726,
       "ignore_filters": [
         "agent-a49326ff5c70ec0f3/kb/receipts",
@@ -120,6 +120,7 @@
         "agent-a49326ff5c70ec0f3/kb/coci_curation.json",
         "agent-a49326ff5c70ec0f3/coci_lookup_desc_M.js",
         "agent-a49326ff5c70ec0f3/coci_lookup_desc_P.js",
+        "agent-a49326ff5c70ec0f3/kb/status/mid_outcomes_compare_2026-11-12.json",
         "agent-a49326ff5c70ec0f3/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "agent-a49326ff5c70ec0f3/tools/first_light_candidates.json",
         "agent-a49326ff5c70ec0f3/prototype/ccr_universe_members.json",
@@ -160,13 +161,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 162949,
+        "bytes": 163457,
         "limit": 150000,
         "lane": "other",
-        "over_by": 12949,
+        "over_by": 13457,
         "ratio": 1.09
       },
-      "message": "162,949 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "163,457 B is 1.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -187,10 +188,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2190164243,
+        "bytes": 2190164270,
         "kind": "dir"
       },
-      "message": "directory totals 2,190,164,243 B inside the vault"
+      "message": "directory totals 2,190,164,270 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -297,10 +298,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 11478772,
+        "bytes": 11490811,
         "kind": "dir"
       },
-      "message": "directory totals 11,478,772 B inside the vault"
+      "message": "directory totals 11,490,811 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -721,6 +722,16 @@
         "kind": "file"
       },
       "message": "4,616,887 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "kb/status/mid_outcomes_compare_2026-11-12.json",
+      "detail": {
+        "bytes": 4571589,
+        "kind": "file"
+      },
+      "message": "4,571,589 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",

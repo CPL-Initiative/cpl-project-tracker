@@ -1,8 +1,8 @@
 -- S642 (SkyKestrel, the conductor), 2026-11-12: the Rule 9 checkpoint's cpl_memory rows (step 10): the conductor's
 -- seven decisions, Sam's two in-session rulings not yet in a row, and two lessons. Conductor rows status proposed, for
 -- Sam to revise on the next sheet; Sam's two verified, verified_by Sam Lee.
--- Drafted by the documents worker; NOT RUN at drafting. The conductor runs it through the Supabase MCP and records here
--- what returned. Every summary counted at drafting: at most 400 characters.
+-- Drafted by the documents worker; the conductor ran the same rows at 15:09Z 2026-11-12 through the Supabase MCP as one
+-- VALUES insert, and all 11 slugs returned. Every summary counted at drafting: at most 400 characters.
 -- One INSERT-only statement, author 'SkyKestrel (S642)', on conflict do nothing.
 -- ROLLBACK:
 --   delete from public.cpl_memory where author = 'SkyKestrel (S642)' and slug in (

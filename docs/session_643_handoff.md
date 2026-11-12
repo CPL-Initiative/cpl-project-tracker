@@ -31,13 +31,13 @@ the conductor's record and was not re-read.
 
 ## If you are the scheduled session (the CPL Queue routine)
 
-**Safe unattended, in this order,** each under Rule 10 and its playbook: merge #3165 on a green `test` once its thread
-is read and COBIx's anon-key finding is fixed on the head; review and merge the classifier PR (Open work 2); then Open
-work 4 onward. **Waits for Sam, never merged or run by a session:** #3159 (his gallery marks applied; his to review and
-merge, COBIx's brief); the six re-clustering cases in `kb/status/mid_outcomes_compare_2026-11-12.md` (on #3165's
-branch until it merges) want his rulings; the coverage notes to Malone and to MAP/ITPI (his send); analytics on public
-pages (his go); anything on the `CLAUDE.md` hold list. #2894 is his. LATE: Open Asks Sheet 185 link and whether it is
-current. Routine step 11: the next SLO college is the one `scripts/next_slo_colleges.py --next` names.
+**Safe unattended, in this order,** each under Rule 10 and its playbook: the classifier branch (Open work 2), read its
+PR if one exists, else brief a fresh worker from the branch and the lane's NEXT (5a); then Open work 4 onward. **Waits for Sam, never merged or run by a session:** #3159 (his gallery marks applied; his to review and
+merge, COBIx's brief); the six re-clustering cases in `kb/status/mid_outcomes_compare_2026-11-12.md` (on `main`
+since #3165) want his rulings; the coverage notes to Malone and to MAP/ITPI (his send); analytics on public
+pages (his go); anything on the `CLAUDE.md` hold list. #2894 is his. [Open Asks Sheet 185](https://claude.ai/artifact/2PwwdsMScgRHsRirkZGDJc) is current (published 2026-11-12, store
+empty at 15:02Z; it replaces Sheet 184): cards 1 to 7 S642's decisions, 8 #3159 and 9 the six cases wait for Sam, 10
+the First Light editing design, 11 to 20 Sheet 184's cards 1 to 10. Its source: CPLBrain#765 (draft). Routine step 11: the next SLO college is the one `scripts/next_slo_colleges.py --next` names.
 
 ## You are the conductor
 
@@ -77,8 +77,8 @@ plus `check_ledger`, `pages_size_guard` and the tab and nav inventory tests, and
 | PR or branch | State | Next |
 |---|---|---|
 | #3159 `claude/first-light-apply-marks-s642` | draft, head `27b5e0bb`, green `test` (*as reported*) | Sam's to review and merge |
-| #3165 `claude/mid-reclustering-step1-s642` | open; a worker fixing COBIx's anon-key finding and merging `main` | LATE: merged or not, and its sha |
-| `claude/cer-proposal-titles-in-use-s642` | classifier worker, no PR at 14:50Z | LATE: PR number and the Proposed-card counts |
+| #3165 `claude/mid-reclustering-step1-s642` | merged `a8eaec0b` 15:03Z, green `test`; COBIx verified the anon-key fix | done; his zero-row point is commons NEXT |
+| `claude/cer-proposal-titles-in-use-s642` | classifier worker; not finished at the checkpoint, no PR at 15:10Z | read its PR if one exists, else brief a fresh worker |
 | First Light phase B | design on #3153 (comment 6826461825), waiting for COBIx's read | build at a quiet firing |
 | this checkpoint's PR `claude/checkpoint-s642` | open | merge on a green `test` |
 | #3157, #3158, #3160, #3162, #3164, #3166 | merged (below) | done |
@@ -112,8 +112,8 @@ No S642 worker survives a new session. Brief a fresh one per open branch from it
   Receipt and rollback `kb/receipts/cobi_nav_first_light_magic_link_2026-11-12_s642.sql`.
 - **`cpl_memory`:** five rows by `SkyKestrel (S642)`, `kb/receipts/cpl_memory_s642_rows_2026-11-12.sql` (the two
   re-clustering rows added at this checkpoint); the checkpoint's eleven,
-  `kb/receipts/cpl_memory_s642_checkpoint_2026-11-12.sql`. Rollback in each header, by author and slug. LATE: whether
-  the checkpoint's eleven slugs returned.
+  `kb/receipts/cpl_memory_s642_checkpoint_2026-11-12.sql`. Rollback in each header, by author and slug. All eleven
+  checkpoint slugs returned (run 15:09Z through the Supabase MCP).
 
 ## Decisions to honor
 
@@ -132,7 +132,7 @@ No S642 worker survives a new session. Brief a fresh one per open branch from it
   #2962 comment 6825683021: "yes, let's roll!" (`sam-mid-reclustering-step-1-go-2026-11-12`).
 - Sheet 183 (12:17Z): cards 1 to 5 fine as proposed; card 6 "delete" (`d-sheet-183-replies-2026-11-12`).
 
-**The conductor's seven** (each a `cpl_memory` row and a card on LATE: Sheet 185, for Sam to revise):
+**The conductor's seven** (each a `cpl_memory` row and a card on [Open Asks Sheet 185](https://claude.ai/artifact/2PwwdsMScgRHsRirkZGDJc), cards 1 to 7, for Sam to revise):
 1. The sync carries retired names before any ghost delete; apply holds a ghost until its successors carry it
    (`d-ghost-delete-sync-carries-names-first-s642`).
 2. The 230 deleted on a plan of 7.8%; receipt above (`d-ghost-delete-230-on-plan-s642`).
@@ -149,9 +149,10 @@ Standing: a relayed ruling is confirmed; the sheet carries decisions, never asks
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **`commons` re-clustering NEXT (1):** #3165 on a green `test`, thread read. Then (2) Sam's six rulings, (3) price
-   the model pass.
-2. **`cer-procedures` NEXT (5a), in build:** the classifier proposes a title in use (statewide, then most used, same
+1. **`commons` re-clustering NEXT:** (1) Sam's six rulings (Sheet 185 card 9); (2) price the model pass; (3) COBIx's
+   optional point: the compare fails when a live read returns zero rows.
+2. **`cer-procedures` NEXT (5a), not finished at the checkpoint** (`claude/cer-proposal-titles-in-use-s642`, no PR at
+   15:10Z; read its PR if one exists, else brief a fresh worker from the branch and this line): the classifier proposes a title in use (statewide, then most used, same
    issuer) and never an M-ID course title on an industry certification; its report counts the Proposed cards it
    changes; review, then merge.
 3. **`sierra-page-redesign` NEXT:** (1) #3159 waits on Sam; (2) First Light phase B once COBIx reads the design, then
@@ -178,7 +179,9 @@ The pipeline view (no roadmap row, auditor count or M-ID re-mint moved); `CLAUDE
 budget); `kb/README.md` (no KB structure changed on `main`); the cr and subjects run logs (untouched). Left to the
 conductor, who holds the tools: step 10's rows (drafted, not run), step 12's headline and harvest SQL and
 `get_trigger`, the decision sheet build (Sheet 185), the vault session note (step 11) and the `--apply` stamp's commit
-if it changes after this PR. Wiki candidates for `/wiki-ingest`: Sierra's ghost rows deleted; the First Light tab and
+if it changes after this PR. The conductor has since run step 10 and published Sheet 185; the session note, a braindump
+and the wiki touch are on CPLBrain#765. Step 12's `kb/status/program-requirements.json` and the routine's `next_run`
+were not refreshed: S642 did not touch the harvest, and the S641 scheduled session holds that lane. Wiki candidates for `/wiki-ingest`: Sierra's ghost rows deleted; the First Light tab and
 `hero_photos.json`; the classifier's title-in-use rule.
 
 ## Patterns and lessons
@@ -195,8 +198,9 @@ if it changes after this PR. Wiki candidates for `/wiki-ingest`: Sierra's ghost 
 
 ## Let go
 
-At 14:50Z S642 held PR subscriptions on #3159 and #3165 and one check-in, `trig_01AwBesBKkTmv3crqhnipw56` (14:52Z,
-merge #3165); the subscriptions on #3157, #3158, #3160, #3162, #3164 and #3166 ended at merge. No artifact watch.
-LATE: the sign-off turn's unsubscribes and the check-in's deletion, each confirmed.
+State at the checkpoint (15:10Z), which the sign-off turn confirms: subscriptions on #3157, #3158, #3160, #3162, #3164,
+#3165 and #3166 dropped at merge, and this checkpoint's PR drops at its merge; #3159 stays subscribed only until
+sign-off. Check-ins: `trig_01AwBesBKkTmv3crqhnipw56` fired 14:52Z; `trig_011PfrWaJPy1bN344SdVp9Xi` deleted 15:04Z.
+Sheet 185's artifact watch (arming at publish) is dropped at sign-off.
 
 Greetings, you are SkyLark (Session 643), see SkyKestrel's handoff — `docs/session_643_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_643_handoff.md) — let's keep rolling with our queue.

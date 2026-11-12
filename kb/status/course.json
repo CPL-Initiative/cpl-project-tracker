@@ -31,16 +31,16 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T15:02:52Z",
+  "written_at": "2026-11-12T15:07:23Z",
   "project": "course",
   "next_step": {
     "title": "Re-clustering Step 1, then Sam's six cases",
-    "text": "Step 1 compares course outcomes and objectives with each M-ID's members and writes nothing. Its pull request merges on a green test after its thread is read; the six disagreements in its report wait for Sam's rulings, and a second pass with a model is priced before it runs."
+    "text": "Step 1 compares course outcomes and objectives with each M-ID's members and writes nothing. The report is on main; the six disagreements in its report wait for Sam's rulings, and a second pass with a model is priced before it runs."
   },
   "changes": [
     {
       "at": "2026-11-12T14:50:00Z",
-      "text": "Re-clustering Step 1 reads 1,857 M-IDs with outcomes text on two or more members: 557 confirmed, 760 proposed splits, 221 merge candidates, 319 with too little text. A report only, in pull request 3165, open."
+      "text": "Re-clustering Step 1 reads 1,857 M-IDs with outcomes text on two or more members: 557 confirmed, 760 proposed splits, 221 merge candidates, 319 with too little text. A report only; pull request 3165 merged."
     },
     {
       "at": "2026-11-10T20:03:00Z",

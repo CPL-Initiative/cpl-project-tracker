@@ -163,6 +163,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Worked: a plan receipt read by keys and counts, then a 12-row sample of the risky class (ghosts with students) before
   the apply.
 - Workers' commits carry the harness's attribution line (Opus 5.5), which is right for them.
+- Publishing a sheet the conductor did not write cost about 45,000 tokens: the tool requires reading the whole file
+  first. Have the vault worker keep the sheet under 60 KB, or publish from a session with room.
 
 ## What went wrong in S641, and what worked
 
