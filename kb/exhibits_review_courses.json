@@ -137,6 +137,6 @@
   "teaches:ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": {"1": [["AT 309", "", 4.0]], "11": [["AUTO 043A", "", 3.0]], "69": [["AUME 800", "", 3.0]], "79": [["AUTO 330", "", 3.0]], "80": [["AUT 95", "", 3.0]], "83": [["AUTO 10", "", 4.0]], "89": [["AUTO 44", "", 3.0]], "92": [["AUTO 11", "", 3.0]]},
   "teaches:Carpenters Apprenticeship — Acoustical Installer": {"1": [["CARPT 111", "", 1.5]], "71": [["CRP 461A", "", 1.5], ["CRP 461B", "", 1.5], ["CRP 461C", "", 1.5], ["CRP 462", "", 1.5]], "75": [["AP AC 703", "", 1.5], ["AP AC 705", "", 1.5], ["AP AC 706", "", 1.5], ["AP AC 707", "", 1.5]], "79": [["CARP 040J", "", 2.0], ["CARP 040V", "", 1.5]]},
   "teaches:Carpenters Apprenticeship — Drywall/Lather": {"1": [["CARPT 111", "", 1.5]], "71": [["CRP 472A", "", 1.5], ["CRP 472B", "", 1.5], ["CRP 472C", "", 1.5], ["CRP 473A", "", 1.5]], "75": [["AP AC 703", "", 1.5], ["AP AC 715", "", 1.5], ["AP C 703", "", 1.5], ["AP C 723", "", 1.5]], "79": [["CARP 040J", "", 2.0], ["CARP 040V", "", 1.5], ["CARP 050T", "", 1.5]]},
-  "teaches:Principles of Fire and Emergency Services Safety and Survival": {"90": [["FIRE 78", "", 3.0]], "93": [["FIRE 1", "", 3.0]]}
+  "teaches:Principles of Emergency Services": {"9": [["FT 1", "", 3.0]], "10": [["FIRETEC 1", "", 3.0]], "16": [["FIRE 715", "", 3.0]], "18": [["FIRE 1", "", 3.0]], "64": [["FTECH 301", "", 3.0]], "65": [["FPTC 1", "", 3.0]], "76": [["FIRE 1", "", 3.0]], "77": [["FIRE P101", "", 3.0]], "95": [["FIRE 50", "", 3.0]], "99": [["FIRE 100", "", 3.0]]}
  }
 }

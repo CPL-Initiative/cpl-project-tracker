@@ -268,7 +268,10 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   check("with neither a statewide nor a clearly most used title, no line and no mark",
     t.d.querySelector(".exh-align").hidden && !/Statewide exhibit|Most used/.test(txt(panel(t.d))));
   t = await boot({ noStatewide: true });
-  check("the statewide list unread, the card falls back to the most used title", /^A popular title for this is Firefighter 1 \(11 local titles/.test(txt(t.d.querySelector(".exh-align"))));
+  // Since the #3168 review's level rule (f): a card naming no level reaches a title naming one (Firefighter 1) only as
+  // the statewide exhibit's clear lead, so with the statewide list unread it is never offered as the most used title.
+  check("the statewide list unread, a levelled title is not offered as the most used one",
+    t.d.querySelector(".exh-align").hidden && !/Firefighter 1/.test(txt(t.d.querySelector(".exh-align"))), txt(t.d.querySelector(".exh-align")));
 
   // ── the #3160 review: the real files, four cards ──
   async function real(raw) { return boot({ real: true, card: realCard(raw) }); }

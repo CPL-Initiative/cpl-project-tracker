@@ -1071,6 +1071,15 @@
   }
   /* The one order both sides use: local titles descending, colleges descending, then the lowercased title by code
      point (never a locale's collation). */
+  /* kb/title_in_use.py in_use: the title in use for a card, under the box's issuer (issuerFor), or under its own
+     (ownIssuer, a credit-by-exam card, rule h), where an ASE card names nothing: a precedent sits the other way (a
+     credit-by-exam AUTO A1 title is under ASE A1), so where it belongs is Sam's call. */
+  function relInUse(title, raw, issuer, ownIssuer) {
+    var t = (title || "").trim();
+    if (ownIssuer && aseOf(t, raw, issuer)) return null;
+    var iss = ownIssuer ? (issuer || "").trim() : (issuerFor(t, issuer).trim() || issuer || "");
+    return relAligned(relatedFor(t, raw, iss, []), t, iss);
+  }
   /* (h) every exhibit behind the card is credit by exam by its MAP id (kb/exhibit_paths.py: CX, Cx, CBE). */
   function cbeCard(h) {
     var ids = (h && h.ids) || [];
@@ -2144,8 +2153,8 @@
     function drawAlign() {
       while (align.firstChild) align.removeChild(align.firstChild);
       // (h) a credit-by-exam card asks the rule under its own issuer, as the pipeline's proposal does, until a person types one.
-      var iss = (!issuerTyped && cbeCard(h) ? h.issuer : issuer.value.trim()) || h.issuer;
-      var a = state.rel.data ? relAligned(relatedFor(title.value.trim(), h.raw, iss, []), title.value, iss) : null;
+      var own = !issuerTyped && cbeCard(h);
+      var a = state.rel.data ? relInUse(title.value, h.raw, own ? h.issuer : (issuer.value.trim() || h.issuer), own) : null;
       align.hidden = !a;
       if (!a) return;
       align.appendChild(document.createTextNode(relAlignWords(a)));
@@ -5100,7 +5109,7 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
-    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

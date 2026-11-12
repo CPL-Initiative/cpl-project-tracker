@@ -270,6 +270,10 @@ def aligned(got, card_title, card_issuer, statewide, index=None):
 
 def in_use(index, statewide, title, raw, issuer, own_issuer=False):
     """The title in use for a card proposing `title` under `issuer` (the box's issuer, issuer_for), or None.
-    `own_issuer` (h): a credit-by-exam card keeps its own issuer; a title in ASE's form does not make ASE its issuer."""
+    `own_issuer` (h): a credit-by-exam card keeps its own issuer; a title in ASE's form does not make ASE its issuer,
+    and an ASE card that is credit by exam names nothing: a precedent sits the other way (a credit-by-exam AUTO A1
+    title is under ASE A1 in the reference), so where such a card belongs is Sam's call (the review of #3168)."""
+    if own_issuer and ase_of(title, raw, issuer):
+        return None
     iss = (issuer or "") if own_issuer else issuer_for(title, issuer)
     return aligned(related(index, title, raw, iss), title, iss, statewide, index)

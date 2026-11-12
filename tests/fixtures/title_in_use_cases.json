@@ -232,6 +232,13 @@
     3,
     2,
     0
+   ],
+   [
+    "Brakes (ASE A5 standards)",
+    0,
+    4,
+    3,
+    0
    ]
   ]
  },
@@ -389,7 +396,7 @@
    "expect": null
   },
   {
-   "why": "(h) a credit-by-exam card keeps its college issuer, so its ASE-form title names no ASE title",
+   "why": "(h) a credit-by-exam ASE card keeps its college issuer and names nothing, not ASE A5's statewide title and not the college's Brakes (ASE A5 standards): a precedent sits the other way, so it is Sam's call",
    "title": "Brakes (ASE A5)",
    "raw": "Noncredit Course for AUTO A5",
    "issuer": "California Community Colleges",
@@ -439,6 +446,16 @@
     "Guitar Ensemble Fall",
     "Guitar Ensemble École"
    ]
+  },
+  {
+   "why": "an industry-certification card with the same ASE title still names the statewide ASE A5 title",
+   "title": "Brakes (ASE A5)",
+   "raw": "Industry Training Evidence for AUTO A5",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "expect": {
+    "kind": "in_use_statewide",
+    "title": "ASE A5 — Brakes"
+   }
   }
  ]
 }

@@ -68,7 +68,7 @@ async function settle() { for (let i = 0; i < 10; i++) await tick(); }
     // credit-by-exam card, which keeps its own (rule h).
     const iss = c.own_issuer ? c.issuer : (M._issuerFor(c.title, c.issuer).trim() || c.issuer);
     const got = M._relatedFor(c.title, c.raw, iss, []);
-    const a = M._relAligned(got, c.title, iss);
+    const a = M._relInUse(c.title, c.raw, c.issuer, !!c.own_issuer);
     const have = a ? { kind: a.kind === "statewide" ? "in_use_statewide" : a.kind === "popular" ? "in_use_most_used" : a.kind, title: a.o.t } : null;
     check("parity: " + c.why, JSON.stringify(have) === JSON.stringify(c.expect), JSON.stringify(have));
     if (c.expect_order) {
