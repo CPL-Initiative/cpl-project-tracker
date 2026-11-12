@@ -153,6 +153,14 @@ function storageKeys(w) {
     check("C the two-minute hold says a run started moments ago and no second one started", /no second one was started[\s\S]*next scheduled run/.test(said(m, "n1")), said(m, "n1"));
   }
   {
+    const m = loadModule({ fn: function () { return response(409, { ok: false, reason: "busy_behind", workflow: "cer-decision-apply.yml" }); } });
+    await m.M.activate(); await tick();
+    click(m.w, word(m, "n1"));
+    await until(() => /same queue/.test(said(m, "n1")));
+    check("C ⭐ another run waiting in the shared queue: nothing started, and it says why and when to press again",
+      /would cancel it, so nothing was started\. Press Publish now again in a few minutes\.[\s\S]*next scheduled run/.test(said(m, "n1")), said(m, "n1"));
+  }
+  {
     const m = loadModule({ fn: function () { return Promise.reject(new Error("offline")); } });
     await m.M.activate(); await tick();
     click(m.w, word(m, "n1"));
@@ -181,13 +189,37 @@ function storageKeys(w) {
     click(m.w, word(m, "p1"));
     await until(() => /has not moved the record yet/.test(said(m, "p1")), 400);
     check("D the following stops after a few reads and says the page goes up when the run finishes", /has not moved the record yet[\s\S]*goes up when it finishes/.test(said(m, "p1")), said(m, "p1"));
+    click(m.w, word(m, "p1"));
+    await until(() => fnCalls(m).length === 2);
+    check("D ⭐ once following gives up, a press asks the function again (its own hold decides)", fnCalls(m).length === 2, String(fnCalls(m).length));
   }
   // ── E. The Edge Function and its deploy ──
   {
     const FN = fs.readFileSync("chatbox/supabase/functions/library-publish-now/index.ts", "utf8");
     const serve = FN.slice(FN.indexOf("Deno.serve("));
-    const ymls = (FN.match(/"[A-Za-z0-9_.-]+\.yml"/g) || []).map((x) => x.slice(1, -1));
-    check("E ⭐ the workflow allow-list holds exactly library-publish.yml", ymls.length === 1 && ymls[0] === "library-publish.yml" && /const WORKFLOW = "library-publish\.yml";/.test(FN), ymls.join(","));
+    // The one workflow it dispatches: WORKFLOW, and the only dispatch call names it.
+    const groupSrc = (/const GROUP = \[([\s\S]*?)\];/.exec(FN) || [])[1] || "";
+    const outside = FN.replace(/const GROUP = \[[\s\S]*?\];/, "").replace(/const JOB_LEVEL = \[[\s\S]*?\];/, "");
+    const ymls = (outside.match(/"[A-Za-z0-9_.-]+\.yml"/g) || []).map((x) => x.slice(1, -1));
+    const dispatches = FN.match(/\/dispatches"/g) || [];
+    check("E ⭐ the workflow allow-list holds exactly library-publish.yml", ymls.length === 1 && ymls[0] === "library-publish.yml" && /const WORKFLOW = "library-publish\.yml";/.test(FN)
+      && dispatches.length === 1 && /gh\("\/actions\/workflows\/" \+ WORKFLOW \+ "\/dispatches"/.test(FN), ymls.join(","));
+    // The shared queue (COBIx on #3171): GROUP equals the workflows naming concurrency group daily-dashboard, and
+    // JOB_LEVEL those that name it on a job.
+    const wfDir = ".github/workflows";
+    const inGroup = [], jobLevel = [];
+    fs.readdirSync(wfDir).filter((f) => /\.ya?ml$/.test(f)).sort().forEach(function (f) {
+      const t = fs.readFileSync(wfDir + "/" + f, "utf8"), mm = /^( *)group: daily-dashboard\s*$/m.exec(t);
+      if (mm) { inGroup.push(f); if (mm[1].length > 2) jobLevel.push(f); }
+    });
+    const listed = (groupSrc.match(/"[^"]+"/g) || []).map((x) => x.slice(1, -1)).sort();
+    const jobListed = (((/const JOB_LEVEL = \[([\s\S]*?)\];/.exec(FN) || [])[1] || "").match(/"[^"]+"/g) || []).map((x) => x.slice(1, -1)).sort();
+    check("E ⭐ GROUP holds exactly the workflows in concurrency group daily-dashboard", listed.join(",") === inGroup.join(",") && inGroup.length > 1, listed.join(",") + " vs " + inGroup.join(","));
+    check("E JOB_LEVEL holds exactly those whose group sits on a job", jobListed.join(",") === jobLevel.join(","), jobListed.join(",") + " vs " + jobLevel.join(","));
+    check("E ⭐ the queue is read before the dispatch, another workflow's waiting run answers 409 busy_behind, and an unread queue dispatches nothing",
+      serve.indexOf("/actions/runs?per_page=100&status=") > 0 && serve.indexOf("/actions/runs?per_page=100&status=") < serve.indexOf("/dispatches")
+      && /reason: "busy_behind"/.test(FN) && /return busyBehind\(origin, waiting\[0\], who\)/.test(serve) && (serve.match(/reason: "queue_unread"/g) || []).length === 3
+      && /status=in_progress/.test(serve) && /\/jobs\?per_page=100/.test(serve));
     check("E ⭐ the ref is fixed to main and the dispatch body carries nothing else", /const REF = "main";/.test(FN) && /body: JSON\.stringify\(\{ ref: REF \}\)/.test(FN) && !/inputs:/.test(FN));
     check("E ⭐ it takes nothing from the caller (the request body is never read)", !/req\.(json|text|formData|body)\b/.test(FN) && !/searchParams/.test(FN));
     check("E the reviewer check runs before the key is read or GitHub is called",
@@ -195,7 +227,8 @@ function storageKeys(w) {
     check("E a reviewer's session only: no team phrase, the anon key never dispatches",
       !/team_pass_ok|x-team-pass/.test(FN) && /bearer !== anon/.test(FN) && /if \(!who\) return reply\(origin, 401/.test(serve));
     check("E it reads no table and writes nothing (its one PostgREST call is the reviewer check)", (FN.match(/\/rest\/v1\//g) || []).length === 1 && /rpc\/" \+ name/.test(FN));
-    check("E the two-minute hold, and a run already waiting is reused", /HOLD_MS = 2 \* 60 \* 1000/.test(FN) && /reason: "too_soon"/.test(FN) && /\["queued", "pending", "waiting"\]/.test(FN));
+    check("E the two-minute hold, and a run already waiting is reused", /HOLD_MS = 2 \* 60 \* 1000/.test(FN) && /reason: "too_soon"/.test(FN) && /const WAITING = \["queued", "pending", "waiting"\]/.test(FN)
+      && /fileOf\(run\) === WORKFLOW && run\.head_branch === REF/.test(serve));
     check("E the key: LIBRARY_DISPATCH_TOKEN, else WORKPLAN_DISPATCH_TOKEN; without either, 503",
       /Deno\.env\.get\("LIBRARY_DISPATCH_TOKEN"\) \|\| Deno\.env\.get\("WORKPLAN_DISPATCH_TOKEN"\)/.test(FN) && /reason: "not_configured"/.test(FN));
     const DEPLOY = fs.readFileSync(".github/workflows/cpl-chat-deploy.yml", "utf8");

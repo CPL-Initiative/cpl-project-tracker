@@ -1498,6 +1498,11 @@
     if (status === 429 || (j && j.reason === "too_soon")) {
       return "A publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
     }
+    // The publish run shares a queue with the daily build and the apply runs; starting it while one of those waits would
+    // cancel that one (COBIx on #3171), so the function starts nothing.
+    if (status === 409 || (j && j.reason === "busy_behind")) {
+      return "Another run is waiting in the same queue as the publish run, and starting one now would cancel it, so nothing was started. Press Publish now again in a few minutes. " + NEXT_RUN;
+    }
     if (status === 401) return "The publish run did not start: only a signed-in reviewer can start it. Sign in again from About in the header. " + NEXT_RUN;
     return "The publish run did not start" + (status ? " (the service answered " + status + ")" : "") + ". " + NEXT_RUN;
   }
@@ -1564,10 +1569,16 @@
           p.said = "The page is up:"; p.link = r.url; p.err = false;
         } else if (n + 1 < PUB_POLL.max) { followPublish(id, n + 1); return; }
         else {
-          p.said = "The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit.";
+          // Following stops, and a press may ask again: the function's own two-minute hold and queue check decide.
+          p.started = null;
+          p.said = "The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit. If it does not, press Publish now again.";
         }
         if (!state.cardBox && !state.edit && !state.form) render();
-      }).catch(function () { if (n + 1 < PUB_POLL.max) followPublish(id, n + 1); });
+      }).catch(function () {
+        if (n + 1 < PUB_POLL.max) { followPublish(id, n + 1); return; }
+        p.started = null;
+        if (!state.cardBox && !state.edit && !state.form) render();
+      });
     }, PUB_POLL.ms);
   }
   function stateBlock(r) {

@@ -385,7 +385,7 @@
     "library_pictures.test.js": 44,
     "library_list.test.js": 27,
     "library_revise_draft.test.js": 56,
-    "library_publish_now.test.js": 37,
+    "library_publish_now.test.js": 42,
     "public_library.test.js": 121,
     "pages_size_guard.test.js": 4
   }
