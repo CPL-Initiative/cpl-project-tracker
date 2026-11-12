@@ -70,35 +70,34 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    18.0,
-    21.0
+    20.0,
+    23.0
    ],
    "stated": [
-    20.0,
-    22.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 20.0-22.0"
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
-     18.0,
-     21.0
+     20.0,
+     23.0
     ],
     "stated": [
-     60.0,
-     60.0
+     20.0,
+     22.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Cal-GETC pattern, but no units for it"
-    ]
+    "against": "program",
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -320,5 +319,6 @@
    "Careers come from 'careers in clinical, educational, organizational, and research fields', split word for word."
   ]
  },
- "extracted_run": "39035604333"
+ "extracted_run": 43142245126,
+ "read_run": "39035604333"
 }

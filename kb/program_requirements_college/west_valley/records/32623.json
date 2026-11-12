@@ -61,34 +61,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     18.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    18.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     18.0
+     52.0,
+     52.0
     ],
     "stated": [
-     18.0,
-     18.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +140,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -145,7 +151,8 @@
     "Evaluate reasoning in order to develop precise and persuasive arguments and resistance to incorrect arguments.",
     "Identify and describe characteristics of diverse multicultural traditions."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -360,5 +367,26 @@
    "Program learning outcomes taken from the page's outcomes tab, printed for the program as a whole; this award shares them."
   ]
  },
- "extracted_run": "39035604333"
+ "extracted_run": 43142245126,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (https://www.westvalley.edu/catalog/general-education/cal-getc.html: SUMMED FROM THE AREAS, no total is printed: West Valley AA-T and AS-T pages print '2. the California General Education Transfer Curriculum pattern (Cal-GETC).' (Sociology AA-T 30972; college page read 43138048261); the Cal-GETC page prints Area 1 '9 semester/12 quarter units', Area 2 '3 semester', Area 3 '6 semester', Area 4 '6 semester', Area 5 '7 semester' and Area 6 '3 semester'; 9 + 3 + 6 + 6 + 7 + 3 = 34 (the same read; Sam's count, Open Asks Sheet 180 card 4, extended in S639))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "CSU transferable elective courses are required when the major units plus transfer GE units total is less than 60"
+  }
+ ],
+ "read_run": "39035604333"
 }
