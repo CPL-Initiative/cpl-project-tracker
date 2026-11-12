@@ -11,17 +11,17 @@
   },
   "summary": {
     "files": 1474,
-    "bytes": 15084413,
+    "bytes": 15085320,
     "over_budget": 7,
     "handoff_max": 644,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59971,
+    "always_loaded_bytes": 59974,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59971,
+        "bytes": 59974,
         "over": 0
       },
       "other": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 550079,
+        "bytes": 550224,
         "over": 6
       },
       "handoff": {
         "files": 605,
-        "bytes": 4202058,
+        "bytes": 4202817,
         "over": 0
       }
     },
@@ -62,7 +62,7 @@
     },
     "vault": {
       "files": 26812,
-      "bytes": 4676099787,
+      "bytes": 4676100694,
       "heavy_bytes": 3399924585,
       "heavy_share": 0.727,
       "ignore_filters": [
@@ -187,13 +187,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 21582,
+        "bytes": 21642,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 1582,
+        "over_by": 1642,
         "ratio": 1.08
       },
-      "message": "21,582 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "21,642 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/commons.md"
     },
     {

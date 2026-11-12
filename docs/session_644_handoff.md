@@ -36,8 +36,9 @@ reported the red `main`. Facts were read from `origin/main` (`b25ac4e4`), the re
 Apply), 5, 6, 7 and 8. **Waits for Sam, never merged or run by a session:** the deploy of `docket-process` and
 `library-publish-now`; the GitHub Actions pull-request setting; #3159 (his gallery marks); the six re-clustering cases
 and the Honors question; the coverage notes to Malone and MAP/ITPI (his send); analytics on public pages (his go);
-anything on the `CLAUDE.md` hold list. #2894 is his. **Open Asks Sheet 186** replaces Sheet 185; it is built in
-CPLBrain (draft PR, *Ledger*) and waits for the conductor to publish it, so its link is not in this file yet.
+anything on the `CLAUDE.md` hold list. #2894 is his. **[Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt)** is current (Version 1, published about 22:35Z,
+a fresh store, `replies` empty at publish); cards 4, 5 and 6 wait. It supersedes [Sheet 185](https://claude.ai/artifact/2PwwdsMScgRHsRirkZGDJc) except 185's card 8
+(#3159), which still waits there. Its source is on CPLBrain#769 (draft).
 
 ## You are the conductor
 
@@ -77,7 +78,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | PR or branch | State | Next |
 |---|---|---|
 | this checkpoint's PR `claude/checkpoint-s643` | draft | merge on a green `test` |
-| CPLBrain draft PR on `claude/skylark-session-643-6ycsl5` (head `69a7a9bd`; Sheet 185's branch merged in) | draft | Sheet 186 published from it, then merged; `/home/user/CPLBrain` is behind it: pull before writing |
+| CPLBrain draft PR on `claude/skylark-session-643-6ycsl5` (head `69a7a9bd`; Sheet 185's branch merged in) | draft | Sheet 186 published from it ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt), current); merge it; `/home/user/CPLBrain` is behind it: pull before writing |
 | #3159 `claude/first-light-apply-marks-s642` | draft | Sam's to review and merge |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | `claude/harvest-desert-proof-s641`, `-pdf-baseline-s640` | S641's | per the harvest lane |
@@ -117,7 +118,7 @@ No S643 worker survives a new session. Brief a fresh one per open branch from it
 
 **Sam's:** none new in S643. The standing ones are in the 643 handoff and `cpl_memory`.
 
-**The conductor's** (each a `cpl_memory` row, a DECIDED line in its lane, and a card on Sheet 186 for Sam to revise):
+**The conductor's** (each a `cpl_memory` row, a DECIDED line in its lane, and a card on [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt), current, for Sam to revise):
 1. First Light marks are spent only by a merged Apply (`d-first-light-marks-spent-by-merged-apply-s643`).
 2. `first_light_marks` and `first_light_apply_requests` applied and verified (`d-first-light-marks-tables-applied-s643`).
 3. The daily run rebuilds once when a clean rebase changes a build input (`d-daily-rebuild-on-changed-input-s643`).
@@ -128,16 +129,18 @@ No S643 worker survives a new session. Brief a fresh one per open branch from it
 7. The pitfall: a test that reads a held card from the live file fails `main` when a reviewer rules
    (`p-test-pinned-to-live-held-card-s643`).
 
-## Waits for Sam (on Sheet 186, except #3159)
+## Waits for Sam (on [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt), current, except #3159)
 
 1. **"deploy"** for `docket-process` and `library-publish-now`: a production deploy is on the hold list and no standing
    authorization is recorded. `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function per dispatch; whether `_shared`
    bundles is unproven until the first deploy.
 2. **Whether the repository lets GitHub Actions create pull requests.** Without it First Light's Apply cannot open its PR.
-3. **#3159**, his gallery marks (still Sheet 185 card 8; Sheet 186 has six cards and leaves 185's other cards answerable there).
+3. **#3159**, his gallery marks (still [Sheet 185](https://claude.ai/artifact/2PwwdsMScgRHsRirkZGDJc) card 8; 185 is otherwise superseded by Sheet 186).
 4. **The six re-clustering cases** in `kb/status/mid_outcomes_compare_2026-11-12.md`: AJ 160; FIRE 130 X with FIRE
    M1274; REAL M1038 with M1040; MATH M1036 with M1044; MUS 130; BUSI M1228; and the Honors question (one M-ID, or two
    with a declared equivalence). Sheet 185 card 9's six are superseded.
+
+By 22:35Z Sam had not said "deploy" and had not answered the Actions setting.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
@@ -166,12 +169,12 @@ No S643 worker survives a new session. Brief a fresh one per open branch from it
 
 The documents worker did not make any Supabase call, publish anything, dispatch, merge or subscribe. Left to the
 conductor: step 10's rows (already run; receipt copied unchanged); step 12's headline and harvest SQL and the routine's
-`get_trigger`, so `kb/status/program-requirements.json` was not stamped; publishing Sheet 186 and filling its link in
-`CLAUDE.md`'s standing-sheet line; merging this PR; confirming the display run and the 06:17Z daily run.
+`get_trigger`, so `kb/status/program-requirements.json` was not stamped; merging this PR (the conductor published
+[Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) at about 22:35Z; its link is in `CLAUDE.md`'s standing-sheet line); confirming the display run and the 06:17Z daily run.
 Refreshed: the six lane files, `conductor_mode.md`, `docs/governance_lessons.md`, one KB note (a third instance),
 `docs/INDEX.md` and the catalog, the `exhibit` and `course` run logs, the docs audit and its `--apply` stamp, the vault
-note, Sheet 186's source and the wiki touch. Not touched: the pipeline view (no roadmap row, auditor count or re-mint
-moved), `kb/README.md`, `README.md`, the `cr` and `subjects` run logs, and `CLAUDE.md` (no lane changed state).
+note, Sheet 186's source and the wiki touch, and `CLAUDE.md`'s standing-sheet line. Not touched: the pipeline view (no roadmap
+row, auditor count or re-mint moved), `kb/README.md`, `README.md`, the `cr` and `subjects` run logs.
 Wiki candidates, written in the vault's wiki touch: the First Light marks tables; the daily run's rebuild on a changed
 input; the acknowledged returned titles.
 
@@ -196,6 +199,6 @@ input; the acknowledged returned titles.
 
 State at the checkpoint, which the sign-off turn confirms: subscriptions on #3178, #3179, #3180, #3181, #3182, #3161,
 #3183 and #3184 dropped at merge; this checkpoint's PR stays subscribed until its merge. No
-check-in pending. No artifact watch.
+check-in pending. The artifact watch on Sheet 186 (arming at publish) is dropped at sign-off.
 
 Greetings, you are SkyWren (Session 644), see SkyLark's handoff — `docs/session_644_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_644_handoff.md) — let's keep rolling with our queue.

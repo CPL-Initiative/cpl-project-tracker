@@ -123,11 +123,11 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
   is Sam's press, linked from the funding dashboard's 75% JST condition.
 - **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
-  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Its first real use is Sam's.
+  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
 - **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged, not
-  deployed; both wait for Sam's "deploy" (Open Asks Sheet 186; `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function
-  per dispatch). Whether `_shared` bundles is unproven until the first deploy.
+  deployed; both wait for Sam's "deploy" ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4; `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function
+  per dispatch). The first deploy tests `_shared`.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
