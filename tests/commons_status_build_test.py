@@ -83,7 +83,9 @@ check("Exhibits: the card and its counts open the List; held titles and conflict
       _ex["links"][0]["href"] == "#exhibits/list" and all(p_["open"] == "#exhibits/list" for p_ in _ex["pair"])
       # S574: the titles that have left MAP open their own List filter, never the retired CER's whole list.
       # S638: the credentials with no Common SUBJ open the List's No Common SUBJ filter.
-      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left", "#exhibits/list/nosubj") for i in _ex["issues"])
+      # S643: the renamed titles on the review list and the unacknowledged returned titles open the Review view's list.
+      and all(i["open"] in ("#exhibits/held", "#exhibits/conflict", "#exhibits/list/left", "#exhibits/list/nosubj",
+                            "#exhibits/renamed", "#exhibits/renamed/unacknowledged") for i in _ex["issues"])
       and _ex["procedures"][0]["open"] == "#exhibits/rules",
       (_ex["links"], [p_["open"] for p_ in _ex["pair"]], [i["open"] for i in _ex["issues"]], _ex["procedures"][0].get("open")))
 building = data.get("building", [])
