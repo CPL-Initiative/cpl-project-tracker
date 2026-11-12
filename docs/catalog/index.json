@@ -4726,7 +4726,7 @@
      ],
      "title": "A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect",
      "type": "methodology",
-     "updated": "2026-09-27"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-07",
@@ -16883,8 +16883,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 604,
+   "count": 605,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 644,
+     "path": "docs/session_644_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 644 handoff (from SkyLark, S643)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -27113,5 +27127,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1459
+ "total": 1460
 }

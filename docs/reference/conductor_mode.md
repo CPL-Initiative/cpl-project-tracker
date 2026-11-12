@@ -140,6 +140,26 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S643, and what worked
+
+- A test that read held cards from live `kb/exhibits_review.json` turned `main` red when a reviewer ruled on one
+  (#3178). A brief that adds a test against committed data says: pin the rule to a fixture.
+- `supabase-migrate.yml` applies a migration on the PUSH of its `kb/migrations/.apply` change to a `claude/**` branch,
+  never on merge, so the review happens before that push. Its receipt-commit head gets no `test` run; the worker
+  stopped and asked. Brief the next one: push a real change after the receipt, never an empty commit.
+- `grep` on `tests/check_floor.json` prints a `_note` of about 10,000 tokens: always `cut -c1-200`.
+- A stacked PR conflicts once its base squash-merges: merge `main`, take `main`'s copy of the base's files.
+- Six first-round PRs touched `tests/check_floor.json` and the dependency map, so each conflicted with `main` once.
+- A completed worker's notification repeats its report. Deleting a check-in that covered two PRs dropped one; re-arm.
+- The Agent tool's worktree isolation fails when the shell's directory has reset to `/home/user`: `cd` into the
+  tracker first. Disk: 6.2 GB free with four worktrees of 4.4 GB on 252 GB, so cap at four and remove each at merge.
+- The container restarted at about 22:20Z and stopped the documents worker mid-checkpoint. Its unpushed commit and
+  staged files survived in its worktree, and its vault commit had already been pushed. Push each repo as soon as it
+  has a coherent commit.
+- Worked: one combined finding list per PR after all its readers report; a second reader briefed to refute the fixes
+  (First Light: five majors, then three more). COBIx had not commented on any S643 PR by 22:05Z; the conductor posted
+  on #3110, #2962 and #3153.
+
 ## What went wrong in S642, and what worked
 
 - The conductor merged and ran #3158 (the ghost-row delete) without reading COBIx's 13:13Z note on the PR's own thread;

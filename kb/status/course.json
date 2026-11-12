@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 642,
-  "moniker": "SkyKestrel",
+  "session": 643,
+  "moniker": "SkyLark",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_643_handoff.md",
+  "handoff": "docs/session_644_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -27,17 +27,28 @@
         "at": "2026-11-09",
         "words": "Confirm the five (Sheet 175 card 1); applied S621, 753 cards"
       }
+    },
+    {
+      "title": "Rule on six re-clustering cases and the Honors question",
+      "text": "AJ 160, FIRE 130 X with FIRE M1274, REAL M1038 with M1040, MATH M1036 with M1044, MUS 130 and BUSI M1228, each a proposed split or merge with credit by exam reach; and whether an Honors course is one M-ID or two with a declared equivalence. They replace the six on Open Asks Sheet 185 card 9.",
+      "if_no_reply": "Every M-ID stays as it is; Step 1 writes nothing.",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/status/mid_outcomes_compare_2026-11-12.md",
+      "link_text": "The Step 1 report"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T15:07:23Z",
+  "written_at": "2026-11-12T22:15:43Z",
   "project": "course",
   "next_step": {
-    "title": "Re-clustering Step 1, then Sam's six cases",
-    "text": "Step 1 compares course outcomes and objectives with each M-ID's members and writes nothing. The report is on main; the six disagreements in its report wait for Sam's rulings, and a second pass with a model is priced before it runs."
+    "title": "Sam's six re-clustering cases, then the model pass priced",
+    "text": "Step 1 now counts one district as one voice and picks the cases by credit by exam reach. Six new cases and the Honors question wait for Sam; a second pass with a model is priced before it runs, and the price goes to Sam first."
   },
   "changes": [
+    {
+      "at": "2026-11-12T21:05:44Z",
+      "text": "Re-clustering Step 1 revised on COBIx's four points: one district is one voice, two exhibit reach columns, cases chosen by reach, a subject code check, and a stop when a live read returns no rows. 678 confirmed, 760 proposed splits, 71 merge candidates, 348 with too little text. Pull request 3182 merged."
+    },
     {
       "at": "2026-11-12T14:50:00Z",
       "text": "Re-clustering Step 1 reads 1,857 M-IDs with outcomes text on two or more members: 557 confirmed, 760 proposed splits, 221 merge candidates, 319 with too little text. A report only; pull request 3165 merged."

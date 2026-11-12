@@ -1078,3 +1078,19 @@ drafter. Now:
   first (CPLBrain `0e4b1091`), then the public copies took the header's lengths. `tests/public_target_floor.test.js`
   fails a public page whose target floor drops below 25px.
 - Carried untouched: `iaca-mvpmcjyl` (requested 2026-10-26, no note).
+
+## Moved from the lane (S643)
+
+**What stays in a repo:** build scripts, specs, narration text and voice clips (a
+library voice can be withdrawn), the vault's companion notes, and a film a public
+page plays (the funding explainer's cuts stay where Pages serves them). Pipeline
+outputs (`reports/*.docx`) and source documents under `docs/reference/` are
+inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
+claude.ai.
+
+- **Reading the folder:** a session reaches it only through the Microsoft 365 connector (claude.ai connectors,
+  connected by Sam with his RCCD account; read and search, no upload). This environment's network refuses
+  `studentrcc.sharepoint.com` too.
+- **The tab:** a SharePoint link files under the stored home `drive` (the `cpl_library_home_ck` value for the
+  team's file home, so no schema change) and reads *Team SharePoint*; a record still linking Google Drive reads
+  *Google Drive* (`homeOf`). Guarded by `tests/library.test.js` (7).
