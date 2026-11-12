@@ -198,7 +198,7 @@
           drafts: {},
           adopt: null, adoptErr: false, open: null, links: null },
     // Related titles and the rename batch: the file, its titles indexed, and this visit's edits and decisions.
-    rel: { data: null, error: null, idx: [], by: {}, all: null },
+    rel: { data: null, error: null, idx: [], by: {}, all: null, plans: null, act: null, folded: {} },
     // Course details beside a Review card (Sam, 2026-11-12): the card it is open on, and the files read for it.
     cd: { open: null, ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {} },
     rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
@@ -905,11 +905,17 @@
         ? "Canonical titles for " + got.family + (got.code ? " " + got.code : "") + " certifications. Fold this card into one, or keep the proposed title."
         : "Canonical titles with the same issuer or the same words. Fold this card into one, or keep the proposed title." }));
       if (!got.rows.length) { body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No title in the reference is close to this one." })); return; }
-      var rows = state.rel.all === o.key ? got.rows : got.rows.slice(0, REL_MAX), last = -1, ul = null;
+      // Review's panel names the statewide or most-used title and sorts it first (Sam, 2026-11-12).
+      var mark = o.actions ? relAligned(got) : null, all = got.rows;
+      if (mark) all = [{ o: mark.o, tier: "mark" }].concat(got.rows.filter(function (x) { return x.o !== mark.o; }));
+      var act = o.actions ? relAct(o, got, mark, draw) : null;
+      if (act) body.appendChild(relActBar(o, act, draw));
+      var rows = state.rel.all === o.key ? all : all.slice(0, REL_MAX), last = -1, ul = null;
       rows.forEach(function (x) {
         if (x.tier !== last) {
           last = x.tier;
-          if (got.tiers[x.tier]) body.appendChild(el("h5", { cls: "exh-rel-tier", text: got.tiers[x.tier] }));
+          var th = x.tier === "mark" ? (mark.kind === "statewide" ? "The statewide exhibit" : "The most used title") : got.tiers[x.tier];
+          if (th) body.appendChild(el("h5", { cls: "exh-rel-tier", text: th }));
           ul = el("ul", { cls: "exh-rel-list" });
           body.appendChild(ul);
         }
@@ -917,11 +923,33 @@
         var rf = famOf(r.t);
         var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
           r.proposed ? "Proposed, not in the reference yet" : "In the reference"].concat(rf ? ["Family: " + rf.name] : []).join(" · ");
-        var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta }),
-          pathsNode(r.paths, r.issuer)]);
+        var why = act ? relWhyNot(r.t, act) : null, can = act && why === "";
+        var head = el("b", { cls: "exh-rel-t", text: r.t });
+        if (can) {
+          var cb = el("input", { type: "checkbox", id: "exh-rel-cb-" + relIdOf(r.t), cls: "exh-rel-cb" });
+          cb.checked = !!act.checked[r.t];
+          cb.addEventListener("change", function () { if (cb.checked) act.checked[r.t] = true; else delete act.checked[r.t]; act.note = ""; });
+          head = el("label", { cls: "exh-rel-pick", "for": cb.id }, [cb, head]);
+        }
+        var li = el("li", null, [head]);
+        var marks = [];
+        if (o.actions && relStatewide(r.t)) marks.push("Statewide exhibit");
+        if (mark && mark.kind === "popular" && mark.o === r) marks.push("Most used");
+        if (marks.length) li.appendChild(el("span", { cls: "exh-rel-mark exh-small", text: marks.join(" · ") }));
+        li.appendChild(el("span", { cls: "exh-muted exh-small", text: meta }));
+        var pn = pathsNode(r.paths, r.issuer);
+        if (pn) li.appendChild(pn);
         if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
+        if (act && state.rel.folded[r.t]) li.appendChild(el("span", { cls: "exh-rel-pend exh-small",
+          text: "Saved this visit: folds into " + state.rel.folded[r.t] + ". The daily dry run pairs them, and a reviewed apply merges the records." }));
+        else if (act && r.t === act.target) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "The checked titles change to this one." }));
+        else if (why) li.appendChild(el("span", { cls: "exh-rel-why exh-small", text: why }));
         if (r.t === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
         else li.appendChild(word("Use this title", function () { o.use(r); draw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + r.t }));
+        // Sam, 2026-11-12: "i need to be able to use this title on the sidebar candidates that need it". One row,
+        // the same confirmation and the same rows as the checked titles.
+        if (can && act.ok) li.appendChild(word("Change to " + act.target, function () { relAsk(act, [r.t]); }, { cls: "exh-w exh-small",
+          "aria-label": "Change " + r.t + " to " + act.target }));
         ul.appendChild(li);
       });
       if (got.rows.length > REL_MAX) {
@@ -935,6 +963,243 @@
     return box;
   }
   function withRelated(cardEl, o) { return el("div", { cls: "exh-with-rel" }, [cardEl, relatedPanel(o)]); }
+
+  /* ── The statewide or most-used title, and related titles changed from the panel (Sam, 2026-11-12) ──
+     "for the firefighter academy example, it should be renamed "Firefighter 1" which is the statewide exhibit ... it
+     would be good to see some indication of the alignment with a statewide exhibit ... I would like to be able to
+     change all those needing it to firefighter 1 in the sidebar." And: "i need to be able to use this title on the
+     sidebar candidates that need it".
+     The alignment: among the related titles that share words with the card (an ASE card: the same test), in the
+     reference, a statewide exhibit wins (fact-sheet/statewide_recs.js, the List's Basis column's source; the
+     reference's own statewide flag stands in when that list did not load), the most local titles, then the most
+     colleges, leading. With none statewide, the most used title is named only when it has at least POPULAR_MIN local
+     titles and more than every other related title (a tie names none).
+     The change: a reference title folds into another reference title with the two rows the rename batch writes for a
+     fold (renameRows: unified_title_override and unified_title_merge_confirm, both naming the target, on the title's
+     _CREDENTIAL_REVIEW:: key, under the signed-in reviewer), posted by postRows. The daily dry run pairs them and the
+     reviewed rename apply merges the records; the old title stays a search alias (kb/credential_aliases.py). Before
+     the apply, the List's Edit back to the title's own name clears the rename (the override saved as "", which the dry
+     run skips); after it, kb/_cred_rename_undo.py on the apply's receipt. Nothing is checked by default, and a title
+     inside a ruled plan, the rename batch, a saved rename or fold, or one other titles wait to fold into, has no
+     checkbox and says why; the saved rows are read live before the confirmation is offered and again at the save. */
+  var DRYRUN_ALIAS_URL = "kb/cred_rename_dryrun/alias_map.json";
+  var POPULAR_MIN = 3;
+  function loadRelatedPlans() {
+    return fetch(DRYRUN_ALIAS_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) {
+        var b = {};
+        function block(t, why) { if (t && !b[t]) b[t] = why; }
+        var ruled = (d && d.ruled) || {};
+        (ruled.applied || []).concat(ruled.held || []).forEach(function (e) {
+          block(e.old, "In a ruled plan (" + (e.plan_id || "a decision sheet") + ") that renames it to " + e["new"] + ".");
+          block(e["new"], "A ruled plan (" + (e.plan_id || "a decision sheet") + ") renames another title to it.");
+        });
+        [["renames", "renamed"], ["merges", "folded"]].forEach(function (p) {
+          var m = (d && d[p[0]]) || {};
+          Object.keys(m).forEach(function (old) {
+            block(old, "Saved to be " + p[1] + " into " + m[old] + "; the rename apply carries it.");
+            block(m[old], "Another title is saved to be " + p[1] + " into it.");
+          });
+        });
+        ((d && d.held_family) || []).concat((d && d.held_emptied) || []).forEach(function (e) {
+          block(e.old, "Saved to fold into " + e.target + "; the rename run holds it (" + String(e.why || "").replace(/^held:\s*/, "") + ").");
+        });
+        state.rel.plans = { blocked: b, at: d && d._generated_at };
+      })
+      .catch(function (e) { state.rel.plans = { error: String(e && e.message || e) }; });
+  }
+  function loadStatewideRecs() {
+    if (window.CPL_STATEWIDE_RECS) return Promise.resolve();
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") return Promise.resolve();
+    return new Promise(function (res) { T.loadScript(STATEWIDE_RECS, "CPL_STATEWIDE_RECS", res); });
+  }
+  var swIdx = null;
+  function relStatewide(t) {
+    var S = window.CPL_STATEWIDE_RECS;
+    if (S) return Object.prototype.hasOwnProperty.call(S, t);
+    var R = window.CPL_CREDENTIAL_REFERENCE;
+    if (!R || !Array.isArray(R.unified_titles)) return false;
+    if (!swIdx) { swIdx = {}; R.unified_titles.forEach(function (x) { if (x.statewide) swIdx[x.ut] = 1; }); }
+    return !!swIdx[t];
+  }
+  /* The statewide exhibit or the most used title among the related titles, or null. */
+  function relAligned(got) {
+    var near = got.rows.filter(function (x) { return !x.o.proposed && (got.family ? x.tier === 0 : x.tier <= 1); });
+    function lead(list) { return list.slice().sort(function (a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || a.o.t.localeCompare(b.o.t); })[0]; }
+    var sw = near.filter(function (x) { return relStatewide(x.o.t); });
+    if (sw.length) return { kind: "statewide", o: lead(sw).o };
+    var top = lead(near);
+    if (!top || top.o.locals < POPULAR_MIN) return null;
+    if (near.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
+    return { kind: "popular", o: top.o };
+  }
+  function relAlignWords(a) {
+    var r = a.o, n = fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s")
+      + (r.adopted ? ", articulated at " + fmt(r.adopted) + " college" + (r.adopted === 1 ? "" : "s") : "");
+    return a.kind === "statewide" ? "This looks like the statewide exhibit " + r.t + " (" + n + "). "
+      : "A popular title for this is " + r.t + " (" + n + "). ";
+  }
+  function relIdOf(t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
+  function relInRef(t) { var x = state.rel.by && state.rel.by[t]; return !!(x && !x.proposed); }
+  /* This visit's state for one card's panel: the target, the checks, the confirmation, the live rows. Never stored. */
+  function relAct(o, got, mark, redraw) {
+    var a = state.rel.act;
+    if (!a || a.key !== o.key) a = state.rel.act = { key: o.key, target: "", checked: {}, ask: null, busy: false, note: "", live: null, liveKey: "" };
+    var box = o.title.value.trim(), seen = {}, opts = [];
+    function add(t) { if (t && !seen[t] && relInRef(t)) { seen[t] = 1; opts.push(t); } }
+    if (mark) add(mark.o.t);
+    add(box);
+    got.rows.forEach(function (x) { add(x.o.t); });
+    a.opts = opts;
+    if (opts.indexOf(a.target) < 0) a.target = opts[0] || "";
+    delete a.checked[a.target];
+    // The live rows for every title the panel could change, and the target.
+    var want = opts.slice().sort(), k = want.join("\u0001");
+    if (a.liveKey !== k) { a.liveKey = k; a.live = null; relLiveLoad(want).then(function (live) { if (a.liveKey === k) { a.live = live; redraw(); } }); }
+    a.targetWhy = !a.target ? "No related title is in the reference, so nothing can take the others in." : relTargetWhyNot(a.target, a);
+    a.ok = !a.targetWhy;
+    return a;
+  }
+  /* The saved rename rows on these titles, and the titles other rows rename or fold into them, read live. */
+  function relLiveLoad(titles) {
+    var key = anonKey();
+    if (!key || !titles.length) return Promise.resolve({ error: key ? "" : "no reader key" , override: {}, merge: {}, into: {} });
+    function q(t) { return encodeURIComponent('"' + t.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); }
+    var base = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=in.(" + FIELD_CRED_TITLE + "," + FIELD_MERGE_CONFIRM + ")";
+    function paged(url, from, acc) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + 999) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) { acc = acc.concat(rows || []); return rows && rows.length === 1000 ? paged(url, from + 1000, acc) : acc; });
+    }
+    var own = base + "&course_id=in.(" + titles.map(function (t) { return q(CRED_PREFIX + t); }).join(",") + ")";
+    var into = base + "&value=in.(" + titles.map(q).join(",") + ")";
+    return Promise.all([paged(own, 0, []), paged(into, 0, [])]).then(function (got) {
+      var out = { error: "", override: {}, merge: {}, into: {} };
+      got[0].concat(got[1]).forEach(function (row) {
+        var t = String(row.course_id || "");
+        if (t.indexOf(CRED_PREFIX) !== 0) return;
+        t = t.slice(CRED_PREFIX.length);
+        var v = row.value || "";
+        if (row.field === FIELD_CRED_TITLE && titles.indexOf(t) >= 0) out.override[t] = v;
+        if (row.field === FIELD_MERGE_CONFIRM && titles.indexOf(t) >= 0) out.merge[t] = v;
+        if (v && v !== t && titles.indexOf(v) >= 0) { (out.into[v] = out.into[v] || {})[t] = 1; }
+      });
+      return out;
+    }).catch(function (e) { return { error: String(e && e.message || e), override: {}, merge: {}, into: {} }; });
+  }
+  /* Why a related title cannot be checked, in words; "" when it can. */
+  function relWhyNot(t, a, live) {
+    live = live || a.live;
+    if (t === a.target || !relInRef(t)) return null;
+    if (state.rel.folded[t]) return null;
+    if (!state.rel.plans) return "Reading the ruled plans…";
+    if (state.rel.plans.error) return "The ruled plans could not be read (" + state.rel.plans.error + "), so it cannot be changed here.";
+    if (renamePending(t)) return "In the rename batch; it is decided there.";
+    if (state.rel.plans.blocked[t]) return state.rel.plans.blocked[t];
+    var f = famOf(t);
+    if (f) return "A member of " + f.name + "; the family's batch names it.";
+    if (!live) return "Reading its saved rows…";
+    if (live.error) return "Its saved rows could not be read (" + live.error + "), so it cannot be changed here.";
+    var v = live.override[t];
+    if (v && v !== t) return v === a.target && live.merge[t] === a.target ? "Already saved to fold into " + a.target + "."
+      : "Already saved to be renamed " + v + "; the rename apply carries it.";
+    var n = Object.keys(live.into[t] || {}).length;
+    if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to fold into it, so it stays until they land.";
+    return "";
+  }
+  function relTargetWhyNot(t, a, live) {
+    live = live || a.live;
+    if (!state.rel.plans || !live) return "Reading the saved rows…";
+    if (state.rel.plans.error) return "The ruled plans could not be read (" + state.rel.plans.error + "), so nothing can be changed here.";
+    if (live.error) return "The saved rows could not be read (" + live.error + "), so nothing can be changed here.";
+    var b = state.rel.plans.blocked[t];
+    if (b && !/into it\.$|to it\.$/.test(b)) return t + " cannot take the others in: " + b;
+    var v = live.override[t];
+    if (v && v !== t) return t + " is itself saved to be renamed " + v + "; choose that title.";
+    if (famOf(t)) return t + " is a family member; its family's batch names it.";
+    if (renamePending(t)) return t + " waits in the rename batch; decide it there first.";
+    return "";
+  }
+  function relLocalsOf(t) { var x = state.rel.by && state.rel.by[t]; return x ? x.locals : 0; }
+  function relAsk(a, titles) {
+    a.note = "";
+    if (!titles.length) { a.note = "Check one or more titles first."; render(); relFocus("exh-rel-note"); return; }
+    a.ask = titles.slice();
+    render();
+    relFocus("exh-rel-ask-h");
+  }
+  function relFocus(id) { var e = document.getElementById(id); if (e) e.focus(); }
+  /* The bar above the list: the target, the one control, the note, and the confirmation. */
+  function relActBar(o, a, draw) {
+    var bar = el("div", { cls: "exh-rel-acts" });
+    if (a.opts.length) {
+      var sel = el("select", { id: "exh-rel-target", cls: "exh-rel-sel" });
+      a.opts.forEach(function (t) { var op = el("option", { value: t, text: t }); if (t === a.target) op.selected = true; sel.appendChild(op); });
+      sel.value = a.target;
+      sel.addEventListener("change", function () { a.target = sel.value; a.ask = null; a.note = ""; render(); relFocus("exh-rel-target"); });
+      bar.appendChild(el("label", { cls: "exh-small exh-rel-lab", "for": "exh-rel-target" }, ["Change related titles to"]));
+      bar.appendChild(sel);
+    }
+    if (a.ok) bar.appendChild(word("Change the checked titles to " + a.target, function () {
+      relAsk(a, Object.keys(a.checked).filter(function (t) { return relWhyNot(t, a) === ""; }));
+    }, { cls: "exh-w exh-small", id: "exh-rel-go" }));
+    else if (a.targetWhy) bar.appendChild(el("p", { cls: "exh-muted exh-small", text: a.targetWhy }));
+    bar.appendChild(el("p", { cls: "exh-status exh-small", id: "exh-rel-note", role: "status", "aria-live": "polite", tabindex: "-1", text: a.note || "" }));
+    if (a.ask && a.ask.length) {
+      var n = a.ask.length, locals = a.ask.reduce(function (s, t) { return s + relLocalsOf(t); }, 0);
+      var box = el("div", { cls: "exh-rel-confirm", role: "group", "aria-labelledby": "exh-rel-ask-h" });
+      box.appendChild(el("p", { id: "exh-rel-ask-h", tabindex: "-1", role: "status", "aria-live": "polite", cls: "exh-strong exh-small",
+        text: fmt(n) + (n === 1 ? " title, " : " titles, ") + fmt(locals) + " local title" + (locals === 1 ? "" : "s") + ", will fold into " + a.target + "." }));
+      box.appendChild(el("ul", { cls: "exh-small exh-rel-asklist" }, a.ask.map(function (t) {
+        var k = relLocalsOf(t);
+        return el("li", { text: t + ", " + fmt(k) + " local title" + (k === 1 ? "" : "s") + ": folds into " + a.target + "; its name stays a search alias." });
+      })));
+      box.appendChild(el("p", { cls: "exh-muted exh-small", text: "The daily dry run pairs them and a reviewed rename apply merges the records. "
+        + "Nothing a college or a student sees changes until then." }));
+      box.appendChild(el("div", { cls: "exh-acts" }, [
+        word(a.busy ? "Saving…" : "Save", function () { if (!a.busy) relSave(a); }, a.busy ? { disabled: "disabled", id: "exh-rel-save" } : { id: "exh-rel-save" }),
+        word("Cancel", function () { a.ask = null; a.note = "Nothing was saved."; render(); relFocus(a.ok ? "exh-rel-go" : "exh-rel-note"); }, { id: "exh-rel-cancel" })]));
+      bar.appendChild(box);
+    }
+    return bar;
+  }
+  /* Save: the reviewer signed in, the rows read again, then the rename batch's fold rows for each title. */
+  function relSave(a) {
+    var titles = a.ask.slice(), target = a.target;
+    a.busy = true; render(); relFocus("exh-rel-ask-h");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return relLiveLoad(titles.concat([target]).sort()).then(function (live) {
+        var why = relTargetWhyNot(target, a, live);
+        if (why) throw new Error("held:" + why);
+        titles.forEach(function (t) { var w = relWhyNot(t, a, live); if (w) throw new Error("held:" + t + ": " + w); });
+        var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: target, merge: true }; }), skips: [] };
+        return postRows(sess, renameRows(sess.email, plan));
+      });
+    }).then(function () {
+      var writes = [[FIELD_CRED_TITLE, target], [FIELD_MERGE_CONFIRM, target]];
+      titles.forEach(function (t) {
+        state.rel.folded[t] = target;
+        delete a.checked[t];
+        if (a.live) { a.live.override[t] = target; a.live.merge[t] = target; }
+        listApply({ ut: t }, writes);
+      });
+      a.busy = false; a.ask = null;
+      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title folds" : " titles fold") + " into " + target
+        + ". The daily dry run pairs them and a reviewed rename apply merges the records; each old title stays a search alias. They are in the List's Changed this visit.";
+      render(); relFocus("exh-rel-note");
+    }).catch(function (e) {
+      var m = String(e && e.message || e);
+      a.busy = false; a.ask = null;
+      a.note = m === "signin" ? "Sign in as a reviewer to save. Nothing was saved."
+        : m.indexOf("held:") === 0 ? "Nothing was saved: " + m.slice(5) + " The panel shows the rows as they stand now."
+        : "The save did not reach the reference (" + m + "). Nothing changed; try again.";
+      if (m.indexOf("held:") === 0) { a.liveKey = ""; }
+      render(); relFocus("exh-rel-note");
+    });
+  }
 
   /* The rename batch. */
   function renameBatches() { return (state.rel.data && state.rel.data.batches) || []; }
@@ -1776,6 +2041,21 @@
         (h.step === CONFLICT ? "The reference also names: " : "Also proposed: ") + alt + " ",
         word("Use it", function () { title.value = alt; keepDraft(); exists.hidden = true; title.focus(); }, { cls: "exh-w exh-small" })]));
     });
+    // The statewide exhibit or the most used title among the related ones (Sam, 2026-11-12), in words; Use it does
+    // what the panel's Use this title does. Follows the title as it is edited.
+    var align = el("p", { cls: "exh-small exh-align" });
+    function drawAlign() {
+      while (align.firstChild) align.removeChild(align.firstChild);
+      var a = state.rel.data ? relAligned(relatedFor(title.value.trim(), h.raw, issuer.value.trim() || h.issuer, [])) : null;
+      align.hidden = !a || a.o.t === title.value.trim();
+      if (align.hidden) return;
+      align.appendChild(document.createTextNode(relAlignWords(a)));
+      align.appendChild(word("Use it", function () { useRow(a.o); title.dispatchEvent(new Event("input")); },
+        { cls: "exh-w exh-small", "aria-label": "Use it: " + a.o.t }));
+    }
+    title.addEventListener("input", drawAlign);
+    drawAlign();
+    canon.appendChild(align);
     c.appendChild(canon);
 
     var typed = el("div", { cls: "exh-typed" }, [el("span", { cls: "exh-cl", text: "Local titles" })]);
@@ -1895,15 +2175,16 @@
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
     if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
-    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [],
-      use: function (r) {
-        title.value = r.t;
-        // The title's own issuer comes with it, as if picked.
-        if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
-        keepDraft(); showAse(); exists.hidden = true;
-        state.note = "";
-        title.focus();
-      } });
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true,
+      use: function (r) { useRow(r); drawAlign(); } });
+    function useRow(r) {
+      title.value = r.t;
+      // The title's own issuer comes with it, as if picked.
+      if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
+      keepDraft(); showAse(); exists.hidden = true;
+      state.note = "";
+      title.focus();
+    }
   }
 
   function finder(list) {
@@ -4591,6 +4872,21 @@
     ".exh-rel-paths { overflow-wrap:anywhere; }",
     ".exh-rb-table .exh-rel-paths { display:block; }",
     ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",
+    /* The statewide or most-used mark, the reason a title cannot be checked, and the panel's change bar (2026-11-12). */
+    ".exh-rel-mark { color:var(--text-strong); font-weight:600; }",
+    ".exh-rel-why { color:var(--text-muted); overflow-wrap:anywhere; }",
+    ".exh-rel-pick { display:flex; align-items:flex-start; gap:8px; min-height:24px; cursor:pointer; min-width:0; }",
+    ".exh-rel-cb { width:18px; height:18px; margin:2px 0 0; flex:0 0 auto; accent-color:var(--seal-blue); }",
+    ".exh-rel-cb:focus-visible, .exh-rel-sel:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-rel-acts { display:grid; gap:6px; padding:8px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-rel-acts p { margin:0; }",
+    ".exh-rel-lab { color:var(--text-muted); }",
+    ".exh-rel-sel { min-height:32px; max-width:100%; min-width:0; font:inherit; font-size:.9rem; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:2px 6px; }",
+    ".exh-rel-confirm { display:grid; gap:6px; border-left:3px solid var(--seal-blue-text); background:var(--surface-subtle); padding:8px 12px; min-width:0; }",
+    ".exh-rel-confirm p:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-rel-asklist { margin:0; padding-left:1.1em; display:grid; gap:2px; overflow-wrap:anywhere; }",
+    ".exh-align { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-align[hidden] { display:none; }",
     ".exh-cd-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }",
     ".exh-cd-head h4 { margin:0; }",
     ".exh-cd-head h4:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
@@ -4625,7 +4921,7 @@
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null; state.qLens = "";
-    state.rb.ask = false; state.rel.all = null;
+    state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
@@ -4675,7 +4971,9 @@
       loadStudents().then(render);
       if (state.filter === RENAME) loadRenameStudents().then(render);
     });
-    return Promise.all([load(), loadSweep(), loadRules(), loadRelated()]).then(function () {
+    // The statewide list names the statewide exhibit on a Review card; a script that never answers holds nothing up.
+    loadStatewideRecs().then(function () { if (state.view === "review") render(); });
+    return Promise.all([load(), loadSweep(), loadRules(), loadRelated(), loadRelatedPlans()]).then(function () {
       render();
       return Promise.all([loadStudents(), state.filter === RENAME ? loadRenameStudents() : null]);
     }).then(render);
@@ -4693,7 +4991,7 @@
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
-    loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

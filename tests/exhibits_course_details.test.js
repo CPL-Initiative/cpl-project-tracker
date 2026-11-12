@@ -90,7 +90,8 @@ function esc(w, target) { target.dispatchEvent(new w.KeyboardEvent("keydown", { 
     btn && btn.tagName === "BUTTON" && txt(btn) === "Course details" && /^Source:/.test(txt(btn.parentNode))
     && !!btn.closest("section.exh-card") && btn.getAttribute("aria-expanded") === "false");
   check("Related titles shows beside the card before it is pressed", !!aside(t.d, "Related titles") && !aside(t.d, "Course details"));
-  check("nothing large is read until it is pressed", t.loaded.length === 0);
+  // The Fact Sheet's statewide list (47 KB) is read at boot: the card names the statewide exhibit from it (S642).
+  check("nothing large is read until it is pressed", t.loaded.filter(function (n) { return n !== "fact-sheet/statewide_recs.js"; }).length === 0);
 
   btn.click(); await settle();
   let p = aside(t.d, "Course details");

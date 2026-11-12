@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3597,
+     "line": 3878,
      "tabs": [
       "exhibits"
      ]
@@ -5797,7 +5797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1701,
+     "line": 1966,
      "tabs": [
       "exhibits"
      ]
@@ -6180,7 +6180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2926,
+     "line": 3207,
      "tabs": [
       "exhibits"
      ]
@@ -6400,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3589,
+     "line": 3870,
      "tabs": [
       "exhibits"
      ]
@@ -6493,7 +6493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3874,
+     "line": 4155,
      "tabs": [
       "exhibits"
      ]
@@ -8291,7 +8291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4163,
+     "line": 4444,
      "tabs": [
       "exhibits"
      ]
@@ -13507,7 +13507,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2704,
+     "line": 2985,
      "tabs": [
       "exhibits"
      ]
@@ -13674,6 +13674,16 @@
   },
   "file:kb/cred_rename_dryrun/alias_map.json": {
    "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 985,
+     "tabs": [
+      "exhibits"
+     ]
+    },
     {
      "id": "workflow:cred-rename-apply.yml",
      "kind": "workflow",
@@ -15191,7 +15201,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3611,
+     "line": 3892,
      "tabs": [
       "exhibits"
      ]
@@ -15302,7 +15312,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2699,
+     "line": 2980,
      "tabs": [
       "exhibits"
      ]
@@ -15497,7 +15507,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3108,
+     "line": 3389,
      "tabs": [
       "exhibits"
      ]
@@ -22295,7 +22305,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1602,
+     "line": 1867,
      "tabs": [
       "exhibits"
      ]
@@ -25489,7 +25499,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1603,
+     "line": 1868,
      "tabs": [
       "exhibits"
      ]
