@@ -407,6 +407,34 @@ check("a credit record listing ESL 12A takes no hours", R.reconcile(units_rec, "
 check("another college's hours record takes no Victor Valley hours",
       R.reconcile(cs["record"], vv_text, "Hartnell College", cs["award"], steps=vv_steps)[1] == [])
 
+print("tabs_with_prose: an Overview naming every course, the course list in a hidden tab (S639, Victor Valley's EMS)")
+import _program_requirements_pilot as P  # noqa: E402
+ems_courses = [{"code": "EMS 82", "units": 4.5}, {"code": "EMS 83", "units": 3.5}]
+ems_body = ("State Control Number: 38353\nProgram Code: EMS.ALSM2.CA\nProgram Length: 6 months\nThis certificate is for "
+            "successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology.\nOffice Hours")
+ems_tab = ("Course List\nCode\nTitle\nUnits\nRequired Courses\nEMS 82\tParamedic Cardiology\t4.5\n"
+           "EMS 83\tParamedic Pharmacology\t3.5\nTotal Units\t8")
+ems_got = {"body": ems_body, "content": ems_body + ems_tab,
+           "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": ems_tab},
+                         {"label": "PROGRAM MAP", "id": "programmaptextcontainer",
+                          "text": "Suggested Plan of Study\nCareer, salary, and labor market data information."}]}
+fb = P.find_codes(ems_body, ems_courses)
+text, _f, field = P.best_text(ems_got, fb, P.find_codes(ems_got["content"], ems_courses), ems_courses)
+check("without the opt-in the Overview alone is read, as every college reads it today",
+      field == "innerText" and "Total Units" not in text)
+text, _f, field = P.best_text(ems_got, fb, P.find_codes(ems_got["content"], ems_courses), ems_courses, True)
+check("with it, the REQUIREMENTS tab and its 'Total Units 8' are appended",
+      field == "innerText+tabs" and text.endswith("Total Units\t8") and "[Tab: REQUIREMENTS]" in text)
+shown = dict(ems_got, body=ems_body + "\n" + ems_tab)
+check("a page whose visible text prints its own Total Units line is read as before",
+      P.best_text(shown, P.find_codes(shown["body"], ems_courses), {}, ems_courses, True)[2] == "innerText")
+other = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Course List\nNURS 221\tNursing\t12\nTotal Units\t12"}])
+check("a hidden tab that names fewer of the courses is not appended",
+      P.best_text(other, fb, {}, ems_courses, True)[2] == "innerText")
+check("Victor Valley's entry opts in; no other college does",
+      R.load_steps()[VV].get("tabs_with_prose") is True
+      and [c for c, e in R.load_steps().items() if e.get("tabs_with_prose")] == [VV])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
