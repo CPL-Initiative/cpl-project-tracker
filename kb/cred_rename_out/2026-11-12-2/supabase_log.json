@@ -1,0 +1,266 @@
+{
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-11-12-2/alias_map.json",
+  "renames_processed": 3,
+  "merges_processed": 1,
+  "_state": "filed",
+  "_applied_at": "2026-11-12T05:14:55Z",
+  "ok": 13,
+  "fail": 0,
+  "no_op": 0,
+  "carried": 0,
+  "log": [
+    {
+      "old_ut": "Automotive Technology (ASE A5 Brakes)",
+      "new_ut": "Brakes (ASE A5 standards)",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A5 Brakes)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A5 Brakes)",
+      "new_ut": "Brakes (ASE A5 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A5 Brakes)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_ut": "Heating and Air Conditioning (ASE A7 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning (ASE A7 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_ut": "Heating and Air Conditioning (ASE A7 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Heating and Air Conditioning (ASE A7 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_ut": "Heating and Air Conditioning (ASE A7 standards)",
+      "kind": "rename",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "new_ut": "Heating and Air Conditioning (ASE A7 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A8 Engine Performance)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A8 Engine Performance)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A8 Engine Performance)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Engine Performance (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "merge",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 Engine Performance)",
+      "op": "delete",
+      "superseded_by_target": true,
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Engine Performance (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "merge",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 Engine Performance)",
+      "op": "delete",
+      "superseded_by_target": true,
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Engine Performance (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "merge",
+      "field": "unified_title_merge_confirm",
+      "before_row": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 Engine Performance)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Engine Performance (ASE A8 Engine Performance)",
+      "new_ut": "Engine Performance (ASE A8 standards)",
+      "kind": "merge",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:55.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Engine Performance (ASE A8 Engine Performance)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    }
+  ]
+}

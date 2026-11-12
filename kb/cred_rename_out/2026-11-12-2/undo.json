@@ -1,0 +1,187 @@
+{
+  "groups": {
+    "Brakes (ASE A5 standards)": [
+      "Automotive Technology (ASE A5 Brakes)"
+    ],
+    "Engine Performance (ASE A8 standards)": [
+      "Automotive Technology (ASE A8 Engine Performance)",
+      "Engine Performance (ASE A8 Engine Performance)"
+    ],
+    "Heating and Air Conditioning (ASE A7 standards)": [
+      "Automotive Technology (ASE A7 Heating and Air Conditioning)"
+    ]
+  },
+  "_about": "Every value kb/_cred_rename_apply.py changed in this apply, before and after. kb/_cred_rename_undo.py reverses it. A key absent before (a rename's new title) or after (a folded or renamed-away title) is null.",
+  "_applied_at": "2026-11-12T05:14:50Z",
+  "credentials": {
+    "Automotive Technology (ASE A5 Brakes)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:36.625581+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Automotive Brake System"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE A7 Heating and Air Conditioning)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:05.208197+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "after": null
+    },
+    "Automotive Technology (ASE A8 Engine Performance)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:10.951595+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automotive Technology (ASE A8 Engine Performance Certification)"
+        }
+      ],
+      "after": null
+    },
+    "Brakes (ASE A5 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:36.625581+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_renamed_from": "Automotive Brake System"
+        }
+      ]
+    },
+    "Engine Performance (ASE A8 Engine Performance)": {
+      "before": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:33:26.94443+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Engine Performance"
+        }
+      ],
+      "after": null
+    },
+    "Engine Performance (ASE A8 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:10.951595+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_renamed_from": "Automotive Technology (ASE A8 Engine Performance Certification)"
+        }
+      ]
+    },
+    "Heating and Air Conditioning (ASE A7 standards)": {
+      "before": null,
+      "after": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:38:05.208197+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ]
+    }
+  },
+  "unified_titles": {
+    "Automotive Brake Systems": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "Automotive Brake Systems AUTO 036 Cx": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "Credit by Exam AUTO 106 Automotive Brake System": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": {
+      "before": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "after": "Heating and Air Conditioning (ASE A7 standards)"
+    },
+    "Brakes - Credit by Exam (ATEC 14 )": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "Engine Performance - Credit by Exam (ATEC 23 )": {
+      "before": "Engine Performance (ASE A8 Engine Performance)",
+      "after": "Engine Performance (ASE A8 standards)"
+    },
+    "Noncredit for AUTO A5": {
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    "Noncredit for AUTO A7": {
+      "before": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "after": "Heating and Air Conditioning (ASE A7 standards)"
+    },
+    "Noncredit for AUTO A8": {
+      "before": "Automotive Technology (ASE A8 Engine Performance)",
+      "after": "Engine Performance (ASE A8 standards)"
+    }
+  },
+  "articulations": [
+    {
+      "course_id": "AUTO M1073",
+      "exhibit_id": "MAPCBEN-ABS-1-001",
+      "exhibit_title": "Automotive Brake Systems",
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    },
+    {
+      "course_id": "AUTO M1073",
+      "exhibit_id": "MAPCxS-ABSA-1-001",
+      "exhibit_title": "Automotive Brake Systems AUTO 036 Cx",
+      "before": "Automotive Technology (ASE A5 Brakes)",
+      "after": "Brakes (ASE A5 standards)"
+    }
+  ],
+  "fold_id": "2026-11-12-2@2026-11-12T05:14:50Z"
+}

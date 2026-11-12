@@ -11005,7 +11005,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive (Generic)' (conf 0.4)."
   },
   "Automotive Brake Systems": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -11030,7 +11030,7 @@
     "_notes": null
   },
   "Automotive Brake Systems AUTO 036 Cx": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -44321,7 +44321,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -46154,7 +46154,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam AUTO 106 Automotive Brake System": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -50501,7 +50501,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": {
-    "unified_title": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+    "unified_title": "Heating and Air Conditioning (ASE A7 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -58356,7 +58356,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Brakes - Credit by Exam (ATEC 14 )": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -59421,7 +59421,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Engine Performance - Credit by Exam (ATEC 23 )": {
-    "unified_title": "Engine Performance (ASE A8 Engine Performance)",
+    "unified_title": "Engine Performance (ASE A8 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60465,7 +60465,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Suspension and Steering' on 2026-11-01."
   },
   "Noncredit for AUTO A5": {
-    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "unified_title": "Brakes (ASE A5 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60487,7 +60487,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical Systems' on 2026-10-31."
   },
   "Noncredit for AUTO A7": {
-    "unified_title": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+    "unified_title": "Heating and Air Conditioning (ASE A7 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60495,7 +60495,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO A8": {
-    "unified_title": "Automotive Technology (ASE A8 Engine Performance)",
+    "unified_title": "Engine Performance (ASE A8 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
