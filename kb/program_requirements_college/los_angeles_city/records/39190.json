@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "WORKPLACE SUCCESS I – CREATIVITY IN THE WORKPLACE",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7656,
+  "input_tokens": 7310,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7656,
-    "output_tokens": 524,
+    "input_tokens": 7310,
+    "output_tokens": 756,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 524,
+  "output_tokens": 756,
   "output_tokens_details": {
-   "thinking_tokens": 0
+   "thinking_tokens": 169
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0411,
- "ms": 4822,
- "seconds": 5.2,
+ "cost_usd": 0.04436,
+ "ms": 6570,
+ "seconds": 6.8,
  "parts": null,
  "error": null,
  "score": {
@@ -159,9 +159,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total taken from 'Total Lecture Hrs: 108' (printed as 'T otal Lecture Hrs: 108'); the program is counted in hours.",
-   "The catalog prints the BSICSKL 076CE title as 'SUCCESSFUL CREATIVITY AND INNOVATION IN THE WORKPLACE'. The state file has the words in the other order ('SUCCESSFUL INNOVATION AND CREATIVITY IN THE WORKPLACE'). The code matches."
+   "Noncredit Certificate of Completion counted in hours; total_units is the printed 'Total Lecture Hrs: 108'.",
+   "Catalog prints the BSICSKL 076CE title as 'SUCCESSFUL CREATIVITY AND INNOVATION IN THE WORKPLACE', while the state file lists 'SUCCESSFUL INNOVATION AND CREATIVITY IN THE WORKPLACE'; same code, word order differs.",
+   "The description mentions being 'effective, creative leaders in the workforce' but names no specific career, so careers is empty.",
+   "Only the Workplace Success I section was read; the following Workplace Success II and ESL sections belong to other programs."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "b7b1c50bbcc1389b",
+ "source_codes": [
+  "BSICSKL70CE",
+  "BSICSKL76CE"
+ ],
+ "source_coverage": 1.0
 }

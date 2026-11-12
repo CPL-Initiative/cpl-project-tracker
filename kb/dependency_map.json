@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 875,
+  "file_datasets": 876,
   "external_services": 195,
   "consumers": 560,
   "workflows": 67,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3454,
+     "line": 3597,
      "tabs": [
       "exhibits"
      ]
@@ -5791,6 +5791,16 @@
      "tabs": [
       "coci-lookup"
      ]
+    },
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 1701,
+     "tabs": [
+      "exhibits"
+     ]
     }
    ],
    "served": true,
@@ -6170,7 +6180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2783,
+     "line": 2926,
      "tabs": [
       "exhibits"
      ]
@@ -6390,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3446,
+     "line": 3589,
      "tabs": [
       "exhibits"
      ]
@@ -6483,7 +6493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3731,
+     "line": 3874,
      "tabs": [
       "exhibits"
      ]
@@ -8281,7 +8291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4020,
+     "line": 4163,
      "tabs": [
       "exhibits"
      ]
@@ -13510,7 +13520,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2561,
+     "line": 2704,
      "tabs": [
       "exhibits"
      ]
@@ -15194,7 +15204,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3468,
+     "line": 3611,
      "tabs": [
       "exhibits"
      ]
@@ -15305,7 +15315,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2556,
+     "line": 2699,
      "tabs": [
       "exhibits"
      ]
@@ -15500,7 +15510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2965,
+     "line": 3108,
      "tabs": [
       "exhibits"
      ]
@@ -16582,6 +16592,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_college/los_angeles_city/kept_passing.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 3689
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/program_requirements_maps_sample.json": {
@@ -19936,7 +19959,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3660
+     "line": 3686
     }
    ],
    "served": false,
@@ -22291,6 +22314,16 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways"
+     ]
+    },
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1602,
+     "tabs": [
+      "exhibits"
      ]
     },
     {
@@ -25504,6 +25537,16 @@
      ]
     },
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1603,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:unified_courses.js",
      "kind": "module",
      "direction": "read",
@@ -26389,7 +26432,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 503,
+     "line": 505,
      "tabs": [
       "exhibits"
      ]
@@ -26419,7 +26462,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 391,
+     "line": 393,
      "tabs": [
       "exhibits"
      ]
@@ -26792,7 +26835,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3680
+     "line": 3706
     }
    ],
    "main_committers": []
@@ -26804,7 +26847,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3767
+     "line": 3793
     }
    ],
    "main_committers": []
@@ -28274,7 +28317,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 479,
+     "line": 481,
      "tabs": [
       "exhibits"
      ]
@@ -28289,7 +28332,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 502,
+     "line": 504,
      "tabs": [
       "exhibits"
      ]
@@ -28810,7 +28853,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 426,
+     "line": 428,
      "tabs": [
       "exhibits"
      ]
@@ -28820,7 +28863,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 637,
+     "line": 639,
      "tabs": [
       "exhibits"
      ]

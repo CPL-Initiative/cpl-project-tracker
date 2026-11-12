@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Behavior Technician: Autism",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11244,
+  "input_tokens": 10188,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11244,
-    "output_tokens": 964,
+    "input_tokens": 10188,
+    "output_tokens": 810,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 964,
+  "output_tokens": 810,
   "output_tokens_details": {
-   "thinking_tokens": 338
+   "thinking_tokens": 216
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06426,
- "ms": 8340,
- "seconds": 8.6,
+ "cost_usd": 0.05695,
+ "ms": 7018,
+ "seconds": 7.2,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -128,8 +128,7 @@
     "Explain the duties of a behavior technician."
    ],
    "careers": [
-    "Registered Behavior Technician",
-    "applied behavior analysis"
+    "Registered Behavior Technician"
    ]
   },
   "blocks": [
@@ -170,10 +169,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Award is a noncredit Certificate of Completion counted in hours ('Total Lecture Hrs: 93'); course hours (24 + 45 + 24) sum to the stated 93.",
-   "The separate 'Behavior Technician Preparation' certificate (69 hrs, VOC ED 421CE and 422CE only) and the Entrepreneurship for Care Providers certificate (lists VOC ED 421CE at 23.4 hrs) were not used.",
-   "Careers: 'Registered Behavior Technician' and the field 'applied behavior analysis' taken from the program description."
+   "Noncredit certificate counted in hours; total_units is 'Total Lecture Hrs: 93', which matches the sum of the course hours (24 + 45 + 24).",
+   "The adjacent Behavior Technician Preparation certificate (69 hrs) shares VOC ED 421CE and 422CE but was not read for this record.",
+   "VOC ED 421CE is listed at 23.4 hrs in the Entrepreneurship for Care Providers section but at 24 hrs in this section; 24 is recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "65c77aa2370b8f11",
+ "source_codes": [
+  "VOCED421CE",
+  "VOCED422CE",
+  "VOCED425CE"
+ ],
+ "source_coverage": 1.0
 }

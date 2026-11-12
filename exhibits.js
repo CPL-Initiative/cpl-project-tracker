@@ -199,6 +199,8 @@
           adopt: null, adoptErr: false, open: null, links: null },
     // Related titles and the rename batch: the file, its titles indexed, and this visit's edits and decisions.
     rel: { data: null, error: null, idx: [], by: {}, all: null },
+    // Course details beside a Review card (Sam, 2026-11-12): the card it is open on, and the files read for it.
+    cd: { open: null, ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {} },
     rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
     // The Commons' row and its run log, read fresh each visit (commonsFresh()).
     cm: null
@@ -1581,6 +1583,140 @@
       return el("li", { text: [r[0], r[1]].filter(Boolean).join(" ") + ", " + u });
     }));
   }
+  /* ── Course details (Sam, 2026-11-12: "need to see the course details for abt 133 so i can decide what the best
+     title should be. i suspect the ag and business tech title is just their area title and not the course title ...
+     add a link to course details that opens in sidebar view") ──
+     The courses come from files COBI already serves: the exhibit's credit recommendations (course and credit) from
+     statewide_data.js (Exhibit Adoption's file), each course's title, units, TOP and M-ID from
+     unified_courses_members.js, and its catalog description from the COCI Lookup's shard. Read once, on the first
+     press. The panel takes Related titles' place beside the card; Close or Escape gives it back. */
+  function cdNorm(code) { return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  function cdName(n) { return String(n || "").trim().toLowerCase(); }
+  function loadCourseDetails() {
+    var cd = state.cd;
+    if (cd.ready) return Promise.resolve();
+    if (cd.loading) return cd.loading;
+    cd.loading = new Promise(function (resolve) {
+      var T = window.CPL_TABS;
+      if (!T || typeof T.loadScript !== "function") { resolve(); return; }
+      T.loadScript("statewide_data.js", "CPL_STATEWIDE", function () {
+        T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", resolve);
+      });
+    }).then(function () {
+      var S = window.CPL_STATEWIDE, M = window.CPL_UC_MEMBERS;
+      var byId = {}, byCourse = {};
+      ((S && S.exhibits) || []).forEach(function (e) { (e.exhibit_ids || [e.exhibit_id]).forEach(function (id) { if (id) byId[id] = e; }); });
+      if (M && M.members) {
+        var names = (M.colleges || []).map(cdName);
+        Object.keys(M.members).forEach(function (mid) {
+          (M.members[mid] || []).forEach(function (m) {
+            if (!m || !m.n) return;
+            var k = names[m.c] + "|" + cdNorm(m.n);
+            var have = byCourse[k] || (byCourse[k] = { n: m.n, t: m.t, u: m.u, p: m.p, cn: m.cn, mids: [] });
+            if (have.mids.indexOf(mid) < 0) have.mids.push(mid);
+          });
+        });
+      }
+      cd.byId = byId; cd.byCourse = byCourse; cd.topmap = (M && M.topmap) || {};
+      cd.err = !S ? "the exhibit file (statewide_data.js) did not load" : !M ? "the course file (unified_courses_members.js) did not load" : "";
+      cd.ready = true; cd.loading = null;
+    });
+    return cd.loading;
+  }
+  /* The courses behind a card's exhibits: [{ college, code, credit, course|null }]. */
+  function courseDetailsFor(h) {
+    var cd = state.cd, out = [], seen = {};
+    var artNames = (h.art || []).map(college);
+    (h.ids || []).forEach(function (id) {
+      var e = cd.byId[id];
+      if (!e) return;
+      var recs = e.credit_recs || [], idx = e.adopter_rec_idx || {};
+      var who = Object.keys(idx).length ? Object.keys(idx) : (e.adopter_names && e.adopter_names.length ? e.adopter_names : artNames);
+      who.forEach(function (name) {
+        var mine = idx[name] ? idx[name].map(function (i) { return recs[i]; }) : recs;
+        mine.forEach(function (r) {
+          if (!r || !r.course) return;
+          var key = cdName(name) + "|" + cdNorm(r.course);
+          if (seen[key]) return;
+          seen[key] = 1;
+          out.push({ college: name, code: r.course, credit: r.credit || "", id: id, course: cd.byCourse[key] || null });
+        });
+      });
+    });
+    return out;
+  }
+  function closeCourseDetails() {
+    state.cd.open = null;
+    render();
+    var b = document.getElementById("exh-cd-btn");
+    if (b) b.focus();
+  }
+  function openCourseDetails(h) {
+    state.cd.open = h.raw;
+    render();
+    var p = document.getElementById("exh-cd-h");
+    if (p) p.focus();
+    if (!state.cd.ready) loadCourseDetails().then(function () {
+      if (state.cd.open !== h.raw) return;
+      render();
+      var q = document.getElementById("exh-cd-h");
+      if (q) q.focus();
+    });
+  }
+  function courseDetailsPanel(h) {
+    var cd = state.cd;
+    var box = el("aside", { cls: "exh-rel exh-cd", id: "exh-cd", "aria-label": "Course details" });
+    box.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeCourseDetails(); } });
+    box.appendChild(el("div", { cls: "exh-cd-head" }, [
+      el("h4", { cls: "exh-q exh-small", id: "exh-cd-h", tabindex: "-1", text: "Course details" }),
+      word("Close", closeCourseDetails, { cls: "exh-w exh-small", "aria-label": "Close course details and show Related titles" })]));
+    var body = el("div", { cls: "exh-rel-body" });
+    box.appendChild(body);
+    if (!cd.ready) { body.appendChild(el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the courses…" })); return box; }
+    if (cd.err) body.appendChild(el("p", { cls: "exh-muted exh-small", text: "Part of the course data could not be read: " + cd.err + "." }));
+    var rows = courseDetailsFor(h);
+    if (!rows.length) {
+      var at = shortList((h.art || []).map(college).filter(Boolean));
+      body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No course is on file for this exhibit" + (at ? " at " + at : "")
+        + " in the data COBI reads. Open it in MAP to see its courses." }));
+    }
+    rows.forEach(function (r) {
+      var c = r.course;
+      var sec = el("section", { cls: "exh-cd-course", "aria-label": r.code + " at " + r.college });
+      sec.appendChild(el("p", { cls: "exh-muted exh-small", text: r.college + " · " + r.code }));
+      if (c) {
+        sec.appendChild(el("b", { cls: "exh-rel-t exh-cd-title", text: (c.t || "").trim() || "No title on file" }));
+        var facts = el("dl", { cls: "exh-cd-facts exh-small" });
+        function fact(k, v) { if (v) { facts.appendChild(el("dt", { text: k })); facts.appendChild(el("dd", { text: v })); } }
+        fact("Units", c.u ? String(c.u) : "Noncredit");
+        fact("TOP", c.p ? c.p + (cd.topmap[c.p] ? ", " + cd.topmap[c.p] : "") : "");
+        fact("M-ID", c.mids.join(", "));
+        fact("Control number", c.cn || "");
+        fact("Credit recommendation", r.credit);
+        sec.appendChild(facts);
+        var desc = el("p", { cls: "exh-small exh-cd-desc" });
+        sec.appendChild(desc);
+        if (c.cn) {
+          var key = /^[A-Za-z]/.test(c.n) ? c.n.charAt(0).toUpperCase() : "0";
+          var put = function () { var d = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]; desc.textContent = d && d[c.cn] ? d[c.cn] : (d ? "No catalog description on file." : ""); };
+          if (window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]) put();
+          else if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+            desc.textContent = "Reading the catalog description…";
+            window.CPL_TABS.loadScript("coci_lookup_desc_" + key + ".js", null, put);
+          }
+        }
+      } else {
+        sec.appendChild(el("p", { cls: "exh-small", text: "This course is not in the course data COBI reads (unified_courses_members.js)." }));
+        if (r.credit) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r.credit }));
+      }
+      sec.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(r.id), target: "_blank", rel: "noopener", text: r.id + " in MAP" })]));
+      body.appendChild(sec);
+    });
+    if (!rows.length && h.ids && h.ids.length) {
+      body.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(h.ids[0]), target: "_blank", rel: "noopener", text: h.ids[0] + " in MAP" })]));
+    }
+    return box;
+  }
   function studentsLine(h) {
     var s = studentsOf(h);
     var many = h.ids && h.ids.length > 1 ? "these exhibits" : "this exhibit";
@@ -1685,6 +1821,12 @@
         src.appendChild(el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id + " in MAP" }));
       });
       if (h.ids.length > 3) src.appendChild(document.createTextNode(" and " + (h.ids.length - 3) + " more"));
+      var cdOpen = state.cd.open === h.raw;
+      src.appendChild(document.createTextNode(" · "));
+      var cdBtn = word("Course details", function () { if (state.cd.open === h.raw) closeCourseDetails(); else openCourseDetails(h); },
+        { cls: "exh-w exh-small", id: "exh-cd-btn", "aria-expanded": cdOpen ? "true" : "false", "aria-controls": cdOpen ? "exh-cd" : null });
+      cdBtn.addEventListener("keydown", function (e) { if (e.key === "Escape" && state.cd.open === h.raw) { e.preventDefault(); closeCourseDetails(); } });
+      src.appendChild(cdBtn);
       c.appendChild(src);
     }
 
@@ -1752,6 +1894,7 @@
       el("span", { text: (state.cur + 1) + " of " + fmt(list.length) + (state.filter ? " in " + state.filter : "")
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
+    if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
     return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [],
       use: function (r) {
         title.value = r.t;
@@ -4448,6 +4591,15 @@
     ".exh-rel-paths { overflow-wrap:anywhere; }",
     ".exh-rb-table .exh-rel-paths { display:block; }",
     ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",
+    ".exh-cd-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }",
+    ".exh-cd-head h4 { margin:0; }",
+    ".exh-cd-head h4:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-cd-course { display:grid; gap:4px; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-cd-course p { margin:0; overflow-wrap:anywhere; }",
+    ".exh-cd-facts { display:grid; grid-template-columns:max-content minmax(0, 1fr); gap:2px 10px; margin:0; }",
+    ".exh-cd-facts dt { color:var(--text-muted); }",
+    ".exh-cd-facts dd { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-cd-desc { color:var(--text-body); }",
     ".exh-rule-notes p, .exh-rule-notes ol { margin:4px 0; }",
     ".exh-rb-scroll { overflow-x:auto; min-width:0; }",
     ".exh-rb-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.88rem; }",

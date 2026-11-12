@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "KOREAN LANGUAGE AND CIVILIZATION - INTERMEDIATE LEVEL",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9140,
+  "input_tokens": 7487,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9140,
-    "output_tokens": 1139,
+    "input_tokens": 7487,
+    "output_tokens": 1226,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1139,
+  "output_tokens": 1226,
   "output_tokens_details": {
-   "thinking_tokens": 303
+   "thinking_tokens": 358
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05934,
- "ms": 10272,
- "seconds": 10.7,
+ "cost_usd": 0.05447,
+ "ms": 11044,
+ "seconds": 11.2,
  "parts": null,
  "error": null,
  "score": {
@@ -132,7 +132,7 @@
   },
   "blocks": [
    {
-    "name": "REQUIRED COURSES",
+    "name": "REQUIRED COURSES (16 UNITS)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -186,12 +186,21 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes with leading zeros (KOREAN 003, 004, 007, 010, 013, 026); these match closed-list KOREAN 3, 4, 7, 10, 13, 26.",
-   "KOREAN 010 OR KOREAN 013 OR KOREAN 026 is recorded as one required choice with alternatives; 5+5+3+3 matches the stated 16 units.",
-   "Outcomes rejoined across PDF line-break hyphenation (e.g., 'For -eign' as 'Foreign', 'Profi -ciency' as 'Proficiency').",
-   "The certificate description mentions 'employment, and professional advancement' but names no specific careers."
+   "Catalog prints codes with leading zeros (KOREAN 003, 004, 007, 010, 013, 026); these match closed-list KOREAN 3, 4, 7, 10, 13, 26 and are not treated as catalog additions.",
+   "KOREAN 010 OR KOREAN 013 OR KOREAN 026 read as a single 3-unit choice; KOREAN 007 read as required, consistent with the 16-unit total (5+5+3+3).",
+   "Outcome text rejoined across PDF hyphenation breaks (e.g., 'For -eign' -> 'Foreign', 'Profi -ciency' -> 'Proficiency').",
+   "Text following the Korean section (Russian programs) belongs to other awards and was ignored."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "009ca808db21cbde",
+ "source_codes": [
+  "KOREAN10",
+  "KOREAN13",
+  "KOREAN26",
+  "KOREAN3",
+  "KOREAN4",
+  "KOREAN7"
+ ],
+ "source_coverage": 1.0
 }

@@ -3,18 +3,18 @@
  "programs": 260,
  "with_closed_list": 258,
  "found": 250,
- "extracted": 251,
+ "extracted": 250,
  "errors": 0,
- "passed_machine_checks": 173,
+ "passed_machine_checks": 210,
  "failed": {
-  "coverage": 33,
-  "invented": 5,
-  "arithmetic": 66,
+  "coverage": 14,
+  "invented": 8,
+  "arithmetic": 24,
   "repeated": 0,
-  "outcomes": 12
+  "outcomes": 14
  },
- "cost_usd": 19.27,
- "cost_per_program": 0.0768,
+ "cost_usd": 20.28,
+ "cost_per_program": 0.0811,
  "not_found": [
   {
    "control_number": "02765",
@@ -103,5 +103,5 @@
    }
   }
  ],
- "run": "43138495821"
+ "run": "43212072618"
 }

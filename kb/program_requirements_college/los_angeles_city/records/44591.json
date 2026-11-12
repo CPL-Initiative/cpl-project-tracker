@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "American Language & Culture: Beginning",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12149,
+  "input_tokens": 12253,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12149,
-    "output_tokens": 1055,
+    "input_tokens": 12253,
+    "output_tokens": 1115,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1055,
+  "output_tokens": 1115,
   "output_tokens_details": {
-   "thinking_tokens": 337
+   "thinking_tokens": 357
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0697,
- "ms": 8752,
- "seconds": 9.1,
+ "cost_usd": 0.07131,
+ "ms": 9636,
+ "seconds": 9.8,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "American Language & Culture: Beginning Certificate of Competency",
+   "section_heading": "American Language & Culture: Beginning",
    "measure": "hours",
    "total_units": {
     "min": 324,
@@ -180,12 +180,22 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit certificate of competency counted in hours: 'Total Lecture Hrs: 324'; course hours as printed sum to 324.",
-   "Outcome 2 in this section is printed without a final period; copied as printed.",
-   "The page also lists other American Language & Culture certificates (Series B, Beginning High, Foundational, Intermediate, Intermediate High) with the same outcome wording; only the Beginning section was read.",
-   "The description mentions preparing students to 'maximize job opportunities' but names no specific career, so careers is empty."
+   "The catalog labels this award a Certificate of Competency and states 'Total Lecture Hrs: 324'. All values are recorded in hours.",
+   "The five required courses sum to 324 hours, which matches the stated total.",
+   "Outcome 2 is printed without a final period in this section; it was copied as printed. Other sections on the page add the period.",
+   "The PDF line-break hyphenation 'neces -sary' was read as 'necessary'.",
+   "The description mentions preparing students to 'maximize job opportunities' but names no specific careers, so careers is empty.",
+   "Only the 'American Language & Culture: Beginning' section was read. The adjacent 'Beginning High' and other certificates were not used."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "9b1f2afb5cbf8a1b",
+ "source_codes": [
+  "ESLCVCS31CE",
+  "ESLCVCS41CE",
+  "ESLNC48CE",
+  "ESLNC49CE",
+  "ESLNC50CE"
+ ],
+ "source_coverage": 1.0
 }

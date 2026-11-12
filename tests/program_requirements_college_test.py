@@ -2906,6 +2906,36 @@ try:
           "a failing read leaves a live-passing record; a failing filed record is no reason to keep; force overrides")
     check(C.kept_passing(_kp_dir, "40", dict(passing, arithmetic={"pass": True, "status": "unstated"}), set())
           is not None, "score pass beside an unstated total is no full pass: the filed record stays")
+    # The S641 conductor (2026-11-12): a passing record is replaced only by a read that passes at least as
+    # well and covers at least as much. American River 11566 (paid run 43212067552) passed before and after,
+    # but the read lost its core block: placed 15 of 20 became 9 of 20, its total "equal" only by a 24-unit fill.
+    cov_of = lambda sc, placed, listed=20: dict(sc, coverage=dict(sc["coverage"], placed=placed, listed=listed,  # noqa: E731
+                                                                  share=round(placed / listed, 3)))
+    no_share = dict(passing, coverage={"pass": True})
+    for cn, sc in (("44", cov_of(passing, 15)), ("45", cov_of(failing, 15)), ("46", cov_of(live_only, 15)),
+                   ("47", no_share)):
+        open(os.path.join(_kp_dir, "records", cn + ".json"), "w").write(
+            json.dumps({"record": {"blocks": []}, "control_number": cn, "score": sc}))
+    filled = dict(cov_of(passing, 9), arithmetic=dict(passing["arithmetic"], computed=[12.0, 12.0],
+                                                      stated=[36.0, 36.0], fill=[24.0, 24.0]))
+    check(C.kept_passing(_kp_dir, "44", filled, set()) is not None
+          and C.kept_reason(cov_of(passing, 15), filled) == "covers_less",
+          "the 11566 shape: a read that passes but places 9 of 20 where the filed record placed 15 is kept out")
+    check(C.kept_passing(_kp_dir, "44", cov_of(passing, 15), set()) is None,
+          "a read that passes at the same coverage replaces the filed record: it was paid for and passes")
+    check(C.kept_passing(_kp_dir, "44", cov_of(passing, 18), set()) is None,
+          "a read that passes and covers more replaces the filed record")
+    check(C.kept_reason(cov_of(passing, 15), cov_of(live_only, 20)) == "passes_less",
+          "a read that covers more but passes at a lower grade is kept out")
+    check(C.kept_passing(_kp_dir, "45", cov_of(passing, 9), set()) is None
+          and C.kept_passing(_kp_dir, "45", cov_of(failing, 9), set()) is None,
+          "a filed record that did not pass is not protected: a read may lower its coverage")
+    check(C.kept_passing(_kp_dir, "46", cov_of(passing, 9), set()) is not None,
+          "a better grade does not excuse lower coverage on a live-passing record")
+    check(C.kept_passing(_kp_dir, "44", filled, {"44"}) is None, "force files a read that covers less all the same")
+    check(C.kept_passing(_kp_dir, "47", cov_of(passing, 9), set()) is None
+          and C.kept_passing(_kp_dir, "47", cov_of(live_only, 20), set()) is not None,
+          "a filed score that carries no share leaves the grade to decide alone")
 finally:
     XT.call = _saved[0]
     if _saved[1] is None:

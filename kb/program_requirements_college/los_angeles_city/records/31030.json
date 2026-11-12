@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "EARLY CHILDHOOD EDUCATION",
  "award": "A.S. T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=87",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13490,
+  "input_tokens": 13131,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13490,
-    "output_tokens": 1757,
+    "input_tokens": 13131,
+    "output_tokens": 1892,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1757,
+  "output_tokens": 1892,
   "output_tokens_details": {
-   "thinking_tokens": 453
+   "thinking_tokens": 699
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0891,
- "ms": 15478,
+ "cost_usd": 0.09036,
+ "ms": 15708,
  "seconds": 15.8,
  "parts": null,
  "error": null,
@@ -61,17 +61,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     28.0,
     29.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    28.0,
+    29.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     62.0,
+     63.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
@@ -81,17 +101,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Integrate understanding of the needs, characteristics, and multiple influences on all areas of development of children birth to age eight that support optimal development.",
-    "Design, implement, and evaluate developmentally appropriate environments, curriculum, and teacher/child interactions, applying the skills of observation and assessment."
-   ],
-   "why": [
-    "not in the catalog text as printed: Integrate understanding of the needs, characteristics, and multiple influences o",
-    "not in the catalog text as printed: Design, implement, and evaluate developmentally appropriate environments, curric"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -99,34 +113,31 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Early Childhood Education Associate in Science for Transfer (AS-T) Degree (heading not printed in the excerpt; the section begins at the top of page 88 with PROGRAM STUDENT LEARNING OUTCOMES)",
+   "section_heading": "Early Childhood Education Associate in Science (AS-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 29
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -138,7 +149,7 @@
   },
   "blocks": [
    {
-    "name": "MAJOR CORE COURSES",
+    "name": "MAJOR CORE COURSES (25 UNITS)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -206,7 +217,7 @@
     ]
    },
    {
-    "name": "CHOOSE ONE OF THE FOLLOWING",
+    "name": "CHOOSE ONE OF THE FOLLOWING (3-4 UNITS)",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -249,12 +260,27 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 88; the AS-T heading, description, any major/degree total and GE pattern (likely CSU GE/IGETC/Cal-GETC) were on the preceding page and are not in the text, so section_heading is inferred and totals, ge_pattern and careers are left empty.",
-   "The section is identified as the AS-T because its core (CH DEV 001, 002, 007, 010, 011, 022, 034, 042 plus one of 023/030/031/048) matches the closed list and precedes the Child Development AA section.",
-   "Catalog codes are printed with leading zeros (CH DEV 001) and matched to closed-list codes without them (CH DEV 1).",
-   "Hyphenated line-break words in outcomes (mul-tiple, appropri-ate) were rejoined.",
-   "Sections that follow (Child Development AA, Associate Teacher, Master Teacher, Site Supervisor, Teacher certificates) belong to other awards and were not recorded."
+   "Catalog prints course codes with leading zeros (CH DEV 001) matching closed-list codes without them (CH DEV 1); treated as the same courses.",
+   "degree_total taken from the award header 'Total Units: Minimum of 60'; ge_units from the Cal-GETC requirement '34 semester/45 quarter units'.",
+   "The AS-T section names no careers; the department overview speaks generally of employment in early childhood programs but names no specific occupations for this award, so careers is left empty.",
+   "The AS-T section's program student learning outcomes differ slightly in wording from the AA's ('family' vs 'families'); recorded as printed in the AS-T section."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "14d4e70e55549263",
+ "source_codes": [
+  "CHDEV1",
+  "CHDEV10",
+  "CHDEV11",
+  "CHDEV2",
+  "CHDEV22",
+  "CHDEV23",
+  "CHDEV30",
+  "CHDEV31",
+  "CHDEV34",
+  "CHDEV42",
+  "CHDEV48",
+  "CHDEV7"
+ ],
+ "source_coverage": 1.0
 }

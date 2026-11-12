@@ -17,6 +17,9 @@ S196, and the INDEX history rotated out before 2026-09-17. [Part 7](roadmap_arch
 2026-11-03, S563) holds the rotation of 2026-08-16, the narratives of S62, S113, S146 and S147, and the INDEX
 history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-12)
+- 2026-11-10 (S626b SkyUmbrella, Sam in session): the review opens itself, no scroll gate, the drawer, the landing page and the contacts in the panel (#3061, #3063, #3064, #3066, #3067); Email templates a reviewer can change (#3068); handoff 633.
+
 ## INDEX update-history entries rotated out (2026-11-04)
 - 2026-11-04 S568 SkyMalin (CPL Queue routine): the cert link's FAA family, 11 titles to 15 certs (#2758); light checkpoint; handoff 569.
 - 2026-11-03 SkyTrue: the List becomes each common reference's workspace (#2735, #2736); the Local subjects List (#2737); the Exhibits side panel (#2738); light checkpoint.
