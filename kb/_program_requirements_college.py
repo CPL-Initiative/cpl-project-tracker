@@ -2466,8 +2466,31 @@ def pdf_program_pages(pages: list[str], program: dict, courses: list[dict]) -> l
     return _pdf_pick(pages, program, courses)[0]
 
 
+def heading_above(txt: str, start: int, conf: dict | None, courses: list[dict]) -> int:
+    """Where the cut at the control number's line starts once it keeps the heading printed above
+    that line (Los Angeles City, S639: 'Business Administration' / 'Associate of Arts (AA) Degree' /
+    'Major Units: 39  T otal Units: Minimum of 60' / '(State Code: 02718; ...)', the heading on
+    the page's first lines; the cut at the State Code line dropped the title and the degree total
+    the college's reconcile steps read). Only a college whose reconcile entry names
+    heading_above_code: at most its `lines` lines up, never a line its `stop` names (the running
+    header) and never a line naming a listed course, so the codes the text finds stay the same."""
+    if not conf or not conf.get("lines"):
+        return start
+    stop = re.compile(conf["stop"]) if conf.get("stop") else None
+    s = start
+    for _ in range(int(conf["lines"])):
+        if s <= 0:
+            break
+        prev = txt.rfind("\n", 0, s - 1) + 1
+        line = txt[prev:s - 1]
+        if not line.strip() or (stop and stop.search(line)) or P.find_codes(line, courses):
+            break
+        s = prev
+    return s
+
+
 def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], extractor: str | None,
-             heading: dict | None = None) -> dict | None:
+             heading: dict | None = None, above: dict | None = None) -> dict | None:
     """The program's pages as a source the extraction reads, in the shape
     source_record() takes: None when no page names a listed course. The text
     opens on the program's heading, so an A.S. and the certificate printed
@@ -2485,7 +2508,7 @@ def pdf_best(url: str, pages: list[str], program: dict, courses: list[dict], ext
         cut = txt
         if n == 0 and cn_at >= 0:
             # From the start of the line that prints the control number: the heading.
-            cut = txt[txt.rfind("\n", 0, cn_at) + 1:]
+            cut = txt[heading_above(txt, txt.rfind("\n", 0, cn_at) + 1, above, courses):]
         elif n == 0 and head[0] == 1.0 and head[1] and head[2] > 0:
             cut = txt[head[2]:]
         # Only while the cut keeps every listed code the page names: Pierce prints the number
@@ -2683,6 +2706,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             pw.stop()
     pages, extractor = pdf.get("pages") or [], pdf.get("extractor")
     listed = [p for p in programs if p["closed_list"]]
+    import _program_requirements_reconcile as R
+    above = (R.load_steps().get(college) or {}).get("heading_above_code")
 
     def accepted(pg: list[str]) -> int:
         return sum(1 for p in listed
@@ -2721,7 +2746,7 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
             rec["near_miss"] = {"why": "the catalog heads each program with its code, and no heading names this one"}
         else:
             best = pdf_best(start, pages, prog, prog["closed_list"], extractor,
-                            (coded or {}).get(prog["control_number"]))
+                            (coded or {}).get(prog["control_number"]), above)
             if best and best["coverage"] >= P.ACCEPT_SHARE:
                 rec = source_record(college, prog, reg, best, "pdf_pages")
                 rec["source"].update(pages=best["pages"], extractor=extractor, heading_named=best["named"])
