@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-12T05:22:11Z`
+Generated: `2026-11-12T05:47:59Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -61,6 +61,16 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 - `Engine Performance 1 (ASE A8 Engine Performance)` (merge) into `Engine Performance (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 - `Engine Performance 2 (ASE A8 Engine Performance)` (rename) into `Engine Performance 2 (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 - `Heating and Air Conditioning` (merge) into `Heating and Air Conditioning (ASE A7 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
+
+## Ruled on a decision sheet (kb/cred_rename_plans/)
+
+- `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` (rename) into `Advanced Engine Performance Specialist (ASE L1 standards)`, plan standards-2-2026-11-12
+- `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` (rename) into `Automatic Transmission/Transaxle (ASE A2 standards)`, plan standards-2-2026-11-12
+- `Automotive Technology (ASE A6 Electrical/Electronic Systems)` (rename) into `Electrical/Electronic Systems (ASE A6 standards)`, plan standards-2-2026-11-12
+- `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` (rename) into `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)`, plan standards-2-2026-11-12
+- `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` (rename) into `Light Vehicle Diesel Engines (ASE A9 standards)`, plan standards-2-2026-11-12
+- `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` (rename) into `Manual Drive Train and Axles (ASE A3 standards)`, plan standards-2-2026-11-12
+- `Suspension and Steering (ASE A4 Suspension and Steering)` (rename) into `Suspension and Steering (ASE A4 standards)`, plan standards-2-2026-11-12
 
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 

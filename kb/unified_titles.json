@@ -41204,7 +41204,7 @@
     "_notes": "Carpentry topic; local apprenticeship exhibit."
   },
   "Suspension and Steering": {
-    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
+    "unified_title": "Suspension and Steering (ASE A4 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -41216,7 +41216,7 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'Suspension and Steering' (conf 0.75)."
   },
   "Suspension and Steering Systems": {
-    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
+    "unified_title": "Suspension and Steering (ASE A4 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -44773,7 +44773,7 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
-    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -44784,7 +44784,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Auto Electricity and Electronics' on 2026-10-31."
   },
   "AUTOTEC-15: Auto Electricity and Electronics": {
-    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60432,7 +60432,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO A2": {
-    "unified_title": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+    "unified_title": "Automatic Transmission/Transaxle (ASE A2 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60443,7 +60443,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automatic Transmission/Transaxle' on 2026-10-31."
   },
   "Noncredit for AUTO A3": {
-    "unified_title": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+    "unified_title": "Manual Drive Train and Axles (ASE A3 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60454,7 +60454,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Manual Drive Train and Axles' on 2026-11-01."
   },
   "Noncredit for AUTO A4": {
-    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
+    "unified_title": "Suspension and Steering (ASE A4 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60476,7 +60476,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
   },
   "Noncredit for AUTO A6": {
-    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60506,7 +60506,7 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Technology (ASE A8 Engine Performance Certification)' on 2026-10-31."
   },
   "Noncredit for AUTO A9": {
-    "unified_title": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+    "unified_title": "Light Vehicle Diesel Engines (ASE A9 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60533,7 +60533,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO L1": {
-    "unified_title": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+    "unified_title": "Advanced Engine Performance Specialist (ASE L1 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
@@ -60541,7 +60541,7 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO L3": {
-    "unified_title": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+    "unified_title": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
