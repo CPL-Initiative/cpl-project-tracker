@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 862,
+  "file_datasets": 863,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -13703,6 +13703,19 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
+  "file:kb/credential_aliases.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/credential_merges.json": {
    "consumers": [
     {
@@ -13868,8 +13881,16 @@
      "line": 49
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/credentials.json": {
    "consumers": [
@@ -31083,7 +31104,8 @@
     "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
     "kb/_build_remint_blast_radius.py",
-    "kb/_build_ccr_cpl.py"
+    "kb/_build_ccr_cpl.py",
+    "kb/credential_aliases.py"
    ],
    "adds": [
     "kb/credentials.json",
@@ -31092,6 +31114,7 @@
     "kb/credential_review_overlay.json",
     "kb/cred_rename_dryrun/",
     "kb/cred_rename_out/",
+    "kb/credential_title_moves.json",
     "kb/remint_blast_worklist.json",
     "prototype/ccr_remint_blast.json",
     "prototype/ccr_cpl.json"

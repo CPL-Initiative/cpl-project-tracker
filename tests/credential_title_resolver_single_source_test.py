@@ -14,6 +14,7 @@ Checks, each a way the copy could come back:
   3. No browser file reads the snapshots: map_links.js and every other page read kb/credential_title_moves.json,
      which kb/credential_aliases.py writes.
   4. That table is current, so the browser's answer is the module's.
+  5. Every workflow that writes a snapshot (runs the apply or the undo) rebuilds the table and stages it.
 
 Run from the repo root: python3 tests/credential_title_resolver_single_source_test.py
 """
@@ -89,6 +90,26 @@ for rel, path in files(".js"):
 check("no browser file reads the snapshots (it reads kb/credential_title_moves.json)", not js, ", ".join(js))
 src = open(os.path.join(ROOT, "map_links.js"), encoding="utf-8").read()
 check("map_links.js reads the generated table", "kb/credential_title_moves.json" in src)
+
+# 5. Every workflow that writes a rename snapshot rebuilds the table and stages it, or the next apply leaves
+#    main's table stale (S638's #3119 turned main red that way). A workflow writes a snapshot when it runs the
+#    apply or the undo; the undo runs on no runner today, so scripts/check_generated.sh catches it locally.
+stale_wf = []
+wf_dir = os.path.join(ROOT, ".github", "workflows")
+for fn in sorted(os.listdir(wf_dir)) if os.path.isdir(wf_dir) else []:
+    if not fn.endswith((".yml", ".yaml")):
+        continue
+    txt = open(os.path.join(wf_dir, fn), encoding="utf-8").read()
+    cmds = [l.strip()[4:].strip() if l.strip().startswith("run:") else l.strip() for l in txt.splitlines()]
+    writes = any(c.startswith(("python ", "python3 ")) and
+                 ("kb/_cred_rename_apply.py" in c or "kb/_cred_rename_undo.py" in c) for c in cmds)
+    if writes:
+        runs = any(c.startswith(("python3 kb/credential_aliases.py", "python kb/credential_aliases.py")) for c in cmds)
+        stages = "kb/credential_title_moves.json" in txt
+        if not (runs and stages):
+            stale_wf.append(f"{fn} (runs builder: {runs}, stages the table: {stages})")
+check("every workflow that writes a rename snapshot rebuilds and stages kb/credential_title_moves.json",
+      not stale_wf, "; ".join(stale_wf))
 
 have = open(os.path.join(ROOT, ca.TABLE), encoding="utf-8").read()
 check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)", have == ca._render(ROOT))
