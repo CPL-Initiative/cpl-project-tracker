@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-12T05:58:58Z",
+ "generated_at": "2026-11-12T06:40:09Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -53,14 +53,14 @@
   }
  ],
  "counts": {
-  "ase": 11,
+  "ase": 12,
   "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 23,
+ "local_titles": 28,
  "cards": [
   {
    "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
@@ -145,6 +145,14 @@
      "credit": "4 hours in Automotive Brake Systems"
     },
     {
+     "raw": "Brakes",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AUTOTEC 417",
+     "credit": "4 hours in Brakes"
+    },
+    {
      "raw": "Brakes - Credit by Exam (ATEC 14 )",
      "colleges": [
       "El Camino College"
@@ -167,12 +175,12 @@
      "credit": ""
     }
    ],
-   "id": "5b3807a15d88",
+   "id": "a4fb41903c42",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
-   "current_locals": 6,
+   "current_locals": 7,
    "moves_all": true
   },
   {
@@ -223,6 +231,14 @@
    ],
    "locals": [
     {
+     "raw": "Engine Performance",
+     "colleges": [
+      "San Diego Miramar College"
+     ],
+     "course": "AUTO 165G",
+     "credit": "4 hours in Engine Performance"
+    },
+    {
      "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
      "colleges": [
       "El Camino College"
@@ -231,19 +247,56 @@
      "credit": "4 hours in Engine Performance"
     },
     {
+     "raw": "Engine Performance I AUTO 018 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "AUTO 18",
+     "credit": "4 hours in Engine Performance I"
+    },
+    {
      "raw": "Noncredit for AUTO A8",
      "colleges": [],
      "course": "",
      "credit": ""
     }
    ],
-   "id": "54f58e3cd824",
+   "id": "2a47466ec9ca",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
-   "current_locals": 2,
-   "moves_all": true
+   "current_locals": 5,
+   "moves_all": false
+  },
+  {
+   "current": "Engine Performance (ASE A8 standards)",
+   "proposed": "ASE A8 — Engine Performance",
+   "rules": [
+    "ase",
+    "fold"
+   ],
+   "why": [
+    "ASE A8's official name is Engine Performance",
+    "“Engine Performance (ASE A8)” holds different courses at Copper Mountain College; this one is “Engine Performance (ASE A8)”, a credential already"
+   ],
+   "locals": [
+    {
+     "raw": "Engine Performance II AUTO 029 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "AUTO 29",
+     "credit": "4 hours in Engine Performance II"
+    }
+   ],
+   "id": "e3f2df4e8376",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 12,
+   "proposed_issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "current_locals": 5,
+   "moves_all": false
   },
   {
    "current": "Heating and Air Conditioning (ASE A7 standards)",
@@ -264,18 +317,26 @@
      "credit": "3 hours in Automotive Air Conditioning"
     },
     {
+     "raw": "Basic Automotive Air Conditioning Systems",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AUTOTEC 416",
+     "credit": "2 hours in Basic Automotive Air Conditioning Systems"
+    },
+    {
      "raw": "Noncredit for AUTO A7",
      "colleges": [],
      "course": "",
      "credit": ""
     }
    ],
-   "id": "b0012636666d",
+   "id": "00c22b90e09a",
    "issuer": "California Community Colleges",
    "proposed_exists": false,
    "proposed_locals": 0,
    "proposed_issuer": "",
-   "current_locals": 2,
+   "current_locals": 3,
    "moves_all": true
   },
   {

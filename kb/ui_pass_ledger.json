@@ -6,8 +6,8 @@
    "name": "Sierra",
    "page": "sierra/index.html",
    "audience": "public",
-   "last": "2026-11-07",
-   "outcome": "S594 SkyBodes: npm run a11y, all 14 Sierra targets pass (light and dark, arriving, first Ask, conversation, Training queue and editor, dock full screen, over a COBI tab). Wiring: cpl-chat and sierra_feedback_upsert feed the Briefing, GR, Memory and Sierra Training tabs; no shared figure shows on Sierra's page. First Light: every hex in sierra.css sits in a token block; sierra.js has one var() fallback. No fix needed."
+   "last": "2026-11-12",
+   "outcome": "S641: a11y passes all six Sierra targets (arriving, first Ask, conversation; light and dark), before and after. First Light (library look): every hex sits in a :root token block, type matches the library's tokens (Inter, Georgia), no rendered glyph. Fixed: sierra.css's theme comment said the OS picks dark under a media query; the page is light by default and dark only by choice. Kept: the Whitney roundel's fixed white paint (a brand mark, shared with cpl_chat.js, same in both themes). Wiring not checked: both datasets (cpl-chat, sierra_feedback_upsert) need live Supabase."
   },
   {
    "id": "veteran-sprint-map",
