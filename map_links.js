@@ -66,20 +66,29 @@
   }
 
   // The title an old key names now (kb/credential_title_moves.json, walked by kb/credential_aliases.py): a live
-  // title is itself; any other takes its first live hop, else its last.
-  function nowTitle(moves, title, live) {
+  // title is itself; any other takes its first live hop, else its last, which the table's retires entry settles
+  // when exactly one of its targets is live (D3).
+  function firstLive(path, live) {
+    for (var i = 0; live && i < path.length; i++) if (live[path[i]]) return path[i];
+    return null;
+  }
+  function nowTitle(moves, title, live, retires) {
     if (live && live[title]) return title;
     var hops = moves && Object.prototype.hasOwnProperty.call(moves, title) ? moves[title] : null;
     if (!hops || !hops.length) return title;
-    for (var i = 0; live && i < hops.length; i++) if (live[hops[i]]) return hops[i];
-    return hops[hops.length - 1];
+    var hit = firstLive(hops, live);
+    if (hit) return hit;
+    var end = hops[hops.length - 1], got = [];
+    var paths = retires && Object.prototype.hasOwnProperty.call(retires, end) ? retires[end] : [];
+    paths.forEach(function (p) { var t = firstLive(p, live); if (t && got.indexOf(t) < 0) got.push(t); });
+    return got.length === 1 ? got[0] : end;
   }
-  // The live titles: the credential reference when the page has loaded it; else the titles the table's build found
-  // live although a rename once moved them (its report), so a title a person brought back still reads as itself.
+  // The live titles: the credential reference when the page has loaded it; else what the table's build found live
+  // (its report's returned titles and retire targets), so a title a person brought back still reads as itself.
   function liveTitles(table) {
-    var live = {}, ref = window.CPL_CREDENTIAL_REFERENCE;
+    var live = {}, ref = window.CPL_CREDENTIAL_REFERENCE, rep = (table && table.report) || {};
     if (ref && ref.unified_titles) ref.unified_titles.forEach(function (u) { if (u && u.ut) live[u.ut] = 1; });
-    else ((table && table.report && table.report.returned) || []).forEach(function (t) { live[t] = 1; });
+    else (rep.returned || []).concat(rep.live_targets || []).forEach(function (t) { live[t] = 1; });
     return live;
   }
   // by_title read through the renames: a renamed key's IDs join the title it moved to, after that title's own.
@@ -89,7 +98,7 @@
     var bt = j.by_title, out = {}, live = liveTitles(table);
     Object.keys(bt).forEach(function (k) { out[k] = (bt[k] || []).slice(); });
     Object.keys(bt).forEach(function (k) {
-      var t = nowTitle(moves, k, live);
+      var t = nowTitle(moves, k, live, table.retires);
       if (t === k) return;
       var have = out[t] || (out[t] = []);
       (bt[k] || []).forEach(function (id) { if (have.indexOf(id) < 0) have.push(id); });

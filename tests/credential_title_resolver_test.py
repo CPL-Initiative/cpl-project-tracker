@@ -18,6 +18,8 @@ Guards, each a fault:
   4. a title the fold retired is a search alias of each title its exhibits went to, from the append-only
      ledger, never a resolution; a later report with an empty retire list removes no alias (D2);
   5. the browser's table gives resolve's answer, and is current;
+  D3. a chain that ends on a title that is not live follows the retire ledger's one live target, or ends there
+     and is reported; no alias attaches to a dead title;
   6. the stale "ASE Bundle — A4, A5" shape (a saved assignment, cer-procedure-classifier@bot, 2026-10-31, before
      the 2026-11-12 apply) reads as its live credential in each routed reader, and the three returned titles
      keep the fold's answer on main.
@@ -171,22 +173,62 @@ try:
     check("a retired title that is a credential again is no alias", "Back Again" not in aka.get("C", []))
     check("rename aliases come first", aka.get("C", [])[:2] == ["A", "B"], aka.get("C"))
 
+    # ── D3: a chain's dead end follows the ledger's one live target, or is reported ──
+    snap(tmp, "2026-11-15", "2026-11-15T00:00:00Z", {"Calc I": "Calc I Early", "Two Way": "Two Way End",
+                                                     "Nowhere": "Nowhere End", "Dead Target": "DT End"})
+    ca.append_retires(tmp, "2026-11-15", "2026-11-15T01:00:00Z",
+                      [{"title": "Calc I Early", "to": ["Calc 1 Early"]}, {"title": "Two Way End", "to": ["MIL3", "Kept"]},
+                       {"title": "DT End", "to": ["Gone Too"]}, {"title": "Back Again", "to": ["Never Here"]}])
+    with open(os.path.join(tmp, "kb", "credentials.json"), encoding="utf-8") as f:
+        cr = json.load(f)
+    cr["Calc 1 Early"] = [{}]
+    write(os.path.join(tmp, "kb", "credentials.json"), cr)
+    now = ca.resolver(tmp)
+    ends = {r["title"]: r for r in ca.dead_ends(tmp)}
+    check("D3: a dead end the ledger sends to exactly one live title follows it", now("Calc I") == "Calc 1 Early"
+          and "Calc I" not in ends and "Calc I" in ca.load(tmp).get("Calc 1 Early", []))
+    check("D3: a dead end the ledger sends to two live titles stays, and is reported",
+          now("Two Way") == "Two Way End" and "2 live titles" in ends.get("Two Way", {}).get("why", ""), ends.get("Two Way"))
+    check("D3: a dead end no retire names stays, and is reported", now("Nowhere") == "Nowhere End"
+          and ends.get("Nowhere", {}).get("end") == "Nowhere End")
+    check("D3: a dead end whose only target is not live is reported", "none of its targets" in ends.get("Dead Target", {}).get("why", ""))
+    check("D3: no alias attaches to a dead title", not any(k in ca.load(tmp) for k in ("Two Way End", "Nowhere End", "DT End")))
+    dead_rt = ca.retired(tmp, report=True)[1]
+    check("D3: a retire whose target is not live is reported, also when the retired title is live again",
+          any(r["title"] == "Back Again" and r["to"] == "Never Here" for r in dead_rt), dead_rt)
+    check("D3: a title no snapshot moved is never resolved through the ledger", now("Calc I Early") == "Calc I Early")
+
     # ── 5: the browser's table gives resolve's answer ──
     t = ca.table(tmp)
-    tab, lv = t["moves"], ca.live_titles(tmp)
+    tab, rt, lv = t["moves"], t["retires"], ca.live_titles(tmp)
+
+    def first_live(path, live_set):
+        return next((h for h in path if h in live_set), None)
 
     def pick(title, live_set):   # the rule map_links.js applies to the table
         if title in live_set:
             return title
         hops = tab.get(title) or []
-        return next((h for h in hops if h in live_set), hops[-1] if hops else title)
-    snaps = ca.snapshots(tmp)
+        if not hops:
+            return title
+        hit = first_live(hops, live_set)
+        if hit:
+            return hit
+        got = []
+        for path in rt.get(hops[-1]) or []:
+            x = first_live(path, live_set)
+            if x and x not in got:
+                got.append(x)
+        return got[0] if len(got) == 1 else hops[-1]
+    snaps, led = ca.snapshots(tmp), ca.ledger(tmp)
     probe = ["A", "B", "Swap 1", "Swap 2", "Merged Away", "Order 1", OLD, "Kept Group", "C", "L1", "Brought Back",
-             "Unmarked", "Re 1", "Unknown"]
-    bad = [(x, pick(x, s), ca.resolve(x, snaps, s)[0]) for x in probe for s in (lv, frozenset())
-           if pick(x, s) != ca.resolve(x, snaps, s)[0]]
+             "Unmarked", "Re 1", "Unknown", "Calc I", "Two Way", "Nowhere", "Dead Target"]
+    bad = [(x, pick(x, s), ca.resolve(x, snaps, s, led)[0]) for x in probe for s in (lv, frozenset())
+           if pick(x, s) != ca.resolve(x, snaps, s, led)[0]]
     check("the table's first-live-hop rule gives resolve's answer, with and without the live set", not bad, bad)
-    check("the table's report names the returned titles", "Brought Back" in t["report"]["returned"])
+    check("the table's report names the returned titles, the dead ends and the dead retires",
+          "Brought Back" in t["report"]["returned"] and any(r["title"] == "Nowhere" for r in t["report"]["dead_ends"])
+          and any(r["title"] == "Back Again" for r in t["report"]["dead_retires"]))
     have = open(os.path.join(ROOT, ca.TABLE), encoding="utf-8").read()
     check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)",
           ca._checked(have) == ca._checked(ca._render(ROOT)))
@@ -242,6 +284,8 @@ finally:
 now = ca.resolver(ROOT)
 creds = json.load(open(os.path.join(ROOT, "kb", "credentials.json"), encoding="utf-8"))
 check("the live saved row: 'ASE Bundle — A4, A5' resolves to a live credential", now(OLD) == NEW and NEW in creds, now(OLD))
+check("D3 on the repo: Calculus I follows the ledger's one live title past its retired rename",
+      now("Calculus I") == "Single Variable Calculus 1 Early Transcendentals" and now("Calculus I") in creds)
 three = ["Automotive Electronics", "Automotive Electrical Schematic Diagnosis", "Automotive Suspension, Steering and Alignment"]
 check("the three titles a person brought back after the 2026-07-08 snapshot read as themselves, and are reported",
       all(now(x) == x for x in three) and all(x in ca.returned(ROOT) for x in three)

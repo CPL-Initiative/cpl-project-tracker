@@ -145,9 +145,8 @@ def live_titles(root="."):
     return frozenset(_read(os.path.join(root, "kb", "credentials.json")) or {})
 
 
-def resolve(title, snaps, live=frozenset()):
-    """(the title a stored value names now, [the snapshots that moved it, in order]). A live title is itself; any
-    other title takes one lookup per snapshot, in apply order, and stops at the first live title it reaches."""
+def _chain(title, snaps, live):
+    """The rename snapshots alone: one lookup per snapshot, in apply order, stopping at the first live title."""
     if not title or title in live:
         return title, []
     cur, by = title, []
@@ -161,12 +160,55 @@ def resolve(title, snaps, live=frozenset()):
     return cur, by
 
 
+def ledger(root="."):
+    """retired title -> [the titles the fold sent its exhibits to, in ledger order], from kb/unclassified_fold/retires.json."""
+    out = {}
+    for r in (_read(os.path.join(root, RETIRES)) or {}).get("retires") or []:
+        t = (r.get("title") or "").strip()
+        for tgt in r.get("to") or []:
+            if t and tgt and tgt not in out.setdefault(t, []):
+                out[t].append(tgt)
+    return out
+
+
+def _live_targets(end, snaps, live, retires):
+    """The live titles the ledger sends a retired title to, each target read through the renames."""
+    got = []
+    for tgt in (retires or {}).get(end) or []:
+        t = _chain(tgt, snaps, live)[0]
+        if t in live and t not in got:
+            got.append(t)
+    return got
+
+
+def _settle(end, snaps, live, retires):
+    """A title that is not live: the one live title the ledger sends it to, else itself (the S641 conductor, D3)."""
+    if end in live or not live:
+        return end
+    got = _live_targets(end, snaps, live, retires)
+    return got[0] if len(got) == 1 else end
+
+
+def resolve(title, snaps, live=frozenset(), retires=None):
+    """(the title a stored value names now, [the snapshots that moved it, in order]). A live title is itself; any
+    other title takes one lookup per snapshot, in apply order, and stops at the first live title it reaches. A chain
+    that ends on a title that is not live follows the retire ledger when it names exactly one live title for it
+    ("retires.json" closes the trail); otherwise it ends where it is, and the table's report lists it (D3). A title no
+    snapshot moved is never resolved through the ledger: a retired title is a search alias, never a resolution."""
+    cur, by = _chain(title, snaps, live)
+    if by and cur not in live:
+        nxt = _settle(cur, snaps, live, retires)
+        if nxt != cur:
+            return nxt, by + ["retires.json"]
+    return cur, by
+
+
 def resolver(root="."):
-    """A function title -> the title it names now, reading the snapshots and the live set once."""
-    snaps, live = snapshots(root), live_titles(root)
+    """A function title -> the title it names now, reading the snapshots, the live set and the ledger once."""
+    snaps, live, retires = snapshots(root), live_titles(root), ledger(root)
 
     def now(title):
-        return resolve(title, snaps, live)[0]
+        return resolve(title, snaps, live, retires)[0]
     return now
 
 
@@ -211,39 +253,74 @@ def moves(root="."):
     snapshot moved that is not live. The full chain from the first snapshot is the chain from any snapshot naming it
     (no earlier snapshot holds it as a source), so each title has one answer, the reader's (kb/_family_tag_apply.py:
     a family tag the rename carried to the new title)."""
-    snaps, live = snapshots(root), live_titles(root)
+    snaps, live, retires = snapshots(root), live_titles(root), ledger(root)
     out = {}
     for o in _sources(snaps):
-        now, by = resolve(o, snaps, live)
+        now, by = resolve(o, snaps, live, retires)
         if now != o:
             out[o] = {"now": now, "by": by}
     return out
 
 
+def dead_ends(root="."):
+    """[{title, end, why}]: each title an in-force snapshot moved that resolves to a title that is not live. For a
+    person: the chain's end left the reference, and the ledger names no single live title for it."""
+    snaps, live, retires = snapshots(root), live_titles(root), ledger(root)
+    out = []
+    for o in _sources(snaps):
+        if o in live:
+            continue
+        end = resolve(o, snaps, live, retires)[0]
+        if end in live:
+            continue
+        got = _live_targets(end, snaps, live, retires)
+        why = ("the fold retired it to %d live titles: %s" % (len(got), ", ".join(got)) if got else
+               "the fold retired it, and none of its targets is live" if end in retires else
+               "not live, and no retire names it")
+        out.append({"title": o, "end": end, "why": why})
+    return sorted(out, key=lambda r: r["title"])
+
+
 def table(root="."):
     """The browser's lookup (kb/credential_title_moves.json): old title -> [each title the chain reaches, one per
     snapshot that moved it, in apply order], walked with no live set so the hops depend on the snapshots alone. A
-    reader returns a live title unchanged, else the first live hop, else the last hop: resolve()'s answer."""
-    snaps = snapshots(root)
-    tab = {}
-    for o in sorted(_sources(snaps)):
-        cur, hops = o, []
+    reader returns a live title unchanged, else the first live hop, else the last hop, which a retire section entry
+    with exactly one live target settles (D3): resolve()'s answer."""
+    snaps, retires = snapshots(root), ledger(root)
+
+    def hops_of(title):
+        cur, hops = title, []
         for s in snaps:
             nxt = s["moves"].get(cur)
             if nxt and nxt != cur:
                 cur = nxt
                 hops.append(nxt)
+        return hops
+    tab = {}
+    for o in sorted(_sources(snaps)):
+        hops = hops_of(o)
         if hops:
             tab[o] = hops
+    # A chain whose last hop the fold retired: each target with its own hops, for D3's one-live-target rule.
+    ends = sorted({h[-1] for h in tab.values()} & set(retires))
+    rt = {e: [[t] + hops_of(t) for t in retires[e]] for e in ends}
+    live = live_titles(root)
+    live_targets = sorted({x for e in ends for path in rt[e] for x in path if x in live})
     return {"_about": "Where each renamed or merged credential title goes, from the applied rename snapshots in force "
                       "(kb/cred_rename_out). Built by kb/credential_aliases.py; never edit by hand. A live title is "
                       "itself; any other takes its first live hop, else its last.",
             "_built_by": "kb/credential_aliases.py",
             "through": [s["name"] for s in snaps],
             "moves": tab,
-            "report": {"returned": returned(root),
-                       "_about": "Titles live today that an in-force snapshot moved away: each reads as itself. "
-                                 "Rebuilt each run; --check does not compare it."}}
+            "retires": rt,
+            "report": {"_about": "For a person (Sam's Exhibits review). returned: live today though an in-force "
+                                 "snapshot moved it, so it reads as itself. dead_ends: a renamed title whose chain "
+                                 "ends on a title that is not live. dead_retires: a retired title whose target is "
+                                 "not live, so it is no alias. live_targets: the retire targets live at build, the "
+                                 "browser's live set when the page has no reference loaded. Rebuilt each run; "
+                                 "--check does not compare it.",
+                       "returned": returned(root), "dead_ends": dead_ends(root),
+                       "dead_retires": retired(root, report=True)[1], "live_targets": live_targets}}
 
 
 def append_retires(root, day, at, retires):
@@ -274,28 +351,43 @@ def append_retires(root, day, at, retires):
     return added
 
 
-def retired(root="."):
+def retired(root=".", report=False):
     """current title -> [titles the nightly fold retired into it, oldest first], from the append-only ledger: each
-    target followed through the renames; a retired title that is live today is no alias."""
-    snaps, live = snapshots(root), live_titles(root)
-    out = {}
+    target read through the renames and, when it is not live, settled by the ledger's one live title (D3); a retired
+    title that is live today is no alias. With report=True, (aliases, [{title, to, why}] for each target that ends
+    on a title that is not live, so no alias attaches to a dead title and none is dropped unseen)."""
+    snaps, live, retires = snapshots(root), live_titles(root), ledger(root)
+    out, dead = {}, []
     for r in sorted((_read(os.path.join(root, RETIRES)) or {}).get("retires") or [],
                     key=lambda r: (r.get("day") or "", r.get("at") or "")):
         t = (r.get("title") or "").strip()
-        if not t or t in live:
+        if not t:
             continue
         for tgt in r.get("to") or []:
-            now = resolve(tgt, snaps, live)[0] if tgt else ""
-            if now and now != t and t not in out.setdefault(now, []):
+            if not tgt:
+                continue
+            now = _settle(_chain(tgt, snaps, live)[0], snaps, live, retires)
+            if now not in live:
+                row = {"title": t, "to": tgt, "why": "its target %r is not live" % now
+                       + ("; the retired title is live again" if t in live else "")}
+                if row not in dead:
+                    dead.append(row)
+                continue
+            if t in live:
+                continue
+            if now != t and t not in out.setdefault(now, []):
                 out[now].append(t)
-    return {k: v for k, v in out.items() if v}
+    out = {k: v for k, v in out.items() if v}
+    return (out, dead) if report else out
 
 
 def load(root="."):
     """current title -> [the titles it replaced, then the titles the fold retired into it]. A live title is never
     an alias: a title a person brought back reads as itself."""
-    aka = {}
+    aka, live = {}, live_titles(root)
     for o, m in moves(root).items():
+        if m["now"] not in live:
+            continue   # a dead end: no alias on a title that left the reference (table report dead_ends)
         if o not in aka.setdefault(m["now"], []):
             aka[m["now"]].append(o)
     for now, names in retired(root).items():

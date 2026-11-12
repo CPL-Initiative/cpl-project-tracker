@@ -7389,7 +7389,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 80,
+     "line": 89,
      "pages": [
       "CPL_Dashboard.html",
       "fact-sheet/index.html",
@@ -13725,6 +13725,13 @@
      "line": 0
     },
     {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:js-tests.yml",
      "kind": "workflow",
      "direction": "run",
@@ -13904,11 +13911,16 @@
     {
      "by": "workflow:cred-rename-apply.yml",
      "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
-    "workflow:cred-rename-apply.yml"
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
    ]
   },
   "file:kb/credentials.json": {
@@ -17839,7 +17851,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 323
+     "line": 415
     }
    ],
    "served": true,
@@ -31293,6 +31305,7 @@
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
     "kb/_build_exhibits_related.py",
+    "kb/credential_aliases.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
@@ -31360,6 +31373,7 @@
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
     "kb/exhibits_related.json",
+    "kb/credential_title_moves.json",
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",

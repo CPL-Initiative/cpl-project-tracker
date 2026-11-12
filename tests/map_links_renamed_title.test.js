@@ -61,6 +61,20 @@ function boot(withMoves, ref) {
   check("the table is built by the one resolver", table._built_by === "kb/credential_aliases.py");
   check("map_links.js holds no reader of the rename snapshots", src.indexOf("cred_rename_out") < 0 && src.indexOf("alias_map") < 0);
 
+  // Python and the browser agree on every title in the committed table, with kb/credentials.json as the live set.
+  const liveSet = {};
+  Object.keys(JSON.parse(fs.readFileSync("kb/credentials.json", "utf8"))).forEach((t) => { liveSet[t] = 1; });
+  const py = JSON.parse(require("child_process").execFileSync("python3", ["-c",
+    "import json,sys; sys.path.insert(0,'kb'); import credential_aliases as ca; now = ca.resolver('.');" +
+    "t = json.load(open(ca.TABLE)); print(json.dumps({k: now(k) for k in t['moves']}))"]).toString());
+  const off = Object.keys(py).filter((k) => A.CPL_MAP_LINKS.nowTitle(table.moves, k, liveSet, table.retires) !== py[k]);
+  check("Python and the browser agree on all " + Object.keys(py).length + " titles in the table", !off.length && Object.keys(py).length > 100);
+  check("D3 in the browser: Calculus I follows the ledger's one live title",
+    A.CPL_MAP_LINKS.nowTitle(table.moves, "Calculus I", liveSet, table.retires) === "Single Variable Calculus 1 Early Transcendentals");
+  const tr = { "Two": [["X"], ["Y"]], "One": [["Gone", "Z"]] }, mv = { a: ["Two"], b: ["One"] };
+  check("D3 in the browser: two live targets leave the dead end; one live target, through its hops, settles it",
+    A.CPL_MAP_LINKS.nowTitle(mv, "a", { X: 1, Y: 1 }, tr) === "Two" && A.CPL_MAP_LINKS.nowTitle(mv, "b", { Z: 1 }, tr) === "Z");
+
   const failed = results.filter((r) => !r[1]);
   results.forEach((r) => console.log((r[1] ? "PASS  " : "FAIL  ") + r[0]));
   console.log(`\n${results.length - failed.length}/${results.length} assertions passed`);
