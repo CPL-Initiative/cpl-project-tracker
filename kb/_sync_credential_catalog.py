@@ -275,6 +275,16 @@ def main() -> int:
     print(f"\nupserting into {TABLE} …")
     sent = upsert(rows, url, key)
     print(f"done — {sent} rows.")
+
+    # A report only: the upsert never deletes, so a title the reference renamed, merged or retired stays live as a
+    # ghost row. Counting them reads one column; removing them is kb/_chatbox_ghost_delete.py, a reviewed plan at a
+    # time (Sam, Open Asks Sheet 183 card 6). A failed count never fails the sync.
+    try:
+        import _chatbox_ghost_delete as ghosts
+        n = ghosts.count_ghosts(ghosts.Rest(url, key), {r["unified_title"] for r in rows})
+        print(f"{n} ghost rows; run chatbox-ghost-delete" if n else "0 ghost rows")
+    except Exception as exc:                            # noqa: BLE001 — a report, never a gate
+        print(f"NOTE: ghost-row count skipped ({type(exc).__name__}: {exc})")
     return 0
 
 
