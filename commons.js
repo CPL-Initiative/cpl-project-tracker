@@ -867,6 +867,7 @@
   var redraw = null;
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
+    if (ASE.on) return window.CPL_COMMONS_ASE ? CPL_COMMONS_ASE.address() : "commons/ase";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons" : "commons/" + show;
   });
@@ -874,12 +875,25 @@
   /* An arrival is read on a visit: the first, one after another tab, or a new address. The header's unlock
      re-fires cpl-tab-activated for the open tab; that is no visit, so a view switched to since stays. */
   var away = true, seenHash = null;
+  /* The first slice of the Commons plan (#3111, the v2 Agreed final): ASE, where a certification can count at every
+     college. #commons/ase and #commons/ase/<title> open it; commons_ase.js draws it, read-only. */
+  var ASE = { on: false, title: "" };
+  function showAse(root) {
+    function go() {
+      if (!window.CPL_COMMONS_ASE) { notice(root, "The ASE slice (commons_ase.js) could not be loaded. Reload the tab to try again."); return null; }
+      return CPL_COMMONS_ASE.boot(root, ASE.title, { noted: function (h) { seenHash = h; } });
+    }
+    if (window.CPL_COMMONS_ASE || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
+    return new Promise(function (res) { CPL_TABS.loadScript("commons_ase.js", "CPL_COMMONS_ASE", function () { res(go()); }); });
+  }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
     var h = String(location.hash || ""), visit = away || h !== seenHash;
     away = false; seenHash = h;
     if (!visit) return false;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
+    ASE.on = !!(a && a[0] === "ase");
+    if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
     if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
@@ -889,13 +903,17 @@
      surfaces"). Only once the tab has drawn. */
   var reboot = null;
   window.addEventListener("cpl-session-changed", function () {
-    if (!redraw || reboot || !document.getElementById(ROOT_ID)) return;
+    if ((!redraw && !ASE.on) || reboot || !document.getElementById(ROOT_ID)) return;
     reboot = Promise.resolve(boot()).then(function () { reboot = null; }, function () { reboot = null; });
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "commons")) return;
-    if (redraw && arrive()) redraw();
+    var wasAse = ASE.on, root = document.getElementById(ROOT_ID);
+    var named = arrive();
+    if (ASE.on) { if (named) showAse(root); return; }
+    if (wasAse) { boot(); return; }
+    if (named && redraw) redraw();
     /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
     if (batchRefresh) batchRefresh();
   });
@@ -919,7 +937,8 @@
       el("div", { cls: "cmn-rule", "aria-hidden": "true" }),
       el("p", { cls: "cmn-lede", text: countWords(cards.length).replace(/^./, function (ch) { return ch.toUpperCase(); }) + " common references the California Community Colleges keep together for credit for prior learning." }),
       el("p", { cls: "cmn-sub" }, ["Each college keeps its own catalog. The Commons gives every college one shared name to point to and shows how its own version lines up with it. ",
-        el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })])
+        el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })]),
+      el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."])
     ]));
 
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
@@ -1123,6 +1142,7 @@
     }
     root.textContent = "Reading the Commons…";
     arrive();
+    if (ASE.on) return showAse(root);
     return load().then(function (r) {
       render(root, r.data, r.S, new Date());
       return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });

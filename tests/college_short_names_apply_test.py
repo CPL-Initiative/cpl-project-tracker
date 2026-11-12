@@ -127,8 +127,9 @@ check("(6) ⭐ the seed script refuses without --force-reseed", p.returncode == 
 # (7)
 code, out = run()
 check("(7) no SUPABASE_SERVICE_KEY skips and keeps the files", code == 0 and "not read" in out, out)
-wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
-sync, pipe = wf.find("name: Sync curation overlay from Supabase"), wf.find("name: Run dashboard pipeline")
+# The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read().replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read())
+sync, pipe = wf.find('step "Sync curation overlay from Supabase"'), wf.find('step "Run dashboard pipeline"')
 at = wf.find("python kb/_apply_college_short_names.py")
 commit = wf[wf.find("name: Commit and push to main"):]
 check("(7) ⭐ the daily run folds the table in the curation sync, before the builders", sync < at < pipe, (sync, at, pipe))

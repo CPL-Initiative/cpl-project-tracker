@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 640,
-  "moniker": "SkyHeron",
+  "session": 642,
+  "moniker": "SkyKestrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_641_handoff.md",
+  "handoff": "docs/session_643_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,13 +33,37 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T05:54:18Z",
+  "written_at": "2026-11-12T15:02:52Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Resolve a stored title when it is read, then ASE plan phase 3",
-    "text": "Both standards plans are live. The next session and COBIx replace re-pointing saved values at apply time with resolving a stored title through the applied rename map when it is read, so no live row is rewritten. Then ASE plan phase 3 runs on a fresh read."
+    "title": "The classifier proposes a title in use before a new one",
+    "text": "The proposal step takes the statewide or most used title of the same issuer before a new one, and names an industry certification by its official name rather than a course title, on Sam's two rulings of 2026-11-12. It is in build; its report counts the Proposed cards it changes, and it merges on a green test after review."
   },
   "changes": [
+    {
+      "at": "2026-11-12T14:49:43Z",
+      "text": "A ghost delete now holds when a case-only successor is absent, and its plan refuses a before-row under the disclosure floor of 10. Pull request 3166 merged."
+    },
+    {
+      "at": "2026-11-12T14:30:21Z",
+      "text": "The Review card names the statewide or most used title of its own issuer, and the side panel changes the related titles that need it to a chosen title, through the rename batch's own rows. Pull request 3160 merged."
+    },
+    {
+      "at": "2026-11-12T13:46:59Z",
+      "text": "Sierra's 230 ghost rows were deleted on Sam's word, delete; the live table holds 2,719 rows, the reference's own count. The receipt in kb/receipts holds the undo."
+    },
+    {
+      "at": "2026-11-12T12:50:23Z",
+      "text": "Course details opens a Review card's aligned course in the side panel. Pull request 3157 merged."
+    },
+    {
+      "at": "2026-11-12T07:47:00Z",
+      "text": "Stored credential titles resolve when they are read, through the applied renames, and retired names became search aliases. The pull request that re-pointed saved values at apply time was closed."
+    },
+    {
+      "at": "2026-11-12T06:30:30Z",
+      "text": "ASE plan phase 3 applied: five title assignments, read back five."
+    },
     {
       "at": "2026-11-12T05:48:04Z",
       "text": "The second standards plan applied: seven more ASE titles renamed to their standards form, L1, A2, A6, L3, A9, A3 and A4. Sam's seven approval rows the apply carried out were removed, each kept in the receipt, and twelve subject rows followed the titles. The receipt's undo runs before the first plan's."
@@ -63,22 +87,6 @@
     {
       "at": "2026-11-11T23:38:21Z",
       "text": "24 ASE bundle titles carry the ASE Certificate Bundles family as a field, beside Sam's saved folds, which stay as they are."
-    },
-    {
-      "at": "2026-11-11T21:41:00Z",
-      "text": "The nightly run gave 747 credentials a Common SUBJ from the courses colleges credit for them or their issuer family, under the cohort exhibit-subject-s638@bot. Removing the cohort undoes it. 362 credentials still have no subject."
-    },
-    {
-      "at": "2026-11-11T21:33:36Z",
-      "text": "The ASE Military Tactical Wheeled Vehicle series, MIL1 to MIL8, carries ASE's official titles and sits in automotive. The three plans that re-point the ASE titles are committed and not yet applied."
-    },
-    {
-      "at": "2026-11-11T21:19:50Z",
-      "text": "A fold records its issuer decision as one row and changes no issuer a person saved. It applies in one pass and has an undo."
-    },
-    {
-      "at": "2026-11-11T16:56:18Z",
-      "text": "A saved fold reads Saved, waiting for apply, or Applied, in the Folds view."
     }
   ]
 }

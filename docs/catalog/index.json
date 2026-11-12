@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 581,
+   "count": 584,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2392,6 +2392,25 @@
      "updated": "2026-10-12"
     },
     {
+     "created": "2026-11-12",
+     "governs": [
+      "tests/check_ledger.test.js",
+      "tests/check_floor.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-ledger-at-its-line-fails-every-pr-that-adds-a-test.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "tests",
+      "ci",
+      "governance-team-enablement",
+      "conductor"
+     ],
+     "title": "A ledger kept at its threshold fails every PR that adds a test",
+     "type": "methodology",
+     "updated": "2026-11-12"
+    },
+    {
      "created": "2026-10-23",
      "governs": [
       "comms.js",
@@ -3374,6 +3393,25 @@
      "title": "A reader fix moves rows it was not aimed at, so compare each full read row by row",
      "type": "methodology",
      "updated": "2026-10-03"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [
+      "scripts/daily_build.sh",
+      ".github/workflows/daily-dashboard.yml",
+      "tests/apply_concurrency_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-rebuild-runs-the-same-build-script.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ci",
+      "workflows",
+      "governance"
+     ],
+     "title": "A rebuild runs the same build script, never an imitation of the runner",
+     "type": "methodology",
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-09-04",
@@ -4575,6 +4613,23 @@
      "title": "A tag scan cannot see a fetch",
      "type": "methodology",
      "updated": "2026-08-19"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [
+      "tests/public_target_floor.test.js"
+     ],
+     "path": "docs/kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "target-size",
+      "library"
+     ],
+     "title": "A target at exactly the minimum size fails at fractional zoom",
+     "type": "methodology",
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-07-26",
@@ -15862,7 +15917,7 @@
      ],
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
-     "updated": "2026-08-30"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-10-12",
@@ -15990,7 +16045,7 @@
      ],
      "title": "CSM Workspace / the team's queue for each college \u2014 lane state",
      "type": null,
-     "updated": "2026-11-10"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-10-20",
@@ -16087,7 +16142,7 @@
      ],
      "title": "Governance & team enablement \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16145,7 +16200,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-11-11"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16382,7 +16437,7 @@
      ],
      "title": "Sierra: false absences + the statewide flag \u2014 lane state",
      "type": null,
-     "updated": "2026-10-26"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16828,8 +16883,36 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 602,
+   "count": 604,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 643,
+     "path": "docs/session_643_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 643 handoff (from SkyKestrel, S642)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 642,
+     "path": "docs/session_642_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 642 handoff (from SkyOtter, S641)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -27030,5 +27113,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1454
+ "total": 1459
 }

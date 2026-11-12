@@ -155,7 +155,7 @@ jobs:
         shard: [1, 2, 3, 4, 5, 6]
     steps:
       # Everything but kb/receipts/ (1.6 GB of the 3.8 GB tree, measured
-      # 2026-10-29), which only two suites read, one file each: they are named
+      # 2026-10-29), which only three suites read, one file each: they are named
       # back in below. The full checkout took 2 min 33 s of every shard on 10-29.
       # A suite that starts reading another receipt fails here on ENOENT, so
       # name its file on a line of its own.
@@ -168,6 +168,7 @@ jobs:
             !/kb/receipts/*
             /kb/receipts/program_requirement_records_load_2026-10-04.sql
             /kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql
+            /kb/receipts/cobi_nav_first_light_magic_link_2026-11-12_s642.sql
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
@@ -313,6 +314,11 @@ jobs:
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline census (systems, sign-in, curriculum links)
         run: python3 tests/course_outline_census_test.py
+      # MID re-clustering Step 1 (S642, #2962): a same-college suite with distinct outcomes splits,
+      # identical outcomes confirm, and no missing SLO, TOP difference or units difference is ever the
+      # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
+      - name: MID outcomes compare (split, confirm, the standing rules)
+        run: python3 tests/mid_outcomes_compare_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.
@@ -438,6 +444,14 @@ jobs:
       # Its undo never reads a write's echo (S639 review, #3123): a lost response, a died run, two rollbacks out of order.
       - name: CER decision applier undoes what landed, not what echoed
         run: python3 tests/cer_decision_apply_retry_test.py
+      # Sierra's ghost-row delete (Sam, Open Asks Sheet 183 card 6): the plan finds exactly the ghosts, the apply's
+      # guards refuse, the receipt comes from a fresh read, the undo restores every column. Pure-stdlib python.
+      - name: Sierra ghost-row delete refuses, receipts and undoes
+        run: python3 tests/chatbox_ghost_delete_test.py
+      # The sync behind it: adopters and potential colleges kept apart, suppression inherited, and each retired
+      # title's old name on its live successor's raw_variants (Sam, 2026-11-11). Pure-stdlib python.
+      - name: Credential catalog sync (Sierra) keeps its rows and the retired names
+        run: python3 tests/credential_catalog_sync_test.py
       # The CER's nightly procedures run (Sam, 2026-10-18): a lane only hints, the
       # gate holds residue, a disagreement is held, and a pre-fill no reason holds
       # saves under its procedure's cohort, a live row holding the save (Sheet 94
@@ -506,6 +520,10 @@ jobs:
       # student figure in the public file.
       - name: Exhibits review queue builder
         run: python3 tests/exhibits_review_build_test.py
+      # The title in use before a new one, and no course title on a certification (Sam, 2026-11-12): the one rule's
+      # Python side against the fixture exhibits.js is pinned to (tests/title_in_use_parity.test.js), and the proposal.
+      - name: Exhibits proposal, the title in use
+        run: python3 tests/title_in_use_test.py
       # Another look (Sam, 2026-10-31): each rule's proposal on a fixture, what a person kept never comes
       # back, a held title is left to Review, an exam's or an industry credential's name is never read
       # as a course number.

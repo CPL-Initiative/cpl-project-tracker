@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "MEDICAL ASSISTANT: BACK OFFICE",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9757,
+  "input_tokens": 9186,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9757,
-    "output_tokens": 1072,
+    "input_tokens": 9186,
+    "output_tokens": 1018,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1072,
+  "output_tokens": 1018,
   "output_tokens_details": {
-   "thinking_tokens": 369
+   "thinking_tokens": 340
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06047,
- "ms": 8973,
- "seconds": 9.3,
+ "cost_usd": 0.0571,
+ "ms": 9264,
+ "seconds": 9.4,
  "parts": null,
  "error": null,
  "score": {
@@ -182,11 +182,19 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit Certificate of Completion counted in hours; 'Total Lecture Hrs: 171' recorded as total_units, and the printed course hours sum to 171.",
-   "Outcomes were rejoined across PDF line-break hyphenation ('medi -cal' as 'medical', 'ambu -latory' as 'ambulatory').",
-   "The catalog prints VOC ED 375CE's title as 'MEDICAL ASSISTING BACK OFFICE I' and VOC ED 435CE's as 'INTRODUCTION TO MEDICAL TERMINOLOGY LEVEL 2'; the codes match the closed list."
+   "Award is a Certificate of Completion counted in hours ('Total Lecture Hrs: 171'); the required course hours sum to 171.",
+   "Outcomes rejoined across PDF line-break hyphens ('medi -cal' read as 'medical', 'ambu -latory' as 'ambulatory').",
+   "Catalog prints titles slightly differently from the state file (e.g., 'MEDICAL ASSISTING BACK OFFICE I', 'INTRODUCTION TO MEDICAL TERMINOLOGY LEVEL 2'); codes match."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "cd549581938ed9a2",
+ "source_codes": [
+  "VOCED372CE",
+  "VOCED375CE",
+  "VOCED379CE",
+  "VOCED391CE",
+  "VOCED435CE"
+ ],
+ "source_coverage": 1.0
 }

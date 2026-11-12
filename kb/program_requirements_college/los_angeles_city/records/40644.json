@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "CINEMATOGRAPHY",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=189",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13637,
+  "input_tokens": 12348,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13637,
-    "output_tokens": 986,
+    "input_tokens": 12348,
+    "output_tokens": 1643,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,73 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 986,
+  "output_tokens": 1643,
   "output_tokens_details": {
-   "thinking_tokens": 295
+   "thinking_tokens": 609
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07427,
- "ms": 8262,
- "seconds": 8.8,
+ "cost_usd": 0.08225,
+ "ms": 13019,
+ "seconds": 13.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 7,
    "listed": 7,
-   "share": 0.0,
-   "missing": [
-    "CINEMA1",
-    "CINEMA18",
-    "CINEMA381",
-    "CINEMA382",
-    "CINEMA4",
-    "CINEMA6",
-    "CINEMA7"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "CINEMA2",
+    "CINEMA3",
+    "CINEMA501",
+    "PHOTO10"
+   ],
+   "flagged": [
+    "CINEMA2",
+    "CINEMA3",
+    "CINEMA501",
+    "PHOTO10"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    24.0,
+    24.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
-   "not_verbatim": [],
-   "why": [],
+   "count": 3,
+   "not_verbatim": [
+    "Collaborate in a group to plan and execute a short film, functioning in the role of producer, director, and director of photography on cinema projects emphasizing lighting, composition, exposure, and focus."
+   ],
+   "why": [
+    "not in the catalog text as printed: Collaborate in a group to plan and execute a short film, functioning in the role"
+   ],
    "heading_printed": true,
-   "heading_without_outcomes": true,
-   "pass": true
+   "heading_without_outcomes": false,
+   "pass": false
   },
   "careers": {
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -107,11 +114,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "Not found: no Cinematography Certificate of Achievement section appears in the supplied text",
+   "section_heading": "Cinematography Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 24,
+    "max": 24
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,45 +135,124 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Plan, execute and organize practical digital or film still photography exercises that demonstrate cinematography fundamentals, including the understanding of camera controls, elements of composition, and photographing with natural and artificial light.",
+    "Collaborate in a group to plan and execute a short film, functioning in the role of producer, director, and director of photography on cinema projects emphasizing lighting, composition, exposure, and focus.",
+    "Employ basic principles of black and white analog photography from the mechanical creation of the image with camera and film to enlarging the photograph for display, while applying the guidelines of composition, communication, and self-expression."
+   ],
+   "careers": [
+    "cinematographer",
+    "camera operator",
+    "camera assistant",
+    "data manager"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CINEMA 038-1",
-    "why": "Cinematography certificate section not in the text; the course appears only under other programs (transfer degree List C)"
-   },
-   {
-    "code": "CINEMA 038-2",
-    "why": "Cinematography certificate section not in the text; the course appears only under other programs (transfer degree List C, Cinema Production AA)"
-   },
-   {
-    "code": "CINEMA 1",
-    "why": "Cinematography certificate section not in the text; CINEMA 001 appears only under other programs"
-   },
-   {
-    "code": "CINEMA 18",
-    "why": "Cinematography certificate section not in the text; CINEMA 018 appears only under other programs"
-   },
-   {
-    "code": "CINEMA 4",
-    "why": "Cinematography certificate section not in the text; CINEMA 004 appears only under other programs"
-   },
-   {
-    "code": "CINEMA 6",
-    "why": "Cinematography certificate section not in the text; CINEMA 006 appears only under other programs"
-   },
-   {
-    "code": "CINEMA 7",
-    "why": "Cinematography certificate section not in the text; CINEMA 007 appears only under other programs"
+    "name": "REQUIRED COURSES (24 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "CINEMA 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CINEMA 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 018",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 038-1",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 038-2",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 010",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CINEMA 501",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied pages (185-188) contain the end of a transfer degree (CalGETC), the Cinema Production AA, the Cinema Production, Cinema Directing and Cinema Post Production Certificates of Achievement, and the start of the Cinema Producing Certificate of Achievement, which is cut off. None of these is the Cinematography Certificate of Achievement.",
-   "The Cinematography certificate is probably on another page of the catalog. A reviewer should locate that page; no requirements, totals, outcomes or careers were recorded from other programs' sections."
+   "Catalog prints codes with leading zeros (CINEMA 001, 004, 006, 007, 018); matched to closed-list CINEMA 1, 4, 6, 7, 18.",
+   "CINEMA 002, CINEMA 003, PHOTO 010 and CINEMA 501 are in the catalog section but not in the closed list; recorded as catalog additions.",
+   "Hyphenated line-break words in outcomes (e.g., 'photogra-phy', 'expo -sure', 'guide-lines') were rejoined as single words."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "ab265efa3ef7f2f9",
+ "source_codes": [
+  "CINEMA1",
+  "CINEMA18",
+  "CINEMA381",
+  "CINEMA382",
+  "CINEMA4",
+  "CINEMA6",
+  "CINEMA7"
+ ],
+ "source_coverage": 1.0
 }

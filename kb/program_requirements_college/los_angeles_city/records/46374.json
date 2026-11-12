@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Food, Science and Technology",
  "award": "A.S. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11775,
+  "input_tokens": 11053,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11775,
-    "output_tokens": 1397,
+    "input_tokens": 11053,
+    "output_tokens": 2505,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,46 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1397,
+  "output_tokens": 2505,
   "output_tokens_details": {
-   "thinking_tokens": 247
+   "thinking_tokens": 1031
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07504,
- "ms": 12155,
- "seconds": 12.5,
+ "cost_usd": 0.09431,
+ "ms": 19342,
+ "seconds": 19.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 16,
    "listed": 16,
-   "share": 0.0,
-   "missing": [
-    "BIOLOGY6",
-    "BIOLOGY7",
-    "CHEM101",
-    "CHEM102",
-    "CHEM211",
-    "CHEM212",
-    "CHEM71",
-    "CHEM72",
-    "FAM&CS21",
-    "MATH239",
-    "MATH261",
-    "MATH261S",
-    "MICRO1",
-    "MICRO20",
-    "PHYSICS101",
-    "PHYSICS6"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -78,52 +61,70 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    53.0,
+    55.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    53.0,
+    55.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     71.0,
+     82.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "",
+   "section_heading": "Food, Science and Technology Associate of Science (AS) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 53,
+    "max": 55
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -132,90 +133,202 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
+    "min": 18,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Gain specialized knowledge in food chemistry with an understanding of the chemical makeup of foods, including proteins, carbohydrates, lipids, vitamins, and minerals. Students will gain skills in analyzing food constituents to ensure safety, quality, and compliance with regulations.",
+    "Gain preparedness for entry level jobs in the food and beverage industry, research, product development, and regulatory agencies.",
+    "Use standard lab equipment and procedures to analyze food composition, safety, and quality.",
+    "Obtain analytical and critical thinking skills to address challenges in food composition, processing, and preservation.",
+    "Gain practical skills in methods such as spectroscopy, chromatography, and titration for analyzing food substances.",
+    "Interpret and apply food labeling and regulations.",
+    "Develop the ability to assess nutritional labels and understand legal standards for food products.",
+    "Conduct basic research or lab work in food chemistry."
+   ],
+   "careers": [
+    "food technologist",
+    "quality control specialist",
+    "product development scientist"
+   ],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (53-55 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 53,
+     "max": 55
+    },
+    "courses": [
+     {
+      "code": "BIOLOGY 006",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOLOGY 007",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MICRO 001",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MICRO 020",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 072",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 211",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 212",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 006",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHYSICS 101",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 239",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "FAM &CS 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "degree_total recorded from the section header 'Total Units: Minimum of 60', printed as this award's total; it is a minimum, not a fixed figure.",
+   "The page names no general education pattern and prints no GE units for this degree; ge_pattern and ge_units left null.",
+   "Catalog codes with leading zeros (BIOLOGY 006, MICRO 001, CHEM 071, FAM &CS 021, etc.) match closed-list codes without zeros (BIOLOGY 6, MICRO 1, CHEM071, FAM &CS 21); treated as the same courses.",
+   "CHEM 060 and MATH 260/260S appear only in prerequisite footnotes, not as program requirements; not recorded.",
+   "Printed block total 53-55 is consistent with the min/max of the 'or' choices (MICRO 020 at 4 vs MICRO 001 at 5; PHYSICS 006 at 4 vs PHYSICS 101 at 5)."
+  ]
+ },
+ "extracted_run": "43212072618",
+ "source_sha": "9b8f28efc48bd969",
+ "source_codes": [
+  "BIOLOGY6",
+  "BIOLOGY7",
+  "CHEM101",
+  "CHEM102",
+  "CHEM211",
+  "CHEM212",
+  "CHEM71",
+  "CHEM72",
+  "FAM&CS21",
+  "MATH239",
+  "MATH261",
+  "MATH261S",
+  "MICRO1",
+  "MICRO20",
+  "PHYSICS101",
+  "PHYSICS6"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "now": {
+    "min": 18,
+    "max": 27
+   },
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58))"
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BIOLOGY 6",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "BIOLOGY 7",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "CHEM 101",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "CHEM 102",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "CHEM 211",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "CHEM 212",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "CHEM 72",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "CHEM071",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section (as CHEM 071)"
-   },
-   {
-    "code": "FAM &CS 21",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 239",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 261",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "MATH 261S",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MICRO 1",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MICRO 20",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA section"
-   },
-   {
-    "code": "PHYSICS 101",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "PHYSICS 6",
-    "why": "Food Science A.S. section not in the text; named only in the Liberal Arts AA and Biology AS-T sections"
-   }
-  ],
-  "notes": [
-   "The supplied catalog text (pages 153-155) contains only the Liberal Arts: Natural and Applied Sciences and Mathematics AA section and the Biology AS-T section; no section for the Food, Science and Technology A.S. Degree appears, so no section heading, blocks, totals, outcomes or careers were recorded.",
-   "The source link points to page 153; the Food Science program likely appears elsewhere in the catalog (e.g., under Chemistry or Family and Consumer Studies). A reviewer should locate the correct page and re-extract.",
-   "Courses from other programs' sections were deliberately not recorded to avoid attributing another award's requirements to this program."
-  ]
- },
- "extracted_run": "39006380342"
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
+  }
+ ]
 }

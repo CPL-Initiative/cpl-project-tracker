@@ -920,3 +920,20 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
 ## Moved from the lane (S639, 2026-11-11)
 
 **LIVE: a stalled routine becomes a queue item (S624, the path mock's build).** `kb/status/commons.json` `queue.stalled` names a reference whose machine stamp is older than 1.5 of its cadence (`stopped`) and a routine-carried issue that counts as many items as its latest reading at least seven days old (`not_shrinking`). Each build records the day's routine counts in `kb/status/commons_history.json` (one entry a UTC day, 60 kept; both workflows commit it); the file was seeded from main's own commits back to 2026-11-04, the day issues first named a carry. The Commons tab draws *A routine has stalled* as a fifth box in *Waiting on a person* only when the list holds an item. Seven days and the 1.5 are constants in the builder (`STALL_DAYS`, `STALL_SLACK`); a backlog that grows because its source grew also reads as stalled, which is the team's call to look at. Tests: `tests/commons_status_build_test.py`, `tests/commons.test.js` (stalled 1 to 5).
+
+## S641 (SkyOtter, the conductor, 2026-11-12): the ASE slice, read-only first
+
+- **The first slice of the Commons plan's v2 Agreed final shipped read-only** (#3152, Sam's go on Sheet 181 card 10):
+  52 ASE certifications by 120 colleges, 6,240 pairs, 18% with an answer. The parts that need a write (Request CPL
+  Review) or a public surface waited, so the slice could ship on the go it had; a write surface goes through Rule 10 a3
+  first.
+- **It conflicted on `kb/dependency_map.json`** after two other map-touching PRs merged cleanly in sequence. Merge
+  map-touching PRs one at a time and expect a `main` merge on the rest.
+
+## Moved from the lane (S642, 2026-11-12)
+
+Moved verbatim from `docs/reference/lanes/commons.md` to make room for re-clustering Step 1.
+
+**The Courses List keeps the row you are ruling on (S623, issue #2995; Sam, 2026-11-09: *"the list view shifts focus to the top row every time you take action in the sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and other buttons are a bit jumbled together."*).** In the list engine (`commons_list.js`, so every List gets it): a redraw asked for by a panel (`api.redraw`, now `redrawKeep`) puts the table's scroll back and brings the current row into sight; the row whose panel is open carries `aria-current` and a bar (`<prefix>cur`), and its band carries one too (`<prefix>bandcur`). In the Discipline in doubt panel (`coci_lookup.js`): the ruling is one box with *Save the ruling* on its own line, the edits sit under *Or edit the common course*, and *Open … in SkyView* has its own line. Guards `tests/coci_list_doubt.test.js` (9).
+
+**The Courses List's filter words sit in two groups (S622, #2998, issue #2997; Sam, 2026-11-09: *"put them in order of priority for me to act on ... categorize the ones that need action and the others that are just convenient filters"*).** `commons_list.js` takes an optional `filterGroups: [{ label, ids }]`: each group on its own line, its label first, its words in the group's order; a List that sets none draws as before. The Courses List: **To do** (Discipline in doubt, On a stray identity code, No catalog description, A unit anomaly, Discipline no seed has touched), then **Browse** (the ten census words). The rule holds for every List that gains job filters. Open beside it: #2995, keep the current row in view after a ruling.

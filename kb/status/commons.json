@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T06:40:34Z",
+ "written_at": "2026-11-12T20:24:38Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13895,
+     "n": 13983,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 3033,
+     "n": 2947,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3354,
+     "n": 3352,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-12T02:37:11Z",
+    "at": "2026-11-12T11:50:06Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13895,
-    "failing": 3033,
-    "unread": 3354,
-    "records": 18555,
+    "complete": 13983,
+    "failing": 2947,
+    "unread": 3352,
+    "records": 18554,
     "colleges": 114,
-    "outside_active": 1627,
+    "outside_active": 1624,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2686,
-     "of": 5716,
-     "words": "titles carry a review stamp (1,227 a person's, 1,459 a cohort's); 2,742 credentials, 2,280 of 3,050 records stamped",
+     "n": 2696,
+     "of": 5726,
+     "words": "titles carry a review stamp (1,236 a person's, 1,460 a cohort's); 2,749 credentials, 2,287 of 3,057 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1227,
-     "of": 5716,
+     "n": 1236,
+     "of": 5726,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -118,15 +118,15 @@
    ],
    "issues": [
     {
-     "n": 177,
+     "n": 179,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
+     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 362,
+     "n": 366,
      "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
@@ -158,26 +158,26 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-12T06:36:25Z",
+    "at": "2026-11-12T20:21:39Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5716,
-    "stamped": 2686,
-    "person": 1227,
-    "cohort": 1459,
-    "credentials": 2742,
-    "confirmed": 1227,
-    "records": 3050,
-    "records_stamped": 2280,
-    "saved_at": "2026-11-11T15:43:03Z",
-    "fold_at": "2026-11-12T06:36:25Z",
+    "titles": 5726,
+    "stamped": 2696,
+    "person": 1236,
+    "cohort": 1460,
+    "credentials": 2749,
+    "confirmed": 1236,
+    "records": 3057,
+    "records_stamped": 2287,
+    "saved_at": "2026-11-12T16:21:46Z",
+    "fold_at": "2026-11-12T20:21:39Z",
     "map_titles": 5087,
-    "unclassified": 180,
+    "unclassified": 170,
     "left_map": 809,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 362
+    "no_subject": 366
    },
    "sources": [
     "kb/unified_titles.json",
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T06:38:25+00:00",
+    "at": "2026-11-12T20:23:43+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -363,7 +363,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T05:59:34Z",
+    "at": "2026-11-12T11:54:35Z",
     "every_hours": null
    },
    "facts": {
@@ -406,12 +406,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T06:36:23Z",
+    "at": "2026-11-12T20:21:37Z",
     "every_hours": 24
    },
    "facts": {
@@ -561,9 +561,9 @@
    ],
    "pair": [
     {
-     "n": 38797,
+     "n": 41949,
      "of": null,
-     "words": "outcomes read from 10,824 courses at 15 colleges",
+     "words": "outcomes read from 11,599 courses at 16 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -571,8 +571,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 38797,
-    "courses": 10824,
+    "outcomes": 41949,
+    "courses": 11599,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -588,13 +588,14 @@
      "norco",
      "orange_coast",
      "riverside_city",
-     "santa_ana"
+     "santa_ana",
+     "shasta"
     ],
-    "reads": 39
+    "reads": 41
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-10T07:25:14Z",
+    "at": "2026-11-12T07:42:29Z",
     "every_hours": null
    },
    "sources": [
@@ -667,9 +668,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 177,
+      "n": 179,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
+      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
       "open": "#exhibits/held"
      },
      {
@@ -683,7 +684,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -729,7 +730,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3033,
+    "n": 2947,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -737,7 +738,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3354,
+    "n": 3352,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -745,7 +746,7 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 362,
+    "n": 366,
     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -764,7 +765,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3354,
+    "n": 3352,
     "was": 3349,
     "since": "2026-11-05",
     "words": "active programs with no record yet",
@@ -813,8 +814,8 @@
     },
     {
      "name": "brand-family",
-     "placed": 115,
-     "untouched": 108,
+     "placed": 116,
+     "untouched": 109,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
@@ -879,8 +880,8 @@
     }
    ],
    "total": {
-    "placed": 1319,
-    "untouched": 1188,
+    "placed": 1320,
+    "untouched": 1189,
     "kept": 23,
     "renamed": 84,
     "moved": 0,
@@ -987,46 +988,18 @@
   {
    "kind": "another-look",
    "n": 6,
-   "of": 13,
+   "of": 10,
    "open": "#exhibits/another-look/batch",
    "title": "Another look at 6 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "ase",
-    "fold"
+    "ase"
    ],
    "cards": [
     {
-     "id": "32e846a953d2",
-     "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO L1"
-     ]
-    },
-    {
-     "id": "b4d89140a157",
-     "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO A2"
-     ]
-    },
-    {
-     "id": "a4fb41903c42",
-     "current": "Brakes (ASE A5 standards)",
-     "keys": [
-      "_UNCLASSIFIED::AUTO 61A-Automotive Brake Systems-Credit by Exam",
-      "_UNCLASSIFIED::Automotive Brake Systems",
-      "_UNCLASSIFIED::Automotive Brake Systems AUTO 036 Cx",
-      "_UNCLASSIFIED::Brakes",
-      "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
-      "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
-      "_UNCLASSIFIED::Noncredit for AUTO A5"
-     ]
-    },
-    {
-     "id": "6205073ae16e",
-     "current": "Electrical/Electronic Systems (ASE A6 standards)",
+     "id": "430e821e4f43",
+     "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
      "keys": [
       "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
       "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
@@ -1034,24 +1007,44 @@
      ]
     },
     {
-     "id": "2a47466ec9ca",
-     "current": "Engine Performance (ASE A8 standards)",
+     "id": "00c22b90e09a",
+     "current": "Heating and Air Conditioning (ASE A7 standards)",
      "keys": [
-      "_UNCLASSIFIED::Engine Performance",
-      "_UNCLASSIFIED::Engine Performance - Credit by Exam (ATEC 23 )",
-      "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
-      "_UNCLASSIFIED::Noncredit for AUTO A8"
+      "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
+      "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+      "_UNCLASSIFIED::Noncredit for AUTO A7"
      ]
     },
     {
-     "id": "e3f2df4e8376",
-     "current": "Engine Performance (ASE A8 standards)",
+     "id": "166a7c372e22",
+     "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
      "keys": [
-      "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx"
+      "_UNCLASSIFIED::Noncredit for AUTO L3"
+     ]
+    },
+    {
+     "id": "fb969746ce77",
+     "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
+     "keys": [
+      "_UNCLASSIFIED::Noncredit for AUTO A9"
+     ]
+    },
+    {
+     "id": "f9f986a9f33c",
+     "current": "Manual Drive Train and Axles (ASE A3 standards)",
+     "keys": [
+      "_UNCLASSIFIED::Noncredit for AUTO A3"
+     ]
+    },
+    {
+     "id": "5dcc165d855e",
+     "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+     "keys": [
+      "_UNCLASSIFIED::Noncredit for AUTO P1"
      ]
     }
    ],
-   "at": "2026-11-12T06:40:09Z"
+   "at": "2026-11-12T20:24:14Z"
   },
   {
    "kind": "job",
@@ -1067,46 +1060,18 @@
  "next_batch": {
   "kind": "another-look",
   "n": 6,
-  "of": 13,
+  "of": 10,
   "open": "#exhibits/another-look/batch",
   "title": "Another look at 6 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "ase",
-   "fold"
+   "ase"
   ],
   "cards": [
    {
-    "id": "32e846a953d2",
-    "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO L1"
-    ]
-   },
-   {
-    "id": "b4d89140a157",
-    "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO A2"
-    ]
-   },
-   {
-    "id": "a4fb41903c42",
-    "current": "Brakes (ASE A5 standards)",
-    "keys": [
-     "_UNCLASSIFIED::AUTO 61A-Automotive Brake Systems-Credit by Exam",
-     "_UNCLASSIFIED::Automotive Brake Systems",
-     "_UNCLASSIFIED::Automotive Brake Systems AUTO 036 Cx",
-     "_UNCLASSIFIED::Brakes",
-     "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
-     "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
-     "_UNCLASSIFIED::Noncredit for AUTO A5"
-    ]
-   },
-   {
-    "id": "6205073ae16e",
-    "current": "Electrical/Electronic Systems (ASE A6 standards)",
+    "id": "430e821e4f43",
+    "current": "Auto Electrical/Electronic Systems (ASE A6 standards)",
     "keys": [
      "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
      "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
@@ -1114,23 +1079,43 @@
     ]
    },
    {
-    "id": "2a47466ec9ca",
-    "current": "Engine Performance (ASE A8 standards)",
+    "id": "00c22b90e09a",
+    "current": "Heating and Air Conditioning (ASE A7 standards)",
     "keys": [
-     "_UNCLASSIFIED::Engine Performance",
-     "_UNCLASSIFIED::Engine Performance - Credit by Exam (ATEC 23 )",
-     "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
-     "_UNCLASSIFIED::Noncredit for AUTO A8"
+     "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
+     "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+     "_UNCLASSIFIED::Noncredit for AUTO A7"
     ]
    },
    {
-    "id": "e3f2df4e8376",
-    "current": "Engine Performance (ASE A8 standards)",
+    "id": "166a7c372e22",
+    "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
     "keys": [
-     "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx"
+     "_UNCLASSIFIED::Noncredit for AUTO L3"
+    ]
+   },
+   {
+    "id": "fb969746ce77",
+    "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
+    "keys": [
+     "_UNCLASSIFIED::Noncredit for AUTO A9"
+    ]
+   },
+   {
+    "id": "f9f986a9f33c",
+    "current": "Manual Drive Train and Axles (ASE A3 standards)",
+    "keys": [
+     "_UNCLASSIFIED::Noncredit for AUTO A3"
+    ]
+   },
+   {
+    "id": "5dcc165d855e",
+    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
+    "keys": [
+     "_UNCLASSIFIED::Noncredit for AUTO P1"
     ]
    }
   ],
-  "at": "2026-11-12T06:40:09Z"
+  "at": "2026-11-12T20:24:14Z"
  }
 }

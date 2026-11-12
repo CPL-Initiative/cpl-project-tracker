@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "History",
  "award": "A.A- T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=168",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14174,
+  "input_tokens": 15889,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14174,
-    "output_tokens": 5686,
+    "input_tokens": 15889,
+    "output_tokens": 6058,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,49 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 5686,
+  "output_tokens": 6058,
   "output_tokens_details": {
-   "thinking_tokens": 1682
+   "thinking_tokens": 1446
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.17042,
- "ms": 41470,
- "seconds": 41.8,
+ "cost_usd": 0.18472,
+ "ms": 43622,
+ "seconds": 43.8,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 67,
+   "placed": 89,
    "listed": 89,
-   "share": 0.753,
-   "missing": [
-    "AFROAM4",
-    "AFROAM5",
-    "AFROAM7",
-    "ASIAN1",
-    "ASL3",
-    "CHICANO4",
-    "CHICANO44",
-    "CHICANO47",
-    "CHICANO7",
-    "CHICANO8",
-    "CHINESE3",
-    "CHINESE4",
-    "FRENCH3",
-    "FRENCH4",
-    "HISTC1001",
-    "HISTC1002",
-    "HISTORY5",
-    "HISTORY6",
-    "HISTORY73",
-    "HISTORY86",
-    "HISTORY87",
-    "JAPAN3"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -85,30 +62,55 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    3.0,
-    3.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
    "why": [
-    "'(list heading not in text; continued from previous page)' chooses courses but names no minimum",
-    "the record names no total"
-   ]
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-20.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     52.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     8.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -117,50 +119,230 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "LIST B: AREA 2 - SOCIAL  (3 UNITS)",
+   "section_heading": "History Associate of Arts (AA-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Analyze the ways that race, ethnicity, gender, class, and geographical location have influenced diverse human experiences and affected the perspectives of diverse peoples.",
+    "Interpret the past events and processes that continue to shape individuals and communities, drawing on detailed knowledge about the history of the area under study.",
+    "Assess, synthesize, and apply evidence from primary and secondary sources to make a coherent argument about the past.",
+    "Form historical research questions, conduct research, compose arguments based on that research."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "(list heading not in text; continued from previous page)",
-    "rule": "choose_courses",
+    "name": "Major Core Courses",
+    "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 6,
+     "max": 6
     },
     "courses": [
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A: Select Two",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "HISTORY 086",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 087",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B: Area 1 - Diversity",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "HISTORY 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HISTORY 073",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AFRO AM 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ASIAN 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 004",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 044",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHICANO 047",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "A S L 003",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHINESE 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHINESE 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FRENCH 004",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 003",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
      {
       "code": "JAPAN 004",
       "units": 5,
@@ -213,7 +395,7 @@
     ]
    },
    {
-    "name": "LIST B: AREA 2 - SOCIAL",
+    "name": "List B: Area 2 - Social",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -646,97 +828,107 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "AFRO AM 7",
-    "why": "named only in the Liberal Arts: Social and Behavioral Sciences AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "AFROAM004",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "AFROAM005",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "ASIAN 1",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "ASL003",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   },
-   {
-    "code": "CHICANO 4",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "CHICANO 44",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "CHICANO 47",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "CHICANO 7",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "CHICANO 8",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "CHINESE 3",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   },
-   {
-    "code": "CHINESE 4",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   },
-   {
-    "code": "FRENCH 3",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   },
-   {
-    "code": "FRENCH 4",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   },
-   {
-    "code": "HISTC1001",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTC1002",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTORY 5",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTORY 6",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTORY 73",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTORY 86",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "HISTORY 87",
-    "why": "named only in the Liberal Arts AA section; History section text before page 169 not provided"
-   },
-   {
-    "code": "JAPAN 3",
-    "why": "not in the text (likely on the preceding page of the History section)"
-   }
-  ],
-  "notes": []
+  "missing_explained": [],
+  "notes": [
+   "Degree total recorded from the award header 'Total Units: Minimum of 60'; Cal-GETC units (34 semester) come from the general ADT requirement text on the page.",
+   "HISTORY 006 is printed with the title 'HISTORY OF THE AMERICAS I' (apparent typo for II).",
+   "HIST C1002 is printed as 'UNITED STATES HISTORY FROM 1865'; closed list stores it as HISTC1001/HISTC1002 without a space, treated as the same courses.",
+   "List B: Area 2 continues across the page break; the ANTHRO, CH DEV, COMM, ECON, FAM &CS, GEOG, JOURNAL, LING, PSYC/PSYCH courses follow without a separate heading and were read as part of Area 2. A reviewer may check whether the official ADT template places these in a separate List C.",
+   "Major range 18-20 reflects the 4-5 unit language courses in Area 1.",
+   "No careers are named in the History section."
+  ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "9ab810add137e9b4",
+ "source_codes": [
+  "AFROAM4",
+  "AFROAM5",
+  "AFROAM7",
+  "ANTHRO102",
+  "ANTHRO103",
+  "ANTHRO121",
+  "ANTHRO151",
+  "ASIAN1",
+  "ASL3",
+  "CHDEV1",
+  "CHDEV11",
+  "CHICANO4",
+  "CHICANO44",
+  "CHICANO47",
+  "CHICANO7",
+  "CHICANO8",
+  "CHINESE10",
+  "CHINESE3",
+  "CHINESE4",
+  "COMM100",
+  "COMM121",
+  "COMM122",
+  "ECONC2001",
+  "ECONC2002",
+  "FAM&CS31",
+  "FRENCH10",
+  "FRENCH3",
+  "FRENCH4",
+  "GEOG14",
+  "GEOG2",
+  "GEOG7",
+  "HISTC1001",
+  "HISTC1002",
+  "HISTORY5",
+  "HISTORY6",
+  "HISTORY73",
+  "HISTORY81",
+  "HISTORY82",
+  "HISTORY86",
+  "HISTORY87",
+  "HUMAN30",
+  "HUMAN31",
+  "HUMAN6",
+  "HUMAN61",
+  "HUMAN8",
+  "JAPAN14",
+  "JAPAN3",
+  "JAPAN4",
+  "JAPAN9",
+  "JOURNAL105",
+  "KOREAN10",
+  "KOREAN13",
+  "KOREAN3",
+  "KOREAN4",
+  "LAW3",
+  "LING2",
+  "LING3",
+  "PHILOS14",
+  "PHILOS20",
+  "PHILOS30",
+  "PHILOS32",
+  "PHILOS40",
+  "POLSC1000",
+  "POLSCI14",
+  "POLSCI19",
+  "POLSCI2",
+  "POLSCI5",
+  "POLSCI7",
+  "PSYCC1000",
+  "PSYCH13",
+  "PSYCH14",
+  "PSYCH41",
+  "PSYCH52",
+  "PSYCH74",
+  "RUSSIAN10",
+  "RUSSIAN3",
+  "RUSSIAN4",
+  "SOC1",
+  "SOC11",
+  "SOC12",
+  "SOC2",
+  "SOC22",
+  "SOC31",
+  "SOC32",
+  "SPANISH10",
+  "SPANISH3",
+  "SPANISH4",
+  "SPANISH9"
+ ],
+ "source_coverage": 0.989
 }

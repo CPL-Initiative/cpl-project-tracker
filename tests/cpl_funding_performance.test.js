@@ -167,7 +167,8 @@ const run2 = spawnSync("python3",
 check("missing input exits 0 without writing", run2.status === 0 && !fs.existsSync(path.join(tmp, "never.js")));
 
 // ── workflow wiring ─────────────────────────────────────────────────────────
-const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 check("daily workflow invokes the producer", wf.indexOf("funding/_build_funding_performance.py") !== -1);
 check("daily workflow publishes cpl_funding_performance.js", /git add[^\n]*cpl_funding_performance\.js|cpl_funding_performance\.js[^\n]*\|\| true/.test(wf));
 

@@ -44768,26 +44768,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
-    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
+    "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+    "reviewed_at": "2026-11-12T12:06:24.372+00:00",
     "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": null,
-    "_revised_from": "Auto Electricity and Electronics",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Auto Electricity and Electronics' on 2026-10-31."
+    "_revised_from": "Electrical/Electronic Systems (ASE A6 standards)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Electrical/Electronic Systems (ASE A6 standards)' on 2026-11-12."
   },
   "AUTOTEC-15: Auto Electricity and Electronics": {
-    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
+    "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+    "reviewed_at": "2026-11-12T12:06:24.372+00:00",
     "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": null,
-    "_revised_from": "Auto Electricity and Electronics",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Auto Electricity and Electronics' on 2026-10-31."
+    "_revised_from": "Electrical/Electronic Systems (ASE A6 standards)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Electrical/Electronic Systems (ASE A6 standards)' on 2026-11-12."
   },
   "BIOL-424 High School Anatomy and Physiology Honors": {
     "unified_title": "Anatomy and Physiology",
@@ -60471,15 +60471,15 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
   },
   "Noncredit for AUTO A6": {
-    "unified_title": "Electrical/Electronic Systems (ASE A6 standards)",
+    "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-12",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
+    "reviewed_at": "2026-11-12T12:06:24.372+00:00",
     "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": null,
-    "_revised_from": "Automotive Electrical Systems",
-    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical Systems' on 2026-10-31."
+    "_revised_from": "Electrical/Electronic Systems (ASE A6 standards)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Electrical/Electronic Systems (ASE A6 standards)' on 2026-11-12."
   },
   "Noncredit for AUTO A7": {
     "unified_title": "Heating and Air Conditioning (ASE A7 standards)",
@@ -63243,5 +63243,85 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-11-11T15:43:03.87628+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Government Exam": {
+    "unified_title": "AP United States Government and Politics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T16:21:46.334286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "Credit By Exam- CFPL ABT 135": {
+    "unified_title": "Agricultural Business and Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:11:19.584464+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Credit by Exam - ACADEMIC PLANNING": {
+    "unified_title": "Academic Planning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:32:40.61005+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Elevators Training Center Apprenticeship Journeyperson": {
+    "unified_title": "Elevators Training Center Apprenticeship Journeyperson",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:33:08.105913+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Elevators Training Center Apprenticeship Level 1": {
+    "unified_title": "Elevators Training Center Apprenticeship Level 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:33:10.292005+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Elevators Training Center Apprenticeship Level 2": {
+    "unified_title": "Elevators Training Center Apprenticeship Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:37:07.959024+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Elevators Training Center Apprenticeship Level 3": {
+    "unified_title": "Elevators Training Center Apprenticeship Level 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:37:08.716118+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Elevators Training Center Apprenticeship Level 4": {
+    "unified_title": "Elevators Training Center Apprenticeship Level 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:37:09.446353+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Firefighter Recruit Academy Certificate": {
+    "unified_title": "Firefighter 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:45:38.27296+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Public Safety Leadership & Administration Experience BSEM-LD8": {
+    "unified_title": "Public Safety Leadership and Administration Experience",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T12:32:50.690454+00:00",
+    "reviewed_by": "slee@cccco.edu"
   }
 }

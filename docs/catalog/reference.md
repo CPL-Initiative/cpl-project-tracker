@@ -20,7 +20,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | Title | Group | File | Created | Updated |
 |---|---|---|---|---|
 | [$50k / ESS 25-82 tab — lane state](../reference/lanes/ess-25-82-tab.md) | lanes | `ess-25-82-tab.md` | 2026-08-28 | 2026-08-28 |
-| [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-08-30 |
+| [Admin tab / the side menu as data — lane state](../reference/lanes/admin-tab-side-menu.md) | lanes | `admin-tab-side-menu.md` | 2026-08-28 | 2026-11-12 |
 | [Annual Workplan Goals / adding, moving and counting sub-activities — lane state](../reference/lanes/workplan-annual-goals.md) | lanes | `workplan-annual-goals.md` | 2026-10-12 | 2026-10-20 |
 | [CER procedures and the simpler CER tab — lane state](../reference/lanes/cer-procedures.md) | lanes | `cer-procedures.md` | 2026-10-18 | 2026-11-12 |
 | [COBI dark mode / the one theme control — lane state](../reference/lanes/cobi-dark-mode.md) | lanes | `cobi-dark-mode.md` | 2026-09-08 | 2026-10-24 |
@@ -29,18 +29,18 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Common CR Reference — lane state](../reference/lanes/common-cr-reference.md) | lanes | `common-cr-reference.md` | 2026-08-28 | 2026-11-01 |
 | [Common Subjects Reference (CSR) — one Common SUBJ per MQ discipline — lane state](../reference/lanes/common-subjects-reference.md) | lanes | `common-subjects-reference.md` | 2026-10-19 | 2026-10-20 |
 | [CPL clean-up worklist — lane state](../reference/lanes/cpl-cleanup-worklist.md) | lanes | `cpl-cleanup-worklist.md` | 2026-08-28 | 2026-08-28 |
-| [CSM Workspace / the team's queue for each college — lane state](../reference/lanes/csm-workspace.md) | lanes | `csm-workspace.md` | 2026-11-02 | 2026-11-10 |
+| [CSM Workspace / the team's queue for each college — lane state](../reference/lanes/csm-workspace.md) | lanes | `csm-workspace.md` | 2026-11-02 | 2026-11-12 |
 | [CTDL and the partner exchange (Credential Engine, WestEd) — lane state](../reference/lanes/ctdl-partner-exchange.md) | lanes | `ctdl-partner-exchange.md` | 2026-10-20 | 2026-10-20 |
 | [Discipline cross-listing — nest, alias or carry two homes — lane state](../reference/lanes/discipline-crosslist.md) | lanes | `discipline-crosslist.md` | 2026-09-22 | 2026-11-10 |
 | [Disposition grain / student detail — lane state](../reference/lanes/disposition-grain-student-detail.md) | lanes | `disposition-grain-student-detail.md` | 2026-08-28 | 2026-09-30 |
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-10-31 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
-| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-11 |
+| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-12 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-08 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-11 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-12 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-11-07 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-09-10 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
@@ -58,7 +58,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Row-auditor rules (§11 phase 1c) — lane state](../reference/lanes/audit-rules.md) | lanes | `audit-rules.md` | 2026-08-28 | 2026-08-28 |
 | [Sierra retrieval + corpus — lane state](../reference/lanes/sierra-retrieval-corpus.md) | lanes | `sierra-retrieval-corpus.md` | 2026-08-28 | 2026-11-07 |
 | [Sierra's page redesign (after america.gov) — lane state](../reference/lanes/sierra-page-redesign.md) | lanes | `sierra-page-redesign.md` | 2026-10-08 | 2026-10-27 |
-| [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-10-26 |
+| [Sierra: false absences + the statewide flag — lane state](../reference/lanes/sierra-false-absences.md) | lanes | `sierra-false-absences.md` | 2026-08-28 | 2026-11-12 |
 | [SkyView / the CCR curation interface — lane state](../reference/lanes/skyview-ccr-interface.md) | lanes | `skyview-ccr-interface.md` | 2026-08-28 | 2026-09-29 |
 | [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-12 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |

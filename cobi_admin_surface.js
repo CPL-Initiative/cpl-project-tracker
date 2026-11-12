@@ -98,6 +98,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
+        "csm_templates",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -132,6 +133,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [
         "budget_funding",
+        "csm_templates",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -214,6 +216,7 @@ window.COBI_ADMIN_SURFACE = {
         "coci_college_programs",
         "coci_program_courses",
         "course_outcomes",
+        "csm_templates",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -351,6 +354,7 @@ window.COBI_ADMIN_SURFACE = {
       "reads": [
         "budget_funding",
         "chatbox_credentials",
+        "csm_templates",
         "map_ace_exhibit_titles",
         "map_college_contacts",
         "map_college_contacts_pub",
@@ -508,6 +512,7 @@ window.COBI_ADMIN_SURFACE = {
     "commons": {
       "modules": [
         "commons.js",
+        "commons_ase.js",
         "commons_look.js",
         "commons_progress.js"
       ],
@@ -717,6 +722,15 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [
         "cpl_library_set_public"
       ],
+      "measured": true
+    },
+    "first-light": {
+      "modules": [
+        "first_light_tab.js"
+      ],
+      "reads": [],
+      "writes": [],
+      "rpcs": [],
       "measured": true
     }
   }

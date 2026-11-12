@@ -198,7 +198,9 @@
           drafts: {},
           adopt: null, adoptErr: false, open: null, links: null },
     // Related titles and the rename batch: the file, its titles indexed, and this visit's edits and decisions.
-    rel: { data: null, error: null, idx: [], by: {}, all: null },
+    rel: { data: null, error: null, idx: [], by: {}, all: null, plans: null, act: null, folded: {} },
+    // Course details beside a Review card (Sam, 2026-11-12): the card it is open on, and the files read for it.
+    cd: { open: null, ready: false, loading: null, err: "", byId: {}, byCourse: {}, topmap: {} },
     rb: { drafts: {}, skip: {}, done: {}, ask: false, busy: false, students: null, studentsWord: "" },
     // The Commons' row and its run log, read fresh each visit (commonsFresh()).
     cm: null
@@ -863,7 +865,7 @@
         // The test alone before a bundle that holds it.
         out.push({ o: o, tier: tier, rank: tier === 0 ? o.codes.length : 0 });
       });
-      out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+      out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || lowerCmp(a.o.t, b.o.t); });
       return { family: "ASE", code: fam.code, rows: out,
         tiers: [fam.code ? "The same test, ASE " + fam.code : "", series ? "The same series, ASE " + series : "", "Other ASE titles"] };
     }
@@ -877,7 +879,7 @@
       var tier = same && n ? 0 : (n >= 2 || (n && n === keys.length)) ? 1 : same ? 2 : -1;
       if (tier >= 0) out.push({ o: o, tier: tier, rank: -n });
     });
-    out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || a.o.t.localeCompare(b.o.t); });
+    out.sort(function (a, b) { return a.tier - b.tier || a.rank - b.rank || b.o.locals - a.o.locals || lowerCmp(a.o.t, b.o.t); });
     return { family: "", code: "", rows: out, tiers: ["The same issuer, words in common", "Words in common", "The same issuer"] };
   }
   function renamePending(title) {
@@ -903,11 +905,17 @@
         ? "Canonical titles for " + got.family + (got.code ? " " + got.code : "") + " certifications. Fold this card into one, or keep the proposed title."
         : "Canonical titles with the same issuer or the same words. Fold this card into one, or keep the proposed title." }));
       if (!got.rows.length) { body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No title in the reference is close to this one." })); return; }
-      var rows = state.rel.all === o.key ? got.rows : got.rows.slice(0, REL_MAX), last = -1, ul = null;
+      // Review's panel names the statewide or most-used title and sorts it first (Sam, 2026-11-12).
+      var mark = o.actions ? relAligned(got, o.title.value, o.issuer.value.trim() || o.issuer0) : null, all = got.rows;
+      if (mark) all = [{ o: mark.o, tier: "mark" }].concat(got.rows.filter(function (x) { return x.o !== mark.o; }));
+      var act = o.actions ? relAct(o, got, mark, draw) : null;
+      if (act) body.appendChild(relActBar(o, act, draw));
+      var rows = state.rel.all === o.key ? all : all.slice(0, REL_MAX), last = -1, ul = null;
       rows.forEach(function (x) {
         if (x.tier !== last) {
           last = x.tier;
-          if (got.tiers[x.tier]) body.appendChild(el("h5", { cls: "exh-rel-tier", text: got.tiers[x.tier] }));
+          var th = x.tier === "mark" ? (mark.kind === "popular" ? "The most used title" : "The statewide exhibit") : got.tiers[x.tier];
+          if (th) body.appendChild(el("h5", { cls: "exh-rel-tier", text: th }));
           ul = el("ul", { cls: "exh-rel-list" });
           body.appendChild(ul);
         }
@@ -915,11 +923,33 @@
         var rf = famOf(r.t);
         var meta = [r.issuer || "No issuer named", fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s"),
           r.proposed ? "Proposed, not in the reference yet" : "In the reference"].concat(rf ? ["Family: " + rf.name] : []).join(" · ");
-        var li = el("li", null, [el("b", { cls: "exh-rel-t", text: r.t }), el("span", { cls: "exh-muted exh-small", text: meta }),
-          pathsNode(r.paths, r.issuer)]);
+        var why = act ? relWhyNot(r.t, act) : null, can = act && why === "";
+        var head = el("b", { cls: "exh-rel-t", text: r.t });
+        if (can) {
+          var cb = el("input", { type: "checkbox", id: "exh-rel-cb-" + relIdOf(r.t), cls: "exh-rel-cb" });
+          cb.checked = !!act.checked[r.t];
+          cb.addEventListener("change", function () { if (cb.checked) act.checked[r.t] = true; else delete act.checked[r.t]; act.note = ""; });
+          head = el("label", { cls: "exh-rel-pick", "for": cb.id }, [cb, head]);
+        }
+        var li = el("li", null, [head]);
+        var marks = [];
+        if (o.actions && relStatewide(r.t)) marks.push("Statewide exhibit");
+        if (mark && mark.kind === "popular" && mark.o === r) marks.push("Most used");
+        if (marks.length) li.appendChild(el("span", { cls: "exh-rel-mark exh-small", text: marks.join(" · ") }));
+        li.appendChild(el("span", { cls: "exh-muted exh-small", text: meta }));
+        var pn = pathsNode(r.paths, r.issuer);
+        if (pn) li.appendChild(pn);
         if (pend) li.appendChild(el("span", { cls: "exh-rel-pend exh-small", text: "Rename pending" + (pend.to ? ": " + pend.to : "") }));
+        if (act && state.rel.folded[r.t]) li.appendChild(el("span", { cls: "exh-rel-pend exh-small",
+          text: "Saved this visit: folds into " + state.rel.folded[r.t] + ". The daily dry run pairs them, and a reviewed apply merges the records." }));
+        else if (act && r.t === act.target) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "The checked titles change to this one." }));
+        else if (why) li.appendChild(el("span", { cls: "exh-rel-why exh-small", text: why }));
         if (r.t === o.title.value.trim()) li.appendChild(el("span", { cls: "exh-muted exh-small", text: "This is the proposed title." }));
         else li.appendChild(word("Use this title", function () { o.use(r); draw(); }, { cls: "exh-w exh-small", "aria-label": "Use this title: " + r.t }));
+        // Sam, 2026-11-12: "i need to be able to use this title on the sidebar candidates that need it". One row,
+        // the same confirmation and the same rows as the checked titles.
+        if (can && act.ok) li.appendChild(word("Change to " + act.target, function () { relAsk(act, [r.t]); }, { cls: "exh-w exh-small",
+          "aria-label": "Change " + r.t + " to " + act.target }));
         ul.appendChild(li);
       });
       if (got.rows.length > REL_MAX) {
@@ -933,6 +963,340 @@
     return box;
   }
   function withRelated(cardEl, o) { return el("div", { cls: "exh-with-rel" }, [cardEl, relatedPanel(o)]); }
+
+  /* ── The statewide or most-used title, and related titles changed from the panel (Sam, 2026-11-12) ──
+     "for the firefighter academy example, it should be renamed "Firefighter 1" which is the statewide exhibit ... it
+     would be good to see some indication of the alignment with a statewide exhibit ... I would like to be able to
+     change all those needing it to firefighter 1 in the sidebar." And: "i need to be able to use this title on the
+     sidebar candidates that need it".
+     The alignment: among the related titles that share words with the card (an ASE card: the same test), in the
+     reference, a statewide exhibit wins (fact-sheet/statewide_recs.js, the List's Basis column's source; the
+     reference's own statewide flag stands in when that list did not load), the most local titles, then the most
+     colleges, leading. With none statewide, the most used title is named only when it has at least POPULAR_MIN local
+     titles and more than every other related title (a tie names none).
+     The change: a reference title folds into another reference title with the two rows the rename batch writes for a
+     fold (renameRows: unified_title_override and unified_title_merge_confirm, both naming the target, on the title's
+     _CREDENTIAL_REVIEW:: key, under the signed-in reviewer), posted by postRows. The daily dry run pairs them and the
+     reviewed rename apply merges the records; the old title stays a search alias (kb/credential_aliases.py). Before
+     the apply, the List's Edit back to the title's own name clears the rename (the override saved as "", which the dry
+     run skips); after it, kb/_cred_rename_undo.py on the apply's receipt. Nothing is checked by default, and a title
+     inside a ruled plan, the rename batch, a saved rename or fold, or one other titles wait to fold into, has no
+     checkbox and says why; the saved rows are read live before the confirmation is offered and again at the save. */
+  var DRYRUN_ALIAS_URL = "kb/cred_rename_dryrun/alias_map.json";
+  var POPULAR_MIN = 3;
+  function loadRelatedPlans() {
+    return fetch(DRYRUN_ALIAS_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) {
+        var b = {};
+        function block(t, why) { if (t && !b[t]) b[t] = why; }
+        var ruled = (d && d.ruled) || {};
+        (ruled.applied || []).concat(ruled.held || []).forEach(function (e) {
+          block(e.old, "In a ruled plan (" + (e.plan_id || "a decision sheet") + ") that renames it to " + e["new"] + ".");
+          block(e["new"], "A ruled plan (" + (e.plan_id || "a decision sheet") + ") renames another title to it.");
+        });
+        [["renames", "renamed"], ["merges", "folded"]].forEach(function (p) {
+          var m = (d && d[p[0]]) || {};
+          Object.keys(m).forEach(function (old) {
+            block(old, "Saved to be " + p[1] + " into " + m[old] + "; the rename apply carries it.");
+            block(m[old], "Another title is saved to be " + p[1] + " into it.");
+          });
+        });
+        ((d && d.held_family) || []).concat((d && d.held_emptied) || []).forEach(function (e) {
+          block(e.old, "Saved to fold into " + e.target + "; the rename run holds it (" + String(e.why || "").replace(/^held:\s*/, "") + ").");
+        });
+        state.rel.plans = { blocked: b, at: d && d._generated_at };
+      })
+      .catch(function (e) { state.rel.plans = { error: String(e && e.message || e) }; });
+  }
+  function loadStatewideRecs() {
+    if (window.CPL_STATEWIDE_RECS) return Promise.resolve();
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") return Promise.resolve();
+    return new Promise(function (res) { T.loadScript(STATEWIDE_RECS, "CPL_STATEWIDE_RECS", res); });
+  }
+  var swIdx = null;
+  function relStatewide(t) {
+    var S = window.CPL_STATEWIDE_RECS;
+    if (S) return Object.prototype.hasOwnProperty.call(S, t);
+    var R = window.CPL_CREDENTIAL_REFERENCE;
+    if (!R || !Array.isArray(R.unified_titles)) return false;
+    if (!swIdx) { swIdx = {}; R.unified_titles.forEach(function (x) { if (x.statewide) swIdx[x.ut] = 1; }); }
+    return !!swIdx[t];
+  }
+  /* The statewide exhibit or the most used title among the related titles, or null (the S642 review of #3160).
+     (a) A card whose own title is in the reference and statewide is that exhibit: { kind: "self" }, nothing else named.
+     (b) Otherwise a candidate shares the card's words (an ASE card: the same test), is in the reference, and has the
+         card's own issuer; a title from another issuer is never named, however many words it shares (measured: the
+         SMART welding card named AWS's SMAW, the UA refrigeration card an ESCO title).
+     (c) Several statewide candidates: the leader is named only on a clear lead, at least STATEWIDE_LEAD times the
+         local titles of the next one (Firefighter 1, 11, over Firefighter 1A, 2); else none, and the panel still
+         marks each one Statewide exhibit.
+     (d) None statewide, and the card's title not in the reference: the most used candidate, by the same issuer rule,
+         with at least POPULAR_MIN local titles and more than every other candidate. Outside an ASE test, every word of
+         the candidate's own title (earlier titles left out) is a word of the card's title; two shared words are not
+         enough, and a longer title holding the card's words is another thing (FST 1, the review of #3168).
+     (e) Outside an ASE test, a card whose title ends in a course code in parentheses ("Administration of Justice
+         (AJ 54)") names only a candidate carrying the same code.
+     (f) Levels (levelKey): the card and the candidate name the same levels, roman numerals read as numbers; a card
+         naming none reaches a statewide title naming one only through (c)'s lead (Firefighter Academy names
+         Firefighter 1; Firefighter 2 never does).
+     (g) A card whose own title is in the reference keeps it: only a statewide title with the same words and levels.
+     (h) A credit-by-exam card keeps its own issuer (cardIssuerFor): its ASE-form title does not make ASE its issuer.
+     Order: local titles descending, colleges descending, the lowercased title by code point (useCmp, lowerCmp).
+     ONE rule with the pipeline: kb/title_in_use.py makes the same choice the Review proposal (kb/_build_exhibits_review.py,
+     Sam's ruling of 2026-11-12, "suggest the best canonical title based on what's in use"). Both sides read
+     tests/fixtures/title_in_use_cases.json (tests/title_in_use_test.py, tests/title_in_use_parity.test.js), which pins
+     these constants, REL_STOP and the choices; change both or a test fails. */
+  var STATEWIDE_LEAD = 3;
+  var PAREN_CODE = /\(\s*([A-Z]{2,6})\s+([A-Z0-9]{1,6})\s*\)\s*$/;
+  function parenCode(t) { var m = PAREN_CODE.exec(t || ""); return m ? m[1] + " " + m[2] : ""; }
+  /* (f) the levels a title names: a number, a number and one letter A to H ("1A"), a roman numeral I to X read as its
+     number ("Firefighter I" is "Firefighter 1"). The same pattern as kb/title_in_use.py _LEVEL; no lookbehind. */
+  var LEVEL_TOKEN = /(?:^|[^A-Za-z0-9])(?:(\d+)([A-Ha-h])?|(X|IX|VIII|VII|VI|V|IV|III|II|I))(?![A-Za-z0-9])/g;
+  var ROMAN = { I: 1, II: 2, III: 3, IV: 4, V: 5, VI: 6, VII: 7, VIII: 8, IX: 9, X: 10 };
+  function levelKey(t) {
+    var out = {}, m;
+    LEVEL_TOKEN.lastIndex = 0;
+    while ((m = LEVEL_TOKEN.exec(t || ""))) {
+      out[m[3] ? String(ROMAN[m[3]]) : String(parseInt(m[1], 10)) + (m[2] || "").toUpperCase()] = 1;
+    }
+    return Object.keys(out).sort().join(" ");
+  }
+  function wordsKey(t) { return Object.keys(relWords(t)).sort().join(" "); }
+  /* (d) every word of the candidate's own title is a word of the card's. */
+  function wordsWithin(card, cand) {
+    var kc = Object.keys(cand);
+    return !!Object.keys(card).length && !!kc.length && kc.every(function (k) { return card[k]; });
+  }
+  /* The one order both sides use: local titles descending, colleges descending, then the lowercased title by code
+     point (never a locale's collation). */
+  /* kb/title_in_use.py in_use: the title in use for a card, under the box's issuer (issuerFor), or under its own
+     (ownIssuer, a credit-by-exam card, rule h), where an ASE card names nothing: a precedent sits the other way (a
+     credit-by-exam AUTO A1 title is under ASE A1), so where it belongs is Sam's call. */
+  function relInUse(title, raw, issuer, ownIssuer) {
+    var t = (title || "").trim();
+    if (ownIssuer && aseOf(t, raw, issuer)) return null;
+    var iss = ownIssuer ? (issuer || "").trim() : (issuerFor(t, issuer).trim() || issuer || "");
+    return relAligned(relatedFor(t, raw, iss, []), t, iss);
+  }
+  /* (h) every exhibit behind the card is credit by exam by its MAP id (kb/exhibit_paths.py: CX, Cx, CBE). */
+  function cbeCard(h) {
+    var ids = (h && h.ids) || [];
+    return ids.length > 0 && ids.every(function (i) { return /^(?:MAP|CPL)(?:CX|Cx|CBE)/.test(i); });
+  }
+  function lowerCmp(a, b) { a = a.toLowerCase(); b = b.toLowerCase(); return a < b ? -1 : a > b ? 1 : 0; }
+  function useCmp(a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || lowerCmp(a.o.t, b.o.t); }
+  function relAligned(got, cardTitle, cardIssuer) {
+    var t0 = (cardTitle || "").trim(), iss = (cardIssuer || "").trim();
+    if (t0 && relInRef(t0) && relStatewide(t0)) return { kind: "self", o: state.rel.by[t0] };
+    if (!iss) return null;
+    var inRef = relInRef(t0), mine = relWords(t0), mineKey = wordsKey(t0), levels = levelKey(t0);
+    var code = got.family ? "" : parenCode(t0);
+    var near = got.rows.filter(function (x) {
+      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1)
+        && (!code || parenCode(x.o.t) === code);
+    });
+    // (f) the same levels; a card naming none may reach a statewide title that names one, under (c)'s lead alone.
+    var sw = near.filter(function (x) { return relStatewide(x.o.t) && (!levels || levelKey(x.o.t) === levels); }).sort(useCmp);
+    // (g) a card already on a reference title keeps it, unless a statewide title has the same words and levels.
+    if (inRef) sw = sw.filter(function (x) { return wordsKey(x.o.t) === mineKey && levelKey(x.o.t) === levels; });
+    if (sw.length) {
+      if (sw.length > 1 && sw[0].o.locals < STATEWIDE_LEAD * sw[1].o.locals) return null;
+      return { kind: "statewide", o: sw[0].o };
+    }
+    if (inRef) return null;
+    var pool = near.filter(function (x) { return levelKey(x.o.t) === levels && (got.family || wordsWithin(mine, relWords(x.o.t))); });
+    var top = pool.slice().sort(useCmp)[0];
+    if (!top || top.o.locals < POPULAR_MIN) return null;
+    if (pool.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
+    return { kind: "popular", o: top.o };
+  }
+  function relAlignWords(a) {
+    var r = a.o, n = fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s")
+      + (r.adopted ? ", articulated at " + fmt(r.adopted) + " college" + (r.adopted === 1 ? "" : "s") : "");
+    if (a.kind === "self") return "This is a statewide exhibit.";
+    return a.kind === "statewide" ? "This looks like the statewide exhibit " + r.t + " (" + n + "). "
+      : "A popular title for this is " + r.t + " (" + n + "). ";
+  }
+  function relIdOf(t) { var h = 0; for (var i = 0; i < t.length; i++) h = (h * 31 + t.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
+  function relInRef(t) { var x = state.rel.by && state.rel.by[t]; return !!(x && !x.proposed); }
+  /* This visit's state for one card's panel: the target, the checks, the confirmation, the live rows. Never stored. */
+  function relAct(o, got, mark, redraw) {
+    var a = state.rel.act;
+    if (!a || a.key !== o.key) a = state.rel.act = { key: o.key, target: "", checked: {}, ask: null, busy: false, note: "", live: null, liveKey: "" };
+    var box = o.title.value.trim(), seen = {}, opts = [];
+    function add(t) { if (t && !seen[t] && relInRef(t)) { seen[t] = 1; opts.push(t); } }
+    if (mark) add(mark.o.t);
+    add(box);
+    got.rows.forEach(function (x) { add(x.o.t); });
+    a.opts = opts;
+    // The target is the aligned title when one is named, else the card's title (when it is in the reference), else
+    // the reviewer's choice; a choice holds until the reviewer changes it.
+    if (a.target && opts.indexOf(a.target) < 0) { a.target = ""; a.picked = false; }
+    if (!a.picked) a.target = mark ? mark.o.t : relInRef(box) ? box : "";
+    delete a.checked[a.target];
+    // The live rows for every title the panel could change, and the target.
+    var want = opts.slice().sort(), k = want.join("\u0001");
+    if (a.liveKey !== k) { a.liveKey = k; a.live = null; relLiveLoad(want).then(function (live) { if (a.liveKey === k) { a.live = live; redraw(); } }); }
+    a.targetWhy = !opts.length ? "No related title is in the reference, so nothing can take the others in."
+      : !a.target ? "Choose the title the checked ones fold into." : relTargetWhyNot(a.target, a);
+    a.ok = !a.targetWhy;
+    return a;
+  }
+  /* The saved rename rows on these titles, and the titles other rows rename or fold into them, read live. */
+  var REL_LIVE_CHUNK = 20;
+  function relLiveLoad(titles) {
+    var key = anonKey();
+    if (!key || !titles.length) return Promise.resolve({ error: key ? "" : "no reader key" , override: {}, merge: {}, into: {} });
+    function q(t) { return encodeURIComponent('"' + t.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); }
+    var base = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=in.(" + FIELD_CRED_TITLE + "," + FIELD_MERGE_CONFIRM + ")"
+      + "&order=course_id.asc,field.asc";
+    function paged(url, from, acc) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + 999) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) { acc = acc.concat(rows || []); return rows && rows.length === 1000 ? paged(url, from + 1000, acc) : acc; });
+    }
+    // In chunks of REL_LIVE_CHUNK titles, so a card with many related titles keeps each URL short; each chunk is
+    // Range-paged, and any chunk that fails fails the whole read, which holds every title.
+    var reads = [];
+    for (var i = 0; i < titles.length; i += REL_LIVE_CHUNK) {
+      var part = titles.slice(i, i + REL_LIVE_CHUNK);
+      reads.push(paged(base + "&course_id=in.(" + part.map(function (t) { return q(CRED_PREFIX + t); }).join(",") + ")", 0, []));
+      reads.push(paged(base + "&value=in.(" + part.map(q).join(",") + ")", 0, []));
+    }
+    return Promise.all(reads).then(function (got) {
+      var out = { error: "", override: {}, merge: {}, into: {} };
+      [].concat.apply([], got).forEach(function (row) {
+        var t = String(row.course_id || "");
+        if (t.indexOf(CRED_PREFIX) !== 0) return;
+        t = t.slice(CRED_PREFIX.length);
+        var v = row.value || "";
+        if (row.field === FIELD_CRED_TITLE && titles.indexOf(t) >= 0) out.override[t] = v;
+        if (row.field === FIELD_MERGE_CONFIRM && titles.indexOf(t) >= 0) out.merge[t] = v;
+        if (v && v !== t && titles.indexOf(v) >= 0) { (out.into[v] = out.into[v] || {})[t] = 1; }
+      });
+      return out;
+    }).catch(function (e) { return { error: String(e && e.message || e), override: {}, merge: {}, into: {} }; });
+  }
+  /* Why a related title cannot be checked, in words; "" when it can. */
+  function relWhyNot(t, a, live) {
+    live = live || a.live;
+    if (t === a.target || !relInRef(t)) return null;
+    if (state.rel.folded[t]) return null;
+    if (!state.rel.plans) return "Reading the ruled plans…";
+    if (state.rel.plans.error) return "The ruled plans could not be read (" + state.rel.plans.error + "), so it cannot be changed here.";
+    if (renamePending(t)) return "In the rename batch; it is decided there.";
+    if (state.rel.plans.blocked[t]) return state.rel.plans.blocked[t];
+    var f = famOf(t);
+    if (f) return "A member of " + f.name + "; the family's batch names it.";
+    if (!live) return "Reading its saved rows…";
+    if (live.error) return "Its saved rows could not be read (" + live.error + "), so it cannot be changed here.";
+    var v = live.override[t];
+    if (v && v !== t) return v === a.target && live.merge[t] === a.target ? "Already saved to fold into " + a.target + "."
+      : "Already saved to be renamed " + v + "; the rename apply carries it.";
+    // A merge confirm alone, naming another title, is a saved word too: it stays until a person settles it.
+    var m = live.merge[t];
+    if (m && m !== t && m !== a.target) return "A saved merge confirm folds it into " + m + ", with no rename beside it. It stays until a person "
+      + "clears it: in the List, Edit its title to " + m + " and Save, then Edit it back and Save; the second save clears both rows.";
+    var n = Object.keys(live.into[t] || {}).length;
+    if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to fold into it, so it stays until they land.";
+    return "";
+  }
+  function relTargetWhyNot(t, a, live) {
+    live = live || a.live;
+    if (!state.rel.plans || !live) return "Reading the saved rows…";
+    if (state.rel.plans.error) return "The ruled plans could not be read (" + state.rel.plans.error + "), so nothing can be changed here.";
+    if (live.error) return "The saved rows could not be read (" + live.error + "), so nothing can be changed here.";
+    var b = state.rel.plans.blocked[t];
+    if (b && !/into it\.$|to it\.$/.test(b)) return t + " cannot take the others in: " + b;
+    var v = live.override[t];
+    if (v && v !== t) return t + " is itself saved to be renamed " + v + "; choose that title.";
+    var m = live.merge[t];
+    if (m && m !== t) return t + " is itself saved to fold into " + m + "; choose that title.";
+    if (famOf(t)) return t + " is a family member; its family's batch names it.";
+    if (renamePending(t)) return t + " waits in the rename batch; decide it there first.";
+    return "";
+  }
+  function relLocalsOf(t) { var x = state.rel.by && state.rel.by[t]; return x ? x.locals : 0; }
+  function relAsk(a, titles) {
+    a.note = "";
+    if (!titles.length) { a.note = "Check one or more titles first."; render(); relFocus("exh-rel-note"); return; }
+    a.ask = titles.slice();
+    render();
+    relFocus("exh-rel-ask-h");
+  }
+  function relFocus(id) { var e = document.getElementById(id); if (e) e.focus(); }
+  /* The bar above the list: the target, the one control, the note, and the confirmation. */
+  function relActBar(o, a, draw) {
+    var bar = el("div", { cls: "exh-rel-acts" });
+    if (a.opts.length) {
+      var sel = el("select", { id: "exh-rel-target", cls: "exh-rel-sel" });
+      if (!a.target) sel.appendChild(el("option", { value: "", text: "Choose a title" }));
+      a.opts.forEach(function (t) { var op = el("option", { value: t, text: t }); if (t === a.target) op.selected = true; sel.appendChild(op); });
+      sel.value = a.target;
+      sel.addEventListener("change", function () { a.target = sel.value; a.picked = !!sel.value; a.ask = null; a.note = ""; render(); relFocus("exh-rel-target"); });
+      bar.appendChild(el("label", { cls: "exh-small exh-rel-lab", "for": "exh-rel-target" }, ["Change related titles to"]));
+      bar.appendChild(sel);
+    }
+    if (a.ok) bar.appendChild(word("Change the checked titles to " + a.target, function () {
+      relAsk(a, Object.keys(a.checked).filter(function (t) { return relWhyNot(t, a) === ""; }));
+    }, { cls: "exh-w exh-small", id: "exh-rel-go" }));
+    else if (a.targetWhy) bar.appendChild(el("p", { cls: "exh-muted exh-small", text: a.targetWhy }));
+    bar.appendChild(el("p", { cls: "exh-status exh-small", id: "exh-rel-note", role: "status", "aria-live": "polite", tabindex: "-1", text: a.note || "" }));
+    if (a.ask && a.ask.length) {
+      var n = a.ask.length, locals = a.ask.reduce(function (s, t) { return s + relLocalsOf(t); }, 0);
+      var box = el("div", { cls: "exh-rel-confirm", role: "group", "aria-labelledby": "exh-rel-ask-h" });
+      box.appendChild(el("p", { id: "exh-rel-ask-h", tabindex: "-1", role: "status", "aria-live": "polite", cls: "exh-strong exh-small",
+        text: fmt(n) + (n === 1 ? " title, " : " titles, ") + fmt(locals) + " local title" + (locals === 1 ? "" : "s") + ", will fold into " + a.target + "." }));
+      box.appendChild(el("ul", { cls: "exh-small exh-rel-asklist" }, a.ask.map(function (t) {
+        var k = relLocalsOf(t);
+        return el("li", { text: t + ", " + fmt(k) + " local title" + (k === 1 ? "" : "s") + ": folds into " + a.target + "; its name stays a search alias." });
+      })));
+      box.appendChild(el("p", { cls: "exh-muted exh-small", text: "The daily dry run pairs them and a reviewed rename apply merges the records. "
+        + "Nothing a college or a student sees changes until then." }));
+      box.appendChild(el("div", { cls: "exh-acts" }, [
+        word(a.busy ? "Saving…" : "Save", function () { if (!a.busy) relSave(a); }, a.busy ? { disabled: "disabled", id: "exh-rel-save" } : { id: "exh-rel-save" }),
+        word("Cancel", function () { a.ask = null; a.note = "Nothing was saved."; render(); relFocus(a.ok ? "exh-rel-go" : "exh-rel-note"); }, { id: "exh-rel-cancel" })]));
+      bar.appendChild(box);
+    }
+    return bar;
+  }
+  /* Save: the reviewer signed in, the rows read again, then the rename batch's fold rows for each title. */
+  function relSave(a) {
+    var titles = a.ask.slice(), target = a.target;
+    a.busy = true; render(); relFocus("exh-rel-ask-h");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return relLiveLoad(titles.concat([target]).sort()).then(function (live) {
+        var why = relTargetWhyNot(target, a, live);
+        if (why) throw new Error("held:" + why);
+        titles.forEach(function (t) { var w = relWhyNot(t, a, live); if (w) throw new Error("held:" + t + ": " + w); });
+        var plan = { renames: titles.map(function (t) { return { r: { current: t }, to: target, merge: true }; }), skips: [] };
+        return postRows(sess, renameRows(sess.email, plan));
+      });
+    }).then(function () {
+      var writes = [[FIELD_CRED_TITLE, target], [FIELD_MERGE_CONFIRM, target]];
+      titles.forEach(function (t) {
+        state.rel.folded[t] = target;
+        delete a.checked[t];
+        if (a.live) { a.live.override[t] = target; a.live.merge[t] = target; }
+        listApply({ ut: t }, writes);
+      });
+      a.busy = false; a.ask = null;
+      a.note = "Saved: " + fmt(titles.length) + (titles.length === 1 ? " title folds" : " titles fold") + " into " + target
+        + ". The daily dry run pairs them and a reviewed rename apply merges the records; each old title stays a search alias. They are in the List's Changed this visit.";
+      render(); relFocus("exh-rel-note");
+    }).catch(function (e) {
+      var m = String(e && e.message || e);
+      a.busy = false; a.ask = null;
+      a.note = m === "signin" ? "Sign in as a reviewer to save. Nothing was saved."
+        : m.indexOf("held:") === 0 ? "Nothing was saved: " + m.slice(5) + " The panel shows the rows as they stand now."
+        : "The save did not reach the reference (" + m + "). Nothing changed; try again.";
+      if (m.indexOf("held:") === 0) { a.liveKey = ""; }
+      render(); relFocus("exh-rel-note");
+    });
+  }
 
   /* The rename batch. */
   function renameBatches() { return (state.rel.data && state.rel.data.batches) || []; }
@@ -1308,8 +1672,13 @@
   /* Accept all proposed titles (Sam, 2026-10-31): every title in the list on screen takes its proposed
      title and issuer, a typed edit where there is one. A conflict with the reference stays for a person, and
      a title someone already saved keeps that save: the bulk word never overwrites a person's decision. */
+  /* A card whose official name is not on file (kb/_build_exhibits_review.py needs_official_name) is never accepted in
+     bulk: its title waits for a person on its own card (the review of #3168). */
+  function bulkNoName(list) {
+    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved && h.needs_official_name; }).length;
+  }
   function bulkItems(list) {
-    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved; }).map(function (h) {
+    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved && !h.needs_official_name; }).map(function (h) {
       var d = state.drafts[h.raw] || {};
       var title = String(d.title != null ? d.title : (h.title || "")).trim();
       return { h: h, raw: h.raw, title: title, issuer: String(d.issuer != null ? d.issuer : issuerFor(title, h.issuer)).trim() };
@@ -1581,6 +1950,140 @@
       return el("li", { text: [r[0], r[1]].filter(Boolean).join(" ") + ", " + u });
     }));
   }
+  /* ── Course details (Sam, 2026-11-12: "need to see the course details for abt 133 so i can decide what the best
+     title should be. i suspect the ag and business tech title is just their area title and not the course title ...
+     add a link to course details that opens in sidebar view") ──
+     The courses come from files COBI already serves: the exhibit's credit recommendations (course and credit) from
+     statewide_data.js (Exhibit Adoption's file), each course's title, units, TOP and M-ID from
+     unified_courses_members.js, and its catalog description from the COCI Lookup's shard. Read once, on the first
+     press. The panel takes Related titles' place beside the card; Close or Escape gives it back. */
+  function cdNorm(code) { return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, ""); }
+  function cdName(n) { return String(n || "").trim().toLowerCase(); }
+  function loadCourseDetails() {
+    var cd = state.cd;
+    if (cd.ready) return Promise.resolve();
+    if (cd.loading) return cd.loading;
+    cd.loading = new Promise(function (resolve) {
+      var T = window.CPL_TABS;
+      if (!T || typeof T.loadScript !== "function") { resolve(); return; }
+      T.loadScript("statewide_data.js", "CPL_STATEWIDE", function () {
+        T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", resolve);
+      });
+    }).then(function () {
+      var S = window.CPL_STATEWIDE, M = window.CPL_UC_MEMBERS;
+      var byId = {}, byCourse = {};
+      ((S && S.exhibits) || []).forEach(function (e) { (e.exhibit_ids || [e.exhibit_id]).forEach(function (id) { if (id) byId[id] = e; }); });
+      if (M && M.members) {
+        var names = (M.colleges || []).map(cdName);
+        Object.keys(M.members).forEach(function (mid) {
+          (M.members[mid] || []).forEach(function (m) {
+            if (!m || !m.n) return;
+            var k = names[m.c] + "|" + cdNorm(m.n);
+            var have = byCourse[k] || (byCourse[k] = { n: m.n, t: m.t, u: m.u, p: m.p, cn: m.cn, mids: [] });
+            if (have.mids.indexOf(mid) < 0) have.mids.push(mid);
+          });
+        });
+      }
+      cd.byId = byId; cd.byCourse = byCourse; cd.topmap = (M && M.topmap) || {};
+      cd.err = !S ? "the exhibit file (statewide_data.js) did not load" : !M ? "the course file (unified_courses_members.js) did not load" : "";
+      cd.ready = true; cd.loading = null;
+    });
+    return cd.loading;
+  }
+  /* The courses behind a card's exhibits: [{ college, code, credit, course|null }]. */
+  function courseDetailsFor(h) {
+    var cd = state.cd, out = [], seen = {};
+    var artNames = (h.art || []).map(college);
+    (h.ids || []).forEach(function (id) {
+      var e = cd.byId[id];
+      if (!e) return;
+      var recs = e.credit_recs || [], idx = e.adopter_rec_idx || {};
+      var who = Object.keys(idx).length ? Object.keys(idx) : (e.adopter_names && e.adopter_names.length ? e.adopter_names : artNames);
+      who.forEach(function (name) {
+        var mine = idx[name] ? idx[name].map(function (i) { return recs[i]; }) : recs;
+        mine.forEach(function (r) {
+          if (!r || !r.course) return;
+          var key = cdName(name) + "|" + cdNorm(r.course);
+          if (seen[key]) return;
+          seen[key] = 1;
+          out.push({ college: name, code: r.course, credit: r.credit || "", id: id, course: cd.byCourse[key] || null });
+        });
+      });
+    });
+    return out;
+  }
+  function closeCourseDetails() {
+    state.cd.open = null;
+    render();
+    var b = document.getElementById("exh-cd-btn");
+    if (b) b.focus();
+  }
+  function openCourseDetails(h) {
+    state.cd.open = h.raw;
+    render();
+    var p = document.getElementById("exh-cd-h");
+    if (p) p.focus();
+    if (!state.cd.ready) loadCourseDetails().then(function () {
+      if (state.cd.open !== h.raw) return;
+      render();
+      var q = document.getElementById("exh-cd-h");
+      if (q) q.focus();
+    });
+  }
+  function courseDetailsPanel(h) {
+    var cd = state.cd;
+    var box = el("aside", { cls: "exh-rel exh-cd", id: "exh-cd", "aria-label": "Course details" });
+    box.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.preventDefault(); closeCourseDetails(); } });
+    box.appendChild(el("div", { cls: "exh-cd-head" }, [
+      el("h4", { cls: "exh-q exh-small", id: "exh-cd-h", tabindex: "-1", text: "Course details" }),
+      word("Close", closeCourseDetails, { cls: "exh-w exh-small", "aria-label": "Close course details and show Related titles" })]));
+    var body = el("div", { cls: "exh-rel-body" });
+    box.appendChild(body);
+    if (!cd.ready) { body.appendChild(el("p", { cls: "exh-muted exh-small", role: "status", text: "Reading the courses…" })); return box; }
+    if (cd.err) body.appendChild(el("p", { cls: "exh-muted exh-small", text: "Part of the course data could not be read: " + cd.err + "." }));
+    var rows = courseDetailsFor(h);
+    if (!rows.length) {
+      var at = shortList((h.art || []).map(college).filter(Boolean));
+      body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No course is on file for this exhibit" + (at ? " at " + at : "")
+        + " in the data COBI reads. Open it in MAP to see its courses." }));
+    }
+    rows.forEach(function (r) {
+      var c = r.course;
+      var sec = el("section", { cls: "exh-cd-course", "aria-label": r.code + " at " + r.college });
+      sec.appendChild(el("p", { cls: "exh-muted exh-small", text: r.college + " · " + r.code }));
+      if (c) {
+        sec.appendChild(el("b", { cls: "exh-rel-t exh-cd-title", text: (c.t || "").trim() || "No title on file" }));
+        var facts = el("dl", { cls: "exh-cd-facts exh-small" });
+        function fact(k, v) { if (v) { facts.appendChild(el("dt", { text: k })); facts.appendChild(el("dd", { text: v })); } }
+        fact("Units", c.u ? String(c.u) : "Noncredit");
+        fact("TOP", c.p ? c.p + (cd.topmap[c.p] ? ", " + cd.topmap[c.p] : "") : "");
+        fact("M-ID", c.mids.join(", "));
+        fact("Control number", c.cn || "");
+        fact("Credit recommendation", r.credit);
+        sec.appendChild(facts);
+        var desc = el("p", { cls: "exh-small exh-cd-desc" });
+        sec.appendChild(desc);
+        if (c.cn) {
+          var key = /^[A-Za-z]/.test(c.n) ? c.n.charAt(0).toUpperCase() : "0";
+          var put = function () { var d = window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]; desc.textContent = d && d[c.cn] ? d[c.cn] : (d ? "No catalog description on file." : ""); };
+          if (window.CPL_COCI_DESC && window.CPL_COCI_DESC[key]) put();
+          else if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+            desc.textContent = "Reading the catalog description…";
+            window.CPL_TABS.loadScript("coci_lookup_desc_" + key + ".js", null, put);
+          }
+        }
+      } else {
+        sec.appendChild(el("p", { cls: "exh-small", text: "This course is not in the course data COBI reads (unified_courses_members.js)." }));
+        if (r.credit) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r.credit }));
+      }
+      sec.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(r.id), target: "_blank", rel: "noopener", text: r.id + " in MAP" })]));
+      body.appendChild(sec);
+    });
+    if (!rows.length && h.ids && h.ids.length) {
+      body.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: mapUrl(h.ids[0]), target: "_blank", rel: "noopener", text: h.ids[0] + " in MAP" })]));
+    }
+    return box;
+  }
   function studentsLine(h) {
     var s = studentsOf(h);
     var many = h.ids && h.ids.length > 1 ? "these exhibits" : "this exhibit";
@@ -1635,11 +2138,33 @@
       keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
     });
     canon.appendChild(exists);
+    // Sam, 2026-11-12: a certification, license or training program takes its official name. When the repo holds none
+    // for it (kb/_build_exhibits_review.py needs_official_name), the card says so in words.
+    if (h.needs_official_name) canon.appendChild(el("p", { cls: "exh-muted exh-small exh-needs-name",
+      text: "The issuer's official name for this credential is not on file. Check this title against the issuer's own name." }));
     (h.alternates || []).forEach(function (alt) {
       canon.appendChild(el("p", { cls: "exh-muted exh-small" }, [
         (h.step === CONFLICT ? "The reference also names: " : "Also proposed: ") + alt + " ",
         word("Use it", function () { title.value = alt; keepDraft(); exists.hidden = true; title.focus(); }, { cls: "exh-w exh-small" })]));
     });
+    // The statewide exhibit or the most used title among the related ones (Sam, 2026-11-12), in words; Use it does
+    // what the panel's Use this title does. Follows the title as it is edited.
+    var align = el("p", { cls: "exh-small exh-align" });
+    function drawAlign() {
+      while (align.firstChild) align.removeChild(align.firstChild);
+      // (h) a credit-by-exam card asks the rule under its own issuer, as the pipeline's proposal does, until a person types one.
+      var own = !issuerTyped && cbeCard(h);
+      var a = state.rel.data ? relInUse(title.value, h.raw, own ? h.issuer : (issuer.value.trim() || h.issuer), own) : null;
+      align.hidden = !a;
+      if (!a) return;
+      align.appendChild(document.createTextNode(relAlignWords(a)));
+      if (a.kind === "self") return;
+      align.appendChild(word("Use it", function () { useRow(a.o); title.dispatchEvent(new Event("input")); },
+        { cls: "exh-w exh-small", "aria-label": "Use it: " + a.o.t }));
+    }
+    title.addEventListener("input", drawAlign);
+    drawAlign();
+    canon.appendChild(align);
     c.appendChild(canon);
 
     var typed = el("div", { cls: "exh-typed" }, [el("span", { cls: "exh-cl", text: "Local titles" })]);
@@ -1685,6 +2210,12 @@
         src.appendChild(el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id + " in MAP" }));
       });
       if (h.ids.length > 3) src.appendChild(document.createTextNode(" and " + (h.ids.length - 3) + " more"));
+      var cdOpen = state.cd.open === h.raw;
+      src.appendChild(document.createTextNode(" · "));
+      var cdBtn = word("Course details", function () { if (state.cd.open === h.raw) closeCourseDetails(); else openCourseDetails(h); },
+        { cls: "exh-w exh-small", id: "exh-cd-btn", "aria-expanded": cdOpen ? "true" : "false", "aria-controls": cdOpen ? "exh-cd" : null });
+      cdBtn.addEventListener("keydown", function (e) { if (e.key === "Escape" && state.cd.open === h.raw) { e.preventDefault(); closeCourseDetails(); } });
+      src.appendChild(cdBtn);
       c.appendChild(src);
     }
 
@@ -1696,19 +2227,22 @@
     if (state.history.length) acts.appendChild(word("Back", back, { "aria-label": "Back to the previous title, " + state.history[state.history.length - 1].raw }));
     acts.appendChild(word("Skip", function () { skip(list); }));
     c.appendChild(acts);
-    var many = bulkItems(list);
+    var many = bulkItems(list), noName = bulkNoName(list);
+    var noNameWords = noName ? "The " + fmt(noName) + " whose official name is not on file stay for a card." : "";
     if (many.length > 1) {
       var bulk = el("div", { cls: "exh-bulk" });
       if (!state.bulkAsk) {
         bulk.appendChild(word("Accept all proposed titles (" + fmt(many.length) + ")", function () { state.bulkAsk = true; render(); },
           { cls: "exh-w exh-small", "aria-expanded": "false" }));
+        if (noName) bulk.appendChild(el("span", { cls: "exh-muted exh-small exh-bulk-noname", text: " " + noNameWords }));
       } else {
         var steps = {};
         many.forEach(function (it) { steps[it.h.step] = (steps[it.h.step] || 0) + 1; });
-        var held = list.length - many.length;
+        var held = list.length - many.length - noName;
         bulk.appendChild(el("p", { cls: "exh-small", role: "status" }, [
           "Save the proposed title and issuer for the " + fmt(many.length) + " titles in this list ("
           + Object.keys(steps).map(function (k) { return fmt(steps[k]) + " " + k; }).join(", ") + ")? An edit you typed on a card counts as its proposal."
+          + (noNameWords ? " " + noNameWords : "")
           + (held ? " The other " + fmt(held) + ", in conflict with the reference or saved earlier, stay as they are." : "")]));
         bulk.appendChild(el("div", { cls: "exh-acts" }, [
           word(state.bulkBusy ? "Saving…" : "Save all " + fmt(many.length), function () { if (!state.bulkBusy) acceptAll(list); },
@@ -1752,15 +2286,17 @@
       el("span", { text: (state.cur + 1) + " of " + fmt(list.length) + (state.filter ? " in " + state.filter : "")
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
-    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [],
-      use: function (r) {
-        title.value = r.t;
-        // The title's own issuer comes with it, as if picked.
-        if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
-        keepDraft(); showAse(); exists.hidden = true;
-        state.note = "";
-        title.focus();
-      } });
+    if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true,
+      use: function (r) { useRow(r); drawAlign(); } });
+    function useRow(r) {
+      title.value = r.t;
+      // The title's own issuer comes with it, as if picked.
+      if (r.issuer) { issuer.value = r.issuer; issuerTyped = true; }
+      keepDraft(); showAse(); exists.hidden = true;
+      state.note = "";
+      title.focus();
+    }
   }
 
   function finder(list) {
@@ -2882,6 +3418,11 @@
     var writes = [];
     if (!title) { L.note = "A title cannot be empty."; render(); return Promise.resolve(); }
     if (title !== listTitle(r)) writes.push([FIELD_CRED_TITLE, title === r.ut ? "" : title]);
+    // An Edit back to the title's own name undoes a fold before the apply: it clears the merge confirm beside the
+    // rename too, the same way ("" upserted), so no leftover confirm holds the old target in the Review panel
+    // (COBIx on #3160). A lone confirm, with no rename beside it, is left to a person.
+    var ov0 = state.cs.overlay[r.ut] || {};
+    if (title !== listTitle(r) && title === r.ut && ov0.title && ov0.merge) writes.push([FIELD_MERGE_CONFIRM, ""]);
     if (issuer !== (cur.issuer || "")) writes.push([FIELD_CRED_ISSUER, issuer]);
     var curSites = cur.sites.map(function (x) { return x.site; }).join("; ");
     if (sites.map(function (x) { return x.site; }).join("; ") !== curSites) {
@@ -4448,6 +4989,30 @@
     ".exh-rel-paths { overflow-wrap:anywhere; }",
     ".exh-rb-table .exh-rel-paths { display:block; }",
     ".exh-rel-pend { color:var(--text-strong); font-weight:600; overflow-wrap:anywhere; }",
+    /* The statewide or most-used mark, the reason a title cannot be checked, and the panel's change bar (2026-11-12). */
+    ".exh-rel-mark { color:var(--text-strong); font-weight:600; }",
+    ".exh-rel-why { color:var(--text-muted); overflow-wrap:anywhere; }",
+    ".exh-rel-pick { display:flex; align-items:flex-start; gap:8px; min-height:24px; cursor:pointer; min-width:0; }",
+    ".exh-rel-cb { width:18px; height:18px; margin:2px 0 0; flex:0 0 auto; accent-color:var(--seal-blue); }",
+    ".exh-rel-cb:focus-visible, .exh-rel-sel:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-rel-acts { display:grid; gap:6px; padding:8px 0; border-top:1px solid var(--border); border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-rel-acts p { margin:0; }",
+    ".exh-rel-lab { color:var(--text-muted); }",
+    ".exh-rel-sel { min-height:32px; max-width:100%; min-width:0; font:inherit; font-size:.9rem; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:2px 6px; }",
+    ".exh-rel-confirm { display:grid; gap:6px; border-left:3px solid var(--seal-blue-text); background:var(--surface-subtle); padding:8px 12px; min-width:0; }",
+    ".exh-rel-confirm p:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-rel-asklist { margin:0; padding-left:1.1em; display:grid; gap:2px; overflow-wrap:anywhere; }",
+    ".exh-align { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-align[hidden] { display:none; }",
+    ".exh-cd-head { display:flex; justify-content:space-between; align-items:baseline; gap:8px; flex-wrap:wrap; }",
+    ".exh-cd-head h4 { margin:0; }",
+    ".exh-cd-head h4:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-cd-course { display:grid; gap:4px; padding-bottom:8px; border-bottom:1px solid var(--border); min-width:0; }",
+    ".exh-cd-course p { margin:0; overflow-wrap:anywhere; }",
+    ".exh-cd-facts { display:grid; grid-template-columns:max-content minmax(0, 1fr); gap:2px 10px; margin:0; }",
+    ".exh-cd-facts dt { color:var(--text-muted); }",
+    ".exh-cd-facts dd { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-cd-desc { color:var(--text-body); }",
     ".exh-rule-notes p, .exh-rule-notes ol { margin:4px 0; }",
     ".exh-rb-scroll { overflow-x:auto; min-width:0; }",
     ".exh-rb-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.88rem; }",
@@ -4473,7 +5038,7 @@
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null; state.qLens = "";
-    state.rb.ask = false; state.rel.all = null;
+    state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
     if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
@@ -4523,7 +5088,9 @@
       loadStudents().then(render);
       if (state.filter === RENAME) loadRenameStudents().then(render);
     });
-    return Promise.all([load(), loadSweep(), loadRules(), loadRelated()]).then(function () {
+    // The statewide list names the statewide exhibit on a Review card; a script that never answers holds nothing up.
+    loadStatewideRecs().then(function () { if (state.view === "review") render(); });
+    return Promise.all([load(), loadSweep(), loadRules(), loadRelated(), loadRelatedPlans()]).then(function () {
       render();
       return Promise.all([loadStudents(), state.filter === RENAME ? loadRenameStudents() : null]);
     }).then(render);
@@ -4541,7 +5108,8 @@
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
-    loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _relInUse: relInUse, _levelKey: levelKey, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

@@ -1,0 +1,4740 @@
+{
+ "college": "American River College",
+ "reread_run": "43216104949",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43212067552",
+ "at": "2026-11-12T12:16:39Z",
+ "posted": 24,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "07231",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "14255",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16714",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "16946",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "18005",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20109",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20134",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "20137",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30025",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30341",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31031",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "33335",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35294",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "37404",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39389",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39595",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39663",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39666",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39668",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40110",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40544",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40545",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40579",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40618",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40619",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40860",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40861",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "40865",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42153",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "42154",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44412",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45999",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46015",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 16,
+ "absent": 8,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "04544",
+  "07200",
+  "11553",
+  "12238",
+  "17939",
+  "18845",
+  "20100",
+  "20130",
+  "30023",
+  "30595",
+  "31434",
+  "32643",
+  "32828",
+  "33273",
+  "35934",
+  "39448"
+ ],
+ "absent_keys": [
+  "04514",
+  "07234",
+  "12686",
+  "20138",
+  "31299",
+  "39057",
+  "39255",
+  "45960"
+ ],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 18,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'American River College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43212067552;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 39,
+    "placed": 38,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements (required courses)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "TA 350",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 351",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 370",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 375",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 420",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 437",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 2 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "TA 344",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 356",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 357",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 366",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "TA 356",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 357",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 366",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 377",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 390",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 406",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 2 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "MUSM 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 404",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 422",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 424",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 430",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 433",
+        "units": 0.5,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 434",
+        "units": 0.5,
+        "units_max": 2,
+        "alternatives": [
+         {
+          "code": "FASHN 334",
+          "units": 0.5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 435",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "FASHN 330",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 440",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 2 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "TA 466",
+        "units": 0.5,
+        "units_max": 3,
+        "alternatives": [
+         {
+          "code": "MUP 370",
+          "units": 0.5,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 2 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 2,
+       "min": 2
+      },
+      "courses": [
+       {
+        "code": "DANCE 310",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 320",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 340",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 360",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 377",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 380",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 382",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUIVI 310",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUIVI 390",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUP 350",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "recognize standard practices of ensemble playing in a rehearsal/performance environment",
+      "compare and analyze the theories and techniques of acting from a historical perspective",
+      "analyze texts and scripts as they pertain to performance",
+      "demonstrate skill for technical aspects of acting, including physical, vocal, imaginative, analytical, and emotional elements",
+      "analyze theatre as a dynamic art form influencing society",
+      "compare and contrast theatrical periods and styles in terms of acting, directing, playwriting, and technical elements",
+      "analyze the components of a theatrical production",
+      "apply imagination and character analysis to identify and describe the personality and motivations of a given character",
+      "apply technical processes, including lighting, set, costume, and/or stage make-up design, as they pertain to a given dramatic script"
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 31,
+      "min": 31
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.A. in Theatre Arts: Acting",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 31,
+   "total_min": 31,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=945",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Theatre Arts: Acting",
+   "control_number": "04544"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 26,
+    "placed": 23,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BUS 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECON C2002",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 340",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISA 305",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "MGMT 304",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKT 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKT 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKT 312",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MKT 314",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISA 340",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 7 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 7,
+       "min": 7
+      },
+      "courses": [
+       {
+        "code": "BUS 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISA 320",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISA 330",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT 308",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT 372",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MGMT 142",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CISA 160",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "BUS 350",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISA 315",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 7,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Integrate the functions of the marketing mix.",
+      "Apply principles of retailing such as business location, merchandising, inventory control, store management and vendor relationships.",
+      "Plan, produce and select the appropriate media for advertising.",
+      "Integrate management principles related to finance, personnel, products, services and information.",
+      "Communicate effectively verbally and in writing in various business settings.",
+      "Identify and examine consumer buyer behavior and evaluate which marketing communications medium will most effectively meet needs of the marketplace.",
+      "Incorporate principles of product development, pricing, distribution strategies, promotion strategies and market research.",
+      "Demonstrate professional sales skills by effectively interviewing and identifying the customers' needs.",
+      "Evaluate practical business problems and utilize critical thinking in the determination of alternative solutions.",
+      "Identify and explain the major functional areas of the business organizations including management, marketing, finance, and accounting.",
+      "Apply the marketing mix to create and analyze various marketing strategies."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 42,
+      "min": 41
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.A. in Marketing",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 42,
+   "total_min": 41,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Marketing",
+   "control_number": "07200"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ET 302",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 306",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 311",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 334",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 344",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 350",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 356",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 357",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 367",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 5 units from the following:",
+      "rule": "choose_units",
+      "stated": {
+       "max": 5,
+       "min": 5
+      },
+      "courses": [
+       {
+        "code": "MUFHL 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUFHL 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUIVI 340",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 5,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "audio engineering"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "analyze the signal flow and understand the operation of electrical components found in a typical recording studio.",
+      "set up and employ the use of mixing consoles, multi-track recorders, Digital Audio Workstations (DAWs), and sound reinforcement systems.",
+      "select and set up outboard signal processing hardware and software plug-ins for audio enhancement."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 38,
+      "min": 38
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "A.A. in Commercial Music: Recording",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 38,
+   "total_min": 38,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Commercial Music: Recording",
+   "control_number": "11553"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 29,
+    "placed": 18,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "CISCO Concentration",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISN 341",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 342",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Linux Concentration",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISC 324",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 111",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 119",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 120",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 121",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 122",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Linux Concentration: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISP 400",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Windows Concentration",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CISN 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 111",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 307",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISN 308",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "CISN 119",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Concentration"
+     },
+     {
+      "name": "Windows Concentration: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "CISP 370",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CISS 341",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": "Concentration"
+     }
+    ],
+    "program": {
+     "careers": [
+      "network technical support staff",
+      "network administrators",
+      "network designers",
+      "network systems engineer",
+      "network troubleshooters",
+      "information systems security specialists"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "install, configure, monitor, manage, backup, and customize a Microsoft server.",
+      "design, construct and apply group policies and NTFS file system permissions to secure files and network resources.",
+      "design, construct and troubleshoot a Microsoft Active Directory network using Microsoft workstation and server operating systems.",
+      "design, evaluate, construct and implement a routed IP network using industry standard routing protocols and routing equipment, in a wired or wireless configuration.",
+      "design, evaluate, construct and implement a multilayer switching network using switching protocols, such as Ethernet, in a wired or wireless configuration.",
+      "design, install and test Wide Area Network (WAN) connectivity solutions.",
+      "design and evaluate basic security and access solutions in a switched or routed LAN or WAN.",
+      "design, evaluate, specify, and install various types of network media.",
+      "install, configure, monitor, manage, backup, and customize a Linux server.",
+      "design, evaluate and implement and troubleshoot typical Linux server services in the areas of user accounts and security, printing, web server, telnet server, firewall, email server, domain name service, dynamic host configuration protocol, network file system, and Microsoft Windows compatibility."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 34,
+      "min": 31
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.S. in CIS: Computer Networking Management",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 34,
+   "total_min": 31,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=430",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "CIS: Computer Networking Management",
+   "control_number": "12238"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 36,
+    "placed": 33,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Communication and English courses (heading not in text)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 331",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL C1001H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGL C1003",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGL 301",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ENGL 481",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 12 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "DEAF 310",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DEAF 312",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DEAF 314",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DEAF 316",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DEAF 318",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GERM 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GERM 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GERM 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GERM 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 413",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "RUSS 415",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 413",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 415",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "language-focused fields",
+      "healthcare interpreting",
+      "emergency and public services",
+      "social services",
+      "bilingual education support",
+      "government agencies",
+      "international business",
+      "tourism",
+      "translation and interpreting",
+      "other community-based professions"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "write expository and argumentative papers.",
+      "synthesize ideas and develop conclusions.",
+      "examine the connection between culture and communication.",
+      "engage in conversation and written correspondence in a language other than English."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "A.A. in Language Studies",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=691",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Language Studies",
+   "control_number": "17939"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": 41,
+       "min": 41
+      },
+      "courses": [
+       {
+        "code": "DEAF 310",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 312",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 372",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECE 404",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GERON 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 375",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 121",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SLPA 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "COMM 331",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Speech-Language Pathology Assistant (SLPA)"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "describe various communication disorders, including etiology and some remedial techniques.",
+      "explain the major areas of cultural diversity and the relationship between culture and communication.",
+      "demonstrate skills needed to assist in the management of speech-language pathology programs and services.",
+      "describe the therapeutic process especially in terms of how learning occurs and strategies for effective lesson delivery.",
+      "implement a treatment protocol as prescribed by the supervising Speech-Language Pathologist.",
+      "describe professional responsibilities and ethical behavior appropriate for the Speech-Language Pathology Assistant."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 41,
+      "min": 41
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "A.S. in Speech-Language Pathology Assistant Program",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 41,
+   "total_min": 41,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=936",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Speech-Language Pathology Assistant Program",
+   "control_number": "18845"
+  },
+  {
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "checks": {
+    "listed": 16,
+    "placed": 3,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "BIOL C1000",
+        "units": 4,
+        "units_max": 5,
+        "alternatives": [
+         {
+          "code": "BIOL 310",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "BIOL 400",
+          "units": 5,
+          "catalog_addition": false
+         },
+         {
+          "code": "BIOL 440",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Biotechnology Certificate",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=382",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Biotechnology",
+   "control_number": "20100"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 4,
+    "placed": 4,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PMED 114",
+        "units": 11,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PMED 115",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PMED 121",
+        "units": 12.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PMED 131",
+        "units": 17.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": null,
+     "total_units": {
+      "max": null,
+      "min": null
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Certificate of Achievement Paramedic Certificate",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": null,
+   "total_min": null,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=833",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Paramedic",
+   "control_number": "20130"
+  },
+  {
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Certificate Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HORT 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HORT 306",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 322",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 326",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HORT 329",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DESGN 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DESGN 301",
+        "units": 3,
+        "units_max": 4,
+        "alternatives": [
+         {
+          "code": "DESGN 303",
+          "units": 2,
+          "catalog_addition": false
+         },
+         {
+          "code": "DESGN 304",
+          "units": 2,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "DESGN 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DESGN 351",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Landscape architects",
+      "landscape architect technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "select plant materials that are used for landscapes.",
+      "solve landscape design problems.",
+      "analyze typical landscape design projects using the design process.",
+      "communicate landscape design solutions effectively."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 32,
+      "min": 31
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Landscape Design Technology Certificate",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 32,
+   "total_min": 31,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=665",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Landscape Design Technology",
+   "control_number": "30023"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 32,
+    "placed": 24,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Program",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECON 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYC 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 340",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC 481",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 354",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 356",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 359",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 370",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 390",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "PSYC 365",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SWCD 330",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 372",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ECE 312",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 375",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GERON 305",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 400",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SWCD 340",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 401",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SWCD 341",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC 402",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SWCD 342",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "case management",
+      "sales and marketing",
+      "health care facility administration",
+      "teaching",
+      "law enforcement",
+      "licensed psychologists",
+      "industrial/organizational psychologists",
+      "consumer psychologists",
+      "research psychologists"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology.",
+      "compare and contrast the major theoretical perspectives in psychology.",
+      "define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.",
+      "evaluate psychological data, use the scientific method, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these to personal, community, and scientific problems.",
+      "employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal and social skills.",
+      "demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) (heading not in the supplied text; section begins mid-table)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=856",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Psychology",
+   "control_number": "30595"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 58,
+    "placed": 52,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Program",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST C1001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 320",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 332",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST C1001H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST C1002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 321",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST 333",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "HIST C1002H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "HIST 307",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 308",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A: Area 1",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 323",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 327",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 333",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 353",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 364",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 365",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 367",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 374",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 375",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "List A: Area 2",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HIST 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 480",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 481",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 318",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 340",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 341",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 481",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 333",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 334",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ENGLT 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 334",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 338",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 340",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 341",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 365",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUM 326",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "IS 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "POLS C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "POLS C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "RLST 301",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SJS 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 301",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 321",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 303",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "education",
+      "business",
+      "public history",
+      "government service",
+      "the military",
+      "the law"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "identify and correctly use basic historical terminology, and distinguish between primary and secondary sources as historical evidence.",
+      "analyze multiple causes for an historical event, and properly evaluate why that event happened.",
+      "identify various interpretations used by historians to explain history.",
+      "identify the major time periods and relevant geography of history.",
+      "analyze and evaluate the major economic, social, political, and cultural developments in history.",
+      "analyze and evaluate the experiences and conflicts of diverse groups of people, including \"common people\" in history.",
+      "make historical generalizations based on a study and understanding of historical evidence."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "Associate in Arts in History for Transfer (AA-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=653",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "History",
+   "control_number": "31434"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 48,
+    "placed": 45,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "(Heading on preceding page, not in text) TAP course list",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "TAP 333",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 340",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 341",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 342",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 343",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 350",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 351",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 352",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 353",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 360",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 361",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 362",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 363",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 370",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 371",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 372",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 373",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 380",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 381",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 382",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 383",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 390",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 391",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 392",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 393",
+        "units": 1,
+        "units_max": 3,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "List A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "TA 351",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 420",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 422",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 430",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 437",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 300",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 301",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 302",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 303",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 310",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 311",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 312",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 313",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 320",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 321",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 322",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 323",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 330",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 331",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 332",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 333",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 340",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 341",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 342",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 343",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 350",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 351",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 352",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 353",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 360",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 361",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 362",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 363",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 370",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 371",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 372",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 373",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 380",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 381",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 382",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 383",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 390",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 391",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 392",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAP 393",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 9,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "critique and evaluate the role of the theatre arts and its relationship to other parts of society.",
+      "evaluate the historical, artistic, social, and philosophical environments in which theatre exists.",
+      "analyze and critique dramatic literature and performance.",
+      "formulate alternative solutions to theatrical production situations.",
+      "employ audition and performance skills in community, educational, and/or professional theatres.",
+      "develop skills to work as a theatre technician in community, educational, and/or professional theatres.",
+      "demonstrate the ability to work effectively as an ensemble member of a theatre company.",
+      "demonstrate skills that will allow the student to thrive in a baccalaureate level theatre program."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Arts in Theatre Arts for Transfer (AA-T)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Theatre Arts",
+   "control_number": "32643"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 40,
+    "placed": 38,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Core",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH 308",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 310",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Required Core: A minimum of 3 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH 322",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 333",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 334",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List A, Further Preparation in Art History",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH 318",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 322",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 333",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 334",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "List B, Studio Arts",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 304",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 306",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTNM 320",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 312",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 323",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 324",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 327",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 328",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 329",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 330",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 336",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 337",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 370",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 372",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 375",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 390",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 391",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 303",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 322",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 324",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 370",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 405",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTPH 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTPH 305",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTPH 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "registrars",
+      "preparators",
+      "curatorial staff",
+      "art critics",
+      "museums directorships",
+      "curators",
+      "instructors",
+      "preservationists",
+      "researchers",
+      "auction house personnel"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "assess and evaluate the contributions of artists throughout history.",
+      "identify and evaluate works of art or architecture according to their appropriate style and time frame.",
+      "analyze and critique art and architecture within the context of their functions and meanings.",
+      "research and assess theoretical information concerning the meanings and purposes of art and architecture.",
+      "explain the history of cultures and civilizations and how art and architecture is a reflection of that history."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 21,
+      "min": 21
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Degree Requirements",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 21,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=309",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Art History",
+   "control_number": "32828"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 16,
+    "placed": 16,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "A) Sequence for Spanish heritage speakers (Sequence A; heading cut off)",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 413",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 415",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Sequence"
+     },
+     {
+      "name": "B) Sequence for non-Spanish heritage speakers",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "SPAN 401",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 402",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 411",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 412",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Sequence"
+     },
+     {
+      "name": "List A",
+      "rule": "choose_units",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ENGLT 335",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ETHNS 360",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 327",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 374",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 375",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOC 325",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 361",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 362",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 427",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "airlines/travel",
+      "banking",
+      "bilingual education",
+      "bilingual telecommunications",
+      "emergency services",
+      "foreign service",
+      "imports and exports",
+      "international business",
+      "intelligence/military services",
+      "IRS/State Franchise Tax Board",
+      "law enforcement/correctional officer",
+      "social services",
+      "translating/interpreting",
+      "tourism",
+      "world language instructor"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "demonstrate proficiency in the five skills as mandated by the competency guidelines of the American Council of the Teaching of Foreign Languages (ACTFL): comprehension, speaking, reading, writing, and understanding the people and culture of Spanish-speaking countries.",
+      "utilize grammatical structures of Spanish.",
+      "read and understand Spanish proficiently as found, for example, in Spanish language newspapers, magazines, short stories, essays, and selections of poetry written by Spanish, Spanish-American, Afrolatina/o/x, and Chicana/o/x authors.",
+      "demonstrate writing and composition skills in Spanish.",
+      "critique and discuss Latin American, Peninsular, Chicana/o/x, Afrolatina/o/x, and Indigenous literature in a historical context.",
+      "analyze and discuss major historical events and periods in the history of Spanish-speaking countries.",
+      "compare and contrast aspects of the Spanish-speaking culture that are different or similar to their own culture.",
+      "compare and contrast aspects of Spanish to their first language.",
+      "recognize regional linguistic and lexical differences including influences from indigenous languages.",
+      "describe the complexity and struggles of Latina/o/x racialized groups in Spanish-speaking countries and the United States.",
+      "analyze how struggle, resistance, social justice, solidarity and liberation are experienced by Latina/o/x communities socially, linguistically, and politically."
+     ],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 19
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Associate in Arts in Spanish for Transfer (AA-T) degree (heading not shown in the excerpt; text begins mid-table)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 19,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=980",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Spanish",
+   "control_number": "33273"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 24,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Degree Requirements",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "TAFILM 300",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAFILM 307",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAFILM 320",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 6 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "TAFILM 302",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAFILM 303",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TAFILM 304",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 12 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ARTNM 332",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 373",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 405",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 420",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTNM 431",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGCW 441",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ENGLT 403",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 342",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 344",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 356",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSM 357",
+        "units": 1.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 350",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 356",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 395",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 420",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 422",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 430",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "TA 437",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 12,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "actors",
+      "directors",
+      "producers",
+      "critics",
+      "technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "analyze the historical development of film art.",
+      "assess the influence of film as a dynamic art form, and as a social and cultural force in our society.",
+      "evaluate the components of a film production, including acting, directing, writing, and technical elements.",
+      "compare and contrast different styles and genres of film.",
+      "integrate theoretical knowledge with practical production experience."
+     ],
+     "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+     "total_units": {
+      "max": 27,
+      "min": 27
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "A.A. in Film",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 27,
+   "total_min": 27,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=957",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Film",
+   "control_number": "35934"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 34,
+    "placed": 34,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Course list (heading not in text)",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "HVACR 101",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 102",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 110",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 111",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 120",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 122",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 130",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 132",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 140",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 142",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 144",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 146",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 152",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 160",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 161",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 165",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 170",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 171",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 173",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 174",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HVACR 176",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 101",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 120",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 161",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 162",
+        "units": 6,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 180",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 181",
+        "units": 3.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 182",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 190",
+        "units": 4.5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 191",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 192",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of 16 units from the following",
+      "rule": "choose_units",
+      "stated": {
+       "max": 16,
+       "min": 16
+      },
+      "courses": [
+       {
+        "code": "HVACR 298",
+        "units": 0.5,
+        "units_max": 6,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PLUMB 298",
+        "units": 0.5,
+        "units_max": 6,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STMFT 298",
+        "units": 0.5,
+        "units_max": 6,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 16,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Refrigeration technicians"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "adjust and calibrate a variable air volume (VAV) box.",
+      "build control panels.",
+      "design a pneumatic control system.",
+      "create a wiring ladder diagram.",
+      "demonstrate the use of automatic systems inputs and outputs.",
+      "perform building automation system (BAS) installation, wiring, and testing.",
+      "apply safety guidelines to electrical control systems."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 48,
+      "min": 48
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Refrigeration Service Technician Apprenticeship A.S. Degree",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 48,
+   "total_min": 48,
+   "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39047245752,
+   "program_title": "Refrigeration Service Technician Apprenticeship",
+   "control_number": "39448"
+  }
+ ]
+}

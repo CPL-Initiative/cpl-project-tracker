@@ -1,0 +1,1372 @@
+{
+ "college": "Los Angeles City College",
+ "control_number": "45008",
+ "shape": "certificate",
+ "title": "Essential Skills",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=59",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 18386,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 18386,
+    "output_tokens": 9659,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 9659,
+  "output_tokens_details": {
+   "thinking_tokens": 1289
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.26672,
+ "ms": 67155,
+ "seconds": 67.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 206,
+   "share": 0.0,
+   "missing": [
+    "AFROAM20",
+    "AFROAM7",
+    "ANATOMY1",
+    "ANIMATN118",
+    "ANTHRO101",
+    "ANTHRO102",
+    "ANTHRO121",
+    "ANTHRO151",
+    "ARMEN11",
+    "ARMEN12",
+    "ARTHC1100",
+    "ARTHC1200",
+    "ARTHIST103",
+    "ARTHIST130",
+    "ARTHIST139",
+    "ARTHIST140",
+    "ARTHIST151",
+    "ARTHIST171",
+    "ASIAN1",
+    "ASL3",
+    "ASTRON1",
+    "ASTRON11",
+    "BIOLOGY25",
+    "BIOLOGY3",
+    "BIOLOGY6",
+    "BIOLOGY7",
+    "BUS15",
+    "CHDEV1",
+    "CHDEV11",
+    "CHEM101",
+    "CHEM102",
+    "CHEM211",
+    "CHEM212",
+    "CHEM221",
+    "CHEM60",
+    "CHICANO4",
+    "CHICANO44",
+    "CHICANO47",
+    "CHICANO7",
+    "CHICANO8",
+    "CHINESE10",
+    "CHINESE3",
+    "CHINESE4",
+    "CINEMA18",
+    "CINEMA4",
+    "COMM100",
+    "COMM104",
+    "COMM105",
+    "COMM121",
+    "COMM122",
+    "COMM151",
+    "COMMC1000",
+    "DANCEST805",
+    "EARTH1",
+    "ECONC2001",
+    "ECONC2002",
+    "ENGLC1000",
+    "ENGLC1001",
+    "ENGLISH101Z",
+    "ENGLISH102",
+    "ENGLISH203",
+    "ENGLISH204",
+    "ENGLISH205",
+    "ENGLISH206",
+    "ENGLISH207",
+    "ENGLISH208",
+    "ENGLISH211",
+    "ENGLISH212",
+    "ENGLISH214",
+    "ENGLISH215",
+    "ENGLISH216",
+    "ENGLISH218",
+    "ENGLISH219",
+    "ENGLISH239",
+    "ENGLISH240",
+    "ENGLISH252",
+    "ENGLISH255",
+    "ENGLISH270",
+    "ENVSCI1",
+    "ESL110",
+    "FAM&CS31",
+    "FRENCH10",
+    "FRENCH3",
+    "FRENCH4",
+    "GEOG1",
+    "GEOG14",
+    "GEOG15",
+    "GEOG2",
+    "GEOG7",
+    "GEOLOGY1",
+    "GEOLOGY2",
+    "GEOLOGY6",
+    "GEOLOGY7",
+    "HISTC1001",
+    "HISTC1002",
+    "HISTORY5",
+    "HISTORY59",
+    "HISTORY6",
+    "HISTORY7",
+    "HISTORY73",
+    "HISTORY81",
+    "HISTORY82",
+    "HISTORY86",
+    "HISTORY87",
+    "HUMAN30",
+    "HUMAN31",
+    "HUMAN6",
+    "HUMAN61",
+    "HUMAN8",
+    "JAPAN14",
+    "JAPAN3",
+    "JAPAN4",
+    "JAPAN9",
+    "JOURNAL105",
+    "KOREAN10",
+    "KOREAN13",
+    "KOREAN26",
+    "KOREAN3",
+    "KOREAN4",
+    "LAW3",
+    "LING1",
+    "LING2",
+    "LING3",
+    "MATH229",
+    "MATH230",
+    "MATH236",
+    "MATH245",
+    "MATH260",
+    "MATH260S",
+    "MATH261",
+    "MATH261S",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH272",
+    "MATH275",
+    "MICRO1",
+    "MICRO20",
+    "MUSIC111",
+    "MUSIC116",
+    "MUSIC118",
+    "MUSIC121",
+    "MUSIC122",
+    "MUSIC135",
+    "MUSIC136",
+    "MUSIC141",
+    "PHILOS1",
+    "PHILOS14",
+    "PHILOS20",
+    "PHILOS30",
+    "PHILOS32",
+    "PHILOS40",
+    "PHILOS5",
+    "PHOTO34",
+    "PHOTO501",
+    "PHYSICS101",
+    "PHYSICS102",
+    "PHYSICS103",
+    "PHYSICS11",
+    "PHYSICS12",
+    "PHYSICS14",
+    "PHYSICS161",
+    "PHYSICS21",
+    "PHYSICS22",
+    "PHYSICS6",
+    "PHYSICS7",
+    "PHYSIOL1",
+    "PHYSSC10",
+    "POLSC1000",
+    "POLSCI14",
+    "POLSCI19",
+    "POLSCI2",
+    "POLSCI5",
+    "POLSCI60",
+    "POLSCI7",
+    "PSYCC1000",
+    "PSYCH13",
+    "PSYCH14",
+    "PSYCH2",
+    "PSYCH41",
+    "PSYCH52",
+    "PSYCH74",
+    "RUSSIAN10",
+    "RUSSIAN3",
+    "RUSSIAN4",
+    "SOC1",
+    "SOC11",
+    "SOC12",
+    "SOC125",
+    "SOC2",
+    "SOC22",
+    "SOC31",
+    "SOC32",
+    "SPANISH10",
+    "SPANISH11",
+    "SPANISH15",
+    "SPANISH3",
+    "SPANISH4",
+    "SPANISH6",
+    "SPANISH9",
+    "STATC1000",
+    "STATC1000E",
+    "THEATER100",
+    "THEATER110",
+    "THEATER338",
+    "THEATER400"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "General Education for Associate Degrees (no section headed Essential Skills found in the text)",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "AFRO AM 20",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "AFRO AM 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANATOMY 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANIMATN 118",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANTHRO 101",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANTHRO 102",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANTHRO 121",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ANTHRO 151",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARMEN 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARMEN 12",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHC1100",
+    "why": "only in GE pattern lists (ARTH C1100); no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHC1200",
+    "why": "only in GE pattern lists (ARTH C1200); no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 103",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 130",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 139",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 140",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 151",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ARTHIST 171",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ASIAN 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ASL003",
+    "why": "only in GE pattern lists (A S L 003); no Essential Skills section in text"
+   },
+   {
+    "code": "ASTRON 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ASTRON 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "BIOLOGY 25",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "BIOLOGY 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "BIOLOGY 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "BIOLOGY 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "BUS 15",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CH DEV 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CH DEV 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 101",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 102",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 211",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 212",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 221",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHEM 60",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHICANO 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHICANO 44",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHICANO 47",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHICANO 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHICANO 8",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHINESE 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHINESE 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CHINESE 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CINEMA 18",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "CINEMA 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 100",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 104",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 105",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 121",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 122",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM 151",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "DANCEST 805",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "E.S.L. 110",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "EARTH 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ECON C2001",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ECON C2002",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 101Z",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 102",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 203",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 204",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 205",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 206",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 207",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 208",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 211",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 212",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 214",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 215",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 216",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 218",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 219",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 239",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 240",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 252",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 255",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENGLISH 270",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "ENV SCI 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "FAM &CS 31",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "FRENCH 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "FRENCH 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "FRENCH 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOG 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOG 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOG 15",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOG 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOG 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOLOGY 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOLOGY 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOLOGY 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "GEOLOGY 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTC1001",
+    "why": "only in GE pattern lists (HISTORY C1001); no Essential Skills section in text"
+   },
+   {
+    "code": "HISTC1002",
+    "why": "only in GE pattern lists (HISTORY C1002); no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 5",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 59",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 73",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 81",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 82",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 86",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HISTORY 87",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HUMAN 30",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HUMAN 31",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HUMAN 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HUMAN 61",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "HUMAN 8",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "JAPAN 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "JAPAN 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "JAPAN 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "JAPAN 9",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "JOURNAL 105",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "KOREAN 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "KOREAN 13",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "KOREAN 26",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "KOREAN 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "KOREAN 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "LAW 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "LING 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "LING 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "LING 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 229",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 230",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 236",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 245",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 260",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 260S",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 261",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 261S",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 262",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 263",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 270",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 272",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MATH 275",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MICRO 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MICRO 20",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 111",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 116",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 118",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 121",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 122",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 135",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 136",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "MUSIC 141",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 20",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 30",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 32",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 40",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHILOS 5",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHOTO 34",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHOTO 501",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYS SC 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 101",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 102",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 103",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 12",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 161",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 21",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 22",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSICS 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PHYSIOL 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 19",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 5",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 60",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POL SCI 7",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 13",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 14",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 41",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 52",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "PSYCH 74",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "RUSSIAN 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "RUSSIAN 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "RUSSIAN 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 1",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 12",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 125",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 2",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 22",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 31",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SOC 32",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 10",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 11",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 15",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 3",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 4",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 6",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "SPANISH 9",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "THEATER 100",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "THEATER 110",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "THEATER 338",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   },
+   {
+    "code": "THEATER 400",
+    "why": "only in GE pattern lists; no Essential Skills section in text"
+   }
+  ],
+  "notes": [
+   "The supplied text holds the catalog's general education section (LACCD General Education and Cal-GETC area lists); it prints no section headed 'Essential Skills' and no requirements, total, outcomes or careers for this Certificate of Achievement, so no blocks were recorded.",
+   "The closed list closely matches the Cal-GETC area lists (Areas 1-6, including 5C lab-only courses GEOG 015, GEOLOGY 006/007, PHYSICS 014), suggesting this certificate may be a Cal-GETC/GE certificate, but the text does not label it as this award; a reviewer should locate the actual Essential Skills certificate page.",
+   "The general education outcomes printed ('Students who complete general education at LACC will:') belong to GE for associate degrees, not explicitly to this award, so they were not recorded as program outcomes.",
+   "The page headers read 'LACC 2025-2026 COLLEGE CATALOG' although the requested catalog year is 2026-2027.",
+   "The text is cut off mid-sentence at the end of page 61 (US History, Constitution, and American Ideals)."
+  ]
+ },
+ "extracted_run": "43212072618",
+ "source_sha": "f96eaf3017df136a",
+ "source_codes": [
+  "AFROAM20",
+  "AFROAM7",
+  "ANATOMY1",
+  "ANIMATN118",
+  "ANTHRO101",
+  "ANTHRO102",
+  "ANTHRO121",
+  "ANTHRO151",
+  "ARMEN11",
+  "ARMEN12",
+  "ARTHC1100",
+  "ARTHIST103",
+  "ARTHIST130",
+  "ARTHIST139",
+  "ARTHIST140",
+  "ARTHIST151",
+  "ARTHIST171",
+  "ASIAN1",
+  "ASL3",
+  "ASTRON1",
+  "ASTRON11",
+  "BIOLOGY25",
+  "BIOLOGY3",
+  "BIOLOGY6",
+  "BIOLOGY7",
+  "BUS15",
+  "CHDEV1",
+  "CHDEV11",
+  "CHEM101",
+  "CHEM102",
+  "CHEM211",
+  "CHEM212",
+  "CHEM221",
+  "CHEM60",
+  "CHICANO4",
+  "CHICANO44",
+  "CHICANO47",
+  "CHICANO7",
+  "CHICANO8",
+  "CHINESE10",
+  "CHINESE3",
+  "CHINESE4",
+  "CINEMA18",
+  "CINEMA4",
+  "COMM100",
+  "COMM104",
+  "COMM105",
+  "COMM121",
+  "COMM122",
+  "COMM151",
+  "COMMC1000",
+  "DANCEST805",
+  "EARTH1",
+  "ECONC2001",
+  "ENGLC1000",
+  "ENGLC1001",
+  "ENGLISH101Z",
+  "ENGLISH102",
+  "ENGLISH203",
+  "ENGLISH204",
+  "ENGLISH205",
+  "ENGLISH206",
+  "ENGLISH207",
+  "ENGLISH208",
+  "ENGLISH211",
+  "ENGLISH212",
+  "ENGLISH214",
+  "ENGLISH215",
+  "ENGLISH216",
+  "ENGLISH218",
+  "ENGLISH219",
+  "ENGLISH239",
+  "ENGLISH240",
+  "ENGLISH252",
+  "ENGLISH255",
+  "ENGLISH270",
+  "ENVSCI1",
+  "FAM&CS31",
+  "FRENCH10",
+  "FRENCH3",
+  "FRENCH4",
+  "GEOG1",
+  "GEOG14",
+  "GEOG15",
+  "GEOG2",
+  "GEOG7",
+  "GEOLOGY1",
+  "GEOLOGY2",
+  "GEOLOGY6",
+  "HISTORY5",
+  "HISTORY59",
+  "HISTORY6",
+  "HISTORY7",
+  "HISTORY73",
+  "HISTORY81",
+  "HISTORY82",
+  "HISTORY86",
+  "HISTORY87",
+  "HUMAN30",
+  "HUMAN31",
+  "HUMAN6",
+  "HUMAN61",
+  "HUMAN8",
+  "JAPAN14",
+  "JAPAN3",
+  "JAPAN4",
+  "JAPAN9",
+  "JOURNAL105",
+  "KOREAN10",
+  "KOREAN13",
+  "KOREAN26",
+  "KOREAN3",
+  "KOREAN4",
+  "LAW3",
+  "LING1",
+  "LING2",
+  "LING3",
+  "MATH229",
+  "MATH230",
+  "MATH236",
+  "MATH245",
+  "MATH260",
+  "MATH260S",
+  "MATH261",
+  "MATH261S",
+  "MATH262",
+  "MATH263",
+  "MATH270",
+  "MATH272",
+  "MATH275",
+  "MICRO1",
+  "MICRO20",
+  "MUSIC111",
+  "MUSIC116",
+  "MUSIC118",
+  "MUSIC121",
+  "MUSIC122",
+  "MUSIC135",
+  "MUSIC136",
+  "MUSIC141",
+  "PHILOS1",
+  "PHILOS14",
+  "PHILOS20",
+  "PHILOS30",
+  "PHILOS32",
+  "PHILOS40",
+  "PHILOS5",
+  "PHOTO34",
+  "PHOTO501",
+  "PHYSICS101",
+  "PHYSICS102",
+  "PHYSICS103",
+  "PHYSICS11",
+  "PHYSICS12",
+  "PHYSICS14",
+  "PHYSICS161",
+  "PHYSICS21",
+  "PHYSICS22",
+  "PHYSICS6",
+  "PHYSICS7",
+  "PHYSIOL1",
+  "POLSC1000",
+  "POLSCI14",
+  "POLSCI19",
+  "POLSCI2",
+  "POLSCI5",
+  "POLSCI60",
+  "POLSCI7",
+  "PSYCC1000",
+  "PSYCH13",
+  "PSYCH14",
+  "PSYCH2",
+  "PSYCH41",
+  "PSYCH52",
+  "PSYCH74",
+  "RUSSIAN10",
+  "RUSSIAN3",
+  "RUSSIAN4",
+  "SOC1",
+  "SOC11",
+  "SOC12",
+  "SOC125",
+  "SOC2",
+  "SOC22",
+  "SOC31",
+  "SOC32",
+  "SPANISH10",
+  "SPANISH11",
+  "SPANISH15",
+  "SPANISH3",
+  "SPANISH4",
+  "SPANISH6",
+  "SPANISH9",
+  "STATC1000",
+  "THEATER100",
+  "THEATER110",
+  "THEATER338",
+  "THEATER400"
+ ],
+ "source_coverage": 0.961
+}

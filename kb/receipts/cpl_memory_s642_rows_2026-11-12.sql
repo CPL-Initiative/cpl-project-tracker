@@ -1,0 +1,15 @@
+-- cpl_memory rows written by SkyKestrel (S642), 2026-11-12, each INSERT ... ON CONFLICT DO NOTHING, each returned its slug.
+--   sam-classifier-suggests-title-in-use-2026-11-12   (Sam, in session, verbatim)
+--   sam-cert-title-official-name-not-mid-2026-11-12   (Sam, in session, verbatim)
+--   d-sierra-ghost-rows-deleted-s642                  (the delete carried out on Sheet 183 card 6)
+--   sam-outcomes-first-mid-clustering-in-plan-2026-11-12   (Sam, relayed by COBIx, #3111 comment 6825682304, verbatim)
+--   sam-mid-reclustering-step-1-go-2026-11-12              (Sam, relayed by COBIx, #2962 comment 6825683021, verbatim)
+-- The last two were written by the conductor and added to this receipt at the checkpoint (S642).
+-- ROLLBACK:
+-- delete from cpl_memory where author = 'SkyKestrel (S642)' and slug in (
+--   'sam-classifier-suggests-title-in-use-2026-11-12',
+--   'sam-cert-title-official-name-not-mid-2026-11-12',
+--   'd-sierra-ghost-rows-deleted-s642',
+--   'sam-outcomes-first-mid-clustering-in-plan-2026-11-12',
+--   'sam-mid-reclustering-step-1-go-2026-11-12');
+select slug from cpl_memory where author = 'SkyKestrel (S642)' order by created_at;

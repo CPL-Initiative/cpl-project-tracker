@@ -46,7 +46,8 @@ import sys
 import urllib.error
 import urllib.request
 
-REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.abspath(__file__))
+REPO = os.path.dirname(HERE)
 ARTIFACT = os.path.join(REPO, "credential_reference_data.js")
 TABLE = "chatbox_credentials"
 BATCH = 200
@@ -83,7 +84,7 @@ def adopters_of(rec: dict) -> list:
 _WS = re.compile(r"\s+")
 
 
-def search_text_for(rec: dict, adopters: list) -> str:
+def search_text_for(rec: dict, adopters: list, retired: list | None = None) -> str:
     """One lowercase haystack for trigram matching.
 
     Deliberately NOT a tsvector. `to_tsquery('english', 'aed:*')` parses to
@@ -98,6 +99,7 @@ def search_text_for(rec: dict, adopters: list) -> str:
     """
     parts = [rec.get("ut") or ""]
     parts += [v.get("r") or "" for v in (rec.get("raw_variants") or [])]
+    parts += list(retired or [])
     parts += [rec.get("issuer") or "", rec.get("trainer") or "",
               rec.get("disc_modal") or ""]
     # A couple of adopters help "who does X" style phrasings land, but the full
@@ -135,9 +137,40 @@ def statewide_titles() -> set:
     return _STATEWIDE_TITLES
 
 
-def to_row(rec: dict, generated_at: str | None) -> dict:
+def retired_names(titles: set, root: str = REPO) -> dict:
+    """live title -> [the old names an applied rename or a fold retire moved into it], for the titles this sync upserts.
+
+    Sam, 2026-11-11: "Approved renames keep the old title as a search alias, so nothing students or colleges already
+    use stops working." Sierra's credential search matches lower(unified_title) at tiers 1 and 3 and lower(raw variant)
+    at tiers 2 and 4 (kb/supabase_chatbox_credentials.sql); no committed search function reads search_text. Until
+    2026-11-12 an old name lived in this table only as its ghost row, so deleting the ghost lost the name. The names
+    come from kb/credential_aliases.py load() (imported, never copied), whose keys are already each chain's end, the
+    title it names now. An old name that is itself a title upserted here is skipped (it answers as itself), and so is a
+    successor this sync does not upsert (a dead end adds nothing). Sorted, so a run is deterministic.
+    """
+    if HERE not in sys.path:
+        sys.path.insert(0, HERE)
+    import credential_aliases
+    out = {}
+    for now, olds in (credential_aliases.load(root) or {}).items():
+        if now not in titles:
+            continue
+        names = sorted({o for o in olds if o and o not in titles and o != now})
+        if names:
+            out[now] = names
+    return out
+
+
+def to_row(rec: dict, generated_at: str | None, retired: list | None = None) -> dict:
     adopters = adopters_of(rec)
     served = rec.get("students_served")
+    variants = [v.get("r") for v in (rec.get("raw_variants") or []) if v.get("r")]
+    have = {v.lower() for v in variants} | {(rec.get("ut") or "").lower()}
+    extra = []
+    for name in retired or []:
+        if name.lower() not in have:
+            have.add(name.lower())
+            extra.append(name)
     return {
         "unified_title": rec.get("ut"),
         "issuer": rec.get("issuer") or None,
@@ -170,8 +203,9 @@ def to_row(rec: dict, generated_at: str | None) -> dict:
         # Inherited from the published artifact — never recomputed here.
         "students_served": served if isinstance(served, int) else None,
         "served_suppressed": bool(rec.get("served_suppressed")),
-        "raw_variants": [v.get("r") for v in (rec.get("raw_variants") or []) if v.get("r")],
-        "search_text": search_text_for(rec, adopters),
+        # The college-entered variants, then the retired names (retired_names): Sierra's tiers 2 and 4 read this array.
+        "raw_variants": variants + extra,
+        "search_text": search_text_for(rec, adopters, extra),
         "conf_title": rec.get("conf_title"),
         "curated_by": rec.get("curated_by") or None,
         "curated_at": rec.get("curated_at") or None,
@@ -179,9 +213,20 @@ def to_row(rec: dict, generated_at: str | None) -> dict:
     }
 
 
-def build_rows(doc: dict) -> list:
+def build_rows(doc: dict, retired: dict | None = None) -> list:
+    """One row per reference title. `retired` (title -> old names) defaults to retired_names() over this reference. A
+    failure to read it adds no retired names (with a note) and still upserts every row; the ghost rows then stay, because
+    kb/_chatbox_ghost_delete.py apply reads the aliases itself and holds each ghost whose successors' live
+    raw_variants lack its title, or refuses outright when its own read of the aliases fails."""
     gen = doc.get("_generated_at")
-    rows = [to_row(r, gen) for r in doc.get("unified_titles") or [] if r.get("ut")]
+    recs = [r for r in doc.get("unified_titles") or [] if r.get("ut")]
+    if retired is None:
+        try:
+            retired = retired_names({r["ut"] for r in recs})
+        except Exception as exc:                        # noqa: BLE001 — degrade, never block
+            print(f"NOTE: could not read the retired names ({type(exc).__name__}: {exc}); none added.")
+            retired = {}
+    rows = [to_row(r, gen, retired.get(r["ut"])) for r in recs]
     # A duplicate title would silently drop rows on upsert; fail loudly instead.
     seen, dupes = set(), []
     for r in rows:
@@ -245,6 +290,9 @@ def main() -> int:
     print(f"  statewide         : {statewide} ({with_rec} carry a recommendation)")
     print(f"  with >=1 adopter  : {adopted}")
     print(f"  served suppressed : {suppressed}   exact: {exact}")
+    college = sum(1 for x in doc.get("unified_titles") or [] if x.get("ut")
+                  for v in (x.get("raw_variants") or []) if v.get("r"))
+    print(f"  retired names     : {sum(len(r['raw_variants']) for r in rows) - college} added to raw_variants")
     print(f"  source generated  : {doc.get('_generated_at')}")
 
     # The route this table was built for is CRED-STD; if no credential carries a
@@ -275,6 +323,16 @@ def main() -> int:
     print(f"\nupserting into {TABLE} …")
     sent = upsert(rows, url, key)
     print(f"done — {sent} rows.")
+
+    # A report only: the upsert never deletes, so a title the reference renamed, merged or retired stays live as a
+    # ghost row. Counting them reads one column; removing them is kb/_chatbox_ghost_delete.py, a reviewed plan at a
+    # time (Sam, Open Asks Sheet 183 card 6). A failed count never fails the sync.
+    try:
+        import _chatbox_ghost_delete as ghosts
+        n = ghosts.count_ghosts(ghosts.Rest(url, key), {r["unified_title"] for r in rows})
+        print(f"{n} ghost rows; run chatbox-ghost-delete" if n else "0 ghost rows")
+    except Exception as exc:                            # noqa: BLE001 — a report, never a gate
+        print(f"NOTE: ghost-row count skipped ({type(exc).__name__}: {exc})")
     return 0
 
 

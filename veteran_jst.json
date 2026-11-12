@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-12T06:36:13.742997+00:00",
+  "scraped_at": "2026-11-12T20:21:29.295696+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 31930,
+    "jst": 31947,
     "star_colleges": 68
   },
   "computed_star_colleges": 68,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 170,
+      "jst": 172,
       "star": false
     },
     "Santiago Canyon College": {
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 599,
+      "jst": 603,
       "star": true
     },
     "Norco College": {
@@ -62,7 +62,7 @@
     },
     "Cabrillo College": {
       "vets": 93,
-      "jst": 187,
+      "jst": 189,
       "star": true
     },
     "Merced College": {
@@ -127,7 +127,12 @@
     },
     "Saddleback College": {
       "vets": 807,
-      "jst": 431,
+      "jst": 432,
+      "star": false
+    },
+    "Modesto Junior College": {
+      "vets": 223,
+      "jst": 154,
       "star": false
     },
     "Santa Ana College": {
@@ -145,11 +150,6 @@
       "jst": 155,
       "star": true
     },
-    "Modesto Junior College": {
-      "vets": 223,
-      "jst": 154,
-      "star": false
-    },
     "Cypress College": {
       "vets": 249,
       "jst": 387,
@@ -162,7 +162,7 @@
     },
     "Santa Rosa Junior College": {
       "vets": 591,
-      "jst": 446,
+      "jst": 447,
       "star": true
     },
     "Sierra College": {
@@ -202,7 +202,7 @@
     },
     "Antelope Valley College": {
       "vets": 286,
-      "jst": 283,
+      "jst": 285,
       "star": true
     },
     "Shasta College": {
@@ -217,7 +217,7 @@
     },
     "Cerro Coso Community College": {
       "vets": 158,
-      "jst": 190,
+      "jst": 193,
       "star": true
     },
     "Victor Valley College": {
@@ -292,7 +292,7 @@
     },
     "Oxnard College": {
       "vets": 149,
-      "jst": 163,
+      "jst": 164,
       "star": true
     },
     "Golden West College": {
@@ -342,7 +342,7 @@
     },
     "Porterville College": {
       "vets": 51,
-      "jst": 86,
+      "jst": 87,
       "star": true
     },
     "Lassen College": {

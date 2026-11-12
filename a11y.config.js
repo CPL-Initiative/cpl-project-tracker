@@ -1178,6 +1178,20 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The CPL Commons' ASE slice (#3111): opened by its address, as the Commons' first view links to it. The keyboard and
+// reflow passes open the bare file, so the seed names the address itself.
+async function seedCommonsAse(page, theme) {
+  await page.evaluate(() => { if (!/^commons\/ase/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/ase/" + encodeURIComponent("ASE A5 \u2014 Brakes"); });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .cas-gaps", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
 // from the real kb/status/commons.json the origin serves.
 async function seedCociProgress(page, theme) {
@@ -1801,6 +1815,27 @@ async function seedTeamPhrases(page, theme) {
     st.msg.gr = { text: "save failed (500)", kind: "err" };
     T.render(document.getElementById("team-phrases-root"));
   });
+  await page.waitForTimeout(300);
+}
+
+// First Light as a reviewer sees it (S642, #3153): the tab draws its sets only for a personal sign-in, so the
+// signed-out cobi sweep measures the sign-in box. The seed holds a reviewer session, closes the greeting, and
+// opens one view by its address. Every file the views read is local, so nothing is stubbed.
+async function seedFirstLight(page, theme, view) {
+  await page.evaluate(() => {
+    try {
+      sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc",
+        email: "seed@example.org", exp: Date.now() + 3600 * 1000 }));
+      localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
+    } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.evaluate((v) => { location.hash = "first-light/" + v; }, view);
+  await page.waitForFunction(() => !!window.CPL_FIRST_LIGHT_TAB, null, { timeout: 20000 });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.evaluate(() => window.CPL_FIRST_LIGHT_TAB.activate());
+  await page.waitForFunction(() => !!document.querySelector("#first-light-root .flt-grid"), null, { timeout: 20000 });
   await page.waitForTimeout(300);
 }
 
@@ -3131,6 +3166,39 @@ module.exports = {
   /* ── Admin, signed in as a reviewer (S368) ─────────────────────────────
      The arrange list, the inventory, the gate badges, Blast Radius and the
      live-session control paint only for a reviewer; the cobi sweep is signed out. */
+  /* ── First Light, signed in as a reviewer (S642, #3153) ──────────────── */
+  "first-light-paintings": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the daily paintings",
+    routes: [{ hash: "first-light/paintings", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "paintings"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-paintings-dark": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the daily paintings, dark",
+    routes: [{ hash: "first-light/paintings", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "dark", "paintings"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-photos": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: the photos that cycle on COBI's views",
+    routes: [{ hash: "first-light/photos", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "photos"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "first-light-sierra": {
+    file: "index.html",
+    title: "First Light signed in as a reviewer: Sierra's set",
+    routes: [{ hash: "first-light/sierra", name: "reviewer" }],
+    widths: [320, 390, 1440],
+    seed: (page) => seedFirstLight(page, "light", "sierra"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "admin-reviewer": {
     file: "index.html",
     title: "Admin signed in as a reviewer, one item open for rename and sites",
@@ -3525,6 +3593,24 @@ module.exports = {
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The CPL Commons' first slice: where an ASE certification can count (#3111, the v2 Agreed final) ──
+     commons_ase.js, opened from #commons/ase; measured on one credential's college table and on the overview. */
+  "commons-ase": {
+    file: "index.html",
+    title: "CPL Commons: the ASE slice, one certification at every college",
+    routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5" }, { hash: "commons/ase", name: "ase-overview" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsAse(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-ase-dark": {
+    file: "index.html",
+    title: "CPL Commons: the ASE slice, dark",
+    routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsAse(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */

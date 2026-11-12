@@ -1,0 +1,461 @@
+{
+ "_about": "ONE rule, two implementations: the title in use for a held exhibit (Sam, in session, 2026-11-12: \"being able to suggest the best canonical title based on what's in use\"). kb/title_in_use.py (the Review proposal, kb/_build_exhibits_review.py) and exhibits.js relatedFor + relAligned (the Review card's line, #3160) must give every case below the same answer and hold the same constants. tests/title_in_use_test.py runs the Python side, tests/title_in_use_parity.test.js the JS side. Change the rule in both files and here, or a test fails. `related` is a kb/exhibits_related.json-shaped object: titles [title, issuer index, local titles, colleges, 0 in the reference or 1 proposed, earlier titles]. `expect` is null (nothing named) or {kind, title}; kind is self, in_use_statewide or in_use_most_used. A case may carry own_issuer: true (a credit-by-exam card keeps its own issuer; issuer_for is not applied). A case may carry expect_order: the first titles of relatedFor's rows, in order, which pins the one tie-break: local titles descending, then the lowercased title by code point.",
+ "constants": {
+  "popular_min": 3,
+  "statewide_lead": 3,
+  "local_issuer": "California Community Colleges",
+  "stop_words": [
+   "a",
+   "advanced",
+   "an",
+   "and",
+   "basic",
+   "by",
+   "certificate",
+   "certification",
+   "course",
+   "credit",
+   "exam",
+   "for",
+   "in",
+   "intro",
+   "introduction",
+   "level",
+   "noncredit",
+   "of",
+   "on",
+   "or",
+   "the",
+   "to",
+   "with"
+  ]
+ },
+ "related": {
+  "issuers": [
+   "California Community Colleges",
+   "California State Fire Training (SFT)",
+   "National Institute for Automotive Service Excellence (ASE)",
+   "American Welding Society (AWS)",
+   "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "California Commission on Peace Officer Standards and Training (POST)",
+   "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers"
+  ],
+  "titles": [
+   [
+    "Firefighter 1",
+    1,
+    11,
+    19,
+    0
+   ],
+   [
+    "Firefighter 1A",
+    1,
+    2,
+    11,
+    0
+   ],
+   [
+    "Firefighter 1 Academy",
+    1,
+    2,
+    1,
+    0
+   ],
+   [
+    "Firefighter Academy",
+    1,
+    0,
+    0,
+    1
+   ],
+   [
+    "Fire Inspector 1A",
+    1,
+    2,
+    3,
+    0
+   ],
+   [
+    "Fire Inspector 1B",
+    1,
+    2,
+    2,
+    0
+   ],
+   [
+    "ASE A5 — Brakes",
+    2,
+    14,
+    23,
+    0
+   ],
+   [
+    "ASE A9 — Light Vehicle Diesel Engines",
+    2,
+    8,
+    6,
+    0
+   ],
+   [
+    "ASE Bundle — A4, A5",
+    2,
+    1,
+    1,
+    0
+   ],
+   [
+    "SMAW Welding",
+    3,
+    9,
+    9,
+    0
+   ],
+   [
+    "Sheet Metal Apprenticeship",
+    4,
+    1,
+    1,
+    0
+   ],
+   [
+    "Welding Fundamentals Certificate",
+    0,
+    5,
+    4,
+    0
+   ],
+   [
+    "Welding Fundamentals Lab",
+    0,
+    2,
+    2,
+    0
+   ],
+   [
+    "Guitar Lessons Group",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Guitar Lessons Solo",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Emergency Medical Responder",
+    0,
+    13,
+    9,
+    0
+   ],
+   [
+    "Introduction to Administration of Justice",
+    0,
+    6,
+    5,
+    0
+   ],
+   [
+    "English as a Second Language",
+    0,
+    8,
+    4,
+    0
+   ],
+   [
+    "Principles of Fire and Emergency Services",
+    0,
+    4,
+    4,
+    0
+   ],
+   [
+    "POST Basic Course",
+    5,
+    6,
+    6,
+    0,
+    [
+     "Regular Basic Course"
+    ]
+   ],
+   [
+    "Principles of Emergency Services",
+    0,
+    1,
+    1,
+    0
+   ],
+   [
+    "Principles of Fire and Emergency Services Safety and Survival",
+    0,
+    8,
+    4,
+    0
+   ],
+   [
+    "Ironworker Apprenticeship — Level 4",
+    6,
+    5,
+    2,
+    0
+   ],
+   [
+    "Guitar Ensemble",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Ensemble Guitar",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Guitar Ensemble Fall",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Guitar Ensemble École",
+    0,
+    3,
+    2,
+    0
+   ],
+   [
+    "Brakes (ASE A5 standards)",
+    0,
+    4,
+    3,
+    0
+   ]
+  ]
+ },
+ "statewide": [
+  "Firefighter 1",
+  "Firefighter 1A",
+  "Fire Inspector 1A",
+  "Fire Inspector 1B",
+  "ASE A5 — Brakes",
+  "SMAW Welding"
+ ],
+ "cases": [
+  {
+   "why": "Sam's card (2026-11-12): American River's recruit academy, proposed new from its M-ID, joins the statewide exhibit Firefighter 1",
+   "title": "Firefighter Academy",
+   "raw": "Firefighter Recruit Academy Certificate",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": {
+    "kind": "in_use_statewide",
+    "title": "Firefighter 1"
+   }
+  },
+  {
+   "why": "(g) the classifier's title for the same card is already in the reference with 2 local titles, so it keeps it: Firefighter 1 has other words",
+   "title": "Firefighter 1 Academy",
+   "raw": "Firefighter Recruit Academy Certificate",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": null
+  },
+  {
+   "why": "#3160's regression: Fire Academy (SFT) never names Fire Inspector 1A; two statewide candidates with no clear lead name none",
+   "title": "Fire Academy",
+   "raw": "COBIx Fire Academy",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": null
+  },
+  {
+   "why": "#3160's regression, the second variant",
+   "title": "Fire Academy Conditioning",
+   "raw": "COBIx Fire Academy Conditioning",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": null
+  },
+  {
+   "why": "#3160's regression, the third variant",
+   "title": "Kern County Fire Recruit Academy",
+   "raw": "COBIx Kern County Fire Recruit Academy",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": null
+  },
+  {
+   "why": "a card already on a statewide exhibit is that exhibit and names nothing else",
+   "title": "Firefighter 1",
+   "raw": "FIRE 1 academy",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": {
+    "kind": "self",
+    "title": "Firefighter 1"
+   }
+  },
+  {
+   "why": "the Review card's line for a college's noncredit course: the box's issuer follows the title's ASE form",
+   "title": "Brakes (ASE A5)",
+   "raw": "Noncredit Course for AUTO A5",
+   "issuer": "California Community Colleges",
+   "expect": {
+    "kind": "in_use_statewide",
+    "title": "ASE A5 — Brakes"
+   }
+  },
+  {
+   "why": "an ASE test with no statewide title: the most used title of the same test",
+   "title": "Light Vehicle Diesel Engines (ASE A9)",
+   "raw": "Industry Training Evidence for AUTO A9",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "expect": {
+    "kind": "in_use_most_used",
+    "title": "ASE A9 — Light Vehicle Diesel Engines"
+   }
+  },
+  {
+   "why": "a title from another issuer is never named, however many words it shares (the SMART card and AWS's SMAW)",
+   "title": "Sheet Metal Welding",
+   "raw": "NorCal Sheet Metal Welding",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "expect": null
+  },
+  {
+   "why": "none statewide: the most used title, at least 3 local titles and more than any other",
+   "title": "Welding Fundamentals",
+   "raw": "Welding Fundamentals Cert",
+   "issuer": "California Community Colleges",
+   "expect": {
+    "kind": "in_use_most_used",
+    "title": "Welding Fundamentals Certificate"
+   }
+  },
+  {
+   "why": "(d) a longer title holding every word of the card's is another thing: Guitar Lessons Group is not named",
+   "title": "Guitar Lessons",
+   "raw": "Guitar Lessons Class",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "(d) two shared words are not enough: Emergency Medical Services is not Emergency Medical Responder",
+   "title": "Emergency Medical Services",
+   "raw": "Industry Training Evidence for EMS",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "(g) FST 1 (the review of #3168): its own title is in the reference, so no most-used title replaces it, and Principles of Fire and Emergency Services Safety and Survival is another course",
+   "title": "Principles of Emergency Services",
+   "raw": "Industry Training Evidence for FST 1",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "(e) a title ending in a course code is one course: AJ 54 names no general title",
+   "title": "Administration of Justice (AJ 54)",
+   "raw": "Industry Training Evidence for AJ 54",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "(e) the same for an ESL level",
+   "title": "English as a Second Language (ESL 220A)",
+   "raw": "Noncredit Course for ESL 220A",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "with no issuer, nothing is named",
+   "title": "Welding Fundamentals",
+   "raw": "Welding Fundamentals Cert",
+   "issuer": "",
+   "expect": null
+  },
+  {
+   "why": "an earlier title's words relate a card (POST Basic Course was Regular Basic Course) but (d) reads the title itself, and 6 local titles stand alone",
+   "title": "Regular Basic Course POST",
+   "raw": "Regular Basic Course",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "expect": {
+    "kind": "in_use_most_used",
+    "title": "POST Basic Course"
+   }
+  },
+  {
+   "why": "(d) the candidate's words must sit inside the card's: Principles of Fire and Emergency Services is not named for a new 'Principles of Emergency and Rescue Services'",
+   "title": "Principles of Emergency and Rescue Services",
+   "raw": "Industry Training Evidence for FST 9",
+   "issuer": "California Community Colleges",
+   "expect": null
+  },
+  {
+   "why": "(h) a credit-by-exam ASE card keeps its college issuer and names nothing, not ASE A5's statewide title and not the college's Brakes (ASE A5 standards): a precedent sits the other way, so it is Sam's call",
+   "title": "Brakes (ASE A5)",
+   "raw": "Noncredit Course for AUTO A5",
+   "issuer": "California Community Colleges",
+   "own_issuer": true,
+   "expect": null
+  },
+  {
+   "why": "(f) Firefighter 2 never names Firefighter 1",
+   "title": "Firefighter 2",
+   "raw": "FIRE 2 academy",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": null
+  },
+  {
+   "why": "(f) Firefighter I reads as Firefighter 1",
+   "title": "Firefighter I",
+   "raw": "Firefighter I certification",
+   "issuer": "California State Fire Training (SFT)",
+   "expect": {
+    "kind": "in_use_statewide",
+    "title": "Firefighter 1"
+   }
+  },
+  {
+   "why": "(f) Level 1 never joins Level 4",
+   "title": "Ironworker Apprenticeship — Level 1",
+   "raw": "Ironworkers Union Apprenticeship Level 1",
+   "issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "expect": null
+  },
+  {
+   "why": "an ASE A4 card never joins A5 (a bundle holding A4 has one local title)",
+   "title": "Suspension and Steering (ASE A4)",
+   "raw": "Industry Training Evidence for AUTO A4",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "expect": null
+  },
+  {
+   "why": "an equal-count tie names none, and the rows sort by local titles, then the lowercased title by code point (Fall before École)",
+   "title": "Guitar Ensemble Class",
+   "raw": "MUS 12 guitar ensemble",
+   "issuer": "California Community Colleges",
+   "expect": null,
+   "expect_order": [
+    "Ensemble Guitar",
+    "Guitar Ensemble",
+    "Guitar Ensemble Fall",
+    "Guitar Ensemble École"
+   ]
+  },
+  {
+   "why": "an industry-certification card with the same ASE title still names the statewide ASE A5 title",
+   "title": "Brakes (ASE A5)",
+   "raw": "Industry Training Evidence for AUTO A5",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "expect": {
+    "kind": "in_use_statewide",
+    "title": "ASE A5 — Brakes"
+   }
+  }
+ ]
+}

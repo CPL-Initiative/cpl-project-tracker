@@ -1064,3 +1064,17 @@ drafter. Now:
   publishing is the gate. A PowerPoint is saved as PDF first. COBIx's session
   recipe (`pdftoppm -r 200`, crop, captions, full size on a click, alt text, the review step) is the same result by
   hand. Tests: `library_pictures` (38), `library_publish_test.py`.
+
+## S641 (SkyOtter, the conductor, 2026-11-12): a target at exactly the minimum fails at fractional zoom
+
+- **Sam's Revise and remediate on `dsp-credit-starting-points`** (2026-11-11 15:30Z, approved 15:31Z) was the run's one
+  Library request. The public copy became Version 3, remediated (#3151, `fb2d35b3`), and the record moved by a guarded
+  UPDATE with its receipt (`kb/receipts/cpl_library_dsp_v3_public_s641_2026-11-12.sql`).
+- **Cause:** eight targets set to exactly `min-height:24px` measured 23.9px at 90% and 133% browser zoom, so WCAG 2.2's
+  24px target minimum failed on them though the CSS named 24. Three were in the shared public header (Links, Light,
+  Dark), so every public page carried the fault. A length at exactly a threshold leaves no room for the rounding a
+  fractional zoom applies; the floor is now 25px.
+- **The fix belongs in the source, not the copy.** The vault sources (public header, the agency visual, tabs) changed
+  first (CPLBrain `0e4b1091`), then the public copies took the header's lengths. `tests/public_target_floor.test.js`
+  fails a public page whose target floor drops below 25px.
+- Carried untouched: `iaca-mvpmcjyl` (requested 2026-10-26, no note).

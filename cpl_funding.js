@@ -6122,6 +6122,7 @@
         });
       }
       ELIG.loaded = true;
+      csmTplLoad();
       render();
   }
   // Per-college Veteran Star flag (>=75% of enrolled veterans' JSTs uploaded in
@@ -6798,6 +6799,27 @@
       : MONTHS[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
   }
   // The template filled in for one request: { to, subject, text, html }. Follow up passes its own template.
+  /* THE ACCEPTANCE AND THE REQUEST FOLLOW-UP, AS THE DASHBOARD SAVED THEM (asked in session, 2026-11-12: "make sure
+     that every single Email template is contained in the Email Template editor"). The Funding Follow-up Dashboard's
+     Email templates keeps every email in one store (csm_templates). A version saved there for "accept" or
+     "request_follow" is what both pages write from; with none saved, the wording is this tab's own (the response
+     email a curator edits here, and FOLLOWUP_EMAIL_DEFAULT). Read once a reviewer's review data loads, and set again
+     by the dashboard after each save, so the two pages cannot disagree. */
+  var CSM_TPL = {};
+  function csmTplText(row) { return row && !row.reset && row.subject && row.body ? "Subject: " + row.subject + "\n\n" + row.body : null; }
+  function csmTplLoad() {
+    if (!remoteEnabled() || !reviewing() || typeof fetch !== "function") return;
+    var h = applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON });
+    fetch(SUPABASE_URL + "/rest/v1/csm_templates?select=template_id,subject,body,reset,created_at,id&activity=eq.funding" +
+      "&template_id=in.(accept,request_follow)&order=created_at.desc,id.desc&limit=100", { headers: h })
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        var next = {}, seen = {};
+        rows.forEach(function (x) { if (seen[x.template_id]) return; seen[x.template_id] = 1; next[x.template_id] = csmTplText(x); });
+        CSM_TPL = next;
+      }).catch(function () {});
+  }
   function acceptEmail(college, rev, kind, template) {
     var fill = {
       name: personName(rev.name) || "colleague",
@@ -6807,7 +6829,7 @@
         : "participation confirmation",
       date: longDate(rev.requested_at),
       note: rev.note || FOLLOWUP_NOTE_BLANK };
-    var t = plainNormalize(template != null ? template : textPlain("accept_email"))
+    var t = plainNormalize(template != null ? template : (CSM_TPL.accept || textPlain("accept_email")))
       .replace(/\{(name|college|request|date|note)\}/g, function (m, k) { return fill[k]; });
     var subject = "", lines = t.split("\n");
     var sm = /^subject:\s*(.*)$/i.exec(lines[0] || "");
@@ -6857,7 +6879,7 @@
   // The window Accept opens, outside the tab's render so a re-render leaves it
   // standing. Escape and Close shut it and return the focus.
   function openConfirmMail(college, rev, kind, follow) {
-    var m = follow ? acceptEmail(college, rev, kind, FOLLOWUP_EMAIL_DEFAULT) : acceptEmail(college, rev, kind);
+    var m = follow ? acceptEmail(college, rev, kind, CSM_TPL.request_follow || FOLLOWUP_EMAIL_DEFAULT) : acceptEmail(college, rev, kind);
     var old = document.getElementById("cplfund-maildlg");
     if (old) old.parentNode.removeChild(old);
     var back = document.activeElement;
@@ -19499,6 +19521,10 @@
     configHeld: function () { return configHold; },
     // The CSM Workspace (csm_workspace.js, S555): one record per institution, the review lane's actions, Nudge.
     csm: { snapshot: csmSnapshot, act: csmAct, acceptMail: csmAcceptMail, focus: csmFocus, nudge: function () { openNudge(); },
+      // The two emails this tab writes, for the dashboard's Email templates: the wording with nothing saved there, and
+      // the saved wording handed back after a save.
+      templateDefaults: function () { return { accept: plainNormalize(textPlain("accept_email")), request_follow: FOLLOWUP_EMAIL_DEFAULT }; },
+      setTemplates: function (o) { CSM_TPL = { accept: (o && o.accept) || null, request_follow: (o && o.request_follow) || null }; },
       // The workspace's log (csm_log) reads and writes with the reviewer's own credential, as the notes do.
       rest: function () {
         return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
