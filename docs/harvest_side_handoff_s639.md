@@ -133,3 +133,21 @@ container and are lost with it; everything a successor needs is pushed on the br
 ledger row and its *Next* step; tell it to read the PR body (evidence, steps, simulation), the PR's review threads, and
 the lessons section; and name the gate it must report on before any dispatch. It works in its own checkout of that
 branch and writes nothing outside the PR's declared scope.
+
+## Addendum, 03:15Z 2026-11-12 (the conductor of this side session, at sign-off)
+
+These facts are newer than the sections above and win where they differ.
+
+- **Victor Valley's reread is confirmed:** run 43145085368 posted 39, replaced 39, none held, no error; live 136 of
+  168. Step 1 above starts at the review of the fix commit.
+- **West Valley (#3137, head c527985e7) and Berkeley City (#3138, head 783de3e53) are measured and their fixes
+  pushed:** 93 to 120 of 133 and 35 to 47 of 89 on the runs' filed records, no regression. West Valley's live reread
+  was dispatched at 03:09Z; Berkeley City's follows it. **Read each branch for a `Receipt: the reread of ...` commit
+  first. Dispatch a reread only where the branch holds none**, then confirm by a live count before any merge.
+- **Rio Hondo (#3136):** reconcile 43142240927 was still capturing at 03:10Z (that catalog takes about two hours).
+  The review's fix is on the side branch `claude/harvest-rio-hondo-fixes-s639` (c0df41232, no PR). When the run's
+  filing commit lands on `claude/harvest-rio-hondo-s639`: merge `origin/main` and the side branch into it, measure
+  the filed records against `main`, push, then reread.
+- **Live at sign-off, one count at 03:05Z:** Los Angeles City 181 of 223, Orange Coast 217 of 259, Victor Valley 136
+  of 168; statewide 15,046 of 17,581.
+- **Held by this session after sign-off:** nothing. No PR subscription, no check-in, no artifact watch.
