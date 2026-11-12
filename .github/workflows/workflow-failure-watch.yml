@@ -30,6 +30,7 @@ on:
       - "Deploy Pages (lean)"
       - "Docket process"
       - "Fetch COCI Program-Course Files"
+      - "First Light apply"
       - "JS tests"
       - "Library — publish approved drafts"
       - "MAP Custom Report load (staging)"

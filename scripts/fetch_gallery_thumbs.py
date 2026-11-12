@@ -111,6 +111,9 @@ def main():
     if "--limit" in sys.argv:
         limit = int(sys.argv[sys.argv.index("--limit") + 1])
     selection = json.load(open(os.path.join(TOOLS, "first_light_selection.json")))
+    # Once the First Light tab's Apply has run, the file is {"applied_through_mark_id", "paintings"}.
+    if isinstance(selection, dict):
+        selection = selection.get("paintings", [])
     sierra = json.load(open(os.path.join(ROOT, "sierra", "art", "manifest.json")))["paintings"]
     pool = json.load(open(os.path.join(TOOLS, "first_light_candidates.json")))["candidates"]
     california = set(json.load(open(os.path.join(OUT, "california.json")))["categories"])

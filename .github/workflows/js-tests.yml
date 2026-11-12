@@ -54,6 +54,10 @@ on:
     types: [completed]
   schedule:
     - cron: '41 17 * * *'   # ~10:41 AM PT, after the 3-cron ladder's latest delayed landing
+  # The First Light Apply pull request (S643, COBIx on #3153 finding 3, fix a). first-light-apply.yml opens it
+  # with the built-in token, so neither its push nor the PR starts a run; it dispatches this workflow on the
+  # branch instead, and the run's `test` reports on that head. A dispatch has no base, so the gate runs the suite.
+  workflow_dispatch:
 
 # A superseded run is wasted compute: this job is ~10 minutes, and a session
 # that pushes three times to one PR leaves two of them grinding to completion
