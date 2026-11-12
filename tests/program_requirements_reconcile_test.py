@@ -320,6 +320,83 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("Orange Coast's REQUIREMENTS tab wordings (S639; college page read 43134559539)")
+OCC = "Orange Coast College"
+SEQ = "\n[Tab: PROGRAM SEQUENCE]\nProgram Sequence\nSemester 1\tUnits\nOCC AS GE AREA 4 - CHOOSE ONE \t3\nUnits\t16\nTotal Units\t60-61\n"
+acct = ("[Tab: REQUIREMENTS]\nCIS A111/A111H\tIntroduction to Computer Information Systems\t3\nTotal Major Units\t35\n"
+        "OCC AS General Education 1,2\tUp to 21\nTransferable electives as needed to satisfy unit requirements\tvaries\n"
+        "Total Minimum Degree Units - OCC AS GE\t60\n1\nSome program major units may also meet GE requirements.\n2\n"
+        "Cal-GETC pattern (up to 34 units) may be substituted." + SEQ)
+film = ("[Tab: REQUIREMENTS]\nProgram Major Units\t29\nOCC AA General Education and Multicultural Requirements 2,3,4\tUp to 27\n"
+        "Degree-applicable electives to satisfy unit requirement\tVaries\nTotal Minimum Degree Units - OCC AA GE\t60" + SEQ)
+amt = ("[Tab: REQUIREMENTS]\nAMT A181\tAirframe Communication and Navigation Systems - FAA\t2\nTotal Major Units\t63\n"
+       "OCC AS General Education 1\t21\nTotal Units\t84\nProgram approved by the Federal Aviation Administration (FAA).\n"
+       "[Tab: PROGRAM SEQUENCE]\nTotal Units\t84-86\n")
+radt = ("[Tab: REQUIREMENTS]\nProgram Prerequisites\nCourse List Units\nRADT A100\tRadiologic Physics\t2\nTotal Units\t9.5\n"
+        "RADT A275\tRadiographic Positioning and Critique 4\t2\nTotal Program Units\t67.5\n"
+        "General Education Breadth for AS Degree: 21 units 2, 3\t18.0\nTotal Units\t85.5\n2\n"
+        "subtotal has double-counted units removed\n[Tab: PROGRAM SEQUENCE]\nTotal Units\t85.5-87.5\n")
+jour = ("[Tab: REQUIREMENTS]\nTotal Major Units\t19-21\nCalifornia General Education Transfer Curriculum (Cal-GETC) 1\tup to 34\n"
+        "Transferable electives as needed to satisfy unit requirement \tVaries\nTotal Degree Units\t60\n"
+        "[Tab: PROGRAM SEQUENCE - CAL-GETC]\nTotal Units\t60-64\n")
+def occ(ge_pattern, **prog):
+    base = {"ge_pattern": ge_pattern, "total_units": {"min": None, "max": None}, "degree_total": {"min": None, "max": None},
+            "ge_units": {"min": None, "max": None}, "electives_fill_degree": False}
+    base.update(prog)
+    return {"program": base, "blocks": []}
+def occ_run(rec, text, award):
+    return R.reconcile(rec, text, OCC, award, steps=R.load_steps())
+got, _n = occ_run(occ("OCC AS General Education", total_units={"min": 35, "max": 35}, degree_total={"min": 60, "max": 60}),
+                  acct, "A.S. Degree")
+check("Accounting 03960: 'Up to 21' with a capital U gives GE up to 21 and the 60 as a floor",
+      got["program"]["ge_units"] == {"min": None, "max": 21} and got["program"].get("degree_total_minimum") is True)
+got, _n = occ_run(occ("OCC AS General Education"), acct, "A.S. Degree")
+check("the PROGRAM SEQUENCE tab's 'Total Units 60-61' is never the degree total",
+      got["program"]["degree_total"] == {"min": 60, "max": 60} and got["program"]["total_units"] == {"min": 35, "max": 35})
+got, _n = occ_run(occ("OCC AA General Education", total_units={"min": 29, "max": 29}, degree_total={"min": 60, "max": 60}),
+                  film, "A.A. Degree")
+check("Film & Television 03967: a local A.A. takes OCC AA GE's 'Up to 27', the 60 as a floor, and electives",
+      got["program"]["ge_units"] == {"min": None, "max": 27} and got["program"].get("degree_total_minimum") is True
+      and got["program"]["electives_fill_degree"] is True)
+check("an A.S. never takes the A.A.'s 27",
+      occ_run(occ("OCC AA General Education"), film, "A.S. Degree")[0]["program"]["ge_units"] == {"min": None, "max": None})
+got, _n = occ_run(occ("OCC AS GE", degree_total={"min": 84, "max": 84}), amt, "A.S. Degree")
+check("Airframe & Powerplant 03977: an exact 'OCC AS General Education 1 21' is 21, and 84 stays exact",
+      got["program"]["ge_units"] == {"min": 21, "max": 21} and got["program"]["total_units"] == {"min": 63, "max": 63}
+      and not got["program"].get("degree_total_minimum"))
+got, _n = occ_run(occ("OCC AS GE"), amt, "A.S. Degree")
+check("the Total Units line after the GE line is the degree total, not the sequence's 84-86",
+      got["program"]["degree_total"] == {"min": 84, "max": 84})
+got, _n = occ_run(occ("OCC AS GE"), radt, "A.S. Degree")
+check("Radiologic Technology 04008: the GE Breadth line's printed 18.0 and the 85.5 after it, never the prerequisites' 9.5",
+      got["program"]["ge_units"] == {"min": 18, "max": 18} and got["program"]["degree_total"] == {"min": 85.5, "max": 85.5}
+      and got["program"]["total_units"] == {"min": 67.5, "max": 67.5})
+check("Radiologic Technology adds up: 67.5 and 18.0 make 85.5",
+      S.score(dict(got, blocks=[{"name": "Major", "rule": "all", "courses": [{"code": "RADT A100", "units": 67.5}]}]),
+              [{"code": "RADT A100", "units": 67.5}], radt, "A.S. Degree")["arithmetic"]["status"] == "equal")
+got, _n = occ_run(occ("Cal-GETC", total_units={"min": 19, "max": 21}, degree_total={"min": 60, "max": 60}), jour, "A.A- T Degree")
+check("Journalism AA-T 32179: a transfer degree takes Cal-GETC's 'up to 34', and no electives flag",
+      got["program"]["ge_units"] == {"min": None, "max": 34} and got["program"]["electives_fill_degree"] is False)
+check("a local degree never takes the transfer degree's 34",
+      occ_run(occ("Cal-GETC"), jour, "A.S. Degree")[0]["program"]["ge_units"] == {"min": None, "max": None})
+# The degree-total step's guards (#3133 review): the "Total Units" line counts only on the line after the GE line (or
+# the electives line after it), and only when the figure closes the line. Each page below fills nothing without them.
+no_floor = ("[Tab: REQUIREMENTS]\nProgram Prerequisites\nRADT A100\tRadiologic Physics\t2\nTotal Units\t9.5\n"
+            "Total Program Units\t67.5\n" + SEQ)
+check("a page with no Total Minimum Degree Units line and no Total Units after its GE line leaves the degree total empty",
+      occ_run(occ("OCC AS GE"), no_floor, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
+footnote = ("[Tab: REQUIREMENTS]\nTotal Major Units\t63\nOCC AS General Education 1\t21\n1\n"
+            "Cal-GETC pattern (up to 34 units) may be substituted.\nTotal Units\t84\n[Tab: PROGRAM SEQUENCE]\n")
+check("a GE line, then a footnote, then Total Units: nothing fills the degree total",
+      occ_run(occ("OCC AS GE"), footnote, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
+trailing = ("[Tab: REQUIREMENTS]\nTotal Major Units\t63\nOCC AS General Education 1\t21\n"
+            "Total Units\t60 or more with electives\n[Tab: PROGRAM SEQUENCE]\n")
+check("a Total Units figure the line runs on past is not the degree total (the end-of-line anchor)",
+      occ_run(occ("OCC AS GE"), trailing, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
+check("a certificate is left alone", occ_run(occ(None), acct, "Certificate of Achievement")[1] == [])
+check("a GE figure the reading filed stands",
+      occ_run(occ("OCC AS GE", ge_units={"min": 18, "max": 18}), acct, "A.S. Degree")[0]["program"]["ge_units"] == {"min": 18, "max": 18})
+
 print("Los Angeles City's degree headings (S639; college page read 43134671935)")
 LAC = "Los Angeles City College"
 LAC_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "los_angeles_city", "records")

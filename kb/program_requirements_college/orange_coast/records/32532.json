@@ -92,9 +92,8 @@
     20.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-21.0; the catalog states 18.0-20.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -116,9 +115,7 @@
      5.0,
      8.0
     ]
-   },
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   }
   },
   "repeated": {
    "codes": [],
@@ -617,5 +614,6 @@
    "Outcomes printed under 'Program Learning Outcomes' on the overview tab for this degree."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "read_run": "38670927724"
 }

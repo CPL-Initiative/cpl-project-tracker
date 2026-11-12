@@ -137,24 +137,29 @@
    ]
   },
   "Orange Coast College": {
-   "why": "Orange Coast's degree pages print their totals on the REQUIREMENTS tab, which the reading took the major from and often left the rest of (S395: 41 associate-degree records named the degree total and the OCC AS GE pattern but no units for it). College page read 38752570705 (Management and Leadership Studies A.S., 03961, and Accounting A.S.) reads the tab's textContent: \"Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60\", footnote 1 \"Some program major units may also meet GE requirements\" and footnote 2 \"Cal-GETC pattern (up to 34 units) may be substituted\". So the 60 is a minimum and electives make it up. \"Up to 21\" is a maximum: a major course may also meet GE, so the step sets the GE units' max to 21 and leaves its min unstated (the scorer reads the span as 21, the most the pattern asks, and the electives make up the rest of the 60). S396 SkyJacaranda, 2026-10-16.",
+   "why": "Orange Coast's degree pages print their totals on the REQUIREMENTS tab, which the reading took the major from and often left the rest of (S395: 41 associate-degree records named the degree total and the OCC AS GE pattern but no units for it). College page read 38752570705 (Management and Leadership Studies A.S., 03961, and Accounting A.S.) reads the tab's textContent: \"Total Major Units36 - 37 OCC AS General Education 1,2up to 21 Transferable electives as needed to satisfy unit requirementsvaries Total Minimum Degree Units - OCC AS GE60\", footnote 1 \"Some program major units may also meet GE requirements\" and footnote 2 \"Cal-GETC pattern (up to 34 units) may be substituted\". So the 60 is a minimum and electives make it up. \"Up to 21\" is a maximum: a major course may also meet GE, so the step sets the GE units' max to 21 and leaves its min unstated (the scorer reads the span as 21, the most the pattern asks, and the electives make up the rest of the 60). S396 SkyJacaranda, 2026-10-16. S639 (harvest side session), 2026-11-12: of 80 failing filed records, 51 were degrees reading incomplete, and 62 of the 80 still carried the S395 extraction (38670927724): read before these steps existed, and last reconciled by 38843379313 on the visible text alone, without the hidden REQUIREMENTS tab. A capture-view page read of eight failing pages (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json) printed the tab as the capture now reads it (innerText plus tabs) and four wordings the steps missed. (1) Accounting A.S. 03960: 'OCC AS General Education 1,2<tab>Up to 21', a capital U the step's 'up to 21' never matched. (2) Film & Television A.A. 03967: 'Program Major Units<tab>29', 'OCC AA General Education and Multicultural Requirements 2,3,4<tab>Up to 27', 'Degree-applicable electives to satisfy unit requirement<tab>Varies', 'Total Minimum Degree Units - OCC AA GE<tab>60', footnote 'Some program major units may also meet GE requirements'. (3) Airframe & Powerplant A.S. 03977 and 08626: 'Total Major Units<tab>63', 'OCC AS General Education 1<tab>21', 'Total Units<tab>84', with no 'up to' and no minimum: the GE is 21 and the 84 exact. Radiologic Technology A.S. 04008: 'Total Program Units<tab>67.5', 'General Education Breadth for AS Degree: 21 units 2, 3<tab>18.0' (footnote 2: 'subtotal has double-counted units removed'), 'Total Units<tab>85.5'. (4) Journalism AA-T 32179: 'Total Major Units<tab>19-21', 'California General Education Transfer Curriculum (Cal-GETC) 1<tab>up to 34', 'Transferable electives as needed to satisfy unit requirement<tab>Varies', 'Total Degree Units<tab>60'. So the steps read Up or up; Program Major Units and Total Program Units beside Total Major Units; OCC AA GE beside OCC AS GE; the A.A.'s 'up to 27' as a maximum the way the A.S.'s 'up to 21' is read (local A.A. only); an exact 21 and the figure the GE Breadth line prints; a transfer degree's 'up to 34' as a maximum (transfer only); and a 'Total Units' or 'Total Degree Units' line as the degree total only on the line after the GE line (or after the electives line that follows it): a prerequisite list prints its own 'Total Units 9.5' (Radiologic Technology) and the PROGRAM SEQUENCE tab a sequence's 'Total Units 60-61' (Accounting). The electives step now reads local degrees only: a transfer degree's 60 is made up by transferable electives already (Sheet 81 card 2), and the flag would hold three passing AA-T and AS-T records whose span holds the 60 (32231, 32804, 35503) to the electives branch, which fails a span the 60 sits inside. Every figure is one the page prints; none is summed. Reversible by restoring this entry's S396 steps.",
    "awards": "associate",
    "steps": [
     {
      "kind": "fill",
      "field": "total_units",
-     "pattern": "Total Major Units\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
+     "pattern": "(?:Total Major|Program Major|Total Program) Units\\s*(?P<min>\\d+(?:\\.\\d+)?)(?:\\s*-\\s*(?P<max>\\d+(?:\\.\\d+)?))?"
     },
     {
      "kind": "fill",
      "field": "degree_total",
-     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*(?P<min>\\d+(?:\\.\\d+)?)"
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC A[AS] GE\\s*(?P<min>\\d+(?:\\.\\d+)?)"
+    },
+    {
+     "kind": "fill",
+     "field": "degree_total",
+     "pattern": "(?m)^[ \\t]*(?:OCC A[AS] General Education|General Education Breadth for AS Degree|California General Education Transfer Curriculum)[^\\n]*\\n(?:[^\\n]*electives[^\\n]*\\n)?[ \\t]*Total(?: Degree)? Units[ \\t]+(?P<min>\\d+(?:\\.\\d+)?)(?:[ \\t]*-[ \\t]*(?P<max>\\d+(?:\\.\\d+)?))?[ \\t]*$"
     },
     {
      "kind": "set",
      "field": "degree_total_minimum",
      "value": true,
-     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC AS GE\\s*\\d+(?:\\.\\d+)?"
+     "pattern": "Total Minimum Degree Units\\s*-\\s*OCC A[AS] GE\\s*\\d+(?:\\.\\d+)?"
     },
     {
      "kind": "set",
@@ -163,13 +168,52 @@
       "min": null,
       "max": 21
      },
-     "pattern": "OCC AS General Education[\\s\\d,]*up to 21\\b"
+     "pattern": "OCC AS General Education[\\s\\d,]*[Uu]p to 21\\b"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 21,
+      "max": 21
+     },
+     "pattern": "(?m)OCC AS General Education(?:[ \\t]+\\d(?:,[ \\t]*\\d)*)?[ \\t]+21[ \\t]*$"
+    },
+    {
+     "kind": "fill",
+     "field": "ge_units",
+     "pattern": "(?m)General Education Breadth for AS Degree:[ \\t]*21 units(?:[ \\t]*\\d(?:,[ \\t]*\\d)*)?[ \\t]+(?P<min>\\d+(?:\\.\\d+)?)[ \\t]*$"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": null,
+      "max": 27
+     },
+     "awards": "local_aa",
+     "pattern": "OCC AA General Education(?: and Multicultural Requirements)?[\\s\\d,]*[Uu]p to 27\\b",
+     "source": "https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/",
+     "source_words": "Film & Television A.A. 03967, REQUIREMENTS tab: 'OCC AA General Education and Multicultural Requirements 2,3,4 Up to 27' and footnote 2 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json)"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": null,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "California General Education Transfer Curriculum \\(Cal-GETC\\)[\\s\\d,]*[Uu]p to 34\\b",
+     "source": "https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/",
+     "source_words": "Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json)"
     },
     {
      "kind": "set",
      "field": "electives_fill_degree",
      "value": true,
-     "pattern": "Transferable electives as needed to satisfy unit requirements"
+     "awards": "local",
+     "pattern": "(?:Transferable|Degree-applicable) electives (?:as needed )?to satisfy unit requirements?"
     }
    ]
   },

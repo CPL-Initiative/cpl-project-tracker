@@ -72,34 +72,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.0,
     44.0
    ],
    "stated": [
-    60.0,
-    62.0
+    35.0,
+    44.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AA General Education and Multicultural Requirements pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     35.0,
-     44.0
+     62.0,
+     71.0
     ],
     "stated": [
-     35.0,
-     44.0
+     60.0,
+     62.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -124,7 +127,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +149,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 27
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -157,7 +160,8 @@
    "careers": [
     "environmental policy/law",
     "environmental health monitoring"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -605,5 +609,26 @@
    "Program Sequence tab shows Total Units 60-70 (a plan of study), not recorded as degree_total."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AA GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 27
+   },
+   "words": "OCC AA General Education and Multicultural Requirements 2,3,4\tUp to 27 (https://catalog.cccd.edu/orange-coast/pathways/visual-arts-design-performing-arts/film-television/film-television-associate-arts-degree/: Film & Television A.A. 03967, REQUIREMENTS tab: 'OCC AA General Education and Multicultural Requirements 2,3,4 Up to 27' and footnote 2 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
+  }
+ ],
+ "read_run": "38670927724"
 }

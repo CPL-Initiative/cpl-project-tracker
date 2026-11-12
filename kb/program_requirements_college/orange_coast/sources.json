@@ -7499,9 +7499,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "lifeguard training, professional rescue, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7589,9 +7589,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "yoga instructor training, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7728,9 +7728,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "personal care aide noncredit, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -7755,9 +7755,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "customer service for the retail industry, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7786,9 +7786,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning: grammar, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -7817,9 +7817,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning -​ intermediate, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -7873,9 +7873,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "tutoring tutoring skills and strategies, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -7905,9 +7905,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning: transition to academics, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -7944,9 +7944,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning -​ workplace, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 16,
@@ -8044,9 +8044,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english academic preparation in english, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8075,9 +8075,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "chemistry chemistry skills, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -8103,9 +8103,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "not-​for-​profit management, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -8176,9 +8176,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning for parents, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -8277,9 +8277,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "esl support for freshman composition, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8496,9 +8496,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "english language learning english language learning -​ advanced, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 5,
@@ -8658,9 +8658,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "computer basics, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -8811,9 +8811,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "framecad steel design nc, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8840,9 +8840,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "framecad steel production nc, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -8937,9 +8937,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "allied health allied health program readiness, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -9689,9 +9689,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "micro-​structure design technology noncredit, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 7,
@@ -9885,9 +9885,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "hospitality and tourism, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -10944,9 +10944,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "community health worker, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 4,
@@ -11140,9 +11140,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "math skills for college success, certificate of competency",
+    "section_fit": 1.0
    }
   },
   "listed": 6,
@@ -11421,9 +11421,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "microsoft office applications i, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 2,
@@ -11449,9 +11449,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "interior design interior design -​ digital design communication nc, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 3,
@@ -11476,9 +11476,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "mesa (math, engineering, science achievement) mesa (math, engineering, science achievement)certificate of competency",
+    "section_fit": 0.25
    }
   },
   "listed": 2,
@@ -11509,9 +11509,9 @@
    "label": {
     "award": 1,
     "title": 1.0,
-    "section": null,
-    "section_line": null,
-    "section_fit": 0.0
+    "section": "noncredit",
+    "section_line": "pharmacy technician, certificate of completion",
+    "section_fit": 1.0
    }
   },
   "listed": 8,

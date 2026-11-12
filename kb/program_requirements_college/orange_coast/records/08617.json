@@ -66,21 +66,41 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     21.0,
     21.0
    ],
    "stated": [
-    60.0,
-    64.0
+    21.0,
+    21.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     42.0,
+     42.0
+    ],
+    "stated": [
+     60.0,
+     64.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     18.0,
+     18.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -104,15 +124,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "International Business, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,14 +146,15 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
     "Function effectively in an entrepreneurial, managerial, or entry-level international business position using the skills, tools and principles they have acquired.",
     "Effectively apply the international business principles they have learned to effectively facilitate international business transactions in a variety of settings."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -237,5 +258,38 @@
    "Program Learning Outcomes are printed on the A.S. degree page itself."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "Total Major Units\t21"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  }
+ ],
+ "read_run": "38670927724"
 }
