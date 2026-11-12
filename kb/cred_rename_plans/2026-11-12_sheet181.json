@@ -171,12 +171,6 @@
    "new": "ASE Master Automobile Technician",
    "kind": "merge",
    "why": "one ASE Master Automobile title; the old name stays a search alias"
-  },
-  {
-   "old": "ASE Master Automobile Technician (A1–A8) or L3",
-   "new": "ASE Master Automobile Technician",
-   "kind": "merge",
-   "why": "one ASE Master Automobile title; the old name stays a search alias"
   }
  ],
  "unparseable": [
@@ -184,6 +178,16 @@
    "title": "ASE Bundle — A6 or T6 + L3",
    "mix": "A6 or T6 + L3",
    "why": "an \"or\" in A6 or T6: any one of the tests qualifies, so the tests cannot be joined by \"+\""
+  }
+ ],
+ "left_for_person": [
+  {
+   "title": "ASE Bundle — A6 or T6 + L3",
+   "why": "an \"or\" in A6 or T6: any one of the tests qualifies, so the tests cannot be joined by \"+\""
+  },
+  {
+   "title": "ASE Master Automobile Technician (A1–A8) or L3",
+   "why": "L3 alone qualifies, so an L3 holder is no Master: keeps its own title, no fold, no rename (S639 conductor, 2026-11-12)"
   }
  ],
  "already_named": [],

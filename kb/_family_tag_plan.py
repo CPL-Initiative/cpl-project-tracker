@@ -58,7 +58,8 @@ READ_FIELDS = FOLD_FIELDS + (FAMILY_FIELD,)
 HOLD = {
     "ASE Master Automobile Technician": "Master stays its own title (ruling 3: ASE awards it)",
     "ASE Master Automobile Technician (A1–A8 + L1)": "Master stays its own title (ruling 3: ASE awards it)",
-    "ASE Master Automobile Technician (A1–A8) or L3": "Master stays its own title (ruling 3: ASE awards it)",
+    "ASE Master Automobile Technician (A1–A8) or L3": "any one of: the Master series or L3 alone; keeps its own title, "
+        "left for a person (S639 conductor, 2026-11-12)",
     "ASE Master Medium/Heavy Truck Technician (T1–T8)": "Master stays its own title (ruling 3: ASE awards it)",
     "Advanced Electrical and Electronic Systems": "an emptied title, left out (Sheet 181)",
 }

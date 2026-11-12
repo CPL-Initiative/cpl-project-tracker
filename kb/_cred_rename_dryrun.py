@@ -79,7 +79,12 @@ def _load(path, default):
         return json.load(f)
 
 
-def main():
+def main(argv=None):
+    import argparse
+    ap = argparse.ArgumentParser(description="Credential-title rename dry-run.")
+    ap.add_argument("--only-plan", default="", help="plan the renames and merges of this one ruled plan (its "
+                    "plan_id under kb/cred_rename_plans/) and defer every other")
+    only_plan = (ap.parse_args(argv or []).only_plan or "").strip()
     overlay = _load(OVERLAY, {"overrides": {}})
     overrides = (overlay.get("overrides") or {})
     unified_titles = _load(UNIFIED_TITLES, {})
@@ -322,6 +327,21 @@ def main():
     held_old = {h["old"] for h in held_family}
     merge_details = [m for m in merge_details if m["old_unified_title"] not in held_old]
 
+    # ── One ruled plan alone (--only-plan; cred-rename-apply.yml's only_plan input) ─
+    # The plan's renames and merges and nothing else, so the first live use of the guarded writes runs on a small
+    # scope (S639 conductor). Every other rename and merge waits, listed as deferred, for a dispatch without it.
+    deferred = []
+    if only_plan:
+        if only_plan not in {p["plan_id"] for p in ruled_renames.load(PLANS_DIR)}:
+            raise SystemExit("--only-plan %r: no such plan under %s" % (only_plan, PLANS_DIR))
+        mine = {e["old"] for e in ruled["applied"] if e["plan_id"] == only_plan}
+        deferred = sorted([{"old": o, "target": t, "kind": "rename"} for o, t in renames_clean.items() if o not in mine]
+                          + [{"old": o, "target": t, "kind": "merge"} for o, t in merges_confirmed.items()
+                             if o not in mine], key=lambda d: d["old"])
+        renames_clean = {o: t for o, t in renames_clean.items() if o in mine}
+        merges_confirmed = {o: t for o, t in merges_confirmed.items() if o in mine}
+        merge_details = [m for m in merge_details if m["old_unified_title"] in mine]
+
     # ── Issuer preview (kb/fold_issuer.py) ───────────────────────────────────
     # What each fold group's issuer will be, decided by the same rules the apply runs. A preview only:
     # the apply recomputes it on the fresh overlay and freezes it into its receipt.
@@ -403,6 +423,9 @@ def main():
         "held_family": held_family,
         # Saved folds on a title that holds no exhibit: left in kb_curation, never folded (#3110).
         "held_emptied": held_emptied,
+        # --only-plan: the one ruled plan this run applies, and every other rename and merge it defers.
+        "only_plan": only_plan or None,
+        "deferred": deferred,
         # Renames and merges a person ruled on a decision sheet (kb/cred_rename_plans/, kb/ruled_renames.py): applied
         # stand in the renames and merges above; held wait for a person; done already landed.
         "ruled": ruled,
@@ -470,6 +493,8 @@ def main():
     print(f"  held (title empty):      {len(held_emptied)}")
     print(f"  ruled (sheet plans):     {len(ruled['applied'])} applied, {len(ruled['held'])} held, "
           f"{len(ruled['done'])} done")
+    if only_plan:
+        print(f"  only plan {only_plan}: {len(deferred)} other rename(s) and merge(s) deferred")
     print(f"  skipped (no-op):         {len(skipped)}")
     print(f"  V1 (intra-batch):        {'PASS' if v1_pass else f'FAIL ({len(intra_batch_collisions)})'}")
     print(f"  V2 (source exists):      {'PASS' if v2_pass else f'FAIL ({len(v2_blocked)})'}")
@@ -628,4 +653,4 @@ def _render_md(renames_clean, merge_details, collisions, skipped,
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

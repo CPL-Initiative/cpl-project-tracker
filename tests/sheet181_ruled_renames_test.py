@@ -6,8 +6,9 @@ The failure modes guarded:
      mixing a code with other words is unparseable and left for a person; a renamed title reads back as itself and
      keeps its tests as search aliases;
   2. the frozen plan (kb/cred_rename_plans/2026-11-12_sheet181.json) names the ruling, renames each bundle member to
-     its family form, merges a shared mix into one lead, merges the two Master variants into ASE Master Automobile
-     Technician, and names no Truck, any-one-test or emptied title;
+     its family form, merges a shared mix into one lead, merges (A1–A8 + L1) into ASE Master Automobile
+     Technician, and names no Truck, any-one-of Master ("or L3"), any-one-test, emptied or restore title;
+     --only-plan applies the plan alone and defers every other rename;
   3. kb/ruled_renames.py lays an entry over a slot that holds only a family-tag fold, and holds it when a person saved
      another title, when the title is gone, no longer a member, or the rename target already exists;
   4. the dry run over the committed files: hold_family_folds does not block a member's rename (its target is not the
@@ -53,6 +54,12 @@ MASTER = "ASE Master Automobile Technician"
 TRUCK = "ASE Master Medium/Heavy Truck Technician (T1–T8)"
 ANY_ONE = {"ASE Certification (any A1–A8)", "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"}
 EMPTIED = "Advanced Electrical and Electronic Systems"
+OR_L3 = "ASE Master Automobile Technician (A1–A8) or L3"
+# The titles the ASE plan's restore (-4) puts Sam's rows back on (S639 conductor).
+RESTORE = {"Automotive Braking Systems", "Heating and Air Conditioning", "Automotive Air Conditioner", EMPTIED,
+           "Engine Performance 1 (ASE A8 Engine Performance)", "Engine Performance 2 (ASE A8 Engine Performance)",
+           "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+           "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"}
 SAM = "slee@cccco.edu"
 
 # ── 1. the naming form ──────────────────────────────────────────────────────────────────────────────────
@@ -97,14 +104,17 @@ check("each new bundle title has exactly one lead; a shared mix's other title me
       and all(e["new"] in leads for e in bund if e["kind"] == "merge"))
 check("the A2 + A3 + A6 pair is one title by an ordinary merge",
       sorted(e["kind"] for e in bund if e["new"] == FAM + ": A2 + A3 + A6") == ["merge", "rename"])
-check("the two Master Automobile variants merge into ASE Master Automobile Technician",
-      sorted(e["old"] for e in E if e["new"] == MASTER and e["kind"] == "merge")
-      == ["ASE Master Automobile Technician (A1–A8 + L1)", "ASE Master Automobile Technician (A1–A8) or L3"])
+check("only the (A1–A8 + L1) variant merges into ASE Master Automobile Technician",
+      [e["old"] for e in E if e["new"] == MASTER and e["kind"] == "merge"] == ["ASE Master Automobile Technician (A1–A8 + L1)"])
 olds = {e["old"] for e in E}
-check("no entry for the Truck title, the Master target, an any-one-test title or the emptied title",
-      not olds & ({TRUCK, MASTER, EMPTIED} | ANY_ONE) and not {e["new"] for e in E} & {FAM, TRUCK})
-check("the unparseable member is listed and left unrenamed",
-      [u["title"] for u in plan["unparseable"]] == ["ASE Bundle — A6 or T6 + L3"] and "ASE Bundle — A6 or T6 + L3" not in olds)
+check("24 entries: 22 renames and 2 merges", len(E) == 24 and sum(e["kind"] == "rename" for e in E) == 22)
+check("no entry for the Truck title, the Master target, the any-one-of Master, an any-one-test title or the emptied title",
+      not olds & ({TRUCK, MASTER, OR_L3, EMPTIED} | ANY_ONE) and not {e["new"] for e in E} & {FAM, TRUCK})
+check("the unparseable member and the any-one-of Master are listed as left for a person, unrenamed",
+      [u["title"] for u in plan["unparseable"]] == ["ASE Bundle — A6 or T6 + L3"]
+      and [x["title"] for x in plan["left_for_person"]] == ["ASE Bundle — A6 or T6 + L3", OR_L3]
+      and not olds & {"ASE Bundle — A6 or T6 + L3", OR_L3})
+check("the plan touches none of the eight restore titles", not (olds | {e["new"] for e in E}) & RESTORE)
 check("the any-one-test titles are listed as keeping their titles", set(plan["any_one_test"]) == ANY_ONE)
 
 # The builder over a small fixture: members from Sam's saved folds, the pair, the hold.
@@ -199,6 +209,30 @@ try:
           and not {h["old"] for h in am["held_emptied"]} & set(moved))
     check("the dry run leaves the overlay file as it was", sha(dry.OVERLAY) == over_sha)
     check("the dry run is apply-safe", am["summary"]["apply_safe"] is True)
+    check("the any-one-of Master stays held as a family tag fold, never merged",
+          OR_L3 not in moved and OR_L3 in {h["old"] for h in am["held_family"]})
+
+    # --only-plan: the plan's renames and merges alone; every other one is deferred, none lost.
+    with contextlib.redirect_stdout(io.StringIO()):
+        dry.main(["--only-plan", plan["plan_id"]])
+    om = json.load(open(os.path.join(dry.OUT_DIR, "alias_map.json"), encoding="utf-8"))
+    omoved = dict(om["renames"])
+    omoved.update(om["merges"])
+    check("--only-plan applies exactly the plan's 24 entries and is apply-safe",
+          omoved == {e["old"]: e["new"] for e in E} and om["summary"]["clean_renames"] == 22
+          and om["summary"]["confirmed_merges"] == 2 and om["summary"]["apply_safe"] is True and om["only_plan"] == plan["plan_id"])
+    check("--only-plan defers every other rename and merge, the standards folds among them",
+          {d["old"] for d in om["deferred"]} == set(moved) - olds and len(om["deferred"]) > 0
+          and all(o not in omoved for o in set(moved) - olds))
+    check("--only-plan's issuer preview names only the plan's folds",
+          set(om["issuer_preview"]) == {e["new"] for e in E if e["kind"] == "merge"})
+    try:
+        with contextlib.redirect_stdout(io.StringIO()):
+            dry.main(["--only-plan", "no-such-plan"])
+        refused = False
+    except SystemExit as e:
+        refused = "no such plan" in str(e.code)
+    check("--only-plan refuses a plan id that is not committed", refused)
 
     # An entry on a title that is still a credential but holds no exhibit is held as emptied, never renamed.
     env = os.path.join(tmp, "emptied")
@@ -237,13 +271,15 @@ try:
     creds_before = json.load(open(W["credentials.json"], encoding="utf-8"))
     ut_before = open(W["unified_titles.json"], encoding="utf-8").read()
     with contextlib.redirect_stdout(io.StringIO()):
-        dry.main()
+        dry.main(["--only-plan", plan["plan_id"]])   # the scope the first live dispatch uses
         rdir = app.main()
     cr = json.load(open(W["credentials.json"], encoding="utf-8"))
     check("every old title leaves the reference and every new title is in it",
           not olds & set(cr) and {e["new"] for e in E} <= set(cr))
-    check("the Truck title, the any-one-test titles, the 'or' member and the emptied title keep their titles",
-          {TRUCK, EMPTIED, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE <= set(cr))
+    check("the Truck title, the any-one-of Master, the any-one-test titles, the 'or' member and the emptied title keep "
+          "their titles", {TRUCK, OR_L3, EMPTIED, "ASE Bundle — A6 or T6 + L3"} | ANY_ONE <= set(cr))
+    check("under --only-plan the standards folds' sources stay as they were",
+          all(cr.get(d["old"]) == creds_before.get(d["old"]) for d in om["deferred"]))
     check("the merged Master title keeps one ASE record",
           [r.get("issuing_agency") for r in cr[MASTER]] == ["National Institute for Automotive Service Excellence (ASE)"])
     snap = json.load(open(os.path.join(rdir, "alias_map.json"), encoding="utf-8"))

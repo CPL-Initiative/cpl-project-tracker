@@ -89,30 +89,40 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   `kb/receipts/credential_family_2026-11-11_s638/`. Undo: `mode=rollback` deletes each planned row (pending receipts
   included) only while it still holds the cohort, the field and the value written; a row a person changed since stays
   and is reported as taken since. #3117's `plan.sql` never ran and is retired.
-- **Held for Sam (his call, outward naming):** four ASE Master titles; Advanced Electrical and Electronic Systems (the
-  ASE plan retires it); ASE Certification (any A1-A8); ASE C1 or G1 (either test qualifies; agreed with COBIx on #3111).
+- **Held for Sam:** nothing in this lane.
+- **The family tags are live:** 24 `credential_family` rows under `credential-family-s638@bot` (#3122; dry run
+  43120144849, commit 43120939284, set `038293de0093`). Undo: `credential-family-apply.yml` `mode=rollback`.
+- **DECIDED (Open Asks Sheet 181, Sam, 22:55Z 2026-11-11, cards taken as decided; `d-sheet-181-replies-2026-11-11`):**
+  ASE Master is one Automobile title and one Truck title, both canonical.
+- **DECIDED (Sheet 181):** *ASE Certification (any A1-A8)* and *ASE C1 or G1* keep their own titles, tagged with the
+  family as any-one-test members; no fold.
+- **DECIDED (Sheet 181):** *Advanced Electrical and Electronic Systems* is an emptied title (its one exhibit went to ASE
+  MIL6) and follows the emptied-title rule.
+- **DECIDED (Sheet 181):** the rename batch to "ASE Certificate Bundles: A4 + A5" runs, with the old names kept as
+  aliases.
 - **NEXT, in order:** (0) the two any-one-test family tags (Sheet 181: *ASE Certification (any A1–A8)* and *ASE C1
   or G1* join the family as members any one of whose tests qualifies, declared under `any_one_test` in
   `kb/reference/credential_families.json`; the 24 bundle tags landed, receipt `applied_2026-11-11T23-38-21Z.json`):
   dispatch `credential-family-apply.yml` `mode=dry-run`; a correct summary reads *2 to write, 24 already written, 5
   held for Sam, 0 conflicts; set `<hash>` (26 tags)*; then `mode=commit expect=<hash>`. Run it BEFORE (3): after the
   renames, Sam's fold rows stay on the old titles, which the plan then lists as gone (no longer in
-  `kb/credentials.json`) and never tags; then `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
+  `kb/credentials.json`) and never tags; (0b) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
   fold into ASE Certificate Bundles on an emptied title, which the converter must leave as it is); (1) the next nightly fold, then the
   restore (`-4`): dry run, then commit, before anything else touches these titles; to undo both, roll back `-4` before
   phase 1 (the other order is safe too: `-4`'s undo leaves what phase 1's put back); (2) the retired names as search
   aliases of where their exhibits went (Automotive Air Conditioner and Heating and Air Conditioning to the A7 and MIL7
   titles, Automotive Braking Systems to MIL3 and MIL4): `kb/credential_aliases.py` reads only applied rename
-  snapshots, never the fold's `credential_retires`, so none resolves today; (3) one `cred-rename-apply.yml` dispatch
-  carries the five "standards" folds, the first live use of #3116, AND Sheet 181's ruled plan
-  (`kb/cred_rename_plans/2026-11-12_sheet181.json`, read by `kb/ruled_renames.py` in the dry run and the apply): 22
-  bundle renames to *ASE Certificate Bundles: …* (the A2 + A3 + A6 pair one title by a merge) and the two Master
-  Automobile variants merged into *ASE Master Automobile Technician* (issuer rule 3, additive; no conflict); the Truck
-  Master, the any-one-test titles and *ASE Bundle — A6 or T6 + L3* (an "or", left for a person) keep their titles.
+  snapshots, never the fold's `credential_retires`, so none resolves today; (3) `cred-rename-apply.yml` with `only_plan=sheet181-2026-11-12` applies Sheet
+  181's ruled plan alone, the small first live use of #3116; a dispatch without it also carries the five "standards" folds. The plan
+  (`kb/cred_rename_plans/2026-11-12_sheet181.json`, read by `kb/ruled_renames.py` in the dry run and the apply) holds 22
+  bundle renames to *ASE Certificate Bundles: …* (the A2 + A3 + A6 pair one title by a merge) and *ASE Master Automobile
+  Technician (A1–A8 + L1)* merged into *ASE Master Automobile Technician* (issuer rule 3, additive; no conflict); the
+  Truck Master, the any-one-test titles, *ASE Bundle — A6 or T6 + L3* and *ASE Master Automobile Technician (A1–A8) or
+  L3* (L3 alone qualifies, so an L3 holder is no Master; S639 conductor) keep their titles, left for a person.
   The plan stands in for the rename rows because each title's slot holds Sam's family-tag fold, which no plan edits;
   the row move leaves those rows in place (op `keep`). Read the dry-run's `ruled` and `issuer_preview` first, then
   `daily-dashboard.yml`; undo is `kb/_cred_rename_undo.py` on the receipt; (4) ASE
-  plan phase 3 (`-3`); (5) the owed decision sheet; (6) the ASE rename batch now offers only titles outside the ruled
+  plan phase 3 (`-3`); (6) the ASE rename batch now offers only titles outside the ruled
   plan; (7) the credentials still without a subject, as one
   batch (try a web search on an anomaly first, Sam 2026-11-11); (8) the hourly trigger for the fold apply; (9) the issuer
   registry (official name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (10) the trainer
@@ -141,16 +151,7 @@ Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_les
 
 **Sam's rulings, Open Asks Sheet 147** (completed 2026-10-31, all five built or standing; cpl_memory `sam-sheet-147-rulings-2026-10-31`) moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (S634)*. Two still govern: the public adoption page lists settled credentials only, and it takes Malone's CPL/AI look.
 
-**The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
-doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an
-exhibit*; `#exhibits/held`, `/conflict` and `/credentials` open one place, read once per visit, and the Commons' CER row
-links them (#2612). A List row's side panel (the Credentials view retired into it, 2026-11-03) sets the issuer and training
-sites (each with its college), saved as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
-stands (`tests/credential_review_sites_test.py`); `field:kb_curation.training_sites_override` maps to DR-07. The panel
-reads `kb/exhibits_adoption.json`: each college's lines and units, the course a could-adopt college already teaches,
-the peer median. **Could adopt never reads the TOP and C-ID overlap** (Sam, 2026-09-24; Rule 7; KB note
-`methodology-a-fold-carries-the-folded-tabs-rulings`). EACR's matrix, filters, exports and Create Handout live on the
-public Credential Catalog. Not built: sites for a title new to the reference, and the *Held titles by group* table. **The review card (Sam, 2026-10-31, #2620):** Change to Proposed Title, Keep Current Title, Teach a rule, Back, Skip; the local title in bold. Back reopens this visit's cards, naming the save, and a new choice replaces it. *Accept all proposed titles (N)* asks first and leaves a conflict, or a title someone already saved, as it is.
+**The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602 to #2604): the record moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S639)*.
 
 - `kb/_build_exhibits_review.py` writes `kb/exhibits_review.json` and the lazy `kb/exhibits_review_courses.json` from the
   procedures run's `needs_you`, the `aligned` course, `statewide_data.js`, the identity members, the reference and the
@@ -163,25 +164,7 @@ public Credential Catalog. Not built: sites for a title new to the reference, an
   Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
   person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
 
-**CPL-AI (SkyLantern, 2026-11-06; detail in `docs/library_lessons.md`).** Sam's words: host it all, frozen (*"make sure
-we can host all the data, which for now will not have any further updates"*); join the 115; fix the seven titles; name
-the pairs on the List; and *"I do want the CPL-AI recs on public view"* (answers Sheet 147 card 5). **State:**
-`kb/cpl_ai/hosted/` holds all 33,232 pairs with full reports (`kb/_harvest_cpl_ai_reports.py`, `kb/_build_cpl_ai_hosted.py
---check`); `kb/cpl_ai/exhibit_join.json` (`kb/_build_cpl_ai_join.py --check`, a reason per call; a curator's correction
-wins): 46 exact, 8 related, 61 none once tonight's fold lands. Exhibits shows them at `#exhibits/cpl-ai` and on each List
-row (`#exhibits/list/cplai`, #2853). The seven title moves are written (`kb/cer_decisions_out/2026-11-06/`) and the nightly fold re-points the
-five titles. **Sam's "1 yes, 2 yes" is applied (SkyBeacon, #2855):** the applier's guarded retire path, the four retired Spanish rows and the two confirmed merges are in the lessons, *Moved from the lane (S634)*.
-**The Catalog's badges and a college's first
-view are live with the next daily run (SkyBeacon, #2856):** *Statewide recommendation* (152 credentials across every
-credit status) and *CPL-AI course match* (43) on cards, the List's Recommended column and the panel; the Recommendations
-filter; a single college pick opens on *Recommended credentials <college> could adopt* (no award there, an aligned course
-there: the course mapped in MAP or CPL-AI's Strong evidence and Faculty interpretation courses), each with Request Quick
-Adopt (42 for Allan Hancock); the panel's CPL-AI section with a college picker and the full recommendation read in place
-from `kb/cpl_ai/hosted/shards/`. The builder writes `library/adopt/adopt_ai.json`, read after first paint. Sam's words: *"like badges on the credential"*; *"If you're Allan Hancock College and you open the cred catalog and
-select Allan Hancock filter, you should immediately be presented with any statewide or AI recommended exhibits with
-Request Adopt buttons on all their local aligned courses."* **The ask rule is live (#2854):** *Ask us to prioritize* only
-where no college has articulated the credential, the *Worth a faculty review* cards included; an articulated one offers
-Request Quick Adopt. **Add your credential is built (#2860, DR-32, live 2026-11-06):** an empty search offers *Add it*; `credential_submission_add()` is INSERT-only; a reviewer Verifies, Merges, Declines or Reopens in Exhibits Requests; verified ones join the Catalog. **Ruled (Sam, Open Asks Sheet 167 card 1, 2026-11-07):** credit based on a college's own course exam is Credit by Exam and the college is the issuer; credit based on the certificate from the vendor's own exam names the vendor (his words, the seven corrected triage titles and El Camino's four CompTIA courses: lessons, *Moved from the lane (S634)*). **Quick Adopt (2026-11-07):** a Strong evidence course in the panel, at a college without the award, offers Request Quick Adopt. Sierra's CPL-AI answers: live 2026-11-07 ([`sierra-retrieval-corpus`](sierra-retrieval-corpus.md)). **Next:** the Department of Insurance's license types (`data_sources`; the sandbox cannot reach the site).
+**CPL-AI (SkyLantern, 2026-11-06).** Hosted frozen and on public view (Sam); the record moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S639)*; detail in `docs/library_lessons.md`.
 
 **The Credential Catalog (built SkyTwinberry, 2026-10-31; Sheets 147 and 148).** `library/adopt/`, Pages-served, linked
 from the Library and the public header; `kb/_build_adopt_page.py` writes `adopt_data.json` daily from

@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-12T00:07:05Z`
+Generated: `2026-11-12T00:15:14Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -19,7 +19,6 @@ Generated: `2026-11-12T00:07:05Z`
 | Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
 |---|---|---:|---:|---:|---:|
 | `ASE Master Automobile Technician (A1–A8 + L1)` | ⇒ `ASE Master Automobile Technician` | 1 | 1 | 1 | 7 |
-| `ASE Master Automobile Technician (A1–A8) or L3` | ⇒ `ASE Master Automobile Technician` | 1 | 1 | 1 | 1 |
 | `ASE Bundle — A2, A3, A6` | ⇒ `ASE Certificate Bundles: A2 + A3 + A6` | 1 | 1 | 1 | 2 |
 | `Automotive Technology (ASE A7 Heating and Air Conditioning)` | ⇒ `Heating and Air Conditioning (ASE A7 standards)` | 1 | 1 | 2 | 0 |
 | `Heating and Air Conditioning` | ⇒ `Heating and Air Conditioning (ASE A7 standards)` | 2 | 1 | 1 | 0 |
@@ -33,6 +32,7 @@ Generated: `2026-11-12T00:07:05Z`
 - `ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Certification (any A1–A8)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Automobile Technician` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
+- `ASE Master Automobile Technician (A1–A8) or L3` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `ASE Master Medium/Heavy Truck Technician (T1–T8)` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 - `Advanced Electrical and Electronic Systems` (merge) into `ASE Certificate Bundles`: held: the target is a family title; these rows become family tags
 
@@ -62,7 +62,6 @@ Generated: `2026-11-12T00:07:05Z`
 - `ASE Bundle — T6, T8 + Snap-on 604` (rename) into `ASE Certificate Bundles: T6 + T8 with Snap-on 604`, plan sheet181-2026-11-12
 - `ASE Bundle — T7, T8 + MACS/609` (rename) into `ASE Certificate Bundles: T7 + T8 with MACS/609`, plan sheet181-2026-11-12
 - `ASE Master Automobile Technician (A1–A8 + L1)` (merge) into `ASE Master Automobile Technician`, plan sheet181-2026-11-12
-- `ASE Master Automobile Technician (A1–A8) or L3` (merge) into `ASE Master Automobile Technician`, plan sheet181-2026-11-12
 
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 

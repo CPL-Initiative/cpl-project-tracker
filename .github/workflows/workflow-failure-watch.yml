@@ -52,13 +52,15 @@ concurrency:
 
 jobs:
   watch:
-    # Unattended runs of this repository only: a schedule, or a push or dispatch on main.
+    # Unattended runs of this repository only: a schedule, a push or dispatch on main, or
+    # a run another workflow started on main (JS tests after the nightly, #3111).
     # A fork PR from a branch named main arrives as event pull_request with head_branch
     # main, and this job runs with this repository's token, so without the repository
     # check an outside contributor could open alerts or close a real one (COBIx, #2905).
     if: >-
       github.event.workflow_run.head_repository.full_name == github.repository &&
       (github.event.workflow_run.event == 'schedule' ||
+       (github.event.workflow_run.event == 'workflow_run' && github.event.workflow_run.head_branch == 'main') ||
        ((github.event.workflow_run.event == 'push' || github.event.workflow_run.event == 'workflow_dispatch') &&
         github.event.workflow_run.head_branch == 'main'))
     runs-on: ubuntu-latest

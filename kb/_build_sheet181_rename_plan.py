@@ -3,10 +3,12 @@
 
 Sam answered Sheet 181 on 2026-11-11 at 22:55Z, cards taken as decided (cpl_memory d-sheet-181-replies-2026-11-11):
 
-  1. ASE Master: one Automobile title and one Truck title. "ASE Master Automobile Technician (A1–A8 + L1)" and
-     "ASE Master Automobile Technician (A1–A8) or L3" merge into "ASE Master Automobile Technician"; the old names
-     stay as search aliases (kb/credential_aliases.py reads the apply's snapshot). "ASE Master Medium/Heavy Truck
+  1. ASE Master: one Automobile title and one Truck title. "ASE Master Automobile Technician (A1–A8 + L1)" merges
+     into "ASE Master Automobile Technician" (a college's extra test is a local requirement; Sam's ruling 3); the old
+     name stays a search alias (kb/credential_aliases.py reads the apply's snapshot). "ASE Master Medium/Heavy Truck
      Technician (T1–T8)" keeps its title. Both stay canonical and outside the bundle family: ASE awards Master status.
+     "ASE Master Automobile Technician (A1–A8) or L3" does not merge (S639 conductor, 2026-11-12): L3 alone
+     qualifies there, and an L3 holder is no Master, so it keeps its own title and is left for a person.
   2. Each bundle member of "ASE Certificate Bundles" takes the family's naming form (kb/test_mix.py family_read):
      "ASE Certificate Bundles: A4 + A5", a non-ASE part after "with". Two members with one mix become one title: the
      member ASE issues with the most local titles leads (as kb/_build_exhibits_related.py picks it), the other merges
@@ -41,7 +43,11 @@ DECIDED_BY = "Sam Lee (Open Asks Sheet 181)"
 DECIDED_AT = "2026-11-11T22:55:00Z"
 FAMILY = "ASE Certificate Bundles"
 MASTER_AUTO = "ASE Master Automobile Technician"
-MASTER_MERGES = ["ASE Master Automobile Technician (A1–A8 + L1)", "ASE Master Automobile Technician (A1–A8) or L3"]
+MASTER_MERGES = ["ASE Master Automobile Technician (A1–A8 + L1)"]
+# Any one of: the full Master series or L3 alone. Never a Master, never a bundle; a person decides its home.
+FOR_A_PERSON = {"ASE Master Automobile Technician (A1–A8) or L3":
+                "L3 alone qualifies, so an L3 holder is no Master: keeps its own title, no fold, no rename "
+                "(S639 conductor, 2026-11-12)"}
 MASTER_KEPT = ["ASE Master Medium/Heavy Truck Technician (T1–T8)"]
 LEFT_OUT = {"Advanced Electrical and Electronic Systems": "an emptied title, left out (Sheet 181)"}
 
@@ -107,6 +113,10 @@ def build(overrides, credentials, unified_titles, fams):
         "decided_at": DECIDED_AT,
         "entries": entries,
         "unparseable": unparseable,
+        # Every title the plan leaves for a person: the members the parser cannot code, and the any-one-of Master.
+        "left_for_person": sorted([{"title": u["title"], "why": u["why"]} for u in unparseable]
+                                  + [{"title": t, "why": w} for t, w in FOR_A_PERSON.items() if t in credentials],
+                                  key=lambda x: x["title"]),
         "already_named": already,
         "kept": {t: "ASE Master stays its own canonical title, outside the bundle family (ASE awards it)"
                  for t in MASTER_KEPT + [MASTER_AUTO]},

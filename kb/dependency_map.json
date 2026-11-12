@@ -4642,7 +4642,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 38
     }
    ],
    "served": false,
@@ -13599,7 +13599,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 91
+     "line": 103
     }
    ],
    "producers": [
@@ -13785,7 +13785,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 123
+     "line": 133
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -13905,7 +13905,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 124
+     "line": 134
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -19410,7 +19410,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 124
+     "line": 134
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
@@ -31332,7 +31332,9 @@
   },
   "js-tests.yml": {
    "name": "JS tests",
-   "crons": [],
+   "crons": [
+    "41 17 * * *"
+   ],
    "scripts": [
     "tests/run.js",
     "tests/governance_docs_panel.test.js",
@@ -31496,7 +31498,9 @@
    "adds": [],
    "push": null,
    "deploys": [],
-   "chain": [],
+   "chain": [
+    "Daily CPL Dashboard"
+   ],
    "urls": []
   },
   "k10-disclosure-check.yml": {

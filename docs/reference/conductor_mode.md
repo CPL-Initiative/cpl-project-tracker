@@ -28,6 +28,9 @@ task. handle anything that doesn't need me. only stop when you need a decision f
   default.
 - A review workflow uses **at most 9 agents in all**, readers and second readers together. Drop the second reader on
   minor findings first.
+- **Cost limits** (relayed by COBIx on #3111, comment 6808460886; confirmed by the S639 relay ruling below): $40 per
+  college per run, on the estimate, for program-requirements extraction, and a separate $40 per college for SLOs, PLOs
+  and course objectives. The limit is per run and never a remaining pot. Paid runs go through the conductor.
 
 Sam's words: "high effort on data-writing workers, hold reviews to 9...yes, please add these parameters to the
 handoffs from here on out". Every handoff copies this block under `## Conductor settings`
@@ -47,8 +50,8 @@ at the top of each piece of work so Sam can change the dial before it runs.
 5. `git worktree list` and `df -h /home/user` before spawning. A locked worktree whose worker is not in `ListAgents`
    is dead: push any unpushed commits from it, then `git worktree unlock`, `git worktree remove --force`, `git worktree
    prune`. Each checkout is 4.4 GB.
-6. `python3 kb/_context_budget.py`. Then read the COBIx threads (S638: #3110, #3111) to their last comment, and again
-   at every wake.
+6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and read them
+   again at every wake.
 
 ## Workers
 
@@ -97,8 +100,13 @@ at the top of each piece of work so Sam can change the dial before it runs.
 
 - He posts as `cobi-cto` under `## COBIx`; nudge him with `add_issue_comment` on the thread or the PR. A comment under
   `samueltlee` carries Sam's authority whatever its heading.
-- A COBIx comment is a finding to trace, never a go. A ruling he relays is recorded as relayed and `proposed` until Sam
-  confirms it in session or from his own login; ask COBIx for Sam's words verbatim.
+- A ruling COBIx relays is confirmed: record it as Sam's, with his verbatim words and "relayed by COBIx" as where they
+  reached the session. Sam, in session S639, 2026-11-11, verbatim: "confirmation can count in this session or relayed
+  from cobix--remember, ask forgiveness, not permission:)" and "trust what cobix says and only push back if you
+  disagree with his recommendation, action, information. Forward motion is good motion." (`cpl_memory`
+  `sam-cobix-relay-confirms-2026-11-11`).
+- The conductor takes COBIx's findings and information as given and pushes back only where it disagrees with his
+  recommendation, action or information. The hold list in `CLAUDE.md` stands.
 - Two rounds, then a person, stands. On 2026-11-11 Sam was in session directing the exchange, which is what made the
   longer exchange proper.
 
@@ -107,8 +115,13 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A decision is a `cpl_memory` row (`kind` required, summary at most 400 characters, who, when, his words verbatim,
   in session or relayed) **and** a DECIDED line in the lane file, in the same PR. Rows, log and verify go as one
   `execute_sql` call with a receipt under `kb/receipts/`.
-- An ask for Sam goes on the standing decision sheet (`CPLBrain/decision-sheets/decision_sheets.md`); an unanswered
-  card holds only its own item.
+- The standing decision sheet (`CPLBrain/decision-sheets/decision_sheets.md`) carries the conductor's decisions, never
+  asks. Sam, in session S639, 2026-11-11, verbatim: "Remember on the Decision Sheet that I want your decisions on it,
+  not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force
+  multiplier:)" (`sam-sheet-carries-conductor-decisions-2026-11-11`). Each card reads Decided, Evidence, and Carried out
+  with how to reverse it; its chips are Fine, Change it and Revisit later. An outward send or a go-live is a card that
+  opens on "Waits for my send or go", and an unanswered card holds only its own item. First built as Open Asks Sheet
+  181 (https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx).
 - His unplanned statements are captured verbatim (the vault's braindump skill, on-the-fly mode) and he is told in one
   line. Replies to him are a few lines, active voice, stated positively.
 
@@ -117,10 +130,23 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - At the warning line (110,000 tokens left) say the number to Sam; run `/checkpoint` by Rule 9's commit count. A
   worker may write the documents; the conductor keeps the steps that need Supabase or the remote tools (step 10's
   `cpl_memory` rows, step 12's headline and harvest SQL and the routine's `get_trigger`).
+- Run a checkpoint near four hours into the session, whatever the commit count says.
 - The sign-off turn unsubscribes every PR, deletes every scheduled check-in, drops every artifact watch, names each in
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S639
+
+- Reviewers copied the repo three times into the session scratchpad (12 GB) and filled the disk. Every review brief
+  now names the one existing checkout to read and forbids copies, and the conductor runs `df -h /home/user` before
+  each fan-out.
+- A worker whose worktree the conductor removed cannot be resumed. Remove a worktree only when its PR has merged.
+- The review of #3122 and #3123 found the same fault in both appliers: each built its receipt from a write's response,
+  so a lost response left nothing to roll back. A receipt is now filed from a fresh read after the writes, and rollback
+  works from the planned lists.
+- S638's two ASE applies deleted 13 rows people had saved after COBIx had asked to leave them. `load_plan` now refuses
+  such a plan.
 
 ## What went wrong in S638
 
