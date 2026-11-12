@@ -4,12 +4,12 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 880,
+  "file_datasets": 883,
   "external_services": 195,
-  "consumers": 562,
+  "consumers": 563,
   "workflows": 68,
   "data_js_files": 71,
-  "tabs": 40
+  "tabs": 41
  },
  "datasets": {
   "edgefn:FN": {
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3597,
+     "line": 3926,
      "tabs": [
       "exhibits"
      ]
@@ -1787,7 +1787,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2283
+     "line": 2304
     }
    ],
    "main_committers": []
@@ -4438,7 +4438,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1947
+     "line": 1968
     }
    ],
    "main_committers": []
@@ -5560,7 +5560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1838
+     "line": 1859
     },
     {
      "id": "module:admin.js",
@@ -5797,7 +5797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1701,
+     "line": 2007,
      "tabs": [
       "exhibits"
      ]
@@ -6180,7 +6180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2926,
+     "line": 3250,
      "tabs": [
       "exhibits"
      ]
@@ -6400,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3589,
+     "line": 3918,
      "tabs": [
       "exhibits"
      ]
@@ -6493,7 +6493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3874,
+     "line": 4203,
      "tabs": [
       "exhibits"
      ]
@@ -6737,7 +6737,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2222
+     "line": 2243
     },
     {
      "id": "module:college_briefing.js",
@@ -8291,7 +8291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4163,
+     "line": 4492,
      "tabs": [
       "exhibits"
      ]
@@ -8704,6 +8704,19 @@
    "main_committers": []
   },
   "file:first_light.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:first_light_tab.js": {
    "consumers": [
     {
      "id": "page:CPL_Dashboard.html",
@@ -13533,7 +13546,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2704,
+     "line": 3028,
      "tabs": [
       "exhibits"
      ]
@@ -13700,6 +13713,16 @@
   },
   "file:kb/cred_rename_dryrun/alias_map.json": {
    "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 985,
+     "tabs": [
+      "exhibits"
+     ]
+    },
     {
      "id": "workflow:cred-rename-apply.yml",
      "kind": "workflow",
@@ -15217,7 +15240,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3611,
+     "line": 3940,
      "tabs": [
       "exhibits"
      ]
@@ -15328,7 +15351,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2699,
+     "line": 3023,
      "tabs": [
       "exhibits"
      ]
@@ -15523,7 +15546,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3108,
+     "line": 3437,
      "tabs": [
       "exhibits"
      ]
@@ -20247,6 +20270,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:library/photos/hero_photos.json": {
+   "consumers": [
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 41,
+     "tabs": [
+      "first-light"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:library/public_library.js": {
    "consumers": [
     {
@@ -22124,6 +22163,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:sierra/art/manifest.json": {
+   "consumers": [
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 43,
+     "tabs": [
+      "first-light"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:sierra/index.html": {
    "consumers": [
     {
@@ -22363,7 +22418,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1602,
+     "line": 1908,
      "tabs": [
       "exhibits"
      ]
@@ -25610,7 +25665,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1603,
+     "line": 1909,
      "tabs": [
       "exhibits"
      ]
@@ -31017,6 +31072,9 @@
   ],
   "exhibits_cpl_ai.js": [
    "exhibits"
+  ],
+  "first_light_tab.js": [
+   "first-light"
   ],
   "governance.js": [
    "governance"

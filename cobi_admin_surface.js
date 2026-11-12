@@ -719,6 +719,15 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_library_set_public"
       ],
       "measured": true
+    },
+    "first-light": {
+      "modules": [
+        "first_light_tab.js"
+      ],
+      "reads": [],
+      "writes": [],
+      "rpcs": [],
+      "measured": true
     }
   }
 };

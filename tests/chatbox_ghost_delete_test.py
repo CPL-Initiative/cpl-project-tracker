@@ -4,6 +4,7 @@ Sheet 183 card 6, 2026-11-12, "delete").
 
 Each check is a way the delete could take a row it should not, or leave no way back:
   1. The plan finds exactly the ghosts: live titles the sync would not upsert, compared as exact strings.
+     1b. The plan writes no receipt holding a small cell: a count from 1 to 9, or a suppressed row with a count.
   2. Apply refuses a wrong count, a changed reference, a share above the ceiling, a short reference.
   3. Apply skips a title back in the reference, a title gone since the plan, and a row changed since the plan.
   4. A delete whose response is lost is retried, and applied.json comes from a fresh read, so it is right even when
@@ -179,6 +180,44 @@ try:
     check("plan: 'live 0001' is answered by 'Live 0001' at tier 1 (lower-case match), the others by nothing",
           on_disk["aliases"]["live 0001"]["exact_name_answered_by"] == ["Live 0001"]
           and on_disk["aliases"]["Ghost A (retired)"]["exact_name_answered_by"] == [])
+    # 1b. the small-cell guard (COBIx on #3158; docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md,
+    # k = 10): plan.json goes to a public repo, so plan refuses to write a before-row carrying a count from 1 to 9,
+    # or a suppressed row carrying any count, and prints no title beside a count.
+    import contextlib
+    import io
+
+    def small_cell_case(name, ghost_rows, refuse):
+        fake_s = Fake([row(t) for t in REF_TITLES] + ghost_rows)
+        receipts = tempfile.mkdtemp(dir=TMP)
+        out = io.StringIO()
+        try:
+            with contextlib.redirect_stdout(out):
+                g.plan(rest(fake_s), ref, receipts, **LOW)
+            check(name, not refuse and os.listdir(receipts), "did not refuse" if refuse else "")
+        except g.Refused as exc:
+            msg = str(exc.code) + out.getvalue()
+            check(name, refuse and os.listdir(receipts) == []
+                  and not any(r["unified_title"] in msg for r in ghost_rows), msg)
+            return msg
+        return None
+
+    msg = small_cell_case("plan: refuses to write a ghost before-row with students_served from 1 to 9",
+                          [row("Ghost Small", students_served=4), row("Ghost Nine", students_served=9),
+                           row("Ghost Fine", students_served=19)], refuse=True)
+    check("plan: the small-cell refusal names how many rows and the threshold, in the ADR's words",
+          bool(msg) and "2 ghost before-row(s)" in msg and "fewer than 10" in msg, msg)
+    small_cell_case("plan: refuses a served_suppressed ghost that still carries a count",
+                    [row("Ghost Masked", students_served=12, served_suppressed=True)], refuse=True)
+    small_cell_case("plan: refuses a Decimal count below the floor (a numeric column read as a Decimal)",
+                    [row("Ghost Dec", students_served=D("3"))], refuse=True)
+    small_cell_case("plan: writes a ghost at 0, at 10, null, or suppressed with a null count",
+                    [row("Ghost Zero", students_served=0), row("Ghost Ten", students_served=10),
+                     row("Ghost Null", students_served=None),
+                     row("Ghost Masked Null", students_served=None, served_suppressed=True)], refuse=False)
+    check("plan: the floor is never below the ADR's k = 10, and follows a higher floor the reference emits",
+          g.small_cell_floor({}) == 10 and g.small_cell_floor({"served_suppress_below": 5}) == 10
+          and g.small_cell_floor({"served_suppress_below": 11}) == 11)
+
     try:
         fresh_plan(Fake(START), min_reference=g.MIN_REFERENCE)
         check("plan: refuses a reference under the 2,000-title floor", False)
@@ -398,6 +437,10 @@ try:
     check("successor_carries: a successor equal to the ghost but for case carries it",
           g.successor_carries("live 0001", ["Live 0001"], {"Live 0001": {"raw_variants": []}})
           and not g.successor_carries("Ghost A (retired)", ["Live 0003"], {"Live 0003": {"raw_variants": []}}))
+    # COBIx on #3158 (f18eaa63): a case-only successor absent from the live table answers nothing, so it holds
+    check("successor_carries: a case-only successor absent from live holds the ghost (False)",
+          g.successor_carries("live 0001", ["Live 0001"], {}) is False
+          and g.successor_carries("live 0001", ["Live 0001"], {"Live 0002": {"raw_variants": ["live 0001"]}}) is False)
     case_root = alias_root(extra={"live 0001": "Live 0001"})
     fake = Fake(START)
     pdir, doc = fresh_plan(fake, root=case_root)
