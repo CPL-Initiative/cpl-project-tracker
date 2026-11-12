@@ -1,0 +1,68 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Berkeley City College, reconcile diagnosis. 21 transfer degrees name Cal-GETC and Total Units 60 with no GE units, and 14 local degrees print one combined 'General Education and Elective(s) ...' figure with no GE pattern. Page text is not filed (sources.json keeps text_chars only), so this read renders four pages as the capture read them (sitemap_page innerText, capture_view), to fix each step's pattern on the exact words. It also asks the catalog's own navigation, catalog 10327 as the capture heard it, for the node of the Degree and Certificate Requirements section that holds the GE pattern pages. Compare each page's chars with sources.json text_chars (lessons S619). No model call.",
+ "college": "Berkeley City College",
+ "questions": {
+  "ge_node": "Which navigation nodes are the Degree and Certificate Requirements section, the Cal-GETC page, the local A.A./A.S. GE pattern page and the associate degree requirements page?",
+  "adt_words": "What exactly does a transfer page print for general education, electives and the degree total, as the capture reads it?",
+  "local_words": "What exactly does a local degree page print for general education, electives and the degree total, and does it name a GE pattern or a minimum or double-count rule?"
+ },
+ "keywords": [
+  "Cal-?GETC",
+  "General Education",
+  "Electives?",
+  "[Uu]nits",
+  "Total",
+  "minimum",
+  "double",
+  "Associate",
+  "Requirements"
+ ],
+ "pages": [
+  {
+   "url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&navigationtypeId=1",
+   "answers": [
+    "ge_node"
+   ]
+  },
+  {
+   "url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=39711",
+   "answers": [
+    "ge_node"
+   ]
+  },
+  {
+   "url": "https://bcc.curriqunet.com/Catalog/_getNavigation?id=10327&parentId=40258",
+   "answers": [
+    "ge_node"
+   ]
+  },
+  {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40014",
+   "answers": [
+    "adt_words"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/40061",
+   "answers": [
+    "adt_words"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39977",
+   "answers": [
+    "local_words"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/41937",
+   "answers": [
+    "local_words"
+   ],
+   "capture_view": true
+  }
+ ]
+}
