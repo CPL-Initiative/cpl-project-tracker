@@ -1,0 +1,183 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-12T06-30-30Z",
+  "ruling": "Sam Lee, in session 2026-11-11 (SkyTamarind, S638; cpl_memory sam-ase-mil-certs-and-cx-to-standards-2026-11-11, sam-ic-exhibits-go-to-cert-title-2026-11-11, sam-cert-name-first-2026-11-11): 'ASE MIL3 test is the Military Tactical Wheeled Vehicle (TWV) – Drive Train certification... if there are any exhibits with ASE MIL in the title, adjust the canonical title to match the official ASE titles'; an industry-certification exhibit under a '(ASE ... standards)' title goes to the cert title, and ('3 yes') the credit-by-exam exhibits under the A5, A7 and A8 cert titles go to the standards titles; then his authorization the same day for the conductor and COBIx to settle the emptied titles without bringing them back to him. Superseding his own 2026-10-31 to 11-11 saves by his word (CLAUDE.md Rule 8); written by SkyTamarind's worker",
+  "cohort": "cer-s638@bot",
+  "read": [
+    {
+      "course_id": "_UNCLASSIFIED::Brakes",
+      "field": "unified_title_assignment",
+      "value": "Brakes (ASE A5 standards)",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+      "field": "unified_title_assignment",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "write",
+      "why": "",
+      "live": null
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "write",
+      "why": "",
+      "live": null
+    }
+  ],
+  "rows": [
+    {
+      "course_id": "_UNCLASSIFIED::Brakes",
+      "field": "unified_title_assignment",
+      "value": "Brakes (ASE A5 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+      "field": "unified_title_assignment",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    }
+  ],
+  "replaces": [],
+  "retires": [],
+  "result": "written",
+  "inserted": [
+    {
+      "course_id": "_UNCLASSIFIED::Brakes",
+      "field": "unified_title_assignment",
+      "value": "Brakes (ASE A5 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+      "field": "unified_title_assignment",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "reviewer_email": "cer-s638@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "replaced": [],
+  "replace_missed": [],
+  "retire_missed": [],
+  "retired": [],
+  "read_back": [
+    {
+      "course_id": "_UNCLASSIFIED::Brakes",
+      "field": "unified_title_assignment",
+      "value": "Brakes (ASE A5 standards)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Brakes (ASE A5 standards)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Basic Automotive Air Conditioning Systems",
+      "field": "unified_title_assignment",
+      "value": "Heating and Air Conditioning (ASE A7 standards)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Heating and Air Conditioning (ASE A7 standards)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+      }
+    },
+    {
+      "course_id": "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx",
+      "field": "unified_title_assignment",
+      "value": "Engine Performance (ASE A8 standards)",
+      "state": "written",
+      "why": "already holds this value (by cer-s638@bot)",
+      "live": {
+        "value": "Engine Performance (ASE A8 standards)",
+        "reviewer_email": "cer-s638@bot",
+        "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+      }
+    }
+  ]
+}
