@@ -53,8 +53,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
 5. `git worktree list` and `df -h /home/user` before spawning. A locked worktree whose worker is not in `ListAgents`
    is dead: push any unpushed commits from it, then `git worktree unlock`, `git worktree remove --force`, `git worktree
    prune`. Each checkout is 4.4 GB.
-6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and read them
-   again at every wake.
+6. `python3 kb/_context_budget.py`. Then read the COBIx threads #3110 and #3111 to their last comment, and every issue
+   or PR COBIx touched today (search `commenter:cobi-cto updated:>=<today>`), and read them again at every wake. Before
+   merging any PR, read its own comments to the last page: a reviewer's note on the PR thread is a finding.
 
 ## Workers
 
@@ -138,6 +139,32 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S642, and what worked
+
+- The conductor merged and ran #3158 (the ghost-row delete) without reading COBIx's 13:13Z note on the PR's own thread;
+  it had read #3153 and its reviewers. His two findings became #3166 after the 230 rows were gone, and neither touched
+  them. Read each PR's own comments, last page included, before merging it (*Start* step 6).
+- Sam had to point at #3111 and #2962: the conductor read #3153 at the start and not the standing threads. Read #3110,
+  #3111 and every issue COBIx touched today at the start and at each wake.
+- Three PRs failed `suite (6)` for one reason: `tests/check_ledger.test.js` needs each new test file's floor in
+  `tests/check_floor.json`, and `main` sits at the 60% line. Every brief that adds a test says so.
+- Workers stopped a full local `npm test` past 30 minutes; CI is the gate. Briefs say: run the tests that touch your
+  files plus `check_ledger`, `pages_size_guard` and the tab and nav inventory tests, then let CI run the rest.
+- `list_workflow_runs` and `get_job_logs` (tail) returned huge or useless output again; `actions_get`
+  `get_workflow_run` by id, and a `git fetch` of `main` for the receipt commit, were enough.
+- `scripts/check_generated.sh` reports *credential title resolver, one copy* stale in a checkout that holds worker
+  worktrees under `.claude/worktrees/` (the test scans them): a local false alarm.
+- The vault's open-asks sheet check fails locally until Sheet 183's card 6 and Sheet 184's card 11 are settled in the
+  builder; the sheet is rebuilt at the checkpoint.
+- Worked: one worker per concern, each opening its own PR; readers by dimension, then one second reader on the delete;
+  COBIx reviewing each push within minutes; one `send_later` per wait; worktrees removed at merge (the disk held 11 to
+  24 GB free).
+- Worked: a plan receipt read by keys and counts, then a 12-row sample of the risky class (ghosts with students) before
+  the apply.
+- Workers' commits carry the harness's attribution line (Opus 5.5), which is right for them.
+- Publishing a sheet the conductor did not write cost about 45,000 tokens: the tool requires reading the whole file
+  first. Have the vault worker keep the sheet under 60 KB, or publish from a session with room.
 
 ## What went wrong in S641, and what worked
 

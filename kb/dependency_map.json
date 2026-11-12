@@ -4,10 +4,10 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 880,
+  "file_datasets": 884,
   "external_services": 195,
-  "consumers": 561,
-  "workflows": 67,
+  "consumers": 563,
+  "workflows": 68,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3950,
+     "line": 3986,
      "tabs": [
       "exhibits"
      ]
@@ -5797,7 +5797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2027,
+     "line": 2059,
      "tabs": [
       "exhibits"
      ]
@@ -6180,7 +6180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3274,
+     "line": 3310,
      "tabs": [
       "exhibits"
      ]
@@ -6400,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3942,
+     "line": 3978,
      "tabs": [
       "exhibits"
      ]
@@ -6493,7 +6493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4227,
+     "line": 4263,
      "tabs": [
       "exhibits"
      ]
@@ -8291,7 +8291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4516,
+     "line": 4552,
      "tabs": [
       "exhibits"
      ]
@@ -10082,6 +10082,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_mid_outcomes_compare.py": {
+   "consumers": [
+    {
+     "id": "workflow:mid-outcomes-compare.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_overmerge_apply.py": {
    "consumers": [
     {
@@ -10859,7 +10872,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 408
+     "line": 428
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -13540,7 +13553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3052,
+     "line": 3088,
      "tabs": [
       "exhibits"
      ]
@@ -13928,7 +13941,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 418
+     "line": 438
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -14074,7 +14087,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 416
+     "line": 436
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -15234,7 +15247,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3964,
+     "line": 4000,
      "tabs": [
       "exhibits"
      ]
@@ -15258,7 +15271,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 420
+     "line": 440
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -15345,7 +15358,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3047,
+     "line": 3083,
      "tabs": [
       "exhibits"
      ]
@@ -15540,7 +15553,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3461,
+     "line": 3497,
      "tabs": [
       "exhibits"
      ]
@@ -15623,6 +15636,13 @@
      "direction": "read",
      "how": "literal",
      "line": 66
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 358
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -18824,6 +18844,28 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/mid_outcomes_compare_*.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:mid-outcomes-compare.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/status/mid_outcomes_compare_*.md": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:mid-outcomes-compare.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/status/program-requirements-checked.json": {
    "consumers": [
     {
@@ -19398,7 +19440,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 421
+     "line": 441
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -19525,7 +19567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 409
+     "line": 429
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -19626,7 +19668,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 415
+     "line": 435
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -22390,7 +22432,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1928,
+     "line": 1960,
      "tabs": [
       "exhibits"
      ]
@@ -22466,7 +22508,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 411
+     "line": 431
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -22619,7 +22661,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 413
+     "line": 433
     }
    ],
    "producers": [
@@ -24276,6 +24318,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/mid_outcomes_compare_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/mid_short_code_gate_test.py": {
    "consumers": [
     {
@@ -25510,6 +25565,13 @@
      "line": 114
     },
     {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 347
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -25573,6 +25635,13 @@
      "line": 584
     },
     {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 334
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -25623,7 +25692,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1929,
+     "line": 1961,
      "tabs": [
       "exhibits"
      ]
@@ -25685,7 +25754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 412
+     "line": 432
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -25714,6 +25783,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 333
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -27751,6 +27827,13 @@
      "direction": "read",
      "how": "literal",
      "line": 271
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 251
     }
    ],
    "main_committers": []
@@ -31804,6 +31887,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
+    "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
     "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
@@ -32036,6 +32120,21 @@
    "urls": [
     "https://claude.ai/code)_"
    ]
+  },
+  "mid-outcomes-compare.yml": {
+   "name": "MID outcomes compare (read-only)",
+   "crons": [],
+   "scripts": [
+    "kb/_mid_outcomes_compare.py"
+   ],
+   "adds": [
+    "kb/status/mid_outcomes_compare_*.md",
+    "kb/status/mid_outcomes_compare_*.json"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
   },
   "moc-crosswalk-sync.yml": {
    "name": "moc-crosswalk-sync",

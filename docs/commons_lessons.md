@@ -929,3 +929,11 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
   first.
 - **It conflicted on `kb/dependency_map.json`** after two other map-touching PRs merged cleanly in sequence. Merge
   map-touching PRs one at a time and expect a `main` merge on the rest.
+
+## Moved from the lane (S642, 2026-11-12)
+
+Moved verbatim from `docs/reference/lanes/commons.md` to make room for re-clustering Step 1.
+
+**The Courses List keeps the row you are ruling on (S623, issue #2995; Sam, 2026-11-09: *"the list view shifts focus to the top row every time you take action in the sidebar and the listview is not obviously highlighted as to which row you're acting on. the save ruling and other buttons are a bit jumbled together."*).** In the list engine (`commons_list.js`, so every List gets it): a redraw asked for by a panel (`api.redraw`, now `redrawKeep`) puts the table's scroll back and brings the current row into sight; the row whose panel is open carries `aria-current` and a bar (`<prefix>cur`), and its band carries one too (`<prefix>bandcur`). In the Discipline in doubt panel (`coci_lookup.js`): the ruling is one box with *Save the ruling* on its own line, the edits sit under *Or edit the common course*, and *Open … in SkyView* has its own line. Guards `tests/coci_list_doubt.test.js` (9).
+
+**The Courses List's filter words sit in two groups (S622, #2998, issue #2997; Sam, 2026-11-09: *"put them in order of priority for me to act on ... categorize the ones that need action and the others that are just convenient filters"*).** `commons_list.js` takes an optional `filterGroups: [{ label, ids }]`: each group on its own line, its label first, its words in the group's order; a List that sets none draws as before. The Courses List: **To do** (Discipline in doubt, On a stray identity code, No catalog description, A unit anomaly, Discipline no seed has touched), then **Browse** (the ten census words). The rule holds for every List that gains job filters. Open beside it: #2995, keep the current row in view after a ruling.

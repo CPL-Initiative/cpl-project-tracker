@@ -314,6 +314,11 @@ jobs:
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.
       - name: Course outline census (systems, sign-in, curriculum links)
         run: python3 tests/course_outline_census_test.py
+      # MID re-clustering Step 1 (S642, #2962): a same-college suite with distinct outcomes splits,
+      # identical outcomes confirm, and no missing SLO, TOP difference or units difference is ever the
+      # reason for a split. Reads the fixture only; writes nothing. Pure-stdlib python.
+      - name: MID outcomes compare (split, confirm, the standing rules)
+        run: python3 tests/mid_outcomes_compare_test.py
       # The nine MQ names in the handbook's spelling (S430, Sam's Sheet 99 card 6):
       # no store holds an old spelling, and the rename touches whole strings only.
       # Pure-stdlib python.

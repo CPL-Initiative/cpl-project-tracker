@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-583 document(s).
+584 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -137,6 +137,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A lapsed custom name is not a refusal](../kb-notes/methodology-a-lapsed-name-is-not-a-refusal.md) | methodology | published | 2026-10-08 | 2026-10-08 |
 | [A layout that cannot shrink does not wrap — it overflows and paints over its neighbour](../kb-notes/methodology-a-grid-item-sized-to-its-content-overflows-its-track.md) | methodology | published | 2026-09-04 | 2026-09-04 |
 | [A lead-in sentence is not a section heading](../kb-notes/methodology-a-lead-in-sentence-is-not-a-section-heading.md) | methodology | published | 2026-10-12 | 2026-10-12 |
+| [A ledger kept at its threshold fails every PR that adds a test](../kb-notes/methodology-a-ledger-at-its-line-fails-every-pr-that-adds-a-test.md) | methodology | published | 2026-11-12 | 2026-11-12 |
 | [A letter holds roles, never addresses](../kb-notes/methodology-a-letter-holds-roles-never-addresses.md) | methodology | internal | 2026-10-23 | 2026-10-23 |
 | [A limit nobody can see eats work, and a limit enforced twice drifts](../kb-notes/methodology-a-silent-cap-eats-work-and-a-paired-cap-drifts.md) | methodology | published | 2026-08-12 | 2026-08-12 |
 | [A limit that bounds one side of a union lets the other side drown it](../kb-notes/methodology-bound-both-sides-of-a-union.md) | methodology | published | 2026-08-13 | 2026-08-13 |

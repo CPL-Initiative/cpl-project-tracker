@@ -20,7 +20,8 @@ MODES (workflow: .github/workflows/chatbox-ghost-delete.yml; the sandbox cannot 
   plan    (default) Reads every live row (Range-paged, every column), builds the titles the sync WOULD upsert with
           the sync's own loader (`load_artifact` + `build_rows`, imported), and calls a ghost each live row whose
           `unified_title` is not among them: exact strings, the upsert's own key, no normalizing. Writes
-          kb/receipts/chatbox_ghost_delete_<UTC stamp>/plan.json and deletes nothing.
+          kb/receipts/chatbox_ghost_delete_<UTC stamp>/plan.json and deletes nothing. Refuses to write it when a
+          ghost's before-row would publish a small cell (THE SMALL-CELL GUARD, below).
   apply   --plan DIR --confirm-count N, on the Actions runner (chatbox-ghost-delete.yml mode=apply). Refuses unless
           plan.json is tracked and identical to origin/main's copy (so no delete runs with its before-rows on one
           disk), N is the plan's ghost count, the reference's sha256 is the plan's, the ghosts are at most
@@ -39,6 +40,28 @@ MODES (workflow: .github/workflows/chatbox-ghost-delete.yml; the sandbox cannot 
           absent. A session that did not run the delete undoes it from the committed receipt alone:
           dispatch chatbox-ghost-delete.yml with mode=undo and plan_dir=<the receipt directory>, or run
           `SUPABASE_SERVICE_KEY=... python3 kb/_chatbox_ghost_delete.py undo --plan <the receipt directory>`.
+
+THE SMALL-CELL GUARD
+--------------------
+plan.json is committed to a PUBLIC repo with every before-row, `students_served` and `served_suppressed` among the
+columns, and a commit on main cannot be cleaned out of its history. The disclosure ADR
+(docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md, ratified by Sam 2026-08-08: "report those with fewer
+than 10 as <10") sets k = 10, and the reference's generator applies it at write time (excel_to_dashboard.py
+SERVED_SUPPRESS_BELOW = 10, emitted as `_stats.served_suppress_below`): a count of 1 to 9 bakes as null with
+`served_suppressed` true, and the sync copies both fields from the reference (`to_row`: "inherited from the published
+artifact, never recomputed here"). A ghost is by definition an old row, possibly written before that masking existed,
+so plan checks the claim instead of assuming it: it refuses to write anything when any ghost's before-row carries a
+`students_served` count from 1 to the floor minus one, or `served_suppressed` true with a non-null count. The floor is
+the ADR's k = 10, or the reference's emitted floor where that is higher. The refusal names how many rows and why, and
+prints no title beside a count.
+
+Refuse outright, not null-and-mark (COBIx's alternative on #3158), for three reasons. The undo re-inserts plan.json's
+before-rows, and the sync never rewrites a ghost (it upserts reference titles only), so a nulled receipt would restore
+a row nothing will ever correct: the undo would no longer return the table to its state before the delete. Apply
+deletes only a row still equal to its before-row, so a nulled before-row would read as changed since the plan and
+hold the very row the plan exists to remove. And a live row with an exact small count is itself a disclosure through
+Sierra's anon read; the fix belongs in the live row (mask it, under Rule 10's receipted write), after which plan runs
+clean and the receipt is faithful.
 
 Numerics round-trip exactly: every read parses a JSON number as a Decimal and every write prints it back as read, so
 `12.50` returns as `12.50`, never `12.5`. Environment: SUPABASE_URL (the sync's default) and SUPABASE_SERVICE_KEY.
@@ -76,6 +99,10 @@ INSERT_BATCH = 100
 AFTER_READ_TRIES = 3
 MAX_SHARE = 0.15
 MIN_REFERENCE = 2000
+# The disclosure ADR's k (docs/kb-notes/adr-student-detail-aggregate-disclosure-control.md, Decision 1: "Cells backed
+# by fewer than 10 distinct students are suppressed"); the reference's generator uses the same floor
+# (excel_to_dashboard.py SERVED_SUPPRESS_BELOW). The guard never goes below it.
+MIN_CELL = 10
 DEFAULT_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"   # the sync's default (kb/_sync_credential_catalog.py)
 # The columns the conductor read live on 2026-11-12. The plan reads select=* and keeps whatever the table holds; a
 # difference from this list is printed, never silently dropped.
@@ -250,7 +277,28 @@ def reference(path=None):
     doc = sync.load_artifact(path)
     rows = sync.build_rows(doc)
     return {"path": os.path.relpath(path, REPO).replace("\\", "/"), "sha256": sha,
-            "generated_at": doc.get("_generated_at"), "titles": {r["unified_title"] for r in rows}, "rows": rows}
+            "generated_at": doc.get("_generated_at"), "titles": {r["unified_title"] for r in rows}, "rows": rows,
+            "served_suppress_below": (doc.get("_stats") or {}).get("served_suppress_below")}
+
+
+def small_cell_floor(ref):
+    """The ADR's k = 10, or the floor the reference's generator emits (`_stats.served_suppress_below`) where higher."""
+    emitted = ref.get("served_suppress_below")
+    if isinstance(emitted, int) and not isinstance(emitted, bool):
+        return max(MIN_CELL, emitted)
+    return MIN_CELL
+
+
+def small_cells(ghosts, floor):
+    """(rows with a count from 1 to floor-1, suppressed rows that still carry a count). Counts only, never titles."""
+    small = masked = 0
+    for r in ghosts:
+        n = r.get("students_served")
+        if r.get("served_suppressed") and n is not None:
+            masked += 1
+        elif isinstance(n, (int, float, decimal.Decimal)) and not isinstance(n, bool) and 0 < n < floor:
+            small += 1
+    return small, masked
 
 
 def alias_notes(ghost_titles, ref, root=REPO):
@@ -302,6 +350,15 @@ def plan(rest, ref, receipts=RECEIPTS, max_share=MAX_SHARE, min_reference=MIN_RE
     if blank:
         raise Refused("%d live row(s) carry no unified_title; an exact delete cannot name them" % len(blank))
     ghosts = [r for r in live if r["unified_title"] not in ref["titles"]]
+    floor = small_cell_floor(ref)
+    small, masked = small_cells(ghosts, floor)
+    if small or masked:
+        raise Refused(
+            "%d ghost before-row(s) carry a students_served count from 1 to %d (fewer than %d, the disclosure ADR's k), "
+            "and %d carry served_suppressed true with a count. plan.json goes to a public repo with every before-row, "
+            "so no receipt was written. Mask those live rows first (students_served null, served_suppressed true, a "
+            "receipted write under CLAUDE.md Rule 10), then plan again. "
+            "The ADR: adr-student-detail-aggregate-disclosure-control (kb-notes)." % (small, floor - 1, floor, masked))
     cols = sorted({k for r in live for k in r})
     notes, alias_summary = alias_notes([g["unified_title"] for g in ghosts], ref, root)
     stamp = utc_stamp(now)
@@ -373,14 +430,17 @@ def successor_carries(title, successors, live):
     """True when every successor (an applied rename's end and each title the fold retired `title` into) has a LIVE row
     whose raw_variants carry `title` (lower-cased, as Sierra's tier 2 compares); vacuously true with none. Sam,
     2026-11-11: old titles stay as search aliases; the sync writes them (kb/_sync_credential_catalog.py retired_names),
-    so a ghost goes only once the sync has run: sync first, then delete. A successor whose title equals `title`
-    case-insensitively carries it already: tier 1 compares lower(unified_title), and the sync's to_row adds no
-    variant equal to the row's own title."""
+    so a ghost goes only once the sync has run: sync first, then delete. Every successor must be LIVE first: one
+    absent from the table answers nothing, whatever its name (COBIx on #3158). A live successor whose title equals
+    `title` case-insensitively carries it already: tier 1 compares lower(unified_title), and the sync's to_row adds
+    no variant equal to the row's own title."""
     for s in successors or []:
+        row = live.get(s)
+        if not row:
+            return False
         if s.lower() == title.lower():
             continue
-        row = live.get(s)
-        if not row or title.lower() not in {(v or "").lower() for v in row.get("raw_variants") or []}:
+        if title.lower() not in {(v or "").lower() for v in row.get("raw_variants") or []}:
             return False
     return True
 

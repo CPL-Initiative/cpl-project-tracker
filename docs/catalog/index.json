@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 583,
+   "count": 584,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2390,6 +2390,25 @@
      "title": "A lead-in sentence is not a section heading",
      "type": "methodology",
      "updated": "2026-10-12"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [
+      "tests/check_ledger.test.js",
+      "tests/check_floor.json"
+     ],
+     "path": "docs/kb-notes/methodology-a-ledger-at-its-line-fails-every-pr-that-adds-a-test.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "tests",
+      "ci",
+      "governance-team-enablement",
+      "conductor"
+     ],
+     "title": "A ledger kept at its threshold fails every PR that adds a test",
+     "type": "methodology",
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-10-23",
@@ -15898,7 +15917,7 @@
      ],
      "title": "Admin tab / the side menu as data \u2014 lane state",
      "type": null,
-     "updated": "2026-08-30"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-10-12",
@@ -16418,7 +16437,7 @@
      ],
      "title": "Sierra: false absences + the statewide flag \u2014 lane state",
      "type": null,
-     "updated": "2026-10-26"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-28",
@@ -16864,8 +16883,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 603,
+   "count": 604,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 643,
+     "path": "docs/session_643_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 643 handoff (from SkyKestrel, S642)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -27080,5 +27113,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1457
+ "total": 1459
 }
