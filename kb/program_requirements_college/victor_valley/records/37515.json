@@ -103,7 +103,10 @@
    "pass": true
   },
   "degree": {
-   "status": "read"
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
   },
   "pass": true
  },
@@ -126,8 +129,8 @@
     "max": null
    },
    "ge_units": {
-    "min": 34,
-    "max": 42
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": false,
    "outcomes": [],
@@ -367,20 +370,5 @@
    "No program learning outcomes or named careers printed in the text."
   ]
  },
- "extracted_run": 43139057384,
- "reconciled": [
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 42
-   },
-   "words": "60 CSU transferable units;\nthe Cal-GETC pattern (https://catalog.vvc.edu/degrees-certificates/calgetc/calgetc-ca/: the Cal-GETC Certificate of Achievement's REQUIREMENTS tab, area by area to 'Area 6 - Ethnic Studies 3.0 ... Total Units 34-42' (college-page-read 43137395720))"
-  }
- ],
- "read_run": "38675237912"
+ "extracted_run": "38675237912"
 }
