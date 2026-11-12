@@ -1,0 +1,62 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Rio Hondo College, first read. 29 transfer degrees fail as incomplete: each names Cal-GETC with '(units will vary)' and 'DEGREE TOTAL 60 units' (the reading's notes, kb/program_requirements_college/rio_hondo/records/*.json); no page text is filed. This read (1) asks the catalog's navigation for section '7 - Degree & Certificate Guidelines' (capture.json curriqunet.sections, catalog 16) and its General Education pages, (2) lists section 9's node for the General Education/Cal-GETC Certificate of Achievement (control 45099), and (3) prints two transfer degree pages whole as the capture reads them, so the step's pattern is written on the page's own words. No model call.",
+ "college": "Rio Hondo College",
+ "questions": {
+  "ge_node": "Which navigation node is '7 - Degree & Certificate Guidelines', and which of its child pages are the RHC GE and Cal-GETC patterns?",
+  "cal_getc_cert": "Which entry under section 9 is the General Education/Cal-GETC Certificate of Achievement, and what total does it print?",
+  "adt_words": "What exactly does a transfer degree page print for Cal-GETC, the degree total and the electives?"
+ },
+ "keywords": [
+  "Cal-?GETC",
+  "units will vary",
+  "DEGREE TOTAL",
+  "General Education",
+  "Guidelines",
+  "[Uu]nits",
+  "Total",
+  "minimum",
+  "Transferable Electives"
+ ],
+ "pages": [
+  {
+   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22177",
+   "answers": [
+    "ge_node"
+   ],
+   "network": true,
+   "network_find": [
+    "Degree & Certificate Guidelines",
+    "Cal-GETC",
+    "General Education"
+   ]
+  },
+  {
+   "url": "https://riohondo.curriqunet.com/Catalog/_getNavigation?id=16&navigationtypeId=1",
+   "answers": [
+    "ge_node"
+   ]
+  },
+  {
+   "url": "https://riohondo.curriqunet.com/Catalog/_getNavigation?id=16&parentId=22178",
+   "answers": [
+    "cal_getc_cert"
+   ]
+  },
+  {
+   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24312",
+   "answers": [
+    "adt_words"
+   ],
+   "cq_view": true,
+   "cq_catalog": 16
+  },
+  {
+   "url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24174",
+   "answers": [
+    "adt_words"
+   ],
+   "cq_view": true,
+   "cq_catalog": 16
+  }
+ ]
+}

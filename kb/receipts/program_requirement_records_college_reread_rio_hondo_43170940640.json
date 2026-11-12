@@ -1,0 +1,1005 @@
+{
+ "college": "Rio Hondo College",
+ "reread_run": "43170940640",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "43142240927",
+ "at": "2026-11-12T06:52:34Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "17757",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "22709",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "35297",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41785",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 4,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "32398",
+  "32449",
+  "32506",
+  "32591"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Rio Hondo College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 43142240927;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 18,
+    "placed": 15,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1100H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ART 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one non-Western art history course from the following list (3 units)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 108",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Choose one studio art course from the following list (3 units):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 135",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 230",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHTO 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Choose one course from the following list (3 units):",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ART 109",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 112",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 113",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "arts and humanities-related careers"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 18,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ART HISTORY - Associate in Arts for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 18,
+   "total_min": 18,
+   "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24148",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843465712,
+   "program_title": "Art History",
+   "control_number": "32398"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 24,
+    "placed": 21,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 12,
+       "min": 12
+      },
+      "courses": [
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1200H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "ART 120",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 121",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 130",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one course, 3 units, from the following list:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 3,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ARTH C1100",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ARTH C1100H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 108",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Select one course from any three of the following areas for a total of 9 units:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 9,
+       "min": 9
+      },
+      "courses": [
+       {
+        "code": "ART 131",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ART 230",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 135",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 140",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 146",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 170",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "GDSN 178",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHTO 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PHTO 130",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 124",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 136",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ART 141",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ART 231",
+          "units": 3,
+          "catalog_addition": false
+         },
+         {
+          "code": "ART 260",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "professional artist",
+      "illustrator",
+      "layout artist",
+      "graphic designer",
+      "animator",
+      "advertising artist",
+      "art director",
+      "art critic",
+      "art educator",
+      "art therapist",
+      "gallery and museum curator",
+      "gallery assistant",
+      "art restorer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 24,
+      "min": 24
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ART/STUDIO ARTS  - Associate in Arts for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 24,
+   "total_min": 24,
+   "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24150",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843465712,
+   "program_title": "Studio Arts",
+   "control_number": "32449"
+  },
+  {
+   "award": "A.A- T Degree",
+   "checks": {
+    "listed": 23,
+    "placed": 21,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 13,
+       "min": 13
+      },
+      "courses": [
+       {
+        "code": "ANTH 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 101H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 101L",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "ANTH 102H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 103",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose one course from the following:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSY 200",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "GEOL 150",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSY 190",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "Choose one course from the following",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 4,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "ANTH 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 115",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ANTH 125",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 156",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 157",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 158",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "HIST 159",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "HIST 159H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOG 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         },
+         {
+          "code": "PSY 190",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       },
+       {
+        "code": "SOC 110",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 21,
+      "min": 19
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ANTHROPOLOGY  - Associate in Arts for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 19,
+   "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24140",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843465712,
+   "program_title": "Anthropology",
+   "control_number": "32506"
+  },
+  {
+   "award": "A.S. T Degree",
+   "checks": {
+    "listed": 15,
+    "placed": 13,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 106",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "Choose two courses from the following list:",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 6,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 102",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 104",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 105",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 207",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 208",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     },
+     {
+      "name": "Choose two courses from the following list: (Any course not used above)",
+      "rule": "choose_courses",
+      "stated": {
+       "max": 7,
+       "min": 6
+      },
+      "courses": [
+       {
+        "code": "AJ 107",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "AJ 275",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CORR 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "STAT C1000H",
+          "units": 4,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "PSYC C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "PSYC C1000H",
+          "units": 3,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "SOCI C1000",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "SOCI C1000H",
+          "units": 3,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 2,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [],
+     "ge_pattern": "Cal-GETC",
+     "total_units": {
+      "max": 19,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ADMINISTRATION OF JUSTICE - Associate in Science for Transfer",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": true
+    }
+   },
+   "measure": "units",
+   "total_max": 19,
+   "total_min": 18,
+   "source_url": "https://riohondo.curriqunet.com/catalog/alias/riohondocatalog/iq/22178/24035/24124",
+   "catalog_year": "2026-2027",
+   "extracted_run": 38843465712,
+   "program_title": "Administration of Justice",
+   "control_number": "32591"
+  }
+ ]
+}
