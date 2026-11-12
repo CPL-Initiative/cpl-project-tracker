@@ -811,13 +811,19 @@ def step_blocks(text: str):
 INLINE_MARK = "# dependency-map: inline"
 
 
-def with_inlined(text: str) -> str:
-    """The workflow text plus each `bash scripts/<x>.sh` that carries INLINE_MARK, one hop."""
+def inlined_scripts(text: str) -> list:
+    """(path, text) of each `bash scripts/<x>.sh` the workflow text runs that carries INLINE_MARK, one hop."""
+    out = []
     for im in re.finditer(r"\bbash\s+(scripts/[\w./\-]+\.sh)\b", text):
         inlined = read(im.group(1))
-        if INLINE_MARK in inlined:
-            text += "\n" + inlined
-    return text
+        if INLINE_MARK in inlined and im.group(1) not in [p for p, _ in out]:
+            out.append((im.group(1), inlined))
+    return out
+
+
+def with_inlined(text: str) -> str:
+    """The workflow text plus each inlined script's text."""
+    return "\n".join([text] + [t for _, t in inlined_scripts(text)])
 
 
 def parse_workflow(rel: str, text: str) -> dict:
@@ -1001,9 +1007,12 @@ def build():
         if not edges:
             return
         c = consumer(cid, kind, **meta)
-        for ds, direction, line in edges:
+        for e in edges:
+            ds, direction, line = e[:3]
             c["edges"].append({"dataset": ds, "direction": direction,
                                "how": how, "line": line})
+            if len(e) > 3:   # an edge read from another file than the consumer's own (an inlined script)
+                c["edges"][-1]["file"] = e[3]
 
     def add_producer(ds, by, how):
         lst = producers.setdefault(ds, [])
@@ -1147,10 +1156,13 @@ def build():
             host = re.sub(r"^https?://", "", u).split("/")[0]
             if host and "supabase.co" not in host:
                 edges.append(("external:%s" % host, "read", 0))
-        text = with_inlined(read(rel))
-        edges += supabase_edges(rel, text)          # heredocs + curl in YAML
-        edges += [("file:%s" % canon_dates(m.group(1)), "read", line_of(text, m.start()))
-                  for m in re.finditer(r"open\('([^']+)'", text)]
+        text = read(rel)
+        # The YAML's own heredocs and curls, then each inlined script's, each edge at its own file and line.
+        for src, src_text in [(rel, text)] + inlined_scripts(text):
+            found = supabase_edges(src, src_text) + [
+                ("file:%s" % canon_dates(m.group(1)), "read", line_of(src_text, m.start()))
+                for m in re.finditer(r"open\('([^']+)'", src_text)]
+            edges += found if src == rel else [e[:3] + (src,) for e in found]
         add_edges(cid, "workflow", edges, "yaml",
                   crons=info["crons"], push=info["push"], chain=info["chain"])
         for fn in info["deploys"]:
@@ -1234,6 +1246,7 @@ def build():
             ds["consumers"].append({
                 "id": cid, "kind": c["kind"], "direction": e["direction"],
                 "how": e["how"], "line": e["line"],
+                **({"file": e["file"]} if e.get("file") else {}),
                 **({"tabs": c["tabs"]} if c.get("tabs") else {}),
                 **({"pages": sorted(module_pages[mod])}
                    if c["kind"] == "module" and not c.get("tabs")

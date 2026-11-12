@@ -333,7 +333,7 @@ def count(cnt, name):
 CONFLICT = {"kb/src.md": "theirs", "kb/report.md": "the other writer's report"}
 
 
-def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False):
+def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False, untracked=None):
     """other_edits: files the other writer changes on main while the run builds (land_at > 0: its commit
     lands on main during that rejected push instead). reject: pushes the origin refuses (99: all)."""
     tmp = tempfile.mkdtemp(prefix="apply_conc_")
@@ -378,6 +378,7 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
         # The run's first pass, on the main it checked out, and a leftover of its scrape.
         write(work, {"kb/report.md": "ours, first pass", "live_metrics.json": "scrape of the first pass",
                      "veteran_jst.json": "vet of the first pass", "live_metrics_new.json": "first pass download"})
+        write(work, untracked or {})
         genv, gout = os.path.join(tmp, "github_env"), os.path.join(tmp, "github_output")
         open(genv, "w").close()
         env = dict(os.environ, PATH=bin_ + os.pathsep + os.environ["PATH"], GITHUB_ENV=genv, GITHUB_OUTPUT=gout,
@@ -452,6 +453,12 @@ check("push: a conflict first seen on the last attempt still pushes the rebuilt 
       and r["build"] == 1
       and r["report"] == "v1 built from theirs; scrape of the first pass; key k9" and "a merge to main" in r["log"],
       (r["rc"], r["report"], r["log"], r["out"][-900:]))
+
+r = push_case(other_edits={"kb/new.json": "the other writer's new file"}, untracked={"kb/new.json": "ours, untracked"})
+check("push: a rebase that fails with no conflict (an untracked file in the way) keeps the retry, ends with ::error",
+      r["rc"] == 1 and "Push attempt 5 failed" in r["out"] and "::error title=Daily push failed::Push failed after 5 attempts."
+      in r["out"] and "failed without a conflict" in r["out"] and r["build"] == 0 and not ours_landed(r),
+      (r["rc"], r["build"], r["out"][-700:]))
 
 r = push_case(reject=99)
 check("push: a failure that is no conflict retries 5 times, then exits 1 with nothing pushed or rebuilt",

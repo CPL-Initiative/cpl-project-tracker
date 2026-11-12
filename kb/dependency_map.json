@@ -4590,7 +4590,8 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 497
+     "line": 87,
+     "file": "scripts/daily_build.sh"
     }
    ],
    "served": false,
@@ -4603,7 +4604,8 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 504
+     "line": 94,
+     "file": "scripts/daily_build.sh"
     }
    ],
    "served": false,
@@ -20250,7 +20252,8 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 487
+     "line": 77,
+     "file": "scripts/daily_build.sh"
     }
    ],
    "served": false,

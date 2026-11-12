@@ -339,7 +339,20 @@ jobs:
               attempt=$((attempt + 1))
               continue
             fi
-            git rebase --abort
+            # A CONFLICT is a rebase stopped in progress with conflicted paths. A rebase can also fail with none
+            # in progress (another writer committed a file this tree holds untracked: "untracked working tree
+            # files would be overwritten"); that is a failure like any other push failure, and keeps the retry.
+            conflict=0
+            if git rev-parse -q --verify REBASE_HEAD >/dev/null && [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+              conflict=1
+            fi
+            git rebase --abort 2>/dev/null || true
+            if [ "$conflict" != 1 ]; then
+              echo "Rebase onto origin/main failed without a conflict on attempt $attempt; retrying."
+              sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
+              attempt=$((attempt + 1))
+              continue
+            fi
             if [ "$daily_rebuilt" = 1 ]; then
               echo "::error title=Daily push lost twice::A second rebase conflict, after the rebuild on the new main. Nothing is pushed; the later rungs of the ladder are the backstop."
               exit 1
@@ -360,7 +373,7 @@ jobs:
             if [ "$attempt" -eq "$max" ]; then max=$((max + 1)); fi
             attempt=$((attempt + 1))
           done
-          echo "Push failed after $max attempts."
+          echo "::error title=Daily push failed::Push failed after $max attempts. Nothing more is pushed; the later rungs of the ladder are the backstop."
           exit 1
 
       # ── Step 6b: SkyView description shards → Supabase Storage, after the push ──
