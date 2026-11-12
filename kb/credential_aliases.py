@@ -58,6 +58,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 REPO = os.path.dirname(HERE)
 TABLE = os.path.join("kb", "credential_title_moves.json")
 RETIRES = os.path.join("kb", "unclassified_fold", "retires.json")
+ACKNOWLEDGED = os.path.join("kb", "returned_titles_acknowledged.json")
 
 
 class SnapshotError(ValueError):
@@ -248,6 +249,54 @@ def returned(root="."):
     return sorted(o for o in _sources(snaps) if o in live)
 
 
+def acknowledged(root="."):
+    """[entries] of kb/returned_titles_acknowledged.json, the append-only list of returned titles a person or a
+    session acknowledged (COBIx, issue comment 6827701373): who brought each back, when and why."""
+    return [e for e in (_read(os.path.join(root, ACKNOWLEDGED)) or {}).get("acknowledged") or []
+            if isinstance(e, dict) and (e.get("title") or "").strip()]
+
+
+def unacknowledged_of(back, entries):
+    """The comparison itself: each returned title no acknowledged entry names, sorted. Without it a writer that puts
+    a moved title back into kb/credentials.json joins returned() silently and the live rule keeps it forever."""
+    have = {(e.get("title") or "").strip() for e in entries or []}
+    return sorted(t for t in back or [] if t not in have)
+
+
+def unacknowledged(root="."):
+    """Returned titles live today that kb/returned_titles_acknowledged.json does not list. Target 0."""
+    return unacknowledged_of(returned(root), acknowledged(root))
+
+
+def review_list(root=".", report=None):
+    """Sam's Exhibits review list, in plain words: [{title, kind, words}] for each returned title (acknowledged or
+    not), each dead end and each dead retire, in that order. Read by kb/_build_exhibits_review.py (the Review view)
+    and kb/_build_commons_status.py (the scorecard), so the card and the count agree."""
+    rep = report or {"returned": returned(root), "dead_ends": dead_ends(root),
+                     "dead_retires": retired(root, report=True)[1]}
+    why = {(e.get("title") or "").strip(): e for e in acknowledged(root)}
+    out = []
+    for t in rep.get("returned") or []:
+        e = why.get(t)
+        if e:
+            out.append({"title": t, "kind": "brought back",
+                        "words": "Renamed once and back in the reference, so it reads as itself. Brought back by %s on "
+                                 "%s." % (e.get("brought_back_by") or "not recorded", e.get("brought_back_at") or "a date not recorded")})
+        else:
+            out.append({"title": t, "kind": "brought back, not acknowledged",
+                        "words": "Renamed once and back in the reference with no record of who brought it back or why. "
+                                 "Retire it, or add who, when and why to kb/returned_titles_acknowledged.json."})
+    for r in rep.get("dead_ends") or []:
+        out.append({"title": r["title"], "kind": "dead end",
+                    "words": "Renamed to “%s”, which is no longer in the reference%s." % (
+                        r["end"], "" if r["why"].startswith("not live") else "; " + r["why"])})
+    for r in rep.get("dead_retires") or []:
+        out.append({"title": r["title"], "kind": "dead retire",
+                    "words": "Retired into “%s”, which is no longer in the reference, so it is no search alias."
+                             % r["to"] + (" It is in the reference again itself." if "live again" in (r.get("why") or "") else "")})
+    return out
+
+
 def moves(root="."):
     """old title -> {"now": the title it names now, "by": [the snapshots that moved it]}, for every title an in-force
     snapshot moved that is not live. The full chain from the first snapshot is the chain from any snapshot naming it
@@ -306,7 +355,7 @@ def table(root="."):
     rt = {e: [[t] + hops_of(t) for t in retires[e]] for e in ends}
     live = live_titles(root)
     live_targets = sorted({x for e in ends for path in rt[e] for x in path if x in live})
-    return {"_about": "Where each renamed or merged credential title goes, from the applied rename snapshots in force "
+    doc = {"_about": "Where each renamed or merged credential title goes, from the applied rename snapshots in force "
                       "(kb/cred_rename_out). Built by kb/credential_aliases.py; never edit by hand. A live title is "
                       "itself; any other takes its first live hop, else its last.",
             "_built_by": "kb/credential_aliases.py",
@@ -317,10 +366,16 @@ def table(root="."):
                                  "snapshot moved it, so it reads as itself. dead_ends: a renamed title whose chain "
                                  "ends on a title that is not live. dead_retires: a retired title whose target is "
                                  "not live, so it is no alias. live_targets: the retire targets live at build, the "
-                                 "browser's live set when the page has no reference loaded. Rebuilt each run; "
-                                 "--check does not compare it.",
+                                 "browser's live set when the page has no reference loaded. unacknowledged: "
+                                 "returned titles kb/returned_titles_acknowledged.json does not list (target 0; "
+                                 "--check warns on each). review_list: all of them in plain words, Sam's Exhibits "
+                                 "review list. Rebuilt each run; --check does not compare it.",
                        "returned": returned(root), "dead_ends": dead_ends(root),
                        "dead_retires": retired(root, report=True)[1], "live_targets": live_targets}}
+    rep = doc["report"]
+    rep["unacknowledged"] = unacknowledged_of(rep["returned"], acknowledged(root))
+    rep["review_list"] = review_list(root, rep)
+    return doc
 
 
 def append_retires(root, day, at, retires):
@@ -440,6 +495,20 @@ def _checked(text):
     return doc
 
 
+def warn_unacknowledged(root, out=None):
+    """A warning, never a failure (COBIx asked for warn): each returned title kb/returned_titles_acknowledged.json does
+    not list. Under GitHub Actions it is a ::warning:: annotation on the lints job. Returns the titles."""
+    out = out or sys.stdout
+    left = unacknowledged(root)
+    gh = os.environ.get("GITHUB_ACTIONS") == "true"
+    for t in left:
+        msg = ("returned title not acknowledged: %r is live again though an applied rename moved it; it is on the "
+               "Exhibits review list. Retire it, or add who, when and why to %s" % (t, ACKNOWLEDGED))
+        out.write(("::warning file=%s::%s" % (ACKNOWLEDGED, msg) if gh else "WARN  " + msg) + "\n")
+    out.write("returned titles: %d, %d not acknowledged (target 0)\n" % (len(returned(root)), len(left)))
+    return left
+
+
 def main(argv=None):
     """Write kb/credential_title_moves.json, or with --check exit 1 when its hops are stale."""
     argv = list(sys.argv[1:] if argv is None else argv)
@@ -456,6 +525,7 @@ def main(argv=None):
             print("%s is stale; run: python3 kb/credential_aliases.py" % TABLE)
             return 1
         print("%s is current" % TABLE)
+        warn_unacknowledged(root)
         return 0
     if have != want:
         with open(path, "w", encoding="utf-8") as f:
