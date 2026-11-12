@@ -54,6 +54,13 @@ const RELATED = { schema: 1, generated_at: "2026-11-12T07:55:00Z", rule: {}, iss
   families: {}, pending: {}, batches: [], waiting: [] };
 const ALIAS_MAP = { _generated_at: "2026-11-12T11:53:49Z", renames: {}, merges: {}, held_family: [], held_emptied: [],
   ruled: { applied: [{ old: "Firefighter Ruled Academy", "new": "Firefighter 2", kind: "rename", plan_id: "plan-x" }], held: [], done: [] } };
+// The real files, for the four cards the #3160 review measured.
+const REAL_REVIEW = JSON.parse(fs.readFileSync("kb/exhibits_review.json", "utf8"));
+const REAL_RELATED = JSON.parse(fs.readFileSync("kb/exhibits_related.json", "utf8"));
+const REAL_PLANS = JSON.parse(fs.readFileSync("kb/cred_rename_dryrun/alias_map.json", "utf8"));
+const REAL_SW_SRC = fs.readFileSync("fact-sheet/statewide_recs.js", "utf8");
+const REAL_STATEWIDE = JSON.parse(REAL_SW_SRC.slice(REAL_SW_SRC.indexOf("{"), REAL_SW_SRC.lastIndexOf("}") + 1));
+function realCard(raw) { return REAL_REVIEW.held.find(function (h) { return h.raw === raw; }); }
 const STATEWIDE = { "Firefighter 1": [{ t: "3 hours in Fire Protection Organization", id: "MAPICI-FF1-1-001" }], "Firefighter 1A": [{ t: "3 hours", id: "MAPICI-FF1A-1-001" }] };
 
 function load(opts) {
@@ -68,14 +75,16 @@ function load(opts) {
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(st) { return Promise.resolve({ ok: false, status: st, json: function () { return Promise.resolve({}); } }); }
     if (url === "kb/exhibits_review.json") return ok(review(opts.card || FIRE));
-    if (url === "kb/exhibits_related.json") return ok(RELATED);
-    if (url === "kb/cred_rename_dryrun/alias_map.json") return opts.noPlans ? bad(404) : ok(ALIAS_MAP);
+    if (url === "kb/exhibits_related.json") return ok(opts.real ? REAL_RELATED : RELATED);
+    if (url === "kb/cred_rename_dryrun/alias_map.json") return opts.noPlans ? bad(404) : ok(opts.real ? REAL_PLANS : ALIAS_MAP);
     if (/\/rest\/v1\/rpc\//.test(url)) return ok([]);
     if (/\/rest\/v1\/kb_curation\?select=/.test(url)) {
       const u = decodeURIComponent(url);
-      if (/&course_id=in\.\(/.test(u)) return ok([{ course_id: "_CREDENTIAL_REVIEW::Firefighter Saved Academy", field: "unified_title_override", value: "Firefighter 2" }]);
+      if (opts.failLive && /field=in\.\(unified_title_override,unified_title_merge_confirm\)/.test(u)) return bad(503);
+      if (opts.real) return ok([]);
+      if (/&course_id=in\.\(/.test(u)) return ok([{ course_id: "_CREDENTIAL_REVIEW::Firefighter Saved Academy", field: "unified_title_override", value: "Firefighter 2" }].concat(opts.liveOwn || []));
       if (/&value=in\.\(/.test(u)) {
-        const rows = [{ course_id: "_CREDENTIAL_REVIEW::Some Other Title", field: "unified_title_merge_confirm", value: "Firefighter Pending Academy" }];
+        const rows = [{ course_id: "_CREDENTIAL_REVIEW::Some Other Title", field: "unified_title_merge_confirm", value: "Firefighter Pending Academy" }].concat(opts.liveInto || []);
         if (opts.lateBlock) rows.push({ course_id: "_CREDENTIAL_REVIEW::A Late Title", field: "unified_title_override", value: opts.lateBlock });
         return ok(rows);
       }
@@ -88,7 +97,7 @@ function load(opts) {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.CPL_TABS = { loadScript: function (name, global, cb) {
-    setTimeout(function () { if (name === "fact-sheet/statewide_recs.js" && !opts.noStatewide) w.CPL_STATEWIDE_RECS = JSON.parse(JSON.stringify(STATEWIDE)); cb(); }, 0);
+    setTimeout(function () { if (name === "fact-sheet/statewide_recs.js" && !opts.noStatewide) w.CPL_STATEWIDE_RECS = JSON.parse(JSON.stringify(opts.real ? REAL_STATEWIDE : STATEWIDE)); cb(); }, 0);
   } };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, ""); };
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
@@ -188,7 +197,8 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   byText(t.d.querySelector(".exh-align"), "button", "Use it").click(); await settle();
   check("Use it on the line fills the card's title and the title's issuer, as Use this title does",
     t.d.getElementById("exh-title").value === "Firefighter 1" && t.d.getElementById("exh-issuer").value === SFT);
-  check("the line hides once the card holds the title", t.d.querySelector(".exh-align").hidden && posts(t).length === 0);
+  check("once the card holds the statewide title, the line says so and suggests nothing else",
+    txt(t.d.querySelector(".exh-align")) === "This is a statewide exhibit." && !t.d.querySelector(".exh-align button") && posts(t).length === 0);
 
   // ── one row's own Change to control (Sam: "use this title on the sidebar candidates that need it") ──
   t = await boot();
@@ -248,6 +258,72 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     t.d.querySelector(".exh-align").hidden && !/Statewide exhibit|Most used/.test(txt(panel(t.d))));
   t = await boot({ noStatewide: true });
   check("the statewide list unread, the card falls back to the most used title", /^A popular title for this is Firefighter 1 \(11 local titles/.test(txt(t.d.querySelector(".exh-align"))));
+
+  // ── the #3160 review: the real files, four cards ──
+  async function real(raw) { return boot({ real: true, card: realCard(raw) }); }
+  t = await real("Firefighter Recruit Academy Certificate");
+  check("real data: Firefighter Academy still names Firefighter 1 (11 local titles against Firefighter 1A's 2, a clear lead)",
+    /^This looks like the statewide exhibit Firefighter 1 \(11 local titles/.test(txt(t.d.querySelector(".exh-align"))) && t.d.getElementById("exh-rel-target").value === "Firefighter 1",
+    txt(t.d.querySelector(".exh-align")));
+  const fireLive = t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url) && /course_id=in\./.test(c.url); });
+  check("real data: the live read goes in chunks, every URL short", fireLive.length >= 1 && t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url); })
+    .every(function (c) { return c.url.length < 4000; }), fireLive.map(function (c) { return c.url.length; }).join(","));
+  t = await real("Nor Cal Carpenters Training Carpenter Apprenticeship Year 1");
+  check("real data: a card whose own title is statewide says so and names no sibling",
+    txt(t.d.querySelector(".exh-align")) === "This is a statewide exhibit." && !/Cabinetmaker/.test(txt(t.d.querySelector(".exh-align")))
+    && t.d.getElementById("exh-rel-target").value === "Carpenters Apprenticeship — Carpenter", txt(t.d.querySelector(".exh-align")));
+  t = await real("NorCal Valley Sheet Metal Apprenticeship Journeyperson");
+  check("real data: the SMART sheet metal card names no other issuer's title (never AWS's SMAW)",
+    !/Shielded Metal Arc Welding/.test(txt(t.d.querySelector(".exh-align"))) && !/Shielded Metal Arc Welding/.test(t.d.getElementById("exh-rel-target") ? t.d.getElementById("exh-rel-target").value : ""),
+    txt(t.d.querySelector(".exh-align")) + " | " + (t.d.getElementById("exh-rel-target") || {}).value);
+  const smartAlign = t.d.querySelector(".exh-align");
+  t = await real("Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1");
+  const uaTarget = t.d.getElementById("exh-rel-target");
+  check("real data: the UA refrigeration card names no ESCO title, and the target is not one",
+    !/ESCO/.test(txt(t.d.querySelector(".exh-align"))) && !(uaTarget && /ESCO/.test(uaTarget.value)),
+    txt(t.d.querySelector(".exh-align")) + " | " + (uaTarget || {}).value);
+  check("with nothing named and the card's title proposed, the target waits for the reviewer's choice",
+    (!smartAlign || smartAlign.hidden) ? (!uaTarget || uaTarget.value === "" || !/ESCO/.test(uaTarget.value)) : true);
+
+  // ── the target's own saved rows: a chain and a cycle are held ──
+  t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_override", value: "Firefighter 2" }] });
+  check("a chain on the target (it is itself saved to be renamed) is held, and nothing can be changed into it",
+    /Firefighter 1 is itself saved to be renamed Firefighter 2; choose that title\./.test(txt(panel(t.d))) && !byText(panel(t.d), "button", "Change the checked titles to Firefighter 1"));
+  t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_merge_confirm", value: "Firefighter 1 Academy" },
+    { course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_override", value: "Firefighter 1 Academy" }] });
+  check("a cycle on the target (it folds into a title it would take in) is held",
+    /Firefighter 1 is itself saved to be renamed Firefighter 1 Academy/.test(txt(panel(t.d))) && !byText(panel(t.d), "button", "Change the checked titles to Firefighter 1"));
+  t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_merge_confirm", value: "Firefighter 1A" }] });
+  check("a lone merge confirm on the target is held too", /Firefighter 1 is itself saved to fold into Firefighter 1A/.test(txt(panel(t.d))));
+
+  // ── a lone merge confirm on a candidate ──
+  t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_merge_confirm", value: "Firefighter 2" }] });
+  await showAll(t);
+  check("a candidate whose lone merge confirm names another title has no checkbox and says why",
+    !cb(t.d, "Firefighter I Academy") && /A saved merge confirm folds it into Firefighter 2/.test(txt(item(t.d, "Firefighter I Academy"))));
+
+  // ── a failed live read at the save writes nothing ──
+  t = await boot();
+  await tickBox(t, "Firefighter 1 Academy");
+  byText(panel(t.d), "button", "Change the checked titles to Firefighter 1").click(); await settle();
+  t.opts.failLive = true;
+  byText(panel(t.d), "button", "Save").click(); await settle();
+  check("a live read that fails at the save writes nothing and says so", posts(t).length === 0
+    && /Nothing was saved: .*could not be read/.test(txt(t.d.getElementById("exh-rel-note"))), txt(t.d.getElementById("exh-rel-note")));
+  t = await boot({ failLive: true });
+  check("a live read that fails at the draw leaves nothing to check", panel(t.d).querySelectorAll("input[type=checkbox]").length === 0
+    && /could not be read/.test(txt(panel(t.d))));
+
+  // ── a double press writes once ──
+  t = await boot();
+  await tickBox(t, "Firefighter 1 Academy");
+  byText(panel(t.d), "button", "Change the checked titles to Firefighter 1").click(); await settle();
+  const sv = byText(panel(t.d), "button", "Save");
+  sv.click(); sv.click();
+  const sv2 = byText(panel(t.d), "button", "Saving…");
+  if (sv2) sv2.click();
+  await settle();
+  check("a double press of Save writes once", posts(t).length === 1 && rowsOf(t).length === 2);
 
   // ── the look ──
   const css = src.slice(src.indexOf('".exh-rel-mark'), src.indexOf('".exh-align[hidden]'));

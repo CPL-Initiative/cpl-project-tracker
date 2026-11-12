@@ -906,7 +906,7 @@
         : "Canonical titles with the same issuer or the same words. Fold this card into one, or keep the proposed title." }));
       if (!got.rows.length) { body.appendChild(el("p", { cls: "exh-empty exh-small", text: "No title in the reference is close to this one." })); return; }
       // Review's panel names the statewide or most-used title and sorts it first (Sam, 2026-11-12).
-      var mark = o.actions ? relAligned(got) : null, all = got.rows;
+      var mark = o.actions ? relAligned(got, o.title.value, o.issuer.value.trim() || o.issuer0) : null, all = got.rows;
       if (mark) all = [{ o: mark.o, tier: "mark" }].concat(got.rows.filter(function (x) { return x.o !== mark.o; }));
       var act = o.actions ? relAct(o, got, mark, draw) : null;
       if (act) body.appendChild(relActBar(o, act, draw));
@@ -914,7 +914,7 @@
       rows.forEach(function (x) {
         if (x.tier !== last) {
           last = x.tier;
-          var th = x.tier === "mark" ? (mark.kind === "statewide" ? "The statewide exhibit" : "The most used title") : got.tiers[x.tier];
+          var th = x.tier === "mark" ? (mark.kind === "popular" ? "The most used title" : "The statewide exhibit") : got.tiers[x.tier];
           if (th) body.appendChild(el("h5", { cls: "exh-rel-tier", text: th }));
           ul = el("ul", { cls: "exh-rel-list" });
           body.appendChild(ul);
@@ -1024,13 +1024,31 @@
     if (!swIdx) { swIdx = {}; R.unified_titles.forEach(function (x) { if (x.statewide) swIdx[x.ut] = 1; }); }
     return !!swIdx[t];
   }
-  /* The statewide exhibit or the most used title among the related titles, or null. */
-  function relAligned(got) {
-    var near = got.rows.filter(function (x) { return !x.o.proposed && (got.family ? x.tier === 0 : x.tier <= 1); });
-    function lead(list) { return list.slice().sort(function (a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || a.o.t.localeCompare(b.o.t); })[0]; }
-    var sw = near.filter(function (x) { return relStatewide(x.o.t); });
-    if (sw.length) return { kind: "statewide", o: lead(sw).o };
-    var top = lead(near);
+  /* The statewide exhibit or the most used title among the related titles, or null (the S642 review of #3160).
+     (a) A card whose own title is in the reference and statewide is that exhibit: { kind: "self" }, nothing else named.
+     (b) Otherwise a candidate shares the card's words (an ASE card: the same test), is in the reference, and has the
+         card's own issuer; a title from another issuer is never named, however many words it shares (measured: the
+         SMART welding card named AWS's SMAW, the UA refrigeration card an ESCO title).
+     (c) Several statewide candidates: the leader is named only on a clear lead, at least STATEWIDE_LEAD times the
+         local titles of the next one (Firefighter 1, 11, over Firefighter 1A, 2); else none, and the panel still
+         marks each one Statewide exhibit.
+     (d) None statewide: the most used candidate, by the same issuer rule, with at least POPULAR_MIN local titles and
+         more than every other candidate. */
+  var STATEWIDE_LEAD = 3;
+  function relAligned(got, cardTitle, cardIssuer) {
+    var t0 = (cardTitle || "").trim(), iss = (cardIssuer || "").trim();
+    if (t0 && relInRef(t0) && relStatewide(t0)) return { kind: "self", o: state.rel.by[t0] };
+    if (!iss) return null;
+    var near = got.rows.filter(function (x) {
+      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1);
+    });
+    function byUse(a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || a.o.t.localeCompare(b.o.t); }
+    var sw = near.filter(function (x) { return relStatewide(x.o.t); }).sort(byUse);
+    if (sw.length) {
+      if (sw.length > 1 && sw[0].o.locals < STATEWIDE_LEAD * sw[1].o.locals) return null;
+      return { kind: "statewide", o: sw[0].o };
+    }
+    var top = near.slice().sort(byUse)[0];
     if (!top || top.o.locals < POPULAR_MIN) return null;
     if (near.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
     return { kind: "popular", o: top.o };
@@ -1038,6 +1056,7 @@
   function relAlignWords(a) {
     var r = a.o, n = fmt(r.locals) + " local title" + (r.locals === 1 ? "" : "s")
       + (r.adopted ? ", articulated at " + fmt(r.adopted) + " college" + (r.adopted === 1 ? "" : "s") : "");
+    if (a.kind === "self") return "This is a statewide exhibit.";
     return a.kind === "statewide" ? "This looks like the statewide exhibit " + r.t + " (" + n + "). "
       : "A popular title for this is " + r.t + " (" + n + "). ";
   }
@@ -1053,16 +1072,21 @@
     add(box);
     got.rows.forEach(function (x) { add(x.o.t); });
     a.opts = opts;
-    if (opts.indexOf(a.target) < 0) a.target = opts[0] || "";
+    // The target is the aligned title when one is named, else the card's title (when it is in the reference), else
+    // the reviewer's choice; a choice holds until the reviewer changes it.
+    if (a.target && opts.indexOf(a.target) < 0) { a.target = ""; a.picked = false; }
+    if (!a.picked) a.target = mark ? mark.o.t : relInRef(box) ? box : "";
     delete a.checked[a.target];
     // The live rows for every title the panel could change, and the target.
     var want = opts.slice().sort(), k = want.join("\u0001");
     if (a.liveKey !== k) { a.liveKey = k; a.live = null; relLiveLoad(want).then(function (live) { if (a.liveKey === k) { a.live = live; redraw(); } }); }
-    a.targetWhy = !a.target ? "No related title is in the reference, so nothing can take the others in." : relTargetWhyNot(a.target, a);
+    a.targetWhy = !opts.length ? "No related title is in the reference, so nothing can take the others in."
+      : !a.target ? "Choose the title the checked ones fold into." : relTargetWhyNot(a.target, a);
     a.ok = !a.targetWhy;
     return a;
   }
   /* The saved rename rows on these titles, and the titles other rows rename or fold into them, read live. */
+  var REL_LIVE_CHUNK = 20;
   function relLiveLoad(titles) {
     var key = anonKey();
     if (!key || !titles.length) return Promise.resolve({ error: key ? "" : "no reader key" , override: {}, merge: {}, into: {} });
@@ -1073,11 +1097,17 @@
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
         .then(function (rows) { acc = acc.concat(rows || []); return rows && rows.length === 1000 ? paged(url, from + 1000, acc) : acc; });
     }
-    var own = base + "&course_id=in.(" + titles.map(function (t) { return q(CRED_PREFIX + t); }).join(",") + ")";
-    var into = base + "&value=in.(" + titles.map(q).join(",") + ")";
-    return Promise.all([paged(own, 0, []), paged(into, 0, [])]).then(function (got) {
+    // In chunks of REL_LIVE_CHUNK titles, so a card with many related titles keeps each URL short; each chunk is
+    // Range-paged, and any chunk that fails fails the whole read, which holds every title.
+    var reads = [];
+    for (var i = 0; i < titles.length; i += REL_LIVE_CHUNK) {
+      var part = titles.slice(i, i + REL_LIVE_CHUNK);
+      reads.push(paged(base + "&course_id=in.(" + part.map(function (t) { return q(CRED_PREFIX + t); }).join(",") + ")", 0, []));
+      reads.push(paged(base + "&value=in.(" + part.map(q).join(",") + ")", 0, []));
+    }
+    return Promise.all(reads).then(function (got) {
       var out = { error: "", override: {}, merge: {}, into: {} };
-      got[0].concat(got[1]).forEach(function (row) {
+      [].concat.apply([], got).forEach(function (row) {
         var t = String(row.course_id || "");
         if (t.indexOf(CRED_PREFIX) !== 0) return;
         t = t.slice(CRED_PREFIX.length);
@@ -1105,6 +1135,9 @@
     var v = live.override[t];
     if (v && v !== t) return v === a.target && live.merge[t] === a.target ? "Already saved to fold into " + a.target + "."
       : "Already saved to be renamed " + v + "; the rename apply carries it.";
+    // A merge confirm alone, naming another title, is a saved word too: it stays until a person settles it.
+    var m = live.merge[t];
+    if (m && m !== t && m !== a.target) return "A saved merge confirm folds it into " + m + "; it stays until that is settled.";
     var n = Object.keys(live.into[t] || {}).length;
     if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to fold into it, so it stays until they land.";
     return "";
@@ -1118,6 +1151,8 @@
     if (b && !/into it\.$|to it\.$/.test(b)) return t + " cannot take the others in: " + b;
     var v = live.override[t];
     if (v && v !== t) return t + " is itself saved to be renamed " + v + "; choose that title.";
+    var m = live.merge[t];
+    if (m && m !== t) return t + " is itself saved to fold into " + m + "; choose that title.";
     if (famOf(t)) return t + " is a family member; its family's batch names it.";
     if (renamePending(t)) return t + " waits in the rename batch; decide it there first.";
     return "";
@@ -1136,9 +1171,10 @@
     var bar = el("div", { cls: "exh-rel-acts" });
     if (a.opts.length) {
       var sel = el("select", { id: "exh-rel-target", cls: "exh-rel-sel" });
+      if (!a.target) sel.appendChild(el("option", { value: "", text: "Choose a title" }));
       a.opts.forEach(function (t) { var op = el("option", { value: t, text: t }); if (t === a.target) op.selected = true; sel.appendChild(op); });
       sel.value = a.target;
-      sel.addEventListener("change", function () { a.target = sel.value; a.ask = null; a.note = ""; render(); relFocus("exh-rel-target"); });
+      sel.addEventListener("change", function () { a.target = sel.value; a.picked = !!sel.value; a.ask = null; a.note = ""; render(); relFocus("exh-rel-target"); });
       bar.appendChild(el("label", { cls: "exh-small exh-rel-lab", "for": "exh-rel-target" }, ["Change related titles to"]));
       bar.appendChild(sel);
     }
@@ -2046,10 +2082,12 @@
     var align = el("p", { cls: "exh-small exh-align" });
     function drawAlign() {
       while (align.firstChild) align.removeChild(align.firstChild);
-      var a = state.rel.data ? relAligned(relatedFor(title.value.trim(), h.raw, issuer.value.trim() || h.issuer, [])) : null;
-      align.hidden = !a || a.o.t === title.value.trim();
-      if (align.hidden) return;
+      var iss = issuer.value.trim() || h.issuer;
+      var a = state.rel.data ? relAligned(relatedFor(title.value.trim(), h.raw, iss, []), title.value, iss) : null;
+      align.hidden = !a;
+      if (!a) return;
       align.appendChild(document.createTextNode(relAlignWords(a)));
+      if (a.kind === "self") return;
       align.appendChild(word("Use it", function () { useRow(a.o); title.dispatchEvent(new Event("input")); },
         { cls: "exh-w exh-small", "aria-label": "Use it: " + a.o.t }));
     }
