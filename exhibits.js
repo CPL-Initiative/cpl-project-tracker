@@ -1094,7 +1094,8 @@
     var key = anonKey();
     if (!key || !titles.length) return Promise.resolve({ error: key ? "" : "no reader key" , override: {}, merge: {}, into: {} });
     function q(t) { return encodeURIComponent('"' + t.replace(/\\/g, "\\\\").replace(/"/g, '\\"') + '"'); }
-    var base = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=in.(" + FIELD_CRED_TITLE + "," + FIELD_MERGE_CONFIRM + ")";
+    var base = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at&field=in.(" + FIELD_CRED_TITLE + "," + FIELD_MERGE_CONFIRM + ")"
+      + "&order=course_id.asc,field.asc";
     function paged(url, from, acc) {
       return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + 999) } })
         .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
@@ -1140,7 +1141,8 @@
       : "Already saved to be renamed " + v + "; the rename apply carries it.";
     // A merge confirm alone, naming another title, is a saved word too: it stays until a person settles it.
     var m = live.merge[t];
-    if (m && m !== t && m !== a.target) return "A saved merge confirm folds it into " + m + "; it stays until that is settled.";
+    if (m && m !== t && m !== a.target) return "A saved merge confirm folds it into " + m + ", with no rename beside it. It stays until a person "
+      + "clears it: in the List, Edit its title to " + m + " and Save, then Edit it back and Save; the second save clears both rows.";
     var n = Object.keys(live.into[t] || {}).length;
     if (n) return fmt(n) + (n === 1 ? " title is" : " titles are") + " saved to fold into it, so it stays until they land.";
     return "";
@@ -3347,6 +3349,11 @@
     var writes = [];
     if (!title) { L.note = "A title cannot be empty."; render(); return Promise.resolve(); }
     if (title !== listTitle(r)) writes.push([FIELD_CRED_TITLE, title === r.ut ? "" : title]);
+    // An Edit back to the title's own name undoes a fold before the apply: it clears the merge confirm beside the
+    // rename too, the same way ("" upserted), so no leftover confirm holds the old target in the Review panel
+    // (COBIx on #3160). A lone confirm, with no rename beside it, is left to a person.
+    var ov0 = state.cs.overlay[r.ut] || {};
+    if (title !== listTitle(r) && title === r.ut && ov0.title && ov0.merge) writes.push([FIELD_MERGE_CONFIRM, ""]);
     if (issuer !== (cur.issuer || "")) writes.push([FIELD_CRED_ISSUER, issuer]);
     var curSites = cur.sites.map(function (x) { return x.site; }).join("; ");
     if (sites.map(function (x) { return x.site; }).join("; ") !== curSites) {

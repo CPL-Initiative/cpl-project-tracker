@@ -78,6 +78,11 @@ function load(opts) {
     if (url === "kb/exhibits_related.json") return ok(opts.real ? REAL_RELATED : RELATED);
     if (url === "kb/cred_rename_dryrun/alias_map.json") return opts.noPlans ? bad(404) : ok(opts.real ? REAL_PLANS : ALIAS_MAP);
     if (/\/rest\/v1\/rpc\//.test(url)) return ok([]);
+    if (opts.store && /\/rest\/v1\/kb_curation/.test(url)) {
+      if ((init.method || "GET") === "GET") return ok(Object.keys(opts.store).map(function (k) { return opts.store[k]; }));
+      [].concat(JSON.parse(init.body)).forEach(function (r) { opts.store[r.course_id + "|" + r.field] = r; });
+      return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
+    }
     if (/\/rest\/v1\/kb_curation\?select=/.test(url)) {
       const u = decodeURIComponent(url);
       if (opts.failLive && /field=in\.\(unified_title_override,unified_title_merge_confirm\)/.test(u)) return bad(503);
@@ -97,6 +102,8 @@ function load(opts) {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.CPL_TABS = { loadScript: function (name, global, cb) {
+    if (name === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
+    if (name === "credential_reference_data.js" && opts.credref) w[global] = JSON.parse(JSON.stringify(opts.credref));
     setTimeout(function () { if (name === "fact-sheet/statewide_recs.js" && !opts.noStatewide) w.CPL_STATEWIDE_RECS = JSON.parse(JSON.stringify(opts.real ? REAL_STATEWIDE : STATEWIDE)); cb(); }, 0);
   } };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, ""); };
@@ -328,6 +335,58 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   if (sv2) sv2.click();
   await settle();
   check("a double press of Save writes once", posts(t).length === 1 && rowsOf(t).length === 2);
+
+  // ── COBIx's regression cards (#3160, second review), from the real files ──
+  async function realT(title) { return boot({ real: true, card: held("COBIx " + title, title, SFT) }); }
+  for (const title of ["Fire Academy", "Fire Academy Conditioning", "Kern County Fire Recruit Academy"]) {
+    t = await realT(title);
+    const al = t.d.querySelector(".exh-align"), tg = t.d.getElementById("exh-rel-target");
+    check("real data: " + title + " (SFT) shows no line and never names Fire Inspector 1A",
+      (!al || al.hidden) && !/Fire Inspector 1A/.test(txt(al)) && !(tg && tg.value === "Fire Inspector 1A"), txt(al) + " | " + (tg || {}).value);
+  }
+  for (const title of ["Firefighter Academy", "Wildland Firefighter"]) {
+    t = await realT(title);
+    check("real data: " + title + " (SFT) names Firefighter 1", /^This looks like the statewide exhibit Firefighter 1 \(/.test(txt(t.d.querySelector(".exh-align")))
+      && t.d.getElementById("exh-rel-target").value === "Firefighter 1", txt(t.d.querySelector(".exh-align")));
+  }
+
+  // ── the live read pages in a stated order ──
+  t = await boot();
+  const liveGets = t.calls.filter(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at&field=in\.\(unified_title_override,unified_title_merge_confirm\)/.test(c.url); });
+  check("every live read names its order, so Range paging neither skips nor repeats a row",
+    liveGets.length > 0 && liveGets.every(function (c) { return /&order=course_id\.asc,field\.asc/.test(c.url); }));
+
+  // ── the undo before the apply: the List's Edit back clears both rows, and the old target is checkable again ──
+  const store = {
+    "_CREDENTIAL_REVIEW::Firefighter I Academy|unified_title_override": { course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_override", value: "Firefighter 1A", reviewed_at: "2026-11-12T10:00:00Z" },
+    "_CREDENTIAL_REVIEW::Firefighter I Academy|unified_title_merge_confirm": { course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_merge_confirm", value: "Firefighter 1A", reviewed_at: "2026-11-12T10:00:00Z" } };
+  const credref = { _generated_at: "2026-11-12T06:00:00Z", unified_titles: ["Firefighter 1", "Firefighter 1A", "Firefighter I Academy"].map(function (u) {
+    return { ut: u, issuer: SFT, cpl_types: [], disc_modal: "", raw_count: 1, articulations: [] }; }) };
+  t = await boot({ store: store, credref: credref });
+  await showAll(t);
+  check("before the undo, the fold's target is held by the fold", !cb(t.d, "Firefighter 1A")
+    && /1 title is saved to fold into it/.test(txt(item(t.d, "Firefighter 1A"))) && /Already saved to be renamed Firefighter 1A/.test(txt(item(t.d, "Firefighter I Academy"))));
+  t.w.location.hash = "#exhibits/list"; t.M._routeFromHash(); t.M.render(); await settle(); await settle();
+  const row = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find(function (tr) { return /folds Firefighter I Academy into this credential/.test(txt(tr)); });
+  const eb = row && Array.from(row.querySelectorAll("button")).find(function (b) { return txt(b) === "Edit"; });
+  check("the List shows the saved fold, with its Edit", !!eb);
+  eb.click(); await settle();
+  const tbox = t.d.getElementById("exh-l-t");
+  tbox.value = "Firefighter I Academy"; tbox.dispatchEvent(new t.w.Event("input"));
+  const before2 = posts(t).length;
+  Array.from(t.d.querySelectorAll("button")).find(function (b) { return txt(b) === "Save"; }).click(); await settle();
+  const undo = posts(t).slice(before2).map(function (c) { return c.body; });
+  check("the Edit back clears the rename and the merge confirm beside it, each as \"\"",
+    undo.some(function (r) { return r.field === "unified_title_override" && r.value === "" && r.course_id === "_CREDENTIAL_REVIEW::Firefighter I Academy"; })
+    && undo.some(function (r) { return r.field === "unified_title_merge_confirm" && r.value === "" && r.course_id === "_CREDENTIAL_REVIEW::Firefighter I Academy"; }), JSON.stringify(undo));
+  t.w.location.hash = "#exhibits";
+  t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } })); await settle(); await settle();
+  await showAll(t);
+  check("after the undo, the old target and the undone title are checkable again", !!cb(t.d, "Firefighter 1A") && !!cb(t.d, "Firefighter I Academy"),
+    txt(item(t.d, "Firefighter 1A")) + " | " + txt(item(t.d, "Firefighter I Academy")));
+  t = await boot({ store: { "_CREDENTIAL_REVIEW::Firefighter I Academy|unified_title_merge_confirm": { course_id: "_CREDENTIAL_REVIEW::Firefighter I Academy", field: "unified_title_merge_confirm", value: "Firefighter 2" } } });
+  await showAll(t);
+  check("a lone merge confirm's hold names the step that ends it", /in the List, Edit its title to Firefighter 2 and Save, then Edit it back and Save/.test(txt(item(t.d, "Firefighter I Academy"))));
 
   // ── the look ──
   const css = src.slice(src.indexOf('".exh-rel-mark'), src.indexOf('".exh-align[hidden]'));
