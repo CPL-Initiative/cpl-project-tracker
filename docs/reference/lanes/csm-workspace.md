@@ -160,6 +160,13 @@ immediately obvious what has happened yet or how each of those lines tracks with
   the email stopped being due and Sent left with it: the log read *Email copied* for good. The record now reads
   *Copied Nov 12 and not yet marked as sent* with Sent beside it, and Sent files the receipt with the copy's subject
   and address. What is due and when is unchanged; the college stays out of *Needs you*.
+- **The guide (2026-11-12):** *Funding Follow-up Dashboard Guide*, step by step with screenshots on sample data, one
+  section for each stage a college can be in (https://claude.ai/artifact/XqJpfTdCWPhAkGFLA3gsBq; Library record
+  `funding-follow-up-dashboard-guide`, a team draft; source and `capture.js` in
+  `CPLBrain/04-projects/cpl-initiative/funding-follow-up-guide/`). Redraw the screenshots when the dashboard changes.
+  Writing it found two things: the coordinator sentence in *Funding conditions explained* named parts the live label
+  no longer has (reworded to point at the label), and a college whose email is due appears under *Ready to send* and
+  not under *All open items*, the list the page opens on.
 - **Rollback:** one squash commit; `git revert` of it restores every piece. No table, migration or stored value changed.
 Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
 
@@ -178,7 +185,8 @@ Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
    - **Open with Malone (the 2026-11-12 session):** whether the Noncredit CPL Lead attestation's review should keep its three
      extra requirements (the landing page, the assignment, the meetings) now that the role in MAP alone meets the
-     condition; and whether a copied request belongs in *Needs you* until it is marked Sent.
+     condition; whether a copied request belongs in *Needs you* until it is marked Sent; and whether *All open
+     items* should also hold the emails that are ready to send.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).

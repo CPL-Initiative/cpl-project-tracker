@@ -933,7 +933,8 @@
       ? "The landing page lists a close title. The condition is met by the Noncredit CPL Lead role in MAP."
       : "MAP shows no Noncredit CPL Lead for the college. The role in MAP meets the condition." };
     if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
-    if (draftedOf(r)) return { reason: "Mark the email as sent", why: nextStep(r) };
+    // The line under the email says what to press; this one says why, so the two do not repeat each other.
+    if (draftedOf(r)) return { reason: "Mark the email as sent", why: "The log shows the request copied or opened as a draft, with no Sent after it." };
     return { reason: "No email needed", why: nextStep(r) };
   }
   /* Which part of the side panel shows. A request waiting on the team opens the review by itself, since reviewing it is
@@ -1632,7 +1633,10 @@
     part: { how: "A senior administrator sends the participation confirmation from the college's or district's email address, on the CPL Implementation Funding page.",
       who: "The CPL Initiative team reviews the request on this dashboard and accepts or denies it.",
       dash: "Until a confirmation arrives, the dashboard recommends an email asking for it. Once one arrives, the review opens beside the record." },
-    coord: { how: "MAP shows the college's CPL Coordinator, its primary CPL contact and its CPL landing page.",
+    // The heading above these lines is the funding tab's live label, which a curator can reword (read 2026-11-12: the
+    // CPL Coordinator in MAP and a CPL Assistant email on the landing page). So the sentence points at the heading
+    // and names no parts of its own that could disagree with it.
+    coord: { how: "The college's records in MAP and on its CPL landing page show what this condition names.",
       who: "The college keeps these in MAP. The team reviews nothing here.",
       dash: "The dashboard shows the status and names the part that is missing. It recommends no email for this condition." },
     vetstar: { how: "MAP holds a Joint Services Transcript for the required share of the college's veterans.",
