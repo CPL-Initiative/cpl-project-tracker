@@ -1,7 +1,7 @@
 ---
 title: "CSM Workspace / the team's queue for each college — lane state"
 created: 2026-11-02
-updated: 2026-11-10
+updated: 2026-11-12
 tags: [reference, roadmap-lane, csm-workspace, implementation-funding, crm]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -38,7 +38,7 @@ noncredit twins), `focus` (the funding tab opened on the college) and `nudge` (t
 merge). No second computation and no table of its own. Names and emails ride `req` for a signed-in reviewer on the
 internal view alone. Carried from the mock: the header with Today, the action center (search, the queue with each next step), the record (minimum
 conditions in the funding tab's words, who sent it, the CO Monitor's note), **Review
-before you decide** (ask 15: Checked by the form / Meets / Check this with I checked this / Does not meet; Accept opens
+before you decide** (ask 15: Met / Check this with I checked this / Not met; Accept opens
 once the reviewer has scrolled to the review's foot and ticked every check, a failing requirement keeps Accept shut),
 the stage board, and the landing-page links (ask 16). The funding tab's toolbar links it beside Nudge. Look: the CPL
 Commons palette as the mock shows it, the dark theme mapped onto First Light tokens. **Proceeded on the
@@ -110,7 +110,7 @@ The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team
 stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is five metrics,
 each opening its list, the deadline apart. The list sits in two groups, *Needs you* (a request waiting on the team, an
 email that is due, a follow-up due) above *Waiting on the college*, most pressing first; every row names the email or
-the date. The record is a table of conditions (Condition, Status, Email), then *Recommended action* with the email as
+the date. The record is a table of conditions (Condition, Status, Next step), then *Recommended action* with the email as
 a preview and *Edit email*; the email is the one that is due (`recTpl`) in every list, and Sent is offered for that
 email alone. One side panel under the record holds People (one list: role, person, source), CPL landing page and
 History, and the review opens there; Accept says what it does. Access requests are one word in the header;
@@ -141,6 +141,28 @@ refuses to write over a teammate's newer version. With nothing saved the four em
 word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptances stay the funding tab's
 (`acceptMail`).
 
+**LIVE once its PR merges: the plainer review, the conditions panel and the copied email (2026-11-12, asked in session
+from the MAP account; the driver did not give a name).** The concern, in the driver's words: the recommended action
+*"is not immediately clear to someone who isn't swimming in this water"*, and *"some of the wording doesn't make it
+immediately obvious what has happened yet or how each of those lines tracks with the minimum conditions"*.
+- **The review reads three words:** Met, Check this, Not met (`REQ_PILL`). The lines that need the reviewer lead; the
+  met ones fold under *N requirements already met, with nothing for you to check* (`reqDone`, `state.doneOpen`). One
+  line names the minimum condition the review settles, in the funding tab's label (`settlesWords`). The checks, the
+  gate and what Accept requires are unchanged.
+- **The conditions table's third column is *Next step*:** None, The team reviews the request, The team emails the
+  college, The college updates MAP (`stepWord`). It replaces *Email* with *Status only* and *When not met*.
+- **Recommended action says what has happened** (`recOf`): the college named, what it has not sent, what the email asks.
+- **Funding conditions explained** under the summary opens a drawer (`condxHtml`, `CONDX`, `state.condx`): each
+  condition under the funding tab's own label from the snapshot, then how a college meets it, who settles it and what
+  the dashboard does. The sentences were written from the funding tab's code; the driver recalled a document of
+  2026-11-10 that no repo, the vault or the Drive showed, so the wording waits on their read.
+- **A copied or drafted request keeps its Sent word** (`draftedOf`). A copy or a draft counts as asked for 14 days, so
+  the email stopped being due and Sent left with it: the log read *Email copied* for good. The record now reads
+  *Copied Nov 12 and not yet marked as sent* with Sent beside it, and Sent files the receipt with the copy's subject
+  and address. What is due and when is unchanged; the college stays out of *Needs you*.
+- **Rollback:** one squash commit; `git revert` of it restores every piece. No table, migration or stored value changed.
+Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
+
 ## NEXT
 
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
@@ -154,6 +176,9 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
      the workspace is the one door mount, so no other tab's sign-in changes). Guard `tests/funding_door.test.js` e2 to e2c.
    - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
+   - **Open with the driver of 2026-11-12:** whether the Noncredit CPL Lead attestation's review should keep its three
+     extra requirements (the landing page, the assignment, the meetings) now that the role in MAP alone meets the
+     condition; and whether a copied request belongs in *Needs you* until it is marked Sent.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
 1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
    CPL Coordinator card's link).
