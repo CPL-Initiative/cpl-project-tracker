@@ -574,6 +574,7 @@ def build(root):
     course_file = {"schema": SCHEMA, "colleges": names,
                    "courses": {i: {str(at[c]): rows for c, rows in sorted(by.items())}
                                for i, by in sorted(courses.items())}}
+    review = credential_aliases.review_list(root)
     titled = sum(1 for c in cards if c.get("unified_title"))
     waiting = sum(1 for c in cards if not c.get("unified_title")
                   and "unclassified_in_map" in (c.get("tags") or []))
@@ -596,7 +597,11 @@ def build(root):
             "aligned": {"n": sum(1 for r in items if r.get("course")), "of": len(items)},
             "saved_not_folded": report.get("saved_not_folded"),
             "settled_since_run": dropped,
+            # Sam's Exhibits review list (COBIx, issue comment 6827701373, point 2): renamed titles a person should
+            # look at, from the one resolver, so the card and the Commons scorecard agree.
+            "review_list": {"n": len(review), "unacknowledged": sum(1 for r in review if r["kind"].endswith("not acknowledged"))},
         },
+        "review_list": review,
         "steps": counts,
         "colleges": names,
         # The names an issuer or training-site box offers as Sam types (2026-10-31: "it should search
