@@ -74,7 +74,11 @@ The whole ecosystem, end-to-end:
    Exhibit Adoption as it grows; its **Review** queue first: each held title's
    proposed canonical title, named by its aligned course where it has one,
    saved with Keep Current Title or Change to Proposed Title, step tiles as
-   filters, and students per title for a reviewer; then **Credentials**, where
+   filters, and students per title for a reviewer; each card names the
+   statewide or most-used title of the same issuer where one leads, its
+   **Course details** open in the side panel, and the panel changes the
+   related titles that need it to a chosen title (the rename batch's own fold
+   rows); then **Credentials**, where
    a credential's panel sets its issuer and its training sites, each with the
    college it trains for; and **List**, every credential A to Z in a sortable,
    filterable sheet with find and replace, an AI sort that groups like with
@@ -88,6 +92,10 @@ The whole ecosystem, end-to-end:
    "subjects needing review" lands in Common Subjects Reference filtered to
    needs-review), a **Letters** tab embedding the budget-support letter
    curator (iframe to `budget-support/web/curator.html`, passcode-gated),
+   a reviewer-only **First Light** tab (`#first-light`: the daily paintings,
+   the hero photos that cycle on the Library, the Credential Catalog and CPL
+   Pathways, from `library/photos/hero_photos.json`, and Sierra's set; read
+   only, editing is its phase B),
    **Sierra AI** (a conversational RAG assistant — ask CPL questions
    and get streamed answers drawn from the knowledge base, live dashboard
    metrics, and 2,300+ statewide exhibits; it talks to the shared `cpl-chat`

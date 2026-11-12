@@ -251,3 +251,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 <!-- moved from docs/INDEX.md Update history, S640 -->
 - 2026-11-10 (S624 SkyCocoon, light): the identity baseline (#3019), the funding tab's ended-access note (#3022), the decline pieces leave (#3023), a ruling can cross-list (#3025); handoff 625.
+
+## Moved from docs/INDEX.md's Update history (S642, 2026-11-12)
+
+- 2026-11-10 (S633 SkySilverDollar, light): Las Positas (#3056) and De Anza (#3044) merged, the lanes onto the sheet (#3074), the exhibit re-analysis's Jev runner (#3076); Open Asks Sheet 180; handoff 634.
