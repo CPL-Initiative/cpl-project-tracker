@@ -4,10 +4,10 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 876,
+  "file_datasets": 880,
   "external_services": 195,
-  "consumers": 560,
-  "workflows": 67,
+  "consumers": 562,
+  "workflows": 68,
   "data_js_files": 71,
   "tabs": 40
  },
@@ -10062,6 +10062,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_mid_outcomes_compare.py": {
+   "consumers": [
+    {
+     "id": "workflow:mid-outcomes-compare.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_overmerge_apply.py": {
    "consumers": [
     {
@@ -15595,6 +15608,13 @@
      "line": 63
     },
     {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 338
+    },
+    {
      "id": "script:kb/_sweep_exhibit_titles.py",
      "kind": "script",
      "direction": "read",
@@ -18785,6 +18805,28 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/mid_outcomes_compare_*.json": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:mid-outcomes-compare.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/status/mid_outcomes_compare_*.md": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:mid-outcomes-compare.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/status/program-requirements-checked.json": {
@@ -24207,6 +24249,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/mid_outcomes_compare_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/mid_short_code_gate_test.py": {
    "consumers": [
     {
@@ -25428,6 +25483,13 @@
      "line": 114
     },
     {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 327
+    },
+    {
      "id": "script:kb/_subjects_list_recode.py",
      "kind": "script",
      "direction": "read",
@@ -25489,6 +25551,13 @@
      "direction": "read",
      "how": "literal",
      "line": 584
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 314
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -25632,6 +25701,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 313
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -27669,6 +27745,13 @@
      "direction": "read",
      "how": "literal",
      "line": 271
+    },
+    {
+     "id": "script:kb/_mid_outcomes_compare.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 233
     }
    ],
    "main_committers": []
@@ -31719,6 +31802,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/course_outline_census_test.py",
+    "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
     "tests/csr_quarterly_probe_test.py",
     "tests/ctdl_exchange_seed_test.py",
@@ -31950,6 +32034,21 @@
    "urls": [
     "https://claude.ai/code)_"
    ]
+  },
+  "mid-outcomes-compare.yml": {
+   "name": "MID outcomes compare (read-only)",
+   "crons": [],
+   "scripts": [
+    "kb/_mid_outcomes_compare.py"
+   ],
+   "adds": [
+    "kb/status/mid_outcomes_compare_*.md",
+    "kb/status/mid_outcomes_compare_*.json"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
   },
   "moc-crosswalk-sync.yml": {
    "name": "moc-crosswalk-sync",
