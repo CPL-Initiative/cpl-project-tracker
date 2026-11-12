@@ -19,12 +19,12 @@ name: CER procedures
 # rows back. save=preview lists what would save and writes no row. Governance: DR-07.
 #
 # Scheduled after the daily dashboard's primary cron (06:17), which refreshes the queue it reads.
-# On main it shares the daily-dashboard concurrency group with the daily run and the applies (COBIx
-# #3110 finding 7): the daily commits four of this run's files too (kb/exhibits_adoption.json,
-# exhibits_review.json, exhibits_related.json, kb/status/commons.json), and an apply writes the
-# kb_curation rows this run reads and saves beside. GitHub keeps one pending run per group, so this
-# run waiting in the group can be replaced by a later arrival, or replace an earlier one; a run
-# dispatched on another branch keeps a group of its own.
+# Its own concurrency group, kept apart from daily-dashboard on purpose (the S641 conductor): GitHub
+# cancels an older pending run in a group without an alert, so a wider group would let this run and
+# the daily build or an apply cancel each other. Its files and the daily's overlap: the daily commits
+# kb/exhibits_adoption.json, exhibits_review.json, exhibits_related.json and kb/status/commons.json
+# too (COBIx #3110 finding 7), so a push here can meet a conflict; the 07:47 cron sits clear of the
+# daily ladder (06:17, 09:17, 12:17).
 
 on:
   schedule:
@@ -53,7 +53,7 @@ on:
         options: ["on", "preview", "off"]
 
 concurrency:
-  group: ${{ github.ref == 'refs/heads/main' && 'daily-dashboard' || format('cer-procedures-{0}', github.ref) }}
+  group: cer-procedures-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:

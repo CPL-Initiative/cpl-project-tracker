@@ -491,10 +491,6 @@ jobs:
           # The steps after this one read the committed file, as before.
           git checkout -- kb/status/commons.json
           exit "$failed"
-      # Every mapped credential title still resolves in the live index. Red on main since a rename
-      # retired titles, with no workflow running it (S640); run here like the Python tests above.
-      - name: Partner crosswalk (the shared map has no stale credential titles)
-        run: python3 tests/partner_crosswalk_test.py
       # The shared daily-dashboard group, the plan checks outside it, and the one rebuild after a lost
       # push (COBIx #3110 findings 7 to 9), the push loop run in a scratch repo. PyYAML and git.
       - name: Apply workflows share one group; a lost push rebuilds once
@@ -1196,6 +1192,12 @@ jobs:
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
         run: python3 tests/browser_install_single_source_test.py
+      # Every mapped credential title still resolves in the live index. Red on main since a rename
+      # retired titles, with no workflow running it (S640); run like the other Python tests here. Last in
+      # the job on purpose: a red step ends the job, so this one, red until the title fix lands, hides no
+      # other check (tests/apply_concurrency_test.py keeps it last).
+      - name: Partner crosswalk (the shared map has no stale credential titles)
+        run: python3 tests/partner_crosswalk_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It
