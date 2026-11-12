@@ -1,7 +1,7 @@
 ---
 title: A test that pins a figure from a regenerated artifact fails on a data refresh, not on a defect
 created: 2026-09-17
-updated: 2026-09-27
+updated: 2026-11-12
 tags: [methodology, testing, funding, daily-pipeline]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -126,3 +126,13 @@ the second compared the lane's group count with the receipt minus the explained 
 ESL apply folded 8 receipt anchors, `main` read 122 < 129 while every anchor was accounted for.
 #1709 subtracts the merged anchors (122 ≥ 121), which section 6's own unit check already expected.
 **Two checks that describe one population derive from the same partition of it.**
+
+## A third instance: a held card a person ruled on (2026-11-12, S643)
+
+`tests/exhibits_related_actions.test.js` read four real held cards from `kb/exhibits_review.json`. A reviewer ruled
+on one, the nightly rebuild dropped it from the list, and daily commit `6ff6ab3a` failed `suite (6)` on `main` and on
+every open PR. Nothing was broken: a person did the work the file records. The fix (#3178, `c44fdb73`) runs each
+real-data block only while its card is still held, lets a skipped block still report its checks so the ledger's floor
+holds, and fails one check when no card is left, so the guard cannot go quietly vacuous. Data a curator acts on moves
+as surely as data a generator rewrites. Pin the rule to a fixture, and let a live-data block prove only that the
+fixture still looks like the data.

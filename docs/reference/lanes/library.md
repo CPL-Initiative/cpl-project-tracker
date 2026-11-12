@@ -89,19 +89,9 @@ outside RCCD are allowed (cards 1 and 2).
   [`library_filer`](../library_filer.md)) is parked; its Google sign-in was never completed. Its privacy page
   (`privacy.html`, the link on Google's consent screen) stays while that screen links it; S351's UI pass put it on
   First Light's type and dark palette (`npm run a11y -- privacy privacy-dark`, clean).
-- **Reading the folder:** a session reaches it only through the Microsoft 365 connector (claude.ai connectors,
-  connected by Sam with his RCCD account; read and search, no upload). This environment's network refuses
-  `studentrcc.sharepoint.com` too.
-- **The tab:** a SharePoint link files under the stored home `drive` (the `cpl_library_home_ck` value for the
-  team's file home, so no schema change) and reads *Team SharePoint*; a record still linking Google Drive reads
-  *Google Drive* (`homeOf`). Guarded by `tests/library.test.js` (7).
+- **Reading the folder** and **the tab's home label** moved verbatim to the lessons, *Moved from the lane (S643)*.
 
-**What stays in a repo:** build scripts, specs, narration text and voice clips (a
-library voice can be withdrawn), the vault's companion notes, and a film a public
-page plays (the funding explainer's cuts stay where Pages serves them). Pipeline
-outputs (`reports/*.docx`) and source documents under `docs/reference/` are
-inputs, not deliverables. Claude artifacts (decision sheets, mockups) stay on
-claude.ai.
+**What stays in a repo** moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S643)*.
 
 **A shareable Claude artifact gets a Library record, routinely (Sam, 2026-10-20)**: CLAUDE.md carries the rule; the first record and its receipt moved verbatim to `docs/library_lessons.md` (*Moved from the lane, S557*).
 
@@ -130,6 +120,14 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   steps, he ruled *"the addresses are OK"* on slide 4's two screens, and it published as Version 1 with
   `img/1.webp` to `img/5.webp` (library-publish run 42940831782; read back live). **NEXT 0:** his List publicly, and
   the link from the public funding dashboard that his brief asks for.
+- **The JST guide (S642):** record `7ca43e3c`, Version 1 (commit `41eeb44a`); `public_listed` false: List publicly
+  is Sam's press, linked from the funding dashboard's 75% JST condition.
+- **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
+  when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Its first real use is Sam's.
+- **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
+  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged, not
+  deployed; both wait for Sam's "deploy" (Open Asks Sheet 186; `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function
+  per dispatch). Whether `_shared` bundles is unproven until the first deploy.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A

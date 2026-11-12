@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 642,
-  "moniker": "SkyKestrel",
+  "session": 643,
+  "moniker": "SkyLark",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_643_handoff.md",
+  "handoff": "docs/session_644_handoff.md",
   "calls": [
     {
       "title": "Correct seven triage titles?",
@@ -33,13 +33,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-12T15:02:52Z",
+  "written_at": "2026-11-12T22:15:43Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The classifier proposes a title in use before a new one",
-    "text": "The proposal step takes the statewide or most used title of the same issuer before a new one, and names an industry certification by its official name rather than a course title, on Sam's two rulings of 2026-11-12. It is in build; its report counts the Proposed cards it changes, and it merges on a green test after review."
+    "title": "Thirty-eight cards want an official name",
+    "text": "The proposal step holds 38 industry certification cards until each carries the official name of the certificate or license, one web search each. The next nightly run rebuilds the review list, and a returned title is either on the acknowledged list or reported."
   },
   "changes": [
+    {
+      "at": "2026-11-12T21:16:02Z",
+      "text": "Returned credential titles are now an acknowledged list. The three credit by exam titles that June saves brought back are on it, a title not on it raises a warning, and the Review view lists the renamed titles at its own address. Review list 12, unacknowledged 0. Pull request 3179 merged."
+    },
     {
       "at": "2026-11-12T14:49:43Z",
       "text": "A ghost delete now holds when a case-only successor is absent, and its plan refuses a before-row under the disclosure floor of 10. Pull request 3166 merged."

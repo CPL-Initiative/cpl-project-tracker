@@ -238,3 +238,27 @@ The Governance tab paragraph and the CI and concurrency paragraph, verbatim as t
 - Worked: one worker per concern, each opening its own PR; readers by dimension, then one second reader on the delete;
   COBIx reviewing each push within minutes; one scheduled check-in per wait; worktrees removed at merge.
 
+
+## 2026-11-12 (S643 SkyLark, the conductor): live data in a test, and a migration that applies on push
+
+- `main` went red from a person's work: `tests/exhibits_related_actions.test.js` read held cards from
+  `kb/exhibits_review.json`, a reviewer ruled on one, and the daily commit failed `suite (6)` on `main` and every open
+  PR (#3178; KB note `methodology-a-test-that-pins-a-generated-figure-fails-on-a-data-refresh`, third instance). The
+  Funding Follow-up Dashboard session, live beside this one, reported it.
+- `supabase-migrate.yml` applies on the push of a `kb/migrations/.apply` change to a `claude/**` branch, not on merge:
+  `s643_first_light_marks` was live at 21:31Z and #3181 merged at 22:01Z. The receipt commit that run pushes back to
+  the branch gets no `test` run. The worker stopped and asked, which was right; brief the next one with both facts.
+- A stacked PR conflicts after its base squash-merges: merge `main` and take `main`'s copy of the base's files.
+- Six first-round PRs each conflicted with `main` once, all on `tests/check_floor.json` and the dependency map.
+  Merge them one at a time and expect a `main` merge on each after the first.
+- `grep` on `tests/check_floor.json` prints its `_note` of about 10,000 tokens; pipe through `cut -c1-200`.
+- A completed worker's notification repeats its whole report; read it once.
+- Deleting a scheduled check-in that covered two PRs dropped the wait on the second; re-arm one for what is left.
+- The Agent tool's worktree isolation fails when the shell has reset to `/home/user`; `cd` into the tracker first.
+- Disk: each worktree is 4.4 GB, and 252 GB showed 6.2 GB free with four; cap at four and remove each at merge.
+- The container restarted at about 22:20Z and stopped the documents worker mid-checkpoint. Its unpushed commit and
+  staged files survived in its worktree, and its vault commit had already been pushed. Push each repo as soon as it
+  has a coherent commit.
+- Worked: one combined finding list per PR after all readers report; a second reader briefed to refute the fixes
+  (it found three more on First Light). COBIx had not commented on any S643 PR by 22:05Z; the conductor posted on
+  #3110, #2962 and #3153.
