@@ -72,6 +72,14 @@ def _most_common(values):
     return collections.Counter(values).most_common(1)[0][0] if values else None
 
 
+def _group_mode(values):
+    """One mode for a (college, title) row. Noncredit (N) on ANY of its MAP rows
+    wins: a title two exhibits share must not lose its N to a majority vote."""
+    values = [v for v in values if v]
+    nc = next((v for v in values if v.rstrip().endswith("(N)")), None)
+    return nc or _most_common(values)
+
+
 def _distinct(values, cap):
     seen, out = set(), []
     for v in values:
@@ -90,7 +98,9 @@ def build_rows(report, disciplines=None):
     if not ds:
         raise SystemExit(f"{VIEW} is not in this pull")
     cm = {c: i for i, c in enumerate(ds.get("columnName") or [])}
-    need = ["Exhibit Title", "Articulation College", "ExhibitID", "Course"]
+    # The mode column is required: without it every mode would promote as null and
+    # the noncredit count would fall back to titles alone with nothing failing.
+    need = ["Exhibit Title", "Articulation College", "ExhibitID", "Course", "CPL Mode of Learning"]
     missing = [c for c in need if c not in cm]
     if missing:
         raise SystemExit(f"{VIEW} is missing columns: {missing}")
@@ -100,6 +110,7 @@ def build_rows(report, disciplines=None):
         v = row[i] if i is not None and i < len(row) else None
         return str(v).strip() if v is not None else ""
 
+    build_rows.merged_ids = build_rows.mixed_modes = 0
     groups = collections.OrderedDict()
     for row in ds.get("columnValue") or []:
         college = cell(row, "Articulation College")
@@ -124,9 +135,13 @@ def build_rows(report, disciplines=None):
             "sample_courses": _distinct(courses, SAMPLE),
             "sample_credit_recs": _distinct((cell(r, "Credit Recommendation") for r in grp), SAMPLE),
             "discipline": disciplines.get(top) or None,
-            "learning_mode": _most_common(cell(r, "CPL Mode of Learning") for r in grp),
+            "learning_mode": _group_mode(cell(r, "CPL Mode of Learning") for r in grp),
             "courses": sorted(_distinct(courses, COURSES_CAP)),
         })
+        if len(ids) > 1:
+            build_rows.merged_ids += 1
+        if len({cell(r, "CPL Mode of Learning") for r in grp} - {""}) > 1:
+            build_rows.mixed_modes += 1
     return rows
 
 
@@ -203,6 +218,8 @@ def main(argv):
     print(f"chatbox-exhibits: {s['rows']} rows at {s['colleges']} colleges; "
           f"{s['with_mode']} carry a mode of learning; "
           f"{s['noncredit_mode_rows']} Noncredit (N) at {s['noncredit_mode_colleges']} colleges.")
+    print(f"chatbox-exhibits: {build_rows.merged_ids} rows join more than one ExhibitID under one title; "
+          f"{build_rows.mixed_modes} carry more than one mode across their MAP rows.")
     if out:
         with open(out, "w", encoding="utf-8") as f:
             json.dump(rows, f, ensure_ascii=False)
@@ -211,6 +228,10 @@ def main(argv):
         return 0
     if s["rows"] < MIN_ROWS:
         print(f"chatbox-exhibits: only {s['rows']} rows (a fallback pull?); the live table stands.")
+        return 0
+    if s["with_mode"] < s["rows"] * 0.5:
+        print(f"chatbox-exhibits: only {s['with_mode']} of {s['rows']} rows carry a mode of learning; "
+              "the live table stands.")
         return 0
     key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_SERVICE_ROLE_KEY")
     if not key:

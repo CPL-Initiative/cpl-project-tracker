@@ -270,6 +270,14 @@ def main():
     check("9d: the daily build refreshes the exhibit table before it counts",
           0 < build.find("chatbox/sync_chatbox_exhibits.py") < build.find("funding/_build_funding_performance.py"))
 
+    import datetime
+    d0 = datetime.date(2026, 11, 12)
+    check("9e: a table never refreshed, or last changed days ago, prints a warning; a fresh one and an old payload do not",
+          "never been refreshed" in (bfp.exhibits_stale_warning({"exhibits_synced_at": None}, d0) or "")
+          and "5 days ago" in (bfp.exhibits_stale_warning({"exhibits_synced_at": "2026-11-07T06:20:00+00:00"}, d0) or "")
+          and bfp.exhibits_stale_warning({"exhibits_synced_at": "2026-11-12T06:20:00+00:00"}, d0) is None
+          and bfp.exhibits_stale_warning({}, d0) is None)
+
     print(f"\n{checks[0] - len(failures)}/{checks[0]} passed")
     sys.exit(1 if failures else 0)
 

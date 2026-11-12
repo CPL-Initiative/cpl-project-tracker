@@ -82,6 +82,18 @@ def main():
     check("2c: the discipline comes from the TOP lookup, the collaborative type from MAP's column",
           a1["discipline"] == "Engineering and Industrial Technologies"
           and a1["collaborative_type"] == "Local" and weld["collaborative_type"] == "CCC")
+    mixed = [row("Gamma College", "MAPCXS-M-1-001", "Shared Title", f"C {i}", SS) for i in range(3)] \
+        + [row("Gamma College", "MAPCXN-M-1-001", "Shared Title", "NC 1", NC)]
+    mrows = mod.build_rows([{"viewName": mod.VIEW, "columnName": COLS, "columnValue": mixed}])
+    check("2e: Noncredit on any MAP row of a title wins over a majority of other modes, and the run counts it",
+          mrows[0]["learning_mode"] == NC and mod.build_rows.merged_ids == 1 and mod.build_rows.mixed_modes == 1)
+    nomode = [c for c in COLS if c != "CPL Mode of Learning"]
+    try:
+        mod.build_rows([{"viewName": mod.VIEW, "columnName": nomode, "columnValue": []}])
+        refused = False
+    except SystemExit:
+        refused = True
+    check("2f: a pull without the mode column stops the run (it would promote every mode as null)", refused)
     s = mod.summarize(rows)
     check("2d: the summary counts the Noncredit rows", s["noncredit_mode_rows"] == 1 and s["noncredit_mode_colleges"] == 1)
 

@@ -765,6 +765,28 @@ def _loose(s):
     return re.sub(r"\s+", " ", str(s or "")).strip().lower()
 
 
+def exhibits_stale_warning(data, today=None, max_days=2):
+    """A line to print when the exhibit table the count reads has not been
+    refreshed: the nightly refresh is non-fatal, so a stalled one must say so.
+    `exhibits_synced_at` moves when a row changes, so a quiet stretch of days
+    reads as stale here too; that is the safe direction."""
+    if "exhibits_synced_at" not in data:
+        return None
+    stamp = data.get("exhibits_synced_at")
+    if not stamp:
+        return ("funding-performance: WARNING chatbox_exhibits has never been refreshed; "
+                "the noncredit exhibit count reads its first load.")
+    today = today or date.today()
+    try:
+        age = (today - date.fromisoformat(str(stamp)[:10])).days
+    except ValueError:
+        return None
+    if age > max_days:
+        return (f"funding-performance: WARNING chatbox_exhibits last changed {age} days ago ({str(stamp)[:10]}); "
+                "check the 'Refresh Sierra's exhibit list' step.")
+    return None
+
+
 def nc_outcome_counts(data, resolve, feeder_resolve, scopes, crosswalk=()):
     """Institution key -> {nc_cdcp, nc_exh, nc_course}, plus unmatched COCI names.
 
@@ -1514,6 +1536,9 @@ def main():
     if nc_data:
         scopes = _origin_scopes()
         xwalk = load_nc_crosswalk(sys.argv)
+        warn = exhibits_stale_warning(nc_data)
+        if warn:
+            print(warn)
         nc, nc_unmatched = nc_outcome_counts(nc_data, resolve, feeder_resolve, scopes, xwalk)
         apply_nc_counts(payload, nc, scopes)
         sw = payload["statewide"]

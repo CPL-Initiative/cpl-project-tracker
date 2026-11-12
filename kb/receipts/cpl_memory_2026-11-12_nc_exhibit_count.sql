@@ -1,10 +1,10 @@
 -- cpl_memory rows for the noncredit exhibit count / chatbox_exhibits refresh (#3185).
--- 2026-11-12. INSERT-only, ON CONFLICT DO NOTHING. Rollback:
+-- 2026-11-12 (the first row's title and detail narrowed the same hour, COBIx's finding on #3185). INSERT-only, ON CONFLICT DO NOTHING. Rollback:
 --   delete from cpl_memory where author = 'nc-exhibit-count-2026-11-12@bot';
 insert into cpl_memory (kind, slug, title, summary, detail, tags, source, status, event_date, author, verified_at, verified_by) values
-('decision', 'sam-malone-rolls-with-funding-calls-2026-11-12', 'Sam: Malone makes the calls Sam can make',
+('decision', 'sam-malone-rolls-with-funding-calls-2026-11-12', 'Sam: Malone rolls with the noncredit exhibit count changes (2026-11-12)',
  'Sam, in session 2026-11-12: "this is Sam--let Malone roll with anything I can do he can do better:)". Asked who was driving a change to what counts toward the noncredit share on the public funding page.',
- 'Said after "All 3 steps seem appropriate" on: the noncredit exhibit count reads the daily MAP pull, it reads MAP''s mode of learning, and chatbox_exhibits refreshes nightly. Session reading (mine, not his words): Malone''s go-ahead stands where Sam''s would.',
+ 'Said after "All 3 steps seem appropriate" on: the noncredit exhibit count reads the daily MAP pull, it reads MAP''s mode of learning, and chatbox_exhibits refreshes nightly. Scope: those three steps on the funding page''s noncredit exhibit count. The words are not a standing grant over migrations, privacy or other data calls; a later session asks again.',
  array['funding', 'governance', 'decision', 'team'], 'Sam, in session 2026-11-12 (verbatim)', 'verified', '2026-11-12', 'nc-exhibit-count-2026-11-12@bot', now(), 'Sam Lee'),
 ('decision', 'nc-exhibit-count-reads-map-mode-of-learning-2026-11-12', 'NC-1 counts an exhibit MAP lists with the Noncredit mode of learning (channel 5)',
  'Approved in session 2026-11-12 (Sam; finding by Malone): an exhibit MAP lists with the Noncredit (N) mode of learning counts toward NC-1, beside the four title and attestation channels; one exhibit counts once. PR #3185.',
