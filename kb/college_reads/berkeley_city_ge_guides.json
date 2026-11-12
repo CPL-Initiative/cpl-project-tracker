@@ -1,0 +1,15 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Berkeley City College, fourth read. The third (berkeley_city_ge_tabs, run 43139721172) listed the tabs: under Degree and Certificate Requirements (list 41810), 41811 'Associate Degree Requirements' and 41812 'Certificate Requirements'; under Transfer Information (list 41800), 41802 'California General Education Transfer Curriculum (Cal-GETC)' and 41805 'Associate Degrees for Transfer (ADT)' among nine. Opening a tab list as an entry printed nothing (as at Butte), so this read opens each tab as an entry of its list (cq_view) and prints each tab's own page (_getPage) besides. Asked: Cal-GETC's areas, units and any total; the local A.A./A.S. general education pattern's units; any minimum-60, electives or double-count sentence. No model call.",
+ "college": "Berkeley City College",
+ "questions": {
+  "ge_units": "What do Berkeley City's Associate Degree Requirements, Cal-GETC and ADT tabs print: areas, each area's units, a total, and any minimum-60, electives or double-count sentence?"
+ },
+ "keywords": ["Cal-?GETC", "General Education", "\\b\\d+\\s*(?:semester\\s*)?units", "[Tt]otal", "minimum", "double", "Electives?"],
+ "pages": [
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811", "answers": ["ge_units"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/40736/41800/41802", "answers": ["ge_units"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/catalog/view//iq/40736/41800/41805", "answers": ["ge_units"], "cq_view": true, "cq_catalog": 10327},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41811", "answers": ["ge_units"]},
+  {"url": "https://bcc.curriqunet.com/Catalog/_getPage?catalogId=10327&id=41802", "answers": ["ge_units"]}
+ ]
+}
