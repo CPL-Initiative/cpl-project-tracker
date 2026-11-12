@@ -845,6 +845,13 @@ jobs:
       # counts only a course COCI confirmed. Same non-required check.
       - name: Noncredit outcome counts (funding/_build_funding_performance.py)
         run: python3 tests/funding_nc_counts_test.py
+      # The nightly refresh of Sierra's exhibit table (2026-11-12): it stood
+      # unrefreshed from May, and Las Positas read 9 noncredit exhibits against
+      # 47 in MAP. One row per college and title, the mode of learning on every
+      # row, chunked staging, and a promote that refuses a short pull. Pure
+      # stdlib plus openpyxl, no network.
+      - name: Sierra's exhibit table refresh (chatbox/sync_chatbox_exhibits.py)
+        run: python3 tests/chatbox_exhibits_sync_test.py
       # The college join (S544): every funding roster row is reached by exactly one college, so a short-name change
       # cannot drop a college's outcomes and JST condition into `unmatched` (CCSF and Desert, 2026-10-31 to 11-02).
       - name: Funding college join (funding/_build_funding_performance.py)

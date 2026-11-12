@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-12_library_funding_followup_guide.sql
-name=library_funding_followup_guide
+file=kb/migrations/2026-11-12_chatbox_exhibits_refresh.sql
+name=chatbox_exhibits_refresh

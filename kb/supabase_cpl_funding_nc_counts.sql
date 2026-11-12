@@ -19,7 +19,11 @@
 --                        category: its CDCP course count and CDCP titles
 --     exhibits           every MAP exhibit, keyed by id or title (61 carry no
 --                        id), with its normalized title and the normalized
---                        titles of its target credit courses
+--                        titles of its target credit courses; nc_mode is
+--                        true when MAP lists its mode of learning as Noncredit
+--                        (N) (2026-11-12; chatbox_exhibits is refreshed nightly
+--                        by chatbox/sync_chatbox_exhibits.py, and the targets
+--                        read every course, where S471 read a sample of five)
 --     attestations       this fiscal year's standing attestations: the exhibits
 --                        and the portfolio course the strike team named
 --     portfolio_courses  each attested control number COCI confirms: a CDCP
@@ -50,12 +54,12 @@ as $$
     select college, coalesce(exhibit_id::text, 't:' || exhibit_title) as xid,
            min(exhibit_id::text) as exhibit_id, min(exhibit_title) as title,
            min(public.cpl_course_title_norm(exhibit_title)) as title_norm,
+           coalesce(bool_or(learning_mode ~ '\(N\)\s*$'), false) as nc_mode,
            array_agg(distinct code) filter (where code is not null) as codes
-    from public.chatbox_exhibits left join lateral unnest(sample_courses) as code on true
+    from public.chatbox_exhibits
+    left join lateral unnest(case when cardinality(courses) > 0 then courses else sample_courses end) as code on true
     group by 1, 2
   ),
-  -- A join, never a subquery per exhibit: 2,400 exhibits against 142,000 courses
-  -- ran past a minute that way (S471).
   tgt as (
     select e.college, e.xid, array_agg(distinct t.title_norm) as targets
     from (select college, xid, unnest(codes) as code from ex) e
@@ -64,7 +68,7 @@ as $$
     group by 1, 2
   ),
   ext as (
-    select ex.college, ex.xid, ex.exhibit_id, ex.title, ex.title_norm, coalesce(tgt.targets, '{}') as targets
+    select ex.college, ex.xid, ex.exhibit_id, ex.title, ex.title_norm, ex.nc_mode, coalesce(tgt.targets, '{}') as targets
     from ex left join tgt on tgt.college = ex.college and tgt.xid = ex.xid
   ),
   att as (
@@ -81,9 +85,10 @@ as $$
   )
   select jsonb_build_object(
     'fiscal_year', public.cpl_funding_fy(current_date),
+    'exhibits_synced_at', (select max(synced_at) from public.chatbox_exhibits),
     'institutions', coalesce((select jsonb_agg(jsonb_build_object('college', college, 'cdcp', cdcp, 'titles', to_jsonb(titles)) order by college) from inst), '[]'),
     'exhibits', coalesce((select jsonb_agg(jsonb_build_object('college', college, 'xid', xid, 'exhibit_id', exhibit_id, 'title', title,
-                          'title_norm', title_norm, 'targets', to_jsonb(targets)) order by college, xid) from ext), '[]'),
+                          'title_norm', title_norm, 'nc_mode', nc_mode, 'targets', to_jsonb(targets)) order by college, xid) from ext), '[]'),
     'attestations', coalesce((select jsonb_agg(jsonb_build_object('college', college, 'status', status,
                           'exhibits', attested_exhibits, 'portfolio_course', portfolio_course) order by college) from att), '[]'),
     'portfolio_courses', coalesce((select jsonb_agg(jsonb_build_object('college', college, 'control_number', control_number)
