@@ -142,7 +142,7 @@ word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptan
 (`acceptMail`).
 
 **LIVE once its PR merges: the plainer review, the conditions panel and the copied email (2026-11-12, asked in session
-from the MAP account; the driver did not give a name).** The concern, in the driver's words: the recommended action
+from the MAP account; asked who was driving, the reply was *"I think Malone is the one driving this session"*, so it is recorded as Malone's, likely).** The concern, in the driver's words: the recommended action
 *"is not immediately clear to someone who isn't swimming in this water"*, and *"some of the wording doesn't make it
 immediately obvious what has happened yet or how each of those lines tracks with the minimum conditions"*.
 - **The review reads three words:** Met, Check this, Not met (`REQ_PILL`). The lines that need the reviewer lead; the
@@ -176,7 +176,7 @@ Guards `tests/csm_workspace.test.js` 3b2 to 3b6, 5d1, 5d2, 5d9 to 5d9c.
      the workspace is the one door mount, so no other tab's sign-in changes). Guard `tests/funding_door.test.js` e2 to e2c.
    - **Open with Malone:** Recommended action above or below the conditions; the panel under the record or as a third
      column; whether the row badges earn their place; a menu or visible words for the filter. He has more to send.
-   - **Open with the driver of 2026-11-12:** whether the Noncredit CPL Lead attestation's review should keep its three
+   - **Open with Malone (the 2026-11-12 session):** whether the Noncredit CPL Lead attestation's review should keep its three
      extra requirements (the landing page, the assignment, the meetings) now that the role in MAP alone meets the
      condition; and whether a copied request belongs in *Needs you* until it is marked Sent.
    - **Open with Sam:** whether a name with *Funding* in it still fits when a second activity joins (his 2026-11-02 plan).
