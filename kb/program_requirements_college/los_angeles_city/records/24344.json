@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "English as a Second Language - Civics",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11429,
+  "input_tokens": 11067,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11429,
-    "output_tokens": 1193,
+    "input_tokens": 11067,
+    "output_tokens": 1210,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1193,
+  "output_tokens": 1210,
   "output_tokens_details": {
-   "thinking_tokens": 250
+   "thinking_tokens": 259
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06958,
- "ms": 10260,
- "seconds": 10.6,
+ "cost_usd": 0.06847,
+ "ms": 10145,
+ "seconds": 10.3,
  "parts": null,
  "error": null,
  "score": {
@@ -206,12 +206,26 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading is printed as 'English a a Second Language - Civics' (apparent typo for 'as a'); the award is a Certificate of Competency (State Code 24344).",
-   "The section's description refers to 'The Beginning English as a Second Language certificate of competency', which appears to be carried over from another program; reviewer should check.",
-   "ESLCVCS 043CE is printed with the title 'ESL & CIVICS - INTERMEDIATE HIGH A' (same as 034CE); the closed list titles it 'ESL & Civics - Intermediate B'. Recorded by code.",
-   "Total Lecture Hrs 972 equals the nine required courses at 108 hours each.",
-   "The text at the top of page 237 (REQUIRED COURSES ESLCVCS 032CE, ESL NC 049CE, etc., and elective courses) belongs to the preceding program, not this award, and was not used."
+   "Section heading printed with a typo ('English a a Second Language - Civics'); the award is printed as a Certificate of Competency.",
+   "Total Lecture Hrs: 972 recorded as total_units in hours; nine required courses at 108 hours each.",
+   "Catalog prints ESLCVCS 043CE with the title 'ESL & CIVICS - INTERMEDIATE HIGH A' (same title as 034CE), while the closed list titles it 'ESL & Civics - Intermediate B'; likely a catalog title typo, code matches.",
+   "Program description refers to 'The Beginning English as a Second Language certificate of competency', apparently a leftover name; reviewer may verify.",
+   "Description mentions 'enhanced job opportunities' but names no specific careers, so careers is empty.",
+   "ESLCVCS 030CE-033CE also appear in the Vocational English as a Second Language II section, which was not used for this record."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "e5c0aa40671de7d8",
+ "source_codes": [
+  "ESLCVCS30CE",
+  "ESLCVCS31CE",
+  "ESLCVCS32CE",
+  "ESLCVCS33CE",
+  "ESLCVCS34CE",
+  "ESLCVCS41CE",
+  "ESLCVCS42CE",
+  "ESLCVCS43CE",
+  "ESLCVCS44CE"
+ ],
+ "source_coverage": 1.0
 }

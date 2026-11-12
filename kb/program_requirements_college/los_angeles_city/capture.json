@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 258,
- "started": "2026-11-12T02:04:10Z",
+ "started": "2026-11-12T11:50:06Z",
  "pdf": {
   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
   "access": "ok",
@@ -3411,7 +3411,7 @@
   ]
  },
  "loads": 1,
- "seconds": 115.0,
+ "seconds": 116.0,
  "found": 250,
  "by_method": {
   "no_closed_list": 2,
@@ -3858,6 +3858,7 @@
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_city",
   "kept": 105,
+  "kept_moved": 0,
   "programs": 145,
   "list": [
    {
@@ -5310,7 +5311,10 @@
     "was_coverage": 0.989,
     "was_method": "pdf_pages"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
  },
- "run": "43138495821"
+ "run": "43212072618"
 }

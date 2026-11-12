@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "LAW, PUBLIC POLICY, AND SOCIETY",
  "award": "A.A- T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=165",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 14334,
+  "input_tokens": 14211,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 14334,
-    "output_tokens": 4510,
+    "input_tokens": 14211,
+    "output_tokens": 6071,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4510,
+  "output_tokens": 6071,
   "output_tokens_details": {
-   "thinking_tokens": 1370
+   "thinking_tokens": 2653
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14754,
- "ms": 33578,
- "seconds": 33.9,
+ "cost_usd": 0.17826,
+ "ms": 46210,
+ "seconds": 46.4,
  "parts": null,
  "error": null,
  "score": {
@@ -75,30 +75,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     30.0,
     31.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    30.0,
+    31.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     64.0,
+     65.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 8,
    "courses": 0,
-   "count": 0,
+   "count": 8,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -107,42 +127,48 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS",
+   "section_heading": "Law, Public Policy, and Society Associate in Arts (AA-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 30,
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Use evidence and data to develop arguments related to pertinent legal, public policy, and societal issues.",
+    "Successfully complete the reasoning and formal or informal logic coursework, and provide evidence through coursework that students can successfully apply those skills.",
+    "Understand the role of law and public policy in private and public life.",
+    "Recognize and implement the connections between theory and practice.",
+    "Be able to find, interpret, integrate, synthesize and apply information effectively from multiple sources to legal, public policy, and societal issues.",
+    "Understand ways in which privilege and marginality shape lives, opportunities and communities, and understand how to effectively respond to these through community action, the law or public policy.",
+    "Understand how to work cooperatively with communities and other constituencies.",
+    "Coherently and compellingly communicate – in both verbal and written form – arguments, policies and actions pertinent to the law, public policy, and society."
+   ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "MAJOR CORE COURSES",
+    "name": "MAJOR CORE COURSES (24-25 UNITS)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -565,15 +591,66 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section at page 165 with 'PROGRAM REQUIREMENTS'; the program heading, description, total units, GE pattern, outcomes and careers for the Law, Public Policy, and Society A.A.-T were presumably on the preceding page and are not in the text, so total_units, degree_total, ge_pattern, outcomes and careers are left empty/null.",
-   "Major core printed as 24-25 units plus List A 6 units; no overall major total is printed in the excerpt, so none was computed.",
-   "Each major core area (Understanding the Law, Ethics, Oral Communication, Written Communication, Critical Thinking, Quantitative Reasoning, US History, American Government) requires one course; 'or' options are recorded as alternatives.",
-   "List A: the two courses must come from two different areas (Areas 1-8) and must not have been used for the major core; the area grouping is flattened into one choose_courses block.",
-   "Area 5 prints 'AND' between HEALTH 051 and BUS 001, apparently a typo for 'OR' given the surrounding list; reviewer should check.",
-   "Catalog prints 'ADM JUS 002 CONCEPT OF CRIMINAL LAW' and 'SOC 011 RACE AND ETHICS RELATIONS' (likely typos); codes match the closed list.",
-   "ADM JUS 001, CORR 001, LAW 003, LAW 033, AFRO AM 004 and AFRO AM 005 appear in the section but not in the closed list; marked as catalog additions.",
-   "Following sections (Paralegal Studies A.A., Paralegal Studies and Pathway to Law School certificates, History) belong to other programs and were not read."
+   "Major core is printed under sub-headings (Understanding the Law, Ethics, Oral Communication, Written Communication, Critical Thinking, Quantitative Reasoning, US History); each sub-heading is recorded as one core entry with its 'or' options as alternatives. POLS C1000 is printed under the US History heading without an 'or' and is read as a separate required course (core sums to 24-25, matching the printed total).",
+   "List A rule: 2 courses from two different areas (Areas 1-8: Administration of Justice/Criminal Justice/Criminology, Business, Economics, Political Science, Public Policy, Diversity, College Success, Internship/Fieldwork), and courses must not have been used for the major core. Recorded as one choose_courses block; area constraint is in this note only.",
+   "Area 5 prints 'AND' between HEALTH 051 and BUS 001 where every other row is 'OR'; likely a typo, read as one of the options. Reviewer should check.",
+   "Catalog prints codes with leading zeros (LAW 007, PHILOS 020, etc.) and 'HIST C1001'; these were matched to the closed list's LAW 7, PHILOS 20, HISTC1001, etc. and not flagged as additions.",
+   "degree_total recorded from 'Total Units: Minimum of 60' printed in this award's heading; ge_units 34 taken from the ADT paragraph's CalGETC requirement (34 semester units).",
+   "Page headings indicate the 2026-2027 catalog, matching the requested year."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "05c3b4dd3b910349",
+ "source_codes": [
+  "ADMJUS2",
+  "ADMJUS3",
+  "ADMJUS4",
+  "ADMJUS67",
+  "ADMJUS8",
+  "AFROAM7",
+  "ANTHRO102",
+  "ASIAN1",
+  "BUS1",
+  "BUS15",
+  "CHICANO4",
+  "CHICANO47",
+  "CHICANO7",
+  "CHICANO8",
+  "COMM104",
+  "COMM122",
+  "COMM151",
+  "COMMC1000",
+  "COOPED395",
+  "COUNSEL40",
+  "ECONC2001",
+  "ECONC2002",
+  "ENGLC1000",
+  "ENGLC1001",
+  "GEOG2",
+  "HEALTH101",
+  "HEALTH51",
+  "HISTC1001",
+  "HISTC1002",
+  "INTBUS1",
+  "LAW1",
+  "LAW2",
+  "LAW7",
+  "MATH229",
+  "PHILOS20",
+  "PHILOS8",
+  "POLSC1000",
+  "POLSCI2",
+  "POLSCI5",
+  "POLSCI60",
+  "POLSCI7",
+  "PUBREL1",
+  "SOC11",
+  "SOC125",
+  "SOC2",
+  "SOC31",
+  "SOC32",
+  "STATC1000",
+  "STATC1000E"
+ ],
+ "source_coverage": 1.0
 }

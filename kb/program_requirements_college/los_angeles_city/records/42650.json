@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "RETAIL SUPERVISORY AND MANAGEMENT",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8139,
+  "input_tokens": 6787,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8139,
-    "output_tokens": 1279,
+    "input_tokens": 6787,
+    "output_tokens": 1318,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1279,
+  "output_tokens": 1318,
   "output_tokens_details": {
-   "thinking_tokens": 298
+   "thinking_tokens": 345
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05814,
- "ms": 11395,
- "seconds": 11.7,
+ "cost_usd": 0.05351,
+ "ms": 10726,
+ "seconds": 10.9,
  "parts": null,
  "error": null,
  "score": {
@@ -93,7 +93,7 @@
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Retail Supervisory and Management",
+   "section_heading": "Retail Supervisory and Management Certificate of Completion",
    "measure": "hours",
    "total_units": {
     "min": 114,
@@ -131,7 +131,9 @@
     "Employ customer service strategies.",
     "Demonstrate creative and effective leadership skills."
    ],
-   "careers": []
+   "careers": [
+    "retail careers"
+   ]
   },
   "blocks": [
    {
@@ -225,12 +227,23 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog labels this award a Certificate of Completion (State Code 42650); total printed as 'Total Lecture Hrs: 114 - 216'.",
-   "Printed total 114-216 hours is consistent with 108 required hours plus one elective of 6 to 108 hours.",
-   "VOC ED 279CE (Career Exploration: Office Environment Careers, 9 hrs) is not in the closed list and is recorded as a catalog addition.",
-   "Catalog prints VOC ED 094CE title as 'RETAILING SMART: CUSTOMER SERVICE AND SALES'; closed list title is 'RETAILING SMARTS: CUSTOMER SERVICE AND SALES'.",
-   "Description mentions students advancing 'in their retail careers' but names no specific career or job title; careers left empty."
+   "Noncredit certificate of completion counted in hours; total from 'Total Lecture Hrs: 114 - 216'. The range matches 108 required hours plus one elective of 6 to 108 hours.",
+   "VOC ED 279CE (Career Exploration: Office Environment Careers, 9 hrs) is in the elective list but not in the closed list; recorded as a catalog addition.",
+   "Catalog prints the VOC ED 094CE title as 'RETAILING SMART: CUSTOMER SERVICE AND SALES'; the closed list has 'RETAILING SMARTS'.",
+   "Career entry 'retail careers' comes from the description's 'advance in their retail careers'; a reviewer may judge whether this counts as a named career field."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "9aeb2cd5a9186bb3",
+ "source_codes": [
+  "BSICSKL72CE",
+  "VOCED128CE",
+  "VOCED230CE",
+  "VOCED236CE",
+  "VOCED238CE",
+  "VOCED3CE",
+  "VOCED53CE",
+  "VOCED94CE"
+ ],
+ "source_coverage": 1.0
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "CHILD DEVELOPMENT ASSOCIATE TEACHER",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13362,
+  "input_tokens": 12872,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13362,
-    "output_tokens": 2146,
+    "input_tokens": 12872,
+    "output_tokens": 2125,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2146,
+  "output_tokens": 2125,
   "output_tokens_details": {
-   "thinking_tokens": 905
+   "thinking_tokens": 849
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09637,
- "ms": 17398,
- "seconds": 17.7,
+ "cost_usd": 0.09399,
+ "ms": 18075,
+ "seconds": 18.3,
  "parts": null,
  "error": null,
  "score": {
@@ -136,13 +136,13 @@
   },
   "blocks": [
    {
-    "name": "REQUIRED COURSES",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 16,
+     "max": 16
     },
     "courses": [
      {
@@ -183,7 +183,7 @@
     ]
    },
    {
-    "name": "REQUIRED COURSES: CH DEV 172",
+    "name": "Required Courses: CH DEV 172",
     "rule": "all",
     "minimum": null,
     "option_group": "CH DEV 172 or CH DEV 084-1 and 084-2",
@@ -202,7 +202,7 @@
     ]
    },
    {
-    "name": "REQUIRED COURSES: CH DEV 084-1 AND CH DEV 084-2",
+    "name": "Required Courses: CH DEV 084-1 and CH DEV 084-2",
     "rule": "all",
     "minimum": null,
     "option_group": "CH DEV 172 or CH DEV 084-1 and 084-2",
@@ -231,14 +231,23 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'REQUIRED COURSES (16 UNITS)' over the whole list, including the final choice of CH DEV 172 (1 unit) OR CH DEV 084-1 AND CH DEV 084-2 (0.5 + 0.5). The 16 is recorded as total_units; the list is split into a required block (15 units) and two option blocks (1 unit each), so no block stated is set.",
-   "Catalog prints codes zero-padded (CH DEV 001, 002, 007, 010); these are treated as the closed-list CH DEV 1, 2, 7, 10.",
-   "CH DEV 011 and CH DEV 172 are not in the closed list and are marked catalog_addition.",
-   "The note about Title 22 Director (complete all core units and CH DEV 038) is an additional qualification, not a certificate requirement; CH DEV 038 is not placed.",
-   "Description mentions CH DEV 030 for infant programs and the California Child Development Permit: Associate Teacher level; no explicit career titles are named, so careers is empty.",
-   "Outcomes are printed for this certificate's own section; hyphenated line breaks were joined."
+   "The heading 'REQUIRED COURSES (16 UNITS)' covers the five 3-unit courses plus the choice of CH DEV 172 (1 unit) or CH DEV 084-1 and CH DEV 084-2 (0.5 each); the 16 is recorded as stated on the main block though it includes the 1-unit option.",
+   "The catalog prints 'CH DEV 172 ... OR CH DEV 084-1 AND CH DEV 084-2'; recorded as two option blocks sharing an option_group since the alternative is a pair of courses.",
+   "Catalog codes are zero-padded (CH DEV 001, 002, 007, 010); matched to closed-list CH DEV 1, 2, 7, 10. CH DEV 011 and CH DEV 172 are not in the closed list.",
+   "Outcome 2 hyphenation 'sen -sitive' across a line break was read as 'sensitive'.",
+   "CH DEV 030 (for infant programs) and CH DEV 038 (Title 22 Director) are mentioned as additions, not requirements of this certificate; not placed.",
+   "No specific career titles named; text mentions teaching in private preschool or school-age programs and the California Child Development Permit: Associate Teacher level, which were not recorded as careers."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "293ca67b7b95c528",
+ "source_codes": [
+  "CHDEV1",
+  "CHDEV10",
+  "CHDEV2",
+  "CHDEV7",
+  "CHDEV841",
+  "CHDEV842"
+ ],
+ "source_coverage": 1.0
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Nutrition and Dietetics",
  "award": "A.S. T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=93",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8002,
+  "input_tokens": 8651,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8002,
-    "output_tokens": 2387,
+    "input_tokens": 8651,
+    "output_tokens": 2103,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2387,
+  "output_tokens": 2103,
   "output_tokens_details": {
-   "thinking_tokens": 988
+   "thinking_tokens": 759
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07975,
- "ms": 20652,
- "seconds": 21.0,
+ "cost_usd": 0.07666,
+ "ms": 17611,
+ "seconds": 17.8,
  "parts": null,
  "error": null,
  "score": {
@@ -65,17 +65,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     26.0,
     26.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    26.0,
+    26.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     60.0,
+     60.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -99,15 +118,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS",
+   "section_heading": "Nutrition and Dietetics Associate in Science (AS-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -116,8 +135,8 @@
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": 34,
@@ -135,7 +154,7 @@
   },
   "blocks": [
    {
-    "name": "MAJOR CORE COURSES (15 UNITS)",
+    "name": "MAJOR CORE COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -175,7 +194,7 @@
     ]
    },
    {
-    "name": "LIST A: SELECT TWO COURSES (8 UNITS)",
+    "name": "LIST A: SELECT TWO COURSES",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -207,7 +226,7 @@
     ]
    },
    {
-    "name": "LIST B: SELECT ONE COURSE (3 UNITS)",
+    "name": "LIST B: SELECT ONE COURSE",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -236,15 +255,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 93; the program's own heading (Nutrition and Dietetics A.S.-T) and any description are not in the text, so section_heading uses the 'PROGRAM REQUIREMENTS' heading. 'ABOUT OUR CAREER AND ACADEMIC PATHWAYS' is a running page header.",
-   "The Program Student Learning Outcomes printed in this section (business plan, management, business organization essay) appear to belong to a business program, not Nutrition and Dietetics; they were recorded as printed for this section but a reviewer should verify against the catalog.",
-   "ge_units 34 taken from the general education requirement statement (Cal-GETC, 34 semester/45 quarter units) printed at the top of the excerpt; no degree total or major total is printed in the excerpt, so total_units and degree_total are null.",
-   "List A prints ANATOMY 001 OR PHYSIOL 001 followed by STAT C1000 under 'Select two courses (8 units)'; recorded as one choice with an alternative plus STAT C1000, effectively requiring STAT C1000 and one of ANATOMY/PHYSIOL.",
-   "CHEM 060 or high school chemistry is mentioned only as a prerequisite for CHEM 101, not as a program requirement; not placed in a block.",
-   "FAM &CS 024 is not in the closed list; recorded as catalog addition.",
-   "The Dietetic Service Supervisor Certificate of Achievement that follows is a separate award and was not recorded."
+   "The Program Student Learning Outcomes printed under the Nutrition and Dietetics AS-T section describe business topics (business plan, management, financial budgeting) and appear to belong to a different (business) program; recorded as printed but a reviewer should verify.",
+   "In outcome 4 the PDF line-break hyphenation 'man -agement' was read as 'management'.",
+   "List A says 'Select two courses' but prints ANATOMY 001 OR PHYSIOL 001 followed by STAT C1000; read as one choice of ANATOMY 001 or PHYSIOL 001 plus STAT C1000 (8 units). Ambiguous whether ANATOMY 001 and PHYSIOL 001 together could satisfy the list.",
+   "Degree total recorded from the printed 'Total Units: Minimum of 60' for this award; Cal-GETC units (34 semester) taken from the GE requirement sentence.",
+   "CHEM 101 has a prerequisite of CHEM 060 or high school chemistry; CHEM 060 is not a program requirement and was not placed.",
+   "Catalog codes print leading zeros (FAM &CS 021, MICRO 020, ANATOMY 001, PHYSIOL 001) matching closed-list FAM &CS 21, MICRO 20, ANATOMY 1, PHYSIOL 1."
   ]
  },
- "extracted_run": 43136137275,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "15daf50d807cc8f1",
+ "source_codes": [
+  "ANATOMY1",
+  "CHEM101",
+  "FAM&CS21",
+  "FAM&CS50",
+  "MICRO20",
+  "PHYSIOL1",
+  "PSYCC1000",
+  "STATC1000"
+ ],
+ "source_coverage": 1.0
 }
