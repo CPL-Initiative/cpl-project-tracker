@@ -1048,9 +1048,12 @@
       if (sw.length > 1 && sw[0].o.locals < STATEWIDE_LEAD * sw[1].o.locals) return null;
       return { kind: "statewide", o: sw[0].o };
     }
-    var top = near.slice().sort(byUse)[0];
-    if (!top || top.o.locals < POPULAR_MIN) return null;
-    if (near.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
+    // The card's own title, when it is in the reference, competes too: a card already on the most used title is told
+    // nothing (a CompTIA Security+ card never names Network+).
+    var pool = near.concat(got.rows.filter(function (x) { return x.o.t === t0 && !x.o.proposed && x.o.issuer === iss; }));
+    var top = pool.slice().sort(byUse)[0];
+    if (!top || top.o.t === t0 || top.o.locals < POPULAR_MIN) return null;
+    if (pool.some(function (x) { return x !== top && x.o.locals >= top.o.locals; })) return null;
     return { kind: "popular", o: top.o };
   }
   function relAlignWords(a) {

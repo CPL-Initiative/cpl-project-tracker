@@ -252,6 +252,10 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     && t.d.getElementById("exh-rel-target").value === "Welding Fundamentals Certificate");
   check("the threshold is stated in code: at least 3 local titles and more than any other", t.M._POPULAR_MIN === 3);
 
+  t = await boot({ card: held("Welding Fundamentals Cert II", "Welding Fundamentals Certificate", CCC) });
+  check("a card already on the most used title names no other title", t.d.querySelector(".exh-align").hidden
+    && !/Most used/.test(txt(panel(t.d))) && t.d.getElementById("exh-rel-target").value === "Welding Fundamentals Certificate");
+
   // ── neither ──
   t = await boot({ card: GUIT });
   check("with neither a statewide nor a clearly most used title, no line and no mark",
