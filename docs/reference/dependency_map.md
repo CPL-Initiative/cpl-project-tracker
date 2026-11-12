@@ -875,6 +875,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/zband_retire_out/2026-09-03/duplicates.json` | scripts: `kb/_zband_retire_dryrun.py` | — |
 | `kb/zband_retire_out/2026-09-03/materialized.json` | scripts: `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py` | — |
 | `kb/zband_retire_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
+| `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
@@ -1401,5 +1402,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 869 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 870 file
 datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.

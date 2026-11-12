@@ -1,0 +1,210 @@
+Course Outline
+PHSC 1 - Physical Science Survey
+Course Information
+Effective Semester: Spring 2024
+Faculty Discipline:
+Physics/Astronomy (Masters Required)
+Chemistry (Masters Required)
+Subject: PHSC
+Grading Basis: Letter Grade or P/NP
+Term (Weeks): 18
+Units and Hours
+Lecture Units:
+Lab/Clinical Units:
+WEE Units: 1.0
+Lecture Hours: 54.0
+Lab/Clinical Hours: 54.0
+Discussion Hours:
+WEE Hours:
+Total Units: 4.0
+Total Contact Hours: 108.0
+Total Outside-of-Class Hours: 108.0
+Total Student Learning Hours: 216
+Distance Education Hours:
+Repetition/Repeatability
+Requisites
+Prerequisite: Intermediate Algebra as determined by Multiple Measures or Math Placement Level 4 or higher
+Catalog Course Description
+This course covers active learning, lecture, discussion, demonstration, and lab activities in selected theories of physics and chemistry, emphasizing the conceptual basis of these theories. The course is designed for non-science majors as part of their general education requirement in science. This course is not appropriate for students who have taken college-level physics or chemistry. This course may be offered in a distance education format.
+Course Content
+Lecture Content:
+
+Mechanics
+Describing motion – velocity and acceleration
+Newton’s Laws of Motion – force and mass
+Momentum and Energy – conservation principles
+Newton’s Law of Gravity – free fall, satellite motion, weightlessness
+Fluid Mechanics – pressure, density, buoyancy
+Thermodynamics
+Temperature, thermal energy
+Heat transfer, specific heat
+Phase changes, boiling
+Conduction, convection, radiation
+Electricity
+Electric charge and force
+Voltage, current, resistance
+Series and parallel circuits
+Waves and Optics
+Traveling and standing waves
+Reflection and refraction
+Interference
+Sound – speed in different materials, Doppler effect
+Light – color, polarization, mirrors and lenses
+Structure of Matter
+Atomic structure – the nuclear model of the atom, electron energy levels/shells
+Chemical elements – physical and chemical properties, the periodic table
+Classifications and properties of matter – solids, liquids, gases, mixtures, intermolecular forces
+Chemical compounds and quantities – formulas, moles
+Chemical bonding – ionic and covalent bonds, polarity in bonds
+Chemical Reactions
+Chemical equations
+Stoichiometry
+Equilibrium
+Acids and bases
+Oxidation-reduction
+Thermochemistry – endothermic, exothermic, rate of reaction, entropy, spontaneity
+Organic Chemistry
+Structures of hydrocarbons
+Alcohols and other molecules of interest
+Nuclear Chemistry
+Radioactivity, half-life
+Mass-energy relationship
+Fission, fusion
+
+ 
+
+
+Typical laboratory experiments include:
+
+Graphing Motion
+Force, Mass, and Acceleration
+Momentum and Collisions
+Projectile Motion
+Temperature, Heat, and Specific Heat
+Waves on a Slinky
+Direct Current Circuits
+Flame Tests and Atomic Spectra
+Determining a Chemical Formula
+Chemical Reactions and Reaction Equations
+Copper Reaction Cycle
+Identification of Chemical Compounds
+Distillation
+Energy Content of Food
+Polymers
+Objectives
+Upon successful completion of this course, the student will be able to:
+
+Describe the scientific method.
+
+Perform measurements of quantities such as length, mass, and volume.
+
+Apply Newton’s Laws of motion to simple situations; distinguish between mass and weight; and explain how action and reaction forces are related to each other.
+
+Use the definitions of momentum, work, kinetic energy, and gravitational potential energy and the relationship between net force, work, and kinetic energy to solve problems involving conservation of energy and momentum.
+
+Relate impulse to momentum change and work to changes in mechanical energy.
+
+Using Newton’s Law of Gravity, explain the meaning of an inverse square force law, describe how satellites are placed into orbit, and describe why astronauts feel weightless in an orbiting spacecraft.
+
+Applying the definitions of pressure and density, explain why pressure increases with depth in a fluid and how this gives rise to buoyancy, and apply Archimedes’ principle.
+
+Distinguish between heat, temperature and thermal energy as distinct concepts. Use specific heat to relate heat transfer to temperature change, describe the role of heat transfer in phase changes, and identify the mechanism(s) responsible for heat transfer in a given situation.
+
+State the law describing forces between electric charges. Distinguish between voltage and current, apply the definitions of voltage, current and resistance, and apply these ideas to predict the behavior of simple series and parallel circuits.
+
+Describe periodic wave motion, in terms of amplitude, period, wavelength, and frequency. Distinguish between transverse and longitudinal waves; describe reflection, refraction, and interference of waves. Distinguish between traveling and standing waves, and describe simple standing wave patterns in one dimension.
+
+Describe the properties of sound, explain the Doppler effect, and solve simple problems involving sound.
+
+Describe electromagnetic radiation, interpret the electromagnetic spectrum, and describe sources of light.
+
+Describe how the color of an object depends on the color of the light used to illuminate it and describe how images are formed by mirrors and lenses.
+
+Describe and interpret the characteristics of the atomic, molecular and ionic classes of matter and identify the class to which substances belong.
+
+Describe the characteristics of the phases of matter and the connections between the properties using the particle model.
+
+Classify substances as elements, compounds, or mixtures.
+
+Identify processes as physical or chemical changes.
+
+Explain the roles of protons, electrons, and neutrons in atomic structure and apply the definitions of atomic number and mass number. Describe the experimental evidence for the nuclear model of the atom. Describe and apply the electron energy level/shell model of electronic structure.
+
+Explain the historical organization of elements in the periodic table according to patterns in chemical and physical properties and explain the modern organization of the periodic table according to electronic structure.
+
+Draw Lewis dot structures of atoms, ions, and simple molecules.
+
+Distinguish between ionic and covalent bonds and define and interpret electronegativity. Describe how polarity of bonds/molecules affects properties such as solubility and boiling point.
+
+Define and apply the mole concept and convert between weight and moles for quantities of elements and compounds.
+
+Use chemical equations to describe reactions, balance simple chemical equations, and relate amounts of reactants and products in terms of numbers of particles and mass.
+
+Classify chemical reactions according to type and interpret simple reactions of the various types (precipitation, oxidation-reduction, acid-base/neutralization).
+
+Describe and interpret energy changes during chemical reactions and identify factors that affect reaction rate. Identify and interpret factors that affect if a reaction will occur.
+
+Interpret the basic concept of chemical equilibrium and apply this to simple situations including acids and bases (distinguishing between strong and weak acids and bases), and explain and interpret pH.
+
+Identify some of the most common functional groups and name and draw structures for simple hydrocarbons, alcohols, and other organic compounds. Identify and interpret structural isomers.
+
+Define radioactivity, describe types of radioactive decay, define and apply half-life, interpret the mass-energy relationship, and describe nuclear fission and fusion.
+
+Student Learning Outcomes
+Broader than Objectives, SLOs are often comprised of what the student can do as a result of combining several course objectives.
+
+Information Recall:  Recall essential factual material pertinent to the objectives and content of the course.
+
+Apply Knowledge and Skills to Solve Problems:  Apply knowledge and skills derived from mastery of the course objectives to solve problems.
+
+Methods of Instruction
+Audio/Visual Aids
+Computer Tutorials/Aids
+Demonstration
+Discussion
+Distance Education
+Group Exercises
+Lab
+Lecture
+Other (Specify)
+Online Materials Active Learning Classroom Lessons
+Methods of Evaluation
+Assignments
+Class Participation
+Essay Exams
+Multiple Choice Exams
+Problem Solving Exams
+Short Answer/Fill-In Exams
+Lab reports Projects
+Representative Texts and Manuals
+
+Textbooks:
+
+Hewitt, P.G., J.A. Suchocki, L.A. Hewitt, Conceptual Physical Science, 6th, Pearson, 2017, This text is the most recent and comprehensive edition, 9780134060491
+Hewitt, P.G., J.A. Suchocki, L.A. Hewitt, Laboratory Manual for Conceptual Physical Science, 6th, Pearson, 2017, This text is the most recent and comprehensive edition, 9780134091419
+Reading and Writing Assignments
+Textbook Reading
+Library Research
+Problem Solving Exercise
+Computer
+Essay Writing
+Oral Presentation
+Group Projects
+Other
+Lab reports
+Outside-of-Class Assignments
+Typical Assignment
+Students are presented with a variety of explanations for the phenomenon of weightlessness as experienced by astronauts in an orbiting spacecraft. (This is one of the most widely misunderstood concepts in physics.) By comparing each with established theories and empirical evidence, they must eliminate the incorrect explanations and converge on the correct one.
+Students are shown a number of demonstrations related to the phenomenon of boiling.  (For example, water boiling at room temperature, freezing water by boiling it, boiling water by cooling its container, a super-cold boiling liquid, etc.)  They must then write a description of the phenomenon, finding the common threads in all of the demonstrations, eventually arriving at a satisfactory definition for boiling.
+Given certain rules, based on atomic structure, students must construct molecular models for various compounds. Many models can be constructed in more than one way. Students are asked to predict how the structure of the molecule affects certain physical properties, such as vapor pressure, boiling point, etc.
+IDEAA/UDL
+IDEAA:
+IDEAA and UDL Review Statement:
+
+In this class we will explore the value of basic scientific knowledge.  For example, climate change is slowly causing sea level rise, and this has the potential to affect minority populations in low-lying areas like Florida who do not necessarily have the means to relocate and find new employment.  We will discuss the burning of fossil fuels and how it relates to climate change.
+
+At Shasta College, we are steadfastly committed to fostering an educational environment where all educators, irrespective of their backgrounds and beliefs, feel respected, valued, and empowered. We believe that teaching physical science to elementary school children is not just about relaying facts, but about shaping young minds to understand, appreciate, and engage with the diverse world around them.
+
+We believe that understanding and appreciation of diversity, equity, and inclusion are integral to teaching physical science to elementary students. When teachers carry these values into their classrooms, they not only educate but also inspire a new generation of thinkers who will view the world through a lens of acceptance, curiosity, and respect.
+
+To our participating and future educators, we pledge our ongoing support in your journey to create inclusive physical science classrooms where every child feels that they belong and can thrive.

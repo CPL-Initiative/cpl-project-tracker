@@ -169,7 +169,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 :root[data-theme="dark"]{--cplh-bg:#1E2127;--cplh-line:#3A3F49;--cplh-fg:#D8D5CD;--cplh-muted:#B4B1A8;--cplh-link:#7DA1D4;--cplh-strong:#F2F0EA;--cplh-shadow:rgba(0,0,0,.45)}
 .cplh{position:relative;z-index:50;background:var(--cplh-bg);border-bottom:1px solid var(--cplh-line);color:var(--cplh-fg);font-family:'Source Sans 3',Arial,sans-serif;font-size:.95rem;line-height:1.4}
 .cplh-in{position:relative;max-width:1080px;margin:0 auto;padding-block:.6rem;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.4rem}
-.cplh-logo{display:inline-flex;min-height:24px}
+.cplh-logo{display:inline-flex;min-height:25px}
 .cplh-logo img{display:block;height:40px;width:auto;max-width:100%}
 .cplh-logo .cplh-dark{display:none}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cplh-logo .cplh-light{display:none}:root:not([data-theme="light"]) .cplh-logo .cplh-dark{display:block}}
@@ -177,14 +177,16 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
 :root[data-theme="dark"] .cplh-logo .cplh-dark{display:block}
 .cplh-end{margin-left:auto;display:flex;flex-wrap:wrap;align-items:center;gap:.6rem 1.6rem}
 .cplh a{color:var(--cplh-link)}
-.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:24px;min-width:24px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+/* 25px, one past the 24px floor (S641): a control sized at exactly 24 reads 23.9 at a browser zoom of 90% or 133%,
+   where layout rounds to the device pixel, and the CPL Library's check and WCAG 2.2 then count it short. */
+.cplh-word,.cplh-theme button{background:none;border:0;padding:0 2px;min-height:25px;min-width:25px;font:inherit;font-weight:600;color:var(--cplh-link);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
 .cplh-word[aria-expanded="true"]{color:var(--cplh-strong);text-decoration-thickness:2px}
 .cplh-panel{box-sizing:border-box;position:absolute;top:100%;right:max(16px,env(safe-area-inset-right,0px));width:min(38rem,calc(100% - 32px));margin-top:1px;background:var(--cplh-bg);border:1px solid var(--cplh-line);box-shadow:0 10px 28px var(--cplh-shadow);padding:.35rem 1rem}
 .cplh-panel[hidden]{display:none}
 .cplh-nav{margin:0;padding:0;list-style:none}
 .cplh-nav li{display:grid;grid-template-columns:11rem minmax(0,1fr);gap:.1rem 1rem;align-items:baseline;padding:.5rem 0;border-top:1px solid var(--cplh-line)}
 .cplh-nav li:first-child{border-top:0}
-.cplh-nav a{display:inline-flex;align-items:center;min-height:24px;font-weight:600;text-underline-offset:3px}
+.cplh-nav a{display:inline-flex;align-items:center;min-height:25px;font-weight:600;text-underline-offset:3px}
 .cplh-desc{color:var(--cplh-muted);font-size:.9rem}
 .cplh-theme{display:flex;gap:.9rem;align-items:center}
 .cplh-theme span{color:var(--cplh-fg)}

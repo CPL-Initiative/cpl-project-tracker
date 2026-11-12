@@ -1,0 +1,229 @@
+Course Outline
+MICR 1 - Microbiology
+Course Information
+Effective Semester: Fall 2019
+Faculty Discipline:
+Subject: MICR
+Grading Basis: Letter Grade Only
+Term (Weeks): 18
+Units and Hours
+Lecture Units:
+Lab/Clinical Units:
+WEE Units: 2.0
+Lecture Hours: 54.0
+Lab/Clinical Hours: 108.0
+Discussion Hours:
+WEE Hours:
+Total Units: 5.0
+Total Contact Hours: 162.0
+Total Outside-of-Class Hours: 108.0
+Total Student Learning Hours: 270
+Distance Education Hours: 270.0
+Repetition/Repeatability
+Requisites
+Prerequisite: CHEM 1A OR CHEM 2A OR CHEM 2B
+Catalog Course Description
+This course is an introduction to microorganisms, including bacteria, viruses, protozoans, fungi, and helminths. Topics covered include the general properties, characteristics, and classification of microbes, microbial identification and control, genetics and biotechnology, physiology, metabolism, and ecology. Also discussed are immunity and the medical impact of microbial diseases. The lecture portion of this course may be offered in a distance education format.
+Course Content
+Lecture Content:
+History of microbiology
+Early observations of microbes
+Spontaneous generation debate
+The Golden Age of microbiology and the germ theory of disease
+Modern biotechnology
+Overview of the microbial world
+Bacteria
+Archaeans
+Protozoa
+Fungi
+Helminth parasites
+Viruses
+Prions
+Chemical principles and living cells
+Structure of atoms
+Chemical bonds
+Types of chemical reactions
+Inorganic compounds
+Water
+Acids, bases, salts
+Organic compounds
+Carbohydrates
+Lipids
+Proteins
+Nucleic acids
+Functional anatomy of prokaryotic cells
+Use of various types of microscopes to view prokaryotes
+Specimen preparation for microscopy
+Size, shape and arrangement of prokaryotic cells
+The cell wall and Gram staining mechanism
+Structures internal to the cell wall
+The plasma membrane and transport of materials across it
+Cytoplasm
+Nucleoid
+Ribosomes
+Inclusions and endospores
+Comparing and contrasting prokaryotic and eukaryotic cell structure
+Classification and nomenclature of microbes
+Three domain system
+Binomial nomenclature and taxonomic hierarchy
+Methods of classifying and identifying microbes
+Bergey’s Manual and the characteristics of the basic bacterial groups
+Microbial metabolism
+Cellular respiration
+Fermentation
+Anaerobic respiration
+Photosynthesis
+Patterns of microbial growth
+Physical and chemical requirements for growth
+Pure culture and culture media
+Typical bacterial growth curve
+Control of microbial growth
+Factors that affect the rate of microbial death
+Physical methods of microbial control
+Chemical methods of microbial control
+Modes of action for microbial control agents
+Microbial genetics
+Principles of inheritance: genotypes and phenotypes
+DNA structure and DNA replication
+Protein synthesis: transcription and translation
+Operon model of gene expression
+Mutations
+Genetic transfer and recombination
+Conjugation
+Transduction
+Transformation
+Biotechnology
+Overview of recombinant DNA procedures
+Restriction enzymes
+Vectors
+Polymerase chain reaction and cloning
+Applications of recombinant DNA technology
+Medical
+Agricultural/Industrial
+Basic science and the human genome project
+Viruses
+General characteristics and structure
+Viral classification
+Lytic and Lysogenic cycles of viruses
+Oncogenic viruses
+Principles of disease and epidemiology
+Disease transmission modes
+Portals of entry and exit
+General epidemiological terms and quantification
+Emerging infectious diseases
+Mechanisms of Pathogenicity
+How bacterial pathogens elude host defenses and damage host cells
+Pathogenicity of non-bacterial microorganisms
+Non-specific host defenses
+Skin and mucous membranes
+Phagocytosis   
+Inflammation
+Fever
+Complement system and interferon
+The immune response
+Active and passive immunity
+Naturally and artificially acquired immunity
+Humoral immunity
+Cellular immunity
+Antimicrobial drugs
+Various actions of antibiotics
+Survey of antimicrobial agents
+Microorganisms and human disease
+Integumentary diseases
+Nervous system diseases
+Cardiovascular and lymphatic diseases
+Respiratory diseases
+Digestive diseases
+Reproductive and urinary diseases
+Microbes, the environment, and industry
+Biogeochemical cycles
+Water quality and sewage treatment
+Food microbiology
+Objectives
+Upon successful completion of this course, the student will be able to:
+List significant microbiologists and describe their notable scientific contributions.
+
+Discuss methods of taxonomy.
+
+Handle live microbes with safe aseptic technique skills.
+
+Demonstrate understanding of the scientific method by performing controlled ecperiments and analyzing the results.
+
+Inoculate sterile media with live microbes and analyze their subsequent growth.
+Prepare wet mounts and smears of microbial samples.
+Demonstrate a number of differential microbial stains, including the Gram stain, acid fast stain, endospore stain, and capsule stain.
+Compare and contrast typical eukaryotic and prokaryotic cell structure and function.
+Discuss atypical bacteria such as Rickettsia, Chlamydia, Mycobacterium and Mycoplasma.
+Compare and contrast bacteria, viruses and prions.
+Identify metabolic pathways and types of metabolism, including cellular respiration, fermentation, anaerobic respiration, and photosynthesis.
+Compare different types of enzymes and enzyme regulatory mechanisms.
+Recognize the different categories of organic compounds and discuss their role in living cells.
+Discuss in detail the replication of bacterial DNA.
+Contrast different types of mutations and their effects to the individual and the population.
+List different types of genetic transfer in bacteria.
+Discuss in detail transcription and translation in prokaryotic cells.
+Describe the lytic and lysogenic cycles of viruses.
+Describe the theory and practice of modern biotechology procedures, including gel electrophoresis, immunoblotting, polymerase chain reaction, recombination, and gene therapy.
+Compare and contrast the significant features of specific and non-specific immunity.
+Discuss the signs, symptoms, pathogenesis and treatment of certain microbial diseases.
+Recognize typical epidemiological patterns.
+Describe the role of microbes in the environment, medicine, and industry.
+Student Learning Outcomes
+Broader than Objectives, SLOs are often comprised of what the student can do as a result of combining several course objectives.
+
+Aseptic Techniques:  Upon successful completion of the course, a student should be able to properly use aseptic techniques for the transfer and handling of microorganisms and instruments.
+
+
+2. Methods:  Upon successful completion of the course, a student should be able to use appropriate microbiological media and analytical methods to identify a specific bacterial species.
+
+
+3. Interpret:  Upon successful completion of the course, a student should be able to interpret a sequence of genetic code.
+
+
+4. Scientific Skills: Upon successful completion of the course, students will be able to use scientific inquiry skills related to hypothesis, prediction, assumption, interpretation and evaluation.
+
+Methods of Instruction
+Audio/Visual Aids
+Computer Tutorials/Aids
+Demonstration
+Discussion
+Distance Education
+Group Exercises
+Guest Speakers
+Individualized Programs
+Lab
+Lecture
+Methods of Evaluation
+Assignments
+Class Participation
+Essay Exams
+Multiple Choice Exams
+Problem Solving Exams
+Short Answer/Fill-In Exams
+Representative Texts and Manuals
+
+Textbooks:
+
+Openstax Rice University, Microbiology, 1, Openstax, 2017, 9781938168147
+Leboffe and Pierce, , Photographic Atlas for the Microbiology Laboratory, 4th edition, Morton Publishing Co, 2011, New edition is pending. Current edition is still a valuable resource for students.-, 9780895828729
+Tortora, Funke and Case, Microbiology: An Introduction, 13th ed., Pearson Benjamin Cummings, 2019, -, 9780134605180
+Reading and Writing Assignments
+Textbook Reading
+Skills Demonstration
+Library Research
+Problem Solving Exercise
+Computer
+Essay Writing
+Group Projects
+Outside-of-Class Assignments
+Typical Assignment
+After selected videos are shown, students are asked to form discussion groups and analyze the information it contained and summarize in writing the key points made in the presentation.
+Several assignments in laboratory involve microbial “unknowns”, the identity of which the student must deduce from the results of morphological and metabolic tests.  A written report is turned in of their findings.
+Case studies often serve as a point of group discussions.  Students are asked to apply course information to solve or explain the case.
+On most lecture and lab exams, there are essay questions which the students must answer in complete sentences.
+Students are introduced to microbiological resources on the Internet through an assignment in which they visit various websites to find information on specific topics. The validity of Internet sources is discussed.
+IDEAA/UDL
+IDEAA:
+IDEAA and UDL Review Statement:
+
+Microbiology promotes equity, diversity, and inclusion through discussion of the contributions in the field by scientists of different genders and ethnicities. Images will show diverse individuals, and previously held misconceptions about gender or ethnic differences in disease transmission, susceptibility, and outcomes will be corrected through a factual presentation of the data.
