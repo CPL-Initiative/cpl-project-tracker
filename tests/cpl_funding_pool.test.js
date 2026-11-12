@@ -113,7 +113,9 @@ const {
   // The ESS outcome-2 rollup producer is wired into the daily workflow and the
   // consumer lazy-loads its sidecar.
   const wf = fs.existsSync(".github/workflows/daily-dashboard.yml")
-    ? fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8") : "";
+    // The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+    ? fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh",
+        "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8")) : "";
   check("Q0: the ESS outcome-2 producer runs in the daily workflow",
     /_build_funding_ess\.py/.test(wf));
   check("Q0: the consumer lazy-loads the ESS sidecar (fail-open)",

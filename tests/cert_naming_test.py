@@ -253,6 +253,9 @@ check("the skip field is mapped to the decision right the other Exhibits fields 
 for wf in ("cer-procedures.yml", "daily-dashboard.yml"):
     with open(os.path.join(ROOT, ".github", "workflows", wf), encoding="utf-8") as f:
         y = f.read()
+    # The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+    y = y.replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n"
+                  + open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read())
     check(wf + " builds the related titles after Another look and commits the file",
           y.index("_sweep_exhibit_titles.py") < y.index("_build_exhibits_related.py") and "git add kb/exhibits_related.json" in y)
 

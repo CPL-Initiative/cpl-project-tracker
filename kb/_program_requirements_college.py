@@ -3453,16 +3453,19 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             row["reconciled"] = notes
         filed = kept_passing(keep_from, src["control_number"], sc, force)
         if filed is not None:
-            # The read passes less than the filed record does (S641 review, call 2b; kept_passing): the filed
-            # record stays as filed, and the program is listed with both scores for a person.
+            # The read passes less, or covers less, than the filed record does (S641 review, call 2b;
+            # kept_passing): the filed record stays as filed, and the program is listed with both scores and
+            # the reason for a person.
             _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
+            why = kept_reason(filed.get("score"), sc)
             with kept_lock:
                 kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
                                   "award": src.get("award"), "source_url": row["source_url"],
                                   "filed_source_url": filed.get("source_url"), "cost_usd": row["cost_usd"],
-                                  "score": sc, "filed_score": filed.get("score")})
-            print("%-6s kept_passing: the read passes less than the filed record" % src["control_number"],
-                  flush=True)
+                                  "reason": why, "score": sc, "filed_score": filed.get("score")})
+            print("%-6s kept_passing: %s than the filed record" % (
+                src["control_number"], "the read covers less" if why == "covers_less" else "the read passes less"),
+                flush=True)
             return
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
         print("%-6s %s cov %-5s arith %-10s $%s %s" % (
@@ -3478,16 +3481,15 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     if kept_list:
         _write(os.path.join(out_dir, "kept_passing_%d.json" % shard),
                sorted(kept_list, key=lambda x: x["control_number"]))
-        print("kept_passing: %d filed records kept where the read failed" % len(kept_list), flush=True)
+        print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
+              flush=True)
     return 0
 
 
 def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: set[str] | None) -> dict | None:
     """The filed record a read must not replace, or None (S641 review, call 2b; the S641 conductor,
-    2026-11-12). A filed record that passes in full (score["pass"] and passes_live) is replaced only by a
-    read that also passes in full: a read that passes the live table's test and drops outcomes, careers
-    or repeats is worse. A filed record that passes as the live table counts it (passes_live) is
-    replaced only by a read that passes it too. A forced control number takes the new record all the same."""
+    2026-11-12). A filed record that passes is replaced only by a read that passes at least as well and
+    covers at least as much (kept_reason). A forced control number takes the new record all the same."""
     if not keep_from or cn in (force or ()):
         return None
     try:
@@ -3497,8 +3499,32 @@ def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: 
         return None
     if not isinstance(filed.get("record"), dict):
         return None
-    was = pass_grade(filed.get("score"))
-    return filed if was and pass_grade(new_score) < was else None
+    return filed if kept_reason(filed.get("score"), new_score) else None
+
+
+def kept_reason(filed_score: dict | None, new_score: dict | None) -> str | None:
+    """Why a read must not replace the filed record it read again, or None when it may.
+    "passes_less": the filed record passes and the read passes at a lower pass_grade. A filed record that
+    passes in full (score["pass"] and passes_live) is replaced only by a read that also passes in full: a
+    read that passes the live table's test and drops outcomes, careers or repeats is worse; a read that
+    covers more at a lower grade is kept out all the same.
+    "covers_less": the filed record passes, the read passes as well or better, and the read places a
+    smaller share of the listed courses (score["coverage"]["share"], the scorer's placed / listed). The
+    S641 paid read of American River 11566 passed beside the filed record and lost its core block:
+    placed 15 of 20 became 9 of 20 (verifier, 2026-11-12).
+    Equal coverage at the same grade or better replaces: the read was paid for and passes. Only a filed
+    record that passes is protected: a read may lower the coverage of a record that did not pass. A share
+    either score lacks (no listed courses, or a record scored before coverage carried one) is no evidence,
+    and the grade decides alone."""
+    was = pass_grade(filed_score)
+    if not was:
+        return None
+    if pass_grade(new_score) < was:
+        return "passes_less"
+    old, new = (((s or {}).get("coverage") or {}).get("share") for s in (filed_score, new_score))
+    if isinstance(old, (int, float)) and isinstance(new, (int, float)) and new < old:
+        return "covers_less"
+    return None
 
 
 def pass_grade(score: dict | None) -> int:

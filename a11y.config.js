@@ -1178,6 +1178,20 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The CPL Commons' ASE slice (#3111): opened by its address, as the Commons' first view links to it. The keyboard and
+// reflow passes open the bare file, so the seed names the address itself.
+async function seedCommonsAse(page, theme) {
+  await page.evaluate(() => { if (!/^commons\/ase/.test(location.hash.replace(/^#/, ""))) location.hash = "commons/ase/" + encodeURIComponent("ASE A5 \u2014 Brakes"); });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#commons-root .cas-gaps", { state: "attached", timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
 // from the real kb/status/commons.json the origin serves.
 async function seedCociProgress(page, theme) {
@@ -3525,6 +3539,24 @@ module.exports = {
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The CPL Commons' first slice: where an ASE certification can count (#3111, the v2 Agreed final) ──
+     commons_ase.js, opened from #commons/ase; measured on one credential's college table and on the overview. */
+  "commons-ase": {
+    file: "index.html",
+    title: "CPL Commons: the ASE slice, one certification at every college",
+    routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5" }, { hash: "commons/ase", name: "ase-overview" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsAse(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-ase-dark": {
+    file: "index.html",
+    title: "CPL Commons: the ASE slice, dark",
+    routes: [{ hash: "commons/ase/ASE%20A5%20%E2%80%94%20Brakes", name: "ase-a5-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsAse(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */

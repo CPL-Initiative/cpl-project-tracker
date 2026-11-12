@@ -16,10 +16,12 @@ import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read()
+# The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+wf = open(os.path.join(ROOT, ".github", "workflows", "daily-dashboard.yml"), encoding="utf-8").read().replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read())
 failures = []
 
-scrape = wf[wf.find("name: Scrape live metrics"):wf.find("name: ", wf.find("name: Scrape live metrics") + 10)]
+at = wf.find('step "Scrape live metrics')   # its block in scripts/daily_build.sh, up to the next block
+scrape = wf[at:wf.find('\nstep "', at + 10)]
 if "%{http_code}" not in scrape:
     failures.append("the scrape step no longer records the worker's HTTP status")
 if "code != '200'" not in scrape:
