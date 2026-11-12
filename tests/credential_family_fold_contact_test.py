@@ -82,7 +82,10 @@ real_out, real_fam, real_plans = dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR
 real_files = (dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS)
 ov = json.load(open(dry.OVERLAY, encoding="utf-8")).get("overrides") or {}
 saved_all = {t for t, e in ov.items() if (e or {}).get("unified_title_override") == FAM}
-plan_olds = {e["old"] for p in ruled_renames.load(real_plans) for e in p["entries"]}
+# The plans that rename family members (Sheet 181's); a plan with no family entry (the standards plan, S640) renames
+# no member, so its entries are neither family tags nor this test's.
+fam_plans = {p["plan_id"] for p in ruled_renames.load(real_plans) if any(e.get("family") == FAM for e in p["entries"])}
+plan_olds = {e["old"] for p in ruled_renames.load(real_plans) if p["plan_id"] in fam_plans for e in p["entries"]}
 try:
     # ── 1. the dry-run's preview with the family file present (no ruled plan; Sheet 181's is 1b) ─────────
     # Over the pre-apply files, so the checks hold whether or not the plan has run on main: every one of Sam's
@@ -106,7 +109,7 @@ try:
           and (not saved or len(bare["renames"]) + len(bare["merges"]) > len(doc["renames"]) + len(doc["merges"])))
     # ── 1b. with Sheet 181's ruled plan: its renames take the place of the family-tag folds they cover ─────
     ruled = dryrun(tmp, real_fam, real_plans)
-    applied = {e["old"] for e in ruled["ruled"]["applied"]}
+    applied = {e["old"] for e in ruled["ruled"]["applied"] if e["plan_id"] in fam_plans}
     check("with the ruled plan, the folds it does not rename stay held as family tags, and none is renamed",
           applied == plan_olds and held_set(ruled) == saved - applied
           and ruled["summary"]["held_as_family_tags"] == len(saved) - len(applied))
@@ -117,7 +120,7 @@ try:
     dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS = real_files
     live_cr = json.load(open(real_files[0], encoding="utf-8"))
     live = dryrun(tmp, real_fam, real_plans)
-    live_applied = {e["old"] for e in live["ruled"]["applied"]}
+    live_applied = {e["old"] for e in live["ruled"]["applied"] if e["plan_id"] in fam_plans}
     check("over the committed files, the held family tags are the saved folds still a credential, less the plan's",
           held_set(live) == {t for t in saved_all if t in live_cr} - live_applied
           and live_applied == plan_olds & set(live_cr) and not held_set(live) & live_applied)
