@@ -281,6 +281,19 @@ def load_region(preset, explicit):
 
 
 # ----------------------------------------------------------------- resolve ---
+_NOW = []
+
+
+def ruled_title(title, since=None):
+    """The credential a ruling names, read through the applied renames (kb/credential_aliases.py resolver): a
+    ruling curated before a rename names the old title, and the rename's credential is the one it meant."""
+    if not _NOW:
+        sys.path.insert(0, os.path.join(ROOT, "kb"))
+        import credential_aliases
+        _NOW.append(credential_aliases.resolver(ROOT))
+    return _NOW[0](title, since)
+
+
 def resolve(occupations, occ_map, idx):
     """Match occupations to credentials. Returns (rows, summary, unmapped, bad_titles).
 
@@ -304,10 +317,10 @@ def resolve(occupations, occ_map, idx):
         matched, colleges = [], set()
         n_direct = n_sw = 0
         for c in creds:
-            title, tier = c["title"], c.get("tier", "R")
+            title, tier = ruled_title(c["title"], entry.get("curated_at")), c.get("tier", "R")
             r = idx.get(title)
             if r is None:
-                bad_titles.append({"occupation": label, "title": title})
+                bad_titles.append({"occupation": label, "title": c["title"]})
                 continue
             matched.append((title, tier, r))
             colleges |= set(r["adopters"])

@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 861,
+  "file_datasets": 862,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -1214,7 +1214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 413
+     "line": 426
     },
     {
      "id": "script:kb/_college_contacts_harvest.py",
@@ -1515,7 +1515,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 27,
+     "line": 32,
      "pages": [
       "CPL_Dashboard.html",
       "fact-sheet/index.html",
@@ -1879,7 +1879,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 478
+     "line": 483
     },
     {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
@@ -1961,7 +1961,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 479
+     "line": 484
     },
     {
      "id": "script:kb/_write_oc_medical_assistant_html.py",
@@ -5924,7 +5924,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 698
+     "line": 703
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -7462,7 +7462,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 209
+     "line": 213
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -8547,7 +8547,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 210
+     "line": 214
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -11192,7 +11192,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 620
+     "line": 645
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -13858,6 +13858,19 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/credential_title_moves.json": {
+   "consumers": [
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/credentials.json": {
    "consumers": [
     {
@@ -14092,7 +14105,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 619
+     "line": 644
     },
     {
      "id": "script:kb/_verify_issuer_preseed.py",
@@ -14113,7 +14126,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 204
     }
    ],
    "producers": [
@@ -15479,7 +15492,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 622
+     "line": 647
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15577,7 +15590,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 80
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15609,7 +15622,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 204
+     "line": 208
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
@@ -17751,7 +17764,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 129
+     "line": 132
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -17786,7 +17799,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 209
     }
    ],
    "served": true,
@@ -18509,7 +18522,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 205
+     "line": 209
     }
    ],
    "served": true,
@@ -19249,7 +19262,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 616
+     "line": 640
     }
    ],
    "producers": [
@@ -19618,7 +19631,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 615
+     "line": 639
     },
     {
      "id": "script:kb/classify_exhibits.py",
@@ -22215,7 +22228,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 208
+     "line": 212
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -22271,7 +22284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 646
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -28695,7 +28708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 682
+     "line": 687
     },
     {
      "id": "script:kb/_cred_fold_resolution_write.py",

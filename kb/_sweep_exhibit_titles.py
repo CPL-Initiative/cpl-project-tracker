@@ -73,6 +73,7 @@ sys.path.insert(0, HERE)
 # ── ASE: the test names and the title format live in kb/cert_naming.py (Sam's ruling, 2026-11-11) ──
 sys.path.insert(0, HERE)
 import cert_naming  # noqa: E402
+import credential_aliases  # noqa: E402
 ASE = cert_naming.ASE
 
 SCHEMA = 1
@@ -610,11 +611,35 @@ def newest_fold_report(root):
     return load_json(paths[-1], {}) if paths else {}
 
 
+def current_titles(ut, assignments, held, now):
+    """The current canonical title of every local title: the reference, then a title saved since, each saved title
+    read through the applied renames (now: kb/credential_aliases.py resolver). A row saved before a rename names the
+    old title, and the rename's re-keyed reference must not lose to it. A held local title has none. Returns
+    (current, reviewed): each local title's title and when it was set."""
+    current, reviewed = {}, {}
+    for raw, e in ut.items():
+        t = (e.get("unified_title") or "").strip()
+        if raw.strip() and t:
+            current[raw.strip()] = t
+            reviewed[raw.strip()] = e.get("reviewed_at") or ""
+    for raw, a in assignments.items():
+        r = raw.strip()
+        if r in held:
+            continue
+        t = now((a.get("unified_title") or "").strip(), a.get("reviewed_at"))
+        if t and (r not in current or (a.get("reviewed_at") or "") > (reviewed.get(r) or "")):
+            current[r], reviewed[r] = t, a.get("reviewed_at") or ""
+    for r in held:
+        current.pop(r, None)
+    return current, reviewed
+
+
 def build(root="."):
     p = lambda rel: os.path.join(root, rel)  # noqa: E731
     ut = load_json(p("kb/unified_titles.json"), {}) or {}
     overlay = load_json(p("kb/unclassified_assignments.json"), {}) or {}
     assignments = overlay.get("assignments") or {}
+    now = credential_aliases.resolver(root)
     kept = {k.strip(): (v if isinstance(v, list) else [v]) for k, v in (overlay.get("sweep_kept") or {}).items()}
     cr = load_json(p("kb/credentials.json"), {}) or {}
     arts = load_json(p("kb/coci_articulations.json"), {}) or {}
@@ -622,24 +647,9 @@ def build(root="."):
     review = load_json(p("kb/exhibits_review.json"), {}) or {}
     fold = newest_fold_report(root)
 
-    # The current canonical title of every local title: the reference, then a title saved since.
-    current, reviewed = {}, {}
-    for raw, e in ut.items():
-        t = (e.get("unified_title") or "").strip()
-        if raw.strip() and t:
-            current[raw.strip()] = t
-            reviewed[raw.strip()] = e.get("reviewed_at") or ""
     held = {(h.get("raw") or "").strip() for h in review.get("held") or []}
     held |= {(h.get("raw") or "").strip() for h in fold.get("held") or []}
-    for raw, a in assignments.items():
-        r = raw.strip()
-        if r in held:
-            continue
-        t = (a.get("unified_title") or "").strip()
-        if t and (r not in current or (a.get("reviewed_at") or "") > (reviewed.get(r) or "")):
-            current[r], reviewed[r] = t, a.get("reviewed_at") or ""
-    for r in held:
-        current.pop(r, None)
+    current, reviewed = current_titles(ut, assignments, held, now)
 
     ev = evidence(current.keys(), arts, statewide)
     by_title = collections.defaultdict(list)
