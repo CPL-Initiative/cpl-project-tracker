@@ -101,7 +101,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_memory_log` | none found | tabs: `memory` |
 | `cpl_news` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
 | `cpl_news_requests` | `edgefn:cpl-news-harvest` | tabs: `cpl-news` · `edgefn:cpl-news-harvest` |
-| `cpl_reflections` | pages: `CPL_Dashboard.html` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | pages: `CPL_Dashboard.html` |
+| `cpl_reflections` | tabs: `first-light` · scripts: `reflections/build_reflections_digest.py`, `reflections/build_reflections_summary.py` | tabs: `first-light` |
 | `cr_reference_decisions` | tabs: `cr-reference` | tabs: `cr-reference` |
 | `credential_priority_requests` | tabs: `exhibits` · modules: `a11y.config.js` | — |
 | `credential_submissions` | tabs: `exhibits` | — |
@@ -484,6 +484,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fetch_custom_report.py` | workflows: `daily-dashboard.yml`, `map-custom-report-load.yml` | — |
 | `fetch_veteran_jst.py` | workflows: `daily-dashboard.yml` | — |
 | `first_light.js` | pages: `CPL_Dashboard.html` | — |
+| `first_light_tab.js` | pages: `CPL_Dashboard.html` | — |
 | `funding-model/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `funding/_build_funding_ess.py` | workflows: `daily-dashboard.yml` | — |
 | `funding/_build_funding_performance.py` | workflows: `daily-dashboard.yml` | — |
@@ -890,6 +891,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library/adopt/adopt_data.json` | tabs: `cpl-pathways`, `exhibits` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_align.py`, `kb/_build_adopt_page.py`, `kb/_build_cpl_ai_join.py` | committed by: `daily-dashboard.yml` |
 | `library/adopt/adopt_more.json` | scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
+| `library/photos/hero_photos.json` | tabs: `first-light` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
 | `library_remediate.js` | tabs: `library` | — |
 | `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html`, `library/cpl-initiative-overview/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
@@ -987,6 +989,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `scripts/tab_review_sheet/fs/snapshot.json` | modules: `scripts/tab_review_sheet/capture.js`, `scripts/tab_review_sheet/tab.js` | — |
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
+| `sierra/art/manifest.json` | tabs: `first-light` | — |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adding-cpl-coordinator-noncredit-lead-to-map-mwauxci5/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-initiative-overview/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-healthcare-pathways-cpl-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html`, `library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
@@ -1216,7 +1219,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `claude.ai` | tabs: `admin`, `canonical-subj4`, `exhibits` · modules: `a11y.config.js` · scripts: `kb/_build_claude_md_audit_decision_sheet.py`, `kb/_build_esl_followup_decision_sheet.py`, `kb/_build_esl_merging_decision_sheet.py`, `kb/_esl_monthly_pass.py`, `kb/_esl_new_identities_dryrun.py`, `kb/_esl_sheet_apply_build.py`, `scripts/announce_session_hint.py`, `scripts/build_exhibits_list_preview.py` · workflows: `cpl-chat-health.yml`, `map-users-sync.yml` |
 | `coci2.ccctechcenter.net` | scripts: `kb/_write_oc_medical_assistant_html.py`, `kb/_write_oc_medical_assistant_workbook.py` |
 | `code.claude.com` | scripts: `scripts/install_prompt_guards.py` |
-| `commons.wikimedia.org` | pages: `CPL_Dashboard.html` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
+| `commons.wikimedia.org` | tabs: `first-light` · scripts: `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `tools/source_first_light_art.mjs` |
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `a11y.config.js`, `cpl_funding_nudge.js`, `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_college_contacts_harvest.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py`, `scripts/library_publish.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:docket-process`, `edgefn:funding-door`, `edgefn:library-revise-draft`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `scripts/daily_build.sh` · workflows: `daily-dashboard.yml` |
@@ -1406,5 +1409,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 873 file
-datasets · 195 external services · 559 consumers · 66 workflows · 40 tabs.
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 876 file
+datasets · 195 external services · 560 consumers · 66 workflows · 41 tabs.

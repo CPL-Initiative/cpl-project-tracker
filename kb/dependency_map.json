@@ -4,12 +4,12 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 873,
+  "file_datasets": 876,
   "external_services": 195,
-  "consumers": 559,
+  "consumers": 560,
   "workflows": 66,
   "data_js_files": 71,
-  "tabs": 40
+  "tabs": 41
  },
  "datasets": {
   "edgefn:FN": {
@@ -997,8 +997,8 @@
      "direction": "read",
      "how": "url",
      "line": 40,
-     "pages": [
-      "CPL_Dashboard.html"
+     "tabs": [
+      "first-light"
      ]
     },
     {
@@ -1787,7 +1787,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2283
+     "line": 2304
     }
    ],
    "main_committers": []
@@ -4438,7 +4438,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1947
+     "line": 1968
     }
    ],
    "main_committers": []
@@ -5560,7 +5560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1838
+     "line": 1859
     },
     {
      "id": "module:admin.js",
@@ -6737,7 +6737,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2222
+     "line": 2243
     },
     {
      "id": "module:college_briefing.js",
@@ -8704,6 +8704,19 @@
    "main_committers": []
   },
   "file:first_light.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:first_light_tab.js": {
    "consumers": [
     {
      "id": "page:CPL_Dashboard.html",
@@ -20192,6 +20205,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:library/photos/hero_photos.json": {
+   "consumers": [
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 41,
+     "tabs": [
+      "first-light"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:library/public_library.js": {
    "consumers": [
     {
@@ -22064,6 +22093,22 @@
     {
      "by": "workflow:sierra-art-fetch.yml",
      "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:sierra/art/manifest.json": {
+   "consumers": [
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 43,
+     "tabs": [
+      "first-light"
+     ]
     }
    ],
    "served": true,
@@ -28208,8 +28253,8 @@
      "direction": "read",
      "how": "literal",
      "line": 947,
-     "pages": [
-      "CPL_Dashboard.html"
+     "tabs": [
+      "first-light"
      ]
     },
     {
@@ -28218,8 +28263,8 @@
      "direction": "write",
      "how": "literal",
      "line": 1234,
-     "pages": [
-      "CPL_Dashboard.html"
+     "tabs": [
+      "first-light"
      ]
     },
     {
@@ -30895,6 +30940,12 @@
   ],
   "exhibits_cpl_ai.js": [
    "exhibits"
+  ],
+  "first_light.js": [
+   "first-light"
+  ],
+  "first_light_tab.js": [
+   "first-light"
   ],
   "governance.js": [
    "governance"
