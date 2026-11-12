@@ -73,16 +73,42 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 0.0-0.0; the catalog states 28.0-28.0"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     34.0,
+     34.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     26.0,
+     26.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -104,10 +130,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -116,8 +139,8 @@
    "section_heading": "Associate in Science in Geology for Transfer Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -126,12 +149,12 @@
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -197,5 +220,44 @@
   ],
   "notes": []
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 28,
+    "max": 28
+   },
+   "words": "Total Major Units\t28"
+  },
+  {
+   "field": "degree_total",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 60,
+    "max": 60
+   },
+   "words": "California General Education Transfer Curriculum (Cal-GETC)  1\tup to 34\nTransferable electives as needed to satisfy unit requirement\tVaries\nTotal Degree Units \t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (Cal-GETC)  1\tup to 34 (https://catalog.cccd.edu/orange-coast/pathways/language-communication/journalism/journalism-associate-arts-degree-transfer-aat/: Journalism AA-T 32179, REQUIREMENTS tab: 'California General Education Transfer Curriculum (Cal-GETC) 1 up to 34' and footnote 1 'Some program major units may also meet GE requirements' (college page read 43134559539, kb/college_reads/orange_coast_degree_totals.json))"
+  }
+ ],
+ "read_run": "38670927724"
 }

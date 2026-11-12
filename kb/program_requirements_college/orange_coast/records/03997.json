@@ -74,7 +74,21 @@
    "ge": null,
    "why": [
     "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     38.0,
+     38.0
+    ],
+    "stated": [
+     38.0,
+     38.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,8 +119,8 @@
    "section_heading": "Graphic Design, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 38,
+    "max": 38
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,7 +142,8 @@
     "Apply critical thinking and aesthetic judgment to demonstrate the ability to analyze, synthesize, and develop probable graphic design solutions.",
     "Develop an original, innovative and articulate body of graphic design work for a professional portfolio for the purpose of gaining employment and/or acceptance to an Art College or University."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -248,5 +263,26 @@
    "The breadcrumb places this program under 'Business, Management and Entrepreneurship' while the source URL lists 'visual-arts-design-performing-arts'; minor inconsistency."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 38,
+    "max": 38
+   },
+   "words": "Total Major Units\t38"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  }
+ ],
+ "read_run": "38670927724"
 }

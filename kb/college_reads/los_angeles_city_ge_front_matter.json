@@ -1,0 +1,31 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Los Angeles City College's front matter: what the catalog prints for an associate degree's general education (the LACCD GE Plan and Cal-GETC, and the units of each) and its 60 units, and what an Associate Degree for Transfer requires. 24 local degrees print 'Major Units: N' and 'Total Units: Minimum of 60' and no GE pattern, and read unequal against the 60; 16 transfer degrees read incomplete. Its words become the college's reconcile steps. Pages 1-72 only, before the program pages (Business Administration's State Code heading is pdf page 76). One load, no model call.",
+ "college": "Los Angeles City College",
+ "questions": {
+  "ge_units": "The units of the LACCD GE Plan and Cal-GETC, the catalog's words for an associate degree's 60 units, and whether electives make up the 60.",
+  "adt": "What the catalog prints for an Associate Degree for Transfer: its 60 units, Cal-GETC, and the units in the major."
+ },
+ "keywords": [
+  "LACCD\\s+GE\\s+Plan",
+  "LACCD\\s+General\\s+Education",
+  "General\\s+Education\\s+Plan",
+  "minimum\\s+of\\s+60",
+  "60\\s+(?:degree[- ]applicable\\s+)?(?:semester\\s+)?units",
+  "Associate\\s+Degree\\s+Requirements",
+  "Graduation\\s+Requirements",
+  "Associate\\s+(?:in\\s+(?:Arts|Science)\\s+)?(?:Degrees?\\s+)?for\\s+Transfer"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units",
+    "adt"
+   ],
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  72
+ ]
+}

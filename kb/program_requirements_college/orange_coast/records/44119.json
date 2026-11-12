@@ -60,21 +60,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     46.0,
     47.0
    ],
    "stated": [
-    61.0,
-    63.0
+    46.0,
+    47.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     67.0,
+     68.0
+    ],
+    "stated": [
+     61.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,15 +115,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Fashion Media, Events, & Promotion, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 46,
+    "max": 47
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,9 +137,9 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Students will have the general education breadth to transfer to applicable four-year programs.",
     "Students will demonstrate a working knowledge of fashion marketing and promotions.",
@@ -135,7 +152,8 @@
     "styling",
     "fashion marketing",
     "media production"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -301,5 +319,44 @@
    "Numeric suffixes after some titles (e.g., 'Media, Events, and Promotions 1') are footnote markers, not units."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 46,
+    "max": 47
+   },
+   "words": "Total Major Units\t46-47"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t61"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Transferable electives as needed to satisfy unit requirements"
+  }
+ ],
+ "read_run": "38670927724"
 }
