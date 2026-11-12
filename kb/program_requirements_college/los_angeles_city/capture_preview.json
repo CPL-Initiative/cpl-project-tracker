@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 258,
- "started": "2026-11-12T06:40:55Z",
+ "started": "2026-11-12T11:32:24Z",
  "pdf": {
   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
   "access": "ok",
@@ -3411,7 +3411,7 @@
   ]
  },
  "loads": 1,
- "seconds": 161.5,
+ "seconds": 168.4,
  "found": 250,
  "by_method": {
   "no_closed_list": 2,
@@ -3859,7 +3859,7 @@
   "against": "kb/program_requirements_college/los_angeles_city",
   "kept": 105,
   "kept_moved": 0,
-  "programs": 143,
+  "programs": 145,
   "list": [
    {
     "control_number": "02720",
@@ -4682,6 +4682,26 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "40593",
+    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 2",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "coverage": 0.5,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "was_coverage": 0.5,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40596",
+    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 3",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "coverage": 0.739,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "was_coverage": 0.739,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "40644",
     "title": "CINEMATOGRAPHY",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -5292,25 +5312,9 @@
     "was_method": "pdf_pages"
    }
   ],
-  "held_worse_window": [
-   {
-    "control_number": "40593",
-    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 2",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
-    "coverage": 0.5,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40596",
-    "title": "PROFESSIONAL ACTOR TRAINING LEVEL 3",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
-    "coverage": 0.739,
-    "was_coverage": 1.0
-   }
-  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43169039127"
+ "run": "43209649692"
 }
