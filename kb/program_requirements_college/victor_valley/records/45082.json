@@ -60,20 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    108.0,
+    108.0
    ],
    "stated": [
     96.0,
     108.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": [],
+   "meets_top": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,14 +137,14 @@
     "courses": [
      {
       "code": "PTS 0200",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PTS 0201",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -163,5 +162,17 @@
    "The page's heading is not in the extracted text. The section heading is taken from the catalog menu entry 'Physical Therapy Aide Certification of Completion'."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "PTS 0200": 54.0,
+    "PTS 0201": 54.0
+   },
+   "words": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json) (each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0')"
+  }
+ ],
+ "read_run": "38675237912"
 }
