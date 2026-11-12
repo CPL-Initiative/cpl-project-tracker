@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 371,
  "with_closed_list": 368,
- "started": "2026-11-12T02:17:51Z",
+ "started": "2026-11-12T06:29:39Z",
  "pdf": {
   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -1246,14 +1246,17 @@
    {
     "control_number": "14255",
     "pages": [
+     764,
+     765,
+     766,
      767
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 767] Course Code Course Title Units BUS 220 Retailing and Merchandising for the Small Business (1) BUS 224 Customer Service (1) BUS 228 Selling Techniques for the Small Business (1) Total Units: 33 The Commer"
+    "opens": "[page 764] Commercial Music: Business Certificate Commercial Music: Recording Certificate Digital Audio Production Certificate Music Management and Promotion Certificate Music Instructional Assistant Certificate Stu"
    },
    {
     "control_number": "14256",
@@ -1627,16 +1630,15 @@
    {
     "control_number": "16946",
     "pages": [
-     434,
-     435,
-     436
+     428,
+     429
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 434] Degree Requirements Course Code Course Title Units CISN 340 Cisco Networking Academy CCNA: Introduction to Networks 3.5 CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essent"
+    "coverage": 0.5,
+    "opens": "[page 428] Computer Information Security Essentials Certificate Cybersecurity and Information Assurance Certificate Cybersecurity and Information Security Administration Certificate Enterprise Mainframe System Admini"
    },
    {
     "control_number": "16948",
@@ -1909,17 +1911,17 @@
    {
     "control_number": "20104",
     "pages": [
-     401,
-     402,
-     403,
-     404
+     396,
+     397,
+     398,
+     399
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 401] Cross-Cultural Conflict Resolution Certificate This certificate provides the knowledge and skills needed to resolve cross-cultural conflict with both internal and external customers. It combines a theoreti"
+    "coverage": 0.842,
+    "opens": "[page 396] Entrepreneurship/Small Business Management Certificate General Business Certificate Programs of Study – Business 396 American River College | 2026-2027 Official Catalog [page 397] Internet Marketing Certifi"
    },
    {
     "control_number": "20105",
@@ -1963,16 +1965,16 @@
    {
     "control_number": "20109",
     "pages": [
-     434,
-     435,
-     436
+     428,
+     429,
+     430
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 434] Degree Requirements Course Code Course Title Units CISN 340 Cisco Networking Academy CCNA: Introduction to Networks 3.5 CISN 341 CISCO Networking Academy (CCNA)tm:Switching, Routing, and Wireless Essent"
+    "coverage": 0.6,
+    "opens": "[page 428] Cybersecurity and Information Assurance Certificate Cybersecurity and Information Security Administration Certificate Enterprise Mainframe System Administration Certificate Enterprise Software Engineering "
    },
    {
     "control_number": "20110",
@@ -2876,15 +2878,17 @@
    {
     "control_number": "31582",
     "pages": [
-     331,
-     332
+     328,
+     329,
+     330,
+     331
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 331] Certificate Requirements Course Code Course Title Units ART 300 Drawing and Composition I 3 ARTNM 420 Introduction to 3D Modeling 3 ARTNM 421 3D Modeling and Texturing II - Character 3 ARTNM 423 3D Modeli"
+    "opens": "[page 328] 3D Rigging Technical Director Certificate 3D Technical Director Certificate Animation Certificate Art New Media: Illustration Certificate ARTNM: Character Design Certificate ARTNM: Commercial Illustration"
    },
    {
     "control_number": "31583",
@@ -3277,17 +3281,17 @@
    {
     "control_number": "35640",
     "pages": [
-     400,
-     401,
-     402,
-     403
+     396,
+     397,
+     398,
+     399
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 400] 5Substitute course, BUSTEC 360 - Word Processing Beyond the Essentials, is available at Folsom Lake College. 6Substitute course, BUSTEC 362 - Comprehensive Electronic Spreadsheets, is available at Folsom La"
+    "coverage": 0.75,
+    "opens": "[page 396] Computer Applications for Small Business Certificate Cross-Cultural Conflict Resolution Certificate Entrepreneurship/Small Business Management Certificate General Business Certificate Programs of Study – B"
    },
    {
     "control_number": "35641",
@@ -3418,17 +3422,17 @@
    {
     "control_number": "37403",
     "pages": [
-     334,
-     335,
-     336,
-     337
+     328,
+     329,
+     330,
+     331
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 334] Student Learning Outcomes Upon completion of this program, the student will be able to: • create believable characters using traditional and digital media • research the environment, social and cultural st"
+    "coverage": 0.833,
+    "opens": "[page 328] ARTNM: Commercial Illustration Certificate ARTNM: Web Design Certificate Graphic Design: Intern Artist Certificate Graphic Design: Junior Artist Certificate Graphic Design: Production Artist Certificate P"
    },
    {
     "control_number": "37404",
@@ -3559,17 +3563,16 @@
    {
     "control_number": "38640",
     "pages": [
-     169,
-     170,
-     171,
-     172
+     153,
+     154,
+     155
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 169] Course Code Course Title Units A minimum of 16 units from the following: 16 HVACR 298 Work Experience in HVAC, & Refrigeration (0.5 - 6) PLUMB 298 Work Experience in Plumbers and Pipefitters Apprentice"
+    "coverage": 0.941,
+    "opens": "[page 153] Acoustical Installer Apprenticeship Certificate Acoustical Installer Level I Certificate Acoustical Installer Level II Certificate Acoustical Installer Level III Certificate Carpenter Apprenticeship Certif"
    },
    {
     "control_number": "38955",
@@ -3588,14 +3591,17 @@
    {
     "control_number": "39057",
     "pages": [
+     153,
+     154,
      155
     ],
     "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.562,
-    "opens": "[page 155] Course Code Course Title Units CARPT 164 Blueprint Reading Specialized Acoustical (1.5) CARPT 166 Acoustical Blueprint Reading Advanced (1.5) CARPT 190 Introduction to Welding (1.5) CARPT 211 Introduction"
+    "coverage": 1.0,
+    "opens": "[page 153] A.A. in Acoustical Installer Apprenticeship A.A. in Carpenter Apprenticeship A.A. in Drywall/Lathing Apprenticeship A.A. in Electrical Apprenticeship A.A. in Elevator Apprenticeship A.A. in Hardwood Floor",
+    "opens_on_list": true
    },
    {
     "control_number": "39255",
@@ -4141,26 +4147,30 @@
    {
     "control_number": "40110",
     "pages": [
+     153,
+     154,
      155
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 155] Course Code Course Title Units CARPT 164 Blueprint Reading Specialized Acoustical (1.5) CARPT 166 Acoustical Blueprint Reading Advanced (1.5) CARPT 190 Introduction to Welding (1.5) CARPT 211 Introduction"
+    "opens": "[page 153] Carpenter Apprenticeship Level II Certificate Carpenter Apprenticeship Level III Certificate Drywall/Lathing Apprenticeship Certificate Drywall/Lathing Level I Certificate Drywall/Lathing Level II Certific"
    },
    {
     "control_number": "40111",
     "pages": [
-     174
+     153,
+     154,
+     155
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 174] Course Code Course Title Units Total Units: 17 Enrollment Eligibility To be eligible for enrollment in the program, the student must meet the following criteria: • Be a registered Carpenter apprentice S"
+    "opens": "[page 153] Acoustical Installer Level III Certificate Carpenter Apprenticeship Certificate Carpenter Apprenticeship Level I Certificate Carpenter Apprenticeship Level II Certificate Carpenter Apprenticeship Level III"
    },
    {
     "control_number": "40112",
@@ -5262,7 +5272,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 388.1,
+ "seconds": 514.3,
  "found": 368,
  "by_method": {
   "no_closed_list": 3,
@@ -5301,11 +5311,6 @@
    "19361",
    "43950",
    "43951"
-  ],
-  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155": [
-   "04536",
-   "39057",
-   "40110"
   ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=157": [
    "04537",
@@ -5386,10 +5391,6 @@
    "40860",
    "40865"
   ],
-  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=767": [
-   "11553",
-   "14255"
-  ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=500": [
    "11557",
    "14477",
@@ -5408,9 +5409,13 @@
    "40618",
    "40619"
   ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428": [
+   "12181",
+   "16946",
+   "20109"
+  ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401": [
    "12186",
-   "20104",
    "35641"
   ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=505": [
@@ -5437,10 +5442,6 @@
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=335": [
    "12449",
    "37405"
-  ],
-  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=334": [
-   "12450",
-   "37403"
   ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=333": [
    "12451",
@@ -5484,11 +5485,6 @@
    "16820",
    "20140"
   ],
-  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434": [
-   "16946",
-   "20109",
-   "46364"
-  ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=690": [
    "17938",
    "17939"
@@ -5510,6 +5506,10 @@
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741": [
    "20102",
    "35646"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396": [
+   "20104",
+   "35640"
   ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=484": [
    "20115",
@@ -5568,6 +5568,10 @@
    "31537",
    "31560"
   ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328": [
+   "31582",
+   "37403"
+  ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=366": [
    "35075",
    "43358"
@@ -5592,6 +5596,12 @@
    "37687",
    "39338",
    "39595"
+  ],
+  "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153": [
+   "38640",
+   "39057",
+   "40110",
+   "40111"
   ],
   "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=193": [
    "39255",
@@ -5683,15 +5693,15 @@
  "not_found": [],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 27,
-  "0.8-1.0": 53,
-  "1.0": 288
+  "0.5-0.8": 29,
+  "0.8-1.0": 56,
+  "1.0": 283
  },
  "would_extract": {
   "against": "kb/program_requirements_college/american_river",
-  "kept": 252,
+  "kept": 243,
   "kept_moved": 0,
-  "programs": 116,
+  "programs": 114,
   "list": [
    {
     "control_number": "04514",
@@ -5771,16 +5781,6 @@
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04542",
-    "title": "Art",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
-    "coverage": 0.932,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=311",
-    "was_coverage": 0.977,
     "was_method": "pdf_pages"
    },
    {
@@ -6037,7 +6037,7 @@
     "control_number": "14255",
     "title": "Commercial Music: Recording",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=767",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764",
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
     "was_coverage": 1.0,
@@ -6094,16 +6094,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "14520",
-    "title": "Telecommunication Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
-    "coverage": 0.889,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=525",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "15325",
     "title": "Cybersecurity and Information Assurance",
     "award": "A.S. Degree",
@@ -6154,22 +6144,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "16820",
-    "title": "Paralegal Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-    "coverage": 0.652,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=740",
-    "was_coverage": 0.87,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17372",
-    "title": "Law Office Clerical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
-    "coverage": 0.778,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+    "control_number": "16946",
+    "title": "Computer Information Security Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
+    "coverage": 0.5,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6264,6 +6244,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "20109",
+    "title": "Cybersecurity and Information Assurance",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
+    "coverage": 0.6,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "20114",
     "title": "ASL-English Interpreter Preparation Program",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -6341,26 +6331,6 @@
     "coverage": 0.778,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635",
     "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20139",
-    "title": "Gerontology: Advocacy and Social Policy",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
-    "coverage": 0.714,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637",
-    "was_coverage": 0.81,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20140",
-    "title": "Paralegal Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
-    "coverage": 0.652,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
-    "was_coverage": 0.87,
     "was_method": "pdf_pages"
    },
    {
@@ -6491,6 +6461,16 @@
     "coverage": 0.966,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=653",
     "was_coverage": 0.931,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "31582",
+    "title": "3D Rigging Technical Director",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=331",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -6694,16 +6674,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "39057",
-    "title": "Acoustical Installer Apprenticeship",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155",
-    "coverage": 0.562,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=169",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "39255",
     "title": "Millwright Apprenticeship",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -6740,6 +6710,26 @@
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40110",
+    "title": "Carpenter Apprenticeship Level II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40111",
+    "title": "Carpenter Apprenticeship Level III",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "coverage": 1.0,
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=174",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6853,7 +6843,99 @@
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
+  ],
+  "held_worse_window": [
+   {
+    "control_number": "04542",
+    "title": "Art",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=308",
+    "coverage": 0.932,
+    "was_coverage": 0.977
+   },
+   {
+    "control_number": "14520",
+    "title": "Telecommunication Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+    "coverage": 0.889,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "16820",
+    "title": "Paralegal Studies",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "coverage": 0.652,
+    "was_coverage": 0.87
+   },
+   {
+    "control_number": "17372",
+    "title": "Law Office Clerical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=412",
+    "coverage": 0.778,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20104",
+    "title": "Entrepreneurship/Small Business Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "coverage": 0.842,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20139",
+    "title": "Gerontology: Advocacy and Social Policy",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=630",
+    "coverage": 0.714,
+    "was_coverage": 0.81
+   },
+   {
+    "control_number": "20140",
+    "title": "Paralegal Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=823",
+    "coverage": 0.652,
+    "was_coverage": 0.87
+   },
+   {
+    "control_number": "35640",
+    "title": "Computer Applications for Small Business",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
+    "coverage": 0.75,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37403",
+    "title": "ARTNM: Commercial Illustration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "coverage": 0.833,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "38640",
+    "title": "Acoustical Installer Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "coverage": 0.941,
+    "was_coverage": 1.0
+   }
+  ],
+  "held_opens_on_list": [
+   {
+    "control_number": "39057",
+    "title": "Acoustical Installer Apprenticeship",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
+    "coverage": 1.0,
+    "was_coverage": null
+   }
   ]
  },
- "run": "43140065175"
+ "run": "43168246175"
 }
