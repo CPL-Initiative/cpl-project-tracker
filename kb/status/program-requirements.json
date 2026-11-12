@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-11T22:12:31Z",
-  "session": 638,
-  "moniker": "SkyTamarind",
+  "written_at": "2026-11-12T01:45:19Z",
+  "session": 639,
+  "moniker": "SkyQuail",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_639_handoff.md",
+  "handoff": "docs/session_640_handoff.md",
   "next_step": {
-    "title": "De Anza: load the 24 programs still absent",
-    "text": "De Anza's 2026-2027 catalog now reads with its packed course codes and its GE ranges, and 205 of 221 records pass. The next run loads the 24 programs not yet filed, then the 15 older records Sheet 118 card 1 covers, then the display. Sixteen records still fail the machine checks."
+    "title": "The colleges with the most failing records",
+    "text": "De Anza's 24 absent programs are loaded. A side session reads why Orange Coast's 72, Los Angeles City's 67 and Victor Valley's 60 records fail, most of them a general education pattern named with no units, then American River's 23 reworded programs and De Anza's older records and display."
   },
   "calls": [
     {
@@ -235,6 +235,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-11T22:43:14Z",
+      "text": "De Anza's load filed the 24 programs not yet on file and kept the other 197; 221 records posted, 205 pass the machine checks. The receipt names the rows the load added."
+    },
     {
       "at": "2026-11-11T19:50:45Z",
       "text": "De Anza on its 2026-2027 catalog merged: course codes read as the page prints them, for De Anza alone, and the GE ranges with the 90 units as a minimum. 205 of 221 records pass the machine checks. The extraction cost $17.15 of Sam's standing forty dollar go. Two rereads replaced 197 live De Anza records; each receipt holds the values before."
@@ -466,6 +470,12 @@
       "active": 20282,
       "complete": 13777,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-12",
+      "active": 20282,
+      "complete": 13779,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -474,7 +484,7 @@
     "at": "2026-11-12T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-11",
+    "day": "2026-11-12",
     "gaps": 3005,
     "parts": {
       "links": {
@@ -496,7 +506,7 @@
         20282
       ],
       "coci": [
-        16142,
+        16144,
         20282
       ],
       "outcomes": {
@@ -505,12 +515,12 @@
           89192
         ],
         "plo": [
-          16142,
+          16144,
           20282
         ]
       },
       "careers": [
-        15106,
+        15108,
         20282
       ]
     }
