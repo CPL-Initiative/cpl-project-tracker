@@ -60,21 +60,41 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     25.0,
     26.0
    ],
    "stated": [
-    60.0,
-    63.0
+    25.0,
+    26.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     46.0,
+     47.0
+    ],
+    "stated": [
+     60.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     13.0,
+     14.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,15 +118,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Industrial PLC Technician, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 25,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,7 +140,7 @@
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -130,7 +150,8 @@
     "Students will gain proficiency in reading and creating schematics, wiring diagrams, and ladder logic diagrams for advanced control systems.",
     "Students will acquire hands-on skills working with HMIs, SCADA, and industrial communication protocols."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -231,5 +252,38 @@
    "No GE unit total is printed; ge_units null."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 25,
+    "max": 26
+   },
+   "words": "Total Major Units\t25 - 26"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t60"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  }
+ ],
+ "read_run": "38670927724"
 }
