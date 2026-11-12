@@ -521,7 +521,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_build_ccr_sky.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_ccr_universe.py` | workflows: `daily-dashboard.yml`, `skyview-desc-shards.yml` | — |
 | `kb/_build_college_courses.py` | workflows: `credential-catalog-sync.yml` | — |
-| `kb/_build_commons_status.py` | workflows: `cer-procedures.yml`, `daily-dashboard.yml` | — |
+| `kb/_build_commons_status.py` | workflows: `cer-procedures.yml`, `daily-dashboard.yml`, `js-tests.yml` | — |
 | `kb/_build_cpl_pathway_ccr.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_cpl_pathway_membership.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_cr_reference.py` | workflows: `daily-dashboard.yml` | — |
@@ -998,6 +998,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
 | `tests/anchor_rekey_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/ap_official_titles_test.py` | workflows: `js-tests.yml` | — |
+| `tests/apply_concurrency_test.py` | workflows: `js-tests.yml` | — |
 | `tests/athl_four_remint_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
@@ -1106,6 +1107,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/next_slo_colleges_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
+| `tests/partner_crosswalk_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_dryrun_test.py` | workflows: `js-tests.yml` | — |
 | `tests/probe_lifecycle_checks_test.py` | workflows: `js-tests.yml` | — |
@@ -1393,5 +1395,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 861 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 863 file
 datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.
