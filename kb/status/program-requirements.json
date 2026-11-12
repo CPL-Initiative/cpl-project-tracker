@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-12T01:45:19Z",
-  "session": 639,
-  "moniker": "SkyQuail",
+  "session": 640,
+  "moniker": "SkyHeron",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_640_handoff.md",
+  "handoff": "docs/session_641_handoff.md",
   "next_step": {
-    "title": "The colleges with the most failing records",
-    "text": "De Anza's 24 absent programs are loaded. A side session reads why Orange Coast's 72, Los Angeles City's 67 and Victor Valley's 60 records fail, most of them a general education pattern named with no units, then American River's 23 reworded programs and De Anza's older records and display."
+    "title": "Rio Hondo's fresh reconcile, then the PDF reader's proofs",
+    "text": "Rio Hondo's first reconcile met server errors and read 34 of 328 pages, so a fresh one runs; when it files, the session measures it against main, rereads and merges. Then the PDF reader takes fresh capture-only proofs at five colleges against same-day baselines by main's reader, a review, and the merge; the paid re-extractions follow it."
   },
   "calls": [
     {
@@ -235,6 +235,18 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-12T04:53:00Z",
+      "text": "Berkeley City College merged: local degrees take the catalog's 18 general education units and its electives rule. The reread replaced 16 live records, none held; 48 of 89 pass the machine checks."
+    },
+    {
+      "at": "2026-11-12T04:35:00Z",
+      "text": "West Valley College merged: transfer degrees take Cal-GETC's 34 units, summed from the catalog's printed areas. The reread replaced 34 live records, none held; 120 of 133 pass the machine checks."
+    },
+    {
+      "at": "2026-11-12T04:20:00Z",
+      "text": "Victor Valley College merged: noncredit hours, Cal-GETC 34 to 42 and the EMS tabs. 136 of 168 records pass the machine checks."
+    },
     {
       "at": "2026-11-11T22:43:14Z",
       "text": "De Anza's load filed the 24 programs not yet on file and kept the other 197; 221 records posted, 205 pass the machine checks. The receipt names the rows the load added."

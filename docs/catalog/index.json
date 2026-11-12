@@ -72,7 +72,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 580,
+   "count": 581,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3244,6 +3244,23 @@
      "title": "A prompt that quotes the wrong sentence teaches it",
      "type": "methodology",
      "updated": "2026-10-02"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [
+      ".github/workflows/program-requirements-college.yml"
+     ],
+     "path": "docs/kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "program-requirements",
+      "harvest",
+      "review"
+     ],
+     "title": "A proof run needs a same-day baseline",
+     "type": "methodology",
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-08-13",
@@ -15030,7 +15047,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 4 (S419 onward)",
      "type": null,
-     "updated": "2026-11-09"
+     "updated": "2026-11-12"
     },
     {
      "created": "2026-11-12",
@@ -16811,8 +16828,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 601,
+   "count": 602,
    "docs": [
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "n": 641,
+     "path": "docs/session_641_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 641 handoff (from SkyHeron, S640)",
+     "type": null,
+     "updated": "2026-11-12"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -26999,5 +27030,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1452
+ "total": 1454
 }

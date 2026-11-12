@@ -19,13 +19,7 @@ sees only the exceptions. Sam, 2026-10-18 ~02:55Z (vault braindump
 classify and complete common exhibit titles and elements as we go. I don't have enough time to curate the growing list
 and want to further automate so curation is manageable."*
 
-**The classifier answered nothing from 2026-11-07 to the merge of #2925 (S604).** Every call came back HTTP 413: the
-house families pushed the standing rules to 251,866 characters against `cer-classify`'s `MAX_RULES` 250,000. #2925 lists
-the families under their issuer over a 240,000 budget (lossless, ~165,600), drops far families only as a last resort,
-and stops the run rather than send a refused call. COBIx asked for a replay: the first trim kept every family line but
-stripped the issuer from 156 of 1,115 saved joined answers; the grouping keeps all 1,115 (`tests/cer_classifier_rules_size_test.py`).
-Read the next nightly report's `classifier_run.answered` and `errors` after it lands. Also #2924: the procedures report
-`kb/cer_procedures_out/latest.json` is served by Pages again (it 404'd for Exhibits, the CER tab and the progress).
+**The classifier's HTTP 413 (2026-11-07 to #2925, S604) and the procedures report's Pages fix (#2924):** `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S640)*. Read each nightly report's `classifier_run.answered` and `errors`.
 
 ## Certification naming, the fold, the subject fill and the ASE plans (S637, S638; 2026-11-11)
 
@@ -88,26 +82,19 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   `kb/receipts/credential_family_2026-11-11_s638/`. Undo: `mode=rollback` deletes each planned row (pending receipts
   included) only while it still holds the cohort, the field and the value written; a row a person changed since stays
   and is reported as taken since. #3117's `plan.sql` never ran and is retired.
-- **Held for Sam:** a guarded delete of Sierra's ghost rows (NEXT (5)) goes on the next sheet; nothing else here.
+- **Held for Sam:** a guarded delete of Sierra's ghost rows (NEXT (5)) (Open Asks Sheet 182, *Waits for my send or go*).
 - **The family is live on 25 titles** under `credential-family-s638@bot`: the 24 bundles (#3122; dry run 43120144849,
   commit 43120939284, set `038293de0093`, receipt `applied_2026-11-11T23-38-21Z.json`), then the two any-one-test
   members *ASE C1 or G1* and *ASE Certification (any A1–A8)* (commit 01:28Z 2026-11-12, set `3a4d0f3d969b`, receipt
   `applied_2026-11-12T01-28-47Z.json`), less the bot tag removed on the merged A2 + A3 + A6 twin. Of the 25, 22 sit
   on renamed bundle titles, 1 on *ASE Bundle — A6 or T6 + L3*, 2 are any-one-test. Undo:
   `credential-family-apply.yml` `mode=rollback`. `kb/credentials.json` carries 23 `family` values until the next daily run.
-- **The restore is applied:** `-4`, run 43129235942, receipt `applied_2026-11-12T00-46-52Z.json` (commit `f632db03`),
-  13 rows back on the eight emptied titles under their own reviewers and stamps (12 slee@cccco.edu: 8
-  `unified_title_override`, 3 `unified_title_merge_confirm`, 1 `issuing_agency_override`; 1 map@rccd.edu issuer row
-  on Automotive Air Conditioner). The 4 July `reviewed_marker` ticks stay retired; phases 1 and 2 stand (20 rows under
-  `cer-s638@bot`). Undo order: `-4` before phase 1.
-- **Sheet 181's ruled renames are applied** (`cred-rename-apply.yml` `only_plan=sheet181-2026-11-12`, commit `da9f2f90`
-  00:54Z 2026-11-12, receipt `kb/cred_rename_out/2026-11-12/`): 22 renames to *ASE Certificate Bundles: …* and 2
-  merges (*ASE Bundle — A2, A3, A6* into its twin; *ASE Master Automobile Technician (A1–A8 + L1)* into *ASE Master
-  Automobile Technician*). `kb_curation`: 73 steps, 0 failed: 47 of Sam's fold rows kept on the old keys (op `keep`),
-  25 rows moved to the new keys (22 family tags, 2 subject rows, 1 map@rccd.edu issuer override), 1 bot family tag
-  deleted on the merged twin. Undo: `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12` (`--supabase-plan` writes
-  the `kb_curation` reversal as guarded SQL). 11 other renames and merges were deferred, the five "standards" folds among them.
-  The apply has no dry-run-only mode: run `kb/_cred_rename_dryrun.py --only-plan <id>` locally first.
+- **Applied and standing, records in `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S640)*:** the restore (`kb/cer_decisions_out/2026-11-11-4`, 13 rows; undo `-4` before phase 1) and Sheet 181's ruled renames (`kb/cred_rename_out/2026-11-12/`, 22 renames and 2 merges; undo `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12`, `--supabase-plan` for the `kb_curation` reversal). No dry-run-only mode: run `kb/_cred_rename_dryrun.py --only-plan <id>` locally first.
+- **The "standards" folds, first plan, applied (S640):** `standards-2026-11-12` (#3142, `cc327236`): *Automotive Technology (ASE A5 Brakes)* to *Brakes (ASE A5 standards)*, the A7 title to *Heating and Air Conditioning (ASE A7 standards)*, the A8 title to *Engine Performance (ASE A8 standards)*, and *Engine Performance (ASE A8 Engine Performance)* merged into it. `cred-rename-apply.yml` `only_plan=standards-2026-11-12`, dispatched 05:12Z (fresh read: 13 rows on the old titles, 7 Sam's; 0 on the targets; 6 rows naming the targets, on emptied titles, held). Filed `99d4ff32` (05:14Z), receipt `kb/cred_rename_out/2026-11-12-2/`: `kb_curation` 13 steps, 0 failed (7 of Sam's fulfilled approval rows deleted, 4 `unified_title_override` and 3 `unified_title_merge_confirm`, each before-row in the receipt; 2 bot subject rows superseded on the A8 fan-in; 4 moved to the new keys), plus one `issuer_resolution` insert (`cred-fold-s638@bot`) on the A8 title. Count at 05:16:42Z: 0 on the old keys, 5 on the targets, `_CREDENTIAL_REVIEW::` 3,499 to 3,491, the 6 held rows untouched. The daily run carried the titles onto the published files (`138779a4`, 05:24Z). Undo: `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12-2` (`--supabase-plan`).
+- **DECIDED (the S640 conductor, 2026-11-12; `d-standards-plan-four-entries-s640`):** the standards plan is four entries, not five. The lane's "five" counted Sam's saved folds at ruling time; phases 1 and 2 emptied four source titles, and what remained were his four saves of 15:26Z 2026-11-11.
+- **DECIDED (the S640 conductor; `d-rename-apply-drops-fulfilled-approvals-s640`):** a rename apply drops the approval rows it fulfils (a person's override or merge confirm saying "fold this title into that one"), each before-row kept in the receipt (`kb/_cred_rename_apply_supabase.py`, *Why DELETE + PATCH*). S639's rule still protects a saved row whose instruction was never carried out. Told to COBIx before the dispatch (#3110, comment 6814772340).
+- **DECIDED (the S640 conductor; `d-standards-second-plan-s640`):** the other seven standards folds go as a second plan, `standards-2-2026-11-12` (#3143): Sam's saved renames of 15:26:54Z 2026-11-11 for ASE L1, A2, A6, L3, A9, A3 and A4, none holding an industry-certification exhibit. Two more A6 saves (*Automotive Electrical/Electronics 1* and *2*) stay out while the review confirms they sit on emptied titles.
+- **DECIDED (the S640 conductor; `d-rename-apply-one-repoint-path-s640`):** the rename apply re-points saved machine values through one write path (#3140), inside its own receipt: no hand-run SQL, no separate job. Pending until #3140 merges; then the first apply after it re-points what the 2026-10-01, 2026-11-06, 2026-11-12 and 2026-11-12-2 applies left (dry run: 33 changes, 13 held).
 - **DECIDED (Open Asks Sheet 181, Sam, 22:55Z 2026-11-11; `d-sheet-181-replies-2026-11-11`):** ASE Master is one
   Automobile title and one Truck title, both canonical; *ASE Certification (any A1–A8)* and *ASE C1 or G1* keep their
   titles as any-one-test family members, no fold; *Advanced Electrical and Electronic Systems* follows the emptied-title
@@ -115,25 +102,7 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
 - **DECIDED (the S639 conductor):** *ASE Master Automobile Technician (A1–A8) or L3* keeps its own title (L3 alone
   qualifies, so an L3 holder is no Master) and *ASE Bundle — A6 or T6 + L3* stays unrenamed; both are left for a
   person. Restored 13 rows, not 12: the map@rccd.edu issuer row is a person's.
-- **NEXT, in order:** (0) confirm `main` is green: since the rename apply, 2 of 30 checks in
-  `tests/credential_family_test.py` read committed titles and expect the pre-rename state; the fix is on
-  `claude/family-test-after-rename-s639`; check whether that PR merged; (1) `daily-dashboard.yml` once it has, to carry
-  the two new tags and the renames onto the published files (`kb/credentials.json` should then read 25 `family`
-  values), dispatched clear of any apply in flight; (2) the five "standards" folds through `cred-rename-apply.yml` on
-  their own small scope: read the dry run's `issuer_preview` first and check `held_emptied`, so the restored rows stay
-  inert; (3) ASE plan phase 3 (`kb/cer_decisions_out/2026-11-11-3`); (4) the retired names as search aliases of where
-  their exhibits went (Automotive Air Conditioner and Heating and Air Conditioning to the A7 and MIL7 titles,
-  Automotive Braking Systems to MIL3 and MIL4): `kb/credential_aliases.py` reads only applied rename snapshots, never
-  the fold's `credential_retires`, so none resolves today; (5) Sierra's `chatbox_credentials` keeps a retired title as
-  a ghost row: `kb/_sync_credential_catalog.py` `upsert` (line 198) only merges by `unified_title`; the fix is a
-  guarded delete of rows absent from `credential_reference_data.js` with a receipt, and a delete needs Sam (next
-  sheet); (6) the Exhibits list shows a kept fold row as "Saved" where "Family set" is true; (7) the rename batch now
-  offers only titles outside the ruled plan; (8) the 362 credentials still without a subject as one batch (a web search
-  on an anomaly first, Sam 2026-11-11); (9) the hourly trigger for the fold apply; (10) the issuer registry (official
-  name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (11) H and N verification, then the
-  trainer move (130 titles, the 10 duplicate spellings and the *alifornia Veterinary Medical Association* typo); (12) a
-  Review step for the 181 college-issued titles holding an industry-certification exhibit. Then CompTIA, AWS, NCCER as
-  one batch each (`cert_naming.FAMILIES`).
+- **NEXT, in order:** (1) #3140 (`claude/rename-apply-repoint-s640`, head `a633abd0`, `lints` red): round three found 2 that stand (an out-of-order undo strands values; an apply whose only re-point is a `kb_curation` row writes no receipt) and 6 others; a last narrow review of the fix, then merge; (2) #3143 (`claude/standards-folds-plan-2-s640`, draft, head `b7447569`): merge on a green `test`, a fresh live read, `kb/_cred_rename_dryrun.py --only-plan standards-2-2026-11-12` locally, dispatch `only_plan=standards-2-2026-11-12`, count, daily run; (3) ASE plan phase 3 (`kb/cer_decisions_out/2026-11-11-3`): the standards titles now exist; its fresh read of 20:15Z 2026-11-11 is stale, so re-read, `dry-run`, read the summary line, then `commit`; (4) the retired names as search aliases of where their exhibits went (Automotive Air Conditioner and Heating and Air Conditioning to the A7 and MIL7 titles, Automotive Braking Systems to MIL3 and MIL4): `kb/credential_aliases.py` reads only applied rename snapshots, never the fold's `credential_retires`; with it, the five titles `tests/partner_crosswalk_test.py` check 4 fails on `main`, which no workflow runs (*California Food Manager Certificate*, *G Skin & Beauty Institute*, *HIT 10: Medical Terminology*, *Medical Billing and Coding Certificate of Completion*, *Water Supply Technology*); (5) Sierra's `chatbox_credentials` keeps a retired title as a ghost row: `kb/_sync_credential_catalog.py` `upsert` (line 198) only merges by `unified_title`; the fix is a guarded delete of rows absent from `credential_reference_data.js` with a receipt, which waits for Sam's go (Sheet 182); (6) the Exhibits list shows a kept fold row as "Saved" where "Family set" is true; (7) the rename batch now offers only titles outside the ruled plans; (8) the 362 credentials still without a subject as one batch (a web search on an anomaly first); (9) the hourly trigger for the fold apply; (10) the issuer registry (official name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (11) H and N verification, then the trainer move (130 titles, the 10 duplicate spellings and the *alifornia Veterinary Medical Association* typo); (12) a Review step for the 181 college-issued titles holding an industry-certification exhibit. Then CompTIA, AWS, NCCER as one batch each (`cert_naming.FAMILIES`).
 - Tests: `tests/credential_family_test.py`, `tests/credential_family_apply_test.py`,
   `tests/cert_naming_test.py`, `tests/exhibits_related.test.js`, `tests/fold_issuer_resolution_test.py`,
   `tests/emptied_title_guard_test.py`, `tests/cer_decision_apply_test.py`, `tests/cer_decision_apply_retry_test.py`,
@@ -158,16 +127,7 @@ Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_les
 
 **The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602 to #2604): the record moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S639)*.
 
-- `kb/_build_exhibits_review.py` writes `kb/exhibits_review.json` and the lazy `kb/exhibits_review_courses.json` from the
-  procedures run's `needs_you`, the `aligned` course, `statewide_data.js`, the identity members, the reference and the
-  overlay's training sites; nightly at the end of `cer-procedures.yml` and daily. A title settled or saved since the
-  run leaves the queue. First published 2026-10-31 02:12Z: 468 held (401, 36, 13, 18), 209 aligned.
-- **Students:** `exhibit_title_students(p_keys, p_ids)` (`kb/migrations/2026-10-31_exhibit_title_students.sql`),
-  distinct students per title, an allowed reviewer only, k=10 inside the function. Governance:
-  `rpc:exhibit_title_students` dismissed, `tab:exhibits` mapped to DR-07.
-- **The buttons** write the CER's own `_UNCLASSIFIED::<local title>` rows (title and issuer). A conflict's *Change to
-  Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
-  person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
+The review queue's builder, the students function and the buttons: `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S640)*.
 
 **CPL-AI (SkyLantern, 2026-11-06).** Hosted frozen and on public view (Sam); the record moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved from the lane (S639)*; detail in `docs/library_lessons.md`.
 

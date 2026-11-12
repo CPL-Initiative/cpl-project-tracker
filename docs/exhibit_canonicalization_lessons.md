@@ -1474,3 +1474,49 @@ Request Quick Adopt. **Add your credential is built (#2860, DR-32, live 2026-11-
   `tests/credential_family_test.py` read committed titles and expected the pre-rename state; `main` went red after
   the rename apply, with every PR check green. The conductor's rule is in `docs/reference/conductor_mode.md`.
 - **A dry run's exit code is not its result.** Read its summary line in the job log.
+
+## Moved from the lane (S640): the restore and Sheet 181's renames, as applied
+
+Verbatim from `docs/reference/lanes/cer-procedures.md` as it stood at 05:25Z 2026-11-12.
+
+- **The restore is applied:** `-4`, run 43129235942, receipt `applied_2026-11-12T00-46-52Z.json` (commit `f632db03`),
+  13 rows back on the eight emptied titles under their own reviewers and stamps (12 slee@cccco.edu: 8
+  `unified_title_override`, 3 `unified_title_merge_confirm`, 1 `issuing_agency_override`; 1 map@rccd.edu issuer row
+  on Automotive Air Conditioner). The 4 July `reviewed_marker` ticks stay retired; phases 1 and 2 stand (20 rows under
+  `cer-s638@bot`). Undo order: `-4` before phase 1.
+- **Sheet 181's ruled renames are applied** (`cred-rename-apply.yml` `only_plan=sheet181-2026-11-12`, commit `da9f2f90`
+  00:54Z 2026-11-12, receipt `kb/cred_rename_out/2026-11-12/`): 22 renames to *ASE Certificate Bundles: …* and 2
+  merges (*ASE Bundle — A2, A3, A6* into its twin; *ASE Master Automobile Technician (A1–A8 + L1)* into *ASE Master
+  Automobile Technician*). `kb_curation`: 73 steps, 0 failed: 47 of Sam's fold rows kept on the old keys (op `keep`),
+  25 rows moved to the new keys (22 family tags, 2 subject rows, 1 map@rccd.edu issuer override), 1 bot family tag
+  deleted on the merged twin. Undo: `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12` (`--supabase-plan` writes
+  the `kb_curation` reversal as guarded SQL). 11 other renames and merges were deferred, the five "standards" folds among them.
+  The apply has no dry-run-only mode: run `kb/_cred_rename_dryrun.py --only-plan <id>` locally first.
+
+**The classifier answered nothing from 2026-11-07 to the merge of #2925 (S604).** Every call came back HTTP 413: the
+house families pushed the standing rules to 251,866 characters against `cer-classify`'s `MAX_RULES` 250,000. #2925 lists
+the families under their issuer over a 240,000 budget (lossless, ~165,600), drops far families only as a last resort,
+and stops the run rather than send a refused call. COBIx asked for a replay: the first trim kept every family line but
+stripped the issuer from 156 of 1,115 saved joined answers; the grouping keeps all 1,115 (`tests/cer_classifier_rules_size_test.py`).
+Read the next nightly report's `classifier_run.answered` and `errors` after it lands. Also #2924: the procedures report
+`kb/cer_procedures_out/latest.json` is served by Pages again (it 404'd for Exhibits, the CER tab and the progress).
+
+- `kb/_build_exhibits_review.py` writes `kb/exhibits_review.json` and the lazy `kb/exhibits_review_courses.json` from the
+  procedures run's `needs_you`, the `aligned` course, `statewide_data.js`, the identity members, the reference and the
+  overlay's training sites; nightly at the end of `cer-procedures.yml` and daily. A title settled or saved since the
+  run leaves the queue. First published 2026-10-31 02:12Z: 468 held (401, 36, 13, 18), 209 aligned.
+- **Students:** `exhibit_title_students(p_keys, p_ids)` (`kb/migrations/2026-10-31_exhibit_title_students.sql`),
+  distinct students per title, an allowed reviewer only, k=10 inside the function. Governance:
+  `rpc:exhibit_title_students` dismissed, `tab:exhibits` mapped to DR-07.
+- **The buttons** write the CER's own `_UNCLASSIFIED::<local title>` rows (title and issuer). A conflict's *Change to
+  Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
+  person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
+
+## 2026-11-12 (S640 SkyHeron, the conductor): the first standards plan, live
+
+- **The standards plan was four entries, not five** (`d-standards-plan-four-entries-s640`). The lane's "five" counted Sam's saved folds at ruling time; phases 1 and 2 had emptied four source titles since. Count what remains to apply from a fresh read, never from the lane's figure.
+- **A rename apply drops the approval rows it fulfils** (`d-rename-apply-drops-fulfilled-approvals-s640`). Sam's override and merge confirm on each source title say "fold this title into that one"; the apply does it and keeps each before-row in its receipt. S639's rule protects a saved row whose instruction was never carried out, which is a different row.
+- **Applied:** `standards-2026-11-12` (#3142; review of three readers and three second readers: the builder reproduces the plan byte for byte, no industry-certification exhibit on the four sources, the undo restores the rows, suites pass on the post-apply tree), dispatched 05:12Z, filed `99d4ff32`, receipt `kb/cred_rename_out/2026-11-12-2/`; `kb_curation` 13 steps, 0 failed. Detail and undo: the lane.
+- **Noticed, not chased:** the `issuer_resolution` row the apply inserted on *Engine Performance (ASE A8 standards)* carries `decided_at` 2026-11-12T01:28:50Z, hours before the apply. Read where the fold builder takes that stamp before the second plan's apply.
+- **A second write path needs the whole receipt machinery again** (#3140, `d-rename-apply-one-repoint-path-s640`). Re-pointing saved machine values first went as hand-run SQL, then as a separate job; each left a live row with no way back. One write path, inside the apply's own receipt, closed the class. Three review rounds (20, 12 and 9 findings); round three's two standing findings both broke the undo.
+- **A test outside every workflow goes red unseen.** `tests/partner_crosswalk_test.py` check 4 fails on `main` on five titles, and no workflow runs it. The governance lane carries the fix with COBIx's findings 7 to 9.

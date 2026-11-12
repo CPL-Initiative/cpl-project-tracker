@@ -139,6 +139,31 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S640, and what worked
+
+- Context went fast: 370,000 tokens in the first 85 minutes. Largest first: a review workflow's completion notice
+  echoes its whole `args` (about 10,000 tokens each with a long context string); `get_check_runs` and
+  `list_workflow_runs` return full job and commit text; each PR subscription sends two long notices (about 6,000
+  tokens). What worked from 05:15Z: the review's context in a scratchpad file and a one-line `context` argument;
+  `get_check_runs` with `perPage` 1 or 2 (`test` lists first once it exists); `list_workflow_runs` filtered to
+  `status: in_progress, branch: main` to see whether an apply or the daily run is in flight.
+- The conductor wrote clock times from memory twice in notes to COBIx, five to twenty minutes off, and corrected both.
+  Read `date -u` before writing a time.
+- A capture that met HTTP 503s filed a partial read as if complete (Rio Hondo: 34 pages of 328), and the reconcile
+  measured against almost no fresh text. Check a capture's pages answered before reading its measure.
+- Three of #3135's five capture proofs compared against reads `main` filed a month earlier, so the drift was the
+  reader's. A proof run takes a same-day baseline by `main`'s reader on a scratch branch
+  (`docs/kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md`).
+- A second write path (#3140's hand-run SQL, then its separate job) each left a live row with no way back. Put a new
+  write inside the existing apply and its receipt.
+- `tests/partner_crosswalk_test.py` fails on `main` and no workflow runs it. A test outside every workflow goes red
+  unseen; the governance lane carries the fix.
+- Worked: disk held at four worktrees of 4.4 GB, with reviews reading refs (`git show`, `git diff`) and never copying,
+  and a finished worker's worktree removed once its PR merged or its branch was pushed with nothing left to resume.
+- Worked: readers by dimension, then a second reader on each finding: three breaks-the-undo findings on #3140, a
+  fingerprint that dropped bare unit figures on #3135.
+- Worked: a documents worker wrote the checkpoint while the conductor kept the Supabase and remote steps.
+
 ## What went wrong in S639
 
 - Reviewers copied the repo three times into the session scratchpad (12 GB) and filled the disk. Every review brief
