@@ -18,7 +18,7 @@
    "ITC4264"
   ],
   "A4": [
-   "ITC4236",
+   "ITC4234",
    "ITC4278"
   ],
   "H8": [
@@ -419,353 +419,353 @@
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC1519": {
-   "code": "MIL6",
-   "name": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems",
-   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL6 Electrical/ Electronic Systems",
-   "issuer": "National Institute for Automotive Service Excellence",
-   "family": "ASE"
-  },
-  "ITC1520": {
-   "code": "A6",
-   "name": "Electrical/Electronic Systems",
-   "catalog_name": "Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
-   "issuer": "National Institute for Automotive Service Excellence",
-   "family": "ASE"
-  },
-  "ITC1522": {
-   "code": "T6",
-   "name": "Electrical/Electronic Systems",
-   "catalog_name": "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
-   "issuer": "National Institute for Automotive Service Excellence",
-   "family": "ASE"
-  },
-  "ITC1640": {
+  "ITC1637": {
    "code": null,
    "name": "CCNP Security Certification",
    "catalog_name": "CCNP Security Certification",
    "issuer": "Cisco",
    "family": "Cisco"
   },
-  "ITC1642": {
+  "ITC1639": {
    "code": null,
    "name": "Cisco Certified Network Professional (CCNP) Security",
    "catalog_name": "Cisco Certified Network Professional (CCNP) Security",
    "issuer": "Cisco",
    "family": "Cisco"
   },
-  "ITC1702": {
+  "ITC1699": {
    "code": null,
    "name": "CompTIA Security+",
    "catalog_name": "CompTIA Security+",
    "issuer": "CompTIA",
    "family": "CompTIA"
   },
-  "ITC1703": {
+  "ITC1700": {
    "code": null,
    "name": "CompTIA PenTest+",
    "catalog_name": "CompTIA PenTest+",
    "issuer": "CompTIA",
    "family": "CompTIA"
   },
-  "ITC1704": {
+  "ITC1701": {
    "code": null,
    "name": "CompTIA Cybersecurity Analyst",
    "catalog_name": "CompTIA Cybersecurity Analyst",
    "issuer": "CompTIA",
    "family": "CompTIA"
   },
-  "ITC1959": {
+  "ITC1956": {
    "code": null,
    "name": "Microsoft Technology Associate (MTA) Database Fundamentals",
    "catalog_name": "Microsoft Technology Associate (MTA) Database Fundamentals",
    "issuer": "Microsoft",
    "family": "Microsoft"
   },
-  "ITC1974": {
+  "ITC1971": {
    "code": null,
    "name": "Microsoft Certified: Power BI Data Analyst Associate",
    "catalog_name": "Microsoft Certified: Power BI Data Analyst Associate",
    "issuer": "Microsoft",
    "family": "Microsoft"
   },
-  "ITC2232": {
+  "ITC2229": {
    "code": null,
    "name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
    "catalog_name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Technologist Level",
    "issuer": "American Society of Mechanical Engineers International",
    "family": "ASME"
   },
-  "ITC2235": {
+  "ITC2232": {
    "code": null,
    "name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level",
    "catalog_name": "GDTP (Y14.5) Geometric Dimensioning & Tolerancing Professional Certification - 2009 Senior Level",
    "issuer": "American Society of Mechanical Engineers International",
    "family": "ASME"
   },
-  "ITC2237": {
+  "ITC2234": {
    "code": null,
    "name": "Geometric Dimensioning & Tolerancing Professional - Technologist",
    "catalog_name": "Geometric Dimensioning & Tolerancing Professional - Technologist",
    "issuer": "American Society of Mechanical Engineers International",
    "family": "ASME"
   },
-  "ITC2468": {
+  "ITC2465": {
    "code": null,
    "name": "AutoCAD Certified Professional",
    "catalog_name": "AutoCAD Certified Professional",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2469": {
+  "ITC2466": {
    "code": null,
    "name": "Autodesk Associate (Certified User) AutoCAD",
    "catalog_name": "Autodesk Associate (Certified User) AutoCAD",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2473": {
+  "ITC2470": {
    "code": null,
    "name": "Autodesk Certified User",
    "catalog_name": "Autodesk Certified User",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2476": {
+  "ITC2473": {
    "code": null,
    "name": "AutoCAD Certified User",
    "catalog_name": "AutoCAD Certified User",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2480": {
+  "ITC2477": {
    "code": null,
    "name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
    "catalog_name": "Autodesk Certified Professional in AutoCAD for Design and Drafting",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2485": {
+  "ITC2482": {
    "code": null,
    "name": "Autodesk Certified Professional in Revit for Architectural Design",
    "catalog_name": "Autodesk Certified Professional in Revit for Architectural Design",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC2494": {
+  "ITC2491": {
    "code": null,
    "name": "Autodesk Certified User - Revit",
    "catalog_name": "Autodesk Certified User - Revit",
    "issuer": "Autodesk, Inc.",
    "family": "Autodesk"
   },
-  "ITC3534": {
+  "ITC3531": {
    "code": null,
    "name": "Certified Nurse Assistant",
    "catalog_name": "Certified Nurse Assistant",
    "issuer": "California Department of Public Health",
    "family": "CDPH"
   },
-  "ITC3565": {
+  "ITC3562": {
    "code": null,
    "name": "Paramedic License (EMT-P)",
    "catalog_name": "Paramedic License (EMT-P)",
    "issuer": "California Emergency Medical Services Authority",
    "family": "EMSA"
   },
-  "ITC3567": {
+  "ITC3564": {
    "code": null,
    "name": "Emergency Medical Technician (EMT)",
    "catalog_name": "Emergency Medical Technician (EMT)",
    "issuer": "California Emergency Medical Services Authority",
    "family": "EMSA"
   },
-  "ITC4126": {
+  "ITC4123": {
    "code": null,
    "name": "Wildland Fire Chainsaws",
    "catalog_name": "Wildland Fire Chainsaws",
    "issuer": "National Wildfire Coordinating Group",
    "family": "NWCG"
   },
-  "ITC4196": {
+  "ITC4193": {
    "code": null,
    "name": "Aviation Airframe Mechanic",
    "catalog_name": "Aviation Airframe Mechanic",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC4197": {
+  "ITC4194": {
    "code": null,
    "name": "Aviation Powerplant Mechanic",
    "catalog_name": "Aviation Powerplant Mechanic",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC4199": {
+  "ITC4196": {
    "code": null,
    "name": "Mechanic (Airframe & Powerplant)",
    "catalog_name": "Mechanic (Airframe & Powerplant)",
    "issuer": "Federal Aviation Administration (FAA)",
    "family": "FAA"
   },
-  "ITC4213": {
+  "ITC4210": {
    "code": null,
    "name": "NCCER HVAC, Level 1",
    "catalog_name": "NCCER HVAC, Level 1",
    "issuer": "National Center for Construction Education and Research (NCCER)",
    "family": "NCCER"
   },
-  "ITC4224": {
+  "ITC4221": {
    "code": "MIL3",
    "name": "Military Tactical Wheeled Vehicle – Drive Train",
    "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL3 Drive Train",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4225": {
+  "ITC4222": {
    "code": "MIL4",
    "name": "Military Tactical Wheeled Vehicle – Chassis",
    "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL4 Chassis",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4227": {
+  "ITC4224": {
+   "code": "MIL6",
+   "name": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems",
+   "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL6 Electrical/ Electronic Systems",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
+  "ITC4225": {
    "code": "MIL7",
    "name": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning",
    "catalog_name": "ASE Military Tactical Wheeled Vehicle Certification - MIL7 Heating, Ventilation & Air Conditioning (HVAC)",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4229": {
+  "ITC4227": {
    "code": "L4",
    "name": "Advanced Driver Assistance Systems Specialist",
    "catalog_name": "Advanced Driver Assistance Systems (ADAS) Specialist Certification - L4",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4230": {
+  "ITC4228": {
    "code": "L1",
    "name": "Advanced Engine Performance Specialist",
    "catalog_name": "Advanced Engine Performance Specialist Certification - L1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4231": {
+  "ITC4229": {
    "code": "F1",
    "name": "Alternate Fuels",
    "catalog_name": "Alternate Fuels Certification - F1 Compressed Natural Gas Vehicle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4233": {
+  "ITC4231": {
    "code": "A1",
    "name": "Engine Repair",
    "catalog_name": "Automobile & Light Truck Certification - A1 Engine Repair",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4234": {
+  "ITC4232": {
    "code": "A2",
    "name": "Automatic Transmission/Transaxle",
    "catalog_name": "Automobile & Light Truck Certification - A2 Automatic Transmission/Transaxle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4235": {
+  "ITC4233": {
    "code": "A3",
    "name": "Manual Drive Train and Axles",
    "catalog_name": "Automobile & Light Truck Certification - A3 Manual Drive Train & Axles",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4236": {
+  "ITC4234": {
    "code": "A4",
    "name": "Suspension and Steering",
    "catalog_name": "Automobile & Light Truck Certification - A4 Suspension & Steering",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4237": {
+  "ITC4235": {
    "code": "A5",
    "name": "Brakes",
    "catalog_name": "Automobile & Light Truck Certification - A5 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4238": {
+  "ITC4236": {
+   "code": "A6",
+   "name": "Electrical/Electronic Systems",
+   "catalog_name": "Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
+  "ITC4237": {
    "code": "A7",
    "name": "Heating and Air Conditioning",
    "catalog_name": "Automobile & Light Truck Certification - A7 Heating & Air Conditioning",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4239": {
+  "ITC4238": {
    "code": "A8",
    "name": "Engine Performance",
    "catalog_name": "Automobile & Light Truck Certification - A8 Engine Performance",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4240": {
+  "ITC4239": {
    "code": "A9",
    "name": "Light Vehicle Diesel Engines",
    "catalog_name": "Automobile & Light Truck Certification - A9 Light Vehicle Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4241": {
+  "ITC4240": {
    "code": "C1",
    "name": "Automobile Service Consultant",
    "catalog_name": "Automobile Service Consultant Certification - C1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4246": {
+  "ITC4245": {
    "code": "L2",
    "name": "Electronic Diesel Engine Diagnosis Specialist",
    "catalog_name": "Electronic Diesel Engine Diagnosis Specialist Certification - L2",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4247": {
+  "ITC4246": {
    "code": "L3",
    "name": "Light Duty Hybrid/Electric Vehicle Specialist",
    "catalog_name": "Light Duty Hybrid/Electric Vehicle Specialist Certification - L3",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4248": {
+  "ITC4247": {
    "code": "T1",
    "name": "Gasoline Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T1 Gasoline Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4249": {
+  "ITC4248": {
    "code": "T2",
    "name": "Diesel Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T2 Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4250": {
+  "ITC4249": {
    "code": "T3",
    "name": "Drive Train",
    "catalog_name": "Medium-Heavy Truck Certification - T3 Drive Train",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4251": {
+  "ITC4250": {
    "code": "T4",
    "name": "Brakes",
    "catalog_name": "Medium-Heavy Truck Certification - T4 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4252": {
+  "ITC4251": {
    "code": "T5",
    "name": "Suspension and Steering",
    "catalog_name": "Medium-Heavy Truck Certification - T5 Suspension & Steering",
+   "issuer": "National Institute for Automotive Service Excellence",
+   "family": "ASE"
+  },
+  "ITC4252": {
+   "code": "T6",
+   "name": "Electrical/Electronic Systems",
+   "catalog_name": "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
@@ -2024,79 +2024,79 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4233"
+    "ITC4231"
    ]
   },
   "ASE A2 — Automatic Transmission/Transaxle": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4234"
+    "ITC4232"
    ]
   },
   "ASE A3 — Manual Drive Train and Axles": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4235"
+    "ITC4233"
    ]
   },
   "ASE A4 — Suspension and Steering": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4236"
+    "ITC4234"
    ]
   },
   "ASE A5 — Brakes": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4237"
+    "ITC4235"
    ]
   },
   "ASE A6 — Electrical/Electronic Systems": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1520"
+    "ITC4236"
    ]
   },
   "ASE A7 — Heating and Air Conditioning": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4238"
+    "ITC4237"
    ]
   },
   "ASE A8 — Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4239"
+    "ITC4238"
    ]
   },
   "ASE A9 — Light Vehicle Diesel Engines": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4240"
+    "ITC4239"
    ]
   },
   "ASE Bundle — A6 or T6 + L3": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC1520",
-    "ITC1522",
-    "ITC4247"
+    "ITC4236",
+    "ITC4252",
+    "ITC4246"
    ]
   },
   "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4241"
+    "ITC4240"
    ],
    "unresolved": [
     "G1 (an ASE test the catalog does not list)"
@@ -2106,20 +2106,37 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4241"
+    "ITC4240"
    ]
   },
   "ASE Certificate Bundles: A1 + A6 + A8 + L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4233",
-    "ITC1520",
-    "ITC4239",
-    "ITC4230"
+    "ITC4231",
+    "ITC4236",
+    "ITC4238",
+    "ITC4228"
    ]
   },
   "ASE Certificate Bundles: A2 + A3": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4232",
+    "ITC4233"
+   ]
+  },
+  "ASE Certificate Bundles: A2 + A3 + A6": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4232",
+    "ITC4233",
+    "ITC4236"
+   ]
+  },
+  "ASE Certificate Bundles: A4 + A5": {
    "relation": "holds",
    "rule": "all",
    "certs": [
@@ -2127,55 +2144,38 @@
     "ITC4235"
    ]
   },
-  "ASE Certificate Bundles: A2 + A3 + A6": {
+  "ASE Certificate Bundles: A4 + A5 + A6": {
    "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4234",
     "ITC4235",
-    "ITC1520"
-   ]
-  },
-  "ASE Certificate Bundles: A4 + A5": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4236",
-    "ITC4237"
-   ]
-  },
-  "ASE Certificate Bundles: A4 + A5 + A6": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4236",
-    "ITC4237",
-    "ITC1520"
+    "ITC4236"
    ]
   },
   "ASE Certificate Bundles: A6 + A8 + L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1520",
-    "ITC4239",
-    "ITC4230"
+    "ITC4236",
+    "ITC4238",
+    "ITC4228"
    ]
   },
   "ASE Certificate Bundles: A8 + L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4239",
-    "ITC4230"
+    "ITC4238",
+    "ITC4228"
    ]
   },
   "ASE Certificate Bundles: A9 + L2": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4240",
-    "ITC4246"
+    "ITC4239",
+    "ITC4245"
    ]
   },
   "ASE Certificate Bundles: G1 with ALI Lift It Right": {
@@ -2190,16 +2190,16 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4230",
-    "ITC4246"
+    "ITC4228",
+    "ITC4245"
    ]
   },
   "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4246",
-    "ITC1522"
+    "ITC4245",
+    "ITC4252"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -2209,7 +2209,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4246",
+    "ITC4245",
     "ITC4254"
    ]
   },
@@ -2217,8 +2217,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4249",
-    "ITC4252",
+    "ITC4248",
+    "ITC4251",
     "ITC4253",
     "ITC4254"
    ]
@@ -2227,8 +2227,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4249",
-    "ITC1522",
+    "ITC4248",
+    "ITC4252",
     "ITC4254"
    ]
   },
@@ -2236,7 +2236,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4249",
+    "ITC4248",
     "ITC4254"
    ]
   },
@@ -2244,9 +2244,9 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
+    "ITC4249",
     "ITC4250",
     "ITC4251",
-    "ITC4252",
     "ITC4254"
    ]
   },
@@ -2254,7 +2254,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4250",
+    "ITC4249",
     "ITC4254"
    ]
   },
@@ -2262,7 +2262,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4251",
+    "ITC4250",
     "ITC4254"
    ]
   },
@@ -2270,7 +2270,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4252",
+    "ITC4251",
     "ITC4254"
    ]
   },
@@ -2278,7 +2278,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4252",
+    "ITC4251",
     "ITC4254"
    ]
   },
@@ -2286,7 +2286,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1522",
+    "ITC4252",
     "ITC4254"
    ]
   },
@@ -2302,21 +2302,21 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
+    "ITC4231",
+    "ITC4232",
     "ITC4233",
     "ITC4234",
     "ITC4235",
     "ITC4236",
     "ITC4237",
-    "ITC1520",
-    "ITC4238",
-    "ITC4239"
+    "ITC4238"
    ]
   },
   "ASE F1 — Alternate Fuels (CNG Light Vehicles)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4231"
+    "ITC4229"
    ]
   },
   "ASE G1 — Auto Maintenance and Light Repair": {
@@ -2331,21 +2331,21 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4230"
+    "ITC4228"
    ]
   },
   "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4247"
+    "ITC4246"
    ]
   },
   "ASE L4 — Advanced Driver Assistance Systems (ADAS) Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4229"
+    "ITC4227"
    ]
   },
   "ASE Master Automobile Technician": {
@@ -2360,15 +2360,15 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
+    "ITC4231",
+    "ITC4232",
     "ITC4233",
     "ITC4234",
     "ITC4235",
     "ITC4236",
     "ITC4237",
-    "ITC1520",
     "ITC4238",
-    "ITC4239",
-    "ITC4247"
+    "ITC4246"
    ],
    "unresolved": [
     "Master Automobile Technician"
@@ -2378,12 +2378,12 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
+    "ITC4247",
     "ITC4248",
     "ITC4249",
     "ITC4250",
     "ITC4251",
     "ITC4252",
-    "ITC1522",
     "ITC4253",
     "ITC4254"
    ],
@@ -2410,9 +2410,9 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC2237",
-    "ITC2232",
-    "ITC2235"
+    "ITC2234",
+    "ITC2229",
+    "ITC2232"
    ]
   },
   "AWS Certified Cloud Practitioner": {
@@ -2489,81 +2489,81 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC2473"
+    "ITC2470"
    ]
   },
   "Autodesk Certified User/Professional — AutoCAD": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC2469",
-    "ITC2476",
-    "ITC2468",
-    "ITC2480"
+    "ITC2466",
+    "ITC2473",
+    "ITC2465",
+    "ITC2477"
    ]
   },
   "Autodesk Certified User/Professional — Revit Architecture": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC2494",
-    "ITC2485"
+    "ITC2491",
+    "ITC2482"
    ]
   },
   "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4234"
+    "ITC4232"
    ]
   },
   "Automotive Technology (ASE A5 Brakes)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4237"
+    "ITC4235"
    ]
   },
   "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1520"
+    "ITC4236"
    ]
   },
   "Automotive Technology (ASE A7 Heating and Air Conditioning)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4238"
+    "ITC4237"
    ]
   },
   "Automotive Technology (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4239"
+    "ITC4238"
    ]
   },
   "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4240"
+    "ITC4239"
    ]
   },
   "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4230"
+    "ITC4228"
    ]
   },
   "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4247"
+    "ITC4246"
    ]
   },
   "Building Plans Examiner": {
@@ -2885,14 +2885,14 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC3534"
+    "ITC3531"
    ]
   },
   "Certified Nursing Assistant (CNA)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC3534"
+    "ITC3531"
    ]
   },
   "Cisco Certified Network Associate (CCNA)": {
@@ -2913,8 +2913,8 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC1642",
-    "ITC1640"
+    "ITC1639",
+    "ITC1637"
    ]
   },
   "Cisco IT Essentials": {
@@ -2978,7 +2978,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1704"
+    "ITC1701"
    ]
   },
   "CompTIA IT Fundamentals (ITF+)": {
@@ -3006,7 +3006,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1703"
+    "ITC1700"
    ]
   },
   "CompTIA Project+": {
@@ -3020,7 +3020,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1702"
+    "ITC1699"
    ]
   },
   "CompTIA Server+": {
@@ -3041,14 +3041,14 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC3567"
+    "ITC3564"
    ]
   },
   "Engine Performance (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4239"
+    "ITC4238"
    ]
   },
   "FAA Certified Flight Instructor — Instrument (CFII)": {
@@ -3078,29 +3078,29 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4196"
+    "ITC4193"
    ]
   },
   "FAA Mechanic Certificate — Airframe and Powerplant (A&P)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4199"
+    "ITC4196"
    ]
   },
   "FAA Mechanic Certificate — Airframe or Powerplant Rating": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4196",
-    "ITC4197"
+    "ITC4193",
+    "ITC4194"
    ]
   },
   "FAA Mechanic Certificate — Powerplant Rating": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4197"
+    "ITC4194"
    ]
   },
   "FAA Pilot Certificate — Helicopter Rating": {
@@ -3314,7 +3314,7 @@
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4235"
+    "ITC4233"
    ]
   },
   "Mechanical Plans Examiner": {
@@ -3384,7 +3384,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1974"
+    "ITC1971"
    ]
   },
   "Microsoft Office Specialist": {
@@ -3502,35 +3502,35 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1959"
+    "ITC1956"
    ]
   },
   "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4225"
+    "ITC4222"
    ]
   },
   "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4224"
+    "ITC4221"
    ]
   },
   "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1519"
+    "ITC4224"
    ]
   },
   "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4227"
+    "ITC4225"
    ]
   },
   "NCCER CORE Curriculum - Introduction to Basic Construction Skills": {
@@ -3573,7 +3573,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4213"
+    "ITC4210"
    ]
   },
   "NCCER Industrial Carpenter Journey Level": {
@@ -3622,7 +3622,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC3565"
+    "ITC3562"
    ]
   },
   "Private Pilot Certificate": {
@@ -3665,7 +3665,7 @@
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4236"
+    "ITC4234"
    ]
   },
   "Water Distribution Operator 2": {
@@ -3740,7 +3740,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4126"
+    "ITC4123"
    ]
   }
  }
