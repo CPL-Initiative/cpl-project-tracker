@@ -4,8 +4,8 @@
   "_counts": {
     "candidates": 12,
     "already_mapped": 48,
-    "dismissed": 14,
-    "scanned": 74
+    "dismissed": 15,
+    "scanned": 75
   },
   "candidates": [
     {
@@ -164,7 +164,7 @@
       "label": "first_light_marks",
       "detail": "Written from first-light",
       "where": "first_light_tab.js",
-      "why": "The First Light tab's marks (Sam, 2026-11-12, #3153: \"add a cobi tab so I can edit it\"; design #3153 comments 6826461825 and 6829695812). One insert-only row per mark: a painting or photo, keep, drop, add or a position, the collection it came from, and who and when, stamped by trigger from the sign-in. Read and added only by a reviewer sign-in (is_allowed_reviewer(), the rung of the tab's cobi_nav row); no update or delete is granted to anyone, so a newer mark is the only change and the history stays. No new decision right: a mark changes nothing on its own. The change happens only when Sam merges the pull request that first-light-apply.yml opens from the marks, so the decision stays his merge, recorded on GitHub. Disclosure: no student data. A row names a public-domain painting on Wikimedia Commons, a hero photo already in the repo, or a My CPL Story photo MAP already publishes at map.rccd.edu/cplstories, plus the reviewer's sign-in email, so the student-detail disclosure ADR does not reach it; a Drop mark is the takedown path for a story photo."
+      "why": "The First Light tab's marks (Sam, 2026-11-12, #3153: \"add a cobi tab so I can edit it\"; design #3153 comments 6826461825 and 6829695812). One insert-only row per mark: a painting or photo, keep, drop, add or a position, the collection it came from, and who and when, stamped by trigger from the sign-in. The database numbers each row (an identity column no client can set), and the resolver orders marks by that number, so a reviewer cannot make a mark read as the latest. Read and added only by a reviewer sign-in (is_allowed_reviewer(), the rung of the tab's cobi_nav row); no update or delete is granted to anyone, so a newer mark is the only change and the history stays. A merged Apply records the highest mark it consumed in the committed files, so those marks are spent and a hand edit after the merge stands. No new decision right: a mark changes nothing on its own. The change happens only when Sam merges the pull request that first-light-apply.yml opens from the marks, so the decision stays his merge, recorded on GitHub. Disclosure: no student data. A row names a public-domain painting on Wikimedia Commons, a hero photo already in the repo, or a My CPL Story photo MAP already publishes at map.rccd.edu/cplstories, plus the reviewer's sign-in email, so the student-detail disclosure ADR does not reach it; a Drop mark is the takedown path for a story photo."
     },
     {
       "key": "table:governance_owners",
@@ -173,6 +173,14 @@
       "detail": "Written from governance",
       "where": "governance.js",
       "why": "The register's own annotation layer — it stores who owns the rows on this page. Governed by the register itself; a decision right over the owner column would be circular."
+    },
+    {
+      "key": "tab:first-light",
+      "kind": "decision_right",
+      "label": "first-light",
+      "detail": "Writes shared state via is_allowed_reviewer, first_light_apply_requests, first_light_marks",
+      "where": "first_light_tab.js",
+      "why": "The First Light tab (#first-light). Its two writes are the tables mapped beside this entry (table:first_light_marks, table:first_light_apply_requests). is_allowed_reviewer is a read: the tab asks it before showing any control, so a signed-in non-reviewer sees the sets without marks instead of controls the table would refuse. No decision right beyond those two tables: what reaches the views is decided by Sam's merge of the Apply pull request."
     },
     {
       "key": "tab:implementation-funding",

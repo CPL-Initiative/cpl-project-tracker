@@ -733,7 +733,9 @@ window.COBI_ADMIN_SURFACE = {
         "first_light_apply_requests",
         "first_light_marks"
       ],
-      "rpcs": [],
+      "rpcs": [
+        "is_allowed_reviewer"
+      ],
       "measured": true
     }
   }

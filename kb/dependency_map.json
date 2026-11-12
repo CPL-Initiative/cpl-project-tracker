@@ -1034,7 +1034,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 208,
+     "line": 229,
      "tabs": [
       "first-light"
      ]
@@ -2927,7 +2927,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 133,
+     "line": 153,
      "tabs": [
       "first-light"
      ]
@@ -8462,7 +8462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 131,
+     "line": 151,
      "tabs": [
       "first-light"
      ]
@@ -20366,7 +20366,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 127,
+     "line": 147,
      "tabs": [
       "first-light"
      ]
@@ -22259,7 +22259,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 129,
+     "line": 149,
      "tabs": [
       "first-light"
      ]
@@ -26825,6 +26825,16 @@
       "csm-workspace",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 157,
+     "tabs": [
+      "first-light"
+     ]
     }
    ],
    "main_committers": []
@@ -28679,7 +28689,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 136,
+     "line": 156,
      "tabs": [
       "first-light"
      ]
@@ -28689,7 +28699,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 301,
+     "line": 342,
      "tabs": [
       "first-light"
      ]
@@ -28704,7 +28714,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 135,
+     "line": 155,
      "tabs": [
       "first-light"
      ]
@@ -28714,7 +28724,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 287,
+     "line": 328,
      "tabs": [
       "first-light"
      ]

@@ -44,12 +44,14 @@ const FL = fs.readFileSync("first_light.js", "utf8");
 const TAB = fs.readFileSync("first_light_tab.js", "utf8");
 const HERO = JSON.parse(fs.readFileSync("library/photos/hero_photos.json", "utf8"));
 const SIERRA = JSON.parse(fs.readFileSync("sierra/art/manifest.json", "utf8"));
-const SEL = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+const SEL0 = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf8"));
+const SEL = Array.isArray(SEL0) ? SEL0 : SEL0.paintings;
 const GALLERY = JSON.parse(fs.readFileSync("tools/first_light_gallery/index.json", "utf8"));
 const STORIES_JS = fs.readFileSync("fact-sheet/cpl_stories.js", "utf8");
 const TOKEN = "aaaaaaaaaa.bbbbbbbbbbbbbbbbbbbbbbbb.cccccccccccccccccccc";
 const MARKS_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/first_light_marks";
 const REQ_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/first_light_apply_requests";
+const RPC_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co/rest/v1/rpc/is_allowed_reviewer";
 
 function boot(opts) {
   opts = opts || {};
@@ -59,21 +61,24 @@ function boot(opts) {
   const w = dom.window;
   w.localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString());
   w.sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: TOKEN, email: "r@example.org", exp: Date.now() + 3600e3 }));
-  const db = { marks: (opts.marks || []).slice(), reqs: (opts.reqs || []).slice(), posts: [], absent: !!opts.absent, nextId: 100 };
+  const db = { marks: (opts.marks || []).slice(), reqs: (opts.reqs || []).slice(), posts: [], absent: !!opts.absent, nextId: 100, reads: 0 };
+  const hero = opts.hero || HERO;
   const resp = (status, body, text) => Promise.resolve({ ok: status >= 200 && status < 300, status,
     json: () => Promise.resolve(JSON.parse(JSON.stringify(body))), text: () => Promise.resolve(text != null ? text : JSON.stringify(body)) });
   w.fetch = (url, init) => {
     url = String(url); init = init || {};
-    if (url.indexOf("library/photos/hero_photos.json") === 0) return resp(200, HERO);
+    if (url.indexOf("library/photos/hero_photos.json") === 0) return resp(200, hero);
+    if (url === RPC_URL) return opts.rpcStatus ? resp(opts.rpcStatus, { message: "no" }) : resp(200, opts.reviewer !== false);
     if (url.indexOf("sierra/art/manifest.json") === 0) return resp(200, SIERRA);
     if (url.indexOf("fact-sheet/cpl_stories.js") === 0) return resp(200, null, STORIES_JS);
-    if (url.indexOf("tools/first_light_gallery/index.json") !== -1) return resp(200, GALLERY);
+    if (url.indexOf("tools/first_light_gallery/index.json") !== -1) return resp(200, opts.gallery || GALLERY);
     if (url.indexOf(MARKS_URL) === 0 || url.indexOf(REQ_URL) === 0) {
       if (db.absent) return resp(404, { code: "PGRST205" });
       const isReq = url.indexOf(REQ_URL) === 0;
       if ((init.method || "GET") === "POST") {
         const body = JSON.parse(init.body || "{}");
         db.posts.push({ url, body, headers: init.headers || {} });
+        if (opts.postStatus) return resp(opts.postStatus, { message: "refused" });
         if (isReq) {
           if (db.reqs.some((r) => r.status === "pending")) return resp(409, { code: "23505" });
           const row = { id: ++db.nextId, status: "pending", requested_by: "r@example.org", requested_at: new Date().toISOString() };
@@ -84,7 +89,9 @@ function boot(opts) {
         db.marks.push(row);
         return resp(201, [row]);
       }
-      return resp(200, isReq ? db.reqs : db.marks);
+      if (!isReq) db.reads++;
+      // RLS answers a signed-in non-reviewer with an empty list, never an error.
+      return resp(200, opts.reviewer === false ? [] : isReq ? db.reqs : db.marks);
     }
     return resp(404, null);
   };
@@ -94,6 +101,7 @@ function boot(opts) {
   w.eval(SESSION);
   w.eval(FL);
   w.CPL_FIRST_LIGHT.init();
+  if (opts.paintingsApplied) w.CPL_FIRST_LIGHT.paintings.applied_through_mark_id = opts.paintingsApplied;
   w.eval(TAB);
   w.go = (tab) => { current = tab; w.dispatchEvent(new w.CustomEvent("cpl-tab-activated", { detail: { tab } })); };
   w.db = db;
@@ -129,14 +137,37 @@ const text = (w) => $(w, "#first-light-root").textContent;
   check("(a) a dropped item's position is ignored", JSON.stringify(r.list) === '["a","b","d"]');
   r = M.resolveSet(base, [mk(1, "a", "position", 99)]);
   check("(a) a number past the end places the item last", r.list[r.list.length - 1] === "a" && r.list.length === 4);
+  // M3: two moves to the same number, the newer takes it.
+  r = M.resolveSet(base, [mk(1, "a", "position", 1), mk(2, "c", "position", 1)]);
+  check("(a) ⭐ M3 two moves to one number: the newer wins", r.list[0] === "c" && r.list[1] === "a", JSON.stringify(r.list));
+  r = M.resolveSet(base, [mk(2, "c", "position", 1), mk(1, "a", "position", 1)]);
+  check("(a) M3 whatever order the rows arrive in", r.list[0] === "c");
+  // M2: marks a merged Apply consumed are spent; Keep never adds.
+  r = M.resolveSet(["a", "c"], [mk(1, "b", "drop"), mk(2, "b", "keep")]);
+  check("(a) ⭐ M2 drop then keep, and the item left the list another way: Keep does not re-add it", JSON.stringify(r.list) === '["a","c"]' && !r.changed);
+  r = M.resolveSet(["a", "b"], [mk(5, "x", "add")], 5);
+  check("(a) ⭐ M2 an Add a merged Apply consumed, then removed by hand, stays out", JSON.stringify(r.list) === '["a","b"]' && !r.changed);
+  r = M.resolveSet(["b", "a"], [mk(3, "a", "position", 1)], 3);
+  check("(a) ⭐ M2 an old Move no longer pins once applied", JSON.stringify(r.list) === '["b","a"]' && !r.changed);
+  r = M.resolveSet(["a", "b"], [mk(3, "a", "drop"), mk(6, "b", "drop")], 4);
+  check("(a) M2 only the marks above the applied number count, and the result names the new high mark",
+    JSON.stringify(r.list) === '["a"]' && r.appliedThrough === 6);
+  r = M.resolveSet(["a"], [mk(1, "z", "keep")]);
+  check("(a) Keep on an item not in the list leaves it out", JSON.stringify(r.list) === '["a"]');
 
   // ── (c) keys ─────────────────────────────────────────────────────────────
   const imgs = [...FL.matchAll(/img: "([^"]+)"/g)].map((x) => x[1]);
   check("(c) ⭐ every painting's key read from the manifest URL is its selection file",
     imgs.length === SEL.length && imgs.every((u, i) => M.fileOfImg(u) === SEL[i].file));
   check("(c) a story photo's key is stories/<its own name>",
-    M.storyFile({ img: "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/Brody_withBG.png" }) === "stories/brody_withbg.png" &&
+    M.storyFile({ img: "https://staging2.map.rccd.edu/wp-content/uploads/2026/07/Brody_withBG.png" }) === "stories/2026-07-brody_withbg.png" &&
     M.storyFile({ img: "https://x/a b.JPEG?ver=2" }) === "stories/a-b.jpeg" && M.storyFile({ img: "https://x/no-ext" }) === "");
+  check("(c) two stories whose photos share a name in different months get different keys",
+    M.storyFile({ img: "https://h/wp-content/uploads/2026/07/cam.jpeg" }) !== M.storyFile({ img: "https://h/wp-content/uploads/2026/05/cam.jpeg" }));
+  const STORY_LIST = JSON.parse(STORIES_JS.slice(STORIES_JS.indexOf("{"), STORIES_JS.lastIndexOf("}") + 1)).stories;
+  check("(c) every published story has a key, and no two share one", STORY_LIST.every((x) => M.storyFile(x)) && new Set(STORY_LIST.map(M.storyFile)).size === STORY_LIST.length);
+  check("(c) a key the table refuses is refused here too", !M.keyOk("photos", "stories/../x.png") && !M.keyOk("photos", "Hero.JPG") && !M.keyOk("paintings", "a@b.jpg") &&
+    !M.keyOk("paintings", ".x.jpg") && !M.keyOk("paintings", "a/b.jpg") && M.keyOk("paintings", SEL[0].file) && HERO.photos.every((p) => M.keyOk("photos", p.file)));
 
   // ── (d) the tables absent ────────────────────────────────────────────────
   {
@@ -259,6 +290,59 @@ const text = (w) => $(w, "#first-light-root").textContent;
     check("(j) the Sierra view reads no marks", !w.db.posts.length);
   }
 
+  // ── (n) ⭐ M4 a signed-in non-reviewer, and refused writes ──────────────
+  {
+    const w = boot({ hash: "#first-light/paintings", reviewer: false });
+    w.go("first-light"); await settle();
+    check("(n) ⭐ M4 a signed-in non-reviewer (marks read 200 []) gets no control", !$(w, "button[data-act]") && !!$(w, "[data-not-reviewer]"), text(w).slice(0, 400));
+    check("(n) ⭐ M4 and sends no POST, and never reads the marks", w.db.posts.length === 0 && w.db.reads === 0);
+    check("(n) M4 the words name the reviewer list, never an ended sign-in", /not on the reviewer list/.test(text(w)) && !/sign-in has ended/.test(text(w)));
+    const w2 = boot({ hash: "#first-light/paintings", rpcStatus: 403 });
+    w2.go("first-light"); await settle();
+    check("(n) M4 a 403 from the reviewer check has its own words", !$(w2, "button[data-act]") && /not on the reviewer list/.test(text(w2)) && !/sign-in has ended/.test(text(w2)));
+  }
+  for (const st of [401, 403, 500]) {
+    const w = boot({ hash: "#first-light/paintings", postStatus: st });
+    w.go("first-light"); await settle();
+    const before = w.CPL_FIRST_LIGHT_TAB._state.marks.length;
+    click(w, $(w, '[data-grid="paintings"] .flt-card[data-painting="3"] button[data-act="drop"]'));
+    check("(n) a save in progress says so (" + st + ")", $(w, "#flt-msg").textContent === "Saving the mark…");
+    await settle();
+    const msg = $(w, "#flt-msg").textContent, card = $(w, '[data-grid="paintings"] .flt-card[data-painting="3"]');
+    check("(n) ⭐ M4 a POST answering " + st + " changes nothing: no Saved, the card keeps Drop",
+      w.CPL_FIRST_LIGHT_TAB._state.marks.length === before && !/Saved/.test(msg) && !!card.querySelector('button[data-act="drop"]') && !card.querySelector("[data-mark-state]"), msg);
+    check("(n) the " + st + " words fit the answer", st === 401 ? /sign-in has ended/.test(msg) : st === 403 ? /not on the reviewer list/.test(msg) && !/ended/.test(msg) : /HTTP 500/.test(msg), msg);
+  }
+
+  // ── (o) spent marks in the tab, each visit rereads, and the small rules ──
+  {
+    const hero = JSON.parse(JSON.stringify(HERO));
+    hero.applied_through_mark_id = 4;
+    hero.photos[0].story_link = "javascript:alert(1)";
+    const w = boot({ hash: "#first-light/photos", hero, marks: [{ id: 4, item_set: "photos", item_key: HERO.photos[1].file, mark: "drop", collection: "hero_photos" }] });
+    w.go("first-light"); await settle();
+    const c1 = $(w, '[data-grid="photos"] .flt-card[data-photo="' + HERO.photos[1].file + '"]');
+    check("(o) ⭐ M2 a mark at or below hero_photos.json's applied_through_mark_id is spent in the tab", !!c1.querySelector('button[data-act="drop"]') && /Nothing to apply/.test(text(w)));
+    check("(o) a story_link that is not https is not a link", !$(w, '[data-grid="photos"] .flt-card a[href^="javascript"]'));
+    const reads = w.db.reads;
+    w.go("dashboard"); w.go("first-light"); await settle();
+    check("(o) each visit reads the marks again", w.db.reads === reads + 1, w.db.reads + " vs " + reads);
+    click(w, $(w, 'button[data-act="show-stories"]')); await settle();
+    const sc = $(w, '[data-grid="stories"] .flt-card');
+    check("(o) a story's image carries the name as MAP printed it", sc && sc.querySelector("img").getAttribute("alt") === sc.querySelector("h3").textContent && sc.querySelector("img").getAttribute("alt").length > 1);
+    const gallery = JSON.parse(JSON.stringify(GALLERY));
+    gallery.paintings.push({ file: "Odd Name@Kunsthalle.jpg", title: "Odd Name Painting", artist: "Somebody", year: "1900", in_first_light: false, category: "x" });
+    const wp = boot({ hash: "#first-light/paintings", paintingsApplied: 2, gallery, marks: [{ id: 2, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" }] });
+    wp.go("first-light"); await settle();
+    check("(o) M2 the paintings read theirs from the manifest", /Nothing to apply/.test(text(wp)));
+    click(wp, $(wp, 'button[data-act="show-cand"]')); await settle();
+    const cc = $(wp, '[data-grid="candidates"] .flt-card');
+    check("(o) a candidate's image carries its title", cc.querySelector("img").getAttribute("alt") === cc.querySelector("h3").textContent);
+    const cq = $(wp, "#flt-cq"); cq.value = "Odd Name Painting"; cq.dispatchEvent(new wp.Event("input"));
+    const odd = $$(wp, '[data-grid="candidates"] .flt-card').find((c) => /@/.test(c.getAttribute("data-cand")));
+    check("(o) a candidate whose name the table refuses offers no Add, and says why", !!odd && !odd.querySelector('button[data-act="add"]') && /cannot be added here/.test(odd.textContent));
+  }
+
   // ── (k) the migration ────────────────────────────────────────────────────
   {
     const SQL = fs.readFileSync("kb/migrations/2026-11-12_first_light_marks.sql", "utf8");
@@ -266,7 +350,7 @@ const text = (w) => $(w, "#first-light-root").textContent;
     const ROLL = fs.readFileSync("kb/migrations/2026-11-12_first_light_marks_rollback.sql", "utf8");
     const APPLY = fs.readFileSync("kb/migrations/.apply", "utf8");
     check("(k) ⭐ the migration is not named in kb/migrations/.apply (the conductor moves it)", APPLY.indexOf("first_light_marks") === -1);
-    check("(k) the rollback drops both tables and both functions", /drop table if exists public\.first_light_marks;/.test(ROLL) && /drop table if exists public\.first_light_apply_requests;/.test(ROLL) &&
+    check("(k) the rollback drops both tables and both functions", /drop table public\.first_light_marks;/.test(ROLL) && /drop table public\.first_light_apply_requests;/.test(ROLL) &&
       /drop function if exists public\.first_light_marks_stamp\(\)/.test(ROLL) && /drop function if exists public\.first_light_apply_requests_stamp\(\)/.test(ROLL));
     const policies = code.match(/create policy[\s\S]*?;/g) || [];
     check("(k) ⭐ four policies, each a select or insert for authenticated under is_allowed_reviewer()", policies.length === 4 &&
@@ -286,7 +370,17 @@ const text = (w) => $(w, "#first-light-root").textContent;
     }
     check("(k) who and when come from the sign-in, by trigger", /new\.marked_by := coalesce\(auth\.jwt\(\) ->> 'email', current_user\)/.test(code) &&
       /new\.requested_by := coalesce\(auth\.jwt\(\) ->> 'email', current_user\)/.test(code) && /new\.status := 'pending'/.test(code) && /new\.pr_url := null/.test(code));
-    check("(k) one pending request at a time", /create unique index if not exists first_light_apply_one_pending[\s\S]*?where status = 'pending'/.test(code));
+    check("(k) one pending request at a time", /create unique index first_light_apply_one_pending[\s\S]*?where status = 'pending'/.test(code));
+    check("(k) ⭐ M1 both ids are identity columns a client cannot set",
+      (code.match(/\bid\s+bigint generated always as identity primary key/g) || []).length === 2 && !/bigserial/.test(code));
+    check("(k) a second run fails loudly: no create table if not exists", !/create table if not exists/i.test(code) && (code.match(/^create table public\./gm) || []).length === 2);
+    check("(k) the key is shaped per set (no path out, no markup), and no unused note column",
+      /first_light_marks_key_shape/.test(code) && code.indexOf("^(stories/)?[a-z0-9][a-z0-9._-]{0,150}") !== -1 && code.indexOf("position('..' in item_key) = 0") !== -1 &&
+      code.indexOf("left(item_key, 1) <> '.'") !== -1 && code.indexOf("[:cntrl:]") !== -1 && !/\bnote\b/.test(code));
+    check("(k) the rollback copies both tables to backups before dropping, and drops no trigger by hand",
+      ROLL.indexOf("create table public.first_light_marks_backup as table public.first_light_marks;") !== -1 &&
+      ROLL.indexOf("create table public.first_light_apply_requests_backup as table public.first_light_apply_requests;") !== -1 &&
+      ROLL.indexOf("_backup as table public.first_light_marks;") < ROLL.indexOf("drop table public.first_light_marks;") && !/drop trigger/i.test(ROLL));
     check("(k) both tables keep RLS on", /alter table public\.first_light_marks enable row level security/.test(code) && /alter table public\.first_light_apply_requests enable row level security/.test(code));
     check("(k) a position only on a position mark, and a collection that fits its set", /\(mark = 'position'\) = \(position is not null\)/.test(code) && /first_light_marks_collection_fits_set/.test(code));
     const tabColls = [...TAB.matchAll(/(?:"|, )(rotation|gallery_candidates|hero_photos|my_cpl_story)"/g)].map((x) => x[1]);
@@ -300,6 +394,7 @@ const text = (w) => $(w, "#first-light-root").textContent;
     check("(l) ⭐ both tables are mapped with a reason that names the disclosure check",
       ["table:first_light_marks", "table:first_light_apply_requests"].every((k) => why(k).length > 200 && /student data/.test(why(k)) && /is_allowed_reviewer/.test(why(k))));
     check("(l) the marks reason names Drop as the takedown path", /takedown/.test(why("table:first_light_marks")));
+    check("(l) M1 the marks reason says the database numbers each row", /identity column no client can set/.test(why("table:first_light_marks")));
     const sw = {};
     new Function("window", fs.readFileSync("cobi_admin_surface.js", "utf8"))(sw);
     const e = sw.COBI_ADMIN_SURFACE && sw.COBI_ADMIN_SURFACE.tabs && sw.COBI_ADMIN_SURFACE.tabs["first-light"];

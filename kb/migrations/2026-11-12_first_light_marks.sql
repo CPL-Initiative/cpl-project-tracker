@@ -9,7 +9,7 @@
 -- COBI's First Light tab (#first-light); Apply files one request row; first-light-apply.yml reads the marks, writes
 -- the selection and the hero list, and opens ONE pull request. Sam merges it. Nothing auto-merges.
 --
--- first_light_marks — insert only. The latest mark per item wins on read (first_light_tab.js resolveSet: the
+-- first_light_marks — insert only, numbered by the database. The latest mark per item wins on read (first_light_tab.js resolveSet: the
 -- latest keep/drop/add decides whether an item is in, and the latest position decides where it sits). No update
 -- or delete is granted to anyone, so a newer mark is the only way to change one, and every mark stays as history.
 --
@@ -41,25 +41,34 @@
 --   from unnest(array['public.first_light_marks_stamp()', 'public.first_light_apply_requests_stamp()']) as p;
 -- Rollback: kb/migrations/2026-11-12_first_light_marks_rollback.sql.
 
-create table if not exists public.first_light_marks (
-  id          bigserial primary key,
+-- Plain create table: a second run fails loudly instead of passing over a table that differs from this file.
+-- id is an identity column a client cannot set (GENERATED ALWAYS; PostgREST has no OVERRIDING), and the resolver
+-- orders marks by it, so only the database decides which mark is the latest.
+create table public.first_light_marks (
+  id          bigint generated always as identity primary key,
   item_set    text not null check (item_set in ('paintings', 'photos')),
-  item_key    text not null check (char_length(btrim(item_key)) between 1 and 300),
+  item_key    text not null check (char_length(item_key) between 1 and 300),
   mark        text not null check (mark in ('keep', 'drop', 'add', 'position')),
   position    integer check (position is null or position between 1 and 5000),
   collection  text not null check (collection in ('rotation', 'gallery_candidates', 'hero_photos', 'my_cpl_story', 'repo_folder')),
-  note        text check (note is null or char_length(note) <= 500),
   marked_by   text not null default '',
   marked_at   timestamptz not null default now(),
   constraint first_light_marks_position_only_on_position check ((mark = 'position') = (position is not null)),
   constraint first_light_marks_collection_fits_set check (
     (item_set = 'paintings' and collection in ('rotation', 'gallery_candidates'))
-    or (item_set = 'photos' and collection in ('hero_photos', 'my_cpl_story', 'repo_folder')))
+    or (item_set = 'photos' and collection in ('hero_photos', 'my_cpl_story', 'repo_folder'))),
+  -- A key is a file name the workflow writes or looks up, never a path out of its folder or markup.
+  -- Photos: library/photos/<file> or library/photos/stories/<file>. Paintings: a Wikimedia Commons file name.
+  constraint first_light_marks_key_shape check (
+    (item_set = 'photos' and item_key ~ '^(stories/)?[a-z0-9][a-z0-9._-]{0,150}\.(png|jpe?g|webp)$'
+      and position('..' in item_key) = 0)
+    or (item_set = 'paintings' and item_key !~ '[/\\<>`|@[:cntrl:]]' and left(item_key, 1) <> '.'
+      and btrim(item_key) = item_key))
 );
-create index if not exists first_light_marks_item_idx on public.first_light_marks (item_set, item_key, id desc);
+create index first_light_marks_item_idx on public.first_light_marks (item_set, item_key, id desc);
 
-create table if not exists public.first_light_apply_requests (
-  id            bigserial primary key,
+create table public.first_light_apply_requests (
+  id            bigint generated always as identity primary key,
   status        text not null default 'pending' check (status in ('pending', 'opened', 'updated', 'nothing', 'failed')),
   requested_by  text not null default '',
   requested_at  timestamptz not null default now(),
@@ -70,7 +79,7 @@ create table if not exists public.first_light_apply_requests (
   detail        text check (detail is null or char_length(detail) <= 2000)
 );
 -- One pending request at a time: the hourly look and the dispatch handle it; a second Apply waits for it.
-create unique index if not exists first_light_apply_one_pending on public.first_light_apply_requests (status)
+create unique index first_light_apply_one_pending on public.first_light_apply_requests (status)
   where status = 'pending';
 
 -- Who and when come from the sign-in and the clock, never the client.
@@ -136,9 +145,5 @@ revoke all on public.first_light_marks from anon, authenticated;
 revoke all on public.first_light_apply_requests from anon, authenticated;
 grant select, insert on public.first_light_marks to authenticated;
 grant select, insert on public.first_light_apply_requests to authenticated;
-grant usage on sequence public.first_light_marks_id_seq to authenticated;
-grant usage on sequence public.first_light_apply_requests_id_seq to authenticated;
-revoke all on sequence public.first_light_marks_id_seq from anon;
-revoke all on sequence public.first_light_apply_requests_id_seq from anon;
 grant select on public.first_light_marks to service_role;
 grant select, update on public.first_light_apply_requests to service_role;
