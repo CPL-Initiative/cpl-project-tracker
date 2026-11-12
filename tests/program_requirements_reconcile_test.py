@@ -567,6 +567,13 @@ arith = S.score(new, [], vv_text, cs["award"])["arithmetic"]
 check("108 hours of single-figure courses meets the top of 96.0 - 108.0 (meets_top, S639)",
       arith["status"] == "equal" and arith["computed"] == [108.0, 108.0] and arith["pass"] and arith.get("meets_top"))
 check("the filed record is left as filed", cs["record"]["blocks"][0]["courses"][0]["units"] is None)
+# The page's own call wins a code it and the hours file both give (review, S640): the file gives WKPR 011 36 hours.
+won, won_notes = R.reconcile(cs["record"], vv_text, VV, cs["award"], steps=vv_steps,
+                             course_hours={"call": "the page's own call", "hours": {"WKPR11": [30, 30]}})
+check("course_hours: the page's call (WKPR 011 at 30) wins over the hours file's 36, and the file fills the rest",
+      vv_hours["hours"]["WKPR11"] == [36.0, 36.0]
+      and [c["units"] for c in won["blocks"][0]["courses"]] == [30, 36.0, 36.0]
+      and won_notes[0]["now"]["WKPR 011"] == 30 and won_notes[0]["words"].startswith("the page's own call"))
 
 print("meets_top: an hours record's single-figure courses add to its printed range's top (S639)")
 
@@ -603,6 +610,34 @@ check("Victor Valley's Critical Care Paramedic 45880 (256 - 280, 0.914 of the to
 check("the ratio's tolerance takes a low end printed to one decimal place (28.0 of 31.5 is in; 7.9 of 9.0, 0.1 off, is out)",
       S.hours_meets_top(hrs([18, 13.5], (28, 31.5)), (28.0, 31.5), 31.5, 31.5)
       and not S.hours_meets_top(hrs([4.5, 4.5], (7.9, 9.0)), (7.9, 9.0), 9.0, 9.0))
+# Review of Victor Valley's last three commits (S640): pin TERM_TOL between 0 and 0.1. 7.6 is 0.044 off eight ninths
+# of 8.6 (7.644) and passes; 7.58 is 0.064 off and fails.
+near = S.score(hrs([4.3, 4.3], (7.6, 8.6)), [], None, "Noncredit program")["arithmetic"]
+far = S.score(hrs([4.3, 4.3], (7.58, 8.6)), [], None, "Noncredit program")["arithmetic"]
+check("a low end inexact yet inside 0.05 of eight ninths (7.6 of 8.6) passes as meets_top; 0.064 off (7.58) does not",
+      near["pass"] and near.get("meets_top") and not far["pass"] and not far.get("meets_top")
+      and S.TERM_TOL == 0.05)
+# The guard reads each course's alternatives too: a mutant that loops only [c] passes neither of these.
+alt_none = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": None}]}})
+alt_var = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": 36, "units_max": 40}]}})
+alt_bare = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": ["WKPR 99"]}})
+alt_one = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": 36}]}})
+check("a 36-hour course whose alternative has no hours is no meets_top, by the score and by the guard",
+      not S.score(alt_none, [], None, "Noncredit program")["arithmetic"].get("meets_top")
+      and not S.hours_meets_top(alt_none, (96.0, 108.0), 108.0, 108.0))
+check("a 36-hour course whose alternative runs 36-40 is no meets_top, by the score and by the guard",
+      not S.score(alt_var, [], None, "Noncredit program")["arithmetic"].get("meets_top")
+      and not S.hours_meets_top(alt_var, (96.0, 108.0), 108.0, 108.0))
+check("a bare-code alternative (no hours) is refused by the guard",
+      not S.hours_meets_top(alt_bare, (96.0, 108.0), 108.0, 108.0))
+check("an alternative of one figure, 36, leaves the guard passing", S.hours_meets_top(alt_one, (96.0, 108.0), 108.0, 108.0))
+# A recommended block counts toward neither the sum nor the guard, priced or not.
+rec_blk = hrs([36, 36, 36], (96, 108))
+rec_blk["blocks"].append({"name": "Recommended", "rule": "recommended", "courses": [{"code": "WKPR 20", "units": None}]})
+rec_a = S.score(rec_blk, [], None, "Noncredit program")["arithmetic"]
+check("an unpriced recommended block beside [36, 36, 36] leaves 108 of 96 - 108 passing as meets_top",
+      rec_a["pass"] and rec_a.get("meets_top") and rec_a["computed"] == [108.0, 108.0]
+      and S.hours_meets_top(rec_blk, (96.0, 108.0), 108.0, 108.0))
 
 
 def shaped(rule, units, total, **block):
