@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-12T06:36:24Z",
-  "count": 2536,
+  "_synced_at": "2026-11-12T20:21:38Z",
+  "count": 2546,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -1657,6 +1657,12 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "AP Comparative Government and Politics"
+    },
+    "AP Government Exam": {
+      "issuing_agency": "College Board",
+      "reviewed_by": "cer-procedure-brand-family@bot",
+      "reviewed_at": "2026-11-12T16:21:46.334286+00:00",
+      "unified_title": "AP United States Government and Politics"
     },
     "AP Government and Political: United States (Score 3-5)": {
       "issuing_agency": "College Board",
@@ -3520,16 +3526,16 @@
     "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
-      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "supersedes": "Auto Electricity and Electronics"
+      "reviewed_at": "2026-11-12T12:06:24.372+00:00",
+      "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+      "supersedes": "Electrical/Electronic Systems (ASE A6 standards)"
     },
     "AUTOTEC-15: Auto Electricity and Electronics": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
-      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "supersedes": "Auto Electricity and Electronics"
+      "reviewed_at": "2026-11-12T12:06:24.372+00:00",
+      "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+      "supersedes": "Electrical/Electronic Systems (ASE A6 standards)"
     },
     "Academic Reading and Writing ENGL C1000": {
       "issuing_agency": "California Community Colleges",
@@ -7430,12 +7436,24 @@
       "reviewed_at": "2026-11-11T01:24:01.862617+00:00",
       "unified_title": "Introduction to Food Safety"
     },
+    "Credit By Exam- CFPL ABT 135": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:11:19.584464+00:00",
+      "unified_title": "Agricultural Business and Technology"
+    },
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-09T15:12:26.305+00:00",
       "unified_title": "Water Supply",
       "supersedes": "Credit by Exam"
+    },
+    "Credit by Exam - ACADEMIC PLANNING": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:32:40.61005+00:00",
+      "unified_title": "Academic Planning"
     },
     "Credit by Exam - Advanced Waterworks Mathematics (WATER 131)": {
       "issuing_agency": "California Community Colleges",
@@ -8907,6 +8925,36 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Elementary Italian 2"
     },
+    "Elevators Training Center Apprenticeship Journeyperson": {
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:33:08.105913+00:00",
+      "unified_title": "Elevators Training Center Apprenticeship Journeyperson"
+    },
+    "Elevators Training Center Apprenticeship Level 1": {
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:33:10.292005+00:00",
+      "unified_title": "Elevators Training Center Apprenticeship Level 1"
+    },
+    "Elevators Training Center Apprenticeship Level 2": {
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:37:07.959024+00:00",
+      "unified_title": "Elevators Training Center Apprenticeship Level 2"
+    },
+    "Elevators Training Center Apprenticeship Level 3": {
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:37:08.716118+00:00",
+      "unified_title": "Elevators Training Center Apprenticeship Level 3"
+    },
+    "Elevators Training Center Apprenticeship Level 4": {
+      "issuing_agency": "National Elevator Industry Educational Program (NEIEP)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:37:09.446353+00:00",
+      "unified_title": "Elevators Training Center Apprenticeship Level 4"
+    },
     "Emergency Care and Safety Institute": {
       "issuing_agency": "Emergency Care and Safety Institute (ECSI)",
       "reviewed_by": "map@rccd.edu",
@@ -9671,6 +9719,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:28.712759+00:00",
       "unified_title": "Firefighter II"
+    },
+    "Firefighter Recruit Academy Certificate": {
+      "issuing_agency": "California State Fire Training (SFT)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:45:38.27296+00:00",
+      "unified_title": "Firefighter 1"
     },
     "Firefighter Training - Certification NWCG S-130": {
       "issuing_agency": "National Wildfire Coordinating Group (NWCG)",
@@ -13009,9 +13063,9 @@
     "Noncredit for AUTO A6": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
-      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "supersedes": "Automotive Electrical Systems"
+      "reviewed_at": "2026-11-12T12:06:24.372+00:00",
+      "unified_title": "Auto Electrical/Electronic Systems (ASE A6 standards)",
+      "supersedes": "Electrical/Electronic Systems (ASE A6 standards)"
     },
     "Noncredit for AUTO A7": {
       "issuing_agency": "California Community Colleges",
@@ -14163,6 +14217,12 @@
       "reviewed_at": "2026-10-31T15:37:52.883011+00:00",
       "unified_title": "First Aid, CPR and AED"
     },
+    "Public Safety Leadership & Administration Experience BSEM-LD8": {
+      "issuing_agency": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-12T12:32:50.690454+00:00",
+      "unified_title": "Public Safety Leadership and Administration Experience"
+    },
     "Public Safety: Emergency Medical Response": {
       "issuing_agency": "American Red Cross",
       "reviewed_by": "slee@cccco.edu",
@@ -15243,17 +15303,56 @@
     }
   },
   "sweep_kept": {
+    "AUTO 61A-Automotive Brake Systems-Credit by Exam": [
+      "Brakes (ASE A5)"
+    ],
+    "Automotive Brake Systems": [
+      "Brakes (ASE A5)"
+    ],
+    "Automotive Brake Systems AUTO 036 Cx": [
+      "Brakes (ASE A5)"
+    ],
+    "Brakes": [
+      "Brakes (ASE A5)"
+    ],
+    "Brakes - Credit by Exam (ATEC 14 )": [
+      "Brakes (ASE A5)"
+    ],
+    "Credit by Exam AUTO 106 Automotive Brake System": [
+      "Brakes (ASE A5)"
+    ],
+    "Engine Performance": [
+      "Engine Performance (ASE A8)"
+    ],
     "Engine Performance - Credit by Exam (ATEC 23 )": [
-      "Automotive Technology (ASE A8 Engine Performance)"
+      "Engine Performance (ASE A8)"
+    ],
+    "Engine Performance I AUTO 018 Cx": [
+      "Engine Performance (ASE A8)"
+    ],
+    "Engine Performance II AUTO 029 Cx": [
+      "ASE A8 — Engine Performance"
     ],
     "Intermediate Spanish": [
       "Intermediate Spanish"
+    ],
+    "Noncredit for AUTO A2": [
+      "Automatic Transmission/Transaxle (ASE A2)"
     ],
     "Noncredit for AUTO A3": [
       "Automotive Technology (ASE A3 Manual Drive Train and Axles)"
     ],
     "Noncredit for AUTO A4": [
       "Automotive Technology (ASE A4 Suspension and Steering)"
+    ],
+    "Noncredit for AUTO A5": [
+      "Brakes (ASE A5)"
+    ],
+    "Noncredit for AUTO A8": [
+      "Engine Performance (ASE A8)"
+    ],
+    "Noncredit for AUTO L1": [
+      "Advanced Engine Performance Specialist (ASE L1)"
     ],
     "Noncredit for AUTO P1": [
       "Powertrains: Modifications for Performance"

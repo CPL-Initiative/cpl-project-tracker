@@ -274,15 +274,17 @@ def row_exhibit(root):
              "carry": "keep_call", "open": tab + "/list/left", "error": left["error"]},
             {"n": review_n,
              "words": "renamed titles on the Exhibits review list (%s brought back, %s dead ends, %s dead retires); "
-                      "%s brought back with no record of who or why (target 0)"
+                      "%s unacknowledged returned titles (target 0)"
                       % (fmt(len(mv.get("returned") or [])), fmt(len(mv.get("dead_ends") or [])),
                          fmt(len(mv.get("dead_retires") or [])), fmt(unack_n)) if review_n is not None
                       else "renamed titles on the Exhibits review list",
              "owner": "a curator (kb/credential_title_moves.json)",
              "carry": "keep_call", "open": tab + "/held", "error": review_err},
-            # Read zero on a good day, so the filter below leaves it out; the review list's words carry the 0.
-            {"n": unack_n, "words": "returned titles no one acknowledged: back in the reference with no record of who "
-                                    "brought each back or why; retire it, or add it to kb/returned_titles_acknowledged.json",
+            # Its own line only above zero: the S343 rule (no figure is a bare zero, tests/commons_status_build_test.py)
+            # drops a zero line, so the review list's words carry the 0 and facts.returned_unacknowledged holds it.
+            {"n": unack_n, "words": "unacknowledged returned titles, target 0: titles back in the reference with no "
+                                    "record of who brought each back or why; retire one, or add it to "
+                                    "kb/returned_titles_acknowledged.json",
              "owner": "a curator", "carry": "keep_call", "open": tab + "/held", "error": review_err},
         ] if i["n"] != 0],
         "procedures": [

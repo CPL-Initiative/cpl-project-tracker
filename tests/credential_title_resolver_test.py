@@ -373,7 +373,7 @@ check("the seeded entries match returned() today: 3 returned, 0 unacknowledged",
       sorted(e["title"] for e in ack[:3]) == ca.returned(ROOT) and ca.unacknowledged(ROOT) == [], ca.unacknowledged(ROOT))
 rep = json.load(open(os.path.join(ROOT, ca.TABLE), encoding="utf-8"))["report"]
 kinds = [r["kind"] for r in rep.get("review_list") or []]
-check("the committed review list is the report's 11 titles: 3 brought back, 6 dead ends, 2 dead retires",
+check("the committed review list is the report's returned, dead ends and dead retires",
       len(kinds) == len(rep["returned"]) + len(rep["dead_ends"]) + len(rep["dead_retires"])
       and rep.get("unacknowledged") == [] and kinds.count("brought back") == len(rep["returned"]), kinds)
 check("--check passes (a warning never fails the lints job)", ca.main(["--check"]) == 0)

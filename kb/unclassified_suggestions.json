@@ -1,6 +1,6 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-12T00:26:47Z",
+ "_generated_at": "2026-11-12T20:24:07Z",
  "count": 0,
  "suggestions": {},
  "aligned": {
@@ -25,175 +25,11 @@
    "code": "DANCETQ 142",
    "college": "Los Angeles Pierce College"
   },
-  "Elevators Training Center Apprenticeship Level 3": {
-   "kind": "course",
-   "id": "CNST M10CK",
-   "title": "Advanced Topics in Elevators",
-   "code": "ELEVA 108",
-   "college": "American River College"
-  },
-  "Elevators Training Center Apprenticeship Level 2": {
-   "kind": "course",
-   "id": "CNST M10CK",
-   "title": "Advanced Topics in Elevators",
-   "code": "ELEVA 108",
-   "college": "American River College"
-  },
-  "Elevators Training Center Apprenticeship Level 4": {
-   "kind": "course",
-   "id": "CNST M10CK",
-   "title": "Advanced Topics in Elevators",
-   "code": "ELEVA 108",
-   "college": "American River College"
-  },
-  "Elevators Training Center Apprenticeship Level 1": {
-   "kind": "course",
-   "id": "CNST M10CK",
-   "title": "Advanced Topics in Elevators",
-   "code": "ELEVA 108",
-   "college": "American River College"
-  },
-  "Elevators Training Center Apprenticeship Journeyperson": {
-   "kind": "course",
-   "id": "CNST M10CK",
-   "title": "Advanced Topics in Elevators",
-   "code": "ELEVA 108",
-   "college": "American River College"
-  },
-  "Firefighter Recruit Academy Certificate": {
-   "kind": "mid",
-   "id": "FIRE M1219",
-   "title": "Firefighter Academy",
-   "code": "FIRE 1500",
-   "college": "American River College"
-  },
-  "Credit by Exam - ACADEMIC PLANNING": {
-   "kind": "mid",
-   "id": "COUN M1004",
-   "title": "Academic Planning",
-   "code": "COUN 1",
-   "college": "Irvine Valley College"
-  },
   "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2": {
    "kind": "mid",
    "id": "CNST M1129",
    "title": "Tools of the Trade and Installation of Hardwood Floors",
    "code": "INSTL 111",
-   "college": "American River College"
-  },
-  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2": {
-   "kind": "mid",
-   "id": "CNST M1105",
-   "title": "Acoustical Blueprint Reading Advanced",
-   "code": "CARPT 164",
-   "college": "American River College"
-  },
-  "Nor Cal Carpenters Training Acoustical Journeyperson": {
-   "kind": "mid",
-   "id": "CNST M1105",
-   "title": "Acoustical Blueprint Reading Advanced",
-   "code": "CARPT 164",
-   "college": "American River College"
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3": {
-   "kind": "mid",
-   "id": "CNST M1070",
-   "title": "Welded Frame and Mobile Tower Scaffold",
-   "code": "SCFLD 110",
-   "college": "American River College",
-   "ambiguous": [
-    "CARP M1063",
-    "CNST M1006",
-    "CNST M1070"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2": {
-   "kind": "mid",
-   "id": "CNST M1107",
-   "title": "Advanced Blueprint Reading for Mill Cabinet",
-   "code": "CARPT 270",
-   "college": "American River College",
-   "ambiguous": [
-    "CARP M1028",
-    "CNST M1107",
-    "WWKC M1003"
-   ]
-  },
-  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2": {
-   "kind": "course",
-   "id": "INDT M10JF",
-   "title": "Residential Insulation Blow-In",
-   "code": "INSUL 161",
-   "college": "American River College",
-   "ambiguous": [
-    "INDT M10JF",
-    "INDT M10VZ"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2": {
-   "kind": "mid",
-   "id": "CNST M1111",
-   "title": "Pile Driver Math Applications",
-   "code": "CARPT 241",
-   "college": "American River College",
-   "ambiguous": [
-    "CNST M1111",
-    "CNST M1116",
-    "CNST M1124"
-   ]
-  },
-  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1": {
-   "kind": "course",
-   "id": "INDT M10JF",
-   "title": "Residential Insulation Blow-In",
-   "code": "INSUL 161",
-   "college": "American River College",
-   "ambiguous": [
-    "INDT M10JF",
-    "INDT M10VZ"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1": {
-   "kind": "mid",
-   "id": "CNST M1111",
-   "title": "Pile Driver Math Applications",
-   "code": "CARPT 241",
-   "college": "American River College",
-   "ambiguous": [
-    "CNST M1111",
-    "CNST M1116",
-    "CNST M1124"
-   ]
-  },
-  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3": {
-   "kind": "mid",
-   "id": "CNST M1107",
-   "title": "Advanced Blueprint Reading for Mill Cabinet",
-   "code": "CARPT 270",
-   "college": "American River College",
-   "ambiguous": [
-    "CARP M1028",
-    "CNST M1107",
-    "WWKC M1003"
-   ]
-  },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3": {
-   "kind": "mid",
-   "id": "CNST M1111",
-   "title": "Pile Driver Math Applications",
-   "code": "CARPT 241",
-   "college": "American River College",
-   "ambiguous": [
-    "CNST M1111",
-    "CNST M1116",
-    "CNST M1124"
-   ]
-  },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 4": {
-   "kind": "mid",
-   "id": "CNST M1098",
-   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
-   "code": "CARPT 221",
    "college": "American River College"
   },
   "Nor Cal Carpenters Training Acoustical Apprenticeship Year 1": {
@@ -203,11 +39,11 @@
    "code": "CARPT 164",
    "college": "American River College"
   },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 3": {
+  "Nor Cal Carpenters Training Acoustical Apprenticeship Year 2": {
    "kind": "mid",
-   "id": "CNST M1098",
-   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
-   "code": "CARPT 221",
+   "id": "CNST M1105",
+   "title": "Acoustical Blueprint Reading Advanced",
+   "code": "CARPT 164",
    "college": "American River College"
   },
   "Nor Cal Carpenters Training Acoustical Apprenticeship Year 3": {
@@ -224,23 +60,44 @@
    "code": "CARPT 164",
    "college": "American River College"
   },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 1": {
+  "Nor Cal Carpenters Training Acoustical Journeyperson": {
    "kind": "mid",
-   "id": "CNST M1098",
-   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
-   "code": "CARPT 221",
+   "id": "CNST M1105",
+   "title": "Acoustical Blueprint Reading Advanced",
+   "code": "CARPT 164",
    "college": "American River College"
   },
-  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4": {
-   "kind": "mid",
-   "id": "CNST M1111",
-   "title": "Pile Driver Math Applications",
-   "code": "CARPT 241",
+  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 1": {
+   "kind": "course",
+   "id": "INDT M10JF",
+   "title": "Residential Insulation Blow-In",
+   "code": "INSUL 161",
    "college": "American River College",
    "ambiguous": [
-    "CNST M1111",
-    "CNST M1116",
-    "CNST M1124"
+    "INDT M10JF",
+    "INDT M10VZ"
+   ]
+  },
+  "Nor Cal Carpenters Training Insulation Installer Apprenticeship Year 2": {
+   "kind": "course",
+   "id": "INDT M10JF",
+   "title": "Residential Insulation Blow-In",
+   "code": "INSUL 161",
+   "college": "American River College",
+   "ambiguous": [
+    "INDT M10JF",
+    "INDT M10VZ"
+   ]
+  },
+  "Nor Cal Carpenters Training Insulation Installer Journeyperson": {
+   "kind": "course",
+   "id": "INDT M10JF",
+   "title": "Residential Insulation Blow-In",
+   "code": "INSUL 161",
+   "college": "American River College",
+   "ambiguous": [
+    "INDT M10JF",
+    "INDT M10VZ"
    ]
   },
   "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 1": {
@@ -255,46 +112,28 @@
     "WWKC M1003"
    ]
   },
-  "Nor Cal Carpenters Training Scaffold Erector Journeyperson": {
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 2": {
    "kind": "mid",
-   "id": "CNST M1070",
-   "title": "Welded Frame and Mobile Tower Scaffold",
-   "code": "SCFLD 110",
+   "id": "CNST M1107",
+   "title": "Advanced Blueprint Reading for Mill Cabinet",
+   "code": "CARPT 270",
    "college": "American River College",
    "ambiguous": [
-    "CARP M1063",
-    "CNST M1006",
-    "CNST M1070"
+    "CARP M1028",
+    "CNST M1107",
+    "WWKC M1003"
    ]
   },
-  "Nor Cal Carpenters Training Millwright Apprenticeship Year 2": {
+  "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 3": {
    "kind": "mid",
-   "id": "CNST M1098",
-   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
-   "code": "CARPT 221",
-   "college": "American River College"
-  },
-  "Nor Cal Carpenters Training Insulation Installer Journeyperson": {
-   "kind": "course",
-   "id": "INDT M10JF",
-   "title": "Residential Insulation Blow-In",
-   "code": "INSUL 161",
+   "id": "CNST M1107",
+   "title": "Advanced Blueprint Reading for Mill Cabinet",
+   "code": "CARPT 270",
    "college": "American River College",
    "ambiguous": [
-    "INDT M10JF",
-    "INDT M10VZ"
-   ]
-  },
-  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4": {
-   "kind": "mid",
-   "id": "CNST M1070",
-   "title": "Welded Frame and Mobile Tower Scaffold",
-   "code": "SCFLD 110",
-   "college": "American River College",
-   "ambiguous": [
-    "CARP M1063",
-    "CNST M1006",
-    "CNST M1070"
+    "CARP M1028",
+    "CNST M1107",
+    "WWKC M1003"
    ]
   },
   "Nor Cal Carpenters Training Mill & Cabinet Makers Apprenticeship Year 4": {
@@ -309,6 +148,34 @@
     "WWKC M1003"
    ]
   },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 1": {
+   "kind": "mid",
+   "id": "CNST M1098",
+   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "code": "CARPT 221",
+   "college": "American River College"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 2": {
+   "kind": "mid",
+   "id": "CNST M1098",
+   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "code": "CARPT 221",
+   "college": "American River College"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 3": {
+   "kind": "mid",
+   "id": "CNST M1098",
+   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "code": "CARPT 221",
+   "college": "American River College"
+  },
+  "Nor Cal Carpenters Training Millwright Apprenticeship Year 4": {
+   "kind": "mid",
+   "id": "CNST M1098",
+   "title": "The Millwright Apprentice, the Trade, and 16 Hour Safety",
+   "code": "CARPT 221",
+   "college": "American River College"
+  },
   "Nor Cal Carpenters Training Office Modular System Installer Apprenticeship Year 1": {
    "kind": "course",
    "id": "CNST M10QZ",
@@ -321,6 +188,54 @@
     "CNST M10KF",
     "CNST M10QT",
     "CNST M10QZ"
+   ]
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 1": {
+   "kind": "mid",
+   "id": "CNST M1111",
+   "title": "Pile Driver Math Applications",
+   "code": "CARPT 241",
+   "college": "American River College",
+   "ambiguous": [
+    "CNST M1111",
+    "CNST M1116",
+    "CNST M1124"
+   ]
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 2": {
+   "kind": "mid",
+   "id": "CNST M1111",
+   "title": "Pile Driver Math Applications",
+   "code": "CARPT 241",
+   "college": "American River College",
+   "ambiguous": [
+    "CNST M1111",
+    "CNST M1116",
+    "CNST M1124"
+   ]
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 3": {
+   "kind": "mid",
+   "id": "CNST M1111",
+   "title": "Pile Driver Math Applications",
+   "code": "CARPT 241",
+   "college": "American River College",
+   "ambiguous": [
+    "CNST M1111",
+    "CNST M1116",
+    "CNST M1124"
+   ]
+  },
+  "Nor Cal Carpenters Training Pile Driver Apprenticeship Year 4": {
+   "kind": "mid",
+   "id": "CNST M1111",
+   "title": "Pile Driver Math Applications",
+   "code": "CARPT 241",
+   "college": "American River College",
+   "ambiguous": [
+    "CNST M1111",
+    "CNST M1116",
+    "CNST M1124"
    ]
   },
   "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 1": {
@@ -347,37 +262,58 @@
     "CNST M1070"
    ]
   },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2": {
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 3": {
    "kind": "mid",
-   "id": "HVAC M1073",
-   "title": "Mechanical Refrigeration Theory",
-   "code": "HVACR 110",
+   "id": "CNST M1070",
+   "title": "Welded Frame and Mobile Tower Scaffold",
+   "code": "SCFLD 110",
    "college": "American River College",
    "ambiguous": [
-    "HVAC M1069",
-    "HVAC M1070",
-    "HVAC M1072",
-    "HVAC M1073",
-    "HVAC M1111",
-    "HVAC M1125"
+    "CARP M1063",
+    "CNST M1006",
+    "CNST M1070"
    ]
   },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4": {
+  "Nor Cal Carpenters Training Scaffold Erector Apprenticeship Year 4": {
    "kind": "mid",
-   "id": "HVAC M1073",
-   "title": "Mechanical Refrigeration Theory",
-   "code": "HVACR 110",
+   "id": "CNST M1070",
+   "title": "Welded Frame and Mobile Tower Scaffold",
+   "code": "SCFLD 110",
    "college": "American River College",
    "ambiguous": [
-    "HVAC M1069",
-    "HVAC M1070",
-    "HVAC M1072",
-    "HVAC M1073",
-    "HVAC M1111",
-    "HVAC M1125"
+    "CARP M1063",
+    "CNST M1006",
+    "CNST M1070"
+   ]
+  },
+  "Nor Cal Carpenters Training Scaffold Erector Journeyperson": {
+   "kind": "mid",
+   "id": "CNST M1070",
+   "title": "Welded Frame and Mobile Tower Scaffold",
+   "code": "SCFLD 110",
+   "college": "American River College",
+   "ambiguous": [
+    "CARP M1063",
+    "CNST M1006",
+    "CNST M1070"
    ]
   },
   "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1": {
+   "kind": "mid",
+   "id": "HVAC M1073",
+   "title": "Mechanical Refrigeration Theory",
+   "code": "HVACR 110",
+   "college": "American River College",
+   "ambiguous": [
+    "HVAC M1069",
+    "HVAC M1070",
+    "HVAC M1072",
+    "HVAC M1073",
+    "HVAC M1111",
+    "HVAC M1125"
+   ]
+  },
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 2": {
    "kind": "mid",
    "id": "HVAC M1073",
    "title": "Mechanical Refrigeration Theory",
@@ -407,7 +343,7 @@
     "HVAC M1125"
    ]
   },
-  "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson": {
+  "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 4": {
    "kind": "mid",
    "id": "HVAC M1073",
    "title": "Mechanical Refrigeration Theory",
@@ -422,12 +358,20 @@
     "HVAC M1125"
    ]
   },
-  "Plumbers Pipefitters Union Steamfitter Journeyperson": {
+  "Plumbers Pipefitters Union Refrigeration Service Technician Journeyperson": {
    "kind": "mid",
-   "id": "STMF M1010",
-   "title": "Union Heritage",
-   "code": "STMFT 109",
-   "college": "American River College"
+   "id": "HVAC M1073",
+   "title": "Mechanical Refrigeration Theory",
+   "code": "HVACR 110",
+   "college": "American River College",
+   "ambiguous": [
+    "HVAC M1069",
+    "HVAC M1070",
+    "HVAC M1072",
+    "HVAC M1073",
+    "HVAC M1111",
+    "HVAC M1125"
+   ]
   },
   "Plumbers Pipefitters Union Steamfitter Apprenticeship Level 1": {
    "kind": "mid",
@@ -457,11 +401,11 @@
    "code": "STMFT 109",
    "college": "American River College"
   },
-  "Ironworkers Union Apprenticeship Level 3": {
+  "Plumbers Pipefitters Union Steamfitter Journeyperson": {
    "kind": "mid",
-   "id": "OSHA M1014",
-   "title": "Foreman Training and Ironworkers Union History",
-   "code": "IW 183",
+   "id": "STMF M1010",
+   "title": "Union Heritage",
+   "code": "STMFT 109",
    "college": "American River College"
   },
   "NorCal Valley Sheet Metal Apprenticeship Journeyperson": {
@@ -475,7 +419,28 @@
     "WELD M1137"
    ]
   },
+  "NorCal Valley Sheet Metal Service Technician Journeyperson": {
+   "kind": "mid",
+   "id": "AUTB M1076",
+   "title": "Smq-10 Basics of Architectural Sheet Metal",
+   "code": "SMTEC 141",
+   "college": "American River College"
+  },
   "Ironworkers Union Apprenticeship Level 1": {
+   "kind": "mid",
+   "id": "OSHA M1014",
+   "title": "Foreman Training and Ironworkers Union History",
+   "code": "IW 183",
+   "college": "American River College"
+  },
+  "Ironworkers UnionApprenticeship Level 2": {
+   "kind": "mid",
+   "id": "OSHA M1014",
+   "title": "Foreman Training and Ironworkers Union History",
+   "code": "IW 183",
+   "college": "American River College"
+  },
+  "Ironworkers Union Apprenticeship Level 3": {
    "kind": "mid",
    "id": "OSHA M1014",
    "title": "Foreman Training and Ironworkers Union History",
@@ -489,28 +454,14 @@
    "code": "IW 183",
    "college": "American River College"
   },
-  "NorCal Valley Sheet Metal Service Technician Journeyperson": {
-   "kind": "mid",
-   "id": "AUTB M1076",
-   "title": "Smq-10 Basics of Architectural Sheet Metal",
-   "code": "SMTEC 141",
-   "college": "American River College"
-  },
-  "Ironworkers UnionApprenticeship Level 2": {
-   "kind": "mid",
-   "id": "OSHA M1014",
-   "title": "Foreman Training and Ironworkers Union History",
-   "code": "IW 183",
-   "college": "American River College"
-  },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3": {
+  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1": {
    "kind": "mid",
    "id": "CNST M1129",
    "title": "Tools of the Trade and Installation of Hardwood Floors",
    "code": "INSTL 111",
    "college": "American River College"
   },
-  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 1": {
+  "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 3": {
    "kind": "mid",
    "id": "CNST M1129",
    "title": "Tools of the Trade and Installation of Hardwood Floors",

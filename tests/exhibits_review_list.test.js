@@ -81,9 +81,12 @@ function tileOf(d, label) { return Array.from(d.querySelectorAll(".exh-tile")).f
     JSON.stringify([row.facts.review_list, row.facts.returned_unacknowledged]));
   const left = row.issues.findIndex((i) => /^old titles no MAP exhibit uses/.test(i.words));
   const rl = row.issues.findIndex((i) => /^renamed titles on the Exhibits review list/.test(i.words));
-  check("(3) the review list sits beside the old-titles count, and its words carry the unacknowledged count and its target",
-    left > -1 && rl === left + 1 && new RegExp("; " + moves.unacknowledged.length + " brought back with no record of who or why \\(target 0\\)$").test(row.issues[rl].words),
+  const un = row.issues.findIndex((i) => /^unacknowledged returned titles, target 0/.test(i.words));
+  check("(3) the review list sits beside the old-titles count, its words carry the unacknowledged count, and that count has its own line once above zero",
+    left > -1 && rl === left + 1 && new RegExp("; " + moves.unacknowledged.length + " unacknowledged returned titles \\(target 0\\)$").test(row.issues[rl].words)
+    && (moves.unacknowledged.length ? un === left + 2 && row.issues[un].n === moves.unacknowledged.length : un === -1),
     rl > -1 ? row.issues[rl].words : "missing");
+  check("(3) the builder gives the unacknowledged count its own line", /"unacknowledged returned titles, target 0: /.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
   check("(3) the scorecard reads the resolver's report", /load_json\(root, "kb\/credential_title_moves\.json"\)\["report"\]/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 
   // ── (4) a warning, never a failure ──

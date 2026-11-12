@@ -1,27 +1,27 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-12T20:28:59Z",
+ "written_at": "2026-11-12T20:44:45Z",
  "sources": {
   "procedures_run": "2026-11-12T16:21:44Z",
-  "suggestions": "2026-11-12T00:26:47Z",
-  "statewide": "2026-11-12T11:49:55",
-  "audit": "2026-11-12T11:53:26+00:00"
+  "suggestions": "2026-11-12T20:24:07Z",
+  "statewide": "2026-11-12T20:20:32",
+  "audit": "2026-11-12T20:23:49+00:00"
  },
  "tiles": {
   "names": {
-   "n": 5716,
+   "n": 5726,
    "of": 5896,
-   "waiting": 180
+   "waiting": 170
   },
   "aligned": {
-   "n": 56,
-   "of": 179
+   "n": 49,
+   "of": 170
   },
   "saved_not_folded": 0,
-  "settled_since_run": 0,
+  "settled_since_run": 9,
   "review_list": {
-   "n": 11,
+   "n": 12,
    "unacknowledged": 0
   }
  },
@@ -45,6 +45,11 @@
    "title": "Art of Graphic Design I (High School Articulation)",
    "kind": "dead end",
    "words": "Renamed to “Art of Graphic Design I”, which is no longer in the reference."
+  },
+  {
+   "title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+   "kind": "dead end",
+   "words": "Renamed to “Electrical/Electronic Systems (ASE A6 standards)”, which is no longer in the reference."
   },
   {
    "title": "Carpenters Apprenticeship — CARP 002",
@@ -83,8 +88,8 @@
   }
  ],
  "steps": {
-  "Proposed": 140,
-  "Wording check": 37,
+  "Proposed": 132,
+  "Wording check": 36,
   "Two issuers": 2,
   "Conflict with the reference": 0
  },
@@ -549,15 +554,7 @@
   "Villa Park High School"
  ],
  "held": [
-  {"raw": "Credit by Exam - ACADEMIC PLANNING", "step": "Proposed", "why": "the classifier is unsure (0.70)", "colleges": [46], "title": "Academic Planning", "issuer": "California Community Colleges", "from": "M-ID COUN M1004", "proposal_source": "course", "ids": ["MAPCXS-CBE-19-1-001"], "art": [46], "could": [83], "basis": "M-ID COUN M1004", "same": true, "courses_key": "COUN M1004", "confidence": 0.7, "aligned_id": "COUN M1004", "course": "COUN 1", "course_college": "Irvine Valley College"},
-  {"raw": "Credit By Exam- CFPL ABT 135", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [44], "title": "Agricultural Business and Technology (ABT 135)", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXI-CBEC3-1-001"], "art": [44], "could": [], "basis": "", "same": false, "confidence": 0.45},
   {"raw": "Credit by Exam-- CFPL ABT 133", "step": "Wording check", "why": "the classifier's title has a course code left in", "colleges": [44], "title": "Agricultural Business and Technology (ABT 133)", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPCXI-CBEC2-1-001"], "art": [44], "could": [], "basis": "", "same": false, "confidence": 0.45},
-  {"raw": "Elevators Training Center Apprenticeship Journeyperson", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [1], "title": "Elevator Constructor Apprenticeship — Journeyperson", "issuer": "National Elevator Industry Educational Program (NEIEP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-ETCA4-1-001"], "art": [1], "could": [], "basis": "the course ELEVA 108", "same": false, "confidence": 0.5, "needs_official_name": true, "course_title_set_aside": {"title": "Advanced Topics in Elevators", "basis": "the course ELEVA 108", "why": "industry certification, not credit by exam"}, "aligned_id": "CNST M10CK", "course": "ELEVA 108", "course_college": "American River College"},
-  {"raw": "Elevators Training Center Apprenticeship Level 1", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [1], "title": "Elevator Constructor Apprenticeship — Level 1", "issuer": "National Elevator Industry Educational Program (NEIEP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-ETCA-1-001"], "art": [1], "could": [], "basis": "the course ELEVA 108", "same": false, "confidence": 0.5, "needs_official_name": true, "course_title_set_aside": {"title": "Advanced Topics in Elevators", "basis": "the course ELEVA 108", "why": "industry certification, not credit by exam"}, "aligned_id": "CNST M10CK", "course": "ELEVA 108", "course_college": "American River College"},
-  {"raw": "Elevators Training Center Apprenticeship Level 2", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [1], "title": "Elevator Constructor Apprenticeship — Level 2", "issuer": "National Elevator Industry Educational Program (NEIEP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-ETCA1-1-001"], "art": [1], "could": [], "basis": "the course ELEVA 108", "same": false, "confidence": 0.5, "needs_official_name": true, "course_title_set_aside": {"title": "Advanced Topics in Elevators", "basis": "the course ELEVA 108", "why": "industry certification, not credit by exam"}, "aligned_id": "CNST M10CK", "course": "ELEVA 108", "course_college": "American River College"},
-  {"raw": "Elevators Training Center Apprenticeship Level 3", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [1], "title": "Elevator Constructor Apprenticeship — Level 3", "issuer": "National Elevator Industry Educational Program (NEIEP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-ETCA2-1-001"], "art": [1], "could": [], "basis": "the course ELEVA 108", "same": false, "confidence": 0.5, "needs_official_name": true, "course_title_set_aside": {"title": "Advanced Topics in Elevators", "basis": "the course ELEVA 108", "why": "industry certification, not credit by exam"}, "aligned_id": "CNST M10CK", "course": "ELEVA 108", "course_college": "American River College"},
-  {"raw": "Elevators Training Center Apprenticeship Level 4", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [1], "title": "Elevator Constructor Apprenticeship — Level 4", "issuer": "National Elevator Industry Educational Program (NEIEP)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-ETCA3-1-001"], "art": [1], "could": [], "basis": "the course ELEVA 108", "same": false, "confidence": 0.5, "needs_official_name": true, "course_title_set_aside": {"title": "Advanced Topics in Elevators", "basis": "the course ELEVA 108", "why": "industry certification, not credit by exam"}, "aligned_id": "CNST M10CK", "course": "ELEVA 108", "course_college": "American River College"},
-  {"raw": "Firefighter Recruit Academy Certificate", "step": "Proposed", "why": "the classifier is unsure (0.70)", "colleges": [1], "title": "Firefighter 1", "issuer": "California State Fire Training (SFT)", "from": "the statewide exhibit in use (11 local titles, at 19 colleges)", "proposal_source": "in_use_statewide", "ids": ["MAPICA-FRAC-1-001"], "art": [1], "could": [16, 20, 47, 59, 63, 66, 74, 91, 94], "basis": "M-ID FIRE M1219", "same": true, "courses_key": "FIRE M1219", "confidence": 0.7, "alternates": ["Firefighter 1 Academy"], "in_use": {"title": "Firefighter 1", "locals": 11, "adopted": 19}, "course_title_set_aside": {"title": "Firefighter Academy", "basis": "M-ID FIRE M1219", "why": "industry certification, not credit by exam"}, "aligned_id": "FIRE M1219", "course": "FIRE 1500", "course_college": "American River College", "under": ["Fire Fighter 1 (FF1) Certification", "Fire Fighter 1 Certification (CFSTES)", "Fire Fighter I", "Fire Protection Organization 1 or 1A Certification", "Firefigher 1 and HAZMAT Tech-Specialist-Incident Cmdr or HAZWOPER", "Firefighter 1 Academy", "Firefighter 1 Certificate", "Firefighter 1 Certification", "Firefighter 1 Certification ", "Firefighter 1 or Firefighter 1A Certification", "Firefighter Certificate 1 A"], "under_count": 11, "exists": true},
   {"raw": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I", "step": "Two issuers", "why": "a merge would join two issuers (CHAMPS High School; the reference has California Community Colleges)", "colleges": [55], "title": "Modern Dance Techniques 1", "issuer": "CHAMPS High School", "from": "M-ID DANC M1222", "proposal_source": "course", "ids": ["MAPCXS-HSA--1-001"], "art": [55], "could": [32, 52, 53, 54, 56, 58], "basis": "M-ID DANC M1222", "same": true, "courses_key": "DANC M1222", "confidence": 1.0, "aligned_id": "DANC M1222", "course": "DANCETQ 141", "course_college": "Los Angeles Pierce College", "under": ["DANCETQ 141 - Modern Dance Techniques I", "DANCETQ 141 - Modern Dance Techniques I "], "under_count": 2, "exists": true},
   {"raw": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II", "step": "Two issuers", "why": "a merge would join two issuers (CHAMPS High School; the reference has California Community Colleges)", "colleges": [55], "title": "Modern Dance Techniques 2", "issuer": "CHAMPS High School", "from": "M-ID DANC M1251", "proposal_source": "course", "ids": ["MAPCXS-HSA-1-1-001"], "art": [55], "could": [32, 52, 54, 56, 58], "basis": "M-ID DANC M1251", "same": true, "courses_key": "DANC M1251", "confidence": 1.0, "aligned_id": "DANC M1251", "course": "DANCETQ 142", "course_college": "Los Angeles Pierce College", "under": ["DANCETQ 142 - Modern Dance Techniques II", "HIGH SCHOOL ARTICULATION  – DANCETQ 142 - Modern Dance Techniques II"], "under_count": 2, "exists": true},
   {"raw": "Industry Training Evidence for AJ 50", "step": "Proposed", "why": "the classifier is unsure (0.50)", "colleges": [48], "title": "Introduction to Administration of Justice", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICI-IA5-1-001"], "art": [48], "could": [], "basis": "", "same": false, "confidence": 0.5, "under": ["ADJU201 Introduction to Administration of Justice", "Admin Just 1 CBE", "Credit by Exam for ADJUS 21 Introduction to Administration of Justice", "Discipline Exam - ADM JUS 001", "Industry for AJ 50", "Introduction to Administration of Justice ADJ 1 Cx"], "under_count": 6, "exists": true},
@@ -721,7 +718,6 @@
   {"raw": "Portfolio Evidence for MUS 27", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [48], "title": "Teaching Intermediate Piano", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRA-CBPM3-1-001"], "art": [48], "could": [], "basis": "", "same": false, "confidence": 0.8, "under": ["Credit by Portfolio MUS 27 Teaching Intermediate Piano", "Portfolio for MUS 27"], "under_count": 2, "exists": true},
   {"raw": "Portfolio Evidence for MUS 35", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [48], "title": "Introduction to Music Technology", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRA-CBPM2-1-001"], "art": [48], "could": [], "basis": "", "same": false, "confidence": 0.8, "under": ["Credit by Exam MUS 35 Introduction to Music Technology", "Credit by Portfolio MUS 35 Introduction to Music Technology", "Examination for MUS 35", "MUSIC 161 - Introduction to Music Technology", "Portfolio for MUS 35"], "under_count": 5, "exists": true},
   {"raw": "Portfolio Evidence for PHTO 72", "step": "Proposed", "why": "the classifier is unsure (0.80)", "colleges": [48], "title": "Introduction to Photojournalism", "issuer": "California Community Colleges", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPPRA-CBPP-1-001"], "art": [48], "could": [], "basis": "", "same": false, "confidence": 0.8, "under": ["Credit by Exam JAMS 12 Introduction to Photojournalism", "Credit by Exam PHTO 72 Introduction to Photojournalism", "Credit by Portfolio JAMS 12 Introduction to Photojournalism", "Credit by Portfolio PHTO 72 Introduction to Photojournalism", "Examination for JAMS 12", "Examination for PHTO 72", "Portfolio Evidence for JAMS 12", "Portfolio for JAMS 12", "Portfolio for PHTO 72"], "under_count": 9, "exists": true},
-  {"raw": "Public Safety Leadership & Administration Experience BSEM-LD8", "step": "Proposed", "why": "the classifier is unsure (0.65)", "colleges": [68], "title": "Public Safety Leadership and Administration Experience", "issuer": "", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICI-PSL&-1-001"], "art": [68], "could": [], "basis": "", "same": false, "confidence": 0.65, "needs_official_name": true},
   {"raw": "Sacramento Electrical Training Center Apprenticeship Level 1", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [1], "title": "IBEW Electrician Apprenticeship — Year 1", "issuer": "International Brotherhood of Electrical Workers (IBEW)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-SETC-1-001"], "art": [1], "could": [], "basis": "", "same": false, "confidence": 0.75, "under": ["IBEW- Inside Wireman, Apprenticeship Year 1", "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1)", "International Brotherhood of Electrical Workers Year 1"], "under_count": 3, "exists": true, "trainers": ["Joint Apprenticeship Training Committee (JATC)"]},
   {"raw": "Sacramento Electrical Training Center Apprenticeship Level 2", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [1], "title": "IBEW Electrician Apprenticeship — Year 2", "issuer": "International Brotherhood of Electrical Workers (IBEW)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-SETC1-1-001"], "art": [1], "could": [], "basis": "", "same": false, "confidence": 0.75, "under": ["IBEW- Inside Wireman, Apprenticeship Year 2", "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 2)", "International Brotherhood of Electrical Workers Year 2"], "under_count": 3, "exists": true, "trainers": ["Joint Apprenticeship Training Committee (JATC)"]},
   {"raw": "Sacramento Electrical Training Center Apprenticeship Level 3", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [1], "title": "IBEW Electrician Apprenticeship — Year 3", "issuer": "International Brotherhood of Electrical Workers (IBEW)", "from": "the classifier", "proposal_source": "classifier", "ids": ["MAPICA-SETC2-1-001"], "art": [1], "could": [], "basis": "", "same": false, "confidence": 0.75, "under": ["IBEW- Inside Wireman, Apprenticeship Year 3", "International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 3)", "International Brotherhood of Electrical Workers Year 3"], "under_count": 3, "exists": true, "trainers": ["Joint Apprenticeship Training Committee (JATC)"]},
