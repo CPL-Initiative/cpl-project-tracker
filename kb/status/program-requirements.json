@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T12:04:32Z",
+  "written_at": "2026-11-12T12:38:44Z",
   "session": 641,
   "moniker": "SkyOtter",
   "run": "the CPL Queue routine",
   "decider": "Sam",
   "handoff": "docs/session_642_handoff.md",
   "next_step": {
-    "title": "The four colleges in flight on the new PDF reader",
-    "text": "American River and Los Angeles City have paid reads running on their own branches, Victor Valley's four EMS certificates are being read, and College of the Desert's capture runs against its same-day baseline. Each one's result is read, loaded or reread on its branch, counted live and merged; College of the Desert's comparison is filed before its paid read."
+    "title": "Merge American River and Los Angeles City, then Victor Valley's four certificates",
+    "text": "Both paid reads are verified and reread on their branches, and each pull request merges on a green test. Victor Valley's four EMS certificates are checked against main's records, reread and counted. Then the session decides Los Angeles City's load of its 22 absent records, and College of the Desert goes by the blocked-sources order."
   },
   "calls": [
     {
@@ -236,8 +236,16 @@
   },
   "changes": [
     {
-      "at": "2026-11-12T11:47:00Z",
-      "text": "Paid reads started on the new PDF reader: American River, 33 programs, about $2.80, and Los Angeles City, 145 programs, about $11.14, each on its own branch and under the $40 limit."
+      "at": "2026-11-12T12:35:00Z",
+      "text": "A passing record now stays when a new read passes but places fewer of its listed courses; the check caught American River's Gerontology record falling from 15 of 20 courses to 9."
+    },
+    {
+      "at": "2026-11-12T12:24:00Z",
+      "text": "American River's paid read ($3.13, 33 programs) moved 17 records to passing and none to failing; reread and loaded on its branch, 292 of 327 pass live. Los Angeles City's ($11.38, 145 programs) moved 39 to passing and none to failing; reread on its branch, 203 of 223 pass live."
+    },
+    {
+      "at": "2026-11-12T12:34:00Z",
+      "text": "College of the Desert's capture failed a third time: the host was unreachable after 1,016 seconds, so the college stays unread."
     },
     {
       "at": "2026-11-12T11:30:00Z",
@@ -510,18 +518,18 @@
     {
       "day": "2026-11-12",
       "active": 20282,
-      "complete": 13893,
+      "complete": 13963,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-12T06:12:00Z"
+    "at": "2026-11-12T13:12:00Z"
   },
   "harvest": {
     "day": "2026-11-12",
-    "gaps": 3008,
+    "gaps": 3012,
     "parts": {
       "links": {
         "catalog": [
@@ -538,25 +546,25 @@
         ]
       },
       "roep": [
-        19150,
+        19154,
         20282
       ],
       "coci": [
-        16144,
+        16152,
         20282
       ],
       "outcomes": {
         "slo": [
-          12066,
+          12815,
           89192
         ],
         "plo": [
-          16144,
+          16152,
           20282
         ]
       },
       "careers": [
-        15108,
+        15116,
         20282
       ]
     }

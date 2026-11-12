@@ -1,7 +1,13 @@
 -- S641 (SkyOtter, two firings; the second was the conductor), 2026-11-12: the Rule 9 checkpoint's cpl_memory rows
 -- (step 10): the second firing's eight decisions, the first firing's three (from its lane lines and its #3110 note),
 -- and two lessons worth a row; all status proposed, for Sam to revise on Open Asks Sheet 184.
--- Drafted by the documents worker; the conductor runs it. One INSERT-only statement under author memory-s641-checkpoint-2026-11-12.
+-- Drafted by the documents worker; the conductor ran it before 12:37Z 2026-11-12 (three summaries shortened before the run;
+-- this file matches what ran). All 13 slugs returned: d-stopped-session-queue-takeover-s641,
+-- d-pdf-reader-equal-coverage-holds-s641, d-kept-passing-protects-full-pass-s641, d-daily-rebuild-one-build-script-s641,
+-- d-dsp-v3-public-25px-floor-s641, d-de-anza-slo-held-s641, d-desert-fetch-limit-2400-s641, d-paid-reads-arc-lacc-s641,
+-- d-credential-title-read-time-resolution-s641, d-lost-push-rebuilt-in-job-s641, d-cer-procedures-own-group-s641,
+-- p-shallow-clone-bare-fetch-s641, p-read-receipt-keys-not-values-s641.
+-- One INSERT-only statement under author memory-s641-checkpoint-2026-11-12.
 -- ROLLBACK:
 --   delete from public.cpl_memory where author = 'memory-s641-checkpoint-2026-11-12';
 insert into public.cpl_memory (slug, kind, title, summary, detail, plain, tags, status, source, verified_by, verified_at, event_date, author, related)
@@ -50,13 +56,13 @@ from jsonb_to_recordset($json$[
   "slug": "d-kept-passing-protects-full-pass-s641",
   "kind": "decision",
   "title": "A filed record that passes in full is replaced only by a read that passes in full",
-  "summary": "The S641 conductor, 2026-11-12 (#3135): kept_passing keeps a filed record that passes score.pass and the live test unless the new read also passes both; before, a read passing passes_live but failing score.pass replaced it. The program goes to kept_passing.json with both scores for a person; force overrides. Guarded by a test in the reader's suite.",
+  "summary": "The S641 conductor, 2026-11-12 (#3135): kept_passing keeps a filed record that passes in full (score.pass and the live test) unless the new read also passes in full; before, a read passing passes_live but failing score.pass replaced it. Guarded by tests in the reader's suite.",
   "tags": [
    "program-requirements",
    "pdf-reader",
    "decision"
   ],
-  "source": "Session call, S641 second firing (the conductor, session 01Rvwe2VStEWM8QUudeduFpw); kb/_program_requirements_score.py",
+  "source": "Session call, S641 second firing (the conductor, session 01Rvwe2VStEWM8QUudeduFpw); kb/_program_requirements_college.py",
   "related": [],
   "status": "proposed",
   "verified_by": null,
@@ -125,7 +131,7 @@ from jsonb_to_recordset($json$[
   "slug": "d-desert-fetch-limit-2400-s641",
   "kind": "decision",
   "title": "College of the Desert's catalog fetch limit is 2,400 seconds",
-  "summary": "The S641 conductor, 2026-11-12: the college's 21 MB catalog PDF ran past the 900 s fetch limit twice. catalog.timeout_s set 900 to 2400 through program_source_procedure_set (md5 before 5a5273a9..., after bbf96cf2...). Receipt and rollback: kb/receipts/program_source_procedure_desert_timeout_s641_2026-11-12.sql.",
+  "summary": "The S641 conductor, 2026-11-12: the college's 21 MB catalog PDF ran past the 900 s fetch limit twice. catalog.timeout_s set 900 to 2400 through program_source_procedure_set (md5 before 5a5273a9..., after bbf96cf2...). Receipt and rollback: kb/receipts/program_source_procedure_desert_timeout_s641_2026-11-12.sql. The next capture (43212020852) still found the host unreachable after 1,016 s.",
   "tags": [
    "program-requirements",
    "pdf-reader",
@@ -144,7 +150,7 @@ from jsonb_to_recordset($json$[
   "slug": "d-paid-reads-arc-lacc-s641",
   "kind": "decision",
   "title": "Paid reads for American River and Los Angeles City under the $40 standing go",
-  "summary": "The S641 conductor, 2026-11-12: on the merged PDF reader, American River (capture 43209644816: 33 to extract, about $2.80) and Los Angeles City (capture 43209649692: 145 to extract, about $11.14), each on its own branch off main 17d5ac54, under the $40 per college per run go (sam-extraction-standing-go-40-per-college-2026-10-14). A record loads only through a receipt naming every inserted key.",
+  "summary": "The S641 conductor, 2026-11-12: on the merged PDF reader, American River (capture 43209644816: 33 to extract, about $2.80; paid run 43212067552) and Los Angeles City (capture 43209649692: 145 to extract, about $11.14; paid run 43212072618), each on its own branch off main 17d5ac54, under the $40 per college per run go (sam-extraction-standing-go-40-per-college-2026-10-14).",
   "tags": [
    "program-requirements",
    "cost",

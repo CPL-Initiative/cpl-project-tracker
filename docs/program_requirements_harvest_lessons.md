@@ -635,6 +635,10 @@ pilot records).
 
 ✅ **A light index, full records by key or by college** (S384, Sam 2026-10-13, `cpl_memory` `sam-records-load-by-college-filter-2026-10-13`; the cap, the anon timeout and #2088-#2090, #2121: lessons, S385 and S542 compactions). **The index reads stored columns** (S405, guard `tests/program_requirements.test.js` 6e; lessons, S411). The Records view's college sections and its CIP batch read retired with it (SkyLoquat, 2026-11-04); the List's CIP Sector reads COCI's own CIP.
 
+## Moved from the lane (S641, late)
+
+**Known costs (no code):** a footer pypdf merges into a content line, or a date stamp in a footer, changes the fingerprint and costs a re-read; a bare unit figure equal to its page number plus the catalog's offset on a page's first or last line can be dropped from the fingerprint; lettered furniture is dropped by its shape alone. The proof table (four colleges, baseline against capture): lessons, *Moved from the lane (S641)*.
+
 ## S641 (SkyOtter, two firings, 2026-11-12): the PDF reader merged, four colleges in flight, and a narrowing taken back out
 
 - **The first firing (06:12Z) merged Rio Hondo (#3136, 276 of 288) and moved Shasta to a full read; the second (10:12Z, the conductor) merged #3135, #3145 and #3102.** The first firing wrote no handoff; its record is `main` and its note on #3110 (comment 6817896225).
@@ -644,3 +648,6 @@ pilot records).
 - **The planner's corrections to the lane:** the lane still said #3135 was open; "`main`'s reader" for the baseline now lives only on the baseline branch; `capture_preview.json` on `main` for American River and Los Angeles City predates the new rules; the S639 side handoff's `ref main` for a paid run would push records straight to `main`; `force` adds programs and never limits a run; `fetch_copy`'s docstring contradicts Sam's #3096 ruling.
 - **College of the Desert's 21 MB catalog ran past the 900 s fetch limit twice;** the limit is 2,400 s (`program_source_procedure_set`, md5-guarded, receipt `kb/receipts/program_source_procedure_desert_timeout_s641_2026-11-12.sql`). The baseline filed at `919373d6`: 476 pages, 51 to extract, 307 kept.
 - **De Anza's SLO trial is held** (#3145): 12 pages asked, all HTTP 200, 11 empty; the 2026-27 eLumen catalog does not answer the older course codes. **Shasta's full read loaded** (#3102): 775 of 775 outlines, 1,549 rows counted live.
+- **A verifier read each paid read's records against `main`'s before the load** and caught American River 11566: it passed both ways but fell from 15 of 20 courses placed to 9 of 20, equal on arithmetic only through a 24-unit fill. #3154 made `kept_passing` keep a passing record against a read that covers less (`covers_less`). Whether a larger arithmetic fill at equal coverage should also keep the filed record is open.
+- **Paid reads (S641):** American River 33 programs $3.13, 0 pass to fail; Los Angeles City 145 programs $11.38, 0 pass to fail. `summary.json`'s `cost_usd` sums every filed record's own cost, older runs included; a run's cost is its stamped records plus its `kept_passing.json` entries.
+- **College of the Desert failed a third time** with the 2,400 s limit: the host was unreachable after 1,016 s, so the fault is reaching the host, and the limit was not the cause. It goes by `blocked_sources.md`.

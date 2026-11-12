@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T06:40:34Z",
+ "written_at": "2026-11-12T11:54:31Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13895,
+     "n": 13926,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 3033,
+     "n": 3002,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-12T02:37:11Z",
+    "at": "2026-11-12T04:22:11Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13895,
-    "failing": 3033,
+    "complete": 13926,
+    "failing": 3002,
     "unread": 3354,
     "records": 18555,
     "colleges": 114,
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T06:38:25+00:00",
+    "at": "2026-11-12T11:53:18+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -344,7 +344,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 36,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -363,7 +363,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T05:59:34Z",
+    "at": "2026-11-12T06:40:36Z",
     "every_hours": null
    },
    "facts": {
@@ -406,12 +406,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 36,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 297
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T06:36:23Z",
+    "at": "2026-11-12T11:51:03Z",
     "every_hours": 24
    },
    "facts": {
@@ -561,9 +561,9 @@
    ],
    "pair": [
     {
-     "n": 38797,
+     "n": 41949,
      "of": null,
-     "words": "outcomes read from 10,824 courses at 15 colleges",
+     "words": "outcomes read from 11,599 courses at 16 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -571,8 +571,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 38797,
-    "courses": 10824,
+    "outcomes": 41949,
+    "courses": 11599,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -588,13 +588,14 @@
      "norco",
      "orange_coast",
      "riverside_city",
-     "santa_ana"
+     "santa_ana",
+     "shasta"
     ],
-    "reads": 39
+    "reads": 41
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-10T07:25:14Z",
+    "at": "2026-11-12T07:42:29Z",
     "every_hours": null
    },
    "sources": [
@@ -683,7 +684,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 37,
+      "n": 36,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -729,7 +730,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3033,
+    "n": 3002,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"

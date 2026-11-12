@@ -9,6 +9,15 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyKestrel (Session 642)
 
+**S642 is already running.** Sam opened SkyKestrel by hand at 12:24Z as the conductor (session
+`01Rvwe2XyXXS6P7ZCAqiG4va`), and it sent a coordination note at 12:33Z; S641 had no `send_message` and replied on #3149
+(comment 6823731014). Agreed, one writer per file: S642 holds `exhibits.js` (a Course details control,
+`claude/exhibits-course-details-s642`), the guarded delete of Sierra's ghost rows (`claude/chatbox-ghost-delete-s642`;
+Sam answered Sheet 183 card 6 "delete" at 12:17Z, `d-sheet-183-replies-2026-11-12`), COBIx's #3153 First Light marks
+(`claude/first-light-apply-marks-s642`), and the `cer-procedures` lane's Held for Sam line and NEXT 5 once #3149 merges.
+S642 left the harvest lane to S641 until its sign-off, so the harvest items below are handed to S642 or the next
+firing. This file stays the record of S641.
+
 Written by SkyOtter (S641, two firings; the second was the conductor) at a full checkpoint, about 12:10Z 2026-11-12.
 **The first firing** (the 06:12Z routine firing, session `01Rvwe2YRHaDAm69etRjXcPp`) merged four PRs and applied ASE
 plan phase 3, then stopped at 09:15Z with no handoff, no `cpl_memory` rows and no session note; its own account is its
@@ -19,20 +28,21 @@ the lane files; a fact marked *as reported* came from a worker and was not re-re
 
 ## First: is `main` green?
 
-Confirm it first: `get_check_runs` on `main`'s head, `test`. The conductor dispatched `daily-dashboard.yml` on `main`
-at about 11:46Z as #3150's proof run. LATE: the proof run's result (run id, whether it committed, and whether its log
-shows `Daily push conflicted`). Then confirm the next scheduled rung (12:17Z) committed and `test` is green after it.
+Confirm it first: `get_check_runs` on `main`'s head, `test`. #3150's proof run (`daily-dashboard.yml` dispatched on
+`main` after the merge) committed `f01d4055` at 11:54Z, eight minutes later: the one-script build ran on a real run and
+published. Its conflict path has run only in the test's scratch repo. `main` since holds #3152 (`ed886d36`) and #3154
+(`68ab33eb`); confirm `test` is green on the head and that the next scheduled rung committed.
 A red `test` after a daily commit is the first thing to fix; `git revert` of #3150 returns the old workflow.
 
 ## If you are the scheduled session (the CPL Queue routine)
 
 This checkpoint is on #3149 (`claude/practical-meitner-vwvfnj`), whose body declared the whole queue as S641's scope.
-LATE: whether the conductor merged #3149; if it did not, merge it on a green `test` once no dashboard or apply run is in
-flight, before other work. **Safe to run unattended, in this order,** each under Rule 10 and the playbook: Open work 1
-to 8. **Waits for Sam:** the guarded delete of Sierra's ghost rows (Sheet 184 card 11, *Waits for my send or go*,
-restated from [Sheet 183](https://claude.ai/artifact/TPL2JPJk4uoiAxeQzFYXuo) card 6; read both sheets' `replies`
-stores first); the coverage notes to Malone and to MAP/ITPI (his send); analytics on public pages (his go); anything on
-the `CLAUDE.md` hold list. LATE: Sheet 184's published link. Routine step 11: today's full SLO read was Shasta's
+The conductor merges it on a green `test` at sign-off; if it is still open, merge it that way once no dashboard or apply
+run is in flight, before other work. **Safe to run unattended, in this order,** each under Rule 10 and the playbook: Open work 1
+to 8. **Sam answered** the guarded delete of Sierra's ghost rows on
+[Sheet 183](https://claude.ai/artifact/TPL2JPJk4uoiAxeQzFYXuo) card 6 ("delete", 12:17Z); S642 carries it, and Sheet
+184's card 11 is answered there. **Waits for Sam:** the coverage notes to Malone and to MAP/ITPI (his send); analytics on public pages (his go); anything on
+the `CLAUDE.md` hold list. [Open Asks Sheet 184](https://claude.ai/artifact/TEccSGNBCjPXNStdpE6qFy) is current (its store empty at 12:12Z). Routine step 11: today's full SLO read was Shasta's
 (#3102), so the next college is the one `scripts/next_slo_colleges.py --next` names.
 
 ## At the start
@@ -77,17 +87,16 @@ Copied from `docs/reference/conductor_mode.md`, *Settings (Sam, 2026-11-11)*; Sa
 
 | PR or branch | State | Next |
 |---|---|---|
-| #3149 `claude/practical-meitner-vwvfnj` | S641's PR, this checkpoint | LATE: merged or open |
-| #3152 the ASE student-facing slice | LATE: merged (sha) or open | merge on a green `test` if open |
-| `claude/harvest-american-river-s641` (no PR) | paid read dispatched about 11:47Z | Open work 1 |
-| `claude/harvest-la-city-s641` (no PR) | paid read dispatched about 11:47Z | Open work 1 |
-| `claude/harvest-victor-valley-s641` (no PR) | capture with `force` dispatched 11:29Z; paid step follows | Open work 1 |
-| `claude/harvest-desert-proof-s641` (no PR) | College of the Desert capture dispatched about 11:46Z | Open work 2 |
-| `claude/harvest-pdf-baseline-s640` (no PR) | Desert's baseline filed `919373d6` | Sam or GitHub deletes it after Open work 2 |
+| #3149 `claude/practical-meitner-vwvfnj` | S641's PR, this checkpoint | merge on a green `test` |
+| #3156 American River (`claude/harvest-american-river-s641`) | open; paid read, reread and load done on the branch; a worker getting `test` green | Open work 1 |
+| #3155 Los Angeles City (`claude/harvest-la-city-s641`) | open; `test` failed on its first head, a worker fixing it | Open work 1 |
+| `claude/harvest-victor-valley-s641` (no PR) | paid read dispatched about 12:10Z, not filed at 12:34Z | Open work 2 |
+| `claude/harvest-desert-proof-s641` (no PR) | the failed capture's preview | can be deleted |
+| `claude/harvest-pdf-baseline-s640` (no PR) | no longer needed | can be deleted (Sam or GitHub) |
+| #3152, #3154, #3150 | merged (`ed886d36`, `68ab33eb`, `d02a3f86`) | done |
 | #2894 `claude/cobix-inbox` | Sam's to review | untouched |
-| CPLBrain `claude/determined-mayer-vwvfnj` (no PR) | the vault source fix `0e4b1091`, Sheet 184's source and build, the session note | a PR when Sam wants one |
+| CPLBrain `claude/determined-mayer-vwvfnj` (no PR) | the vault source fix `0e4b1091`, Sheet 184's source and build, the session note | needs a PR |
 
-LATE: each paid read's result (run id, records filed, actual cost) and the Desert capture's result.
 No S641 worker survives a new session. Brief a fresh one per open branch from its run and the lane.
 
 ## What shipped (S641), each squash-merged on a green `test`
@@ -106,7 +115,11 @@ No S641 worker survives a new session. Brief a fresh one per open branch from it
 - **#3151** Library, `fb2d35b3`: DSP Credit Starting Points Version 3 public; the 25px target floor.
 - **#3102** Shasta SLO, `17d5ac54`: 775 of 775 outlines, 1,549 rows loaded.
 - **#3150** the daily run rebuilds a lost push inside the job, `d02a3f86`: `scripts/daily_build.sh`, 88 checks
-  (*as reported*); five readers over two rounds.
+  (*as reported*); five readers over two rounds; proof run committed `f01d4055`.
+- **#3152** the ASE student-facing slice, `ed886d36`: `#commons/ase`, read-only; its test floored in
+  `tests/check_floor.json`.
+- **#3154** `kept_passing` keeps a passing record against a read that covers less, `68ab33eb`; 434 reader checks
+  (*as reported*), found by the paid-read verifier on American River 11566.
 
 ## Live data written, each with its undo
 
@@ -120,15 +133,19 @@ No S641 worker survives a new session. Brief a fresh one per open branch from it
 - **`program_source_registry` College of the Desert**: `catalog.timeout_s` 900 to 2400 (md5-guarded); receipt and
   rollback `kb/receipts/program_source_procedure_desert_timeout_s641_2026-11-12.sql`.
 - **`cpl_memory`**: thirteen rows, `kb/receipts/cpl_memory_s641_checkpoint_2026-11-12.sql`; its ROLLBACK comment
-  deletes them by author. LATE: whether all thirteen slugs returned.
-- **Paid reads**: LATE: each run's actual cost and the records it filed (none loads before a receipt names its keys).
+  deletes them by author. All thirteen slugs returned; the file matches what ran.
+- **American River** (on its branch, #3156): paid run 43212067552, $3.13; reread 43216104949 (16 replaced) and load
+  43217624238 (8 inserted), each receipt on the branch holding its rollback. Live 292 of 327 passing at 12:24Z.
+- **Los Angeles City** (on its branch, #3155): paid run 43212072618, $11.38; reread 43216110417 (117 replaced, 22
+  absent), receipt on the branch. Live 203 of 223 at 12:24Z.
 
 ## Decisions to honor
 
-Each is a `cpl_memory` row and a card on Open Asks Sheet 184 for Sam to revise (LATE: its link):
+Each is a `cpl_memory` row and a card on [Open Asks Sheet 184](https://claude.ai/artifact/TEccSGNBCjPXNStdpE6qFy) for Sam to revise:
 - **The second firing:** `d-stopped-session-queue-takeover-s641`, `d-pdf-reader-equal-coverage-holds-s641`,
   `d-kept-passing-protects-full-pass-s641`, `d-daily-rebuild-one-build-script-s641`, `d-dsp-v3-public-25px-floor-s641`,
-  `d-de-anza-slo-held-s641`, `d-desert-fetch-limit-2400-s641`, `d-paid-reads-arc-lacc-s641`.
+  `d-de-anza-slo-held-s641`, `d-desert-fetch-limit-2400-s641`, `d-paid-reads-arc-lacc-s641`; and the lane's DECIDED
+  line with #3154: a passing record is replaced only by a read that passes at least as well and covers at least as much.
 - **The first firing:** `d-credential-title-read-time-resolution-s641` (D1 to D3), `d-lost-push-rebuilt-in-job-s641`,
   `d-cer-procedures-own-group-s641`.
 - **Sam's:** his Revise and remediate on `dsp-credit-starting-points` (2026-11-11 15:30Z, approved 15:31Z); his go on
@@ -137,24 +154,30 @@ Each is a `cpl_memory` row and a card on Open Asks Sheet 184 for Sam to revise (
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **`program-requirements-harvest` NEXT (1):** the three college branches in flight. For each: read the run's result,
-   then load or reread on its branch, count live, merge `main`, merge on a green `test`.
-2. **`program-requirements-harvest` NEXT (2):** College of the Desert: compare the capture with the baseline
-   (`919373d6`) and file its row in the lessons' proof table; then the baseline branch can go; then the paid read.
-3. **`governance-team-enablement` NEXT (1):** read #3150's proof run and the first daily log carrying `Daily push
-   conflicted`: the rebuild's minutes, and whether its push landed.
-4. **`commons` NEXT (1):** if #3152 is open, merge `main` (expect `kb/dependency_map.json`), rebuild it, merge on a
-   green `test`. Then the slice's next parts: the Request CPL Review state (a table first, through Rule 10 a3), the
-   public copy, the versioned signal list.
-5. **`cer-procedures` NEXT (1):** the apply side of read-time resolution: #3140's old-title count as a report, its
+1. **`program-requirements-harvest` NEXT (1):** merge #3155 (Los Angeles City) and #3156 (American River) on a green
+   `test`.
+2. **`program-requirements-harvest` NEXT (2):** Victor Valley's paid read (38353, 38366, 38502, 38503): verify the four
+   against `main`'s records, reread, count (136 of 168 before), open its PR.
+3. **`program-requirements-harvest` NEXT (3):** Los Angeles City's load call: `step=load` for the 22 absent records
+   (18 pass) would also insert IGETC (19842) and Cal-GETC (44946) as program records, both failing.
+4. **`program-requirements-harvest` NEXT (4):** College of the Desert by `docs/reference/blocked_sources.md` (other
+   hosts, the publisher's copy, an archive copy, then a comment that mentions `cobi-cto`); three captures failed, the
+   last unreachable after 1,016 s. Open, not ruled: whether a larger arithmetic fill at equal coverage
+   keeps the filed record.
+5. **`governance-team-enablement` NEXT (1):** the first daily log carrying `Daily push conflicted`: the rebuild's
+   minutes, and whether its push landed (the proof run published; the conflict path has not run for real).
+6. **`commons` NEXT (1):** the ASE slice's public copy on the Credential Catalog; then CompTIA, the American Welding
+   Society, NCCER, military.
+7. **`cer-procedures` NEXT (1):** the apply side of read-time resolution: #3140's old-title count as a report, its
    dashboard job and newest-first undo guard; the Fact Sheet's categories in their own PR.
-6. **`program-requirements-harvest` NEXT (3):** fix `fetch_copy`'s docstring (it contradicts Sam's #3096 ruling).
-7. **`governance-team-enablement` NEXT (2) and (3):** a rule for which build inputs force a rebuild on a clean rebase;
+8. **`program-requirements-harvest` NEXT (5):** fix `fetch_copy`'s docstring (it contradicts Sam's #3096 ruling).
+9. **`governance-team-enablement` NEXT (2) and (3):** a rule for which build inputs force a rebuild on a clean rebase;
    which of the 21 workflows that push from their own groups should share one.
-8. **`program-requirements-harvest` NEXT (5) and (6):** San Bernardino Valley, Grossmont, East Los Angeles
+10. **`program-requirements-harvest` NEXT (7) and (8):** San Bernardino Valley, Grossmont, East Los Angeles
    (`docs/harvest_wave3_diagnoses_s639.md`); then De Anza's tail and the display build.
-9. **Waits for Sam:** Sierra's ghost rows (`cer-procedures` NEXT (5), Sheet 184 card 11); the coverage notes; analytics.
-10. Carried untouched: `program-requirements-harvest` NEXT (4) (the catalog-year rule, a design item);
+11. **Held by S642:** Sierra's ghost rows (answered "delete"), `exhibits.js`, #3153. **Waits for Sam:** the coverage
+   notes; analytics.
+12. Carried untouched: `program-requirements-harvest` NEXT (6) (the catalog-year rule, a design item);
     `cer-procedures` NEXT (6) to (12); `governance-team-enablement` NEXT (4); `library` NEXT 0 and `iaca-mvpmcjyl`;
     `csm-workspace` NEXT 0 and 1; #2894; CPLBrain#758.
 
@@ -163,7 +186,8 @@ Each is a `cpl_memory` row and a card on Open Asks Sheet 184 for Sam to revise (
 The pipeline view (no roadmap row, auditor count or M-ID re-mint moved); `README.md` (the Commons tab gained the ASE
 view, and README lists no Commons views) and `kb/README.md` (no KB structure changed); `CLAUDE.md` (no lane's state
 changed); the course, cr and subjects run logs (untouched). Step 10's rows and step 12's headline, harvest measure and
-`next_run` are the conductor's (Supabase and `get_trigger`). LATE: whether the conductor ran them and the headline pair.
+`next_run` ran: headline at 12:34:44Z 20,282 active programs, 13,963 complete, 114 colleges; the harvest measure; the
+next firing 13:12Z by the routine's schedule (`get_trigger` was not among the tools).
 
 ## Patterns that worked, and safety lessons
 
@@ -171,6 +195,8 @@ changed); the course, cr and subjects run logs (untouched). Step 10's rows and s
 - Replace a design after one round when it imitates something it should call (#3150; KB note
   `docs/kb-notes/methodology-a-rebuild-runs-the-same-build-script.md`).
 - One second reader on a worker's change beyond its brief (the 2a narrowing would have paid every run).
+- A verifier compares a paid read's records with `main`'s before the load (it caught 11566). A new test file needs
+  its floor in `tests/check_floor.json`.
 - A target at exactly a size threshold fails at fractional zoom (KB note
   `docs/kb-notes/methodology-a-target-at-exactly-the-minimum-fails-at-fractional-zoom.md`).
 - Read a receipt's keys and counts, never its values. `get_check_runs` with `perPage` 1 shows `test` first only once it
@@ -180,8 +206,8 @@ changed); the course, cr and subjects run logs (untouched). Step 10's rows and s
 
 ## Let go
 
-LATE: the PR subscriptions S641 dropped at sign-off (#3149, #3152 and any other), the watch publishing Sheet 184
-created, and any scheduled check-in deleted, each named. The worktrees under `/home/user/wt/` are lost with the
+S641 made no PR subscription, no scheduled check-in and no artifact watch (publishing Sheet 184 registered none:
+"not supported yet from remote sessions"), so there is nothing to drop. The worktrees under `/home/user/wt/` are lost with the
 container; every branch is pushed.
 
 Greetings, you are SkyKestrel (Session 642), see SkyOtter's handoff — `docs/session_642_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_642_handoff.md) — let's keep rolling with our queue.

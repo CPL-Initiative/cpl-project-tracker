@@ -146,8 +146,7 @@ at the top of each piece of work so Sam can change the dial before it runs.
   declaring the queue before any other write (`scheduled_sessions.md`, *A session that stopped without a handoff*).
 - A bare `git fetch origin` on the shallow clone pulled over a gigabyte for 302 branches. Fetch a branch by name, with
   `--depth`.
-- The conductor printed a load receipt's whole rollback string (1,549 ids) into its context. Read a receipt's keys and
-  counts, never its values.
+- The conductor printed a load receipt's 1,549 rollback ids into its context. Read a receipt's keys and counts.
 - A reviewer copied the repository (4.4 GB) into the scratchpad despite the brief. The round-two brief said why not, and
   the conductor checks `du` on the scratchpad after each review.
 - `get_check_runs` with `perPage` 1 shows `test` first only once it has finished; while it runs another job is first.
@@ -156,6 +155,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Two PRs that regenerate `kb/dependency_map.json` merged in sequence cleanly; the third (#3152) conflicted. Merge them
   one at a time and expect a `main` merge on the rest.
 - The conductor wrote "10:55Z" on #3110 for a note posted about 10:45Z. Read `date -u` first (S640's lesson, again).
+- Worked: a verifier compared each paid read's records with `main`'s before the load and caught a passing record that
+  lost coverage (American River 11566, 15 of 20 courses to 9); #3154 guards it. A new test file needs its floor in
+  `tests/check_floor.json` (`tests/check_ledger.test.js` check 4), or `test` fails on the PR that adds it.
 - Worked: replacing #3150's design after round one instead of patching an imitation of the runner; mutation checks by
   workers; a proof dispatch right after merging a workflow change, while the session is there to revert it.
 
