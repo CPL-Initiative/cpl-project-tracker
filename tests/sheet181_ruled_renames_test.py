@@ -88,8 +88,11 @@ check("a renamed title keeps its tests as search aliases",
 
 # ── 2. the frozen plan ──────────────────────────────────────────────────────────────────────────────────
 plans = ruled_renames.load()
-check("one ruled plan is committed", [p["plan_id"] for p in plans] == ["sheet181-2026-11-12"])
-plan = plans[0]
+ids = [p["plan_id"] for p in plans]
+# The standards plan (kb/cred_rename_plans/2026-11-12_standards.json, S640) sits beside it; each plan is read by its id.
+check("Sheet 181's ruled plan is committed once, and no two plans share an id",
+      ids.count("sheet181-2026-11-12") == 1 and len(ids) == len(set(ids)))
+plan = next(p for p in plans if p["plan_id"] == "sheet181-2026-11-12")
 check("the plan names Sheet 181, its memory row and when Sam decided",
       "Sheet 181" in plan["ruling"] and "d-sheet-181-replies-2026-11-11" in plan["ruling"]
       and plan["decided_at"] == "2026-11-11T22:55:00Z")
@@ -219,7 +222,7 @@ try:
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
     am = json.load(open(os.path.join(dry.OUT_DIR, "alias_map.json"), encoding="utf-8"))
-    applied = {e["old"] for e in am["ruled"]["applied"]}
+    applied = {e["old"] for e in am["ruled"]["applied"] if e["plan_id"] == plan["plan_id"]}
     check("the dry run applies every plan entry and holds none (committed files)",
           applied == olds and not am["ruled"]["held"], am["ruled"]["held"][:2])
     moved = dict(am["renames"])
