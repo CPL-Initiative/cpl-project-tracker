@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 871,
+  "file_datasets": 872,
   "external_services": 195,
   "consumers": 559,
   "workflows": 66,
@@ -1090,7 +1090,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1637
+     "line": 1651
     },
     {
      "id": "module:admin.js",
@@ -1787,7 +1787,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2269
+     "line": 2283
     }
    ],
    "main_committers": []
@@ -1843,7 +1843,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1308,
+     "line": 1328,
      "tabs": [
       "commons"
      ]
@@ -2427,7 +2427,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1247
+     "line": 1261
     }
    ],
    "main_committers": []
@@ -2446,7 +2446,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1592
+     "line": 1606
     },
     {
      "id": "module:college_briefing.js",
@@ -3128,7 +3128,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1648
+     "line": 1662
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4438,7 +4438,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1933
+     "line": 1947
     }
    ],
    "main_committers": []
@@ -5560,7 +5560,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1824
+     "line": 1838
     },
     {
      "id": "module:admin.js",
@@ -6327,6 +6327,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:commons_ase.js": {
+   "consumers": [
+    {
+     "id": "module:commons.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 887,
+     "tabs": [
+      "commons"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:commons_list.js": {
    "consumers": [
     {
@@ -6711,7 +6727,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2208
+     "line": 2222
     },
     {
      "id": "module:college_briefing.js",
@@ -6924,7 +6940,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1307
+     "line": 1321
     },
     {
      "id": "module:cpl_funding.js",
@@ -26804,7 +26820,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1093,
+     "line": 1112,
      "tabs": [
       "commons"
      ]
@@ -30229,7 +30245,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1071,
+     "line": 1090,
      "tabs": [
       "commons"
      ]
@@ -30743,6 +30759,9 @@
    "college-identity"
   ],
   "commons.js": [
+   "commons"
+  ],
+  "commons_ase.js": [
    "commons"
   ],
   "commons_list.js": [
@@ -32536,6 +32555,7 @@
  ],
  "unresolved": [
   "chatbox/sync_program_courses.py",
+  "commons_ase.js",
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",
