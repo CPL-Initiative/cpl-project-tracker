@@ -1,7 +1,7 @@
 ---
 title: A PR that changes a builder of a committed file runs the builder
 created: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [methodology, ci, generated-files, commons]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -41,7 +41,15 @@ Exhibits JSON, the dependency map. A builder that needs a live read the PR canno
 recorded input instead. It does not apply to the generated `unified_courses_*.js` artifacts, which the artifact policy
 keeps out of code PRs and the daily run publishes.
 
+## The same failure from a data apply (S639, 2026-11-12)
+
+An apply that rewrites committed data is a builder too. The Sheet 181 rename apply (`cred-rename-apply.yml`, commit
+`da9f2f90`) renamed 22 titles in `kb/credentials.json` and `kb/unified_titles.json`. Two checks in
+`tests/credential_family_test.py` read those committed titles and expected the pre-rename state, so `main` went red
+on the apply's own commit, with every check on #3127 green. A review of an apply therefore runs the suite against the
+data as it will stand after the apply: the dry run's output, or the apply run locally on a copy of the files.
+
 ## See also
 
-- `docs/reference/conductor_mode.md`, *What went wrong in S638*
+- `docs/reference/conductor_mode.md`, *What went wrong in S638* and *in S639*
 - `scripts/check_generated.sh`

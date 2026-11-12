@@ -242,3 +242,6 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 <!-- moved from docs/INDEX.md Update history, S638 -->
 - 2026-11-09 (S621 SkyBlackEye): the funding rollout day (Ready to send, Not received, Gmail, the coordinator rule, the reviewer list, the CSM funding door); handoff 622.
+
+<!-- moved from docs/INDEX.md Update history, S639 -->
+- 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.
