@@ -11085,7 +11085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 858
+     "line": 860
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -14034,7 +14034,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 845
+     "line": 847
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -18528,7 +18528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 832
+     "line": 834
     }
    ],
    "producers": [
@@ -19671,7 +19671,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 852
+     "line": 854
     },
     {
      "id": "script:kb/_cred_rename_undo.py",

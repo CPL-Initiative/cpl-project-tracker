@@ -695,6 +695,8 @@ def history_moves(out_root, current=None, live=None, current_name=None):
             if now[o] in step:
                 now[o] = step[now[o]]
         for o, n in step.items():
+            if now.get(o) == n and origin.get(o):
+                continue   # the same move an earlier apply made: that apply retired the title (an already-applied plan)
             now[o], origin[o] = n, name
     out = {o: n for o, n in now.items() if o != n and (live is None or (n in live and o not in live))}
     return out, {o: origin[o] for o in out if origin[o]}

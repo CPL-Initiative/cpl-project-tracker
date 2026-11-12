@@ -407,6 +407,22 @@ try:
     hm2, _ = rp.history_moves(hist, {"C": "Z"}, live={"Z", "R"})
     check("history: this apply's moves go on top, each chain lands on the title live now",
           hm2 == {"A": "Z", "B": "Z", "C": "Z", "Q": "R"}, hm2)
+    _, ho4 = rp.history_moves(hist, {"Q": "R"}, current_name="2026-11-20")
+    check("from_apply: an already-applied plan's move names the apply that retired the title",
+          ho4.get("Q") == "2026-10-01", ho4)
+    sys.path.insert(0, os.path.join(ROOT, "kb"))
+    import _cred_rename_apply_supabase as sup_mod
+    real_out = sup_mod.OUT_ROOT
+    try:
+        sup_mod.OUT_ROOT = hist
+        write(os.path.join(hist, "2026-11-20", "alias_map.json"), {"renames": {}, "merges": {}, "_repoint_only": True,
+                                                                   "_applied_at": "2026-11-20T00:00:00Z"})
+        latest = sup_mod._find_latest_snapshot()
+        check("row migration: a re-point-only receipt is skipped, so step 4 retries the earlier apply's moves",
+              latest and latest[0] == "2026-11-15", latest)
+    finally:
+        sup_mod.OUT_ROOT = real_out
+        shutil.rmtree(os.path.join(hist, "2026-11-20"), ignore_errors=True)
     hm3, _ = rp.history_moves(hist, None, live={"R", "B"})
     check("history: a target not live, or an old title live again, is left out", hm3 == {"Q": "R"}, hm3)
 
@@ -650,9 +666,14 @@ check("workflow: the dispatch is not in the apply job",
 check("workflow: a pending scheduled dashboard run does not stand in for a dispatch; a dispatched one does",
       "--json status,event" in drun and '*" workflow_dispatch "*) ' in drun and "dispatch over it" in drun
       and '.status == "requested"' in drun and '.status == "queued"' in drun)
-check("workflow: a re-point-only receipt skips the issuer and row-move steps",
-      all(steps[names.index(n)].get("if") == "steps.json.outputs.repoint_receipt != 'true'"
-          for n in ("Write the fold's issuer resolutions to kb_curation", "Apply Supabase kb_curation row migration")))
+supa_i = names.index("Apply Supabase kb_curation row migration")
+check("workflow: a re-point-only receipt skips the issuer step alone; the row migration still runs",
+      steps[names.index("Write the fold's issuer resolutions to kb_curation")].get("if")
+      == "steps.json.outputs.repoint_receipt != 'true'" and "if" not in steps[supa_i]
+      and steps[supa_i].get("continue-on-error") is True and steps[supa_i].get("id") == "supa")
+gate_steps = [x for x in steps if x.get("if") == "steps.supa.outcome == 'failure'"]
+check("workflow: the failure gate fires when the row migration fails (it never reads a skipped step)",
+      len(gate_steps) == 1 and "exit 1" in gate_steps[0]["run"] and steps.index(gate_steps[0]) > supa_i)
 check("workflow: the commit step sets pushed only after a push succeeded, never on a no-op",
       crun.index('echo "pushed=true"') > crun.index("if git push origin HEAD:main; then")
       and crun.index('echo "pushed=true"') > crun.index("No changes to commit"))

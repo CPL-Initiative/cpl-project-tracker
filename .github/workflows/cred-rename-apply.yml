@@ -158,7 +158,9 @@ jobs:
       # end takes the written rows back and commits the receipt alone.
       # Idempotent: a retry finds its own rows and writes nothing.
       # A re-point-only receipt (the plan's renames already applied, or none planned, while earlier applies left
-      # machine values to re-point) renames nothing: it skips 3b and 4 and still runs 4.1, the count and the commit.
+      # machine values to re-point) skips 3b alone: it holds no fold, and a committed earlier apply wrote its own
+      # resolutions before it committed. Step 4 still runs: _find_latest_snapshot skips re-point-only folders, so a
+      # re-dispatch after a failed row move retries the earlier apply's moves there.
       - name: Write the fold's issuer resolutions to kb_curation
         if: steps.json.outputs.repoint_receipt != 'true'
         env:
@@ -174,7 +176,6 @@ jobs:
       # beside the first log; the undo reads them all.
       - name: Apply Supabase kb_curation row migration
         id: supa
-        if: steps.json.outputs.repoint_receipt != 'true'
         continue-on-error: true
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

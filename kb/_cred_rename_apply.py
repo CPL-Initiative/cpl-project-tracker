@@ -585,7 +585,8 @@ def main():
     if creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]:
         # A re-dispatch after a failed Supabase step finds everything applied. A new snapshot carrying the renames
         # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay, so any
-        # re-point (a row move through kb_curation included) files a re-point-only receipt, which that retry skips.
+        # re-point (a row move through kb_curation included) files a re-point-only receipt, which the retry's
+        # _find_latest_snapshot skips, so step 4 still retries the first run's row moves.
         if rp_changes:
             return _repoint_receipt(alias_doc, rp_moves, rp_changes, rp_held, rp_root, "the plan's renames are "
                                     "already applied")
