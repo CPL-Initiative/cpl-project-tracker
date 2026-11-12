@@ -292,5 +292,28 @@
       "reviewed_at": "2026-11-11T15:26:55.029+00:00"
     }
   ],
-  "result": "pending"
+  "result": "written",
+  "insert_echo": 2,
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certification (any A1–A8)",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "missing": [],
+  "read_back": {
+    "to_write": 0,
+    "written": 26,
+    "set": "3a4d0f3d969b",
+    "conflicts": []
+  }
 }
