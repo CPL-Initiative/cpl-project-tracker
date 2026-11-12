@@ -414,6 +414,17 @@ at = C.heading_above(mid, start, lac_above, [{"code": "ENGLISH 270"}])
 check("the walk stops below a line naming a listed course",
       mid[at:].startswith("OR ANY LIST A COURSE") and "ENGLISH 270" not in mid[at:])
 check("no setting, no walk", C.heading_above(mid, start, None, []) == start)
+# A listed course two lines above the heading, inside the four-line reach: the walk stops below it.
+near = ("ART 370 BEGINNING SCULPTURE  ....... 3\nSculpture Certificate\nMajor Units: 12\n"
+        "(State Code: 44962; TOP Code: 100200)\n")
+near_at = C.heading_above(near, near.index("(State Code"), lac_above, [{"code": "ART 370"}])
+check("a listed course within reach above the heading is left out of the cut",
+      near[near_at:].startswith("Sculpture Certificate\n") and "ART 370" not in near[near_at:])
+# Six plain lines above the State Code line: the cut keeps exactly the four the college's setting names.
+plain6 = "one\ntwo\nthree\nfour\nfive\nsix\n(State Code: 02718; TOP CODE: 050100)\n"
+p6_at = C.heading_above(plain6, plain6.index("(State Code"), lac_above, [])
+check("the walk keeps exactly its four lines and no more",
+      lac_above["lines"] == 4 and plain6[p6_at:].startswith("three\nfour\nfive\nsix\n(State Code"))
 rn = as_read(os.path.join(LAC_DIR, "14274.json"))
 rn_text = ("Registered Nursing\nAssociate of Science (AS) Degree\nMajor Units: 36  T otal Units: Minimum of 72\n"
            "(State Code: 14274; TOP Code: 123010)\n")
