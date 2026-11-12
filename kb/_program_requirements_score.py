@@ -644,16 +644,32 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
 
 
+# The term-length ratio of an hours range (Victor Valley, S639): a 16-week term against an 18-week one.
+TERM_RATIO = 8.0 / 9.0
+# The catalog prints hours to one decimal place ("96.0 - 108.0", "28-31.5"), so a printed low end
+# stands up to 0.05 from the exact eight ninths of its top; every Victor Valley range in the ratio
+# lands on it exactly (96 of 108, 296 of 333, 28 of 31.5).
+TERM_TOL = 0.05
+
+
 def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
     """A noncredit program whose catalog prints each course's hours once and the certificate's
-    total as a range (Victor Valley, S639: "Total Certificate Hours: 96.0 - 108.0" over WKPR 011,
-    012 and 014, each description "Lecture Hours: 36.0"; college-page-read 43134526902). The top
-    is the total the printed courses allow; no page prints a course's low end. This sits beside
-    Sheet 120 card 1 (narrow) without reversing it: that reading still governs every units
-    record and any sum inside a range short of its top. Only a record measured in hours, a range
-    printed with two ends, every course and alternative carrying one figure (no units_max, no
+    total as a range whose low end is eight ninths of its top (Victor Valley, S639: "Total
+    Certificate Hours: 96.0 - 108.0" over WKPR 011, 012 and 014, each description "Lecture
+    Hours: 36.0"; college-page-read 43134526902). What rests on the catalog: the range and each
+    course's hours, as printed. What is the session's reading (the lane conductor's call, S639):
+    that a range in that ratio is one total across term lengths, 16 weeks against 18, so the top
+    is the total the printed courses allow; no page says so, and no page prints a course's low
+    end. This sits beside Sheet 120 card 1 (narrow) without reversing it: that reading still
+    governs every units record and any sum short of the top. A range in another ratio is another
+    cause and is left alone: a low end printed as a labeled minimum ("min 47 hours", Laney), or a
+    range that runs from a course that "need not be taken" which the record holds as required (De
+    Anza). Only a record measured in hours, a range whose low end is within TERM_TOL of eight
+    ninths of its top, every course and alternative carrying one figure (no units_max, no
     repeats), and a sum of one figure equal to the range's top."""
     if measure(record) != "hours" or not stated[1] - stated[0] > TOL:
+        return False
+    if abs(stated[0] - stated[1] * TERM_RATIO) > TERM_TOL:
         return False
     if abs(lo - hi) > TOL or abs(hi - stated[1]) > TOL:
         return False

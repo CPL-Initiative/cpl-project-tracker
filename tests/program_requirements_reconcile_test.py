@@ -375,6 +375,18 @@ check("a variable-hours course (32-36) reads as it does today: 104-108 against 9
       and not S.hours_meets_top(var, (96.0, 108.0), 108.0, 108.0))
 rep = hrs([36, 36, 36], (96, 108), extra={0: {"times": 1}})
 check("a repeated course is no single figure", not S.hours_meets_top(rep, (96.0, 108.0), 108.0, 108.0))
+laney = S.score(hrs([17.5, 17.5, 17.5, 17.5], (47, 70)), [], None, "Noncredit program")["arithmetic"]
+check("Laney-shaped ('min 47 hours', 70 at the top of 47 - 70, far from eight ninths): stays unequal",
+      laney["status"] == "unequal" and not laney.get("meets_top"))
+deanza = S.score(hrs([120, 120, 120], (240, 360)), [], None, "Noncredit program")["arithmetic"]
+check("De Anza-shaped (a course that need not be taken held as required, 360 of 240 - 360): stays unequal",
+      deanza["status"] == "unequal" and not deanza.get("meets_top"))
+ccp = S.score(hrs([16, 4, 4, 124, 132], (256, 280)), [], None, "Noncredit program")["arithmetic"]
+check("Victor Valley's Critical Care Paramedic 45880 (256 - 280, 0.914 of the top): stays unequal",
+      ccp["status"] == "unequal" and not ccp.get("meets_top"))
+check("the ratio's tolerance takes a low end printed to one decimal place (28.0 of 31.5 is in; 7.9 of 9.0, 0.1 off, is out)",
+      S.hours_meets_top(hrs([18, 13.5], (28, 31.5)), (28.0, 31.5), 31.5, 31.5)
+      and not S.hours_meets_top(hrs([4.5, 4.5], (7.9, 9.0)), (7.9, 9.0), 9.0, 9.0))
 one = S.score(hrs([108, 108], (216, 216)), [], None, "Noncredit program")["arithmetic"]
 check("a total of one figure still reads equal, not meets_top", one["pass"] and not one.get("meets_top"))
 check("program_verdict without the record (the rescorers' call) is unchanged",
