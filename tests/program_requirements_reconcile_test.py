@@ -320,6 +320,38 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("Rio Hondo's transfer degrees (S639; college page reads 43137946308 and 43139467468; the areas summed, Sam's count extended)")
+RH = "Rio Hondo College"
+# Sociology AA-T 30648 (node 24312), as the capture joins it (read 43137946308).
+rh_text = ("SOCIOLOGY - Associate in Arts for Transfer\nRequirements\nRequired Courses\nUnits: 6.0\n"
+           "LIST B: Choose ONE of the following courses or one not used above:\nUnits: 3.0\nSOC 105\n"
+           "Cal-GETC Pattern (units will vary)\nTransferable Electives as needed to reach 60 transferable units\n"
+           "DEGREE TOTAL 60 units\nTotal : 19.0\nSummary\n"
+           "Completion of the California General Education Transfer Curriculum (Cal-GETC).")
+with open(os.path.join(ROOT, "kb/program_requirements_college/rio_hondo/records/30648.json")) as fh:
+    rh_filed = json.load(fh)
+rh = rh_filed["record"]
+got, got_notes = R.reconcile(rh, rh_text, RH, rh_filed["award"], steps=R.load_steps())
+check("a transfer degree naming 'Cal-GETC Pattern (units will vary)' takes the catalog's Cal-GETC figure",
+      got["program"]["ge_units"] == {"min": 34, "max": 34} and got_notes and got_notes[0]["field"] == "ge_units")
+check("the note cites Rio Hondo's own catalog", any("SUMMED FROM THE AREAS" in n["words"] for n in got_notes))
+closed = [{"code": c["code"], "units": None} for b in rh["blocks"] for c in b["courses"]]
+check("Sociology AA-T reads equal: 19 + 34 with transferable electives to 60",
+      S.score(got, closed, rh_text, rh_filed["award"])["arithmetic"]["pass"]
+      and not S.score(rh, closed, rh_text, rh_filed["award"])["arithmetic"]["pass"])
+# Social Work 33785: the state file says A.A., its page is the AA-T's (shared with 39982).
+with open(os.path.join(ROOT, "kb/program_requirements_college/rio_hondo/records/33785.json")) as fh:
+    sw = json.load(fh)
+check("a local A.A. read from a transfer page takes none",
+      R.reconcile(sw["record"], rh_text, RH, sw["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes none", R.reconcile(rh, rh_text, RH, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a page without the line takes none",
+      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", ""), RH, rh_filed["award"],
+                  steps=R.load_steps())[1] == [])
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(rh["program"], ge_units={"min": 37, "max": 39}), "blocks": rh["blocks"]}, rh_text, RH,
+                  rh_filed["award"], steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
