@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-12T00:24:15Z",
-  "count": 2531,
+  "_synced_at": "2026-11-12T06:36:24Z",
+  "count": 2536,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -4441,6 +4441,11 @@
       "reviewed_at": "2026-07-07T20:44:35.233348+00:00",
       "unified_title": "Small Business Ownership and Management"
     },
+    "Basic Automotive Air Conditioning Systems": {
+      "unified_title": "Heating and Air Conditioning (ASE A7 standards)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+    },
     "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -4596,6 +4601,11 @@
       "reviewed_at": "2026-11-01T22:14:20.323+00:00",
       "unified_title": "Boatworks 101 Yacht Electrical Systems",
       "supersedes": "Boatworks 101 — Yacht Electrical Systems"
+    },
+    "Brakes": {
+      "unified_title": "Brakes (ASE A5 standards)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
     },
     "Brakes - Credit by Exam (ATEC 14 )": {
       "issuing_agency": "California Community Colleges",
@@ -8939,12 +8949,27 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Engine Diagnosis & Repair"
     },
+    "Engine Performance": {
+      "unified_title": "Engine Performance (ASE A8 standards)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+    },
     "Engine Performance - Credit by Exam (ATEC 23 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T18:55:02.371422+00:00",
       "unified_title": "Engine Performance (ASE A8 Engine Performance)",
       "supersedes": "Engine Performance"
+    },
+    "Engine Performance I AUTO 018 Cx": {
+      "unified_title": "Engine Performance (ASE A8 standards)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
+    },
+    "Engine Performance II AUTO 029 Cx": {
+      "unified_title": "Engine Performance (ASE A8 standards)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00"
     },
     "Engineering Design and Development - Credit by Exam (ETEC 18 )": {
       "issuing_agency": "California Community Colleges",
