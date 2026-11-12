@@ -920,3 +920,12 @@ the same CIP elsewhere). The shared text tests are `CPL_COMMONS_LIST.alignNorm` 
 ## Moved from the lane (S639, 2026-11-11)
 
 **LIVE: a stalled routine becomes a queue item (S624, the path mock's build).** `kb/status/commons.json` `queue.stalled` names a reference whose machine stamp is older than 1.5 of its cadence (`stopped`) and a routine-carried issue that counts as many items as its latest reading at least seven days old (`not_shrinking`). Each build records the day's routine counts in `kb/status/commons_history.json` (one entry a UTC day, 60 kept; both workflows commit it); the file was seeded from main's own commits back to 2026-11-04, the day issues first named a carry. The Commons tab draws *A routine has stalled* as a fifth box in *Waiting on a person* only when the list holds an item. Seven days and the 1.5 are constants in the builder (`STALL_DAYS`, `STALL_SLACK`); a backlog that grows because its source grew also reads as stalled, which is the team's call to look at. Tests: `tests/commons_status_build_test.py`, `tests/commons.test.js` (stalled 1 to 5).
+
+## S641 (SkyOtter, the conductor, 2026-11-12): the ASE slice, read-only first
+
+- **The first slice of the Commons plan's v2 Agreed final shipped read-only** (#3152, Sam's go on Sheet 181 card 10):
+  52 ASE certifications by 120 colleges, 6,240 pairs, 18% with an answer. The parts that need a write (Request CPL
+  Review) or a public surface waited, so the slice could ship on the go it had; a write surface goes through Rule 10 a3
+  first.
+- **It conflicted on `kb/dependency_map.json`** after two other map-touching PRs merged cleanly in sequence. Merge
+  map-touching PRs one at a time and expect a `main` merge on the rest.
