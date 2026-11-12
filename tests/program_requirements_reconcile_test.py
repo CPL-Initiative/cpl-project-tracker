@@ -368,6 +368,56 @@ check("only_with on a set step: a record without the named field is left alone",
                   "T", "A.A. Degree", steps={"T": {"steps": [{"kind": "set", "field": "ge_units", "value": {"min": 1, "max": 1},
                                                              "pattern": "Z 9", "only_with": "degree_total"}]}})[1] == [])
 
+print("Los Angeles City's heading above its State Code line (S639; reconcile 43136137275 held 14 of the 24)")
+import _program_requirements_college as C  # noqa: E402
+# pdf page 76 as pypdf gives it (page read 43134671935): the running header, then the heading, then the State Code line.
+lac_76 = ("LACC 2026-2027 COLLEGE CATALOG 75\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\nBusiness Administration\n"
+          "Associate of Arts (AA) Degree\nMajor Units: 39  T otal Units: Minimum of 60\n"
+          "(State Code: 02718; TOP CODE: 050100; Academic Plan: C002718C)\nThe Business Administration curriculum is designed\n"
+          "PROGRAM STUDENT LEARNING OUTCOMES\nPROGRAM REQUIREMENTS\nMAJOR CORE COURSES (27 UNITS)\n"
+          "ACCTG 021 BOOKKEEPING AND ACCOUNTING I  .................. 3\nBUS 001 INTRODUCTION TO BUSINESS  ....... 3\n"
+          "BUS 017 COMPUTER USES FOR BUSINESS  ................... 3\n")
+lac_prog = {"title": "BUSINESS ADMINISTRATION", "award": "A.A. Degree", "control_number": "02718"}
+lac_courses = [{"code": c} for c in ("ACCTG 21", "BUS 1", "BUS 17")]
+lac_above = steps_now = R.load_steps()[LAC]["heading_above_code"]
+plain = C.pdf_best("https://x.edu/lacc.pdf", [lac_76], lac_prog, lac_courses, "pypdf")
+kept = C.pdf_best("https://x.edu/lacc.pdf", [lac_76], lac_prog, lac_courses, "pypdf", None, lac_above)
+check("without the college's setting the cut opens on the State Code line, as every other college's does",
+      plain and plain["text"].startswith("[page 1]\n(State Code: 02718"))
+check("with it the text keeps the title, the award and the 'Minimum of 60' line, and stops at the running header",
+      kept and kept["text"].startswith("[page 1]\nBusiness Administration\nAssociate of Arts (AA) Degree\nMajor Units: 39")
+      and "ABOUT OUR CAREER" not in kept["text"])
+check("the codes the text finds stay the same (only their offsets move)",
+      sorted(kept["found"]) == sorted(plain["found"]) and kept["coverage"] == plain["coverage"])
+with open(os.path.join(LAC_DIR, "02718.json")) as fh:
+    bus_filed = json.load(fh)
+got, got_notes = R.reconcile(bus_filed["record"], kept["text"], LAC, bus_filed["award"], steps=R.load_steps())
+check("on the kept text the steps fire for Business Administration 02718; on the cut text they cannot",
+      got_notes and R.reconcile(bus_filed["record"], plain["text"], LAC, bus_filed["award"], steps=R.load_steps())[1] == [])
+# A heading mid-page: the lines above it end the previous program's list; a line naming a listed course stops the walk.
+mid = ("ENGLISH 270 SCIENCE FICTION – FANTASY  ....... 3\nOR ANY LIST A COURSE NOT ALREADY USED\nEnglish\n"
+       "Associate of Arts (AA) Degree\nMajor Units: 21  T otal Units: Minimum of 60\n(State Code: 02751; TOP Code: 150100)\n")
+start = mid.index("(State Code")
+at = C.heading_above(mid, start, lac_above, [{"code": "ENGLISH 270"}])
+check("the walk stops below a line naming a listed course",
+      mid[at:].startswith("OR ANY LIST A COURSE") and "ENGLISH 270" not in mid[at:])
+check("no setting, no walk", C.heading_above(mid, start, None, []) == start)
+with open(os.path.join(LAC_DIR, "14274.json")) as fh:
+    rn = json.load(fh)
+rn_text = ("Registered Nursing\nAssociate of Science (AS) Degree\nMajor Units: 36  T otal Units: Minimum of 72\n"
+           "(State Code: 14274; TOP Code: 123010)\n")
+check("Registered Nursing 14274's heading prints 'Minimum of 72': neither step reads it",
+      rn["record"]["program"]["degree_total"] == {"min": 72, "max": 72}
+      and R.reconcile(rn["record"], rn_text, LAC, rn["award"], steps=R.load_steps())[1] == [])
+check("a heading printing 'T otal Units: 72' over 02718's record: neither step reads it",
+      R.reconcile(bus_filed["record"], lac_76.replace("Minimum of 60", "72"), LAC, bus_filed["award"],
+                  steps=R.load_steps())[1] == [])
+check("a heading printing 'T otal Units: 60' with no 'Minimum of': neither step reads it (the floor rests on those words)",
+      R.reconcile(bus_filed["record"], lac_76.replace("Minimum of 60", "60"), LAC, bus_filed["award"],
+                  steps=R.load_steps())[1] == [])
+check("no other college names heading_above_code",
+      [k for k, v in R.load_steps().items() if v.get("heading_above_code")] == [LAC])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
