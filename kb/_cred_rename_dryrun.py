@@ -56,8 +56,10 @@ from datetime import date, datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import fold_issuer  # noqa: E402
+import ruled_renames  # noqa: E402
 
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
+PLANS_DIR = ruled_renames.PLANS_DIR
 RELATED = os.path.join(HERE, "exhibits_related.json")
 FAMILIES = os.path.join(HERE, "reference", "credential_families.json")  # owned by the family-tag converter
 UNIFIED_TITLES = os.path.join(HERE, "unified_titles.json")
@@ -82,6 +84,12 @@ def main():
     overrides = (overlay.get("overrides") or {})
     unified_titles = _load(UNIFIED_TITLES, {})
     credentials = _load(CREDENTIALS, {})
+    # A rename a person ruled on a decision sheet, committed as a plan (kb/ruled_renames.py: Sheet 181's ASE renames,
+    # whose rows' slot already holds Sam's family-tag folds). Laid over the overlay here and again in the apply, so the
+    # two read one set of rows.
+    overrides, ruled = ruled_renames.overlay(
+        overrides, ruled_renames.load(PLANS_DIR), fold_issuer.family_titles(FAMILIES), credentials,
+        fold_issuer.titles_holding_exhibits(unified_titles))
     art_doc = _load(ARTICULATIONS, {"articulations": []})
     articulations = (art_doc.get("articulations") or [])
 
@@ -129,19 +137,22 @@ def main():
     # Every override that carries a title rename, keyed by source — used by
     # the merge-target chain guard below (a confirmed merge must not target a
     # credential that is itself being renamed/merged away in the same batch).
-    # A held emptied title renames nothing this batch, so it is no chain.
+    # A held emptied title renames nothing this batch, so it is no chain; nor does a title whose saved fold
+    # names a family title, which is a family tag held below (Sam's ruling C). Counted as a chain, it held
+    # every merge into a title carrying such a tag (Sheet 181's Master merge) as a retitled target.
+    families = fold_issuer.family_titles(FAMILIES)
     retitled_sources = {
         o: (v or {}).get("unified_title_override")
         for o, v in overrides.items()
         if (v or {}).get("unified_title_override")
         and (v or {}).get("unified_title_override") != o
+        and (v or {}).get("unified_title_override") not in families
         and o in holding
     }
 
     # A title saved into a declared family title (Sam's ruling C) is held here, before the twin and
     # collision lanes, with or without a merge confirm: it never becomes a group's lead (a clean rename
     # that would mint the family name as a credential) nor a collision a curator could confirm into a merge.
-    families = fold_issuer.family_titles(FAMILIES)
     held_early = []
     held_emptied = []
 
@@ -371,6 +382,8 @@ def main():
             "confirmed_merges": len(merges_confirmed),
             "held_as_family_tags": len(held_family),
             "held_emptied_titles": len(held_emptied),
+            "ruled_applied": len(ruled["applied"]),
+            "ruled_held": len(ruled["held"]),
             "collisions": len(collisions),
             "skipped": len(skipped),
             "renames_of_titles_with_no_credentials_record": len(no_credential_record),
@@ -390,6 +403,9 @@ def main():
         "held_family": held_family,
         # Saved folds on a title that holds no exhibit: left in kb_curation, never folded (#3110).
         "held_emptied": held_emptied,
+        # Renames and merges a person ruled on a decision sheet (kb/cred_rename_plans/, kb/ruled_renames.py): applied
+        # stand in the renames and merges above; held wait for a person; done already landed.
+        "ruled": ruled,
         # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
         "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
                                "conflict": g["resolution"]["conflict"],
@@ -433,6 +449,13 @@ def main():
         emp += ["- `%s` (%s) into `%s`: %s" % (h["old"], h["kind"], h["target"], h["why"]) for h in held_emptied]
         md = md.replace("## Clean renames (would land on apply)",
                         "\n".join(emp) + "\n\n## Clean renames (would land on apply)", 1)
+    if ruled["applied"] or ruled["held"]:
+        rl = ["## Ruled on a decision sheet (kb/cred_rename_plans/)", ""]
+        rl += ["- `%s` (%s) into `%s`, plan %s" % (e["old"], e.get("kind", "rename"), e["new"], e["plan_id"])
+               for e in ruled["applied"]]
+        rl += ["- HELD `%s` into `%s`, plan %s: %s" % (e["old"], e["new"], e["plan_id"], e["why"]) for e in ruled["held"]]
+        md = md.replace("## Clean renames (would land on apply)",
+                        "\n".join(rl) + "\n\n## Clean renames (would land on apply)", 1)
     md = md.replace("## Clean renames (would land on apply)",
                     _render_issuer_md(issuer_plan) + "## Clean renames (would land on apply)", 1)
     with open(os.path.join(OUT_DIR, "report.md"), "w", encoding="utf-8") as f:
@@ -445,6 +468,8 @@ def main():
     print(f"  confirmed merges:        {len(merges_confirmed)}")
     print(f"  collisions:              {len(collisions)}")
     print(f"  held (title empty):      {len(held_emptied)}")
+    print(f"  ruled (sheet plans):     {len(ruled['applied'])} applied, {len(ruled['held'])} held, "
+          f"{len(ruled['done'])} done")
     print(f"  skipped (no-op):         {len(skipped)}")
     print(f"  V1 (intra-batch):        {'PASS' if v1_pass else f'FAIL ({len(intra_batch_collisions)})'}")
     print(f"  V2 (source exists):      {'PASS' if v2_pass else f'FAIL ({len(v2_blocked)})'}")

@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 858,
+  "file_datasets": 859,
   "external_services": 195,
-  "consumers": 556,
+  "consumers": 557,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -4635,6 +4635,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:<date>_sheet181.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:CLAUDE.md": {
    "consumers": [
     {
@@ -5029,7 +5042,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 161
+     "line": 174
     },
     {
      "id": "script:kb/_funding_config_edit_apply.py",
@@ -10992,14 +11005,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 85
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 67
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -13758,7 +13771,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 83
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13768,18 +13781,25 @@
      "line": 314
     },
     {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 123
+    },
+    {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 74
+     "line": 75
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 60
+     "line": 61
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -13864,7 +13884,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 77
+     "line": 78
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13879,6 +13899,13 @@
      "direction": "read",
      "how": "literal",
      "line": 820
+    },
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 124
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -13899,14 +13926,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 66
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -13942,6 +13969,13 @@
      "direction": "read",
      "how": "literal",
      "line": 42
+    },
+    {
+     "id": "script:kb/_family_tag_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 113
     },
     {
      "id": "script:kb/_flag_hinky_exhibits.py",
@@ -15214,7 +15248,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 81
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15335,21 +15369,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 52
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 77
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 63
     }
    ],
    "producers": [
@@ -15384,7 +15418,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 80
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15489,7 +15523,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 82
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -17670,28 +17704,42 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 129
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 78
+    },
+    {
+     "id": "script:kb/_cred_rename_apply_supabase.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 64
     },
     {
      "id": "script:kb/_family_tag_plan.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 51
+    },
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
     }
    ],
    "served": true,
@@ -19126,7 +19174,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 79
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -19341,7 +19389,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 76
+     "line": 77
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -19356,6 +19404,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_build_sheet181_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 124
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
@@ -19390,14 +19445,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 82
+     "line": 84
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 65
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -28600,14 +28655,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 132
+     "line": 138
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 163
+     "line": 169
     },
     {
      "id": "script:kb/_cred_rename_undo.py",

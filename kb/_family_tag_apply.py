@@ -110,9 +110,22 @@ def set_hash(pairs):
     return hashlib.sha256(json.dumps(pairs, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
 
 
+CREDENTIALS = os.path.join(HERE, "credentials.json")
+
+
+def current_titles(path=CREDENTIALS):
+    """The credential titles on the checked-out main, or None when the file is absent (then no title reads as gone).
+    After a rename, Sam's fold rows stay on the old title; the plan lists that title as gone instead of tagging it."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return set(json.load(f))
+    except (OSError, ValueError):
+        return None
+
+
 def read(rest):
     rows = rest.family_rows()
-    p = ftp.plan(rows, ftp.families())
+    p = ftp.plan(rows, ftp.families(), current_titles())
     tags, written, conflicts = ftp.tag_rows(p, rows)
     pairs = tag_set(tags, written)
     return {"rows": rows, "plan": p, "tags": tags, "written": written, "conflicts": conflicts,

@@ -310,6 +310,7 @@ try:
     dry.OVERLAY = app.OVERLAY = paths["credential_review_overlay.json"]
     dry.RELATED = app.RELATED = paths["exhibits_related.json"]
     dry.FAMILIES = app.FAMILIES = os.path.join(tmp, "no_families.json")  # hermetic: no family titles
+    dry.PLANS_DIR = app.PLANS_DIR = os.path.join(tmp, "no_plans")  # hermetic: no ruled plans
     dry.OUT_DIR = app.DRYRUN_OUT = dry_out
     app.ALIAS_PATH = os.path.join(dry_out, "alias_map.json")
     app.OUT_ROOT = sup.OUT_ROOT = out_root

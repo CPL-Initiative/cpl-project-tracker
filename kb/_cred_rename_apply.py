@@ -70,8 +70,10 @@ from datetime import date, datetime, timezone
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import fold_issuer  # noqa: E402
+import ruled_renames  # noqa: E402
 
 OVERLAY = os.path.join(HERE, "credential_review_overlay.json")
+PLANS_DIR = ruled_renames.PLANS_DIR
 RELATED = os.path.join(HERE, "exhibits_related.json")
 FAMILIES = os.path.join(HERE, "reference", "credential_families.json")
 DRYRUN_OUT = os.path.join(HERE, "cred_rename_dryrun")
@@ -464,7 +466,12 @@ def main():
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_before = json.load(f)
     touched = sorted(set(renames) | set(renames.values()) | set(merges) | set(merges.values()))
-    overlay = (_load_optional(OVERLAY).get("overrides") or {})
+    # The same ruled plans the dry run laid over the overlay (kb/ruled_renames.py), so a ruled fold's save time is the
+    # ruling's and the preview and the apply decide the issuer on one set of rows.
+    overlay, _ = ruled_renames.overlay(
+        _load_optional(OVERLAY).get("overrides") or {}, ruled_renames.load(PLANS_DIR),
+        fold_issuer.family_titles(FAMILIES), creds_before,
+        fold_issuer.titles_holding_exhibits(_load_optional(UNIFIED_TITLES)))
     issuer_plan = fold_issuer.plan(renames, merges, overlay, creds_before,
                                    fold_issuer.path_tallies(_load_optional(RELATED)))
     # Every merge target must exist once the renames land, checked BEFORE any file is written: a

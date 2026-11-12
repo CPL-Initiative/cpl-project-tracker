@@ -53,9 +53,16 @@ def family_members(root="."):
             cr = json.load(f)
     except (OSError, ValueError):
         return {}
+    try:
+        with open(os.path.join(root, "kb", "reference", "credential_families.json"), encoding="utf-8") as f:
+            declared = json.load(f).get("families") or {}
+    except (OSError, ValueError):
+        declared = {}
     out = {}
     for title, recs in cr.items():
         fam = next((r.get("family") for r in recs or [] if r.get("family")), "")
         if fam:
-            out[title] = {"family": fam, "aliases": test_mix.components(title)}
+            # A member any one of whose tests qualifies (Sheet 181) is declared by its family, never a bundle.
+            kind = "any_one_test" if title in ((declared.get(fam) or {}).get("any_one_test") or {}) else "bundle"
+            out[title] = {"family": fam, "aliases": test_mix.components(title), "member_kind": kind}
     return out

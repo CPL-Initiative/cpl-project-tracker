@@ -18,10 +18,19 @@ WHO WRITES. kb/_family_tag_apply.py, run by .github/workflows/credential-family-
 calls these two functions and inserts under CREDENTIAL_FAMILY_COHORT with a committed receipt. The 47 KB SQL plan
 #3117 wrote (one transaction that also deleted the fold rows) never ran and is retired (S639).
 
-HELD for Sam, untouched: the ASE Master titles stay their own titles and are not family members by default;
-"Advanced Electrical and Electronic Systems", "ASE Certification (any A1–A8)" and "ASE C1 or G1" are not bundles of
-named tests, because any one test qualifies (the last agreed with COBIx on #3111, comment 6808460886). Any other title
-whose saved override names a family but whose own title names no test mix (kb/test_mix.py) is held the same way.
+HELD, untouched: the ASE Master titles stay their own titles and outside the family (Sam, Open Asks Sheet 181,
+2026-11-11: ASE awards Master status itself); "Advanced Electrical and Electronic Systems" is an emptied title and is
+left out. Any other title whose saved override names a family but whose own title names no test mix (kb/test_mix.py)
+is held the same way.
+
+ANY ONE TEST (Sheet 181, cpl_memory d-sheet-181-replies-2026-11-11): "ASE Certification (any A1–A8)" and "ASE C1 or
+G1" keep their own titles and take the family tag as members any one of whose tests qualifies. The family declares
+them under `any_one_test` in kb/reference/credential_families.json, the one place membership kind lives; the tag row is
+the same family row as a bundle's, and readers that must tell the two apart read the declaration (member_kind here,
+kb/credential_aliases.py family_members). An any-one-test member is never proposed in the family's naming form.
+
+A title that is no longer a credential (`titles`, kb/credentials.json's keys, when the caller passes them) is listed
+as gone and gives no row: after a rename, Sam's fold rows stay on the old title, and they must not tag it again.
 
 Usage (offline inspection of a read; the workflow makes the live one):
   python3 kb/_family_tag_plan.py --rows LIVE_ROWS.json
@@ -51,11 +60,9 @@ HOLD = {
     "ASE Master Automobile Technician (A1–A8 + L1)": "Master stays its own title (ruling 3: ASE awards it)",
     "ASE Master Automobile Technician (A1–A8) or L3": "Master stays its own title (ruling 3: ASE awards it)",
     "ASE Master Medium/Heavy Truck Technician (T1–T8)": "Master stays its own title (ruling 3: ASE awards it)",
-    "Advanced Electrical and Electronic Systems": "not a bundle of named tests",
-    "ASE Certification (any A1–A8)": "not a bundle of named tests: any one test qualifies",
-    "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair":
-        "not a bundle of named tests: either test qualifies (agreed with COBIx on #3111, comment 6808460886)",
+    "Advanced Electrical and Electronic Systems": "an emptied title, left out (Sheet 181)",
 }
+BUNDLE, ANY_ONE_TEST = "bundle", "any_one_test"
 
 
 def families(path=FAMILIES):
@@ -63,15 +70,25 @@ def families(path=FAMILIES):
         return json.load(f).get("families") or {}
 
 
-def plan(rows, fams):
-    """{"convert": [{title, family, rows}], "held": [{title, family, why, rows}], "already": [{..., existing}]}.
-    `rows` on each item are Sam's fold rows as read, kept for the receipt; nothing deletes them."""
+def any_one_test(fams, family):
+    """{title: why} of the members a family declares as any-one-test members."""
+    return dict(((fams or {}).get(family) or {}).get(ANY_ONE_TEST) or {})
+
+
+def member_kind(fams, family, title):
+    return ANY_ONE_TEST if title in any_one_test(fams, family) else BUNDLE
+
+
+def plan(rows, fams, titles=None):
+    """{"convert": [{title, family, member_kind, rows}], "held": [{title, family, why, rows}], "already": [{...,
+    existing}], "gone": [{title, family, rows}]}. `rows` on each item are Sam's fold rows as read, kept for the
+    receipt; nothing deletes them. `titles`, when given, is the set of current credential titles."""
     by = {}
     for r in rows:
         cid = r.get("course_id") or ""
         if cid.startswith(PREFIX):
             by.setdefault(cid[len(PREFIX):], []).append(r)
-    out = {"convert": [], "held": [], "already": []}
+    out = {"convert": [], "held": [], "already": [], "gone": []}
     for title in sorted(by):
         rs = by[title]
         ov = [r for r in rs if r.get("field") == "unified_title_override" and r.get("value") in fams]
@@ -80,12 +97,14 @@ def plan(rows, fams):
         fam = ov[0]["value"]
         fold = [r for r in rs if r.get("field") in FOLD_FIELDS and r.get("value") == fam]
         tagged = [r for r in rs if r.get("field") == FAMILY_FIELD]
-        item = {"title": title, "family": fam, "rows": fold}
+        item = {"title": title, "family": fam, "member_kind": member_kind(fams, fam, title), "rows": fold}
         if title == fam:
             continue
-        if title in HOLD:
+        if titles is not None and title not in titles:
+            out["gone"].append(item)
+        elif title in HOLD:
             out["held"].append(dict(item, why=HOLD[title]))
-        elif not test_mix.from_title(title):
+        elif item["member_kind"] != ANY_ONE_TEST and not test_mix.from_title(title):
             out["held"].append(dict(item, why="its title names no test mix"))
         elif tagged:
             out["already"].append(dict(item, existing=tagged))
@@ -139,6 +158,8 @@ def main():
         print("  tag       %s" % t["course_id"][len(PREFIX):])
     for it in p["held"]:
         print("  HOLD      %s  (%s)" % (it["title"], it["why"]))
+    for it in p["gone"]:
+        print("  GONE      %s  (no longer a credential)" % it["title"])
     for c in conflicts:
         print("  CONFLICT  %s  (%s)" % (c["title"], c["why"]))
 

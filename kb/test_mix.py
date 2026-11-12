@@ -40,10 +40,19 @@ def _coded(part):
     return sorted(set(codes), key=_ORDER.get)
 
 
+# The family's own naming form, "ASE Certificate Bundles: T6 + T8 with Snap-on 604" (Sam, Open Asks Sheet 181,
+# 2026-11-11; cpl_memory d-sheet-181-replies-2026-11-11). Read like the older forms, so a renamed member keeps its
+# tests as search aliases and family_read() gives the same title back.
+FAMILY_FORM = re.compile(r"^ASE\s+Certificate\s+Bundles\s*:\s*(.+)$")
+
+
 def _part(title):
-    """The words of a curated title that name its tests: after "ASE Bundle —", before "—" in "ASE A8 + L1 — ...".
-    None for a title in neither form."""
+    """The words of a curated title that name its tests: after "ASE Bundle —", before "—" in "ASE A8 + L1 — ...",
+    after "ASE Certificate Bundles:". None for a title in none of these forms."""
     t = (title or "").strip()
+    m = FAMILY_FORM.match(t)
+    if m:
+        return m.group(1).strip()
     m = re.match(r"^ASE\s+Bundle\s*[—–]\s*(.+)$", t)
     if m:
         return m.group(1).strip()
@@ -81,7 +90,7 @@ def components(title):
     return out
 
 
-_PARTS = re.compile(r"\s*[,+]\s*")
+_PARTS = re.compile(r"\s*[,+]\s*|\s+with\s+", re.I)
 _OR = re.compile(r"\s+or\s+", re.I)
 
 
@@ -108,15 +117,43 @@ def parts(title):
     return out
 
 
-def family_title(family, title):
-    """The title a family member takes in the family's naming form (the ruling as relayed on #3110: family plus the
-    normalized mix, "ASE Certificate Bundles: A4 + A5"), or None when the title names no mix. A part no ASE code names
-    follows "with": "ASE Certificate Bundles: T7 + T8 with MACS/609". A proposal only: a person approves it."""
+def family_read(family, title):
+    """How a family member stands against the family's naming form (Sam, Open Asks Sheet 181, 2026-11-11): the family,
+    a colon, the ASE tests in ASE's own order (kb/cert_naming.py's table) joined by " + ", then any part no ASE code
+    names, kept as written, after "with": "ASE Certificate Bundles: T6 + T8 with Snap-on 604".
+
+    Returns {"status", "title", "why"}:
+      named        "title" is the member's name in the form
+      already      the member already carries it ("title" is the title itself)
+      unparseable  the parser cannot code the mix (an "or", a part that mixes a test code with other words, or no
+                   test at all); "title" is None and the member is left for a person
+      no-mix       the title names no mix; "title" is None
+    """
     got = parts(title)
-    if not got or not got["tests"]:
-        return None
-    t = "%s: %s" % (family, " + ".join(got["tests"]))
-    return t + (" with " + " + ".join(got["with"]) if got["with"] else "")
+    if not got:
+        return {"status": "no-mix", "title": None, "why": "the title names no test mix"}
+    if not got["tests"]:
+        return {"status": "unparseable", "title": None, "why": "the mix names no ASE test the parser can code"}
+    ors = [p for p in got["tests"] if _OR.search(p)]
+    if ors:
+        return {"status": "unparseable", "title": None,
+                "why": "an \"or\" in %s: any one of the tests qualifies, so the tests cannot be joined by \"+\""
+                       % ", ".join(ors)}
+    bad = [p for p in got["with"] if _OR.search(p) or cert_naming.codes_named(p)]
+    if bad:
+        return {"status": "unparseable", "title": None,
+                "why": "a part the parser cannot read as one test or one named credential: %s" % ", ".join(bad)}
+    tests = sorted(set(t.upper() for t in got["tests"]), key=_ORDER.get)
+    new = "%s: %s" % (family, " + ".join(tests))
+    new += (" with " + " + ".join(got["with"])) if got["with"] else ""
+    return {"status": "already" if new == (title or "").strip() else "named", "title": new, "why": ""}
+
+
+def family_title(family, title):
+    """The title a family member takes in the family's naming form ("ASE Certificate Bundles: A4 + A5"), or None when
+    the title names no mix or the parser cannot code it (family_read). Idempotent: a member already in the form gets its
+    own title back. A proposal only: a person approves it, or a ruled plan names it (kb/ruled_renames.py)."""
+    return family_read(family, title)["title"]
 
 
 def exception(title):

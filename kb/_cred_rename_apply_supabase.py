@@ -29,6 +29,11 @@ public.kb_curation:
        DELETE, not PATCH (run #4's 8×409 lesson). A 409 on a merge PATCH
        falls back to the same supersede-DELETE.
 
+  A saved fold into a declared family title (unified_title_override or
+  unified_title_merge_confirm naming it; Sam's ruling C reads it as a family
+  tag) is never this rename's decision: it is left in place, logged as op
+  "keep", never moved or deleted (Sheet 181's ruled renames, kb/ruled_renames.py).
+
   This script never updates or deletes an issuer row for the fold's issuer
   decision (#3116 redesign): kb/_cred_fold_resolution_write.py writes one
   issuer_resolution row per folded target before this step, and every reader
@@ -79,6 +84,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import fold_issuer  # noqa: E402  (RESOLUTION_FIELD: a resolution row is never PATCHed onto another)
 OUT_ROOT = os.path.join(HERE, "cred_rename_out")
+FAMILIES = os.path.join(HERE, "reference", "credential_families.json")
 KEY_PREFIX = "_CREDENTIAL_REVIEW::"
 
 URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co").rstrip("/")
@@ -266,6 +272,7 @@ def main():
     # sibling (run #4, 2026-07-08: the 4-source ASE A6 fold, 8 fails).
     claimed = {cid: {r.get("field") for r in rows}
                for cid, rows in existing.items()}
+    families = fold_issuer.family_titles(FAMILIES)
     for kind, old_ut, new_ut in work:
         old_cid = f"{KEY_PREFIX}{old_ut}"
         new_cid = f"{KEY_PREFIX}{new_ut}"
@@ -278,6 +285,16 @@ def main():
         target_fields = claimed.setdefault(new_cid, set())
         for row in rows_for_old:
             field = row.get("field") or ""
+            if field in fold_issuer.FOLD_FIELDS and row.get("value") in families and row.get("value") != new_ut:
+                # A saved fold into a family title is a family tag (Sam's ruling C), never this rename's decision: a
+                # ruled plan (kb/ruled_renames.py) renamed the title over it. It stays where it is, never moved or
+                # deleted; on the old title, which holds no exhibit once the rename lands, readers ignore it.
+                log.append({"old_ut": old_ut, "new_ut": new_ut, "kind": kind, "course_id": old_cid, "field": field,
+                            "op": "keep", "status": "ok", "rows_affected": 0,
+                            "reason": "a fold into a family title: a family tag, left in place",
+                            "before_row": _before(row)})
+                ok += 1
+                continue
             if field == "unified_title_override" or (
                     field == "unified_title_merge_confirm"
                     and (kind == "merge" or row.get("value") == new_ut)):

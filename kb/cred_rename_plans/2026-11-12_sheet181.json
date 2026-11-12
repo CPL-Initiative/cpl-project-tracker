@@ -1,0 +1,201 @@
+{
+ "_about": "A frozen plan of credential renames and merges ruled on a decision sheet, read by kb/ruled_renames.py in the rename dry run and the apply (cred-rename-apply.yml). Built by kb/_build_sheet181_rename_plan.py from committed files. Nothing here writes kb_curation: the rows the route would otherwise read are occupied by Sam's family-tag folds, which no plan edits or deletes.",
+ "plan_id": "sheet181-2026-11-12",
+ "ruling": "Open Asks Sheet 181, answered by Sam Lee 2026-11-11 22:55Z, cards taken as decided (cpl_memory d-sheet-181-replies-2026-11-11)",
+ "decided_by": "Sam Lee (Open Asks Sheet 181)",
+ "decided_at": "2026-11-11T22:55:00Z",
+ "entries": [
+  {
+   "old": "ASE Bundle — A1, A6, A8, L1",
+   "new": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+   "new": "ASE Certificate Bundles: A2 + A3",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+   "new": "ASE Certificate Bundles: A2 + A3 + A6",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — A2, A3, A6",
+   "new": "ASE Certificate Bundles: A2 + A3 + A6",
+   "kind": "merge",
+   "family": "ASE Certificate Bundles",
+   "why": "the same mix as 'ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical', which leads; one title by an ordinary merge"
+  },
+  {
+   "old": "ASE Bundle — A4, A5",
+   "new": "ASE Certificate Bundles: A4 + A5",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — A4, A5, A6",
+   "new": "ASE Certificate Bundles: A4 + A5 + A6",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — A6, A8, L1",
+   "new": "ASE Certificate Bundles: A6 + A8 + L1",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+   "new": "ASE Certificate Bundles: A8 + L1",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+   "new": "ASE Certificate Bundles: A9 + L2",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE G1 + ALI Lift It Right Bundle",
+   "new": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+   "new": "ASE Certificate Bundles: L1 + L2",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+   "new": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — L2, T8, SP/2 HD",
+   "new": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+   "new": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+   "new": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T2, T8",
+   "new": "ASE Certificate Bundles: T2 + T8",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T3, T4, T5, T8",
+   "new": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T3, T8, SP/2 HD",
+   "new": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T4, T8, SP/2 HD",
+   "new": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T5, T8",
+   "new": "ASE Certificate Bundles: T5 + T8",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T5, T8, SP/2 HD",
+   "new": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T6, T8 + Snap-on 604",
+   "new": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Bundle — T7, T8 + MACS/609",
+   "new": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+   "kind": "rename",
+   "family": "ASE Certificate Bundles",
+   "why": "a bundle member takes the family's naming form"
+  },
+  {
+   "old": "ASE Master Automobile Technician (A1–A8 + L1)",
+   "new": "ASE Master Automobile Technician",
+   "kind": "merge",
+   "why": "one ASE Master Automobile title; the old name stays a search alias"
+  },
+  {
+   "old": "ASE Master Automobile Technician (A1–A8) or L3",
+   "new": "ASE Master Automobile Technician",
+   "kind": "merge",
+   "why": "one ASE Master Automobile title; the old name stays a search alias"
+  }
+ ],
+ "unparseable": [
+  {
+   "title": "ASE Bundle — A6 or T6 + L3",
+   "mix": "A6 or T6 + L3",
+   "why": "an \"or\" in A6 or T6: any one of the tests qualifies, so the tests cannot be joined by \"+\""
+  }
+ ],
+ "already_named": [],
+ "kept": {
+  "ASE Master Medium/Heavy Truck Technician (T1–T8)": "ASE Master stays its own canonical title, outside the bundle family (ASE awards it)",
+  "ASE Master Automobile Technician": "ASE Master stays its own canonical title, outside the bundle family (ASE awards it)"
+ },
+ "any_one_test": {
+  "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair": "keeps its own title; a member of ASE Certificate Bundles any one of whose tests qualifies",
+  "ASE Certification (any A1–A8)": "keeps its own title; a member of ASE Certificate Bundles any one of whose tests qualifies"
+ },
+ "left_out": {
+  "Advanced Electrical and Electronic Systems": "an emptied title, left out (Sheet 181)"
+ }
+}

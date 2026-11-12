@@ -32,17 +32,18 @@ def check(name, cond):
     CHECKS.append((name, bool(cond)))
 
 
-def dryrun(tmp, families):
+def dryrun(tmp, families, plans=None):
     dry.OUT_DIR, dry.FAMILIES = os.path.join(tmp, "dry"), families
+    dry.PLANS_DIR = plans or os.path.join(tmp, "no_plans")
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
     return json.load(open(os.path.join(dry.OUT_DIR, "alias_map.json"), encoding="utf-8"))
 
 
 tmp = tempfile.mkdtemp()
-real_out, real_fam = dry.OUT_DIR, dry.FAMILIES
+real_out, real_fam, real_plans = dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR
 try:
-    # ── 1. the dry-run's preview with the family file present ────────────────────────────────────────────
+    # ── 1. the dry-run's preview with the family file present (no ruled plan; Sheet 181's is 1b) ─────────
     doc = dryrun(tmp, real_fam)
     s = doc["summary"]
     # The overlay's saved folds into the family title: 31 until the family-tag plan converts them (its rows then
@@ -59,8 +60,16 @@ try:
     check("without the family file those folds are not held, so the file is what holds them",
           bare["summary"]["held_as_family_tags"] == 0
           and (not saved or len(bare["renames"]) + len(bare["merges"]) > len(doc["renames"]) + len(doc["merges"])))
+    # ── 1b. with Sheet 181's ruled plan: its renames take the place of the family-tag folds they cover ─────
+    ruled = dryrun(tmp, real_fam, real_plans)
+    applied = {e["old"] for e in ruled["ruled"]["applied"]}
+    check("with the ruled plan, the folds it does not rename stay held as family tags, and none is renamed",
+          ruled["summary"]["held_as_family_tags"] == saved - len(applied)
+          and not applied & {h["old"] for h in ruled["held_family"]})
+    check("the ruled merges are the standards merges plus the plan's, and nothing mints the family title",
+          set(ruled["merges"]) >= set(doc["merges"]) and FAM not in set(ruled["renames"].values()) | set(ruled["merges"].values()))
 finally:
-    dry.OUT_DIR, dry.FAMILIES = real_out, real_fam
+    dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR = real_out, real_fam, real_plans
 
 # ── 2. a member renamed into its family form keeps its family ─────────────────────────────────────────────
 OLD, NEW = "ASE A4 and A5 Bundle", FAM + ": A4 + A5"

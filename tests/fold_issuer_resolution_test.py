@@ -187,7 +187,8 @@ class Env:
                                                                 self.p["coci_articulations.json"])
         dry.OVERLAY = app.OVERLAY = acr.OUT = self.p["credential_review_overlay.json"]
         dry.RELATED = app.RELATED = self.p["exhibits_related.json"]
-        dry.FAMILIES = app.FAMILIES = os.path.join(self.dir, "credential_families.json")  # absent: no families
+        dry.FAMILIES = app.FAMILIES = sup.FAMILIES = os.path.join(self.dir, "credential_families.json")  # absent: no families
+        dry.PLANS_DIR = app.PLANS_DIR = os.path.join(self.dir, "cred_rename_plans")  # absent: no ruled plans
         dry.OUT_DIR = app.DRYRUN_OUT = self.dry
         app.ALIAS_PATH = os.path.join(self.dry, "alias_map.json")
         app.OUT_ROOT = sup.OUT_ROOT = resw.OUT_ROOT = acr.CRED_OUT_ROOT = self.out
