@@ -348,9 +348,42 @@ check("Career Success's three WKPR courses take the 36 hours each description pr
       [c["units"] for c in new["blocks"][0]["courses"]] == [36.0, 36.0, 36.0]
       and notes and notes[0]["field"] == "course_hours" and "43134526902" in notes[0]["words"])
 arith = S.score(new, [], vv_text, cs["award"])["arithmetic"]
-check("108 meets only the top of 96.0 - 108.0, so it stays unequal (Sheet 120 card 1, narrow)",
-      arith["status"] == "unequal" and arith["computed"] == [108.0, 108.0] and not arith["pass"])
+check("108 hours of single-figure courses meets the top of 96.0 - 108.0 (meets_top, S639)",
+      arith["status"] == "equal" and arith["computed"] == [108.0, 108.0] and arith["pass"] and arith.get("meets_top"))
 check("the filed record is left as filed", cs["record"]["blocks"][0]["courses"][0]["units"] is None)
+
+print("meets_top: an hours record's single-figure courses add to its printed range's top (S639)")
+
+
+def hrs(units, total, measure="hours", extra=None):
+    courses = [dict({"code": "WKPR %d" % (10 + i), "units": u}, **(extra or {}).get(i, {})) for i, u in enumerate(units)]
+    return {"program": {"measure": measure, "total_units": {"min": total[0], "max": total[1]}},
+            "blocks": [{"name": "Required Courses", "rule": "all", "courses": courses}]}
+
+
+top = S.score(hrs([36, 36, 36], (96, 108)), [], None, "Noncredit program")["arithmetic"]
+check("hours, 36 + 36 + 36 against 96 - 108: passes as meets_top", top["pass"] and top.get("meets_top"))
+same_units = S.score(hrs([36, 36, 36], (96, 108), measure="units"), [], None, "Certificate of Achievement")["arithmetic"]
+check("a units record of the same shape stays unequal (Sheet 120 card 1, narrow, governs units)",
+      same_units["status"] == "unequal" and not same_units.get("meets_top"))
+inside = S.score(hrs([32, 36, 36], (96, 108)), [], None, "Noncredit program")["arithmetic"]
+check("an hours sum inside the range, short of its top (104 of 96 - 108), stays unequal",
+      inside["status"] == "unequal" and not inside.get("meets_top"))
+var = hrs([36, 36, 36], (96, 108), extra={0: {"units": 32, "units_max": 36}})
+check("a variable-hours course (32-36) reads as it does today: 104-108 against 96 - 108 is unequal",
+      S.score(var, [], None, "Noncredit program")["arithmetic"]["status"] == "unequal"
+      and not S.hours_meets_top(var, (96.0, 108.0), 108.0, 108.0))
+rep = hrs([36, 36, 36], (96, 108), extra={0: {"times": 1}})
+check("a repeated course is no single figure", not S.hours_meets_top(rep, (96.0, 108.0), 108.0, 108.0))
+one = S.score(hrs([108, 108], (216, 216)), [], None, "Noncredit program")["arithmetic"]
+check("a total of one figure still reads equal, not meets_top", one["pass"] and not one.get("meets_top"))
+check("program_verdict without the record (the rescorers' call) is unchanged",
+      S.program_verdict({}, (96.0, 108.0), 108.0, 108.0) == {"pass": False, "status": "unequal"})
+import _program_requirements_rescore as RS  # noqa: E402
+check("the rescorer moves no filed score: an unequal hours record at its top stays as filed",
+      RS.rescore({"award": "Noncredit program", "record": hrs([36, 36, 36], (96, 108)),
+                  "score": {"arithmetic": {"status": "unequal", "against": "program", "computed": [108.0, 108.0],
+                                           "stated": [96.0, 108.0], "pass": False}}}) is None)
 for cn in ("42907", "43736"):
     one = vv_filed(cn)
     got, _n = R.reconcile(one["record"], "Total Certificate Hours: 216.0", VV, one["award"], steps=vv_steps)

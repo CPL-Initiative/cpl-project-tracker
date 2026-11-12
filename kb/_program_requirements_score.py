@@ -644,10 +644,38 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
                     "for the degree" % (lo, hi, degree[0], degree[1])]}
 
 
-def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float) -> dict:
+def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: float) -> bool:
+    """A noncredit program whose catalog prints each course's hours once and the certificate's
+    total as a range (Victor Valley, S639: "Total Certificate Hours: 96.0 - 108.0" over WKPR 011,
+    012 and 014, each description "Lecture Hours: 36.0"; college-page-read 43134526902). The top
+    is the total the printed courses allow; no page prints a course's low end. This sits beside
+    Sheet 120 card 1 (narrow) without reversing it: that reading still governs every units
+    record and any sum inside a range short of its top. Only a record measured in hours, a range
+    printed with two ends, every course and alternative carrying one figure (no units_max, no
+    repeats), and a sum of one figure equal to the range's top."""
+    if measure(record) != "hours" or not stated[1] - stated[0] > TOL:
+        return False
+    if abs(lo - hi) > TOL or abs(hi - stated[1]) > TOL:
+        return False
+    for b in record.get("blocks") or []:
+        if b.get("rule") == "recommended":
+            continue
+        for c in b.get("courses") or []:
+            for entry in [c] + alternatives(c):
+                u = _num(entry.get("units"))
+                if (u is None or entry.get("times") is not None or entry.get("units_total") is not None
+                        or _num(entry.get("units_max")) not in (None, u)):
+                    return False
+    return True
+
+
+def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: float,
+                    record: dict | None = None) -> dict:
     """How the blocks' sum (lo-hi) meets the program total the page prints: pass,
     status and how. The rescorer reads it too (kb/_program_requirements_rescore.py),
-    so it never re-adds the blocks."""
+    so it never re-adds the blocks. record, where the caller holds it, lets an hours
+    record whose single-figure courses add to its printed range's top pass as
+    meets_top (hours_meets_top); the rescorers pass none, so a filed score is not moved."""
     if abs(lo - stated[0]) <= TOL and abs(hi - stated[1]) <= TOL:
         return {"pass": True, "status": "equal"}
     # The page prints the program total as a floor (San Joaquin Delta, S422: "Minimum Units
@@ -664,6 +692,8 @@ def program_verdict(prog: dict, stated: tuple[float, float], lo: float, hi: floa
     # totals and 9 electives-filled degrees read so; any total inside the span would pass 738.
     if abs(lo - stated[0]) <= TOL and hi > stated[1] + TOL:
         return {"pass": True, "status": "equal", "meets": True}
+    if record is not None and hours_meets_top(record, stated, lo, hi):
+        return {"pass": True, "status": "equal", "meets_top": True}
     return {"pass": False, "status": "unequal"}
 
 
@@ -765,7 +795,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         arith = {"pass": False, "status": "incomplete", "computed": [lo, hi],
                  "stated": list(stated), "against": "program", "why": reasons}
     else:
-        pv = program_verdict(prog, stated, lo, hi)
+        pv = program_verdict(prog, stated, lo, hi, record)
         ok = pv["pass"]
         # A certificate whose printed total includes the general education units it names
         # (San Joaquin Delta 05630, S424: "Minimum Units Required: 51" over a 35-unit major and
@@ -792,6 +822,8 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
             arith["minimum"] = True
         if pv.get("meets"):
             arith["meets"] = True
+        if pv.get("meets_top"):
+            arith["meets_top"] = True
         if ge_included:
             arith["ge_included"] = list(ge)
             arith["computed"] = [round(lo + ge[0], 2), round(hi + ge[1], 2)]
