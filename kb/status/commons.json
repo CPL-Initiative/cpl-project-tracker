@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T20:46:44Z",
+ "written_at": "2026-11-12T20:58:23Z",
  "rows": [
   {
    "key": "requirements",
@@ -146,7 +146,7 @@
      "words": "renamed titles on the Exhibits review list (3 brought back, 7 dead ends, 2 dead retires); 0 unacknowledged returned titles (target 0)",
      "owner": "a curator (kb/credential_title_moves.json)",
      "carry": "keep_call",
-     "open": "#exhibits/held",
+     "open": "#exhibits/renamed",
      "error": null
     }
    ],
@@ -375,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T11:54:35Z",
+    "at": "2026-11-12T20:24:41+00:00",
     "every_hours": null
    },
    "facts": {
@@ -741,7 +741,7 @@
       "n": 12,
       "words": "renamed titles on the Exhibits review list (3 brought back, 7 dead ends, 2 dead retires); 0 unacknowledged returned titles (target 0)",
       "owner": "a curator (kb/credential_title_moves.json)",
-      "open": "#exhibits/held"
+      "open": "#exhibits/renamed"
      }
     ]
    }

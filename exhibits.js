@@ -1761,12 +1761,14 @@
     if (!list.length) return null;
     var order = REVIEW_KINDS.map(function (k) { return k[0]; });
     var rows = list.slice().sort(function (a, b) { return order.indexOf(a.kind) - order.indexOf(b.kind); });
-    return el("details", { cls: "exh-l-rxmore exh-small" }, [
+    var box = el("details", { cls: "exh-l-rxmore exh-small", id: "exh-renamed", open: state.rlOpen ? true : null }, [
       el("summary", { text: "The " + fmt(list.length) + " renamed title" + (list.length === 1 ? "" : "s") + " to look at" }),
       el("ul", { cls: "exh-l-rxlist", "aria-label": "Renamed titles to look at" }, rows.map(function (r) {
         return el("li", null, [el("span", { cls: "exh-strong", text: r.title }),
           el("span", { cls: "exh-muted", text: ", " + r.kind + ". " }), r.words]);
       }))]);
+    box.addEventListener("toggle", function () { state.rlOpen = box.open; });
+    return box;
   }
   function stepTile(step, label) {
     var n = step === "Saved, not folded" ? (state.data.tiles.saved_not_folded || 0) : stepCount(step);
@@ -5067,7 +5069,7 @@
      saved stays saved. */
   function newVisit() {
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
-    state.view = "review";
+    state.view = "review"; state.rlOpen = false;
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false; state.sw.batchMode = false; state.sw.batch = null;
     state.ls = null; state.qLens = "";
     state.rb.ask = false; state.rel.all = null; state.rel.act = null; state.rel.folded = {};
@@ -5079,13 +5081,15 @@
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
      the reference, credentials = the List (the Credentials view retired into it), rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
-  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], "rename-batch": ["review", RENAME], credentials: ["list", ""],
+  var ROUTES = { held: ["review", ""], renamed: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], "rename-batch": ["review", RENAME], credentials: ["list", ""],
     rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""], queue: ["queue", ""], requests: ["requests", ""], "cpl-ai": ["cpl-ai", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
     if (!r) return false;
     state.view = r[0]; state.filter = r[1];
+    /* #exhibits/renamed opens the Review view with its renamed titles shown (the Commons' review-list counts). */
+    state.rlOpen = parts[1] === "renamed";
     state.sw.batchMode = parts[1] === "another-look" && parts[2] === "batch";
     if (state.sw.batchMode) { state.sw.batch = null; state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false; }
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
@@ -5105,6 +5109,7 @@
     if (v === "progress" || v === "rules" || v === "requests") return "exhibits/" + v;
     if (v === "queue") return "exhibits/queue/" + queueLens();
     if (v === "cpl-ai") return window.CPL_EXHIBITS_CPLAI ? window.CPL_EXHIBITS_CPLAI.address() : "exhibits/cpl-ai";
+    if (v === "review" && !state.filter && state.rlOpen) return "exhibits/renamed";
     if (v === "review") return "exhibits/" + (state.filter === CONFLICT ? "conflict" : state.filter === SWEEP ? (state.sw.batchMode ? "another-look/batch" : "another-look") : state.filter === RENAME ? "rename-batch" : "held");
     return "exhibits";
   });

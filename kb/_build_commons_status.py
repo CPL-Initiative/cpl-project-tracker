@@ -279,13 +279,13 @@ def row_exhibit(root):
                          fmt(len(mv.get("dead_retires") or [])), fmt(unack_n)) if review_n is not None
                       else "renamed titles on the Exhibits review list",
              "owner": "a curator (kb/credential_title_moves.json)",
-             "carry": "keep_call", "open": tab + "/held", "error": review_err},
+             "carry": "keep_call", "open": tab + "/renamed", "error": review_err},
             # Its own line only above zero: the S343 rule (no figure is a bare zero, tests/commons_status_build_test.py)
             # drops a zero line, so the review list's words carry the 0 and facts.returned_unacknowledged holds it.
             {"n": unack_n, "words": "unacknowledged returned titles, target 0: titles back in the reference with no "
                                     "record of who brought each back or why; retire one, or add it to "
                                     "kb/returned_titles_acknowledged.json",
-             "owner": "a curator", "carry": "keep_call", "open": tab + "/held", "error": review_err},
+             "owner": "a curator", "carry": "keep_call", "open": tab + "/renamed/unacknowledged", "error": review_err},
         ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,

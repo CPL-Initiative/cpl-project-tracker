@@ -66,6 +66,13 @@ function tileOf(d, label) { return Array.from(d.querySelectorAll(".exh-tile")).f
   const nt = tileOf(none.d, "Renamed titles");
   check("(1) a review file with no list says so rather than a zero", nt && txt(nt.querySelector(".exh-tn b")) === "Not built yet" && !none.d.querySelector(".exh-group details"), nt && txt(nt));
 
+  // A figure card opens what it counts: #exhibits/renamed opens the Review view with the titles shown, and says so.
+  const at = load(REVIEW_LIST);
+  at.w.history.replaceState(null, "", "#exhibits/renamed");
+  await at.M.boot(); await settle();
+  const ob = at.d.getElementById("exh-renamed");
+  check("(1) #exhibits/renamed opens the Review view with the renamed titles shown", at.M._state.view === "review" && !!ob && ob.open === true);
+
   // ── (3) the builders and the committed files ──
   const moves = JSON.parse(fs.readFileSync("kb/credential_title_moves.json", "utf8")).report;
   const review = JSON.parse(fs.readFileSync("kb/exhibits_review.json", "utf8"));
