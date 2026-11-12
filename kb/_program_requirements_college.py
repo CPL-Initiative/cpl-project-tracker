@@ -2713,8 +2713,12 @@ def hand_filed_meta(college: str) -> tuple[str, dict] | None:
 
 
 def fetch_copy(url: str) -> bytes:
-    """A hand-filed copy from where the person posted it (a GitHub release
-    attachment), never from the college's host."""
+    """A hand-filed copy fetched from its copy_url with COPY_UA: where the person
+    posted it (a GitHub attachment), or the college's own open address (Sam's
+    ruling 1 on #3096, 2026-11-11: a hand-filed copy_url may point at the
+    college's host, as on the Los Rios PDFs and daweb2). The callers pin the
+    file's sha256 on first read and check it after, so nobody has to download
+    and upload a copy by hand."""
     import urllib.request
     req = urllib.request.Request(url, headers={"User-Agent": COPY_UA})
     with urllib.request.urlopen(req, timeout=300) as r:

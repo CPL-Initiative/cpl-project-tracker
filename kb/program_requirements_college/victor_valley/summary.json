@@ -3,18 +3,18 @@
  "programs": 219,
  "with_closed_list": 201,
  "found": 176,
- "extracted": 177,
+ "extracted": 176,
  "errors": 0,
- "passed_machine_checks": 136,
+ "passed_machine_checks": 140,
  "failed": {
-  "coverage": 10,
+  "coverage": 9,
   "invented": 0,
-  "arithmetic": 40,
+  "arithmetic": 35,
   "repeated": 1,
   "outcomes": 0
  },
- "cost_usd": 10.24,
- "cost_per_program": 0.0578,
+ "cost_usd": 10.13,
+ "cost_per_program": 0.0575,
  "not_found": [
   {
    "control_number": "04946",
@@ -523,5 +523,5 @@
    }
   }
  ],
- "run": "43139057384"
+ "run": "43215222441"
 }
