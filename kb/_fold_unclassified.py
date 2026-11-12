@@ -127,18 +127,23 @@ def _entry_ts(entry):
     return max(entry.get("reviewed_at") or "", entry.get("classified_at") or "")
 
 
-def classify(assignments, ut):
+def classify(assignments, ut, now=None):
     """Bucket each assignment as clean / skip / supersede / revise / stale / conflict.
 
     supersede rec shape adds: spellings (the ut keys being re-pointed) and
     displaced (the machine unified_titles they currently hold). stale = the KB
     already holds a NEWER curator/human decision for this raw (e.g. a
     strategy-2 adopt-the-article-spelling rename after the overlay assignment
-    was made) — the overlay record is outdated, report-only, never a gate."""
+    was made) — the overlay record is outdated, report-only, never a gate.
+
+    now: the resolver for a saved title (kb/credential_aliases.py resolver). A row naming a title an applied
+    rename retired folds into the title the rename made, never back onto the retired one (the stale "ASE
+    Bundle — A4, A5" row, cer-procedure-classifier@bot, 2026-10-31); a live title reads as itself."""
+    now = now or (lambda t: t)
     clean, skip, supersede, stale, conflict = [], [], [], [], []
     revise = []
     for raw, a in sorted(assignments.items()):
-        assigned = (a.get("unified_title") or "").strip()
+        assigned = now((a.get("unified_title") or "").strip())
         rec = {"raw": raw, "assigned": assigned, "issuer": (a.get("issuing_agency") or "").strip(),
                "reviewed_by": a.get("reviewed_by"), "reviewed_at": a.get("reviewed_at")}
         if not assigned:
@@ -156,7 +161,7 @@ def classify(assignments, ut):
         else:
             held = [(s, ut[s]) for s in disagreeing if not _machine_unreviewed(ut[s])]
             newest = max(_entry_ts(e) for _, e in held)
-            sup = (a.get("supersedes") or "").strip()
+            sup = now((a.get("supersedes") or "").strip())
             if (sup and (rec["reviewed_at"] or "") > newest
                     and all((e.get("unified_title") or "") == sup for _, e in held)):
                 revise.append({**rec, "spellings": spellings, "disagreeing": disagreeing,
@@ -201,7 +206,9 @@ def main():
         print("No assignments in the overlay — nothing to fold.")
         return
 
-    clean, skip, supersede, revise, stale, conflict = classify(assignments, ut)
+    sys.path.insert(0, HERE)
+    import credential_aliases
+    clean, skip, supersede, revise, stale, conflict = classify(assignments, ut, credential_aliases.resolver(ROOT))
 
     # Articulation ripple scan (load the big file only when there's work to do).
     art = None
@@ -595,6 +602,9 @@ def main():
     with open(os.path.join(OUTDIR, "applied.json"), "w", encoding="utf-8") as f:
         json.dump(applied, f, indent=2, ensure_ascii=False)
         f.write("\n")
+    # The day's report is rewritten by each run, so each retire also lands in the append-only ledger the search
+    # aliases read (kb/unclassified_fold/retires.json; the S641 conductor, D2).
+    credential_aliases.append_retires(ROOT, os.path.basename(OUTDIR), report["_generated_at"], cred_retires)
     print(f"\nAPPLIED — folded {len(clean)} + superseded {len(supersede)} + revised {len(revise)} into "
           f"unified_titles.json ({ut_before} -> {len(ut)}), "
           f"{len(cred_adds)} credential record(s) added, "

@@ -568,6 +568,10 @@ jobs:
       - name: Build the Exhibits tab's related titles and rename batch
         if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_exhibits_related.py --quiet || echo "::warning title=Related titles not rebuilt::kb/_build_exhibits_related.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
+      # The credential title moves table (S641, #3148): its report follows the live set and the retire ledger the fold appends.
+      - name: Rebuild the credential title moves table
+        if: steps.recheck.outputs.run == 'true'
+        run: python3 kb/credential_aliases.py || echo "::warning title=Credential title moves not rebuilt::kb/credential_aliases.py failed; map_links.js reads the previous table. Check the step log."
 
       # The List view's AI sort (Sam, 2026-11-01: "like with like in an alpha-like order"): every credential
       # grouped by the subject words its title shares, the groups A to Z. Reads the credential reference
@@ -724,6 +728,7 @@ jobs:
           # The Exhibits tab's Another look (kb/_sweep_exhibit_titles.py).
           git add kb/exhibits_sweep.json 2>/dev/null || true
           git add kb/exhibits_related.json 2>/dev/null || true
+          git add kb/credential_title_moves.json 2>/dev/null || true
           git add kb/exhibits_ai_sort.json 2>/dev/null || true
           git add kb/exhibit_cert_links.json 2>/dev/null || true
           git add kb/exhibit_slo_neighbors.json 2>/dev/null || true

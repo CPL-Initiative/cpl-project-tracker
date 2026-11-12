@@ -1,5 +1,5 @@
 {
-  "_generated_at": "2026-11-12T00:24:16Z",
+  "_generated_at": "2026-11-12T06:36:25Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
@@ -4625,14 +4625,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam",
       "assigned": "Electronically Controlled Brake Systems",
       "issuer": "California Community Colleges",
@@ -4678,22 +4670,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:33.764401+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
-      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "AUTOTEC-15: Auto Electricity and Electronics",
-      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -5057,6 +5033,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Auto 617 Completion",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.634546+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Auto Service Excellence (ASE) ASE A7",
       "assigned": "ASE A7 — Heating and Air Conditioning",
       "issuer": "National Institute for Automotive Service Excellence (ASE)",
@@ -5137,30 +5121,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-      "assigned": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:51.410312+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Automotive Brake Systems",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Automotive Brake Systems AUTO 036 Cx",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Automotive Collision Analysis - Credit by Exam (ACRP 24 )",
       "assigned": "Automotive Collision Analysis",
       "issuer": "California Community Colleges",
@@ -5238,14 +5198,6 @@
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:33:50.363171+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Automotive Service Excellence (ASE) A4 and A5",
-      "assigned": "ASE Bundle — A4, A5",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -5382,6 +5334,38 @@
       "issuer": "National Institute for Automotive Service Excellence (ASE)",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL3 - Drive Train",
+      "assigned": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL4 - Chassis",
+      "assigned": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
+      "assigned": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
+      "assigned": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -6062,14 +6046,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-11-01T22:14:20.323+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Brakes - Credit by Exam (ATEC 14 )",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:54:58.953988+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -9537,14 +9513,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Credit by Exam AUTO 106 Automotive Brake System",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:52.433133+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Credit by Exam AUTO 117 Automotive Principles",
       "assigned": "Automotive Principles",
       "issuer": "California Community Colleges",
@@ -11254,14 +11222,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
-      "assigned": "Engine Performance (ASE A8 Engine Performance)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:55:02.371422+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -13649,6 +13609,22 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "IC- Automotive Electrical/Electronics I",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IC- Engine Performance II",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "IC- Introduction to Automotive Technology",
       "assigned": "Introduction to Automotive Technology",
       "issuer": "California Community Colleges",
@@ -13681,11 +13657,35 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "IC-Automotive Brake Systems",
+      "assigned": "ASE A5 — Brakes",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IC-Automotive Electrical/Electronics II",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "IC-Automotive Suspension, Steering and Alignment Systems",
       "assigned": "Automotive Suspension, Steering and Alignment Systems",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-08T00:04:29.151474+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "IC-Engine Performance I",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -16497,70 +16497,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Noncredit for AUTO A2",
-      "assigned": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:51.042885+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A3",
-      "assigned": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:27.603+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A4",
-      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A5",
-      "assigned": "Automotive Technology (ASE A5 Brakes)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A6",
-      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A7",
-      "assigned": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:38:05.208197+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A8",
-      "assigned": "Automotive Technology (ASE A8 Engine Performance)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:07.319531+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO A9",
-      "assigned": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T18:53:10.017818+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "Noncredit for AUTO INT",
       "assigned": "Automotive Technology",
       "issuer": "California Community Colleges",
@@ -16574,22 +16510,6 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
       "reviewed_at": "2026-10-31T16:38:33.090818+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO L1",
-      "assigned": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:38:47.177277+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Noncredit for AUTO L3",
-      "assigned": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:59:27.249684+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -19145,22 +19065,6 @@
       "why": "already classified to the same target"
     },
     {
-      "raw": "Suspension and Steering",
-      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
-      "why": "already classified to the same target"
-    },
-    {
-      "raw": "Suspension and Steering Systems",
-      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
-      "why": "already classified to the same target"
-    },
-    {
       "raw": "TECTHTR 342 - Technical Stage Production",
       "assigned": "Technical Stage Production",
       "issuer": "California Community Colleges",
@@ -19483,329 +19387,89 @@
   ],
   "supersede": [
     {
-      "raw": "Auto 617 Completion",
-      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "raw": "Basic Automotive Air Conditioning Systems",
+      "assigned": "Heating and Air Conditioning (ASE A7 standards)",
       "issuer": "",
       "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.634546+00:00",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
       "spellings": [
-        "Auto 617 Completion"
+        "Basic Automotive Air Conditioning Systems"
       ],
       "disagreeing": [
-        "Auto 617 Completion"
+        "Basic Automotive Air Conditioning Systems"
       ],
       "displaced": [
-        "Automotive Air Conditioner"
+        "ASE A7 — Heating and Air Conditioning"
+      ]
+    },
+    {
+      "raw": "Brakes",
+      "assigned": "Brakes (ASE A5 standards)",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+      "spellings": [
+        "Brakes"
+      ],
+      "disagreeing": [
+        "Brakes"
+      ],
+      "displaced": [
+        "ASE A5 — Brakes"
+      ]
+    },
+    {
+      "raw": "Engine Performance",
+      "assigned": "Engine Performance (ASE A8 standards)",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+      "spellings": [
+        "Engine Performance"
+      ],
+      "disagreeing": [
+        "Engine Performance"
+      ],
+      "displaced": [
+        "ASE A8 — Engine Performance"
+      ]
+    },
+    {
+      "raw": "Engine Performance I AUTO 018 Cx",
+      "assigned": "Engine Performance (ASE A8 standards)",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+      "spellings": [
+        "Engine Performance I AUTO 018 Cx"
+      ],
+      "disagreeing": [
+        "Engine Performance I AUTO 018 Cx"
+      ],
+      "displaced": [
+        "ASE A8 — Engine Performance"
+      ]
+    },
+    {
+      "raw": "Engine Performance II AUTO 029 Cx",
+      "assigned": "Engine Performance (ASE A8 standards)",
+      "issuer": "",
+      "reviewed_by": "cer-s638@bot",
+      "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+      "spellings": [
+        "Engine Performance II AUTO 029 Cx"
+      ],
+      "disagreeing": [
+        "Engine Performance II AUTO 029 Cx"
+      ],
+      "displaced": [
+        "ASE A8 — Engine Performance"
       ]
     }
   ],
-  "revise": [
-    {
-      "raw": "Automotive Service Excellence MIL3 - Drive Train",
-      "assigned": "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "Automotive Service Excellence MIL3 - Drive Train"
-      ],
-      "disagreeing": [
-        "Automotive Service Excellence MIL3 - Drive Train"
-      ],
-      "displaced": [
-        "Automotive Braking Systems"
-      ],
-      "supersedes": "Automotive Braking Systems"
-    },
-    {
-      "raw": "Automotive Service Excellence MIL4 - Chassis",
-      "assigned": "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "Automotive Service Excellence MIL4 - Chassis"
-      ],
-      "disagreeing": [
-        "Automotive Service Excellence MIL4 - Chassis"
-      ],
-      "displaced": [
-        "Automotive Braking Systems"
-      ],
-      "supersedes": "Automotive Braking Systems"
-    },
-    {
-      "raw": "Automotive Service Excellence MIL6 - Electrical/Electronic Systems",
-      "assigned": "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "Automotive Service Excellence MIL6 - Electrical/Electronic Systems"
-      ],
-      "disagreeing": [
-        "Automotive Service Excellence MIL6 - Electrical/Electronic Systems"
-      ],
-      "displaced": [
-        "Advanced Electrical and Electronic Systems"
-      ],
-      "supersedes": "Advanced Electrical and Electronic Systems"
-    },
-    {
-      "raw": "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning",
-      "assigned": "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning"
-      ],
-      "disagreeing": [
-        "Automotive Service Excellence MIL7 - Heating, Ventilation & Air Conditioning"
-      ],
-      "displaced": [
-        "Heating and Air Conditioning"
-      ],
-      "supersedes": "Heating and Air Conditioning"
-    },
-    {
-      "raw": "IC- Automotive Electrical/Electronics I",
-      "assigned": "ASE A6 — Electrical/Electronic Systems",
-      "issuer": "",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
-      "spellings": [
-        "IC- Automotive Electrical/Electronics I"
-      ],
-      "disagreeing": [
-        "IC- Automotive Electrical/Electronics I"
-      ],
-      "displaced": [
-        "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)"
-      ],
-      "supersedes": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)"
-    },
-    {
-      "raw": "IC- Engine Performance II",
-      "assigned": "ASE A8 — Engine Performance",
-      "issuer": "",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
-      "spellings": [
-        "IC- Engine Performance II"
-      ],
-      "disagreeing": [
-        "IC- Engine Performance II"
-      ],
-      "displaced": [
-        "Engine Performance 2 (ASE A8 Engine Performance)"
-      ],
-      "supersedes": "Engine Performance 2 (ASE A8 Engine Performance)"
-    },
-    {
-      "raw": "IC-Automotive Brake Systems",
-      "assigned": "ASE A5 — Brakes",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "IC-Automotive Brake Systems"
-      ],
-      "disagreeing": [
-        "IC-Automotive Brake Systems"
-      ],
-      "displaced": [
-        "Automotive Technology (ASE A5 Brakes)"
-      ],
-      "supersedes": "Automotive Technology (ASE A5 Brakes)"
-    },
-    {
-      "raw": "IC-Automotive Electrical/Electronics II",
-      "assigned": "ASE A6 — Electrical/Electronic Systems",
-      "issuer": "",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:26:13.659848+00:00",
-      "spellings": [
-        "IC-Automotive Electrical/Electronics II"
-      ],
-      "disagreeing": [
-        "IC-Automotive Electrical/Electronics II"
-      ],
-      "displaced": [
-        "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"
-      ],
-      "supersedes": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)"
-    },
-    {
-      "raw": "IC-Engine Performance I",
-      "assigned": "ASE A8 — Engine Performance",
-      "issuer": "",
-      "reviewed_by": "cer-s638@bot",
-      "reviewed_at": "2026-11-11T22:13:10.693057+00:00",
-      "spellings": [
-        "IC-Engine Performance I"
-      ],
-      "disagreeing": [
-        "IC-Engine Performance I"
-      ],
-      "displaced": [
-        "Engine Performance 1 (ASE A8 Engine Performance)"
-      ],
-      "supersedes": "Engine Performance 1 (ASE A8 Engine Performance)"
-    }
-  ],
+  "revise": [],
   "credential_moves": [],
-  "credential_retires": [
-    {
-      "title": "Advanced Electrical and Electronic Systems",
-      "records": [
-        {
-          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-31",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-10-31T16:26:28.859578+00:00",
-          "reviewed_by": "slee@cccco.edu"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)"
-      ]
-    },
-    {
-      "title": "Automotive Braking Systems",
-      "records": [
-        {
-          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-31",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-10-31T16:26:26.340646+00:00",
-          "reviewed_by": "slee@cccco.edu"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
-        "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)"
-      ]
-    },
-    {
-      "title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
-      "records": [
-        {
-          "issuing_agency": "California Community Colleges",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-18",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-07-08T00:04:28.796211+00:00",
-          "reviewed_by": "map@rccd.edu",
-          "_renamed_from": "Automotive Electrical/Electronics I"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "ASE A6 — Electrical/Electronic Systems"
-      ]
-    },
-    {
-      "title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
-      "records": [
-        {
-          "issuing_agency": "California Community Colleges",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-18",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-07-08T00:04:29.103869+00:00",
-          "reviewed_by": "map@rccd.edu",
-          "_renamed_from": "Automotive Electrical/Electronics II"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "ASE A6 — Electrical/Electronic Systems"
-      ]
-    },
-    {
-      "title": "Engine Performance 1 (ASE A8 Engine Performance)",
-      "records": [
-        {
-          "issuing_agency": "California Community Colleges",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-18",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-07-08T00:04:29.194398+00:00",
-          "reviewed_by": "map@rccd.edu",
-          "_renamed_from": "Engine Performance I"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "ASE A8 — Engine Performance"
-      ]
-    },
-    {
-      "title": "Engine Performance 2 (ASE A8 Engine Performance)",
-      "records": [
-        {
-          "issuing_agency": "California Community Colleges",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-18",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-07-08T00:04:28.838412+00:00",
-          "reviewed_by": "map@rccd.edu",
-          "_renamed_from": "Engine Performance II"
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "ASE A8 — Engine Performance"
-      ]
-    },
-    {
-      "title": "Heating and Air Conditioning",
-      "records": [
-        {
-          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-10-31",
-          "classified_by": "curator (CER unclassified-triage)",
-          "reviewed_at": "2026-10-31T16:26:29.9207+00:00",
-          "reviewed_by": "slee@cccco.edu"
-        },
-        {
-          "issuing_agency": "California Community College Chancellor's Office",
-          "training_agency": null,
-          "confidence_issuer": 1.0,
-          "confidence_trainer": 0.9,
-          "classified_at": "2026-11-11",
-          "classified_by": "curator (CER issuing-agency override)",
-          "reviewed_at": "2026-11-11T15:47:58.805608+00:00",
-          "reviewed_by": "slee@cccco.edu",
-          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
-        }
-      ],
-      "panel_rows_left": [],
-      "to": [
-        "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)"
-      ]
-    }
-  ],
+  "credential_retires": [],
   "stale": [
     {
       "raw": "ADM JUS 067",
@@ -19848,6 +19512,14 @@
       "why": "KB holds a newer curator decision: 'AP: German Language & Culture' -> 'AP German Language and Culture' (2026-06-04)"
     },
     {
+      "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "why": "KB holds a newer curator decision: 'AUTO 61A-Automotive Brake Systems-Credit by Exam' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:52:59.978032+00:00)"
+    },
+    {
       "raw": "AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam",
       "assigned": "Wheel Alignment, Chassis Dynamics, and ADAS",
       "issuer": "",
@@ -19856,12 +19528,68 @@
       "why": "KB holds a newer curator decision: 'AUTO 62B: Wheel Alignment, Chassis Dynamics, ADAS - Credit By Exam' -> 'Wheel Alignment, Chassis Dynamics, ADAS' (2026-10-18)"
     },
     {
+      "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+      "why": "KB holds a newer curator decision: 'AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics' -> 'Electrical/Electronic Systems (ASE A6 standards)' (2026-10-31T18:52:38.202178+00:00)"
+    },
+    {
+      "raw": "AUTOTEC-15: Auto Electricity and Electronics",
+      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+      "why": "KB holds a newer curator decision: 'AUTOTEC-15: Auto Electricity and Electronics' -> 'Electrical/Electronic Systems (ASE A6 standards)' (2026-10-31T18:52:38.202178+00:00)"
+    },
+    {
       "raw": "Advanced Metal Framing",
       "assigned": "Advanced Metal Framing",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
       "why": "KB holds a newer curator decision: 'Advanced Metal Framing' -> 'Metal Framing Advanced' (2026-06-02T18:25:47Z)"
+    },
+    {
+      "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
+      "assigned": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:51.410312+00:00",
+      "why": "KB holds a newer curator decision: 'Automotive Air Conditioning - Credit by Exam (ATEC 81\\xa0)' -> 'Heating and Air Conditioning (ASE A7 standards)' (2026-10-31T18:52:51.410312+00:00)"
+    },
+    {
+      "raw": "Automotive Brake Systems",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "why": "KB holds a newer curator decision: 'Automotive Brake Systems' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:52:59.978032+00:00)"
+    },
+    {
+      "raw": "Automotive Brake Systems AUTO 036 Cx",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "why": "KB holds a newer curator decision: 'Automotive Brake Systems AUTO 036 Cx' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:52:59.978032+00:00)"
+    },
+    {
+      "raw": "Automotive Service Excellence (ASE) A4 and A5",
+      "assigned": "ASE Bundle — A4, A5",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+      "why": "KB holds a newer curator decision: 'Automotive Service Excellence (ASE) A4 and A5' -> 'ASE Certificate Bundles: A4 + A5' (2026-10-31T14:01:01.108182+00:00)"
+    },
+    {
+      "raw": "Brakes - Credit by Exam (ATEC 14 )",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:54:58.953988+00:00",
+      "why": "KB holds a newer curator decision: 'Brakes - Credit by Exam (ATEC 14\\xa0)' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:54:58.953988+00:00)"
     },
     {
       "raw": "CLEP French (max of 10 units awarded) Level II",
@@ -20392,6 +20120,14 @@
       "why": "KB holds a newer curator decision: 'Credit by Exam - WATER 140' -> 'Water Distribution Operator 1' (2026-07-07T20:44:36.394656+00:00)"
     },
     {
+      "raw": "Credit by Exam AUTO 106 Automotive Brake System",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:52.433133+00:00",
+      "why": "KB holds a newer curator decision: 'Credit by Exam AUTO 106 Automotive Brake System' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:52:52.433133+00:00)"
+    },
+    {
       "raw": "Credit by Exam MATH 071 Calculus I With Analytic Geometry",
       "assigned": "Calculus I With Analytic Geometry",
       "issuer": "California Community Colleges",
@@ -20430,6 +20166,14 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T20:44:38.701781+00:00",
       "why": "KB holds a newer curator decision: 'DRAFT-50: Architectural Design I' -> 'Architectural Design 1' (2026-07-07T20:44:38.701781+00:00)"
+    },
+    {
+      "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
+      "assigned": "Engine Performance (ASE A8 Engine Performance)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:55:02.371422+00:00",
+      "why": "KB holds a newer curator decision: 'Engine Performance - Credit by Exam (ATEC 23\\xa0)' -> 'Engine Performance (ASE A8 standards)' (2026-10-31T18:55:02.371422+00:00)"
     },
     {
       "raw": "FTECH 323X Fire Service In-Service Training/Command & Control - Internship/Apprenticeship",
@@ -20480,12 +20224,108 @@
       "why": "KB holds a newer curator decision: 'MUSIC 661 - Jazz and Popular Music Guitar I' -> 'Jazz and Popular Music Guitar 1' (2026-07-07T18:57:48.425393+00:00)"
     },
     {
+      "raw": "Noncredit for AUTO A2",
+      "assigned": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:51.042885+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A2' -> 'Automatic Transmission/Transaxle (ASE A2 standards)' (2026-10-31T18:52:51.042885+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO A3",
+      "assigned": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:27.603+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A3' -> 'Manual Drive Train and Axles (ASE A3 standards)' (2026-11-02)"
+    },
+    {
+      "raw": "Noncredit for AUTO A4",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A4' -> 'Suspension and Steering (ASE A4 standards)' (2026-11-02)"
+    },
+    {
+      "raw": "Noncredit for AUTO A5",
+      "assigned": "Automotive Technology (ASE A5 Brakes)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A5' -> 'Brakes (ASE A5 standards)' (2026-10-31T18:52:59.978032+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO A6",
+      "assigned": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A6' -> 'Electrical/Electronic Systems (ASE A6 standards)' (2026-10-31T18:53:02.183869+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO A7",
+      "assigned": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T16:38:05.208197+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A7' -> 'Heating and Air Conditioning (ASE A7 standards)' (2026-10-31T16:38:05.208197+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO A8",
+      "assigned": "Automotive Technology (ASE A8 Engine Performance)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:53:07.319531+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A8' -> 'Engine Performance (ASE A8 standards)' (2026-10-31T18:53:07.319531+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO A9",
+      "assigned": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:53:10.017818+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO A9' -> 'Light Vehicle Diesel Engines (ASE A9 standards)' (2026-10-31T18:53:10.017818+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO L1",
+      "assigned": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T16:38:47.177277+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO L1' -> 'Advanced Engine Performance Specialist (ASE L1 standards)' (2026-10-31T16:38:47.177277+00:00)"
+    },
+    {
+      "raw": "Noncredit for AUTO L3",
+      "assigned": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T16:59:27.249684+00:00",
+      "why": "KB holds a newer curator decision: 'Noncredit for AUTO L3' -> 'Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)' (2026-10-31T16:59:27.249684+00:00)"
+    },
+    {
       "raw": "Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory",
       "assigned": "DC and AC Circuit Analysis and Laboratory",
       "issuer": "",
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-03T17:28:52.076094+00:00",
       "why": "KB holds a newer curator decision: 'Portfolio Review - Direct and Alternating Current Circuit Analysis and Laboratory' -> 'DC and AC Circuit Analysis' (2026-06-03T17:28:52.076094+00:00)"
+    },
+    {
+      "raw": "Suspension and Steering",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "why": "KB holds a newer curator decision: 'Suspension and Steering' -> 'Suspension and Steering (ASE A4 standards)' (2026-11-02)"
+    },
+    {
+      "raw": "Suspension and Steering Systems",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "why": "KB holds a newer curator decision: 'Suspension and Steering Systems' -> 'Suspension and Steering (ASE A4 standards)' (2026-11-02)"
     },
     {
       "raw": "THEATER 280 - Musical Theater Workshop",
@@ -20512,18 +20352,66 @@
   "credential_prunes": [],
   "articulation_ripples": [
     {
-      "idx": 713,
-      "raw": "Auto 617 Completion",
-      "has": "Automotive Air Conditioner",
-      "want": "ASE A7 — Heating and Air Conditioning"
+      "idx": 627,
+      "raw": "Engine Performance I AUTO 018 Cx",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 629,
+      "raw": "Engine Performance II AUTO 029 Cx",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 650,
+      "raw": "Brakes",
+      "has": "ASE A5 — Brakes",
+      "want": "Brakes (ASE A5 standards)"
+    },
+    {
+      "idx": 787,
+      "raw": "Engine Performance",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 837,
+      "raw": "Basic Automotive Air Conditioning Systems",
+      "has": "ASE A7 — Heating and Air Conditioning",
+      "want": "Heating and Air Conditioning (ASE A7 standards)"
     }
   ],
   "articulation_ripples_resolved": [
     {
-      "idx": 713,
-      "raw": "Auto 617 Completion",
-      "has": "Automotive Air Conditioner",
-      "want": "ASE A7 — Heating and Air Conditioning"
+      "idx": 627,
+      "raw": "Engine Performance I AUTO 018 Cx",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 629,
+      "raw": "Engine Performance II AUTO 029 Cx",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 650,
+      "raw": "Brakes",
+      "has": "ASE A5 — Brakes",
+      "want": "Brakes (ASE A5 standards)"
+    },
+    {
+      "idx": 787,
+      "raw": "Engine Performance",
+      "has": "ASE A8 — Engine Performance",
+      "want": "Engine Performance (ASE A8 standards)"
+    },
+    {
+      "idx": 837,
+      "raw": "Basic Automotive Air Conditioning Systems",
+      "has": "ASE A7 — Heating and Air Conditioning",
+      "want": "Heating and Air Conditioning (ASE A7 standards)"
     }
   ],
   "articulation_ripples_blocking": []

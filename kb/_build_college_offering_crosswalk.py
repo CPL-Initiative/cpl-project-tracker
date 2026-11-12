@@ -145,12 +145,17 @@ def build_rows(college, offering_map, partner_run):
         sys.exit("ERROR: %d occupation(s) have no offering ruling: %s"
                  % (len(missing), ", ".join(missing[:8])))
 
+    # A ruling curated before an applied rename names the old title: read it through the renames
+    # (kb/credential_aliases.py resolver), the same read kb/_build_partner_crosswalk.py makes.
+    sys.path.insert(0, os.path.join(ROOT, "kb"))
+    import credential_aliases
+    now = credential_aliases.resolver(ROOT)
     rows = []
     for key, meta in status_by_key.items():
         rul = rulings[key]
         creds = []
         for c in occ_map[key]["credentials"]:
-            t = c["title"]
+            t = now(c["title"])
             i = info.get(t)
             if not i:
                 creds.append(dict(title=t, tier=c["tier"], state="not in MAP index",

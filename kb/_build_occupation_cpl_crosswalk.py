@@ -140,7 +140,11 @@ def make_domain(DM, OM):
     which is what the false-positive lists are for.
     """
     SC = jload("kb/statewide_exhibit_categories.json")
-    TITLES = SC["titles"]
+    # The category file is keyed by the title its seed saw; a title renamed since keeps its category under the
+    # title the rename made (kb/credential_aliases.py resolver). A key that is itself a title keeps its own entry.
+    sys.path.insert(0, os.path.join(ROOT, "kb"))
+    import credential_aliases
+    TITLES = credential_aliases.by_current_title(SC["titles"], ROOT)
     PATTERNS = [(re.compile(pat, re.I), cat) for pat, cat in SC["patterns"]]
 
     S = DM["scoping"]
