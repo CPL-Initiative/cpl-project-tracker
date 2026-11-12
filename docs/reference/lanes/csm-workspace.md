@@ -162,7 +162,8 @@ immediately obvious what has happened yet or how each of those lines tracks with
   and address. What is due and when is unchanged; the college stays out of *Needs you*.
 - **The guide (2026-11-12):** *Funding Follow-up Dashboard Guide*, step by step with screenshots on sample data, one
   section for each stage a college can be in (https://claude.ai/artifact/XqJpfTdCWPhAkGFLA3gsBq; Library record
-  `funding-follow-up-dashboard-guide`, a team draft; source and `capture.js` in
+  `funding-follow-up-dashboard-guide`, a team draft, applied by run 43275652355 and read back live 18:07Z, receipt
+  `kb/receipts/migration_library_funding_followup_guide_43275652355.json`; source and `capture.js` in
   `CPLBrain/04-projects/cpl-initiative/funding-follow-up-guide/`). Redraw the screenshots when the dashboard changes.
   Writing it found two things: the coordinator sentence in *Funding conditions explained* named parts the live label
   no longer has (reworded to point at the label), and a college whose email is due appears under *Ready to send* and
