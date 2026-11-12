@@ -1,0 +1,386 @@
+{
+  "alias_map_snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-11-12-3/alias_map.json",
+  "renames_processed": 7,
+  "merges_processed": 0,
+  "_state": "filed",
+  "_applied_at": "2026-11-12T05:48:04Z",
+  "ok": 19,
+  "fail": 0,
+  "no_op": 0,
+  "carried": 0,
+  "log": [
+    {
+      "old_ut": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "new_ut": "Automatic Transmission/Transaxle (ASE A2 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Automatic Transmission/Transaxle (ASE A2 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "new_ut": "Automatic Transmission/Transaxle (ASE A2 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Automatic Transmission/Transaxle (ASE A2 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "new_ut": "Automatic Transmission/Transaxle (ASE A2 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Automatic Transmission/Transaxle (ASE A2 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "new_ut": "Electrical/Electronic Systems (ASE A6 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Electrical/Electronic Systems (ASE A6 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "new_ut": "Electrical/Electronic Systems (ASE A6 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "courses, one college",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Electrical/Electronic Systems (ASE A6 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "new_ut": "Electrical/Electronic Systems (ASE A6 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Electrical/Electronic Systems (ASE A6 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "new_ut": "Light Vehicle Diesel Engines (ASE A9 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Light Vehicle Diesel Engines (ASE A9 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "new_ut": "Light Vehicle Diesel Engines (ASE A9 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Light Vehicle Diesel Engines (ASE A9 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "new_ut": "Light Vehicle Diesel Engines (ASE A9 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Light Vehicle Diesel Engines (ASE A9 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "new_ut": "Advanced Engine Performance Specialist (ASE L1 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Engine Performance Specialist (ASE L1 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "new_ut": "Advanced Engine Performance Specialist (ASE L1 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Advanced Engine Performance Specialist (ASE L1 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "new_ut": "Advanced Engine Performance Specialist (ASE L1 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Advanced Engine Performance Specialist (ASE L1 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "new_ut": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "new_ut": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "new_ut": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "new_ut": "Manual Drive Train and Axles (ASE A3 standards)",
+      "kind": "rename",
+      "field": "subj_override",
+      "before_row": {
+        "value": "AUTO",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Manual Drive Train and Axles (ASE A3 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "new_ut": "Manual Drive Train and Axles (ASE A3 standards)",
+      "kind": "rename",
+      "field": "subj_source",
+      "before_row": {
+        "value": "issuer family",
+        "reviewer_email": "exhibit-subject-s638@bot",
+        "reviewed_at": "2026-11-11T21:41:28.346947+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "old_course_id": "_CREDENTIAL_REVIEW::Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "new_course_id": "_CREDENTIAL_REVIEW::Manual Drive Train and Axles (ASE A3 standards)",
+      "op": "patch",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "new_ut": "Manual Drive Train and Axles (ASE A3 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Manual Drive Train and Axles (ASE A3 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    },
+    {
+      "old_ut": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "new_ut": "Suspension and Steering (ASE A4 standards)",
+      "kind": "rename",
+      "field": "unified_title_override",
+      "before_row": {
+        "value": "Suspension and Steering (ASE A4 standards)",
+        "reviewer_email": "slee@cccco.edu",
+        "reviewed_at": "2026-11-11T15:26:54.029+00:00",
+        "validated_at": null,
+        "validated_by": null
+      },
+      "course_id": "_CREDENTIAL_REVIEW::Suspension and Steering (ASE A4 Suspension and Steering)",
+      "op": "delete",
+      "filed": "landed",
+      "status": "ok",
+      "rows_affected": 1,
+      "echo_status": "ok"
+    }
+  ]
+}

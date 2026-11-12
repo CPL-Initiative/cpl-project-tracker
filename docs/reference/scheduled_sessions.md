@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-11-05
+updated: 2026-11-12
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -45,8 +45,8 @@ is his standing preference there too.
 
 0. **The dashboard run, first, on the night's first firing** (Sam, 2026-10-30, S527: "go on 1"). GitHub
    creates this repo's scheduled runs 5 to 7 hours late (every day since at least 2026-09-20, before the
-   routine existed), so the first firing of the night (05:12 UTC) dispatches `daily-dashboard.yml` on
-   `main` (`actions_run_trigger`, `run_workflow`) unless `list_workflow_runs` shows a successful run
+   routine existed), so the first firing of the night (10:12 PM Pacific: 06:12 UTC in standard time, 05:12 UTC in
+   daylight time) dispatches `daily-dashboard.yml` on `main` (`actions_run_trigger`, `run_workflow`) unless `list_workflow_runs` shows a successful run
    created that UTC day. It does this before step 1, even when it then stands down for another session.
    The workflow's `gate` job makes each cron stand down once the day has a good run, so the crons are
    backstops. The run skips nothing else and needs no reply.

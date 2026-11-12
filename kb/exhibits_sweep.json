@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-11T17:45:23Z",
+ "generated_at": "2026-11-12T05:58:58Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -53,15 +53,306 @@
   }
  ],
  "counts": {
-  "ase": 1,
+  "ase": 11,
   "numerals": 1,
   "language": 0,
   "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 2,
+ "local_titles": 23,
  "cards": [
+  {
+   "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
+   "proposed": "Advanced Engine Performance Specialist (ASE L1)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE L1's official name is Advanced Engine Performance Specialist"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO L1",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "32e846a953d2",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
+   "proposed": "Automatic Transmission/Transaxle (ASE A2)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A2's official name is Automatic Transmission/Transaxle"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A2",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "b4d89140a157",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Brakes (ASE A5 standards)",
+   "proposed": "Brakes (ASE A5)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A5's official name is Brakes"
+   ],
+   "locals": [
+    {
+     "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "Automotive Brake Systems",
+     "colleges": [
+      "San Diego Miramar College"
+     ],
+     "course": "AUTO 176G",
+     "credit": "4 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "Automotive Brake Systems AUTO 036 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "AUTO 36",
+     "credit": "4 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "Brakes - Credit by Exam (ATEC 14 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 14",
+     "credit": "4 hours in Brakes"
+    },
+    {
+     "raw": "Credit by Exam AUTO 106 Automotive Brake System",
+     "colleges": [
+      "Evergreen Valley College"
+     ],
+     "course": "AUTO 106",
+     "credit": "2 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "Noncredit for AUTO A5",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "5b3807a15d88",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 6,
+   "moves_all": true
+  },
+  {
+   "current": "Electrical/Electronic Systems (ASE A6 standards)",
+   "proposed": "Electrical/Electronic Systems (ASE A6)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A6's official name is Electrical/Electronic Systems"
+   ],
+   "locals": [
+    {
+     "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "AUTOTEC-15: Auto Electricity and Electronics",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "Noncredit for AUTO A6",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "6205073ae16e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "Engine Performance (ASE A8 standards)",
+   "proposed": "Engine Performance (ASE A8)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A8's official name is Engine Performance"
+   ],
+   "locals": [
+    {
+     "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 23",
+     "credit": "4 hours in Engine Performance"
+    },
+    {
+     "raw": "Noncredit for AUTO A8",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "54f58e3cd824",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Heating and Air Conditioning (ASE A7 standards)",
+   "proposed": "Heating and Air Conditioning (ASE A7)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A7's official name is Heating and Air Conditioning"
+   ],
+   "locals": [
+    {
+     "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 81",
+     "credit": "3 hours in Automotive Air Conditioning"
+    },
+    {
+     "raw": "Noncredit for AUTO A7",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "b0012636666d",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+   "proposed": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE L3's official name is Light Duty Hybrid/Electric Vehicle Specialist"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO L3",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "166a7c372e22",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Light Vehicle Diesel Engines (ASE A9 standards)",
+   "proposed": "Light Vehicle Diesel Engines (ASE A9)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A9's official name is Light Vehicle Diesel Engines"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A9",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "fb969746ce77",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Manual Drive Train and Axles (ASE A3 standards)",
+   "proposed": "Manual Drive Train and Axles (ASE A3)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A3's official name is Manual Drive Train and Axles"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A3",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "f9f986a9f33c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
   {
    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
    "proposed": "Medium/Heavy Truck Parts Specialist (ASE P1)",
@@ -85,6 +376,47 @@
    "proposed_locals": 0,
    "proposed_issuer": "",
    "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Suspension and Steering (ASE A4 standards)",
+   "proposed": "Suspension and Steering (ASE A4)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A4's official name is Suspension and Steering"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A4",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "Suspension and Steering",
+     "colleges": [
+      "San Diego Miramar College"
+     ],
+     "course": "AUTO 178G",
+     "credit": "4 hours in Suspension, Steering and Handling"
+    },
+    {
+     "raw": "Suspension and Steering Systems",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AUTOTEC 418",
+     "credit": "4 hours in Suspension and Steering Systems"
+    }
+   ],
+   "id": "8d34a00cb119",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
    "moves_all": true
   },
   {

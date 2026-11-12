@@ -1,0 +1,301 @@
+{
+ "_about": "A frozen plan of credential renames and merges ruled in session, read by kb/ruled_renames.py in the rename dry run and the apply (cred-rename-apply.yml, only_plan=standards-2-2026-11-12). Built by kb/_build_standards_rename_plan.py from committed files. Each entry's slot already holds Sam's own fold into the same title; the plan marks it as this scope's and changes no row.",
+ "plan_id": "standards-2-2026-11-12",
+ "ruling": "Sam Lee's saved folds of 2026-11-11 15:26:54Z in the rename batch (unified_title_override into each \"(ASE ... standards)\" title), read under ruling A's principle (cpl_memory sam-ic-exhibits-go-to-cert-title-2026-11-11): only college-exam titles fold into the standards title; an industry-certification exhibit goes to the cert title",
+ "decided_by": "Sam Lee's saved folds (rename batch, 2026-11-11); scoped and carried out by the Session 640 conductor",
+ "decided_at": "2026-11-11T15:26:54Z",
+ "entries": [
+  {
+   "old": "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)",
+   "new": "Advanced Engine Performance Specialist (ASE L1 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Automotive Technology (ASE L1 Advanced Engine Performance Specialist)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Advanced Engine Performance Specialist (ASE L1 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO L1"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO L1",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+   "new": "Automatic Transmission/Transaxle (ASE A2 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Automotive Technology (ASE A2 Automatic Transmission/Transaxle)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Automatic Transmission/Transaxle (ASE A2 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO A2"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO A2",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+   "new": "Electrical/Electronic Systems (ASE A6 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Automotive Technology (ASE A6 Electrical/Electronic Systems)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Electrical/Electronic Systems (ASE A6 standards)"
+    },
+    "exhibits": [
+     "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+     "AUTOTEC-15: Auto Electricity and Electronics",
+     "Noncredit for AUTO A6"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+      "id": "MAPCXH-SHSA-1-001",
+      "type": "credit by exam",
+      "from": "the MAP id, in kb/exhibits_adoption.json"
+     },
+     {
+      "exhibit": "AUTOTEC-15: Auto Electricity and Electronics",
+      "id": "MAPCXH-A2-1-001",
+      "type": "credit by exam",
+      "from": "the MAP id, in kb/exhibits_adoption.json"
+     },
+     {
+      "exhibit": "Noncredit for AUTO A6",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)",
+   "new": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO L3"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO L3",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+   "new": "Light Vehicle Diesel Engines (ASE A9 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Automotive Technology (ASE A9 Light Vehicle Diesel Engines)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Light Vehicle Diesel Engines (ASE A9 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO A9"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO A9",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+   "new": "Manual Drive Train and Axles (ASE A3 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Manual Drive Train and Axles (ASE A3 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO A3"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO A3",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     }
+    ]
+   }
+  },
+  {
+   "old": "Suspension and Steering (ASE A4 Suspension and Steering)",
+   "new": "Suspension and Steering (ASE A4 standards)",
+   "kind": "rename",
+   "why": "creates the standards title; its exhibits are college exams and noncredit (ruling A)",
+   "evidence": {
+    "overlay": "kb/credential_review_overlay.json overrides['Suspension and Steering (ASE A4 Suspension and Steering)']",
+    "unified_title_override": {
+     "by": "slee@cccco.edu",
+     "at": "2026-11-11T15:26:54.029+00:00",
+     "value": "Suspension and Steering (ASE A4 standards)"
+    },
+    "exhibits": [
+     "Noncredit for AUTO A4",
+     "Suspension and Steering",
+     "Suspension and Steering Systems"
+    ],
+    "issuer": [
+     "California Community Colleges"
+    ],
+    "exhibit_types": [
+     {
+      "exhibit": "Noncredit for AUTO A4",
+      "id": null,
+      "type": "noncredit",
+      "from": "read from the title: no committed file carries a MAP id for this exhibit"
+     },
+     {
+      "exhibit": "Suspension and Steering",
+      "id": "MAPCBEN-SAS-1-001",
+      "type": "credit by exam",
+      "from": "the MAP id, in kb/unified_titles.json"
+     },
+     {
+      "exhibit": "Suspension and Steering Systems",
+      "id": "MAPCXS-SASS-1-001",
+      "type": "credit by exam",
+      "from": "the MAP id, in kb/unified_titles.json"
+     }
+    ]
+   }
+  }
+ ],
+ "left_out": [
+  {
+   "old": "Automotive Braking Systems",
+   "new": "Brakes (ASE A5 standards)",
+   "kind": "rename",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Automotive Technology (ASE A5 Brakes)",
+   "new": "Brakes (ASE A5 standards)",
+   "kind": "merge",
+   "why": "the A5, A7 and A8 standards folds are plan standards-2026-11-12's"
+  },
+  {
+   "old": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+   "new": "Electrical/Electronic Systems 1 (ASE A6 standards)",
+   "kind": "rename",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+   "new": "Electrical/Electronic Systems 2 (ASE A6 standards)",
+   "kind": "rename",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Automotive Technology (ASE A8 Engine Performance)",
+   "new": "Engine Performance (ASE A8 standards)",
+   "kind": "rename",
+   "why": "the A5, A7 and A8 standards folds are plan standards-2026-11-12's"
+  },
+  {
+   "old": "Engine Performance (ASE A8 Engine Performance)",
+   "new": "Engine Performance (ASE A8 standards)",
+   "kind": "merge",
+   "why": "the A5, A7 and A8 standards folds are plan standards-2026-11-12's"
+  },
+  {
+   "old": "Engine Performance 1 (ASE A8 Engine Performance)",
+   "new": "Engine Performance (ASE A8 standards)",
+   "kind": "merge",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Engine Performance 2 (ASE A8 Engine Performance)",
+   "new": "Engine Performance 2 (ASE A8 standards)",
+   "kind": "rename",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Automotive Air Conditioner",
+   "new": "Heating and Air Conditioning (ASE A7 standards)",
+   "kind": "rename",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  },
+  {
+   "old": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+   "new": "Heating and Air Conditioning (ASE A7 standards)",
+   "kind": "merge",
+   "why": "the A5, A7 and A8 standards folds are plan standards-2026-11-12's"
+  },
+  {
+   "old": "Heating and Air Conditioning",
+   "new": "Heating and Air Conditioning (ASE A7 standards)",
+   "kind": "merge",
+   "why": "held: the title holds no exhibit, so its saved rows stay in place and do nothing (kb/cer_decisions_out/2026-11-11-4 restored them; they must stay inert)"
+  }
+ ]
+}
