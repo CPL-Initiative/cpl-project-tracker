@@ -320,6 +320,53 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("West Valley's transfer degrees (S639; college page read 43138048261; the areas summed, Sam's count extended)")
+WV = "West Valley College"
+
+
+def _wv(cn):
+    with open(os.path.join(ROOT, "kb/program_requirements_college/west_valley/records/%s.json" % cn)) as fh:
+        return json.load(fh)
+
+
+# Sociology AA-T 30972 and Geography A.A. 07619, as the capture reads them (read 43138048261).
+wv_soc = ("Sociology\nAssociate in Arts Degree for Transfer\nStudents must complete the following requirements: 1. 60 "
+          "semester or 90 quarter CSU-transferable units. 2. the California General Education Transfer Curriculum "
+          "pattern (Cal-GETC). 3. a minimum of 18 semester or 27 quarter units in the major\nTotal Major Units: 19 units\n"
+          "CSU transferable elective courses are required when the major units plus transfer GE units total is less "
+          "than 60.")
+wv_geo = ("Geography\nAssociate in Arts Degree\nTotal Major Units: 22 units\nCompletion of WVC or Cal-GETC General "
+          "Education patterns. Students whose goal is to obtain a bachelor's degree should complete the Cal-GETC General "
+          "Education pattern.\nComplete additional degree-applicable units to meet the minimum 60-unit Associate Degree "
+          "requirements.")
+soc, geo, eco = _wv("30972"), _wv("07619"), _wv("33023")
+got, got_notes = R.reconcile(soc["record"], wv_soc, WV, soc["award"], steps=R.load_steps())
+check("a transfer degree naming Cal-GETC takes the 34 summed from the catalog's areas",
+      got["program"]["ge_units"] == {"min": 34, "max": 34}
+      and any("SUMMED FROM THE AREAS" in n["words"] for n in got_notes))
+check("the electives sentence makes the 60 a floor", got["program"].get("degree_total_minimum") is True)
+wv_closed = lambda f: [{"code": c["code"], "units": None} for b in f["record"]["blocks"] for c in b["courses"]]  # noqa: E731
+check("Sociology AA-T reads equal once both are set, and incomplete before",
+      S.score(got, wv_closed(soc), wv_soc, soc["award"])["arithmetic"]["pass"]
+      and not S.score(soc["record"], wv_closed(soc), wv_soc, soc["award"])["arithmetic"]["pass"])
+# Economics AA-T 33023: a 22-28 major with the 34 straddles the 60 (56-62); the floor meets it.
+eco_text = wv_soc.replace("Total Major Units: 19 units", "Total Major Units: 22-28 units")
+eco_got = R.reconcile(eco["record"], eco_text, WV, eco["award"], steps=R.load_steps())[0]
+check("Economics AA-T, straddling the 60, meets the floor",
+      S.score(eco_got, wv_closed(eco), eco_text, eco["award"])["arithmetic"]["pass"])
+check("a local A.A. naming 'WVC or Cal-GETC' takes neither",
+      R.reconcile(geo["record"], wv_geo, WV, geo["award"], steps=R.load_steps())[1] == []
+      and R.reconcile(geo["record"], wv_soc, WV, geo["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes neither",
+      R.reconcile(soc["record"], wv_soc, WV, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a transfer page without the electives sentence keeps its 60 exact",
+      not R.reconcile(soc["record"], wv_soc.split("CSU transferable elective")[0], WV, soc["award"],
+                      steps=R.load_steps())[0]["program"].get("degree_total_minimum"))
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(soc["record"]["program"], ge_units={"min": 37, "max": 39}),
+                   "blocks": soc["record"]["blocks"]}, wv_soc, WV, soc["award"],
+                  steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
