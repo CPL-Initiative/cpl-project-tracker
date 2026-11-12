@@ -3,10 +3,10 @@
  "stats": {
   "supabase_tables": 112,
   "rpcs": 63,
-  "edge_functions": 14,
+  "edge_functions": 15,
   "file_datasets": 884,
   "external_services": 195,
-  "consumers": 563,
+  "consumers": 564,
   "workflows": 68,
   "data_js_files": 71,
   "tabs": 41
@@ -216,6 +216,27 @@
       "budget-support/web/curator.html",
       "budget-support/web/new-letter.html"
      ]
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:library-publish-now": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 90,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/library-publish-now/index.ts",
+     "how": "source"
     }
    ],
    "main_committers": []
@@ -575,6 +596,13 @@
      "direction": "read",
      "how": "url",
      "line": 72
+    },
+    {
+     "id": "edgefn:library-publish-now",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 80
     },
     {
      "id": "edgefn:workplan-rebuild",
@@ -1072,6 +1100,13 @@
      "line": 22
     },
     {
+     "id": "edgefn:library-publish-now",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 35
+    },
+    {
      "id": "edgefn:library-revise-draft",
      "kind": "edgefn",
      "direction": "read",
@@ -1158,7 +1193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 91,
+     "line": 94,
      "tabs": [
       "library"
      ]
@@ -2957,7 +2992,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2152,
+     "line": 2258,
      "tabs": [
       "library"
      ]
@@ -3145,7 +3180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 97,
+     "line": 100,
      "tabs": [
       "library"
      ]
@@ -6410,7 +6445,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3442,
+     "line": 3548,
      "tabs": [
       "library"
      ]
@@ -9029,7 +9064,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2755,
+     "line": 2861,
      "tabs": [
       "library"
      ]
@@ -9045,7 +9080,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2145,
+     "line": 2251,
      "tabs": [
       "library"
      ]
@@ -20320,7 +20355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2373,
+     "line": 2479,
      "tabs": [
       "library"
      ]
@@ -22213,7 +22248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4071,
+     "line": 4178,
      "tabs": [
       "library"
      ]
@@ -26506,7 +26541,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 90,
+     "line": 93,
      "tabs": [
       "library"
      ]
@@ -28234,7 +28269,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1458,
+     "line": 1463,
      "tabs": [
       "library"
      ]
@@ -28256,7 +28291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 88,
+     "line": 91,
      "tabs": [
       "library"
      ]
@@ -28271,7 +28306,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 89,
+     "line": 92,
      "tabs": [
       "library"
      ]
@@ -28281,7 +28316,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1271,
+     "line": 1276,
      "tabs": [
       "library"
      ]
@@ -29821,7 +29856,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 105,
+     "line": 108,
      "tabs": [
       "library"
      ]

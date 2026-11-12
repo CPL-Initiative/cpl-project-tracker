@@ -85,6 +85,9 @@
   // revision of a public page into cpl_library_drafts; library-publish.yml publishes it
   // once someone presses Replace the public copy.
   var REVISE_DRAFT_URL = SUPABASE_URL + "/functions/v1/library-revise-draft";
+  // Publish now (Sam, in session, 2026-11-12: "would be nice to have a manual dispatch button in the library for things
+  // we need to push right away"): library-publish-now dispatches library-publish.yml on main for a signed-in reviewer.
+  var PUBLISH_NOW_URL = SUPABASE_URL + "/functions/v1/library-publish-now";
   var DRAFTS_URL = SUPABASE_URL + "/rest/v1/cpl_library_drafts";
   var PICS_URL = SUPABASE_URL + "/rest/v1/cpl_library_pictures";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
@@ -158,7 +161,9 @@
     // current cards you have can be the sidebar details like in the Commons"): commons_list.js draws it from LIST_SPEC;
     // ls is its state for the visit, engine the instance.
     // Last modified first, as the Cards are (Sam, 2026-11-05: "sort the items in the Library by modified date descending").
-    ls: { sort: [{ col: 5, dir: -1 }] }, engine: null, listLoading: false, listErr: null, boxOpen: false
+    ls: { sort: [{ col: 5, dir: -1 }] }, engine: null, listLoading: false, listErr: null, boxOpen: false,
+    // Publish now, per record, for the visit only: { busy, started, said, err, link }.
+    pubNow: {}
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -1431,13 +1436,13 @@
     } else if (rs === "approved") {
       line = esc((g.approved_by ? "Approved by " + g.approved_by + (g.approved_at ? ", " + stamp(g.approved_at) : "") : "Approved") +
         ". The next scheduled run puts it on its page (every three hours); then List publicly on its card.");
-      next.push(openDraftWord(r, false));
+      next.push(openDraftWord(r, false), publishNowWord(r));
     }
     var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands"' + (!rs || rs === "waiting" ? ' data-newdrop="' + esc(r.id) + '"' : "") + ">" +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra + picsBlock(r) + msg) + "</div>";
+      (box ? "" : extra + picsBlock(r) + publishNowSaid(r) + msg) + "</div>";
   }
   // A new piece's drafts count from 1: each earlier draft kept under regen.earlier adds one.
   function draftNumber(r) { var e = r.regen && r.regen.earlier; return (Array.isArray(e) ? e.length : 0) + 1; }
@@ -1463,6 +1468,107 @@
       });
     }, function () { sayOn(id, unreadWords(name, ext) + " Nothing was saved.", true); render(); })
       .catch(function (e) { sayOn(id, e.message, true); render(); });
+  }
+  // Publish now (Sam, in session, 2026-11-12): an approved draft waits for library-publish.yml's next run (every three
+  // hours, at :41). A signed-in reviewer can start that run at once: the page posts to the library-publish-now Edge
+  // Function with the reviewer's own session, and the function checks the reviewer and dispatches the workflow on main
+  // with a token the browser never holds. The page names no workflow and no ref; the function fixes both. The run
+  // publishes only drafts a person approved. Then the page follows the record's own fields for a few minutes and shows
+  // the public link once the record carries it. Nothing is stored: the state lasts the visit.
+  var PUB_POLL = { ms: 30000, max: 10 };
+  var NEXT_RUN = "The page still goes up at the next scheduled run (every three hours).";
+  // The card state the publish run picks up (scripts/library_publish.py, due()): a draft from the card, ready and approved.
+  function awaitsPublishRun(r) {
+    var g = r && r.regen;
+    return regenState(r) === "approved" && !!(g && g.draft_id && g.ready_at);
+  }
+  function publishNowWord(r) {
+    if (!awaitsPublishRun(r) || !reviewerToken()) return "";
+    var p = state.pubNow[r.id] || {};
+    return '<button type="button" class="lib-word" data-pubnow="' + esc(r.id) + '"' + (p.busy ? " disabled" : "") + ">" +
+      (p.busy ? "Starting the publish run" : "Publish now") + '<span class="lib-vh"> ' + esc(r.title) + "</span></button>";
+  }
+  function publishNowSaid(r) {
+    var p = state.pubNow[r.id];
+    if (!p || !p.said) return "";
+    return '<p class="lib-msg' + (p.err ? " err" : "") + '" role="status" aria-live="polite" data-pubnowsaid="' + esc(r.id) + '">' + esc(p.said) +
+      (p.link ? ' <a href="' + esc(p.link) + '" target="_blank" rel="noopener">' + esc(p.link) + "</a>" : "") + "</p>";
+  }
+  function publishNowRefusal(status, j) {
+    if (status === 429 || (j && j.reason === "too_soon")) {
+      return "A publish run started less than two minutes ago, so no second one was started. If the page is not up in a few minutes, press Publish now again. " + NEXT_RUN;
+    }
+    if (status === 401) return "The publish run did not start: only a signed-in reviewer can start it. Sign in again from About in the header. " + NEXT_RUN;
+    return "The publish run did not start" + (status ? " (the service answered " + status + ")" : "") + ". " + NEXT_RUN;
+  }
+  function redrawPublishNow(id) {
+    render();
+    var b = document.querySelector('[data-pubnow="' + id + '"]');
+    if (b && b.focus) b.focus(); else focusState(id);
+  }
+  function publishNow(id) {
+    var r = byId(id), p = state.pubNow[id];
+    if (!r || !awaitsPublishRun(r)) return Promise.resolve();
+    if (p && p.busy) return Promise.resolve();
+    if (p && p.started) {
+      p.err = false;
+      p.said = "The publish run has already started, so pressing again starts nothing. The page is up in about three minutes.";
+      redrawPublishNow(id);
+      return Promise.resolve();
+    }
+    p = state.pubNow[id] = { busy: true, said: "", err: false };
+    redrawPublishNow(id);
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()).catch(function () { return null; }) : Promise.resolve(null);
+    return ready.then(function () {
+      var tok = reviewerToken();
+      if (!tok) return { status: 401, j: {} };
+      return window.fetch(PUBLISH_NOW_URL, {
+        method: "POST",
+        headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + tok, "Content-Type": "application/json" },
+        body: "{}"
+      }).then(function (res) {
+        return res.json().catch(function () { return {}; }).then(function (j) { return { status: res.status, j: j || {} }; });
+      });
+    }).then(function (x) {
+      p.busy = false;
+      if (x.status === 200 && x.j.ok) {
+        p.started = Date.now();
+        p.said = x.j.already
+          ? "A publish run is already waiting, and it publishes this page too. The page is up in about three minutes."
+          : "The publish run has started. The page is up in about three minutes.";
+        followPublish(id, 0);
+      } else {
+        p.err = true; p.said = publishNowRefusal(x.status, x.j);
+      }
+      redrawPublishNow(id);
+    }, function () {
+      p.busy = false; p.err = true; p.said = "The publish run did not start: the network failed. " + NEXT_RUN;
+      redrawPublishNow(id);
+    });
+  }
+  // Follow the record's own fields until the run moves it (regen cleared, url set), then show its public link. A box or
+  // form open on the page is left as it is: the line shows at the next redraw.
+  function followPublish(id, n) {
+    setTimeout(function () {
+      var p = state.pubNow[id];
+      if (!p || !document.getElementById(ROOT_ID)) return;
+      window.fetch(TABLE_URL + "?id=eq." + encodeURIComponent(id) + "&select=id,url,regen,version,versions,status,home,file_type,made_on,updated_at",
+        { headers: headers() }).then(function (res) {
+        if (!res.ok) throw new Error("cpl_library answered " + res.status);
+        return res.json();
+      }).then(function (rows) {
+        var fresh = Array.isArray(rows) && rows[0], r = byId(id);
+        if (fresh && r) Object.assign(r, fresh);
+        if (r && !awaitsPublishRun(r) && r.url) {
+          p.said = "The page is up:"; p.link = r.url; p.err = false;
+        } else if (n + 1 < PUB_POLL.max) { followPublish(id, n + 1); return; }
+        else {
+          p.said = "The publish run has not moved the record yet; it may be waiting behind the daily build. The page goes up when it finishes, and the card shows it at your next visit.";
+        }
+        if (!state.cardBox && !state.edit && !state.form) render();
+      }).catch(function () { if (n + 1 < PUB_POLL.max) followPublish(id, n + 1); });
+    }, PUB_POLL.ms);
   }
   function stateBlock(r) {
     if (isNewPiece(r)) return newPieceBlock(r);
@@ -1496,13 +1602,13 @@
       extra = changedHtml(r);
     } else if (rs === "approved") {
       line = regenWords(r);
-      next.push(openDraftWord(r, false), word("data-keep", r.id, "Keep " + (publicVersion(r) ? "Version " + publicVersion(r) : "the public copy") + " instead"));
+      next.push(openDraftWord(r, false), publishNowWord(r), word("data-keep", r.id, "Keep " + (publicVersion(r) ? "Version " + publicVersion(r) : "the public copy") + " instead"));
     }
     var msg = state.msgFor === r.id && state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "";
     return '<div class="lib-state" id="lib-st-' + esc(r.id) + '" tabindex="-1" aria-label="Where ' + esc(r.title) + ' stands">' +
       (line ? '<p class="now">' + line + "</p>" : "") + (why && !box ? '<p class="why">' + esc(why) + "</p>" : "") +
       (box ? cardBoxHtml(r, box) : (next.length ? '<div class="lib-next">' + next.join("") + "</div>" : "")) +
-      (box ? "" : extra + picsBlock(r) + msg) + requestBox(r) + "</div>";
+      (box ? "" : extra + picsBlock(r) + publishNowSaid(r) + msg) + requestBox(r) + "</div>";
   }
   function requestWord(r, lead, label) {
     return '<button type="button" class="lib-word' + (lead ? " lead" : "") + '" data-request="' + esc(r.id) + '">' +
@@ -3981,6 +4087,7 @@
       else if ((v = b.getAttribute("data-cboxcancel"))) closeCardBox(v);
       else if ((v = b.getAttribute("data-cbdocs"))) { state.cbDocs = true; render(); var cf = document.getElementById("cb-file-" + v); if (cf) cf.focus(); }
       else if ((v = b.getAttribute("data-cbname"))) { state.cbName = true; render(); var cn = document.getElementById("cb-by-" + v); if (cn) cn.focus(); }
+      else if ((v = b.getAttribute("data-pubnow"))) publishNow(v);
       else if ((v = b.getAttribute("data-keep"))) keepPublic(v);
       else if ((v = b.getAttribute("data-fixask"))) {
         var fr = byId(v), fd = fr && fr.regen && state.drafts[fr.regen.draft_id];
@@ -4090,6 +4197,7 @@
     render: render,
     load: load,
     _state: state,
+    _publishPoll: PUB_POLL,
     _pictureBoxes: pictureBoxes,
     _draftWithPictures: draftWithPictures,
     _flagsOf: flagsOf,
