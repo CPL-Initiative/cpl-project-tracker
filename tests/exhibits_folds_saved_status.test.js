@@ -6,7 +6,8 @@
 //   (2) a fold the reference already carries (the title is an old name of its target in kb/exhibits_related.json)
 //       reads "Applied";
 //   (3) the waiting view opens on one plain sentence: saved, applied without a click, leaving the list once applied;
-//       no Apply button.
+//       no Apply button;
+//   (4) a retired name that is an old name of two titles (Elementary French went to French 1 and French 2) names both.
 // Run from repo root: `npm test` (or `node tests/exhibits_folds_saved_status.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -35,7 +36,9 @@ const RELATED = { schema: 1, issuers: [], paths: {}, pending: {}, titles: [
   ["ASE Certificate Bundles", -1, 2, 0, 0, ["ASE Bundle T2 T8"], []],
   ["ASE Bundle A4 A5", -1, 1, 0, 0, [], []],
   ["ASE Bundle T2 T8", -1, 1, 0, 0, [], []],
-  ["Apiary Basics", -1, 1, 0, 0, [], []]
+  ["Apiary Basics", -1, 1, 0, 0, [], []],
+  ["Elementary French 1", -1, 1, 0, 0, ["Elementary French"], []],
+  ["Elementary French 2", -1, 1, 0, 0, ["Elementary French"], []]
 ] };
 
 function load() {
@@ -87,6 +90,9 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(3) one plain sentence opens the waiting view", !!line
     && txt(line) === "These folds are saved, the apply runs them without a click from you, and each one leaves this list once it is applied.", txt(line));
   check("(3) no Apply button", !Array.from(t.d.querySelectorAll("button")).some((b) => /^Apply\b/.test(txt(b))));
+
+  check("(4) an old name of two titles names both, never the last one read",
+    t.M._appliedTo("Elementary French") === "Elementary French 1 and Elementary French 2", t.M._appliedTo("Elementary French"));
 
   const u = words(t.d, "Unreviewed");
   if (u) { u.click(); await settle(); }

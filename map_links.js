@@ -17,6 +17,11 @@
  * and `found` (ID -> its builder). Read once, only when a line is on screen;
  * no file, no title, or no listed ID leaves the line empty.
  *
+ * The index is keyed by the common title the check saw. A title an applied rename moved since reads as the
+ * title the rename made: kb/credential_title_moves.json (built by kb/credential_aliases.py, the one
+ * resolver) gives each old title its hops; this file takes a live title as itself, else the first live hop,
+ * else the last, and holds no resolver of its own.
+ *
  * A caller renders a placeholder (placeholder() for an HTML string, node() for
  * an element) and the module fills every placeholder on the page once the
  * index is read. It WRITES NOTHING.
@@ -60,13 +65,62 @@
     document.head.appendChild(st);
   }
 
+  // The title an old key names now (kb/credential_title_moves.json, walked by kb/credential_aliases.py): a live
+  // title is itself; any other takes its first live hop, else its last, which the table's retires entry settles
+  // when exactly one of its targets is live (D3).
+  function firstLive(path, live) {
+    for (var i = 0; live && i < path.length; i++) if (live[path[i]]) return path[i];
+    return null;
+  }
+  function nowTitle(moves, title, live, retires) {
+    if (live && live[title]) return title;
+    var hops = moves && Object.prototype.hasOwnProperty.call(moves, title) ? moves[title] : null;
+    if (!hops || !hops.length) return title;
+    var hit = firstLive(hops, live);
+    if (hit) return hit;
+    var end = hops[hops.length - 1], got = [];
+    var paths = retires && Object.prototype.hasOwnProperty.call(retires, end) ? retires[end] : [];
+    paths.forEach(function (p) { var t = firstLive(p, live); if (t && got.indexOf(t) < 0) got.push(t); });
+    return got.length === 1 ? got[0] : end;
+  }
+  // The live titles: the credential reference when the page has loaded it; else what the table's build found live
+  // (its report's returned titles and retire targets), so a title a person brought back still reads as itself.
+  function liveTitles(table) {
+    var live = {}, ref = window.CPL_CREDENTIAL_REFERENCE, rep = (table && table.report) || {};
+    if (ref && ref.unified_titles) ref.unified_titles.forEach(function (u) { if (u && u.ut) live[u.ut] = 1; });
+    else (rep.returned || []).concat(rep.live_targets || []).forEach(function (t) { live[t] = 1; });
+    return live;
+  }
+  // by_title read through the renames: a renamed key's IDs join the title it moved to, after that title's own.
+  function rekey(j, table) {
+    var moves = table && table.moves;
+    if (!j || !j.by_title || !moves) return j;
+    var bt = j.by_title, out = {}, live = liveTitles(table);
+    Object.keys(bt).forEach(function (k) { out[k] = (bt[k] || []).slice(); });
+    Object.keys(bt).forEach(function (k) {
+      var t = nowTitle(moves, k, live, table.retires);
+      if (t === k) return;
+      var have = out[t] || (out[t] = []);
+      (bt[k] || []).forEach(function (id) { if (have.indexOf(id) < 0) have.push(id); });
+    });
+    j.by_title = out;
+    return j;
+  }
+  function getJson(path) {
+    return fetch((api.base || "") + path)
+      .then(function (r) { return r && r.ok ? r.json() : null; })
+      .catch(function () { return null; });
+  }
   function load() {
     if (index) return Promise.resolve(index);
     if (loading) return loading;
     if (typeof fetch !== "function") return Promise.resolve(null);
-    loading = fetch((api.base || "") + "kb/reference/map_cpl_opportunities_verified.json")
-      .then(function (r) { return r.ok ? r.json() : null; })
-      .then(function (j) { index = j && j.found && j.by_title ? j : null; return index; })
+    loading = Promise.all([getJson("kb/reference/map_cpl_opportunities_verified.json"), getJson("kb/credential_title_moves.json")])
+      .then(function (got) {
+        var j = got[0];
+        index = j && j.found && j.by_title ? rekey(j, got[1]) : null;
+        return index;
+      })
       .catch(function () { return null; });
     return loading;
   }
@@ -141,6 +195,7 @@
     node: node,
     lineHtml: function (title) { return lineHtml(title); },
     load: load,
+    nowTitle: nowTitle,
     fillAll: fillAll,
     url: url,
     MAP_PAGE: MAP_PAGE,

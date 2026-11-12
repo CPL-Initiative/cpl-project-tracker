@@ -418,6 +418,8 @@ def main(argv=None):
                    {"fold_ids": [undo["fold_id"]], "skipped_groups": sorted(skipped),
                     "_about": "This fold was undone; the nightly ignores its issuer_resolution rows. Delete "
                               "them with undo_supabase.sql (kb/_cred_rename_undo.py --supabase-plan)."})
+        import credential_aliases   # the browser's table of the snapshots follows the undo (S641, #3148)
+        credential_aliases.main([])
         print("  then rebuild what reads the credential keys, as the apply workflow does: "
               "python3 kb/_build_remint_blast_radius.py && python3 kb/_build_ccr_cpl.py")
     return 0

@@ -177,6 +177,14 @@ jobs:
           python3 kb/_build_remint_blast_radius.py
           python3 kb/_build_ccr_cpl.py
 
+      # kb/credential_title_moves.json, the browser's read of the snapshots (S641, #3148): its own step, so a
+      # failure above never skips it, whenever the apply wrote its snapshot. Same continue-on-error reasoning.
+      - name: Rebuild the credential title moves table
+        id: moves
+        if: always() && steps.json.outcome == 'success'
+        continue-on-error: true
+        run: python3 kb/credential_aliases.py
+
       # ── Step 5: commit + push ─────────────────────────────────────
       - name: Commit + push
         id: commit
@@ -197,6 +205,7 @@ jobs:
                   kb/credential_review_overlay.json \
                   kb/cred_rename_dryrun/ \
                   kb/cred_rename_out/ \
+                  kb/credential_title_moves.json \
                   kb/remint_blast_worklist.json \
                   prototype/ccr_remint_blast.json \
                   prototype/ccr_cpl.json
@@ -230,9 +239,9 @@ jobs:
           exit 1
 
       - name: Fail when the derived files were not rebuilt
-        if: steps.rebuild.outcome == 'failure'
+        if: steps.rebuild.outcome == 'failure' || steps.moves.outcome == 'failure'
         run: |
-          echo "::error::kb/_build_remint_blast_radius.py or kb/_build_ccr_cpl.py failed; the kb files committed. Rebuild them in a PR."
+          echo "::error::kb/_build_remint_blast_radius.py, kb/_build_ccr_cpl.py or kb/credential_aliases.py failed; the kb files committed. Rebuild them in a PR."
           exit 1
 
       # The apply did not land on main (step 3b failed, or the commit or push

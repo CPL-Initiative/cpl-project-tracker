@@ -342,7 +342,9 @@ def build(root):
     ref = load_js(root, "credential_reference_data.js")
     ref_by = {e.get("ut"): e for e in (ref.get("unified_titles") or []) if e.get("ut")}
     verified = load_json(root, "kb/reference/map_cpl_opportunities_verified.json", {}) or {}
-    found, by_title = verified.get("found") or {}, verified.get("by_title") or {}
+    found = verified.get("found") or {}
+    # Keyed by the title the check saw; a title renamed since reads as the title the rename made.
+    by_title = credential_aliases.by_current_title(verified.get("by_title") or {}, root)
     lookup = college_lookup(root)
     shorts = short_names(root)
     recs = statewide_recs(root)
