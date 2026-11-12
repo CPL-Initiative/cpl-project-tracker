@@ -117,6 +117,16 @@ jobs:
             undo)  python3 kb/_chatbox_ghost_delete.py undo --plan "$PLAN_DIR" ;;
           esac
 
+      # Before the commit, so a lost push still keeps apply_log.json, applied.json and undone.json with the run.
+      - name: Upload the receipt directory
+        if: always() && steps.run.outputs.receipt_dir != ''
+        uses: actions/upload-artifact@v7
+        with:
+          name: chatbox-ghost-delete-receipt-${{ github.run_id }}
+          path: ${{ steps.run.outputs.receipt_dir }}
+          if-no-files-found: warn
+          retention-days: 90
+
       - name: Commit the receipt
         if: always() && steps.run.outputs.receipt_dir != ''
         env:

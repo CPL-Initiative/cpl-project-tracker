@@ -21,14 +21,18 @@ MODES (workflow: .github/workflows/chatbox-ghost-delete.yml; the sandbox cannot 
           the sync's own loader (`load_artifact` + `build_rows`, imported), and calls a ghost each live row whose
           `unified_title` is not among them: exact strings, the upsert's own key, no normalizing. Writes
           kb/receipts/chatbox_ghost_delete_<UTC stamp>/plan.json and deletes nothing.
-  apply   --plan DIR --confirm-count N. Refuses unless N is the plan's ghost count, the reference's sha256 is the
-          plan's, the ghosts are at most --max-share of the live rows (default 15%), and the reference builds at least
-          --min-reference titles (default 2,000). Re-reads the table, deletes only a planned row that is still live,
-          still absent from the reference and still equal to its before-row, one exact `unified_title=eq.` per request
-          (batched for the log). A ghost the plan's alias notes send to a live successor is held unless that
-          successor's live raw_variants already carry the ghost's title (the sync writes it: sync first, then
-          delete; --allow-unaliased overrides). apply_log.json names the titles before the first delete; applied.json comes from a
-          FRESH READ afterwards, never from a delete's response. Exits 1 while a planned ghost remains.
+  apply   --plan DIR --confirm-count N, on the Actions runner (chatbox-ghost-delete.yml mode=apply). Refuses unless
+          plan.json is tracked and identical to origin/main's copy (so no delete runs with its before-rows on one
+          disk), N is the plan's ghost count, the reference's sha256 is the plan's, the ghosts are at most
+          --max-share of the live rows (default 15%), the reference builds at least --min-reference titles (default
+          2,000), and the alias resolver reads cleanly, in the plan and again at apply time. Re-reads the table,
+          deletes only a planned row that is still live, still absent from the reference and still equal to its
+          before-row, one exact `unified_title=eq.` per request (batched for the log). The alias notes are
+          recomputed at apply time: a ghost with any successor (an applied rename's end, or a title the fold retired
+          it into) is held unless every such successor's live raw_variants already carry the ghost's title (the sync
+          writes it: sync first, then delete; --allow-unaliased overrides). apply_log.json names the titles before the
+          first delete; applied.json comes from a FRESH READ afterwards, never from a delete's response. Exits 1 while
+          a planned ghost remains.
   undo    --plan DIR. Re-inserts plan.json's before-rows that are absent now, with
           `Prefer: resolution=ignore-duplicates` (INSERT ... ON CONFLICT DO NOTHING), so a title the sync has since
           re-created stays as the sync wrote it; then a fresh read files undone.json. Exits 1 while a planned title is
@@ -49,6 +53,7 @@ import hashlib
 import json
 import os
 import re
+import subprocess
 import sys
 import time
 import urllib.error
@@ -153,7 +158,8 @@ class Rest:
         self.base = url.rstrip("/") + "/rest/v1/" + TABLE
         self.key, self.send, self.sleep, self.tries = key, send, sleep, tries
 
-    def _call(self, method, query, body=None, prefer=None, extra=None):
+    def _call(self, method, query, body=None, prefer=None, extra=None, with_headers=False, empty_on=()):
+        """The parsed body (or (body, headers) with with_headers). A status in `empty_on` reads as an empty list."""
         headers = {"apikey": self.key, "Authorization": "Bearer " + self.key, "Accept": "application/json"}
         if body is not None:
             headers["Content-Type"] = "application/json"
@@ -165,12 +171,16 @@ class Rest:
         last = None
         for attempt in range(1, self.tries + 1):
             try:
-                status, _hdrs, raw = self.send(method, url, headers, data)
+                status, hdrs, raw = self.send(method, url, headers, data)
             except (OSError, urllib.error.URLError) as exc:   # a lost response: retry; every call here is idempotent
                 last = "%s %s: %s" % (method, url[:160], exc)
             else:
+                hdrs = {str(k).lower(): v for k, v in (hdrs or {}).items()}
+                if status in empty_on:
+                    return ([], hdrs) if with_headers else []
                 if status < 300:
-                    return loads(raw.decode("utf-8")) if raw else None
+                    got = loads(raw.decode("utf-8")) if raw else None
+                    return (got, hdrs) if with_headers else got
                 last = "%s %s: HTTP %s %r" % (method, url[:160], status, (raw or b"")[:300])
                 if status < 500 and status != 429:
                     raise RuntimeError(last)
@@ -180,16 +190,28 @@ class Rest:
 
     def read_all(self, select="*", page=PAGE):
         """Every row, ordered by the unique key so pages never shift; stops on an EMPTY page, never a short one (the
-        server may cap a page below `page`). Raises on a title read twice."""
-        out, start = [], 0
+        server may cap a page below `page`); HTTP 416 (a range past the end) is an empty end page. The first page asks
+        `Prefer: count=exact`, and the rows read must equal that total, or the read raises: a page lost or doubled
+        while the table moved never passes as the whole table. Raises on a title read twice."""
+        out, start, total = [], 0, None
         q = urllib.parse.urlencode({"select": select, "order": "unified_title.asc"}, safe="*,.")
         while True:
-            got = self._call("GET", q, extra={"Range-Unit": "items", "Range": "%d-%d" % (start, start + page - 1)})
+            got, hdrs = self._call("GET", q, prefer="count=exact" if start == 0 else None, with_headers=True,
+                                   empty_on=(416,),
+                                   extra={"Range-Unit": "items", "Range": "%d-%d" % (start, start + page - 1)})
+            if start == 0:
+                m = re.search(r"/(\d+)\s*$", hdrs.get("content-range") or "")
+                if not m:
+                    raise RuntimeError("the first page carried no exact count (Content-Range %r)"
+                                       % hdrs.get("content-range"))
+                total = int(m.group(1))
             got = got or []
             if not got:
                 break
             out.extend(got)
             start += len(got)
+        if len(out) != total:
+            raise RuntimeError("read %d rows where the server counted %d; read again" % (len(out), total))
         seen = set()
         for r in out:
             t = r.get("unified_title")
@@ -243,16 +265,19 @@ def alias_notes(ghost_titles, ref, root=REPO):
         import credential_aliases
         now = credential_aliases.resolver(root)
         aka = credential_aliases.load(root)
+        resolved = {t: now(t) for t in ghost_titles}
         err = None
-    except Exception as exc:                       # noqa: BLE001 — the notes inform a reviewer; they never gate
-        now, aka, err = (lambda t: t), {}, "%s: %s" % (type(exc).__name__, exc)
+    except Exception as exc:                       # noqa: BLE001 — recorded; plan and apply both refuse on it
+        aka, resolved, err = {}, {t: t for t in ghost_titles}, "%s: %s" % (type(exc).__name__, exc)
     out = {}
     for t in ghost_titles:
-        target = now(t)
+        target = resolved[t]
+        to = target if target != t and target in ref["titles"] else None
         into = sorted(k for k, v in aka.items() if t in v and k in ref["titles"])
         out[t] = {
-            "alias_to": target if target != t and target in ref["titles"] else None,
-            "alias_of": into,
+            "alias_to": to,        # where an applied rename's chain ends
+            "alias_of": into,      # the titles that carry it as an alias (load(): renames and fold retires)
+            "successors": sorted(set(into) | ({to} if to else set())),
             "exact_name_answered_by": sorted(exact.get(t.lower(), set())),
         }
     summary = {
@@ -311,6 +336,8 @@ def plan(rest, ref, receipts=RECEIPTS, max_share=MAX_SHARE, min_reference=MIN_RE
               os.path.relpath(out_dir, REPO), len(live), len(ref["titles"]), len(ghosts), 100 * share,
               alias_summary["with_alias_to_a_reference_title"], alias_summary["exact_name_lost"],
               "; APPLY WOULD REFUSE (share above %.0f%%)" % (100 * max_share) if share > max_share else ""))
+    if alias_summary.get("resolver_error"):
+        print("WARNING: the alias resolver failed (%s); apply will refuse this plan" % alias_summary["resolver_error"])
     if doc["columns_differ_from_expected"]:
         print("NOTE: live columns differ from the expected list: %s" % doc["columns_differ_from_expected"])
     return out_dir, doc
@@ -341,19 +368,39 @@ def _attempts(path):
 
 # ── apply ────────────────────────────────────────────────────────────────────
 
-def successor_carries(title, successor, live):
-    """True when no applied alias names a successor, or the successor's LIVE row carries `title` among its raw_variants
-    (lower-cased, as Sierra's tier 2 compares). Sam, 2026-11-11: old titles stay as search aliases; the sync writes them
-    (kb/_sync_credential_catalog.py retired_names), so a ghost goes only once the sync has run: sync first, then delete."""
-    if not successor:
-        return True
-    row = live.get(successor)
-    return bool(row) and title.lower() in {(v or "").lower() for v in row.get("raw_variants") or []}
+def successor_carries(title, successors, live):
+    """True when every successor (an applied rename's end and each title the fold retired `title` into) has a LIVE row
+    whose raw_variants carry `title` (lower-cased, as Sierra's tier 2 compares); vacuously true with none. Sam,
+    2026-11-11: old titles stay as search aliases; the sync writes them (kb/_sync_credential_catalog.py retired_names),
+    so a ghost goes only once the sync has run: sync first, then delete."""
+    for s in successors or []:
+        row = live.get(s)
+        if not row or title.lower() not in {(v or "").lower() for v in row.get("raw_variants") or []}:
+            return False
+    return True
+
+
+def check_committed(plan_dir):
+    """Refuse unless plan.json is tracked by git and identical to origin/main's copy: the before-rows that make the
+    delete reversible are on main before a row goes, never on one disk only."""
+    path = os.path.abspath(os.path.join(plan_dir, "plan.json"))
+    where, name = os.path.dirname(path), os.path.basename(path)
+    for args, why in ((["ls-files", "--error-unmatch", "--", name], "is not tracked by git"),
+                      (["diff", "--quiet", "origin/main", "--", name], "differs from origin/main's copy (or "
+                                                                       "origin/main lacks it)")):
+        r = subprocess.run(["git", "-C", where] + args, capture_output=True, text=True)
+        if r.returncode != 0:
+            raise Refused("%s %s: commit the plan to main (the plan run does) and apply from a checkout of main"
+                          % (os.path.relpath(path, REPO), why))
 
 
 def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference=MIN_REFERENCE, now=None,
-          allow_unaliased=False):
+          allow_unaliased=False, root=REPO, committed=check_committed):
+    committed(plan_dir)
     doc = load_plan(plan_dir)
+    if (doc.get("alias_summary") or {}).get("resolver_error"):
+        raise Refused("the plan's alias resolver failed (%s); fix it and plan again"
+                      % doc["alias_summary"]["resolver_error"])
     n = doc["ghost_count"]
     if confirm_count != n:
         raise Refused("--confirm-count %r is not the plan's ghost count %d" % (confirm_count, n))
@@ -368,10 +415,14 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
     if os.path.exists(os.path.join(plan_dir, "undone.json")):
         raise Refused("this plan was undone; plan again")
 
+    # The alias notes are recomputed here, never taken from the plan.
+    notes, alias_summary = alias_notes([g["unified_title"] for g in doc["ghosts"]], ref, root)
+    if alias_summary.get("resolver_error"):
+        raise Refused("the alias resolver failed at apply time (%s)" % alias_summary["resolver_error"])
+
     live = {r["unified_title"]: r for r in rest.read_all()}
     if live and n > max_share * len(live):
         raise Refused("%d ghosts of %d live rows now is above the ceiling of %.0f%%" % (n, len(live), 100 * max_share))
-    notes = doc.get("aliases") or {}
     targets, in_reference, gone, changed, unaliased = [], [], [], [], []
     for g in doc["ghosts"]:
         t = g["unified_title"]
@@ -381,7 +432,7 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
             gone.append(t)
         elif canonical(live[t]) != canonical(g):
             changed.append(t)
-        elif not allow_unaliased and not successor_carries(t, (notes.get(t) or {}).get("alias_to"), live):
+        elif not allow_unaliased and not successor_carries(t, notes[t]["successors"], live):
             unaliased.append(t)
         else:
             targets.append(t)
@@ -391,6 +442,7 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
     attempt = {"started_at": utc_iso(now), "planned": [g["unified_title"] for g in doc["ghosts"]],
                "to_delete": targets, "skipped_in_reference": in_reference, "skipped_gone_before_apply": gone,
                "held_changed_since_plan": changed, "held_successor_lacks_old_name": unaliased,
+               "successors_at_apply": {t: v["successors"] for t, v in notes.items() if v["successors"]},
                "allow_unaliased": allow_unaliased, "live_count_before": len(live), "batches_sent": 0,
                "error": None}
     attempts.append(attempt)
@@ -505,7 +557,7 @@ def _github_output(name, value):
             f.write("%s=%s\n" % (name, value))
 
 
-def main(argv=None, send=None):
+def main(argv=None, send=None, committed=check_committed):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0], epilog=UNDO_HOW,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("mode", nargs="?", default="plan", choices=("plan", "apply", "undo"))
@@ -533,7 +585,7 @@ def main(argv=None, send=None):
         if a.confirm_count is None:
             ap.error("apply needs --confirm-count N (the plan's ghost count)")
         return apply(rest, a.plan_dir, a.confirm_count, reference(a.reference), a.max_share, a.min_reference,
-                     allow_unaliased=a.allow_unaliased)[0]
+                     allow_unaliased=a.allow_unaliased, committed=committed)[0]
     return undo(rest, a.plan_dir)[0]
 
 

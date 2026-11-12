@@ -214,8 +214,10 @@ def to_row(rec: dict, generated_at: str | None, retired: list | None = None) -> 
 
 
 def build_rows(doc: dict, retired: dict | None = None) -> list:
-    """One row per reference title. `retired` (title -> old names) defaults to retired_names() over this reference; a
-    failure to read it degrades to none, with a note, and kb/_chatbox_ghost_delete.py then holds every aliased ghost."""
+    """One row per reference title. `retired` (title -> old names) defaults to retired_names() over this reference. A
+    failure to read it adds no retired names (with a note) and still upserts every row; the ghost rows then stay, because
+    kb/_chatbox_ghost_delete.py apply reads the aliases itself and holds each ghost whose successors' live
+    raw_variants lack its title, or refuses outright when its own read of the aliases fails."""
     gen = doc.get("_generated_at")
     recs = [r for r in doc.get("unified_titles") or [] if r.get("ut")]
     if retired is None:

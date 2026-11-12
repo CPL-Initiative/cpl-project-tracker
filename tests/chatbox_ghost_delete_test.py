@@ -58,6 +58,8 @@ class Fake:
         self.calls = []
         self.lose_next_delete_response = 0
         self.fail_deletes_after = None  # raise (after applying) on every delete past this many
+        self.miscount = 0               # the exact count the server reports, off by this much
+        self.saw_416 = False
 
     def snapshot(self):
         return {t: g.canonical(r) for t, r in sorted(self.rows.items())}
@@ -70,12 +72,18 @@ class Fake:
         if method == "GET":
             assert q.get("order") == ["unified_title.asc"], q
             lo, hi = (int(x) for x in headers["Range"].split("-"))
+            total = len(self.rows) + self.miscount
+            counted = "count=exact" in (headers.get("Prefer") or "")
+            if lo >= len(self.rows) and self.rows:
+                self.saw_416 = True     # PostgREST answers a range past the end with 416
+                return 416, {"Content-Range": "*/%d" % total}, b'{"message":"Requested range not satisfiable"}'
             hi = min(hi, lo + self.cap - 1)
             page = [self.rows[t] for t in sorted(self.rows)][lo:hi + 1]
             cols = q["select"][0]
             if cols != "*":
                 page = [{c: r.get(c) for c in cols.split(",")} for r in page]
-            return 200, {}, g.dumps(page).encode()
+            rng = "%d-%d" % (lo, lo + len(page) - 1) if page else "*"
+            return 206, {"Content-Range": "%s/%s" % (rng, total if counted else "*")}, g.dumps(page).encode()
         if method == "DELETE":
             val = q.get("unified_title", [""])[0]
             assert val.startswith("eq."), "a delete without an exact title: %r" % parts.query
@@ -135,6 +143,12 @@ try:
     def rest(fake):
         return g.Rest("http://fake", "k", send=fake.send, sleep=lambda s: None)
 
+    def committed_ok(plan_dir):
+        return None    # the plan dirs here live in a temp dir; check 9 runs check_committed in a scratch git repo
+
+    def do_apply(*a, **k):
+        return g.apply(*a, **dict({"committed": committed_ok}, **k))
+
     # 1. the plan finds exactly the ghosts ------------------------------------------------------------------
     fake = Fake(START)
     before = fake.snapshot()
@@ -173,12 +187,12 @@ try:
         except g.Refused:
             check(name, fake.snapshot() == snap and not os.path.exists(os.path.join(pdir, "apply_log.json")))
 
-    refuses("apply: refuses a wrong confirm count", lambda: g.apply(rest(fake), pdir, 2, ref, **LOW))
+    refuses("apply: refuses a wrong confirm count", lambda: do_apply(rest(fake), pdir, 2, ref, **LOW))
     other = g.reference(write_reference(os.path.join(TMP, "reference2.js"), REF_TITLES + ["Brand New"]))
-    refuses("apply: refuses a reference whose sha256 is not the plan's", lambda: g.apply(rest(fake), pdir, 3, other, **LOW))
+    refuses("apply: refuses a reference whose sha256 is not the plan's", lambda: do_apply(rest(fake), pdir, 3, other, **LOW))
     refuses("apply: refuses a ghost share above the ceiling",
-            lambda: g.apply(rest(fake), pdir, 3, ref, max_share=0.05, **LOW))
-    refuses("apply: refuses a short reference", lambda: g.apply(rest(fake), pdir, 3, ref, min_reference=1000))
+            lambda: do_apply(rest(fake), pdir, 3, ref, max_share=0.05, **LOW))
+    refuses("apply: refuses a short reference", lambda: do_apply(rest(fake), pdir, 3, ref, min_reference=1000))
     check("apply: the default floor is 2,000 titles and the default ceiling 15%",
           g.MIN_REFERENCE == 2000 and g.MAX_SHARE == 0.15)
 
@@ -192,7 +206,7 @@ try:
     g.write_json(plan_path, edited)
     del fake.rows["Ghost B, renamed"]                       # vanished between plan and apply
     fake.rows["live 0001"]["adopter_colleges"] = ["Changed"]  # changed between plan and apply
-    code, applied = g.apply(rest(fake), pdir, 4, ref, **LOW)
+    code, applied = do_apply(rest(fake), pdir, 4, ref, **LOW)
     check("apply: deletes only the ghost still live, absent from the reference and unchanged",
           "Ghost A (retired)" not in fake.rows and "Live 0002" in fake.rows and "live 0001" in fake.rows,
           sorted(fake.rows)[-4:])
@@ -216,21 +230,21 @@ try:
             seen["log"] = os.path.exists(os.path.join(pdir, "apply_log.json"))
         return real(method, url, headers, body)
     fake.send = spy
-    g.apply(rest(fake), pdir, 3, ref, **LOW)
+    do_apply(rest(fake), pdir, 3, ref, **LOW)
     check("apply: apply_log.json is on disk before the first delete", seen.get("log") is True)
 
     # 4. a lost delete response ------------------------------------------------------------------------------
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
     fake.lose_next_delete_response = 1
-    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
+    code, applied = do_apply(rest(fake), pdir, 3, ref, **LOW)
     check("apply: a lost delete response is retried and the receipt comes from a fresh read",
           code == 0 and sorted(applied["gone"]) == sorted(GHOSTS) and applied["remain"] == []
           and applied["live_count_after"] == len(REF_TITLES), applied)
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
     fake.fail_deletes_after = 1          # every delete after the first applies, then its response is lost for good
-    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
+    code, applied = do_apply(rest(fake), pdir, 3, ref, **LOW)
     check("apply: when every retry loses its response, the fresh read still files what landed",
           code == 1 and applied["error"] and set(applied["gone"]) == set(GHOSTS) - set(applied["remain"])
           and all(t in fake.rows for t in applied["remain"]) and all(t not in fake.rows for t in applied["gone"]),
@@ -240,7 +254,7 @@ try:
     fake = Fake(START)
     start = fake.snapshot()
     pdir, doc = fresh_plan(fake)
-    code, _ = g.apply(rest(fake), pdir, 3, ref, **LOW)
+    code, _ = do_apply(rest(fake), pdir, 3, ref, **LOW)
     check("round trip: apply removed the three ghosts", code == 0 and all(t not in fake.rows for t in GHOSTS))
     code, undone = g.undo(rest(fake), pdir)
     check("round trip: plan, apply, undo returns the table to its starting state exactly",
@@ -249,14 +263,14 @@ try:
           g.dumps(fake.rows["Ghost A (retired)"]["eligible_credits"]) == "3.10"
           and isinstance(fake.rows["Ghost A (retired)"]["conf_title"], D))
     try:
-        g.apply(rest(fake), pdir, 3, ref, **LOW)
+        do_apply(rest(fake), pdir, 3, ref, **LOW)
         check("apply: refuses a plan that was undone", False)
     except g.Refused:
         check("apply: refuses a plan that was undone", True)
 
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
-    g.apply(rest(fake), pdir, 3, ref, **LOW)
+    do_apply(rest(fake), pdir, 3, ref, **LOW)
     recreated = row("Ghost A (retired)", adopter_colleges=["As the sync wrote it"], eligible_credits=D("9"))
     fake.rows["Ghost A (retired)"] = copy.deepcopy(recreated)
     code, undone = g.undo(rest(fake), pdir)
@@ -272,7 +286,7 @@ try:
     # 5b. undo sends synced_at from the before-row (the column defaults to now() on insert)
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
-    g.apply(rest(fake), pdir, 3, ref, **LOW)
+    do_apply(rest(fake), pdir, 3, ref, **LOW)
     bodies = []
     real_send = fake.send
 
@@ -295,32 +309,154 @@ try:
     except g.Refused:
         check("undo: refuses a before-row without synced_at", True)
 
-    # 5c. sync first, then delete: a ghost with an alias successor goes only once the successor carries its name
+    # 5c. sync first, then delete: every successor (an applied rename's end, each title the fold retired a ghost
+    # into) must carry the ghost's name on its live row; the notes are recomputed at apply time
+    def alias_root(applied_at="2026-11-10T10:00:00Z"):
+        root = tempfile.mkdtemp(dir=TMP)
+        kb = os.path.join(root, "kb")
+        os.makedirs(os.path.join(kb, "unclassified_fold"))
+        with open(os.path.join(kb, "credentials.json"), "w") as f:
+            json.dump({t: [] for t in REF_TITLES}, f)
+        snap = os.path.join(kb, "cred_rename_out", "2026-11-10")
+        os.makedirs(snap)
+        with open(os.path.join(snap, "alias_map.json"), "w") as f:
+            json.dump({"_applied_at": applied_at, "renames": {"Ghost A (retired)": "Live 0003"}, "merges": {}}, f)
+        with open(os.path.join(kb, "unclassified_fold", "retires.json"), "w") as f:
+            json.dump({"retires": [{"title": "Ghost B, renamed", "to": ["Live 0004", "Live 0005"],
+                                    "day": "2026-11-10", "at": "2026-11-10T11:00:00Z"}]}, f)
+        return root
+
+    good, bad = alias_root(), alias_root(applied_at="not a time")
+
+    def add_name(fake, successor, name):
+        fake.rows[successor]["raw_variants"] = fake.rows[successor]["raw_variants"] + [name]
+
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake, root=good)
+    notes = doc["aliases"]
+    check("plan: a renamed ghost names its successor; a fold-retired ghost resolves to itself and names both targets",
+          notes["Ghost A (retired)"]["successors"] == ["Live 0003"]
+          and notes["Ghost B, renamed"]["alias_to"] is None
+          and notes["Ghost B, renamed"]["successors"] == ["Live 0004", "Live 0005"], notes)
+    blanked = g.read_json(os.path.join(pdir, "plan.json"))
+    for v in blanked["aliases"].values():      # a plan whose notes say nothing: apply must not trust them
+        v.update({"alias_to": None, "alias_of": [], "successors": []})
+    g.write_json(os.path.join(pdir, "plan.json"), blanked)
+    code, applied = do_apply(rest(fake), pdir, 3, ref, root=good, **LOW)
+    check("apply: recomputes the notes and holds both aliased ghosts (rename and fold retire) while no successor "
+          "carries the name", code == 1 and sorted(applied["held_successor_lacks_old_name"])
+          == ["Ghost A (retired)", "Ghost B, renamed"] and "live 0001" not in fake.rows
+          and "Ghost A (retired)" in fake.rows and "Ghost B, renamed" in fake.rows, applied)
+    add_name(fake, "Live 0003", "ghost a (RETIRED)")
+    add_name(fake, "Live 0004", "Ghost B, renamed")
+    code, applied = do_apply(rest(fake), pdir, 3, ref, root=good, **LOW)
+    check("apply: deletes the renamed ghost once its successor carries the name (lower-cased); holds the retired one "
+          "while one of its two targets lacks it", "Ghost A (retired)" not in fake.rows
+          and applied["held_successor_lacks_old_name"] == ["Ghost B, renamed"] and code == 1, applied)
+    add_name(fake, "Live 0005", "Ghost B, renamed")
+    code, applied = do_apply(rest(fake), pdir, 3, ref, root=good, **LOW)
+    check("apply: deletes the retired ghost once every target carries it",
+          code == 0 and "Ghost B, renamed" not in fake.rows and applied["held_successor_lacks_old_name"] == [])
+
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake, root=good)
+    code, applied = do_apply(rest(fake), pdir, 3, ref, root=good, allow_unaliased=True, **LOW)
+    check("apply: --allow-unaliased deletes them anyway", code == 0 and all(t not in fake.rows for t in GHOSTS))
+    import inspect
+    check("apply: the hold is on by default",
+          inspect.signature(g.apply).parameters["allow_unaliased"].default is False)
+
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake, root=bad)
+    check("plan: records a resolver failure", "resolver_error" in doc["alias_summary"])
+    snap_bad = fake.snapshot()
+    try:
+        do_apply(rest(fake), pdir, 3, ref, root=good, **LOW)
+        check("apply: refuses a plan whose resolver failed", False)
+    except g.Refused:
+        check("apply: refuses a plan whose resolver failed", fake.snapshot() == snap_bad)
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake, root=good)
+    try:
+        do_apply(rest(fake), pdir, 3, ref, root=bad, **LOW)
+        check("apply: refuses when the resolver fails at apply time", False)
+    except g.Refused:
+        check("apply: refuses when the resolver fails at apply time", all(t in fake.rows for t in GHOSTS))
+
+    # 5d. the read: an exact count, 206 pages, a 416 end page
+    fake = Fake(START)
+    got = rest(fake).read_all()
+    check("read: 206 pages and a 416 end page read the whole table", len(got) == len(START) and fake.saw_416)
+    fake.miscount = 1
+    try:
+        rest(fake).read_all()
+        check("read: a total that disagrees with the rows read raises", False)
+    except RuntimeError:
+        check("read: a total that disagrees with the rows read raises", True)
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
-    aliased = g.read_json(os.path.join(pdir, "plan.json"))
-    aliased["aliases"]["Ghost A (retired)"]["alias_to"] = "Live 0003"
-    g.write_json(os.path.join(pdir, "plan.json"), aliased)
-    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
-    check("apply: holds a ghost whose live successor's raw_variants lack its old name, deletes the rest",
-          code == 1 and applied["held_successor_lacks_old_name"] == ["Ghost A (retired)"]
-          and "Ghost A (retired)" in fake.rows and "Ghost B, renamed" not in fake.rows, applied)
-    fake.rows["Live 0003"]["raw_variants"] = fake.rows["Live 0003"]["raw_variants"] + ["ghost a (RETIRED)"]
-    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
-    check("apply: deletes it once the sync has written the name (read live at apply time, lower-cased)",
-          code == 0 and "Ghost A (retired)" not in fake.rows and applied["held_successor_lacks_old_name"] == [])
+    fake.miscount = -1
+    try:
+        do_apply(rest(fake), pdir, 3, ref, **LOW)
+        check("apply: a miscounted read deletes nothing", False)
+    except RuntimeError:
+        check("apply: a miscounted read deletes nothing", all(t in fake.rows for t in GHOSTS))
+
+    # 5e. the plan must be on origin/main before a row goes (a scratch repo with a bare origin)
+    def git(cwd, *args):
+        import subprocess
+        return subprocess.run(["git", "-c", "user.name=t", "-c", "user.email=t@t", "-C", cwd] + list(args),
+                              capture_output=True, text=True, check=True)
+
+    scratch = tempfile.mkdtemp(dir=TMP)
+    origin, work = os.path.join(scratch, "origin.git"), os.path.join(scratch, "work")
+    git(scratch, "init", "-q", "--bare", "-b", "main", origin)
+    git(scratch, "clone", "-q", origin, work)
+    git(work, "checkout", "-q", "-b", "main")
+    with open(os.path.join(work, "README"), "w") as f:
+        f.write("x\n")
+    git(work, "add", "README")
+    git(work, "commit", "-q", "-m", "start")
+    git(work, "push", "-q", "origin", "main")
+    pd = os.path.join(work, "kb", "receipts", "chatbox_ghost_delete_2026-11-12T00-00-00Z")
+    os.makedirs(pd)
+    with open(os.path.join(pd, "plan.json"), "w") as f:
+        f.write('{"table": "chatbox_credentials"}\n')
+
+    def committed_says(label):
+        try:
+            g.check_committed(pd)
+            return "ok"
+        except g.Refused:
+            return "refused"
+
+    untracked = committed_says("untracked")
+    git(work, "add", "kb")
+    git(work, "commit", "-q", "-m", "plan")
+    unpushed = committed_says("unpushed")
+    git(work, "push", "-q", "origin", "main")
+    pushed = committed_says("pushed")
+    with open(os.path.join(pd, "plan.json"), "a") as f:
+        f.write(" ")
+    edited = committed_says("edited")
+    check("apply: the plan must be tracked and equal origin/main's copy (untracked, unpushed and edited refuse)",
+          (untracked, unpushed, pushed, edited) == ("refused", "refused", "ok", "refused"),
+          (untracked, unpushed, pushed, edited))
     fake = Fake(START)
     pdir, doc = fresh_plan(fake)
-    aliased = g.read_json(os.path.join(pdir, "plan.json"))
-    aliased["aliases"]["Ghost A (retired)"]["alias_to"] = "Live 0003"
-    g.write_json(os.path.join(pdir, "plan.json"), aliased)
-    code, applied = g.apply(rest(fake), pdir, 3, ref, allow_unaliased=True, **LOW)
-    check("apply: --allow-unaliased deletes it anyway", code == 0 and "Ghost A (retired)" not in fake.rows)
-    check("apply: the hold is on by default", g.apply.__defaults__[-1] is False)
+    fake.calls.clear()
+    try:
+        g.apply(rest(fake), pdir, 3, ref, **LOW)     # the real check: a temp dir is no git checkout
+        check("apply: by default refuses, before any read, a plan that is not on origin/main", False)
+    except g.Refused:
+        check("apply: by default refuses, before any read, a plan that is not on origin/main",
+              fake.calls == [] and all(t in fake.rows for t in GHOSTS))
 
     # 7. the real transport against a local HTTP server --------------------------------------------------------
     tricky = "Tricky, (one) \"quoted\" + A6 — L3"
-    hfake = Fake([row(t) for t in REF_TITLES] + [row(tricky + " old")])
+    ODD = [tricky + " old", "100% Online", "A & B Cert", "C# Programming", "Star * Cert", "Back\\slash Cert",
+           "\"Quoted Title\"", "  Spaced Title  "]
+    hfake = Fake([row(t) for t in REF_TITLES] + [row(t) for t in ODD])
     tref_path = write_reference(os.path.join(TMP, "reference3.js"), REF_TITLES)
 
     class H(http.server.BaseHTTPRequestHandler):
@@ -330,8 +466,10 @@ try:
         def _do(self):
             n = int(self.headers.get("Content-Length") or 0)
             body = self.rfile.read(n) if n else None
-            status, _h, out = hfake.send(self.command, "http://x" + self.path, dict(self.headers), body)
+            status, hdrs, out = hfake.send(self.command, "http://x" + self.path, dict(self.headers), body)
             self.send_response(status)
+            for k, v in hdrs.items():
+                self.send_header(k, v)
             self.send_header("Content-Length", str(len(out)))
             self.end_headers()
             self.wfile.write(out)
@@ -347,15 +485,19 @@ try:
         rc = g.main(["plan", "--reference", tref_path, "--receipts", receipts, "--min-reference", "10"])
         pd = os.path.join(receipts, os.listdir(receipts)[0])
         planned = g.read_json(os.path.join(pd, "plan.json"))
-        rc2 = g.main(["apply", "--plan", pd, "--confirm-count", "1", "--reference", tref_path, "--min-reference", "10"])
-        check("urllib transport: an exact eq. delete of a title with , ( ) \" + and a dash takes only itself",
-              rc == 0 and rc2 == 0 and [x["unified_title"] for x in planned["ghosts"]] == [tricky + " old"]
-              and tricky + " old" not in hfake.rows and len(hfake.rows) == len(REF_TITLES) and tricky in hfake.rows)
+        rc2 = g.main(["apply", "--plan", pd, "--confirm-count", str(len(ODD)), "--reference", tref_path,
+                      "--min-reference", "10", "--max-share", "0.5"], committed=committed_ok)
+        check("urllib transport: exact eq. deletes of titles holding , ( ) \" + % & # * a backslash, a quoted title "
+              "and edge spaces take only themselves",
+              rc == 0 and rc2 == 0 and sorted(x["unified_title"] for x in planned["ghosts"]) == sorted(ODD)
+              and all(t not in hfake.rows for t in ODD) and len(hfake.rows) == len(REF_TITLES) and tricky in hfake.rows,
+              (rc, rc2, sorted(hfake.rows)[:12]))
+        check("urllib transport: the reads met 206 pages and a 416 end page", hfake.saw_416)
         rc3 = g.main(["undo", "--plan", pd])
-        check("urllib transport: undo puts it back", rc3 == 0 and tricky + " old" in hfake.rows)
+        check("urllib transport: undo puts them back", rc3 == 0 and all(t in hfake.rows for t in ODD))
         sync_titles = {r["unified_title"] for r in sync.build_rows(sync.load_artifact(tref_path))}
         check("the sync's report counts the ghosts it leaves",
-              g.count_ghosts(g.Rest(os.environ["SUPABASE_URL"], "k"), sync_titles) == 1)
+              g.count_ghosts(g.Rest(os.environ["SUPABASE_URL"], "k"), sync_titles) == len(ODD))
         if old_out is not None:
             os.environ["GITHUB_OUTPUT"] = old_out
     finally:
