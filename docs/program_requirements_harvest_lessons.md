@@ -138,43 +138,9 @@ Verbatim in `docs/program_requirements_harvest_lessons_archive_3.md`.
 
 Verbatim in `docs/program_requirements_harvest_lessons_archive_4.md`.
 
-## S457 SkyColumbine (2026-10-23, Sam's session): the S456 wave, Sierra's ESL acronym, the low-end-meets reading
+## S457: moved to the archive (S640 compaction)
 
-- **A guard that encodes a session's caution yields to a proceeded card.** #2380 was red on "Hartnell: a local degree
-  never takes Cal-GETC's 34" (S421's caution, written when a local degree's page could span its transfer sibling's
-  section). Sheet 117 card 3 had already proceeded on the second step, the tabs print the set in the catalog's own
-  words, and the code-kind gate removes the caution's premise, so the guard was rewritten to the new rule rather than
-  the step dropped. A branch that files a load without its build fails `tests/roep_display_test.py` by design, so the
-  Hartnell branch merged through the wave PR (#2381) and never on its own.
-- **A heading can spell an acronym out with function words between the spelled words.** `with_acronyms` read a run of
-  four-letter-or-longer words only, so "English as a Second Language" never read as ESL and the two ESL noncredit
-  certificates lost the department page to the sibling that took it on coverage alone (`label.section` null; with one
-  section among the claimants, `page_winners()` keeps the coverage winner). The run now skips `a an as and of for the in
-  to on` between the spelled words; "intro to" still never reads as IT. Running the capture's gates on the page dict
-  built from the `capture_view` log (lessons S456) named the gate in one run; a fixture needs at least `SMALL_LIST`
-  listed courses printed on the page, or the label gate refuses it before the section is read, and a candidate's
-  section sits under its `label`.
-- **A variable-unit course widens a sum past a printed total.** ABT 99 sits in six Hartnell records at 1-8 units from
-  the vendor's `creditHours`; the Requirements tab prints no figure for it in the program (page read 40000266982), and
-  the vendor's own "Total Required Credits" is a precise figure, not a floor. The doctrine passed only a floor the low
-  end meets (S422). The new `meets` reading passes a program total, or an electives-filled degree total, that the low
-  end meets exactly with the high end carried past it by a choice or a variable-unit course, as Sheet 81 card 1 reads
-  a degree's span. **Measure the blast radius before proposing a scoring rule:** 258 program totals and 9 degrees
-  statewide read so, 738 under any total inside the span (Mt. San Jacinto 04395 reads 9-24 against 18, the kind a wide
-  rule would hide). The rescorer (`kb/_program_requirements_rescore.py`) now covers program totals and its `--check`
-  guards both; the receipt carries the guarded UPDATE and rollback. The session's permission check refused the live
-  apply, and a permission-check denial is on Sam's hold list: Sheet 119 card 9, #2387 a draft until his reply.
-- **The vendor's course data carries hours.** Each `courses/search` entry carries `credits.creditHours`,
-  `billingHours`, `lectureHours {min,max}` and `labHours {min,max}` (ENGM 620: lecture 80-90, lab 48-54), so the
-  seven hours-measured noncredit records can be priced from it (a `course_hours` field in `cd_pages`, a reconcile
-  kind for `measure: hours`). The page reader prints 1,500 characters of each fetched body (`NETWORK_BODY`), which hid
-  ABT 99's and ENGM 622's entries: a plan that needs one course's entry needs a longer print or a filter.
-- **A display apply can commit its applied record and still end in failure.** Run 39990555422 (build 14291ca32973)
-  committed its applied record to `main` at 18:20Z and concluded failure after 87 minutes; the second apply (run
-  39999773855, build d45e5d0fcf78) queued behind it. The failure's cause was not read this run (the log's tail shows
-  only cleanup); read the job's middle before trusting the apply's row counts.
-- **The Rule 8 memory read, the handoff and the open PRs together told the state in one pass:** S456's comment on
-  #2384 said which PR merged on green and which waited on what; nothing had to be re-derived.
+Verbatim in [`program_requirements_harvest_lessons_archive_4.md`](program_requirements_harvest_lessons_archive_4.md), *S457 SkyColumbine*.
 
 ## S456 SkyYarrow (2026-10-23, Sam's session): card 1 carried out, a Coursedog tab's code names its award, a noncredit section
 
@@ -887,3 +853,25 @@ description (`units_file`; lessons S523, S526), the C-numbers from the runner's 
 - **Runs on one ref queue.** Dispatches on the same ref wait behind each other, and a third pending run cancels the second, so the PDF reader's capture-only proofs go one at a time.
 - **Diagnosed, not started.** San Bernardino Valley (146 of 200 live, 179 simulated), Grossmont (99 of 140, 121) and East Los Angeles (92 of 133, 109): causes, words, steps and read plans in [`harvest_wave3_diagnoses_s639`](harvest_wave3_diagnoses_s639.md). Two scorer readings, one writer: a noncredit *Total Hours N-M* with no colon, and the electives flag honored where a step files the catalog's own sentence (Grossmont's *Complete transferable units as needed to reach 60* prints no word *elective*). The two diagnoses name the new field differently (`electives_fill_words`, `electives_line_printed`); the writer picks one.
 - **The night's result (one live count, 03:05Z).** Three colleges live: Los Angeles City 181 of 223 (156 before, #3130 merged 02:49Z), Orange Coast 217 of 259 (187 before, #3133 merged 03:04Z), Victor Valley 136 of 168 (108 before; reread on head 17d69398 after the worker restored 20 out-of-scope transfer degrees, #3131 not merged). Statewide 15,046 of 17,581 rows pass, 83 more than 14,963 of 17,580 at 01:20Z. The tab opt-in moved only the four EMS certificates (38353, 38366, 38502, 38503), which still need a paid re-extraction. Rio Hondo, West Valley and Berkeley City have reconciled but not reread.
+
+## Moved from the lane (S640)
+
+The S639 side session's block, verbatim as it stood at 05:25Z 2026-11-12, before S640 merged West Valley and Berkeley City.
+
+**The S639 side session (2026-11-12, beside the S639 conductor; handoff [`harvest_side_handoff_s639`](../../harvest_side_handoff_s639.md)).** Live at 03:05Z: 15,046 of 17,581 rows pass (01:20Z: 14,963 of 17,580). The shared cause at about a dozen colleges: a degree names a GE pattern with no units. Before any merge, no `daily-dashboard` run in flight (cron 06:17, 09:17, 12:17 UTC). Lessons, *S639 side session*.
+**Los Angeles City (#3130, merged 02:49Z): 181 of 223 live** (156 before). **DECIDED (`d-lacc-heading-minimum-60-s639`):** a local degree's heading *Total Units: Minimum of 60* is a floor, and general education is the printed 18-27 (pages 59-60 quoted); `only_with` on both steps; `heading_above_code` (this college only) keeps a heading above the State Code line. Rereads 43141074738 (27 replaced) and 43142129065 (29), none held. NEXT: a paid re-extraction of the records read past their heading, on #3135's reader once it merges.
+**Orange Coast (#3133, merged 03:04Z): 217 of 259 live** (187 before); done this pass. **DECIDED (`d-occ-up-to-ge-maximum-s639`):** a printed *Up to 21* (A.S.), *Up to 27* (A.A.) or Cal-GETC *up to 34* is that pattern's maximum, and an exact 21 stands as printed. Reconcile 43136182950 (29 more pass, none regressed), reread 43142833449 (51 replaced, none held).
+**Victor Valley (#3131, merged 04:20Z by S640): 136 of 168 live** (108 before). **DECIDED (`d-hours-meets-top-term-length-s639`, the session's call for Sam to revise; Sheet 120 card 1 unchanged):** an hours program passes when its printed range's low end is eight ninths of the top and its single-figure course hours sum to exactly the top: 22 records, all Victor Valley. Reread on head 17d69398 (02:59Z), the 20 out-of-scope transfer degrees restored first; the eight review fixes pushed, not re-reviewed. NEXT: the reread's receipt; merge `main`; `test` green; merge. The four EMS certificates (38353, 38366, 38502, 38503) need a paid re-extraction. 37006 and 38352 stay as read (Sheet 85).
+**American River:** read 43134279776 ($12.99) rewrote 154 records on the renumbered edition (16 better, 30 now fail); not loaded, branch kept. NEXT: re-extract on #3135's reader after its proofs and review.
+**The PDF reader (#3135):** `text_sha` keeps a program whose page moved and whose text did not, with no model call; the list-page rule skips a department's award list. Proofs filed for American River and Los Angeles City, not yet read. NEXT: Sacramento City, Los Angeles Valley, College of the Desert one at a time; previews judged against the PR's pass marks; review; merge; then the paid reads.
+**Rio Hondo (#3136) and West Valley (#3137):** each catalog prints Cal-GETC's units by area and no total. **DECIDED (`d-rio-hondo-cal-getc-areas-count-s639`, `d-west-valley-cal-getc-areas-count-s639`; the lane conductor's call for Sam to revise, extending his *count* on Sheet 180 cards 2 and 4):** transfer degrees take the sum of the college's own printed areas, 34. Steps written; simulated 276 of 288, West Valley about 116 of 133 (the review). **Berkeley City (#3138):** local degrees take *at least 18 units in general education* and the electives rule, 35 to 49 of 89 simulated; its 21 transfer degrees wait (its Cal-GETC tab prints no units). Reconciles dispatched 02:28Z to 02:34Z (West Valley's filed 02:50Z); review: no wrong record, five minor findings being fixed. NEXT, one at a time: the worker's push and result, a reread, merge `main`, merge.
+**San Bernardino Valley, Grossmont, East Los Angeles:** diagnosed, not started ([`harvest_wave3_diagnoses_s639`](../../harvest_wave3_diagnoses_s639.md)). They need two scorer readings, one writer, each measured at every college first: a noncredit *Total Hours N-M*, and the electives flag where a step files the catalog's own sentence.
+
+## S640 (SkyHeron, the conductor, 2026-11-12): three colleges merged, a partial capture, and a proof against a stale baseline
+
+- **Sam's go, relayed by COBIx (7:13 PM PT 2026-11-11, #3110 comment 6813256997): "Yes, pick them up tonight."** The conductor took the side handoff's Next 1 to 4 (`sam-harvest-next-steps-tonight-2026-11-11`).
+- **Three merges, each on a green `test`, each confirmed by a live count.** Victor Valley (#3131, `4214bea2`, about 04:20Z): a review of its three unreviewed commits (two readers, three second readers) found no wrong record and no wrong logic; three test gaps and two wording items were folded in first; 136 of 168. West Valley (#3137, `a664b105`, about 04:35Z): reread 43146197347 posted 34, replaced 34, none held; 120 of 133. Berkeley City (#3138, `dd50e246`, 04:53Z): reread 43147379414 posted 16, replaced 16, none held, and 16645 was never re-posted; 48 of 89. The PR measured 47 by `score.pass`; the live count reads the machine checks, which 37936 passes.
+- **A capture that meets HTTP 503s files a partial read as if complete.** Rio Hondo's reconcile 43142240927 met 40 503s, read 34 of 328 pages and found 33 of 301 programs, so it measured 245 to 249 of 288 where the PR simulated 276. The reconcile measured against almost no fresh text and said nothing. A capture should refuse to file below a floor of pages answered. A fresh reconcile (43154073220) was dispatched at 04:19Z.
+- **A proof is only as good as its baseline.** Three of #3135's five capture proofs compared against reads `main` filed on 2026-10-17, before the reader changed, so 37 and 50 pick changes were reader drift, not the PR. A proof run needs a same-day baseline by `main`'s reader: a scratch copy of `main` (`claude/harvest-pdf-baseline-s640`, no PR) files it, and is deleted when the PR merges. KB note: [`methodology-a-proof-run-needs-a-same-day-baseline`](kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md).
+- **The PDF reader's design calls** (the conductor, after the review; `d-pdf-reader-design-calls-s640`): a paid read never makes a passing record worse; the list rule never lowers coverage; a bare number is a page number only when proven. The review had found a fingerprint that dropped bare unit figures.
+- **The numbered handoff carries the lane again.** With one conductor holding the harvest and the CER lanes, the side handoff stopped; [`session_641_handoff`](session_641_handoff.md) carries the harvest's state.

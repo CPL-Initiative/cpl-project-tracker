@@ -245,3 +245,6 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 
 <!-- moved from docs/INDEX.md Update history, S639 -->
 - 2026-11-09 (S623 SkyButterfly, light): the action center in two groups (#3001), the Courses List keeps your row (#3004), the identity check runs again (#3005), the ended-access note (#3007); handoff 624.
+
+<!-- moved from docs/INDEX.md Update history, S640 -->
+- 2026-11-10 (S624 SkyCocoon, light): the identity baseline (#3019), the funding tab's ended-access note (#3022), the decline pieces leave (#3023), a ruling can cross-list (#3025); handoff 625.
