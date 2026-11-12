@@ -2669,6 +2669,14 @@ check(C.pdf_furniture([p.rsplit("\n", 1)[0] for p in bare_book]) == set(),
       "with no footer, the bare unit and total lines are never furniture")
 top_book = ["%d\n" % (i + 1 - 2) + p.rsplit("\n", 1)[0] for i, p in enumerate(bare_book)]
 check(C.pdf_furniture(top_book) == {"#@-2"}, "a bare page number at the top edge is found too")
+# S641 verification: a bare number that keeps step with the page but sits inside the page's text is no
+# proof; pdf_furniture() counts a bare number only at its page's edge (window_sha's own edge test alone
+# would not catch an offset proven from interior lines).
+mid_book = [p.replace("\nTotal Units:", "\n%d\nTotal Units:" % (i + 1 + 10)).rsplit("\n", 1)[0]
+            for i, p in enumerate(bare_book)]
+check(C.pdf_furniture(mid_book) == set(),
+      "a bare number that keeps step with the page only inside its text is never proven a page number: %r"
+      % sorted(C.pdf_furniture(mid_book)))
 
 # 2. Same page, changed figures: a record that carries its window's fingerprint stays on an unmoved
 # page only while the fingerprint matches; a record with none is judged by its address, as before.
@@ -2870,6 +2878,30 @@ try:
     check(_pl is not None and _pl(passing) and _pl(dict(passing, **{"pass": False}))
           and not _pl(dict(passing, arithmetic={"status": "unstated", "pass": True})) and not _pl(None),
           "passes_live is the live table's test: coverage, invented, arithmetic equal")
+    # S641 verification: equal coverage is held only while the text is not proven changed. A passing record
+    # with a fingerprint whose window now prints other text (a unit figure, a total) at the same share, on
+    # its page or moved, is read; the read is guarded by kept_passing. One with no fingerprint stays held.
+    _ch = os.path.join(_hx, "changed")
+    os.makedirs(os.path.join(_ch, "records"))
+    for cn, sha in (("30", "old30"), ("31", "old31"), ("32", None), ("33", "s33")):
+        body = {"record": {"blocks": []}, "source_url": pdf + "#page=311", "extracted_run": 39049026449,
+                "source_codes": ["A1"], "source_coverage": 1.0, "score": passing, "control_number": cn}
+        if sha:
+            body["source_sha"] = sha
+        open(os.path.join(_ch, "records", cn + ".json"), "w").write(json.dumps(body))
+    json.dump([], open(os.path.join(_ch, "sources.json"), "w"))
+    ch_srcs = [src_of("30", 307, "new30"),     # moved and changed, the same share: read
+               src_of("31", 311, "new31"),     # its own page, changed, the same share: read
+               src_of("32", 307, "any"),       # no fingerprint, the same share: held_no_gain
+               src_of("33", 311, "s33")]       # the same text on its page, the same share: held_no_gain
+    wx4 = C.would_extract("Test College", ch_srcs, folder=_ch)
+    check(sorted(x["control_number"] for x in wx4["list"]) == ["30", "31"]
+          and [x["control_number"] for x in wx4["held_no_gain"]] == ["32", "33"],
+          "equal coverage holds a passing record only while its text is not proven changed: %r"
+          % {k: [x["control_number"] for x in wx4[k]] for k in ("list", "held_no_gain")})
+    check(C.held(os.path.join(_ch, "records", "30.json"), None, src_of("30", 307, "new30", opens_on_list=True))["reason"]
+          == "held_opens_on_list",
+          "changed text at the same share from a window that opens on a list is held all the same")
 finally:
     XT.call = _saved[0]
     if _saved[1] is None:

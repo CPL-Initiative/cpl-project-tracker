@@ -3268,8 +3268,11 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
     None (S640; S641 review). A hold protects only a filed record that passes as the live table counts
     it (passes_live); a failing or absent record is always read, whatever its window. Then, in order:
     held_worse_window, the new window names a smaller share of the closed list than the window the
-    record was extracted from; held_no_gain, the same share, so a read can gain nothing;
-    held_opens_on_list, a larger share from a window that opens on a department's list of award titles
+    record was extracted from; held_no_gain, the same share, so a read can gain nothing, unless the
+    record's fingerprint proves the window's text changed (same_text: a reissued page that keeps its
+    courses and changes a unit figure or a total is read, and kept_passing guards the read);
+    held_opens_on_list, a larger share (or the same share on changed text) from a window that opens on
+    a department's list of award titles
     (pdf_opens_on_list). The share the record was extracted from is its source_coverage, else the
     filed source's coverage when that source names the record's page. Window coverage is compared
     only with window coverage: with neither, nothing is held, and the guard after the read
@@ -3291,7 +3294,7 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
         return None
     if cov < was:
         return {"reason": "held_worse_window", "coverage": cov, "was_coverage": was}
-    if cov == was:
+    if cov == was and same_text(rec, src):
         return {"reason": "held_no_gain", "coverage": cov, "was_coverage": was}
     if (src.get("source") or {}).get("opens_on_list"):
         return {"reason": "held_opens_on_list", "coverage": cov, "was_coverage": was}
