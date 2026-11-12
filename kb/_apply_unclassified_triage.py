@@ -129,6 +129,10 @@ def build_assignments(rows):
         entry = acc.setdefault(raw, {})
         if field == FIELD_TITLE:
             entry["unified_title"] = (row.get("value") or "").strip()
+            # Who saved the title itself (reviewed_by below is the newest saver of ANY field): a credential rename
+            # moves a title only a bot saved (kb/_cred_rename_repoint.py), and decides that from these two.
+            entry["title_reviewed_by"] = row.get("reviewer_email")
+            entry["title_reviewed_at"] = row.get("reviewed_at")
         elif field == FIELD_ISSUER:
             entry["issuing_agency"] = (row.get("value") or "").strip()
         elif field == FIELD_SUPERSEDES:

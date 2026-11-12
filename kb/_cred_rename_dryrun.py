@@ -357,8 +357,12 @@ def main(argv=None):
     # The saved assignments and title-keyed files the apply would move off each old title, the person's rows it would
     # hold, and the old titles it would leave under kb/ (the apply's own count after its writes reads the same way).
     rp_root = repoint.root_of(CREDENTIALS)
-    rp_changes, rp_held = repoint.plan(dict(renames_clean, **merges_confirmed), rp_root)
-    would_leave = repoint.predict_left(renames_clean, merges_confirmed, rp_root)
+    try:
+        rp_changes, rp_held = repoint.plan(dict(renames_clean, **merges_confirmed), rp_root)
+        would_leave = repoint.predict_left(renames_clean, merges_confirmed, rp_root)
+        rp_chain = None
+    except repoint.RenameChain as e:  # the apply would stop before writing; so does apply_safe below
+        rp_changes, rp_held, would_leave, rp_chain = [], [], None, str(e)
 
     # ── V1/V2/V3 validation gates ─────────────────────────────────────────────
     # V1 — every clean rename target is unique among the proposed set
@@ -391,7 +395,7 @@ def main(argv=None):
     # never does, so the two sets are disjoint — applying the clean renames
     # can't touch a queued collision's source or target. Confirmed merges
     # count as applicable work alongside clean renames.
-    apply_safe = bool(v1_pass and v2_pass and v3_pass
+    apply_safe = bool(v1_pass and v2_pass and v3_pass and not rp_chain
                       and (renames_clean or merges_confirmed))
 
     # ── Write artifacts ───────────────────────────────────────────────────────
@@ -443,7 +447,7 @@ def main(argv=None):
         "ruled": ruled,
         # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
         # The apply's re-point of saved assignments (kb/_cred_rename_repoint.py): what moves, and what it holds.
-        "repoint_preview": {"changes": rp_changes, "held_person_rows": rp_held},
+        "repoint_preview": {"changes": rp_changes, "held_person_rows": rp_held, "chain": rp_chain},
         # The old titles the apply would leave under kb/ (prediction; target 0). None outside a kb/ tree.
         "would_leave_old_titles": would_leave,
         "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],

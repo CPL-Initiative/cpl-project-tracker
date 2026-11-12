@@ -18,14 +18,15 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 #      DELETEs fulfilled unified_title_override rows; PATCHes other
 #      override rows' course_id to the new identity.
 #   5. Commit + push the mutated kb files + frozen alias_map snapshot.
-#   6. Start daily-dashboard.yml on main, so the published files follow the apply (#3110: they lagged 98 minutes).
+#   6. The dashboard job starts daily-dashboard.yml on main once a job pushed (#3110: the files lagged 98 minutes).
 #
-# Re-point (#3110, COBIx comments 6813000047 and 6813256997): step 3 also moves each saved assignment a bot saved
-# on an old title (kb/_cred_rename_repoint.py: unclassified_assignments.json, cer_classified.json, the occupation
-# map and MAP's by_title) and holds a person's for a ruling; step 4.1 moves the kb_curation row the first of those
-# copies, since the nightly sync rewrites that file from kb_curation. After the writes, step 4c counts every old
-# title left under kb/ into the receipt (old_titles_left.json); a count above 0 fails the job's last step, after
-# the receipt is committed. The count never rolls anything back.
+# Re-point (#3110, COBIx comments 6813000047 and 6813256997): step 3 also moves each saved value a bot saved on an
+# old title (kb/_cred_rename_repoint.py: cer_classified.json, the occupation map, MAP's by_title) and holds a
+# person's, or one naming no saver, for a ruling. A saved assignment moves through its kb_curation title row in step
+# 4.1, and step 4.2 re-reads kb/unclassified_assignments.json from kb_curation, so the copy and the rows agree. After
+# the writes, step 4c counts every old title left in kb/**/*.json into the receipt (old_titles_left.json); a count
+# above 0 fails the job's last step, after the receipt is committed. The count never rolls anything back. The
+# repoint_only input runs the re-point alone for an applied receipt (the repoint job below).
 #
 # One pass (#3110 build step 1): a lead that creates a title and the siblings
 # whose merge into it is already confirmed apply in the same run; a second
@@ -41,8 +42,8 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 # also regenerates the dashboard HTML (Rule 1) and reads the master workbook
 # and live Supabase; daily-dashboard.yml owns that run, and a second writer of
 # those artifacts is what the artifact policy and Rule 6 rule out. After an
-# apply, step 6 dispatches daily-dashboard.yml: it waits behind this run on the shared
-# concurrency group, and its gate job runs every workflow_dispatch (only a scheduled run stands down).
+# apply, the dashboard job dispatches daily-dashboard.yml once the apply job released
+# the group; its gate job runs every workflow_dispatch (only a scheduled run stands down).
 #
 # workflow_dispatch stays the only trigger: no schedule, no automatic start.
 #
@@ -51,7 +52,7 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 # cleanup-receipt re-run (no rename-outcome invariant exists). Trust the
 # in-script V1–V4 gates.
 #
-# concurrency: daily-dashboard  →  serializes against the daily cron so
+# concurrency: daily-dashboard (on the apply and repoint jobs)  →  serializes against the daily cron so
 # excel_to_dashboard.py never reads the three kb files mid-mutation.
 
 on:
@@ -62,17 +63,26 @@ on:
         required: false
         default: ""
         type: string
+      repoint_only:
+        description: "Re-point only, for an applied receipt folder under kb/cred_rename_out/ (e.g. kb/cred_rename_out/2026-11-12): the saved files and the kb_curation rows its plan left on old titles. Never runs the rename. Empty runs the apply."
+        required: false
+        default: ""
+        type: string
 
-concurrency:
-  group: daily-dashboard
-  cancel-in-progress: false
-
+# The two jobs that write take the daily-dashboard group, job by job, so the dashboard job below starts after it is
+# free. A group name is one key in the repository whether a workflow or a job holds it.
 jobs:
   apply:
+    if: inputs.repoint_only == ''
     runs-on: ubuntu-latest
+    concurrency:
+      group: daily-dashboard
+      cancel-in-progress: false
     permissions:
       contents: write
-      actions: write   # step 6 dispatches daily-dashboard.yml with GITHUB_TOKEN (workflow_dispatch is the event it may start)
+    outputs:
+      pushed: ${{ steps.commit.outputs.pushed }}
+      receipt: ${{ steps.json.outputs.receipt }}
 
     steps:
       - name: Checkout main
@@ -187,11 +197,15 @@ jobs:
 
       # ── Step 4.2: re-read the credential-panel overlay after the row moves ─
       # Step 1's copy predates the moves; the count below reads what kb_curation holds now.
+      # The saved assignments' copy is re-read the same way, so it names what the rows name after step 4.1
+      # (kb/unclassified_assignments.json is never written by the re-point itself).
       - name: Re-sync the credential-review overlay after the row moves
         continue-on-error: true
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python kb/_apply_credential_review.py
+        run: |
+          python kb/_apply_credential_review.py
+          python kb/_apply_unclassified_triage.py
 
       # ── Step 4b: rebuild what reads the credential keys ───────────
       # The 2026-10-01 apply rewrote credentials.json and left three derived
@@ -272,36 +286,6 @@ jobs:
           done
           exit 1
 
-      # ── Step 6: start the dashboard run that publishes this apply ─
-      # Only once the apply's commit is on main. The dispatched run joins the daily-dashboard concurrency group,
-      # so it waits for this run to end; this run never waits on it, so neither blocks the other. Its gate job
-      # passes every non-scheduled event. One caution: GitHub keeps ONE pending run per concurrency group and
-      # cancels the older pending one when another arrives, so when a run of a workflow in this group is already
-      # pending, this step dispatches nothing: a pending daily-dashboard run already publishes after this one, and
-      # any other workflow's pending run must not be cancelled (the warning names it, to dispatch after it).
-      - name: Start daily-dashboard.yml on main
-        if: always() && steps.commit.outputs.pushed == 'true'
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          set -uo pipefail
-          group_files=$(grep -l '^  group: daily-dashboard$' .github/workflows/*.yml | xargs -n1 basename)
-          for wf in $group_files; do
-            n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$wf" --json status \
-                  -q '[.[] | select(.status == "pending" or .status == "queued" or .status == "waiting")] | length' \
-                  2>/dev/null || echo 0)
-            if [ "${n:-0}" -gt 0 ]; then
-              if [ "$wf" = "daily-dashboard.yml" ]; then
-                echo "A daily-dashboard run is already pending; it publishes this apply when this run ends."
-              else
-                echo "::warning title=Dashboard not started::$wf has a pending run in the daily-dashboard group, which a new dispatch would cancel. Dispatch daily-dashboard.yml after it finishes."
-              fi
-              exit 0
-            fi
-          done
-          gh workflow run daily-dashboard.yml --ref main -R "$GITHUB_REPOSITORY"
-          echo "Dispatched daily-dashboard.yml on main; it runs when this run ends."
-
       # Fail closed: the job never reads success while the row moves failed.
       - name: Fail when the kb_curation row moves did not finish
         if: steps.supa.outcome == 'failure'
@@ -336,6 +320,10 @@ jobs:
           set -uo pipefail
           python kb/_cred_fold_resolution_write.py --rollback "$RECEIPT" \
             || echo "::error::The rollback did not finish; ${RECEIPT}/apply_failed.json still keeps its rows inert. Read resolution_rollback_log.json."
+          # Step 4.1's row moves go back too: each guarded on the row the move left, read back, filed in
+          # repoint_rollback_log*.json. A row a person changed since is left and named.
+          python kb/_cred_rename_repoint.py --supabase-undo "$RECEIPT" \
+            || echo "::error::A re-pointed kb_curation row did not go back; read ${RECEIPT}/repoint_rollback_log*.json and re-run kb/_cred_rename_repoint.py --supabase-undo ${RECEIPT}."
           test -f "$RECEIPT/apply_failed.json" || python3 -c "import json,sys; json.dump({'_about': 'the apply did not land; rollback did not run'}, open(sys.argv[1] + '/apply_failed.json', 'w'))" "$RECEIPT"
           cp -r "$RECEIPT" "$RUNNER_TEMP/receipt"
           git config user.name "github-actions[bot]"
@@ -346,7 +334,7 @@ jobs:
             git add "$RECEIPT"
             git diff --cached --quiet && exit 0
             git commit -m "Cred-Ref PR-5b/1: receipt of an apply that did not land ($RECEIPT)" \
-              -m "The kb files did not change. Its issuer_resolution rows were taken back (resolution_rollback_log.json); apply_failed.json keeps any left inert. Row moves, if any, reverse with kb/_cred_rename_undo.py."
+              -m "The kb files did not change. Its issuer_resolution rows were taken back (resolution_rollback_log.json) and its re-pointed assignment rows (repoint_rollback_log*.json); apply_failed.json keeps any left inert. Row moves, if any, reverse with kb/_cred_rename_undo.py."
             git push origin HEAD:main && exit 0
             sleep $((attempt * 2))
           done
@@ -370,7 +358,145 @@ jobs:
       # The last step: the old titles left under kb/ after this apply, read from the receipt the commit carried.
       # Above 0 fails the job, naming each location, so the workflow failure watch reports it. Nothing is rolled back.
       - name: Fail when old titles are left under kb/
-        if: always() && steps.commit.outputs.pushed == 'true'
+        if: always() && steps.commit.outputs.pushed == 'true' && steps.json.outputs.receipt != ''
         env:
           RECEIPT: ${{ steps.json.outputs.receipt }}
         run: python3 kb/_cred_rename_repoint.py --count "$RECEIPT" --check
+
+  # ── repoint_only: the re-point for an applied receipt, through the same code as the apply ──────────────────
+  # Checks out main, refuses a folder that does not exist or holds no applied plan, runs the file half (a no-op
+  # when applied) and the kb_curation half (pending log, PATCH guarded on value, reviewer_email and reviewed_at, a
+  # fresh read filing what landed; a row already on the new title is filed and not written), re-reads the copy,
+  # commits the log and the files, then counts the old titles left. Never runs the rename itself.
+  repoint:
+    if: inputs.repoint_only != ''
+    runs-on: ubuntu-latest
+    concurrency:
+      group: daily-dashboard
+      cancel-in-progress: false
+    permissions:
+      contents: write
+    outputs:
+      pushed: ${{ steps.commit.outputs.pushed }}
+    steps:
+      - name: Checkout main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.11'
+
+      - name: Re-point the receipt's saved files and kb_curation rows
+        id: repoint
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          FOLDER: ${{ inputs.repoint_only }}
+        run: python kb/_cred_rename_repoint.py --repoint-only "$FOLDER"
+
+      - name: Re-read the saved assignments' copy from kb_curation
+        if: steps.repoint.outcome == 'success' || steps.repoint.outcome == 'failure'
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          python kb/_apply_unclassified_triage.py
+          python3 kb/_build_exhibits_related.py --quiet
+
+      - name: Count the old titles left under kb/
+        continue-on-error: true
+        env:
+          FOLDER: ${{ inputs.repoint_only }}
+        run: test -f "$FOLDER/alias_map.json" && python3 kb/_cred_rename_repoint.py --count "$FOLDER"
+
+      - name: Commit + push the re-point's log and files
+        id: commit
+        env:
+          FOLDER: ${{ inputs.repoint_only }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -d "$FOLDER" ]; then git add "$FOLDER"; fi
+          git add kb/unclassified_assignments.json kb/cer_classified.json kb/occupation_credential_map.json \
+                  kb/reference/map_cpl_opportunities_verified.json kb/exhibits_related.json
+          if git diff --cached --quiet; then
+            echo "Nothing to commit."
+            exit 0
+          fi
+          git commit -m "Cred-Ref re-point of $FOLDER (repoint_only)" \
+            -m "The saved files and kb_curation rows this applied plan left on old titles (kb/_cred_rename_repoint.py). Log: $FOLDER/repoint_supabase_log*.json; files: $FOLDER/repoint*.json. kb/_cred_rename_undo.py or kb/_cred_rename_repoint.py --undo reverses it."
+          for attempt in 1 2 3 4 5; do
+            if git push origin HEAD:main; then
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            git fetch origin main
+            git rebase origin/main || { git rebase --abort; exit 1; }
+            sleep $((attempt * 2))
+          done
+          exit 1
+
+      - name: Fail when the re-point refused or did not land
+        if: always() && steps.repoint.outcome == 'failure'
+        run: |
+          echo "::error::kb/_cred_rename_repoint.py --repoint-only refused or a row did not land; read its log above and ${{ inputs.repoint_only }}/repoint_supabase_log*.json."
+          exit 1
+
+      - name: Fail when old titles are left under kb/
+        if: always() && steps.commit.outputs.pushed == 'true'
+        env:
+          FOLDER: ${{ inputs.repoint_only }}
+        run: python3 kb/_cred_rename_repoint.py --count "$FOLDER" --check
+
+  # ── Start daily-dashboard.yml on main, so the published files follow the apply (#3110: they lagged 98 minutes) ─
+  # Its own job, the only one holding actions: write, and only once a job above pushed. It starts after the writing
+  # job released the daily-dashboard group. GitHub keeps ONE pending run per group and cancels the older pending one
+  # when another arrives, so when a run of a workflow in the group is already pending this job dispatches nothing:
+  # a pending daily-dashboard run publishes this commit anyway, and another workflow's pending run must not be
+  # cancelled, so the job fails and the failure watch reports it. A failed lookup or a failed dispatch fails it too.
+  # The dashboard's gate job runs every non-scheduled event, so the dispatched run is never skipped.
+  dashboard:
+    needs: [apply, repoint]
+    if: always() && (needs.apply.outputs.pushed == 'true' || needs.repoint.outputs.pushed == 'true')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - name: Checkout main (for the list of workflows in the group)
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          persist-credentials: false
+
+      - name: Start daily-dashboard.yml on main
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          group_files=$(grep -lE '^ +group: daily-dashboard$' .github/workflows/*.yml | xargs -n1 basename)
+          for wf in $group_files; do
+            if ! n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$wf" --json status \
+                  -q '[.[] | select(.status == "pending" or .status == "queued" or .status == "waiting")] | length'); then
+              echo "::error title=Dashboard not started::The lookup of pending $wf runs failed, so a dispatch could cancel one. Dispatch daily-dashboard.yml by hand."
+              exit 1
+            fi
+            if [ "$n" -gt 0 ]; then
+              if [ "$wf" = "daily-dashboard.yml" ]; then
+                echo "A daily-dashboard run is already pending; it publishes this commit."
+                exit 0
+              fi
+              echo "::error title=Dashboard not started::$wf has a pending run in the daily-dashboard group, which a new dispatch would cancel. Dispatch daily-dashboard.yml after it finishes."
+              exit 1
+            fi
+          done
+          if ! gh workflow run daily-dashboard.yml --ref main -R "$GITHUB_REPOSITORY"; then
+            echo "::error title=Dashboard not started::gh workflow run daily-dashboard.yml failed."
+            exit 1
+          fi
+          echo "Dispatched daily-dashboard.yml on main."

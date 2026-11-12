@@ -1,0 +1,60 @@
+{
+  "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. held_person_rows were saved by a person, or name no saver, and never change without a ruling. A change via kb_curation moves the row (repoint_supabase_log*.json); its copy follows.",
+  "source": "repair",
+  "at": "2026-11-12T04:44:22Z",
+  "moves": {
+    "AWS Certified SysOps Administrator — Associate": "AWS CloudOps Engineer - Associate",
+    "Cisco Certified CyberOps Associate": "CCNA Cybersecurity"
+  },
+  "planned": [
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "cybersecurity analyst",
+      "index": 3,
+      "field": "title",
+      "before": "Cisco Certified CyberOps Associate",
+      "after": "CCNA Cybersecurity",
+      "reviewer": "skywalker-s120@bot",
+      "reviewer_field": "curated_by"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "mainframe systems administrator",
+      "index": 1,
+      "field": "title",
+      "before": "AWS Certified SysOps Administrator — Associate",
+      "after": "AWS CloudOps Engineer - Associate",
+      "reviewer": "skywalker-s120@bot",
+      "reviewer_field": "curated_by"
+    }
+  ],
+  "filed": [
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "cybersecurity analyst",
+      "index": 3,
+      "field": "title",
+      "before": "Cisco Certified CyberOps Associate",
+      "after": "CCNA Cybersecurity",
+      "reviewer": "skywalker-s120@bot",
+      "reviewer_field": "curated_by",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "mainframe systems administrator",
+      "index": 1,
+      "field": "title",
+      "before": "AWS Certified SysOps Administrator — Associate",
+      "after": "AWS CloudOps Engineer - Associate",
+      "reviewer": "skywalker-s120@bot",
+      "reviewer_field": "curated_by",
+      "filed": "landed"
+    }
+  ],
+  "held_person_rows": []
+}

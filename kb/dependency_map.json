@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 865,
+  "file_datasets": 864,
   "external_services": 195,
   "consumers": 559,
   "workflows": 66,
@@ -9000,6 +9000,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/**/*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/README.md": {
    "consumers": [
     {
@@ -9088,6 +9101,13 @@
   },
   "file:kb/_apply_unclassified_triage.py": {
    "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
     {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
@@ -10690,7 +10710,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 75
     }
    ],
    "producers": [
@@ -11038,7 +11058,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 91
+     "line": 93
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -11052,7 +11072,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 630
+     "line": 807
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -13639,7 +13659,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 116
+     "line": 126
     }
    ],
    "producers": [
@@ -13717,32 +13737,6 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
-  "file:kb/cred_rename_out/2026-11-12/old_titles_left.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_rename_repoint.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 715
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/cred_rename_out/2026-11-12/repoint.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_rename_repoint.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 260
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
    "consumers": [
     {
@@ -13763,14 +13757,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 371
+     "line": 373
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 385
+     "line": 404
     },
     {
      "id": "script:kb/fold_issuer.py",
@@ -13898,7 +13892,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 81
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -13912,7 +13906,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 62
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -14039,7 +14033,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 91
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -14053,7 +14047,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 617
+     "line": 794
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -15496,7 +15490,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 85
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -15510,7 +15504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 89
+     "line": 101
     }
    ],
    "producers": [
@@ -16265,7 +16259,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 71
+     "line": 81
     }
    ],
    "producers": [
@@ -17858,7 +17852,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 86
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -17879,7 +17873,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 63
     },
     {
      "id": "script:kb/_family_tag_plan.py",
@@ -18068,7 +18062,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 68
+     "line": 78
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -18526,7 +18520,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 605
+     "line": 781
     }
    ],
    "producers": [
@@ -19364,7 +19358,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 71
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -19633,7 +19627,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 90
+     "line": 92
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -19647,7 +19641,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 624
+     "line": 801
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -28873,20 +28867,6 @@
      "line": 169
     },
     {
-     "id": "script:kb/_cred_rename_repoint.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 348
-    },
-    {
-     "id": "script:kb/_cred_rename_repoint.py",
-     "kind": "script",
-     "direction": "write",
-     "how": "literal",
-     "line": 419
-    },
-    {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
@@ -28898,7 +28878,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 315
+     "line": 341
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -31238,6 +31218,7 @@
     "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
     "kb/_cred_rename_repoint.py",
+    "kb/_apply_unclassified_triage.py",
     "kb/_build_remint_blast_radius.py",
     "kb/_build_ccr_cpl.py",
     "kb/_build_exhibits_related.py"
@@ -31256,7 +31237,12 @@
     "kb/cred_rename_out/",
     "kb/remint_blast_worklist.json",
     "prototype/ccr_remint_blast.json",
-    "prototype/ccr_cpl.json"
+    "prototype/ccr_cpl.json",
+    "kb/unclassified_assignments.json",
+    "kb/cer_classified.json",
+    "kb/occupation_credential_map.json",
+    "kb/reference/map_cpl_opportunities_verified.json",
+    "kb/exhibits_related.json"
    ],
    "push": "main",
    "deploys": [],

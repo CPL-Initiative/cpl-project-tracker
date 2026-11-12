@@ -54,8 +54,10 @@ reverses renames and merges alike. A second apply the same day writes
 <date>-2/ so the first receipt survives.
 
 Saved assignments (#3110, after the 2026-11-12 apply): every saved value a bot left on an old title moves to the new
-title in the same step (kb/_cred_rename_repoint.py: the unclassified assignments, the classifier's cache, the
-occupation map, MAP's by_title); a person's row is held, unchanged, and listed. repoint.json beside the receipt holds
+title in the same step (kb/_cred_rename_repoint.py: the classifier's cache, the occupation map, MAP's by_title; a
+saved assignment moves through its kb_curation row in the workflow's step 4.1, and its copy is re-read); a person's
+row, or one naming no saver, is held, unchanged, and listed. A planned write that did not land fails the apply after
+its receipt is written. repoint.json beside the receipt holds
 the planned list and a fresh read of each file; the undo reverses it.
 
 Issuer precedence (#3110 build step 1): which issuer a folded title keeps is
@@ -488,6 +490,13 @@ def main():
     if missing:
         sys.exit(f"Merge-target drift: {missing[:3]} will not exist after the renames (a same-run lead "
                  f"with no credentials.json record?). Nothing written. Re-run the dry-run and resolve.")
+    # The re-point's plan, before any file is written: a rename chain stops the apply here (kb/_cred_rename_repoint.py).
+    combined_moves = dict(renames, **merges)
+    rp_root = repoint.root_of(CREDENTIALS)
+    try:
+        repoint.check_no_chain(combined_moves)
+    except repoint.RenameChain as e:
+        sys.exit(f"{e}. Nothing written.")
     creds_res = rekey_credentials(renames)
     print(f"  credentials.json:        rekeyed={creds_res['rekeyed']}, "
           f"already_applied={creds_res['already_applied']}, "
@@ -514,7 +523,6 @@ def main():
     results["coci_articulations.json"] = art_res
     # The saved assignments and title-keyed files still on an old title (kb/_cred_rename_repoint.py): a bot's row moves
     # with the rename, a person's is held for a ruling and never changed. The files beside CREDENTIALS only.
-    rp_root = repoint.root_of(CREDENTIALS)
     rp_changes, rp_held = repoint.plan(combined, rp_root)
     repoint.apply_changes(rp_changes, rp_root)
     print(f"  saved assignments:       re-pointed={len(rp_changes)}, held (a person's row)={len(rp_held)}")
@@ -523,7 +531,9 @@ def main():
     results["saved assignments (re-point)"] = {"re_pointed": len(rp_changes), "held_person_rows": len(rp_held)}
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_after = json.load(f)
-    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"] and not rp_changes):
+    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]
+            and not [c for c in rp_changes if not c.get("via")]):
+        # A row move a planned re-point still waits on re-runs through the repoint_only input, from its receipt.
         # A re-dispatch after a failed Supabase step finds everything applied. A new <date>-N snapshot
         # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay.
         print("  nothing changed (already applied): no new receipt; the newest snapshot stays the "
@@ -578,11 +588,16 @@ def main():
     undo["fold_id"] = fold_id
     out_dir = write_snapshot(alias_doc, results, undo, issuer_plan, out_dir, resolution_rows)
     # repoint.json: the planned re-points (the undo's input), each filed from a fresh read of its file.
-    repoint.write_receipt(out_dir, combined, rp_changes, rp_held, rp_root)
+    _, rp_filed = repoint.write_receipt(out_dir, combined, rp_changes, rp_held, rp_root)
     print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md, repoint.json}}")
     if os.environ.get("GITHUB_OUTPUT"):  # the workflow's failure step rolls back this receipt's rows
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
             f.write("receipt=%s\n" % os.path.relpath(out_dir, os.path.dirname(HERE)))
+    bad = repoint.not_landed(rp_filed)
+    if bad:
+        # The receipt is on disk and named in GITHUB_OUTPUT, so the workflow's failure step commits it alone.
+        sys.exit("A planned re-point did not land: " + "; ".join("%s %s (%s)" % (c["file"], c["key"], c["filed"])
+                                                                for c in bad[:5]))
     return out_dir
 
 

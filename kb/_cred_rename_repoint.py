@@ -3,31 +3,39 @@
 
 Why it exists (COBIx on #3110, issue comments 6813000047 and 6813256997): the 2026-11-12 apply renamed 22 ASE
 bundle titles and merged 2. It re-keyed the three credential files and left three things behind:
-  1. a saved assignment on a retired title. kb/unclassified_assignments.json held "Automotive Service Excellence
-     (ASE) A4 and A5" -> "ASE Bundle — A4, A5", a row cer-procedure-classifier@bot saved on 2026-10-31, and
-     kb/cer_classified.json held the same pair. kb/_build_exhibits_related.py then lists the retired title as a
-     title a card could fold into (status "proposed"), so the Exhibits tab offers it again;
+  1. a saved assignment on a retired title. kb_curation's _UNCLASSIFIED:: row for "Automotive Service Excellence
+     (ASE) A4 and A5" (and its copy in kb/unclassified_assignments.json) kept "ASE Bundle — A4, A5", a row
+     cer-procedure-classifier@bot saved on 2026-10-31, and kb/cer_classified.json held the same pair.
+     kb/_build_exhibits_related.py then lists the retired title as a title a card could fold into;
   2. kb/reference/map_cpl_opportunities_verified.json, whose by_title is keyed by common title: the new titles
      lost their MAP links, and no workflow re-titles that file. kb/occupation_credential_map.json, the curated
      occupation rulings, named two retired titles in three rulings a bot curated;
   3. no count of the old titles left, so main read red for 68 minutes before anyone looked.
 
 What this module does, for every rename and merge an apply makes:
-  * plan() finds each saved value equal to an old title (and each by_title key) and the title it moves to. A row a
-    person saved (its reviewer does not end in "@bot") is never changed: it goes to held_person_rows for a ruling,
-    the rule kb/_cer_decision_apply.py load_plan keeps since #3123;
-  * apply_changes() writes the files; filed() reads them back, so the receipt names what landed from a fresh read,
-    never from the write's echo (cpl_memory pitfall-receipt-built-from-a-write-echo-2026-11-12);
-  * kb/unclassified_assignments.json is a copy of kb_curation's _UNCLASSIFIED:: rows, rewritten each night by
-    kb/_apply_unclassified_triage.py, so a re-point there lasts only once the row it copies moves too.
-    run_supabase() makes that move: a guarded PATCH of the value alone, on the row as a fresh read found it;
-  * undo_plan() and the undo ops let kb/_cred_rename_undo.py put each value back, from the planned lists;
-  * old_titles_left() counts every old title still under kb/ as an exact JSON key or string value.
+  * plan() finds each saved value equal to an old title (and each by_title key) and the title it moves to. A value
+    moves only when a bot saved it (its saver ends in "@bot"): a person's row, or one with no saver named, is held
+    for a ruling and never changed (the rule kb/_cer_decision_apply.py load_plan keeps since #3123). For a saved
+    assignment the saver is the title row's own (title_reviewed_by), never the newest saver of any field;
+  * apply_changes() writes the files, each value only while it holds the planned value under the planned saver;
+    filed() reads them back, so the receipt names what landed from a fresh read, never from the write's echo
+    (cpl_memory pitfall-receipt-built-from-a-write-echo-2026-11-12);
+  * kb/unclassified_assignments.json is a copy of kb_curation's _UNCLASSIFIED:: rows that
+    kb/_apply_unclassified_triage.py rewrites from them, so this module never writes that file. run_supabase()
+    moves the row itself (via "kb_curation"): a fresh read of the title row, a PATCH of the value alone guarded on
+    the value, saver and save time it found, and a fresh read filing what landed. The workflow then re-reads the
+    copy, so the file and the table agree;
+  * undo_plan(), supabase_undo() and the undo ops put each value back from the planned lists, each guarded on the
+    value and saver the re-point left, each filed from a read-back;
+  * repoint_only() re-runs both halves for an applied receipt (cred-rename-apply.yml's repoint_only input);
+  * old_titles_left() counts every old title still in kb/**/*.json as an exact JSON key or string value.
 
   python3 kb/_cred_rename_repoint.py --repair kb/cred_rename_out/2026-11-12            # what would change
   python3 kb/_cred_rename_repoint.py --repair kb/cred_rename_out/2026-11-12 --apply    # write files + receipt
+  python3 kb/_cred_rename_repoint.py --repoint-only kb/cred_rename_out/2026-11-12      # both halves (runner)
   python3 kb/_cred_rename_repoint.py --supabase kb/cred_rename_out/2026-11-12          # the kb_curation half
-  python3 kb/_cred_rename_repoint.py --supabase-plan kb/cred_rename_out/2026-11-12     # the same half as SQL
+  python3 kb/_cred_rename_repoint.py --supabase-undo kb/cred_rename_out/2026-11-12     # take that half back
+  python3 kb/_cred_rename_repoint.py --undo kb/cred_rename_out/2026-10-01 [--apply]    # undo a repair's files
   python3 kb/_cred_rename_repoint.py --count kb/cred_rename_out/2026-11-12             # write old_titles_left.json
   python3 kb/_cred_rename_repoint.py --count kb/cred_rename_out/2026-11-12 --check     # exit 1 when any is left
 
@@ -53,13 +61,15 @@ UNCLASS_FIELD = "unified_title_assignment"
 CRED_REVIEW = "_CREDENTIAL_REVIEW::"
 OVERLAY_FILE = "kb/credential_review_overlay.json"
 FAMILIES_FILE = "kb/reference/credential_families.json"
+VIA_KB_CURATION = "kb_curation"
 
 # The files a rename re-points. "value": each entry under `container` holds the title in `field`; "key": the
 # container is keyed by title; "item": each entry holds a `list` of objects with the title in `field`. `reviewer`
-# names the entry's saver; a file with none names its one writer. Each file is written back in its own format.
+# names the field holding the title's saver; a file with none names its one writer. "mirror": the file copies
+# kb_curation rows, so the row moves and the copy follows. Each file is written back in its own format.
 SPECS = (
     {"file": "kb/unclassified_assignments.json", "kind": "value", "container": "assignments",
-     "field": "unified_title", "reviewer": "reviewed_by", "indent": 2,
+     "field": "unified_title", "reviewer": "title_reviewed_by", "indent": 2,
      "mirror": {"prefix": UNCLASS, "field": UNCLASS_FIELD},
      "why": "saved title assignments, copied each night from kb_curation by kb/_apply_unclassified_triage.py"},
     {"file": "kb/cer_classified.json", "kind": "value", "container": "records", "field": "unified_title",
@@ -74,6 +84,8 @@ SPECS = (
             "match a unified title"},
 )
 
+# What the count reads, named in its receipt and its messages.
+COUNT_SCOPE = "kb/**/*.json"
 # Folders the count skips, each because it keeps old names on purpose.
 EXCLUDE_DIRS = {
     "kb/cred_rename_out": "each apply's receipt: the old titles are the alias map and the undo's basis",
@@ -97,11 +109,14 @@ def _now():
     return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _stamp():
+    return datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")
+
+
 def _read(root, rel):
     if root is None or not os.path.isfile(os.path.join(root, rel)):
         return None
-    p = os.path.join(root, rel)
-    with open(p, encoding="utf-8") as f:
+    with open(os.path.join(root, rel), encoding="utf-8") as f:
         return json.load(f)
 
 
@@ -113,6 +128,12 @@ def _write(root, rel, obj, spec):
         if spec.get("newline", True):
             f.write("\n")
     os.replace(tmp, p)
+
+
+def _dump(path, obj):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(obj, f, indent=2, ensure_ascii=False)
+        f.write("\n")
 
 
 def _spec(rel):
@@ -128,11 +149,24 @@ def root_of(credentials_path):
 
 # ── the plan ──────────────────────────────────────────────────────────────────────────────────────────────────
 
+class RenameChain(ValueError):
+    """A target of the moves is itself a title the same moves rename: one lookup would land on a retired title."""
+
+
+def check_no_chain(moves):
+    chain = sorted((o, n) for o, n in moves.items() if o != n and n in moves and moves[n] != n)
+    if chain:
+        raise RenameChain("rename chain: %s moves to %r, which these moves rename again; resolve it to the title it "
+                          "carries now (kb/credential_aliases.py moves) before re-pointing" % chain[0])
+
+
 def plan(moves, root=ROOT):
     """moves: {old title: new title}, renames and merges together. Returns (changes, held_person_rows).
 
-    A value change: {file, kind "value", key, field, before, after, reviewer, reviewed_at}. A key change, one per
-    target: {file, kind "key", key: the target, before: {title: ids or None}, after: {title: ids or None}}."""
+    A value or item change: {file, kind, key[, index], field, before, after, reviewer, reviewer_field[, via]}. A key
+    change, one per target: {file, kind "key", key: the target, before: {title: ids or None}, after: {...}}.
+    Raises RenameChain when a target is itself renamed by the same moves."""
+    check_no_chain(moves)
     changes, held = [], []
     if root is None:
         return changes, held
@@ -144,30 +178,47 @@ def plan(moves, root=ROOT):
         if spec["kind"] == "value":
             for key in sorted(box):
                 e = box[key]
-                v = (e or {}).get(spec["field"]) if isinstance(e, dict) else None
+                v = e.get(spec["field"]) if isinstance(e, dict) else None
                 if v not in moves or moves[v] == v:
                     continue
-                who = e.get(spec["reviewer"]) if spec.get("reviewer") else spec["writer"]
+                rf = spec.get("reviewer")
                 row = {"file": spec["file"], "kind": "value", "key": key, "field": spec["field"], "before": v,
-                       "after": moves[v], "reviewer": who, "reviewed_at": e.get("reviewed_at")}
-                if spec.get("reviewer") and not fold_issuer.is_bot(who):
-                    held.append(dict(row, why="a person saved this row (%s); a rename never changes it, so it waits "
-                                              "for a ruling" % (who or "no reviewer named")))
+                       "after": moves[v], "reviewer_field": rf,
+                       "reviewer": e.get(rf) if rf else spec["writer"]}
+                if spec.get("mirror"):
+                    row["via"] = VIA_KB_CURATION
+                if rf and rf not in e and spec.get("mirror"):
+                    # A copy written before the sync recorded the title's own saver: the live title row decides
+                    # (run_supabase), and the copy follows it at the re-read.
+                    row["reviewer"] = None
+                    row["saver"] = "not recorded in the copy; the live title row decides"
+                    changes.append(row)
+                elif rf and not fold_issuer.is_bot(row["reviewer"]):
+                    held.append(dict(row, why="%s saved this title; a rename never changes it, so it waits for a "
+                                              "ruling" % (row["reviewer"] or "no saver named, so it")))
                 else:
                     changes.append(row)
         elif spec["kind"] == "item":
             for key in sorted(box):
                 e = box[key] if isinstance(box[key], dict) else {}
-                for i, it in enumerate(e.get(spec["list"]) or []):
+                items = e.get(spec["list"]) or []
+                landing = {}
+                for i, it in enumerate(items):
+                    t = it.get(spec["field"]) if isinstance(it, dict) else None
+                    landing.setdefault(moves.get(t, t), []).append(i)
+                for i, it in enumerate(items):
                     v = it.get(spec["field"]) if isinstance(it, dict) else None
                     if v not in moves or moves[v] == v:
                         continue
                     who = e.get(spec["reviewer"])
                     row = {"file": spec["file"], "kind": "item", "key": key, "index": i, "field": spec["field"],
-                           "before": v, "after": moves[v], "reviewer": who, "reviewed_at": e.get("curated_at")}
+                           "before": v, "after": moves[v], "reviewer": who, "reviewer_field": spec["reviewer"]}
                     if not fold_issuer.is_bot(who):
-                        held.append(dict(row, why="a person curated this ruling (%s); a rename never changes it, "
-                                                  "so it waits for a ruling" % (who or "no curator named")))
+                        held.append(dict(row, why="%s curated this ruling; a rename never changes it, so it waits "
+                                                  "for a ruling" % (who or "no curator named, so it")))
+                    elif len(landing.get(moves[v]) or []) > 1:
+                        held.append(dict(row, why="the ruling would name %r twice; a person merges the entries"
+                                                  % moves[v]))
                     else:
                         changes.append(row)
         else:
@@ -180,7 +231,7 @@ def plan(moves, root=ROOT):
                 merged = sorted({x for t in [new] + olds for x in (box.get(t) or [])})
                 after = dict({o: None for o in olds}, **{new: merged})
                 changes.append({"file": spec["file"], "kind": "key", "key": new, "before": before, "after": after,
-                                "reviewer": spec["writer"]})
+                                "reviewer": spec["writer"], "reviewer_field": None})
     return changes, held
 
 
@@ -189,11 +240,34 @@ def _title(c):
     return c["key"] if c["kind"] == "key" else c["after"]
 
 
+def undo_title(c):
+    return _title(c)
+
+
+def _cell(box, c, spec):
+    """The object that holds a value or item change's title, or None."""
+    e = box.get(c["key"])
+    if c["kind"] == "item":
+        lst = (e or {}).get(spec["list"]) if isinstance(e, dict) else None
+        return lst[c["index"]] if isinstance(lst, list) and 0 <= c["index"] < len(lst) else None
+    return e
+
+
+def _saver_ok(box, c, spec):
+    """True when the entry still names the saver the change was planned under (no saver field: always)."""
+    rf = c.get("reviewer_field", spec.get("reviewer"))
+    if not rf or c.get("via"):
+        return True
+    return (box.get(c["key"]) or {}).get(rf) == c["reviewer"]
+
+
 def apply_changes(changes, root=ROOT):
-    """Write every change, each only while its file still holds the value it was planned from."""
+    """Write every change, each only while its file holds the planned value under the planned saver. A change that
+    goes through kb_curation is never written here: the row moves, and the copy is re-read from it."""
     by_file = {}
     for c in changes:
-        by_file.setdefault(c["file"], []).append(c)
+        if not c.get("via"):
+            by_file.setdefault(c["file"], []).append(c)
     for rel, cs in by_file.items():
         spec = _spec(rel)
         doc = _read(root, rel)
@@ -203,7 +277,7 @@ def apply_changes(changes, root=ROOT):
         for c in cs:
             if c["kind"] in ("value", "item"):
                 e = _cell(box, c, spec)
-                if isinstance(e, dict) and e.get(c["field"]) == c["before"]:
+                if isinstance(e, dict) and e.get(c["field"]) == c["before"] and _saver_ok(box, c, spec):
                     e[c["field"]] = c["after"]
             elif all(box.get(t) == v for t, v in c["before"].items()):
                 for t, v in c["after"].items():
@@ -216,17 +290,9 @@ def apply_changes(changes, root=ROOT):
         _write(root, rel, doc, spec)
 
 
-def _cell(box, c, spec):
-    """The object that holds a value or item change's title, or None."""
-    e = box.get(c["key"])
-    if c["kind"] == "item":
-        lst = (e or {}).get(spec["list"]) if isinstance(e, dict) else None
-        return lst[c["index"]] if isinstance(lst, list) and 0 <= c["index"] < len(lst) else None
-    return e
-
-
 def _state(c, root, cache):
-    """'after', 'before' or 'other': what the file holds for this change now."""
+    """'after', 'before', 'other' or 'absent': what the file holds for this change now. A value whose saver changed
+    since is 'other', whatever the value."""
     rel = c["file"]
     if rel not in cache:
         cache[rel] = _read(root, rel)
@@ -237,6 +303,8 @@ def _state(c, root, cache):
     box = doc.get(spec["container"]) or {}
     if c["kind"] in ("value", "item"):
         cur = (_cell(box, c, spec) or {}).get(c["field"])
+        if not _saver_ok(box, c, spec):
+            return "other"
         return "after" if cur == c["after"] else ("before" if cur == c["before"] else "other")
     cur = {t: box.get(t) for t in c["after"]}
     if cur == c["after"]:
@@ -245,40 +313,29 @@ def _state(c, root, cache):
 
 
 def filed(changes, root=ROOT):
-    """Each planned change as a fresh read of its file finds it: landed when the file holds the after value."""
+    """Each planned change as a fresh read of its file finds it: landed when the file holds the after value. A change
+    through kb_curation reads 'via_kb_curation' until the copy is re-read from the moved row."""
     cache = {}
     out = []
     for c in changes:
         s = _state(c, root, cache)
-        out.append(dict(c, filed="landed" if s == "after" else ("not_landed" if s == "before" else s)))
+        if c.get("via") and s != "after":
+            out.append(dict(c, filed="via_kb_curation"))
+        else:
+            out.append(dict(c, filed="landed" if s == "after" else ("not_landed" if s == "before" else s)))
     return out
 
 
-def write_receipt(out_dir, moves, changes, held, root=ROOT, source="apply", name=None):
-    """repoint.json (or repoint-<UTC>.json beside an earlier one) in the apply's receipt folder. The planned list is
-    the undo's input; `filed` is read back from the files after the writes."""
-    name = name or "repoint.json"
-    path = os.path.join(out_dir, name)
-    if os.path.exists(path):
-        path = os.path.join(out_dir, "repoint-%s.json" % datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ"))
-    doc = {
-        "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is "
-                  "the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. "
-                  "held_person_rows were saved by a person and never change without a ruling.",
-        "source": source, "at": _now(), "moves": dict(sorted(moves.items())),
-        "planned": changes, "filed": filed(changes, root), "held_person_rows": held,
-    }
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(doc, f, indent=2, ensure_ascii=False)
-        f.write("\n")
-    return path
+def not_landed(filed_rows):
+    """The filed rows whose file write did not land (a change through kb_curation is filed by its own log)."""
+    return [c for c in filed_rows if c["filed"] not in ("landed", "via_kb_curation")]
 
 
 def receipts(folder):
     """Every repoint receipt in an apply's folder, oldest first."""
     if not os.path.isdir(folder):
         return []
-    names = sorted(n for n in os.listdir(folder) if re.match(r"^repoint(-\d{8}T\d{6}Z)?\.json$", n))
+    names = [n for n in os.listdir(folder) if re.match(r"^repoint(-\d{8}T\d{6}\d*Z)?\.json$", n)]
     names.sort(key=lambda n: (n != "repoint.json", n))
     out = []
     for n in names:
@@ -287,15 +344,41 @@ def receipts(folder):
     return out
 
 
-# ── the undo ──────────────────────────────────────────────────────────────────────────────────────────────────
+def _change_key(c):
+    return (c["file"], c["kind"], c["key"], c.get("index"), json.dumps(c.get("before"), sort_keys=True),
+            json.dumps(c.get("after"), sort_keys=True))
+
+
+def write_receipt(out_dir, moves, changes, held, root=ROOT, source="apply"):
+    """repoint.json (or repoint-<UTC>.json beside an earlier one) in the apply's receipt folder. The planned list is
+    the undo's input; `filed` is read back from the files after the writes. Returns (path, filed rows)."""
+    path = os.path.join(out_dir, "repoint.json")
+    if os.path.exists(path):
+        path = os.path.join(out_dir, "repoint-%s.json" % _stamp())
+    rows = filed(changes, root)
+    _dump(path, {
+        "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is "
+                  "the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. "
+                  "held_person_rows were saved by a person, or name no saver, and never change without a ruling. "
+                  "A change via kb_curation moves the row (repoint_supabase_log*.json); its copy follows.",
+        "source": source, "at": _now(), "moves": dict(sorted(moves.items())),
+        "planned": changes, "filed": rows, "held_person_rows": held,
+    })
+    return path, rows
+
+
+# ── the undo of the files ─────────────────────────────────────────────────────────────────────────────────────
 
 def undo_plan(folder, root=ROOT):
-    """Every planned change of the folder's repoint receipts, read against the files now. Returns (todo, drift,
-    absent): todo holds the changes still at their after value (newest receipt first, so a re-point made twice
-    reverses once), drift those changed since, absent those whose file is not in this tree."""
+    """Every planned file change of the folder's repoint receipts, read against the files now. Returns (todo, drift,
+    absent): todo holds the changes still at their after value under their planned saver (newest receipt first, so a
+    re-point made twice reverses once), drift those whose value or saver changed since (listed, left alone), absent
+    those whose file is not in this tree. A change via kb_curation is the kb_curation half's to reverse."""
     cache, todo, drift, absent, seen = {}, [], [], [], set()
     for doc in reversed(receipts(folder)):
         for c in doc.get("planned") or []:
+            if c.get("via"):
+                continue
             k = (c["file"], c["kind"], c["key"], c.get("index"))
             if k in seen:
                 continue
@@ -313,10 +396,6 @@ def undo_plan(folder, root=ROOT):
 def reverse(c):
     """The change that puts c back."""
     return dict(c, before=c["after"], after=c["before"])
-
-
-def undo_title(c):
-    return _title(c)
 
 
 # ── the kb_curation half ──────────────────────────────────────────────────────────────────────────────────────
@@ -344,14 +423,14 @@ def _qs(**eq):
     return urllib.parse.urlencode({k: ("is.null" if v is None else f"eq.{v}") for k, v in eq.items()})
 
 
-def _live(cid, field):
-    rows = rest("GET", "kb_curation?select=course_id,field,%s&%s" % (",".join(ROW_COLS), _qs(course_id=cid,
-                                                                                          field=field)))
+def _live(cid, field, rest_fn=None):
+    rows = (rest_fn or rest)("GET", "kb_curation?select=course_id,field,%s&%s"
+                             % (",".join(ROW_COLS), _qs(course_id=cid, field=field)))
     return rows[0] if rows else None
 
 
 def mirror_changes(folder):
-    """The planned value changes whose file copies kb_curation rows, each once (newest receipt wins)."""
+    """The planned changes that move a kb_curation row, each once (newest receipt wins)."""
     out, seen = [], set()
     for doc in reversed(receipts(folder)):
         for c in doc.get("planned") or []:
@@ -364,46 +443,58 @@ def mirror_changes(folder):
 
 
 def _file_row(op, live):
+    """What a fresh read finds after a planned move: landed (the new title under the saver and save time the move
+    was guarded on), not_landed (the row as it stood), gone, or changed."""
+    b = op.get("before_row") or {}
     if live is None:
         return "gone"
-    if live.get("value") == op["after"]:
+    same_saver = all(live.get(k) == b.get(k) for k in ("reviewer_email", "reviewed_at"))
+    if live.get("value") == op["after"] and same_saver:
         return "landed"
-    if live.get("value") == op["before"] and all(live.get(k) == (op["before_row"] or {}).get(k)
-                                                 for k in ("reviewer_email", "reviewed_at")):
+    if live.get("value") == op["before"] and same_saver:
         return "not_landed"
     return "changed"
 
 
 def _log_path(folder, prefix):
     first = os.path.join(folder, prefix + ".json")
-    if not os.path.exists(first):
-        return first
-    return os.path.join(folder, "%s-%s.json" % (prefix, datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S%fZ")))
+    return first if not os.path.exists(first) else os.path.join(folder, "%s-%s.json" % (prefix, _stamp()))
 
 
-def _dump(path, obj):
-    with open(path, "w", encoding="utf-8") as f:
-        json.dump(obj, f, indent=2, ensure_ascii=False)
-        f.write("\n")
+def _logs_newest_first(folder, prefix):
+    """The folder's logs named <prefix>.json and <prefix>-<UTC>.json, newest first: the plain name is the first run's,
+    and the stamped ones follow in time order."""
+    if not os.path.isdir(folder):
+        return []
+    names = [n for n in os.listdir(folder) if n.endswith(".json")
+             and (n == prefix + ".json" or n.startswith(prefix + "-"))]
+    names.sort(key=lambda n: (n != prefix + ".json", n))
+    out = []
+    for n in reversed(names):
+        with open(os.path.join(folder, n), encoding="utf-8") as f:
+            out.append((n, json.load(f)))
+    return out
 
 
-def run_supabase(folder):
-    """Move each re-pointed assignment's kb_curation row to the new title: a fresh read, a guarded PATCH of the value
-    alone (on the value, reviewer and save time the read found), then a fresh read files each row. A row a person
-    saved, or one changed since the plan, is left and named. The log names every planned PATCH before the first
-    write. Returns the log."""
+def run_supabase(folder, rest_fn=None):
+    """Move each planned assignment's kb_curation title row to the new title: a fresh read; a PATCH of the value
+    alone, guarded on the value, saver and save time the read found; then a fresh read files each row. Only a row a
+    bot saved moves: a person's, or one naming no saver, is left and named (the file side holds the same rows). A
+    row already on the new title is filed from the read and not written. The log names every planned PATCH before
+    the first write. Returns (log path, ops)."""
+    rest_fn = rest_fn or rest
     ops = []
     for c in mirror_changes(folder):
-        live = _live(c["course_id"], c["row_field"])
+        live = _live(c["course_id"], c["row_field"], rest_fn)
         op = {"op": "repoint", "course_id": c["course_id"], "field": c["row_field"], "before": c["before"],
               "after": c["after"], "before_row": {k: (live or {}).get(k) for k in ROW_COLS} if live else None}
         if live is None:
             op.update(status="left", why="no kb_curation row for this assignment")
         elif live.get("value") == c["after"]:
-            op.update(status="already")
-        elif fold_issuer.is_person(live.get("reviewer_email")):
-            op.update(status="left", why="a person saved the live row (%s); it waits for a ruling"
-                      % live.get("reviewer_email"))
+            op.update(status="already", filed="already_new", why="the live row already holds the new title")
+        elif not fold_issuer.is_bot(live.get("reviewer_email")):
+            op.update(status="left", why="%s saved the live title row; it waits for a ruling"
+                      % (live.get("reviewer_email") or "no saver is named on the live title row, so it"))
         elif live.get("value") != c["before"]:
             op.update(status="left", why="the live row holds another title (%r)" % live.get("value"))
         else:
@@ -416,29 +507,25 @@ def run_supabase(folder):
             continue
         b = op["before_row"]
         try:
-            rest("PATCH", "kb_curation?" + _qs(course_id=op["course_id"], field=op["field"], value=op["before"],
-                                               reviewer_email=b.get("reviewer_email"),
-                                               reviewed_at=b.get("reviewed_at")), {"value": op["after"]})
+            rest_fn("PATCH", "kb_curation?" + _qs(course_id=op["course_id"], field=op["field"], value=op["before"],
+                                                  reviewer_email=b.get("reviewer_email"),
+                                                  reviewed_at=b.get("reviewed_at")), {"value": op["after"]})
         except Exception as e:  # filed from the read below either way: a lost response may have committed
             op["echo_error"] = str(e)[:200]
     for op in ops:
         if op["status"] == "planned":
-            op["filed"] = _file_row(op, _live(op["course_id"], op["field"]))
+            op["filed"] = _file_row(op, _live(op["course_id"], op["field"], rest_fn))
             op["status"] = "ok" if op["filed"] == "landed" else "fail"
     _dump(path, {"_state": "filed", "_filed_at": _now(), "log": ops})
     return path, ops
 
 
 def supabase_undo_ops(folder, skip_titles=()):
-    """The reversal of every planned row re-point, from the logs' planned entries, newest first; each guarded on the
-    row the re-point left (the new value, the reviewer and save time it kept)."""
+    """The reversal of every row move the logs planned, newest log first, each (course_id, field) once; each guarded
+    on the row the move left (the new value, under the saver and save time it kept)."""
     skip = set(skip_titles or ())
     out, seen = [], set()
-    names = sorted(n for n in os.listdir(folder) if n.startswith("repoint_supabase_log") and n.endswith(".json")) \
-        if os.path.isdir(folder) else []
-    for n in reversed(names):
-        with open(os.path.join(folder, n), encoding="utf-8") as f:
-            doc = json.load(f)
+    for _, doc in _logs_newest_first(folder, "repoint_supabase_log"):
         for e in doc.get("log") or []:
             if e.get("op") != "repoint" or not e.get("before_row") or e.get("filed") == "not_landed":
                 continue
@@ -453,26 +540,114 @@ def supabase_undo_ops(folder, skip_titles=()):
     return out
 
 
-def _sql_q(s):
-    return "null" if s is None else "'" + str(s).replace("'", "''") + "'"
+def repoint_back(o, rest_fn=None):
+    """Put one moved row back: read it; when it still holds the new title under the saver and save time the move
+    kept, PATCH the old value back guarded on all three; then read it back and file what it holds. Returns
+    {"status": "ok" | "already" | "left" | "fail", ...}. A read that fails raises."""
+    rest_fn = rest_fn or rest
+    b = o["before"]
+    saver = {k: b.get(k) for k in ("reviewer_email", "reviewed_at")}
+
+    def state(cur):
+        if cur is None:
+            return "gone"
+        if cur.get("value") == b.get("value") and all(cur.get(k) == v for k, v in saver.items()):
+            return "back"
+        if cur.get("value") == o["after"] and all(cur.get(k) == v for k, v in saver.items()):
+            return "moved"
+        return "changed"
+    pre = state(_live(o["course_id"], o["field"], rest_fn))
+    if pre == "back":
+        return {"status": "already"}
+    if pre != "moved":
+        return {"status": "left", "why": "the row changed since the move (%s): left as it is" % pre}
+    err = None
+    try:
+        rest_fn("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"], value=o["after"], **saver),
+                {"value": b.get("value")})
+    except Exception as e:
+        err = str(e)[:200]
+    post = state(_live(o["course_id"], o["field"], rest_fn))
+    out = {"status": "ok" if post == "back" else ("fail" if post == "moved" else "left"), "filed": post}
+    if err:
+        out["echo_error"] = err
+    return out
 
 
-def _sql_is(col, v):
-    return "%s is null" % col if v is None else "%s = %s" % (col, _sql_q(v))
+def supabase_undo(folder, skip_titles=(), rest_fn=None, prefix="repoint_rollback_log"):
+    """Every row move of the folder put back (repoint_back), with a pending log before the first write and a filed
+    one after. Returns (log path, ops)."""
+    ops = supabase_undo_ops(folder, skip_titles)
+    path = _log_path(folder, prefix)
+    _dump(path, {"_state": "pending", "_planned_at": _now(), "log": ops})
+    done = []
+    try:
+        for o in ops:
+            done.append(dict(o, **repoint_back(o, rest_fn)))
+    finally:
+        _dump(path, {"_state": "filed" if len(done) == len(ops) else "stopped", "_filed_at": _now(),
+                     "log": done + [dict(o, status="not_run") for o in ops[len(done):]]})
+    return path, done
 
 
-def supabase_plan_sql(folder):
-    """The re-point's kb_curation half as guarded SQL, for a person to run when no runner can (Rule 10): one UPDATE
-    per bot row still on its old title, guarded on the value and the reviewer the plan found."""
-    lines = ["-- The kb_curation half of a credential rename's re-point (kb/_cred_rename_repoint.py). Each UPDATE",
-             "-- changes the value alone, only while the row still holds the old title under the bot that saved it.",
-             "begin;"]
-    for c in mirror_changes(folder):
-        lines.append("update kb_curation set value = %s where course_id = %s and field = %s and value = %s and %s;"
-                     % (_sql_q(c["after"]), _sql_q(c["course_id"]), _sql_q(c["row_field"]), _sql_q(c["before"]),
-                        _sql_is("reviewer_email", c["reviewer"])))
-    lines.append("commit;")
-    return "\n".join(lines) + "\n"
+# ── a receipt re-run (cred-rename-apply.yml repoint_only) ──────────────────────────────────────────────────────
+
+def applied_moves(folder, root=ROOT):
+    """The receipt's renames and merges, each resolved to the title it carries now through every applied snapshot
+    (kb/credential_aliases.py moves), so a re-point after a later rename lands on the current title. Refuses a folder
+    that does not exist, holds no alias_map.json, was never applied, did not land, or was undone."""
+    import credential_aliases
+    folder = os.path.normpath(folder)
+    out_root = os.path.normpath(os.path.join(root, "kb", "cred_rename_out"))
+    if os.path.dirname(os.path.abspath(folder)) != os.path.abspath(out_root):
+        raise SystemExit("%s is not a receipt folder under kb/cred_rename_out/" % folder)
+    snap_path = os.path.join(folder, "alias_map.json")
+    if not os.path.isdir(folder) or not os.path.isfile(snap_path):
+        raise SystemExit("%s holds no alias_map.json: no applied plan to re-point" % folder)
+    with open(snap_path, encoding="utf-8") as f:
+        snap = json.load(f)
+    if not snap.get("_applied_at"):
+        raise SystemExit("%s was never applied (no _applied_at): nothing to re-point" % folder)
+    for marker in ("apply_failed.json", "undone.json"):
+        if os.path.exists(os.path.join(folder, marker)):
+            raise SystemExit("%s holds %s: its apply is not on main, so nothing is re-pointed" % (folder, marker))
+    now = credential_aliases.moves(root)
+    renames, merges = snap.get("renames") or {}, snap.get("merges") or {}
+    if not renames and not merges:
+        raise SystemExit("%s holds no renames or merges" % folder)
+    res = lambda o, n: (now.get(o) or {}).get("now") or n  # noqa: E731
+    return {o: res(o, n) for o, n in renames.items()}, {o: res(o, n) for o, n in merges.items()}
+
+
+def file_half(folder, root=ROOT, source="repair", write=True):
+    """Plan and write the file re-points for an applied receipt, and file a receipt when the plan holds anything an
+    earlier receipt in the folder does not. Returns (changes, held, receipt path or None, filed rows)."""
+    renames, merges = applied_moves(folder, root)
+    moves = dict(renames, **merges)
+    changes, held = plan(moves, root)
+    known = {_change_key(c) for d in receipts(folder) for c in (d.get("planned") or []) + (
+        d.get("held_person_rows") or [])}
+    new = [c for c in changes + held if _change_key(c) not in known]
+    if not write or not new:
+        return changes, held, None, filed(changes, root)
+    apply_changes(changes, root)
+    path, rows = write_receipt(folder, moves, changes, held, root, source=source)
+    return changes, held, path, rows
+
+
+def repoint_only(folder, root=ROOT, rest_fn=None):
+    """The repoint_only run: the file half (a no-op when applied), then the kb_curation half for every planned row
+    move. Never runs the rename itself. Returns an exit code."""
+    changes, held, path, rows = file_half(folder, root, source="repoint_only")
+    print("[cred_rename_repoint] repoint_only %s: %d change(s), %d held, receipt %s"
+          % (folder, len(changes), len(held), path or "none (nothing new)"))
+    bad = not_landed(rows)
+    for c in bad:
+        print("::error title=Re-point did not land::%s %s filed %s" % (c["file"], c["key"], c["filed"]))
+    log, ops = run_supabase(folder, rest_fn)
+    for o in ops:
+        print("  %s %s: %s" % (o["status"], o["course_id"], o.get("why") or o.get("filed") or ""))
+    return 1 if bad or any(o["status"] == "fail" for o in ops) else 0
 
 
 # ── the count ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -550,7 +725,7 @@ def _loc(rel, path):
 
 
 def old_titles_left(renames, merges, root=ROOT, virtual=None, skip=None):
-    """Every old title of this rename still under kb/ as an exact JSON key or string value, outside the folders
+    """Every old title of this rename still in kb/**/*.json as an exact JSON key or string value, outside the folders
     and alias lists that keep old names on purpose. virtual: {relpath: object} read in place of the file (the dry
     run's prediction); skip: {relpath: why} left out of this count. Returns the receipt block."""
     olds = set(renames) | set(merges)
@@ -594,7 +769,8 @@ def old_titles_left(renames, merges, root=ROOT, virtual=None, skip=None):
                     kept.append({"location": _loc(rel, path), "title": title, "why": kept_here[path[1]]})
                 continue
             left.append({"location": _loc(rel, path), "title": title, "as": how})
-    return {"count": len(left), "locations": left, "kept": kept, "alias_entries_skipped": alias_skipped,
+    return {"count": len(left), "scope": COUNT_SCOPE, "locations": left, "kept": kept,
+            "alias_entries_skipped": alias_skipped,
             "excluded": dict(EXCLUDE_DIRS, **{"<dated or saved/ folder>": EXCLUDE_SEGMENT_WHY}, **ALIAS_SLOTS),
             "not_counted_here": skip, "at": _now()}
 
@@ -608,8 +784,9 @@ REBUILT_BY_APPLY = {
 
 def predict_left(renames, merges, root=ROOT):
     """would_leave_old_titles: the count old_titles_left() would read after an apply of these renames and merges, from
-    the files as they stand, every write simulated in memory (the three credential files, the re-points, and the row
-    move's effect on the credential-panel overrides). None when root is None."""
+    the files as they stand, every write simulated in memory (the three credential files, the re-points, a bot's row
+    moved and its copy re-read, and the row move's effect on the credential-panel overrides). None when root is
+    None."""
     if root is None:
         return None
     moves = dict(renames, **merges)
@@ -669,12 +846,24 @@ def _moves_of(folder):
     return snap.get("renames") or {}, snap.get("merges") or {}
 
 
+def _print_plan(changes, held):
+    for c in changes:
+        print("  %s %s: %r -> %r%s" % (c["file"], c["key"], c["before"] if c["kind"] != "key" else
+                                       sorted(t for t, v in c["before"].items() if v is not None), _title(c),
+                                       " (the kb_curation row moves; the copy follows)" if c.get("via") else ""))
+    for h in held:
+        print("  HELD %s %s: %s" % (h["file"], h["key"], h["why"]))
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     g = ap.add_mutually_exclusive_group(required=True)
     g.add_argument("--repair", metavar="RECEIPT", help="re-point what an applied rename left (dry run unless --apply)")
-    g.add_argument("--supabase", metavar="RECEIPT", help="move the re-pointed assignments' kb_curation rows")
-    g.add_argument("--supabase-plan", metavar="RECEIPT", help="write repoint_supabase.sql beside the receipt")
+    g.add_argument("--repoint-only", metavar="RECEIPT", help="the file half, then the kb_curation half (a runner)")
+    g.add_argument("--supabase", metavar="RECEIPT", help="move the planned assignments' kb_curation rows")
+    g.add_argument("--supabase-undo", metavar="RECEIPT", help="put the receipt's moved kb_curation rows back")
+    g.add_argument("--undo", metavar="RECEIPT", help="put a receipt's re-pointed file values back (dry run unless "
+                                                     "--apply; with SUPABASE_SERVICE_KEY, the rows first)")
     g.add_argument("--count", metavar="RECEIPT", help="write old_titles_left.json (with --check: read it, exit 1 "
                                                       "when any old title is left)")
     ap.add_argument("--apply", action="store_true")
@@ -682,38 +871,57 @@ def main(argv=None):
     ap.add_argument("--root", default=ROOT)
     a = ap.parse_args(argv)
     if a.repair:
-        renames, merges = _moves_of(a.repair)
-        moves = dict(renames, **merges)
-        changes, held = plan(moves, a.root)
-        for c in changes:
-            print("  %s %s: %r -> %r" % (c["file"], c["key"], c["before"] if c["kind"] != "key" else
-                                         sorted(t for t, v in c["before"].items() if v is not None), _title(c)))
-        for h in held:
-            print("  HELD %s %s: %s" % (h["file"], h["key"], h["why"]))
-        print("[cred_rename_repoint] %d change(s), %d person row(s) held%s"
-              % (len(changes), len(held), "" if a.apply else " (dry run; --apply writes)"))
-        if a.apply and (changes or held):
-            apply_changes(changes, a.root)
-            print("  receipt: %s" % write_receipt(a.repair, moves, changes, held, a.root, source="repair"))
-        return 0
+        changes, held, path, rows = file_half(a.repair, a.root, source="repair", write=a.apply)
+        _print_plan(changes, held)
+        print("[cred_rename_repoint] %d change(s), %d held%s" % (len(changes), len(held), "" if a.apply else
+                                                                  " (dry run; --apply writes)"))
+        if path:
+            print("  receipt: %s" % path)
+        bad = not_landed(rows) if a.apply else []
+        for c in bad:
+            print("::error title=Re-point did not land::%s %s filed %s" % (c["file"], c["key"], c["filed"]))
+        return 1 if bad else 0
+    if a.repoint_only:
+        if not KEY:
+            sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
+        return repoint_only(a.repoint_only, a.root)
     if a.supabase:
         if not KEY:
             sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
         path, ops = run_supabase(a.supabase)
-        bad = [o for o in ops if o["status"] in ("fail", "left")]
-        print("[cred_rename_repoint] kb_curation: %d moved, %d already, %d left or failed; log %s"
-              % (sum(o["status"] == "ok" for o in ops), sum(o["status"] == "already" for o in ops), len(bad), path))
-        for o in bad:
-            print("  %s %s: %s" % (o["status"].upper(), o["course_id"], o.get("why") or o.get("filed")))
+        print("[cred_rename_repoint] kb_curation: %d moved, %d already, %d left, %d failed; log %s"
+              % tuple([sum(o["status"] == s for o in ops) for s in ("ok", "already", "left", "fail")] + [path]))
+        for o in ops:
+            if o["status"] in ("fail", "left"):
+                print("  %s %s: %s" % (o["status"].upper(), o["course_id"], o.get("why") or o.get("filed")))
         return 1 if any(o["status"] == "fail" for o in ops) else 0
-    if a.supabase_plan:
-        p = os.path.join(a.supabase_plan, "repoint_supabase.sql")
-        with open(p, "w", encoding="utf-8") as f:
-            f.write(supabase_plan_sql(a.supabase_plan))
-        print("wrote %s" % p)
+    if a.supabase_undo:
+        if not KEY:
+            sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
+        path, done = supabase_undo(a.supabase_undo)
+        print("[cred_rename_repoint] kb_curation rows put back: %d, already %d, left %d, failed %d; log %s"
+              % tuple([sum(o["status"] == s for o in done) for s in ("ok", "already", "left", "fail")] + [path]))
+        return 1 if any(o["status"] in ("fail", "left") for o in done) else 0
+    if a.undo:
+        todo, drift, absent = undo_plan(a.undo, a.root)
+        for c in drift:
+            print("  LEFT (changed since, by value or saver) %s %s" % (c["file"], c["key"]))
+        print("[cred_rename_repoint] %d value(s) to put back, %d changed since and left%s"
+              % (len(todo), len(drift), "" if a.apply else " (dry run; --apply writes)"))
+        if a.apply:
+            if supabase_undo_ops(a.undo):
+                if not KEY:
+                    sys.exit("The receipt moved kb_curation rows: set SUPABASE_SERVICE_KEY so they go back first.")
+                _, done = supabase_undo(a.undo)
+                if any(o["status"] == "fail" for o in done):
+                    sys.exit("A kb_curation row did not go back; nothing in the files was written.")
+            apply_changes([reverse(c) for c in todo], a.root)
         return 0
     path = os.path.join(a.count, "old_titles_left.json")
     if a.check:
+        if not a.count.strip():
+            print("No receipt: this run applied nothing, so there is nothing to count.")
+            return 0
         if not os.path.isfile(path):
             print("::error title=Old titles not counted::%s is missing: the count did not run." % path)
             return 1
@@ -721,18 +929,18 @@ def main(argv=None):
             res = json.load(f)
         if res.get("count"):
             where = "; ".join(x["location"] for x in res["locations"][:20])
-            print("::error title=Old titles left under kb/::%d old title(s) left after the apply: %s"
-                  % (res["count"], where))
+            print("::error title=Old titles left in %s::%d old title(s) left after the apply: %s"
+                  % (res.get("scope", COUNT_SCOPE), res["count"], where))
             return 1
-        print("No old title left under kb/ (%d kept by rule)." % len(res.get("kept") or []))
+        print("No old title left in %s (%d kept by rule)." % (res.get("scope", COUNT_SCOPE), len(res.get("kept") or [])))
         return 0
     renames, merges = _moves_of(a.count)
     res = old_titles_left(renames, merges, a.root)
-    _dump(path, dict(res, _about="Each old title of this apply still under kb/ after its writes "
+    _dump(path, dict(res, _about="Each old title of this apply still in %s after its writes "
                                  "(kb/_cred_rename_repoint.py). Target 0; kept are a person's rows the row move "
-                                 "keeps by rule."))
-    print("[cred_rename_repoint] old titles left under kb/: %d (kept by rule: %d); wrote %s"
-          % (res["count"], len(res["kept"]), path))
+                                 "keeps by rule." % COUNT_SCOPE))
+    print("[cred_rename_repoint] old titles left in %s: %d (kept by rule: %d); wrote %s"
+          % (COUNT_SCOPE, res["count"], len(res["kept"]), path))
     for x in res["locations"][:40]:
         print("  LEFT %s" % x["location"])
     return 0

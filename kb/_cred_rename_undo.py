@@ -308,55 +308,74 @@ def _current(cid, field):
     return rows[0] if rows else None
 
 
-def run_op(o):
-    """Run one op. Returns {"status": "ok" | "already" | "left", ...}; a network error raises."""
-    if o["op"] == "repoint_back":
-        b = o["before"]
-        if rest("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"], value=o["after"],
-                                              reviewer_email=b.get("reviewer_email"), reviewed_at=b.get("reviewed_at")),
-                {"value": b.get("value")}):
-            return {"status": "ok"}
-        cur = _current(o["course_id"], o["field"])
-        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
-            {"status": "left", "why": "the re-pointed row changed since the apply"}
+def _op_state(o):
+    """What a fresh read finds for one op: 'done' (the row is as the undo leaves it), 'from' (the row is as the apply
+    left it, so the op may write) or 'other' (changed since: left as it is)."""
+    b = o.get("before") or {}
     if o["op"] == "res_delete":
-        if rest("DELETE", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
-                                               reviewer_email=fold_issuer.COHORT, value=o["after"])):
-            return {"status": "ok"}
-        return {"status": "already"} if _current(o["course_id"], o["field"]) is None else \
-            {"status": "left", "why": "the resolution row changed since the apply (a later fold?)"}
-    if o["op"] == "res_restore":
-        b = o["before"]
-        if rest("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
-                                              reviewer_email=fold_issuer.COHORT, value=o["after"]),
-                {"value": b.get("value"), "reviewed_at": b.get("reviewed_at")}):
-            return {"status": "ok"}
         cur = _current(o["course_id"], o["field"])
-        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
-            {"status": "left", "why": "the resolution row changed since the apply"}
-    b = o["before"]
+        if cur is None:
+            return "done"
+        return "from" if cur.get("reviewer_email") == fold_issuer.COHORT and cur.get("value") == o["after"] else "other"
+    if o["op"] == "res_restore":
+        cur = _current(o["course_id"], o["field"])
+        if cur and cur.get("value") == b.get("value"):
+            return "done"
+        return "from" if cur and cur.get("reviewer_email") == fold_issuer.COHORT and cur.get("value") == o["after"] \
+            else "other"
+    same = lambda r: r is not None and all(r.get(k) == b.get(k) for k in ("value", "reviewer_email", "reviewed_at"))  # noqa: E731
     if o["op"] == "move_back":
-        try:
-            got = rest("PATCH", "kb_curation?" + _qs(course_id=o["new_course_id"], field=o["field"],
-                                                     value=b.get("value"), reviewer_email=b.get("reviewer_email"),
-                                                     reviewed_at=b.get("reviewed_at")),
-                       {"course_id": o["old_course_id"]})
-        except Exception as e:
-            if "409" not in str(e):
-                raise
-            return {"status": "left", "why": "the old title holds that field again"}
-        if got:
-            return {"status": "ok"}
-        cur = _current(o["old_course_id"], o["field"])
-        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
-            {"status": "left", "why": "a person changed the moved row since the apply"}
-    row = {k: b.get(k) for k in ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")}
-    row.update(course_id=o["course_id"], field=o["field"])
-    if rest("POST", "kb_curation", row, "return=representation,resolution=ignore-duplicates"):
-        return {"status": "ok"}
-    cur = _current(o["course_id"], o["field"])
-    return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
-        {"status": "left", "why": "a row is there now"}
+        at_old, at_new = _current(o["old_course_id"], o["field"]), _current(o["new_course_id"], o["field"])
+        if same(at_old) and not same(at_new):
+            return "done"
+        return "from" if same(at_new) and at_old is None else "other"
+    cur = _current(o["course_id"], o["field"])  # reinsert
+    if same(cur):
+        return "done"
+    return "from" if cur is None else "other"
+
+
+def _op_write(o):
+    b = o.get("before") or {}
+    if o["op"] == "res_delete":
+        rest("DELETE", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
+                                            reviewer_email=fold_issuer.COHORT, value=o["after"]))
+    elif o["op"] == "res_restore":
+        rest("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
+                                           reviewer_email=fold_issuer.COHORT, value=o["after"]),
+             {"value": b.get("value"), "reviewed_at": b.get("reviewed_at")})
+    elif o["op"] == "move_back":
+        rest("PATCH", "kb_curation?" + _qs(course_id=o["new_course_id"], field=o["field"], value=b.get("value"),
+                                           reviewer_email=b.get("reviewer_email"), reviewed_at=b.get("reviewed_at")),
+             {"course_id": o["old_course_id"]})
+    else:
+        row = {k: b.get(k) for k in ("value", "reviewer_email", "reviewed_at", "validated_at", "validated_by")}
+        row.update(course_id=o["course_id"], field=o["field"])
+        rest("POST", "kb_curation", row, "return=representation,resolution=ignore-duplicates")
+
+
+def run_op(o):
+    """Run one op: read the row, write only when it is as the apply left it, then read it back and file what it
+    holds; the write's echo decides nothing. Returns {"status": "ok" | "already" | "left", ...}. A network error
+    that leaves the write undone raises."""
+    if o["op"] == "repoint_back":
+        return repoint.repoint_back(o, lambda m, p, body=None: rest(m, p, body))
+    pre = _op_state(o)
+    if pre == "done":
+        return {"status": "already"}
+    if pre == "other":
+        return {"status": "left", "why": "the row changed since the apply (a person or a later run): left as it is"}
+    err = None
+    try:
+        _op_write(o)
+    except Exception as e:
+        err = e
+    post = _op_state(o)
+    if post == "done":
+        return {"status": "ok", "filed": "read back"}
+    if err is not None and not (o["op"] == "move_back" and "409" in str(err)):
+        raise err
+    return {"status": "left", "why": "the write did not take: the row reads as it stood (%s)" % post}
 
 
 def run_supabase(ops):
@@ -385,7 +404,8 @@ def main(argv=None):
     up = os.path.join(a.receipt, "undo.json")
     if not os.path.isfile(up):
         sys.exit(f"No {up}: this apply predates the undo file (before #3110 build step 1); "
-                 f"reverse it from git history.")
+                 f"reverse it from git history. A re-point filed beside it reverses on its own: "
+                 f"python3 kb/_cred_rename_repoint.py --undo {a.receipt} --apply")
     undo = _load(up)
     snap_path = os.path.join(a.receipt, "alias_map.json")
     snapshot = _load(snap_path) if os.path.isfile(snap_path) else {}
@@ -426,15 +446,17 @@ def main(argv=None):
         # fold at once), then the moved rows go back, so no nightly sees the files undone and the rows folded.
         ops, cannot = supabase_ops(slogs, skipped, rlogs)
         ops = repoint.supabase_undo_ops(a.receipt, skipped) + ops
+        from datetime import datetime, timezone
+        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+        log_path = os.path.join(a.receipt, "undo_supabase_log-%s.json" % stamp)
+        # The planned reversal is on disk before the first write; the filed log replaces it after.
+        _write(log_path, {"_state": "pending", "log": ops, "not_reversible": cannot})
         try:
             log = run_supabase(ops)
         except Exception as e:
             sys.exit(f"kb_curation unreachable ({str(e)[:200]}); nothing in the files was written. Rerun: the "
                      f"rows already put back read as already undone.")
-        from datetime import datetime, timezone
-        stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-        _write(os.path.join(a.receipt, "undo_supabase_log-%s.json" % stamp),
-               {"log": log, "not_reversible": cannot})
+        _write(log_path, {"_state": "filed", "log": log, "not_reversible": cannot})
         left = [x for x in log if x["status"] == "left"]
         print(f"  kb_curation: {sum(x['status'] == 'ok' for x in log)} put back, "
               f"{sum(x['status'] == 'already' for x in log)} already, {len(left)} left as a person made them")
@@ -449,6 +471,9 @@ def main(argv=None):
         if rp_back:
             repoint.apply_changes(rp_back, rp_root)
             print(f"  put back {len(rp_back)} re-pointed saved value(s)")
+        if repoint.mirror_changes(a.receipt):
+            print("  then re-read kb/unclassified_assignments.json from kb_curation: "
+                  "python3 kb/_apply_unclassified_triage.py (the copy follows the rows put back)")
         if undo.get("fold_id"):
             _write(os.path.join(a.receipt, "undone.json"),
                    {"fold_ids": [undo["fold_id"]], "skipped_groups": sorted(skipped),

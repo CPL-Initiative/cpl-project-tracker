@@ -368,8 +368,10 @@ try:
     # The undo ran the kb_curation half itself, first (round 3, items 6 and 7): the rows are back as they
     # were before the apply and the cohort's resolution rows are gone, so the browser agrees too.
     check("i6: the undo put kb_curation back as it was before the apply, the resolution rows first",
-          db.rows == rows0 and db.rest_calls and db.rest_calls[0][0] == "DELETE"
-          and "issuer_resolution" in db.rest_calls[0][1],
+          # Each undo op reads its row first (S640 review, item 5), so the first WRITE is the resolution delete.
+          db.rows == rows0 and [c for c in db.rest_calls if c[0] != "GET"]
+          and [c for c in db.rest_calls if c[0] != "GET"][0][0] == "DELETE"
+          and "issuer_resolution" in [c for c in db.rest_calls if c[0] != "GET"][0][1],
           json.dumps(sorted(set(db.rows) ^ set(rows0)))[:400] + " " + str(db.rest_calls[:2])[:300])
     env.nightly()
     check("i6: the next nightly leaves the restored files alone (the resolution is void)",

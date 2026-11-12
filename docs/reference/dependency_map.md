@@ -119,7 +119,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `gr_revisions` | tabs: `gr-priorities` | tabs: `gr-priorities` |
 | `item_raci` | tabs: `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` | tabs: `raci` |
 | `item_updates` | tabs: `annual-report`, `raci` · modules: `master_report.js` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | tabs: `raci` · pages: `CPL_Dashboard.html` |
-| `kb_curation` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_repoint.py`, `kb/_cred_rename_undo.py`, `kb/_csr_confirm_authority.py`, `kb/_docket_rulings.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_exhibit_subject_fill.py`, `kb/_family_tag_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `unified-courses`, `vision-2030` · modules: `kb/_family_tag_apply.py`, `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_fold_resolution_write.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_repoint.py`, `kb/_cred_rename_undo.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
+| `kb_curation` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `map-export`, `unified-courses`, `vision-2030` · scripts: `kb/_apply_canonical_subj4.py`, `kb/_apply_credential_review.py`, `kb/_apply_curation.py`, `kb/_apply_unclassified_triage.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_undo.py`, `kb/_csr_confirm_authority.py`, `kb/_docket_rulings.py`, `kb/_eacr_flag_migrate.py`, `kb/_esl_sheet_apply.py`, `kb/_exhibit_subject_fill.py`, `kb/_family_tag_apply.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` | tabs: `canonical-subj4`, `coci-lookup`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `unified-courses`, `vision-2030` · modules: `kb/_family_tag_apply.py`, `prototype/ccr_universe.js` · pages: `prototype/skyview.html` · scripts: `kb/_cred_fold_resolution_write.py`, `kb/_cred_rename_apply_supabase.py`, `kb/_cred_rename_undo.py`, `kb/_eacr_flag_migrate.py`, `kb/_overmerge_apply_supabase.py`, `kb/_preseed_unclassified.py`, `kb/_rekey_kb_curation_supabase.py`, `kb/_subj4_apply_supabase.py` |
 | `liftoff_state` | pages: `CPL_Dashboard.html` | pages: `CPL_Dashboard.html` |
 | `map_ace_exhibit_titles` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
@@ -502,12 +502,13 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb` | none found | committed by: `docket-process.yml` |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
+| `kb/**/*.json` | scripts: `kb/_cred_rename_repoint.py` | — |
 | `kb/README.md` | scripts: `kb/_build_docs_index.py` | — |
 | `kb/_apply_canonical_subj4.py` | workflows: `daily-dashboard.yml`, `phase-1e-apply.yml`, `phase-1e-sync.yml` | — |
 | `kb/_apply_college_short_names.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_apply_credential_review.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_apply_curation.py` | workflows: `daily-dashboard.yml` | — |
-| `kb/_apply_unclassified_triage.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_apply_unclassified_triage.py` | workflows: `cred-rename-apply.yml`, `daily-dashboard.yml` | — |
 | `kb/_audit_cid_claims.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_audit_exhibits.py` | workflows: `daily-dashboard.yml` | — |
 | `kb/_build_adopt_align.py` | workflows: `daily-dashboard.yml` | — |
@@ -654,8 +655,6 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` · scripts: `kb/_exhibit_reanalysis_checks.py`, `scripts/build_exhibits_list_preview.py` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
-| `kb/cred_rename_out/2026-11-12/old_titles_left.json` | scripts: `kb/_cred_rename_repoint.py` | — |
-| `kb/cred_rename_out/2026-11-12/repoint.json` | scripts: `kb/_cred_rename_repoint.py` | — |
 | `kb/cred_rename_out/2026-11-12/resolution_log.json` | scripts: `kb/_cred_fold_resolution_write.py` | — |
 | `kb/cred_rename_out/2026-11-12/undo.json` | scripts: `kb/_cred_rename_apply.py`, `kb/_cred_rename_undo.py`, `kb/fold_issuer.py` | — |
 | `kb/credential_merges.json` | scripts: `kb/_clep_fold_apply.py`, `kb/_ib_fold_apply.py`, `kb/_merge_credentials.py` | — |
@@ -1397,5 +1396,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 865 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 864 file
 datasets · 195 external services · 559 consumers · 66 workflows · 40 tabs.

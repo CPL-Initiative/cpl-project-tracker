@@ -1,7 +1,7 @@
 {
-  "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. held_person_rows were saved by a person and never change without a ruling.",
+  "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. held_person_rows were saved by a person, or name no saver, and never change without a ruling. A change via kb_curation moves the row (repoint_supabase_log*.json); its copy follows.",
   "source": "repair",
-  "at": "2026-11-12T04:11:51Z",
+  "at": "2026-11-12T04:44:23Z",
   "moves": {
     "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": "ASE Certificate Bundles: A2 + A3 + A6",
     "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": "ASE Certificate Bundles: A2 + A3",
@@ -36,8 +36,10 @@
       "field": "unified_title",
       "before": "ASE Bundle — A4, A5",
       "after": "ASE Certificate Bundles: A4 + A5",
-      "reviewer": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00"
+      "reviewer_field": "title_reviewed_by",
+      "reviewer": null,
+      "via": "kb_curation",
+      "saver": "not recorded in the copy; the live title row decides"
     },
     {
       "file": "kb/cer_classified.json",
@@ -46,8 +48,8 @@
       "field": "unified_title",
       "before": "ASE Bundle — A4, A5",
       "after": "ASE Certificate Bundles: A4 + A5",
-      "reviewer": "the classifier's cache (kb/_cer_procedures.py)",
-      "reviewed_at": null
+      "reviewer_field": null,
+      "reviewer": "the classifier's cache (kb/_cer_procedures.py)"
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -67,7 +69,8 @@
           "MAPICI-ACAA-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -87,7 +90,8 @@
           "MAPICI-ASE(14-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -112,7 +116,8 @@
           "MAPICI-ASEA2-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -132,7 +137,8 @@
           "MAPICI-ACAA2-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -152,7 +158,8 @@
           "MAPICI-ACAA3-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -170,7 +177,8 @@
           "MAPICI-ASE(15-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -188,7 +196,8 @@
           "MAPICI-ASE(9-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -206,7 +215,8 @@
           "MAPICI-AGAA-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -224,7 +234,8 @@
           "MAPICI-ASEL-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -244,7 +255,8 @@
           "MAPICI-ATLC-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -266,7 +278,8 @@
           "MAPPRI-ALTS-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -286,7 +299,8 @@
           "MAPICI-ATTT1-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -306,7 +320,8 @@
           "MAPICI-ATTT2-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -330,7 +345,8 @@
           "MAPICI-ATT+1-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -350,7 +366,8 @@
           "MAPICI-ATTT-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -370,7 +387,8 @@
           "MAPICI-ATTS-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -390,7 +408,8 @@
           "MAPICI-ATTS1-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -412,7 +431,8 @@
           "MAPMM-ATT+-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -432,7 +452,8 @@
           "MAPICI-ATTS2-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -452,7 +473,8 @@
           "MAPICI-ATTS3-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -472,7 +494,8 @@
           "MAPICI-ATTM-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/reference/map_cpl_opportunities_verified.json",
@@ -493,7 +516,8 @@
           "MAPICI-ASEM-1-001"
         ]
       },
-      "reviewer": "kb/_verify_map_exhibit_links.py"
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null
     },
     {
       "file": "kb/occupation_credential_map.json",
@@ -504,7 +528,7 @@
       "before": "ASE Bundle — T7, T8 + MACS/609",
       "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05"
+      "reviewer_field": "curated_by"
     },
     {
       "file": "kb/occupation_credential_map.json",
@@ -515,7 +539,7 @@
       "before": "ASE Bundle — T7, T8 + MACS/609",
       "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05"
+      "reviewer_field": "curated_by"
     },
     {
       "file": "kb/occupation_credential_map.json",
@@ -526,7 +550,7 @@
       "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
       "after": "ASE Certificate Bundles: A2 + A3 + A6",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05"
+      "reviewer_field": "curated_by"
     }
   ],
   "filed": [
@@ -537,9 +561,11 @@
       "field": "unified_title",
       "before": "ASE Bundle — A4, A5",
       "after": "ASE Certificate Bundles: A4 + A5",
-      "reviewer": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "filed": "landed"
+      "reviewer_field": "title_reviewed_by",
+      "reviewer": null,
+      "via": "kb_curation",
+      "saver": "not recorded in the copy; the live title row decides",
+      "filed": "via_kb_curation"
     },
     {
       "file": "kb/cer_classified.json",
@@ -548,8 +574,8 @@
       "field": "unified_title",
       "before": "ASE Bundle — A4, A5",
       "after": "ASE Certificate Bundles: A4 + A5",
+      "reviewer_field": null,
       "reviewer": "the classifier's cache (kb/_cer_procedures.py)",
-      "reviewed_at": null,
       "filed": "landed"
     },
     {
@@ -571,6 +597,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -592,6 +619,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -618,6 +646,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -639,6 +668,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -660,6 +690,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -679,6 +710,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -698,6 +730,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -717,6 +750,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -736,6 +770,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -757,6 +792,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -780,6 +816,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -801,6 +838,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -822,6 +860,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -847,6 +886,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -868,6 +908,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -889,6 +930,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -910,6 +952,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -933,6 +976,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -954,6 +998,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -975,6 +1020,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -996,6 +1042,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -1018,6 +1065,7 @@
         ]
       },
       "reviewer": "kb/_verify_map_exhibit_links.py",
+      "reviewer_field": null,
       "filed": "landed"
     },
     {
@@ -1029,7 +1077,7 @@
       "before": "ASE Bundle — T7, T8 + MACS/609",
       "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05",
+      "reviewer_field": "curated_by",
       "filed": "landed"
     },
     {
@@ -1041,7 +1089,7 @@
       "before": "ASE Bundle — T7, T8 + MACS/609",
       "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05",
+      "reviewer_field": "curated_by",
       "filed": "landed"
     },
     {
@@ -1053,7 +1101,7 @@
       "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
       "after": "ASE Certificate Bundles: A2 + A3 + A6",
       "reviewer": "skywalker-s120@bot",
-      "reviewed_at": "2026-08-05",
+      "reviewer_field": "curated_by",
       "filed": "landed"
     }
   ],
