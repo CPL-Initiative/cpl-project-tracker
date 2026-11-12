@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 374,
  "with_closed_list": 365,
- "started": "2026-11-12T05:38:07Z",
+ "started": "2026-11-12T07:10:39Z",
  "procedure_step": {
   "start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
   "follow": "2026-27 PDF Catalog",
@@ -27,7 +27,7 @@
   "unproven": []
  },
  "loads": 2,
- "seconds": 914.6,
+ "seconds": 914.3,
  "found": 0,
  "by_method": {
   "no_closed_list": 9,
@@ -2241,5 +2241,5 @@
   "held_worse_window": [],
   "held_opens_on_list": []
  },
- "run": "43162424214"
+ "run": "43173033722"
 }
