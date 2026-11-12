@@ -15,9 +15,12 @@ on:
     - cron: '17 12 * * *'   # backstop 2 — ~5:17 AM PT (4:17 AM PST); last safety net before the workday
   workflow_dispatch:         # allow manual trigger from GitHub UI
 
-concurrency:
-  group: daily-dashboard
-  cancel-in-progress: false
+# The concurrency group sits on update-dashboard, not on the workflow (COBIx #3110, S641). GitHub keeps
+# one pending run per group and cancels the older pending one when another queues; a workflow-level group
+# put every scheduled rung in the queue, so a rung that would only stand down (they land 5-7 hours late,
+# in the working day) could displace an apply waiting in the group. The gate runs outside the group and
+# reads nothing it writes; only a run that will build enters it. The group is still `daily-dashboard`,
+# shared with the applies, the Docket and the Library publisher.
 
 jobs:
   # A scheduled run stands down when the day (UTC) already has a successful run (S527, Sam, 2026-10-30:
@@ -29,31 +32,32 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       actions: read
+      contents: read
     outputs:
       run: ${{ steps.check.outputs.run }}
     steps:
+      - uses: actions/checkout@v7
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /scripts/daily_gate.sh
       - id: check
         env:
           GH_TOKEN: ${{ github.token }}
           EVENT: ${{ github.event_name }}
-        run: |
-          if [ "$EVENT" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
-          today=$(date -u +%F)
-          n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow daily-dashboard.yml --status success \
-                --created ">=$today" --limit 20 --json databaseId -q 'length' 2>/dev/null || echo "")
-          if [ -n "$n" ] && [ "$n" -gt 0 ]; then
-            echo "A successful run already exists for $today ($n): this scheduled run stands down."
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          fi
+        run: bash scripts/daily_gate.sh
 
   update-dashboard:
     needs: gate
     if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
+    concurrency:
+      group: daily-dashboard
+      cancel-in-progress: false
     permissions:
       contents: write
+      actions: read   # the stand-down check, run again once this job holds the group
 
     steps:
       - name: Checkout repo
@@ -62,18 +66,32 @@ jobs:
           ref: main
           fetch-depth: 0
 
+      # The gate ran before this run waited in the group. A rung that passed it while another run was still
+      # building waits here, and builds a second time after that run succeeds: the mid-day build the S527
+      # gate exists to prevent. So the same check runs again once this job holds the group (S641, #3147
+      # review), and every step below runs only when it says build. A dispatch always builds, as at the gate.
+      - name: Stand down if the day already has a successful run (the gate, again, inside the group)
+        id: recheck
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+        run: bash scripts/daily_gate.sh
+
       - name: Set up Python
+        if: steps.recheck.outputs.run == 'true'
         uses: actions/setup-python@v7
         with:
           python-version: '3.11'
 
       - name: Install Python dependencies
+        if: steps.recheck.outputs.run == 'true'
         # Pinned in requirements.txt; Dependabot proposes bumps via
         # .github/dependabot.yml. Run a PR's CI before merging a bump.
         run: pip install -r requirements.txt
 
       # ── Step 1: Fetch CustomReport JSON ─────────────────────────
       - name: Fetch CustomReport from MAP API
+        if: steps.recheck.outputs.run == 'true'
         # Pre-staged for MAP's user-auth rollout (docs/map_api_auth_handoff.md).
         # These secrets don't exist yet → they resolve to empty → fetch stays
         # unauthenticated (today's behavior). When MAP issues a service
@@ -90,6 +108,7 @@ jobs:
 
       # ── Step 2: Scrape live metrics ──────────────────────────────
       - name: Scrape live metrics from Cloudflare Worker
+        if: steps.recheck.outputs.run == 'true'
         env:
           CPL_SCRAPE_SECRET: ${{ secrets.CPL_SCRAPE_SECRET }}
         # A failed scrape keeps the old file so the rest of the run still publishes, and
@@ -140,6 +159,7 @@ jobs:
       # fails (keeps the prior veteran_jst.json) — the generator degrades
       # gracefully when it's absent (no MIL/JST column / proxy retained).
       - name: Fetch MIL/JST veteran data
+        if: steps.recheck.outputs.run == 'true'
         run: python3 fetch_veteran_jst.py || echo "veteran-jst fetch failed (non-fatal; prior artifact kept)"
 
       # ── Step 3: Sync curation overlay from Supabase ──────────────
@@ -147,6 +167,7 @@ jobs:
       # git-canonical kb/coci_curation.json so the pipeline below bakes them
       # into the dataset + export. Skips gracefully until the secret is set.
       - name: Sync curation overlay from Supabase
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -208,6 +229,7 @@ jobs:
       # session commit, not the cron). Pin the same version as the local
       # docx.min.js copy. --no-save keeps package.json test-only.
       - name: Install node docx (Word reports)
+        if: steps.recheck.outputs.run == 'true'
         run: npm install --no-save --no-package-lock docx@8.0.4
 
       # ── Step 4: Run pipeline ─────────────────────────────────────
@@ -219,6 +241,7 @@ jobs:
       # It also folds the newest Supabase item_updates (RACI 📝 composer)
       # into projects[].update so cards + reports carry current updates.
       - name: Run dashboard pipeline
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python excel_to_dashboard.py
@@ -229,6 +252,7 @@ jobs:
       # kb/cid_claim_audit.json; a finding not yet held in
       # kb/reference/cid_claim_holds.json is an item for the team. Read-only; non-fatal.
       - name: Audit COCI C-ID claims
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_audit_cid_claims.py || echo "C-ID claim audit failed (non-fatal)"
 
       # ── Step 4a0: Governance drift detector (OQ-08) ────────────────
@@ -239,6 +263,7 @@ jobs:
       # external reason. `|| true` because a governance NICE-TO-HAVE must never
       # be what breaks the daily dashboard.
       - name: Rebuild governance drift candidates
+        if: steps.recheck.outputs.run == 'true'
         run: python kb/_build_governance_candidates.py || true
 
       # ── Step 4a0b: Common CR Reference worklist ────────────────────
@@ -260,6 +285,7 @@ jobs:
       # `|| true` for the same reason as 4a0: a curation nice-to-have must never
       # be what breaks the daily dashboard.
       - name: Rebuild Common CR Reference worklist
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python kb/_build_peer_articulations.py \
             && python kb/_build_credential_recs.py \
@@ -273,6 +299,7 @@ jobs:
       # Non-fatal: the pathways cards degrade gracefully (prior artifact kept)
       # if the minted sources are momentarily unreadable.
       - name: Build CPL Pathways CCR enrichment
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_cpl_pathway_ccr.py || echo "CPL Pathways CCR build failed (non-fatal; prior artifact kept)"
 
       # ── Step 4a1b: CPL Pathways — AUTHORITATIVE membership view ────
@@ -285,6 +312,7 @@ jobs:
       # run-through, docs/cpl_pathways_lessons.md). Non-fatal: the cards fall back
       # to the CCR view (prior artifact kept) if a source is momentarily unreadable.
       - name: Build CPL Pathways membership view
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_program_course_graph.py \
             && python3 kb/_build_cpl_pathway_membership.py \
@@ -299,6 +327,7 @@ jobs:
       # reads Scenario 4's noncredit counts (cpl_funding_nc_counts, S471); a
       # failed read leaves those keys absent, so the outcomes read TBA.
       - name: Build funding priority-metric actuals
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 funding/_build_funding_performance.py CustomReport_latest.json || echo "funding-performance build failed (non-fatal; prior artifact kept)"
@@ -309,6 +338,7 @@ jobs:
       # for the $15M Distributions sub-view. Non-fatal: absent sidecar → the tab
       # shows that outcome as pending rather than a false "not met".
       - name: Build ESS 25-82 statewide-recommendation rollup
+        if: steps.recheck.outputs.run == 'true'
         run: python3 funding/_build_funding_ess.py || echo "funding-ess build failed (non-fatal; prior artifact kept)"
 
       # ── Step 4b: Re-run row Trust-Card auditor ────────────────────
@@ -317,6 +347,7 @@ jobs:
       # Failure is non-fatal (auditor output is a UI enhancement, not load-
       # bearing for the dashboard itself).
       - name: Run row Trust-Card auditor
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_row_audit.py || echo "Auditor failed — UCL hinky chips will use prior latest.json"
 
       # ── Step 4b2: Re-run the EXHIBIT auditor (credential layer) ───
@@ -328,6 +359,7 @@ jobs:
       # titles don't re-flag, and uses the step-1 CustomReport_latest.json for
       # MAP drift checks (KB-only mode when it's absent — non-fatal either way).
       - name: Run exhibit-canonicalization auditor
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_audit_exhibits.py || echo "Exhibit auditor failed — CER worklist will use prior latest.json"
 
       # ── Step 4b3: identity-anchored triage suggestions (Rule 5c) ──
@@ -335,6 +367,7 @@ jobs:
       # worklist's 💡 fill chips: CCN > C-ID > COS authority > modal local
       # course title, per skill Rule 5c. Suggestions only — curator confirms.
       - name: Build unclassified-triage suggestions
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_suggest_unclassified.py || echo "Triage suggestions failed — worklist renders without chips"
 
       # ── Step 4c: Cred-Ref PR-5b/0 — credential rename dry-run ─────
@@ -345,12 +378,14 @@ jobs:
       # apply-gate status. Does NOT apply renames; apply is Cred-Ref PR-5b/1,
       # manual workflow_dispatch only. Failure is non-fatal.
       - name: Run credential rename dry-run
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_cred_rename_dryrun.py || echo "Credential rename dry-run failed — non-fatal"
 
       # Build the public Fact Sheet's statewide credit-rec data from the freshly
       # regenerated statewide_data.js (authoritative CCC-tagged recs only). Logs
       # any statewide credential lacking a CCC exhibit. Non-fatal.
       - name: Build statewide credit recs (Fact Sheet)
+        if: steps.recheck.outputs.run == 'true'
         run: python3 fact-sheet/_build_statewide_recs.py || echo "statewide recs build failed (non-fatal; prior artifact kept)"
 
       # Every statewide exhibit by program area, with its total units and its lines,
@@ -360,6 +395,7 @@ jobs:
       # its program-area counts disagree with fact_sheet_metrics.json; the prior file is
       # then kept, and tests/sierra_statewide_catalog.test.js names the mismatch on main.
       - name: Build statewide catalog (Fact Sheet + Sierra)
+        if: steps.recheck.outputs.run == 'true'
         run: python3 fact-sheet/_build_statewide_catalog.py || echo "::warning title=Statewide catalog not rebuilt::fact-sheet/_build_statewide_catalog.py failed; Sierra reads the previous catalog until the next run. Check the step log."
 
       # ── Step 4d: SkyView description shards → Supabase Storage ───
@@ -370,6 +406,7 @@ jobs:
       # changed the artifacts the shards are cut from; skipped otherwise, and
       # never fatal — a stale description is not a broken dashboard.
       - name: Publish SkyView description shards (when the corpus changed)
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -394,6 +431,7 @@ jobs:
       # That is NOT a layout rebuild: ccr_universe.json is untouched here and
       # stays hand-built, which is the half of the ruling that says no.
       - name: Rebuild SkyView's decision payload (when the corpus changed)
+        if: steps.recheck.outputs.run == 'true'
         run: |
           if git diff --quiet HEAD -- unified_courses_data.js \
                                      unified_courses_members.js \
@@ -411,6 +449,7 @@ jobs:
       # CI when the committed file is not a fresh build, which is why this step
       # runs unconditionally rather than on a corpus-changed guard.
       - name: Rebuild SkyView's CPL payload
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_ccr_cpl.py --quiet \
             || echo "::warning title=SkyView CPL payload not rebuilt::kb/_build_ccr_cpl.py failed — the CPL face and the articulations light read the previous build until the next run. Check the step log."
@@ -425,6 +464,7 @@ jobs:
       # file, ~2 s. tests/ccr_cpl_universe_test.py fails CI on a stale file, so
       # this runs unconditionally like its siblings.
       - name: Rebuild SkyView's CPL universe
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_ccr_cpl_universe.py --quiet \
             || echo "::warning title=SkyView CPL universe not rebuilt::kb/_build_ccr_cpl_universe.py failed — CPL mode reads the previous build until the next run. Check the step log."
@@ -434,6 +474,7 @@ jobs:
       # universe. Same one input, ~2 s; tests/ccr_cpl_universe_members_test.py
       # fails CI on a stale file, and on a members key the universe does not carry.
       - name: Rebuild SkyView's CPL universe members
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_ccr_cpl_universe_members.py --quiet \
             || echo "::warning title=SkyView CPL universe members not rebuilt::kb/_build_ccr_cpl_universe_members.py failed — the CPL map's cards read the previous build until the next run. Check the step log."
@@ -449,6 +490,7 @@ jobs:
       # threshold by a 0.05 margin so no island changes sides on a daily rebuild
       # by a hair. tests/ccr_sky_payload_test.py fails CI on a stale file.
       - name: Rebuild SkyView's sky placement
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_ccr_sky.py --quiet \
             || echo "::warning title=SkyView sky placement not rebuilt::kb/_build_ccr_sky.py failed — the Sky view reads the previous placement until the next run. Check the step log."
@@ -461,6 +503,7 @@ jobs:
       # payload. Read-only, ~2 s, local files only.
       # tests/discipline_blanks_worklist_test.py fails CI on a stale file.
       - name: Rebuild the discipline-blank worklist
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_discipline_blanks_worklist.py \
             || echo "::warning title=Discipline-blank worklist not rebuilt::kb/_build_discipline_blanks_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
@@ -473,6 +516,7 @@ jobs:
       # payload. Read-only, ~2 s, local files only.
       # tests/orphan_parent_worklist_test.py fails CI on a stale file.
       - name: Rebuild the orphan-parent worklist
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_orphan_parent_worklist.py \
             || echo "::warning title=Orphan-parent worklist not rebuilt::kb/_build_orphan_parent_worklist.py failed — the curator list describes the previous payload until the next run. Check the step log."
@@ -486,6 +530,7 @@ jobs:
       # (`--check`) turned every PR red until a session rebuilt it.
       # Read-only, under 1 s, local files only.
       - name: Rebuild the re-mint blast radius
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_build_remint_blast_radius.py \
             || echo "::warning title=Re-mint blast radius not rebuilt::kb/_build_remint_blast_radius.py failed — SkyView's re-mint footprint reads the previous curation until the next run, and js-tests' lints job reports it stale. Check the step log."
@@ -495,6 +540,7 @@ jobs:
       # the canon rules and every minted identity's code, read-only, stdlib, local files only.
       # kb/csr_out/latest.json feeds the tab's Progress view and the Commons row's known issues.
       - name: Scan the Common Subjects Reference
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_csr_trail.py --latest || echo "::warning title=CSR scan not rebuilt::kb/_csr_trail.py failed; the Common Subjects Reference's Progress view and the Commons row read the previous kb/csr_out/latest.json until the next run. Check the step log."
 
       # The Exhibits tab's Review queue (Sam, Open Asks Sheet 147 card 1, 2026-10-31): each title
@@ -505,6 +551,7 @@ jobs:
       # this run's statewide_data.js and statewide_prescriptive.js); exhibits.js reads them. The
       # nightly cer-procedures.yml rebuilds them after its run too.
       - name: Build the Exhibits review queue
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
 
       # Another look (Sam, 2026-10-31): titles already in the reference that still differ (an ASE test
@@ -512,27 +559,32 @@ jobs:
       # two titles to fold). Runs after the fold and the review build, so a title saved today is read
       # as it now stands and a held one is left to Review. kb/exhibits_sweep.json; exhibits.js reads it.
       - name: Build the Exhibits tab's Another look
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_sweep_exhibit_titles.py --quiet || echo "::warning title=Another look not rebuilt::kb/_sweep_exhibit_titles.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
 
       # The Review card's Related titles panel and the rename batch (Sam, 2026-11-11): every canonical title with
       # its issuer and counts, and the ASE titles not yet named "<Official cert name> (ASE <code>)". Renames
       # nothing; Sam approves the batch in Review. kb/exhibits_related.json; exhibits.js reads it.
       - name: Build the Exhibits tab's related titles and rename batch
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_exhibits_related.py --quiet || echo "::warning title=Related titles not rebuilt::kb/_build_exhibits_related.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
       # The credential title moves table (S641, #3148): its report follows the live set and the retire ledger the fold appends.
       - name: Rebuild the credential title moves table
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/credential_aliases.py || echo "::warning title=Credential title moves not rebuilt::kb/credential_aliases.py failed; map_links.js reads the previous table. Check the step log."
 
       # The List view's AI sort (Sam, 2026-11-01: "like with like in an alpha-like order"): every credential
       # grouped by the subject words its title shares, the groups A to Z. Reads the credential reference
       # this run wrote. kb/exhibits_ai_sort.json; exhibits.js reads it when AI sort is pressed.
       - name: Build the Exhibits List's AI sort
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_exhibits_ai_sort.py || echo "::warning title=AI sort not rebuilt::kb/_build_exhibits_ai_sort.py failed; the List view reads the previous order until the next run. Check the step log."
 
       # The exhibit-to-cert link (Sam, 2026-11-01: "a separate canonical list of just our certs, apart from how
       # they might be bundled"): which certs each canonical title holds, by the industry credential catalog's
       # ids. ASE first. kb/exhibit_cert_links.json; the Exhibits List's finder and title drawer read it.
       - name: Build the exhibit-to-cert link
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_exhibit_cert_links.py || echo "::warning title=Cert links not rebuilt::kb/_build_exhibit_cert_links.py failed; the List reads the previous links until the next run. Check the step log."
 
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): credentials
@@ -540,6 +592,7 @@ jobs:
       # public.course_outcomes (public record) through PostgREST with the service key, and this run's adoption file and AI
       # sort. A hint only; nothing moves. kb/exhibit_slo_neighbors.json; exhibits.js reads it in the List.
       - name: Build the Exhibits List's Outcomes match hints
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -549,11 +602,13 @@ jobs:
       # The public adoption page (Sam, Open Asks Sheet 147, 2026-10-31): settled credentials only,
       # from the adoption file the step above wrote. library/adopt/adopt_data.json, adopt_more.json and adopt_ai.json (CPL-AI); library/adopt/.
       - name: Build the public adoption page's data
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_adopt_page.py --quiet || echo "::warning title=Adoption page not rebuilt::kb/_build_adopt_page.py failed; library/adopt/ reads the previous file until the next run. Check the step log."
 
       # The catalog's analysis for faculty (Sam, 2026-11-06): issuer skill areas against the harvested course
       # outcomes, read from public.course_outcomes. library/adopt/adopt_align.json, read when a panel opens.
       - name: Build the catalog's skills-to-outcomes analysis
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -564,6 +619,7 @@ jobs:
       # person's Confirm sets checked on program_requirement_records live; this commits which records,
       # without the person's address. Read-only. kb/status/program-requirements-checked.json.
       - name: Sync CPL Pathways' confirmed records
+        if: steps.recheck.outputs.run == 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
@@ -577,18 +633,22 @@ jobs:
       # two-signal re-check could not settle, from the curation synced above, so a ruled card leaves.
       # The run's dry-run plan and report stay as committed; only kb/ccr_doubt.json is kept.
       - name: Discipline in doubt (the Courses List's job)
+        if: steps.recheck.outputs.run == 'true'
         run: |
           python3 kb/_ccr_seed_recheck_dryrun.py --doubt || echo "::warning title=Discipline in doubt not rebuilt::kb/_ccr_seed_recheck_dryrun.py --doubt failed; the Courses List reads the previous kb/ccr_doubt.json. Check the step log."
           git checkout -- kb/ccr_seed_recheck_dryrun/ 2>/dev/null || true
 
       - name: Build the Commons status
+        if: steps.recheck.outputs.run == 'true'
         run: python3 kb/_build_commons_status.py --quiet || echo "::warning title=Commons status not rebuilt::kb/_build_commons_status.py failed; the Commons tab reads the previous file until the next run. Check the step log."
 
       - name: Copy dashboard to index.html
+        if: steps.recheck.outputs.run == 'true'
         run: cp CPL_Dashboard.html index.html
 
       # ── Step 6: Commit and push ───────────────────────────────────
       - name: Commit and push to main
+        if: steps.recheck.outputs.run == 'true'
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
@@ -744,6 +804,9 @@ jobs:
             # output is disposable (the next run regenerates it): discard it
             # so the committed snapshot rebases cleanly.
             git checkout -- .
+            # A conflict ends the run red, so the later rungs of the ladder stay the backstop (the gate stands
+            # down only after a success). Rebuilding in the job on the new main is COBIx #3110 finding 8, left
+            # for its own PR: it needs the generator steps runnable twice without copying them (S641).
             git rebase origin/main || { git rebase --abort; exit 1; }
             sleep $((attempt * 2))
           done
@@ -751,6 +814,7 @@ jobs:
           exit 1
 
       - name: Summary
+        if: steps.recheck.outputs.run == 'true'
         run: |
           echo "### CPL Dashboard Update — $(date +%Y-%m-%d)" >> "$GITHUB_STEP_SUMMARY"
           echo "| Step | Status |" >> "$GITHUB_STEP_SUMMARY"
@@ -764,7 +828,7 @@ jobs:
       # also means the day has no successful run, so the next cron on the ladder tries the
       # scrape again (the gate job stands down only after a success).
       - name: Fail the run on a stale scrape
-        if: env.LIVE_METRICS_STATUS != 'success'
+        if: env.LIVE_METRICS_STATUS != 'success' && steps.recheck.outputs.run == 'true'
         run: |
           echo "::error title=Stale live metrics::The scrape failed (status: ${LIVE_METRICS_STATUS:-unset}); live_metrics.json kept its last good copy."
           echo "Scrape detail: ${SCRAPE_DETAIL:-none recorded}"

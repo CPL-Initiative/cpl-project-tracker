@@ -19,8 +19,12 @@ name: CER procedures
 # rows back. save=preview lists what would save and writes no row. Governance: DR-07.
 #
 # Scheduled after the daily dashboard's primary cron (06:17), which refreshes the queue it reads.
-# Its own concurrency group: the daily run never writes these files, so a push rebases cleanly,
-# and a pending daily run is never displaced by this one.
+# Its own concurrency group, kept apart from daily-dashboard on purpose (the S641 conductor): GitHub
+# cancels an older pending run in a group without an alert, so a wider group would let this run and
+# the daily build or an apply cancel each other. Its files and the daily's overlap: the daily commits
+# kb/exhibits_adoption.json, exhibits_review.json, exhibits_related.json and kb/status/commons.json
+# too (COBIx #3110 finding 7), so a push here can meet a conflict; the 07:47 cron sits clear of the
+# daily ladder (06:17, 09:17, 12:17).
 
 on:
   schedule:
