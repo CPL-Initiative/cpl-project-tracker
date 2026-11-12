@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-12T05:21:06+00:00",
+ "_reference_generated_at": "2026-11-12T05:55:47+00:00",
  "counts": {
   "certs_linked": 238,
   "titles_linked": 275,
@@ -2485,6 +2485,13 @@
     "ITC7407"
    ]
   },
+  "Advanced Engine Performance Specialist (ASE L1 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4228"
+   ]
+  },
   "Autodesk Certified User": {
    "relation": "holds",
    "rule": "all",
@@ -2510,39 +2517,11 @@
     "ITC2482"
    ]
   },
-  "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
+  "Automatic Transmission/Transaxle (ASE A2 standards)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
     "ITC4232"
-   ]
-  },
-  "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4236"
-   ]
-  },
-  "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4239"
-   ]
-  },
-  "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4228"
-   ]
-  },
-  "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)": {
-   "relation": "aligned",
-   "rule": "all",
-   "certs": [
-    "ITC4246"
    ]
   },
   "Brakes (ASE A5 standards)": {
@@ -3023,6 +3002,13 @@
     "ITC1086"
    ]
   },
+  "Electrical/Electronic Systems (ASE A6 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4236"
+   ]
+  },
   "Emergency Medical Technician (EMT) Certification": {
    "relation": "holds",
    "rule": "all",
@@ -3303,7 +3289,21 @@
     "ITC6156"
    ]
   },
-  "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)": {
+  "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4246"
+   ]
+  },
+  "Light Vehicle Diesel Engines (ASE A9 standards)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4239"
+   ]
+  },
+  "Manual Drive Train and Axles (ASE A3 standards)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
@@ -3654,7 +3654,7 @@
     "ITC6023"
    ]
   },
-  "Suspension and Steering (ASE A4 Suspension and Steering)": {
+  "Suspension and Steering (ASE A4 standards)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [

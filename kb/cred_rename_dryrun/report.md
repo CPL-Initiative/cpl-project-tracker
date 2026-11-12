@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-11-12
 
-Generated: `2026-11-12T05:47:59Z`
+Generated: `2026-11-12T05:57:15Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -12,7 +12,7 @@ Generated: `2026-11-12T05:47:59Z`
 | V2 | Every source unified_title exists somewhere | PASS ✓ |
 | V3 | No CLEAN rename target collides with an existing credentials.json key | PASS ✓ |
 | — | Queued collisions (non-blocking — wait for a curator decision) | 0 |
-| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **YES — PR-5b/1 can dispatch** |
+| **Apply safe** | V1–V3 pass + at least one clean rename or confirmed merge (queued collisions don't block) | **NO** |
 
 ## Confirmed merges (would FOLD on apply — PR-5b/2)
 
@@ -62,31 +62,13 @@ _None._ A queued collision becomes a confirmed merge when the curator clicks **�
 - `Engine Performance 2 (ASE A8 Engine Performance)` (rename) into `Engine Performance 2 (ASE A8 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 - `Heating and Air Conditioning` (merge) into `Heating and Air Conditioning (ASE A7 standards)`: held: the title holds no exhibit, so its saved rows stay in place and do nothing
 
-## Ruled on a decision sheet (kb/cred_rename_plans/)
-
-- `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` (rename) into `Advanced Engine Performance Specialist (ASE L1 standards)`, plan standards-2-2026-11-12
-- `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` (rename) into `Automatic Transmission/Transaxle (ASE A2 standards)`, plan standards-2-2026-11-12
-- `Automotive Technology (ASE A6 Electrical/Electronic Systems)` (rename) into `Electrical/Electronic Systems (ASE A6 standards)`, plan standards-2-2026-11-12
-- `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` (rename) into `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)`, plan standards-2-2026-11-12
-- `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` (rename) into `Light Vehicle Diesel Engines (ASE A9 standards)`, plan standards-2-2026-11-12
-- `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` (rename) into `Manual Drive Train and Axles (ASE A3 standards)`, plan standards-2-2026-11-12
-- `Suspension and Steering (ASE A4 Suspension and Steering)` (rename) into `Suspension and Steering (ASE A4 standards)`, plan standards-2-2026-11-12
-
 ## Issuer of each folded title (preview, kb/fold_issuer.py)
 
 _No folds._
 
 ## Clean renames (would land on apply)
 
-| Old unified_title | → | New unified_title | raw_titles | articulations | credentials.json |
-|---|---|---|---:|---:|---|
-| `Automotive Technology (ASE A2 Automatic Transmission/Transaxle)` | → | `Automatic Transmission/Transaxle (ASE A2 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE A6 Electrical/Electronic Systems)` | → | `Electrical/Electronic Systems (ASE A6 standards)` | 3 | 0 | ✓ |
-| `Automotive Technology (ASE A9 Light Vehicle Diesel Engines)` | → | `Light Vehicle Diesel Engines (ASE A9 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L1 Advanced Engine Performance Specialist)` | → | `Advanced Engine Performance Specialist (ASE L1 standards)` | 1 | 0 | ✓ |
-| `Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)` | → | `Light Duty Hybrid/Electric Vehicle Specialist (ASE L3 standards)` | 1 | 0 | ✓ |
-| `Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)` | → | `Manual Drive Train and Axles (ASE A3 standards)` | 1 | 0 | ✓ |
-| `Suspension and Steering (ASE A4 Suspension and Steering)` | → | `Suspension and Steering (ASE A4 standards)` | 3 | 2 | ✓ |
+_None today._ Infrastructure populates the moment a curator enters a rename.
 
 ## Collisions (queued, non-blocking — curator decision required)
 

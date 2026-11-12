@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T05:23:58Z",
+ "written_at": "2026-11-12T05:59:31Z",
  "rows": [
   {
    "key": "requirements",
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T05:21:50+00:00",
+    "at": "2026-11-12T05:56:45+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T05:20:02Z",
+    "at": "2026-11-12T05:54:29Z",
     "every_hours": 24
    },
    "facts": {
@@ -986,17 +986,30 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 5,
-   "of": 5,
+   "n": 6,
+   "of": 12,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 5 exhibit titles",
+   "title": "Another look at 6 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "ase",
-    "numerals"
+    "ase"
    ],
    "cards": [
+    {
+     "id": "32e846a953d2",
+     "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
+     "keys": [
+      "_UNCLASSIFIED::Noncredit for AUTO L1"
+     ]
+    },
+    {
+     "id": "b4d89140a157",
+     "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
+     "keys": [
+      "_UNCLASSIFIED::Noncredit for AUTO A2"
+     ]
+    },
     {
      "id": "5b3807a15d88",
      "current": "Brakes (ASE A5 standards)",
@@ -1007,6 +1020,15 @@
       "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
       "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
       "_UNCLASSIFIED::Noncredit for AUTO A5"
+     ]
+    },
+    {
+     "id": "6205073ae16e",
+     "current": "Electrical/Electronic Systems (ASE A6 standards)",
+     "keys": [
+      "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+      "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
+      "_UNCLASSIFIED::Noncredit for AUTO A6"
      ]
     },
     {
@@ -1024,23 +1046,9 @@
       "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
       "_UNCLASSIFIED::Noncredit for AUTO A7"
      ]
-    },
-    {
-     "id": "5dcc165d855e",
-     "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
-     "keys": [
-      "_UNCLASSIFIED::Noncredit for AUTO P1"
-     ]
-    },
-    {
-     "id": "47c90f286f99",
-     "current": "Elementary French I",
-     "keys": [
-      "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
-     ]
     }
    ],
-   "at": "2026-11-12T05:23:34Z"
+   "at": "2026-11-12T05:58:58Z"
   },
   {
    "kind": "job",
@@ -1055,17 +1063,30 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 5,
-  "of": 5,
+  "n": 6,
+  "of": 12,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 5 exhibit titles",
+  "title": "Another look at 6 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "ase",
-   "numerals"
+   "ase"
   ],
   "cards": [
+   {
+    "id": "32e846a953d2",
+    "current": "Advanced Engine Performance Specialist (ASE L1 standards)",
+    "keys": [
+     "_UNCLASSIFIED::Noncredit for AUTO L1"
+    ]
+   },
+   {
+    "id": "b4d89140a157",
+    "current": "Automatic Transmission/Transaxle (ASE A2 standards)",
+    "keys": [
+     "_UNCLASSIFIED::Noncredit for AUTO A2"
+    ]
+   },
    {
     "id": "5b3807a15d88",
     "current": "Brakes (ASE A5 standards)",
@@ -1076,6 +1097,15 @@
      "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
      "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
      "_UNCLASSIFIED::Noncredit for AUTO A5"
+    ]
+   },
+   {
+    "id": "6205073ae16e",
+    "current": "Electrical/Electronic Systems (ASE A6 standards)",
+    "keys": [
+     "_UNCLASSIFIED::AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+     "_UNCLASSIFIED::AUTOTEC-15: Auto Electricity and Electronics",
+     "_UNCLASSIFIED::Noncredit for AUTO A6"
     ]
    },
    {
@@ -1093,22 +1123,8 @@
      "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
      "_UNCLASSIFIED::Noncredit for AUTO A7"
     ]
-   },
-   {
-    "id": "5dcc165d855e",
-    "current": "Medium/Heavy Truck Parts Specialist (ASE P1 standards)",
-    "keys": [
-     "_UNCLASSIFIED::Noncredit for AUTO P1"
-    ]
-   },
-   {
-    "id": "47c90f286f99",
-    "current": "Elementary French I",
-    "keys": [
-     "_UNCLASSIFIED::French 1-Elementary French 1st Quarter"
-    ]
    }
   ],
-  "at": "2026-11-12T05:23:34Z"
+  "at": "2026-11-12T05:58:58Z"
  }
 }
