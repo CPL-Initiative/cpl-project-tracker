@@ -1521,3 +1521,50 @@ Read the next nightly report's `classifier_run.answered` and `errors` after it l
 - **Noticed, not chased:** the `issuer_resolution` row the apply inserted on *Engine Performance (ASE A8 standards)* carries `decided_at` 2026-11-12T01:28:50Z, hours before the apply. Read where the fold builder takes that stamp before the second plan's apply.
 - **A second write path needs the whole receipt machinery again, and a fourth review round means replace the design** (#3140, `d-rename-repoint-stopped-resolve-at-read-s640`). Re-pointing saved machine values went as hand-run SQL, then a separate job, then inside the apply; five review rounds (20, 12, 9, 3 and 1 findings) each found a new wrong-data fault: an out-of-order undo stranding values, a re-point-only receipt skipping step 4's retry, then step 4 replaying the newest receipt folder's moves on an undone or failed apply (`_find_latest_snapshot` has no in-force filter). The conductor stopped it. Read-time resolution through the applied alias map (`kb/credential_aliases.py`), as `kb/alias_chain.py` does for M-IDs, rewrites no live row and needs no undo.
 - **A test outside every workflow goes red unseen.** `tests/partner_crosswalk_test.py` check 4 fails on `main` on five titles, and no workflow runs it. The governance lane carries the fix with COBIx's findings 7 to 9.
+
+## Moved from the lane (S642): the standards folds and the S640 conductor's decisions, as applied
+
+Moved verbatim from `docs/reference/lanes/cer-procedures.md` on 2026-11-12 (the lane stood at 1.06 times its budget).
+
+- **The "standards" folds, first plan, applied (S640):** `standards-2026-11-12` (#3142, `cc327236`): the A5, A7 and A8 titles to their *(ASE A5 standards)*-style names, and *Engine Performance (ASE A8 Engine Performance)* merged into the A8 one. Dispatched 05:12Z, filed `99d4ff32`, receipt `kb/cred_rename_out/2026-11-12-2/`: 13 `kb_curation` steps, 0 failed (7 of Sam's fulfilled approval rows deleted, before-rows kept; 6 bot subject rows superseded or moved), one `issuer_resolution` insert (`cred-fold-s638@bot`); the 6 held rows untouched. Published by `138779a4`. Undo: `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12-2` (`--supabase-plan`), after `-3`.
+- **DECIDED (the S640 conductor, 2026-11-12; `d-standards-plan-four-entries-s640`):** the standards plan is four entries, not five. The lane's "five" counted Sam's saved folds at ruling time; phases 1 and 2 emptied four source titles, and what remained were his four saves of 15:26Z 2026-11-11.
+- **DECIDED (the S640 conductor; `d-rename-apply-drops-fulfilled-approvals-s640`):** a rename apply drops the approval rows it fulfils (a person's override or merge confirm saying "fold this title into that one"), each before-row kept in the receipt (`kb/_cred_rename_apply_supabase.py`, *Why DELETE + PATCH*). S639's rule still protects a saved row whose instruction was never carried out. Told to COBIx before the dispatch (#3110, comment 6814772340).
+- **DECIDED (the S640 conductor; `d-standards-second-plan-s640`), applied:** the other seven standards folds, Sam's saved renames of 15:26:54Z 2026-11-11 for ASE L1, A2, A6, L3, A9, A3 and A4, ran as `standards-2-2026-11-12` (#3143, `bf8c576a`; dispatched 05:45Z after a fresh read: 19 rows on the sources, 7 Sam's, 12 bot subject rows). Filed `838e9320` (05:48Z), receipt `kb/cred_rename_out/2026-11-12-3/`: 7 renames, 19 row steps, 0 failed (7 of Sam's fulfilled overrides deleted, 12 subject rows moved); count 05:48:59Z: 0 on the old keys, 3,484 `_CREDENTIAL_REVIEW::` rows. Undo newest first: `kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-12-3`, then `-2`. The A6 *Automotive Electrical/Electronics 1* and *2* saves sit on emptied titles and stay out.
+
+- **The family is live on 25 titles** under `credential-family-s638@bot`: the 24 bundles (#3122; dry run 43120144849,
+  commit 43120939284, set `038293de0093`, receipt `applied_2026-11-11T23-38-21Z.json`), then the two any-one-test
+  members *ASE C1 or G1* and *ASE Certification (any A1–A8)* (commit 01:28Z 2026-11-12, set `3a4d0f3d969b`, receipt
+  `applied_2026-11-12T01-28-47Z.json`), less the bot tag removed on the merged A2 + A3 + A6 twin. Of the 25, 22 sit
+  on renamed bundle titles, 1 on *ASE Bundle — A6 or T6 + L3*, 2 are any-one-test. Undo:
+  `credential-family-apply.yml` `mode=rollback`. `kb/credentials.json` carries 23 `family` values until the next daily run.
+- **DECIDED (Open Asks Sheet 181, Sam, 22:55Z 2026-11-11; `d-sheet-181-replies-2026-11-11`):** ASE Master is one
+  Automobile title and one Truck title, both canonical; *ASE Certification (any A1–A8)* and *ASE C1 or G1* keep their
+  titles as any-one-test family members, no fold; *Advanced Electrical and Electronic Systems* follows the emptied-title
+  rule; the bundle renames run with the old names kept as aliases. All four are carried out above.
+- **The applier's undo never reads a write's echo (S639 review, #3123).** `Rest._call` retries a request whose response
+  was lost, and the retry echoes nothing for a write that landed. So the receipt is `pending` with the planned lists
+  before the first write, a fresh read files each row after the writes, and `--rollback` works from the planned lists
+  of every receipt (pending ones too), each step guarded by live value and reviewer (and stamp) and read back
+  (`tests/cer_decision_apply_retry_test.py`, a PostgREST-level fake). `load_plan` refuses a retire of a person's row
+  but a `reviewed_marker` unless the plan names `ruling_allows_retire_of_saved_rows`; applied plans load for rollback.
+- **DECIDED (the S639 conductor):** *ASE Master Automobile Technician (A1–A8) or L3* keeps its own title (L3 alone
+  qualifies, so an L3 holder is no Master) and *ASE Bundle — A6 or T6 + L3* stays unrenamed; both are left for a
+  person. Restored 13 rows, not 12: the map@rccd.edu issuer row is a person's.
+
+## 2026-11-12 (S642 SkyKestrel, the conductor): Sierra's ghost rows, the side panel, titles in use
+
+- Sam answered Sheet 183 card 6 "delete" (12:17Z). The delete shipped as a plan, apply and undo workflow (#3158) after
+  four reviewers found two faults that would have deleted too early: the sync-first hold missed fold-retired titles,
+  and a local apply could delete before its plan was committed. COBIx then found two more after the merge and the run
+  (#3166): an absent case-only successor let its ghost through, and the receipt could carry a count under the
+  disclosure floor. Lesson: the conductor ran the apply without reading COBIx's 13:13Z note on the PR's own thread.
+  Neither finding touched the 230 already deleted (none held a small count; the case-only path held none), *as
+  reported* by the follow-up worker.
+- 148 of the 230 ghosts had no recorded rename, so their old names reach no successor as an alias. The delete was still
+  right: a ghost is a row the reference no longer emits, and Sierra read it as a live credential.
+- Sam's Firefighter Academy card showed the gap the side panel fills: the statewide exhibit (*Firefighter 1*) was known
+  to the Fact Sheet and not to the card. The first build named titles across issuers; the review measured three wrong
+  names on real cards, and the same-issuer rule fixed all three. A test built from the real files guards each.
+- Sam's two rulings set the classifier's next step: a proposal prefers a title already in use, and an industry
+  certification takes its official name, since its several credit recommendations fit no one course title.
+

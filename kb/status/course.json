@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 634,
-  "moniker": "SkyBackward",
+  "session": 642,
+  "moniker": "SkyKestrel",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_635_handoff.md",
+  "handoff": "docs/session_643_handoff.md",
   "calls": [
     {
       "title": "Confirm Kinesiology's 627 where the descriptions and TOP both agree?",
@@ -31,13 +31,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-10T22:22:22Z",
+  "written_at": "2026-11-12T15:02:52Z",
   "project": "course",
   "next_step": {
-    "title": "Teach a rule on every reference, from the path mock",
-    "text": "The commons lane's NEXT: Teach a rule on every reference, the Course auditor's count, the Commons tokens. Every seed card that descriptions and TOP both confirm is now stamped; the cards where the two disagree stay in the Courses List's Discipline in doubt job."
+    "title": "Re-clustering Step 1, then Sam's six cases",
+    "text": "Step 1 compares course outcomes and objectives with each M-ID's members and writes nothing. Its pull request merges on a green test after its thread is read; the six disagreements in its report wait for Sam's rulings, and a second pass with a model is priced before it runs."
   },
   "changes": [
+    {
+      "at": "2026-11-12T14:50:00Z",
+      "text": "Re-clustering Step 1 reads 1,857 M-IDs with outcomes text on two or more members: 557 confirmed, 760 proposed splits, 221 merge candidates, 319 with too little text. A report only, in pull request 3165, open."
+    },
     {
       "at": "2026-11-10T20:03:00Z",
       "text": "Every remaining discipline's seed cards that descriptions and TOP both confirm are stamped, on Sam's ruling all (Open Asks Sheet 180 card 1): 584 cards in 26 disciplines, plus 10 Kinesiology cards that qualified since the first apply. Each discipline has its own receipt and reverses alone. Pull request 3084 merged."

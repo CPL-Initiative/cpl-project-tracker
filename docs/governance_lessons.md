@@ -223,3 +223,18 @@ The Governance tab paragraph and the CI and concurrency paragraph, verbatim as t
 - **A session can stop with no handoff** (the 06:12Z firing). The next firing had no `list_sessions`; it read every
   channel, watched `git ls-remote` for 23 minutes, then opened a draft PR before any other write
   (`docs/reference/scheduled_sessions.md`, *A session that stopped without a handoff*).
+
+## 2026-11-12 (S642 SkyKestrel, the conductor): a PR's own thread, and a ledger at its line
+
+- The conductor merged and ran #3158 without reading COBIx's 13:13Z note on that PR's thread; it had read #3110,
+  #3153 and its reviewers. COBIx's two findings became #3166 after the 230 rows were already deleted. Neither touched
+  them, by luck. Read each PR's own comments, to the last page, before merging it.
+- Sam had to point at #3111 and #2962: the conductor read #3153 at the start and not the standing threads. Read #3110,
+  #3111 and every issue COBIx touched today, at the start and at each wake.
+- Three PRs failed `suite (6)` for one reason: a new test file with no floor in `tests/check_floor.json` while `main`
+  sat at the ledger's 60% line. A ledger kept at its threshold fails every PR that adds a test, so the brief has to say
+  it.
+- `scripts/check_generated.sh` reported a stale resolver copy that was a worker's worktree under `.claude/worktrees/`.
+- Worked: one worker per concern, each opening its own PR; readers by dimension, then one second reader on the delete;
+  COBIx reviewing each push within minutes; one scheduled check-in per wait; worktrees removed at merge.
+
