@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Theatre Arts: Technical Production",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=946",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 13031,
-    "output_tokens": 4680,
+    "output_tokens": 4640,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 4680,
+  "output_tokens": 4640,
   "output_tokens_details": {
-   "thinking_tokens": 963
+   "thinking_tokens": 993
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.14572,
- "ms": 33731,
- "seconds": 34.1,
+ "cost_usd": 0.14492,
+ "ms": 33528,
+ "seconds": 33.7,
  "parts": null,
  "error": null,
  "score": {
@@ -121,7 +121,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local General Education Pattern or Cal-GETC",
+   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
    "degree_total": {
     "min": null,
     "max": null
@@ -661,18 +661,18 @@
    },
    {
     "code": "MUSM 140",
-    "why": "not in the text"
+    "why": "not in the text; the 9-unit list prints MUSM 306 Live Sound Reinforcement instead"
    }
   ],
   "notes": [
-   "The 9-unit block's printed total reads '91' and the TAP block's '22'; read as 9 and 2 with footnote markers 1 ('Not used to fulfill other requirements for the major') and 2 ('Earned by a minimum of 0.5 units in each of two productions for a total of 2 units').",
-   "Last block (6 units) is 'Any TA or TAP courses not used to fulfill other requirements for the major'; recorded as a choose_units block with no listed courses rather than open electives, since it is restricted to TA/TAP.",
-   "TA 404, TA 422, TA 430 and TA 437 appear in both the 3-unit and 9-unit choice lists; a course may count only once per footnote 1.",
-   "TA 434 or FASHN 334 printed as 0.5 - 2 units each; alternative FASHN 334 recorded at its low end 0.5.",
-   "MUSM 306 Live Sound Reinforcement is not in the closed list (closed list has MUSM 140 Concert Sound Reinforcement instead); recorded as catalog addition.",
-   "Degree text says the required program plus Local GE or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units printed, so degree_total and ge_units are null and electives_fill_degree is true.",
-   "Careers taken from description: 'prepare students for work as technicians and crew, or to transfer ... in preparation to be designers.'"
+   "The 9-unit block prints '91': read as 9 units with footnote 1 ('Not used to fulfill other requirements for the major').",
+   "The 2-unit TAP block prints '22': read as 2 units with footnote 2 ('Earned by a minimum of 0.5 units in each of two productions for a total of 2 units').",
+   "The final 6-unit block lists no specific courses: 'Any TA or TAP courses not used to fulfill other requirements for the major.' Recorded with an empty course list.",
+   "TA 404, TA 422, TA 430 and TA 437 appear both in the 3-unit block and the 9-unit block; footnote 1 bars double-counting.",
+   "MUSM 306 is printed in the section but is not on the closed list; recorded as catalog addition.",
+   "The degree text says 'plus sufficient electives for a total of at least 60 units'; no degree total or GE units are printed for this award, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "Outcomes are taken from the Student Learning Outcomes list printed directly under this A.A. section."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

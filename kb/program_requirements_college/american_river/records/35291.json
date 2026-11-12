@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Mechanical Engineering",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=542",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=540",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8862,
+  "input_tokens": 10432,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8862,
-    "output_tokens": 999,
+    "input_tokens": 10432,
+    "output_tokens": 975,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,7 +30,7 @@
     "model": null
    }
   ],
-  "output_tokens": 999,
+  "output_tokens": 975,
   "output_tokens_details": {
    "thinking_tokens": 0
   },
@@ -38,9 +38,9 @@
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05543,
- "ms": 8329,
- "seconds": 8.7,
+ "cost_usd": 0.06123,
+ "ms": 8038,
+ "seconds": 8.1,
  "parts": null,
  "error": null,
  "score": {
@@ -227,10 +227,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Degree requires the program plus either the Local General Education Pattern or Cal-GETC, plus sufficient electives for a total of at least 60 units; no degree total or GE units printed as a table figure, so degree_total and ge_units left null.",
-   "ENGR course descriptions following the program (ENGR 41, 42, 300, 310, 495, etc.) are course listings, not program requirements; ENGR 300 is described as recommended for all engineering students in its course description but is not listed as a recommended course for this degree, so it was not recorded.",
-   "No careers named in the program section."
+   "Degree requires completion of the program plus either the Local General Education Pattern or Cal-GETC, plus sufficient electives for a total of at least 60 units; no degree total or GE units are printed for this award, so degree_total and ge_units are null.",
+   "The printed 'Total Units: 47' for the major matches the sum of the listed courses.",
+   "Course descriptions following the degree section (ENGR 41, 42, 300, 310, 495, etc.) are not part of the requirements and were not placed."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

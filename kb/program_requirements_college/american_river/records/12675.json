@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Shielded Metal Arc Plate and Pipe",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11432,
+  "input_tokens": 11431,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11432,
-    "output_tokens": 784,
+    "input_tokens": 11431,
+    "output_tokens": 987,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 784,
+  "output_tokens": 987,
   "output_tokens_details": {
-   "thinking_tokens": 252
+   "thinking_tokens": 383
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06141,
- "ms": 7161,
- "seconds": 7.5,
+ "cost_usd": 0.06546,
+ "ms": 9460,
+ "seconds": 9.6,
  "parts": null,
  "error": null,
  "score": {
@@ -136,8 +136,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 9,
-     "max": 9
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -173,9 +173,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The certificate section prints no Career Information of its own; the career list printed just before it (oil refineries, nuclear power plants, etc.) belongs to the A.S. in Welding Technology section, so careers is left empty.",
-   "Total Units: 9 printed for the certificate; recorded as total_units and as the block's stated total."
+   "Careers left empty: the certificate's own section names no careers. The 'Career Information' paragraph naming industries (oil refineries, nuclear power plants, aerospace, etc.) follows the A.S. in Welding Technology outcomes, before the 'Certificates of Achievement' heading, so it was read as belonging to the A.S. degree; a reviewer may decide it applies department-wide.",
+   "WELD 301 recorded as an alternative to WELD 300 ('or WELD 301'), both 3 units.",
+   "Total Units: 9 printed for the certificate."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

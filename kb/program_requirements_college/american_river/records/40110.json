@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Carpenter Apprenticeship Level II",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7712,
+  "input_tokens": 9861,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7712,
-    "output_tokens": 1323,
+    "input_tokens": 9861,
+    "output_tokens": 1439,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1323,
+  "output_tokens": 1439,
   "output_tokens_details": {
-   "thinking_tokens": 321
+   "thinking_tokens": 257
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05731,
- "ms": 11287,
- "seconds": 12.0,
+ "cost_usd": 0.06822,
+ "ms": 11822,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -117,7 +117,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Certificate of Achievement section for Carpenter Apprenticeship Level II not found in the provided text",
+   "section_heading": "Carpenter Apprenticeship Level II Certificate",
    "measure": "units",
    "total_units": {
     "min": null,
@@ -146,74 +146,77 @@
   "missing_explained": [
    {
     "code": "CARPT 101",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 106",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. sections"
    },
    {
     "code": "CARPT 107",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 110",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 112",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 114",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 120",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 122",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 130",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 140",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 142",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 150",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 155",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 160",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 162",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT 180",
-    "why": "named only in the A.A. in Carpenter Apprenticeship section; certificate section not in the text"
+    "why": "Level II certificate section not in the text; named only in the A.A. in Carpenter Apprenticeship section"
    },
    {
     "code": "CARPT298",
-    "why": "named (as CARPT 298) only in the A.A. sections for Acoustical Installer and Carpenter Apprenticeship; certificate section not in the text"
+    "why": "Level II certificate section not in the text; CARPT 298 named only in the A.A. sections"
    }
   ],
-  "notes": []
+  "notes": [
+   "The supplied text contains only the program index (where 'Carpenter Apprenticeship Level II Certificate' is listed) and the A.A. in Acoustical Installer Apprenticeship and A.A. in Carpenter Apprenticeship sections; the Level II certificate's own requirements section is not in the text, so no blocks, totals, outcomes or careers were recorded.",
+   "section_heading is taken from the index entry on page 153; reviewer should locate the actual certificate section later in the catalog (the A.A. text is cut off at the end of page 155)."
+  ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

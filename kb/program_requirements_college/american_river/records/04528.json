@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Deaf Culture and American Sign Language Studies",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=476",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12078,
+  "input_tokens": 10856,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12078,
-    "output_tokens": 1835,
+    "input_tokens": 10856,
+    "output_tokens": 1637,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1835,
+  "output_tokens": 1637,
   "output_tokens_details": {
-   "thinking_tokens": 512
+   "thinking_tokens": 319
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08501,
- "ms": 15844,
- "seconds": 16.2,
+ "cost_usd": 0.07616,
+ "ms": 13324,
+ "seconds": 13.5,
  "parts": null,
  "error": null,
  "score": {
@@ -103,7 +103,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Degree Requirements",
+   "section_heading": "A.A. in Deaf Culture and American Sign Language Studies",
    "measure": "units",
    "total_units": {
     "min": 31.5,
@@ -114,7 +114,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -216,7 +216,7 @@
     ]
    },
    {
-    "name": "A minimum of 3 units from the following:",
+    "name": "A minimum of 3 units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -245,12 +245,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 476 with 'Degree Requirements'; the A.A. degree's own heading (likely on page 475) is not in the text, so section_heading uses the printed requirements heading.",
-   "Degree text says the A.A. requires the program plus Local GE or Cal-GETC and sufficient electives for at least 60 units; no degree total or GE units are printed for this award, so degree_total and ge_units are null.",
-   "The last outcome breaks across lines as 'Deaf-' / 'culture'; recorded as 'Deaf-culture' (hyphenated compound).",
-   "The degree outcome reads 'apply entry-level positions' while the certificate's reads 'apply to entry-level positions'; recorded as printed for the degree.",
-   "The A.A. in Language Studies and the Certificate of Achievement on the same pages were not read for this record."
+   "Degree may be obtained with the Local General Education Pattern or Cal-GETC plus sufficient electives for a total of at least 60 units; no degree total or GE units printed, so degree_total and ge_units are null and electives_fill_degree is true.",
+   "The third A.A. outcome is printed as 'apply entry-level positions working with the Deaf community.' (the certificate's version reads 'apply to entry-level positions'); copied as printed in the degree section.",
+   "Career information names entry-level positions 'such as paraprofessional services in an individual or group setting, in an educational or social services agency which serves Deaf clients'; recorded 'paraprofessional services' as the career named.",
+   "The same page also prints the A.A. in Language Studies and the Certificate of Achievement; only the A.A. in Deaf Culture and American Sign Language Studies section was read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

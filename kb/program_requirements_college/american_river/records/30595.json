@@ -4,7 +4,7 @@
  "shape": "adt",
  "title": "Psychology",
  "award": "A.A- T Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=856",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12521,
-    "output_tokens": 3774,
+    "output_tokens": 3688,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3774,
+  "output_tokens": 3688,
   "output_tokens_details": {
-   "thinking_tokens": 1369
+   "thinking_tokens": 1283
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.12556,
- "ms": 29313,
- "seconds": 29.8,
+ "cost_usd": 0.12384,
+ "ms": 29183,
+ "seconds": 29.3,
  "parts": null,
  "error": null,
  "score": {
@@ -124,7 +124,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) (heading not in the supplied text; section begins mid-table)",
+   "section_heading": "Associate in Arts in Psychology for Transfer (AA-T) degree (heading not printed in the excerpt; section begins on an earlier page)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -167,7 +167,7 @@
   },
   "blocks": [
    {
-    "name": "Required Program",
+    "name": "Required Program (partial; start of table cut off)",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -393,46 +393,46 @@
   "missing_explained": [
    {
     "code": "PSYC C1000",
-    "why": "Top of AA-T table cut off (previous page not supplied); named only in the A.A. section and course descriptions"
+    "why": "AA-T table start cut off before page 852; not in the AA-T text shown (named only in the A.A. section)"
    },
    {
     "code": "PSYC C1000H",
-    "why": "Top of AA-T table cut off; named only in the A.A. section"
+    "why": "AA-T table start cut off before page 852; not in the AA-T text shown (named only in the A.A. section)"
    },
    {
     "code": "PSYC 310",
-    "why": "Top of AA-T table cut off; named only in the A.A. section"
+    "why": "AA-T table start cut off before page 852; not in the AA-T text shown (named only in the A.A. section)"
    },
    {
     "code": "PSYC 330",
-    "why": "Top of AA-T table cut off; likely the lead course of the ECON 310/STAT C1000/STAT C1000H 'or' group but not printed in this section"
+    "why": "lead row of the statistics choice cut off before page 852; only its 'or' alternatives are visible"
    },
    {
     "code": "HSER 330",
-    "why": "not in the text; catalog prints SWCD 330 as the PSYC 365 alternative"
+    "why": "not in the text; catalog prints SWCD 330 as the alternative"
    },
    {
     "code": "HSER 340",
-    "why": "not in the text; catalog prints SWCD 340 as the PSYC 400 alternative"
+    "why": "not in the text; catalog prints SWCD 340 as the alternative"
    },
    {
     "code": "HSER 341",
-    "why": "not in the text; catalog prints SWCD 341 as the PSYC 401 alternative"
+    "why": "not in the text; catalog prints SWCD 341 as the alternative"
    },
    {
     "code": "HSER 342",
-    "why": "not in the text; catalog prints SWCD 342 as the PSYC 402 alternative"
+    "why": "not in the text; catalog prints SWCD 342 as the alternative"
    }
   ],
   "notes": [
-   "The AA-T section begins mid-table at the top of page 856; its heading and the first required rows (likely PSYC C1000/C1000H, PSYC 310, PSYC 330) are on page 855, which was not supplied. Reviewer should check.",
-   "ECON 310, STAT C1000 and STAT C1000H appear as 'or' rows whose lead course is cut off; recorded as one entry with ECON 310 as code. In the parallel A.A. section the lead is PSYC 330 (3-4 units).",
-   "List B also allows 'Any course from List A not already used'.",
-   "Closed-list codes PSYC401 and PSYC402 matched to catalog PSYC 401 and PSYC 402.",
-   "SWCD 330/340/341/342 are not in the closed list (closed list has HSER equivalents); marked as catalog additions.",
-   "The text says the AA-T may be obtained by completion of 60 transferable semester units including the major and Cal-GETC; not recorded as a printed degree total.",
-   "Outcomes taken from the AA-T section's Student Learning Outcomes (the A.A. section prints a separate, slightly different list)."
+   "The excerpt begins mid-table on page 852; the AA-T heading and the first required rows (likely PSYC C1000/C1000H, PSYC 310, and PSYC 330 with its 3-4 unit range) are on a previous page not provided. The statistics choice is recorded with ECON 310 as the first visible row and STAT C1000/C1000H as alternatives; reviewer should restore PSYC 330 as the lead course.",
+   "List B: 'Any course from List A not already used' also satisfies List B.",
+   "Closed-list codes PSYC401 and PSYC402 (no space) matched to catalog PSYC 401 and PSYC 402.",
+   "SWCD 330/340/341/342 are printed as alternatives and are not on the closed list; closed list instead has HSER 330/340/341/342 (possibly renamed subject).",
+   "Degree text states the AA-T may be obtained by completion of 60 transferable semester units including the major and Cal-GETC; this is a general requirement statement, so degree_total was left null.",
+   "Total Units 18-19 recorded as the major total.",
+   "Career Information also says the degree prepares students for post-graduate study."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

@@ -4,7 +4,7 @@
  "shape": "degree",
  "title": "Physical Science/Mathematics",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=848",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 14511,
-    "output_tokens": 5796,
+    "output_tokens": 5054,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 5796,
+  "output_tokens": 5054,
   "output_tokens_details": {
-   "thinking_tokens": 1119
+   "thinking_tokens": 769
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.17396,
- "ms": 42717,
- "seconds": 43.2,
+ "cost_usd": 0.15912,
+ "ms": 36408,
+ "seconds": 36.6,
  "parts": null,
  "error": null,
  "score": {
@@ -148,7 +148,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Local General Education Pattern or California General Education Transfer Curriculum (Cal-GETC)",
+   "ge_pattern": "Local General Education Pattern or Cal-GETC",
    "degree_total": {
     "min": null,
     "max": null
@@ -168,13 +168,13 @@
   },
   "blocks": [
    {
-    "name": "Required Program (course list continued from previous page)",
+    "name": "Degree Requirements",
     "rule": "choose_units",
     "minimum": 18,
     "option_group": null,
     "stated": {
-     "min": 18,
-     "max": 18
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -626,146 +626,144 @@
   "missing_explained": [
    {
     "code": "ASTR 300",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 310",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 320",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 330",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 400",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 481",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 495",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ASTR 499",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 305",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 306",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 309",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 310",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 338",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 400",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 401",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 420",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 421",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 423",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 495",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "CHEM 499",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 300",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 310",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 312",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 401",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 412",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 420",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 495",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "ENGR 499",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "GEOG 300",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "GEOG 301",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "GEOG 305",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "GEOG 306",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    },
    {
     "code": "GEOG 307",
-    "why": "not in the text; list begins mid-way, earlier part likely on page 847"
+    "why": "not in the text; list likely begins on cut-off page 843"
    }
   ],
   "notes": [
-   "The text begins mid-list on page 848; the section heading, program description and the rule line introducing the course list (likely 'A minimum of 18 units from the following') are on an earlier page not provided. section_heading is inferred from the program/award, not printed in the text.",
-   "Block rule choose_units with minimum 18 is inferred from 'Total Units: 18' at the end of the list; the actual rule wording is not in the text. Block name is a placeholder because the printed name is not visible.",
-   "Closed-list ASTR, CHEM, ENGR and GEOG 300-307 courses are presumably in the cut-off earlier part of the list; reviewer should check page 847.",
-   "MATH 480 as printed matches closed-list entry 'MATH480' (spacing difference only); treated as not a catalog addition.",
-   "Degree sentence: 'plus sufficient electives for a total of at least 60 units' — recorded as electives_fill_degree true; degree_total left null since 60 is stated as a minimum general requirement rather than a printed award total.",
-   "MATH 333 is titled 'College Algebra for Liberal Arts' in the catalog vs 'Introduction to College Algebra' in the state file.",
-   "Page footer reads 'Programs of Study – Physics'; the text after the outcomes (Physics course descriptions, Political Science programs) belongs to other sections and was ignored, including Political Science career fields."
+   "The excerpt begins mid-list on page 844; the section heading, program description and the rule line introducing the course list (likely on page 843) are not in the text. Section heading is assumed, not printed in the excerpt.",
+   "The single block is recorded as choose_units with minimum 18 based on 'Total Units: 18' and the elective-style list (independent studies, experimental offerings); the actual rule wording is not visible and should be verified.",
+   "The 60-unit sentence ('sufficient electives for a total of at least 60 units') is a generic degree statement, so degree_total is null and electives_fill_degree is true.",
+   "Closed list 'MATH480' matched to catalog 'MATH 480'.",
+   "Political Science A.A.-T. section on pages 846-847 belongs to another program and was ignored."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

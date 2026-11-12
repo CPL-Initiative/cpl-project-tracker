@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Environmental Conservation",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=798",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11699,
+  "input_tokens": 8279,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11699,
-    "output_tokens": 2184,
+    "input_tokens": 8279,
+    "output_tokens": 1567,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,49 @@
     "model": null
    }
   ],
-  "output_tokens": 2184,
+  "output_tokens": 1567,
   "output_tokens_details": {
-   "thinking_tokens": 691
+   "thinking_tokens": 425
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09048,
- "ms": 17645,
- "seconds": 18.0,
+ "cost_usd": 0.06446,
+ "ms": 13330,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 0,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.0,
+   "missing": [
+    "BIOL332",
+    "NATR300",
+    "NATR301",
+    "NATR302",
+    "NATR303",
+    "NATR304",
+    "NATR305",
+    "NATR306",
+    "NATR307",
+    "NATR310",
+    "NATR320",
+    "NATR322",
+    "NATR324",
+    "NATR330",
+    "NATR332",
+    "NATR346",
+    "NATR495",
+    "NATR498",
+    "NATR499"
+   ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -61,50 +81,49 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    22.0,
-    22.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    22.0,
-    22.0
-   ],
-   "against": "program",
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 8,
+   "program": 0,
    "courses": 0,
-   "count": 8,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
    "section_heading": "Environmental Conservation Certificate",
    "measure": "units",
    "total_units": {
-    "min": 22,
-    "max": 22
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -121,191 +140,100 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "apply scientific methodologies and critical analysis to environmental investigations.",
-    "evaluate natural resource systems, including their past and present use and management, and future sustainability.",
-    "analyze social, ethical, and biological implications of environmental management alternatives.",
-    "identify ecological phenomena in one's everyday experiences and apply ecological principles to understand local, national and global environmental issues.",
-    "assess the relationships of plants and animals to their environment and to each other.",
-    "measure, analyze, and monitor biological and physical components of the environment.",
-    "evaluate basic land survey, water quality, soils, vegetation, and wildlife data.",
-    "examine the significance of biodiversity conservation."
-   ],
-   "careers": [
-    "environmental sciences",
-    "natural resources"
-   ]
+   "outcomes": [],
+   "careers": []
   },
-  "blocks": [
-   {
-    "name": "Certificate Requirements",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "NATR 300",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 310",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 320",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "A minimum of 10 units from the following",
-    "rule": "choose_units",
-    "minimum": 10,
-    "option_group": null,
-    "stated": {
-     "min": 10,
-     "max": 10
-    },
-    "courses": [
-     {
-      "code": "BIOL 332",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "NATR 301",
-        "units": 4,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 302",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 303",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 304",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 305",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 306",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 307",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 322",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 324",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 330",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 332",
-      "units": 4,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 346",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 495",
-      "units": 1,
-      "units_max": 3,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 498",
-      "units": 0.5,
-      "units_max": 4,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "NATR 499",
-      "units": 0.5,
-      "units_max": 4,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   }
-  ],
+  "blocks": [],
   "course_outcomes": [],
   "missing_explained": [
    {
+    "code": "BIOL 332",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 300",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 301",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 302",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 303",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 304",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 305",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 307",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 310",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 320",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 322",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 330",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 332",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 346",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 495",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 498",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR 499",
+    "why": "named only in the A.S. section; certificate section not in the text"
+   },
+   {
+    "code": "NATR306",
+    "why": "named only in the A.S. section (as NATR 306); certificate section not in the text"
+   },
+   {
+    "code": "NATR324",
+    "why": "named only in the A.S. section (as NATR 324); certificate section not in the text"
+   },
+   {
     "code": "NATR499",
-    "why": "variant closed-list entry (special-topic title) of NATR 499; the catalog prints only the generic NATR 499, placed under that code"
+    "why": "named only in the A.S. section (as NATR 499); certificate section not in the text"
    }
   ],
   "notes": [
-   "Closed-list entries NATR306 and NATR324 (no space) are matched to the catalog's NATR 306 and NATR 324 and not marked as catalog additions.",
-   "Careers taken from the program description ('entry-level positions in the area of environmental sciences and natural resources'); the Career Information section names only industries/settings (private firms, nonprofit organizations, government agencies), not job titles.",
-   "The Student Learning Outcomes on page 798 belong to the General Science A.S. and were not used; the Technician (Fisheries/Sustainability/Vegetation/Wildlife) certificates are separate awards and were not read."
+   "The supplied text (pages 790-791) contains only the program introduction, the list of degrees and certificates offered, and the A.S. in Environmental Conservation section. The Environmental Conservation Certificate (Certificate of Achievement) requirements are not in the text; they likely appear on a following page (792+). A reviewer should fetch that page.",
+   "The section heading recorded is the certificate's name as printed in the 'Degrees and Certificates Offered' list; no section for it is printed in the text.",
+   "The Student Learning Outcomes printed belong to the A.S. section, not the certificate, so they were not recorded for this award.",
+   "The program introduction names settings (private firms, nonprofit organizations, government agencies) but no specific careers; careers left empty.",
+   "For reference, the A.S. section prints Total Units: 31 - 33 with a 16-unit elective list; these were not recorded because they belong to the degree, not the certificate."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

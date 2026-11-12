@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Political Science",
  "award": "A.A- T Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=851",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11936,
+  "input_tokens": 10630,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11936,
-    "output_tokens": 2614,
+    "input_tokens": 10630,
+    "output_tokens": 2626,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2614,
+  "output_tokens": 2626,
   "output_tokens_details": {
-   "thinking_tokens": 708
+   "thinking_tokens": 807
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10002,
- "ms": 21329,
- "seconds": 21.7,
+ "cost_usd": 0.09504,
+ "ms": 20454,
+ "seconds": 20.6,
  "parts": null,
  "error": null,
  "score": {
@@ -363,13 +363,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Required Core reads 'A minimum of 9 units from the following: 9' over four courses (12 units), so it is recorded as choose_units 9.",
-   "List A also allows 'Any course from the Required Core not already used'; List B also allows 'Any course from the Required Core or List A not already used'. Those courses are not repeated in the List A/B blocks.",
-   "PSYC 330, ECON 310, STAT C1000 and STAT C1000H are printed as one 'or' row in List A and recorded as one entry with alternatives (STAT courses are 4 units).",
-   "The page states the AA-T 'may be obtained by completion of 60 transferable, semester units' including the major and Cal-GETC; this reads as the standard ADT requirement rather than a printed degree total, so degree_total is left null. Reviewer may check.",
-   "The same Student Learning Outcomes list and career list are printed for both the A.A.-T. and the A.A. in Political Science; recorded here from the A.A.-T. section (outcomes continue across the page 851-852 break).",
-   "Student Learning Outcomes are printed lower-case with periods; copied as printed."
+   "List A also accepts 'Any course from the Required Core not already used'; List B also accepts 'Any course from the Required Core or List A not already used'. Those courses are recorded once, in their original blocks.",
+   "The page states the AA-T is obtained with 60 transferable semester units including the major and Cal-GETC; this reads as the general ADT requirement rather than a printed degree total, so degree_total is left null. Reviewer may check.",
+   "The same Student Learning Outcomes list and career list are printed for both the A.A.-T. and the A.A. in Political Science; recorded here from the A.A.-T. section.",
+   "The outcomes list continues across the page break from page 847 to page 848.",
+   "A.A. section courses (HIST C1001, HIST C1002, GLST 301, GLST 302 etc.) were not recorded because they belong to the A.A., not this award."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

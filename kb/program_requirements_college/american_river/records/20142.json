@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Chemical Dependency Studies",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12268,
-    "output_tokens": 2783,
+    "output_tokens": 2556,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2783,
+  "output_tokens": 2556,
   "output_tokens_details": {
-   "thinking_tokens": 686
+   "thinking_tokens": 721
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10473,
- "ms": 21851,
- "seconds": 22.2,
+ "cost_usd": 0.10019,
+ "ms": 20656,
+ "seconds": 20.8,
  "parts": null,
  "error": null,
  "score": {
@@ -306,7 +306,7 @@
     ]
    },
    {
-    "name": "A minimum of 4 units from the following",
+    "name": "A minimum of 4 units from the following:",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -329,62 +329,52 @@
   "missing_explained": [
    {
     "code": "HSER 300",
-    "why": "catalog prints renamed SWCD 300 (formerly HSER 300)"
+    "why": "renamed; catalog prints SWCD 300 (formerly HSER 300)"
    },
    {
     "code": "HSER 310",
-    "why": "catalog prints renamed SWCD 310 (formerly HSER 310)"
+    "why": "renamed; catalog prints SWCD 310 (formerly HSER 310)"
    },
    {
     "code": "HSER 330",
-    "why": "catalog prints renamed SWCD 330 (formerly HSER 330)"
+    "why": "renamed; catalog prints SWCD 330 (formerly HSER 330)"
    },
    {
     "code": "HSER 340",
-    "why": "catalog prints renamed SWCD 340 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 340"
    },
    {
     "code": "HSER 341",
-    "why": "catalog prints renamed SWCD 341 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 341"
    },
    {
     "code": "HSER 342",
-    "why": "catalog prints renamed SWCD 342 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 342"
    },
    {
     "code": "HSER 360",
-    "why": "catalog prints renamed SWCD 360 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 360"
    },
    {
     "code": "HSER 362",
-    "why": "catalog prints renamed SWCD 362 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 362"
    },
    {
     "code": "HSER 365",
-    "why": "catalog prints renamed SWCD 365 (formerly HSER)"
+    "why": "renamed; catalog prints SWCD 365"
    },
    {
     "code": "HSER 498",
-    "why": "catalog prints renamed SWCD 498 (formerly HSER)"
-   },
-   {
-    "code": "PSYC401",
-    "why": "placed as alternative PSYC 401 (closed list prints the code without a space)"
-   },
-   {
-    "code": "PSYC402",
-    "why": "placed as alternative PSYC 402 (closed list prints the code without a space)"
+    "why": "renamed; catalog prints SWCD 498 (formerly HSER)"
    }
   ],
   "notes": [
-   "Section read: 'Chemical Dependency Studies Certificate' under Certificates of Achievement (pages 926-927); the A.A. degree, Mental Behavioral Health and Social Work sections were ignored.",
-   "Units printed as '31', '32' and '43' beside SWCD 342, SWCD 365 and the work experience block were read as 3, 3 and 4 with footnote markers 1, 2 and 3.",
-   "Footnote 3: Chemical Dependency Certificate or AA students must complete a minimum of 255 internship hours for SWCD 498.",
-   "Footnotes 1 and 2: SWCD 342 and SWCD 365, if not completed before SWCD 362 and 498, must be taken as corequisites.",
-   "SWCD courses are the renumbered former HSER courses; SWCD codes are marked catalog_addition true because the closed list carries only the HSER codes. Reviewer may wish to map them to the HSER entries.",
-   "PSYC 401 and PSYC 402 were matched to closed-list entries 'PSYC401' and 'PSYC402', which are printed without a space.",
-   "The certificate total is 38 units as printed; the required courses sum to 34, plus a minimum of 4 units of SWCD 498."
+   "The catalog uses SWCD codes where the closed list has HSER codes (footnotes say 'formerly HSER'); SWCD codes are marked catalog additions and the HSER codes listed as missing.",
+   "Closed list prints PSYC401 and PSYC402 without a space; catalog prints PSYC 401 and PSYC 402. Treated as the same courses (catalog_addition false).",
+   "Trailing digits on unit figures ('31', '32', '43') read as units plus footnote markers 1, 2 and 3.",
+   "Footnote 3: certificate students must complete a minimum of 255 internship hours for SWCD 498.",
+   "The outcomes at the top of page 922 belong to a preceding (Chemical Dependency A.A.) section that is cut off; outcomes recorded here are those printed under the certificate itself."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

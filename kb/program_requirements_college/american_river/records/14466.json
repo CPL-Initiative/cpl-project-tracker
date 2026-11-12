@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Film",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=957",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10169,
+  "input_tokens": 10220,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10169,
-    "output_tokens": 1681,
+    "input_tokens": 10220,
+    "output_tokens": 1763,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1681,
+  "output_tokens": 1763,
   "output_tokens_details": {
-   "thinking_tokens": 366
+   "thinking_tokens": 489
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0743,
- "ms": 12878,
- "seconds": 13.4,
+ "cost_usd": 0.07614,
+ "ms": 14102,
+ "seconds": 14.3,
  "parts": null,
  "error": null,
  "score": {
@@ -102,7 +102,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Film Certificate",
+   "section_heading": "Certificate of Achievement – Film Certificate",
    "measure": "units",
    "total_units": {
     "min": 17,
@@ -303,11 +303,10 @@
    }
   ],
   "notes": [
-   "Read only the Film Certificate (Certificate of Achievement) section; the A.A. in Film section above it has its own requirements and outcomes, which were not used.",
-   "The first block has no printed name; 'Certificate Requirements' heading used.",
-   "The 5-unit elective list continues across the page break from page 957 to 958; read as one list.",
-   "Careers taken from 'Career Information': 'People may go into the field of film or television as actors, directors, producers, critics, and technicians.'"
+   "The certificate's list of 5 units continues across the page break from page 953 to 954; read as one block.",
+   "The Career Information paragraph follows the certificate section and appears to apply to the Film program as a whole; careers recorded from it.",
+   "The A.A. in Film section (27 units, separate outcomes) was not used for this record."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

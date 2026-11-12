@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Costuming",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=948",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 6740,
-    "output_tokens": 1650,
+    "output_tokens": 1622,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1650,
+  "output_tokens": 1622,
   "output_tokens_details": {
-   "thinking_tokens": 283
+   "thinking_tokens": 253
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05996,
- "ms": 12251,
- "seconds": 12.5,
+ "cost_usd": 0.0594,
+ "ms": 11921,
+ "seconds": 12.3,
  "parts": null,
  "error": null,
  "score": {
@@ -311,10 +311,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Two separate blocks share the printed name 'A minimum of 1 unit from the following': one lists only TA 433 (0.5-3 units, taken for at least 1 unit), the other lists the TAP technical production courses.",
-   "TA 435 or FASHN 330 recorded as one required entry with FASHN 330 as the alternative; both printed at 3 units.",
-   "FASHN 334 and TA 434 (both titled Vintage Costuming) appear to be cross-listed; either satisfies the 0.5-unit block."
+   "FASHN 334 and TA 434 (both Vintage Costuming) are printed as separate options in the 0.5-unit block; recorded as separate courses rather than alternatives.",
+   "TA 433 is the only course in its 'minimum of 1 unit' block; the student must take at least 1 unit of this variable-unit course.",
+   "Closed list stores 0.5 units for FASHN 334, TA 433, TA 434 and 1 unit for TAP courses; the catalog prints variable ranges, recorded as units/units_max."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

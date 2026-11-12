@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Environmental Conservation Technician (Vegetation)",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11114,
-    "output_tokens": 1251,
+    "output_tokens": 1397,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1251,
+  "output_tokens": 1397,
   "output_tokens_details": {
-   "thinking_tokens": 325
+   "thinking_tokens": 473
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06948,
- "ms": 9874,
- "seconds": 10.2,
+ "cost_usd": 0.0724,
+ "ms": 11696,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 5,
+   "count": 4,
    "not_verbatim": [],
    "pass": true
   },
@@ -140,7 +140,6 @@
     "plant ecologist aide/technician",
     "plant taxonomy",
     "dendrology",
-    "research and management",
     "environmental restoration"
    ]
   },
@@ -195,10 +194,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Environmental Conservation Technician (Vegetation) Certificate section on page 801; adjacent sections (Fisheries, Sustainability, Wildlife, and an unnamed certificate on page 799 with a 22-unit total) were ignored.",
-   "NATR 330 or NATR 332 recorded as one required choice with NATR 332 as the alternative.",
-   "Careers 'plant taxonomy', 'dendrology', 'research and management', and 'environmental restoration' are taken from 'positions related to ...' in the Career Information; reviewer may judge whether these are career fields."
+   "Read only the Vegetation certificate section on page 797; adjacent sections (unnamed certificate on p.795, Fisheries, Sustainability, Wildlife, Conservation/Restoration) belong to other awards.",
+   "NATR 330 or NATR 332 recorded as one required choice with NATR 332 as alternative.",
+   "Careers 'plant taxonomy', 'dendrology', and 'environmental restoration' are read from 'positions related to plant taxonomy, dendrology, research and management ... and environmental restoration'; 'research and management' omitted as too generic—reviewer may check."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

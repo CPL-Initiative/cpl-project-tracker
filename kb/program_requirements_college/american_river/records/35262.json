@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Welding Technology",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11646,
+  "input_tokens": 11671,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11646,
-    "output_tokens": 2298,
+    "input_tokens": 11671,
+    "output_tokens": 2292,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2298,
+  "output_tokens": 2292,
   "output_tokens_details": {
-   "thinking_tokens": 691
+   "thinking_tokens": 677
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09254,
- "ms": 17570,
- "seconds": 18.2,
+ "cost_usd": 0.09252,
+ "ms": 17904,
+ "seconds": 18.1,
  "parts": null,
  "error": null,
  "score": {
@@ -291,10 +291,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section read is the 'Welding Technology Certificate' under 'Certificates of Achievement' (pages 970-971); the A.S. degree and other certificates on the page were not used.",
-   "The row 'WELD 155 Industry Training (3) 0.5 - 41' was read as units range 0.5-4 with footnote marker 1; footnote reads 'A minimum of 1 unit from the following courses.' The printed range 0.5-4 (and Total Units 34.5-38 = 34 core units + 0.5-4) conflicts with the footnote's 1-unit minimum; reviewer should check.",
-   "WELD 155, WELD 115 and WELD 298 are printed as 'or' rows; recorded as a choose_units block per the footnote."
+   "The WELD 155 / WELD 115 / WELD 298 row prints units '0.5 - 4' with footnote 1 ('A minimum of 1 unit from the following courses'); recorded as a choose_units block with minimum 1 and stated 0.5-4. The printed 0.5 low end conflicts with the 1-unit minimum in the footnote; reviewer should check.",
+   "Required courses sum to 34 units; plus 0.5-4 from the footnoted choice matches the printed Total Units 34.5-38.",
+   "Careers include industries named in the certificate's Career Information (pipeline construction, oil refining, etc.) and job titles (welding shop supervisors, etc.).",
+   "The A.S. degree section prints identical course requirements; only the certificate section was used."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

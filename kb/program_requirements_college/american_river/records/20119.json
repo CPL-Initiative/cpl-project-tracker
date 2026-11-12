@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Automotive Component Service Technician",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12067,
+  "input_tokens": 11266,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12067,
-    "output_tokens": 1389,
+    "input_tokens": 11266,
+    "output_tokens": 1794,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,44 @@
     "model": null
    }
   ],
-  "output_tokens": 1389,
+  "output_tokens": 1794,
   "output_tokens_details": {
-   "thinking_tokens": 312
+   "thinking_tokens": 745
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07605,
- "ms": 11539,
- "seconds": 11.9,
+ "cost_usd": 0.08094,
+ "ms": 17309,
+ "seconds": 17.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 14,
+   "placed": 0,
    "listed": 14,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.0,
+   "missing": [
+    "AT100",
+    "AT103",
+    "AT105",
+    "AT110",
+    "AT130",
+    "AT140",
+    "AT180",
+    "AT181",
+    "AT298",
+    "AT310",
+    "AT311",
+    "AT313",
+    "AT314",
+    "AT330"
+   ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -61,18 +76,17 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    37.0,
-    37.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    37.0,
-    37.0
-   ],
-   "against": "program",
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
@@ -96,15 +110,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
    "section_heading": "Automotive Component Service Technician Certificate",
    "measure": "units",
    "total_units": {
-    "min": 37,
-    "max": 37
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,137 +138,71 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
    {
-    "name": "Certificate Requirements",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "AT 100",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "AT 103",
-        "units": 3,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 105",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 110",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 130",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 140",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 180",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 181",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 310",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 311",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 313",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 314",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "AT 330",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "AT 100",
+    "why": "certificate section not in the text; named only in the A.S. section"
    },
    {
-    "name": "A minimum of 1 unit from the following",
-    "rule": "choose_units",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 1,
-     "max": 1
-    },
-    "courses": [
-     {
-      "code": "AT 298",
-      "units": 0.5,
-      "units_max": 4,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "AT 103",
+    "why": "certificate section not in the text; named only in the A.S. section (as alternative to AT 100)"
+   },
+   {
+    "code": "AT 105",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 110",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 130",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 140",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 180",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 181",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 298",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 310",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 311",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 313",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 314",
+    "why": "certificate section not in the text; named only in the A.S. section"
+   },
+   {
+    "code": "AT 330",
+    "why": "certificate section not in the text; named only in the A.S. section"
    }
   ],
-  "course_outcomes": [],
-  "missing_explained": [],
   "notes": [
-   "Read only the 'Automotive Component Service Technician Certificate' section on page 365; the A.S. in Automotive Component Service Technician on page 362 has identical requirements and total (37) but is a separate award.",
-   "The supplied text ends at the bottom of page 365 right after the certificate's 'Total Units: 37'; any Student Learning Outcomes or Career Information for this certificate likely continue on page 366, which is not in the text, so outcomes and careers are left empty. The A.S. section's outcomes were not copied because they are printed for the degree, not this certificate.",
-   "The certificate description names no specific job title or career field ('entry level employment in the repairing of various automobile components'), so careers is empty.",
-   "The 'A minimum of 1 unit' block lists only AT 298 (0.5-4 units); AT 140 is required separately in the main list for this award."
+   "The provided text (pages 361-364) names the Automotive Component Service Technician Certificate only in the page-361 list of programs; its Certificate of Achievement section is not in the excerpt (the Certificates of Achievement part begins on page 364 with Air Conditioning Service and is cut off). Nothing was recorded for the certificate.",
+   "The excerpt prints an 'A.S. in Automotive Component Service Technician' section on page 362: AT 100 or AT 103 (3), AT 105, AT 110, AT 130, AT 140, AT 180, AT 181, AT 310, AT 311, AT 313, AT 314, AT 330 (3 each), plus a minimum of 1 unit from AT 298 (0.5-4); Total Units: 37; Local GE or Cal-GETC plus electives to at least 60 units. Its course set matches the closed list exactly, so the certificate likely has the same requirements, but this should be verified against the certificate's own section (likely on a later page).",
+   "The A.S. section prints five Student Learning Outcomes and Career Information ('technician, shop foreman, service manager for new car dealers, automotive repair shops, and fleet operators'); these belong to the A.S. section and were not recorded for the certificate. A reviewer should check whether the certificate section prints the same."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

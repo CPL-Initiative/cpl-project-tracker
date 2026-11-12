@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Business Information Technology",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=399",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11553,
+  "input_tokens": 10925,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11553,
-    "output_tokens": 3410,
+    "input_tokens": 10925,
+    "output_tokens": 2734,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3410,
+  "output_tokens": 2734,
   "output_tokens_details": {
-   "thinking_tokens": 1109
+   "thinking_tokens": 765
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11441,
- "ms": 26967,
- "seconds": 27.4,
+ "cost_usd": 0.09838,
+ "ms": 21389,
+ "seconds": 21.5,
  "parts": null,
  "error": null,
  "score": {
@@ -89,17 +89,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 7,
+   "program": 0,
    "courses": 0,
-   "count": 7,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -124,7 +124,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "local ARC General Education Requirement",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -133,24 +133,9 @@
     "min": null,
     "max": null
    },
-   "electives_fill_degree": true,
-   "outcomes": [
-    "demonstrate an understanding of major functional areas of business organizations including planning, management, marketing, and finance.",
-    "demonstrate an understanding of accounting as an information system and how it is used by investors, creditors, and others to make decisions and the recording and reporting of business transactions, generally accepted accounting principles, financial statements, and statement analysis.",
-    "demonstrate proficiency in advanced business technology applications and employ computer applications to create relevant business documents.",
-    "demonstrate proficiency in business administration and leadership skills needed to manage a multicultural workforce.",
-    "demonstrate customer service skills in a business environment and skills required to deliver a positive customer service experience.",
-    "compose effective oral and written communications in various business settings.",
-    "research, develop, evaluate, and test possible solutions using creativity, critical thinking, and technology skills."
-   ],
-   "careers": [
-    "customer service representatives",
-    "receptionists and information clerks",
-    "executive secretaries and executive administrative assistants",
-    "business analysts",
-    "technical support specialists",
-    "first-line supervisors of office and administrative support workers"
-   ]
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
@@ -388,18 +373,16 @@
   "missing_explained": [
    {
     "code": "ECON 302",
-    "why": "not in the text; the catalog lists ECON C2002 Principles of Macroeconomics instead (likely common course numbering renumber)"
+    "why": "not in the text; the catalog lists ECON C2002 Principles of Macroeconomics instead"
    }
   ],
   "notes": [
-   "Superscript footnote markers were fused to units in the PDF text (e.g. 'BUSTEC 101 ... 11', 'BUSTEC 310 ... 35', 'CISA 315 ... 26'); read as units 1,1,1,1,3,2,2 with footnotes 1-7. These units sum with the other blocks to the printed Total Units 46.5.",
-   "Closed list code 'BUSTEC498' matched to catalog 'BUSTEC 498' (same course, spacing difference); not marked as a catalog addition.",
-   "WEXP 498 printed as 0.5 - 4 units; the alternative's units field records the low end 0.5.",
-   "BUSTEC 332 is titled 'Advanced Business Applications' in the catalog but 'Integrated Business Projects' in the closed list; check.",
-   "CISA 315 and CISA 340 are required but not in the closed list; recorded as catalog additions.",
-   "The page says the degree requires the program plus the local ARC General Education Requirement plus sufficient electives to meet a 60-unit total; no units printed for GE or electives, so electives_fill_degree is true and degree_total left null (60 stated only as the target in that sentence).",
-   "Footnotes name Folsom Lake College substitute courses (BUSTEC 307, 360, 362, 366); not recorded as alternatives."
+   "Units printed with footnote markers were read as unit + footnote: BUSTEC 101 '11' = 1 unit (fn 1), BUSTEC 300.1 '12', 300.2 '13', 300.3 '14' = 1 unit each (fn 2-4), BUSTEC 310 '35' = 3 units (fn 5), CISA 315 '26' and CISA 340 '27' = 2 units each (fn 6, 7). These sum to the printed total of 46.5.",
+   "Footnotes 1-4 name BUSTEC 307 (Folsom Lake College) as a substitute; footnotes 5-7 are not printed in the excerpt, which ends at page 399 — the section (including its Student Learning Outcomes, career information and the GE/60-unit statement) likely continues on page 400 and was cut off.",
+   "No outcomes or careers are printed within the A.S. in Business Information Technology section in the supplied text; outcomes and careers above it belong to the A.A. in General Business and A.S.-T. in Business Administration 2.0.",
+   "No GE pattern or degree total is printed in the visible portion of this section.",
+   "Closed list code 'BUSTEC498' matched to catalog 'BUSTEC 498'. BUSTEC 332 is titled 'Advanced Business Applications' in the catalog vs 'Integrated Business Projects' in the state file."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

@@ -4,7 +4,7 @@
  "shape": "certificate",
  "title": "Environmental Conservation Technician (Wildlife)",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11136,
-    "output_tokens": 1956,
+    "output_tokens": 1388,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1956,
+  "output_tokens": 1388,
   "output_tokens_details": {
-   "thinking_tokens": 829
+   "thinking_tokens": 455
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08366,
- "ms": 16691,
- "seconds": 17.1,
+ "cost_usd": 0.0723,
+ "ms": 11735,
+ "seconds": 11.8,
  "parts": null,
  "error": null,
  "score": {
@@ -145,8 +145,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 16,
-     "max": 16
+     "min": null,
+     "max": null
     },
     "courses": [
      {
@@ -194,13 +194,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section read: 'Environmental Conservation Technician (Wildlife) Certificate' on catalog pages 801-802; its requirements table begins on page 802.",
-   "NATR 301 or BIOL 332 or NATR 302 is recorded as one choice with two alternatives, as printed.",
-   "The last outcome breaks 'social/' and 'cultural' across a line; it is recorded with the break read as a space ('social/ cultural'). The printed word is likely 'social/cultural'. The phrase 'as well as and' is printed as is.",
-   "Careers section also names areas of positions (population sampling and monitoring, data analysis, management/conservation of threatened, endangered, and invasive species of wildlife); these were read as job duties, not careers, and were not recorded.",
-   "A 'Certificates' heading follows the Wildlife section, before the Conservation/Restoration certificate. This suggests the Wildlife certificate sits in the Certificate of Achievement group, matching the award's 16-30 unit range.",
-   "The earlier section on page 799 (22 units, with a 10-unit elective list) belongs to a different award and was not used."
+   "The Wildlife certificate section begins on page 797 and its requirements table continues on page 798; read only that section.",
+   "NATR 301, BIOL 332 and NATR 302 are printed as a three-way 'or' choice worth 4 units, recorded as one entry with alternatives.",
+   "The final outcome breaks a line after 'social/'; the line break was read as a space per instructions ('social/ cultural'), and the printed 'as well as and' was kept as printed.",
+   "The first requirements table on page 795 belongs to a different (preceding) program and was not used."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

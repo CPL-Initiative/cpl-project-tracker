@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fashion Merchandising",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=579",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10665,
+  "input_tokens": 10705,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10665,
-    "output_tokens": 1961,
+    "input_tokens": 10705,
+    "output_tokens": 1666,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1961,
+  "output_tokens": 1666,
   "output_tokens_details": {
-   "thinking_tokens": 428
+   "thinking_tokens": 472
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08188,
- "ms": 15329,
- "seconds": 17.2,
+ "cost_usd": 0.07614,
+ "ms": 13837,
+ "seconds": 13.9,
  "parts": null,
  "error": null,
  "score": {
@@ -79,9 +79,9 @@
    "pass": true
   },
   "outcomes": {
-   "program": 13,
+   "program": 1,
    "courses": 0,
-   "count": 13,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 10,
+   "count": 6,
    "not_verbatim": [],
    "pass": true
   },
@@ -122,31 +122,15 @@
    },
    "electives_fill_degree": false,
    "outcomes": [
-    "compare and contrast historical garment design to contemporary dress.",
-    "conceive and produce a fashion show.",
-    "develop visual displays for a window presentation.",
-    "draft a six-month retail buying plan.",
-    "assess characteristics of various fibers and how they relate to the finished fabric.",
-    "draw a flat working sketch and a fashion illustration.",
-    "apply principles of time management, cost control, and decision making to managerial responsibilities.",
-    "develop a business plan for a fashion related business.",
-    "create portfolios of fashion, wedding, and portrait photographs.",
-    "analyze and demonstrate the steps of professional selling, including approach, needs assessment, presentation, overcoming objections and negotiating, closing, and servicing of the sale.",
-    "describe how the advertising industry operates and produces advertising through the work of advertisers, agencies, media, and suppliers.",
-    "explain how retailers use merchandise management decisions to implement their retail strategy, including planning, buying, pricing, branding, and promoting their merchandise.",
-    "critique customer buying behavior and how it relates to fashion choices."
+    "compare and contrast historical garment design to contemporary dress."
    ],
    "careers": [
-    "retail merchandising",
-    "department store buyers",
-    "boutique buyers",
-    "visual merchandisers",
-    "sales associates",
-    "management trainees",
-    "product developers",
-    "wholesalers",
-    "self-employment",
-    "entrepreneurship"
+    "fashion coordinating",
+    "promotion",
+    "visual presentation",
+    "management",
+    "merchandising",
+    "retail buying"
    ]
   },
   "blocks": [
@@ -233,7 +217,7 @@
     ]
    },
    {
-    "name": "A minimum of 3 units from the following:",
+    "name": "A minimum of 3 units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -283,12 +267,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The Student Learning Outcomes list runs across the page break between pages 579 and 580; the page footer text was ignored when joining the first outcome.",
-   "The catalog prints FASHN 398 as 'Fashion Entrepreneur' while the closed list titles it 'Fashion Entrepreneurship'; the code matches.",
-   "The required block's total is not printed separately; the 30 units of required courses plus 3 elective units match the printed Total Units: 33.",
-   "'self-employment' and 'entrepreneurship' were recorded as careers from the sentence 'It also prepares students for self-employment or entrepreneurship.' A reviewer may judge whether they count as careers.",
-   "Only the Fashion Merchandising Certificate section was read; the other fashion certificates on pages 580-582 were ignored."
+   "The certificate's Student Learning Outcomes list is cut off at the end of page 579 after the first outcome; only that one outcome is recorded. The remaining outcomes (and any Career Information for the certificate) likely continue on page 580, which is not in the text.",
+   "Careers are taken from the Fashion Merchandising program introduction on page 576 ('A degree or certificate in Fashion Merchandising develops the skills necessary for jobs in ...'), which explicitly covers the certificate. The certificate's own description mentions 'jobs in the retail market'. The A.A. section's career list (department store buyers, etc.) was not used because it belongs to the degree.",
+   "FASHN 398 is printed with the title 'Fashion Entrepreneur'; the closed list title is 'Fashion Entrepreneurship'. Same code."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Respiratory Care",
  "award": "A.S. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12327,
+  "input_tokens": 10912,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12327,
-    "output_tokens": 3367,
+    "input_tokens": 10912,
+    "output_tokens": 3128,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3367,
+  "output_tokens": 3128,
   "output_tokens_details": {
-   "thinking_tokens": 1215
+   "thinking_tokens": 1090
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11665,
- "ms": 26807,
- "seconds": 27.2,
+ "cost_usd": 0.10621,
+ "ms": 24404,
+ "seconds": 24.5,
  "parts": null,
  "error": null,
  "score": {
@@ -173,7 +173,7 @@
     ]
    },
    {
-    "name": "Pre-RC Courses: A minimum of 3 units from the following",
+    "name": "A minimum of 3 units from the following",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -411,13 +411,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "BIOL 440 row prints '(4) 4 - 5' with 'or BIOL 442 (5)'; the 4-5 range reflects the row's choice between BIOL 440 (4) and BIOL 442 (5). Recorded as units 4, units_max 5 on BIOL 440.",
-   "Total Units 63-64 is printed for the degree requirements (major) and recorded as total_units; the sentence 'plus sufficient electives for a total of at least 60 units' is general ARC wording, so degree_total is null and electives_fill_degree is true.",
-   "GE: either the Local General Education Pattern or Cal-GETC; no GE units printed.",
-   "Required RC courses are printed under semester headings (Spring Semester 1, Summer Semester, Fall Semester 1, Spring Semester 2, Fall Semester 2); each recorded as an 'all' block.",
-   "Student Learning Outcomes and Career Information are printed directly under the A.S. section; the following Guided Pathways Milestone Certificate section and its outcomes were not used.",
-   "Career Information names workplaces (hospitals, home health care services, physician's offices, medical equipment supply companies) which were not recorded as careers."
+   "Total Units 63-64 is the major total; the page says the degree requires the program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units' — recorded as electives_fill_degree true with degree_total null, since 60 reads as the general degree minimum rather than a printed award total.",
+   "BIOL 440 (4) or BIOL 442 (5) printed with entry range 4-5; recorded as units 4, units_max 5.",
+   "The 'Career opportunities include positions in hospitals...' sentence names work settings (hospitals, home health care services, physician's offices, medical equipment supply companies) rather than job titles; not recorded as careers. 'Advanced Registered Respiratory Therapist level' in the description is a credential level and was not recorded.",
+   "The Pathway to Health Sciences certificate section on the same pages was not read for this record."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

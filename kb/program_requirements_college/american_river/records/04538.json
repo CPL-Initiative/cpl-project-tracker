@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Design Technology",
  "award": "A.A. Degree",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=481",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=480",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11532,
+  "input_tokens": 10437,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11532,
-    "output_tokens": 1722,
+    "input_tokens": 10437,
+    "output_tokens": 1818,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1722,
+  "output_tokens": 1818,
   "output_tokens_details": {
-   "thinking_tokens": 461
+   "thinking_tokens": 532
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08057,
- "ms": 14452,
+ "cost_usd": 0.07811,
+ "ms": 14835,
  "seconds": 15.0,
  "parts": null,
  "error": null,
@@ -244,11 +244,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page says the A.A. is obtained by completing the required program plus either the Local GE Pattern or Cal-GETC, 'plus sufficient electives for a total of at least 60 units'; this boilerplate sentence was read as electives filling the degree, not as a printed degree total, so degree_total is null.",
-   "Total Units: 37 printed for the major; it matches the sum of the listed courses.",
-   "The Design Technology Certificate section prints the same course list, total and outcomes; only the A.A. section was read.",
-   "The line-broken word 'cross-referencing' in the third outcome was joined without a space."
+   "The page states the degree is obtained by the required program plus Local GE or Cal-GETC 'plus sufficient electives for a total of at least 60 units'; this is the standard ARC sentence, so degree_total left null and electives_fill_degree set true. No GE unit figure printed.",
+   "The 'Total Units: 37' figure is recorded both as total_units and as the block's stated total, since the single required list is the whole major.",
+   "Career Information also says graduates may 'enter the architecture or engineering field'; only the job title 'design technician' recorded as a career.",
+   "The Design Technology Certificate on page 483 prints the identical course list and outcomes; only the A.A. section was read."
   ]
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }

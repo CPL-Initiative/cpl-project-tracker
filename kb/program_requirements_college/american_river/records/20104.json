@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Entrepreneurship/Small Business Management",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=401",
+ "source_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=396",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11351,
+  "input_tokens": 10698,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11351,
-    "output_tokens": 1342,
+    "input_tokens": 10698,
+    "output_tokens": 1273,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,49 @@
     "model": null
    }
   ],
-  "output_tokens": 1342,
+  "output_tokens": 1273,
   "output_tokens_details": {
-   "thinking_tokens": 137
+   "thinking_tokens": 362
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07224,
- "ms": 9970,
- "seconds": 10.4,
+ "cost_usd": 0.06825,
+ "ms": 11578,
+ "seconds": 11.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 19,
+   "placed": 0,
    "listed": 19,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.0,
+   "missing": [
+    "ACCT121",
+    "ACCT341",
+    "BUS210",
+    "BUS212",
+    "BUS214",
+    "BUS216",
+    "BUS218",
+    "BUS220",
+    "BUS224",
+    "BUS228",
+    "BUS300",
+    "BUS340",
+    "BUS350",
+    "CISA305",
+    "CISA315",
+    "CISC100",
+    "MKT300",
+    "MKT312",
+    "MKT314"
+   ],
    "unexplained": [],
-   "none_placed": false,
-   "pass": true
+   "none_placed": true,
+   "pass": false
   },
   "invented": {
    "count": 0,
@@ -61,31 +81,30 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
-    17.0,
-    17.0
+    0.0,
+    0.0
    ],
-   "stated": [
-    17.0,
-    17.0
-   ],
-   "against": "program",
-   "why": []
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -96,15 +115,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
    "section_heading": "Entrepreneurship/Small Business Management Certificate",
    "measure": "units",
    "total_units": {
-    "min": 17,
-    "max": 17
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -121,179 +140,90 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "create a business plan that covers all facets of operating a business.",
-    "organize and manage the different business functions necessary for ongoing operations.",
-    "appraise and evaluate business opportunities."
-   ],
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
    {
-    "name": "Certificate Requirements",
-    "rule": "all",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "BUS 210",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 212",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 214",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 216",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 350",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CISC 100",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "ACCT 121",
+    "why": "not in the text; certificate section not included"
    },
    {
-    "name": "A minimum of 8 units from the following",
-    "rule": "choose_units",
-    "minimum": 8,
-    "option_group": null,
-    "stated": {
-     "min": 8,
-     "max": 8
-    },
-    "courses": [
-     {
-      "code": "ACCT 121",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ACCT 341",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 218",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 220",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 224",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 228",
-      "units": 1,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 300",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUS 340",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CISA 305",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CISA 315",
-      "units": 2,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MKT 300",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MKT 312",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MKT 314",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
+    "code": "ACCT 341",
+    "why": "certificate section not in the text; named only in A.A. Entrepreneurship and A.S. Business Information Technology sections"
+   },
+   {
+    "code": "BUS 210",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 212",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 214",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 216",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 218",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 220",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 224",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 228",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "BUS 300",
+    "why": "certificate section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "BUS 340",
+    "why": "certificate section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "BUS 350",
+    "why": "certificate section not in the text; named only in A.A. Entrepreneurship and A.S. Business Information Technology sections"
+   },
+   {
+    "code": "CISA 305",
+    "why": "certificate section not in the text; named only in A.A. in General Business section"
+   },
+   {
+    "code": "CISA 315",
+    "why": "certificate section not in the text; named only in A.A. General Business and A.S. Business Information Technology sections"
+   },
+   {
+    "code": "CISC 100",
+    "why": "certificate section not in the text; named only in A.A. in Entrepreneurship section"
+   },
+   {
+    "code": "MKT 300",
+    "why": "certificate section not in the text; named only in other awards' sections"
+   },
+   {
+    "code": "MKT 312",
+    "why": "not in the text; certificate section not included"
+   },
+   {
+    "code": "MKT 314",
+    "why": "not in the text; certificate section not included"
    }
   ],
-  "course_outcomes": [],
-  "missing_explained": [],
-  "notes": [
-   "The elective list continues across a repeated table header ('Course Code Course Title Units') mid-list; read as one continuous 8-unit choice list.",
-   "The catalog titles CISC 100 'Computer Fundamentals with Hands-on Lab'; the closed list titles it 'Computer Fundamentals/Lab'.",
-   "No career information is printed in this certificate's section."
-  ]
+  "notes": []
  },
- "extracted_run": "39047245752"
+ "extracted_run": "43134279776"
 }
