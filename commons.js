@@ -705,6 +705,10 @@
         ? (x.j.already ? "A run is already queued; it carries out every ruling saved before it starts." : "Queued. The processor runs within a few minutes, writes a receipt for each ruling and marks its case done.")
         : x.status === 401 ? "Not run: only a reviewer on the list can run the processor. Sign in again and try once more."
         : x.status === 503 ? "Not run: the processor's key is not set here. The 05:33 UTC run carries the rulings out."
+        /* The shared queue (S643): the function starts nothing while another run waits in the queue it shares, since
+           starting one would cancel that run, and nothing when it cannot read the queue. */
+        : x.status === 409 && x.j.reason === "busy_behind" ? "Not run: another job is waiting in the same queue, and starting the processor now would cancel it. Press Process my rulings now again in a few minutes. Otherwise the next scheduled run, at 05:33 UTC, carries the rulings out."
+        : x.j.reason === "queue_unread" ? "Not run: the processor could not read the queue it shares with other jobs, so it started nothing. The next scheduled run, at 05:33 UTC, carries the rulings out."
         : "Not run: the processor answered " + x.status + ". The 05:33 UTC run carries the rulings out.";
       redrawBatch();
     }, function (e) {
