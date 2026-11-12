@@ -46,6 +46,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 import _cer_decision_apply as cda  # noqa: E402  (its PostgREST retry, insert, delete, receipts and stamp)
 import _family_tag_plan as ftp  # noqa: E402
+import credential_aliases  # noqa: E402
+
+ROOT = os.path.dirname(HERE)
 
 TABLE = "kb_curation"
 assert TABLE == cda.TABLE
@@ -110,9 +113,28 @@ def set_hash(pairs):
     return hashlib.sha256(json.dumps(pairs, ensure_ascii=False).encode("utf-8")).hexdigest()[:12]
 
 
+CREDENTIALS = os.path.join(HERE, "credentials.json")
+
+
+def current_titles(path=CREDENTIALS):
+    """The credential titles on the checked-out main, or None when the file is absent (then no title reads as gone).
+    After a rename, Sam's fold rows stay on the old title; the plan lists that title as gone instead of tagging it."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            return set(json.load(f))
+    except (OSError, ValueError):
+        return None
+
+
+def current_moves(root=ROOT):
+    """Where each applied credential rename took a title (kb/credential_aliases.py moves): the rename carries a family
+    tag to the new title, so the dry run counts it there and the rollback finds it there."""
+    return credential_aliases.moves(root)
+
+
 def read(rest):
     rows = rest.family_rows()
-    p = ftp.plan(rows, ftp.families())
+    p = ftp.plan(rows, ftp.families(), current_titles(), current_moves())
     tags, written, conflicts = ftp.tag_rows(p, rows)
     pairs = tag_set(tags, written)
     return {"rows": rows, "plan": p, "tags": tags, "written": written, "conflicts": conflicts,
@@ -274,21 +296,38 @@ def rollback(rest, out, receipt_dir):
         out("nothing to roll back: no receipt plans a row")
         return 0
     todo = [plan[k] for k in sorted(plan)]
-    removed, gone, taken, theirs = [], [], [], []
+    removed, gone, taken, theirs, moved_by = [], [], [], [], []
     ts, error = cda.stamp(), None
+    moves = current_moves()
     try:
         live = {(x["course_id"], x["field"]): x for x in rest.family_rows()}
+        removed_at = set()
         for r in todo:
             now = live.get((r["course_id"], r["field"]))
+            target = r
+            m = moves.get(r["course_id"][len(ftp.PREFIX):]) if now is None else None
+            if m:
+                # An applied rename carried the tag to the new title (the new title is the bundle); the row is found
+                # there, under the same cohort, field and value guard, and goes from there.
+                target = dict(r, course_id=ftp.PREFIX + m["now"])
+                now = live.get((target["course_id"], r["field"]))
+                if now is not None and target["course_id"] in removed_at:
+                    # Two planned rows a merge joined into one title: the first removal took the one row there.
+                    moved_by.append(dict(r, now_at=target["course_id"], moved_by=m["by"], removed_with_another=True))
+                    gone.append(dict(r, now_at=target["course_id"], moved_by=m["by"]))
+                    continue
             ours = (now is not None and now.get("reviewer_email") == ftp.CREDENTIAL_FAMILY_COHORT
                     and now.get("value") == r["value"])
+            if m:
+                moved_by.append(dict(r, now_at=target["course_id"], moved_by=m["by"]))
             if now is None:
-                gone.append(r)
+                gone.append(dict(r, now_at=target["course_id"], moved_by=m["by"]) if m else r)
             elif not ours:
                 (theirs if (r["course_id"], r["field"], r["value"]) in theirs_at_commit else taken).append(
                     dict(r, now_by=now.get("reviewer_email"), now_value=now.get("value")))
-            elif rest.delete(r, ftp.CREDENTIAL_FAMILY_COHORT):
-                removed.append(r)
+            elif rest.delete(target, ftp.CREDENTIAL_FAMILY_COHORT):
+                removed.append(dict(r, now_at=target["course_id"], moved_by=m["by"]) if m else r)
+                removed_at.add(target["course_id"])
             else:
                 taken.append(dict(r, now_by=None, now_value="changed between the rollback's read and its delete"))
     except BaseException as e:
@@ -299,12 +338,14 @@ def rollback(rest, out, receipt_dir):
         cda.write_receipt(receipt_dir, "rolled_back_%s.json" % ts,
                           {"table": cda.TABLE, "mode": "rollback", "at": ts, "cohort": ftp.CREDENTIAL_FAMILY_COHORT,
                            "removed": removed, "already_gone": gone, "taken_since": taken,
-                           "a_persons_at_commit": theirs, "aborted": error,
+                           "a_persons_at_commit": theirs, "moved_by_rename": moved_by, "aborted": error,
                            "not_reached": [r for r in todo
                                            if (r["course_id"], r["field"], r["value"]) not in done]})
         out("rollback%s: %d removed, %d already gone, %d taken since (left as a person holds them), "
             "%d a person's at commit" % (" STOPPED (%s)" % error if error else "", len(removed), len(gone),
-                                         len(taken), len(theirs)))
+                                         len(taken), len(theirs))
+            + ("; %d moved by rename %s, found at the new title" % (
+                len(moved_by), ", ".join(sorted({b for x in moved_by for b in x["moved_by"]}))) if moved_by else ""))
     return 0
 
 

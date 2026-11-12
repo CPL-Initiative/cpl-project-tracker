@@ -100,16 +100,36 @@ precedence) moved verbatim to `docs/exhibit_canonicalization_lessons.md`, *Moved
   MIL6) and follows the emptied-title rule.
 - **DECIDED (Sheet 181):** the rename batch to "ASE Certificate Bundles: A4 + A5" runs, with the old names kept as
   aliases.
-- **NEXT, in order:** (0) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
+- **NEXT, in order:** (0) the two any-one-test family tags (Sheet 181: *ASE Certification (any A1–A8)* and *ASE C1
+  or G1* join the family as members any one of whose tests qualifies, declared under `any_one_test` in
+  `kb/reference/credential_families.json`; the 24 bundle tags landed, receipt `applied_2026-11-11T23-38-21Z.json`):
+  dispatch `credential-family-apply.yml` `mode=dry-run`; a correct summary reads *2 to write, 24 already written, 5
+  held for Sam, 0 conflicts; set `<hash>` (26 tags)*; the held count is the four Masters plus the emptied title while its saved fold is in place (the restore, (1)), one fewer once (3) has merged the A1–A8 + L1 Master; then `mode=commit expect=<hash>`. Either order with (3) works: the
+  rename moves each tag to its new title (the new title is the bundle) and Sam's fold rows stay on the old one; the
+  family dry run counts a tag at the renamed title as written, and its rollback finds it there (`kb/credential_aliases.py`
+  `moves`); (0b) `daily-dashboard.yml` carries the family onto `kb/credentials.json` (the restore brings back Advanced Electrical and Electronic Systems'
   fold into ASE Certificate Bundles on an emptied title, which the converter must leave as it is); (1) the next nightly fold, then the
   restore (`-4`): dry run, then commit, before anything else touches these titles; to undo both, roll back `-4` before
   phase 1 (the other order is safe too: `-4`'s undo leaves what phase 1's put back); (2) the retired names as search
   aliases of where their exhibits went (Automotive Air Conditioner and Heating and Air Conditioning to the A7 and MIL7
   titles, Automotive Braking Systems to MIL3 and MIL4): `kb/credential_aliases.py` reads only applied rename
-  snapshots, never the fold's `credential_retires`, so none resolves today; (3) `cred-rename-apply.yml` for the five "standards" folds, the first live use of
-  #3116 (read `kb/cred_rename_dryrun/alias_map.json`'s `issuer_preview` first), then `daily-dashboard.yml`; (4) ASE
-  plan phase 3 (`-3`); (6) the rename batch proposing
-  "ASE Certificate Bundles: A4 + A5" titles, approved on Sheet 181 with the old names kept as aliases; (7) the credentials still without a subject, as one
+  snapshots, never the fold's `credential_retires`, so none resolves today; (3) `cred-rename-apply.yml` with `only_plan=sheet181-2026-11-12` applies Sheet
+  181's ruled plan alone, the small first live use of #3116; a dispatch without it also carries the five "standards" folds. The plan
+  (`kb/cred_rename_plans/2026-11-12_sheet181.json`, read by `kb/ruled_renames.py` in the dry run and the apply) holds 22
+  bundle renames to *ASE Certificate Bundles: …* (the A2 + A3 + A6 pair one title by a merge) and *ASE Master Automobile
+  Technician (A1–A8 + L1)* merged into *ASE Master Automobile Technician* (issuer rule 3, additive; no conflict); the
+  Truck Master, the any-one-test titles, *ASE Bundle — A6 or T6 + L3* and *ASE Master Automobile Technician (A1–A8) or
+  L3* (L3 alone qualifies, so an L3 holder is no Master; S639 conductor) keep their titles, left for a person.
+  The plan stands in for the rename rows because each title's slot holds Sam's family-tag fold, which no plan edits;
+  the row move leaves those rows in place (op `keep`), logs every planned move with its before-row before the first
+  write, files what landed from a fresh read, and a rerun carries what landed. Read the dry-run's `ruled` and
+  `issuer_preview` first, then `daily-dashboard.yml`; undo is `kb/_cred_rename_undo.py` on the receipt, built from
+  the planned moves, each guarded on the live row; (3b) Sierra's `chatbox_credentials` keeps a retired title as a
+  ghost row after any rename: `kb/_sync_credential_catalog.py` `upsert` (line 198) only merges by `unified_title` and
+  never deletes or aliases a title the artifact dropped; a guarded delete of rows absent from
+  `credential_reference_data.js` (receipted, Rule 10) is the fix; (4) ASE
+  plan phase 3 (`-3`); (6) the ASE rename batch now offers only titles outside the ruled
+  plan; (7) the credentials still without a subject, as one
   batch (try a web search on an anomaly first, Sam 2026-11-11); (8) the hourly trigger for the fold apply; (9) the issuer
   registry (official name, short tag, aliases: AWS the Welding Society, ACE the Council on Education); (10) the trainer
   move (130 titles, with the 10 duplicate spellings and the *alifornia Veterinary Medical Association* typo); (11) a

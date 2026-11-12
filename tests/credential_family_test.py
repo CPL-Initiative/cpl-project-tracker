@@ -4,9 +4,9 @@ sam-bundle-family-is-a-field-2026-11-11).
 Each ASE bundle stays its own canonical title and carries the family "ASE Certificate Bundles"; his 31 saved
 folds are read as family tags. Guards:
   1. kb/test_mix.py reads a bundle's tests; an "or" and a non-ASE part stay as written;
-  2. kb/_family_tag_plan.py converts the 24 bundle titles and holds the seven for Sam, untouched ("ASE C1 or G1"
-     joined the held any-one-test titles, agreed with COBIx on #3111); the write itself is
-     tests/credential_family_apply_test.py;
+  2. kb/_family_tag_plan.py converts the 24 bundle titles and, since Open Asks Sheet 181 (2026-11-11), the two
+     any-one-test titles as any-one-test members; it holds the four Masters and the emptied title, untouched, and
+     lists a title that is no longer a credential as gone; the write itself is tests/credential_family_apply_test.py;
   3. it gives insert rows of the family field only, one per converted title, and none for a held title;
   4. Sam's fold rows stay beside the tags, and the rename's family hold (kb/fold_issuer.py hold_family_folds) keeps
      every one of them out of the fold, so every title, and every adoption read by title, stays as it was;
@@ -14,8 +14,9 @@ folds are read as family tags. Guards:
   6. kb/credential_aliases.py gives a member its tests as aliases, so A4 finds both A4 bundles;
   7. the field is mapped in kb/governance_surface_map.json;
   8. the members whose mix the parser cannot code fully (an "or", or a part no ASE code names, which joins "with")
-     are one exception list for a person, and every member is proposed in the family's naming form
-     ("ASE Certificate Bundles: A4 + A5") in the existing rename batch, two titles with one mix sharing one name.
+     are one exception list for a person, and every member the parser can name is proposed in the family's naming
+     form ("ASE Certificate Bundles: A4 + A5") in the existing rename batch, two titles with one mix sharing one
+     name; a title Sheet 181's ruled plan renames leaves the batch.
 
 Run from the repo root: python3 tests/credential_family_test.py
 """
@@ -54,10 +55,12 @@ SAVED = [LEAD, "Advanced Electrical and Electronic Systems", "ASE A2 + A3 + A6 �
          "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis", "ASE Master Automobile Technician",
          "ASE Master Automobile Technician (A1–A8 + L1)", "ASE Master Automobile Technician (A1–A8) or L3",
          "ASE Master Medium/Heavy Truck Technician (T1–T8)"]
-HELD = {"Advanced Electrical and Electronic Systems", "ASE Certification (any A1–A8)", "ASE Master Automobile Technician",
+# Sheet 181 (2026-11-11): the Masters stay outside the family and the emptied title is left out; the two any-one-test
+# titles are members any one of whose tests qualifies (kb/reference/credential_families.json any_one_test).
+HELD = {"Advanced Electrical and Electronic Systems", "ASE Master Automobile Technician",
         "ASE Master Automobile Technician (A1–A8 + L1)", "ASE Master Automobile Technician (A1–A8) or L3",
-        "ASE Master Medium/Heavy Truck Technician (T1–T8)",
-        "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"}
+        "ASE Master Medium/Heavy Truck Technician (T1–T8)"}
+ANY_ONE = {"ASE Certification (any A1–A8)", "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"}
 
 # ── 1. the tests a title names ──────────────────────────────────────────
 check("a bundle's tests read as codes", test_mix.from_title("ASE Bundle — A4, A5")["label"] == "A4, A5")
@@ -82,17 +85,24 @@ ROWS.append({"course_id": ftp.PREFIX + "ASE Bundle — A4, A5", "field": "issuin
 fams = ftp.families()
 check("the family is declared", FAM in fams and fams[FAM]["issuer"].endswith("(ASE)"))
 p = ftp.plan(ROWS, fams)
-conv = {it["title"] for it in p["convert"]}
+conv_all = {it["title"] for it in p["convert"]}
+conv = {it["title"] for it in p["convert"] if it["member_kind"] == ftp.BUNDLE}
 check("24 bundle titles convert", len(conv) == 24 and LEAD in conv and "ASE Bundle — A4, A5" in conv)
-check("the seven titles Sam keeps or that are not bundles are held, untouched", {it["title"] for it in p["held"]} == HELD)
-check("ASE C1 or G1 is held as an any-one-test title, by the generator's data",
-      "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair" in ftp.HOLD
-      and "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair" not in conv)
+check("the five titles that stay outside the family are held, untouched", {it["title"] for it in p["held"]} == HELD)
+check("the two any-one-test titles convert as any-one-test members, by the family's declaration",
+      conv_all - conv == ANY_ONE and not ANY_ONE & set(ftp.HOLD)
+      and all(ftp.member_kind(fams, FAM, t) == ftp.ANY_ONE_TEST for t in ANY_ONE)
+      and ftp.member_kind(fams, FAM, LEAD) == ftp.BUNDLE)
+check("an any-one-test member is never named as a bundle", all(test_mix.family_title(FAM, t) is None for t in ANY_ONE))
+gone = ftp.plan(ROWS, fams, titles=set(SAVED) - {"ASE Bundle — A4, A5"})
+check("a title that is no longer a credential is listed as gone and gives no row",
+      [it["title"] for it in gone["gone"]] == ["ASE Bundle — A4, A5"]
+      and "ASE Bundle — A4, A5" not in {it["title"] for it in gone["convert"]})
 
 # ── 3. the insert rows ──────────────────────────────────────────────────
 tags, written, conflicts = ftp.tag_rows(p, ROWS)
 check("one insert row per converted title, of the family field only, and nothing else",
-      {t["course_id"][len(ftp.PREFIX):] for t in tags} == conv and len(tags) == 24
+      {t["course_id"][len(ftp.PREFIX):] for t in tags} == conv_all and len(tags) == 26
       and all(set(t) == {"course_id", "field", "value"} and t["field"] == "credential_family" and t["value"] == FAM
               for t in tags) and not written and not conflicts)
 check("a held title gives no row", not any(t["course_id"][len(ftp.PREFIX):] in HELD for t in tags))
@@ -125,9 +135,9 @@ try:
     famp = os.path.join(tmp, "kb", "reference", "credential_families.json")
     put, cleared, und = acr.promote_families(overrides, crp, famp)
     got = json.load(open(crp, encoding="utf-8"))
-    check("the sync carries the family onto every record of each tagged title", set(put) == conv
-          and all(r.get("family") == FAM for t in conv for r in got[t]))
-    check("…and onto no other title", all("family" not in r for t in set(got) - conv for r in got[t]))
+    check("the sync carries the family onto every record of each tagged title", set(put) == conv_all
+          and all(r.get("family") == FAM for t in conv_all for r in got[t]))
+    check("…and onto no other title", all("family" not in r for t in set(got) - conv_all for r in got[t]))
     check("the sync field is read, and stamps no review", "credential_family" in acr.FIELDS and "credential_family" in acr.DECISION_ONLY)
 
     # ── 6. the aliases ──────────────────────────────────────────────────
@@ -135,6 +145,9 @@ try:
     a4 = sorted(t for t, m in members.items() if "ASE A4" in m["aliases"])
     check("a search alias ASE A4 finds both the A4+A5 and the A4+A5+A6 bundle", a4 == ["ASE Bundle — A4, A5", "ASE Bundle — A4, A5, A6"])
     check("a member keeps its 'or' as written", "A6 or T6 + L3" in members["ASE Bundle — A6 or T6 + L3"]["aliases"])
+    check("a member's kind is read from the family's declaration: any one test, or a bundle",
+          {t for t, m in members.items() if m["member_kind"] == "any_one_test"} == ANY_ONE
+          and members["ASE Bundle — A4, A5"]["member_kind"] == "bundle")
 
     acr.promote_families({}, crp, famp)
     check("after a rollback of the rows the sync takes the family off again",
@@ -179,12 +192,21 @@ try:
         return got
     rel.load_json = lj
     rel.credential_aliases.family_members = lambda root=".": {t: {"family": FAM, "aliases": test_mix.components(t)} for t in conv}
-    built = rel.build(ROOT)
+    built_ruled = rel.build(ROOT)
+    _rl = rel.ruled_renames.load
+    rel.ruled_renames.load = lambda plans_dir=None: []   # as before Sheet 181's plan
+    try:
+        built = rel.build(ROOT)
+    finally:
+        rel.ruled_renames.load = _rl
 finally:
     rel.load_json, rel.credential_aliases.family_members = _lj, _fm
+ruled_old = {e["old"] for p_ in rel.ruled_renames.load() for e in p_["entries"]}
+check("with Sheet 181's plan, no title it renames is offered in the rename batch again",
+      len(ruled_old) >= 20 and not ruled_old & {r["current"] for b in built_ruled["batches"] for r in b["rows"]})
 famrows = [r for b in built["batches"] for r in b["rows"] if r.get("kind") == "family"]
-present = {t for t in conv if any(x[0] == t for x in built["titles"])}
-check("the rename batch proposes every member in the reference in the family form, and no held title",
+present = {t for t in conv if any(x[0] == t for x in built["titles"]) and test_mix.family_title(FAM, t)}
+check("the rename batch proposes every member the parser can name in the family form, and no held title",
       {r["current"] for r in famrows} == present and len(present) >= 20
       and all(r["proposed"] == test_mix.family_title(FAM, r["current"]) for r in famrows)
       and not any(r["current"] in HELD for r in famrows))
@@ -193,7 +215,7 @@ check("two titles with one mix share one proposed title: one leads, the other fo
       len(same) != 2 or sorted(bool(r["merge"]) for r in same) == [False, True])
 exl = built["families"][FAM]["exceptions"]
 check("the family's exception list holds the members to code by hand, each with its tests and its 'with' parts",
-      {e["title"] for e in exl} == EXC & present and all("tests" in e and "with" in e for e in exl))
+      {e["title"] for e in exl} == {t for t in EXC if any(x[0] == t for x in built["titles"])} and all("tests" in e and "with" in e for e in exl))
 
 failed = [n for n, ok in CHECKS if not ok]
 for n, ok in CHECKS:

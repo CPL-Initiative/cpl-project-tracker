@@ -46,6 +46,7 @@ import cert_naming  # noqa: E402
 import credential_aliases  # noqa: E402
 import test_mix  # noqa: E402
 import exhibit_paths  # noqa: E402
+import ruled_renames  # noqa: E402
 
 SCHEMA = 1
 OUT = "kb/exhibits_related.json"
@@ -127,6 +128,10 @@ def build(root="."):
     batches, pending, waiting = [], {}, []
     declared_issuer = {n: (f or {}).get("issuer", "") for n, f in ((load_json(root, "kb/reference/credential_families.json", {})
                                                                      or {}).get("families") or {}).items()}
+    # A title a ruled plan renames (kb/ruled_renames.py; Sheet 181) is decided: the rename dry run carries it, and the
+    # batch does not ask again.
+    ruled = ruled_renames.pending(ruled_renames.load(os.path.join(root, "kb", "cred_rename_plans")), cr,
+                                  set(locals_of))
     for fam in cert_naming.FAMILIES:
         if not fam["active"]:
             waiting.append(fam["short"])
@@ -136,6 +141,8 @@ def build(root="."):
             if status[t] != IN_REFERENCE:
                 continue
             ov = overlay.get(t) or {}
+            if t in ruled:
+                continue   # ruled on a decision sheet: the credential rename dry run carries it from here
             approved = (ov.get("unified_title_override") or "").strip() and ov.get("unified_title_override") != t
             if t in members and declared_issuer.get(members[t]["family"]) == fam["issuer"]:
                 # A family member is proposed in the family's naming form (Sam's "family as a field", as COBIx relayed
@@ -243,10 +250,13 @@ def families_payload(root, members):
     out = {}
     for name, f in sorted(declared.items()):
         mem = {t: m["aliases"] for t, m in sorted(members.items(), key=lambda kv: kv[0].lower()) if m["family"] == name}
+        # Members any one of whose tests qualifies (Sheet 181): they keep their titles and are never coded as a bundle.
+        aot = sorted((t for t in mem if t in (f.get("any_one_test") or {})), key=str.lower)
         # The members whose mix the parser cannot code fully (an "or", or a part no ASE code names), one list for a
         # person to code in Review (#3110, 18:40Z). They carry the family all the same.
-        exc = [e for e in (test_mix.exception(t) for t in mem) if e]
-        out[name] = {"issuer": f.get("issuer", ""), "about": f.get("about", ""), "members": mem, "exceptions": exc}
+        exc = [e for e in (test_mix.exception(t) for t in mem if t not in aot) if e]
+        out[name] = {"issuer": f.get("issuer", ""), "about": f.get("about", ""), "members": mem, "exceptions": exc,
+                     "any_one_test": aot}
     return out
 
 

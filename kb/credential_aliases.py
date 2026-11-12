@@ -15,6 +15,33 @@ import json
 import os
 
 
+def moves(root="."):
+    """old title -> {"now": the title it carries now, "by": [the applied snapshots' folder names that moved it, in
+    order]}, read from the same applied snapshots as load(). A reader holding a row keyed by a title that a rename
+    moved finds where the row lives now (kb/_family_tag_apply.py: a family tag the rename carried to the new title)."""
+    out = {}
+    for path in sorted(glob.glob(os.path.join(root, "kb", "cred_rename_out", "*", "alias_map.json"))):
+        try:
+            with open(path, encoding="utf-8") as f:
+                doc = json.load(f)
+        except (OSError, ValueError):
+            continue
+        if not doc.get("_applied_at") or os.path.exists(os.path.join(os.path.dirname(path), "apply_failed.json")):
+            continue   # never applied, or its apply did not land on main (kb/fold_issuer.py APPLY_FAILED)
+        by = os.path.basename(os.path.dirname(path))
+        step = dict(doc.get("renames") or {})
+        step.update(doc.get("merges") or {})
+        step = {o: n for o, n in step.items() if o and n and o != n}
+        for m in out.values():   # a title moved again carries every earlier name with it
+            if m["now"] in step:
+                m["now"] = step[m["now"]]
+                m["by"].append(by)
+        for o, n in step.items():
+            if o not in out:
+                out[o] = {"now": n, "by": [by]}
+    return out
+
+
 def load(root="."):
     """current title -> [the titles it replaced, oldest first]."""
     aka = {}
@@ -53,9 +80,16 @@ def family_members(root="."):
             cr = json.load(f)
     except (OSError, ValueError):
         return {}
+    try:
+        with open(os.path.join(root, "kb", "reference", "credential_families.json"), encoding="utf-8") as f:
+            declared = json.load(f).get("families") or {}
+    except (OSError, ValueError):
+        declared = {}
     out = {}
     for title, recs in cr.items():
         fam = next((r.get("family") for r in recs or [] if r.get("family")), "")
         if fam:
-            out[title] = {"family": fam, "aliases": test_mix.components(title)}
+            # A member any one of whose tests qualifies (Sheet 181) is declared by its family, never a bundle.
+            kind = "any_one_test" if title in ((declared.get(fam) or {}).get("any_one_test") or {}) else "bundle"
+            out[title] = {"family": fam, "aliases": test_mix.components(title), "member_kind": kind}
     return out
