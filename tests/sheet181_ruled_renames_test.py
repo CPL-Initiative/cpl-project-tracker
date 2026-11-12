@@ -258,8 +258,10 @@ try:
     check("--only-plan applies exactly the plan's 24 entries and is apply-safe",
           omoved == {e["old"]: e["new"] for e in E} and om["summary"]["clean_renames"] == 22
           and om["summary"]["confirmed_merges"] == 2 and om["summary"]["apply_safe"] is True and om["only_plan"] == plan["plan_id"])
-    check("--only-plan defers every other rename and merge, the standards folds among them",
-          {d["old"] for d in om["deferred"]} == set(moved) - olds and len(om["deferred"]) > 0
+    # Every other rename and merge the unscoped run plans is deferred. Once the standards plans have landed (S640)
+    # there may be none left to defer; while any wait, they are exactly the deferred list.
+    check("--only-plan defers every other rename and merge, the standards folds among them while they wait",
+          {d["old"] for d in om["deferred"]} == set(moved) - olds
           and all(o not in omoved for o in set(moved) - olds))
     check("--only-plan's issuer preview names only the plan's folds",
           set(om["issuer_preview"]) == {e["new"] for e in E if e["kind"] == "merge"})

@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 863,
+  "file_datasets": 864,
   "external_services": 195,
   "consumers": 559,
   "workflows": 66,
@@ -4655,7 +4655,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 49
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:<date>_standards_2.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
     }
    ],
    "served": false,
@@ -13865,7 +13878,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 156
+     "line": 237
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -13999,7 +14012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 157
+     "line": 238
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -15357,6 +15370,13 @@
      "direction": "read",
      "how": "literal",
      "line": 65
+    },
+    {
+     "id": "script:kb/_build_standards_rename_plan.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 119
     },
     {
      "id": "script:kb/_exhibit_subject_fill.py",
@@ -19622,7 +19642,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 157
+     "line": 118
     },
     {
      "id": "script:kb/_cer_decision_apply.py",
