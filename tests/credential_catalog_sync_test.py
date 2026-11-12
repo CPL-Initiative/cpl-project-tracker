@@ -114,6 +114,72 @@ class DuplicateGuard(unittest.TestCase):
         self.assertEqual([r["unified_title"] for r in sync.build_rows(doc)], ["Real"])
 
 
+class RetiredNames(unittest.TestCase):
+    """Sam, 2026-11-11: an approved rename keeps the old title as a search alias. Sierra's tiers 2 and 4 read
+    raw_variants, so the old name rides on the live successor's row; then its ghost row can go
+    (kb/_chatbox_ghost_delete.py holds a ghost until it does)."""
+
+    def setUp(self):
+        import tempfile
+        self.root = tempfile.mkdtemp(prefix="retired_names_")
+        kb = os.path.join(self.root, "kb")
+        os.makedirs(kb)
+        # Live in the credential layer: Gamma, Delta, Echo (Echo was renamed away once, then brought back), Omega.
+        with open(os.path.join(kb, "credentials.json"), "w") as f:
+            json.dump({"Gamma": [], "Delta": [], "Echo": [], "Omega": []}, f)
+        snaps = {
+            "2026-11-01": ("2026-11-01T10:00:00Z", {"Alpha": "Beta", "Echo": "Delta", "Zeta": "Omega",
+                                                    "Kappa": "Gamma"}),
+            "2026-11-02": ("2026-11-02T10:00:00Z", {"Beta": "Gamma"}),
+        }
+        for name, (at, renames) in snaps.items():
+            d = os.path.join(kb, "cred_rename_out", name)
+            os.makedirs(d)
+            with open(os.path.join(d, "alias_map.json"), "w") as f:
+                json.dump({"_applied_at": at, "renames": renames, "merges": {}}, f)
+        # The reference this sync upserts: no Omega (a successor it does not carry), and Kappa is a title here.
+        self.titles = {"Gamma", "Delta", "Echo", "Kappa"}
+
+    def tearDown(self):
+        import shutil
+        shutil.rmtree(self.root, ignore_errors=True)
+
+    def retired(self):
+        return sync.retired_names(self.titles, root=self.root)
+
+    def test_a_chain_resolves_to_its_final_live_title(self):
+        # Alpha -> Beta -> Gamma, and Beta -> Gamma: both old names land on Gamma, sorted.
+        self.assertEqual(self.retired().get("Gamma"), ["Alpha", "Beta"])
+
+    def test_an_old_name_live_again_is_not_added(self):
+        # Echo -> Delta was applied, but Echo is live again: it answers as itself.
+        self.assertNotIn("Delta", self.retired())
+
+    def test_a_successor_this_sync_does_not_upsert_adds_nothing(self):
+        # Zeta -> Omega: Omega is live in the credential layer but not in the reference.
+        self.assertNotIn("Omega", self.retired())
+        self.assertNotIn("Zeta", [n for v in self.retired().values() for n in v])
+
+    def test_an_old_name_that_is_a_reference_title_is_skipped(self):
+        self.assertNotIn("Kappa", self.retired().get("Gamma", []))
+
+    def test_the_old_name_lands_in_the_successors_raw_variants_once(self):
+        doc = {"_generated_at": None, "unified_titles": [
+            rec(ut="Gamma", raw_variants=[{"r": "GAMMA cert"}, {"r": "beta"}]),
+            rec(ut="Delta", raw_variants=[]),
+        ]}
+        rows = {r["unified_title"]: r for r in sync.build_rows(doc, retired=self.retired())}
+        # "beta" is already a variant (Sierra compares lower-case), so only Alpha is added, after the college ones.
+        self.assertEqual(rows["Gamma"]["raw_variants"], ["GAMMA cert", "beta", "Alpha"])
+        self.assertIn("alpha", rows["Gamma"]["search_text"])
+        self.assertEqual(rows["Delta"]["raw_variants"], [])
+
+    def test_no_row_count_change(self):
+        doc = {"_generated_at": None, "unified_titles": [rec(ut=t) for t in sorted(self.titles)]}
+        self.assertEqual(len(sync.build_rows(doc, retired=self.retired())), len(sync.build_rows(doc, retired={})))
+        self.assertEqual(len(sync.build_rows(doc, retired=self.retired())), len(self.titles))
+
+
 class AgainstTheRealArtifact(unittest.TestCase):
     """Skipped in a clean checkout; runs wherever the baked payload exists."""
 
