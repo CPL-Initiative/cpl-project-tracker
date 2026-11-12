@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 859,
+  "file_datasets": 861,
   "external_services": 195,
-  "consumers": 557,
+  "consumers": 558,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -13676,6 +13676,46 @@
    "main_committers": [
     "workflow:cred-rename-apply.yml"
    ]
+  },
+  "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_fold_resolution_write.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 96
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/cred_rename_out/2026-11-12/undo.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_rename_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 365
+    },
+    {
+     "id": "script:kb/_cred_rename_undo.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 363
+    },
+    {
+     "id": "script:kb/fold_issuer.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 664
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:kb/credential_merges.json": {
    "consumers": [
