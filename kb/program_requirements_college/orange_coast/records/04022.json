@@ -93,7 +93,9 @@
      21.0,
      21.0
     ],
-    "why": []
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -146,7 +148,8 @@
    "outcomes": [
     "Students will be able to analyze dimensions of various religions utilizing methodologies appropriate to the academic study of religion."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -253,5 +256,14 @@
    "No careers are named in the text."
   ]
  },
- "extracted_run": "39726645292"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AA GE\t60"
+  }
+ ],
+ "read_run": "39726645292"
 }

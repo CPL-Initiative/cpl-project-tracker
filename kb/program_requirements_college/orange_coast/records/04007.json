@@ -92,20 +92,36 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
    ],
    "stated": [
-    81.5,
-    84.5
+    63.5,
+    63.5
    ],
-   "against": "degree",
-   "ge": null,
+   "against": "program",
    "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+    "the blocks sum to 0.0-0.0; the catalog states 63.5-63.5"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "incomplete",
+    "computed": [
+     0.0,
+     0.0
+    ],
+    "stated": [
+     81.5,
+     84.5
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the record names the degree total and the OCC AS GE pattern, but no units for it"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -136,8 +152,8 @@
    "section_heading": "Program Sequence",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 63.5,
+    "max": 63.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -161,7 +177,8 @@
     "Registered Respiratory Therapist",
     "Respiratory Therapy Specialist",
     "Respiratory Care Practitioner"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [],
   "course_outcomes": [],
@@ -296,5 +313,26 @@
    "Plan footnotes: footnote 1 'Meets OCC AS GE AREA 5' and footnote 2 'Acceptance into the OCC Respiratory Care program required to begin major coursework (Cohort Restriction).'"
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 63.5,
+    "max": 63.5
+   },
+   "words": "Total Major Units\t63.5"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t81.5"
+  }
+ ],
+ "read_run": "38670927724"
 }

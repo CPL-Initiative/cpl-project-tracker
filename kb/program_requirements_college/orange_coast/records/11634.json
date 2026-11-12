@@ -60,17 +60,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     48.0,
     48.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    48.0,
+    48.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     69.0,
+     69.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -92,20 +113,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Fashion Design, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 48,
+    "max": 48
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -114,14 +132,14 @@
    },
    "ge_pattern": "Orange Coast College General Education (OCC AS GE)",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 63,
+    "max": 63
    },
    "ge_units": {
     "min": null,
-    "max": null
+    "max": 21
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Students will have the general education breadth to transfer to applicable four-year programs.",
     "Students will demonstrate a working knowledge of apparel sewing and pattern making.",
@@ -133,7 +151,8 @@
     "design assistant",
     "freelance fashion design",
     "setting up independent design houses"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -313,5 +332,56 @@
    "GE area placeholders (OCC AS GE Areas 1A, 1B, 2, 5, 6) were not placed in blocks; no GE unit total is printed."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 48,
+    "max": 48
+   },
+   "words": "Total Major Units\t48"
+  },
+  {
+   "field": "degree_total",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 63,
+    "max": 63
+   },
+   "words": "Total Minimum Degree Units - OCC AS GE\t63"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t63"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": null,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1,2\tup to 21"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "Transferable electives as needed to satisfy unit requirements"
+  }
+ ],
+ "read_run": "38670927724"
 }

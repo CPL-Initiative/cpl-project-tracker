@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft, FAA, Autodesk, NCCER, ASME, PMI, ICC, CDPH, EMSA, AWS-Welding, Amazon.",
- "_reference_generated_at": "2026-11-12T00:25:24+00:00",
+ "_reference_generated_at": "2026-11-12T02:27:00+00:00",
  "counts": {
   "certs_linked": 238,
-  "titles_linked": 278,
-  "holds": 266,
-  "bundles": 51,
+  "titles_linked": 276,
+  "holds": 264,
+  "bundles": 49,
   "aligned": 12,
   "codes_not_in_catalog": [
    "G1"
@@ -2027,28 +2027,11 @@
     "ITC4233"
    ]
   },
-  "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4234",
-    "ITC4235",
-    "ITC1520"
-   ]
-  },
   "ASE A2 — Automatic Transmission/Transaxle": {
    "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4234"
-   ]
-  },
-  "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4234",
-    "ITC4235"
    ]
   },
   "ASE A3 — Manual Drive Train and Axles": {
@@ -2086,27 +2069,11 @@
     "ITC4238"
    ]
   },
-  "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4239",
-    "ITC4230"
-   ]
-  },
   "ASE A8 — Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
     "ITC4239"
-   ]
-  },
-  "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4240",
-    "ITC4246"
    ]
   },
   "ASE A9 — Light Vehicle Diesel Engines": {
@@ -2116,42 +2083,6 @@
     "ITC4240"
    ]
   },
-  "ASE Bundle — A1, A6, A8, L1": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4233",
-    "ITC1520",
-    "ITC4239",
-    "ITC4230"
-   ]
-  },
-  "ASE Bundle — A2, A3, A6": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4234",
-    "ITC4235",
-    "ITC1520"
-   ]
-  },
-  "ASE Bundle — A4, A5": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4236",
-    "ITC4237"
-   ]
-  },
-  "ASE Bundle — A4, A5, A6": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4236",
-    "ITC4237",
-    "ITC1520"
-   ]
-  },
   "ASE Bundle — A6 or T6 + L3": {
    "relation": "holds",
    "rule": "any",
@@ -2159,144 +2090,6 @@
     "ITC1520",
     "ITC1522",
     "ITC4247"
-   ]
-  },
-  "ASE Bundle — A6, A8, L1": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC1520",
-    "ITC4239",
-    "ITC4230"
-   ]
-  },
-  "ASE Bundle — L2, T8, SP/2 HD": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4246",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "SP/2 HD"
-   ]
-  },
-  "ASE Bundle — T2, T5, T7, T8 + MACS/609": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4249",
-    "ITC4252",
-    "ITC4253",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "MACS/609"
-   ]
-  },
-  "ASE Bundle — T2, T6, T8 + Snap-on 604": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4249",
-    "ITC1522",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "Snap-on 604"
-   ]
-  },
-  "ASE Bundle — T2, T8": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4249",
-    "ITC4254"
-   ]
-  },
-  "ASE Bundle — T3, T4, T5, T8": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4250",
-    "ITC4251",
-    "ITC4252",
-    "ITC4254"
-   ]
-  },
-  "ASE Bundle — T3, T8, SP/2 HD": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4250",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "SP/2 HD"
-   ]
-  },
-  "ASE Bundle — T4, T8, SP/2 HD": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4251",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "SP/2 HD"
-   ]
-  },
-  "ASE Bundle — T5, T8": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4252",
-    "ITC4254"
-   ]
-  },
-  "ASE Bundle — T5, T8, SP/2 HD": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4252",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "SP/2 HD"
-   ]
-  },
-  "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC1522",
-    "ITC4246"
-   ],
-   "unresolved": [
-    "Cummins ISX",
-    "SP/2 HD"
-   ]
-  },
-  "ASE Bundle — T6, T8 + Snap-on 604": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC1522",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "Snap-on 604"
-   ]
-  },
-  "ASE Bundle — T7, T8 + MACS/609": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4253",
-    "ITC4254"
-   ],
-   "unresolved": [
-    "MACS/609"
    ]
   },
   "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair": {
@@ -2314,6 +2107,195 @@
    "rule": "all",
    "certs": [
     "ITC4241"
+   ]
+  },
+  "ASE Certificate Bundles: A1 + A6 + A8 + L1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4233",
+    "ITC1520",
+    "ITC4239",
+    "ITC4230"
+   ]
+  },
+  "ASE Certificate Bundles: A2 + A3": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4234",
+    "ITC4235"
+   ]
+  },
+  "ASE Certificate Bundles: A2 + A3 + A6": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4234",
+    "ITC4235",
+    "ITC1520"
+   ]
+  },
+  "ASE Certificate Bundles: A4 + A5": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4236",
+    "ITC4237"
+   ]
+  },
+  "ASE Certificate Bundles: A4 + A5 + A6": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4236",
+    "ITC4237",
+    "ITC1520"
+   ]
+  },
+  "ASE Certificate Bundles: A6 + A8 + L1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1520",
+    "ITC4239",
+    "ITC4230"
+   ]
+  },
+  "ASE Certificate Bundles: A8 + L1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4239",
+    "ITC4230"
+   ]
+  },
+  "ASE Certificate Bundles: A9 + L2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4240",
+    "ITC4246"
+   ]
+  },
+  "ASE Certificate Bundles: G1 with ALI Lift It Right": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "G1 (an ASE test the catalog does not list)"
+   ]
+  },
+  "ASE Certificate Bundles: L1 + L2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4230",
+    "ITC4246"
+   ]
+  },
+  "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4246",
+    "ITC1522"
+   ],
+   "unresolved": [
+    "SP/2 HD"
+   ]
+  },
+  "ASE Certificate Bundles: L2 + T8 with SP/2 HD": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4246",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4249",
+    "ITC4252",
+    "ITC4253",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4249",
+    "ITC1522",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T2 + T8": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4249",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T3 + T4 + T5 + T8": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4250",
+    "ITC4251",
+    "ITC4252",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T3 + T8 with SP/2 HD": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4250",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T4 + T8 with SP/2 HD": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4251",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T5 + T8": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4252",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T5 + T8 with SP/2 HD": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4252",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T6 + T8 with Snap-on 604": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1522",
+    "ITC4254"
+   ]
+  },
+  "ASE Certificate Bundles: T7 + T8 with MACS/609": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC4253",
+    "ITC4254"
    ]
   },
   "ASE Certification (any A1–A8)": {
@@ -2337,29 +2319,12 @@
     "ITC4231"
    ]
   },
-  "ASE G1 + ALI Lift It Right Bundle": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [],
-   "unresolved": [
-    "G1 (an ASE test the catalog does not list)",
-    "ALI Lift It Right Bundle"
-   ]
-  },
   "ASE G1 — Auto Maintenance and Light Repair": {
    "relation": "holds",
    "rule": "all",
    "certs": [],
    "unresolved": [
     "G1 (an ASE test the catalog does not list)"
-   ]
-  },
-  "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4230",
-    "ITC4246"
    ]
   },
   "ASE L1 — Advanced Engine Performance Specialist": {
@@ -2389,24 +2354,6 @@
    "certs": [],
    "unresolved": [
     "Master Automobile Technician (not in the catalog)"
-   ]
-  },
-  "ASE Master Automobile Technician (A1–A8 + L1)": {
-   "relation": "holds",
-   "rule": "all",
-   "certs": [
-    "ITC4233",
-    "ITC4234",
-    "ITC4235",
-    "ITC4236",
-    "ITC4237",
-    "ITC1520",
-    "ITC4238",
-    "ITC4239",
-    "ITC4230"
-   ],
-   "unresolved": [
-    "Master Automobile Technician"
    ]
   },
   "ASE Master Automobile Technician (A1–A8) or L3": {

@@ -60,21 +60,38 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     40.5,
     40.5
    ],
    "stated": [
-    61.5,
-    63.5
+    40.5,
+    40.5
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the OCC AS GE (Orange Coast College Associate in Science general education) pattern, but no units for it"
-   ]
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     61.5,
+     61.5
+    ],
+    "stated": [
+     61.5,
+     63.5
+    ],
+    "against": "degree",
+    "ge": [
+     21.0,
+     21.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,15 +115,15 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
    "section_heading": "Airframe, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 40.5,
+    "max": 40.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,8 +136,8 @@
     "max": 63.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -129,7 +146,8 @@
    ],
    "careers": [
     "Airframe Technician"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -239,5 +257,38 @@
    "Program Learning Outcomes are printed for the Aviation Maintenance Technology program as a whole; the A.S. degree shares them."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 40.5,
+    "max": 40.5
+   },
+   "words": "Total Major Units\t40.5"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t61.5"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "OCC AS General Education 1\t21"
+  }
+ ],
+ "read_run": "38670927724"
 }
