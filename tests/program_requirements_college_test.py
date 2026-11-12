@@ -2553,6 +2553,17 @@ check(not C.pdf_award_list_lines(AR_OWN.split("\n")) and not C.pdf_award_list_li
       "a program's own heading, one award line above its prose, is no list")
 check(C.pdf_award_list_lines(["As in the fall term the college", "offers a degree", "and a certificate"]) == set(),
       "a sentence that opens 'As in' and lines that close on lower-case 'degree' and 'certificate' are no list")
+# S640: the closing word must open on a capital. Three short prose lines ending lower-case are no list;
+# the same titles in capitals, or with the fi ligature College of the Desert's pypdf text prints, are one.
+check(C.pdf_award_list_lines(["Students may earn a degree", "offers the degree", "and a certificate"]) == set(),
+      "three lower-case prose lines closing on 'degree' or 'certificate' are no list, whatever the run's length")
+check(C.pdf_award_list_lines(["ACCOUNTING CERTIFICATE OF ACHIEVEMENT", "BOOKKEEPING CERTIFICATE",
+                              "PAYROLL DEGREE"]) == {0, 1, 2},
+      "award titles printed in capitals are a list")
+cod_list = ["Arborist Technician Certi\ufb01cate of Achievement", "Environmental Horticulture Certi\ufb01cate of Achievement",
+            "Landscape Management Certi\ufb01cate of Achievement", "Turfgrass Management Certi\ufb01cate of Achievement"]
+check(C.pdf_award_list_lines(cod_list) == {0, 1, 2, 3},
+      "a ligature 'Certi\ufb01cate' (College of the Desert's pypdf text) is folded to 'Certificate' before matching")
 ar_pages = [AR_LIST, AR_SIBLING, AR_SIBLING.replace("Studio Art", "Art"), "Photography courses only", AR_OWN]
 pick = C.pdf_best("https://arc.example/arc-catalog-26-27.pdf", ar_pages, sculpt, AR_COURSES, "pypdf")
 check(pick and pick["pages"][0] == 5 and pick["text"].startswith("[page 5]\nSculpture Certificate"),
@@ -2626,6 +2637,185 @@ try:
           "a capture's preview keeps the moved, unchanged program and names the three that need the model: %r" % wx)
 finally:
     shutil.rmtree(_mv, ignore_errors=True)
+
+# ── S640: the review of PR #3135 ──────────────────────────────────────────────────────────────
+# 1. A bare number is a page number only when proven. A catalog whose footer is the page number alone
+# ("60" on pdf page 50), with each course's units and the total on their own lines as pypdf prints a
+# table's Units column. The footer goes; a changed unit figure or total changes the fingerprint.
+bare_book = []
+for i in range(60):
+    bare_book.append("Arts and Humanities\nART %d\nStudio %s\n3\nART %d\nDrawing\n4\nTotal Units:\n7\n%d"
+                     % (300 + (7 * i) % 50, words[i % 8], 400 + (11 * i) % 50, i + 1 + 10))
+bare_furn = C.pdf_furniture(bare_book)
+check(bare_furn == {"#@10"},
+      "a bare footer that keeps step with the page at its edge is the page number, filed with its offset; "
+      "the unit and total lines are not furniture: %r" % sorted(bare_furn))
+bw_old = "[page 50]\nART 370\nBeginning Sculpture\n3\nART 371\nDrawing\n4\nTotal Units:\n7\n60"
+bw_new = "[page 48]\nART 370\nBeginning Sculpture\n3\nART 371\nDrawing\n4\nTotal Units:\n7\n58"
+check(C.window_sha(bw_old, bare_furn) == C.window_sha(bw_new, bare_furn),
+      "the same window two pages lower, its bare page-number footer renumbered, keeps its fingerprint")
+check(C.window_sha(bw_old, bare_furn) != C.window_sha(bw_new.replace("\n3\n", "\n4\n"), bare_furn)
+      and C.window_sha(bw_old, bare_furn) != C.window_sha(bw_new.replace("\n7\n", "\n8\n"), bare_furn),
+      "a unit figure or a total on its own line that changed changes the fingerprint")
+check(C.window_sha("[page 50]\nART 370\nSculpture\nTotal Units:\n7", bare_furn)
+      != C.window_sha("[page 50]\nART 370\nSculpture\nTotal Units:\n8", bare_furn),
+      "a bare total at the page's edge whose value does not keep step with the page stays in the fingerprint")
+check(C.window_sha("[page 50]\nART 370\n60\nSculpture\n61", bare_furn)
+      != C.window_sha("[page 50]\nART 370\nSculpture\n61", bare_furn),
+      "a bare number inside the page, though its value is the page's number plus the offset, stays")
+check(C.window_sha("ART 370\nSculpture\n60", bare_furn) != C.window_sha("ART 370\nSculpture\n58", bare_furn),
+      "text with no page mark keeps every bare number")
+check(C.pdf_furniture([p.rsplit("\n", 1)[0] for p in bare_book]) == set(),
+      "with no footer, the bare unit and total lines are never furniture")
+top_book = ["%d\n" % (i + 1 - 2) + p.rsplit("\n", 1)[0] for i, p in enumerate(bare_book)]
+check(C.pdf_furniture(top_book) == {"#@-2"}, "a bare page number at the top edge is found too")
+
+# 2. Same page, changed figures: a record that carries its window's fingerprint stays on an unmoved
+# page only while the fingerprint matches; a record with none is judged by its address, as before.
+_sp = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(_sp, "records"))
+    u = "https://arc.example/c.pdf#page=311"
+    sp_recs = {"5": {"record": {"blocks": []}, "source_url": u, "source_sha": "aaaa"},
+               "6": {"record": {"blocks": []}, "source_url": u, "source_sha": "aaaa"},
+               "7": {"record": {"blocks": []}, "source_url": u}}
+    for cn, body in sp_recs.items():
+        open(os.path.join(_sp, "records", cn + ".json"), "w").write(json.dumps(body))
+    json.dump([{"control_number": cn, "source": {"url": u}, "coverage": 1.0, "codes_found": ["ART370"]}
+               for cn in sp_recs], open(os.path.join(_sp, "sources.json"), "w"))
+    sp_src = {"source": {"url": u, "text_sha": "aaaa"}, "coverage": 1.0, "codes_found": ["ART370"], "text": "x"}
+    same_fp = dict(sp_src, control_number="5")
+    new_fp = dict(sp_src, control_number="6", source={"url": u, "text_sha": "bbbb"})
+    no_fp = dict(sp_src, control_number="7", source={"url": u, "text_sha": "bbbb"})
+    check(C.filed_from(os.path.join(_sp, "records", "5.json"), same_fp)
+          and not C.filed_from(os.path.join(_sp, "records", "6.json"), new_fp)
+          and C.filed_from(os.path.join(_sp, "records", "7.json"), no_fp),
+          "a fingerprinted record stays on its page only with the same fingerprint; one without is kept by address")
+    wx2 = C.would_extract("X", [same_fp, new_fp, no_fp], folder=_sp)
+    check(wx2["kept"] == 2 and [x["control_number"] for x in wx2["list"]] == ["6"],
+          "the preview sends the program whose figures changed on the same page to the model: %r" % wx2)
+finally:
+    shutil.rmtree(_sp, ignore_errors=True)
+
+# 3. The list rule never lowers coverage, and a program's own stacked headings stay its heading.
+# American River's apprenticeship list, pdf page 153 (run 43140065175): Acoustical Installer
+# Apprenticeship A.A. 39057 has no heading but the list's first line; its 16 courses run over 154-155.
+carpt = [{"code": "CARPT %d" % (100 + k)} for k in range(16)]
+aa = {"title": "Acoustical Installer Apprenticeship", "award": "A.A. Degree", "control_number": "39057"}
+app_list = ("Apprenticeship Department\nA.A. in Acoustical Installer Apprenticeship\nA.A. in Carpenter Apprenticeship\n"
+            "Acoustical Installer Level III Certificate\nCarpenter Apprenticeship Certificate\nDean: Pat Doe\n"
+            "The Acoustical Installer Apprenticeship program trains installers of ceilings and walls.")
+app_154 = "Course Code Course Title Units\n" + "\n".join("CARPT %d Carpentry topic %d (1)" % (100 + k, k) for k in range(7))
+app_155 = ("\n".join("CARPT %d Carpentry topic %d (1)" % (100 + k, k) for k in range(7, 16))
+           + "\nTotal Units: 16 for the Acoustical Installer Apprenticeship\nA.A. in Carpenter Apprenticeship\n"
+           "This program concentrates on carpentry.")
+own = C.pdf_best("https://arc.example/c.pdf", [app_list, app_154, app_155], aa, carpt, "pypdf")
+check(own and own["pages"] == [1, 2, 3] and own["coverage"] == 1.0 and not own["opens_on_list"],
+      "a program whose only heading is a list line, its own heading printed nowhere else, keeps the list "
+      "page's run at coverage 1.0: %r" % ((own and (own["pages"], own["coverage"], own["opens_on_list"])),))
+elsewhere = [app_list, app_154, app_155, "Electrician Apprenticeship courses",
+             "A.A. in Acoustical Installer Apprenticeship\nThis degree prepares students to install ceilings."]
+kept_plain = C.pdf_best("https://arc.example/c.pdf", elsewhere, aa, carpt, "pypdf")
+check(kept_plain and kept_plain["pages"] == [1, 2, 3] and kept_plain["coverage"] == 1.0,
+      "passing over the list would leave page 155 alone at 9 of 16 courses; the first pick names more, and it "
+      "stands: %r" % ((kept_plain and (kept_plain["pages"], kept_plain["coverage"])),))
+check(kept_plain and kept_plain["opens_on_list"],
+      "that window opens on a department's list whose program heading is printed elsewhere: it is marked to hold")
+# A program's own stacked headings (a degree and its certificates above one course table on the next page),
+# with the sibling A.S. page, naming the same courses and more, earlier in the file.
+ac_courses = [{"code": c} for c in ("ACCT 101", "ACCT 102", "BUS 110")]
+ac_cert = {"title": "Accounting", "award": "Certificate of Achievement", "control_number": "21000"}
+ac_sib = ("Accounting, Associate in Science Degree\nCourse Code Course Title Units\nACCT 101 Financial Accounting (4)\n"
+          "ACCT 102 Managerial Accounting (4)\nBUS 110 Business Law (3)\nBUS 120 Business Math (3)\nTotal Units: 14")
+ac_stack = ("Business Department\nAccounting, Associate in Science Degree\nAccounting Certificate of Achievement\n"
+            "Bookkeeping Certificate of Achievement\nThese programs prepare students for work in accounting.")
+ac_tbl = ("Certificate Requirements\nCourse Code Course Title Units\nACCT 101 Financial Accounting (4)\n"
+          "ACCT 102 Managerial Accounting (4)\nBUS 110 Business Law (3)\nTotal Units: 11")
+stack = C.pdf_best("https://x.edu/c.pdf", [ac_sib, "Business courses", ac_stack, ac_tbl], ac_cert, ac_courses, "pypdf")
+check(C.pdf_award_list_lines(ac_stack.split("\n")) == {1, 2, 3} and stack and stack["pages"][:2] == [3, 4]
+      and "Accounting Certificate of Achievement" in stack["text"] and not stack["opens_on_list"],
+      "a program's own heading inside a run of three stacked headings, its table on the next page, is still "
+      "its heading, not the sibling degree's page: %r" % (stack and stack["pages"]))
+check(not C.pdf_heading_elsewhere([ac_sib, "Business courses", ac_stack, ac_tbl], 2, ac_cert, ac_courses)
+      and C.pdf_heading_elsewhere(ar_pages, 0, sculpt, AR_COURSES),
+      "stacked headings are printed nowhere else; a department list's titles head sections that follow it")
+
+# 4. A paid read never makes a passing record worse, in the preview and in the extraction.
+import _program_requirements_extract as XT  # noqa: E402
+_hx = tempfile.mkdtemp()
+_saved = (XT.call, os.environ.get("SUPABASE_SERVICE_KEY"))
+try:
+    keep_dir, out_dir = os.path.join(_hx, "keep"), os.path.join(_hx, "out")
+    os.makedirs(os.path.join(keep_dir, "records"))
+    os.makedirs(os.path.join(out_dir, "sources"))
+    pdf = "https://scc.example/c.pdf"
+    passing = {"pass": True, "coverage": {"share": 1.0}}
+    filed_recs = {
+        "10": {"record": {"blocks": []}, "source_url": pdf + "#page=311", "extracted_run": 39049026449,
+               "source_sha": "s10", "source_codes": ["A1"], "source_coverage": 1.0, "score": passing},
+        "11": {"record": {"blocks": []}, "source_url": pdf + "#page=311", "extracted_run": 39049026449,
+               "source_sha": "s11", "source_codes": ["A1"], "source_coverage": 1.0, "score": passing},
+        "13": {"record": {"blocks": []}, "source_url": pdf + "#page=333", "extracted_run": 39047070975,
+               "score": passing},
+        "14": {"record": {"blocks": []}, "source_url": pdf + "#page=333", "extracted_run": 39047070975,
+               "score": passing},
+        "15": {"record": {"blocks": []}, "source_url": pdf + "#page=333", "extracted_run": 39047070975,
+               "score": {"pass": False, "coverage": {"share": 0.5}}},
+    }
+    for cn, body in filed_recs.items():
+        open(os.path.join(keep_dir, "records", cn + ".json"), "w").write(json.dumps(dict(body, control_number=cn)))
+    json.dump([{"control_number": cn, "source": {"url": b["source_url"]}, "coverage": 1.0, "codes_found": ["A1"]}
+               for cn, b in filed_recs.items()], open(os.path.join(keep_dir, "sources.json"), "w"))
+
+    def src_of(cn, page, sha=None, cov=1.0, **extra):
+        return {"college": "Test College", "control_number": cn, "shape": "certificate", "title": "T" + cn,
+                "award": "Certificate of Achievement", "closed_list": [{"code": "A 1"}], "text": "[page 1]\nA 1",
+                "coverage": cov, "codes_found": ["A1"],
+                "source": dict({"url": "%s#page=%d" % (pdf, page), "text_sha": sha or "s" + cn}, **extra)}
+    srcs = [src_of("10", 307, "s10"),                    # moved with the same text: kept, no call
+            src_of("11", 307, "s11"),                    # the same, forced: called
+            src_of("12", 50, "s12"),                     # new: called, stamped
+            src_of("13", 328, cov=0.917),                # passing record, worse window: held
+            src_of("14", 328, cov=0.917),                # the same, forced: called
+            src_of("15", 328, cov=0.917),                # a failing record is no reason to hold
+            src_of("16", 60, opens_on_list=True)]        # opens on a department's list: held
+    for x in srcs:
+        json.dump(x, open(os.path.join(out_dir, "sources", x["control_number"] + ".json"), "w"))
+    wx3 = C.would_extract("Test College", srcs, folder=keep_dir)
+    # The preview knows no forced numbers: 11 counts as kept there, and 14 as held, until a run forces them.
+    check(wx3["kept_moved"] == 2 and sorted(x["control_number"] for x in wx3["list"]) == ["12", "15"]
+          and [(x["control_number"], x["coverage"], x["was_coverage"]) for x in wx3["held_worse_window"]]
+          == [("13", 0.917, 1.0), ("14", 0.917, 1.0)]
+          and [x["control_number"] for x in wx3["held_opens_on_list"]] == ["16"],
+          "the preview lists a worse window with both coverages and a list opening apart, and sends neither: %r"
+          % {k: wx3[k] for k in ("kept", "kept_moved", "held_worse_window", "held_opens_on_list")})
+    called = []
+
+    def fake_call(src, key, *a, **k):
+        called.append(src["control_number"])
+        return {"record": None, "model": None, "usage": None}
+    XT.call = fake_call
+    os.environ["SUPABASE_SERVICE_KEY"] = "test"
+    rc = C.extract(out_dir, 0, 1, "43200000000", 2, keep_dir, {"11", "14"})
+    got = {os.path.basename(p)[:-5]: json.load(open(p)) for p in glob.glob(os.path.join(out_dir, "records", "*.json"))}
+    check(rc == 0 and sorted(called) == ["11", "12", "14", "15"],
+          "the extraction asks the model for the new, the forced and the failing, and never for the moved "
+          "unchanged or the held: %r" % sorted(called))
+    check(got["10"]["source_url"].endswith("#page=307") and got["10"]["page_moved_from"].endswith("#page=311")
+          and got["10"]["extracted_run"] == 43200000000,
+          "extract()'s moved branch writes the kept record on its new page with the run")
+    check(got["12"].get("source_sha") == "s12" and got["12"].get("source_codes") == ["A1"]
+          and got["12"].get("source_coverage") == 1.0,
+          "a freshly extracted record carries its window's fingerprint, codes and coverage")
+    check(got["13"] == dict(filed_recs["13"], control_number="13") and "16" not in got,
+          "a held record stays as filed, so filing the run keeps it; a held program with no record writes none")
+finally:
+    XT.call = _saved[0]
+    if _saved[1] is None:
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+    else:
+        os.environ["SUPABASE_SERVICE_KEY"] = _saved[1]
+    shutil.rmtree(_hx, ignore_errors=True)
 
 if failures:
     print("FAIL: %d" % len(failures))
