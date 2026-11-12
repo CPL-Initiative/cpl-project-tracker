@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-11T21:41:24Z",
+ "_generated_at": "2026-11-12T16:21:44Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 178,
+ "queue": 180,
  "saved_not_folded": 0,
- "waiting": 178,
- "proposed": 141,
- "needs_you_count": 177,
+ "waiting": 180,
+ "proposed": 143,
+ "needs_you_count": 179,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -132,7 +132,7 @@
     "skill": "Rule 5c, Rule 5f"
    },
    "settled": 0,
-   "held": 0,
+   "held": 2,
    "sample": []
   },
   {
@@ -271,7 +271,12 @@
    "sample": []
   }
  ],
- "classifier_run": null,
+ "classifier_run": {
+  "calls": 1,
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.37
+ },
  "needs_you": [
   {
    "raw_title": "Credit By Exam- CFPL ABT 135",
@@ -388,6 +393,32 @@
    },
    "colleges": [
     "American River College"
+   ]
+  },
+  {
+   "raw_title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
+   "why": "a merge would join two issuers (CHAMPS High School; the reference has California Community Colleges)",
+   "proposal": {
+    "title": "Modern Dance Techniques 1",
+    "issuer": "CHAMPS High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (DANCETQ 141 at Los Angeles Pierce College) names it, M-ID DANC M1222; the school issues it."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
+   "why": "a merge would join two issuers (CHAMPS High School; the reference has California Community Colleges)",
+   "proposal": {
+    "title": "Modern Dance Techniques 2",
+    "issuer": "CHAMPS High School",
+    "confidence": 1.0,
+    "note": "Sheet 147 card 2: the aligned course (DANCETQ 142 at Los Angeles Pierce College) names it, M-ID DANC M1251; the school issues it."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
    ]
   },
   {

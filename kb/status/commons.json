@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T11:54:31Z",
+ "written_at": "2026-11-12T16:21:54Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13926,
+     "n": 13983,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 3002,
+     "n": 2947,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3354,
+     "n": 3352,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,17 +63,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-12T04:22:11Z",
+    "at": "2026-11-12T11:50:06Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13926,
-    "failing": 3002,
-    "unread": 3354,
-    "records": 18555,
+    "complete": 13983,
+    "failing": 2947,
+    "unread": 3352,
+    "records": 18554,
     "colleges": 114,
-    "outside_active": 1627,
+    "outside_active": 1624,
     "confirmed": 32,
     "confirmed_complete": 28
    },
@@ -118,15 +118,15 @@
    ],
    "issues": [
     {
-     "n": 177,
+     "n": 179,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
+     "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
      "carry": "unsure",
      "open": "#exhibits/held",
      "error": null
     },
     {
-     "n": 362,
+     "n": 366,
      "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
      "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
      "carry": "routine",
@@ -158,7 +158,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-12T06:36:25Z",
+    "at": "2026-11-12T16:21:46Z",
     "every_hours": 24
    },
    "facts": {
@@ -170,14 +170,14 @@
     "confirmed": 1227,
     "records": 3050,
     "records_stamped": 2280,
-    "saved_at": "2026-11-11T15:43:03Z",
+    "saved_at": "2026-11-12T16:21:46Z",
     "fold_at": "2026-11-12T06:36:25Z",
     "map_titles": 5087,
     "unclassified": 180,
     "left_map": 809,
     "below_80": 1117,
     "below_60": 235,
-    "no_subject": 362
+    "no_subject": 366
    },
    "sources": [
     "kb/unified_titles.json",
@@ -363,7 +363,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T06:40:36Z",
+    "at": "2026-11-12T11:54:35Z",
     "every_hours": null
    },
    "facts": {
@@ -668,9 +668,9 @@
      {
       "ref": "exhibit",
       "title": "Common Exhibit Reference",
-      "n": 177,
+      "n": 179,
       "words": "titles held for a person",
-      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37)",
+      "owner": "a curator (the classifier is unsure 140, the classifier's title has a course code left in 37, a merge would join two issuers 2)",
       "open": "#exhibits/held"
      },
      {
@@ -730,7 +730,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3002,
+    "n": 2947,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -738,7 +738,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3354,
+    "n": 3352,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -746,7 +746,7 @@
    {
     "ref": "exhibit",
     "title": "Common Exhibit Reference",
-    "n": 362,
+    "n": 366,
     "words": "credentials with no Common SUBJ (429 exhibits); the nightly subject fill takes what courses and issuer families settle, the rest wait on a person in the worklist",
     "owner": "the subject fill, then a curator (kb/exhibit_subject_out/worklist.json)",
     "open": "#exhibits/list/nosubj"
@@ -765,7 +765,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3354,
+    "n": 3352,
     "was": 3349,
     "since": "2026-11-05",
     "words": "active programs with no record yet",
@@ -814,13 +814,13 @@
     },
     {
      "name": "brand-family",
-     "placed": 115,
+     "placed": 116,
      "untouched": 108,
      "kept": 0,
      "renamed": 2,
      "moved": 0,
      "by_procedure": 5,
-     "left": 0,
+     "left": 1,
      "looked": 2
     },
     {
@@ -880,13 +880,13 @@
     }
    ],
    "total": {
-    "placed": 1319,
+    "placed": 1320,
     "untouched": 1188,
     "kept": 23,
     "renamed": 84,
     "moved": 0,
     "by_procedure": 24,
-    "left": 0,
+    "left": 1,
     "looked": 107
    }
   },

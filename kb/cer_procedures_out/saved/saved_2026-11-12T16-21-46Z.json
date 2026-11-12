@@ -1,0 +1,46 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-12T16-21-46Z",
+ "run_id": "43257125663",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "75e72fb99f8c",
+ "cohorts": [
+  "cer-procedure-brand-family@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::AP Government Exam",
+   "field": "unified_title_assignment",
+   "value": "AP United States Government and Politics",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Government Exam",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::AP Government Exam",
+   "field": "unified_title_assignment",
+   "value": "AP United States Government and Politics",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Government Exam",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-brand-family@bot",
+   "procedure": "brand-family"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
