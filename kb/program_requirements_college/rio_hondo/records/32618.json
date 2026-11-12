@@ -88,34 +88,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     19.0
+     52.0,
+     53.0
     ],
     "stated": [
-     18.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -140,7 +145,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -161,8 +166,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [],
@@ -443,5 +448,20 @@
    "Cross-listed courses (POLS 128/PHIL 128, POLS 128H/PHIL 128H, POLS 135/ECON 135) are recorded as one entry with alternatives, as the catalog prints them as OR rows."
   ]
  },
- "extracted_run": "38843465712"
+ "extracted_run": 43154073220,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC Pattern (units will vary) (https://riohondo.curriqunet.com/Catalog/_getPage?catalogId=16&id=22170: SUMMED FROM THE AREAS, no total is printed: Rio Hondo AA-T and AS-T pages print 'Cal-GETC Pattern (units will vary)' (Sociology AA-T 30648; college page read 43137946308); section 8 prints 1A, 1B, 1C, Area 2 and Area 6 'One course of 3 semester/4 quarter units', Areas 3 and 4 '6 semester/8 quarter units' and Area 5 '(7 semester/9 quarter units.)'; 3 + 3 + 3 + 3 + 6 + 6 + 7 + 3 = 34, the pattern's least (college page read 43139467468; Sam's count, Open Asks Sheet 180 card 4, extended in S639))"
+  }
+ ],
+ "read_run": "38843465712"
 }
