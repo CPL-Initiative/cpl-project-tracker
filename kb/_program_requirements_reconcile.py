@@ -560,6 +560,10 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 continue
             if st.get("only_without") and not _empty(prog.get(st["only_without"])):
                 continue
+            # A rule about a figure the reading already took (Los Angeles City, S639: the 60 a heading
+            # prints is a floor only where the record holds that 60): a record without it is left alone.
+            if st.get("only_with") and _empty(prog.get(st["only_with"])):
+                continue
             words = m.group(0).strip()
             if st.get("source"):
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])

@@ -5,7 +5,7 @@
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE)",
-  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)",
+  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total)",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
@@ -18,7 +18,8 @@
   "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535); parent_from_block (S590) first gives a block of one course and its alternatives, read 'all' with one stated figure, that figure where the course has none (the heading line carries it: 'Select one of the following: 2 \u00b7 WORK 96 \u00b7 or WORK 99')",
   "and_units": "a course the page prints joined to the row above by '&' (CourseLeaf's 'CSIS 50 \u00b7 & 50L ... 3'), which the reading listed as its own entry with no units, takes 0: the row's figure is the pair's and the page's total counts it once; only where the page prints the two codes joined, the course before it carries a figure, and never a course the reading gave units (Monterey Peninsula, S536)",
   "semester_sum": "a program laid out by semester with no printed total (Sam, Open Asks Sheet 180 card 2, 2026-11-10: count): where every block named by block_pattern is rule all and its courses add to the subtotal it prints, total_units takes the sum of the subtotals and the record carries total_units_summed; never where the record holds a total, a semester does not add up, or another block asks for units",
-  "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course"
+  "packed_codes": "true where the college's catalog packs its course codes (De Anza's eLumen feed: C DD010G for C D 10G): the scorer reads a filed record's packed code as the listed course it names, only on the campus letter D and only when the state's file lists that course",
+  "heading_above_code": "a PDF catalog that prints a program's heading on the lines above its control number's line (Los Angeles City, S639: title, award and 'Major Units: 39  T otal Units: Minimum of 60' above '(State Code: 02718; ...)'): the capture's cut at the control number's line keeps up to `lines` lines above it, never a line `stop` names (the running header) and never a line naming a listed course, so the reconcile steps see the heading and the codes found stay the same (kb/_program_requirements_college.py heading_above)"
  },
  "colleges": {
   "College of the Redwoods": {
@@ -991,6 +992,41 @@
      "awards": "associate",
      "pattern": "electives\\s+as\\s+needed\\s+to\\s+reach\\s+at\\s+least\\s+90\\s+units",
      "source_words": "De Anza degree pages: 'electives as needed to reach at least 90 units' (2025-2026 catalog, kb/college_reads/deanza_degree_total.json): the 90 is a floor that electives make up"
+    }
+   ]
+  },
+  "Los Angeles City College": {
+   "why": "S639 harvest side session, 2026-11-12. Los Angeles City College had no steps: 156 of its 223 loaded records passed. The largest shared cause, 24 local degrees, read unequal: each sums its major alone against the 60 its heading prints, and names no general education. College page read 43134671935 (kb/college_reads/los_angeles_city_degree_headings.json) prints each degree's heading the same way, 'Business Administration \u00b7 Associate of Arts (AA) Degree \u00b7 Major Units: 39 T otal Units: Minimum of 60' above '(State Code: 02718; ...)' (pdf page 76; Journalism 02728, English 02751, Physics 02755, Music 02736, Liberal Arts 19843 alike; pypdf splits 'Total'), and no general education line. The same run's front-matter read (kb/college_reads/los_angeles_city_ge_front_matter.json, pdf page 58) prints 'The following is required for all AA and AS degrees: 1. Minimum of 60 semester units in a selected curriculum ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major). Students may also use California General Education Transfer Curriculum (Cal-GETC) to meet the general education requirement', and pdf page 59 'LACCD General Education: Required to complete the Associate of Arts (AA) and Associate of Science (AS) degrees'. Pdf page 59 also prints the plan's own figure: 'Requirements for LACCD General Education: Requires a minimum of 27 semester units, including: AREA 1. ...', and pdf page 60 its waiver for a long major: 'After all double-counting of major units with general education units is completed, LACCD General Education Area 4a American Institutions and/or Area 7 Lifelong Learning and Self Development minimum unit requirement shall be waived as follows: ... Degree major/area of emphasis total units, LACCD GE Waiver: 34-36 units, Area 4a or Area 7 (student choice); 37 or more units, Area 4a and Area 7'. So 27 is the plan in full, and the degree requirement's 18-27 is the span the catalog prints over it 'depending on units required for the major': the step takes that printed span, which holds both statements, and sums nothing. Two steps on a local degree, each read only between the record's own heading and its State Code line, so a neighbor's heading on the same page is never read, and only where the record holds the degree total the heading prints (only_with, so a record the reading began past its own heading, Cinema Production 02729 under 'PROGRAM REQUIREMENTS', takes nothing from the next heading down): the 60 is a floor (the page's own 'Minimum of'), and general education takes the printed 18-27. No figure is summed and none is cited from another college. Transfer degrees get no step: those failing began a page past their heading, so their text holds no total (a reading matter, not a reconcile one). Session call, recorded for a cpl_memory decision row; reversible by deleting this entry. Reconcile 43136137275 (S639): 10 of the 24 fired and pass. 14 were held: the capture cut each program's text at the start of its State Code line, and those 14 print their title, award and 'T otal Units: Minimum of 60' on the lines above it at the top of a page (Business Administration 02718's text opened '(State Code: 02718; ...'), so the fresh text held neither the heading nor the line. heading_above_code keeps those lines; the PDF itself was republished at the same address between the reads (7,895,263 to 7,669,849 bytes).",
+   "awards": "local",
+   "heading_above_code": {
+    "lines": 4,
+    "stop": "COLLEGE\\s+CATALOG|ABOUT\\s+OUR\\s+CAREER|Financial\\s+Aid"
+   },
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 18,
+      "max": 27
+     },
+     "awards": "local",
+     "pattern": "T\\s?otal\\s+Units:\\s*Minimum\\s+of\\s+60\\b",
+     "before": "\\(State\\s+Code",
+     "source": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58",
+     "source_words": "Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58)",
+     "only_with": "degree_total"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "awards": "local",
+     "pattern": "T\\s?otal\\s+Units:\\s*Minimum\\s+of\\s+60\\b",
+     "before": "\\(State\\s+Code",
+     "source": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58",
+     "source_words": "The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed",
+     "only_with": "degree_total"
     }
    ]
   }

@@ -2,14 +2,14 @@
  "college": "Los Angeles City College",
  "programs": 260,
  "with_closed_list": 258,
- "found": 241,
+ "found": 250,
  "extracted": 251,
  "errors": 0,
- "passed_machine_checks": 148,
+ "passed_machine_checks": 173,
  "failed": {
   "coverage": 33,
   "invented": 5,
-  "arithmetic": 95,
+  "arithmetic": 66,
   "repeated": 0,
   "outcomes": 12
  },
@@ -63,15 +63,6 @@
    }
   },
   {
-   "control_number": "19842",
-   "title": "IGETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
-    "coverage": 0.317
-   }
-  },
-  {
    "control_number": "21612",
    "title": "MANAGEMENT: SMALL BUSINESS",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -90,89 +81,15 @@
    }
   },
   {
-   "control_number": "36026",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=101",
-    "coverage": 0.283
-   }
-  },
-  {
    "control_number": "37221",
    "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
    "award": "A.S. T Degree",
    "near_miss": {
     "pages": [
-     125,
-     126,
-     127,
-     128
+     60,
+     61
     ],
-    "coverage": 0.545,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "38867",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     93
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "40139",
-   "title": "THE URBAN AMBASSADORS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "pages": [
-     229
-    ],
-    "coverage": 0.5,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "41527",
-   "title": "ARMENIAN LANGUAGE AND LITERATURE",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "pages": [
-     124
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "43107",
-   "title": "LAW, PUBLIC POLICY, AND SOCIETY",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "pages": [
-     165,
-     166,
-     167,
-     168
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "44022",
-   "title": "Pathway to Citizenship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "pages": [
-     346
-    ],
-    "coverage": 1.0,
+    "coverage": 0.788,
     "why": "the page prints neither the control number nor the title and award"
    }
   },
@@ -181,28 +98,10 @@
    "title": "Community Health Worker",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
     "coverage": 0.4
-   }
-  },
-  {
-   "control_number": "44946",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "coverage": 0.35
-   }
-  },
-  {
-   "control_number": "45008",
-   "title": "Essential Skills",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=141",
-    "coverage": 0.073
    }
   }
  ],
- "run": "39018419466"
+ "run": "43138495821"
 }
