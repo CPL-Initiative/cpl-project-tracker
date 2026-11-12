@@ -5,19 +5,19 @@
  "catalog_year": "2026-2027",
  "programs": 260,
  "with_closed_list": 258,
- "started": "2026-10-17T08:44:14Z",
+ "started": "2026-11-12T01:44:50Z",
  "pdf": {
   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
   "access": "ok",
   "status": 200,
-  "bytes": 7895263,
+  "bytes": 7669849,
   "pages_total": 367,
   "error": null,
-  "chars_total": 1639233,
-  "pypdf_accepted": 249,
+  "chars_total": 1641022,
+  "pypdf_accepted": 253,
   "sample": [
    "p111: '110 LACC 2026-2027 COLLEGE CATALOG\\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\\nPHYSIOL 001  INTRODUCTION TO HUMAN PHYSIOLOGY  ............ 4\\nRAD TEC 202    INTRODUCTION TO ELECTROMAGNETIC RADIATION AND \\nX-RAY PRODUCTION   .......................'",
-   "p221: '220 LACC 2026-2027 COLLEGE CATALOG\\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\\nPROGRAM STUDENT LEARNING OUTCOMES\\nUpon successful completion of this program, students will be able \\nto:\\n1. Explain the function of behavior and the different types o'"
+   "p221: '220 LACC 2026-2027 COLLEGE CATALOG\\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\\nEntrepreneurship for Care Providers\\nCertificate of Completion\\nT otal Lecture Hrs: 59.4 - 108\\n(State Code: 46272; TOP Code: 059900; Academic Plan: C046272E)\\nThe Entrep'"
   ],
   "extractor": "pypdf",
   "picks": [
@@ -30,6 +30,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -44,6 +45,7 @@
      76
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -57,6 +59,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.9,
@@ -71,6 +74,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.875,
@@ -85,6 +89,7 @@
      79
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -96,6 +101,7 @@
      81
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
@@ -110,6 +116,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -121,6 +128,7 @@
      123
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -135,6 +143,7 @@
      188
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -149,6 +158,7 @@
      147
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -163,6 +173,7 @@
      210
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.978,
@@ -171,16 +182,17 @@
    {
     "control_number": "02736",
     "pages": [
+     195,
      196,
      197,
-     198,
-     199
+     198
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 196] (State Code: 02736; TOP Code: 100400; Academic Plan: C002736C) The Music Associate of Arts degree provides the student with prac - tical skills in theory, musicianship, piano, and performance. The degree may "
+    "opens": "[page 195] Music AA C002736C 27 Y Instrumental Performer C C010777D 18-24 Y Music Songwriting and Composition C C036658D 30-37 Y Music Production and Technology C C038233D 29-30 Y *FA = Financial Aid Eligible. Yes = El"
    },
    {
     "control_number": "02739",
@@ -191,6 +203,7 @@
      211
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -203,6 +216,7 @@
      130
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -211,14 +225,16 @@
    {
     "control_number": "02744",
     "pages": [
+     134,
      135,
      136
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 135] (State Code: 02744; TOP Code: 110500; Academic Plan: C002744C) The Spanish Associate of Arts degree is designed to prepare stu - dents to transfer to a university with a major in Spanish, Romance languages, o"
+    "opens": "[page 134] Spanish AA C002744C 18-29 Y Spanish Language and Civilization - Elementary Level C C035338D 16 Y Spanish Language and Civilization - Intermediate Level C C035337D 16 Y *FA = Financial Aid Eligible. Yes = E"
    },
    {
     "control_number": "02745",
@@ -229,6 +245,7 @@
      130
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -241,6 +258,7 @@
      131
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -255,6 +273,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -263,14 +282,16 @@
    {
     "control_number": "02749",
     "pages": [
+     109,
      110,
      111
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 110] LACC 2026-2027 COLLEGE CATALOG 109 ABOUT OUR CAREER AND ACADEMIC PATHWAYS Registry of Radiologic Technologists and the California Department of Public Health – Radiologic Health Branch (CDPH-RHB). An advi - s"
+    "opens": "[page 109] 108 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS Department Chair: Julie Washenik For more information visit: Academic Department website RADIOLOGIC TECHNOLOGY OVERVIEW Radiologic Tech"
    },
    {
     "control_number": "02750",
@@ -279,6 +300,7 @@
      167
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -293,6 +315,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -301,16 +324,17 @@
    {
     "control_number": "02754",
     "pages": [
+     156,
      157,
      158,
-     159,
-     160
+     159
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 157] (State Code: 02754; TOP Code: 170100; Academic Plan: C002754C) An Associate Degree in mathematics from LACC can be the first half of an equation that adds up to a bachelor’s degree in mathematics. Students t"
+    "opens": "[page 156] Mathematics AS C002754C 21 Y Statistical Data Analytics C C044061D 19 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, an"
    },
    {
     "control_number": "02755",
@@ -318,6 +342,7 @@
      160
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -330,6 +355,7 @@
      141
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -343,6 +369,7 @@
      165
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -355,6 +382,7 @@
      176
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -368,6 +396,7 @@
      171
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 1.0,
@@ -381,6 +410,7 @@
      122
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.961,
@@ -392,6 +422,7 @@
      74
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -403,6 +434,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -417,6 +449,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -425,13 +458,15 @@
    {
     "control_number": "08220",
     "pages": [
+     192,
      193
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 193] 192 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (12 UNITS) T V 001 EVOLUTION OF TELEVISION ........................ 3 T V 004 MULTI-CAM TV STU"
+    "opens": "[page 192] LACC 2026-2027 COLLEGE CATALOG 191 ABOUT OUR CAREER AND ACADEMIC PATHWAYS Beginning Cinema & Television Production Skills Certificate Major Units: 12 (TOP Code: 060420; Academic Plan: C060422J) The Beginnin"
    },
    {
     "control_number": "08224",
@@ -442,6 +477,7 @@
      148
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -453,6 +489,7 @@
      149
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -466,6 +503,7 @@
      160
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.95,
@@ -478,6 +516,7 @@
      202
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -490,6 +529,7 @@
      213
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -504,6 +544,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -517,6 +558,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -531,6 +573,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -544,6 +587,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -552,13 +596,15 @@
    {
     "control_number": "08242",
     "pages": [
+     92,
      93
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 93] (State Code: 08242; TOP Code: 130620; Academic Plan: C008242D) The Dietetic Service Supervisor certificate meets the standards of training for dietetic service supervisors as specified by the Califor - nia Dep"
+    "opens": "[page 92] Dietetic Service Supervisor C C008242D 25 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please cons"
    },
    {
     "control_number": "08246",
@@ -568,6 +614,7 @@
      176
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -576,13 +623,15 @@
    {
     "control_number": "10771",
     "pages": [
-     327
+     80,
+     81
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
-    "coverage": 0.9,
-    "opens": "[page 327] 326 LACC 2026-2027 COLLEGE CATALOG CREDIT COURSES REAL ES 003 - REAL ESTATE PRACTICES 3 Units (Lec 3 Hrs) Transfer Credit: CSU Students solve the problems of establishing and conducting a real estate busin"
+    "coverage": 1.0,
+    "opens": "[page 80] Real Estate Broker License C C010771D 24 Y Real Estate Sales License CS C051100J 9 N *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Wor"
    },
    {
     "control_number": "10773",
@@ -593,6 +642,7 @@
      191
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -607,6 +657,7 @@
      146
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -620,6 +671,7 @@
      199
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.917,
@@ -633,6 +685,7 @@
      199
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
     "coverage": 0.784,
@@ -644,6 +697,7 @@
      213
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -658,6 +712,7 @@
      91
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -670,6 +725,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -684,6 +740,7 @@
      111
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -696,6 +753,7 @@
      133
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -707,10 +765,23 @@
      163
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 163] (State Code: 19591; TOP Code: 210500; Academic Plan: C019591D) The Certificate of Achievement in Administration of Justice is designed for students who wish to prepare themselves for one of several careers i"
+   },
+   {
+    "control_number": "19842",
+    "pages": [
+     61
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.805,
+    "opens": "[page 61] 60 LA CC 2025-2026 COLLEGE CATALOG COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS COMM C1000 (formerly COMM 101) Area 2: Mathematical Concepts and Quantitative Reasoning (One course - 3 s"
    },
    {
     "control_number": "19843",
@@ -721,6 +792,7 @@
      127
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -734,6 +806,7 @@
      155
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.963,
@@ -746,6 +819,7 @@
      171
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -760,6 +834,7 @@
      79
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -773,6 +848,7 @@
      80
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -785,6 +861,7 @@
      80
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -796,6 +873,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -808,6 +886,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -820,6 +899,7 @@
      194
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -834,6 +914,7 @@
      189
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -847,6 +928,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -858,6 +940,7 @@
      176
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -870,6 +953,7 @@
      176
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.929,
@@ -878,112 +962,121 @@
    {
     "control_number": "24016",
     "pages": [
-     232,
-     233
+     231,
+     232
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 232] LACC 2026-2027 COLLEGE CATALOG 231 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS REQUIRED COURSES HRS VOC ED 128CE INTRODUCTION TO KEYBOARDING AND WINDOWS FOR THE WORKPLACE ............"
+    "opens": "[page 231] 230 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS REQUIRED COURSES HRS VOC ED 128CE INTRODUCTION TO KEYBOARDING AND WINDOWS FOR THE WORKPLACE ............"
    },
    {
     "control_number": "24069",
+    "pages": [
+     226,
+     227
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 226] (State Code: 24069; TOP Code: 050640; Academic Plan: C024069E) The Entrepreneurship Skills certificate of completion is designed to give students the necessary knowledge and skills to plan, develop, and oper"
+   },
+   {
+    "control_number": "24071",
     "pages": [
      227,
      228
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 227] (State Code: 24069; TOP Code: 050640; Academic Plan: C024069E) The Entrepreneurship Skills certificate of completion is designed to give students the necessary knowledge and skills to plan, develop, and oper"
-   },
-   {
-    "control_number": "24071",
-    "pages": [
-     228,
-     229
-    ],
-    "named": true,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 228] (State Code: 24071; TOP Code: 493012; Academic Plan: C024071E) The Job Readiness Skills certificate of completion is designed to introduce and train new, current, and dislocated workers in the workplace with"
+    "opens": "[page 227] (State Code: 24071; TOP Code: 493012; Academic Plan: C024071E) The Job Readiness Skills certificate of completion is designed to introduce and train new, current, and dislocated workers in the workplace with"
    },
    {
     "control_number": "24099",
     "pages": [
+     238,
      239,
      240,
-     241,
-     242
+     241
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 239] 238 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS REQUIRED COURSES HRS VOC ED 079CE VOCATIONAL ENGLISH AS A SECOND LANGUAGE A ... 54 VOC ED 078CE VOCATION"
+    "opens": "[page 238] LACC 2026-2027 COLLEGE CATALOG 237 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS REQUIRED COURSES HRS VOC ED 079CE VOCATIONAL ENGLISH AS A SECOND LANGUAGE A ... 54 VOC ED 078CE VOCATION"
    },
    {
     "control_number": "24118",
     "pages": [
-     242
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 242] (State Code: 24118; TOP Code: 130700; Academic Plan: C024118E) The Hospitality Skills certificate of completion prepares students to be eligible to participate for 8 American Hotel & Lodging Associa - tion (A"
+    "opens": "[page 241] (State Code: 24118; TOP Code: 130700; Academic Plan: C024118E) The Hospitality Skills certificate of completion prepares students to be eligible to participate for 8 American Hotel & Lodging Associa - tion (A"
    },
    {
     "control_number": "24294",
     "pages": [
+     239,
      240,
-     241,
-     242
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 240] (State Code: 24294; TOP Code: 130110; Academic Plan: C024294E) The Customer Service Skills certificate of completion is designed to introduce and train new, current, and dislocated workers to the service wor"
+    "opens": "[page 239] (State Code: 24294; TOP Code: 130110; Academic Plan: C024294E) The Customer Service Skills certificate of completion is designed to introduce and train new, current, and dislocated workers to the service wor"
    },
    {
     "control_number": "24344",
     "pages": [
+     236,
      237,
-     238,
-     239
+     238
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 237] (State Code: 24344; TOP Code: 493087; Academic Plan: C024344F) The Beginning English as a Second Language certificate of compe - tency in is designed to give fundamental reading, writing, listening, and speak"
+    "opens": "[page 236] (State Code: 24344; TOP Code: 493087; Academic Plan: C024344F) The Beginning English as a Second Language certificate of compe - tency in is designed to give fundamental reading, writing, listening, and speak"
    },
    {
     "control_number": "24387",
     "pages": [
-     231
+     230
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 231] (State Code: 24387; TOP Code: 493012; Academic Plan: C024387E) The Career Discovery Skills certificate of completion in is designed to help the student make a meaningful decision regarding a career goal incl"
+    "opens": "[page 230] (State Code: 24387; TOP Code: 493012; Academic Plan: C024387E) The Career Discovery Skills certificate of completion in is designed to help the student make a meaningful decision regarding a career goal incl"
    },
    {
     "control_number": "24446",
     "pages": [
-     223,
-     224
+     222,
+     223
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 223] (State Code: 24446; TOP Code: 123080; Academic Plan: C024446E) The In-Home Supportive Services Skills certificate of completion is designed for students to provide in-home care to patients, assist with activ"
+    "opens": "[page 222] (State Code: 24446; TOP Code: 123080; Academic Plan: C024446E) The In-Home Supportive Services Skills certificate of completion is designed for students to provide in-home care to patients, assist with activ"
    },
    {
     "control_number": "30211",
@@ -991,6 +1084,7 @@
      194
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1005,6 +1099,7 @@
      90
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1017,6 +1112,7 @@
      205
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1029,6 +1125,7 @@
      204
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1037,42 +1134,45 @@
    {
     "control_number": "32496",
     "pages": [
+     195,
      196,
      197,
-     198,
-     199
+     198
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 196] LACC 2026-2027 COLLEGE CATALOG 195 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Write, recognize, and inter"
+    "opens": "[page 195] Music AA-T C032496G 21-22 Y Music AA C002736C 27 Y Instrumental Performer C C010777D 18-24 Y Music Songwriting and Composition C C036658D 30-37 Y Music Production and Technology C C038233D 29-30 Y *FA = Fina"
    },
    {
     "control_number": "32502",
     "pages": [
+     172,
      173,
      174,
-     175,
-     176
+     175
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 173] 172 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (9-10 UNITS) STAT C1000 (FORMERLY MATH 227) INTRODUCTION TO STATISTICS 4 OR STAT C1000E ("
+    "opens": "[page 172] Psychology AA-T C032502G 18-21 Y Social Work and Human Services AA-T C043211G 28-29 Y Social Work and Human Services C C046381D 18.5 Y Addiction Studies AA C008246C 41 Y Addiction Studies C C021629D 41 Y Hum"
    },
    {
     "control_number": "32832",
     "pages": [
-     124,
-     125
+     60,
+     61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
-    "coverage": 0.734,
-    "opens": "[page 124] LACC 2026-2027 COLLEGE CATALOG 123 ABOUT OUR CAREER AND ACADEMIC PATHWAYS LIBERAL ARTS See the Counseling Department or Articulation Office for information regarding these interdisciplinary programs. OVERVIEW"
+    "coverage": 0.914,
+    "opens": "[page 60] LACC 2025-2026 COLLEGE CATALOG 59 COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS AREA 3. Arts and Humanities (one course - 3 semester 4 quarter units) A S L 001, 002, 003, 025, 040; AFRO "
    },
    {
     "control_number": "32923",
@@ -1083,6 +1183,7 @@
      182
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.952,
@@ -1091,16 +1192,17 @@
    {
     "control_number": "33120",
     "pages": [
-     252,
-     253,
-     254,
-     255
+     206,
+     207,
+     208,
+     209
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
-    "coverage": 0.763,
-    "opens": "[page 252] LACC 2026-2027 COLLEGE CATALOG 251 CREDIT COURSES ART 302 - WATERCOLOR PAINTING II 3 Units (Lec 2 Hrs / Lab 2 Hrs) Transfer Credit: CSU, UC Prerequisite: ART301 Students apply advanced techniques and explor"
+    "coverage": 0.974,
+    "opens": "[page 206] Studio Arts AA-T C033120G 24 Y Art - General AA C002735C 30 Y Graphic Design AA C002739C 33 Y Animation - Foundation C C038605D 27 Y Game Art & Design Foundation C C042506D 23 Y Game Art & Design Production C "
    },
    {
     "control_number": "33121",
@@ -1111,6 +1213,7 @@
      165
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1125,6 +1228,7 @@
      118
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.857,
@@ -1137,6 +1241,7 @@
      123
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1149,6 +1254,7 @@
      201
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1160,6 +1266,7 @@
      136
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1171,6 +1278,7 @@
      136
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1183,6 +1291,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1195,6 +1304,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1206,6 +1316,7 @@
      133
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1218,6 +1329,7 @@
      131
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1229,6 +1341,7 @@
      113
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1237,13 +1350,14 @@
    {
     "control_number": "35936",
     "pages": [
-     222
+     221
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 222] (State Code: 35936; TOP Code: 120100; Academic Plan: C035936E) The Health Careers Readiness certificate of completion is designed to help students learn English, medical terminology, and acquire a general in"
+    "opens": "[page 221] (State Code: 35936; TOP Code: 120100; Academic Plan: C035936E) The Health Careers Readiness certificate of completion is designed to help students learn English, medical terminology, and acquire a general in"
    },
    {
     "control_number": "36007",
@@ -1251,10 +1365,26 @@
      126
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 126] American Sign Language C C036007D 18 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please consult "
+   },
+   {
+    "control_number": "36026",
+    "pages": [
+     98,
+     99,
+     100,
+     101
+    ],
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 0.943,
+    "opens": "[page 98] Kinesiology AA-T C036026G 20-26 Y Public Health AS-T C044638H 23-25 Y Human Movement and Applied Fitness AS C044581C 31-34 Y Applied Movement and Personal Training Specialist C C038829D 16.5 Y Athletic Coac"
    },
    {
     "control_number": "36049",
@@ -1262,6 +1392,7 @@
      155
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1270,49 +1401,54 @@
    {
     "control_number": "36275",
     "pages": [
-     239
+     238
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 239] (State Code: 36275; TOP Code: 493100; Academic Plan: C036275E) The Vocational English as a Second Language II certificate of com - petency is designed to help students increase proficiency in listen - ing, spe"
+    "opens": "[page 238] (State Code: 36275; TOP Code: 493100; Academic Plan: C036275E) The Vocational English as a Second Language II certificate of com - petency is designed to help students increase proficiency in listen - ing, spe"
    },
    {
     "control_number": "36276",
     "pages": [
-     220
+     219
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 220] (State Code: 36276; TOP Code: 493062; Academic Plan: C036276F) The High School Equivalency Test Preparation certificate of compe - tency prepares students to pass subject tests in reading, writing, mathematic"
+    "opens": "[page 219] (State Code: 36276; TOP Code: 493062; Academic Plan: C036276F) The High School Equivalency Test Preparation certificate of compe - tency prepares students to pass subject tests in reading, writing, mathematic"
    },
    {
     "control_number": "36277",
     "pages": [
+     238,
      239,
      240,
-     241,
-     242
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 239] (State Code: 36277; TOP Code: 130500; Academic Plan: C036277F) The Child Development Readiness certificate of completion is designed to help the students who need additional assistance in mastering the speci"
+    "opens": "[page 238] (State Code: 36277; TOP Code: 130500; Academic Plan: C036277F) The Child Development Readiness certificate of completion is designed to help the students who need additional assistance in mastering the speci"
    },
    {
     "control_number": "36347",
     "pages": [
+     133,
      134
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 134] LACC 2026-2027 COLLEGE CATALOG 133 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS REQUIRED COURSES (16 UNITS) RUSSIAN 001 ELEMENTARY RUSSIAN I . . . . . . . . . . . . . . . . . . . . . . . . . . "
+    "opens": "[page 133] Civilization - Elementary Level C C036347D 16 Y Russian Language and Civilization - Intermediate Level C C036348D 16 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal P"
    },
    {
     "control_number": "36348",
@@ -1320,6 +1456,7 @@
      134
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1328,13 +1465,14 @@
    {
     "control_number": "36581",
     "pages": [
-     219
+     218
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 219] (State Code: 36581; TOP Code: 493013; Academic Plan: C036581E) The Academic Preparation certificate of competency is designed to provide students with basic English and math skills used in General Education "
+    "opens": "[page 218] (State Code: 36581; TOP Code: 493013; Academic Plan: C036581E) The Academic Preparation certificate of competency is designed to provide students with basic English and math skills used in General Education "
    },
    {
     "control_number": "36658",
@@ -1343,6 +1481,7 @@
      199
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.959,
@@ -1351,27 +1490,27 @@
    {
     "control_number": "36668",
     "pages": [
-     236
+     235
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 236] (State Code: 36668; TOP Code: 493087; Academic Plan: C036668E) The Beginning English as a Second Language certificate of compe - tency in is designed to give fundamental reading, writing, listening, and speak"
+    "opens": "[page 235] (State Code: 36668; TOP Code: 493087; Academic Plan: C036668E) The Beginning English as a Second Language certificate of compe - tency in is designed to give fundamental reading, writing, listening, and speak"
    },
    {
     "control_number": "37221",
     "pages": [
-     125,
-     126,
-     127,
-     128
+     60,
+     61
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": false,
-    "coverage": 0.545,
-    "opens": "[page 125] 124 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS ENGLISH 214 CONTEMPORARY LITERATURE ...................... 3 ENGLISH 215 SHAKESPEARE I ................................... 3 ENGLISH "
+    "coverage": 0.788,
+    "opens": "[page 60] LACC 2025-2026 COLLEGE CATALOG 59 COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS AREA 3. Arts and Humanities (one course - 3 semester 4 quarter units) A S L 001, 002, 003, 025, 040; AFRO "
    },
    {
     "control_number": "38010",
@@ -1381,6 +1520,7 @@
      182
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1392,6 +1532,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1404,6 +1545,7 @@
      199
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1412,14 +1554,16 @@
    {
     "control_number": "38385",
     "pages": [
+     134,
      135,
      136
     ],
     "named": true,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 135] 134 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS 2. General Education: Completion of the California General Edu - cation Transfer Curriculum (CalGETC) course requirements, with a C or"
+    "opens": "[page 134] Spanish AA-T C038385G 23-26 Y Spanish AA C002744C 18-29 Y Spanish Language and Civilization - Elementary Level C C035338D 16 Y Spanish Language and Civilization - Intermediate Level C C035337D 16 Y *FA = F"
    },
    {
     "control_number": "38605",
@@ -1429,6 +1573,7 @@
      211
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1437,14 +1582,15 @@
    {
     "control_number": "38723",
     "pages": [
-     238,
-     239
+     237,
+     238
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 238] (State Code: 38723; TOP Code: 493087; Academic Plan: C038723F) The Literacy Level ESL certificate of competency develops the abil - ity of non-English speaking students in basic literacy skills, including rea"
+    "opens": "[page 237] (State Code: 38723; TOP Code: 493087; Academic Plan: C038723F) The Literacy Level ESL certificate of competency develops the abil - ity of non-English speaking students in basic literacy skills, including rea"
    },
    {
     "control_number": "38827",
@@ -1452,6 +1598,7 @@
      145
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1464,6 +1611,7 @@
      145
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1477,6 +1625,7 @@
      104
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.964,
@@ -1489,6 +1638,7 @@
      92
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1500,6 +1650,7 @@
      137
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1512,6 +1663,7 @@
      106
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1523,6 +1675,7 @@
      106
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1531,35 +1684,39 @@
    {
     "control_number": "38867",
     "pages": [
+     92,
      93
     ],
-    "named": false,
-    "cn_printed": false,
-    "titled": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
     "coverage": 1.0,
-    "opens": "[page 93] 92 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS 2. General Education: Completion of the California General Edu - cation Transfer Curriculum (Cal-GETC) course requirements, with a C or "
+    "opens": "[page 92] Nutrition and Dietetics AS-T C038867H 26 Y Dietetic Service Supervisor C C008242D 25 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal W"
    },
    {
     "control_number": "39043",
     "pages": [
-     233
+     232
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 233] (State Code: 39043; TOP Code: 493072; Academic Plan: C039043E) The Workplace Success II - Creative Leadership certificate of com - pletion strengthens students’ communication and leadership skills, decision-m"
+    "opens": "[page 232] (State Code: 39043; TOP Code: 493072; Academic Plan: C039043E) The Workplace Success II - Creative Leadership certificate of com - pletion strengthens students’ communication and leadership skills, decision-m"
    },
    {
     "control_number": "39190",
     "pages": [
-     233
+     232
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 233] (State Code: 39190; TOP Code: 493072; Academic Plan: C039190E) The Workplace Success I - Creativity in the Workplace certificate of completion provides students with the necessary knowledge and training need"
+    "opens": "[page 232] (State Code: 39190; TOP Code: 493072; Academic Plan: C039190E) The Workplace Success I - Creativity in the Workplace certificate of completion provides students with the necessary knowledge and training need"
    },
    {
     "control_number": "39316",
@@ -1567,6 +1724,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1575,14 +1733,15 @@
    {
     "control_number": "39327",
     "pages": [
-     232,
-     233
+     231,
+     232
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 232] (State Code: 39327; TOP Code: 051400; Academic Plan: C039327E) The Office Career Readiness certificate of completion is designed to help the student explore the requirements for entry-level clerical position"
+    "opens": "[page 231] (State Code: 39327; TOP Code: 051400; Academic Plan: C039327E) The Office Career Readiness certificate of completion is designed to help the student explore the requirements for entry-level clerical position"
    },
    {
     "control_number": "39348",
@@ -1593,6 +1752,7 @@
      170
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1604,6 +1764,7 @@
      97
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1612,14 +1773,17 @@
    {
     "control_number": "39561",
     "pages": [
+     164,
+     165,
      166,
      167
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 166] LACC 2026-2027 COLLEGE CATALOG 165 ABOUT OUR CAREER AND ACADEMIC PATHWAYS AREA 7: COLLEGE SUCCESS COUNSEL 040 COLLEGE SUCCESS SEMINAR . . . . . . . . . . . . . . . . . . . . . . . 3 AREA 8: INTERNSHIP/FIELDWO"
+    "opens": "[page 164] Paralegal Studies C C039561D 46 Y Pathway to Law School C C039348D 25 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, an"
    },
    {
     "control_number": "39577",
@@ -1628,6 +1792,7 @@
      101
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.667,
@@ -1636,89 +1801,96 @@
    {
     "control_number": "39614",
     "pages": [
+     239,
      240,
-     241,
-     242
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 240] (State Code: 39614; TOP Code: 130700; Academic Plan: C039614E) The Banquet and Restaurant Server certificate of completion is designed to provide knowledge and practical skills training for stu - dents prepar"
+    "opens": "[page 239] (State Code: 39614; TOP Code: 130700; Academic Plan: C039614E) The Banquet and Restaurant Server certificate of completion is designed to provide knowledge and practical skills training for stu - dents prepar"
    },
    {
     "control_number": "39615",
     "pages": [
-     232,
-     233
+     231,
+     232
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 232] (State Code: 39615; TOP Code: 051400; Academic Plan: C039615E) The Technology for Success certificate of completion provides stu - dents with the basic computing skills necessary for success in modern workpla"
+    "opens": "[page 231] (State Code: 39615; TOP Code: 051400; Academic Plan: C039615E) The Technology for Success certificate of completion provides stu - dents with the basic computing skills necessary for success in modern workpla"
    },
    {
     "control_number": "39616",
     "pages": [
-     241,
-     242
+     240,
+     241
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 241] (State Code: 39616; TOP Code: 130700; Academic Plan: C039616E) The Front Desk Representative & Reservationist certificate of com - pletion prepares students to enter careers in the hospitality indus - try. Stu"
+    "opens": "[page 240] (State Code: 39616; TOP Code: 130700; Academic Plan: C039616E) The Front Desk Representative & Reservationist certificate of com - pletion prepares students to enter careers in the hospitality indus - try. Stu"
    },
    {
     "control_number": "39617",
     "pages": [
-     241,
-     242
+     240,
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 241] 240 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS Food Handler’s Preparation Certificate of Completion T otal Lecture Hrs: 42 (State Code: 40524; TOP Code: 130600; Academic Plan: C04052"
+    "opens": "[page 240] LACC 2026-2027 COLLEGE CATALOG 239 ABOUT OUR CAREER AND ACADEMIC PATHWAYS Food Handler’s Preparation Certificate of Completion T otal Lecture Hrs: 42 (State Code: 40524; TOP Code: 130600; Academic Plan: C04052"
    },
    {
     "control_number": "39702",
     "pages": [
-     231,
-     232
+     230,
+     231
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 231] (State Code: 39702; TOP Code: 051400; Academic Plan: C039702E) The Computer Skills for the Workplace certificate of completion is designed to prepare students with practical skills to use soft - ware commonly"
+    "opens": "[page 230] (State Code: 39702; TOP Code: 051400; Academic Plan: C039702E) The Computer Skills for the Workplace certificate of completion is designed to prepare students with practical skills to use soft - ware commonly"
    },
    {
     "control_number": "39703",
     "pages": [
-     231,
-     232
+     230,
+     231
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 231] 230 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS COLLEGE & CAREER READINESS Career Discovery Skills Certificate of Completion T otal Lecture Hrs: 54 (State Code: 24387; TOP Code: 4930"
+    "opens": "[page 230] LACC 2026-2027 COLLEGE CATALOG 229 ABOUT OUR CAREER AND ACADEMIC PATHWAYS COLLEGE & CAREER READINESS Career Discovery Skills Certificate of Completion T otal Lecture Hrs: 54 (State Code: 24387; TOP Code: 4930"
    },
    {
     "control_number": "39789",
     "pages": [
+     151,
      152,
      153,
-     154,
-     155
+     154
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 152] (State Code: 39789; TOP Code: 191400; Academic Plan: C039789H) Students completing the Associate in Science Geography Trans - fer Degree will have satisfied the lower division major preparation for bachelor’s"
+    "opens": "[page 151] Geology AS-T C039789H 28 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please consult with Financi"
    },
    {
     "control_number": "39854",
@@ -1729,6 +1901,7 @@
      149
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1737,79 +1910,87 @@
    {
     "control_number": "40127",
     "pages": [
-     219
+     218
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 219] (State Code: 40127; TOP Code: 493060; Academic Plan: C040127F) The College Readiness Math Fundamentals I certificate of compe - tency is designed for students to increase their math competency at the foundati"
+    "opens": "[page 218] (State Code: 40127; TOP Code: 493060; Academic Plan: C040127F) The College Readiness Math Fundamentals I certificate of compe - tency is designed for students to increase their math competency at the foundati"
    },
    {
     "control_number": "40128",
     "pages": [
-     220
+     219
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 220] (State Code: 40128; TOP Code: 493062; Academic Plan: C040128F) The College Readiness Math Fundamentals II certificate of compe - tency is designed for students to increase their math competency in preparation"
+    "opens": "[page 219] (State Code: 40128; TOP Code: 493062; Academic Plan: C040128F) The College Readiness Math Fundamentals II certificate of compe - tency is designed for students to increase their math competency in preparation"
    },
    {
     "control_number": "40132",
     "pages": [
-     225
+     224
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 225] (State Code: 40132; TOP Code: 120100; Academic Plan: C040132E) The Medical Terminology for Career Readiness certificate of com - pletion is a short-term job readiness program for students entering careers tha"
+    "opens": "[page 224] (State Code: 40132; TOP Code: 120100; Academic Plan: C040132E) The Medical Terminology for Career Readiness certificate of com - pletion is a short-term job readiness program for students entering careers tha"
    },
    {
     "control_number": "40138",
     "pages": [
-     353
+     224,
+     225
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 353] 352 LACC 2026-2027 COLLEGE CATALOG NONCREDIT COURSESNONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS VOC ED 372CE - FUNDAMENTALS OF MEDICAL ASSISTING 0 Units (RPT 98) (Lec 1 Hrs) Students are "
+    "opens": "[page 224] (State Code: 40138; TOP Code: 120510; Academic Plan: C040138E) The Phlebotomy Technician certificate of completion prepares stu - dents to enter the healthcare profession as a phlebotomist. Stu - dents learn a"
    },
    {
     "control_number": "40139",
     "pages": [
-     229
+     242
     ],
-    "named": false,
-    "cn_printed": false,
-    "titled": false,
-    "coverage": 0.5,
-    "opens": "[page 229] 228 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS Personal Financial Responsibility Certificate of Competency T otal Lecture Hrs: 54 (State Code: 43793; TOP Code: 493062; Academic Plan:"
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 242] (State Code: 40139; TOP Code: 300900; Academic Plan: C040139E) The Urban Ambassadors certificate of completion prepares stu - dents to find entry-level work in the tourism industry. Students learn customer se"
    },
    {
     "control_number": "40193",
     "pages": [
-     227
+     226
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 227] (State Code: 40193; TOP Code: 059900; Academic Plan: C040193E) The Gig Economy Success Kit certificate of completion is designed to prepare students with practical skills and knowledge to navigate the gig ec"
+    "opens": "[page 226] (State Code: 40193; TOP Code: 059900; Academic Plan: C040193E) The Gig Economy Success Kit certificate of completion is designed to prepare students with practical skills and knowledge to navigate the gig ec"
    },
    {
     "control_number": "40199",
     "pages": [
-     225
+     224
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 225] (State Code: 40199; TOP Code: 214000; Academic Plan: C040199E) The Medical Interpretation certificate of completion is a short-term job readiness program for students interested in careers in medi - cal inter"
+    "opens": "[page 224] (State Code: 40199; TOP Code: 214000; Academic Plan: C040199E) The Medical Interpretation certificate of completion is a short-term job readiness program for students interested in careers in medi - cal inter"
    },
    {
     "control_number": "40232",
@@ -1819,6 +2000,7 @@
      141
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1831,6 +2013,7 @@
      149
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1839,26 +2022,28 @@
    {
     "control_number": "40524",
     "pages": [
-     241,
-     242
+     240,
+     241
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 241] (State Code: 40524; TOP Code: 130600; Academic Plan: C040524E) The Food Handler’s Preparation Certificate of Completion will pre - pare students with food service industry concepts and skills for employment i"
+    "opens": "[page 240] (State Code: 40524; TOP Code: 130600; Academic Plan: C040524E) The Food Handler’s Preparation Certificate of Completion will pre - pare students with food service industry concepts and skills for employment i"
    },
    {
     "control_number": "40543",
     "pages": [
-     241,
-     242
+     240,
+     241
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 241] (State Code: 40543; TOP Code: 130600; Academic Plan: C040543E) The Food Service Manager Skills Preparation Certificate of Comple - tion is designed to prepare students with food service-industry con - cepts an"
+    "opens": "[page 240] (State Code: 40543; TOP Code: 130600; Academic Plan: C040543E) The Food Service Manager Skills Preparation Certificate of Comple - tion is designed to prepare students with food service-industry con - cepts an"
    },
    {
     "control_number": "40566",
@@ -1869,6 +2054,7 @@
      168
     ],
     "named": false,
+    "code": null,
     "cn_printed": false,
     "titled": true,
     "coverage": 0.5,
@@ -1880,6 +2066,7 @@
      201
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1891,6 +2078,7 @@
      202
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.5,
@@ -1905,6 +2093,7 @@
      205
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.739,
@@ -1919,6 +2108,7 @@
      191
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1933,6 +2123,7 @@
      190
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1947,6 +2138,7 @@
      192
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1961,6 +2153,7 @@
      190
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1973,6 +2166,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1985,6 +2179,7 @@
      128
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -1997,6 +2192,7 @@
      130
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2008,6 +2204,7 @@
      130
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2016,25 +2213,28 @@
    {
     "control_number": "40897",
     "pages": [
+     151,
      152,
      153
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 152] LACC 2026-2027 COLLEGE CATALOG 151 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (8 UNITS) GEOG 001 PHYSICAL GEOGRAPHY ............................ 3 GEOG 002 CULTURAL ELEMENT"
+    "opens": "[page 151] Geography AA-T C040897G 20-21 Y Geology AS-T C039789H 28 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loa"
    },
    {
     "control_number": "40907",
     "pages": [
-     219
+     218
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 219] (State Code: 40907; TOP Code: 493062; Academic Plan: C040907F) The Adult Basic Education Certificate of Competency is designed to prepare students for basic reading, writing, spelling, and math skills used i"
+    "opens": "[page 218] (State Code: 40907; TOP Code: 493062; Academic Plan: C040907F) The Adult Basic Education Certificate of Competency is designed to prepare students for basic reading, writing, spelling, and math skills used i"
    },
    {
     "control_number": "40987",
@@ -2043,6 +2243,7 @@
      204
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2055,6 +2256,7 @@
      205
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2068,6 +2270,7 @@
      193
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2079,6 +2282,7 @@
      189
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2090,6 +2294,7 @@
      146
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2102,6 +2307,7 @@
      149
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2114,6 +2320,7 @@
      211
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2128,6 +2335,7 @@
      78
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2136,68 +2344,74 @@
    {
     "control_number": "41252",
     "pages": [
-     237
+     236
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 237] (State Code: 41252; TOP Code: 493086; Academic Plan: C041252F) The English as a Second Language - Pronunciation Certificate of Competency is designed to prepare students in the areas of pronun- ciation for ef"
+    "opens": "[page 236] (State Code: 41252; TOP Code: 493086; Academic Plan: C041252F) The English as a Second Language - Pronunciation Certificate of Competency is designed to prepare students in the areas of pronun- ciation for ef"
    },
    {
     "control_number": "41255",
     "pages": [
-     222
+     221
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 222] (State Code: 41255; TOP Code: 493012; Academic Plan: C041255E) The Healthcare Services Certificate of Completion will prepare the students with knowledge and skills to successfully engage in various healthca"
+    "opens": "[page 221] (State Code: 41255; TOP Code: 493012; Academic Plan: C041255E) The Healthcare Services Certificate of Completion will prepare the students with knowledge and skills to successfully engage in various healthca"
    },
    {
     "control_number": "41256",
     "pages": [
-     226
+     225
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 226] (State Code: 41256; TOP Code: 120510; Academic Plan: C041256E) The Professionalism & Success in Healthcare Occupations Certifi - cate of Completion is designed for students to gain the knowledge and skills to"
+    "opens": "[page 225] (State Code: 41256; TOP Code: 120510; Academic Plan: C041256E) The Professionalism & Success in Healthcare Occupations Certifi - cate of Completion is designed for students to gain the knowledge and skills to"
    },
    {
     "control_number": "41257",
     "pages": [
-     226
+     225
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 226] (State Code: 41257; TOP Code: 050970; Academic Plan: C041257E) The E-Commerce certificate of completion is designed to introduce students to the fundamentals of e-commerce. Students gain knowl- edge and acqui"
+    "opens": "[page 225] (State Code: 41257; TOP Code: 050970; Academic Plan: C041257E) The E-Commerce certificate of completion is designed to introduce students to the fundamentals of e-commerce. Students gain knowl- edge and acqui"
    },
    {
     "control_number": "41258",
     "pages": [
-     227
+     226
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 227] (State Code: 41258; TOP Code: 050800; Academic Plan: C041258E) The Global Business Certificate of Completion is designed as a pathway for students to explore elements of modern globalization that impact the "
+    "opens": "[page 226] (State Code: 41258; TOP Code: 050800; Academic Plan: C041258E) The Global Business Certificate of Completion is designed as a pathway for students to explore elements of modern globalization that impact the "
    },
    {
     "control_number": "41259",
     "pages": [
-     228
+     227
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 228] (State Code: 41259; TOP Code: 050900; Academic Plan: C041259E) The International Marketing Professional Certificate of Completion will provide the students with a foundation in sales, marketing, and skills t"
+    "opens": "[page 227] (State Code: 41259; TOP Code: 050900; Academic Plan: C041259E) The International Marketing Professional Certificate of Completion will provide the students with a foundation in sales, marketing, and skills t"
    },
    {
     "control_number": "41478",
@@ -2206,6 +2420,7 @@
      182
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.983,
@@ -2214,70 +2429,77 @@
    {
     "control_number": "41527",
     "pages": [
-     124
+     126,
+     127
     ],
-    "named": false,
-    "cn_printed": false,
-    "titled": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
     "coverage": 1.0,
-    "opens": "[page 124] LACC 2026-2027 COLLEGE CATALOG 123 ABOUT OUR CAREER AND ACADEMIC PATHWAYS LIBERAL ARTS See the Counseling Department or Articulation Office for information regarding these interdisciplinary programs. OVERVIEW"
+    "opens": "[page 126] Literature C C041527D 16 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please consult with Financi"
    },
    {
     "control_number": "42057",
     "pages": [
-     237,
-     238
+     236,
+     237
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 237] (State Code: 42057; TOP Code: 493086; Academic Plan: C042057F) The English as a Second Language–Conversation Certificate of Competency is designed to prepare students in listening compre - hension and speakin"
+    "opens": "[page 236] (State Code: 42057; TOP Code: 493086; Academic Plan: C042057F) The English as a Second Language–Conversation Certificate of Competency is designed to prepare students in listening compre - hension and speakin"
    },
    {
     "control_number": "42058",
     "pages": [
-     238
+     237
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 238] (State Code: 42058; TOP Code: 493087; Academic Plan: C042058F) The English for Speakers of Other Languages - Level I Certificate of Competency is designed to prepare students in various founda - tional levels"
+    "opens": "[page 237] (State Code: 42058; TOP Code: 493087; Academic Plan: C042058F) The English for Speakers of Other Languages - Level I Certificate of Competency is designed to prepare students in various founda - tional levels"
    },
    {
     "control_number": "42059",
     "pages": [
-     238
+     237
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 238] (State Code: 42059; TOP Code: 493087; Academic Plan: C042059F) The English for Speakers of Other Languages - Level II Certificate of Competency is designed to prepare students in various levels of developing"
+    "opens": "[page 237] (State Code: 42059; TOP Code: 493087; Academic Plan: C042059F) The English for Speakers of Other Languages - Level II Certificate of Competency is designed to prepare students in various levels of developing"
    },
    {
     "control_number": "42068",
     "pages": [
-     228
+     227
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 228] (State Code: 42068; TOP Code: 493011; Academic Plan: C042068E) The Interpersonal Skills for the Workplace Certificate of Completion provides students with the skills and knowledge needed to commu- nicate effe"
+    "opens": "[page 227] (State Code: 42068; TOP Code: 493011; Academic Plan: C042068E) The Interpersonal Skills for the Workplace Certificate of Completion provides students with the skills and knowledge needed to commu- nicate effe"
    },
    {
     "control_number": "42201",
     "pages": [
-     224,
-     225
+     223,
+     224
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 224] (State Code: 42201; TOP Code: 120820; Academic Plan: C042201E) The Medical Assistant Back Office Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level career a"
+    "opens": "[page 223] (State Code: 42201; TOP Code: 120820; Academic Plan: C042201E) The Medical Assistant Back Office Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level career a"
    },
    {
     "control_number": "42224",
@@ -2285,6 +2507,7 @@
      149
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2298,6 +2521,7 @@
      149
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2306,14 +2530,15 @@
    {
     "control_number": "42227",
     "pages": [
-     224,
-     225
+     223,
+     224
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 224] (State Code: 42227; TOP Code: 120810; Academic Plan: C042227E) The Medical Assistant Front Office Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level career "
+    "opens": "[page 223] (State Code: 42227; TOP Code: 120810; Academic Plan: C042227E) The Medical Assistant Front Office Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level career "
    },
    {
     "control_number": "42239",
@@ -2321,6 +2546,7 @@
      147
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2329,13 +2555,14 @@
    {
     "control_number": "42299",
     "pages": [
-     225
+     224
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 225] (State Code: 42299; TOP Code: 121900; Academic Plan: C042299E) The Optician Technician Certificate of Completion provides stu - dents with the skills and knowledge needed for an entry-level career in the fiel"
+    "opens": "[page 224] (State Code: 42299; TOP Code: 121900; Academic Plan: C042299E) The Optician Technician Certificate of Completion provides stu - dents with the skills and knowledge needed for an entry-level career in the fiel"
    },
    {
     "control_number": "42506",
@@ -2343,6 +2570,7 @@
      209
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2354,6 +2582,7 @@
      210
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2367,6 +2596,7 @@
      193
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2379,6 +2609,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2387,24 +2618,26 @@
    {
     "control_number": "42649",
     "pages": [
-     229
+     228
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 229] (State Code: 42649; TOP Code: 050940; Academic Plan: C042649E) The Retail Sales and Customer Service Certifi cate of Completion prepares students with entry-level retail industry concepts and skills. Topics "
+    "opens": "[page 228] (State Code: 42649; TOP Code: 050940; Academic Plan: C042649E) The Retail Sales and Customer Service Certifi cate of Completion prepares students with entry-level retail industry concepts and skills. Topics "
    },
    {
     "control_number": "42650",
     "pages": [
-     229
+     228
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 229] (State Code: 42650; TOP Code: 050650; Academic Plan: C042650E) The Retail Supervisory and Management Certificate of Completion is designed to give students the competitive skills and knowledge to obtain and "
+    "opens": "[page 228] (State Code: 42650; TOP Code: 050650; Academic Plan: C042650E) The Retail Supervisory and Management Certificate of Completion is designed to give students the competitive skills and knowledge to obtain and "
    },
    {
     "control_number": "42651",
@@ -2414,6 +2647,7 @@
      85
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2428,6 +2662,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.933,
@@ -2441,6 +2676,7 @@
      121
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2452,6 +2688,7 @@
      103
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2460,16 +2697,17 @@
    {
     "control_number": "43107",
     "pages": [
+     164,
      165,
      166,
-     167,
-     168
+     167
     ],
-    "named": false,
-    "cn_printed": false,
-    "titled": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
     "coverage": 1.0,
-    "opens": "[page 165] 164 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (24-25 UNITS) UNDERSTANDING THE LAW LAW 007 STREET LAW ...................................... 3"
+    "opens": "[page 164] Law, Public Policy, and Society AA-T C043107G 30-31 Y Paralegal Studies AA C002750C 43 Y Paralegal Studies C C039561D 46 Y Pathway to Law School C C039348D 25 Y *FA = Financial Aid Eligible. Yes = Eligible for"
    },
    {
     "control_number": "43160",
@@ -2479,6 +2717,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2493,6 +2732,7 @@
      117
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2501,27 +2741,29 @@
    {
     "control_number": "43211",
     "pages": [
+     172,
      173,
      174,
-     175,
-     176
+     175
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 173] (State Code: 43211; TOP Code: 210400; Academic Plan: C043211G) Students completing the Associate in Arts in Social Work and Human Services for Transfer Degree will have satisfied the lower division major pre"
+    "opens": "[page 172] Services AA-T C043211G 28-29 Y Social Work and Human Services C C046381D 18.5 Y Addiction Studies AA C008246C 41 Y Addiction Studies C C021629D 41 Y Human Services: Generalist AA C002760C 30.5 Y Human Service"
    },
    {
     "control_number": "43226",
     "pages": [
-     230
+     229
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 230] (State Code: 43226; TOP Code: 059900; Academic Plan: C043226E) Roadmap to People Management Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level leadership po"
+    "opens": "[page 229] (State Code: 43226; TOP Code: 059900; Academic Plan: C043226E) Roadmap to People Management Certificate of Completion pro - vides students with the skills and knowledge needed for an entry- level leadership po"
    },
    {
     "control_number": "43526",
@@ -2531,6 +2773,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.889,
@@ -2543,6 +2786,7 @@
      119
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.857,
@@ -2551,35 +2795,38 @@
    {
     "control_number": "43631",
     "pages": [
-     230
+     229
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 230] (State Code: 43631; TOP Code: 051000; Academic Plan: C043631E) The Warehouse & Distribution: Worker Certificate of Completion prepares students with warehousing industry concepts and skills for new and incum"
+    "opens": "[page 229] (State Code: 43631; TOP Code: 051000; Academic Plan: C043631E) The Warehouse & Distribution: Worker Certificate of Completion prepares students with warehousing industry concepts and skills for new and incum"
    },
    {
     "control_number": "43708",
     "pages": [
-     230
+     229
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 230] (State Code: 43708; TOP Code: 051000; Academic Plan: C043708E) The Warehouse & Distribution: Lead Certificate of Completion pre - pares students with concepts and skills for leadership positions in the wareho"
+    "opens": "[page 229] (State Code: 43708; TOP Code: 051000; Academic Plan: C043708E) The Warehouse & Distribution: Lead Certificate of Completion pre - pares students with concepts and skills for leadership positions in the wareho"
    },
    {
     "control_number": "43793",
     "pages": [
-     229
+     228
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 229] (State Code: 43793; TOP Code: 493062; Academic Plan: C043793F) Personal Financial literacy skills means having the confidence, knowledge, and skills needed to make financial decisions that pro - mote self-suf"
+    "opens": "[page 228] (State Code: 43793; TOP Code: 493062; Academic Plan: C043793F) Personal Financial literacy skills means having the confidence, knowledge, and skills needed to make financial decisions that pro - mote self-suf"
    },
    {
     "control_number": "43855",
@@ -2590,6 +2837,7 @@
      119
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2598,65 +2846,70 @@
    {
     "control_number": "43866",
     "pages": [
+     219,
      220,
-     221,
-     222
+     221
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 220] LACC 2026-2027 COLLEGE CATALOG 219 ABOUT OUR CAREER AND ACADEMIC PATHWAYS College Readiness Math Fundamentals II Certificate of Competency T otal Lecture Hrs: 108 (State Code: 40128; TOP Code: 493062; Academ"
+    "opens": "[page 219] 218 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS College Readiness Math Fundamentals II Certificate of Competency T otal Lecture Hrs: 108 (State Code: 40128; TOP Code: 493062; Academ"
    },
    {
     "control_number": "43867",
     "pages": [
+     219,
      220,
-     221,
-     222
+     221
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 220] (State Code: 43867; TOP Code: 129900; Academic Plan: C043867E) The Behavior Technician: Autism certificate of completion prepares individuals for frontline work in the field of applied behavior analy - sis. S"
+    "opens": "[page 219] (State Code: 43867; TOP Code: 129900; Academic Plan: C043867E) The Behavior Technician: Autism certificate of completion prepares individuals for frontline work in the field of applied behavior analy - sis. S"
    },
    {
     "control_number": "44022",
     "pages": [
-     346
+     242
     ],
-    "named": false,
-    "cn_printed": false,
-    "titled": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
     "coverage": 1.0,
-    "opens": "[page 346] LACC 2026-2027 COLLEGE CATALOG 345 NONCREDIT COURSESNONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS ESLCVCS 013CE - ESL AND CIVICS IV 0 Units (RPT 98) (Lec 3 Hrs) In this open entry, noncredit"
+    "opens": "[page 242] (State Code: 44022; TOP Code: 493087; Academic Plan: C044022F) The Pathway to Citizenship Certificate of Competency provides non-native adult learners with knowledge and skills required to suc- cessfully prep"
    },
    {
     "control_number": "44023",
     "pages": [
-     236,
-     237
+     235,
+     236
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 236] LACC 2026-2027 COLLEGE CATALOG 235 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Process, understand, and en"
+    "opens": "[page 235] 234 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Process, understand, and en"
    },
    {
     "control_number": "44024",
     "pages": [
+     235,
      236,
      237,
-     238,
-     239
+     238
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 236] (State Code: 44024; TOP Code: 493087; Academic Plan: C044024F) The Beginning ESL & Civics with Technology I certificate of compe - tency adds to the building blocks for learning the English language and devel"
+    "opens": "[page 235] (State Code: 44024; TOP Code: 493087; Academic Plan: C044024F) The Beginning ESL & Civics with Technology I certificate of compe - tency adds to the building blocks for learning the English language and devel"
    },
    {
     "control_number": "44061",
@@ -2664,6 +2917,7 @@
      157
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2672,14 +2926,15 @@
    {
     "control_number": "44082",
     "pages": [
-     224,
-     225
+     223,
+     224
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 224] (State Code: 44082; TOP Code: 120100; Academic Plan: C044082E ) The Introduction to Patient Transporting Certificate of Completion prepares students with the knowledge and skills necessary to suc - cessfully "
+    "opens": "[page 223] (State Code: 44082; TOP Code: 120100; Academic Plan: C044082E ) The Introduction to Patient Transporting Certificate of Completion prepares students with the knowledge and skills necessary to suc - cessfully "
    },
    {
     "control_number": "44581",
@@ -2690,7 +2945,8 @@
      103
     ],
     "named": false,
-    "cn_printed": false,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 100] LACC 2026-2027 COLLEGE CATALOG 99 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Understand core public healt"
@@ -2698,98 +2954,105 @@
    {
     "control_number": "44589",
     "pages": [
+     232,
+     233,
+     234,
+     235
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 232] (State Code: 44589; TOP Code: 493087; Academic Plan: C044589F) The American Language & Culture Series A certificate of compe - tency supports the acquisition of the English language with the con- text of Ameri"
+   },
+   {
+    "control_number": "44590",
+    "pages": [
      233,
      234,
      235,
      236
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 233] (State Code: 44589; TOP Code: 493087; Academic Plan: C044589F) The American Language & Culture Series A certificate of compe - tency supports the acquisition of the English language with the con- text of Ameri"
-   },
-   {
-    "control_number": "44590",
-    "pages": [
-     234,
-     235,
-     236,
-     237
-    ],
-    "named": false,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 234] (State Code: 44590; TOP Code: 493087; Academic Plan: C044590F) The American Language & Culture Series B certificate of compe - tency supports the continued acquisition of the English language with the context"
+    "opens": "[page 233] (State Code: 44590; TOP Code: 493087; Academic Plan: C044590F) The American Language & Culture Series B certificate of compe - tency supports the continued acquisition of the English language with the context"
    },
    {
     "control_number": "44591",
     "pages": [
+     233,
      234,
      235,
-     236,
-     237
+     236
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 234] (State Code: 44591; TOP Code: 493087; Academic Plan: C044591F) The American Language & Culture: Beginning certificate of compe - tency adds to the building blocks for learning the English language with the co"
+    "opens": "[page 233] (State Code: 44591; TOP Code: 493087; Academic Plan: C044591F) The American Language & Culture: Beginning certificate of compe - tency adds to the building blocks for learning the English language with the co"
    },
    {
     "control_number": "44592",
     "pages": [
+     233,
+     234,
+     235,
+     236
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 233] 232 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS American Language & Culture Series B Certificate of Competency T otal Lecture Hrs: 432 (State Code: 44590; TOP Code: 493087; Academic "
+   },
+   {
+    "control_number": "44593",
+    "pages": [
+     234,
+     235,
+     236
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 234] (State Code: 44593; TOP Code: 493087; Academic Plan: C044593F) The American Language & Culture: Foundational certificate of com - petency establishes the building blocks for learning the English lan- guage wit"
+   },
+   {
+    "control_number": "44594",
+    "pages": [
      234,
      235,
      236,
      237
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 234] LACC 2026-2027 COLLEGE CATALOG 233 ABOUT OUR CAREER AND ACADEMIC PATHWAYS American Language & Culture Series B Certificate of Competency T otal Lecture Hrs: 432 (State Code: 44590; TOP Code: 493087; Academic "
-   },
-   {
-    "control_number": "44593",
-    "pages": [
-     235,
-     236,
-     237
-    ],
-    "named": false,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 235] (State Code: 44593; TOP Code: 493087; Academic Plan: C044593F) The American Language & Culture: Foundational certificate of com - petency establishes the building blocks for learning the English lan- guage wit"
-   },
-   {
-    "control_number": "44594",
-    "pages": [
-     235,
-     236,
-     237,
-     238
-    ],
-    "named": false,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 235] (State Code: 44594; TOP Code: 493087; Academic Plan: C044594F) This American Language & Culture: Intermediate certificate helps non-English speaking students begin to expand their reading, writ - ing, listeni"
+    "opens": "[page 234] (State Code: 44594; TOP Code: 493087; Academic Plan: C044594F) This American Language & Culture: Intermediate certificate helps non-English speaking students begin to expand their reading, writ - ing, listeni"
    },
    {
     "control_number": "44599",
     "pages": [
+     234,
      235,
-     236,
-     237
+     236
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 235] 234 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Process, understand, and en"
+    "opens": "[page 234] LACC 2026-2027 COLLEGE CATALOG 233 ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Process, understand, and en"
    },
    {
     "control_number": "44603",
@@ -2798,6 +3061,7 @@
      103
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2806,49 +3070,54 @@
    {
     "control_number": "44631",
     "pages": [
-     222,
-     223
+     221,
+     222
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 222] (State Code: 44631; TOP Code: 129900; Academic Plan: C044631E) The IHSS: Care for People with Chronic Illnesses certificate pro - gram equips individuals for roles as IHSS providers specializing in chronic il"
+    "opens": "[page 221] (State Code: 44631; TOP Code: 129900; Academic Plan: C044631E) The IHSS: Care for People with Chronic Illnesses certificate pro - gram equips individuals for roles as IHSS providers specializing in chronic il"
    },
    {
     "control_number": "44632",
     "pages": [
-     223
+     222
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 223] (State Code: 44632; TOP Code: 129900; Academic Plan: C044632E) The IHSS: Care for People with Dementia certificate of comple - tion prepares individuals for roles as IHSS providers specializing in dementia ca"
+    "opens": "[page 222] (State Code: 44632; TOP Code: 129900; Academic Plan: C044632E) The IHSS: Care for People with Dementia certificate of comple - tion prepares individuals for roles as IHSS providers specializing in dementia ca"
    },
    {
     "control_number": "44638",
     "pages": [
+     98,
      99,
      100,
      101
     ],
-    "named": false,
+    "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 99] 98 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (11 UNITS) KIN MAJ 100 INTRODUCTION TO KINESIOLOGY ................... 3 ANATOMY 001 INTRODUCTI"
+    "opens": "[page 98] Public Health AS-T C044638H 23-25 Y Human Movement and Applied Fitness AS C044581C 31-34 Y Applied Movement and Personal Training Specialist C C038829D 16.5 Y Athletic Coaching C C044931D 17.5 - 18.5 Y Hea"
    },
    {
     "control_number": "44705",
     "pages": [
-     349
+     242
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 349] 348 LACC 2026-2027 COLLEGE CATALOG NONCREDIT COURSESNONCREDIT CLASSES ARE NOT SUBJECT TO REPEATABILITY RESTRICTIONS VOC ED 089CE - ADVANCED TUTOR TRAINING 0 Units (RPT 98) (Lec 1 Hrs) Prerequisite: VOC ED088"
+    "opens": "[page 242] (State Code: 44705; TOP Code: 080200; Academic Plan: C044705E) The Tutor Training I certificate of completion prepares individuals to work as student tutors in LACC learning centers, private tutor - ing cente"
    },
    {
     "control_number": "44915",
@@ -2857,6 +3126,7 @@
      92
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2870,35 +3140,64 @@
      103
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 101] (State Code: 44931; TOP Code: 083560; Academic Plan: C044931D) The Athletic Coaching certificate offers a comprehensive curricu - lum designed to equip you for a fulfilling career in coaching a vari - ety of s"
    },
    {
-    "control_number": "44963",
+    "control_number": "44946",
     "pages": [
-     242
+     61
     ],
     "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.872,
+    "opens": "[page 61] 60 LA CC 2025-2026 COLLEGE CATALOG COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS COMM C1000 (formerly COMM 101) Area 2: Mathematical Concepts and Quantitative Reasoning (One course - 3 s"
+   },
+   {
+    "control_number": "44963",
+    "pages": [
+     241
+    ],
+    "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 242] (State Code: 44963; TOP Code: 130700; Academic Plan: C044963E ) The Introduction to Hospitality Supervision Certificate of Comple - tion provides students with the knowledge and skills necessary to successful"
+    "opens": "[page 241] (State Code: 44963; TOP Code: 130700; Academic Plan: C044963E ) The Introduction to Hospitality Supervision Certificate of Comple - tion provides students with the knowledge and skills necessary to successful"
    },
    {
     "control_number": "44987",
     "pages": [
+     142,
      143,
      144,
-     145,
-     146
+     145
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 143] 142 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM STUDENT LEARNING OUTCOMES Upon successful completion of this program, students will be able to: 1. Demonstrate knowledge of ba"
+    "opens": "[page 142] Computer Science AST C044987H 32 Y Computer Science AA C010774C 35-37 Y Computer Information Systems (CIS) AA C002730C 33 Y Cybersecurity AS C038828C 30 Y Cybersecurity C C038827D 30 Y Applications Software C"
+   },
+   {
+    "control_number": "45008",
+    "pages": [
+     59,
+     60,
+     61
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": false,
+    "titled": true,
+    "coverage": 0.961,
+    "opens": "[page 59] 58 LA CC 2025-2026 COLLEGE CATALOG COMPLETING YOUR CAREER AND ACADEMIC PATHWAY: GRADUATION REQUIREMENTS General Education for Associate Degrees The Purpose and Philosophy of General Education Central to all as"
    },
    {
     "control_number": "45172",
@@ -2906,6 +3205,7 @@
      103
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2914,26 +3214,28 @@
    {
     "control_number": "45792",
     "pages": [
-     231,
-     232
+     230,
+     231
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 231] (State Code: 45792; TOP Code: 0514.00; Academic Plan: C045792E) The College & Career Readiness: Document Essentials Certificate of Completion prepares students with basic computer skills for suc- cessful use "
+    "opens": "[page 230] (State Code: 45792; TOP Code: 0514.00; Academic Plan: C045792E) The College & Career Readiness: Document Essentials Certificate of Completion prepares students with basic computer skills for suc- cessful use "
    },
    {
     "control_number": "45934",
     "pages": [
-     221,
-     222
+     220,
+     221
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 221] (State Code: 45934; TOP Code: 129900; Academic Plan: C045934E) The Doula Training Program at Los Angeles City College prepares students to provide compassionate, evidence-based, and culturally responsive car"
+    "opens": "[page 220] (State Code: 45934; TOP Code: 129900; Academic Plan: C045934E) The Doula Training Program at Los Angeles City College prepares students to provide compassionate, evidence-based, and culturally responsive car"
    },
    {
     "control_number": "46097",
@@ -2942,6 +3244,7 @@
      160
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2955,6 +3258,7 @@
      80
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2967,6 +3271,7 @@
      97
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2978,6 +3283,7 @@
      141
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -2986,28 +3292,30 @@
    {
     "control_number": "46272",
     "pages": [
-     222,
-     223
+     221,
+     222
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 222] (State Code: 46272; TOP Code: 059900; Academic Plan: C046272E) The Entrepreneurship for Care Providers Certificate of Completion is for students who have completed a related care training program and would l"
+    "opens": "[page 221] (State Code: 46272; TOP Code: 059900; Academic Plan: C046272E) The Entrepreneurship for Care Providers Certificate of Completion is for students who have completed a related care training program and would l"
    },
    {
     "control_number": "46355",
     "pages": [
+     156,
      157,
      158,
-     159,
-     160
+     159
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 157] 156 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS PROGRAM REQUIREMENTS MAJOR CORE COURSES (21 UNITS) MATH 261* CALCULUS I ....................................... 5 OR MATH 261S CALC"
+    "opens": "[page 156] Mathematics 2.0 AS-T C046355H 24-26 Y Mathematics AS C002754C 21 Y Statistical Data Analytics C C044061D 19 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal"
    },
    {
     "control_number": "46374",
@@ -3017,6 +3325,7 @@
      141
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -3030,6 +3339,7 @@
      176
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -3042,6 +3352,7 @@
      111
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 0.944,
@@ -3056,6 +3367,7 @@
      193
     ],
     "named": true,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -3070,6 +3382,7 @@
      180
     ],
     "named": false,
+    "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
@@ -3078,35 +3391,32 @@
    {
     "control_number": "46527",
     "pages": [
+     168,
      169,
      170,
      171
     ],
-    "named": false,
-    "cn_printed": false,
+    "named": true,
+    "code": null,
+    "cn_printed": true,
     "titled": true,
-    "coverage": 0.921,
-    "opens": "[page 169] 168 LACC 2026-2027 COLLEGE CATALOG ABOUT OUR CAREER AND ACADEMIC PATHWAYS JAPAN 004 INTERMEDIATE JAPANESE II ........................ 5 KOREAN 003 INTERMEDIATE KOREAN I ........................... 5 KOREAN "
+    "coverage": 0.989,
+    "opens": "[page 168] History AA-T C046527G 18-20 Y *FA = Financial Aid Eligible. Yes = Eligible for all aid. No = Ineligible for Federal Pell and Cal Grant, FSEOG, Federal Work-Study, and Federal Loans. Please consult with Fina"
    }
   ],
   "unproven": [
    "02765",
    "10778",
-   "37221",
-   "38867",
-   "40139",
-   "41527",
-   "43107",
-   "44022"
+   "37221"
   ]
  },
  "loads": 1,
- "seconds": 105.4,
- "found": 241,
+ "seconds": 215.9,
+ "found": 250,
  "by_method": {
   "no_closed_list": 2,
-  "not_found": 17,
-  "pdf_pages": 241
+  "not_found": 8,
+  "pdf_pages": 250
  },
  "shared_pages": {
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76": [
@@ -3128,7 +3438,7 @@
    "02730",
    "38828"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195": [
    "02736",
    "32496"
   ],
@@ -3136,8 +3446,9 @@
    "02741",
    "40888"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134": [
    "02744",
+   "36348",
    "38385"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=127": [
@@ -3151,21 +3462,12 @@
    "35344",
    "40889"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110": [
-   "02749",
-   "46432"
-  ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166": [
-   "02750",
-   "39561"
-  ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116": [
    "02751",
    "43855"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156": [
    "02754",
-   "44061",
    "46355"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163": [
@@ -3175,10 +3477,6 @@
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175": [
    "02760",
    "21629"
-  ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193": [
-   "08220",
-   "21619"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145": [
    "08224",
@@ -3200,17 +3498,22 @@
    "08237",
    "08239"
   ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92": [
+   "08242",
+   "38156",
+   "38867"
+  ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174": [
    "08246",
    "46381"
   ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80": [
+   "10771",
+   "21613"
+  ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=188": [
    "10773",
    "40642"
-  ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143": [
-   "10774",
-   "44987"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=79": [
    "14232",
@@ -3220,54 +3523,54 @@
    "18809",
    "35340"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124": [
-   "19843",
-   "32832"
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61": [
+   "19842",
+   "44946"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84": [
    "21614",
    "42568"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231": [
    "24016",
    "39327",
    "39615"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226": [
    "24069",
    "40193",
    "41258"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227": [
    "24071",
    "41259",
    "42068"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238": [
    "24099",
    "36275",
    "36277"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241": [
    "24118",
    "44963"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239": [
    "24294",
    "39614"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236": [
    "24344",
    "41252",
    "42057"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230": [
    "24387",
    "39702",
    "39703",
    "45792"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222": [
    "24446",
    "44632"
   ],
@@ -3279,7 +3582,7 @@
    "31738",
    "40987"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172": [
    "32502",
    "43211"
   ],
@@ -3287,23 +3590,31 @@
    "35337",
    "35338"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133": [
+   "35341",
+   "36347"
+  ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221": [
    "35936",
    "41255",
    "44631",
    "46272"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=126": [
+   "36007",
+   "41527"
+  ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=98": [
+   "36026",
+   "44638"
+  ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219": [
    "36276",
    "40128",
    "43866",
    "43867"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134": [
-   "36347",
-   "36348"
-  ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218": [
    "36581",
    "40127",
    "40907"
@@ -3312,7 +3623,7 @@
    "36658",
    "38233"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235": [
    "36668",
    "44023",
    "44024"
@@ -3321,7 +3632,7 @@
    "38605",
    "42506"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237": [
    "38723",
    "42058",
    "42059"
@@ -3334,7 +3645,7 @@
    "38856",
    "44915"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232": [
    "39043",
    "39190",
    "44589"
@@ -3343,17 +3654,21 @@
    "39316",
    "39349"
   ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164": [
+   "39561",
+   "43107"
+  ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100": [
    "39577",
    "44581"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240": [
    "39616",
    "39617",
    "40524",
    "40543"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=151": [
    "39789",
    "40897"
   ],
@@ -3361,10 +3676,16 @@
    "39854",
    "40999"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224": [
    "40132",
+   "40138",
    "40199",
    "42299"
+  ],
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242": [
+   "40139",
+   "44022",
+   "44705"
   ],
   "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139": [
    "40232",
@@ -3394,11 +3715,11 @@
    "41002",
    "42507"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225": [
    "41256",
    "41257"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223": [
    "42201",
    "42227",
    "44082"
@@ -3407,7 +3728,7 @@
    "42225",
    "42239"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228": [
    "42649",
    "42650",
    "43793"
@@ -3424,17 +3745,17 @@
    "43160",
    "43526"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229": [
    "43226",
    "43631",
    "43708"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233": [
    "44590",
    "44591",
    "44592"
   ],
-  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235": [
+  "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234": [
    "44593",
    "44594",
    "44599"
@@ -3488,15 +3809,6 @@
    }
   },
   {
-   "control_number": "19842",
-   "title": "IGETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
-    "coverage": 0.317
-   }
-  },
-  {
    "control_number": "21612",
    "title": "MANAGEMENT: SMALL BUSINESS",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -3515,89 +3827,15 @@
    }
   },
   {
-   "control_number": "36026",
-   "title": "Kinesiology",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=101",
-    "coverage": 0.283
-   }
-  },
-  {
    "control_number": "37221",
    "title": "FILM, TELEVISION, AND ELECTRONIC MEDIA",
    "award": "A.S. T Degree",
    "near_miss": {
     "pages": [
-     125,
-     126,
-     127,
-     128
+     60,
+     61
     ],
-    "coverage": 0.545,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "38867",
-   "title": "Nutrition and Dietetics",
-   "award": "A.S. T Degree",
-   "near_miss": {
-    "pages": [
-     93
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "40139",
-   "title": "THE URBAN AMBASSADORS",
-   "award": "Noncredit program",
-   "near_miss": {
-    "pages": [
-     229
-    ],
-    "coverage": 0.5,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "41527",
-   "title": "ARMENIAN LANGUAGE AND LITERATURE",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "pages": [
-     124
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "43107",
-   "title": "LAW, PUBLIC POLICY, AND SOCIETY",
-   "award": "A.A- T Degree",
-   "near_miss": {
-    "pages": [
-     165,
-     166,
-     167,
-     168
-    ],
-    "coverage": 1.0,
-    "why": "the page prints neither the control number nor the title and award"
-   }
-  },
-  {
-   "control_number": "44022",
-   "title": "Pathway to Citizenship",
-   "award": "Noncredit program",
-   "near_miss": {
-    "pages": [
-     346
-    ],
-    "coverage": 1.0,
+    "coverage": 0.788,
     "why": "the page prints neither the control number nor the title and award"
    }
   },
@@ -3606,39 +3844,21 @@
    "title": "Community Health Worker",
    "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
     "coverage": 0.4
-   }
-  },
-  {
-   "control_number": "44946",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "coverage": 0.35
-   }
-  },
-  {
-   "control_number": "45008",
-   "title": "Essential Skills",
-   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-   "near_miss": {
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=141",
-    "coverage": 0.073
    }
   }
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 6,
-  "0.8-1.0": 19,
-  "1.0": 216
+  "0.5-0.8": 4,
+  "0.8-1.0": 24,
+  "1.0": 222
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_city",
-  "kept": 182,
-  "programs": 59,
+  "kept": 102,
+  "programs": 148,
   "list": [
    {
     "control_number": "02720",
@@ -3646,8 +3866,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
     "coverage": 0.9,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
+    "was_coverage": 0.9,
     "was_method": "pdf_pages"
    },
    {
@@ -3656,7 +3876,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=81",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=81",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3666,7 +3886,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=82",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=82",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3676,7 +3896,27 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=186",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02736",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02744",
+    "title": "Spanish",
+    "award": "A.A. Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3686,7 +3926,17 @@
     "award": "A.S. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=94",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=94",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02749",
+    "title": "Radiologic Technology",
+    "award": "A.S. Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=109",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3694,9 +3944,9 @@
     "control_number": "02754",
     "title": "Mathematics",
     "award": "A.S. Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3706,7 +3956,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=160",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=160",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3716,8 +3966,18 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=120",
     "coverage": 0.961,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 0.513,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=120",
+    "was_coverage": 0.961,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08220",
+    "title": "TELEVISION PRODUCTION",
+    "award": "A.A. Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=192",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3726,7 +3986,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=212",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=213",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=212",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3736,7 +3996,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3746,7 +4006,17 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "08242",
+    "title": "DIETETIC SERVICE SUPERVISOR",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=93",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3756,8 +4026,18 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=174",
     "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10771",
+    "title": "REAL ESTATE BROKER LICENSE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=327",
+    "was_coverage": 0.9,
     "was_method": "pdf_pages"
    },
    {
@@ -3766,9 +4046,19 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19842",
+    "title": "IGETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
+    "coverage": 0.805,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "21609",
@@ -3776,7 +4066,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=75",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3786,7 +4076,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=78",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3796,7 +4086,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=79",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=79",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3806,7 +4096,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=76",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3816,7 +4106,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=176",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=175",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=176",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3824,19 +4114,89 @@
     "control_number": "24016",
     "title": "WORKFORCE LITERACY SKILLS",
     "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
-    "was_coverage": 0.5,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24069",
+    "title": "ENTREPRENEURSHIP SKILLS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24071",
+    "title": "JOB READINESS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24099",
+    "title": "VOCATIONAL ENGLISH AS A SECOND LANGUAGE I",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24118",
+    "title": "HOSPITALITY",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "24294",
     "title": "CUSTOMER SERVICE SKILLS",
     "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24344",
+    "title": "English as a Second Language - Civics",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24387",
+    "title": "CAREER DISCOVERY SKILLS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "24446",
+    "title": "In-Home Supportive Services Skills",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3846,7 +4206,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=87",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=87",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3856,28 +4216,48 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=204",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=205",
-    "was_coverage": 0.857,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=204",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32496",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32502",
+    "title": "PSYCHOLOGY",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "32832",
     "title": "ART HISTORY",
     "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
-    "coverage": 0.734,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
-    "was_coverage": 0.511,
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=60",
+    "coverage": 0.914,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
+    "was_coverage": 0.734,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "33120",
     "title": "STUDIO ARTS",
     "award": "A.A- T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=252",
-    "coverage": 0.763,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=208",
-    "was_coverage": 0.868,
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=206",
+    "coverage": 0.974,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=252",
+    "was_coverage": 0.763,
     "was_method": "pdf_pages"
    },
    {
@@ -3886,7 +4266,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3896,7 +4276,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=115",
     "coverage": 0.857,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=115",
     "was_coverage": 0.857,
     "was_method": "pdf_pages"
    },
@@ -3906,7 +4286,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=200",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=200",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3916,7 +4296,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3926,7 +4306,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=136",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3936,7 +4316,107 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=132",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35936",
+    "title": "HEALTH CAREERS READINESS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36026",
+    "title": "Kinesiology",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=98",
+    "coverage": 0.943,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "36275",
+    "title": "VOCATIONAL ENGLISH AS A SECOND  LANGUAGE II",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36276",
+    "title": "HIGH SCHOOL EQUIVALENCY TEST PREPARATION",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36277",
+    "title": "CHILD DEVELOPMENT READINESS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36347",
+    "title": "RUSSIAN LANGUAGE AND CIVILIZATION: ELEMENTARY LEVEL",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36581",
+    "title": "Academic Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36668",
+    "title": "BEGINNING ENGLISH AS A SECOND LANGUAGE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38385",
+    "title": "Spanish",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38723",
+    "title": "LITERACY LEVEL ESL",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3946,7 +4426,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=145",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3956,7 +4436,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=91",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=88",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=91",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3966,7 +4446,37 @@
     "award": "A.S. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=105",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=106",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=105",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "38867",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "39043",
+    "title": "WORKPLACE SUCCESS II - CREATIVE LEADERSHIP",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39190",
+    "title": "WORKPLACE SUCCESS I – CREATIVITY IN THE WORKPLACE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3976,7 +4486,17 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39327",
+    "title": "Office Career Readiness",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3986,23 +4506,33 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=97",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "39617",
-    "title": "GUESTROOM ATTENDANT",
-    "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "control_number": "39561",
+    "title": "PARALEGAL STUDIES",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "39703",
-    "title": "INTRODUCTION TO COMPUTERS",
+    "control_number": "39614",
+    "title": "BANQUET & RESTAURANT SERVER",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39615",
+    "title": "Technology for Success",
     "award": "Noncredit program",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
     "coverage": 1.0,
@@ -4011,12 +4541,142 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "39616",
+    "title": "FRONT DESK REPRESENTATIVE & RESERVATIONIST",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39617",
+    "title": "GUESTROOM ATTENDANT",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39702",
+    "title": "COMPUTER SKILLS FOR THE WORKPLACE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39703",
+    "title": "INTRODUCTION TO COMPUTERS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39789",
+    "title": "GEOLOGY",
+    "award": "A.S. T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40127",
+    "title": "COLLEGE READINESS  MATH FUNDAMENTALS I",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40128",
+    "title": "COLLEGE READINESS  MATH FUNDAMENTALS II",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40132",
+    "title": "MEDICAL TERMINOLOGY FOR  CAREER READINESS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "40138",
     "title": "Phlebotomy Technician",
     "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=353",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=353",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40139",
+    "title": "THE URBAN AMBASSADORS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "40193",
+    "title": "GIG ECONOMY SUCCESS KIT",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40199",
+    "title": "MEDICAL INTERPRETATION",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40524",
+    "title": "FOOD HANDLER'S PREPARATION",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40543",
+    "title": "FOOD SERVICE MANAGER SKILLS PREPARATION",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4026,8 +4686,8 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
     "coverage": 0.5,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "was_coverage": 0.5,
     "was_method": "pdf_pages"
    },
    {
@@ -4036,8 +4696,8 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
     "coverage": 0.739,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+    "was_coverage": 0.739,
     "was_method": "pdf_pages"
    },
    {
@@ -4046,7 +4706,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=189",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=185",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=189",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4056,7 +4716,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=129",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=129",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4066,7 +4726,27 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=125",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=130",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40897",
+    "title": "GEOGRAPHY",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40907",
+    "title": "ADULT BASIC EDUCATION",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4076,7 +4756,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=146",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4086,7 +4766,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=148",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=144",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=148",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4094,9 +4774,59 @@
     "control_number": "41252",
     "title": "ENGLISH AS A SECOND LANGUAGE - PRONUNCIATION",
     "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41255",
+    "title": "HEALTHCARE SERVICES",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41256",
+    "title": "PROFESSIONALISM & SUCCESS IN HEALTHCARE OCCUPATIONS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41257",
+    "title": "E-COMMERCE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41258",
+    "title": "GLOBAL BUSINESS",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41259",
+    "title": "INTERNATIONAL MARKETING PROFESSIONAL",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4106,17 +4836,87 @@
     "award": "A.A- T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=181",
     "coverage": 0.983,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=179",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=181",
     "was_coverage": 0.983,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41527",
+    "title": "ARMENIAN LANGUAGE AND LITERATURE",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=126",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
    },
    {
     "control_number": "42057",
     "title": "ENGLISH AS A SECOND LANGUAGE - CONVERSATION",
     "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42058",
+    "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES - LEVEL I",
+    "award": "Noncredit program",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42059",
+    "title": "ENGLISH FOR SPEAKERS OF OTHER LANGUAGES - LEVEL II",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42068",
+    "title": "INTERPERSONAL SKILLS FOR THE WORKPLACE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42201",
+    "title": "MEDICAL ASSISTANT: BACK OFFICE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42227",
+    "title": "MEDICAL ASSISTANT: FRONT OFFICE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42299",
+    "title": "OPTICIAN TECHNICIAN",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4126,7 +4926,27 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=83",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42649",
+    "title": "RETAIL SALES AND CUSTOMER SERVICE",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "42650",
+    "title": "RETAIL SUPERVISORY AND MANAGEMENT",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4136,8 +4956,68 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=118",
     "coverage": 0.933,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=119",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=118",
     "was_coverage": 0.933,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43107",
+    "title": "LAW, PUBLIC POLICY, AND SOCIETY",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "43211",
+    "title": "SOCIAL WORK AND HUMAN SERVICES",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43226",
+    "title": "ROADMAP TO PEOPLE MANAGEMENT",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43631",
+    "title": "WAREHOUSE & DISTRIBUTION: WORKER",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43708",
+    "title": "WAREHOUSE & DISTRIBUTION: LEAD",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43793",
+    "title": "Personal Financial Responsibility",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -4146,13 +5026,123 @@
     "award": "A.A. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43866",
+    "title": "Behavior Technician Preparation",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43867",
+    "title": "Behavior Technician: Autism",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44022",
+    "title": "Pathway to Citizenship",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44023",
+    "title": "Beginning ESL & Civics with Technology II",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44024",
+    "title": "Beginning ESL & Civics with Technology I",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44082",
+    "title": "Introduction to Patient Transporting",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44589",
+    "title": "American Language & Culture Series A",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44590",
+    "title": "American Language & Culture Series B",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44591",
+    "title": "American Language & Culture: Beginning",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "44592",
     "title": "American Language & Culture: Beginning High",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44593",
+    "title": "American Language & Culture: Foundational",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44594",
+    "title": "American Language & Culture: Intermediate",
     "award": "Noncredit program",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
     "coverage": 1.0,
@@ -4164,9 +5154,9 @@
     "control_number": "44599",
     "title": "American Language & Culture: Intermediate High",
     "award": "Noncredit program",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4176,7 +5166,27 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=102",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=103",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=102",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44631",
+    "title": "IHSS Care for People with Chronic Illnesses",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44632",
+    "title": "IHSS Care for People with Dementia",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4184,9 +5194,79 @@
     "control_number": "44638",
     "title": "Public Health",
     "award": "A.S. T Degree",
-    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=99",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=98",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=100",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=99",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44705",
+    "title": "Tutor Training I",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=349",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44946",
+    "title": "Cal-GETC",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
+    "coverage": 0.872,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "44963",
+    "title": "Introduction to Hospitality Supervision",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44987",
+    "title": "Computer Science",
+    "award": "A.S. T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45008",
+    "title": "Essential Skills",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=59",
+    "coverage": 0.961,
+    "was_url": null,
+    "was_coverage": 0.0,
+    "was_method": "not_found"
+   },
+   {
+    "control_number": "45792",
+    "title": "​​College & Career Readiness: Document Essentials​",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45934",
+    "title": "Doula Training Program",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4196,7 +5276,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=159",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=158",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=159",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4206,7 +5286,27 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=96",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=96",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "46272",
+    "title": "Entrepreneurship for Care Providers",
+    "award": "Noncredit program",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "46355",
+    "title": "Mathematics 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156",
+    "coverage": 1.0,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4216,7 +5316,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
     "coverage": 1.0,
-    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=139",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -4226,11 +5326,21 @@
     "award": "A.A- T Degree",
     "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=177",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "not_found"
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=177",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "46527",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=168",
+    "coverage": 0.989,
+    "was_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
+    "was_coverage": 0.921,
+    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "39018419466"
+ "run": "43136137275"
 }

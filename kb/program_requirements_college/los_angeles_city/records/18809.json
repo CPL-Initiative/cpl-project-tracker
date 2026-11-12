@@ -68,29 +68,28 @@
     29.0
    ],
    "stated": [
-    22.0,
-    26.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 22.0-29.0; the catalog states 22.0-26.0"
+    "the blocks and general education sum to 22.0-29.0; the catalog prints 60.0-60.0 for the degree"
    ],
-   "degree": {
-    "pass": false,
-    "status": "unequal",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
      22.0,
      29.0
     ],
     "stated": [
-     60.0,
-     60.0
+     22.0,
+     26.0
     ],
-    "against": "degree",
-    "ge": null,
-    "why": [
-     "the blocks and general education sum to 22.0-29.0; the catalog prints 60.0-60.0 for the degree"
-    ]
+    "against": "program",
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -255,6 +254,6 @@
    "Catalog prints codes with leading zeros (KOREAN 003); these match closed-list codes (KOREAN 3)."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": 43136137275,
+ "read_run": 39018419466
 }

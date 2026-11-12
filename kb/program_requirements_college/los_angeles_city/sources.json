@@ -507,22 +507,22 @@
    "MUSIC782"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
-   "title": "(State Code: 02736; TOP Code: 100400; Academic Plan: C002736C)",
-   "h1": "(State Code: 02736; TOP Code: 100400; Academic Plan: C002736C)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195",
+   "title": "Music AA C002736C 27 Y",
+   "h1": "Music AA C002736C 27 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    195,
     196,
     197,
-    198,
-    199
+    198
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 27,
-  "text_chars": 14377
+  "text_chars": 16000
  },
  {
   "control_number": "02739",
@@ -620,12 +620,13 @@
    "SPANISH9"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
-   "title": "(State Code: 02744; TOP Code: 110500; Academic Plan: C002744C)",
-   "h1": "(State Code: 02744; TOP Code: 110500; Academic Plan: C002744C)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+   "title": "Spanish AA C002744C 18-29 Y",
+   "h1": "Spanish AA C002744C 18-29 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    134,
     135,
     136
    ],
@@ -633,7 +634,7 @@
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 5027
+  "text_chars": 9568
  },
  {
   "control_number": "02745",
@@ -780,12 +781,13 @@
    "RADTEC283"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=110",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 109",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 109",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=109",
+   "title": "108 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "108 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    109,
     110,
     111
    ],
@@ -793,7 +795,7 @@
    "heading_named": false
   },
   "listed": 20,
-  "text_chars": 8809
+  "text_chars": 14015
  },
  {
   "control_number": "02750",
@@ -895,22 +897,22 @@
    "MATH275"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
-   "title": "(State Code: 02754; TOP Code: 170100; Academic Plan: C002754C)",
-   "h1": "(State Code: 02754; TOP Code: 170100; Academic Plan: C002754C)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156",
+   "title": "Mathematics AS C002754C 21 Y",
+   "h1": "Mathematics AS C002754C 21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    156,
     157,
     158,
-    159,
-    160
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 14044
+  "text_chars": 14673
  },
  {
   "control_number": "02755",
@@ -1301,19 +1303,20 @@
    "TV7"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=193",
-   "title": "192 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "192 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=192",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 191",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 191",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    192,
     193
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 5477
+  "text_chars": 9145
  },
  {
   "control_number": "08224",
@@ -1690,19 +1693,20 @@
    "FAM&CS56"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=93",
-   "title": "(State Code: 08242; TOP Code: 130620; Academic Plan: C008242D)",
-   "h1": "(State Code: 08242; TOP Code: 130620; Academic Plan: C008242D)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
+   "title": "Dietetic Service Supervisor C C008242D 25 Y",
+   "h1": "Dietetic Service Supervisor C C008242D 25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    92,
     93
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 8,
-  "text_chars": 2813
+  "text_chars": 6443
  },
  {
   "control_number": "08246",
@@ -1749,8 +1753,9 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.9,
+  "coverage": 1.0,
   "codes_found": [
+   "REALES1",
    "REALES11",
    "REALES14",
    "REALES18",
@@ -1762,19 +1767,20 @@
    "REALES9"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=327",
-   "title": "326 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "326 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=80",
+   "title": "Real Estate Broker License C C010771D 24 Y",
+   "h1": "Real Estate Broker License C C010771D 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    327
+    80,
+    81
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5385
+  "text_chars": 4190
  },
  {
   "control_number": "10773",
@@ -2183,12 +2189,123 @@
   "title": "IGETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.805,
+  "codes_found": [
+   "AFROAM7",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ARTHC1100",
+   "ARTHIST103",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171",
+   "ASL3",
+   "ASTRON1",
+   "ASTRON11",
+   "ASTRON5",
+   "BIOLOGY25",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "CHDEV1",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM60",
+   "CHICANO7",
+   "CHICANO8",
+   "CHINESE4",
+   "CINEMA18",
+   "CINEMA4",
+   "COMM121",
+   "COMM122",
+   "COMMC1000",
+   "DANCEST805",
+   "EARTH1",
+   "ECONC2001",
+   "ENGLISH102",
+   "ENVSCI1",
+   "FRENCH4",
+   "GEOG1",
+   "GEOG15",
+   "GEOG2",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "HISTORY7",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "JAPAN4",
+   "KOREAN4",
+   "LING2",
+   "MATH230",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH261",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MICRO1",
+   "MICRO20",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "PHOTO501",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH2",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC31",
+   "SOC32",
+   "SPANISH4",
+   "SPANISH6",
+   "STATC1000",
+   "THEATER338"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
+   "title": "60 LA CC 2025-2026 COLLEGE CATALOG",
+   "h1": "60 LA CC 2025-2026 COLLEGE CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 123,
-  "text_chars": 0
+  "text_chars": 5539
  },
  {
   "control_number": "19843",
@@ -2955,14 +3072,14 @@
    "VOCED3CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 231",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 231",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "title": "230 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "230 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    232,
-    233
+    231,
+    232
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -2981,14 +3098,14 @@
    "VOCED239CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
    "title": "(State Code: 24069; TOP Code: 050640; Academic Plan: C024069E)",
    "h1": "(State Code: 24069; TOP Code: 050640; Academic Plan: C024069E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    227,
-    228
+    226,
+    227
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -3010,14 +3127,14 @@
    "VOCED239CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
    "title": "(State Code: 24071; TOP Code: 493012; Academic Plan: C024071E)",
    "h1": "(State Code: 24071; TOP Code: 493012; Academic Plan: C024071E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    228,
-    229
+    227,
+    228
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -3038,22 +3155,22 @@
    "VOCED79CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
-   "title": "238 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "238 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 237",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 237",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    238,
     239,
     240,
-    241,
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 16000
+  "text_chars": 15964
  },
  {
   "control_number": "24118",
@@ -3074,19 +3191,19 @@
    "VOCED250CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
    "title": "(State Code: 24118; TOP Code: 130700; Academic Plan: C024118E)",
    "h1": "(State Code: 24118; TOP Code: 130700; Academic Plan: C024118E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 9,
-  "text_chars": 3411
+  "text_chars": 2701
  },
  {
   "control_number": "24294",
@@ -3101,21 +3218,21 @@
    "VOCED239CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
    "title": "(State Code: 24294; TOP Code: 130110; Academic Plan: C024294E)",
    "h1": "(State Code: 24294; TOP Code: 130110; Academic Plan: C024294E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    239,
     240,
-    241,
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 9902
+  "text_chars": 9192
  },
  {
   "control_number": "24344",
@@ -3136,15 +3253,15 @@
    "ESLCVCS44CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
    "title": "(State Code: 24344; TOP Code: 493087; Academic Plan: C024344F)",
    "h1": "(State Code: 24344; TOP Code: 493087; Academic Plan: C024344F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    236,
     237,
-    238,
-    239
+    238
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -3164,13 +3281,13 @@
    "VOCED238CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
    "title": "(State Code: 24387; TOP Code: 493012; Academic Plan: C024387E)",
    "h1": "(State Code: 24387; TOP Code: 493012; Academic Plan: C024387E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    231
+    230
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -3194,14 +3311,14 @@
    "VOCED59CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
    "title": "(State Code: 24446; TOP Code: 123080; Academic Plan: C024446E)",
    "h1": "(State Code: 24446; TOP Code: 123080; Academic Plan: C024446E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    223,
-    224
+    222,
+    223
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -3440,19 +3557,19 @@
    "MUSIC782"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 195",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 195",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195",
+   "title": "Music AA-T C032496G 21-22 Y",
+   "h1": "Music AA-T C032496G 21-22 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    195,
     196,
     197,
-    198,
-    199
+    198
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 28,
   "text_chars": 16000
@@ -3487,19 +3604,19 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
-   "title": "172 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "172 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172",
+   "title": "Psychology AA-T C032502G 18-21 Y",
+   "h1": "Psychology AA-T C032502G 18-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    172,
     173,
     174,
-    175,
-    176
+    175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -3510,9 +3627,12 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.734,
+  "coverage": 0.914,
   "codes_found": [
    "AFROAM7",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
    "ARMEN1",
    "ARMEN11",
    "ARMEN12",
@@ -3520,10 +3640,26 @@
    "ARMEN35",
    "ARMEN36",
    "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
    "ART209",
+   "ART282",
+   "ART300",
+   "ART301",
+   "ART302",
+   "ART307",
+   "ART308",
+   "ART309",
    "ART501",
+   "ART502",
+   "ART603",
+   "ART606",
+   "ART700",
+   "ART701",
+   "ART708",
+   "ART709",
    "ARTHC1100",
-   "ARTHC1200",
    "ARTHIST103",
    "ARTHIST130",
    "ARTHIST139",
@@ -3548,8 +3684,6 @@
    "FRENCH2",
    "FRENCH3",
    "FRENCH4",
-   "HISTC1001",
-   "HISTC1002",
    "HISTORY5",
    "HISTORY59",
    "HISTORY6",
@@ -3596,19 +3730,27 @@
    "PHOTO10",
    "PHOTO34",
    "PHOTO501",
+   "POLSCI19",
    "POLSCI5",
    "RUSSIAN1",
    "RUSSIAN10",
    "RUSSIAN2",
    "RUSSIAN3",
    "RUSSIAN4",
+   "SOC22",
+   "SOC31",
    "SPANISH1",
    "SPANISH10",
+   "SPANISH11",
+   "SPANISH15",
    "SPANISH2",
    "SPANISH21",
    "SPANISH22",
    "SPANISH3",
+   "SPANISH35",
+   "SPANISH36",
    "SPANISH4",
+   "SPANISH6",
    "SPANISH9",
    "THEATER100",
    "THEATER110",
@@ -3616,20 +3758,20 @@
    "THEATER400"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=124",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 123",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 123",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=60",
+   "title": "LACC 2025-2026 COLLEGE CATALOG 59",
+   "h1": "LACC 2025-2026 COLLEGE CATALOG 59",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    124,
-    125
+    60,
+    61
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 139,
-  "text_chars": 12217
+  "text_chars": 11461
  },
  {
   "control_number": "32923",
@@ -3723,9 +3865,15 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.763,
+  "coverage": 0.974,
   "codes_found": [
+   "ANIMATN218",
    "ART201",
+   "ART202",
+   "ART204",
+   "ART205",
+   "ART209",
+   "ART282",
    "ART300",
    "ART301",
    "ART302",
@@ -3753,22 +3901,24 @@
    "ARTHC1200",
    "ARTHIST130",
    "ARTHIST139",
-   "ARTHIST140"
+   "ARTHIST140",
+   "PHOTO10",
+   "PHOTO7"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=252",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 251",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 251",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=206",
+   "title": "Studio Arts AA-T C033120G 24 Y",
+   "h1": "Studio Arts AA-T C033120G 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    252,
-    253,
-    254,
-    255
+    206,
+    207,
+    208,
+    209
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 38,
   "text_chars": 16000
@@ -4147,13 +4297,13 @@
    "VOCED56CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
    "title": "(State Code: 35936; TOP Code: 120100; Academic Plan: C035936E)",
    "h1": "(State Code: 35936; TOP Code: 120100; Academic Plan: C035936E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    222
+    221
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -4194,12 +4344,77 @@
   "title": "Kinesiology",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.943,
+  "codes_found": [
+   "ANATOMY1",
+   "BUS15",
+   "CHEM101",
+   "CHEM60",
+   "DANCETQ111",
+   "DANCETQ121",
+   "DANCETQ141",
+   "HEALTH11",
+   "HEALTH12",
+   "KIN2011",
+   "KIN202",
+   "KIN2151",
+   "KIN217",
+   "KIN229",
+   "KIN230",
+   "KIN237",
+   "KIN246",
+   "KIN2501",
+   "KIN2511",
+   "KIN2661",
+   "KIN2711",
+   "KIN2871",
+   "KIN2891",
+   "KIN2911",
+   "KIN300",
+   "KIN3001",
+   "KIN303",
+   "KIN307",
+   "KIN326",
+   "KIN327",
+   "KIN328",
+   "KIN3281",
+   "KIN331",
+   "KIN333",
+   "KIN334",
+   "KIN3721",
+   "KINATH556",
+   "KINATH558",
+   "KINATH563",
+   "KINMAJ100",
+   "MATH229",
+   "PHYSICS101",
+   "PHYSICS21",
+   "PHYSICS6",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "SOC1",
+   "SOC125",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=98",
+   "title": "Kinesiology AA-T C036026G 20-26 Y",
+   "h1": "Kinesiology AA-T C036026G 20-26 Y",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98,
+    99,
+    100,
+    101
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 53,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "36049",
@@ -4250,13 +4465,13 @@
    "ESLNC2CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
    "title": "(State Code: 36275; TOP Code: 493100; Academic Plan: C036275E)",
    "h1": "(State Code: 36275; TOP Code: 493100; Academic Plan: C036275E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    239
+    238
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -4278,13 +4493,13 @@
    "BSICSKL86CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
    "title": "(State Code: 36276; TOP Code: 493062; Academic Plan: C036276F)",
    "h1": "(State Code: 36276; TOP Code: 493062; Academic Plan: C036276F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    220
+    219
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -4304,22 +4519,22 @@
    "VOCED54CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
    "title": "(State Code: 36277; TOP Code: 130500; Academic Plan: C036277F)",
    "h1": "(State Code: 36277; TOP Code: 130500; Academic Plan: C036277F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    238,
     239,
     240,
-    241,
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 2,
-  "text_chars": 14709
+  "text_chars": 13999
  },
  {
   "control_number": "36347",
@@ -4335,19 +4550,20 @@
    "RUSSIAN7"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 133",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 133",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=133",
+   "title": "Civilization - Elementary Level C C036347D 16 Y",
+   "h1": "Civilization - Elementary Level C C036347D 16 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 4481
+  "text_chars": 5907
  },
  {
   "control_number": "36348",
@@ -4392,13 +4608,13 @@
    "VOCED3CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
    "title": "(State Code: 36581; TOP Code: 493013; Academic Plan: C036581E)",
    "h1": "(State Code: 36581; TOP Code: 493013; Academic Plan: C036581E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    219
+    218
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -4490,13 +4706,13 @@
    "ESLNC2CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
    "title": "(State Code: 36668; TOP Code: 493087; Academic Plan: C036668E)",
    "h1": "(State Code: 36668; TOP Code: 493087; Academic Plan: C036668E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    236
+    235
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -4657,12 +4873,13 @@
    "SPANISH9"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
-   "title": "134 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "134 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
+   "title": "Spanish AA-T C038385G 23-26 Y",
+   "h1": "Spanish AA-T C038385G 23-26 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    134,
     135,
     136
    ],
@@ -4670,7 +4887,7 @@
    "heading_named": true
   },
   "listed": 21,
-  "text_chars": 7889
+  "text_chars": 9598
  },
  {
   "control_number": "38605",
@@ -4728,14 +4945,14 @@
    "ESLNC50CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
    "title": "(State Code: 38723; TOP Code: 493087; Academic Plan: C038723F)",
    "h1": "(State Code: 38723; TOP Code: 493087; Academic Plan: C038723F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    238,
-    239
+    237,
+    238
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5009,12 +5226,33 @@
   "title": "Nutrition and Dietetics",
   "award": "A.S. T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANATOMY1",
+   "CHEM101",
+   "FAM&CS21",
+   "FAM&CS50",
+   "MICRO20",
+   "PHYSIOL1",
+   "PSYCC1000",
+   "STATC1000"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=92",
+   "title": "Nutrition and Dietetics AS-T C038867H 26 Y",
+   "h1": "Nutrition and Dietetics AS-T C038867H 26 Y",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92,
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 8,
-  "text_chars": 0
+  "text_chars": 6486
  },
  {
   "control_number": "39043",
@@ -5028,13 +5266,13 @@
    "BSICSKL79CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
    "title": "(State Code: 39043; TOP Code: 493072; Academic Plan: C039043E)",
    "h1": "(State Code: 39043; TOP Code: 493072; Academic Plan: C039043E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    233
+    232
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5054,13 +5292,13 @@
    "BSICSKL76CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
    "title": "(State Code: 39190; TOP Code: 493072; Academic Plan: C039190E)",
    "h1": "(State Code: 39190; TOP Code: 493072; Academic Plan: C039190E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    233
+    232
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5121,14 +5359,14 @@
    "VOCED3CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
    "title": "(State Code: 39327; TOP Code: 051400; Academic Plan: C039327E)",
    "h1": "(State Code: 39327; TOP Code: 051400; Academic Plan: C039327E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    232,
-    233
+    231,
+    232
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5244,12 +5482,14 @@
    "LIBSCI101"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=166",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 165",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 165",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
+   "title": "Paralegal Studies C C039561D 46 Y",
+   "h1": "Paralegal Studies C C039561D 46 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    164,
+    165,
     166,
     167
    ],
@@ -5257,7 +5497,7 @@
    "heading_named": true
   },
   "listed": 22,
-  "text_chars": 10145
+  "text_chars": 16000
  },
  {
   "control_number": "39577",
@@ -5310,21 +5550,21 @@
    "VOCED247CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=239",
    "title": "(State Code: 39614; TOP Code: 130700; Academic Plan: C039614E)",
    "h1": "(State Code: 39614; TOP Code: 130700; Academic Plan: C039614E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    239,
     240,
-    241,
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 11335
+  "text_chars": 10625
  },
  {
   "control_number": "39615",
@@ -5342,14 +5582,14 @@
    "VOCED3CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
    "title": "(State Code: 39615; TOP Code: 051400; Academic Plan: C039615E)",
    "h1": "(State Code: 39615; TOP Code: 051400; Academic Plan: C039615E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    232,
-    233
+    231,
+    232
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5374,20 +5614,20 @@
    "VOCED79CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
    "title": "(State Code: 39616; TOP Code: 130700; Academic Plan: C039616E)",
    "h1": "(State Code: 39616; TOP Code: 130700; Academic Plan: C039616E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    241,
-    242
+    240,
+    241
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 6462
+  "text_chars": 5752
  },
  {
   "control_number": "39617",
@@ -5406,20 +5646,20 @@
    "VOCED250CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
-   "title": "240 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "240 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 239",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 239",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    241,
-    242
+    240,
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 7,
-  "text_chars": 8966
+  "text_chars": 8256
  },
  {
   "control_number": "39702",
@@ -5434,14 +5674,14 @@
    "VOCED105CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
    "title": "(State Code: 39702; TOP Code: 051400; Academic Plan: C039702E)",
    "h1": "(State Code: 39702; TOP Code: 051400; Academic Plan: C039702E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    231,
-    232
+    230,
+    231
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5461,14 +5701,14 @@
    "VOCED129CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
-   "title": "230 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "230 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 229",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 229",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    231,
-    232
+    230,
+    231
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5494,22 +5734,22 @@
    "MATH262"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
-   "title": "(State Code: 39789; TOP Code: 191400; Academic Plan: C039789H)",
-   "h1": "(State Code: 39789; TOP Code: 191400; Academic Plan: C039789H)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=151",
+   "title": "Geology AS-T C039789H 28 Y",
+   "h1": "Geology AS-T C039789H 28 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    151,
     152,
     153,
-    154,
-    155
+    154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 14270
+  "text_chars": 13519
  },
  {
   "control_number": "39854",
@@ -5556,13 +5796,13 @@
    "BSICSKL201CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
    "title": "(State Code: 40127; TOP Code: 493060; Academic Plan: C040127F)",
    "h1": "(State Code: 40127; TOP Code: 493060; Academic Plan: C040127F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    219
+    218
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5582,13 +5822,13 @@
    "BSICSKL203CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
    "title": "(State Code: 40128; TOP Code: 493062; Academic Plan: C040128F)",
    "h1": "(State Code: 40128; TOP Code: 493062; Academic Plan: C040128F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    220
+    219
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5608,13 +5848,13 @@
    "VOCED435CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
    "title": "(State Code: 40132; TOP Code: 120100; Academic Plan: C040132E)",
    "h1": "(State Code: 40132; TOP Code: 120100; Academic Plan: C040132E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    225
+    224
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5634,31 +5874,46 @@
    "VOCED382CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=353",
-   "title": "352 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "352 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "title": "(State Code: 40138; TOP Code: 120510; Academic Plan: C040138E)",
+   "h1": "(State Code: 40138; TOP Code: 120510; Academic Plan: C040138E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    353
+    224,
+    225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5594
+  "text_chars": 3775
  },
  {
   "control_number": "40139",
   "title": "THE URBAN AMBASSADORS",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VOCED237CE",
+   "VOCED300CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": "(State Code: 40139; TOP Code: 300900; Academic Plan: C040139E)",
+   "h1": "(State Code: 40139; TOP Code: 300900; Academic Plan: C040139E)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 3031
  },
  {
   "control_number": "40193",
@@ -5672,13 +5927,13 @@
    "VOCED84CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
    "title": "(State Code: 40193; TOP Code: 059900; Academic Plan: C040193E)",
    "h1": "(State Code: 40193; TOP Code: 059900; Academic Plan: C040193E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    227
+    226
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5699,13 +5954,13 @@
    "VOCED462CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
    "title": "(State Code: 40199; TOP Code: 214000; Academic Plan: C040199E)",
    "h1": "(State Code: 40199; TOP Code: 214000; Academic Plan: C040199E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    225
+    224
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -5794,20 +6049,20 @@
    "VOCED253CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
    "title": "(State Code: 40524; TOP Code: 130600; Academic Plan: C040524E)",
    "h1": "(State Code: 40524; TOP Code: 130600; Academic Plan: C040524E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    241,
-    242
+    240,
+    241
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 8816
+  "text_chars": 8106
  },
  {
   "control_number": "40543",
@@ -5821,20 +6076,20 @@
    "VOCED254CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
    "title": "(State Code: 40543; TOP Code: 130600; Academic Plan: C040543E)",
    "h1": "(State Code: 40543; TOP Code: 130600; Academic Plan: C040543E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    241,
-    242
+    240,
+    241
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 7582
+  "text_chars": 6872
  },
  {
   "control_number": "40566",
@@ -6284,20 +6539,21 @@
    "GEOLOGY1"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=152",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 151",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 151",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=151",
+   "title": "Geography AA-T C040897G 20-21 Y",
+   "h1": "Geography AA-T C040897G 20-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    151,
     152,
     153
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 8987
+  "text_chars": 11481
  },
  {
   "control_number": "40907",
@@ -6311,13 +6567,13 @@
    "BSICSKL34CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=218",
    "title": "(State Code: 40907; TOP Code: 493062; Academic Plan: C040907F)",
    "h1": "(State Code: 40907; TOP Code: 493062; Academic Plan: C040907F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    219
+    218
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6602,13 +6858,13 @@
    "ESLNC49CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
    "title": "(State Code: 41252; TOP Code: 493086; Academic Plan: C041252F)",
    "h1": "(State Code: 41252; TOP Code: 493086; Academic Plan: C041252F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -6628,13 +6884,13 @@
    "VOCED403CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
    "title": "(State Code: 41255; TOP Code: 493012; Academic Plan: C041255E)",
    "h1": "(State Code: 41255; TOP Code: 493012; Academic Plan: C041255E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    222
+    221
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6654,13 +6910,13 @@
    "VOCED405CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
    "title": "(State Code: 41256; TOP Code: 120510; Academic Plan: C041256E)",
    "h1": "(State Code: 41256; TOP Code: 120510; Academic Plan: C041256E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    226
+    225
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -6680,13 +6936,13 @@
    "VOCED447CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
    "title": "(State Code: 41257; TOP Code: 050970; Academic Plan: C041257E)",
    "h1": "(State Code: 41257; TOP Code: 050970; Academic Plan: C041257E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    226
+    225
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6706,13 +6962,13 @@
    "VOCED445CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=226",
    "title": "(State Code: 41258; TOP Code: 050800; Academic Plan: C041258E)",
    "h1": "(State Code: 41258; TOP Code: 050800; Academic Plan: C041258E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    227
+    226
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6733,13 +6989,13 @@
    "VOCED538CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
    "title": "(State Code: 41259; TOP Code: 050900; Academic Plan: C041259E)",
    "h1": "(State Code: 41259; TOP Code: 050900; Academic Plan: C041259E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    228
+    227
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6847,12 +7103,31 @@
   "title": "ARMENIAN LANGUAGE AND LITERATURE",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ARMEN1",
+   "ARMEN11",
+   "ARMEN12",
+   "ARMEN2",
+   "ARMEN35",
+   "ARMEN36"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=126",
+   "title": "Literature C C041527D 16 Y",
+   "h1": "Literature C C041527D 16 Y",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 6,
-  "text_chars": 0
+  "text_chars": 5043
  },
  {
   "control_number": "42057",
@@ -6866,14 +7141,14 @@
    "ESLNC60CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
    "title": "(State Code: 42057; TOP Code: 493086; Academic Plan: C042057F)",
    "h1": "(State Code: 42057; TOP Code: 493086; Academic Plan: C042057F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    237,
-    238
+    236,
+    237
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -6893,13 +7168,13 @@
    "ESLNC221CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
    "title": "(State Code: 42058; TOP Code: 493087; Academic Plan: C042058F)",
    "h1": "(State Code: 42058; TOP Code: 493087; Academic Plan: C042058F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    238
+    237
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -6919,13 +7194,13 @@
    "ESLNC222CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=238",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=237",
    "title": "(State Code: 42059; TOP Code: 493087; Academic Plan: C042059F)",
    "h1": "(State Code: 42059; TOP Code: 493087; Academic Plan: C042059F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    238
+    237
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -6944,13 +7219,13 @@
    "VOCED122CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
    "title": "(State Code: 42068; TOP Code: 493011; Academic Plan: C042068E)",
    "h1": "(State Code: 42068; TOP Code: 493011; Academic Plan: C042068E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    228
+    227
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -6973,14 +7248,14 @@
    "VOCED435CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
    "title": "(State Code: 42201; TOP Code: 120820; Academic Plan: C042201E)",
    "h1": "(State Code: 42201; TOP Code: 120820; Academic Plan: C042201E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    224,
-    225
+    223,
+    224
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7064,14 +7339,14 @@
    "VOCED400CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
    "title": "(State Code: 42227; TOP Code: 120810; Academic Plan: C042227E)",
    "h1": "(State Code: 42227; TOP Code: 120810; Academic Plan: C042227E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    224,
-    225
+    223,
+    224
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7123,13 +7398,13 @@
    "VOCED338CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=225",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
    "title": "(State Code: 42299; TOP Code: 121900; Academic Plan: C042299E)",
    "h1": "(State Code: 42299; TOP Code: 121900; Academic Plan: C042299E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    225
+    224
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7280,13 +7555,13 @@
    "VOCED53CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
    "title": "(State Code: 42649; TOP Code: 050940; Academic Plan: C042649E)",
    "h1": "(State Code: 42649; TOP Code: 050940; Academic Plan: C042649E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    229
+    228
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -7312,13 +7587,13 @@
    "VOCED94CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
    "title": "(State Code: 42650; TOP Code: 050650; Academic Plan: C042650E)",
    "h1": "(State Code: 42650; TOP Code: 050650; Academic Plan: C042650E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    229
+    228
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7503,12 +7778,76 @@
   "title": "LAW, PUBLIC POLICY, AND SOCIETY",
   "award": "A.A- T Degree",
   "shape": "adt",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ADMJUS2",
+   "ADMJUS3",
+   "ADMJUS4",
+   "ADMJUS67",
+   "ADMJUS8",
+   "AFROAM7",
+   "ANTHRO102",
+   "ASIAN1",
+   "BUS1",
+   "BUS15",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "COMM104",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "COOPED395",
+   "COUNSEL40",
+   "ECONC2001",
+   "ECONC2002",
+   "ENGLC1000",
+   "ENGLC1001",
+   "GEOG2",
+   "HEALTH101",
+   "HEALTH51",
+   "HISTC1001",
+   "HISTC1002",
+   "INTBUS1",
+   "LAW1",
+   "LAW2",
+   "LAW7",
+   "MATH229",
+   "PHILOS20",
+   "PHILOS8",
+   "POLSC1000",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI60",
+   "POLSCI7",
+   "PUBREL1",
+   "SOC11",
+   "SOC125",
+   "SOC2",
+   "SOC31",
+   "SOC32",
+   "STATC1000",
+   "STATC1000E"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=164",
+   "title": "Law, Public Policy, and Society AA-T C043107G 30-31 Y",
+   "h1": "Law, Public Policy, and Society AA-T C043107G 30-31 Y",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    164,
+    165,
+    166,
+    167
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 49,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "43160",
@@ -7635,19 +7974,19 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
-   "title": "(State Code: 43211; TOP Code: 210400; Academic Plan: C043211G)",
-   "h1": "(State Code: 43211; TOP Code: 210400; Academic Plan: C043211G)",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172",
+   "title": "Services AA-T C043211G 28-29 Y",
+   "h1": "Services AA-T C043211G 28-29 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    172,
     173,
     174,
-    175,
-    176
+    175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 29,
   "text_chars": 16000
@@ -7666,13 +8005,13 @@
    "VOCED443CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
    "title": "(State Code: 43226; TOP Code: 059900; Academic Plan: C043226E)",
    "h1": "(State Code: 43226; TOP Code: 059900; Academic Plan: C043226E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    230
+    229
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7758,13 +8097,13 @@
    "VOCED85CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
    "title": "(State Code: 43631; TOP Code: 051000; Academic Plan: C043631E)",
    "h1": "(State Code: 43631; TOP Code: 051000; Academic Plan: C043631E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    230
+    229
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7787,13 +8126,13 @@
    "VOCED85CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
    "title": "(State Code: 43708; TOP Code: 051000; Academic Plan: C043708E)",
    "h1": "(State Code: 43708; TOP Code: 051000; Academic Plan: C043708E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    230
+    229
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7813,13 +8152,13 @@
    "BSICSKL124CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=229",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
    "title": "(State Code: 43793; TOP Code: 493062; Academic Plan: C043793F)",
    "h1": "(State Code: 43793; TOP Code: 493062; Academic Plan: C043793F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    229
+    228
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -7881,15 +8220,15 @@
    "VOCED422CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 219",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 219",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
+   "title": "218 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "218 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    219,
     220,
-    221,
-    222
+    221
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7910,15 +8249,15 @@
    "VOCED425CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=219",
    "title": "(State Code: 43867; TOP Code: 129900; Academic Plan: C043867E)",
    "h1": "(State Code: 43867; TOP Code: 129900; Academic Plan: C043867E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    219,
     220,
-    221,
-    222
+    221
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -7931,12 +8270,26 @@
   "title": "Pathway to Citizenship",
   "award": "Noncredit program",
   "shape": "noncredit",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLCVCS13CE",
+   "ESLCVCS14CE"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": "(State Code: 44022; TOP Code: 493087; Academic Plan: C044022F)",
+   "h1": "(State Code: 44022; TOP Code: 493087; Academic Plan: C044022F)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    242
+   ],
+   "extractor": "pypdf",
+   "heading_named": true
+  },
   "listed": 2,
-  "text_chars": 0
+  "text_chars": 953
  },
  {
   "control_number": "44023",
@@ -7954,14 +8307,14 @@
    "VOCED290CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 235",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 235",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "title": "234 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "234 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    236,
-    237
+    235,
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -7985,16 +8338,16 @@
    "VOCED290CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
    "title": "(State Code: 44024; TOP Code: 493087; Academic Plan: C044024F)",
    "h1": "(State Code: 44024; TOP Code: 493087; Academic Plan: C044024F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    235,
     236,
     237,
-    238,
-    239
+    238
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8044,14 +8397,14 @@
    "VOCED429CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=224",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
    "title": "(State Code: 44082; TOP Code: 120100; Academic Plan: C044082E )",
    "h1": "(State Code: 44082; TOP Code: 120100; Academic Plan: C044082E )",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    224,
-    225
+    223,
+    224
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -8127,16 +8480,16 @@
    "ESLCVCS34CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=232",
    "title": "(State Code: 44589; TOP Code: 493087; Academic Plan: C044589F)",
    "h1": "(State Code: 44589; TOP Code: 493087; Academic Plan: C044589F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    232,
     233,
     234,
-    235,
-    236
+    235
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8158,16 +8511,16 @@
    "ESLCVCS44CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
    "title": "(State Code: 44590; TOP Code: 493087; Academic Plan: C044590F)",
    "h1": "(State Code: 44590; TOP Code: 493087; Academic Plan: C044590F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
     234,
     235,
-    236,
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8190,16 +8543,16 @@
    "ESLNC50CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
    "title": "(State Code: 44591; TOP Code: 493087; Academic Plan: C044591F)",
    "h1": "(State Code: 44591; TOP Code: 493087; Academic Plan: C044591F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
     234,
     235,
-    236,
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8222,16 +8575,16 @@
    "ESLNC50CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
-   "title": "LACC 2026-2027 COLLEGE CATALOG 233",
-   "h1": "LACC 2026-2027 COLLEGE CATALOG 233",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
+   "title": "232 LACC 2026-2027 COLLEGE CATALOG",
+   "h1": "232 LACC 2026-2027 COLLEGE CATALOG",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
     234,
     235,
-    236,
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8252,15 +8605,15 @@
    "ESLNC48CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
    "title": "(State Code: 44593; TOP Code: 493087; Academic Plan: C044593F)",
    "h1": "(State Code: 44593; TOP Code: 493087; Academic Plan: C044593F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    234,
     235,
-    236,
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8283,16 +8636,16 @@
    "ESLNC60CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
    "title": "(State Code: 44594; TOP Code: 493087; Academic Plan: C044594F)",
    "h1": "(State Code: 44594; TOP Code: 493087; Academic Plan: C044594F)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    234,
     235,
     236,
-    237,
-    238
+    237
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8315,15 +8668,15 @@
    "ESLNC60CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
-   "title": "234 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "234 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=234",
+   "title": "LACC 2026-2027 COLLEGE CATALOG 233",
+   "h1": "LACC 2026-2027 COLLEGE CATALOG 233",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    234,
     235,
-    236,
-    237
+    236
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8393,14 +8746,14 @@
    "VOCED352CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
    "title": "(State Code: 44631; TOP Code: 129900; Academic Plan: C044631E)",
    "h1": "(State Code: 44631; TOP Code: 129900; Academic Plan: C044631E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    222,
-    223
+    221,
+    222
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8421,13 +8774,13 @@
    "VOCED2CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=223",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
    "title": "(State Code: 44632; TOP Code: 129900; Academic Plan: C044632E)",
    "h1": "(State Code: 44632; TOP Code: 129900; Academic Plan: C044632E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    223
+    222
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8466,18 +8819,19 @@
    "STATC1000E"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=99",
-   "title": "98 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "98 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=98",
+   "title": "Public Health AS-T C044638H 23-25 Y",
+   "h1": "Public Health AS-T C044638H 23-25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    98,
     99,
     100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 21,
   "text_chars": 16000
@@ -8494,19 +8848,19 @@
    "VOCED89CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=349",
-   "title": "348 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "348 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "title": "(State Code: 44705; TOP Code: 080200; Academic Plan: C044705E)",
+   "h1": "(State Code: 44705; TOP Code: 080200; Academic Plan: C044705E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    349
+    242
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5539
+  "text_chars": 2078
  },
  {
   "control_number": "44915",
@@ -8597,12 +8951,201 @@
   "title": "Cal-GETC",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.872,
+  "codes_found": [
+   "AFROAM20",
+   "AFROAM7",
+   "ANATOMY1",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ARMEN11",
+   "ARMEN12",
+   "ARTHC1100",
+   "ARTHIST103",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171",
+   "ASIAN1",
+   "ASL3",
+   "ASTRON1",
+   "ASTRON11",
+   "ASTRON5",
+   "BIOLOGY25",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "BUS15",
+   "CHDEV1",
+   "CHDEV11",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM60",
+   "CHICANO4",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CHINESE10",
+   "CHINESE3",
+   "CHINESE4",
+   "CINEMA18",
+   "CINEMA4",
+   "COMM100",
+   "COMM121",
+   "COMM122",
+   "COMMC1000",
+   "DANCEST805",
+   "EARTH1",
+   "ECONC2001",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH216",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH252",
+   "ENGLISH255",
+   "ENGLISH270",
+   "ENVSCI1",
+   "FAM&CS31",
+   "FRENCH10",
+   "FRENCH3",
+   "FRENCH4",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN14",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9",
+   "JOURNAL105",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "LAW3",
+   "LING1",
+   "LING2",
+   "LING3",
+   "MATH229",
+   "MATH230",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH260S",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MICRO1",
+   "MICRO20",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHOTO34",
+   "PHOTO501",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS161",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32",
+   "SPANISH10",
+   "SPANISH11",
+   "SPANISH15",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH6",
+   "SPANISH9",
+   "STATC1000",
+   "THEATER100",
+   "THEATER110",
+   "THEATER338",
+   "THEATER400"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=61",
+   "title": "60 LA CC 2025-2026 COLLEGE CATALOG",
+   "h1": "60 LA CC 2025-2026 COLLEGE CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 203,
-  "text_chars": 0
+  "text_chars": 5539
  },
  {
   "control_number": "44963",
@@ -8616,19 +9159,19 @@
    "VOCED930CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
    "title": "(State Code: 44963; TOP Code: 130700; Academic Plan: C044963E )",
    "h1": "(State Code: 44963; TOP Code: 130700; Academic Plan: C044963E )",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    242
+    241
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 1902
+  "text_chars": 1192
  },
  {
   "control_number": "44987",
@@ -8654,19 +9197,19 @@
    "PHYSICS102"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=143",
-   "title": "142 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "142 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=142",
+   "title": "Computer Science AST C044987H 32 Y",
+   "h1": "Computer Science AST C044987H 32 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    142,
     143,
     144,
-    145,
-    146
+    145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -8676,12 +9219,224 @@
   "title": "Essential Skills",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "not_found",
-  "coverage": 0.0,
-  "codes_found": [],
-  "source": null,
+  "method": "pdf_pages",
+  "coverage": 0.961,
+  "codes_found": [
+   "AFROAM20",
+   "AFROAM7",
+   "ANATOMY1",
+   "ANIMATN118",
+   "ANTHRO101",
+   "ANTHRO102",
+   "ANTHRO121",
+   "ANTHRO151",
+   "ARMEN11",
+   "ARMEN12",
+   "ARTHC1100",
+   "ARTHIST103",
+   "ARTHIST130",
+   "ARTHIST139",
+   "ARTHIST140",
+   "ARTHIST151",
+   "ARTHIST171",
+   "ASIAN1",
+   "ASL3",
+   "ASTRON1",
+   "ASTRON11",
+   "BIOLOGY25",
+   "BIOLOGY3",
+   "BIOLOGY6",
+   "BIOLOGY7",
+   "BUS15",
+   "CHDEV1",
+   "CHDEV11",
+   "CHEM101",
+   "CHEM102",
+   "CHEM211",
+   "CHEM212",
+   "CHEM221",
+   "CHEM60",
+   "CHICANO4",
+   "CHICANO44",
+   "CHICANO47",
+   "CHICANO7",
+   "CHICANO8",
+   "CHINESE10",
+   "CHINESE3",
+   "CHINESE4",
+   "CINEMA18",
+   "CINEMA4",
+   "COMM100",
+   "COMM104",
+   "COMM105",
+   "COMM121",
+   "COMM122",
+   "COMM151",
+   "COMMC1000",
+   "DANCEST805",
+   "EARTH1",
+   "ECONC2001",
+   "ENGLC1000",
+   "ENGLC1001",
+   "ENGLISH101Z",
+   "ENGLISH102",
+   "ENGLISH203",
+   "ENGLISH204",
+   "ENGLISH205",
+   "ENGLISH206",
+   "ENGLISH207",
+   "ENGLISH208",
+   "ENGLISH211",
+   "ENGLISH212",
+   "ENGLISH214",
+   "ENGLISH215",
+   "ENGLISH216",
+   "ENGLISH218",
+   "ENGLISH219",
+   "ENGLISH239",
+   "ENGLISH240",
+   "ENGLISH252",
+   "ENGLISH255",
+   "ENGLISH270",
+   "ENVSCI1",
+   "FAM&CS31",
+   "FRENCH10",
+   "FRENCH3",
+   "FRENCH4",
+   "GEOG1",
+   "GEOG14",
+   "GEOG15",
+   "GEOG2",
+   "GEOG7",
+   "GEOLOGY1",
+   "GEOLOGY2",
+   "GEOLOGY6",
+   "HISTORY5",
+   "HISTORY59",
+   "HISTORY6",
+   "HISTORY7",
+   "HISTORY73",
+   "HISTORY81",
+   "HISTORY82",
+   "HISTORY86",
+   "HISTORY87",
+   "HUMAN30",
+   "HUMAN31",
+   "HUMAN6",
+   "HUMAN61",
+   "HUMAN8",
+   "JAPAN14",
+   "JAPAN3",
+   "JAPAN4",
+   "JAPAN9",
+   "JOURNAL105",
+   "KOREAN10",
+   "KOREAN13",
+   "KOREAN26",
+   "KOREAN3",
+   "KOREAN4",
+   "LAW3",
+   "LING1",
+   "LING2",
+   "LING3",
+   "MATH229",
+   "MATH230",
+   "MATH236",
+   "MATH245",
+   "MATH260",
+   "MATH260S",
+   "MATH261",
+   "MATH261S",
+   "MATH262",
+   "MATH263",
+   "MATH270",
+   "MATH272",
+   "MATH275",
+   "MICRO1",
+   "MICRO20",
+   "MUSIC111",
+   "MUSIC116",
+   "MUSIC118",
+   "MUSIC121",
+   "MUSIC122",
+   "MUSIC135",
+   "MUSIC136",
+   "MUSIC141",
+   "PHILOS1",
+   "PHILOS14",
+   "PHILOS20",
+   "PHILOS30",
+   "PHILOS32",
+   "PHILOS40",
+   "PHILOS5",
+   "PHOTO34",
+   "PHOTO501",
+   "PHYSICS101",
+   "PHYSICS102",
+   "PHYSICS103",
+   "PHYSICS11",
+   "PHYSICS12",
+   "PHYSICS14",
+   "PHYSICS161",
+   "PHYSICS21",
+   "PHYSICS22",
+   "PHYSICS6",
+   "PHYSICS7",
+   "PHYSIOL1",
+   "POLSC1000",
+   "POLSCI14",
+   "POLSCI19",
+   "POLSCI2",
+   "POLSCI5",
+   "POLSCI60",
+   "POLSCI7",
+   "PSYCC1000",
+   "PSYCH13",
+   "PSYCH14",
+   "PSYCH2",
+   "PSYCH41",
+   "PSYCH52",
+   "PSYCH74",
+   "RUSSIAN10",
+   "RUSSIAN3",
+   "RUSSIAN4",
+   "SOC1",
+   "SOC11",
+   "SOC12",
+   "SOC125",
+   "SOC2",
+   "SOC22",
+   "SOC31",
+   "SOC32",
+   "SPANISH10",
+   "SPANISH11",
+   "SPANISH15",
+   "SPANISH3",
+   "SPANISH4",
+   "SPANISH6",
+   "SPANISH9",
+   "STATC1000",
+   "THEATER100",
+   "THEATER110",
+   "THEATER338",
+   "THEATER400"
+  ],
+  "source": {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=59",
+   "title": "58 LA CC 2025-2026 COLLEGE CATALOG",
+   "h1": "58 LA CC 2025-2026 COLLEGE CATALOG",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    59,
+    60,
+    61
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
   "listed": 206,
-  "text_chars": 0
+  "text_chars": 16000
  },
  {
   "control_number": "45172",
@@ -8728,14 +9483,14 @@
    "VOCED174CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=231",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=230",
    "title": "(State Code: 45792; TOP Code: 0514.00; Academic Plan: C045792E)",
    "h1": "(State Code: 45792; TOP Code: 0514.00; Academic Plan: C045792E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    231,
-    232
+    230,
+    231
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8757,14 +9512,14 @@
    "VOCED483CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=220",
    "title": "(State Code: 45934; TOP Code: 129900; Academic Plan: C045934E)",
    "h1": "(State Code: 45934; TOP Code: 129900; Academic Plan: C045934E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    221,
-    222
+    220,
+    221
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -8930,14 +9685,14 @@
    "VOCED84CE"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=222",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=221",
    "title": "(State Code: 46272; TOP Code: 059900; Academic Plan: C046272E)",
    "h1": "(State Code: 46272; TOP Code: 059900; Academic Plan: C046272E)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    222,
-    223
+    221,
+    222
    ],
    "extractor": "pypdf",
    "heading_named": true
@@ -8967,22 +9722,22 @@
    "PHYSICS101"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=157",
-   "title": "156 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "156 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156",
+   "title": "Mathematics 2.0 AS-T C046355H 24-26 Y",
+   "h1": "Mathematics 2.0 AS-T C046355H 24-26 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    156,
     157,
     158,
-    159,
-    160
+    159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 15139
+  "text_chars": 14711
  },
  {
   "control_number": "46374",
@@ -9204,7 +9959,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.921,
+  "coverage": 0.989,
   "codes_found": [
    "AFROAM4",
    "AFROAM5",
@@ -9214,6 +9969,7 @@
    "ANTHRO121",
    "ANTHRO151",
    "ASIAN1",
+   "ASL3",
    "CHDEV1",
    "CHDEV11",
    "CHICANO4",
@@ -9222,6 +9978,8 @@
    "CHICANO7",
    "CHICANO8",
    "CHINESE10",
+   "CHINESE3",
+   "CHINESE4",
    "COMM100",
    "COMM121",
    "COMM122",
@@ -9229,6 +9987,8 @@
    "ECONC2002",
    "FAM&CS31",
    "FRENCH10",
+   "FRENCH3",
+   "FRENCH4",
    "GEOG14",
    "GEOG2",
    "GEOG7",
@@ -9247,6 +10007,7 @@
    "HUMAN61",
    "HUMAN8",
    "JAPAN14",
+   "JAPAN3",
    "JAPAN4",
    "JAPAN9",
    "JOURNAL105",
@@ -9290,20 +10051,21 @@
    "SPANISH9"
   ],
   "source": {
-   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=169",
-   "title": "168 LACC 2026-2027 COLLEGE CATALOG",
-   "h1": "168 LACC 2026-2027 COLLEGE CATALOG",
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=168",
+   "title": "History AA-T C046527G 18-20 Y",
+   "h1": "History AA-T C046527G 18-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    168,
     169,
     170,
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 89,
-  "text_chars": 12003
+  "text_chars": 16000
  }
 ]
