@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 869,
+  "file_datasets": 870,
   "external_services": 195,
-  "consumers": 558,
+  "consumers": 559,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -4583,7 +4583,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 142
+     "line": 150
     }
    ],
    "served": false,
@@ -4596,7 +4596,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 149
+     "line": 157
     }
    ],
    "served": false,
@@ -20205,6 +20205,13 @@
      "line": 135
     },
     {
+     "id": "script:scripts/daily_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
+    },
+    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -20230,7 +20237,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 132
+     "line": 140
     }
    ],
    "served": false,
@@ -21698,6 +21705,19 @@
    "main_committers": []
   },
   "file:scripts/daily_gate.sh": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/daily_rebuild.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -25868,6 +25888,13 @@
      "direction": "read",
      "how": "literal",
      "line": 198
+    },
+    {
+     "id": "script:scripts/daily_rebuild.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
     }
    ],
    "producers": [
@@ -31360,7 +31387,8 @@
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
     "kb/_ccr_seed_recheck_dryrun.py",
-    "kb/_build_commons_status.py"
+    "kb/_build_commons_status.py",
+    "scripts/daily_rebuild.py"
    ],
    "adds": [
     "index.html",

@@ -14,11 +14,16 @@ Failure modes, each observed before this file existed:
    scheduled rung queued in it, though most only stand down. Pinned: the group sits on update-dashboard,
    and the gate and the three crons are untouched.
 
-3. A CONFLICTED RUN THAT PUBLISHED NOTHING ENDS GREEN. The gate stands the later rungs down after any
-   success, so a lost push that exits 0 leaves the day without a dashboard and kpi_history.json with a gap
-   (Rules 1 and 3). The daily's push loop is run in a scratch repo: a rebase conflict exits non-zero and
-   leaves main as it was; a clean rebase pushes. The daily holds no `actions: write` and dispatches nothing
-   (finding 8, a rebuild in the job, is left for its own PR).
+3. A CONFLICTED RUN THAT PUBLISHED NOTHING ENDS GREEN, OR PICKS A SIDE (finding 8). The gate stands the
+   later rungs down after any success, so a lost push that exits 0 leaves the day without a dashboard and
+   kpi_history.json with a gap (Rules 1 and 3); and a generated file is rebuilt from the new main, never
+   taken from one side. The daily's own push loop and scripts/daily_rebuild.py run in a scratch repo:
+   a clean push; a clean rebase; a conflict, then one rebuild on the new main that carries the other
+   writer's commit and a file derived from it, with the scrape reused (and run again when main's copy
+   changed); two conflicts (exit 1, nothing pushed, no side picked); a failure that is no conflict (the
+   5-attempt retry, no rebuild). The rebuild reads its steps from the workflow, so they are written once;
+   the commit step's env is exactly the secrets they name. The daily holds no `actions: write` and
+   dispatches nothing.
 
 4. A MISTYPED PLAN WAITS IN THE GROUP BEFORE IT FAILS (finding 9). cer-decision-apply 43121987424 queued about
    10 minutes, then failed on its plan_dir in seconds. Pinned: each apply's `check` job sits outside the
@@ -168,28 +173,110 @@ check("stand-down script: a failed lookup builds", gate_case("schedule", gh_fail
 check("stand-down script: a dispatch builds even after a success",
       gate_case("workflow_dispatch", "3") == "run=true")
 
-# ── 3. A conflicted run never ends green; the daily dispatches nothing ────────
+# ── 3. A lost push rebuilds once, in the job; the daily dispatches nothing ────
 perms = [daily.get("permissions")] + [j.get("permissions") for j in dj.values()]
 check("daily: no `actions: write` anywhere in the workflow",
       not any(isinstance(p, dict) and p.get("actions") == "write" for p in perms)
       and daily.get("permissions") != "write-all", perms)
 commit_step = step(ud, "Commit and push to main")
 script = (commit_step or {}).get("run", "")
+REBUILD_PY = os.path.join(REPO, "scripts", "daily_rebuild.py")
+rebuild_text = open(REBUILD_PY, encoding="utf-8").read()
 check("daily: the commit step exists", bool(script))
-check("daily: the commit step dispatches no workflow", "gh workflow" not in script and "/dispatches" not in script)
-m = re.search(r"^[ \t]*git commit\b", script, re.M)
-check("daily: the commit step commits before its push loop", m is not None)
-loop = "set -euo pipefail\n" + (script[m.start():] if m else "exit 99\n")
+for label, text in (("the commit step", script), ("scripts/daily_rebuild.py", rebuild_text)):
+    check("daily: %s dispatches no workflow" % label,
+          "gh workflow" not in text and "/dispatches" not in text and "gh api" not in text)
+# The step defines `stage` (its git add list, written once) and the loop after it calls `stage` twice at
+# most: before the commit, and after the rebuild. The scratch repo runs that loop with a `stage` of its own.
+m = re.search(r"^stage\(\) \{\n.*?^\}\n", script, re.M | re.S)
+loop = script[m.end():] if m else "exit 99\n"
+check("daily: the commit step defines `stage`, then the loop", m is not None
+      and script.lstrip().startswith("set -euo pipefail") and "\nstage\n" in loop, bool(m))
+check("daily: the loop's default rebuild is scripts/daily_rebuild.py --onto origin/main",
+      '${DAILY_REBUILD:-python3 scripts/daily_rebuild.py}' in loop and '$daily_rebuild --onto origin/main' in loop)
+check("daily: the loop pushes HEAD:main and never forces",
+      "git push origin HEAD:main" in loop and "--force" not in loop and " -f " not in loop)
+
+sys.path.insert(0, os.path.join(REPO, "scripts"))
+import daily_rebuild  # noqa: E402
+real_plan = daily_rebuild.plan(os.path.join(WF, "daily-dashboard.yml"))
+names = [s["name"] for s in real_plan]
+check("rebuild plan: the real workflow's build steps, from the first fetch to the copy to index.html",
+      names[:1] == [daily_rebuild.FIRST] and names[-1:] == ["Copy dashboard to index.html"]
+      and "Run dashboard pipeline" in names and not (set(names) & daily_rebuild.SETUP), names[:3] + names[-2:])
+check("rebuild plan: every reused step is a step of the workflow",
+      set(daily_rebuild.REUSE) <= set(names), sorted(set(daily_rebuild.REUSE) - set(names)))
+check("rebuild plan: the scrape is reused, by its committed file",
+      daily_rebuild.REUSE.get("Scrape live metrics from Cloudflare Worker") == ("live_metrics.json",))
+want = {k: "${{ secrets.%s }}" % k for k in daily_rebuild.secrets_named(real_plan)}
+check("daily: the commit step's env is exactly the secrets the rebuild can need",
+      (commit_step or {}).get("env") == want, ((commit_step or {}).get("env"), want))
+
+# The real push script and the real rebuild runner, in a scratch repo, over a workflow of the same shape:
+# the fetches count their runs, and the build derives kb/report.md from kb/src.md on whatever tree it has.
+FAKE_WF = r"""
+jobs:
+  update-dashboard:
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v7
+      - name: Fetch CustomReport from MAP API
+        if: steps.recheck.outputs.run == 'true'
+        run: echo x >> "$CNT/custom"
+      - name: Scrape live metrics from Cloudflare Worker
+        if: steps.recheck.outputs.run == 'true'
+        env:
+          CPL_SCRAPE_SECRET: ${{ secrets.CPL_SCRAPE_SECRET }}
+        run: |
+          echo x >> "$CNT/scrape"
+          echo "rescraped with $CPL_SCRAPE_SECRET" > live_metrics.json
+          echo "LIVE_METRICS_STATUS=rescraped" >> "$GITHUB_ENV"
+      - name: Fetch MIL/JST veteran data
+        if: steps.recheck.outputs.run == 'true'
+        run: echo x >> "$CNT/vet"; echo "refetched" > veteran_jst.json
+      - name: Install node docx (Word reports)
+        if: steps.recheck.outputs.run == 'true'
+        run: exit 7
+      - name: Build the report
+        if: steps.recheck.outputs.run == 'true'
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          echo x >> "$CNT/build"
+          printf 'built from %s; %s; %s; key %s\n' "$(cat kb/src.md)" "$(cat live_metrics.json)" \
+            "$LIVE_METRICS_STATUS" "$SUPABASE_SERVICE_KEY" > kb/report.md
+          if [ -n "${RACE:-}" ]; then
+            cd "$OTHER" && echo "theirs again" > kb/report.md && git commit -qam "a second merge" && git push -q origin main
+          fi
+      - name: Copy dashboard to index.html
+        if: steps.recheck.outputs.run == 'true'
+        run: cp kb/report.md kb/copy.md
+      - name: Commit and push to main
+        run: "true"
+"""
+HOOK = """#!/bin/sh
+n=$(cat "{cnt}" 2>/dev/null || echo 0); n=$((n + 1)); echo "$n" > "{cnt}"
+if [ "$n" -le {fails} ]; then echo "rejected by the test hook" >&2; exit 1; fi
+exit 0
+"""
 
 
 def git(cwd, *args):
     subprocess.run(["git", *args], cwd=cwd, check=True, capture_output=True, text=True)
 
 
-def push_case(conflict):
+def count(cnt, name):
+    p = os.path.join(cnt, name)
+    return sum(1 for _ in open(p)) if os.path.exists(p) else 0
+
+
+def push_case(other_edits=None, race=False, reject=0):
+    """other_edits: files the other writer changes on main while the run builds. reject: pushes the origin
+    refuses before it accepts one (99: all of them)."""
     tmp = tempfile.mkdtemp(prefix="apply_conc_")
     try:
-        origin, work, other = (os.path.join(tmp, d) for d in ("origin.git", "work", "other"))
+        origin, work, other, cnt = (os.path.join(tmp, d) for d in ("origin.git", "work", "other", "cnt"))
+        os.makedirs(cnt)
         subprocess.run(["git", "init", "-q", "--bare", "-b", "main", origin], check=True)
         for d, who in ((work, "w"), (other, "o")):
             os.makedirs(os.path.join(d, "kb"))
@@ -197,35 +284,119 @@ def push_case(conflict):
             git(d, "config", "user.email", who + "@example.org")
             git(d, "config", "user.name", who)
             git(d, "remote", "add", "origin", origin)
-        for fn in ("report.md", "side.md"):
-            with open(os.path.join(work, "kb", fn), "w") as f:
-                f.write("base\n")
+
+        def write(d, files):
+            for fn, text in files.items():
+                with open(os.path.join(d, fn), "w") as f:
+                    f.write(text + "\n")
+
+        write(work, {"kb/src.md": "base", "kb/report.md": "built from base", "kb/side.md": "base",
+                     "live_metrics.json": "scrape 0", "veteran_jst.json": "vet 0"})
         git(work, "add", "-A")
         git(work, "commit", "-q", "-m", "base")
         git(work, "push", "-q", "origin", "main")
         git(other, "pull", "-q", "origin", "main")
-        with open(os.path.join(other, "kb", "report.md" if conflict else "side.md"), "w") as f:
-            f.write("theirs\n")
-        git(other, "commit", "-qam", "a merge to main")
-        git(other, "push", "-q", "origin", "main")
-        with open(os.path.join(work, "kb", "report.md"), "w") as f:
-            f.write("ours\n")
-        git(work, "add", "kb/report.md")
-        env = dict(os.environ, GITHUB_RUN_ID="111", GITHUB_REPOSITORY="o/r",
-                   GITHUB_STEP_SUMMARY=os.path.join(tmp, "summary.md"))
-        p = subprocess.run(["bash", "-c", loop], cwd=work, env=env, capture_output=True, text=True, timeout=120)
-        tip = subprocess.run(["git", "--git-dir", origin, "show", "main:kb/report.md"],
-                             capture_output=True, text=True).stdout.strip()
-        return p.returncode, tip, p.stdout + p.stderr
+        if other_edits:
+            write(other, other_edits)
+            git(other, "commit", "-qam", "a merge to main")
+            git(other, "push", "-q", "origin", "main")
+        if reject:
+            hook = os.path.join(origin, "hooks", "pre-receive")
+            with open(hook, "w") as f:
+                f.write(HOOK.format(cnt=os.path.join(cnt, "rejected"), fails=reject))
+            os.chmod(hook, 0o755)
+        # The run's first pass, on the main it checked out.
+        write(work, {"kb/report.md": "ours, first pass", "live_metrics.json": "scrape of the first pass",
+                     "veteran_jst.json": "vet of the first pass"})
+        wf = os.path.join(tmp, "wf.yml")
+        with open(wf, "w") as f:
+            f.write(FAKE_WF)
+        genv = os.path.join(tmp, "github_env")
+        open(genv, "w").close()
+        env = dict(os.environ, GITHUB_RUN_ID="111", GITHUB_REPOSITORY="o/r", GITHUB_ENV=genv,
+                   GITHUB_STEP_SUMMARY=os.path.join(tmp, "summary.md"), CNT=cnt, OTHER=other,
+                   RACE="1" if race else "", DAILY_PUSH_BACKOFF="0", LIVE_METRICS_STATUS="first",
+                   CPL_SCRAPE_SECRET="s3", SUPABASE_SERVICE_KEY="k9",
+                   DAILY_REBUILD="%s %s --workflow %s" % (sys.executable, REBUILD_PY, wf))
+        body = ("set -euo pipefail\nstage() {\n  git add kb/report.md kb/src.md live_metrics.json veteran_jst.json\n"
+                "  git add kb/copy.md 2>/dev/null || true\n}\n" + loop)
+        p = subprocess.run(["bash", "-c", body], cwd=work, env=env, capture_output=True, text=True, timeout=120)
+
+        def show(path):
+            return subprocess.run(["git", "--git-dir", origin, "show", "main:" + path],
+                                  capture_output=True, text=True).stdout.strip()
+
+        log = subprocess.run(["git", "--git-dir", origin, "log", "--format=%s", "main"],
+                             capture_output=True, text=True).stdout.splitlines()
+        return {"rc": p.returncode, "out": p.stdout + p.stderr, "log": log, "report": show("kb/report.md"),
+                "side": show("kb/side.md"), "metrics": show("live_metrics.json"), "vet": show("veteran_jst.json"),
+                "genv": open(genv).read(), **{k: count(cnt, k) for k in ("custom", "scrape", "vet", "build")}}
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-rc, tip, out = push_case(conflict=True)
-check("push loop: a rebase conflict never exits 0 (the later rungs stay the backstop)", rc != 0, out)
-check("push loop: a conflict picks no side (main keeps the merge's file)", tip == "theirs", tip)
-rc, tip, out = push_case(conflict=False)
-check("push loop: a clean rebase pushes and exits 0", rc == 0 and tip == "ours", out)
+def ours_landed(r):
+    return any(s.startswith("Daily dashboard update") for s in r["log"])
+
+
+r = push_case()
+check("push: a clean push lands the first pass and rebuilds nothing",
+      r["rc"] == 0 and r["report"] == "ours, first pass" and r["build"] == 0, r)
+r = push_case(other_edits={"kb/side.md": "theirs"})
+check("push: a clean rebase pushes both writers' files and rebuilds nothing",
+      r["rc"] == 0 and r["report"] == "ours, first pass" and r["side"] == "theirs" and r["build"] == 0, r)
+
+r = push_case(other_edits={"kb/src.md": "theirs", "kb/report.md": "the other writer's report"})
+check("push: a conflict then a clean rebuild exits 0", r["rc"] == 0, r["out"][-1500:])
+check("push: the rebuild's push carries the other writer's commit",
+      "a merge to main" in r["log"] and r["log"][0].startswith("Daily dashboard update")
+      and "(rebuilt on " in r["log"][0], r["log"])
+check("push: the rebuilt file derives from the new main, neither side picked",
+      r["report"] == "built from theirs; scrape of the first pass; first; key k9", r["report"])
+check("push: the rebuild ran once and reused the scrape and both fetches (main's copies unchanged)",
+      (r["build"], r["scrape"], r["vet"], r["custom"]) == (1, 0, 0, 0)
+      and r["metrics"] == "scrape of the first pass", (r["build"], r["scrape"], r["vet"], r["custom"], r["metrics"]))
+check("push: the rebuild never ran the set-up step (it exits 7 in the scratch workflow)", "exited 7" not in r["out"])
+
+r = push_case(other_edits={"kb/src.md": "theirs", "kb/report.md": "the other writer's report",
+                           "live_metrics.json": "a newer scrape on main"})
+check("push: when main's live_metrics.json changed, the rebuild scrapes again (and only that fetch)",
+      r["rc"] == 0 and (r["scrape"], r["vet"], r["custom"]) == (1, 0, 0)
+      and r["metrics"] == "rescraped with s3", (r["rc"], r["scrape"], r["vet"], r["metrics"], r["out"][-800:]))
+check("push: a value the rebuilt scrape writes to $GITHUB_ENV reaches the later rebuilt steps and the job",
+      r["report"] == "built from theirs; rescraped with s3; rescraped; key k9"
+      and "LIVE_METRICS_STATUS=rescraped" in r["genv"], (r["report"], r["genv"]))
+
+r = push_case(other_edits={"kb/src.md": "theirs", "kb/report.md": "the other writer's report"}, race=True)
+check("push: a second conflict exits 1 after one rebuild", r["rc"] == 1 and r["build"] == 1,
+      (r["rc"], r["build"], r["out"][-800:]))
+check("push: a second conflict pushes nothing and picks no side",
+      not ours_landed(r) and r["log"][0] == "a second merge" and r["report"] == "theirs again", (r["log"], r["report"]))
+
+r = push_case(reject=99)
+check("push: a failure that is no conflict retries 5 times, then exits 1 with nothing pushed or rebuilt",
+      r["rc"] == 1 and "Push attempt 5 failed" in r["out"] and "Push failed after 5 attempts." in r["out"]
+      and r["build"] == 0 and not ours_landed(r), (r["rc"], r["build"], r["out"][-600:]))
+r = push_case(reject=1)
+check("push: a failure that is no conflict, then a good push, lands on attempt 2 with no rebuild",
+      r["rc"] == 0 and "Push succeeded on attempt 2." in r["out"] and r["build"] == 0
+      and r["report"] == "ours, first pass", (r["rc"], r["out"][-600:]))
+
+# The runner refuses a step it cannot run as GitHub would, rather than running it differently.
+for label, bad in (("an expression in a run script", "run: echo ${{ github.run_id }}"),
+                   ("a `uses` step", "uses: actions/setup-python@v7"),
+                   ("an `if` other than the recheck's", "if: always()\n        run: true")):
+    tmp = tempfile.mkdtemp(prefix="rebuild_refuse_")
+    try:
+        wf = os.path.join(tmp, "wf.yml")
+        with open(wf, "w") as f:
+            f.write("jobs:\n  update-dashboard:\n    steps:\n      - name: Fetch CustomReport from MAP API\n"
+                    "        run: true\n      - name: odd\n        " + bad +
+                    "\n      - name: Commit and push to main\n        run: true\n")
+        p = subprocess.run([sys.executable, REBUILD_PY, "--list", "--workflow", wf], capture_output=True, text=True)
+        check("rebuild runner: refuses %s (exit 2)" % label, p.returncode == 2, p.stdout + p.stderr)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 # ── 4. Finding 9: the plan-name check runs outside the group ──────────────────
 for name in ("cer-decision-apply.yml", "cred-rename-apply.yml"):

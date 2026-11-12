@@ -21,6 +21,14 @@ on:
 # in the working day) could displace an apply waiting in the group. The gate runs outside the group and
 # reads nothing it writes; only a run that will build enters it. The group is still `daily-dashboard`,
 # shared with the applies, the Docket and the Library publisher.
+#
+# Other workflows and merges push to main outside the group, so the run's push can meet a rebase conflict
+# on a generated file. No side of it is ever picked: the run rebuilds ONCE, inside this job, on the new
+# main, and pushes that (COBIx #3110 finding 8, S641: the "Commit and push to main" step, and
+# scripts/daily_rebuild.py, which reruns the steps below as they are written here). Never by a dispatch:
+# a conflicted run that ends green having published nothing makes the gate stand the later rungs down. A
+# second conflict ends the run red with nothing pushed, so the later rungs stay the backstop. The scrape and the two other fetches are
+# reused in the rebuild unless main's copy of their file changed meanwhile.
 
 jobs:
   # A scheduled run stands down when the day (UTC) already has a successful run (S527, Sam, 2026-10-30:
@@ -647,149 +655,171 @@ jobs:
         run: cp CPL_Dashboard.html index.html
 
       # ── Step 6: Commit and push ───────────────────────────────────
+      # `stage` is the run's git add list, written once here. On a rebase conflict the push rebuilds ONCE in
+      # this job on the new main (scripts/daily_rebuild.py reruns the steps above, read from this file) and
+      # stages again (COBIx #3110 finding 8, S641). The env carries
+      # the secrets the rebuild can need (the CustomReport fetch is always reused, so not MAP's);
+      # tests/apply_concurrency_test.py pins the set.
       - name: Commit and push to main
         if: steps.recheck.outputs.run == 'true'
+        env:
+          CPL_SCRAPE_SECRET: ${{ secrets.CPL_SCRAPE_SECRET }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add index.html CPL_Dashboard.html CPL_Data.js \
-                  live_metrics.json kpi_history.json statewide_data.js \
-                  fact-sheet/statewide_recs.js \
-                  fact-sheet/statewide_catalog.json \
-                  fact_sheet_metrics.json \
-                  statewide_prescriptive.js \
-                  college_activity.js college_activity_template.html \
-                  kb/coci_curation.json unified_courses_data.js \
-                  unified_courses_index.js unified_courses_details.js \
-                  unified_courses_standalone.js unified_courses_members.js \
-                  unified_courses_member_desc.js \
-                  unified_courses_suggestions.js \
-                  unified_courses_aligned.js \
-                  credential_reference_data.js \
-                  kb/row_audit/latest.json kb/row_audit/*.md \
-                  exports/unified_courses.xlsx
-          # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
-          # course join artifact the cards read; regenerated in Step 4a1b above.
-          git add cpl_pathways_membership_data.js 2>/dev/null || true
-          # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
-          git add kb/discipline_canonical_subj4.json 2>/dev/null || true
-          # COCI C-ID claim audit (SkyHarbor, 2026-11-06)
-          git add kb/cid_claim_audit.json 2>/dev/null || true
-          # College short names, folded from the College Identity tab's edits in the curation sync (S545).
-          git add kb/college_short_names.json college_short_names.js 2>/dev/null || true
-          # SkyView's decision payload + the served page that inlines it (Step
-          # 4d2). ccr_universe.json is deliberately NOT here — the layout is
-          # hand-rebuilt (Sam, 2026-09-06).
-          git add prototype/ccr_atlas_data.json prototype/skyview.html 2>/dev/null || true
-          # SkyView's CPL payload (Step 4d3): the crosswalk joined to the curated
-          # agencies and the articulated-exhibit feed, rebuilt every run.
-          git add prototype/ccr_cpl.json 2>/dev/null || true
-          # ⚠️ REBUILT EVERY RUN AND NEVER LANDED (found 2026-09-10, S252): step
-          # 4d3b regenerated this payload daily while this list did not name it,
-          # so main's copy went stale against the refreshed CER and
-          # tests/ccr_cpl_universe_test.py read red on main itself.
-          git add prototype/ccr_cpl_universe.json 2>/dev/null || true
-          git add prototype/ccr_cpl_universe_members.json 2>/dev/null || true
-          # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
-          git add prototype/ccr_sky.json 2>/dev/null || true
-          # The discipline-blank worklist (Step 4d5): the identities the edge
-          # cannot reach, for a curator pass.
-          git add kb/discipline_blanks_worklist.json 2>/dev/null || true
-          # The orphan-parent worklist (Step 4d6): parents whose members all
-          # disagree with them, for the same curator pass.
-          git add kb/orphan_parent_worklist.json 2>/dev/null || true
-          # The re-mint blast radius (Step 4d7): rebuilt from today's curation.
-          git add prototype/ccr_remint_blast.json kb/remint_blast_worklist.json 2>/dev/null || true
-          # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
-          git add kb/discipline_cpl_rollup.json 2>/dev/null || true
-          # Cred-Ref PR-5a: credential-review curator-edit overlay
-          git add kb/credential_review_overlay.json 2>/dev/null || true
-          # OQ-08: governance drift candidates (what's missing from the register)
-          git add kb/governance_candidates.json 2>/dev/null || true
-          # Common CR Reference: the ranked curation worklist the tab fetches.
-          # Curator decisions are NOT here — they live in Supabase, so a rebuild
-          # cannot overwrite one.
-          git add kb/cr_reference_worklist.json 2>/dev/null || true
-          # CER unclassified-triage PR-2: raw-title→unified-title assignment overlay
-          git add kb/unclassified_assignments.json 2>/dev/null || true
-          # CER unclassified-triage PR-3 (gated auto-fold): the credential KB the
-          # fold mutates + its receipts + the audit snapshot it prunes. The
-          # articulation re-point (supersede lane) also lands here.
-          git add kb/unified_titles.json kb/credentials.json \
-                  kb/coci_articulations.json kb/unclassified_fold/ 2>/dev/null || true
-          # Exhibit auditor output (step 4b2): the CER triage worklist's live
-          # source + the human report ((<date>.full.json stays gitignored).
-          git add kb/exhibit_audit/latest.json kb/exhibit_audit/*.md 2>/dev/null || true
-          # Identity-anchored triage suggestions (step 4b3) — the worklist's 💡 chips.
-          git add kb/unclassified_suggestions.json 2>/dev/null || true
-          # The Exhibits tab's Review queue (kb/_build_exhibits_review.py).
-          git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
-          # The Exhibits tab's Another look (kb/_sweep_exhibit_titles.py).
-          git add kb/exhibits_sweep.json 2>/dev/null || true
-          git add kb/exhibits_related.json 2>/dev/null || true
-          git add kb/credential_title_moves.json 2>/dev/null || true
-          git add kb/exhibits_ai_sort.json 2>/dev/null || true
-          git add kb/exhibit_cert_links.json 2>/dev/null || true
-          git add kb/exhibit_slo_neighbors.json 2>/dev/null || true
-          # The public adoption page's data (kb/_build_adopt_page.py) and its analysis (kb/_build_adopt_align.py).
-          git add library/adopt/adopt_data.json library/adopt/adopt_more.json library/adopt/adopt_align.json library/adopt/adopt_ai.json 2>/dev/null || true
-          # COCI source-data quality queues (regenerated by export_unified_courses
-          # each run — for the colleges to fix at source): mojibake title repairs +
-          # duplicate-CourseControlNumber errors (one control # → ≥2 courses).
-          git add kb/coci_title_corrections.json \
-                  kb/coci_duplicate_control_numbers.json 2>/dev/null || true
-          # Cred-Ref PR-5b/0: credential rename dry-run artifacts (Mode B preview)
-          git add kb/cred_rename_dryrun/report.md \
-                  kb/cred_rename_dryrun/alias_map.json \
-                  kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
-          # Funding priority-metric actuals (P2/P3, suppressed — ratified ADR)
-          git add cpl_funding_performance.js 2>/dev/null || true
-          git add cpl_funding_ess.js 2>/dev/null || true
-          # MIL/JST veteran data (aggregate per-college MIL/JST + Veteran Star;
-          # no PII — same counts shown on the public MAP dashboard). Guarded:
-          # absent until the first successful fetch_veteran_jst.py run.
-          git add veteran_jst.json 2>/dev/null || true
-          # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
-          # (graceful-degradation fallback for Supabase outages)
-          git add kb/workplan_goals_snapshot.json 2>/dev/null || true
-          # Projects Phase 2 PR-4: daily-cached Supabase snapshot
-          # (graceful-degradation fallback for Supabase outages)
-          git add kb/projects_snapshot.json 2>/dev/null || true
-          # The Commons tab's figures (the step before the copy): rebuilt every run.
-          git add kb/status/commons.json 2>/dev/null || true
-          git add kb/status/commons_history.json 2>/dev/null || true
-          git add kb/ccr_doubt.json 2>/dev/null || true
-          git add kb/status/program-requirements-checked.json 2>/dev/null || true
-          # The Common Subjects Reference's daily scan (the step before the Commons build).
-          git add kb/csr_out/latest.json 2>/dev/null || true
-          # Project lifecycle (Session 84): committed ledger of Tabled/Archived
-          # projects (offline fallback + the "noted in the KB" record)
-          git add kb/project_lifecycle.json 2>/dev/null || true
-          # Budget Phase 3 PR-1: daily-cached Supabase snapshot
-          # (budget_funding + personnel; graceful-degradation fallback)
-          git add kb/budget_snapshot.json 2>/dev/null || true
-          # Word reports (Master + per-project minis) — regenerated by
-          # generate_reports.js inside the pipeline run from the same
-          # CPL_Data.js (incl. the live item_updates fold), and linked from
-          # the dashboard (Master Report fallback + the 34 card Report
-          # buttons). Committing them keeps those links current (they had
-          # gone stale — 2026-07-02).
-          git add reports/CPL_Master_Report.docx reports/projects/*.docx 2>/dev/null || true
-          # COCI title-correction queue: raw course titles with encoding
-          # artifacts, repaired for display (e:1 member chip) + queued here
-          # so the source records can be fixed in COCI
-          git add kb/coci_title_corrections.json 2>/dev/null || true
-          # CustomReport_latest.json is intentionally NOT committed — it carries
-          # student PII (names/DOB/IDs) + staff contacts. It is fetched fresh each
-          # run (Step 1) and read by the generator at runtime; gitignored so it
-          # never lands in this PUBLIC repo. Only aggregated artifacts are committed.
+          stage() {
+            git add index.html CPL_Dashboard.html CPL_Data.js \
+                    live_metrics.json kpi_history.json statewide_data.js \
+                    fact-sheet/statewide_recs.js \
+                    fact-sheet/statewide_catalog.json \
+                    fact_sheet_metrics.json \
+                    statewide_prescriptive.js \
+                    college_activity.js college_activity_template.html \
+                    kb/coci_curation.json unified_courses_data.js \
+                    unified_courses_index.js unified_courses_details.js \
+                    unified_courses_standalone.js unified_courses_members.js \
+                    unified_courses_member_desc.js \
+                    unified_courses_suggestions.js \
+                    unified_courses_aligned.js \
+                    credential_reference_data.js \
+                    kb/row_audit/latest.json kb/row_audit/*.md \
+                    exports/unified_courses.xlsx
+            # CPL Pathways AUTHORITATIVE membership view (StarMora) — the program→
+            # course join artifact the cards read; regenerated in Step 4a1b above.
+            git add cpl_pathways_membership_data.js 2>/dev/null || true
+            # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
+            git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+            # COCI C-ID claim audit (SkyHarbor, 2026-11-06)
+            git add kb/cid_claim_audit.json 2>/dev/null || true
+            # College short names, folded from the College Identity tab's edits in the curation sync (S545).
+            git add kb/college_short_names.json college_short_names.js 2>/dev/null || true
+            # SkyView's decision payload + the served page that inlines it (Step
+            # 4d2). ccr_universe.json is deliberately NOT here — the layout is
+            # hand-rebuilt (Sam, 2026-09-06).
+            git add prototype/ccr_atlas_data.json prototype/skyview.html 2>/dev/null || true
+            # SkyView's CPL payload (Step 4d3): the crosswalk joined to the curated
+            # agencies and the articulated-exhibit feed, rebuilt every run.
+            git add prototype/ccr_cpl.json 2>/dev/null || true
+            # ⚠️ REBUILT EVERY RUN AND NEVER LANDED (found 2026-09-10, S252): step
+            # 4d3b regenerated this payload daily while this list did not name it,
+            # so main's copy went stale against the refreshed CER and
+            # tests/ccr_cpl_universe_test.py read red on main itself.
+            git add prototype/ccr_cpl_universe.json 2>/dev/null || true
+            git add prototype/ccr_cpl_universe_members.json 2>/dev/null || true
+            # SkyView's sky placement (Step 4d4): the islands on the sphere, rebuilt when its inputs change.
+            git add prototype/ccr_sky.json 2>/dev/null || true
+            # The discipline-blank worklist (Step 4d5): the identities the edge
+            # cannot reach, for a curator pass.
+            git add kb/discipline_blanks_worklist.json 2>/dev/null || true
+            # The orphan-parent worklist (Step 4d6): parents whose members all
+            # disagree with them, for the same curator pass.
+            git add kb/orphan_parent_worklist.json 2>/dev/null || true
+            # The re-mint blast radius (Step 4d7): rebuilt from today's curation.
+            git add prototype/ccr_remint_blast.json kb/remint_blast_worklist.json 2>/dev/null || true
+            # CSR rollup: per-discipline CPL opportunities (mirror of EACR/CCR)
+            git add kb/discipline_cpl_rollup.json 2>/dev/null || true
+            # Cred-Ref PR-5a: credential-review curator-edit overlay
+            git add kb/credential_review_overlay.json 2>/dev/null || true
+            # OQ-08: governance drift candidates (what's missing from the register)
+            git add kb/governance_candidates.json 2>/dev/null || true
+            # Common CR Reference: the ranked curation worklist the tab fetches.
+            # Curator decisions are NOT here — they live in Supabase, so a rebuild
+            # cannot overwrite one.
+            git add kb/cr_reference_worklist.json 2>/dev/null || true
+            # CER unclassified-triage PR-2: raw-title→unified-title assignment overlay
+            git add kb/unclassified_assignments.json 2>/dev/null || true
+            # CER unclassified-triage PR-3 (gated auto-fold): the credential KB the
+            # fold mutates + its receipts + the audit snapshot it prunes. The
+            # articulation re-point (supersede lane) also lands here.
+            git add kb/unified_titles.json kb/credentials.json \
+                    kb/coci_articulations.json kb/unclassified_fold/ 2>/dev/null || true
+            # Exhibit auditor output (step 4b2): the CER triage worklist's live
+            # source + the human report ((<date>.full.json stays gitignored).
+            git add kb/exhibit_audit/latest.json kb/exhibit_audit/*.md 2>/dev/null || true
+            # Identity-anchored triage suggestions (step 4b3) — the worklist's 💡 chips.
+            git add kb/unclassified_suggestions.json 2>/dev/null || true
+            # The Exhibits tab's Review queue (kb/_build_exhibits_review.py).
+            git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+            # The Exhibits tab's Another look (kb/_sweep_exhibit_titles.py).
+            git add kb/exhibits_sweep.json 2>/dev/null || true
+            git add kb/exhibits_related.json 2>/dev/null || true
+            git add kb/credential_title_moves.json 2>/dev/null || true
+            git add kb/exhibits_ai_sort.json 2>/dev/null || true
+            git add kb/exhibit_cert_links.json 2>/dev/null || true
+            git add kb/exhibit_slo_neighbors.json 2>/dev/null || true
+            # The public adoption page's data (kb/_build_adopt_page.py) and its analysis (kb/_build_adopt_align.py).
+            git add library/adopt/adopt_data.json library/adopt/adopt_more.json library/adopt/adopt_align.json library/adopt/adopt_ai.json 2>/dev/null || true
+            # COCI source-data quality queues (regenerated by export_unified_courses
+            # each run — for the colleges to fix at source): mojibake title repairs +
+            # duplicate-CourseControlNumber errors (one control # → ≥2 courses).
+            git add kb/coci_title_corrections.json \
+                    kb/coci_duplicate_control_numbers.json 2>/dev/null || true
+            # Cred-Ref PR-5b/0: credential rename dry-run artifacts (Mode B preview)
+            git add kb/cred_rename_dryrun/report.md \
+                    kb/cred_rename_dryrun/alias_map.json \
+                    kb/cred_rename_dryrun/collisions.json 2>/dev/null || true
+            # Funding priority-metric actuals (P2/P3, suppressed — ratified ADR)
+            git add cpl_funding_performance.js 2>/dev/null || true
+            git add cpl_funding_ess.js 2>/dev/null || true
+            # MIL/JST veteran data (aggregate per-college MIL/JST + Veteran Star;
+            # no PII — same counts shown on the public MAP dashboard). Guarded:
+            # absent until the first successful fetch_veteran_jst.py run.
+            git add veteran_jst.json 2>/dev/null || true
+            # Workplan Goals Phase 1 PR-4: daily-cached Supabase snapshot
+            # (graceful-degradation fallback for Supabase outages)
+            git add kb/workplan_goals_snapshot.json 2>/dev/null || true
+            # Projects Phase 2 PR-4: daily-cached Supabase snapshot
+            # (graceful-degradation fallback for Supabase outages)
+            git add kb/projects_snapshot.json 2>/dev/null || true
+            # The Commons tab's figures (the step before the copy): rebuilt every run.
+            git add kb/status/commons.json 2>/dev/null || true
+            git add kb/status/commons_history.json 2>/dev/null || true
+            git add kb/ccr_doubt.json 2>/dev/null || true
+            git add kb/status/program-requirements-checked.json 2>/dev/null || true
+            # The Common Subjects Reference's daily scan (the step before the Commons build).
+            git add kb/csr_out/latest.json 2>/dev/null || true
+            # Project lifecycle (Session 84): committed ledger of Tabled/Archived
+            # projects (offline fallback + the "noted in the KB" record)
+            git add kb/project_lifecycle.json 2>/dev/null || true
+            # Budget Phase 3 PR-1: daily-cached Supabase snapshot
+            # (budget_funding + personnel; graceful-degradation fallback)
+            git add kb/budget_snapshot.json 2>/dev/null || true
+            # Word reports (Master + per-project minis) — regenerated by
+            # generate_reports.js inside the pipeline run from the same
+            # CPL_Data.js (incl. the live item_updates fold), and linked from
+            # the dashboard (Master Report fallback + the 34 card Report
+            # buttons). Committing them keeps those links current (they had
+            # gone stale — 2026-07-02).
+            git add reports/CPL_Master_Report.docx reports/projects/*.docx 2>/dev/null || true
+            # COCI title-correction queue: raw course titles with encoding
+            # artifacts, repaired for display (e:1 member chip) + queued here
+            # so the source records can be fixed in COCI
+            git add kb/coci_title_corrections.json 2>/dev/null || true
+            # CustomReport_latest.json is intentionally NOT committed — it carries
+            # student PII (names/DOB/IDs) + staff contacts. It is fetched fresh each
+            # run (Step 1) and read by the generator at runtime; gitignored so it
+            # never lands in this PUBLIC repo. Only aggregated artifacts are committed.
+          }
+          # `stage` above is the list, written once. Commit, then push; a push that fails is retried up to 5
+          # attempts (fetch, rebase onto the new main, push again), and a failure that is no conflict keeps that
+          # retry. A rebase CONFLICT means another writer changed a file this run also built. No side is picked:
+          # the rebase is aborted and scripts/daily_rebuild.py resets the tree to the new main and reruns the
+          # steps above there, once; the rebuilt files are staged and pushed. A second conflict exits 1 with
+          # nothing pushed, so the later rungs stay the backstop. The run exits 0 only after a push lands, or when
+          # there is nothing to commit (main already holds this build). DAILY_REBUILD and DAILY_PUSH_BACKOFF are
+          # for tests/apply_concurrency_test.py, which runs this loop in a scratch repo.
+          daily_rebuilt=0
+          daily_rebuild="${DAILY_REBUILD:-python3 scripts/daily_rebuild.py}"
+
+          stage
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
           git commit -m "Daily dashboard update — $(date +%Y-%m-%d)"
-          # Retry push with rebase on non-fast-forward (handles concurrent pushes to main)
+
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded on attempt $attempt."
@@ -797,18 +827,31 @@ jobs:
             fi
             echo "Push attempt $attempt failed — rebasing onto origin/main and retrying."
             git fetch origin main
-            # The run leaves UNSTAGED regenerated files (everything not in the
-            # git add list) in the tree, and `git rebase` refuses with
-            # "You have unstaged changes" — which is exactly how the
-            # 2026-07-08 20:23 run died when PR #698 merged mid-run. That
-            # output is disposable (the next run regenerates it): discard it
-            # so the committed snapshot rebases cleanly.
+            # The run leaves UNSTAGED regenerated files (everything not in the git add list) in the tree, and
+            # `git rebase` refuses with "You have unstaged changes" (the 2026-07-08 20:23 run died that way when
+            # PR #698 merged mid-run). That output is disposable: discard it so the committed snapshot rebases.
             git checkout -- .
-            # A conflict ends the run red, so the later rungs of the ladder stay the backstop (the gate stands
-            # down only after a success). Rebuilding in the job on the new main is COBIx #3110 finding 8, left
-            # for its own PR: it needs the generator steps runnable twice without copying them (S641).
-            git rebase origin/main || { git rebase --abort; exit 1; }
-            sleep $((attempt * 2))
+            if git rebase origin/main; then
+              sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
+              continue
+            fi
+            git rebase --abort
+            if [ "$daily_rebuilt" = 1 ]; then
+              echo "::error title=Daily push lost twice::A second rebase conflict, after the rebuild on the new main. Nothing is pushed; the later rungs of the ladder are the backstop."
+              exit 1
+            fi
+            daily_rebuilt=1
+            echo "::warning title=Daily push conflicted::Another writer changed a file this run built. Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
+            if ! $daily_rebuild --onto origin/main; then
+              echo "::error title=Daily rebuild failed::The rebuild on the new main failed. Nothing is pushed; the later rungs of the ladder are the backstop."
+              exit 1
+            fi
+            stage
+            if git diff --cached --quiet; then
+              echo "The rebuild on the new main changed nothing: main already holds this build."
+              exit 0
+            fi
+            git commit -m "Daily dashboard update — $(date +%Y-%m-%d) (rebuilt on $(git rev-parse --short origin/main))"
           done
           echo "Push failed after 5 attempts."
           exit 1

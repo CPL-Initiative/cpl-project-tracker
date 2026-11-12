@@ -9,3 +9,6 @@
 openpyxl==3.1.5
 python-docx==1.2.0
 requests==2.34.2
+# scripts/daily_rebuild.py reads the daily workflow's own steps to rebuild on a new main after a lost
+# push (COBIx #3110 finding 8, S641).
+PyYAML==6.0.2
