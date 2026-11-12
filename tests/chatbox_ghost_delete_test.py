@@ -60,6 +60,8 @@ class Fake:
         self.fail_deletes_after = None  # raise (after applying) on every delete past this many
         self.miscount = 0               # the exact count the server reports, off by this much
         self.saw_416 = False
+        self.deleted_any = False
+        self.bad_counts_after_delete = 0   # after the first delete, this many counted reads report a wrong total
 
     def snapshot(self):
         return {t: g.canonical(r) for t, r in sorted(self.rows.items())}
@@ -72,8 +74,12 @@ class Fake:
         if method == "GET":
             assert q.get("order") == ["unified_title.asc"], q
             lo, hi = (int(x) for x in headers["Range"].split("-"))
-            total = len(self.rows) + self.miscount
             counted = "count=exact" in (headers.get("Prefer") or "")
+            off = self.miscount
+            if counted and self.deleted_any and self.bad_counts_after_delete:
+                self.bad_counts_after_delete -= 1
+                off += 1                # this read's count will not match its rows
+            total = len(self.rows) + off
             if lo >= len(self.rows) and self.rows:
                 self.saw_416 = True     # PostgREST answers a range past the end with 416
                 return 416, {"Content-Range": "*/%d" % total}, b'{"message":"Requested range not satisfiable"}'
@@ -88,6 +94,7 @@ class Fake:
             val = q.get("unified_title", [""])[0]
             assert val.startswith("eq."), "a delete without an exact title: %r" % parts.query
             self.rows.pop(val[3:], None)
+            self.deleted_any = True
             n = sum(1 for c in self.calls if c[0] == "DELETE")
             if self.lose_next_delete_response:
                 self.lose_next_delete_response -= 1
@@ -213,6 +220,9 @@ try:
     check("apply: reports each skip in its bucket",
           applied["skipped_in_reference"] == ["Live 0002"] and applied["held_changed_since_plan"] == ["live 0001"]
           and "Ghost B, renamed" in applied["gone"])
+    check("apply: deleted_this_run names what this run deleted, apart from what was already gone",
+          applied["deleted_this_run"] == ["Ghost A (retired)"]
+          and sorted(applied["gone"]) == ["Ghost A (retired)", "Ghost B, renamed"], applied)
     log = g.read_json(os.path.join(pdir, "apply_log.json"))["attempts"][0]
     check("apply: the log names every planned title and the skips",
           len(log["planned"]) == 4 and log["skipped_gone_before_apply"] == ["Ghost B, renamed"]
@@ -311,7 +321,7 @@ try:
 
     # 5c. sync first, then delete: every successor (an applied rename's end, each title the fold retired a ghost
     # into) must carry the ghost's name on its live row; the notes are recomputed at apply time
-    def alias_root(applied_at="2026-11-10T10:00:00Z"):
+    def alias_root(applied_at="2026-11-10T10:00:00Z", extra=None):
         root = tempfile.mkdtemp(dir=TMP)
         kb = os.path.join(root, "kb")
         os.makedirs(os.path.join(kb, "unclassified_fold"))
@@ -320,7 +330,8 @@ try:
         snap = os.path.join(kb, "cred_rename_out", "2026-11-10")
         os.makedirs(snap)
         with open(os.path.join(snap, "alias_map.json"), "w") as f:
-            json.dump({"_applied_at": applied_at, "renames": {"Ghost A (retired)": "Live 0003"}, "merges": {}}, f)
+            json.dump({"_applied_at": applied_at, "renames": dict({"Ghost A (retired)": "Live 0003"}, **(extra or {})),
+                       "merges": {}}, f)
         with open(os.path.join(kb, "unclassified_fold", "retires.json"), "w") as f:
             json.dump({"retires": [{"title": "Ghost B, renamed", "to": ["Live 0004", "Live 0005"],
                                     "day": "2026-11-10", "at": "2026-11-10T11:00:00Z"}]}, f)
@@ -382,6 +393,36 @@ try:
         check("apply: refuses when the resolver fails at apply time", False)
     except g.Refused:
         check("apply: refuses when the resolver fails at apply time", all(t in fake.rows for t in GHOSTS))
+
+    # 5c2. a case-only rename: the successor's own title answers the old name at tier 1
+    check("successor_carries: a successor equal to the ghost but for case carries it",
+          g.successor_carries("live 0001", ["Live 0001"], {"Live 0001": {"raw_variants": []}})
+          and not g.successor_carries("Ghost A (retired)", ["Live 0003"], {"Live 0003": {"raw_variants": []}}))
+    case_root = alias_root(extra={"live 0001": "Live 0001"})
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake, root=case_root)
+    code, applied = do_apply(rest(fake), pdir, 3, ref, root=case_root, **LOW)
+    check("apply: deletes a case-only renamed ghost without waiting for a variant the sync never writes",
+          doc["aliases"]["live 0001"]["successors"] == ["Live 0001"] and "live 0001" not in fake.rows
+          and "live 0001" not in applied["held_successor_lacks_old_name"], applied)
+
+    # 5c3. the read after the deletes: retried on a count mismatch, and a receipt even when it keeps failing
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    fake.bad_counts_after_delete = 1
+    code, applied = do_apply(rest(fake), pdir, 3, ref, **LOW)
+    check("apply: one failed read after the deletes is retried and the receipt is whole",
+          code == 0 and "after_read_error" not in applied and sorted(applied["deleted_this_run"]) == sorted(GHOSTS))
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    fake.bad_counts_after_delete = 99
+    sleeps = []
+    code, applied = g.apply(g.Rest("http://fake", "k", send=fake.send, sleep=sleeps.append), pdir, 3, ref,
+                            committed=committed_ok, **LOW)
+    on_file = g.read_json(os.path.join(pdir, "applied.json"))
+    check("apply: when the read after the deletes keeps failing, applied.json says so and the run exits 1",
+          code == 1 and on_file.get("after_read_error") and on_file["gone"] is None
+          and all(t not in fake.rows for t in GHOSTS) and len(sleeps) == g.AFTER_READ_TRIES - 1, (code, on_file, sleeps))
 
     # 5d. the read: an exact count, 206 pages, a 416 end page
     fake = Fake(START)

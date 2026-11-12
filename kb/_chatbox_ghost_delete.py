@@ -73,6 +73,7 @@ PREFIX = "chatbox_ghost_delete_"
 PAGE = 1000
 DELETE_BATCH = 25
 INSERT_BATCH = 100
+AFTER_READ_TRIES = 3
 MAX_SHARE = 0.15
 MIN_REFERENCE = 2000
 DEFAULT_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"   # the sync's default (kb/_sync_credential_catalog.py)
@@ -372,8 +373,12 @@ def successor_carries(title, successors, live):
     """True when every successor (an applied rename's end and each title the fold retired `title` into) has a LIVE row
     whose raw_variants carry `title` (lower-cased, as Sierra's tier 2 compares); vacuously true with none. Sam,
     2026-11-11: old titles stay as search aliases; the sync writes them (kb/_sync_credential_catalog.py retired_names),
-    so a ghost goes only once the sync has run: sync first, then delete."""
+    so a ghost goes only once the sync has run: sync first, then delete. A successor whose title equals `title`
+    case-insensitively carries it already: tier 1 compares lower(unified_title), and the sync's to_row adds no
+    variant equal to the row's own title."""
     for s in successors or []:
+        if s.lower() == title.lower():
+            continue
         row = live.get(s)
         if not row or title.lower() not in {(v or "").lower() for v in row.get("raw_variants") or []}:
             return False
@@ -462,8 +467,36 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
         attempt["batches_sent"] += 1
         write_json(log_path, log)
 
-    after = {r["unified_title"]: r for r in rest.read_all()}
     planned = [g["unified_title"] for g in doc["ghosts"]]
+    after, after_error = None, None
+    for attempt_no in range(1, AFTER_READ_TRIES + 1):
+        try:
+            after = {r["unified_title"]: r for r in rest.read_all()}
+            break
+        except Exception as exc:                   # noqa: BLE001 — a count mismatch or a lost page: read again
+            after_error = "%s: %s" % (type(exc).__name__, exc)
+            if attempt_no < AFTER_READ_TRIES:
+                rest.sleep(2 * attempt_no)
+    if after is None:
+        applied = {
+            "_about": ("The fresh read after the deletes failed %d times, so what landed is unknown: apply_log.json "
+                       "says what was sent. Read the table again before anything else; the undo works from plan.json."
+                       % AFTER_READ_TRIES),
+            "README": UNDO_HOW,
+            "read_at": utc_iso(now),
+            "after_read_error": after_error,
+            "planned": len(planned),
+            "sent_for_delete": targets[:attempt["batches_sent"] * DELETE_BATCH],
+            "deleted_this_run": None, "gone": None, "remain": None, "ghosts_remain": None,
+            "skipped_in_reference": in_reference,
+            "held_changed_since_plan": changed,
+            "held_successor_lacks_old_name": unaliased,
+            "error": attempt["error"],
+        }
+        write_json(os.path.join(plan_dir, "applied.json"), applied)
+        print("apply %s: the read after the deletes failed (%s); applied.json says so" % (
+            os.path.relpath(plan_dir, REPO), after_error))
+        return 1, applied
     remain = [t for t in planned if t in after]
     ghosts_remain = [t for t in remain if t not in ref["titles"]]
     applied = {
@@ -472,7 +505,8 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
         "read_at": utc_iso(now),
         "live_count_after": len(after),
         "planned": len(planned),
-        "gone": [t for t in planned if t not in after],
+        "deleted_this_run": [t for t in targets if t not in after],   # live before this run's deletes, absent after
+        "gone": [t for t in planned if t not in after],               # absent now, whoever removed it
         "remain": remain,
         "ghosts_remain": ghosts_remain,
         "skipped_in_reference": in_reference,
