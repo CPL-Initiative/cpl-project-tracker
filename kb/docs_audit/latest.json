@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1474,
-    "bytes": 15085320,
+    "bytes": 15090208,
     "over_budget": 7,
     "handoff_max": 644,
     "always_loaded_files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 151,
-        "bytes": 4653141,
+        "bytes": 4653416,
         "over": 1
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 87,
-        "bytes": 2748348,
+        "bytes": 2749309,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 550224,
+        "bytes": 551845,
         "over": 6
       },
       "handoff": {
         "files": 605,
-        "bytes": 4202817,
+        "bytes": 4204848,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 76
     },
     "vault": {
-      "files": 26812,
-      "bytes": 4676100694,
-      "heavy_bytes": 3399924585,
+      "files": 26822,
+      "bytes": 4677936958,
+      "heavy_bytes": 3401392867,
       "heavy_share": 0.727,
       "ignore_filters": [
         "agent-a0a200e010b943070/kb/receipts",
@@ -161,13 +161,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 164792,
+        "bytes": 165067,
         "limit": 150000,
         "lane": "other",
-        "over_by": 14792,
+        "over_by": 15067,
         "ratio": 1.1
       },
-      "message": "164,792 B is 1.1× the other budget (150,000 B) — candidate for compaction",
+      "message": "165,067 B is 1.1× the other budget (150,000 B) — candidate for compaction",
       "path": "docs/reference/dependency_map.md"
     },
     {
@@ -226,37 +226,37 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 24187,
+        "bytes": 25585,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 4187,
-        "ratio": 1.21
+        "over_by": 5585,
+        "ratio": 1.28
       },
-      "message": "24,187 B is 1.2× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "25,585 B is 1.3× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20351,
+        "bytes": 20474,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 351,
+        "over_by": 474,
         "ratio": 1.02
       },
-      "message": "20,351 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
+      "message": "20,474 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 2207421147,
+        "bytes": 2208871494,
         "kind": "dir"
       },
-      "message": "directory totals 2,207,421,147 B inside the vault"
+      "message": "directory totals 2,208,871,494 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -363,10 +363,10 @@
       "fixable": false,
       "path": "tests",
       "detail": {
-        "bytes": 11701599,
+        "bytes": 11717953,
         "kind": "dir"
       },
-      "message": "directory totals 11,701,599 B inside the vault"
+      "message": "directory totals 11,717,953 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -733,10 +733,10 @@
       "fixable": false,
       "path": "exports/unified_courses.xlsx",
       "detail": {
-        "bytes": 6716620,
+        "bytes": 6716621,
         "kind": "file"
       },
-      "message": "6,716,620 B single file inside the vault"
+      "message": "6,716,621 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -813,10 +813,10 @@
       "fixable": false,
       "path": "tools/first_light_candidates.json",
       "detail": {
-        "bytes": 4086982,
+        "bytes": 4088562,
         "kind": "file"
       },
-      "message": "4,086,982 B single file inside the vault"
+      "message": "4,088,562 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
