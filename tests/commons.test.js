@@ -30,7 +30,8 @@ check("boot wiring loads commons_progress.js before commons.js",
   /onActivate\('commons'[\s\S]{0,400}loadScript\('commons_progress\.js'[\s\S]{0,300}loadScript\('commons\.js', 'CPL_COMMONS'/.test(cpl));
 const groupsSrc = fs.readFileSync("nav_groups.js", "utf8");
 check("nav_groups.js lists 'commons' beside program-requirements", /'program-requirements', 'commons'/.test(groupsSrc));
-const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 check("daily workflow builds the Commons status", /python3 kb\/_build_commons_status\.py/.test(wf));
 check("daily workflow commits kb/status/commons.json", /git add kb\/status\/commons\.json/.test(wf));
 check("the build step runs before the copy to index.html", wf.indexOf("_build_commons_status.py") < wf.indexOf("cp CPL_Dashboard.html index.html"));
