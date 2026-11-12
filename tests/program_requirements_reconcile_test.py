@@ -335,8 +335,8 @@ vv_text = ("[Tab: REQUIREMENTS]\nTotal Certificate Hours: 96.0 - 108.0\nCourse L
            "WKPR 011\tPersonal Growth, Development and Wellness\t0.0\nWKPR 012\tDecision Making and Problem Solving in the "
            "Workplace\t0.0\nWKPR 014\tComminication Skills in the Workforce\t0.0\nTotal Units\t0")
 vv_steps = R.load_steps()
-check("Victor Valley's entry has no college-level awards gate (the Redwoods lesson) and one course_hours step",
-      not vv_steps[VV].get("awards") and [s["kind"] for s in vv_steps[VV]["steps"]] == ["course_hours"])
+check("Victor Valley's entry has no college-level awards gate (the Redwoods lesson): course_hours, then Cal-GETC",
+      not vv_steps[VV].get("awards") and [s["kind"] for s in vv_steps[VV]["steps"]] == ["course_hours", "set"])
 with open(os.path.join(ROOT, "kb", vv_steps[VV]["steps"][0]["hours_file"])) as fh:
     vv_hours = json.load(fh)
 check("the hours file keeps noncredit courses only: ESL 012A's 108, never ESL 12A's 54 (3.0 Units, one normalized code)",
@@ -406,6 +406,28 @@ units_rec = {"program": {"measure": "units", "total_units": {"min": 3, "max": 3}
 check("a credit record listing ESL 12A takes no hours", R.reconcile(units_rec, "x", VV, "A.A. Degree", steps=vv_steps)[1] == [])
 check("another college's hours record takes no Victor Valley hours",
       R.reconcile(cs["record"], vv_text, "Hartnell College", cs["award"], steps=vv_steps)[1] == [])
+
+print("Victor Valley's transfer degrees take its own Cal-GETC total, 34-42 (S639; reads 43136401325, 43137395720)")
+aat_text = ("[Tab: REQUIREMENTS]\nTo earn this degree complete the major coursework listed here with “C” grades or "
+            "higher and the following graduation requirements:\n60 CSU transferable units;\nthe Cal-GETC pattern; and\n"
+            "2.0 minimum overall CSU GPA.\nCourse List\nCode\nTitle\nUnits\nRequired Core:\t6.0\nHIST C1001\n"
+            "United States History to 1877\nTotal Units\t18")
+for cn in ("31788", "44287"):
+    one = vv_filed(cn)
+    got, gn = R.reconcile(one["record"], aat_text, VV, one["award"], steps=vv_steps)
+    check("%s takes ge_units 34-42 from the catalog's own Cal-GETC certificate" % cn,
+          got["program"]["ge_units"] == {"min": 34, "max": 42}
+          and any("Total Units 34-42" in n["words"] for n in gn if n["field"] == "ge_units"))
+    deg = S.degree_verdict(got["program"], (60.0, 60.0), one["score"]["arithmetic"]["computed"][0] + 34,
+                           one["score"]["arithmetic"]["computed"][1] + 42, one["award"])
+    check("%s: the major and 34-42 allow the printed 60" % cn, deg["pass"])
+nursing = vv_filed("04955")
+check("a local degree (Nursing A.S. 04955, VVC General Education) takes no Cal-GETC figure",
+      not [n for n in R.reconcile(nursing["record"], aat_text, VV, nursing["award"], steps=vv_steps)[1]
+           if n["field"] == "ge_units"])
+check("a page that does not print the graduation requirement line takes nothing",
+      not [n for n in R.reconcile(vv_filed("31788")["record"], "the Cal-GETC pattern", VV, "A.A- T Degree",
+                                  steps=vv_steps)[1] if n["field"] == "ge_units"])
 
 print("tabs_with_prose: an Overview naming every course, the course list in a hidden tab (S639, Victor Valley's EMS)")
 import _program_requirements_pilot as P  # noqa: E402
