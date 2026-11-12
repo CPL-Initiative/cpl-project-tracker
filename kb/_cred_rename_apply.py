@@ -53,6 +53,11 @@ every value this apply changed; `python3 kb/_cred_rename_undo.py <that folder>`
 reverses renames and merges alike. A second apply the same day writes
 <date>-2/ so the first receipt survives.
 
+Saved assignments (#3110, after the 2026-11-12 apply): every saved value a bot left on an old title moves to the new
+title in the same step (kb/_cred_rename_repoint.py: the unclassified assignments, the classifier's cache, the
+occupation map, MAP's by_title); a person's row is held, unchanged, and listed. repoint.json beside the receipt holds
+the planned list and a fresh read of each file; the undo reverses it.
+
 Issuer precedence (#3110 build step 1): which issuer a folded title keeps is
 kb/fold_issuer.py's decision; the plan is frozen into the snapshot as
 issuer_resolution for the Supabase carry and the undo.
@@ -69,6 +74,7 @@ from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import _cred_rename_repoint as repoint  # noqa: E402
 import fold_issuer  # noqa: E402
 import ruled_renames  # noqa: E402
 
@@ -506,9 +512,18 @@ def main():
           f"(V4 gate passed)")
     results["unified_titles.json"] = ut_res
     results["coci_articulations.json"] = art_res
+    # The saved assignments and title-keyed files still on an old title (kb/_cred_rename_repoint.py): a bot's row moves
+    # with the rename, a person's is held for a ruling and never changed. The files beside CREDENTIALS only.
+    rp_root = repoint.root_of(CREDENTIALS)
+    rp_changes, rp_held = repoint.plan(combined, rp_root)
+    repoint.apply_changes(rp_changes, rp_root)
+    print(f"  saved assignments:       re-pointed={len(rp_changes)}, held (a person's row)={len(rp_held)}")
+    for h in rp_held:
+        print(f"  HELD {h['file']} {h['key']}: {h['why']}")
+    results["saved assignments (re-point)"] = {"re_pointed": len(rp_changes), "held_person_rows": len(rp_held)}
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_after = json.load(f)
-    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]):
+    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"] and not rp_changes):
         # A re-dispatch after a failed Supabase step finds everything applied. A new <date>-N snapshot
         # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay.
         print("  nothing changed (already applied): no new receipt; the newest snapshot stays the "
@@ -562,7 +577,9 @@ def main():
                                 "value": value, "reviewer_email": fold_issuer.COHORT})
     undo["fold_id"] = fold_id
     out_dir = write_snapshot(alias_doc, results, undo, issuer_plan, out_dir, resolution_rows)
-    print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md}}")
+    # repoint.json: the planned re-points (the undo's input), each filed from a fresh read of its file.
+    repoint.write_receipt(out_dir, combined, rp_changes, rp_held, rp_root)
+    print(f"  receipt: {out_dir}/{{alias_map.json, undo.json, validation.md, repoint.json}}")
     if os.environ.get("GITHUB_OUTPUT"):  # the workflow's failure step rolls back this receipt's rows
         with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
             f.write("receipt=%s\n" % os.path.relpath(out_dir, os.path.dirname(HERE)))

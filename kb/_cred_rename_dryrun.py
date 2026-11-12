@@ -55,6 +55,7 @@ from datetime import date, datetime, timezone
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import _cred_rename_repoint as repoint  # noqa: E402
 import fold_issuer  # noqa: E402
 import ruled_renames  # noqa: E402
 
@@ -352,6 +353,13 @@ def main(argv=None):
     issuer_plan = fold_issuer.plan(renames_clean, merges_confirmed, overrides, credentials,
                                    fold_issuer.path_tallies(_load(RELATED, {})))
 
+    # ── Re-point preview (kb/_cred_rename_repoint.py) ─────────────────────────
+    # The saved assignments and title-keyed files the apply would move off each old title, the person's rows it would
+    # hold, and the old titles it would leave under kb/ (the apply's own count after its writes reads the same way).
+    rp_root = repoint.root_of(CREDENTIALS)
+    rp_changes, rp_held = repoint.plan(dict(renames_clean, **merges_confirmed), rp_root)
+    would_leave = repoint.predict_left(renames_clean, merges_confirmed, rp_root)
+
     # ── V1/V2/V3 validation gates ─────────────────────────────────────────────
     # V1 — every clean rename target is unique among the proposed set
     #      (defensive; the twin-group pruning above guarantees it).
@@ -434,6 +442,10 @@ def main(argv=None):
         # stand in the renames and merges above; held wait for a person; done already landed.
         "ruled": ruled,
         # Preview of kb/fold_issuer.py's decision per fold group (the apply's receipt freezes its own).
+        # The apply's re-point of saved assignments (kb/_cred_rename_repoint.py): what moves, and what it holds.
+        "repoint_preview": {"changes": rp_changes, "held_person_rows": rp_held},
+        # The old titles the apply would leave under kb/ (prediction; target 0). None outside a kb/ tree.
+        "would_leave_old_titles": would_leave,
         "issuer_preview": {t: {"rule": g["resolution"]["rule"], "winner": g["resolution"]["winner"],
                                "conflict": g["resolution"]["conflict"],
                                "humans": g["resolution"]["humans"],
@@ -504,6 +516,13 @@ def main(argv=None):
     print(f"  V2 (source exists):      {'PASS' if v2_pass else f'FAIL ({len(v2_blocked)})'}")
     print(f"  V3 (target collision):   {'PASS' if v3_pass else f'FAIL ({len(v3_blocked)})'}")
     print(f"  apply-safe:              {apply_safe}")
+    print(f"  re-point preview:        {len(rp_changes)} saved value(s) move, {len(rp_held)} person row(s) held")
+    for h in rp_held:
+        print(f"    HELD {h['file']} {h['key']}: {h['why']}")
+    if would_leave is not None:
+        print(f"  would_leave_old_titles:  {would_leave['count']} (kept by rule: {len(would_leave['kept'])})")
+        for x in would_leave["locations"][:20]:
+            print(f"    LEFT {x['location']}")
     print(f"  wrote: {OUT_DIR}/{{report.md, alias_map.json, collisions.json}}")
 
 

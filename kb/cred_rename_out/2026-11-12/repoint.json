@@ -1,0 +1,1061 @@
+{
+  "_about": "The saved values this rename moved off a retired title (kb/_cred_rename_repoint.py). planned is the undo's input (kb/_cred_rename_undo.py); filed is a fresh read of each file after the writes. held_person_rows were saved by a person and never change without a ruling.",
+  "source": "repair",
+  "at": "2026-11-12T04:11:51Z",
+  "moves": {
+    "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": "ASE Certificate Bundles: A2 + A3 + A6",
+    "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": "ASE Certificate Bundles: A2 + A3",
+    "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": "ASE Certificate Bundles: A8 + L1",
+    "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": "ASE Certificate Bundles: A9 + L2",
+    "ASE Bundle — A1, A6, A8, L1": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+    "ASE Bundle — A2, A3, A6": "ASE Certificate Bundles: A2 + A3 + A6",
+    "ASE Bundle — A4, A5": "ASE Certificate Bundles: A4 + A5",
+    "ASE Bundle — A4, A5, A6": "ASE Certificate Bundles: A4 + A5 + A6",
+    "ASE Bundle — A6, A8, L1": "ASE Certificate Bundles: A6 + A8 + L1",
+    "ASE Bundle — L2, T8, SP/2 HD": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+    "ASE Bundle — T2, T5, T7, T8 + MACS/609": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+    "ASE Bundle — T2, T6, T8 + Snap-on 604": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+    "ASE Bundle — T2, T8": "ASE Certificate Bundles: T2 + T8",
+    "ASE Bundle — T3, T4, T5, T8": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+    "ASE Bundle — T3, T8, SP/2 HD": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+    "ASE Bundle — T4, T8, SP/2 HD": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+    "ASE Bundle — T5, T8": "ASE Certificate Bundles: T5 + T8",
+    "ASE Bundle — T5, T8, SP/2 HD": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+    "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+    "ASE Bundle — T6, T8 + Snap-on 604": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+    "ASE Bundle — T7, T8 + MACS/609": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+    "ASE G1 + ALI Lift It Right Bundle": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+    "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": "ASE Certificate Bundles: L1 + L2",
+    "ASE Master Automobile Technician (A1–A8 + L1)": "ASE Master Automobile Technician"
+  },
+  "planned": [
+    {
+      "file": "kb/unclassified_assignments.json",
+      "kind": "value",
+      "key": "Automotive Service Excellence (ASE) A4 and A5",
+      "field": "unified_title",
+      "before": "ASE Bundle — A4, A5",
+      "after": "ASE Certificate Bundles: A4 + A5",
+      "reviewer": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-31T14:01:01.108182+00:00"
+    },
+    {
+      "file": "kb/cer_classified.json",
+      "kind": "value",
+      "key": "Automotive Service Excellence (ASE) A4 and A5",
+      "field": "unified_title",
+      "before": "ASE Bundle — A4, A5",
+      "after": "ASE Certificate Bundles: A4 + A5",
+      "reviewer": "the classifier's cache (kb/_cer_procedures.py)",
+      "reviewed_at": null
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A1 + A6 + A8 + L1": null,
+        "ASE Bundle — A1, A6, A8, L1": [
+          "MAPCXI-ACAA-1-001",
+          "MAPICI-ACAA-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A1, A6, A8, L1": null,
+        "ASE Certificate Bundles: A1 + A6 + A8 + L1": [
+          "MAPCXI-ACAA-1-001",
+          "MAPICI-ACAA-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A2 + A3",
+      "before": {
+        "ASE Certificate Bundles: A2 + A3": null,
+        "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": [
+          "MAPCXN-V6A&-1-001",
+          "MAPICI-ASE(14-1-001"
+        ]
+      },
+      "after": {
+        "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": null,
+        "ASE Certificate Bundles: A2 + A3": [
+          "MAPCXN-V6A&-1-001",
+          "MAPICI-ASE(14-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A2 + A3 + A6",
+      "before": {
+        "ASE Certificate Bundles: A2 + A3 + A6": null,
+        "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": [
+          "MAPICI-ASEA2-1-001"
+        ],
+        "ASE Bundle — A2, A3, A6": [
+          "MAPCXI-ACAA1-1-001",
+          "MAPICI-ACAA1-1-001"
+        ]
+      },
+      "after": {
+        "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": null,
+        "ASE Bundle — A2, A3, A6": null,
+        "ASE Certificate Bundles: A2 + A3 + A6": [
+          "MAPCXI-ACAA1-1-001",
+          "MAPICI-ACAA1-1-001",
+          "MAPICI-ASEA2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A4 + A5 + A6",
+      "before": {
+        "ASE Certificate Bundles: A4 + A5 + A6": null,
+        "ASE Bundle — A4, A5, A6": [
+          "MAPCXI-ACAA2-1-001",
+          "MAPICI-ACAA2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A4, A5, A6": null,
+        "ASE Certificate Bundles: A4 + A5 + A6": [
+          "MAPCXI-ACAA2-1-001",
+          "MAPICI-ACAA2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A6 + A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A6 + A8 + L1": null,
+        "ASE Bundle — A6, A8, L1": [
+          "MAPCXI-ACAA3-1-001",
+          "MAPICI-ACAA3-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A6, A8, L1": null,
+        "ASE Certificate Bundles: A6 + A8 + L1": [
+          "MAPCXI-ACAA3-1-001",
+          "MAPICI-ACAA3-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A8 + L1": null,
+        "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": [
+          "MAPICI-ASE(15-1-001"
+        ]
+      },
+      "after": {
+        "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": null,
+        "ASE Certificate Bundles: A8 + L1": [
+          "MAPICI-ASE(15-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A9 + L2",
+      "before": {
+        "ASE Certificate Bundles: A9 + L2": null,
+        "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": [
+          "MAPICI-ASE(9-1-001"
+        ]
+      },
+      "after": {
+        "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": null,
+        "ASE Certificate Bundles: A9 + L2": [
+          "MAPICI-ASE(9-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "before": {
+        "ASE Certificate Bundles: G1 with ALI Lift It Right": null,
+        "ASE G1 + ALI Lift It Right Bundle": [
+          "MAPICI-AGAA-1-001"
+        ]
+      },
+      "after": {
+        "ASE G1 + ALI Lift It Right Bundle": null,
+        "ASE Certificate Bundles: G1 with ALI Lift It Right": [
+          "MAPICI-AGAA-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L1 + L2",
+      "before": {
+        "ASE Certificate Bundles: L1 + L2": null,
+        "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": [
+          "MAPICI-ASEL-1-001"
+        ]
+      },
+      "after": {
+        "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": null,
+        "ASE Certificate Bundles: L1 + L2": [
+          "MAPICI-ASEL-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": null,
+        "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": [
+          "MAPCXI-ATLC-1-001",
+          "MAPICI-ATLC-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": null,
+        "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": [
+          "MAPCXI-ATLC-1-001",
+          "MAPICI-ATLC-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: L2 + T8 with SP/2 HD": null,
+        "ASE Bundle — L2, T8, SP/2 HD": [
+          "MAPCXI-ALTS-1-001",
+          "MAPICI-ALTS-1-001",
+          "MAPPRI-ALTS-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — L2, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: L2 + T8 with SP/2 HD": [
+          "MAPCXI-ALTS-1-001",
+          "MAPICI-ALTS-1-001",
+          "MAPPRI-ALTS-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "before": {
+        "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": null,
+        "ASE Bundle — T2, T5, T7, T8 + MACS/609": [
+          "MAPCXI-ATTT1-1-001",
+          "MAPICI-ATTT1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T5, T7, T8 + MACS/609": null,
+        "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": [
+          "MAPCXI-ATTT1-1-001",
+          "MAPICI-ATTT1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "before": {
+        "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": null,
+        "ASE Bundle — T2, T6, T8 + Snap-on 604": [
+          "MAPCXI-ATTT2-1-001",
+          "MAPICI-ATTT2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T6, T8 + Snap-on 604": null,
+        "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": [
+          "MAPCXI-ATTT2-1-001",
+          "MAPICI-ATTT2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T8",
+      "before": {
+        "ASE Certificate Bundles: T2 + T8": null,
+        "ASE Bundle — T2, T8": [
+          "MAPCXI-ATT+-1-001",
+          "MAPCXI-ATT+1-1-001",
+          "MAPICI-ATT+-1-001",
+          "MAPICI-ATT+1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T8": null,
+        "ASE Certificate Bundles: T2 + T8": [
+          "MAPCXI-ATT+-1-001",
+          "MAPCXI-ATT+1-1-001",
+          "MAPICI-ATT+-1-001",
+          "MAPICI-ATT+1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "before": {
+        "ASE Certificate Bundles: T3 + T4 + T5 + T8": null,
+        "ASE Bundle — T3, T4, T5, T8": [
+          "MAPCXI-ATTT-1-001",
+          "MAPICI-ATTT-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T3, T4, T5, T8": null,
+        "ASE Certificate Bundles: T3 + T4 + T5 + T8": [
+          "MAPCXI-ATTT-1-001",
+          "MAPICI-ATTT-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T3 + T8 with SP/2 HD": null,
+        "ASE Bundle — T3, T8, SP/2 HD": [
+          "MAPCXI-ATTS-1-001",
+          "MAPICI-ATTS-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T3, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T3 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS-1-001",
+          "MAPICI-ATTS-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T4 + T8 with SP/2 HD": null,
+        "ASE Bundle — T4, T8, SP/2 HD": [
+          "MAPCXI-ATTS1-1-001",
+          "MAPICI-ATTS1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T4, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T4 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS1-1-001",
+          "MAPICI-ATTS1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T5 + T8",
+      "before": {
+        "ASE Certificate Bundles: T5 + T8": null,
+        "ASE Bundle — T5, T8": [
+          "MAPCXI-ATT+2-1-001",
+          "MAPICI-ATT+2-1-001",
+          "MAPMM-ATT+-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T5, T8": null,
+        "ASE Certificate Bundles: T5 + T8": [
+          "MAPCXI-ATT+2-1-001",
+          "MAPICI-ATT+2-1-001",
+          "MAPMM-ATT+-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T5 + T8 with SP/2 HD": null,
+        "ASE Bundle — T5, T8, SP/2 HD": [
+          "MAPCXI-ATTS2-1-001",
+          "MAPICI-ATTS2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T5, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T5 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS2-1-001",
+          "MAPICI-ATTS2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "before": {
+        "ASE Certificate Bundles: T6 + T8 with Snap-on 604": null,
+        "ASE Bundle — T6, T8 + Snap-on 604": [
+          "MAPCXI-ATTS3-1-001",
+          "MAPICI-ATTS3-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T6, T8 + Snap-on 604": null,
+        "ASE Certificate Bundles: T6 + T8 with Snap-on 604": [
+          "MAPCXI-ATTS3-1-001",
+          "MAPICI-ATTS3-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "before": {
+        "ASE Certificate Bundles: T7 + T8 with MACS/609": null,
+        "ASE Bundle — T7, T8 + MACS/609": [
+          "MAPCXI-ATTM-1-001",
+          "MAPICI-ATTM-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T7, T8 + MACS/609": null,
+        "ASE Certificate Bundles: T7 + T8 with MACS/609": [
+          "MAPCXI-ATTM-1-001",
+          "MAPICI-ATTM-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Master Automobile Technician",
+      "before": {
+        "ASE Master Automobile Technician": [
+          "MAPICI-ASEM-1-001"
+        ],
+        "ASE Master Automobile Technician (A1–A8 + L1)": [
+          "MAPCXI-ACAT-1-001"
+        ]
+      },
+      "after": {
+        "ASE Master Automobile Technician (A1–A8 + L1)": null,
+        "ASE Master Automobile Technician": [
+          "MAPCXI-ACAT-1-001",
+          "MAPICI-ASEM-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "air conditioning refrigeration service and repair",
+      "index": 5,
+      "field": "title",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "refrigeration and air conditioning mechanic",
+      "index": 5,
+      "field": "title",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "transmission mechanic",
+      "index": 2,
+      "field": "title",
+      "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05"
+    }
+  ],
+  "filed": [
+    {
+      "file": "kb/unclassified_assignments.json",
+      "kind": "value",
+      "key": "Automotive Service Excellence (ASE) A4 and A5",
+      "field": "unified_title",
+      "before": "ASE Bundle — A4, A5",
+      "after": "ASE Certificate Bundles: A4 + A5",
+      "reviewer": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/cer_classified.json",
+      "kind": "value",
+      "key": "Automotive Service Excellence (ASE) A4 and A5",
+      "field": "unified_title",
+      "before": "ASE Bundle — A4, A5",
+      "after": "ASE Certificate Bundles: A4 + A5",
+      "reviewer": "the classifier's cache (kb/_cer_procedures.py)",
+      "reviewed_at": null,
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A1 + A6 + A8 + L1": null,
+        "ASE Bundle — A1, A6, A8, L1": [
+          "MAPCXI-ACAA-1-001",
+          "MAPICI-ACAA-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A1, A6, A8, L1": null,
+        "ASE Certificate Bundles: A1 + A6 + A8 + L1": [
+          "MAPCXI-ACAA-1-001",
+          "MAPICI-ACAA-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A2 + A3",
+      "before": {
+        "ASE Certificate Bundles: A2 + A3": null,
+        "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": [
+          "MAPCXN-V6A&-1-001",
+          "MAPICI-ASE(14-1-001"
+        ]
+      },
+      "after": {
+        "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": null,
+        "ASE Certificate Bundles: A2 + A3": [
+          "MAPCXN-V6A&-1-001",
+          "MAPICI-ASE(14-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A2 + A3 + A6",
+      "before": {
+        "ASE Certificate Bundles: A2 + A3 + A6": null,
+        "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": [
+          "MAPICI-ASEA2-1-001"
+        ],
+        "ASE Bundle — A2, A3, A6": [
+          "MAPCXI-ACAA1-1-001",
+          "MAPICI-ACAA1-1-001"
+        ]
+      },
+      "after": {
+        "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": null,
+        "ASE Bundle — A2, A3, A6": null,
+        "ASE Certificate Bundles: A2 + A3 + A6": [
+          "MAPCXI-ACAA1-1-001",
+          "MAPICI-ACAA1-1-001",
+          "MAPICI-ASEA2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A4 + A5 + A6",
+      "before": {
+        "ASE Certificate Bundles: A4 + A5 + A6": null,
+        "ASE Bundle — A4, A5, A6": [
+          "MAPCXI-ACAA2-1-001",
+          "MAPICI-ACAA2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A4, A5, A6": null,
+        "ASE Certificate Bundles: A4 + A5 + A6": [
+          "MAPCXI-ACAA2-1-001",
+          "MAPICI-ACAA2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A6 + A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A6 + A8 + L1": null,
+        "ASE Bundle — A6, A8, L1": [
+          "MAPCXI-ACAA3-1-001",
+          "MAPICI-ACAA3-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — A6, A8, L1": null,
+        "ASE Certificate Bundles: A6 + A8 + L1": [
+          "MAPCXI-ACAA3-1-001",
+          "MAPICI-ACAA3-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A8 + L1",
+      "before": {
+        "ASE Certificate Bundles: A8 + L1": null,
+        "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": [
+          "MAPICI-ASE(15-1-001"
+        ]
+      },
+      "after": {
+        "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": null,
+        "ASE Certificate Bundles: A8 + L1": [
+          "MAPICI-ASE(15-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: A9 + L2",
+      "before": {
+        "ASE Certificate Bundles: A9 + L2": null,
+        "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": [
+          "MAPICI-ASE(9-1-001"
+        ]
+      },
+      "after": {
+        "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": null,
+        "ASE Certificate Bundles: A9 + L2": [
+          "MAPICI-ASE(9-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: G1 with ALI Lift It Right",
+      "before": {
+        "ASE Certificate Bundles: G1 with ALI Lift It Right": null,
+        "ASE G1 + ALI Lift It Right Bundle": [
+          "MAPICI-AGAA-1-001"
+        ]
+      },
+      "after": {
+        "ASE G1 + ALI Lift It Right Bundle": null,
+        "ASE Certificate Bundles: G1 with ALI Lift It Right": [
+          "MAPICI-AGAA-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L1 + L2",
+      "before": {
+        "ASE Certificate Bundles: L1 + L2": null,
+        "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": [
+          "MAPICI-ASEL-1-001"
+        ]
+      },
+      "after": {
+        "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": null,
+        "ASE Certificate Bundles: L1 + L2": [
+          "MAPICI-ASEL-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": null,
+        "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": [
+          "MAPCXI-ATLC-1-001",
+          "MAPICI-ATLC-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": null,
+        "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": [
+          "MAPCXI-ATLC-1-001",
+          "MAPICI-ATLC-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: L2 + T8 with SP/2 HD": null,
+        "ASE Bundle — L2, T8, SP/2 HD": [
+          "MAPCXI-ALTS-1-001",
+          "MAPICI-ALTS-1-001",
+          "MAPPRI-ALTS-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — L2, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: L2 + T8 with SP/2 HD": [
+          "MAPCXI-ALTS-1-001",
+          "MAPICI-ALTS-1-001",
+          "MAPPRI-ALTS-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
+      "before": {
+        "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": null,
+        "ASE Bundle — T2, T5, T7, T8 + MACS/609": [
+          "MAPCXI-ATTT1-1-001",
+          "MAPICI-ATTT1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T5, T7, T8 + MACS/609": null,
+        "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": [
+          "MAPCXI-ATTT1-1-001",
+          "MAPICI-ATTT1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
+      "before": {
+        "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": null,
+        "ASE Bundle — T2, T6, T8 + Snap-on 604": [
+          "MAPCXI-ATTT2-1-001",
+          "MAPICI-ATTT2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T6, T8 + Snap-on 604": null,
+        "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": [
+          "MAPCXI-ATTT2-1-001",
+          "MAPICI-ATTT2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T2 + T8",
+      "before": {
+        "ASE Certificate Bundles: T2 + T8": null,
+        "ASE Bundle — T2, T8": [
+          "MAPCXI-ATT+-1-001",
+          "MAPCXI-ATT+1-1-001",
+          "MAPICI-ATT+-1-001",
+          "MAPICI-ATT+1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T2, T8": null,
+        "ASE Certificate Bundles: T2 + T8": [
+          "MAPCXI-ATT+-1-001",
+          "MAPCXI-ATT+1-1-001",
+          "MAPICI-ATT+-1-001",
+          "MAPICI-ATT+1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
+      "before": {
+        "ASE Certificate Bundles: T3 + T4 + T5 + T8": null,
+        "ASE Bundle — T3, T4, T5, T8": [
+          "MAPCXI-ATTT-1-001",
+          "MAPICI-ATTT-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T3, T4, T5, T8": null,
+        "ASE Certificate Bundles: T3 + T4 + T5 + T8": [
+          "MAPCXI-ATTT-1-001",
+          "MAPICI-ATTT-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T3 + T8 with SP/2 HD": null,
+        "ASE Bundle — T3, T8, SP/2 HD": [
+          "MAPCXI-ATTS-1-001",
+          "MAPICI-ATTS-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T3, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T3 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS-1-001",
+          "MAPICI-ATTS-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T4 + T8 with SP/2 HD": null,
+        "ASE Bundle — T4, T8, SP/2 HD": [
+          "MAPCXI-ATTS1-1-001",
+          "MAPICI-ATTS1-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T4, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T4 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS1-1-001",
+          "MAPICI-ATTS1-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T5 + T8",
+      "before": {
+        "ASE Certificate Bundles: T5 + T8": null,
+        "ASE Bundle — T5, T8": [
+          "MAPCXI-ATT+2-1-001",
+          "MAPICI-ATT+2-1-001",
+          "MAPMM-ATT+-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T5, T8": null,
+        "ASE Certificate Bundles: T5 + T8": [
+          "MAPCXI-ATT+2-1-001",
+          "MAPICI-ATT+2-1-001",
+          "MAPMM-ATT+-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
+      "before": {
+        "ASE Certificate Bundles: T5 + T8 with SP/2 HD": null,
+        "ASE Bundle — T5, T8, SP/2 HD": [
+          "MAPCXI-ATTS2-1-001",
+          "MAPICI-ATTS2-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T5, T8, SP/2 HD": null,
+        "ASE Certificate Bundles: T5 + T8 with SP/2 HD": [
+          "MAPCXI-ATTS2-1-001",
+          "MAPICI-ATTS2-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
+      "before": {
+        "ASE Certificate Bundles: T6 + T8 with Snap-on 604": null,
+        "ASE Bundle — T6, T8 + Snap-on 604": [
+          "MAPCXI-ATTS3-1-001",
+          "MAPICI-ATTS3-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T6, T8 + Snap-on 604": null,
+        "ASE Certificate Bundles: T6 + T8 with Snap-on 604": [
+          "MAPCXI-ATTS3-1-001",
+          "MAPICI-ATTS3-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "before": {
+        "ASE Certificate Bundles: T7 + T8 with MACS/609": null,
+        "ASE Bundle — T7, T8 + MACS/609": [
+          "MAPCXI-ATTM-1-001",
+          "MAPICI-ATTM-1-001"
+        ]
+      },
+      "after": {
+        "ASE Bundle — T7, T8 + MACS/609": null,
+        "ASE Certificate Bundles: T7 + T8 with MACS/609": [
+          "MAPCXI-ATTM-1-001",
+          "MAPICI-ATTM-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/reference/map_cpl_opportunities_verified.json",
+      "kind": "key",
+      "key": "ASE Master Automobile Technician",
+      "before": {
+        "ASE Master Automobile Technician": [
+          "MAPICI-ASEM-1-001"
+        ],
+        "ASE Master Automobile Technician (A1–A8 + L1)": [
+          "MAPCXI-ACAT-1-001"
+        ]
+      },
+      "after": {
+        "ASE Master Automobile Technician (A1–A8 + L1)": null,
+        "ASE Master Automobile Technician": [
+          "MAPCXI-ACAT-1-001",
+          "MAPICI-ASEM-1-001"
+        ]
+      },
+      "reviewer": "kb/_verify_map_exhibit_links.py",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "air conditioning refrigeration service and repair",
+      "index": 5,
+      "field": "title",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "refrigeration and air conditioning mechanic",
+      "index": 5,
+      "field": "title",
+      "before": "ASE Bundle — T7, T8 + MACS/609",
+      "after": "ASE Certificate Bundles: T7 + T8 with MACS/609",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05",
+      "filed": "landed"
+    },
+    {
+      "file": "kb/occupation_credential_map.json",
+      "kind": "item",
+      "key": "transmission mechanic",
+      "index": 2,
+      "field": "title",
+      "before": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "after": "ASE Certificate Bundles: A2 + A3 + A6",
+      "reviewer": "skywalker-s120@bot",
+      "reviewed_at": "2026-08-05",
+      "filed": "landed"
+    }
+  ],
+  "held_person_rows": []
+}

@@ -4,7 +4,9 @@
 Why it exists: #3110 agreed on "undo instead of a gate" for the fold apply, and an undo has to work
 before anything triggers the apply on its own. kb/_cred_rename_apply.py writes undo.json beside its
 receipt: every value it changed, before and after, in kb/credentials.json (by key), kb/unified_titles.json
-(by raw title) and kb/coci_articulations.json (by course_id + exhibit_id). This script puts each back.
+(by raw title) and kb/coci_articulations.json (by course_id + exhibit_id). This script puts each back, and with
+them every saved value the apply re-pointed (repoint*.json, kb/_cred_rename_repoint.py) and the kb_curation rows
+those copy (repoint_supabase_log*.json). A re-pointed value changed since is drift like any other.
 
   python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11            # dry run: what would change
   python3 kb/_cred_rename_undo.py kb/cred_rename_out/2026-11-11 --apply    # kb_curation first, then the files
@@ -38,6 +40,7 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+import _cred_rename_repoint as repoint  # noqa: E402
 import fold_issuer  # noqa: E402
 
 CREDENTIALS = os.path.join(HERE, "credentials.json")
@@ -83,8 +86,10 @@ def _nightly_same(cur, after, resolution):
     return all(n(c(r.get("issuing_agency"))) in allowed for r in cur if n(c(r.get("issuing_agency"))) in touched)
 
 
-def plan_undo(undo, creds, ut, arts, resolutions=None):
-    """What the undo would do, without writing. Returns (changes, drift, skipped_groups)."""
+def plan_undo(undo, creds, ut, arts, resolutions=None, extra_drift_titles=()):
+    """What the undo would do, without writing. Returns (changes, drift, skipped_groups). extra_drift_titles: titles
+    whose fold group drifted elsewhere (a re-pointed saved value changed since the apply), so the group is held
+    whole here too."""
     resolutions = resolutions or {}
     changes, drift = [], []
     for key, ba in sorted((undo.get("credentials") or {}).items()):
@@ -134,7 +139,7 @@ def plan_undo(undo, creds, ut, arts, resolutions=None):
             return group_of.get(ba.get("after"), ba.get("after"))
         return group_of.get(c.get("after"), c.get("after"))
 
-    bad = {group(d) for d in drift}
+    bad = {group(d) for d in drift} | {group_of.get(t, t) for t in extra_drift_titles or ()}
     held = [c for c in changes if group(c) in bad]
     changes = [c for c in changes if group(c) not in bad]
     for c in held:
@@ -234,6 +239,12 @@ def supabase_ops(log_doc, skip_titles=(), resolution_logs=()):
 
 
 def _op_sql(o):
+    if o["op"] == "repoint_back":
+        b = o["before"]
+        return _loud("update kb_curation set value = %s where course_id = %s and field = %s and %s and %s and %s;"
+                     % (_q(b.get("value")), _q(o["course_id"]), _q(o["field"]), _is("value", o["after"]),
+                        _is("reviewer_email", b.get("reviewer_email")), _is("reviewed_at", b.get("reviewed_at"))),
+                     "the re-pointed assignment " + o["course_id"])
     if o["op"] == "res_delete":
         return _loud("delete from kb_curation where course_id = %s and field = %s and %s and %s;"
                      % (_q(o["course_id"]), _q(o["field"]), _is("reviewer_email", fold_issuer.COHORT),
@@ -254,10 +265,12 @@ def _op_sql(o):
     return _loud(_insert(o["course_id"], o["field"], b), "%s / %s (a row is there now)" % (o["course_id"], o["field"]))
 
 
-def supabase_plan(log_doc, skip_titles=(), resolution_logs=(), fold_id=None):
+def supabase_plan(log_doc, skip_titles=(), resolution_logs=(), fold_id=None, repoint_ops=()):
     """The same reversal as SQL, for a person to run under Rule 10 when the undo cannot reach Supabase
-    itself. Returns (sql, unreversible)."""
+    itself. Returns (sql, unreversible). repoint_ops: the re-pointed assignments' reversal
+    (kb/_cred_rename_repoint.py supabase_undo_ops), run first."""
     ops, cannot = supabase_ops(log_doc, skip_titles, resolution_logs)
+    ops = list(repoint_ops or ()) + ops
     docs = log_doc if isinstance(log_doc, list) else [log_doc]
     head = docs[0].get("alias_map_snapshot") if docs and docs[0] else "a credential rename apply"
     sql = ("-- Reverses %s (kb/_cred_rename_undo.py)%s. Each statement is guarded on the row the apply "
@@ -297,6 +310,15 @@ def _current(cid, field):
 
 def run_op(o):
     """Run one op. Returns {"status": "ok" | "already" | "left", ...}; a network error raises."""
+    if o["op"] == "repoint_back":
+        b = o["before"]
+        if rest("PATCH", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"], value=o["after"],
+                                              reviewer_email=b.get("reviewer_email"), reviewed_at=b.get("reviewed_at")),
+                {"value": b.get("value")}):
+            return {"status": "ok"}
+        cur = _current(o["course_id"], o["field"])
+        return {"status": "already"} if cur and cur.get("value") == b.get("value") else \
+            {"status": "left", "why": "the re-pointed row changed since the apply"}
     if o["op"] == "res_delete":
         if rest("DELETE", "kb_curation?" + _qs(course_id=o["course_id"], field=o["field"],
                                                reviewer_email=fold_issuer.COHORT, value=o["after"])):
@@ -369,7 +391,16 @@ def main(argv=None):
     snapshot = _load(snap_path) if os.path.isfile(snap_path) else {}
     creds, ut, art_doc = _load(CREDENTIALS), _load(UNIFIED_TITLES), _load(ARTICULATIONS)
     arts = art_doc.get("articulations") or []
-    changes, drift, skipped = plan_undo(undo, creds, ut, arts, resolutions_of(snapshot))
+    # The saved values the apply re-pointed (kb/_cred_rename_repoint.py repoint*.json), read in this tree: one changed
+    # since is drift, and holds its fold group whole like any other value.
+    rp_root = repoint.root_of(CREDENTIALS)
+    rp_todo, rp_drift, rp_absent = repoint.undo_plan(a.receipt, rp_root)
+    changes, drift, skipped = plan_undo(undo, creds, ut, arts, resolutions_of(snapshot),
+                                        {repoint.undo_title(c) for c in rp_drift})
+    drift += [{"file": c["file"], "key": c["key"], "after": repoint.undo_title(c)} for c in rp_drift]
+    rp_back = [repoint.reverse(c) for c in rp_todo if repoint.undo_title(c) not in skipped]
+    for c in rp_absent:
+        print(f"  not in this tree, left: {c['file']} {c['key']}")
     for d in drift:
         print(f"  DRIFT {d['file']}: {d['key']} " + (d.get("held") or "changed since the apply"))
     if drift and not a.force:
@@ -379,11 +410,12 @@ def main(argv=None):
         print(f"  skipped fold groups, left folded in the files and in the SQL plan: {sorted(skipped)}")
     slogs, rlogs = _logs(a.receipt, "supabase_log"), _logs(a.receipt, "resolution_log")
     if a.supabase_plan:
-        sql, cannot = supabase_plan(slogs, skipped, rlogs, undo.get("fold_id"))
+        sql, cannot = supabase_plan(slogs, skipped, rlogs, undo.get("fold_id"),
+                                    repoint.supabase_undo_ops(a.receipt, skipped))
         with open(os.path.join(a.receipt, "undo_supabase.sql"), "w", encoding="utf-8") as f:
             f.write(sql)
         print(f"wrote {a.receipt}/undo_supabase.sql; {len(cannot)} op(s) not reversible (no before_row)")
-    print(f"[cred_rename_undo] {len(changes)} value(s) to put back"
+    print(f"[cred_rename_undo] {len(changes) + len(rp_back)} value(s) to put back"
           + ("" if a.apply else " (dry run; --apply writes)"))
     if a.apply and not KEY and not a.json_only:
         sys.exit("--apply runs the kb_curation half first, so it needs SUPABASE_SERVICE_KEY. Without it the "
@@ -393,6 +425,7 @@ def main(argv=None):
         # The kb_curation half runs FIRST: the resolution rows go (every reader, the browser's too, drops the
         # fold at once), then the moved rows go back, so no nightly sees the files undone and the rows folded.
         ops, cannot = supabase_ops(slogs, skipped, rlogs)
+        ops = repoint.supabase_undo_ops(a.receipt, skipped) + ops
         try:
             log = run_supabase(ops)
         except Exception as e:
@@ -413,6 +446,9 @@ def main(argv=None):
             _write(CREDENTIALS, creds)
             _write(UNIFIED_TITLES, ut)
             _write(ARTICULATIONS, art_doc)
+        if rp_back:
+            repoint.apply_changes(rp_back, rp_root)
+            print(f"  put back {len(rp_back)} re-pointed saved value(s)")
         if undo.get("fold_id"):
             _write(os.path.join(a.receipt, "undone.json"),
                    {"fold_ids": [undo["fold_id"]], "skipped_groups": sorted(skipped),

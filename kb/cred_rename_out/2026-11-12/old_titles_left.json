@@ -1,0 +1,138 @@
+{
+  "count": 0,
+  "locations": [],
+  "kept": [
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "title": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "title": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "title": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — A1, A6, A8, L1",
+      "title": "ASE Bundle — A1, A6, A8, L1",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — A2, A3, A6",
+      "title": "ASE Bundle — A2, A3, A6",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — A4, A5",
+      "title": "ASE Bundle — A4, A5",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — A4, A5, A6",
+      "title": "ASE Bundle — A4, A5, A6",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — A6, A8, L1",
+      "title": "ASE Bundle — A6, A8, L1",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — L2, T8, SP/2 HD",
+      "title": "ASE Bundle — L2, T8, SP/2 HD",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "title": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "title": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T2, T8",
+      "title": "ASE Bundle — T2, T8",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T3, T4, T5, T8",
+      "title": "ASE Bundle — T3, T4, T5, T8",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T3, T8, SP/2 HD",
+      "title": "ASE Bundle — T3, T8, SP/2 HD",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T4, T8, SP/2 HD",
+      "title": "ASE Bundle — T4, T8, SP/2 HD",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T5, T8",
+      "title": "ASE Bundle — T5, T8",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T5, T8, SP/2 HD",
+      "title": "ASE Bundle — T5, T8, SP/2 HD",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "title": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T6, T8 + Snap-on 604",
+      "title": "ASE Bundle — T6, T8 + Snap-on 604",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Bundle — T7, T8 + MACS/609",
+      "title": "ASE Bundle — T7, T8 + MACS/609",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE G1 + ALI Lift It Right Bundle",
+      "title": "ASE G1 + ALI Lift It Right Bundle",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "title": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    },
+    {
+      "location": "kb/credential_review_overlay.json:/overrides/ASE Master Automobile Technician (A1–A8 + L1)",
+      "title": "ASE Master Automobile Technician (A1–A8 + L1)",
+      "why": "every row is a person's fold into a family title, which the row move keeps in place"
+    }
+  ],
+  "alias_entries_skipped": 24,
+  "excluded": {
+    "kb/cred_rename_out": "each apply's receipt: the old titles are the alias map and the undo's basis",
+    "kb/cred_rename_plans": "the ruled plans name the old titles they rename",
+    "kb/cred_rename_dryrun": "the dry run's preview of the renames, written before the apply",
+    "kb/receipts": "other writers' receipts, which keep the rows as they stood",
+    "<dated or saved/ folder>": "a dated run folder or a saved/ receipt folder: a past run's record, kept as it was",
+    "kb/exhibits_related.json": "titles[*][5], the earlier titles kb/credential_aliases.py names"
+  },
+  "not_counted_here": {},
+  "at": "2026-11-12T04:12:05Z",
+  "_about": "Each old title of this apply still under kb/ after its writes (kb/_cred_rename_repoint.py). Target 0; kept are a person's rows the row move keeps by rule."
+}

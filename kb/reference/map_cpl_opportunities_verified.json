@@ -40047,9 +40047,6 @@
    "MAPICI-ASE1-1-001",
    "MAPICI-ASEA4-1-001"
   ],
-  "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": [
-   "MAPICI-ASEA2-1-001"
-  ],
   "ASE A2 — Automatic Transmission/Transaxle": [
    "CPLICI-ASE2-1-001",
    "MAPICI-A6C5-1-001",
@@ -40061,10 +40058,6 @@
    "MAPICI-ASE2-1-001",
    "MAPICI-ASE21-1-001",
    "MAPICI-ATAA-1-001"
-  ],
-  "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": [
-   "MAPCXN-V6A&-1-001",
-   "MAPICI-ASE(14-1-001"
   ],
   "ASE A3 — Manual Drive Train and Axles": [
    "CPLICI-ASE3-1-001",
@@ -40132,9 +40125,6 @@
    "MAPICI-CCSA-1-001",
    "MAPICI-IFAA6-1-001"
   ],
-  "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": [
-   "MAPICI-ASE(15-1-001"
-  ],
   "ASE A8 — Engine Performance": [
    "CPLICI-ASE8-1-001",
    "MAPCBEN-EP-1-001",
@@ -40149,9 +40139,6 @@
    "MAPICI-EPAA-1-001",
    "MAPICI-IFAA7-1-001"
   ],
-  "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": [
-   "MAPICI-ASE(9-1-001"
-  ],
   "ASE A9 — Light Vehicle Diesel Engines": [
    "MAPICI-A6C11-1-001",
    "MAPICI-AC(A8-1-001",
@@ -40161,77 +40148,9 @@
    "MAPICI-ASE(8-1-001",
    "MAPICI-IFAA8-1-001"
   ],
-  "ASE Bundle — A1, A6, A8, L1": [
-   "MAPCXI-ACAA-1-001",
-   "MAPICI-ACAA-1-001"
-  ],
-  "ASE Bundle — A2, A3, A6": [
-   "MAPCXI-ACAA1-1-001",
-   "MAPICI-ACAA1-1-001"
-  ],
-  "ASE Bundle — A4, A5, A6": [
-   "MAPCXI-ACAA2-1-001",
-   "MAPICI-ACAA2-1-001"
-  ],
   "ASE Bundle — A6 or T6 + L3": [
    "MAPCXI-ACAO-1-001",
    "MAPICI-ACAO-1-001"
-  ],
-  "ASE Bundle — A6, A8, L1": [
-   "MAPCXI-ACAA3-1-001",
-   "MAPICI-ACAA3-1-001"
-  ],
-  "ASE Bundle — L2, T8, SP/2 HD": [
-   "MAPCXI-ALTS-1-001",
-   "MAPICI-ALTS-1-001",
-   "MAPPRI-ALTS-1-001"
-  ],
-  "ASE Bundle — T2, T5, T7, T8 + MACS/609": [
-   "MAPCXI-ATTT1-1-001",
-   "MAPICI-ATTT1-1-001"
-  ],
-  "ASE Bundle — T2, T6, T8 + Snap-on 604": [
-   "MAPCXI-ATTT2-1-001",
-   "MAPICI-ATTT2-1-001"
-  ],
-  "ASE Bundle — T2, T8": [
-   "MAPCXI-ATT+-1-001",
-   "MAPCXI-ATT+1-1-001",
-   "MAPICI-ATT+-1-001",
-   "MAPICI-ATT+1-1-001"
-  ],
-  "ASE Bundle — T3, T4, T5, T8": [
-   "MAPCXI-ATTT-1-001",
-   "MAPICI-ATTT-1-001"
-  ],
-  "ASE Bundle — T3, T8, SP/2 HD": [
-   "MAPCXI-ATTS-1-001",
-   "MAPICI-ATTS-1-001"
-  ],
-  "ASE Bundle — T4, T8, SP/2 HD": [
-   "MAPCXI-ATTS1-1-001",
-   "MAPICI-ATTS1-1-001"
-  ],
-  "ASE Bundle — T5, T8": [
-   "MAPCXI-ATT+2-1-001",
-   "MAPICI-ATT+2-1-001",
-   "MAPMM-ATT+-1-001"
-  ],
-  "ASE Bundle — T5, T8, SP/2 HD": [
-   "MAPCXI-ATTS2-1-001",
-   "MAPICI-ATTS2-1-001"
-  ],
-  "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD": [
-   "MAPCXI-ATLC-1-001",
-   "MAPICI-ATLC-1-001"
-  ],
-  "ASE Bundle — T6, T8 + Snap-on 604": [
-   "MAPCXI-ATTS3-1-001",
-   "MAPICI-ATTS3-1-001"
-  ],
-  "ASE Bundle — T7, T8 + MACS/609": [
-   "MAPCXI-ATTM-1-001",
-   "MAPICI-ATTM-1-001"
   ],
   "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair": [
    "CPLICI-ASEC-1-001",
@@ -40240,15 +40159,97 @@
   "ASE C1 — Service Consultant": [
    "MAPICI-ASE(7-1-001"
   ],
+  "ASE Certificate Bundles: A1 + A6 + A8 + L1": [
+   "MAPCXI-ACAA-1-001",
+   "MAPICI-ACAA-1-001"
+  ],
+  "ASE Certificate Bundles: A2 + A3": [
+   "MAPCXN-V6A&-1-001",
+   "MAPICI-ASE(14-1-001"
+  ],
+  "ASE Certificate Bundles: A2 + A3 + A6": [
+   "MAPCXI-ACAA1-1-001",
+   "MAPICI-ACAA1-1-001",
+   "MAPICI-ASEA2-1-001"
+  ],
+  "ASE Certificate Bundles: A4 + A5 + A6": [
+   "MAPCXI-ACAA2-1-001",
+   "MAPICI-ACAA2-1-001"
+  ],
+  "ASE Certificate Bundles: A6 + A8 + L1": [
+   "MAPCXI-ACAA3-1-001",
+   "MAPICI-ACAA3-1-001"
+  ],
+  "ASE Certificate Bundles: A8 + L1": [
+   "MAPICI-ASE(15-1-001"
+  ],
+  "ASE Certificate Bundles: A9 + L2": [
+   "MAPICI-ASE(9-1-001"
+  ],
+  "ASE Certificate Bundles: G1 with ALI Lift It Right": [
+   "MAPICI-AGAA-1-001"
+  ],
+  "ASE Certificate Bundles: L1 + L2": [
+   "MAPICI-ASEL-1-001"
+  ],
+  "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD": [
+   "MAPCXI-ATLC-1-001",
+   "MAPICI-ATLC-1-001"
+  ],
+  "ASE Certificate Bundles: L2 + T8 with SP/2 HD": [
+   "MAPCXI-ALTS-1-001",
+   "MAPICI-ALTS-1-001",
+   "MAPPRI-ALTS-1-001"
+  ],
+  "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609": [
+   "MAPCXI-ATTT1-1-001",
+   "MAPICI-ATTT1-1-001"
+  ],
+  "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604": [
+   "MAPCXI-ATTT2-1-001",
+   "MAPICI-ATTT2-1-001"
+  ],
+  "ASE Certificate Bundles: T2 + T8": [
+   "MAPCXI-ATT+-1-001",
+   "MAPCXI-ATT+1-1-001",
+   "MAPICI-ATT+-1-001",
+   "MAPICI-ATT+1-1-001"
+  ],
+  "ASE Certificate Bundles: T3 + T4 + T5 + T8": [
+   "MAPCXI-ATTT-1-001",
+   "MAPICI-ATTT-1-001"
+  ],
+  "ASE Certificate Bundles: T3 + T8 with SP/2 HD": [
+   "MAPCXI-ATTS-1-001",
+   "MAPICI-ATTS-1-001"
+  ],
+  "ASE Certificate Bundles: T4 + T8 with SP/2 HD": [
+   "MAPCXI-ATTS1-1-001",
+   "MAPICI-ATTS1-1-001"
+  ],
+  "ASE Certificate Bundles: T5 + T8": [
+   "MAPCXI-ATT+2-1-001",
+   "MAPICI-ATT+2-1-001",
+   "MAPMM-ATT+-1-001"
+  ],
+  "ASE Certificate Bundles: T5 + T8 with SP/2 HD": [
+   "MAPCXI-ATTS2-1-001",
+   "MAPICI-ATTS2-1-001"
+  ],
+  "ASE Certificate Bundles: T6 + T8 with Snap-on 604": [
+   "MAPCXI-ATTS3-1-001",
+   "MAPICI-ATTS3-1-001"
+  ],
+  "ASE Certificate Bundles: T7 + T8 with MACS/609": [
+   "MAPCXI-ATTM-1-001",
+   "MAPICI-ATTM-1-001"
+  ],
   "ASE Certification (any A1–A8)": [
    "MAPICI-ASEA-1-001"
   ],
   "ASE F1 — Alternate Fuels (CNG Light Vehicles)": [
    "MAPICI-ASE(37-1-001",
    "MAPICI-ASEF-1-001"
-  ],
-  "ASE G1 + ALI Lift It Right Bundle": [
-   "MAPICI-AGAA-1-001"
   ],
   "ASE G1 — Auto Maintenance and Light Repair": [
    "CPLICI-ASEG-1-001",
@@ -40258,9 +40259,6 @@
    "MAPICI-ASE(39-1-001",
    "MAPICI-ASE(5-1-001",
    "MAPICI-ASEG-1-001"
-  ],
-  "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis": [
-   "MAPICI-ASEL-1-001"
   ],
   "ASE L1 — Advanced Engine Performance Specialist": [
    "CPLICI-ASEL-1-001",
@@ -40285,10 +40283,8 @@
    "MAPICI-ASE(4-1-001"
   ],
   "ASE Master Automobile Technician": [
+   "MAPCXI-ACAT-1-001",
    "MAPICI-ASEM-1-001"
-  ],
-  "ASE Master Automobile Technician (A1–A8 + L1)": [
-   "MAPCXI-ACAT-1-001"
   ],
   "ASE Master Automobile Technician (A1–A8) or L3": [
    "MAPICI-ASEA1-1-001"

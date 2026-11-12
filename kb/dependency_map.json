@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 861,
+  "file_datasets": 865,
   "external_services": 195,
-  "consumers": 558,
+  "consumers": 559,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -9423,6 +9423,13 @@
      "line": 0
     },
     {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
@@ -9726,6 +9733,19 @@
     },
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_cred_rename_repoint.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -10664,16 +10684,29 @@
      "direction": "write",
      "how": "literal",
      "line": 84
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
     }
    ],
    "producers": [
     {
      "by": "workflow:cer-procedures.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/cer_procedures.json": {
    "consumers": [
@@ -11005,21 +11038,28 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 85
+     "line": 91
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 68
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 630
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 45
+     "line": 48
     },
     {
      "id": "script:kb/_crossdisc_dryrun.py",
@@ -13599,7 +13639,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 107
+     "line": 116
     }
    ],
    "producers": [
@@ -13677,6 +13717,32 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
+  "file:kb/cred_rename_out/2026-11-12/old_titles_left.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 715
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/cred_rename_out/2026-11-12/repoint.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 260
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
    "consumers": [
     {
@@ -13697,14 +13763,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 365
+     "line": 371
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 363
+     "line": 385
     },
     {
      "id": "script:kb/fold_issuer.py",
@@ -13832,14 +13898,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 75
+     "line": 81
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 62
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 54
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -13966,21 +14039,28 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 83
+     "line": 89
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 66
+     "line": 67
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 617
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 46
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -15416,14 +15496,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 77
+     "line": 83
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 64
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
     }
    ],
    "producers": [
@@ -15432,12 +15519,17 @@
      "how": "commit"
     },
     {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
+    "workflow:cred-rename-apply.yml",
     "workflow:daily-dashboard.yml"
    ]
   },
@@ -16167,10 +16259,25 @@
      "direction": "read",
      "how": "literal",
      "line": 82
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 71
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
     }
    ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/openclassrooms_ma_ace_recs.json": {
    "consumers": [
@@ -17751,7 +17858,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 78
+     "line": 84
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -17765,7 +17872,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 65
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 55
     },
     {
      "id": "script:kb/_family_tag_plan.py",
@@ -17950,6 +18064,13 @@
      "line": 344
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 68
+    },
+    {
      "id": "script:kb/_verify_map_exhibit_links.py",
      "kind": "script",
      "direction": "read",
@@ -17964,8 +18085,16 @@
      "line": 35
     }
    ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    }
+   ],
    "served": true,
-   "main_committers": []
+   "main_committers": [
+    "workflow:cred-rename-apply.yml"
+   ]
   },
   "file:kb/reference/mis_district_college_codes.json": {
    "consumers": [
@@ -18391,6 +18520,13 @@
      "direction": "read",
      "how": "literal",
      "line": 85
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 605
     }
    ],
    "producers": [
@@ -19224,6 +19360,13 @@
      "line": 317
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
      "id": "script:kb/_fold_unclassified.py",
      "kind": "script",
      "direction": "read",
@@ -19247,12 +19390,17 @@
    ],
    "producers": [
     {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
     }
    ],
    "served": true,
    "main_committers": [
+    "workflow:cred-rename-apply.yml",
     "workflow:daily-dashboard.yml"
    ]
   },
@@ -19485,21 +19633,28 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 90
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 66
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 624
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 47
     },
     {
      "id": "script:kb/_curation_credentials_01.py",
@@ -23080,6 +23235,19 @@
    "main_committers": []
   },
   "file:tests/cred_rename_fold_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/cred_rename_repoint_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28705,18 +28873,32 @@
      "line": 169
     },
     {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 348
+    },
+    {
+     "id": "script:kb/_cred_rename_repoint.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 419
+    },
+    {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 294
+     "line": 307
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 301
+     "line": 315
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -31055,14 +31237,21 @@
     "kb/_cred_rename_apply.py",
     "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
+    "kb/_cred_rename_repoint.py",
     "kb/_build_remint_blast_radius.py",
-    "kb/_build_ccr_cpl.py"
+    "kb/_build_ccr_cpl.py",
+    "kb/_build_exhibits_related.py"
    ],
    "adds": [
     "kb/credentials.json",
     "kb/unified_titles.json",
     "kb/coci_articulations.json",
     "kb/credential_review_overlay.json",
+    "kb/unclassified_assignments.json",
+    "kb/cer_classified.json",
+    "kb/occupation_credential_map.json",
+    "kb/reference/map_cpl_opportunities_verified.json",
+    "kb/exhibits_related.json",
     "kb/cred_rename_dryrun/",
     "kb/cred_rename_out/",
     "kb/remint_blast_worklist.json",
@@ -31437,6 +31626,7 @@
     "tests/fold_issuer_resolution_test.py",
     "tests/fold_issuer_single_source_test.py",
     "tests/emptied_title_guard_test.py",
+    "tests/cred_rename_repoint_test.py",
     "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/adopt_align_build_test.py",

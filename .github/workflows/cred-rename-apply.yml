@@ -18,6 +18,14 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 #      DELETEs fulfilled unified_title_override rows; PATCHes other
 #      override rows' course_id to the new identity.
 #   5. Commit + push the mutated kb files + frozen alias_map snapshot.
+#   6. Start daily-dashboard.yml on main, so the published files follow the apply (#3110: they lagged 98 minutes).
+#
+# Re-point (#3110, COBIx comments 6813000047 and 6813256997): step 3 also moves each saved assignment a bot saved
+# on an old title (kb/_cred_rename_repoint.py: unclassified_assignments.json, cer_classified.json, the occupation
+# map and MAP's by_title) and holds a person's for a ruling; step 4.1 moves the kb_curation row the first of those
+# copies, since the nightly sync rewrites that file from kb_curation. After the writes, step 4c counts every old
+# title left under kb/ into the receipt (old_titles_left.json); a count above 0 fails the job's last step, after
+# the receipt is committed. The count never rolls anything back.
 #
 # One pass (#3110 build step 1): a lead that creates a title and the siblings
 # whose merge into it is already confirmed apply in the same run; a second
@@ -28,13 +36,13 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 # kb/cred_rename_out/<date>/ holds undo.json; kb/_cred_rename_undo.py reverses
 # an apply from it.
 #
-# statewide_data.js and the MAP link verify file are NOT rebuilt here.
+# statewide_data.js is NOT rebuilt here (the MAP link verify file's by_title is re-keyed by step 3's re-point).
 # statewide_data.js is written by the full excel_to_dashboard.py run, which
 # also regenerates the dashboard HTML (Rule 1) and reads the master workbook
 # and live Supabase; daily-dashboard.yml owns that run, and a second writer of
 # those artifacts is what the artifact policy and Rule 6 rule out. After an
-# apply, dispatch daily-dashboard.yml (it queues behind this run on the shared
-# concurrency group) and let it publish.
+# apply, step 6 dispatches daily-dashboard.yml: it waits behind this run on the shared
+# concurrency group, and its gate job runs every workflow_dispatch (only a scheduled run stands down).
 #
 # workflow_dispatch stays the only trigger: no schedule, no automatic start.
 #
@@ -64,6 +72,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write   # step 6 dispatches daily-dashboard.yml with GITHUB_TOKEN (workflow_dispatch is the event it may start)
 
     steps:
       - name: Checkout main
@@ -162,6 +171,28 @@ jobs:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python kb/_cred_rename_apply_supabase.py
 
+      # ── Step 4.1: move the re-pointed assignments' kb_curation rows ─
+      # kb/unclassified_assignments.json is a copy of kb_curation's _UNCLASSIFIED:: rows, and the nightly
+      # kb/_apply_unclassified_triage.py rewrites it from them: a re-point there lasts only once the row moves too.
+      # One guarded PATCH of the value per bot row (value, reviewer and save time as a fresh read found them), filed
+      # from a fresh read into repoint_supabase_log*.json; a person's row is never written. The undo reverses it.
+      - name: Move the re-pointed assignments' kb_curation rows
+        id: repoint_supa
+        if: steps.json.outputs.receipt != ''
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RECEIPT: ${{ steps.json.outputs.receipt }}
+        run: python kb/_cred_rename_repoint.py --supabase "$RECEIPT"
+
+      # ── Step 4.2: re-read the credential-panel overlay after the row moves ─
+      # Step 1's copy predates the moves; the count below reads what kb_curation holds now.
+      - name: Re-sync the credential-review overlay after the row moves
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python kb/_apply_credential_review.py
+
       # ── Step 4b: rebuild what reads the credential keys ───────────
       # The 2026-10-01 apply rewrote credentials.json and left three derived
       # files stale, so the lints job's freshness checks failed on main and on
@@ -176,6 +207,19 @@ jobs:
         run: |
           python3 kb/_build_remint_blast_radius.py
           python3 kb/_build_ccr_cpl.py
+          python3 kb/_build_exhibits_related.py --quiet
+
+      # ── Step 4c: count the old titles left under kb/ ──────────────
+      # Every old title of this apply still under kb/ as an exact JSON key or value, outside the receipt and history
+      # folders and alias lists named in kb/_cred_rename_repoint.py. Written into the receipt; the last step fails
+      # the job on a count above 0, after the commit. continue-on-error: a crash here leaves the file missing, which
+      # the last step also reports.
+      - name: Count the old titles left under kb/
+        if: steps.json.outputs.receipt != ''
+        continue-on-error: true
+        env:
+          RECEIPT: ${{ steps.json.outputs.receipt }}
+        run: python3 kb/_cred_rename_repoint.py --count "$RECEIPT"
 
       # ── Step 5: commit + push ─────────────────────────────────────
       - name: Commit + push
@@ -195,6 +239,11 @@ jobs:
                   kb/unified_titles.json \
                   kb/coci_articulations.json \
                   kb/credential_review_overlay.json \
+                  kb/unclassified_assignments.json \
+                  kb/cer_classified.json \
+                  kb/occupation_credential_map.json \
+                  kb/reference/map_cpl_opportunities_verified.json \
+                  kb/exhibits_related.json \
                   kb/cred_rename_dryrun/ \
                   kb/cred_rename_out/ \
                   kb/remint_blast_worklist.json \
@@ -213,6 +262,7 @@ jobs:
           for attempt in 1 2 3 4 5; do
             if git push origin HEAD:main; then
               echo "Push succeeded on attempt $attempt."
+              echo "pushed=true" >> "$GITHUB_OUTPUT"
               exit 0
             fi
             echo "Push attempt $attempt failed — rebasing and retrying."
@@ -222,11 +272,47 @@ jobs:
           done
           exit 1
 
+      # ── Step 6: start the dashboard run that publishes this apply ─
+      # Only once the apply's commit is on main. The dispatched run joins the daily-dashboard concurrency group,
+      # so it waits for this run to end; this run never waits on it, so neither blocks the other. Its gate job
+      # passes every non-scheduled event. One caution: GitHub keeps ONE pending run per concurrency group and
+      # cancels the older pending one when another arrives, so when a run of a workflow in this group is already
+      # pending, this step dispatches nothing: a pending daily-dashboard run already publishes after this one, and
+      # any other workflow's pending run must not be cancelled (the warning names it, to dispatch after it).
+      - name: Start daily-dashboard.yml on main
+        if: always() && steps.commit.outputs.pushed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -uo pipefail
+          group_files=$(grep -l '^  group: daily-dashboard$' .github/workflows/*.yml | xargs -n1 basename)
+          for wf in $group_files; do
+            n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$wf" --json status \
+                  -q '[.[] | select(.status == "pending" or .status == "queued" or .status == "waiting")] | length' \
+                  2>/dev/null || echo 0)
+            if [ "${n:-0}" -gt 0 ]; then
+              if [ "$wf" = "daily-dashboard.yml" ]; then
+                echo "A daily-dashboard run is already pending; it publishes this apply when this run ends."
+              else
+                echo "::warning title=Dashboard not started::$wf has a pending run in the daily-dashboard group, which a new dispatch would cancel. Dispatch daily-dashboard.yml after it finishes."
+              fi
+              exit 0
+            fi
+          done
+          gh workflow run daily-dashboard.yml --ref main -R "$GITHUB_REPOSITORY"
+          echo "Dispatched daily-dashboard.yml on main; it runs when this run ends."
+
       # Fail closed: the job never reads success while the row moves failed.
       - name: Fail when the kb_curation row moves did not finish
         if: steps.supa.outcome == 'failure'
         run: |
           echo "::error::The kb_curation row moves failed; the folded titles keep rows under their old keys until the retry. Read kb/cred_rename_out/<date>/supabase_log*.json and re-run kb/_cred_rename_apply_supabase.py."
+          exit 1
+
+      - name: Fail when the re-pointed assignments' kb_curation rows did not move
+        if: steps.repoint_supa.outcome == 'failure'
+        run: |
+          echo "::error::A re-pointed assignment's kb_curation row did not move; the nightly sync would put the old title back in kb/unclassified_assignments.json. Read repoint_supabase_log*.json in the receipt and re-run kb/_cred_rename_repoint.py --supabase <receipt>."
           exit 1
 
       - name: Fail when the derived files were not rebuilt
@@ -280,3 +366,11 @@ jobs:
             echo "- \`validation.md\` — per-file mutation counts"
             echo "- \`supabase_log.json\` — per-row Supabase migration log"
           } >> "$GITHUB_STEP_SUMMARY"
+
+      # The last step: the old titles left under kb/ after this apply, read from the receipt the commit carried.
+      # Above 0 fails the job, naming each location, so the workflow failure watch reports it. Nothing is rolled back.
+      - name: Fail when old titles are left under kb/
+        if: always() && steps.commit.outputs.pushed == 'true'
+        env:
+          RECEIPT: ${{ steps.json.outputs.receipt }}
+        run: python3 kb/_cred_rename_repoint.py --count "$RECEIPT" --check

@@ -499,6 +499,13 @@ jobs:
       # issuer conflict, no rename, and the apply stays safe; the same rows act again once a raw maps to the title.
       - name: Saved rows on an emptied title are ignored
         run: python3 tests/emptied_title_guard_test.py
+      # The rename's re-point (#3110, COBIx after the 2026-11-12 apply): a bot's saved assignment moves to the new
+      # title and the undo puts it back, a person's is held, the old-title count reads 0 on a clean tree, and the
+      # apply starts the dashboard only after a committed apply. PyYAML reads the two workflows.
+      - name: Credential rename re-point, old-title count and dashboard start
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/cred_rename_repoint_test.py
       # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
       # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
       - name: Exhibits Outcomes match builder
