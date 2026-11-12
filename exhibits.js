@@ -1033,20 +1033,40 @@
          local titles of the next one (Firefighter 1, 11, over Firefighter 1A, 2); else none, and the panel still
          marks each one Statewide exhibit.
      (d) None statewide: the most used candidate, by the same issuer rule, with at least POPULAR_MIN local titles and
-         more than every other candidate. */
+         more than every other candidate. Outside an ASE test, its title's own words (earlier titles left out) hold
+         every word of the card's title, or the card's hold every word of its title; two shared words are not enough.
+     (e) Outside an ASE test, a card whose title ends in a course code in parentheses ("Administration of Justice
+         (AJ 54)") names only a candidate carrying the same code.
+     ONE rule with the pipeline: kb/title_in_use.py makes the same choice the Review proposal (kb/_build_exhibits_review.py,
+     Sam's ruling of 2026-11-12, "suggest the best canonical title based on what's in use"). Both sides read
+     tests/fixtures/title_in_use_cases.json (tests/title_in_use_test.py, tests/title_in_use_parity.test.js), which pins
+     these constants, REL_STOP and the choices; change both or a test fails. */
   var STATEWIDE_LEAD = 3;
+  var PAREN_CODE = /\(\s*([A-Z]{2,6})\s+([A-Z0-9]{1,6})\s*\)\s*$/;
+  function parenCode(t) { var m = PAREN_CODE.exec(t || ""); return m ? m[1] + " " + m[2] : ""; }
+  function namesSame(a, b) {
+    var ka = Object.keys(a), kb = Object.keys(b);
+    if (!ka.length || !kb.length) return false;
+    return ka.every(function (k) { return b[k]; }) || kb.every(function (k) { return a[k]; });
+  }
   function relAligned(got, cardTitle, cardIssuer) {
     var t0 = (cardTitle || "").trim(), iss = (cardIssuer || "").trim();
     if (t0 && relInRef(t0) && relStatewide(t0)) return { kind: "self", o: state.rel.by[t0] };
     if (!iss) return null;
+    var code = got.family ? "" : parenCode(t0);
     var near = got.rows.filter(function (x) {
-      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1);
+      return !x.o.proposed && x.o.t !== t0 && x.o.issuer === iss && (got.family ? x.tier === 0 : x.tier <= 1)
+        && (!code || parenCode(x.o.t) === code);
     });
     function byUse(a, b) { return b.o.locals - a.o.locals || b.o.adopted - a.o.adopted || a.o.t.localeCompare(b.o.t); }
     var sw = near.filter(function (x) { return relStatewide(x.o.t); }).sort(byUse);
     if (sw.length) {
       if (sw.length > 1 && sw[0].o.locals < STATEWIDE_LEAD * sw[1].o.locals) return null;
       return { kind: "statewide", o: sw[0].o };
+    }
+    if (!got.family) {
+      var mine = relWords(t0);
+      near = near.filter(function (x) { return namesSame(mine, relWords(x.o.t)); });
     }
     // The card's own title, when it is in the reference, competes too: a card already on the most used title is told
     // nothing (a CompTIA Security+ card never names Network+).
@@ -2077,6 +2097,10 @@
       keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
     });
     canon.appendChild(exists);
+    // Sam, 2026-11-12: a certification, license or training program takes its official name. When the repo holds none
+    // for it (kb/_build_exhibits_review.py needs_official_name), the card says so in words.
+    if (h.needs_official_name) canon.appendChild(el("p", { cls: "exh-muted exh-small exh-needs-name",
+      text: "The issuer's official name for this credential is not on file. Check this title against the issuer's own name." }));
     (h.alternates || []).forEach(function (alt) {
       canon.appendChild(el("p", { cls: "exh-muted exh-small" }, [
         (h.step === CONFLICT ? "The reference also names: " : "Also proposed: ") + alt + " ",
@@ -5039,7 +5063,8 @@
     _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
-    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
+    loadRelated: loadRelated, _relatedFor: relatedFor, _relAligned: relAligned, _relWhyNot: relWhyNot, _POPULAR_MIN: POPULAR_MIN,
+    _STATEWIDE_LEAD: STATEWIDE_LEAD, _REL_STOP: REL_STOP, _LOCAL_ISSUER: LOCAL_ISSUER, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
     _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

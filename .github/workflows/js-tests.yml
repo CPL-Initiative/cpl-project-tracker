@@ -515,6 +515,10 @@ jobs:
       # student figure in the public file.
       - name: Exhibits review queue builder
         run: python3 tests/exhibits_review_build_test.py
+      # The title in use before a new one, and no course title on a certification (Sam, 2026-11-12): the one rule's
+      # Python side against the fixture exhibits.js is pinned to (tests/title_in_use_parity.test.js), and the proposal.
+      - name: Exhibits proposal, the title in use
+        run: python3 tests/title_in_use_test.py
       # Another look (Sam, 2026-10-31): each rule's proposal on a fixture, what a person kept never comes
       # back, a held title is left to Review, an exam's or an industry credential's name is never read
       # as a course number.

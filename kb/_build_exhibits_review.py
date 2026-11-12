@@ -58,6 +58,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from _suggest_unclassified import load_js, norm_college  # noqa: E402
 import cert_naming  # noqa: E402
+import credential_aliases  # noqa: E402
+import exhibit_paths  # noqa: E402
+import title_in_use  # noqa: E402
 
 SCHEMA = 1
 OUT = "kb/exhibits_review.json"
@@ -72,6 +75,18 @@ CONFLICT = "Conflict with the reference"
 STEPS = [PROPOSED, WORDING, TWO_ISSUERS, CONFLICT]
 
 KIND_WORD = {"ccn": "CCN", "cid": "C-ID", "mid": "M-ID"}
+
+# Where a proposal came from (Sam's two rulings in session, 2026-11-12; the record's `proposal_source`):
+#   in_use_statewide   a statewide exhibit already in the reference, same issuer (kb/title_in_use.py)
+#   in_use_most_used   the most used title in the reference, same issuer (kb/title_in_use.py)
+#   course             the course the exhibit articulates to (M-ID, C-ID, CCN or the college's own course)
+#   official_name      the certification's official name (kb/cert_naming.py, the credential watch's catalog)
+#   classifier, procedure, reference   the classifier's title, a CER procedure's, a person-reviewed one
+SRC_STATEWIDE, SRC_MOST_USED = title_in_use.STATEWIDE, title_in_use.MOST_USED
+SRC_COURSE, SRC_OFFICIAL = "course", "official_name"
+SRC_CLASSIFIER, SRC_PROCEDURE, SRC_REFERENCE = "classifier", "procedure", "reference"
+CATALOG = "kb/it_ai_credential_catalog.json"
+STATEWIDE_RECS = "fact-sheet/statewide_recs.js"
 UNDER_CAP = 40   # local titles kept per proposed title; the count says how many in all
 
 
@@ -109,9 +124,29 @@ def basis_of(aligned):
     return "the course " + aligned.get("code", "")
 
 
-def proposal_of(item, aligned):
+def course_title_fits(ex):
+    """Sam, in session, 2026-11-12 (`sam-cert-title-official-name-not-mid-2026-11-12`): "The MID title works well for
+    cx because those are single course exhibits...but many if not most industry certs like Firefighter 1, POST, Real
+    Estate Sales, Comptia Network+ have several CRs and need a non-course based canonical title that best aligns with
+    the official name of the cert or license or training program". A course's title names the exhibit only when every
+    exhibit behind the local title is credit by exam (its MAP id, kb/exhibit_paths.py; MAP's CPL type where no id
+    names a path) and the exhibits carry at most one credit recommendation. Returns (fits, why not)."""
+    paths = sorted({exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""})
+    types = sorted(ex.get("types") or [])
+    cbe = paths == ["cx"] if paths else (bool(types) and all(t == "Credit By Exam" for t in types))
+    n = len(ex.get("recs") or [])
+    if cbe and n <= 1:
+        return True, ""
+    if not cbe:
+        kind = exhibit_paths.PATHS[paths[0]][0] if len(paths) == 1 else (types[0].lower() if len(types) == 1 else "")
+        return False, (kind + ", not credit by exam") if kind else "not credit by exam"
+    return False, "%d credit recommendations" % n
+
+
+def proposal_of(item, aligned, course_ok=True):
     """The proposed canonical title, its issuer, where it came from, and the alternates a person
-    should see beside it."""
+    should see beside it. `course_ok` (course_title_fits) says whether the aligned course's title may name it; when
+    it may not, the classifier's or the procedure's title leads (a course title stands only when nothing else is)."""
     props = [item["proposal"]] if item.get("proposal") else list(item.get("proposals") or [])
     first = props[0] if props else {}
     if item.get("fold_report"):
@@ -120,17 +155,79 @@ def proposal_of(item, aligned):
         standing = item.get("standing") or []
         return {"title": standing[0] if standing else first.get("title", ""),
                 "issuer": first.get("issuer", ""), "from": "the reference, reviewed by a person",
-                "saved": first.get("title", ""), "alternates": standing[1:]}
+                "saved": first.get("title", ""), "alternates": standing[1:], "source": SRC_REFERENCE}
     alternates = [p.get("title", "") for p in props[1:] if p.get("title")]
-    if aligned:
+    if aligned and (course_ok or not first.get("title")):
         if first.get("title") and first["title"] != aligned["title"]:
             alternates.insert(0, first["title"])
         return {"title": aligned["title"], "issuer": first.get("issuer", ""),
-                "from": basis_of(aligned), "alternates": alternates}
+                "from": basis_of(aligned), "alternates": alternates, "source": SRC_COURSE}
     who = first.get("procedure") or "the classifier"
     return {"title": first.get("title", ""), "issuer": first.get("issuer", ""),
             "from": who if who.startswith("the ") else "the " + who + " rule",
-            "alternates": alternates}
+            "alternates": alternates, "source": SRC_PROCEDURE if first.get("procedure") else SRC_CLASSIFIER}
+
+
+def _norm_name(text):
+    return " ".join(re.sub(r"[^a-z0-9+#]+", " ", re.sub(r"\([^)]*\)", " ", (text or "").lower())).split())
+
+
+def official_names(catalog):
+    """issuer (normalized, its parenthetical short name dropped) -> {name (case and spacing folded): the issuer's own
+    spelling}, from the credential watch's joined catalog (kb/it_ai_credential_catalog.json). Read only."""
+    out = {}
+    for c in (catalog or {}).get("credentials") or []:
+        iss, name = _norm_name(c.get("issuer")), (c.get("name") or "").strip()
+        if iss and name:
+            out.setdefault(iss, {}).setdefault(" ".join(name.lower().split()), name)
+    return out
+
+
+def official_name(names, title, issuer):
+    """The issuer's own spelling of `title` when its catalog lists that name (case and spacing aside), else ""."""
+    got = names.get(_norm_name(issuer)) or {}
+    return got.get(" ".join((title or "").lower().split()), "")
+
+
+def use_count(o):
+    """"11 local titles, at 19 colleges": the reason an in-use proposal gives on the card."""
+    words = "%d local title%s" % (o["locals"], "" if o["locals"] == 1 else "s")
+    if o.get("adopted"):
+        words += ", at %d college%s" % (o["adopted"], "" if o["adopted"] == 1 else "s")
+    return words
+
+
+def settle(prop, raw, ex, index, statewide, names, in_reference):
+    """Sam's two rulings of 2026-11-12, after the course gate in proposal_of: (1) a title already in use, by the one
+    rule exhibits.js also follows (kb/title_in_use.py), before a new one; (2) an industry certification, license or
+    training program with nothing in use takes its official name where the repo holds one (kb/cert_naming.py, already
+    applied by the caller; the credential watch's catalog), else keeps the classifier's title and is flagged
+    `needs_official_name`. Returns the proposal with `source` and, where they apply, `in_use` and
+    `needs_official_name`. Never reads TOP, never calls a model or the network."""
+    title = prop["title"]
+    a = title_in_use.in_use(index, statewide, title, raw, prop.get("issuer", "")) if title else None
+    if a and a["kind"] == title_in_use.SELF:
+        return dict(prop, source=SRC_STATEWIDE,
+                    in_use={"title": a["o"]["t"], "locals": a["o"]["locals"], "adopted": a["o"]["adopted"]})
+    if a:
+        o = a["o"]
+        word = "the statewide exhibit in use" if a["kind"] == SRC_STATEWIDE else "the most used title in the reference"
+        out = dict(prop, title=o["t"], issuer=o["issuer"], source=a["kind"],
+                   alternates=[title] + [x for x in prop.get("alternates") or [] if x not in (title, o["t"])],
+                   in_use={"title": o["t"], "locals": o["locals"], "adopted": o["adopted"]})
+        out["from"] = "%s (%s)" % (word, use_count(o))
+        return out
+    paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
+    cert = paths == {"ic"} if paths else "Industry Certification" in (ex.get("types") or [])
+    issuer = title_in_use.issuer_for(title, prop.get("issuer", ""))
+    if (not cert or not title or title in in_reference or prop.get("source") == SRC_OFFICIAL
+            or issuer == title_in_use.LOCAL_ISSUER):
+        return prop
+    named = official_name(names, title, issuer)
+    if named:
+        return dict(prop, title=named, source=SRC_OFFICIAL, alternates=[x for x in prop.get("alternates") or []
+                                                                        if x != named])
+    return dict(prop, needs_official_name=True)
 
 
 def clean_college(name):
@@ -145,7 +242,8 @@ def clean_college(name):
 
 
 def exhibits_by_raw(statewide, raws):
-    """raw title -> {ids, art}: every exhibit record that lists the raw."""
+    """raw title -> {ids, art, types, recs}: every exhibit record that lists the raw, with MAP's CPL types and the
+    distinct credit recommendations (course, credit) the exhibits carry, which course_title_fits reads."""
     want, out = set(raws), {}
     for x in statewide.get("exhibits") or []:
         hits = [r for r in x.get("raw_titles") or [] if r in want]
@@ -153,7 +251,13 @@ def exhibits_by_raw(statewide, raws):
             continue
         ids = x.get("exhibit_ids") or [i for i in (x.get("exhibit_id") or "").split("|") if i]
         for raw in hits:
-            rec = out.setdefault(raw, {"ids": [], "art": []})
+            rec = out.setdefault(raw, {"ids": [], "art": [], "types": [], "recs": []})
+            if x.get("cpl_type") and x["cpl_type"] not in rec["types"]:
+                rec["types"].append(x["cpl_type"])
+            for r in x.get("credit_recs") or []:
+                pair = [(r.get("course") or "").strip(), (r.get("credit") or "").strip()]
+                if any(pair) and pair not in rec["recs"]:
+                    rec["recs"].append(pair)
             for i in ids:
                 if i not in rec["ids"]:
                     rec["ids"].append(i)
@@ -326,14 +430,24 @@ def build(root):
              or (n.get("raw_title") in still and n.get("raw_title") not in saved)]
     dropped = len(report.get("needs_you") or []) - len(needs)
     by_raw = exhibits_by_raw(statewide, [n.get("raw_title") for n in needs])
+    adoption = adoption_file(statewide, prescriptive)
+    # The titles in use (Sam, 2026-11-12): the reference's titles with their issuer, local titles and colleges, the
+    # same counts kb/_build_exhibits_related.py writes for the Related titles panel, and the statewide list.
+    unified = load_json(root, "kb/unified_titles.json", {}) or {}
+    index = title_in_use.index_from_reference(creds, unified, adoption["credentials"], credential_aliases.load(root))
+    in_reference = {o["t"] for o in index}
+    statewide_titles = title_in_use.statewide_from_js(os.path.join(root, STATEWIDE_RECS))
+    names_on_file = official_names(load_json(root, CATALOG, {}))
     items, courses = [], {}
     for n in needs:
         raw = n.get("raw_title") or ""
         if not raw:
             continue
         step = step_of(n)
+        ex = by_raw.get(raw) or {"ids": [], "art": [], "types": [], "recs": []}
         aligned = aligned_all.get(raw) if step != CONFLICT else None
-        prop = proposal_of(n, aligned)
+        course_ok, course_why = course_title_fits(ex) if aligned else (True, "")
+        prop = proposal_of(n, aligned, course_ok)
         if step != CONFLICT:
             # A proposal based on a certification goes out in the format (kb/cert_naming.py, Sam's ruling of
             # 2026-11-11); the form the rule or the classifier wrote stays beside it as an alternate. A
@@ -341,8 +455,8 @@ def build(root):
             formed = cert_naming.canonical(prop["title"], prop.get("issuer", ""))
             if formed != prop["title"]:
                 prop = dict(prop, alternates=[prop["title"]] + [a for a in prop.get("alternates") or [] if a != formed],
-                            title=formed)
-        ex = by_raw.get(raw) or {"ids": [], "art": []}
+                            title=formed, source=SRC_OFFICIAL)
+            prop = settle(prop, raw, ex, index, statewide_titles, names_on_file, in_reference)
         typed = [clean_college(c) for c in n.get("colleges") or []]
         art = ex["art"] or typed
         art_keys = {norm_college(c) for c in art}
@@ -374,6 +488,7 @@ def build(root):
             "title": title,
             "issuer": prop["issuer"],
             "from": prop["from"],
+            "proposal_source": prop.get("source", SRC_CLASSIFIER),
             "ids": ex["ids"],
             "art": art,
             "could": could,
@@ -389,6 +504,13 @@ def build(root):
             rec["saved"] = prop["saved"]
         if prop.get("alternates"):
             rec["alternates"] = prop["alternates"]
+        if prop.get("in_use"):
+            rec["in_use"] = prop["in_use"]
+        if prop.get("needs_official_name"):
+            rec["needs_official_name"] = True
+        if aligned and not course_ok and prop.get("source") != SRC_COURSE:
+            # The course's title, set aside, and why (Sam's ruling of 2026-11-12): the card's course line still names it.
+            rec["course_title_set_aside"] = {"title": aligned["title"], "basis": basis_of(aligned), "why": course_why}
         if aligned:
             rec["aligned_id"] = aligned["id"]
             rec["course"] = aligned.get("code", "")
@@ -457,7 +579,7 @@ def build(root):
                         | {(s.get("site") or "").strip() for ss in site_lists.values() for s in ss
                            if isinstance(s, dict)} - {""}, key=str.lower),
         "held": items,
-    }, course_file, adoption_file(statewide, prescriptive)
+    }, course_file, adoption
 
 
 def dump(data, list_key):

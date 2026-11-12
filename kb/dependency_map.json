@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 879,
+  "file_datasets": 880,
   "external_services": 195,
   "consumers": 561,
   "workflows": 67,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3926,
+     "line": 3950,
      "tabs": [
       "exhibits"
      ]
@@ -5797,7 +5797,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2007,
+     "line": 2027,
      "tabs": [
       "exhibits"
      ]
@@ -6180,7 +6180,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 3250,
+     "line": 3274,
      "tabs": [
       "exhibits"
      ]
@@ -6400,7 +6400,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3918,
+     "line": 3942,
      "tabs": [
       "exhibits"
      ]
@@ -6493,7 +6493,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4203,
+     "line": 4227,
      "tabs": [
       "exhibits"
      ]
@@ -8291,7 +8291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4492,
+     "line": 4516,
      "tabs": [
       "exhibits"
      ]
@@ -8588,6 +8588,13 @@
      "direction": "read",
      "how": "literal",
      "line": 120
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 89
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -10852,7 +10859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 304
+     "line": 408
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -13533,7 +13540,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3028,
+     "line": 3052,
      "tabs": [
       "exhibits"
      ]
@@ -13921,7 +13928,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 418
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -14067,7 +14074,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 312
+     "line": 416
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -15227,7 +15234,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3940,
+     "line": 3964,
      "tabs": [
       "exhibits"
      ]
@@ -15251,7 +15258,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 316
+     "line": 420
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -15338,7 +15345,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3023,
+     "line": 3047,
      "tabs": [
       "exhibits"
      ]
@@ -15438,7 +15445,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 68
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -15533,7 +15540,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3437,
+     "line": 3461,
      "tabs": [
       "exhibits"
      ]
@@ -15615,7 +15622,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 66
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -15664,7 +15671,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 67
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -16033,6 +16040,13 @@
      "direction": "read",
      "how": "literal",
      "line": 58
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -19384,7 +19398,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 317
+     "line": 421
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -19511,7 +19525,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 305
+     "line": 409
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -19612,7 +19626,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 415
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -22376,7 +22390,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1908,
+     "line": 1928,
      "tabs": [
       "exhibits"
      ]
@@ -22452,7 +22466,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 307
+     "line": 411
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -22605,7 +22619,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 309
+     "line": 413
     }
    ],
    "producers": [
@@ -24717,6 +24731,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/title_in_use_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/top_code_lookup_code4_test.py": {
    "consumers": [
     {
@@ -25596,7 +25623,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1909,
+     "line": 1929,
      "tabs": [
       "exhibits"
      ]
@@ -25658,7 +25685,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 308
+     "line": 412
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -31812,6 +31839,7 @@
     "tests/apply_concurrency_test.py",
     "tests/docket_rulings_test.py",
     "tests/exhibits_review_build_test.py",
+    "tests/title_in_use_test.py",
     "tests/exhibits_sweep_build_test.py",
     "tests/cert_naming_test.py",
     "tests/cred_rename_fold_issuer_test.py",
