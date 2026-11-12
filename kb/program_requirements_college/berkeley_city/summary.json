@@ -2,16 +2,16 @@
  "college": "Berkeley City College",
  "programs": 99,
  "with_closed_list": 97,
- "found": 90,
+ "found": 78,
  "extracted": 90,
  "errors": 0,
- "passed_machine_checks": 34,
+ "passed_machine_checks": 47,
  "failed": {
   "coverage": 1,
   "invented": 0,
-  "arithmetic": 56,
+  "arithmetic": 42,
   "repeated": 0,
-  "outcomes": 0
+  "outcomes": 1
  },
  "cost_usd": 5.81,
  "cost_per_program": 0.0645,
@@ -41,7 +41,49 @@
     },
     "tab_panels": []
    }
+  },
+  {
+   "control_number": "37797",
+   "title": "Research Skills",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://bcc.curriqunet.com/catalog/view//iq/39711/39966/39989",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 0 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1732,
+     "content": 1732,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "41867",
+   "title": "Social and Human Service Work Readiness",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "41868",
+   "title": "Tutor Training",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
   }
  ],
- "run": "39891604919"
+ "run": "43141644775"
 }

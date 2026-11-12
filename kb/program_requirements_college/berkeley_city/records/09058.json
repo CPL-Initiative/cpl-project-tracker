@@ -67,34 +67,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     34.0,
     34.0
    ],
    "stated": [
-    60.0,
-    60.0
+    34.0,
+    34.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 34.0-34.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     34.0,
-     34.0
+     52.0,
+     52.0
     ],
     "stated": [
-     34.0,
-     34.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     18.0,
+     18.0
+    ],
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -119,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,10 +145,10 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
-   "electives_fill_degree": false,
+   "electives_fill_degree": true,
    "outcomes": [
     "Apply legal and ethical principles in business decision making.",
     "Obtain information related to the profession using traditional and electronic sources. Synthesize the information into a written or oral business report.",
@@ -255,5 +260,26 @@
    "The learning outcomes appear under the program summary, which describes the Business Department generally; they are recorded as this award's outcomes."
   ]
  },
- "extracted_run": "39891604919"
+ "extracted_run": 43141644775,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 18
+   },
+   "words": "General Education and Electives\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800))"
+  },
+  {
+   "field": "electives_fill_degree",
+   "was": false,
+   "now": true,
+   "words": "General Education and Electives\n2 (https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811: Associate Degree Requirements: 'Note: When the units from general education and the major do not total 60 units, you must complete any degree-applicable course(s), referred to as electives, until you obtain the total of 60 units.' (college page read 43140339800))"
+  }
+ ],
+ "read_run": "39891604919"
 }
