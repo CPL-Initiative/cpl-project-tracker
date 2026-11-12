@@ -655,7 +655,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cpl_ai/pairs.json` | tabs: `program-requirements` · scripts: `kb/_build_cpl_ai.py` | — |
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py`, `scripts/build_cr_list_preview.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
-| `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
+| `kb/cred_rename_dryrun/alias_map.json` | tabs: `exhibits` · workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` · scripts: `kb/_exhibit_reanalysis_checks.py`, `scripts/build_exhibits_list_preview.py` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
