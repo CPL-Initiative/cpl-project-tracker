@@ -12,7 +12,8 @@ name: Sierra ghost-row delete (chatbox_credentials)
 #   mode=apply  plan_dir=<that directory>, confirm_count=<the plan's ghost_count>. Refuses a wrong count, a reference
 #               whose sha256 is not the plan's (the daily run rebuilds the reference at 06:17, 09:17 and 12:17 UTC,
 #               so plan and apply in one window between them), more than 15% of live rows, or a reference under
-#               2,000 titles. Files apply_log.json before the first delete and applied.json from a fresh read.
+#               2,000 titles. Holds a ghost whose alias successor's live raw_variants lack its old name until the
+#               sync has written it (sync first, then delete; allow_unaliased overrides). Files apply_log.json before the first delete and applied.json from a fresh read.
 #   mode=undo   plan_dir=<that directory>: re-inserts the before-rows ON CONFLICT DO NOTHING, files undone.json.
 # Every mode commits its receipt directory to main, also when the script exits 1.
 #
@@ -40,6 +41,11 @@ on:
         required: false
         default: ""
         type: string
+      allow_unaliased:
+        description: "apply: delete a ghost even when its alias successor's raw_variants lack its old name (off: run the sync first)"
+        required: false
+        default: false
+        type: boolean
 
 concurrency:
   group: credential-catalog-sync
@@ -96,15 +102,18 @@ jobs:
           MODE: ${{ inputs.mode }}
           PLAN_DIR: ${{ inputs.plan_dir }}
           CONFIRM: ${{ inputs.confirm_count }}
+          ALLOW_UNALIASED: ${{ inputs.allow_unaliased }}
         run: |
           set -euo pipefail
           if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then
             echo "::error::SUPABASE_SERVICE_KEY not set"
             exit 1
           fi
+          EXTRA=""
+          if [ "$ALLOW_UNALIASED" = "true" ]; then EXTRA="--allow-unaliased"; fi
           case "$MODE" in
             plan)  python3 kb/_chatbox_ghost_delete.py plan ;;
-            apply) python3 kb/_chatbox_ghost_delete.py apply --plan "$PLAN_DIR" --confirm-count "$CONFIRM" ;;
+            apply) python3 kb/_chatbox_ghost_delete.py apply --plan "$PLAN_DIR" --confirm-count "$CONFIRM" $EXTRA ;;
             undo)  python3 kb/_chatbox_ghost_delete.py undo --plan "$PLAN_DIR" ;;
           esac
 

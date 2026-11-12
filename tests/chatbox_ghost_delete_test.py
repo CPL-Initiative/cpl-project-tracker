@@ -269,6 +269,55 @@ try:
     check("undo: the log names what it inserted and what it found present",
           ulog["present_before_undo"] == ["Ghost A (retired)"] and sorted(ulog["to_insert"]) == ["Ghost B, renamed", "live 0001"])
 
+    # 5b. undo sends synced_at from the before-row (the column defaults to now() on insert)
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    g.apply(rest(fake), pdir, 3, ref, **LOW)
+    bodies = []
+    real_send = fake.send
+
+    def capture(method, url, headers, body):
+        if method == "POST":
+            bodies.extend(g.loads(body.decode()))
+        return real_send(method, url, headers, body)
+    fake.send = capture
+    g.undo(rest(fake), pdir)
+    check("undo: every inserted row carries the before-row's synced_at",
+          len(bodies) == 3 and all(b["synced_at"] == "2026-09-01T20:16:00.5+00:00" for b in bodies))
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    no_sync = g.read_json(os.path.join(pdir, "plan.json"))
+    del no_sync["ghosts"][0]["synced_at"]
+    g.write_json(os.path.join(pdir, "plan.json"), no_sync)
+    try:
+        g.undo(rest(fake), pdir)
+        check("undo: refuses a before-row without synced_at", False)
+    except g.Refused:
+        check("undo: refuses a before-row without synced_at", True)
+
+    # 5c. sync first, then delete: a ghost with an alias successor goes only once the successor carries its name
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    aliased = g.read_json(os.path.join(pdir, "plan.json"))
+    aliased["aliases"]["Ghost A (retired)"]["alias_to"] = "Live 0003"
+    g.write_json(os.path.join(pdir, "plan.json"), aliased)
+    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
+    check("apply: holds a ghost whose live successor's raw_variants lack its old name, deletes the rest",
+          code == 1 and applied["held_successor_lacks_old_name"] == ["Ghost A (retired)"]
+          and "Ghost A (retired)" in fake.rows and "Ghost B, renamed" not in fake.rows, applied)
+    fake.rows["Live 0003"]["raw_variants"] = fake.rows["Live 0003"]["raw_variants"] + ["ghost a (RETIRED)"]
+    code, applied = g.apply(rest(fake), pdir, 3, ref, **LOW)
+    check("apply: deletes it once the sync has written the name (read live at apply time, lower-cased)",
+          code == 0 and "Ghost A (retired)" not in fake.rows and applied["held_successor_lacks_old_name"] == [])
+    fake = Fake(START)
+    pdir, doc = fresh_plan(fake)
+    aliased = g.read_json(os.path.join(pdir, "plan.json"))
+    aliased["aliases"]["Ghost A (retired)"]["alias_to"] = "Live 0003"
+    g.write_json(os.path.join(pdir, "plan.json"), aliased)
+    code, applied = g.apply(rest(fake), pdir, 3, ref, allow_unaliased=True, **LOW)
+    check("apply: --allow-unaliased deletes it anyway", code == 0 and "Ghost A (retired)" not in fake.rows)
+    check("apply: the hold is on by default", g.apply.__defaults__[-1] is False)
+
     # 7. the real transport against a local HTTP server --------------------------------------------------------
     tricky = "Tricky, (one) \"quoted\" + A6 — L3"
     hfake = Fake([row(t) for t in REF_TITLES] + [row(tricky + " old")])

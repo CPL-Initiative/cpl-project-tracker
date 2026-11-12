@@ -25,7 +25,9 @@ MODES (workflow: .github/workflows/chatbox-ghost-delete.yml; the sandbox cannot 
           plan's, the ghosts are at most --max-share of the live rows (default 15%), and the reference builds at least
           --min-reference titles (default 2,000). Re-reads the table, deletes only a planned row that is still live,
           still absent from the reference and still equal to its before-row, one exact `unified_title=eq.` per request
-          (batched for the log). apply_log.json names the titles before the first delete; applied.json comes from a
+          (batched for the log). A ghost the plan's alias notes send to a live successor is held unless that
+          successor's live raw_variants already carry the ghost's title (the sync writes it: sync first, then
+          delete; --allow-unaliased overrides). apply_log.json names the titles before the first delete; applied.json comes from a
           FRESH READ afterwards, never from a delete's response. Exits 1 while a planned ghost remains.
   undo    --plan DIR. Re-inserts plan.json's before-rows that are absent now, with
           `Prefer: resolution=ignore-duplicates` (INSERT ... ON CONFLICT DO NOTHING), so a title the sync has since
@@ -339,7 +341,18 @@ def _attempts(path):
 
 # ── apply ────────────────────────────────────────────────────────────────────
 
-def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference=MIN_REFERENCE, now=None):
+def successor_carries(title, successor, live):
+    """True when no applied alias names a successor, or the successor's LIVE row carries `title` among its raw_variants
+    (lower-cased, as Sierra's tier 2 compares). Sam, 2026-11-11: old titles stay as search aliases; the sync writes them
+    (kb/_sync_credential_catalog.py retired_names), so a ghost goes only once the sync has run: sync first, then delete."""
+    if not successor:
+        return True
+    row = live.get(successor)
+    return bool(row) and title.lower() in {(v or "").lower() for v in row.get("raw_variants") or []}
+
+
+def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference=MIN_REFERENCE, now=None,
+          allow_unaliased=False):
     doc = load_plan(plan_dir)
     n = doc["ghost_count"]
     if confirm_count != n:
@@ -358,7 +371,8 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
     live = {r["unified_title"]: r for r in rest.read_all()}
     if live and n > max_share * len(live):
         raise Refused("%d ghosts of %d live rows now is above the ceiling of %.0f%%" % (n, len(live), 100 * max_share))
-    targets, in_reference, gone, changed = [], [], [], []
+    notes = doc.get("aliases") or {}
+    targets, in_reference, gone, changed, unaliased = [], [], [], [], []
     for g in doc["ghosts"]:
         t = g["unified_title"]
         if t in ref["titles"]:
@@ -367,6 +381,8 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
             gone.append(t)
         elif canonical(live[t]) != canonical(g):
             changed.append(t)
+        elif not allow_unaliased and not successor_carries(t, (notes.get(t) or {}).get("alias_to"), live):
+            unaliased.append(t)
         else:
             targets.append(t)
 
@@ -374,7 +390,8 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
     attempts = _attempts(log_path)
     attempt = {"started_at": utc_iso(now), "planned": [g["unified_title"] for g in doc["ghosts"]],
                "to_delete": targets, "skipped_in_reference": in_reference, "skipped_gone_before_apply": gone,
-               "held_changed_since_plan": changed, "live_count_before": len(live), "batches_sent": 0,
+               "held_changed_since_plan": changed, "held_successor_lacks_old_name": unaliased,
+               "allow_unaliased": allow_unaliased, "live_count_before": len(live), "batches_sent": 0,
                "error": None}
     attempts.append(attempt)
     log = {"_about": ("Written BEFORE the first delete and after each batch. What was sent, never what landed: "
@@ -408,13 +425,15 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
         "ghosts_remain": ghosts_remain,
         "skipped_in_reference": in_reference,
         "held_changed_since_plan": changed,
+        "held_successor_lacks_old_name": unaliased,
         "error": attempt["error"],
     }
     write_json(os.path.join(plan_dir, "applied.json"), applied)
-    print("apply %s: %d planned, %d gone, %d remain (%d still ghosts), %d held as changed since the plan, %d back in "
-          "the reference; %d live rows after" % (
+    print("apply %s: %d planned, %d gone, %d remain (%d still ghosts), %d held as changed since the plan, %d held "
+          "because the successor's raw_variants lack the old name (sync first), %d back in the reference; %d live "
+          "rows after" % (
               os.path.relpath(plan_dir, REPO), len(planned), len(applied["gone"]), len(remain), len(ghosts_remain),
-              len(changed), len(in_reference), len(after)))
+              len(changed), len(unaliased), len(in_reference), len(after)))
     return (1 if ghosts_remain or attempt["error"] else 0), applied
 
 
@@ -423,6 +442,10 @@ def apply(rest, plan_dir, confirm_count, ref, max_share=MAX_SHARE, min_reference
 def undo(rest, plan_dir, now=None):
     doc = load_plan(plan_dir)
     before = {g["unified_title"]: g for g in doc["ghosts"]}
+    # synced_at defaults to now() on insert; the before-row's own value is what goes back (plan reads select=*).
+    lacking = [t for t, r in before.items() if "synced_at" not in r]
+    if lacking:
+        raise Refused("%d before-row(s) lack synced_at, so an insert would stamp now(): %s" % (len(lacking), lacking[:3]))
     live = {r["unified_title"]: r for r in rest.read_all()}
     missing = [t for t in before if t not in live]
     present = [t for t in before if t in live]
@@ -491,6 +514,9 @@ def main(argv=None, send=None):
     ap.add_argument("--max-share", type=float, default=MAX_SHARE, help="ceiling on ghosts / live rows (default 0.15)")
     ap.add_argument("--min-reference", type=int, default=MIN_REFERENCE,
                     help="floor on the titles the reference builds (default 2000)")
+    ap.add_argument("--allow-unaliased", action="store_true",
+                    help="apply: delete a ghost whose alias successor's live raw_variants lack its old name (off: such "
+                         "a ghost is held until the sync has written the name)")
     ap.add_argument("--reference", help="the reference file (default: credential_reference_data.js)")
     ap.add_argument("--receipts", default=RECEIPTS, help="where plan writes its directory (default kb/receipts)")
     a = ap.parse_args(argv)
@@ -506,7 +532,8 @@ def main(argv=None, send=None):
     if a.mode == "apply":
         if a.confirm_count is None:
             ap.error("apply needs --confirm-count N (the plan's ghost count)")
-        return apply(rest, a.plan_dir, a.confirm_count, reference(a.reference), a.max_share, a.min_reference)[0]
+        return apply(rest, a.plan_dir, a.confirm_count, reference(a.reference), a.max_share, a.min_reference,
+                     allow_unaliased=a.allow_unaliased)[0]
     return undo(rest, a.plan_dir)[0]
 
 
