@@ -327,7 +327,7 @@ jobs:
           not_inputs="docs/ tests/"
           build_inputs_changed() {   # $1: the main the commit was built on. Prints each path since then that counts.
             local changed f p
-            changed=$(git diff --name-only "$1" origin/main) || return 1
+            changed=$(git diff --name-only --no-renames "$1" origin/main) || return 1   # a move lists both names
             while IFS= read -r f; do
               [ -n "$f" ] || continue
               for p in $not_inputs; do case "$f" in "$p"*) continue 2 ;; esac; done
@@ -337,6 +337,10 @@ jobs:
           echo "start=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           daily_rebuilt=0
           why=
+          pushing="the run's first build"
+          # The first pass's scrape status, as the build step wrote it. A failed input rebuild that scraped again
+          # must not leave its own status for "Fail the run on a stale scrape" to read (the fallback writes it back).
+          first_status=${LIVE_METRICS_STATUS:-} first_detail=${SCRAPE_DETAIL:-}
 
           stage
           if git diff --cached --quiet; then
@@ -360,8 +364,11 @@ jobs:
             git checkout -- .
             pre=$(git rev-parse HEAD)
             if git rebase origin/main; then
-              base=$(git merge-base "$pre" origin/main)
-              inputs=$(build_inputs_changed "$base")
+              # A range that cannot be read counts as a changed input: a rebuild, never a red run.
+              base=$(git merge-base "$pre" origin/main) || base=
+              if [ -z "$base" ] || ! inputs=$(build_inputs_changed "$base"); then
+                inputs="(the incoming range could not be read)"
+              fi
               if [ -z "$inputs" ]; then
                 sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
                 attempt=$((attempt + 1))
@@ -372,7 +379,7 @@ jobs:
               # The bound: one rebuild a run, whichever path asked for it. A changed input after it is pushed over,
               # as before this rule, with a warning: a red run there would publish nothing for the day.
               if [ "$daily_rebuilt" = 1 ]; then
-                echo "::warning title=Daily input changed again::Main changed $n_in build input(s) again after the rebuild (first: $first_in). The one rebuild is spent: the rebuilt commit is pushed, and its outputs trail main until the next run."
+                echo "::warning title=Daily input changed again::Main changed $n_in build input(s) again after the rebuild (first: $first_in). The one rebuild is spent: $pushing is pushed, and its outputs trail main until the next run."
                 sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
                 attempt=$((attempt + 1))
                 continue
@@ -415,6 +422,7 @@ jobs:
               # and pushed, as every clean rebase was before. The one rebuild is spent. A conflict has no clean
               # first build to fall back to, so it keeps its exit 1 above.
               git reset -q --hard "$pre"
+              { echo "LIVE_METRICS_STATUS=$first_status"; echo "SCRAPE_DETAIL=$first_detail"; } >> "$GITHUB_ENV"
               if ! git rebase origin/main; then
                 git rebase --abort 2>/dev/null || true
                 echo "::error title=Daily input rebuild failed::The rebuild failed and the first build no longer rebases cleanly. Nothing is pushed; the later rungs of the ladder are the backstop."
@@ -431,6 +439,7 @@ jobs:
               exit 0
             fi
             git commit -m "Daily dashboard update — $(date +%Y-%m-%d) (rebuilt on $(git rev-parse --short origin/main))"
+            pushing="the rebuilt commit"
             # The rebuilt commit gets its push even when the conflict or the changed input came on the last attempt.
             if [ "$attempt" -eq "$max" ]; then max=$((max + 1)); fi
             attempt=$((attempt + 1))

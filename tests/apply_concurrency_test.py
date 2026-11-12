@@ -313,12 +313,14 @@ if [ "${DAILY_REUSE_VETERAN:-}" != 1 ]; then echo x >> "$CNT/vet"; echo refetche
 echo "$V" >> "$CNT/build"
 printf '%s built from %s; %s; key %s\n' "$V" "$(cat kb/src.md)" "$(cat live_metrics.json)" \
   "${SUPABASE_SERVICE_KEY:-}" > kb/report.md
+(
+if [ -n "${RACE_INPUT:-}" ]; then
+  cd "$OTHER" && echo "theirs again" > kb/src.md && git commit -qam "a second input change" && git push -q origin main
+fi
+)
 if [ -n "${FAIL_BUILD:-}" ]; then exit 3; fi
 if [ -n "${RACE:-}" ]; then
   cd "$OTHER" && echo "theirs again" > kb/report.md && git commit -qam "a second merge" && git push -q origin main
-fi
-if [ -n "${RACE_INPUT:-}" ]; then
-  cd "$OTHER" && echo "theirs again" > kb/src.md && git commit -qam "a second input change" && git push -q origin main
 fi
 """
 HOOK = """#!/bin/sh
@@ -346,7 +348,8 @@ def count(cnt, name):
 CONFLICT = {"kb/src.md": "theirs", "kb/report.md": "the other writer's report"}
 
 
-def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False, untracked=None, race_input=False):
+def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False, untracked=None, race_input=False,
+              other_moves=None, first_pass=None, fail_range=False, first_status=""):
     """other_edits: files the other writer changes on main while the run builds (land_at > 0: its commit
     lands on main during that rejected push instead). reject: pushes the origin refuses (99: all)."""
     tmp = tempfile.mkdtemp(prefix="apply_conc_")
@@ -357,6 +360,11 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
         with open(os.path.join(bin_, "pip"), "w") as f:
             f.write('#!/bin/sh\necho "$*" >> "%s/pip"\n' % cnt)
         os.chmod(os.path.join(bin_, "pip"), 0o755)
+        if fail_range:   # the incoming range cannot be read: the step's one `diff --no-renames` call fails
+            with open(os.path.join(bin_, "git"), "w") as f:
+                f.write('#!/bin/sh\nif [ "$1 $2 $3" = "diff --name-only --no-renames" ]; then echo "fatal: unreadable" >&2;'
+                        ' exit 128; fi\nexec "%s" "$@"\n' % shutil.which("git"))
+            os.chmod(os.path.join(bin_, "git"), 0o755)
         subprocess.run(["git", "init", "-q", "--bare", "-b", "main", origin], check=True)
         for d, who in ((work, "w"), (other, "o")):
             os.makedirs(os.path.join(d, "kb"))
@@ -374,13 +382,17 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
 
         write(work, {"kb/src.md": "base", "kb/report.md": "built from base", "kb/side.md": "base",
                      "live_metrics.json": "scrape 0", "veteran_jst.json": "vet 0", "requirements.txt": "",
+                     "kb/old.json": "an input that moves",
                      "scripts/daily_build.sh": STANDIN})
         git(work, "add", "-A")
         git(work, "commit", "-q", "-m", "base")
         git(work, "push", "-q", "origin", "main")
         git(other, "pull", "-q", "origin", "main")
-        if other_edits:
-            write(other, other_edits)
+        if other_edits or other_moves:
+            write(other, other_edits or {})
+            for src, dst in (other_moves or {}).items():
+                os.makedirs(os.path.join(other, os.path.dirname(dst)), exist_ok=True)
+                git(other, "mv", src, dst)
             git(other, "add", "-A")
             git(other, "commit", "-qm", "a merge to main")
             git(other, "push", "-q", "origin", "HEAD:staged" if land_at else "main")
@@ -390,14 +402,15 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
                 f.write(HOOK.format(cnt=os.path.join(cnt, "rejected"), fails=reject, land_at=land_at, origin=origin))
             os.chmod(hook, 0o755)
         # The run's first pass, on the main it checked out, and a leftover of its scrape.
-        write(work, {"kb/report.md": "ours, first pass", "live_metrics.json": "scrape of the first pass",
-                     "veteran_jst.json": "vet of the first pass", "live_metrics_new.json": "first pass download"})
+        write(work, first_pass or {"kb/report.md": "ours, first pass", "live_metrics.json": "scrape of the first pass",
+                                   "veteran_jst.json": "vet of the first pass", "live_metrics_new.json": "first pass download"})
         write(work, untracked or {})
         genv, gout = os.path.join(tmp, "github_env"), os.path.join(tmp, "github_output")
         open(genv, "w").close()
         env = dict(os.environ, PATH=bin_ + os.pathsep + os.environ["PATH"], GITHUB_ENV=genv, GITHUB_OUTPUT=gout,
                    CNT=cnt, OTHER=other, RACE="1" if race else "", RACE_INPUT="1" if race_input else "", FAIL_BUILD="1" if fail_build else "",
-                   DAILY_PUSH_BACKOFF="0", CPL_SCRAPE_SECRET="s3", SUPABASE_SERVICE_KEY="k9")
+                   DAILY_PUSH_BACKOFF="0", CPL_SCRAPE_SECRET="s3", SUPABASE_SERVICE_KEY="k9",
+                   LIVE_METRICS_STATUS=first_status, SCRAPE_DETAIL="")
         body = ("set -euo pipefail\nstage() {\n  git add kb/report.md kb/src.md live_metrics.json veteran_jst.json\n}\n"
                 + loop)
         p = subprocess.run(["bash", "-c", body], cwd=work, env=env, capture_output=True, text=True, timeout=120)
@@ -458,6 +471,32 @@ check("push: a failed input rebuild publishes the run's first build, rebased, an
       and r["src"] == "theirs" and "a merge to main" in r["log"] and "(rebuilt on " not in r["log"][0]
       and "::warning title=Daily input rebuild failed; published the first build::" in r["out"]
       and "Push succeeded on attempt 2." in r["out"], (r["rc"], r["report"], r["log"], r["out"][-600:]))
+def last_status(genv):
+    vals = [ln.split("=", 1)[1] for ln in genv.splitlines() if ln.startswith("LIVE_METRICS_STATUS=")]
+    return vals[-1] if vals else None
+
+
+r = push_case(other_edits={"live_metrics.json": "a newer scrape on main"}, fail_build=True, first_status="success",
+              first_pass={"kb/report.md": "ours, first pass", "veteran_jst.json": "vet of the first pass"})
+check("push: a failed input rebuild that scraped again writes the first pass's scrape status back",
+      r["rc"] == 0 and r["scrape"] == 1 and ours_landed(r) and "published the first build" in r["out"]
+      and "LIVE_METRICS_STATUS=rescraped" in r["genv"] and last_status(r["genv"]) == "success",
+      (r["rc"], r["scrape"], r["genv"], r["out"][-500:]))
+r = push_case(other_edits=INPUT, fail_build=True, race_input=True)
+check("push: after a fallback, an input changed again says the first build is what is pushed",
+      r["rc"] == 0 and "::warning title=Daily input changed again::" in r["out"]
+      and "the run's first build is pushed" in r["out"] and "the rebuilt commit is pushed" not in r["out"]
+      and r["report"] == "ours, first pass", (r["rc"], r["report"], r["out"][-700:]))
+r = push_case(other_edits=INPUT, race_input=True)
+check("push: after a rebuild, an input changed again says the rebuilt commit is what is pushed",
+      r["rc"] == 0 and "the rebuilt commit is pushed" in r["out"], r["out"][-500:])
+r = push_case(other_moves={"kb/old.json": "tests/old.json"})
+check("push: an input moved under tests/ still counts (both names listed, no rename folding)",
+      r["rc"] == 0 and r["build"] == 1 and "(first: kb/old.json)" in r["out"], (r["rc"], r["build"], r["out"][-600:]))
+r = push_case(other_edits={"docs/side.md": "theirs"}, fail_range=True)
+check("push: an incoming range that cannot be read counts as a changed input (a rebuild, never a red run)",
+      r["rc"] == 0 and r["build"] == 1 and "(the incoming range could not be read)" in r["out"]
+      and "(rebuilt on " in r["log"][0], (r["rc"], r["build"], r["out"][-600:]))
 r = push_case(other_edits=INPUT, fail_build=True, reject=5, land_at=5)
 check("push: a failed input rebuild on the last attempt still gets its push",
       r["rc"] == 0 and ours_landed(r) and r["report"] == "ours, first pass"
@@ -542,6 +581,8 @@ SEARCH_DIRS = ["", "kb", "funding", "fact-sheet", "prototype", "scripts"]
 NAMED_NOT_READ = {
     ("kb/_build_cr_reference.py", "docs/common_cr_reference_scope.md"):
         "the worklist's `_doc` field, a pointer written into kb/cr_reference_worklist.json",
+    ("kb/test_mix.py", "tests"):
+        "an ASE test mix's field name (`out[\"tests\" if _is_ase(p) else \"with\"]`), never a directory",
 }
 
 
@@ -620,7 +661,7 @@ def not_input_reads(rel, text, prefixes):
         parent = {id(c): n for n in ast.walk(tree) for c in ast.iter_child_nodes(n)}
         for c in _strings(tree):
             v = c.value
-            as_dir = v.strip("/") in names and isinstance(parent.get(id(c)), (ast.Call, ast.BinOp, ast.List, ast.Tuple))
+            as_dir = v.strip("/") in names and not isinstance(parent.get(id(c)), ast.Subscript)
             as_path = re.fullmatch(r"[\w./\-{}]+", v) and any(re.search(r"(?:^|/)%s/" % re.escape(n), v) for n in names)
             if (as_dir or as_path) and (rel, v) not in NAMED_NOT_READ:
                 hits.append((c.lineno, v))
@@ -634,7 +675,10 @@ def not_input_reads(rel, text, prefixes):
         for i, ln in enumerate(_code(text, "#" if rel.endswith(".sh") else "//").split("\n"), 1):
             if ln.lstrip().startswith("*"):
                 continue
-            if re.search(r"(?:^|[\s\"'=(:])(?:\./)?(?:%s)/" % "|".join(re.escape(n) for n in names), ln):
+            if not rel.endswith(".sh"):
+                ln = re.sub(r"\s//.*$", "", ln)   # a trailing comment
+            if re.search(r"(?:^|[\s\"'=(:])(?:\./)?(?:%s)/" % "|".join(re.escape(n) for n in names), ln) or (
+                    not rel.endswith(".sh") and re.search(r"['\"`](?:%s)/?['\"`]" % "|".join(re.escape(n) for n in names), ln)):
                 hits.append((i, ln.strip()[:80]))
             if re.search(r"(?:^|[\s;|(])find\s|ls-files|git grep|readdirSync\([^)]*recursive", ln):
                 hits.append((i, "walks: " + ln.strip()[:80]))
@@ -663,10 +707,13 @@ PLANTED = {
     'open(os.path.join(ROOT, "docs", "x.md"))': True, 'json.load(open(ROOT / "tests" / "f.json"))': True,
     'P = "docs/reference/lanes/x.md"': True, 'p = f"{ROOT}/tests/{name}.json"': True,
     'glob.glob("**/*.md", recursive=True)': True, "for d, _, fs in os.walk(ROOT): pass": True,
+    'D = "docs"': True, 'DIRS = ("kb", "tests")': True,
     'x = {"tests": [], "with": []}': False, 'y = got["tests"]': False, 'def f():\n    """See docs/x.md."""': False,
     'print("python3 kb/_build_dependency_map.py writes docs/reference/dependency_map.md")': False,
 }
 wrong = [src for src, want in PLANTED.items() if bool(not_input_reads("kb/planted.py", src, NOT_INPUTS)) != want]
+wrong += [src for src, want in {"var d = 'docs';": True, "x.tests = 1; // see 'docs'": False}.items()
+          if bool(not_input_reads("planted.js", src, NOT_INPUTS)) != want]
 wrong += [src for src, want in {"cat docs/x.md > out": True, "find . -name '*.json'": True,
                                 "# see tests/apply_concurrency_test.py": False}.items()
           if bool(not_input_reads("scripts/planted.sh", src, NOT_INPUTS)) != want]
