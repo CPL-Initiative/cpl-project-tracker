@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-11
+updated: 2026-11-12
 tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -147,6 +147,17 @@ at the top of each piece of work so Sam can change the dial before it runs.
   works from the planned lists.
 - S638's two ASE applies deleted 13 rows people had saved after COBIx had asked to leave them. `load_plan` now refuses
   such a plan.
+- The #3123 merge touched generated `kb/` files while the 23:42Z daily-dashboard run was in flight, and the run lost
+  its push to a rebase conflict; a fresh run committed at 00:28Z. Merge such a PR only when no daily, cer, rename or
+  family apply run is in flight (read the workflow runs first).
+- `cred-rename-apply.yml` has no dry-run-only mode, so the conductor ran `kb/_cred_rename_dryrun.py --only-plan` locally
+  before the dispatch. Do the same until the workflow gains one.
+- The review of #3127 read the code and the plan, and `main` went red after the apply: two checks in
+  `tests/credential_family_test.py` read committed titles and expected the pre-rename state. A review of an apply also
+  runs the suite against the data as it will stand after the apply.
+- A dry run that exits 0 has not said it is correct. Read its summary line in the job log (the last 36 lines or so).
+- The session's tool connections dropped four times in an hour, and each reconnection cost context. Keep briefs and
+  reads short when the connections are unsteady.
 
 ## What went wrong in S638
 

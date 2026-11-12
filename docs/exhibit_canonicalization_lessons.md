@@ -1455,3 +1455,22 @@ select Allan Hancock filter, you should immediately be presented with any statew
 Request Adopt buttons on all their local aligned courses."* **The ask rule is live (#2854):** *Ask us to prioritize* only
 where no college has articulated the credential, the *Worth a faculty review* cards included; an articulated one offers
 Request Quick Adopt. **Add your credential is built (#2860, DR-32, live 2026-11-06):** an empty search offers *Add it*; `credential_submission_add()` is INSERT-only; a reviewer Verifies, Merges, Declines or Reopens in Exhibits Requests; verified ones join the Catalog. **Ruled (Sam, Open Asks Sheet 167 card 1, 2026-11-07):** credit based on a college's own course exam is Credit by Exam and the college is the issuer; credit based on the certificate from the vendor's own exam names the vendor (his words, the seven corrected triage titles and El Camino's four CompTIA courses: lessons, *Moved from the lane (S634)*). **Quick Adopt (2026-11-07):** a Strong evidence course in the panel, at a college without the award, offers Request Quick Adopt. Sierra's CPL-AI answers: live 2026-11-07 ([`sierra-retrieval-corpus`](sierra-retrieval-corpus.md)). **Next:** the Department of Insurance's license types (`data_sources`; the sandbox cannot reach the site).
+
+## 2026-11-12 (S639 SkyQuail): the family, the restore and the first ruled rename, live
+
+- **Every apply's undo reads its own plan, never a write's echo.** Review of #3122 found the family undo read the
+  INSERT's echo and the gate compared a count; #3123 and #3127 had the same echo fault. `Rest._call` retries a request
+  whose response was lost, and the retry echoes nothing for a write that landed. Each applier now writes a pending
+  receipt of its planned rows before the first write, files what landed from a fresh read, and gates on a hash of the
+  set (`038293de0093`, then `3a4d0f3d969b`).
+- **A rename strands what keys on the old title.** Review of #3127 found the rename would leave the family tags on the
+  old keys; the row move now carries them (22 family tags, 2 subject rows, 1 issuer override moved; Sam's 47 fold rows
+  kept in place; 73 steps, 0 failed; receipt `kb/cred_rename_out/2026-11-12/`).
+- **Saved rows on an emptied title do nothing, and come back as they were.** The 13 rows people had saved on the eight
+  titles the ASE plans emptied went back under their own reviewers and stamps (`-4`, run 43129235942); readers ignore
+  them until a raw maps to the title again (`fold_issuer.hold_emptied_folds`). `load_plan` refuses a plan that retires
+  a person's saved row other than a `reviewed_marker`.
+- **Tests pinned to committed data break on the apply, not on the PR.** Two checks in
+  `tests/credential_family_test.py` read committed titles and expected the pre-rename state; `main` went red after
+  the rename apply, with every PR check green. The conductor's rule is in `docs/reference/conductor_mode.md`.
+- **A dry run's exit code is not its result.** Read its summary line in the job log.

@@ -4,6 +4,8 @@ date: 2026-11-11
 session: 636 (SkyAntennae, Sam's session on handoff 636, 2026-11-11 04:03Z to ~10:45Z)
 tags: [handoff, program-requirements-harvest, cer-procedures, library, csm-workspace, commons]
 status: current
+superseded: true
+superseded_by: session_640_handoff.md
 ---
 
 # You are Session 637
