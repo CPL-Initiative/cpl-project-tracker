@@ -20,6 +20,9 @@ task. handle anything that doesn't need me. only stop when you need a decision f
 
 ## Settings (Sam, 2026-11-11)
 
+- Conductor model: Fable 5.2 (`claude-fable-5-2`), working with COBIx (Sam, 2026-11-11, relayed by COBIx on #3110;
+  `cpl_memory` `sam-conductor-model-fable-5-2-2026-11-11`). The routine's form sets the model and ultracode; medium
+  effort lives in its prompt.
 - Ultracode on.
 - The conductor at medium effort.
 - Workers on Opus 5.5 (named in each Agent call, `model: opus`).
