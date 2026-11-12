@@ -274,7 +274,16 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     t.d.querySelector(".exh-align").hidden && !/Firefighter 1/.test(txt(t.d.querySelector(".exh-align"))), txt(t.d.querySelector(".exh-align")));
 
   // ── the #3160 review: the real files, four cards ──
+  // A held card leaves kb/exhibits_review.json once a reviewer rules on it (the recruit academy card did on 2026-11-12,
+  // and the daily run then failed this file on main). A real-data check runs only while its card is still held; the
+  // fixture checks above hold the rules themselves, and at least one of the four must still be held.
   async function real(raw) { return boot({ real: true, card: realCard(raw) }); }
+  const REAL_RAWS = ["Firefighter Recruit Academy Certificate", "Nor Cal Carpenters Training Carpenter Apprenticeship Year 1",
+    "NorCal Valley Sheet Metal Apprenticeship Journeyperson", "Plumbers Pipefitters Union Refrigeration Service Technician Apprenticeship Level 1"];
+  const stillHeld = REAL_RAWS.filter(realCard);
+  REAL_RAWS.filter(function (r) { return !realCard(r); }).forEach(function (r) { console.log("  (skipped, no longer held: " + r + ")"); });
+  check("real data: at least one of the four measured cards is still held (else choose new ones)", stillHeld.length >= 1, stillHeld.join(" | "));
+  if (realCard(REAL_RAWS[0])) {
   t = await real("Firefighter Recruit Academy Certificate");
   // Since the S642 proposal step (kb/title_in_use.py), the pipeline proposes the statewide exhibit itself, so the card
   // reads it as its own title; the old "Firefighter Academy" proposal is checked through the same rule just below.
@@ -285,10 +294,14 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
   const fireLive = t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url) && /course_id=in\./.test(c.url); });
   check("real data: the live read goes in chunks, every URL short", fireLive.length >= 1 && t.calls.filter(function (c) { return /kb_curation\?select=/.test(c.url); })
     .every(function (c) { return c.url.length < 4000; }), fireLive.map(function (c) { return c.url.length; }).join(","));
+  } else { for (let i = 0; i < 2; i++) check("real data: skipped, its card is no longer held (recruit academy)", true); }
+  if (realCard(REAL_RAWS[1])) {
   t = await real("Nor Cal Carpenters Training Carpenter Apprenticeship Year 1");
   check("real data: a card whose own title is statewide says so and names no sibling",
     txt(t.d.querySelector(".exh-align")) === "This is a statewide exhibit." && !/Cabinetmaker/.test(txt(t.d.querySelector(".exh-align")))
     && t.d.getElementById("exh-rel-target").value === "Carpenters Apprenticeship — Carpenter", txt(t.d.querySelector(".exh-align")));
+  } else { for (let i = 0; i < 1; i++) check("real data: skipped, its card is no longer held (carpenters)", true); }
+  if (realCard(REAL_RAWS[2]) && realCard(REAL_RAWS[3])) {
   t = await real("NorCal Valley Sheet Metal Apprenticeship Journeyperson");
   check("real data: the SMART sheet metal card names no other issuer's title (never AWS's SMAW)",
     !/Shielded Metal Arc Welding/.test(txt(t.d.querySelector(".exh-align"))) && !/Shielded Metal Arc Welding/.test(t.d.getElementById("exh-rel-target") ? t.d.getElementById("exh-rel-target").value : ""),
@@ -301,6 +314,7 @@ async function tickBox(t, title) { const c = cb(t.d, title); c.checked = true; c
     txt(t.d.querySelector(".exh-align")) + " | " + (uaTarget || {}).value);
   check("with nothing named and the card's title proposed, the target waits for the reviewer's choice",
     (!smartAlign || smartAlign.hidden) ? (!uaTarget || uaTarget.value === "" || !/ESCO/.test(uaTarget.value)) : true);
+  } else { for (let i = 0; i < 3; i++) check("real data: skipped, its card is no longer held (sheet metal, refrigeration)", true); }
 
   // ── the target's own saved rows: a chain and a cycle are held ──
   t = await boot({ liveOwn: [{ course_id: "_CREDENTIAL_REVIEW::Firefighter 1", field: "unified_title_override", value: "Firefighter 2" }] });
