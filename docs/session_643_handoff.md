@@ -173,6 +173,26 @@ Standing: a relayed ruling is confirmed; the sheet carries decisions, never asks
    De Anza's tail; `cer-procedures` NEXT (6) to (12); `library` NEXT 0 and `iaca-mvpmcjyl`; `csm-workspace` NEXT 0 and
    1; #2894; CPLBrain#758.
 
+## After the checkpoint (Sam stayed in session until about 17:25Z)
+
+- **The JST guide is published** (Sam's ask): Library record `7ca43e3c`, *JST How To Obtain and Upload to MAP*, his fourth
+  draft approved 16:12Z; the conductor dispatched `library-publish.yml` at 16:31Z; commit `41eeb44a`, Version 1, at
+  https://cpl-initiative.github.io/cpl-project-tracker/library/jst-how-to-obtain-and-upload-to-map-mwdq6m67/ . Checked in a
+  browser at 390 and 1280 px: twelve pictures load with alt text, one column, no sideways scroll. `public_listed` is
+  false: List publicly is Sam's press. He means to link it from the funding dashboard's 75% JST condition.
+- **#3171** `3ac95dab`, Library **Publish now** (Sam, in session: "would be nice to have a manual dispatch button in the
+  library for things we need to push right away:)"): a control on an approved card awaiting the run, through the new edge
+  function `library-publish-now` (reviewer session only; the workflow and ref are fixed; a two-minute hold; refuses with
+  `busy_behind` when another run waits in the `daily-dashboard` group, COBIx's finding, verified by him). The conductor
+  dispatched `cpl-chat-deploy.yml` (`confirm=DEPLOY`, `function=library-publish-now`) at 17:19Z. **First thing for
+  SkyLark:** confirm that deploy run succeeded and that the function answers (a signed-out call returns 401), then press
+  nothing: the control's first real use is Sam's. It reads `LIBRARY_DISPATCH_TOKEN`, else `WORKPLAN_DISPATCH_TOKEN`.
+- **Owed, agreed with COBIx on #3171:** `docket-process` ("Process my rulings now") gets the same shared-queue check in
+  its own small PR, with the group list as one shared constant.
+- The conductor removed #3171's worktree before its merge had gone through and then merged `main` into the branch by
+  hand (the dependency map, rebuilt by its builder). Remove a worktree only after the merge call returns merged.
+- The library lane does not yet carry these three lines; add them at the next checkpoint.
+
 ## Not refreshed at this checkpoint
 
 The pipeline view (no roadmap row, auditor count or M-ID re-mint moved); `CLAUDE.md` (no lane's state changed; at its
