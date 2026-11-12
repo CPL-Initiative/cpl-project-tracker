@@ -11896,7 +11896,7 @@
     // ncSourceByMilestone() never pairs an origination twin onto them, and
     // prioGoals() reads the outcome's own stored goals instead.
     nc_exh:    { label: "Exhibits built or adopted for the noncredit program", unit: "count", lane: "nc", milestone: "exhibit", outcome: true,
-                 basis: "MAP exhibits credited to the institution's noncredit program: the exhibit names a noncredit course, its target course mirrors a noncredit course, its credential is one the program's courses name, or the college lists it on its noncredit attestation; an adopted statewide exhibit counts" },
+                 basis: "MAP exhibits credited to the institution's noncredit program: MAP lists its mode of learning as Noncredit, the exhibit names a noncredit course, its target course mirrors a noncredit course, its credential is one the program's courses name, or the college lists it on its noncredit attestation; an adopted statewide exhibit counts" },
     nc_course: { label: "Noncredit CPL portfolio-development course", unit: "count", lane: "nc", milestone: "course", outcome: true,
                  basis: "a noncredit CPL portfolio-development course chaptered in a CDCP program in COCI (the college attests its control number; the COCI sync confirms it)" },
     // The denominator of NC-1's target rule, never a measure a priority pins.

@@ -206,6 +206,7 @@ SECRETS_BY_STEP = {
     "Scrape live metrics from Cloudflare Worker": ["CPL_SCRAPE_SECRET"],
     "Sync curation overlay from Supabase": ["SUPABASE_SERVICE_KEY"],
     "Run dashboard pipeline": ["SUPABASE_SERVICE_KEY"],
+    "Refresh Sierra's exhibit list": ["SUPABASE_SERVICE_KEY"],   # 2026-11-12, #3185: writes chatbox_exhibits
     "Build funding priority-metric actuals": ["SUPABASE_SERVICE_KEY"],
     "Build the Exhibits List's Outcomes match hints": ["SUPABASE_SERVICE_KEY"],
     "Build the catalog's skills-to-outcomes analysis": ["SUPABASE_SERVICE_KEY"],
@@ -248,8 +249,9 @@ for ln in body_lines[start_i:]:
         stray.append(ln)
 check("build script: every command sits in a `step` block (none runs outside the secrets wrapper)",
       not stray and not inside, stray[:3])
-check("build script: 40 blocks (the 41 former steps less the shard upload, which runs after the push)",
-      len(blocks) == 40 and blocks[0][0] == "Fetch CustomReport from MAP API"
+check("build script: 41 blocks (the 41 former steps less the shard upload, which runs after the push, "
+      "plus the exhibit table refresh of 2026-11-12)",
+      len(blocks) == 41 and blocks[0][0] == "Fetch CustomReport from MAP API"
       and blocks[-1][0] == "Copy dashboard to index.html", len(blocks))
 check("build script: each block takes exactly the secrets its step declared, and the rest none",
       {n: s for n, s in blocks if s} == SECRETS_BY_STEP, {n: s for n, s in blocks if s})

@@ -181,6 +181,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 
 | Dataset | Read by | Written by |
 |---|---|---|
+| `chatbox_exhibits_promote` | scripts: `chatbox/sync_chatbox_exhibits.py` | — |
 | `cobi_rls_gates` | tabs: `admin` | — |
 | `college_adoption_opportunities` | `edgefn:cpl-chat` | — |
 | `college_contacts_harvest_apply` | scripts: `kb/_college_contacts_harvest.py` | — |
@@ -371,7 +372,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `CPL_Initiative_Project_List_v3.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_validate_projects.py`, `kb/_validate_workplan_goals.py` | — |
 | `CustomReport_*.json` | scripts: `funding/_build_cr_backlog.py`, `funding/_build_funding_performance.py`, `kb/_sync_map_custom_reports.py` | — |
 | `README.md` | scripts: `excel_to_dashboard.py`, `kb/_build_docs_index.py`, `kb/_docs_audit.py`, `kb/_normalize_kb_note_frontmatter.py`, `kb/doctrine.py` | — |
-| `TOP_Code_Lookup.xlsx` | scripts: `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
+| `TOP_Code_Lookup.xlsx` | scripts: `chatbox/sync_chatbox_exhibits.py`, `excel_to_dashboard.py`, `kb/_correct_top_lookup_code4.py` | scripts: `kb/_correct_top_lookup_code4.py` |
 | `a11y.config.js` | scripts: `scripts/ui_pass.py` | — |
 | `activity_summaries.js` | pages: `CPL_Dashboard.html` | — |
 | `admin.js` | pages: `CPL_Dashboard.html` | — |
@@ -394,6 +395,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `chatbox/preflight_bgca.sh` | workflows: `sierra-preflight.yml` | — |
 | `chatbox/scrape_landing_pages.py` | workflows: `cpl-landing-pages.yml` | — |
 | `chatbox/smoke_test.sh` | workflows: `cpl-chat-preview-ab.yml`, `cpl-chat-smoke.yml` | — |
+| `chatbox/sync_chatbox_exhibits.py` | workflows: `daily-dashboard.yml` | — |
 | `chatbox/sync_coci_offerings.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/sync_program_courses.py` | workflows: `coci-offerings-sync.yml` | — |
 | `cip_crosswalk.js` | pages: `CPL_Dashboard.html` | — |
@@ -1043,6 +1045,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/cer_decision_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cer_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cert_naming_test.py` | workflows: `js-tests.yml` | — |
+| `tests/chatbox_exhibits_sync_test.py` | workflows: `js-tests.yml` | — |
 | `tests/chatbox_ghost_delete_test.py` | workflows: `js-tests.yml` | — |
 | `tests/cid_claim_audit_test.py` | workflows: `js-tests.yml` | — |
 | `tests/clep_official_titles_test.py` | workflows: `js-tests.yml` | — |
@@ -1427,5 +1430,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 63 RPCs · 15 edge functions · 888 file
-datasets · 195 external services · 566 consumers · 69 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 890 file
+datasets · 195 external services · 567 consumers · 69 workflows · 41 tabs.

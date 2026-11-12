@@ -258,6 +258,15 @@ STEP
 # dashboard publish matters more than one day of actuals. The service key
 # reads Scenario 4's noncredit counts (cpl_funding_nc_counts, S471); a
 # failed read leaves those keys absent, so the outcomes read TBA.
+# Before the actuals: refresh Supabase chatbox_exhibits from this run's pull, so
+# the noncredit exhibit count and Sierra both read today's exhibits and their
+# mode of learning (2026-11-12; the table had stood unrefreshed since May). The
+# promote is one transaction and refuses a short pull; non-fatal, the live
+# table stands on any failure.
+step "Refresh Sierra's exhibit list" SUPABASE_SERVICE_KEY <<'STEP'
+python3 chatbox/sync_chatbox_exhibits.py CustomReport_latest.json --apply || echo "chatbox-exhibits refresh failed (non-fatal; the live table stands)"
+STEP
+
 step "Build funding priority-metric actuals" SUPABASE_SERVICE_KEY <<'STEP'
 python3 funding/_build_funding_performance.py CustomReport_latest.json || echo "funding-performance build failed (non-fatal; prior artifact kept)"
 STEP

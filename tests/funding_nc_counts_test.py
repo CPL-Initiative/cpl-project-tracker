@@ -26,6 +26,11 @@ What this pins, in order of how expensive each would be to get wrong:
      and only while one of its courses is still a CDCP title there; a proposed row
      counts nothing, and an exhibit already counted counts once.
   7. NEVER GUESSED. A COCI name that does not resolve is logged and moves nothing.
+  9. MAP'S OWN DESIGNATION COUNTS (2026-11-12). An exhibit whose mode of learning
+     is Noncredit (nc_mode true) counts with no title match at all: Las Positas
+     read 9 against 47 in MAP while the count leaned on titles alone. It counts
+     once beside another channel, and an absent or false nc_mode counts nothing.
+     The count runs after the nightly refresh of the table it reads.
   8. A COLD RPC GETS A SECOND TRY. PostgREST cancels at the authenticator's 8 s and
      answers 500 (2026-10-25 11:40Z); the retry answers warm. A 4xx is not retried.
 
@@ -241,6 +246,37 @@ def main():
     op, calls = fake([403, 200])
     got = bfp.call_nc_counts_rpc("http://x/rpc", "k", wait=0, urlopen=op)
     check("8c: a 4xx is not retried", got is None and calls == [403])
+
+    # ── 9. MAP's own designation: the Noncredit mode of learning ────────────
+    fx = json.loads(json.dumps(FIXTURE))
+    fx["exhibits"] += [
+        dict(ex("Cabrillo College", "C-20", "Noncredit Course for KIN 1", "noncredit course kin", []), nc_mode=True),
+        dict(ex("Cabrillo College", "C-21", "Welding Basics", "welding basics", []), nc_mode=False),
+        dict(ex("Cabrillo College", "C-22", "Yoga", "yoga", [])),                       # no nc_mode key
+        dict(ex("Santa Ana College", "SA-9", "Noncredit ESL", "noncredit esl", []), nc_mode=True),
+    ]
+    for e in fx["exhibits"]:
+        if e["xid"] == "C-1":
+            e["nc_mode"] = True                                                        # channel 2 already
+    p9, _ = run_builder(fx, {"rows": []})
+    check("9a: an exhibit MAP lists as Noncredit counts with no title match; one already counted counts once",
+          p9["colleges"].get("Cabrillo", {}).get("nc_exh") == cab.get("nc_exh") + 1,
+          f"got {p9['colleges'].get('Cabrillo', {}).get('nc_exh')} against {cab.get('nc_exh')}")
+    check("9b: it counts for its own college only (NOCE's count is unmoved by Santa Ana's)",
+          ((p9.get("origination") or {}).get("in_scope") or {}).get("NOCE", {}).get("nc_exh") == noce.get("nc_exh"))
+    check("9c: the SQL returns nc_mode from the table's learning_mode",
+          "'nc_mode', nc_mode" in sql and "learning_mode" in sql)
+    build = open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8").read()
+    check("9d: the daily build refreshes the exhibit table before it counts",
+          0 < build.find("chatbox/sync_chatbox_exhibits.py") < build.find("funding/_build_funding_performance.py"))
+
+    import datetime
+    d0 = datetime.date(2026, 11, 12)
+    check("9e: a table never refreshed, or last changed days ago, prints a warning; a fresh one and an old payload do not",
+          "never been refreshed" in (bfp.exhibits_stale_warning({"exhibits_synced_at": None}, d0) or "")
+          and "5 days ago" in (bfp.exhibits_stale_warning({"exhibits_synced_at": "2026-11-07T06:20:00+00:00"}, d0) or "")
+          and bfp.exhibits_stale_warning({"exhibits_synced_at": "2026-11-12T06:20:00+00:00"}, d0) is None
+          and bfp.exhibits_stale_warning({}, d0) is None)
 
     print(f"\n{checks[0] - len(failures)}/{checks[0]} passed")
     sys.exit(1 if failures else 0)
