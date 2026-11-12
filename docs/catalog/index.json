@@ -13843,7 +13843,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 100,
+   "count": 101,
    "docs": [
     {
      "created": "2026-05-30",
@@ -15031,6 +15031,21 @@
      "title": "Program requirements harvest lessons \u2014 archive 4 (S419 onward)",
      "type": null,
      "updated": "2026-11-09"
+    },
+    {
+     "created": "2026-11-12",
+     "governs": [],
+     "path": "docs/harvest_side_handoff_s639.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "harvest",
+      "side-lane"
+     ],
+     "title": "Program requirements harvest \u2014 side-session handoff (S639, second session)",
+     "type": null,
+     "updated": ""
     },
     {
      "created": "2026-07-16",
@@ -26954,5 +26969,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1449
+ "total": 1450
 }
