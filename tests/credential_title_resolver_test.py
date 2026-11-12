@@ -12,6 +12,7 @@ Guards, each a fault:
   2. apply order is _applied_at, never the folder name ("2026-11-12/" sorts after "2026-11-12-2/");
   3. a chain A->B then B->C reads C; a swap in one map moves once; a merge reads its target; an unknown title
      reads itself; a value saved after an apply never moves through it (the era guard);
+  4. a title the fold retired is a search alias of each title its exhibits went to, never a resolution;
   5. the browser's table (kb/credential_title_moves.json) gives the same answer as resolve, and is current;
   6. the stale "ASE Bundle — A4, A5" shape (a saved assignment, cer-procedure-classifier@bot, 2026-10-31, before
      the 2026-11-12 apply) reads as its live credential in each routed reader.
@@ -98,6 +99,25 @@ try:
     mv = ca.moves(tmp)
     check("moves() follows each old title to the title it carries now",
           mv["A"] == {"now": "C", "by": ["2026-07-08", "2026-07-09"]} and mv["B"]["now"] == "C" and "C" not in mv)
+
+    # ── 4: the fold's retired titles are search aliases ──
+    write(os.path.join(tmp, "kb", "credentials.json"), {NEW: [{}], "C": [{}], "Back Again": [{}],
+                                                         "MIL3": [{}], "MIL4 Renamed": [{}]})
+    write(os.path.join(tmp, "kb", "unclassified_fold", "2026-11-11", "report.json"),
+          {"mode": "apply", "_generated_at": "2026-11-11T00:24:16Z",
+           "credential_retires": [{"title": "Automotive Braking Systems", "to": ["MIL3", "MIL4"]},
+                                  {"title": "Back Again", "to": ["C"]}]})
+    write(os.path.join(tmp, "kb", "unclassified_fold", "2026-11-10", "report.json"),
+          {"mode": "dry-run", "credential_retires": [{"title": "Dry Run Only", "to": ["C"]}]})
+    snap(tmp, "2026-11-13", "2026-11-13T00:00:00Z", {"MIL4": "MIL4 Renamed"})
+    aka = ca.load(tmp)
+    check("a retired title is an alias of each title its exhibits went to, each followed through later renames",
+          "Automotive Braking Systems" in aka.get("MIL3", []) and "Automotive Braking Systems" in aka.get("MIL4 Renamed", []),
+          aka)
+    check("a retired title is never a resolution", ca.resolver(tmp)("Automotive Braking Systems") == "Automotive Braking Systems")
+    check("a retired title that is a credential again, or from a dry run, is no alias",
+          "Back Again" not in aka.get("C", []) and "Dry Run Only" not in aka.get("C", []))
+    check("rename aliases come first, oldest first", aka.get("C", [])[:2] == ["A", "B"], aka.get("C"))
 
     # ── 5: the browser's table gives resolve's answer ──
     tab = ca.table(tmp)["moves"]

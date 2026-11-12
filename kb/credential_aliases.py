@@ -28,6 +28,12 @@ THE RULES, each one a fault this module exists to prevent:
 JS file that reads them: the browser reads kb/credential_title_moves.json, which `python3 kb/credential_aliases.py`
 writes from this module (`--check` in scripts/check_generated.sh).
 
+Search aliases (load()) add one more source: a title the nightly fold retired because its exhibits went to
+other titles (kb/unclassified_fold/<day>/report.json `credential_retires`, mode "apply"). A retired title is a
+search alias of each title its exhibits went to, never a resolution: it can name two titles (Automotive Braking
+Systems went to MIL3 and MIL4), and the fold's own moves are not a rename history (Credit by Exam and Water
+Supply traded places twice in a week).
+
 Readers: kb/_build_adopt_page.py, kb/_build_exhibits_related.py, kb/_fold_unclassified.py,
 kb/_sweep_exhibit_titles.py, kb/_cer_procedures.py, kb/_build_partner_crosswalk.py,
 kb/_build_college_offering_crosswalk.py, kb/_build_occupation_cpl_crosswalk.py, kb/_family_tag_apply.py
@@ -178,8 +184,32 @@ def table(root="."):
             "moves": dict(sorted(tab.items()))}
 
 
+def retired(root="."):
+    """current title -> [titles the nightly fold retired into it, oldest first]: each title a fold apply retired
+    (credential_retires) is a search alias of every title its exhibits went to, each target followed through the
+    renames applied after the fold. A retired title that is a credential again today is no alias."""
+    snaps = snapshots(root)
+    live = set(_read(os.path.join(root, "kb", "credentials.json")) or {})
+    out = {}
+    for path in sorted(glob.glob(os.path.join(root, "kb", "unclassified_fold", "*", "report.json"))):
+        doc = _read(path)
+        if not isinstance(doc, dict) or doc.get("mode") != "apply":
+            continue
+        at = doc.get("_generated_at") or os.path.basename(os.path.dirname(path))
+        for r in doc.get("credential_retires") or []:
+            t = (r.get("title") or "").strip()
+            to = r.get("to") or []
+            if not t or t in live:
+                continue
+            for tgt in ([to] if isinstance(to, str) else to):
+                now = resolve(tgt, snaps, since=at)[0] if tgt else ""
+                if now and now != t and t not in out.setdefault(now, []):
+                    out[now].append(t)
+    return out
+
+
 def load(root="."):
-    """current title -> [the titles it replaced, oldest first]."""
+    """current title -> [the titles it replaced, oldest first, then the titles the fold retired into it]."""
     snaps = snapshots(root)
     aka = {}
     for i, s in enumerate(snaps):
@@ -187,6 +217,9 @@ def load(root="."):
             now = resolve(o, snaps[i:])[0]
             if now != o and o not in aka.setdefault(now, []):
                 aka[now].append(o)
+    for now, names in retired(root).items():
+        have = aka.setdefault(now, [])
+        have.extend(n for n in names if n not in have and n != now)
     return {k: v for k, v in aka.items() if v}
 
 
