@@ -2703,10 +2703,18 @@
     if (!d) return "";
     if (state.rel._akaFor !== d) {
       var m = {};
-      (state.rel.idx || []).forEach(function (o) { (o.aka || []).forEach(function (a) { if (a && a !== o.t) m[a] = o.t; }); });
+      // A retired name can be an old name of two titles (Elementary French went to Elementary French 1 and 2): keep each.
+      (state.rel.idx || []).forEach(function (o) {
+        (o.aka || []).forEach(function (a) {
+          if (!a || a === o.t) return;
+          var to = Object.prototype.hasOwnProperty.call(m, a) ? m[a] : (m[a] = []);
+          if (to.indexOf(o.t) < 0) to.push(o.t);
+        });
+      });
       state.rel._akaTo = m; state.rel._akaFor = d;
     }
-    return state.rel._akaTo[ut] || "";
+    var to = Object.prototype.hasOwnProperty.call(state.rel._akaTo, ut) ? state.rel._akaTo[ut] : null;
+    return to ? to.join(" and ") : "";
   }
   function listDecision(r) {
     var to = listAppliedTo(r.ut);
@@ -4534,6 +4542,6 @@
     _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons,
     _listCplAi: listCplAi, _listCplAiLoad: listCplAiLoad,
     loadRelated: loadRelated, _relatedFor: relatedFor, _aseOf: aseOf, _renamePlan: renamePlan, _renameRows: renameRows,
-    _renameCount: renameCount, _akaOf: akaOf, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
+    _renameCount: renameCount, _akaOf: akaOf, _appliedTo: listAppliedTo, _famOf: famOf, _listStatus: listStatus, loadRenameStudents: loadRenameStudents
   };
 })();

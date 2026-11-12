@@ -1,0 +1,360 @@
+{
+ "_about": "Every title an applied nightly fold retired, and the titles its exhibits went to. Append-only: kb/_fold_unclassified.py appends each apply's credential_retires (its day's report.json is rewritten by each run). Read by kb/credential_aliases.py retired(). Seeded 2026-11-12 (S641) from every committed version of kb/unclassified_fold/*/report.json in this clone's history (shallow at 67799eb8, 2026-11-11; each earlier day as its last report).",
+ "retires": [
+  {
+   "day": "2026-10-31",
+   "at": "2026-10-31T19:32:41Z",
+   "title": "Automotive Air Conditioning",
+   "to": [
+    "Automotive Technology (ASE A7 Heating and Air Conditioning)"
+   ]
+  },
+  {
+   "day": "2026-10-31",
+   "at": "2026-10-31T19:32:41Z",
+   "title": "Brakes",
+   "to": [
+    "Automotive Technology (ASE A5 Brakes)"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Architectural Design I",
+   "to": [
+    "Architectural Design 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Blueprint Reading I",
+   "to": [
+    "Blueprint Reading 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Elementary French",
+   "to": [
+    "Elementary French 1",
+    "Elementary French 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Elementary Spanish I",
+   "to": [
+    "Elementary Spanish 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Elementary Spanish II",
+   "to": [
+    "Elementary Spanish 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "First Aid, CPR & AED",
+   "to": [
+    "First Aid, CPR and AED"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "French 2",
+   "to": [
+    "Elementary French 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "German 1",
+   "to": [
+    "Elementary German 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "German 2",
+   "to": [
+    "Elementary German 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Guitar I",
+   "to": [
+    "Guitar 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Intermediate Algebra",
+   "to": [
+    "Algebra Intermediate"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Architectural II",
+   "to": [
+    "Ironworker Architectural 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Architectural III",
+   "to": [
+    "Ironworker Architectural 3"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Structural Steel I",
+   "to": [
+    "Ironworker Structural Steel 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Structural Steel II",
+   "to": [
+    "Ironworker Structural Steel 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Structural, Architectural and Ornamental I",
+   "to": [
+    "Ironworker Structural, Architectural and Ornamental 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Ironworker Welding III",
+   "to": [
+    "Ironworker Welding 3"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Japanese 2",
+   "to": [
+    "Elementary Japanese 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Metal Building Erection I / Foreman Training",
+   "to": [
+    "Metal Building Erection 1 / Foreman Training"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Military Police Basic",
+   "to": [
+    "Basic Military Police"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Network Fundamentals",
+   "to": [
+    "Networking Fundamentals"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "PC Operating System",
+   "to": [
+    "PC Operating Systems"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Single Variable Calculus I Early Transcendentals",
+   "to": [
+    "Single Variable Calculus 1 Early Transcendentals"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Spanish 1",
+   "to": [
+    "Elementary Spanish 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Spanish 2",
+   "to": [
+    "Elementary Spanish 2"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Spanish Beginning",
+   "to": [
+    "Elementary Spanish 1"
+   ]
+  },
+  {
+   "day": "2026-11-02",
+   "at": "2026-11-02T06:21:29Z",
+   "title": "Spanish I Intermediate",
+   "to": [
+    "Intermediate Spanish 1"
+   ]
+  },
+  {
+   "day": "2026-11-06",
+   "at": "2026-11-06T22:13:52Z",
+   "title": "American Sign Language III",
+   "to": [
+    "Intermediate American Sign Language 1"
+   ]
+  },
+  {
+   "day": "2026-11-06",
+   "at": "2026-11-06T22:13:52Z",
+   "title": "Personal Trainer Instructor",
+   "to": [
+    "ACSM Certified Personal Trainer (ACSM-CPT)",
+    "NASM Certified Personal Trainer (NASM-CPT)"
+   ]
+  },
+  {
+   "day": "2026-11-06",
+   "at": "2026-11-06T22:13:52Z",
+   "title": "Water Distribution Operator I",
+   "to": [
+    "Water Distribution Operator 1"
+   ]
+  },
+  {
+   "day": "2026-11-06",
+   "at": "2026-11-06T22:13:52Z",
+   "title": "Water Distribution Operator II",
+   "to": [
+    "Water Distribution Operator 2"
+   ]
+  },
+  {
+   "day": "2026-11-07",
+   "at": "2026-11-07T14:59:10Z",
+   "title": "Plant Propagation",
+   "to": [
+    "Credit by Exam"
+   ]
+  },
+  {
+   "day": "2026-11-07",
+   "at": "2026-11-07T14:59:10Z",
+   "title": "Water Supply",
+   "to": [
+    "Credit by Exam"
+   ]
+  },
+  {
+   "day": "2026-11-11",
+   "at": "2026-11-11T06:24:41Z",
+   "title": "American Sign Language IV",
+   "to": [
+    "Intermediate American Sign Language 2"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Advanced Electrical and Electronic Systems",
+   "to": [
+    "Military Tactical Wheeled Vehicle – Electrical/Electronic Systems (ASE MIL6)"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Automotive Braking Systems",
+   "to": [
+    "Military Tactical Wheeled Vehicle – Chassis (ASE MIL4)",
+    "Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+   "to": [
+    "ASE A6 — Electrical/Electronic Systems"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+   "to": [
+    "ASE A6 — Electrical/Electronic Systems"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Engine Performance 1 (ASE A8 Engine Performance)",
+   "to": [
+    "ASE A8 — Engine Performance"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Engine Performance 2 (ASE A8 Engine Performance)",
+   "to": [
+    "ASE A8 — Engine Performance"
+   ]
+  },
+  {
+   "day": "2026-11-12",
+   "at": "2026-11-12T00:24:16Z",
+   "title": "Heating and Air Conditioning",
+   "to": [
+    "Military Tactical Wheeled Vehicle – Heating, Ventilation and Air Conditioning (ASE MIL7)"
+   ]
+  },
+  {
+   "day": "out",
+   "at": "2026-11-12T07:22:48Z",
+   "title": "Elementary Spanish I",
+   "to": [
+    "Elementary Spanish 1"
+   ]
+  }
+ ]
+}

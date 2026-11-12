@@ -1161,6 +1161,15 @@ jobs:
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
         run: python3 tests/browser_install_single_source_test.py
+      # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
+      # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
+      # guard against a second copy. Pure-stdlib python.
+      - name: Credential title moves table is current (kb/credential_aliases.py --check)
+        run: python3 kb/credential_aliases.py --check
+      - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)
+        run: python3 tests/credential_title_resolver_test.py
+      - name: Credential title resolver has one copy
+        run: python3 tests/credential_title_resolver_single_source_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

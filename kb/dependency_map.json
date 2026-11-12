@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 862,
+  "file_datasets": 867,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3446,
+     "line": 3454,
      "tabs": [
       "exhibits"
      ]
@@ -1214,7 +1214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 413
+     "line": 426
     },
     {
      "id": "script:kb/_college_contacts_harvest.py",
@@ -1515,7 +1515,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 27,
+     "line": 32,
      "pages": [
       "CPL_Dashboard.html",
       "fact-sheet/index.html",
@@ -1879,7 +1879,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 478
+     "line": 483
     },
     {
      "id": "script:kb/_build_domain_cpl_crosswalk.py",
@@ -1961,7 +1961,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 479
+     "line": 484
     },
     {
      "id": "script:kb/_write_oc_medical_assistant_html.py",
@@ -5924,7 +5924,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 698
+     "line": 703
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -6161,7 +6161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2775,
+     "line": 2783,
      "tabs": [
       "exhibits"
      ]
@@ -6365,7 +6365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3438,
+     "line": 3446,
      "tabs": [
       "exhibits"
      ]
@@ -6458,7 +6458,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3723,
+     "line": 3731,
      "tabs": [
       "exhibits"
      ]
@@ -7385,6 +7385,18 @@
      ]
     },
     {
+     "id": "module:map_links.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 89,
+     "pages": [
+      "CPL_Dashboard.html",
+      "fact-sheet/index.html",
+      "library/cpl-opportunity/index.html"
+     ]
+    },
+    {
      "id": "module:nc_learning_partners.js",
      "kind": "module",
      "direction": "read",
@@ -7462,7 +7474,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 209
+     "line": 213
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -8244,7 +8256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4012,
+     "line": 4020,
      "tabs": [
       "exhibits"
      ]
@@ -8547,7 +8559,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 210
+     "line": 214
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -11192,7 +11204,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 620
+     "line": 645
     },
     {
      "id": "script:kb/_uc_cur_zscheme_dryrun.py",
@@ -13703,6 +13715,33 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
+  "file:kb/credential_aliases.py": {
+   "consumers": [
+    {
+     "id": "workflow:cred-rename-apply.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/credential_merges.json": {
    "consumers": [
     {
@@ -13840,6 +13879,32 @@
      "direction": "read",
      "how": "literal",
      "line": 99
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:cred-rename-apply.yml",
+     "how": "commit-to-main"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:cred-rename-apply.yml",
+    "workflow:daily-dashboard.yml"
+   ]
+  },
+  "file:kb/credential_title_moves.json": {
+   "consumers": [
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 59
     }
    ],
    "producers": [
@@ -14092,7 +14157,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 619
+     "line": 644
     },
     {
      "id": "script:kb/_verify_issuer_preseed.py",
@@ -14113,7 +14178,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 145
     }
    ],
    "producers": [
@@ -15084,7 +15149,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3460,
+     "line": 3468,
      "tabs": [
       "exhibits"
      ]
@@ -15390,7 +15455,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2957,
+     "line": 2965,
      "tabs": [
       "exhibits"
      ]
@@ -15479,7 +15544,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 622
+     "line": 647
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15577,7 +15642,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 79
+     "line": 80
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -15609,7 +15674,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 204
+     "line": 208
     },
     {
      "id": "script:kb/_build_regional_cpl_opportunity.py",
@@ -17751,7 +17816,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 129
+     "line": 132
     },
     {
      "id": "script:kb/_cred_rename_apply.py",
@@ -17786,7 +17851,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 84
+     "line": 415
     }
    ],
    "served": true,
@@ -18509,7 +18574,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 205
+     "line": 209
     }
    ],
    "served": true,
@@ -19249,7 +19314,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 616
+     "line": 640
     }
    ],
    "producers": [
@@ -19287,6 +19352,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/unclassified_fold/retires.json": {
+   "consumers": [
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/unclassified_preseed.json": {
@@ -19618,7 +19696,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 615
+     "line": 639
     },
     {
      "id": "script:kb/classify_exhibits.py",
@@ -22228,7 +22306,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 208
+     "line": 212
     },
     {
      "id": "script:kb/_build_openclassrooms_crosswalk.py",
@@ -22284,7 +22362,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 646
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -23198,6 +23276,32 @@
    "main_committers": []
   },
   "file:tests/credential_review_stale_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_title_resolver_single_source_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_title_resolver_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -28708,7 +28812,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 682
+     "line": 687
     },
     {
      "id": "script:kb/_cred_fold_resolution_write.py",
@@ -31083,7 +31187,8 @@
     "kb/_cred_fold_resolution_write.py",
     "kb/_cred_rename_apply_supabase.py",
     "kb/_build_remint_blast_radius.py",
-    "kb/_build_ccr_cpl.py"
+    "kb/_build_ccr_cpl.py",
+    "kb/credential_aliases.py"
    ],
    "adds": [
     "kb/credentials.json",
@@ -31092,6 +31197,7 @@
     "kb/credential_review_overlay.json",
     "kb/cred_rename_dryrun/",
     "kb/cred_rename_out/",
+    "kb/credential_title_moves.json",
     "kb/remint_blast_worklist.json",
     "prototype/ccr_remint_blast.json",
     "prototype/ccr_cpl.json"
@@ -31212,6 +31318,7 @@
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
     "kb/_build_exhibits_related.py",
+    "kb/credential_aliases.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
@@ -31279,6 +31386,7 @@
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
     "kb/exhibits_related.json",
+    "kb/credential_title_moves.json",
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
     "kb/exhibit_slo_neighbors.json",
@@ -31560,7 +31668,10 @@
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",
     "tests/next_slo_colleges_test.py",
-    "tests/browser_install_single_source_test.py"
+    "tests/browser_install_single_source_test.py",
+    "kb/credential_aliases.py",
+    "tests/credential_title_resolver_test.py",
+    "tests/credential_title_resolver_single_source_test.py"
    ],
    "adds": [],
    "push": null,

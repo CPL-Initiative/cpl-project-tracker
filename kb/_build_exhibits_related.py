@@ -111,14 +111,17 @@ def build(root="."):
     status, proposed_issuer = {}, {}
     for t in set(cr) | set(locals_of):
         status[t] = IN_REFERENCE
+    # A saved or held title is read through the applied renames (kb/credential_aliases.py resolver): a title a rename
+    # retired reads as the credential it became, never as a new proposal; a live title reads as itself.
+    now = credential_aliases.resolver(root)
     for raw, a in saved.items():
-        t = ((a or {}).get("unified_title") or "").strip()
+        t = now(((a or {}).get("unified_title") or "").strip())
         if t and t not in status:
             status[t] = PROPOSED
             proposed_issuer[t] = ((a or {}).get("issuing_agency") or "").strip()
             locals_of[t].append(raw.strip())
     for h in review.get("held") or []:
-        t = (h.get("title") or "").strip()
+        t = now((h.get("title") or "").strip())
         if t and t not in status:
             status[t] = PROPOSED
             proposed_issuer[t] = (h.get("issuer") or "").strip()

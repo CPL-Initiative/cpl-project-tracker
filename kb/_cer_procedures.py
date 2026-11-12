@@ -588,12 +588,17 @@ def cost_usd(calls):
     return round(total, 2)
 
 
-def as_proposal(rec, families=()):
+def as_proposal(rec, families=(), now=None):
     """A classifier record as a pre-fill. Its confidence is the lower of title
-    and issuer; a new title is styled by Rule 5g, a house family kept as written."""
+    and issuer; a new title is styled by Rule 5g, a house family kept as written.
+    now: the resolver for a stored title (kb/credential_aliases.py resolver). The
+    cache keeps the title the classifier answered on the day it was asked, so a
+    title renamed since is proposed as the title the rename made."""
     conf = min(rec.get("confidence_title") or 0, rec.get("confidence_issuer") or 0
                if rec.get("issuing_agency") else (rec.get("confidence_title") or 0))
     title = (rec.get("unified_title") or "").strip()
+    if now and title:
+        title = now(title)
     out = {"title": title if title in families else restyle_title(title),
            "issuer": (rec.get("issuing_agency") or "").strip(),
            "via": "classifier", "confidence": round(conf, 2),
@@ -898,10 +903,13 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         if len(t["sample"]) < 5:
             t["sample"].append([raw, rec["title"]])
     classified_proposals = {}
+    sys.path.insert(0, HERE)
+    import credential_aliases
+    now_title = credential_aliases.resolver(ROOT)
     for raw in waiting:
         if raw in settled or raw not in records:
             continue
-        classified_proposals[raw] = as_proposal(records[raw], cred_issuers)
+        classified_proposals[raw] = as_proposal(records[raw], cred_issuers, now_title)
         if "school" in owners:
             sp = school_proposal(raw, aligned, records[raw])
             if sp:
