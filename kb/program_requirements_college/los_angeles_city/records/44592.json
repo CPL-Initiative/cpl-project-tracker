@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "American Language & Culture: Beginning High",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=233",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12402,
+  "input_tokens": 12152,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12402,
-    "output_tokens": 1163,
+    "input_tokens": 12152,
+    "output_tokens": 1135,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1163,
+  "output_tokens": 1135,
   "output_tokens_details": {
-   "thinking_tokens": 351
+   "thinking_tokens": 425
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07287,
- "ms": 11014,
- "seconds": 11.5,
+ "cost_usd": 0.07131,
+ "ms": 9250,
+ "seconds": 9.5,
  "parts": null,
  "error": null,
  "score": {
@@ -61,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     324.0,
     324.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    324.0,
+    324.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -95,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "American Language & Culture: Beginning High",
+   "section_heading": "American Language & Culture: Beginning High Certificate of Competency",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 324,
+    "max": 324
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -179,12 +180,20 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section at the top of page 235: the heading, description and 'Total Lecture Hrs' for this certificate fall on the previous page, which is not in the text. The section was identified by its required courses, which match the closed list exactly (ESLCVCS 032CE/042CE, ESL NC 048CE/049CE/050CE), and it precedes the 'American Language & Culture: Foundational' heading. The section_heading is the program title, not a heading read from the text.",
-   "No total hours are visible for this award, so total_units is null. The course hours sum to 324, but that figure was not recorded because the catalog's own total is not in the text.",
-   "The same three outcomes are printed for several American Language & Culture certificates. The ones recorded here are those printed directly above this award's requirements.",
-   "No careers are named in the visible portion of this section; the program description is on the missing previous page."
+   "Award is printed as a Certificate of Competency (noncredit); total stated as 'Total Lecture Hrs: 324', which matches the sum of the five listed course hours.",
+   "The section begins on catalog page 233 and its outcomes and requirements continue on page 234 after a page break.",
+   "The same three outcomes are printed under several American Language & Culture certificates; these were read from the Beginning High section itself.",
+   "No careers or job titles are named; the description mentions only general 'job opportunities' and 'career training'."
   ]
  },
- "extracted_run": 43136137275,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "a8f250957daddcdf",
+ "source_codes": [
+  "ESLCVCS32CE",
+  "ESLCVCS42CE",
+  "ESLNC48CE",
+  "ESLNC49CE",
+  "ESLNC50CE"
+ ],
+ "source_coverage": 1.0
 }

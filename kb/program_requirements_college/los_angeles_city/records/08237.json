@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "CHILD DEVELOPMENT TEACHER",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=89",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=90",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12907,
+  "input_tokens": 10774,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12907,
-    "output_tokens": 1688,
+    "input_tokens": 10774,
+    "output_tokens": 1578,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1688,
+  "output_tokens": 1578,
   "output_tokens_details": {
-   "thinking_tokens": 527
+   "thinking_tokens": 484
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08539,
- "ms": 14915,
- "seconds": 15.3,
+ "cost_usd": 0.07466,
+ "ms": 13597,
+ "seconds": 13.8,
  "parts": null,
  "error": null,
  "score": {
@@ -213,14 +213,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the 'Child Development Teacher' Certificate of Achievement section (catalog pp. 89-90, Major Units: 28); the page also prints Associate Teacher, Master Teacher, Site Supervisor and other certificates.",
-   "Catalog prints codes with leading zeros (CH DEV 001, 002, 007, etc.); these were matched to closed-list codes CH DEV 1, 2, 7, 10, 22, 34, 42 and not flagged as additions.",
-   "CH DEV 011 (Child, Family, and Community, 3 units) is required in the catalog but absent from the closed list; recorded as a catalog addition.",
-   "The 16 general education units mentioned are for the California Child Development Permit: Teacher level, not part of the certificate's 28 units; no GE pattern or degree total recorded.",
-   "Outcome 2 prints 'culturally sen -sitive' split across a line with a PDF hyphenation break; recorded as 'sensitive'. Reviewer may verify.",
-   "The section describes teaching in private or public preschool and school-age programs but names no specific job title or career field beyond permit levels; careers left empty."
+   "Hyphenation line-break artifacts in the PDF text (e.g. 'sen -sitive') were read as single words in the outcomes.",
+   "The 16 general education units mentioned are needed for the California Child Development Permit: Teacher level, not for this certificate; they are not recorded as ge_units or a GE pattern.",
+   "CH DEV 030 is mentioned in the description only as an addition for teaching in infant programs; it is not a requirement of this certificate and is not placed.",
+   "The description says recipients 'may teach in private or public preschool and school-age programs' and mentions the Child Development Permit: Teacher level, but names no explicit job title; careers left empty for reviewer check.",
+   "CH DEV 011 (Child, Family, and Community) is required by the catalog but absent from the closed list, recorded as a catalog addition.",
+   "Section begins at the top of page 90; the preceding 'WRITING ... 3' line belongs to the prior program."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "2d35454e775910be",
+ "source_codes": [
+  "CHDEV1",
+  "CHDEV10",
+  "CHDEV2",
+  "CHDEV22",
+  "CHDEV34",
+  "CHDEV42",
+  "CHDEV7",
+  "ENGLC1000"
+ ],
+ "source_coverage": 1.0
 }

@@ -95,6 +95,12 @@ is his standing preference there too.
    only sign it can read. On 2026-10-25 Sam opened S477 by hand at 11:54Z; it
    diagnosed the noncredit RPC for 40 minutes with no PR, the 12:14Z firing saw
    none, and both shipped the same retry (#2443 merged, #2444 closed).
+   **A session that stopped without a handoff** (S641, 2026-11-12). The 06:12Z firing merged four PRs as S641, the
+   last at 09:15Z, and wrote no handoff. The 10:12Z firing found no open PR updated since 07:55Z, no run in flight
+   and no new `cpl_memory` row, watched `git ls-remote` for 23 more minutes (never a full `git fetch` here: the
+   clone is shallow and 302 branches cost over a gigabyte), then took the queue under the same number at 10:42Z.
+   A firing in that position reads `main` since the handoff as the stopped session's record, opens its draft PR
+   before any other write, and writes the next handoff for both.
 2. **Paused?** If the latest handoff carries a line `Scheduled run: paused —
    <reason>`, and nothing on the standing sheet has been answered since, end in
    one line. Sam lifts a pause by answering the sheet or by saying so.

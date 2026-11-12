@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "GUESTROOM ATTENDANT",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=240",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7811,
+  "input_tokens": 9555,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7811,
-    "output_tokens": 1241,
+    "input_tokens": 9555,
+    "output_tokens": 1140,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1241,
+  "output_tokens": 1140,
   "output_tokens_details": {
-   "thinking_tokens": 362
+   "thinking_tokens": 228
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05606,
- "ms": 10524,
- "seconds": 10.9,
+ "cost_usd": 0.06102,
+ "ms": 9505,
+ "seconds": 9.7,
  "parts": null,
  "error": null,
  "score": {
@@ -65,49 +65,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     114.0,
     132.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    114.0,
+    132.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS (Guestroom Attendant; the program heading is not in the text provided)",
+   "section_heading": "Guestroom Attendant Certificate of Completion",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 114,
+    "max": 132
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -124,8 +125,15 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Utilize various laundering techniques and equipment.",
+    "Select best strategy for performing deep cleaning projects such as high dusting, carpet cleaning, and steam cleaning furniture.",
+    "Organize guest rooms, supplies, and amenities.",
+    "Develop customer service techniques and apply strategies for remaining positive on the job."
+   ],
+   "careers": [
+    "hospitality service industry"
+   ]
   },
   "blocks": [
    {
@@ -212,11 +220,22 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The provided text starts on page 242 mid-section: the Guestroom Attendant heading, description, total hours and any program student learning outcomes are presumably on the previous page (241) and are not in the text, so total_units, outcomes and careers are left empty. A reviewer should check page 241.",
-   "The requirements block at the top of page 242 is read as the Guestroom Attendant program because its courses match the closed list exactly; it precedes the Hospitality Certificate of Completion heading.",
-   "The Hospitality, Introduction to Hospitality Supervision and Urban Ambassadors sections that follow belong to other programs and were not used.",
-   "Measure is hours (HRS column). VOC ED 079CE is not in the closed list and is recorded as a catalog addition."
+   "Noncredit certificate counted in hours ('Total Lecture Hrs: 114 - 132'); all unit fields hold hours.",
+   "Program requirements continue from page 240 onto page 241 of the PDF; the requirements table on page 241 was read as belonging to the Guestroom Attendant section.",
+   "Required hours total 78; adding one elective (36 or 54 hrs) gives the printed 114-132 range.",
+   "Career entry 'hospitality service industry' is taken from the description ('preparing for employment in the hospitality service industry')."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "d0ebc910781a9a20",
+ "source_codes": [
+  "BSICSKL6CE",
+  "VOCED230CE",
+  "VOCED238CE",
+  "VOCED239CE",
+  "VOCED244CE",
+  "VOCED245CE",
+  "VOCED250CE"
+ ],
+ "source_coverage": 1.0
 }

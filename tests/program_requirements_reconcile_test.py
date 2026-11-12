@@ -437,17 +437,23 @@ check("the certificate below it on the page is left alone",
                   steps=R.load_steps())[1] == [])
 check("a transfer degree's heading takes neither step",
       R.reconcile(bus["record"], bus_text, LAC, "A.A- T Degree", steps=R.load_steps())[1] == [])
-# pdf page 185: the Film AS-T's requirements, then Cinema Production's heading. The filed record began past its own
-# heading and reads it as "PROGRAM REQUIREMENTS"; the scope from there runs into Cinema's heading, so the record holding
-# no degree total is what keeps the step out.
+# pdf page 185: the Film AS-T's requirements, then Cinema Production's heading. The record filed from run 39006380342
+# began past its own heading and read it as "PROGRAM REQUIREMENTS"; the scope from there runs into Cinema's heading, so
+# the record holding no degree total is what keeps the step out. The reread of run 43212072618 filed 02729 under its own
+# heading with the 60, so the guard is held on that earlier reading, rebuilt from the filed record (S641).
+misread = json.loads(json.dumps(cin["record"]))
+misread["program"]["section_heading"] = "PROGRAM REQUIREMENTS"
+misread["program"]["degree_total"] = {"min": None, "max": None}
 cin_text = ("184 LACC 2026-2027 COLLEGE CATALOG\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\n2. General Education: Completion of "
             "the California General Edu -\ncation Transfer Curriculum (CalGETC) course requirements,\nPROGRAM REQUIREMENTS\n"
             "MAJOR CORE COURSES (SELECT 6 UNITS)\nT V 001 EVOLUTION OF TELEVISION  ........................ 3\nUSED\n"
             "Cinema Production\nAssociate in Arts (AA) Degree\nMajor Units: 36  T otal Units: Minimum of 60\n"
             "(State Code: 02729: TOP Code: 061220; Academic Plan: C002729C)")
 check("a record read from past its own heading, holding no degree total, takes nothing from the next heading",
-      cin["record"]["program"]["section_heading"] == "PROGRAM REQUIREMENTS"
-      and R.reconcile(cin["record"], cin_text, LAC, cin["award"], steps=R.load_steps())[1] == [])
+      R.reconcile(misread, cin_text, LAC, cin["award"], steps=R.load_steps())[1] == [])
+check("the reread files Cinema Production 02729 under its own heading, holding its 60",
+      cin["record"]["program"]["section_heading"] == "Cinema Production Associate in Arts (AA) Degree"
+      and cin["record"]["program"]["degree_total"] == {"min": 60, "max": 60})
 other = json.loads(json.dumps(bus["record"])); other["program"]["section_heading"] = "Journalism Associate of Arts (AA) Degree"
 check("a heading the page does not print reads nothing", R.reconcile(other, bus_text, LAC, bus["award"], steps=R.load_steps())[1] == [])
 held = json.loads(json.dumps(bus["record"])); held["program"]["ge_units"] = {"min": 21, "max": 21}

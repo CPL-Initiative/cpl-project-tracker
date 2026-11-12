@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Tutor Training I",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=349",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7979,
+  "input_tokens": 6637,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7979,
-    "output_tokens": 580,
+    "input_tokens": 6637,
+    "output_tokens": 754,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 580,
+  "output_tokens": 754,
   "output_tokens_details": {
-   "thinking_tokens": 162
+   "thinking_tokens": 274
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04352,
- "ms": 6222,
- "seconds": 6.5,
+ "cost_usd": 0.04163,
+ "ms": 6849,
+ "seconds": 7.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 0,
+   "placed": 2,
    "listed": 2,
-   "share": 0.0,
-   "missing": [
-    "VOCED88CE",
-    "VOCED89CE"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -64,46 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unstated",
-   "computed": null,
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record states no figure, but the catalog text names 0 Units, 1 Hrs, 0 Units, 3 Hrs"
-   ]
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "NONCREDIT COURSES",
+   "section_heading": "Tutor Training I",
    "measure": "hours",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 36,
+    "max": 36
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,27 +121,55 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Apply key concepts in pedagogy, best practices, and ethics in the context of learning support and tutoring.",
+    "Demonstrate knowledge of policies and procedures necessary to work in an LACC learning center."
+   ],
+   "careers": [
+    "student tutors"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "VOC ED 088CE",
-    "why": "no program requirements section in the text; named only as the prerequisite of VOC ED 089CE"
-   },
-   {
-    "code": "VOC ED 089CE",
-    "why": "no program requirements section in the text; appears only as a course description"
+    "name": "REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "VOC ED 088CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VOC ED 089CE",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 349) holds noncredit course descriptions only. It prints no requirements section, total or outcomes for the Tutor Training I noncredit program, so no blocks were recorded.",
-   "The program section is likely on another catalog page. A reviewer should locate it.",
-   "VOC ED 089CE is described as '0 Units (RPT 98) (Lec 1 Hrs)'. That figure is weekly lecture hours, not program hours, so it was not used as a total.",
-   "The measure is set to hours because this is a noncredit program; no hours total is printed in the text."
+   "Noncredit Certificate of Completion counted in hours; total from 'Total Lecture Hrs: 36'.",
+   "Catalog prints VOC ED 089CE title as 'ADVANCE TUTOR TRAINING' versus closed-list 'Advanced Tutor Training'.",
+   "The following Pathway to Citizenship section belongs to a different program and was not read."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "6c8ec6459aad95b8",
+ "source_codes": [
+  "VOCED88CE",
+  "VOCED89CE"
+ ],
+ "source_coverage": 1.0
 }

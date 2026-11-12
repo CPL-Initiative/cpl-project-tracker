@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Spanish",
  "award": "A.A. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=135",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=134",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9705,
+  "input_tokens": 10387,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9705,
-    "output_tokens": 1835,
+    "input_tokens": 10387,
+    "output_tokens": 1973,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1835,
+  "output_tokens": 1973,
   "output_tokens_details": {
-   "thinking_tokens": 583
+   "thinking_tokens": 619
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07552,
- "ms": 14683,
- "seconds": 15.1,
+ "cost_usd": 0.08101,
+ "ms": 16311,
+ "seconds": 17.2,
  "parts": null,
  "error": null,
  "score": {
@@ -274,14 +274,33 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text at the top of page 135 (CalGETC requirement, Major Core 20-21 units, List A) belongs to the preceding program (likely the Spanish AA-T transfer degree) and was not used for this record.",
-   "Degree total recorded from 'Total Units: Minimum of 60' printed in this award's heading; no GE pattern or GE units are printed in the A.A. section.",
-   "Footnote: SPANISH 001, 002, and 003 are prerequisites to SPANISH 004; they are listed as electives (select 4-15 units).",
-   "Catalog codes use leading zeros (e.g., SPANISH 004, LING 001), matched to closed-list codes SPANISH 4, LING 1, etc."
+   "Section read is the Spanish AA (C002744C), not the AA-T printed before it on the same page.",
+   "degree_total 60 taken from the section header 'Total Units: Minimum of 60', printed as a minimum; reviewer may prefer null.",
+   "No GE pattern or GE units are named in the AA section (CalGETC appears only in the AA-T section).",
+   "Outcomes copied with PDF line-break hyphenations rejoined (e.g., 'For -eign' -> 'Foreign', 'Profi -ciency' -> 'Proficiency', 'Interme -diate' -> 'Intermediate'). The same outcomes are printed for the AA-T.",
+   "Footnote: SPANISH 001, 002, and 003 are prerequisites to SPANISH 004.",
+   "Catalog codes use leading zeros (e.g., SPANISH 004, LING 001) matching closed-list codes SPANISH 4, LING 1, etc.",
+   "The program description mentions 'a wide variety of career paths' but names no specific careers."
   ]
  },
- "extracted_run": 43136137275,
- "read_run": 39018419466,
+ "extracted_run": "43212072618",
+ "source_sha": "e99d5101179eb8ad",
+ "source_codes": [
+  "ARTHIST151",
+  "CHICANO44",
+  "DNCESPC311",
+  "LING1",
+  "SPANISH1",
+  "SPANISH10",
+  "SPANISH2",
+  "SPANISH21",
+  "SPANISH22",
+  "SPANISH3",
+  "SPANISH4",
+  "SPANISH7",
+  "SPANISH9"
+ ],
+ "source_coverage": 1.0,
  "reconciled": [
   {
    "field": "ge_units",

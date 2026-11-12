@@ -1,0 +1,419 @@
+{
+ "run": "43212072618",
+ "programs": [
+  {
+   "control_number": "02748",
+   "title": "Dental Prosthetic Technology",
+   "award": "A.S. Degree",
+   "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=94",
+   "filed_source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=95",
+   "cost_usd": 0.09071,
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      59.0,
+      59.0
+     ],
+     "stated": [
+      80.0,
+      80.0
+     ],
+     "against": "degree",
+     "ge": null,
+     "why": [
+      "the blocks and general education sum to 59.0-59.0; the catalog prints 80.0-80.0 for the degree"
+     ],
+     "major": {
+      "pass": true,
+      "status": "equal",
+      "computed": [
+       59.0,
+       59.0
+      ],
+      "stated": [
+       59.0,
+       59.0
+      ],
+      "against": "program",
+      "why": []
+     }
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 2,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "read"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 18,
+     "listed": 18,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      59.0,
+      59.0
+     ],
+     "stated": [
+      59.0,
+      59.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 5,
+     "courses": 0,
+     "count": 5,
+     "not_verbatim": [
+      "Design and construct basic orthodontic restorations, and partial and full removable dental prosthesis.",
+      "Design and construct fixed dental prosthesis single and multiple units."
+     ],
+     "why": [
+      "not in the catalog text as printed: Design and construct basic orthodontic restorations, and partial and full remova",
+      "not in the catalog text as printed: Design and construct fixed dental prosthesis single and multiple units."
+     ],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": false
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "major only",
+     "why": [
+      "the record names no degree total and no general education units"
+     ]
+    },
+    "pass": false
+   }
+  },
+  {
+   "control_number": "40593",
+   "title": "PROFESSIONAL ACTOR TRAINING LEVEL 2",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+   "filed_source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "cost_usd": 0.06148,
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 8,
+     "listed": 16,
+     "share": 0.5,
+     "missing": [
+      "THEATER1051",
+      "THEATER1052",
+      "THEATER2421",
+      "THEATER2422",
+      "THEATER270",
+      "THEATER272",
+      "THEATER2941",
+      "THEATER345"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      22.0,
+      22.0
+     ],
+     "stated": [
+      43.0,
+      43.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 22.0-22.0; the catalog states 43.0-43.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 4,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 16,
+     "listed": 16,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      43.0,
+      43.0
+     ],
+     "stated": [
+      43.0,
+      43.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 4,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  },
+  {
+   "control_number": "40596",
+   "title": "PROFESSIONAL ACTOR TRAINING LEVEL 3",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=202",
+   "filed_source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=201",
+   "cost_usd": 0.0983,
+   "score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 23,
+     "share": 0.304,
+     "missing": [
+      "THEATER1051",
+      "THEATER1052",
+      "THEATER1053",
+      "THEATER1054",
+      "THEATER2351",
+      "THEATER2421",
+      "THEATER2422",
+      "THEATER2423",
+      "THEATER2424",
+      "THEATER270",
+      "THEATER272",
+      "THEATER2741",
+      "THEATER2761",
+      "THEATER2941",
+      "THEATER2942",
+      "THEATER345"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      16.0,
+      16.0
+     ],
+     "stated": [
+      59.0,
+      59.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 16.0-16.0; the catalog states 59.0-59.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 7,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   },
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 23,
+     "listed": 23,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 1,
+     "codes": [
+      "THEATER200"
+     ],
+     "flagged": [
+      "THEATER200"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      59.0,
+      59.0
+     ],
+     "stated": [
+      59.0,
+      59.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 4,
+     "courses": 0,
+     "count": 4,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 4,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   }
+  }
+ ]
+}

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Administration of Justice",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=162",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=163",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9715,
+  "input_tokens": 6648,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9715,
-    "output_tokens": 1243,
+    "input_tokens": 6648,
+    "output_tokens": 1032,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1243,
+  "output_tokens": 1032,
   "output_tokens_details": {
-   "thinking_tokens": 345
+   "thinking_tokens": 279
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06372,
- "ms": 10496,
- "seconds": 10.7,
+ "cost_usd": 0.04723,
+ "ms": 8797,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
@@ -89,21 +89,9 @@
    "pass": true
   },
   "careers": {
-   "count": 12,
-   "not_verbatim": [
-    "police officers",
-    "custodial officers",
-    "deputy sheriffs",
-    "probation/parole officers",
-    "highway patrol officers",
-    "private investigators",
-    "forensic specialists",
-    "insurance investigators",
-    "police assistants",
-    "financial investigators",
-    "fingerprint experts"
-   ],
-   "pass": false
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -139,17 +127,6 @@
     "Recognize the responsibilities and requirements of law enforcement careers."
    ],
    "careers": [
-    "police officers",
-    "custodial officers",
-    "deputy sheriffs",
-    "probation/parole officers",
-    "highway patrol officers",
-    "private investigators",
-    "forensic specialists",
-    "insurance investigators",
-    "police assistants",
-    "financial investigators",
-    "fingerprint experts",
     "law enforcement"
    ]
   },
@@ -212,12 +189,21 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints codes zero-padded (ADM JUS 001, 002, 003, 004, 067); these match closed-list ADM JUS 1, 2, 3, 4, 67, so none are catalog additions.",
-   "The program student learning outcomes are printed identically for the AS-T, AA and Certificate of Achievement; recorded as printed in the certificate section. Line-break hyphenation 'law enforce -ment' read as 'law enforcement'.",
-   "Careers list taken from the department OVERVIEW, which applies to all Administration of Justice programs, plus 'careers in law enforcement' from the certificate's own description.",
-   "Total units taken from 'Major Units: 18' and 'REQUIRED COURSES (18 UNITS)'; the programs table also lists 18 units for the certificate (C)."
+   "The catalog prints codes with leading zeros (ADM JUS 001, 002, 003, 004, 067); these were matched to closed-list ADM JUS 1, 2, 3, 4, 67 and not marked as catalog additions.",
+   "Total taken from 'Major Units: 18' and 'REQUIRED COURSES (18 UNITS)'.",
+   "Outcome 3 was printed with a line-break hyphen ('law enforce -ment'); recorded as 'law enforcement'.",
+   "Career field 'law enforcement' read from the description: 'one of several careers in law enforcement'."
   ]
  },
- "extracted_run": 43138495821,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "ca2b4d9efc632d0e",
+ "source_codes": [
+  "ADMJUS1",
+  "ADMJUS180",
+  "ADMJUS2",
+  "ADMJUS3",
+  "ADMJUS4",
+  "ADMJUS67"
+ ],
+ "source_coverage": 1.0
 }

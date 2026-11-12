@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Music",
  "award": "A.A. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=196",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=195",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13965,
+  "input_tokens": 13695,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13965,
-    "output_tokens": 2761,
+    "input_tokens": 13695,
+    "output_tokens": 2591,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2761,
+  "output_tokens": 2591,
   "output_tokens_details": {
-   "thinking_tokens": 748
+   "thinking_tokens": 657
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.11108,
- "ms": 21550,
- "seconds": 22.0,
+ "cost_usd": 0.1066,
+ "ms": 20127,
+ "seconds": 21.0,
  "parts": null,
  "error": null,
  "score": {
@@ -385,16 +385,46 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the 'Music Associate of Arts (AA) Degree' section (Major Units: 27, Total Units: Minimum of 60). The requirements printed at the top of page 196 (Major Core 22 units with Applied Music 181-184 and List A) belong to the preceding award's section, apparently a different Music degree (likely the AA-T), and were not used.",
-   "degree_total recorded as 60 from the header 'Total Units: Minimum of 60'; the catalog prints it as a minimum. No general education pattern or GE units are named in this section.",
-   "MUSIC 311-314 are marked '*OR MORE ADVANCED LEVEL', so a more advanced piano course may substitute.",
-   "Ensemble courses are noted as repeatable three times, so 'select four' may be met by repeating an ensemble.",
-   "Block totals sum to the printed 27 major units (20 + 3 + 4).",
-   "The outcomes list is identical to the one printed in the preceding section on the same page; the outcomes recorded are those printed within this AA section.",
-   "Career 'music industry' taken from 'prepare the student for entry into the music industry'."
+   "degree_total recorded from the section header 'Total Units: Minimum of 60'; it is printed as a minimum for this award, and no general education pattern or units are named in the AA section. Reviewer may prefer null.",
+   "MUSIC 311-314 carry the footnote '*OR MORE ADVANCED LEVEL', so a more advanced piano course may substitute.",
+   "Ensemble footnote: '**ENSEMBLE COURSES ARE REPEATABLE THREE TIMES', so the four ensemble units may come from repeating one course.",
+   "Block units sum to 27 (20 + 3 + 4), matching the printed Major Units: 27.",
+   "Career entry 'music industry' taken from the description: 'prepare the student for entry into the music industry'.",
+   "The AA-T section printed just before uses the same outcomes list; the AA section prints its own copy, which is recorded here."
   ]
  },
- "extracted_run": 43136137275,
+ "extracted_run": "43212072618",
+ "source_sha": "086ccd51cbcc3ae5",
+ "source_codes": [
+  "MUSIC111",
+  "MUSIC116",
+  "MUSIC121",
+  "MUSIC122",
+  "MUSIC135",
+  "MUSIC136",
+  "MUSIC200",
+  "MUSIC201",
+  "MUSIC202",
+  "MUSIC203",
+  "MUSIC211",
+  "MUSIC212",
+  "MUSIC213",
+  "MUSIC311",
+  "MUSIC312",
+  "MUSIC313",
+  "MUSIC314",
+  "MUSIC501",
+  "MUSIC531",
+  "MUSIC561",
+  "MUSIC702",
+  "MUSIC705",
+  "MUSIC751",
+  "MUSIC765",
+  "MUSIC771",
+  "MUSIC781",
+  "MUSIC782"
+ ],
+ "source_coverage": 1.0,
  "reconciled": [
   {
    "field": "ge_units",
@@ -414,6 +444,5 @@
    "now": true,
    "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
   }
- ],
- "read_run": "39006380342"
+ ]
 }

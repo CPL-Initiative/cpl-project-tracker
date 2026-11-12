@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T05:54:18Z",
-  "session": 640,
-  "moniker": "SkyHeron",
-  "run": "Sam's session",
+  "written_at": "2026-11-12T12:38:44Z",
+  "session": 641,
+  "moniker": "SkyOtter",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_641_handoff.md",
+  "handoff": "docs/session_642_handoff.md",
   "next_step": {
-    "title": "Rio Hondo's fresh reconcile, then the PDF reader's proofs",
-    "text": "Rio Hondo's first reconcile met server errors and read 34 of 328 pages, so a fresh one runs; when it files, the session measures it against main, rereads and merges. Then the PDF reader takes fresh capture-only proofs at five colleges against same-day baselines by main's reader, a review, and the merge; the paid re-extractions follow it."
+    "title": "Merge American River and Los Angeles City, then Victor Valley's four certificates",
+    "text": "Both paid reads are verified and reread on their branches, and each pull request merges on a green test. Victor Valley's four EMS certificates are checked against main's records, reread and counted. Then the session decides Los Angeles City's load of its 22 absent records, and College of the Desert goes by the blocked-sources order."
   },
   "calls": [
     {
@@ -235,6 +235,38 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-12T12:35:00Z",
+      "text": "A passing record now stays when a new read passes but places fewer of its listed courses; the check caught American River's Gerontology record falling from 15 of 20 courses to 9."
+    },
+    {
+      "at": "2026-11-12T12:24:00Z",
+      "text": "American River's paid read ($3.13, 33 programs) moved 17 records to passing and none to failing; reread and loaded on its branch, 292 of 327 pass live. Los Angeles City's ($11.38, 145 programs) moved 39 to passing and none to failing; reread on its branch, 203 of 223 pass live."
+    },
+    {
+      "at": "2026-11-12T12:34:00Z",
+      "text": "College of the Desert's capture failed a third time: the host was unreachable after 1,016 seconds, so the college stays unread."
+    },
+    {
+      "at": "2026-11-12T11:30:00Z",
+      "text": "College of the Desert's catalog fetch limit was raised from 900 to 2,400 seconds: its 21 MB catalog ran past the old limit twice. A fresh capture on the new reader runs against a same-day baseline."
+    },
+    {
+      "at": "2026-11-12T11:22:00Z",
+      "text": "Shasta College's course outcomes loaded: 775 of 775 outlines read, 1,549 rows."
+    },
+    {
+      "at": "2026-11-12T11:16:00Z",
+      "text": "The PDF reader merged: a program that a renumbered catalog only moved keeps its record with no model call, a department's award list gives no heading, and a record that passes in full is replaced only by a read that passes in full."
+    },
+    {
+      "at": "2026-11-12T11:00:00Z",
+      "text": "De Anza College's outcomes trial is held: 11 of 12 pages came back empty, because its 2026-27 catalog does not answer the older course codes."
+    },
+    {
+      "at": "2026-11-12T07:24:00Z",
+      "text": "Rio Hondo College merged: transfer degrees take Cal-GETC's 34 units, summed from the catalog's printed areas; 276 of 288 records pass the machine checks."
+    },
     {
       "at": "2026-11-12T04:53:00Z",
       "text": "Berkeley City College merged: local degrees take the catalog's 18 general education units and its electives rule. The reread replaced 16 live records, none held; 48 of 89 pass the machine checks."
@@ -486,18 +518,18 @@
     {
       "day": "2026-11-12",
       "active": 20282,
-      "complete": 13893,
+      "complete": 13963,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-12T06:12:00Z"
+    "at": "2026-11-12T13:12:00Z"
   },
   "harvest": {
     "day": "2026-11-12",
-    "gaps": 3008,
+    "gaps": 3012,
     "parts": {
       "links": {
         "catalog": [
@@ -514,25 +546,25 @@
         ]
       },
       "roep": [
-        19150,
+        19154,
         20282
       ],
       "coci": [
-        16144,
+        16152,
         20282
       ],
       "outcomes": {
         "slo": [
-          12066,
+          12815,
           89192
         ],
         "plo": [
-          16144,
+          16152,
           20282
         ]
       },
       "careers": [
-        15108,
+        15116,
         20282
       ]
     }
