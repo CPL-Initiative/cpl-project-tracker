@@ -86,7 +86,7 @@ if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
   echo "  python3 kb/_build_docs_index.py && python3 kb/_build_dependency_map.py \\"
   echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
-  echo "    && python3 fact-sheet/_build_statewide_catalog.py"
+  echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py"
   exit 1
 fi
 echo "All generated files are current."

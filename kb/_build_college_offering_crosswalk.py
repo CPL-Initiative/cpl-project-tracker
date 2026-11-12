@@ -155,7 +155,7 @@ def build_rows(college, offering_map, partner_run):
         rul = rulings[key]
         creds = []
         for c in occ_map[key]["credentials"]:
-            t = now(c["title"], occ_map[key].get("curated_at"))
+            t = now(c["title"])
             i = info.get(t)
             if not i:
                 creds.append(dict(title=t, tier=c["tier"], state="not in MAP index",

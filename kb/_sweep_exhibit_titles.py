@@ -626,7 +626,7 @@ def current_titles(ut, assignments, held, now):
         r = raw.strip()
         if r in held:
             continue
-        t = now((a.get("unified_title") or "").strip(), a.get("reviewed_at"))
+        t = now((a.get("unified_title") or "").strip())
         if t and (r not in current or (a.get("reviewed_at") or "") > (reviewed.get(r) or "")):
             current[r], reviewed[r] = t, a.get("reviewed_at") or ""
     for r in held:

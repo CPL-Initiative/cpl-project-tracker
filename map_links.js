@@ -19,8 +19,8 @@
  *
  * The index is keyed by the common title the check saw. A title an applied rename moved since reads as the
  * title the rename made: kb/credential_title_moves.json (built by kb/credential_aliases.py, the one
- * resolver) gives each old title the title it names now, per apply; this file only picks the first apply
- * after the index's checked_at and holds no resolver of its own.
+ * resolver) gives each old title its hops; this file takes a live title as itself, else the first live hop,
+ * else the last, and holds no resolver of its own.
  *
  * A caller renders a placeholder (placeholder() for an HTML string, node() for
  * an element) and the module fills every placeholder on the page once the
@@ -65,21 +65,31 @@
     document.head.appendChild(st);
   }
 
-  // The title an old key names now: the first apply after `since` (kb/credential_title_moves.json pairs).
-  function nowTitle(moves, title, since) {
-    var pairs = moves && Object.prototype.hasOwnProperty.call(moves, title) ? moves[title] : null;
-    for (var i = 0; pairs && i < pairs.length; i++) {
-      if (!since || String(since).slice(0, 19) < String(pairs[i][0]).slice(0, 19)) return pairs[i][1];
-    }
-    return title;
+  // The title an old key names now (kb/credential_title_moves.json, walked by kb/credential_aliases.py): a live
+  // title is itself; any other takes its first live hop, else its last.
+  function nowTitle(moves, title, live) {
+    if (live && live[title]) return title;
+    var hops = moves && Object.prototype.hasOwnProperty.call(moves, title) ? moves[title] : null;
+    if (!hops || !hops.length) return title;
+    for (var i = 0; live && i < hops.length; i++) if (live[hops[i]]) return hops[i];
+    return hops[hops.length - 1];
+  }
+  // The live titles: the credential reference when the page has loaded it; else the titles the table's build found
+  // live although a rename once moved them (its report), so a title a person brought back still reads as itself.
+  function liveTitles(table) {
+    var live = {}, ref = window.CPL_CREDENTIAL_REFERENCE;
+    if (ref && ref.unified_titles) ref.unified_titles.forEach(function (u) { if (u && u.ut) live[u.ut] = 1; });
+    else ((table && table.report && table.report.returned) || []).forEach(function (t) { live[t] = 1; });
+    return live;
   }
   // by_title read through the renames: a renamed key's IDs join the title it moved to, after that title's own.
-  function rekey(j, moves) {
+  function rekey(j, table) {
+    var moves = table && table.moves;
     if (!j || !j.by_title || !moves) return j;
-    var bt = j.by_title, out = {};
+    var bt = j.by_title, out = {}, live = liveTitles(table);
     Object.keys(bt).forEach(function (k) { out[k] = (bt[k] || []).slice(); });
     Object.keys(bt).forEach(function (k) {
-      var t = nowTitle(moves, k, j.checked_at);
+      var t = nowTitle(moves, k, live);
       if (t === k) return;
       var have = out[t] || (out[t] = []);
       (bt[k] || []).forEach(function (id) { if (have.indexOf(id) < 0) have.push(id); });
@@ -99,7 +109,7 @@
     loading = Promise.all([getJson("kb/reference/map_cpl_opportunities_verified.json"), getJson("kb/credential_title_moves.json")])
       .then(function (got) {
         var j = got[0];
-        index = j && j.found && j.by_title ? rekey(j, got[1] && got[1].moves) : null;
+        index = j && j.found && j.by_title ? rekey(j, got[1]) : null;
         return index;
       })
       .catch(function () { return null; });

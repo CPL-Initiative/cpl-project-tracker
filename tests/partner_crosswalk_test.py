@@ -145,7 +145,7 @@ check_true("map is populated", len(entries) > 0)
 # A ruling curated before an applied rename names the old title; it resolves through the renames
 # (kb/credential_aliases.py), the same read the engine makes, and a title no rename moved must be live.
 stale = sorted({c["title"] for e in entries.values() for c in e.get("credentials", [])
-                if pc.ruled_title(c["title"], e.get("curated_at")) not in idx})
+                if pc.ruled_title(c["title"]) not in idx})
 check("every mapped credential resolves in the live index", stale, [])
 bad_tier = sorted({c.get("tier") for e in entries.values() for c in e.get("credentials", [])
                    if c.get("tier") not in ("D", "R")})

@@ -344,7 +344,7 @@ def build(root):
     verified = load_json(root, "kb/reference/map_cpl_opportunities_verified.json", {}) or {}
     found = verified.get("found") or {}
     # Keyed by the title the check saw; a title renamed since reads as the title the rename made.
-    by_title = credential_aliases.by_current_title(verified.get("by_title") or {}, root, verified.get("checked_at"))
+    by_title = credential_aliases.by_current_title(verified.get("by_title") or {}, root)
     lookup = college_lookup(root)
     shorts = short_names(root)
     recs = statewide_recs(root)

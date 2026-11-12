@@ -4,7 +4,7 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 863,
+  "file_datasets": 866,
   "external_services": 195,
   "consumers": 558,
   "workflows": 66,
@@ -880,7 +880,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 3446,
+     "line": 3454,
      "tabs": [
       "exhibits"
      ]
@@ -6161,7 +6161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2775,
+     "line": 2783,
      "tabs": [
       "exhibits"
      ]
@@ -6365,7 +6365,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3438,
+     "line": 3446,
      "tabs": [
       "exhibits"
      ]
@@ -6458,7 +6458,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3723,
+     "line": 3731,
      "tabs": [
       "exhibits"
      ]
@@ -7385,6 +7385,18 @@
      ]
     },
     {
+     "id": "module:map_links.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 80,
+     "pages": [
+      "CPL_Dashboard.html",
+      "fact-sheet/index.html",
+      "library/cpl-opportunity/index.html"
+     ]
+    },
+    {
      "id": "module:nc_learning_partners.js",
      "kind": "module",
      "direction": "read",
@@ -8244,7 +8256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 4012,
+     "line": 4020,
      "tabs": [
       "exhibits"
      ]
@@ -13711,6 +13723,13 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    },
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
     }
    ],
    "served": true,
@@ -13878,7 +13897,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 59
     }
    ],
    "producers": [
@@ -14147,7 +14166,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 192
+     "line": 145
     }
    ],
    "producers": [
@@ -15118,7 +15137,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3460,
+     "line": 3468,
      "tabs": [
       "exhibits"
      ]
@@ -15424,7 +15443,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2957,
+     "line": 2965,
      "tabs": [
       "exhibits"
      ]
@@ -17820,7 +17839,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 242
+     "line": 323
     }
    ],
    "served": true,
@@ -19321,6 +19340,19 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:kb/unclassified_fold/retires.json": {
+   "consumers": [
+    {
+     "id": "script:kb/credential_aliases.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 60
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb/unclassified_preseed.json": {
@@ -23219,6 +23251,32 @@
    "main_committers": []
   },
   "file:tests/credential_review_stale_issuer_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_title_resolver_single_source_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_title_resolver_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -31583,7 +31641,10 @@
     "tests/exhibit_subject_fill_test.py",
     "tests/course_outcomes_load_test.py",
     "tests/next_slo_colleges_test.py",
-    "tests/browser_install_single_source_test.py"
+    "tests/browser_install_single_source_test.py",
+    "kb/credential_aliases.py",
+    "tests/credential_title_resolver_test.py",
+    "tests/credential_title_resolver_single_source_test.py"
    ],
    "adds": [],
    "push": null,

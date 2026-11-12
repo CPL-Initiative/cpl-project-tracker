@@ -8,14 +8,19 @@ kb/alias_chain.py resolves a stored M-ID, and no live row is rewritten.
 
 Guards, each a fault:
   1. an undone snapshot does not resolve (undone.json beside it, or its fold_id named by any undone.json),
-     except the groups the undo skipped; a failed apply and a never-applied snapshot do not resolve;
-  2. apply order is _applied_at, never the folder name ("2026-11-12/" sorts after "2026-11-12-2/");
-  3. a chain A->B then B->C reads C; a swap in one map moves once; a merge reads its target; an unknown title
-     reads itself; a value saved after an apply never moves through it (the era guard);
-  4. a title the fold retired is a search alias of each title its exhibits went to, never a resolution;
-  5. the browser's table (kb/credential_title_moves.json) gives the same answer as resolve, and is current;
+     except the groups the undo skipped; an undo that left no marker returns its titles through the live rule;
+     a re-apply in a new folder resolves again; a failed apply and a never-applied snapshot do not resolve;
+  2. apply order is _applied_at as an instant, never the folder name; a malformed time, a tie on a common
+     title, and a title in both renames and merges each raise;
+  3. a live title is itself at every step (the S641 conductor, D1: three live titles a 2026-07-08 snapshot
+     moved); a title that is not live moves through every snapshot (A->B then B->C reads C; a swap moves
+     once; a merge reads its target; an unknown title reads itself), whenever it was saved;
+  4. a title the fold retired is a search alias of each title its exhibits went to, from the append-only
+     ledger, never a resolution; a later report with an empty retire list removes no alias (D2);
+  5. the browser's table gives resolve's answer, and is current;
   6. the stale "ASE Bundle — A4, A5" shape (a saved assignment, cer-procedure-classifier@bot, 2026-10-31, before
-     the 2026-11-12 apply) reads as its live credential in each routed reader.
+     the 2026-11-12 apply) reads as its live credential in each routed reader, and the three returned titles
+     keep the fold's answer on main.
 
 Run from the repo root: python3 tests/credential_title_resolver_test.py
 """
@@ -43,15 +48,27 @@ def write(path, obj):
         json.dump(obj, f, ensure_ascii=False)
 
 
-def snap(root, name, at, renames=None, merges=None, fold_id=None):
+def snap(root, name, at, renames=None, merges=None, fold_id=None, undo=False):
     d = os.path.join(root, "kb", "cred_rename_out", name)
     doc = {"renames": renames or {}, "merges": merges or {}}
     if at:
         doc["_applied_at"] = at
     write(os.path.join(d, "alias_map.json"), doc)
-    if fold_id:
-        write(os.path.join(d, "undo.json"), {"fold_id": fold_id})
+    if fold_id or undo:
+        write(os.path.join(d, "undo.json"), {"fold_id": fold_id} if fold_id else {})
     return d
+
+
+def raises(fn):
+    try:
+        fn()
+    except ca.SnapshotError:
+        return True
+    return False
+
+
+def live(root, titles):
+    write(os.path.join(root, "kb", "credentials.json"), {t: [{}] for t in titles})
 
 
 OLD, NEW = "ASE Bundle — A4, A5", "ASE Certificate Bundles: A4 + A5"
@@ -61,8 +78,9 @@ SAVED_AT = "2026-10-31T14:01:01.108182+00:00"
 tmp = tempfile.mkdtemp(prefix="cred-title-resolver-")
 try:
     # ── 1-3: the resolver on a fixture ──
-    snap(tmp, "2026-07-08", "2026-07-08T12:00:00Z", {"A": "B"}, {"Merged Away": "Kept"})
-    snap(tmp, "2026-07-09", "2026-07-09T12:00:00Z", {"B": "C", "Swap 1": "Swap 2", "Swap 2": "Swap 1"})
+    snap(tmp, "2026-07-08", "2026-07-08T12:00:00Z", {"A": "B", "Brought Back": "Gone To"}, {"Merged Away": "Kept"})
+    snap(tmp, "2026-07-09", "2026-07-09T12:00:00Z", {"B": "C", "Swap 1": "Swap 2", "Swap 2": "Swap 1", "L1": "L2"})
+    snap(tmp, "2026-07-10", "2026-07-10T12:00:00Z", {"L2": "L3"})
     snap(tmp, "2026-08-01", None, {"C": "Never Applied"})
     d = snap(tmp, "2026-08-02", "2026-08-02T12:00:00Z", {"C": "Failed Apply"})
     write(os.path.join(d, "apply_failed.json"), {})
@@ -70,69 +88,108 @@ try:
              fold_id="2026-09-01@2026-09-01T12:00:00Z")
     write(os.path.join(d, "undone.json"), {"fold_ids": ["2026-09-01@2026-09-01T12:00:00Z"],
                                            "skipped_groups": ["Still Folded", "Kept Group"]})
-    # an undo whose undone.json names a fold id, the receipt's own folder holding none
     snap(tmp, "2026-09-02", "2026-09-02T12:00:00Z", {"C": "Undone Elsewhere"}, fold_id="F2")
     write(os.path.join(tmp, "kb", "cred_rename_out", "zz-undo-record", "undone.json"), {"fold_ids": ["F2"]})
+    # undone, then re-applied in a new folder: the re-apply stands
+    d = snap(tmp, "2026-09-03", "2026-09-03T12:00:00Z", {"Re 1": "Re 2"}, fold_id="F3")
+    write(os.path.join(d, "undone.json"), {"fold_ids": ["F3"]})
+    snap(tmp, "2026-09-04", "2026-09-04T12:00:00Z", {"Re 1": "Re 2"}, fold_id="F4")
+    # an undo with no fold_id writes no undone.json; it put "Unmarked" back in the reference
+    snap(tmp, "2026-09-05", "2026-09-05T12:00:00Z", {"Unmarked": "Unmarked New"}, undo=True)
     # apply order: the base folder was applied first, though "2026-11-12/" sorts after "2026-11-12-2/"
     snap(tmp, "2026-11-12", "2026-11-12T00:54:43Z", {OLD: NEW, "Order 1": "Order 2"})
-    snap(tmp, "2026-11-12-2", "2026-11-12T05:14:50Z", {"Order 2": "Order 3"})
+    snap(tmp, "2026-11-12-2", "2026-11-12T05:14:50+00:00", {"Order 2": "Order 3"})
+    # a tie on titles the two do not share is ordered by name; one in another zone is the same instant
+    snap(tmp, "2026-11-13-a", "2026-11-13T08:00:00Z", {"Tie A": "Tie B"})
+    snap(tmp, "2026-11-13-b", "2026-11-13T00:00:00-08:00", {"Tie X": "Tie Y"})
+    live(tmp, ["C", "Kept", "Swap 2", "Brought Back", "Unmarked", "L2", "Order 3", NEW, "Re 2", "Tie B", "Tie Y",
+               "Still Folded", "Gone To"])
 
     snaps = ca.snapshots(tmp)
     names = [s["name"] for s in snaps]
     now = ca.resolver(tmp)
+    lv = ca.live_titles(tmp)
     check("a never-applied and a failed apply's snapshot are not in force",
           "2026-08-01" not in names and "2026-08-02" not in names, names)
-    check("an undone snapshot does not resolve (undone.json beside it)", now("C") == "C", now("C"))
-    check("an undone snapshot does not resolve (its fold_id in another folder's undone.json)",
-          "2026-09-02" not in names, names)
-    check("a group the undo skipped stays folded", now("Kept Group") == "Still Folded", now("Kept Group"))
-    check("apply order is _applied_at: 2026-11-12 before 2026-11-12-2",
+    check("an undone snapshot does not resolve (undone.json beside it)", "2026-09-01" in names
+          and ca.resolve("C", snaps)[0] == "C", ca.resolve("C", snaps))
+    check("an undone snapshot does not resolve (its fold_id in another folder's undone.json)", "2026-09-02" not in names)
+    check("a group the undo skipped stays folded", ca.resolve("Kept Group", snaps)[0] == "Still Folded")
+    check("an undo, then a re-apply in a new folder: the re-apply resolves", "2026-09-03" not in names and now("Re 1") == "Re 2")
+    check("an undo that left no marker returns its old title through the live rule", now("Unmarked") == "Unmarked"
+          and "Unmarked" in ca.returned(tmp) and "Unmarked" not in ca.load(tmp).get("Unmarked New", []))
+    check("apply order is _applied_at as an instant: 2026-11-12 before 2026-11-12-2",
           names.index("2026-11-12") < names.index("2026-11-12-2") and now("Order 1") == "Order 3", names)
+    check("a tie on titles the two do not share is ordered by name, a zone offset read as the instant",
+          names.index("2026-11-13-a") < names.index("2026-11-13-b") and now("Tie X") == "Tie Y")
     check("a chain A->B then B->C resolves A to C, with both applies named",
-          ca.resolve("A", snaps) == ("C", ["2026-07-08", "2026-07-09"]), ca.resolve("A", snaps))
-    check("a swap in one map moves once, not twice", now("Swap 1") == "Swap 2" and now("Swap 2") == "Swap 1")
+          ca.resolve("A", snaps, lv) == ("C", ["2026-07-08", "2026-07-09"]), ca.resolve("A", snaps, lv))
+    check("a swap in one map moves once, not twice (titles not live)",
+          ca.resolve("Swap 1", snaps)[0] == "Swap 2" and ca.resolve("Swap 2", snaps)[0] == "Swap 1")
+    check("a live title is itself: a swapped title that is live stays", now("Swap 2") == "Swap 2")
+    check("a live title is itself at every step: the chain stops at the first live title", now("L1") == "L2")
+    check("a title a person brought back reads as itself and is no alias of where it went",
+          now("Brought Back") == "Brought Back" and "Brought Back" not in ca.load(tmp).get("Gone To", [])
+          and "Brought Back" in ca.returned(tmp))
     check("a merged title resolves to its target", now("Merged Away") == "Kept")
     check("an unknown title returns itself", now("Nobody Renamed This") == "Nobody Renamed This" and now("") == "")
-    check("the era guard: a value saved after an apply never moves through it",
-          now("B", "2026-07-10T00:00:00Z") == "B" and now("A", "2026-07-08T18:00:00+00:00") == "A"
-          and now("A", "2026-07-08") == "C" and now("B", "2026-07-08T18:00:00+00:00") == "C")
     mv = ca.moves(tmp)
-    check("moves() follows each old title to the title it carries now",
-          mv["A"] == {"now": "C", "by": ["2026-07-08", "2026-07-09"]} and mv["B"]["now"] == "C" and "C" not in mv)
+    check("moves() follows each title that is not live to the title it names now, and leaves the live ones",
+          mv["A"] == {"now": "C", "by": ["2026-07-08", "2026-07-09"]} and "C" not in mv and "Brought Back" not in mv)
 
-    # ── 4: the fold's retired titles are search aliases ──
-    write(os.path.join(tmp, "kb", "credentials.json"), {NEW: [{}], "C": [{}], "Back Again": [{}],
-                                                         "MIL3": [{}], "MIL4 Renamed": [{}]})
+    # malformed, tied and doubled snapshots raise
+    for label, setup in (
+            ("a malformed _applied_at", lambda r: snap(r, "bad", "yesterday", {"P": "Q"})),
+            ("an _applied_at with no zone", lambda r: snap(r, "bad", "2026-11-14T00:00:00", {"P": "Q"})),
+            ("two snapshots at one instant naming a common title",
+             lambda r: (snap(r, "t1", "2026-11-14T00:00:00Z", {"P": "Q"}), snap(r, "t2", "2026-11-14T00:00:00Z", {"Q": "R"}))),
+            ("a title in both renames and merges of one snapshot",
+             lambda r: snap(r, "both", "2026-11-14T00:00:00Z", {"P": "Q"}, {"P": "R"}))):
+        r2 = tempfile.mkdtemp(prefix="cred-title-bad-")
+        try:
+            setup(r2)
+            check(f"{label} fails loudly", raises(lambda: ca.snapshots(r2)))
+        finally:
+            shutil.rmtree(r2, ignore_errors=True)
+
+    # ── 4: the fold's retired titles are search aliases, from the ledger ──
+    live(tmp, ["C", "Back Again", "MIL3", "MIL4 Renamed", "Kept", "Brought Back", "Unmarked"])
+    ca.append_retires(tmp, "2026-11-11", "2026-11-11T00:24:16Z",
+                      [{"title": "Automotive Braking Systems", "to": ["MIL3", "MIL4"]}, {"title": "Back Again", "to": ["C"]}])
+    check("the ledger appends once per retire", ca.append_retires(tmp, "2026-11-11", "x", [{"title": "Back Again", "to": ["C"]}]) == 0)
+    # the day's report is rewritten by a later run with no retires: the ledger keeps them
     write(os.path.join(tmp, "kb", "unclassified_fold", "2026-11-11", "report.json"),
-          {"mode": "apply", "_generated_at": "2026-11-11T00:24:16Z",
-           "credential_retires": [{"title": "Automotive Braking Systems", "to": ["MIL3", "MIL4"]},
-                                  {"title": "Back Again", "to": ["C"]}]})
-    write(os.path.join(tmp, "kb", "unclassified_fold", "2026-11-10", "report.json"),
-          {"mode": "dry-run", "credential_retires": [{"title": "Dry Run Only", "to": ["C"]}]})
-    snap(tmp, "2026-11-13", "2026-11-13T00:00:00Z", {"MIL4": "MIL4 Renamed"})
+          {"mode": "apply", "_generated_at": "2026-11-11T06:36:00Z", "credential_retires": []})
+    ca.append_retires(tmp, "2026-11-11", "2026-11-11T06:36:00Z", [])
+    snap(tmp, "2026-11-14", "2026-11-14T00:00:00Z", {"MIL4": "MIL4 Renamed"})
     aka = ca.load(tmp)
     check("a retired title is an alias of each title its exhibits went to, each followed through later renames",
           "Automotive Braking Systems" in aka.get("MIL3", []) and "Automotive Braking Systems" in aka.get("MIL4 Renamed", []),
           aka)
+    check("a later report with an empty retire list removes no alias", "Automotive Braking Systems" in aka.get("MIL3", []))
     check("a retired title is never a resolution", ca.resolver(tmp)("Automotive Braking Systems") == "Automotive Braking Systems")
-    check("a retired title that is a credential again, or from a dry run, is no alias",
-          "Back Again" not in aka.get("C", []) and "Dry Run Only" not in aka.get("C", []))
-    check("rename aliases come first, oldest first", aka.get("C", [])[:2] == ["A", "B"], aka.get("C"))
+    check("a retired title that is a credential again is no alias", "Back Again" not in aka.get("C", []))
+    check("rename aliases come first", aka.get("C", [])[:2] == ["A", "B"], aka.get("C"))
 
     # ── 5: the browser's table gives resolve's answer ──
-    tab = ca.table(tmp)["moves"]
+    t = ca.table(tmp)
+    tab, lv = t["moves"], ca.live_titles(tmp)
 
-    def pick(title, since=None):   # the rule map_links.js applies: the first pair applied after `since`
-        for at, t in tab.get(title, []):
-            if not since or since[:19] < at[:19]:
-                return t
-        return title
-    probe = ["A", "B", "Swap 1", "Merged Away", "Order 1", OLD, "Kept Group", "C", "Unknown"]
-    sinces = [None, "2026-07-08T18:00:00Z", "2026-07-10T00:00:00Z", "2026-11-12T03:00:00Z"]
-    bad = [(t, s, pick(t, s), now(t, s)) for t in probe for s in sinces if pick(t, s) != ca.resolver(tmp)(t, s)]
-    check("the table's first-pair-after rule gives resolve's answer at every era", not bad, bad)
+    def pick(title, live_set):   # the rule map_links.js applies to the table
+        if title in live_set:
+            return title
+        hops = tab.get(title) or []
+        return next((h for h in hops if h in live_set), hops[-1] if hops else title)
+    snaps = ca.snapshots(tmp)
+    probe = ["A", "B", "Swap 1", "Swap 2", "Merged Away", "Order 1", OLD, "Kept Group", "C", "L1", "Brought Back",
+             "Unmarked", "Re 1", "Unknown"]
+    bad = [(x, pick(x, s), ca.resolve(x, snaps, s)[0]) for x in probe for s in (lv, frozenset())
+           if pick(x, s) != ca.resolve(x, snaps, s)[0]]
+    check("the table's first-live-hop rule gives resolve's answer, with and without the live set", not bad, bad)
+    check("the table's report names the returned titles", "Brought Back" in t["report"]["returned"])
     have = open(os.path.join(ROOT, ca.TABLE), encoding="utf-8").read()
-    check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)", have == ca._render(ROOT))
+    check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)",
+          ca._checked(have) == ca._checked(ca._render(ROOT)))
 
     # ── 6: the stale ASE A4, A5 saved assignment, in each routed reader ──
     t2 = os.path.join(tmp, "readers")
@@ -144,12 +201,14 @@ try:
     saved = {RAW: {"unified_title": OLD, "issuing_agency": "ASE", "reviewed_by": "cer-procedure-classifier@bot",
                    "reviewed_at": SAVED_AT}}
     write(os.path.join(t2, "kb", "unclassified_assignments.json"), {"assignments": saved})
+    write(os.path.join(t2, "kb", "exhibits_review.json"), {"written_at": "2026-11-13T00:00:00Z",
+                                                          "held": [{"raw": "H", "title": OLD, "issuer": ""}]})
     rnow = ca.resolver(t2)
 
     import _build_exhibits_related as rel  # noqa: E402
     d = rel.build(t2)
     idx = {row[0]: row for row in d["titles"]}
-    check("Exhibits related titles: the stale saved title is not listed as a title a card could fold into",
+    check("Exhibits related titles: a stale saved or held title is not listed as a title a card could fold into",
           OLD not in idx and NEW in idx and idx[NEW][4] == rel.IN_REFERENCE, sorted(idx))
 
     import _fold_unclassified as fold  # noqa: E402
@@ -157,13 +216,15 @@ try:
     check("the nightly fold reads the stale row as already classified, never re-creating the old title",
           [r["raw"] for r in skip] == [RAW] and not (clean or supersede or revise or stale or conflict)
           and skip[0]["assigned"] == NEW, (clean, supersede, stale, conflict))
+    resaved = {RAW: dict(saved[RAW], reviewed_at="2026-11-13T09:00:00Z")}
+    check("...and a row re-saved after the apply still resolves (no era guard)",
+          [r["raw"] for r in fold.classify(resaved, ut, rnow)[1]] == [RAW])
     bare = fold.classify(saved, ut)
     check("...and without the resolver the same row does not read as classified (the fault the resolver removes)",
           not bare[1] and any(r["raw"] == RAW for b in bare for r in b), [len(b) for b in bare])
 
     import _sweep_exhibit_titles as sw  # noqa: E402
-    cur, _ = sw.current_titles(ut, {RAW: dict(saved[RAW], reviewed_at="2026-11-12T09:00:00Z")}, set(),
-                               lambda t, since=None: rnow(t))
+    cur, _ = sw.current_titles(ut, resaved, set(), rnow)
     check("Another look: a stale saved title saved later than the reference still reads as the live credential",
           cur.get(RAW) == NEW, cur)
 
@@ -171,26 +232,47 @@ try:
     p = cp.as_proposal({"unified_title": OLD, "confidence_title": 0.9, "asked": "2026-10-31"}, {NEW: set()}, rnow)
     check("the classifier's cached answer is proposed as the title the rename made", p["title"] == NEW, p)
 
-    by = ca.by_current_title({OLD: ["X1"], NEW: ["X2"], "Unrenamed": ["X3"]}, t2, "2026-10-26T23:35Z")
+    by = ca.by_current_title({OLD: ["X1"], NEW: ["X2"], "Unrenamed": ["X3"]}, t2)
     check("a title-keyed file (MAP's verified links, the category seed) reads under the live title, its own first",
           by[NEW] == ["X2", "X1"] and by["Unrenamed"] == ["X3"], by)
-    late = ca.by_current_title({OLD: ["X1"]}, t2, "2026-11-13T00:00:00Z")
-    check("...and a file checked after the apply is read as written", late == {OLD: ["X1"]}, late)
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
 # ── 6, on the repo's own data ──
-live = ca.resolver(ROOT)
+now = ca.resolver(ROOT)
 creds = json.load(open(os.path.join(ROOT, "kb", "credentials.json"), encoding="utf-8"))
-check("the live saved row: 'ASE Bundle — A4, A5' (saved 2026-10-31) resolves to a live credential",
-      live(OLD, SAVED_AT) == NEW and NEW in creds, live(OLD, SAVED_AT))
+check("the live saved row: 'ASE Bundle — A4, A5' resolves to a live credential", now(OLD) == NEW and NEW in creds, now(OLD))
+three = ["Automotive Electronics", "Automotive Electrical Schematic Diagnosis", "Automotive Suspension, Steering and Alignment"]
+check("the three titles a person brought back after the 2026-07-08 snapshot read as themselves, and are reported",
+      all(now(x) == x for x in three) and all(x in ca.returned(ROOT) for x in three)
+      and not any(x in v for v in ca.load(ROOT).values() for x in three))
+import _fold_unclassified as fold  # noqa: E402
+ut = json.load(open(os.path.join(ROOT, "kb", "unified_titles.json"), encoding="utf-8"))
+asg = json.load(open(os.path.join(ROOT, "kb", "unclassified_assignments.json"), encoding="utf-8"))["assignments"]
+names = ["clean", "skip", "supersede", "revise", "stale", "conflict"]
+
+
+def buckets(fn):
+    return {r["raw"]: n for n, b in zip(names, fold.classify(asg, ut, fn)) for r in b}
+
+
+b0, b1 = buckets(None), buckets(now)
+moved = sorted({(b0[k], b1[k]) for k in b0 if b0[k] != b1[k]})
+check("on main's data the resolver only takes stale rows to skip (no row leaves skip)", all(m == ("stale", "skip") for m in moved),
+      moved)
 import _build_partner_crosswalk as pc  # noqa: E402
 check("the partner crosswalk reads a ruling's renamed title as the live credential",
-      pc.ruled_title("ASE Bundle — T7, T8 + MACS/609", "2026-08-05") in creds)
+      pc.ruled_title("ASE Bundle — T7, T8 + MACS/609") in creds)
 for rel_path in ("kb/_build_college_offering_crosswalk.py", "kb/_build_occupation_cpl_crosswalk.py"):
     src = open(os.path.join(ROOT, rel_path), encoding="utf-8").read()
     check(f"{rel_path} reads its title-keyed source through kb/credential_aliases.py",
           "credential_aliases.resolver(" in src or "credential_aliases.by_current_title(" in src)
+ledger = json.load(open(os.path.join(ROOT, ca.RETIRES), encoding="utf-8"))["retires"]
+check("the retire ledger holds the 2026-11-12 retires a later run's report dropped",
+      any(r["title"] == "Automotive Braking Systems" and r["day"] == "2026-11-12" for r in ledger)
+      and "Automotive Braking Systems" in ca.load(ROOT).get("Military Tactical Wheeled Vehicle – Drive Train (ASE MIL3)", []))
+src = open(os.path.join(ROOT, "kb", "_fold_unclassified.py"), encoding="utf-8").read()
+check("the fold appends each apply's retires to the ledger", "credential_aliases.append_retires(" in src)
 
 failed = [n for n, ok in results if not ok]
 print(f"\n{len(results) - len(failed)}/{len(results)} passed")

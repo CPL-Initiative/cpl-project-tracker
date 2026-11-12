@@ -598,7 +598,7 @@ def as_proposal(rec, families=(), now=None):
                if rec.get("issuing_agency") else (rec.get("confidence_title") or 0))
     title = (rec.get("unified_title") or "").strip()
     if now and title:
-        title = now(title, rec.get("asked"))
+        title = now(title)
     out = {"title": title if title in families else restyle_title(title),
            "issuer": (rec.get("issuing_agency") or "").strip(),
            "via": "classifier", "confidence": round(conf, 2),

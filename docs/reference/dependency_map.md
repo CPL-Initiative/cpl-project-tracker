@@ -312,7 +312,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py`, `kb/_subjects_list_recode.py` |
 | `cpl_pathways_roep_data.js` | `CPL_PATHWAYS_ROEP` | `kb/_build_roep_display.py` | tabs: `cpl-pathways` · modules: `a11y.config.js` · scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_display_apply.py` |
-| `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `exhibits`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_adopt_page.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_exhibit_cert_links.py`, `kb/_build_exhibits_ai_sort.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_build_roep_display.py`, `kb/_exhibit_reanalysis_checks.py`, `kb/_exhibit_subject_fill.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_subjects_list_recode.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py`, `scripts/build_exhibits_list_preview.py` |
+| `credential_reference_data.js` | `CPL_CREDENTIAL_REFERENCE` | `excel_to_dashboard.py:export_credential_reference()` | tabs: `cpl-pathways`, `credential-reference`, `exhibits`, `map-export`, `nc-learning-partners` · modules: `kb/_carp_apprentice_plan_s109.js`, `kb/_college_apprenticeship_cpl_roster.js` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/cpl-opportunity/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `kb/_build_adopt_page.py`, `kb/_build_baccalaureate_pathways.py`, `kb/_build_ccr_cpl.py`, `kb/_build_ccr_cpl_universe.py`, `kb/_build_exhibit_cert_links.py`, `kb/_build_exhibits_ai_sort.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_build_occupation_cpl_crosswalk.py`, `kb/_build_partner_crosswalk.py`, `kb/_build_peer_articulations.py`, `kb/_build_roep_display.py`, `kb/_exhibit_reanalysis_checks.py`, `kb/_exhibit_subject_fill.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_college_short_names.py`, `kb/_subjects_list_recode.py`, `kb/_sync_credential_catalog.py`, `kb/_trail_crew.py`, `kb/_trail_crew_assemble.py`, `kb/_verify_issuer_preseed.py`, `scripts/build_exhibits_list_preview.py` |
 | `fact-sheet/cpl_stories.js` | `CPL_STORIES` | `tools/source_cpl_stories.mjs` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding` · pages: `fact-sheet/index.html` · scripts: `tools/source_cpl_stories.mjs` |
 | `fact-sheet/statewide_recs.js` | `CPL_STATEWIDE_RECS` | `fact-sheet/_build_statewide_recs.py` | tabs: `exhibits` · pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_build_adopt_page.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_occupation_cpl_crosswalk.py`, `scripts/build_exhibits_list_preview.py` |
 | `funding/nc_outcome_feasibility/2026-10-22/nc_shares_dump.js` | `CPL_FUNDING_NO_REMOTE` | not stated in header | none found |
@@ -655,7 +655,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` · scripts: `kb/_exhibit_reanalysis_checks.py`, `scripts/build_exhibits_list_preview.py` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
-| `kb/credential_aliases.py` | workflows: `cred-rename-apply.yml` | — |
+| `kb/credential_aliases.py` | workflows: `cred-rename-apply.yml`, `js-tests.yml` | — |
 | `kb/credential_merges.json` | scripts: `kb/_clep_fold_apply.py`, `kb/_ib_fold_apply.py`, `kb/_merge_credentials.py` | — |
 | `kb/credential_merges_out/2026-11-01/clep_kb_curation_update_receipt.json` | none found | scripts: `kb/_clep_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json` | none found | scripts: `kb/_ib_fold_apply.py` |
@@ -862,6 +862,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/unclassified_assignments.json` | scripts: `kb/_apply_unclassified_triage.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_fold_unclassified.py`, `kb/_preseed_unclassified.py`, `kb/_sweep_exhibit_titles.py` | scripts: `kb/_apply_unclassified_triage.py` · committed by: `daily-dashboard.yml` |
 | `kb/unclassified_fold` | none found | committed by: `daily-dashboard.yml` |
 | `kb/unclassified_fold/*/report.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/unclassified_fold/retires.json` | scripts: `kb/credential_aliases.py` | — |
 | `kb/unclassified_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_unclassified.py` | scripts: `kb/_preseed_unclassified.py` · committed by: `cer-procedures.yml` |
 | `kb/unclassified_suggestions.json` | tabs: `credential-reference` · scripts: `kb/_build_exhibits_review.py`, `kb/_cer_procedures.py`, `kb/_fold_unclassified.py`, `kb/_suggest_unclassified.py` | scripts: `kb/_suggest_unclassified.py` · committed by: `daily-dashboard.yml` |
 | `kb/unified_titles.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_ap_official_titles.py`, `kb/_audit_exhibits.py`, `kb/_build_adopt_page.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_related.py`, `kb/_build_exhibits_review.py`, `kb/_build_roep_display.py`, `kb/_build_sheet181_rename_plan.py`, `kb/_build_standards_rename_plan.py`, `kb/_cer_decision_apply.py`, `kb/_cer_procedures.py`, `kb/_clep_fold_apply.py`, `kb/_clep_official_titles.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_cred_rename_undo.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_ib_fold_apply.py`, `kb/_ib_official_titles.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/_sweep_exhibit_titles.py`, `kb/classify_exhibits.py` | scripts: `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
@@ -1047,6 +1048,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/credential_reference_statewide_basis_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_review_sites_test.py` | workflows: `js-tests.yml` | — |
 | `tests/credential_review_stale_issuer_test.py` | workflows: `js-tests.yml` | — |
+| `tests/credential_title_resolver_single_source_test.py` | workflows: `js-tests.yml` | — |
+| `tests/credential_title_resolver_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_confirm_authority_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_procedures_test.py` | workflows: `js-tests.yml` | — |
 | `tests/csr_quarterly_probe_test.py` | workflows: `js-tests.yml` | — |
@@ -1395,5 +1398,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 863 file
+Coverage: 112 Supabase tables · 63 RPCs · 14 edge functions · 866 file
 datasets · 195 external services · 558 consumers · 66 workflows · 40 tabs.

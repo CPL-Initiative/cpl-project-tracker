@@ -7,8 +7,9 @@ fifth review round found the copy's fault already: a second snapshot finder with
 an undone apply. So the resolver is single-source, and this test fails a second one.
 
 Checks, each a way the copy could come back:
-  1. No Python file reads kb/cred_rename_out/*/alias_map.json except kb/credential_aliases.py and the apply
-     side, which writes and undoes the snapshots (named below, each with why). Tests may build fixtures.
+  1. No Python file reads the credential rename snapshots (alias_map.json, by any path) except
+     kb/credential_aliases.py and the apply, undo and dry-run scripts that own them (named below, each with why).
+     Tests may build fixtures. Two planted copies prove the scan catches one.
   2. No Python file outside the module and the apply side defines a function that reads a snapshot's
      "renames", "merges" and "_applied_at" together: the resolver's shape under another name.
   3. No browser file reads the snapshots: map_links.js and every other page read kb/credential_title_moves.json,
@@ -20,7 +21,9 @@ Run from the repo root: python3 tests/credential_title_resolver_single_source_te
 """
 import ast
 import os
+import shutil
 import sys
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
@@ -43,42 +46,70 @@ def check(name, cond, detail=""):
     print(("PASS  " if cond else "FAIL  ") + name + (f"\n      {detail}" if detail and not cond else ""))
 
 
-def files(ext):
-    for dirpath, dirnames, filenames in os.walk(ROOT):
+def files(ext, root=ROOT):
+    for dirpath, dirnames, filenames in os.walk(root):
         dirnames[:] = [d for d in dirnames if d not in SKIP_DIRS]
         for fn in filenames:
             if fn.endswith(ext):
                 p = os.path.join(dirpath, fn)
-                yield os.path.relpath(p, ROOT).replace("\\", "/"), p
+                yield os.path.relpath(p, root).replace("\\", "/"), p
 
 
-readers, shapes, unparsable = [], [], []
-for rel, path in files(".py"):
-    if rel == SOURCE or rel in APPLY_SIDE or rel.startswith("tests/"):
-        continue
-    src = open(path, encoding="utf-8").read()
-    if "alias_map.json" not in src or "cred_rename_out" not in src:
-        if '"_applied_at"' not in src:
+def scan(root=ROOT):
+    """(readers, resolver shapes, unparsable) among the Python files under root. A reader is any file outside the
+    module, the apply side and tests/ that names alias_map and the credential rename world: "cred_rename" anywhere in
+    its source (a path piece, an import of the apply's OUT_ROOT, a module name), or a snapshot's "renames" and
+    "merges" keys. The M-ID re-mint scripts name alias_map.json too, and none of them names either."""
+    readers, shapes, unparsable = [], [], []
+    for rel, path in files(".py", root):
+        if rel == SOURCE or rel in APPLY_SIDE or rel.startswith("tests/"):
             continue
-    try:
-        tree = ast.parse(src, filename=rel)
-    except SyntaxError as e:
-        unparsable.append(f"{rel}: {e}")
-        continue
-    consts = {n.value for n in ast.walk(tree) if isinstance(n, ast.Constant) and isinstance(n.value, str)}
-    if any("alias_map.json" in c for c in consts) and any("cred_rename_out" in c for c in consts):
-        readers.append(rel)
-    for node in ast.walk(tree):
-        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
-            fc = {n.value for n in ast.walk(node) if isinstance(n, ast.Constant) and isinstance(n.value, str)}
-            if {"renames", "merges", "_applied_at"} <= fc:
-                shapes.append(f"{rel}:{node.lineno} def {node.name}()")
+        src = open(path, encoding="utf-8").read()
+        if "alias_map" not in src and '"_applied_at"' not in src:
+            continue
+        try:
+            tree = ast.parse(src, filename=rel)
+        except SyntaxError as e:
+            unparsable.append(f"{rel}: {e}")
+            continue
+        consts = {n.value for n in ast.walk(tree) if isinstance(n, ast.Constant) and isinstance(n.value, str)}
+        if "alias_map" in src and ("cred_rename" in src or {"renames", "merges"} <= consts):
+            readers.append(rel)
+        for node in ast.walk(tree):
+            if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+                fc = {n.value for n in ast.walk(node) if isinstance(n, ast.Constant) and isinstance(n.value, str)}
+                if {"renames", "merges", "_applied_at"} <= fc:
+                    shapes.append(f"{rel}:{node.lineno} def {node.name}()")
+    return readers, shapes, unparsable
 
+
+readers, shapes, unparsable = scan()
 check("every candidate .py file parses", not unparsable, "; ".join(unparsable))
 check("only kb/credential_aliases.py and the apply side read the rename snapshots", not readers,
       "second reader in " + ", ".join(readers) + " — import kb/credential_aliases.py (resolver, moves, load)")
 check("no other file defines a resolver over a snapshot's renames, merges and _applied_at", not shapes,
       "resolver copy in " + ", ".join(shapes))
+
+# The scan catches a planted copy: the two shapes review round one planted, neither with an in-force filter.
+PLANTS = {
+    "kb/_planted_one.py": "import glob, os\nfrom _cred_rename_apply import OUT_ROOT\n"
+                          "def latest():\n    return sorted(glob.glob(os.path.join(OUT_ROOT, '*', 'alias_map.json')))[-1]\n",
+    "kb/_planted_two.py": "import glob, json, os\nHERE = os.path.dirname(__file__)\n"
+                          "def moves():\n    out = {}\n"
+                          "    for p in glob.glob(os.path.join(HERE, 'cred_' + 'rename_out', '*', 'alias_map.json')):\n"
+                          "        d = json.load(open(p)); out.update(d.get('renames') or {}); out.update(d.get('merges') or {})\n"
+                          "    return out\n",
+}
+for rel, body in PLANTS.items():
+    tmp = tempfile.mkdtemp(prefix="cred-title-plant-")
+    try:
+        os.makedirs(os.path.join(tmp, "kb"))
+        with open(os.path.join(tmp, rel), "w", encoding="utf-8") as f:
+            f.write(body)
+        got = scan(tmp)[0]
+        check(f"a planted second snapshot reader is caught ({rel})", got == [rel], got)
+    finally:
+        shutil.rmtree(tmp, ignore_errors=True)
 
 js = []
 for rel, path in files(".js"):
@@ -112,7 +143,8 @@ check("every workflow that writes a rename snapshot rebuilds and stages kb/crede
       not stale_wf, "; ".join(stale_wf))
 
 have = open(os.path.join(ROOT, ca.TABLE), encoding="utf-8").read()
-check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)", have == ca._render(ROOT))
+check("kb/credential_title_moves.json is current (python3 kb/credential_aliases.py)",
+      ca._checked(have) == ca._checked(ca._render(ROOT)))
 
 failed = [n for n, ok in results if not ok]
 print(f"\n{len(results) - len(failed)}/{len(results)} passed")
