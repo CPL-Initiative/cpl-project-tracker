@@ -406,6 +406,12 @@ def main(argv=None):
         sys.exit(f"No {up}: this apply predates the undo file (before #3110 build step 1); "
                  f"reverse it from git history. A re-point filed beside it reverses on its own: "
                  f"python3 kb/_cred_rename_repoint.py --undo {a.receipt} --apply")
+    later = repoint.later_applied(a.receipt) if os.path.isfile(os.path.join(a.receipt, "alias_map.json")) else []
+    if later:
+        # Newest first, enforced: a later apply may hold this one's re-points (from_apply), and only its undo
+        # puts them back; undone first, it no longer counts here.
+        sys.exit(f"undo {later[-1]} first: it was applied after {os.path.basename(os.path.normpath(a.receipt))} "
+                 f"and is still in force ({len(later)} later apply(ies) in all)")
     undo = _load(up)
     snap_path = os.path.join(a.receipt, "alias_map.json")
     snapshot = _load(snap_path) if os.path.isfile(snap_path) else {}

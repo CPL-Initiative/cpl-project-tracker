@@ -400,8 +400,9 @@ def main(argv=None):
     # never does, so the two sets are disjoint — applying the clean renames
     # can't touch a queued collision's source or target. Confirmed merges
     # count as applicable work alongside clean renames.
+    # An apply with no rename still has work when earlier applies left machine values to re-point.
     apply_safe = bool(v1_pass and v2_pass and v3_pass and not rp_chain
-                      and (renames_clean or merges_confirmed))
+                      and (renames_clean or merges_confirmed or rp_changes))
 
     # ── Write artifacts ───────────────────────────────────────────────────────
     if not os.path.isdir(OUT_DIR):

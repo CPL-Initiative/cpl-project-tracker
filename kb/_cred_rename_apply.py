@@ -113,8 +113,8 @@ def load_alias_map():
     summary = doc.get("summary") or {}
     renames = doc.get("renames") or {}
     merges = doc.get("merges") or {}
-    if not renames and not merges:
-        sys.exit(f"{ALIAS_PATH} has no renames or merges — nothing to apply.")
+    # An alias map with no rename or merge still reaches main(): the re-point of earlier applies' leftovers may
+    # have work, and main() returns "nothing to apply" when it has none.
     # V1 — refuse if dry-run flagged unsafe
     if not summary.get("apply_safe"):
         sys.exit(
@@ -340,16 +340,60 @@ def rewrite_articulations_values(renames: dict):
     }
 
 
-def _out_dir():
+def _next_out_dir():
     """kb/cred_rename_out/<date>/, or <date>-2, -3 … when an earlier apply the same day already wrote
-    its receipt there (a second dispatch used to overwrite the first's rollback basis)."""
+    its receipt there (a second dispatch used to overwrite the first's rollback basis). Not created."""
     base = os.path.join(OUT_ROOT, TODAY)
     out_dir, n = base, 1
     while os.path.isfile(os.path.join(out_dir, "alias_map.json")):
         n += 1
         out_dir = f"{base}-{n}"
+    return out_dir
+
+
+def _out_dir():
+    out_dir = _next_out_dir()
     os.makedirs(out_dir, exist_ok=True)
     return out_dir
+
+
+def _repoint_receipt(alias_doc, rp_moves, rp_changes, rp_held, rp_root, why):
+    """The receipt of an apply that changes no credential file but re-points saved values (the plan's renames already
+    applied, or none planned): an alias map with no renames or merges (_repoint_only), an undo.json naming each
+    re-point's title as its own group, and repoint.json. The workflow then moves the kb_curation rows (step 4.1) and
+    skips the issuer and row-move steps, which belong to an apply that renamed."""
+    out_dir = _out_dir()
+    fold_id = "%s@%s" % (os.path.basename(out_dir), NOW_ISO)
+    snap = dict(alias_doc, renames={}, merges={}, _repoint_only=True, _repoint_only_why=why,
+                _plan_renames=alias_doc.get("renames") or {}, _plan_merges=alias_doc.get("merges") or {})
+    undo = {"groups": {t: [] for t in sorted({repoint.undo_title(c) for c in rp_changes})},
+            "_about": "A re-point-only apply: no credential file changed; repoint.json beside it holds every value it "
+                      "moved, which kb/_cred_rename_undo.py puts back.",
+            "_applied_at": NOW_ISO, "credentials": {}, "unified_titles": {}, "articulations": [], "fold_id": fold_id}
+    write_snapshot(snap, {"saved assignments (re-point)": {"re_pointed": len(rp_changes),
+                                                            "held_person_rows": len(rp_held)}}, undo, {}, out_dir, [])
+    _, rp_filed = repoint.write_receipt(out_dir, rp_moves, rp_changes, rp_held, rp_root)
+    print(f"  re-point-only receipt ({why}): {out_dir}/{{alias_map.json, undo.json, validation.md, repoint.json}}")
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as f:
+            f.write("receipt=%s\nrepoint_receipt=true\n" % os.path.relpath(out_dir, os.path.dirname(HERE)))
+    bad = repoint.not_landed(rp_filed)
+    if bad:
+        sys.exit("A planned re-point did not land: " + "; ".join("%s %s (%s)" % (c["file"], c["key"], c["filed"])
+                                                                for c in bad[:5]))
+    return out_dir
+
+
+def _plan_repoint(current):
+    """The re-point of every applied rename (kb/_cred_rename_repoint.py history_moves) with `current` on top, against
+    the credential keys as they stand now. Returns (moves, changes, held, root)."""
+    rp_root = repoint.root_of(CREDENTIALS)
+    with open(CREDENTIALS, encoding="utf-8") as f:
+        live_keys = set(json.load(f))
+    rp_moves, rp_origin = repoint.history_moves(OUT_ROOT, current, live_keys,
+                                                os.path.basename(_next_out_dir()))
+    rp_changes, rp_held = repoint.plan(rp_moves, rp_root, rp_origin)
+    return rp_moves, rp_changes, rp_held, rp_root
 
 
 def write_snapshot(alias_doc, results, undo=None, issuer_plan=None, out_dir=None, resolution_rows=None):
@@ -467,8 +511,13 @@ def main():
                      held_family=(alias_doc.get("held_family") or []) + held_family,
                      held_emptied=(alias_doc.get("held_emptied") or []) + held_emptied)
     if not renames and not merges:
-        print("  nothing to apply once the family and emptied-title folds are held")
-        return
+        # No rename to make: earlier applies' leftovers may still want re-pointing, in a receipt of their own.
+        rp_moves, rp_changes, rp_held, rp_root = _plan_repoint({})
+        if not rp_changes:
+            print("  nothing to apply once the family and emptied-title folds are held, and nothing to re-point")
+            return
+        repoint.apply_changes(rp_changes, rp_root)
+        return _repoint_receipt(alias_doc, rp_moves, rp_changes, rp_held, rp_root, "no rename planned")
     print(f"[cred_rename_apply] {TODAY} — applying {len(renames)} rename(s) "
           f"+ {len(merges)} confirmed merge(s)")
     with open(CREDENTIALS, encoding="utf-8") as f:
@@ -525,10 +574,7 @@ def main():
     # with the rename, a person's is held for a ruling and never changed. The files beside CREDENTIALS only.
     # Every APPLIED rename, earlier applies' included, each followed to the title live now, so this apply re-points
     # the machine values an earlier apply left too (each change names the apply it comes from, from_apply).
-    with open(CREDENTIALS, encoding="utf-8") as f:
-        live_keys = set(json.load(f))
-    rp_moves, rp_origin = repoint.history_moves(OUT_ROOT, combined, live_keys)
-    rp_changes, rp_held = repoint.plan(rp_moves, rp_root, rp_origin)
+    rp_moves, rp_changes, rp_held, rp_root = _plan_repoint(combined)
     repoint.apply_changes(rp_changes, rp_root)
     print(f"  saved assignments:       re-pointed={len(rp_changes)}, held (a person's row)={len(rp_held)}")
     for h in rp_held:
@@ -536,11 +582,13 @@ def main():
     results["saved assignments (re-point)"] = {"re_pointed": len(rp_changes), "held_person_rows": len(rp_held)}
     with open(CREDENTIALS, encoding="utf-8") as f:
         creds_after = json.load(f)
-    if (creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]
-            and not [c for c in rp_changes if not c.get("via")]):
-        # A row move a planned re-point still waits on re-runs through the repoint_only input, from its receipt.
-        # A re-dispatch after a failed Supabase step finds everything applied. A new <date>-N snapshot
-        # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay.
+    if creds_after == creds_before and not ut_res["_changed"] and not art_res["_changed"]:
+        # A re-dispatch after a failed Supabase step finds everything applied. A new snapshot carrying the renames
+        # would shadow the first run's, whose renames and issuer carry the Supabase retry must replay, so any
+        # re-point (a row move through kb_curation included) files a re-point-only receipt, which that retry skips.
+        if rp_changes:
+            return _repoint_receipt(alias_doc, rp_moves, rp_changes, rp_held, rp_root, "the plan's renames are "
+                                    "already applied")
         print("  nothing changed (already applied): no new receipt; the newest snapshot stays the "
               "Supabase step's input")
         return

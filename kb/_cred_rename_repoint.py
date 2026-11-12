@@ -182,10 +182,11 @@ def plan(moves, root=ROOT, origin=None):
     if root is None:
         return changes, held
     changes, held = _plan(moves, root)
-    for c in changes + held:   # the apply whose rename retired the old title (history_moves)
-        old = c["before"] if c["kind"] != "key" else next((t for t, v in c["after"].items() if v is None), None)
-        if origin and old in origin:
-            c["from_apply"] = origin[old]
+    for c in changes + held:   # the apply whose rename retired each old title (history_moves)
+        olds = [c["before"]] if c["kind"] != "key" else sorted(t for t, v in c["after"].items() if v is None)
+        names = sorted({origin[o] for o in olds if o in (origin or {})})
+        if names:
+            c["from_apply"] = names[0] if c["kind"] != "key" else names
     return changes, held
 
 
@@ -255,10 +256,12 @@ def _plan(moves, root):
                 if spec.get("scalar"):
                     # One value per title: the target keeps its own; else every old title must agree on one.
                     vals = {json.dumps(box[o], sort_keys=True) for o in olds}
-                    if new not in box and len(vals) > 1:
+                    if new in box:
+                        vals.add(json.dumps(box[new], sort_keys=True))
+                    if len(vals) > 1:
                         held.append({"file": spec["file"], "kind": "key", "key": new, "before": before,
                                      "after": before, "reviewer": spec["writer"], "reviewer_field": None,
-                                     "why": "the old titles carry different values; a person picks one"})
+                                     "why": "the old and new titles carry different values; a person picks one"})
                         continue
                     merged = box[new] if new in box else box[olds[0]]
                 else:
@@ -643,7 +646,34 @@ def _applied_order(name, snap):
     return (snap.get("_applied_at") or "", m.group(1) if m else name, int(m.group(2) or 1) if m else 0)
 
 
-def history_moves(out_root, current=None, live=None):
+def _snapshot(folder):
+    """The folder's alias map when it was applied and is still in force (no undone.json, no apply_failed.json)."""
+    path = os.path.join(folder, "alias_map.json")
+    if not os.path.isfile(path) or any(os.path.exists(os.path.join(folder, m)) for m in ("undone.json",
+                                                                                         "apply_failed.json")):
+        return None
+    with open(path, encoding="utf-8") as f:
+        snap = json.load(f)
+    return snap if snap.get("_applied_at") else None
+
+
+def later_applied(folder):
+    """The receipt folders beside this one applied after it and still in force, in applied order. An undo goes newest
+    first: a later apply may hold this one's re-points (from_apply), which only its own undo puts back."""
+    folder = os.path.abspath(folder)
+    out_root = os.path.dirname(folder)
+    with open(os.path.join(folder, "alias_map.json"), encoding="utf-8") as f:
+        me = _applied_order(os.path.basename(folder), json.load(f))
+    later = []
+    for name in os.listdir(out_root):
+        other = os.path.join(out_root, name)
+        snap = _snapshot(other) if other != folder else None
+        if snap and _applied_order(name, snap) > me:
+            later.append((_applied_order(name, snap), name))
+    return [n for _, n in sorted(later)]
+
+
+def history_moves(out_root, current=None, live=None, current_name=None):
     """{old title: title it carries now} for every APPLIED rename and merge, and {old title: the receipt folder of the
     apply that retired it}. A receipt counts when its alias_map.json has _applied_at and it holds neither undone.json
     nor apply_failed.json; receipts are taken in the order they were applied (_applied_at, then date and same-day
@@ -652,18 +682,12 @@ def history_moves(out_root, current=None, live=None):
     live, is left out, so a value never moves onto a title no credential carries."""
     snaps = []
     for name in os.listdir(out_root) if os.path.isdir(out_root) else []:
-        folder = os.path.join(out_root, name)
-        path = os.path.join(folder, "alias_map.json")
-        if not os.path.isfile(path) or any(os.path.exists(os.path.join(folder, m))
-                                           for m in ("undone.json", "apply_failed.json")):
-            continue
-        with open(path, encoding="utf-8") as f:
-            snap = json.load(f)
-        if snap.get("_applied_at"):
+        snap = _snapshot(os.path.join(out_root, name))
+        if snap:
             snaps.append((_applied_order(name, snap), name, snap))
     steps = [(name, dict(snap.get("renames") or {}, **(snap.get("merges") or {}))) for _, name, snap in sorted(snaps)]
     if current:
-        steps.append(("this apply", dict(current)))
+        steps.append((current_name, dict(current)))   # this apply's own receipt folder (None in a dry run)
     now, origin = {}, {}
     for name, step in steps:
         step = {o: n for o, n in step.items() if o and n and o != n}
@@ -673,7 +697,7 @@ def history_moves(out_root, current=None, live=None):
         for o, n in step.items():
             now[o], origin[o] = n, name
     out = {o: n for o, n in now.items() if o != n and (live is None or (n in live and o not in live))}
-    return out, {o: origin[o] for o in out}
+    return out, {o: origin[o] for o in out if origin[o]}
 
 
 # ── the count ─────────────────────────────────────────────────────────────────────────────────────────────────
@@ -913,6 +937,9 @@ def main(argv=None):
               % tuple([sum(o["status"] == s for o in done) for s in ("ok", "already", "left", "fail")] + [path]))
         return 1 if any(o["status"] in ("fail", "left") for o in done) else 0
     if a.undo:
+        later = later_applied(a.undo) if os.path.isfile(os.path.join(a.undo, "alias_map.json")) else []
+        if later:
+            sys.exit("undo %s first: it was applied after %s and may hold its re-points" % (later[-1], a.undo))
         todo, drift, absent = undo_plan(a.undo, a.root)
         for c in drift:
             print("  LEFT (changed since, by value or saver) %s %s" % (c["file"], c["key"]))

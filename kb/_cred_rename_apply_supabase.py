@@ -101,6 +101,12 @@ def _find_latest_snapshot():
     for name in os.listdir(OUT_ROOT):
         path = os.path.join(OUT_ROOT, name, "alias_map.json")
         if os.path.isfile(path):
+            try:   # a re-point-only receipt moves no credential row and renames nothing (kb/_cred_rename_apply.py)
+                with open(path, encoding="utf-8") as f:
+                    if json.load(f).get("_repoint_only"):
+                        continue
+            except (OSError, ValueError):
+                pass
             candidates.append((name, path))
     if not candidates:
         return None

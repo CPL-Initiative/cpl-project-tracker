@@ -416,7 +416,12 @@ try:
           {"renames": {"Gadget Old": "Other"}, "_applied_at": "2026-01-02T00:00:00Z"})
     d = read(os.path.join(kbc, "cer_classified.json"))
     d["records"]["Gadget raw"] = {"unified_title": "Gadget Old"}
+    d["records"]["Widget two cached"] = {"unified_title": "Widget Two"}   # this apply's own rename
     write(os.path.join(kbc, "cer_classified.json"), d)
+    d = read(os.path.join(kbc, "unclassified_assignments.json"))
+    d["assignments"]["Gadget assign"] = {"unified_title": "Gadget Old", "reviewed_by": BOT, "title_reviewed_by": BOT,
+                                         "title_reviewed_at": T1}
+    write(os.path.join(kbc, "unclassified_assignments.json"), d)
     d = read(os.path.join(kbc, "credentials.json"))
     d["Widget Two"] = [{"issuing_agency": "Widget Board"}]
     write(os.path.join(kbc, "credentials.json"), d)
@@ -437,6 +442,31 @@ try:
           read(os.path.join(kbc, "cer_classified.json"))["records"]["Gadget raw"]["unified_title"] == "Other"
           and any(c["key"] == "Gadget raw" and c.get("from_apply") == "2026-01-02" for c in rr["planned"]),
           rr["planned"])
+    check("apply: this apply's own moves name its real receipt folder",
+          [c.get("from_apply") for c in rr["planned"] if c["key"] == "Widget two cached"] == [newest], rr["planned"])
+    cbn = os.path.join(kbc, "cred_rename_out", newest)
+
+    # The undo and the take-back of an earlier apply's re-point, filed in the later apply's receipt.
+    fg = Fake({U("Gadget assign"): {"value": "Gadget Old", "reviewer_email": BOT, "reviewed_at": T1}})
+    rp.run_supabase(cbn, fg)
+    moved = fg.rows[U("Gadget assign")]["value"] == "Other"
+    _, tb = rp.supabase_undo(cbn, rest_fn=fg)
+    check("take-back: an earlier apply's row moved in this receipt goes back, read back",
+          moved and fg.rows[U("Gadget assign")]["value"] == "Gadget Old" and [o["status"] for o in tb] == ["ok"], tb)
+    out = io.StringIO()
+    with contextlib.redirect_stdout(out):
+        try:
+            undo.main([rcpt, "--apply", "--json-only"])
+            msg = ""
+        except SystemExit as e:
+            msg = str(e)
+    check("undo order: an earlier apply refuses while a later one is in force, naming it",
+          msg.startswith("undo %s first" % newest) and NEW in read(os.path.join(kbc, "credentials.json")), msg)
+    quiet(undo.main, [cbn, "--apply", "--json-only"])
+    check("undo: the later apply puts back the earlier apply's re-point it holds",
+          read(os.path.join(kbc, "cer_classified.json"))["records"]["Gadget raw"]["unified_title"] == "Gadget Old"
+          and os.path.isfile(os.path.join(cbn, "undone.json")) and "Widget Two" in read(os.path.join(kbc,
+                                                                                                 "credentials.json")))
 
     # The full undo reads a moved assignment's live row before any file goes back.
     fu = Fake({U(BOT_RAW): {"value": OLD, "reviewer_email": BOT, "reviewed_at": T1},
@@ -470,13 +500,20 @@ try:
 
     # A scalar title-keyed file moves its value; old titles with different values wait for a person.
     sc = os.path.join(tmp, "sc")
-    write(os.path.join(sc, "kb", "statewide_exhibit_categories.json"), {"titles": {"O1": "Cat A", "O2": "Cat B",
-                                                                                   "O3": "Cat C", "N3": "Cat D"}})
-    ch, hl = rp.plan({"O1": "N1", "O2": "N2a", "O3": "N3"}, sc)
+    write(os.path.join(sc, "kb", "statewide_exhibit_categories.json"), {"titles": {
+        "O1": "Cat A", "O2": "Cat B", "O3": "Cat C", "N3": "Cat D", "O4": "Cat E", "N4": "Cat E"}})
+    ch, hl = rp.plan({"O1": "N1", "O2": "N2a", "O3": "N3", "O4": "N4"}, sc)
     rp.apply_changes(ch, sc)
-    check("scalar keys: a value moves to an absent new title; a present one keeps its own",
+    check("scalar keys: a value moves to an absent new title, or folds into one holding the same value",
           read(os.path.join(sc, "kb", "statewide_exhibit_categories.json"))["titles"]
-          == {"N1": "Cat A", "N2a": "Cat B", "N3": "Cat D"} and not hl)
+          == {"N1": "Cat A", "N2a": "Cat B", "O3": "Cat C", "N3": "Cat D", "N4": "Cat E"})
+    check("scalar keys: an old title whose value differs from the target's is held and listed, never dropped",
+          [h["key"] for h in hl] == ["N3"] and "different" in hl[0]["why"], hl)
+    mk = os.path.join(tmp, "mk")
+    write(os.path.join(mk, "kb", "reference", "map_cpl_opportunities_verified.json"), {"by_title": {"M1": ["1"],
+                                                                                                    "M2": ["2"]}})
+    chm, _ = rp.plan({"M1": "T", "M2": "T"}, mk, {"M1": "2026-10-01", "M2": "2026-11-12"})
+    check("from_apply: a merged key names every origin", chm[0]["from_apply"] == ["2026-10-01", "2026-11-12"], chm)
     write(os.path.join(sc, "kb", "statewide_exhibit_categories.json"), {"titles": {"O1": "Cat A", "O2": "Cat B"}})
     ch2, hl2 = rp.plan({"O1": "N9", "O2": "N9"}, sc)
     check("scalar keys: two old titles with different values onto one new title are held",
@@ -529,6 +566,45 @@ try:
     check("count: --check exits 1 above 0 and names each location",
           code3 == 1 and "kb/planted.json:/note/title" in out.getvalue(), out.getvalue())
 
+    # ── 2: a re-point with no credential change still files a receipt and moves its row ─────────────────────────
+    os.remove(os.path.join(kbl, "planted.json"))
+    write(os.path.join(kbl, "cred_rename_out", "2026-01-03", "alias_map.json"),
+          {"renames": {"Lean Old": "Other"}, "_applied_at": "2026-01-03T00:00:00Z"})
+    d = read(os.path.join(kbl, "unclassified_assignments.json"))
+    d["assignments"]["Lean assign"] = {"unified_title": "Lean Old", "reviewed_by": BOT, "title_reviewed_by": BOT}
+    write(os.path.join(kbl, "unclassified_assignments.json"), d)
+    gho = os.path.join(tmp, "gh_output")
+    os.environ["GITHUB_OUTPUT"] = gho
+    try:
+        before = set(os.listdir(os.path.join(kbl, "cred_rename_out")))
+        quiet(app.main)   # the plan's rename is already applied; the only leftover is a row through kb_curation
+        new = sorted(set(os.listdir(os.path.join(kbl, "cred_rename_out"))) - before)
+        snap = read(os.path.join(kbl, "cred_rename_out", new[0], "alias_map.json")) if new else {}
+        rq = read(os.path.join(kbl, "cred_rename_out", new[0], "repoint.json")) if new else {}
+        check("apply: a row-only re-point files a re-point-only receipt the row step runs on",
+              len(new) == 1 and snap.get("_repoint_only") and snap["renames"] == {}
+              and [c["key"] for c in rq["planned"]] == ["Lean assign"] and rq["planned"][0]["via"] == "kb_curation"
+              and "repoint_receipt=true" in open(gho).read(), (new, rq.get("planned")))
+        fl = Fake({U("Lean assign"): {"value": "Lean Old", "reviewer_email": BOT, "reviewed_at": T1}})
+        rp.run_supabase(os.path.join(kbl, "cred_rename_out", new[0]), fl)
+        check("apply: that receipt's row moves", fl.rows[U("Lean assign")]["value"] == "Other")
+        # No rename planned at all, and a leftover to re-point: the same.
+        am2 = read(app.ALIAS_PATH)
+        am2.update(renames={}, merges={})
+        write(app.ALIAS_PATH, am2)
+        d = read(os.path.join(kbl, "cer_classified.json"))
+        d["records"]["Lean raw"] = {"unified_title": "Lean Old"}
+        write(os.path.join(kbl, "cer_classified.json"), d)
+        before = set(os.listdir(os.path.join(kbl, "cred_rename_out")))
+        quiet(app.main)
+        new2 = sorted(set(os.listdir(os.path.join(kbl, "cred_rename_out"))) - before)
+        check("apply: with no rename planned, leftovers still file a receipt and move",
+              len(new2) == 1 and read(os.path.join(kbl, "cer_classified.json"))["records"]["Lean raw"]["unified_title"]
+              == "Other" and read(os.path.join(kbl, "cred_rename_out", new2[0], "alias_map.json")).get("_repoint_only"),
+              new2)
+    finally:
+        os.environ.pop("GITHUB_OUTPUT", None)
+
     # ── 5 (cont.): the rename undo's own ops read each row back ─────────────────────────────────────────────────
     fu = Fake({("_CREDENTIAL_REVIEW::T", "issuer_resolution"): {"value": "v", "reviewer_email": undo.fold_issuer.COHORT}})
     undo.rest = fu
@@ -572,7 +648,11 @@ check("workflow: the dispatch fails on a failed lookup or a failed dispatch, and
 check("workflow: the dispatch is not in the apply job",
       not any("gh workflow run" in (s.get("run") or "") for s in jobs["apply"]["steps"]))
 check("workflow: a pending scheduled dashboard run does not stand in for a dispatch; a dispatched one does",
-      "--json status,event" in drun and '*" workflow_dispatch "*) ' in drun and "dispatch over it" in drun)
+      "--json status,event" in drun and '*" workflow_dispatch "*) ' in drun and "dispatch over it" in drun
+      and '.status == "requested"' in drun and '.status == "queued"' in drun)
+check("workflow: a re-point-only receipt skips the issuer and row-move steps",
+      all(steps[names.index(n)].get("if") == "steps.json.outputs.repoint_receipt != 'true'"
+          for n in ("Write the fold's issuer resolutions to kb_curation", "Apply Supabase kb_curation row migration")))
 check("workflow: the commit step sets pushed only after a push succeeded, never on a no-op",
       crun.index('echo "pushed=true"') > crun.index("if git push origin HEAD:main; then")
       and crun.index('echo "pushed=true"') > crun.index("No changes to commit"))

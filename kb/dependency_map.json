@@ -4,9 +4,9 @@
   "supabase_tables": 112,
   "rpcs": 63,
   "edge_functions": 14,
-  "file_datasets": 865,
+  "file_datasets": 863,
   "external_services": 195,
-  "consumers": 560,
+  "consumers": 559,
   "workflows": 66,
   "data_js_files": 71,
   "tabs": 40
@@ -11085,7 +11085,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 834
+     "line": 858
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -13750,46 +13750,6 @@
     "workflow:cred-rename-apply.yml"
    ]
   },
-  "file:kb/cred_rename_out/2026-11-12/resolution_log.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_fold_resolution_write.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 96
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
-  "file:kb/cred_rename_out/2026-11-12/undo.json": {
-   "consumers": [
-    {
-     "id": "script:kb/_cred_rename_apply.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 373
-    },
-    {
-     "id": "script:kb/_cred_rename_undo.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 404
-    },
-    {
-     "id": "script:kb/fold_issuer.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 664
-    }
-   ],
-   "served": true,
-   "main_committers": []
-  },
   "file:kb/credential_merges.json": {
    "consumers": [
     {
@@ -14074,7 +14034,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 821
+     "line": 845
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -18568,7 +18528,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 808
+     "line": 832
     }
    ],
    "producers": [
@@ -19711,7 +19671,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 828
+     "line": 852
     },
     {
      "id": "script:kb/_cred_rename_undo.py",
@@ -28927,14 +28887,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 138
+     "line": 144
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 169
+     "line": 175
     },
     {
      "id": "script:kb/_cred_rename_undo.py",

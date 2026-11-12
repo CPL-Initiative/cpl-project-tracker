@@ -157,7 +157,10 @@ jobs:
       # job: the moves and the commit do not run, and the failure step at the
       # end takes the written rows back and commits the receipt alone.
       # Idempotent: a retry finds its own rows and writes nothing.
+      # A re-point-only receipt (the plan's renames already applied, or none planned, while earlier applies left
+      # machine values to re-point) renames nothing: it skips 3b and 4 and still runs 4.1, the count and the commit.
       - name: Write the fold's issuer resolutions to kb_curation
+        if: steps.json.outputs.repoint_receipt != 'true'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python kb/_cred_fold_resolution_write.py
@@ -171,6 +174,7 @@ jobs:
       # beside the first log; the undo reads them all.
       - name: Apply Supabase kb_curation row migration
         id: supa
+        if: steps.json.outputs.repoint_receipt != 'true'
         continue-on-error: true
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
@@ -390,7 +394,7 @@ jobs:
             # A pending SCHEDULED dashboard run does not count: its gate may stand it down when today already has a
             # success, and a dispatch replacing it loses nothing. Only a pending workflow_dispatch run publishes this.
             if ! events=$(gh run list -R "$GITHUB_REPOSITORY" --workflow "$wf" --json status,event \
-                  -q '[.[] | select(.status == "pending" or .status == "queued" or .status == "waiting") | .event] | join(" ")'); then
+                  -q '[.[] | select(.status == "pending" or .status == "queued" or .status == "requested" or .status == "waiting") | .event] | join(" ")'); then
               echo "::error title=Dashboard not started::The lookup of pending $wf runs failed, so a dispatch could cancel one. Dispatch daily-dashboard.yml by hand."
               exit 1
             fi
