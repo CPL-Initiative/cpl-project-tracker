@@ -29,10 +29,16 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
 const NEEDS = "__needs_words__";
 const REPO = process.cwd();
 
-// The one predicate the build applies (a): an alt that would ship must be written.
+// The one predicate the build applies (a): nothing ships until its words are written. A painting in the selection
+// fails on an empty alt or on the token in ANY of blurb, setting or alt: the builder leaves out an entry whose
+// blurb or setting still holds it, so merging with only the alt written would leave the tab's manifest and the
+// Apply's selection disagreeing on the list and its numbers.
 function unwritten(sel, hero) {
   const bad = [];
-  sel.forEach((e) => { const a = String(e.alt || "").trim(); if (!a || a.indexOf(NEEDS) !== -1) bad.push("painting " + (e.title || e.file)); });
+  sel.forEach((e) => {
+    const a = String(e.alt || "").trim();
+    if (!a || ["blurb", "setting", "alt"].some((k) => String(e[k] || "").indexOf(NEEDS) !== -1)) bad.push("painting " + (e.title || e.file));
+  });
   hero.photos.forEach((p) => { const a = String(p.alt || "").trim(); if (!a || a.indexOf(NEEDS) !== -1) bad.push("photo " + (p.name || p.file)); });
   return bad;
 }
@@ -64,7 +70,7 @@ const SEL0 = JSON.parse(fs.readFileSync("tools/first_light_selection.json", "utf
 const SEL = Array.isArray(SEL0) ? SEL0 : SEL0.paintings;
 const HERO = JSON.parse(fs.readFileSync("library/photos/hero_photos.json", "utf8"));
 const bad = unwritten(SEL, HERO);
-check("(a) ⭐ every painting and photo that would ship has a written alt (no empty alt, no " + NEEDS + ")", bad.length === 0, bad.join("; "));
+check("(a) ⭐ every painting and photo that would ship has its words: an alt, and no " + NEEDS + " in a painting's blurb, setting or alt", bad.length === 0, bad.join("; "));
 const waiting = SEL.filter((e) => ["blurb", "setting"].some((k) => String(e[k] || "").indexOf(NEEDS) !== -1)).map((e) => e.title || e.file);
 check("(a) no painting still waits for its blurb or setting", waiting.length === 0, waiting.join("; "));
 check("(a) ⭐ the rotation never carries the token", fs.readFileSync("first_light.js", "utf8").indexOf(NEEDS) === -1);
@@ -144,6 +150,13 @@ try {
   const body = fs.readFileSync(bodyFile, "utf8");
   check("(c) the pull request says Sam merges and lists the words wanted", /Sam merges this; nothing auto-merges/.test(body) && /Words wanted before review/.test(body) && body.indexOf(story.name) !== -1);
 
+  // Only the alt written: the build still fails, since the builder would leave the painting out.
+  const altOnly = JSON.parse(JSON.stringify(sel2));
+  altOnly[altOnly.length - 1].alt = "A test description of the added painting, long enough to read.";
+  check("(c) ⭐ only the alt written: the build still fails (blurb and setting hold the token)", unwritten(altOnly, { photos: [] }).length === 1);
+  const blurbOnly = JSON.parse(JSON.stringify(altOnly));
+  blurbOnly[blurbOnly.length - 1].blurb = "A test blurb for the painting, at least thirty characters.";
+  check("(c) ⭐ alt and blurb written, setting not: the build still fails", unwritten(blurbOnly, { photos: [] }).length === 1);
   // Words written: the build passes and the painting joins the rotation.
   added.alt = "A test description of the added painting, long enough to read."; added.blurb = "A test blurb for the painting, at least thirty characters."; added.setting = "A test setting.";
   const writeSel = (list) => fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify({ applied_through_mark_id: 3, paintings: list }, null, 2));
@@ -182,6 +195,41 @@ try {
   const pd = JSON.parse(run(["--plan", "--marks", writeMarks([{ id: 50, item_set: "photos", item_key: dkey, mark: "add", collection: "my_cpl_story" }])]).trim().split("\n").pop());
   check("(c) two stories sharing a key: the photo is held, never added under either name", !pd.changed && pd.held.indexOf(dkey) !== -1, JSON.stringify(pd));
   fs.writeFileSync(storiesFile, storiesText);
+
+  // ⭐ Held marks are never lost: an Add whose item the Apply could not find (here a story not yet in the stories
+  // file) stays live below the threshold, and a later Apply applies it once the item exists.
+  {
+    const heroBefore = readT("library/photos/hero_photos.json");
+    const late = { name: "Late Story", img: "https://staging2.map.rccd.edu/wp-content/uploads/2026/08/late.png", pathway: "", quote: "", meta: "" };
+    const lkey = M.storyFile(late);
+    const storiesFile2 = T("fact-sheet/cpl_stories.js"), keepText = fs.readFileSync(storiesFile2, "utf8");
+    const heldMarks = marks.concat([{ id: 20, item_set: "photos", item_key: lkey, mark: "add", collection: "my_cpl_story" },
+      { id: 21, item_set: "photos", item_key: HERO.photos[3].file, mark: "position", position: 1, collection: "hero_photos" }]);
+    run(["--apply", "--marks", writeMarks(heldMarks)]);
+    const hA = readT("library/photos/hero_photos.json");
+    check("(c) ⭐ a held Add is recorded beside the threshold, and the applied Move is not",
+      hA.applied_through_mark_id === 21 && JSON.stringify(hA.held_mark_ids) === "[20]" && !hA.photos.some((p) => p.file === lkey) && hA.photos[0].file === HERO.photos[3].file,
+      JSON.stringify([hA.applied_through_mark_id, hA.held_mark_ids]));
+    const dupS = JSON.parse(JSON.stringify(STORIES)); dupS.stories.push(late);
+    fs.writeFileSync(storiesFile2, "window.CPL_STORIES = " + JSON.stringify(dupS) + ";\n");
+    fs.writeFileSync(path.join(FIX, path.basename(lkey)), png(300, 200));
+    run(["--apply", "--marks", writeMarks(heldMarks)]);
+    const hB = readT("library/photos/hero_photos.json");
+    check("(c) ⭐ the held Add below the threshold is applied by a later Apply once its item exists, and leaves the held list",
+      hB.photos.some((p) => p.file === lkey && p.name === "Late Story") && JSON.stringify(hB.held_mark_ids) === "[]" && hB.applied_through_mark_id === 21,
+      JSON.stringify([hB.applied_through_mark_id, hB.held_mark_ids, hB.photos.map((p) => p.file)]));
+    // Put the photos back the way the rest of this file expects them.
+    fs.writeFileSync(storiesFile2, keepText);
+    fs.unlinkSync(T("library/photos/" + lkey));
+    fs.writeFileSync(T("library/photos/hero_photos.json"), JSON.stringify(heroBefore, null, 2));
+  }
+  check("(b) the builder carries held ids into the manifest for the tab", (() => {
+    const selH = readT("tools/first_light_selection.json");
+    fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify(Object.assign({}, selH, { held_mark_ids: [2] }), null, 2));
+    const ok = build().ok && /PAINTINGS\.held_mark_ids = \[2\];/.test(fs.readFileSync(T("first_light.js"), "utf8"));
+    fs.writeFileSync(T("tools/first_light_selection.json"), JSON.stringify(selH, null, 2));
+    return ok;
+  })());
 
   // ── (d) Drop takes a story photo down ────────────────────────────────────
   // A page in the checkout still names one hero photo, so dropping it leaves its file on disk.
@@ -249,6 +297,30 @@ try {
   const runs = [...apply.matchAll(/node ("?[^ \n]*(first_light_apply|build_first_light_manifest)\.mjs)/g)].map((m) => m[1]);
   check("(f) ⭐ the tools run from main's copy, never from the open pull request's branch",
     copyAt > 0 && copyAt < openAt && runs.length === 3 && runs.every((r) => r.indexOf('"$TOOLS/tools/') === 0) && /--root "\$GITHUB_WORKSPACE"/.test(apply), JSON.stringify(runs));
+  // ⭐ Code from the open pull request's branch never runs with a secret. Every step runs only main's copy of the
+  // tools ($TOOLS, copied before the branch is fetched); no step runs a file from the checkout.
+  const runOf = (x) => (/\n\s+run: \|\n([\s\S]*)$/.exec(x) || [])[1] || "";
+  const holds = (x) => /secrets\.|github\.token/.test(x);
+  const lastSecret = steps.reduce((n, x, i) => (holds(x) ? i : n), -1);
+  const execs = steps.slice(0, lastSecret + 1).map((x) => {
+    const r = runOf(x), wd = /working-directory: \$\{\{ runner\.temp \}\}\/main/.test(x);
+    // A command at the start of a line, or after a pipe, ;, && or $( : what the shell actually runs.
+    const at = "(?:^|\\n|[;&|(]\\s*)\\s*";
+    const nodes = [...r.matchAll(new RegExp(at + "node[ \\t]+(\"?[^\\s]+)", "g"))].map((m) => m[1]).filter((t) => !/^-/.test(t));
+    const shells = [...r.matchAll(new RegExp(at + "(?:bash|sh|source|\\.)[ \\t]+(\"?[^\\s]+)", "g"))].map((m) => m[1]);
+    const npm = /\bnpm\b|\bnpx\b/.test(r);
+    return { name: x.split("\n")[0], bad: nodes.filter((t) => t.indexOf('"$TOOLS/') !== 0).concat(wd ? [] : shells).concat(npm && !wd ? ["npm in the checkout"] : []) };
+  }).filter((e) => e.bad.length);
+  check("(f) ⭐ no step that holds a secret, and no step before one, runs a file that can come from the pull request's branch",
+    lastSecret > 0 && execs.length === 0, JSON.stringify(execs));
+  const copyStep = step("Copy the tools out of main");
+  check("(f) ⭐ every tool the job runs is copied from main before the branch is fetched",
+    ["first_light_tab.js", "tools/first_light_apply.mjs", "tools/build_first_light_manifest.mjs", "scripts/install_browser.sh"].every((f) => copyStep.indexOf(f) !== -1) &&
+    steps.indexOf(copyStep) < steps.indexOf(step("Find the one open pull request")) && /ref: main/.test(apply));
+  const inst = step("Install a browser for MAP's story photos (only when one is added)");
+  check("(f) the install step holds no secret and runs outside the checkout", inst && !holds(inst) && /working-directory: \$\{\{ runner\.temp \}\}\/main/.test(inst));
+  const pushStep = step("Push the branch and open or update the one pull request");
+  check("(f) the commit names only data paths, never a script or tool", /git add -A tools\/first_light_selection\.json first_light\.js library\/photos cpl_pathways\.js library\/index\.html library\/adopt\/index\.html\n/.test(pushStep));
   check("(f) it fetches story photos through the shared browser install", /bash scripts\/install_browser\.sh node/.test(apply));
   const sparse = (/sparse-checkout: \|\n([\s\S]*?)\n      - uses/.exec(apply) || [])[1] || "";
   const need = ["first_light_tab.js", "tools/first_light_apply.mjs", "tools/build_first_light_manifest.mjs", "fact-sheet/", "library/", "cpl_pathways.js", "scripts/install_browser.sh"];

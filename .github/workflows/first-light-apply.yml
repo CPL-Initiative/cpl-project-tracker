@@ -101,14 +101,17 @@ jobs:
         with:
           node-version: '20'
 
-      # The tools run from main's copy, whatever branch the files below come from.
+      # Every script and tool this job runs is copied here from main, before the open pull request's branch is
+      # fetched, and runs from this copy on every run. Files from that branch are read as data only (JSON, the
+      # manifest, the pages the Apply rewrites); nothing from it is executed.
       - name: Copy the tools out of main
         run: |
           set -euo pipefail
           T="$RUNNER_TEMP/main"
-          mkdir -p "$T/tools"
+          mkdir -p "$T/tools" "$T/scripts"
           cp first_light_tab.js "$T/"
           cp tools/first_light_apply.mjs tools/build_first_light_manifest.mjs "$T/tools/"
+          cp scripts/install_browser.sh "$T/scripts/"
           echo "TOOLS=$T" >> "$GITHUB_ENV"
 
       # A second Apply while the first pull request is open builds on that branch's files, so the words a session
@@ -144,13 +147,15 @@ jobs:
           echo "changed=$(jq -r .changed "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
           echo "fetch=$(jq -r '.fetches | length' "$RUNNER_TEMP/plan.json")" >> "$GITHUB_OUTPUT"
 
+      # Holds no secret, and runs main's installer from the tools copy, outside the checkout.
       - name: Install a browser for MAP's story photos (only when one is added)
         if: steps.plan.outputs.changed == 'true' && steps.plan.outputs.fetch != '0'
+        working-directory: ${{ runner.temp }}/main
         run: |
           npm init -y >/dev/null 2>&1
           npm i playwright@1.47.2 >/dev/null 2>&1
           bash scripts/install_browser.sh node
-          echo "FIRST_LIGHT_PLAYWRIGHT=$GITHUB_WORKSPACE/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
+          echo "FIRST_LIGHT_PLAYWRIGHT=$RUNNER_TEMP/main/node_modules/playwright/index.mjs" >> "$GITHUB_ENV"
 
       - name: Write the files and rebuild the manifest
         if: steps.plan.outputs.changed == 'true'

@@ -81,23 +81,39 @@ function newPainting(file, cand, gallery) {
   };
 }
 
+// The ids of the live marks on each held item (resolveSet's info lists only live marks, the latest per kind).
+function heldIdsFor(r, keys) {
+  const ids = [];
+  for (const k of keys) {
+    const it = r.info[k];
+    if (!it) continue;
+    for (const m of [it.membership, it.position, it.firstAdd]) if (m && ids.indexOf(+m.id) < 0) ids.push(+m.id);
+  }
+  return ids.sort((a, b) => a - b);
+}
+
 function plan(marks) {
   // The selection is { applied_through_mark_id, paintings } once an Apply has run; a bare list before that.
   const selFile = readJson("tools/first_light_selection.json");
   const sel = Array.isArray(selFile) ? selFile : selFile.paintings;
+  // The threshold and the held ids a merged Apply committed. Marks at or below the threshold are spent, except the
+  // held ones. (Identity ids can commit out of id order in a very small window, so a mark committed just after an
+  // Apply read the table can carry an id below its threshold; resolveSet says the same.)
   const selApplied = Array.isArray(selFile) ? 0 : +selFile.applied_through_mark_id || 0;
+  const selHeld = Array.isArray(selFile) ? [] : selFile.held_mark_ids || [];
   const hero = readJson("library/photos/hero_photos.json");
+  const heroHeld = hero.held_mark_ids || [];
   const cand = new Map(readJson("tools/first_light_candidates.json").candidates.map((c) => [c.file, c]));
   const gallery = new Map(readJson("tools/first_light_gallery/index.json").paintings.map((g) => [g.file, g]));
   const st = stories();
 
   // Marks at or below the committed applied_through_mark_id were consumed by a merged Apply and are spent.
-  const pr = MARKS.resolveSet(sel.map((e) => e.file), MARKS.forSet(marks, "paintings"), selApplied);
+  const pr = MARKS.resolveSet(sel.map((e) => e.file), MARKS.forSet(marks, "paintings"), selApplied, selHeld);
   const bySel = new Map(sel.map((e) => [e.file, e]));
-  const held = [];
-  const paintings = pr.list.map((k) => bySel.get(k) || newPainting(k, cand, gallery) || (held.push(k), null)).filter(Boolean);
+  const held = [], heldP = [], heldH = [];
+  const paintings = pr.list.map((k) => bySel.get(k) || newPainting(k, cand, gallery) || (held.push(k), heldP.push(k), null)).filter(Boolean);
 
-  const hr = MARKS.resolveSet(hero.photos.map((p) => p.file), MARKS.forSet(marks, "photos"), +hero.applied_through_mark_id || 0);
+  const hr = MARKS.resolveSet(hero.photos.map((p) => p.file), MARKS.forSet(marks, "photos"), +hero.applied_through_mark_id || 0, heroHeld);
   // Two stories whose photos would land on one key: the first keeps it, the second is refused.
   const byKey = new Map(), dupes = new Set();
   for (const x of st.list) { const k = MARKS.storyFile(x); if (!k) continue; if (byKey.has(k)) dupes.add(k); else byKey.set(k, x); }
@@ -107,7 +123,7 @@ function plan(marks) {
   const photos = hr.list.map((k) => {
     if (byHero.has(k)) return byHero.get(k);
     const s = byKey.get(k);
-    if (!s || dupes.has(k)) { held.push(k); return null; }
+    if (!s || dupes.has(k)) { held.push(k); heldH.push(k); return null; }
     fetches.push({ file: k, url: s.img });
     // Only what MAP published: the name as printed and the story's page.
     const link = /^https:\/\//.test(String(st.source || "")) ? st.source : MARKS.STORY_SOURCE;
@@ -139,6 +155,9 @@ function plan(marks) {
       JSON.stringify(photos.map((p) => p.file)) !== JSON.stringify(hero.photos.map((p) => p.file)) || removeFiles.length > 0 || maybeRemove.length > 0,
     paintings, photos, fetches, removeFiles, maybeRemove, held,
     applied: { paintings: pr.appliedThrough, photos: hr.appliedThrough },
+    // The live marks of an item this Apply could not apply stay live after the merge: their ids go beside the
+    // threshold. A held mark that a later Apply applies leaves the list, since its item is no longer held.
+    held_ids: { paintings: heldIdsFor(pr, heldP), photos: heldIdsFor(hr, heldH) },
     needs_words: [...paintings.filter((p) => [p.blurb, p.setting, p.alt].includes(NEEDS)).map((p) => "painting: " + p.title),
       ...photos.filter((p) => p.alt === NEEDS).map((p) => "photo: " + (p.name || p.file))],
     summary: { paintings: lines("paintings", pr), photos: lines("photos", hr), counts: { paintings: paintings.length, photos: photos.length } }
@@ -232,8 +251,9 @@ async function apply(pl) {
   }
   // applied_through_mark_id: the highest mark this Apply consumed, per set. It reaches main only when Sam merges
   // the pull request, so a pull request closed unmerged leaves the marks live.
-  writeJson("tools/first_light_selection.json", { applied_through_mark_id: pl.applied.paintings, paintings: pl.paintings });
+  writeJson("tools/first_light_selection.json", { applied_through_mark_id: pl.applied.paintings, held_mark_ids: pl.held_ids.paintings, paintings: pl.paintings });
   hero.applied_through_mark_id = pl.applied.photos;
+  hero.held_mark_ids = pl.held_ids.photos;
   hero.photos = pl.photos;
   writeJson("library/photos/hero_photos.json", hero);
   rewriteSlides("library/index.html", "photos/", pl.photos);

@@ -22,6 +22,7 @@ const entries = Array.isArray(sel) ? sel : sel.paintings;
 // The highest First Light mark a merged Apply consumed (tools/first_light_apply.mjs). The manifest carries it so
 // the First Light tab treats those marks as spent.
 const applied = Array.isArray(sel) ? 0 : +sel.applied_through_mark_id || 0;
+const heldIds = Array.isArray(sel) ? [] : (sel.held_mark_ids || []).map(Number).filter((n) => n > 0);
 const cand = JSON.parse(fs.readFileSync(ROOT + "tools/first_light_candidates.json", "utf8"));
 const byFile = new Map(cand.candidates.map((c) => [c.file, c]));
 // Four paintings in the rotation that the candidate pool stopped listing when sourcing run 4 narrowed it to the
@@ -105,10 +106,11 @@ const body = out.map((p) =>
   "    }"
 ).join(",\n");
 
-const arrayText = "  var PAINTINGS = [\n" + body + "\n  ];" + (applied ? `\n  PAINTINGS.applied_through_mark_id = ${applied};` : "");
+const arrayText = "  var PAINTINGS = [\n" + body + "\n  ];" + (applied ? `\n  PAINTINGS.applied_through_mark_id = ${applied};` : "") +
+  (heldIds.length ? `\n  PAINTINGS.held_mark_ids = ${JSON.stringify(heldIds)};` : "");
 
 const js = fs.readFileSync(ROOT + "first_light.js", "utf8");
-const re = /(\/\* FL-MANIFEST:START[\s\S]*?\*\/)\s*var PAINTINGS = \[[\s\S]*?\];(?:\s*PAINTINGS\.applied_through_mark_id = \d+;)?\s*(\/\* FL-MANIFEST:END \*\/)/;
+const re = /(\/\* FL-MANIFEST:START[\s\S]*?\*\/)\s*var PAINTINGS = \[[\s\S]*?\];(?:\s*PAINTINGS\.applied_through_mark_id = \d+;)?(?:\s*PAINTINGS\.held_mark_ids = \[[\d,]*\];)?\s*(\/\* FL-MANIFEST:END \*\/)/;
 if (!re.test(js)) { console.error("Could not find the FL-MANIFEST sentinel block in first_light.js"); process.exit(1); }
 const next = js.replace(re, (_m, start, end) => `${start}\n${arrayText}\n  ${end}`);
 fs.writeFileSync(ROOT + "first_light.js", next);
