@@ -124,16 +124,30 @@ MODULE_ALIASES = {
 }
 
 
+# Eager modules a tab's id matches by convention that the tab does NOT own. The same
+# rule as MODULE_ALIASES, the other way: an explicit entry with a reason, because a
+# wrong guess credits a tab with another surface's reads and writes.
+NOT_TAB_MODULES = {
+    # first_light.js is the painting-of-the-day overlay every visitor loads on the
+    # page (it reads Wikimedia and writes cpl_reflections). The reviewer-only First
+    # Light tab (#3153) only reads its manifest; crediting the overlay to the tab
+    # would hide a public writer behind a reviewer gate (COBIx on #3162).
+    "first-light": ["first_light.js"],
+}
+
+
 def modules_by_convention(tab: str, eager: "list") -> "list":
     """Eager modules belonging to `tab` by naming convention.
 
     Convention: the module basename equals the tab id with dashes as underscores,
     or begins with it followed by an underscore (budget -> budget_editor.js,
     budget_ledger.js). Prefix matching is deliberately anchored with the trailing
-    underscore so `cpl-news` cannot claim `cpl_newsletter.js`.
+    underscore so `cpl-news` cannot claim `cpl_newsletter.js`. NOT_TAB_MODULES
+    names the matches a tab does not own.
     """
     stem = tab.replace("-", "_")
-    return [m for m in eager if m[:-3] == stem or m.startswith(stem + "_")]
+    skip = NOT_TAB_MODULES.get(tab, [])
+    return [m for m in eager if (m[:-3] == stem or m.startswith(stem + "_")) and m not in skip]
 
 
 def tables_for(js_body: str) -> "tuple":
