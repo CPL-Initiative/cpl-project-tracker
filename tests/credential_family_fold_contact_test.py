@@ -10,6 +10,7 @@
 Run from the repo root: python3 tests/credential_family_fold_contact_test.py
 """
 import contextlib
+import glob
 import io
 import json
 import os
@@ -23,6 +24,8 @@ import _apply_credential_review as acr  # noqa: E402
 import _cred_rename_apply as app  # noqa: E402
 import _cred_rename_apply_supabase as sup  # noqa: E402
 import _cred_rename_dryrun as dry  # noqa: E402
+import _cred_rename_undo as undo  # noqa: E402
+import ruled_renames  # noqa: E402
 
 CHECKS = []
 FAM = "ASE Certificate Bundles"
@@ -40,18 +43,59 @@ def dryrun(tmp, families, plans=None):
     return json.load(open(os.path.join(dry.OUT_DIR, "alias_map.json"), encoding="utf-8"))
 
 
+PRE_FILES = ("credentials.json", "unified_titles.json", "coci_articulations.json")
+
+
+def pre_apply(into, plan_olds):
+    """The three kb files as they stood before Sheet 181's plan was applied: copies of the committed files with every
+    applied rename snapshot that carried a plan entry undone over them (the 2026-11-12 apply, da9f2f90, ran it live).
+    Before an apply the copies are the committed files as they are."""
+    os.makedirs(into)
+    for n in PRE_FILES:
+        shutil.copy(os.path.join(ROOT, "kb", n), os.path.join(into, n))
+    snaps = []
+    for path in sorted(glob.glob(os.path.join(ROOT, "kb", "cred_rename_out", "*", "alias_map.json"))):
+        d = json.load(open(path, encoding="utf-8"))
+        if (d.get("_applied_at") and (set(d.get("renames") or {}) | set(d.get("merges") or {})) & plan_olds
+                and os.path.isfile(os.path.join(os.path.dirname(path), "undo.json"))):
+            snaps.append(os.path.dirname(path))
+    real_u = (undo.CREDENTIALS, undo.UNIFIED_TITLES, undo.ARTICULATIONS, undo.KEY)
+    try:
+        undo.CREDENTIALS, undo.UNIFIED_TITLES, undo.ARTICULATIONS = (os.path.join(into, n) for n in PRE_FILES)
+        undo.KEY = None
+        for k, s_ in enumerate(reversed(snaps)):
+            rc = os.path.join(into, "receipt%d" % k)
+            shutil.copytree(s_, rc)
+            with contextlib.redirect_stdout(io.StringIO()):
+                undo.main([rc, "--apply", "--json-only", "--force"])
+    finally:
+        undo.CREDENTIALS, undo.UNIFIED_TITLES, undo.ARTICULATIONS, undo.KEY = real_u
+    return {n: os.path.join(into, n) for n in PRE_FILES}
+
+
+def held_set(d):
+    return {h["old"] for h in d["held_family"]}
+
+
 tmp = tempfile.mkdtemp()
 real_out, real_fam, real_plans = dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR
+real_files = (dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS)
+ov = json.load(open(dry.OVERLAY, encoding="utf-8")).get("overrides") or {}
+saved_all = {t for t, e in ov.items() if (e or {}).get("unified_title_override") == FAM}
+plan_olds = {e["old"] for p in ruled_renames.load(real_plans) for e in p["entries"]}
 try:
     # ── 1. the dry-run's preview with the family file present (no ruled plan; Sheet 181's is 1b) ─────────
+    # Over the pre-apply files, so the checks hold whether or not the plan has run on main: every one of Sam's
+    # saved folds into the family title (31 at S638) whose title is still a credential is held as a family tag.
+    PRE = pre_apply(os.path.join(tmp, "pre"), plan_olds)
+    pre_cr = json.load(open(PRE["credentials.json"], encoding="utf-8"))
+    dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS = (PRE[n] for n in PRE_FILES)
     doc = dryrun(tmp, real_fam)
     s = doc["summary"]
-    # The overlay's saved folds into the family title: 31 until the family-tag plan converts them (its rows then
-    # leave the overlay at the next sync and the count falls to 0 with them).
-    ov = json.load(open(dry.OVERLAY, encoding="utf-8")).get("overrides") or {}
-    saved = sum(1 for e in ov.values() if (e or {}).get("unified_title_override") == FAM)
-    check(f"with the family file, every saved fold into the family title is held as a family tag ({saved}, 31 before the plan)",
-          s["held_as_family_tags"] == saved == len(doc["held_family"]))
+    saved = {t for t in saved_all if t in pre_cr}
+    check(f"with the family file, every saved fold into the family title is held as a family tag ({len(saved)}, 31 before the plan)",
+          held_set(doc) == saved and s["held_as_family_tags"] == len(saved) == len(doc["held_family"])
+          and plan_olds <= saved and len(saved) >= 30)
     check("every held fold targets the family title", all(h["target"] == FAM for h in doc["held_family"]))
     check("only 'standards' merges fold (the nightly fold settles others, so the count moves)",
           all(t.endswith(" standards)") for t in doc["merges"].values()))
@@ -64,12 +108,22 @@ try:
     ruled = dryrun(tmp, real_fam, real_plans)
     applied = {e["old"] for e in ruled["ruled"]["applied"]}
     check("with the ruled plan, the folds it does not rename stay held as family tags, and none is renamed",
-          ruled["summary"]["held_as_family_tags"] == saved - len(applied)
-          and not applied & {h["old"] for h in ruled["held_family"]})
+          applied == plan_olds and held_set(ruled) == saved - applied
+          and ruled["summary"]["held_as_family_tags"] == len(saved) - len(applied))
     check("the ruled merges are the standards merges plus the plan's, and nothing mints the family title",
           set(ruled["merges"]) >= set(doc["merges"]) and FAM not in set(ruled["renames"].values()) | set(ruled["merges"].values()))
+    # Over the committed files, before or after a rename: the held folds are exactly the saved folds whose title is
+    # still a credential, less what the plan still renames; a renamed-away title is never held and never renamed.
+    dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS = real_files
+    live_cr = json.load(open(real_files[0], encoding="utf-8"))
+    live = dryrun(tmp, real_fam, real_plans)
+    live_applied = {e["old"] for e in live["ruled"]["applied"]}
+    check("over the committed files, the held family tags are the saved folds still a credential, less the plan's",
+          held_set(live) == {t for t in saved_all if t in live_cr} - live_applied
+          and live_applied == plan_olds & set(live_cr) and not held_set(live) & live_applied)
 finally:
     dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR = real_out, real_fam, real_plans
+    dry.CREDENTIALS, dry.UNIFIED_TITLES, dry.ARTICULATIONS = real_files
 
 # ── 2. a member renamed into its family form keeps its family ─────────────────────────────────────────────
 OLD, NEW = "ASE A4 and A5 Bundle", FAM + ": A4 + A5"
