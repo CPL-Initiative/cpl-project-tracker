@@ -3268,11 +3268,10 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
     None (S640; S641 review). A hold protects only a filed record that passes as the live table counts
     it (passes_live); a failing or absent record is always read, whatever its window. Then, in order:
     held_worse_window, the new window names a smaller share of the closed list than the window the
-    record was extracted from; held_no_gain, the same share, so a read can gain nothing, unless the
-    record's fingerprint proves the window's text changed (same_text: a reissued page that keeps its
-    courses and changes a unit figure or a total is read, and kept_passing guards the read);
-    held_opens_on_list, a larger share (or the same share on changed text) from a window that opens on
-    a department's list of award titles
+    record was extracted from; held_no_gain, the same share, so a read can gain nothing (fingerprint
+    or not: a passing record's text changing at the same share is a refresh question for a catalog-year
+    rule, never the per-run fingerprint, which moves on unchanged text; the S641 conductor);
+    held_opens_on_list, a larger share from a window that opens on a department's list of award titles
     (pdf_opens_on_list). The share the record was extracted from is its source_coverage, else the
     filed source's coverage when that source names the record's page. Window coverage is compared
     only with window coverage: with neither, nothing is held, and the guard after the read
@@ -3294,7 +3293,7 @@ def held(path: str, prev: dict | None, src: dict) -> dict | None:
         return None
     if cov < was:
         return {"reason": "held_worse_window", "coverage": cov, "was_coverage": was}
-    if cov == was and same_text(rec, src):
+    if cov == was:
         return {"reason": "held_no_gain", "coverage": cov, "was_coverage": was}
     if (src.get("source") or {}).get("opens_on_list"):
         return {"reason": "held_opens_on_list", "coverage": cov, "was_coverage": was}
@@ -3454,7 +3453,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             row["reconciled"] = notes
         filed = kept_passing(keep_from, src["control_number"], sc, force)
         if filed is not None:
-            # The read came back failing where the filed record passes (S641 review, call 2b): the filed
+            # The read passes less than the filed record does (S641 review, call 2b; kept_passing): the filed
             # record stays as filed, and the program is listed with both scores for a person.
             _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
             with kept_lock:
@@ -3462,7 +3461,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                                   "award": src.get("award"), "source_url": row["source_url"],
                                   "filed_source_url": filed.get("source_url"), "cost_usd": row["cost_usd"],
                                   "score": sc, "filed_score": filed.get("score")})
-            print("%-6s kept_passing: the read fails where the filed record passes" % src["control_number"],
+            print("%-6s kept_passing: the read passes less than the filed record" % src["control_number"],
                   flush=True)
             return
         _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), row)
@@ -3484,18 +3483,32 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
 
 
 def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: set[str] | None) -> dict | None:
-    """The filed record a read must not replace, or None: the filed record passes as the live table
-    counts it (passes_live) and the new one does not (S641 review, call 2b). A forced control number
-    takes the new record all the same."""
-    from _program_requirements_score import passes_live
-    if not keep_from or cn in (force or ()) or passes_live(new_score):
+    """The filed record a read must not replace, or None (S641 review, call 2b; the S641 conductor,
+    2026-11-12). A filed record that passes in full (score["pass"] and passes_live) is replaced only by a
+    read that also passes in full: a read that passes the live table's test and drops outcomes, careers
+    or repeats is worse. A filed record that passes as the live table counts it (passes_live) is
+    replaced only by a read that passes it too. A forced control number takes the new record all the same."""
+    if not keep_from or cn in (force or ()):
         return None
     try:
         with open(os.path.join(keep_from, "records", cn + ".json")) as fh:
             filed = json.load(fh)
     except (OSError, ValueError):
         return None
-    return filed if isinstance(filed.get("record"), dict) and passes_live(filed.get("score")) else None
+    if not isinstance(filed.get("record"), dict):
+        return None
+    was = pass_grade(filed.get("score"))
+    return filed if was and pass_grade(new_score) < was else None
+
+
+def pass_grade(score: dict | None) -> int:
+    """2 for a record that passes in full (score["pass"] and passes_live), 1 for one that passes only as
+    the live table counts it (passes_live), 0 for one that fails. score["pass"] alone is not enough: it
+    can hold beside an unstated total, which the live table does not count passing."""
+    from _program_requirements_score import passes_live
+    if not passes_live(score):
+        return 0
+    return 2 if (score or {}).get("pass") is True else 1
 
 
 def same_address(a: str, b: str) -> bool:

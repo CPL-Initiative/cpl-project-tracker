@@ -2878,30 +2878,34 @@ try:
     check(_pl is not None and _pl(passing) and _pl(dict(passing, **{"pass": False}))
           and not _pl(dict(passing, arithmetic={"status": "unstated", "pass": True})) and not _pl(None),
           "passes_live is the live table's test: coverage, invented, arithmetic equal")
-    # S641 verification: equal coverage is held only while the text is not proven changed. A passing record
-    # with a fingerprint whose window now prints other text (a unit figure, a total) at the same share, on
-    # its page or moved, is read; the read is guarded by kept_passing. One with no fingerprint stays held.
-    _ch = os.path.join(_hx, "changed")
-    os.makedirs(os.path.join(_ch, "records"))
-    for cn, sha in (("30", "old30"), ("31", "old31"), ("32", None), ("33", "s33")):
-        body = {"record": {"blocks": []}, "source_url": pdf + "#page=311", "extracted_run": 39049026449,
-                "source_codes": ["A1"], "source_coverage": 1.0, "score": passing, "control_number": cn}
-        if sha:
-            body["source_sha"] = sha
-        open(os.path.join(_ch, "records", cn + ".json"), "w").write(json.dumps(body))
-    json.dump([], open(os.path.join(_ch, "sources.json"), "w"))
-    ch_srcs = [src_of("30", 307, "new30"),     # moved and changed, the same share: read
-               src_of("31", 311, "new31"),     # its own page, changed, the same share: read
-               src_of("32", 307, "any"),       # no fingerprint, the same share: held_no_gain
-               src_of("33", 311, "s33")]       # the same text on its page, the same share: held_no_gain
-    wx4 = C.would_extract("Test College", ch_srcs, folder=_ch)
-    check(sorted(x["control_number"] for x in wx4["list"]) == ["30", "31"]
-          and [x["control_number"] for x in wx4["held_no_gain"]] == ["32", "33"],
-          "equal coverage holds a passing record only while its text is not proven changed: %r"
-          % {k: [x["control_number"] for x in wx4[k]] for k in ("list", "held_no_gain")})
-    check(C.held(os.path.join(_ch, "records", "30.json"), None, src_of("30", 307, "new30", opens_on_list=True))["reason"]
-          == "held_opens_on_list",
-          "changed text at the same share from a window that opens on a list is held all the same")
+    # The S641 conductor (2026-11-12): equal coverage holds a passing record, fingerprint or not; the per-run
+    # fingerprint moves on unchanged text, so a refresh waits on a catalog-year rule.
+    _fp = os.path.join(_hx, "fp.json")
+    open(_fp, "w").write(json.dumps({"record": {"blocks": []}, "source_url": pdf + "#page=311", "source_sha": "old",
+                                     "source_coverage": 1.0, "score": passing}))
+    check((C.held(_fp, None, src_of("50", 307, "new")) or {}).get("reason") == "held_no_gain"
+          and (C.held(_fp, None, src_of("50", 311, "new")) or {}).get("reason") == "held_no_gain",
+          "a passing record whose fingerprint changed at the same share is held, moved or on its page")
+    # The S641 conductor (2026-11-12): a filed record that passes in full is replaced only by a read that
+    # passes in full. A read that passes the live table's test but drops outcomes is worse, and is not filed.
+    _kp_dir = os.path.join(_hx, "kept")
+    os.makedirs(os.path.join(_kp_dir, "records"))
+    live_only = dict(passing, **{"pass": False, "outcomes": {"pass": False}})
+    for cn, sc in (("40", passing), ("41", passing), ("42", live_only), ("43", failing)):
+        open(os.path.join(_kp_dir, "records", cn + ".json"), "w").write(
+            json.dumps({"record": {"blocks": []}, "control_number": cn, "score": sc}))
+    check(C.kept_passing(_kp_dir, "40", live_only, set()) is not None,
+          "a read that passes the live table's test but drops outcomes leaves a filed record that passes in full")
+    check(C.kept_passing(_kp_dir, "41", passing, set()) is None,
+          "a read that passes in full replaces a filed record that passes in full")
+    check(C.kept_passing(_kp_dir, "42", live_only, set()) is None,
+          "a filed record that passes only the live table's test is replaced by a read that passes it too")
+    check(C.kept_passing(_kp_dir, "42", failing, set()) is not None
+          and C.kept_passing(_kp_dir, "43", failing, set()) is None
+          and C.kept_passing(_kp_dir, "40", live_only, {"40"}) is None,
+          "a failing read leaves a live-passing record; a failing filed record is no reason to keep; force overrides")
+    check(C.kept_passing(_kp_dir, "40", dict(passing, arithmetic={"pass": True, "status": "unstated"}), set())
+          is not None, "score pass beside an unstated total is no full pass: the filed record stays")
 finally:
     XT.call = _saved[0]
     if _saved[1] is None:
