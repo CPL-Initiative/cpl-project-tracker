@@ -387,6 +387,39 @@ check("Victor Valley's Critical Care Paramedic 45880 (256 - 280, 0.914 of the to
 check("the ratio's tolerance takes a low end printed to one decimal place (28.0 of 31.5 is in; 7.9 of 9.0, 0.1 off, is out)",
       S.hours_meets_top(hrs([18, 13.5], (28, 31.5)), (28.0, 31.5), 31.5, 31.5)
       and not S.hours_meets_top(hrs([4.5, 4.5], (7.9, 9.0)), (7.9, 9.0), 9.0, 9.0))
+
+
+def shaped(rule, units, total, **block):
+    rec = hrs(units, total)
+    rec["blocks"][0].update(dict({"rule": rule}, **block))
+    return rec
+
+
+def no_top(rec, total=(96, 108)):
+    a = S.score(rec, [], None, "Noncredit program")["arithmetic"]
+    return not a.get("meets_top") and not a["pass"]
+
+
+# The review of 587882fc reproduced each of these passing at 108 though the courses add to less (S639).
+check("a choose-courses list's printed 108 over 2 of [36, 36, 36] (the courses add to 72) is no meets_top",
+      no_top(shaped("choose_courses", [36, 36, 36], (96, 108), minimum=2, stated={"min": 108, "max": 108})))
+check("a choose_units minimum of 108 over [36, 36] is no meets_top",
+      no_top(shaped("choose_units", [36, 36], (96, 108), minimum=108)))
+oe = hrs([36, 36], (96, 108)); oe["program"]["open_elective_units"] = 36
+check("open elective hours added to [36, 36] are no meets_top", no_top(oe))
+check("a list that fills to 108 over [36, 36] is no meets_top", no_top(shaped("all", [36, 36], (96, 108), fills_to=108)))
+check("a repeated choose 2 of [27, 27] at 54 of 48 - 54 is no meets_top",
+      no_top(shaped("choose_courses", [27, 27], (48, 54), minimum=2, repeats=True)))
+grp = hrs([36, 36, 36], (96, 108)); grp["blocks"][0]["option_group"] = "A"
+check("a block in an option group is no meets_top", not S.hours_meets_top(grp, (96.0, 108.0), 108.0, 108.0))
+check("choose 2 of [9, 9, 9] at 18 of 16 - 18 (Victor Valley 44151's shape, no printed figure) passes",
+      S.score(shaped("choose_courses", [9, 9, 9], (16, 18), minimum=2), [], None, "Noncredit program")["arithmetic"].get("meets_top"))
+span = shaped("choose_courses", [36, 54], (48, 54), minimum=1)
+check("lo == hi: choose 1 of [36, 54] against 48 - 54 stays unequal, and the guard alone refuses 36-54",
+      no_top(span) and not S.hours_meets_top(span, (48.0, 54.0), 36.0, 54.0))
+bare = shaped("all", [None, None, None], (96, 108), stated={"min": 108, "max": 108})
+check("a course with no hours: a rule-all block priced by its printed 108 stays unequal, and the guard refuses it",
+      no_top(bare) and not S.hours_meets_top(bare, (96.0, 108.0), 108.0, 108.0))
 one = S.score(hrs([108, 108], (216, 216)), [], None, "Noncredit program")["arithmetic"]
 check("a total of one figure still reads equal, not meets_top", one["pass"] and not one.get("meets_top"))
 check("program_verdict without the record (the rescorers' call) is unchanged",
@@ -440,6 +473,13 @@ check("a local degree (Nursing A.S. 04955, VVC General Education) takes no Cal-G
 check("a page that does not print the graduation requirement line takes nothing",
       not [n for n in R.reconcile(vv_filed("31788")["record"], "the Cal-GETC pattern", VV, "A.A- T Degree",
                                   steps=vv_steps)[1] if n["field"] == "ge_units"])
+major_only = vv_filed("31612")
+check("a transfer degree holding its major alone (Communication Studies 31612, no degree total) takes nothing,"
+      " so its 'major only' reading stands (only_with degree_total)",
+      major_only["record"]["program"]["degree_total"]["min"] is None
+      and not [n for n in R.reconcile(major_only["record"], aat_text, VV, major_only["award"], steps=vv_steps)[1]
+               if n["field"] == "ge_units"]
+      and S.degree_reading(major_only["record"], major_only["award"])["status"] == "major only")
 
 print("tabs_with_prose: an Overview naming every course, the course list in a hidden tab (S639, Victor Valley's EMS)")
 import _program_requirements_pilot as P  # noqa: E402
@@ -468,6 +508,46 @@ check("a hidden tab that names fewer of the courses is not appended",
 check("Victor Valley's entry opts in; no other college does",
       R.load_steps()[VV].get("tabs_with_prose") is True
       and [c for c, e in R.load_steps().items() if e.get("tabs_with_prose")] == [VV])
+no_total = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": ems_tab.replace("\nTotal Units\t8", "")}])
+check("a tab that names both courses but prints no Total Units line is not appended",
+      P.best_text(no_total, fb, {}, ems_courses, True)[2] == "innerText")
+hours_body = dict(ems_got, body=ems_body + "\nTotal Certificate Hours: 96.0 - 108.0")
+check("a visible 'Total Certificate Hours' line is no Total Units line: the tab is still appended",
+      P.best_text(hours_body, P.find_codes(hours_body["body"], ems_courses), {}, ems_courses, True)[2] == "innerText+tabs")
+check("TOTAL_UNITS reads 'Total Units', never 'Total Certificate Hours' or 'Total Required'",
+      P.TOTAL_UNITS.search("Total Units\t16.5") and not P.TOTAL_UNITS.search("Total Certificate Hours: 96.0")
+      and not P.TOTAL_UNITS.search("Total Required 90"))
+
+# The college module's wiring (S639 review): the flag reaches best_text only through the program dict,
+# and only a college whose reconcile entry sets it stamps it.
+import _program_requirements_college as C  # noqa: E402
+ems_prog = {"control_number": "38353", "title": "Advanced Life Support Module 2",
+            "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+            "closed_list": ems_courses}
+ems_page = {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
+            "h1": "Advanced Life Support Module 2 Certificate of Achievement",
+            "title": "Advanced Life Support Module 2 Certificate of Achievement | Victor Valley College",
+            "codes": {"EMS82", "EMS83"}, "got": ems_got, "body": ems_body, "content": ems_got["content"]}
+plain = C.candidates(ems_prog, [ems_page])
+opted = C.candidates(dict(ems_prog, tabs_with_prose=True), [ems_page])
+check("candidates(): a program without the flag reads the Overview alone; with it, the Overview and the tab",
+      plain and plain[0]["field"] == "innerText" and opted and opted[0]["field"] == "innerText+tabs"
+      and "Total Units\t8" in opted[0]["text"])
+_saved = (C.fetch_all, R.load_steps)
+try:
+    C.fetch_all = lambda path: ([{"control_number": "38353", "program_title": "Advanced Life Support Module 2",
+                                  "award": "Certificate of Achievement", "status": "Active", "top_code": "125100"}]
+                                if path.startswith("coci_college_programs") else
+                                [{"program_control_number": "38353", "course_code": "EMS 82", "units": 4.5,
+                                  "course_title": "Paramedic Cardiology"}])
+    R.load_steps = lambda path=R.STEPS: {VV: {"tabs_with_prose": True}, "Other College": {}}
+    stamped = C.college_programs(VV)
+    unstamped = C.college_programs("Other College")
+finally:
+    C.fetch_all, R.load_steps = _saved
+check("college_programs stamps tabs_with_prose only for a college whose entry sets it",
+      stamped and all(p.get("tabs_with_prose") is True for p in stamped)
+      and unstamped and not any("tabs_with_prose" in p for p in unstamped))
 
 failed = [n for n, ok in results if not ok]
 for n, ok in results:

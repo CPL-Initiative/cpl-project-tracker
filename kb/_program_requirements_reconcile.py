@@ -570,6 +570,10 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 continue
             if st.get("only_without") and not _empty(prog.get(st["only_without"])):
                 continue
+            # Only a record that holds the figure the set one completes (Victor Valley's Cal-GETC,
+            # S639: a transfer degree that names the 60, never one that holds its major alone).
+            if st.get("only_with") and _empty(prog.get(st["only_with"])):
+                continue
             words = m.group(0).strip()
             if st.get("source"):
                 words = "%s (%s: %s)" % (words, st["source"], st["source_words"])

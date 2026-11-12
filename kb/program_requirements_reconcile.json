@@ -5,7 +5,7 @@
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE)",
-  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed)",
+  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without and only_with hold it to a record that lacks, or holds, another field (Victor Valley's Cal-GETC, only_with degree_total)",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
@@ -970,11 +970,12 @@
       "max": 42
      },
      "awards": "transfer",
+     "only_with": "degree_total",
      "pattern": "60 CSU transferable units;\\s*the Cal-GETC pattern",
      "read": "college-page-read 43136401325 (kb/college_reads/victor_valley_ge_and_ems_tabs.json) and 43137395720 (kb/college_reads/victor_valley_calgetc_total.json)",
      "source": "https://catalog.vvc.edu/degrees-certificates/calgetc/calgetc-ca/",
      "source_words": "the Cal-GETC Certificate of Achievement's REQUIREMENTS tab, area by area to 'Area 6 - Ethnic Studies 3.0 ... Total Units 34-42' (college-page-read 43137395720)",
-     "why": "S639: History AA-T 31788 and Communication Studies 2.0 AA-T 44287 name the 60 and Cal-GETC with no units for the pattern; each page prints 'To earn this degree complete the major coursework listed here with “C” grades or higher and the following graduation requirements: 60 CSU transferable units; the Cal-GETC pattern; and 2.0 minimum overall CSU GPA.' (read 43136401325). The catalog's own Cal-GETC pattern, as its certificate prints it, totals 34-42 (read 43137395720). Transfer degrees only; set where the reading left the units empty."
+     "why": "S639: History AA-T 31788 and Communication Studies 2.0 AA-T 44287 name the 60 and Cal-GETC with no units for the pattern; each page prints 'To earn this degree complete the major coursework listed here with “C” grades or higher and the following graduation requirements: 60 CSU transferable units; the Cal-GETC pattern; and 2.0 minimum overall CSU GPA.' (read 43136401325). The catalog's own Cal-GETC pattern, as its certificate prints it, totals 34-42 (read 43137395720). Transfer degrees only, and only one whose reading holds the degree total (only_with degree_total): about 20 more Victor Valley transfer degrees print the same line and hold the major alone, and the figure would clear their 'major only' reading without being shown (S639 review). Set where the reading left the units empty."
     }
    ]
   }

@@ -647,8 +647,9 @@ def degree_verdict(prog: dict, degree: tuple[float, float], lo: float, hi: float
 # The term-length ratio of an hours range (Victor Valley, S639): a 16-week term against an 18-week one.
 TERM_RATIO = 8.0 / 9.0
 # The catalog prints hours to one decimal place ("96.0 - 108.0", "28-31.5"), so a printed low end
-# stands up to 0.05 from the exact eight ninths of its top; every Victor Valley range in the ratio
-# lands on it exactly (96 of 108, 296 of 333, 28 of 31.5).
+# stands up to 0.05 from the exact eight ninths of its top. The 22 Victor Valley ranges that pass
+# land on it exactly (96 of 108, 296 of 333, 28 of 31.5); 40910's 7.6 of 8.6 sits 0.044 off, the
+# one-decimal printing of 7.644, and fails on its sum (7.3).
 TERM_TOL = 0.05
 
 
@@ -666,16 +667,27 @@ def hours_meets_top(record: dict, stated: tuple[float, float], lo: float, hi: fl
     range that runs from a course that "need not be taken" which the record holds as required (De
     Anza). Only a record measured in hours, a range whose low end is within TERM_TOL of eight
     ninths of its top, every course and alternative carrying one figure (no units_max, no
-    repeats), and a sum of one figure equal to the range's top."""
+    repeats), every counted block a rule-all list or a choose-courses list with no printed
+    figure (no choose_units, fills_to, repeats, floors or option group, no open electives), and
+    a sum of one figure equal to the range's top."""
     if measure(record) != "hours" or not stated[1] - stated[0] > TOL:
         return False
     if abs(stated[0] - stated[1] * TERM_RATIO) > TERM_TOL:
         return False
     if abs(lo - hi) > TOL or abs(hi - stated[1]) > TOL:
         return False
+    # The sum must be the courses' own: no open electives added to it, and no block whose printed
+    # figure, fill, repeat or option group stands in for or moves the courses' sum (S639 review).
+    if _num((record.get("program") or {}).get("open_elective_units")):
+        return False
     for b in record.get("blocks") or []:
         if b.get("rule") == "recommended":
             continue
+        if b.get("rule") not in ("all", "choose_courses") or b.get("option_group") or b.get("fills_to") \
+                or b.get("repeats") or b.get("floors"):
+            return False
+        if b.get("rule") == "choose_courses" and (_span(b.get("stated")) or _num(b.get("minimum")) is None):
+            return False
         for c in b.get("courses") or []:
             for entry in [c] + alternatives(c):
                 u = _num(entry.get("units"))
