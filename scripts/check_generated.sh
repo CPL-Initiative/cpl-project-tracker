@@ -50,6 +50,10 @@ run "statewide catalog (Fact Sheet + Sierra)" "python3 fact-sheet/_build_statewi
 # the subject map, so a map edit staled it in the same commit that made it.
 run "discipline blanks worklist" "python3 kb/_build_discipline_blanks_worklist.py --check"
 run "orphan-parent worklist"   "python3 kb/_build_orphan_parent_worklist.py --check"
+# A stored credential title is resolved at read time through the applied renames (S641): the browser reads
+# kb/credential_title_moves.json, which the one resolver writes, so a new rename snapshot stales it here.
+run "credential title moves"    "python3 kb/credential_aliases.py --check"
+run "credential title resolver, one copy" "python3 tests/credential_title_resolver_single_source_test.py >/dev/null"
 # ⚠️ AND IT MISSED ONE MORE, WHICH SHIPPED (2026-09-18, #1618). prototype/skyview.html
 # is assembled by prototype/build_ccr_atlas.py, and step 4d2 of daily-dashboard.yml
 # re-runs that build whenever the unified-courses artifacts move. A session edited the
@@ -82,7 +86,7 @@ if [ "$fail" -ne 0 ]; then
   echo "Regenerate, re-run this, THEN push:"
   echo "  python3 kb/_build_docs_index.py && python3 kb/_build_dependency_map.py \\"
   echo "    && python3 kb/_build_cobi_admin_surface.py && python3 kb/_build_sierra_rule_defaults.py \\"
-  echo "    && python3 fact-sheet/_build_statewide_catalog.py"
+  echo "    && python3 fact-sheet/_build_statewide_catalog.py && python3 kb/credential_aliases.py"
   exit 1
 fi
 echo "All generated files are current."

@@ -466,6 +466,37 @@ jobs:
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
         run: python3 tests/commons_status_build_test.py
+      # S639's lesson 1 (#3111, a main-red lesson): the Commons readers ran only against the committed
+      # kb/status/commons.json, so a change to what its builder reads passed here and broke main at the
+      # next daily rebuild. Rebuild it from this tree, then run every test that reads it against the
+      # output. Here, not in the shards: the builder reads kb/receipts/, which their checkout omits.
+      # --out writes the file alone and leaves commons_history.json as committed.
+      - name: Commons status rebuilt from this tree, then every test that reads it
+        run: |
+          set -euo pipefail
+          python3 kb/_build_commons_status.py --out kb/status/commons.json --quiet
+          git diff --stat -- kb/status/commons.json
+          readers=$(grep -l 'commons\.json' tests/*.test.js tests/*_test.py || true)
+          echo "$(echo "$readers" | wc -w) tests read kb/status/commons.json"
+          [ -n "$readers" ] || { echo "::error::no test reads kb/status/commons.json; the reader search is wrong"; exit 1; }
+          failed=0
+          for f in $readers; do
+            case "$f" in *.py) cmd=python3 ;; *) cmd=node ;; esac
+            if ! "$cmd" "$f" > "$RUNNER_TEMP/reader.log" 2>&1; then
+              tail -40 "$RUNNER_TEMP/reader.log"
+              echo "::error::$f fails on kb/status/commons.json rebuilt from this tree"
+              failed=1
+            fi
+          done
+          # The steps after this one read the committed file, as before.
+          git checkout -- kb/status/commons.json
+          exit "$failed"
+      # The shared daily-dashboard group, the plan checks outside it, and the one rebuild after a lost
+      # push (COBIx #3110 findings 7 to 9), the push loop run in a scratch repo. PyYAML and git.
+      - name: Apply workflows share one group; a lost push rebuilds once
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/apply_concurrency_test.py
       # The Docket (#2963 step 2): the cases file carries no email and names its register row, and the
       # ruling reader acts only on an open case's offered choice.
       - name: Docket cases and the ruling reader
@@ -1161,6 +1192,21 @@ jobs:
       # `playwright install` itself fails here, so the next fix lands in scripts/install_browser.sh alone.
       - name: Browser install has one source
         run: python3 tests/browser_install_single_source_test.py
+      # A stored credential title resolves at read time through the applied renames (S641, #3148): the one resolver,
+      # its table for the browser (kb/credential_title_moves.json, stale when a snapshot lands unbuilt), and the
+      # guard against a second copy. Pure-stdlib python.
+      - name: Credential title moves table is current (kb/credential_aliases.py --check)
+        run: python3 kb/credential_aliases.py --check
+      - name: Credential title resolver (in force, live titles, chains, retired aliases, each reader)
+        run: python3 tests/credential_title_resolver_test.py
+      - name: Credential title resolver has one copy
+        run: python3 tests/credential_title_resolver_single_source_test.py
+      # Every mapped credential title still resolves in the live index. Red on main from a rename
+      # that retired titles until #3148, with no workflow running it (S640); run like the other Python tests here.
+      # Last in the job on purpose: a red step ends the job, so a red crosswalk test hides no
+      # other check (tests/apply_concurrency_test.py keeps it last).
+      - name: Partner crosswalk (the shared map has no stale credential titles)
+        run: python3 tests/partner_crosswalk_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

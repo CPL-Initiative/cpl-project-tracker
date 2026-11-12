@@ -78,8 +78,7 @@
     35.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -333,5 +332,6 @@
    "Description mentions 'future professional employment in the field of music' but names no specific career; careers left empty."
   ]
  },
- "extracted_run": "38843465712"
+ "extracted_run": 43154073220,
+ "read_run": "38843465712"
 }

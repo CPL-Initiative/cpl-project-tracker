@@ -12204,17 +12204,16 @@
     "_notes": "Local course CBE at Copper Mountain; basic ECG/arrhythmia content."
   },
   "Basic Automotive Air Conditioning Systems": {
-    "unified_title": "ASE A7 — Heating and Air Conditioning",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Heating and Air Conditioning (ASE A7 standards)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPCXS-BAAC-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local course-level CBE; not a named cert."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A7 — Heating and Air Conditioning' (conf 0.55)."
   },
   "Basic Business Communication Technology": {
     "unified_title": "Basic Business Communication Technology",
@@ -12879,17 +12878,16 @@
     "_notes": "Local kinesiology course; CPL type 'Other'."
   },
   "Brakes": {
-    "unified_title": "ASE A5 — Brakes",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Brakes (ASE A5 standards)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPCXS-B3-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Automotive brakes CBE; not specifically ASE A5."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A5 — Brakes' (conf 0.7)."
   },
   "Bridge Construction": {
     "unified_title": "Bridge Construction",
@@ -25357,17 +25355,16 @@
     "_notes": "Local college automotive course."
   },
   "Engine Performance": {
-    "unified_title": "ASE A8 — Engine Performance",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Engine Performance (ASE A8 standards)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPCBEN-EP-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Generic automotive course title; may overlap with ASE A8 but no code in title."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A8 — Engine Performance' (conf 0.7)."
   },
   "Engine Performance ASE A8": {
     "unified_title": "ASE A8 — Engine Performance",
@@ -25383,30 +25380,28 @@
     "_notes": "ASE subtest code preserved per Rule 8b."
   },
   "Engine Performance I AUTO 018 Cx": {
-    "unified_title": "ASE A8 — Engine Performance",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Engine Performance (ASE A8 standards)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPCxS-EPIA1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course; code stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A8 — Engine Performance' (conf 0.75)."
   },
   "Engine Performance II AUTO 029 Cx": {
-    "unified_title": "ASE A8 — Engine Performance",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Engine Performance (ASE A8 standards)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-12",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-12T06:30:30.645372+00:00",
+    "reviewed_by": "cer-s638@bot",
     "source_exhibit_ids": [
       "MAPCxS-EPIA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course; code stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ASE A8 — Engine Performance' (conf 0.75)."
   },
   "Engine and Related Systems": {
     "unified_title": "Engine and Related Systems",

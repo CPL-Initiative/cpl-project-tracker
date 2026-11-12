@@ -44,7 +44,11 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 # in-script V1–V4 gates.
 #
 # concurrency: daily-dashboard  →  serializes against the daily cron so
-# excel_to_dashboard.py never reads the three kb files mid-mutation.
+# excel_to_dashboard.py never reads the three kb files mid-mutation. The
+# group sits on the apply job: the `check` job reads only_plan against the
+# ruled plans on main outside it, so a mistyped plan fails in seconds instead
+# of after a wait in the group (COBIx #3110 finding 9). The apply job's own
+# checks run unchanged.
 
 on:
   workflow_dispatch:
@@ -55,13 +59,53 @@ on:
         default: ""
         type: string
 
-concurrency:
-  group: daily-dashboard
-  cancel-in-progress: false
-
 jobs:
-  apply:
+  check:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout the ruled plans on main
+        uses: actions/checkout@v7
+        with:
+          ref: main
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /kb/ruled_renames.py
+            /kb/cred_rename_plans/
+      # The plan ids come from kb/ruled_renames.py's own loader, the one the dry run reads.
+      - name: Check only_plan names a ruled plan
+        env:
+          ONLY_PLAN: ${{ inputs.only_plan }}
+        run: |
+          set -euo pipefail
+          if [ -z "${ONLY_PLAN:-}" ]; then
+            echo "only_plan is empty: the apply plans every rename."
+            exit 0
+          fi
+          python3 - <<'EOF'
+          import os, sys
+          sys.path.insert(0, "kb")
+          import ruled_renames
+          raw = os.environ["ONLY_PLAN"]
+          name = raw.strip()
+          if not name:
+              print("::error::only_plan is blank; name a plan_id, or leave it empty to apply every planned rename")
+              sys.exit(1)
+          ids = sorted(p["plan_id"] for p in ruled_renames.load(ruled_renames.PLANS_DIR))
+          if name not in ids:
+              print("::error::only_plan %r is not a plan_id under kb/cred_rename_plans/ on main (there: %s)" % (name, ", ".join(ids)))
+              sys.exit(1)
+          print("only_plan OK: %s" % name)
+          EOF
+
+  apply:
+    needs: check
+    runs-on: ubuntu-latest
+    concurrency:
+      group: daily-dashboard
+      cancel-in-progress: false
     permissions:
       contents: write
 
@@ -177,6 +221,14 @@ jobs:
           python3 kb/_build_remint_blast_radius.py
           python3 kb/_build_ccr_cpl.py
 
+      # kb/credential_title_moves.json, the browser's read of the snapshots (S641, #3148): its own step, so a
+      # failure above never skips it, whenever the apply wrote its snapshot. Same continue-on-error reasoning.
+      - name: Rebuild the credential title moves table
+        id: moves
+        if: always() && steps.json.outcome == 'success'
+        continue-on-error: true
+        run: python3 kb/credential_aliases.py
+
       # ── Step 5: commit + push ─────────────────────────────────────
       - name: Commit + push
         id: commit
@@ -197,6 +249,7 @@ jobs:
                   kb/credential_review_overlay.json \
                   kb/cred_rename_dryrun/ \
                   kb/cred_rename_out/ \
+                  kb/credential_title_moves.json \
                   kb/remint_blast_worklist.json \
                   prototype/ccr_remint_blast.json \
                   prototype/ccr_cpl.json
@@ -230,9 +283,9 @@ jobs:
           exit 1
 
       - name: Fail when the derived files were not rebuilt
-        if: steps.rebuild.outcome == 'failure'
+        if: steps.rebuild.outcome == 'failure' || steps.moves.outcome == 'failure'
         run: |
-          echo "::error::kb/_build_remint_blast_radius.py or kb/_build_ccr_cpl.py failed; the kb files committed. Rebuild them in a PR."
+          echo "::error::kb/_build_remint_blast_radius.py, kb/_build_ccr_cpl.py or kb/credential_aliases.py failed; the kb files committed. Rebuild them in a PR."
           exit 1
 
       # The apply did not land on main (step 3b failed, or the commit or push

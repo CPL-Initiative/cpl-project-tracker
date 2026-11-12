@@ -923,6 +923,55 @@ held_got, held_notes = R.reconcile(held, bcc_asl, BCC, asl["award"], steps=R.loa
 check("a filed general education figure is not overwritten, and no step fires beside it",
       held_got["program"]["ge_units"] == {"min": 21, "max": 21} and held_notes == [])
 
+print("Rio Hondo's transfer degrees (S639; college page reads 43137946308 and 43139467468; the areas summed, Sam's count extended)")
+RH = "Rio Hondo College"
+# Sociology AA-T 30648 (node 24312), as the capture joins it (read 43137946308).
+rh_text = ("SOCIOLOGY - Associate in Arts for Transfer\nRequirements\nRequired Courses\nUnits: 6.0\n"
+           "LIST B: Choose ONE of the following courses or one not used above:\nUnits: 3.0\nSOC 105\n"
+           "Cal-GETC Pattern (units will vary)\nTransferable Electives as needed to reach 60 transferable units\n"
+           "DEGREE TOTAL 60 units\nTotal : 19.0\nSummary\n"
+           "Completion of the California General Education Transfer Curriculum (Cal-GETC).")
+
+
+def _rh(cn):
+    """The filed record as the reading left it: a reconcile run's notes undone (each names what it was)."""
+    with open(os.path.join(ROOT, "kb/program_requirements_college/rio_hondo/records/%s.json" % cn)) as fh:
+        filed = json.load(fh)
+    rec = json.loads(json.dumps(filed["record"]))
+    for n in reversed(filed.get("reconciled") or []):
+        rec["program"][n["field"]] = n["was"]
+    return dict(filed, record=rec)
+
+
+rh_filed = _rh("30648")
+rh = rh_filed["record"]
+got, got_notes = R.reconcile(rh, rh_text, RH, rh_filed["award"], steps=R.load_steps())
+check("a transfer degree naming 'Cal-GETC Pattern (units will vary)' takes the catalog's Cal-GETC figure",
+      got["program"]["ge_units"] == {"min": 34, "max": 34} and got_notes and got_notes[0]["field"] == "ge_units")
+check("the note cites Rio Hondo's own catalog", any("SUMMED FROM THE AREAS" in n["words"] for n in got_notes))
+closed = [{"code": c["code"], "units": None} for b in rh["blocks"] for c in b["courses"]]
+check("Sociology AA-T reads equal: 19 + 34 with transferable electives to 60",
+      S.score(got, closed, rh_text, rh_filed["award"])["arithmetic"]["pass"]
+      and not S.score(rh, closed, rh_text, rh_filed["award"])["arithmetic"]["pass"])
+# Social Work 33785: the state file says A.A., its page is the AA-T's (shared with 39982).
+sw = _rh("33785")
+check("a local A.A. read from a transfer page takes none",
+      R.reconcile(sw["record"], rh_text, RH, sw["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes none", R.reconcile(rh, rh_text, RH, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a page without the line takes none",
+      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", ""), RH, rh_filed["award"],
+                  steps=R.load_steps())[1] == [])
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(rh["program"], ge_units={"min": 37, "max": 39}), "blocks": rh["blocks"]}, rh_text, RH,
+                  rh_filed["award"], steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+# Negative pages (review of #3136): the pattern's two halves, each alone.
+check("a page printing 'Cal-GETC Pattern' without '(units will vary)' takes none",
+      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Cal-GETC Pattern"), RH, rh_filed["award"],
+                  steps=R.load_steps())[1] == [])
+check("a page whose 'units will vary' sits on an electives line, with no Cal-GETC line, takes none",
+      R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Transferable Electives (units will vary)")
+                  .replace("(Cal-GETC)", ""), RH, rh_filed["award"], steps=R.load_steps())[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T05:59:31Z",
+ "written_at": "2026-11-12T06:40:34Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,9 +98,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2681,
+     "n": 2686,
      "of": 5716,
-     "words": "titles carry a review stamp (1,227 a person's, 1,454 a cohort's); 2,742 credentials, 2,280 of 3,050 records stamped",
+     "words": "titles carry a review stamp (1,227 a person's, 1,459 a cohort's); 2,742 credentials, 2,280 of 3,050 records stamped",
      "open": "#exhibits/list"
     },
     {
@@ -158,25 +158,25 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-12T00:24:16Z",
+    "at": "2026-11-12T06:36:25Z",
     "every_hours": 24
    },
    "facts": {
     "titles": 5716,
-    "stamped": 2681,
+    "stamped": 2686,
     "person": 1227,
-    "cohort": 1454,
+    "cohort": 1459,
     "credentials": 2742,
     "confirmed": 1227,
     "records": 3050,
     "records_stamped": 2280,
     "saved_at": "2026-11-11T15:43:03Z",
-    "fold_at": "2026-11-12T00:24:16Z",
+    "fold_at": "2026-11-12T06:36:25Z",
     "map_titles": 5087,
     "unclassified": 180,
     "left_map": 809,
-    "below_80": 1122,
-    "below_60": 236,
+    "below_80": 1117,
+    "below_60": 235,
     "no_subject": 362
    },
    "sources": [
@@ -275,7 +275,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T05:56:45+00:00",
+    "at": "2026-11-12T06:38:25+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -319,7 +319,7 @@
     {
      "n": 461,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,960 of 9,433 articulations",
+     "words": "wordings resolve to a settled reference (411 by a rung 1 to 4 rule, 50 more by a curator); 5,930 of 9,377 articulations",
      "open": "#cr-reference/list"
     },
     {
@@ -344,7 +344,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 36,
+     "n": 37,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "carry": "unsure",
@@ -363,23 +363,23 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T02:30:51Z",
+    "at": "2026-11-12T05:59:34Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1933,
-    "rows": 9433,
+    "rows": 9377,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 461,
-    "settled_rows": 5960,
+    "settled_rows": 5930,
     "rule_wordings": 411,
-    "rule_rows": 4915,
+    "rule_rows": 4885,
     "rule_groups": 226,
     "curator_wordings": 97,
     "curator_only": 50,
@@ -387,31 +387,31 @@
     "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1883,
-    "unsettled_rows": 3473,
+    "unsettled_rows": 3447,
     "head": {
      "50": {
-      "settled": 46,
+      "settled": 47,
       "of": 50,
-      "rows": 4649
+      "rows": 4642
      },
      "100": {
-      "settled": 78,
+      "settled": 77,
       "of": 100,
-      "rows": 5546
+      "rows": 5511
      },
      "250": {
       "settled": 153,
       "of": 250,
-      "rows": 6560
+      "rows": 6510
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 36,
+    "names_to_check": 37,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 297
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -487,7 +487,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T05:54:29Z",
+    "at": "2026-11-12T06:36:23Z",
     "every_hours": 24
    },
    "facts": {
@@ -683,7 +683,7 @@
      {
       "ref": "cr",
       "title": "Common CR Reference",
-      "n": 36,
+      "n": 37,
       "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
       "owner": "a curator",
       "open": "#cr-reference/names"
@@ -987,13 +987,14 @@
   {
    "kind": "another-look",
    "n": 6,
-   "of": 12,
+   "of": 13,
    "open": "#exhibits/another-look/batch",
    "title": "Another look at 6 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
-    "ase"
+    "ase",
+    "fold"
    ],
    "cards": [
     {
@@ -1011,12 +1012,13 @@
      ]
     },
     {
-     "id": "5b3807a15d88",
+     "id": "a4fb41903c42",
      "current": "Brakes (ASE A5 standards)",
      "keys": [
       "_UNCLASSIFIED::AUTO 61A-Automotive Brake Systems-Credit by Exam",
       "_UNCLASSIFIED::Automotive Brake Systems",
       "_UNCLASSIFIED::Automotive Brake Systems AUTO 036 Cx",
+      "_UNCLASSIFIED::Brakes",
       "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
       "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
       "_UNCLASSIFIED::Noncredit for AUTO A5"
@@ -1032,23 +1034,24 @@
      ]
     },
     {
-     "id": "54f58e3cd824",
+     "id": "2a47466ec9ca",
      "current": "Engine Performance (ASE A8 standards)",
      "keys": [
+      "_UNCLASSIFIED::Engine Performance",
       "_UNCLASSIFIED::Engine Performance - Credit by Exam (ATEC 23 )",
+      "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
       "_UNCLASSIFIED::Noncredit for AUTO A8"
      ]
     },
     {
-     "id": "b0012636666d",
-     "current": "Heating and Air Conditioning (ASE A7 standards)",
+     "id": "e3f2df4e8376",
+     "current": "Engine Performance (ASE A8 standards)",
      "keys": [
-      "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-      "_UNCLASSIFIED::Noncredit for AUTO A7"
+      "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx"
      ]
     }
    ],
-   "at": "2026-11-12T05:58:58Z"
+   "at": "2026-11-12T06:40:09Z"
   },
   {
    "kind": "job",
@@ -1064,13 +1067,14 @@
  "next_batch": {
   "kind": "another-look",
   "n": 6,
-  "of": 12,
+  "of": 13,
   "open": "#exhibits/another-look/batch",
   "title": "Another look at 6 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
-   "ase"
+   "ase",
+   "fold"
   ],
   "cards": [
    {
@@ -1088,12 +1092,13 @@
     ]
    },
    {
-    "id": "5b3807a15d88",
+    "id": "a4fb41903c42",
     "current": "Brakes (ASE A5 standards)",
     "keys": [
      "_UNCLASSIFIED::AUTO 61A-Automotive Brake Systems-Credit by Exam",
      "_UNCLASSIFIED::Automotive Brake Systems",
      "_UNCLASSIFIED::Automotive Brake Systems AUTO 036 Cx",
+     "_UNCLASSIFIED::Brakes",
      "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
      "_UNCLASSIFIED::Credit by Exam AUTO 106 Automotive Brake System",
      "_UNCLASSIFIED::Noncredit for AUTO A5"
@@ -1109,22 +1114,23 @@
     ]
    },
    {
-    "id": "54f58e3cd824",
+    "id": "2a47466ec9ca",
     "current": "Engine Performance (ASE A8 standards)",
     "keys": [
+     "_UNCLASSIFIED::Engine Performance",
      "_UNCLASSIFIED::Engine Performance - Credit by Exam (ATEC 23 )",
+     "_UNCLASSIFIED::Engine Performance I AUTO 018 Cx",
      "_UNCLASSIFIED::Noncredit for AUTO A8"
     ]
    },
    {
-    "id": "b0012636666d",
-    "current": "Heating and Air Conditioning (ASE A7 standards)",
+    "id": "e3f2df4e8376",
+    "current": "Engine Performance (ASE A8 standards)",
     "keys": [
-     "_UNCLASSIFIED::Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-     "_UNCLASSIFIED::Noncredit for AUTO A7"
+     "_UNCLASSIFIED::Engine Performance II AUTO 029 Cx"
     ]
    }
   ],
-  "at": "2026-11-12T05:58:58Z"
+  "at": "2026-11-12T06:40:09Z"
  }
 }

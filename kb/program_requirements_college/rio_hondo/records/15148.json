@@ -80,8 +80,7 @@
     24.0
    ],
    "against": "program",
-   "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -296,5 +295,6 @@
    "Closed-list titles differ from catalog titles for some courses (e.g., KIN 131 'Functional Anatomy of Movement', KINA 130 'Lifelong Fitness Center', DANC 167 'Fitness Groove')."
   ]
  },
- "extracted_run": "38843465712"
+ "extracted_run": 43154073220,
+ "read_run": "38843465712"
 }
