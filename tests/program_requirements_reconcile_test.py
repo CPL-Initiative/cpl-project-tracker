@@ -320,6 +320,54 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("Berkeley City's local degrees (S639; college page reads 43138963119 and 43140339800)")
+BCC = "Berkeley City College"
+
+
+def _bcc(cn):
+    with open(os.path.join(ROOT, "kb/program_requirements_college/berkeley_city/records/%s.json" % cn)) as fh:
+        return json.load(fh)
+
+
+def _bcc_closed(filed):
+    return [{"code": c["code"], "units": None} for b in filed["record"]["blocks"] for c in b["courses"]]
+
+
+# The pages' own lines, as cq_view joins them (read 43138963119): ASL A.A. 01101 (node 39977), Fundamentals of Data
+# Science A.S. 45941 (node 41937) and English AA-T 31138 (node 40014).
+bcc_asl = ("American Sign Language - A.A. Degree\nRequirements\nRequired Courses\n30.0\nASL 050\n"
+           "Major Requirements\n30\nGeneral Education and Electives\n30\nTotal Units\n60\nSummary")
+bcc_ds = ("Fundamentals of Data Science - A.S. Degree\nMajor Requirements\n36-40\n"
+          "General Education and Elective Units\n20-24\nTotal Units\n60\nSummary")
+bcc_en = ("English - AA-T Degree\nMajor Requirements\n22\nGeneral Education (Cal-GETC) and Elective Courses\n38\n"
+          "Total Units\n60\nSummary\nThe California General Education Transfer Curriculum (Cal-GETC)")
+asl, ds, en = _bcc("01101"), _bcc("45941"), _bcc("31138")
+got, got_notes = R.reconcile(asl["record"], bcc_asl, BCC, asl["award"], steps=R.load_steps())
+check("a local A.A. printing 'General Education and Electives 30' takes the catalog's 18 and the electives rule",
+      got["program"]["ge_units"] == {"min": 18, "max": 18} and got["program"].get("electives_fill_degree") is True)
+check("the note cites the Associate Degree Requirements tab",
+      any("at least 18 units in general education" in n["words"] for n in got_notes))
+check("ASL A.A. reads equal: 30 + 18, electives to 60",
+      S.score(got, _bcc_closed(asl), bcc_asl, asl["award"])["arithmetic"]["pass"]
+      and not S.score(asl["record"], _bcc_closed(asl), bcc_asl, asl["award"])["arithmetic"]["pass"])
+ds_got = R.reconcile(ds["record"], bcc_ds, BCC, ds["award"], steps=R.load_steps())[0]
+check("the 'General Education and Elective Units 20-24' spelling reads equal too",
+      S.score(ds_got, _bcc_closed(ds), bcc_ds, ds["award"])["arithmetic"]["pass"])
+check("the combined figure is never read as general education",
+      got["program"]["ge_units"] != {"min": 30, "max": 30} and ds_got["program"]["ge_units"] == {"min": 18, "max": 18})
+check("a transfer degree takes neither (its line names Cal-GETC, and the gate is local)",
+      R.reconcile(en["record"], bcc_en, BCC, en["award"], steps=R.load_steps())[1] == []
+      and R.reconcile(en["record"], bcc_asl, BCC, en["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes neither",
+      R.reconcile(asl["record"], bcc_asl, BCC, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+check("a page without the combined line takes neither",
+      R.reconcile(asl["record"], bcc_asl.replace("General Education and Electives", "Electives"), BCC, asl["award"],
+                  steps=R.load_steps())[1] == [])
+# 16645 Multimedia Arts - Animation and Game Design A.A.: the reading filed the page's 'General Education and Elective Courses 21' as ge_units.
+check("a figure the reading filed stands (16645)",
+      R.reconcile(_bcc("16645")["record"], bcc_asl, BCC, "A.A. Degree",
+                  steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 21, "max": 21})
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
