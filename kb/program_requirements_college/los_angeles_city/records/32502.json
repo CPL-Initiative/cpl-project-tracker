@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "PSYCHOLOGY",
  "award": "A.A- T Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=173",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=172",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13279,
+  "input_tokens": 13199,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13279,
-    "output_tokens": 2330,
+    "input_tokens": 13199,
+    "output_tokens": 2379,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2330,
+  "output_tokens": 2379,
   "output_tokens_details": {
-   "thinking_tokens": 746
+   "thinking_tokens": 721
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09972,
- "ms": 18899,
- "seconds": 19.2,
+ "cost_usd": 0.10038,
+ "ms": 18655,
+ "seconds": 18.8,
  "parts": null,
  "error": null,
  "score": {
@@ -61,30 +61,54 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     52.0,
+     55.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "transfer": true,
+    "fill": [
+     5.0,
+     8.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -93,37 +117,40 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS (Psychology AA-T; the section's title heading falls on the preceding catalog page, not in the text)",
+   "section_heading": "Psychology Associate in Arts (AA-T) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "CalGETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "Acquire a knowledge base in psychology.",
+    "Learn scientific inquiry and critical thinking skills.",
+    "Demonstrate an understanding of ethical and social responsibility in a diverse world.",
+    "Learn to communicate orally and verbally.",
+    "Demonstrate professional development skills and behaviors."
+   ],
    "careers": []
   },
   "blocks": [
@@ -312,13 +339,38 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The text starts mid-section: only the Psychology AA-T program requirements appear on page 173. The section title, description, major/total units, GE pattern statement and program learning outcomes are presumably on the preceding page (172) and are not in the text, so total_units, ge_pattern, outcomes and careers are left empty/null.",
-   "The ADT boilerplate (CalGETC 34 units, 60-unit total) and outcomes visible on this page belong to the Social Work and Human Services AA-T section and were not applied to Psychology.",
-   "The statistics requirement in the Major Core is recorded as one choice: STAT C1000 or STAT C1000E or SOC 125 or BUS 015 or MATH 229.",
-   "BUS 015 as printed corresponds to closed-list BUS 15.",
-   "List C also allows 'ANY COURSE FROM \"LIST B\" NOT ALREADY TAKEN' (printed after PSYCH 075 with OR); those List B courses are not repeated in the List C block.",
-   "List C stated as 3 units though BIOLOGY 003 (4) and BIOLOGY 006 (5) exceed it; Major Core printed as 9-10 units."
+   "Header prints 'Major Units: 18-21 Total Units: Minimum of 60'; 60 recorded as degree_total although printed as a minimum.",
+   "ge_units 34 taken from the ADT boilerplate 'CalGETC ... (34 semester/45 quarter units)'.",
+   "List C ends with 'OR ANY COURSE FROM \"LIST B\" NOT ALREADY TAKEN'; List B courses not repeated in List C.",
+   "List C states 3 units although BIOLOGY 003 (4) and BIOLOGY 006 (5) carry more units.",
+   "Catalog prints padded codes (BUS 015, PSYCH 074, BIOLOGY 003, etc.) matching closed-list BUS 15, PSYCH 74, BIOLOGY 3, etc.",
+   "PSYCH 043 printed as 'PRINCIPLES OF GROUP DYNAMICS I'.",
+   "Statistics row: STAT C1000 or STAT C1000E or SOC 125 or BUS 015 or MATH 229 recorded as one choice with alternatives."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "d53a289e0ea031b0",
+ "source_codes": [
+  "BIOLOGY3",
+  "BIOLOGY6",
+  "BUS15",
+  "MATH229",
+  "POLSC1000",
+  "PSYCC1000",
+  "PSYCH13",
+  "PSYCH14",
+  "PSYCH2",
+  "PSYCH3",
+  "PSYCH41",
+  "PSYCH43",
+  "PSYCH45",
+  "PSYCH52",
+  "PSYCH66",
+  "PSYCH74",
+  "PSYCH75",
+  "SOC125",
+  "STATC1000",
+  "STATC1000E"
+ ],
+ "source_coverage": 1.0
 }

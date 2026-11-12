@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Mathematics",
  "award": "A.S. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=153",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=156",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11558,
+  "input_tokens": 12169,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11558,
-    "output_tokens": 826,
+    "input_tokens": 12169,
+    "output_tokens": 650,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,36 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 826,
+  "output_tokens": 650,
   "output_tokens_details": {
-   "thinking_tokens": 228
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06275,
- "ms": 7389,
- "seconds": 7.9,
+ "cost_usd": 0.06168,
+ "ms": 6202,
+ "seconds": 6.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 6,
-   "share": 0.0,
-   "missing": [
-    "MATH261",
-    "MATH261S",
-    "MATH262",
-    "MATH263",
-    "MATH270",
-    "MATH275"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -68,30 +61,54 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     39.0,
+     48.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     12.0,
+     21.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 2,
    "courses": 0,
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
@@ -100,20 +117,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "Not found: the text holds only the Liberal Arts: Natural and Applied Sciences and Mathematics AA and Biology AS-T sections",
+   "section_heading": "Mathematics Associate of Science (AS) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -122,50 +136,114 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
+    "min": 18,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Solve, interpret, and analyze mathematical concepts/graphs.",
+    "Apply mathematical problem-solving techniques."
+   ],
+   "careers": [],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES (21 UNITS)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 21,
+     "max": 21
+    },
+    "courses": [
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "MATH 261S",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Degree total recorded from 'Total Units: Minimum of 60' printed in the A.S. section header; it is a minimum rather than an exact total.",
+   "No general education pattern or GE units are named in the A.S. section.",
+   "The A.S.-T (Mathematics 2.0) section prints the same outcomes and a similar core plus List A; only the A.S. section was read.",
+   "MATH 260/260S are noted as prerequisites for MATH 261, not as requirements."
+  ]
+ },
+ "extracted_run": "43212072618",
+ "source_sha": "0c4fc51b23a03986",
+ "source_codes": [
+  "MATH261",
+  "MATH261S",
+  "MATH262",
+  "MATH263",
+  "MATH270",
+  "MATH275"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
     "min": null,
     "max": null
    },
-   "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "now": {
+    "min": 18,
+    "max": 27
+   },
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58))"
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "MATH 261",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA and Biology AS-T sections"
-   },
-   {
-    "code": "MATH 261S",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 262",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 263",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 270",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA section"
-   },
-   {
-    "code": "MATH 275",
-    "why": "Mathematics A.S. section not in the text; listed only in the Liberal Arts AA section"
-   }
-  ],
-  "notes": [
-   "The supplied catalog pages (153-155) contain the Liberal Arts: Natural and Applied Sciences and Mathematics AA and the Biology AS-T. They do not contain a Mathematics A.S. section.",
-   "Nothing was recorded from those other programs.",
-   "The Mathematics A.S. section is probably on different pages of the 2026-27 catalog. A reviewer should supply the correct pages."
-  ]
- },
- "extracted_run": "39006380342"
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
+  }
+ ]
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Creative Writing",
  "award": "A.A. Degree",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=117",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=116",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 13033,
+  "input_tokens": 12736,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 13033,
-    "output_tokens": 1793,
+    "input_tokens": 12736,
+    "output_tokens": 2103,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1793,
+  "output_tokens": 2103,
   "output_tokens_details": {
-   "thinking_tokens": 493
+   "thinking_tokens": 790
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08799,
- "ms": 15207,
- "seconds": 15.5,
+ "cost_usd": 0.093,
+ "ms": 16799,
+ "seconds": 17.0,
  "parts": null,
  "error": null,
  "score": {
@@ -61,52 +61,73 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     27.0,
     27.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     45.0,
+     54.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     18.0,
+     27.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     6.0,
+     15.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 11,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "PROGRAM REQUIREMENTS (Creative Writing A.A. Degree, continued at top of page 117)",
+   "section_heading": "Creative Writing Associate of Arts (AA) Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 27
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -115,20 +136,38 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 27
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Demonstrate familiarity of the major structures of Creative Writing, including Narrative, Character, Language, and Voice.",
+    "Demonstrate effective revision and self-editing techniques.",
+    "Demonstrate a complete piece of Creative Writing, whether it be a chapter of a novel-length work, a short story, or a complete poem.",
+    "Participate in collaborative editing processes through workshop and learn the importance of feedback within the field."
+   ],
+   "careers": [
+    "advertising copy writer",
+    "bookstore manager",
+    "continuity writer",
+    "corporate communications director",
+    "lawyer",
+    "librarian",
+    "publication editor",
+    "publicity director",
+    "publishing agent",
+    "teacher/professor",
+    "writer"
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
-    "name": "MAJOR CORE COURSES (18 UNITS)",
+    "name": "MAJOR CORE COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -188,7 +227,7 @@
     ]
    },
    {
-    "name": "MAJOR ELECTIVE COURSES (9 UNITS)",
+    "name": "MAJOR ELECTIVE COURSES",
     "rule": "choose_units",
     "minimum": 9,
     "option_group": null,
@@ -259,12 +298,49 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The excerpt begins mid-section on page 117: the A.A. degree's heading, description, Major Units total and outcomes appear to be on page 116, which is not in the text. Only its PROGRAM REQUIREMENTS (Major Core 18 units, Major Electives 9 units) are present; these were read as the A.A. because the 21-unit Certificate of Achievement section follows with its own 15+6 unit requirements.",
-   "total_units left null: no Major Units figure for the A.A. is printed in the provided text (blocks sum to 27 but that is not stated).",
-   "Program outcomes and careers printed on page 117 belong to the Creative Writing Certificate of Achievement section, not the A.A.; they were not recorded. Reviewer should check page 116 for the A.A.'s own outcomes, careers and total.",
-   "CINEMA 003 and ENGLISH 078 are printed with leading zeros; treated as the closed list's CINEMA 3 and ENGLISH 78 (not catalog additions).",
-   "ENGL C1000 is printed as '(FORMERLY ENGLISH 101)'."
+   "Catalog prints CINEMA 003 and ENGLISH 078; treated as the closed list's CINEMA 3 and ENGLISH 78 (leading zero only), so not marked as catalog additions.",
+   "degree_total 60 taken from the award header 'Total Units: Minimum of 60'; it is printed as a minimum. No GE pattern or GE units are named in this section.",
+   "The section spans pages 116-117; the requirements continue on page 117 after the outcomes. The adjacent Creative Writing Certificate of Achievement (21 units) and English AA sections were not used."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "490b317466e83c71",
+ "source_codes": [
+  "CINEMA3",
+  "ENGLC1000",
+  "ENGLISH102",
+  "ENGLISH124",
+  "ENGLISH127",
+  "ENGLISH128",
+  "ENGLISH211",
+  "ENGLISH212",
+  "ENGLISH214",
+  "ENGLISH218",
+  "ENGLISH227",
+  "ENGLISH240",
+  "ENGLISH270",
+  "ENGLISH78",
+  "THEATER100"
+ ],
+ "source_coverage": 1.0,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 27
+   },
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: Los Angeles City A.A. and A.S. headings: 'Major Units: 39 T otal Units: Minimum of 60' and no general education line (Business Administration 02718; college page read 43134671935); the catalog's Associate of Arts (AA) and Associate of Science (AS) requirements: 'The following is required for all AA and AS degrees: ... 4. Completion of 18-27 units in the LACCD General Education Plan (depending on units required for the major)' (college page read 43134671935, pdf page 58))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "T otal Units: Minimum of 60 (https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=58: The heading's own 'T otal Units: Minimum of 60' and the AA and AS requirements' '1. Minimum of 60 semester units in a selected curriculum' (college page read 43134671935): the 60 is a floor that electives make up. A degree whose heading prints another total keeps it as printed)"
+  }
+ ]
 }

@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "Beginning ESL & Civics with Technology I",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=236",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=235",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12647,
+  "input_tokens": 12481,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12647,
-    "output_tokens": 1190,
+    "input_tokens": 12481,
+    "output_tokens": 1127,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1190,
+  "output_tokens": 1127,
   "output_tokens_details": {
-   "thinking_tokens": 345
+   "thinking_tokens": 291
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07439,
- "ms": 10036,
- "seconds": 10.3,
+ "cost_usd": 0.07246,
+ "ms": 9652,
+ "seconds": 9.8,
  "parts": null,
  "error": null,
  "score": {
@@ -199,13 +199,21 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Award is measured in hours: 'Total Lecture Hrs: 252'; course figures are hours from the HRS column.",
-   "Required hours (108+18+54+18) plus one 54-hour elective equal the stated 252 hours.",
-   "Description says 'This certificate includes 4 courses', but the section lists 4 required courses plus one elective (5 courses); reviewer may check.",
-   "Outcome 3 prints 'Can -vas' split across a line break; recorded as 'Canvas'.",
-   "The neighboring Technology II section repeats the same description and outcomes; only the Technology I section was read."
+   "Program is counted in hours (Total Lecture Hrs: 252); all units fields hold hours.",
+   "Description says the certificate 'includes 4 courses', but the requirements list 4 required courses plus 1 elective chosen from 2; required hours (198) plus one 54-hour elective equal the printed 252 total.",
+   "'Can -vas' in outcome 3 is a line-break hyphenation and was read as 'Canvas'.",
+   "The adjacent Beginning ESL & Civics with Technology II section prints identical outcomes; only the Technology I section was read."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "3e6df868c18658df",
+ "source_codes": [
+  "ESLCVCS31CE",
+  "ESLNC48CE",
+  "ESLNC50CE",
+  "VOCED128CE",
+  "VOCED129CE",
+  "VOCED290CE"
+ ],
+ "source_coverage": 1.0
 }

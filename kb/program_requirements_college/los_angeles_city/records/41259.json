@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "INTERNATIONAL MARKETING PROFESSIONAL",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=228",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=227",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7772,
+  "input_tokens": 7719,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7772,
-    "output_tokens": 717,
+    "input_tokens": 7719,
+    "output_tokens": 898,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 717,
+  "output_tokens": 898,
   "output_tokens_details": {
-   "thinking_tokens": 151
+   "thinking_tokens": 309
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04543,
- "ms": 6023,
- "seconds": 6.4,
+ "cost_usd": 0.04884,
+ "ms": 8396,
+ "seconds": 8.6,
  "parts": null,
  "error": null,
  "score": {
@@ -168,10 +168,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Noncredit certificate counted in hours: 'Total Lecture Hrs: 90' recorded as total_units; course hours (36, 36, 18) sum to 90.",
-   "Career entry 'international marketing' taken from the description phrase 'opportunities to work in the field of international marketing'.",
-   "Catalog prints the VOC ED 538CE title as 'GLOBAL MARKETING: STRATEGY, PLANNING', slightly different from the state file title."
+   "Noncredit certificate counted in lecture hours; total_units is the printed 'Total Lecture Hrs: 90', which matches the sum of the listed course hours (36+36+18).",
+   "Career entry 'international marketing' is read from the description's 'opportunities to work in the field of international marketing' (printed hyphenated across a line break as 'interna-tional').",
+   "The page continues with other noncredit certificates (Interpersonal Skills for the Workplace, Job Readiness, Law and Ethics in Business); those were not read for this record."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "d06546c7a331c595",
+ "source_codes": [
+  "VOCED536CE",
+  "VOCED537CE",
+  "VOCED538CE"
+ ],
+ "source_coverage": 1.0
 }

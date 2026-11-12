@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "HOSPITALITY",
  "award": "Noncredit program",
- "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=242",
+ "source_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf#page=241",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7885,
+  "input_tokens": 7235,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7885,
-    "output_tokens": 1477,
+    "input_tokens": 7235,
+    "output_tokens": 1298,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1477,
+  "output_tokens": 1298,
   "output_tokens_details": {
-   "thinking_tokens": 461
+   "thinking_tokens": 352
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06108,
- "ms": 12825,
- "seconds": 13.2,
+ "cost_usd": 0.0549,
+ "ms": 10457,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
@@ -89,7 +89,7 @@
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 1,
    "not_verbatim": [],
    "pass": true
   },
@@ -127,8 +127,7 @@
     "Prepare for American Hotel and Lodging Association certifications."
    ],
    "careers": [
-    "entry-level hotel employee",
-    "hospitality sector"
+    "entry-level hotel employee"
    ]
   },
   "blocks": [
@@ -211,12 +210,25 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total is stated as 'Total Lecture Hrs: 162'; the nine required courses at 18 hours each sum to 162, consistent with the stated total.",
-   "The program description calls it the 'Hospitality Skills certificate of completion' while the heading reads 'Hospitality Certificate of Completion'.",
-   "The requirements list at the top of page 242 (VOC ED 244CE, 245CE, 250CE, 239CE, 230CE plus an elective choice of VOC ED 079CE, BSICSKL 006CE, VOC ED 238CE) belongs to a preceding program whose heading is on the previous page; it was not used for this award.",
-   "Course titles in the catalog's requirements list are abbreviated (e.g., 'BANQUET SERVER SKILLS') relative to the closed list titles; codes match.",
-   "Careers: 'entry-level hotel employee' and 'hospitality sector' are taken from the program description; reviewer may confirm whether 'hospitality sector' should count as a career field."
+   "Noncredit certificate counted in hours: 'Total Lecture Hrs: 162' recorded as total_units; the nine required courses at 18 hours each sum to 162.",
+   "The description calls the award the 'Hospitality Skills certificate of completion' while the heading reads 'Hospitality'.",
+   "The outcome 'Perform entry-level level job functions...' is copied as printed, including the repeated word 'level'.",
+   "The following section (Introduction to Hospitality Supervision, VOC ED 930CE and VOC ED 441CE) belongs to a different certificate and was not recorded.",
+   "Several catalog course titles are shortened versions of the closed-list titles (e.g., 'BANQUET SERVER SKILLS' vs 'BANQUET SERVER SKILLS TRAINING'); codes match."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": "43212072618",
+ "source_sha": "27727a0f15f36565",
+ "source_codes": [
+  "VOCED242CE",
+  "VOCED243CE",
+  "VOCED244CE",
+  "VOCED245CE",
+  "VOCED246CE",
+  "VOCED247CE",
+  "VOCED248CE",
+  "VOCED249CE",
+  "VOCED250CE"
+ ],
+ "source_coverage": 1.0
 }
