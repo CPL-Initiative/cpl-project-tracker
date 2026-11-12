@@ -1,6 +1,6 @@
 {
-  "_generated": "2026-11-12T12:56:11.978Z",
-  "total": 89,
+  "_generated": "2026-11-12T13:01:43.631Z",
+  "total": 271,
   "broken": 0,
   "results": [
     {
@@ -24,11 +24,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Childe%20Hassam%20-%20Isle%20Of%20Shoals%20-%2066.2404%20-%20Hirshhorn%20Museum%20and%20Sculpture%20Garden.jpg?width=1600",
-      "title": "File:Childe Hassam - Isle Of Shoals - 66.2404 - Hirshhorn Museum and Sculpture Garden.jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%2C%20The%20White%20Horse%2C%201818-1819%2C%20NGA%201146.jpg?width=1600",
       "title": "File:John Constable, The White Horse, 1818-1819, NGA 1146.jpg",
       "ok": true
@@ -49,53 +44,13 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ansel%20Adams%20-%20National%20Archives%2079-AA-F13.jpg?width=1600",
-      "title": "File:Ansel Adams - National Archives 79-AA-F13.jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/1994-04-05%20-%20Les%20Coquelicots%20-%20Claude%20Monet.jpg?width=1600",
       "title": "File:1994-04-05 - Les Coquelicots - Claude Monet.jpg",
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Street%20in%20Portsmouth%20MET%2035038.jpg?width=1600",
-      "title": "File:Street in Portsmouth MET 35038.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Morgennebel%20im%20Gebirge%20(Caspar%20David%20Friedrich)-WUS03249.jpg?width=1600",
-      "title": "File:Morgennebel im Gebirge (Caspar David Friedrich)-WUS03249.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hiroshige%2C%20Sudden%20shower%20over%20Shin-%C5%8Chashi%20bridge%20and%20Atake%2C%201857.jpg?width=1600",
-      "title": "File:Hiroshige, Sudden shower over Shin-Ōhashi bridge and Atake, 1857.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Quiet%20moonlight%20(beyond%20Catalina%20Island).jpg?width=1600",
-      "title": "File:Granville Redmond - Quiet moonlight (beyond Catalina Island).jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bierstadt%20-%20Scene%20in%20Yosemite%20Valley.jpg?width=1600",
       "title": "File:Albert Bierstadt - Scene in Yosemite Valley.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Ansel%20Adams%20-%20National%20Archives%2079-AA-D01.jpg?width=1600",
-      "title": "File:Ansel Adams - National Archives 79-AA-D01.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monet-RouenKathedrale%20von%20Rouen%20DSC8884.jpg?width=1600",
-      "title": "File:Monet-RouenKathedrale von Rouen DSC8884.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Henry%20Twachtman%2C%20Winter%20Harmony%2C%20c.%201890-1900%2C%20NGA%2050257.jpg?width=1600",
-      "title": "File:John Henry Twachtman, Winter Harmony, c. 1890-1900, NGA 50257.jpg",
       "ok": true
     },
     {
@@ -119,26 +74,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carleton%20e%20watkins%20mount%20watkins%20fully%20reflected%20in%20mirror%20lake%20yosemi024656).jpg?width=1600",
-      "title": "File:Carleton e watkins mount watkins fully reflected in mirror lake yosemi024656).jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Pierre-Auguste%20Renoir%20-%20Luncheon%20of%20the%20Boating%20Party%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Pierre-Auguste Renoir - Luncheon of the Boating Party - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Singer%20Sargent%20-%20The%20Mosquito%20Net%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:John Singer Sargent - The Mosquito Net - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Cole%20-%20The%20Voyage%20of%20Life%20Youth%2C%201839%20(Albany%20Institute%20of%20History%20%26%20Art).jpg?width=1600",
-      "title": "File:Thomas Cole - The Voyage of Life Youth, 1839 (Albany Institute of History & Art).jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%20-%20The%20Hay%20Wain%20(1821).jpg?width=1600",
       "title": "File:John Constable - The Hay Wain (1821).jpg",
       "ok": true
@@ -151,16 +86,6 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian-Moran-The%20Chasm%20of%20the%20Colorado-2287.jpg?width=1600",
       "title": "File:Smithsonian-Moran-The Chasm of the Colorado-2287.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carleton%20e%20watkins%20yosemite%20falls%201865-1866024709.jpg?width=1600",
-      "title": "File:Carleton e watkins yosemite falls 1865-1866024709.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Camille%20Pissarro%20-%20Boulevard%20Montmartre%2C%20Spring%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Camille Pissarro - Boulevard Montmartre, Spring - Google Art Project.jpg",
       "ok": true
     },
     {
@@ -204,11 +129,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mount%20Fuji%20and%20the%20Seven%20Gods%20of%20Good%20Fortune%2C%20by%20Katsushika%20Hokusai%20-%20Nelson-Atkins%20Museum%20of%20Art%20-%20DSC09106.JPG?width=1600",
-      "title": "File:Mount Fuji and the Seven Gods of Good Fortune, by Katsushika Hokusai - Nelson-Atkins Museum of Art - DSC09106.JPG",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cole%20Thomas%20The%20Oxbow%20(The%20Connecticut%20River%20near%20Northampton%201836).jpg?width=1600",
       "title": "File:Cole Thomas The Oxbow (The Connecticut River near Northampton 1836).jpg",
       "ok": true
@@ -226,21 +146,6 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20San%20Antonio%20de%20Padua%2C%20Monterey%20County%2C%20California%2C%201898.jpg?width=1600",
       "title": "File:Mission San Antonio de Padua, Monterey County, California, 1898.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Degas%20-%20Ballet%20(L'%C3%89toile).jpg?width=1600",
-      "title": "File:Edgar Degas - Ballet (L'Étoile).jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lady%20with%20an%20Ermine%20-%20Leonardo%20da%20Vinci%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Lady with an Ermine - Leonardo da Vinci - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Shell%20Gathering%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Katsushika Hokusai - Shell Gathering - Google Art Project.jpg",
       "ok": true
     },
     {
@@ -264,16 +169,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20Bacco%20adolescente%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Caravaggio - Bacco adolescente - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Utagawa%20Hiroshige%20-%20Three%20Beauties%20in%20Snow%20-%2081.2.5%20-%20Minneapolis%20Institute%20of%20Art.jpg?width=1600",
-      "title": "File:Utagawa Hiroshige - Three Beauties in Snow - 81.2.5 - Minneapolis Institute of Art.jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Carmel%20Dunes%20(c.%201918-20).jpg?width=1600",
       "title": "File:Guy Rose - Carmel Dunes (c. 1918-20).jpg",
       "ok": true
@@ -286,21 +181,6 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20Santa%20Barbara%20by%20Oriana%20Weatherbee%20Day.JPG?width=1600",
       "title": "File:Mission Santa Barbara by Oriana Weatherbee Day.JPG",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Gustave%20Caillebotte%20-%20Paris%20Street%3B%20Rainy%20Day%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Gustave Caillebotte - Paris Street; Rainy Day - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Caravaggio%20-%20Natura%20morta%20con%20frutta%20(collezione%20dell%E2%80%99Ambrosiana).jpg?width=1600",
-      "title": "File:Caravaggio - Natura morta con frutta (collezione dell’Ambrosiana).jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Kiss%20-%20Gustav%20Klimt%20-%20Google%20Cultural%20Institute.jpg?width=1600",
-      "title": "File:The Kiss - Gustav Klimt - Google Cultural Institute.jpg",
       "ok": true
     },
     {
@@ -319,26 +199,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Van%20Gogh%20-%20Starry%20Night%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Van Gogh - Starry Night - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jan%20Vermeer%20van%20Delft%20-%20Meisje%20met%20de%20parel%20(1665).jpg?width=1600",
-      "title": "File:Jan Vermeer van Delft - Meisje met de parel (1665).jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Munch%20Girls%20on%20the%20pier.jpg?width=1600",
-      "title": "File:Munch Girls on the pier.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Late%20Afternoon%2C%20Giverny.jpg?width=1600",
-      "title": "File:Guy Rose - Late Afternoon, Giverny.jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Headwaters%20of%20the%20San%20Joaquin%20by%20William%20Keith.jpg?width=1600",
       "title": "File:Headwaters of the San Joaquin by William Keith.jpg",
       "ok": true
@@ -346,21 +206,6 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20View%20to%20sleeping%20porch%20LCCN00651250.jpg?width=1600",
       "title": "File:David Berry Gamble house, 4 Westmoreland Place, Pasadena, California. View to sleeping porch LCCN00651250.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Vincent%20van%20Gogh%20-%20Sunflowers%20-%20VGM%20F458.jpg?width=1600",
-      "title": "File:Vincent van Gogh - Sunflowers - VGM F458.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rembrandt%20van%20Rijn%20-%20Self-Portrait%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:Rembrandt van Rijn - Self-Portrait - Google Art Project.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/James%20McNeill%20Whistler%20-%20Nocturne%20in%20Blue%20and%20Silver%20-%20Google%20Art%20Project.jpg?width=1600",
-      "title": "File:James McNeill Whistler - Nocturne in Blue and Silver - Google Art Project.jpg",
       "ok": true
     },
     {
@@ -384,11 +229,6 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Las%20Meninas%2C%20by%20Diego%20Vel%C3%A1zquez%2C%20from%20Prado%20in%20Google%20Earth.jpg?width=1600",
-      "title": "File:Las Meninas, by Diego Velázquez, from Prado in Google Earth.jpg",
-      "ok": true
-    },
-    {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Arroyo%20Seco%2C%20Pasadena%2C%20by%20Franz%20Bischoff.jpg?width=1600",
       "title": "File:Arroyo Seco, Pasadena, by Franz Bischoff.jpg",
       "ok": true
@@ -396,36 +236,6 @@
     {
       "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20M.%20Russell%20Where%20Great%20Herds%20Come%20To%20Drink%2C%201901.jpg?width=1600",
       "title": "File:Charles M. Russell Where Great Herds Come To Drink, 1901.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/La%20Montagne%20Sainte-Victoire%20vue%20de%20la%20carri%C3%A8re%20Bib%C3%A9mus%2C%20par%20Paul%20C%C3%A9zanne.jpg?width=1600",
-      "title": "File:La Montagne Sainte-Victoire vue de la carrière Bibémus, par Paul Cézanne.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Paolo%20Veronese%20-%20Die%20Hochzeit%20zu%20Kana%20-%20ca1570.jpeg?width=1600",
-      "title": "File:Paolo Veronese - Die Hochzeit zu Kana - ca1570.jpeg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20arthur%20bischoff%20red%20and%20yellow%20roses023424).jpg?width=1600",
-      "title": "File:Franz arthur bischoff red and yellow roses023424).jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frederic%20Remington%20-%20Moonlight%2C%20Wolf.jpg?width=1600",
-      "title": "File:Frederic Remington - Moonlight, Wolf.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fatata%20te%20Miti.jpg?width=1600",
-      "title": "File:Fatata te Miti.jpg",
-      "ok": true
-    },
-    {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Bacchanal%20of%20the%20Andrians%20by%20Titian%20in%20the%20Prado%20Museum.jpg?width=1600",
-      "title": "File:Bacchanal of the Andrians by Titian in the Prado Museum.jpg",
       "ok": true
     },
     {
@@ -444,8 +254,1108 @@
       "ok": true
     },
     {
-      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/(Albi)%20Au%20Cabaret%20-%201898%20-%20Henri%20de%20Toulouse-Lautrec%20-%20Mus%C3%A9e%20de%20Libourne.jpg?width=1600",
-      "title": "File:(Albi) Au Cabaret - 1898 - Henri de Toulouse-Lautrec - Musée de Libourne.jpg",
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Alwyn%20Payne%20Alpine%20Lake.jpg?width=1600",
+      "title": "File:Edgar Alwyn Payne Alpine Lake.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Fishing%20on%20the%20Merced%20River%20by%20Thomas%20Hill%2C%201891%2C%20oil%20on%20canvas%2C%20Saint%20Louis%20Art%20Museum.jpg?width=1600",
+      "title": "File:Fishing on the Merced River by Thomas Hill, 1891, oil on canvas, Saint Louis Art Museum.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'The%20Glory%20of%20the%20Heavens'%20by%20William%20Keith%2C%201891.JPG?width=1600",
+      "title": "File:'The Glory of the Heavens' by William Keith, 1891.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Alwyn%20Payne%20Altadena%20Dawn.jpg?width=1600",
+      "title": "File:Edgar Alwyn Payne Altadena Dawn.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'In%20the%20High%20Sierra'%20by%20Guy%20Rose.jpg?width=1600",
+      "title": "File:'In the High Sierra' by Guy Rose.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20A%20Carmel%20Garden.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan A Carmel Garden.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Alwyn%20Payne%20Bishop%20Pass.jpg?width=1600",
+      "title": "File:Edgar Alwyn Payne Bishop Pass.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20-%20Vid%20l%C3%A4gerelden.jpg?width=1600",
+      "title": "File:Carl Oscar Borg - Vid lägerelden.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Patch%20of%20Poppies'%20by%20Granville%20Redmond%2C%201912.jpg?width=1600",
+      "title": "File:'Patch of Poppies' by Granville Redmond, 1912.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%200724bc2abd.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 0724bc2abd.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Alwyn%20Payne%20California%20Hills.jpg?width=1600",
+      "title": "File:Edgar Alwyn Payne California Hills.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Cholla%20near%20Palm%20Springs%2C%20California'%20by%20Franz%20Arthur%20Bischoff.jpg?width=1600",
+      "title": "File:'Cholla near Palm Springs, California' by Franz Arthur Bischoff.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hill%20Thomas%20Mount%20St.%20Helena%20Napa%20Valley%201887.jpg?width=1600",
+      "title": "File:Hill Thomas Mount St. Helena Napa Valley 1887.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Broadside%20of%20Mount%20Tamalpais%20by%20William%20Keith.JPG?width=1600",
+      "title": "File:A Broadside of Mount Tamalpais by William Keith.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Desert%20Rain.jpg?width=1600",
+      "title": "File:Edgar Payne Desert Rain.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%201e5494a85b.jpg?width=1600",
+      "title": "File:Frank Cuprien - 1e5494a85b.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Huddled%20Houses%2C%20by%20William%20Wendt.jpg?width=1600",
+      "title": "File:Huddled Houses, by William Wendt.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Indian%20Tobacco%20Trees%2C%20La%20Jolla'%20by%20Guy%20Rose.jpg?width=1600",
+      "title": "File:'Indian Tobacco Trees, La Jolla' by Guy Rose.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Monterey%20Coast'%20by%20William%20Ritschel%2C%20after%201911.JPG?width=1600",
+      "title": "File:'Monterey Coast' by William Ritschel, after 1911.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Desert%20Skies.jpg?width=1600",
+      "title": "File:Edgar Payne Desert Skies.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Carmel%20Valley%20house.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Carmel Valley house.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Desert%20Sky.jpg?width=1600",
+      "title": "File:Edgar Payne Desert Sky.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Indian%20Canoes%20near%20Muir%20Glacier%2C%20oil%20on%20canvas%20painting%20by%20Thomas%20Hill%2C%20c.%201910%2C%20Anchorage%20Museum.jpg?width=1600",
+      "title": "File:Indian Canoes near Muir Glacier, oil on canvas painting by Thomas Hill, c. 1910, Anchorage Museum.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Summer's%20Day%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:A Summer's Day by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Edgar%20Payne%20Canyon%20Mission%20Viejo%2C%20Capistrano.jpg?width=1600",
+      "title": "File:Edgar Payne Edgar Payne Canyon Mission Viejo, Capistrano.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20A%20Summer%20Day%2C%20Pacific%20Coast.jpg?width=1600",
+      "title": "File:Carl Oscar Borg A Summer Day, Pacific Coast.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20campbell%20cooper%20the%20other%20side%20of%20the%20river023112).jpg?width=1600",
+      "title": "File:Colin campbell cooper the other side of the river023112).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Edgar%20Payne%20Canyon%20Riders.jpg?width=1600",
+      "title": "File:Edgar Payne Edgar Payne Canyon Riders.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Poppies%20and%20Eucalyptus%2C%20by%20Granville%20Redmond.jpg?width=1600",
+      "title": "File:California Poppies and Eucalyptus, by Granville Redmond.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Carmel%20Hills.jpg?width=1600",
+      "title": "File:Guy Rose - Carmel Hills.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Irrigating%20at%20Strawberry%20Farm.jpg?width=1600",
+      "title": "File:Irrigating at Strawberry Farm.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/An%20Autumnal%20Sunset%20on%20the%20Russian%20River%20Evening%20Glow%20by%20William%20Keith%2C%201878.jpg?width=1600",
+      "title": "File:An Autumnal Sunset on the Russian River Evening Glow by William Keith, 1878.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Carmel%20Valley%20Ranch.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Carmel Valley Ranch.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Edgar%20Payne%20Capistrano%20Canyon.jpg?width=1600",
+      "title": "File:Edgar Payne Edgar Payne Capistrano Canyon.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%2008d494382a.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 08d494382a.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Edgar%20Payne%20Edgar%20Payne%20A%20Rider%20with%20Packhorses%20in%20the%20Sierra.jpg?width=1600",
+      "title": "File:Edgar Payne Edgar Payne Edgar Payne A Rider with Packhorses in the Sierra.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Eucalypti.jpg?width=1600",
+      "title": "File:Edgar Payne Eucalypti.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Crashing%20Waves%20in%20a%20Rocky%20Coastal%20View%20by%20Franz%20A.%20Bischoff.jpg?width=1600",
+      "title": "File:Crashing Waves in a Rocky Coastal View by Franz A. Bischoff.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20at%20Yosemite%2C%20California%20by%20Thomas%20Hill.jpg?width=1600",
+      "title": "File:Lake at Yosemite, California by Thomas Hill.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Approaching%20Storm%20by%20William%20Keith%2C%201880.jpg?width=1600",
+      "title": "File:Approaching Storm by William Keith, 1880.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Early%20Morning%20(c.%201905-1912).jpg?width=1600",
+      "title": "File:Guy Rose - Early Morning (c. 1905-1912).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Eucalyptus%20Landscape%2C%20California.jpg?width=1600",
+      "title": "File:Edgar Payne Eucalyptus Landscape, California.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Carmel%20Valley.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Carmel Valley.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20California%20Landscape.jpg?width=1600",
+      "title": "File:Carl Oscar Borg California Landscape.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Eucalyptus%20Trees.jpg?width=1600",
+      "title": "File:Edgar Payne Eucalyptus Trees.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%20591421285a.jpg?width=1600",
+      "title": "File:Frank Cuprien - 591421285a.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Saddleback%20Mountain%2C%20by%20William%20Wendt.jpg?width=1600",
+      "title": "File:Saddleback Mountain, by William Wendt.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20High%20Sierra%20Landscape%2C%20Big%20Pine%20Canyon.jpg?width=1600",
+      "title": "File:Edgar Payne High Sierra Landscape, Big Pine Canyon.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20A%20Field%20of%20California%20Poppies.jpg?width=1600",
+      "title": "File:Granville Redmond - A Field of California Poppies.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/N10151-47-web.jpg?width=1600",
+      "title": "File:N10151-47-web.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Berkeley%20Oaks%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Berkeley Oaks by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20High%20Sierra%2C%20Mountain%20Scene.jpg?width=1600",
+      "title": "File:Edgar Payne High Sierra, Mountain Scene.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Brown%20Hills%20on%20the%20Russian%20River'%20by%20Benjamin%20Chambers%20Brown%2C%201914.jpg?width=1600",
+      "title": "File:'Brown Hills on the Russian River' by Benjamin Chambers Brown, 1914.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%201ce43dea5e.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 1ce43dea5e.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/'Foothills'%20by%20Maurice%20Braun%2C%201934.jpg?width=1600",
+      "title": "File:'Foothills' by Maurice Braun, 1934.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20July%20Afternoon%20(c.%201907-1912).jpg?width=1600",
+      "title": "File:Guy Rose - July Afternoon (c. 1907-1912).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monterey%20Coast-%2017%20Mile%20Drive%20LACMA%20M.91.144.jpg?width=1600",
+      "title": "File:Monterey Coast- 17 Mile Drive LACMA M.91.144.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carmel%20Valley%20Pasture%20Land.jpg?width=1600",
+      "title": "File:Carmel Valley Pasture Land.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20High%20Sierras.jpg?width=1600",
+      "title": "File:Edgar Payne High Sierras.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Cypress%20at%20Monterey.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Cypress at Monterey.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Painting%20of%20Wawona%20Hotel%20by%20Thomas%20Hill.jpeg?width=1600",
+      "title": "File:Painting of Wawona Hotel by Thomas Hill.jpeg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Oaks%20and%20Field%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:California Oaks and Field by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20High%20Surf%20along%20the%20Laguna%20Coast.jpg?width=1600",
+      "title": "File:Edgar Payne High Surf along the Laguna Coast.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Hills%20of%20the%20Southland.jpg?width=1600",
+      "title": "File:Edgar Payne Hills of the Southland.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Indian%20Encampment.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Indian Encampment.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Indians%20Riding%20through%20the%20Canyon%20de%20Chelly.jpg?width=1600",
+      "title": "File:Edgar Payne Indians Riding through the Canyon de Chelly.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Laguna%20Eucalyptus.jpg?width=1600",
+      "title": "File:Guy Rose - Laguna Eucalyptus.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20A.%20Bischoff%20-%20Zion%20Park.jpg?width=1600",
+      "title": "File:Franz A. Bischoff - Zion Park.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Resting%20By%20A%20Stream.jpg?width=1600",
+      "title": "File:Resting By A Stream.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Pines%20by%20William%20Keith%2C%20LACMA%2029.19%20(1%20of%202).jpg?width=1600",
+      "title": "File:California Pines by William Keith, LACMA 29.19 (1 of 2).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20After%20the%20Rain.jpg?width=1600",
+      "title": "File:Granville Redmond - After the Rain.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Laguna%20Beach%20Coast.jpg?width=1600",
+      "title": "File:Edgar Payne Laguna Beach Coast.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Cypress%20Trees%20Carmel.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Cypress Trees Carmel.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Lake%20in%20the%20High%20Sierras.jpg?width=1600",
+      "title": "File:Edgar Payne Lake in the High Sierras.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%204b0485ab76.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 4b0485ab76.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Pack%20Train.jpg?width=1600",
+      "title": "File:Edgar Payne Pack Train.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Royal%20Arches%20And%20Half%20Dome%20Yosemite.jpg?width=1600",
+      "title": "File:Royal Arches And Half Dome Yosemite.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Ranch%20by%20William%20Keith%2C%201908.jpg?width=1600",
+      "title": "File:California Ranch by William Keith, 1908.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%2067246f5a87.jpg?width=1600",
+      "title": "File:Frank Cuprien - 67246f5a87.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Valley%20Landscape%20by%20William%20Wendt.jpg?width=1600",
+      "title": "File:Valley Landscape by William Wendt.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Laguna%20Trees%20(c.%201916).jpg?width=1600",
+      "title": "File:Guy Rose - Laguna Trees (c. 1916).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Packing%20Out%20from%20Payne%20Lake.jpg?width=1600",
+      "title": "File:Edgar Payne Packing Out from Payne Lake.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Open%20Door%20at%20the%20Governor's%20Palace.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Open Door at the Governor's Palace.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20Campbell%20Cooper%20-%20Palace%20of%20Fine%20Arts%2C%20San%20Francisco.jpg?width=1600",
+      "title": "File:Colin Campbell Cooper - Palace of Fine Arts, San Francisco.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Cypress%20trees.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Cypress trees.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Poplars.jpg?width=1600",
+      "title": "File:Edgar Payne Poplars.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Driving%20Of%20The%20Last%20Spike.jpg?width=1600",
+      "title": "File:The Driving Of The Last Spike.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cattle%20Grazing%20among%20Rolling%20Hills%20and%20Cloudy%20Skies%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Cattle Grazing among Rolling Hills and Cloudy Skies by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Riders%20in%20Canyon%20de%20Chelly.jpg?width=1600",
+      "title": "File:Edgar Payne Riders in Canyon de Chelly.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Blue%20flowers.jpg?width=1600",
+      "title": "File:Granville Redmond - Blue flowers.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Riders%20in%20Monument%20Valley%2C%20Arizona.jpg?width=1600",
+      "title": "File:Edgar Payne Riders in Monument Valley, Arizona.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20San%20Gabriel%20road.jpg?width=1600",
+      "title": "File:Guy Rose - San Gabriel road.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rock%20Coast%20at%20Carmel%20Highlands.png?width=1600",
+      "title": "File:Rock Coast at Carmel Highlands.png",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Rosenlaui%20Heights.jpg?width=1600",
+      "title": "File:Edgar Payne Rosenlaui Heights.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Franz%20Bischoff%20-%20Aroyo%20Seco%20Bridge%201912.jpg?width=1600",
+      "title": "File:Franz Bischoff - Aroyo Seco Bridge 1912.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Emerald%20Lake%20Near%20Tahoe%201890-1900.jpg?width=1600",
+      "title": "File:Thomas Hill - Emerald Lake Near Tahoe 1890-1900.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Cattle%20Watering%20along%20a%20River%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Cattle Watering along a River by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Desert%20Palms.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Desert Palms.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Santa%20Cruz%20Island.jpg?width=1600",
+      "title": "File:Edgar Payne Santa Cruz Island.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%204cc458f914.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 4cc458f914.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20The%20Red%20Rock%20Wall.jpg?width=1600",
+      "title": "File:Carl Oscar Borg The Red Rock Wall.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Shadow%20Slope%2C%20Inyo%20County%2C%20California%2C%20near%20Bishop.jpg?width=1600",
+      "title": "File:Edgar Payne Shadow Slope, Inyo County, California, near Bishop.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20Green%20Parasol.JPG?width=1600",
+      "title": "File:Guy Rose - The Green Parasol.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Divide.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Divide.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Great%20Canyon%20of%20the%20Sierra%2C%20Yosemite.jpg?width=1600",
+      "title": "File:Thomas Hill - Great Canyon of the Sierra, Yosemite.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hetch%20Hetchy%20Side%20Canyon%2C%20I%2C%20by%20William%20Keith%2C%20c1908.jpg?width=1600",
+      "title": "File:Hetch Hetchy Side Canyon, I, by William Keith, c1908.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Lake%20and%20Peaks.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Lake and Peaks.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Alson%20Skinner%20Clark%2C%20California%20Mountains.jpg?width=1600",
+      "title": "File:Alson Skinner Clark, California Mountains.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Spring%20Landscape%201933.4.9%201a.jpg?width=1600",
+      "title": "File:California Spring Landscape 1933.4.9 1a.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%2087847c8b15.jpg?width=1600",
+      "title": "File:Frank Cuprien - 87847c8b15.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Joseph%20Kleitsch%20-%20Laguna%20Shore%20Line.jpg?width=1600",
+      "title": "File:Joseph Kleitsch - Laguna Shore Line.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Golden%20Hillside.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Golden Hillside.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Coastal%20storm.jpg?width=1600",
+      "title": "File:Granville Redmond - Coastal storm.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wendt%20-%20The%20Interview.jpg?width=1600",
+      "title": "File:Wendt - The Interview.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Lake%2C%20Fifth%20Lake.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Lake, Fifth Lake.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Indian%20by%20a%20lake%20in%20a%20majestic%20California%20landscape.jpg?width=1600",
+      "title": "File:Thomas Hill - Indian by a lake in a majestic California landscape.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Land's%20End%20by%20William%20Keith%2C%201873.jpg?width=1600",
+      "title": "File:Land's End by William Keith, 1873.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Landscape.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Landscape.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20Oak.JPG?width=1600",
+      "title": "File:Guy Rose - The Oak.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Madre%20from%20Mt.%20Vista.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Madre from Mt. Vista.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Under%20Western%20Skies.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Under Western Skies.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%2059048ecaa1.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 59048ecaa1.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Mountains.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Mountains.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Lone%20cypress.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Lone cypress.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Glimpse%20of%20the%20Sea%2C%20by%20Franz%20Bischoff.jpg?width=1600",
+      "title": "File:Glimpse of the Sea, by Franz Bischoff.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Mount%20Tallac%20from%20Lake%20Tahoe%20(1880).jpg?width=1600",
+      "title": "File:Thomas Hill - Mount Tallac from Lake Tahoe (1880).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Landscape by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Peaks.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Peaks.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20old%20church%20at%20Cagnes.jpg?width=1600",
+      "title": "File:Guy Rose - The old church at Cagnes.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sea%201%20(Dolphins)%20by%20William%20Frederic%20Ritschel.jpg?width=1600",
+      "title": "File:The Sea 1 (Dolphins) by William Frederic Ritschel.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Splendor.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Splendor.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Morning%20on%20the%20Pacific.jpg?width=1600",
+      "title": "File:Granville Redmond - Morning on the Pacific.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Sunset.jpg?width=1600",
+      "title": "File:Edgar Payne Sierra Sunset.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Nevada%20Falls%2C%20Yosemite.jpg?width=1600",
+      "title": "File:Thomas Hill - Nevada Falls, Yosemite.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Santa%20Barbara%20Hills%20by%20William%20Keith%2C%201882.jpg?width=1600",
+      "title": "File:Santa Barbara Hills by William Keith, 1882.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20South%20Rim%2C%20Grand%20Canyon.jpg?width=1600",
+      "title": "File:Edgar Payne South Rim, Grand Canyon.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Monterey%20Cypress%20on%20the%20Shore.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Monterey Cypress on the Shore.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Walpi%20Women.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Walpi Women.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20Campbell%20Cooper%20-%20The%20Lotus%20Pool%2C%20El%20Encanto%2C%20Santa%20Barbara%20-%201922.163.1%20-%20Reading%20Public%20Museum.jpg?width=1600",
+      "title": "File:Colin Campbell Cooper - The Lotus Pool, El Encanto, Santa Barbara - 1922.163.1 - Reading Public Museum.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Summit%20Lake%2C%20High%20Sierras.jpg?width=1600",
+      "title": "File:Edgar Payne Summit Lake, High Sierras.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20sea%20view%20of%20cliffs.jpg?width=1600",
+      "title": "File:Guy Rose - The sea view of cliffs.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%209fe4ae6940.jpg?width=1600",
+      "title": "File:Frank Cuprien - 9fe4ae6940.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Wendt%20-%20'Wash%20Day'.jpg?width=1600",
+      "title": "File:William Wendt - 'Wash Day'.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Picnic%20Near%20Mount%20Chocorua%20(c.%201872).jpg?width=1600",
+      "title": "File:Thomas Hill - Picnic Near Mount Chocorua (c. 1872).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Scene%20in%20Russian%20River%20Valley%2C%20Sonoma%2C%20California%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Scene in Russian River Valley, Sonoma, California by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sunset%20on%20the%20Foothills%20of%20Pasadena.jpg?width=1600",
+      "title": "File:Edgar Payne Sunset on the Foothills of Pasadena.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%2059646b695e.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 59646b695e.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Surging%20Sea.jpg?width=1600",
+      "title": "File:Edgar Payne Surging Sea.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Near%20Palm%20Canyon.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Near Palm Canyon.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sycamore%20in%20Autumn%2C%20Orange%20County%20Park.jpg?width=1600",
+      "title": "File:Edgar Payne Sycamore in Autumn, Orange County Park.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Pastoral%20scene%20at%20sunset.jpg?width=1600",
+      "title": "File:Granville Redmond - Pastoral scene at sunset.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mrs.%20Bischoff%20Wisteria%2C%20by%20Franz%20Bischoff.jpg?width=1600",
+      "title": "File:Mrs. Bischoff Wisteria, by Franz Bischoff.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Royal%20Arches%20and%20Domes%20of%20Yosemite.jpg?width=1600",
+      "title": "File:Thomas Hill - Royal Arches and Domes of Yosemite.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Spring%20Landscape%20(Spring%20in%20Marin%20County)%20by%20William%20Keith.JPG?width=1600",
+      "title": "File:Spring Landscape (Spring in Marin County) by William Keith.JPG",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20View%20in%20the%20San%20Gabriel%20mountains.jpg?width=1600",
+      "title": "File:Guy Rose - View in the San Gabriel mountains.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Temple%20Crag%2C%20High%20Sierra%20Lake.jpg?width=1600",
+      "title": "File:Edgar Payne Temple Crag, High Sierra Lake.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Watching%20the%20Race.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Watching the Race.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20The%20Purple%20Vale.jpg?width=1600",
+      "title": "File:Edgar Payne The Purple Vale.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20The%20Rendezvous%2C%20Santa%20Cruz%20Island.jpg?width=1600",
+      "title": "File:Edgar Payne The Rendezvous, Santa Cruz Island.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20The%20artist%20at%20his%20easel.jpg?width=1600",
+      "title": "File:Thomas Hill - The artist at his easel.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Stream%20Through%20the%20Valley%20by%20William%20Keith%2C%201901.jpg?width=1600",
+      "title": "File:Stream Through the Valley by William Keith, 1901.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Old%20Monterey.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Old Monterey.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20The%20Valley%20Village.jpg?width=1600",
+      "title": "File:Edgar Payne The Valley Village.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/California%20Poppies%20by%20Benjamin%20Chambers%20Brown.jpg?width=1600",
+      "title": "File:California Poppies by Benjamin Chambers Brown.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%208794c08b34.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - 8794c08b34.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20Valley%2C%20by%20Maurice%20Braun.jpg?width=1600",
+      "title": "File:Mission Valley, by Maurice Braun.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20Wind%20swept%20pines.jpg?width=1600",
+      "title": "File:Guy Rose - Wind swept pines.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Theodore%20Wores%2C%201881%20-%20New%20Year%E2%80%99s%20Day%20in%20San%20Francisco%E2%80%99s%20Chinatown.jpg?width=1600",
+      "title": "File:Theodore Wores, 1881 - New Year’s Day in San Francisco’s Chinatown.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Frederic%20Ritschel.jpg?width=1600",
+      "title": "File:William Frederic Ritschel.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Turn%20in%20Canyon%20de%20Chelly.jpg?width=1600",
+      "title": "File:Edgar Payne Turn in Canyon de Chelly.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20The%20Muir%20Glacier%20(1888).jpg?width=1600",
+      "title": "File:Thomas Hill - The Muir Glacier (1888).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Keith%20-%20Carmel%20by%20the%20Sea.jpg?width=1600",
+      "title": "File:William Keith - Carmel by the Sea.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Rocky%20Cliffs%2C%20Catalina%20Island.jpg?width=1600",
+      "title": "File:Granville Redmond - Rocky Cliffs, Catalina Island.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20View%20at%20Sabrina%20Lake%2C%20Inyo%20County.jpg?width=1600",
+      "title": "File:Edgar Payne View at Sabrina Lake, Inyo County.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%20ca74ba7ba4.jpg?width=1600",
+      "title": "File:Frank Cuprien - ca74ba7ba4.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Wendt%20'Houses%20Along%20the%20Coast%20'.png?width=1600",
+      "title": "File:William Wendt 'Houses Along the Coast '.png",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Village%20at%20the%20Base%20of%20the%20Mountain.jpg?width=1600",
+      "title": "File:Edgar Payne Village at the Base of the Mountain.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Wild%20Horses%2C%20Nevada%201945.jpg?width=1600",
+      "title": "File:Carl Oscar Borg Wild Horses, Nevada 1945.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Pond's%20Edge.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Pond's Edge.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Hills%20at%20Altadena%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
+      "title": "File:Hills at Altadena, by Edgar Alwin Payne.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%2C%20'Lifting%20Fog'%2C%20Irvine%20Museum.jpg?width=1600",
+      "title": "File:Guy Rose, 'Lifting Fog', Irvine Museum.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Palm%20Canyon%2C%20by%20Franz%20Bischoff.jpg?width=1600",
+      "title": "File:Palm Canyon, by Franz Bischoff.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Vernal%20Falls%2C%20Yosemite.jpg?width=1600",
+      "title": "File:Thomas Hill - Vernal Falls, Yosemite.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Keith%20-%20Landscape%20with%20Mount%20Shasta.jpg?width=1600",
+      "title": "File:William Keith - Landscape with Mount Shasta.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Land%20of%20the%20Navajo.jpg?width=1600",
+      "title": "File:Land of the Navajo.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Lavender%20Hills%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
+      "title": "File:Lavender Hills, by Edgar Alwin Payne.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%20cd247628d4.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - cd247628d4.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Monument%20Valley%2C%20Riverbed.jpg?width=1600",
+      "title": "File:Monument Valley, Riverbed.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Springtime%20Hatton%20Fields%20Carmel.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Springtime Hatton Fields Carmel.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20View%20in%20the%20Sierra%20Nevadas%20(1869).jpg?width=1600",
+      "title": "File:Thomas Hill - View in the Sierra Nevadas (1869).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Keith%2C%20Sentinel%20Rock%2C%20Yosemite%2C%202010%20116v1.jpg?width=1600",
+      "title": "File:William Keith, Sentinel Rock, Yosemite, 2010 116v1.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Laguna%20Shores%20%E2%80%93%20Guy%20Rose.jpg?width=1600",
+      "title": "File:Laguna Shores – Guy Rose.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20The%20Old%20Pond.jpg?width=1600",
+      "title": "File:Granville Redmond - The Old Pond.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Landscape.jpg?width=1600",
+      "title": "File:Mountain Landscape.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%2C%20In%20Walpi%2C%20Arizona.jpg?width=1600",
+      "title": "File:Carl Oscar Borg, In Walpi, Arizona.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20Campbell%20Cooper%2C%20Summer.jpg?width=1600",
+      "title": "File:Colin Campbell Cooper, Summer.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Range%20at%20Sunset.jpg?width=1600",
+      "title": "File:Mountain Range at Sunset.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Yosemite%20(1887).jpg?width=1600",
+      "title": "File:Thomas Hill - Yosemite (1887).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Wooded%20landscape%20with%20cattle%20at%20water's%20edge%20by%20William%20Keith.jpg?width=1600",
+      "title": "File:Wooded landscape with cattle at water's edge by William Keith.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Village%202.jpg?width=1600",
+      "title": "File:Mountain Village 2.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Summertime%20up%20the%20River.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan Summertime up the River.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navahos.jpg?width=1600",
+      "title": "File:Navahos.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Rose%20-%20monterey-cypress.jpg?width=1600",
+      "title": "File:Rose - monterey-cypress.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/William%20Ritschel%20-%20Coral%20reefs.jpg?width=1600",
+      "title": "File:William Ritschel - Coral reefs.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%20ea0416e863.jpg?width=1600",
+      "title": "File:Frank Cuprien - ea0416e863.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/WLA%20lacma%20California%20Landscape%20by%20William%20Wendt.jpg?width=1600",
+      "title": "File:WLA lacma California Landscape by William Wendt.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Navajo%20Country.jpg?width=1600",
+      "title": "File:Navajo Country.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Arroyo%20Seco%2C%20Pasadena.jpg?width=1600",
+      "title": "File:The Arroyo Seco, Pasadena.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20hill%20the%20golden%20gate%20from%20point%20lobos%20094017).jpg?width=1600",
+      "title": "File:Thomas hill the golden gate from point lobos 094017).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yosemite%20Valley%20LACMA%20M.71.115%20(1%20of%202).jpg?width=1600",
+      "title": "File:Yosemite Valley LACMA M.71.115 (1 of 2).jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Payne%20Lake%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
+      "title": "File:Payne Lake by Edgar Alwin Payne.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%20e3f477a818.jpg?width=1600",
+      "title": "File:Jack Wilkinson Smith - e3f477a818.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20Malibu%20Coast%20Spring.jpg?width=1600",
+      "title": "File:Granville Redmond Malibu Coast Spring.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%A4star%20och%20ryttare%20x%20Carl%20Oscar%20Borg.jpg?width=1600",
+      "title": "File:Hästar och ryttare x Carl Oscar Borg.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Lone%20Packer.jpg?width=1600",
+      "title": "File:The Lone Packer.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20The%20F.A.%20Wickett%20Home.jpg?width=1600",
+      "title": "File:Mary DeNeale Morgan The F.A. Wickett Home.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Watercolor%20landscape%20painting%20by%20Guy%20Rose.jpg?width=1600",
+      "title": "File:Watercolor landscape painting by Guy Rose.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Pack%20Train%2C%20Sierra%20Grande%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
+      "title": "File:The Pack Train, Sierra Grande by Edgar Alwin Payne.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Untitled%20(1877)%20by%20Thomas%20Hill.jpg?width=1600",
+      "title": "File:Untitled (1877) by Thomas Hill.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Yosemite%2C%20Sentinel%20Rock%20by%20William%20Keith%2C%201872.jpg?width=1600",
+      "title": "File:Yosemite, Sentinel Rock by William Keith, 1872.jpg",
+      "ok": true
+    },
+    {
+      "url": "https://commons.wikimedia.org/wiki/Special:FilePath/Twin%20Peaks%20by%20Edgar%20Payne.jpg?width=1600",
+      "title": "File:Twin Peaks by Edgar Payne.jpg",
       "ok": true
     }
   ]
