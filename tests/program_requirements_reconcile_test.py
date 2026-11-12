@@ -379,6 +379,20 @@ check("Journalism AA-T 32179: a transfer degree takes Cal-GETC's 'up to 34', and
       got["program"]["ge_units"] == {"min": None, "max": 34} and got["program"]["electives_fill_degree"] is False)
 check("a local degree never takes the transfer degree's 34",
       occ_run(occ("Cal-GETC"), jour, "A.S. Degree")[0]["program"]["ge_units"] == {"min": None, "max": None})
+# The degree-total step's guards (#3133 review): the "Total Units" line counts only on the line after the GE line (or
+# the electives line after it), and only when the figure closes the line. Each page below fills nothing without them.
+no_floor = ("[Tab: REQUIREMENTS]\nProgram Prerequisites\nRADT A100\tRadiologic Physics\t2\nTotal Units\t9.5\n"
+            "Total Program Units\t67.5\n" + SEQ)
+check("a page with no Total Minimum Degree Units line and no Total Units after its GE line leaves the degree total empty",
+      occ_run(occ("OCC AS GE"), no_floor, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
+footnote = ("[Tab: REQUIREMENTS]\nTotal Major Units\t63\nOCC AS General Education 1\t21\n1\n"
+            "Cal-GETC pattern (up to 34 units) may be substituted.\nTotal Units\t84\n[Tab: PROGRAM SEQUENCE]\n")
+check("a GE line, then a footnote, then Total Units: nothing fills the degree total",
+      occ_run(occ("OCC AS GE"), footnote, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
+trailing = ("[Tab: REQUIREMENTS]\nTotal Major Units\t63\nOCC AS General Education 1\t21\n"
+            "Total Units\t60 or more with electives\n[Tab: PROGRAM SEQUENCE]\n")
+check("a Total Units figure the line runs on past is not the degree total (the end-of-line anchor)",
+      occ_run(occ("OCC AS GE"), trailing, "A.S. Degree")[0]["program"]["degree_total"] == {"min": None, "max": None})
 check("a certificate is left alone", occ_run(occ(None), acct, "Certificate of Achievement")[1] == [])
 check("a GE figure the reading filed stands",
       occ_run(occ("OCC AS GE", ge_units={"min": 18, "max": 18}), acct, "A.S. Degree")[0]["program"]["ge_units"] == {"min": 18, "max": 18})
