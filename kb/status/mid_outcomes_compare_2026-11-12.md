@@ -2,7 +2,7 @@
 
 Issue #2962, COBIx's operational brief of 2026-11-12, Sam's go relayed by COBIx ("yes, let's roll!", cpl_memory sam-mid-reclustering-step-1-go-2026-11-12). A no-write comparison: nothing here changes an M-ID, a table or a generated file. Built by `kb/_mid_outcomes_compare.py`; every M-ID's result is in the JSON beside this file.
 
-Source of the outcomes text: the committed reads under `kb/course_outcomes/` (13 hosts, 17349 rows). Membership: `unified_courses_members.js` (generated 2026-11-12 11:51), descriptions `unified_courses_member_desc.js`, titles `unified_courses_index.js`, exhibit reach `kb/exhibits_review.json`.
+Source of the outcomes text: the committed reads under `kb/course_outcomes/` (source: files; 13 hosts, 17349 rows). Membership: `unified_courses_members.js` (generated 2026-11-12 11:51), descriptions `unified_courses_member_desc.js`, titles `unified_courses_index.js`, exhibit reach `kb/exhibits_review.json`.
 
 ## Inventory
 
@@ -23,7 +23,7 @@ Each course's outcome and objective statements become word stems, with the lead-
 
 Thresholds: agree at 0.30; strong confirmation at a mean of 0.50 with a second signal; merge candidate at 0.55 across two M-IDs of one Common SUBJ; descriptions agree at 0.30; titles agree at a stem overlap of 0.50. A course with fewer than 12 stems after stripping is thin and treated as having no text; 771 statements printed word for word by 4 or more courses were dropped as outline boilerplate.
 
-Where the data is strong, the method agrees with the M-IDs: 5574 pairs of same-titled courses at two colleges inside one M-ID score a median of 0.267, and 42% of them reach the agree line. 367 sampled pairs of differently titled courses in different M-IDs of one Common SUBJ score a median of 0.043, and 2% of them reach it (95th percentile 0.233).
+Where the data is strong, the method agrees with the M-IDs: 5574 pairs of same-titled courses at two colleges inside one M-ID score a median of 0.267, and 42% of them reach the agree line. 385 sampled pairs of differently titled courses in different M-IDs of one Common SUBJ score a median of 0.043, and 2% of them reach it (95th percentile 0.209).
 
 Confidence uses Sam's three match levels (Open Asks Sheet 181, 2026-11-11): strong, partial and limited. A split the outcomes alone propose is limited, a flag for a person, since an SLO never overrides on its own. A member with no text joins no group and is never the reason for a split. TOP and units are shown and read by nothing.
 
@@ -44,7 +44,7 @@ Outliers. 2652 single-member M-IDs carry outcomes text; the outcomes place 322 o
 
 ## AGAB M1002, Agricultural Ambassadors
 
-AGAB M1002 resolves to itself through `kb/alias_chain.py` (no map applied since 2026-11-08). Its 3 members are all Merced College: AGAB 31A Agricultural Ambassadors - Introduction, Merced College; AGAB 31C Agricultural Ambassadors - Public Relations, Merced College; AGAB 31B Agricultural Ambassadors - Recruitment, Merced College. Units 2, TOP 0112.00.
+AGAB M1002 resolves to itself through `kb/alias_chain.py` (the maps applied after its era, 2026-11-08's anchor re-key the last). Its title in the index is *Agricultural Ambassadors - Public Relations*. Its 3 members, from Merced College: AGAB 31A Agricultural Ambassadors - Introduction, Merced College; AGAB 31C Agricultural Ambassadors - Public Relations, Merced College; AGAB 31B Agricultural Ambassadors - Recruitment, Merced College. Units 2, TOP 0112.00.
 
 Class: Not enough text. fewer than two members print enough outcome text (0 of 3); a missing SLO counts against no one.
 
@@ -175,7 +175,7 @@ Exhibit reach: AGAS M1136 no Exhibit Reference title takes its canonical title f
 
 ## Impact track, first batch: Leadership and supervision
 
-Sam, relayed by COBIx, 2026-11-12: "the 3 hours leadership is a gold mine on the surface waiting for its day." 485 M-IDs carry Leadership or Supervision in their title; 54 of them hold a member with outcomes text and 15 hold two or more. The military side, the JST 3-hour Leadership recommendation, is in no committed file this script reads: MAP's ACE recommendation rows live in Supabase (`map_college_cr_unit`, `source_code` ACE, per `docs/military_cr_reference_scope.md`), so which of these M-IDs those recommendations land on is a read for a later pass.
+Sam, relayed by COBIx, 2026-11-12: "the 3 hours leadership is a gold mine on the surface waiting for its day." 485 M-IDs carry Leadership or Supervision in their title; 54 of them hold a member with outcomes text and 15 hold two or more. The military side, the JST 3-hour Leadership recommendation, is in no committed file this script reads: MAP's ACE recommendation rows live in Supabase (`map_college_cr_unit`, `source_code` ACE, per `docs/military_cr_reference_scope.md`), which the anon key is not known to read. This section stays on the committed data in every run, live or not, and nothing is widened for it; which of these M-IDs those recommendations land on is a read for a later pass.
 
 | M-ID | Title | Members | Colleges | With text | Class | Colleges without outlines on file |
 |---|---|---|---|---|---|---|
@@ -209,5 +209,5 @@ What a good call needs: outlines from the colleges that hold most of these cours
 
 ## Partial or whole
 
-This report reads the committed reads under `kb/course_outcomes/` (13 hosts, 17349 rows). The committed reads hold every row the load receipts record, so this pass covers the outcomes the table held at the last load (18 colleges). A dispatch of `mid-outcomes-compare.yml` reads the table itself and rewrites this report, which matters once a load lands that was not filed here first.
+This report reads the committed reads under `kb/course_outcomes/` (source: files; 13 hosts, 17349 rows). The committed reads hold every row the load receipts record, so this pass covers the outcomes the table held at the last load (18 colleges). A dispatch of `mid-outcomes-compare.yml` reads the table itself and rewrites this report, which matters once a load lands that was not filed here first.
 

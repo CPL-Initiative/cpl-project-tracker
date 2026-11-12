@@ -166,6 +166,38 @@ check("the named M-ID resolves through kb/alias_chain.py", state["named"].get("A
 check("the script declares no alias chain of its own",
       "ALIAS_MAPS = [" not in open(os.path.join(REPO, "kb", "_mid_outcomes_compare.py")).read())
 
+# 9. The live read (COBIx on #3165): the anon key only, no fallback, and a read checked against the exact count.
+def raises(fn):
+    try:
+        fn()
+    except SystemExit:
+        return True
+    return False
+
+
+def pager(rows, total):
+    def get(endpoint, key, start, page):
+        return rows[start:start + page], total
+    return get
+
+
+live_rows = [{"college": A, "course_code": "BIO %d" % i, "kind": "slo", "outcomes": ["x"], "read_run": "1"}
+             for i in range(2500)]
+check("9 a live read with no anon key stops the run",
+      raises(lambda: moc.outcome_rows_live(get_page=pager(live_rows, 2500), env={})))
+check("9 the service key is not accepted in its place",
+      raises(lambda: moc.outcome_rows_live(get_page=pager(live_rows, 2500), env={"SUPABASE_SERVICE_KEY": "s"})))
+check("9 a read short of the exact count stops the run",
+      raises(lambda: moc.outcome_rows_live(get_page=pager(live_rows[:2000], 2500), env={"SUPABASE_ANON_KEY": "a"})))
+check("9 a read with no exact count stops the run",
+      raises(lambda: moc.outcome_rows_live(get_page=pager(live_rows, None), env={"SUPABASE_ANON_KEY": "a"})))
+check("9 a whole read across three pages returns every row",
+      len(moc.outcome_rows_live(get_page=pager(live_rows, 2500), env={"SUPABASE_ANON_KEY": "a"})) == 2500)
+wf = open(os.path.join(REPO, ".github", "workflows", "mid-outcomes-compare.yml")).read()
+check("9 the workflow names no service key", "SERVICE" not in wf and "secrets." not in wf)
+check("9 the workflow runs the live source with no fallback branch",
+      "--source live" in wf and "else" not in wf)
+
 failed = [name for name, ok in results if not ok]
 for name, ok in results:
     print(("PASS " if ok else "FAIL ") + name)

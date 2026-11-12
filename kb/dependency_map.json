@@ -15635,7 +15635,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 358
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -25542,7 +25542,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 327
+     "line": 347
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -25612,7 +25612,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 334
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -25762,7 +25762,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 313
+     "line": 333
     },
     {
      "id": "script:kb/_subjects_list_recode.py",
@@ -27806,7 +27806,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 233
+     "line": 251
     }
    ],
    "main_committers": []

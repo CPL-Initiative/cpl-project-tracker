@@ -27,8 +27,8 @@ Standing rules this file enforces (each has a test in tests/mid_outcomes_compare
 Sources:
   outcomes   kb/course_outcomes/<host>/read_*.json, the reads public.course_outcomes is loaded from, turned into rows
              by kb/_course_outcomes_load.py's own rows_from (one copy of that logic); or, with --source live, the table
-             itself through PostgREST, read-only and Range-paginated (Rule 10 b), with SUPABASE_SERVICE_KEY or
-             SUPABASE_ANON_KEY (the table grants select to anon).
+             itself through PostgREST, read-only and Range-paginated (Rule 10 b), with SUPABASE_ANON_KEY only (the
+             table grants select to anon); a missing key or a short read stops the run, with no fallback.
   members    unified_courses_members.js and unified_courses_member_desc.js (rebuilt nightly, current-era keys).
   titles     unified_courses_index.js.
   reach      kb/exhibits_review.json: the held titles whose canonical title comes "from M-ID ...".
@@ -225,24 +225,44 @@ def outcome_rows_from_files(root=ROOT):
     return rows, hosts
 
 
-def outcome_rows_live():
-    """course_outcomes through PostgREST, read-only, Range-paginated; the newest read_run per college, code and kind."""
-    key = os.environ.get("SUPABASE_SERVICE_KEY") or os.environ.get("SUPABASE_ANON_KEY")
+def _get_page(endpoint, key, start, page):
+    """One Range page and the table's exact total from Content-Range (Prefer: count=exact)."""
+    req = urllib.request.Request(endpoint, headers={
+        "apikey": key, "Authorization": "Bearer " + key, "Accept": "application/json",
+        "Prefer": "count=exact", "Range-Unit": "items", "Range": "%d-%d" % (start, start + page - 1)})
+    with urllib.request.urlopen(req, timeout=60) as r:
+        got = json.load(r)
+        rng = r.headers.get("Content-Range") or ""
+    total = rng.rsplit("/", 1)[-1] if "/" in rng else ""
+    return got or [], int(total) if total.isdigit() else None
+
+
+def outcome_rows_live(get_page=None, env=None):
+    """course_outcomes through PostgREST with the anon key only (the table grants select to anon,
+    chatbox/supabase_course_outcomes.sql), Range-paginated; the newest read_run per college, code and kind.
+    A missing key or a read short of the table's exact count stops the run: it never falls back to the committed
+    reads, and never reports on a truncated read (COBIx on #3165, 2026-11-12)."""
+    env = os.environ if env is None else env
+    key = env.get("SUPABASE_ANON_KEY")
     if not key:
-        raise SystemExit("--source live needs SUPABASE_SERVICE_KEY or SUPABASE_ANON_KEY (a read-only GET).")
+        raise SystemExit("--source live needs SUPABASE_ANON_KEY (the public anon key; a read-only GET). "
+                         "It does not fall back to the committed reads.")
+    get_page = get_page or _get_page
     endpoint = (URL + "/rest/v1/course_outcomes?select=college,course_code,course_title,kind,outcomes,read_run,"
                 "source_url&order=id.asc")
-    rows, start, page = [], 0, 1000
+    rows, start, page, total = [], 0, 1000, None
     while True:
-        req = urllib.request.Request(endpoint, headers={
-            "apikey": key, "Authorization": "Bearer " + key, "Accept": "application/json",
-            "Range-Unit": "items", "Range": "%d-%d" % (start, start + page - 1)})
-        with urllib.request.urlopen(req, timeout=60) as r:
-            got = json.load(r)
-        rows.extend(got or [])
+        got, n = get_page(endpoint, key, start, page)
+        total = n if n is not None else total
+        rows.extend(got)
         if not got or len(got) < page:
             break
         start += page
+    if total is None:
+        raise SystemExit("course_outcomes sent no exact count (Content-Range); the read cannot be checked whole.")
+    if len(rows) != total:
+        raise SystemExit("course_outcomes read %d rows of %d: the pager stopped short (a max-rows cap?)"
+                         % (len(rows), total))
     newest = {}
     for r in rows:
         k = (r.get("college"), r.get("course_code"), r.get("kind"))
@@ -863,8 +883,9 @@ def render(state, members_at):
       "day.\" %d M-IDs carry Leadership or Supervision in their title; %d of them hold a member with outcomes text "
       "and %d hold two or more. The military side, the JST 3-hour Leadership recommendation, is in no committed file "
       "this script reads: MAP's ACE recommendation rows live in Supabase (`map_college_cr_unit`, `source_code` ACE, "
-      "per `docs/military_cr_reference_scope.md`), so which of these M-IDs those recommendations land on is a read "
-      "for a later pass."
+      "per `docs/military_cr_reference_scope.md`), which the anon key is not known to read. This section stays on the "
+      "committed data in every run, live or not, and nothing is widened for it; which of these M-IDs those "
+      "recommendations land on is a read for a later pass."
       % (len(lead), len(lw), sum(1 for m in lead if m in scope)))
     w("")
     w("| M-ID | Title | Members | Colleges | With text | Class | Colleges without outlines on file |")
@@ -994,10 +1015,12 @@ def main(argv=None):
     a = ap.parse_args(argv)
     if a.source == "live":
         rows = outcome_rows_live()
-        label = "the live `course_outcomes` table (PostgREST, read-only, %d rows)" % len(rows)
+        label = ("the live `course_outcomes` table (source: live; PostgREST with the anon key, read-only, %d rows "
+                 "after the newest read per course, the exact count matched)" % len(rows))
     else:
         rows, hosts = outcome_rows_from_files()
-        label = "the committed reads under `kb/course_outcomes/` (%d hosts, %d rows)" % (len(hosts), len(rows))
+        label = "the committed reads under `kb/course_outcomes/` (source: files; %d hosts, %d rows)" % (
+            len(hosts), len(rows))
     members, members_at = load_members()
     state = run(rows, members, load_index(), load_reach(), label, a.date)
     state["rows"], state["members"] = rows, members
