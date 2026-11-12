@@ -6085,7 +6085,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 283
+     "line": 285
     }
    ],
    "served": true,
@@ -6270,7 +6270,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 281
+     "line": 283
     },
     {
      "id": "script:kb/_apply_college_short_names.py",
@@ -19997,7 +19997,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 557
+     "line": 558
     }
    ],
    "served": true,
@@ -20151,7 +20151,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 283
+     "line": 284
     }
    ],
    "served": true,
@@ -20348,7 +20348,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 282
+     "line": 284
     }
    ],
    "served": true,
@@ -22061,70 +22061,70 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 226
+     "line": 228
     },
     {
      "id": "page:library/adopt/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 558
+     "line": 559
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 199
+     "line": 201
     },
     {
      "id": "page:library/cpl-initiative-overview/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 329
+     "line": 331
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 348
+     "line": 350
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 407
+     "line": 605
     },
     {
      "id": "page:library/ell-healthcare-pathways-cpl-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 1283
+     "line": 1285
     },
     {
      "id": "page:library/ell-iet-cpl-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 789
+     "line": 791
     },
     {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 285
+     "line": 286
     },
     {
      "id": "page:library/noncredit-to-credit-how-noncredit-learning-can-result-in-cre-mw53clp5/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 296
+     "line": 298
     }
    ],
    "served": true,

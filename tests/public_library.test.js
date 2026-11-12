@@ -122,7 +122,8 @@ block("(2c)", function () {
   check("(2c) a skip link, a labelled search, reduced motion and a dark palette",
     /class="skip-link"/.test(PAGE) && /<label for="lib-q">/.test(PAGE) && /prefers-reduced-motion/.test(PAGE) && /:root\[data-theme="dark"\]/.test(PAGE));
   check("(2c) a single column below 560px and no fixed widths", /max-width: 560px\) \{ \.grid \{ grid-template-columns: 1fr/.test(PAGE));
-  check("(2c) controls are underlined words, at least 24px", /\.word \{[^}]*min-height: 24px; min-width: 24px;[^}]*text-decoration: underline/.test(PAGE));
+  // 25px, one past the floor (S641): a control at exactly 24px reads 23.9 at a 90% or 133% browser zoom.
+  check("(2c) controls are underlined words, at least 25px", /\.word \{[^}]*min-height: 25px; min-width: 25px;[^}]*text-decoration: underline/.test(PAGE));
   check("(2c) the page is in the a11y sweep, light and dark", /"public-library":\s*\{\s*file: "library\/index\.html"/.test(A11Y) && /"public-library-dark"/.test(A11Y));
 });
 
