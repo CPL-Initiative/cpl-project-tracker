@@ -178,44 +178,79 @@ check("a member's proposed title is the family plus its tests",
       and test_mix.family_title(FAM, "ASE G1 + ALI Lift It Right Bundle") == "ASE Certificate Bundles: G1 with ALI Lift It Right"
       and test_mix.family_title(FAM, "ASE Master Automobile Technician") is None)
 
-_lj, _fm = rel.load_json, rel.credential_aliases.family_members
+# The batch and the exception list are built from an explicit fixture, so the checks hold whatever state the committed
+# kb data is in (the 2026-11-12 rename apply, da9f2f90, renamed 22 of these titles in kb/credentials.json). The fixture
+# is the pre-apply state: every saved title in the reference, the 26 members tagged, Sam's fold rows beside the tags,
+# plus two members already in the family form, as after a rename.
+DONE = ["ASE Certificate Bundles: T5 + T8", "ASE Certificate Bundles: T7 + T8 with MACS/609"]
+
+
+def fixture(plans):
+    d = tempfile.mkdtemp()
+    os.makedirs(os.path.join(d, "kb", "reference"))
+    os.makedirs(os.path.join(d, "kb", "cred_rename_plans"))
+    shutil.copy(ftp.FAMILIES, os.path.join(d, "kb", "reference", "credential_families.json"))
+    if plans:
+        for f in os.listdir(os.path.join(ROOT, "kb", "cred_rename_plans")):
+            if f.endswith(".json"):
+                shutil.copy(os.path.join(ROOT, "kb", "cred_rename_plans", f), os.path.join(d, "kb", "cred_rename_plans", f))
+    iss = "National Institute for Automotive Service Excellence (ASE)"
+    members_ = conv_all | set(DONE)
+    cr_ = {t: [dict({"issuing_agency": iss}, **({"family": FAM} if t in members_ else {}))] for t in list(SAVED) + DONE}
+    ut_ = {"local %d" % k: {"unified_title": t} for k, t in enumerate(list(SAVED) + DONE)}
+    ov_ = {t: {"unified_title_override": FAM, "unified_title_merge_confirm": FAM, "credential_family": FAM}
+           for t in members_ - set(DONE)}
+    for name, doc in (("credentials.json", cr_), ("unified_titles.json", ut_),
+                      ("credential_review_overlay.json", {"overrides": ov_})):
+        json.dump(doc, open(os.path.join(d, "kb", name), "w", encoding="utf-8"), ensure_ascii=False)
+    return d
+
+
+fx_plain, fx_ruled = fixture(False), fixture(True)
 try:
-    def lj(root, path, default=None):
-        got = _lj(root, path, default)
-        if path == "kb/credential_review_overlay.json":
-            # As after the tags land: Sam's fold rows stay beside them, so every member still holds its saved fold.
-            ov = dict((got or {}).get("overrides") or {})
-            for t in conv:
-                ov[t] = dict(ov.get(t) or {}, unified_title_override=FAM, unified_title_merge_confirm=FAM,
-                             credential_family=FAM)
-            got = dict(got or {}, overrides=ov)
-        return got
-    rel.load_json = lj
-    rel.credential_aliases.family_members = lambda root=".": {t: {"family": FAM, "aliases": test_mix.components(t)} for t in conv}
-    built_ruled = rel.build(ROOT)
-    _rl = rel.ruled_renames.load
-    rel.ruled_renames.load = lambda plans_dir=None: []   # as before Sheet 181's plan
-    try:
-        built = rel.build(ROOT)
-    finally:
-        rel.ruled_renames.load = _rl
+    built, built_ruled = rel.build(fx_plain), rel.build(fx_ruled)
 finally:
-    rel.load_json, rel.credential_aliases.family_members = _lj, _fm
+    shutil.rmtree(fx_plain)
+    shutil.rmtree(fx_ruled)
 ruled_old = {e["old"] for p_ in rel.ruled_renames.load() for e in p_["entries"]}
+plain_offered = {r["current"] for b in built["batches"] for r in b["rows"]}
 check("with Sheet 181's plan, no title it renames is offered in the rename batch again",
-      len(ruled_old) >= 20 and not ruled_old & {r["current"] for b in built_ruled["batches"] for r in b["rows"]})
+      len(ruled_old) >= 20 and ruled_old & plain_offered
+      and not ruled_old & {r["current"] for b in built_ruled["batches"] for r in b["rows"]})
 famrows = [r for b in built["batches"] for r in b["rows"] if r.get("kind") == "family"]
-present = {t for t in conv if any(x[0] == t for x in built["titles"]) and test_mix.family_title(FAM, t)}
+nameable = {t for t in conv | set(DONE) if test_mix.family_title(FAM, t) and test_mix.family_title(FAM, t) != t}
 check("the rename batch proposes every member the parser can name in the family form, and no held title",
-      {r["current"] for r in famrows} == present and len(present) >= 20
+      {r["current"] for r in famrows} == nameable and len(nameable) >= 20
       and all(r["proposed"] == test_mix.family_title(FAM, r["current"]) for r in famrows)
       and not any(r["current"] in HELD for r in famrows))
+check("a member already in the family form is proposed nothing",
+      all(test_mix.family_title(FAM, t) == t for t in DONE) and not set(DONE) & {r["current"] for r in famrows})
 same = [r for r in famrows if r["proposed"] == "ASE Certificate Bundles: A2 + A3 + A6"]
 check("two titles with one mix share one proposed title: one leads, the other folds into it",
-      len(same) != 2 or sorted(bool(r["merge"]) for r in same) == [False, True])
+      len(same) == 2 and sorted(bool(r["merge"]) for r in same) == [False, True])
 exl = built["families"][FAM]["exceptions"]
 check("the family's exception list holds the members to code by hand, each with its tests and its 'with' parts",
-      {e["title"] for e in exl} == {t for t in EXC if any(x[0] == t for x in built["titles"])} and all("tests" in e and "with" in e for e in exl))
+      {e["title"] for e in exl} == EXC | {"ASE Certificate Bundles: T7 + T8 with MACS/609"}
+      and all("tests" in e and "with" in e for e in exl)
+      and next(e for e in exl if e["title"] == DONE[1])["with"] == ["MACS/609"]
+      and next(e for e in exl if e["title"] == DONE[1])["tests"] == ["T7", "T8"])
+
+# Against the committed kb data, before or after a rename: every member in the reference is in the family form, is
+# proposed in it, is on the exception list, or is carried by a ruled plan; no held title is a member or proposed.
+live = rel.build(ROOT)
+live_members = credential_aliases.family_members(ROOT)
+live_rows = {r["current"]: r for b in live["batches"] for r in b["rows"] if r.get("kind") == "family"}
+live_exc = {e["title"]: e for e in live["families"][FAM]["exceptions"]}
+live_ruled = rel.ruled_renames.pending(rel.ruled_renames.load(), json.load(open(os.path.join(ROOT, "kb", "credentials.json"),
+                                                                               encoding="utf-8")), set())
+unplaced = [t for t, m in live_members.items() if m["family"] == FAM and m["member_kind"] == "bundle"
+            and test_mix.family_title(FAM, t) != t and t not in live_rows and t not in live_exc and t not in live_ruled]
+check("in the committed data every bundle member is in the family form, proposed in it, on the exception list, or ruled",
+      not unplaced and len(live_members) >= 20)
+check("in the committed data no held title is a member, proposed, or an exception",
+      not HELD & (set(live_members) | set(live_rows) | set(live_exc)))
+check("in the committed data each exception parses back into its tests and its 'with' parts",
+      all(e["tests"] and e == test_mix.exception(t) for t, e in live_exc.items()))
 
 failed = [n for n, ok in CHECKS if not ok]
 for n, ok in CHECKS:

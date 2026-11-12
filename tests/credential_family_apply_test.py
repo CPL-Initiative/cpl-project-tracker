@@ -55,11 +55,15 @@ OTHER = {"course_id": P + "ASE Bundle — A4, A5", "field": "issuing_agency_over
 C1G1 = "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"
 BASE = FOLDS + [OTHER]
 # The applier reads the checked-out credential titles so a renamed member's old title reads as gone (Sheet 181's ruled
-# renames leave Sam's fold rows on it). The committed file holds every title here; the swap below names a title it does
-# not, so the read is pinned off for the gate checks and checked on its own.
+# renames leave Sam's fold rows on it). The committed file holds every title here, or the title an applied rename moved
+# it to (the 2026-11-12 apply renamed 22 of them); the swap below names a title it does not, so the read is pinned off
+# for the gate checks and checked on its own.
 _real_titles = app.current_titles()
-check("the applier reads the committed credential titles, and they hold every bundle title the S638 read found",
-      _real_titles is not None and {x["course_id"][len(P):] for x in FOLDS} - set(ftp.HOLD) <= _real_titles)
+_real_moves = app.current_moves()
+check("the applier reads the committed credential titles, and they hold every bundle title the S638 read found, "
+      "under its own title or the one an applied rename moved it to",
+      _real_titles is not None and all(t in _real_titles or (_real_moves.get(t) or {}).get("now") in _real_titles
+                                       for t in {x["course_id"][len(P):] for x in FOLDS} - set(ftp.HOLD)))
 check("a title missing from kb/credentials.json reads as gone and takes no tag",
       "ASE Bundle — A4, A5" in [it["title"] for it in ftp.plan(BASE, ftp.families(),
                                                              _real_titles - {"ASE Bundle — A4, A5"})["gone"]])

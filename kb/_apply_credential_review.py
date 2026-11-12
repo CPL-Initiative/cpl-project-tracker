@@ -400,10 +400,13 @@ def promote_trainers(overrides):
     return fills, missing
 
 
-def promote_families(overrides, cr_path=CR_PATH, families_path=FAMILIES_PATH):
+def promote_families(overrides, cr_path=None, families_path=None):
     """Mode A4: carry each title's credential_family onto every one of its records in kb/credentials.json as
     `family`, and take it off a title whose row is gone, so a rollback of the rows reaches the file too. A value
-    no declared family names is skipped and reported. Returns (set, cleared, undeclared)."""
+    no declared family names is skipped and reported. Returns (set, cleared, undeclared).
+    The paths resolve at call time, so a caller (or a test) that repoints CR_PATH writes there, never the
+    committed file."""
+    cr_path, families_path = cr_path or CR_PATH, families_path or FAMILIES_PATH
     try:
         cr = json.load(open(cr_path, encoding="utf-8"))
         declared = (json.load(open(families_path, encoding="utf-8")).get("families") or {})
