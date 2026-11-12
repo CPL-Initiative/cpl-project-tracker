@@ -1,7 +1,7 @@
 {
-  "_generated": "2026-10-12T16:44:20.770Z",
+  "_generated": "2026-11-12T12:56:10.678Z",
   "_note": "Verified public-domain candidates from Wikimedia Commons (direct + 1 level of subcategories + tools/art_extra_files.json). Curate by hand into tools/first_light_selection.json; write OUR OWN blurb/setting/alt per entry. Filenames are EXACT (do not edit).",
-  "total": 4675,
+  "total": 4677,
   "by_category": [
     {
       "category": "Paintings by Granville Redmond",
@@ -3948,6 +3948,20 @@
     },
     {
       "category": "Iconic works",
+      "file": "Claude Monet, Water Lilies, ca. 1915-1926.jpg",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%2C%20Water%20Lilies%2C%20ca.%201915-1926.jpg?width=1600",
+      "license": "Public domain",
+      "artist": "Claude Monet",
+      "year": "between circa 1915 and circa 1926date QS:P571,+1950-00-00T00:00:00Z/7,P1319,+1915-00-00T00:00:00Z/9,P1326,+1926-00-00T00:00:00Z/9,P1480,Q5727902",
+      "object": "Water Lilies",
+      "credit": "1. Artdaily.com2. The Nelson-Atkins Museum of Art",
+      "desc": "",
+      "width": 2331,
+      "height": 1089,
+      "page": "https://commons.wikimedia.org/wiki/File:Claude_Monet,_Water_Lilies,_ca._1915-1926.jpg"
+    },
+    {
+      "category": "Iconic works",
       "file": "Cole Thomas The Oxbow (The Connecticut River near Northampton 1836).jpg",
       "img": "https://commons.wikimedia.org/wiki/Special:FilePath/Cole%20Thomas%20The%20Oxbow%20(The%20Connecticut%20River%20near%20Northampton%201836).jpg?width=1600",
       "license": "Public domain",
@@ -3987,6 +4001,20 @@
       "width": 6128,
       "height": 4226,
       "page": "https://commons.wikimedia.org/wiki/File:John_Constable_-_The_Hay_Wain_(1821).jpg"
+    },
+    {
+      "category": "Iconic works",
+      "file": "John Constable, The White Horse, 1818-1819, NGA 1146.jpg",
+      "img": "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%2C%20The%20White%20Horse%2C%201818-1819%2C%20NGA%201146.jpg?width=1600",
+      "license": "CC0",
+      "artist": "John Constable",
+      "year": "between 1818 and 1819date QS:P571,+1818-00-00T00:00:00Z/8,P1319,+1818-00-00T00:00:00Z/9,P1326,+1819-00-00T00:00:00Z/9",
+      "object": "The White Horse",
+      "credit": "This file was donated to Wikimedia Commons as part of a project by the National Gallery of Art. Please see the Gallery's Open Access Policy.",
+      "desc": "",
+      "width": 4000,
+      "height": 2796,
+      "page": "https://commons.wikimedia.org/wiki/File:John_Constable,_The_White_Horse,_1818-1819,_NGA_1146.jpg"
     },
     {
       "category": "Iconic works",
