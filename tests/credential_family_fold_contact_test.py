@@ -1,7 +1,7 @@
 """Where the credential family meets the fold (#3116 merged into #3117, S638).
 
   1. With kb/reference/credential_families.json present, the rename dry-run over the committed overlay holds the
-     saved folds into "ASE Certificate Bundles" as family tags (31) and folds only the five "standards" merges;
+     saved folds into "ASE Certificate Bundles" as family tags and folds only "standards" merges;
      with no family file it would fold them, so the file is what holds them.
   2. A member renamed by the rename batch (to its family form, "ASE Certificate Bundles: A4 + A5") keeps its
      family: the Supabase row move carries the credential_family row to the new key, the credentials.json re-key
@@ -32,17 +32,18 @@ def check(name, cond):
     CHECKS.append((name, bool(cond)))
 
 
-def dryrun(tmp, families):
+def dryrun(tmp, families, plans=None):
     dry.OUT_DIR, dry.FAMILIES = os.path.join(tmp, "dry"), families
+    dry.PLANS_DIR = plans or os.path.join(tmp, "no_plans")
     with contextlib.redirect_stdout(io.StringIO()):
         dry.main()
     return json.load(open(os.path.join(dry.OUT_DIR, "alias_map.json"), encoding="utf-8"))
 
 
 tmp = tempfile.mkdtemp()
-real_out, real_fam = dry.OUT_DIR, dry.FAMILIES
+real_out, real_fam, real_plans = dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR
 try:
-    # ── 1. the dry-run's preview with the family file present ────────────────────────────────────────────
+    # ── 1. the dry-run's preview with the family file present (no ruled plan; Sheet 181's is 1b) ─────────
     doc = dryrun(tmp, real_fam)
     s = doc["summary"]
     # The overlay's saved folds into the family title: 31 until the family-tag plan converts them (its rows then
@@ -50,17 +51,25 @@ try:
     ov = json.load(open(dry.OVERLAY, encoding="utf-8")).get("overrides") or {}
     saved = sum(1 for e in ov.values() if (e or {}).get("unified_title_override") == FAM)
     check(f"with the family file, every saved fold into the family title is held as a family tag ({saved}, 31 before the plan)",
-          saved in (0, 31) and s["held_as_family_tags"] == saved == len(doc["held_family"]))
+          s["held_as_family_tags"] == saved == len(doc["held_family"]))
     check("every held fold targets the family title", all(h["target"] == FAM for h in doc["held_family"]))
-    check("only the five 'standards' merges fold",
-          len(doc["merges"]) == 5 and all(t.endswith(" standards)") for t in doc["merges"].values()))
+    check("only 'standards' merges fold (the nightly fold settles others, so the count moves)",
+          all(t.endswith(" standards)") for t in doc["merges"].values()))
     check("no rename or merge mints the family title", FAM not in set(doc["renames"].values()) | set(doc["merges"].values()))
     bare = dryrun(tmp, os.path.join(tmp, "absent.json"))
     check("without the family file those folds are not held, so the file is what holds them",
           bare["summary"]["held_as_family_tags"] == 0
           and (not saved or len(bare["renames"]) + len(bare["merges"]) > len(doc["renames"]) + len(doc["merges"])))
+    # ── 1b. with Sheet 181's ruled plan: its renames take the place of the family-tag folds they cover ─────
+    ruled = dryrun(tmp, real_fam, real_plans)
+    applied = {e["old"] for e in ruled["ruled"]["applied"]}
+    check("with the ruled plan, the folds it does not rename stay held as family tags, and none is renamed",
+          ruled["summary"]["held_as_family_tags"] == saved - len(applied)
+          and not applied & {h["old"] for h in ruled["held_family"]})
+    check("the ruled merges are the standards merges plus the plan's, and nothing mints the family title",
+          set(ruled["merges"]) >= set(doc["merges"]) and FAM not in set(ruled["renames"].values()) | set(ruled["merges"].values()))
 finally:
-    dry.OUT_DIR, dry.FAMILIES = real_out, real_fam
+    dry.OUT_DIR, dry.FAMILIES, dry.PLANS_DIR = real_out, real_fam, real_plans
 
 # ── 2. a member renamed into its family form keeps its family ─────────────────────────────────────────────
 OLD, NEW = "ASE A4 and A5 Bundle", FAM + ": A4 + A5"

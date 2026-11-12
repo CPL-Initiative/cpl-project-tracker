@@ -1,0 +1,319 @@
+{
+  "table": "kb_curation",
+  "mode": "commit",
+  "at": "2026-11-12T01-28-47Z",
+  "ruling": "Sam, 2026-11-11, in session: each ASE bundle stays its own title and carries the family (cpl_memory sam-bundle-family-is-a-field-2026-11-11); his saved folds are read as family tags.",
+  "cohort": "credential-family-s638@bot",
+  "expect": "3a4d0f3d969b",
+  "expected_set": [
+    [
+      "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A1, A6, A8, L1",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A2, A3, A6",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A4, A5",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A4, A5, A6",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A6 or T6 + L3",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — A6, A8, L1",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — L2, T8, SP/2 HD",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T2, T8",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T3, T4, T5, T8",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T3, T8, SP/2 HD",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T4, T8, SP/2 HD",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T5, T8",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T5, T8, SP/2 HD",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T6, T8 + Snap-on 604",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Bundle — T7, T8 + MACS/609",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE Certification (any A1–A8)",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE G1 + ALI Lift It Right Bundle",
+      "ASE Certificate Bundles"
+    ],
+    [
+      "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "ASE Certificate Bundles"
+    ]
+  ],
+  "rows_read": 108,
+  "rows": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certification (any A1–A8)",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    }
+  ],
+  "already_written": [
+    {
+      "title": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A1, A6, A8, L1",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A2, A3, A6",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A4, A5",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A4, A5, A6",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A6 or T6 + L3",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — A6, A8, L1",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — L2, T8, SP/2 HD",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T2, T8",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T3, T4, T5, T8",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T3, T8, SP/2 HD",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T4, T8, SP/2 HD",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T5, T8",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T5, T8, SP/2 HD",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T6, T8 + Snap-on 604",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE Bundle — T7, T8 + MACS/609",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE G1 + ALI Lift It Right Bundle",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    },
+    {
+      "title": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+      "family": "ASE Certificate Bundles",
+      "by": "credential-family-s638@bot"
+    }
+  ],
+  "held": [
+    {
+      "title": "ASE Master Automobile Technician",
+      "why": "Master stays its own title (ruling 3: ASE awards it)"
+    },
+    {
+      "title": "ASE Master Automobile Technician (A1–A8) or L3",
+      "why": "any one of: the Master series or L3 alone; keeps its own title, left for a person (S639 conductor, 2026-11-12)"
+    },
+    {
+      "title": "ASE Master Medium/Heavy Truck Technician (T1–T8)",
+      "why": "Master stays its own title (ruling 3: ASE awards it)"
+    }
+  ],
+  "fold_rows_read": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certification (any A1–A8)",
+      "field": "unified_title_merge_confirm",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certification (any A1–A8)",
+      "field": "unified_title_override",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "slee@cccco.edu",
+      "reviewed_at": "2026-11-11T15:26:55.029+00:00"
+    }
+  ],
+  "result": "written",
+  "insert_echo": 2,
+  "inserted": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certification (any A1–A8)",
+      "field": "credential_family",
+      "value": "ASE Certificate Bundles",
+      "reviewer_email": "credential-family-s638@bot"
+    }
+  ],
+  "skipped_as_duplicate": [],
+  "missing": [],
+  "read_back": {
+    "to_write": 0,
+    "written": 26,
+    "set": "3a4d0f3d969b",
+    "conflicts": []
+  }
+}

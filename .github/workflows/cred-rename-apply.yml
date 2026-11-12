@@ -48,6 +48,12 @@ name: Cred-Ref PR-5b/1 — Credential Rename Apply
 
 on:
   workflow_dispatch:
+    inputs:
+      only_plan:
+        description: "Apply only this ruled plan's renames and merges (a plan_id under kb/cred_rename_plans/, e.g. sheet181-2026-11-12); empty applies every planned rename"
+        required: false
+        default: ""
+        type: string
 
 concurrency:
   group: daily-dashboard
@@ -84,8 +90,18 @@ jobs:
 
       # ── Step 2: re-run dry-run (refreshes alias_map vs current state) ─
       - name: Re-run dry-run + verify apply_safe
+        env:
+          ONLY_PLAN: ${{ inputs.only_plan }}
         run: |
-          python kb/_cred_rename_dryrun.py
+          if [ -n "${ONLY_PLAN:-}" ] && [ -z "$(printf '%s' "$ONLY_PLAN" | tr -d '[:space:]')" ]; then
+            echo "::error::only_plan is blank; name a plan_id, or leave it empty to apply every planned rename"
+            exit 1
+          fi
+          if [ -n "${ONLY_PLAN:-}" ]; then
+            python kb/_cred_rename_dryrun.py --only-plan "$ONLY_PLAN"
+          else
+            python kb/_cred_rename_dryrun.py
+          fi
           python3 << 'EOF'
           import json, sys
           with open('kb/cred_rename_dryrun/alias_map.json') as f:

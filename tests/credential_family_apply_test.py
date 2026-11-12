@@ -4,7 +4,8 @@ sam-bundle-family-is-a-field-2026-11-11: each ASE bundle stays its own title and
 
 kb_curation is the table Rule 10 protects, so these checks pin the failure modes the S639 review confirmed:
   1. the generator and the applier emit no SQL: no schema statement, no temporary table, only insert rows;
-  2. a held title (the four Masters, the two non-bundles, ASE C1 or G1) emits nothing: 24 to write, 7 held;
+  2. a held title (the four Masters and the emptied title) emits nothing: 26 to write (24 bundles and, since Sheet 181,
+     the two any-one-test members), 5 held;
   3. the gate is the SET: a swapped set with an equal count is refused; a conflict is refused; the dry run writes
      nothing and its hash survives the commit (written + to-write is the same set);
   4. the pending receipt exists before the INSERT; the commit refuses without one, or when the live rows changed;
@@ -53,6 +54,17 @@ OTHER = {"course_id": P + "ASE Bundle — A4, A5", "field": "issuing_agency_over
          "reviewed_at": "2026-07-09T00:07:00+00:00"}
 C1G1 = "ASE C1 or G1 — Service Consultant or Auto Maintenance and Light Repair"
 BASE = FOLDS + [OTHER]
+# The applier reads the checked-out credential titles so a renamed member's old title reads as gone (Sheet 181's ruled
+# renames leave Sam's fold rows on it). The committed file holds every title here; the swap below names a title it does
+# not, so the read is pinned off for the gate checks and checked on its own.
+_real_titles = app.current_titles()
+check("the applier reads the committed credential titles, and they hold every bundle title the S638 read found",
+      _real_titles is not None and {x["course_id"][len(P):] for x in FOLDS} - set(ftp.HOLD) <= _real_titles)
+check("a title missing from kb/credentials.json reads as gone and takes no tag",
+      "ASE Bundle — A4, A5" in [it["title"] for it in ftp.plan(BASE, ftp.families(),
+                                                             _real_titles - {"ASE Bundle — A4, A5"})["gone"]])
+app.current_titles = lambda path=None: None
+app.current_moves = lambda root=None: {}   # no applied rename; section 9 sets one
 
 
 class Boom(Exception):
@@ -193,13 +205,14 @@ for mod in (ftp, app):
     check("%s holds no schema statement, no temporary table and no transaction" % os.path.basename(mod.__file__),
           not SCHEMA.search(src), SCHEMA.search(src).group(0) if SCHEMA.search(src) else "")
 
-# ── 2. the plan: 24 to write, 7 held, each row one family tag ───────────────
+# ── 2. the plan: 26 to write, 5 held, each row one family tag ───────────────
 p = ftp.plan(BASE, ftp.families())
 tags, written, conflicts = ftp.tag_rows(p, BASE)
 held = {h["title"] for h in p["held"]}
-check("24 titles take a tag, 7 are held, no conflict", len(tags) == 24 and len(held) == 7 and not conflicts,
+check("26 titles take a tag, 5 are held, no conflict", len(tags) == 26 and len(held) == 5 and not conflicts,
       (len(tags), len(held), conflicts))
-check("ASE C1 or G1 is held with the any-one-test titles", C1G1 in held and C1G1 in ftp.HOLD)
+check("ASE C1 or G1 is an any-one-test member and takes the tag (Sheet 181)", C1G1 not in held and C1G1 not in ftp.HOLD
+      and any(t["course_id"] == P + C1G1 for t in tags))
 check("a held title emits nothing", not any(t["course_id"][len(P):] in held for t in tags))
 check("every emitted row is one family tag, three keys, nothing else",
       all(set(t) == {"course_id", "field", "value"} and t["field"] == "credential_family" and t["value"] == FAM
@@ -207,8 +220,8 @@ check("every emitted row is one family tag, three keys, nothing else",
 
 # ── 3. the dry run and the set gate ─────────────────────────────────────────
 H, lines = dry_hash(BASE)
-check("the dry run reports 24 to write, 7 held, 0 conflicts and the set hash to commit with",
-      H and any("24 to write, 0 already written, 7 held for Sam, 0 conflicts; set %s (24 tags)" % H in l
+check("the dry run reports 26 to write, 5 held, 0 conflicts and the set hash to commit with",
+      H and any("26 to write, 0 already written, 5 held for Sam, 0 conflicts; set %s (26 tags)" % H in l
                 for l in lines), lines[-1:])
 d = tempfile.mkdtemp()
 try:
@@ -228,8 +241,8 @@ try:
     assert test_mix.from_title(swap_title) and P + swap_title not in {x["course_id"] for x in BASE}
     swapped = [dict(x, course_id=P + swap_title) if x["course_id"] == first else dict(x) for x in BASE]
     sh, slines = dry_hash(swapped)
-    check("the swapped live set still gives 24 tags (the count gate would pass it)",
-          any("24 to write" in l and "(24 tags)" in l for l in slines), slines[-1:])
+    check("the swapped live set still gives 26 tags (the count gate would pass it)",
+          any("26 to write" in l and "(26 tags)" in l for l in slines), slines[-1:])
     sw = FakePostgrest(swapped, receipt_dir=d)
     code, lines = go("prepare", sw, d, expect=H)
     check("prepare refuses a swapped set with an equal count", code == 1 and sh != H and not os.listdir(d), lines[-1:])
@@ -254,9 +267,9 @@ try:
     check("commit without a pending receipt for the set is refused", code == 1 and r.posts == 0, lines[-1:])
     code, lines = go("prepare", r, d, expect=H)
     pend = receipts(d)
-    check("prepare writes one pending receipt naming the 24 planned rows, the cohort and the expected set, and inserts "
+    check("prepare writes one pending receipt naming the 26 planned rows, the cohort and the expected set, and inserts "
           "nothing", code == 0 and r.posts == 0 and len(pend) == 1 and pend[0]["result"] == "pending"
-          and len(pend[0]["rows"]) == 24 and pend[0]["expect"] == H and len(pend[0]["expected_set"]) == 24
+          and len(pend[0]["rows"]) == 26 and pend[0]["expect"] == H and len(pend[0]["expected_set"]) == 26
           and pend[0]["cohort"] == COHORT and all(x["reviewer_email"] == COHORT for x in pend[0]["rows"]))
     # The live rows change between prepare and commit: refused, receipt marked, nothing inserted.
     late = FakePostgrest(r.rows + [{"course_id": P + "ASE Bundle — T5, T8", "field": "credential_family",
@@ -274,13 +287,13 @@ try:
     r, code, lines, err = committed(d)
     rec = receipts(d)[-1]
     new = [x for x in r.rows if x["field"] == "credential_family"]
-    check("the commit inserts the 24 tags under the cohort, filed as ours by the read-back",
-          err is None and code == 0 and len(new) == 24 and all(x["reviewer_email"] == COHORT and x["value"] == FAM
+    check("the commit inserts the 26 tags under the cohort, filed as ours by the read-back",
+          err is None and code == 0 and len(new) == 26 and all(x["reviewer_email"] == COHORT and x["value"] == FAM
                                                               for x in new)
-          and rec["result"] == "written" and len(rec["inserted"]) == 24 and rec["read_back"]["set"] == rec["expect"],
+          and rec["result"] == "written" and len(rec["inserted"]) == 26 and rec["read_back"]["set"] == rec["expect"],
           lines[-1:])
-    check("the receipt exists before the INSERT and holds the fold rows read and the seven held",
-          r.receipt_before_post is True and len(rec.get("fold_rows_read") or []) > 0 and len(rec.get("held")) == 7)
+    check("the receipt exists before the INSERT and holds the fold rows read and the five held",
+          r.receipt_before_post is True and len(rec.get("fold_rows_read") or []) > 0 and len(rec.get("held")) == 5)
     check("Sam's fold rows and every other row are exactly as they were",
           state([x for x in r.rows if x["field"] != "credential_family"]) == state(BASE))
     before = state(r.rows)
@@ -289,8 +302,8 @@ try:
           code == 0 and r.posts == 1 and state(r.rows) == before and len(receipts(d)) == 1
           and any("nothing to write" in l for l in lines), lines[-1:])
     h2, lines = dry_hash(r.rows)
-    check("after the commit the dry run reads 0 to write, 24 already written, and the same set hash",
-          h2 == H and any("0 to write, 24 already written, 7 held for Sam, 0 conflicts" in l for l in lines))
+    check("after the commit the dry run reads 0 to write, 26 already written, and the same set hash",
+          h2 == H and any("0 to write, 26 already written, 5 held for Sam, 0 conflicts" in l for l in lines))
 
     # ── 6. rollback: exact, and a person's change survives ─────────────────
     sam_row = {"course_id": P + "ASE Master Automobile Technician", "field": "credential_family", "value": FAM,
@@ -305,12 +318,12 @@ try:
     keep = state([x for x in r.rows if x.get("reviewer_email") != COHORT])
     code, lines = go("rollback", r, d)
     rb = receipts(d, "rolled_back")[-1]
-    check("rollback removes the 22 rows still ours and leaves the 2 a person has taken since, and Sam's own row",
-          code == 0 and not cohort_rows(r) and state(r.rows) == keep and len(rb["removed"]) == 22
+    check("rollback removes the 24 rows still ours and leaves the 2 a person has taken since, and Sam's own row",
+          code == 0 and not cohort_rows(r) and state(r.rows) == keep and len(rb["removed"]) == 24
           and len(rb["taken_since"]) == 2 and rb["aborted"] is None, lines[-1:])
     code, lines = go("rollback", r, d)
     check("a second rollback deletes nothing and still reports the 2 taken since",
-          any("0 removed, 22 already gone, 2 taken since" in l for l in lines), lines[-1:])
+          any("0 removed, 24 already gone, 2 taken since" in l for l in lines), lines[-1:])
 finally:
     shutil.rmtree(d)
 
@@ -325,17 +338,17 @@ for label, hooks in (
         r, code, lines, err = committed(d, **hooks)
         rec = receipts(d)[-1]
         landed = len(cohort_rows(r))
-        check("%s: 24 cohort rows landed and the receipt still names them" % label,
-              landed == 24 and len(rec["rows"]) == 24 and rec["result"] != "pending", (landed, rec["result"]))
+        check("%s: 26 cohort rows landed and the receipt still names them" % label,
+              landed == 26 and len(rec["rows"]) == 26 and rec["result"] != "pending", (landed, rec["result"]))
         if "retried" in label:
-            check("the retried POST is filed by the read-back: 24 ours, written, though the INSERT echoed 0",
-                  code == 0 and rec["insert_echo"] == 0 and len(rec["inserted"]) == 24 and rec["result"] == "written",
+            check("the retried POST is filed by the read-back: 26 ours, written, though the INSERT echoed 0",
+                  code == 0 and rec["insert_echo"] == 0 and len(rec["inserted"]) == 26 and rec["result"] == "written",
                   (code, rec.get("insert_echo"), rec["result"]))
         else:
             check("%s: the commit does not report success" % label, code != 0, code)
         code, lines = go("rollback", r, d)
-        check("%s: rollback removes all 24 cohort rows" % label,
-              not cohort_rows(r) and state(r.rows) == state(BASE) and any("24 removed" in l for l in lines),
+        check("%s: rollback removes all 26 cohort rows" % label,
+              not cohort_rows(r) and state(r.rows) == state(BASE) and any("26 removed" in l for l in lines),
               lines[-1:])
     finally:
         shutil.rmtree(d)
@@ -348,10 +361,10 @@ try:
     pend = receipts(d)[0]
     r.insert(pend["rows"])                     # the insert happened; the process died before the second write
     check("the dead run left only a pending receipt with no `inserted`",
-          pend["result"] == "pending" and "inserted" not in pend and len(cohort_rows(r)) == 24)
+          pend["result"] == "pending" and "inserted" not in pend and len(cohort_rows(r)) == 26)
     code, lines = go("rollback", r, d)
-    check("rollback from a pending receipt removes the 24 cohort rows", not cohort_rows(r)
-          and state(r.rows) == state(BASE) and any("24 removed" in l for l in lines), lines[-1:])
+    check("rollback from a pending receipt removes the 26 cohort rows", not cohort_rows(r)
+          and state(r.rows) == state(BASE) and any("26 removed" in l for l in lines), lines[-1:])
 finally:
     shutil.rmtree(d)
 
@@ -386,10 +399,10 @@ try:
     rb = receipts(d, "rolled_back")
     check("a rollback that stops part-way raises, and still writes its receipt with what it removed and what remains",
           stopped is not None and len(rb) == 1 and rb[0]["aborted"] and len(rb[0]["removed"]) == 4
-          and len(rb[0]["not_reached"]) == 20, rb[0] if rb else None)
+          and len(rb[0]["not_reached"]) == 22, rb[0] if rb else None)
     r.delete_fails_at = None
     code, lines = go("rollback", r, d)
-    check("a second rollback finishes the job", not cohort_rows(r) and any("20 removed, 4 already gone" in l
+    check("a second rollback finishes the job", not cohort_rows(r) and any("22 removed, 4 already gone" in l
                                                                           for l in lines), lines[-1:])
 finally:
     shutil.rmtree(d)
@@ -429,6 +442,57 @@ check("the final push runs always(), never on a dry run, and nothing force-pushe
 check("commit takes the set hash, never a count", "[0-9a-f]{12}" in wf and "--commit \"$EXPECT\"" in wf)
 gov = json.load(open(os.path.join(ROOT, "kb", "governance_surface_map.json"), encoding="utf-8"))
 check("the workflow is mapped in the governance surface map", "workflow:credential-family-apply.yml" in gov["mapped"])
+
+# ── 9. after a rename: the tag lives at the new title (Sheet 181's ruled renames, kb/ruled_renames.py) ────────
+# The rename's row move carries each member's family tag to its new title and leaves Sam's fold rows on the old one
+# (kb/_cred_rename_apply_supabase.py op keep); a merge's second tag goes, its target already holding one.
+PLAN181 = json.load(open(os.path.join(ROOT, "kb", "cred_rename_plans", "2026-11-12_sheet181.json"), encoding="utf-8"))
+MOVES = {e["old"]: {"now": e["new"], "by": ["2026-11-12"]} for e in PLAN181["entries"]}
+ALL_TITLES = set(json.load(open(os.path.join(ROOT, "kb", "credentials.json"), encoding="utf-8")))
+AFTER_TITLES = (ALL_TITLES - set(MOVES)) | {m["now"] for m in MOVES.values()}
+
+
+def renamed(rows):
+    out, at = [], set()
+    for x in rows:
+        t = x["course_id"][len(P):]
+        if x["field"] == "credential_family" and t in MOVES:
+            new = P + MOVES[t]["now"]
+            if new not in at:
+                out.append(dict(x, course_id=new))
+                at.add(new)
+            continue
+        out.append(dict(x))
+    return out
+
+
+d = tempfile.mkdtemp()
+try:
+    r, code, lines, err = committed(d)
+    h_before, _ = dry_hash(r.rows)
+    r.rows = renamed(r.rows)
+    app.current_titles, app.current_moves = (lambda path=None: AFTER_TITLES), (lambda root=None: MOVES)
+    h_after, lines = dry_hash(r.rows)
+    check("after the rename the dry run counts each tag at its new title as written: nothing to write, the same set "
+          "(the merged Master leaves the held list: it is no longer a credential)",
+          h_after == h_before and any("0 to write, 26 already written, %d held for Sam, 0 conflicts" % len(set(ftp.HOLD) & AFTER_TITLES) in l
+                                      for l in lines),
+          lines[-1:])
+    rows_before_rollback = [dict(x) for x in r.rows]
+    code, lines = go("rollback", r, d)
+    rb = receipts(d, "rolled_back")[-1]
+    moved_titles = {x["course_id"][len(P):] for x in rb.get("moved_by_rename") or []}
+    check("the rollback after a rename finds each tag at its new title and removes it: no cohort row is left",
+          code == 0 and not cohort_rows(r) and moved_titles == set(MOVES) - {e["old"] for e in PLAN181["entries"]
+                                                                              if e.get("family") is None}, lines[-1:])
+    check("it says the tags were moved by the rename, never just already gone",
+          any("moved by rename 2026-11-12" in l for l in lines)
+          and all(x.get("now_at") for x in rb["already_gone"]) and len(rb["removed"]) == 25)
+    check("Sam's fold rows and every other row stay as they were",
+          state([x for x in r.rows]) == state([x for x in rows_before_rollback if x.get("reviewer_email") != COHORT]))
+finally:
+    app.current_titles, app.current_moves = (lambda path=None: None), (lambda root=None: {})
+    shutil.rmtree(d, ignore_errors=True)
 
 failed = [n for n, ok, _ in results if not ok]
 for n, ok, why in results:

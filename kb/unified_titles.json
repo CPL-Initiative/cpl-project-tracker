@@ -8769,7 +8769,7 @@
     "_notes": null
   },
   "ASE Certifications: A1 thru A8, L1 (Autortk-130/131/140/141/142/144/146) Cx": {
-    "unified_title": "ASE Master Automobile Technician (A1–A8 + L1)",
+    "unified_title": "ASE Master Automobile Technician",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8782,7 +8782,7 @@
     "_notes": "Composite bundle covering all A-series plus L1 advanced engine performance — ASE Master Auto Technician."
   },
   "ASE Certifications: A1, A6, A8, L1+ Residency Units": {
-    "unified_title": "ASE Bundle — A1, A6, A8, L1",
+    "unified_title": "ASE Certificate Bundles: A1 + A6 + A8 + L1",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8796,7 +8796,7 @@
     "_notes": "Local LATTC composite bundle of multiple ASE subtests; kept as bundle since it's awarded together."
   },
   "ASE Certifications: A2, A3, A6 + Residency Units": {
-    "unified_title": "ASE Bundle — A2, A3, A6",
+    "unified_title": "ASE Certificate Bundles: A2 + A3 + A6",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8810,7 +8810,7 @@
     "_notes": "Local college composite bundle."
   },
   "ASE Certifications: A4, A5, A6 + Residency Units": {
-    "unified_title": "ASE Bundle — A4, A5, A6",
+    "unified_title": "ASE Certificate Bundles: A4 + A5 + A6",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8852,7 +8852,7 @@
     "_notes": "Alternative ASE bundle including L3 hybrid/electric specialist."
   },
   "ASE Certifications: A6, A8, L1 + Residency Units": {
-    "unified_title": "ASE Bundle — A6, A8, L1",
+    "unified_title": "ASE Certificate Bundles: A6 + A8 + L1",
     "confidence_title": 0.65,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8866,7 +8866,7 @@
     "_notes": "Local college composite bundle."
   },
   "ASE G1 and ALI - Lift it Right": {
-    "unified_title": "ASE G1 + ALI Lift It Right Bundle",
+    "unified_title": "ASE Certificate Bundles: G1 with ALI Lift It Right",
     "confidence_title": 0.7,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8879,7 +8879,7 @@
     "_notes": "Combined ASE G1 with ALI Lift It Right safety training — two co-issued credentials bundled."
   },
   "ASE L2, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — L2, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: L2 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8920,7 +8920,7 @@
     "_notes": null
   },
   "ASE T2, T5, T7, T8, MACS or ASE 609 Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T5, T7, T8 + MACS/609",
+    "unified_title": "ASE Certificate Bundles: T2 + T5 + T7 + T8 with MACS/609",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8934,7 +8934,7 @@
     "_notes": "Composite bundle; MACS 609 EPA refrigerant cert co-required."
   },
   "ASE T2, T6, T8, Snap on 604 Meter Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T6, T8 + Snap-on 604",
+    "unified_title": "ASE Certificate Bundles: T2 + T6 + T8 with Snap-on 604",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8948,7 +8948,7 @@
     "_notes": "Composite bundle including vendor-specific meter cert."
   },
   "ASE T2, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T2, T8",
+    "unified_title": "ASE Certificate Bundles: T2 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8964,7 +8964,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T3, T4, T5, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T3, T4, T5, T8",
+    "unified_title": "ASE Certificate Bundles: T3 + T4 + T5 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8978,7 +8978,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T3, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T3, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T3 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -8992,7 +8992,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T4, T8, SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T4, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T4 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9006,7 +9006,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T5, T8 SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T5, T8, SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: T5 + T8 with SP/2 HD",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9020,7 +9020,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T5, T8, + Residency Units": {
-    "unified_title": "ASE Bundle — T5, T8",
+    "unified_title": "ASE Certificate Bundles: T5 + T8",
     "confidence_title": 0.6,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9035,7 +9035,7 @@
     "_notes": "Composite bundle."
   },
   "ASE T6, L2, Cummins ISX, SP/2 HD Safety & Pollution Certifications + Residency Units": {
-    "unified_title": "ASE Bundle — T6, L2 + Cummins ISX + SP/2 HD",
+    "unified_title": "ASE Certificate Bundles: L2 + T6 with Cummins ISX + SP/2 HD",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9049,7 +9049,7 @@
     "_notes": "Composite bundle mixes ASE with vendor (Cummins) and SP/2."
   },
   "ASE T6, T8, Snap On 604 Meter Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T6, T8 + Snap-on 604",
+    "unified_title": "ASE Certificate Bundles: T6 + T8 with Snap-on 604",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -9063,7 +9063,7 @@
     "_notes": "Composite bundle with vendor meter cert."
   },
   "ASE T7, T8, MACS or ASE 609 Certification + Residency Units": {
-    "unified_title": "ASE Bundle — T7, T8 + MACS/609",
+    "unified_title": "ASE Certificate Bundles: T7 + T8 with MACS/609",
     "confidence_title": 0.55,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11134,7 +11134,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A2 + A3 Certificates": {
-    "unified_title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+    "unified_title": "ASE Certificate Bundles: A2 + A3",
     "confidence_title": 0.8,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11290,7 +11290,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A8 + L1 Certificates": {
-    "unified_title": "ASE A8 + L1 — Engine Performance and Advanced Engine Performance",
+    "unified_title": "ASE Certificate Bundles: A8 + L1",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11342,7 +11342,7 @@
     "_notes": null
   },
   "Automotive Service Excellence (ASE) A9 & L2": {
-    "unified_title": "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced",
+    "unified_title": "ASE Certificate Bundles: A9 + L2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11537,7 +11537,7 @@
     "_notes": null
   },
   "Automotive Service Excellence L1 and L2 Certification": {
-    "unified_title": "ASE L1 + L2 — Advanced Engine Performance and Electronic Diesel Engine Diagnosis",
+    "unified_title": "ASE Certificate Bundles: L1 + L2",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -11928,7 +11928,7 @@
     "_notes": "MLR likely refers to ASE Maintenance & Light Repair student curriculum; high-school-specific articulation."
   },
   "Automotive service excellence  A2, A3 and A6": {
-    "unified_title": "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical",
+    "unified_title": "ASE Certificate Bundles: A2 + A3 + A6",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -42098,7 +42098,7 @@
     "_notes": "HS articulation exhibit; course code stripped."
   },
   "VAUTO 676: Automatic & Manual Transmissions & Transaxles": {
-    "unified_title": "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)",
+    "unified_title": "ASE Certificate Bundles: A2 + A3",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
@@ -58184,7 +58184,7 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Service Excellence (ASE) A4 and A5": {
-    "unified_title": "ASE Bundle — A4, A5",
+    "unified_title": "ASE Certificate Bundles: A4 + A5",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",

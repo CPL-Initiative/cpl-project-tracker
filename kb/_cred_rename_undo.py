@@ -203,14 +203,26 @@ def supabase_ops(log_doc, skip_titles=(), resolution_logs=()):
             else:
                 ops.append({"op": "res_restore", "course_id": cid, "field": field, "after": after,
                             "before": e.get("before_row") or {}})
+    # Every move a log PLANNED, never only the ones its write echoed: a request whose response was lost may have
+    # committed, and logs as a failure. The ops below are each guarded on the row the move left (move_back on value,
+    # reviewer and save time at the new key; reinsert ignoring duplicates), so a move that never landed reads as
+    # "already" and is left. Only a move the row move itself filed as not landed, from its fresh read, is skipped. A
+    # move named in two logs (a rerun carries what landed) is reversed once.
+    seen = set()
     for doc in reversed(docs):
         for e in reversed((doc or {}).get("log") or []):
-            if e.get("status") != "ok" or not e.get("rows_affected"):
+            if e.get("op") not in ("patch", "delete") or e.get("filed") == "not_landed":
+                continue
+            if "filed" not in e and e.get("status") not in ("ok", "planned") and not e.get("before_row"):
                 continue
             if (e.get("old_ut") in skip) or (e.get("new_ut") in skip):
                 continue
+            key = (e.get("op"), e.get("course_id") or e.get("old_course_id"), e.get("new_course_id"), e.get("field"))
+            if key in seen:
+                continue
+            seen.add(key)
             before = e.get("before_row")
-            if e.get("op") in ("patch", "delete") and not before:
+            if not before:
                 cannot.append(e)
                 continue
             if e.get("op") == "patch":

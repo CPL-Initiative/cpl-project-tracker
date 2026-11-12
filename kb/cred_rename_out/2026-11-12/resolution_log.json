@@ -1,0 +1,36 @@
+{
+  "_written_at": "2026-11-12T00:54:44Z",
+  "snapshot": "/home/runner/work/cpl-project-tracker/cpl-project-tracker/kb/cred_rename_out/2026-11-12/alias_map.json",
+  "rows": 2,
+  "failed": 0,
+  "log": [
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A2 + A3 + A6",
+      "field": "issuer_resolution",
+      "fold_id": "2026-11-12@2026-11-12T00:54:43Z",
+      "op": "insert",
+      "status": "ok",
+      "after_row": {
+        "course_id": "_CREDENTIAL_REVIEW::ASE Certificate Bundles: A2 + A3 + A6",
+        "field": "issuer_resolution",
+        "value": "{\"decided_at\":\"2026-11-11T23:38:25.224259+00:00\",\"dropped\":[],\"fold_id\":\"2026-11-12@2026-11-12T00:54:43Z\",\"kept_additional\":[],\"read_at\":\"2026-11-12T00:54:40Z\",\"rule\":\"additive\",\"target\":\"ASE Certificate Bundles: A2 + A3 + A6\",\"v\":1,\"winner\":null}",
+        "reviewer_email": "cred-fold-s638@bot",
+        "reviewed_at": "2026-11-12T00:54:44Z"
+      }
+    },
+    {
+      "course_id": "_CREDENTIAL_REVIEW::ASE Master Automobile Technician",
+      "field": "issuer_resolution",
+      "fold_id": "2026-11-12@2026-11-12T00:54:43Z",
+      "op": "insert",
+      "status": "ok",
+      "after_row": {
+        "course_id": "_CREDENTIAL_REVIEW::ASE Master Automobile Technician",
+        "field": "issuer_resolution",
+        "value": "{\"decided_at\":\"2026-11-11T23:38:25.224259+00:00\",\"dropped\":[],\"fold_id\":\"2026-11-12@2026-11-12T00:54:43Z\",\"kept_additional\":[],\"read_at\":\"2026-11-12T00:54:40Z\",\"rule\":\"additive\",\"target\":\"ASE Master Automobile Technician\",\"v\":1,\"winner\":null}",
+        "reviewer_email": "cred-fold-s638@bot",
+        "reviewed_at": "2026-11-12T00:54:44Z"
+      }
+    }
+  ]
+}
