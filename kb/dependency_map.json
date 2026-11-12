@@ -1438,6 +1438,13 @@
      ]
     },
     {
+     "id": "script:scripts/daily_build.sh",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 71
+    },
+    {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "read",
@@ -4583,7 +4590,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 150
+     "line": 497
     }
    ],
    "served": false,
@@ -4596,7 +4603,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 157
+     "line": 504
     }
    ],
    "served": false,
@@ -20205,13 +20212,6 @@
      "line": 135
     },
     {
-     "id": "script:scripts/daily_rebuild.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 52
-    },
-    {
      "id": "script:veteran-sprint-map/extract_military.py",
      "kind": "script",
      "direction": "read",
@@ -20237,7 +20237,7 @@
      "kind": "workflow",
      "direction": "read",
      "how": "yaml",
-     "line": 140
+     "line": 487
     }
    ],
    "served": false,
@@ -21704,7 +21704,7 @@
    "served": false,
    "main_committers": []
   },
-  "file:scripts/daily_gate.sh": {
+  "file:scripts/daily_build.sh": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -21717,7 +21717,7 @@
    "served": true,
    "main_committers": []
   },
-  "file:scripts/daily_rebuild.py": {
+  "file:scripts/daily_gate.sh": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -25888,13 +25888,6 @@
      "direction": "read",
      "how": "literal",
      "line": 198
-    },
-    {
-     "id": "script:scripts/daily_rebuild.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 53
     }
    ],
    "producers": [
@@ -31338,6 +31331,10 @@
    ],
    "scripts": [
     "scripts/daily_gate.sh",
+    "generate_reports.js",
+    "scripts/daily_build.sh",
+    "kb/_build_ccr_universe.py",
+    "scripts/publish_skyview_desc_shards.sh",
     "fetch_custom_report.py",
     "fetch_veteran_jst.py",
     "kb/_apply_curation.py",
@@ -31346,7 +31343,6 @@
     "kb/_apply_unclassified_triage.py",
     "kb/_fold_unclassified.py",
     "kb/_apply_college_short_names.py",
-    "generate_reports.js",
     "excel_to_dashboard.py",
     "kb/_audit_cid_claims.py",
     "kb/_build_governance_candidates.py",
@@ -31364,8 +31360,6 @@
     "kb/_cred_rename_dryrun.py",
     "fact-sheet/_build_statewide_recs.py",
     "fact-sheet/_build_statewide_catalog.py",
-    "kb/_build_ccr_universe.py",
-    "scripts/publish_skyview_desc_shards.sh",
     "kb/_build_ccr_atlas_extract.py",
     "prototype/build_ccr_atlas.py",
     "kb/_build_ccr_cpl.py",
@@ -31387,8 +31381,7 @@
     "kb/_build_adopt_align.py",
     "kb/_sync_program_checked.py",
     "kb/_ccr_seed_recheck_dryrun.py",
-    "kb/_build_commons_status.py",
-    "scripts/daily_rebuild.py"
+    "kb/_build_commons_status.py"
    ],
    "adds": [
     "index.html",

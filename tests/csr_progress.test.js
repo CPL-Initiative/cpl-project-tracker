@@ -46,7 +46,8 @@ check("the tab reads the scan, the run log and the procedures", /kb\/csr_out\/la
 check("the module draws a second word per part", /o\.p\.more \? o\.p\.more\(x\)/.test(MODULE) && /\.prh-pg-more \{ position:relative; z-index:1; \}/.test(MODULE));
 const ci = fs.readFileSync(".github/workflows/js-tests.yml", "utf8");
 check("CI runs the procedures store test", /python3 tests\/csr_procedures_test\.py/.test(ci));
-const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
+// The daily's build commands live in scripts/daily_build.sh, run by its one build step (S641): read in place.
+const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8").replace("run: bash scripts/daily_build.sh", "run: bash scripts/daily_build.sh\n" + fs.readFileSync("scripts/daily_build.sh", "utf8"));
 check("the daily workflow scans before the Commons build and commits latest.json",
   /python3 kb\/_csr_trail\.py --latest/.test(wf) && /git add kb\/csr_out\/latest\.json/.test(wf) && wf.indexOf("_csr_trail.py --latest") < wf.indexOf("_build_commons_status.py"));
 const cssBlock = SRC.slice(SRC.indexOf("function ensureProgressCss()"), SRC.indexOf("].join(\"\\n\")]));", SRC.indexOf("function ensureProgressCss()")));
