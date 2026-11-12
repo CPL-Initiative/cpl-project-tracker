@@ -61,20 +61,37 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    56.5,
-    56.5
+    77.5,
+    77.5
    ],
    "stated": [
     77.5,
     80.5
    ],
    "against": "degree",
-   "ge": null,
+   "ge": [
+    21.0,
+    21.0
+   ],
    "why": [
-    "the record names the degree total and the OCC AS GE pattern, but no units for it"
-   ]
+    "the blocks and general education sum to 77.5-77.5; the catalog prints 77.5-80.5 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     56.5,
+     56.5
+    ],
+    "stated": [
+     56.5,
+     56.5
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -105,8 +122,8 @@
    "section_heading": "Master Construction Specialist, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 56.5,
+    "max": 56.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,8 +136,8 @@
     "max": 80.5
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -292,5 +309,32 @@
    "Careers taken from the second program learning outcome ('work areas such as inspection, management, and as hands-on skilled tradespeople')."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 56.5,
+    "max": 56.5
+   },
+   "words": "Total Major Units\t56.5"
+  },
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 21,
+    "max": 21
+   },
+   "words": "OCC AS General Education   1\t21"
+  }
+ ],
+ "read_run": "38670927724"
 }

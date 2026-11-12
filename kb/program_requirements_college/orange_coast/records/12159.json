@@ -72,11 +72,29 @@
     51.0,
     52.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    66.0,
+    66.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
-   ]
+    "the record names the degree total and the OCC AS GE pattern, but no units for it"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     51.0,
+     52.0
+    ],
+    "stated": [
+     51.0,
+     52.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
@@ -98,10 +116,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -110,8 +125,8 @@
    "section_heading": "Speech-Language Pathology Assistant, Associate in Science Degree",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 51,
+    "max": 52
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -120,8 +135,8 @@
    },
    "ge_pattern": "OCC AS GE",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 66,
+    "max": 66
    },
    "ge_units": {
     "min": null,
@@ -133,7 +148,8 @@
    ],
    "careers": [
     "speech-language pathology assistants"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -334,5 +350,38 @@
    "One program learning outcome is printed under 'Program Learning Outcomes'; recorded as printed."
   ]
  },
- "extracted_run": "38670927724"
+ "extracted_run": 43136182950,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 51,
+    "max": 52
+   },
+   "words": "Total Major Units\t51.0 - 52.0"
+  },
+  {
+   "field": "degree_total",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 66,
+    "max": 66
+   },
+   "words": "Total Minimum Degree Units - OCC AS GE\t66"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Degree Units - OCC AS GE\t66"
+  }
+ ],
+ "read_run": "38670927724"
 }
