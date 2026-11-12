@@ -26,6 +26,14 @@ Failure modes, each observed before this file existed:
    (the rebuilt commit still pushed); a failure that is no conflict (the 5-attempt retry, no rebuild). The
    daily holds no `actions: write` and dispatches nothing.
 
+3b. A CLEAN REBASE BRINGS IN A CHANGED INPUT AND THE RUN ENDS GREEN ON OLD OUTPUTS (COBIx #3110 point 4, S643).
+   No conflict, so before S643 the commit carried outputs built from the old input. Pinned: a clean rebase that
+   changes any path outside the commit step's `not_inputs` (docs/ and tests/) rebuilds once, by the same
+   daily_rebuild; only those paths changed, nothing rebuilds; one rebuild a run, so an input that changes again
+   after it is pushed over with a warning, never a second rebuild. `not_inputs` is kept honest by a walk of
+   every file the build runs (scripts/daily_build.sh's commands, their imports, the modules they load by path and
+   the scripts they launch): one that names a path under either prefix, or walks the tree, fails here.
+
 4. A MISTYPED PLAN WAITS IN THE GROUP BEFORE IT FAILS (finding 9). cer-decision-apply 43121987424 queued about
    10 minutes, then failed on its plan_dir in seconds. Pinned: each apply's `check` job sits outside the
    group, reads no secret, and the apply job needs it; the check scripts are run against this tree.
@@ -36,6 +44,7 @@ crosswalk test hides no other check.
 
 Run from repo root: python3 tests/apply_concurrency_test.py
 """
+import ast
 import glob
 import os
 import re
@@ -307,6 +316,9 @@ if [ -n "${FAIL_BUILD:-}" ]; then exit 3; fi
 if [ -n "${RACE:-}" ]; then
   cd "$OTHER" && echo "theirs again" > kb/report.md && git commit -qam "a second merge" && git push -q origin main
 fi
+if [ -n "${RACE_INPUT:-}" ]; then
+  cd "$OTHER" && echo "theirs again" > kb/src.md && git commit -qam "a second input change" && git push -q origin main
+fi
 """
 HOOK = """#!/bin/sh
 n=$(cat "{cnt}" 2>/dev/null || echo 0); n=$((n + 1)); echo "$n" > "{cnt}"
@@ -333,7 +345,7 @@ def count(cnt, name):
 CONFLICT = {"kb/src.md": "theirs", "kb/report.md": "the other writer's report"}
 
 
-def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False, untracked=None):
+def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=False, untracked=None, race_input=False):
     """other_edits: files the other writer changes on main while the run builds (land_at > 0: its commit
     lands on main during that rejected push instead). reject: pushes the origin refuses (99: all)."""
     tmp = tempfile.mkdtemp(prefix="apply_conc_")
@@ -355,6 +367,7 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
 
         def write(d, files):
             for fn, text in files.items():
+                os.makedirs(os.path.dirname(os.path.join(d, fn)), exist_ok=True)
                 with open(os.path.join(d, fn), "w") as f:
                     f.write(text if fn.endswith(".sh") else text + "\n")
 
@@ -382,7 +395,7 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
         genv, gout = os.path.join(tmp, "github_env"), os.path.join(tmp, "github_output")
         open(genv, "w").close()
         env = dict(os.environ, PATH=bin_ + os.pathsep + os.environ["PATH"], GITHUB_ENV=genv, GITHUB_OUTPUT=gout,
-                   CNT=cnt, OTHER=other, RACE="1" if race else "", FAIL_BUILD="1" if fail_build else "",
+                   CNT=cnt, OTHER=other, RACE="1" if race else "", RACE_INPUT="1" if race_input else "", FAIL_BUILD="1" if fail_build else "",
                    DAILY_PUSH_BACKOFF="0", CPL_SCRAPE_SECRET="s3", SUPABASE_SERVICE_KEY="k9")
         body = ("set -euo pipefail\nstage() {\n  git add kb/report.md kb/src.md live_metrics.json veteran_jst.json\n}\n"
                 + loop)
@@ -395,7 +408,8 @@ def push_case(other_edits=None, race=False, reject=0, land_at=0, fail_build=Fals
         log = subprocess.run(["git", "--git-dir", origin, "log", "--format=%s", "main"],
                              capture_output=True, text=True).stdout.splitlines()
         return {"rc": p.returncode, "out": p.stdout + p.stderr, "log": log, "report": show("kb/report.md"),
-                "side": show("kb/side.md"), "metrics": show("live_metrics.json"), "genv": open(genv).read(),
+                "side": show("kb/side.md"), "docs_side": show("docs/side.md"), "src": show("kb/src.md"),
+                "metrics": show("live_metrics.json"), "genv": open(genv).read(),
                 "gout": open(gout).read() if os.path.exists(gout) else "",
                 **{k: count(cnt, k) for k in ("custom", "scrape", "vet", "build", "pip", "leftover")}}
     finally:
@@ -410,9 +424,41 @@ r = push_case()
 check("push: a clean push lands the first pass and rebuilds nothing",
       r["rc"] == 0 and r["report"] == "ours, first pass" and r["build"] == 0 and r["pip"] == 0
       and r["gout"].startswith("start="), r)
-r = push_case(other_edits={"kb/side.md": "theirs"})
-check("push: a clean rebase pushes both writers' files and rebuilds nothing",
-      r["rc"] == 0 and r["report"] == "ours, first pass" and r["side"] == "theirs" and r["build"] == 0, r)
+r = push_case(other_edits={"docs/side.md": "theirs", "tests/side_test.py": "theirs"})
+check("push: a clean rebase that changes only docs/ and tests/ pushes both writers' files and rebuilds nothing",
+      r["rc"] == 0 and r["report"] == "ours, first pass" and r["docs_side"] == "theirs" and r["build"] == 0
+      and "changed input" not in r["out"], (r["rc"], r["build"], r["out"][-600:]))
+
+# 3b. A clean rebase that changes a build input rebuilds once, by the conflict path's daily_rebuild (S643).
+INPUT = {"kb/src.md": "theirs"}
+r = push_case(other_edits=INPUT)
+check("push: a clean rebase that changes an input rebuilds once on the new main and exits 0",
+      r["rc"] == 0 and r["build"] == 1 and r["report"] == "v1 built from theirs; scrape of the first pass; key k9"
+      and "a merge to main" in r["log"] and "(rebuilt on " in r["log"][0], (r["rc"], r["report"], r["log"]))
+check("push: the clean-rebase rebuild says so in its own log line, naming the input",
+      "::warning title=Daily push rebased over a changed input::Main changed 1 build input(s)" in r["out"]
+      and "(first: kb/src.md)" in r["out"] and "  changed input: kb/src.md" in r["out"]
+      and "Daily push conflicted" not in r["out"], r["out"][-900:])
+check("push: the clean-rebase rebuild reuses the fetches and reinstalls requirements, as the conflict path does",
+      (r["pip"], r["scrape"], r["vet"], r["custom"]) == (1, 0, 0, 0) and r["metrics"] == "scrape of the first pass",
+      (r["pip"], r["scrape"], r["vet"], r["custom"], r["metrics"]))
+r = push_case(other_edits={"kb/tests/x.md": "theirs", "docs/side.md": "theirs"})
+check("push: a not-input prefix matches from the path's start only (kb/tests/x.md is an input)",
+      r["rc"] == 0 and r["build"] == 1 and "(first: kb/tests/x.md)" in r["out"], (r["rc"], r["build"], r["out"][-600:]))
+r = push_case(other_edits=INPUT, race_input=True)
+check("push: the bound: an input changed again after the rebuild is pushed over with a warning, no second rebuild",
+      r["rc"] == 0 and r["build"] == 1 and "::warning title=Daily input changed again::" in r["out"]
+      and r["log"][0].startswith("Daily dashboard update") and "(rebuilt on " in r["log"][0]
+      and "a second input change" in r["log"] and r["src"] == "theirs again"
+      and r["report"] == "v1 built from theirs; scrape of the first pass; key k9", (r["rc"], r["build"], r["log"], r["out"][-900:]))
+r = push_case(other_edits=INPUT, fail_build=True)
+check("push: a failed clean-rebase rebuild exits 1 with nothing pushed",
+      r["rc"] == 1 and r["build"] == 1 and not ours_landed(r) and "Daily rebuild failed" in r["out"],
+      (r["rc"], r["log"], r["out"][-600:]))
+r = push_case(other_edits=INPUT, reject=5, land_at=5)
+check("push: a changed input first seen on the last attempt still pushes the rebuilt commit",
+      r["rc"] == 0 and "Push succeeded on attempt 6." in r["out"] and r["build"] == 1
+      and r["report"] == "v1 built from theirs; scrape of the first pass; key k9", (r["rc"], r["report"], r["out"][-900:]))
 
 r = push_case(other_edits=CONFLICT)
 check("push: a conflict then a clean rebuild exits 0", r["rc"] == 0, r["out"][-1500:])
@@ -468,6 +514,155 @@ r = push_case(reject=1)
 check("push: a failure that is no conflict, then a good push, lands on attempt 2 with no rebuild",
       r["rc"] == 0 and "Push succeeded on attempt 2." in r["out"] and r["build"] == 0
       and r["report"] == "ours, first pass", (r["rc"], r["out"][-600:]))
+
+# 3d. `not_inputs` holds only paths no build command reads. The build's inputs cannot be listed from the code
+# (its builders glob kb/, list .github/workflows and the root, and load modules by path), so the commit step
+# keeps the other list, and this walk is what keeps it honest: every file the build runs, followed from
+# scripts/daily_build.sh's commands through Python imports, modules loaded by path or by import_module, and
+# the scripts a subprocess launches, must name no path under a not-input prefix and walk no tree.
+nm = re.search(r'^not_inputs="([^"]*)"$', loop, re.M)
+NOT_INPUTS = nm.group(1).split() if nm else []
+check("daily: the commit step names its not-input prefixes, docs/ and tests/ (a change here is a decision)",
+      NOT_INPUTS == ["docs/", "tests/"], NOT_INPUTS)
+check("daily: a clean rebase compares the incoming range against them and rebuilds through daily_rebuild",
+      'base=$(git merge-base "$pre" origin/main)' in loop and 'inputs=$(build_inputs_changed "$base")' in loop
+      and loop.count("daily_rebuild;") == 1 and 'git reset -q --hard "$pre"' in loop
+      and loop.index("pre=$(git rev-parse HEAD)") < loop.index("if git rebase origin/main; then"))
+LAUNCH_RE = re.compile(r"(?:python3?|node|bash)\s+([\w./\-]+\.(?:py|mjs|js|sh))\b")
+SEARCH_DIRS = ["", "kb", "funding", "fact-sheet", "prototype", "scripts"]
+# A not-input path the build writes into its output as a pointer and never opens: (file, string) -> why.
+NAMED_NOT_READ = {
+    ("kb/_build_cr_reference.py", "docs/common_cr_reference_scope.md"):
+        "the worklist's `_doc` field, a pointer written into kb/cr_reference_worklist.json",
+}
+
+
+def _resolve(base, name):
+    for d in [base] + SEARCH_DIRS:
+        p = os.path.normpath(os.path.join(d, name)).replace("\\", "/")
+        if not p.startswith("..") and os.path.isfile(os.path.join(REPO, p)):
+            return p
+    return None
+
+
+def _code(text, mark):
+    return "\n".join(ln for ln in text.split("\n") if not ln.lstrip().startswith(mark))
+
+
+def _strings(tree):
+    """String constants a script can use as a path: not docstrings, not dict keys."""
+    skip = set()
+    for n in ast.walk(tree):
+        body = getattr(n, "body", None)
+        if isinstance(n, (ast.Module, ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)) and body \
+                and isinstance(body[0], ast.Expr) and isinstance(body[0].value, ast.Constant):
+            skip.add(id(body[0].value))
+        if isinstance(n, ast.Dict):
+            skip.update(id(k) for k in n.keys if k is not None)
+    return [n for n in ast.walk(tree) if isinstance(n, ast.Constant) and isinstance(n.value, str)
+            and id(n) not in skip]
+
+
+def runs_next(rel, text):
+    """The repo files `rel` runs: launched scripts, imports, modules loaded by path."""
+    base, out = os.path.dirname(rel), set()
+    if rel.endswith(".py"):
+        tree = ast.parse(text)
+        for n in ast.walk(tree):
+            mods = []
+            if isinstance(n, ast.Import):
+                mods = [a.name for a in n.names]
+            elif isinstance(n, ast.ImportFrom) and n.module and not n.level:
+                mods = [n.module] + ["%s.%s" % (n.module, a.name) for a in n.names]
+            elif isinstance(n, ast.Call) and ast.unparse(n.func).endswith("import_module") and n.args \
+                    and isinstance(n.args[0], ast.Constant) and isinstance(n.args[0].value, str):
+                mods = [n.args[0].value]
+            for m in mods:
+                r = _resolve(base, m.replace(".", "/") + ".py") or _resolve(base, m.replace(".", "/") + "/__init__.py")
+                if r:
+                    out.add(r)
+        for c in _strings(tree):   # spec_from_file_location and friends: a bare path to a .py file
+            if re.fullmatch(r"[\w./\-]+\.py", c.value) and _resolve(base, c.value):
+                out.add(_resolve(base, c.value))
+        for fn in ast.walk(tree):  # a script a subprocess launches (excel_to_dashboard.py runs generate_reports.js)
+            if isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef)) and any(
+                    isinstance(c, ast.Call) and re.search(r"subprocess|Popen|os\.system", ast.unparse(c.func))
+                    for c in ast.walk(fn)):
+                for c in _strings(fn):
+                    if re.fullmatch(r"[\w./\-]+\.(?:py|mjs|js|sh)", c.value) and _resolve(base, c.value):
+                        out.add(_resolve(base, c.value))
+    else:
+        body = _code(text, "#" if rel.endswith(".sh") else "//")
+        for s in LAUNCH_RE.findall(body):
+            if _resolve(base, s):
+                out.add(_resolve(base, s))
+        for s in re.findall(r"require\(\s*['\"](\.{1,2}/[\w./\-]+)['\"]", body):
+            r = _resolve(base, s if s.endswith((".js", ".mjs")) else s + ".js")
+            if r:
+                out.add(r)
+    return out
+
+
+def not_input_reads(rel, text, prefixes):
+    """(line, what) for each place `rel` names a path under a prefix, or walks a tree."""
+    names = [p.strip("/") for p in prefixes]
+    hits = []
+    if rel.endswith(".py"):
+        tree = ast.parse(text)
+        parent = {id(c): n for n in ast.walk(tree) for c in ast.iter_child_nodes(n)}
+        for c in _strings(tree):
+            v = c.value
+            as_dir = v.strip("/") in names and isinstance(parent.get(id(c)), (ast.Call, ast.BinOp, ast.List, ast.Tuple))
+            as_path = re.fullmatch(r"[\w./\-{}]+", v) and any(re.search(r"(?:^|/)%s/" % re.escape(n), v) for n in names)
+            if (as_dir or as_path) and (rel, v) not in NAMED_NOT_READ:
+                hits.append((c.lineno, v))
+        for c in ast.walk(tree):
+            if isinstance(c, ast.Call):
+                f, whole = ast.unparse(c.func), ast.unparse(c)
+                if re.search(r"(?:^|\.)(?:walk|rglob)$", f) or (re.search(r"(?:^|\.)i?glob$", f) and (
+                        "**" in whole or "recursive" in whole)) or "ls-files" in whole or "'grep'" in whole:
+                    hits.append((c.lineno, "walks: " + whole[:80]))
+    else:
+        for i, ln in enumerate(_code(text, "#" if rel.endswith(".sh") else "//").split("\n"), 1):
+            if ln.lstrip().startswith("*"):
+                continue
+            if re.search(r"(?:^|[\s\"'=(:])(?:\./)?(?:%s)/" % "|".join(re.escape(n) for n in names), ln):
+                hits.append((i, ln.strip()[:80]))
+            if re.search(r"(?:^|[\s;|(])find\s|ls-files|git grep|readdirSync\([^)]*recursive", ln):
+                hits.append((i, "walks: " + ln.strip()[:80]))
+    return hits
+
+
+ran, todo = set(), ["scripts/daily_build.sh"]
+while todo:
+    f = todo.pop()
+    if f not in ran:
+        ran.add(f)
+        todo.extend(runs_next(f, open(os.path.join(REPO, f), encoding="utf-8").read()) - ran)
+check("not_inputs walk: it reaches the build's scripts, their imports, path-loaded modules and launched scripts",
+      len(ran) >= 60 and {"excel_to_dashboard.py", "generate_reports.js", "kb/_build_governance_candidates.py",
+                          "kb/_build_commons_status.py", "kb/alias_chain.py", "kb/_seed_college_short_names.py",
+                          "kb/_sweep_exhibit_titles.py"} <= ran, len(ran))
+found = {f: h for f in sorted(ran)
+         for h in [not_input_reads(f, open(os.path.join(REPO, f), encoding="utf-8").read(), NOT_INPUTS)] if h}
+check("not_inputs walk: no file the build runs names a path under docs/ or tests/, or walks the tree",
+      bool(NOT_INPUTS) and not found, found)
+stale = [k for k in NAMED_NOT_READ if k[0] not in ran
+         or k[1] not in open(os.path.join(REPO, k[0]), encoding="utf-8").read()]
+check("not_inputs walk: each pointer it excuses is still in the build", not stale, stale)
+# The walk can fail: each planted reader is caught, and the shapes that are not reads are not.
+PLANTED = {
+    'open(os.path.join(ROOT, "docs", "x.md"))': True, 'json.load(open(ROOT / "tests" / "f.json"))': True,
+    'P = "docs/reference/lanes/x.md"': True, 'p = f"{ROOT}/tests/{name}.json"': True,
+    'glob.glob("**/*.md", recursive=True)': True, "for d, _, fs in os.walk(ROOT): pass": True,
+    'x = {"tests": [], "with": []}': False, 'y = got["tests"]': False, 'def f():\n    """See docs/x.md."""': False,
+    'print("python3 kb/_build_dependency_map.py writes docs/reference/dependency_map.md")': False,
+}
+wrong = [src for src, want in PLANTED.items() if bool(not_input_reads("kb/planted.py", src, NOT_INPUTS)) != want]
+wrong += [src for src, want in {"cat docs/x.md > out": True, "find . -name '*.json'": True,
+                                "# see tests/apply_concurrency_test.py": False}.items()
+          if bool(not_input_reads("scripts/planted.sh", src, NOT_INPUTS)) != want]
+check("not_inputs walk: catches a planted reader of either prefix and a tree walk, passes keys and prose", not wrong, wrong)
 
 # ── 4. Finding 9: the plan-name check runs outside the group ──────────────────
 for name in ("cer-decision-apply.yml", "cred-rename-apply.yml"):

@@ -25,7 +25,9 @@ on:
 # The build is written once, in scripts/daily_build.sh, and runs as one step. Other workflows and merges
 # push to main outside the group, so the run's push can meet a rebase conflict on a generated file. No side
 # of it is ever picked: the "Commit and push to main" step resets to the new main and runs that main's
-# scripts/daily_build.sh once more, inside this job, then pushes (COBIx #3110 finding 8, S641). Never by a
+# scripts/daily_build.sh once more, inside this job, then pushes (COBIx #3110 finding 8, S641). A clean rebase
+# that changes any path the build may read (all but docs/ and tests/) rebuilds the same way (S643); one rebuild
+# a run, and an input that changes again after it is pushed over with a warning. Never by a
 # dispatch: a conflicted run that ends green having published nothing makes the gate stand the later rungs
 # down. A second conflict, or a failed rebuild, ends the run red with nothing pushed, so the later rungs stay
 # the backstop. The CustomReport fetch, the scrape and the MIL/JST fetch are reused in the rebuild unless
@@ -127,10 +129,10 @@ jobs:
         run: bash scripts/daily_build.sh
 
       # ── Step 6: Commit and push ───────────────────────────────────
-      # `stage` is the run's git add list, written once here. On a rebase conflict the push rebuilds ONCE in
-      # this job: reset to the new main, reinstall requirements.txt, run scripts/daily_build.sh from that tree,
-      # stage again (COBIx #3110 finding 8, S641). The env carries the secrets the rebuild can need (the
-      # CustomReport fetch is always reused, so not MAP's).
+      # `stage` is the run's git add list, written once here. On a rebase conflict, or a clean rebase that
+      # changes a build input, the push rebuilds ONCE in this job: reset to the new main, reinstall
+      # requirements.txt, run scripts/daily_build.sh from that tree, stage again (COBIx #3110 finding 8, S641).
+      # The env carries the secrets the rebuild can need (the CustomReport fetch is always reused, so not MAP's).
       - name: Commit and push to main
         id: push
         if: steps.recheck.outputs.run == 'true'
@@ -277,11 +279,12 @@ jobs:
           # `stage` above is the list, written once. Commit, then push. A push that fails is retried up to 5
           # attempts (fetch, rebase onto the new main, push again); a failure that is no conflict keeps that
           # retry. A rebase CONFLICT means another writer changed a file this run also built, and no side of it
-          # is picked: the rebase is aborted and daily_rebuild runs, once. The rebuilt commit always gets a push
-          # attempt, even after a conflict on the last one. A second conflict, or a failed rebuild, exits 1 with
-          # nothing pushed, so the later rungs stay the backstop. The run exits 0 only after a push lands, or
-          # when there is nothing to commit (main already holds this build). tests/apply_concurrency_test.py
-          # runs this loop in a scratch repo; DAILY_PUSH_BACKOFF is its one hook.
+          # is picked: the rebase is aborted and daily_rebuild runs, once. A clean rebase that changes a build
+          # input rebuilds the same way (below). The rebuilt commit always gets a push attempt, even on the last
+          # one. A second conflict, or a failed rebuild, exits 1 with nothing pushed, so the later rungs stay the
+          # backstop. The run exits 0 only after a push lands, or when there is nothing to commit (main already
+          # holds this build). tests/apply_concurrency_test.py runs this loop in a scratch repo;
+          # DAILY_PUSH_BACKOFF is its one hook.
           #
           # daily_rebuild: reset the tree to the new origin/main, reinstall its requirements, and run ITS
           # scripts/daily_build.sh. The three fetches whose result is not derived from main are reused:
@@ -311,6 +314,25 @@ jobs:
             pip install -r requirements.txt || return 1
             bash scripts/daily_build.sh || return 1
           }
+          # A CLEAN rebase can still bring in a changed build input (say kb/unified_titles.json): the commit would
+          # then carry outputs built from the old input and the run would end green (COBIx #3110 point 4, S643).
+          # So a clean rebase that changes any path the build may read rebuilds too, once, by daily_rebuild. The
+          # build's inputs cannot be listed from the code (its builders glob kb/, list .github/workflows and the
+          # root, and load modules by path), so the list kept here is the other one: the prefixes no build
+          # command reads. tests/apply_concurrency_test.py walks every file the build runs (its scripts, their
+          # imports, the scripts they load or launch) and fails when one names a path under either, so a new
+          # reader cannot slip past it. Every other path counts as an input, the run's own outputs included:
+          # several are read again (kb/unified_titles.json, kpi_history.json, CPL_Dashboard.html).
+          not_inputs="docs/ tests/"
+          build_inputs_changed() {   # $1: the main the commit was built on. Prints each path since then that counts.
+            local changed f p
+            changed=$(git diff --name-only "$1" origin/main) || return 1
+            while IFS= read -r f; do
+              [ -n "$f" ] || continue
+              for p in $not_inputs; do case "$f" in "$p"*) continue 2 ;; esac; done
+              printf '%s\n' "$f"
+            done <<< "$changed"
+          }
           echo "start=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           daily_rebuilt=0
 
@@ -334,31 +356,51 @@ jobs:
             # `git rebase` refuses with "You have unstaged changes" (the 2026-07-08 20:23 run died that way when
             # PR #698 merged mid-run). That output is disposable: discard it so the committed snapshot rebases.
             git checkout -- .
+            pre=$(git rev-parse HEAD)
             if git rebase origin/main; then
-              sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
-              attempt=$((attempt + 1))
-              continue
+              base=$(git merge-base "$pre" origin/main)
+              inputs=$(build_inputs_changed "$base")
+              if [ -z "$inputs" ]; then
+                sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
+                attempt=$((attempt + 1))
+                continue
+              fi
+              n_in=$(printf '%s\n' "$inputs" | wc -l | tr -d ' ')
+              first_in=${inputs%%$'\n'*}
+              # The bound: one rebuild a run, whichever path asked for it. A changed input after it is pushed over,
+              # as before this rule, with a warning: a red run there would publish nothing for the day.
+              if [ "$daily_rebuilt" = 1 ]; then
+                echo "::warning title=Daily input changed again::Main changed $n_in build input(s) again after the rebuild (first: $first_in). The one rebuild is spent: the rebuilt commit is pushed, and its outputs trail main until the next run."
+                sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
+                attempt=$((attempt + 1))
+                continue
+              fi
+              git reset -q --hard "$pre"   # back to the run's commit, as an aborted rebase leaves it
+              daily_rebuilt=1
+              echo "::warning title=Daily push rebased over a changed input::Main changed $n_in build input(s) since ${base:0:8} with no conflict (first: $first_in). Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
+              printf '%s\n' "$inputs" | sed -n '1,20s/^/  changed input: /p'
+            else
+              # A CONFLICT is a rebase stopped in progress with conflicted paths. A rebase can also fail with none
+              # in progress (another writer committed a file this tree holds untracked: "untracked working tree
+              # files would be overwritten"); that is a failure like any other push failure, and keeps the retry.
+              conflict=0
+              if git rev-parse -q --verify REBASE_HEAD >/dev/null && [ -n "$(git diff --name-only --diff-filter=U)" ]; then
+                conflict=1
+              fi
+              git rebase --abort 2>/dev/null || true
+              if [ "$conflict" != 1 ]; then
+                echo "Rebase onto origin/main failed without a conflict on attempt $attempt; retrying."
+                sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
+                attempt=$((attempt + 1))
+                continue
+              fi
+              if [ "$daily_rebuilt" = 1 ]; then
+                echo "::error title=Daily push lost twice::A second rebase conflict, after the rebuild on the new main. Nothing is pushed; the later rungs of the ladder are the backstop."
+                exit 1
+              fi
+              daily_rebuilt=1
+              echo "::warning title=Daily push conflicted::Another writer changed a file this run built. Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
             fi
-            # A CONFLICT is a rebase stopped in progress with conflicted paths. A rebase can also fail with none
-            # in progress (another writer committed a file this tree holds untracked: "untracked working tree
-            # files would be overwritten"); that is a failure like any other push failure, and keeps the retry.
-            conflict=0
-            if git rev-parse -q --verify REBASE_HEAD >/dev/null && [ -n "$(git diff --name-only --diff-filter=U)" ]; then
-              conflict=1
-            fi
-            git rebase --abort 2>/dev/null || true
-            if [ "$conflict" != 1 ]; then
-              echo "Rebase onto origin/main failed without a conflict on attempt $attempt; retrying."
-              sleep $((attempt * ${DAILY_PUSH_BACKOFF:-2}))
-              attempt=$((attempt + 1))
-              continue
-            fi
-            if [ "$daily_rebuilt" = 1 ]; then
-              echo "::error title=Daily push lost twice::A second rebase conflict, after the rebuild on the new main. Nothing is pushed; the later rungs of the ladder are the backstop."
-              exit 1
-            fi
-            daily_rebuilt=1
-            echo "::warning title=Daily push conflicted::Another writer changed a file this run built. Rebuilding once on the new main ($(git rev-parse --short origin/main)), in this job."
             if ! daily_rebuild; then
               echo "::error title=Daily rebuild failed::The rebuild on the new main failed. Nothing is pushed; the later rungs of the ladder are the backstop."
               exit 1
@@ -369,7 +411,7 @@ jobs:
               exit 0
             fi
             git commit -m "Daily dashboard update — $(date +%Y-%m-%d) (rebuilt on $(git rev-parse --short origin/main))"
-            # The rebuilt commit gets its push even when the conflict came on the last attempt.
+            # The rebuilt commit gets its push even when the conflict or the changed input came on the last attempt.
             if [ "$attempt" -eq "$max" ]; then max=$((max + 1)); fi
             attempt=$((attempt + 1))
           done
