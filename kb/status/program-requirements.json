@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-12T01:45:19Z",
+  "written_at": "2026-11-12T05:54:18Z",
   "session": 640,
   "moniker": "SkyHeron",
   "run": "Sam's session",
@@ -486,7 +486,7 @@
     {
       "day": "2026-11-12",
       "active": 20282,
-      "complete": 13779,
+      "complete": 13893,
       "colleges": 114
     }
   ],
@@ -497,7 +497,7 @@
   },
   "harvest": {
     "day": "2026-11-12",
-    "gaps": 3005,
+    "gaps": 3008,
     "parts": {
       "links": {
         "catalog": [
@@ -514,7 +514,7 @@
         ]
       },
       "roep": [
-        19147,
+        19150,
         20282
       ],
       "coci": [

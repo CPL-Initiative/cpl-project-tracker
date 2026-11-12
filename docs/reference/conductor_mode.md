@@ -154,8 +154,9 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - Three of #3135's five capture proofs compared against reads `main` filed a month earlier, so the drift was the
   reader's. A proof run takes a same-day baseline by `main`'s reader on a scratch branch
   (`docs/kb-notes/methodology-a-proof-run-needs-a-same-day-baseline.md`).
-- A second write path (#3140's hand-run SQL, then its separate job) each left a live row with no way back. Put a new
-  write inside the existing apply and its receipt.
+- A second write path (#3140's hand-run SQL, then its separate job, then the apply itself) left a live row with no way
+  back or a replay on the wrong apply in each of five review rounds. A fix that needs a fourth round is a design to
+  replace; the conductor stopped #3140 and recommended read-time resolution.
 - `tests/partner_crosswalk_test.py` fails on `main` and no workflow runs it. A test outside every workflow goes red
   unseen; the governance lane carries the fix.
 - Worked: disk held at four worktrees of 4.4 GB, with reviews reading refs (`git show`, `git diff`) and never copying,

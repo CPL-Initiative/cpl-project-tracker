@@ -52,7 +52,7 @@ from jsonb_to_recordset($json$[
   "slug": "d-standards-second-plan-s640",
   "kind": "decision",
   "title": "The other seven standards folds go as a second ruled plan",
-  "summary": "The S640 conductor, 2026-11-12: Sam's saved renames of 15:26:54Z 2026-11-11 for ASE L1, A2, A6, L3, A9, A3 and A4, none holding an industry-certification exhibit, go as plan standards-2-2026-11-12 (#3143), applied after a fresh read. Two more A6 saves (Automotive Electrical/Electronics 1 and 2) stay out while the review confirms they sit on emptied titles.",
+  "summary": "The S640 conductor, 2026-11-12: Sam's saved renames of 15:26:54Z 2026-11-11 for ASE L1, A2, A6, L3, A9, A3 and A4, none holding an industry-certification exhibit, went as plan standards-2-2026-11-12 (#3143): applied 05:48Z, receipt kb/cred_rename_out/2026-11-12-3, 19 row steps, 0 failed. Two more A6 saves (Automotive Electrical/Electronics 1 and 2) sit on emptied titles and stay out.",
   "tags": [
    "cer-procedures",
    "exhibits",
@@ -70,10 +70,10 @@ from jsonb_to_recordset($json$[
   "plain": null
  },
  {
-  "slug": "d-rename-apply-one-repoint-path-s640",
+  "slug": "d-rename-repoint-stopped-resolve-at-read-s640",
   "kind": "decision",
-  "title": "The rename apply re-points saved machine values through one write path",
-  "summary": "The S640 conductor, 2026-11-12: saved machine values that a rename leaves on old keys are re-pointed by the rename apply itself, inside its own receipt (#3140): no hand-run SQL and no separate job. Pending until #3140 merges; then the first apply re-points what the 2026-10-01, 2026-11-06, 2026-11-12 and 2026-11-12-2 applies left (dry run: 33 changes, 13 held).",
+  "title": "Re-pointing saved values at apply time is stopped; resolve a stored title at read time",
+  "summary": "The S640 conductor, 2026-11-12: #3140 re-pointed saved machine values inside the rename apply. Five review rounds each found a wrong-data fault on a new interaction (hand SQL, a separate job, undo order, a skipped retry, a replay on an undone apply), so it is not merged. Recommended: resolve a stored title through the applied alias map at read time, as kb/alias_chain.py does for M-IDs.",
   "tags": [
    "cer-procedures",
    "rename",
@@ -147,7 +147,7 @@ from jsonb_to_recordset($json$[
   "slug": "pitfall-second-write-path-no-receipt-s640",
   "kind": "pitfall",
   "title": "A second write path needs the whole receipt machinery again",
-  "summary": "S640, 2026-11-12: re-pointing saved machine values after renames went first as hand-run SQL, then as a separate job, and each left a live row with no way back (#3140, three review rounds of 20, 12 and 9 findings). Put a new write inside the existing apply and its receipt rather than beside it.",
+  "summary": "S640, 2026-11-12: re-pointing saved machine values after renames went first as hand-run SQL, then as a separate job, then inside the apply, and each round of review found a live row with no way back or a replay on the wrong apply (#3140, five rounds: 20, 12, 9, 3 and 1 findings). A fix that needs a fourth review round is a design to replace, not to patch.",
   "tags": [
    "cer-procedures",
    "rename",
@@ -156,7 +156,7 @@ from jsonb_to_recordset($json$[
   ],
   "source": "docs/exhibit_canonicalization_lessons.md (S640)",
   "related": [
-   "d-rename-apply-one-repoint-path-s640"
+   "d-rename-repoint-stopped-resolve-at-read-s640"
   ],
   "status": "proposed",
   "verified_by": null,
