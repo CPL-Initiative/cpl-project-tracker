@@ -19,13 +19,15 @@ reported the red `main`. Facts were read from `origin/main` (`b25ac4e4`), the re
 
 ## First things
 
-1. **Did the first real daily run after #3180 publish?** The 06:17 UTC run on 2026-11-13: read its log for
+1. **The Victor Valley display run failed only on its missing count** (*After the checkpoint*). Decide the 22 Los
+   Angeles City keys (`program-requirements-harvest` NEXT 2) before the next display run, or it fails the same way.
+2. **Did the first real daily run after #3180 publish?** The 06:17 UTC run on 2026-11-13: read its log for
    `Daily push rebased over a changed input` or `Daily push conflicted`, the rebuild's minutes, and whether its push
    landed (`governance-team-enablement` NEXT 1). Then `get_check_runs` on `main`'s head, `test`.
-2. **Read COBIx before any merge.** #3110, #3111, #2962 and #3153 to their last comment, every issue or PR COBIx touched
+3. **Read COBIx before any merge.** #3110, #3111, #2962 and #3153 to their last comment, every issue or PR COBIx touched
    today (`commenter:cobi-cto updated:>=<today>`), then each PR's own comments, last page included. He had not commented
    on any S643 PR by 22:05Z; the conductor posted on #3110, #2962 and #3153.
-3. Rule 8's `cpl_memory` query (tags `first-light`, `commons`, `mid-reclustering`, `cer-procedures`, `library`,
+4. Rule 8's `cpl_memory` query (tags `first-light`, `commons`, `mid-reclustering`, `cer-procedures`, `library`,
    `governance-team-enablement`, `program-requirements`, `conductor`), the three-repo check, the highest-numbered
    handoff, `list_sessions` if you hold it. `df -h /home/user` and `git worktree list`. Fetch branches by name with
    `--depth 50`, never a bare `git fetch origin`.
@@ -79,7 +81,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 |---|---|---|
 | this checkpoint's PR `claude/checkpoint-s643` | draft | merge on a green `test` |
 | CPLBrain draft PR on `claude/skylark-session-643-6ycsl5` (head `69a7a9bd`; Sheet 185's branch merged in) | draft | Sheet 186 published from it ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt), current); merge it; `/home/user/CPLBrain` is behind it: pull before writing |
-| #3159 `claude/first-light-apply-marks-s642` | draft | Sam's to review and merge |
+| #3159 `claude/first-light-apply-marks-s642` | merged `be7dcb88` 22:28Z by Sam | done |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 | `claude/harvest-desert-proof-s641`, `-pdf-baseline-s640` | S641's | per the harvest lane |
 
@@ -163,7 +165,8 @@ By 22:35Z Sam had not said "deploy" and had not answered the Actions setting.
 8. **`cer-procedures` NEXT (1):** the apply side of read-time resolution; the Fact Sheet's categories in their own PR;
    (5)'s 148 ghosts with no recorded rename have no search alias.
 9. Carried untouched: `cer-procedures` NEXT (6) to (12); `library` NEXT 0 (his List publicly and the funding dashboard
-   link) and `iaca-mvpmcjyl`; `csm-workspace` NEXT 0 and 1 (the funding session's); #2894; CPLBrain#758.
+   link) and `iaca-mvpmcjyl`; `csm-workspace` NEXT 0 and 1 and `implementation-funding`'s NEXT (the Funding Follow-up Dashboard session's lanes);
+   `sierra-retrieval-corpus` NEXT (#3185 worked it, not S643); #2894; CPLBrain#758.
 
 ## Not refreshed / left to the conductor
 
@@ -200,5 +203,23 @@ input; the acknowledged returned titles.
 State at the checkpoint, which the sign-off turn confirms: subscriptions on #3178, #3179, #3180, #3181, #3182, #3161,
 #3183 and #3184 dropped at merge; this checkpoint's PR stays subscribed until its merge. No
 check-in pending. The artifact watch on Sheet 186 (arming at publish) is dropped at sign-off.
+
+## After the checkpoint
+
+- #3186 (this checkpoint) merged as `eb71c277` on a green `test`; CPLBrain#769 merged as `bd54c271`. CPLBrain#765
+  is still open though its content merged through #769: close it with a pointer (SkyWren, or Sam).
+- Sam merged #3159 himself at 22:28Z (`be7dcb88`), so Sheet 185 card 8 is settled and nothing on Sheet 185 waits.
+- **Victor Valley's display run 43310473532** (step=display, extract=0) concluded FAILURE at 22:40Z after 69 minutes:
+  `written 17573 of 17598; missing 25; errors 0`, exit 1, then its applied record was pushed (`6703f4ff`,
+  `kb/receipts/program_requirement_records_display_2026-10-23_8fbbcfb7a9c0.applied_43310473532.json`). In
+  `kb/_program_requirements_display_apply.py`, *missing* is a display statement whose key (college, control number)
+  matches no row in `program_requirement_records`; nothing is written for it, and any missing key exits 1. The 25:
+  Monterey Peninsula 03653, 22098 and 39361 (missing on every display run since 2026-11-09, rows the table no longer
+  holds) and 22 Los Angeles City records: 02726, 02754, 02767, 10771, 19842, 21611, 21613, 24016, 33120, 38856, 38859,
+  40139, 40644, 40888, 40889, 41000, 41527, 44022, 44705, 44946, 46374, 46526, the 22 its reread left absent, with
+  IGETC (19842) and Cal-GETC (44946) among them. Victor Valley's four (38353, 38366, 38502, 38503) were read and
+  written. The rows that hold the new build can be confirmed by one read:
+  `select display->>'build' as build, count(*) from program_requirement_records where college = 'Victor Valley College'
+  and control_number in ('38353','38366','38502','38503') group by 1;` (expect `8fbbcfb7a9c0`, 4).
 
 Greetings, you are SkyWren (Session 644), see SkyLark's handoff — `docs/session_644_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_644_handoff.md) — let's keep rolling with our queue.
