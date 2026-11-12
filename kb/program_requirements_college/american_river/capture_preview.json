@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 371,
  "with_closed_list": 368,
- "started": "2026-11-12T06:29:39Z",
+ "started": "2026-11-12T11:32:55Z",
  "pdf": {
   "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
   "access": "hand_filed",
@@ -5272,7 +5272,7 @@
   "unproven": []
  },
  "loads": 0,
- "seconds": 514.3,
+ "seconds": 508.5,
  "found": 368,
  "by_method": {
   "no_closed_list": 3,
@@ -5701,7 +5701,7 @@
   "against": "kb/program_requirements_college/american_river",
   "kept": 243,
   "kept_moved": 0,
-  "programs": 114,
+  "programs": 33,
   "list": [
    {
     "control_number": "04514",
@@ -5711,76 +5711,6 @@
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=666",
     "was_coverage": 0.962,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04521",
-    "title": "Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=743",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04522",
-    "title": "Advertising and Sales Promotion",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
-    "coverage": 0.952,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=748",
-    "was_coverage": 0.952,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04523",
-    "title": "Retail Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
-    "coverage": 0.929,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04524",
-    "title": "Real Estate",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=864",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04526",
-    "title": "Journalism & Mass Communication",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=708",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04528",
-    "title": "Deaf Culture and American Sign Language Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=476",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04540",
-    "title": "Welding Technology",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -5794,36 +5724,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "04551",
-    "title": "Registered Nursing",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=812",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04552",
-    "title": "Respiratory Care",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "04563",
-    "title": "Physical Science/Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
-    "coverage": 0.66,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=848",
-    "was_coverage": 0.66,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "07200",
     "title": "Marketing",
     "award": "A.A. Degree",
@@ -5834,46 +5734,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "07223",
-    "title": "Commercial Music: Business",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07224",
-    "title": "Theatre Arts: Technical Production",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
-    "coverage": 0.967,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=946",
-    "was_coverage": 0.967,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07228",
-    "title": "LVN to RN Career Mobility",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07230",
-    "title": "Hospitality Management: Culinary Arts/Restaurant Management",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "07231",
     "title": "Chemical Dependency Studies",
     "award": "A.A. Degree",
@@ -5881,16 +5741,6 @@
     "coverage": 0.55,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926",
     "was_coverage": 0.55,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "07232",
-    "title": "Social Work",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-    "coverage": 0.722,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926",
-    "was_coverage": 0.722,
     "was_method": "pdf_pages"
    },
    {
@@ -5914,16 +5764,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "11554",
-    "title": "Para Professional Interior Planning and Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697",
-    "coverage": 0.96,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=698",
-    "was_coverage": 0.96,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "11566",
     "title": "Gerontology: Advocacy and Social Policy",
     "award": "A.A. Degree",
@@ -5931,36 +5771,6 @@
     "coverage": 0.8,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=637",
     "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "11994",
-    "title": "Paramedic",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=833",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12181",
-    "title": "CIS: Microcomputer Applications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
-    "coverage": 0.929,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=438",
-    "was_coverage": 0.929,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12207",
-    "title": "Retail Management (WAFC)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=747",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=751",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -5974,46 +5784,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "12348",
-    "title": "Funeral Service Education",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=598",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=599",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12377",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=754",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12659",
-    "title": "Baking and Pastry",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "12675",
-    "title": "Shielded Metal Arc Plate and Pipe",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "12686",
     "title": "ASL-English Interpreter Preparation Program",
     "award": "A.A. Degree",
@@ -6024,122 +5794,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "13941",
-    "title": "Environmental Conservation",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=791",
-    "coverage": 0.968,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
-    "was_coverage": 0.968,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "14255",
     "title": "Commercial Music: Recording",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=764",
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14256",
-    "title": "Commercial Music: Business",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=773",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14463",
-    "title": "Acting",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=943",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=947",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14464",
-    "title": "Children's Theatre",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=948",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14465",
-    "title": "Costuming",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=948",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "14466",
-    "title": "Film",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
-    "coverage": 0.944,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=957",
-    "was_coverage": 0.944,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15325",
-    "title": "Cybersecurity and Information Assurance",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15519",
-    "title": "Psychology",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=853",
-    "coverage": 0.812,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=857",
-    "was_coverage": 0.812,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15613",
-    "title": "Welding Metallurgy and Inspection (270 hours)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "15615",
-    "title": "Advanced Electronics and Telecommunications",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=520",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "16747",
-    "title": "Jazz Studies",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=768",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=772",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6174,36 +5834,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "19330",
-    "title": "Political Science",
-    "award": "A.A. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
-    "coverage": 0.733,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=852",
-    "was_coverage": 0.733,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "19335",
-    "title": "Honors Transfer",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603",
-    "coverage": 0.842,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=604",
-    "was_coverage": 0.842,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20099",
-    "title": "Environmental Conservation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=798",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "20100",
     "title": "Biotechnology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -6214,72 +5844,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "20102",
-    "title": "Management",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20103",
-    "title": "Leadership",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=743",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20105",
-    "title": "Real Estate",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=861",
-    "coverage": 0.9,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=865",
-    "was_coverage": 0.9,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "20109",
     "title": "Cybersecurity and Information Assurance",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
     "coverage": 0.6,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=434",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20114",
-    "title": "ASL-English Interpreter Preparation Program",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=345",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20119",
-    "title": "Automotive Component Service Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=362",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20129",
-    "title": "Licensed Vocational Nurse (LVN) 30-unit option",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=814",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6294,36 +5864,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "20131",
-    "title": "Fashion Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=577",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20132",
-    "title": "Fashion Merchandising",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=579",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20133",
-    "title": "Culinary Arts/ Restaurant Management",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "20138",
     "title": "Gerontology: Recreation",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -6331,36 +5871,6 @@
     "coverage": 0.778,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=635",
     "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20141",
-    "title": "Social Work",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924",
-    "coverage": 0.944,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
-    "was_coverage": 0.944,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20142",
-    "title": "Chemical Dependency Studies",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
-    "coverage": 0.55,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=926",
-    "was_coverage": 0.55,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "20144",
-    "title": "Geographic Information Systems (GIS)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=615",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=613",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -6384,16 +5894,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "30352",
-    "title": "Dietary Manager/Dietary Services Supervisor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=818",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=822",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "30595",
     "title": "Psychology",
     "award": "A.A- T Degree",
@@ -6401,36 +5901,6 @@
     "coverage": 0.812,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=856",
     "was_coverage": 0.812,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30636",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30823",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=754",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30842",
-    "title": "Freelance Photography",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=313",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -6464,56 +5934,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "31582",
-    "title": "3D Rigging Technical Director",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=331",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32275",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=609",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32487",
-    "title": "Journalism and Mass Communications",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
-    "coverage": 0.906,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=707",
-    "was_coverage": 0.906,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32560",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=851",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32630",
-    "title": "Music",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765",
-    "coverage": 0.917,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
-    "was_coverage": 0.917,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "32643",
     "title": "Theatre Arts",
     "award": "A.A- T Degree",
@@ -6544,102 +5964,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "35062",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=837",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=841",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35164",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=816",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=821",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35262",
-    "title": "Welding Technology",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=969",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35293",
-    "title": "Digital Audio Production",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=775",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "35294",
     "title": "Music Management and Promotion",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=770",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35348",
-    "title": "Advanced-High in English as a Second Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=561",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35356",
-    "title": "Advanced Proficiency Certificate in English as a Second Language",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=561",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35636",
-    "title": "Conflict Management",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=743",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35637",
-    "title": "Marketing Essentials",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=750",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "35646",
-    "title": "Project Management",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6654,22 +5984,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "37576",
-    "title": "Social Justice Studies: Race and Ethnicity",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
+    "control_number": "39057",
+    "title": "Acoustical Installer Apprenticeship",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
     "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=919",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37581",
-    "title": "Social Justice Studies: Women, Gender, and LGBTQ Studies",
-    "award": "A.A- T Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=916",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=920",
+    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=169",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6684,32 +6004,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "39339",
-    "title": "Pile Driver Apprenticeship",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=197",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=161",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "39448",
     "title": "Refrigeration Service Technician Apprenticeship",
     "award": "A.S. Degree",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=168",
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=211",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40096",
-    "title": "Shingler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=220",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -6721,116 +6021,6 @@
     "coverage": 1.0,
     "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=155",
     "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40111",
-    "title": "Carpenter Apprenticeship Level III",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=174",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41294",
-    "title": "Environmental Conservation Technician (Fisheries)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41295",
-    "title": "Environmental Conservation Technician (Wildlife)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41296",
-    "title": "Environmental Conservation Technician (Sustainability)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41297",
-    "title": "Environmental Conservation Technician (Vegetation)",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=799",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42424",
-    "title": "Pre-Health Occupations",
-    "award": "A.S. Degree",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=811",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42725",
-    "title": "SLPA Specialization: School Age",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=939",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42734",
-    "title": "SLPA Core Curriculum",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=933",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=937",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42735",
-    "title": "SLPA Specialization: Early Intervention",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=939",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "42736",
-    "title": "SLPA Specialization: Adult Neurogenic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
-    "coverage": 1.0,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=938",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44531",
-    "title": "Mental Behavioral Health",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=923",
-    "coverage": 0.857,
-    "was_url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=927",
-    "was_coverage": 0.857,
     "was_method": "pdf_pages"
    },
    {
@@ -6926,16 +6116,665 @@
     "was_coverage": 1.0
    }
   ],
-  "held_opens_on_list": [
+  "held_no_gain": [
    {
-    "control_number": "39057",
-    "title": "Acoustical Installer Apprenticeship",
+    "control_number": "04521",
+    "title": "Management",
     "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04522",
+    "title": "Advertising and Sales Promotion",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=744",
+    "coverage": 0.952,
+    "was_coverage": 0.952
+   },
+   {
+    "control_number": "04523",
+    "title": "Retail Management",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=745",
+    "coverage": 0.929,
+    "was_coverage": 0.929
+   },
+   {
+    "control_number": "04524",
+    "title": "Real Estate",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=860",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04526",
+    "title": "Journalism & Mass Communication",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04528",
+    "title": "Deaf Culture and American Sign Language Studies",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=475",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04540",
+    "title": "Welding Technology",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04551",
+    "title": "Registered Nursing",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=808",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04552",
+    "title": "Respiratory Care",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=909",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "04563",
+    "title": "Physical Science/Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=844",
+    "coverage": 0.66,
+    "was_coverage": 0.66
+   },
+   {
+    "control_number": "07223",
+    "title": "Commercial Music: Business",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=766",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "07224",
+    "title": "Theatre Arts: Technical Production",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=942",
+    "coverage": 0.967,
+    "was_coverage": 0.967
+   },
+   {
+    "control_number": "07228",
+    "title": "LVN to RN Career Mobility",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=805",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "07230",
+    "title": "Hospitality Management: Culinary Arts/Restaurant Management",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "07232",
+    "title": "Social Work",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
+    "coverage": 0.722,
+    "was_coverage": 0.722
+   },
+   {
+    "control_number": "11554",
+    "title": "Para Professional Interior Planning and Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=697",
+    "coverage": 0.96,
+    "was_coverage": 0.96
+   },
+   {
+    "control_number": "11994",
+    "title": "Paramedic",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=829",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "12181",
+    "title": "CIS: Microcomputer Applications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=428",
+    "coverage": 0.929,
+    "was_coverage": 0.929
+   },
+   {
+    "control_number": "12207",
+    "title": "Retail Management (WAFC)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=747",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "12348",
+    "title": "Funeral Service Education",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=598",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "12377",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "12659",
+    "title": "Baking and Pastry",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "12675",
+    "title": "Shielded Metal Arc Plate and Pipe",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "13941",
+    "title": "Environmental Conservation",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=791",
+    "coverage": 0.968,
+    "was_coverage": 0.968
+   },
+   {
+    "control_number": "14256",
+    "title": "Commercial Music: Business",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=769",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "14463",
+    "title": "Acting",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=943",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "14464",
+    "title": "Children's Theatre",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "14465",
+    "title": "Costuming",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=944",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "14466",
+    "title": "Film",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=952",
+    "coverage": 0.944,
+    "was_coverage": 0.944
+   },
+   {
+    "control_number": "15325",
+    "title": "Cybersecurity and Information Assurance",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=433",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "15519",
+    "title": "Psychology",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=853",
+    "coverage": 0.812,
+    "was_coverage": 0.812
+   },
+   {
+    "control_number": "15613",
+    "title": "Welding Metallurgy and Inspection (270 hours)",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "15615",
+    "title": "Advanced Electronics and Telecommunications",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=519",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "16747",
+    "title": "Jazz Studies",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=768",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "19330",
+    "title": "Political Science",
+    "award": "A.A. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
+    "coverage": 0.733,
+    "was_coverage": 0.733
+   },
+   {
+    "control_number": "19335",
+    "title": "Honors Transfer",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=603",
+    "coverage": 0.842,
+    "was_coverage": 0.842
+   },
+   {
+    "control_number": "20099",
+    "title": "Environmental Conservation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=790",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20102",
+    "title": "Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20103",
+    "title": "Leadership",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20105",
+    "title": "Real Estate",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=861",
+    "coverage": 0.9,
+    "was_coverage": 0.9
+   },
+   {
+    "control_number": "20114",
+    "title": "ASL-English Interpreter Preparation Program",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=343",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20119",
+    "title": "Automotive Component Service Technician",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=361",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20129",
+    "title": "Licensed Vocational Nurse (LVN) 30-unit option",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=810",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20131",
+    "title": "Fashion Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20132",
+    "title": "Fashion Merchandising",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=576",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20133",
+    "title": "Culinary Arts/ Restaurant Management",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=674",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "20141",
+    "title": "Social Work",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=924",
+    "coverage": 0.944,
+    "was_coverage": 0.944
+   },
+   {
+    "control_number": "20142",
+    "title": "Chemical Dependency Studies",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=922",
+    "coverage": 0.55,
+    "was_coverage": 0.55
+   },
+   {
+    "control_number": "20144",
+    "title": "Geographic Information Systems (GIS)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=615",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30352",
+    "title": "Dietary Manager/Dietary Services Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=818",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30636",
+    "title": "Sociology",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30823",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=749",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "30842",
+    "title": "Freelance Photography",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=312",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "31582",
+    "title": "3D Rigging Technical Director",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=328",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32275",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=608",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32487",
+    "title": "Journalism and Mass Communications",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=706",
+    "coverage": 0.906,
+    "was_coverage": 0.906
+   },
+   {
+    "control_number": "32560",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=846",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "32630",
+    "title": "Music",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=765",
+    "coverage": 0.917,
+    "was_coverage": 0.917
+   },
+   {
+    "control_number": "35062",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=837",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35164",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=816",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35262",
+    "title": "Welding Technology",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=965",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35293",
+    "title": "Digital Audio Production",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=771",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35348",
+    "title": "Advanced-High in English as a Second Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35356",
+    "title": "Advanced Proficiency Certificate in English as a Second Language",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=560",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35636",
+    "title": "Conflict Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=739",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35637",
+    "title": "Marketing Essentials",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=746",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "35646",
+    "title": "Project Management",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=741",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37576",
+    "title": "Social Justice Studies: Race and Ethnicity",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=914",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "37581",
+    "title": "Social Justice Studies: Women, Gender, and LGBTQ Studies",
+    "award": "A.A- T Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=916",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "39339",
+    "title": "Pile Driver Apprenticeship",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=197",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40096",
+    "title": "Shingler",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=219",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "40111",
+    "title": "Carpenter Apprenticeship Level III",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=153",
     "coverage": 1.0,
-    "was_coverage": null
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41294",
+    "title": "Environmental Conservation Technician (Fisheries)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41295",
+    "title": "Environmental Conservation Technician (Wildlife)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41296",
+    "title": "Environmental Conservation Technician (Sustainability)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "41297",
+    "title": "Environmental Conservation Technician (Vegetation)",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=795",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42424",
+    "title": "Pre-Health Occupations",
+    "award": "A.S. Degree",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=807",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42725",
+    "title": "SLPA Specialization: School Age",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42734",
+    "title": "SLPA Core Curriculum",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=933",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42735",
+    "title": "SLPA Specialization: Early Intervention",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "42736",
+    "title": "SLPA Specialization: Adult Neurogenic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=932",
+    "coverage": 1.0,
+    "was_coverage": 1.0
+   },
+   {
+    "control_number": "44531",
+    "title": "Mental Behavioral Health",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=923",
+    "coverage": 0.857,
+    "was_coverage": 0.857
    }
-  ]
+  ],
+  "held_opens_on_list": []
  },
- "run": "43168246175"
+ "run": "43209644816"
 }
