@@ -60,20 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    18.0,
+    18.0
    ],
    "stated": [
     16.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": [],
+   "meets_top": true
   },
   "repeated": {
    "codes": [],
@@ -97,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -140,14 +139,14 @@
     "courses": [
      {
       "code": "HLTH 0105",
-      "units": null,
+      "units": 9.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 0106",
-      "units": null,
+      "units": 9.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -166,5 +165,17 @@
    "The career entry 'counseling-related fields' comes from the description ('those working in counseling-related fields'). The description also mentions 'community mental health organizations', which names an employer type rather than a career, so it was not recorded."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "HLTH 0105": 9.0,
+    "HLTH 0106": 9.0
+   },
+   "words": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json) (each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0')"
+  }
+ ],
+ "read_run": "38675237912"
 }

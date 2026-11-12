@@ -69,20 +69,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    17.0
+    16.0,
+    18.0
    ],
    "stated": [
     16.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 15.0-17.0; the catalog states 16.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -106,7 +104,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -279,5 +277,6 @@
    "No program learning outcomes are printed in the text."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "read_run": "38675237912"
 }

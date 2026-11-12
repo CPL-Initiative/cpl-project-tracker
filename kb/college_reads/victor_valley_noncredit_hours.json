@@ -1,0 +1,26 @@
+{
+ "_readme": "S639 harvest side session (second session), 2026-11-12. Victor Valley College: 35 noncredit certificates (measure hours) fail arithmetic as incomplete. Each record notes that its page prints 'Total Certificate Hours: X - Y', a 0.0 in the Units column beside each course and 'Total Units 0', and no hours beside any course, so the scorer cannot add the courses. This read asks where the catalog prints each noncredit course's hours: the program page as the capture reads it (two pages, every tab panel, including the PROGRAM MAP tab the capture leaves out), and the course descriptions for the thirteen prefixes the 35 records list. No model call.",
+ "college": "Victor Valley College",
+ "questions": {
+  "program_page_hours": "What a noncredit certificate page prints, tab by tab: the Total Certificate Hours line, the course table's columns, and any hours beside a course (the PROGRAM MAP tab included).",
+  "course_hours": "What each noncredit course's description prints for its hours (lecture, lab, total), by code."
+ },
+ "keywords": ["[Hh]ours?", "Noncredit", "Non-credit", "\\b0\\d{2,3}(?:\\.\\d)?[A-Z]?\\b"],
+ "pages": [
+  {"url": "https://catalog.vvc.edu/degrees-certificates/work-force-preparation/career-success-ccn/", "answers": ["program_page_hours"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/degrees-certificates/cosmetology/introductory-cosmetology-ccn/", "answers": ["program_page_hours"], "capture_view": true},
+  {"url": "https://catalog.vvc.edu/course-descriptions/ahom/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/ape/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/cdl/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/cosm/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/emc/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/ems/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/esl/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/guid/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/hlth/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/mnlo/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/pht/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/pts/", "answers": ["course_hours"]},
+  {"url": "https://catalog.vvc.edu/course-descriptions/wkpr/", "answers": ["course_hours"]}
+ ]
+}

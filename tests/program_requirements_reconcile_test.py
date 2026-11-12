@@ -517,6 +517,412 @@ check("a heading printing 'T otal Units: 60' with no 'Minimum of': neither step 
 check("no other college names heading_above_code",
       [k for k, v in R.load_steps().items() if v.get("heading_above_code")] == [LAC])
 
+print("Victor Valley's noncredit course hours from the course descriptions (S639; college page read 43134526902)")
+VV = "Victor Valley College"
+VV_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "victor_valley", "records")
+
+
+def vv_filed(cn):
+    """The filed record as the reader read it: a reconcile run (43139057384) files the steps' changes,
+    each with what it was, so a test of the steps starts from the reading."""
+    with open(os.path.join(VV_DIR, cn + ".json")) as fh:
+        filed = json.load(fh)
+    rec = filed.get("record") or {}
+    for n in filed.get("reconciled") or []:
+        if n["field"] in ("course_hours", "course_units"):
+            for b in rec.get("blocks") or []:
+                for c in b.get("courses") or []:
+                    for e in [c] + [a for a in c.get("alternatives") or [] if isinstance(a, dict)]:
+                        if e.get("code") in n["now"]:
+                            e["units"], e["units_max"] = None, None
+        elif n["field"] in (rec.get("program") or {}):
+            rec["program"][n["field"]] = n["was"]
+    return filed
+
+
+hours_filed = json.load(open(os.path.join(VV_DIR, "42728.json")))
+check("run 43139057384 filed Career Success with the descriptions' hours and passing as meets_top",
+      [c["units"] for c in hours_filed["record"]["blocks"][0]["courses"]] == [36.0, 36.0, 36.0]
+      and hours_filed["score"]["pass"] and hours_filed["score"]["arithmetic"].get("meets_top"))
+
+
+# The page text as the capture reads Career Success 42728 (the read's own lines): a total, 0.0 beside each course.
+vv_text = ("[Tab: REQUIREMENTS]\nTotal Certificate Hours: 96.0 - 108.0\nCourse List\nCode\nTitle\nUnits\nRequired Courses\n"
+           "WKPR 011\tPersonal Growth, Development and Wellness\t0.0\nWKPR 012\tDecision Making and Problem Solving in the "
+           "Workplace\t0.0\nWKPR 014\tComminication Skills in the Workforce\t0.0\nTotal Units\t0")
+vv_steps = R.load_steps()
+check("Victor Valley's entry has no college-level awards gate (the Redwoods lesson): course_hours, then Cal-GETC",
+      not vv_steps[VV].get("awards") and [s["kind"] for s in vv_steps[VV]["steps"]] == ["course_hours", "set"])
+with open(os.path.join(ROOT, "kb", vv_steps[VV]["steps"][0]["hours_file"])) as fh:
+    vv_hours = json.load(fh)
+check("the hours file keeps noncredit courses only: ESL 012A's 108, never ESL 12A's 54 (3.0 Units, one normalized code)",
+      vv_hours["hours"].get("ESL12A") == [108.0, 108.0] and vv_hours["hours"].get("WKPR11") == [36.0, 36.0]
+      and vv_hours["hours"].get("COSM101") == [279.0, 279.0] and "Lecture Hours: 36.0" in vv_hours["words"]["WKPR11"])
+cs = vv_filed("42728")
+new, notes = R.reconcile(cs["record"], vv_text, VV, cs["award"], steps=vv_steps)
+check("Career Success's three WKPR courses take the 36 hours each description prints",
+      [c["units"] for c in new["blocks"][0]["courses"]] == [36.0, 36.0, 36.0]
+      and notes and notes[0]["field"] == "course_hours" and "43134526902" in notes[0]["words"])
+arith = S.score(new, [], vv_text, cs["award"])["arithmetic"]
+check("108 hours of single-figure courses meets the top of 96.0 - 108.0 (meets_top, S639)",
+      arith["status"] == "equal" and arith["computed"] == [108.0, 108.0] and arith["pass"] and arith.get("meets_top"))
+check("the filed record is left as filed", cs["record"]["blocks"][0]["courses"][0]["units"] is None)
+# The page's own call wins a code it and the hours file both give (review, S640): the file gives WKPR 011 36 hours.
+won, won_notes = R.reconcile(cs["record"], vv_text, VV, cs["award"], steps=vv_steps,
+                             course_hours={"call": "the page's own call", "hours": {"WKPR11": [30, 30]}})
+check("course_hours: the page's call (WKPR 011 at 30) wins over the hours file's 36, and the file fills the rest",
+      vv_hours["hours"]["WKPR11"] == [36.0, 36.0]
+      and [c["units"] for c in won["blocks"][0]["courses"]] == [30, 36.0, 36.0]
+      and won_notes[0]["now"]["WKPR 011"] == 30 and won_notes[0]["words"].startswith("the page's own call"))
+
+print("meets_top: an hours record's single-figure courses add to its printed range's top (S639)")
+
+
+def hrs(units, total, measure="hours", extra=None):
+    courses = [dict({"code": "WKPR %d" % (10 + i), "units": u}, **(extra or {}).get(i, {})) for i, u in enumerate(units)]
+    return {"program": {"measure": measure, "total_units": {"min": total[0], "max": total[1]}},
+            "blocks": [{"name": "Required Courses", "rule": "all", "courses": courses}]}
+
+
+top = S.score(hrs([36, 36, 36], (96, 108)), [], None, "Noncredit program")["arithmetic"]
+check("hours, 36 + 36 + 36 against 96 - 108: passes as meets_top", top["pass"] and top.get("meets_top"))
+same_units = S.score(hrs([36, 36, 36], (96, 108), measure="units"), [], None, "Certificate of Achievement")["arithmetic"]
+check("a units record of the same shape stays unequal (Sheet 120 card 1, narrow, governs units)",
+      same_units["status"] == "unequal" and not same_units.get("meets_top"))
+inside = S.score(hrs([32, 36, 36], (96, 108)), [], None, "Noncredit program")["arithmetic"]
+check("an hours sum inside the range, short of its top (104 of 96 - 108), stays unequal",
+      inside["status"] == "unequal" and not inside.get("meets_top"))
+var = hrs([36, 36, 36], (96, 108), extra={0: {"units": 32, "units_max": 36}})
+check("a variable-hours course (32-36) reads as it does today: 104-108 against 96 - 108 is unequal",
+      S.score(var, [], None, "Noncredit program")["arithmetic"]["status"] == "unequal"
+      and not S.hours_meets_top(var, (96.0, 108.0), 108.0, 108.0))
+rep = hrs([36, 36, 36], (96, 108), extra={0: {"times": 1}})
+check("a repeated course is no single figure", not S.hours_meets_top(rep, (96.0, 108.0), 108.0, 108.0))
+laney = S.score(hrs([17.5, 17.5, 17.5, 17.5], (47, 70)), [], None, "Noncredit program")["arithmetic"]
+check("Laney-shaped ('min 47 hours', 70 at the top of 47 - 70, far from eight ninths): stays unequal",
+      laney["status"] == "unequal" and not laney.get("meets_top"))
+deanza = S.score(hrs([120, 120, 120], (240, 360)), [], None, "Noncredit program")["arithmetic"]
+check("De Anza-shaped (a course that need not be taken held as required, 360 of 240 - 360): stays unequal",
+      deanza["status"] == "unequal" and not deanza.get("meets_top"))
+ccp = S.score(hrs([16, 4, 4, 124, 132], (256, 280)), [], None, "Noncredit program")["arithmetic"]
+check("Victor Valley's Critical Care Paramedic 45880 (256 - 280, 0.914 of the top): stays unequal",
+      ccp["status"] == "unequal" and not ccp.get("meets_top"))
+check("the ratio's tolerance takes a low end printed to one decimal place (28.0 of 31.5 is in; 7.9 of 9.0, 0.1 off, is out)",
+      S.hours_meets_top(hrs([18, 13.5], (28, 31.5)), (28.0, 31.5), 31.5, 31.5)
+      and not S.hours_meets_top(hrs([4.5, 4.5], (7.9, 9.0)), (7.9, 9.0), 9.0, 9.0))
+# Review of Victor Valley's last three commits (S640): pin TERM_TOL between 0 and 0.1. 7.6 is 0.044 off eight ninths
+# of 8.6 (7.644) and passes; 7.58 is 0.064 off and fails.
+near = S.score(hrs([4.3, 4.3], (7.6, 8.6)), [], None, "Noncredit program")["arithmetic"]
+far = S.score(hrs([4.3, 4.3], (7.58, 8.6)), [], None, "Noncredit program")["arithmetic"]
+check("a low end inexact yet inside 0.05 of eight ninths (7.6 of 8.6) passes as meets_top; 0.064 off (7.58) does not",
+      near["pass"] and near.get("meets_top") and not far["pass"] and not far.get("meets_top")
+      and S.TERM_TOL == 0.05)
+# The guard reads each course's alternatives too: a mutant that loops only [c] passes neither of these.
+alt_none = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": None}]}})
+alt_var = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": 36, "units_max": 40}]}})
+alt_bare = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": ["WKPR 99"]}})
+alt_one = hrs([36, 36, 36], (96, 108), extra={0: {"alternatives": [{"code": "WKPR 99", "units": 36}]}})
+check("a 36-hour course whose alternative has no hours is no meets_top, by the score and by the guard",
+      not S.score(alt_none, [], None, "Noncredit program")["arithmetic"].get("meets_top")
+      and not S.hours_meets_top(alt_none, (96.0, 108.0), 108.0, 108.0))
+check("a 36-hour course whose alternative runs 36-40 is no meets_top, by the score and by the guard",
+      not S.score(alt_var, [], None, "Noncredit program")["arithmetic"].get("meets_top")
+      and not S.hours_meets_top(alt_var, (96.0, 108.0), 108.0, 108.0))
+check("a bare-code alternative (no hours) is refused by the guard",
+      not S.hours_meets_top(alt_bare, (96.0, 108.0), 108.0, 108.0))
+check("an alternative of one figure, 36, leaves the guard passing", S.hours_meets_top(alt_one, (96.0, 108.0), 108.0, 108.0))
+# A recommended block counts toward neither the sum nor the guard, priced or not.
+rec_blk = hrs([36, 36, 36], (96, 108))
+rec_blk["blocks"].append({"name": "Recommended", "rule": "recommended", "courses": [{"code": "WKPR 20", "units": None}]})
+rec_a = S.score(rec_blk, [], None, "Noncredit program")["arithmetic"]
+check("an unpriced recommended block beside [36, 36, 36] leaves 108 of 96 - 108 passing as meets_top",
+      rec_a["pass"] and rec_a.get("meets_top") and rec_a["computed"] == [108.0, 108.0]
+      and S.hours_meets_top(rec_blk, (96.0, 108.0), 108.0, 108.0))
+
+
+def shaped(rule, units, total, **block):
+    rec = hrs(units, total)
+    rec["blocks"][0].update(dict({"rule": rule}, **block))
+    return rec
+
+
+def no_top(rec, total=(96, 108)):
+    a = S.score(rec, [], None, "Noncredit program")["arithmetic"]
+    return not a.get("meets_top") and not a["pass"]
+
+
+# The review of 587882fc reproduced each of these passing at 108 though the courses add to less (S639).
+check("a choose-courses list's printed 108 over 2 of [36, 36, 36] (the courses add to 72) is no meets_top",
+      no_top(shaped("choose_courses", [36, 36, 36], (96, 108), minimum=2, stated={"min": 108, "max": 108})))
+check("a choose_units minimum of 108 over [36, 36] is no meets_top",
+      no_top(shaped("choose_units", [36, 36], (96, 108), minimum=108)))
+oe = hrs([36, 36], (96, 108)); oe["program"]["open_elective_units"] = 36
+check("open elective hours added to [36, 36] are no meets_top", no_top(oe))
+check("a list that fills to 108 over [36, 36] is no meets_top", no_top(shaped("all", [36, 36], (96, 108), fills_to=108)))
+check("a repeated choose 2 of [27, 27] at 54 of 48 - 54 is no meets_top",
+      no_top(shaped("choose_courses", [27, 27], (48, 54), minimum=2, repeats=True)))
+grp = hrs([36, 36, 36], (96, 108)); grp["blocks"][0]["option_group"] = "A"
+check("a block in an option group is no meets_top", not S.hours_meets_top(grp, (96.0, 108.0), 108.0, 108.0))
+check("choose 2 of [9, 9, 9] at 18 of 16 - 18 (Victor Valley 44151's shape, no printed figure) passes",
+      S.score(shaped("choose_courses", [9, 9, 9], (16, 18), minimum=2), [], None, "Noncredit program")["arithmetic"].get("meets_top"))
+span = shaped("choose_courses", [36, 54], (48, 54), minimum=1)
+check("lo == hi: choose 1 of [36, 54] against 48 - 54 stays unequal, and the guard alone refuses 36-54",
+      no_top(span) and not S.hours_meets_top(span, (48.0, 54.0), 36.0, 54.0))
+bare = shaped("all", [None, None, None], (96, 108), stated={"min": 108, "max": 108})
+check("a course with no hours: a rule-all block priced by its printed 108 stays unequal, and the guard refuses it",
+      no_top(bare) and not S.hours_meets_top(bare, (96.0, 108.0), 108.0, 108.0))
+one = S.score(hrs([108, 108], (216, 216)), [], None, "Noncredit program")["arithmetic"]
+check("a total of one figure still reads equal, not meets_top", one["pass"] and not one.get("meets_top"))
+check("program_verdict without the record (the rescorers' call) is unchanged",
+      S.program_verdict({}, (96.0, 108.0), 108.0, 108.0) == {"pass": False, "status": "unequal"})
+import _program_requirements_rescore as RS  # noqa: E402
+check("the rescorer moves no filed score: an unequal hours record at its top stays as filed",
+      RS.rescore({"award": "Noncredit program", "record": hrs([36, 36, 36], (96, 108)),
+                  "score": {"arithmetic": {"status": "unequal", "against": "program", "computed": [108.0, 108.0],
+                                           "stated": [96.0, 108.0], "pass": False}}}) is None)
+for cn in ("42907", "43736"):
+    one = vv_filed(cn)
+    got, _n = R.reconcile(one["record"], "Total Certificate Hours: 216.0", VV, one["award"], steps=vv_steps)
+    check("%s: two 108-hour ESL courses add to 'Total Certificate Hours: 216.0' and pass arithmetic" % cn,
+          S.score(got, [], "Total Certificate Hours: 216.0", one["award"])["arithmetic"]["pass"])
+for cn in ("37006", "38352"):
+    # Sheet 85 card 4 (Sam, 2026-10-16): AUTO 82.0 printed with no units; stays as read, unchecked, shown, flagged.
+    one = vv_filed(cn)
+    got, n37 = R.reconcile(one["record"], "AUTO 82.0\tTotal Units\t22", VV, one["award"], steps=vv_steps)
+    check("%s (Sheet 85 card 4) is never changed: a credit record is not measured in hours" % cn,
+          n37 == [] and got is one["record"]
+          and [c["units"] for c in got["blocks"][0]["courses"] if c["code"] == "AUTO 82.0"] == [None])
+filled = json.loads(json.dumps(cs["record"]))
+filled["blocks"][0]["courses"][0]["units"] = 32
+got = R.reconcile(filled, vv_text, VV, cs["award"], steps=vv_steps)[0]
+check("an hours figure the reading gave stands", got["blocks"][0]["courses"][0]["units"] == 32
+      and got["blocks"][0]["courses"][1]["units"] == 36.0)
+units_rec = {"program": {"measure": "units", "total_units": {"min": 3, "max": 3}},
+             "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "ESL 12A", "units": None}]}]}
+check("a credit record listing ESL 12A takes no hours", R.reconcile(units_rec, "x", VV, "A.A. Degree", steps=vv_steps)[1] == [])
+check("another college's hours record takes no Victor Valley hours",
+      R.reconcile(cs["record"], vv_text, "Hartnell College", cs["award"], steps=vv_steps)[1] == [])
+
+print("Victor Valley's transfer degrees take its own Cal-GETC total, 34-42 (S639; reads 43136401325, 43137395720)")
+aat_text = ("[Tab: REQUIREMENTS]\nTo earn this degree complete the major coursework listed here with “C” grades or "
+            "higher and the following graduation requirements:\n60 CSU transferable units;\nthe Cal-GETC pattern; and\n"
+            "2.0 minimum overall CSU GPA.\nCourse List\nCode\nTitle\nUnits\nRequired Core:\t6.0\nHIST C1001\n"
+            "United States History to 1877\nTotal Units\t18")
+for cn in ("31788", "44287"):
+    one = vv_filed(cn)
+    got, gn = R.reconcile(one["record"], aat_text, VV, one["award"], steps=vv_steps)
+    check("%s takes ge_units 34-42 from the catalog's own Cal-GETC certificate" % cn,
+          got["program"]["ge_units"] == {"min": 34, "max": 42}
+          and any("Total Units 34-42" in n["words"] for n in gn if n["field"] == "ge_units"))
+    deg = S.degree_verdict(got["program"], (60.0, 60.0), one["score"]["arithmetic"]["computed"][0] + 34,
+                           one["score"]["arithmetic"]["computed"][1] + 42, one["award"])
+    check("%s: the major and 34-42 allow the printed 60" % cn, deg["pass"])
+nursing = vv_filed("04955")
+check("a local degree (Nursing A.S. 04955, VVC General Education) takes no Cal-GETC figure",
+      not [n for n in R.reconcile(nursing["record"], aat_text, VV, nursing["award"], steps=vv_steps)[1]
+           if n["field"] == "ge_units"])
+check("a page that does not print the graduation requirement line takes nothing",
+      not [n for n in R.reconcile(vv_filed("31788")["record"], "the Cal-GETC pattern", VV, "A.A- T Degree",
+                                  steps=vv_steps)[1] if n["field"] == "ge_units"])
+major_only = vv_filed("31612")
+check("a transfer degree holding its major alone (Communication Studies 31612, no degree total) takes nothing,"
+      " so its 'major only' reading stands (only_with degree_total)",
+      major_only["record"]["program"]["degree_total"]["min"] is None
+      and not [n for n in R.reconcile(major_only["record"], aat_text, VV, major_only["award"], steps=vv_steps)[1]
+               if n["field"] == "ge_units"]
+      and S.degree_reading(major_only["record"], major_only["award"])["status"] == "major only")
+
+print("tabs_with_prose: an Overview naming every course, the course list in a hidden tab (S639, Victor Valley's EMS)")
+import _program_requirements_pilot as P  # noqa: E402
+ems_courses = [{"code": "EMS 82", "units": 4.5}, {"code": "EMS 83", "units": 3.5}]
+ems_body = ("State Control Number: 38353\nProgram Code: EMS.ALSM2.CA\nProgram Length: 6 months\nThis certificate is for "
+            "successful completion of EMS 82 Paramedic Cardiology and EMS 83 Paramedic Pharmacology.\nOffice Hours")
+ems_tab = ("Course List\nCode\nTitle\nUnits\nRequired Courses\nEMS 82\tParamedic Cardiology\t4.5\n"
+           "EMS 83\tParamedic Pharmacology\t3.5\nTotal Units\t8")
+ems_got = {"body": ems_body, "content": ems_body + ems_tab,
+           "tabPanels": [{"label": "REQUIREMENTS", "id": "requirementstextcontainer", "text": ems_tab},
+                         {"label": "PROGRAM MAP", "id": "programmaptextcontainer",
+                          "text": "Suggested Plan of Study\nCareer, salary, and labor market data information."}]}
+fb = P.find_codes(ems_body, ems_courses)
+text, _f, field = P.best_text(ems_got, fb, P.find_codes(ems_got["content"], ems_courses), ems_courses)
+check("without the opt-in the Overview alone is read, as every college reads it today",
+      field == "innerText" and "Total Units" not in text)
+text, _f, field = P.best_text(ems_got, fb, P.find_codes(ems_got["content"], ems_courses), ems_courses, True)
+check("with it, the REQUIREMENTS tab and its 'Total Units 8' are appended",
+      field == "innerText+tabs" and text.endswith("Total Units\t8") and "[Tab: REQUIREMENTS]" in text)
+shown = dict(ems_got, body=ems_body + "\n" + ems_tab)
+check("a page whose visible text prints its own Total Units line is read as before",
+      P.best_text(shown, P.find_codes(shown["body"], ems_courses), {}, ems_courses, True)[2] == "innerText")
+other = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": "Course List\nNURS 221\tNursing\t12\nTotal Units\t12"}])
+check("a hidden tab that names fewer of the courses is not appended",
+      P.best_text(other, fb, {}, ems_courses, True)[2] == "innerText")
+check("Victor Valley's entry opts in; no other college does",
+      R.load_steps()[VV].get("tabs_with_prose") is True
+      and [c for c, e in R.load_steps().items() if e.get("tabs_with_prose")] == [VV])
+no_total = dict(ems_got, tabPanels=[{"label": "REQUIREMENTS", "id": "r", "text": ems_tab.replace("\nTotal Units\t8", "")}])
+check("a tab that names both courses but prints no Total Units line is not appended",
+      P.best_text(no_total, fb, {}, ems_courses, True)[2] == "innerText")
+hours_body = dict(ems_got, body=ems_body + "\nTotal Certificate Hours: 96.0 - 108.0")
+check("a visible 'Total Certificate Hours' line is no Total Units line: the tab is still appended",
+      P.best_text(hours_body, P.find_codes(hours_body["body"], ems_courses), {}, ems_courses, True)[2] == "innerText+tabs")
+check("TOTAL_UNITS reads 'Total Units', never 'Total Certificate Hours' or 'Total Required'",
+      P.TOTAL_UNITS.search("Total Units\t16.5") and not P.TOTAL_UNITS.search("Total Certificate Hours: 96.0")
+      and not P.TOTAL_UNITS.search("Total Required 90"))
+
+# The college module's wiring (S639 review): the flag reaches best_text only through the program dict,
+# and only a college whose reconcile entry sets it stamps it.
+import _program_requirements_college as C  # noqa: E402
+ems_prog = {"control_number": "38353", "title": "Advanced Life Support Module 2",
+            "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+            "closed_list": ems_courses}
+ems_page = {"url": "https://catalog.vvc.edu/degrees-certificates/emergency-medical-services/advanced-life-support-module-2-ca/",
+            "h1": "Advanced Life Support Module 2 Certificate of Achievement",
+            "title": "Advanced Life Support Module 2 Certificate of Achievement | Victor Valley College",
+            "codes": {"EMS82", "EMS83"}, "got": ems_got, "body": ems_body, "content": ems_got["content"]}
+plain = C.candidates(ems_prog, [ems_page])
+opted = C.candidates(dict(ems_prog, tabs_with_prose=True), [ems_page])
+check("candidates(): a program without the flag reads the Overview alone; with it, the Overview and the tab",
+      plain and plain[0]["field"] == "innerText" and opted and opted[0]["field"] == "innerText+tabs"
+      and "Total Units\t8" in opted[0]["text"])
+_saved = (C.fetch_all, R.load_steps)
+try:
+    C.fetch_all = lambda path: ([{"control_number": "38353", "program_title": "Advanced Life Support Module 2",
+                                  "award": "Certificate of Achievement", "status": "Active", "top_code": "125100"}]
+                                if path.startswith("coci_college_programs") else
+                                [{"program_control_number": "38353", "course_code": "EMS 82", "units": 4.5,
+                                  "course_title": "Paramedic Cardiology"}])
+    R.load_steps = lambda path=R.STEPS: {VV: {"tabs_with_prose": True}, "Other College": {}}
+    stamped = C.college_programs(VV)
+    unstamped = C.college_programs("Other College")
+finally:
+    C.fetch_all, R.load_steps = _saved
+check("college_programs stamps tabs_with_prose only for a college whose entry sets it",
+      stamped and all(p.get("tabs_with_prose") is True for p in stamped)
+      and unstamped and not any("tabs_with_prose" in p for p in unstamped))
+
+print("West Valley's transfer degrees (S639; college page read 43138048261; the areas summed, Sam's count extended)")
+WV = "West Valley College"
+
+
+def _wv(cn):
+    """The filed record as the reading left it: a reconcile run's notes undone (each names what it was)."""
+    with open(os.path.join(ROOT, "kb/program_requirements_college/west_valley/records/%s.json" % cn)) as fh:
+        filed = json.load(fh)
+    rec = json.loads(json.dumps(filed["record"]))
+    for n in reversed(filed.get("reconciled") or []):
+        rec["program"][n["field"]] = n["was"]
+    return dict(filed, record=rec)
+
+
+# Sociology AA-T 30972 and Geography A.A. 07619, as the capture reads them (read 43138048261).
+wv_soc = ("Sociology\nAssociate in Arts Degree for Transfer\nStudents must complete the following requirements: 1. 60 "
+          "semester or 90 quarter CSU-transferable units. 2. the California General Education Transfer Curriculum "
+          "pattern (Cal-GETC). 3. a minimum of 18 semester or 27 quarter units in the major\n"
+          "Major Electives List A: Select two. (6 units)\nTotal Major Units: 19 units\n"
+          "CSU transferable elective courses are required when the major units plus transfer GE units total is less "
+          "than 60.")
+wv_geo = ("Geography\nAssociate in Arts Degree\nTotal Major Units: 22 units\nCompletion of WVC or Cal-GETC General "
+          "Education patterns. Students whose goal is to obtain a bachelor's degree should complete the Cal-GETC General "
+          "Education pattern.\nComplete additional degree-applicable units to meet the minimum 60-unit Associate Degree "
+          "requirements.")
+soc, geo, eco = _wv("30972"), _wv("07619"), _wv("33023")
+got, got_notes = R.reconcile(soc["record"], wv_soc, WV, soc["award"], steps=R.load_steps())
+check("a transfer degree naming Cal-GETC takes the 34 summed from the catalog's areas",
+      got["program"]["ge_units"] == {"min": 34, "max": 34}
+      and any("SUMMED FROM THE AREAS" in n["words"] for n in got_notes))
+check("the electives sentence makes the 60 a floor", got["program"].get("degree_total_minimum") is True)
+wv_closed = lambda f: [{"code": c["code"], "units": None} for b in f["record"]["blocks"] for c in b["courses"]]  # noqa: E731
+check("Sociology AA-T reads equal once both are set, and incomplete before",
+      S.score(got, wv_closed(soc), wv_soc, soc["award"])["arithmetic"]["pass"]
+      and not S.score(soc["record"], wv_closed(soc), wv_soc, soc["award"])["arithmetic"]["pass"])
+# Economics AA-T 33023: a 22-28 major with the 34 straddles the 60 (56-62); the floor meets it.
+eco_text = wv_soc.replace("Total Major Units: 19 units", "Total Major Units: 22-28 units")
+eco_got = R.reconcile(eco["record"], eco_text, WV, eco["award"], steps=R.load_steps())[0]
+check("Economics AA-T, straddling the 60, meets the floor",
+      S.score(eco_got, wv_closed(eco), eco_text, eco["award"])["arithmetic"]["pass"])
+check("a local A.A. naming 'WVC or Cal-GETC' takes neither",
+      R.reconcile(geo["record"], wv_geo, WV, geo["award"], steps=R.load_steps())[1] == []
+      and R.reconcile(geo["record"], wv_soc, WV, geo["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes neither",
+      R.reconcile(soc["record"], wv_soc, WV, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+# Negative pages (review of #3137): a transfer page that names no Cal-GETC words, and one whose only 'elective'
+# is a major-electives heading, so neither step's pattern can be loosened unseen.
+wv_no_getc = wv_soc.replace("2. the California General Education Transfer Curriculum pattern (Cal-GETC). ", "")
+check("a transfer page naming no Cal-GETC words takes no general education figure",
+      R.reconcile(soc["record"], wv_no_getc, WV, soc["award"], steps=R.load_steps())[0]["program"]["ge_units"]
+      == soc["record"]["program"]["ge_units"])
+wv_no_floor = (wv_soc.split("CSU transferable elective")[0]
+               + "Major Electives List B (or any course not used above): select one elective course.\n"
+               + "A student with less than 60 units completed should meet with a counselor.")
+check("a transfer page with a Major Electives heading and 'less than 60' elsewhere keeps its 60 exact",
+      not R.reconcile(soc["record"], wv_no_floor, WV, soc["award"],
+                          steps=R.load_steps())[0]["program"].get("degree_total_minimum"))
+check("a figure the reading filed stands",
+      R.reconcile({"program": dict(soc["record"]["program"], ge_units={"min": 37, "max": 39}),
+                   "blocks": soc["record"]["blocks"]}, wv_soc, WV, soc["award"],
+                  steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 37, "max": 39})
+
+print("Berkeley City's local degrees (S639; college page reads 43138963119 and 43140339800)")
+BCC = "Berkeley City College"
+
+
+def _bcc(cn):
+    """The filed record as the reading left it: a reconcile run's notes undone (each names what it was)."""
+    with open(os.path.join(ROOT, "kb/program_requirements_college/berkeley_city/records/%s.json" % cn)) as fh:
+        filed = json.load(fh)
+    rec = json.loads(json.dumps(filed["record"]))
+    for n in reversed(filed.get("reconciled") or []):
+        rec["program"][n["field"]] = n["was"]
+    return dict(filed, record=rec)
+
+
+def _bcc_closed(filed):
+    return [{"code": c["code"], "units": None} for b in filed["record"]["blocks"] for c in b["courses"]]
+
+
+# The pages' own lines, as cq_view joins them (read 43138963119): ASL A.A. 01101 (node 39977), Fundamentals of Data
+# Science A.S. 45941 (node 41937) and English AA-T 31138 (node 40014).
+bcc_asl = ("American Sign Language - A.A. Degree\nRequirements\nRequired Courses\n30.0\nASL 050\n"
+           "Major Requirements\n30\nGeneral Education and Electives\n30\nTotal Units\n60\nSummary")
+bcc_ds = ("Fundamentals of Data Science - A.S. Degree\nMajor Requirements\n36-40\n"
+          "General Education and Elective Units\n20-24\nTotal Units\n60\nSummary")
+bcc_en = ("English - AA-T Degree\nMajor Requirements\n22\nGeneral Education (Cal-GETC) and Elective Courses\n38\n"
+          "Total Units\n60\nSummary\nThe California General Education Transfer Curriculum (Cal-GETC)")
+asl, ds, en = _bcc("01101"), _bcc("45941"), _bcc("31138")
+got, got_notes = R.reconcile(asl["record"], bcc_asl, BCC, asl["award"], steps=R.load_steps())
+check("a local A.A. printing 'General Education and Electives 30' takes the catalog's 18 and the electives rule",
+      got["program"]["ge_units"] == {"min": 18, "max": 18} and got["program"].get("electives_fill_degree") is True)
+check("the note cites the Associate Degree Requirements tab",
+      any("at least 18 units in general education" in n["words"] for n in got_notes))
+check("ASL A.A. reads equal: 30 + 18, electives to 60",
+      S.score(got, _bcc_closed(asl), bcc_asl, asl["award"])["arithmetic"]["pass"]
+      and not S.score(asl["record"], _bcc_closed(asl), bcc_asl, asl["award"])["arithmetic"]["pass"])
+ds_got = R.reconcile(ds["record"], bcc_ds, BCC, ds["award"], steps=R.load_steps())[0]
+check("the 'General Education and Elective Units 20-24' spelling reads equal too",
+      S.score(ds_got, _bcc_closed(ds), bcc_ds, ds["award"])["arithmetic"]["pass"])
+check("the combined figure is never read as general education",
+      got["program"]["ge_units"] != {"min": 30, "max": 30} and ds_got["program"]["ge_units"] == {"min": 18, "max": 18})
+check("a transfer degree takes neither (its line names Cal-GETC, and the gate is local)",
+      R.reconcile(en["record"], bcc_en, BCC, en["award"], steps=R.load_steps())[1] == []
+      and R.reconcile(en["record"], bcc_asl, BCC, en["award"], steps=R.load_steps())[1] == [])
+check("a certificate takes neither",
+      R.reconcile(asl["record"], bcc_asl, BCC, "Certificate of Achievement", steps=R.load_steps())[1] == [])
+# Negative pages (review of #3138): a local page printing general education on its own line, and one naming
+# Cal-GETC in a sentence, with no combined line, so neither pattern can be loosened to "General Education" unseen.
+bcc_ge_line = ("Sample - A.A. Degree\nMajor Requirements\n30\nGeneral Education\n21\nElectives\n9\nTotal Units\n60")
+bcc_getc_sentence = ("Sample - A.A. Degree\nMajor Requirements\n30\nStudents planning to transfer should complete the "
+                     "General Education Transfer Curriculum (Cal-GETC) and electives.\nTotal Units\n60")
+check("a local page with a separate 'General Education 21' line takes neither",
+      R.reconcile(asl["record"], bcc_ge_line, BCC, asl["award"], steps=R.load_steps())[1] == [])
+check("a local page naming Cal-GETC in a sentence, with no combined line, takes neither",
+      R.reconcile(asl["record"], bcc_getc_sentence, BCC, asl["award"], steps=R.load_steps())[1] == [])
+# A record that already holds a general education figure keeps it and takes no flag beside it (16645 filed the
+# combined line's 21 as its ge_units; a curator reads that figure, the entry names it).
+held = {"program": dict(asl["record"]["program"], ge_units={"min": 21, "max": 21}), "blocks": asl["record"]["blocks"]}
+held_got, held_notes = R.reconcile(held, bcc_asl, BCC, asl["award"], steps=R.load_steps())
+check("a filed general education figure is not overwritten, and no step fires beside it",
+      held_got["program"]["ge_units"] == {"min": 21, "max": 21} and held_notes == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
