@@ -94,10 +94,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
@@ -120,8 +117,8 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -129,7 +126,8 @@
     "Create an art project that uses the elements of design point, line, plane, value, and other design principles of organization.",
     "Examine and evaluate artwork in terms of strengths and goals."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -353,5 +351,26 @@
    "No GE unit figure printed for Cal-GETC."
   ]
  },
- "extracted_run": "39035604333"
+ "extracted_run": 43142245126,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "California General Education Transfer Curriculum (https://www.westvalley.edu/catalog/general-education/cal-getc.html: SUMMED FROM THE AREAS, no total is printed: West Valley AA-T and AS-T pages print '2. the California General Education Transfer Curriculum pattern (Cal-GETC).' (Sociology AA-T 30972; college page read 43138048261); the Cal-GETC page prints Area 1 '9 semester/12 quarter units', Area 2 '3 semester', Area 3 '6 semester', Area 4 '6 semester', Area 5 '7 semester' and Area 6 '3 semester'; 9 + 3 + 6 + 6 + 7 + 3 = 34 (the same read; Sam's count, Open Asks Sheet 180 card 4, extended in S639))"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "CSU transferable elective courses are required when the major units plus transfer GE units total is less than 60"
+  }
+ ],
+ "read_run": "39035604333"
 }
