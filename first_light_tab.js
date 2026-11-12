@@ -51,21 +51,37 @@
       if (at < 0) return "";
       try { return decodeURIComponent(s.slice(at + 17).split("?")[0]); } catch (e) { return ""; }
     }
-    // A My CPL Story photo's key is the file it will have under library/photos/: stories/<the image's own name>,
-    // lower case, letters, digits, dot, dash and underscore only.
+    // A My CPL Story photo's key is the file it will have under library/photos/: stories/<the upload path after
+    // "uploads/", flattened with dashes>, so two stories whose images share a name in different months never share
+    // a key (stories/2026-07-brody_withbg.png). Lower case, letters, digits, dot, dash and underscore only.
     function storyFile(story) {
       var u = String((story && story.img) || "").split("?")[0].split("#")[0];
-      var base = u.slice(u.lastIndexOf("/") + 1);
-      try { base = decodeURIComponent(base); } catch (e) { /* keep as is */ }
-      base = base.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/^-+|-+$/g, "");
-      return /\.(png|jpe?g|webp)$/.test(base) ? STORY_DIR + base : "";
+      var parts = u.replace(/^[a-z]+:\/\/[^\/]+/i, "").split("/").filter(Boolean);
+      var at = parts.lastIndexOf("uploads");
+      var tail = at >= 0 ? parts.slice(at + 1) : parts.slice(-1);
+      var base = tail.map(function (x) { try { return decodeURIComponent(x); } catch (e) { return x; } }).join("-");
+      base = base.toLowerCase().replace(/[^a-z0-9._-]+/g, "-").replace(/\.{2,}/g, ".").replace(/^[-.]+|-+$/g, "");
+      var key = STORY_DIR + base;
+      return keyOk("photos", key) ? key : "";
+    }
+    // The shapes the table accepts (first_light_marks_key_shape): a key the tab offers is one the insert can store.
+    function keyOk(set, key) {
+      key = String(key || "");
+      if (!key || key.length > 300) return false;
+      if (set === "photos") return /^(stories\/)?[a-z0-9][a-z0-9._-]{0,150}\.(png|jpe?g|webp)$/.test(key) && key.indexOf("..") < 0;
+      if (set === "paintings") return !/[\/\\<>`|@\u0000-\u001f\u007f]/.test(key) && key.charAt(0) !== "." && key.trim() === key;
+      return false;
     }
     function byId(a, b) { return (+a.id || 0) - (+b.id || 0); }
     // baseKeys: the live list's keys in order. marks: rows of one set, any order (id rises with time).
-    function resolveSet(baseKeys, marks) {
+    // appliedThrough: the highest mark id a merged Apply consumed for this set (the committed files'
+    // applied_through_mark_id). Those marks are spent: the live list already holds their effect, so an item a
+    // person later removed by hand stays out and an old Move no longer pins.
+    function resolveSet(baseKeys, marks, appliedThrough) {
+      var spent = +appliedThrough || 0;
       var inBase = {}, info = {}, extra = [];
       (baseKeys || []).forEach(function (k) { inBase[k] = true; });
-      (marks || []).slice().sort(byId).forEach(function (m) {
+      (marks || []).filter(function (m) { return (+m.id || 0) > spent; }).sort(byId).forEach(function (m) {
         var k = m.item_key;
         if (!k) return;
         var it = info[k] || (info[k] = { membership: null, position: null, last: null, firstAdd: null });
@@ -76,9 +92,10 @@
         }
         it.last = m;
       });
+      // Add puts an item in, Drop takes it out, and Keep leaves it as the live list has it (it never adds).
       function isIn(k) {
-        var it = info[k];
-        return it && it.membership ? it.membership.mark !== "drop" : !!inBase[k];
+        var it = info[k], m = it && it.membership && it.membership.mark;
+        return m === "add" ? true : m === "drop" ? false : !!inBase[k];
       }
       var list = (baseKeys || []).filter(isIn);
       Object.keys(info).forEach(function (k) { if (!inBase[k] && isIn(k)) extra.push(k); });
@@ -87,9 +104,10 @@
         return byId(x, y);
       });
       list = list.concat(extra);
+      // Smallest number first; on a tie the newer move is placed last, so it takes the number.
       var placed = list.filter(function (k) { return info[k] && info[k].position; });
       placed.sort(function (a, b) {
-        return (info[a].position.position - info[b].position.position) || byId(info[b].position, info[a].position);
+        return (info[a].position.position - info[b].position.position) || byId(info[a].position, info[b].position);
       });
       var rest = list.filter(function (k) { return !(info[k] && info[k].position); });
       placed.forEach(function (k) {
@@ -99,19 +117,21 @@
       list = rest;
       var basePos = {};
       (baseKeys || []).forEach(function (k, i) { basePos[k] = i; });
+      var top = (marks || []).reduce(function (n, m) { return Math.max(n, +m.id || 0); }, spent);
       return {
         list: list,
         added: extra.slice(),
         dropped: (baseKeys || []).filter(function (k) { return !isIn(k); }),
         moved: list.filter(function (k, i) { return inBase[k] && info[k] && info[k].position && basePos[k] !== i; }),
         info: info,
+        appliedThrough: top,
         changed: JSON.stringify(list) !== JSON.stringify(baseKeys || [])
       };
     }
     function forSet(marks, set) { return (marks || []).filter(function (m) { return m.item_set === set; }); }
     return {
       NEEDS_WORDS: NEEDS_WORDS, STORY_DIR: STORY_DIR, STORY_SOURCE: STORY_SOURCE,
-      fileOfImg: fileOfImg, storyFile: storyFile, resolveSet: resolveSet, forSet: forSet
+      fileOfImg: fileOfImg, storyFile: storyFile, keyOk: keyOk, resolveSet: resolveSet, forSet: forSet
     };
   })();
   if (typeof module === "object" && module && module.exports) module.exports = MARKS;
@@ -134,6 +154,7 @@
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var MARKS_URL = SUPABASE_URL + "/rest/v1/first_light_marks";
   var REQ_URL = SUPABASE_URL + "/rest/v1/first_light_apply_requests";
+  var REVIEWER_URL = SUPABASE_URL + "/rest/v1/rpc/is_allowed_reviewer";
   var MIGRATION = "kb/migrations/2026-11-12_first_light_marks.sql";
   var CAND_SHOWN = 24;
   var EDIT_LINE = "Mark a painting or photo Keep, Drop, Add or Move. Apply opens a pull request; Sam merges it, and nothing changes before then.";
@@ -244,7 +265,13 @@
     })).then(function (t) {
       var s = String(t || ""), a = s.indexOf("{"), b = s.lastIndexOf("}");
       var d = a >= 0 && b > a ? JSON.parse(s.slice(a, b + 1)) : null;
-      state.stories = d && Array.isArray(d.stories) ? d.stories.filter(function (x) { return MARKS.storyFile(x); }) : null;
+      // One story per key: a second story whose photo would land on the same file is left out.
+      var seen = {};
+      state.stories = d && Array.isArray(d.stories) ? d.stories.filter(function (x) {
+        var k = MARKS.storyFile(x);
+        if (!k || seen[k]) return false;
+        return (seen[k] = true);
+      }) : null;
       if (!state.stories) state.storiesErr = "the file holds no stories";
     }).catch(function (e) { state.storiesErr = (e && e.message) || "the read failed"; });
     return state.storiesLoading;
@@ -253,10 +280,19 @@
   /* ── the marks and the Apply request ────────────────────────────────── */
   function readError(r) {
     if (r.status === 404) return "absent";
-    if (r.status === 401 || r.status === 403) return "signin";
+    if (r.status === 401) return "signin";
+    if (r.status === 403) return "notreviewer";
     return "HTTP " + r.status;
   }
-  // Range-paged, newest last. A table not yet in place answers 404 and the tab says so in words.
+  // Range-paged, newest last. A table not yet in place answers 404 and the tab says so in words. The reviewer check
+  // comes first: RLS answers a signed-in non-reviewer with an empty list, which would otherwise read as "no marks"
+  // and offer controls whose every insert the table refuses.
+  function checkReviewer() {
+    return window.fetch(REVIEWER_URL, { method: "POST", headers: headers({ "Content-Type": "application/json" }), body: "{}" }).then(function (r) {
+      if (!r.ok) throw new Error(r.status === 401 ? "signin" : r.status === 403 ? "notreviewer" : "the reviewer check answered HTTP " + r.status);
+      return r.json();
+    }).then(function (ok) { if (ok !== true) throw new Error("notreviewer"); });
+  }
   function loadMarks() {
     if (state.marksLoading) return state.marksLoading;
     if (noFetch()) { state.marksErr = "this page cannot read files"; return (state.marksLoading = Promise.resolve()); }
@@ -272,7 +308,7 @@
         return d.length === PAGE ? page(from + PAGE) : rows;
       });
     }
-    state.marksLoading = fresh().then(function () { return page(0); }).then(function (all) {
+    state.marksLoading = fresh().then(checkReviewer).then(function () { return page(0); }).then(function (all) {
       state.marks = all;
       return window.fetch(REQ_URL + "?select=id,status,requested_by,requested_at,handled_at,pr_number,pr_url,run_url,detail&order=id.desc&limit=3",
         { headers: headers() }).then(function (r) { return r.ok ? r.json() : []; }).then(function (d) {
@@ -281,8 +317,13 @@
     }, function (e) { state.marksErr = (e && e.message) || "the read failed"; });
     return state.marksLoading;
   }
-  function postMark(row) {
+  function saving(words) {
     state.busy = true;
+    var m = document.getElementById("flt-msg");
+    if (m) m.textContent = words;
+  }
+  function postMark(row) {
+    saving("Saving the mark…");
     return fresh().then(function () {
       return window.fetch(MARKS_URL, { method: "POST", headers: headers({ "Content-Type": "application/json", Prefer: "return=representation" }), body: JSON.stringify(row) });
     }).then(function (r) {
@@ -296,7 +337,7 @@
     }, function (e) { state.msg = failWords(e, "The mark was not saved"); }).then(function () { state.busy = false; });
   }
   function requestApply() {
-    state.busy = true;
+    saving("Filing the Apply…");
     return fresh().then(function () {
       return window.fetch(REQ_URL, { method: "POST", headers: headers({ "Content-Type": "application/json", Prefer: "return=representation" }), body: "{}" });
     }).then(function (r) {
@@ -313,6 +354,7 @@
   function failWords(e, lead) {
     var m = (e && e.message) || "";
     if (m === "signin") return lead + ": your sign-in has ended. Sign in again and repeat it.";
+    if (m === "notreviewer") return lead + ": your sign-in is not on the reviewer list, which marking needs.";
     if (m === "absent") return lead + ": the marks table is not in place yet.";
     return lead + " (" + m + ").";
   }
@@ -328,7 +370,13 @@
   }
   function resolved(set) {
     var b = baseKeys(set);
-    return b && state.marks ? MARKS.resolveSet(b, MARKS.forSet(state.marks, set)) : null;
+    return b && state.marks ? MARKS.resolveSet(b, MARKS.forSet(state.marks, set), appliedThrough(set)) : null;
+  }
+  // The highest mark id the last merged Apply consumed, carried in the committed files: the manifest the builder
+  // writes (paintings) and hero_photos.json (photos). Marks at or below it are spent.
+  function appliedThrough(set) {
+    if (set === "paintings") { var F = fl(); return F && F.paintings.applied_through_mark_id ? +F.paintings.applied_through_mark_id : 0; }
+    return state.hero && state.hero.applied_through_mark_id ? +state.hero.applied_through_mark_id : 0;
   }
   function labelFor(set, key) {
     if (set === "paintings") {
@@ -426,6 +474,15 @@
     state.view = viewFor(a);
     state.q = ""; state.cq = ""; state.msg = "";
     state.showCand = false; state.showStories = false;
+    forget();
+  }
+  /* Each visit reads again: the marks, the requests, the hero list and the candidates (another reviewer, or a
+     merged Apply, may have changed any of them), and a read that failed last time is tried again. */
+  function forget() {
+    state.marks = null; state.marksErr = null; state.marksLoading = null; state.reqs = null;
+    state.hero = null; state.heroErr = null; state.heroLoading = null;
+    state.cand = null; state.candErr = null; state.candLoading = null;
+    state.stories = null; state.storiesErr = null; state.storiesLoading = null;
   }
 
   /* ── views ──────────────────────────────────────────────────────────── */
@@ -448,6 +505,7 @@
   function marksLine() {
     if (marksOpen()) return "";
     if (state.marksErr === "absent") return '<p class="flt-err" data-marks-absent>Marking opens once the marks table is in place (' + esc(MIGRATION) + ").</p>";
+    if (state.marksErr === "notreviewer") return '<p class="flt-err" data-not-reviewer>Your sign-in is not on the reviewer list, so this tab shows the sets without marks.</p>';
     if (state.marksErr === "signin") return '<p class="flt-err">Your sign-in has ended, so the marks cannot be read. Sign in again to mark.</p>';
     if (state.marksErr) return '<p class="flt-err">The marks could not be read (' + esc(state.marksErr) + ").</p>";
     return '<p class="flt-note" role="status">Reading the marks…</p>';
@@ -511,7 +569,8 @@
   // Controls for a candidate: Add, or Take back once added.
   function addActs(set, key, coll) {
     if (!marksOpen()) return "";
-    var it = itemState(set, key), added = it && it.membership && it.membership.mark !== "drop";
+    if (!MARKS.keyOk(set, key)) return '<p class="flt-alt">This file’s name holds a character the marks table does not accept, so it cannot be added here.</p>';
+    var it = itemState(set, key), added = it && it.membership && it.membership.mark === "add";
     return markState(set, key) + '<div class="flt-acts">' +
       (added ? word("takeback", "Take back", keyAttrs(set, key, coll)) : word("add", "Add", keyAttrs(set, key, coll))) + "</div>";
   }
@@ -561,7 +620,7 @@
   function candCards(list) {
     return list.slice(0, CAND_SHOWN).map(function (c) {
       return '<li class="flt-card" data-cand="' + esc(c.file) + '">' +
-        '<img src="' + esc(commonsThumb(c.file)) + '" alt="" loading="lazy" decoding="async">' +
+        '<img src="' + esc(commonsThumb(c.file)) + '" alt="' + esc(c.title) + '" loading="lazy" decoding="async">' +
         '<div class="flt-body"><h3>' + esc(c.title) + "</h3>" +
         '<p class="flt-meta">' + esc(c.artist) + (c.year ? ", " + esc(c.year) : "") + "</p>" +
         '<p class="flt-alt">' + esc(c.category || "") + "</p>" +
@@ -613,7 +672,7 @@
       '<ul class="flt-grid" data-grid="stories">' + list.map(function (s) {
         var key = MARKS.storyFile(s);
         return '<li class="flt-card" data-story="' + esc(key) + '">' +
-          '<img src="' + esc(s.img) + '" alt="" loading="lazy" decoding="async">' +
+          '<img src="' + esc(s.img) + '" alt="' + esc(s.name) + '" loading="lazy" decoding="async">' +
           '<div class="flt-body"><h3>' + esc(s.name) + "</h3>" +
           (s.pathway ? '<p class="flt-meta">' + esc(s.pathway) + "</p>" : "") +
           (s.meta ? '<p class="flt-meta">' + esc(s.meta) + "</p>" : "") +
@@ -640,7 +699,7 @@
         '<div class="flt-body"><p class="flt-pos">Photo ' + (i + 1) + " of " + d.photos.length + "</p>" +
         "<h3>" + esc(p.name || p.file) + "</h3>" +
         '<p class="flt-meta">Plays on: ' + esc(listWords((p.plays || []).map(function (id) { return names[id] || id; }))) + "</p>" +
-        '<p class="flt-meta">From: ' + (p.story_link ? '<a href="' + esc(p.story_link) + '">' + esc(p.source) + "</a>" : esc(p.source)) + "</p>" +
+        '<p class="flt-meta">From: ' + (/^https:\/\//.test(String(p.story_link || "")) ? '<a href="' + esc(p.story_link) + '">' + esc(p.source) + "</a>" : esc(p.source)) + "</p>" +
         '<p class="flt-alt">Description: ' + esc(p.alt) + "</p>" +
         liveActs("photos", p.file, String(p.file).indexOf(MARKS.STORY_DIR) === 0 ? "my_cpl_story" : "hero_photos", d.photos.length) + "</div></li>";
     }).join("") + "</ul>";
@@ -797,7 +856,7 @@
   });
   function onSession() {
     // A new sign-in reads the marks again under the new credential.
-    state.marks = null; state.marksErr = null; state.marksLoading = null; state.reqs = null;
+    forget();
     syncDoor(); if (isActive()) render();
   }
   window.addEventListener("cpl-session-changed", onSession);

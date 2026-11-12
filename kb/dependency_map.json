@@ -1034,7 +1034,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 208,
+     "line": 229,
      "tabs": [
       "first-light"
      ]
@@ -2433,7 +2433,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1626,
+     "line": 1629,
      "tabs": [
       "csm-workspace"
      ]
@@ -2927,7 +2927,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 133,
+     "line": 153,
      "tabs": [
       "first-light"
      ]
@@ -6820,7 +6820,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2292,
+     "line": 2295,
      "tabs": [
       "csm-workspace"
      ]
@@ -8468,7 +8468,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 131,
+     "line": 151,
      "tabs": [
       "first-light"
      ]
@@ -20411,7 +20411,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 127,
+     "line": 147,
      "tabs": [
       "first-light"
      ]
@@ -22311,7 +22311,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 129,
+     "line": 149,
      "tabs": [
       "first-light"
      ]
@@ -26801,7 +26801,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1890,
+     "line": 1893,
      "tabs": [
       "csm-workspace"
      ]
@@ -26816,7 +26816,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1797,
+     "line": 1800,
      "tabs": [
       "csm-workspace"
      ]
@@ -26909,6 +26909,16 @@
       "csm-workspace",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:first_light_tab.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 157,
+     "tabs": [
+      "first-light"
+     ]
     }
    ],
    "main_committers": []
@@ -26920,7 +26930,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1811,
+     "line": 1814,
      "tabs": [
       "csm-workspace"
      ]
@@ -26948,7 +26958,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1757,
+     "line": 1760,
      "tabs": [
       "csm-workspace"
      ]
@@ -28763,7 +28773,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 136,
+     "line": 156,
      "tabs": [
       "first-light"
      ]
@@ -28773,7 +28783,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 301,
+     "line": 342,
      "tabs": [
       "first-light"
      ]
@@ -28795,7 +28805,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 135,
+     "line": 155,
      "tabs": [
       "first-light"
      ]
@@ -28805,7 +28815,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 287,
+     "line": 328,
      "tabs": [
       "first-light"
      ]
