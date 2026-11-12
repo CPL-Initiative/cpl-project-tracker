@@ -1,0 +1,18 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. West Valley College, second read. The first (west_valley_ge_units, run 43138048261) printed the catalog's Cal-GETC page (general-education/cal-getc.html) with each area's units (Area 1 '9 semester/12 quarter units', Area 2 '3 semester', Area 3 '6 semester', Area 4 '6 semester', Area 5 '7 semester', Area 6 '3 semester') and no total, and the local Graduation Requirements page with each area's minimum and no total. Both pages open 'View and Download Advising Guide'. This read lists each page's links to that guide and follows them, to see whether the college's own guide prints a total for either pattern. No model call.",
+ "college": "West Valley College",
+ "questions": {
+  "ge_totals": "Does West Valley's Cal-GETC advising guide, or its local general education advising guide, print a total of units for the pattern, and in what words?"
+ },
+ "keywords": [
+  "[Tt]otal[^\\n]{0,80}",
+  "\\b(?:2[0-9]|3[0-9])\\b\\s*(?:semester\\s*)?units",
+  "[Mm]inimum[^\\n]{0,120}",
+  "Cal-?GETC[^\\n]{0,120}",
+  "60[^\\n]{0,80}"
+ ],
+ "pages": [
+  {"answers": ["ge_totals"], "url": "https://www.westvalley.edu/catalog/general-education/cal-getc.html", "links": "Advising|Guide|\\.pdf", "follow": "Advising Guide|View and Download"},
+  {"answers": ["ge_totals"], "url": "https://www.westvalley.edu/catalog/general-education/aa-graduation-requirements.html", "links": "Advising|Guide|\\.pdf", "follow": "Advising Guide|View and Download"}
+ ]
+}

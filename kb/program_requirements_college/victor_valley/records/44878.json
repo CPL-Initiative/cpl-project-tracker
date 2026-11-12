@@ -61,10 +61,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    162.0,
+    162.0
    ],
    "stated": [
     150.0,
@@ -72,7 +72,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 162.0-162.0; the catalog states 150.0-168.75"
    ]
   },
   "repeated": {
@@ -138,21 +138,21 @@
     "courses": [
      {
       "code": "APE 0160",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APE 0167",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "APE 0183",
-      "units": null,
+      "units": 54.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -169,5 +169,18 @@
    "No program learning outcomes or named careers printed; description mentions only transitioning 'to career pathways'."
   ]
  },
- "extracted_run": "38675237912"
+ "extracted_run": 43139057384,
+ "reconciled": [
+  {
+   "field": "course_hours",
+   "was": null,
+   "now": {
+    "APE 0160": 54.0,
+    "APE 0167": 54.0,
+    "APE 0183": 54.0
+   },
+   "words": "college-page-read 43134526902 (kb/college_reads/victor_valley_noncredit_hours.json; kb/program_requirements_units/victor_valley.json) (each noncredit course description's heading and hours line, lecture plus lab: 'WKPR 011 · Personal Growth, Development and Wellness · (0.0 Units) Lecture Hours: 36.0', 'COSM 0101 · Cosmetology Fundamentals · (0.0 Units) Lecture Hours: 171.0 Lab Hours: 108.0')"
+  }
+ ],
+ "read_run": "38675237912"
 }
