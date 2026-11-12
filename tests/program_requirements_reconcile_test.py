@@ -320,6 +320,54 @@ check("a figure the reading filed stands",
       R.reconcile({"program": dict(da["program"], ge_units={"min": 33, "max": 33}), "blocks": []}, da_text, DA,
                   "A.S. Degree", steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 33, "max": 33})
 
+print("Los Angeles City's degree headings (S639; college page read 43134671935)")
+LAC = "Los Angeles City College"
+LAC_DIR = os.path.join(ROOT, "kb", "program_requirements_college", "los_angeles_city", "records")
+with open(os.path.join(LAC_DIR, "02718.json")) as fh:
+    bus = json.load(fh)
+with open(os.path.join(LAC_DIR, "02729.json")) as fh:
+    cin = json.load(fh)
+# pdf page 76 as pypdf gives it ("T otal" split), Business Administration's heading over its own certificate's.
+bus_text = ("LACC 2026-2027 COLLEGE CATALOG 75\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\nBusiness Administration\n"
+            "Associate of Arts (AA) Degree\nMajor Units: 39  T otal Units: Minimum of 60\n"
+            "(State Code: 02718; TOP CODE: 050100; Academic Plan: C002718C)\nThe Business Administration curriculum is "
+            "designed for students\nPROGRAM STUDENT LEARNING OUTCOMES\nPROGRAM REQUIREMENTS\nMAJOR CORE COURSES (27 UNITS)\n"
+            "REAL ES 021 REAL ESTATE ECONOMICS  ......................... 3\nBusiness Administration\n"
+            "Certificate of Achievement\nMajor Units: 22\n(State Code: 21609; TOP Code: 050100; Academic Plan: C021609D)")
+got, got_notes = R.reconcile(bus["record"], bus_text, LAC, bus["award"], steps=R.load_steps())
+gp = got["program"]
+check("a local degree's 'Minimum of 60' is a floor and its general education the printed 18-27",
+      gp.get("degree_total_minimum") is True and gp["ge_units"] == {"min": 18, "max": 27}
+      and all("Minimum of 60" in n["words"] for n in got_notes) and any("18-27 units" in n["words"] for n in got_notes))
+deg = S.degree_check(gp, (60.0, 60.0), 39.0, 39.0, [], bus_text, bus["award"])
+was = S.degree_check(bus["record"]["program"], (60.0, 60.0), 39.0, 39.0, [], bus_text, bus["award"])
+check("Business Administration 02718 reads unequal as filed and equal after", was["status"] == "unequal" and deg["pass"])
+check("the certificate below it on the page is left alone",
+      R.reconcile(bus["record"], bus_text, LAC, "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+                  steps=R.load_steps())[1] == [])
+check("a transfer degree's heading takes neither step",
+      R.reconcile(bus["record"], bus_text, LAC, "A.A- T Degree", steps=R.load_steps())[1] == [])
+# pdf page 185: the Film AS-T's requirements, then Cinema Production's heading. The filed record began past its own
+# heading and reads it as "PROGRAM REQUIREMENTS"; the scope from there runs into Cinema's heading, so the record holding
+# no degree total is what keeps the step out.
+cin_text = ("184 LACC 2026-2027 COLLEGE CATALOG\nABOUT OUR CAREER AND ACADEMIC PATHWAYS\n2. General Education: Completion of "
+            "the California General Edu -\ncation Transfer Curriculum (CalGETC) course requirements,\nPROGRAM REQUIREMENTS\n"
+            "MAJOR CORE COURSES (SELECT 6 UNITS)\nT V 001 EVOLUTION OF TELEVISION  ........................ 3\nUSED\n"
+            "Cinema Production\nAssociate in Arts (AA) Degree\nMajor Units: 36  T otal Units: Minimum of 60\n"
+            "(State Code: 02729: TOP Code: 061220; Academic Plan: C002729C)")
+check("a record read from past its own heading, holding no degree total, takes nothing from the next heading",
+      cin["record"]["program"]["section_heading"] == "PROGRAM REQUIREMENTS"
+      and R.reconcile(cin["record"], cin_text, LAC, cin["award"], steps=R.load_steps())[1] == [])
+other = json.loads(json.dumps(bus["record"])); other["program"]["section_heading"] = "Journalism Associate of Arts (AA) Degree"
+check("a heading the page does not print reads nothing", R.reconcile(other, bus_text, LAC, bus["award"], steps=R.load_steps())[1] == [])
+held = json.loads(json.dumps(bus["record"])); held["program"]["ge_units"] = {"min": 21, "max": 21}
+check("a figure the reading filed stands",
+      R.reconcile(held, bus_text, LAC, bus["award"], steps=R.load_steps())[0]["program"]["ge_units"] == {"min": 21, "max": 21})
+check("only_with on a set step: a record without the named field is left alone",
+      R.reconcile({"program": {"ge_units": {"min": None, "max": None}}, "blocks": [{"courses": [{"code": "X 1"}]}]}, "Z 9",
+                  "T", "A.A. Degree", steps={"T": {"steps": [{"kind": "set", "field": "ge_units", "value": {"min": 1, "max": 1},
+                                                             "pattern": "Z 9", "only_with": "degree_total"}]}})[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)
