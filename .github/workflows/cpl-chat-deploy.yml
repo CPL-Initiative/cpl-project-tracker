@@ -50,6 +50,10 @@ name: cpl-chat deploy
 # AND docket-process (#2963 step 3, 2026-11-09): the Commons' "Process my rulings now"
 # dispatches docket-process.yml. verify_jwt off for the same reason: it checks its caller
 # (a reviewer's session only) itself.
+#
+# AND library-publish-now (S642, 2026-11-12): the Library card's "Publish now" dispatches
+# library-publish.yml. verify_jwt off for the same reason: it checks its caller (a
+# reviewer's session only) itself.
 
 on:
   workflow_dispatch:
@@ -70,6 +74,7 @@ on:
           - docket-process
           - library-revise-draft
           - funding-door
+          - library-publish-now
 
 concurrency:
   group: cpl-chat-deploy
