@@ -72,11 +72,8 @@
     97.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 97.0-169.0; the catalog states 97.0-97.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -226,5 +223,6 @@
    "The lines at the top of page 232 (VOC ED 128CE, VOC ED 129CE) belong to a preceding program and were not recorded."
   ]
  },
- "extracted_run": "39006380342"
+ "extracted_run": 43138495821,
+ "read_run": "39006380342"
 }

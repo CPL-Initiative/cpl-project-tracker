@@ -70,7 +70,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    17.0,
+    18.0,
     19.0
    ],
    "stated": [
@@ -79,13 +79,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 17.0-19.0; the catalog states 18.0-20.0"
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-20.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     51.0,
+     52.0,
      53.0
     ],
     "stated": [
@@ -101,7 +101,7 @@
     "transfer": true,
     "fill": [
      7.0,
-     9.0
+     8.0
     ]
    }
   },
@@ -375,6 +375,6 @@
    "Careers taken from the Communication Studies department overview ('support success in many careers including but not limited to ...')."
   ]
  },
- "extracted_run": 39018419466,
- "read_run": "39006380342"
+ "extracted_run": 43136137275,
+ "read_run": 39018419466
 }

@@ -1,0 +1,33 @@
+{
+ "_readme": "S639 harvest side session, 2026-11-12. Los Angeles City College's degree heading pages, each by its State Code line: six local degrees that read 'Major Units: N' and 'Total Units: Minimum of 60' and fail unequal against the 60 (Business Administration 02718, Journalism 02728, English 02751, Physics 02755, Music 02736, Liberal Arts: Arts and Humanities 19843), two local degrees and four transfer degrees whose records began a page late and name no total (Cinema Production 02729, Creative Writing 43855; Psychology AA-T 32502, Spanish AA-T 38385, English AA-T 33147, Early Childhood Education AS-T 31030). Read before any step: what each heading prints for its units, its general education and its 60, and where its requirements begin. The page after each heading too. No model call.",
+ "college": "Los Angeles City College",
+ "questions": {
+  "program_pages": "Each program's heading, its Major Units and Total Units lines, any general education words, and the line its requirements begin under."
+ },
+ "keywords": [
+  "State\\s+Code:\\s*02718\\b",
+  "State\\s+Code:\\s*02728\\b",
+  "State\\s+Code:\\s*02751\\b",
+  "State\\s+Code:\\s*02755\\b",
+  "State\\s+Code:\\s*02736\\b",
+  "State\\s+Code:\\s*19843\\b",
+  "State\\s+Code:\\s*02729\\b",
+  "State\\s+Code:\\s*43855\\b",
+  "State\\s+Code:\\s*32502\\b",
+  "State\\s+Code:\\s*38385\\b",
+  "State\\s+Code:\\s*33147\\b",
+  "State\\s+Code:\\s*31030\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_pages"
+   ],
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf"
+  }
+ ],
+ "pdf_span": [
+  73,
+  260
+ ]
+}
