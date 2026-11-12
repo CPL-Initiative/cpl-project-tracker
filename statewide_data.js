@@ -432758,7 +432758,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-12T20:20:32",
+  "generated_at": "2026-11-12T22:31:56",
   "total_credit_recs": 16602,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",

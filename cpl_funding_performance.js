@@ -10,22 +10,22 @@ window.CPL_FUNDING_PERF = {
  "statewide": {
   "pe": 51892,
   "pa": 47062,
-  "ppa": 120,
-  "p2": 3641,
-  "p3": 16915,
+  "ppa": 121,
+  "p2": 3648,
+  "p3": 16922,
   "pp": 8,
-  "ppe": 132,
-  "pac": 5334,
-  "ptc": 4656,
-  "pe_u": 1633017.95,
-  "pa_u": 288492.9,
-  "ppa_u": 749.5,
-  "ppe_u": 7140.5,
-  "pac_u": 38251.7,
-  "ptc_u": 31879.45,
-  "p3_u": 85133.15,
+  "ppe": 133,
+  "pac": 5338,
+  "ptc": 4663,
+  "pe_u": 1633029.95,
+  "pa_u": 288501.9,
+  "ppa_u": 752.5,
+  "ppe_u": 7143.5,
+  "pac_u": 38308.7,
+  "ptc_u": 31966.45,
+  "p3_u": 85220.15,
   "pp_u": 79.5,
-  "nc_exh": 90,
+  "nc_exh": 455,
   "nc_course": 0,
   "nc_cdcp": 7134
  },
@@ -122,25 +122,25 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 638,
-   "pe_u": 27423.0,
+   "pe_u": 27435.0,
    "pa": 630,
-   "pa_u": 9076.0,
+   "pa_u": 9085.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
-   "p2": 66,
-   "p3": 67,
-   "p3_u": 1218.5,
+   "p2": 73,
+   "p3": 74,
+   "p3_u": 1305.5,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 208.0,
-   "pac": 215,
-   "pac_u": 2955.5,
-   "ptc": 67,
-   "ptc_u": 1218.5,
-   "nc_exh": 0,
+   "pac": 219,
+   "pac_u": 3012.5,
+   "ptc": 74,
+   "ptc_u": 1305.5,
+   "nc_exh": 13,
    "nc_course": 0,
    "nc_cdcp": 134
   },
@@ -231,7 +231,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 9425.75,
    "ptc": 1811,
    "ptc_u": 7732.5,
-   "nc_exh": 37,
+   "nc_exh": 95,
    "nc_course": 0,
    "nc_cdcp": 166
   },
@@ -279,7 +279,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 7,
    "nc_course": 0,
    "nc_cdcp": 272
   },
@@ -301,7 +301,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 58
   },
@@ -369,7 +369,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 286.5,
    "ptc": 33,
    "ptc_u": 236.5,
-   "nc_exh": 0,
+   "nc_exh": 3,
    "nc_course": 0,
    "nc_cdcp": 34
   },
@@ -461,7 +461,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 8,
    "nc_course": 0,
    "nc_cdcp": 5
   },
@@ -579,7 +579,7 @@ window.CPL_FUNDING_PERF = {
    "ptc": null,
    "ptc_suppressed": true,
    "ptc_u": 58.5,
-   "nc_exh": 1,
+   "nc_exh": 6,
    "nc_course": 0,
    "nc_cdcp": 121
   },
@@ -650,7 +650,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 3,
+   "nc_exh": 30,
    "nc_course": 0,
    "nc_cdcp": 86
   },
@@ -676,7 +676,7 @@ window.CPL_FUNDING_PERF = {
    "ptc": null,
    "ptc_suppressed": true,
    "ptc_u": 104.5,
-   "nc_exh": 0,
+   "nc_exh": 1,
    "nc_course": 0,
    "nc_cdcp": 188
   },
@@ -909,7 +909,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 1,
    "nc_course": 0,
    "nc_cdcp": 128
   },
@@ -978,7 +978,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 1,
    "nc_course": 0,
    "nc_cdcp": 45
   },
@@ -1119,7 +1119,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 8,
+   "nc_exh": 7,
    "nc_course": 0,
    "nc_cdcp": 75
   },
@@ -1189,7 +1189,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 9,
+   "nc_exh": 59,
    "nc_course": 0,
    "nc_cdcp": 58
   },
@@ -1235,7 +1235,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 2,
+   "nc_exh": 14,
    "nc_course": 0,
    "nc_cdcp": 199
   },
@@ -1312,7 +1312,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 6,
    "nc_course": 0,
    "nc_cdcp": 33
   },
@@ -1423,7 +1423,7 @@ window.CPL_FUNDING_PERF = {
    "pa_u": 2353.0,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 32.0,
+   "ppa_u": 35.0,
    "p2": 77,
    "p3": 205,
    "p3_u": 1487.5,
@@ -1432,7 +1432,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 16.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 32.0,
+   "ppe_u": 35.0,
    "pac": 211,
    "pac_u": 1545.0,
    "ptc": 208,
@@ -1461,7 +1461,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 3,
+   "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 82
   },
@@ -1510,7 +1510,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 2206.5,
    "ptc": 698,
    "ptc_u": 2206.5,
-   "nc_exh": 0,
+   "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 61
   },
@@ -1534,7 +1534,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 1,
+   "nc_exh": 30,
    "nc_course": 0,
    "nc_cdcp": 196
   },
@@ -1600,7 +1600,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 4796.5,
    "ptc": 302,
    "ptc_u": 3249.0,
-   "nc_exh": 3,
+   "nc_exh": 6,
    "nc_course": 0,
    "nc_cdcp": 48
   },
@@ -1784,7 +1784,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 24.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 1,
+   "nc_exh": 3,
    "nc_course": 0,
    "nc_cdcp": 73
   },
@@ -1829,7 +1829,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 3,
    "nc_course": 0,
    "nc_cdcp": 66
   },
@@ -1876,7 +1876,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 3,
+   "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 139
   },
@@ -1922,7 +1922,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 21,
    "nc_course": 0,
    "nc_cdcp": 0
   },
@@ -1946,7 +1946,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 26,
    "nc_course": 0,
    "nc_cdcp": 0
   },
@@ -1970,7 +1970,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 0.0,
    "ptc": 0,
    "ptc_u": 0.0,
-   "nc_exh": 0,
+   "nc_exh": 18,
    "nc_course": 0,
    "nc_cdcp": 0
   },
@@ -1994,7 +1994,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 503.5,
    "ptc": 33,
    "ptc_u": 226.0,
-   "nc_exh": 0,
+   "nc_exh": 4,
    "nc_course": 0,
    "nc_cdcp": 141
   },
@@ -2088,7 +2088,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 377.2,
    "ptc": 26,
    "ptc_u": 353.2,
-   "nc_exh": 17,
+   "nc_exh": 29,
    "nc_course": 0,
    "nc_cdcp": 216
   },
@@ -2488,7 +2488,7 @@ window.CPL_FUNDING_PERF = {
    "pac_u": 7811.0,
    "ptc": 579,
    "ptc_u": 7697.5,
-   "nc_exh": 0,
+   "nc_exh": 2,
    "nc_course": 0,
    "nc_cdcp": 138
   },
@@ -2656,7 +2656,7 @@ window.CPL_FUNDING_PERF = {
    "Military": {
     "pe": 585,
     "pa": 581,
-    "p3": 40
+    "p3": 47
    }
   },
   "Barstow": {
@@ -4479,7 +4479,7 @@ window.CPL_FUNDING_PERF = {
   "Military": {
    "pe": 31112,
    "pa": 28062,
-   "p3": 2683
+   "p3": 2690
   },
   "Military | Other": {
    "pe": null,
@@ -4534,14 +4534,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1633017.95,
-   "pa_u": 288492.9,
-   "p3_u": 85133.15
+   "pe_u": 1633029.95,
+   "pa_u": 288501.9,
+   "p3_u": 85220.15
   },
   "map": {
-   "pe_u": 1640158.45,
-   "pa_u": 289242.4,
-   "p3_u": 85212.65
+   "pe_u": 1640173.45,
+   "pa_u": 289254.4,
+   "p3_u": 85299.65
   },
   "ratio": {
    "pe_u": 1.0044,
@@ -5253,7 +5253,7 @@ window.CPL_FUNDING_PERF = {
     "nc_cdcp": 199
    },
    "SD Cont. Ed": {
-    "nc_exh": 1,
+    "nc_exh": 45,
     "nc_course": 0,
     "nc_cdcp": 310
    }

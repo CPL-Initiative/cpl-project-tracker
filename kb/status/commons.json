@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-12T20:58:23Z",
+ "written_at": "2026-11-12T22:36:05Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13983,
+     "n": 13987,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements/list"
@@ -34,14 +34,14 @@
    ],
    "issues": [
     {
-     "n": 2947,
+     "n": 2942,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
      "open": "#program-requirements/list/fail"
     },
     {
-     "n": 3352,
+     "n": 3353,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "carry": "routine",
@@ -63,15 +63,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-12T11:50:06Z",
+    "at": "2026-11-12T12:11:04Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13983,
-    "failing": 2947,
-    "unread": 3352,
-    "records": 18554,
+    "complete": 13987,
+    "failing": 2942,
+    "unread": 3353,
+    "records": 18553,
     "colleges": 114,
     "outside_active": 1624,
     "confirmed": 32,
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-12T20:23:43+00:00",
+    "at": "2026-11-12T22:35:14+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -375,7 +375,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-12T20:24:41+00:00",
+    "at": "2026-11-12T20:24:41Z",
     "every_hours": null
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-12T20:21:37Z",
+    "at": "2026-11-12T22:32:57Z",
     "every_hours": 24
    },
    "facts": {
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2947,
+    "n": 2942,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -758,7 +758,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 3352,
+    "n": 3353,
     "words": "active programs with no record yet",
     "owner": "the harvest",
     "open": "#program-requirements/list/unread"
@@ -785,7 +785,7 @@
     "ref": "requirements",
     "title": "Program Requirements",
     "kind": "not_shrinking",
-    "n": 3352,
+    "n": 3353,
     "was": 3349,
     "since": "2026-11-05",
     "words": "active programs with no record yet",
