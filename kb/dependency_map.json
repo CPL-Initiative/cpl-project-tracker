@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 929,
+  "file_datasets": 930,
   "external_services": 195,
-  "consumers": 581,
+  "consumers": 582,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -16915,6 +16915,26 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_calgetc_34_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 274
+    },
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 274
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_college": {
    "consumers": [],
    "producers": [
@@ -16977,7 +16997,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4853
+     "line": 4879
     }
    ],
    "served": true,
@@ -20578,7 +20598,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4850
+     "line": 4876
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20598,7 +20618,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4786
+     "line": 4812
     }
    ],
    "served": false,
@@ -21215,7 +21235,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4820
+     "line": 4846
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -27885,7 +27905,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4870
+     "line": 4896
     }
    ],
    "main_committers": []
@@ -27897,7 +27917,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4957
+     "line": 4983
     }
    ],
    "main_committers": []
