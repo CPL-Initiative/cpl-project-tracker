@@ -17,11 +17,13 @@ around it, and holds no reading logic of its own:
            (the standing rule: never two reads on one host), a limit no higher than
            Sam's $40 standing go, and a wave branch named claude/harvest-wave-<wave>.
            Emits the matrix.
-  price    after a college's capture: would_extract times the college's own
-           cost_per_program from its committed summary.json (0.08 when it has
-           none), plus 25%. Extraction goes ahead only when extract is "1", the
-           capture answered at least 90% of the pages it listed, there is
-           something to extract, and the price is within the limit.
+  price    after a college's capture: would_extract times the college's rate
+           (the mean cost of its filed records that carry a real cost, never
+           below 0.08, and 0.08 with fewer than 20 of them), plus 25%. Extraction
+           goes ahead only when extract is "1", this is the run's first attempt,
+           the capture answered at least 90% of the pages it listed, there is
+           something to extract, and the price is within the limit. It files a
+           provisional row first, so a job that stops still shows its price.
   verify   compares the run's records with the records committed on origin/main
            for that college, by the scorer's own passes_live and coverage share:
            fail to pass, pass to fail, lost coverage, kept (kept_passing.json),
@@ -36,6 +38,7 @@ the one table. Tests: tests/program_requirements_wave_test.py.
 from __future__ import annotations
 
 import argparse
+import glob
 import io
 import json
 import math
@@ -55,7 +58,8 @@ sys.path.insert(0, HERE)
 MAX_COLLEGES = 8
 LIMIT_CEILING_USD = 40.0       # Sam's standing go, a college a run, on the estimate
                                # (cpl_memory sam-extraction-standing-go-40-per-college-2026-10-14)
-DEFAULT_COST_PER_PROGRAM = 0.08
+DEFAULT_COST_PER_PROGRAM = 0.08   # also the floor: a college's rate never prices below it
+MIN_PRICED_RECORDS = 20           # fewer priced records than this and the college's rate is no evidence
 PRICE_MARGIN = 1.25
 PAGES_FLOOR = 0.9              # a capture answering less than this share of the pages it listed is partial
 WAVE_NAME = re.compile(r"^[a-z0-9][a-z0-9-]{0,39}$")
@@ -113,6 +117,19 @@ def check_branch(wave: str, ref_name: str) -> None:
         raise Refused("the wave %s files to %s%s; this dispatch ran on %s" % (wave, WAVE_BRANCH, wave, ref_name))
 
 
+def check_attempt(extract: bool, attempt) -> None:
+    """A re-run keeps the run id and its first commit, so it prices against the branch as it stood
+    before the wave filed and would pay a second time for the programs the first attempt read
+    (S644 review). An extracting wave runs once; a capture-only wave may run again."""
+    try:
+        n = int(str(attempt or "1").strip())
+    except ValueError:
+        n = 1
+    if extract and n > 1:
+        raise Refused("this is attempt %d of an extracting wave, and a re-run would pay again for what the "
+                      "first attempt read: dispatch a new wave instead" % n)
+
+
 def host_of(url: str | None) -> str | None:
     if not isinstance(url, str) or not url.startswith("http"):
         return None
@@ -167,7 +184,7 @@ def plan_main(args) -> int:
     import _program_requirements_pilot as P
     try:
         names = parse_colleges(args.colleges)
-        parse_extract(args.extract)
+        check_attempt(parse_extract(args.extract), args.attempt)
         parse_limit(args.limit_usd)
         check_branch(args.wave, args.ref)
         registry, hosts = {}, {}
@@ -189,11 +206,22 @@ def plan_main(args) -> int:
 
 
 # ── price ────────────────────────────────────────────────────────────────────
-def cost_per_program(summary: dict | None) -> tuple[float, str]:
-    v = (summary or {}).get("cost_per_program")
-    if isinstance(v, (int, float)) and v > 0:
-        return float(v), "the college's summary.json"
-    return DEFAULT_COST_PER_PROGRAM, "none filed: the default"
+def cost_per_program(records: dict[str, dict]) -> tuple[float, str]:
+    """The rate the price reads: the mean cost of the college's filed records that carry a real cost
+    (a positive cost_usd and no error), never below the default, and the default when fewer than
+    MIN_PRICED_RECORDS carry one. summary.json's cost_per_program divides by every record, so each
+    errored call and each unpriced model counts as a program at $0 and the rate reads low: 200 errors
+    beside 100 calls at $0.08 read $0.027, and 600 programs then priced at $20 cost about $48 (S644
+    review)."""
+    priced = [r["cost_usd"] for r in records.values()
+              if isinstance(r.get("cost_usd"), (int, float)) and r["cost_usd"] > 0 and not r.get("error")]
+    if len(priced) < MIN_PRICED_RECORDS:
+        return DEFAULT_COST_PER_PROGRAM, "%d priced records, fewer than %d: the default" % (len(priced), MIN_PRICED_RECORDS)
+    rate = sum(priced) / len(priced)
+    if rate < DEFAULT_COST_PER_PROGRAM:
+        return DEFAULT_COST_PER_PROGRAM, "the college's rate %.4f over %d priced records is below the default" % (
+            rate, len(priced))
+    return round(rate, 4), "the college's %d priced records" % len(priced)
 
 
 def pages_share(capture: dict | None) -> dict:
@@ -231,18 +259,41 @@ def price(would: int, cpp: float, limit: float, extract: bool, pages: dict | Non
             "limit_usd": limit, "within_limit": within, "extract_asked": extract, "go": go, "why": why}
 
 
+def provisional_row(college: str, slug: str, run_id, priced: dict) -> dict:
+    """The row the price step files before any model call, so a college whose job stops before its
+    verify (a timeout, a runner lost) still shows what it was allowed to spend. The verify replaces it."""
+    return {"college": college, "slug": slug, "run": str(run_id), "provisional": True,
+            "would_extract": priced.get("would_extract"), "price_usd": priced.get("price_usd"),
+            "price_why": priced.get("why"), "allowed_usd": priced.get("price_usd") if priced.get("go") else 0,
+            "extracted": None, "cost_usd": None, "outcomes": {}, "pages": priced.get("pages"),
+            "verdict": "failed: the job did not finish after its price" + (
+                " (it was allowed up to $%.2f)" % priced["price_usd"] if priced.get("go") else "")}
+
+
 def price_main(args) -> int:
     import _program_requirements_college as C
+    slug = C.slug_of(args.college)
     capture = _read(os.path.join(args.out, "capture.json")) or {}
-    summary = _read(os.path.join(C.COLLEGE_DIR, C.slug_of(args.college), "summary.json"))
-    cpp, cpp_from = cost_per_program(summary)
+    cpp, cpp_from = cost_per_program(load_records(os.path.join(C.COLLEGE_DIR, slug)))
     pages = pages_share(capture)
+    extract = parse_extract(args.extract)
     got = price(((capture.get("would_extract") or {}).get("programs")) or 0, cpp, parse_limit(args.limit_usd),
-                parse_extract(args.extract), pages)
+                extract, pages)
     got.update(cost_per_program_from=cpp_from, pages=pages)
+    refused = None
+    try:
+        check_attempt(extract, args.attempt)
+    except Refused as exc:
+        refused = str(exc)
+        got.update(go=False, why=refused, rerun=True)
     C._write(os.path.join(args.out, "wave_price.json"), got)
+    os.makedirs(os.path.dirname(os.path.abspath(args.write)), exist_ok=True)
+    C._write(args.write, provisional_row(args.college, slug, args.run, got))
     print("%s: %s" % (args.college, got["why"]))
     _output("go", "true" if got["go"] else "false")
+    if refused:
+        print("::error::%s: %s" % (args.college, refused))
+        return 1
     return 0
 
 
@@ -289,14 +340,18 @@ def compare(base: dict[str, dict], run: dict[str, dict]) -> dict:
     return {"fail_to_pass": f2p, "pass_to_fail": p2f, "lost_coverage": lost, "new": new}
 
 
-def run_cost(run_records: dict[str, dict], kept: dict | None, run_id) -> tuple[int, float, int]:
-    """Extracted, cost and kept for THIS run: its stamped records plus kept_passing.json (summary.json's
-    cost_usd counts older runs too)."""
-    # A record the run moved to new pages with no model call (moved_record) or reconciled carries the
-    # run too, beside read_run, the run that paid for it; a fresh extraction carries no read_run.
+def run_cost(out_dir: str | None, run_id) -> tuple[int, float, int]:
+    """Extracted, cost and kept for THIS run, read from the run's own out/ folder: out/records and
+    out/kept_passing_*.json, which the extraction writes call by call, so a file step that never ran
+    or stopped partway still shows what the model calls cost (S644 review). summary.json's cost_usd
+    counts older runs too. A record the run moved to new pages with no model call (moved_record) or
+    reconciled carries the run beside read_run, the run that paid for it; a fresh extraction carries
+    no read_run."""
     rid = str(run_id)
-    mine = [r for r in run_records.values() if str(r.get("extracted_run")) == rid and "read_run" not in r]
-    kept_list = ((kept or {}).get("programs") or []) if str((kept or {}).get("run")) == rid else []
+    mine = [r for r in load_records(out_dir).values() if str(r.get("extracted_run")) == rid and "read_run" not in r]
+    kept_list: list = []
+    for path in sorted(glob.glob(os.path.join(out_dir or "", "kept_passing_*.json"))) if out_dir else []:
+        kept_list.extend(_read(path) or [])
     cost = sum(r.get("cost_usd") or 0 for r in mine) + sum(k.get("cost_usd") or 0 for k in kept_list)
     return len(mine), round(cost, 2), len(kept_list)
 
@@ -311,6 +366,8 @@ def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | No
     if pages.get("partial"):
         return "held: partial capture (%s)" % pages.get("why")
     p = priced or {}
+    if p.get("rerun"):
+        return "held: a re-run never extracts (dispatch a new wave)"
     if p.get("extract_asked") and p.get("would_extract") and not p.get("within_limit"):
         return "held: price over the limit"
     if outcomes.get("extract") not in (None, "", "success", "skipped"):
@@ -325,11 +382,13 @@ def verdict(outcomes: dict, capture: dict | None, pages: dict, priced: dict | No
 
 
 def verify(college: str, run_dir: str, base_dir: str | None, capture: dict | None, priced: dict | None,
-           run_id, outcomes: dict) -> dict:
+           run_id, outcomes: dict, out_dir: str | None = None) -> dict:
+    """run_dir: the college's folder as the file step left it; out_dir: the run's out/ folder, which
+    the cost is read from."""
     run = load_records(run_dir)
     base = load_records(base_dir)
     cmp = compare(base, run)
-    extracted, cost, kept = run_cost(run, _read(os.path.join(run_dir, "kept_passing.json")), run_id)
+    extracted, cost, kept = run_cost(out_dir, run_id)
     pages = pages_share(capture)
     p = priced or {}
     return {"college": college, "run": str(run_id), "hosts": None,
@@ -360,7 +419,7 @@ def verify_main(args) -> int:
         base = baseline_from_git(args.baseline_ref, slug, tmp)
         got = verify(args.college, os.path.join(C.COLLEGE_DIR, slug), base,
                      _read(os.path.join(args.out, "capture.json")), _read(os.path.join(args.out, "wave_price.json")),
-                     args.run, outcomes)
+                     args.run, outcomes, args.out)
     got["slug"] = slug
     os.makedirs(os.path.dirname(os.path.abspath(args.write)), exist_ok=True)
     C._write(args.write, got)
@@ -373,6 +432,8 @@ def summarize_wave(wave: str, run_id, extract: bool, limit: float, rows: list[di
     return {"wave": wave, "run": str(run_id), "extract": extract, "limit_usd": limit,
             "colleges": len(rows), "total_cost_usd": round(sum(r.get("cost_usd") or 0 for r in rows), 2),
             "total_price_usd": round(sum(r.get("price_usd") or 0 for r in rows), 2),
+            # A job that stopped after its price: what it was allowed to spend, its cost unknown.
+            "unfinished_allowed_usd": round(sum(r.get("allowed_usd") or 0 for r in rows if r.get("provisional")), 2),
             "ready": [r["college"] for r in rows if r.get("verdict") == "ready"],
             "rows": rows}
 
@@ -389,13 +450,17 @@ def table_md(summary: dict) -> str:
              "`kb/_program_requirements_wave.py file`; the procedure is in "
              "`docs/program_requirements_harvest_lessons.md`, *Running a wave*." % (
                  "1" if summary["extract"] else "0", summary["limit_usd"], _money(summary["total_cost_usd"]),
-                 _money(summary["total_price_usd"])), "",
+                 _money(summary["total_price_usd"])) + (
+                 " Up to %s more at colleges whose job stopped after its price." % _money(summary["unfinished_allowed_usd"])
+                 if summary.get("unfinished_allowed_usd") else ""), "",
              "| " + " | ".join(head) + " |", "|" + "---|" * len(head)]
     for r in summary["rows"]:
         pg = r.get("pages") or {}
         pages = "%s of %s" % (pg.get("answered"), pg.get("listed")) if pg.get("listed") is not None else ""
+        cost = ("up to " + _money(r.get("allowed_usd"))) if r.get("provisional") and r.get("allowed_usd") \
+            else _money(r.get("cost_usd"))
         cells = [r["college"], r.get("would_extract"), _money(r.get("price_usd")), r.get("extracted"),
-                 _money(r.get("cost_usd")), r.get("fail_to_pass"), r.get("pass_to_fail"), r.get("lost_coverage"),
+                 cost, r.get("fail_to_pass"), r.get("pass_to_fail"), r.get("lost_coverage"),
                  r.get("kept"), r.get("new"), pages, r.get("verdict")]
         lines.append("| " + " | ".join("" if c is None else str(c) for c in cells) + " |")
     lines += ["", "Ready for the reread (`step=reread college=<name>` on this branch): %s." % (
@@ -486,6 +551,7 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ref", default=os.environ.get("GITHUB_REF_NAME", ""))
     ap.add_argument("--out", default="out")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
+    ap.add_argument("--attempt", default=os.environ.get("GITHUB_RUN_ATTEMPT", "1"))
     ap.add_argument("--baseline-ref", default="origin/main")
     ap.add_argument("--capture-outcome", default="")
     ap.add_argument("--extract-outcome", default="")

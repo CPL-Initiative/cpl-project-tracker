@@ -10,13 +10,19 @@ name: Program requirements, a wave of colleges
 #          program_source_registry by an anon read, none named twice, no two on
 #          one catalog host, limit_usd at most Sam's standing $40, the branch
 #          claude/harvest-wave-<wave>, never main) and emits the matrix.
-#   read   one job a college, pushing nothing: capture (free in model calls), a
-#          price (would_extract x the college's cost_per_program from its
-#          committed summary, 0.08 when none, plus 25%), the extraction only when
-#          extract is 1, the capture answered 90% of its pages and the price is
-#          within the limit (it SPENDS MODEL CALLS), the file step into the job's
-#          checkout, then a verify against main's filed records. Uploads the
-#          college's folder and its verify row.
+#   read   one job a college, pushing nothing, on the branch's head (so records a
+#          wave already filed count as kept): capture (free in model calls), a
+#          price (would_extract x the college's rate over its priced records,
+#          never below 0.08, plus 25%), the extraction only when extract is 1, the
+#          run is its first attempt, the capture answered 90% of its pages and the
+#          price is within the limit (it SPENDS MODEL CALLS), the file step into
+#          the job's checkout, then a verify against main's filed records, its
+#          cost read from the run's own out/ folder. Uploads the college's folder
+#          and its verify row (a provisional row from the price step until then).
+#
+# An extracting wave runs once: a re-run keeps the run id and its first commit
+# and would pay again for what the first attempt read, so plan and price refuse
+# any attempt above 1 with extract 1. Dispatch a new wave instead.
 #   file   one job: copies every college's folder into the branch and writes
 #          kb/program_requirements_wave/<wave>.json and .md, one commit, one push.
 #
@@ -63,6 +69,7 @@ jobs:
       - name: Plan the wave (names, hosts, limit, branch)
         id: plan
         env:
+          ATTEMPT: ${{ github.run_attempt }}
           COLLEGES: ${{ github.event.inputs.colleges }}
           EXTRACT: ${{ github.event.inputs.extract }}
           LIMIT_USD: ${{ github.event.inputs.limit_usd }}
@@ -70,14 +77,14 @@ jobs:
           REF_NAME: ${{ github.ref_name }}
         run: >-
           python3 kb/_program_requirements_wave.py plan --colleges "$COLLEGES" --extract "$EXTRACT"
-          --limit-usd "$LIMIT_USD" --wave "$WAVE" --ref "$REF_NAME"
+          --limit-usd "$LIMIT_USD" --wave "$WAVE" --ref "$REF_NAME" --attempt "$ATTEMPT"
 
   read:
     needs: plan
     name: read ${{ matrix.college }}
     runs-on: ubuntu-latest
-    # A hosted runner's limit, as the college workflow's read job.
-    timeout-minutes: 360
+    # Under a hosted runner's 360, so the steps that file a stopped job's price and records still run.
+    timeout-minutes: 345
     permissions:
       contents: read
     strategy:
@@ -92,6 +99,10 @@ jobs:
       LIMIT_USD: ${{ github.event.inputs.limit_usd }}
     steps:
       - uses: actions/checkout@v7
+        with:
+          # The branch's head, never the dispatch's commit: a re-run, or a wave after a wave, prices
+          # against what the branch has filed.
+          ref: ${{ github.ref_name }}
       - name: Fetch main, the baseline the verify compares with
         run: git fetch --depth 1 origin main:refs/remotes/origin/main
       - uses: actions/setup-python@v7
@@ -110,7 +121,11 @@ jobs:
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit 0
       - name: Price the extraction
         id: price
-        run: python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT" --limit-usd "$LIMIT_USD"
+        env:
+          ATTEMPT: ${{ github.run_attempt }}
+        run: >-
+          python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT"
+          --limit-usd "$LIMIT_USD" --attempt "$ATTEMPT" --write "wave_out/$SLUG.wave.json"
       - name: Extract and score
         id: extract
         if: steps.price.outputs.go == 'true'
@@ -158,6 +173,8 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'

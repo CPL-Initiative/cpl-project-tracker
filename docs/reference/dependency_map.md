@@ -770,7 +770,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
+| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
@@ -895,7 +895,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/zband_retire_out/2026-09-03/duplicates.json` | scripts: `kb/_zband_retire_dryrun.py` | — |
 | `kb/zband_retire_out/2026-09-03/materialized.json` | scripts: `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py` | — |
 | `kb/zband_retire_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
-| `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py` | — |
+| `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |

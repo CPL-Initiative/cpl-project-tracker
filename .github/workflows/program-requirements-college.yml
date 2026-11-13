@@ -95,11 +95,12 @@ on:
       - '.github/workflows/program-requirements-college.yml'
       - 'kb/_program_requirements_college.py'
 
-# One run at a time for a college on a branch. The college is in the group since S644: a wave
-# branch carries several colleges, and the conductor dispatches step=reread for each ready one;
-# with one group a branch, a third dispatch would replace (cancel) the second while it waited.
+# One run at a time on a branch: a read, reconcile or display never runs beside another (never two
+# reads on one host). A load or reread (no catalog read) groups by its college too, since S644: a
+# wave branch carries several colleges, the conductor dispatches step=reread for each ready one, and
+# in one group a third dispatch would replace (cancel) the second while it waited.
 concurrency:
-  group: program-requirements-college-${{ github.ref }}-${{ github.event.inputs.college }}
+  group: program-requirements-college-${{ github.ref }}${{ (github.event.inputs.step == 'load' || github.event.inputs.step == 'reread') && format('-{0}', github.event.inputs.college) || '' }}
   cancel-in-progress: false
 
 jobs:
@@ -210,6 +211,15 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 kb/_program_requirements_college.py "$STEP" --college "$COLLEGE" --extracted-run "$EXTRACTED_RUN"
+      # The receipt is the rollback of a table write: it rides in the run's artifact before any push,
+      # so a push that never lands (several rereads push to one wave branch) loses nothing.
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: receipts-${{ github.run_id }}
+          path: kb/receipts
+          if-no-files-found: ignore
+          retention-days: 90
       - name: Commit the receipt to the branch that ran it
         if: always()
         run: |
@@ -218,10 +228,12 @@ jobs:
           git add kb/receipts
           if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
           git commit -m "Receipt: the $STEP of $COLLEGE's program records (run ${{ github.run_id }})"
-          for i in 1 2 3 4; do
+          # Several jobs may push here at once: more tries, each after a random wait, so they fall out of step.
+          for i in 1 2 3 4 5 6 7 8 9 10; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
-            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+            sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "${{ github.ref_name }}"
           done
+          echo "::error::The receipt did not reach ${{ github.ref_name }} after 10 tries. It is in this run's artifact receipts-${{ github.run_id }}: commit it by hand before anything else."
           exit 1
 
   display:
@@ -246,6 +258,13 @@ jobs:
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: python3 kb/_program_requirements_display_apply.py --apply
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: receipts-${{ github.run_id }}
+          path: kb/receipts
+          if-no-files-found: ignore
+          retention-days: 90
       - name: Commit the applied record to the branch that ran it
         if: always()
         run: |

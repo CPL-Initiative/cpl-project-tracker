@@ -918,6 +918,10 @@ def read_sitemap(reader, start: str) -> dict:
             if url == out["url"]:
                 out["status"] = resp.status
             if not resp.ok:
+                # A missing sitemap (404, 410) is the host's answer; any other status lost its pages
+                # (pages_account()).
+                if resp.status not in GONE:
+                    out.setdefault("failed", []).append("%s: HTTP %s" % (url, resp.status))
                 continue
             pages, nested = sitemap_urls(resp.text())
             out["pages"].extend(pages)
@@ -940,16 +944,21 @@ def child_base(page_url: str, platform: str | None) -> str:
     return page_url
 
 
-def index_links(reader, start: str, cache: dict) -> list[str]:
+def index_links(reader, start: str, cache: dict, failed: list | None = None) -> list[str]:
     """Without a sitemap: the catalog's front page, and each program index it
-    links (the pilot's hub words), read once; every same-site link they hold."""
+    links (the pilot's hub words), read once; every same-site link they hold.
+    Each index that did not answer goes on failed (pages_account())."""
     front = P.load(reader, start, cache, False)
+    if failed is not None and load_failed(front):
+        failed.append(start)
     hubs = [ln.get("href") for ln in front.get("links") or []
             if P.HUB_WORDS.search(ln.get("text") or "") and not P.NOT_HUB.search(ln.get("text") or "")
             and P.same_site(ln.get("href") or "", start)][:6]
     urls = [ln.get("href") for ln in front.get("links") or []]
     for h in hubs:
         got = P.load(reader, h, cache, False)
+        if failed is not None and load_failed(got):
+            failed.append(h)
         urls.extend(ln.get("href") for ln in got.get("links") or [])
     return [u for u in urls if u]
 
@@ -1385,6 +1394,7 @@ def cq_pages(reader, start: str, report: dict) -> list[dict]:
         if i % 50 == 0:
             print("  read %d of %d program pages" % (i, len(queue)), flush=True)
     report["curriqunet"]["entries_read"] = i
+    report["curriqunet"]["failed_calls"] = failed_calls(errors)   # before the list is cut (pages_account())
     del errors[40:]
     return pages
 
@@ -1449,12 +1459,14 @@ def el_pages(reader, start: str, cache: dict, report: dict) -> list[str]:
     front = P.load(reader, start, cache, True)
     urls = el_program_urls(front.get("links"), start)
     hubs = el_hubs(front.get("links"), start)
+    failed = 1 if load_failed(front) else 0
     for h in hubs:
         got = P.load(reader, h, cache, True)
+        failed += 1 if load_failed(got) else 0
         urls += [u for u in el_program_urls(got.get("links"), start) if u not in urls]
     report["elumen"] = {"catalog": el_catalog(start), "start_status": front.get("status"),
                         "from_start": len(el_program_urls(front.get("links"), start)),
-                        "hubs": hubs, "program_pages": len(urls)}
+                        "hubs": hubs, "program_pages": len(urls), "listing_failed": failed}
     return urls[:MAX_PAGES]
 
 
@@ -1756,7 +1768,8 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
         report["elumen"].update(el_walk(reader, start, shell, catalog, slugs,
                                         set(hubs) | set(el_start_parts(start)), errors))
     slugs = slugs[:MAX_PAGES]
-    report["elumen"]["program_pages_listed"] = len(slugs)   # pages_account(): listed beside answered
+    # pages_account(): listed beside answered, and the menu, department and hub calls that failed.
+    report["elumen"].update(program_pages_listed=len(slugs), listing_failed=failed_calls(errors))
     pages = []
     for i, slug in enumerate(slugs):
         html_text = el_html(el_fetch(reader, el_publish_url(start, ["program", slug], content=True), errors))
@@ -2185,11 +2198,15 @@ def ac_urls(reader, start: str, cache: dict, report: dict) -> list[str]:
         got = P.load(reader, nav, cache, False)
         nl = got.get("links") or []
         # What each menu held, so a catalog that lists its programs elsewhere says where (S389).
-        read.append({"url": nav, "access": got.get("access"), "title": (got.get("title") or "")[:80],
+        read.append({"url": nav, "access": got.get("access"), "status": got.get("status"),
+                     "title": (got.get("title") or "")[:80],
                      "links": len(nl), "sample": [[(ln.get("text") or "")[:50], ln.get("href")] for ln in nl
                                                   if re.search(r"poid|preview_|navoid|ent_oid", ln.get("href") or "")][:25]})
         urls += [u for u in ac_program_urls(nl, base, catoid) if u not in urls]
-    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), navs=read, program_pages=len(urls))
+    # A site map or menu page that did not answer lost the programs it lists (pages_account()).
+    failed = (1 if load_failed(sm) else 0) + sum(1 for r in read if r["access"] != "ok" and r.get("status") not in GONE)
+    report["acalog"].update(program_navs=navs[:AC_MAX_NAVS], navs_read=len(read), navs=read, program_pages=len(urls),
+                            listing_failed=failed)
     return urls
 
 
@@ -2995,10 +3012,17 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             urls = program_candidates(sm["pages"], start, scope)
             report["sitemap"] = {"url": sm["url"], "status": sm["status"], "listed": len(sm["pages"]),
                                  "nested": len(sm["nested"]), "program_pages": len(urls),
-                                 "refused": sm.get("refused"), "errors": sm.get("errors")}
+                                 "refused": sm.get("refused"), "errors": sm.get("errors"),
+                                 "failed": sm.get("failed")}
+            listing_failed = len(sm.get("errors") or []) + len(sm.get("failed") or [])
             if len(urls) < 0.3 * report["with_closed_list"]:
-                urls = program_candidates(index_links(reader, start, cache), start, scope)
+                index_failed: list = []
+                urls = program_candidates(index_links(reader, start, cache, index_failed), start, scope)
                 report["index_fallback"] = len(urls)
+                report["index_failed"] = index_failed
+                # The index replaces the sitemap's pages: its own failures are what lost pages.
+                listing_failed = len(index_failed)
+            report["listing_failed"] = listing_failed
             urls = urls[:MAX_PAGES]
             pages = []
             print("%s: %d programs (%d with a course list), %d candidate pages, %.1f s between loads"
@@ -3023,7 +3047,8 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if i % 50 == 0:
                 print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
-        report["pages_listed"], report["pages_answered"] = pages_account(report, platform, len(queue))
+        report["pages_listed"], report["pages_answered"], report["listing_failed"] = \
+            pages_account(report, platform, len(queue))
         if platform not in ("curriqunet", "elumen", "acalog"):
             report["child_pages"] = len(queue) - len(urls)
         report["banner_h1"] = drop_banner_h1(pages)
@@ -3069,24 +3094,61 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
     return finish_capture(college, out_dir, recs, report, t0)
 
 
-def pages_account(report: dict, platform: str | None, queue_len: int) -> tuple[int, int]:
-    """The pages a capture listed to read and the pages that answered, whichever reader listed them
-    (S644). A capture that met HTTP 503s filed a partial read as if complete: Rio Hondo's reconcile
-    43142240927 read 34 of 328 pages and said nothing (lessons, S640). The wave's verify
-    (kb/_program_requirements_wave.py) holds a capture that answered under 90% of what it listed.
+GONE = (404, 410)   # the host's answer that a page is not there, never a lost page
+
+
+def load_failed(got: dict | None) -> bool:
+    """A listing page (an index, a hub, a site map) that did not answer: any access but ok, short of
+    the host saying the page is gone."""
+    return (got or {}).get("access") != "ok" and (got or {}).get("status") not in GONE
+
+
+def failed_calls(errors: list | None) -> int:
+    """The calls a reader's error list records as failed for good: a retry note is not one (the call
+    was made again), and a 404 or 410 is the host's answer that the page is not there."""
+    n = 0
+    for e in errors or []:
+        e = str(e)
+        if e.endswith("(tried again)") or re.search(r": HTTP (?:404|410)$", e):
+            continue
+        n += 1
+    return n
+
+
+def pages_account(report: dict, platform: str | None, queue_len: int) -> tuple[int, int, int]:
+    """The pages a capture listed to read, the pages that answered, and the listing calls that failed,
+    whichever reader listed them (S644). A capture that met HTTP 503s filed a partial read as if
+    complete: Rio Hondo's reconcile 43142240927 read 34 of 328 pages and said nothing (lessons, S640).
+    The wave's verify (kb/_program_requirements_wave.py) holds a capture that answered under 90% of what
+    it listed. A listing call that failed (a nested sitemap, an index or hub page, a menu, department or
+    child call, a search page) lost pages no count of answers can see, so each one counts as a page
+    listed and not answered.
     Listed: the page queue (a sitemap or index and its child pages; Acalog's program pages; eLumen's
     rendered menu), else the reader's own list (curriQunet's entries, eLumen's publish slugs,
-    Coursedog's program search). Answered: the pages read whose text came back (pages_read)."""
+    Coursedog's program search, at the larger of its stated total and the rows it gave). Answered: the
+    pages read whose text came back (pages_read)."""
     answered = report.get("pages_read") or 0
     if queue_len:
-        return queue_len, answered
+        sub = (report.get("acalog") if platform == "acalog"
+               else report.get("elumen") if platform == "elumen" else report)
+        failed = (sub or {}).get("listing_failed") or 0
+        return queue_len + failed, answered, failed
     if platform == "curriqunet":
-        return (report.get("curriqunet") or {}).get("entries_read") or 0, answered
+        cq = report.get("curriqunet") or {}
+        listed = cq.get("entries_read") or 0
+        # A page call that failed is already listed and unanswered; the rest are index and child calls.
+        failed = max(0, (cq.get("failed_calls") or 0) - max(0, listed - answered))
+        return listed + failed, answered, failed
     if platform == "elumen":
-        return (report.get("elumen") or {}).get("program_pages_listed") or 0, answered
+        el = report.get("elumen") or {}
+        failed = el.get("listing_failed") or 0
+        return (el.get("program_pages_listed") or 0) + failed, answered, failed
     if platform == "coursedog":
-        return len((report.get("coursedog") or {}).get("catalog") or []), answered
-    return 0, answered
+        cd = report.get("coursedog") or {}
+        failed = len(cd.get("errors") or [])
+        listed = max(cd.get("listed") or 0, len(cd.get("catalog") or []))
+        return listed + failed, answered, failed
+    return 0, answered, 0
 
 
 def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t0: float) -> int:
@@ -3504,13 +3566,17 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     # Each call waits on the model for about 15 s; six at once keep a college
     # inside one job, and the function answers each call on its own.
     from concurrent.futures import ThreadPoolExecutor
-    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
-        list(pool.map(one, mine))
-    if kept_list:
-        _write(os.path.join(out_dir, "kept_passing_%d.json" % shard),
-               sorted(kept_list, key=lambda x: x["control_number"]))
-        print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
-              flush=True)
+    try:
+        with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+            list(pool.map(one, mine))
+    finally:
+        # A call that raises stops the step; the reads already paid for and kept are still filed
+        # (the wave counts their cost from this file; S644 review).
+        if kept_list:
+            _write(os.path.join(out_dir, "kept_passing_%d.json" % shard),
+                   sorted(kept_list, key=lambda x: x["control_number"]))
+            print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
+                  flush=True)
     return 0
 
 
