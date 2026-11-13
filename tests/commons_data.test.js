@@ -3,7 +3,7 @@
 //
 // WHAT THIS GUARDS (each a way the page could mislead):
 //   (1) ⭐ a figure that is a button counts exactly the list it opens (CLAUDE.md: a figure card opens what it counts);
-//   (2) ⭐ a figure's filter: each opens only its colleges, an unread college reads "Not read yet" (never 0%);
+//   (2) ⭐ a figure's filter: each opens only its colleges, an uncollected college reads "Not collected yet" (never 0%);
 //   (3) ⭐ the address: #commons/data and #commons/data/<filter> open the view, the view reports its address, a later
 //       visit on #commons draws the first view again, and the filter is never stored;
 //   (4) ⭐ TBA where no committed file supplies the figure (overall, confidence, APIs, the JST funnel), never a number;
@@ -16,6 +16,11 @@
 //       side panel (a dialog: its heading takes the focus, Tab stays inside, Escape closes it and returns the focus);
 //       a section with no committed source reads TBA with the builder's reason; #commons/data[/<filter>]/college/<slug>
 //       opens the panel, the view reports it, and a new visit remembers neither the panel nor the row.
+//   (12) ⭐ #3229, College Data Collection: the title; Collected for Harvested and Not collected yet for Not read yet,
+//       on the page and in the code's strings; one merged Collected card; no zero card that empties the list; a
+//       definition under every card; Collected, then confidence and completeness, then what is in the way; one
+//       confidence card; each completeness figure with its confidence word beside it; no person-confirmed headline;
+//       Confidence first in the opened row and the panel; the asks said to be the team's work.
 // The committed file itself is guarded by tests/commons_data_status_build_test.py.
 //
 // Run from repo root: `npm test` (or `node tests/commons_data.test.js`).
@@ -79,7 +84,11 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 30; i++) await tick(); }
 function reported(x) { x.w.CPL_SESSION.stashReturnTab("commons"); return (JSON.parse(x.w.localStorage.getItem("cpl_sb_return_tab")) || {}).tab; }
 function rows(x) { return Array.from(x.d.querySelectorAll("#cdd-colleges tbody tr[data-college]")).map((r) => r.getAttribute("data-college")); }
-function tile(x, f) { return x.d.querySelector('.cdd-tile[data-filter="' + f + '"]'); }
+function tile(x, f) { return x.d.querySelector('.cdd-tiles [data-filter="' + f + '"]'); }
+// A figure's number: a card's (the first of "3 of 5"), or a count word's inside a card of several ("2 strong").
+function fig(t) { const v = t && (t.classList.contains("cdd-partw") ? t : t.querySelector(".cdd-v")); return Number((txt(v).match(/^[\d,]+/) || [""])[0].replace(/,/g, "")); }
+// The list shows every college and no figure is pressed (the default; there is no All card since #3229).
+function isAll(x) { return !x.d.querySelector('.cdd-tiles [aria-pressed="true"]') && /^Showing (\d+) of \1$/.test(txt(x.d.querySelector("#cdd-shown"))); }
 function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + label + '"]'); }
 
 (async function () {
@@ -95,7 +104,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   // ── (3) the address ──
   const o = load("#commons/data");
   await o.M.boot(); await settle();
-  check("address 1 ⭐: #commons/data opens the dashboard", txt(o.d.querySelector("#cdd-h")) === "How complete each college's data is");
+  check("address 1 ⭐: #commons/data opens the dashboard, titled College Data Collection (Sam, #3229)", txt(o.d.querySelector("#cdd-h")) === "College Data Collection");
   check("address 2 ⭐: the view reports commons/data", reported(o) === "commons/data");
   check("address 3: it read only its one file", o.calls.every((c) => c[1] === "GET") && o.calls.some((c) => c[0] === "kb/status/commons_data.json"));
 
@@ -103,18 +112,20 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const D = o.D, M = D.model(DATA);
   Object.keys(D.FILTERS).filter((f) => tile(o, f)).forEach(function (f) {
     tile(o, f).click();
-    const shown = rows(o).length, figure = Number(txt(tile(o, f).querySelector(".cdd-v")).replace(/,/g, ""));
-    check("figure " + f + " ⭐: the figure (" + figure + ") equals the list it opens (" + shown + ") and the model's count", figure === shown && shown === D.listFor(M, f).length);
+    // Programs still to pass counts programs (#3229): it opens their colleges, and equals the programs those colleges list as still to pass.
+    const shown = f === "gaps" ? rows(o).reduce((a, n) => a + (DATA.colleges.filter((c) => c.name === n)[0].gap || 0), 0) : rows(o).length, figure = fig(tile(o, f));
+    check("figure " + f + " ⭐: the figure (" + figure + ") equals what the list it opens counts (" + shown + ") and the model's count",
+      figure === shown && rows(o).length === D.listFor(M, f).length);
     check("figure " + f + ": pressed, and the address carries it", tile(o, f).getAttribute("aria-pressed") === "true"
       && o.w.location.hash === (f === "all" ? "#commons/data" : "#commons/data/" + f) && reported(o) === (f === "all" ? "commons/data" : "commons/data/" + f));
   });
-  check("figure: six figures open a list", o.d.querySelectorAll("button.cdd-tile").length === 6);
+  check("figure: five cards and three freshness words open a list", o.d.querySelectorAll("button.cdd-tile[data-filter]").length === 5 && o.d.querySelectorAll(".cdd-tiles button.cdd-partw").length === 3);
 
   // ── (2) each filter's colleges ──
   tile(o, "unread").click();
-  check("filter unread ⭐: only the colleges with no committed harvest, and each reads Not read yet, never 0%",
+  check("filter unread ⭐: only the colleges with no committed capture, and each reads Not collected yet, never 0%",
     JSON.stringify(rows(o)) === JSON.stringify(["Delta College", "Epsilon Continuing Education"])
-    && Array.from(o.d.querySelectorAll("#cdd-colleges tbody tr")).every((r) => /Not read yet/.test(txt(r)) && !/0%/.test(txt(r))));
+    && Array.from(o.d.querySelectorAll("#cdd-colleges tbody tr")).every((r) => /Not collected yet/.test(txt(r)) && !/0%/.test(txt(r))));
   tile(o, "gaps").click();
   check("filter gaps: the harvested colleges with programs still to pass, most first", JSON.stringify(rows(o)) === JSON.stringify(["Gamma College", "Alpha College"]));
   tile(o, "slo").click();
@@ -170,12 +181,12 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   g.w.dispatchEvent(new g.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
   check("address 6 ⭐: a new visit on #commons/data starts on All, the old filter not remembered",
-    txt(g.d.querySelector("#cdd-h")) === "How complete each college's data is" && tile(g, "all").getAttribute("aria-pressed") === "true" && rows(g).length === 5);
+    txt(g.d.querySelector("#cdd-h")) === "College Data Collection" && isAll(g) && rows(g).length === 5);
   check("storage: nothing in local or session storage names the filter",
     !/gaps|commons\/data/.test(Object.values(g.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")));
   const u = load("#commons/data/nonsense");
   await u.M.boot(); await settle();
-  check("address 7: an unknown filter opens All", tile(u, "all").getAttribute("aria-pressed") === "true" && reported(u) === "commons/data");
+  check("address 7: an unknown filter opens All", isAll(u) && reported(u) === "commons/data");
 
   // ── (7) confidence from the receipts ──
   const LV = { 1: ["strong", "5 agree, 0 differ, 0 unreachable"], 2: ["partial", "4 agree, 1 differ, 0 unreachable"], 3: ["limited", "machine checks only; no spot-check yet"] };
@@ -185,18 +196,20 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   DATA2.colleges[0].spot_check = { agrees: 5, differs: 0, unreachable: 0 };
   const k = load("#commons/data", DATA2);
   await k.M.boot(); await settle();
-  check("confidence 1: no Confidence TBA tile once receipts are read", !plain(k, "Confidence"));
+  check("confidence 1: no Confidence TBA once receipts are read; one Confidence card holds the three levels (#3229)",
+    !k.d.querySelector('.cdd-tiles .cdd-tba') || !/Confidence/.test(txt(k.d.querySelector('.cdd-tiles .cdd-tba').parentNode))
+    && k.d.querySelectorAll('.cdd-tile[data-tile="Confidence"]').length === 1 && k.d.querySelectorAll('.cdd-tile[data-tile="Confidence"] button.cdd-partw').length === 3);
   ["strong", "partial", "limited"].forEach(function (lv) {
     const t = tile(k, lv);
     t && t.click();
     check("confidence 2 ⭐: the " + lv + " figure counts exactly the colleges it opens",
-      t && Number(txt(t.querySelector(".cdd-v"))) === rows(k).length && rows(k).length === 1
+      t && fig(t) === rows(k).length && rows(k).length === 1
       && rows(k)[0] === DATA2.colleges.filter((c) => c.confidence && c.confidence.level === lv)[0].name && k.w.location.hash === "#commons/data/" + lv);
   });
   tile(k, "partial").click();
   check("confidence 3: the row shows the level and the builder's reason, not a bare word",
     /^Partial 4 agree, 1 differ, 0 unreachable$/.test(txt(k.d.querySelector('#cdd-colleges tr[data-college="Beta College"] td[data-label="Confidence"]'))));
-  tile(k, "all").click();
+  k.d.querySelector("#cdd-all").click();
   check("confidence 4: an unread college reads TBA", txt(k.d.querySelector('#cdd-colleges tr[data-college="Delta College"] td[data-label="Confidence"]')) === "TBA");
   k.d.querySelector('button.cdd-sort[data-sort="conf"]').click();
   check("confidence 5: the column sorts strong first", rows(k)[0] === "Alpha College" && rows(k)[1] === "Beta College" && rows(k)[2] === "Gamma College");
@@ -225,7 +238,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     word(1).getAttribute("aria-expanded") === "true" && word(1).getAttribute("aria-controls") === "cdd-more-1" && m1 && m1.previousSibling.getAttribute("data-college") === "Alpha College");
   const cards = (m) => Array.from(m.querySelectorAll("[data-ds]")).map((c) => c.getAttribute("data-ds"));
   check("row 3 ⭐: the row shows the datasets the builder holds for that college and nothing else",
-    JSON.stringify(cards(m1)) === JSON.stringify(["pr", "cat", "confidence", "cost"]) && !/TBA|PLO|Course objectives|Pathways Mapper/.test(txt(m1)), cards(m1));
+    JSON.stringify(cards(m1)) === JSON.stringify(["confidence", "pr", "cat", "cost"]) && !/TBA|PLO|Course objectives|Pathways Mapper/.test(txt(m1)), cards(m1));
   const pr1 = txt(m1.querySelector('[data-ds="pr"]'));
   check("row 4: program requirements read listed, closed list, found, extracted, passing and by cause, with its bar",
     /80 of 100 listed programs/.test(pr1) && /With a closed course list\s*95/.test(pr1) && /Programs whose page the capture found\s*90/.test(pr1) && /Records extracted \(a reread can add some\)\s*88/.test(pr1)
@@ -241,7 +254,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     && m2 && cards(m2).indexOf("slo") >= 0 && /SLO read held/.test(txt(m2)) && /a parser/.test(txt(m2)));
   word(4).click();
   const m4 = x.d.getElementById("cdd-more-4");
-  check("row 9 ⭐: an unread college's row says Not read yet, never a zero", m4 && !cards(m4).length && /Not read yet/.test(txt(m4)) && !/0%/.test(txt(m4)));
+  check("row 9 ⭐: an uncollected college's row says Not collected yet, never a zero", m4 && !cards(m4).length && /Not collected yet/.test(txt(m4)) && !/0%/.test(txt(m4)));
   word(4).click();
   check("row 10: the word closes its row again, and the row is no part of the address", !more().length && x.w.location.hash === "#commons/data");
 
@@ -261,9 +274,16 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
     check("panel TBA ⭐: " + t[0] + " reads TBA with the builder's reason, no number", sec(t[0]).indexOf("TBA. " + t[1]) >= 0 && !/\d+%/.test(sec(t[0])));
   });
   check("panel 3: the overall bar reads TBA with its reason; Teachout and Approved too", /Overall\s*TBA\. The live read has not run yet\. Catalog source, SLOs and PLOs are live tables\./.test(txt(P)) && /Teachout and Approved programs: TBA\. The live read has not run yet\./.test(sec("pr")));
-  check("panel 4: the panel groups the datasets Harvested then Connected", JSON.stringify(Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).slice(2, 4)) === '["Harvested","Connected"]');
-  check("panel 5: the dates: last read, last loaded TBA, last spot-checked, last confirmed TBA", /Last read\s*\w.* PT/.test(txt(P)) && /Last loaded\s*TBA/.test(txt(P)) && /Last spot-checked\s*\w.* PT/.test(txt(P)) && /Last confirmed by a person\s*TBA/.test(txt(P)) && /Loaded reason\./.test(txt(P)));
-  check("panel 6: the asks are the census's levers in its words, the owner TBA with the reason", /Check the Program Course File for its courses/.test(txt(P)) && /20 programs, free\. Owner: TBA/.test(txt(P)) && /Owners reason\./.test(txt(P)));
+  check("panel 4 ⭐: the panel leads with Confidence, then Overall, then the datasets Collected then Connected (#3229)",
+    JSON.stringify(Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).slice(0, 4)) === '["Confidence","Overall","Collected","Connected"]');
+  const datesSec = Array.from(P.querySelectorAll(".cdd-psec")).filter((s) => txt(s.querySelector("h3")) === "Dates")[0];
+  check("panel 5 ⭐: the dates lead with read, spot-checked and scouted; no person-confirmed date leads (#3229), the load time sits in a quiet team line",
+    /Last read\s*\w.* PT/.test(txt(datesSec)) && /Last spot-checked\s*\w.* PT/.test(txt(datesSec))
+    && !/confirmed by a person/i.test(txt(datesSec.querySelector("dl"))) && !/Last loaded/.test(txt(datesSec.querySelector("dl")))
+    && !/Loaded and confirmed/.test(txt(P)) && /^For the team: last loaded, TBA\. Loaded reason\./.test(txt(datesSec.querySelector('[data-team="dates"]'))));
+  check("panel 6: the asks are the census's levers in its words, the owner TBA with the reason, under Team asks, said to be the team's work",
+    /Check the Program Course File for its courses/.test(txt(P)) && /20 programs, free\. Owner: TBA/.test(txt(P)) && /Owners reason\./.test(txt(P))
+    && /Nothing here asks the college to do anything\./.test(txt(P.querySelector('[data-team="asks"]'))) && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Team asks") >= 0 && Array.from(P.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Asks") < 0);
   check("panel 7: the catalog's own link, the cost, the sources", P.querySelector('a[href="https://alpha.example.edu/catalog/"]') && /\$8\.00/.test(txt(P)) && /kb\/spot_checks\/a\.check\.json/.test(txt(P)));
   check("panel 8: never 'no data yet'", !/no data yet/i.test(txt(P)) && !/no data yet/i.test(SRC));
   // the focus trap
@@ -294,7 +314,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("close: the Close word closes it too, focus returned", P.hasAttribute("hidden") && x.d.activeElement === x.d.querySelector('[data-panel-open="1"]'));
   // a college with no spot-check gets COBIx's ask
   word(3).click(); x.d.querySelector('[data-panel-open="3"]').click();
-  check("panel 9: a college with no spot-check carries the spot-check ask, owner COBIx", /Spot-check five records against the catalog.*Owner: COBIx/.test(txt(P)));
+  check("panel 9 ⭐: a college with no spot-check carries the spot-check ask, team-internal, owner COBIx (#3229)", /Team-internal: COBIx spot-checks five records against the catalog.*Owner: COBIx/.test(txt(P)));
   key("Escape");
 
   // the address round trip
@@ -316,7 +336,7 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   z.w.dispatchEvent(new z.w.CustomEvent("cpl-tab-activated", { detail: { tab: "commons" } }));
   await settle();
   check("address 11 ⭐: a new visit on #commons/data opens no panel and no row: nothing remembered",
-    z.d.getElementById("cdd-panel").hasAttribute("hidden") && !z.d.querySelector("#cdd-colleges tr.cdd-more") && tile(z, "all").getAttribute("aria-pressed") === "true");
+    z.d.getElementById("cdd-panel").hasAttribute("hidden") && !z.d.querySelector("#cdd-colleges tr.cdd-more") && isAll(z));
   check("storage: nothing in local or session storage names a college", !/college\/|gamma|beta-college/.test(Object.values(z.w.localStorage._o || {}).filter((v) => !/^\{"tab"/.test(v)).join(" ")));
   const n = load("#commons/data/college/nowhere", DATA3);
   await n.M.boot(); await settle();
@@ -528,7 +548,8 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   check("dict 1 ⭐: the view word opens the dictionary at its address", DV && s3.w.location.hash === "#commons/data/dictionary" && reported(s3) === "commons/data/dictionary"
     && s3.d.querySelector('.cdd-views a[aria-current="page"]').getAttribute("data-goto") === "dictionary");
   check("dict 2 ⭐: one entry per dataset, grouped as the doc groups them, in its order",
-    JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup")).map((g) => g.getAttribute("data-group"))) === '["Harvested","Connected","Planned"]' && DV.querySelectorAll("article.cdd-entry").length === 4);
+    JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup")).map((g) => g.getAttribute("data-group"))) === '["Harvested","Connected","Planned"]' && DV.querySelectorAll("article.cdd-entry").length === 4
+    && JSON.stringify(Array.from(DV.querySelectorAll(".cdd-dgroup > h3")).map(txt)) === '["Collected","Connected","Planned"]');
   const ent = (n) => DV.querySelector('article[data-dataset="' + n + '"]');
   check("dict 3: each entry gives its stage, owner, today's procedure, the planned improvement and a GitHub link to the doc's anchor",
     /Stage\s*Connected/.test(txt(ent("Program requirements"))) && /Owner or steward\s*The college/.test(txt(ent("Program requirements"))) && /How we get it today/.test(txt(ent("Program requirements")))
@@ -621,6 +642,75 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   pw.click();
   check("review3236 platform ⭐: under an active filter a platform word's figure equals the list it opens, and the filter stays",
     said === rows(v5).length && rows(v5).length === 1 && v5.w.location.hash === "#commons/data/gaps/platform/pdf");
+
+  // ── (12) #3229, College Data Collection (Sam, Nov 13: the rename, Collected, and his 7:13 AM PT direction to
+  //        downfocus person review and upfocus confidence and completeness; COBIx's seven points, comment 6857124403) ──
+  const C1 = JSON.parse(JSON.stringify(READ));
+  C1.live.statewide = { programs: { active: 140 }, records: { active_passing: 90, checked: 2 } };
+  const w1 = load("#commons/data", C1);
+  await w1.M.boot(); await settle();
+  const labels = Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).map((t) => txt(t.querySelector(".cdd-l")));
+  const page1 = txt(w1.d.querySelector(".cmn-wrap.cdd"));
+  check("3229 title ⭐: the title and the trail say College Data Collection", txt(w1.d.querySelector("#cdd-h")) === "College Data Collection" && /^CPL Commons \/ College Data Collection$/.test(txt(w1.d.querySelector(".cdd-trail"))));
+  check("3229 words ⭐: no Harvested and no Not read yet anywhere on the page or in the code's strings",
+    !/Harvested|Not read yet/.test(page1) && !/text: "Harvested"|"Not read yet"|word: "Harvested"|l: "Harvested"|group: "Harvested"/.test(SRC));
+  check("3229 merged ⭐: one Collected card reads N of N, with its definition and the universe; no Colleges and campuses card",
+    txt(tile(w1, "collected").querySelector(".cdd-v")) === "3 of 5" && txt(tile(w1, "collected").querySelector(".cdd-l")) === "Collected"
+    && /A committed program-requirements capture with its records is on file\. 4 colleges and 1 continuing-education campus, in 3 districts\./.test(txt(tile(w1, "collected").querySelector(".cdd-d")))
+    && labels.indexOf("Colleges and campuses") < 0);
+  check("3229 zero card: Not collected yet shows only while a college is not collected", labels.indexOf("Not collected yet") === 1);
+  const allIn = JSON.parse(JSON.stringify(C1));
+  allIn.colleges.forEach((c) => { c.harvested = true; c.programs = c.programs || 1; c.passing = c.passing || 1; c.gap = c.gap || 0; c.read_at = c.read_at || ago(1); });
+  const w2 = load("#commons/data", allIn);
+  await w2.M.boot(); await settle();
+  check("3229 zero card ⭐: with every college collected, no zero Not collected yet card can empty the list", !tile(w2, "unread") && !/Not collected yet/.test(txt(w2.d.querySelector(".cdd-tiles")))
+    && txt(tile(w2, "collected").querySelector(".cdd-v")) === "5 of 5");
+  check("3229 definitions ⭐: every card carries a one-line definition under its number",
+    Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).every((t) => txt(t.querySelector(".cdd-d")).length > 20));
+  const pos = (l) => labels.indexOf(l);
+  check("3229 order ⭐: Collected, then Confidence and the completeness figures, before what is in the way and the team's figures",
+    pos("Collected") === 0 && pos("Confidence") > 0 && pos("Confidence") < pos("Program requirements passing") && pos("Program requirements passing") < pos("Active programs complete")
+    && pos("Active programs complete") < pos("Overall completeness") && pos("Overall completeness") < pos("Programs still to pass") && pos("Programs still to pass") < pos("SLO read waiting")
+    && pos("SLO read waiting") < pos("Scouted for a wave") && pos("Scouted for a wave") < pos("Read cost per passing program"), labels);
+  check("3229 confidence card ⭐ (point 4): one card, three level words, each opening its colleges",
+    labels.filter((l) => /^Confidence/.test(l)).length === 1 && JSON.stringify(Array.from(w1.d.querySelectorAll('.cdd-tile[data-tile="Confidence"] button.cdd-partw')).map(txt)) === '["1 strong","1 partial","1 limited"]');
+  const confOf = (l) => txt(Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).filter((t) => txt(t.querySelector(".cdd-l")) === l)[0].querySelector(".cdd-conf"));
+  check("3229 completeness carries confidence ⭐ (point 4): each completeness figure has its confidence beside it, in words",
+    ["Program requirements passing", "Active programs complete", "Overall completeness"].every((l) => /^Confidence: limited at 1 college, partial at 1, strong at 1$/.test(confOf(l))));
+  const act = Array.from(w1.d.querySelectorAll(".cdd-tiles .cdd-tile")).filter((t) => txt(t.querySelector(".cdd-l")) === "Active programs complete")[0];
+  check("3229 active ⭐: the live completeness count reads N of N with its basis and date, and stays plain (summed over every college)",
+    act.tagName === "DIV" && txt(act.querySelector(".cdd-v")) === "90 of 140" && /live read, Nov 13, 2026/.test(txt(act)));
+  check("3229 no person headline ⭐ (point 5): no card names a person's confirmation or a review", !labels.some((l) => /confirm|review/i.test(l))
+    && !/confirmed|reviewed/i.test(txt(w1.d.querySelector(".cdd-tiles"))));
+  check("3229 gaps: Programs still to pass counts programs, of those listed, and opens their colleges",
+    txt(tile(w1, "gaps").querySelector(".cdd-v")) === "50" && /of 190 listed; opens their 2 colleges, most first/.test(txt(tile(w1, "gaps"))));
+  const fr = Array.from(w1.d.querySelectorAll('.cdd-tile[data-tile="Collection freshness"] button.cdd-partw'));
+  check("3229 freshness: one card, fresh, recent and stale, each opening its colleges", JSON.stringify(fr.map(txt)) === '["1 fresh","1 recent","1 stale"]');
+  fr[2].click();
+  check("3229 freshness 2: stale opens the colleges collected more than a month ago, pressed, in the address",
+    JSON.stringify(rows(w1)) === '["Gamma College"]' && w1.w.location.hash === "#commons/data/stale" && tile(w1, "stale").getAttribute("aria-pressed") === "true");
+  const rr = tile(w1, "reread");
+  check("3229 re-read: Needs a 2026-27 re-read counts the captures of an earlier catalog year", rr && txt(rr.querySelector(".cdd-l")) === "Needs a 2026-27 re-read" && fig(rr) === 1);
+  rr.click();
+  check("3229 re-read 2: it opens them", JSON.stringify(rows(w1)) === '["Gamma College"]');
+  const w3 = load("#commons/data/harvested", C1);
+  await w3.M.boot(); await settle();
+  check("3229 alias: an old #commons/data/harvested address opens the Collected list", tile(w3, "collected").getAttribute("aria-pressed") === "true" && rows(w3).length === 3);
+  w1.d.querySelector("#cdd-all").click();
+  w1.d.querySelector('[data-expand="1"]').click();
+  const m31 = w1.d.getElementById("cdd-more-1");
+  check("3229 row ⭐ (point 3): the opened row leads with Confidence, then the overall bar, then each dataset", JSON.stringify(cards(m31).slice(0, 3)) === '["confidence","overall","pr"]');
+  check("3229 row 2: the row's program requirements bar carries the college's confidence word", /Confidence: strong/.test(txt(m31.querySelector('[data-ds="pr"] .cdd-conf'))));
+  w1.d.querySelector('[data-panel-open="1"]').click();
+  const P31 = w1.d.getElementById("cdd-panel");
+  check("3229 panel ⭐ (points 5, 6): Confidence first; Collected is the group; the person-confirmed count is not a line of the dataset, only a quiet team note",
+    txt(P31.querySelector(".cdd-psec > h3")) === "Confidence" && Array.from(P31.querySelectorAll(".cdd-psec > h3")).map(txt).indexOf("Collected") === 2
+    && !/Records a person confirmed/.test(txt(P31.querySelector('[data-ds="pr"]'))) && /Records a person confirmed: 2 \(live read, Nov 13, 2026\), a team count, not a measure of the collection\./.test(txt(P31.querySelector('[data-team="dates"]'))));
+  check("3229 builder (point 5): the committed tba.loaded reason no longer points at a person's confirmation",
+    !/confirm/i.test(JSON.parse(fs.readFileSync("kb/status/commons_data.json", "utf8")).tba.loaded) && !/person's confirmation/.test(fs.readFileSync("kb/_build_commons_data_status.py", "utf8")));
+  check("3229 next: the authenticated Sierra idea is a Coming next line naming what it waits on, not a build",
+    /Waits on Sierra's sign-in and access controls/.test(txt(w1.d.querySelector('#cdd-next [data-next="College staff improving their own collection"]'))));
+  check("3229 static: no unreconciled figure quoted (courses on Active programs, courses with SLOs)", !/88,?736|89,?192|13,?293|12,?815/.test(SRC));
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));

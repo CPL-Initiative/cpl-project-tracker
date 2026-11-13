@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T15:58:22Z",
+ "written_at": "2026-11-13T17:22:49Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -140,7 +140,7 @@
   "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
   "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
   "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
-  "loaded": "The load time and a person's confirmation are columns of the live program requirements table, which this file does not carry.",
+  "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
   "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each ask when the asks are filed with one.",
   "slo": "Course SLO reads are committed for 12 hosts under kb/course_outcomes/<host>/, not yet read per college here; the SLO queue's state shows where the queue holds a college.",
   "objectives": "Course objectives are committed for 4 hosts (ccc, cccd, cuesta, shasta) under kb/course_outcomes/<host>/, not yet read per college here."

@@ -961,7 +961,7 @@
       el("p", { cls: "cmn-sub" }, ["Each college keeps its own catalog. The Commons gives every college one shared name to point to and shows how its own version lines up with it. ",
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })]),
       el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."]),
-      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["Each college's data, how far each dataset has come and what is in the way: ", el("a", { href: "#commons/data", text: "the data dashboard" }), "."])
+      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["What we have collected for each college, how complete it is, how confident we are in it and what is in the way: ", el("a", { href: "#commons/data", text: "College Data Collection" }), "."])
     ]));
 
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */

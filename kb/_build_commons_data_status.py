@@ -163,8 +163,9 @@ TBA = {
     "cpl": "MAP exhibits per college are a live sync, and no completeness denominator for CPL is defined yet.",
     "mis": "The Fall 2025 MIS course file is committed but not yet joined to each college here.",
     "coe": "The regional labor market crosswalk (kb/regional_cpl_out/) is committed but not yet read per college here.",
-    "loaded": "The load time and a person's confirmation are columns of the live program requirements table, which "
-              "this file does not carry.",
+    # The load time only (Sam, Nov 13, on #3229: downfocus whether a person reviewed something; the reason now
+    # names the load time alone).
+    "loaded": "The load time is a column of the live program requirements table, which this file does not carry.",
     "owners": "The gap census names the change that would move each program, not who makes it; an owner joins each "
               "ask when the asks are filed with one.",
 }
