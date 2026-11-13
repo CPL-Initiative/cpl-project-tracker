@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-13_s644_carry_basis_electives_fill_words.sql
-name=s644_carry_basis_electives_fill_words
+file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql
+name=s648_reclustering_cohort
