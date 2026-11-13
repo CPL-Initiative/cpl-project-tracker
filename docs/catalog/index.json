@@ -16358,7 +16358,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-28",
@@ -16439,7 +16439,7 @@
      ],
      "title": "Sierra's page redesign (after america.gov) \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-28",
@@ -16484,7 +16484,7 @@
      ],
      "title": "The Commons \u2014 one tracking system for the common references, and a Commons dash \u2014 lane state",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-28",
@@ -16580,7 +16580,7 @@
      ],
      "title": "Conductor mode \u2014 how a session runs workers, COBIx and the merge gate",
      "type": null,
-     "updated": "2026-11-12"
+     "updated": "2026-11-13"
     },
     {
      "created": "2026-08-29",
@@ -16898,8 +16898,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 605,
+   "count": 606,
    "docs": [
+    {
+     "created": "2026-11-13",
+     "governs": [],
+     "n": 645,
+     "path": "docs/session_645_handoff.md",
+     "status": "internal",
+     "tags": [
+      "handoff",
+      "session"
+     ],
+     "title": "Session 645 handoff (from SkyWren, S644)",
+     "type": null,
+     "updated": "2026-11-13"
+    },
     {
      "created": "2026-11-12",
      "governs": [],
@@ -27142,5 +27156,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1461
+ "total": 1462
 }
