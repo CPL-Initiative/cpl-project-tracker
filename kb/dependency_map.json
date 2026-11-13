@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 920,
+  "file_datasets": 921,
   "external_services": 195,
   "consumers": 579,
   "workflows": 72,
@@ -1135,7 +1135,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1664
+     "line": 1683
     },
     {
      "id": "module:admin.js",
@@ -1832,7 +1832,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2317
+     "line": 2336
     }
    ],
    "main_committers": []
@@ -1888,7 +1888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1349,
+     "line": 1352,
      "tabs": [
       "commons"
      ]
@@ -2472,7 +2472,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1274
+     "line": 1293
     }
    ],
    "main_committers": []
@@ -2491,7 +2491,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1619
+     "line": 1638
     },
     {
      "id": "module:college_briefing.js",
@@ -3193,7 +3193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1675
+     "line": 1694
     },
     {
      "id": "module:dashboard_filters.js",
@@ -4503,7 +4503,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1981
+     "line": 2000
     }
    ],
    "main_committers": []
@@ -5645,7 +5645,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1872
+     "line": 1891
     },
     {
      "id": "module:admin.js",
@@ -6452,7 +6452,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 903,
+     "line": 906,
      "tabs": [
       "commons"
      ]
@@ -6845,7 +6845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2256
+     "line": 2275
     },
     {
      "id": "module:college_briefing.js",
@@ -7058,7 +7058,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1334
+     "line": 1353
     },
     {
      "id": "module:cpl_funding.js",
@@ -19043,6 +19043,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/spot_checks/README.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 58
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/statewide_exhibit_categories.json": {
    "consumers": [
     {
@@ -19125,7 +19138,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 22,
+     "line": 27,
      "tabs": [
       "commons"
      ]
@@ -22071,6 +22084,13 @@
   },
   "file:read_*.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 310
+    },
     {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
@@ -27797,7 +27817,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1132,
+     "line": 1135,
      "tabs": [
       "commons"
      ]
@@ -31339,7 +31359,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1110,
+     "line": 1113,
      "tabs": [
       "commons"
      ]

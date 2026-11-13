@@ -1205,6 +1205,25 @@ async function seedCommonsData(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Commons data dashboard, slice 2 (#3215): one college's row opened in place, or its side panel opened by the
+// address (#commons/data/college/<slug>). The row is opened by its word, as a reader would.
+async function seedCommonsDataOpen(page, theme, what) {
+  // The reduced-motion and keyboard passes open the file bare, so the panel's address is set here too.
+  if (what === "panel") await page.evaluate(() => { const h = "commons/data/college/san-jose-city-college"; if (location.hash.replace(/^#/, "") !== h) location.hash = h; });
+  await seedCommonsData(page, theme);
+  if (what === "row") {
+    await page.evaluate(() => {
+      const all = Array.from(document.querySelectorAll("#cdd-colleges [data-expand]"));
+      const pick = all.filter((b) => /San Jose City/.test(b.textContent))[0] || all[0];
+      if (pick) pick.click();
+    });
+    await page.waitForSelector("#cdd-colleges tr.cdd-more", { state: "attached", timeout: 10000 });
+  } else {
+    await page.waitForSelector("#cdd-panel:not([hidden])", { state: "attached", timeout: 10000 });
+  }
+  await page.waitForTimeout(200);
+}
+
 // The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
 // from the real kb/status/commons.json the origin serves.
 async function seedCociProgress(page, theme) {
@@ -3658,6 +3677,84 @@ module.exports = {
     routes: [{ hash: "commons/data", name: "data-all-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCommonsData(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── The Commons data dashboard, slice 2 (#3215): a college's row opened in place, and its side panel ── */
+  "commons-data-row": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, one college's row open",
+    routes: [{ hash: "commons/data", name: "data-row" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "light", "row"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-row-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, one college's row open, dark",
+    routes: [{ hash: "commons/data", name: "data-row-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "dark", "row"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-panel": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, one college's side panel",
+    routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "light", "panel"),
+    /* The panel is a dialog: Tab stays inside it, and Escape closes it and returns the focus to the list. */
+    keyboard: async (page) => {
+      const out = [];
+      /* At 390 the width edge is display:none, so Tab on the last control must wrap to Close (#3231 review). */
+      await page.setViewportSize({ width: 390, height: 844 });
+      await page.waitForTimeout(150);
+      const narrow = await page.evaluate(() => {
+        const P = document.getElementById("cdd-panel");
+        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled])'));
+        f[f.length - 1].focus();
+        return f.length;
+      });
+      await page.keyboard.press("Tab");
+      const wrapped390 = await page.evaluate(() => document.activeElement && document.activeElement.id);
+      await page.keyboard.press("Shift+Tab");
+      const back390 = await page.evaluate(() => !!document.activeElement && document.getElementById("cdd-panel").contains(document.activeElement) && document.activeElement.id !== "cdd-panel-close");
+      out.push({ name: "at 390, Tab wraps past the hidden width edge to Close, and Shift+Tab wraps back", ok: wrapped390 === "cdd-panel-close" && back390, detail: narrow + " drawn controls; Tab lands on " + wrapped390 });
+      await page.setViewportSize({ width: 1024, height: 900 });
+      await page.waitForTimeout(150);
+      /* The list behind an open panel is inert: a real click on a college word there opens nothing. */
+      const box = await page.evaluate(() => {
+        const w = document.querySelector("#cdd-colleges [data-expand]");
+        w.scrollIntoView({ block: "center" });
+        const r = w.getBoundingClientRect();
+        return { x: r.left + 4, y: r.top + r.height / 2 };
+      });
+      await page.mouse.click(box.x, box.y);
+      const behind = await page.evaluate(() => ({ opened: !!document.querySelector("#cdd-colleges tr.cdd-more"), panel: !document.getElementById("cdd-panel").hasAttribute("hidden"),
+        inert: !!document.querySelector("#cdd-colleges [data-expand]").closest("[inert]") }));
+      out.push({ name: "a college word behind the open panel cannot be activated", ok: !behind.opened && behind.panel && behind.inert, detail: JSON.stringify(behind) });
+      const inside = await page.evaluate(() => {
+        const P = document.getElementById("cdd-panel");
+        const f = Array.from(P.querySelectorAll('a[href], button:not([disabled]), input, [tabindex="0"]'));
+        f[f.length - 1].focus();
+        return { n: f.length, last: document.activeElement === f[f.length - 1] };
+      });
+      await page.keyboard.press("Tab");
+      const wrapped = await page.evaluate(() => document.getElementById("cdd-panel").contains(document.activeElement));
+      out.push({ name: "Tab stays inside the side panel", ok: inside.last && wrapped, detail: inside.n + " controls; after Tab on the last, the focus is " + (wrapped ? "inside" : "outside") });
+      await page.keyboard.press("Escape");
+      const closed = await page.evaluate(() => ({ hidden: document.getElementById("cdd-panel").hasAttribute("hidden"), back: !!(document.activeElement && document.activeElement.closest("#cdd-colleges")),
+        inert: document.querySelectorAll("[inert]").length }));
+      out.push({ name: "Escape closes the side panel, returns the focus to the list and releases inert", ok: closed.hidden && closed.back && closed.inert === 0, detail: JSON.stringify(closed) });
+      return out;
+    },
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "commons-data-panel-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, one college's side panel, dark",
+    routes: [{ hash: "commons/data/college/san-jose-city-college", name: "data-panel-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataOpen(page, "dark", "panel"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
