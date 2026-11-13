@@ -152,6 +152,8 @@
     if (!liveRead(M) || !c) return null;
     return ((M.live || {}).colleges || {})[String(c.id)] || null;
   }
+  var MISSING = "The live read holds no counts for this college.";
+  var NO_COUNT = "The live read holds this college but no count for this figure.";
   function liveSrc(M, k) { return ((M.live || {}).tables || {})[k] || "the live counts"; }
   function pc(v) { return v == null ? "" : Math.round(v * 100) + "%"; }
   /* A registry boolean in words: the registry records a link only when one is seen, so the word is "held". */
@@ -159,9 +161,9 @@
   function pathwayWord(g) { return g.sequence_source ? "held" : g.sequence_checked ? "none found when looked for" : "not looked for yet"; }
 
   /* ── slice 3: the catalog platform each harvested college's capture read (shareable), a filter of words ── */
-  function platformsOf(M) {
+  function platformsOf(M, filter) {
     var n = {};
-    M.colleges.forEach(function (c) { if (c.platform) n[c.platform] = (n[c.platform] || 0) + 1; });
+    (filter ? listFor(M, filter) : M.colleges).forEach(function (c) { if (c.platform) n[c.platform] = (n[c.platform] || 0) + 1; });
     return Object.keys(n).sort(function (a, b) { return n[b] - n[a] || platformWord(a).localeCompare(platformWord(b)); }).map(function (k) { return [k, n[k]]; });
   }
 
@@ -192,9 +194,8 @@
   function overallTile(M) {
     var st = (M.overall || {}).statewide || {};
     if (!liveRead(M) || st.mean == null) return { v: "TBA", l: "Overall completeness", d: liveReason(M), tba: true };
-    var n = listFor(M, "overall").length;
     return { f: "overall", v: pc(st.mean), l: "Overall completeness", basis: liveWords(M),
-      d: "The mean of " + fmt(n) + " colleges' overall bars, " + liveWords(M) + ". " + (keptWords(M) ? keptWords(M) + " " : "") + "Opens them, lowest first." };
+      d: "The mean of " + fmt(st.colleges) + " colleges' overall bars, " + liveWords(M) + ". " + (keptWords(M) ? keptWords(M) + " " : "") + "Opens them, lowest first." };
   }
   /* The API checklist's figure: connected, of the APIs a connection is needed for. A status the builder reads
      unverified never counts as connected. It opens the checklist. */
@@ -333,15 +334,19 @@
     /* The live counts for this college (basis live, its own date), apart from the committed files' figures above. */
     var lv = liveOf(M, c), lp = (lv && lv.programs) || {}, lr = (lv && lv.records) || {}, lc = (lv && lv.program_courses) || {},
       lo = (lv && lv.outcomes) || {}, lg = (lv && lv.registry) || {};
+    /* A completed live read that holds no counts for this college is its own case, with its own reason. */
+    var gone = !lv && liveRead(M) ? MISSING : "";
+    var liveAt = lv ? { at: M.live.read_at, kind: "live read" } : null;
     if (lv) {
       pr.live = { title: "From the " + liveWords(M), lines: [["Active programs", fmt(lp.active)], ["Teachout programs (apart from Active)", fmt(lp.teachout)],
         ["Approved programs (apart from Active)", fmt(lp.approved)], ["Program records on file", fmt(lr.total)], ["Active programs with a passing record", fmt(lr.active_passing)],
         ["Records a person confirmed", fmt(lr.checked)], ["Courses on Active programs", fmt(lc.active_courses)]] };
       pr.held = true; pr.src += "; live: " + liveSrc(M, "programs") + "; " + liveSrc(M, "records");
-    } else pr.later = [["Teachout and Approved programs", "TBA", liveReason(M)]];
+      pr.liveStamp = liveAt;
+    } else pr.later = [["Teachout and Approved programs", "TBA", gone || liveReason(M)]];
     L.push(pr);
 
-    var slo = { key: "slo", group: "Harvested", label: "Course SLOs", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: lv ? "" : tbaOf(M, "slo") };
+    var slo = { key: "slo", group: "Harvested", label: "Course SLOs", held: !!c.slo_queue, src: "kb/course_outcomes/queue.json", tba: lv ? "" : gone || tbaOf(M, "slo") };
     if (c.slo_queue) {
       slo.state = "SLO read " + c.slo_queue.state;
       slo.note = c.slo_queue.why || "";
@@ -349,28 +354,34 @@
     }
     /* A live figure: courses with the outcome, of the courses on the college's Active programs. */
     function liveCourses(d, n, all, at, what) {
-      d.held = true; d.num = n == null ? 0 : n; d.den = lc.active_courses;
-      d.value = d.den ? pc(pct(d.num, d.den)) : "None listed";
-      d.liveNote = fmt(n) + " of " + fmt(lc.active_courses) + " courses on Active programs have " + what + "; " + fmt(all) + " courses in all";
-      d.basis = cap(liveWords(M));
-      d.liveStamp = at ? { at: at, kind: "loaded" } : null;
+      d.held = true; d.basis = cap(liveWords(M));
+      d.liveStamp = at ? { at: at, kind: "loaded" } : liveAt;
+      if (n == null || lc.active_courses == null) d.tba = NO_COUNT;
+      else {
+        d.num = n; d.den = lc.active_courses;
+        d.value = d.den ? pc(pct(d.num, d.den)) : "None listed";
+        d.liveNote = fmt(n) + " of " + fmt(lc.active_courses) + " courses on Active programs have " + what + (all == null ? "" : "; " + fmt(all) + " courses in all");
+      }
       d.src = (d.src ? d.src + "; " : "") + "live: " + liveSrc(M, "outcomes") + "; " + liveSrc(M, "program_courses");
     }
     if (lv) liveCourses(slo, lo.slo_courses_on_active, lo.slo_courses, lo.slo_loaded_at, "SLOs");
     L.push(slo);
-    var plo = { key: "plo", group: "Harvested", label: "Program PLOs", tba: tbaOf(M, "plo") };
+    var plo = { key: "plo", group: "Harvested", label: "Program PLOs", tba: gone || tbaOf(M, "plo") };
     if (lv) {
-      plo.held = true; plo.num = lr.active_with_plos || 0; plo.den = lp.active; plo.tba = "";
-      plo.value = plo.den ? pc(pct(plo.num, plo.den)) : "None listed";
-      plo.liveNote = fmt(lr.active_with_plos) + " of " + fmt(lp.active) + " Active programs carry PLOs in their record";
-      plo.basis = cap(liveWords(M)); plo.src = "live: " + liveSrc(M, "records");
+      plo.held = true; plo.tba = ""; plo.basis = cap(liveWords(M)); plo.src = "live: " + liveSrc(M, "records"); plo.liveStamp = liveAt;
+      if (lr.active_with_plos == null || lp.active == null) plo.tba = NO_COUNT;
+      else {
+        plo.num = lr.active_with_plos; plo.den = lp.active;
+        plo.value = plo.den ? pc(pct(plo.num, plo.den)) : "None listed";
+        plo.liveNote = fmt(lr.active_with_plos) + " of " + fmt(lp.active) + " Active programs carry PLOs in their record";
+      }
     }
     L.push(plo);
-    var obj = { key: "obj", group: "Harvested", label: "Course objectives", tba: tbaOf(M, "objectives") };
+    var obj = { key: "obj", group: "Harvested", label: "Course objectives", tba: gone || tbaOf(M, "objectives") };
     if (lv) { obj.tba = ""; liveCourses(obj, lo.objective_courses_on_active, lo.objective_courses, lo.objective_loaded_at, "objectives"); }
     L.push(obj);
 
-    var cat = { key: "cat", group: "Harvested", label: "Catalog source", held: !!(c.platform || c.scout || lv), tba: lv ? "" : tbaOf(M, "catalog_registry"),
+    var cat = { key: "cat", group: "Harvested", label: "Catalog source", held: !!(c.platform || c.scout || lv), tba: lv ? "" : gone || tbaOf(M, "catalog_registry"),
       src: (c.platform ? "the capture's own record of its catalog" : "") + (c.platform && c.scout ? "; " : "") + (c.scout ? scoutFile(M, c) : "") };
     /* Each source keeps its own lines and its own stamp (the capture's read, the scout's check), so an age cue never
        dates a line another source wrote; where they disagree, both show, labeled. */
@@ -389,7 +400,8 @@
           sc.catalog_year && c.catalog_year && sc.catalog_year !== c.catalog_year ? "catalog year" : null].filter(Boolean).join(" and ") + " than the capture read.";
     }
     if (lv) cat.parts.push({ key: "registry", title: "What the program source registry holds (" + liveWords(M) + ")",
-      lines: [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)], ["Pathway source", pathwayWord(lg)]],
+      lines: lg.row === false ? [["Registry row", "No registry row for this college"]]
+        : [["Catalog link", heldWord(lg.catalog_link)], ["Curriculum view", heldWord(lg.course_outline_link)], ["Pathway source", pathwayWord(lg)]],
       stamp: { at: M.live.read_at, kind: "live read" } });
     if (lv) cat.src = (cat.src ? cat.src + "; " : "") + "live: " + liveSrc(M, "registry");
     L.push(cat);
@@ -464,11 +476,11 @@
   function detail(M, c, now) {
     var cards = datasets(M, c).filter(function (d) { return d.held; }).map(function (d) {
       return el("section", { cls: "cdd-card", "data-ds": d.key, "aria-label": d.label }, [el("h4", { text: d.label }),
-        d.den != null ? bar(d) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
+        d.den != null ? bar(d) : d.basis && d.tba ? tba(d.tba) : null, d.state ? el("p", { cls: "cdd-state", text: d.state }) : null,
         d.state && d.note ? el("p", { cls: "cdd-of", text: d.note }) : null,
         d.lines && d.lines.length ? dl(d.lines) : null,
         d.causes && d.causes.length ? el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }) : null]
-        .concat(liveBits(d, now), d.parts ? parts(d, now) : (d.stamp || d.liveStamp === undefined ? [stampLine(d.stamp, now)] : [])));
+        .concat(!d.parts && (d.stamp || d.liveStamp === undefined) ? [stampLine(d.stamp, now)] : [], liveBits(d, now), d.parts ? parts(d, now) : []));
     });
     var ov = overallOf(M, c);
     if (ov) cards.unshift(el("section", { cls: "cdd-card", "data-ds": "overall", "aria-label": "Overall" }, overallBits(M, ov)));
@@ -537,9 +549,10 @@
         if (d.lines && d.lines.length) kids.push(dl(d.lines));
         if (d.causes && d.causes.length) kids.push(el("p", { cls: "cdd-of", text: "Still to pass, by cause: " + d.causes.map(function (x) { return x[0] + " " + fmt(x[1]); }).join("; ") }));
         (d.later || []).forEach(function (x) { kids.push(el("p", { cls: "cdd-tbaline" }, [el("strong", { text: x[0] + ": " + x[1] + ". " }), x[2]])); });
+        /* The committed lines' stamp sits under them, before the live block and its own stamp. */
+        if (!d.parts && (d.stamp || (d.held && d.liveStamp === undefined))) kids.push(stampLine(d.stamp, now));
         kids = kids.concat(liveBits(d, now));
         if (d.parts) kids = kids.concat(parts(d, now));
-        else if (d.stamp || (d.held && d.liveStamp === undefined)) kids.push(stampLine(d.stamp, now));
         if (d.src && d.held) kids.push(el("p", { cls: "cdd-src", text: "Source: " + d.src }));
         return el("div", { cls: "cdd-pds", "data-ds": d.key }, kids);
       })));
@@ -809,7 +822,9 @@
   /* The list's catalog platform filter: each platform the captures read, as a word with its count; it lives only in
      the address and the visit. */
   function platformControl(M) {
-    var P = platformsOf(M);
+    /* Each word's figure counts within the active filter, the list it opens; the chosen word stays even at zero. */
+    var P = platformsOf(M, S.filter);
+    if (S.platform && !P.some(function (p) { return p[0] === S.platform; })) P.push([S.platform, 0]);
     if (!P.length) return null;
     var kids = [el("span", { cls: "cdd-label", id: "cdd-plat-l", text: "Catalog platform" })];
     [["", "Any", null]].concat(P.map(function (p) { return [p[0], platformWord(p[0]), p[1]]; })).forEach(function (p) {

@@ -582,6 +582,46 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   s8.d.querySelector('.cdd-views a[data-goto="list"]').click();
   check("address 14: the list word returns to the list", s8.d.getElementById("cdd-colleges") && s8.w.location.hash === "#commons/data");
 
+  // ── (11) the review of #3236: each confirmed finding, a check that failed before its fix ──
+  const R2 = JSON.parse(JSON.stringify(READ));
+  R2.colleges[1].platform = "pdf";                                   // Beta: pdf too, so pdf counts 2 statewide
+  R2.live.colleges[4] = JSON.parse(JSON.stringify(LIVE_COLLEGES[1]));   // Delta: never harvested, but in the live read
+  R2.live.colleges[3].outcomes.slo_courses_on_active = null;            // Gamma: one table came back without a count
+  R2.live.colleges[3].registry = { row: false, catalog_link: false, course_outline_link: false, sequence_source: false, sequence_checked: false };
+  R2.overall.statewide.colleges = 7;                                    // the builder's own count behind its mean
+  const v1 = load("#commons/data/college/beta-college", R2);
+  await v1.M.boot(); await settle();
+  const PB = v1.d.getElementById("cdd-panel"), bsec = (k) => txt(PB.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 missing 1 ⭐: a college the completed live read does not hold gets its own true reason, never 'has not run yet'",
+    /Teachout and Approved programs: TBA\. The live read holds no counts for this college\./.test(bsec("pr")) && !/has not run yet/.test(txt(PB)));
+  check("review3236 missing 2 ⭐: its SLO, PLO, objective and registry sections say the same, not the not-carried reasons",
+    ["slo", "plo", "obj", "cat"].every((k) => /The live read holds no counts for this college\./.test(bsec(k))) && !/Registry reason|PLO reason|Objectives reason/.test(txt(PB)));
+  const v2 = load("#commons/data/college/alpha-college", R2);
+  await v2.M.boot(); await settle();
+  const PA = v2.d.getElementById("cdd-panel"), asec = (k) => txt(PA.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 stamp 1 ⭐: a live figure carries the live read's stamp, never 'Not yet' (PLOs, objectives with no load time)",
+    /Updated .* PT \(live read\)/.test(asec("plo")) && !/Not yet/.test(asec("plo")) && !/Not yet/.test(asec("obj")));
+  const v3 = load("#commons/data/college/delta-college", R2);
+  await v3.M.boot(); await settle();
+  const PD = v3.d.getElementById("cdd-panel");
+  check("review3236 stamp 2: program requirements for a college in the live read but never harvested carry the live stamp",
+    /\(live read\)/.test(txt(PD.querySelector('[data-ds="pr"]'))) && !/Not yet/.test(txt(PD.querySelector('[data-ds="pr"]'))) && /Teachout programs \(apart from Active\)\s*3/.test(txt(PD.querySelector('[data-ds="pr"]'))));
+  const v4 = load("#commons/data/college/gamma-college", R2);
+  await v4.M.boot(); await settle();
+  const PG = v4.d.getElementById("cdd-panel"), gsec = (k) => txt(PG.querySelector('[data-ds="' + k + '"]'));
+  check("review3236 null ⭐ (COBIx 1): a count the live read lacks reads TBA, never 0%", /TBA\./.test(gsec("slo")) && !/0%|0 of/.test(gsec("slo")));
+  const regG = PG.querySelector('[data-ds="cat"] [data-part="registry"]');
+  check("review3236 registry (COBIx 3): no registry row reads as such, not three not-held lines", regG && /No registry row for this college/.test(txt(regG)) && !/not held|not looked for/.test(txt(regG)));
+  const v5 = load("#commons/data", R2);
+  await v5.M.boot(); await settle();
+  check("review3236 tile (COBIx 2): the overall tile's count is the builder's, the set behind its mean", /The mean of 7 colleges/.test(txt(tile(v5, "overall"))));
+  tile(v5, "gaps").click();
+  const pw = v5.d.querySelector('.cdd-plat[data-platform="pdf"]');
+  const said = Number((txt(pw).match(/\((\d+)\)/) || [])[1]);
+  pw.click();
+  check("review3236 platform ⭐: under an active filter a platform word's figure equals the list it opens, and the filter stays",
+    said === rows(v5).length && rows(v5).length === 1 && v5.w.location.hash === "#commons/data/gaps/platform/pdf");
+
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));
   console.log("\n" + (results.length - failed.length) + "/" + results.length + " checks passed");
