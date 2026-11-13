@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 894,
+  "file_datasets": 896,
   "external_services": 195,
-  "consumers": 569,
+  "consumers": 570,
   "workflows": 70,
   "data_js_files": 71,
   "tabs": 41
@@ -5899,6 +5899,13 @@
      "direction": "read",
      "how": "literal",
      "line": 31
+    },
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": false,
@@ -19013,6 +19020,13 @@
      "direction": "read",
      "how": "literal",
      "line": 51
+    },
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "producers": [
@@ -19038,6 +19052,19 @@
     {
      "by": "workflow:harvest-gap-census.yml",
      "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_no_closed_list.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
     }
    ],
    "served": true,
@@ -24310,6 +24337,19 @@
    "main_committers": []
   },
   "file:tests/harvest_gap_census_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/harvest_no_closed_list_diagnosis_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -32315,6 +32355,7 @@
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
     "tests/harvest_gap_census_test.py",
+    "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
