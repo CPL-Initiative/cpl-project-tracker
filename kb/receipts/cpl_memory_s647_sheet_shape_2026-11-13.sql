@@ -1,13 +1,21 @@
 -- NOT YET RUN: this session's Supabase connector was down, so no row below exists in the table yet. Run it whole.
 -- cpl_memory rows for S647 SkyPipit: Sam's ruling on the shape of a card that needs him, and the four answers he
 -- gave on Open Asks Sheets 186, 187, 188 and 190 between 13:11Z and 13:21Z 2026-11-13. His words are verbatim.
+-- Also his two answers on Open Asks Sheet 191 (14:08Z and 14:11Z 2026-11-13).
+-- SUPERSEDE, IN THE SAME RUN: sam-headline-counts-own-list-2026-11-13 supersedes d-no-closed-list-separate-grade-s644
+-- (filed 'proposed' by S644). Rule 8 says a supersede is said explicitly, so the next session marks the old row
+-- superseded in the same run, after the insert, with this guarded UPDATE (uncomment it; it keys on slug and the
+-- row's current status, so a row someone else changed is left alone). Rollback: set status back to 'proposed'.
+-- update cpl_memory set status = 'superseded'
+--   where slug = 'd-no-closed-list-separate-grade-s644' and status = 'proposed';
 -- INSERT ... ON CONFLICT (slug) DO NOTHING, then the cpl_memory_log append, then the verify (one call, three statements).
 -- ROLLBACK:
 -- delete from cpl_memory_log where memory_id in (select id from cpl_memory where slug in
 --   ('sam-card-that-needs-me-says-what-to-do-2026-11-13','sam-sheet-186-deploy-both-2026-11-13',
 --    'sam-sheet-186-actions-may-open-prs-2026-11-13','sam-sheet-186-six-cases-as-recommended-2026-11-13',
 --    'sam-sheet-187-display-go-stands-2026-11-13','sam-sheet-187-calgetc-34-statewide-2026-11-13',
---    'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13'));
+--    'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13',
+--    'sam-honors-own-mid-2026-11-13','sam-headline-counts-own-list-2026-11-13'));
 -- delete from cpl_memory where slug in (same list);
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
 ('sam-card-that-needs-me-says-what-to-do-2026-11-13','decision','Sam: a card that needs me says what to do, with links, and no status button','Sam, in session, on Sheet 186 card 5, whose decision read turn it on and whose reply row opened on a highlighted Waits for my send or go, verbatim: "I don''t understand ones like this, where you decide to turn it on, which I agree, but then give me a recommend to wait or go...makes no sense to me" and "ok, good. change the button to be clearer an include specific instructions and links for me (like what you just did). I already did this so will mark the card:)" The builder now draws a labeled block (Yours to do, Needs your word, Yours to rule) with numbered steps and links, and refuses the old shape from Sheet 191 on.',array['decision-sheets','governance'],'verified','Sam, in session S647, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
@@ -17,7 +25,9 @@ insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,v
 ('sam-sheet-187-display-go-stands-2026-11-13','decision','Sam: the October 10 go for a display after a load stands, for every college','Sam answered Open Asks Sheet 187 card 3 "It stands" at 13:18:30Z 2026-11-13, his own call: a display build that follows a load which passed its checks needs no further go, at every college rather than one.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 187 card 3, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
 ('sam-sheet-187-calgetc-34-statewide-2026-11-13','decision','Sam: use the statewide Cal-GETC figure of 34 units','Sam answered Open Asks Sheet 187 card 5 "Use 34 statewide" at 13:19:50Z 2026-11-13, his own call: where a catalog names Cal-GETC and prints no unit figure, the record takes the statewide 34 units, named as its source in a reconcile step. About 93 more programs pass the machine checks on the rescore it earns, which is the next session''s work.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 187 card 5, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
 ('sam-sheet-188-apply-carry-basis-2026-11-13','decision','Sam: apply the carry-basis migration the permission check refused','Sam answered Open Asks Sheet 188 card 6 "Apply it" at 13:20:33Z 2026-11-13, his own call. The conductor pushed kb/migrations/.apply at 13:24Z and supabase-migrate.yml run 43433381780 applied the file at 13:27Z (status 201, ledger 201, version 20261113132729, receipt kb/receipts/migration_s644_carry_basis_electives_fill_words_43433381780.json). The permission check did not refuse this time. The function was not read back from the database.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 188 card 6, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
-('sam-sheet-190-deploy-503-answer-2026-11-13','decision','Sam: deploy the extraction function''s 503 answer','Sam answered Open Asks Sheet 190 card 6 "Deploy it" at 13:21:00Z 2026-11-13, his own call: the extraction function answers 503 when the database fails and keeps 401 for a real refusal. The change is not written yet, so his go covers building it and deploying program-requirements-extract from main; no further word is needed.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 190 card 6, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13')
+('sam-sheet-190-deploy-503-answer-2026-11-13','decision','Sam: deploy the extraction function''s 503 answer','Sam answered Open Asks Sheet 190 card 6 "Deploy it" at 13:21:00Z 2026-11-13, his own call: the extraction function answers 503 when the database fails and keeps 401 for a real refusal. The change is not written yet, so his go covers building it and deploying program-requirements-extract from main; no further word is needed.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 190 card 6, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
+('sam-honors-own-mid-2026-11-13','decision','Sam: an Honors course gets its own M-ID, with a declared equivalence to its base course','Sam answered Open Asks Sheet 191 card 1 "two" at 14:08:03Z 2026-11-13, his own call, no note: an Honors course gets its own M-ID, with a declared equivalence to its base course. Carrying it out, with the six re-clustering cases of Sheet 186 card 6, follows the re-mint playbook (docs/coursecontrolnumber_remint.md) and is the next session''s work.',array['commons','m-id','decision'],'verified','Sam, Open Asks Sheet 191 card 1, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13'),
+('sam-headline-counts-own-list-2026-11-13','decision','Sam: the headline counts a program checked against its college''s own course list, with a chip and a note','Sam answered Open Asks Sheet 191 card 2 "count" at 14:11:33Z 2026-11-13, his note verbatim: "count them but add a chip and note about the discrepancy. it is most likely a coding anomaly that will later be untangled and resolved". A program checked against its college''s own course list counts in the headline. Supersedes d-no-closed-list-separate-grade-s644; reverses the card''s recommendation.',array['program-requirements','decision'],'verified','Sam, Open Asks Sheet 191 card 2, 2026-11-13','Sam',date '2026-11-13','SkyPipit (S647)',date '2026-11-13')
 on conflict (slug) do nothing;
 insert into public.cpl_memory_log (memory_id, actor, action, note, after)
 select id, 'SkyPipit (S647)', 'create', 'Sam''s answers of 2026-11-13 and his ruling on the card shape (S647)', to_jsonb(m)
@@ -25,7 +35,8 @@ from public.cpl_memory m where m.slug in
   ('sam-card-that-needs-me-says-what-to-do-2026-11-13','sam-sheet-186-deploy-both-2026-11-13',
    'sam-sheet-186-actions-may-open-prs-2026-11-13','sam-sheet-186-six-cases-as-recommended-2026-11-13',
    'sam-sheet-187-display-go-stands-2026-11-13','sam-sheet-187-calgetc-34-statewide-2026-11-13',
-   'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13')
+   'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13',
+   'sam-honors-own-mid-2026-11-13','sam-headline-counts-own-list-2026-11-13')
   and not exists (select 1 from public.cpl_memory_log l where l.memory_id = m.id and l.action = 'create');
 select m.slug, count(l.id) filter (where l.action = 'create') as creates
 from public.cpl_memory m left join public.cpl_memory_log l on l.memory_id = m.id
@@ -33,5 +44,6 @@ where m.slug in
   ('sam-card-that-needs-me-says-what-to-do-2026-11-13','sam-sheet-186-deploy-both-2026-11-13',
    'sam-sheet-186-actions-may-open-prs-2026-11-13','sam-sheet-186-six-cases-as-recommended-2026-11-13',
    'sam-sheet-187-display-go-stands-2026-11-13','sam-sheet-187-calgetc-34-statewide-2026-11-13',
-   'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13')
+   'sam-sheet-188-apply-carry-basis-2026-11-13','sam-sheet-190-deploy-503-answer-2026-11-13',
+   'sam-honors-own-mid-2026-11-13','sam-headline-counts-own-list-2026-11-13')
 group by m.slug order by m.slug;

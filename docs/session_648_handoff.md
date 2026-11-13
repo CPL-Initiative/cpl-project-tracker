@@ -9,7 +9,7 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyTanager (Session 648)
 
-## Since this handoff was written (Sam, 13:11Z to 13:20Z 2026-11-13)
+## Since this handoff was written (Sam, 13:11Z to 14:11Z 2026-11-13)
 
 Sam answered every sheet that carried a waiting card. Your work, in this order:
 
@@ -25,8 +25,10 @@ Sam answered every sheet that carried a waiting card. Your work, in this order:
    `electives_fill_words` and `hours_total_printed` are out of the carry basis.
 3. **Read the first hourly `first-light-apply.yml` run.** Sam turned on the setting that lets GitHub Actions open
    pull requests, 13:15Z, Sheet 186 card 5, so that run can now open its one pull request.
-4. **Carry out the six re-clustering cases as recommended** — his ruling, 13:16Z, Sheet 186 card 6 — under the
-   commons lane's plan and the re-mint playbook. The **Honors** question he left for a note is Sheet 191 card 1.
+4. **Carry out the seven re-clustering changes**: the six cases as recommended (his ruling, 13:16Z, Sheet 186
+   card 6) and the Honors split (his ruling, 14:08Z, Sheet 191 card 1: an Honors course gets its own M-ID, with a
+   declared equivalence to its base course), under the commons lane's plan and the re-mint playbook
+   (`docs/coursecontrolnumber_remint.md`).
 5. **The 503 change** has his go (13:21Z, [Sheet 190](https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y) card 6):
    it is built on draft #3227 (`claude/extract-503-on-upstream-s647`, head `1a62b30a`, not deployed, no review yet):
    a review of at most 9 agents and COBIx's read, merge on green, then dispatch `cpl-chat-deploy.yml` with
@@ -35,6 +37,15 @@ Sam answered every sheet that carried a waiting card. Your work, in this order:
    (13:18Z, [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 3), and a catalog that names
    Cal-GETC and prints no figure **takes the statewide 34 units** (13:19Z, Sheet 187 card 5) — the reconcile step and
    the rescore it earns, about 93 programs, are yours.
+6. **The headline counts a program checked against its college's own course list** (his ruling, 14:11Z,
+   [Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9) card 2, reply `count`), with this note, verbatim:
+   *"count them but add a chip and note about the discrepancy. it is most likely a coding anomaly that will later be
+   untangled and resolved"*. He reverses the S644 conductor's decision `d-no-closed-list-separate-grade-s644` and the
+   card's recommendation, which is his to do. The build is the harvest lane's NEXT (9): one passing rule for the tab,
+   the gap census and the headline (the places that define it are listed there), a chip in words on each such program,
+   a note beside the headline giving how many rest on that check, and his reading kept visible. The function change
+   needs a migration (Rule 10) and a rescore; the Commons data dashboard's *Program requirements passing* tile reads
+   the same rule.
 
 **Sam's ruling on the shape of a card that needs him (2026-11-13), verbatim.** Looking at Sheet 186 card 5, whose
 decision read "turn it on" and whose reply row opened on a highlighted *Waits for my send or go*:
@@ -52,10 +63,11 @@ to rule* — with numbered steps and a link wherever one exists, and replies tha
 builder (`CPLBrain/decision-sheets/_build_open_asks_decision_sheet.py`) refuses the old shape from Sheet 191 on;
 Sheets 181 to 190 are grandfathered, because their replies are keyed to card position.
 
-**[Open Asks Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9) is current.** Two cards wait: the Honors
-question, and Sheet 187 card 4, which he marked Follow up with *"I don't understand this one. give me two examples"*
-and which 191 restates with Irvine Valley 45871 and College of Alameda 9013 against Diablo Valley's Dental Hygiene
-A.S. Sheets 186 to 190 hold no waiting card.
+**[Open Asks Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9) is current and fully answered** (14:11:37Z):
+card 1 `two` (14:08:03Z), card 2 `count` (14:11:33Z, the note above). Card 2 restated Sheet 187 card 4 with Irvine
+Valley 45871 and College of Alameda 9013 against Diablo Valley's Dental Hygiene A.S. **Nothing waits for Sam on any
+sheet now.** Sheets 186 to 190 hold no waiting card. A session publishes a new sheet when it has a new decision to
+record.
 
 **The `cpl_memory` rows for all of this wait in a file**, not in the table: the Supabase connector was down, so
 `kb/receipts/cpl_memory_s647_sheet_shape_2026-11-13.sql` is marked NOT YET RUN. Run it, then the rows exist.
@@ -97,8 +109,8 @@ In this order; read each from its branch or PR.
    Actions secret, no new anon grant, its own `read_at`). The College view and later slices wait for Sam's go.
 4. **#3219** (the COR description step, not a go; Sam approves the PR) and **#3220** (the data element dictionary, a
    docs proposal). #3217 stays parked: build nothing, pull nothing from CVC.
-5. **The migration push** waits for Sam on [Open Asks Sheet 188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ)
-   card 6.
+5. **The migration push** applied on his go ([Open Asks Sheet 188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ)
+   card 6); its read-back is item 2 at the top.
 6. Before any merge, read COBIx from the last comment (`perPage` 1 from the last page) on #3111, #3202, #3215 and #3222;
    never `get` #3111 or #3110. Better still, have a worker read the thread and report the tally. Then Rule 8's
    `cpl_memory` query, the three-repo check, the highest-numbered handoff, `list_sessions` if you have it, `df -h /`,
@@ -110,13 +122,12 @@ In this order; read each from its branch or PR.
 re-extract within $40, after the reader), 2 through its reread, 3 and 4 as builds that merge on green after COBIx's
 review. A display after a load that passed its checks is covered by Sam's 2026-10-10 go
 (`sam-first-display-run-explicit-go-2026-11-12`); merging a college PR publishes its build, so COBIx's spot-check comes
-first. **Waits for Sam, never run by a session:** the migration push; the 503 change; cards 4 and 5 of [Sheet
-187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA); cards 4 to 6 of [Sheet
-186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt); the Commons College view; anything on the `CLAUDE.md` hold list.
+first. Every sheet card is answered (the top section). **Never run by a session without his word:** the Commons
+College view; anything on the `CLAUDE.md` hold list.
 #2894 is his. **[Open Asks Sheet 190](https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y)** (Version 1, published about
 12:40Z by the documents worker; `SHEET_ID` `2026-11-13-open-asks-190`, 58,312 bytes, a fresh store, `replies` empty at
-publish by a list read) is current: S647's decisions on cards 1 to 5, and card 6 waits (the 503 change). Sheets 188, 187
-and 186 stay current for their own waiting cards; [Sheet 189](https://claude.ai/artifact/K8pAMkQywm4VmGBAKbSf6x) holds
+publish by a list read) holds S647's decisions on cards 1 to 5, and card 6 is answered (the 503 change has his go). Sheet 191 is
+current; [Sheet 189](https://claude.ai/artifact/K8pAMkQywm4VmGBAKbSf6x) holds
 S646's decisions. 190 points to all four.
 
 ## You are the conductor
@@ -221,25 +232,19 @@ when i wake up in a few hours he will have it in prod on our commons front porch
 
 ## Waits for Sam
 
-- **The migration push** ([Sheet 188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ) card 6).
-- **The 503 change** to the extraction function's caller check, COBIx's suggestion (503 on an upstream error, 401 only
-  for a real refusal): it changes a deployed function, so it waits for his deploy word
-  ([Sheet 190](https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y) card 6; `p-401-was-the-database-s647`).
-- [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) card 4, does the course-list grade count in the
-  headline; card 5, a statewide Cal-GETC of 34 units.
-- [Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) cards 4 to 6: "deploy" for `docket-process` and
-  `library-publish-now`; whether GitHub Actions may create pull requests; the six re-clustering cases and Honors.
-- **#3217** (the CVC chip) stays parked until he lifts it.
+Nothing waits for Sam on any sheet. He answered Sheets 186 to 190 between 13:11Z and 13:21Z and
+[Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9) at 14:08Z and 14:11Z (the top section gives each answer
+and the work it makes yours). **#3217** (the CVC chip) stays parked until he lifts it.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
 1. **`program-requirements-harvest` NEXT (1) and (2):** *First things* 1 and 2. **(3)** a reading-procedure check that
    flags a record whose notes carry a rule its blocks do not (Santiago Canyon 11910, 32319, 31848; San Jose City 37604).
-   **(4)** the PDF reader's wrapped-heading follow-ups. **(5)** the migration and the 503 change, on Sam's word.
+   **(4)** the PDF reader's wrapped-heading follow-ups. **(5)** the 503 change and the Cal-GETC reconcile, his go on file. **(9)** the headline's own-list rule, chip and note (Sheet 191 card 2).
    **(6)** why the build carries Monterey Peninsula 03653, 22098, 39361 and the table does not. **(7)** COBIx's district
    files, the phase 0 builder, the CMS probe (#3198). **(8)** the wave's fixed-rule sample, census follow-ups, Copper
    Mountain; the catalog-year rule; De Anza; Redwoods. Step 11: Allan Hancock's SLO read.
-2. **`commons` NEXT:** *First things* 3 and 4; the re-clustering NEXT waits on Sheet 186 card 6.
+2. **`commons` NEXT:** *First things* 3 and 4; the seven re-clustering changes (the six cases and Honors), ruled.
 3. **`library` Next:** IACA's `regen` (`iaca-mvpmcjyl`, Crystal Nasio) waits on what she wants changed; S647 did not work
    it. NEXT 0, Sam's List publicly.
 4. **`governance-team-enablement` NEXT:** (1) the first daily log that carries `Daily push conflicted` or `Daily push
