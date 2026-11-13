@@ -737,7 +737,7 @@ stays here.
 > time. [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> ([Sheet 191](https://claude.ai/artifact/NeR8fkQoj9GVd53NhT29b9), current; none waiting, all answered 2026-11-13). An answer
+> ([Sheet 192](https://claude.ai/artifact/1Kt8Yg88NWUpFduHLofWHQ), current; waiting: 192 4-6). An answer
 > changes its lane's marker in one PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
