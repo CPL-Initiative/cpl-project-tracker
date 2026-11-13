@@ -3,9 +3,9 @@
  "programs": 317,
  "with_closed_list": 267,
  "found": 242,
- "extracted": 243,
+ "extracted": 242,
  "errors": 0,
- "passed_machine_checks": 182,
+ "passed_machine_checks": 181,
  "failed": {
   "coverage": 4,
   "invented": 4,
@@ -14,8 +14,8 @@
   "outcomes": 0
  },
  "cost_usd_run": 5.12,
- "cost_usd_filed": 16.09,
- "cost_per_program": 0.0662,
+ "cost_usd_filed": 16.04,
+ "cost_per_program": 0.0663,
  "extract_calls": 73,
  "extract_failed": [],
  "not_found": [
@@ -525,19 +525,6 @@
   }
  ],
  "run": "43497305929",
- "kept_no_read": [
-  {
-   "control_number": "24377",
-   "title": "General Office Clerk II",
-   "award": "Noncredit program",
-   "method": "not_found",
-   "status": "Active",
-   "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
-   "lost_pages": [],
-   "filed_source_url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl",
-   "filed_run": "43415972509"
-  }
- ],
  "held_wrong_tab": [
   {
    "control_number": "12571",
