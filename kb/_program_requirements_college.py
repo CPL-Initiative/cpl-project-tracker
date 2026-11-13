@@ -920,6 +920,21 @@ def heading_owner(tied: list[tuple[str, dict]]) -> set[str]:
     return keep
 
 
+def tab_names_another(title: str | None, tab_title: str | None, others: set[str]) -> bool:
+    """Whether a Coursedog tab's own title (its catalog name before the award tail) is another state
+    program's title and not this program's: the tab prints a different listed program, and its title does
+    not hold every word of this one's. Glendale's capture of run 43415972509 gave the Information
+    Technology certificate (37070) the tab "Computer Information Systems - Certificate of Achievement"
+    (21305's and 37960's title) at half its title, and its record passed with 15 codes the state does not
+    list for it; Computerized Accounting Specialist (12571) read "Accounting - Certificate of Achievement"
+    (19557's). A title the tab's holds whole still reads it: Communication Studies on the Communication
+    Studies 2.0 tab, two state records of one program (heading_owner)."""
+    own, tab = _plain(title), _plain(tab_title)
+    if not own or not tab or own == tab or tab not in others:
+        return False
+    return not set(own.split()) <= set(tab.split())
+
+
 def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     """Each program's page, a page going only to the programs page_winners()
     lets keep it. A program that loses moves to its next page and tries again;
@@ -927,6 +942,16 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
     ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    # A Coursedog tab that prints another listed program's title is no candidate for this one
+    # (tab_names_another, S647); a page holding several programs is left to page_winners().
+    plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
+    for cn, cands in ranked.items():
+        others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
+        # A heading any of whose readings is the program's own title is its tab ("Child Development - Teacher,
+        # A.S." is Child Development - Teacher's, though its cut form names Child Development).
+        ranked[cn] = [c for c in cands if not (c.get("one_program")
+                                               and plain[cn] not in heading_forms(c.get("heading"))
+                                               and tab_names_another(plain[cn], heading_title(c.get("heading")), others))]
     pos = {cn: 0 for cn in ranked}
     lost: dict[str, list[str]] = {}
     for _ in range(12):
@@ -4372,11 +4397,14 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
+        # The state's status rides with each program the read reached no page for, so a later refile
+        # (refile-kept) can tell a teach-out program from an offered one without a live read (S647).
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-                    "near_miss": r.get("near_miss")}
+                    "near_miss": r.get("near_miss"), "status": r.get("status")}
                    for r in recs if r["method"] in NO_READ],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-                       "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
+                       "pages": r.get("lost_pages"), "status": r.get("status")}
+                      for r in recs if r["method"] == "page_claimed"],
         page_challenged=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
                           "code": r.get("challenged_code")} for r in recs if r["method"] == "page_challenged"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
@@ -4891,32 +4919,51 @@ def carry_refused(keep_from: str, out_dir: str, cns: list[str], run_id: str | No
 
 # A read that reached no page for a program (S647, the conductor's decision on COBIx's finding 1 on #3202,
 # narrowing S646's "not_found and page_claimed are never carried"): a filed record that passes is never deleted
-# by such a read. It stays on file as filed, and the filing names it with the reason. A failing filed record
-# with no new read is dropped as before. The S646 rule kept the record of a program the college no longer
-# offers from standing as current; the state's status still guards that: a program the state lists in
-# teach-out (any status outside CURRENT_STATUS) is not kept. Glendale's filing of run 43415972509 removed four
-# passing records this way (18638 not_found; 19577, 21305, 37960 page_claimed). A gated PDF block (after_unbound)
-# keeps its record by the decision-14 path above, so it is left to that path.
+# by such a read. It stays on file and the filing names it with the reason. A failing filed record with no new
+# read is dropped as before. The S646 rule kept the record of a program the college no longer offers from
+# standing as current; the state's status keeps that guard: a program is kept only when the state lists it
+# Active or Approved (CURRENT_STATUS), and never without a status. Glendale's filing of run 43415972509 removed
+# four passing records this way (18638 not_found; 19577, 21305, 37960 page_claimed); the state lists 19577 in
+# teach-out (Active - Teachout Only, read 12:00Z 2026-11-13), so it stays dropped. A gated PDF block
+# (after_unbound) keeps its record by the decision-14 path above, so it is left to that path.
 NO_PAGE_METHODS = ("not_found", "page_claimed")
 
 
-def keep_no_read(keep_from: str, out_dir: str, srcs: list[dict]) -> list[dict]:
-    """Copy each passing filed record (passes_live) of a program read as not_found or page_claimed into
-    out_dir's records, byte for byte as filed, and return one entry per record kept: its method and the
-    reason the read gave (the near miss's why, or the pages it lost), its state status (None where the
-    source names none), and the filed record's source and run."""
+def filed_year(folder: str | None) -> str | None:
+    """The catalog year of the capture a college folder (or a run's out/) holds, or None."""
+    try:
+        with open(os.path.join(folder or "", "capture.json")) as fh:
+            return json.load(fh).get("catalog_year")
+    except (OSError, ValueError):
+        return None
+
+
+def kept_year(rec, year: str | None):
+    """A record kept from its filing without a new read, with the catalog year it was read from: its own, or,
+    for a record filed before records carried one, its filing's (S647). load_rows() stamps a row with the new
+    capture's year where a record names none, so a kept 2025-2026 record would load and reread as 2026-2027."""
+    if isinstance(rec, dict) and not rec.get("catalog_year") and year:
+        return dict(rec, catalog_year=year)
+    return rec
+
+
+def keep_no_read(keep_from: str, out_dir: str, srcs: list[dict], year: str | None = None) -> list[dict]:
+    """Copy each passing filed record (passes_live) of a program read as not_found or page_claimed, whose
+    source names a state status in CURRENT_STATUS, into out_dir's records as filed (kept_year: with the year
+    it was read from), and return one entry per record kept: its method and the reason the read gave (the near
+    miss's why, or the pages it lost), its status, and the filed record's source and run."""
     out = []
     for src in srcs:
         cn = src.get("control_number")
         if not cn or src.get("method") not in NO_PAGE_METHODS or unbound_of(src):
             continue
         status = src.get("status")
-        if status is not None and str(status) not in CURRENT_STATUS:
+        if str(status) not in CURRENT_STATUS:
             continue
         filed = _passing_filed(os.path.join(keep_from, "records", cn + ".json"))
         if not filed:
             continue
-        _write(os.path.join(out_dir, "records", cn + ".json"), filed)
+        _write(os.path.join(out_dir, "records", cn + ".json"), kept_year(filed, year))
         near = src.get("near_miss") or {}
         out.append({"control_number": cn, "title": src.get("title"), "award": src.get("award"),
                     "method": src["method"], "status": status,
@@ -4936,25 +4983,110 @@ def kept_no_read_entries(out_dir: str) -> list[dict]:
     return [got[k] for k in sorted(got)]
 
 
-def refile_kept(college: str, from_dir: str, dest: str | None = None) -> int:
-    """The free local step (S647): apply keep_no_read to a college's committed filing, taking the filed
-    records from an earlier filing unpacked at from_dir (`git archive <sha> <folder>`). No page is loaded
-    and no model is called. The programs are the filing's own not_found and page_claimed lists
-    (capture.json); a committed account carries no state status, so each is kept as the state's file listed
-    it at capture (status None). summary.json names them (kept_no_read) and its counts are taken again
-    from the records; this run's spend and calls stay as filed."""
+def status_export(path: str | None, college: str) -> dict[str, str]:
+    """{control number: status} for one college from a coci_college_programs export in the gap census's
+    --from shape ({"programs": [{college, control_number, status}, ...]}), or {} with no path."""
+    if not path:
+        return {}
+    with open(path) as fh:
+        rows = json.load(fh).get("programs") or []
+    return {str(r["control_number"]): r.get("status") for r in rows
+            if r.get("college") == college and r.get("control_number")}
+
+
+def wrong_tabs(dest: str, report: dict) -> list[dict]:
+    """The filed records read from a Coursedog tab that names another listed program (tab_names_another),
+    from the filing's own account: the tab's catalog name (capture.json's coursedog catalog) against the
+    titles of the programs sources.json lists."""
+    cd = report.get("coursedog") or {}
+    names = {e.get("code"): e.get("name") for e in cd.get("catalog") or []}
+    if not names:
+        return []
+    try:
+        with open(os.path.join(dest, "sources.json")) as fh:
+            srcs = json.load(fh)
+    except (OSError, ValueError):
+        return []
+    plain = {s["control_number"]: _plain(s.get("title")) for s in srcs}
+    out = []
+    for s in srcs:
+        cn = s["control_number"]
+        path = os.path.join(dest, "records", cn + ".json")
+        rec = _filed(path)
+        url = (rec or {}).get("source_url") or ""
+        code = cd_href_code(url.rsplit("/", 1)[0], cd.get("root") or "") if rec else None
+        name = names.get(code)
+        if not name:
+            continue
+        tab = cd_name_title_kind(name)[0]
+        others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
+        if plain[cn] not in heading_forms(name) and tab_names_another(s.get("title"), tab, others):
+            out.append({"control_number": cn, "title": s.get("title"), "award": s.get("award"), "tab": code,
+                        "tab_name": name, "names": sorted(k for k, t in plain.items() if t == tab),
+                        "read_score": rec.get("score"), "read_run": rec.get("extracted_run")})
+    return out
+
+
+def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: dict | None = None) -> int:
+    """The free local step (S647) over a college's committed filing, from an earlier filing unpacked at
+    from_dir (`git archive <sha> <folder>`, the filing the kept records were read in). No page is loaded and
+    no model is called.
+    (1) keep_no_read for the filing's own not_found and page_claimed programs (capture.json), each with the
+    state status capture.json names or `statuses` gives (a coci_college_programs export, status_export); a
+    program with neither is not kept, and a record this step kept earlier whose program no longer qualifies
+    is removed.
+    (2) A record read from a Coursedog tab that names another listed program (wrong_tabs) is held: the earlier
+    filing's record stands as filed, or none, and summary.json lists the read set aside (held_wrong_tab).
+    (3) Every record the filing kept from from_dir without a new read (its content equal to from_dir's)
+    takes from_dir's catalog year where it names none (kept_year).
+    summary.json's counts are taken again from the records; the run's spend and calls stay as filed."""
     dest = dest or os.path.join(COLLEGE_DIR, slug_of(college))
     with open(os.path.join(dest, "capture.json")) as fh:
         report = json.load(fh)
-    have = {os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(dest, "records", "*.json"))}
-    srcs = [dict(e, method=m) for m in NO_PAGE_METHODS for e in report.get(m) or []
-            if e.get("control_number") not in have]
-    kept = keep_no_read(from_dir, dest, srcs)
+    year = filed_year(from_dir)
     path = os.path.join(dest, "summary.json")
     summary = {}
     if os.path.isfile(path):
         with open(path) as fh:
             summary = json.load(fh)
+    rec_path = lambda folder, cn: os.path.join(folder, "records", cn + ".json")
+    # (1)
+    srcs = [dict(e, method=m) for m in NO_PAGE_METHODS for e in report.get(m) or []]
+    for s in srcs:
+        if (statuses or {}).get(s["control_number"]):
+            s["status"] = statuses[s["control_number"]]
+    was = {e["control_number"] for e in summary.get("kept_no_read") or []}
+    have = {os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(dest, "records", "*.json"))}
+    kept = keep_no_read(from_dir, dest, [s for s in srcs if s["control_number"] not in have - was], year)
+    kept_cns = {e["control_number"] for e in kept}
+    dropped = sorted(cn for cn in was - kept_cns if os.path.isfile(rec_path(dest, cn)))
+    for cn in dropped:
+        os.remove(rec_path(dest, cn))
+    # (2)
+    held_now = []
+    for w in wrong_tabs(dest, report):
+        filed = _filed(rec_path(from_dir, w["control_number"]))
+        if filed:
+            _write(rec_path(dest, w["control_number"]), kept_year(filed, year))
+        else:
+            os.remove(rec_path(dest, w["control_number"]))
+        held_now.append(dict(w, reason="the tab prints another listed program (tab_names_another)",
+                             filed=bool(filed), filed_score=(filed or {}).get("score")))
+    held = {e["control_number"]: e for e in summary.get("held_wrong_tab") or []}
+    held.update({e["control_number"]: e for e in held_now})
+    # (3)
+    stamped = 0
+    strip = lambda r: {k: v for k, v in (r or {}).items() if k != "catalog_year"}
+    for p in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
+        cn = os.path.splitext(os.path.basename(p))[0]
+        with open(p) as fh:
+            rec = json.load(fh)
+        if rec.get("catalog_year") or not year:
+            continue
+        old = _filed(rec_path(from_dir, cn))
+        if old is not None and strip(old) == strip(rec):
+            _write(p, kept_year(rec, year))
+            stamped += 1
     records = []
     for p in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
         with open(p) as fh:
@@ -4963,13 +5095,18 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None) -> int:
                       {"calls": summary.get("extract_calls"), "failed": []})
     for k in ("extracted", "errors", "passed_machine_checks", "failed", "cost_usd_filed", "cost_per_program"):
         summary[k] = fresh[k]
-    named = {e["control_number"]: e for e in summary.get("kept_no_read") or []}
-    named.update({e["control_number"]: e for e in kept})
-    if named:
-        summary["kept_no_read"] = [named[k] for k in sorted(named)]
+    summary.pop("kept_no_read", None)
+    summary.pop("held_wrong_tab", None)
+    if kept:
+        summary["kept_no_read"] = sorted(kept, key=lambda e: e["control_number"])
+    if held:
+        summary["held_wrong_tab"] = [held[k] for k in sorted(held)]
     _write(path, summary)
-    print("kept %d passing filed records whose program this read reached no page for: %s"
-          % (len(kept), ", ".join("%s (%s)" % (e["control_number"], e["method"]) for e in kept) or "none"))
+    print("kept %d passing records this read reached no page for (%s); removed %d (%s); held %d read from "
+          "another program's tab (%s); %d kept records took the catalog year %s"
+          % (len(kept), ", ".join("%s %s" % (e["control_number"], e["method"]) for e in kept) or "none",
+             len(dropped), ", ".join(dropped) or "none", len(held_now),
+             ", ".join(e["control_number"] for e in held_now) or "none", stamped, year))
     return 0
 
 
@@ -4996,6 +5133,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         elif src.get("method") in REFUSED_METHODS:
             refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A record kept from the filing without a new read keeps the catalog year it was read from (kept_year).
+    keep_year = filed_year(keep_from) if keep_from else None
     if keep_from and shard == 0:
         # A refusal is no evidence about the program (S646): a program whose own page answered a bot check
         # keeps its filed record, for every college. A program read as not found or as having lost its page
@@ -5031,7 +5170,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 h = held(path, prev.get(src["control_number"]), src)
                 if os.path.isfile(path):
                     with open(path) as fh:
-                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"),
+                               kept_year(json.load(fh), keep_year))
                 holds.append(src["control_number"])
                 print("%-6s %s cov %s, was %s" % (src["control_number"], h["reason"], h["coverage"], h["was_coverage"]),
                       flush=True)
@@ -5054,7 +5194,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 continue
             filed = _filed(os.path.join(keep_from, "records", cn + ".json"))
             if filed:
-                _write(os.path.join(out_dir, "records", cn + ".json"), filed)
+                _write(os.path.join(out_dir, "records", cn + ".json"), kept_year(filed, keep_year))
                 unbound_kept.append(cn)
             if cn in (force or ()):
                 forced_unbound.append(dict(unbound_entry(src, un), filed=bool(filed),
@@ -5077,7 +5217,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     src = json.load(fh)
                 if src.get("method") in NO_PAGE_METHODS:
                     no_srcs.append(src)
-            no_read = keep_no_read(keep_from, out_dir, no_srcs)
+            no_read = keep_no_read(keep_from, out_dir, no_srcs, keep_year)
             for e in no_read:
                 print("%-6s kept: %s (%s); the passing filed record stays" % (e["control_number"], e["method"],
                                                                              e["why"]), flush=True)
@@ -5117,7 +5257,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 path = os.path.join(keep_from or "", "records", src["control_number"] + ".json")
                 if keep_from and os.path.isfile(path):
                     with open(path) as fh:
-                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"),
+                               kept_year(json.load(fh), keep_year))
                 return
         got = X.call(src, key)
         if ceiling_usd is not None:
@@ -5140,7 +5281,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             had = bool(keep_from) and os.path.isfile(path)
             if had:
                 with open(path) as fh:
-                    _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                    _write(os.path.join(out_dir, "records", src["control_number"] + ".json"),
+                           kept_year(json.load(fh), keep_year))
             with kept_lock:
                 failed.append({"control_number": src["control_number"], "title": src.get("title"),
                                "award": src.get("award"), "status": str(status)[:300], "kept_filed": had,
@@ -5168,6 +5310,10 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": X.cost(got.get("model"), got.get("usage")), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if src.get("catalog_year"):
+            # The catalog the read came from rides with the record, so a later read that keeps it without
+            # reading it again keeps its year too (S647; load_rows reads a record's own year first).
+            row["catalog_year"] = src["catalog_year"]
         if (src.get("source") or {}).get("text_sha"):
             # The window's fingerprint, its codes and coverage: what proves a later edition moved the
             # program to other pages without changing it (moved_unchanged, S639).
@@ -5180,7 +5326,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # The read passes less, or covers less, than the filed record does (S641 review, call 2b;
             # kept_passing): the filed record stays as filed, and the program is listed with both scores and
             # the reason for a person.
-            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
+            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), kept_year(filed, keep_year))
             why = kept_reason(filed.get("score"), sc)
             with kept_lock:
                 kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
@@ -5802,6 +5948,8 @@ def main(argv: list[str] | None = None) -> int:
                          "sets its limit; empty, the default, is no ceiling)")
     ap.add_argument("--from", dest="from_dir", default="", help="stage: an earlier run's artifact, unpacked; "
                                                                 "refile-kept: an earlier filing's college folder")
+    ap.add_argument("--status-file", default="", help="refile-kept: a coci_college_programs export with each "
+                                                      "program's status (the gap census's --from shape)")
     ap.add_argument("--sources-run", default="", help="stage only: the run whose artifact --from holds")
     ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
@@ -5820,7 +5968,7 @@ def main(argv: list[str] | None = None) -> int:
         if not os.path.isdir(os.path.join(args.from_dir or "", "records")):
             print("::error::refile-kept needs --from, an earlier filing's college folder holding records/")
             return 2
-        return refile_kept(args.college, args.from_dir)
+        return refile_kept(args.college, args.from_dir, statuses=status_export(args.status_file or None, args.college))
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":

@@ -3,18 +3,18 @@
  "programs": 317,
  "with_closed_list": 267,
  "found": 238,
- "extracted": 242,
+ "extracted": 241,
  "errors": 0,
- "passed_machine_checks": 184,
+ "passed_machine_checks": 181,
  "failed": {
-  "coverage": 3,
+  "coverage": 4,
   "invented": 3,
-  "arithmetic": 57,
+  "arithmetic": 59,
   "repeated": 0,
   "outcomes": 0
  },
  "cost_usd_run": 13.97,
- "cost_usd_filed": 15.78,
+ "cost_usd_filed": 15.71,
  "cost_per_program": 0.0652,
  "extract_calls": 238,
  "extract_failed": [],
@@ -343,34 +343,18 @@
    "title": "Liberal Arts: Arts and Humanities Emphasis",
    "award": "A.A. Degree",
    "method": "not_found",
-   "status": null,
+   "status": "Active",
    "why": "coarse net: the page's code tokens name 15 of 135 listed courses",
    "lost_pages": [],
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=80",
    "filed_run": 41040709338
   },
   {
-   "control_number": "19577",
-   "title": "Child Development: Site Supervisor",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "method": "page_claimed",
-   "status": null,
-   "why": "its pages went to other programs",
-   "lost_pages": [
-    "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
-    "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl"
-   ],
-   "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
-   "filed_run": 41012563119
-  },
-  {
    "control_number": "21305",
    "title": "Computer Information Systems",
    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
    "method": "page_claimed",
-   "status": null,
+   "status": "Active",
    "why": "its pages went to other programs",
    "lost_pages": [
     "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl"
@@ -383,7 +367,7 @@
    "title": "Computer Information Systems",
    "award": "A.S. Degree",
    "method": "page_claimed",
-   "status": null,
+   "status": "Active",
    "why": "its pages went to other programs",
    "lost_pages": [
     "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
@@ -391,6 +375,313 @@
    ],
    "filed_source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
    "filed_run": 41049220135
+  }
+ ],
+ "held_wrong_tab": [
+  {
+   "control_number": "12571",
+   "title": "Computerized Accounting Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "tab": "ACCTG-C",
+   "tab_name": "Accounting - Certificate of Achievement",
+   "names": [
+    "02550",
+    "19557"
+   ],
+   "read_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 3,
+     "listed": 4,
+     "share": 0.75,
+     "missing": [
+      "ACCTG121"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "ACCTG101",
+      "BUSAD101"
+     ],
+     "flagged": [
+      "ACCTG101",
+      "BUSAD101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      16.0,
+      16.0
+     ],
+     "stated": [
+      16.0,
+      16.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "reason": "the tab prints another listed program (tab_names_another)",
+   "filed": true,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 4,
+     "share": 0.0,
+     "missing": [
+      "ACCTG120",
+      "ACCTG121",
+      "ACCTG130",
+      "ACCTG180"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   }
+  },
+  {
+   "control_number": "37070",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "tab": "CIS-C",
+   "tab_name": "Computer Information Systems - Certificate of Achievement",
+   "names": [
+    "21305",
+    "37960"
+   ],
+   "read_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 9,
+     "share": 0.778,
+     "missing": [
+      "BUSAD204",
+      "CSIS185"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 15,
+     "codes": [
+      "CS/IS135",
+      "CS/IS151",
+      "CS/IS172",
+      "CS/IS174",
+      "CS/IS186",
+      "CS/IS234",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS260",
+      "CS/IS262",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "flagged": [
+      "CS/IS135",
+      "CS/IS151",
+      "CS/IS172",
+      "CS/IS174",
+      "CS/IS186",
+      "CS/IS234",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS260",
+      "CS/IS262",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "reason": "the tab prints another listed program (tab_names_another)",
+   "filed": true,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS180",
+      "CS/IS183"
+     ],
+     "flagged": [
+      "CS/IS180",
+      "CS/IS183"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      22.0,
+      22.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 21.0-21.0; the catalog states 22.0-22.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 6,
+     "not_verbatim": [
+      "data base management"
+     ],
+     "pass": false
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
+   }
   }
  ]
 }

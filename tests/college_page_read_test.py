@@ -287,6 +287,14 @@ check([f["find"] for f in found] == ["lectureHours", "lectureHours"]
 check(len(cpr.network_find("ab" * 50, ("ab",))) == cpr.NETWORK_FIND_CAP,
       "network_find stops at NETWORK_FIND_CAP places a string")
 
+# ── plan_delay (S647): a plan may slow its read, never speed it ──
+check(cpr.plan_delay({}, None) == 4000 and cpr.plan_delay({}, "4000") == 4000,
+      "a plan naming no delay reads at the workflow's 4 s")
+check(cpr.plan_delay({"delay_ms": 12000}, "4000") == 12000,
+      "Glendale's tab read names 12 s and reads at 12 s")
+check(cpr.plan_delay({"delay_ms": 500}, "4000") == 4000 and cpr.plan_delay({"delay_ms": "x"}, "4000") == 4000,
+      "a plan never reads faster than the workflow's delay, and a delay that is no number is ignored")
+
 if FAILS:
     print("\n%d FAILED" % len(FAILS))
     sys.exit(1)

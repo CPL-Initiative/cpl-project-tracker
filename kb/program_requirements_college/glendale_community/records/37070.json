@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Information Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6677,
+  "input_tokens": 12914,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6677,
-    "output_tokens": 3200,
+    "input_tokens": 12914,
+    "output_tokens": 1993,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,115 +30,90 @@
     "model": null
    }
   ],
-  "output_tokens": 3200,
+  "output_tokens": 1993,
   "output_tokens_details": {
-   "thinking_tokens": 824
+   "thinking_tokens": 789
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09071,
- "ms": 24968,
- "seconds": 25.0,
+ "cost_usd": 0.09152,
+ "ms": 15625,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 9,
    "listed": 9,
-   "share": 0.778,
-   "missing": [
-    "BUSAD204",
-    "CSIS185"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 15,
+   "count": 2,
    "codes": [
-    "CS/IS135",
-    "CS/IS151",
-    "CS/IS172",
-    "CS/IS174",
-    "CS/IS186",
-    "CS/IS234",
-    "CS/IS240",
-    "CS/IS241",
-    "CS/IS242",
-    "CS/IS243",
-    "CS/IS255",
-    "CS/IS260",
-    "CS/IS262",
-    "CS/IS270",
-    "MATH137"
+    "CS/IS180",
+    "CS/IS183"
    ],
    "flagged": [
-    "CS/IS135",
-    "CS/IS151",
-    "CS/IS172",
-    "CS/IS174",
-    "CS/IS186",
-    "CS/IS234",
-    "CS/IS240",
-    "CS/IS241",
-    "CS/IS242",
-    "CS/IS243",
-    "CS/IS255",
-    "CS/IS260",
-    "CS/IS262",
-    "CS/IS270",
-    "MATH137"
+    "CS/IS180",
+    "CS/IS183"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "unequal",
    "computed": [
-    19.0,
-    22.0
+    21.0,
+    21.0
    ],
    "stated": [
-    19.0,
+    22.0,
     22.0
    ],
    "against": "program",
-   "why": []
+   "why": [
+    "the blocks sum to 21.0-21.0; the catalog states 22.0-22.0"
+   ]
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
-   "not_verbatim": [],
-   "pass": true
+   "count": 6,
+   "not_verbatim": [
+    "data base management"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "CIS-C - Computer Information Systems - Certificate of Achievement",
+   "section_heading": "INFORMATION TECHNOLOGY AS DEGREE",
    "measure": "units",
    "total_units": {
-    "min": 19,
+    "min": 22,
     "max": 22
    },
    "open_elective_units": null,
@@ -156,12 +131,23 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Students will demonstrate the proper server operation procedures, maintenance procedures and managing risk associated with real world networks.",
+    "Students will demonstrate installing, configuring and maintaining computer and mobile devices, including diagnosing, resolving and documenting common hardware and software.",
+    "Students will demonstrate and understanding of ethical concern associated with information technology including access, reliability, legal, ethical, and accuracy; identify types of computer crime; select, access, and use appropriate sources."
+   ],
+   "careers": [
+    "network and computer systems administrators",
+    "computer support specialists",
+    "data base administrators",
+    "computer and network security",
+    "digital forensics",
+    "data base management"
+   ]
   },
   "blocks": [
    {
-    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
+    "name": "Required Courses",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -172,72 +158,74 @@
     "courses": [
      {
       "code": "CS/IS 101",
-      "units": 5,
+      "units": 5.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 112",
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 190",
-      "units": 3,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CS/IS 240",
-      "units": 3,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Cloud Computing",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 241",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 242",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 243",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Computer Networking",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
       "code": "CS/IS 194",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 204",
+      "units": 1.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select two course from the following",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS/IS 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS/IS 183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS/IS 185",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CS/IS 193",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
@@ -258,270 +246,47 @@
       "catalog_addition": false
      }
     ]
-   },
-   {
-    "name": "Specialization: Cybersecurity",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 193",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS/IS 194",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS/IS 196",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Data Analytics",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 11,
-     "max": 11
-    },
-    "courses": [
-     {
-      "code": "CS/IS 234",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 270",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH 137",
-      "units": 5.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Information Systems",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 234",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 260",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 270",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Information Technology",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 186",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 194",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS/IS 234",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Programming",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 112",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS/IS 135",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 151",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Unix/Linux Systems Administrator",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 8,
-     "max": 8
-    },
-    "courses": [
-     {
-      "code": "CS/IS 172",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 174",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Specialization: Web Development",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "Specialization",
-    "stated": {
-     "min": 9,
-     "max": 9
-    },
-    "courses": [
-     {
-      "code": "CS/IS 255",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 260",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "CS/IS 262",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "BUSAD 204",
-    "why": "not in the text"
-   },
-   {
-    "code": "CSIS 185",
-    "why": "not in the text; the Information Technology specialization lists CS/IS 186 instead (possible renumbering)"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The program named is 'Information Technology', but the page is the CIS-C Computer Information Systems Certificate of Achievement, which has 'Specialization: Information Technology' as one of nine options. The whole certificate is recorded, with every specialization in option_group 'Specialization'. A reviewer should check whether the state record means only the Information Technology specialization.",
-   "Closed-list code CSIS 194 was matched to the catalog's CS/IS 194 (same course, different subject formatting), so catalog_addition is false.",
-   "The catalog prints units only for each specialization as a whole, not for its courses, so course units in the specialization blocks are null and the printed totals are in stated.",
-   "The page has a 'Program Learning Outcomes' tab, but the extracted text prints no outcomes, so outcomes is empty.",
-   "The closed list's mix of courses (BUSAD 204, CSIS 185) suggests the state record may reflect an older version of the program."
+   "The text prints only an 'INFORMATION TECHNOLOGY AS DEGREE' section; no separate Certificate of Achievement section appears. The AS degree requirements are recorded because the closed list matches them exactly; a reviewer should confirm the certificate shares these requirements.",
+   "The outcomes recorded are those printed for the AS degree section; the certificate is assumed to share them.",
+   "The catalog prints no units beside individual courses; units are null.",
+   "Total of 22 units is from 'choose any additional courses to total a minimum of 22 units'.",
+   "Catalog prints 'CS/IS 1 80, 1 83, 1 85' with spacing artifacts, read as CS/IS 180, 183, 185. CS/IS 185 is treated as the closed list's CSIS 185.",
+   "CS/IS 180 and CS/IS 183 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "43415972509",
+ "extracted_run": 41012563119,
+ "read_run": 40711704988,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "CS/IS 241": [
+    "CS/IS 101": [
+     5.0,
+     5.0
+    ],
+    "CS/IS 112": [
      3.0,
      3.0
     ],
-    "CS/IS 242": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 243": [
+    "CS/IS 190": [
      3.0,
      3.0
     ],
     "CS/IS 194": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 204": [
+     1.0,
+     1.0
+    ],
+    "CS/IS 193": [
      3.0,
      3.0
     ],
@@ -532,61 +297,10 @@
     "CS/IS 197": [
      3.0,
      3.0
-    ],
-    "CS/IS 193": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 234": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 270": [
-     3.0,
-     3.0
-    ],
-    "MATH 137": [
-     5.0,
-     5.0
-    ],
-    "CS/IS 260": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 186": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 112": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 135": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 151": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 172": [
-     4.0,
-     4.0
-    ],
-    "CS/IS 174": [
-     4.0,
-     4.0
-    ],
-    "CS/IS 255": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 262": [
-     3.0,
-     3.0
     ]
    },
    "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
- ]
+ ],
+ "catalog_year": "2025-2026"
 }

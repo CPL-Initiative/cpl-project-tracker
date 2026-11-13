@@ -1,0 +1,11 @@
+{
+ "what": "coci_college_programs status for the Glendale programs the S647 refile-kept step judges, in the gap census's --from shape. Read by the S647 conductor at 12:00Z 2026-11-13 (select control_number, status from coci_college_programs where college = 'Glendale Community College' and control_number in (...)); relayed to the worker, who filed it here. Input to `kb/_program_requirements_college.py refile-kept --status-file`.",
+ "read_at": "2026-11-13T12:00:00Z",
+ "programs": [
+  {"college": "Glendale Community College", "control_number": "18638", "status": "Active"},
+  {"college": "Glendale Community College", "control_number": "19577", "status": "Active - Teachout Only"},
+  {"college": "Glendale Community College", "control_number": "21305", "status": "Active"},
+  {"college": "Glendale Community College", "control_number": "37070", "status": "Active"},
+  {"college": "Glendale Community College", "control_number": "37960", "status": "Active"}
+ ]
+}

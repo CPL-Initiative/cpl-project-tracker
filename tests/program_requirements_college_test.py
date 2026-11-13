@@ -3856,16 +3856,17 @@ with tempfile.TemporaryDirectory() as td:
                             "score": {"coverage": {"pass": True, "placed": 9, "listed": 9}, "invented": {"pass": True},
                                       "arithmetic": {"status": "equal"}, "pass": True}}
     # S647 (the conductor's decision on COBIx's finding 1, #3202): a passing filed record of a program read
-    # not_found or page_claimed stays as filed, byte for byte, and is named with the reason; a failing one
-    # (02602), or one the state lists in teach-out (02604: the S646 rule's case, a program the college is
-    # retiring), is not kept.
+    # not_found or page_claimed stays as filed, with the catalog year it was read from, and is named with the
+    # reason; a failing one (02602), one the state lists in teach-out (02604: the S646 rule's case, a program
+    # the college is retiring) or one whose source names no status (02605) is not kept.
     failing_rec = lambda cn: dict(filed_rec(cn), score={"coverage": {"pass": False, "placed": 2, "listed": 9},
                                                         "invented": {"pass": True}, "arithmetic": {"status": "equal"},
                                                         "pass": False})
     for cn, method, status, rec in (("02599", "page_challenged", "Active", filed_rec), ("11191", "sitemap_page", "Active", filed_rec),
                                     ("02600", "page_claimed", "Active", filed_rec), ("02601", "not_found", "Approved", filed_rec),
                                     ("02602", "not_found", "Active", failing_rec),
-                                    ("02604", "page_claimed", "Active - Teachout Only", filed_rec)):
+                                    ("02604", "page_claimed", "Active - Teachout Only", filed_rec),
+                                    ("02605", "not_found", None, filed_rec)):
         C._write(os.path.join(keep_dir, "records", cn + ".json"), rec(cn))
         open(os.path.join(out_dir, "sources", cn + ".json"), "w").write(json.dumps(
             {"control_number": cn, "method": method, "coverage": 0.0, "text": "", "status": status,
@@ -3889,10 +3890,11 @@ with tempfile.TemporaryDirectory() as td:
     carried_files = sorted(os.listdir(os.path.join(out_dir, "records")))
     check(carried_files == ["02599.json", "02600.json", "02601.json"],
           "extract carries the page_challenged program's record, keeps the passing not_found and page_claimed ones, "
-          "and drops the failing, the teach-out and the read one: %r" % carried_files)
-    check(all(open(os.path.join(out_dir, "records", cn + ".json"), "rb").read()
-              == open(os.path.join(keep_dir, "records", cn + ".json"), "rb").read() for cn in ("02600", "02601")),
-          "a record kept for no read is the filed file byte for byte (no year or carried_in stamped on it)")
+          "and drops the failing, the teach-out, the unstated and the read one: %r" % carried_files)
+    check(all(json.load(open(os.path.join(out_dir, "records", cn + ".json")))
+              == dict(filed_rec(cn), catalog_year="2025-2026") for cn in ("02600", "02601")),
+          "a record kept for no read is the filed record with the catalog year of the filing it was read in "
+          "(no carried_in)")
     with open(os.path.join(out_dir, "kept_unbound_0.json")) as fh:
         no_read_acct = json.load(fh)
     check(no_read_acct["programs"] == ["02600", "02601"]
@@ -3913,9 +3915,9 @@ with tempfile.TemporaryDirectory() as td:
     open(os.path.join(out_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2026-2027"}))
     open(os.path.join(out_dir, "records", "11191.json"), "w").write(json.dumps(filed_rec("11191")))
     cy_rows, _ = C.load_rows("Glendale Community College", folder=out_dir)
-    cy_rows = [r for r in cy_rows if r["control_number"] in ("02599", "11191")]
-    check({r["control_number"]: r["catalog_year"] for r in cy_rows} == {"02599": "2025-2026", "11191": "2026-2027"},
-          "a carried record loads under its own catalog year, a read one under the capture's: %r"
+    check({r["control_number"]: r["catalog_year"] for r in cy_rows}
+          == {"02599": "2025-2026", "02600": "2025-2026", "02601": "2025-2026", "11191": "2026-2027"},
+          "a carried or kept record loads under its own catalog year, a read one under the capture's: %r"
           % {r["control_number"]: r["catalog_year"] for r in cy_rows})
 
 # extract carries forward the filed record of a program whose page answered a bot check, and nothing else.
@@ -3931,56 +3933,128 @@ with tempfile.TemporaryDirectory() as td:
 check(C.REFUSED_METHODS == ("page_challenged",) and C.NO_PAGE_METHODS == ("not_found", "page_claimed"),
       "carry_refused carries a refusal alone; not_found and page_claimed keep a passing record by keep_no_read")
 
-# refile-kept (S647): the free local step over committed files. A filing whose read reached no page for four
-# programs gets their passing records back from the earlier filing byte for byte, a failing one stays dropped,
-# a record already filed is untouched, and summary.json names the kept ones and counts them.
+# refile-kept (S647): the free local step over committed files, from the filing the kept records were read in
+# (main's 2025-2026 PDF filing for Glendale). (1) The no-read programs keep a passing record only with a state
+# status that is offered: 19577, Child Development: Site Supervisor, which the state lists Active - Teachout
+# Only (the conductor's read, 12:00Z 2026-11-13), loses the record an earlier refile kept; 18638, with no
+# status anywhere, is not kept; 21305 Active is. (2) A record read from a Coursedog tab that prints another
+# listed program is held: 37070, Information Technology, read "Computer Information Systems - Certificate of
+# Achievement" and passed; the earlier filing's record stands and the read is listed. (3) A record the filing
+# kept from the earlier one takes its catalog year.
 with tempfile.TemporaryDirectory() as td:
     prior, dest = os.path.join(td, "prior"), os.path.join(td, "dest")
     for d in (os.path.join(prior, "records"), os.path.join(dest, "records")):
         os.makedirs(d)
-    rk_pass = lambda cn, run: {"college": "Glendale Community College", "control_number": cn, "title": "T",
-                               "award": "A.S. Degree", "source_url": "https://www.glendale.edu/c.pdf#page=71",
-                               "extracted_run": run, "cost_usd": 0.05,
-                               "record": {"program": {"measure": "units"}, "blocks": []},
-                               "score": {"coverage": {"pass": True}, "invented": {"pass": True},
-                                         "arithmetic": {"status": "equal"}, "pass": True}}
-    rk_fail = lambda cn: dict(rk_pass(cn, 41049220135), score={"coverage": {"pass": False}, "invented": {"pass": True},
+    rk_pass = lambda cn, run, url="https://www.glendale.edu/c.pdf#page=71": {
+        "college": "Glendale Community College", "control_number": cn, "title": "T", "award": "A.S. Degree",
+        "source_url": url, "extracted_run": run, "cost_usd": 0.05,
+        "record": {"program": {"measure": "units"}, "blocks": []},
+        "score": {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}, "pass": True}}
+    rk_fail = lambda cn: dict(rk_pass(cn, 41012563119), score={"coverage": {"pass": True}, "invented": {"pass": True},
                                                                "arithmetic": {"status": "unequal"}, "pass": False})
-    for cn in ("18638", "21305"):
+    for cn in ("18638", "19577", "21305", "02550"):
         C._write(os.path.join(prior, "records", cn + ".json"), rk_pass(cn, 41049220135))
     C._write(os.path.join(prior, "records", "02603.json"), rk_fail("02603"))
-    C._write(os.path.join(prior, "records", "21307.json"), rk_pass("21307", 41049220135))
-    C._write(os.path.join(dest, "records", "21307.json"), rk_pass("21307", 43415972509))
+    C._write(os.path.join(prior, "records", "37070.json"), rk_fail("37070"))
+    with open(os.path.join(prior, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2025-2026", "run": "41055650373"}, fh)
+    C._write(os.path.join(dest, "records", "19577.json"), rk_pass("19577", 41049220135))      # an earlier refile's keep
+    C._write(os.path.join(dest, "records", "02550.json"), rk_pass("02550", 41049220135))      # kept_passing, no year
+    cis_c = GL_ROOT + "/programs/CIS-C/" + GL_SUFFIX
+    C._write(os.path.join(dest, "records", "37070.json"), rk_pass("37070", 43415972509, cis_c))
+    C._write(os.path.join(dest, "records", "21307.json"), rk_pass("21307", 43415972509, GL_ROOT + "/programs/CST-C/" + GL_SUFFIX))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": cn, "title": t, "award": aw} for cn, t, aw in (
+            ("18638", "Liberal Arts: Arts and Humanities Emphasis", "A.A. Degree"),
+            ("19577", "Child Development: Site Supervisor", "Certificate of Achievement"),
+            ("21305", "Computer Information Systems", "Certificate of Achievement"),
+            ("21307", "Computer Software Technician", "Certificate of Achievement"),
+            ("37070", "Information Technology", "Certificate of Achievement"),
+            ("02550", "Accounting", "A.S. Degree"), ("02603", "Social Science", "A.A. Degree"))], fh)
     with open(os.path.join(dest, "capture.json"), "w") as fh:
-        json.dump({"college": "Glendale Community College", "programs": 4, "found": 1,
+        json.dump({"college": "Glendale Community College", "catalog_year": "2026-2027", "run": "43415972509",
+                   "programs": 7, "found": 3,
+                   "coursedog": {"root": GL_ROOT, "catalog": [
+                       {"code": "CIS-C", "name": "Computer Information Systems - Certificate of Achievement"},
+                       {"code": "CST-C", "name": "Computer Software Technician - Certificate of Achievement"}]},
                    "not_found": [{"control_number": "18638", "title": "T", "award": "A.A. Degree",
                                   "near_miss": {"why": "coarse net: the page's code tokens name 15 of 135 listed courses"}},
                                  {"control_number": "02603", "title": "T", "award": "A.A. Degree", "near_miss": None}],
                    "page_claimed": [{"control_number": "21305", "title": "T", "award": "A.S. Degree",
                                      "pages": [GL_ROOT + "/programs/CST-C/" + GL_SUFFIX]},
-                                    {"control_number": "21307", "title": "T", "award": "A.S. Degree", "pages": []}]}, fh)
+                                    {"control_number": "19577", "title": "T", "award": "A.S. Degree", "pages": []}]}, fh)
     with open(os.path.join(dest, "summary.json"), "w") as fh:
-        json.dump({"extracted": 1, "passed_machine_checks": 1, "cost_usd_run": 0.05, "extract_calls": 1}, fh)
+        json.dump({"extracted": 4, "passed_machine_checks": 4, "cost_usd_run": 0.05, "extract_calls": 1,
+                   "kept_no_read": [{"control_number": "19577", "method": "page_claimed", "status": None}]}, fh)
+    status_file = os.path.join(td, "status.json")
+    with open(status_file, "w") as fh:
+        json.dump({"programs": [{"college": "Glendale Community College", "control_number": "19577",
+                                 "status": "Active - Teachout Only"},
+                                {"college": "Glendale Community College", "control_number": "21305", "status": "Active"},
+                                {"college": "Another College", "control_number": "18638", "status": "Active"}]}, fh)
+    rk_status = C.status_export(status_file, "Glendale Community College")
+    check(rk_status == {"19577": "Active - Teachout Only", "21305": "Active"},
+          "the status export reads one college's rows: %r" % rk_status)
     import contextlib as _rk_ctx, io as _rk_io  # noqa: E401,E402
     with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
-        rk_rc = C.refile_kept("Glendale Community College", prior, dest)
+        rk_rc = C.refile_kept("Glendale Community College", prior, dest, rk_status)
     rk_files = sorted(os.listdir(os.path.join(dest, "records")))
-    check(rk_rc == 0 and rk_files == ["18638.json", "21305.json", "21307.json"],
-          "refile-kept restores the passing no-read records and not the failing one: %r" % rk_files)
-    check(all(open(os.path.join(dest, "records", cn + ".json"), "rb").read()
-              == open(os.path.join(prior, "records", cn + ".json"), "rb").read() for cn in ("18638", "21305"))
-          and json.load(open(os.path.join(dest, "records", "21307.json")))["extracted_run"] == 43415972509,
-          "byte for byte, and a record this read filed is left as it is")
+    check(rk_rc == 0 and rk_files == ["02550.json", "21305.json", "21307.json", "37070.json"],
+          "21305 (Active) is kept; 19577 (teach-out) loses its kept record; 18638 (no status) and 02603 (failing) "
+          "are not kept: %r" % rk_files)
+    rk = lambda cn: json.load(open(os.path.join(dest, "records", cn + ".json")))
+    check(rk("21305") == dict(rk_pass("21305", 41049220135), catalog_year="2025-2026")
+          and rk("02550") == dict(rk_pass("02550", 41049220135), catalog_year="2025-2026")
+          and "catalog_year" not in rk("21307"),
+          "a kept record takes the earlier filing's year; a record this read filed is left as it is")
+    check(rk("37070") == dict(rk_fail("37070"), catalog_year="2025-2026"),
+          "a record read from another program's tab is held: the earlier filing's record stands")
     rk_sum = json.load(open(os.path.join(dest, "summary.json")))
-    check(rk_sum["extracted"] == 3 and rk_sum["passed_machine_checks"] == 3 and rk_sum["cost_usd_run"] == 0.05
+    held = rk_sum.get("held_wrong_tab") or [{}]
+    check(rk_sum["extracted"] == 4 and rk_sum["passed_machine_checks"] == 3 and rk_sum["cost_usd_run"] == 0.05
           and rk_sum["extract_calls"] == 1
           and [(e["control_number"], e["method"], e["status"]) for e in rk_sum["kept_no_read"]]
-          == [("18638", "not_found", None), ("21305", "page_claimed", None)]
-          and rk_sum["kept_no_read"][1]["lost_pages"] == [GL_ROOT + "/programs/CST-C/" + GL_SUFFIX],
-          "the summary counts them, keeps the run's spend and calls, and names each with its reason: %r" % rk_sum)
+          == [("21305", "page_claimed", "Active")]
+          and [(h["control_number"], h["tab"], h["names"], h["filed"], h["read_score"]["pass"]) for h in held]
+          == [("37070", "CIS-C", ["21305"], True, True)],
+          "the summary counts the records, keeps the run's spend and calls, and names the kept and the held: %r" % rk_sum)
     with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
-        C.refile_kept("Glendale Community College", prior, dest)
-    check(json.load(open(os.path.join(dest, "summary.json"))) == rk_sum, "a second refile changes nothing")
+        C.refile_kept("Glendale Community College", prior, dest, rk_status)
+    check(json.load(open(os.path.join(dest, "summary.json"))) == rk_sum
+          and sorted(os.listdir(os.path.join(dest, "records"))) == rk_files, "a second refile changes nothing")
+check(C.kept_year({"a": 1}, "2025-2026") == {"a": 1, "catalog_year": "2025-2026"}
+      and C.kept_year({"catalog_year": "2024-2025"}, "2025-2026") == {"catalog_year": "2024-2025"}
+      and C.kept_year({"a": 1}, None) == {"a": 1},
+      "a kept record keeps its own year, takes its filing's where it names none, and nothing without one")
+
+# A Coursedog tab that prints another listed program is no candidate (tab_names_another, S647). From the
+# filed capture of run 43415972509: 37070 read CIS-C and 12571 read ACCTG-C; a title the tab's holds whole
+# (Communication Studies on the Communication Studies 2.0 tab) still reads it.
+tn_others = {"computer information systems", "accounting", "communication studies 2 0"}
+check(C.tab_names_another("Information Technology", "Computer Information Systems", tn_others)
+      and C.tab_names_another("Computerized Accounting Specialist", "Accounting", tn_others)
+      and not C.tab_names_another("Communication Studies", "Communication Studies 2.0", tn_others)
+      and not C.tab_names_another("Computer Information Systems", "Computer Information Systems", tn_others)
+      and not C.tab_names_another("Tax Preparer", "Tax Fundamentals", tn_others),
+      "a tab naming another listed program is refused; its own, a whole-title holder, or a title no program has "
+      "is not")
+tn_page = lambda code, name, codes: dict(C.cd_page({"url": GL_ROOT + "/programs/%s/%s" % (code, GL_SUFFIX),
+                                                    "title": code + " Program", "body": " ".join(codes), "content": ""},
+                                                   {"code": code, "name": name}),
+                                         codes={P.norm_code(c) for c in codes})
+tn_codes = ["CS/IS 101", "CS/IS 112", "CS/IS 190", "CS/IS 193", "CS/IS 196", "CS/IS 197"]
+tn_pages = [tn_page("CIS-C", "Computer Information Systems - Certificate of Achievement", tn_codes)]
+tn_progs = [{"control_number": "37070", "title": "Information Technology", "award": "Certificate of Achievement",
+             "status": "Active", "closed_list": [{"code": c} for c in tn_codes]},
+            {"control_number": "21305", "title": "Computer Information Systems", "award": "Certificate of Achievement",
+             "status": "Active", "closed_list": [{"code": c} for c in ["BUSAD 106", "ENTRE 101", "ENTRE 102"]]}]
+tn_given = C.assign(tn_progs, tn_pages)
+check(tn_given["37070"]["best"] is None,
+      "the Information Technology certificate does not take the Computer Information Systems tab: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in tn_given.items()})
+tn_given = C.assign(tn_progs[:1], tn_pages)
+check((tn_given["37070"]["best"] or {}).get("url") == tn_pages[0]["url"],
+      "with no listed program of the tab's title, the tab is read as before")
 
 # Coursedog names a program by its code alone for 15 of Glendale's 261 (all noncredit; capture of run
 # 43415972509), so the tab's heading named no program. The index's own link text names it; a program the
@@ -4118,7 +4192,11 @@ with tempfile.TemporaryDirectory() as td:
             os.environ["SUPABASE_SERVICE_KEY"] = old_key
     with open(os.path.join(fdest, "records", "A1.json")) as fh:
         a1 = json.load(fh)
-    check(a1 == filed_ok, "a 401 leaves the filed record untouched: %r" % {k: a1.get(k) for k in ("error", "extracted_run")})
+    # Untouched but for the catalog year of the filing it was read in (2025-2026), since the new capture is
+    # 2026-2027 and the load would stamp that on a record naming none (kept_year, S647).
+    check(a1 == dict(filed_ok, catalog_year="2025-2026"),
+          "a 401 leaves the filed record untouched, with its own catalog year: %r"
+          % {k: a1.get(k) for k in ("error", "extracted_run", "catalog_year")})
     check(sorted(os.listdir(os.path.join(fdest, "records"))) == ["A1.json", "C3.json"],
           "a timed-out call on a program with no filed record files no record: %r"
           % sorted(os.listdir(os.path.join(fdest, "records"))))
