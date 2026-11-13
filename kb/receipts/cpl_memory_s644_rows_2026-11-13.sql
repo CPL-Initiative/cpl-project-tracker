@@ -1,6 +1,6 @@
 -- cpl_memory rows for SkyWren (S644), the Rule 9 checkpoint's step 10, prepared 2026-11-13 by the documents worker.
--- INSERT ... ON CONFLICT (slug) DO NOTHING; NOT RUN by the worker: the conductor runs it through the Supabase MCP
--- and records here the time and the slugs returned. Nine decisions (status proposed, for Sam to revise on Open Asks
+-- INSERT ... ON CONFLICT (slug) DO NOTHING. Run by the conductor through the Supabase MCP at about 02:08Z
+-- 2026-11-13: all 15 returned (insert-only). Nine decisions (status proposed, for Sam to revise on Open Asks
 -- Sheet 187), Sam's opening direction (verified, verified_by Sam Lee), five pitfalls. Every summary at most 400 characters.
 -- ROLLBACK:
 -- delete from cpl_memory where author = 'SkyWren (S644)' and slug in ('sam-harvest-throughput-2026-11-12', 'd-lacc-22-absent-loaded-s644', 'd-display-missing-threshold-s644', 'd-wave-one-branch-hard-stop-s644', 'd-wave-price-rate-floor-s644', 'd-passes-live-stays-equal-only-s644', 'd-hours-reading-gated-sbv-coalinga-s644', 'd-no-closed-list-separate-grade-s644', 'd-cobix-offers-specialist-bots-s644', 'd-dated-reads-runner-job-s644', 'p-new-workflow-dispatch-needs-main-s644', 'p-read-cobix-every-wake-s644', 'p-gate-free-text-reading-per-college-s644', 'p-pinned-test-change-is-reversal-s644', 'p-first-read-pr-needs-display-build-s644');
