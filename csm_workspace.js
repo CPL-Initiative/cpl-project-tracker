@@ -524,10 +524,13 @@
     return !!(state.sent || {})[r.key + "|" + tpl] || (tpl === "nudge" && !!(state.sent || {})[r.key + "|both"]) || !!lastSent(r, tpl);
   }
   function readyOf(r) {
-    if (waitingKinds(r).length) return "wait";
+    // An acceptance that is owed comes before a second request still under review (found 2026-11-13: Alameda,
+    // Hartnell, LA Trade and LA Valley were confirmed with no acceptance sent, and their waiting noncredit
+    // attestation kept them out of Send an acceptance).
     // state.sent bridges the moment between a Sent that saved and the log's re-read.
     if (r.part.confirmed && !isSent(r, "accept")) return "accept";
     if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
+    if (waitingKinds(r).length) return "wait";
     if (r.part.confirmed) return leadOpen(r) && !leadAsked(r) ? "lead" : null;
     return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ||
       sentOf(r, BOTH_SUBJ, 14) && !bouncedSince(r, BOTH_SUBJ) ? null : "nudge";
@@ -585,6 +588,7 @@
   // The email the college's state calls for: the one Ready to send holds, with both asks in one email where both are open.
   function recTpl(r) { var rd = readyOf(r); return rd === "nudge" && leadOpen(r) ? "both" : SENT[rd] ? rd : null; }
   function nextStep(r) {
+    if (state.view === "emails") return emailRecord(r);
     if ((state.view === "accept" || state.view === "request") && readyOf(r) && readyOf(r) !== "wait") return readyWords(r, readyOf(r));
     // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
     // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
@@ -678,7 +682,27 @@
     coord: { g: "look", label: "Confirmed, missing the CPL Coordinator in MAP",
       keep: function (r) { return r.part.confirmed && coordGap(r); } },
     nocoord: { g: "look", label: "No CPL Coordinator in MAP", keep: coordGap },
+    // Who accepted and what the log holds for each email (asked 2026-11-13: "maybe the dashboard says they are
+    // confirmed but we don't actually know for sure that email went out").
+    emails: { g: "look", label: "Email record (who accepted, what was sent)", keep: function (r) { return r.part.confirmed || !!(r.nc && r.nc.standing) || logFor(r.key).some(function (x) { return x.kind === "email"; }); } },
     all: { g: "look", label: "All institutions", keep: function () { return true; } } };
+  function whoOf(e) { return String(e || "").split("@")[0] || "a reviewer"; }
+  // One email's standing in the log: the Sent receipt, else the latest copy or draft, else nothing.
+  function mailStanding(r, tpl, subjRe) {
+    var s = lastSent(r, tpl);
+    if (s) return "marked sent " + shortDate(s.created_at) + " by " + whoOf(s.by_email);
+    var d = logFor(r.key).filter(function (x) { return x.kind === "email" && DRAFT_RE.test(String(x.body || "")) && subjRe.test(String(x.body || "")); })
+      .sort(function (a, b) { return String(a.created_at || "") < String(b.created_at || "") ? 1 : -1; })[0];
+    return d ? "copied or drafted " + shortDate(d.created_at) + " by " + whoOf(d.by_email) + ", no Sent recorded" : "no record of it being sent";
+  }
+  var ACCEPT_SUBJ = /participation confirmation accepted for /i, ACCEPT_NC_SUBJ = /noncredit attestation[^:]* accepted for /i;
+  function emailRecord(r) {
+    var out = [];
+    if (r.part.confirmed) out.push("Confirmation accepted " + (shortDate(r.part.confirmedAt) || "") + (r.part.by ? " by " + whoOf(r.part.by) : "") + "; acceptance email " + mailStanding(r, "accept", ACCEPT_SUBJ) + ".");
+    if (r.nc && r.nc.standing) out.push("Noncredit attestation accepted " + (shortDate(r.nc.confirmedAt) || "") + (r.nc.by ? " by " + whoOf(r.nc.by) : "") + "; acceptance email " + mailStanding(r, "accept_nc", ACCEPT_NC_SUBJ) + ".");
+    if (!r.part.confirmed) { var n = lastSent(r, "nudge"); out.push(n ? "Request marked sent " + shortDate(n.created_at) + " by " + whoOf(n.by_email) + "." : draftedOf(r) ? draftedWords(draftedOf(r)) : "No request recorded."); }
+    return out.join(" ");
+  }
   // An address saved before the lists were redrawn opens the list that now holds the same colleges, or the nearest.
   var VIEW_WAS = { send: "open", due: "follow", nc: "review", ncmet: "ncnamed", coordmet: "all" };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
@@ -944,12 +968,12 @@
   }
   function condLabel(c) { return c.pending ? "Pending" : c.met ? "Met" : "Not met"; }
   function recOf(r) {
-    if (waitingKinds(r).length) return { reason: "Review the request first", why: nextStep(r) + " The acceptance is ready once it is accepted.", review: true };
-    var t = recTpl(r), du = dueOf(r);
+    var t = recTpl(r), du = dueOf(r), alsoWaits = waitingKinds(r).length ? " Another request from the college also waits for review, open beside the record." : "";
+    if (waitingKinds(r).length && t !== "accept" && t !== "accept_nc") return { reason: "Review the request first", why: nextStep(r) + " The acceptance is ready once it is accepted.", review: true };
     if (t === "accept") return notReceived(r)
       ? { reason: "Resend the acceptance", why: "Confirmed " + shortDate(r.part.confirmedAt) + ". The first acceptance did not reach the college." }
-      : { reason: "Send the acceptance", why: "The participation confirmation is accepted" + (r.part.confirmedAt ? " (" + shortDate(r.part.confirmedAt) + ")" : "") + ", and no acceptance has gone out." };
-    if (t === "accept_nc") return { reason: "Send the noncredit attestation acceptance", why: "The team accepted the attestation, and no acceptance has gone out." };
+      : { reason: "Send the acceptance", why: "The participation confirmation is accepted" + (r.part.confirmedAt ? " (" + shortDate(r.part.confirmedAt) + ")" : "") + ", and no acceptance has gone out." + alsoWaits };
+    if (t === "accept_nc") return { reason: "Send the noncredit attestation acceptance", why: "The team accepted the attestation, and no acceptance has gone out." + alsoWaits };
     if (t === "both") return { reason: "Send one email asking for both", why: r.name + " has not sent a participation confirmation, and MAP shows no Noncredit CPL Lead for it. One email asks for both." };
     if (t === "nudge") return { reason: "Send the confirmation request", why: r.name + " has not sent a participation confirmation. This email asks for it." };
     if (t === "lead") return { reason: "Send the Noncredit CPL Lead ask", why: r.nc && r.nc.leadNear
@@ -1023,6 +1047,8 @@
         (r.req.part.at ? ", " + esc(shortDate(r.req.part.at)) : ""));
       if (r.req.nc) bits.push("Noncredit attestation from " + esc(r.req.nc.attestor_name || "?") + " (" + esc(titleLabel(S.ncTitles, r.req.nc.attestor_title)) + "), " +
         esc(r.req.nc.attestor_email || "") + (r.req.nc.requested_at ? ", " + esc(shortDate(r.req.nc.requested_at)) : ""));
+      if (r.part.confirmed && r.part.by) bits.push("Confirmation accepted by " + esc(r.part.by) + (r.part.confirmedAt ? ", " + esc(shortDate(r.part.confirmedAt)) : ""));
+      if (r.nc && r.nc.standing && r.nc.by) bits.push("Noncredit attestation accepted by " + esc(r.nc.by) + (r.nc.confirmedAt ? ", " + esc(shortDate(r.nc.confirmedAt)) : ""));
       if (bits.length) who = '<div><p class="k">Who sent it</p><ul class="conds">' + bits.map(function (b) { return '<li class="ncline" style="margin:0">' + b + "</li>"; }).join("") + "</ul></div>";
     }
     var note = S.reviewer ? '<div><p class="k">CO Monitor\'s note</p><p class="ncline" style="margin:0">' + (r.note ? esc(r.note) : "No note yet.") +
@@ -1549,6 +1575,7 @@
       (dr ? '<p class="gate" data-drafted="' + dr.tpl + '">' + esc(draftedWords(dr)) + ' <button type="button" class="word lead" data-mailact="sent">Sent</button></p>' : "") +
       '<dl class="mail-f" id="cw-mail-pre"' + (open && !edit ? "" : " hidden") + "><dt>To</dt><dd>" + (m.to ? esc(m.to) : "No address on file. Edit email to add one.") + "</dd>" +
         (cc.length ? "<dt>Cc</dt><dd>" + esc(cc.join(", ")) + "</dd>" : "") +
+        "<dt>Bcc</dt><dd>" + esc(teamBcc()) + "</dd>" +
         "<dt>Subject</dt><dd>" + esc(m.subject) + "</dd><dt>Message</dt><dd>" + esc(m.body) + "</dd></dl>" +
       '<div class="tpl-edit" id="cw-mail-edit"' + (edit ? "" : " hidden") + ">" +
       '<div class="tpl-row"><label for="cw-tpl">Template</label><select id="cw-tpl" data-mail="tpl">' + opts + "</select></div>" +
@@ -1564,7 +1591,7 @@
         '<button type="button" class="word" data-mailact="gmail">Open in Gmail</button>' +
         (sentBtn ? '<button type="button" class="word" data-mailact="sent">Sent</button>' : "") + "</div>" +
       '<p class="tpl-meta"' + (open ? "" : " hidden") + ">Send from your own address. The shared MAP mailbox needs Send As rights from RCCD IT.</p>" +
-      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo. The log notes each, with a follow-up a week out unless Edit email clears it." +
+      '<p class="tpl-meta"' + (open ? "" : " hidden") + ">The workspace never sends mail. Copy the email puts it on the clipboard, logo included, to paste into Outlook or Gmail; Open in Outlook and Open in Gmail start a draft with the words and no logo, with " + esc(teamBcc()) + " on Bcc; add it yourself to an email you paste. The log notes each, with a follow-up a week out unless Edit email clears it." +
       (sentBtn ? " A copy or a draft is not yet a sent email: once it has gone out, come back and press Sent. Sent records that you sent it, and the college leaves the emails to send." : "") + "</p></div>";
   }
   function allCc(m) {
@@ -1588,6 +1615,57 @@
     return copyText(m.body || "");
   }
   var MAILTO_MAX = 1900;
+  // The team's mailbox rides Bcc on every draft the page opens (asked in session, 2026-11-13: "that way we at least
+  // always know that the map email is in the mix"). A copied email carries no addresses, so the page says to add it.
+  function teamBcc() { var f = F(); return (f && f.teamBcc) || "MAP@rccd.edu"; }
+
+  /* ── THE ONCE-A-MINUTE CHECK (asked in session, 2026-11-13) ────────────────────────────────────────────────────
+     "do refresh every minute, ideally a backend check first, if none of the data is different then we don't need a
+     refresh ... We don't want to accidentally send 2 of the same email or send conflicting emails."
+     Three small reads (which requests stand and how, which log entries exist and which are closed) make one string.
+     The same string as last time: nothing happens, so a reviewer working alone is never interrupted. A different
+     one: the funding tab reads its data again, the log is read again, and the page says so. A draft being edited
+     is kept (state.mail), as on any repaint. The check also runs when a college is opened and before Sent is
+     filed, so the record on screen is seconds old when an email goes out. */
+  var WATCH = { sig: null, at: 0, timer: null, busy: false };
+  var WATCH_EVERY_MS = 60 * 1000;
+  function watchSig() {
+    var R = rest(); if (!R || !R.remote || !S || !S.reviewer) return Promise.resolve(null);
+    var get = function (path) { return fetch(R.url + path, { headers: R.headers }).then(function (x) { if (!x.ok) throw new Error(String(x.status)); return x.text(); }); };
+    return Promise.all([
+      get("cpl_funding_participation?select=college,status,confirmed_at,revoked_at&order=college.asc"),
+      get("cpl_funding_nc_attestation_pub?select=college,fiscal_year,status,requested_at,revoked_at&order=college.asc,fiscal_year.asc"),
+      get("csm_log?select=id,done_at&activity=eq." + ACTIVITY + "&order=id.asc")
+    ]).then(function (t) { return t.join("\u0001"); });
+  }
+  // Resolves true when something had changed and the page read it again.
+  function watchCheck(quiet) {
+    if (WATCH.busy) return Promise.resolve(false);
+    WATCH.busy = true; WATCH.at = Date.now();
+    return watchSig().then(function (sig) {
+      WATCH.busy = false;
+      if (sig == null) return false;
+      var changed = WATCH.sig != null && sig !== WATCH.sig;
+      WATCH.sig = sig;
+      if (!changed) return false;
+      var f = F(), p = f && typeof f.reload === "function" ? f.reload() : null;
+      loadLog();
+      return Promise.resolve(p).then(function () {
+        paint();
+        if (!quiet) say("Updated: a college or another reviewer changed something since this page last read it.");
+        return true;
+      });
+    }).catch(function () { WATCH.busy = false; return false; });
+  }
+  function watchStart() {
+    if (WATCH.timer || typeof setInterval !== "function") return;
+    WATCH.timer = setInterval(function () {
+      var el = root();
+      // Only while the dashboard is the tab on screen in a visible window.
+      if (!el || !el.offsetParent || (typeof document !== "undefined" && document.hidden)) return;
+      watchCheck(false);
+    }, WATCH_EVERY_MS);
+  }
   function mailAct(kind) {
     var r = rowOf(state.sel); if (!r) return;
     // A request copied or drafted earlier: Sent files its receipt with the subject and the address the copy carried.
@@ -1609,6 +1687,15 @@
         body: what + ": " + (m.subject || "(no subject)") + ", to " + m.to + (cc.length ? " with " + cc.length + " on Cc" : "") + "." },
         m.fu === false ? {} : { follow_up_on: plusDays(7) }));
     };
+    if (kind === "sent" && !state.sentChecked) {
+      state.sentChecked = true;
+      watchCheck(true).then(function (changed) {
+        var r2 = rowOf(r.key), tk = m.tpl === "both" ? "nudge" : m.tpl, prior = r2 && SENT[tk] ? lastSent(r2, tk) : null;
+        if (changed && prior) { state.sentChecked = false; paint(); say(whoOf(prior.by_email) + " already marked this email sent on " + shortDate(prior.created_at) + ". Nothing was filed twice."); return; }
+        mailAct("sent"); state.sentChecked = false;
+      });
+      return;
+    }
     if (kind === "sent") {
       var what = m.tpl === "both" ? SENT.nudge : SENT[m.tpl] || "Email sent";
       logWrite("POST", null, Object.assign({ college: r.key, kind: "email",
@@ -1627,7 +1714,7 @@
     if (kind === "gmail") {
       // Gmail's compose address (Malone, via COBIx on issue 2967: ITPI's CSM team uses Gmail). Same cap as the mailto.
       var gHead = "https://mail.google.com/mail/?view=cm&fs=1&to=" + encodeURIComponent(m.to) +
-        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&su=" + encodeURIComponent(m.subject || "");
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&bcc=" + encodeURIComponent(teamBcc()) + "&su=" + encodeURIComponent(m.subject || "");
       var gFull = gHead + "&body=" + encodeURIComponent(m.body || "");
       var openG = function (h) { try { window.open(h, "_blank", "noopener"); } catch (e) {} };
       if (gFull.length > MAILTO_MAX) {
@@ -1646,7 +1733,7 @@
     }
     if (kind === "draft") {
       var head = "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject || "") +
-        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "");
+        (cc.length ? "&cc=" + encodeURIComponent(cc.join(",")) : "") + "&bcc=" + encodeURIComponent(teamBcc());
       var href = head + "&body=" + encodeURIComponent(m.body || "");
       var open = function (h) {
         if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") window.CPL_FUNDING_OPEN_MAIL(h);
@@ -2037,6 +2124,7 @@
   function onClick(e) {
     var t = e.target.closest ? e.target.closest("button, [data-sel]") : null;
     if (!t || !root().contains(t)) return;
+    if (t.hasAttribute("data-sel") && Date.now() - WATCH.at > 10000) watchCheck(false);
     if (t.hasAttribute("data-sel")) { state.sel = t.getAttribute("data-sel"); state.msg = ""; state.psrc = ""; if (state.side === "review" || state.side === "none") state.side = ""; paintRecord(); return; }
     if (t.hasAttribute("data-tplopen")) {
       state.tplOpen = !state.tplOpen; state.tplMsg = "";
@@ -2247,6 +2335,7 @@
     // A pick lasts the visit (Sam, 2026-10-21): every open starts on All open items, nothing chosen. tabs.js fires
     // onActivate once, so the module hears each later visit itself.
     fresh(); arrive();
+    watchStart();
     if (!wired) {
       wired = true;
       el.addEventListener("click", onClick);
@@ -2297,7 +2386,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _views: VIEWS, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _views: VIEWS, _readyOf2: readyOf, _emailRecord: emailRecord, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },
