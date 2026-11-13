@@ -10337,21 +10337,7 @@
   "file:kb/_program_requirements_heading_agreement.py": {
    "consumers": [
     {
-     "id": "workflow:js-tests.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    },
-    {
-     "id": "workflow:program-requirements-college.yml",
-     "kind": "workflow",
-     "direction": "run",
-     "how": "yaml",
-     "line": 0
-    },
-    {
-     "id": "workflow:program-requirements-wave.yml",
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -19180,16 +19166,12 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 64
     }
    ],
    "producers": [
     {
-     "by": "workflow:program-requirements-college.yml",
-     "how": "commit"
-    },
-    {
-     "by": "workflow:program-requirements-wave.yml",
+     "by": "workflow:harvest-gap-census.yml",
      "how": "commit"
     }
    ],
@@ -19203,16 +19185,12 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 65
     }
    ],
    "producers": [
     {
-     "by": "workflow:program-requirements-college.yml",
-     "how": "commit"
-    },
-    {
-     "by": "workflow:program-requirements-wave.yml",
+     "by": "workflow:harvest-gap-census.yml",
      "how": "commit"
     }
    ],
@@ -32603,11 +32581,14 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
+    "kb/_program_requirements_heading_agreement.py",
     "kb/_harvest_gap_census.py"
    ],
    "adds": [
     "kb/status/harvest_gap_census.json",
-    "kb/status/harvest_gap_census.md"
+    "kb/status/harvest_gap_census.md",
+    "kb/status/harvest_heading_agreement.json",
+    "kb/status/harvest_heading_agreement.md"
    ],
    "push": null,
    "deploys": [],
@@ -32648,7 +32629,6 @@
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
-    "kb/_program_requirements_heading_agreement.py",
     "tests/program_requirements_pdf_numbers_after_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
@@ -33027,14 +33007,11 @@
    "scripts": [
     "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
-    "kb/_program_requirements_heading_agreement.py",
     "kb/_program_requirements_display_apply.py"
    ],
    "adds": [
     "kb/program_requirements_college",
     "kb/hand_filed_catalogs",
-    "kb/status/harvest_heading_agreement.json",
-    "kb/status/harvest_heading_agreement.md",
     "kb/receipts",
     "kb/receipts"
    ],
@@ -33090,15 +33067,12 @@
    "scripts": [
     "kb/_program_requirements_wave.py",
     "scripts/install_browser.sh",
-    "kb/_program_requirements_college.py",
-    "kb/_program_requirements_heading_agreement.py"
+    "kb/_program_requirements_college.py"
    ],
    "adds": [
     "kb/program_requirements_college",
     "kb/hand_filed_catalogs",
-    "kb/program_requirements_wave",
-    "kb/status/harvest_heading_agreement.json",
-    "kb/status/harvest_heading_agreement.md"
+    "kb/program_requirements_wave"
    ],
    "push": null,
    "deploys": [],

@@ -590,7 +590,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_requirements_dated_reads.py` | workflows: `program-requirements-dated-reads.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
-| `kb/_program_requirements_heading_agreement.py` | workflows: `js-tests.yml`, `program-requirements-college.yml`, `program-requirements-wave.yml` | — |
+| `kb/_program_requirements_heading_agreement.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
 | `kb/_program_requirements_wave.py` | workflows: `program-requirements-wave.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
@@ -854,8 +854,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
-| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
-| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
+| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `harvest-gap-census.yml` |
+| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |

@@ -5,7 +5,8 @@ name: Harvest gap census
 # throughput"; kb/_harvest_gap_census.py). Reads the live tables with the public anon key only
 # (coci_college_programs, program_requirement_records, program_source_registry, coci_program_courses)
 # and the committed per-college files; writes no table. Commits kb/status/harvest_gap_census.json
-# and .md to the branch it ran on. Dispatch only: no schedule, no secret.
+# and .md, and the heading-agreement snapshot kb/status/harvest_heading_agreement.json and .md, to the
+# branch it ran on. Dispatch only: no schedule, no secret.
 
 on:
   workflow_dispatch: {}
@@ -24,6 +25,11 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      # The heading-agreement snapshot (S645, #3201): each record's own heading against its program,
+      # from the committed per-college files alone; no network. The same dispatch writes both status sets,
+      # and nothing gates a PR on either one's freshness.
+      - name: Heading agreement (committed files only)
+        run: python3 kb/_program_requirements_heading_agreement.py
       - name: Census (anon reads only)
         run: python3 kb/_harvest_gap_census.py --export out/harvest_gap_live.json
       - name: Commit to the branch that ran it
@@ -31,6 +37,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/status/harvest_gap_census.json kb/status/harvest_gap_census.md
+          git add kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "Harvest gap census (run ${{ github.run_id }})"
           for i in 1 2 3 4; do

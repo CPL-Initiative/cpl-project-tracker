@@ -335,10 +335,6 @@ jobs:
       # plus the college reader's own imports.
       - name: Program requirements heading agreement (heading check, number printed after)
         run: python3 tests/program_requirements_heading_agreement_test.py
-      # The committed snapshot kb/status/harvest_heading_agreement.json and .md, from the files this tree
-      # commits (S645 review of #3201): a PR that moves a college's records reruns the script.
-      - name: Program requirements heading agreement snapshot is current
-        run: python3 kb/_program_requirements_heading_agreement.py --check
       # The PDF reader's gated after-reading (S645): the reconcile entry switches it, the count of the
       # habit only measures, a block binds only where it names its program, a refusal never drops a
       # passing record, and capture_pdf is driven for both gate states. Constructed catalogs only.
