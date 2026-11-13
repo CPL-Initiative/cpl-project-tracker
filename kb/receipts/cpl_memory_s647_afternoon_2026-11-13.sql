@@ -1,4 +1,4 @@
--- NOT YET RUN: this session's Supabase connector was down from about 12:40Z, so no row below exists in the table yet. Run it whole, after cpl_memory_s647_sheet_shape_2026-11-13.sql.
+-- RUN 2026-11-13 by SkyTanager (S648), after cpl_memory_s647_sheet_shape_2026-11-13.sql.
 -- cpl_memory rows for SkyPipit (S647), the afternoon (14:30Z to 16:20Z 2026-11-13), the second Rule 9 checkpoint's step 10, prepared by the documents worker.
 -- INSERT ... ON CONFLICT (slug) DO NOTHING, then the cpl_memory_log append, then the verify (one call, three statements).
 -- Six rows: four conductor decisions (proposed, for Sam to revise on Open Asks Sheet 192 cards 1 to 4) and two of Sam's

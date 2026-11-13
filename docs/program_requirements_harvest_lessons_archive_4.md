@@ -1236,3 +1236,13 @@ its curriQunet catalog must declare `curriqunet.com` in `outside_hosts` with its
 - **A college-level `awards` gate can hold a new step out.** Redwoods' entry read `transfer`, so reconcile 43016437012 changed none; it now reads `associate`, each step keeping its own gate. Read the entry's top level before a dispatch.
 - **The Los Rios 404 is keyed to the census user agent.** The hand-filed-copy user agent, which also names the CPL Initiative, gets the file at the college's own address (COBIx, #3096). The colleges recompiled their catalogs on 2026-11-06, so the copies pinned on 2026-10-17 are the earlier edition.
 - **A registry row a person corrected** (De Anza, Sam's go of 2026-10-17) is changed only by saying so on the row, and the session's permission check refused the apply: it waits on Sam.
+
+## Moved from the lane (S648 checkpoint)
+
+Verbatim from the lane, 2026-11-13.
+
+**Standing decisions of S640 and S641** (the list rule never lowers coverage, `d-pdf-reader-design-calls-s640`; equal coverage holds a passing record; the kept-passing guard, `passes_live` equal only), the fingerprint's known costs and the proof table: lessons, *Moved from the lane (S645)* and *(S641)*.
+
+🔨 **Throughput (S644-S647; Sam, 23:53Z 2026-11-12: *"we need to increase our throughput"*).** Records: lessons, *S644* to *S647*.
+
+**The gap census** (#3189) gives each active program without a passing record one cause and one lever. **DECIDED (`d-passes-live-stays-equal-only-s644`):** `passes_live` stays equal only; the tab, the census and the headline count equal or unstated (`counts_passing_on_tab`).

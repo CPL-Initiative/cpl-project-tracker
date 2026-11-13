@@ -283,3 +283,11 @@ Moved verbatim from `docs/reference/lanes/governance-team-enablement.md` by the 
 ## S647 (SkyPipit, 2026-11-13): a secret in an environment
 
 - Sam created the `live-counts` environment, limited to `main`, for the first job that reads the service key for a dashboard. A job in an environment reads the environment's copy; every other job still reads the repository copy, so the environment protects the key only once the repository copy is gone. Move the keyed workflows first, then remove the repository copy, never the reverse.
+
+## Moved from the lane (S648 checkpoint)
+
+Verbatim from the lane, 2026-11-13.
+
+**DECIDED, the Pierce question is closed (Sam, 2:52 PM PT 2026-11-11, relayed by COBIx, #3111 comment 6809029855; `sam-pierce-drop-was-its-own-cleanup-2026-11-11`):** "the pierce change was due to corrections they made to a big bathc upload of cx, ap, ib cpl already awarded to students in the sis but batch uploaded to map--needed to be cleaned up after they did it. nothing to worry about." Nothing goes to MAP or ITPI.
+
+**DECIDED (Sam, in session S639, 2026-11-11; `sam-sheet-carries-conductor-decisions-2026-11-11`):** the decision sheet carries the conductor's decisions, never asks. Sam's words: "Remember on the Decision Sheet that I want your decisions on it, not asking me for mine. I am pushing decision to you as conductor and informed by help from cobix, your force multiplier:)" Each card reads Decided, Evidence, and Carried out with how to reverse it; the chips are Fine, Change it and Revisit later; an outward send or a go-live is a card that opens on "Waits for my send or go". First built as [Open Asks Sheet 181](https://claude.ai/artifact/M3YaDrpkT7HhH8rYRnvkjx). Mechanics: [`conductor_mode`](../conductor_mode.md), *Recording and Sam*.

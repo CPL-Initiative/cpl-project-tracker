@@ -258,9 +258,9 @@ const tick = () => new Promise((r) => setTimeout(r, 0));
       primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu" }], landing: [], users: [] });
     d.W._state.view = "all"; d.W._state.sel = OTHER; d.W.paint();
     const pre = () => rec().querySelector("#cw-mail-pre"), edit = () => rec().querySelector("#cw-mail-edit"), word = () => rec().querySelector('[data-act="mailedit"]');
-    check("5d4: a confirmed college with no acceptance sent reads Send the acceptance, and the email shows as a preview: To, Subject, Message",
+    check("5d4: a confirmed college with no acceptance sent reads Send the acceptance, and the email shows as a preview: To, Bcc (the team's mailbox), Subject, Message",
       flat(visit().querySelector(".reason")) === "Send the acceptance" && !pre().hidden && edit().hidden &&
-      Array.prototype.map.call(pre().querySelectorAll("dt"), flat).filter((t) => t !== "Cc").join("|") === "To|Subject|Message" &&
+      Array.prototype.map.call(pre().querySelectorAll("dt"), flat).filter((t) => t !== "Cc").join("|") === "To|Bcc|Subject|Message" && /MAP@rccd\.edu/.test(flat(pre())) &&
       /@pasadena\.edu/.test(flat(pre().querySelector("dd"))) && flat(word()) === "Edit email" && word().getAttribute("aria-expanded") === "false" &&
       !!rec().querySelector('[data-mailact="sent"]') && d.W._state.view === "all");
     clickEl(d.window, word());
@@ -834,8 +834,9 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   W._state.sel = OTHER; W.paint();
   let opened = null; window.open = (u) => { opened = u; return null; };
   clickEl(window, root.querySelector('[data-mailact="gmail"]'));
-  check("12a: Open in Gmail opens Gmail's compose with To, Subject and the words, and the log notes it",
-    /^https:\/\/mail\.google\.com\/mail\/\?view=cm&fs=1&to=ana%40pasadena\.edu&su=/.test(opened || "") && /&body=/.test(opened || "") &&
+  check("12a: Open in Gmail opens Gmail's compose with To, the team's mailbox on Bcc, Subject and the words, and the log notes it",
+    /^https:\/\/mail\.google\.com\/mail\/\?view=cm&fs=1&to=ana%40pasadena\.edu&bcc=MAP%40rccd\.edu&su=/.test(opened || "") &&
+    FUND.indexOf('"&bcc=" + encodeURIComponent(TEAM_BCC)') > 0 && SRC.split('"&bcc=" + encodeURIComponent(teamBcc())').length === 3 && /&body=/.test(opened || "") &&
     W._log().some((x) => x.college === OTHER && /^Gmail draft opened: /.test(x.body)));
   W._mail(OTHER).body = "y".repeat(2500); opened = null;
   window.navigator.clipboard = { writeText: () => Promise.resolve() };
@@ -942,7 +943,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
   const pairs = keys.map((k) => { const m = /\((\d+)\)$/.exec(opt(k).textContent); pick(k);
     return { k, n: m ? parseInt(m[1], 10) : -1, got: parseInt(flat(root.querySelector(".showing b")), 10) }; });
   check("14a: ⭐ every label's count is the length of the list it opens (" + pairs.map((p) => p.k + " " + p.n + "/" + p.got).join("; ") + ")",
-    pairs.length === 13 && pairs.every((p) => p.n === p.got));
+    pairs.length === 14 && pairs.every((p) => p.n === p.got));
   const nOf = (k) => pairs.find((p) => p.k === k).n;
   check("14b: the counts are real figures here, not all zero", nOf("all") > 100 && nOf("confirmed") > 0 && nOf("request") > 0);
   // The lists were redrawn 2026-11-12 on "the filters are many and the accuracy seems few": these pin the divisions.
@@ -959,6 +960,26 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
       rowsAll.filter(V.request.keep).every((r) => !r.part.waiting));
   }
   pick("confirmed");
+  {
+    // 2026-11-13: an acceptance owed is not hidden by a second request still under review; and the email record.
+    const mk = (o) => Object.assign({ key: "ZZ", name: "ZZ", conds: [], gate: { blocked: false }, part: { confirmed: true, waiting: false, confirmedAt: "2026-11-12T00:00:00Z", by: "terence@x.edu" },
+      nc: { lead: false, standing: false, waiting: true, leadNear: false } }, o || {});
+    const V = W._views, zz = mk();
+    check("14b5: ⭐ confirmed with no acceptance sent, and a noncredit attestation still waiting: it is in Send an acceptance and in Review a request",
+      W._readyOf2(zz) === "accept" && V.accept.keep(zz) && V.review.keep(zz) && V.open.keep(zz) && W._recOf(zz).reason === "Send the acceptance" &&
+      /also waits for review/.test(W._recOf(zz).why), W._readyOf2(zz));
+    W._log().push({ id: 9901, college: "ZZ", kind: "email", by_email: "malone@x.edu", body: "Draft opened: CPL Implementation Funding: participation confirmation Accepted for ZZ, to a@b.edu.", created_at: "2026-11-12T20:00:00Z" });
+    const rec1 = W._emailRecord(zz);
+    W._log().push({ id: 9902, college: "ZZ", kind: "email", by_email: "terence@x.edu", body: "Acceptance sent: CPL Implementation Funding: participation confirmation Accepted for ZZ, to a@b.edu.", created_at: "2026-11-13T15:00:00Z" });
+    const rec2 = W._emailRecord(zz);
+    check("14b6: ⭐ the email record names who accepted, and tells a draft with no Sent from an email marked sent, each with who and when",
+      /^Confirmation accepted Nov 12 by terence; acceptance email copied or drafted Nov 12 by malone, no Sent recorded\.$/.test(rec1) &&
+      /acceptance email marked sent Nov 13 by terence\.$/.test(rec2) && V.emails.keep(zz) && W._readyOf2(zz) === "wait", rec1 + " || " + rec2);
+    W._log().splice(W._log().length - 2, 2);
+    check("14b7: the once-a-minute check reads three small lists, acts only on a difference, and Sent reads the record again first",
+      /WATCH_EVERY_MS = 60 \* 1000/.test(SRC) && /var changed = WATCH\.sig != null && sig !== WATCH\.sig;/.test(SRC) && /if \(!changed\) return false;/.test(SRC) &&
+      /already marked this email sent on/.test(SRC) && /reload: function \(\) \{ return loadEligibility\(\); \}/.test(FUND));
+  }
   check("14c: Confirmed lists the confirmed college and not the one whose request waits",
     listed().indexOf(OTHER) >= 0 && listed().indexOf(COLLEGE) < 0 && W._state.view === "confirmed");
   pick("nocoord");
@@ -969,7 +990,7 @@ check("9g: the funding tab answers Accept and Deny with the re-read, never a bar
     groups().map((g) => g.getAttribute("label").replace(/ \(.*$/, "")).join() === "To do,By stage,Look up");
   check("14x-b: To do holds what the team acts on, named by the action", vals(groups()[0]) === "open,review,accept,request,follow");
   check("14x-c: By stage holds the three stages beside Review a request; Look up holds the facts, the two coordinator lists among them (status only; Sam chases); no Declined list",
-    vals(groups()[1]) === "notyet,held,qual" && vals(groups()[2]) === "confirmed,ncnamed,coord,nocoord,all");
+    vals(groups()[1]) === "notyet,held,qual" && vals(groups()[2]) === "confirmed,ncnamed,coord,nocoord,emails,all");
   // Nothing reads a decline mark any more (S624): a row handed the old field stays owed its request.
   const anyKey = W._snapshot().rows.find((r) => !r.part.confirmed && !r.part.waiting && r.key !== COLLEGE).key;
   const before = W._readyOf(anyKey);

@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51899,
-  "pa": 47069,
+  "pe": 51906,
+  "pa": 47076,
   "ppa": 121,
   "p2": 3648,
   "p3": 16922,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 133,
   "pac": 5338,
   "ptc": 4663,
-  "pe_u": 1633380.95,
-  "pa_u": 288536.9,
+  "pe_u": 1633760.45,
+  "pa_u": 288581.4,
   "ppa_u": 752.5,
   "ppe_u": 7143.5,
   "pac_u": 38308.7,
@@ -825,10 +825,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "Fresno City": {
-   "pe": 797,
-   "pe_u": 30149.0,
-   "pa": 797,
-   "pa_u": 2998.0,
+   "pe": 801,
+   "pe_u": 30325.0,
+   "pa": 801,
+   "pa_u": 3022.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1975,10 +1975,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 0
   },
   "San Francisco": {
-   "pe": 1845,
-   "pe_u": 83035.0,
-   "pa": 1844,
-   "pa_u": 13710.0,
+   "pe": 1846,
+   "pe_u": 83043.5,
+   "pa": 1845,
+   "pa_u": 13718.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 11.0,
@@ -2376,10 +2376,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 3
   },
   "Ventura": {
-   "pe": 200,
-   "pe_u": 11574.0,
-   "pa": 200,
-   "pa_u": 1021.0,
+   "pe": 201,
+   "pe_u": 11720.0,
+   "pa": 201,
+   "pa_u": 1026.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -2468,10 +2468,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 25
   },
   "West LA": {
-   "pe": 759,
-   "pe_u": 15178.5,
-   "pa": 759,
-   "pa_u": 8980.0,
+   "pe": 760,
+   "pe_u": 15227.5,
+   "pa": 760,
+   "pa_u": 8987.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 27.0,
@@ -3070,8 +3070,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Fresno City": {
    "Military": {
-    "pe": 797,
-    "pa": 797,
+    "pe": 801,
+    "pa": 801,
     "p3": 0
    }
   },
@@ -4029,8 +4029,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification": {
-    "pe": 16,
-    "pa": 16,
+    "pe": 17,
+    "pa": 17,
     "p3": 11
    },
    "Industry Certification | Military | Standardized Assessment": {
@@ -4237,8 +4237,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "Military": {
-    "pe": 200,
-    "pa": 200,
+    "pe": 201,
+    "pa": 201,
     "p3": 0
    }
   },
@@ -4316,8 +4316,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 151,
-    "pa": 151,
+    "pe": 152,
+    "pa": 152,
     "p3": null,
     "p3_suppressed": true
    }
@@ -4422,8 +4422,8 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1472,
-   "pa": 1450,
+   "pe": 1473,
+   "pa": 1451,
    "p3": 1217
   },
   "Industry Certification | Military": {
@@ -4477,8 +4477,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31119,
-   "pa": 28069,
+   "pe": 31125,
+   "pa": 28075,
    "p3": 2690
   },
   "Military | Other": {
@@ -4534,13 +4534,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1633380.95,
-   "pa_u": 288536.9,
+   "pe_u": 1633760.45,
+   "pa_u": 288581.4,
    "p3_u": 85220.15
   },
   "map": {
-   "pe_u": 1640524.45,
-   "pa_u": 289289.4,
+   "pe_u": 1640903.95,
+   "pa_u": 289333.9,
    "p3_u": 85299.65
   },
   "ratio": {
@@ -4732,8 +4732,8 @@ window.CPL_FUNDING_PERF = {
   },
   "West LA": {
    "vets": 147,
-   "jst": 156,
-   "pct": 1.0612
+   "jst": 157,
+   "pct": 1.068
   },
   "Long Beach": {
    "vets": 880,
@@ -4767,8 +4767,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Fresno City": {
    "vets": 709,
-   "jst": 803,
-   "pct": 1.1326
+   "jst": 807,
+   "pct": 1.1382
   },
   "Mt San Antonio": {
    "vets": 729,
@@ -4887,8 +4887,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Ventura": {
    "vets": 238,
-   "jst": 200,
-   "pct": 0.8403
+   "jst": 201,
+   "pct": 0.8445
   },
   "Evergreen Valley": {
    "vets": 92,

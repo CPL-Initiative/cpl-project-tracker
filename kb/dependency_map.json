@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 931,
+  "file_datasets": 937,
   "external_services": 195,
-  "consumers": 581,
+  "consumers": 584,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -1193,7 +1193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1242,
+     "line": 1268,
      "tabs": [
       "csm-workspace"
      ]
@@ -1888,7 +1888,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1352,
+     "line": 1356,
      "tabs": [
       "commons"
      ]
@@ -1908,7 +1908,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15814,
+     "line": 15820,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -2219,7 +2219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 992,
+     "line": 1039,
      "tabs": [
       "commons"
      ]
@@ -2443,7 +2443,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1629,
+     "line": 1716,
      "tabs": [
       "csm-workspace"
      ]
@@ -3746,7 +3746,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 7167,
+     "line": 7173,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -4858,7 +4858,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9715,
+     "line": 9721,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6462,7 +6462,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 906,
+     "line": 909,
      "tabs": [
       "commons"
      ]
@@ -6873,7 +6873,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2295,
+     "line": 2384,
      "tabs": [
       "csm-workspace"
      ]
@@ -6928,7 +6928,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19230,
+     "line": 19236,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7023,7 +7023,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19142,
+     "line": 19148,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7075,7 +7075,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 19127,
+     "line": 19133,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -7676,6 +7676,13 @@
      "direction": "read",
      "how": "literal",
      "line": 80
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 651
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -8564,7 +8571,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9839,
+     "line": 9845,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -11170,7 +11177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 742
+     "line": 810
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -11249,6 +11256,13 @@
      "direction": "write",
      "how": "literal",
      "line": 59
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 341
     },
     {
      "id": "script:kb/_title_consolidation_dryrun.py",
@@ -11542,6 +11556,13 @@
      "direction": "write",
      "how": "literal",
      "line": 205
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 336
     },
     {
      "id": "script:kb/_remint_apply_articulations.py",
@@ -11900,6 +11921,20 @@
      "direction": "write",
      "how": "literal",
      "line": 206
+    },
+    {
+     "id": "script:kb/_reclustering_s648_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 147
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 333
     },
     {
      "id": "script:kb/_remint_dryrun.py",
@@ -12346,6 +12381,13 @@
      "line": 202
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 330
+    },
+    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
@@ -12764,6 +12806,13 @@
      "line": 204
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 332
+    },
+    {
      "id": "script:kb/_rekey_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -13173,6 +13222,13 @@
      "direction": "write",
      "how": "literal",
      "line": 203
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 331
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -14252,7 +14308,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 752
+     "line": 820
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
@@ -14405,7 +14461,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 750
+     "line": 818
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -14630,6 +14686,13 @@
      "line": 162
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 337
+    },
+    {
      "id": "script:kb/_rekey_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -14794,6 +14857,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 754
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -15074,6 +15144,13 @@
      "direction": "write",
      "how": "literal",
      "line": 207
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 467
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -15589,7 +15666,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 754
+     "line": 822
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -16942,6 +17019,26 @@
     "workflow:program-course-fetch.yml"
    ]
   },
+  "file:kb/program_requirements_calgetc_34_plan.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 274
+    },
+    {
+     "id": "script:kb/_program_requirements_readings_measure.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 274
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_college": {
    "consumers": [],
    "producers": [
@@ -17010,7 +17107,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 6035
+     "line": 6061
     }
    ],
    "served": true,
@@ -17391,6 +17488,13 @@
      "line": 220
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 335
+    },
+    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
@@ -17510,6 +17614,58 @@
    "main_committers": [
     "workflow:library-publish.yml"
    ]
+  },
+  "file:kb/reclustering_s648_out/2026-11-13/honors_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 1262
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/2026-11-13/plan.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1267
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/2026-11-13/post_apply_simulated.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1045
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/<date>/post_read.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1040
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/reference/CIPCode2020.csv": {
    "consumers": [
@@ -17833,6 +17989,13 @@
      "direction": "read",
      "how": "literal",
      "line": 139
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 338
     }
    ],
    "served": true,
@@ -17898,6 +18061,13 @@
      "direction": "read",
      "how": "literal",
      "line": 588
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 340
     },
     {
      "id": "script:kb/_row_audit.py",
@@ -18098,6 +18268,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 295
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -19439,6 +19616,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/status/mid_outcomes_compare_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:kb/status/program-requirements-checked.json": {
    "consumers": [
     {
@@ -20013,7 +20203,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 755
+     "line": 823
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -20140,7 +20330,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 743
+     "line": 811
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -20241,7 +20431,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 749
+     "line": 817
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -20611,7 +20801,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5854
+     "line": 5880
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21248,7 +21438,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 5941
+     "line": 5967
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -23248,7 +23438,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 745
+     "line": 813
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -23401,7 +23591,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 747
+     "line": 815
     }
    ],
    "producers": [
@@ -26657,7 +26847,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 746
+     "line": 814
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -27361,7 +27551,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 7218,
+     "line": 7224,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -27550,7 +27740,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1893,
+     "line": 1980,
      "tabs": [
       "csm-workspace"
      ]
@@ -27565,7 +27755,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1800,
+     "line": 1887,
      "tabs": [
       "csm-workspace"
      ]
@@ -27679,7 +27869,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1814,
+     "line": 1901,
      "tabs": [
       "csm-workspace"
      ]
@@ -27707,7 +27897,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1760,
+     "line": 1847,
      "tabs": [
       "csm-workspace"
      ]
@@ -27810,7 +28000,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1139,
+     "line": 1165,
      "tabs": [
       "csm-workspace"
      ]
@@ -27918,7 +28108,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6009
+     "line": 6035
     }
    ],
    "main_committers": []
@@ -27930,7 +28120,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 6118
+     "line": 6144
     }
    ],
    "main_committers": []
@@ -27985,7 +28175,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1135,
+     "line": 1139,
      "tabs": [
       "commons"
      ]
@@ -29060,7 +29250,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7644,
+     "line": 7650,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29073,7 +29263,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7669,
+     "line": 7675,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29129,7 +29319,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7709,
+     "line": 7715,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29142,7 +29332,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7830,
+     "line": 7836,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -29458,7 +29648,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7111,
+     "line": 7117,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -30349,7 +30539,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14041,
+     "line": 14047,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -30524,7 +30714,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 14017,
+     "line": 14023,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -30850,7 +31040,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13996,
+     "line": 14002,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -31555,7 +31745,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1113,
+     "line": 1117,
      "tabs": [
       "commons"
      ]

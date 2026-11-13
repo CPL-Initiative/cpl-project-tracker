@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T17:00:12Z",
+ "written_at": "2026-11-13T19:53:00Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 14527,
+     "n": 14534,
      "of": 20282,
      "words": "complete at 118 colleges",
      "open": "#program-requirements/list"
@@ -34,7 +34,7 @@
    ],
    "issues": [
     {
-     "n": 2955,
+     "n": 2948,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "carry": "routine",
@@ -63,13 +63,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-11-13T07:46:13Z",
+    "at": "2026-11-13T18:26:08Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 14527,
-    "failing": 2955,
+    "complete": 14534,
+    "failing": 2948,
     "unread": 2800,
     "records": 19155,
     "colleges": 118,
@@ -223,14 +223,14 @@
    "status_file": "kb/status/course.json",
    "pair": [
     {
-     "n": 5026,
-     "of": 27581,
+     "n": 5027,
+     "of": 27582,
      "words": "cards the auditor scores 0.85 or better; 15,288 at needs review, 7,262 at needs repair, 5 not ready",
      "open": "#coci-lookup/courses"
     },
     {
      "n": 968,
-     "of": 27581,
+     "of": 27582,
      "words": "confirmed by a person, 219 of them ready",
      "open": "#coci-lookup/courses",
      "error": null
@@ -287,12 +287,12 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-13T16:58:50+00:00",
+    "at": "2026-11-13T19:51:58+00:00",
     "every_hours": 24
    },
    "facts": {
-    "total": 27581,
-    "ready": 5026,
+    "total": 27582,
+    "ready": 5027,
     "needs_review": 15288,
     "needs_repair": 7262,
     "not_ready": 5,
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-13T16:56:11Z",
+    "at": "2026-11-13T19:49:51Z",
     "every_hours": 24
    },
    "facts": {
@@ -750,7 +750,7 @@
    {
     "ref": "requirements",
     "title": "Program Requirements",
-    "n": 2955,
+    "n": 2948,
     "words": "active programs whose record fails a check",
     "owner": "the college's reading procedure",
     "open": "#program-requirements/list/fail"
@@ -1051,39 +1051,29 @@
    "kind": "decision",
    "project": "program-requirements",
    "n": 1,
-   "title": "Should a program checked against its college's own course list count in the headline?",
-   "teaches": "1,604 active programs have no closed course list in the state's Program Course File. The plan reads them and checks each against the college's own active course list, as a separate grade outside the headline.",
-   "open": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
+   "teaches": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way.",
+   "open": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
   },
   {
    "kind": "decision",
-   "project": "program-requirements",
+   "project": "exhibit",
    "n": 1,
-   "title": "Use the statewide Cal-GETC figure of 34 units?",
-   "teaches": "So far each college's Cal-GETC figure comes from the areas its own catalog prints. A statewide figure of 34 units would let 93 more programs pass the machine checks.",
-   "open": "https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA",
+   "title": "Three saved issuer rows read alifornia Veterinary Medical Association",
+   "teaches": "A person saved three rows on July 9; two drop the C of California and one sits on Water Treatment Facilities.",
+   "open": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
   },
   {
    "kind": "decision",
-   "project": "program-requirements",
+   "project": "exhibit",
    "n": 1,
-   "title": "Apply the carry-basis migration whose push the permission check refused?",
-   "teaches": "The scorer's change in #3193 has a migration that replaces one 23-line database function, the one that decides whether a person's confirmation carries to a reread record. It writes no rows. The push that applies it was refused by the permission check, and the session did not go around it. Nothing tonight depends on it: no college it touches holds a confirmation.",
-   "open": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
-   "todo_id": null,
-   "stop": "It ends when you answer the sheet."
-  },
-  {
-   "kind": "decision",
-   "project": "program-requirements",
-   "n": 1,
-   "title": "Deploy the extraction function's new error answer?",
-   "teaches": "While the database was unreachable on Nov 13, every call to the extraction function answered 401, which reads as a bad key, and a paid read at Glendale spent about $9 with nothing extracted. COBIx suggests the function answer 503 when the database fails and 401 only for a real refusal. It changes a deployed function, so it waits for your word.",
-   "open": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
+   "title": "Las Positas Industry Training Evidence cards: department and code, or course title",
+   "teaches": "22 cards, 17 still proposing department and course code; a course title reverses the November 12 ruling for them.",
+   "open": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
   },
@@ -1091,9 +1081,9 @@
    "kind": "decision",
    "project": "course",
    "n": 1,
-   "title": "Rule on six re-clustering cases and the Honors question",
-   "teaches": "AJ 160, FIRE 130 X with FIRE M1274, REAL M1038 with M1040, MATH M1036 with M1044, MUS 130 and BUSI M1228, each a proposed split or merge with credit by exam reach; and whether an Honors course is one M-ID or two with a declared equivalence. They replace the six on Open Asks Sheet 185 card 9.",
-   "open": "https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/kb/status/mid_outcomes_compare_2026-11-12.md",
+   "title": "How far the Honors split reaches, and four held re-clustering cases",
+   "teaches": "676 of the 680 Honors courses that share an identity with their base sit under official C-ID or CCN ids. M-IDs only makes 3 new M-IDs; official ids too makes 136. AJ 160, MUS 130, REAL M1038 with M1040 and MATH M1044 are held for your word.",
+   "open": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
    "todo_id": null,
    "stop": "It ends when you answer the sheet."
   },

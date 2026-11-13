@@ -1,0 +1,14 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-13_s648_reclustering_cohort.sql",
+ "name": "s648_reclustering_cohort",
+ "version": "20261113193615",
+ "sha256": "90ef81c0ee77fc997205f78c094fba0de672eced62e4453a9d412e3fb1b74447",
+ "run": "43493272194",
+ "project": "work-plan",
+ "project_ref": "hvuwhnbuahrtptokpqfh",
+ "status": 201,
+ "response": "[{\"course_id\":\"FIRE M1274\",\"field\":\"merge_into\",\"value\":\"FIRE 130 X\",\"reviewer_email\":\"reclustering-s648@bot\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

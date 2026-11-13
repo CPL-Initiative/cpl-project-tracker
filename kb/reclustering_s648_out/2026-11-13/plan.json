@@ -1,0 +1,4789 @@
+{
+ "_about": "S648 dry run for the six re-clustering cases and the Honors rule. Written by kb/_reclustering_s648_dryrun.py. Nothing here is applied: no kb file, generated file or Supabase row was written. Proposed new ids are allocated against every id ever minted and are re-allocated at apply against a fresh reserved set.",
+ "date": "2026-11-13",
+ "rulings": {
+  "six": {
+   "memory": "sam-sheet-186-six-cases-as-recommended-2026-11-13",
+   "said": "All six as recommended",
+   "where": "Open Asks Sheet 186 card 6",
+   "at": "2026-11-13T13:16Z"
+  },
+  "honors": {
+   "memory": "sam-honors-own-mid-2026-11-13",
+   "said": "an Honors course gets its own M-ID, with a declared equivalence to its base course",
+   "where": "Open Asks Sheet 191 card 1, reply 'two'",
+   "at": "2026-11-13T14:08Z"
+  }
+ },
+ "alias_chain": {
+  "baseline": "kb/anchor_rekey_out/2026-11-08/alias_map.json",
+  "pending_maps": [],
+  "note": "the ids were named after the newest applied map; each resolves to itself"
+ },
+ "inputs": {
+  "members": "unified_courses_members.js (generated 2026-11-13 18:39)",
+  "curation_overlay_synced_at": "2026-11-13T18:38:30Z",
+  "districts": "kb/college_identity/2026-11-10/crosswalk.json",
+  "report": "kb/status/mid_outcomes_compare_2026-11-12.json"
+ },
+ "cases": [
+  {
+   "n": 1,
+   "op": "split",
+   "report_says": "AJ 160, Community and the Justice System: proposed split (partial). 99 members, 95 colleges, units 0 to 4. outcomes and the descriptions say the groups differ; the titles do not.",
+   "named_ids": {
+    "AJ 160": "AJ 160"
+   },
+   "all_live": true,
+   "identities": {
+    "AJ 160": {
+     "id": "AJ 160",
+     "id_system": "C-ID",
+     "title": "Community and the Justice System",
+     "minted_title": null,
+     "discipline": "(official C-ID or CCN: no M-ID discipline)",
+     "members": 99,
+     "colleges": 95,
+     "districts": 70,
+     "units": [
+      0,
+      4
+     ],
+     "in_cid_catalog": true,
+     "curation": null,
+     "merge_into_chain_end": null,
+     "pointed_at_by": []
+    }
+   },
+   "blockers": [
+    "2 of 2 moved members sit under AJ 160 by an official claim or approval: a person rules whether outcomes may override it"
+   ],
+   "notes": [
+    "AJ 160 is an official identity: it is never re-keyed, and it keeps every member the split does not move"
+   ],
+   "groups": [
+    {
+     "title": "Community Relations",
+     "districts": 8,
+     "colleges": [
+      "Cabrillo College",
+      "Contra Costa College",
+      "Cuesta College",
+      "Las Positas College",
+      "Mission College",
+      "Moreno Valley College",
+      "Norco College",
+      "Riverside City College",
+      "Santa Ana College",
+      "Shasta College"
+     ],
+     "members": [
+      [
+       "Cabrillo College",
+       "CJ 5"
+      ],
+      [
+       "Contra Costa College",
+       "ADJUS 223"
+      ],
+      [
+       "Cuesta College",
+       "CJ 224"
+      ],
+      [
+       "Las Positas College",
+       "AJ 70"
+      ],
+      [
+       "Mission College",
+       "SOC 60"
+      ],
+      [
+       "Moreno Valley College",
+       "ADJ 5"
+      ],
+      [
+       "Norco College",
+       "ADJ 5"
+      ],
+      [
+       "Riverside City College",
+       "ADJ 5"
+      ],
+      [
+       "Santa Ana College",
+       "CJ 109"
+      ],
+      [
+       "Santa Ana College",
+       "CJ 109H"
+      ],
+      [
+       "Shasta College",
+       "ADJU 18"
+      ]
+     ],
+     "members_carrying_its_title": 51,
+     "stays": true
+    },
+    {
+     "title": "Community Relations And Special Issues In Criminal Justice",
+     "districts": 1,
+     "colleges": [
+      "Golden West College"
+     ],
+     "members": [
+      [
+       "Golden West College",
+       "CJ G137"
+      ]
+     ],
+     "members_carrying_its_title": 3,
+     "stays": false
+    },
+    {
+     "title": "Community Relations",
+     "districts": 1,
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "members": [
+      [
+       "Modesto Junior College",
+       "ADJU 205"
+      ]
+     ],
+     "members_carrying_its_title": 51,
+     "stays": false
+    }
+   ],
+   "moves": [
+    {
+     "group_title": "Community Relations And Special Issues In Criminal Justice",
+     "group_districts": 1,
+     "college": "Golden West College",
+     "code": "CJ G137",
+     "raw_rows": 1,
+     "control_number": "CCC000325641",
+     "title": "Community Relations And Special Issues In Criminal Justice",
+     "units": 3,
+     "top": "2105.00",
+     "coci_cid": null,
+     "coci_ccn": null,
+     "asccc_approvals": [
+      {
+       "cid": "AJ 160",
+       "disposition": "new_authority"
+      }
+     ],
+     "claim_hold": false,
+     "leaf_ids": [
+      "CRIM M10WC"
+     ],
+     "cn_rehome": null,
+     "leaf_merge_into": {},
+     "leaf_promotion_targets": {},
+     "sits_by": "asccc_approval",
+     "to": "held: the official claim or approval stands",
+     "target_id": "CRIM M10WC",
+     "proposed_new_id": null,
+     "proposed_discipline": "Administration of Justice",
+     "leaf_facts": {
+      "CRIM M10WC": {
+       "title": "Community Relations and Special Issues in Criminal Justice",
+       "members_in_its_own_record": 1,
+       "live_row": false,
+       "merge_into": null,
+       "merge_into_by": null,
+       "merge_into_at": null
+      }
+     },
+     "held": true,
+     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
+     "claim_hold_signals": {
+      "no_asccc_approval": false,
+      "subject_disagrees_with_every_other_member": false,
+      "top_family_disagrees": false,
+      "title_shares_no_word": false,
+      "qualifies": false
+     }
+    },
+    {
+     "group_title": "Community Relations",
+     "group_districts": 1,
+     "college": "Modesto Junior College",
+     "code": "ADJU 205",
+     "raw_rows": 1,
+     "control_number": "CCC000142236",
+     "title": "Community Relations",
+     "units": 3,
+     "top": "2105.00",
+     "coci_cid": "AJ 160",
+     "coci_ccn": null,
+     "asccc_approvals": [
+      {
+       "cid": "AJ 160",
+       "disposition": "already_claimed"
+      }
+     ],
+     "claim_hold": false,
+     "leaf_ids": [],
+     "cn_rehome": null,
+     "leaf_merge_into": {},
+     "leaf_promotion_targets": {},
+     "sits_by": "coci_cid_claim",
+     "to": "held: the official claim or approval stands",
+     "target_id": null,
+     "proposed_new_id": null,
+     "proposed_discipline": "Administration of Justice",
+     "leaf_facts": {},
+     "held": true,
+     "mechanism": "HELD for a person: the member sits under the official id by the college's own COCI C-ID claim. kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
+     "claim_hold_signals": {
+      "no_asccc_approval": false,
+      "subject_disagrees_with_every_other_member": false,
+      "top_family_disagrees": false,
+      "title_shares_no_word": false,
+      "qualifies": false
+     }
+    }
+   ],
+   "stays_count": 97,
+   "alias_map_entries": [],
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
+   "ready": false
+  },
+  {
+   "n": 2,
+   "op": "merge",
+   "report_says": "FIRE 130 X and FIRE M1274: proposed merge (strong). ... The closest pair across two districts: FST 6 Building Construction for Fire Protection, Las Positas College and FIPT 104 Building Construction for Fire Protection, San Diego Miramar College, outcomes 0.87, descriptions 0.64, titles 1.00; 4 course pairs reach the merge line.",
+   "named_ids": {
+    "FIRE 130 X": "FIRE 130 X",
+    "FIRE M1274": "FIRE M1274"
+   },
+   "all_live": true,
+   "identities": {
+    "FIRE 130 X": {
+     "id": "FIRE 130 X",
+     "id_system": "C-ID",
+     "title": "Building Construction for Fire Protection",
+     "minted_title": null,
+     "discipline": "(official C-ID or CCN: no M-ID discipline)",
+     "members": 23,
+     "colleges": 23,
+     "districts": 21,
+     "units": [
+      3,
+      3
+     ],
+     "in_cid_catalog": true,
+     "curation": null,
+     "merge_into_chain_end": null,
+     "pointed_at_by": []
+    },
+    "FIRE M1274": {
+     "id": "FIRE M1274",
+     "id_system": "M-ID",
+     "title": "Building Construction for Fire Protection",
+     "minted_title": "Building Construction for Fire Protection",
+     "discipline": "Fire Technology",
+     "members": 28,
+     "colleges": 27,
+     "districts": 20,
+     "units": [
+      3,
+      4
+     ],
+     "in_cid_catalog": false,
+     "curation": {
+      "unified_title": "Building Construction for Fire Protection",
+      "reviewed_by": "map@rccd.edu",
+      "reviewed_at": "2026-06-12T21:54:21.006861+00:00"
+     },
+     "merge_into_chain_end": null,
+     "pointed_at_by": [
+      "FIRE M10CH"
+     ]
+    }
+   },
+   "blockers": [],
+   "notes": [
+    "the adopter and potential college lists on FIRE 130 X's row do not follow the merge: FIRE M1274 has no entry in kb/coci_articulations.json identities, so the export's rollup skips it. Queued as a lane follow-up: rebuild the identities map",
+    "after the sync, FIRE M1274's overlay entry reads as reclustering-s648@bot's (the newest row wins reviewed_by and reviewed_at in kb/_apply_curation.py), while map@rccd.edu's 2026-06-12 unified_title row itself stays untouched in the table",
+    "FIRE M1274 carries a person's curation (unified_title by map@rccd.edu); the merge_into row sits in its own slot, so it lands beside that row and the survivor's title shows",
+    "1 curation pointers already fold into FIRE M1274 (FIRE M10CH by map@rccd.edu); each stays as saved and the export follows it on to FIRE 130 X"
+   ],
+   "survivor": "FIRE 130 X",
+   "folds": "FIRE M1274",
+   "survivor_why": "an official C-ID row is never folded into an M-ID; the M-ID folds into it",
+   "unit_range_after": [
+    3,
+    4
+   ],
+   "folded_members_by_provenance": {
+    "own_leaf": 27,
+    "leaf_merge_into": 1
+   },
+   "folded_members_official_claims": {},
+   "districts": {
+    "FIRE 130 X": 21,
+    "FIRE M1274": 20,
+    "shared": 0
+   },
+   "mechanism": "kb_curation row (FIRE M1274, merge_into, FIRE 130 X), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
+   "alias_map_entries": [],
+   "alias_note": "none: a merge_into fold re-keys nothing; FIRE M1274 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias FIRE M1274 -> FIRE 130 X) is the alternative only between two M-IDs, and it would move every id-keyed class below",
+   "pointers_into_folded": [
+    {
+     "row": [
+      "FIRE M10CH",
+      "merge_into",
+      "FIRE M1274"
+     ],
+     "reviewed_by": "map@rccd.edu",
+     "reviewed_at": "2026-06-12T21:54:21.006861+00:00",
+     "course": "Mt. San Jacinto College FIRE 515 Building Construction for Fire Protection",
+     "fate": "unchanged. FIRE M1274 stays a live catalog record (no alias map is written and nothing is re-keyed, so kb/alias_chain.py never moves this row), and the export follows the row's pointer through FIRE M1274's own merge_into to FIRE 130 X (flatten_merge_chains): the course shows under FIRE 130 X, and deleting the cohort row returns it to FIRE M1274"
+    }
+   ],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCXS-BCFF-1-001",
+     "exhibit_title": "Building Construction for Fire Protection Credit by Exam",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCXS-BCFF2-1-001",
+     "exhibit_title": "Building Construction for Fire Protection",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRETEC 4 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Chaffey College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCXS-F3CF-1-001",
+     "exhibit_title": "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCxS-BCFF1-1-001",
+     "exhibit_title": "Building Construction for Fire Protection FIRE 004 Cx",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFEC-1-001",
+     "exhibit_title": "Cal-JAC Firefighter EMT Certificate",
+     "unified_title": "Firefighter EMT Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIRE 8 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 3.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFFP1-1-001",
+     "exhibit_title": "Cal-JAC Fire Fighter Paramedic Journeyperson Certificate",
+     "unified_title": "Fire Fighter Paramedic Journeyperson Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chaffey College",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 0.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFJC-1-001",
+     "exhibit_title": "Cal-JAC Firefighter Journeyperson Certificate",
+     "unified_title": "Firefighter Journeyperson Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 2.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-F1C-1-001",
+     "exhibit_title": "Firefighter 1 Certification",
+     "unified_title": "Firefighter 1",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE 8 Building Construction for Fire Protection, FIRE B7 Building Construction for Fire Protection, FT 6 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection, F SC 53 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 626.4,
+     "students": 37,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-F1C1-1-001",
+     "exhibit_title": "Firefighter 1A Certification",
+     "unified_title": "Firefighter 1A",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRE 8 Building Construction for Fire Protection, FT 6 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 3.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-BCFF-1-001",
+     "exhibit_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-BCFF1-1-001",
+     "exhibit_title": "Building Construction for Fire Protection",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 34 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Merced College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-F3CF-1-001",
+     "exhibit_title": "FTECH 304\tBuilding Construction for Fire Protection - Industry Certification",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FAE(1-1-001",
+     "exhibit_title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+     "unified_title": "Fire Academy Experience",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIT 4 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Moreno Valley College"
+     ],
+     "eligible_credits": 295.0,
+     "students": 10,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FC1A-1-001",
+     "exhibit_title": "Firefighter Certificate 1 A",
+     "unified_title": "Firefighter 1",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 626.4,
+     "students": 37,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-NF1-1-001",
+     "exhibit_title": "NFPA Firefighter 1",
+     "unified_title": "Firefighter I",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE B7 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 18.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-SCCF-1-001",
+     "exhibit_title": "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience",
+     "unified_title": "SFT Fire Inspector 1B and 1C",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 0.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPPRA-F3BC-1-001",
+     "exhibit_title": "FTECH 304 Building Construction for Fire Protection - Portfolio Review",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Portfolio Review",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FTECH 304 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPPRA-PFE-1-001",
+     "exhibit_title": "Professional fire experience",
+     "unified_title": "Professional Fire Service Experience",
+     "cpl_type": "Portfolio Review",
+     "credit_recommendation": "3 hours in Building Construction For Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 42.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    }
+   ],
+   "ready": true
+  },
+  {
+   "n": 3,
+   "op": "merge",
+   "report_says": "REAL M1038 and REAL M1040: proposed merge (partial). ... The two titles each name something the other lacks (Real Estate Practice, Real Estate Principles), so before a merge a person checks whether a student takes both, as two required courses or two steps of one sequence; word overlap cannot tell.",
+   "named_ids": {
+    "REAL M1038": "REAL M1038",
+    "REAL M1040": "REAL M1040"
+   },
+   "all_live": true,
+   "identities": {
+    "REAL M1038": {
+     "id": "REAL M1038",
+     "id_system": "M-ID",
+     "title": "Real Estate Practice",
+     "minted_title": "Real Estate Practice",
+     "discipline": "Real Estate",
+     "members": 52,
+     "colleges": 50,
+     "districts": 41,
+     "units": [
+      0,
+      4
+     ],
+     "in_cid_catalog": false,
+     "curation": {
+      "unified_title": "Real Estate Practice",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+     },
+     "merge_into_chain_end": null,
+     "pointed_at_by": [
+      "REAL M10AD"
+     ]
+    },
+    "REAL M1040": {
+     "id": "REAL M1040",
+     "id_system": "M-ID",
+     "title": "Real Estate Principles",
+     "minted_title": "Real Estate Principles",
+     "discipline": "Real Estate",
+     "members": 70,
+     "colleges": 65,
+     "districts": 50,
+     "units": [
+      0,
+      4
+     ],
+     "in_cid_catalog": false,
+     "curation": {
+      "unified_title": "Real Estate Principles",
+      "reviewed_by": "automerge-v1@bot",
+      "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+     },
+     "merge_into_chain_end": null,
+     "pointed_at_by": [
+      "REAL M10AC"
+     ]
+    }
+   },
+   "blockers": [
+    "the report's own condition: a person checks whether a student takes both. Both minted records say the course is required for the California real estate salesperson license (REAL M1038: 'required for the educational requirement for the California real estate salesperson license'; REAL M1040: 'A State of California required course for the Real Estate Sales License exam'). Read that way, a student takes both and the merge does not proceed; a person confirms"
+   ],
+   "notes": [
+    "the report also pairs this case with REAL M1039 (strong, best outcomes 0.5986); that pair is outside the ruling and outside this plan",
+    "1 curation pointers already fold into REAL M1038 (REAL M10AD by automerge-v1@bot); each stays as saved and the export follows it on to REAL M1040"
+   ],
+   "survivor": "REAL M1040",
+   "folds": "REAL M1038",
+   "survivor_why": "the larger identity (70 members) with the wider credit-by-exam reach (6 earning colleges)",
+   "unit_range_after": [
+    0,
+    4
+   ],
+   "folded_members_by_provenance": {
+    "own_leaf": 51,
+    "leaf_merge_into": 1
+   },
+   "folded_members_official_claims": {},
+   "districts": {
+    "REAL M1040": 50,
+    "REAL M1038": 41,
+    "shared": 38
+   },
+   "mechanism": "kb_curation row (REAL M1038, merge_into, REAL M1040), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
+   "alias_map_entries": [],
+   "alias_note": "none: a merge_into fold re-keys nothing; REAL M1038 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias REAL M1038 -> REAL M1040) is the alternative only between two M-IDs, and it would move every id-keyed class below",
+   "pointers_into_folded": [
+    {
+     "row": [
+      "REAL M10AD",
+      "merge_into",
+      "REAL M1038"
+     ],
+     "reviewed_by": "automerge-v1@bot",
+     "reviewed_at": "2026-06-12T22:47:01.69179+00:00",
+     "course": "Mt. San Jacinto College RE 502 Real Estate Practice",
+     "fate": "unchanged. REAL M1038 stays a live catalog record (no alias map is written and nothing is re-keyed, so kb/alias_chain.py never moves this row), and the export follows the row's pointer through REAL M1038's own merge_into to REAL M1040 (flatten_merge_chains): the course shows under REAL M1040, and deleting the cohort row returns it to REAL M1038"
+    }
+   ],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCXS-R3EP-1-001",
+     "exhibit_title": "RLES 381\tReal Estate Practice - Credit by Exam",
+     "unified_title": "Real Estate Practice",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "RLES 381 Real Estate Practice",
+     "earned_by_colleges": [
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 15.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-DREB-1-001",
+     "exhibit_title": "DRE Real Estate Broker v2",
+     "unified_title": "California Real Estate Broker License",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "REAL 212 Real Estate Practice, RES 155 Real Estate Practice, R E 184 Real Estate Practice",
+     "earned_by_colleges": [
+      "Citrus College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 117.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-DRES-1-001",
+     "exhibit_title": "DRE Real Estate Salesperson License v2",
+     "unified_title": "California Real Estate Salesperson License",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "REST 84 Real Estate Practice, RES 155 Real Estate Practice, R E 184 Real Estate Practice",
+     "earned_by_colleges": [
+      "Chabot College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 39.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FTRE-1-001",
+     "exhibit_title": "First Tuesday Real Estate School",
+     "unified_title": "First Tuesday Real Estate Courses",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practices",
+     "local_course": "RLE 81 Real Estate Practice",
+     "earned_by_colleges": [
+      "Riverside City College"
+     ],
+     "eligible_credits": 18.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-R3EP1-1-001",
+     "exhibit_title": "RLES 381\tReal Estate Practice - Industry Certification",
+     "unified_title": "Real Estate Practice",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "RLES 381 Real Estate Practice",
+     "earned_by_colleges": [
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 15.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-RESP-1-001",
+     "exhibit_title": "Real Estate Salesperson: Principles and Practices",
+     "unified_title": "Real Estate Principles and Practices",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practices",
+     "local_course": "RLE 81 Real Estate Practice",
+     "earned_by_colleges": [
+      "Riverside City College"
+     ],
+     "eligible_credits": 6.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    }
+   ],
+   "ready": false
+  },
+  {
+   "n": 4,
+   "op": "merge",
+   "report_says": "MATH M1036 and MATH M1044: proposed merge (partial). ... The closest pair across two districts: MATH G115 College Algebra, Golden West College and MATH 116 College and Matrix Algebra, San Diego Miramar College, outcomes 0.57, descriptions 0.27, titles 0.67; 2 course pairs reach the merge line.",
+   "named_ids": {
+    "MATH M1036": "MATH M1036",
+    "MATH M1044": "MATH M1044"
+   },
+   "all_live": true,
+   "identities": {
+    "MATH M1036": {
+     "id": "MATH M1036",
+     "id_system": "M-ID",
+     "title": "College Algebra",
+     "minted_title": "College Algebra",
+     "discipline": "Mathematics",
+     "members": 44,
+     "colleges": 44,
+     "districts": 33,
+     "units": [
+      3,
+      5
+     ],
+     "in_cid_catalog": false,
+     "curation": null,
+     "merge_into_chain_end": null,
+     "pointed_at_by": []
+    },
+    "MATH M1044": {
+     "id": "MATH M1044",
+     "id_system": "M-ID",
+     "title": "College and Matrix Algebra",
+     "minted_title": "College and Matrix Algebra",
+     "discipline": "Mathematics",
+     "members": 3,
+     "colleges": 3,
+     "districts": 1,
+     "units": [
+      3,
+      3
+     ],
+     "in_cid_catalog": false,
+     "curation": null,
+     "merge_into_chain_end": null,
+     "pointed_at_by": []
+    }
+   },
+   "blockers": [
+    "MATH M1044 carries the articulation of exhibit MAPCBES-CBES-1-001 *Credit By Exam San Diego City College* (Credit By Exam, earned at San Diego City College, San Diego Mesa College, San Diego Miramar College), whose unified title is *Basic Refrigeration & AC Lab* while its credit recommendation reads '3 hours in College and Matrix Algebra' and its local course is MATH 116 College and Matrix Algebra: the title names another subject, so the record looks mis-filed at the title's unification (a college-wide credit-by-exam exhibit given one course's name). The merge would carry that title's 4838.0 eligible credits and 330 students into MATH M1036. Settled when the Exhibit Reference re-titles MAPCBES-CBES-1-001 by its credit recommendations (or the articulation moves off MATH M1044); then the merge proceeds"
+   ],
+   "notes": [
+    "the adopter and potential college lists on MATH M1036's row do not follow the merge: MATH M1044 has no entry in kb/coci_articulations.json identities, so the export's rollup skips it. Queued as a lane follow-up: rebuild the identities map",
+    "the report also pairs this case with MATH 150 (strong, best outcomes 0.6039); that pair is outside the ruling and outside this plan"
+   ],
+   "survivor": "MATH M1036",
+   "folds": "MATH M1044",
+   "survivor_why": "the larger identity (44 members); MATH M1044's three members are one district",
+   "unit_range_after": [
+    3,
+    5
+   ],
+   "folded_members_by_provenance": {
+    "own_leaf": 3
+   },
+   "folded_members_official_claims": {},
+   "districts": {
+    "MATH M1036": 33,
+    "MATH M1044": 1,
+    "shared": 0
+   },
+   "mechanism": "kb_curation row (MATH M1044, merge_into, MATH M1036), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
+   "alias_map_entries": [],
+   "alias_note": "none: a merge_into fold re-keys nothing; MATH M1044 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias MATH M1044 -> MATH M1036) is the alternative only between two M-IDs, and it would move every id-keyed class below",
+   "pointers_into_folded": [],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCBES-CAMA-1-001",
+     "exhibit_title": "College and Matrix Algebra",
+     "unified_title": "College and Matrix Algebra",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in College and Matrix Algebra",
+     "local_course": "MATH 116 College and Matrix Algebra",
+     "earned_by_colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 9.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCBES-CBES-1-001",
+     "exhibit_title": "Credit By Exam San Diego City College",
+     "unified_title": "Basic Refrigeration & AC Lab",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in College and Matrix Algebra",
+     "local_course": "MATH 116 College and Matrix Algebra",
+     "earned_by_colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 4838.0,
+     "students": 330,
+     "new_to_survivor": true,
+     "suspect": true
+    }
+   ],
+   "ready": false
+  },
+  {
+   "n": 5,
+   "op": "split",
+   "report_says": "MUS 130, Music Theory II: proposed split (partial). 90 members, 88 colleges, units 3 to 5. outcomes and the descriptions say the groups differ; the titles do not.",
+   "named_ids": {
+    "MUS 130": "MUS 130"
+   },
+   "all_live": true,
+   "identities": {
+    "MUS 130": {
+     "id": "MUS 130",
+     "id_system": "C-ID",
+     "title": "Music Theory II",
+     "minted_title": null,
+     "discipline": "(official C-ID or CCN: no M-ID discipline)",
+     "members": 90,
+     "colleges": 88,
+     "districts": 62,
+     "units": [
+      3,
+      5
+     ],
+     "in_cid_catalog": true,
+     "curation": null,
+     "merge_into_chain_end": null,
+     "pointed_at_by": []
+    }
+   },
+   "blockers": [
+    "1 of 1 moved members sit under MUS 130 by an official claim or approval: a person rules whether outcomes may override it"
+   ],
+   "notes": [
+    "MUS 130 is an official identity: it is never re-keyed, and it keeps every member the split does not move"
+   ],
+   "groups": [
+    {
+     "title": "Music Theory and Musicianship II",
+     "districts": 9,
+     "colleges": [
+      "Cabrillo College",
+      "Columbia College",
+      "Contra Costa College",
+      "Cuesta College",
+      "Golden West College",
+      "Las Positas College",
+      "Modesto Junior College",
+      "Moreno Valley College",
+      "Norco College",
+      "Orange Coast College",
+      "Riverside City College",
+      "Santa Ana College",
+      "Shasta College"
+     ],
+     "members": [
+      [
+       "Cabrillo College",
+       "MUS 2"
+      ],
+      [
+       "Columbia College",
+       "MUSIC 20B"
+      ],
+      [
+       "Cuesta College",
+       "MUS 204A"
+      ],
+      [
+       "Las Positas College",
+       "MUS 8B"
+      ],
+      [
+       "Modesto Junior College",
+       "MUST 122"
+      ],
+      [
+       "Moreno Valley College",
+       "MUS 4"
+      ],
+      [
+       "Orange Coast College",
+       "MUS A185"
+      ],
+      [
+       "Santa Ana College",
+       "MUS 112"
+      ],
+      [
+       "Shasta College",
+       "MUS 3"
+      ],
+      [
+       "Contra Costa College",
+       "MUSIC 121"
+      ],
+      [
+       "Norco College",
+       "MUS 5"
+      ],
+      [
+       "Riverside City College",
+       "MUS 5"
+      ],
+      [
+       "Golden West College",
+       "MUS G117"
+      ]
+     ],
+     "members_carrying_its_title": 73,
+     "stays": true
+    },
+    {
+     "title": "Music Theory II",
+     "districts": 1,
+     "colleges": [
+      "San Diego Mesa College"
+     ],
+     "members": [
+      [
+       "San Diego Mesa College",
+       "MUSI 148B"
+      ]
+     ],
+     "members_carrying_its_title": 72,
+     "stays": false
+    }
+   ],
+   "moves": [
+    {
+     "group_title": "Music Theory II",
+     "group_districts": 1,
+     "college": "San Diego Mesa College",
+     "code": "MUSI 148B",
+     "raw_rows": 1,
+     "control_number": "CCC000620387",
+     "title": "Music Theory II",
+     "units": 3,
+     "top": "1004.00",
+     "coci_cid": null,
+     "coci_ccn": null,
+     "asccc_approvals": [
+      {
+       "cid": "MUS 130",
+       "disposition": "new_authority"
+      }
+     ],
+     "claim_hold": false,
+     "leaf_ids": [
+      "MUSI M1429"
+     ],
+     "cn_rehome": null,
+     "leaf_merge_into": {},
+     "leaf_promotion_targets": {
+      "MUSI M1429": [
+       "C-ID:MUS 120",
+       "C-ID:MUS 130",
+       "C-ID:MUS 140"
+      ]
+     },
+     "sits_by": "asccc_approval",
+     "to": "held: the official claim or approval stands",
+     "target_id": null,
+     "proposed_new_id": null,
+     "proposed_discipline": "Music",
+     "leaf_facts": {
+      "MUSI M1429": {
+       "title": "Music Theory 2",
+       "members_in_its_own_record": 18,
+       "live_row": false,
+       "merge_into": null,
+       "merge_into_by": null,
+       "merge_into_at": null
+      }
+     },
+     "held": true,
+     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
+     "claim_hold_signals": {
+      "no_asccc_approval": false,
+      "subject_disagrees_with_every_other_member": false,
+      "top_family_disagrees": false,
+      "title_shares_no_word": false,
+      "qualifies": false
+     }
+    }
+   ],
+   "stays_count": 89,
+   "alias_map_entries": [],
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
+   "ready": false
+  },
+  {
+   "n": 6,
+   "op": "split",
+   "report_says": "BUSI M1228, International Documentation and Supply Chain Management: proposed split (partial). 24 members, 21 colleges, units 0 to 3. outcomes, descriptions and titles say the groups differ, but each college sits in one group, so different wording of one course is not ruled out.",
+   "named_ids": {
+    "BUSI M1228": "BUSI M1228"
+   },
+   "all_live": true,
+   "identities": {
+    "BUSI M1228": {
+     "id": "BUSI M1228",
+     "id_system": "M-ID",
+     "title": "International Documentation and Supply Chain Management",
+     "minted_title": "Supply Chain Management",
+     "discipline": "Business",
+     "members": 24,
+     "colleges": 21,
+     "districts": 20,
+     "units": [
+      0,
+      3
+     ],
+     "in_cid_catalog": false,
+     "curation": {
+      "unified_title": "International Documentation and Supply Chain Management",
+      "reviewed_by": "automerge-titlelane-v1@bot",
+      "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+     },
+     "merge_into_chain_end": null,
+     "pointed_at_by": [
+      "BUSI M10XV",
+      "BUSI M10XW",
+      "BUSI M10XX",
+      "BUSI M10XY",
+      "BUSI M10XZ",
+      "BUSI M10YA",
+      "BUSI M10YB",
+      "BUSI M1226",
+      "BUSI M1227"
+     ]
+    }
+   },
+   "blockers": [
+    "Needs Sam's word: Santa Ana College BUS 115 returns to its own record BUSI M10XW only by removing the row (BUSI M10XW, merge_into, BUSI M1228) that automerge-titlelane-v1@bot saved at 2026-06-13T17:47:56.243497+00:00; the insert-only route leaves the residue named in the move"
+   ],
+   "notes": [],
+   "groups": [
+    {
+     "title": "Global Supply Chain and Logistics",
+     "districts": 1,
+     "colleges": [
+      "Santa Ana College"
+     ],
+     "members": [
+      [
+       "Santa Ana College",
+       "BUS 115"
+      ]
+     ],
+     "members_carrying_its_title": 3,
+     "stays": false
+    },
+    {
+     "title": "Introduction to Supply Chain Management",
+     "districts": 1,
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "members": [
+      [
+       "Modesto Junior College",
+       "LOGST 202"
+      ]
+     ],
+     "members_carrying_its_title": 20,
+     "stays": true
+    }
+   ],
+   "moves": [
+    {
+     "group_title": "Global Supply Chain and Logistics",
+     "group_districts": 1,
+     "college": "Santa Ana College",
+     "code": "BUS 115",
+     "raw_rows": 1,
+     "control_number": "CCC000609492",
+     "title": "Global Supply Chain and Logistics",
+     "units": 3,
+     "top": "0508.00",
+     "coci_cid": null,
+     "coci_ccn": null,
+     "asccc_approvals": [],
+     "claim_hold": false,
+     "leaf_ids": [
+      "BUSI M10XW"
+     ],
+     "cn_rehome": null,
+     "leaf_merge_into": {
+      "BUSI M10XW": "BUSI M1228"
+     },
+     "leaf_promotion_targets": {},
+     "sits_by": "leaf_merge_into",
+     "to": "held: returns to its own record only when Sam allows removing one saved row",
+     "target_id": "BUSI M10XW",
+     "proposed_new_id": null,
+     "proposed_discipline": "Business",
+     "leaf_facts": {
+      "BUSI M10XW": {
+       "title": "Global Supply Chain and Logistics",
+       "members_in_its_own_record": 1,
+       "live_row": false,
+       "merge_into": "BUSI M1228",
+       "merge_into_by": "automerge-titlelane-v1@bot",
+       "merge_into_at": "2026-06-13T17:47:56.243497+00:00"
+      }
+     },
+     "held": true,
+     "mechanism": "HELD for Sam's word. Route A (clean): remove the row (BUSI M10XW, merge_into, BUSI M1228) that automerge-titlelane-v1@bot saved at 2026-06-13T17:47:56.243497+00:00, its before-value written to the receipt first so a re-INSERT undoes it; the course returns to BUSI M10XW, its own record. Route B (insert-only): a CN:CCC000609492 row re-homing the course onto a newly minted stand-alone. Route B leaves residue: BUSI M10XW stays a merge member of BUSI M1228 through the bot's row, so BUSI M1228 keeps the course's title variant, count and aggregates, and a second identity is minted beside a live sibling record (BUSI M10XW)"
+    }
+   ],
+   "stays_count": 23,
+   "alias_map_entries": [],
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
+   "ready": false
+  }
+ ],
+ "affected_ids": [
+  "AJ 160",
+  "BUSI M10XW",
+  "BUSI M1228",
+  "CRIM M10WC",
+  "FIRE 130 X",
+  "FIRE M1274",
+  "MATH M1036",
+  "MATH M1044",
+  "MUS 130",
+  "REAL M1038",
+  "REAL M1040"
+ ],
+ "id_keyed_touches": {
+  "AJ 160": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 58,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_roep_data.js",
+    "occurrences": 2,
+    "written_by": "script:kb/_build_roep_display.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 6,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/cid_articulation_joins.json",
+    "occurrences": 159,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 17,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 28,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/reference/cid_articulations.json",
+    "occurrences": 103,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/cid_descriptors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/coci_courses.json",
+    "occurrences": 3,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/remint_blast_worklist.json",
+    "occurrences": 15,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/unified_titles.json",
+    "occurrences": 3,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 5,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 4,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 2,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "statewide_data.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "tmc_college_courses.js",
+    "occurrences": 96,
+    "written_by": "script:tmc/_build_college_courses.py"
+   },
+   {
+    "file": "tmc_templates.js",
+    "occurrences": 2,
+    "written_by": "script:tmc/_parse_tmc_pdfs.py"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "FIRE 130 X": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 11,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_roep_data.js",
+    "occurrences": 6,
+    "written_by": "script:kb/_build_roep_display.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 6,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/cid_articulation_joins.json",
+    "occurrences": 33,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 8,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 5,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/reference/cid_articulations.json",
+    "occurrences": 23,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/cid_descriptors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/coci_courses.json",
+    "occurrences": 3,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/remint_blast_worklist.json",
+    "occurrences": 7,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_atlas_data.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 6,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "statewide_data.js",
+    "occurrences": 4,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "tmc_college_courses.js",
+    "occurrences": 23,
+    "written_by": "script:tmc/_build_college_courses.py"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_suggestions.js",
+    "occurrences": 3,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "FIRE M1274": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 38,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_ccr_data.js",
+    "occurrences": 1,
+    "written_by": "script:kb/_build_cpl_pathway_ccr.py"
+   },
+   {
+    "file": "cpl_pathways_membership_data.js",
+    "occurrences": 2,
+    "written_by": "script:kb/_build_cpl_pathway_membership.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "cpl_pathways_roep_data.js",
+    "occurrences": 4,
+    "written_by": "script:kb/_build_roep_display.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 10,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/cid_articulation_joins.json",
+    "occurrences": 11,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 18,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_curation.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 3,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/promotions.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_atlas_data.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 10,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 5,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_suggestions.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "MATH M1036": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 61,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_membership_data.js",
+    "occurrences": 1,
+    "written_by": "script:kb/_build_cpl_pathway_membership.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/cid_articulation_joins.json",
+    "occurrences": 16,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 5,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 4,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 5,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/promotions.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 11,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_suggestions.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "MUS 130": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 47,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_membership_data.js",
+    "occurrences": 3,
+    "written_by": "script:kb/_build_cpl_pathway_membership.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/cid_articulation_joins.json",
+    "occurrences": 195,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 4,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 8,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/exhibits_adoption.json",
+    "occurrences": 1,
+    "written_by": "workflow:cer-procedures.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/reference/cid_articulations.json",
+    "occurrences": 106,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/cid_descriptors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/reference/coci_courses.json",
+    "occurrences": 3,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "kb/remint_blast_worklist.json",
+    "occurrences": 3,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 9,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 9,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "tmc_college_courses.js",
+    "occurrences": 95,
+    "written_by": "script:tmc/_build_college_courses.py"
+   },
+   {
+    "file": "tmc_templates.js",
+    "occurrences": 1,
+    "written_by": "script:tmc/_parse_tmc_pdfs.py"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 3,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 9,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_suggestions.js",
+    "occurrences": 4,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "REAL M1038": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 51,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 5,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 7,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_curation.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 2,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/crnc_mirrors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 5,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "REAL M1040": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 70,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "cpl_pathways_roep_data.js",
+    "occurrences": 4,
+    "written_by": "script:kb/_build_roep_display.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 5,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 18,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_curation.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 2,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/crnc_mirrors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 5,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 10,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "MATH M1044": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 3,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 2,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 4,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_suggestions.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ],
+  "BUSI M1228": [
+   {
+    "file": "coci_lookup_data.js",
+    "occurrences": 10,
+    "written_by": "script:kb/_build_coci_lookup.py"
+   },
+   {
+    "file": "credential_reference_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:excel_to_dashboard.py:export_credential_reference(), workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/coci_articulations.json",
+    "occurrences": 3,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_curation.json",
+    "occurrences": 10,
+    "written_by": "workflow:daily-dashboard.yml, workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_courses.json",
+    "occurrences": 3,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/coci_minted_memberships.json",
+    "occurrences": 1,
+    "written_by": "workflow:overmerge-apply.yml, workflow:phase-1e-apply.yml"
+   },
+   {
+    "file": "kb/cr_reference_worklist.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "kb/crnc_mirrors.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_cpl.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_cpl_universe_members.json",
+    "occurrences": 2,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_remint_blast.json",
+    "occurrences": 1,
+    "written_by": "workflow:cred-rename-apply.yml, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "prototype/ccr_universe.json",
+    "occurrences": 2,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "prototype/ccr_universe_members.json",
+    "occurrences": 1,
+    "written_by": "no producer (stored)"
+   },
+   {
+    "file": "unified_courses_aligned.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_data.js",
+    "occurrences": 2,
+    "written_by": "script:excel_to_dashboard.py, script:kb/_morphological_variant_dryrun.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_details.js",
+    "occurrences": 1,
+    "written_by": "workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_index.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_member_desc.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   },
+   {
+    "file": "unified_courses_members.js",
+    "occurrences": 1,
+    "written_by": "script:excel_to_dashboard.py, workflow:daily-dashboard.yml"
+   }
+  ]
+ },
+ "curation_overlay": {
+  "rows_on_affected_keys": {
+   "BUSI M1228": {
+    "unified_title": "International Documentation and Supply Chain Management",
+    "reviewed_by": "automerge-titlelane-v1@bot",
+    "reviewed_at": "2026-06-13T17:47:56.243497+00:00"
+   },
+   "FIRE M1274": {
+    "unified_title": "Building Construction for Fire Protection",
+    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-06-12T21:54:21.006861+00:00"
+   },
+   "REAL M1038": {
+    "unified_title": "Real Estate Practice",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   },
+   "REAL M1040": {
+    "unified_title": "Real Estate Principles",
+    "reviewed_by": "automerge-v1@bot",
+    "reviewed_at": "2026-06-12T22:47:01.69179+00:00"
+   }
+  },
+  "pointers_into_affected": 12,
+  "pointers_into_affected_by_reviewer": {
+   "automerge-titlelane-v1@bot": 9,
+   "map@rccd.edu": 1,
+   "automerge-v1@bot": 2
+  }
+ },
+ "kb_curation_selects": {
+  "pre": [
+   {
+    "sql": "select course_id, field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('FIRE M1274', 'FIRE 130 X') group by 1, 2, 3 order by 1, 2, 3;",
+    "expect": {
+     "FIRE M1274 | unified_title | person": 1
+    },
+    "if_different": "a row a person or procedure saved on FIRE M1274 or FIRE 130 X since the overlay sync: read it before applying, and a merge_into row on either holds the apply"
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id = 'FIRE M1274';",
+    "expect": 0,
+    "if_different": "FIRE M1274 already folds somewhere: the INSERT would be skipped; hold"
+   },
+   {
+    "sql": "select course_id, (reviewer_email like '%@bot') as bot from public.kb_curation where field = 'merge_into' and value = 'FIRE M1274' order by 1;",
+    "expect": [
+     [
+      "FIRE M10CH",
+      false
+     ]
+    ],
+    "if_different": "another pointer into FIRE M1274: it follows the fold to FIRE 130 X too; read it before applying"
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where field = 'merge_dismissed' and (value like '%FIRE M1274%' or value like '%FIRE 130 X%');",
+    "expect": 0,
+    "if_different": "a person chose 'Keep as-is' on a group naming one of the two: their choice wins; hold"
+   },
+   {
+    "sql": "select count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot';",
+    "expect": 0,
+    "if_different": "the cohort already wrote (P0): read its rows before anything else"
+   }
+  ],
+  "dropped": "unified_title_merge_confirm is not read: credential_reference.js writes those rows under _CREDENTIAL_REVIEW::<unified title> keys for credential renames, so a course id never appears there and the read returns 0 by construction",
+  "post": {
+   "sql": "select course_id, field, value from public.kb_curation where reviewer_email = 'reclustering-s648@bot' order by 1;",
+   "expect": [
+    [
+     "FIRE M1274",
+     "merge_into",
+     "FIRE 130 X"
+    ]
+   ],
+   "if_different": "no row: the slot was taken and the INSERT skipped; nothing landed, nothing to undo"
+  }
+ },
+ "honors": {
+  "rule": {
+   "marks_honors": "the word Honors (or Honor) in the title, as a whole word. A code ending in H corroborates and finds the base, and never marks a course alone.",
+   "honors_program_courses": "a title naming only the honors program (Colloquium, Forum, Seminar, Society) has no base: it keeps its own identity and declares nothing.",
+   "base_course": "the same college's course whose code is the honors code with its H removed and whose title agrees once Honors is struck (stem overlap 0.5); else the one course at that college whose title equals the honors title with Honors struck. Never itself Honors.",
+   "new_identity": "the Honors members of one identity whose bases sit in that identity leave it together for one new Honors M-ID under the same discipline's canonical code; corroborated shape at two or more colleges, stand-alone at one.",
+   "equivalence": "stored as a kb_curation row (honors_id, field 'honors_of', value base identity), the field kb/_apply_curation.py must first learn (FIELDS), mirrored to kb/coci_curation.json; an id-keyed value that the alias chain and supabase-rekey.yml re-key at every later apply.",
+   "units": "units never split an identity: the Honors M-ID shows the range of what it joins; a unit difference between an Honors course and its base is shown and decides nothing.",
+   "district_guard": "the rule is structural (title and code), so it needs no outcome vote; where outcome text is offered as evidence of equivalence, a pair inside one district is one voice (RCCD's BIO 1 and BIO 1H share one outline).",
+   "top": "TOP is read by nothing."
+  },
+  "summary": {
+   "honors_rows": 1967,
+   "honors_program_rows": 25,
+   "code_H_without_the_word_not_counted": 182,
+   "shares_base_identity": 680,
+   "apart_from_base": 1118,
+   "no_base_at_college": 145,
+   "ambiguous_or_untitled": 24,
+   "cross_listed_rows": 488,
+   "identities_all_honors": 519,
+   "new_mids_if_ruled": 136,
+   "new_mids_from_m_ids": 3,
+   "new_mids_from_official_ids": 133,
+   "honors_rows_leaving_official_ids": 676,
+   "honors_rows_under_official_ids_by_why_they_sit_there": {
+    "coci_cid_claim": 437,
+    "asccc_approval": 218,
+    "leaf_phase_b_fold": 21
+   },
+   "equivalence_pairs_already_apart": 508,
+   "honors_rows_leaving_m_ids": 4,
+   "new_mid_shape": {
+    "corroborated (2+ colleges)": 100,
+    "stand-alone (1 college)": 36
+   },
+   "new_mids_by_discipline_m_id": {
+    "Humanities": 1,
+    "Interdisciplinary Studies": 1,
+    "Library Science": 1
+   },
+   "new_mids_by_official_subject": {
+    "ENGL": 12,
+    "MATH": 9,
+    "PSY": 8,
+    "COMM": 7,
+    "SOCI": 7,
+    "ARTH": 6,
+    "BIOL": 6,
+    "GEOL": 6,
+    "HIST": 6,
+    "SPAN": 6,
+    "ANTH": 5,
+    "CHEM": 5,
+    "GEOG": 5,
+    "PHIL": 5,
+    "POLS": 5,
+    "BUS": 4,
+    "COMP": 4,
+    "MUS": 4,
+    "AJ": 3,
+    "THTR": 3,
+    "ACCT": 2,
+    "CDEV": 2,
+    "ECON": 2,
+    "PHYS": 2,
+    "SJS": 2,
+    "ARTS": 1,
+    "ENGR": 1,
+    "ENVS": 1,
+    "FTVE": 1,
+    "JOUR": 1,
+    "NUTR": 1,
+    "PHS": 1
+   },
+   "new_mids_one_district": 0,
+   "ccn_honors_identities": [
+    "ANTH C1001H",
+    "ARTH C1100H",
+    "ARTH C1200H",
+    "ASTR C1001H",
+    "BIOL C1000H",
+    "BIOL C1001H",
+    "CDEV C1000H",
+    "COMM C1000H",
+    "COMM C1004H",
+    "ECON C2001H",
+    "ECON C2002H",
+    "ENGL C1000H",
+    "ENGL C1001H",
+    "ENGL C1002H",
+    "ENGL C1003H",
+    "HIST C1001H",
+    "HIST C1002H",
+    "MATH C2210H",
+    "MATH C2220H",
+    "POLS C1000H",
+    "PSYC C1000H",
+    "SOCI C1000H",
+    "STAT C1000H"
+   ]
+  },
+  "new_mids": [
+   {
+    "from_identity": "ACCT 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 11,
+    "colleges": 10,
+    "districts": 10,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ACCT 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 7,
+    "districts": 6,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "AJ 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 8,
+    "colleges": 8,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "AJ 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "AJ 160",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "ANTH 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 22,
+    "colleges": 22,
+    "districts": 14,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ANTH 115 L",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     1,
+     1
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ANTH 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 26,
+    "colleges": 26,
+    "districts": 21,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ANTH 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ANTH 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ARTH 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 6,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ARTH 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ARTH 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ARTH 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "ARTH 145",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ARTH 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "ARTS 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "BIOL 120 B",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BIOL 130 S",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     6,
+     6
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "BIOL 135 S",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BIOL 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BIOL 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "BIOL 190",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BUS 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 8,
+    "colleges": 8,
+    "districts": 5,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BUS 115",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BUS 125",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "BUS 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "CDEV 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "CDEV 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "CHEM 101",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "CHEM 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 11,
+    "colleges": 10,
+    "districts": 9,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "CHEM 120 S",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 5,
+    "districts": 4,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "CHEM 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "CHEM 160 S",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     5,
+     6
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 6,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 8,
+    "colleges": 8,
+    "districts": 6,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 4,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMM 180",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "COMM 190",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "COMP 112",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "COMP 122",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "COMP 132",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     4.5,
+     4.5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "COMP 152",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "ECON 201",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ECON 202",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 22,
+    "colleges": 21,
+    "districts": 15,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 105",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 8,
+    "colleges": 8,
+    "districts": 7,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 4,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 135",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 6,
+    "districts": 5,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 6,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 145",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 6,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 160",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 9,
+    "colleges": 8,
+    "districts": 7,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 165",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 7,
+    "districts": 6,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 180",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENGL 200",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "ENGR 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 2,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "ENVS 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "FTVE 105",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "GEOG 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 8,
+    "colleges": 8,
+    "districts": 6,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOG 111",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 2,
+    "units": [
+     1,
+     1
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOG 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOG 125",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 9,
+    "colleges": 9,
+    "districts": 7,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOG 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOL 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 6,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOL 100 L",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     1,
+     1
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "GEOL 101",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     4,
+     4.5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "GEOL 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "GEOL 111",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     4.5,
+     4.5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "GEOL 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "HIST 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 10,
+    "colleges": 8,
+    "districts": 8,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HIST 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 7,
+    "districts": 7,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HIST 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 15,
+    "colleges": 14,
+    "districts": 12,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HIST 160",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 17,
+    "colleges": 16,
+    "districts": 14,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HIST 170",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 11,
+    "colleges": 10,
+    "districts": 9,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HIST 180",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 9,
+    "colleges": 9,
+    "districts": 8,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "HUMA M1110",
+    "id_system": "M-ID",
+    "discipline": "Humanities",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "IDST M1120",
+    "id_system": "M-ID",
+    "discipline": "Interdisciplinary Studies",
+    "honors_members": 2,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     1,
+     4
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "JOUR 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "LIBR M1040",
+    "id_system": "M-ID",
+    "discipline": "Library Science",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "MATH 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 155",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     4,
+     4
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "MATH 210",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 9,
+    "colleges": 7,
+    "districts": 6,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 211",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "MATH 220",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 230",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     5,
+     6
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 240",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 250",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MATH 900 S",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "MUS 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 17,
+    "colleges": 17,
+    "districts": 13,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MUS 105",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MUS 106",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "MUS 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "NUTR 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 9,
+    "colleges": 8,
+    "districts": 7,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHIL 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 28,
+    "colleges": 27,
+    "districts": 21,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHIL 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHIL 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 14,
+    "colleges": 14,
+    "districts": 10,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHIL 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHIL 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHS 101",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "PHYS 205",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PHYS 210",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     4,
+     4
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "POLS 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "POLS 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "POLS 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 5,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "POLS 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 13,
+    "colleges": 13,
+    "districts": 10,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "POLS 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "PSY 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 6,
+    "districts": 4,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "PSY 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 170",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 6,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 180",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 5,
+    "districts": 5,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 200",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "PSY 205 B",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     4,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SJS 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 5,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SJS 120",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     4
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 19,
+    "colleges": 19,
+    "districts": 16,
+    "units": [
+     3,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 115",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 7,
+    "districts": 6,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 125",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "SOCI 130",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 140",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 150",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 13,
+    "colleges": 11,
+    "districts": 8,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SOCI 160",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "SPAN 100",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 11,
+    "colleges": 11,
+    "districts": 9,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SPAN 110",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 7,
+    "colleges": 7,
+    "districts": 6,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SPAN 200",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SPAN 210",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     5,
+     5
+    ],
+    "shape": "stand-alone (1 college)"
+   },
+   {
+    "from_identity": "SPAN 220",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "SPAN 230",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 2,
+    "colleges": 2,
+    "districts": 2,
+    "units": [
+     4,
+     5
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "THTR 111",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 4,
+    "colleges": 4,
+    "districts": 4,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "THTR 113",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 3,
+    "colleges": 3,
+    "districts": 3,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "corroborated (2+ colleges)"
+   },
+   {
+    "from_identity": "THTR 114",
+    "id_system": "C-ID",
+    "discipline": "(official C-ID or CCN: no M-ID discipline)",
+    "honors_members": 1,
+    "colleges": 1,
+    "districts": 1,
+    "units": [
+     3,
+     3
+    ],
+    "shape": "stand-alone (1 college)"
+   }
+  ],
+  "identities_all_honors": [
+   "HUMA M1052",
+   "HUMN M1002",
+   "HUMN M1003",
+   "SOCS M1039",
+   "BUSI M1061",
+   "CRIM M1066",
+   "ARTH M1006",
+   "ANTH M1005",
+   "ANTH M1015",
+   "ASTR M1039",
+   "ASTR M1010",
+   "BIOL M1096",
+   "BIOL M1091",
+   "BIOL M1101",
+   "BIOL M1102",
+   "BIOL M1103",
+   "CHEM M1053",
+   "CHEM M1016",
+   "CHEM M1052",
+   "CHEM M1033",
+   "COMM M1035",
+   "BRDC M1015",
+   "ENGL M1033",
+   "ENGL M1061",
+   "ENGL M1203",
+   "ENGL M1284",
+   "ETHS M1013",
+   "ETHS M1086",
+   "ETHS M1097",
+   "ETHS M1068",
+   "ETHS M1147",
+   "ETHS M1103",
+   "ETHS M1204",
+   "ETHS M1194",
+   "FTVE M1019",
+   "FTVE M1045",
+   "GEOL M1041",
+   "HIST M1164",
+   "HIST M1163",
+   "HIST M1059",
+   "HUMA M1055",
+   "BIOL M1226",
+   "MATH M1038",
+   "MUSI M1236",
+   "MUSI M1040",
+   "MUSI M1373",
+   "POLS M1060",
+   "POLS M1033",
+   "POLS M1059",
+   "SOCI M1059",
+   "SPAN M1045",
+   "SPAN M1046",
+   "SPAN M1073",
+   "ANTH C1001H",
+   "ARTH C1100H",
+   "ARTH C1200H",
+   "BIOL C1000H",
+   "BIOL C1001H",
+   "COMM C1000H",
+   "COMM C1004H",
+   "ECON C2001H",
+   "ECON C2002H",
+   "ENGL C1000H",
+   "ENGL C1002H",
+   "ENGL C1003H",
+   "HIST C1001H",
+   "HIST C1002H",
+   "MATH C2210H",
+   "MATH C2220H",
+   "POLS C1000H",
+   "PSYC C1000H",
+   "SOCI C1000H",
+   "STAT C1000H",
+   "ANTH M1116",
+   "ANTH M1121",
+   "ARTH M1037",
+   "ARTS M1570",
+   "ASTR C1001H",
+   "ASTR M1034",
+   "ASTR M1048",
+   "ASTR M1049",
+   "BIOL M1095",
+   "BIOL M1104",
+   "BIOL M1311",
+   "BIOL M1317",
+   "BIOL M1320",
+   "CDEV C1000H",
+   "COMM M1112",
+   "DANC M1057",
+   "DANC M1460",
+   "ECON M1029",
+   "ECON M1039",
+   "ENGL C1001H",
+   "ENGL M1053",
+   "ENGL M1261",
+   "ENGL M1269",
+   "ENGL M1282",
+   "ENGL M1285",
+   "ENGL M1379",
+   "ENGL M1408",
+   "ENGL M1415",
+   "ENGL M1433",
+   "ENGL M1439",
+   "ENGL M1440",
+   "ENGL M1441",
+   "ETHS M1012",
+   "ETHS M1177",
+   "ETHS M1261",
+   "ETHS M1266",
+   "ETHS M1278",
+   "FREN M1050",
+   "FREN M1053",
+   "FTVE M1003",
+   "FTVE M1078",
+   "FTVE M1079",
+   "HIST M1090",
+   "HIST M1130",
+   "HIST M1165",
+   "HIST M1197",
+   "HIST M1200",
+   "HIST M1231",
+   "HUMA M1018",
+   "HUMA M1027",
+   "HUMA M1084",
+   "HUMA M1119",
+   "IDST M1195",
+   "LIBR M1034",
+   "MATH M1330",
+   "MATH M1333",
+   "MUSI M1589",
+   "MUSI M1634",
+   "PHIL M1043",
+   "PHIL M1124",
+   "PHOT M1137",
+   "PHSC M1029",
+   "PSYC M1140",
+   "SLNA M1022",
+   "SLNA M1023",
+   "SLNA M1097",
+   "SOCS M1067",
+   "THTR M1187",
+   "ARTC M10AH",
+   "PHSC M10BO",
+   "PHSC M10FT",
+   "PHSC M10CP",
+   "IDST M10OJ",
+   "IDST M10TE",
+   "HUMA M10HG",
+   "IDST M10RQ",
+   "IDST M10JK",
+   "HUMA M10KI",
+   "PHSC M10BM",
+   "FA M10AA",
+   "PUBS M10DJ",
+   "FMS M10AE",
+   "FTVM M10AS",
+   "FTVM M10AT",
+   "FTVM M10AU",
+   "SOCS M10GB",
+   "SOCS M10GA",
+   "IDST M10JC",
+   "HUMA M10BM",
+   "IDST M10ON",
+   "IDST M10OM",
+   "IDST M10EU",
+   "IDST M10IH",
+   "HUMA M10HB",
+   "IDST M10NC",
+   "HUMA M10KQ",
+   "HUMA M10ID",
+   "HUMA M10HX",
+   "HUMA M10HQ",
+   "INFO M10AB",
+   "INFO M10AC",
+   "LATN M10AD",
+   "LATN M10AG",
+   "IDST M10CL",
+   "HUMA M10LX",
+   "HUMA M10LZ",
+   "FLNG M11LR",
+   "HUMA M10MD",
+   "HUMA M10MF",
+   "IDST M10JU",
+   "SOCS M10GW",
+   "BUSI M10FD",
+   "BUSI M10FE",
+   "CRIM M10IL",
+   "HLTH M10AS",
+   "CRIM M11DJ",
+   "ANTH M10DE",
+   "ANTH M10IG",
+   "ANTH M10EJ",
+   "ANTH M10EW",
+   "ANTH M10AK",
+   "ANTH M10JV",
+   "ANTH M10BN",
+   "ANTH M10IM",
+   "PHOT M10HE",
+   "ARAB M10AQ",
+   "ARCH M10CE",
+   "ARCH M10JX",
+   "ARCH M10AK",
+   "ARCH M10BL",
+   "ARCH M10AP",
+   "ARCH M10BP",
+   "ARCH M10JH",
+   "ARCH M10KJ",
+   "ARTS M10NS",
+   "ARTS M10MX",
+   "ARTS M10QM",
+   "ARTS M10NC",
+   "ARTS M10QA",
+   "ARTS M10KT",
+   "ARTS M10PX",
+   "ARTS M10LJ",
+   "ARTS M10NI",
+   "ARTS M10YL",
+   "ARTS M10PL",
+   "ARTS M10YM",
+   "ARTH M10BZ",
+   "ARTH M10CZ",
+   "ARTH M10DA",
+   "ARTH M10DB",
+   "ASTR M10AM",
+   "ASTR M10AU",
+   "ASTR M10BC",
+   "ASTR M10BZ",
+   "ASTR M10CO",
+   "ASTR M10BE",
+   "BIOL M10UX",
+   "BIOL M10NT",
+   "BIOL M10NU",
+   "BIOL M10OB",
+   "BIOL M10IW",
+   "BIOL M10HU",
+   "BIOL M10ZV",
+   "BIOL M10ZX",
+   "BIOL M10KY",
+   "BIOL M10OV",
+   "BIOL M10LZ",
+   "BIOL M10OA",
+   "BIOL M10GV",
+   "BIOL M10GW",
+   "BIOL M10LH",
+   "BIOL M10NH",
+   "BIOL M10NI",
+   "BIOL M10NJ",
+   "BIOL M10GG",
+   "BIOL M10NW",
+   "BIOL M10QW",
+   "BIOL M10OS",
+   "BIOL M10QZ",
+   "BIOL M10ZU",
+   "BIOL M10IT",
+   "BIOL M10OX",
+   "BIOL M10OZ",
+   "BIOL M10OU",
+   "BIOL M10OY",
+   "BUSI M10SS",
+   "BUSI M10TU",
+   "BUSI M10SK",
+   "BUSI M11LQ",
+   "BUSI M10TY",
+   "BUSI M10TV",
+   "CHEM M10AW",
+   "CHEM M10FL",
+   "CHEM M10FM",
+   "CDEV M11GJ",
+   "ETHS M10OE",
+   "ETHS M10HG",
+   "ITIS M10KP",
+   "ITIS M11IG",
+   "ITIS M10BE",
+   "ITIS M10CT",
+   "ITIS M11LX",
+   "ITIS M10SQ",
+   "COMM M10AW",
+   "COMM M10CE",
+   "COMM M10BZ",
+   "COMM M10DK",
+   "COMM M10HB",
+   "COUN M10BK",
+   "COUN M10BM",
+   "COUN M10KU",
+   "COUN M10PX",
+   "COUN M10GW",
+   "COUN M10UD",
+   "COUN M10ME",
+   "COUN M10UC",
+   "COMP M10DM",
+   "COMP M10QS",
+   "COMP M10IG",
+   "COMP M10LA",
+   "FTVE M10DK",
+   "DANC M11GZ",
+   "DANC M10JE",
+   "DANC M11SK",
+   "GFCD M10FJ",
+   "GFCD M10FI",
+   "ECON M10BC",
+   "ECON M10BI",
+   "ECON M10AX",
+   "ECON M10BX",
+   "ECON M10BO",
+   "ENGL M11BL",
+   "ENGL M10GU",
+   "ENGL M10UR",
+   "ENGL M11AB",
+   "ENGL M11EE",
+   "ENGL M10KZ",
+   "ENGL M10JI",
+   "ENGL M10VV",
+   "ENGL M11CL",
+   "ENGL M11EU",
+   "ENGL M11EY",
+   "ENGL M10GO",
+   "ENGL M10US",
+   "ENGL M11BM",
+   "ENGL M10ZV",
+   "ENGL M10LQ",
+   "ENGL M10BB",
+   "ENGL M10BA",
+   "ENGL M11EP",
+   "ENGL M10IR",
+   "ENGL M11CF",
+   "ENGL M10JX",
+   "ENGL M11FF",
+   "ENGL M10IB",
+   "ENGL M10MG",
+   "ENGL M11BN",
+   "ENGL M11FD",
+   "ENGL M10XI",
+   "ENGL M11FE",
+   "ENGL M11FK",
+   "ENVS M10LD",
+   "ENVS M10LF",
+   "ENVS M10LE",
+   "ENVS M10NA",
+   "ETHS M10DF",
+   "ETHS M10MD",
+   "ETHS M10EL",
+   "ETHS M10IR",
+   "ETHS M10TG",
+   "ETHS M10NO",
+   "ETHS M10PH",
+   "ETHS M10OD",
+   "ETHS M10SH",
+   "FTVE M10NK",
+   "FTVE M10DX",
+   "FTVE M10LJ",
+   "FTVE M10GY",
+   "FREN M10AZ",
+   "FREN M10AA",
+   "FREN M10AH",
+   "FREN M10DF",
+   "FTVE M10EV",
+   "FTVE M10LA",
+   "FTVE M10NP",
+   "FTVE M10DA",
+   "GEOG M10CM",
+   "GEOG M10FA",
+   "GEOL M10EU",
+   "GEOL M10HI",
+   "GEOL M10HV",
+   "SOCS M10FK",
+   "PHSC M10FU",
+   "SOCS M10GZ",
+   "HIST M10WP",
+   "HIST M10QP",
+   "HIST M10UO",
+   "HIST M10AV",
+   "HIST M10UK",
+   "HIST M10UL",
+   "HIST M10NY",
+   "HIST M10NZ",
+   "HIST M10UP",
+   "HIST M10TA",
+   "HIST M10MO",
+   "HIST M10BI",
+   "HIST M10HW",
+   "HIST M10PT",
+   "HIST M10HN",
+   "HIST M10TI",
+   "HIST M10KJ",
+   "HIST M10KV",
+   "HIST M10UM",
+   "HIST M10UN",
+   "HIST M10NK",
+   "HLTH M10ZH",
+   "HLTH M10RO",
+   "PHIL M10AQ",
+   "PHIL M10GF",
+   "PHIL M10GD",
+   "BUSI M10CE",
+   "HORT M10MA",
+   "HUMA M10BZ",
+   "HUMA M10DQ",
+   "HUMA M10LU",
+   "HUMA M10BC",
+   "HUMA M10LT",
+   "HUMA M10LS",
+   "HUMA M10IX",
+   "HUMA M10LW",
+   "HUMA M10CM",
+   "HUMA M10IJ",
+   "HUMA M10CS",
+   "HUMA M10LR",
+   "SOCS M10DH",
+   "SOCS M10DW",
+   "SOCS M10CO",
+   "SOCS M10DY",
+   "SOCS M10CQ",
+   "SOCS M10CP",
+   "JAPN M10BG",
+   "JAPN M10BH",
+   "JAPN M10CP",
+   "JAPN M10AW",
+   "JAPN M10AD",
+   "JAPN M10AK",
+   "KINE M13AD",
+   "HLTH M11BP",
+   "LIBR M10AR",
+   "LIBR M10CL",
+   "LIBR M10BO",
+   "LIBR M10CI",
+   "LIBR M10CK",
+   "FTVE M10HO",
+   "ENGL M11AV",
+   "ENGL M10MT",
+   "ENGL M10DS",
+   "ENGL M10QH",
+   "ENGL M10YU",
+   "ENGL M11EX",
+   "ENGL M11FB",
+   "ENGL M11FC",
+   "ENGL M11FG",
+   "MATH M10NC",
+   "MATH M11CM",
+   "MATH M10AF",
+   "MATH M10NA",
+   "MATH M10PL",
+   "MATH M11DQ",
+   "MATH M11DT",
+   "MATH M11DP",
+   "MATH M11DS",
+   "MATH M10UJ",
+   "MATH M11DR",
+   "MATH M11DN",
+   "MATH M11DO",
+   "MRKT M10BN",
+   "BIOL M11AA",
+   "BIOL M10ZW",
+   "MUSI M10CE",
+   "MUSI M10BT",
+   "MUSI M10MN",
+   "MUSI M10QU",
+   "MUSI M10PH",
+   "MUSI M11AP",
+   "MUSI M10LX",
+   "MUSI M12CD",
+   "MUSI M10MH",
+   "MUSI M12CE",
+   "MUSI M11PS",
+   "MUSI M10LY",
+   "MUSI M11XO",
+   "MUSI M11QG",
+   "FDNT M10BE",
+   "NUTR M10BL",
+   "NUTR M10CB",
+   "PHIL M10AW",
+   "PHIL M10FS",
+   "PHIL M10DI",
+   "PHIL M10FI",
+   "PHIL M10DO",
+   "PHIL M10GC",
+   "PHIL M10CX",
+   "PHIL M10BN",
+   "PHIL M10GA",
+   "PHIL M10GB",
+   "PHIL M10EW",
+   "PHOT M10IH",
+   "PHOT M10MS",
+   "PHOT M10DT",
+   "PHOT M10MV",
+   "PHYS M10DH",
+   "PHYS M10FR",
+   "PHYS M10EV",
+   "POLS M10FR",
+   "POLS M10FS",
+   "POLS M10CH",
+   "POLS M10AU",
+   "POLS M10AH",
+   "POLS M10BY",
+   "PSYC M10FO",
+   "PSYC M10DQ",
+   "PSYC M10FM",
+   "PSYC M10HZ",
+   "PSYC M10FZ",
+   "PSYC M10GF",
+   "PSYC M10IE",
+   "PSYC M10ID",
+   "PSYC M10DA",
+   "PSYC M10DB",
+   "SOCI M10DT",
+   "SOCI M10EC",
+   "SOCI M10ED",
+   "SOCI M10BO",
+   "SOCI M10DN",
+   "SOCS M10BN",
+   "SOCS M10GY",
+   "SPAN M10JT",
+   "SPAN M10FX",
+   "SPAN M10DH",
+   "THTR M11CE",
+   "THTR M10YI",
+   "THTR M11MI",
+   "THTR M10RJ",
+   "THTR M10PG",
+   "THTR M10RT"
+  ],
+  "questions_for_a_person": [
+   "Honors courses that share an official C-ID or CCN with their base (676 rows across 133 official identities; why each sits there: {'coci_cid_claim': 437, 'asccc_approval': 218, 'leaf_phase_b_fold': 21}; Santa Ana CJ 109H claims AJ 160 in COCI). Does the ruling pull a course its college filed under a C-ID out to a new M-ID, or does an official id keep its Honors sections, with the rule applied to M-IDs only?",
+   "Is the declared equivalence one-way (Honors satisfies the base) or both ways (either satisfies the other)?",
+   "A code ending in H without the word Honors in the title: never Honors (this plan), or Honors where the college says so?",
+   "An Honors course with no base at its college (145 rows): its own Honors M-ID with an equivalence to the identity its title names statewide, or left where it is?",
+   "New Honors M-IDs whose colleges are all one district (0): corroborated numbering (by colleges, the numbering rule) or stand-alone (by voices, the district guard)?",
+   "The Common Course Numbers already give Honors its own id with an H suffix (23 in the live set, such as PSYC C1000H beside PSYC C1000). Does a new Honors M-ID take its base's number plus H the same way (MATH M1036H), which breaks the four-character M-ID shape, or the next free number in its bucket with the equivalence alone linking it?"
+  ]
+ },
+ "apply_sequence": [
+  {
+   "step": "i",
+   "when": "a window clear of 06:17, 09:17 and 12:17 UTC; steps i to iv within minutes of each other, and no merge stands between the read and the write",
+   "what": "the conductor runs the five pre-apply SELECTs (Supabase MCP), each against its expected result",
+   "receipt": "kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results, with the time)",
+   "undo": "nothing written"
+  },
+  {
+   "step": "ii",
+   "what": "within minutes, on this branch, set kb/migrations/.apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and name=s648_reclustering_cohort, commit, push. supabase-migrate.yml applies the file on that claude/** push; it needs nothing on main",
+   "receipt": "the push",
+   "undo": "set .apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, name=s648_reclustering_cohort_rollback, push"
+  },
+  {
+   "step": "iii",
+   "what": "the runner commits its receipt to the branch: kb/receipts/migration_s648_reclustering_cohort_<run>.json, whose response holds the RETURNING row",
+   "receipt": "that file",
+   "undo": "the rollback names the one row; its own receipt lands beside it"
+  },
+  {
+   "step": "iv",
+   "what": "the post-apply SELECT, against its expected result",
+   "receipt": "kb/reclustering_s648_out/2026-11-13/post_read.json",
+   "undo": "-"
+  },
+  {
+   "step": "v",
+   "what": "the PR merges on a green test (code, plan, migration pair, .apply, receipts)",
+   "receipt": "the merge commit",
+   "undo": "git revert (the data row is undone by step ii's undo)"
+  },
+  {
+   "step": "vi",
+   "what": "dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the row into kb/coci_curation.json and the export rebuilds; read the members file against post_apply_simulated.json",
+   "receipt": "the runner's commit",
+   "undo": "step ii's undo, then one more dispatch"
+  }
+ ]
+}
