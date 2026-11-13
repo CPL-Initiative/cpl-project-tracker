@@ -592,7 +592,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
-| `kb/_program_requirements_wave.py` | workflows: `program-requirements-wave.yml` | — |
+| `kb/_program_requirements_wave.py` | workflows: `program-requirements-college.yml`, `program-requirements-wave.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |

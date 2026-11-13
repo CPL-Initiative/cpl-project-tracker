@@ -3874,6 +3874,117 @@ with tempfile.TemporaryDirectory() as td:
     os.remove(acct_path)
     check(C.check_extract(fout) == 0, "no extraction ran: nothing to judge")
 
+# sources_from (S647): an earlier run's artifact staged in place of a capture, refused unless it is the filed
+# capture's own, and extracted with no page loaded. Fixtures only.
+ST_COLLEGE = "Stage College"
+with tempfile.TemporaryDirectory() as td:
+    sdest, sart = os.path.join(td, "filed"), os.path.join(td, "artifact")
+    for d in (os.path.join(sdest, "records"), os.path.join(sart, "sources")):
+        os.makedirs(d)
+    s1 = {"college": ST_COLLEGE, "control_number": "S1", "shape": "degree", "title": "Welding", "award": "A.S.",
+          "closed_list": [{"code": "WELD 1"}], "text": "WELD 1 Welding I 3", "coverage": 1.0, "codes_found": ["WELD1"],
+          "method": "sitemap_page", "source": {"url": "https://catalog.example.edu/programs/W-AS/tab"}}
+    s2 = {"college": ST_COLLEGE, "control_number": "S2", "shape": "degree", "title": "Art", "award": "A.A.",
+          "closed_list": [], "text": "", "coverage": 0.0, "codes_found": [], "method": "no_closed_list", "source": None}
+    for s in (s1, s2):
+        json.dump(s, open(os.path.join(sart, "sources", s["control_number"] + ".json"), "w"))
+    account = {"college": ST_COLLEGE, "catalog_year": "2026-2027", "programs": 2, "with_closed_list": 1, "found": 1,
+               "pages_listed": 1, "pages_answered": 1, "pages_read": 1, "platform": "coursedog",
+               "coursedog": {"root": "https://catalog.example.edu", "catalog": [], "challenged": []},
+               "by_method": {"no_closed_list": 1, "sitemap_page": 1},
+               "would_extract": {"programs": 1, "list": [{"control_number": "S1", "url": s1["source"]["url"],
+                                                          "coverage": 1.0}]}}
+
+    def st_files(filed_extra=None, art_extra=None):
+        json.dump(dict(account, run="777", **(filed_extra or {})), open(os.path.join(sdest, "capture.json"), "w"))
+        json.dump(dict(account, **(art_extra or {})), open(os.path.join(sart, "capture.json"), "w"))
+
+    def st_run(name, run="777", src=None):
+        out = os.path.join(td, name)
+        with _ctx.redirect_stdout(_io.StringIO()) as buf:
+            rc = C.stage_sources(ST_COLLEGE, src or sart, out, run, folder=sdest)
+        return rc, out, buf.getvalue()
+    st_files()
+    rc, sout, msg = st_run("out_legacy")
+    staged_cap = json.load(open(os.path.join(sout, "capture.json"))) if rc == 0 else {}
+    check(rc == 0 and sorted(os.listdir(os.path.join(sout, "sources"))) == ["S1.json", "S2.json"]
+          and staged_cap["staged_from"]["proof"].startswith("the filed account equal")
+          and staged_cap["staged_from"]["pages_loaded"] == 0 and staged_cap["would_extract"]["programs"] == 1
+          and staged_cap["fingerprints"]["S1"]["sha256"] == C.text_sha256(s1["text"]),
+          "a capture filed before fingerprints stages when its account and each program's address and coverage "
+          "match, and gains fingerprints: %s" % msg)
+    for name, kw, want in (
+            ("out_run", {"run": "778"}, "not run 778"),
+            ("out_year", {"art": {"catalog_year": "2025-2026"}}, "catalog_year differs"),
+            ("out_pages", {"art": {"pages_read": 0}}, "pages_read differs"),
+            ("out_acct", {"art": {"shared_pages": {"x": ["S1"]}}}, "account differs"),
+            ("out_gone", {"src": os.path.join(td, "no_such_artifact")}, "missing, expired")):
+        st_files(art_extra=kw.get("art"))
+        rc, out, msg = st_run(name, kw.get("run", "777"), kw.get("src"))
+        check(rc == 2 and want in msg and not os.path.exists(out),
+              "staging refuses (%s) and writes nothing: %s" % (want, msg.strip()))
+    # A coverage the filed account does not name is refused.
+    json.dump(dict(s1, coverage=0.9), open(os.path.join(sart, "sources", "S1.json"), "w"))
+    st_files()
+    rc, out, msg = st_run("out_cov")
+    check(rc == 2 and "address and coverage" in msg, "a program off its filed coverage is refused: %s" % msg.strip())
+    json.dump(s1, open(os.path.join(sart, "sources", "S1.json"), "w"))
+    # With fingerprints on file: a hash mismatch refuses, a match stages.
+    good_fp = {"S1": {"sha256": C.text_sha256(s1["text"]), "url": s1["source"]["url"]}}
+    st_files({"fingerprints": {"S1": dict(good_fp["S1"], sha256=C.text_sha256("WELD 1 Welding I 4"))}})
+    rc, out, msg = st_run("out_hash")
+    check(rc == 2 and "does not match its fingerprint" in msg and not os.path.exists(out),
+          "a program whose text hash differs from the capture's fingerprint is refused: %s" % msg.strip())
+    st_files({"fingerprints": good_fp})
+    rc, sout, msg = st_run("out_fp")
+    check(rc == 0 and json.load(open(os.path.join(sout, "capture.json")))["staged_from"]["proof"] == "text sha256 of 1 programs",
+          "matching fingerprints stage: %s" % msg)
+    # The staged pages extract with no fetch: every page load and network call raises.
+    import urllib.request as _ur
+    saved = (P.load, _ur.urlopen, XT.call, XT.score)
+    st_called = []
+
+    def no_fetch(*a, **k):
+        raise AssertionError("a page or site was contacted")
+    P.load, _ur.urlopen = no_fetch, no_fetch
+    XT.call = lambda src, key, *a, **k: (st_called.append(src["control_number"])
+                                         or {"record": {"program": {}, "blocks": []}, "model": "m", "usage": None})
+    XT.score = lambda rec, *a, **k: dict(G2, coverage={"pass": True, "share": 1.0})
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only"
+    try:
+        st_rc = C.extract(sout, 0, 1, "900", workers=1, keep_from=sdest, ceiling_usd=40.0)
+    finally:
+        P.load, _ur.urlopen, XT.call, XT.score = saved
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    check(st_rc == 0 and st_called == ["S1"] and os.listdir(os.path.join(sout, "records")) == ["S1.json"],
+          "a staged capture extracts what the rules send, with no page loaded: %r" % st_called)
+check(C.text_sha256("a") == C.text_sha256("a") != C.text_sha256("b") and len(C.text_sha256(None)) == 64,
+      "a text's fingerprint is its sha256")
+import yaml as _yaml  # noqa: E402
+_rwf = _yaml.safe_load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                         ".github", "workflows", "program-requirements-college.yml")))
+_rsteps = {(x.get("name") or x.get("uses")): x for x in _rwf["jobs"]["read"]["steps"]}
+_rorder = [x.get("name") or x.get("uses") for x in _rwf["jobs"]["read"]["steps"]]
+_dl = _rsteps["Download the earlier run's pages"]
+check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["sources_from"]["default"] == ""
+      and _dl["with"]["run-id"] == "${{ github.event.inputs.sources_from }}"
+      and _dl["with"]["name"] == "program-requirements-${{ github.event.inputs.sources_from }}"
+      and _rwf["jobs"]["read"]["permissions"].get("actions") == "read"
+      and all(_rsteps[n]["if"] == "env.SOURCES_FROM == ''" for n in
+              ("Capture", "Install Playwright + Chromium, pypdf, pdfminer",
+               "Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)"))
+      and "steps.price.outputs.go == 'true'" in _rsteps["Extract and score"]["if"]
+      and "--limit-usd 40" in _rsteps["Price the extraction ($40 a college a run, Sam's standing go)"]["run"]
+      and _rorder.index("Download the earlier run's pages") < _rorder.index("Stage them, refused unless they are the filed capture's own")
+      < _rorder.index("Price the extraction ($40 a college a run, Sam's standing go)") < _rorder.index("Extract and score")
+      and _rorder[-1] == "Fail a run whose extraction calls failed",
+      "a staged read downloads the earlier run's artifact, loads no page, prices at $40 before extracting, and its "
+      "job ends with the failed-calls check: %r" % _rorder)
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

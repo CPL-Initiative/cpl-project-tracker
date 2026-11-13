@@ -8446,7 +8446,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4276
+     "line": 4389
     }
    ],
    "served": false,
@@ -10362,6 +10362,13 @@
   },
   "file:kb/_program_requirements_wave.py": {
    "consumers": [
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
     {
      "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
@@ -16866,7 +16873,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4557
+     "line": 4670
     }
    ],
    "served": true,
@@ -20379,7 +20386,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4461
+     "line": 4574
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -21003,7 +21010,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4528
+     "line": 4641
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -27515,7 +27522,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4575
+     "line": 4688
     }
    ],
    "main_committers": []
@@ -27527,7 +27534,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4663
+     "line": 4776
     }
    ],
    "main_committers": []
@@ -32938,6 +32945,7 @@
    "scripts": [
     "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
+    "kb/_program_requirements_wave.py",
     "kb/_program_requirements_display_apply.py"
    ],
    "adds": [

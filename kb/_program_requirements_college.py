@@ -3745,8 +3745,121 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
                         for band, lo, hi in (("0.5-0.8", .5, .8), ("0.8-1.0", .8, 1.0), ("1.0", 1.0, 9))})
     report["would_extract"] = would_extract(college, recs)
+    # Each program's text, fingerprinted, so a later run can extract from this run's artifact and prove the
+    # text is the text this capture read (stage_sources, sources_from; S647).
+    report["fingerprints"] = {r["control_number"]: {"sha256": text_sha256(r.get("text")),
+                                                    "url": (r.get("source") or {}).get("url")}
+                              for r in recs if r.get("text")}
     _write(os.path.join(out_dir, "capture.json"), report)
-    print(json.dumps({k: v for k, v in report.items() if k not in ("not_found", "shared_pages")}, indent=1))
+    print(json.dumps({k: v for k, v in report.items() if k not in ("not_found", "shared_pages", "fingerprints")},
+                     indent=1))
+    return 0
+
+
+def text_sha256(text: str | None) -> str:
+    import hashlib
+    return hashlib.sha256((text or "").encode("utf-8")).hexdigest()
+
+
+# ── sources_from: extract from an earlier run's pages (S647) ────────────────
+# A slow Coursedog read of Glendale takes 2 h 20 m (run 43384599013), and its page text lives only in the run's
+# artifact (program-requirements-<run>, the job's out/ folder, 90 days). When a run's capture is whole and its
+# extraction failed for a reason that is not the site's, a later run stages that artifact in place of a capture:
+# no page is loaded and no site is contacted. It refuses unless the artifact is the filed capture's own.
+STAGE_SAME = ("college", "catalog_year", "programs", "with_closed_list", "found", "pages_listed", "pages_answered",
+              "pages_read", "by_method")
+
+
+def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, folder: str | None = None) -> int:
+    """Copy an earlier run's capture and sources (src_dir, its artifact unpacked) into out_dir for extract, after
+    proving they are the filed capture's: the same college, catalog year and page counts, the filed capture's run,
+    a whole capture, and each program's text matching its fingerprint. A capture filed before fingerprints
+    (S647) proves its text another way: its account, written from that text, equals the filed account in every
+    field but the run's id, and each program the account lists sits at the address and coverage it names. The
+    refusal set is recomputed on the current code, and would_extract against the records filed now. Returns
+    0, or 2 with the reason, having written nothing to out_dir."""
+    dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
+
+    def refuse(why: str) -> int:
+        print("::error::sources_from %s refused: %s" % (sources_run, why))
+        return 2
+    try:
+        with open(os.path.join(src_dir, "capture.json")) as fh:
+            staged = json.load(fh)
+    except (OSError, ValueError):
+        return refuse("the artifact is missing, expired or holds no capture.json under %s" % src_dir)
+    try:
+        with open(os.path.join(dest, "capture.json")) as fh:
+            filed = json.load(fh)
+    except (OSError, ValueError):
+        return refuse("no capture is filed for %s" % college)
+    if str(filed.get("run")) != str(sources_run):
+        return refuse("the filed capture is run %s's, not run %s's" % (filed.get("run"), sources_run))
+    if staged.get("college") != college:
+        return refuse("the artifact is %s's, not %s's" % (staged.get("college"), college))
+    for k in STAGE_SAME:
+        if staged.get(k) != filed.get(k):
+            return refuse("%s differs: artifact %r, filed %r" % (k, staged.get(k), filed.get(k)))
+    if reread_capture(src_dir) or filed.get("reread"):
+        return refuse("a partial capture (a re-read, or a slow read a challenge stopped) is never extracted")
+    srcs = []
+    sdir = os.path.join(src_dir, "sources")
+    for name in sorted(os.listdir(sdir)) if os.path.isdir(sdir) else []:
+        if name.endswith(".json"):
+            with open(os.path.join(sdir, name)) as fh:
+                srcs.append(json.load(fh))
+    if len(srcs) != filed.get("programs"):
+        return refuse("the artifact holds %d sources; the filed capture read %s programs" % (len(srcs), filed.get("programs")))
+    if sum(1 for s in srcs if s.get("source")) != filed.get("found"):
+        return refuse("the artifact's sources found %d pages; the filed capture %s"
+                      % (sum(1 for s in srcs if s.get("source")), filed.get("found")))
+    fps = filed.get("fingerprints")
+    if fps is not None:
+        texts = {s["control_number"]: s for s in srcs if s.get("text")}
+        if set(texts) != set(fps):
+            return refuse("the programs with text differ from the fingerprinted ones: %s"
+                          % sorted(set(texts) ^ set(fps))[:8])
+        bad = [cn for cn, s in texts.items() if text_sha256(s.get("text")) != fps[cn].get("sha256")
+               or (s.get("source") or {}).get("url") != fps[cn].get("url")]
+        if bad:
+            return refuse("%d programs' text does not match its fingerprint: %s" % (len(bad), ", ".join(sorted(bad)[:8])))
+        proof = "text sha256 of %d programs" % len(texts)
+    else:
+        if {k: v for k, v in staged.items() if k != "run"} != {k: v for k, v in filed.items() if k != "run"}:
+            diff = sorted(k for k in set(staged) | set(filed) if k != "run" and staged.get(k) != filed.get(k))
+            return refuse("the capture carries no fingerprints, and its account differs from the filed one in %s"
+                          % ", ".join(diff[:8]))
+        by_cn = {s["control_number"]: s for s in srcs}
+        rows = [r for k in ("list", "held_worse_window", "held_no_gain", "held_opens_on_list")
+                for r in (filed.get("would_extract") or {}).get(k) or []]
+        bad = [r["control_number"] for r in rows
+               if not (by_cn.get(r["control_number"]) or {}).get("text")
+               or (by_cn[r["control_number"]].get("source") or {}).get("url") != r.get("url")
+               or round(by_cn[r["control_number"]].get("coverage") or 0, 3) != round(r.get("coverage") or 0, 3)]
+        if bad:
+            return refuse("%d programs are not at the address and coverage the filed capture names: %s"
+                          % (len(bad), ", ".join(sorted(bad)[:8])))
+        proof = "the filed account equal but for its run, and %d programs at their address and coverage" % len(rows)
+    if staged.get("platform") == "coursedog":
+        cd = staged.get("coursedog") or {}
+        own, shared = cd_read_codes(dest, cd.get("root") or "")
+        now = set(cd_challenged_programs(srcs, cd, own, shared, {s["control_number"] for s in srcs if s.get("source")}))
+        then = {s["control_number"] for s in srcs if s.get("method") == "page_challenged"}
+        if now != then:
+            return refuse("the current code reads refused pages differently: %s" % sorted(now ^ then)[:8])
+    os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
+    for s in srcs:
+        _write(os.path.join(out_dir, "sources", s["control_number"] + ".json"), s)
+    report = {k: v for k, v in staged.items() if k != "run"}
+    report["would_extract"] = would_extract(college, srcs, folder=dest)
+    if fps is None:
+        report["fingerprints"] = {s["control_number"]: {"sha256": text_sha256(s.get("text")),
+                                                        "url": (s.get("source") or {}).get("url")}
+                                  for s in srcs if s.get("text")}
+    report["staged_from"] = {"run": str(sources_run), "proof": proof, "pages_loaded": 0}
+    _write(os.path.join(out_dir, "capture.json"), report)
+    print("staged run %s's capture of %s: %d sources, %d would extract (%s); no page loaded"
+          % (sources_run, college, len(srcs), report["would_extract"].get("programs") or 0, proof))
     return 0
 
 
@@ -4800,8 +4913,8 @@ def reread_capture(out_dir: str) -> bool:
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "check-extract", "load",
-                                     "reread"])
+    ap.add_argument("step", choices=["pin", "capture", "stage", "extract", "reconcile", "file", "check-extract",
+                                     "load", "reread"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -4816,12 +4929,19 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ceiling-usd", default=os.environ.get("EXTRACT_CEILING_USD", ""),
                     help="extract only: stop sending programs once the run's actual cost reaches this (the wave "
                          "sets its limit; empty, the default, is no ceiling)")
+    ap.add_argument("--from", dest="from_dir", default="", help="stage only: an earlier run's artifact, unpacked")
+    ap.add_argument("--sources-run", default="", help="stage only: the run whose artifact --from holds")
     ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
     if args.step == "pin":
         return pin(args.college, args.run)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
+    if args.step == "stage":
+        if not str(args.sources_run).isdigit():
+            print("::error::stage needs --sources-run, a numeric run id")
+            return 2
+        return stage_sources(args.college, args.from_dir, args.out, args.sources_run)
     if args.step == "check-extract":
         return check_extract(args.out)
     if args.step == "load":

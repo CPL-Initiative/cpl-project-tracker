@@ -450,8 +450,14 @@ check(_names and all("${{ github.run_id }}-${{ github.run_attempt }}-" in n for 
       and _filed_up["with"]["name"] == "wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}",
       "each of the wave's uploads names its attempt: %r" % _names)
 # Second read, 2: the wave's extraction stops at its limit; the college workflow's does not change.
-check('--ceiling-usd "$LIMIT_USD"' in ext["run"] and "ceiling" not in college_wf.lower(),
-      "the wave passes its limit as the extraction's ceiling; the college workflow sets none")
+# Since S647 the college workflow sets one only on a staged read (sources_from, the conductor's $40 hard stop):
+# a read that captures sets none.
+_cwf = yaml.safe_load(college_wf)
+_college_ext = [x for x in _cwf["jobs"]["read"]["steps"] if x.get("name") == "Extract and score"]
+check('--ceiling-usd "$LIMIT_USD"' in ext["run"]
+      and _college_ext and _college_ext[0]["env"]["CEILING"] == "${{ github.event.inputs.sources_from != '' && '40' || '' }}"
+      and college_wf.lower().count("ceiling") == 3,
+      "the wave passes its limit as the extraction's ceiling; the college workflow sets one only on a staged read")
 
 import subprocess  # noqa: E402
 
