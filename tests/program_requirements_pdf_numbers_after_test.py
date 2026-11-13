@@ -199,9 +199,10 @@ UPROGS = [{"control_number": str(50000 + i), "title": t, "award": AA} for i, t i
 UCODE = {p["control_number"]: [{"code": "%s 1%02d" % (p["title"][:4].upper(), k)} for k in (1, 2)] for p in UPROGS}
 
 
-def ublock(p, head=None):
-    return "%s\nA.A. Degree\n%s 101 Intro 3\n%s 102 Next 3\nControl Number: %s\n" % (
-        head or "%s, AA" % p["title"], p["title"][:4].upper(), p["title"][:4].upper(), p["control_number"])
+def ublock(p, head=None, award=True):
+    return "%s\n%s%s 101 Intro 3\n%s 102 Next 3\nControl Number: %s\n" % (
+        head or "%s, AA" % p["title"], "A.A. Degree\n" if award else "", p["title"][:4].upper(),
+        p["title"][:4].upper(), p["control_number"])
 
 
 def ucatalog(blocks):
@@ -209,27 +210,67 @@ def ucatalog(blocks):
 
 
 GOLF = UPROGS[5]   # Foxtrot: its course prefix FOXT never spells the title
-UNI = ucatalog([ublock(p, "Ballroom Dance Arts, AA" if p is GOLF else None) for p in UPROGS])
+UNI = ucatalog([ublock(p, "Ballroom dance for every level of dancer", award=False) if p is GOLF else ublock(p)
+                for p in UPROGS])
 uv = C.pdf_numbers_after(UNI, UPROGS)
 uctx = C.pdf_after_context(UNI, UPROGS, uv)
 check(uv["before"] == 0 and uv["after"] >= 20 and uctx["uniform"], "every number after its program reads as uniform: %r" % uv)
 g = C.pdf_best("u", UNI, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=uctx)
 check(g and g.get("bound") == "number_after" and g.get("after_unnamed") is True and g["coverage"] == 1.0
-      and g.get("judged", "").startswith("Ballroom Dance Arts, AA A.A. Degree"),
+      and g.get("judged", "").startswith("Ballroom dance for every level"),
       "uniform: a block that names no program binds by its number line and files the note: %r"
       % ((g and (g.get("bound"), g.get("after_unnamed"), g.get("judged"))),))
 plain_u = C.pdf_best("u", UNI, UPROGS[0], UCODE["50000"], "pypdf", numbers_after=uctx)
 check(plain_u and plain_u.get("bound") == "number_after" and "after_unnamed" not in plain_u,
       "and a named block files no note")
-# The block whose first strict heading is ANOTHER listed program's: Hotel's number line is lost, so India's
-# block opens on Hotel's heading (finding 9). Refused, with Hotel's number and the block it judged.
+# Decision 15, rule 1: Hotel's number line is lost, so the block ending at India's number holds Hotel's
+# heading and courses, then India's own. The block starts at India's heading; Hotel's part is dropped.
 LOST = ucatalog([ublock(p).replace("Control Number: 50007\n", "") for p in UPROGS])
 lctx = C.pdf_after_context(LOST, UPROGS, C.pdf_numbers_after(LOST, UPROGS))
 ind = C.pdf_best("u", LOST, UPROGS[8], UCODE["50008"], "pypdf", numbers_after=lctx)
-check(lctx["uniform"] and ind and ind.get("refused") == "50007" and ind.get("after_unbound") == "block_names_another"
+check(lctx["uniform"] and ind and ind.get("bound") == "number_after" and ind.get("named")
+      and "Hotel" not in ind["text"] and "HOTE 101" not in ind["text"] and ind["text"].startswith("[page")
+      and "India, AA" in ind["text"] and ind["coverage"] == 1.0,
+      "rule 1: a block holding the program above it starts at its own heading: %r" % ((ind and ind["text"][:80]),))
+# The same with an unlisted program above (round 3: an unlisted 'Paralegal Studies, AA' with no number).
+PARA = ucatalog([("Paralegal Studies, AA\nA.A. Degree\nPARA 101 Law 3\n" + ublock(p)) if p is UPROGS[8] else ublock(p)
+                 for p in UPROGS])
+pctx = C.pdf_after_context(PARA, UPROGS, C.pdf_numbers_after(PARA, UPROGS))
+pin = C.pdf_best("u", PARA, UPROGS[8], UCODE["50008"], "pypdf", numbers_after=pctx)
+check(pin and pin.get("bound") == "number_after" and "PARA 101" not in pin["text"] and "Paralegal" not in pin["text"],
+      "rule 1: an unlisted program's heading above is dropped too: %r" % ((pin and pin["text"][:80]),))
+# Rule 1 keeps a run of the program's own heading: a heading the catalog prints again at the next page's top
+# stays inside the block, so a program across two pages keeps both.
+CONT = ["%sEcho, AA\nA.A. Degree\nECHO 101 Intro 3\nControl Number: 50004\nFoxtrot, AA\nA.A. Degree\nFOXT 101 Intro 3\n" % HEADER,
+        "%sFoxtrot, AA\nA.A. Degree\nFOXT 102 Next 3\nControl Number: 50005\n" % HEADER.replace("92", "93")]
+ct = C.pdf_best("u", CONT, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=uctx)
+check(ct and ct.get("bound") == "number_after" and ct["pages"] == [1, 2] and ct["coverage"] == 1.0 and "Echo" not in ct["text"],
+      "rule 1: a heading repeated at the next page's top keeps the block whole: %r" % ((ct and ct["pages"]),))
+# A department intro listing the AS-T above the AS no longer refuses the AS (round 3): its own heading starts it.
+INTRO_U = ucatalog([("DEPARTMENT OF LIFE SCIENCES\nPrograms offered:\nIndia, AA-T\nA.A. Degree for Transfer\n" + ublock(p))
+                    if p is UPROGS[8] else ublock(p) for p in UPROGS])
+iuc = C.pdf_after_context(INTRO_U, UPROGS, C.pdf_numbers_after(INTRO_U, UPROGS))
+iu2 = C.pdf_best("u", INTRO_U, UPROGS[8], UCODE["50008"], "pypdf", numbers_after=iuc)
+check(iu2 and iu2.get("bound") == "number_after" and "AA-T" not in iu2["text"],
+      "an intro naming another award above the program's own heading is dropped, the block bound")
+# Rule 2: no own heading, another program's heading: refused. India's heading is gone and Hotel's number is
+# lost, so the block holds Hotel's heading only (listed: refused with 50007) ...
+GONE = ucatalog([ublock(p, "INDIA COURSES", award=False) if p is UPROGS[8] else ublock(p).replace("Control Number: 50007\n", "")
+                 for p in UPROGS])
+gctx = C.pdf_after_context(GONE, UPROGS, C.pdf_numbers_after(GONE, UPROGS))
+ind = C.pdf_best("u", GONE, UPROGS[8], UCODE["50008"], "pypdf", numbers_after=gctx)
+check(gctx["uniform"] and ind and ind.get("refused") == "50007" and ind.get("after_unbound") == "block_names_other_program"
       and not ind["text"] and ind.get("judged", "").startswith("Hotel, AA"),
-      "uniform: a block whose first strict heading names another listed program is refused: %r"
+      "rule 2: a block holding another listed program's heading and none of its own is refused: %r"
       % ((ind and (ind.get("refused"), ind.get("after_unbound"), ind.get("judged"))),))
+# ... and a heading no listed program holds refuses it as well, with no number to name.
+MIS = ucatalog([ublock(p, "Ballroom Dance Arts, AA") if p is GOLF else ublock(p) for p in UPROGS])
+mctx2 = C.pdf_after_context(MIS, UPROGS, C.pdf_numbers_after(MIS, UPROGS))
+mis = C.pdf_best("u", MIS, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=mctx2)
+check(mis and mis.get("refused") is None and mis.get("after_unbound") == "block_names_other_program"
+      and mis.get("bound") is None and not mis["text"] and mis.get("judged", "").startswith("Ballroom Dance Arts, AA"),
+      "rule 2: an unlisted program's heading with none of the program's own refuses the block: %r"
+      % ((mis and mis.get("after_unbound")),))
 # A banner before the program's own heading is no other program's: the block binds, named.
 BANNER = ucatalog([ublock(p, "THE DEPARTMENT OF BALLROOM AND SOCIAL DANCE\nFoxtrot, AA") if p is GOLF else ublock(p) for p in UPROGS])
 bctx = C.pdf_after_context(BANNER, UPROGS, C.pdf_numbers_after(BANNER, UPROGS))
@@ -254,6 +295,13 @@ sctx_u = C.pdf_after_context(STALE_U, UPROGS, C.pdf_numbers_after(STALE_U, UPROG
 iu = C.pdf_best("u", STALE_U, INDIA, UCODE["50008"], "pypdf", numbers_after=sctx_u)
 check(sctx_u["uniform"] and iu and iu.get("bound") == "number_after" and iu.get("named") and "Hotel" not in iu["text"],
       "an unlisted number still ends a block: India binds its own: %r" % ((iu and iu.get("after_unbound")),))
+STALE_U2 = ucatalog([ublock(p, "India course list", award=False) if p is INDIA
+                     else ublock(p).replace("Control Number: 50007", "Control Number: 09999") for p in UPROGS])
+s2 = C.pdf_best("u", STALE_U2, INDIA, UCODE["50008"], "pypdf",
+                numbers_after=C.pdf_after_context(STALE_U2, UPROGS, C.pdf_numbers_after(STALE_U2, UPROGS)))
+check(s2 and s2.get("bound") == "number_after" and s2.get("after_unnamed") and "Hotel" not in s2["text"],
+      "the stale number closes Hotel's block, so India's unheaded block binds alone: %r"
+      % ((s2 and (s2.get("after_unbound"), s2.get("bound"))),))
 # (c) Hotel's own number does not print: not_found, number_not_printed, and the heading picker never runs.
 hu = C.pdf_best("u", STALE_U, HOTEL, UCODE["50007"], "pypdf", numbers_after=sctx_u)
 check(hu and hu.get("after_unbound") == "number_not_printed" and not hu["text"] and hu["coverage"] == 0.0
@@ -405,7 +453,7 @@ with contextlib.redirect_stdout(io.StringIO()):
 nu = rep_u["pdf"]["numbers_after"]
 fx = [p for p in rep_u["pdf"]["picks"] if p["control_number"] == GOLF["control_number"]]
 check(nu.get("binding") == "number_line" and "binding_why" not in nu and fx and fx[0].get("after_unnamed") is True
-      and fx[0].get("judged", "").startswith("Ballroom Dance Arts, AA")
+      and fx[0].get("judged", "").startswith("Ballroom dance for every level")
       and sum(1 for p in rep_u["pdf"]["picks"] if p.get("after_unnamed")) == 1,
       "uniform capture: binds by the number line and files the one unnamed pick with what it judged: %r"
       % ((nu.get("binding"), fx and fx[0].get("after_unnamed")),))
@@ -555,6 +603,13 @@ try:
     check(calls == [], "no source with text reached the model: %r" % calls)
 finally:
     shutil.rmtree(folder)
+
+# The forced preview: the read workflow hands the run's force to the capture step, so a free capture's
+# would_extract.forced_unbound names what a forced read would leave unbound (decision 15).
+wf = open(os.path.join(ROOT, ".github", "workflows", "program-requirements-college.yml")).read()
+cap_step = wf[wf.index("- name: Capture"):wf.index("- name: Extract and score")]
+check(re.search(r"^\s*FORCE: \$\{\{ github\.event\.inputs\.force \|\| '' \}\}\s*$", cap_step, re.M),
+      "the capture step carries the run's force")
 
 # ── 5. The gate is the reconcile entry alone ────────────────────────────────────────────────────
 check(R.numbers_after("X", {"X": {"pdf_numbers_after": True}}) and not R.numbers_after("X", {"X": {}})
