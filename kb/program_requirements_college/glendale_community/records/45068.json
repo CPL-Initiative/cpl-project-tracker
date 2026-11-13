@@ -1,0 +1,20 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "45068",
+ "shape": "certificate",
+ "title": "Cal-GETC",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": {},
+ "cost_usd": null,
+ "ms": 0,
+ "seconds": 12.3,
+ "parts": 2,
+ "error": "part 1 of 2: HTTP 401: {\"error\":\"unauthorized\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "43384599013"
+}

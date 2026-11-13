@@ -2,27 +2,182 @@
  "college": "Glendale Community College",
  "programs": 317,
  "with_closed_list": 267,
- "found": 260,
- "extracted": 260,
- "errors": 0,
- "passed_machine_checks": 115,
+ "found": 238,
+ "extracted": 238,
+ "errors": 121,
+ "passed_machine_checks": 117,
  "failed": {
-  "coverage": 35,
-  "invented": 2,
-  "arithmetic": 145,
+  "coverage": 0,
+  "invented": 0,
+  "arithmetic": 0,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.13,
- "cost_per_program": 0.0774,
+ "cost_usd": 9.33,
+ "cost_per_program": 0.0392,
  "not_found": [
+  {
+   "control_number": "02603",
+   "title": "Social Science",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/SS-AA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.92,
+    "body": 0.92,
+    "content": 0.0,
+    "net": 10,
+    "listed": 87,
+    "why": "coarse net: the page's code tokens name 10 of 87 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1785,
+     "content": 321694,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
   {
    "control_number": "11147",
    "title": "Bookkeeping",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
-    "coverage": 0.292
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "11155",
+   "title": "Mass Communications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MC-AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 3,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1940,
+     "content": 321630,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18638",
+   "title": "Liberal Arts: Arts and Humanities Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/A%26H-AA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.948,
+    "body": 0.948,
+    "content": 0.17,
+    "net": 15,
+    "listed": 135,
+    "why": "coarse net: the page's code tokens name 15 of 135 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1943,
+     "content": 321890,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18639",
+   "title": "Liberal Arts: Science and Mathematics Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/SM-AA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.726,
+    "body": 0.726,
+    "content": 0.06,
+    "net": 20,
+    "listed": 84,
+    "why": "coarse net: the page's code tokens name 20 of 84 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1900,
+     "content": 321817,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "18640",
+   "title": "Liberal Arts: Social and Behavioral Sciences Emphasis",
+   "award": "A.A. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/SBS-AA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.897,
+    "body": 0.897,
+    "content": 0.056,
+    "net": 12,
+    "listed": 107,
+    "why": "coarse net: the page's code tokens name 12 of 107 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1604,
+     "content": 321585,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "19269",
+   "title": "Basic Medical Billing and Coding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1440,
+     "content": 321308,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -30,17 +185,41 @@
    "title": "Bookkeeping",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
-    "coverage": 0.333
+    "why": "no page read names the program"
    }
   },
   {
-   "control_number": "24274",
-   "title": "High School Equivalency (HSE)",
-   "award": "Noncredit program",
+   "control_number": "21302",
+   "title": "Cinematography and Editing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 0.2
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "21303",
+   "title": "Mass Communications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 3,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1913,
+     "content": 321603,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
@@ -48,8 +227,7 @@
    "title": "Introduction to Hospitality and Tourism",
    "award": null,
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 0.222
+    "why": "no page read names the program"
    }
   },
   {
@@ -57,28 +235,103 @@
    "title": "Medical Front Office Clerk",
    "award": null,
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 0.333
+    "url": "https://catalog.glendale.edu/programs/ROC-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1103,
+     "content": 321015,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
-   "control_number": "24432",
-   "title": "Certificate of Secondary Education Completion",
-   "award": null,
+   "control_number": "24327",
+   "title": "General Office Clerk III",
+   "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=274",
-    "coverage": 0.423
+    "url": "https://catalog.glendale.edu/programs/NCAC3/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.0,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 992,
+     "content": 320953,
+     "tabs": 0
+    },
+    "tab_panels": []
    }
   },
   {
-   "control_number": "45068",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "control_number": "38973",
+   "title": "Customer Service",
+   "award": "Noncredit program",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=50",
-    "coverage": 0.089
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "40846",
+   "title": "Administrative Medical Assisting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1411,
+     "content": 321278,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "40847",
+   "title": "Certified Nursing Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "42263",
+   "title": "Google Workspace",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
    }
   }
  ],
- "run": "41055650373"
+ "run": "43384599013"
 }
