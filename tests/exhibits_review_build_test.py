@@ -444,6 +444,41 @@ GENERIC_REF = [("Fire Technology", SFT), ("Fire Investigation", SFT), ("Fire Aca
                ("Basic Escrow Procedures", "California Escrow Association (CEA)")]
 check("every real credential the rule had dropped counts as named again under the committed list",
       all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
+# The second readers of #3241: a name of three words or more needs a strict majority, so two of four words ("Dental
+# Assisting", DBCA) or a subject phrase (DRE's "Real Estate Finance") no longer name the issuer; a capitals tag matches
+# only in capitals; and the issuers' own credential abbreviations name their credentials.
+GENERIC_REF += [("Dental Assisting", "Dental Assisting Board of California (DBCA)"),
+                ("Real Estate Finance", "California Department of Real Estate (DRE)"),
+                ("Real Estate Principles and Practices", "California Department of Real Estate (DRE)"),
+                ("Fire Service In-Service Training — EMS", SFT),
+                ("Post Production Workflow", "California Commission on Peace Officer Standards and Training (POST)"),
+                ("Smart Home Installer", "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)"),
+                ("Bar Management Basics", "California Bureau of Automotive Repair (BAR)"),
+                ("Fire Officer II", "Pro Board (National Board on Fire Service Professional Qualifications)")]
+REAL += [("California Real Estate Broker License", "California Department of Real Estate (DRE)"),
+         ("Cisco Certified Network Associate (CCNA)", "Cisco"), ("CCNA Cybersecurity", "Cisco"),
+         ("Certified Ethical Hacker (CEH)", "EC-Council"), ("Computer Hacking Forensic Investigator (CHFI)", "EC-Council"),
+         ("Certified Nursing Assistant (CNA)", "California Department of Public Health (CDPH)"),
+         ("Basic Life Support (BLS) Certification", "American Heart Association (AHA)"),
+         ("LVN License", "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)"),
+         ("Licensed Clinical Social Worker (LCSW)", "California Board of Behavioral Sciences (BBS)"),
+         ("Licensed Marriage and Family Therapist (LMFT)", "California Board of Behavioral Sciences (BBS)"),
+         ("Licensed Professional Clinical Counselor (LPCC)", "California Board of Behavioral Sciences (BBS)"),
+         ("Certified SOLIDWORKS Associate (CSWA)", "Dassault Systèmes"),
+         ("ServSafe Food Protection Manager Certification", "National Restaurant Association"),
+         ("Class A Contractor License", "Contractors State License Board (CSLB)"),
+         ("Certified Pharmacy Technician (CPhT)", "Pharmacy Technician Certification Board (PTCB)"),
+         ("California Smog Check Repair Technician License", "California Bureau of Automotive Repair (BAR)"),
+         ("POST Basic Course", "California Commission on Peace Officer Standards and Training (POST)")]
+check("the issuers' own credential abbreviations name their credentials (round 2)",
+      all(B.issuer_named(t, i) for t, i in REAL), [t for t, i in REAL if not B.issuer_named(t, i)])
+check("a capitals tag matches only in capitals, and a fixture tag list decides alone",
+      B.issuer_named("POST Basic Course", "X Commission (POST)", {"X Commission (POST)": ["POST"]})
+      and not B.issuer_named("Post Basic Course", "X Commission (POST)", {"X Commission (POST)": ["POST"]})
+      and B.issuer_named("servsafe manager", "Food Group", {"Food Group": ["ServSafe"]}))
+check("a name of three or four words needs a strict majority: two of four is not enough, three of four is",
+      not B.issuer_named("Dental Assisting", "Dental Assisting Board of California (DBCA)", {})
+      and B.issuer_named("Dental Assisting Board Exam", "Dental Assisting Board of California (DBCA)", {}))
 check("…and the generic titles stay out", not any(B.issuer_named(t, i) for t, i in GENERIC_REF),
       [t for t, i in GENERIC_REF if B.issuer_named(t, i)])
 # CLEP and DSST titles now count as named (their tags), but a credit-by-exam card never asks named_credential
@@ -471,6 +506,16 @@ check("a title that is only a series, or one left with a joiner or empty parenth
       SA("SY0-701", "CompTIA") == ("SY0-701", []) and SA("Exam SY0-701", "CompTIA") == ("Exam SY0-701", [])
       and SA("CompTIA A+ 220-1101 or") == ("CompTIA A+ 220-1101 or", [])
       and SA("CompTIA A+ (220-1101 and)") == ("CompTIA A+ (220-1101 and)", []))
+check("round 2: the issuer and a series alone come back as they came; an Exam beside the parentheses strips with them",
+      SA("CompTIA N10-009", "CompTIA") == ("CompTIA N10-009", []) and SA("CompTIA SY0-701") == ("CompTIA SY0-701", [])
+      and SA("CompTIA 220-1101/1102") == ("CompTIA 220-1101/1102", [])
+      and SA("CompTIA Network+ Exam (N10-009)") == ("CompTIA Network+", ["N10-009"])
+      and SA("CompTIA Security+ Certification Exam (SY0-701)") == ("CompTIA Security+ Certification", ["SY0-701"])
+      and SA("CompTIA A+ Certification (220-1101, 220-1102) Exams") == ("CompTIA A+ Certification", ["220-1101", "220-1102"]))
+check("round 2: only CompTIA's shapes are a series, and every series CompTIA's catalog rows carry still is",
+      SA("CompTIA A+ Room B2-104") == ("CompTIA A+ Room B2-104", [])
+      and all(B.cert_naming.SERIES.fullmatch(k) for k in ("FC0-U71", "CLO-002", "SY0-701", "CY0-001", "SOT-001",
+                                                            "DA0-002", "DY0-001", "DS0-002", "N10-009", "220-1102", "CV0-004")))
 check("a course title is never stripped: canonical(series=False) leaves it as the course has it",
       B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "", series=False) == "CompTIA Security+ SY0-701 Prep"
       and B.cert_naming.canonical("CompTIA Security+ SY0-701 Prep", "") == "CompTIA Security+ Prep")

@@ -92,8 +92,7 @@ def build(overrides, credentials, unified_titles, fams):
         elif r["status"] == "any-one":
             # Its title is only a choice of tests ("C1 or G1"): any one qualifies, so it is no bundle and keeps its
             # title, as test_mix.exception() also says (no exception for a person).
-            if t not in any_one:
-                any_one.append(t)
+            any_one = sorted(set(any_one) | {t})
         else:
             unparseable.append({"title": t, "mix": (test_mix.from_title(t) or {}).get("label"), "why": r["why"]})
     entries = []

@@ -11123,7 +11123,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 673
+     "line": 681
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -14205,14 +14205,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 683
+     "line": 691
     },
     {
      "id": "script:kb/_build_sheet181_rename_plan.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 138
+     "line": 137
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -14358,7 +14358,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 681
+     "line": 689
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -14372,7 +14372,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 138
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -15542,7 +15542,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 685
+     "line": 693
     },
     {
      "id": "script:kb/_clep_official_titles.py",
@@ -19960,7 +19960,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 686
+     "line": 694
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -20087,7 +20087,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 674
+     "line": 682
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -20188,7 +20188,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 680
+     "line": 688
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -20202,7 +20202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 139
+     "line": 138
     },
     {
      "id": "script:kb/_build_standards_rename_plan.py",
@@ -23195,7 +23195,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 676
+     "line": 684
     },
     {
      "id": "script:kb/_build_oc_medical_assistant_crosswalk.py",
@@ -23348,7 +23348,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 678
+     "line": 686
     }
    ],
    "producers": [
@@ -26591,7 +26591,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 677
+     "line": 685
     },
     {
      "id": "script:kb/_build_roep_display.py",

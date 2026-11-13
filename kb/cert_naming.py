@@ -216,12 +216,15 @@ def ase_read(title, issuer=""):
 
 # CompTIA's exam series: "CV0-004" (Cloud+), "SY0-701" (Security+), "N10-009" (Network+), "220-1101" (A+), "FC0-U61"
 # (ITF+), "CLO-002". Read in any case and written back in capitals.
-_SERIES = r"(?:220-\d{4}|(?:[A-Z]{1,3}\d{1,2}|CLO|CAS|CNX)-U?\d{2,3})"
+# CompTIA's shapes only, so "Room B2-104" is no series: two letters and a digit, or N10, CLO, CAS, CNX, SOT (SecOT+).
+_SERIES = r"(?:220-\d{4}|(?:[A-Z]{2}\d|N10|CLO|CAS|CNX|SOT)-U?\d{2,3})"
 SERIES = re.compile(r"(?<![A-Za-z0-9])" + _SERIES + r"(?![A-Za-z0-9])", re.I)
 # A list of series: joined by "/", ",", "&", "+", "and" or "or", the second sometimes shortened ("220-1101/1102").
 _SERIES_JOIN = r"(?:\s*(?:[/,&+]|\band\b|\bor\b)\s*(?:" + _SERIES + r"|\d{3,4}(?![A-Za-z0-9-])))*"
 _SERIES_WORDS = r"(?:(?:version|exams?)\s+)?"
-_SERIES_PARENS = re.compile(r"\s*\(\s*" + _SERIES_WORDS + _SERIES + _SERIES_JOIN + r"(?:\s+exams?)?\s*\)", re.I)
+# "(N10-009)", with an "Exam" before or after it: "Network+ Exam (N10-009)", "A+ Certification (220-1101) Exams".
+_SERIES_PARENS = re.compile(r"(?:\s+exams?)?\s*\(\s*" + _SERIES_WORDS + _SERIES + _SERIES_JOIN + r"(?:\s+exams?)?\s*\)"
+                            r"(?:\s*exams?\b)?", re.I)
 _SERIES_BARE = re.compile(r"\s*(?:[—–:-]\s*)?" + _SERIES_WORDS + r"(?<![A-Za-z0-9])" + _SERIES + _SERIES_JOIN
                           + r"(?![A-Za-z0-9])(?:\s+exams?\b)?", re.I)
 # What a clean strip never leaves: a joiner at the end, or an empty pair of parentheses.
@@ -240,7 +243,8 @@ def series_aside(title, issuer=""):
     recommendation (cpl_memory d-comptia-series-is-alias-s648).
 
     A title the strip cannot leave clean comes back as it came, with no series, for a person to name: one that is only a
-    series ("SY0-701"), or one that would keep a joiner or an empty pair of parentheses (the review of #3241)."""
+    series ("SY0-701") or the issuer and a series ("CompTIA N10-009"), or one that would keep a joiner or an empty pair
+    of parentheses (the review of #3241)."""
     t = (title or "").strip()
     if "comptia" not in (issuer or "").lower() and not t.lower().startswith("comptia"):
         return t, []
@@ -251,7 +255,9 @@ def series_aside(title, issuer=""):
         return t, []
     bare = _SERIES_BARE.sub("", _SERIES_PARENS.sub("", t))
     bare = re.sub(r"\s{2,}", " ", bare).strip(" -–—:,")
-    if not bare or _SERIES_LEFTOVER.search(bare) or SERIES.search(bare):
+    # Only the issuer's name left ("CompTIA N10-009" -> "CompTIA") names no credential: a person names it.
+    if (not bare or _SERIES_LEFTOVER.search(bare) or SERIES.search(bare)
+            or bare.lower() in {"comptia", (issuer or "").strip().lower()}):
         return t, []
     return bare, found
 

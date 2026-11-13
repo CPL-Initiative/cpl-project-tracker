@@ -544,19 +544,27 @@ def _tokens(text):
 
 def issuer_named(title, issuer, tags=None):
     """True when `title` carries its issuer, by one rule (the S648 conductor on #3241): one of the issuer's tags
-    (issuer_tags; "ASE", "NREMT", "LEED", "Disney") stands in the title as whole tokens; or the title holds every word of an
-    issuer's name of one or two words ("CompTIA", "Pro Board"); or half the words of a longer name ("Emergency Medical
-    Technician", three of the five words of the National Registry of Emergency Medical Technicians). The name is the
-    issuer outside its parentheses, joining words (JOINERS) aside, a plural folded. So "Fire Inspector 1" is not the
-    National Fire Protection Association's on "fire", nor "Shielded Metal Arc Welding" the American Welding Society's on
-    "welding". COBIx on #3233 (6856966574): one shared word "would let its generic titles match on phrase alone"."""
+    (issuer_tags; "ASE", "NREMT", "LEED", "Disney") stands in the title as whole tokens, an all-capitals tag in capitals
+    ("POST" never matches "Post Production"); or the title holds every word of an issuer's name of one or two words
+    ("CompTIA", "Pro Board"); or more than half the words of a longer name ("Emergency Medical Technician", three of the
+    five words of the National Registry of Emergency Medical Technicians). The name is the issuer outside its parentheses,
+    joining words (JOINERS) aside, a plural folded. So "Fire Inspector 1" is not the National Fire Protection
+    Association's on "fire", "Shielded Metal Arc Welding" not the American Welding Society's on "welding", nor "Dental
+    Assisting" the Dental Assisting Board's on two of four words. COBIx on #3233 (6856966574): one shared word "would let
+    its generic titles match on phrase alone"."""
     said = _tokens(title)
     if not said or not issuer:
         return False
     padded = " %s " % " ".join(said)
+    exact = " %s " % " ".join(re.findall(r"[A-Za-z0-9]+", title or ""))
     for tag in (issuer_tags() if tags is None else tags).get(issuer) or []:
         tt = _tokens(tag)
-        if tt and (" %s " % " ".join(tt)) in padded:
+        if not tt:
+            continue
+        if re.search(r"[A-Z]", tag) and not re.search(r"[a-z]", tag):
+            if (" %s " % " ".join(re.findall(r"[A-Za-z0-9]+", tag))) in exact:
+                return True
+        elif (" %s " % " ".join(tt)) in padded:
             return True
     name = [_fold(w) for w in _tokens(re.sub(r"\([^)]*\)", " ", issuer)) if w not in JOINERS]
     if not name:
@@ -565,7 +573,7 @@ def issuer_named(title, issuer, tags=None):
     shared = sum(1 for w in set(name) if w in have)
     if len(set(name)) <= 2:
         return shared == len(set(name))
-    return 2 * shared >= len(set(name))
+    return 2 * shared > len(set(name))
 
 
 def named_credential(texts, index, tags=None):

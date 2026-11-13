@@ -1,5 +1,5 @@
 {
- "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one.",
+ "_about": "Each industry issuer's tags: the words that, standing as whole tokens in a title, say the title is that issuer's (kb/_build_exhibits_review.py issuer_named). Derived once on 2026-11-13 (S648) from every issuer in kb/credentials.json and kb/credential_review_overlay.json: a parenthetical that is one token (ASE, NREMT), and an all-capitals word outside parentheses (IPC); then written down and corrected by hand: generic ones dropped (ROP, HS, DUI, GIS, 'varies'), split ones joined (CAL-OSHA, EC-Council, H&R Block), and brands that sit outside the issuer's short tag added (CAL FIRE, Cal OES, UC ANR, Disney, LEED, Esri, Haas, Unity, LPIC, CLEP, DSST), and, after the review of #3241, each issuer's own credential abbreviations and track names where its real credentials carry no other mark of it (PMI's PfMP and PgMP, Python Institute's PCAP, the Dental Boards' RDA and RDH, NBCOT's COTA, EMSA's EMT and EMR, SFT's certification tracks such as Fire Inspector and Company Officer). The S648 conductor's direction on #3241: the issuer list is finite, so its tags are data, never a pattern. An issuer missing here has no tags: its titles count as named only on the words of its name. Add an issuer when the reference gains one. A tag in capitals matches only in capitals (POST never matches \"Post Production\"). NFPA's and Pro Board's bare Fire Inspector, Fire Officer and Firefighter titles stay out on purpose (the S648 conductor, 2026-11-13): several issuers share the bare title, so its card goes to a person.",
  "set_by": "the S648 worker for the conductor, 2026-11-13",
  "tags": {
   "A.B. Miller High School": [],
@@ -35,10 +35,12 @@
    "ACE"
   ],
   "American Heart Association (AHA)": [
-   "AHA"
+   "AHA",
+   "BLS"
   ],
   "American Heart Association (AHA) / American Red Cross": [
-   "AHA"
+   "AHA",
+   "BLS"
   ],
   "American Marketing Association (AMA)": [
    "AMA"
@@ -105,7 +107,8 @@
    "BSCC"
   ],
   "Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [
-   "BVNPT"
+   "BVNPT",
+   "LVN"
   ],
   "C++ Institute": [],
   "Cajon High School": [],
@@ -125,20 +128,26 @@
   ],
   "California Board of Barbering and Cosmetology": [
    "Cosmetology License",
-   "Barber License"
+   "Barber License",
+   "Barbering License"
   ],
   "California Board of Behavioral Sciences (BBS)": [
-   "BBS"
+   "BBS",
+   "LCSW",
+   "LMFT",
+   "LPCC"
   ],
   "California Board of State and Community Corrections (BSCC) — STC Program": [
    "BSCC",
    "STC"
   ],
   "California Board of Vocational Nursing and Psychiatric Technicians (BVNPT)": [
-   "BVNPT"
+   "BVNPT",
+   "LVN"
   ],
   "California Bureau of Automotive Repair (BAR)": [
-   "BAR"
+   "BAR",
+   "Smog Check"
   ],
   "California Bureau of Real Estate Appraisers (BREA)": [
    "BREA"
@@ -180,7 +189,8 @@
    "DPR"
   ],
   "California Department of Public Health (CDPH)": [
-   "CDPH"
+   "CDPH",
+   "CNA"
   ],
   "California Department of Real Estate (DRE)": [
    "DRE"
@@ -222,7 +232,9 @@
   "California Specialized Training Institute (CSTI)": [
    "CSTI"
   ],
-  "California State Board of Pharmacy": [],
+  "California State Board of Pharmacy": [
+   "Pharmacy Technician License"
+  ],
   "California State Fire Training (SFT)": [
    "SFT",
    "Chief Fire Officer",
@@ -265,7 +277,10 @@
    "CHAMPS"
   ],
   "Chef Ann Foundation": [],
-  "Cisco": [],
+  "Cisco": [
+   "CCNA",
+   "CCNP"
+  ],
   "City of Los Angeles Department of Building and Safety": [],
   "Cleveland High School": [],
   "College Board": [
@@ -276,7 +291,8 @@
   "Colton-Redlands-Yucaipa ROP": [],
   "CompTIA": [],
   "Contractors State License Board (CSLB)": [
-   "CSLB"
+   "CSLB",
+   "Contractor License"
   ],
   "Corona High School": [],
   "Corona-Norco Unified School District": [],
@@ -284,7 +300,10 @@
    "CNUSD"
   ],
   "Council for Professional Recognition": [],
-  "Dassault Systèmes": [],
+  "Dassault Systèmes": [
+   "CSWA",
+   "SOLIDWORKS"
+  ],
   "Defense Activity for Non-Traditional Education Support (DANTES)": [
    "DANTES",
    "DSST"
@@ -298,7 +317,8 @@
    "DLPT"
   ],
   "Dental Assisting Board of California (DBCA)": [
-   "DBCA"
+   "DBCA",
+   "RDA"
   ],
   "Dental Board of California": [
    "RDA",
@@ -315,7 +335,9 @@
   ],
   "Dollar General": [],
   "EC-Council": [
-   "EC-Council"
+   "EC-Council",
+   "CEH",
+   "CHFI"
   ],
   "El Modena High School": [],
   "Emergency Care and Safety Institute (ECSI)": [
@@ -506,9 +528,12 @@
   "National Registry of Emergency Medical Technicians (NREMT)": [
    "NREMT"
   ],
-  "National Restaurant Association": [],
+  "National Restaurant Association": [
+   "ServSafe"
+  ],
   "National Strength and Conditioning Association (NSCA)": [
-   "NSCA"
+   "NSCA",
+   "CSCS"
   ],
   "National Wildfire Coordinating Group (NWCG)": [
    "NWCG"
@@ -543,7 +568,8 @@
    "FPC"
   ],
   "Pharmacy Technician Certification Board (PTCB)": [
-   "PTCB"
+   "PTCB",
+   "CPhT"
   ],
   "Phase One": [],
   "Precision Nutrition": [],
