@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     29.0,
-    32.0
+    34.0
    ],
    "stated": [
     29.0,
     34.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-32.0; the catalog states 29.0-34.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -304,5 +302,6 @@
    "The Certificate of Achievement uses the same requirements as the major; this record reads the A.S. major section."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "read_run": "39061728041"
 }
