@@ -1,0 +1,87 @@
+<!-- The guide panel (Ally Barker, 2026-11-12: "Make sure the links open to a side bar view of those visuals instead of
+     opening seperate tabs"; "Each card should be clickable and should show a sidebar with the visual"). Each card's link
+     is a plain https link, so without this script it opens its guide in the same tab. With it, the whole card opens the
+     guide in a panel on the right: a modal dialog with a focus trap, Escape and Close shut it and hand focus back to the
+     card, and Open in a new tab stays as the plain way out. A link to this page's own #how-to-confirm shows that section
+     in the panel. Session-built (S647); library_publish.py checks only <main> on a new piece, so this frame survives. -->
+<style>
+.card a.open::after { content: ""; position: absolute; inset: 0; border-radius: 11px; }
+.card:has(a.open:hover) { border-color: var(--line-strong); }
+.card a.open { display: inline-block; min-height: 25px; }
+.gp-scrim { position: fixed; inset: 0; z-index: 70; background: var(--shadow); }
+.gp { position: fixed; z-index: 71; top: 0; right: 0; bottom: 0; width: min(46rem, 100%); display: flex; flex-direction: column; background: var(--surface); color: var(--ink); border-left: 1px solid var(--line); box-shadow: -8px 0 24px var(--shadow); }
+.gp-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 18px; padding: 12px max(16px, env(safe-area-inset-right, 0px)) 12px 16px; border-bottom: 1px solid var(--line); }
+.gp-bar h2 { flex: 1 1 14rem; font-size: 1.15rem; }
+.gp-bar a, .gp-bar button { display: inline-flex; align-items: center; min-height: 25px; min-width: 25px; padding: 0 2px; font: inherit; font-weight: 600; color: var(--link); background: none; border: 0; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.gp-frame { flex: 1; width: 100%; border: 0; background: var(--page); }
+.gp-copy { flex: 1; overflow: auto; padding: 18px 16px 32px; display: grid; gap: 14px; align-content: start; }
+.gp-copy .cards, .gp-copy .cards.four { grid-template-columns: 1fr; }
+.gp-copy > h2 { display: none; }
+html.gp-on { overflow: hidden; }
+html.gp-on .sbar-chip { display: none; }
+</style>
+<script>
+(function () {
+  var opener = null, scrim, panel, title, out, holder;
+  function el(tag, cls) { var n = document.createElement(tag); if (cls) n.className = cls; return n; }
+  function build() {
+    scrim = el("div", "gp-scrim"); scrim.hidden = true;
+    panel = el("div", "gp"); panel.hidden = true;
+    panel.setAttribute("role", "dialog"); panel.setAttribute("aria-modal", "true"); panel.setAttribute("aria-labelledby", "gp-h");
+    var guardA = el("span"), guardB = el("span"); guardA.tabIndex = 0; guardB.tabIndex = 0;
+    var bar = el("div", "gp-bar");
+    title = el("h2"); title.id = "gp-h"; title.tabIndex = -1;
+    out = el("a"); out.target = "_blank"; out.rel = "noopener"; out.textContent = "Open in a new tab";
+    var shut = el("button"); shut.type = "button"; shut.textContent = "Close";
+    bar.appendChild(title); bar.appendChild(out); bar.appendChild(shut);
+    holder = el("div"); holder.style.display = "contents";
+    panel.appendChild(guardA); panel.appendChild(bar); panel.appendChild(holder); panel.appendChild(guardB);
+    document.body.appendChild(scrim); document.body.appendChild(panel);
+    shut.addEventListener("click", close); scrim.addEventListener("click", close);
+    guardA.addEventListener("focus", function () { shut.focus(); });
+    guardB.addEventListener("focus", function () { title.focus(); });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape" && !panel.hidden) close(); });
+  }
+  function setInert(on) {
+    Array.prototype.forEach.call(document.body.children, function (n) {
+      if (n === panel || n === scrim || n.tagName === "SCRIPT") return;
+      if (on) n.setAttribute("inert", ""); else n.removeAttribute("inert");
+    });
+  }
+  function open(a) {
+    if (!panel) build();
+    opener = a; holder.innerHTML = "";
+    // A link to a section of this page shows that section; the draft's preview has another address, so match the id.
+    var sec = a.hash ? document.getElementById(a.hash.slice(1)) : null;
+    title.textContent = a.textContent;
+    if (sec) {
+      var copy = el("div", "gp-copy"); copy.innerHTML = sec.innerHTML;
+      Array.prototype.forEach.call(copy.querySelectorAll("[id]"), function (n) { n.removeAttribute("id"); });
+      holder.appendChild(copy);
+      var first = sec.querySelector('a[href^="https:"]');
+      out.href = first ? first.href : a.href;
+    } else {
+      var f = el("iframe", "gp-frame"); f.title = a.textContent; f.src = a.href;
+      f.addEventListener("load", function () {
+        try { f.contentDocument.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); }); } catch (err) { /* another origin */ }
+      });
+      holder.appendChild(f); out.href = a.href;
+    }
+    setInert(true); scrim.hidden = false; panel.hidden = false;
+    document.documentElement.classList.add("gp-on");
+    title.focus();
+    return true;
+  }
+  function close() {
+    if (!panel || panel.hidden) return;
+    panel.hidden = true; scrim.hidden = true; holder.innerHTML = "";
+    setInert(false); document.documentElement.classList.remove("gp-on");
+    if (opener) { try { opener.focus(); } catch (e) { /* best effort */ } }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest && e.target.closest("#main a.open");
+    if (!a || e.ctrlKey || e.metaKey || e.shiftKey || e.button) return;
+    if (open(a)) e.preventDefault();
+  });
+})();
+</script>

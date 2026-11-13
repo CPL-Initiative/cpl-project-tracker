@@ -1,0 +1,80 @@
+{
+  "_about": "Rule 10 receipt (a2) for kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql: two guarded UPDATEs of cpl_library and one INSERT into cpl_library_drafts. The before-values below are the conductor's reads of 2026-11-13 09:12Z and 09:35Z (unchanged between them). cpl_library_history files each prior row whole when the write runs; the rollback restores from it, and carries mwdvs6l1's regen as a literal as well.",
+  "session": "S647 (SkyPipit), worker for the CPL Library's carried request",
+  "cohort": "library-s647@bot",
+  "draft": {
+    "id": "b18c5759-b55b-4341-b3fc-f59c1fd5bcf6",
+    "library_id": "4660a13b-984e-4030-a83b-762c507510a7",
+    "slug": "how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1",
+    "based_on": "draft 0aeed57a-9855-4abe-84be-3afa59839fa3",
+    "made_by": "S647 session",
+    "source": "scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/",
+    "html_chars": 50285
+  },
+  "rows": {
+    "how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1": {
+      "id": "4660a13b-984e-4030-a83b-762c507510a7",
+      "guard_updated_at": "2026-11-12 18:28:48.277161+00",
+      "before": {
+        "updated_at": "2026-11-12 18:28:48.277161+00",
+        "updated_by": "Ally Barker",
+        "note": null,
+        "refresh_note": null,
+        "rebuild_from": null,
+        "regen": {
+          "publish": "show",
+          "draft_id": "0aeed57a-9855-4abe-84be-3afa59839fa3",
+          "ready_at": "2026-11-12T18:28:48.221Z",
+          "draft_url": null,
+          "new_piece": true,
+          "drafted_by": "Ally Barker",
+          "drafted_with": "library-revise-draft",
+          "requested_at": "2026-11-12T18:28:27.851Z",
+          "requested_by": "Ally Barker"
+        }
+      },
+      "after": {
+        "regen": "draft_id b18c5759-b55b-4341-b3fc-f59c1fd5bcf6, ready_at now, based_on_draft 0aeed57a-9855-4abe-84be-3afa59839fa3, Draft 1 under earlier",
+        "refresh_note": "Carried from how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5 (Ally Barker, 2026-11-12): We need three separate cards. The third card should read \"How to confirm\". Each card should be clickable and should show a sidebar with the visual. Add the links in each box to the appropriate visual e.g. \"how to add your CPL coordinator and noncredit lead into MAP\". Make sure the links open to a side bar view of those visuals instead of opening seperate tabs.",
+        "rebuild_from": "node scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs (cpl-project-tracker) writes draft.html from main.html and panel.html in the starter page's frame; write_receipt.py stores it as the card's draft. Publish it on the card writes library/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/.",
+        "updated_by": "library-s647@bot"
+      }
+    },
+    "how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5": {
+      "id": "f1078c28-d9fc-423b-bfc3-0832ae5e43fd",
+      "guard_updated_at": "2026-11-12 18:19:23.709551+00",
+      "before": {
+        "updated_at": "2026-11-12 18:19:23.709551+00",
+        "updated_by": "Ally Barker",
+        "note": null,
+        "refresh_note": "Add the links in each box to the appropriate visual e.g. \"how to add your CPL coordinator and noncredit lead into MAP\"",
+        "regen_summary": {
+          "earlier": [
+            {
+              "draft_id": "ab6214c8-a24c-4add-a601-b988e0dd9932",
+              "ready_at": "2026-11-12T18:14:51.182Z",
+              "note": null
+            },
+            {
+              "draft_id": "62fd17cc-2649-4c39-a995-321b27a9804e",
+              "ready_at": "2026-11-12T18:17:58.455Z",
+              "note": "We need three separate cards. The third card should read \"How to confirm\". Each card should be clickable and should show a sidebar with the visual"
+            }
+          ],
+          "publish": "show",
+          "requested_at": "2026-11-12T18:19:23.283Z",
+          "requested_by": "Ally Barker",
+          "based_on_draft": "62fd17cc-2649-4c39-a995-321b27a9804e"
+        },
+        "regen_exact": "filed whole by cpl_library_history_trg (changed_by = 'library-s647@bot') when the forward write runs; the rollback restores it from there, byte for byte"
+      },
+      "after": {
+        "regen": null,
+        "refresh_note": null,
+        "note": "Superseded by how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1 (S647, 2026-11-13): Ally Barker's last ask here (2026-11-12 18:19 UTC, \"Add the links in each box to the appropriate visual e.g. \"how to add your CPL coordinator and noncredit lead into MAP\"\") is answered by that record's Draft 2, b18c5759-b55b-4341-b3fc-f59c1fd5bcf6. This record's two drafts stay in cpl_library_drafts (ab6214c8, 62fd17cc). Retiring this duplicate is Ally's press.",
+        "updated_by": "library-s647@bot"
+      }
+    }
+  },
+  "rollback": "begin;\n-- Restore both rows from the history row the forward write filed (cpl_library_history_trg, changed_by library-s647@bot), only while\n-- each row still stands as the forward write left it.\nupdate public.cpl_library l\nset regen = h.before->'regen', refresh_note = h.before->>'refresh_note', rebuild_from = h.before->>'rebuild_from',\n    note = h.before->>'note', updated_by = h.before->>'updated_by'\nfrom (select distinct on (library_id) library_id, before from public.cpl_library_history\n      where changed_by = 'library-s647@bot' and library_id in ('4660a13b-984e-4030-a83b-762c507510a7', 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd')\n      order by library_id, changed_at asc) h\nwhere l.id = h.library_id and l.updated_by = 'library-s647@bot';\n-- mwdvs6l1's regen as a literal, should the history row be missing:\n-- update public.cpl_library set regen = '{\"publish\": \"show\", \"draft_id\": \"0aeed57a-9855-4abe-84be-3afa59839fa3\", \"ready_at\": \"2026-11-12T18:28:48.221Z\", \"draft_url\": null, \"new_piece\": true, \"drafted_by\": \"Ally Barker\", \"drafted_with\": \"library-revise-draft\", \"requested_at\": \"2026-11-12T18:28:27.851Z\", \"requested_by\": \"Ally Barker\"}'::jsonb, refresh_note = null, rebuild_from = null, updated_by = 'Ally Barker'\n--   where id = '4660a13b-984e-4030-a83b-762c507510a7' and updated_by = 'library-s647@bot';\ndelete from public.cpl_library_drafts where id = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6' and made_by = 'S647 session' and published_at is null;\ncommit;"
+}

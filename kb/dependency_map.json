@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 909,
+  "file_datasets": 913,
   "external_services": 195,
-  "consumers": 575,
+  "consumers": 577,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -22491,6 +22491,65 @@
      "direction": "run",
      "how": "yaml",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/draft.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 49
+    },
+    {
+     "id": "script:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/write_receipt.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 74
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/library": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 25
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/main.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 26
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/panel.html": {
+   "consumers": [
+    {
+     "id": "script:scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 27
     }
    ],
    "served": true,
