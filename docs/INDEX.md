@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 94 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 103 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 70 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 609 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1466** | |
+| Session handoffs | 610 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1467** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-13 (S648 SkyTanager, conductor, Sam in session; written while the session continued): eight merges (#3227, #3242, #3240, #3243, #3241, #3246, #3244, #3247); College Data Collection on Sam's #3229 words; Cal-GETC 34 by per-college evidence; the issuer tag list; Open Asks Sheet 193; handoff 649.
 - 2026-11-13 (S647 SkyPipit, the afternoon, Sam in session): four merges (#3231, #3233, #3232, #3236); the Commons data dashboard complete at `#commons/data` with four views and its first live read; the Exhibits fixes of #3223 and #3228; the `live-counts` environment; Open Asks Sheet 192; handoff 648 refreshed.
 - 2026-11-13 (S647 SkyPipit, conductor, two halves of the CPL Queue routine; the first stopped without a handoff): nine merges (#3211, #3214, #3194, #3205, #3218, #3206, #3216, #3207, #3222); Santiago Canyon, Diablo Valley and San Jose City displayed, then the whole build; College of the Desert read in ranges; Glendale's keep rule; the Commons data dashboard live; Open Asks Sheet 190; handoff 648.
 - 2026-11-13 (S646 SkyOriole, conductor, the CPL Queue routine): four merges (#3208, #3210, #3212, #3201); the PDF reader merged with a `refused` method and an exact own heading, decision 16(b) reversed; Diablo Valley loaded to 213; Glendale's bot-check page read as a refusal, a slow paid read; the first real daily run after #3180 green; Open Asks Sheet 189; handoff 647.

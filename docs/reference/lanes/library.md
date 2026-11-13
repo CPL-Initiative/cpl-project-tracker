@@ -125,11 +125,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **Publish now (S642, #3171 `3ac95dab`):** edge function `library-publish-now`, reviewer session only, `busy_behind`
   when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
 - **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
-  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged, not
-  deployed. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
-  **NOT YET DEPLOYED** — this session's Supabase connector is down, so it is the next session's first item: deploy
-  `docket-process`, then `library-publish-now`, from `main` through `cpl-chat-deploy.yml` (`confirm=DEPLOY`, one
-  function per dispatch), then this lane's smoke. The first deploy tests `_shared`.
+  `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
+  **DEPLOYED (S648, from `main`, `cpl-chat-deploy.yml` `confirm=DEPLOY`, each with its smoke, *as reported*):**
+  `docket-process` run 43469609500, then `library-publish-now` run 43469887510, both success. Open (#3227's review):
+  a comment in `cpl-chat-deploy.yml` names only `group_queue.mjs`.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A

@@ -143,6 +143,17 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S648, and what worked
+
+- Every worker PR subscribes the session; each notice cost about 4,000 tokens to read and drop, nine PRs about 36,000. A brief says the worker's PR will subscribe the conductor, and the conductor unsubscribes without reading the body.
+- A `get` on a PR (#3227) cost about 6,000 tokens for its body. Use `get_check_runs` for the gate and a reader agent for the comments.
+- A worker's interim and finished task notices repeat, and each wake costs context: 61% after 90 minutes.
+- Glendale's free read went out before the second reader reported; the reader found a fault in `assign()` and the run was canceled (free, minutes lost). When a change touches shared reader code, the reader reports before the dispatch (S646's lesson, repeated).
+- Reading free catalog text by pattern for the Cal-GETC figure failed three review rounds; per-college evidence in the reconcile config ended it. The first count (95 "newly passing") was no evidence: a transfer degree's check accepts a sum past the total as overlap, with no bound.
+- Handoff 648 missed issue #3229, and Sam had to point at it. At start, list the issues COBIx opened or commented on that day and check each against the handoff's open work.
+- A NOT YET RUN receipt was never tested against the table's constraints: three S647 summaries broke the 400-character check. A prepared receipt is length-checked when it is written.
+- Worked: second readers who ran the code, not only read it, found the faults that mattered; a compare before each load caught College of the Desert 10195; workers answering COBIx on the PR thread; reusing a finished worker's worktree for the next branch (about 9 GB free with three or four worktrees).
+
 ## What went wrong in S647, and what worked
 
 - The first half (08:55Z) stopped at about 10:12Z with no handoff. With the database refusing every query from about 09:29Z, it rightly held every apply: a session that cannot read a table back does not start a write to it. The 11:12Z firing read the stop from a green PR with COBIx's check left unmerged for an hour and every thread quiet at once, declared with draft #3221 before any other write, and took the queue under the same number.
