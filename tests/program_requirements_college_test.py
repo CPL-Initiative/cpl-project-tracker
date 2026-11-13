@@ -3614,9 +3614,108 @@ with tempfile.TemporaryDirectory() as td:
         "held_no_gain": [{"control_number": "02588", "url": GL_ROOT + "/programs/SPCH-AA/" + GL_SUFFIX}]}}))
     known = C.cd_known_codes(td, GL_ROOT)
 check(known == {"11143": "GB-AS", "02588": "SPCH-AA"}, "the codes a filed capture read each program from: %r" % known)
-by_code = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]}, known)
+# A known code counts only where the current catalog lists it (S647 review), so this catalog lists SPCH-AA.
+GL_PROGS_SPCH = GL_PROGS + [{"code": "SPCH-AA", "name": "Speech - Associate of Arts"}]
+by_code = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS_SPCH, "challenged": ["GB-AS", "SC-AA"]}, known)
 check(by_code == {"11143": "GB-AS"},
       "a program whose own code was read elsewhere is not matched to a refused namesake by title: %r" % by_code)
+by_gone = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]}, known)
+check(by_gone == {"11143": "GB-AS", "02588": "SC-AA"},
+      "a known code the current catalog no longer lists is not trusted, and the title decides: %r" % by_gone)
+
+# A code two programs read is no program's own (S647 review): Glendale's capture 43366669415 read Child
+# Development: Teacher (02599) from CDMT-AS, Master Teacher's tab, beside Master Teacher (11191). Trusted,
+# that code skipped 02599's title match when its own tab (CDTP-AS) was refused and CDMT-AS loaded; the
+# CDMT-AS tab then went to 11191 (heading_owner), 02599 read page_claimed and its passing record was not
+# carried. A fixture only, never the committed captures.
+CD_CAT = [{"code": "CDTP-AS", "name": "Child Development: Teacher - Associate of Science"},
+          {"code": "CDMT-AS", "name": "Child Development: Master Teacher - Associate of Science"}]
+cd_state = [{"control_number": "02599", "title": "Child Development: Teacher", "award": "A.S. Degree"},
+            {"control_number": "11191", "title": "Child Development: Master Teacher", "award": "A.S. Degree"}]
+with tempfile.TemporaryDirectory() as td:
+    col, keep_dir, out_dir = os.path.join(td, "college"), os.path.join(td, "keep"), os.path.join(td, "out")
+    os.makedirs(col)
+    tab = lambda code: GL_ROOT + "/programs/" + code + "/" + GL_SUFFIX
+    open(os.path.join(col, "capture_preview.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "02599", "url": tab("CDMT-AS")}, {"control_number": "11191", "url": tab("CDMT-AS")},
+                 {"control_number": "11143", "url": tab("GB-AS")}],
+        "held_no_gain": [{"control_number": "11143", "url": tab("GB-AS")}]}}))
+    open(os.path.join(col, "capture_reread.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "02599", "url": tab("CDTP-AS")}]}}))
+    shared_known = C.cd_known_codes(col, GL_ROOT)
+    check(shared_known == {"02599": "CDTP-AS", "11143": "GB-AS"},
+          "a code two control numbers read is dropped, a program's next code that is its own stays, and one "
+          "program reading its own code twice keeps it: %r" % shared_known)
+    os.remove(os.path.join(col, "capture_reread.json"))
+    shared_known = C.cd_known_codes(col, GL_ROOT)
+    cd_ref = C.cd_challenged_programs(cd_state, {"catalog": CD_CAT, "challenged": ["CDTP-AS"]}, shared_known)
+    check(shared_known == {"11143": "GB-AS"} and cd_ref == {"02599": "CDTP-AS"},
+          "02599's own refused tab is found by its title once the shared CDMT-AS is dropped: %r %r"
+          % (shared_known, cd_ref))
+    # An Active program and its Teachout Only record share one tab, and the title matches one of them: the
+    # other, left with no page, still reads page_challenged when that tab is refused; one with a page does not.
+    _, shared_of = C.cd_read_codes(col, GL_ROOT)
+    check(shared_of == {"02599": ["CDMT-AS"], "11191": ["CDMT-AS"]}, "the codes each program shares: %r" % shared_of)
+    ba_cat = [{"code": "BA2.0-AST", "name": "Business Administration 2.0 - Associate in Science for Transfer"}]
+    ba_state = [{"control_number": "32267", "title": "Business Administration", "award": "A.S. T Degree"},
+                {"control_number": "43038", "title": "Business Administration 2.0", "award": "A.S. T Degree"}]
+    ba_shared = {"32267": ["BA2.0-AST"], "43038": ["BA2.0-AST"]}
+    ba_info = {"catalog": ba_cat, "challenged": ["BA2.0-AST"]}
+    check(C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared, set()) == {"32267": "BA2.0-AST", "43038": "BA2.0-AST"}
+          and C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared, {"32267"}) == {"43038": "BA2.0-AST"}
+          and C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared) == {"43038": "BA2.0-AST"},
+          "a shared refused tab marks a program left with no page, and only that one")
+    check(C.cd_challenged_programs(ba_state, {"catalog": ba_cat + [{"code": "BA-AS", "name": "Business - A.S."}],
+                                              "challenged": ["BA2.0-AST"]}, {"32267": "BA-AS"}, ba_shared, set())
+          == {"43038": "BA2.0-AST"},
+          "a program whose own code is known is not marked through a tab it shares (Glendale's Marketing II, "
+          "19566, own MRKTII-C, beside SMM2-C)")
+    # Then extract (its wiring: the page_challenged scan, shard 0 only) carries the filed record forward, with
+    # the catalog year it was read from.
+    for d in (os.path.join(keep_dir, "records"), os.path.join(out_dir, "sources")):
+        os.makedirs(d)
+    open(os.path.join(keep_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2025-2026", "run": "1"}))
+    filed_rec = lambda cn: {"college": "Glendale Community College", "control_number": cn, "title": "T",
+                            "award": "A.S. Degree", "source_url": "https://www.glendale.edu/catalog.pdf#page=9",
+                            "extracted_run": "41055650373",
+                            "record": {"program": {"measure": "units", "total_units": {"min": 24, "max": 24}}, "blocks": []},
+                            "score": {"coverage": {"pass": True, "placed": 9, "listed": 9}, "invented": {"pass": True},
+                                      "arithmetic": {"status": "equal"}, "pass": True}}
+    for cn, method in (("02599", "page_challenged"), ("11191", "sitemap_page"), ("02600", "page_claimed"),
+                       ("02601", "not_found")):
+        open(os.path.join(keep_dir, "records", cn + ".json"), "w").write(json.dumps(filed_rec(cn)))
+        open(os.path.join(out_dir, "sources", cn + ".json"), "w").write(json.dumps(
+            {"control_number": cn, "method": method, "coverage": 0.0, "text": ""}))
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only: no source has text, so no call is made"
+    try:
+        check(C.extract(out_dir, 1, 2, "43384599013", workers=1, keep_from=keep_dir) == 0
+              and os.listdir(os.path.join(out_dir, "records")) == [],
+              "only shard 0 carries refused records, so two shards never write one file twice")
+        check(C.extract(out_dir, 0, 2, "43384599013", workers=1, keep_from=keep_dir) == 0,
+              "extract runs over sources that need no model call")
+    finally:
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    carried_files = sorted(os.listdir(os.path.join(out_dir, "records")))
+    check(carried_files == ["02599.json"],
+          "extract carries the page_challenged program's record and not the not_found, page_claimed or read one: %r"
+          % carried_files)
+    with open(os.path.join(out_dir, "records", "02599.json")) as fh:
+        carried_rec = json.load(fh)
+    check(carried_rec["catalog_year"] == "2025-2026" and carried_rec["carried_in"] == "43384599013"
+          and carried_rec["extracted_run"] == "41055650373" and carried_rec["record"] == filed_rec("02599")["record"],
+          "a carried record keeps its run, its record and the catalog year it was read from: %r"
+          % {k: carried_rec.get(k) for k in ("catalog_year", "carried_in", "extracted_run")})
+    # The load stamps a row with the new capture's year, and a carried record with its own.
+    open(os.path.join(out_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2026-2027"}))
+    open(os.path.join(out_dir, "records", "11191.json"), "w").write(json.dumps(filed_rec("11191")))
+    cy_rows, _ = C.load_rows("Glendale Community College", folder=out_dir)
+    check({r["control_number"]: r["catalog_year"] for r in cy_rows} == {"02599": "2025-2026", "11191": "2026-2027"},
+          "a carried record loads under its own catalog year, a read one under the capture's: %r"
+          % {r["control_number"]: r["catalog_year"] for r in cy_rows})
 
 # extract carries forward the filed record of a program whose page answered a bot check, and nothing else.
 with tempfile.TemporaryDirectory() as td:
@@ -3630,19 +3729,70 @@ with tempfile.TemporaryDirectory() as td:
           "a refused program keeps its filed record; one with none is skipped; no other record is carried")
 check(C.REFUSED_METHODS == ("page_challenged",), "only a refusal is carried, never not_found or page_claimed")
 
-# The compare gate: every program passing on main whose branch record is absent or fails, with its new method.
-import _program_requirements_compare as CMP
-real_grade = CMP.grade
-CMP.grade = lambda rec: (rec or {}).get("g", 0)
-try:
-    cmp_rows = CMP.compare({"1": {"g": 2, "title": "A"}, "2": {"g": 1, "title": "B"}, "3": {"g": 2}, "4": {"g": 0}},
-                           {"1": {"g": 0}, "3": {"g": 2}},
-                           {"1": "sitemap_page", "2": "not_found"})
-finally:
-    CMP.grade = real_grade
-check([(r["control_number"], r["now"], r["method"]) for r in cmp_rows] == [("1", "fail", "sitemap_page"), ("2", "absent", "not_found")],
-      "the compare gate lists a passing record that now fails or is absent, and no other: %r" % cmp_rows)
-check(CMP.grade({"record": None, "score": {"pass": True}}) == 0, "a record that holds no record is no pass")
+# The compare gate: every program passing on main whose branch record passes less, fails or is absent, with its
+# new method. Both sides are read from commits in a tiny repo built here (S647 review: the branch side once read
+# the working tree, so run from main it compared main with main and printed "0 of N").
+import contextlib as _ctx  # noqa: E402
+import io as _io  # noqa: E402
+import subprocess as _sp  # noqa: E402
+import _program_requirements_compare as CMP  # noqa: E402
+G2 = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}, "pass": True}
+G1 = dict(G2, **{"pass": False})
+G0 = dict(G2, arithmetic={"status": "differs"})
+check((C.pass_grade(G2), C.pass_grade(G1), C.pass_grade(G0)) == (2, 1, 0), "the fixture's three grades")
+with tempfile.TemporaryDirectory() as cmp_repo:
+    def cmp_git(*a):
+        return _sp.run(["git", "-C", cmp_repo, "-c", "user.name=t", "-c", "user.email=t@t", "-c", "commit.gpgsign=false",
+                        *a], check=True, capture_output=True, text=True).stdout.strip()
+    cmp_git("init", "-q")
+    cmp_rel = "kb/program_requirements_college/%s" % C.slug_of("Glendale Community College")
+    os.makedirs(os.path.join(cmp_repo, cmp_rel, "records"))
+
+    def cmp_put(cn, sc):
+        open(os.path.join(cmp_repo, cmp_rel, "records", cn + ".json"), "w").write(json.dumps(
+            {"control_number": cn, "title": "P" + cn, "award": "A.S.", "record": {"blocks": []}, "score": sc}))
+    for cn, sc in (("1", G2), ("2", G1), ("3", G2), ("4", G0), ("5", G2), ("6", G2)):
+        cmp_put(cn, sc)
+    cmp_git("add", "-A")
+    cmp_git("commit", "-qm", "base")
+    cmp_git("branch", "base")
+    base_sha = cmp_git("rev-parse", "HEAD")
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        same = CMP.main(["--college", "Glendale Community College", "--base", "base", "--head", "HEAD"], repo=cmp_repo)
+    check(same == 2 and base_sha in out_buf.getvalue().splitlines()[0],
+          "two refs that are one commit exit non-zero, after a first line naming the sha: %r" % out_buf.getvalue())
+    cmp_git("checkout", "-qb", "head")
+    cmp_put("1", G0)                                                    # fails now
+    os.remove(os.path.join(cmp_repo, cmp_rel, "records", "2.json"))    # absent
+    cmp_put("5", G1)                                                    # PASS(2) to PASS(1)
+    open(os.path.join(cmp_repo, cmp_rel, "sources.json"), "w").write(json.dumps(
+        [{"control_number": "1", "method": "sitemap_page"}, {"control_number": "2", "method": "not_found"},
+         {"control_number": "5", "method": "sitemap_page"}]))
+    cmp_git("add", "-A")
+    cmp_git("commit", "-qm", "head")
+    head_sha = cmp_git("rev-parse", "HEAD")
+    cmp_put("1", G2)       # the working tree says otherwise; the tool reads commits only
+    cmp_put("2", G2)
+    base_side = CMP.base_records("base", cmp_rel + "/records", cmp_repo)
+    head_side = CMP.branch_records("head", cmp_rel + "/records", cmp_repo)
+    check(sorted(base_side) == ["1", "2", "3", "4", "5", "6"] and sorted(head_side) == ["1", "3", "4", "5", "6"]
+          and CMP.grade(head_side["1"]) == 0,
+          "both sides are read from commits, never the working tree: %r" % sorted(head_side))
+    cmp_rows = CMP.compare(base_side, head_side, CMP.methods_at("head", cmp_rel, cmp_repo))
+    check([(r["control_number"], r["was"], r["now"], r["method"]) for r in cmp_rows]
+          == [("1", 2, "fail", "sitemap_page"), ("2", 1, "absent", "not_found"), ("5", 2, "PASS(1)", "sitemap_page")],
+          "the gate lists a pass that now fails, is absent or passes less, and no other: %r" % cmp_rows)
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        rc = CMP.main(["--college", "Glendale Community College", "--base", "base", "--head", "head"], repo=cmp_repo)
+    lines = out_buf.getvalue().splitlines()
+    check(rc == 0 and lines[0] == "base base = %s  head head = %s" % (base_sha, head_sha) and len(lines) == 5
+          and lines[-1].startswith("3 of 5 passing records"),
+          "the first line names both shas, then the list and the count: %r" % lines)
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        rc = CMP.main(["--college", "Another College", "--base", "base", "--head", "head"], repo=cmp_repo)
+    check(rc == 2 and "no record file" in out_buf.getvalue(),
+          "a head that holds no record file for the college exits non-zero: %r" % out_buf.getvalue())
+check(CMP.grade({"record": None, "score": G2}) == 0, "a record that holds no record is no pass")
 
 if failures:
     print("FAIL: %d" % len(failures))
