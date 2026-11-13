@@ -603,7 +603,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
                     "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title, "section": section,
                                                 "section_line": heading, "section_fit": fit},
-                    "heading": pg.get("h1") or "", "program": {"title": program.get("title") or "",
+                    "heading": pg.get("h1") or "", "one_program": bool(pg.get("code")),
+                    "program": {"title": program.get("title") or "",
                                                                 "status": program.get("status")},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
@@ -880,6 +881,15 @@ def heading_title(heading: str | None) -> str:
     return _plain(h.split(",", 1)[0])
 
 
+def heading_forms(heading: str | None) -> list[str]:
+    """A heading's readings to match a title against, fullest first: the whole heading, then before its
+    first comma ("Child Development - Teacher, A.S."), then before its last " - " (a Coursedog name's
+    award tail), then heading_title()'s cut of both."""
+    h = heading or ""
+    forms = [_plain(h), _plain(h.split(",", 1)[0]), _plain(h.rpartition(" - ")[0]), heading_title(h)]
+    return [f for i, f in enumerate(forms) if f and f not in forms[:i]]
+
+
 def heading_owner(tied: list[tuple[str, dict]]) -> set[str]:
     """Claimants tied on the page's award and title share: two different Active programs never share
     one page's list on that tie alone (the S646 conductor's ruling). When every claimant is Active, their
@@ -890,17 +900,24 @@ def heading_owner(tied: list[tuple[str, dict]]) -> set[str]:
     of one program, an Active one beside its Teachout Only one (Communication Studies and Communication
     Studies 2.0), still share."""
     keep = {cn for cn, _ in tied}
-    if len(tied) < 2:
+    # Only a page that holds one program by construction (a Coursedog tab, which carries its code): on a
+    # department or discipline page two programs may each read their own section of the page (S443, S445).
+    if len(tied) < 2 or not all(c.get("one_program") for _, c in tied):
         return keep
     progs = [c.get("program") or {} for _, c in tied]
     titles = [_plain(p.get("title")) for p in progs]
     if any(not str(p.get("status") or "") in CURRENT_STATUS for p in progs) or len(set(titles)) < len(titles):
         return keep
-    head = {heading_title(c.get("heading")) for _, c in tied}
-    if len(head) != 1:
+    heads = {c.get("heading") or "" for _, c in tied}
+    if len(heads) != 1:
         return keep
-    owners = [cn for (cn, _), t in zip(tied, titles) if t and t in head]
-    return set(owners) if len(owners) == 1 else keep
+    # The full heading first; the cut form only when no claimant's full title is the full heading, so
+    # "Child Development - Teacher" goes to that title, never to "Child Development".
+    for form in heading_forms(heads.pop()):
+        owners = [cn for (cn, _), t in zip(tied, titles) if t and t == form]
+        if owners:
+            return set(owners) if len(owners) == 1 else keep
+    return keep
 
 
 def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
@@ -2421,16 +2438,42 @@ def cd_name_title_kind(name: str | None) -> tuple[str, str | None]:
     return _plain(head), kind
 
 
-def cd_challenged_programs(programs: list[dict], info: dict) -> dict[str, str]:
-    """{control number: code} for each state program whose own catalog entry a bot check refused:
-    the entry's title is the program's, and its award is the program's or names none. Such a program
-    reads page_challenged, never not_found or a sibling's page: Glendale's General Business A.S.
+def cd_known_codes(college_dir: str, root: str) -> dict[str, str]:
+    """{control number: Coursedog code} from the pages the college's filed site captures read each program
+    from (would_extract's list and holds, in every CAPTURE_FILES account): the catalog's own address for a
+    program, the surest way to tell its entry from a namesake's."""
+    out: dict[str, str] = {}
+    for name in CAPTURE_FILES:
+        try:
+            with open(os.path.join(college_dir, name)) as fh:
+                w = json.load(fh).get("would_extract") or {}
+        except (OSError, ValueError):
+            continue
+        for key in ("list", "held_worse_window", "held_no_gain", "held_opens_on_list"):
+            for row in w.get(key) or []:
+                code = cd_href_code((row.get("url") or "").rsplit("/", 1)[0], root) if row.get("url") else None
+                if code and row.get("control_number"):
+                    out.setdefault(row["control_number"], code)
+    return out
+
+
+def cd_challenged_programs(programs: list[dict], info: dict, known: dict | None = None) -> dict[str, str]:
+    """{control number: code} for each state program whose own catalog entry a bot check refused. The
+    program's code, where a filed capture read it from its own page (cd_known_codes), decides first;
+    otherwise the entry's title is the program's, and its award is the program's or names none. Such a
+    program reads page_challenged, never not_found or a sibling's page: Glendale's General Business A.S.
     (11143) lost seven business pages to their own programs while its own, GB-AS, was refused
     (capture 43366669415, S646)."""
     names = {c["code"]: c.get("name") for c in info.get("catalog") or []}
+    challenged = set(info.get("challenged") or [])
     refused = [(code,) + cd_name_title_kind(names.get(code)) for code in info.get("challenged") or [] if names.get(code)]
     out = {}
     for prog in programs:
+        mine = (known or {}).get(prog["control_number"])
+        if mine:
+            if mine in challenged:
+                out[prog["control_number"]] = mine
+            continue   # its own code was read, or is not among the refused
         title, kind = _plain(prog.get("title")), P.award_kind(prog.get("award"))
         for code, t, k in refused:
             if t and t == title and (k is None or kind == "other" or k == kind):
@@ -3430,12 +3473,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 print(report["stopped"])
                 return 1
             report["reread"] = plan
+            report["route"] = ("challenged (the %d codes %s named as %s, at %.0f s between loads, stopping at the "
+                               "first challenge)" % (len(plan["codes"]), plan["from"], plan["named_as"], CD_REREAD_DELAY_S))
         elif is_slow(os.environ.get("CAPTURE_ROUTE")):
             report["slow"] = True
             report["route"] = ("slow (the whole site read at %.0f s between loads, stopping at the first challenge)"
                                % CD_REREAD_DELAY_S)
-            report["route"] = ("challenged (the %d codes %s named as %s, at %.0f s between loads, stopping at the "
-                               "first challenge)" % (len(plan["codes"]), plan["from"], plan["named_as"], CD_REREAD_DELAY_S))
     elif reads_as_pdf(reg) and (start or reg.get("procedure")):
         year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
         if year and not reg.get("catalog_year"):
@@ -3545,7 +3588,10 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
-        refused = cd_challenged_programs(programs, report.get("coursedog") or {}) if platform == "coursedog" else {}
+        refused = (cd_challenged_programs(programs, report.get("coursedog") or {},
+                                          cd_known_codes(os.path.join(COLLEGE_DIR, slug_of(college)),
+                                                         (report.get("coursedog") or {}).get("root") or start))
+                   if platform == "coursedog" else {})
         for prog in programs:
             if not prog["closed_list"]:
                 rec = source_record(college, prog, reg, None, "no_closed_list")
@@ -3960,6 +4006,21 @@ def call_charge(cost_usd, usage) -> float:
     return 0.0
 
 
+REFUSED_METHODS = ("page_challenged",)
+
+
+def carry_refused(keep_from: str, out_dir: str, cns: list[str]) -> int:
+    """Copy each named program's filed record (one that holds a record) into the run's records, as filed."""
+    n = 0
+    for cn in cns:
+        path = os.path.join(keep_from, "records", cn + ".json")
+        if has_record(path):
+            with open(path) as fh:
+                _write(os.path.join(out_dir, "records", cn + ".json"), json.load(fh))
+            n += 1
+    return n
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
             keep_from: str | None = None, force: set[str] | None = None,
             ceiling_usd: float | None = None) -> int:
@@ -3974,13 +4035,22 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
         return 2
-    sources = []
+    sources, refused = [], []
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
         if (src.get("coverage") or 0) >= X.MIN_COVERAGE and src.get("text"):
             sources.append(src)
+        elif src.get("method") in REFUSED_METHODS:
+            refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    if keep_from and shard == 0:
+        # A refusal is no evidence about the program (S646): a program whose own page answered a bot check
+        # keeps its filed record, for every college. A program read as not found or as having lost its page
+        # is not carried: the college may have dropped it (the compare gate lists those for a person).
+        carried = carry_refused(keep_from, out_dir, refused)
+        if carried:
+            print("kept %d filed records whose program's page answered a bot check" % carried, flush=True)
     # A record filed from the same page stays: only a program whose page
     # changed, or that has no record, goes to the model again.
     kept = moved = 0

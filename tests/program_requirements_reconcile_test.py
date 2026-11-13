@@ -1053,6 +1053,24 @@ check("Pierce: one figure alone sets nothing",
 check("Pierce: a transfer degree is left alone",
       R.reconcile(prc, PRC, "Los Angeles Pierce College", "A.A- T Degree", steps=ST)[1] == [])
 
+# Glendale's 2026-27 site read beside its 2025-2026 PDF's units (S646): where the page's own call priced the
+# read, a code the call does not price stays unpriced, and the note says so instead of naming the call.
+GST = {"Glendale Community College": {"steps": [{"kind": "course_units", "field": "units",
+                                                  "read": "college-page-read runs 41007920360 (2025-2026 PDF)",
+                                                  "units": {"ACCTG101": [5, 5], "ACCTG102": [5, 5]}}]}}
+grec = {"program": {}, "blocks": [{"courses": [{"code": "ACCTG 101", "units": None}, {"code": "ACCTG 102", "units": None}]}]}
+gcall = {"call": "https://app.coursedog.com/api/v1/cm/glendale_peoplesoft_direct/courses/search", "units": {"ACCTG101": [4, 4]}}
+g_out, g_notes = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST,
+                             course_units=gcall)
+gc = g_out["blocks"][0]["courses"]
+check("Glendale 2026-27: the call's figure fills its code; a code the call does not price stays unpriced",
+      gc[0]["units"] == 4 and gc[1]["units"] is None)
+check("Glendale 2026-27: the note names the call and the code left unpriced",
+      len(g_notes) == 1 and g_notes[0].get("unpriced") == ["ACCTG 102"] and "left unpriced" in g_notes[0]["words"]
+      and g_notes[0]["words"].startswith(gcall["call"]))
+g_pdf = R.reconcile(grec, "ACCTG 101 ACCTG 102", "Glendale Community College", "A.S. Degree", steps=GST)[0]["blocks"][0]["courses"]
+check("Glendale 2025-26: with no call, the step's figures fill as before", [c["units"] for c in g_pdf] == [5, 5])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

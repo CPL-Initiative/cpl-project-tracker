@@ -3496,6 +3496,154 @@ check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
       and C.el_index_link_named(re.compile(r"catalog/X/program/", re.I), "https://h/catalog/X/Program,a"),
       "program_links names either form of one award's address, and nothing the swap does not make")
 
+# ── capture() itself, once for each route (S646) ────────────────────────────
+# route=slow formatted the re-read's plan and raised UnboundLocalError inside capture() (run on
+# ce434a8b), while every test called _cd_read directly. Each route value must complete a capture.
+class _CapPage:
+    def on(self, *a):
+        pass
+
+    def remove_listener(self, *a):
+        pass
+
+
+class _CapReader:
+    def __init__(self, delay_ms):
+        self.delay, self.loads, self.page, self.request = delay_ms / 1000.0, 0, _CapPage(), None
+
+
+class _CapClose:
+    def close(self):
+        pass
+
+    def stop(self):
+        pass
+
+
+CAP_COLLEGE = "Glendale Community College"
+CAP_REG = {"catalog_url": GL_ROOT + "/", "catalog_platform": "coursedog", "catalog_year": "2026-2027",
+           "procedure": {"catalog": {"start": "https://www.glendale.edu/catalog", "follow": "2025-2026", "format": "pdf"}}}
+CAP_PROGS = [{"control_number": "11143", "title": "General Business", "award": "A.S. Degree", "status": "Active",
+              "shape": "degree", "load_id": None, "closed_list": [{"code": "GB 101"}, {"code": "GB 102"}]},
+             {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree", "status": "Active",
+              "shape": "degree", "load_id": None, "closed_list": [{"code": "COMM 101"}, {"code": "COMM 102"}]}]
+
+
+def _cap_list(reader, start, report):
+    report.setdefault("coursedog", {"root": GL_ROOT}).update(listed=len(GL_PROGS), programs=len(GL_PROGS), errors=[])
+    return [dict(p) for p in GL_PROGS]
+
+
+def run_capture(route, refused=()):
+    saved = (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.cd_list, P.load, C.pdf_start,
+             C.COLLEGE_DIR, os.environ.get("CAPTURE_ROUTE"))
+    with tempfile.TemporaryDirectory() as td:
+        filed = os.path.join(td, "colleges", C.slug_of(CAP_COLLEGE))
+        os.makedirs(filed)
+        open(os.path.join(filed, "capture_preview.json"), "w").write(json.dumps(
+            {"started": "2026-11-13T04:38:11Z", "run": "1", "coursedog": {"missed": ["SC-AA"], "requisites_suffix": GL_SUFFIX}}))
+        _, fake = gl_session(set(refused))
+        C.college_programs = lambda college: [dict(p) for p in CAP_PROGS]
+        P.fetch_registry = lambda college: dict(CAP_REG)
+        C.hand_filed = lambda college: None
+        P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
+        C.cd_list, P.load = _cap_list, fake
+        C.pdf_start = lambda reader, reg, cache, report: (None, 0)
+        C.COLLEGE_DIR = os.path.join(td, "colleges")
+        os.environ["CAPTURE_ROUTE"] = route
+        out = os.path.join(td, "out")
+        try:
+            code = C.capture(CAP_COLLEGE, out)
+            with open(os.path.join(out, "capture.json")) as fh:
+                rep = json.load(fh)
+        except Exception as exc:   # a route that cannot complete a capture fails here
+            code, rep = "raised %s: %s" % (type(exc).__name__, exc), {}
+        finally:
+            (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.cd_list, P.load, C.pdf_start,
+             C.COLLEGE_DIR, env) = saved
+            if env is None:
+                os.environ.pop("CAPTURE_ROUTE", None)
+            else:
+                os.environ["CAPTURE_ROUTE"] = env
+    return code, rep
+
+
+for route in ("site", "challenged", "slow", "pdf", ""):
+    code, rep = run_capture(route, refused={"SC-AA"} if route == "slow" else ())
+    check(code == 0 and rep.get("by_method"), "route=%r completes a capture: %r" % (route, code))
+code, rep = run_capture("challenged")
+check(rep.get("reread", {}).get("codes") == ["SC-AA"] and rep["route"].startswith("challenged")
+      and (rep["coursedog"]["reread"] or {}).get("asked") == 1,
+      "route=challenged reads the filed capture's refused codes: %r" % rep.get("route"))
+code, rep = run_capture("slow", refused={"SC-AA"})
+check(rep.get("slow") and rep["route"].startswith("slow") and rep["coursedog"]["slow"].get("stopped_at") == "SC-AA"
+      and [p["control_number"] for p in rep.get("page_challenged") or []] == ["02588"],
+      "route=slow stops at the challenge and files the program it refused as page_challenged: %r"
+      % rep.get("coursedog", {}).get("slow"))
+code, rep = run_capture("pdf")
+check("pdf" in rep and "coursedog" not in rep, "route=pdf reads the PDF procedure step")
+
+# heading_owner reads the full heading first (S646 review): "Child Development - Teacher" goes to that
+# title, never to "Child Development", whose title is the heading's cut form.
+dash_page = nest_page("CDT-C", "Child Development - Teacher")
+dash_page["h1"] = dash_page["title"] = "Child Development - Teacher, A.S."
+cd_plain = {"control_number": "70001", "title": "Child Development", "award": "A.S. Degree", "status": "Active",
+            "closed_list": nest_courses}
+cd_dash = {"control_number": "70002", "title": "Child Development - Teacher", "award": "A.S. Degree", "status": "Active",
+           "closed_list": nest_courses}
+dash_given = C.assign([cd_plain, cd_dash], [dash_page])
+check(dash_given["70002"]["best"] and dash_given["70001"]["best"] is None,
+      "a heading that is one claimant's full title goes to it before its cut form is read: %r"
+      % sorted(k for k, v in dash_given.items() if v["best"]))
+check(C.heading_forms("Child Development: Master Teacher - Associate of Science associate in science")
+      == ["child development master teacher associate of science associate in science",
+          "child development master teacher"],
+      "a heading's readings, fullest first")
+# Only a page that holds one program by construction (a Coursedog tab): a CourseLeaf page heading two
+# programs' sections still serves both.
+cl_page = dict(nest_page("CDMT-AS", "Child Development: Master Teacher - Associate of Science"), code=None, code_kind=None)
+cl_given = C.assign([cd_teacher, cd_master], [cl_page])
+check(cl_given["02599"]["best"] and cl_given["11191"]["best"],
+      "a page with no program code is shared as before: %r" % sorted(k for k, v in cl_given.items() if v["best"]))
+
+# A program's own Coursedog code, where a filed capture read it from its own page, decides which refused
+# entry is its own before any title does.
+with tempfile.TemporaryDirectory() as td:
+    open(os.path.join(td, "capture_preview.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "11143", "url": GL_ROOT + "/programs/GB-AS/" + GL_SUFFIX}],
+        "held_no_gain": [{"control_number": "02588", "url": GL_ROOT + "/programs/SPCH-AA/" + GL_SUFFIX}]}}))
+    known = C.cd_known_codes(td, GL_ROOT)
+check(known == {"11143": "GB-AS", "02588": "SPCH-AA"}, "the codes a filed capture read each program from: %r" % known)
+by_code = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]}, known)
+check(by_code == {"11143": "GB-AS"},
+      "a program whose own code was read elsewhere is not matched to a refused namesake by title: %r" % by_code)
+
+# extract carries forward the filed record of a program whose page answered a bot check, and nothing else.
+with tempfile.TemporaryDirectory() as td:
+    keep, out = os.path.join(td, "keep"), os.path.join(td, "out")
+    os.makedirs(os.path.join(keep, "records"))
+    os.makedirs(os.path.join(out, "records"))
+    for cn in ("11143", "02588"):
+        open(os.path.join(keep, "records", cn + ".json"), "w").write(json.dumps({"control_number": cn, "record": {"blocks": []}}))
+    check(C.carry_refused(keep, out, ["11143", "99999"]) == 1
+          and sorted(os.listdir(os.path.join(out, "records"))) == ["11143.json"],
+          "a refused program keeps its filed record; one with none is skipped; no other record is carried")
+check(C.REFUSED_METHODS == ("page_challenged",), "only a refusal is carried, never not_found or page_claimed")
+
+# The compare gate: every program passing on main whose branch record is absent or fails, with its new method.
+import _program_requirements_compare as CMP
+real_grade = CMP.grade
+CMP.grade = lambda rec: (rec or {}).get("g", 0)
+try:
+    cmp_rows = CMP.compare({"1": {"g": 2, "title": "A"}, "2": {"g": 1, "title": "B"}, "3": {"g": 2}, "4": {"g": 0}},
+                           {"1": {"g": 0}, "3": {"g": 2}},
+                           {"1": "sitemap_page", "2": "not_found"})
+finally:
+    CMP.grade = real_grade
+check([(r["control_number"], r["now"], r["method"]) for r in cmp_rows] == [("1", "fail", "sitemap_page"), ("2", "absent", "not_found")],
+      "the compare gate lists a passing record that now fails or is absent, and no other: %r" % cmp_rows)
+check(CMP.grade({"record": None, "score": {"pass": True}}) == 0, "a record that holds no record is no pass")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

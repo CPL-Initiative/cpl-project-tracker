@@ -218,12 +218,28 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 with open(os.path.join(HERE, st["units_file"])) as fh:
                     given.update(json.load(fh).get("units") or {})
             units = {k: v for k, v in given.items() if v}
-            units.update({k: v for k, v in ((course_units or {}).get("units") or {}).items() if v})
+            called = {k: v for k, v in ((course_units or {}).get("units") or {}).items() if v}
+            if (course_units or {}).get("call"):
+                # Where the page's own call priced the read (a site read of a later catalog), only its
+                # figures fill a course: a code the call does not price stays unpriced, never the step's
+                # figure from another edition under a note naming the call (S646, Glendale's 2026-27 site
+                # beside its 2025-2026 PDF's units_file). The note names the codes left so.
+                filled = fill_course_units(out, called) if called else {}
+                unpriced = sorted(set(fill_course_units(copy.deepcopy(out), units)) - set(filled)) if units else []
+                if filled or unpriced:
+                    words = "%s (the page's own course data)" % course_units["call"]
+                    if unpriced:
+                        words += ("; %d listed courses the call does not price are left unpriced, the step's "
+                                  "units from %s not used: %s" % (len(unpriced), st.get("read", "the step"),
+                                                                  ", ".join(unpriced)))
+                    notes.append({"field": "course_units", "was": None, "now": filled, "words": words,
+                                  **({"unpriced": unpriced} if unpriced else {})})
+                continue
+            units.update(called)
             filled = fill_course_units(out, units) if units else {}
             if filled:
-                call = (course_units or {}).get("call") or st.get("read")
                 notes.append({"field": "course_units", "was": None, "now": filled,
-                              "words": "%s (%s)" % (call, st.get("source_words", ""))})
+                              "words": "%s (%s)" % (st.get("read"), st.get("source_words", ""))})
             continue
         if st["kind"] == "course_hours":
             # A noncredit program's course listed without hours, given them by the same call (S484):
