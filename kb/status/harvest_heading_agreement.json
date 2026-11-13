@@ -1,7 +1,7 @@
 {
  "_readme": "A dated snapshot of main at `commit` (as_of: the newest capture it reads), written by kb/_program_requirements_heading_agreement.py from the files the tree commits (git ls-files). Rewritten by a dispatch of harvest-gap-census.yml beside the gap census; nothing gates a PR on its freshness, so it can trail the records. Each record's own heading (program.section_heading) against the program it is filed under (sources.json: COCI title and award). check_would_fail_passing counts the records that pass on the committed files (passes_live) whose heading names another award type (heading_award_check, in no pass rule). award_not_program counts headings that name an award and none of the program's title words, set aside (Pasadena's one page for an A.S. and its certificate).",
  "commit": {
-  "sha": "241a8950381dc3ccb17168e1e2dcc4490f51482e",
+  "sha": "d87d21db1117d4de683f9ab5b7edd680c4e60f44",
   "date": "2026-11-13"
  },
  "as_of": "2026-11-13",
@@ -9,19 +9,19 @@
   "main"
  ],
  "totals": {
-  "records": 18635,
-  "agree": 14457,
-  "disagree": 391,
-  "cannot_tell": 3787,
-  "heading_absent": 563,
-  "disagree_passing": 167,
-  "disagree_loaded": 215,
-  "check_would_fail_passing": 135,
-  "check_would_fail_passing_transfer_local": 30,
-  "window_after": 0,
-  "window_after_passing": 0,
-  "suspect": 391,
-  "suspect_passing": 167,
+  "records": 19155,
+  "agree": 14926,
+  "disagree": 394,
+  "cannot_tell": 3835,
+  "heading_absent": 570,
+  "disagree_passing": 169,
+  "disagree_loaded": 217,
+  "check_would_fail_passing": 137,
+  "check_would_fail_passing_transfer_local": 32,
+  "window_after": 2,
+  "window_after_passing": 2,
+  "suspect": 396,
+  "suspect_passing": 171,
   "check_would_fail_passing_generic_heading": 0,
   "award_not_program": 77,
   "award_not_program_passing": 69
@@ -40,6 +40,7 @@
   "san_diego_of_continuing_education",
   "american_river",
   "lassen",
+  "los_angeles_pierce",
   "los_angeles_southwest",
   "santa_monica",
   "clovis_community",
@@ -52,7 +53,6 @@
   "cosumnes_river",
   "los_angeles_city",
   "los_angeles_mission",
-  "los_angeles_pierce",
   "los_angeles_valley",
   "barstow_community",
   "ca_ada",
@@ -60,6 +60,7 @@
   "compton",
   "copper_mountain",
   "folsom_lake",
+  "santiago_canyon",
   "woodland_community",
   "yuba"
  ],
@@ -73,6 +74,7 @@
   "city_of_san_francisco",
   "east_los_angeles",
   "american_river",
+  "los_angeles_pierce",
   "ohlone",
   "solano_community",
   "lassen",
@@ -89,7 +91,6 @@
   "cosumnes_river",
   "los_angeles_city",
   "los_angeles_mission",
-  "los_angeles_pierce",
   "los_angeles_valley",
   "barstow_community",
   "ca_ada",
@@ -97,6 +98,7 @@
   "compton",
   "copper_mountain",
   "folsom_lake",
+  "santiago_canyon",
   "woodland_community",
   "yuba"
  ],
@@ -3532,6 +3534,74 @@
    "disagreements": []
   },
   {
+   "slug": "diablo_valley",
+   "college": "Diablo Valley College",
+   "read_from": "main",
+   "platform": "elumen",
+   "records": 214,
+   "pdf_records": 0,
+   "agree": 211,
+   "disagree": 2,
+   "cannot_tell": 1,
+   "heading_absent": 0,
+   "disagree_passing": 2,
+   "disagree_loaded": 2,
+   "pdf_disagree": 0,
+   "pdf_disagree_passing": 0,
+   "pdf_suspect": 0,
+   "pdf_suspect_passing": 0,
+   "pdf_agree": 0,
+   "pdf_cannot_tell": 0,
+   "by_reason": {
+    "award": 2
+   },
+   "check_would_fail_passing": 2,
+   "check_would_fail_passing_transfer_local": 2,
+   "check_kinds_passing": {
+    "transfer_under_local_degree": 2
+   },
+   "check_would_fail_passing_generic_heading": 0,
+   "award_not_program": 0,
+   "award_not_program_passing": 0,
+   "window_after": 0,
+   "window_after_passing": 0,
+   "suspect": 2,
+   "suspect_passing": 2,
+   "suspect_loaded": 2,
+   "disagreements": [
+    {
+     "control_number": "12908",
+     "title": "Computer Science",
+     "award": "A.S. Degree",
+     "heading": "A.S. in Computer Science for Transfer",
+     "verdict": "disagree",
+     "reason": "award",
+     "kind": "transfer_under_local_degree",
+     "heading_names_a_program": true,
+     "title_share": 1.0,
+     "window": null,
+     "passes_live": true,
+     "places_none": false,
+     "method": "sitemap_page"
+    },
+    {
+     "control_number": "18885",
+     "title": "Public Health",
+     "award": "A.S. Degree",
+     "heading": "A.S. in Public Health for Transfer",
+     "verdict": "disagree",
+     "reason": "award",
+     "kind": "transfer_under_local_degree",
+     "heading_names_a_program": true,
+     "title_share": 1.0,
+     "window": null,
+     "passes_live": true,
+     "places_none": false,
+     "method": "sitemap_page"
+    }
+   ]
+  },
+  {
    "slug": "east_los_angeles",
    "college": "East Los Angeles College",
    "read_from": "main",
@@ -3645,18 +3715,18 @@
    ],
    "control_number_print": {
     "picks": 143,
-    "cn_printed_picks": 123,
+    "cn_printed_picks": 124,
     "labels_in_openings": {
-     "Academic Plan": 101
+     "Academic Plan": 102
     },
     "positions": {
-     "under_heading": 85,
+     "under_heading": 86,
      "unclear": 6,
      "before": 3
     },
     "prints": "under_heading",
     "openings_naming_another_number": 7,
-    "windows_opening_on_a_number_line": 94,
+    "windows_opening_on_a_number_line": 95,
     "labels_in_text_sample": 1,
     "examples": {
      "under_heading": {
@@ -5937,8 +6007,8 @@
    "disagree_loaded": 0,
    "pdf_disagree": 1,
    "pdf_disagree_passing": 0,
-   "pdf_suspect": 1,
-   "pdf_suspect_passing": 0,
+   "pdf_suspect": 3,
+   "pdf_suspect_passing": 2,
    "pdf_agree": 103,
    "pdf_cannot_tell": 87,
    "by_reason": {
@@ -5950,11 +6020,11 @@
    "check_would_fail_passing_generic_heading": 0,
    "award_not_program": 0,
    "award_not_program_passing": 0,
-   "window_after": 0,
-   "window_after_passing": 0,
-   "suspect": 1,
-   "suspect_passing": 0,
-   "suspect_loaded": 0,
+   "window_after": 2,
+   "window_after_passing": 2,
+   "suspect": 3,
+   "suspect_passing": 2,
+   "suspect_loaded": 2,
    "disagreements": [
     {
      "control_number": "19183",
@@ -5970,35 +6040,70 @@
      "passes_live": false,
      "places_none": true,
      "method": "pdf_pages"
+    },
+    {
+     "control_number": "32523",
+     "title": "Administration of Justice",
+     "award": "A.S. T Degree",
+     "heading": "ADMINISTRATION OF JUSTICE \u2014 Associate in Science for Transfer Degree (AS-T)",
+     "verdict": "agree",
+     "reason": "award",
+     "kind": null,
+     "heading_names_a_program": null,
+     "title_share": 1.0,
+     "window": "after",
+     "passes_live": true,
+     "places_none": false,
+     "method": "pdf_pages"
+    },
+    {
+     "control_number": "45705",
+     "title": "Tutor Leadership Skills",
+     "award": "Noncredit program",
+     "heading": "TUTOR LEADERSHIP SKILLS",
+     "verdict": "cannot_tell",
+     "reason": "award_unstated",
+     "kind": null,
+     "heading_names_a_program": null,
+     "title_share": 1.0,
+     "window": "after",
+     "passes_live": true,
+     "places_none": false,
+     "method": "pdf_pages"
     }
    ],
    "control_number_print": {
-    "picks": 193,
-    "cn_printed_picks": 140,
+    "picks": 194,
+    "cn_printed_picks": 183,
     "labels_in_openings": {
-     "State Code": 47
+     "State Code": 130
     },
     "positions": {
-     "at_heading": 23,
-     "unclear": 1,
-     "under_heading": 1
+     "unclear": 76,
+     "before": 33,
+     "under_heading": 16,
+     "after": 2
     },
-    "prints": "at_heading",
-    "openings_naming_another_number": 22,
-    "windows_opening_on_a_number_line": 0,
+    "prints": "unclear",
+    "openings_naming_another_number": 3,
+    "windows_opening_on_a_number_line": 127,
     "labels_in_text_sample": 1,
     "examples": {
-     "at_heading": {
-      "control_number": "02808",
-      "opens": "[page 75] 75 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Associate Degrees & Certificate Programs Agriculture AGRICULTURE: GENERAL Associate of Science Degree (STATE CODE 02808) PROGRAM I"
-     },
      "unclear": {
-      "control_number": "41088",
-      "opens": "[page 47] 47 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 BUSINESS ADMINISTRATION 2.0 Effective: Fall 2021 (Revised Fall 2023; Fall 2026) Associate in Science for Transfer Degree (AS-T) (S"
+      "control_number": "02808",
+      "opens": "[page 75] (STATE CODE 02808) PROGRAM INFORMATION This program is designed to give students a broad background to prepare them for many different occupations in the field of agriculture and agricultura"
+     },
+     "before": {
+      "control_number": "02811",
+      "opens": "[page 79] (STATE CODE 02811) PROGRAM INFORMATION The General Horticulture AS program serves students who wish to expand their plant knowledge which may lead to a career in orchard or tree care, nurser"
      },
      "under_heading": {
-      "control_number": "46342",
-      "opens": "[page 67] 67 Educational Programs 2026-2027 GENERAL CATALOG 2026-2027 Associate in Science for Transfer Degree (AS-T) (STATE CODE 46342) This degree is intended for students transferring to a Californ"
+      "control_number": "30477",
+      "opens": "[page 119] (STATE CODE 30477) The Gender Studies Area of Emphasis is designed to enable students to integrate courses in several disciplines and achieve a broad understand - ing of the complex and div"
+     },
+     "after": {
+      "control_number": "32523",
+      "opens": "[page 42] (STATE CODE 32523) See also Associate of Arts in Criminal Justice on page 142. This degree is intended for students transferring to a California State University campus. It is not a requirem"
      }
     },
     "unproven": 2,
@@ -9099,6 +9204,57 @@
    ]
   },
   {
+   "slug": "san_jose_city",
+   "college": "San Jose City College",
+   "read_from": "main",
+   "platform": "courseleaf",
+   "records": 84,
+   "pdf_records": 0,
+   "agree": 72,
+   "disagree": 1,
+   "cannot_tell": 11,
+   "heading_absent": 2,
+   "disagree_passing": 0,
+   "disagree_loaded": 0,
+   "pdf_disagree": 0,
+   "pdf_disagree_passing": 0,
+   "pdf_suspect": 0,
+   "pdf_suspect_passing": 0,
+   "pdf_agree": 0,
+   "pdf_cannot_tell": 0,
+   "by_reason": {
+    "title": 1
+   },
+   "check_would_fail_passing": 0,
+   "check_would_fail_passing_transfer_local": 0,
+   "check_kinds_passing": {},
+   "check_would_fail_passing_generic_heading": 0,
+   "award_not_program": 0,
+   "award_not_program_passing": 0,
+   "window_after": 0,
+   "window_after_passing": 0,
+   "suspect": 1,
+   "suspect_passing": 0,
+   "suspect_loaded": 0,
+   "disagreements": [
+    {
+     "control_number": "46293",
+     "title": "Information Systems Security: Cybersecurity",
+     "award": "A.S. Degree",
+     "heading": "CIS - Computer Programming - Associate in Science",
+     "verdict": "disagree",
+     "reason": "title",
+     "kind": null,
+     "heading_names_a_program": true,
+     "title_share": 0.0,
+     "window": null,
+     "passes_live": false,
+     "places_none": true,
+     "method": "sitemap_page"
+    }
+   ]
+  },
+  {
    "slug": "santa_ana",
    "college": "Santa Ana College",
    "read_from": "main",
@@ -9629,6 +9785,52 @@
     "prints": null,
     "openings_naming_another_number": 0,
     "windows_opening_on_a_number_line": 0,
+    "labels_in_text_sample": 0,
+    "examples": {},
+    "unproven": 0,
+    "captured_text": "pick openings"
+   }
+  },
+  {
+   "slug": "santiago_canyon",
+   "college": "Santiago Canyon College",
+   "read_from": "main",
+   "platform": "pdf",
+   "records": 222,
+   "pdf_records": 222,
+   "agree": 186,
+   "disagree": 0,
+   "cannot_tell": 36,
+   "heading_absent": 5,
+   "disagree_passing": 0,
+   "disagree_loaded": 0,
+   "pdf_disagree": 0,
+   "pdf_disagree_passing": 0,
+   "pdf_suspect": 0,
+   "pdf_suspect_passing": 0,
+   "pdf_agree": 186,
+   "pdf_cannot_tell": 36,
+   "by_reason": {},
+   "check_would_fail_passing": 0,
+   "check_would_fail_passing_transfer_local": 0,
+   "check_kinds_passing": {},
+   "check_would_fail_passing_generic_heading": 0,
+   "award_not_program": 0,
+   "award_not_program_passing": 0,
+   "window_after": 0,
+   "window_after_passing": 0,
+   "suspect": 0,
+   "suspect_passing": 0,
+   "suspect_loaded": 0,
+   "disagreements": [],
+   "control_number_print": {
+    "picks": 204,
+    "cn_printed_picks": 204,
+    "labels_in_openings": {},
+    "positions": {},
+    "prints": null,
+    "openings_naming_another_number": 0,
+    "windows_opening_on_a_number_line": 3,
     "labels_in_text_sample": 0,
     "examples": {},
     "unproven": 0,
