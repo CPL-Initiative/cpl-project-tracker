@@ -81,8 +81,8 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 
 | PR or branch | State | Next |
 |---|---|---|
-| this checkpoint's PR, `claude/checkpoint-s644` | draft | merge on a green `test` |
-| CPLBrain draft PR, `claude/confident-wozniak-irdwcw` (Sheet 187's source, the session note, the wiki touch) | draft | publish Sheet 187 from it, then merge |
+| #3199, this checkpoint, `claude/checkpoint-s644` | draft | merge on a green `test` |
+| CPLBrain#770, `claude/confident-wozniak-irdwcw` (Sheet 187's source, the session note, the wiki touch) | draft | publish Sheet 187 from it, then merge |
 | #3193 `claude/harvest-scorer-hours-ge-s644` (head `21a0bcdd`) | ready, CI running at 01:42Z | merge on green; rescore as a reviewed step |
 | #3197 `claude/harvest-dated-reads-s644` (head `d7b88ab8`) | ready for review at 01:42Z | the worker's review fixes, merge |
 | #3194 `claude/harvest-santiago-canyon-s644` | draft, red on `roep_display_test` | waits on #3197 (Open work 2) |
