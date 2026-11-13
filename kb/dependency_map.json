@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 935,
+  "file_datasets": 937,
   "external_services": 195,
   "consumers": 584,
   "workflows": 72,
@@ -451,7 +451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1567
+     "line": 1707
     }
    ],
    "main_committers": []
@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1523
+     "line": 1663
     }
    ],
    "main_committers": []
@@ -694,7 +694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1460
+     "line": 1600
     }
    ],
    "main_committers": []
@@ -1252,7 +1252,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 323
+     "line": 325
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -2737,7 +2737,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1226
+     "line": 1251
     }
    ],
    "main_committers": []
@@ -2852,7 +2852,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1228
+     "line": 1253
     }
    ],
    "main_committers": []
@@ -2864,7 +2864,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1229
+     "line": 1254
     }
    ],
    "main_committers": []
@@ -2978,7 +2978,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1094
+     "line": 1234
     }
    ],
    "main_committers": []
@@ -3104,7 +3104,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1227
+     "line": 1252
     }
    ],
    "main_committers": []
@@ -8498,6 +8498,26 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:extract_account_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 5630
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 356
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:extract_halt_*.json": {
    "consumers": [
     {
@@ -8505,14 +8525,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4608
+     "line": 5680
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 363
+     "line": 370
     }
    ],
    "served": false,
@@ -10468,6 +10488,13 @@
   "file:kb/_program_requirements_wave.py": {
    "consumers": [
     {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
      "direction": "run",
@@ -11019,7 +11046,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 341
+     "line": 343
     },
     {
      "id": "script:kb/_ccr_seed_recheck_dryrun.py",
@@ -11096,7 +11123,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 217
+     "line": 219
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -11143,7 +11170,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 206
+     "line": 208
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -11187,7 +11214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 221
+     "line": 223
     }
    ],
    "served": false,
@@ -11753,7 +11780,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 389
+     "line": 391
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -13832,7 +13859,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 668
+     "line": 670
     }
    ],
    "served": false,
@@ -13996,7 +14023,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 434
+     "line": 436
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -14342,7 +14369,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 240
+     "line": 242
     },
     {
      "id": "script:kb/credential_aliases.py",
@@ -14413,7 +14440,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 195
+     "line": 197
     },
     {
      "id": "script:kb/_build_cpl_ai_join.py",
@@ -14707,7 +14734,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 905
+     "line": 907
     }
    ],
    "served": false,
@@ -14730,7 +14757,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 543
+     "line": 545
     }
    ],
    "producers": [
@@ -14787,7 +14814,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 544
+     "line": 546
     }
    ],
    "served": true,
@@ -15039,7 +15066,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 522
+     "line": 524
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -15303,7 +15330,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1050
+     "line": 1052
     },
     {
      "id": "script:kb/_docket_rulings.py",
@@ -15632,7 +15659,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 198
+     "line": 200
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15775,7 +15802,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 235
+     "line": 237
     }
    ],
    "served": true,
@@ -16101,7 +16128,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 995
+     "line": 997
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -16437,7 +16464,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 647
+     "line": 649
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -17034,7 +17061,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 119
+     "line": 121
     }
    ],
    "served": false,
@@ -17060,21 +17087,27 @@
    "served": false,
    "main_committers": []
   },
-  "file:kb/program_requirements_college/los_angeles_city/kept_passing.json": {
+  "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
    "consumers": [
-    {
-     "id": "script:kb/_harvest_gap_census.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 177
-    },
     {
      "id": "script:kb/_program_requirements_college.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4879
+     "line": 2551
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_college/glendale_community/tab_owners.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 6061
     }
    ],
    "served": true,
@@ -17537,7 +17570,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 437
+     "line": 439
     }
    ],
    "served": false,
@@ -19177,7 +19210,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 288
+     "line": 290
     },
     {
      "id": "script:kb/credential_aliases.py",
@@ -19248,7 +19281,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 325
+     "line": 327
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -19420,7 +19453,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 752
+     "line": 754
     }
    ],
    "producers": [
@@ -19445,7 +19478,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 355
+     "line": 357
     }
    ],
    "served": true,
@@ -19458,7 +19491,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 467
+     "line": 469
     }
    ],
    "served": true,
@@ -19471,7 +19504,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 250
+     "line": 252
     }
    ],
    "served": true,
@@ -19603,7 +19636,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 128
+     "line": 130
     },
     {
      "id": "script:kb/_sync_program_checked.py",
@@ -19648,7 +19681,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 135
+     "line": 137
     },
     {
      "id": "script:scripts/queue_status.py",
@@ -19678,7 +19711,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 602
+     "line": 604
     }
    ],
    "served": true,
@@ -20225,7 +20258,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 226
+     "line": 228
     }
    ],
    "served": false,
@@ -20384,7 +20417,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 191
+     "line": 193
     },
     {
      "id": "script:kb/_build_exhibits_related.py",
@@ -20768,7 +20801,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4876
+     "line": 5880
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20788,7 +20821,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4812
+     "line": 5099
     }
    ],
    "served": false,
@@ -21405,14 +21438,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4846
+     "line": 5967
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 357
+     "line": 364
     }
    ],
    "served": false,
@@ -21845,7 +21878,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 328
+     "line": 330
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -22368,7 +22401,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 666
+     "line": 668
     }
    ],
    "served": false,
@@ -26919,7 +26952,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 329
+     "line": 331
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -28075,7 +28108,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4896
+     "line": 6035
     }
    ],
    "main_committers": []
@@ -28087,7 +28120,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4983
+     "line": 6144
     }
    ],
    "main_committers": []
@@ -33538,6 +33571,7 @@
    "scripts": [
     "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
+    "kb/_program_requirements_wave.py",
     "kb/_program_requirements_display_apply.py"
    ],
    "adds": [

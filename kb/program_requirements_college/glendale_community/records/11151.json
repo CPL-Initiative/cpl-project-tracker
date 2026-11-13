@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Administrative Assistant",
  "award": "A.S. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+ "source_url": "https://catalog.glendale.edu/programs/ADAST-AS/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11492,
+  "input_tokens": 6638,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11492,
-    "output_tokens": 2325,
+    "input_tokens": 6638,
+    "output_tokens": 1636,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2325,
+  "output_tokens": 1636,
   "output_tokens_details": {
-   "thinking_tokens": 662
+   "thinking_tokens": 427
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09247,
- "ms": 19037,
- "seconds": 19.6,
+ "cost_usd": 0.05927,
+ "ms": 13667,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
@@ -74,32 +74,47 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    6.0,
-    6.0
-   ],
-   "stated": [
     30.0,
     31.0
    ],
-   "against": "program",
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+    "the blocks and general education sum to 30.0-31.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     30.0,
+     31.0
+    ],
+    "stated": [
+     30.0,
+     31.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -108,16 +123,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "COMPUTER APPLICATIONS AND BUSINESS OFFICE TECHNOLOGIES AS DEGREE OR CERTIFICATE — ADMINISTRATIVE ASSISTANT",
+   "section_heading": "ADAST-AS - Administrative Assistant - Associate of Science",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -130,22 +142,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "initiate and respond to correspondence effectively while using the latest automated technology, system software (Windows), and application software (Word, Excel, and Outlook) to perform more advanced skills; become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers to search a variety of databases for information; acquire the necessary knowledge and skills of accounting and bookkeeping to be able to use journals and ledgers to prepare balance sheets and income statements and be able to translate accounting records into a basis for sound decision making in a variety of businesses; be able to use a variety of office procedures to perform such tasks as sorting mail, filing and processing documents; develop interpersonal skills to conduct and participate in job interviews, practice effective human relation skills in business, handle telephone conversations with ease, and develop skills to communicate more effectively with customers and other employees verbally; and type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -156,12 +166,12 @@
     "courses": [
      {
       "code": "BUSAD 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUSAD 152",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -169,56 +179,56 @@
      },
      {
       "code": "CABOT 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 102",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 103",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 104",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 205",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 208",
-      "units": null,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 265",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 270",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -226,7 +236,7 @@
     ]
    },
    {
-    "name": "Select two courses from the following",
+    "name": "CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
@@ -237,35 +247,35 @@
     "courses": [
      {
       "code": "ACCTG 110",
-      "units": null,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BUSAD 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 266",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 285",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -276,75 +286,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the certificate (\"AS DEGREE OR CERTIFICATE\"); the same requirements, total (30-31 units) and outcomes apply to both.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "The program learning outcomes are printed as one continuous sentence with semicolon-separated clauses after the lead-in \"Upon completion of this program, the student will be able\"; recorded as a single entry rather than splitting it. A reviewer may prefer splitting at semicolons.",
-   "PDF extraction artifacts were normalized in the outcome text: ligature spacing (e.g. \"eﬀ ectively\" -> \"effectively\", \"oﬃ  ce\" -> \"office\", \"newslett ers\" -> \"newsletters\") and line-break hyphenation (\"deci- sion\" -> \"decision\", \"utili- ties\" -> \"utilities\", \"includ- ing\" -> \"including\").",
-   "The description mentions employment in an office setting performing clerical job duties but names no specific job title, so careers is empty.",
-   "No general education pattern or degree total is printed in this section."
+   "The page lists a 'Program Learning Outcomes' tab, but the extracted text prints no outcomes, so outcomes stay empty.",
+   "degree_total of 60 is taken from 'Minimum Required Units for Degree (with GE) 60', printed on this award's page. It is a minimum, not an exact total. No GE pattern or GE units are named.",
+   "Major total of 30-31 is printed both as 'Minimum/Maximum Required Units/Hours for Major' and as 'TOTAL UNITS REQUIRED 30-31'. This matches the 24 required units plus two choices of 3-4 units each.",
+   "The heading reads 'REQUIRED COURSES FOR MAJOR/CERTIFICATE'. The same list may also serve a certificate.",
+   "CABOT 205 is printed as 'Keyboard & Document Processing I'; the closed list gives the title as 'Keyboarding & Document Processing I'."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BUSAD 106": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 152": [
-     3.0,
-     3.0
-    ],
-    "CABOT 101": [
-     3.0,
-     3.0
-    ],
-    "CABOT 102": [
-     4.0,
-     4.0
-    ],
-    "CABOT 103": [
-     3.0,
-     3.0
-    ],
-    "CABOT 104": [
-     1.0,
-     1.0
-    ],
-    "CABOT 205": [
-     3.0,
-     3.0
-    ],
-    "CABOT 265": [
-     3.0,
-     3.0
-    ],
-    "CABOT 270": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 110": [
-     3.0,
-     3.0
-    ],
-    "CABOT 110": [
-     3.0,
-     3.0
-    ],
-    "CABOT 266": [
-     3.0,
-     3.0
-    ],
-    "CABOT 285": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

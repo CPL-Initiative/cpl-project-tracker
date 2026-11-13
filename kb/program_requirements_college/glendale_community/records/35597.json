@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Administrative Medical Assistant",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=82",
+ "source_url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9962,
+  "input_tokens": 6578,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9962,
-    "output_tokens": 1617,
+    "input_tokens": 6578,
+    "output_tokens": 998,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1617,
+  "output_tokens": 998,
   "output_tokens_details": {
-   "thinking_tokens": 622
+   "thinking_tokens": 213
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07219,
- "ms": 15495,
- "seconds": 16.3,
+ "cost_usd": 0.04627,
+ "ms": 8541,
+ "seconds": 8.6,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MEDICAL OFFICE AS DEGREE OR CERTIFICATE — ADMINISTRATIVE MEDICAL ASSISTANT",
+   "section_heading": "AMA-C - Administrative Medical Assistant - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 29,
@@ -121,76 +121,79 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "schedule appointments, perform medical office duties, handle financial matters including medical insurance collection, manage electronic health records and other ancillary medical records, and to complete the insurance and reimbursement process."
-   ],
-   "careers": [
-    "medical assistant"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 29,
+     "max": 29
     },
     "courses": [
      {
       "code": "MOA 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 182",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 183",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 184",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 185",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 188",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 193",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 197",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 204",
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -201,13 +204,6 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "BUSAD 204",
-      "units": 1.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
      }
     ]
    }
@@ -215,58 +211,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the Certificate of Achievement under one heading; the same requirements and 29-unit total apply to the certificate.",
-   "The catalog prints units only for MOA 50 (3 units); other courses have no units printed, so units are null. The closed-list units (3+3+4+3+3+3+3+3+1) plus MOA 50 at 3 units sum to 29, matching the stated total.",
-   "The state file stores MOA 50 as 1 unit, but the catalog requires MOA 50 for 3 units.",
-   "The program learning outcome is printed as a single sentence and recorded as one entry. The following sentence about the required internship is descriptive and was not treated as an outcome.",
-   "The PDF text contains ligature and spacing artifacts (e.g., 'oﬃ ce', 'matt ers'), normalized to 'office' and 'matters' in the outcome text."
+   "MOA 50 (MOA Internship) is printed with 3 units in the catalog, while the state Program Course File stores 1 unit; recorded as printed (3). The printed course units sum to the stated 29.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but no outcomes are printed in the provided text (only the Completion Requirements tab content); outcomes left empty.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MOA 180": [
-     3.0,
-     3.0
-    ],
-    "MOA 182": [
-     3.0,
-     3.0
-    ],
-    "MOA 183": [
-     4.0,
-     4.0
-    ],
-    "MOA 184": [
-     3.0,
-     3.0
-    ],
-    "MOA 185": [
-     3.0,
-     3.0
-    ],
-    "MOA 188": [
-     3.0,
-     3.0
-    ],
-    "MOA 193": [
-     3.0,
-     3.0
-    ],
-    "MOA 197": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 204": [
-     1.0,
-     1.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

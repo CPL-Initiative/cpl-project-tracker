@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Music",
  "award": "A.A- T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=120",
+ "source_url": "https://catalog.glendale.edu/programs/MSC%20AA-T/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 6915,
+  "input_tokens": 7464,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 6915,
-    "output_tokens": 3239,
+    "input_tokens": 7464,
+    "output_tokens": 2622,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 3239,
+  "output_tokens": 2622,
   "output_tokens_details": {
-   "thinking_tokens": 1181
+   "thinking_tokens": 662
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09244,
- "ms": 25038,
- "seconds": 25.4,
+ "cost_usd": 0.0823,
+ "ms": 20408,
+ "seconds": 20.5,
  "parts": null,
  "error": null,
  "score": {
@@ -61,33 +61,51 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    19.5,
-    20.5
+    21.0,
+    22.0
    ],
    "stated": [
     21.0,
     22.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 19.5-20.5; the catalog states 21.0-22.0"
-   ]
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     21.0,
+     22.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     38.0,
+     39.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -96,16 +114,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AA-T — MUSIC",
+   "section_heading": "MSC AA-T - Music - Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -118,24 +133,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "identify major topics, developments, debates, and issues in music,",
-    "students will be able to apply their knowledge of key concepts in music to discuss, analyze, and synthesize a variety of theoretical and practical foci in music.",
-    "Students will be able to gain a global, national, and local perspective on issues pertaining to music preparing them for multiple pathways for future study and career opportunities."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -146,35 +157,35 @@
     "courses": [
      {
       "code": "MUSIC 201",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 202",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 203",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 212",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 213",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -182,25 +193,25 @@
     ]
    },
    {
-    "name": "Select one course (3 units)",
+    "name": "CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "MUSIC 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 211",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -208,18 +219,18 @@
     ]
    },
    {
-    "name": "Required two units",
+    "name": "COMPLETE THE FOLLOWING FOUR TIMES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": 2,
-     "max": 2
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "MUSIC 140",
-      "units": 0.5,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -227,88 +238,88 @@
     ]
    },
    {
-    "name": "Select four courses (4 units)",
+    "name": "CHOOSE FOUR OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 4,
     "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 4
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "MUSIC 143",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 146",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 147",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 148",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 230",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 231",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 232",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 233",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 240",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 241",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 242",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -316,7 +327,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "LIST A - CHOOSE THREE TO FOUR UNITS OF THE FOLLOWING",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -327,63 +338,63 @@
     "courses": [
      {
       "code": "MUSIC 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 126",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 160",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 161",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 162",
-      "units": 2.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 177",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 204",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 214",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -394,27 +405,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses, so course units are null; only block totals are printed.",
-   "Program Learning Outcomes are printed as one run-on paragraph; read as three outcomes (the first two joined by a comma splice after the lead-in 'Upon completion of this program, students will be able to'). Reviewer should check the split.",
-   "'Required two units: MUSIC 140' - MUSIC 140 (0.5 units in state file) is presumably repeated to reach 2 units; recorded as a required block with stated 2.",
-   "The catalog prints some codes as 'Music 101', 'Music 120' etc.; all recorded with subject MUSIC. List A codes appeared with stray spaces in the PDF text ('1 60', '1 6 1', '1 62', '1 77'), read as 160, 161, 162, 177.",
-   "'Required Units for Major: 21-22 units*' carries an asterisk whose footnote is not in the text.",
-   "No GE pattern or degree total is printed in this section; 'career opportunities' is mentioned only generically, so no careers recorded."
+   "The page header states Minimum and Maximum Required Units/Hours for Major as 22, while the requirements table prints 'TOTAL UNITS REQUIRED 21-22'; total_units records the table's 21-22. Reviewer should check.",
+   "degree_total 60 taken from 'Minimum Required Units for Degree (with GE) 60' printed for this award; no GE pattern or GE units are named in the text.",
+   "MUSIC 140 is printed with 2 units beside it and the note '(.5 unit class must be taken four times)'; recorded as one entry with 2 units in an 'all' block.",
+   "List A rule 'choose three to four units' recorded as choose_units minimum 3 with stated 3-4.",
+   "A 'Program Learning Outcomes' tab heading appears but no outcomes are printed in the text; outcomes left empty.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": 41040709338,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MUSIC 125": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

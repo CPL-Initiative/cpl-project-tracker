@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Social Science",
  "award": "A.A. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+ "source_url": "https://catalog.glendale.edu/programs/SS-AA/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11513,
+  "input_tokens": 8399,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11513,
-    "output_tokens": 7126,
+    "input_tokens": 8399,
+    "output_tokens": 6891,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,171 +30,127 @@
     "model": null
    }
   ],
-  "output_tokens": 7126,
+  "output_tokens": 6891,
   "output_tokens_details": {
-   "thinking_tokens": 1737
+   "thinking_tokens": 1802
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18857,
- "ms": 50905,
- "seconds": 52.2,
+ "cost_usd": 0.17142,
+ "ms": 49615,
+ "seconds": 49.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 66,
+   "placed": 80,
    "listed": 87,
-   "share": 0.759,
+   "share": 0.92,
    "missing": [
-    "ANTHR101",
-    "CHLDV142",
-    "CHLDV156",
-    "GEOG101",
-    "GEOG107",
-    "GEOG111",
-    "GEOG155",
+    "ECON101",
+    "ECON102",
+    "HIST117",
+    "HIST118",
+    "HIST136",
     "HIST140",
-    "HIST141",
-    "PHILO101",
-    "PHILO115",
-    "PHILO116",
-    "PHILO117",
-    "PHILO119",
-    "PHILO120",
-    "POLS110",
-    "POLS112",
-    "PSYC103",
-    "PSYC110",
-    "PSYC203",
-    "SOC140"
+    "HIST141"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 43,
+   "count": 18,
    "codes": [
-    "ANTHR102H",
+    "ANTHR110",
+    "ANTHR111",
     "ANTHR114",
-    "ANTHR150",
-    "ECON102H",
-    "ECON111",
-    "ECON170",
-    "GEOG170",
-    "GEOG171",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONC2002H",
+    "ETHS102",
+    "ETHS111",
     "HIST101",
     "HIST102",
-    "HIST102H",
     "HIST111H",
-    "HIST116",
-    "HIST118H",
-    "HIST119",
-    "HIST133H",
-    "HLTH105",
-    "HLTH106",
-    "HLTH107",
-    "HLTH108",
-    "LING101",
-    "LING101H",
-    "LING102",
-    "LING102H",
-    "LING103",
-    "LING103H",
-    "MCOMM101",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
     "POLS114",
-    "POLS170",
-    "POLS171",
-    "PSYCC1000H",
-    "PSYCH104H",
-    "PSYCH200",
-    "SOC101H",
-    "SOC108",
-    "SOC114",
-    "SOC171",
-    "SOC200",
-    "SOCS107",
-    "SOCS120",
-    "SPCH108",
-    "SPCH115",
-    "SPCH120"
+    "POLSC1000H",
+    "PSYC200"
    ],
    "flagged": [
-    "ANTHR102H",
+    "ANTHR110",
+    "ANTHR111",
     "ANTHR114",
-    "ANTHR150",
-    "ECON102H",
-    "ECON111",
-    "ECON170",
-    "GEOG170",
-    "GEOG171",
+    "ECONC2001",
+    "ECONC2002",
+    "ECONC2002H",
+    "ETHS102",
+    "ETHS111",
     "HIST101",
     "HIST102",
-    "HIST102H",
     "HIST111H",
-    "HIST116",
-    "HIST118H",
-    "HIST119",
-    "HIST133H",
-    "HLTH105",
-    "HLTH106",
-    "HLTH107",
-    "HLTH108",
-    "LING101",
-    "LING101H",
-    "LING102",
-    "LING102H",
-    "LING103",
-    "LING103H",
-    "MCOMM101",
+    "HISTC1001",
+    "HISTC1001H",
+    "HISTC1002",
+    "HISTC1002H",
     "POLS114",
-    "POLS170",
-    "POLS171",
-    "PSYCC1000H",
-    "PSYCH104H",
-    "PSYCH200",
-    "SOC101H",
-    "SOC108",
-    "SOC114",
-    "SOC171",
-    "SOC200",
-    "SOCS107",
-    "SOCS120",
-    "SPCH108",
-    "SPCH115",
-    "SPCH120"
+    "POLSC1000H",
+    "PSYC200"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     18.0,
     18.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
-   ]
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-21.0"
+   ],
+   "degree": {
+    "pass": false,
+    "status": "unequal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [
+     "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -203,20 +159,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "LIBERAL ARTS: SOCIAL AND BEHAVIORAL SCIENCES EMPHASIS AA DEGREE",
+   "section_heading": "SS-AA - Social Science - Associate of Arts",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -225,26 +178,22 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "describe the principles, perspectives, and methods of inquiry used by the social and behavioral sciences.",
-    "Analyze how people act and have acted in response to their societies.",
-    "Apply social science research methodology and effectively communicate research results and conclusions."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Select a minimum of 18 units from the following, with courses from at least two disciplines",
-    "rule": "choose_units",
-    "minimum": 18,
+    "name": "American Institutions/State & Local Government",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -252,16 +201,93 @@
     },
     "courses": [
      {
-      "code": "ANTHR 102",
-      "units": 3.0,
+      "code": "POLS C1000",
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
-        "code": "ANTHR 102H",
-        "units": 3.0,
+        "code": "POLS C1000H",
+        "units": 3,
         "catalog_addition": true
        }
       ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "American History",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HIST 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST 111H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "HIST C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1001H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "HIST C1002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "CHOOSE TWELVE UNITS FROM FOUR DIFFERENT DISCIPLINES",
+    "rule": "choose_units",
+    "minimum": 12,
+    "option_group": null,
+    "stated": {
+     "min": 12,
+     "max": 12
+    },
+    "courses": [
+     {
+      "code": "ANTHR 101",
+      "units": 4.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ANTHR 102",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -286,14 +312,21 @@
       "catalog_addition": false
      },
      {
-      "code": "ANTHR 114",
+      "code": "ANTHR 110",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ANTHR 150",
+      "code": "ANTHR 111",
+      "units": 1.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ANTHR 114",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
@@ -307,35 +340,42 @@
       "catalog_addition": false
      },
      {
-      "code": "ECON 101",
+      "code": "CHLDV 142",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ECON 102",
+      "code": "CHLDV 156",
       "units": 3.0,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "ECON 102H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "ECON 111",
-      "units": 3.0,
+      "code": "ECON C2001",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "ECON 170",
-      "units": 3.0,
+      "code": "ECON C2002",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ETH S 102",
+      "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -346,6 +386,13 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "ETH S 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
      },
      {
       "code": "ETH S 120",
@@ -404,6 +451,13 @@
       "catalog_addition": false
      },
      {
+      "code": "GEOG 101",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "GEOG 102",
       "units": 3.0,
       "units_max": null,
@@ -425,6 +479,13 @@
       "catalog_addition": false
      },
      {
+      "code": "GEOG 107",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "GEOG 110",
       "units": 3.0,
       "units_max": null,
@@ -432,46 +493,18 @@
       "catalog_addition": false
      },
      {
-      "code": "GEOG 170",
-      "units": 3.0,
+      "code": "GEOG 111",
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "GEOG 171",
+      "code": "GEOG 155",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HLTH 105",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HLTH 106",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HLTH 107",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HLTH 108",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "HIST 101",
@@ -484,13 +517,7 @@
       "code": "HIST 102",
       "units": 3.0,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "HIST 102H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": true
      },
      {
@@ -522,19 +549,6 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 111",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "HIST 111H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
       "code": "HIST 113",
       "units": 3.0,
       "units_max": null,
@@ -549,37 +563,29 @@
       "catalog_addition": false
      },
      {
-      "code": "HIST 116",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "HIST 117",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 118",
-      "units": 3.0,
+      "code": "HIST C1001",
+      "units": null,
       "units_max": null,
       "alternatives": [
        {
-        "code": "HIST 118H",
-        "units": 3.0,
+        "code": "HIST C1001H",
+        "units": null,
         "catalog_addition": true
        }
       ],
-      "catalog_addition": false
+      "catalog_addition": true
      },
      {
-      "code": "HIST 119",
-      "units": 3.0,
+      "code": "HIST C1002",
+      "units": null,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "HIST C1002H",
+        "units": null,
+        "catalog_addition": true
+       }
+      ],
       "catalog_addition": true
      },
      {
@@ -621,24 +627,11 @@
       "code": "HIST 133",
       "units": 3.0,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "HIST 133H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "HIST 135",
-      "units": 3.0,
-      "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "HIST 136",
+      "code": "HIST 135",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
@@ -666,195 +659,193 @@
       "catalog_addition": false
      },
      {
-      "code": "LING 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "LING 101H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "LING 102",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "LING 102H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "LING 103",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "LING 103H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
-      "code": "MCOMM 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLSC1000",
+      "code": "PHILO 101",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 102",
+      "code": "PHILO 115",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 103",
+      "code": "PHILO 116",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 104",
+      "code": "PHILO 117",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 108",
+      "code": "PHILO 119",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 111",
+      "code": "PHILO 120",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 114",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POL S 115",
+      "code": "POLS 102",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 170",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POL S 171",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PSYCC1000",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYCC1000H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 104",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PSYCH 104H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 105",
+      "code": "POLS 103",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 106",
+      "code": "POLS 104",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 113",
+      "code": "POLS 108",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 115",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "PSYCH 131",
+      "code": "POLS 110",
       "units": null,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 150",
+      "code": "POLS 111",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 200",
+      "code": "POLS 112",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 114",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "POLS 115",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 103",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 104",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 105",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 106",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 110",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 113",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 115",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 131",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 150",
+      "units": 3.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 200",
       "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "PSYC 203",
+      "units": 1.0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      },
      {
       "code": "SOC S 101",
@@ -871,25 +862,11 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC S 107",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "SOC S 110",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "SOC S 120",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "SOC S 127",
@@ -909,13 +886,7 @@
       "code": "SOC 101",
       "units": 3.0,
       "units_max": null,
-      "alternatives": [
-       {
-        "code": "SOC 101H",
-        "units": 3.0,
-        "catalog_addition": true
-       }
-      ],
+      "alternatives": [],
       "catalog_addition": false
      },
      {
@@ -947,20 +918,6 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC 108",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOC 114",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "SOC 131",
       "units": 3.0,
       "units_max": null,
@@ -968,39 +925,11 @@
       "catalog_addition": false
      },
      {
-      "code": "SOC 171",
+      "code": "SOC 140",
       "units": 3.0,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SOC 200",
-      "units": 3.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 108",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 115",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 120",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
@@ -1008,120 +937,385 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "ANTHR101",
-    "why": "not in the text"
+    "code": "ECON 101",
+    "why": "not in the text; catalog lists ECON C2001 instead"
    },
    {
-    "code": "CHLDV 142",
-    "why": "not in the text"
+    "code": "ECON 102",
+    "why": "not in the text; catalog lists ECON C2002/C2002H instead"
    },
    {
-    "code": "CHLDV 156",
-    "why": "not in the text"
+    "code": "HIST 117",
+    "why": "not in the text; catalog lists HIST C1001/C1001H instead"
    },
    {
-    "code": "GEOG 101",
-    "why": "not in the text"
+    "code": "HIST 118",
+    "why": "not in the text; catalog lists HIST C1002/C1002H instead"
    },
    {
-    "code": "GEOG 107",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG 111",
-    "why": "not in the text"
-   },
-   {
-    "code": "GEOG 155",
+    "code": "HIST 136",
     "why": "not in the text"
    },
    {
     "code": "HIST 140",
-    "why": "named only in the Mass Communications AS section, not this award"
+    "why": "not in the text"
    },
    {
     "code": "HIST 141",
-    "why": "named only in the Mass Communications AS section, not this award"
-   },
-   {
-    "code": "PHILO 101",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 115",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 116",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 117",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 119",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 120",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLS 112",
-    "why": "not in the text"
-   },
-   {
-    "code": "POLS110",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC 103",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC 110",
-    "why": "not in the text"
-   },
-   {
-    "code": "PSYC 203",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOC 140",
     "why": "not in the text"
    }
   ],
   "notes": [
-   "The text contains no section titled 'Social Science'; the closest match is 'Liberal Arts: Social and Behavioral Sciences Emphasis AA Degree', which was read. Reviewer should confirm this is the section for the state's 'Social Science' A.A. program; many closed-list courses (PHILO, several GEOG/PSYC) do not appear in it.",
-   "No units are printed beside any course and no major or degree total is printed; the only figure is the 18-unit minimum of the selection rule, with courses from at least two disciplines.",
-   "Catalog prints PSYCH and POL S/POLSC1000/PSYCC1000 forms; these were matched to closed-list PSYC, POLS and POL S/PSYC C1000 codes as the same courses.",
-   "LING list prints '102; 102H' with a semicolon, read as LING 102 and its honors twin 102H.",
-   "Honors twins (H suffix) recorded as alternatives to their base course.",
-   "Ligature artifact 'e ﬀ ectively' in the third outcome normalized to 'effectively'."
+   "The page prints 'Select courses (minimum 6 units) to satisfy each of the following areas' over two areas: American Institutions/State & Local Government (POLS C1000/C1000H, 3) and American History (one of three 3-unit courses). Recorded as an 'all' block and a choose-1 block; the 6-unit minimum covers both areas together.",
+   "Total units: page prints Minimum Required Units for Major 18 and Maximum 21; 'TOTAL UNITS REQUIRED 18' also printed. Recorded 18-21.",
+   "degree_total recorded from 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE units are named on the page.",
+   "The twelve-unit list prints no units beside the courses, so units are null; courses must come from four different disciplines.",
+   "Code format differences treated as matches to the closed list: catalog 'POLS 102' = closed-list 'POL S 102'; 'ANTHR 101' = 'ANTHR101'; 'POLS 110' = 'POLS110'.",
+   "Honors twins (POLS C1000H, HIST 111H, HIST C1001H, HIST C1002H, ECON C2002H) recorded as alternatives; HIST C1001 and C1002 appear both in the American History area and in the twelve-unit list.",
+   "A 'Program Learning Outcomes' tab is shown but no outcomes are printed in the text; no careers named."
   ]
  },
- "extracted_run": 41049220135,
+ "extracted_run": "43497305929",
+ "catalog_year": "2026-2027",
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "POLSC1000": [
+    "ANTHR 101": [
+     4.0,
+     4.0
+    ],
+    "ANTHR 102": [
      3.0,
      3.0
     ],
-    "PSYCC1000": [
+    "ANTHR 103": [
      3.0,
      3.0
     ],
-    "PSYCC1000H": [
+    "ANTHR 104": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 105": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 110": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 111": [
+     1.0,
+     1.0
+    ],
+    "ANTHR 114": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 135": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 142": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 156": [
+     3.0,
+     3.0
+    ],
+    "ETH S 110": [
+     3.0,
+     3.0
+    ],
+    "ETH S 120": [
+     3.0,
+     3.0
+    ],
+    "ETH S 121": [
+     3.0,
+     3.0
+    ],
+    "ETH S 123": [
+     3.0,
+     3.0
+    ],
+    "ETH S 125": [
+     3.0,
+     3.0
+    ],
+    "ETH S 132": [
+     3.0,
+     3.0
+    ],
+    "ETH S 164": [
+     3.0,
+     3.0
+    ],
+    "ETH S 165": [
+     3.0,
+     3.0
+    ],
+    "ETH S 166": [
+     3.0,
+     3.0
+    ],
+    "GEOG 101": [
+     3.0,
+     3.0
+    ],
+    "GEOG 102": [
+     3.0,
+     3.0
+    ],
+    "GEOG 103": [
+     3.0,
+     3.0
+    ],
+    "GEOG 106": [
+     3.0,
+     3.0
+    ],
+    "GEOG 107": [
+     3.0,
+     3.0
+    ],
+    "GEOG 110": [
+     3.0,
+     3.0
+    ],
+    "GEOG 111": [
+     1.0,
+     1.0
+    ],
+    "GEOG 155": [
+     3.0,
+     3.0
+    ],
+    "HIST 101": [
+     3.0,
+     3.0
+    ],
+    "HIST 102": [
+     3.0,
+     3.0
+    ],
+    "HIST 103": [
+     3.0,
+     3.0
+    ],
+    "HIST 104": [
+     3.0,
+     3.0
+    ],
+    "HIST 105": [
+     3.0,
+     3.0
+    ],
+    "HIST 106": [
+     3.0,
+     3.0
+    ],
+    "HIST 113": [
+     3.0,
+     3.0
+    ],
+    "HIST 115": [
+     3.0,
+     3.0
+    ],
+    "HIST 120": [
+     3.0,
+     3.0
+    ],
+    "HIST 121": [
+     3.0,
+     3.0
+    ],
+    "HIST 122": [
+     3.0,
+     3.0
+    ],
+    "HIST 131": [
+     3.0,
+     3.0
+    ],
+    "HIST 132": [
+     3.0,
+     3.0
+    ],
+    "HIST 133": [
+     3.0,
+     3.0
+    ],
+    "HIST 135": [
+     3.0,
+     3.0
+    ],
+    "HIST 152": [
+     3.0,
+     3.0
+    ],
+    "HIST 170": [
+     3.0,
+     3.0
+    ],
+    "HIST 180": [
+     3.0,
+     3.0
+    ],
+    "PHILO 101": [
+     3.0,
+     3.0
+    ],
+    "PHILO 115": [
+     3.0,
+     3.0
+    ],
+    "PHILO 116": [
+     3.0,
+     3.0
+    ],
+    "PHILO 117": [
+     3.0,
+     3.0
+    ],
+    "PHILO 119": [
+     3.0,
+     3.0
+    ],
+    "PHILO 120": [
+     3.0,
+     3.0
+    ],
+    "POLS 102": [
+     3.0,
+     3.0
+    ],
+    "POLS 103": [
+     3.0,
+     3.0
+    ],
+    "POLS 104": [
+     3.0,
+     3.0
+    ],
+    "POLS 108": [
+     3.0,
+     3.0
+    ],
+    "POLS 111": [
+     3.0,
+     3.0
+    ],
+    "POLS 112": [
+     3.0,
+     3.0
+    ],
+    "POLS 114": [
+     3.0,
+     3.0
+    ],
+    "POLS 115": [
+     3.0,
+     3.0
+    ],
+    "PSYC C1000": [
+     3.0,
+     3.0
+    ],
+    "PSYC 103": [
+     3.0,
+     3.0
+    ],
+    "PSYC 104": [
+     3.0,
+     3.0
+    ],
+    "PSYC 105": [
+     3.0,
+     3.0
+    ],
+    "PSYC 106": [
+     3.0,
+     3.0
+    ],
+    "PSYC 110": [
+     3.0,
+     3.0
+    ],
+    "PSYC 113": [
+     3.0,
+     3.0
+    ],
+    "PSYC 115": [
+     3.0,
+     3.0
+    ],
+    "PSYC 150": [
+     3.0,
+     3.0
+    ],
+    "PSYC 200": [
+     4.0,
+     4.0
+    ],
+    "PSYC 203": [
+     1.0,
+     1.0
+    ],
+    "SOC S 101": [
+     3.0,
+     3.0
+    ],
+    "SOC S 105": [
+     3.0,
+     3.0
+    ],
+    "SOC S 110": [
+     3.0,
+     3.0
+    ],
+    "SOC S 127": [
+     3.0,
+     3.0
+    ],
+    "SOC S 130": [
+     3.0,
+     3.0
+    ],
+    "SOC 101": [
+     3.0,
+     3.0
+    ],
+    "SOC 102": [
+     3.0,
+     3.0
+    ],
+    "SOC 103": [
+     3.0,
+     3.0
+    ],
+    "SOC 104": [
+     3.0,
+     3.0
+    ],
+    "SOC 105": [
+     3.0,
+     3.0
+    ],
+    "SOC 131": [
+     3.0,
+     3.0
+    ],
+    "SOC 140": [
      3.0,
      3.0
     ]
    },
    "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
- ],
- "read_run": 41040709338
+ ]
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Engineering Technology - CAD",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=74",
+ "source_url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7892,
+  "input_tokens": 6429,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7892,
-    "output_tokens": 1851,
+    "input_tokens": 6429,
+    "output_tokens": 974,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1851,
+  "output_tokens": 974,
   "output_tokens_details": {
-   "thinking_tokens": 853
+   "thinking_tokens": 166
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06859,
- "ms": 16039,
- "seconds": 16.5,
+ "cost_usd": 0.0452,
+ "ms": 8940,
+ "seconds": 9.0,
  "parts": null,
  "error": null,
  "score": {
@@ -83,17 +83,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ENGINEERING TECHNOLOGY - CAD & DESIGN DRAFTING AS DEGREE OR CERTIFICATE",
+   "section_heading": "ETCDD-C - Engineering Technology–CAD - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -125,21 +125,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "produce engineering drawings and basic design of mechanical and civil engineering components and systems",
-    "create drawings using two-dimensional and three-dimensional computer aided design (CAD) software",
-    "incorporate and document industry codes, specifications and standards in the design process."
-   ],
-   "careers": [
-    "CAD designer",
-    "engineering drafter",
-    "drafting technician",
-    "technologist"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -150,49 +141,49 @@
     "courses": [
      {
       "code": "ENGR 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 102",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 109",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGR 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 111",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 112",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -203,47 +194,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog section covers both the AS degree and the certificate ('AS DEGREE OR CERTIFICATE'); the requirements, 21-unit total, outcomes and careers are shared by both awards and recorded here for the certificate.",
-   "The catalog title is 'Engineering Technology - CAD & Design Drafting'; the state program title is 'Engineering Technology - CAD'.",
-   "The catalog prints no units beside individual courses; course units are left null. The 21-unit total comes from 'Students must complete all required core courses for a total of 21 units.'",
-   "ENGR 109 is in the catalog's required list but not in the closed list (catalog addition). Closed-list 'ENGR112' matched to catalog 'ENGR 112'.",
-   "Outcomes are printed as one sentence with three semicolon-separated items; recorded as three outcomes without the lead-in. The PDF ligature in 'speciﬁ cations' was read as 'specifications'.",
-   "Career 'drafting technician or technologist' was split into 'drafting technician' and 'technologist' as printed; reviewer may prefer 'drafting technologist'."
+   "The closed list stores this course as 'ENGR112' (no space) with no units; the catalog prints 'ENGR 112' (3 units). They were treated as the same course, so it is not marked as a catalog addition.",
+   "ENGR 109 (Computer Aided Design AutoCAD I, 3 units) is required by the catalog but is not on the closed list; it is marked as a catalog addition.",
+   "The catalog spells 'Soldworks' in the ENGR 111 and ENGR 112 titles.",
+   "The page has a 'Program Learning Outcomes' tab, but the extracted text prints no outcomes, so outcomes is empty.",
+   "The 21-unit total comes from 'Minimum/Maximum Required Units/Hours for Major 21' and 'TOTAL UNITS REQUIRED 21'. The award type label (16-30 units) is consistent with this."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGR 100": [
-     3.0,
-     3.0
-    ],
-    "ENGR 101": [
-     3.0,
-     3.0
-    ],
-    "ENGR 102": [
-     3.0,
-     3.0
-    ],
-    "ENGR 109": [
-     3.0,
-     3.0
-    ],
-    "ENGR 110": [
-     3.0,
-     3.0
-    ],
-    "ENGR 111": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41009271854
+ "extracted_run": "43415972509"
 }

@@ -104,6 +104,8 @@ def row_requirements(root):
     for f in files:
         with open(f, encoding="utf-8") as fh:
             d = json.load(fh)
+        if d.get("error") or not isinstance(d.get("record"), dict):
+            continue   # a call that failed filed no read (S647): the program is unread, not failing
         recs.setdefault((d.get("college"), str(d.get("control_number"))), d)
     colleges = sorted(set(c for c, _ in recs))
     names = {c: coci_name(c, cols) for c in colleges}

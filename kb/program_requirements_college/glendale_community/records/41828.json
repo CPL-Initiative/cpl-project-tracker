@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Drone Photography",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=111",
+ "source_url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7809,
+  "input_tokens": 6268,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7809,
-    "output_tokens": 1416,
+    "input_tokens": 6268,
+    "output_tokens": 903,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1416,
+  "output_tokens": 903,
   "output_tokens_details": {
-   "thinking_tokens": 495
+   "thinking_tokens": 194
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05956,
- "ms": 12542,
- "seconds": 12.9,
+ "cost_usd": 0.04313,
+ "ms": 10082,
+ "seconds": 10.4,
  "parts": null,
  "error": null,
  "score": {
@@ -83,13 +83,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "DRONE PHOTOGRAPHY",
+   "section_heading": "DRNP-C - Drone Photography - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 16,
@@ -125,55 +125,51 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "create a cohesive photographic project that is conceptually and technically well developed using aerial stills and videos",
-    "capture, edit, and integrate drone photography techniques and workflows into their photographic practice",
-    "legally and safely operate a drone for photography."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 16,
+     "max": 16
     },
     "courses": [
      {
       "code": "AT 120",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PHOTO 111",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 136",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -184,40 +180,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The Drone Photography section sits under the heading 'PHOTOGRAPHY CERTIFICATE NON-DEGREE' and is marked '**Financial Aid Ineligible'. The requested award is a Certificate of Achievement, so a reviewer should confirm the award type.",
-   "The catalog prints no units beside the individual courses, so every course's units are null. The stated program total is 16 units.",
-   "The catalog prints the outcomes as one run-on sentence with no separators between items. I split it into three outcomes at the apparent boundaries ('...aerial stills and videos,' / '...photographic practice' / 'legally and safely...'). The text shows the first boundary only as a comma and the second with no separator at all, so the split should be checked.",
-   "Outcome text was normalized from PDF extraction: line-break hyphens were removed ('techni-cally' became 'technically') and ligature spacing was fixed ('workﬂ ows' became 'workflows').",
-   "The closed list prints 'PHOTO130' without a space. It matches 'PHOTO 130' in the catalog, so that course is not marked as a catalog addition.",
-   "PHOTO 100 is required in the catalog but is not on the closed list, so it is marked catalog_addition true.",
-   "The description mentions 'practicing photographers' as the program's audience, not as a career outcome, so careers is empty."
+   "PHOTO 130 is matched to the closed-list entry 'PHOTO130' (no space). The closed list titles it 'Digital Photography II'; the catalog titles it 'Photoshop and Lightroom for Photographers'. A reviewer should confirm they are the same course.",
+   "PHOTO 100 (Digital Photography I, 3 units) is not in the closed list, so it is recorded as a catalog addition.",
+   "The page shows a 'Program Learning Outcomes' tab, but the extracted text contains no outcomes, so outcomes are left empty.",
+   "The 'TOTAL UNITS REQUIRED 16' line is recorded as the block's stated total. The page also prints Minimum and Maximum Required Units/Hours for Major as 16, recorded as total_units.",
+   "No careers are named in the extracted text."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "AT 120": [
-     5.0,
-     5.0
-    ],
-    "PHOTO 100": [
-     3.0,
-     3.0
-    ],
-    "PHOTO 111": [
-     3.0,
-     3.0
-    ],
-    "PHOTO 136": [
-     2.0,
-     2.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41009271854
+ "extracted_run": "43415972509"
 }

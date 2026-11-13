@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Management",
  "award": "A.S. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=81",
+ "source_url": "https://catalog.glendale.edu/programs/MGMT-AS/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8087,
+  "input_tokens": 6621,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8087,
-    "output_tokens": 2058,
+    "input_tokens": 6621,
+    "output_tokens": 1140,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2058,
+  "output_tokens": 1140,
   "output_tokens_details": {
-   "thinking_tokens": 696
+   "thinking_tokens": 250
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07351,
- "ms": 16247,
- "seconds": 17.2,
+ "cost_usd": 0.04928,
+ "ms": 10088,
+ "seconds": 10.7,
  "parts": null,
  "error": null,
  "score": {
@@ -62,53 +62,66 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     26.0,
     28.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
-   ]
+    "the blocks and general education sum to 26.0-28.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     28.0
+    ],
+    "stated": [
+     26.0,
+     28.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 1,
-   "not_verbatim": [
-    "entry- to mid-level management roles"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "MANAGEMENT AS DEGREE",
+   "section_heading": "MGMT-AS - Management - Associate of Science",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 26,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -117,171 +130,111 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Describe the key functions of management (planning, organizing, leading, and controlling) and implement them in real-world business scenarios to improve organizational efficiency.",
-    "Practice effective listening strategies in team settings, contributing to better collaboration and conflict resolution.",
-    "Plan and present structured oral presentations, adapting to diverse audience needs and evaluating their effectiveness in a business environment."
-   ],
-   "careers": [
-    "entry- to mid-level management roles"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 26,
+     "max": 28
     },
     "courses": [
      {
       "code": "ACCTG 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 141",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following: (Writing)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
+     },
      {
       "code": "BUSAD 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "CABOT 105",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
-     {
-      "code": "CABOT 105",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following: (Business)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
      {
       "code": "BUSAD 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "BUSAD 144",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
-     {
-      "code": "BUSAD 144",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following: (Speaking)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
      {
       "code": "BUSAD 152",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "COMM C1000",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one of the following: (Computer)",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "CABOT 260",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "COMM C1000",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CS/IS 101",
-      "units": 5.0,
-      "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "CS/IS 101",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -290,26 +243,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside any course and no total for the major or the degree, so all units fields are null.",
-   "The catalog prints ACCTG 101; the closed list stores it as ACCTG101, treated as the same course.",
-   "The PDF text has broken ligatures and spacing (e.g. 'eﬃ  ciency .', 'sett ings', 'bett er', 'conﬂ ict'); the outcomes were transcribed with these normalized ('efficiency.', 'settings', 'better', 'conflict'). A reviewer should check them against the printed page.",
-   "The outcome lead-in 'Upon completion of this program students will be able to' was left out; the first outcome begins with a capital 'Describe' as printed.",
-   "The career entry 'entry- to mid-level management roles' comes from the program description ('prepares students for entry- to mid-level management roles')."
+   "Closed list stores ACCTG 101 as 'ACCTG101' (no space); treated as the same course as the catalog's 'ACCTG 101', so catalog_addition is false.",
+   "degree_total 60 is taken from the page's 'Minimum Required Units for Degree (with GE) 60' line for this award; the page names no GE pattern and prints no GE units.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but the extracted text contains no outcomes; outcomes left empty.",
+   "No careers are named in the extracted text (Overview tab content not included)."
   ]
  },
- "extracted_run": 41049220135,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "COMM C1000": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

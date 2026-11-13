@@ -708,6 +708,18 @@ def print_page(n: int, rec: dict, pattern: re.Pattern, plan: dict | None = None)
         print("… " + e + " …")
 
 
+def plan_delay(plan: dict, env: str | None) -> int:
+    """Milliseconds between loads: the workflow's CENSUS_DELAY_MS (4 s), or the plan's own "delay_ms" where
+    that is longer, never shorter. Glendale's Coursedog catalog answers a bot check under load and its reads
+    go at 12 s (S646); a plan of its tabs says so (S647)."""
+    base = int(env or "4000")
+    try:
+        own = int(plan.get("delay_ms") or 0)
+    except (TypeError, ValueError):
+        own = 0
+    return max(base, own)
+
+
 def main(argv: list[str] | None = None) -> int:
     argv = sys.argv[1:] if argv is None else argv
     if not argv:
@@ -716,7 +728,7 @@ def main(argv: list[str] | None = None) -> int:
     plan = json.load(open(argv[0]))
     pattern = keyword_re(plan["keywords"])
     from _program_requirements_pilot import open_reader
-    delay = int(os.environ.get("CENSUS_DELAY_MS", "4000"))
+    delay = plan_delay(plan, os.environ.get("CENSUS_DELAY_MS"))
     pw, browser, reader = open_reader(delay)
     procedure = load_procedure(plan.get("college") or "")
     skip = skipped_hosts(procedure)

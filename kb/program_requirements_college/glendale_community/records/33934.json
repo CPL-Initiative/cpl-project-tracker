@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Medical Coding Specialist",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=83",
+ "source_url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8137,
+  "input_tokens": 6626,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8137,
-    "output_tokens": 1813,
+    "input_tokens": 6626,
+    "output_tokens": 1043,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1813,
+  "output_tokens": 1043,
   "output_tokens_details": {
-   "thinking_tokens": 773
+   "thinking_tokens": 208
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06881,
- "ms": 15349,
- "seconds": 15.7,
+ "cost_usd": 0.04736,
+ "ms": 9975,
+ "seconds": 10.0,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MEDICAL CODING ASSISTANT",
+   "section_heading": "MCS-C - Medical Coding Specialist - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 31,
@@ -121,83 +121,79 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Upon completion of this program students gain competencies in the application of biomedical knowledge and legal, ethical, and medical standards, the communication and analysis of statistical data and in planning and implementation of clinical informational and data systems."
-   ],
-   "careers": [
-    "medical coder"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 31,
+     "max": 31
     },
     "courses": [
      {
       "code": "MOA 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 182",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 183",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 184",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 188",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 193",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 194",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 195",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 197",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -215,58 +211,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog section is titled 'MEDICAL CODING ASSISTANT', not 'Medical Coding Specialist'; its required courses match the closed list exactly, so it was read as this award's section. Reviewer should confirm the title difference.",
-   "The section says 'This degree or certificate'; requirements appear shared by the degree and the certificate.",
-   "Total of 31 units comes from 'Students will complete 31 required units.' Units are printed only for MOA 50 (3 units); other courses have no units printed in the text.",
-   "MOA 50 is printed as 3 units in the catalog, while the state file stores 1 unit (likely a variable-unit internship).",
-   "Under the Program Learning Outcomes heading, the text continues with descriptive sentences ('Coders ensure that valid codes are applied...', 'They facilitate reimbursement...', 'Students will be able to prepare for national AAPC (American Academy of Professional Coders) exam once they complete and receive this certificate.'); only the first competency sentence was recorded as the outcome. Reviewer may consider whether the AAPC exam sentence is also an outcome."
+   "MOA 50 (MOA Internship) is printed with 3 units in the catalog, while the state Program Course File stores 1 unit; recorded as printed (3). The printed course units sum to 31, matching the stated total.",
+   "The 'TOTAL UNITS REQUIRED 31' line of the required-courses table was recorded as both the block's stated total and the certificate's total_units (Minimum/Maximum Required Units for Major 31).",
+   "The text excerpt includes only the Completion Requirements tab; no program learning outcomes or careers are printed in it (the Overview tab was not provided)."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MOA 180": [
-     3.0,
-     3.0
-    ],
-    "MOA 182": [
-     3.0,
-     3.0
-    ],
-    "MOA 183": [
-     4.0,
-     4.0
-    ],
-    "MOA 184": [
-     3.0,
-     3.0
-    ],
-    "MOA 188": [
-     3.0,
-     3.0
-    ],
-    "MOA 193": [
-     3.0,
-     3.0
-    ],
-    "MOA 194": [
-     3.0,
-     3.0
-    ],
-    "MOA 195": [
-     3.0,
-     3.0
-    ],
-    "MOA 197": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

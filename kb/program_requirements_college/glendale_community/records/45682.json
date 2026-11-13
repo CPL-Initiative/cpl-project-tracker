@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "International Business I",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=68",
+ "source_url": "https://catalog.glendale.edu/programs/IBI-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7103,
+  "input_tokens": 6174,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7103,
-    "output_tokens": 841,
+    "input_tokens": 6174,
+    "output_tokens": 434,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,33 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 841,
+  "output_tokens": 434,
   "output_tokens_details": {
-   "thinking_tokens": 350
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.04523,
- "ms": 9532,
- "seconds": 10.0,
+ "cost_usd": 0.03338,
+ "ms": 4371,
+ "seconds": 4.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "BUSAD101",
-    "BUSAD170",
-    "BUSAD178"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -65,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    9.0,
+    9.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    9.0,
+    9.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -99,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "INTERNATIONAL BUSINESS (degree section; no International Business I certificate section in the text)",
+   "section_heading": "IBI-C - International Business I - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 9,
+    "max": 9
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,27 +124,47 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "BUSAD 101",
-    "why": "named only in the International Business degree section; certificate section not in text"
-   },
-   {
-    "code": "BUSAD 170",
-    "why": "named only in the International Business degree section; certificate section not in text"
-   },
-   {
-    "code": "BUSAD 178",
-    "why": "named only in the International Business degree section; certificate section not in text"
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "BUSAD 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 178",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The excerpt (page 68) prints the International Business degree program, not the International Business I Certificate of Achievement (8 to fewer than 16 units). The degree's requirements are ACCTG 101; BUSAD 101, 170; one writing course; one computer course; and three courses (9 units) from BUSAD 120, 158, 162, 178. Its total is clearly larger than the certificate's range, so these requirements were not recorded as the certificate's.",
-   "The certificate's section is probably on another catalog page; a reviewer should locate it.",
-   "The International Business degree prints Program Learning Outcomes, but they were not recorded because it is unclear whether the certificate shares them."
+   "The page shows a 'Program Learning Outcomes' tab, but the extracted text (the Completion Requirements tab) prints no outcomes. Outcomes are left empty.",
+   "The Overview tab text is not included, so no careers were captured."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "43415972509"
 }

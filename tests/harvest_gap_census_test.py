@@ -167,6 +167,14 @@ try:
           "the census counts an unstated row passing as the tab does, and not one whose coverage fails")
 
     # With no live read: the committed files decide, and loaded state is unknown.
+    # Sam's ruling (relayed by COBIx on #3111, 2026-11-12; sam-glendale-unpark-2026-11-12): Glendale is read again,
+    # so the default list parks it no longer, and its programs take the causes their own records carry.
+    check("Glendale Community College" not in G.PARKED, "Glendale is unparked (Sam, 2026-11-12)")
+    r3 = G.census(universe + [{"college": "Glendale Community College", "control_number": "GL1"}],
+                  committed, live, registry, closed_now)
+    gl1 = next((p for p in r3["programs"] if p["control_number"] == "GL1"), {})
+    check(gl1.get("cause") == "college_never_read" and gl1.get("lever") == "first_read",
+          "on the default list a Glendale program takes its own cause, never the parked one")
     r2 = G.census(G.universe_from_committed(committed), committed, None, {}, None, parked={})
     by2 = {p["control_number"]: p for p in r2["programs"]}
     check(by2["A2"]["cause"] == "unknown_without_live" and by2["A2"]["sub"] == "coverage_fails",

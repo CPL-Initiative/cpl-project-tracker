@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Social Justice: Gender Studies",
  "award": "A.A- T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+ "source_url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10901,
+  "input_tokens": 7302,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10901,
-    "output_tokens": 3145,
+    "input_tokens": 7302,
+    "output_tokens": 2524,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,48 +30,34 @@
     "model": null
    }
   ],
-  "output_tokens": 3145,
+  "output_tokens": 2524,
   "output_tokens_details": {
-   "thinking_tokens": 1199
+   "thinking_tokens": 781
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.1065,
- "ms": 23870,
- "seconds": 24.3,
+ "cost_usd": 0.07969,
+ "ms": 20220,
+ "seconds": 20.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 17,
+   "placed": 26,
    "listed": 26,
-   "share": 0.654,
-   "missing": [
-    "COMM115",
-    "ECON127",
-    "HIST111H",
-    "PSYC131",
-    "SOC108",
-    "SOC200",
-    "STATC1000",
-    "STATC1000E",
-    "STATC1000H"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "MATH136"
-   ],
-   "flagged": [
-    "MATH136"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -79,27 +65,48 @@
    "status": "equal",
    "computed": [
     18.0,
-    20.0
+    20.5
    ],
    "stated": [
     18.0,
     20.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "meets": true,
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     20.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     39.5,
+     42.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -108,16 +115,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AA-T — SOCIAL JUSTICE: GENDER STUDIES",
+   "section_heading": "SJGS-AAT - Social Justice: Gender Studies - Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -130,22 +134,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "students will have the knowledge and skills to critically examine individual experiences, social institutions, and historical perspectives through the lens of gender and sexuality; to analyze how these formations intersect with other socially salient aspects of identity including but not limited to race, class, and nation; and articulate connections between global, regional, and local issues pertinent to the study of gender and sexuality."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -156,21 +158,21 @@
     "courses": [
      {
       "code": "ETH S 121",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 104",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -178,7 +180,7 @@
     ]
    },
    {
-    "name": "Select three courses from at least two of the following areas (Areas 1-5)",
+    "name": "CHOOSE THREE COURSES FROM AT LEAST TWO AREAS",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -189,105 +191,155 @@
     "courses": [
      {
       "code": "HIST 111",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "HIST 111H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      },
      {
       "code": "HIST 115",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARTH 118",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 111",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 114",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 115",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYC H105",
-      "units": 3.0,
+      "code": "PSYC 105",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
       "code": "PSYC 113",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 200",
-      "units": 4.0,
+      "code": "PSYC 131",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      },
      {
-      "code": "MATH 136",
-      "units": 4.0,
+      "code": "SOC 108",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
+     },
+     {
+      "code": "PSYC 200",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SOC 200",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 127",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      },
      {
       "code": "ETH S 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 123",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 132",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -296,74 +348,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "COMM 115",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON 127",
-    "why": "named only in other programs' sections (Psychology, Social Work)"
-   },
-   {
-    "code": "HIST 111H",
-    "why": "not in the text; only HIST 111 printed"
-   },
-   {
-    "code": "PSYC 105",
-    "why": "catalog prints 'PSYC H105' in Area 3, likely this course; recorded as printed"
-   },
-   {
-    "code": "PSYC 131",
-    "why": "not in this section (named only in Psychology section as PSYCH 131)"
-   },
-   {
-    "code": "PSYC 200",
-    "why": "catalog prints 'PSYCH 200' in Area 4, likely this course; recorded as printed"
-   },
-   {
-    "code": "SOC 108",
-    "why": "not in the text"
-   },
-   {
-    "code": "SOC 200",
-    "why": "named only in the Sociology AA-T section"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in other programs' sections; this section lists MATH 136 in Area 4"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "named only in other programs' sections"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "named only in other programs' sections"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "Area choice: select three courses from at least two of Areas 1-5; only one course from Area 4 (PSYCH 200; MATH 136) may be used. Areas: 1 History or Government (HIST 111, 115); 2 Arts and Humanities (ARTH 118, ENGL 111); 3 Social Science (ANTHR 114, ETH S 110, PSYC H105, PSYC 113); 4 Quantitative Reasoning and Research Methods (PSYCH 200, MATH 136); 5 Major Preparation (ETH S 120, 123, 125, 132, HLTH 106). Recorded as one choose_courses block.",
-   "No units printed beside any course.",
-   "'PSYC H105' is likely a typo for PSYC 105 (Human Sexuality) and 'PSYCH 200' likely PSYC 200; both recorded as printed with catalog_addition true. MATH 136 is not in the closed list (likely replaced by STAT C1000).",
-   "Required Core printed as 'ETH S 121; SOC 104: SOC S 130' (colon read as separator).",
-   "Total printed as 'Required units for major: 18 - 20 units*'; asterisk footnote not in the text. No GE pattern or degree total printed in this section.",
-   "The program learning outcome is printed as one sentence; recorded without the lead-in 'Upon completion of this program,'."
+   "The three-course choice must come from at least two of five areas: Area 1 History or Government (HIST 111/111H, HIST 115); Area 2 Arts and Humanities (ARTH 118, ENGL 111); Area 3 Social Science (ANTHR 114, COMM 115, ETH S 110, PSYC 105, PSYC 113, PSYC 131, SOC 108); Area 4 Quantitative Reasoning and Research Methods (PSYC 200, SOC 200, STAT C1000/C1000E/C1000H or ECON 127); Area 5 Major Preparation (ETH S 120, ETH S 123, ETH S 125, ETH S 132, HLTH 106). Recorded as one choose_courses block; the two-area constraint is not encoded.",
+   "The catalog prints a single '4' for the STAT C1000/C1000E/C1000H group; STAT C1000E is recorded at 4 as printed, though the state file lists it at 5 units.",
+   "degree_total 60 taken from 'Minimum Required Units for Degree (with GE) 60' printed on this award's page; no GE pattern or GE units are named.",
+   "The page shows a 'Program Learning Outcomes' tab but the text prints no outcomes; outcomes left empty.",
+   "No careers named in the text."
   ]
  },
- "extracted_run": 41049220135,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MATH 136": [
-     4.0,
-     4.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41040709338
+ "extracted_run": "43415972509"
 }

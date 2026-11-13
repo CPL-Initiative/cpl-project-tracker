@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Theatre Arts: Acting",
  "award": "A.A. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+ "source_url": "https://catalog.glendale.edu/programs/TA%3AACT-AA/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8674,
+  "input_tokens": 7360,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8674,
-    "output_tokens": 3316,
+    "input_tokens": 7360,
+    "output_tokens": 2335,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,94 +30,83 @@
     "model": null
    }
   ],
-  "output_tokens": 3316,
+  "output_tokens": 2335,
   "output_tokens_details": {
-   "thinking_tokens": 1169
+   "thinking_tokens": 545
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10102,
- "ms": 25926,
- "seconds": 26.4,
+ "cost_usd": 0.07614,
+ "ms": 18447,
+ "seconds": 18.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 21,
+   "placed": 24,
    "listed": 24,
-   "share": 0.875,
-   "missing": [
-    "THTR110",
-    "THTR112",
-    "THTR113"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 12,
+   "count": 1,
    "codes": [
-    "SPCH101",
-    "SPCH105",
-    "SPCH106",
-    "TART104",
-    "TART123",
-    "TART129",
-    "TART171",
-    "TART180",
-    "TART181",
-    "TART182",
-    "TART183",
-    "TART184"
+    "THTR104"
    ],
    "flagged": [
-    "SPCH101",
-    "SPCH105",
-    "SPCH106",
-    "TART104",
-    "TART123",
-    "TART129",
-    "TART171",
-    "TART180",
-    "TART181",
-    "TART182",
-    "TART183",
-    "TART184"
+    "THTR104"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    13.0,
-    13.0
+    25.0,
+    25.0
    ],
    "stated": [
-    28.0,
-    38.5
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+    "the blocks and general education sum to 25.0-25.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     25.0,
+     25.0
+    ],
+    "stated": [
+     25.0,
+     25.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -126,20 +115,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "THEATRE ARTS AA DEGREE — Option 2: Acting",
+   "section_heading": "TA:ACT-AA - Theatre Arts: Acting - Associate of Arts",
    "measure": "units",
    "total_units": {
-    "min": 28,
-    "max": 38.5
+    "min": 25,
+    "max": 25
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -148,22 +134,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "apply skills and knowledge of theatre in preparation for transferability or vocation; analyze a play from script to performance; identify theatre terms and occupations; and identify theatre as a collaborative art form."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -173,53 +157,46 @@
     },
     "courses": [
      {
-      "code": "T ART 101",
-      "units": 3.0,
+      "code": "THTR 101",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 103",
-      "units": 3.0,
+      "code": "THTR 103",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 107",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "T ART 109",
-      "units": 2.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "T ART 111",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "T ART 129",
-      "units": null,
+      "code": "THTR 104",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "THTR 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Two units from",
+    "name": "MOVEMENT AND DEVISED WORKS - CHOOSE THREE UNITS FROM THE FOLLOWING",
     "rule": "choose_units",
-    "minimum": 2,
+    "minimum": 3,
     "option_group": null,
     "stated": {
      "min": null,
@@ -246,11 +223,25 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "THTR 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 113",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Four units from",
+    "name": "THEATRE PERFORMANCE - CHOOSE FOUR UNITS FORM THE FOLLOWING",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -260,105 +251,44 @@
     },
     "courses": [
      {
-      "code": "T ART 123",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 171",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 180",
-      "units": 2.0,
-      "units_max": 4.0,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 181",
-      "units": 2.0,
-      "units_max": 4.0,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 182",
-      "units": 2.0,
-      "units_max": 4.0,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 183",
-      "units": 2.0,
-      "units_max": 4.0,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 184",
-      "units": 2.0,
-      "units_max": 4.0,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Four units from",
-    "rule": "choose_units",
-    "minimum": 4,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "T ART 160",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 160",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 161",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 161",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 162",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 162",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 163",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 163",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 164",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 164",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Three units from",
+    "name": "CHOOSE THREE UNITS FROM THE FOLLOWING",
     "rule": "choose_units",
     "minimum": 3,
     "option_group": null,
@@ -369,84 +299,70 @@
     "courses": [
      {
       "code": "ENGL 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HUMAN 117",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 135",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 170",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "SPCH 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 105",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 106",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 102",
-      "units": 3.0,
+      "code": "THTR 102",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 104",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "T ART 106",
-      "units": 3.0,
+      "code": "THTR 106",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 140",
-      "units": 3.0,
+      "code": "THTR 109",
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 155",
-      "units": 3.0,
+      "code": "THTR 110",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 155",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -455,41 +371,15 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "THTR 110",
-    "why": "named only in Option 1: General (as T ART 110), not in the Acting option"
-   },
-   {
-    "code": "THTR 112",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR 113",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog prints theatre courses with subject 'T ART'; the closed list uses 'THTR'. T ART codes with the same number as a closed-list THTR course were treated as matching (catalog_addition false); T ART 104, 123, 129, 171, 180-184 have no THTR counterpart in the closed list and are marked as catalog additions.",
-   "The catalog prints no units beside individual courses, so all course units are null.",
-   "Theatre Arts AA offers Option 1: General and Option 2: Acting; only Option 2: Acting is recorded here, so option_group is null.",
-   "The program learning outcomes are printed as a single sentence with semicolon-separated clauses; recorded as one entry as printed. The same outcomes text also appears under Option 1: General.",
-   "Total 28-38.5 units is printed as 'a minimum of 28-38.5 units'."
+   "THTR 109 and THTR 110 are printed as a single paired option ('THTR 109 & THTR 110', 2 & 1 units, 3 total) in the last choose-three-units block; recorded as two entries, but they appear meant to be taken together.",
+   "THTR 104 (Acting Fundamentals II) is required but not in the closed list; recorded as catalog addition.",
+   "THTR 160-164 printed with 2-4 units each (repeatable/variable); closed list stores 2.",
+   "Degree total 60 taken from 'Minimum Required Units for Degree (with GE) 60' printed on this award's page; no GE pattern or GE units printed.",
+   "Page shows a 'Program Learning Outcomes' tab heading but the extracted text contains no outcomes; outcomes left empty.",
+   "Third block heading reads 'CHOOSE FOUR UNITS FORM THE FOLLOWING' (typo for 'from') as printed."
   ]
  },
- "extracted_run": 41049220135,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "SPCH 101": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

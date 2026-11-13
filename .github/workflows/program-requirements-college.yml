@@ -86,7 +86,11 @@ on:
         required: false
         default: ""
       route:
-        description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449)"
+        description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449); 'challenged' re-reads only the codes the last filed capture recorded as challenged (or missed), 12 s between loads, stopping at the first challenge, filed as capture_reread.json (extract 0); 'slow' reads the whole site at that pace, stopping at the first challenge, and a read so stopped is filed and never extracted (S646)"
+        required: false
+        default: ""
+      sources_from:
+        description: "read: an earlier run id whose artifact (program-requirements-<run>) holds this college's filed capture, or the capture-only read filed as its capture_preview.json (S648). Its pages are staged in place of a capture: no page is loaded and no site is contacted. Refused unless the artifact is the filed capture's own (college, catalog year, page counts, each program's text). Extraction then runs under the $40 estimate gate and the $40 hard stop (S647)"
         required: false
         default: ""
       display_college:
@@ -122,12 +126,15 @@ jobs:
     timeout-minutes: 360
     permissions:
       contents: write
+      actions: read     # sources_from downloads an earlier run's artifact
     env:
       # A push carries no college input. Until S402 it fell back to Cerritos, so a
       # [read] push on Los Medanos's branch read and filed Cerritos (run 38997845641),
       # and an [extract] push would have paid for Cerritos. A run must name its college.
       COLLEGE: ${{ github.event.inputs.college }}
       LIMIT: ${{ github.event.inputs.limit || '0' }}
+      SOURCES_FROM: ${{ github.event.inputs.sources_from || '' }}
+      ROUTE: ${{ github.event.inputs.route || '' }}
       # A push extracts only when its message STARTS with [extract]: the first
       # run's commit merely described the marker, and contains() spent $15.80.
       EXTRACT: ${{ github.event.inputs.extract == '1' || (github.event_name == 'push' && startsWith(github.event.head_commit.message, '[extract]')) }}
@@ -138,17 +145,51 @@ jobs:
             echo "::error::No college named: a push carries no college input. Dispatch with college=<the registry's name> instead."
             exit 1
           fi
+          if [ -n "$SOURCES_FROM" ]; then
+            if ! [[ "$SOURCES_FROM" =~ ^[0-9]+$ ]]; then echo "::error::sources_from must be a run id"; exit 1; fi
+            if [ -n "$ROUTE" ] || [ "$LIMIT" != "0" ]; then
+              echo "::error::sources_from stages a whole earlier capture: leave route empty and limit 0"; exit 1
+            fi
+          fi
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
       - name: Install Playwright + Chromium, pypdf, pdfminer
+        if: env.SOURCES_FROM == ''
         run: |
           pip install --quiet playwright pypdf pdfminer.six
           bash scripts/install_browser.sh
       - name: Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)
+        if: env.SOURCES_FROM == ''
         run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
+      # sources_from: the earlier run's out/ folder in place of a capture. A missing or expired artifact fails
+      # this step, and the run stops here.
+      - name: Download the earlier run's pages
+        if: env.SOURCES_FROM != ''
+        uses: actions/download-artifact@v7
+        with:
+          name: program-requirements-${{ github.event.inputs.sources_from }}
+          path: staged
+          run-id: ${{ github.event.inputs.sources_from }}
+          repository: ${{ github.repository }}
+          github-token: ${{ github.token }}
+      - name: Stage them, refused unless they are the filed capture's own
+        if: env.SOURCES_FROM != ''
+        run: >-
+          python3 kb/_program_requirements_college.py stage --college "$COLLEGE" --from staged --out out
+          --sources-run "$SOURCES_FROM"
+      - name: Price the extraction ($40 a college a run, Sam's standing go)
+        id: price
+        if: env.SOURCES_FROM != ''
+        env:
+          ATTEMPT: ${{ github.run_attempt }}
+          EXTRACT_ASKED: ${{ env.EXTRACT == 'true' && '1' || '0' }}
+        run: >-
+          python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT_ASKED"
+          --limit-usd 40 --attempt "$ATTEMPT" --write out/price_row.json
       - name: Capture
+        if: env.SOURCES_FROM == ''
         env:
           CENSUS_DELAY_MS: '4000'
           CAPTURE_ROUTE: ${{ github.event.inputs.route || '' }}
@@ -157,11 +198,16 @@ jobs:
           FORCE: ${{ github.event.inputs.force || '' }}
         run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit "$LIMIT"
       - name: Extract and score
-        if: env.EXTRACT == 'true'
+        if: env.EXTRACT == 'true' && (env.SOURCES_FROM == '' || steps.price.outputs.go == 'true')
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
           FORCE: ${{ github.event.inputs.force || '' }}
-        run: python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force "$FORCE"
+          # The hard stop on a staged read: the run's actual cost is summed as calls come back, and at $40 no
+          # further program is sent.
+          CEILING: ${{ github.event.inputs.sources_from != '' && '40' || '' }}
+        run: >-
+          python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6
+          --force "$FORCE" --ceiling-usd "$CEILING"
       - name: Reconcile the filed records with the fresh pages (no model call)
         if: github.event.inputs.step == 'reconcile' && env.EXTRACT != 'true'
         run: python3 kb/_program_requirements_college.py reconcile --college "$COLLEGE" --out out
@@ -185,6 +231,12 @@ jobs:
           name: program-requirements-${{ github.run_id }}
           path: out
           retention-days: 90
+      # Last, after the capture and the records it kept are filed and committed: a run whose extraction calls
+      # more than half failed, or all failed, ends red (d-extract-failure-files-nothing-s647; run 43384599013
+      # answered 401 on every call and read green).
+      - name: Fail a run whose extraction calls failed
+        if: env.EXTRACT == 'true'
+        run: python3 kb/_program_requirements_college.py check-extract --college "$COLLEGE" --out out
 
   load:
     if: >-

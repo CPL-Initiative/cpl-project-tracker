@@ -2,83 +2,958 @@
  "college": "Glendale Community College",
  "programs": 317,
  "with_closed_list": 267,
- "found": 260,
- "extracted": 260,
+ "found": 242,
+ "extracted": 242,
  "errors": 0,
- "passed_machine_checks": 115,
+ "passed_machine_checks": 181,
  "failed": {
-  "coverage": 35,
-  "invented": 2,
-  "arithmetic": 145,
+  "coverage": 4,
+  "invented": 4,
+  "arithmetic": 60,
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.13,
- "cost_per_program": 0.0774,
+ "cost_usd_run": 5.12,
+ "cost_usd_filed": 16.04,
+ "cost_per_program": 0.0663,
+ "extract_calls": 73,
+ "extract_failed": [],
  "not_found": [
   {
    "control_number": "11147",
    "title": "Bookkeeping",
    "award": "A.S. Degree",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
-    "coverage": 0.292
-   }
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "11155",
+   "title": "Mass Communications",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MC-AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 3,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1940,
+     "content": 321776,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "11163",
+   "title": "Computer Support Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.75,
+    "body": 0.75,
+    "content": 0.0,
+    "net": 3,
+    "listed": 4,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1362,
+     "content": 321379,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "12571",
+   "title": "Computerized Accounting Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "19269",
+   "title": "Basic Medical Billing and Coding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.333,
+    "body": 0.333,
+    "content": 0.0,
+    "net": 1,
+    "listed": 3,
+    "why": "coarse net: the page's code tokens name 1 of 3 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1440,
+     "content": 321454,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "19546",
+   "title": "Medical Front Office",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
    "control_number": "19556",
    "title": "Bookkeeping",
    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=96",
-    "coverage": 0.333
-   }
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
   },
   {
-   "control_number": "24274",
-   "title": "High School Equivalency (HSE)",
-   "award": "Noncredit program",
+   "control_number": "19577",
+   "title": "Child Development: Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
-    "coverage": 0.2
-   }
+    "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.643,
+    "body": 0.643,
+    "content": 0.0,
+    "net": 9,
+    "listed": 14,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1546,
+     "content": 321547,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "21302",
+   "title": "Cinematography and Editing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "21303",
+   "title": "Mass Communications",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.143,
+    "body": 0.143,
+    "content": 0.0,
+    "net": 3,
+    "listed": 21,
+    "why": "coarse net: the page's code tokens name 3 of 21 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1913,
+     "content": 321749,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "24297",
    "title": "Introduction to Hospitality and Tourism",
    "award": null,
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 0.222
-   }
+    "why": "no page read names the program"
+   },
+   "status": "Active"
   },
   {
    "control_number": "24322",
    "title": "Medical Front Office Clerk",
    "award": null,
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=270",
-    "coverage": 0.333
-   }
+    "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 0 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1121,
+     "content": 321178,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24327",
+   "title": "General Office Clerk III",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCAC3/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.286,
+    "body": 0.286,
+    "content": 0.0,
+    "net": 2,
+    "listed": 7,
+    "why": "coarse net: the page's code tokens name 2 of 7 listed courses",
+    "error": null,
+    "chars": {
+     "body": 992,
+     "content": 320953,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "24377",
+   "title": "General Office Clerk II",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.167,
+    "body": 0.167,
+    "content": 0.0,
+    "net": 1,
+    "listed": 6,
+    "why": "coarse net: the page's code tokens name 1 of 6 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1068,
+     "content": 321015,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
   },
   {
    "control_number": "24432",
    "title": "Certificate of Secondary Education Completion",
    "award": null,
    "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=274",
-    "coverage": 0.423
+    "url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 26,
+    "why": "coarse net: the page's code tokens name 0 of 26 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1336,
+     "content": 321402,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "30032",
+   "title": "Dental Front Office / Billing and Coding",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "30561",
+   "title": "Insurance Specialist: Life and Health Associate's Degree Major",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 0.769,
+    "body": 0.769,
+    "content": 0.0,
+    "net": 10,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1489,
+     "content": 321464,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36480",
+   "title": "Medical Front Office",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36596",
+   "title": "IT Technician I: Computer Retail Sales and Support",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 0.5
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 6,
+    "listed": 6,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1420,
+     "content": 321445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active - Teachout Only"
+  },
+  {
+   "control_number": "36599",
+   "title": "IT Technician II: Help Desk User Support",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 10,
+    "listed": 10,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1420,
+     "content": 321445,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "36601",
+   "title": "IT Technician III",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 1.0,
+    "body": 1.0,
+    "content": 0.0,
+    "net": 13,
+    "listed": 13,
+    "why": "a candidate, lost to a program the page names more fully",
+    "error": null,
+    "chars": {
+     "body": 1526,
+     "content": 321504,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "38973",
+   "title": "Customer Service",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCCS/completion-requirements-zaZdl",
+    "label": {
+     "award": 0,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 4,
+    "why": "coarse net: the page's code tokens name 0 of 4 listed courses",
+    "error": null,
+    "chars": {
+     "body": 939,
+     "content": 320984,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40846",
+   "title": "Administrative Medical Assisting",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCAMA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 1163,
+     "content": 321114,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  },
+  {
+   "control_number": "40847",
+   "title": "Certified Nursing Aide",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://catalog.glendale.edu/programs/NCCNA/completion-requirements-zaZdl",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 1,
+    "why": "coarse net: the page's code tokens name 0 of 1 listed courses",
+    "error": null,
+    "chars": {
+     "body": 958,
+     "content": 321083,
+     "tabs": 0
+    },
+    "tab_panels": []
+   },
+   "status": "Active"
+  }
+ ],
+ "run": "43497305929",
+ "held_wrong_tab": [
+  {
+   "control_number": "12571",
+   "title": "Computerized Accounting Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "tab": "ACCTG-C",
+   "tab_name": "Accounting - Certificate of Achievement",
+   "names": [
+    "02550",
+    "19557"
+   ],
+   "read_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 3,
+     "listed": 4,
+     "share": 0.75,
+     "missing": [
+      "ACCTG121"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "ACCTG101",
+      "BUSAD101"
+     ],
+     "flagged": [
+      "ACCTG101",
+      "BUSAD101"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      16.0,
+      16.0
+     ],
+     "stated": [
+      16.0,
+      16.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "reason": "the tab prints another listed program (tab_names_another)",
+   "filed": true,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 0,
+     "listed": 4,
+     "share": 0.0,
+     "missing": [
+      "ACCTG120",
+      "ACCTG121",
+      "ACCTG130",
+      "ACCTG180"
+     ],
+     "unexplained": [],
+     "none_placed": true,
+     "pass": false
+    },
+    "invented": {
+     "count": 0,
+     "codes": [],
+     "flagged": [],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "incomplete",
+     "computed": [
+      0.0,
+      0.0
+     ],
+     "stated": null,
+     "against": null,
+     "why": [
+      "the record names no total"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": false,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
    }
   },
   {
-   "control_number": "45068",
-   "title": "Cal-GETC",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "near_miss": {
-    "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=50",
-    "coverage": 0.089
+   "control_number": "24432",
+   "title": "Certificate of Secondary Education Completion",
+   "award": null,
+   "tab": "NCHSD",
+   "tab_name": "NCHSD",
+   "names": [
+    "31597"
+   ],
+   "reason": "the tab's own program data names another listed program's control number (tab_control_owner)",
+   "read_score": {
+    "measure": "hours",
+    "coverage": {
+     "placed": 16,
+     "listed": 26,
+     "share": 0.615,
+     "missing": [
+      "ABSE21",
+      "ABSE22",
+      "ABSE27",
+      "ABSE48",
+      "ABSE70",
+      "DSL11",
+      "DSL13",
+      "DSL14",
+      "DSL49",
+      "DSL53"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 21,
+     "codes": [
+      "ABSE110",
+      "ABSE111",
+      "ABSE112",
+      "ABSE113",
+      "ABSE114",
+      "ABSE115",
+      "ABSE116",
+      "ABSE117",
+      "ABSE146",
+      "ABSE147",
+      "ABSE148",
+      "ABSE149",
+      "ABSE150",
+      "ABSE18",
+      "ABSE19",
+      "ABSE28",
+      "ABSE29",
+      "ABSE35",
+      "ABSE36",
+      "ABSE37",
+      "ABSE38"
+     ],
+     "flagged": [
+      "ABSE110",
+      "ABSE111",
+      "ABSE112",
+      "ABSE113",
+      "ABSE114",
+      "ABSE115",
+      "ABSE116",
+      "ABSE117",
+      "ABSE146",
+      "ABSE147",
+      "ABSE148",
+      "ABSE149",
+      "ABSE150",
+      "ABSE18",
+      "ABSE19",
+      "ABSE28",
+      "ABSE29",
+      "ABSE35",
+      "ABSE36",
+      "ABSE37",
+      "ABSE38"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      3200.0,
+      3200.0
+     ],
+     "stated": [
+      3200.0,
+      3200.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "filed": false,
+   "filed_score": null
+  },
+  {
+   "control_number": "37070",
+   "title": "Information Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "tab": "CIS-C",
+   "tab_name": "Computer Information Systems - Certificate of Achievement",
+   "names": [
+    "21305",
+    "37960"
+   ],
+   "read_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 7,
+     "listed": 9,
+     "share": 0.778,
+     "missing": [
+      "BUSAD204",
+      "CSIS185"
+     ],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 15,
+     "codes": [
+      "CS/IS135",
+      "CS/IS151",
+      "CS/IS172",
+      "CS/IS174",
+      "CS/IS186",
+      "CS/IS234",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS260",
+      "CS/IS262",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "flagged": [
+      "CS/IS135",
+      "CS/IS151",
+      "CS/IS172",
+      "CS/IS174",
+      "CS/IS186",
+      "CS/IS234",
+      "CS/IS240",
+      "CS/IS241",
+      "CS/IS242",
+      "CS/IS243",
+      "CS/IS255",
+      "CS/IS260",
+      "CS/IS262",
+      "CS/IS270",
+      "MATH137"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": true,
+     "status": "equal",
+     "computed": [
+      19.0,
+      22.0
+     ],
+     "stated": [
+      19.0,
+      22.0
+     ],
+     "against": "program",
+     "why": []
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 0,
+     "courses": 0,
+     "count": 0,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": true,
+     "pass": true
+    },
+    "careers": {
+     "count": 0,
+     "not_verbatim": [],
+     "pass": true
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": true
+   },
+   "read_run": "43415972509",
+   "reason": "the tab prints another listed program (tab_names_another)",
+   "filed": true,
+   "filed_score": {
+    "measure": "units",
+    "coverage": {
+     "placed": 9,
+     "listed": 9,
+     "share": 1.0,
+     "missing": [],
+     "unexplained": [],
+     "none_placed": false,
+     "pass": true
+    },
+    "invented": {
+     "count": 2,
+     "codes": [
+      "CS/IS180",
+      "CS/IS183"
+     ],
+     "flagged": [
+      "CS/IS180",
+      "CS/IS183"
+     ],
+     "pass": true
+    },
+    "arithmetic": {
+     "pass": false,
+     "status": "unequal",
+     "computed": [
+      21.0,
+      21.0
+     ],
+     "stated": [
+      22.0,
+      22.0
+     ],
+     "against": "program",
+     "why": [
+      "the blocks sum to 21.0-21.0; the catalog states 22.0-22.0"
+     ]
+    },
+    "repeated": {
+     "codes": [],
+     "pass": true
+    },
+    "outcomes": {
+     "program": 3,
+     "courses": 0,
+     "count": 3,
+     "not_verbatim": [],
+     "why": [],
+     "heading_printed": true,
+     "heading_without_outcomes": false,
+     "pass": true
+    },
+    "careers": {
+     "count": 6,
+     "not_verbatim": [
+      "data base management"
+     ],
+     "pass": false
+    },
+    "degree": {
+     "status": "n/a"
+    },
+    "pass": false
    }
   }
- ],
- "run": "41055650373"
+ ]
 }

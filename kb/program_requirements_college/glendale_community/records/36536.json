@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Electrical Engineering",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
+ "source_url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12150,
+  "input_tokens": 6717,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12150,
-    "output_tokens": 1945,
+    "input_tokens": 6717,
+    "output_tokens": 1358,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1945,
+  "output_tokens": 1358,
   "output_tokens_details": {
-   "thinking_tokens": 707
+   "thinking_tokens": 327
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0875,
- "ms": 16032,
- "seconds": 16.6,
+ "cost_usd": 0.05403,
+ "ms": 11858,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -79,13 +79,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ELECTRICAL",
+   "section_heading": "EE-C - Engineering: Electrical Engineering - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 56,
@@ -121,113 +121,107 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "identify, formulate, and solve engineering problems by applying principles of engineering, science, and mathematics",
-    "apply the engineering design process to create engineering solutions that meet specified needs that integrates consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors",
-    "communicate technical information effectively with a range of audiences",
-    "function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet technical objectives",
-    "transfer to a bachelor’s degree program in order to finish preparing for a career in a specific discipline of electrical engineering."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 56,
+     "max": 56
     },
     "courses": [
      {
       "code": "MATH 103E",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 104E",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 105",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "MATH 108",
-      "units": 5.0,
+      "code": "MATH108",
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 125",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 132",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 140",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 152",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 240",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -238,70 +232,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses; course units are null. The section states 'Students must complete all required courses to total 56 units.'",
-   "The closed list writes the code as 'ENGR132' (no space); the catalog prints 'ENGR 132'. Treated as the same course, not a catalog addition.",
-   "Program Learning Outcomes are printed as one semicolon-separated sentence after the lead-in 'Upon completion of this program, students will'; recorded one entry per semicolon-separated clause, with ligatures and line-break hyphens rejoined (e.g., 'specified', 'effectively', 'integrates', 'environment', 'preparing').",
-   "No careers or job titles are named; the description lists electrical engineering topics (power, biomedical, digital electronics, communications, systems engineering), which are not recorded as careers.",
-   "The Civil and Mechanical certificates on the same page list ENGR 240 and other ENGR courses; only the Electrical section was read."
+   "The catalog prints 'MATH108' without a space; recorded as printed and matched to closed-list MATH 108.",
+   "The catalog prints '3ENGR 125'; the leading '3' appears to be a stray carry-over from ENGR 100's units, so the code is recorded as ENGR 125.",
+   "The catalog prints 'ENGR 132' with a space; matched to closed-list 'ENGR132', for which the state file stores no units. The catalog lists it at 4 units.",
+   "Course units sum to 56, matching the printed 'TOTAL UNITS REQUIRED 56' and the minimum/maximum required units of 56.",
+   "A 'Program Learning Outcomes' tab heading appears on the page, but no outcomes are printed in the provided text, so outcomes are left empty.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MATH 103E": [
-     5.0,
-     5.0
-    ],
-    "MATH 104E": [
-     5.0,
-     5.0
-    ],
-    "MATH 105": [
-     5.0,
-     5.0
-    ],
-    "MATH 108": [
-     5.0,
-     5.0
-    ],
-    "PHY 101": [
-     5.0,
-     5.0
-    ],
-    "PHY 102": [
-     5.0,
-     5.0
-    ],
-    "CHEM 101": [
-     5.0,
-     5.0
-    ],
-    "ENGR 100": [
-     3.0,
-     3.0
-    ],
-    "ENGR 125": [
-     4.0,
-     4.0
-    ],
-    "ENGR 140": [
-     3.0,
-     3.0
-    ],
-    "ENGR 152": [
-     3.0,
-     3.0
-    ],
-    "ENGR 240": [
-     4.0,
-     4.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

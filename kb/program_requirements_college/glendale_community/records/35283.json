@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Biology",
  "award": "A.S. T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+ "source_url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9754,
+  "input_tokens": 6553,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9754,
-    "output_tokens": 1903,
+    "input_tokens": 6553,
+    "output_tokens": 1460,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,29 +30,26 @@
     "model": null
    }
   ],
-  "output_tokens": 1903,
+  "output_tokens": 1460,
   "output_tokens_details": {
-   "thinking_tokens": 752
+   "thinking_tokens": 410
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07708,
- "ms": 15952,
- "seconds": 16.3,
+ "cost_usd": 0.05541,
+ "ms": 11612,
+ "seconds": 11.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 11,
    "listed": 11,
-   "share": 0.818,
-   "missing": [
-    "MATH103E+",
-    "MATH103EH"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
@@ -68,49 +65,66 @@
    "status": "equal",
    "computed": [
     32.0,
-    34.0
+    35.0
    ],
    "stated": [
     32.0,
-    34.0
+    35.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     32.0,
+     35.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     25.0,
+     28.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AS-T — BIOLOGY",
+   "section_heading": "BIO AS-T - Biology - Associate in Science for Transfer",
    "measure": "units",
    "total_units": {
     "min": 32,
-    "max": 34
+    "max": 35
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,26 +133,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "provides a strong foundation for transfer to a four-year university in order to complete a BS in Biology or related fields. It may also provide appropriate training for employment in biological laboratories, museums, and/or educational outreach."
-   ],
-   "careers": [
-    "biological laboratories",
-    "museums",
-    "educational outreach"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -149,14 +157,14 @@
     "courses": [
      {
       "code": "BIOL 101",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -164,7 +172,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "LIST A - COMPLETE THE FOLLOWING",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -175,23 +183,34 @@
     "courses": [
      {
       "code": "CHEM 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 103E",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
-      "alternatives": [],
+      "alternatives": [
+       {
+        "code": "MATH 103E+",
+        "units": 6,
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 103EH",
+        "units": 5,
+        "catalog_addition": false
+       }
+      ],
       "catalog_addition": false
      }
     ]
@@ -202,20 +221,20 @@
     "minimum": null,
     "option_group": "Physics option",
     "stated": {
-     "min": 10,
-     "max": 10
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "PHY 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -228,20 +247,20 @@
     "minimum": null,
     "option_group": "Physics option",
     "stated": {
-     "min": 8,
-     "max": 8
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "PHY 105",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 106",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -250,70 +269,13 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "MATH 103E+",
-    "why": "not in the text; section names only MATH 103E"
-   },
-   {
-    "code": "MATH 103EH",
-    "why": "not in the text; section names only MATH 103E"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses, so course units are null; only option totals (10 and 8 units) and the major total (32-34 units*) are printed.",
-   "The outcome statement is fused with its lead-in ('Upon completion of this program, provides ...'); recorded after the lead-in as one entry since the second sentence ('It may also ...') depends on the first. Reviewer may check whether it should be two entries.",
-   "Careers recorded from 'appropriate training for employment in biological laboratories, museums, and/or educational outreach' in the outcomes text; these are workplaces/fields rather than job titles.",
-   "The asterisk on 'Required Units for Major: 32-34 units*' refers to a footnote not included in the text.",
-   "No GE pattern or degree total is printed in this section.",
-   "Other sections on the pages (Administration of Justice, Anthropology, Business Administration 2.0, etc.) were ignored."
+   "The catalog prints 'MATH 103E/103E+/103EH ... 5-6' as one row; recorded as MATH 103E (5) with alternatives MATH 103E+ (6) and MATH 103EH (5), using the state file's units to split the printed 5-6 range.",
+   "Degree total of 60 taken from 'Minimum Required Units for Degree (with GE) 60' printed on this award's page; no GE pattern or GE units are named in the text.",
+   "A 'Program Learning Outcomes' tab appears in the page navigation, but no outcomes are printed in the supplied text; outcomes left empty.",
+   "Major total printed both as Minimum/Maximum Required Units for Major (32/35) and 'TOTAL UNITS REQUIRED 32-35'."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BIOL 101": [
-     4.0,
-     4.0
-    ],
-    "BIOL 102": [
-     5.0,
-     5.0
-    ],
-    "CHEM 101": [
-     5.0,
-     5.0
-    ],
-    "CHEM 102": [
-     5.0,
-     5.0
-    ],
-    "MATH 103E": [
-     5.0,
-     5.0
-    ],
-    "PHY 101": [
-     5.0,
-     5.0
-    ],
-    "PHY 102": [
-     5.0,
-     5.0
-    ],
-    "PHY 105": [
-     4.0,
-     4.0
-    ],
-    "PHY 106": [
-     4.0,
-     4.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

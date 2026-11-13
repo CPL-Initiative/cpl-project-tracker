@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "General Business",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=67",
+ "source_url": "https://catalog.glendale.edu/programs/GB-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9313,
+  "input_tokens": 6560,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9313,
-    "output_tokens": 1974,
+    "input_tokens": 6560,
+    "output_tokens": 1210,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1974,
+  "output_tokens": 1210,
   "output_tokens_details": {
-   "thinking_tokens": 686
+   "thinking_tokens": 271
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07673,
- "ms": 18478,
- "seconds": 18.9,
+ "cost_usd": 0.05044,
+ "ms": 10596,
+ "seconds": 10.7,
  "parts": null,
  "error": null,
  "score": {
@@ -55,44 +55,37 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "BUSAD144",
-    "ENTRE101",
-    "ENTRE103"
-   ],
-   "flagged": [
-    "BUSAD144",
-    "ENTRE101",
-    "ENTRE103"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    25.0,
-    28.0
+    17.0,
+    19.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    17.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -103,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "GENERAL BUSINESS",
+   "section_heading": "GB-C - General Business - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 17,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -128,16 +121,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "recognize, analyze, and assess current economic challenges facing global and domestic businesses.",
-    "Analyze, evaluate, and explain business problems using basic concepts and terminology of accounting and finance.",
-    "Understand and apply the four P’s of marketing, business law, investments, management, and marketing."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -148,28 +137,21 @@
     "courses": [
      {
       "code": "ACCTG 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 106",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUSAD 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -177,9 +159,9 @@
     ]
    },
    {
-    "name": "Select one course from the following: (Computer)",
+    "name": "CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
-    "minimum": 1,
+    "minimum": 2,
     "option_group": null,
     "stated": {
      "min": null,
@@ -188,85 +170,56 @@
     "courses": [
      {
       "code": "CS/IS 100",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "CS/IS 101",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "CABOT 260",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 110",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
-     {
-      "code": "CS/IS 101",
-      "units": 5.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "CABOT 260",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select three courses from the following",
-    "rule": "choose_courses",
-    "minimum": 3,
-    "option_group": null,
-    "stated": {
-     "min": 8,
-     "max": 9
-    },
-    "courses": [
      {
       "code": "BUSAD 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 131",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 141",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "BUSAD 144",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "BUSAD 162",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "ENTRE 101",
-      "units": 2.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ENTRE 103",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
@@ -274,75 +227,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The General Business section (page 68) appears under the Business Administration AS Degree heading and calls itself 'This degree'; no separate Certificate of Achievement section is printed. The requirements were read as those for the certificate; a reviewer should confirm that the certificate shares them.",
-   "The section prints no total units, and no units appear beside individual courses; course units are null.",
-   "The closed list stores 'ACCTG101' without a space; the catalog prints 'ACCTG 101'. It is treated as the same course.",
-   "The 'Select three courses' list prints '8 - 9 units' even though three 3-unit courses would total 9; recorded as printed.",
-   "The page's 'Program Learning Outcomes' paragraph is the General Business program's; it is recorded for this award. 'ﬁ nance' (a ligature artifact) is transcribed as 'finance'.",
-   "The description says students are 'interested in working in a medium or large business environment'; this was not recorded as a named career."
+   "The closed list stores ACCTG 101 as 'ACCTG101' (no space, units not stored); treated as the same course as the catalog's 'ACCTG 101' (5 units), so not marked a catalog addition.",
+   "The 'CHOOSE TWO OF THE FOLLOWING' list prints CS/IS 100 or CS/IS 101 or CABOT 260 as a single row; recorded as one choice with alternatives. Two choices (6-8 units) plus 11 required units matches the printed total of 17-19.",
+   "The page shows a 'Program Learning Outcomes' tab, but the extracted text contains no outcomes; outcomes left empty.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BUSAD 101": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 106": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 110": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 100": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 101": [
-     5.0,
-     5.0
-    ],
-    "CABOT 260": [
-     4.0,
-     4.0
-    ],
-    "BUSAD 120": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 131": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 141": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 144": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 162": [
-     3.0,
-     3.0
-    ],
-    "ENTRE 101": [
-     2.0,
-     2.0
-    ],
-    "ENTRE 103": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41009271854
+ "extracted_run": "43415972509"
 }

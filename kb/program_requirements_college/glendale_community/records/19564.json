@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Real Estate Appraisal",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=85",
+ "source_url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7825,
+  "input_tokens": 6759,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7825,
-    "output_tokens": 2038,
+    "input_tokens": 6759,
+    "output_tokens": 1492,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2038,
+  "output_tokens": 1492,
   "output_tokens_details": {
-   "thinking_tokens": 732
+   "thinking_tokens": 319
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07206,
- "ms": 23899,
- "seconds": 24.5,
+ "cost_usd": 0.05688,
+ "ms": 12477,
+ "seconds": 12.6,
  "parts": null,
  "error": null,
  "score": {
@@ -71,11 +71,11 @@
    "status": "equal",
    "computed": [
     29.0,
-    29.0
+    31.0
    ],
    "stated": [
     29.0,
-    29.0
+    31.0
    ],
    "against": "program",
    "why": []
@@ -85,13 +85,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -106,11 +106,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "REAL ESTATE APPRAISAL AS DEGREE OR CERTIFICATE",
+   "section_heading": "REA-C - Real Estate Appraisal - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 29,
-    "max": 29
+    "max": 31
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -127,14 +127,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "apply the basic principles and procedures used in valuing residential properties. They will be able to choose the appropriate method to determine value for a specific property, estimate gross income and calculate expenses for income producing property and meet Appraisal Qualifications Board (AQB) licensing requirements for filling out forms and completing the USPAP form."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -145,35 +143,35 @@
     "courses": [
      {
       "code": "RE 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 140",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 150",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 161",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -194,14 +192,14 @@
      },
      {
       "code": "RE 164",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 165",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -209,9 +207,9 @@
     ]
    },
    {
-    "name": "A minimum of three units must be selected from the following",
-    "rule": "choose_units",
-    "minimum": 3,
+    "name": "CHOOSE ONE OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": null,
@@ -220,12 +218,12 @@
     "courses": [
      {
       "code": "ACCTG 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
         "code": "ACCTG 110",
-        "units": null,
+        "units": 4,
         "catalog_addition": true
        }
       ],
@@ -233,35 +231,35 @@
      },
      {
       "code": "BUSAD 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 190",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 195",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "RE 250",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -272,79 +270,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog section covers both the AS degree and the Certificate of Achievement under one heading; the requirements, the total of 29 units and the program learning outcome are shared by both awards.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "The program learning outcome is printed as a single paragraph after the lead-in 'Upon completion of this program, students will be able to'. It is recorded as one entry. Ligature-broken words such as 'speciﬁ c', 'Qualiﬁ cations' and 'ﬁ lling' are rejoined. The line-break hyphenation 'pro-ducing' is read as 'producing'.",
-   "The closed list prints 'ACCTG101' without a space; it is matched to the catalog's 'ACCTG 101'.",
-   "ACCTG 110 and RE 195 are not in the closed list and are marked as catalog additions.",
-   "The total of 29 units comes from the sentence 'to complete a total of 29 units'."
+   "The page header states Minimum and Maximum Required Units/Hours for Major as 29 and 29, while the requirements table prints 'TOTAL UNITS REQUIRED 29-31'. total_units records the table's 29-31, which reflects ACCTG 101 at 5 units within the choose-one list; a reviewer should confirm which figure is intended.",
+   "ACCTG 101 appears in the closed list as 'ACCTG101'. It is treated as the same course, so catalog_addition is false.",
+   "ACCTG 110 and RE 195 are not in the closed list, so they are marked as catalog additions.",
+   "The page shows a 'Program Learning Outcomes' tab, but the extracted text prints no outcomes. Outcomes are left empty.",
+   "No careers are named in the extracted text."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "RE 101": [
-     3.0,
-     3.0
-    ],
-    "RE 130": [
-     3.0,
-     3.0
-    ],
-    "RE 140": [
-     3.0,
-     3.0
-    ],
-    "RE 150": [
-     3.0,
-     3.0
-    ],
-    "RE 161": [
-     3.0,
-     3.0
-    ],
-    "RE 162": [
-     3.5,
-     3.5
-    ],
-    "RE 163": [
-     3.5,
-     3.5
-    ],
-    "RE 164": [
-     3.0,
-     3.0
-    ],
-    "RE 165": [
-     1.0,
-     1.0
-    ],
-    "BUSAD 120": [
-     3.0,
-     3.0
-    ],
-    "RE 180": [
-     3.0,
-     3.0
-    ],
-    "RE 190": [
-     3.0,
-     3.0
-    ],
-    "RE 195": [
-     3.0,
-     3.0
-    ],
-    "RE 250": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

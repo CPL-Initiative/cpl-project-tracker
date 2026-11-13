@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Insurance Professional II",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=107",
+ "source_url": "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10138,
+  "input_tokens": 6806,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10138,
-    "output_tokens": 2188,
+    "input_tokens": 6806,
+    "output_tokens": 1309,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2188,
+  "output_tokens": 1309,
   "output_tokens_details": {
-   "thinking_tokens": 889
+   "thinking_tokens": 229
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08431,
- "ms": 17431,
- "seconds": 17.9,
+ "cost_usd": 0.0534,
+ "ms": 10942,
+ "seconds": 11.0,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "INSURANCE PROFESSIONAL II CERTIFICATE",
+   "section_heading": "IPII-C - Insurance Professional II - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -121,24 +121,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "discuss loss exposures, personal risk insurance, and types of personal insurance policies, as well as, define commercial insurance and commercial insurance policies.",
-    "Describe and apply insurance concepts such as principles of indemnity, valued policy, and liability limits.",
-    "Describe elements of a contract, insurance contracts, and conditions commonly found in property and liability insurance policies."
-   ],
-   "careers": [
-    "appraiser",
-    "agent",
-    "estimator",
-    "senior administrative assistant",
-    "broker",
-    "underwriter",
-    "senior sales associate"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -149,42 +137,42 @@
     "courses": [
      {
       "code": "BUSAD 111",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 112",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 113",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 114",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 115",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 116",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -192,68 +180,68 @@
     ]
    },
    {
-    "name": "Select two courses from the following to complete 4-10 units",
+    "name": "CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 4,
-     "max": 10
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "ACCTG 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 204",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CS/IS 100",
-      "units": 3.0,
+      "code": "CS/IS 101",
+      "units": 5,
       "units_max": null,
       "alternatives": [
        {
-        "code": "CS/IS 101",
-        "units": 5.0,
+        "code": "CS/IS 100",
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "CABOT 260",
-        "units": 4.0,
+        "units": 4,
         "catalog_addition": false
        },
        {
         "code": "CABOT 270",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -265,78 +253,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside any course in this section; all course units are null.",
-   "The elective list reads 'CS/IS 100 or 101 or CABOT 260; or 270.' I read 270 as CABOT 270 and recorded it as a further alternative to CS/IS 100; it could instead be meant as a separate choice. Reviewer should check.",
-   "ACCTG 101 as printed matches closed-list code 'ACCTG101' (spacing difference only), so it is not marked as a catalog addition.",
-   "The first outcome follows the lead-in 'Upon completion of this program, students will learn to' within the same sentence; the lead-in was dropped and the rest copied as printed (the PDF ligature break in 'de fine' was read as 'define').",
-   "The 4-10 unit statement for the elective block is recorded as its stated total; the certificate total of 18-24 units is the program total."
+   "Catalog prints 'ACCTG 101' with a space; the closed list stores it as 'ACCTG101'. Treated as the same course (not a catalog addition).",
+   "The page shows a 'Program Learning Outcomes' tab heading, but no outcomes are printed in the provided text; outcomes left empty.",
+   "Total of 18-24 units printed as 'TOTAL UNITS REQUIRED' and as Minimum/Maximum Required Units for Major (18/24).",
+   "The CS/IS 101 or CS/IS 100 or CABOT 260 or CABOT 270 row is recorded as one choice within the 'choose two' list."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BUSAD 111": [
-     1.0,
-     1.0
-    ],
-    "BUSAD 112": [
-     1.0,
-     1.0
-    ],
-    "BUSAD 113": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 114": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 115": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 116": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 101": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 106": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 120": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 204": [
-     1.0,
-     1.0
-    ],
-    "CS/IS 100": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 101": [
-     5.0,
-     5.0
-    ],
-    "CABOT 260": [
-     4.0,
-     4.0
-    ],
-    "CABOT 270": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

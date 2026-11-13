@@ -435,6 +435,23 @@ check("a reviewer ending in @bot is a cohort; a person is the rest",
       B.is_cohort("cer-procedure-course-identity@bot") and B.is_cohort("preseed-v1@bot") and not B.is_cohort("map@rccd.edu") and not B.is_cohort(None))
 check("figure() carries an error, never a zero", B.figure(lambda: 1 / 0)["n"] is None and "ZeroDivisionError" in B.figure(lambda: 1 / 0)["error"])
 
+# ── a failed extraction call is no record (S647: run 43384599013 filed 121 HTTP 401 stubs) ──
+with tempfile.TemporaryDirectory() as td:
+    with open(os.path.join(td, "coci_programs_data.js"), "w") as fh:
+        fh.write("window.X = " + json.dumps({"colleges": ["GLENDALE"], "statuses": ["Active"],
+                                             "rows": [[0, cn, 0, 0, 0, 0, 0] for cn in ("1", "2", "3")]}) + ";")
+    rd = os.path.join(td, "kb", "program_requirements_college", "glendale", "records")
+    os.makedirs(rd)
+    passing = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}}
+    for cn, body in (("1", {"record": {"blocks": []}, "score": passing}),
+                     ("2", {"record": None, "score": None, "error": "HTTP 401: {\"error\":\"unauthorized\"}"}),
+                     ("3", {"record": {"blocks": []}, "score": dict(passing, arithmetic={"status": "unequal"})})):
+        with open(os.path.join(rd, cn + ".json"), "w") as fh:
+            json.dump(dict(body, college="Glendale Community College", control_number=cn), fh)
+    facts = B.row_requirements(td)["facts"]
+    check("an error stub counts as unread, never as a failing record",
+          (facts["complete"], facts["failing"], facts["unread"], facts["records"]) == (1, 1, 1, 2), facts)
+
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
 sys.exit(1 if failed else 0)

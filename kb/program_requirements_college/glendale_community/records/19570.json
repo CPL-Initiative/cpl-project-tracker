@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Welding",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
+ "source_url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8366,
+  "input_tokens": 6488,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8366,
-    "output_tokens": 2048,
+    "input_tokens": 6488,
+    "output_tokens": 718,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2048,
+  "output_tokens": 718,
   "output_tokens_details": {
-   "thinking_tokens": 957
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07442,
- "ms": 17868,
- "seconds": 18.4,
+ "cost_usd": 0.04031,
+ "ms": 6568,
+ "seconds": 6.7,
  "parts": null,
  "error": null,
  "score": {
@@ -64,12 +64,12 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    19.0,
-    20.0
+    20.0,
+    21.0
    ],
    "stated": [
-    19.0,
-    20.0
+    20.0,
+    21.0
    ],
    "against": "program",
    "why": []
@@ -79,13 +79,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -100,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "WELDING AS DEGREE OR CERTIFICATE",
+   "section_heading": "WELD-C - Welding - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 19,
-    "max": 20
+    "min": 20,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -121,60 +121,76 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "demonstrate the skills necessary to read engineering drawings and solve technical mathematics problems as they relate to welding tasks.",
-    "Students will complete introductory and advanced level welding projects using various techniques and procedures.",
-    "Students will discuss metallurgical concepts, heat treating procedures, and machine tool technology concepts."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 20,
+     "max": 21
     },
     "courses": [
      {
       "code": "ENGR 102",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
+      "code": "WELD 117",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WELD 118",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WELD 121",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
       "code": "WELD 122",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 123",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 124",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 125",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [
        {
         "code": "WELD 126",
-        "units": 1.0,
+        "units": 1,
         "catalog_addition": false
        }
       ],
@@ -182,52 +198,7 @@
      },
      {
       "code": "MTLGY 150",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Required Courses: WELD 117, 118",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "WELD 117/118 or 121",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "WELD 117",
-      "units": 2.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "WELD 118",
-      "units": 2.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Required Courses: or WELD 121",
-    "rule": "all",
-    "minimum": null,
-    "option_group": "WELD 117/118 or 121",
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "WELD 121",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -238,62 +209,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The page prints one section 'WELDING AS DEGREE OR CERTIFICATE' shared by the AS degree and the certificate; requirements and the outcomes list are shared by both awards.",
-   "The catalog prints no units beside courses; course units left null.",
-   "Ambiguous rule 'WELD 117, 118 or 121': read as (WELD 117 and WELD 118) or WELD 121, because with closed-list units (117=2, 118=2, 121=3) this yields the stated 19-20 unit total; reading it as WELD 117 plus (118 or 121) would give 20-21 units. Reviewer should verify.",
-   "'125 or 126' read as WELD 125 or WELD 126 (both 1 unit per closed list).",
-   "No careers named; text mentions only entering 'this in-demand workforce' and AWS certification exams."
+   "The page shows a 'Program Learning Outcomes' tab, but the extracted text includes no outcomes; outcomes left empty.",
+   "The stated block total is 20-21 units, taken from the 'TOTAL UNITS REQUIRED' row. The range comes from the WELD 118 (2) or WELD 121 (3) choice."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGR 102": [
-     3.0,
-     3.0
-    ],
-    "WELD 122": [
-     3.0,
-     3.0
-    ],
-    "WELD 123": [
-     3.0,
-     3.0
-    ],
-    "WELD 124": [
-     3.0,
-     3.0
-    ],
-    "WELD 125": [
-     1.0,
-     1.0
-    ],
-    "WELD 126": [
-     1.0,
-     1.0
-    ],
-    "MTLGY 150": [
-     3.0,
-     3.0
-    ],
-    "WELD 117": [
-     2.0,
-     2.0
-    ],
-    "WELD 118": [
-     2.0,
-     2.0
-    ],
-    "WELD 121": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

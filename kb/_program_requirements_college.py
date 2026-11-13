@@ -544,6 +544,26 @@ def heading_names_program(page: dict, program: dict) -> bool:
     return of_title >= HIDDEN_HEADING_TITLE and of_heading >= HIDDEN_HEADING_OWN
 
 
+# A general education pattern (Cal-GETC, IGETC, the CSU GE Breadth pattern). Glendale's Cal-GETC
+# certificate page (/programs/CALGETC/completion-requirements-zaZdl) lists courses in every
+# discipline, and it was a candidate for 17 programs in capture 43366669415 (S646): the
+# certificate kept it and 16 others (Speech/Communication A.A., Social Science A.A., Spanish
+# A.A.-T among them) filed it as a page they lost. A pattern's page is never another program's list.
+GE_PATTERN = re.compile(r"\bcal[\s-]?getc\b|\bigetc\b|\bcsu[\s-]*ge\b|\bcsu[\s-]general[\s-]education\b|"
+                        r"\bgeneral[\s-]education[\s-](?:breadth|pattern)", re.I)
+
+
+def ge_pattern(text: str | None) -> bool:
+    """Whether a title or heading names a general education pattern."""
+    return bool(GE_PATTERN.search(text or ""))
+
+
+def ge_pattern_page(pg: dict) -> bool:
+    """A page whose Coursedog code, heading, title or address names a general education pattern."""
+    path = urllib.parse.unquote(urllib.parse.urlparse(pg.get("url") or "").path).replace("/", " ")
+    return any(ge_pattern(x) for x in (pg.get("code"), pg.get("h1"), pg.get("title"), path))
+
+
 def candidates(program: dict, pages: list[dict]) -> list[dict]:
     """Every page naming at least ACCEPT_SHARE of the program's listed courses,
     best first: the page naming its award, then the larger share of its title,
@@ -562,6 +582,11 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
         # (cd_code_kind, S456). An award the codes cannot name ("other") reads as before.
         if pg.get("code_kind") and kind != "other" and pg["code_kind"] != kind:
             continue
+        # A general education pattern's page lists courses in every discipline, so it names
+        # most of many programs' lists; it is the list of a program only when the program is
+        # that pattern (ge_pattern(), S646).
+        if ge_pattern_page(pg) and not ge_pattern(program.get("title")):
+            continue
         fb = P.find_codes(pg.get("body") or "", courses)
         fc = P.find_codes(pg.get("content") or "", courses)
         text, found, field = P.best_text(pg["got"], fb, fc, courses, bool(program.get("tabs_with_prose")))
@@ -578,6 +603,10 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
                     "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title, "section": section,
                                                 "section_line": heading, "section_fit": fit},
+                    "heading": pg.get("h1") or "", "one_program": bool(pg.get("code")),
+                    "names_control_number": pg.get("control_number"),
+                    "program": {"title": program.get("title") or "",
+                                                                "status": program.get("status")},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
@@ -837,9 +866,104 @@ def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
         return keep
     if named:
         top = max(c["label"]["title"] for _, c in named)
-        return {cn for cn, c in named if c["label"]["title"] == top}
+        return heading_owner([(cn, c) for cn, c in named if c["label"]["title"] == top])
     best = max(claims, key=lambda x: (x[1]["label"]["title"], x[1]["coverage"], len(x[1]["found"]), -int(x[0]) if x[0].isdigit() else 0))
     return {best[0]}
+
+
+CURRENT_STATUS = ("Active", "Approved")   # a program the state lists as offered, not in teach-out
+
+
+def heading_title(heading: str | None) -> str:
+    """The title part of a page's heading, plain: before a Coursedog name's " - <award>" tail and
+    before a comma ("Public Health Science, A.S.-T")."""
+    h = heading or ""
+    h = h.rpartition(" - ")[0] or h
+    return _plain(h.split(",", 1)[0])
+
+
+def heading_forms(heading: str | None) -> list[str]:
+    """A heading's readings to match a title against, fullest first: the whole heading, then before its
+    first comma ("Child Development - Teacher, A.S."), then before its last " - " (a Coursedog name's
+    award tail), then heading_title()'s cut of both."""
+    h = heading or ""
+    forms = [_plain(h), _plain(h.split(",", 1)[0]), _plain(h.rpartition(" - ")[0]), heading_title(h)]
+    return [f for i, f in enumerate(forms) if f and f not in forms[:i]]
+
+
+def heading_owner(tied: list[tuple[str, dict]]) -> set[str]:
+    """Claimants tied on the page's award and title share: two different Active programs never share
+    one page's list on that tie alone (the S646 conductor's ruling). When every claimant is Active, their
+    titles differ, and the page's own heading prints exactly one claimant's full title, that claimant keeps
+    the page and the others move on. Glendale's titles nest (Child Development: Teacher in Child
+    Development: Master Teacher, Management I in Management II, Information Technology in Information
+    Technology Technician), so each pair tied on the other's page (capture 43366669415). Two state records
+    of one program, an Active one beside its Teachout Only one (Communication Studies and Communication
+    Studies 2.0), still share."""
+    keep = {cn for cn, _ in tied}
+    # Only a page that holds one program by construction (a Coursedog tab, which carries its code): on a
+    # department or discipline page two programs may each read their own section of the page (S443, S445).
+    if len(tied) < 2 or not all(c.get("one_program") for _, c in tied):
+        return keep
+    progs = [c.get("program") or {} for _, c in tied]
+    titles = [_plain(p.get("title")) for p in progs]
+    if any(not str(p.get("status") or "") in CURRENT_STATUS for p in progs) or len(set(titles)) < len(titles):
+        return keep
+    heads = {c.get("heading") or "" for _, c in tied}
+    if len(heads) != 1:
+        return keep
+    # The full heading first; the cut form only when no claimant's full title is the full heading, so
+    # "Child Development - Teacher" goes to that title, never to "Child Development".
+    for form in heading_forms(heads.pop()):
+        owners = [cn for (cn, _), t in zip(tied, titles) if t and t == form]
+        if owners:
+            return set(owners) if len(owners) == 1 else keep
+    return keep
+
+
+def tab_names_another(title: str | None, tab_title: str | None, others: set[str]) -> bool:
+    """Whether a Coursedog tab's own title (its catalog name before the award tail) is another state
+    program's title and not this program's: the tab prints a different listed program, and its title does
+    not hold every word of this one's. Glendale's capture of run 43415972509 gave the Information
+    Technology certificate (37070) the tab "Computer Information Systems - Certificate of Achievement"
+    (21305's and 37960's title) at half its title, and its record passed with 15 codes the state does not
+    list for it; Computerized Accounting Specialist (12571) read "Accounting - Certificate of Achievement"
+    (19557's). A title the tab's holds whole still reads it: Communication Studies on the Communication
+    Studies 2.0 tab, two state records of one program (heading_owner)."""
+    own, tab = _plain(title), _plain(tab_title)
+    if not own or not tab or own == tab or tab not in others:
+        return False
+    return not set(own.split()) <= set(tab.split())
+
+
+def tab_title_link(title: str | None, heading: str | None) -> bool:
+    """Whether a program's title ties it to a tab by its words: one of the heading's readings is the title
+    (heading_forms), or the tab's title is the title plus numbers only, a "2.0" successor's tab ("Business
+    Administration 2.0" and Business Administration, 32267 and 43038; Communication Studies 2.0 and Communication
+    Studies, 30814 and 44951: Glendale's two shared pages, capture 43415972509). A tab whose title adds a word ties
+    nothing: History to Art History, Information Technology to Information Technology Technician. Over Glendale's
+    sources.json the rule ties three title pairs, all 2.0s (02549 and 32267 to 43038, 30814 to 44951); the looser
+    "every word of it" tied 134 (S648 review)."""
+    own = _plain(title)
+    if not own:
+        return False
+    if own in heading_forms(heading):
+        return True
+    tab = set(heading_title(heading).split())
+    extra = tab - set(own.split())
+    return set(own.split()) <= tab and bool(extra) and all(w.isdigit() for w in extra)
+
+
+def tab_control_owner(cand: dict, listed) -> str | None:
+    """The listed program a Coursedog tab belongs to by its own program data's control number
+    (cd_program_control_number), or None: no tab, no number named, or a number the college's list does not hold.
+    A tab so owned is no candidate for a program with no title link to it (tab_title_link), and a filed read from it
+    by such a program is held (wrong_tabs); a program its words tie to the tab reads it as before, so a page shared by
+    a program and its "2.0" successor stays shared, and the title check (tab_names_another) still applies to every
+    program, the owner included. Glendale's NCHSD tab heads "NCHSD - High School Diploma", which no listed title is, and its
+    data names 31597; 24432 read it at coverage 0.615 with 21 invented codes (page read 43423479582, S648)."""
+    named = cand.get("names_control_number")
+    return named if cand.get("one_program") and named and named in listed else None
 
 
 def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
@@ -849,6 +973,22 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
     (method page_claimed), so a sibling's requirements never stand in for its own.
     Returns {control number: {"best": candidate or None, "claimed_by": [...]}}."""
     ranked = {p["control_number"]: candidates(p, pages) for p in programs if p["closed_list"]}
+    # A Coursedog tab that prints another listed program's title is no candidate for this one
+    # (tab_names_another, S647); a page holding several programs is left to page_winners().
+    plain = {p["control_number"]: _plain(p.get("title")) for p in programs}
+    for cn, cands in ranked.items():
+        others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
+        # A heading any of whose readings is the program's own title is its tab ("Child Development - Teacher,
+        # A.S." is Child Development - Teacher's, though its cut form names Child Development).
+        # A tab whose own program data names another listed program's control number is no candidate for a program
+        # with no title link to it (tab_control_owner, tab_title_link, S648): Glendale's NCHSD tab names 31597, and
+        # 24432 read it. The number never overrides the title check.
+        ranked[cn] = [c for c in cands
+                      if not (tab_control_owner(c, plain) not in (None, cn)
+                              and not tab_title_link(plain[cn], c.get("heading")))
+                      and not (c.get("one_program")
+                               and plain[cn] not in heading_forms(c.get("heading"))
+                               and tab_names_another(plain[cn], heading_title(c.get("heading")), others))]
     pos = {cn: 0 for cn in ranked}
     lost: dict[str, list[str]] = {}
     for _ in range(12):
@@ -1983,7 +2123,31 @@ CD_LIMIT = 250
 # The course data a Requirements tab's own scripts fetch as it loads: each course's
 # credits.creditHours (Hartnell, page read 39930495321, S454), where the tab prints none.
 CD_COURSES = re.compile(r"/courses/search/", re.I)
-CD_REQUISITES = re.compile(r"^\s*requi(?:site|rement)s\b", re.I)
+# The program data a tab's own scripts fetch as it loads (/cm/<school>/programs?programGroupIds=<code>), which names
+# the state's control number in customFields.eL_programControlNumber. Glendale's NCHSD tab heads "NCHSD - High
+# School Diploma" and its data names 31597 (Adult High School Diploma); the capture of run 43384599013 gave the tab
+# to 24432 (Certificate of Secondary Education Completion), whose record passed with 21 invented codes (page read
+# 43423479582, S648).
+CD_PROGRAM_DATA = re.compile(r"/cm/[^/?#]+/programs\?(?:[^#]*&)?programGroupIds=", re.I)
+
+
+def cd_program_control_number(data, code: str | None = None) -> str | None:
+    """The one state control number a tab's program data names (customFields.eL_programControlNumber), five digits,
+    from the rows of the program code given (any row without a code); None when it names none or two."""
+    got = set()
+    for row in (data.values() if isinstance(data, dict) else []):
+        if not isinstance(row, dict):
+            continue
+        if code and str(row.get("programGroupId") or row.get("code") or "").strip() not in ("", code):
+            continue
+        v = str((row.get("customFields") or {}).get("eL_programControlNumber") or "").strip()
+        if v.isdigit() and len(v) <= 5:
+            got.add(v.zfill(5))
+    return got.pop() if len(got) == 1 else None
+# Glendale's catalog names the tab Completion Requirements (/programs/NCAMA/overview-aoYks shows "Overview ·
+# Completion Requirements · Program Learning Outcomes" in each of the five overviews the account kept; capture
+# run 43361595138, S645), and none of its 210 overviews that answered 200 named a Requisites or Requirements tab.
+CD_REQUISITES = re.compile(r"^\s*(?:completion\s+)?requi(?:site|rement)s\b", re.I)
 CD_TOTAL = re.compile(r"Total (?:Required )?Credits", re.I)
 # The award a program's name ends in, "Accounting (AA)", in the words the award
 # matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
@@ -2010,14 +2174,20 @@ def cd_award_words(name: str) -> str:
 # name the transfer degree, and "associate in science for transfer" names an A.S. too
 # (label_score). The letters settle it, as pdf_code_match() does: a tab whose code names
 # another award is no candidate (S456).
-CD_CODE_KIND = re.compile(r"(?:^|[.\-])(AAT|AST|AA|AS|CT|NCCT|BS)(?:[.\-]|$)")
+# Glendale's codes write a transfer degree's letters with a hyphen, and a space may stand beside them
+# ("AS-T ADMJ" for "Administration of Justice - Associate in Science for Transfer", "ENGL AA-T", "KIN AAT";
+# capture run 43355259728, S645). Read as before, five of its 30 transfer degrees named an A.S. or an A.A.,
+# so each tab would be no candidate for its own program, and 12 named no award. Read this way, all 30
+# name the transfer degree, ten A.A. and A.S. codes written with a space ("PSAST - AS") name their own
+# award, and no other code's reading changes.
+CD_CODE_KIND = re.compile(r"(?:^|[.\-\s])(AA-T|AS-T|AAT|AST|AA|AS|CT|NCCT|BS)(?=[.\-\s]|$)")
 
 
 def cd_code_kind(code: str | None) -> str | None:
     """The award kind a Coursedog program code's letters name (PDF_CODE_AWARD), or
     None when the catalog's codes carry none."""
     m = CD_CODE_KIND.search((code or "").strip().upper())
-    return PDF_CODE_AWARD.get(m.group(1)) if m else None
+    return PDF_CODE_AWARD.get(m.group(1).replace("-", "")) if m else None
 
 
 def cd_search_url(url: str, skip: int, limit: int) -> str:
@@ -2031,13 +2201,94 @@ def cd_search_url(url: str, skip: int, limit: int) -> str:
 
 
 def cd_programs(data: dict) -> list[dict]:
-    """[{code, name}] from one page of the search's answer, active programs only."""
+    """[{code, name}] from one page of the search's answer, active programs only. A row whose
+    programGroupId differs from its code keeps it as group: the account then shows which one the
+    catalog's own program addresses use (S645, Glendale)."""
     out = []
     for row in (data or {}).get("data") or []:
         code = (row.get("code") or row.get("programGroupId") or "").strip()
         if code and (row.get("status") or "Active") == "Active":
-            out.append({"code": code, "name": (row.get("catalogDisplayName") or row.get("name") or "").strip()})
+            prog = {"code": code, "name": (row.get("catalogDisplayName") or row.get("name") or "").strip()}
+            group = str(row.get("programGroupId") or "").strip()
+            if group and group != code:
+                prog["group"] = group
+            out.append(prog)
     return out
+
+
+# Glendale's first site capture (run 43355259728, S645) listed 261 programs from the search and read
+# none: every program's overview loaded and named no Requisites or Requirements tab, and the account
+# kept only the codes. These two readings file what the next capture needs to tell why: the program
+# addresses the catalog's own index links to, and for the first few overviews that miss, what each
+# answered and the tab names it showed.
+CD_MISS_KEEP = 5
+CD_LINKS_JS = """() => Array.from(document.querySelectorAll('a[href]')).slice(0, 2500)
+  .map(a => ({text: (a.innerText || a.textContent || '').trim().slice(0, 80), href: a.href}))"""
+
+
+def cd_index_links(got: dict, root: str, keep: int = 8) -> list[dict]:
+    """The first program addresses the catalog's /programs index links to: [{text, href}]."""
+    base = root.rstrip("/") + "/programs/"
+    out = []
+    for link in (got or {}).get("links") or []:
+        href = (link.get("href") or "") if isinstance(link, dict) else ""
+        if href.startswith(base) and len(href) > len(base) and not any(o["href"] == href for o in out):
+            out.append({"text": (link.get("text") or "")[:80], "href": href})
+            if len(out) >= keep:
+                break
+    return out
+
+
+def cd_note_miss(info: dict, code: str, page: dict) -> None:
+    """Count a missed program page by what it answered, and keep the first CD_MISS_KEEP in full."""
+    key = "%s %s" % ((page or {}).get("access"), (page or {}).get("status"))
+    answers = info.setdefault("miss_answers", {})
+    answers[key] = answers.get(key, 0) + 1
+    kept = info.setdefault("miss_pages", [])
+    # The first few, and the first of every other answer, so a rarer failure is filed in full too.
+    seen = {"%s %s" % (k.get("access"), k.get("status")) for k in kept}
+    if len(kept) < CD_MISS_KEEP or (key not in seen and len(kept) < CD_MISS_KEEP + 4):
+        kept.append(cd_miss_account(code, page))
+
+
+# A code carrying a mark beyond letters, digits and a hyphen ("AS-T ADMJ", "AD&D-AS", "E/SB-AS", "ENG:CW-AA",
+# "BA2.0-AST"): Glendale's 51 such codes are as many as its overviews that answered 405 (50) or 404 (1) in run
+# 43361595138, so the reader takes each program's address from the index's own link where the index has one.
+CD_CODE_MARK = re.compile(r"[^A-Za-z0-9\-]")
+
+
+def cd_href_code(href: str, root: str) -> str | None:
+    """The program code an index link names: its path after /programs/, unescaped, without a trailing slash."""
+    base = root.rstrip("/") + "/programs/"
+    if not (href or "").startswith(base):
+        return None
+    return urllib.parse.unquote(href[len(base):].split("?", 1)[0].split("#", 1)[0]).rstrip("/") or None
+
+
+def cd_index_hrefs(links: list, root: str, codes: list) -> dict:
+    """{code: the index's own address for it}, for each code an index link names exactly."""
+    want, out = set(codes), {}
+    for link in links or []:
+        c = cd_href_code(link.get("href") or "", root)
+        if c in want and c not in out:
+            out[c] = link["href"]
+    return out
+
+
+def cd_miss_account(code: str, over: dict) -> dict:
+    """What one program overview answered when it named no tab: its status and address, its
+    heading, the first 200 characters of its text, and the link and tab names it showed."""
+    over = over or {}
+    links = [l for l in over.get("links") or [] if isinstance(l, dict)]
+    tabs = [(l.get("text") or "")[:60] for l in links if "/programs/" in (l.get("href") or "") and (l.get("text") or "").strip()]
+    return {"code": code, "url": over.get("url"), "status": over.get("status"), "access": over.get("access"),
+            "final_url": over.get("final_url"), "title": (over.get("title") or "")[:120],
+            "h1": (over.get("h1") or "")[:120], "error": over.get("error"),
+            "text": re.sub(r"\s+", " ", over.get("body") or "").strip()[:200],
+            "program_link_texts": tabs[:12],
+            "clickables": [str(c)[:60] for c in (over.get("clickables") or [])][:12],
+            "tab_panels": [str((t or {}).get("label") or "")[:60] for t in (over.get("tabPanels") or [])
+                           if isinstance(t, dict)][:8]}
 
 
 def cd_list(reader, start: str, report: dict) -> list[dict]:
@@ -2072,13 +2323,22 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
                 answers.append({"error": str(exc).splitlines()[0][:160]})
     reader.page.route(CD_SEARCH, on_route)
     reader.page.on("response", on_response)
+    index_all: list = []
     try:
         reader.load(root + "/programs")
         reader.page.wait_for_timeout(2500)
+        try:
+            index_all = cd_index_links({"links": reader.page.evaluate(CD_LINKS_JS)}, root, keep=2000)
+        except Exception:
+            pass
     finally:
         reader.page.unroute(CD_SEARCH, on_route)
         reader.page.remove_listener("response", on_response)
     info = report.setdefault("coursedog", {"root": root})
+    info["index_program_links"] = index_all[:8]
+    info["index_program_links_n"] = len(index_all)
+    info["index_program_links_marked"] = [l for l in index_all
+                                          if CD_CODE_MARK.search(cd_href_code(l["href"], root) or "")][:8]
     if not heard or not answers or "error" in answers[0]:
         info["error"] = ("the program search made no search call" if not heard
                          else "the search call's answer was not read: %s" % (answers[:1] or "none"))
@@ -2107,8 +2367,36 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
         if not data.get("data"):
             break
         skip += len(data["data"])
-    info.update(listed=total, programs=len(programs), errors=errors)
+    hrefs = cd_index_hrefs(index_all, root, [p["code"] for p in programs])
+    for p in programs:
+        if p["code"] in hrefs:
+            p["href"] = hrefs[p["code"]]
+    named = cd_index_names(programs, index_all, root)
+    info.update(listed=total, programs=len(programs), errors=errors, index_hrefs_used=len(hrefs),
+                **({"names_from_index": named} if named else {}))
     return programs
+
+
+def cd_index_names(programs: list[dict], links: list, root: str) -> int:
+    """Name each program the search answered with no name of its own (none, or its code again) from the
+    index's link to its code, where that link's text is a name; returns how many it named. Glendale's
+    search names 15 of its 261 programs by code alone, all noncredit (NCCNA, NCCS, NCAMA, NCGW; capture of
+    run 43415972509), while its /programs index links NCCNA as "Certified Nursing Aide". Named by code, a
+    tab's heading names no program, so Certified Nursing Aide (40847), Customer Service (38973) and Google
+    Workspace (42263) read "no page read names the program" beside their own tabs."""
+    texts: dict[str, str] = {}
+    for link in links or []:
+        code = cd_href_code((link or {}).get("href") or "", root)
+        text = re.sub(r"\s+", " ", (link or {}).get("text") or "").strip()
+        if code and text and text.lower() != code.lower() and code not in texts:
+            texts[code] = text
+    n = 0
+    for p in programs:
+        name = (p.get("name") or "").strip()
+        if (not name or name.lower() == p["code"].lower()) and p["code"] in texts:
+            p["name"], p["name_from"] = texts[p["code"]], "index"
+            n += 1
+    return n
 
 
 def cd_course_units(data: dict) -> dict:
@@ -2154,13 +2442,67 @@ def cd_course_hours(data: dict) -> dict:
     return out
 
 
+def run_net(text: str | None) -> set[str]:
+    """The codes a run of numbers after one subject names on a page ("CS/IS 241, 242, 243"), in the coarse
+    net's forms (with and without a subject's slash), for each subject the page prints beside a number. The
+    net (page_codes) reads the first number of a run alone, while the exact finder (find_codes, run_numbers)
+    reads them all. Glendale's 2026-27 CIS-C and CIS-AS tabs print eight of their ten lists as runs (page
+    read 43423479582): the net named 7 of Computer Information Systems' 19 listed courses, under the 7.6 it
+    asks, and the finder 11 (0.58), so neither tab was a candidate for 21305 or 37960, and CIS-C went to
+    Information Technology (37070), whose shorter list the net cleared."""
+    t = text or ""
+    out: set[str] = set()
+    seen: set[str] = set()
+    for a, _b in CODE_TOKEN_4.findall(t) + CODE_TOKEN.findall(t):
+        subj = a.strip()
+        if not subj or subj in seen:
+            continue
+        seen.add(subj)
+        parts = P.code_parts(subj + " 1")
+        if not parts:
+            continue
+        for num, _at in P.run_numbers(t, parts[0]):
+            out.add(P.norm_code(subj + " " + num))
+            out.add(P.norm_code(subj.replace("/", "") + " " + num))
+    return out
+
+
 def cd_page(got: dict, prog: dict) -> dict:
     """One Requisites tab as a page capture() reads: the program's name and award
-    words as its heading, since the page's title names only the code."""
+    words as its heading, since the page's title names only the code. Its coarse net also reads a run of
+    numbers after one subject (run_net, S647): a tab holds one program's lists, which Glendale's print as
+    runs."""
     heading = " ".join(x for x in (prog["name"], cd_award_words(prog["name"])) if x)
-    return {"url": got.get("final_url") or got.get("url"), "title": got.get("title"), "h1": heading,
-            "body": got.get("body"), "content": got.get("content"), "got": got, "codes": page_net(got),
+    text = "\n".join([got.get("body") or "", got.get("content") or "", P.hidden_tabs_text(got)])
+    page = {"url": got.get("final_url") or got.get("url"), "title": got.get("title"), "h1": heading,
+            "body": got.get("body"), "content": got.get("content"), "got": got,
+            "codes": page_net(got) | run_net(text),
             "code": prog.get("code"), "code_kind": cd_code_kind(prog.get("code"))}
+    # The control number the tab's own program data names (CD_PROGRAM_DATA, S648): assign() reads it.
+    if got.get("control_number_named"):
+        page["control_number"] = got["control_number_named"]
+    return page
+
+
+def cd_heard(heard: dict, resp) -> None:
+    """One response a tab's scripts fetched, read into heard: a course search's units and hours (CD_COURSES, a
+    POST), or the control number a program data call names for its code (CD_PROGRAM_DATA, any method: the page
+    read printed it as a GET, and the method is not what tells it apart; S648)."""
+    url = getattr(resp, "url", "") or ""
+    try:
+        if CD_COURSES.search(url) and resp.request.method == "POST":
+            data = resp.json()
+            heard["units"].update(cd_course_units(data))
+            heard["hours"].update(cd_course_hours(data))
+            heard["call"] = heard["call"] or url.split("?", 1)[0]
+        elif CD_PROGRAM_DATA.search(url):
+            m = re.search(r"programGroupIds=([^&#]+)", url)
+            code = urllib.parse.unquote(m.group(1)) if m else None
+            named = cd_program_control_number(resp.json(), code)
+            if code and named:
+                heard.setdefault("named", {})[code] = named
+    except Exception:
+        pass
 
 
 def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
@@ -2171,28 +2513,187 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
     suffix, pages, direct, missed = None, [], 0, []
     # The course data each tab's scripts fetch while it loads (CD_COURSES), kept on the
     # page so a reconcile step can price a course the tab lists without units (S455).
-    heard: dict = {"call": None, "units": {}, "hours": {}}
+    # The program data each tab's scripts fetch (CD_PROGRAM_DATA): the control number it names, by code (S648).
+    heard: dict = {"call": None, "units": {}, "hours": {}, "named": {}}
 
     def on_courses(resp):
-        if CD_COURSES.search(resp.url) and resp.request.method == "POST":
-            try:
-                data = resp.json()
-                heard["units"].update(cd_course_units(data))
-                heard["hours"].update(cd_course_hours(data))
-                heard["call"] = heard["call"] or resp.url.split("?", 1)[0]
-            except Exception:
-                pass
+        cd_heard(heard, resp)
     reader.page.on("response", on_courses)
+    reread = report.get("reread")
     try:
+        if reread:
+            return _cd_read(reader, root, programs, info, heard, cache, only=reread["codes"],
+                            suffix=reread.get("suffix"))
+        if report.get("slow"):
+            return _cd_read(reader, root, programs, info, heard, cache, slow=True)
         return _cd_read(reader, root, programs, info, heard, cache)
     finally:
         reader.page.remove_listener("response", on_courses)
 
 
-def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict) -> list[dict]:
-    suffix, pages, direct, missed = None, [], 0, []
+# One polite way back to the programs a bot check refused (S646): route=challenged re-reads only
+# the codes the college's last filed capture recorded as challenged (an account filed before S646
+# names them only as missed), at CD_REREAD_DELAY_S between loads, and stops at the first challenge
+# page instead of going on. Glendale's 34 refusals came in runs of consecutive loads at the
+# census's 4 seconds (capture 43366669415). The run files its account as capture_reread.json,
+# beside the full capture it does not replace, and never extracts.
+CD_REREAD_ROUTE = "challenged"
+CD_REREAD_DELAY_S = 12.0
+# The whole read at the re-read's pace (route=slow, S646): Glendale's re-read loaded its 34 refused
+# programs at 12 s with no challenge (run 43379067418), and neither capture keeps a page's text for a
+# later extraction to use, so a paid read loads every page again. A slow read stops at its first
+# challenge like the re-read, and a capture cut short so is never extracted.
+CD_SLOW_ROUTE = "slow"
+
+
+def is_slow(route: str | None) -> bool:
+    return (route or "").strip().lower() == CD_SLOW_ROUTE
+CAPTURE_FILES = ("capture_preview.json", "capture.json", "capture_reread.json")
+
+
+def is_reread(route: str | None) -> bool:
+    return (route or "").strip().lower() == CD_REREAD_ROUTE
+
+
+def cd_reread_plan(college_dir: str) -> dict | None:
+    """The codes to re-read, from the newest filed capture of the college (by its start time):
+    {codes, suffix, of_run, from, named_as}, or None when no filed capture names one."""
+    best = None
+    for name in CAPTURE_FILES:
+        try:
+            with open(os.path.join(college_dir, name)) as fh:
+                rep = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        if best is None or (rep.get("started") or "") > (best[1].get("started") or ""):
+            best = (name, rep)
+    if best is None:
+        return None
+    name, rep = best
+    cd = rep.get("coursedog") or {}
+    codes = cd["challenged"] if "challenged" in cd else cd.get("missed") or []
+    if not codes:
+        return None
+    return {"codes": list(codes), "suffix": cd.get("requisites_suffix"), "of_run": rep.get("run"), "from": name,
+            "named_as": "challenged" if "challenged" in cd else "missed"}
+
+
+# The award a Coursedog program name's tail names ("General Business - Associate of Science").
+CD_NAME_KIND = (("adt", re.compile(r"for transfer", re.I)), ("as", re.compile(r"associate (?:in|of) science", re.I)),
+                ("aa", re.compile(r"associate (?:in|of) arts", re.I)), ("coa", re.compile(r"certificate of achievement", re.I)),
+                ("noncredit", re.compile(r"noncredit|certificate of (?:competency|completion)", re.I)))
+
+
+def _plain(text: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", " ", (text or "").lower()).strip()
+
+
+def cd_name_title_kind(name: str | None) -> tuple[str, str | None]:
+    """A Coursedog program name read as (its title, the award its tail names or None)."""
+    head, sep, tail = (name or "").rpartition(" - ")
+    if not sep:
+        return _plain(name), None
+    kind = next((k for k, pat in CD_NAME_KIND if pat.search(tail)), None)
+    return _plain(head), kind
+
+
+def cd_known_codes(college_dir: str, root: str) -> dict[str, str]:
+    return cd_read_codes(college_dir, root)[0]
+
+
+def cd_read_codes(college_dir: str, root: str) -> tuple[dict[str, str], dict[str, list]]:
+    """({control number: Coursedog code}, {control number: [codes it shares]}) from the pages the college's
+    filed site captures read each program
+    from (would_extract's list and holds, in every CAPTURE_FILES account): the catalog's own address for a
+    program, the surest way to tell its entry from a namesake's. A code that two or more control numbers
+    read is no program's own: a program read from a sibling's tab names the sibling's code (Glendale's
+    capture 43366669415 holds seven such pairs: Child Development: Teacher, 02599, read CDMT-AS beside
+    Master Teacher, 11191), and trusted, it would skip the program's title match when its own tab is
+    refused and leave it to lose the sibling's tab as page_claimed (the S647 review)."""
+    seen: dict[str, list] = {}
+    readers: dict[str, set] = {}
+    for name in CAPTURE_FILES:
+        try:
+            with open(os.path.join(college_dir, name)) as fh:
+                w = json.load(fh).get("would_extract") or {}
+        except (OSError, ValueError):
+            continue
+        for key in ("list", "held_worse_window", "held_no_gain", "held_opens_on_list"):
+            for row in w.get(key) or []:
+                code = cd_href_code((row.get("url") or "").rsplit("/", 1)[0], root) if row.get("url") else None
+                if code and row.get("control_number"):
+                    seen.setdefault(row["control_number"], []).append(code)
+                    readers.setdefault(code, set()).add(row["control_number"])
+    out, shared = {}, {}
+    for cn, codes in seen.items():
+        own = next((c for c in codes if len(readers[c]) < 2), None)
+        if own:
+            out[cn] = own
+        mixed = sorted({c for c in codes if len(readers[c]) >= 2})
+        if mixed:
+            shared[cn] = mixed
+    return out, shared
+
+
+def cd_challenged_programs(programs: list[dict], info: dict, known: dict | None = None,
+                           shared: dict | None = None, paged: set | None = None) -> dict[str, str]:
+    """{control number: code} for each state program whose own catalog entry a bot check refused. The
+    program's code, where a filed capture read it from its own page (cd_known_codes), decides first, and
+    only a code the current catalog lists; otherwise the entry's title is the program's, and its award is
+    the program's or names none. Such a program reads page_challenged, never not_found or a sibling's page: Glendale's General Business A.S.
+    (11143) lost seven business pages to their own programs while its own, GB-AS, was refused
+    (capture 43366669415, S646)."""
+    names = {c["code"]: c.get("name") for c in info.get("catalog") or []}
+    challenged = set(info.get("challenged") or [])
+    refused = [(code,) + cd_name_title_kind(names.get(code)) for code in info.get("challenged") or [] if names.get(code)]
+    out = {}
+    for prog in programs:
+        mine = (known or {}).get(prog["control_number"])
+        if mine and mine in names:
+            if mine in challenged:
+                out[prog["control_number"]] = mine
+            continue   # its own code was read, or is not among the refused
+        title, kind = _plain(prog.get("title")), P.award_kind(prog.get("award"))
+        for code, t, k in refused:
+            if t and t == title and (k is None or kind == "other" or k == kind):
+                out[prog["control_number"]] = code
+                break
+    # A program left with no page (not in paged) whose filed captures read it from a tab it shares with
+    # another program, now refused, reads page_challenged too: an Active program and its Teachout Only record
+    # share one tab (Glendale's Business Administration, 32267, and Business Administration 2.0, 43038, on
+    # BA2.0-AST), and the title matches only one of them. A program whose own code is known decides by it.
+    for cn, codes in (shared or {}).items():
+        if cn not in out and paged is not None and cn not in paged and (known or {}).get(cn) not in names:
+            hit = next((c for c in codes if c in challenged), None)
+            if hit:
+                out[cn] = hit
+    return out
+
+
+def _cd_stop(info: dict, programs: list[dict], i: int, challenged: list) -> None:
+    """A re-read's or slow read's stop at its first challenge: the codes not yet tried stay named for the
+    next one."""
+    rest = [p["code"] for p in programs[i + 1:]]
+    challenged.extend(rest)
+    info["reread" if "reread" in info else "slow"].update(stopped_at=programs[i]["code"], not_tried=len(rest))
+
+
+def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict,
+             only: list | None = None, suffix: str | None = None, slow: bool = False) -> list[dict]:
+    pages, direct, missed, challenged = [], 0, [], []
+    if slow:
+        reader.delay = max(reader.delay, CD_REREAD_DELAY_S)
+        info["slow"] = {"delay_s": reader.delay}
+    stop = only is not None or slow
+    if only is not None:
+        # The re-read: only the named codes, slower, and no load past the first challenge.
+        want = set(only)
+        programs = [p for p in programs if p["code"] in want]
+        reader.delay = max(reader.delay, CD_REREAD_DELAY_S)
+        info["reread"] = {"asked": len(want), "listed": len(programs),
+                          "not_listed": sorted(want - {p["code"] for p in programs}), "delay_s": reader.delay}
     for i, prog in enumerate(programs):
-        base = "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))
+        base = (prog.get("href") or "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))).rstrip("/")
         got = None
         heard["units"], heard["hours"] = {}, {}
         if suffix:
@@ -2200,26 +2701,48 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
             if got.get("access") == "ok" and (got.get("final_url") or "").rstrip("/").endswith(suffix) \
                     and CD_TOTAL.search(got.get("body") or ""):
                 direct += 1
-            else:
+            elif got.get("access") != "challenge":
                 got = None
+        if got is not None and got.get("access") == "challenge":
+            missed.append(prog["code"])
+            challenged.append(prog["code"])
+            cd_note_miss(info, prog["code"], got)
+            if stop:
+                _cd_stop(info, programs, i, challenged)
+                break
+            continue
         if got is None:
             over = P.load(reader, base, cache, True)
             link = next((l["href"] for l in over.get("links") or []
                          if CD_REQUISITES.search(l.get("text") or "") and "/programs/" in (l.get("href") or "")), None)
             if over.get("access") != "ok" or not link:
                 missed.append(prog["code"])
+                cd_note_miss(info, prog["code"], over)
+                if over.get("access") == "challenge":
+                    challenged.append(prog["code"])
+                    if stop:
+                        _cd_stop(info, programs, i, challenged)
+                        break
                 continue
             suffix = suffix or link.rstrip("/").rsplit("/", 1)[-1]
             heard["units"], heard["hours"] = {}, {}
             got = P.load(reader, link, cache, True)
             if got.get("access") != "ok":
                 missed.append(prog["code"])
+                cd_note_miss(info, prog["code"], got)
+                if got.get("access") == "challenge":
+                    challenged.append(prog["code"])
+                    if stop:
+                        _cd_stop(info, programs, i, challenged)
+                        break
                 continue
         got["links"] = (got.get("links") or [])[:50]
         if heard["units"] and "course_units" not in got:
             got["course_units"] = {"call": heard["call"], "units": dict(heard["units"])}
         if heard["hours"] and "course_hours" not in got:
             got["course_hours"] = {"call": heard["call"], "hours": dict(heard["hours"])}
+        if (heard.get("named") or {}).get(prog["code"]) and "control_number_named" not in got:
+            got["control_number_named"] = heard["named"][prog["code"]]
         pages.append(cd_page(got, prog))
         if i % 25 == 24:
             print("  read %d of %d program pages" % (i + 1, len(programs)), flush=True)
@@ -2227,7 +2750,10 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
     # from no page (page_claimed, not_found) is checked against the names the
     # catalog lists, so a program the catalog no longer offers reads as that.
     info.update(requisites_suffix=suffix, program_pages=len(pages), direct=direct, missed=missed[:60],
-                catalog=[{"code": p["code"], "name": p["name"]} for p in programs])
+                challenged=challenged,
+                catalog=[dict({"code": p["code"], "name": p["name"]},
+                              **({"control_number": heard["named"][p["code"]]}
+                                 if (heard.get("named") or {}).get(p["code"]) else {})) for p in programs])
     return pages
 
 
@@ -3740,6 +4266,21 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     if prefer_site(platform, os.environ.get("CAPTURE_ROUTE")) and start:
         report["route"] = "site (a Coursedog catalog reads from its site; a PDF procedure step is set aside unless route=pdf)"
+        if is_reread(os.environ.get("CAPTURE_ROUTE")):
+            plan = cd_reread_plan(os.path.join(COLLEGE_DIR, slug_of(college)))
+            if not plan:
+                report["stopped"] = ("route=challenged re-reads the codes a filed Coursedog capture recorded as "
+                                     "challenged; no filed capture of %s names one" % college)
+                _write(os.path.join(out_dir, "capture.json"), report)
+                print(report["stopped"])
+                return 1
+            report["reread"] = plan
+            report["route"] = ("challenged (the %d codes %s named as %s, at %.0f s between loads, stopping at the "
+                               "first challenge)" % (len(plan["codes"]), plan["from"], plan["named_as"], CD_REREAD_DELAY_S))
+        elif is_slow(os.environ.get("CAPTURE_ROUTE")):
+            report["slow"] = True
+            report["route"] = ("slow (the whole site read at %.0f s between loads, stopping at the first challenge)"
+                               % CD_REREAD_DELAY_S)
     elif reads_as_pdf(reg) and (start or reg.get("procedure")):
         year = (P.procedure_catalog(reg.get("procedure")) or {}).get("catalog_year")
         if year and not reg.get("catalog_year"):
@@ -3750,6 +4291,12 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
+    if (report.get("reread") or report.get("slow")) and platform != "coursedog":
+        report["stopped"] = "route=%s reads a Coursedog catalog only; %s reads %s" % (
+            os.environ.get("CAPTURE_ROUTE"), college, platform)
+        _write(os.path.join(out_dir, "capture.json"), report)
+        print(report["stopped"])
+        return 1
     if not start or platform not in ("courseleaf", "curriqunet", "elumen", "acalog", "custom_html", "smartcatalog", "coursedog"):
         # Phase 2 opens on CourseLeaf (Cerritos), curriQunet (S357), eLumen (S380), Acalog (S389), SmartCatalog (S411,
         # the generic road through child_base()) and Coursedog (S414); another platform names its own enumeration first.
@@ -3843,9 +4390,19 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         recs, fallback = [], 0
         P.MAX_LOADS = FALLBACK_LOADS      # the link search, shorter here: most programs already have a page
         given = assign(programs, pages)
+        refused = {}
+        if platform == "coursedog":
+            own_codes, shared_codes = cd_read_codes(os.path.join(COLLEGE_DIR, slug_of(college)),
+                                                    (report.get("coursedog") or {}).get("root") or start)
+            refused = cd_challenged_programs(programs, report.get("coursedog") or {}, own_codes, shared_codes,
+                                             {cn for cn, g in given.items() if g.get("best")})
         for prog in programs:
             if not prog["closed_list"]:
                 rec = source_record(college, prog, reg, None, "no_closed_list")
+            elif prog["control_number"] in refused:
+                # Its own page answered a bot check: no other page stands in for it (S646).
+                rec = source_record(college, prog, reg, None, "page_challenged")
+                rec["challenged_code"] = refused[prog["control_number"]]
             else:
                 g = given.get(prog["control_number"]) or {}
                 best, method = g.get("best"), "sitemap_page"
@@ -3951,16 +4508,143 @@ def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t
         by_method={m: sum(1 for r in recs if r["method"] == m)
                    for m in sorted({r["method"] for r in recs})},
         shared_pages={u: cns for u, cns in urls_used.items() if len(cns) > 1},
+        # The state's status rides with each program the read reached no page for, so a later refile
+        # (refile-kept) can tell a teach-out program from an offered one without a live read (S647).
         not_found=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-                    "near_miss": r.get("near_miss")}
+                    "near_miss": r.get("near_miss"), "status": r.get("status")}
                    for r in recs if r["method"] in NO_READ],
         page_claimed=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
-                       "pages": r.get("lost_pages")} for r in recs if r["method"] == "page_claimed"],
+                       "pages": r.get("lost_pages"), "status": r.get("status")}
+                      for r in recs if r["method"] == "page_claimed"],
+        page_challenged=[{"control_number": r["control_number"], "title": r["title"], "award": r["award"],
+                          "code": r.get("challenged_code")} for r in recs if r["method"] == "page_challenged"],
         coverage_bands={band: sum(1 for r in recs if r.get("source") and lo <= r["coverage"] < hi)
                         for band, lo, hi in (("0.5-0.8", .5, .8), ("0.8-1.0", .8, 1.0), ("1.0", 1.0, 9))})
     report["would_extract"] = would_extract(college, recs)
+    # Each program's text, fingerprinted, so a later run can extract from this run's artifact and prove the
+    # text is the text this capture read (stage_sources, sources_from; S647).
+    report["fingerprints"] = {r["control_number"]: {"sha256": text_sha256(r.get("text")),
+                                                    "url": (r.get("source") or {}).get("url")}
+                              for r in recs if r.get("text")}
     _write(os.path.join(out_dir, "capture.json"), report)
-    print(json.dumps({k: v for k, v in report.items() if k not in ("not_found", "shared_pages")}, indent=1))
+    print(json.dumps({k: v for k, v in report.items() if k not in ("not_found", "shared_pages", "fingerprints")},
+                     indent=1))
+    return 0
+
+
+def text_sha256(text: str | None) -> str:
+    import hashlib
+    return hashlib.sha256((text or "").encode("utf-8")).hexdigest()
+
+
+# ── sources_from: extract from an earlier run's pages (S647) ────────────────
+# A slow Coursedog read of Glendale takes 2 h 20 m (run 43384599013), and its page text lives only in the run's
+# artifact (program-requirements-<run>, the job's out/ folder, 90 days). When a run's capture is whole and its
+# extraction failed for a reason that is not the site's, a later run stages that artifact in place of a capture:
+# no page is loaded and no site is contacted. It refuses unless the artifact is the filed capture's own.
+STAGE_SAME = ("college", "catalog_year", "programs", "with_closed_list", "found", "pages_listed", "pages_answered",
+              "pages_read", "by_method")
+
+
+def stage_sources(college: str, src_dir: str, out_dir: str, sources_run: str, folder: str | None = None) -> int:
+    """Copy an earlier run's capture and sources (src_dir, its artifact unpacked) into out_dir for extract, after
+    proving they are the filed capture's: the same college, catalog year and page counts, the filed capture's run,
+    a whole capture, and each program's text matching its fingerprint. A capture filed before fingerprints
+    (S647) proves its text another way: its account, written from that text, equals the filed account in every
+    field but the run's id, and each program the account lists sits at the address and coverage it names. The
+    refusal set is recomputed on the current code, and would_extract against the records filed now. Returns
+    0, or 2 with the reason, having written nothing to out_dir."""
+    dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
+
+    def refuse(why: str) -> int:
+        print("::error::sources_from %s refused: %s" % (sources_run, why))
+        return 2
+    try:
+        with open(os.path.join(src_dir, "capture.json")) as fh:
+            staged = json.load(fh)
+    except (OSError, ValueError):
+        return refuse("the artifact is missing, expired or holds no capture.json under %s" % src_dir)
+    # The filed capture, or a capture-only run's preview filed beside it (file_run): a free read files its
+    # account and would_extract as capture_preview.json, and its pages extract from its artifact under the
+    # $40 price gate, so the go on a priced list loads no page twice (Glendale, S648).
+    accounts = {}
+    for name in ("capture.json", "capture_preview.json"):
+        try:
+            with open(os.path.join(dest, name)) as fh:
+                accounts[name] = json.load(fh)
+        except (OSError, ValueError):
+            pass
+    if not accounts:
+        return refuse("no capture is filed for %s" % college)
+    filed = next((a for a in accounts.values() if str(a.get("run")) == str(sources_run)), None)
+    if filed is None:
+        return refuse("the filed capture is run %s's, not run %s's"
+                      % (" or ".join(str(a.get("run")) for a in accounts.values()), sources_run))
+    if staged.get("college") != college:
+        return refuse("the artifact is %s's, not %s's" % (staged.get("college"), college))
+    for k in STAGE_SAME:
+        if staged.get(k) != filed.get(k):
+            return refuse("%s differs: artifact %r, filed %r" % (k, staged.get(k), filed.get(k)))
+    if reread_capture(src_dir) or filed.get("reread"):
+        return refuse("a partial capture (a re-read, or a slow read a challenge stopped) is never extracted")
+    srcs = []
+    sdir = os.path.join(src_dir, "sources")
+    for name in sorted(os.listdir(sdir)) if os.path.isdir(sdir) else []:
+        if name.endswith(".json"):
+            with open(os.path.join(sdir, name)) as fh:
+                srcs.append(json.load(fh))
+    if len(srcs) != filed.get("programs"):
+        return refuse("the artifact holds %d sources; the filed capture read %s programs" % (len(srcs), filed.get("programs")))
+    if sum(1 for s in srcs if s.get("source")) != filed.get("found"):
+        return refuse("the artifact's sources found %d pages; the filed capture %s"
+                      % (sum(1 for s in srcs if s.get("source")), filed.get("found")))
+    fps = filed.get("fingerprints")
+    if fps is not None:
+        texts = {s["control_number"]: s for s in srcs if s.get("text")}
+        if set(texts) != set(fps):
+            return refuse("the programs with text differ from the fingerprinted ones: %s"
+                          % sorted(set(texts) ^ set(fps))[:8])
+        bad = [cn for cn, s in texts.items() if text_sha256(s.get("text")) != fps[cn].get("sha256")
+               or (s.get("source") or {}).get("url") != fps[cn].get("url")]
+        if bad:
+            return refuse("%d programs' text does not match its fingerprint: %s" % (len(bad), ", ".join(sorted(bad)[:8])))
+        proof = "text sha256 of %d programs" % len(texts)
+    else:
+        if {k: v for k, v in staged.items() if k != "run"} != {k: v for k, v in filed.items() if k != "run"}:
+            diff = sorted(k for k in set(staged) | set(filed) if k != "run" and staged.get(k) != filed.get(k))
+            return refuse("the capture carries no fingerprints, and its account differs from the filed one in %s"
+                          % ", ".join(diff[:8]))
+        by_cn = {s["control_number"]: s for s in srcs}
+        rows = [r for k in ("list", "held_worse_window", "held_no_gain", "held_opens_on_list")
+                for r in (filed.get("would_extract") or {}).get(k) or []]
+        bad = [r["control_number"] for r in rows
+               if not (by_cn.get(r["control_number"]) or {}).get("text")
+               or (by_cn[r["control_number"]].get("source") or {}).get("url") != r.get("url")
+               or round(by_cn[r["control_number"]].get("coverage") or 0, 3) != round(r.get("coverage") or 0, 3)]
+        if bad:
+            return refuse("%d programs are not at the address and coverage the filed capture names: %s"
+                          % (len(bad), ", ".join(sorted(bad)[:8])))
+        proof = "the filed account equal but for its run, and %d programs at their address and coverage" % len(rows)
+    if staged.get("platform") == "coursedog":
+        cd = staged.get("coursedog") or {}
+        own, shared = cd_read_codes(dest, cd.get("root") or "")
+        now = set(cd_challenged_programs(srcs, cd, own, shared, {s["control_number"] for s in srcs if s.get("source")}))
+        then = {s["control_number"] for s in srcs if s.get("method") == "page_challenged"}
+        if now != then:
+            return refuse("the current code reads refused pages differently: %s" % sorted(now ^ then)[:8])
+    os.makedirs(os.path.join(out_dir, "sources"), exist_ok=True)
+    for s in srcs:
+        _write(os.path.join(out_dir, "sources", s["control_number"] + ".json"), s)
+    report = {k: v for k, v in staged.items() if k != "run"}
+    report["would_extract"] = would_extract(college, srcs, folder=dest)
+    if fps is None:
+        report["fingerprints"] = {s["control_number"]: {"sha256": text_sha256(s.get("text")),
+                                                        "url": (s.get("source") or {}).get("url")}
+                                  for s in srcs if s.get("text")}
+    report["staged_from"] = {"run": str(sources_run), "proof": proof, "pages_loaded": 0}
+    _write(os.path.join(out_dir, "capture.json"), report)
+    print("staged run %s's capture of %s: %d sources, %d would extract (%s); no page loaded"
+          % (sources_run, college, len(srcs), report["would_extract"].get("programs") or 0, proof))
     return 0
 
 
@@ -4325,6 +5009,287 @@ def call_charge(cost_usd, usage) -> float:
     return 0.0
 
 
+REFUSED_METHODS = ("page_challenged",)
+
+
+def carry_refused(keep_from: str, out_dir: str, cns: list[str], run_id: str | None = None) -> int:
+    """Copy each named program's filed record (one that holds a record) into the run's records, as filed,
+    with the catalog year it was read from: the filed capture's, unless the record already names its own.
+    load_rows() stamps a row with the new capture's year, and a carried record was not read from that
+    capture (Glendale's carried records come from the 2025-2026 PDF; the paid read is of 2026-2027).
+    `carried_in` names the run that carried it."""
+    try:
+        with open(os.path.join(keep_from, "capture.json")) as fh:
+            year = json.load(fh).get("catalog_year")
+    except (OSError, ValueError):
+        year = None
+    n = 0
+    for cn in cns:
+        path = os.path.join(keep_from, "records", cn + ".json")
+        if has_record(path):
+            with open(path) as fh:
+                rec = json.load(fh)
+            if not rec.get("catalog_year"):
+                rec["catalog_year"] = year
+            rec["carried_in"] = run_id
+            _write(os.path.join(out_dir, "records", cn + ".json"), rec)
+            n += 1
+    return n
+
+
+# A read that reached no page for a program (S647, the conductor's decision on COBIx's finding 1 on #3202,
+# narrowing S646's "not_found and page_claimed are never carried"): a filed record that passes is never deleted
+# by such a read. It stays on file and the filing names it with the reason. A failing filed record with no new
+# read is dropped as before. The S646 rule kept the record of a program the college no longer offers from
+# standing as current; the state's status keeps that guard: a program is kept only when the state lists it
+# Active or Approved (CURRENT_STATUS), and never without a status. Glendale's filing of run 43415972509 removed
+# four passing records this way (18638 not_found; 19577, 21305, 37960 page_claimed); the state lists 19577 in
+# teach-out (Active - Teachout Only, read 12:00Z 2026-11-13), so it stays dropped. A gated PDF block
+# (after_unbound) keeps its record by the decision-14 path above, so it is left to that path.
+NO_PAGE_METHODS = ("not_found", "page_claimed")
+
+
+def filed_year(folder: str | None) -> str | None:
+    """The catalog year of the capture a college folder (or a run's out/) holds, or None."""
+    try:
+        with open(os.path.join(folder or "", "capture.json")) as fh:
+            return json.load(fh).get("catalog_year")
+    except (OSError, ValueError):
+        return None
+
+
+def kept_year(rec, year: str | None):
+    """A record kept from its filing without a new read, with the catalog year it was read from: its own, or,
+    for a record filed before records carried one, its filing's (S647). load_rows() stamps a row with the new
+    capture's year where a record names none, so a kept 2025-2026 record would load and reread as 2026-2027."""
+    if isinstance(rec, dict) and not rec.get("catalog_year") and year:
+        return dict(rec, catalog_year=year)
+    return rec
+
+
+def keep_no_read(keep_from: str, out_dir: str, srcs: list[dict], year: str | None = None) -> list[dict]:
+    """Copy each passing filed record (passes_live) of a program read as not_found or page_claimed, whose
+    source names a state status in CURRENT_STATUS, into out_dir's records as filed (kept_year: with the year
+    it was read from), and return one entry per record kept: its method and the reason the read gave (the near
+    miss's why, or the pages it lost), its status, and the filed record's source and run."""
+    out = []
+    for src in srcs:
+        cn = src.get("control_number")
+        if not cn or src.get("method") not in NO_PAGE_METHODS or unbound_of(src):
+            continue
+        status = src.get("status")
+        if str(status) not in CURRENT_STATUS:
+            continue
+        filed = _passing_filed(os.path.join(keep_from, "records", cn + ".json"))
+        if not filed:
+            continue
+        _write(os.path.join(out_dir, "records", cn + ".json"), kept_year(filed, year))
+        near = src.get("near_miss") or {}
+        out.append({"control_number": cn, "title": src.get("title"), "award": src.get("award"),
+                    "method": src["method"], "status": status,
+                    "why": near.get("why") if src["method"] == "not_found" else "its pages went to other programs",
+                    "lost_pages": src.get("lost_pages") or src.get("pages") or [],
+                    "filed_source_url": filed.get("source_url"), "filed_run": filed.get("extracted_run")})
+    return out
+
+
+def kept_no_read_entries(out_dir: str) -> list[dict]:
+    """Every shard's kept_unbound_<shard>.json no_read entries, by control number."""
+    got: dict[str, dict] = {}
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_unbound_*.json"))):
+        with open(path) as fh:
+            for e in json.load(fh).get("no_read") or []:
+                got[e["control_number"]] = e
+    return [got[k] for k in sorted(got)]
+
+
+def status_export(path: str | None, college: str) -> dict[str, str]:
+    """{control number: status} for one college from a coci_college_programs export in the gap census's
+    --from shape ({"programs": [{college, control_number, status}, ...]}), or {} with no path."""
+    if not path:
+        return {}
+    with open(path) as fh:
+        rows = json.load(fh).get("programs") or []
+    return {str(r["control_number"]): r.get("status") for r in rows
+            if r.get("college") == college and r.get("control_number")}
+
+
+TAB_NAMES_ANOTHER = "the tab prints another listed program (tab_names_another)"
+TAB_OWNED_BY_ANOTHER = "the tab's own program data names another listed program's control number (tab_control_owner)"
+
+
+def wrong_tabs(dest: str, report: dict, owners: dict | None = None, records_dir: str | None = None) -> list[dict]:
+    """The filed records read from a Coursedog tab that belongs to another listed program, from the filing's own
+    account: first the control number the tab's own program data names (capture.json's coursedog catalog, or
+    `owners`, {code: control number} from a page read's account, tab_owners_file), then the tab's catalog name
+    against the titles of the programs sources.json lists (tab_names_another). records_dir reads another filing's
+    records against the same account (main's, so a hold can tell whether main's copy read a refused tab too)."""
+    cd = report.get("coursedog") or {}
+    names = {e.get("code"): e.get("name") for e in cd.get("catalog") or []}
+    named = {e.get("code"): e.get("control_number") for e in cd.get("catalog") or [] if e.get("control_number")}
+    # A page read's account stands in, tab by tab, where the capture heard no number: the capture wins wherever
+    # it heard one, and an older account never overrides it.
+    named = {**(owners or {}), **named}
+    if not names and not named:
+        return []
+    try:
+        with open(os.path.join(dest, "sources.json")) as fh:
+            srcs = json.load(fh)
+    except (OSError, ValueError):
+        return []
+    plain = {s["control_number"]: _plain(s.get("title")) for s in srcs}
+    out = []
+    for s in srcs:
+        cn = s["control_number"]
+        path = os.path.join(records_dir or os.path.join(dest, "records"), cn + ".json")
+        rec = _filed(path)
+        url = (rec or {}).get("source_url") or ""
+        code = cd_href_code(url.rsplit("/", 1)[0], cd.get("root") or "") if rec else None
+        owner = tab_control_owner({"one_program": bool(code), "names_control_number": named.get(code)}, plain)
+        if owner and owner != cn and not tab_title_link(s.get("title"), names.get(code) or code):
+            out.append({"control_number": cn, "title": s.get("title"), "award": s.get("award"), "tab": code,
+                        "tab_name": names.get(code), "names": [owner], "reason": TAB_OWNED_BY_ANOTHER,
+                        "read_score": rec.get("score"), "read_run": rec.get("extracted_run")})
+            continue
+        name = names.get(code)
+        if not name:
+            continue
+        tab = cd_name_title_kind(name)[0]
+        others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
+        if plain[cn] not in heading_forms(name) and tab_names_another(s.get("title"), tab, others):
+            out.append({"control_number": cn, "title": s.get("title"), "award": s.get("award"), "tab": code,
+                        "tab_name": name, "names": sorted(k for k, t in plain.items() if t == tab),
+                        "reason": TAB_NAMES_ANOTHER,
+                        "read_score": rec.get("score"), "read_run": rec.get("extracted_run")})
+    return out
+
+
+def tab_owners_file(path: str | None, college: str) -> dict[str, str]:
+    """{Coursedog code: control number} from a page read's committed account of the control numbers tabs' own
+    program data named (kb/program_requirements_college/<slug>/tab_owners.json: {"college", "run", "tabs": {code:
+    {"control_number", ...}}}), for refile-kept to hold a filed read whose capture predates the reader's own
+    reading of that data (S648); {} with no path. A file naming another college is refused."""
+    if not path:
+        return {}
+    with open(path) as fh:
+        got = json.load(fh)
+    if got.get("college") != college:
+        raise ValueError("%s names %r, not %r" % (path, got.get("college"), college))
+    out = {}
+    for code, e in (got.get("tabs") or {}).items():
+        v = str((e or {}).get("control_number") or "").strip()
+        if v.isdigit():
+            out[code] = v.zfill(5)
+    return out
+
+
+def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: dict | None = None,
+                owners: dict | None = None, main_dir: str | None = None) -> int:
+    """The free local step (S647) over a college's committed filing, from an earlier filing unpacked at
+    from_dir (`git archive <sha> <folder>`, the filing the kept records were read in). No page is loaded and
+    no model is called.
+    (1) keep_no_read for the filing's own not_found and page_claimed programs (capture.json), each with the
+    state status capture.json names or `statuses` gives (a coci_college_programs export, status_export); a
+    program with neither is not kept, and a record this step kept earlier whose program no longer qualifies
+    is removed.
+    (2) A record read from a Coursedog tab that belongs to another listed program (wrong_tabs: the control number
+    the tab's own data names, from the capture or `owners`, or the tab's name) is held: main's record stands as filed
+    there (main_dir, main's filing of the college; from_dir when none is given), or none when main has none, and
+    summary.json lists the read set aside (held_wrong_tab). A hold never deletes or replaces a record main holds; one
+    that fails on main is carried as it is, and summary.json (held_failing_on_main) and the printout name it, so the
+    load can skip it (d-keep-passing-record-no-read-s647; COBIx on #3202, 37070 and 12571).
+    (3) Every record the filing kept from from_dir without a new read (its content equal to from_dir's)
+    takes from_dir's catalog year where it names none (kept_year).
+    summary.json's counts are taken again from the records; the run's spend and calls stay as filed."""
+    dest = dest or os.path.join(COLLEGE_DIR, slug_of(college))
+    with open(os.path.join(dest, "capture.json")) as fh:
+        report = json.load(fh)
+    year = filed_year(from_dir)
+    path = os.path.join(dest, "summary.json")
+    summary = {}
+    if os.path.isfile(path):
+        with open(path) as fh:
+            summary = json.load(fh)
+    rec_path = lambda folder, cn: os.path.join(folder, "records", cn + ".json")
+    # (1)
+    srcs = [dict(e, method=m) for m in NO_PAGE_METHODS for e in report.get(m) or []]
+    for s in srcs:
+        if (statuses or {}).get(s["control_number"]):
+            s["status"] = statuses[s["control_number"]]
+    was = {e["control_number"] for e in summary.get("kept_no_read") or []}
+    have = {os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(dest, "records", "*.json"))}
+    kept = keep_no_read(from_dir, dest, [s for s in srcs if s["control_number"] not in have - was], year)
+    kept_cns = {e["control_number"] for e in kept}
+    dropped = sorted(cn for cn in was - kept_cns if os.path.isfile(rec_path(dest, cn)))
+    for cn in dropped:
+        os.remove(rec_path(dest, cn))
+    # (2)
+    main_dir = main_dir or from_dir
+    main_year = filed_year(main_dir)
+    held_now = []
+    # main's copy read a tab the rule now refuses too (COBIx on #3202, 17:29Z): it is not restored, and the
+    # program is listed for a person (for_person).
+    main_wrong = {e["control_number"]: e for e in wrong_tabs(dest, report, owners, os.path.join(main_dir, "records"))}
+    for w in wrong_tabs(dest, report, owners):
+        filed = _filed(rec_path(main_dir, w["control_number"]))
+        person = None
+        if filed and w["control_number"] in main_wrong:
+            person = "main's copy reads %s, a tab the rule refuses too" % (main_wrong[w["control_number"]].get("tab"))
+            filed = None
+        if filed:
+            _write(rec_path(dest, w["control_number"]), kept_year(filed, main_year))
+        elif os.path.isfile(rec_path(dest, w["control_number"])):
+            os.remove(rec_path(dest, w["control_number"]))
+        held_now.append(dict(w, reason=w.get("reason") or TAB_NAMES_ANOTHER, filed=bool(filed),
+                             filed_score=(filed or {}).get("score"), filed_passes=_passing_filed_rec(filed),
+                             **({"for_person": person} if person else {})))
+    held = {e["control_number"]: e for e in summary.get("held_wrong_tab") or []}
+    held.update({e["control_number"]: e for e in held_now})
+    # Every held program whose record stands as main's and fails there: carried, and named for the load to skip.
+    failing_held = sorted(cn for cn in held if _filed(rec_path(dest, cn)) is not None
+                          and not _passing_filed_rec(_filed(rec_path(dest, cn))))
+    # (3)
+    stamped = 0
+    strip = lambda r: {k: v for k, v in (r or {}).items() if k != "catalog_year"}
+    for p in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
+        cn = os.path.splitext(os.path.basename(p))[0]
+        with open(p) as fh:
+            rec = json.load(fh)
+        if rec.get("catalog_year") or not year:
+            continue
+        old = _filed(rec_path(from_dir, cn))
+        if old is not None and strip(old) == strip(rec):
+            _write(p, kept_year(rec, year))
+            stamped += 1
+    records = []
+    for p in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
+        with open(p) as fh:
+            records.append(json.load(fh))
+    fresh = summarize(records, report, summary.get("cost_usd_run"),
+                      {"calls": summary.get("extract_calls"), "failed": []})
+    for k in ("extracted", "errors", "passed_machine_checks", "failed", "cost_usd_filed", "cost_per_program"):
+        summary[k] = fresh[k]
+    summary.pop("kept_no_read", None)
+    summary.pop("held_wrong_tab", None)
+    summary.pop("held_failing_on_main", None)
+    if kept:
+        summary["kept_no_read"] = sorted(kept, key=lambda e: e["control_number"])
+    if held:
+        summary["held_wrong_tab"] = [held[k] for k in sorted(held)]
+    if failing_held:
+        summary["held_failing_on_main"] = failing_held
+    _write(path, summary)
+    print("kept %d passing records this read reached no page for (%s); removed %d (%s); held %d read from "
+          "another program's tab (%s); %d kept records took the catalog year %s"
+          % (len(kept), ", ".join("%s %s" % (e["control_number"], e["method"]) for e in kept) or "none",
+             len(dropped), ", ".join(dropped) or "none", len(held_now),
+             ", ".join(e["control_number"] for e in held_now) or "none", stamped, year))
+    print("held records that fail on main, carried as filed there for the load to skip: %d (%s)"
+          % (len(failing_held), ", ".join(failing_held) or "none"))
+    person = sorted(cn for cn, e in held.items() if e.get("for_person"))
+    print("held for a person (main's copy reads a refused tab too, nothing restored): %d (%s)"
+          % (len(person), ", ".join("%s: %s" % (cn, held[cn]["for_person"]) for cn in person) or "none"))
+    return 0
 HALT_WAIT_S = 20   # the pause before the one retry of a call the function answered 503 or 401 (extract)
 
 
@@ -4346,13 +5311,25 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     if not key:
         print("SUPABASE_SERVICE_KEY is not set; the Edge Function takes only the service key.")
         return 2
-    sources = []
+    sources, refused = [], []
     for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
         with open(path) as fh:
             src = json.load(fh)
         if (src.get("coverage") or 0) >= X.MIN_COVERAGE and src.get("text"):
             sources.append(src)
+        elif src.get("method") in REFUSED_METHODS:
+            refused.append(src["control_number"])
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
+    # A record kept from the filing without a new read keeps the catalog year it was read from (kept_year).
+    keep_year = filed_year(keep_from) if keep_from else None
+    if keep_from and shard == 0:
+        # A refusal is no evidence about the program (S646): a program whose own page answered a bot check
+        # keeps its filed record, for every college. A program read as not found or as having lost its page
+        # keeps a passing filed record as filed, and the filing names it (keep_no_read, S647); a failing one,
+        # or one the state lists in teach-out, is not kept.
+        carried = carry_refused(keep_from, out_dir, refused, run_id)
+        if carried:
+            print("kept %d filed records whose program's page answered a bot check" % carried, flush=True)
     # A record filed from the same page stays: only a program whose page
     # changed, or that has no record, goes to the model again.
     kept = moved = 0
@@ -4380,7 +5357,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 h = held(path, prev.get(src["control_number"]), src)
                 if os.path.isfile(path):
                     with open(path) as fh:
-                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
+                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"),
+                               kept_year(json.load(fh), keep_year))
                 holds.append(src["control_number"])
                 print("%-6s %s cov %s, was %s" % (src["control_number"], h["reason"], h["coverage"], h["was_coverage"]),
                       flush=True)
@@ -4403,7 +5381,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                 continue
             filed = _filed(os.path.join(keep_from, "records", cn + ".json"))
             if filed:
-                _write(os.path.join(out_dir, "records", cn + ".json"), filed)
+                _write(os.path.join(out_dir, "records", cn + ".json"), kept_year(filed, keep_year))
                 unbound_kept.append(cn)
             if cn in (force or ()):
                 forced_unbound.append(dict(unbound_entry(src, un), filed=bool(filed),
@@ -4415,10 +5393,27 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         skip = {e["control_number"] for e in forced_unbound}
         sources = [s for s in sources if s["control_number"] not in skip]
         fresh = [s for s in fresh if s["control_number"] not in skip]
-        if unbound_kept or forced_unbound:
-            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard),
-                   {"programs": unbound_kept, "forced_unbound": forced_unbound})
-        kept += len(unbound_kept)
+        # A program this read reached no page for keeps its passing filed record (keep_no_read, S647); shard 0
+        # alone, as carry_refused, so two shards never write one file twice. Its source entry stays the one
+        # the record was read from, as an unbound one's does (file_run).
+        no_read: list[dict] = []
+        if shard == 0:
+            no_srcs = []
+            for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
+                with open(path) as fh:
+                    src = json.load(fh)
+                if src.get("method") in NO_PAGE_METHODS:
+                    no_srcs.append(src)
+            no_read = keep_no_read(keep_from, out_dir, no_srcs, keep_year)
+            for e in no_read:
+                print("%-6s kept: %s (%s); the passing filed record stays" % (e["control_number"], e["method"],
+                                                                             e["why"]), flush=True)
+        if unbound_kept or forced_unbound or no_read:
+            acct = {"programs": unbound_kept + [e["control_number"] for e in no_read], "forced_unbound": forced_unbound}
+            if no_read:
+                acct["no_read"] = no_read
+            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard), acct)
+        kept += len(unbound_kept) + len(no_read)
         print("kept %d records filed from the same page or moved with the same text (%d moved); held %d; %d to "
               "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
                                              sum(1 for x in fresh if x["control_number"] in (force or ()))),
@@ -4432,6 +5427,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     kept_lock = threading.Lock()
     spend = {"usd": 0.0, "stopped": False}
     not_sent: list[str] = []
+    failed: list[dict] = []
+    calls = [0]
     halt: dict = {}
     # Model usage carried by halting answers (paid parts of a read in parts): priced as a record is, unpriced apart.
     halt_paid = {"usd": 0.0, "unpriced": 0}
@@ -4445,7 +5442,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         path = os.path.join(keep_from or "", "records", cn + ".json")
         if keep_from and os.path.isfile(path):
             with open(path) as fh:
-                _write(os.path.join(out_dir, "records", cn + ".json"), json.load(fh))
+                _write(os.path.join(out_dir, "records", cn + ".json"), kept_year(json.load(fh), keep_year))
 
     def one(src: dict) -> None:
         t0 = time.time()
@@ -4510,6 +5507,29 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                     print("ceiling: $%.2f reached at $%.2f; no further program is sent" % (ceiling_usd, spend["usd"]),
                           flush=True)
         rec = got.get("record")
+        with kept_lock:
+            calls[0] += 1
+        if got.get("error") or not isinstance(rec, dict):
+            # A call that failed in transport or authorization, timed out, or answered with no record is no
+            # read (d-extract-failure-files-nothing-s647): the filed record stays as filed, a program with
+            # none gets no record file, and the program is listed with the status. Run 43384599013 filed 121
+            # HTTP 401 stubs over Glendale's records while the database refused connections.
+            status = got.get("error") or "no record (stop_reason %s)" % got.get("stop_reason")
+            path = os.path.join(keep_from or "", "records", src["control_number"] + ".json")
+            had = bool(keep_from) and os.path.isfile(path)
+            if had:
+                with open(path) as fh:
+                    _write(os.path.join(out_dir, "records", src["control_number"] + ".json"),
+                           kept_year(json.load(fh), keep_year))
+            with kept_lock:
+                failed.append({"control_number": src["control_number"], "title": src.get("title"),
+                               "award": src.get("award"), "status": str(status)[:300], "kept_filed": had,
+                               "model": got.get("model"), "usage": got.get("usage"),
+                               # the merged usage of a retried call, priced per try (priced, S648 review)
+                               "cost_usd": priced(got)})
+            print("%-6s extract_failed: %s (%s)" % (src["control_number"], str(status)[:120],
+                                                     "the filed record stays" if had else "no record filed"), flush=True)
+            return
         # The college's reconcile steps search the page again for a figure the reading left out
         # (Sam, 2026-10-14; kb/_program_requirements_reconcile.py).
         rec, notes = R.reconcile(rec, src["text"], src["college"], src.get("award"),
@@ -4529,6 +5549,10 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                "cost_usd": priced(got), "ms": got.get("ms"),
                "seconds": round(time.time() - t0, 1), "parts": got.get("parts"), "error": got.get("error"), "score": sc,
                "record": rec, "extracted_run": run_id}
+        if src.get("catalog_year"):
+            # The catalog the read came from rides with the record, so a later read that keeps it without
+            # reading it again keeps its year too (S647; load_rows reads a record's own year first).
+            row["catalog_year"] = src["catalog_year"]
         if (src.get("source") or {}).get("text_sha"):
             # The window's fingerprint, its codes and coverage: what proves a later edition moved the
             # program to other pages without changing it (moved_unchanged, S639).
@@ -4541,7 +5565,7 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             # The read passes less, or covers less, than the filed record does (S641 review, call 2b;
             # kept_passing): the filed record stays as filed, and the program is listed with both scores and
             # the reason for a person.
-            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), filed)
+            _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), kept_year(filed, keep_year))
             why = kept_reason(filed.get("score"), sc)
             with kept_lock:
                 kept_list.append({"control_number": src["control_number"], "title": src.get("title"),
@@ -4584,11 +5608,59 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                    sorted(kept_list, key=lambda x: x["control_number"]))
             print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
                   flush=True)
+        # The calls this shard made and the ones that failed, which file_run lists in the summary and
+        # check-extract reads to end the job red (extract_failed_run).
+        _write(os.path.join(out_dir, "extract_account_%d.json" % shard),
+               {"run": run_id, "shard": shard, "calls": calls[0],
+                "failed": sorted(failed, key=lambda x: x["control_number"])})
+        if failed:
+            print("extract_failed: %d of %d calls failed; the filed records stay" % (len(failed), calls[0]), flush=True)
     if halt:
         # The step ends red. The one-college workflow then files nothing (its file step needs this one to pass),
         # and the wave files the records already read beside the filed ones the halt kept.
         print("::error::%s" % halt_message(halt, len(not_sent)), flush=True)
         return HALT_EXIT
+    return 0
+
+
+def extract_accounts(out_dir: str) -> dict:
+    """Every shard's extraction account in the run's out/: {calls, failed: [...]}, or calls None when
+    no extraction ran."""
+    calls, failed, seen = 0, [], False
+    for path in sorted(glob.glob(os.path.join(out_dir, "extract_account_*.json"))):
+        with open(path) as fh:
+            acct = json.load(fh)
+        seen = True
+        calls += int(acct.get("calls") or 0)
+        failed.extend(acct.get("failed") or [])
+    return {"calls": calls if seen else None, "failed": sorted(failed, key=lambda x: x["control_number"])}
+
+
+def extract_failed_run(acct: dict) -> bool:
+    """A run whose extraction more than half failed, or wholly failed, ends red
+    (d-extract-failure-files-nothing-s647)."""
+    calls, n = acct.get("calls") or 0, len(acct.get("failed") or [])
+    return calls > 0 and (n * 2 > calls or n == calls)
+
+
+def check_extract(out_dir: str) -> int:
+    """The last step of a read job: non-zero when extraction ran and failed as extract_failed_run says,
+    after the run's capture and the records it kept are filed and committed. A halt is named first (#3227):
+    the function's answer stopped the read, and every later count follows from it."""
+    h = extract_halt(out_dir)
+    if h:
+        print("::error::" + halt_message(h))
+        return 1
+    acct = extract_accounts(out_dir)
+    if acct["calls"] is None:
+        print("no extraction ran")
+        return 0
+    n = len(acct["failed"])
+    if extract_failed_run(acct):
+        print("::error::%d of %d extraction calls failed (first: %s). The filed records stayed as filed; this run "
+              "is no read to load." % (n, acct["calls"], acct["failed"][0]["status"][:160]))
+        return 1
+    print("%d of %d extraction calls failed" % (n, acct["calls"]))
     return 0
 
 
@@ -4782,18 +5854,62 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
     return 0
 
 
-def summarize(records: list[dict], capture_report: dict) -> dict:
-    """The run in numbers, for the session that reads the commit and for Sam."""
+def held_summary(dest: str, prior: dict) -> dict:
+    """held_wrong_tab carried from the prior summary, and held_failing_on_main taken again from the record files in
+    dest (a held program whose record stands and fails); {} when nothing is held."""
+    held = prior.get("held_wrong_tab") or []
+    if not held:
+        return {}
+    failing = sorted(e["control_number"] for e in held
+                     if _filed(os.path.join(dest, "records", e["control_number"] + ".json")) is not None
+                     and not _passing_filed_rec(_filed(os.path.join(dest, "records", e["control_number"] + ".json"))))
+    return dict({"held_wrong_tab": held}, **({"held_failing_on_main": failing} if failing else {}))
+
+
+def run_cost_of(out_dir: str, run_id, acct: dict | None = None) -> float:
+    """What THIS run's model calls cost: its fresh records (extracted_run the run, no read_run), the reads
+    kept_passing set aside, and the calls that failed. A record kept or carried from an earlier run cost
+    this run nothing (summary.json once summed every filed record: a $0 run read $9.33, S647)."""
+    rid = str(run_id)
+    total = 0.0
+    for path in glob.glob(os.path.join(out_dir, "records", "*.json")):
+        with open(path) as fh:
+            r = json.load(fh)
+        if str(r.get("extracted_run")) == rid and "read_run" not in r and "carried_in" not in r:
+            total += r.get("cost_usd") or 0
+    for path in glob.glob(os.path.join(out_dir, "kept_passing_*.json")):
+        with open(path) as fh:
+            total += sum(k.get("cost_usd") or 0 for k in json.load(fh))
+    total += sum(x.get("cost_usd") or 0 for x in (acct or extract_accounts(out_dir))["failed"])
+    # The halting answers' paid usage (extract_halt_<shard>.json cost_usd, #3227), as the wave's run_cost counts it.
+    for path in glob.glob(os.path.join(out_dir, "extract_halt_*.json")):
+        try:
+            with open(path) as fh:
+                total += json.load(fh).get("cost_usd") or 0
+        except (OSError, ValueError):
+            continue
+    return round(total, 2)
+
+
+def summarize(records: list[dict], capture_report: dict, cost_usd_run: float | None = None,
+              acct: dict | None = None) -> dict:
+    """The run in numbers, for the session that reads the commit and for Sam. cost_usd_run is this run's
+    spend, cost_usd_filed the cost of every filed record whichever run paid it; extract_failed lists the
+    programs whose call failed and kept their filed record (S647)."""
     passed = [r for r in records if r.get("score") and r["score"].get("pass")]
     def fails(check):
         return sum(1 for r in records if r.get("score") and not r["score"].get(check, {}).get("pass", True))
     total = sum(r.get("cost_usd") or 0 for r in records)
+    acct = acct or {"calls": None, "failed": []}
     return {"college": capture_report.get("college"), "programs": capture_report.get("programs"),
             "with_closed_list": capture_report.get("with_closed_list"), "found": capture_report.get("found"),
             "extracted": len(records), "errors": sum(1 for r in records if r.get("error")),
             "passed_machine_checks": len(passed),
             "failed": {c: fails(c) for c in ("coverage", "invented", "arithmetic", "repeated", "outcomes")},
-            "cost_usd": round(total, 2), "cost_per_program": round(total / len(records), 4) if records else None,
+            "cost_usd_run": cost_usd_run, "cost_usd_filed": round(total, 2),
+            "cost_per_program": round(total / len(records), 4) if records else None,
+            "extract_calls": acct["calls"],
+            "extract_failed": [{k: x.get(k) for k in ("control_number", "status", "kept_filed")} for x in acct["failed"]],
             "not_found": capture_report.get("not_found")}
 
 
@@ -4806,6 +5922,11 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     with open(os.path.join(out_dir, "capture.json")) as fh:
         report = json.load(fh)
     report["run"] = run_id
+    if report.get("reread"):
+        os.makedirs(dest, exist_ok=True)
+        _write(os.path.join(dest, "capture_reread.json"), report)
+        print("re-read: filed capture_reread.json under %s" % os.path.relpath(dest, os.path.dirname(HERE)))
+        return 0
     # The forced numbers the extraction could not bind (decision 14): the filed account names them, and
     # refused_passing keeps only the unforced ones.
     fu: dict[str, dict] = {}
@@ -4846,6 +5967,10 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     for path in glob.glob(os.path.join(out_dir, "not_sent_*.json")):
         with open(path) as fh:
             not_sent.update(json.load(fh).get("programs") or [])
+    # A program whose extraction call failed kept its filed record the same way (S647), so its entry
+    # stays the one that record was read from, and the next run sends it again.
+    acct = extract_accounts(out_dir)
+    not_sent.update(x["control_number"] for x in acct["failed"])
     kept_unbound: set[str] = set()
     for path in glob.glob(os.path.join(out_dir, "kept_unbound_*.json")):
         with open(path) as fh:
@@ -4880,8 +6005,22 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
         os.remove(os.path.join(dest, "kept_passing.json"))
     if kept:
         _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
-    if records:
-        _write(os.path.join(dest, "summary.json"), dict(summarize(records, report), run=run_id))
+    if records or acct["calls"]:
+        try:
+            with open(os.path.join(dest, "summary.json")) as fh:
+                prior_summary = json.load(fh)
+        except (OSError, ValueError):
+            prior_summary = {}
+        summary = dict(summarize(records, report, run_cost_of(out_dir, run_id, acct), acct), run=run_id)
+        # The passing records kept where this read reached no page for the program, each with the reason
+        # (keep_no_read, S647); named only when there are any, so no other filing's account changes shape.
+        no_read = kept_no_read_entries(out_dir)
+        if no_read:
+            summary["kept_no_read"] = no_read
+        # The holds refile-kept made stay with the filing (S648 review of #3202): a new read files over the records,
+        # never over the decision to hold one. held_failing_on_main is taken again from the records filed now.
+        summary.update(held_summary(dest, prior_summary))
+        _write(os.path.join(dest, "summary.json"), summary)
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))
     return 0
 
@@ -4909,6 +6048,21 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
     with open(os.path.join(dest, "capture.json")) as fh:
         year = json.load(fh).get("catalog_year")
+    # Never trust a summary key alone (S648 review): a record read from a tab the rule refuses is skipped by the
+    # filing's own account (wrong_tabs over capture.json and the page read's tab_owners.json), and a held program
+    # whose record fails is skipped by held_failing_on_main and by the held list, either of which suffices.
+    try:
+        with open(os.path.join(dest, "summary.json")) as fh:
+            summ = json.load(fh)
+    except (OSError, ValueError):
+        summ = {}
+    with open(os.path.join(dest, "capture.json")) as fh:
+        cap = json.load(fh)
+    owners_path = os.path.join(dest, "tab_owners.json")
+    owners = tab_owners_file(owners_path, college) if os.path.isfile(owners_path) else {}
+    refused = {e["control_number"]: e for e in wrong_tabs(dest, cap, owners)}
+    failing_held = set(summ.get("held_failing_on_main") or []) | set(
+        (held_summary(dest, summ).get("held_failing_on_main") or []))
     rows, skipped = [], []
     for path in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
         with open(path) as fh:
@@ -4921,6 +6075,12 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
         why = None
         if rec.get("college") != college:
             why = "a record of %s" % rec.get("college")
+        elif key in refused:
+            why = "read from a tab the rule refuses (%s: %s)" % (refused[key].get("tab"), refused[key].get("reason"))
+        elif key in failing_held:
+            # A program refile-kept held from another program's tab whose record stands as main's and fails there
+            # (summary.json held_failing_on_main; COBIx on #3202): never loaded until a read of its own passes.
+            why = "held from another program's tab; main's record fails (held_failing_on_main)"
         elif rec.get("error"):
             why = "extraction error: %s" % str(rec["error"])[:120]
         elif not isinstance(program, dict) or not isinstance(record.get("blocks"), list):
@@ -4940,7 +6100,8 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
         score = rec.get("score") or {}
         rows.append({
             "college": college, "control_number": key,
-            "program_title": rec.get("title"), "award": rec.get("award"), "catalog_year": year,
+            # A record carried from an earlier capture keeps that capture's year (carry_refused).
+            "program_title": rec.get("title"), "award": rec.get("award"), "catalog_year": rec.get("catalog_year") or year,
             "source_url": rec.get("source_url"), "measure": program.get("measure") or "units",
             "total_min": total.get("min"), "total_max": total.get("max"),
             "record": record_read(record),
@@ -5107,9 +6268,21 @@ def _write(path: str, obj) -> None:
         fh.write("\n")
 
 
+def reread_capture(out_dir: str) -> bool:
+    """Whether the run's capture is partial: a route=challenged re-read (partial by design), or a
+    route=slow read a challenge cut short."""
+    try:
+        with open(os.path.join(out_dir, "capture.json")) as fh:
+            rep = json.load(fh)
+    except (OSError, ValueError):
+        return False
+    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at"))
+
+
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    ap.add_argument("step", choices=["pin", "capture", "extract", "reconcile", "file", "load", "reread"])
+    ap.add_argument("step", choices=["pin", "capture", "stage", "extract", "reconcile", "file", "check-extract",
+                                     "load", "reread", "refile-kept"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -5124,19 +6297,52 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ceiling-usd", default=os.environ.get("EXTRACT_CEILING_USD", ""),
                     help="extract only: stop sending programs once the run's actual cost reaches this (the wave "
                          "sets its limit; empty, the default, is no ceiling)")
+    ap.add_argument("--from", dest="from_dir", default="", help="stage: an earlier run's artifact, unpacked; "
+                                                                "refile-kept: an earlier filing's college folder")
+    ap.add_argument("--status-file", default="", help="refile-kept: a coci_college_programs export with each "
+                                                      "program's status (the gap census's --from shape)")
+    ap.add_argument("--main", dest="main_dir", default="", help="refile-kept: main's filing of the college (`git "
+                                                             "archive origin/main <folder>`); a hold restores main's "
+                                                             "record (default: --from)")
+    ap.add_argument("--tab-owners", default="", help="refile-kept: a page read's account of the control numbers "
+                                                     "Coursedog tabs' own program data named (tab_owners_file)")
+    ap.add_argument("--sources-run", default="", help="stage only: the run whose artifact --from holds")
     ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
     if args.step == "pin":
         return pin(args.college, args.run)
     if args.step == "capture":
         return capture(args.college, args.out, args.limit)
+    if args.step == "stage":
+        if not str(args.sources_run).isdigit():
+            print("::error::stage needs --sources-run, a numeric run id")
+            return 2
+        return stage_sources(args.college, args.from_dir, args.out, args.sources_run)
+    if args.step == "check-extract":
+        return check_extract(args.out)
+    if args.step == "refile-kept":
+        if not os.path.isdir(os.path.join(args.from_dir or "", "records")):
+            print("::error::refile-kept needs --from, an earlier filing's college folder holding records/")
+            return 2
+        return refile_kept(args.college, args.from_dir, statuses=status_export(args.status_file or None, args.college),
+                           owners=tab_owners_file(args.tab_owners or None, args.college),
+                           main_dir=args.main_dir or None)
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":
         return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
+        if reread_capture(args.out):
+            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+                  "filed as it is and never reconciled")
+            return 0
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
+        if reread_capture(args.out):
+            # Filed as a capture alone (file_run), so the account of where it stopped is kept; nothing is paid.
+            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+                  "filed as it is and never extracted")
+            return 0
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None
         ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None

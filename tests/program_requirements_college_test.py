@@ -1122,7 +1122,8 @@ recs = [{"score": {"pass": True, "coverage": {"pass": True}, "arithmetic": {"pas
         {"score": None, "error": "HTTP 500", "cost_usd": None}]
 sm = C.summarize(recs, {"college": "Cerritos College", "programs": 292, "with_closed_list": 288, "found": 270})
 check(sm["passed_machine_checks"] == 1 and sm["failed"]["arithmetic"] == 1 and sm["errors"] == 1
-      and sm["cost_usd"] == 0.12, "the account counts passes, each failed check, errors and cost")
+      and sm["cost_usd_filed"] == 0.12 and sm["cost_usd_run"] is None and "cost_usd" not in sm,
+      "the account counts passes, each failed check, errors, and the filed records' cost apart from the run's")
 
 # ── which statuses the harvest reads (Sam's go, 2026-10-10: Approved too) ──
 check("status.like.Active*" in C.STATUS_FILTER and "status.eq.Approved" in C.STATUS_FILTER
@@ -2632,6 +2633,71 @@ check(C.cd_code_kind("AST.ADJ") == "adt" and C.cd_code_kind("AAT.PSY") == "adt" 
       and C.cd_code_kind("12345") is None and C.cd_code_kind(None) is None,
       "a Coursedog code's letters name its award, as a prefix or a suffix, or none")
 check(hn["code_kind"] == "adt" and hn["code"] == "AST.ADJ", "a Coursedog tab carries its code's award kind")
+# Glendale's codes, as its program search names them (capture run 43355259728, S645): a transfer degree's
+# letters carry a hyphen, and a space may stand beside them. "AS-T ADMJ" is "Administration of Justice -
+# Associate in Science for Transfer"; read as before it named an A.S.
+GL_KINDS = {"AS-T ADMJ": "adt", "AA-T ANTHR": "adt", "ENGL AA-T": "adt", "BIO AS-T": "adt", "KIN AAT": "adt",
+            "PSYCH- AAT": "adt", "ECON-AAT": "adt", "BA2.0-AST": "adt", "ACCTG-AS": "as", "PSAST - AS": "as",
+            "ACCTG-C": None, "NCAMA": None, "ADAST-AS": "as"}
+gl_read = {c: C.cd_code_kind(c) for c in GL_KINDS}
+check(gl_read == GL_KINDS, "Glendale's hyphenated transfer letters name the transfer degree: %r" % gl_read)
+check(C.cd_code_kind("05000.AA") == "aa" and C.cd_code_kind("AST.BIO") == "adt" and C.cd_code_kind("AS.EGN") == "as",
+      "Merced's and Hartnell's codes read as before")
+# The account a Coursedog capture files when no program page answers (S645): the program addresses the
+# catalog's own index links to, and the first overviews that miss, each with what it answered.
+gl_rows = C.cd_programs({"data": [{"code": "ACCTG-AS", "programGroupId": "x7Kq2", "name": "Accounting - Associate of Science"},
+                                  {"code": "NCAMA", "programGroupId": "NCAMA", "name": "NCAMA"}]})
+check(gl_rows == [{"code": "ACCTG-AS", "name": "Accounting - Associate of Science", "group": "x7Kq2"},
+                  {"code": "NCAMA", "name": "NCAMA"}],
+      "a program group id that differs from the code is kept beside it: %r" % gl_rows)
+gl_links = C.cd_index_links({"links": [
+    {"text": "Programs", "href": "https://catalog.glendale.edu/programs"},
+    {"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"},
+    {"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"},
+    {"text": "Courses", "href": "https://catalog.glendale.edu/courses/ACCTG101"},
+    {"text": "Elsewhere", "href": "https://www.glendale.edu/programs/x"}]}, "https://catalog.glendale.edu")
+check(gl_links == [{"text": "Accounting - Associate of Science", "href": "https://catalog.glendale.edu/programs/x7Kq2"}],
+      "the index's program addresses: one each, under the catalog's own /programs/: %r" % gl_links)
+gl_over = {"url": "https://catalog.glendale.edu/programs/ACCTG-AS", "status": 200, "access": "ok",
+           "final_url": "https://catalog.glendale.edu/programs/ACCTG-AS", "title": "Glendale Community College Catalog",
+           "h1": "", "body": "Page not found\n  We could not find the page you were looking for. " + "x" * 400,
+           "links": [{"text": "Program Requirements", "href": "https://catalog.glendale.edu/programs/ACCTG-AS/program-requirements"},
+                     {"text": "Home", "href": "https://catalog.glendale.edu/"}],
+           "clickables": ["Overview", "Program Requirements"], "tabPanels": []}
+gl_info: dict = {}
+for code in ("A", "B", "C", "D", "E", "F", "G"):
+    C.cd_note_miss(gl_info, code, gl_over)
+C.cd_note_miss(gl_info, "H", {"access": "unreachable", "status": None, "error": "Timeout 30000ms exceeded."})
+gl_acc = gl_info["miss_pages"][0]
+check(gl_info["miss_answers"] == {"ok 200": 7, "unreachable None": 1} and len(gl_info["miss_pages"]) == C.CD_MISS_KEEP + 1
+      and gl_info["miss_pages"][-1]["code"] == "H",
+      "every miss is counted by what it answered; the first few and the first of each other answer are kept in full: %r"
+      % gl_info.get("miss_answers"))
+# Glendale's second capture (run 43361595138, S645): each overview that answered showed the tabs "Overview ·
+# Completion Requirements · Program Learning Outcomes", and the 50 that answered 405 and the one 404 are as many
+# as its codes carrying a mark beyond letters, digits and a hyphen (51).
+check(bool(C.CD_REQUISITES.search("Completion Requirements")) and not C.CD_REQUISITES.search("Program Learning Outcomes")
+      and not C.CD_REQUISITES.search("NCAMA - Administrative Medical Assistant"),
+      "Glendale's Completion Requirements tab is the program's list")
+GL_ROOT = "https://catalog.glendale.edu"
+check(C.cd_href_code(GL_ROOT + "/programs/AS-T%20ADMJ", GL_ROOT) == "AS-T ADMJ"
+      and C.cd_href_code(GL_ROOT + "/programs/AD%26D-AS/", GL_ROOT) == "AD&D-AS"
+      and C.cd_href_code(GL_ROOT + "/programs/E%2FSB-AS", GL_ROOT) == "E/SB-AS"
+      and C.cd_href_code("https://www.glendale.edu/programs/X", GL_ROOT) is None,
+      "an index link names its program's code, unescaped")
+gl_hrefs = C.cd_index_hrefs([{"href": GL_ROOT + "/programs/NCAMA"}, {"href": GL_ROOT + "/programs/AS-T%20ADMJ"},
+                             {"href": GL_ROOT + "/programs/E%2FSB-AS"}, {"href": GL_ROOT + "/programs/OTHER"}],
+                            GL_ROOT, ["NCAMA", "AS-T ADMJ", "E/SB-AS", "ACCTG-C"])
+check(gl_hrefs == {"NCAMA": GL_ROOT + "/programs/NCAMA", "AS-T ADMJ": GL_ROOT + "/programs/AS-T%20ADMJ",
+                   "E/SB-AS": GL_ROOT + "/programs/E%2FSB-AS"},
+      "each code takes the index's own address where the index links it, and only then: %r" % gl_hrefs)
+check(bool(C.CD_CODE_MARK.search("AS-T ADMJ")) and bool(C.CD_CODE_MARK.search("BA2.0-AST"))
+      and not C.CD_CODE_MARK.search("ACCTG-AS") and not C.CD_CODE_MARK.search("NCAMA"),
+      "a code with a mark beyond letters, digits and a hyphen is told apart")
+check(gl_acc["text"].startswith("Page not found We could not find") and len(gl_acc["text"]) == 200
+      and gl_acc["program_link_texts"] == ["Program Requirements"] and gl_acc["clickables"] == ["Overview", "Program Requirements"]
+      and gl_acc["status"] == 200 and gl_acc["final_url"].endswith("/programs/ACCTG-AS"),
+      "a missed overview files its status, address, first 200 characters and the tab names it showed: %r" % gl_acc)
 hn_courses = [{"code": c} for c in ("ADJ 1", "ADJ 3", "ADJ 5", "STATC 1000")]
 hn_adt = {"control_number": "31971", "title": "Administration of Justice", "award": "A.S. T Degree", "closed_list": hn_courses}
 hn_as = {"control_number": "03585", "title": "Administration of Justice", "award": "A.S. Degree", "closed_list": hn_courses}
@@ -3098,7 +3164,9 @@ try:
 
     def fake_call(src, key, *a, **k):
         called.append(src["control_number"])
-        return {"record": {"program": {}, "blocks": []} if src["control_number"] in ("23", "24") else None,
+        # Every call but 22's answers with a record (scored failing below). 22's answers with none: a failed
+        # call since S647, so its filed record stays and it is listed in extract_failed.
+        return {"record": None if src["control_number"] == "22" else {"program": {}, "blocks": []},
                 "model": None, "usage": None}
     _saved_score = XT.score
     XT.score = lambda rec, *a, **k: dict(failing)
@@ -3122,10 +3190,13 @@ try:
           "a held record stays as filed, so filing the run keeps it")
     _kp = os.path.join(out_dir, "kept_passing_0.json")
     kp = json.load(open(_kp)) if os.path.exists(_kp) else []
-    # 22's read returns no record at all, 23's a failing one: both passing records stay as filed.
+    # 22's read returns no record at all, 23's a failing one: both passing records stay as filed. 23 is listed
+    # with both scores (kept_passing); 22's call failed, so it is listed in the run's extract_failed (S647).
+    _acct = C.extract_accounts(out_dir)
     check(got["23"] == dict(filed_recs["23"], control_number="23") and got["22"] == dict(filed_recs["22"], control_number="22")
-          and [x["control_number"] for x in kp] == ["22", "23"] and kp[0]["score"] is None
-          and (kp[1]["score"] or {}).get("arithmetic", {}).get("status") == "unequal" and kp[1]["filed_score"] == passing,
+          and [x["control_number"] for x in kp] == ["23"]
+          and [(x["control_number"], x["kept_filed"]) for x in _acct["failed"]] == [("22", True)]
+          and (kp[0]["score"] or {}).get("arithmetic", {}).get("status") == "unequal" and kp[0]["filed_score"] == passing,
           "a read that fails where the filed record passes leaves the filed record, listed with both scores: %r"
           % [x["control_number"] for x in kp])
     check(got["24"].get("extracted_run") == "43200000000" and got["24"]["score"]["arithmetic"]["status"] == "unequal",
@@ -3309,6 +3380,263 @@ finally:
 check(not loaded and "index" not in rep2["elumen"],
       "with no index step in the procedure record, the college's site is never read")
 
+# ── Glendale's bot check, the re-read and the general education page (S646) ──
+# Capture 43366669415 met "Let's confirm you are human" on 34 of 261 overviews, in runs of
+# consecutive loads, and filed each as "unreachable 405". The miss below is the first one it
+# kept in full (coursedog.miss_pages[0]).
+GL_CHALLENGE = {"url": "https://catalog.glendale.edu/programs/DFP-AA", "status": 405, "access": "unreachable",
+                "final_url": "https://catalog.glendale.edu/programs/DFP-AA", "title": "Let's confirm you are human",
+                "h1": "Let's confirm you are human",
+                "body": "Let's confirm you are human Complete the security check before continuing.", "links": []}
+check(P.is_challenge(GL_CHALLENGE) and P.is_challenge({"title": "Just a moment...", "access": "blocked"})
+      and not P.is_challenge({"title": "GB-AS Program | Glendale Community College Catalog", "h1": "General Business",
+                              "access": "ok"})
+      and not P.is_challenge({"title": "", "access": "robots_disallow"})
+      and not P.is_challenge({"title": "Security Check Point Operations - Certificate", "status": 200, "access": "ok"}),
+      "a page whose title or heading names a bot check is a challenge, and only such a page")
+
+
+class _ChallengeReader:
+    def __init__(self, answer):
+        self.answer, self.loads, self.delay = answer, 0, 4.0
+        self.page = self
+
+    def load(self, url):
+        self.loads += 1
+        return dict(self.answer, url=url)
+
+    def evaluate(self, js):
+        raise AssertionError("a challenge page is never read as a page")
+
+
+got = P.load(_ChallengeReader(GL_CHALLENGE), GL_CHALLENGE["url"], {}, True)
+check(got["access"] == "challenge", "the reader files a bot check as its own answer kind: %r" % got.get("access"))
+
+GL_TAB = "Completion Requirements\nGB 101 Business\nGB 102 More Business\nTotal Required Credits\n60"
+GL_SUFFIX = "completion-requirements-zaZdl"
+
+
+def _gl_ok(url):
+    if url.endswith(GL_SUFFIX):
+        return {"url": url, "final_url": url, "status": 200, "access": "ok", "title": "Program", "body": GL_TAB,
+                "content": GL_TAB, "links": []}
+    return {"url": url, "final_url": url, "status": 200, "access": "ok", "title": "Program", "body": "Overview",
+            "links": [{"text": "Completion Requirements", "href": url + "/" + GL_SUFFIX}]}
+
+
+def gl_session(refused):
+    asked = []
+
+    def fake(reader, url, cache, spa):
+        asked.append(url)
+        code = urllib.parse.unquote(url.split("/programs/", 1)[1].split("/", 1)[0])
+        return dict(GL_CHALLENGE, url=url, access="challenge") if code in refused else _gl_ok(url)
+    return asked, fake
+
+
+GL_PROGS = [{"code": c, "name": n} for c, n in (
+    ("ACCTG-AS", "Accounting - Associate of Science"), ("GB-AS", "General Business - Associate of Science"),
+    ("GB-C", "General Business - Certificate of Achievement"), ("SC-AA", "Speech/Communication - Associate of Arts"),
+    ("MC-AS", "Mass Communications - Associate of Science"))]
+heard0 = {"call": None, "units": {}, "hours": {}}
+asked, fake = gl_session({"GB-AS", "SC-AA"})
+real_load = P.load
+P.load = fake
+try:
+    full_info: dict = {}
+    full_pages = C._cd_read(_ChallengeReader({}), GL_ROOT, GL_PROGS, full_info, dict(heard0), {})
+finally:
+    P.load = real_load
+check(full_info["challenged"] == ["GB-AS", "SC-AA"] and full_info["miss_answers"] == {"challenge 405": 2}
+      and [p["code"] for p in full_pages] == ["ACCTG-AS", "GB-C", "MC-AS"],
+      "a full capture goes on past a challenge, files it as challenged and reads it as no page: %r"
+      % {k: full_info.get(k) for k in ("challenged", "miss_answers")})
+
+# The tab's program data reaches the page and the catalog (S648): cd_heard reads a data call's number by its code,
+# and _cd_read carries it onto the tab's page and the catalog entry.
+class _Resp:
+    def __init__(self, url, data, method="GET"):
+        self.url, self._data, self.request = url, data, type("R", (), {"method": method})()
+
+    def json(self):
+        return self._data
+
+
+hd = {"call": None, "units": {}, "hours": {}, "named": {}}
+C.cd_heard(hd, _Resp(GL_ROOT.replace("catalog.glendale.edu", "app.coursedog.com")
+                     + "/api/v1/cm/glendale_peoplesoft_direct/programs?programGroupIds=GB-C&x=1",
+                     {"GB-C-1": {"code": "GB-C", "customFields": {"eL_programControlNumber": "12345"}}}))
+C.cd_heard(hd, _Resp("https://app.coursedog.com/api/v1/cm/s/programs?programGroupIds=MC-AS",
+                     {"MC-AS-1": {"code": "MC-AS", "name": "MC-AS"}}))
+check(hd["named"] == {"GB-C": "12345"}, "a data call names its code's number; a columns-only call names none: %r" % hd["named"])
+asked, fake = gl_session(set())
+P.load = fake
+try:
+    wire_info: dict = {}
+    wire_pages = C._cd_read(_ChallengeReader({}), GL_ROOT, GL_PROGS, wire_info, dict(heard0, named={"GB-C": "12345"}), {})
+finally:
+    P.load = real_load
+check([p.get("control_number") for p in wire_pages] == [None, None, "12345", None, None]
+      and [e.get("control_number") for e in wire_info["catalog"]] == [None, None, "12345", None, None],
+      "the number reaches its tab's page and its catalog entry, and no other: %r"
+      % [p.get("control_number") for p in wire_pages])
+
+# The re-read: only the named codes, 12 s between loads, the known tab suffix, and a stop at the first challenge.
+asked, fake = gl_session({"SC-AA"})
+P.load = fake
+slow = _ChallengeReader({})
+try:
+    re_info: dict = {}
+    re_pages = C._cd_read(slow, GL_ROOT, GL_PROGS, re_info, dict(heard0), {},
+                          only=["GB-AS", "SC-AA", "MC-AS", "GONE-AA"], suffix=GL_SUFFIX)
+finally:
+    P.load = real_load
+check([p["code"] for p in re_pages] == ["GB-AS"] and re_info["challenged"] == ["SC-AA", "MC-AS"]
+      and re_info["reread"] == {"asked": 4, "listed": 3, "not_listed": ["GONE-AA"], "delay_s": 12.0,
+                                "stopped_at": "SC-AA", "not_tried": 1}
+      and slow.delay == C.CD_REREAD_DELAY_S
+      and asked == [GL_ROOT + "/programs/GB-AS/" + GL_SUFFIX, GL_ROOT + "/programs/SC-AA/" + GL_SUFFIX],
+      "the re-read reads only the named codes, slower, straight to the tab, and loads nothing past the first "
+      "challenge, naming what it did not try: %r %r" % (re_info.get("reread"), asked))
+
+# The plan comes from the newest filed capture: an account filed before S646 names the refused codes only as
+# missed; a later one names them as challenged.
+with tempfile.TemporaryDirectory() as td:
+    check(C.cd_reread_plan(td) is None, "no filed capture, no re-read")
+    _write = lambda name, obj: open(os.path.join(td, name), "w").write(json.dumps(obj))
+    _write("capture_preview.json", {"started": "2026-11-13T04:38:11Z", "run": "43366669415",
+                                    "coursedog": {"missed": ["DFP-AA", "DFP-C"], "requisites_suffix": GL_SUFFIX}})
+    plan = C.cd_reread_plan(td)
+    check(plan == {"codes": ["DFP-AA", "DFP-C"], "suffix": GL_SUFFIX, "of_run": "43366669415",
+                   "from": "capture_preview.json", "named_as": "missed"},
+          "an account filed before S646 names its refused codes as missed: %r" % plan)
+    _write("capture_reread.json", {"started": "2026-11-14T01:00:00Z", "run": "2", "reread": {},
+                                   "coursedog": {"missed": ["DFP-C", "X"], "challenged": ["DFP-C"]}})
+    plan = C.cd_reread_plan(td)
+    check(plan["codes"] == ["DFP-C"] and plan["from"] == "capture_reread.json" and plan["named_as"] == "challenged",
+          "the newest capture's challenged codes, not its other misses: %r" % plan)
+    _write("capture_reread.json", {"started": "2026-11-15T01:00:00Z", "coursedog": {"challenged": []}})
+    check(C.cd_reread_plan(td) is None, "nothing left challenged, nothing to re-read")
+    os.makedirs(os.path.join(td, "out"))
+    open(os.path.join(td, "out", "capture.json"), "w").write(json.dumps({"reread": {"codes": ["A"]}}))
+    check(C.reread_capture(os.path.join(td, "out")) and not C.reread_capture(td),
+          "a re-read capture is known as one, so extract and reconcile refuse it")
+check(C.is_reread("challenged") and C.is_reread(" Challenged ") and not C.is_reread("site")
+      and C.prefer_site("coursedog", "challenged"),
+      "route=challenged is a site read")
+
+# A state program whose own catalog entry was refused reads page_challenged (General Business A.S., 11143,
+# lost seven business pages to their own programs while GB-AS answered the bot check).
+gl_state = [{"control_number": "11143", "title": "General Business", "award": "A.S. Degree"},
+            {"control_number": "19999", "title": "General Business", "award": "Certificate of Achievement requiring 16S/24Q"},
+            {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree"},
+            {"control_number": "11155", "title": "Mass Communications", "award": "A.S. Degree"}]
+gl_ref = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]})
+check(gl_ref == {"11143": "GB-AS", "02588": "SC-AA"},
+      "each program whose own entry was refused is named, by title and award, and no sibling award: %r" % gl_ref)
+check(C.cd_name_title_kind("Business Administration 2.0 - Associate in Science for Transfer") == ("business administration 2 0", "adt")
+      and C.cd_name_title_kind("NCAMA") == ("ncama", None),
+      "a Coursedog name reads as its title and the award its tail names")
+
+# The Cal-GETC certificate's page is its own list and no other program's (16 page_claimed entries in
+# capture 43366669415 named /programs/CALGETC/completion-requirements-zaZdl).
+GE_BODY = "Completion Requirements\nCOMM 101 Public Speaking\nSPAN 101 Spanish I\nSOC 101 Sociology\nTotal Required Credits\n34"
+ge_got = {"url": GL_ROOT + "/programs/CALGETC/" + GL_SUFFIX, "final_url": GL_ROOT + "/programs/CALGETC/" + GL_SUFFIX,
+          "title": "CALGETC Program | Glendale Community College Catalog", "body": GE_BODY, "content": GE_BODY}
+ge_page = C.cd_page(ge_got, {"code": "CALGETC", "name": "Cal-GETC - Certificate of Achievement"})
+ge_courses = [{"code": c} for c in ("COMM 101", "SPAN 101", "SOC 101")]
+calgetc = {"control_number": "45068", "title": "Cal-GETC", "award": "Certificate of Achievement requiring 30S/45Q",
+           "closed_list": ge_courses}
+speech = {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree", "closed_list": ge_courses}
+check(C.ge_pattern_page(ge_page) and C.ge_pattern("IGETC Certificate of Achievement")
+      and C.ge_pattern_page({"url": "https://x.edu/general-education/csu-ge-breadth/"})
+      and not C.ge_pattern("General Business") and not C.ge_pattern_page(full_pages[0]),
+      "a general education pattern's page is told apart by its code, heading or address")
+check(len(C.candidates(calgetc, [ge_page])) == 1 and C.candidates(speech, [ge_page]) == [],
+      "the pattern's page is a candidate for the pattern's own certificate and for no other program")
+ge_given = C.assign([calgetc, speech], [ge_page])
+check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
+      and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
+      "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+
+# Two different current programs never share one page's list on a title tie alone (the S646 conductor's
+# ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's
+# shared_pages; statuses from coci_programs_data.js): the page goes to the program whose full title its
+# own heading prints, and the other moves on to its own page.
+NEST_TAB = "Completion Requirements\nCD 101 Child Growth\nCD 102 Families\nCD 110 Curriculum\nTotal Required Credits\n27"
+
+
+def nest_page(code, name):
+    url = GL_ROOT + "/programs/%s/%s" % (urllib.parse.quote(code, safe=""), GL_SUFFIX)
+    return C.cd_page({"url": url, "final_url": url, "title": "%s Program | Glendale Community College Catalog" % code,
+                      "body": NEST_TAB, "content": NEST_TAB}, {"code": code, "name": name})
+
+
+nest_courses = [{"code": c} for c in ("CD 101", "CD 102", "CD 110")]
+cd_teacher = {"control_number": "02599", "title": "Child Development: Teacher", "award": "A.S. Degree",
+              "status": "Active", "closed_list": nest_courses}
+cd_master = {"control_number": "11191", "title": "Child Development: Master Teacher", "award": "A.S. Degree",
+             "status": "Active", "closed_list": nest_courses}
+mt_page = nest_page("CDMT-AS", "Child Development: Master Teacher - Associate of Science")
+tp_page = nest_page("CDTP-AS", "Child Development: Teacher - Associate of Science")
+nest_given = C.assign([cd_teacher, cd_master], [mt_page])
+check((nest_given["11191"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDMT-AS")
+      and nest_given["02599"]["best"] is None,
+      "the Master Teacher page goes to Master Teacher alone; Teacher reads no page from it: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in nest_given.items()})
+nest_given = C.assign([cd_teacher, cd_master], [mt_page, tp_page])
+check((nest_given["11191"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDMT-AS")
+      and (nest_given["02599"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDTP-AS"),
+      "with its own page in the capture, Teacher reads its own: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in nest_given.items()})
+mg_page = nest_page("MGMTII-C", "Management II - Certificate of Achievement")
+mg1 = {"control_number": "45395", "title": "Management I", "award": "Certificate of Achievement requiring 8S/12Q",
+       "status": "Active", "closed_list": nest_courses}
+mg2 = {"control_number": "19559", "title": "Management II", "award": "Certificate of Achievement requiring 16S/24Q",
+       "status": "Active", "closed_list": nest_courses}
+it_page = nest_page("ITT-C", "Information Technology Technician - Certificate of Achievement")
+it1 = {"control_number": "37070", "title": "Information Technology", "award": "Certificate of Achievement requiring 16S/24Q",
+       "status": "Active", "closed_list": nest_courses}
+it2 = {"control_number": "41573", "title": "Information Technology Technician",
+       "award": "Certificate of Achievement requiring 16S/24Q", "status": "Active", "closed_list": nest_courses}
+mg_given, it_given = C.assign([mg1, mg2], [mg_page]), C.assign([it1, it2], [it_page])
+check(mg_given["19559"]["best"] and mg_given["45395"]["best"] is None
+      and it_given["41573"]["best"] and it_given["37070"]["best"] is None,
+      "Management II and Information Technology Technician keep their own pages: %r"
+      % [sorted(k for k, v in g.items() if v["best"]) for g in (mg_given, it_given)])
+# Two records of one program, an Active one beside its Teachout Only one, still share (COM2.0-AAT: 30814
+# Communication Studies, Teachout Only, and 44951 Communication Studies 2.0, Active, both 18 units).
+com_page = nest_page("COM2.0-AAT", "Communication Studies 2.0 - Associate in Arts for Transfer")
+com_old = {"control_number": "30814", "title": "Communication Studies", "award": "A.A- T Degree",
+           "status": "Active - Teachout Only", "closed_list": nest_courses}
+com_new = {"control_number": "44951", "title": "Communication Studies 2.0", "award": "A.A- T Degree",
+           "status": "Active", "closed_list": nest_courses}
+com_given = C.assign([com_old, com_new], [com_page])
+check(com_given["30814"]["best"] and com_given["44951"]["best"],
+      "an old and a new record of one program still share its page")
+check(C.heading_title("Child Development: Master Teacher - Associate of Science associate in science")
+      == "child development master teacher" and C.heading_title("Public Health Science, A.S.-T") == "public health science",
+      "a heading's title part is read before its award tail or its comma")
+
+# route=slow: the whole read at the re-read's pace, stopping at its first challenge; a read so stopped is
+# filed and never extracted.
+asked, fake = gl_session({"SC-AA"})
+P.load = fake
+slow2 = _ChallengeReader({})
+try:
+    sl_info: dict = {}
+    sl_pages = C._cd_read(slow2, GL_ROOT, GL_PROGS, sl_info, dict(heard0), {}, slow=True)
+finally:
+    P.load = real_load
+check([p["code"] for p in sl_pages] == ["ACCTG-AS", "GB-AS", "GB-C"] and sl_info["challenged"] == ["SC-AA", "MC-AS"]
+      and sl_info["slow"] == {"delay_s": 12.0, "stopped_at": "SC-AA", "not_tried": 1} and slow2.delay == 12.0,
+      "a slow read reads every code at 12 s and stops at the first challenge: %r" % sl_info.get("slow"))
+check(C.is_slow("slow") and not C.is_slow("site") and C.prefer_site("coursedog", "slow"), "route=slow is a site read")
+with tempfile.TemporaryDirectory() as td:
+    open(os.path.join(td, "capture.json"), "w").write(json.dumps({"coursedog": {"slow": sl_info["slow"]}}))
+    stopped = C.reread_capture(td)
+    open(os.path.join(td, "capture.json"), "w").write(json.dumps({"coursedog": {"slow": {"delay_s": 12.0}}}))
+    check(stopped and not C.reread_capture(td), "a slow read a challenge stopped is partial; one that finished is not")
 # ── Diablo Valley's area pages write the slash form too (S645, page read 43363340544) ──
 # Administration of Justice links program,<slug>; Dental Assisting, Music, Psychology, Spanish,
 # Kinesiology and Early Childhood Education link program/<slug> on the same catalog, and the step's
@@ -3370,6 +3698,1028 @@ check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
       and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a")
       and C.el_index_link_named(re.compile(r"catalog/X/program/", re.I), "https://h/catalog/X/Program,a"),
       "program_links names either form of one award's address, and nothing the swap does not make")
+
+# ── capture() itself, once for each route (S646) ────────────────────────────
+# route=slow formatted the re-read's plan and raised UnboundLocalError inside capture() (run on
+# ce434a8b), while every test called _cd_read directly. Each route value must complete a capture.
+class _CapPage:
+    def on(self, *a):
+        pass
+
+    def remove_listener(self, *a):
+        pass
+
+
+class _CapReader:
+    def __init__(self, delay_ms):
+        self.delay, self.loads, self.page, self.request = delay_ms / 1000.0, 0, _CapPage(), None
+
+
+class _CapClose:
+    def close(self):
+        pass
+
+    def stop(self):
+        pass
+
+
+CAP_COLLEGE = "Glendale Community College"
+CAP_REG = {"catalog_url": GL_ROOT + "/", "catalog_platform": "coursedog", "catalog_year": "2026-2027",
+           "procedure": {"catalog": {"start": "https://www.glendale.edu/catalog", "follow": "2025-2026", "format": "pdf"}}}
+CAP_PROGS = [{"control_number": "11143", "title": "General Business", "award": "A.S. Degree", "status": "Active",
+              "shape": "degree", "load_id": None, "closed_list": [{"code": "GB 101"}, {"code": "GB 102"}]},
+             {"control_number": "02588", "title": "Speech/Communication", "award": "A.A. Degree", "status": "Active",
+              "shape": "degree", "load_id": None, "closed_list": [{"code": "COMM 101"}, {"code": "COMM 102"}]}]
+
+
+def _cap_list(reader, start, report):
+    report.setdefault("coursedog", {"root": GL_ROOT}).update(listed=len(GL_PROGS), programs=len(GL_PROGS), errors=[])
+    return [dict(p) for p in GL_PROGS]
+
+
+def run_capture(route, refused=()):
+    saved = (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.cd_list, P.load, C.pdf_start,
+             C.COLLEGE_DIR, os.environ.get("CAPTURE_ROUTE"))
+    with tempfile.TemporaryDirectory() as td:
+        filed = os.path.join(td, "colleges", C.slug_of(CAP_COLLEGE))
+        os.makedirs(filed)
+        open(os.path.join(filed, "capture_preview.json"), "w").write(json.dumps(
+            {"started": "2026-11-13T04:38:11Z", "run": "1", "coursedog": {"missed": ["SC-AA"], "requisites_suffix": GL_SUFFIX}}))
+        _, fake = gl_session(set(refused))
+        C.college_programs = lambda college: [dict(p) for p in CAP_PROGS]
+        P.fetch_registry = lambda college: dict(CAP_REG)
+        C.hand_filed = lambda college: None
+        P.open_reader = lambda delay: (_CapClose(), _CapClose(), _CapReader(delay))
+        C.cd_list, P.load = _cap_list, fake
+        C.pdf_start = lambda reader, reg, cache, report: (None, 0)
+        C.COLLEGE_DIR = os.path.join(td, "colleges")
+        os.environ["CAPTURE_ROUTE"] = route
+        out = os.path.join(td, "out")
+        try:
+            code = C.capture(CAP_COLLEGE, out)
+            with open(os.path.join(out, "capture.json")) as fh:
+                rep = json.load(fh)
+        except Exception as exc:   # a route that cannot complete a capture fails here
+            code, rep = "raised %s: %s" % (type(exc).__name__, exc), {}
+        finally:
+            (C.college_programs, P.fetch_registry, C.hand_filed, P.open_reader, C.cd_list, P.load, C.pdf_start,
+             C.COLLEGE_DIR, env) = saved
+            if env is None:
+                os.environ.pop("CAPTURE_ROUTE", None)
+            else:
+                os.environ["CAPTURE_ROUTE"] = env
+    return code, rep
+
+
+for route in ("site", "challenged", "slow", "pdf", ""):
+    code, rep = run_capture(route, refused={"SC-AA"} if route == "slow" else ())
+    check(code == 0 and rep.get("by_method"), "route=%r completes a capture: %r" % (route, code))
+code, rep = run_capture("challenged")
+check(rep.get("reread", {}).get("codes") == ["SC-AA"] and rep["route"].startswith("challenged")
+      and (rep["coursedog"]["reread"] or {}).get("asked") == 1,
+      "route=challenged reads the filed capture's refused codes: %r" % rep.get("route"))
+code, rep = run_capture("slow", refused={"SC-AA"})
+check(rep.get("slow") and rep["route"].startswith("slow") and rep["coursedog"]["slow"].get("stopped_at") == "SC-AA"
+      and [p["control_number"] for p in rep.get("page_challenged") or []] == ["02588"],
+      "route=slow stops at the challenge and files the program it refused as page_challenged: %r"
+      % rep.get("coursedog", {}).get("slow"))
+code, rep = run_capture("pdf")
+check("pdf" in rep and "coursedog" not in rep, "route=pdf reads the PDF procedure step")
+
+# heading_owner reads the full heading first (S646 review): "Child Development - Teacher" goes to that
+# title, never to "Child Development", whose title is the heading's cut form.
+dash_page = nest_page("CDT-C", "Child Development - Teacher")
+dash_page["h1"] = dash_page["title"] = "Child Development - Teacher, A.S."
+cd_plain = {"control_number": "70001", "title": "Child Development", "award": "A.S. Degree", "status": "Active",
+            "closed_list": nest_courses}
+cd_dash = {"control_number": "70002", "title": "Child Development - Teacher", "award": "A.S. Degree", "status": "Active",
+           "closed_list": nest_courses}
+dash_given = C.assign([cd_plain, cd_dash], [dash_page])
+check(dash_given["70002"]["best"] and dash_given["70001"]["best"] is None,
+      "a heading that is one claimant's full title goes to it before its cut form is read: %r"
+      % sorted(k for k, v in dash_given.items() if v["best"]))
+check(C.heading_forms("Child Development: Master Teacher - Associate of Science associate in science")
+      == ["child development master teacher associate of science associate in science",
+          "child development master teacher"],
+      "a heading's readings, fullest first")
+# Only a page that holds one program by construction (a Coursedog tab): a CourseLeaf page heading two
+# programs' sections still serves both.
+cl_page = dict(nest_page("CDMT-AS", "Child Development: Master Teacher - Associate of Science"), code=None, code_kind=None)
+cl_given = C.assign([cd_teacher, cd_master], [cl_page])
+check(cl_given["02599"]["best"] and cl_given["11191"]["best"],
+      "a page with no program code is shared as before: %r" % sorted(k for k, v in cl_given.items() if v["best"]))
+
+# A program's own Coursedog code, where a filed capture read it from its own page, decides which refused
+# entry is its own before any title does.
+with tempfile.TemporaryDirectory() as td:
+    open(os.path.join(td, "capture_preview.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "11143", "url": GL_ROOT + "/programs/GB-AS/" + GL_SUFFIX}],
+        "held_no_gain": [{"control_number": "02588", "url": GL_ROOT + "/programs/SPCH-AA/" + GL_SUFFIX}]}}))
+    known = C.cd_known_codes(td, GL_ROOT)
+check(known == {"11143": "GB-AS", "02588": "SPCH-AA"}, "the codes a filed capture read each program from: %r" % known)
+# A known code counts only where the current catalog lists it (S647 review), so this catalog lists SPCH-AA.
+GL_PROGS_SPCH = GL_PROGS + [{"code": "SPCH-AA", "name": "Speech - Associate of Arts"}]
+by_code = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS_SPCH, "challenged": ["GB-AS", "SC-AA"]}, known)
+check(by_code == {"11143": "GB-AS"},
+      "a program whose own code was read elsewhere is not matched to a refused namesake by title: %r" % by_code)
+by_gone = C.cd_challenged_programs(gl_state, {"catalog": GL_PROGS, "challenged": ["GB-AS", "SC-AA"]}, known)
+check(by_gone == {"11143": "GB-AS", "02588": "SC-AA"},
+      "a known code the current catalog no longer lists is not trusted, and the title decides: %r" % by_gone)
+
+# A code two programs read is no program's own (S647 review): Glendale's capture 43366669415 read Child
+# Development: Teacher (02599) from CDMT-AS, Master Teacher's tab, beside Master Teacher (11191). Trusted,
+# that code skipped 02599's title match when its own tab (CDTP-AS) was refused and CDMT-AS loaded; the
+# CDMT-AS tab then went to 11191 (heading_owner), 02599 read page_claimed and its passing record was not
+# carried. A fixture only, never the committed captures.
+CD_CAT = [{"code": "CDTP-AS", "name": "Child Development: Teacher - Associate of Science"},
+          {"code": "CDMT-AS", "name": "Child Development: Master Teacher - Associate of Science"}]
+cd_state = [{"control_number": "02599", "title": "Child Development: Teacher", "award": "A.S. Degree"},
+            {"control_number": "11191", "title": "Child Development: Master Teacher", "award": "A.S. Degree"}]
+with tempfile.TemporaryDirectory() as td:
+    col, keep_dir, out_dir = os.path.join(td, "college"), os.path.join(td, "keep"), os.path.join(td, "out")
+    os.makedirs(col)
+    tab = lambda code: GL_ROOT + "/programs/" + code + "/" + GL_SUFFIX
+    open(os.path.join(col, "capture_preview.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "02599", "url": tab("CDMT-AS")}, {"control_number": "11191", "url": tab("CDMT-AS")},
+                 {"control_number": "11143", "url": tab("GB-AS")}],
+        "held_no_gain": [{"control_number": "11143", "url": tab("GB-AS")}]}}))
+    open(os.path.join(col, "capture_reread.json"), "w").write(json.dumps({"would_extract": {
+        "list": [{"control_number": "02599", "url": tab("CDTP-AS")}]}}))
+    shared_known = C.cd_known_codes(col, GL_ROOT)
+    check(shared_known == {"02599": "CDTP-AS", "11143": "GB-AS"},
+          "a code two control numbers read is dropped, a program's next code that is its own stays, and one "
+          "program reading its own code twice keeps it: %r" % shared_known)
+    os.remove(os.path.join(col, "capture_reread.json"))
+    shared_known = C.cd_known_codes(col, GL_ROOT)
+    cd_ref = C.cd_challenged_programs(cd_state, {"catalog": CD_CAT, "challenged": ["CDTP-AS"]}, shared_known)
+    check(shared_known == {"11143": "GB-AS"} and cd_ref == {"02599": "CDTP-AS"},
+          "02599's own refused tab is found by its title once the shared CDMT-AS is dropped: %r %r"
+          % (shared_known, cd_ref))
+    # An Active program and its Teachout Only record share one tab, and the title matches one of them: the
+    # other, left with no page, still reads page_challenged when that tab is refused; one with a page does not.
+    _, shared_of = C.cd_read_codes(col, GL_ROOT)
+    check(shared_of == {"02599": ["CDMT-AS"], "11191": ["CDMT-AS"]}, "the codes each program shares: %r" % shared_of)
+    ba_cat = [{"code": "BA2.0-AST", "name": "Business Administration 2.0 - Associate in Science for Transfer"}]
+    ba_state = [{"control_number": "32267", "title": "Business Administration", "award": "A.S. T Degree"},
+                {"control_number": "43038", "title": "Business Administration 2.0", "award": "A.S. T Degree"}]
+    ba_shared = {"32267": ["BA2.0-AST"], "43038": ["BA2.0-AST"]}
+    ba_info = {"catalog": ba_cat, "challenged": ["BA2.0-AST"]}
+    check(C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared, set()) == {"32267": "BA2.0-AST", "43038": "BA2.0-AST"}
+          and C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared, {"32267"}) == {"43038": "BA2.0-AST"}
+          and C.cd_challenged_programs(ba_state, ba_info, {}, ba_shared) == {"43038": "BA2.0-AST"},
+          "a shared refused tab marks a program left with no page, and only that one")
+    check(C.cd_challenged_programs(ba_state, {"catalog": ba_cat + [{"code": "BA-AS", "name": "Business - A.S."}],
+                                              "challenged": ["BA2.0-AST"]}, {"32267": "BA-AS"}, ba_shared, set())
+          == {"43038": "BA2.0-AST"},
+          "a program whose own code is known is not marked through a tab it shares (Glendale's Marketing II, "
+          "19566, own MRKTII-C, beside SMM2-C)")
+    # Then extract (its wiring: the page_challenged scan, shard 0 only) carries the filed record forward, with
+    # the catalog year it was read from.
+    for d in (os.path.join(keep_dir, "records"), os.path.join(out_dir, "sources")):
+        os.makedirs(d)
+    open(os.path.join(keep_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2025-2026", "run": "1"}))
+    filed_rec = lambda cn: {"college": "Glendale Community College", "control_number": cn, "title": "T",
+                            "award": "A.S. Degree", "source_url": "https://www.glendale.edu/catalog.pdf#page=9",
+                            "extracted_run": "41055650373",
+                            "record": {"program": {"measure": "units", "total_units": {"min": 24, "max": 24}}, "blocks": []},
+                            "score": {"coverage": {"pass": True, "placed": 9, "listed": 9}, "invented": {"pass": True},
+                                      "arithmetic": {"status": "equal"}, "pass": True}}
+    # S647 (the conductor's decision on COBIx's finding 1, #3202): a passing filed record of a program read
+    # not_found or page_claimed stays as filed, with the catalog year it was read from, and is named with the
+    # reason; a failing one (02602), one the state lists in teach-out (02604: the S646 rule's case, a program
+    # the college is retiring) or one whose source names no status (02605) is not kept.
+    failing_rec = lambda cn: dict(filed_rec(cn), score={"coverage": {"pass": False, "placed": 2, "listed": 9},
+                                                        "invented": {"pass": True}, "arithmetic": {"status": "equal"},
+                                                        "pass": False})
+    for cn, method, status, rec in (("02599", "page_challenged", "Active", filed_rec), ("11191", "sitemap_page", "Active", filed_rec),
+                                    ("02600", "page_claimed", "Active", filed_rec), ("02601", "not_found", "Approved", filed_rec),
+                                    ("02602", "not_found", "Active", failing_rec),
+                                    ("02604", "page_claimed", "Active - Teachout Only", filed_rec),
+                                    ("02605", "not_found", None, filed_rec)):
+        C._write(os.path.join(keep_dir, "records", cn + ".json"), rec(cn))
+        open(os.path.join(out_dir, "sources", cn + ".json"), "w").write(json.dumps(
+            {"control_number": cn, "method": method, "coverage": 0.0, "text": "", "status": status,
+             "title": "T", "award": "A.S. Degree",
+             **({"lost_pages": [tab("CDMT-AS")]} if method == "page_claimed" else {}),
+             **({"near_miss": {"why": "coarse net: the page's code tokens name 3 of 21 listed courses"}}
+                if method == "not_found" else {})}))
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only: no source has text, so no call is made"
+    try:
+        check(C.extract(out_dir, 1, 2, "43384599013", workers=1, keep_from=keep_dir) == 0
+              and os.listdir(os.path.join(out_dir, "records")) == [],
+              "only shard 0 carries refused records, so two shards never write one file twice")
+        check(C.extract(out_dir, 0, 2, "43384599013", workers=1, keep_from=keep_dir) == 0,
+              "extract runs over sources that need no model call")
+    finally:
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    carried_files = sorted(os.listdir(os.path.join(out_dir, "records")))
+    check(carried_files == ["02599.json", "02600.json", "02601.json"],
+          "extract carries the page_challenged program's record, keeps the passing not_found and page_claimed ones, "
+          "and drops the failing, the teach-out, the unstated and the read one: %r" % carried_files)
+    check(all(json.load(open(os.path.join(out_dir, "records", cn + ".json")))
+              == dict(filed_rec(cn), catalog_year="2025-2026") for cn in ("02600", "02601")),
+          "a record kept for no read is the filed record with the catalog year of the filing it was read in "
+          "(no carried_in)")
+    with open(os.path.join(out_dir, "kept_unbound_0.json")) as fh:
+        no_read_acct = json.load(fh)
+    check(no_read_acct["programs"] == ["02600", "02601"]
+          and [(e["control_number"], e["method"], e["status"], e["why"]) for e in no_read_acct["no_read"]]
+          == [("02600", "page_claimed", "Active", "its pages went to other programs"),
+              ("02601", "not_found", "Approved", "coarse net: the page's code tokens name 3 of 21 listed courses")]
+          and no_read_acct["no_read"][0]["lost_pages"] == [tab("CDMT-AS")]
+          and no_read_acct["no_read"][1]["filed_run"] == "41055650373",
+          "the run lists each kept record with its method, status and reason: %r" % no_read_acct)
+    check(C.kept_no_read_entries(out_dir) == no_read_acct["no_read"], "and the filing reads them back")
+    with open(os.path.join(out_dir, "records", "02599.json")) as fh:
+        carried_rec = json.load(fh)
+    check(carried_rec["catalog_year"] == "2025-2026" and carried_rec["carried_in"] == "43384599013"
+          and carried_rec["extracted_run"] == "41055650373" and carried_rec["record"] == filed_rec("02599")["record"],
+          "a carried record keeps its run, its record and the catalog year it was read from: %r"
+          % {k: carried_rec.get(k) for k in ("catalog_year", "carried_in", "extracted_run")})
+    # The load stamps a row with the new capture's year, and a carried record with its own.
+    open(os.path.join(out_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2026-2027"}))
+    open(os.path.join(out_dir, "records", "11191.json"), "w").write(json.dumps(filed_rec("11191")))
+    cy_rows, _ = C.load_rows("Glendale Community College", folder=out_dir)
+    check({r["control_number"]: r["catalog_year"] for r in cy_rows}
+          == {"02599": "2025-2026", "02600": "2025-2026", "02601": "2025-2026", "11191": "2026-2027"},
+          "a carried or kept record loads under its own catalog year, a read one under the capture's: %r"
+          % {r["control_number"]: r["catalog_year"] for r in cy_rows})
+
+# extract carries forward the filed record of a program whose page answered a bot check, and nothing else.
+with tempfile.TemporaryDirectory() as td:
+    keep, out = os.path.join(td, "keep"), os.path.join(td, "out")
+    os.makedirs(os.path.join(keep, "records"))
+    os.makedirs(os.path.join(out, "records"))
+    for cn in ("11143", "02588"):
+        open(os.path.join(keep, "records", cn + ".json"), "w").write(json.dumps({"control_number": cn, "record": {"blocks": []}}))
+    check(C.carry_refused(keep, out, ["11143", "99999"]) == 1
+          and sorted(os.listdir(os.path.join(out, "records"))) == ["11143.json"],
+          "a refused program keeps its filed record; one with none is skipped; no other record is carried")
+check(C.REFUSED_METHODS == ("page_challenged",) and C.NO_PAGE_METHODS == ("not_found", "page_claimed"),
+      "carry_refused carries a refusal alone; not_found and page_claimed keep a passing record by keep_no_read")
+
+# refile-kept (S647): the free local step over committed files, from the filing the kept records were read in
+# (main's 2025-2026 PDF filing for Glendale). (1) The no-read programs keep a passing record only with a state
+# status that is offered: 19577, Child Development: Site Supervisor, which the state lists Active - Teachout
+# Only (the conductor's read, 12:00Z 2026-11-13), loses the record an earlier refile kept; 18638, with no
+# status anywhere, is not kept; 21305 Active is. (2) A record read from a Coursedog tab that prints another
+# listed program is held: 37070, Information Technology, read "Computer Information Systems - Certificate of
+# Achievement" and passed; the earlier filing's record stands and the read is listed. (3) A record the filing
+# kept from the earlier one takes its catalog year.
+with tempfile.TemporaryDirectory() as td:
+    prior, dest = os.path.join(td, "prior"), os.path.join(td, "dest")
+    for d in (os.path.join(prior, "records"), os.path.join(dest, "records")):
+        os.makedirs(d)
+    rk_pass = lambda cn, run, url="https://www.glendale.edu/c.pdf#page=71": {
+        "college": "Glendale Community College", "control_number": cn, "title": "T", "award": "A.S. Degree",
+        "source_url": url, "extracted_run": run, "cost_usd": 0.05,
+        "record": {"program": {"measure": "units"}, "blocks": []},
+        "score": {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}, "pass": True}}
+    rk_fail = lambda cn: dict(rk_pass(cn, 41012563119), score={"coverage": {"pass": True}, "invented": {"pass": True},
+                                                               "arithmetic": {"status": "unequal"}, "pass": False})
+    for cn in ("18638", "19577", "21305", "02550"):
+        C._write(os.path.join(prior, "records", cn + ".json"), rk_pass(cn, 41049220135))
+    C._write(os.path.join(prior, "records", "02603.json"), rk_fail("02603"))
+    C._write(os.path.join(prior, "records", "37070.json"), rk_fail("37070"))
+    with open(os.path.join(prior, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2025-2026", "run": "41055650373"}, fh)
+    C._write(os.path.join(dest, "records", "19577.json"), rk_pass("19577", 41049220135))      # an earlier refile's keep
+    C._write(os.path.join(dest, "records", "02550.json"), rk_pass("02550", 41049220135))      # kept_passing, no year
+    cis_c = GL_ROOT + "/programs/CIS-C/" + GL_SUFFIX
+    C._write(os.path.join(dest, "records", "37070.json"), rk_pass("37070", 43415972509, cis_c))
+    C._write(os.path.join(dest, "records", "21307.json"), rk_pass("21307", 43415972509, GL_ROOT + "/programs/CST-C/" + GL_SUFFIX))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": cn, "title": t, "award": aw} for cn, t, aw in (
+            ("18638", "Liberal Arts: Arts and Humanities Emphasis", "A.A. Degree"),
+            ("19577", "Child Development: Site Supervisor", "Certificate of Achievement"),
+            ("21305", "Computer Information Systems", "Certificate of Achievement"),
+            ("21307", "Computer Software Technician", "Certificate of Achievement"),
+            ("37070", "Information Technology", "Certificate of Achievement"),
+            ("02550", "Accounting", "A.S. Degree"), ("02603", "Social Science", "A.A. Degree"))], fh)
+    with open(os.path.join(dest, "capture.json"), "w") as fh:
+        json.dump({"college": "Glendale Community College", "catalog_year": "2026-2027", "run": "43415972509",
+                   "programs": 7, "found": 3,
+                   "coursedog": {"root": GL_ROOT, "catalog": [
+                       {"code": "CIS-C", "name": "Computer Information Systems - Certificate of Achievement"},
+                       {"code": "CST-C", "name": "Computer Software Technician - Certificate of Achievement"}]},
+                   "not_found": [{"control_number": "18638", "title": "T", "award": "A.A. Degree",
+                                  "near_miss": {"why": "coarse net: the page's code tokens name 15 of 135 listed courses"}},
+                                 {"control_number": "02603", "title": "T", "award": "A.A. Degree", "near_miss": None}],
+                   "page_claimed": [{"control_number": "21305", "title": "T", "award": "A.S. Degree",
+                                     "pages": [GL_ROOT + "/programs/CST-C/" + GL_SUFFIX]},
+                                    {"control_number": "19577", "title": "T", "award": "A.S. Degree", "pages": []}]}, fh)
+    with open(os.path.join(dest, "summary.json"), "w") as fh:
+        json.dump({"extracted": 4, "passed_machine_checks": 4, "cost_usd_run": 0.05, "extract_calls": 1,
+                   "kept_no_read": [{"control_number": "19577", "method": "page_claimed", "status": None}]}, fh)
+    status_file = os.path.join(td, "status.json")
+    with open(status_file, "w") as fh:
+        json.dump({"programs": [{"college": "Glendale Community College", "control_number": "19577",
+                                 "status": "Active - Teachout Only"},
+                                {"college": "Glendale Community College", "control_number": "21305", "status": "Active"},
+                                {"college": "Another College", "control_number": "18638", "status": "Active"}]}, fh)
+    rk_status = C.status_export(status_file, "Glendale Community College")
+    check(rk_status == {"19577": "Active - Teachout Only", "21305": "Active"},
+          "the status export reads one college's rows: %r" % rk_status)
+    import contextlib as _rk_ctx, io as _rk_io  # noqa: E401,E402
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        rk_rc = C.refile_kept("Glendale Community College", prior, dest, rk_status)
+    rk_files = sorted(os.listdir(os.path.join(dest, "records")))
+    check(rk_rc == 0 and rk_files == ["02550.json", "21305.json", "21307.json", "37070.json"],
+          "21305 (Active) is kept; 19577 (teach-out) loses its kept record; 18638 (no status) and 02603 (failing) "
+          "are not kept: %r" % rk_files)
+    rk = lambda cn: json.load(open(os.path.join(dest, "records", cn + ".json")))
+    check(rk("21305") == dict(rk_pass("21305", 41049220135), catalog_year="2025-2026")
+          and rk("02550") == dict(rk_pass("02550", 41049220135), catalog_year="2025-2026")
+          and "catalog_year" not in rk("21307"),
+          "a kept record takes the earlier filing's year; a record this read filed is left as it is")
+    check(rk("37070") == dict(rk_fail("37070"), catalog_year="2025-2026"),
+          "a record read from another program's tab is held: the earlier filing's record stands")
+    rk_sum = json.load(open(os.path.join(dest, "summary.json")))
+    held = rk_sum.get("held_wrong_tab") or [{}]
+    check(rk_sum["extracted"] == 4 and rk_sum["passed_machine_checks"] == 3 and rk_sum["cost_usd_run"] == 0.05
+          and rk_sum["extract_calls"] == 1
+          and [(e["control_number"], e["method"], e["status"]) for e in rk_sum["kept_no_read"]]
+          == [("21305", "page_claimed", "Active")]
+          and [(h["control_number"], h["tab"], h["names"], h["filed"], h["read_score"]["pass"]) for h in held]
+          == [("37070", "CIS-C", ["21305"], True, True)],
+          "the summary counts the records, keeps the run's spend and calls, and names the kept and the held: %r" % rk_sum)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest, rk_status)
+    check(json.load(open(os.path.join(dest, "summary.json"))) == rk_sum
+          and sorted(os.listdir(os.path.join(dest, "records"))) == rk_files, "a second refile changes nothing")
+check(C.kept_year({"a": 1}, "2025-2026") == {"a": 1, "catalog_year": "2025-2026"}
+      and C.kept_year({"catalog_year": "2024-2025"}, "2025-2026") == {"catalog_year": "2024-2025"}
+      and C.kept_year({"a": 1}, None) == {"a": 1},
+      "a kept record keeps its own year, takes its filing's where it names none, and nothing without one")
+
+# A Coursedog tab that prints another listed program is no candidate (tab_names_another, S647). From the
+# filed capture of run 43415972509: 37070 read CIS-C and 12571 read ACCTG-C; a title the tab's holds whole
+# (Communication Studies on the Communication Studies 2.0 tab) still reads it.
+tn_others = {"computer information systems", "accounting", "communication studies 2 0"}
+check(C.tab_names_another("Information Technology", "Computer Information Systems", tn_others)
+      and C.tab_names_another("Computerized Accounting Specialist", "Accounting", tn_others)
+      and not C.tab_names_another("Communication Studies", "Communication Studies 2.0", tn_others)
+      and not C.tab_names_another("Computer Information Systems", "Computer Information Systems", tn_others)
+      and not C.tab_names_another("Tax Preparer", "Tax Fundamentals", tn_others),
+      "a tab naming another listed program is refused; its own, a whole-title holder, or a title no program has "
+      "is not")
+tn_page = lambda code, name, codes: dict(C.cd_page({"url": GL_ROOT + "/programs/%s/%s" % (code, GL_SUFFIX),
+                                                    "title": code + " Program", "body": " ".join(codes), "content": ""},
+                                                   {"code": code, "name": name}),
+                                         codes={P.norm_code(c) for c in codes})
+tn_codes = ["CS/IS 101", "CS/IS 112", "CS/IS 190", "CS/IS 193", "CS/IS 196", "CS/IS 197"]
+tn_pages = [tn_page("CIS-C", "Computer Information Systems - Certificate of Achievement", tn_codes)]
+tn_progs = [{"control_number": "37070", "title": "Information Technology", "award": "Certificate of Achievement",
+             "status": "Active", "closed_list": [{"code": c} for c in tn_codes]},
+            {"control_number": "21305", "title": "Computer Information Systems", "award": "Certificate of Achievement",
+             "status": "Active", "closed_list": [{"code": c} for c in ["BUSAD 106", "ENTRE 101", "ENTRE 102"]]}]
+tn_given = C.assign(tn_progs, tn_pages)
+check(tn_given["37070"]["best"] is None,
+      "the Information Technology certificate does not take the Computer Information Systems tab: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in tn_given.items()})
+tn_given = C.assign(tn_progs[:1], tn_pages)
+check((tn_given["37070"]["best"] or {}).get("url") == tn_pages[0]["url"],
+      "with no listed program of the tab's title, the tab is read as before")
+
+# A tab whose own program data names another listed program's control number is never read into this program
+# (tab_control_owner, S648). Fixture: Glendale's NCHSD tab as the free page read 43423479582 printed it
+# (2026-11-13, job 131879425520): the heading "NCHSD - High School Diploma" matches no listed title, and the
+# program data the tab's own scripts fetched names 31597 (Adult High School Diploma). The capture of run
+# 43384599013 gave the tab to 24432 (Certificate of Secondary Education Completion) at coverage 0.615, and its
+# record passed with 21 invented codes. 24432's list is its record's (16 placed, 10 missing); 31597's list is
+# not on file here, so the tab's own required courses stand in for it.
+NCHSD_URL = GL_ROOT + "/programs/NCHSD/" + GL_SUFFIX
+NCHSD_DATA_URL = ("https://app.coursedog.com/api/v1/cm/glendale_peoplesoft_direct/programs?programGroupIds=NCHSD"
+                  "&effectiveDatesRange=2026-08-31%2C2026-08-31&doNotDisplayAllMappedRevisionsAsDependencies=true"
+                  "&formatDependents=true&includeMappedDocumentItems=true")
+NCHSD_DATA = {"NCHSD-1901-01-01": {"_id": "NCHSD-1901-01-01", "code": "NCHSD", "programGroupId": "NCHSD",
+                                   "college": "NCR - Noncredit", "status": "Active",
+                                   "customFields": {"eL_credentialId": "NCHSD",
+                                                    "eL_programTitle": "High School Diploma (Cert)",
+                                                    "eL_awardType": "High School Diploma",
+                                                    "eL_status": "Active", "eL_programControlNumber": "31597",
+                                                    "eL_programVersionStatus": "Approved"}}}
+NCHSD_COLUMNS = {"NCHSD-1901-01-01": {"_id": "NCHSD-1901-01-01", "code": "NCHSD", "name": "NCHSD",
+                                      "programGroupId": "NCHSD", "status": "Active"}}
+NCHSD_TEXT = (
+    "NCHSD - High School Diploma · Download as PDF\n"
+    "Noncredit Business Life Skills DivisionContinuing EducationNCHSD - High School Diploma\n"
+    "Overview · Completion Requirements · Program Learning Outcomes · Minimum Required Units/Hours for Major · 20 · "
+    "Maximum Required Units/Hours for Major · 160 · Major Requirements\n"
+    "High School Diploma (Total Hours 3200.0 - 3200.0) All of the following A total of 160 credits from ABSE courses "
+    "must be completed. English (40 credits) (Total Hours 800.0 - 800.0) All of the following ABSE110 ENGLISH 9A "
+    "ABSE111 ENGLISH 9B ABSE112 ENGLISH 10A ABSE113 ENGLISH 10B ABSE114 ENGLISH 11A ABSE115 ENGLISH 11B ABSE116 "
+    "ENGLISH 12A ABSE117 ENGLISH 12B World History (10 credits) All of the following ABSE40 WORLD HISTORY 1A ABSE41 "
+    "WORLD HISTORY 1B United States History (10 credits) ABSE42 US HISTORY 1A ABSE43 US HISTORY 1B American "
+    "Government (5 credits) ABSE44 AMERICAN GOVERNMENT Economics (5 credits) ABSE45 ECONOMICS Science (20 credits) "
+    "ABSE30 LIFE SCIENCE 1A ABSE31 LIFE SCIENCE 1B ABSE32 PHYSICAL SCIENCE 1A ABSE33 PHYSICAL SCIENCE 1B Mathematics "
+    "(20 credits) The following number of Credits ABSE23 ALGEBRA 1A ABSE24 ALGEBRA 1B ABSE28 Algebra 2A ABSE29 "
+    "Algebra 2B ABSE18 Integrated Mathematics 1A ABSE19 Integrated Mathematics 1B ABSE35 Integrated Mathematics 2A "
+    "ABSE36 Integrated Mathematics 2B ABSE37 Integrated Mathematics 3A ABSE38 Integrated Mathematics 3B ABSE25 "
+    "GEOMETRY 1A ABSE26 GEOMETRY 1B Health (5 credits) ABSE34 Health and Guidance Humanities (10 credits) ABSE149 ART "
+    "HISTORY 1A ABSE150 ART HISTORY 1B Electives (35 credits) ABSE146 Ethnic Studies ABSE15 Vocabulary ABSE147 WORLD "
+    "GEOGRAPHY 1A ABSE148 WORLD GEOGRAPHY 1B")
+LIST_24432 = ["ABSE15", "ABSE21", "ABSE22", "ABSE23", "ABSE24", "ABSE25", "ABSE26", "ABSE27", "ABSE30", "ABSE31",
+              "ABSE32", "ABSE33", "ABSE34", "ABSE40", "ABSE41", "ABSE42", "ABSE43", "ABSE44", "ABSE45", "ABSE48",
+              "ABSE70", "DSL11", "DSL13", "DSL14", "DSL49", "DSL53"]
+LIST_31597 = ["ABSE110", "ABSE111", "ABSE112", "ABSE113", "ABSE114", "ABSE115", "ABSE116", "ABSE117", "ABSE40",
+              "ABSE41", "ABSE42", "ABSE43", "ABSE44", "ABSE45", "ABSE30", "ABSE31", "ABSE32", "ABSE33", "ABSE34"]
+check(C.CD_PROGRAM_DATA.search(NCHSD_DATA_URL)
+      and not C.CD_PROGRAM_DATA.search("https://app.coursedog.com/api/v1/glendale_peoplesoft_direct/general/terms")
+      and C.cd_program_control_number(NCHSD_DATA, "NCHSD") == "31597"
+      and C.cd_program_control_number(NCHSD_COLUMNS, "NCHSD") is None
+      and C.cd_program_control_number(NCHSD_DATA, "CIS-C") is None
+      and C.cd_program_control_number({"a": {"code": "X", "customFields": {"eL_programControlNumber": "1234"}}}) == "01234"
+      and C.cd_program_control_number(dict(NCHSD_DATA, b={"code": "NCHSD", "customFields": {
+          "eL_programControlNumber": "24432"}}), "NCHSD") is None,
+      "a tab's program data names one control number, five digits, from its own code's rows; two names none")
+cn_got = {"url": NCHSD_URL, "title": "NCHSD Program | Glendale Community College Catalog", "body": NCHSD_TEXT,
+          "content": NCHSD_TEXT}
+cn_prog = {"code": "NCHSD", "name": "NCHSD"}
+cn_old = C.cd_page(dict(cn_got), cn_prog)                                       # the capture of run 43384599013
+cn_new = C.cd_page(dict(cn_got, control_number_named=C.cd_program_control_number(NCHSD_DATA, "NCHSD")), cn_prog)
+cn_progs = [{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None,
+             "status": "Active", "closed_list": [{"code": c} for c in LIST_24432]},
+            {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program",
+             "status": "Active", "closed_list": [{"code": c} for c in LIST_31597]}]
+cn_cands = C.candidates(cn_progs[0], [cn_new])
+check("control_number" not in cn_old and cn_new.get("control_number") == "31597"
+      and cn_cands and round(cn_cands[0]["coverage"], 3) == 0.615 and cn_cands[0]["names_control_number"] == "31597",
+      "the tab carries the number its data names, and 24432 still covers it at 0.615: %r"
+      % [(c["coverage"], c.get("names_control_number")) for c in cn_cands])
+cn_given = C.assign(cn_progs, [cn_new])
+check(cn_given["24432"]["best"] is None and (cn_given["31597"]["best"] or {}).get("url") == NCHSD_URL,
+      "the NCHSD tab names 31597: 24432 never reads it, and 31597 does: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in cn_given.items()})
+cn_given = C.assign(cn_progs[:1], [cn_new])
+check((cn_given["24432"]["best"] or {}).get("url") == NCHSD_URL,
+      "a number no listed program holds settles nothing: the tab is read as before")
+# A program its words tie to the tab keeps reading it: Glendale's two shared pages (capture 43415972509), an ADT and
+# its "2.0" successor on the successor's tab. If the tab's data names the successor, the old program still reads it,
+# and the page stays shared. The number never overrides the title check: a tab printing another listed program's
+# title is refused though its data names this program.
+two_codes = ["BUSAD 101", "BUSAD 120", "ACCTG 101", "ACCTG 102", "ECON 101", "ECON 102", "MATH 136"]
+two_page = lambda code, name, named: C.cd_page({"url": GL_ROOT + "/programs/%s/%s" % (code, GL_SUFFIX),
+                                                "title": code + " Program", "body": " ".join(two_codes), "content": "",
+                                                "control_number_named": named}, {"code": code, "name": name})
+for old_cn, new_cn, old_t, new_t, code, name in (
+        ("32267", "43038", "Business Administration", "Business Administration 2.0", "BA2.0-AST",
+         "Business Administration 2.0 - Associate in Science for Transfer"),
+        ("30814", "44951", "Communication Studies", "Communication Studies 2.0", "COM2.0-AAT",
+         "Communication Studies 2.0 - Associate in Arts for Transfer")):
+    award = "A.S. T Degree" if code.endswith("AST") else "A.A- T Degree"
+    two_progs = [{"control_number": old_cn, "title": old_t, "award": award, "status": "Active - Teachout Only",
+                  "closed_list": [{"code": c} for c in two_codes]},
+                 {"control_number": new_cn, "title": new_t, "award": award, "status": "Active",
+                  "closed_list": [{"code": c} for c in two_codes]}]
+    pg = two_page(code, name, new_cn)
+    two_given = C.assign(two_progs, [pg])
+    check(all((two_given[k]["best"] or {}).get("url") == pg["url"] for k in (old_cn, new_cn))
+          and C.tab_title_link(old_t, pg["h1"]),
+          "%s keeps %s, shared with %s, though the tab's data names %s: %r"
+          % (old_cn, code, new_cn, new_cn, {k: (v["best"] or {}).get("url") for k, v in two_given.items()}))
+own_named = dict(tn_pages[0], control_number="37070")
+check(C.assign(tn_progs, [own_named])["37070"]["best"] is None,
+      "a tab printing another listed program is refused though its own data names this program")
+check(C.tab_title_link("Business Administration", "Business Administration 2.0 - Associate in Science for Transfer")
+      and C.tab_title_link("Communication Studies", "Communication Studies 2.0 - Associate in Arts for Transfer")
+      and not C.tab_title_link("Certificate of Secondary Education Completion", "NCHSD")
+      and not C.tab_title_link("Information Technology", "Computer Information Systems - Certificate of Achievement")
+      and not C.tab_title_link("History", "Art History - Associate of Arts")
+      and not C.tab_title_link("Information Technology", "Information Technology Technician - Certificate of Achievement")
+      and not C.tab_title_link("Mathematics", "Liberal Arts: Science and Mathematics Emphasis - Associate of Arts")
+      and not C.tab_title_link("Accounting", "Computerized Accounting Specialist - Certificate of Achievement"),
+      "a title links to its own tab and its 2.0's (numbers added, no word), never to a tab that adds a word")
+# History (32463) on the Art History tab, whose data names 11173: the number refuses it, as it refuses 24432 NCHSD.
+hist_codes = ["HIST 101", "HIST 102", "HIST 110", "HIST 111", "ART 101", "ART 102"]
+hist_page = C.cd_page({"url": GL_ROOT + "/programs/ARTH-AA/" + GL_SUFFIX, "title": "ARTH-AA Program",
+                       "body": " ".join(hist_codes), "content": "", "control_number_named": "11173"},
+                      {"code": "ARTH-AA", "name": "Art History - Associate of Arts"})
+hist_progs = [{"control_number": "32463", "title": "History", "award": "A.A. Degree", "status": "Active",
+               "closed_list": [{"code": c} for c in hist_codes]},
+              {"control_number": "11173", "title": "Art History", "award": "A.A. Degree", "status": "Active",
+               "closed_list": [{"code": c} for c in hist_codes]}]
+hist_given = C.assign(hist_progs, [hist_page])
+check(hist_given["32463"]["best"] is None and (hist_given["11173"]["best"] or {}).get("url") == hist_page["url"],
+      "History is refused the Art History tab its data names 11173 for: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in hist_given.items()})
+check(C.tab_control_owner({"one_program": True, "names_control_number": "31597"}, {"24432": "", "31597": ""}) == "31597"
+      and C.tab_control_owner({"one_program": False, "names_control_number": "31597"}, {"31597": ""}) is None
+      and C.tab_control_owner({"one_program": True}, {"31597": ""}) is None,
+      "only a Coursedog tab's number decides, and only a listed one")
+
+# refile-kept holds the filed 24432 read (the S648 conductor's hold, d-keep-passing-record-no-read-s647): the
+# capture of run 43384599013 kept no program data, so the page read's account names NCHSD's owner
+# (kb/program_requirements_college/glendale_community/tab_owners.json); a capture that read the data names it in its catalog.
+with tempfile.TemporaryDirectory() as td:
+    prior, dest = os.path.join(td, "prior"), os.path.join(td, "dest")
+    for d in (os.path.join(prior, "records"), os.path.join(dest, "records")):
+        os.makedirs(d)
+    with open(os.path.join(prior, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2025-2026", "run": "41055650373"}, fh)
+    rec_24432 = {"college": "Glendale Community College", "control_number": "24432", "source_url": NCHSD_URL,
+                 "extracted_run": "43415972509", "record": {"program": {"section_heading": "NCHSD - High School Diploma"}},
+                 "score": {"coverage": {"pass": True}, "invented": {"pass": True, "count": 21},
+                           "arithmetic": {"status": "equal"}, "pass": True}}
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None},
+                   {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program"}], fh)
+    cn_cap = {"college": "Glendale Community College", "catalog_year": "2026-2027", "run": "43415972509",
+              "coursedog": {"root": GL_ROOT, "catalog": [{"code": "NCHSD", "name": "NCHSD"}]},
+              "page_claimed": [{"control_number": "31597", "title": "Adult High School Diploma",
+                                "award": "Noncredit program", "pages": [NCHSD_URL]}]}
+    with open(os.path.join(dest, "capture.json"), "w") as fh:
+        json.dump(cn_cap, fh)
+    with open(os.path.join(dest, "summary.json"), "w") as fh:
+        json.dump({"extracted": 1, "passed_machine_checks": 1, "cost_usd_run": 0.11, "extract_calls": 1}, fh)
+    check(C.wrong_tabs(dest, cn_cap) == [], "without the tab's number, the NCHSD read looks like 24432's own")
+    owners_path = os.path.join(td, "tab_owners.json")      # the shape of glendale_community/tab_owners.json
+    with open(owners_path, "w") as fh:
+        json.dump({"college": "Glendale Community College", "run": "43423479582",
+                   "tabs": {"NCHSD": {"control_number": "31597", "field": "customFields.eL_programControlNumber"}}}, fh)
+    cn_owners = C.tab_owners_file(owners_path, "Glendale Community College")
+    try:
+        C.tab_owners_file(owners_path, "Hartnell College")
+        cn_refused = False
+    except ValueError:
+        cn_refused = True
+    check(cn_owners == {"NCHSD": "31597"} and cn_refused and C.tab_owners_file(None, "x") == {},
+          "the page read's account names NCHSD's owner, for its own college only: %r" % cn_owners)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        cn_rc = C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners)
+    cn_sum = json.load(open(os.path.join(dest, "summary.json")))
+    cn_held = cn_sum.get("held_wrong_tab") or [{}]
+    check(cn_rc == 0 and os.listdir(os.path.join(dest, "records")) == []
+          and [(h["control_number"], h["tab"], h["names"], h["filed"], h["reason"]) for h in cn_held]
+          == [("24432", "NCHSD", ["31597"], False, C.TAB_OWNED_BY_ANOTHER)]
+          and cn_sum["extracted"] == 0,
+          "24432's read of 31597's tab is held, and with no earlier record it files none: %r" % cn_held)
+    # A capture that read the tab's data names the owner in its own catalog, with no page read's account.
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    cn_cap2 = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[{"code": "NCHSD", "name": "NCHSD",
+                                                                          "control_number": "31597"}]))
+    check([(w["control_number"], w["names"]) for w in C.wrong_tabs(dest, cn_cap2)] == [("24432", ["31597"])],
+          "a capture's own catalog number holds the read the same way")
+    cn_cap3 = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[{"code": "NCHSD", "name": "NCHSD",
+                                                                          "control_number": "24432"}]))
+    check(C.wrong_tabs(dest, cn_cap3, {"NCHSD": "31597"}) == [],
+          "a page read's account never overrides the numbers a capture read itself")
+    cn_cap4 = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[
+        {"code": "NCHSD", "name": "NCHSD"}, {"code": "CIS-C", "name": "Computer Information Systems - Certificate of "
+                                                                   "Achievement", "control_number": "21305"}]))
+    check([(w["control_number"], w["names"]) for w in C.wrong_tabs(dest, cn_cap4, {"NCHSD": "31597"})]
+          == [("24432", ["31597"])],
+          "a capture that heard other tabs' numbers but not NCHSD's still holds 24432 by the page read's account")
+    # 32267 read BA2.0-AST, whose data may name 43038: its title ties it to the tab, so the read is never held.
+    os.remove(os.path.join(dest, "records", "24432.json"))
+    C._write(os.path.join(dest, "records", "32267.json"),
+             dict(rec_24432, control_number="32267", source_url=GL_ROOT + "/programs/BA2.0-AST/" + GL_SUFFIX))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "32267", "title": "Business Administration", "award": "A.S. T Degree"},
+                   {"control_number": "43038", "title": "Business Administration 2.0", "award": "A.S. T Degree"}], fh)
+    ba_cap = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[
+        {"code": "BA2.0-AST", "name": "Business Administration 2.0 - Associate in Science for Transfer",
+         "control_number": "43038"}]))
+    check(C.wrong_tabs(dest, ba_cap) == [], "32267's read of its 2.0 successor's tab is never held")
+    # A hold restores main's copy, never an older filing's, and never deletes a record main holds. The --from
+    # filing holds an older passing copy (page 7); main holds page 9.
+    maind = os.path.join(td, "main")
+    os.makedirs(os.path.join(maind, "records"))
+    with open(os.path.join(maind, "capture.json"), "w") as fh:
+        json.dump({"catalog_year": "2025-2026", "run": "41055650373"}, fh)
+    C._write(os.path.join(prior, "records", "24432.json"),
+             dict(rec_24432, source_url="https://www.glendale.edu/c.pdf#page=7", extracted_run="40000000000"))
+    C._write(os.path.join(maind, "records", "24432.json"),
+             dict(rec_24432, source_url="https://www.glendale.edu/c.pdf#page=9", extracted_run="41049220135"))
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    os.remove(os.path.join(dest, "records", "32267.json"))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None},
+                   {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program"}], fh)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners, main_dir=maind)
+    kept_24432 = json.load(open(os.path.join(dest, "records", "24432.json")))
+    check(kept_24432["source_url"].endswith("#page=9") and kept_24432["score"]["pass"]
+          and "held_failing_on_main" not in json.load(open(os.path.join(dest, "summary.json"))),
+          "a held read restores main's passing record, not the older filing's: %r" % kept_24432["source_url"])
+    # A held program whose record fails on main is carried as main files it, and named for the load to skip.
+    # A loadable record that fails on main (a units record with a block, a numeric run, courses placed), so the load
+    # test below proves the hold keeps it out, not its shape (S648 review).
+    main_fail = dict(rec_24432, source_url="https://www.glendale.edu/c.pdf#page=9", extracted_run="41049220135",
+                     record={"program": {"measure": "units", "total_units": {"min": 20, "max": 20},
+                                         "section_heading": "NCHSD - High School Diploma"},
+                             "blocks": [{"name": "Core", "rule": "all", "courses": [{"code": "ABSE 15"}]}]},
+                     score=dict(rec_24432["score"], coverage={"pass": True, "placed": 1, "listed": 26},
+                                arithmetic={"status": "unequal"}, **{"pass": False}))
+    C._write(os.path.join(maind, "records", "24432.json"), main_fail)
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()) as rk_out:
+        C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners, main_dir=maind)
+    check(json.load(open(os.path.join(dest, "records", "24432.json"))) == dict(main_fail, catalog_year="2025-2026")
+          and json.load(open(os.path.join(dest, "summary.json"))).get("held_failing_on_main") == ["24432"]
+          and "fail on main, carried as filed there for the load to skip: 1 (24432)" in rk_out.getvalue(),
+          "a held record that fails on main is carried as it is and named: %s" % rk_out.getvalue().strip()[-160:])
+    # The load skips it (COBIx on #3202, 17:29Z): load_rows reads held_failing_on_main.
+    C._write(os.path.join(dest, "records", "31597.json"),
+             dict(rec_24432, control_number="31597", source_url=NCHSD_URL, extracted_run="43415972509",
+                  record={"program": {"measure": "hours", "total_units": {"min": 3200, "max": 3200}}, "blocks": []},
+                  score={"coverage": {"pass": True, "placed": 1}, "invented": {"pass": True},
+                         "arithmetic": {"status": "equal"}, "pass": True}))
+    for _r in ("24432", "31597"):
+        _f = json.load(open(os.path.join(dest, "records", _r + ".json")))
+        _f["college"] = "Glendale Community College"
+        json.dump(_f, open(os.path.join(dest, "records", _r + ".json"), "w"))
+    ld_rows, ld_skipped = C.load_rows("Glendale Community College", folder=dest)
+    check([r["control_number"] for r in ld_rows] == ["31597"] and "24432" not in [r["control_number"] for r in ld_rows]
+          and [(x["control_number"], "held_failing_on_main" in x["why"]) for x in ld_skipped] == [("24432", True)],
+          "the load skips a loadable held record that fails on main and posts the rest: %r" % (ld_skipped,))
+    # The summary key alone is not trusted: without held_failing_on_main the held list still keeps 24432 out.
+    _sm = json.load(open(os.path.join(dest, "summary.json")))
+    json.dump({k: v for k, v in _sm.items() if k != "held_failing_on_main"}, open(os.path.join(dest, "summary.json"), "w"))
+    check("24432" not in [r["control_number"] for r in C.load_rows("Glendale Community College", folder=dest)[0]],
+          "without the held_failing_on_main key the held list still keeps the failing record out")
+    json.dump(_sm, open(os.path.join(dest, "summary.json"), "w"))
+    # file_run, then load_rows: the workflow's file step rebuilds summary.json, and the holds stay (S648 review).
+    _fr_out = os.path.join(td, "fr_out")
+    for _d in ("records", "sources"):
+        os.makedirs(os.path.join(_fr_out, _d))
+    for _r in ("24432", "31597"):
+        C._write(os.path.join(_fr_out, "records", _r + ".json"),
+                 json.load(open(os.path.join(dest, "records", _r + ".json"))))
+    C._write(os.path.join(_fr_out, "capture.json"), dict(json.load(open(os.path.join(dest, "capture.json"))), found=1))
+    _real_cd = C.COLLEGE_DIR
+    C.COLLEGE_DIR = os.path.join(td, "colleges")
+    _fr_dest = os.path.join(C.COLLEGE_DIR, C.slug_of("Glendale Community College"))
+    try:
+        shutil.copytree(dest, _fr_dest)
+        with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+            C.file_run("Glendale Community College", _fr_out, "43500000000")
+        _fr_sum = json.load(open(os.path.join(_fr_dest, "summary.json")))
+        _fr_rows = [r["control_number"] for r in C.load_rows("Glendale Community College", folder=_fr_dest)[0]]
+    finally:
+        C.COLLEGE_DIR = _real_cd
+    check(_fr_sum.get("run") == "43500000000" and _fr_sum.get("held_failing_on_main") == ["24432"]
+          and [e["control_number"] for e in _fr_sum.get("held_wrong_tab") or []] == ["24432"]
+          and _fr_rows == ["31597"],
+          "file_run then load_rows: the held list is carried, held_failing_on_main taken again, and 24432 stays out: %r"
+          % (_fr_rows,))
+    # A record read from a refused tab is skipped by the filing's own account, with no summary key at all.
+    C._write(os.path.join(dest, "records", "24432.json"), dict(rec_24432, college="Glendale Community College",
+                                                               record=main_fail["record"], score=main_fail["score"]))
+    json.dump({"extracted": 2}, open(os.path.join(dest, "summary.json"), "w"))
+    json.dump({"college": "Glendale Community College", "tabs": {"NCHSD": {"control_number": "31597"}}},
+              open(os.path.join(dest, "tab_owners.json"), "w"))
+    _wt_rows, _wt_skip = C.load_rows("Glendale Community College", folder=dest)
+    check("24432" not in [r["control_number"] for r in _wt_rows]
+          and any(x["control_number"] == "24432" and "refuses" in x["why"] for x in _wt_skip),
+          "a record still read from a refused tab is skipped by wrong_tabs, with no summary key: %r" % (_wt_skip,))
+    os.remove(os.path.join(dest, "tab_owners.json"))
+    json.dump(_sm, open(os.path.join(dest, "summary.json"), "w"))
+    os.remove(os.path.join(dest, "records", "31597.json"))
+    # main's copy read a refused tab too: it is not restored, and the program is listed for a person.
+    C._write(os.path.join(maind, "records", "24432.json"), dict(main_fail, source_url=NCHSD_URL))
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners, main_dir=maind)
+    _held = {e["control_number"]: e for e in json.load(open(os.path.join(dest, "summary.json")))["held_wrong_tab"]}
+    check(not os.path.exists(os.path.join(dest, "records", "24432.json"))
+          and "a tab the rule refuses too" in (_held["24432"].get("for_person") or "")
+          and _held["24432"]["filed"] is False,
+          "a held record whose main copy reads a refused tab is not restored, and is listed for a person: %r"
+          % _held.get("24432"))
+
+# A Coursedog tab's coarse net reads a run of numbers after one subject (run_net, S647). The CIS-C tab's text as
+# the free page read 43423479582 printed it (2026-11-13): Computer Information Systems' own tab, never a
+# candidate for 21305 or 37960 because the net read 7 of their 19 listed courses (it asks 7.6) while the finder
+# reads 11. A page that is no Coursedog tab keeps the net as it was.
+CIS_C_TEXT = (
+    "CIS-C - Computer Information Systems - Certificate of Achievement\nDownload as PDF\n"
+    "Business DivisionCredit ProgramsCERT - Certificate of Achievement\n"
+    "Overview · Completion Requirements · Program Learning Outcomes · Minimum Required Units/Hours for Major · 19 · "
+    "Maximum Required Units/Hours for Major · 22 · Major Requirements · REQUIRED COURSES FOR MAJOR/CERTIFICATE · "
+    "UNITS · CS/IS 101\nIntroduction to Computer and Information Systems\n"
+    "5 · CS/IS 190 · Introduction to Computer Networks · 3 · CS/IS 240 · Cloud Computing Fundamentals · 3 · CHOOSE "
+    "ONE SPECIALIZATION FROM THE FOLLOWING · Specialization: Cloud Computing · CS/IS 241, 242, 243 · 9 · "
+    "Specialization: Computer Networking · CS/IS 194, 196, 197 · 9 · Specialization: Cybersecurity · CS/IS 193, 194, "
+    "196 · 9 · Specialization: Data Analytics · CS/IS 234, 270; MATH 137 · 11 · Specialization: Information Systems · "
+    "CS/IS 234, 260, 270 · 9 · Specialization: Information Technology · CS/IS 186, 194, 234 · 9 · Specialization: "
+    "Programming · CS/IS 112, 135, 151 · 9\nSpecialization: Unix/Linux Systems Administrator\n"
+    "CS/IS 172, CS/IS 174 · 8 · Specialization: Web Development · CS/IS 255, 260, 262 · 9 · TOTAL UNITS REQUIRED · "
+    "19-22 · Program Mapper Link\nhttps://programmap.glendale.edu/program/computer-information-systems/")
+CIS_LIST = ["BUSAD 106", "BUSAD 110", "CS/IS 101", "CS/IS 112", "CS/IS 135", "CS/IS 137", "CS/IS 139", "CS/IS 151",
+            "CS/IS 172", "CS/IS 174", "CS/IS 190", "CS/IS 193", "CS/IS 234", "CS/IS 260", "CS/IS 261", "CS/IS 262",
+            "CS/IS 50", "ENTRE 101", "ENTRE 102"]
+IT_LIST = ["BUSAD 204", "CS/IS 101", "CS/IS 112", "CS/IS 190", "CS/IS 193", "CS/IS 196", "CS/IS 197", "CSIS 185", "CSIS 194"]
+rn_got = {"url": GL_ROOT + "/programs/CIS-C/" + GL_SUFFIX, "title": "CIS-C Program | Glendale Community College Catalog",
+          "body": CIS_C_TEXT, "content": CIS_C_TEXT}
+rn_page = C.cd_page(rn_got, {"code": "CIS-C", "name": "Computer Information Systems - Certificate of Achievement"})
+rn_cis = [{"code": c} for c in CIS_LIST]
+check(C.net_hits(rn_cis, C.page_net(rn_got)) == 7 and C.net_hits(rn_cis, rn_page["codes"]) == 11,
+      "the run net reads the CIS-C tab's runs: 11 of the 19 listed, where the old net read 7: %d"
+      % C.net_hits(rn_cis, rn_page["codes"]))
+rn_progs = [{"control_number": "21305", "title": "Computer Information Systems",
+             "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+             "status": "Active", "closed_list": rn_cis},
+            {"control_number": "37070", "title": "Information Technology",
+             "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units", "status": "Active",
+             "closed_list": [{"code": c} for c in IT_LIST]}]
+rn_given = C.assign(rn_progs, [rn_page])
+check((rn_given["21305"]["best"] or {}).get("url") == rn_got["url"] and rn_given["37070"]["best"] is None,
+      "Computer Information Systems reads its own tab, and Information Technology does not: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in rn_given.items()})
+check(C.run_net("BUSAD 101, 106, 120") >= {"BUSAD106", "BUSAD120"} and C.run_net("CS/IS 101 and 3 units") == set(),
+      "a run names every number after its subject, and a figure ends it")
+
+# Coursedog names a program by its code alone for 15 of Glendale's 261 (all noncredit; capture of run
+# 43415972509), so the tab's heading named no program. The index's own link text names it; a program the
+# search does name keeps that name, and a link whose text is the code names nothing. Links from the filed capture.
+cdn_links = [{"text": "Administrative Medical Assistant", "href": GL_ROOT + "/programs/NCAMA"},
+             {"text": "Certified Nursing Aide", "href": GL_ROOT + "/programs/NCCNA"},
+             {"text": "Customer Service", "href": GL_ROOT + "/programs/NCCS"},
+             {"text": "NCHC", "href": GL_ROOT + "/programs/NCHC"},
+             {"text": "Something Else", "href": GL_ROOT + "/programs/AD%26D-AS"}]
+cdn_progs = [{"code": "NCCNA", "name": "NCCNA"}, {"code": "NCCS", "name": ""}, {"code": "NCHC", "name": "NCHC"},
+             {"code": "NCMA", "name": "NCMA"},
+             {"code": "AD&D-AS", "name": "Architectural Drafting & Design - Associate of Science"}]
+check(C.cd_index_names(cdn_progs, cdn_links, GL_ROOT) == 2
+      and [p["name"] for p in cdn_progs] == ["Certified Nursing Aide", "Customer Service", "NCHC", "NCMA",
+                                              "Architectural Drafting & Design - Associate of Science"]
+      and cdn_progs[0].get("name_from") == "index" and "name_from" not in cdn_progs[4],
+      "a program named by its code takes the index link's name; a named one keeps its own: %r" % cdn_progs)
+cdn_page = C.cd_page({"url": GL_ROOT + "/programs/NCCNA/" + GL_SUFFIX, "title": "NCCNA Program", "body": "", "content": ""},
+                     cdn_progs[0])
+check(C.label_score(cdn_page, {"title": "Certified Nursing Aide", "award": "Noncredit program"})[1] == 1.0,
+      "and its tab's heading then names the program in full")
+
+# The compare gate: every program passing on main whose branch record passes less, fails or is absent, with its
+# new method. Both sides are read from commits in a tiny repo built here (S647 review: the branch side once read
+# the working tree, so run from main it compared main with main and printed "0 of N").
+import contextlib as _ctx  # noqa: E402
+import io as _io  # noqa: E402
+import subprocess as _sp  # noqa: E402
+import _program_requirements_compare as CMP  # noqa: E402
+G2 = {"coverage": {"pass": True}, "invented": {"pass": True}, "arithmetic": {"status": "equal"}, "pass": True}
+G1 = dict(G2, **{"pass": False})
+G0 = dict(G2, arithmetic={"status": "differs"})
+check((C.pass_grade(G2), C.pass_grade(G1), C.pass_grade(G0)) == (2, 1, 0), "the fixture's three grades")
+with tempfile.TemporaryDirectory() as cmp_repo:
+    def cmp_git(*a):
+        return _sp.run(["git", "-C", cmp_repo, "-c", "user.name=t", "-c", "user.email=t@t", "-c", "commit.gpgsign=false",
+                        *a], check=True, capture_output=True, text=True).stdout.strip()
+    cmp_git("init", "-q")
+    cmp_rel = "kb/program_requirements_college/%s" % C.slug_of("Glendale Community College")
+    os.makedirs(os.path.join(cmp_repo, cmp_rel, "records"))
+
+    def cmp_put(cn, sc):
+        open(os.path.join(cmp_repo, cmp_rel, "records", cn + ".json"), "w").write(json.dumps(
+            {"control_number": cn, "title": "P" + cn, "award": "A.S.", "record": {"blocks": []}, "score": sc}))
+    for cn, sc in (("1", G2), ("2", G1), ("3", G2), ("4", G0), ("5", G2), ("6", G2)):
+        cmp_put(cn, sc)
+    cmp_git("add", "-A")
+    cmp_git("commit", "-qm", "base")
+    cmp_git("branch", "base")
+    base_sha = cmp_git("rev-parse", "HEAD")
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        same = CMP.main(["--college", "Glendale Community College", "--base", "base", "--head", "HEAD"], repo=cmp_repo)
+    check(same == 2 and base_sha in out_buf.getvalue().splitlines()[0],
+          "two refs that are one commit exit non-zero, after a first line naming the sha: %r" % out_buf.getvalue())
+    cmp_git("checkout", "-qb", "head")
+    cmp_put("1", G0)                                                    # fails now
+    os.remove(os.path.join(cmp_repo, cmp_rel, "records", "2.json"))    # absent
+    cmp_put("5", G1)                                                    # PASS(2) to PASS(1)
+    open(os.path.join(cmp_repo, cmp_rel, "sources.json"), "w").write(json.dumps(
+        [{"control_number": "1", "method": "sitemap_page"}, {"control_number": "2", "method": "not_found"},
+         {"control_number": "5", "method": "sitemap_page"}]))
+    cmp_git("add", "-A")
+    cmp_git("commit", "-qm", "head")
+    head_sha = cmp_git("rev-parse", "HEAD")
+    cmp_put("1", G2)       # the working tree says otherwise; the tool reads commits only
+    cmp_put("2", G2)
+    base_side = CMP.base_records("base", cmp_rel + "/records", cmp_repo)
+    head_side = CMP.branch_records("head", cmp_rel + "/records", cmp_repo)
+    check(sorted(base_side) == ["1", "2", "3", "4", "5", "6"] and sorted(head_side) == ["1", "3", "4", "5", "6"]
+          and CMP.grade(head_side["1"]) == 0,
+          "both sides are read from commits, never the working tree: %r" % sorted(head_side))
+    cmp_rows = CMP.compare(base_side, head_side, CMP.methods_at("head", cmp_rel, cmp_repo))
+    check([(r["control_number"], r["was"], r["now"], r["method"]) for r in cmp_rows]
+          == [("1", 2, "fail", "sitemap_page"), ("2", 1, "absent", "not_found"), ("5", 2, "PASS(1)", "sitemap_page")],
+          "the gate lists a pass that now fails, is absent or passes less, and no other: %r" % cmp_rows)
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        rc = CMP.main(["--college", "Glendale Community College", "--base", "base", "--head", "head"], repo=cmp_repo)
+    lines = out_buf.getvalue().splitlines()
+    check(rc == 0 and lines[0] == "base base = %s  head head = %s" % (base_sha, head_sha) and len(lines) == 5
+          and lines[-1].startswith("3 of 5 passing records"),
+          "the first line names both shas, then the list and the count: %r" % lines)
+    with _ctx.redirect_stdout(_io.StringIO()) as out_buf:
+        rc = CMP.main(["--college", "Another College", "--base", "base", "--head", "head"], repo=cmp_repo)
+    check(rc == 2 and "no record file" in out_buf.getvalue(),
+          "a head that holds no record file for the college exits non-zero: %r" % out_buf.getvalue())
+check(CMP.grade({"record": None, "score": G2}) == 0, "a record that holds no record is no pass")
+cmp_stub = CMP.compare({"7": {"record": {"blocks": []}, "score": G2}},
+                       {"7": {"record": None, "score": None, "error": "HTTP 401"}}, {})
+check([r["now"] for r in cmp_stub] == ["error"], "the gate names a file a failed call left as an error: %r" % cmp_stub)
+
+# A failed extraction call files nothing as read (d-extract-failure-files-nothing-s647). Run 43384599013 filed 121
+# HTTP 401 stubs over Glendale's records while the database refused connections; 118 of them replaced real records
+# that failed a check, as A1's does here (a passing one is held, since its window gains nothing). Fixture only.
+FAIL_COLLEGE = "Failcall College"
+with tempfile.TemporaryDirectory() as td:
+    real_dir = C.COLLEGE_DIR
+    C.COLLEGE_DIR = os.path.join(td, "colleges")
+    fdest = os.path.join(C.COLLEGE_DIR, C.slug_of(FAIL_COLLEGE))
+    fout = os.path.join(td, "out")
+    for d in (os.path.join(fdest, "records"), os.path.join(fout, "sources")):
+        os.makedirs(d)
+    open(os.path.join(fdest, "capture.json"), "w").write(json.dumps({"catalog_year": "2025-2026"}))
+    open(os.path.join(fout, "capture.json"), "w").write(json.dumps({"college": FAIL_COLLEGE, "programs": 4,
+                                                                    "catalog_year": "2026-2027"}))
+    filed_ok = {"college": FAIL_COLLEGE, "control_number": "A1", "title": "A", "award": "A.S.", "extracted_run": "100",
+                "source_url": "https://old.example.edu/a", "record": {"blocks": []}, "score": G0, "cost_usd": 0.05}
+    open(os.path.join(fdest, "records", "A1.json"), "w").write(json.dumps(filed_ok))
+    open(os.path.join(fdest, "sources.json"), "w").write(json.dumps(
+        [{"control_number": "A1", "source": {"url": "https://old.example.edu/a"}, "coverage": 1.0}]))
+
+    def fsrc(cn):
+        return {"college": FAIL_COLLEGE, "control_number": cn, "shape": "degree", "title": "T" + cn, "award": "A.S.",
+                "closed_list": [{"code": "A 1"}], "text": "A 1 Course", "coverage": 1.0, "codes_found": ["A1"],
+                "method": "sitemap_page", "source": {"url": "https://new.example.edu/" + cn}}
+    for cn in ("A1", "B2", "C3"):
+        json.dump(fsrc(cn), open(os.path.join(fout, "sources", cn + ".json"), "w"))
+    answers = {"A1": {"error": "HTTP 401: {\"error\":\"unauthorized\"}"},
+               "B2": {"error": "The read operation timed out"},
+               "C3": {"record": {"program": {}, "blocks": []}, "model": "m", "usage": {"in": 1}}}
+    saved_call, saved_score, saved_cost = XT.call, XT.score, XT.cost
+    XT.call = lambda src, key, *a, **k: dict(answers[src["control_number"]])
+    XT.score = lambda rec, *a, **k: dict(G2, coverage={"pass": True, "share": 1.0})
+    XT.cost = lambda model, usage: 0.07 if usage else None
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only"
+    try:
+        check(C.extract(fout, 0, 1, "200", workers=1, keep_from=fdest) == 0, "extract runs to its end")
+        check(C.file_run(FAIL_COLLEGE, fout, "200") == 0, "the run files")
+    finally:
+        XT.call, XT.score, XT.cost = saved_call, saved_score, saved_cost
+        C.COLLEGE_DIR = real_dir
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    with open(os.path.join(fdest, "records", "A1.json")) as fh:
+        a1 = json.load(fh)
+    # Untouched but for the catalog year of the filing it was read in (2025-2026), since the new capture is
+    # 2026-2027 and the load would stamp that on a record naming none (kept_year, S647).
+    check(a1 == dict(filed_ok, catalog_year="2025-2026"),
+          "a 401 leaves the filed record untouched, with its own catalog year: %r"
+          % {k: a1.get(k) for k in ("error", "extracted_run", "catalog_year")})
+    check(sorted(os.listdir(os.path.join(fdest, "records"))) == ["A1.json", "C3.json"],
+          "a timed-out call on a program with no filed record files no record: %r"
+          % sorted(os.listdir(os.path.join(fdest, "records"))))
+    fsum = json.load(open(os.path.join(fdest, "summary.json")))
+    check([(x["control_number"], x["kept_filed"]) for x in fsum["extract_failed"]] == [("A1", True), ("B2", False)]
+          and fsum["extract_failed"][0]["status"].startswith("HTTP 401") and fsum["extract_calls"] == 3
+          and fsum["cost_usd_run"] == 0.07 and fsum["cost_usd_filed"] == 0.12 and fsum["errors"] == 0,
+          "the summary lists each failed call with its status, and this run's spend apart from the filed total: %r"
+          % {k: fsum.get(k) for k in ("extract_failed", "cost_usd_run", "cost_usd_filed", "errors")})
+    fidx = {x["control_number"]: x for x in json.load(open(os.path.join(fdest, "sources.json")))}
+    check(fidx["A1"]["source"]["url"] == "https://old.example.edu/a" and "B2" not in fidx
+          and fidx["C3"]["source"]["url"] == "https://new.example.edu/C3",
+          "a failed program's sources entry stays the one its filed record was read from, so the next run sends it")
+    check(C.check_extract(fout) == 1, "2 of 3 calls failed: the job ends red after the run is filed")
+    acct_path = os.path.join(fout, "extract_account_0.json")
+    acct0 = json.load(open(acct_path))
+    json.dump(dict(acct0, calls=5), open(acct_path, "w"))
+    check(C.check_extract(fout) == 0, "2 of 5 failed: the run stands")
+    json.dump(dict(acct0, calls=2), open(acct_path, "w"))
+    check(C.check_extract(fout) == 1, "every call failed: red")
+    os.remove(acct_path)
+    check(C.check_extract(fout) == 0, "no extraction ran: nothing to judge")
+
+# sources_from (S647): an earlier run's artifact staged in place of a capture, refused unless it is the filed
+# capture's own, and extracted with no page loaded. Fixtures only.
+ST_COLLEGE = "Stage College"
+with tempfile.TemporaryDirectory() as td:
+    sdest, sart = os.path.join(td, "filed"), os.path.join(td, "artifact")
+    for d in (os.path.join(sdest, "records"), os.path.join(sart, "sources")):
+        os.makedirs(d)
+    s1 = {"college": ST_COLLEGE, "control_number": "S1", "shape": "degree", "title": "Welding", "award": "A.S.",
+          "closed_list": [{"code": "WELD 1"}], "text": "WELD 1 Welding I 3", "coverage": 1.0, "codes_found": ["WELD1"],
+          "method": "sitemap_page", "source": {"url": "https://catalog.example.edu/programs/W-AS/tab"}}
+    s2 = {"college": ST_COLLEGE, "control_number": "S2", "shape": "degree", "title": "Art", "award": "A.A.",
+          "closed_list": [], "text": "", "coverage": 0.0, "codes_found": [], "method": "no_closed_list", "source": None}
+    for s in (s1, s2):
+        json.dump(s, open(os.path.join(sart, "sources", s["control_number"] + ".json"), "w"))
+    account = {"college": ST_COLLEGE, "catalog_year": "2026-2027", "programs": 2, "with_closed_list": 1, "found": 1,
+               "pages_listed": 1, "pages_answered": 1, "pages_read": 1, "platform": "coursedog",
+               "coursedog": {"root": "https://catalog.example.edu", "catalog": [], "challenged": []},
+               "by_method": {"no_closed_list": 1, "sitemap_page": 1},
+               "would_extract": {"programs": 1, "list": [{"control_number": "S1", "url": s1["source"]["url"],
+                                                          "coverage": 1.0}]}}
+
+    def st_files(filed_extra=None, art_extra=None):
+        json.dump(dict(account, run="777", **(filed_extra or {})), open(os.path.join(sdest, "capture.json"), "w"))
+        json.dump(dict(account, **(art_extra or {})), open(os.path.join(sart, "capture.json"), "w"))
+
+    def st_run(name, run="777", src=None):
+        out = os.path.join(td, name)
+        with _ctx.redirect_stdout(_io.StringIO()) as buf:
+            rc = C.stage_sources(ST_COLLEGE, src or sart, out, run, folder=sdest)
+        return rc, out, buf.getvalue()
+    st_files()
+    rc, sout, msg = st_run("out_legacy")
+    staged_cap = json.load(open(os.path.join(sout, "capture.json"))) if rc == 0 else {}
+    check(rc == 0 and sorted(os.listdir(os.path.join(sout, "sources"))) == ["S1.json", "S2.json"]
+          and staged_cap["staged_from"]["proof"].startswith("the filed account equal")
+          and staged_cap["staged_from"]["pages_loaded"] == 0 and staged_cap["would_extract"]["programs"] == 1
+          and staged_cap["fingerprints"]["S1"]["sha256"] == C.text_sha256(s1["text"]),
+          "a capture filed before fingerprints stages when its account and each program's address and coverage "
+          "match, and gains fingerprints: %s" % msg)
+    for name, kw, want in (
+            ("out_run", {"run": "778"}, "not run 778"),
+            ("out_year", {"art": {"catalog_year": "2025-2026"}}, "catalog_year differs"),
+            ("out_pages", {"art": {"pages_read": 0}}, "pages_read differs"),
+            ("out_acct", {"art": {"shared_pages": {"x": ["S1"]}}}, "account differs"),
+            ("out_gone", {"src": os.path.join(td, "no_such_artifact")}, "missing, expired")):
+        st_files(art_extra=kw.get("art"))
+        rc, out, msg = st_run(name, kw.get("run", "777"), kw.get("src"))
+        check(rc == 2 and want in msg and not os.path.exists(out),
+              "staging refuses (%s) and writes nothing: %s" % (want, msg.strip()))
+    # A coverage the filed account does not name is refused.
+    json.dump(dict(s1, coverage=0.9), open(os.path.join(sart, "sources", "S1.json"), "w"))
+    st_files()
+    rc, out, msg = st_run("out_cov")
+    check(rc == 2 and "address and coverage" in msg, "a program off its filed coverage is refused: %s" % msg.strip())
+    json.dump(s1, open(os.path.join(sart, "sources", "S1.json"), "w"))
+    # With fingerprints on file: a hash mismatch refuses, a match stages.
+    good_fp = {"S1": {"sha256": C.text_sha256(s1["text"]), "url": s1["source"]["url"]}}
+    st_files({"fingerprints": {"S1": dict(good_fp["S1"], sha256=C.text_sha256("WELD 1 Welding I 4"))}})
+    rc, out, msg = st_run("out_hash")
+    check(rc == 2 and "does not match its fingerprint" in msg and not os.path.exists(out),
+          "a program whose text hash differs from the capture's fingerprint is refused: %s" % msg.strip())
+    st_files({"fingerprints": good_fp})
+    rc, sout, msg = st_run("out_fp")
+    check(rc == 0 and json.load(open(os.path.join(sout, "capture.json")))["staged_from"]["proof"] == "text sha256 of 1 programs",
+          "matching fingerprints stage: %s" % msg)
+    # A capture-only run files capture_preview.json beside the filed capture; its artifact stages by its run
+    # (S648: Glendale's free read names the priced list, then extracts from that read's pages).
+    st_files({"fingerprints": good_fp})
+    json.dump(dict(account, run="779", fingerprints=good_fp), open(os.path.join(sdest, "capture_preview.json"), "w"))
+    rc, sout, msg = st_run("out_preview", "779")
+    check(rc == 0 and json.load(open(os.path.join(sout, "capture.json")))["staged_from"]["run"] == "779",
+          "a capture-only run's preview stages by its own run: %s" % msg)
+    rc, out, msg = st_run("out_preview_other", "780")
+    check(rc == 2 and "not run 780" in msg and not os.path.exists(out),
+          "a run neither the capture nor the preview names is refused: %s" % msg.strip())
+    os.remove(os.path.join(sdest, "capture_preview.json"))
+    # The staged pages extract with no fetch: every page load and network call raises.
+    import urllib.request as _ur
+    saved = (P.load, _ur.urlopen, XT.call, XT.score)
+    st_called = []
+
+    def no_fetch(*a, **k):
+        raise AssertionError("a page or site was contacted")
+    P.load, _ur.urlopen = no_fetch, no_fetch
+    XT.call = lambda src, key, *a, **k: (st_called.append(src["control_number"])
+                                         or {"record": {"program": {}, "blocks": []}, "model": "m", "usage": None})
+    XT.score = lambda rec, *a, **k: dict(G2, coverage={"pass": True, "share": 1.0})
+    old_key = os.environ.get("SUPABASE_SERVICE_KEY")
+    os.environ["SUPABASE_SERVICE_KEY"] = "test-only"
+    try:
+        st_rc = C.extract(sout, 0, 1, "900", workers=1, keep_from=sdest, ceiling_usd=40.0)
+    finally:
+        P.load, _ur.urlopen, XT.call, XT.score = saved
+        if old_key is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = old_key
+    check(st_rc == 0 and st_called == ["S1"] and os.listdir(os.path.join(sout, "records")) == ["S1.json"],
+          "a staged capture extracts what the rules send, with no page loaded: %r" % st_called)
+check(C.text_sha256("a") == C.text_sha256("a") != C.text_sha256("b") and len(C.text_sha256(None)) == 64,
+      "a text's fingerprint is its sha256")
+import yaml as _yaml  # noqa: E402
+_rwf = _yaml.safe_load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                         ".github", "workflows", "program-requirements-college.yml")))
+_rsteps = {(x.get("name") or x.get("uses")): x for x in _rwf["jobs"]["read"]["steps"]}
+_rorder = [x.get("name") or x.get("uses") for x in _rwf["jobs"]["read"]["steps"]]
+_dl = _rsteps["Download the earlier run's pages"]
+check(_rwf.get("on", _rwf.get(True))["workflow_dispatch"]["inputs"]["sources_from"]["default"] == ""
+      and _dl["with"]["run-id"] == "${{ github.event.inputs.sources_from }}"
+      and _dl["with"]["name"] == "program-requirements-${{ github.event.inputs.sources_from }}"
+      and _rwf["jobs"]["read"]["permissions"].get("actions") == "read"
+      and all(_rsteps[n]["if"] == "env.SOURCES_FROM == ''" for n in
+              ("Capture", "Install Playwright + Chromium, pypdf, pdfminer",
+               "Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)"))
+      and "steps.price.outputs.go == 'true'" in _rsteps["Extract and score"]["if"]
+      and "--limit-usd 40" in _rsteps["Price the extraction ($40 a college a run, Sam's standing go)"]["run"]
+      and _rorder.index("Download the earlier run's pages") < _rorder.index("Stage them, refused unless they are the filed capture's own")
+      < _rorder.index("Price the extraction ($40 a college a run, Sam's standing go)") < _rorder.index("Extract and score")
+      and _rorder[-1] == "Fail a run whose extraction calls failed",
+      "a staged read downloads the earlier run's artifact, loads no page, prices at $40 before extracting, and its "
+      "job ends with the failed-calls check: %r" % _rorder)
 
 if failures:
     print("FAIL: %d" % len(failures))

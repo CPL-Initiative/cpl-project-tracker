@@ -450,8 +450,14 @@ check(_names and all("${{ github.run_id }}-${{ github.run_attempt }}-" in n for 
       and _filed_up["with"]["name"] == "wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}",
       "each of the wave's uploads names its attempt: %r" % _names)
 # Second read, 2: the wave's extraction stops at its limit; the college workflow's does not change.
-check('--ceiling-usd "$LIMIT_USD"' in ext["run"] and "ceiling" not in college_wf.lower(),
-      "the wave passes its limit as the extraction's ceiling; the college workflow sets none")
+# Since S647 the college workflow sets one only on a staged read (sources_from, the conductor's $40 hard stop):
+# a read that captures sets none.
+_cwf = yaml.safe_load(college_wf)
+_college_ext = [x for x in _cwf["jobs"]["read"]["steps"] if x.get("name") == "Extract and score"]
+check('--ceiling-usd "$LIMIT_USD"' in ext["run"]
+      and _college_ext and _college_ext[0]["env"]["CEILING"] == "${{ github.event.inputs.sources_from != '' && '40' || '' }}"
+      and college_wf.lower().count("ceiling") == 3,
+      "the wave passes its limit as the extraction's ceiling; the college workflow sets one only on a staged read")
 
 import subprocess  # noqa: E402
 
@@ -687,6 +693,20 @@ try:
           "a college's attempts are its own (a_b is not a), and a college with none has no pick")
 finally:
     shutil.rmtree(_t, ignore_errors=True)
+
+# The two run-cost sums agree (S648 review of #3202): the wave's run_cost reads the failed calls' cost
+# (extract_account_<shard>.json), and the college's run_cost_of reads the halt's (extract_halt_<shard>.json).
+_rc = tempfile.mkdtemp()
+try:
+    os.makedirs(os.path.join(_rc, "records"))
+    C._write(os.path.join(_rc, "records", "A1.json"), {"control_number": "A1", "extracted_run": "900", "cost_usd": 0.1})
+    C._write(os.path.join(_rc, "extract_account_0.json"), {"calls": 3, "failed": [{"control_number": "B2", "cost_usd": 0.2}]})
+    C._write(os.path.join(_rc, "extract_halt_0.json"), {"cause": "upstream_timeout", "status": 503, "cost_usd": 0.3})
+    check(W.run_cost(_rc, "900")["cost_usd"] == 0.6 and C.run_cost_of(_rc, "900") == 0.6,
+          "the wave's run_cost and the college's run_cost_of both count the record, the failed call and the halt: "
+          "%r, %r" % (W.run_cost(_rc, "900")["cost_usd"], C.run_cost_of(_rc, "900")))
+finally:
+    shutil.rmtree(_rc, ignore_errors=True)
 
 if failures:
     print("FAIL: %d" % len(failures))

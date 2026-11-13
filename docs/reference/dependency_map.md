@@ -481,6 +481,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `exhibits_cpl_ai.js` | tabs: `exhibits` | — |
 | `exports/20260826_T5_55050_Article9_Conformity_TrackedChanges_v5.docx` | none found | scripts: `kb/_build_55050_redline_docx.py`, `kb/_verify_55050_redline.py` |
 | `exports/unified_courses.xlsx` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
+| `extract_account_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `extract_halt_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
 | `fact-sheet/_build_statewide_catalog.py` | workflows: `daily-dashboard.yml` | — |
 | `fact-sheet/_build_statewide_recs.py` | workflows: `daily-dashboard.yml` | — |
@@ -598,7 +599,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
 | `kb/_program_requirements_heading_agreement.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
-| `kb/_program_requirements_wave.py` | workflows: `program-requirements-wave.yml` | — |
+| `kb/_program_requirements_wave.py` | workflows: `program-requirements-college.yml`, `program-requirements-wave.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
 | `kb/_program_source_census.py` | workflows: `program-source-census.yml` | — |
 | `kb/_publish_college_briefing.py` | workflows: `college-briefing-publish.yml` | — |
@@ -781,7 +782,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/los_angeles_city/kept_passing.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_program_requirements_college.py` | — |
+| `kb/program_requirements_college/glendale_community/capture_reread.json` | scripts: `kb/_program_requirements_college.py` | — |
+| `kb/program_requirements_college/glendale_community/tab_owners.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py`, `kb/_program_requirements_dated_reads.py` | committed by: `program-requirements-dated-reads.yml` |
 | `kb/program_requirements_pilot/map_cr_by_course.sql` | none found | committed by: `program-requirements-dated-reads.yml` |
@@ -1475,5 +1477,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 935 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 937 file
 datasets · 195 external services · 584 consumers · 72 workflows · 41 tabs.
