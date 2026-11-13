@@ -30,7 +30,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1378be5f1a05379e"
   },
   "listed": 9,
   "text_chars": 16000
@@ -81,7 +82,8 @@
     99
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d13cb1b133c97a58"
   },
   "listed": 24,
   "text_chars": 16000
@@ -136,7 +138,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e3bc1d5cfc75b80e"
   },
   "listed": 29,
   "text_chars": 13570
@@ -175,7 +178,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a6ec788b5878159b"
   },
   "listed": 14,
   "text_chars": 9267
@@ -219,7 +223,8 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0117e19314409387"
   },
   "listed": 23,
   "text_chars": 16000
@@ -254,7 +259,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04c935f0e62cd030"
   },
   "listed": 8,
   "text_chars": 16000
@@ -300,7 +306,8 @@
     154
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e3a88c5be1d7fb1e"
   },
   "listed": 22,
   "text_chars": 4701
@@ -367,7 +374,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "46f92b5752c1d3a9"
   },
   "listed": 43,
   "text_chars": 9077
@@ -403,7 +411,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b3736bf928f2559"
   },
   "listed": 13,
   "text_chars": 4672
@@ -428,18 +437,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=110",
-   "title": "Building Inspection Technology Certiﬁcate of Achievement",
-   "h1": "Building Inspection Technology Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 38",
+   "h1": "CERTIFICATE TOTAL 38",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "c8f5df5c7d424ed0"
   },
   "listed": 9,
-  "text_chars": 4672
+  "text_chars": 3333
  },
  {
   "control_number": "04361",
@@ -472,20 +482,22 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=224",
-   "title": "Vocational Nursing AS Degree",
-   "h1": "Vocational Nursing AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=223",
+   "title": "Registered Nursing AS Degree",
+   "h1": "Registered Nursing AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    223,
     224,
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7f4608831a8958b3"
   },
   "listed": 22,
-  "text_chars": 10232
+  "text_chars": 11458
  },
  {
   "control_number": "04362",
@@ -516,7 +528,8 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fb6f1ff5981956fb"
   },
   "listed": 9,
   "text_chars": 10232
@@ -545,7 +558,8 @@
     207
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fd44948f1301b775"
   },
   "listed": 8,
   "text_chars": 3213
@@ -581,7 +595,8 @@
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6483fa8177d81ef8"
   },
   "listed": 10,
   "text_chars": 14502
@@ -619,7 +634,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "81e446b378e32647"
   },
   "listed": 15,
   "text_chars": 10276
@@ -666,7 +682,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c01dd9c4cff88368"
   },
   "listed": 21,
   "text_chars": 12077
@@ -718,21 +735,23 @@
    "FIRE95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=192",
-   "title": "Fire Technology AS Degree (transfer preparation)",
-   "h1": "Fire Technology AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=191",
+   "title": "Fire Technology AS Degree",
+   "h1": "Fire Technology AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    191,
     192,
     193,
     194
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7bc923ce798f6cef"
   },
   "listed": 37,
-  "text_chars": 14373
+  "text_chars": 16000
  },
  {
   "control_number": "04384",
@@ -765,7 +784,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5748d86ffcc91f14"
   },
   "listed": 10,
   "text_chars": 14207
@@ -806,7 +826,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6a26b449232c0eba"
   },
   "listed": 16,
   "text_chars": 8044
@@ -860,7 +881,8 @@
     101
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d70457674df67366"
   },
   "listed": 28,
   "text_chars": 12662
@@ -914,7 +936,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "be1169ff88f248e6"
   },
   "listed": 29,
   "text_chars": 16000
@@ -950,19 +973,21 @@
    "NR95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
-   "title": "Natural Resources AS Degree (transfer preparation)",
-   "h1": "Natural Resources AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=218",
+   "title": "Natural Resources AS Degree",
+   "h1": "Natural Resources AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    218,
     219
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "496be46605ce95ea"
   },
   "listed": 21,
-  "text_chars": 4333
+  "text_chars": 5718
  },
  {
   "control_number": "07911",
@@ -1006,7 +1031,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "31bc2433bdcb6615"
   },
   "listed": 24,
   "text_chars": 9607
@@ -1050,7 +1076,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "30f4f9e400fa9ffa"
   },
   "listed": 25,
   "text_chars": 16000
@@ -1093,7 +1120,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3cc8938cd143c934"
   },
   "listed": 19,
   "text_chars": 8561
@@ -1115,21 +1143,20 @@
    "CDE204"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=179",
-   "title": "Early Childhood Education AS-T Degree",
-   "h1": "Early Childhood Education AS-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=181",
+   "title": "CERTIFICATE TOTAL 52",
+   "h1": "CERTIFICATE TOTAL 52",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    179,
-    180,
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "693ca8c9d28d64eb"
   },
   "listed": 8,
-  "text_chars": 14207
+  "text_chars": 2557
  },
  {
   "control_number": "07926",
@@ -1173,7 +1200,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "13caee0d18ad8a2c"
   },
   "listed": 27,
   "text_chars": 8315
@@ -1206,20 +1234,22 @@
    "PSY7"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=103",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=237",
    "title": "Alcohol and Drug Studies AS Degree",
    "h1": "Alcohol and Drug Studies AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    103,
-    104
+    237,
+    238,
+    239
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2d7bb7c7ddd18b08"
   },
   "listed": 19,
-  "text_chars": 10275
+  "text_chars": 13580
  },
  {
   "control_number": "07929",
@@ -1246,7 +1276,8 @@
     80
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4d6a8d37523b3671"
   },
   "listed": 7,
   "text_chars": 4030
@@ -1333,7 +1364,8 @@
     99
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "31cd7c57f7b12f60"
   },
   "listed": 12,
   "text_chars": 14859
@@ -1368,7 +1400,8 @@
     109
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "074a16f5051554a8"
   },
   "listed": 11,
   "text_chars": 4593
@@ -1401,7 +1434,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6a26b449232c0eba"
   },
   "listed": 9,
   "text_chars": 8044
@@ -1446,7 +1480,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b5e8b891c89c8b88"
   },
   "listed": 19,
   "text_chars": 12601
@@ -1492,7 +1527,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "13caee0d18ad8a2c"
   },
   "listed": 21,
   "text_chars": 8315
@@ -1535,7 +1571,8 @@
     176
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "916e251a47b16918"
   },
   "listed": 22,
   "text_chars": 16000
@@ -1594,7 +1631,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ce8ac21956af1e8a"
   },
   "listed": 34,
   "text_chars": 7189
@@ -1625,7 +1663,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ed1ef52e48da1961"
   },
   "listed": 6,
   "text_chars": 9170
@@ -1747,7 +1786,8 @@
     159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "63c151e7ddb07e72"
   },
   "listed": 98,
   "text_chars": 12780
@@ -1835,7 +1875,8 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4482910b8248cfa4"
   },
   "listed": 64,
   "text_chars": 16000
@@ -1899,7 +1940,8 @@
     161
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d19affe8b948b403"
   },
   "listed": 44,
   "text_chars": 16000
@@ -1996,7 +2038,8 @@
     162
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dd95508bade0a900"
   },
   "listed": 71,
   "text_chars": 16000
@@ -2053,7 +2096,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "9e613ceeda2d314a"
   },
   "listed": 31,
   "text_chars": 14339
@@ -2112,7 +2156,8 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8c0f8aba07dec037"
   },
   "listed": 32,
   "text_chars": 16000
@@ -2170,7 +2215,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4cd31745f3928ae2"
   },
   "listed": 31,
   "text_chars": 16000
@@ -2191,20 +2237,23 @@
    "AUTO95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=119",
-   "title": "Advanced Transportation Technologies",
-   "h1": "Advanced Transportation Technologies",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=124",
+   "title": "CERTIFICATE TOTAL 17",
+   "h1": "CERTIFICATE TOTAL 17",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    119,
-    120
+    124,
+    125,
+    126,
+    127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e4ee077954d0d647"
   },
   "listed": 6,
-  "text_chars": 9170
+  "text_chars": 16000
  },
  {
   "control_number": "18688",
@@ -2234,7 +2283,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "85e47310d58ceaed"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2264,7 +2314,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ed1ef52e48da1961"
   },
   "listed": 5,
   "text_chars": 9170
@@ -2297,7 +2348,8 @@
     128
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "36f8624900374df9"
   },
   "listed": 6,
   "text_chars": 16000
@@ -2328,7 +2380,8 @@
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ba8be943886c89d4"
   },
   "listed": 6,
   "text_chars": 9530
@@ -2363,7 +2416,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2c32439701bc8915"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2386,8 +2440,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=96",
-   "title": "Arborist Technician Certiﬁcate of Achievement",
-   "h1": "Arborist Technician Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 29",
+   "h1": "CERTIFICATE TOTAL 29",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2397,7 +2451,8 @@
     99
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d4727070856d54e9"
   },
   "listed": 7,
   "text_chars": 16000
@@ -2432,7 +2487,8 @@
     99
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d13cb1b133c97a58"
   },
   "listed": 8,
   "text_chars": 16000
@@ -2454,22 +2510,22 @@
    "AGPS32"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=96",
-   "title": "Arborist Technician Certiﬁcate of Achievement",
-   "h1": "Arborist Technician Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=98",
+   "title": "CERTIFICATE TOTAL 18",
+   "h1": "CERTIFICATE TOTAL 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
     98,
-    99
+    99,
+    100
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "e251fd46c26d9962"
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 10543
  },
  {
   "control_number": "19311",
@@ -2488,22 +2544,20 @@
    "AGPS32"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=96",
-   "title": "Arborist Technician Certiﬁcate of Achievement",
-   "h1": "Arborist Technician Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=100",
+   "title": "CERTIFICATE TOTAL 38",
+   "h1": "CERTIFICATE TOTAL 38",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
-    97,
-    98,
-    99
+    100
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "6709f971487390b7"
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 2425
  },
  {
   "control_number": "21127",
@@ -2543,19 +2597,20 @@
    "NR41B"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=97",
-   "title": "Environmental Horticulture Certiﬁcate of Achievement",
-   "h1": "Environmental Horticulture Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=96",
+   "title": "Arborist Technician Certiﬁcate of Achievement",
+   "h1": "Arborist Technician Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    96,
     97,
     98,
-    99,
-    100
+    99
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d13cb1b133c97a58"
   },
   "listed": 28,
   "text_chars": 16000
@@ -2599,21 +2654,21 @@
    "NR59"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=99",
-   "title": "Turfgrass Management AS Degree",
-   "h1": "Turfgrass Management AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=100",
+   "title": "Turfgrass Management Technician Certiﬁcate of Achievement",
+   "h1": "Turfgrass Management Technician Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99,
     100,
     101
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "4d3123509cf2c79e"
   },
   "listed": 29,
-  "text_chars": 12662
+  "text_chars": 8505
  },
  {
   "control_number": "21129",
@@ -2646,7 +2701,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b3736bf928f2559"
   },
   "listed": 12,
   "text_chars": 4672
@@ -2692,7 +2748,8 @@
     176
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "916e251a47b16918"
   },
   "listed": 19,
   "text_chars": 16000
@@ -2726,7 +2783,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "46f92b5752c1d3a9"
   },
   "listed": 9,
   "text_chars": 9077
@@ -2761,7 +2819,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b3736bf928f2559"
   },
   "listed": 11,
   "text_chars": 4672
@@ -2795,7 +2854,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ab70ce8515f8dfbb"
   },
   "listed": 9,
   "text_chars": 9405
@@ -2828,7 +2888,8 @@
     225
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "babecec380c1bdaf"
   },
   "listed": 9,
   "text_chars": 5307
@@ -2868,8 +2929,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=168",
-   "title": "Culinary Fundamentals Certiﬁcate of Achievement",
-   "h1": "Culinary Fundamentals Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 20",
+   "h1": "CERTIFICATE TOTAL 20",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2877,10 +2938,11 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "3329c7e65e02788f"
   },
   "listed": 24,
-  "text_chars": 8315
+  "text_chars": 6363
  },
  {
   "control_number": "21137",
@@ -2921,7 +2983,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d42b09a0e9433da2"
   },
   "listed": 20,
   "text_chars": 4562
@@ -2961,7 +3024,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "80e55f27b452bc84"
   },
   "listed": 15,
   "text_chars": 10275
@@ -3007,7 +3071,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0639d9e5c91e3811"
   },
   "listed": 21,
   "text_chars": 7604
@@ -3062,7 +3127,8 @@
     194
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1a8d8a693456a3ee"
   },
   "listed": 29,
   "text_chars": 14373
@@ -3092,7 +3158,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 4,
   "text_chars": 12506
@@ -3125,7 +3192,8 @@
     191
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1b27cff63b87de63"
   },
   "listed": 9,
   "text_chars": 5184
@@ -3153,7 +3221,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 2,
   "text_chars": 12506
@@ -3173,19 +3242,21 @@
    "ESLN390B"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=190",
-   "title": "Academic English Certiﬁcate of Completion",
-   "h1": "Academic English Certiﬁcate of Completion",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=189",
+   "title": "Advanced Academic English as a Second Language Noncredit Certiﬁcate of Competency",
+   "h1": "Advanced Academic English as a Second Language Noncredit Certiﬁcate of Competency",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    189,
     190
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "bdcce2ccb812a54e"
   },
   "listed": 5,
-  "text_chars": 3993
+  "text_chars": 8436
  },
  {
   "control_number": "24347",
@@ -3212,7 +3283,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 4,
   "text_chars": 12506
@@ -3240,7 +3312,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 2,
   "text_chars": 12506
@@ -3272,7 +3345,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 6,
   "text_chars": 12506
@@ -3302,7 +3376,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "97fc62dab48dce33"
   },
   "listed": 6,
   "text_chars": 3960
@@ -3324,18 +3399,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=117",
-   "title": "General Drafting Certiﬁcate of Achievement",
-   "h1": "General Drafting Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 19",
+   "h1": "CERTIFICATE TOTAL 19",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "bb14058f0db39422"
   },
   "listed": 6,
-  "text_chars": 5314
+  "text_chars": 3602
  },
  {
   "control_number": "30546",
@@ -3367,7 +3443,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "21407d2c60f73ffa"
   },
   "listed": 13,
   "text_chars": 9657
@@ -3406,7 +3483,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "81e446b378e32647"
   },
   "listed": 14,
   "text_chars": 10276
@@ -3438,7 +3516,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3b73cad84d48eed5"
   },
   "listed": 9,
   "text_chars": 4971
@@ -3476,7 +3555,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "06cc6d34d423858f"
   },
   "listed": 12,
   "text_chars": 11263
@@ -3518,7 +3598,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a269c13a07b1f0c3"
   },
   "listed": 18,
   "text_chars": 4475
@@ -3553,7 +3634,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a269c13a07b1f0c3"
   },
   "listed": 11,
   "text_chars": 4475
@@ -3594,7 +3676,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6caafc3d3a517155"
   },
   "listed": 17,
   "text_chars": 4463
@@ -3614,19 +3697,21 @@
    "PH3A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=207",
-   "title": "Mathematics AS-T Degree",
-   "h1": "Mathematics AS-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=206",
+   "title": "Associate Degrees for Transfer (AD-T)",
+   "h1": "Associate Degrees for Transfer (AD-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    206,
     207
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d72326548eaddbc8"
   },
   "listed": 6,
-  "text_chars": 3237
+  "text_chars": 7728
  },
  {
   "control_number": "31508",
@@ -3681,7 +3766,8 @@
     91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6597e07e8632a0de"
   },
   "listed": 32,
   "text_chars": 12506
@@ -3722,7 +3808,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bb99e5d5d128b334"
   },
   "listed": 14,
   "text_chars": 16000
@@ -3748,7 +3835,8 @@
     165
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e4d40d51a23fe015"
   },
   "listed": 2,
   "text_chars": 3920
@@ -3795,7 +3883,8 @@
     146
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0117e19314409387"
   },
   "listed": 10,
   "text_chars": 16000
@@ -3849,7 +3938,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d7f6fd697a75bbfb"
   },
   "listed": 38,
   "text_chars": 16000
@@ -3887,7 +3977,8 @@
     150
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0fe6af628bcb4557"
   },
   "listed": 12,
   "text_chars": 16000
@@ -3906,18 +3997,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=130",
-   "title": "Basic Fire Fighter Academy",
-   "h1": "Basic Fire Fighter Academy",
+   "title": "CERTIFICATE TOTAL 19",
+   "h1": "CERTIFICATE TOTAL 19",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "eb851feb1eddae38"
   },
   "listed": 3,
-  "text_chars": 4817
+  "text_chars": 4445
  },
  {
   "control_number": "31946",
@@ -3959,7 +4051,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c01dd9c4cff88368"
   },
   "listed": 32,
   "text_chars": 12077
@@ -3993,7 +4086,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "81e446b378e32647"
   },
   "listed": 11,
   "text_chars": 10276
@@ -4032,7 +4126,8 @@
     239
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fa72a7891eac5fa0"
   },
   "listed": 17,
   "text_chars": 5178
@@ -4076,7 +4171,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ea5ad8cfbca52698"
   },
   "listed": 18,
   "text_chars": 16000
@@ -4117,19 +4213,21 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=188",
-   "title": "that students will pursue. Students earning an AA-T degree in English are",
-   "h1": "that students will pursue. Students earning an AA-T degree in English are",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=187",
+   "title": "The English program also offers an AA-T degree in English, as well as",
+   "h1": "The English program also offers an AA-T degree in English, as well as",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    187,
     188
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "824323e36381e635"
   },
   "listed": 30,
-  "text_chars": 3911
+  "text_chars": 6020
  },
  {
   "control_number": "32392",
@@ -4163,7 +4261,8 @@
     215
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "86ffdb86d03e6d8e"
   },
   "listed": 15,
   "text_chars": 7142
@@ -4197,19 +4296,21 @@
    "PHIL12"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=118",
-   "title": "Art History AA-T Degree",
-   "h1": "Art History AA-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=117",
+   "title": "for Transfer, also called the Art History AA-T Degree, prepares students to",
+   "h1": "for Transfer, also called the Art History AA-T Degree, prepares students to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    117,
     118
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8140a70d4f5f96f2"
   },
   "listed": 21,
-  "text_chars": 4916
+  "text_chars": 6122
  },
  {
   "control_number": "32846",
@@ -4232,19 +4333,21 @@
    "TA1"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=183",
-   "title": "Emergency Medical Services",
-   "h1": "Emergency Medical Services",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=182",
+   "title": "The Elementary Teacher Education AA-T degree prepares students to",
+   "h1": "The Elementary Teacher Education AA-T degree prepares students to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    182,
     183
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "5692195a8d14b093"
   },
   "listed": 18,
-  "text_chars": 3956
+  "text_chars": 6220
  },
  {
   "control_number": "32878",
@@ -4280,7 +4383,8 @@
     186
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a25ef98d2d90772d"
   },
   "listed": 13,
   "text_chars": 15568
@@ -4326,7 +4430,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28689f75a5cfc7a9"
   },
   "listed": 25,
   "text_chars": 16000
@@ -4363,7 +4468,8 @@
     244
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5ebae5e1f862f898"
   },
   "listed": 10,
   "text_chars": 16000
@@ -4393,7 +4499,8 @@
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "925d276961140eeb"
   },
   "listed": 6,
   "text_chars": 4938
@@ -4412,19 +4519,21 @@
    "MATHC2210"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=182",
-   "title": "This Economics AA-T degree requires students to meet both of the",
-   "h1": "This Economics AA-T degree requires students to meet both of the",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=181",
+   "title": "Associate Degrees for Transfer (AD-T)",
+   "h1": "Associate Degrees for Transfer (AD-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    181,
     182
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b2f7290b14418c0d"
   },
   "listed": 8,
-  "text_chars": 4651
+  "text_chars": 5084
  },
  {
   "control_number": "33321",
@@ -4452,8 +4561,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=138",
-   "title": "Power Generation and Distribution Certiﬁcate of Achievement",
-   "h1": "Power Generation and Distribution Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 19",
+   "h1": "CERTIFICATE TOTAL 19",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4461,10 +4570,11 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "067675962ca6066d"
   },
   "listed": 15,
-  "text_chars": 9596
+  "text_chars": 9320
  },
  {
   "control_number": "33331",
@@ -4502,7 +4612,8 @@
     217
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1119e4d07007314a"
   },
   "listed": 16,
   "text_chars": 9046
@@ -4542,7 +4653,8 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "172c5f6cca8dfbbb"
   },
   "listed": 19,
   "text_chars": 16000
@@ -4576,8 +4688,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=216",
-   "title": "Field Ranger Certiﬁcate of Achievement",
-   "h1": "Field Ranger Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 21",
+   "h1": "CERTIFICATE TOTAL 21",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4585,10 +4697,11 @@
     217
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "d76fc75e30b8e147"
   },
   "listed": 18,
-  "text_chars": 9046
+  "text_chars": 7768
  },
  {
   "control_number": "35124",
@@ -4608,20 +4721,23 @@
    "PH3B"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=235",
-   "title": "8. Prepared for transfer to 4-year university chemistry programs and",
-   "h1": "8. Prepared for transfer to 4-year university chemistry programs and",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=233",
+   "title": "• Biology AS-T (p. 233)",
+   "h1": "• Biology AS-T (p. 233)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
+    234,
     235,
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "85db7fd0e0f9fc31"
   },
   "listed": 8,
-  "text_chars": 9543
+  "text_chars": 14619
  },
  {
   "control_number": "35125",
@@ -4645,21 +4761,23 @@
    "PH3B"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=234",
-   "title": "Biology AS-T Degree",
-   "h1": "Biology AS-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=233",
+   "title": "Associate Degrees for Transfer (AD-T)",
+   "h1": "Associate Degrees for Transfer (AD-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    233,
     234,
     235,
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "227c465680ad83d3"
   },
   "listed": 12,
-  "text_chars": 14502
+  "text_chars": 14657
  },
  {
   "control_number": "35131",
@@ -4698,7 +4816,8 @@
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ebe938572eb0c09f"
   },
   "listed": 6,
   "text_chars": 4391
@@ -4733,21 +4852,23 @@
    "CDE234"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=179",
-   "title": "Early Childhood Education AS-T Degree",
-   "h1": "Early Childhood Education AS-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=178",
+   "title": "Early Childhood Education AS Degree",
+   "h1": "Early Childhood Education AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    178,
     179,
     180,
     181
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "59d6b2d7622e2cdc"
   },
   "listed": 29,
-  "text_chars": 14207
+  "text_chars": 14460
  },
  {
   "control_number": "35372",
@@ -4775,19 +4896,21 @@
    "PH6A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=187",
-   "title": "English",
-   "h1": "English",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=186",
+   "title": "Engineering AS Degree",
+   "h1": "Engineering AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    186,
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "830a5aa2c43dc6f7"
   },
   "listed": 17,
-  "text_chars": 3814
+  "text_chars": 5466
  },
  {
   "control_number": "35385",
@@ -4822,7 +4945,8 @@
     229
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "26ebe6c99563cc83"
   },
   "listed": 14,
   "text_chars": 4616
@@ -4846,21 +4970,23 @@
    "FIRE7"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=192",
-   "title": "Fire Technology AS Degree (transfer preparation)",
-   "h1": "Fire Technology AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=191",
+   "title": "Fire Technology AS Degree",
+   "h1": "Fire Technology AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    191,
     192,
     193,
     194
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7bc923ce798f6cef"
   },
   "listed": 9,
-  "text_chars": 14373
+  "text_chars": 16000
  },
  {
   "control_number": "35428",
@@ -4897,7 +5023,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "2fea5f3e38eb7938"
   },
   "listed": 16,
   "text_chars": 10625
@@ -4934,7 +5061,8 @@
     244
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "caea2e75ed5dd94b"
   },
   "listed": 13,
   "text_chars": 15617
@@ -4963,7 +5091,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a357929b10c9eef2"
   },
   "listed": 6,
   "text_chars": 2053
@@ -4995,7 +5124,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6726e88b71833797"
   },
   "listed": 6,
   "text_chars": 16000
@@ -5031,7 +5161,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7a670453b23169f9"
   },
   "listed": 11,
   "text_chars": 12579
@@ -5070,19 +5201,20 @@
    "EMP19"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=147",
-   "title": "Hospitality Management Certiﬁcate of Achievement",
-   "h1": "Hospitality Management Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=145",
+   "title": "General Business Certiﬁcate of Achievement",
+   "h1": "General Business Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    145,
+    146,
     147,
-    148,
-    149,
-    150
+    148
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0135369222529207"
   },
   "listed": 24,
   "text_chars": 16000
@@ -5139,7 +5271,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04c935f0e62cd030"
   },
   "listed": 31,
   "text_chars": 16000
@@ -5158,20 +5291,20 @@
    "ACR80"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=101",
-   "title": "Air Conditioning & Refrigeration AS Degree",
-   "h1": "Air Conditioning & Refrigeration AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=138",
+   "title": "CERTIFICATE TOTAL 24-25",
+   "h1": "CERTIFICATE TOTAL 24-25",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    101,
-    102
+    138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "da379b8098fb1d91"
   },
   "listed": 4,
-  "text_chars": 9077
+  "text_chars": 2192
  },
  {
   "control_number": "35624",
@@ -5189,19 +5322,20 @@
    "ACR84"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=134",
+   "title": "Building Commissioning Technician Certiﬁcate of Achievement",
+   "h1": "Building Commissioning Technician Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
     134,
-    135
+    135,
+    136,
+    137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f961e0cd04ac1fd1"
   },
   "listed": 6,
   "text_chars": 16000
@@ -5223,8 +5357,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=137",
-   "title": "Green HVAC Residential Certiﬁcate of Achievement",
-   "h1": "Green HVAC Residential Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 30",
+   "h1": "CERTIFICATE TOTAL 30",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5232,10 +5366,11 @@
     138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "c702c11fe9505610"
   },
   "listed": 6,
-  "text_chars": 10105
+  "text_chars": 8083
  },
  {
   "control_number": "35627",
@@ -5256,22 +5391,21 @@
    "ACR83"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=137",
+   "title": "CERTIFICATE TOTAL 35",
+   "h1": "CERTIFICATE TOTAL 35",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
-    134,
-    135
+    137,
+    138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "94a4d5add2ef61bd"
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 10018
  },
  {
   "control_number": "35778",
@@ -5294,7 +5428,8 @@
     399
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883b77cbca07318a"
   },
   "listed": 2,
   "text_chars": 5645
@@ -5320,7 +5455,8 @@
     400
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b4df711ef6c31c7a"
   },
   "listed": 2,
   "text_chars": 5207
@@ -5347,7 +5483,8 @@
     191
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1b27cff63b87de63"
   },
   "listed": 3,
   "text_chars": 5184
@@ -5365,18 +5502,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=208",
-   "title": "Pre-Algebra and Beginning Algebra Certiﬁcate of Competency",
-   "h1": "Pre-Algebra and Beginning Algebra Certiﬁcate of Competency",
+   "title": "MATH 374 Algebra Concepts Support - Noncredit 0",
+   "h1": "MATH 374 Algebra Concepts Support - Noncredit 0",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     208
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "b96383664e4eebe9"
   },
   "listed": 2,
-  "text_chars": 5251
+  "text_chars": 2848
  },
  {
   "control_number": "35783",
@@ -5399,7 +5537,8 @@
     207
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9078deafe9699368"
   },
   "listed": 2,
   "text_chars": 4820
@@ -5425,7 +5564,8 @@
     208
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b33db630814300de"
   },
   "listed": 2,
   "text_chars": 5251
@@ -5483,7 +5623,8 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8c0f8aba07dec037"
   },
   "listed": 31,
   "text_chars": 16000
@@ -5541,7 +5682,8 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8c0f8aba07dec037"
   },
   "listed": 33,
   "text_chars": 16000
@@ -5566,19 +5708,20 @@
    "ARCH11"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=135",
+   "title": "CERTIFICATE TOTAL 18",
+   "h1": "CERTIFICATE TOTAL 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
-    134,
-    135
+    135,
+    136,
+    137,
+    138
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "efe7f5d519cdf298"
   },
   "listed": 10,
   "text_chars": 16000
@@ -5617,7 +5760,8 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8b8bd3781d074fee"
   },
   "listed": 12,
   "text_chars": 16000
@@ -5639,19 +5783,20 @@
    "ACR92"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=133",
+   "title": "Building and Energy System Professional (BESP) Fundamentals",
+   "h1": "Building and Energy System Professional (BESP) Fundamentals",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
     133,
     134,
-    135
+    135,
+    136
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "ec572d17050769f7"
   },
   "listed": 7,
   "text_chars": 16000
@@ -5696,19 +5841,21 @@
    "ESL371A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=189",
-   "title": "Advanced Academic English as a Second Language Noncredit Certiﬁcate of Competency",
-   "h1": "Advanced Academic English as a Second Language Noncredit Certiﬁcate of Competency",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=188",
+   "title": "• Advanced Academic English As A Second Language Noncredit",
+   "h1": "• Advanced Academic English As A Second Language Noncredit",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    188,
     189
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1a0496d056747827"
   },
   "listed": 6,
-  "text_chars": 4441
+  "text_chars": 4602
  },
  {
   "control_number": "35907",
@@ -5730,7 +5877,8 @@
     363
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d211c942be4fe2b9"
   },
   "listed": 2,
   "text_chars": 5512
@@ -5767,7 +5915,8 @@
     399
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883b77cbca07318a"
   },
   "listed": 1,
   "text_chars": 5645
@@ -5814,7 +5963,8 @@
     134
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7a5886660a0678f3"
   },
   "listed": 20,
   "text_chars": 16000
@@ -5840,7 +5990,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0f6e88343faee5a4"
   },
   "listed": 2,
   "text_chars": 4630
@@ -5867,7 +6018,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0f6e88343faee5a4"
   },
   "listed": 3,
   "text_chars": 4630
@@ -5895,7 +6047,8 @@
     102
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "0f6e88343faee5a4"
   },
   "listed": 4,
   "text_chars": 4630
@@ -5918,18 +6071,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=155",
-   "title": "• Computer Science AS-T (p. 154)",
-   "h1": "• Computer Science AS-T (p. 154)",
+   "title": "Associate Degrees for Transfer (AD-T)",
+   "h1": "Associate Degrees for Transfer (AD-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "951270ba0267ccd4"
   },
   "listed": 8,
-  "text_chars": 4414
+  "text_chars": 4452
  },
  {
   "control_number": "36042",
@@ -5954,7 +6108,8 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5e3a8a1fce08a304"
   },
   "listed": 4,
   "text_chars": 4297
@@ -5982,7 +6137,8 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2bdc5ebf45ddf30f"
   },
   "listed": 3,
   "text_chars": 8899
@@ -6006,19 +6162,20 @@
    "ESYS5"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=134",
+   "title": "CERTIFICATE TOTAL 25",
+   "h1": "CERTIFICATE TOTAL 25",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
     134,
-    135
+    135,
+    136,
+    137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "9d0090ed98a36553"
   },
   "listed": 9,
   "text_chars": 16000
@@ -6046,7 +6203,8 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5e3a8a1fce08a304"
   },
   "listed": 4,
   "text_chars": 4297
@@ -6101,7 +6259,8 @@
     147
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ad581692a0a8c3f9"
   },
   "listed": 33,
   "text_chars": 16000
@@ -6130,7 +6289,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5748d86ffcc91f14"
   },
   "listed": 4,
   "text_chars": 14207
@@ -6158,7 +6318,8 @@
     129
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8e93707ba3fed711"
   },
   "listed": 4,
   "text_chars": 4711
@@ -6186,7 +6347,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d02a8cf9d0804446"
   },
   "listed": 4,
   "text_chars": 4491
@@ -6215,21 +6377,23 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=198",
-   "title": "Health Science AS Degree",
-   "h1": "Health Science AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=197",
+   "title": "Associate Degrees for Transfer (ADT)",
+   "h1": "Associate Degrees for Transfer (ADT)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    197,
     198,
     199,
     200
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "eb7ecb79ce10f904"
   },
   "listed": 15,
-  "text_chars": 15011
+  "text_chars": 16000
  },
  {
   "control_number": "36122",
@@ -6259,7 +6423,8 @@
     200
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cb6d81f2454f5be3"
   },
   "listed": 8,
   "text_chars": 9645
@@ -6288,8 +6453,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=150",
-   "title": "Small Business Certiﬁcate of Achievement",
-   "h1": "Small Business Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 25",
+   "h1": "CERTIFICATE TOTAL 25",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6297,10 +6462,11 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "7d950f792cbca98b"
   },
   "listed": 14,
-  "text_chars": 9763
+  "text_chars": 7608
  },
  {
   "control_number": "36127",
@@ -6346,7 +6512,8 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f72961f3f3f7160b"
   },
   "listed": 22,
   "text_chars": 16000
@@ -6387,19 +6554,20 @@
    "NR21"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=92",
-   "title": "Agriculture Food Safety Certiﬁcate of Achievement",
-   "h1": "Agriculture Food Safety Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=94",
+   "title": "Agriculture Pest Management Certiﬁcate of Achievement",
+   "h1": "Agriculture Pest Management Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    92,
-    93,
     94,
-    95
+    95,
+    96,
+    97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "2c32439701bc8915"
   },
   "listed": 27,
   "text_chars": 16000
@@ -6462,7 +6630,8 @@
     96
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bab80333fad69867"
   },
   "listed": 39,
   "text_chars": 16000
@@ -6516,7 +6685,8 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f72961f3f3f7160b"
   },
   "listed": 28,
   "text_chars": 16000
@@ -6587,7 +6757,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2c32439701bc8915"
   },
   "listed": 47,
   "text_chars": 16000
@@ -6617,7 +6788,8 @@
     212
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1576f9c8959de45e"
   },
   "listed": 3,
   "text_chars": 16000
@@ -6657,7 +6829,8 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "a609ba981d4c4f63"
   },
   "listed": 13,
   "text_chars": 16000
@@ -6703,7 +6876,8 @@
     95
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "f72961f3f3f7160b"
   },
   "listed": 20,
   "text_chars": 16000
@@ -6771,7 +6945,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "238abf6191387c3f"
   },
   "listed": 17,
   "text_chars": 16000
@@ -6798,7 +6973,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "258e4d9e2a07fc54"
   },
   "listed": 3,
   "text_chars": 4600
@@ -6822,19 +6998,20 @@
    "ESYS6"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=132",
-   "title": "Building & Energy Systems Professionals (BESP) AS Degree",
-   "h1": "Building & Energy Systems Professionals (BESP) AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=134",
+   "title": "CERTIFICATE TOTAL 21",
+   "h1": "CERTIFICATE TOTAL 21",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    132,
-    133,
     134,
-    135
+    135,
+    136,
+    137
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "83514be4a55dd6c8"
   },
   "listed": 9,
   "text_chars": 16000
@@ -6863,7 +7040,8 @@
     181
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5748d86ffcc91f14"
   },
   "listed": 5,
   "text_chars": 14207
@@ -6900,7 +7078,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "f69b0c0409b9ebe4"
   },
   "listed": 11,
   "text_chars": 14407
@@ -6922,20 +7101,21 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=76",
-   "title": "College of the Desert General Education Requirements (COD GE)",
-   "h1": "College of the Desert General Education Requirements (COD GE)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=194",
+   "title": "Associate Degrees for Transfer (ADT)",
+   "h1": "Associate Degrees for Transfer (ADT)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    76,
-    77
+    194,
+    195
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "2444d08f1bcc8fa6"
   },
   "listed": 8,
-  "text_chars": 7817
+  "text_chars": 6314
  },
  {
   "control_number": "36768",
@@ -6967,7 +7147,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2c32439701bc8915"
   },
   "listed": 9,
   "text_chars": 16000
@@ -7004,7 +7185,8 @@
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2c32439701bc8915"
   },
   "listed": 14,
   "text_chars": 16000
@@ -7035,7 +7217,8 @@
     120
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ed1ef52e48da1961"
   },
   "listed": 6,
   "text_chars": 9170
@@ -7079,7 +7262,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2fdd4b11fc9b3ad1"
   },
   "listed": 17,
   "text_chars": 16000
@@ -7107,7 +7291,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d76fd75fb90f5849"
   },
   "listed": 4,
   "text_chars": 3682
@@ -7136,7 +7321,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7e5143d595fd073a"
   },
   "listed": 5,
   "text_chars": 4098
@@ -7163,7 +7349,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d76fd75fb90f5849"
   },
   "listed": 3,
   "text_chars": 3682
@@ -7211,7 +7398,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "10d5a116f99f0888"
   },
   "listed": 29,
   "text_chars": 16000
@@ -7286,7 +7474,8 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8b8bd3781d074fee"
   },
   "listed": 58,
   "text_chars": 16000
@@ -7318,7 +7507,8 @@
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "258e4d9e2a07fc54"
   },
   "listed": 8,
   "text_chars": 4600
@@ -7340,20 +7530,22 @@
    "ESYS95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=138",
-   "title": "Power Generation and Distribution Certiﬁcate of Achievement",
-   "h1": "Power Generation and Distribution Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=137",
+   "title": "CERTIFICATE TOTAL 18",
+   "h1": "CERTIFICATE TOTAL 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    137,
     138,
     139
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "0ab10508c94de7b3"
   },
   "listed": 7,
-  "text_chars": 9596
+  "text_chars": 11007
  },
  {
   "control_number": "37288",
@@ -7361,7 +7553,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.857,
+  "coverage": 0.929,
   "codes_found": [
    "BI5",
    "CH1A",
@@ -7369,6 +7561,7 @@
    "G1",
    "G22",
    "GEOG1",
+   "GEOG1L",
    "MATHC2210",
    "NR1",
    "PH2A",
@@ -7387,7 +7580,8 @@
     236
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "adbc47a183be5690"
   },
   "listed": 14,
   "text_chars": 9577
@@ -7428,7 +7622,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "30f4f9e400fa9ffa"
   },
   "listed": 14,
   "text_chars": 16000
@@ -7452,19 +7647,21 @@
    "CIS88"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=154",
-   "title": "Computer Information Systems AS Degree (transfer preparation)",
-   "h1": "Computer Information Systems AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=153",
+   "title": "Graduates of the Computer Information Systems A.S. Employment Prep",
+   "h1": "Graduates of the Computer Information Systems A.S. Employment Prep",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    153,
     154
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "fdef7594f444576d"
   },
   "listed": 9,
-  "text_chars": 4701
+  "text_chars": 5078
  },
  {
   "control_number": "37421",
@@ -7500,7 +7697,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "790a25ac433e25f8"
   },
   "listed": 12,
   "text_chars": 16000
@@ -7533,7 +7731,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c52c62faefbda730"
   },
   "listed": 9,
   "text_chars": 5145
@@ -7568,7 +7767,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "22c5b113e6fe769e"
   },
   "listed": 9,
   "text_chars": 14783
@@ -7609,7 +7809,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "790a25ac433e25f8"
   },
   "listed": 14,
   "text_chars": 16000
@@ -7632,22 +7833,21 @@
    "MC5"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=148",
-   "title": "Makerspace Basic Skills Certiﬁcate of Completion",
-   "h1": "Makerspace Basic Skills Certiﬁcate of Completion",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=150",
+   "title": "Small Business Certiﬁcate of Achievement",
+   "h1": "Small Business Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    148,
-    149,
     150,
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "36f10baa37377178"
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 9763
  },
  {
   "control_number": "38133",
@@ -7677,7 +7877,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca9c2de08430ea6d"
   },
   "listed": 13,
   "text_chars": 8608
@@ -7713,7 +7914,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca9c2de08430ea6d"
   },
   "listed": 11,
   "text_chars": 8608
@@ -7749,7 +7951,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e297104dbf3cf1f4"
   },
   "listed": 13,
   "text_chars": 4277
@@ -7801,7 +8004,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 34,
   "text_chars": 16000
@@ -7844,7 +8048,8 @@
     165
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e4d40d51a23fe015"
   },
   "listed": 7,
   "text_chars": 3920
@@ -7894,7 +8099,8 @@
     125
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8c0f8aba07dec037"
   },
   "listed": 26,
   "text_chars": 16000
@@ -7927,7 +8133,8 @@
     133
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "02b9bd56d25ad1a5"
   },
   "listed": 9,
   "text_chars": 4949
@@ -7961,8 +8168,8 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=211",
-   "title": "Film Post-Production Certiﬁcate of Achievement",
-   "h1": "Film Post-Production Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 18",
+   "h1": "CERTIFICATE TOTAL 18",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7971,10 +8178,11 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "8c74759b2afd9a98"
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 14696
  },
  {
   "control_number": "38984",
@@ -8013,7 +8221,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "2fdd4b11fc9b3ad1"
   },
   "listed": 3,
   "text_chars": 16000
@@ -8039,7 +8248,8 @@
     218
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eadc8a8064a48fb0"
   },
   "listed": 2,
   "text_chars": 5239
@@ -8066,7 +8276,8 @@
     110
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7b3736bf928f2559"
   },
   "listed": 3,
   "text_chars": 4672
@@ -8092,7 +8303,8 @@
     250
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b5f7665b186e239e"
   },
   "listed": 2,
   "text_chars": 4529
@@ -8118,7 +8330,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bf08fc07dc98f974"
   },
   "listed": 2,
   "text_chars": 5055
@@ -8144,7 +8357,8 @@
     251
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d483fd06b598d18d"
   },
   "listed": 2,
   "text_chars": 4969
@@ -8170,7 +8384,8 @@
     251
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d483fd06b598d18d"
   },
   "listed": 2,
   "text_chars": 4969
@@ -8196,7 +8411,8 @@
     252
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7974e8893dc3d031"
   },
   "listed": 2,
   "text_chars": 4690
@@ -8222,7 +8438,8 @@
     252
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7974e8893dc3d031"
   },
   "listed": 2,
   "text_chars": 4690
@@ -8248,7 +8465,8 @@
     252
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7974e8893dc3d031"
   },
   "listed": 2,
   "text_chars": 4690
@@ -8274,7 +8492,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "bf08fc07dc98f974"
   },
   "listed": 2,
   "text_chars": 5055
@@ -8300,7 +8519,8 @@
     354
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e2d577bddf4e0b92"
   },
   "listed": 2,
   "text_chars": 5179
@@ -8326,7 +8546,8 @@
     251
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d483fd06b598d18d"
   },
   "listed": 2,
   "text_chars": 4969
@@ -8348,19 +8569,20 @@
    "FIRE1B"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=186",
-   "title": "Engineering",
-   "h1": "Engineering",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=232",
+   "title": "CERTIFICATE TOTAL 22",
+   "h1": "CERTIFICATE TOTAL 22",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    186
+    232
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "90219d4388581d7b"
   },
   "listed": 7,
-  "text_chars": 5418
+  "text_chars": 5137
  },
  {
   "control_number": "39166",
@@ -8383,7 +8605,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b6605436fefa3842"
   },
   "listed": 2,
   "text_chars": 4845
@@ -8409,7 +8632,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b6605436fefa3842"
   },
   "listed": 2,
   "text_chars": 4845
@@ -8436,7 +8660,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b6605436fefa3842"
   },
   "listed": 3,
   "text_chars": 4845
@@ -8462,7 +8687,8 @@
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b6605436fefa3842"
   },
   "listed": 2,
   "text_chars": 4845
@@ -8489,7 +8715,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ab70ce8515f8dfbb"
   },
   "listed": 2,
   "text_chars": 9405
@@ -8516,7 +8743,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ab70ce8515f8dfbb"
   },
   "listed": 2,
   "text_chars": 9405
@@ -8542,7 +8770,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6d2f3ec1619034c0"
   },
   "listed": 2,
   "text_chars": 5078
@@ -8572,7 +8801,8 @@
     121
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5aec4235cbdca4cb"
   },
   "listed": 5,
   "text_chars": 9776
@@ -8598,7 +8828,8 @@
     121
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9fafb605685142c2"
   },
   "listed": 2,
   "text_chars": 5257
@@ -8625,7 +8856,8 @@
     121
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9fafb605685142c2"
   },
   "listed": 3,
   "text_chars": 5257
@@ -8688,7 +8920,8 @@
     116
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9d80f0671f164964"
   },
   "listed": 36,
   "text_chars": 16000
@@ -8721,7 +8954,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dd0d13828f735206"
   },
   "listed": 6,
   "text_chars": 16000
@@ -8751,7 +8985,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dd0d13828f735206"
   },
   "listed": 3,
   "text_chars": 16000
@@ -8783,7 +9018,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "dd0d13828f735206"
   },
   "listed": 5,
   "text_chars": 16000
@@ -8814,7 +9050,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5489c385269f36c4"
   },
   "listed": 5,
   "text_chars": 15989
@@ -8846,7 +9083,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5489c385269f36c4"
   },
   "listed": 6,
   "text_chars": 15989
@@ -8879,7 +9117,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5489c385269f36c4"
   },
   "listed": 7,
   "text_chars": 15989
@@ -8909,7 +9148,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c326f037e96af922"
   },
   "listed": 5,
   "text_chars": 10666
@@ -8939,7 +9179,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c326f037e96af922"
   },
   "listed": 5,
   "text_chars": 10666
@@ -8968,7 +9209,8 @@
     117
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c326f037e96af922"
   },
   "listed": 4,
   "text_chars": 10666
@@ -8994,7 +9236,8 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9234717b4cf4891e"
   },
   "listed": 2,
   "text_chars": 4337
@@ -9020,7 +9263,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1d50adb8b3b2218"
   },
   "listed": 2,
   "text_chars": 4191
@@ -9046,7 +9290,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1d50adb8b3b2218"
   },
   "listed": 2,
   "text_chars": 4191
@@ -9072,7 +9317,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7e5143d595fd073a"
   },
   "listed": 2,
   "text_chars": 4098
@@ -9099,7 +9345,8 @@
     347
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1c0d983afff2db3"
   },
   "listed": 4,
   "text_chars": 5296
@@ -9129,7 +9376,8 @@
     200
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "46f578cd6ff71896"
   },
   "listed": 5,
   "text_chars": 15011
@@ -9156,7 +9404,8 @@
     199
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "906ebb48e4c94dfe"
   },
   "listed": 3,
   "text_chars": 4805
@@ -9182,7 +9431,8 @@
     168
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "164578e925d658cc"
   },
   "listed": 3,
   "text_chars": 4122
@@ -9209,7 +9459,8 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3835556913ff8a9e"
   },
   "listed": 3,
   "text_chars": 4921
@@ -9236,7 +9487,8 @@
     136
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "3835556913ff8a9e"
   },
   "listed": 3,
   "text_chars": 4921
@@ -9263,7 +9515,8 @@
     140
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5e3a8a1fce08a304"
   },
   "listed": 3,
   "text_chars": 4297
@@ -9292,7 +9545,8 @@
     218
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eadc8a8064a48fb0"
   },
   "listed": 5,
   "text_chars": 5239
@@ -9322,7 +9576,8 @@
     218
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4dc8479e828e6796"
   },
   "listed": 5,
   "text_chars": 9939
@@ -9351,7 +9606,8 @@
     218
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "eadc8a8064a48fb0"
   },
   "listed": 5,
   "text_chars": 5239
@@ -9377,7 +9633,8 @@
     347
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1c0d983afff2db3"
   },
   "listed": 2,
   "text_chars": 5296
@@ -9405,7 +9662,8 @@
     347
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b1c0d983afff2db3"
   },
   "listed": 4,
   "text_chars": 5296
@@ -9441,7 +9699,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b15de798dd93d80f"
   },
   "listed": 11,
   "text_chars": 8933
@@ -9497,7 +9756,8 @@
     217
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "1cd1592943526497"
   },
   "listed": 33,
   "text_chars": 4698
@@ -9523,7 +9783,8 @@
     171
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5edf000d92ceda30"
   },
   "listed": 2,
   "text_chars": 5451
@@ -9553,7 +9814,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e297104dbf3cf1f4"
   },
   "listed": 6,
   "text_chars": 4277
@@ -9579,7 +9841,8 @@
     210
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "312e50ec6bf578b7"
   },
   "listed": 2,
   "text_chars": 5211
@@ -9605,7 +9868,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4133efe42d31a1d7"
   },
   "listed": 2,
   "text_chars": 4631
@@ -9631,7 +9895,8 @@
     176
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "84188902927abc35"
   },
   "listed": 2,
   "text_chars": 4916
@@ -9657,7 +9922,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "5dcbf1c813dbe401"
   },
   "listed": 2,
   "text_chars": 5603
@@ -9683,7 +9949,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "66b1f1aa460f66c9"
   },
   "listed": 2,
   "text_chars": 5020
@@ -9709,7 +9976,8 @@
     214
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "66b1f1aa460f66c9"
   },
   "listed": 2,
   "text_chars": 5020
@@ -9735,7 +10003,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "6d2f3ec1619034c0"
   },
   "listed": 2,
   "text_chars": 5078
@@ -9792,7 +10061,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 9,
   "text_chars": 16000
@@ -9832,7 +10102,8 @@
     157
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9234717b4cf4891e"
   },
   "listed": 4,
   "text_chars": 4337
@@ -9880,7 +10151,8 @@
     243
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77540980c253975a"
   },
   "listed": 23,
   "text_chars": 16000
@@ -9927,7 +10199,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "10d5a116f99f0888"
   },
   "listed": 23,
   "text_chars": 16000
@@ -9955,7 +10228,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c52c62faefbda730"
   },
   "listed": 4,
   "text_chars": 5145
@@ -9992,7 +10266,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0c835db1155c6214"
   },
   "listed": 12,
   "text_chars": 16000
@@ -10018,7 +10293,8 @@
     195
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54394642c96907a2"
   },
   "listed": 2,
   "text_chars": 4455
@@ -10044,7 +10320,8 @@
     195
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "54394642c96907a2"
   },
   "listed": 2,
   "text_chars": 4455
@@ -10086,7 +10363,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "22c5b113e6fe769e"
   },
   "listed": 17,
   "text_chars": 14783
@@ -10132,7 +10410,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883ca26af7df4eda"
   },
   "listed": 24,
   "text_chars": 4334
@@ -10169,7 +10448,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "10d5a116f99f0888"
   },
   "listed": 10,
   "text_chars": 16000
@@ -10204,7 +10484,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "61edd43a425beaea"
   },
   "listed": 10,
   "text_chars": 9865
@@ -10246,7 +10527,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e66be2509a539be9"
   },
   "listed": 15,
   "text_chars": 16000
@@ -10280,7 +10562,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "34d8dec46bbb8a9c"
   },
   "listed": 10,
   "text_chars": 4785
@@ -10317,7 +10600,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "95be224b93300071"
   },
   "listed": 11,
   "text_chars": 12782
@@ -10353,7 +10637,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8dddfc4b44939ee9"
   },
   "listed": 11,
   "text_chars": 8687
@@ -10390,7 +10675,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "8dddfc4b44939ee9"
   },
   "listed": 12,
   "text_chars": 8687
@@ -10427,7 +10713,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "95be224b93300071"
   },
   "listed": 11,
   "text_chars": 12782
@@ -10453,7 +10740,8 @@
     127
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d02a8cf9d0804446"
   },
   "listed": 2,
   "text_chars": 4491
@@ -10489,7 +10777,8 @@
     249
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "95be224b93300071"
   },
   "listed": 10,
   "text_chars": 12782
@@ -10515,7 +10804,8 @@
     208
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "b33db630814300de"
   },
   "listed": 2,
   "text_chars": 5251
@@ -10534,18 +10824,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=170",
-   "title": "Culinary Safety and Sanitation Certiﬁcate of Completion",
-   "h1": "Culinary Safety and Sanitation Certiﬁcate of Completion",
+   "title": "Total Non-Credit Hours: 32",
+   "h1": "Total Non-Credit Hours: 32",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "fba1c755d18db790"
   },
   "listed": 3,
-  "text_chars": 4098
+  "text_chars": 2437
  },
  {
   "control_number": "43476",
@@ -10568,7 +10859,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7e5143d595fd073a"
   },
   "listed": 2,
   "text_chars": 4098
@@ -10594,7 +10886,8 @@
     167
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "9319b0cd61c9fe40"
   },
   "listed": 2,
   "text_chars": 4284
@@ -10620,7 +10913,8 @@
     148
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "79195ee91be1a597"
   },
   "listed": 2,
   "text_chars": 4988
@@ -10650,7 +10944,8 @@
     107
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "852d30dd9899a53c"
   },
   "listed": 4,
   "text_chars": 13574
@@ -10696,7 +10991,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 21,
   "text_chars": 16000
@@ -10732,7 +11028,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 10,
   "text_chars": 16000
@@ -10772,7 +11069,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca9c2de08430ea6d"
   },
   "listed": 15,
   "text_chars": 8608
@@ -10823,7 +11121,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 26,
   "text_chars": 16000
@@ -10859,7 +11158,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "21407d2c60f73ffa"
   },
   "listed": 14,
   "text_chars": 9657
@@ -10895,7 +11195,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883ca26af7df4eda"
   },
   "listed": 14,
   "text_chars": 4334
@@ -10914,18 +11215,19 @@
   ],
   "source": {
    "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=173",
-   "title": "Digital Design & Production Certiﬁcate of Achievement",
-   "h1": "Digital Design & Production Certiﬁcate of Achievement",
+   "title": "CERTIFICATE TOTAL 24",
+   "h1": "CERTIFICATE TOTAL 24",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     173
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "5bf4c43776922825"
   },
   "listed": 3,
-  "text_chars": 4361
+  "text_chars": 1981
  },
  {
   "control_number": "44685",
@@ -10953,7 +11255,8 @@
     228
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "d61dbc877d759623"
   },
   "listed": 7,
   "text_chars": 5151
@@ -10994,7 +11297,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca9e7d228651e420"
   },
   "listed": 15,
   "text_chars": 14246
@@ -11028,7 +11332,8 @@
     208
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "062217d8a7b941a8"
   },
   "listed": 8,
   "text_chars": 13767
@@ -11056,7 +11361,8 @@
     208
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "185267e79fa937c0"
   },
   "listed": 3,
   "text_chars": 10073
@@ -11106,7 +11412,8 @@
     243
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "77540980c253975a"
   },
   "listed": 23,
   "text_chars": 16000
@@ -11144,7 +11451,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "10d5a116f99f0888"
   },
   "listed": 11,
   "text_chars": 16000
@@ -11182,7 +11490,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "e66be2509a539be9"
   },
   "listed": 11,
   "text_chars": 16000
@@ -11304,7 +11613,8 @@
     159
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "63c151e7ddb07e72"
   },
   "listed": 101,
   "text_chars": 12780
@@ -11375,7 +11685,8 @@
     161
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d19affe8b948b403"
   },
   "listed": 50,
   "text_chars": 16000
@@ -11478,7 +11789,8 @@
     162
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "dd95508bade0a900"
   },
   "listed": 77,
   "text_chars": 16000
@@ -11577,7 +11889,8 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4482910b8248cfa4"
   },
   "listed": 79,
   "text_chars": 16000
@@ -11617,7 +11930,8 @@
     201
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "172c5f6cca8dfbbb"
   },
   "listed": 13,
   "text_chars": 16000
@@ -11746,7 +12060,8 @@
     164
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1bad25131c415b7e"
   },
   "listed": 161,
   "text_chars": 8463
@@ -11786,7 +12101,8 @@
     178
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "22c5b113e6fe769e"
   },
   "listed": 14,
   "text_chars": 14783
@@ -11814,7 +12130,8 @@
     207
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "91c9841907b101d4"
   },
   "listed": 3,
   "text_chars": 8514
@@ -11841,7 +12158,8 @@
     394
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "385fca43d51da29e"
   },
   "listed": 5,
   "text_chars": 6566
@@ -11870,7 +12188,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca6895671887dd17"
   },
   "listed": 5,
   "text_chars": 4262
@@ -11898,7 +12217,8 @@
     126
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4fb274428716c5f5"
   },
   "listed": 4,
   "text_chars": 4440
@@ -11930,7 +12250,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a357929b10c9eef2"
   },
   "listed": 8,
   "text_chars": 2053
@@ -11968,19 +12289,21 @@
    "PH6A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=187",
-   "title": "English",
-   "h1": "English",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=186",
+   "title": "Engineering AS Degree",
+   "h1": "Engineering AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    186,
     187
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "830a5aa2c43dc6f7"
   },
   "listed": 23,
-  "text_chars": 3814
+  "text_chars": 5466
  },
  {
   "control_number": "45015",
@@ -12013,19 +12336,21 @@
    "NR95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
-   "title": "Natural Resources AS Degree (transfer preparation)",
-   "h1": "Natural Resources AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=218",
+   "title": "Natural Resources AS Degree",
+   "h1": "Natural Resources AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    218,
     219
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "496be46605ce95ea"
   },
   "listed": 21,
-  "text_chars": 4333
+  "text_chars": 5718
  },
  {
   "control_number": "45016",
@@ -12071,7 +12396,8 @@
     204
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "883ca26af7df4eda"
   },
   "listed": 25,
   "text_chars": 4334
@@ -12111,7 +12437,8 @@
     104
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "80e55f27b452bc84"
   },
   "listed": 15,
   "text_chars": 10275
@@ -12122,34 +12449,30 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.625,
   "codes_found": [
-   "BUMA1",
    "BUMA10",
-   "BUMA121",
-   "BUMA125",
    "BUMA26",
    "BUMA27",
    "BUMA32",
    "BUMA94"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=148",
-   "title": "Makerspace Basic Skills Certiﬁcate of Completion",
-   "h1": "Makerspace Basic Skills Certiﬁcate of Completion",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=107",
+   "title": "BIW IV: Legal Ofﬁce Specialist Certiﬁcate of Achievement",
+   "h1": "BIW IV: Legal Ofﬁce Specialist Certiﬁcate of Achievement",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    148,
-    149,
-    150,
-    151
+    107,
+    108
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "ca9c2de08430ea6d"
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 8608
  },
  {
   "control_number": "45054",
@@ -12191,7 +12514,8 @@
     151
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "f34148304f9b0c16"
   },
   "listed": 21,
   "text_chars": 16000
@@ -12237,19 +12561,21 @@
    "SPAN4"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=188",
-   "title": "that students will pursue. Students earning an AA-T degree in English are",
-   "h1": "that students will pursue. Students earning an AA-T degree in English are",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=187",
+   "title": "The English program also offers an AA-T degree in English, as well as",
+   "h1": "The English program also offers an AA-T degree in English, as well as",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    187,
     188
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "824323e36381e635"
   },
   "listed": 32,
-  "text_chars": 3911
+  "text_chars": 6020
  },
  {
   "control_number": "45079",
@@ -12275,21 +12601,23 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=198",
-   "title": "Health Science AS Degree",
-   "h1": "Health Science AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=197",
+   "title": "Associate Degrees for Transfer (ADT)",
+   "h1": "Associate Degrees for Transfer (ADT)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    197,
     198,
     199,
     200
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "eb7ecb79ce10f904"
   },
   "listed": 14,
-  "text_chars": 15011
+  "text_chars": 16000
  },
  {
   "control_number": "45084",
@@ -12316,7 +12644,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "62904d170754fc67"
   },
   "listed": 5,
   "text_chars": 8636
@@ -12355,19 +12684,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=182",
-   "title": "This Economics AA-T degree requires students to meet both of the",
-   "h1": "This Economics AA-T degree requires students to meet both of the",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=181",
+   "title": "Associate Degrees for Transfer (AD-T)",
+   "h1": "Associate Degrees for Transfer (AD-T)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    181,
     182
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "b2f7290b14418c0d"
   },
   "listed": 14,
-  "text_chars": 4651
+  "text_chars": 5084
  },
  {
   "control_number": "45210",
@@ -12398,7 +12729,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6726e88b71833797"
   },
   "listed": 8,
   "text_chars": 16000
@@ -12432,19 +12764,21 @@
    "PHIL12"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=118",
-   "title": "Art History AA-T Degree",
-   "h1": "Art History AA-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=117",
+   "title": "for Transfer, also called the Art History AA-T Degree, prepares students to",
+   "h1": "for Transfer, also called the Art History AA-T Degree, prepares students to",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    117,
     118
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8140a70d4f5f96f2"
   },
   "listed": 19,
-  "text_chars": 4916
+  "text_chars": 6122
  },
  {
   "control_number": "45250",
@@ -12486,7 +12820,8 @@
     230
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "a269c13a07b1f0c3"
   },
   "listed": 21,
   "text_chars": 4475
@@ -12537,7 +12872,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "81e446b378e32647"
   },
   "listed": 15,
   "text_chars": 10276
@@ -12581,7 +12917,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "ea5ad8cfbca52698"
   },
   "listed": 17,
   "text_chars": 16000
@@ -12608,7 +12945,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "1dea1af37c231b7a"
   },
   "listed": 3,
   "text_chars": 4582
@@ -12644,7 +12982,8 @@
     175
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "10d5a116f99f0888"
   },
   "listed": 9,
   "text_chars": 16000
@@ -12683,7 +13022,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "0c835db1155c6214"
   },
   "listed": 14,
   "text_chars": 16000
@@ -12712,7 +13052,8 @@
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "ca6895671887dd17"
   },
   "listed": 5,
   "text_chars": 4262
@@ -12729,21 +13070,21 @@
    "BUAC20A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=142",
-   "title": "Accounting AS Degree",
-   "h1": "Accounting AS Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=149",
+   "title": "CERTIFICATE TOTAL 9",
+   "h1": "CERTIFICATE TOTAL 9",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    142,
-    143,
-    144
+    149,
+    150
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true,
+   "text_sha": "bd77ee8c8cf90b11"
   },
   "listed": 4,
-  "text_chars": 14548
+  "text_chars": 6586
  },
  {
   "control_number": "45435",
@@ -12766,7 +13107,8 @@
     170
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "7e5143d595fd073a"
   },
   "listed": 2,
   "text_chars": 4098
@@ -12792,20 +13134,23 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=199",
-   "title": "Pharmacy Technician Certiﬁcate of Achievement",
-   "h1": "Pharmacy Technician Certiﬁcate of Achievement",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=197",
+   "title": "• Nutrition and Dietetics AS-T (p. 197)",
+   "h1": "• Nutrition and Dietetics AS-T (p. 197)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    197,
+    198,
     199,
     200
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c76a7d8638aab4dd"
   },
   "listed": 11,
-  "text_chars": 9645
+  "text_chars": 16000
  },
  {
   "control_number": "45438",
@@ -12838,7 +13183,8 @@
     245
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "3b73cad84d48eed5"
   },
   "listed": 13,
   "text_chars": 4971
@@ -12879,7 +13225,8 @@
     177
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "c9003e452da814b1"
   },
   "listed": 14,
   "text_chars": 16000
@@ -12927,7 +13274,8 @@
     166
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "c01dd9c4cff88368"
   },
   "listed": 22,
   "text_chars": 12077
@@ -12977,21 +13325,23 @@
    "FIRE95A"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=192",
-   "title": "Fire Technology AS Degree (transfer preparation)",
-   "h1": "Fire Technology AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=191",
+   "title": "Fire Technology AS Degree",
+   "h1": "Fire Technology AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    191,
     192,
     193,
     194
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "7bc923ce798f6cef"
   },
   "listed": 39,
-  "text_chars": 14373
+  "text_chars": 16000
  },
  {
   "control_number": "45521",
@@ -13033,7 +13383,8 @@
     145
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "28689f75a5cfc7a9"
   },
   "listed": 23,
   "text_chars": 16000
@@ -13068,21 +13419,23 @@
    "CDE234"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=179",
-   "title": "Early Childhood Education AS-T Degree",
-   "h1": "Early Childhood Education AS-T Degree",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=178",
+   "title": "Early Childhood Education AS Degree",
+   "h1": "Early Childhood Education AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    178,
     179,
     180,
     181
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "59d6b2d7622e2cdc"
   },
   "listed": 21,
-  "text_chars": 14207
+  "text_chars": 14460
  },
  {
   "control_number": "45548",
@@ -13147,7 +13500,8 @@
     205
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d7f6fd697a75bbfb"
   },
   "listed": 29,
   "text_chars": 16000
@@ -13183,7 +13537,8 @@
     153
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "21407d2c60f73ffa"
   },
   "listed": 13,
   "text_chars": 9657
@@ -13219,7 +13574,8 @@
     244
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "5ebae5e1f862f898"
   },
   "listed": 9,
   "text_chars": 16000
@@ -13271,7 +13627,8 @@
     197
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "31bc2433bdcb6615"
   },
   "listed": 28,
   "text_chars": 9607
@@ -13324,7 +13681,8 @@
     101
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d70457674df67366"
   },
   "listed": 28,
   "text_chars": 12662
@@ -13375,7 +13733,8 @@
     99
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "d13cb1b133c97a58"
   },
   "listed": 24,
   "text_chars": 16000
@@ -13425,7 +13784,8 @@
     94
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "e3bc1d5cfc75b80e"
   },
   "listed": 24,
   "text_chars": 13570
@@ -13476,7 +13836,8 @@
     108
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "727c9347b662307b"
   },
   "listed": 26,
   "text_chars": 16000
@@ -13576,7 +13937,8 @@
     135
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "8b8bd3781d074fee"
   },
   "listed": 74,
   "text_chars": 16000
@@ -13617,19 +13979,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=219",
-   "title": "Natural Resources AS Degree (transfer preparation)",
-   "h1": "Natural Resources AS Degree (transfer preparation)",
+   "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf#page=218",
+   "title": "Natural Resources AS Degree",
+   "h1": "Natural Resources AS Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    218,
     219
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "496be46605ce95ea"
   },
   "listed": 26,
-  "text_chars": 4333
+  "text_chars": 5718
  },
  {
   "control_number": "45707",
@@ -13678,7 +14042,8 @@
     169
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "cf961da8ce20d3df"
   },
   "listed": 26,
   "text_chars": 11784
@@ -13730,7 +14095,8 @@
     149
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "04c935f0e62cd030"
   },
   "listed": 29,
   "text_chars": 16000
@@ -13765,7 +14131,8 @@
     98
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "1378be5f1a05379e"
   },
   "listed": 9,
   "text_chars": 16000
@@ -13803,7 +14170,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6a26b449232c0eba"
   },
   "listed": 13,
   "text_chars": 8044
@@ -13835,7 +14203,8 @@
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "6a26b449232c0eba"
   },
   "listed": 8,
   "text_chars": 8044
@@ -13880,7 +14249,8 @@
     213
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "238abf6191387c3f"
   },
   "listed": 18,
   "text_chars": 16000
@@ -13936,7 +14306,8 @@
     100
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "be1169ff88f248e6"
   },
   "listed": 31,
   "text_chars": 16000
@@ -13971,7 +14342,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": false,
+   "text_sha": "4e7e6fa36c113167"
   },
   "listed": 11,
   "text_chars": 4773
@@ -14007,7 +14379,8 @@
     185
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": true,
+   "text_sha": "4e7e6fa36c113167"
   },
   "listed": 12,
   "text_chars": 4773
