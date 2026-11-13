@@ -1,0 +1,291 @@
+{
+ "college": "North Orange Continuing Education",
+ "control_number": "44476",
+ "shape": "noncredit",
+ "title": "Office Assistant, Advanced",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7577,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7577,
+    "output_tokens": 1779,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1779,
+  "output_tokens_details": {
+   "thinking_tokens": 519
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06589,
+ "ms": 14963,
+ "seconds": 15.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    318.0,
+    369.0
+   ],
+   "stated": [
+    318.0,
+    369.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 10,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Office Assistant, Advanced",
+   "measure": "hours",
+   "total_units": {
+    "min": 318,
+    "max": 369
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "administrative assistant",
+    "administrative associate",
+    "administrative secretary",
+    "administrative specialist",
+    "administrative technician",
+    "clerk typist",
+    "department secretary",
+    "office assistant",
+    "secretary",
+    "staff assistant"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses (210 Hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 210,
+     "max": 210
+    },
+    "courses": [
+     {
+      "code": "BMGR 415",
+      "units": 18,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMP 685",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMP 510",
+      "units": 30,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMP 511",
+      "units": 30,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 100",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 110",
+      "units": 24,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 105",
+      "units": 12,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 218",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 225",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 1",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTEC 216",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "OTEC 217",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "OPTION 2",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Option",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "OTEC 215",
+      "units": 96,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Electives Course (27 Hours)",
+    "rule": "choose_courses",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "OTEC 301",
+      "units": 27,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Program is noncredit; all figures are hours as printed.",
+   "The core heading prints '(210 Hours)', but the listed core courses sum to 246 hours; the printed total 318-369 matches 246 plus the option (72-96) plus the optional elective (0-27). The 210 figure appears to be a catalog error.",
+   "The 'Required Option (Hours 72-96)' heading states 72-96 for the option choice as a whole ('Must select Option 1 or Option 2'); no separate total is printed for each option block.",
+   "The elective block reads 'Must choose 0 of 1 Course 0-27', so OTEC 301 is optional; recorded as choose_courses with minimum 0 because its hours are counted in the printed total range rather than as merely recommended.",
+   "Closed list prints 'COMP685' without a space; the catalog's 'COMP 685' is treated as the same course.",
+   "No program learning outcomes are printed in the text."
+  ]
+ },
+ "extracted_run": "43342034608"
+}
