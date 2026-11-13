@@ -1,7 +1,7 @@
 ---
 title: "The industry-credential watch agent"
 created: 2026-09-30
-updated: 2026-10-30
+updated: 2026-11-13
 tags: [reference, credential-registry, partner-crosswalks, watch-agent, routine]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -38,6 +38,8 @@ follows it; a session changing the agent changes this page.
 established. I don't want our nightly jobs to collide"*, then *"Go"*).** Step 10 of
 [`scheduled_sessions`](scheduled_sessions.md) runs this page once a UTC day, a slice of issuers a night, until its
 stopping rule moves it back to weekly. The Monday routine is disabled: section *Armed*.
+
+**The stopping rule's count (nights in a row under 25 added or changed):** 2 of 14 at 2026-11-13. 2026-11-11 added 25 and retired 1 (#3103), which resets it; 2026-11-12 changed none (#3141); 2026-11-13 added 1 and changed 1 (#3210). Each night's step 10 updates this line.
 
 ## What it keeps current
 

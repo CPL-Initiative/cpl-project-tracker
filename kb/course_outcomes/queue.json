@@ -7,6 +7,8 @@
                "why": "its CourseLeaf course entries print no SLOs"},
   "chaffey": {"state": "none", "on": "2026-10-13", "by": "S380", "source": "#2073, discovery 38392162605, read 38394075773",
               "why": "both public dashboard reports (225 and 1225) print objectives only; its outcomes FAQ keeps course outcomes on section syllabi"},
+  "college_of_marin": {"state": "held", "on": "2026-11-13", "by": "S647", "source": "#3211, trial 43378795532; COBIx review of #3211",
+                       "why": "the eLumen catalog prints none (its course pages print the description only, 0 of 12); course outline reports on marin.elumenapp.com/public are untried (COBIx, #3211; Marin's SLO FAQ places course SLOs in the outline of record there). Waits on a reader for eLumen's public Course Outline Report, then a 12-page trial; Marin moves to Coursedog in mid-Fall 2026, so the eLumen source may not last"},
   "de_anza": {"state": "held", "on": "2026-11-12", "by": "S641", "source": "#3145, trial 43168229927",
               "why": "11 of its 12 trial pages came back empty (HTTP 200, no text) from its eLumen 2026-27 catalog; the one page with text, PSYCC 1000 (a common course number), printed SLOs the reader parsed (4). The catalog does not answer the older course codes in its MAP records; waits on the reader mapping those codes to the ones the 2026-27 catalog prints, then a fresh trial"},
   "lemoore": {"state": "none", "on": "2026-11-10", "by": "S627", "source": "#3038, trial 42768227305",
