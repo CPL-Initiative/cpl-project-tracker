@@ -139,3 +139,5 @@ jobs:
         with:
           name: harvest-gap-census-${{ github.run_id }}
           path: out
+          # out/ carries the live counts again, so it keeps the counts artifact's short retention, never the default 90 days.
+          retention-days: 3

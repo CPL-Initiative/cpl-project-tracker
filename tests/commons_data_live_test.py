@@ -445,8 +445,12 @@ MAIN_ONLY = r"\s*github\.ref\s*==\s*'refs/heads/main'\s*"
 ENV_NAME = "live-counts"
 
 
+SECRET_FORMS = re.compile(r"SUPABASE_SERVICE_KEY|toJSON\(\s*secrets\s*\)|secrets\s*\.\s*\*|secrets\s*\[")
+
+
 def mentions_key(x):
-    return "SUPABASE_SERVICE_KEY" in json.dumps({k: v for k, v in x.items() if k != "name"} if isinstance(x, dict) else x)
+    """The key by name, or any form that would hand a step every secret (toJSON(secrets), secrets.*, secrets[...])."""
+    return bool(SECRET_FORMS.search(json.dumps({k: v for k, v in x.items() if k != "name"} if isinstance(x, dict) else x)))
 
 
 def env_of(job):
@@ -486,6 +490,15 @@ check("(7) the census job takes the counts only when the export succeeded, never
 check("(7) one writer and one push: only the census job commits, and the export's file is never added",
       wf_text.count("git push") == 1 and "git push" not in json.dumps(lc) and "git add out" not in wf_text
       and "commons_data_live.json" not in [ln for ln in wf_text.splitlines() if "git add" in ln].__str__())
+check("(7) the wildcard secret forms count as naming the key",
+      all(mentions_key({"env": {"X": v}}) for v in ("${{ toJSON(secrets) }}", "${{ toJSON( secrets ) }}", "${{ secrets.* }}",
+                                                     "${{ secrets['SUPABASE_SERVICE_KEY'] }}"))
+      and not mentions_key({"env": {"X": "${{ inputs.accept_active_shift }}"}}))
+check("(7) ⭐ no job outside the live-counts environment uses any wildcard secret form",
+      not any(SECRET_FORMS.search(json.dumps(j)) for n, j in jobs.items() if env_of(j) != ENV_NAME))
+check("(7) every artifact upload keeps a short retention (the live counts ride in both)",
+      all((s.get("with") or {}).get("retention-days") == 3 for j in jobs.values() for s in j.get("steps") or []
+          if "upload-artifact" in str(s.get("uses"))))
 check("(7) the push keeps the one concurrency group", wf.get("concurrency", {}).get("group") == "harvest-gap-census-${{ github.ref_name }}")
 check("(7) the workflow stays dispatch only", list((wf.get(True) or wf.get("on") or {}).keys()) == ["workflow_dispatch"])
 inp = ((wf.get(True) or wf.get("on") or {})["workflow_dispatch"] or {}).get("inputs", {}).get("accept_active_shift") or {}
