@@ -1,0 +1,205 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "37642",
+ "shape": "degree",
+ "title": "German",
+ "award": "A.A. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-a-in-german-spring-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6664,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6664,
+    "output_tokens": 1334,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1334,
+  "output_tokens_details": {
+   "thinking_tokens": 340
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05334,
+ "ms": 11974,
+ "seconds": 12.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    20.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.A. Degree Local German (Total 20)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Option 1 (DVC General Education), Option 2 (IGETC) or Option 3 (CSUGE)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "communicate verbally in the target language with accurate pronunciation in meaningful situation present in both informal and formal contexts.",
+    "effectively apply rules of grammar and syntax in tandem with appropriate vocabulary in written and oral communication.",
+    "demonstrate auditory comprehension of instruction, authentic content, and purposeful conversations in the target language.",
+    "discuss, describe, and infer information from authentic texts in the target language.",
+    "demonstrate cultural appreciation by making (comparative) connections, on both an individual and societal level, between the target cultures and students’ own culture.",
+    "create (write or present) narratives and/or arguments that demonstrate cohesive critical thinking in the target language."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "complete at least 20 units from:",
+    "rule": "choose_units",
+    "minimum": 20,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GRMAN120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRMAN121",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRMAN220",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRMAN221",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRMAN230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GRMAN231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g., GRMAN120); these match closed-list codes GRMAN 120 etc., so catalog_addition is false.",
+   "Catalog text begins mid-sentence (truncated description).",
+   "The description says students with no prior German take GRMAN 120, 121, 220, 221 (20 units); students with prior knowledge may start at second term (GRMAN 121) and take fifth and sixth terms for 21 units. Recorded as a single choose-20-units block per the requirements table.",
+   "The page names three GE options (DVC GE, IGETC, CSUGE) without printing GE units or a degree total.",
+   "Outcomes printed under a 'Program Learning Outcomes' heading for this program; recorded as the award's outcomes.",
+   "Description mentions 'a broad range of international and domestic career opportunities and professions' but names no specific career; careers left empty."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

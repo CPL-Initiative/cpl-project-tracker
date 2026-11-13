@@ -684,7 +684,7 @@ handoffs: [`docs/INDEX.md`](docs/INDEX.md).
 
 **LLM wiki.** `CPLBrain` (`samueltlee/CPLBrain#671`), beside the COG vault.
 Read root `index.md` first, or `/wiki-query`. Promote a settled decision or
-fact with `/wiki-ingest`. Captures still land where they land.
+fact with `/wiki-ingest`.
 
 ---
 
@@ -734,10 +734,10 @@ stays here.
 >
 > **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
 > ran that test and names the candidates; hand-grepping has been wrong every
-> time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
+> time. [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (now: [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) 3-5, [186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) 4-6 wait). An answer
+> ([Sheet 189](https://claude.ai/artifact/K8pAMkQywm4VmGBAKbSf6x), current; waiting: [188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ) 6, [187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) 4-5, [186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) 4-6). An answer
 > changes its lane's marker in one PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
@@ -754,13 +754,13 @@ stays here.
 | **Local course ↔ CR alignment** | "Which of MY courses should I articulate against this credit recommendation, and how did other colleges do it?" — so faculty don't guess. | ✅ live · open work — [lane state](docs/reference/lanes/local-course-cr-alignment.md) |
 | **Common CR Reference** | A canonical vocabulary of credit recommendations — what the CER did for freehand credential titles, for the freehand recommendation text. | ✅ live · open work — [lane state](docs/reference/lanes/common-cr-reference.md) |
 | **Military (ACE) CR Reference** | The same vocabulary question for the 98% of MAP's CR rows from ACE-reviewed military training. | ✅ live · open work — [lane state](docs/reference/lanes/military-ace-cr-reference.md) |
-| **College CR evidence ("we approved it, but we have no CR")** | A college names courses it will award for a CPL type but holds no credit recommendation — and MAP needs one before an articulation can exist. | ✅ live · open work — [lane state](docs/reference/lanes/college-cr-evidence.md) |
+| **College CR evidence ("we approved it, but we have no CR")** | A college names courses it will award for a CPL type but holds no credit recommendation, and MAP needs one before an articulation exists. | ✅ live · open work — [lane state](docs/reference/lanes/college-cr-evidence.md) |
 | **Disposition grain / student detail** | What a college has ACTED on, not just what credit exists. | ✅ live — [lane state](docs/reference/lanes/disposition-grain-student-detail.md) |
 | **CPL clean-up worklist** | What to fix in the CPL data, in what order, and who fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/cpl-cleanup-worklist.md) |
 | **$50k / ESS 25-82 tab** | Turn the three outcome checkmarks into where-you-are, where-you-should-be and how-to-get-there, so colleges award real CPL in MAP. | 🔨 in progress · open work — [lane state](docs/reference/lanes/ess-25-82-tab.md) |
 | **Implementation Funding tab / the $35M model** | The priorities, their shares and factors, what counts toward each, and the college-by-college allocation. | ✅ live · open work — [lane state](docs/reference/lanes/implementation-funding.md) |
-| **CSM Workspace** | The team's queue for each college: requests to review, follow-ups and acceptances, over the funding tab's own state; to reach MAP onboarding and the activity cards. | ✅ live · open work — [lane state](docs/reference/lanes/csm-workspace.md) |
-| **My College (college action page) / MAP-team queue** | One page where a college picks itself and gets its stats, its opportunities and its to-dos; since S448 drawn inside CPL Pathways' college view, off the menu; the same engine runs the MAP team's backlog. | ✅ live · open work — [lane state](docs/reference/lanes/my-college-action-page.md) |
+| **CSM Workspace** | The team's queue per college: requests to review, follow-ups and acceptances, over the funding tab's state; to reach MAP onboarding and the activity cards. | ✅ live · open work — [lane state](docs/reference/lanes/csm-workspace.md) |
+| **My College (college action page) / MAP-team queue** | One page where a college gets its stats, opportunities and to-dos, drawn inside CPL Pathways' college view since S448; the same engine runs the MAP team's backlog. | ✅ live · open work — [lane state](docs/reference/lanes/my-college-action-page.md) |
 | **College & district identity** | Every college and district name variant resolving to MAP's `college_id` and the CCCCO MIS district code. | ✅ live · open work — [lane state](docs/reference/lanes/college-district-identity.md) |
 | **Admin tab / the side menu as data** | One place to manage the COBI side menu (order, grouping, naming, who sees what) beside what protects each tab. | ✅ live · open work — [lane state](docs/reference/lanes/admin-tab-side-menu.md) |
 | **Noncredit CIP categories** | Which of the CO's ten noncredit CIP categories a program belongs to — and what that means for CDCP eligibility and funding. | 🔨 in progress · open work — [lane state](docs/reference/lanes/noncredit-cip-categories.md) |
@@ -772,12 +772,12 @@ stays here.
 | **Public/private repo split** | Separate the public views (Sierra, Fact Sheet, veteran map, landing pages) from COBI and the methodology. | 🔨 in progress · open work — [lane state](docs/reference/lanes/public-private-repo-split.md) |
 | **MAP Custom Reports (3 new) / ITPI automation** | Wire the three new MAP Custom Reports, load them, keep them fresh. | ✅ live · open work — [lane state](docs/reference/lanes/map-custom-reports.md) |
 | **Discipline cross-listing** | Nest, alias, or let a course carry two homes — the 1,210 rows whose colleges disagree about discipline. Sam's 12-item sheet. | 🔨 in progress · open work — [lane state](docs/reference/lanes/discipline-crosslist.md) |
-| **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference — common courses by discipline, their constituent local courses, and moving a course to where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
+| **SkyView / the CCR curation interface** | An interactive view of the Common Course Reference: common courses by discipline, their local courses, and moving a course where it belongs. | ✅ live · open work — [lane state](docs/reference/lanes/skyview-ccr-interface.md) |
 | **ESL packaging (the first fold)** | Collapse the ESL discipline to comprehensives + carve-outs — the proof that packaging reaches the target. | ✅ live · open work — [lane state](docs/reference/lanes/esl-packaging.md) |
 | **Title 5 §55050 → Ed. Code Article 9** | A regulation that does not implement the statute it operates under — and the amendment package that fixes it. | ✅ live · open work — [lane state](docs/reference/lanes/t5-55050-article-9.md) |
-| **COBI dark mode / the one theme control** | One header control setting the theme for every tab and window, and the token layer under it. Carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
-| **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading the entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
-| **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add a sub-activity, move it, set targets, say what each number counts — wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
+| **COBI dark mode / the one theme control** | One header control setting every tab's and window's theme, and the token layer under it; carries the a11y remediation pass. | ✅ live · open work — [lane state](docs/reference/lanes/cobi-dark-mode.md) |
+| **Memory tab / Autogenerate + the Briefing** | Drafting a memory row from a typed topic, reading entries back, and curating them. | ✅ live · open work — [lane state](docs/reference/lanes/memory-tab.md) |
+| **Annual Workplan Goals / add, move, count** | The one editor of the workplan's structure: add, move and target sub-activities, and say what each number counts, wired to the Activities tab and reports. | 🔨 in progress · open work — [lane state](docs/reference/lanes/workplan-annual-goals.md) |
 | **Program requirements harvest** | Each program's required, list-choice and elective courses at 115 colleges, so CPL units saved can be shown. | 🔨 in progress · the catalog sweep — [lane state](docs/reference/lanes/program-requirements-harvest.md) |
 | **The CPL Commons** | Every common reference under one tracking system; the first view a card per reference. | ✅ live · open work — [lane state](docs/reference/lanes/commons.md) |
 | **Common Subjects Reference (CSR)** | One Common SUBJ per MQ discipline, the key every M-ID is minted under; the Commons' dash with a card per step, a procedure per card, a daily scan. | ✅ live · open work — [lane state](docs/reference/lanes/common-subjects-reference.md) |

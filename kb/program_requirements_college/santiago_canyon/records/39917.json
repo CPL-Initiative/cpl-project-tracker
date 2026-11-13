@@ -1,0 +1,676 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "39917",
+ "shape": "certificate",
+ "title": "Kinesiology - Fitness and Active Lifestyle",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 9861,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 9861,
+    "output_tokens": 5582,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 5582,
+  "output_tokens_details": {
+   "thinking_tokens": 2102
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.15108,
+ "ms": 44071,
+ "seconds": 44.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 55,
+   "listed": 62,
+   "share": 0.887,
+   "missing": [
+    "BIOL139",
+    "KIN120A",
+    "KIN120B",
+    "KIN121A",
+    "KIN146A",
+    "KIN147",
+    "KIN189A"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "NUTR115",
+    "STATC1000E"
+   ],
+   "flagged": [
+    "NUTR115",
+    "STATC1000E"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    24.0
+   ],
+   "stated": [
+    20.0,
+    24.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Kinesiology - Fitness and Active Lifestyle, CA",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 24
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "KIN 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "NUTR 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PSYC C1000H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select five (5) units from the following. Must select one (1) unit course(s) from three (3) different areas: Aquatics, Combatives, Dance, Fitness, or Team Sports.",
+    "rule": "choose_units",
+    "minimum": 5,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "KIN 185A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 185B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 185C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 125A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 125B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 128A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 106A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 106B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 108A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 108B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 115A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 115B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 119A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DNCE 119B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 119",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 126A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 126B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 127A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 127B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 127C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 140A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 140B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 140C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 146B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 146C",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 200",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 201",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 202",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 203",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 204",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 160A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 160B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 163A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 168A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 168B",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "ELECTIVES: Select a minimum of six (6) units from the following:",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "BIOL 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 109H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 109L",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 109HL",
+        "units": 1,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 149",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 229",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 239",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 259",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 102",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 104",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 109",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KIN 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 4.5,
+        "catalog_addition": true
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOL 139",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 120A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 120B",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 121A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 146A",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 147",
+    "why": "not in the text"
+   },
+   {
+    "code": "KIN 189A",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "The catalog prints codes without spaces (e.g. KIN100, PSYCC1000); recorded with a space between subject and number.",
+   "The PSYC choice ('Select one (1) PSYC course from the following', printed Total Units 0.0 - 0.0) is an honors-twin choice; recorded inside the Certificate Requirements block as PSYC C1000 with PSYC C1000H as alternative, which makes the block total match the printed 9.0 units.",
+   "Activity block: catalog prints 'Total Units 0.0 - 0.0' for the five-unit selection, so stated is left null. Rule requires one-unit courses from three of the five areas (Aquatics, Combatives, Dance, Fitness, Team Sports); each area is printed with 'Select one (1) unit' (Total Units 1.0). Recorded as one choose_units 5 block with courses in catalog order; reviewer should check how the area constraint and the 5-unit minimum interact (5 area totals of 1 unit sum to 5).",
+   "KIN 128A (Basic Tai Chi) is listed under both COMBATIVES and FITNESS; recorded once.",
+   "Activity courses are printed at 1.0 unit each, while the state file stores 0.5 for the KIN activity courses; recorded as printed.",
+   "Honors twins BIOL 109H/BIOL 109HL and STAT C1000H, plus STAT C1000E (not in closed list, 4.5 units), recorded as alternatives in the electives block.",
+   "NUTR 115 and STAT C1000E are not in the closed list (catalog additions).",
+   "Total 20.0-24.0 = 9 core + 5 activity + 6-10 electives.",
+   "The description includes the sentence 'Upon completion of the Certificate of Achievement ... students will have a general understanding and appreciation of human movement for personal expression and wellness, and be able to apply fitness-based concepts.' It is not printed under an outcomes heading, so program.outcomes was left empty; reviewer may consider it a program outcome.",
+   "No careers named in the text."
+  ]
+ },
+ "extracted_run": "43387912036",
+ "source_sha": "51ac8e54e975730b",
+ "source_codes": [
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL149",
+  "BIOL229",
+  "BIOL239",
+  "BIOL249",
+  "BIOL259",
+  "DNCE106A",
+  "DNCE106B",
+  "DNCE108A",
+  "DNCE108B",
+  "DNCE115A",
+  "DNCE115B",
+  "DNCE119A",
+  "DNCE119B",
+  "KIN100",
+  "KIN101",
+  "KIN102",
+  "KIN104",
+  "KIN109",
+  "KIN110",
+  "KIN111",
+  "KIN119",
+  "KIN125A",
+  "KIN125B",
+  "KIN126A",
+  "KIN126B",
+  "KIN127A",
+  "KIN127B",
+  "KIN127C",
+  "KIN128A",
+  "KIN140A",
+  "KIN140B",
+  "KIN140C",
+  "KIN146B",
+  "KIN146C",
+  "KIN160A",
+  "KIN160B",
+  "KIN163A",
+  "KIN168A",
+  "KIN168B",
+  "KIN185A",
+  "KIN185B",
+  "KIN185C",
+  "KIN200",
+  "KIN201",
+  "KIN202",
+  "KIN203",
+  "KIN204",
+  "PSYCC1000",
+  "PSYCC1000H",
+  "STATC1000",
+  "STATC1000H"
+ ],
+ "source_coverage": 0.887
+}

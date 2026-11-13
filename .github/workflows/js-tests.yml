@@ -330,6 +330,16 @@ jobs:
         run: python3 tests/harvest_no_closed_list_diagnosis_test.py
       - name: Program requirements dated reads (the SQL's aggregate in Python, verify first)
         run: python3 tests/program_requirements_dated_reads_test.py
+      # A record's heading against its program, and a PDF that prints the number after (S644):
+      # the scorer's heading check, the measure's counts, the reader's after-mode binding. Pure stdlib
+      # plus the college reader's own imports.
+      - name: Program requirements heading agreement (heading check, number printed after)
+        run: python3 tests/program_requirements_heading_agreement_test.py
+      # The PDF reader's gated after-reading (S645): the reconcile entry switches it, the count of the
+      # habit only measures, a block binds only where it names its program, a refusal never drops a
+      # passing record, and capture_pdf is driven for both gate states. Constructed catalogs only.
+      - name: Program requirements PDF numbers printed after (gated per college)
+        run: python3 tests/program_requirements_pdf_numbers_after_test.py
       # The course outline census (S372, Sam 2026-10-12): which system each
       # college's course outlines open in, public or sign-in, and whether they
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.

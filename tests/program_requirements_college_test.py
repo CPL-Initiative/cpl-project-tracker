@@ -23,6 +23,7 @@ Each is pinned below against the module's OWN functions, with no browser and no
 network. Run from repo root: python3 tests/program_requirements_college_test.py
 """
 import glob
+import hashlib
 import json
 import os
 import re
@@ -2284,6 +2285,173 @@ finally:
 check(url == HN_PDF and hn_report["procedure_step"]["file"] == HN_PDF and wait == 600 * 1000,
       "the read takes the file the step names: %r" % url)
 
+# College of the Desert's 21 MB catalog PDF was read once (261 s), then dropped part way:
+# two 900 s limits and a read ETIMEDOUT after 1,016 s with 2,400 s allowed (run 43212020852,
+# S647). A step that says resume reads the file in ranges, asking again from the byte a
+# failed range stopped at; a step without it keeps the one whole-file request.
+COD_STEP = {"start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+            "follow": "2026-27 PDF Catalog", "format": "pdf", "timeout_s": 2400}
+check(P.procedure_catalog({"catalog": dict(COD_STEP, resume=True)}).get("resume") is True
+      and "resume" not in P.procedure_catalog({"catalog": COD_STEP})
+      and "resume" not in P.procedure_catalog({"catalog": dict(COD_STEP, resume="yes")}),
+      "only a step whose record says resume: true reads its file in ranges")
+
+
+# The ranged read against a real HTTP server on this machine (http.server in a thread),
+# through a request object shaped like the runner's (get(url, timeout=ms, headers=) ->
+# status, headers, body()). Each path is one host behavior.
+import http.server  # noqa: E402
+import threading  # noqa: E402
+import time as _time  # noqa: E402
+import urllib.error  # noqa: E402
+import urllib.request  # noqa: E402
+
+COD_FILE = b"%PDF-1.4\n" + bytes(range(256)) * 40 + b"\n%%EOF\n"   # 10,256 bytes: three 4,096-byte ranges
+NOT_PDF = b"<html>" + bytes(range(256)) * 40 + b"</html>"
+
+
+class _StubHost(http.server.BaseHTTPRequestHandler):
+    hits = {}
+
+    def log_message(self, *a):
+        pass
+
+    def _send(self, code, body, headers, declared=None):
+        self.send_response(code)
+        for k, v in headers.items():
+            self.send_header(k, v)
+        self.send_header("Content-Length", str(len(body) if declared is None else declared))
+        self.end_headers()
+        self.wfile.write(body)
+        self.wfile.flush()
+
+    def do_GET(self):
+        path = self.path
+        n = _StubHost.hits[path] = _StubHost.hits.get(path, 0) + 1
+        if path == "/forbidden.pdf":
+            return self._send(403, b"no", {"Content-Type": "text/plain"})
+        file = NOT_PDF if path == "/notpdf.pdf" else COD_FILE
+        etag = '"v1"'
+        if path.startswith("/edition") and n >= 2:
+            file, etag = file.replace(b"\x41", b"\x42"), '"v2"'      # the college republished mid-read
+        m = re.fullmatch(r"bytes=(\d+)-(\d+)", self.headers.get("Range") or "")
+        if_range = self.headers.get("If-Range")
+        if path == "/ignore.pdf" or not m or (path == "/edition200.pdf" and if_range and if_range != etag):
+            return self._send(200, file, {"Content-Type": "application/pdf", "ETag": etag})
+        lo, hi = int(m.group(1)), min(int(m.group(2)), len(file) - 1)
+        if path == "/slow.pdf" and n >= 2:
+            _time.sleep(1.5)
+        body, total = file[lo:hi + 1], str(len(file))
+        if path == "/star.pdf":
+            total = "*"
+        if path == "/badrange.pdf" and n >= 2:
+            lo, hi = 0, len(body) - 1                                    # a range that starts elsewhere
+        head = {"Content-Type": "application/pdf", "ETag": etag, "Content-Range": "bytes %d-%d/%s" % (lo, hi, total)}
+        if path == "/drop.pdf" and n == 2:
+            return self._send(206, body[:1000], head, declared=len(body))   # the transfer stops part way
+        if path == "/short.pdf" and n >= 2:
+            return self._send(206, body[:1000], head)                        # cleanly short of its Content-Range
+        return self._send(206, body, head)
+
+
+class _UrlRequest:
+    """The runner's request, as urllib: proxies off, timeout in ms, the body read on return."""
+    opener = urllib.request.build_opener(urllib.request.ProxyHandler({}))
+
+    def get(self, url, timeout=None, headers=None):
+        req = urllib.request.Request(url, headers=headers or {})
+        try:
+            with self.opener.open(req, timeout=(timeout or 60000) / 1000.0) as r:
+                status, hdr, body = r.status, dict(r.headers.items()), r.read()
+        except urllib.error.HTTPError as e:
+            status, hdr, body = e.code, dict(e.headers.items()), e.read()
+        return type("Resp", (), {"status": status, "headers": hdr, "ok": 200 <= status < 300,
+                                 "body": lambda self, b=body: b})()
+
+
+class _StubReader:
+    def __init__(self):
+        self.request, self.delay, self.loads = _UrlRequest(), 4.0, 0
+
+    def _robots_for(self, url):
+        return None
+
+
+_srv = http.server.ThreadingHTTPServer(("127.0.0.1", 0), _StubHost)
+threading.Thread(target=_srv.serve_forever, daemon=True).start()
+BASE = "http://127.0.0.1:%d" % _srv.server_address[1]
+_nosleep = lambda s: None  # noqa: E731
+
+
+def _ranged(path, timeout_ms=30000):
+    try:
+        return P.fetch_ranged(_StubReader(), BASE + path, timeout_ms, size=4096, sleep=_nosleep)
+    except Exception as exc:
+        return {"error": "%s: %s" % (type(exc).__name__, exc)}
+
+
+try:
+    slept = []
+    ok = P.fetch_ranged(_StubReader(), BASE + "/ok.pdf", 30000, size=4096, sleep=slept.append)
+    check(ok.get("body") == COD_FILE and ok["status"] == 206 and slept == [4.0] * 3
+          and ok["ranges"] == {"asked": 3, "failed": 0, "honored": True, "range_bytes": 4096, "total": len(COD_FILE),
+                               "validator": '"v1"', "sha256": hashlib.sha256(COD_FILE).hexdigest()},
+          "Range honored: three ranges, the polite delay before each, the total, validator and sha256 kept: %r"
+          % (ok.get("ranges"),))
+    ign = _ranged("/ignore.pdf")
+    check(ign.get("body") == COD_FILE and ign["status"] == 200 and ign["ranges"]["honored"] is False
+          and ign["ranges"]["sha256"] == hashlib.sha256(COD_FILE).hexdigest(),
+          "Range ignored: the first request's 200 is the whole file, kept as it came: %r" % (ign.get("error"),))
+    drop = _ranged("/drop.pdf")
+    check(drop.get("body") == COD_FILE and drop["ranges"]["asked"] == 4 and drop["ranges"]["failed"] == 1,
+          "a range dropped part way is asked for again from its first byte and the read completes: %r"
+          % (drop.get("ranges") or drop.get("error"),))
+    ed206 = _ranged("/edition206.pdf")
+    ed200 = _ranged("/edition200.pdf")
+    check("body" not in ed206 and "changed mid-read" in ed206["error"]
+          and "body" not in ed200 and "answered 200 after" in ed200["error"],
+          "a new edition mid-read fails it, by validator or by the host's If-Range 200; two are never spliced: %r %r"
+          % (ed206.get("error"), ed200.get("error")))
+    bad = _ranged("/badrange.pdf")
+    star = _ranged("/star.pdf")
+    check("body" not in bad and "when asked from 4096" in bad["error"]
+          and "body" not in star and "no total" in star["error"],
+          "a Content-Range that starts elsewhere, or names no total, fails the read: %r %r"
+          % (bad.get("error"), star.get("error")))
+    short = _ranged("/short.pdf")
+    check("body" not in short and "came short" in short["error"] and _StubHost.hits["/short.pdf"] == 1 + 7,
+          "a range cleanly short of its Content-Range is a failed range, retried six times in a row, then the read fails: %r"
+          % (short.get("error"),))
+    notpdf = _ranged("/notpdf.pdf")
+    check("body" not in notpdf and "not a whole PDF" in notpdf["error"],
+          "bytes that do not start %%PDF and end %%%%EOF are never a read: %r" % (notpdf.get("error"),))
+    t0 = _time.monotonic()
+    slow = _ranged("/slow.pdf", timeout_ms=1000)
+    check("body" not in slow and "TimeoutError" in slow["error"] and _time.monotonic() - t0 < 5,
+          "the read keeps to its overall deadline: %r" % (slow.get("error"),))
+    check(P.fetch_ranged.__defaults__[1] == 6 and P.PDF_RANGE_RETRIES == 6,
+          "the retry budget is six failures of one range in a row")
+    _real_sleep = P.time.sleep
+    P.time.sleep = _nosleep
+    try:
+        dead = P.read_pdf_ranged(_StubReader(), BASE + "/short.pdf", {}, timeout_ms=30000)
+        refused = P.read_pdf_ranged(_StubReader(), BASE + "/forbidden.pdf", {}, timeout_ms=30000)
+        main_refused = P.read_pdf(_StubReader(), BASE + "/forbidden.pdf", {}, timeout_ms=30000)
+    finally:
+        P.time.sleep = _real_sleep
+    check(dead["access"] == "unreachable" and dead["pages"] == [] and "data" not in dead
+          and refused["access"] == "blocked" and refused["status"] == 403 and "ranges" in refused,
+          "a failed ranged read is unreachable, never ok; a refusal is blocked: %r %r"
+          % (dead.get("error"), refused.get("access")))
+    flagged = {"procedure": {"catalog": dict(COD_STEP, resume=True)}}
+    check(C.pdf_fetch(flagged) is P.read_pdf_ranged and C.pdf_fetch({"procedure": {"catalog": COD_STEP}}) is P.read_pdf
+          and C.pdf_fetch({}) is P.read_pdf and main_refused["access"] == "blocked" and "ranges" not in main_refused,
+          "only a flagged college reads in ranges; an unflagged one takes main's one request, with no ranges key")
+finally:
+    _srv.shutdown()
+check(not {"playwright", "pypdf", "pdfminer"} & set(sys.modules),
+      "the ranged read's tests pulled in no runner-only dependency")
+
 # Coursedog prints its list lines with the code unspaced ("• ABT90 - Soil Science", Hartnell's
 # PDF, S409); MAP and COCI space them. Both the coarse net and the exact test read the PDF's form.
 HN_LIST = ("Complete at least 3 of the following courses:\n• ABT90 - Soil Science\n"
@@ -3037,7 +3205,7 @@ finally:
 # Diablo Valley's site links each award as dvc.elumenapp.com/catalog/DVC2026-2027Catalog/
 # program,<slug> (page read 43342288026); the content call catalog,program,<slug> prints the
 # award whole (43342877522); the menu names none (43343491672), so its index is
-# www.dvc.edu/academics/explore-our-programs?page=0..5, 77 areas (43341770461, 43344234543).
+# www.dvc.edu/academics/explore-our-programs?page=0..5, 72 areas (43341770461; counted by 43362895655).
 check(C.el_program_links(SHELL, "2026-2027-Catalog") == [("ag-ed-as-fall-2026", "/"), ("culinary-coa-fall-2026", "/")]
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
       and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT, "/") == EPG,
@@ -3140,6 +3308,68 @@ finally:
     P.load, C.el_fetch = real_load, real_fetch
 check(not loaded and "index" not in rep2["elumen"],
       "with no index step in the procedure record, the college's site is never read")
+
+# ── Diablo Valley's area pages write the slash form too (S645, page read 43363340544) ──
+# Administration of Justice links program,<slug>; Dental Assisting, Music, Psychology, Spanish,
+# Kinesiology and Early Childhood Education link program/<slug> on the same catalog, and the step's
+# program_links names the comma form, so run 43353452924 took none of them (115 not found).
+# The fixture is read 8's own links.
+DVC_LOADS_8 = {
+    DVC_SITE + "?page=0": {"access": "ok", "status": 200, "links": [
+        {"text": "Learn more about\nAdministration of Justice", "href": AREA + "administration-justice"},
+        {"text": "Learn more about\nDental Assisting", "href": AREA + "dental-assisting"},
+        {"text": "Learn more about\nMusic", "href": AREA + "music"}]},
+    DVC_SITE + "?page=1": {"access": "ok", "status": 200, "links": []},
+    AREA + "administration-justice": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science for Transfer - Administration of Justice",
+         "href": DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025"}]},
+    AREA + "dental-assisting": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science - Dental Assisting", "href": DVC_EL + "program/a-s-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Achievement - Dental Assisting",
+         "href": DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026"},
+        {"text": "Certificate of Completion - Exploration of Dentistry",
+         "href": DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025"},
+        {"text": "Dental Hygiene", "href": AREA + "dental-hygiene"}]},
+    AREA + "music": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Arts - Music", "href": DVC_EL + "program/a-a-in-music-fall-2026"},
+        {"text": "Associate in Arts for Transfer - Music", "href": DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"},
+        {"text": "Same award, comma form", "href": DVC_EL + "program,a-a-in-music-fall-2026"},
+        {"text": "Old year", "href": "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020"},
+        {"text": "Another host", "href": "https://lmc.elumenapp.com/catalog/DVC2026-2027Catalog/program/x"}]},
+}
+dvc_asked.clear()
+
+
+def dvc_load_8(reader, url, cache, spa):
+    return dict(DVC_LOADS_8.get(url) or {"access": "ok", "status": 200, "links": []})
+
+
+P.load, C.el_fetch = dvc_load_8, dvc_fetch
+try:
+    rep8 = {}
+    pages8 = C.el_pages_fast(None, DVC_START, rep8, DVC_STEP, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+check([g["url"] for g in pages8] == [
+          DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+          DVC_EL + "program/a-s-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-achievement-in-dental-assisting-fall-2026",
+          DVC_EL + "program/certificate-of-completion-exploration-of-dentistry-fall-2025",
+          DVC_EL + "program/a-a-in-music-fall-2026",
+          DVC_EL + "program/a-a-in-music-for-transfer-fall-2026"]
+      and rep8["elumen"]["index"]["index_programs"] == 6
+      and sum(1 for u in dvc_asked if ",program," in u) == 6,
+      "a comma-form step takes an area's slash-form awards too, each at the address the area writes, "
+      "one award in both forms once, and still no other catalog or host: %s" % [g["url"] for g in pages8])
+rx = re.compile(DVC_STEP["catalog"]["program_links"], re.I)
+check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
+      and C.el_index_link_named(rx, DVC_EL + "program,a-a-in-music-fall-2026")
+      and not C.el_index_link_named(rx, "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020")
+      and not C.el_index_link_named(rx, DVC_EL + "department/music")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/X/program,a")
+      and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/", re.I), "https://h/catalog/X/Program,a"),
+      "program_links names either form of one award's address, and nothing the swap does not make")
 
 if failures:
     print("FAIL: %d" % len(failures))

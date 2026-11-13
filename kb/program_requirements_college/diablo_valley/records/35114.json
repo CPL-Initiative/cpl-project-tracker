@@ -1,0 +1,218 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "35114",
+ "shape": "certificate",
+ "title": "Pre-Apprenticeship",
+ "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-pre-apprenticeship-fall-2025",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6709,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6709,
+    "output_tokens": 1218,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1218,
+  "output_tokens_details": {
+   "thinking_tokens": 284
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0512,
+ "ms": 11046,
+ "seconds": 11.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 8,
+   "listed": 8,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.5,
+    18.5
+   ],
+   "stated": [
+    18.5,
+    18.5
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Pre-Apprenticeship",
+   "measure": "units",
+   "total_units": {
+    "min": 18.5,
+    "max": 18.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "interpret blueprints and specifications.",
+    "apply construction terminology",
+    "use currently available basic personal protective equipment and be able to select appropriate equipment for a given environment.",
+    "identify the most common sources of occupational injury and death",
+    "apply principles of job site safety",
+    "practice professional behavior on the construction site",
+    "demonstrate a clear understanding of many trades, interactions, interdependencies, and how the basic construction process flows from one trade to another"
+   ],
+   "careers": [
+    "building trades"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 18.5,
+     "max": 18.5
+    },
+    "courses": [
+     {
+      "code": "CARER140",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST105",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST215",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KNACT120",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH092",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The description says the certificate 'requires completion of 21 units of study', but the header and the requirements table print a total of 18.5. The 18.5 total is recorded, and the 21-unit figure should be checked.",
+   "The description refers to 'KNAC-120'; the requirements list prints KNACT120, which matches closed-list KNACT 120.",
+   "MATH092 as printed corresponds to closed-list MATH 92.",
+   "Careers: the only career field named is 'entry-level jobs in the building trades', recorded as 'building trades'. Apprenticeship programs, the Laborers' union, government agencies and private-sector employers are destinations, not careers, so they are not recorded.",
+   "The description notes that higher levels of English and mathematics are highly recommended, but it names no specific recommended courses."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

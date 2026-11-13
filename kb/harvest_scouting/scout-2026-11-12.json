@@ -1,0 +1,717 @@
+{
+ "schema": 1,
+ "wave": "scout-2026-11-12",
+ "colleges": [
+  {
+   "college": "College of the Desert",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://catalog.collegeofthedesert.edu/",
+    "found": "https://catalog.collegeofthedesert.edu/",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "courseleaf",
+   "program_index": {
+    "url": "https://catalog.collegeofthedesert.edu/programs/",
+    "programs_listed": 344
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30552",
+     "title": "Psychology",
+     "award": "A.A- T Degree",
+     "url": "https://catalog.collegeofthedesert.edu/programs/social-sciences/aa-psychology-transfer/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "04337",
+     "title": "Plant Science",
+     "award": "A.S. Degree",
+     "url": "https://catalog.collegeofthedesert.edu/programs/agriculture/plant-science-as-employment-preparation/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "04357",
+     "title": "Building Inspection Technology",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://catalog.collegeofthedesert.edu/programs/architecture-environmental-design/building-inspection-technology-certificate-of-achievement/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.collegeofthedesert.edu/general-education-requirements/",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.68,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf",
+     "kind": "pdf",
+     "status": 200
+    },
+    {
+     "url": "https://www.collegeofthedesert.edu/_web-items/documents/pdf-files/catalogs/2026-2027-catalog.pdf",
+     "kind": "college",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "Registry already names the 2026-27 CourseLeaf catalog; tonight's scout UA got 200 on program and GE pages that print courses, units, and totals. The 21,123,131-byte PDF also answered 200 in under a second but has timed out three times for the harvest, so prefer the HTML pages. robots.txt disallows /azindex/ and /catalogcontents/; /programs/ and GE paths are allowed. eLumen is a sign-in. Wayback had no PDF snapshot."
+  },
+  {
+   "college": "College of the Canyons",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+    "found": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "pdf",
+   "program_index": {
+    "url": "https://www.canyons.edu/administration/instruction/catalog/",
+    "programs_listed": 160
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "31354",
+     "title": "Theatre Arts",
+     "award": "A.A- T Degree",
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=298",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "02275",
+     "title": "Administrative Assistant",
+     "award": "A.S. Degree",
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=107",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "02284",
+     "title": "Architectural Drafting",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf#page=73",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf",
+    "prints_units": false
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 1.2,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+     "kind": "pdf",
+     "status": 200
+    },
+    {
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-Errata-v2-508.pdf",
+     "kind": "pdf",
+     "status": 200
+    },
+    {
+     "url": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-Addendum-508.pdf",
+     "kind": "pdf",
+     "status": 200
+    },
+    {
+     "url": "https://www.canyons.edu/academics/schools/ppl/",
+     "kind": "college",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [
+    {
+     "field": "catalog_url",
+     "registry": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v2-508.pdf",
+     "found": "https://www.canyons.edu/_documents/administration/academicaffairs/collegecatalog/2026-27-Catalog-v3-508.pdf"
+    }
+   ],
+   "recommendation": "procedure_change",
+   "note": "The live official 2026-27 catalog is v3 plus errata and addendum (26 October 2026); the registry and last harvest still point at v2 (2 September). Sample course lists above were taken from the v2 read (coverage 1.0); v3 was confirmed 200 but not fully re-extracted, and its page numbers may have moved. 100 of 104 page-not-found programs are noncredit and live on School of PPL topic pages, not only in the credit PDF. Do not use canyons.programmapper.ws. programs_listed 160 is the v2 harvest count, not a recount of v3."
+  },
+  {
+   "college": "Skyline College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://catalog.skylinecollege.edu/current/",
+    "found": "https://catalog.skylinecollege.edu/current/",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "custom",
+   "program_index": {
+    "url": "https://catalog.skylinecollege.edu/current/programs/",
+    "programs_listed": 111
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "32293",
+     "title": "Geology",
+     "award": "A.S. T Degree",
+     "url": "https://catalog.skylinecollege.edu/current/programs/geology-for-transfer-as-t.php",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "35353",
+     "title": "Electrical Engineering",
+     "award": "A.S. Degree",
+     "url": "https://catalog.skylinecollege.edu/current/programs/electrical-engineering-as.php",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "36303",
+     "title": "Biotechnology Manufacturing Technician",
+     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+     "url": "https://catalog.skylinecollege.edu/current/programs/biotechnology-manufacturing-technician-ca.php",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.skylinecollege.edu/current/cal-getc",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.58,
+    "timeouts": 0
+   },
+   "fallback_hosts": [],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "HTML program pages and Cal-GETC answered 200 for the scout UA and print courses with units and totals. robots.txt allows /current/ HTML but disallows paths ending in pdf, so do not fetch catalog.pdf. IIS returns 404 to HEAD and 200 to GET on the same URL\u2014use GET. Many no_closed_list titles still have pages; Anesthesia Technology and Human Resources Management are not in the 2026-27 index."
+  },
+  {
+   "college": "Sierra College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://catalog.sierracollege.edu/",
+    "found": "https://catalog.sierracollege.edu/",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "courseleaf",
+   "program_index": {
+    "url": "https://catalog.sierracollege.edu/departments/",
+    "programs_listed": 111
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30557",
+     "title": "Sociology",
+     "award": "A.A- T Degree",
+     "url": "https://catalog.sierracollege.edu/departments/sociology/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "04271",
+     "title": "Accounting",
+     "award": "A.S. Degree",
+     "url": "https://catalog.sierracollege.edu/departments/business/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "21522",
+     "title": "General Business",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://catalog.sierracollege.edu/departments/business/",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.sierracollege.edu/student-resources/general-education/associate-degree-requirements/",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.74,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://catalog.sierracollege.edu/azindex/",
+     "kind": "publisher",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "CourseLeaf department pages print several awards each, with course lists and total units (Sociology AA-T total 18; business awards have their own totals). sitemap.xml and /programs/ are 404; use /departments/ and /azindex/. robots.txt is itself 404, so there is no disallow. Some PCF titles look renamed or gone (Interdisciplinary Entrepreneurship is Innovation and Entrepreneurship; the drafting-engineering-support slug is 404). programs_listed 111 is awards the harvest located on these department pages; the department index lists 64 departments."
+  },
+  {
+   "college": "Glendale Community College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+    "found": "https://catalog.glendale.edu/",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "coursedog",
+   "program_index": {
+    "url": "https://catalog.glendale.edu/programs",
+    "programs_listed": null
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30814",
+     "title": "Communication Studies",
+     "award": "A.A- T Degree",
+     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=117",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "02548",
+     "title": "Biological Sciences",
+     "award": "A.S. Degree",
+     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "02615",
+     "title": "Flight Attendant",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=91",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.glendale.edu/admissions-academics/graduation-requirements",
+    "prints_units": false
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 2.71,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+     "kind": "pdf",
+     "status": 200
+    },
+    {
+     "url": "https://www.glendale.edu/academics/catalogs/index.html",
+     "kind": "college",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [
+    {
+     "field": "catalog_url",
+     "registry": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
+     "found": "https://catalog.glendale.edu/"
+    },
+    {
+     "field": "catalog_year",
+     "registry": "2025-2026",
+     "found": "2026-2027"
+    },
+    {
+     "field": "catalog_platform",
+     "registry": "pdf",
+     "found": "coursedog"
+    }
+   ],
+   "recommendation": "capture",
+   "note": "Coursedog at catalog.glendale.edu is the Standard 2026-2027 Catalog, but the program index and graduation-requirements page are JavaScript apps, so a static fetch does not print course lists or GE units. The college site still says the 2026-27 PDF is coming soon; the printed 2025-2026 PDF (20,627,651 bytes) remains 200 and is the source of the sample pages above from the last harvest. The college is parked. glendale.elumenapp.com root is a sign-in. Many older PCF titles are not in the 2026-27 payload."
+  },
+  {
+   "college": "City College of San Francisco",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+    "found": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "pdf",
+   "program_index": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf",
+    "programs_listed": 349
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "31726",
+     "title": "Anthropology",
+     "award": "A.A- T Degree",
+     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=353",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "05429",
+     "title": "Architecture",
+     "award": "A.S. Degree",
+     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=299",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "05455",
+     "title": "Computer Programming: C++",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=313",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://www.ccsf.edu/sites/default/files/2026/document/ccsf-catalog-2026-27.pdf#page=214",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.17,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://github.com/user-attachments/files/33599452/ccsf-catalog-2026-27.pdf",
+     "kind": "pdf",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "The PDF path answered 200 for the scout UA (5,635,911 bytes) and robots allow it. /catalog on the same host is a Cloudflare challenge (confirmed earlier this evening); point the reader at the PDF, not the landing page. Sample totals were checked in the saved PDF text (Anthropology Total 15.0, Architecture Total 18.0, C++ Total 16.0). Aviation and several VESL titles are not in this 2026-27 file. programs_listed 349 is the last harvest's found count."
+  },
+  {
+   "college": "Santa Rosa Junior College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+    "found": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "pdf",
+   "program_index": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+    "programs_listed": 273
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "32299",
+     "title": "Journalism",
+     "award": "A.A- T Degree",
+     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=163",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "06590",
+     "title": "CS Graphic Design",
+     "award": "A.A. Degree",
+     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=135",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "06569",
+     "title": "Business: Accountant Assistant",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf#page=260",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.santarosa.edu/sites/catalog.santarosa.edu/files/documents/SRJC%202026-2027%20Catalog%209-24-26%20v1.pdf",
+    "prints_units": false
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.6,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://catalog.santarosa.edu/",
+     "kind": "publisher",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "The 2026-27 PDF answered 200 for the scout UA (7,142,426 bytes, Last-Modified 3:42 PM PT on 8 October 2026) and robots allow it. Sample course lists and totals are from the last harvest (coverage 1.0); the file was not fully re-extracted tonight. www.santarosa.edu/catalog redirects to a 404. Remaining gaps are mostly places_none and a handful of not-found rows, not a blocked host. programs_listed 273 is the last harvest's found count. GE units were not re-verified in the PDF tonight."
+  },
+  {
+   "college": "American River College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+    "found": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "pdf",
+   "program_index": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf",
+    "programs_listed": 368
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30636",
+     "title": "Sociology",
+     "award": "A.A- T Degree",
+     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=928",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "04514",
+     "title": "Horticulture",
+     "award": "A.S. Degree",
+     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=664",
+     "prints_courses_with_units": true,
+     "prints_total": false
+    },
+    {
+     "control_number": "04579",
+     "title": "Hospitality Management: Restaurant Management",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=675",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    }
+   ],
+   "general_education": {
+    "url": "https://arc.losrios.edu/catalog/compiled-catalog/arc-catalog-26-27.pdf#page=96",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.38,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://arc.losrios.edu/2026-2027-official-catalog",
+     "kind": "college",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "This scout UA, which names the CPL Initiative, got 200 on the official PDF (8,010,776 bytes, matching the COBIx pin). robots allow it. The known 404 is keyed to the census token CPLInitiativeCatalogCensus, not to every CPL Initiative user agent; do not change the harvest UA to pass a block. Sample pages were checked in the saved PDF text. No page_not_found remains; the gap is places_none and unit checks. programs_listed 368 is the last harvest's found count."
+  },
+  {
+   "college": "Cosumnes River College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+    "found": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "pdf",
+   "program_index": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf",
+    "programs_listed": 217
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30722",
+     "title": "Sociology",
+     "award": "A.A- T Degree",
+     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=590",
+     "prints_courses_with_units": true,
+     "prints_total": true
+    },
+    {
+     "control_number": "04584",
+     "title": "Veterinary Technology",
+     "award": "A.S. Degree",
+     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=623",
+     "prints_courses_with_units": true,
+     "prints_total": false
+    },
+    {
+     "control_number": "07312",
+     "title": "ECE Infant Specialist",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=306",
+     "prints_courses_with_units": true,
+     "prints_total": false
+    }
+   ],
+   "general_education": {
+    "url": "https://crc.losrios.edu/catalog/compiled-catalog/crc-catalog-26-27.pdf#page=91",
+    "prints_units": true
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.58,
+    "timeouts": 0
+   },
+   "fallback_hosts": [
+    {
+     "url": "https://crc.losrios.edu/2026-2027-official-catalog",
+     "kind": "college",
+     "status": 200
+    }
+   ],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "Same as American River: the scout UA got 200 on the compiled PDF (4,516,516 bytes, Last-Modified 2:58 PM PT on 6 November 2026). Pin that hash on a reread, not Sam's earlier 17 October file. robots allow the path. Sample course lists were checked in the saved PDF text. Two harvest not-found rows already had weak near-misses in this file. programs_listed 217 is the last harvest's found count."
+  },
+  {
+   "college": "Southwestern College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://catalog.swccd.edu/",
+    "found": "https://catalog.swccd.edu/",
+    "status": 202,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "courseleaf",
+   "program_index": {
+    "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/",
+    "programs_listed": 220
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "33132",
+     "title": "Computer Science",
+     "award": "A.S. T Degree",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/computer-science/computer-science-ast/",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    },
+    {
+     "control_number": "05372",
+     "title": "Architecture Technology",
+     "award": "A.S. Degree",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/architecture/as-architecture-technology/",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    },
+    {
+     "control_number": "08179",
+     "title": "Legal Interpretation and Translation--Intermediate (English/Spanish)",
+     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+     "url": "https://catalog.swccd.edu/associate-degree-certificate-programs/legal-interpretation-translation/legal-interpretation-and-translation-intermediate-english-spanish-certificate/",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    }
+   ],
+   "general_education": {
+    "url": "https://catalog.swccd.edu/certificates-certifications-degrees-csuuc-requirements/associate-degree-as-aa-general-education-requirements/",
+    "prints_units": false
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "firewall",
+    "slowest_load_s": 0.71,
+    "timeouts": 0
+   },
+   "fallback_hosts": [],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "blocked",
+   "note": "catalog.swccd.edu answered the scout UA HTTP 202 with an empty body and x-amzn-waf-action: challenge (AWS WAF) on the home path, program pages, the GE page, and robots.txt. robots.txt itself was empty, so this is a firewall challenge, not a robots disallow. A normal browser UA received 200 with the 2026-2027 CourseLeaf HTML earlier this evening; this session did not change its user agent to pass the block. Sample URLs are the harvest's CourseLeaf program pages, but courses and totals were not visible to this UA. programs_listed 220 is the last harvest's found count."
+  },
+  {
+   "college": "Fresno City College",
+   "checked_at": "2026-11-13T01:26:36Z",
+   "catalog_url": {
+    "registry": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+    "found": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+    "status": 200,
+    "catalog_year": "2026-2027"
+   },
+   "platform": "curriqunet",
+   "program_index": {
+    "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/",
+    "programs_listed": 237
+   },
+   "sample_program_pages": [
+    {
+     "control_number": "30742",
+     "title": "Sociology",
+     "award": "A.A- T Degree",
+     "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Sociology-Programs/6785",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    },
+    {
+     "control_number": "01658",
+     "title": "Library Technology",
+     "award": "A.S. Degree",
+     "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Library-Technology-Programs/6723",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    },
+    {
+     "control_number": "01725",
+     "title": "Dietary Service Supervisor",
+     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+     "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-degree-and-certificate-programs/2025-2026-FCC-Catalog---Food-and-Nutrition-Programs/6675",
+     "prints_courses_with_units": false,
+     "prints_total": false
+    }
+   ],
+   "general_education": {
+    "url": null,
+    "prints_units": false
+   },
+   "access": {
+    "robots_allows": true,
+    "challenge": "none",
+    "slowest_load_s": 0.6,
+    "timeouts": 0
+   },
+   "fallback_hosts": [],
+   "shares_host_with": [],
+   "registry_disagrees": [],
+   "recommendation": "page_read",
+   "note": "fresno.curriqunet.com answered 200 with no challenge, and robots.txt is 404 (no disallow). The program URLs from the last harvest return a CurriQunet META JavaScript shell (about 82 visible characters) that does not print courses or totals to a static fetch, so a reader needs a rendered page. College-site /academics/catalog.html is a soft 404. No GE URL was located without crawling. programs_listed 237 is the last harvest's found count."
+  }
+ ]
+}

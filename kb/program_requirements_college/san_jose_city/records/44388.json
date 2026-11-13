@@ -1,0 +1,302 @@
+{
+ "college": "San Jose City College",
+ "control_number": "44388",
+ "shape": "degree",
+ "title": "Motion Graphic Design",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/digital-media-arts/motion-graphic-design-associate20in20science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7365,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7365,
+    "output_tokens": 2287,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2287,
+  "output_tokens_details": {
+   "thinking_tokens": 915
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0752,
+ "ms": 19009,
+ "seconds": 19.4,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 4,
+   "listed": 6,
+   "share": 0.667,
+   "missing": [
+    "COMPUTERGRAP",
+    "DMA1"
+   ],
+   "unexplained": [
+    "COMPUTERGRAP",
+    "DMA1"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 10,
+   "codes": [
+    "CGID1",
+    "CGID2",
+    "CGID21",
+    "CGID22",
+    "CGID23",
+    "CGID25",
+    "CGID3",
+    "CGID5",
+    "CGID6",
+    "CGID7"
+   ],
+   "flagged": [],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    36.0,
+    36.0
+   ],
+   "stated": [
+    36.0,
+    36.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     63.0,
+     63.0
+    ],
+    "stated": [
+     63.0,
+     63.0
+    ],
+    "against": "degree",
+    "ge": [
+     27.0,
+     27.0
+    ],
+    "why": []
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Motion Graphic Design - Associate In Science",
+   "measure": "units",
+   "total_units": {
+    "min": 36,
+    "max": 36
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 63,
+    "max": 63
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Apply the elements and principles of design in finished multimedia projects for a Motion Graphic Design portfolio.",
+    "Analyze video production for motion graphics and create multimedia projects utilizing principles of motion design commonly used in commercials, movie, game, broadcasting and websites.",
+    "Produce video composites combining graphic design, visual storytelling and animation, and applying effects, cinematic techniques and audio for branding, advertisement and entertainment purpose.",
+    "Evaluate and critique digital media projects utilizing relevant terminology and concepts."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Core: Complete 9 Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "CGID 001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 003",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 005",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CGID 025",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Major Electives: Complete 3 Courses",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "CGID 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 012",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 013",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 014",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ART 024",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Closed-list Computer Graphics entries are stored with a truncated subject ('ComputerGrap') and no number; they were matched to catalog CGID codes by title. CGID 003 'Typography' was matched to 'Introduction to Typography and Business Branding' and CGID 021 'Concept Art' to 'Visual Development' by elimination (titles differ); reviewer should verify.",
+   "CGID 001 'Introduction to Digital Media Arts' matched to closed-list DMA 1 by title (apparent renumbering).",
+   "ART 012/013/014/024 matched to closed-list ART 12/13/14/24 (leading zero formatting).",
+   "General Education Requirements (27 units) printed without naming a GE pattern; ge_pattern left null. Degree also requires two courses for the U.S. History, Constitution, and American Ideals requirement.",
+   "Description names industries/skill areas (corporate branding, social media, advertising, tech and entertainment industries, Media Art industry) but no explicit careers or job titles; careers left empty."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

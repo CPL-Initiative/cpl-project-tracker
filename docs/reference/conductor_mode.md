@@ -140,6 +140,27 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S646, and what worked
+
+- The conductor's decision 16(b) put a guard in `file_run`, which every college shares, and the second reader refuted it (decision 18 removed it). This is the third session running that a conductor design rule was wrong and review caught it: a decision that changes a pinned test gets a reader before anything is built on it.
+- A `get` on issue #3111 cost about 20,000 tokens again at the start, against this page's warning: read its comments from the last page and never `get` it.
+- A paid run on a new route (Glendale's `route=slow`) crashed in `capture()` at no cost, because its tests called the reader directly and the reader was briefed in parallel with the dispatch. When the route is new, brief the reader first and dispatch after.
+- The firing had no `send_later`, `list_sessions`, `get_trigger` or `set_session_tags`: one background `sleep` timer per wait brought the session back, and the open PRs and `main` since the handoff were the one-writer check.
+- Worked: resuming a finished worker for the next task on its branch (four worktrees, 5.8 GB free throughout); readers with no worktree reading refs with `git show`; a compare tool before each load; a free capture on the final head before each paid read; workers reading capture results, so the conductor's context stood at 33% after 1 h 45 m.
+
+## What went wrong in S645, and what worked
+
+- The conductor's decision 9 on #3201 had every college PR regenerate and `--check` a committed snapshot, so each would conflict on one 335 KB file; it was corrected to the gap census's pattern (a dispatch-only workflow writes the snapshot).
+- Its title test refused right blocks: in a catalog whose number lines all vote one way, 16 of 17 refused records were right. Bind by the number line there (decisions 13 and 14).
+- The display step writes the whole committed build and ignored `college`, so the first live run went out on one college through a new `display_college` input (#3204), and the whole build followed once the live count matched.
+- A dated-reads job fails its verify unless the branch carries `main`'s latest refresh (Diablo Valley, after #3200): merge `main` first.
+- A wave over colleges whose records are all filed extracts nothing (wave s645a): read the census before naming a wave.
+- Merging a college PR publishes its display build to the page, so COBIx's spot-check comes before the merge.
+- A worker's PR subscribes the session, and each notice costs context: drop the subscription when the PR opens.
+- The disk allowance held three worktrees, so finished workers were resumed for the next task instead of new ones.
+- A `get` on issue #3111 and a full-comment read of the scout file cost about 40,000 tokens at the start: page from the last comment, read files by section.
+- Worked: one college first, a count gate, then the whole build (two runs, 0 errors); a compare gate before each reread; the permission refusal left to Sam, not worked around.
+
 ## What went wrong in S644, and what worked
 
 - A new workflow file cannot be dispatched until it is on `main` (the wave runner, #3191): merge first, then trial on

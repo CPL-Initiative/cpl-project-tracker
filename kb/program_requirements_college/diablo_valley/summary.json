@@ -1,0 +1,145 @@
+{
+ "college": "Diablo Valley College",
+ "programs": 267,
+ "with_closed_list": 244,
+ "found": 214,
+ "extracted": 214,
+ "errors": 0,
+ "passed_machine_checks": 197,
+ "failed": {
+  "coverage": 6,
+  "invented": 4,
+  "arithmetic": 12,
+  "repeated": 0,
+  "outcomes": 0
+ },
+ "cost_usd": 13.85,
+ "cost_per_program": 0.0647,
+ "not_found": [
+  {
+   "control_number": "18369",
+   "title": "CSU General Education Breadth",
+   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31489",
+   "title": "Steamfitting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "31507",
+   "title": "Steamfitting",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "35567",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": {
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/associate-in-art-in-elementary-teacher-education-integrated-programs-for-transfer-fall-2026",
+    "label": {
+     "award": 1,
+     "title": 1.0
+    },
+    "field": "innerText",
+    "coverage": 0.458,
+    "body": 0.458,
+    "content": 0.458,
+    "net": 11,
+    "listed": 24,
+    "why": "coverage 0.46 in innerText, below 0.50",
+    "error": null,
+    "chars": {
+     "body": 4199,
+     "content": 4199,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "38506",
+   "title": "Professional and Technical Workplace Skills",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39371",
+   "title": "Skills for Success in Science, Math, and Engineering Pathways",
+   "award": "Noncredit program",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "39730",
+   "title": "Professional and Technical Workplace Skills",
+   "award": "A.S. Degree",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43481",
+   "title": "Private Security",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "43757",
+   "title": "College Student Success",
+   "award": "Noncredit program",
+   "near_miss": {
+    "url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-competency-in-skills-for-college-success-fall-2023",
+    "label": {
+     "award": 1,
+     "title": 0.667
+    },
+    "field": "innerText",
+    "coverage": 0.0,
+    "body": 0.0,
+    "content": 0.0,
+    "net": 0,
+    "listed": 5,
+    "why": "coarse net: the page's code tokens name 0 of 5 listed courses",
+    "error": null,
+    "chars": {
+     "body": 2592,
+     "content": 2592,
+     "tabs": 0
+    },
+    "tab_panels": []
+   }
+  },
+  {
+   "control_number": "45039",
+   "title": "California General Education Transfer Curriculum (Cal-GETC)",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  },
+  {
+   "control_number": "46431",
+   "title": "UC 7 Course Pattern",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "why": "no page read names the program"
+   }
+  }
+ ],
+ "run": "43379378196"
+}

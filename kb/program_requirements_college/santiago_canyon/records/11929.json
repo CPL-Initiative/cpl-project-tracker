@@ -1,0 +1,342 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "11929",
+ "shape": "degree",
+ "title": "Communications",
+ "award": "A.A. Degree",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8555,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8555,
+    "output_tokens": 2892,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2892,
+  "output_tokens_details": {
+   "thinking_tokens": 1346
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09206,
+ "ms": 23629,
+ "seconds": 23.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 12,
+   "share": 0.833,
+   "missing": [
+    "COMMC1004",
+    "INFO103"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 4,
+   "codes": [
+    "COMM100",
+    "COMM130",
+    "COMM230",
+    "LIBI103"
+   ],
+   "flagged": [
+    "COMM100",
+    "COMM130",
+    "COMM230",
+    "LIBI103"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 12.0-12.0; the catalog states 18.0-18.0"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 11,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Communication, AA",
+   "measure": "units",
+   "total_units": {
+    "min": 18,
+    "max": 18
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate with clarity and accuracy, and in diverse environments",
+    "Act with awareness of self and both the local and global communities of persons",
+    "Think critically, creatively and reflectively",
+    "Learn about self and others, academic and professional issues"
+   ],
+   "careers": [
+    "business",
+    "industry",
+    "government",
+    "social service",
+    "education",
+    "teaching",
+    "public speaking",
+    "consulting",
+    "law",
+    "announcing",
+    "public relations"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Relationship Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 100H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Delivery Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Diversity Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 120H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 225",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "COMM 225H",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Performance Emphasis",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "COMM 130",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "COMM 134",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMM 230",
+      "units": 6,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "LIBI 103",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "COMM C1004",
+    "why": "not in the text; catalog prints COMM 100 Introduction to Interpersonal Communication instead"
+   },
+   {
+    "code": "INFO 103",
+    "why": "not in the text; catalog prints LIBI 103 Advanced Internet Research instead"
+   }
+  ],
+  "notes": [
+   "Conflicting totals: header says 'Unit Range for Completion : 18.0 - 18.0' while 'Program Rules: Communication, AA (Total Units 12.0 - 12.0)'. total_units recorded as 18 from the Unit Range; the four emphasis blocks sum to 12. The extra 6 units may correspond to the final line of the Performance Emphasis ('Any of the above courses not already completed, but no more than two (2) additional units of Communication 130 or Communication 230', printed with Total Units 0.0 - 0.0), which reads like an additional elective requirement from courses above but prints no units; reviewer should check.",
+   "Catalog prints codes without spaces (e.g., COMM100, COMMC1000, LIBI103); recorded with a space between subject and number.",
+   "Section heading reads 'Communication, AA' while the program title given is 'Communications'.",
+   "Outcomes recorded from the description sentence 'Completion of the associate in arts degree in communication prepares students to: (1)...(4)'; they are not under an explicit outcomes heading.",
+   "COMM 100 is not on the closed list; closed list has COMM C1004 Interpersonal Communication, likely the renumbered equivalent. Similarly LIBI 103 may correspond to INFO 103.",
+   "'public speaking' appears twice in the career list; recorded once."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "ad9f16e6f32bba39",
+ "source_codes": [
+  "COMM100H",
+  "COMM101",
+  "COMM111",
+  "COMM120",
+  "COMM120H",
+  "COMM134",
+  "COMM135",
+  "COMM225",
+  "COMM225H",
+  "COMMC1000"
+ ],
+ "source_coverage": 0.833
+}

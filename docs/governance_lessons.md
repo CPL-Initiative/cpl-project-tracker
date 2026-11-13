@@ -262,3 +262,11 @@ The Governance tab paragraph and the CI and concurrency paragraph, verbatim as t
 - Worked: one combined finding list per PR after all readers report; a second reader briefed to refute the fixes
   (it found three more on First Light). COBIx had not commented on any S643 PR by 22:05Z; the conductor posted on
   #3110, #2962 and #3153.
+
+## Moved from the lane (S646)
+
+Verbatim from the lane's #3180 paragraph (*DECIDED and built (the S643 conductor; `d-daily-rebuild-on-changed-input-s643`)*), moved at the S646 checkpoint to bring the lane under its size budget:
+
+Every path counts except the commit step's `not_inputs` (`docs/` and `tests/`): the inputs cannot be listed from the code (builders glob `kb/`, list `.github/workflows` and the root, load modules by path), and several outputs are read again (`kb/unified_titles.json`, `kpi_history.json`), so the run's own outputs are no exemption. The test walks every file the build runs (commands, imports, path-loaded modules, launched scripts, 73 files) and fails when one names a path under either prefix or walks the tree. One rebuild a run, conflict or input: an input that changes again after it is pushed over with `Daily input changed again`, since a red run there would publish nothing for the day. When the input rebuild fails, the run's first build is restored, rebased and pushed with `Daily input rebuild failed; published the first build`, so the day is never worse than before the rule, and the first pass's scrape status is written back; a failed conflict rebuild still exits 1 with nothing pushed. The range is read with `--no-renames` (a moved input lists its old name), and a range that cannot be read counts as a changed input. The cost: a rebuild adds about 6 to 9 minutes, and 45 of the last 49 commits on `main` would have counted as an input change (#3180 review).
+
+Removed from the lane's NEXT (1) at the same checkpoint: "(the first real run after #3180 is 06:17 UTC 2026-11-13)". That run went green: run 43377336314, dispatched on `main` 06:14Z, success 06:23Z.

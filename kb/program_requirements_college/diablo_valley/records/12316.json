@@ -1,0 +1,386 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "12316",
+ "shape": "certificate",
+ "title": "Early Childhood Education: Site Supervisor",
+ "award": "Certificate of Achievement requiring 60+S/90+Q units",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-early-childhood-education-site-supervisor-fall-2024",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7885,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7885,
+    "output_tokens": 3206,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3206,
+  "output_tokens_details": {
+   "thinking_tokens": 1110
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09566,
+ "ms": 25801,
+ "seconds": 26.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 26,
+   "listed": 26,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECE126",
+    "ECE144"
+   ],
+   "flagged": [
+    "ECE126",
+    "ECE144"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    60.0,
+    60.0
+   ],
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": [
+    16.0,
+    16.0
+   ],
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 13,
+   "courses": 0,
+   "count": 13,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Early Childhood Education - Site Supervisor",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 16,
+    "max": 16
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "create a developmentally appropriate integrated curriculum.",
+    "analyze the psychological, physical and cognitive influences on child development.",
+    "identify and apply the principles and ideals of the Early Childhood Education Profession.",
+    "assess how socializing agents and culture impact the lives of children and families.",
+    "evaluate strategies to maximize the health, safety and nutrition of children in early childhood education programs.",
+    "develop techniques which will create sensitivity for various biases.",
+    "implement the observe, plan, document, reflect and assess cycle for curriculum planning.",
+    "develop positive relationships and responsive interactions with young children.",
+    "demonstrate techniques for guiding adults working with young children.",
+    "examine theory and methodology for effective supervision.",
+    "apply ethical codes and licensing standards to practices and policies.",
+    "identify business requirements for children's centers.",
+    "demonstrate knowledge in specialization area."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 37,
+     "max": 37
+    },
+    "courses": [
+     {
+      "code": "ECE123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE144",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECE249",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE250",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE251",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE252",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE253",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus 7 units of degree-applicable electives (suggested courses)",
+    "rule": "choose_units",
+    "minimum": 7,
+    "option_group": null,
+    "stated": {
+     "min": 7,
+     "max": 7
+    },
+    "courses": [
+     {
+      "code": "ECE100",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE101",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE102",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE103",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE104",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE105",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE106",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE110",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE111",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE112",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE113",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE114",
+      "units": 1,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE231",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECE269",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The certificate's printed 'Total 60' includes at least 16 units of general education (37 required + 16 GE + 7 electives = 60), so it is recorded as degree_total with ge_units 16 rather than total_units; the page prints no total excluding GE.",
+   "GE is not a named pattern: at least 16 units with at least 3 units in each of English (only one of English 116, 117, 117A, or 118), Math/Science, Humanities (no History), Social Sciences (no ECE); CLEP/AP not allowed. ge_pattern left null.",
+   "The 7-unit elective block is labeled 'degree-applicable electives (suggested courses)'; the listed courses appear to be suggestions, so any degree-applicable course may possibly satisfy it. Recorded as a choose_units block of 7 as the catalog structures it ('Complete the following number of credits: 7').",
+   "ECE126 and ECE144 are not in the closed list and are marked as catalog additions.",
+   "Codes are printed without a space (e.g., 'ECE123'); they match closed-list entries such as 'ECE 123'.",
+   "The text mentions the 'site supervisor level' of the Child Development Permit Matrix, a permit level rather than a named career; careers left empty.",
+   "Program learning outcomes are printed without a lead-in sentence; recorded as printed."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

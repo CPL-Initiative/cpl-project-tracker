@@ -1,0 +1,280 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "01492",
+ "shape": "degree",
+ "title": "Dental Assisting",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-dental-assisting-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7200,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7200,
+    "output_tokens": 2090,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2090,
+  "output_tokens_details": {
+   "thinking_tokens": 689
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0706,
+ "ms": 16879,
+ "seconds": 17.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 10,
+   "listed": 11,
+   "share": 0.909,
+   "missing": [
+    "DENTL120"
+   ],
+   "unexplained": [
+    "DENTL120"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "DENTL120NC",
+    "ENGLC1000"
+   ],
+   "flagged": [
+    "ENGLC1000"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    33.0,
+    33.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Dental Assisting",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 33
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "DVC General Education",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "act as a member of the dental health team and apply professional, ethical and legal principles while functioning in the role of the Registered Dental Assistant (RDA).",
+    "assume responsibility for prevention of disease transmission utilizing universal precautions in the work environment to protect those entrusted to their care.",
+    "show competence in skills as described in the current California Dental Practice Act. Said professional should perform with a balance of professionalism and sensitivity characteristic of genuine compassionate care.",
+    "exhibit knowledge necessary for successful completion of the California Registered Dental Assistant’s Examination and the National Certified Dental Assistant’s Examination.",
+    "apply critical thinking and self-assessment skills to enhance learning, research, patient care, professional growth, and continued competency.",
+    "integrate and apply health literacy and culturally competent communication skills to oral health care services, academic endeavors, community projects, and professional activities."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "program prerequisite",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 0
+    },
+    "courses": [
+     {
+      "code": "DENTL120NC",
+      "units": 0,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 33,
+     "max": 33
+    },
+    "courses": [
+     {
+      "code": "DENHY124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL171",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL174",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL176",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL180",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL182",
+      "units": 0.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL183",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DENTL184",
+      "units": 7,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Note: strongly recommended prior to entering the program",
+    "rule": "recommended",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL-C1000",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "DENTL120NC (Overview of Dental Assisting - Noncredit, 0 units) is matched to closed-list DENTL 120; the catalog lists it as a program prerequisite with a block total of 0 and prints a noncredit suffix. The closed list stores 0.3 units for it.",
+   "Major requirements sum to 33 units, matching the printed total of 33.",
+   "ENGL-C1000 is only 'strongly recommended' before entering the program (or equivalent); recorded as recommended, units not printed; it is not in the closed list.",
+   "The page prints no degree total and no GE unit figure; it only states DVC General Education requirements must be satisfied.",
+   "The outcomes mention the role of 'Registered Dental Assistant (RDA)'; not recorded as a career since the text does not present it as a career opportunity list. Reviewer may wish to check.",
+   "The outcomes list is printed for the program on the A.S. page and recorded for this award."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

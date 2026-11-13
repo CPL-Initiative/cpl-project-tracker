@@ -1,0 +1,9170 @@
+[
+ {
+  "control_number": "11856",
+  "title": "Biology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "BIOL211",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
+   "title": "Biology, AS",
+   "h1": "Biology, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c6091851c611fa28"
+  },
+  "listed": 6,
+  "text_chars": 874
+ },
+ {
+  "control_number": "11857",
+  "title": "Business Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT102",
+   "BUS100",
+   "BUS120",
+   "BUS150",
+   "MATH150",
+   "MGMT120",
+   "MKTG113"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
+   "title": "Business Administration, AS",
+   "h1": "Business Administration, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91,
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "126342800f3f5702"
+  },
+  "listed": 11,
+  "text_chars": 1828
+ },
+ {
+  "control_number": "11858",
+  "title": "Accounting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT204",
+   "ACCT205",
+   "CIS101",
+   "CIS106",
+   "MGMT122"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+   "title": "Accounting, AS",
+   "h1": "Accounting, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "926f2cfc5e6a7def"
+  },
+  "listed": 7,
+  "text_chars": 1780
+ },
+ {
+  "control_number": "11859",
+  "title": "Business Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "BUS100",
+   "BUS120",
+   "BUS121",
+   "BUS127",
+   "BUS150",
+   "MGMT120",
+   "MGMT121",
+   "MGMT135",
+   "MKTG113"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=92",
+   "title": "Business Management, AS",
+   "h1": "Business Management, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    92
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "541505fd27decbff"
+  },
+  "listed": 11,
+  "text_chars": 2009
+ },
+ {
+  "control_number": "11860",
+  "title": "Entrepreneurship",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT35",
+   "BUS127",
+   "BUS170",
+   "BUS171",
+   "BUS175",
+   "MKTG172"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+   "title": "Entrepreneurship, AS",
+   "h1": "Entrepreneurship, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "dd9a53bd03e91dff"
+  },
+  "listed": 8,
+  "text_chars": 1468
+ },
+ {
+  "control_number": "11861",
+  "title": "Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT102",
+   "BUS100",
+   "BUS120",
+   "BUS121",
+   "BUS150",
+   "MGMT120",
+   "MGMT121",
+   "MGMT122",
+   "MKTG113"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=123",
+   "title": "Management, AS",
+   "h1": "Management, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    123,
+    124
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0ecb92b14fcab32d"
+  },
+  "listed": 11,
+  "text_chars": 1878
+ },
+ {
+  "control_number": "11866",
+  "title": "General Marketing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "BUS100",
+   "BUS127",
+   "MGMT122",
+   "MKTG112",
+   "MKTG113",
+   "MKTG114",
+   "MKTG115",
+   "MKTG135"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=124",
+   "title": "124  / Credit Programs",
+   "h1": "124  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    124,
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f29310256b3cb1d7"
+  },
+  "listed": 9,
+  "text_chars": 12434
+ },
+ {
+  "control_number": "11869",
+  "title": "Real Estate",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11874",
+  "title": "Gemology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEM11",
+   "GEM12",
+   "GEM20",
+   "GEM30",
+   "GEM50"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
+   "title": "Gemology, AS",
+   "h1": "Gemology, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "43c28bb37f173024"
+  },
+  "listed": 5,
+  "text_chars": 817
+ },
+ {
+  "control_number": "11902",
+  "title": "Computer Information Systems",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT102",
+   "BUS150",
+   "CIS103",
+   "CIS106",
+   "CIS110",
+   "CMPR105",
+   "CMPR112",
+   "CMPR120",
+   "CMPR121",
+   "CMPR213",
+   "PBLC110"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+   "title": "Computer Information Systems, AS",
+   "h1": "Computer Information Systems, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3687785679653c73"
+  },
+  "listed": 13,
+  "text_chars": 2253
+ },
+ {
+  "control_number": "11903",
+  "title": "Computer Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CIS111",
+   "CMPR111",
+   "CMPR112",
+   "CMPR120",
+   "CMPR121",
+   "CMPR131",
+   "CMPR149",
+   "CMPR154"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+   "title": "Computer Science, AS",
+   "h1": "Computer Science, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "339088200f186e5c"
+  },
+  "listed": 9,
+  "text_chars": 1433
+ },
+ {
+  "control_number": "11905",
+  "title": "American Sign Language",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.714,
+  "codes_found": [
+   "ASL110",
+   "ASL111",
+   "ASL113",
+   "ASL116",
+   "ASL210",
+   "COMM100H",
+   "COMM120",
+   "COMM120H",
+   "PSYC157",
+   "THEA110"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85",
+   "title": "American Sign Language, CA",
+   "h1": "American Sign Language, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f0c7a65440ad1eaa"
+  },
+  "listed": 14,
+  "text_chars": 1807
+ },
+ {
+  "control_number": "11906",
+  "title": "Land Surveying",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SURV118",
+   "SURV119",
+   "SURV205",
+   "SURV221",
+   "SURV222",
+   "SURV229",
+   "SURV230"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328",
+   "title": "Land Surveying, AS",
+   "h1": "Land Surveying, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7219b78ec2522b0b"
+  },
+  "listed": 7,
+  "text_chars": 1393
+ },
+ {
+  "control_number": "11907",
+  "title": "Water Distribution, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR138",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR146",
+   "WATR155"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+   "title": "Water Distribution, AS",
+   "h1": "Water Distribution, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1337f3af45500f2d"
+  },
+  "listed": 10,
+  "text_chars": 1579
+ },
+ {
+  "control_number": "11908",
+  "title": "Wastewater/Environmental Sanitation, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR146",
+   "WATR148",
+   "WATR150",
+   "WATR151",
+   "WATR153",
+   "WATR155",
+   "WATR242",
+   "WATR247",
+   "WATR252"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+   "title": "Credit Programs / 141",
+   "h1": "Credit Programs / 141",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "840e4cc9f2718ecc"
+  },
+  "listed": 16,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11909",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CIS101",
+   "CIS110",
+   "MGMT122",
+   "PBLC110",
+   "PBLC50",
+   "PBLC61",
+   "PBLC74",
+   "PBLC80"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+   "title": "Control Number: 11909",
+   "h1": "Control Number: 11909",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "484266d64232ebf0"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "11910",
+  "title": "Construction Inspection for Public Works, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.615,
+  "codes_found": [
+   "BUS222",
+   "CIS101",
+   "MGMT122",
+   "PBLC50",
+   "PBLC51",
+   "PBLC61",
+   "PBLC63",
+   "WATR140"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=132",
+   "title": "Construction Inspection for Public",
+   "h1": "Construction Inspection for Public",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c59046d892b7b7e6"
+  },
+  "listed": 13,
+  "text_chars": 2062
+ },
+ {
+  "control_number": "11911",
+  "title": "Art",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.955,
+  "codes_found": [
+   "ART100",
+   "ART100H",
+   "ART101",
+   "ART102",
+   "ART110",
+   "ART111",
+   "ART128",
+   "ART130",
+   "ART131",
+   "ART141",
+   "ART149",
+   "ART195",
+   "ART228",
+   "ART230",
+   "ART231",
+   "ART232",
+   "ART233",
+   "ART241",
+   "ART242",
+   "ART249",
+   "ART250"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=87",
+   "title": "Art, AA",
+   "h1": "Art, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "67209c2fb8c166f6"
+  },
+  "listed": 22,
+  "text_chars": 2599
+ },
+ {
+  "control_number": "11921",
+  "title": "Graphic Design",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.966,
+  "codes_found": [
+   "ART100",
+   "ART100H",
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ART110",
+   "ART111",
+   "ART122",
+   "ART128",
+   "ART129",
+   "ART130",
+   "ART131",
+   "ART141",
+   "ART149",
+   "ART195",
+   "ART221",
+   "ART228",
+   "ART229",
+   "ART230",
+   "ART231",
+   "ART232",
+   "ART233",
+   "ART241",
+   "ART242",
+   "ART249",
+   "ART250",
+   "CMPR105"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88",
+   "title": "Graphic Design, AS",
+   "h1": "Graphic Design, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7453fd9eb4208100"
+  },
+  "listed": 29,
+  "text_chars": 3763
+ },
+ {
+  "control_number": "11925",
+  "title": "Modern Languages",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.977,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ART101",
+   "ART102",
+   "CHNS101",
+   "CHNS102",
+   "COMM100H",
+   "ENGL271",
+   "ENGL272",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "FREN101",
+   "FREN102",
+   "FREN194",
+   "FREN201",
+   "FREN202",
+   "GEOG100",
+   "GEOG100H",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST124",
+   "ITAL101",
+   "ITAL102",
+   "ITAL194",
+   "ITAL195",
+   "ITAL201",
+   "ITAL202",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLT220",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN194",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202",
+   "SPAN213"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
+   "title": "Modern Languages, AA",
+   "h1": "Modern Languages, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126,
+    127
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4d90308903f3bfce"
+  },
+  "listed": 44,
+  "text_chars": 5001
+ },
+ {
+  "control_number": "11928",
+  "title": "English",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.944,
+  "codes_found": [
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+   "title": "English, AA",
+   "h1": "English, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113,
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6f43c5a629c4d6b3"
+  },
+  "listed": 18,
+  "text_chars": 3222
+ },
+ {
+  "control_number": "11929",
+  "title": "Communications",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "COMM100H",
+   "COMM101",
+   "COMM111",
+   "COMM120",
+   "COMM120H",
+   "COMM134",
+   "COMM135",
+   "COMM225",
+   "COMM225H",
+   "COMMC1000"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+   "title": "Credit Programs / 97",
+   "h1": "Credit Programs / 97",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ad9f16e6f32bba39"
+  },
+  "listed": 12,
+  "text_chars": 6370
+ },
+ {
+  "control_number": "11933",
+  "title": "Chemistry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "CHEM280A",
+   "CHEM280B",
+   "MATH180",
+   "MATH180H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+   "title": "Chemistry, AS",
+   "h1": "Chemistry, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "98f15a332157b8d7"
+  },
+  "listed": 7,
+  "text_chars": 1320
+ },
+ {
+  "control_number": "11934",
+  "title": "Earth Sciences",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11938",
+  "title": "Gender, Sexuality, and Women's Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CNSL116",
+   "COMM225",
+   "COMM225H",
+   "ENGL278",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST127",
+   "HIST129",
+   "IDS155",
+   "INFO103",
+   "KIN110",
+   "PHIL108",
+   "POLT221",
+   "PSYC180",
+   "SOC130",
+   "SOC220"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
+   "title": "Gender, Sexuality, and Women’s",
+   "h1": "Gender, Sexuality, and Women’s",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115,
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8d7c2448cc613472"
+  },
+  "listed": 17,
+  "text_chars": 2377
+ },
+ {
+  "control_number": "11943",
+  "title": "Economics",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS150",
+   "ECONC2001",
+   "MATH150",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
+   "title": "Economics, AA",
+   "h1": "Economics, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2c84950d00ba3f33"
+  },
+  "listed": 8,
+  "text_chars": 1411
+ },
+ {
+  "control_number": "11947",
+  "title": "Sociology",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC101",
+   "SOC115",
+   "SOC116",
+   "SOC120",
+   "SOC130",
+   "SOC220",
+   "SOC240",
+   "SOC286",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
+   "title": "Sociology, AA",
+   "h1": "Sociology, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138,
+    139
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "029aa7dba6a54669"
+  },
+  "listed": 19,
+  "text_chars": 2807
+ },
+ {
+  "control_number": "11948",
+  "title": "Cosmetology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM40",
+   "COSM5"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+   "title": "Cosmetology, AS",
+   "h1": "Cosmetology, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f86b228abf53980e"
+  },
+  "listed": 2,
+  "text_chars": 1039
+ },
+ {
+  "control_number": "11981",
+  "title": "Apprenticeship: Power Lineman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11982",
+  "title": "Apprenticeship: Maintenance Mechanic II",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11985",
+  "title": "Apprenticeship: Electricity, Industrial",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL51",
+   "AEL52",
+   "AEL53",
+   "AEL56",
+   "AEL57",
+   "AEL58",
+   "AEL59",
+   "AEL60",
+   "AEL61"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
+   "title": "Apprenticeship Electricity,",
+   "h1": "Apprenticeship Electricity,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f5ab368b9cb79e8e"
+  },
+  "listed": 9,
+  "text_chars": 1536
+ },
+ {
+  "control_number": "11986",
+  "title": "Apprenticeship Carpentry, Millwrighting",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.667,
+  "codes_found": [
+   "AMW21",
+   "AMW22",
+   "AMW23A",
+   "AMW24",
+   "AMW25",
+   "AMW26",
+   "AMW27",
+   "AMW29A",
+   "AMW29B",
+   "AMW31",
+   "AMW32",
+   "AMW33",
+   "AMW37",
+   "AMW39"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+   "title": "Apprenticeship Carpentry,",
+   "h1": "Apprenticeship Carpentry,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "aae2b47b4efacbdc"
+  },
+  "listed": 21,
+  "text_chars": 2360
+ },
+ {
+  "control_number": "11988",
+  "title": "Apprenticeship: Carpentry, Drywall/Lather",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.625,
+  "codes_found": [
+   "ACA71A",
+   "ACA72C",
+   "ACA83",
+   "ACA86A",
+   "ACA89"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
+   "title": "316  / Apprenticeship Programs",
+   "h1": "316  / Apprenticeship Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    316
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b711fc14faabb2c9"
+  },
+  "listed": 8,
+  "text_chars": 6396
+ },
+ {
+  "control_number": "11990",
+  "title": "Apprenticeship: Surveying, Chief of Party",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "11991",
+  "title": "Apprenticeship: Cosmetology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13230",
+  "title": "Apprenticeship: Surveying, Chainman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASV101",
+   "ASV102",
+   "ASV103",
+   "ASV104",
+   "ASV105"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
+   "title": "Apprenticeship Surveying,",
+   "h1": "Apprenticeship Surveying,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    329
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "34a1e6cceb242c2c"
+  },
+  "listed": 5,
+  "text_chars": 1142
+ },
+ {
+  "control_number": "13231",
+  "title": "Apprenticeship: Carpentry, Finish Carpentry",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA24D",
+   "ACA25D",
+   "ACA33B",
+   "ACA33C",
+   "ACA33D",
+   "ACA34A",
+   "ACA34B",
+   "ACA34C",
+   "ACA34D",
+   "ACA35C"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
+   "title": "Apprenticeship Carpentry, Finish",
+   "h1": "Apprenticeship Carpentry, Finish",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    316
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ad404f9d66912244"
+  },
+  "listed": 14,
+  "text_chars": 1643
+ },
+ {
+  "control_number": "13232",
+  "title": "Apprenticeship: Carpentry, Framing",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.933,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA22A",
+   "ACA22B",
+   "ACA22D",
+   "ACA23B",
+   "ACA23C",
+   "ACA24A",
+   "ACA24B",
+   "ACA24C",
+   "ACA24D",
+   "ACA25C",
+   "ACA25D"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+   "title": "Apprenticeship Carpentry, Framing, AS",
+   "h1": "Apprenticeship Carpentry, Framing, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c903d0807834d7af"
+  },
+  "listed": 15,
+  "text_chars": 1999
+ },
+ {
+  "control_number": "13233",
+  "title": "Apprenticeship: Carpentry, Tilt-Up",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "13234",
+  "title": "Apprenticeship Carpentry, Drywall Finisher, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA71A",
+   "ACA71B",
+   "ACA71C",
+   "ACA72A",
+   "ACA74A",
+   "ACA74B",
+   "ACA74C",
+   "ACA76A",
+   "ACA76B",
+   "ACA77A",
+   "ACA77B",
+   "ACA77C",
+   "ACA78C",
+   "ACA78D",
+   "ACA79C",
+   "ACA82C",
+   "ACA91",
+   "ACA92"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
+   "title": "Apprenticeship Carpentry, Drywall",
+   "h1": "Apprenticeship Carpentry, Drywall",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    315
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a02c263f312dd2e4"
+  },
+  "listed": 18,
+  "text_chars": 1823
+ },
+ {
+  "control_number": "13235",
+  "title": "Apprenticeship: Carpentry, Concrete",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "16839",
+  "title": "Apprenticeship: Maintenance Mechanic I",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17686",
+  "title": "Apprenticeship: Operating Engineers, Plant Equipment/Rock, Sand & Gravel Operator",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17687",
+  "title": "Apprenticeship: Operating Engineers, Heavy Duty Repairman",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "17688",
+  "title": "Apprenticeship: Operating Engineers, Special Inspector",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOE71A",
+   "AOE72A",
+   "AOE73A",
+   "AOE74A",
+   "AOE75A",
+   "AOE76A",
+   "AOE77A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=327",
+   "title": "Apprenticeship Operating Engineers,",
+   "h1": "Apprenticeship Operating Engineers,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    327
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2ad01ea4905c7649"
+  },
+  "listed": 7,
+  "text_chars": 1278
+ },
+ {
+  "control_number": "17759",
+  "title": "Elementary Education",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.833,
+  "codes_found": [
+   "BIOL115",
+   "EDUC101",
+   "ENGL270",
+   "ERTH121",
+   "PSC100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+   "title": "Elementary Education, AA",
+   "h1": "Elementary Education, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5f78d07a4c7e5ca7"
+  },
+  "listed": 6,
+  "text_chars": 2048
+ },
+ {
+  "control_number": "18117",
+  "title": "CSU General Education Breadth",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.585,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH101",
+   "ANTH101L",
+   "ANTH104",
+   "ART100",
+   "ART100H",
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ASL110",
+   "ASL111",
+   "ASTR100L",
+   "ASTR102",
+   "ASTR103",
+   "ASTR104",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL115",
+   "BIOL139",
+   "BIOL149",
+   "BIOL177",
+   "BIOL190",
+   "BIOL190L",
+   "BIOL211",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "BIOL290",
+   "CHEM100",
+   "CHEM200A",
+   "CHEM200AH",
+   "CINE103",
+   "CINE104",
+   "CNSL101",
+   "CNSL116",
+   "CNSL150",
+   "COMM100H",
+   "COMM101",
+   "COMM111",
+   "COMM120",
+   "COMM120H",
+   "COMM225",
+   "COMM225H",
+   "COMMC1000",
+   "COMMC1004",
+   "DNCE100",
+   "EDUC101",
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ERTH100",
+   "ERTH100L",
+   "ERTH111",
+   "ERTH120",
+   "ERTH121",
+   "ERTH130",
+   "ERTH160",
+   "ERTH200",
+   "ETHN101",
+   "FREN101",
+   "FREN102",
+   "FREN194",
+   "FREN201",
+   "FREN202",
+   "GEOG101",
+   "GEOG101H",
+   "GEOG101L",
+   "GEOG130",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST127",
+   "HIST132",
+   "HIST133",
+   "HIST152",
+   "HIST162",
+   "HISTC1002",
+   "HISTC1002H",
+   "ITAL101",
+   "ITAL102",
+   "ITAL194",
+   "ITAL195",
+   "ITAL201",
+   "ITAL202",
+   "MATH140",
+   "MATH150",
+   "MATH171",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "MATH295",
+   "MUS101",
+   "MUS101H",
+   "MUS102",
+   "MUS103",
+   "MUS104",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL111",
+   "PHIL112",
+   "PHIL115",
+   "PHIL118",
+   "PHIL120",
+   "PHYS100",
+   "PHYS150A",
+   "PHYS150B",
+   "PHYS250A",
+   "PHYS250B",
+   "PHYS250C",
+   "PSC100",
+   "PSYC200",
+   "READ150",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN110",
+   "SPAN111",
+   "SPAN194",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202",
+   "STATC1000",
+   "STATC1000H",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+   "title": "102  / Credit Programs",
+   "h1": "102  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "63955efb88c7e09a"
+  },
+  "listed": 272,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18118",
+  "title": "IGETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.756,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH101",
+   "ANTH101L",
+   "ANTH104",
+   "ART100",
+   "ART100H",
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ASL110",
+   "ASL111",
+   "ASTR100L",
+   "ASTR102",
+   "ASTR103",
+   "ASTR104",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL115",
+   "BIOL139",
+   "BIOL149",
+   "BIOL177",
+   "BIOL190",
+   "BIOL190L",
+   "BIOL211",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "BIOL290",
+   "CHEM100",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "CINE103",
+   "CINE104",
+   "COMM100H",
+   "COMM101",
+   "COMM111",
+   "COMM120",
+   "COMM120H",
+   "COMM225",
+   "COMM225H",
+   "COMMC1000",
+   "COMMC1004",
+   "DNCE100",
+   "EDUC101",
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ERTH100",
+   "ERTH100L",
+   "ERTH111",
+   "ERTH120",
+   "ERTH121",
+   "ERTH130",
+   "ERTH160",
+   "ERTH200",
+   "ETHN101",
+   "FREN101",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "GEOG101",
+   "GEOG101H",
+   "GEOG101L",
+   "GEOG130",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST127",
+   "HIST132",
+   "HIST133",
+   "HIST152",
+   "HIST162",
+   "HISTC1002",
+   "HISTC1002H",
+   "ITAL101",
+   "ITAL102",
+   "ITAL201",
+   "ITAL202",
+   "MATH140",
+   "MATH150",
+   "MATH171",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "MATH295",
+   "MUS101",
+   "MUS101H",
+   "MUS102",
+   "MUS103",
+   "MUS104",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL110",
+   "PHIL111",
+   "PHIL112",
+   "PHIL115",
+   "PHIL118",
+   "PHIL120",
+   "PHYS100",
+   "PHYS150A",
+   "PHYS150B",
+   "PHYS250A",
+   "PHYS250B",
+   "PHYS250C",
+   "PSC100",
+   "PSYC200",
+   "SPAN101",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN110",
+   "SPAN111",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202",
+   "STATC1000",
+   "STATC1000H",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+   "title": "102  / Credit Programs",
+   "h1": "102  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "63955efb88c7e09a"
+  },
+  "listed": 197,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "18317",
+  "title": "Liberal Arts: Arts, Humanities, and Communication, AA",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.991,
+  "codes_found": [
+   "ART100",
+   "ART100H",
+   "ART102",
+   "ART102H",
+   "ASL110",
+   "ASL111",
+   "ASL116",
+   "ASL210",
+   "CINE103",
+   "CINE104",
+   "CINE107",
+   "CINE108",
+   "COMM100H",
+   "COMM101",
+   "COMM111",
+   "COMM120",
+   "COMM120H",
+   "COMMC1000",
+   "COMMC1004",
+   "DNCE100",
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGL280",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ETHN101",
+   "ETHN110",
+   "ETHN120",
+   "ETHN140",
+   "FREN101",
+   "FREN102",
+   "FREN194",
+   "FREN201",
+   "FREN202",
+   "GSWS101",
+   "GSWS103",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST115",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST125",
+   "HIST127",
+   "HIST129",
+   "HIST130",
+   "HIST132",
+   "HIST133",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "HIST172",
+   "HISTC1002",
+   "HISTC1002H",
+   "ITAL101",
+   "ITAL102",
+   "ITAL194",
+   "ITAL195",
+   "ITAL201",
+   "ITAL202",
+   "MUS101",
+   "MUS101H",
+   "MUS102",
+   "MUS103",
+   "MUS104",
+   "MUS111",
+   "MUS112",
+   "MUS114A",
+   "MUS114B",
+   "MUS213",
+   "MUS214",
+   "NUTR120",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL111",
+   "PHIL112",
+   "PHIL115",
+   "PHIL118",
+   "PHIL120",
+   "READ150",
+   "READ151",
+   "SOC101",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN110",
+   "SPAN111",
+   "SPAN194",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=103",
+   "title": "Liberal Arts: Arts, Humanities, and",
+   "h1": "Liberal Arts: Arts, Humanities, and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    103,
+    104
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e297dadf7a90eb46"
+  },
+  "listed": 114,
+  "text_chars": 9662
+ },
+ {
+  "control_number": "18318",
+  "title": "Liberal Arts: Mathematics and Sciences, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.986,
+  "codes_found": [
+   "ANTH101",
+   "ANTH101L",
+   "ASTR100L",
+   "ASTR102",
+   "ASTR103",
+   "ASTR104",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL115",
+   "BIOL139",
+   "BIOL149",
+   "BIOL190",
+   "BIOL190L",
+   "BIOL211",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "CHEM100",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "CHEM280A",
+   "CHEM280B",
+   "ENGR220",
+   "ENGR225",
+   "ENGR230",
+   "ERTH100",
+   "ERTH100L",
+   "ERTH111",
+   "ERTH120",
+   "ERTH121",
+   "ERTH130",
+   "ERTH160",
+   "ERTH200",
+   "GEOG101",
+   "GEOG101H",
+   "GEOG101L",
+   "GEOG130",
+   "GEOG130H",
+   "MATH105",
+   "MATH140",
+   "MATH150",
+   "MATH150S",
+   "MATH171",
+   "MATH172",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "MATH295",
+   "MATH80C",
+   "MATHC2210E",
+   "PHYS100",
+   "PHYS150A",
+   "PHYS150AC",
+   "PHYS150B",
+   "PHYS150BC",
+   "PHYS250A",
+   "PHYS250B",
+   "PHYS250C",
+   "PSC100",
+   "PSYC200",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H",
+   "WATR155"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=104",
+   "title": "Liberal Arts: Mathematics and",
+   "h1": "Liberal Arts: Mathematics and",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9562dad86e2ae443"
+  },
+  "listed": 72,
+  "text_chars": 7097
+ },
+ {
+  "control_number": "18319",
+  "title": "Liberal Arts: Multi-Cultural Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH104",
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ASL110",
+   "ASL111",
+   "ASL116",
+   "ASL210",
+   "CNSL101",
+   "CNSL116",
+   "CNSL118",
+   "CNSL150",
+   "COMM120",
+   "COMM120H",
+   "COMM225",
+   "COMM225H",
+   "EDUC101",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGL280",
+   "ETHN101",
+   "ETHN110",
+   "ETHN120",
+   "ETHN130",
+   "ETHN140",
+   "FREN101",
+   "FREN102",
+   "FREN194",
+   "FREN201",
+   "FREN202",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST115",
+   "HIST124",
+   "HIST125",
+   "HIST127",
+   "HIST130",
+   "HIST132",
+   "HIST140",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "HIST172",
+   "ITAL101",
+   "ITAL102",
+   "ITAL194",
+   "ITAL195",
+   "ITAL201",
+   "ITAL202",
+   "KIN110",
+   "MUS103",
+   "NUTR120",
+   "PHIL112",
+   "POLT221",
+   "PSYC170",
+   "PSYC180",
+   "SOC101",
+   "SOC220",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN110",
+   "SPAN111",
+   "SPAN194",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=105",
+   "title": "Liberal Arts: Multi-Cultural Studies, AA",
+   "h1": "Liberal Arts: Multi-Cultural Studies, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    105,
+    106
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f063c3760a53b057"
+  },
+  "listed": 76,
+  "text_chars": 6951
+ },
+ {
+  "control_number": "18320",
+  "title": "Liberal Arts: Social and Behavioral Sciences, AA",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.98,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH103",
+   "ANTH104",
+   "APCD110",
+   "APCD221",
+   "CDEV107H",
+   "CDEV110",
+   "CDEV202",
+   "CDEV203",
+   "CDEV221",
+   "CDEVC1000",
+   "CINE105",
+   "CJ101",
+   "CMPR100",
+   "CNSL150",
+   "CNSL165",
+   "COMM120",
+   "COMM120H",
+   "COMM225",
+   "COMM225H",
+   "ECONC2001",
+   "ENGL278",
+   "ETHN101",
+   "ETHN110",
+   "ETHN120",
+   "ETHN140",
+   "GEOG100",
+   "GEOG100H",
+   "GEOG102",
+   "GEOG102H",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST115",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST125",
+   "HIST126",
+   "HIST127",
+   "HIST129",
+   "HIST130",
+   "HIST132",
+   "HIST133",
+   "HIST140",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "HIST172",
+   "HISTC1002",
+   "HISTC1002H",
+   "IDS155",
+   "KIN109",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLT201",
+   "POLT220",
+   "POLT221",
+   "POLT230",
+   "POLT235",
+   "PSYC157",
+   "PSYC160",
+   "PSYC170",
+   "PSYC180",
+   "PSYC190",
+   "PSYC200",
+   "PSYC220",
+   "PSYC230",
+   "PSYC240",
+   "PSYC250",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC101",
+   "SOC115",
+   "SOC116",
+   "SOC120",
+   "SOC125",
+   "SOC125H",
+   "SOC130",
+   "SOC160",
+   "SOC210",
+   "SOC220",
+   "SOC230",
+   "SOC240",
+   "SOC240H",
+   "SOC286",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=106",
+   "title": "Liberal Arts: Social and Behavioral",
+   "h1": "Liberal Arts: Social and Behavioral",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    106,
+    107
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1aae5a9146ae7a5f"
+  },
+  "listed": 99,
+  "text_chars": 9066
+ },
+ {
+  "control_number": "18790",
+  "title": "General Electrician, CA",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "18791",
+  "title": "General Electrician, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 10,
+  "text_chars": 0
+ },
+ {
+  "control_number": "19587",
+  "title": "Apprenticeship: Electricity, Sound Installer",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL21",
+   "AEL22",
+   "AEL23",
+   "AEL24",
+   "AEL25",
+   "AEL26"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+   "title": "Apprenticeship Electricity, Sound",
+   "h1": "Apprenticeship Electricity, Sound",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    324
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "53ef615f19252c5b"
+  },
+  "listed": 6,
+  "text_chars": 1061
+ },
+ {
+  "control_number": "19588",
+  "title": "Apprenticeship: Electricity, Sound Installer",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL21",
+   "AEL22",
+   "AEL23",
+   "AEL24",
+   "AEL25",
+   "AEL26"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+   "title": "Apprenticeship Electricity, Sound",
+   "h1": "Apprenticeship Electricity, Sound",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    324
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4de46460d674700c"
+  },
+  "listed": 6,
+  "text_chars": 1052
+ },
+ {
+  "control_number": "19589",
+  "title": "Apprenticeship: Electricity, Sound Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL21",
+   "AEL22",
+   "AEL23",
+   "AEL24",
+   "AEL25",
+   "AEL26"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=325",
+   "title": "Apprenticeship Electricity, Sound",
+   "h1": "Apprenticeship Electricity, Sound",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    325
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b65910dc25352fef"
+  },
+  "listed": 6,
+  "text_chars": 1205
+ },
+ {
+  "control_number": "19590",
+  "title": "Apprenticeship: Electricity, Sound Technician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL21",
+   "AEL22",
+   "AEL23",
+   "AEL24",
+   "AEL25",
+   "AEL26"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+   "title": "Apprenticeship Electricity, Sound",
+   "h1": "Apprenticeship Electricity, Sound",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    324,
+    325
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c950af2aa89f0b13"
+  },
+  "listed": 6,
+  "text_chars": 1301
+ },
+ {
+  "control_number": "19623",
+  "title": "Water Treatment, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR138",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR145",
+   "WATR149",
+   "WATR150",
+   "WATR155",
+   "WATR242",
+   "WATR247"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+   "title": "Water Treatment, AS",
+   "h1": "Water Treatment, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "22ecd8be460b7933"
+  },
+  "listed": 14,
+  "text_chars": 1893
+ },
+ {
+  "control_number": "19624",
+  "title": "Water Treatment, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR138",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR145",
+   "WATR146",
+   "WATR148",
+   "WATR149",
+   "WATR150",
+   "WATR155",
+   "WATR242",
+   "WATR247"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=142",
+   "title": "Water Treatment, CA",
+   "h1": "Water Treatment, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    142,
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "776100328f0467d2"
+  },
+  "listed": 16,
+  "text_chars": 2014
+ },
+ {
+  "control_number": "19625",
+  "title": "Water Distribution, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR138",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR146",
+   "WATR155"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+   "title": "Water Distribution, CA",
+   "h1": "Water Distribution, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141,
+    142
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7054bcea37f05344"
+  },
+  "listed": 10,
+  "text_chars": 1675
+ },
+ {
+  "control_number": "21631",
+  "title": "Accounting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "ACCT204",
+   "ACCT205",
+   "CIS101",
+   "CIS106",
+   "MGMT122"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=84",
+   "title": "Accounting, CA",
+   "h1": "Accounting, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    84
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "efcf9ae66265ba0b"
+  },
+  "listed": 7,
+  "text_chars": 1796
+ },
+ {
+  "control_number": "21635",
+  "title": "Entrepreneurship",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT35",
+   "BUS127",
+   "BUS170",
+   "BUS171",
+   "BUS175",
+   "MKTG172"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=93",
+   "title": "Entrepreneurship, CA",
+   "h1": "Entrepreneurship, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    93
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "499badff0ea4dbf3"
+  },
+  "listed": 8,
+  "text_chars": 1483
+ },
+ {
+  "control_number": "21639",
+  "title": "Real Estate",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT101",
+   "RE102",
+   "RE103",
+   "RE105",
+   "RE106",
+   "RE110",
+   "RE112",
+   "RE114",
+   "RE116",
+   "RE117"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=135",
+   "title": "Real Estate, CA",
+   "h1": "Real Estate, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    135
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ad59bb02687882b2"
+  },
+  "listed": 10,
+  "text_chars": 1665
+ },
+ {
+  "control_number": "21644",
+  "title": "Gemology",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEM11",
+   "GEM12",
+   "GEM20",
+   "GEM30",
+   "GEM50"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=115",
+   "title": "Gemology, CA",
+   "h1": "Gemology, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "98b45872f1daab8e"
+  },
+  "listed": 5,
+  "text_chars": 825
+ },
+ {
+  "control_number": "21647",
+  "title": "Computer Information Systems",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACCT100",
+   "ACCT101",
+   "ACCT102",
+   "BUS150",
+   "CIS103",
+   "CIS106",
+   "CIS110",
+   "CMPR105",
+   "CMPR112",
+   "CMPR120",
+   "CMPR121",
+   "CMPR213",
+   "PBLC110"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=97",
+   "title": "Computer Information Systems, CA",
+   "h1": "Computer Information Systems, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    97,
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f63275e1f5d087e0"
+  },
+  "listed": 13,
+  "text_chars": 2290
+ },
+ {
+  "control_number": "21649",
+  "title": "Computer Science",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS111",
+   "CMPR111",
+   "CMPR112",
+   "CMPR120",
+   "CMPR121",
+   "CMPR131",
+   "CMPR149",
+   "CMPR154"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+   "title": "Computer Science, CA",
+   "h1": "Computer Science, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7082c656d925eb96"
+  },
+  "listed": 8,
+  "text_chars": 1474
+ },
+ {
+  "control_number": "21651",
+  "title": "Maintenance Mechanic",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21652",
+  "title": "Apprenticeship: Power Lineman",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21653",
+  "title": "Maintenance Electrician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21655",
+  "title": "Apprenticeship: Operating Engineers, Heavy Equipment Operator",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21656",
+  "title": "Apprenticeship: Operating Engineers, Plant Equipment/Rock, Sand & Gravel Operator",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21657",
+  "title": "Apprenticeship: Carpentry, Concrete",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA21E",
+   "ACA22A",
+   "ACA23B",
+   "ACA24A",
+   "ACA24D",
+   "ACA25A",
+   "ACA25D",
+   "ACA26A",
+   "ACA26B",
+   "ACA26C",
+   "ACA26D",
+   "ACA27C",
+   "ACA27D",
+   "ACA28A",
+   "ACA28E",
+   "ACA29A",
+   "ACA29C",
+   "ACA95"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
+   "title": "Apprenticeship Carpentry,",
+   "h1": "Apprenticeship Carpentry,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    315
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "039e3aa0e060247e"
+  },
+  "listed": 21,
+  "text_chars": 2324
+ },
+ {
+  "control_number": "21658",
+  "title": "Apprenticeship: Carpentry, Finish Carpentry",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA24D",
+   "ACA25D",
+   "ACA33B",
+   "ACA33C",
+   "ACA33D",
+   "ACA34A",
+   "ACA34B",
+   "ACA34C",
+   "ACA34D",
+   "ACA35C"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+   "title": "Apprenticeship Carpentry, Finish",
+   "h1": "Apprenticeship Carpentry, Finish",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7fe4cf2ca2715862"
+  },
+  "listed": 14,
+  "text_chars": 1652
+ },
+ {
+  "control_number": "21659",
+  "title": "Apprenticeship: Carpentry, Framing",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA21E",
+   "ACA22A",
+   "ACA22B",
+   "ACA22D",
+   "ACA23B",
+   "ACA23C",
+   "ACA24A",
+   "ACA24B",
+   "ACA24C",
+   "ACA24D",
+   "ACA25C",
+   "ACA25D",
+   "ACA26B",
+   "ACA72A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+   "title": "Apprenticeship Carpentry, Framing, CA",
+   "h1": "Apprenticeship Carpentry, Framing, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2b2a61057d3eb378"
+  },
+  "listed": 17,
+  "text_chars": 2013
+ },
+ {
+  "control_number": "21660",
+  "title": "Apprenticeship: Carpentry, Tilt-Up",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA22A",
+   "ACA22E",
+   "ACA25A",
+   "ACA26B",
+   "ACA29A",
+   "ACA2B",
+   "ACA3A",
+   "ACA4A",
+   "ACA4B",
+   "ACA5A",
+   "ACA5B",
+   "ACA5C"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+   "title": "Apprenticeship Carpentry, Tilt-Up, CA",
+   "h1": "Apprenticeship Carpentry, Tilt-Up, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ed3066f3882cd6a8"
+  },
+  "listed": 15,
+  "text_chars": 2286
+ },
+ {
+  "control_number": "21661",
+  "title": "Apprenticeship: Electricity, Industrial",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL51",
+   "AEL52",
+   "AEL53",
+   "AEL54",
+   "AEL55",
+   "AEL56",
+   "AEL57",
+   "AEL58",
+   "AEL59",
+   "AEL60",
+   "AEL61"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
+   "title": "Apprenticeship Electricity,",
+   "h1": "Apprenticeship Electricity,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f7141d3641927611"
+  },
+  "listed": 11,
+  "text_chars": 1548
+ },
+ {
+  "control_number": "21662",
+  "title": "Apprenticeship: Carpentry, Millwrighting",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.7,
+  "codes_found": [
+   "AMW21",
+   "AMW22",
+   "AMW23A",
+   "AMW24",
+   "AMW25",
+   "AMW26",
+   "AMW27",
+   "AMW29A",
+   "AMW29B",
+   "AMW31",
+   "AMW32",
+   "AMW33",
+   "AMW37",
+   "AMW39"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+   "title": "Apprenticeship Carpentry,",
+   "h1": "Apprenticeship Carpentry,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319,
+    320
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e89a9b3bd6b7fc4a"
+  },
+  "listed": 20,
+  "text_chars": 2467
+ },
+ {
+  "control_number": "21663",
+  "title": "Apprenticeship: Carpentry, Drywall Finisher",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA71A",
+   "ACA71B",
+   "ACA71C",
+   "ACA72A",
+   "ACA74A",
+   "ACA74B",
+   "ACA74C",
+   "ACA76A",
+   "ACA76B",
+   "ACA77A",
+   "ACA77B",
+   "ACA77C",
+   "ACA78C",
+   "ACA78D",
+   "ACA79C",
+   "ACA82C",
+   "ACA91",
+   "ACA92"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=315",
+   "title": "Apprenticeship Carpentry, Drywall",
+   "h1": "Apprenticeship Carpentry, Drywall",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    315
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f019fe249da714f8"
+  },
+  "listed": 18,
+  "text_chars": 1845
+ },
+ {
+  "control_number": "21664",
+  "title": "Apprenticeship: Carpentry, Drywall/Lather",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.522,
+  "codes_found": [
+   "ACA71A",
+   "ACA71B",
+   "ACA71C",
+   "ACA72C",
+   "ACA74A",
+   "ACA74B",
+   "ACA75C",
+   "ACA78B",
+   "ACA79A",
+   "ACA79C",
+   "ACA83",
+   "ACA89"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=316",
+   "title": "316  / Apprenticeship Programs",
+   "h1": "316  / Apprenticeship Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    316
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "b711fc14faabb2c9"
+  },
+  "listed": 23,
+  "text_chars": 6396
+ },
+ {
+  "control_number": "21666",
+  "title": "Apprenticeship: Surveying, Chief of Party",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21667",
+  "title": "Apprenticeship: Surveying, Chainman",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ASV101",
+   "ASV102",
+   "ASV103",
+   "ASV104",
+   "ASV105",
+   "ASV30",
+   "ASV40"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=329",
+   "title": "Apprenticeship Surveying,",
+   "h1": "Apprenticeship Surveying,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    329
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9ada57295550af53"
+  },
+  "listed": 7,
+  "text_chars": 1150
+ },
+ {
+  "control_number": "21668",
+  "title": "Land Surveying",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "SURV118",
+   "SURV119",
+   "SURV205",
+   "SURV221",
+   "SURV222",
+   "SURV229",
+   "SURV230"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=328",
+   "title": "Land Surveying, CA",
+   "h1": "Land Surveying, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    328,
+    329
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7ccbf5a68ae4d9da"
+  },
+  "listed": 7,
+  "text_chars": 1504
+ },
+ {
+  "control_number": "21669",
+  "title": "Wastewater/Environmental Sanitation, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WATR136",
+   "WATR137",
+   "WATR139",
+   "WATR140",
+   "WATR141",
+   "WATR143",
+   "WATR144",
+   "WATR146",
+   "WATR148",
+   "WATR150",
+   "WATR151",
+   "WATR153",
+   "WATR155",
+   "WATR242",
+   "WATR252"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=141",
+   "title": "Wastewater/Environmental",
+   "h1": "Wastewater/Environmental",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    141
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0dbd325c18692c8c"
+  },
+  "listed": 15,
+  "text_chars": 1863
+ },
+ {
+  "control_number": "21670",
+  "title": "Digital Media Arts Graphic Design",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "21673",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "CIS101",
+   "CIS110",
+   "MGMT122",
+   "PBLC110",
+   "PBLC50",
+   "PBLC61",
+   "PBLC74",
+   "PBLC80"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+   "title": "Credit Programs / 131",
+   "h1": "Credit Programs / 131",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132,
+    133,
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "98a674c7f38e9c0c"
+  },
+  "listed": 9,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "21674",
+  "title": "Cosmetology",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "COSM40",
+   "COSM5"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=99",
+   "title": "Cosmetology, CA",
+   "h1": "Cosmetology, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    99
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "326d72c37db96024"
+  },
+  "listed": 2,
+  "text_chars": 1053
+ },
+ {
+  "control_number": "22270",
+  "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL31",
+   "AEL32",
+   "AEL33",
+   "AEL34",
+   "AEL35",
+   "AEL36",
+   "AEL37",
+   "AEL38",
+   "AEL39",
+   "AEL40"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+   "title": "Apprenticeship Electricity, Intelligent",
+   "h1": "Apprenticeship Electricity, Intelligent",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    324
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f5dfa5b2340ae0d0"
+  },
+  "listed": 10,
+  "text_chars": 2344
+ },
+ {
+  "control_number": "22271",
+  "title": "Apprenticeship: Electricity, Intelligent Transportation Systems Electrician",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AEL31",
+   "AEL32",
+   "AEL33",
+   "AEL34",
+   "AEL35",
+   "AEL36",
+   "AEL37",
+   "AEL38",
+   "AEL39",
+   "AEL40"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=323",
+   "title": "Apprenticeship Electricity, Intelligent",
+   "h1": "Apprenticeship Electricity, Intelligent",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    323,
+    324
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6d6b74ebe5276214"
+  },
+  "listed": 10,
+  "text_chars": 2438
+ },
+ {
+  "control_number": "24037",
+  "title": "Construction Laborer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VCNST608",
+   "VCNST611"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Construction Laborer, CC",
+   "h1": "Construction Laborer, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a119a44a43e55d23"
+  },
+  "listed": 2,
+  "text_chars": 560
+ },
+ {
+  "control_number": "24052",
+  "title": "Medical Billing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS119",
+   "VMED90",
+   "VMED91",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Medical Billing, CC",
+   "h1": "Medical Billing, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9cb7197232554c35"
+  },
+  "listed": 4,
+  "text_chars": 954
+ },
+ {
+  "control_number": "24093",
+  "title": "Food Service Manager",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VFOOD10",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+   "title": "Food Service Manager, CC",
+   "h1": "Food Service Manager, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f24eeb51bd68f982"
+  },
+  "listed": 2,
+  "text_chars": 613
+ },
+ {
+  "control_number": "24095",
+  "title": "General Office Clerk",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS118",
+   "VBUS119",
+   "VBUS140",
+   "VBUS260",
+   "VBUS262",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+   "title": "General Office Clerk, CC",
+   "h1": "General Office Clerk, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d6227f3519ba8678"
+  },
+  "listed": 6,
+  "text_chars": 1146
+ },
+ {
+  "control_number": "24097",
+  "title": "Carpenter",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VCNST859",
+   "VCNST953"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Carpenter, CC",
+   "h1": "Carpenter, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5f874a4131dfeb45"
+  },
+  "listed": 2,
+  "text_chars": 616
+ },
+ {
+  "control_number": "24146",
+  "title": "Commercial Textile Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VCLTH477",
+   "VCLTH483"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Commercial Textile Worker, CC",
+   "h1": "Commercial Textile Worker, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "dde24f6fa76d6323"
+  },
+  "listed": 2,
+  "text_chars": 598
+ },
+ {
+  "control_number": "24187",
+  "title": "First-Line Supervisor/Manager, Office & Administrative Support Workers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS103",
+   "VBUS118",
+   "VBUS260",
+   "VBUS262",
+   "VBUS304"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+   "title": "First-Line Supervisor/",
+   "h1": "First-Line Supervisor/",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "75d584f22c69e0f9"
+  },
+  "listed": 5,
+  "text_chars": 1154
+ },
+ {
+  "control_number": "24191",
+  "title": "ESL for Citizenship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL120",
+   "ESL303"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL for Citizenship, COM",
+   "h1": "ESL for Citizenship, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7af04482745d8b66"
+  },
+  "listed": 2,
+  "text_chars": 506
+ },
+ {
+  "control_number": "24195",
+  "title": "ESL Intermediate Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL570",
+   "ESL580"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL Intermediate Communication,",
+   "h1": "ESL Intermediate Communication,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b63dd687090caecb"
+  },
+  "listed": 2,
+  "text_chars": 639
+ },
+ {
+  "control_number": "24196",
+  "title": "ESL Intermediate Writing, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL501",
+   "ESL502"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Intermediate Writing, COM",
+   "h1": "ESL Intermediate Writing, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "95376cfe6ca20272"
+  },
+  "listed": 2,
+  "text_chars": 653
+ },
+ {
+  "control_number": "24198",
+  "title": "Vocational ESL",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL510",
+   "ESL520"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "Vocational ESL, COM",
+   "h1": "Vocational ESL, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f055e74160c8e988"
+  },
+  "listed": 2,
+  "text_chars": 445
+ },
+ {
+  "control_number": "24230",
+  "title": "ESL Literacy, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL300",
+   "ESL606"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Literacy, COM",
+   "h1": "ESL Literacy, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f89c906544186ecd"
+  },
+  "listed": 2,
+  "text_chars": 719
+ },
+ {
+  "control_number": "24233",
+  "title": "ESL Beginning Multilevel",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL440"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL Beginning Multilevel, COM",
+   "h1": "ESL Beginning Multilevel, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "361a7d1ccac980f0"
+  },
+  "listed": 1,
+  "text_chars": 611
+ },
+ {
+  "control_number": "24234",
+  "title": "ESL Intermediate Multilevel, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL303",
+   "ESL500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Intermediate Multilevel, COM",
+   "h1": "ESL Intermediate Multilevel, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "857573113aa3308e"
+  },
+  "listed": 2,
+  "text_chars": 609
+ },
+ {
+  "control_number": "24285",
+  "title": "English as a Second Language Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL302",
+   "ESL303",
+   "ESL304"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+   "title": "English as a Second Language",
+   "h1": "English as a Second Language",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8785e311d8ca378a"
+  },
+  "listed": 3,
+  "text_chars": 888
+ },
+ {
+  "control_number": "24420",
+  "title": "Web Associate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS10",
+   "VBUS107",
+   "VBUS242",
+   "VBUS302",
+   "VBUS303"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Web Associate, CC",
+   "h1": "Web Associate, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e17ce0fa98d8c054"
+  },
+  "listed": 5,
+  "text_chars": 1014
+ },
+ {
+  "control_number": "24426",
+  "title": "Executive Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "VBUS117",
+   "VBUS13",
+   "VBUS260",
+   "VBUS261",
+   "VBUS262",
+   "VBUS304",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+   "title": "Executive Assistant, CC",
+   "h1": "Executive Assistant, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264,
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ec3abbd518f82a44"
+  },
+  "listed": 8,
+  "text_chars": 1221
+ },
+ {
+  "control_number": "24427",
+  "title": "Customer Service Representative",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS119",
+   "VBUS260",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+   "title": "Customer Service Representative, CC",
+   "h1": "Customer Service Representative, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "254294cb5fc1f020"
+  },
+  "listed": 3,
+  "text_chars": 1003
+ },
+ {
+  "control_number": "24467",
+  "title": "Secondary Education/GED Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "30644",
+  "title": "ESL Beginning, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL302"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL Beginning, COM",
+   "h1": "ESL Beginning, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3de4cefd40bfb729"
+  },
+  "listed": 1,
+  "text_chars": 568
+ },
+ {
+  "control_number": "30646",
+  "title": "ESL Intermediate, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL303",
+   "ESL304"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Intermediate, COM",
+   "h1": "ESL Intermediate, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "fdc06276dbd01bd7"
+  },
+  "listed": 2,
+  "text_chars": 595
+ },
+ {
+  "control_number": "30647",
+  "title": "Enhanced Intermediate ESL Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL260",
+   "ESL502"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "Enhanced Intermediate ESL Skills,",
+   "h1": "Enhanced Intermediate ESL Skills,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "3c48b51545066e40"
+  },
+  "listed": 2,
+  "text_chars": 710
+ },
+ {
+  "control_number": "30690",
+  "title": "Enhanced Beginning ESL Skills, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL250",
+   "ESL530"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "Enhanced Beginning ESL Skills,",
+   "h1": "Enhanced Beginning ESL Skills,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "176bc4ba0f37dec6"
+  },
+  "listed": 2,
+  "text_chars": 559
+ },
+ {
+  "control_number": "30985",
+  "title": "Receptionist/Information Clerk",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS121",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Receptionist/Information Clerk, CC",
+   "h1": "Receptionist/Information Clerk, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "60fd3971bae00e2f"
+  },
+  "listed": 2,
+  "text_chars": 879
+ },
+ {
+  "control_number": "31039",
+  "title": "Physics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "PHYS250A",
+   "PHYS250B",
+   "PHYS250C"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
+   "title": "Physics, AS-T",
+   "h1": "Physics, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2ae68ba0b89666e5"
+  },
+  "listed": 7,
+  "text_chars": 1199
+ },
+ {
+  "control_number": "31040",
+  "title": "Mathematics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPR112",
+   "CMPR120",
+   "CMPR213",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "MATH295",
+   "PHYS250A",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=126",
+   "title": "Mathematics, AS-T",
+   "h1": "Mathematics, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6960c5864f84b209"
+  },
+  "listed": 13,
+  "text_chars": 2035
+ },
+ {
+  "control_number": "31041",
+  "title": "Psychology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.966,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH101",
+   "BIOL109",
+   "BIOL109H",
+   "PHIL110",
+   "PHIL111",
+   "PSYC110",
+   "PSYC114",
+   "PSYC118",
+   "PSYC157",
+   "PSYC160",
+   "PSYC170",
+   "PSYC180",
+   "PSYC190",
+   "PSYC200",
+   "PSYC220",
+   "PSYC230",
+   "PSYC240",
+   "PSYC250",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC240",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
+   "title": "Psychology, AA-T",
+   "h1": "Psychology, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129,
+    130
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "36353bec692084a4"
+  },
+  "listed": 29,
+  "text_chars": 3884
+ },
+ {
+  "control_number": "31107",
+  "title": "Apprenticeship: Carpentry, Acoustical Tile",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31366",
+  "title": "English",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
+   "title": "English, AA-T",
+   "h1": "English, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f50064ecaced789f"
+  },
+  "listed": 16,
+  "text_chars": 2928
+ },
+ {
+  "control_number": "31503",
+  "title": "Apprenticeship: Operating Engineers, Construction Safety Inspector",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31574",
+  "title": "Apprenticeship: Operating Engineers, Construction Safety Inspector",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "AOE11",
+   "AOE12",
+   "AOE13",
+   "AOE14",
+   "AOE15",
+   "AOE16"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=326",
+   "title": "Apprenticeship Operating Engineers,",
+   "h1": "Apprenticeship Operating Engineers,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    326
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "17581fc360282e46"
+  },
+  "listed": 6,
+  "text_chars": 1392
+ },
+ {
+  "control_number": "31588",
+  "title": "Apprenticeship: Carpentry, Pile Driver",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACPD21",
+   "ACPD24A",
+   "ACPD26A",
+   "ACPD27A",
+   "ACPD28A",
+   "ACPD29A",
+   "ACPD30",
+   "ACPD31A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
+   "title": "Apprenticeship Carpentry, Pile",
+   "h1": "Apprenticeship Carpentry, Pile",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2c5445f3c43f5dca"
+  },
+  "listed": 8,
+  "text_chars": 2834
+ },
+ {
+  "control_number": "31589",
+  "title": "Apprenticeship: Carpentry, Pile Driver",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACPD21",
+   "ACPD24A",
+   "ACPD26A",
+   "ACPD27A",
+   "ACPD28A",
+   "ACPD29A",
+   "ACPD30",
+   "ACPD31A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=320",
+   "title": "Apprenticeship Carpentry, Pile",
+   "h1": "Apprenticeship Carpentry, Pile",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    320
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "87aacd9e803ab0ed"
+  },
+  "listed": 8,
+  "text_chars": 2788
+ },
+ {
+  "control_number": "31601",
+  "title": "Adult High School Diploma",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABE23",
+   "ABE24",
+   "ABE25",
+   "ABE26",
+   "ABE9",
+   "HSART20",
+   "HSART70",
+   "HSART828",
+   "HSART837",
+   "HSENG20",
+   "HSENG52",
+   "HSENG53",
+   "HSENG66",
+   "HSENG67",
+   "HSENG68",
+   "HSENG72",
+   "HSENG76",
+   "HSENG83",
+   "HSENG84",
+   "HSENG85",
+   "HSENG98",
+   "HSMTH156",
+   "HSMTH157",
+   "HSMTH159",
+   "HSMTH163",
+   "HSMTH164",
+   "HSMTH167",
+   "HSMTH168",
+   "HSOTH202",
+   "HSOTH50",
+   "HSRDG94",
+   "HSS338",
+   "HSS770",
+   "HSSCI168",
+   "HSSCI169",
+   "HSSCI190",
+   "HSSCI191",
+   "HSSCI192",
+   "HSSCI193",
+   "HSSOC215",
+   "HSSOC218",
+   "HSSOC219",
+   "HSSOC222",
+   "HSSOC229",
+   "HSSOC230",
+   "VBUS118",
+   "VBUS260"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=263",
+   "title": "Adult High School Diploma, DIPL",
+   "h1": "Adult High School Diploma, DIPL",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    263,
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ae58d1229f79aab2"
+  },
+  "listed": 47,
+  "text_chars": 5737
+ },
+ {
+  "control_number": "31705",
+  "title": "Apprenticeship: Carpentry, Plastering",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31706",
+  "title": "Apprenticeship: Carpentry, Plastering",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA71A",
+   "ACA71B",
+   "ACA72B",
+   "ACA74A",
+   "ACA74B",
+   "ACA74C",
+   "ACA82B",
+   "ACPL23",
+   "ACPL25",
+   "ACPL26",
+   "ACPL27",
+   "ACPL28",
+   "ACPL29",
+   "ACPL30",
+   "ACPL31",
+   "ACPL32",
+   "ACPL33",
+   "ACPL34",
+   "AMF30"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=321",
+   "title": "Apprenticeship Carpentry,",
+   "h1": "Apprenticeship Carpentry,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    321
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0ad0df0132a794b3"
+  },
+  "listed": 19,
+  "text_chars": 2100
+ },
+ {
+  "control_number": "31715",
+  "title": "Studio Arts",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ART110",
+   "ART111",
+   "ART128",
+   "ART130",
+   "ART131",
+   "ART141",
+   "ART149",
+   "ART195",
+   "ART230",
+   "ART231",
+   "ART232",
+   "ART233",
+   "ART241",
+   "ART242"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=88",
+   "title": "Studio Arts, AA-T",
+   "h1": "Studio Arts, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    88
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "fb9a342bb2250f4e"
+  },
+  "listed": 18,
+  "text_chars": 2316
+ },
+ {
+  "control_number": "31720",
+  "title": "History",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.966,
+  "codes_found": [
+   "GEOG100",
+   "GEOG100H",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST115",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST125",
+   "HIST127",
+   "HIST129",
+   "HIST132",
+   "HIST133",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "HIST172",
+   "HISTC1002",
+   "HISTC1002H",
+   "PHIL118",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLT220",
+   "POLT221",
+   "POLT230"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
+   "title": "History, AA-T",
+   "h1": "History, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0cbeee891c96bf35"
+  },
+  "listed": 29,
+  "text_chars": 3530
+ },
+ {
+  "control_number": "31730",
+  "title": "Political Science",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ECONC2001",
+   "HIST101",
+   "HIST101H",
+   "POLSC1000",
+   "POLSC1000H",
+   "POLT201",
+   "POLT220",
+   "POLT221",
+   "POLT230",
+   "SOC100",
+   "SOC100H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
+   "title": "Political Science, AA-T",
+   "h1": "Political Science, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128,
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d38aa00dbdcab426"
+  },
+  "listed": 14,
+  "text_chars": 2112
+ },
+ {
+  "control_number": "31735",
+  "title": "Elementary Teacher Education",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.98,
+  "codes_found": [
+   "ANTH104",
+   "ART100",
+   "ART100H",
+   "BIOL115",
+   "COMMC1000",
+   "DNCE100",
+   "EDUC101",
+   "EDUC110",
+   "EDUC200",
+   "EDUC206",
+   "ENGL231",
+   "ENGL232",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ERTH121",
+   "ETHN101",
+   "FREN102",
+   "GEOG100",
+   "GEOG100H",
+   "HIST101",
+   "HIST101H",
+   "HIST120",
+   "HIST120H",
+   "HIST133",
+   "MATH203",
+   "MUS101",
+   "MUS101H",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL112",
+   "POLSC1000",
+   "POLSC1000H",
+   "PSC100",
+   "SPAN102",
+   "STATC1000",
+   "STATC1000H",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+   "title": "Elementary Teacher Education, AA-T",
+   "h1": "Elementary Teacher Education, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111,
+    112
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c698dd41ba11cff9"
+  },
+  "listed": 49,
+  "text_chars": 5874
+ },
+ {
+  "control_number": "31847",
+  "title": "Environmental Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "MGMT122",
+   "PBLC50",
+   "PBLC61",
+   "PBLC67",
+   "PBLC68",
+   "PBLC69"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
+   "title": "Environmental Management, AS",
+   "h1": "Environmental Management, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a256b15b7f6d90ef"
+  },
+  "listed": 7,
+  "text_chars": 1940
+ },
+ {
+  "control_number": "31848",
+  "title": "Environmental Management",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIS101",
+   "MGMT122",
+   "PBLC50",
+   "PBLC61",
+   "PBLC67",
+   "PBLC68",
+   "PBLC69"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=133",
+   "title": "Environmental Management, CA",
+   "h1": "Environmental Management, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6819e8fd9915582b"
+  },
+  "listed": 7,
+  "text_chars": 1858
+ },
+ {
+  "control_number": "32042",
+  "title": "Philosophy",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL110H",
+   "PHIL111",
+   "PHIL112",
+   "PHIL115",
+   "PHIL118",
+   "PHIL120"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=128",
+   "title": "Philosophy, AA-T",
+   "h1": "Philosophy, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5514be0fff37aef6"
+  },
+  "listed": 10,
+  "text_chars": 2182
+ },
+ {
+  "control_number": "32043",
+  "title": "Anthropology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH101",
+   "ANTH103",
+   "ANTH104",
+   "COMM225",
+   "COMM225H",
+   "ENGL271",
+   "ENGL272",
+   "ERTH100",
+   "ETHN101",
+   "ETHN130",
+   "GEOG100",
+   "GEOG100H",
+   "GEOG102",
+   "GSWS101",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST124",
+   "MUS102",
+   "PHIL112",
+   "PSYC170",
+   "SOC100",
+   "SOC100H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=86",
+   "title": "Anthropology, AA-T",
+   "h1": "Anthropology, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    86,
+    87
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d649b8d185d9f63a"
+  },
+  "listed": 28,
+  "text_chars": 4096
+ },
+ {
+  "control_number": "32044",
+  "title": "Geology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "ERTH100",
+   "ERTH100L",
+   "ERTH111",
+   "MATH180",
+   "MATH180H",
+   "MATH185"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116",
+   "title": "Geology, AS-T",
+   "h1": "Geology, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "38c4d50d2f2a515d"
+  },
+  "listed": 9,
+  "text_chars": 2163
+ },
+ {
+  "control_number": "32045",
+  "title": "Spanish",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH104",
+   "COMM120",
+   "COMM120H",
+   "ENGL279",
+   "ETHN101",
+   "ETHN130",
+   "FREN101",
+   "GEOG100",
+   "GEOG100H",
+   "GSWS101",
+   "HIST124",
+   "HIST152",
+   "ITAL101",
+   "SOC100",
+   "SOC100H",
+   "SOC101",
+   "SOC116",
+   "SOC220",
+   "SPAN101",
+   "SPAN101A",
+   "SPAN101B",
+   "SPAN101H",
+   "SPAN102",
+   "SPAN110",
+   "SPAN111",
+   "SPAN194",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "SPAN202",
+   "SPAN213"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=139",
+   "title": "Spanish, AA-T",
+   "h1": "Spanish, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    139,
+    140
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8b63af5855de354c"
+  },
+  "listed": 33,
+  "text_chars": 4724
+ },
+ {
+  "control_number": "32319",
+  "title": "Construction Inspection for Public Works, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.615,
+  "codes_found": [
+   "BUS222",
+   "CIS101",
+   "MGMT122",
+   "PBLC50",
+   "PBLC61",
+   "PBLC63",
+   "PBLC70",
+   "WATR140"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=131",
+   "title": "Construction Inspection for Public",
+   "h1": "Construction Inspection for Public",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    131,
+    132
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "189e3da1ff2acf85"
+  },
+  "listed": 13,
+  "text_chars": 2145
+ },
+ {
+  "control_number": "32364",
+  "title": "Geography",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ERTH100",
+   "GEOG100",
+   "GEOG100H",
+   "GEOG101",
+   "GEOG101L",
+   "GEOG102",
+   "GEOG130",
+   "GEOG140",
+   "GEOG150",
+   "GEOG155"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=116",
+   "title": "Geography AA-T",
+   "h1": "Geography AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    116
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "826fecb05e03cef3"
+  },
+  "listed": 12,
+  "text_chars": 3326
+ },
+ {
+  "control_number": "32434",
+  "title": "Kinesiology",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.882,
+  "codes_found": [
+   "BIOL239",
+   "BIOL249",
+   "CHEM200A",
+   "CHEM200AH",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "KIN100",
+   "KIN101",
+   "KIN119",
+   "KIN125A",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PHYS150A",
+   "PHYS250A",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122",
+   "title": "Kinesiology, AA-T",
+   "h1": "Kinesiology, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122,
+    123
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b1f323a7be9d20f8"
+  },
+  "listed": 51,
+  "text_chars": 5463
+ },
+ {
+  "control_number": "32598",
+  "title": "Biotechnology Biomanufacturing Technician",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "32599",
+  "title": "Biotechnology",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL190",
+   "BIOL190L",
+   "BIOL192",
+   "BIOL193",
+   "BIOL194",
+   "BIOL202",
+   "BIOL211",
+   "BIOL229",
+   "CHEM200A",
+   "CHEM200AH",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+   "title": "Biotechnology, AS",
+   "h1": "Biotechnology, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c86387da818c4d17"
+  },
+  "listed": 13,
+  "text_chars": 2374
+ },
+ {
+  "control_number": "32602",
+  "title": "General Biotechnology Technician",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "BIOL139",
+   "BIOL177",
+   "BIOL190",
+   "BIOL190L",
+   "BIOL192",
+   "BIOL193",
+   "BIOL194",
+   "BIOL197",
+   "BIOL202",
+   "BIOL211",
+   "BIOL229",
+   "BIOL290",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+   "title": "General Biotechnology Technician, CA",
+   "h1": "General Biotechnology Technician, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90,
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d0bfdb6f0764f25e"
+  },
+  "listed": 16,
+  "text_chars": 2389
+ },
+ {
+  "control_number": "32648",
+  "title": "Biotechnology Laboratory Technician: Food Safety",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL190",
+   "BIOL190L",
+   "BIOL196",
+   "BIOL211"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+   "title": "Biotechnology Laboratory",
+   "h1": "Biotechnology Laboratory",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b3fc1ba6fe28f1e5"
+  },
+  "listed": 4,
+  "text_chars": 1157
+ },
+ {
+  "control_number": "32968",
+  "title": "Economics",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS150",
+   "ECONC2001",
+   "MATH150",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=110",
+   "title": "Economics, AA-T",
+   "h1": "Economics, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    110
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f8e89b5bf8851eea"
+  },
+  "listed": 14,
+  "text_chars": 2492
+ },
+ {
+  "control_number": "33137",
+  "title": "ESL Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL306"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL Advanced, COM",
+   "h1": "ESL Advanced, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a8afe0afe9c044e0"
+  },
+  "listed": 1,
+  "text_chars": 546
+ },
+ {
+  "control_number": "33161",
+  "title": "Multi-Media Artists and Animators",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS101",
+   "VBUS105",
+   "VBUS109",
+   "VBUS120",
+   "VBUS96"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+   "title": "Multi-Media Artists and Animators, CC",
+   "h1": "Multi-Media Artists and Animators, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265,
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "dcdc1a21f62bdfb5"
+  },
+  "listed": 5,
+  "text_chars": 875
+ },
+ {
+  "control_number": "33223",
+  "title": "Astronomy",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33379",
+  "title": "Computer Science",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPR121",
+   "CMPR131",
+   "CMPR149",
+   "CMPR154",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "PHYS250A",
+   "PHYS250B"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+   "title": "Computer Science, AS-T",
+   "h1": "Computer Science, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f8650c307ee95fc1"
+  },
+  "listed": 9,
+  "text_chars": 1689
+ },
+ {
+  "control_number": "33420",
+  "title": "Adult Basic Education/Adult Secondary Education Reading",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33421",
+  "title": "Adult Basic Education",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33422",
+  "title": "Adult Basic Education/Adult Secondary Education Mathematics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABE25",
+   "HSMTH159",
+   "HSS500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+   "title": "Adult Basic Education/Adult",
+   "h1": "Adult Basic Education/Adult",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    255
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "56ba4eda6e70121a"
+  },
+  "listed": 3,
+  "text_chars": 708
+ },
+ {
+  "control_number": "33555",
+  "title": "Adult Basic Education/Adult Secondary Education Writing",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33561",
+  "title": "Shelter Dog Training",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VDOG20",
+   "VDOG30"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Shelter Dog Training, CC",
+   "h1": "Shelter Dog Training, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2433cd2c1df51008"
+  },
+  "listed": 2,
+  "text_chars": 680
+ },
+ {
+  "control_number": "33562",
+  "title": "Warehousing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VWHS10",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Warehousing, CC",
+   "h1": "Warehousing, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "104a0a5653b8010e"
+  },
+  "listed": 2,
+  "text_chars": 1049
+ },
+ {
+  "control_number": "33941",
+  "title": "High School Equivalency Test (HiSET)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABE9",
+   "HSS400"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "High School Equivalency Test",
+   "h1": "High School Equivalency Test",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5451bd2889904a25"
+  },
+  "listed": 2,
+  "text_chars": 636
+ },
+ {
+  "control_number": "33942",
+  "title": "Student Leadership",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "35110",
+  "title": "Biology",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL211",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "MATH180",
+   "MATH180H",
+   "PHYS150A",
+   "PHYS150B"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
+   "title": "Biology, AS-T",
+   "h1": "Biology, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "757bea4ac0498138"
+  },
+  "listed": 8,
+  "text_chars": 1337
+ },
+ {
+  "control_number": "35233",
+  "title": "Apprenticeship Carpentry, Insulator",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA21C",
+   "ACA72A",
+   "AIN21",
+   "AIN22",
+   "AIN23",
+   "AIN24",
+   "AIN25A",
+   "AIN25B",
+   "AIN26",
+   "AIN27",
+   "AIN31",
+   "AIN32",
+   "AIN33",
+   "AIN34",
+   "AIN35",
+   "AIN36",
+   "AIN37",
+   "AIN41",
+   "AIN43"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
+   "title": "Apprenticeship Carpentry, Insulator, AS",
+   "h1": "Apprenticeship Carpentry, Insulator, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1e95be631de08c00"
+  },
+  "listed": 19,
+  "text_chars": 1917
+ },
+ {
+  "control_number": "35234",
+  "title": "Apprenticeship Carpentry, Insulator",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ACA21C",
+   "ACA72A",
+   "AIN21",
+   "AIN22",
+   "AIN23",
+   "AIN24",
+   "AIN25A",
+   "AIN25B",
+   "AIN26",
+   "AIN27",
+   "AIN31",
+   "AIN32",
+   "AIN33",
+   "AIN34",
+   "AIN35",
+   "AIN36",
+   "AIN37",
+   "AIN41",
+   "AIN43"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=319",
+   "title": "Apprenticeship Carpentry, Insulator, CA",
+   "h1": "Apprenticeship Carpentry, Insulator, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    319
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ad83a16746fa6e2f"
+  },
+  "listed": 19,
+  "text_chars": 1925
+ },
+ {
+  "control_number": "35614",
+  "title": "Early Childhood Education",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.875,
+  "codes_found": [
+   "CDEV108",
+   "CDEV110",
+   "CDEV111A",
+   "CDEV111B",
+   "CDEV112",
+   "CDEV221",
+   "CDEV298A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=94",
+   "title": "Early Childhood Education, AS-T",
+   "h1": "Early Childhood Education, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    94
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b16b1cc78bcf1d5c"
+  },
+  "listed": 8,
+  "text_chars": 1358
+ },
+ {
+  "control_number": "35735",
+  "title": "Nutrition and Dietetics",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "CHEM280A",
+   "NUTR120",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=127",
+   "title": "Nutrition and Dietetics, AS-T",
+   "h1": "Nutrition and Dietetics, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    127,
+    128
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9f7eaa1d748e4390"
+  },
+  "listed": 12,
+  "text_chars": 2509
+ },
+ {
+  "control_number": "36208",
+  "title": "General Medical Office Clerk",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR10",
+   "WKPR16",
+   "WKPR2",
+   "WKPR4",
+   "WKPR5",
+   "WKPR6",
+   "WKPR7",
+   "WKPR8"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+   "title": "General Medical Office Clerk, CC",
+   "h1": "General Medical Office Clerk, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8a905518c3f6267e"
+  },
+  "listed": 8,
+  "text_chars": 1089
+ },
+ {
+  "control_number": "36209",
+  "title": "Adult Secondary Education, College Preparation Algebra",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSMTH176",
+   "HSMTH177"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+   "title": "Adult Secondary Education, College",
+   "h1": "Adult Secondary Education, College",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0ba8ed9c0222fb09"
+  },
+  "listed": 2,
+  "text_chars": 739
+ },
+ {
+  "control_number": "36210",
+  "title": "3D Printing, CC",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS101"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+   "title": "3D Printing, CC",
+   "h1": "3D Printing, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "de91d2972a2bf6f5"
+  },
+  "listed": 1,
+  "text_chars": 1164
+ },
+ {
+  "control_number": "36211",
+  "title": "Adult Secondary Education, College Preparatory Composition",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSENG83",
+   "HSENG86",
+   "HSS600"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "Adult Secondary Education, College",
+   "h1": "Adult Secondary Education, College",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bcd3b4d14829f76d"
+  },
+  "listed": 3,
+  "text_chars": 633
+ },
+ {
+  "control_number": "36212",
+  "title": "Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED20",
+   "VMED21",
+   "VMED22",
+   "VMED23",
+   "VMED24",
+   "VMED25",
+   "VMED26",
+   "VMED27"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+   "title": "Medical Assistant, CC",
+   "h1": "Medical Assistant, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "417f219763b33c31"
+  },
+  "listed": 8,
+  "text_chars": 1278
+ },
+ {
+  "control_number": "36213",
+  "title": "Nursing Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED10",
+   "VMED11"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Nursing Assistant, CC",
+   "h1": "Nursing Assistant, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7066ffe65d070ba1"
+  },
+  "listed": 2,
+  "text_chars": 955
+ },
+ {
+  "control_number": "36214",
+  "title": "Effective Communication Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR2",
+   "WKPR6",
+   "WKPR7",
+   "WKPR8"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Effective Communication Skills, CC",
+   "h1": "Effective Communication Skills, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "ab76848b17c78690"
+  },
+  "listed": 4,
+  "text_chars": 667
+ },
+ {
+  "control_number": "36215",
+  "title": "Employment Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR3",
+   "WKPR5"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Employment Readiness, CC",
+   "h1": "Employment Readiness, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b0ee113e0432079d"
+  },
+  "listed": 2,
+  "text_chars": 660
+ },
+ {
+  "control_number": "36216",
+  "title": "Technical Skills for Higher Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR11",
+   "WKPR14",
+   "WKPR9"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Technical Skills for Higher Learning, CC",
+   "h1": "Technical Skills for Higher Learning, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d2d370b00a7c765c"
+  },
+  "listed": 3,
+  "text_chars": 612
+ },
+ {
+  "control_number": "36217",
+  "title": "Transition to Higher Learning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR2"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Transition to Higher Learning, CC",
+   "h1": "Transition to Higher Learning, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256,
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2b31af607ecd8940"
+  },
+  "listed": 1,
+  "text_chars": 798
+ },
+ {
+  "control_number": "36304",
+  "title": "Computer Retail Sales and Support",
+  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36369",
+  "title": "Understanding and Supporting Employees with Disabilities",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36370",
+  "title": "Basic Employment Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR12",
+   "WKPR13",
+   "WKPR17"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+   "title": "Basic Employment Skills, CC",
+   "h1": "Basic Employment Skills, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d53254366b80263d"
+  },
+  "listed": 3,
+  "text_chars": 569
+ },
+ {
+  "control_number": "36371",
+  "title": "Home-Based Business",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS30",
+   "VBUS35",
+   "VBUS40",
+   "VBUS50",
+   "VBUS97"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+   "title": "Home-Based Business, CC",
+   "h1": "Home-Based Business, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "7a33fb2af9d81c92"
+  },
+  "listed": 5,
+  "text_chars": 1163
+ },
+ {
+  "control_number": "36372",
+  "title": "College Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSENG86",
+   "HSMTH176",
+   "HSMTH177",
+   "HSOTH40"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "College Readiness, COM",
+   "h1": "College Readiness, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "126d5cda699555a6"
+  },
+  "listed": 4,
+  "text_chars": 634
+ },
+ {
+  "control_number": "36520",
+  "title": "Esthetician",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36584",
+  "title": "Adult Secondary Education Mathematics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "36585",
+  "title": "Digital Marketing Specialist, CC",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VBUS150",
+   "VBUS152"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+   "title": "Digital Marketing Specialist, CC",
+   "h1": "Digital Marketing Specialist, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0914d53a7495ccd7"
+  },
+  "listed": 2,
+  "text_chars": 867
+ },
+ {
+  "control_number": "36665",
+  "title": "ESL Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL303",
+   "ESL530"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Communication, COM",
+   "h1": "ESL Communication, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "68efe43486d6d026"
+  },
+  "listed": 2,
+  "text_chars": 496
+ },
+ {
+  "control_number": "36897",
+  "title": "College Preparation Mathematics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHCE206",
+   "MATHCE255"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "College Preparation Mathematics,",
+   "h1": "College Preparation Mathematics,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "2d85958fb378ab0e"
+  },
+  "listed": 2,
+  "text_chars": 755
+ },
+ {
+  "control_number": "36898",
+  "title": "Essential Mathematics and Math Study Skills Support",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "MATHCE100",
+   "MATHCE206"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "Essential Mathematics and Math",
+   "h1": "Essential Mathematics and Math",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6e55f83c54c11ab8"
+  },
+  "listed": 2,
+  "text_chars": 669
+ },
+ {
+  "control_number": "36900",
+  "title": "Custodial Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VCST101",
+   "VCST102"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+   "title": "Custodial Technician, CC",
+   "h1": "Custodial Technician, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "58db6881456d7c63"
+  },
+  "listed": 2,
+  "text_chars": 670
+ },
+ {
+  "control_number": "36901",
+  "title": "Caregiver / Personal Care Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED30"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Caregiver / Personal Care Aide, CC",
+   "h1": "Caregiver / Personal Care Aide, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267,
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b1893d0b5afc007d"
+  },
+  "listed": 1,
+  "text_chars": 841
+ },
+ {
+  "control_number": "36914",
+  "title": "Secondary Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.988,
+  "codes_found": [
+   "ABE23",
+   "ABE24",
+   "ABE25",
+   "ABE26",
+   "ABE9",
+   "HSART20",
+   "HSART70",
+   "HSART828",
+   "HSART837",
+   "HSART845",
+   "HSART846",
+   "HSENG20",
+   "HSENG201",
+   "HSENG202",
+   "HSENG203",
+   "HSENG204",
+   "HSENG50",
+   "HSENG51",
+   "HSENG52",
+   "HSENG53",
+   "HSENG63",
+   "HSENG64",
+   "HSENG72",
+   "HSENG76",
+   "HSENG83",
+   "HSENG84",
+   "HSENG86",
+   "HSENG98",
+   "HSMTH101",
+   "HSMTH124",
+   "HSMTH125",
+   "HSMTH154",
+   "HSMTH155",
+   "HSMTH156",
+   "HSMTH157",
+   "HSMTH159",
+   "HSMTH161",
+   "HSMTH163",
+   "HSMTH164",
+   "HSMTH165",
+   "HSMTH166",
+   "HSMTH167",
+   "HSMTH168",
+   "HSMTH176",
+   "HSMTH177",
+   "HSMTH180",
+   "HSOTH202",
+   "HSOTH50",
+   "HSOTH505",
+   "HSOTH510",
+   "HSOTH513",
+   "HSOTH514",
+   "HSRDG89",
+   "HSRDG90",
+   "HSRDG93",
+   "HSRDG94",
+   "HSS338",
+   "HSS770",
+   "HSSCI100",
+   "HSSCI168",
+   "HSSCI169",
+   "HSSCI182",
+   "HSSCI183",
+   "HSSCI184",
+   "HSSCI190",
+   "HSSCI191",
+   "HSSCI192",
+   "HSSCI193",
+   "HSSCI196",
+   "HSSOC215",
+   "HSSOC216",
+   "HSSOC217",
+   "HSSOC218",
+   "HSSOC219",
+   "HSSOC222",
+   "HSSOC229",
+   "HSSOC230",
+   "MATHCE206",
+   "MATHCE255"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "Secondary Education, COM",
+   "h1": "Secondary Education, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261,
+    262,
+    263
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f81a00fe2db11edf"
+  },
+  "listed": 80,
+  "text_chars": 7630
+ },
+ {
+  "control_number": "37073",
+  "title": "Code Enforcement and Compliance",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.529,
+  "codes_found": [
+   "CIS101",
+   "CJ101",
+   "MGMT122",
+   "PBLC151",
+   "PBLC155",
+   "PBLC50",
+   "PBLC61",
+   "PBLC80",
+   "PBLC85"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130",
+   "title": "Control Number: 37073",
+   "h1": "Control Number: 37073",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130,
+    131,
+    132,
+    133
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "05c75f31975156d6"
+  },
+  "listed": 17,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "37102",
+  "title": "Code Enforcement and Compliance, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CJ101",
+   "PBLC150",
+   "PBLC151",
+   "PBLC152",
+   "PBLC153",
+   "PBLC154",
+   "PBLC155",
+   "PBLC50",
+   "PBLC61",
+   "PBLC85"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=130",
+   "title": "Code Enforcement and Compliance, CA",
+   "h1": "Code Enforcement and Compliance, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    130
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "074771a3fc1770a3"
+  },
+  "listed": 10,
+  "text_chars": 1762
+ },
+ {
+  "control_number": "37132",
+  "title": "Social Justice Studies: Chicano",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.786,
+  "codes_found": [
+   "COMM120",
+   "COMM120H",
+   "ENGL279",
+   "ETHN101",
+   "ETHN130",
+   "HIST118",
+   "HIST124",
+   "HIST152",
+   "PSYC170",
+   "SOC120",
+   "SOC220"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+   "title": "Social Justice Studies: Chicano, AA-T",
+   "h1": "Social Justice Studies: Chicano, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f9e100a7f8d5ccfb"
+  },
+  "listed": 14,
+  "text_chars": 2789
+ },
+ {
+  "control_number": "37133",
+  "title": "Social Justice Studies: Gender",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "COMM225",
+   "COMM225H",
+   "ENGL278",
+   "ETHN101",
+   "ETHN130",
+   "GSWS101",
+   "GSWS102",
+   "HIST127",
+   "PHIL120",
+   "POLT221",
+   "PSYC180",
+   "SOC120",
+   "SOC220"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+   "title": "Social Justice Studies: Gender, AA-T",
+   "h1": "Social Justice Studies: Gender, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137,
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "673fd0ecd5c0b02b"
+  },
+  "listed": 14,
+  "text_chars": 2878
+ },
+ {
+  "control_number": "37161",
+  "title": "Social Justice Studies: General",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "COMM120",
+   "COMM120H",
+   "COMM225",
+   "COMM225H",
+   "ENGL278",
+   "ENGL279",
+   "ETHN101",
+   "HIST118",
+   "HIST124",
+   "HIST127",
+   "HIST132",
+   "HIST152",
+   "HIST162",
+   "PHIL120",
+   "POLT221",
+   "PSYC170",
+   "PSYC180",
+   "SOC101",
+   "SOC120",
+   "SOC220",
+   "SOC286",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=138",
+   "title": "Social Justice Studies: General, AA-T",
+   "h1": "Social Justice Studies: General, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    138
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6e5252369f435e32"
+  },
+  "listed": 25,
+  "text_chars": 3645
+ },
+ {
+  "control_number": "37162",
+  "title": "Social Justice Studies: Ethnic",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.882,
+  "codes_found": [
+   "COMM120",
+   "COMM120H",
+   "ENGL278",
+   "ENGL279",
+   "ETHN101",
+   "ETHN130",
+   "HIST118",
+   "HIST124",
+   "HIST127",
+   "HIST152",
+   "HIST162",
+   "POLT221",
+   "PSYC170",
+   "SOC120",
+   "SOC220"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=137",
+   "title": "Social Justice Studies: Ethnic, AA-T",
+   "h1": "Social Justice Studies: Ethnic, AA-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    137
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6beb16712c03c519"
+  },
+  "listed": 17,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "37164",
+  "title": "Social Work and Human Services",
+  "award": "A.A- T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.941,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL149",
+   "BIOL239",
+   "BIOL249",
+   "CDEV110",
+   "CJ101",
+   "CNSL150",
+   "COMM120",
+   "COMM120H",
+   "ECONC2001",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "HIST120",
+   "HIST120H",
+   "HISTC1002",
+   "HISTC1002H",
+   "PSYC157",
+   "PSYC160",
+   "PSYC230",
+   "PSYC250",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC116",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
+   "title": "Social Work and Human Services,",
+   "h1": "Social Work and Human Services,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108,
+    109
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d49f14dbfe2e315e"
+  },
+  "listed": 34,
+  "text_chars": 4620
+ },
+ {
+  "control_number": "37478",
+  "title": "American College English/ESL",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.818,
+  "codes_found": [
+   "ACE106",
+   "ACE116",
+   "CNSL101",
+   "COMM100H",
+   "COMM120",
+   "COMM120H",
+   "READ101",
+   "READ128",
+   "READ129"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=85",
+   "title": "American College English/ESL, CA",
+   "h1": "American College English/ESL, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    85
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6d9f9faf5615428b"
+  },
+  "listed": 11,
+  "text_chars": 2023
+ },
+ {
+  "control_number": "37803",
+  "title": "Office Leadership Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.75,
+  "codes_found": [
+   "WKPR14",
+   "WKPR2",
+   "WKPR7"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Office Leadership Skills, CC",
+   "h1": "Office Leadership Skills, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a935e3838ef01a3e"
+  },
+  "listed": 4,
+  "text_chars": 742
+ },
+ {
+  "control_number": "37805",
+  "title": "Nurse Assistant Acute Care",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED70",
+   "VMED71"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Nurse Assistant Acute Care, CC",
+   "h1": "Nurse Assistant Acute Care, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e53741b7ebac13a5"
+  },
+  "listed": 2,
+  "text_chars": 1044
+ },
+ {
+  "control_number": "37806",
+  "title": "Home Health Aide (HHA) for Certified Nurse Assistants (CNA)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED60",
+   "VMED61"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+   "title": "Home Health Aide (HHA) for Certi-",
+   "h1": "Home Health Aide (HHA) for Certi-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "67e6e5a3cb805ddc"
+  },
+  "listed": 2,
+  "text_chars": 1092
+ },
+ {
+  "control_number": "37807",
+  "title": "Healthcare Support Worker",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED50",
+   "VMED51"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+   "title": "Healthcare Support Worker, CC",
+   "h1": "Healthcare Support Worker, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9e81e0a4b050b18d"
+  },
+  "listed": 2,
+  "text_chars": 735
+ },
+ {
+  "control_number": "37825",
+  "title": "Workforce Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR600",
+   "WKPR601"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+   "title": "Workforce Skills, CC",
+   "h1": "Workforce Skills, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bf002c0079a140d2"
+  },
+  "listed": 2,
+  "text_chars": 728
+ },
+ {
+  "control_number": "37911",
+  "title": "After School Program Associate Teacher",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.857,
+  "codes_found": [
+   "CDEV123B",
+   "CNSL118",
+   "COMMC1000",
+   "EDUC110",
+   "EDUC113",
+   "PSYC157"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+   "title": "After School Program Associate",
+   "h1": "After School Program Associate",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "9f7cac6d7e4625f0"
+  },
+  "listed": 7,
+  "text_chars": 1635
+ },
+ {
+  "control_number": "37913",
+  "title": "Bilingual Instructional Aide: Spanish",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "EDUC110",
+   "EDUC113",
+   "SPAN102",
+   "SPAN111"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=112",
+   "title": "112  / Credit Programs",
+   "h1": "112  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    112,
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "ce0aa95b2ec34009"
+  },
+  "listed": 4,
+  "text_chars": 12413
+ },
+ {
+  "control_number": "38157",
+  "title": "After School Program Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.6,
+  "codes_found": [
+   "CNSL118",
+   "EDUC110",
+   "EDUC113"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=111",
+   "title": "After School Program Assistant, CA",
+   "h1": "After School Program Assistant, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    111
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "21612fdf65543b82"
+  },
+  "listed": 5,
+  "text_chars": 1138
+ },
+ {
+  "control_number": "38158",
+  "title": "Instructional Assistant: Special Education, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "refused",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 7,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38281",
+  "title": "Food Handler",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VFOOD5",
+   "WKPR500"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "The Certificate of Completion in Food Handler prepares students",
+   "h1": "The Certificate of Completion in Food Handler prepares students",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259,
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "707e2af9d8ddb998"
+  },
+  "listed": 2,
+  "text_chars": 5439
+ },
+ {
+  "control_number": "38398",
+  "title": "Behavior Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED80",
+   "VMED81"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Behavior Technician, CC",
+   "h1": "Behavior Technician, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e7b043f74dfa0441"
+  },
+  "listed": 2,
+  "text_chars": 1252
+ },
+ {
+  "control_number": "38399",
+  "title": "Office Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR18"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Office Technology, CC",
+   "h1": "Office Technology, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cbbbf63578de481a"
+  },
+  "listed": 1,
+  "text_chars": 529
+ },
+ {
+  "control_number": "38400",
+  "title": "Working with Students with Disabilities",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR102",
+   "WKPR103"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+   "title": "Working with Students with Disabilities,",
+   "h1": "Working with Students with Disabilities,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "f775e71864d98184"
+  },
+  "listed": 2,
+  "text_chars": 670
+ },
+ {
+  "control_number": "39807",
+  "title": "Global Studies",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "GEOG100",
+   "GEOG100H",
+   "HIST102",
+   "HIST102H",
+   "HIST132",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "POLT220"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=117",
+   "title": "Global Studies, CA",
+   "h1": "Global Studies, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    117
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6c05cbbbb34f997c"
+  },
+  "listed": 9,
+  "text_chars": 2058
+ },
+ {
+  "control_number": "39808",
+  "title": "Ethnic Studies",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.824,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "COMM120",
+   "COMM120H",
+   "ETHN101",
+   "ETHN110",
+   "ETHN120",
+   "ETHN140",
+   "HIST118",
+   "HIST124",
+   "HIST132",
+   "HIST142",
+   "HIST152",
+   "HIST162"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=114",
+   "title": "Ethnic Studies, AA",
+   "h1": "Ethnic Studies, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    114,
+    115
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1908e078f6ef7877"
+  },
+  "listed": 17,
+  "text_chars": 2715
+ },
+ {
+  "control_number": "39916",
+  "title": "Kinesiology - Fitness and Active Lifestyle",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.902,
+  "codes_found": [
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL139",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN125A",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
+   "title": "Kinesiology - Fitness and Active",
+   "h1": "Kinesiology - Fitness and Active",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "33ee23360ae211f4"
+  },
+  "listed": 61,
+  "text_chars": 5308
+ },
+ {
+  "control_number": "39917",
+  "title": "Kinesiology - Fitness and Active Lifestyle",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.887,
+  "codes_found": [
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL149",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN125A",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=118",
+   "title": "Kinesiology - Fitness and Active",
+   "h1": "Kinesiology - Fitness and Active",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    118,
+    119
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "51ac8e54e975730b"
+  },
+  "listed": 62,
+  "text_chars": 5380
+ },
+ {
+  "control_number": "39918",
+  "title": "Kinesiology - Health Promotion",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.903,
+  "codes_found": [
+   "ACCT101",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL139",
+   "BIOL149",
+   "BIOL229",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "ETHN101",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PSYC200",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=119",
+   "title": "Kinesiology - Health Promotion, AS",
+   "h1": "Kinesiology - Health Promotion, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    119,
+    120
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6fa5b3210bdc8701"
+  },
+  "listed": 62,
+  "text_chars": 5317
+ },
+ {
+  "control_number": "39919",
+  "title": "Kinesiology - Health Promotion",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.908,
+  "codes_found": [
+   "ACCT101",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL139",
+   "BIOL149",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "ETHN101",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN125A",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PSYC200",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=120",
+   "title": "Kinesiology - Health Promotion, CA",
+   "h1": "Kinesiology - Health Promotion, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    120,
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "46c49dd69cae551a"
+  },
+  "listed": 65,
+  "text_chars": 5341
+ },
+ {
+  "control_number": "39920",
+  "title": "Kinesiology - Sport Studies",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.905,
+  "codes_found": [
+   "ACCT101",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL139",
+   "BIOL149",
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106A",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN125A",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN163A",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "KIN200",
+   "KIN201",
+   "KIN202",
+   "KIN203",
+   "KIN204",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=121",
+   "title": "Kinesiology - Sport Studies, AS",
+   "h1": "Kinesiology - Sport Studies, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    121
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "938b8295de61b7e1"
+  },
+  "listed": 63,
+  "text_chars": 5391
+ },
+ {
+  "control_number": "39921",
+  "title": "Kinesiology - Sport Studies",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.889,
+  "codes_found": [
+   "ACCT101",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL139",
+   "BIOL149",
+   "BIOL229",
+   "BIOL249",
+   "BIOL259",
+   "DNCE106B",
+   "DNCE108A",
+   "DNCE108B",
+   "DNCE115A",
+   "DNCE115B",
+   "DNCE119A",
+   "DNCE119B",
+   "KIN100",
+   "KIN101",
+   "KIN102",
+   "KIN104",
+   "KIN109",
+   "KIN110",
+   "KIN111",
+   "KIN119",
+   "KIN125B",
+   "KIN126A",
+   "KIN126B",
+   "KIN127A",
+   "KIN127B",
+   "KIN127C",
+   "KIN128A",
+   "KIN140A",
+   "KIN140B",
+   "KIN140C",
+   "KIN146B",
+   "KIN146C",
+   "KIN160A",
+   "KIN160B",
+   "KIN168A",
+   "KIN168B",
+   "KIN185A",
+   "KIN185B",
+   "KIN185C",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "STATC1000",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=122",
+   "title": "Kinesiology - Sport Studies, CA",
+   "h1": "Kinesiology - Sport Studies, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    122
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bfe27d97dde28149"
+  },
+  "listed": 54,
+  "text_chars": 5278
+ },
+ {
+  "control_number": "40510",
+  "title": "Enhanced Advanced ESL Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL270",
+   "ESL503"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+   "title": "Enhanced Advanced ESL Skills,",
+   "h1": "Enhanced Advanced ESL Skills,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "1d543a9f91f96e7c"
+  },
+  "listed": 2,
+  "text_chars": 665
+ },
+ {
+  "control_number": "40639",
+  "title": "Biotechnology Lab Assistant",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL190",
+   "BIOL190L",
+   "BIOL191",
+   "BIOL211",
+   "CHEM100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=89",
+   "title": "Biotechnology Lab Assistant, CA",
+   "h1": "Biotechnology Lab Assistant, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    89,
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "270ad67147969fa5"
+  },
+  "listed": 5,
+  "text_chars": 1174
+ },
+ {
+  "control_number": "41165",
+  "title": "Financial Advisor Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "VBUS161"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=265",
+   "title": "Financial Advisor Preparation, CC",
+   "h1": "Financial Advisor Preparation, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    265
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e6c3cb3dcb054c76"
+  },
+  "listed": 2,
+  "text_chars": 1171
+ },
+ {
+  "control_number": "41770",
+  "title": "Pre-Nursing and Allied Health Science",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL229",
+   "BIOL239",
+   "BIOL249",
+   "CHEM100",
+   "CHEM200A",
+   "CHEM200AH",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC115"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
+   "title": "Credit Programs / 91",
+   "h1": "Credit Programs / 91",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "acac55f19805d99e"
+  },
+  "listed": 13,
+  "text_chars": 6040
+ },
+ {
+  "control_number": "42027",
+  "title": "High School Equivalency Test Preparation in All Subject Areas",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSS401",
+   "HSS402",
+   "HSS403",
+   "HSS404",
+   "HSS405",
+   "HSS406",
+   "HSS407"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=261",
+   "title": "High School Equivalency Test Prepa-",
+   "h1": "High School Equivalency Test Prepa-",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    261
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "548a070788cf10a3"
+  },
+  "listed": 7,
+  "text_chars": 1299
+ },
+ {
+  "control_number": "42317",
+  "title": "ESL for CNA and Caregiving",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL800",
+   "ESL801"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=258",
+   "title": "ESL for CNA and Caregiving, COM",
+   "h1": "ESL for CNA and Caregiving, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    258
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5328e448647086af"
+  },
+  "listed": 2,
+  "text_chars": 690
+ },
+ {
+  "control_number": "42387",
+  "title": "Lactation Educator Specialist",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED100",
+   "VMED101"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+   "title": "Lactation Educator Specialist, CC",
+   "h1": "Lactation Educator Specialist, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "235ffa16a6c03a08"
+  },
+  "listed": 2,
+  "text_chars": 1060
+ },
+ {
+  "control_number": "42497",
+  "title": "Water System Automation, CA",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ETEC130",
+   "WATR143"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=113",
+   "title": "Water System Automation, CA",
+   "h1": "Water System Automation, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    113
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b6d7a6e3a3fccb78"
+  },
+  "listed": 4,
+  "text_chars": 1166
+ },
+ {
+  "control_number": "42815",
+  "title": "Adult Secondary Education Visual and Performing Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSART845",
+   "HSART846",
+   "MUSCE126"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+   "title": "Adult Secondary Education Visual",
+   "h1": "Adult Secondary Education Visual",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "03829cf16ad30f37"
+  },
+  "listed": 3,
+  "text_chars": 700
+ },
+ {
+  "control_number": "42990",
+  "title": "Public Administration",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "PBLC152",
+   "PBLC153",
+   "PBLC154"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+   "title": "Control Number: 42990",
+   "h1": "Control Number: 42990",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "97af176c35265a85"
+  },
+  "listed": 6,
+  "text_chars": 4080
+ },
+ {
+  "control_number": "42991",
+  "title": "Business Administration 2.0",
+  "award": "A.S. T Degree",
+  "shape": "adt",
+  "method": "pdf_pages",
+  "coverage": 0.917,
+  "codes_found": [
+   "ACCT101",
+   "ACCT102",
+   "BUS100",
+   "BUS222",
+   "ECONC2001",
+   "MATH150",
+   "MATH180",
+   "MATH180H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=91",
+   "title": "Business Administration 2.0, AS-T",
+   "h1": "Business Administration 2.0, AS-T",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    91
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "92c8c85fac5e6f4d"
+  },
+  "listed": 12,
+  "text_chars": 2030
+ },
+ {
+  "control_number": "43227",
+  "title": "Diversity in the Workforce",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR19",
+   "WKPR20"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+   "title": "Diversity in the Workforce, CC",
+   "h1": "Diversity in the Workforce, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    255
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b1d965b374f89946"
+  },
+  "listed": 2,
+  "text_chars": 676
+ },
+ {
+  "control_number": "43259",
+  "title": "Making Remote Employment Work for You",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR21",
+   "WKPR22"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Making Remote Employment Work",
+   "h1": "Making Remote Employment Work",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "39fdec0e96da9f4d"
+  },
+  "listed": 2,
+  "text_chars": 559
+ },
+ {
+  "control_number": "43319",
+  "title": "Vocational Real Estate Salesperson",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VRE102",
+   "VRE103",
+   "VRE105",
+   "VRE106",
+   "VRE110",
+   "VRE112",
+   "VRE151",
+   "VRE153",
+   "VRE160"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Vocational Real Estate Salesperson, CC",
+   "h1": "Vocational Real Estate Salesperson, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269,
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "e8f1359faa0d3812"
+  },
+  "listed": 9,
+  "text_chars": 1456
+ },
+ {
+  "control_number": "43691",
+  "title": "Companion Animal Training, AA",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.929,
+  "codes_found": [
+   "BIOL109",
+   "BIOL109H",
+   "BUS170",
+   "COMM100H",
+   "COMMC1000",
+   "PSYC110",
+   "PSYC114",
+   "PSYC118",
+   "PSYC122",
+   "PSYC200",
+   "PSYC220",
+   "PSYCC1000",
+   "PSYCC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=129",
+   "title": "Companion Animal Training, AA",
+   "h1": "Companion Animal Training, AA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    129
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6074df0f539c20fd"
+  },
+  "listed": 14,
+  "text_chars": 1924
+ },
+ {
+  "control_number": "43692",
+  "title": "Data Science, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "CIS111",
+   "CMPR120",
+   "CMPR121",
+   "CMPR131",
+   "CMPR149",
+   "MATH270",
+   "MATH287",
+   "MATH290",
+   "PSYC220",
+   "SOC120",
+   "SOC125",
+   "SOC125H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+   "title": "Data Science, AS",
+   "h1": "Data Science, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "c7d2f98475a772c2"
+  },
+  "listed": 16,
+  "text_chars": 2118
+ },
+ {
+  "control_number": "43876",
+  "title": "Drone Operation and Photography, CC",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VFOTO100",
+   "VFOTO101"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=264",
+   "title": "Drone Operation and Photography, CC",
+   "h1": "Drone Operation and Photography, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    264
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6eefc44fbbb20c58"
+  },
+  "listed": 2,
+  "text_chars": 1098
+ },
+ {
+  "control_number": "43901",
+  "title": "Public Administration",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "PBLC152",
+   "PBLC153",
+   "PBLC154"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=134",
+   "title": "134  / Credit Programs",
+   "h1": "134  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    134
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "244d92820218786b"
+  },
+  "listed": 6,
+  "text_chars": 6000
+ },
+ {
+  "control_number": "44174",
+  "title": "Apprenticeship in Early Childhood, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "APCD107",
+   "APCD108",
+   "APCD110",
+   "APCD111B",
+   "APCD116A",
+   "APCD202",
+   "APCD221",
+   "APCD298A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+   "title": "Apprenticeship in Early Childhood, CA",
+   "h1": "Apprenticeship in Early Childhood, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "03a7dc7a7ec584f6"
+  },
+  "listed": 8,
+  "text_chars": 1563
+ },
+ {
+  "control_number": "44233",
+  "title": "Introduction to Artificial Intelligence (AI) in the Workforce, CC",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR23",
+   "WKPR24"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=256",
+   "title": "Introduction to Artificial Intelligence",
+   "h1": "Introduction to Artificial Intelligence",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    256
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "37fb5926e4594b01"
+  },
+  "listed": 2,
+  "text_chars": 811
+ },
+ {
+  "control_number": "44319",
+  "title": "Data Science, CA",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.938,
+  "codes_found": [
+   "CIS111",
+   "CMPR120",
+   "CMPR121",
+   "CMPR131",
+   "CMPR149",
+   "MATH270",
+   "MATH287",
+   "MATH290",
+   "PSYC220",
+   "SOC120",
+   "SOC125",
+   "SOC125H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+   "title": "Data Science, CA",
+   "h1": "Data Science, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125,
+    126
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "8a05db99fdad52a0"
+  },
+  "listed": 16,
+  "text_chars": 2216
+ },
+ {
+  "control_number": "44326",
+  "title": "Apprenticeship in Early Childhood, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "APCD107",
+   "APCD108",
+   "APCD110",
+   "APCD111B",
+   "APCD116A",
+   "APCD202",
+   "APCD221",
+   "APCD298A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=322",
+   "title": "Apprenticeship in Early Childhood, AS",
+   "h1": "Apprenticeship in Early Childhood, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    322
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "267d55fcac7b4439"
+  },
+  "listed": 8,
+  "text_chars": 1824
+ },
+ {
+  "control_number": "44436",
+  "title": "Water Utility Management",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.9,
+  "codes_found": [
+   "BUS121",
+   "BUS222",
+   "BUS90",
+   "CIS101",
+   "MGMT121",
+   "MGMT122",
+   "MGMT135",
+   "PBLC80",
+   "WATR156"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+   "title": "Water Utility Management, CA",
+   "h1": "Water Utility Management, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "871757f7d630f467"
+  },
+  "listed": 10,
+  "text_chars": 1716
+ },
+ {
+  "control_number": "44459",
+  "title": "Water Utility Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUS121",
+   "BUS222",
+   "BUS90",
+   "CIS101",
+   "MGMT121",
+   "MGMT122",
+   "MGMT135",
+   "PBLC80",
+   "WATR148",
+   "WATR155",
+   "WATR156"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=143",
+   "title": "Water Utility Management, AS",
+   "h1": "Water Utility Management, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    143
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a901d12b3eaef76a"
+  },
+  "listed": 11,
+  "text_chars": 2498
+ },
+ {
+  "control_number": "44797",
+  "title": "Social Media, AS",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ART149",
+   "BUS222",
+   "COMM120",
+   "COMM120H",
+   "COMM190",
+   "MGMT122",
+   "MKTG113",
+   "MKTG150",
+   "MKTG151",
+   "PSYC240",
+   "SOC100",
+   "SOC100H",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=125",
+   "title": "Social Media, AS",
+   "h1": "Social Media, AS",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    125
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a06df25a78404028"
+  },
+  "listed": 17,
+  "text_chars": 1971
+ },
+ {
+  "control_number": "44861",
+  "title": "Lactation Consultant Education",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VMED100",
+   "VMED101",
+   "VMED102"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=268",
+   "title": "Lactation Consultant Education, CC",
+   "h1": "Lactation Consultant Education, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    268
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4621658b8320c406"
+  },
+  "listed": 3,
+  "text_chars": 1206
+ },
+ {
+  "control_number": "44862",
+  "title": "Unarmed Public Safety and Security Officer Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VPS100",
+   "VPS101"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=266",
+   "title": "Unarmed Public Safety and Security",
+   "h1": "Unarmed Public Safety and Security",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    266
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "a1758c2a18e68e88"
+  },
+  "listed": 2,
+  "text_chars": 997
+ },
+ {
+  "control_number": "45504",
+  "title": "Solar Installation Technician",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VECU10",
+   "VECU11"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Solar Installation Technician, CC",
+   "h1": "Solar Installation Technician, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "dff3a0ff461c6061"
+  },
+  "listed": 2,
+  "text_chars": 959
+ },
+ {
+  "control_number": "45505",
+  "title": "Solar Sales Representative",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VECU20",
+   "VECU21"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=267",
+   "title": "Solar Sales Representative, CC",
+   "h1": "Solar Sales Representative, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    267
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "24c547d7b7b5fbab"
+  },
+  "listed": 2,
+  "text_chars": 1006
+ },
+ {
+  "control_number": "45533",
+  "title": "Clinical Genetics and Molecular Biology Scientist (CGMBS) Training Program",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "BIOL60A",
+   "BIOL60B"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=90",
+   "title": "90  / Credit Programs",
+   "h1": "90  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    90
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "07ebfa78f82c11bc"
+  },
+  "listed": 2,
+  "text_chars": 6334
+ },
+ {
+  "control_number": "45579",
+  "title": "Apprenticeship Carpentry, General Carpenter",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA21E",
+   "ACA22A",
+   "ACA22B",
+   "ACA22D",
+   "ACA23C",
+   "ACA24A",
+   "ACA24D",
+   "ACA25A",
+   "ACA25C",
+   "ACA25D",
+   "ACA26A",
+   "ACA26B",
+   "ACA26C",
+   "ACA26D",
+   "ACA27C",
+   "ACA27D",
+   "ACA28A",
+   "ACA33B",
+   "ACA33D",
+   "ACA34A",
+   "ACA34D",
+   "ACA5",
+   "ACA72A",
+   "ACA74A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=317",
+   "title": "Apprenticeship Carpentry, General",
+   "h1": "Apprenticeship Carpentry, General",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    317,
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "b2c23ef69cf63258"
+  },
+  "listed": 28,
+  "text_chars": 2765
+ },
+ {
+  "control_number": "45580",
+  "title": "Apprenticeship Carpentry, General Carpenter",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.964,
+  "codes_found": [
+   "ACA21A",
+   "ACA21B",
+   "ACA21C",
+   "ACA21E",
+   "ACA22A",
+   "ACA22B",
+   "ACA22D",
+   "ACA23C",
+   "ACA24A",
+   "ACA24D",
+   "ACA25A",
+   "ACA25C",
+   "ACA25D",
+   "ACA26A",
+   "ACA26B",
+   "ACA26C",
+   "ACA26D",
+   "ACA27C",
+   "ACA27D",
+   "ACA28A",
+   "ACA33B",
+   "ACA33D",
+   "ACA34A",
+   "ACA34D",
+   "ACA5",
+   "ACA72A",
+   "ACA74A"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=318",
+   "title": "Apprenticeship Carpentry, General",
+   "h1": "Apprenticeship Carpentry, General",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    318
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "cd81bec9c245829c"
+  },
+  "listed": 28,
+  "text_chars": 2662
+ },
+ {
+  "control_number": "45581",
+  "title": "C++ Programming, CA",
+  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CMPR120",
+   "CMPR120H",
+   "CMPR121",
+   "CMPR121H",
+   "CMPR131"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=98",
+   "title": "C++ Programming, CA",
+   "h1": "C++ Programming, CA",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    98
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "bb8da8793dbaeb96"
+  },
+  "listed": 5,
+  "text_chars": 1407
+ },
+ {
+  "control_number": "45606",
+  "title": "ESL Advanced Writing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESL502"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=259",
+   "title": "ESL Advanced Writing, COM",
+   "h1": "ESL Advanced Writing, COM",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    259
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "5f6a897e5f5877a7"
+  },
+  "listed": 2,
+  "text_chars": 668
+ },
+ {
+  "control_number": "45607",
+  "title": "Adult Secondary Education Foreign Language",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSOTH503",
+   "HSOTH504",
+   "HSOTH505",
+   "HSOTH510",
+   "HSOTH511",
+   "HSOTH512",
+   "HSOTH513",
+   "HSOTH514"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+   "title": "Adult Secondary Education Foreign",
+   "h1": "Adult Secondary Education Foreign",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0a8f58f1a4a4c303"
+  },
+  "listed": 8,
+  "text_chars": 1312
+ },
+ {
+  "control_number": "45609",
+  "title": "Digital Literacy for Online Learning Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR510",
+   "WKPR511"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=270",
+   "title": "Digital Literacy for Online Learning",
+   "h1": "Digital Literacy for Online Learning",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    270
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "91b2f9da698dd769"
+  },
+  "listed": 2,
+  "text_chars": 1003
+ },
+ {
+  "control_number": "45619",
+  "title": "Cal-GETC",
+  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.757,
+  "codes_found": [
+   "ANTH100",
+   "ANTH100H",
+   "ANTH101",
+   "ANTH101L",
+   "ANTH104",
+   "ART100",
+   "ART100H",
+   "ART101",
+   "ART101H",
+   "ART102",
+   "ART102H",
+   "ASL111",
+   "ASL116",
+   "ASL210",
+   "ASTR100L",
+   "ASTR102",
+   "ASTR103",
+   "ASTR104",
+   "BIOL109",
+   "BIOL109H",
+   "BIOL109HL",
+   "BIOL109L",
+   "BIOL111",
+   "BIOL115",
+   "BIOL139",
+   "BIOL149",
+   "BIOL177",
+   "BIOL190",
+   "BIOL190L",
+   "BIOL211",
+   "BIOL213",
+   "BIOL215",
+   "BIOL229",
+   "BIOL239",
+   "BIOL241",
+   "BIOL249",
+   "BIOL259",
+   "BIOL290",
+   "CHEM100",
+   "CHEM200A",
+   "CHEM200AH",
+   "CHEM200B",
+   "CINE103",
+   "CINE104",
+   "COMMC1000",
+   "DNCE100",
+   "EDUC101",
+   "ENGL231",
+   "ENGL232",
+   "ENGL233A",
+   "ENGL233B",
+   "ENGL241",
+   "ENGL242",
+   "ENGL270",
+   "ENGL271",
+   "ENGL272",
+   "ENGL278",
+   "ENGL279",
+   "ENGL280",
+   "ENGLC1000",
+   "ENGLC1000H",
+   "ENGLC1001",
+   "ENGLC1001H",
+   "ENGLC1003",
+   "ENGLC1003H",
+   "ERTH100",
+   "ERTH100L",
+   "ERTH111",
+   "ERTH120",
+   "ERTH121",
+   "ERTH130",
+   "ERTH160",
+   "ERTH200",
+   "ETHN101",
+   "ETHN110",
+   "ETHN120",
+   "ETHN130",
+   "ETHN140",
+   "FREN102",
+   "FREN201",
+   "FREN202",
+   "GEOG101",
+   "GEOG101H",
+   "GEOG101L",
+   "GEOG130",
+   "GEOG130H",
+   "GSWS101",
+   "GSWS102",
+   "GSWS103",
+   "HIST101",
+   "HIST101H",
+   "HIST102",
+   "HIST102H",
+   "HIST115",
+   "HIST118",
+   "HIST120",
+   "HIST120H",
+   "HIST124",
+   "HIST125",
+   "HIST127",
+   "HIST129",
+   "HIST130",
+   "HIST132",
+   "HIST133",
+   "HIST140",
+   "HIST142",
+   "HIST152",
+   "HIST162",
+   "HIST172",
+   "HISTC1002",
+   "HISTC1002H",
+   "ITAL102",
+   "ITAL201",
+   "ITAL202",
+   "MATH105",
+   "MATH140",
+   "MATH150",
+   "MATH150S",
+   "MATH171",
+   "MATH180",
+   "MATH180H",
+   "MATH185",
+   "MATH280",
+   "MATH287",
+   "MATH290",
+   "MATH295",
+   "MATHC2210E",
+   "MUS101",
+   "MUS101H",
+   "MUS102",
+   "MUS103",
+   "MUS104",
+   "PHIL106",
+   "PHIL106H",
+   "PHIL108",
+   "PHIL110",
+   "PHIL112",
+   "PHIL115",
+   "PHIL118",
+   "PHIL120",
+   "PHYS100",
+   "PHYS150A",
+   "PHYS150B",
+   "PHYS250A",
+   "PHYS250B",
+   "PHYS250C",
+   "PSC100",
+   "PSYC200",
+   "READ151",
+   "SOC101",
+   "SPAN102",
+   "SPAN111",
+   "SPAN195A",
+   "SPAN195B",
+   "SPAN201",
+   "STATC1000",
+   "STATC1000E",
+   "STATC1000H",
+   "THEA100"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+   "title": "102  / Credit Programs",
+   "h1": "102  / Credit Programs",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    102,
+    103,
+    104,
+    105
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "63955efb88c7e09a"
+  },
+  "listed": 210,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "45737",
+  "title": "Social Work and Human Services Assistant",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "APCD107",
+   "CDEV107H",
+   "CDEVC1000",
+   "CNSL150",
+   "CNSL151",
+   "CNSL160A",
+   "CNSL160B",
+   "CNSL161",
+   "CNSL165",
+   "COMM120",
+   "COMM120H",
+   "PBLC110",
+   "PSYC157",
+   "PSYC240",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC115",
+   "SOC116",
+   "SOC130",
+   "SOC230",
+   "SOC240",
+   "SOC240H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=107",
+   "title": "Social Work and Human Services",
+   "h1": "Social Work and Human Services",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    107,
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "6a01130ed6123f3f"
+  },
+  "listed": 25,
+  "text_chars": 3481
+ },
+ {
+  "control_number": "45794",
+  "title": "California-specific Certified Community Association Management (CCAM)",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VRE54",
+   "VRE55",
+   "VRE56",
+   "VRE57",
+   "VRE58"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Non-Credit Programs / 269",
+   "h1": "Non-Credit Programs / 269",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": false,
+   "text_sha": "0b1819311dd2afbe"
+  },
+  "listed": 5,
+  "text_chars": 5669
+ },
+ {
+  "control_number": "45881",
+  "title": "Becoming a Social Media Influencer",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "WKPR25",
+   "WKPR26"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=255",
+   "title": "Becoming a Social Media Influencer,",
+   "h1": "Becoming a Social Media Influencer,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    255
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "d77c5f6f2ee32326"
+  },
+  "listed": 2,
+  "text_chars": 1109
+ },
+ {
+  "control_number": "45985",
+  "title": "Healthcare Career Preparation, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46019",
+  "title": "AI and Computer Literacy for ESL, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESL606",
+   "ESL607"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=257",
+   "title": "AI and Computer Literacy for ESL,",
+   "h1": "AI and Computer Literacy for ESL,",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    257
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "149c85db70bc94a7"
+  },
+  "listed": 2,
+  "text_chars": 693
+ },
+ {
+  "control_number": "46027",
+  "title": "Adult Secondary Education Advanced Mathematical Concepts, COM",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "HSMTH122",
+   "HSMTH123",
+   "HSMTH124",
+   "HSMTH125",
+   "HSMTH161",
+   "HSMTH169",
+   "HSMTH180"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=260",
+   "title": "Adult Secondary Education",
+   "h1": "Adult Secondary Education",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    260
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "4a8039f4823a23bb"
+  },
+  "listed": 7,
+  "text_chars": 935
+ },
+ {
+  "control_number": "46150",
+  "title": "Social Work and Human Services Assistant",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 0.96,
+  "codes_found": [
+   "APCD107",
+   "CDEV107H",
+   "CDEVC1000",
+   "CNSL150",
+   "CNSL151",
+   "CNSL160A",
+   "CNSL160B",
+   "CNSL161",
+   "CNSL165",
+   "COMM120",
+   "COMM120H",
+   "PBLC110",
+   "PSYC157",
+   "PSYC240",
+   "PSYCC1000",
+   "PSYCC1000H",
+   "SOC100",
+   "SOC100H",
+   "SOC115",
+   "SOC116",
+   "SOC130",
+   "SOC230",
+   "SOC240",
+   "SOC240H"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=108",
+   "title": "Social Work and Human Services",
+   "h1": "Social Work and Human Services",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    108
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "df6dfdc52cba2b1e"
+  },
+  "listed": 25,
+  "text_chars": 3388
+ },
+ {
+  "control_number": "46367",
+  "title": "Real Estate Career Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "VRE160",
+   "VRE9"
+  ],
+  "source": {
+   "url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+   "title": "Real Estate Career Preparation, CC",
+   "h1": "Real Estate Career Preparation, CC",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    269
+   ],
+   "extractor": "pypdf",
+   "heading_named": true,
+   "text_sha": "0f4cac105d79075e"
+  },
+  "listed": 2,
+  "text_chars": 721
+ },
+ {
+  "control_number": "46507",
+  "title": "Construction Management",
+  "award": "A.S. Degree",
+  "shape": "degree",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46508",
+  "title": "Construction Management",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 6,
+  "text_chars": 0
+ }
+]
