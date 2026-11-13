@@ -1249,6 +1249,22 @@ check("run review: the apply row taking the figure is kept; the held row, anothe
       _rv["kept"] == ["91001"] and _rv["restored"] == ["91002", "91005", "91006"]
       and "held in the plan" in _rvd["91002"]["why"] and _rvd["91005"]["fields"] == ["electives_fill_words"]
       and _rvd["91006"]["why"] == "a passing record would fail" and _rv["changed"] == 4)
+_src = lambda cn, pages: {"control_number": cn, "source": {"pages": pages}}
+_rs, _rs_moved = RM.restore_sources([_src("91001", [10]), _src("91002", [20]), _src("91003", [30])],
+                                    [_src("91001", [11]), _src("91002", [99]), _src("91003", [30]), _src("91009", [5])],
+                                    ["91001"])
+check("restore: sources.json is main's but for the kept program's entry, and every moved page is named",
+      [e["source"]["pages"] for e in _rs] == [[11], [20], [30]]
+      and [m["control_number"] for m in _rs_moved] == ["91001", "91002", "91009"])
+_rc = RM.restore_capture({"run": "1", "pdf": {"picks": [{"control_number": "91001", "pages": [10]},
+                                                        {"control_number": "91002", "pages": [20]}]},
+                          "fingerprints": {"91001": "a", "91002": "b"}, "found": 2},
+                         {"run": "2", "pdf": {"picks": [{"control_number": "91001", "pages": [11]},
+                                                        {"control_number": "91002", "pages": [99]}]},
+                          "fingerprints": {"91001": "A", "91002": "B"}, "found": 3}, ["91001"])
+check("restore: capture.json is main's but for the kept program's pick and fingerprint",
+      _rc["run"] == "1" and _rc["found"] == 2 and [p["pages"] for p in _rc["pdf"]["picks"]] == [[11], [20]]
+      and _rc["fingerprints"] == {"91001": "A", "91002": "b"})
 check("run review: a changed record kept by name carries the rule it was kept on",
       RM.reconcile_run_review(_ap, _rv_branch, _rv_main, "777", {"91005": "the page's sentence"})["kept"]
       == ["91001", "91005"])
@@ -1274,6 +1290,9 @@ check("Cerro Coso's first reconcile (43520153161): the five apply rows kept, 409
       _cc_rv["run"] == "43520153161" and _cc_rv["kept"] == _cc_plan["apply"]
       and _cc_rv["restored"] == ["40922", "41968", "44885"] and _cc_rv["pass_to_fail_kept"] == []
       and _cc_rv["held_would_pass"] == ["40922"])
+check("Cerro Coso: the run's 15 page moves for programs it did not keep go back to main's (30793 p.181, 10976 p.79)",
+      len(_cc_rv["pages_moved_restored"]) == 15 and _cc_rv["pages_moved_kept"] == []
+      and {"30793", "10976", "33715", "44598"} <= {m["control_number"] for m in _cc_rv["pages_moved_restored"]})
 
 # A later reconcile run keeps a statewide fill's note while its value stands (reconcile_filed, S648): a step that
 # fires on another field replaces the record's reconciled list, and the cal_getc_34 note stays in it.
@@ -1306,7 +1325,7 @@ with tempfile.TemporaryDirectory() as _td:
           and _again["record"]["program"]["ge_units"] == {"min": 34, "max": 34})
 
 # A floor for this block's checks (the second readers of #3244): deleting gate checks must fail the run.
-CG_FLOOR = 95
+CG_FLOOR = 98
 check("the statewide Cal-GETC block runs at least %d checks (%d)" % (CG_FLOOR, len(results) - _cg_first),
       len(results) - _cg_first >= CG_FLOOR)
 

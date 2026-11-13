@@ -565,6 +565,48 @@ def reconcile_run_review(plan: dict, branch: dict, main: dict, run: str, keep: d
             "records": rows}
 
 
+def _pages(entry) -> list | None:
+    return ((entry or {}).get("source") or {}).get("pages")
+
+
+def restore_sources(main: list, run: list, kept: list) -> tuple[list, list]:
+    """main's sources.json with the kept programs' entries from the run (in main's order, a kept program main
+    lacks appended), and every program whose pages the run moved: {control_number, main, run}."""
+    by_run = {e.get("control_number"): e for e in run}
+    by_main = {e.get("control_number"): e for e in main}
+    out = [by_run[e["control_number"]] if e.get("control_number") in kept and e.get("control_number") in by_run
+           else e for e in main]
+    out += [by_run[cn] for cn in kept if cn in by_run and cn not in by_main]
+    moved = [{"control_number": cn, "main": _pages(by_main.get(cn)), "run": _pages(by_run.get(cn))}
+             for cn in sorted(set(by_main) | set(by_run)) if _pages(by_main.get(cn)) != _pages(by_run.get(cn))]
+    return out, moved
+
+
+def restore_capture(main: dict, run: dict, kept: list) -> dict:
+    """main's capture.json with the run's slice for each kept program: its pick (pdf.picks), its fingerprint, and
+    its would_extract entry; every other field stays main's."""
+    out = json.loads(json.dumps(main))
+    kept = set(kept)
+
+    def splice(m_list, r_list):
+        r_by = {e.get("control_number"): e for e in r_list or [] if isinstance(e, dict)}
+        res = [r_by.get(e.get("control_number"), e) if isinstance(e, dict) and e.get("control_number") in kept
+               else e for e in m_list or []]
+        have = {e.get("control_number") for e in res if isinstance(e, dict)}
+        return res + [r_by[cn] for cn in sorted(kept) if cn in r_by and cn not in have]
+
+    if isinstance(out.get("pdf"), dict) and isinstance(run.get("pdf"), dict):
+        out["pdf"]["picks"] = splice(out["pdf"].get("picks"), run["pdf"].get("picks"))
+    if isinstance(out.get("would_extract"), dict) and isinstance(run.get("would_extract"), dict):
+        out["would_extract"]["list"] = splice(out["would_extract"].get("list"), run["would_extract"].get("list"))
+    if isinstance(run.get("fingerprints"), dict):
+        fp = out.setdefault("fingerprints", {})
+        for cn in sorted(kept):
+            if cn in run["fingerprints"]:
+                fp[cn] = run["fingerprints"][cn]
+    return out
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
@@ -586,30 +628,68 @@ def main(argv=None) -> int:
     if args.calgetc_review:
         import subprocess
         path = calgetc_apply_plan_path(args.calgetc_review)
-        rel = os.path.relpath(os.path.join(os.path.dirname(path), "records"), os.path.dirname(HERE))
+        college_dir = os.path.dirname(path)
+        top = os.path.relpath(college_dir, os.path.dirname(HERE))
+
+        def at_ref(name):
+            return subprocess.run(["git", "-C", HERE, "show", "%s:%s/%s" % (args.against, top, name)],
+                                  capture_output=True, check=True).stdout
+
         plan = json.load(open(path))
-        names = subprocess.run(["git", "-C", HERE, "ls-tree", "--full-tree", "--name-only", args.against + ":" + rel],
-                               capture_output=True, text=True, check=True).stdout.split()
-        main_raw = {n[:-5]: subprocess.run(["git", "-C", HERE, "show", "%s:%s/%s" % (args.against, rel, n)],
-                                           capture_output=True, check=True).stdout for n in names if n.endswith(".json")}
-        here = os.path.join(os.path.dirname(path), "records")
-        branch = {n[:-5]: json.load(open(os.path.join(here, n))) for n in os.listdir(here) if n.endswith(".json")}
-        main = {cn: json.loads(raw) for cn, raw in main_raw.items()}
-        keep = dict(k.split("=", 1) for k in args.keep)
-        review = reconcile_run_review(plan, branch, main, args.run, keep)
+        names = subprocess.run(["git", "-C", HERE, "ls-tree", "--full-tree", "--name-only",
+                                "%s:%s/records" % (args.against, top)], capture_output=True, text=True,
+                               check=True).stdout.split()
+        main_raw = {n[:-5]: at_ref("records/" + n) for n in names if n.endswith(".json")}
+        here = os.path.join(college_dir, "records")
+        prior = plan.get("run_review") or {}
+        if prior.get("run") == args.run and prior.get("records_restored"):
+            # The records were restored by an earlier --restore of this run: their review stands as filed.
+            review = prior
+        else:
+            branch = {n[:-5]: json.load(open(os.path.join(here, n))) for n in os.listdir(here) if n.endswith(".json")}
+            main = {cn: json.loads(raw) for cn, raw in main_raw.items()}
+            keep = dict(k.split("=", 1) for k in args.keep)
+            review = reconcile_run_review(plan, branch, main, args.run, keep)
+            for r in review["records"]:
+                print("%s %-7s main %s run %s  %s  %s" % (r["control_number"], r["decision"], r["passes_main"],
+                                                        r["passes_run"], ",".join(r["fields"]), r["why"][:90]))
+        if args.restore:
+            for cn in review["restored"] if not review.get("records_restored") else []:
+                target = os.path.join(here, cn + ".json")
+                if cn in main_raw:
+                    open(target, "wb").write(main_raw[cn])
+                elif os.path.exists(target):
+                    os.remove(target)
+            review["records_restored"] = True
+            # The run's fresh capture lands too (sources.json, capture.json): every program it picked anew is
+            # main's again except the kept ones, so a later run never reads a page this run picked for a record
+            # it did not keep (COBIx on #3259: Cerro Coso 30793 to p.181, 10976 to p.79).
+            files = {n: json.loads(at_ref(n)) for n in ("sources.json", "capture.json", "summary.json")}
+            mine = {n: json.load(open(os.path.join(college_dir, n))) for n in ("sources.json", "capture.json")}
+            sources, moved = restore_sources(files["sources.json"], mine["sources.json"], review["kept"])
+            capture = restore_capture(files["capture.json"], mine["capture.json"], review["kept"])
+            with open(os.path.join(college_dir, "sources.json"), "w") as fh:
+                fh.write(json.dumps(sources, indent=1, ensure_ascii=False) + "\n")
+            with open(os.path.join(college_dir, "capture.json"), "w") as fh:
+                fh.write(json.dumps(capture, indent=1, ensure_ascii=False) + "\n")
+            from _program_requirements_college import summarize
+            recs = [json.load(open(os.path.join(here, n))) for n in sorted(os.listdir(here)) if n.endswith(".json")]
+            summary = dict(files["summary.json"], **{k: v for k, v in summarize(recs, {}).items()
+                                                     if k in ("extracted", "errors", "passed_machine_checks", "failed")})
+            with open(os.path.join(college_dir, "summary.json"), "w") as fh:
+                fh.write(json.dumps(summary, indent=1, ensure_ascii=False) + "\n")
+            review["pages_moved_restored"] = [m for m in moved if m["control_number"] not in review["kept"]]
+            review["pages_moved_kept"] = [m for m in moved if m["control_number"] in review["kept"]]
+            review["files"] = ("sources.json and capture.json are %s's but for the kept programs' entries; "
+                               "summary.json is %s's with its counts taken again from the records"
+                               % (args.against, args.against))
         plan["run_review"] = review
         with open(path, "w") as fh:
             fh.write(json.dumps(plan, indent=1) + "\n")
-        for r in review["records"]:
-            print("%s %-7s main %s run %s  %s  %s" % (r["control_number"], r["decision"], r["passes_main"],
-                                                    r["passes_run"], ",".join(r["fields"]), r["why"][:90]))
-            if args.restore and r["decision"] == "restore":
-                target = os.path.join(here, r["control_number"] + ".json")
-                if r["control_number"] in main_raw:
-                    open(target, "wb").write(main_raw[r["control_number"]])
-                elif os.path.exists(target):
-                    os.remove(target)
-        print(json.dumps({k: review[k] for k in ("run", "changed", "kept", "restored")}))
+        print(json.dumps({k: review.get(k) for k in ("run", "changed", "kept", "restored")}))
+        if review.get("pages_moved_restored") is not None:
+            print("pages moved by the run, restored: %s" % ", ".join(
+                "%s %s->%s" % (m["control_number"], m["main"], m["run"]) for m in review["pages_moved_restored"]))
         return 0
     records = list(filed_records())
     if args.calgetc_apply:

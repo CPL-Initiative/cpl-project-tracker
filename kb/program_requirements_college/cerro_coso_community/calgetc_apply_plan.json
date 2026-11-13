@@ -380,6 +380,184 @@
   "filing_commit": "bc3e399e",
   "log_line": "reconcile: 6 filed records changed, 2 rescored, 11 had no fresh page (11 of them on another page)",
   "first_reconcile_note": "Run 43520153161 is also Cerro Coso's first reconcile and rescore: reconcile_filed ran every rule on every record whose page it read again and rescored each, with no kept-passing guard. Every changed record was read against main; only the five apply rows, changed in ge_units alone, are kept. 41968 and 44885 (passing on main and in the run, rescored only: the Sheet 120 card 1 marker and the why lines dropped) and 40922 (held) are restored from main whole, so their extracted_run is main's and the reread does not post them. The 11 programs the capture found on another page kept their records (unread).",
-  "dry_run_note": "The dry run's passes_after understated three rows: it keeps the filed program verdict, and the run's rescore read 38665's 19-20 against 19 and 43206's 23-26 against 23 as meeting their stated majors once the degree check could add the 35 in (the scorer's meets reading, Open Asks Sheet 120 card 1). So 31540, 38665 and 43206 turn passing, and 40922 would have passed as overlap (68-72 against 60, Sheet 82 card 2): the hold costs 40922 a pass while #3250 is unmerged."
+  "dry_run_note": "The dry run's passes_after understated three rows: it keeps the filed program verdict, and the run's rescore read 38665's 19-20 against 19 and 43206's 23-26 against 23 as meeting their stated majors once the degree check could add the 35 in (the scorer's meets reading, Open Asks Sheet 120 card 1). So 31540, 38665 and 43206 turn passing, and 40922 would have passed as overlap (68-72 against 60, Sheet 82 card 2): the hold costs 40922 a pass while #3250 is unmerged.",
+  "records_restored": true,
+  "pages_moved_restored": [
+   {
+    "control_number": "01980",
+    "main": [
+     65
+    ],
+    "run": [
+     92,
+     93
+    ]
+   },
+   {
+    "control_number": "10976",
+    "main": [
+     80,
+     81
+    ],
+    "run": [
+     79,
+     80,
+     81
+    ]
+   },
+   {
+    "control_number": "11580",
+    "main": [
+     84
+    ],
+    "run": [
+     85,
+     86
+    ]
+   },
+   {
+    "control_number": "15576",
+    "main": [
+     112,
+     113
+    ],
+    "run": [
+     111,
+     112,
+     113
+    ]
+   },
+   {
+    "control_number": "30793",
+    "main": [
+     102,
+     103,
+     104,
+     105
+    ],
+    "run": [
+     181,
+     182,
+     183
+    ]
+   },
+   {
+    "control_number": "31961",
+    "main": [
+     106,
+     107,
+     108,
+     109
+    ],
+    "run": [
+     107,
+     108,
+     109,
+     110
+    ]
+   },
+   {
+    "control_number": "33715",
+    "main": [
+     141,
+     142,
+     143
+    ],
+    "run": [
+     78,
+     79
+    ]
+   },
+   {
+    "control_number": "33718",
+    "main": [
+     78
+    ],
+    "run": [
+     77,
+     78
+    ]
+   },
+   {
+    "control_number": "38666",
+    "main": [
+     99,
+     100,
+     101,
+     102
+    ],
+    "run": [
+     113,
+     114,
+     115,
+     116
+    ]
+   },
+   {
+    "control_number": "38705",
+    "main": [
+     65
+    ],
+    "run": [
+     93,
+     94
+    ]
+   },
+   {
+    "control_number": "41740",
+    "main": null,
+    "run": [
+     94,
+     95
+    ]
+   },
+   {
+    "control_number": "44097",
+    "main": [
+     110
+    ],
+    "run": [
+     109,
+     110
+    ]
+   },
+   {
+    "control_number": "44598",
+    "main": [
+     131,
+     132
+    ],
+    "run": [
+     87,
+     88
+    ]
+   },
+   {
+    "control_number": "44728",
+    "main": [
+     116,
+     117,
+     118
+    ],
+    "run": [
+     115,
+     116,
+     117,
+     118
+    ]
+   },
+   {
+    "control_number": "44996",
+    "main": [
+     176
+    ],
+    "run": [
+     127,
+     128
+    ]
+   }
+  ],
+  "pages_moved_kept": [],
+  "files": "sources.json and capture.json are origin/main's but for the kept programs' entries; summary.json is origin/main's with its counts taken again from the records"
  }
 }

@@ -32,11 +32,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "ec94449d41b1632d"
+   }
   },
   "listed": 8,
-  "text_chars": 9439
+  "text_chars": 9443
  },
  {
   "control_number": "01933",
@@ -81,11 +80,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "184e9cc0429a7982"
+   }
   },
   "listed": 6,
-  "text_chars": 10101
+  "text_chars": 10109
  },
  {
   "control_number": "01957",
@@ -105,36 +103,36 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "BIOLC111",
    "BIOLC112",
    "CHEMC113",
+   "GEOGC101",
+   "GEOGC111",
    "PHYSC111",
    "PHYSC113",
    "PHYSC211"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=92",
-   "title": "General Sciences Associate in Arts Degree",
-   "h1": "General Sciences Associate in Arts Degree",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    92,
-    93
+    65
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "fbc3976b0385aae0"
+   }
   },
   "listed": 8,
-  "text_chars": 7888
+  "text_chars": 4595
  },
  {
   "control_number": "10976",
@@ -147,13 +145,12 @@
    "BSADC171"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=79",
-   "title": "Business Administration Associate in Science Degree for Transfer (AS-T)",
-   "h1": "Business Administration Associate in Science Degree for Transfer (AS-T)",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=80",
+   "title": "Business Associate in Science Degree",
+   "h1": "Business Associate in Science Degree",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    79,
     80,
     81
    ],
@@ -163,11 +160,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "f08d8ed734d89745"
+   }
   },
   "listed": 1,
-  "text_chars": 13275
+  "text_chars": 9523
  },
  {
   "control_number": "10977",
@@ -201,8 +197,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "2b965a7f359916f4"
+   }
   },
   "listed": 8,
   "text_chars": 16000
@@ -237,11 +232,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "26c3f9b39f87500e"
+   }
   },
   "listed": 4,
-  "text_chars": 15094
+  "text_chars": 15107
  },
  {
   "control_number": "11578",
@@ -275,11 +269,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "26c3f9b39f87500e"
+   }
   },
   "listed": 6,
-  "text_chars": 15094
+  "text_chars": 15107
  },
  {
   "control_number": "11579",
@@ -327,11 +320,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "3d9027af88d7b4be"
+   }
   },
   "listed": 20,
-  "text_chars": 13881
+  "text_chars": 13892
  },
  {
   "control_number": "11580",
@@ -351,26 +343,24 @@
    "CHDVC203"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=85",
-   "title": "Child Development Site Supervisor Certificate of Achievement",
-   "h1": "Child Development Site Supervisor Certificate of Achievement",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=84",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    85,
-    86
+    84
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "58f7404f5f79c52c"
+   }
   },
   "listed": 8,
-  "text_chars": 8092
+  "text_chars": 5181
  },
  {
   "control_number": "15576",
@@ -385,27 +375,25 @@
    "PARAC240"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=111",
-   "title": "Paralegal Studies Associate in Science Degree",
-   "h1": "Paralegal Studies Associate in Science Degree",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=112",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    111,
     112,
     113
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "fc412269687a1f6e"
+   }
   },
   "listed": 5,
-  "text_chars": 10897
+  "text_chars": 10038
  },
  {
   "control_number": "18557",
@@ -493,11 +481,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "9ecf7508be2a8b6f"
+   }
   },
   "listed": 13,
-  "text_chars": 10595
+  "text_chars": 10612
  },
  {
   "control_number": "18952",
@@ -528,11 +515,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "90cde5b0042f064e"
+   }
   },
   "listed": 4,
-  "text_chars": 7685
+  "text_chars": 7690
  },
  {
   "control_number": "18953",
@@ -567,11 +553,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "163425670c1f0e97"
+   }
   },
   "listed": 8,
-  "text_chars": 9777
+  "text_chars": 9784
  },
  {
   "control_number": "20629",
@@ -613,8 +598,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "cbc2a13151a97b53"
+   }
   },
   "listed": 4,
   "text_chars": 16000
@@ -658,11 +642,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "4fde5b706831a76e"
+   }
   },
   "listed": 16,
-  "text_chars": 4286
+  "text_chars": 4290
  },
  {
   "control_number": "30766",
@@ -715,35 +698,38 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 0.875,
   "codes_found": [
+   "CSCIC252",
+   "ITC251",
    "MATHC255",
    "MATHC257",
+   "PHYSC111",
    "STATC1000",
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=181",
-   "title": "transfer-level mathematics for non-STEM majors. Topics include",
-   "h1": "transfer-level mathematics for non-STEM majors. Topics include",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=102",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    181,
-    182,
-    183
+    102,
+    103,
+    104,
+    105
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "83e7ccc43807e32f"
+   }
   },
   "listed": 8,
-  "text_chars": 13759
+  "text_chars": 16000
  },
  {
   "control_number": "31064",
@@ -796,11 +782,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "47ab1dd6af9d88bd"
+   }
   },
   "listed": 2,
-  "text_chars": 8999
+  "text_chars": 9007
  },
  {
   "control_number": "31159",
@@ -830,11 +815,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "737777022e79f4e1"
+   }
   },
   "listed": 4,
-  "text_chars": 10026
+  "text_chars": 10038
  },
  {
   "control_number": "31540",
@@ -916,8 +900,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "70fc5974d84316c4"
+   }
   },
   "listed": 15,
   "text_chars": 16000
@@ -928,7 +911,7 @@
   "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.9,
   "codes_found": [
    "HCRSC130",
    "HCRSC131",
@@ -938,29 +921,27 @@
    "HCRSC138",
    "HCRSC139",
    "HCRSC143",
-   "HCRSC150",
-   "ITC75"
+   "HCRSC150"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=107",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=106",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    106,
     107,
     108,
-    109,
-    110
+    109
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "f6dfeff49d350f4b"
+   }
   },
   "listed": 10,
   "text_chars": 16000
@@ -1001,8 +982,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "651054959ec8ac46"
+   }
   },
   "listed": 10,
   "text_chars": 16000
@@ -1053,11 +1033,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "26c3f9b39f87500e"
+   }
   },
   "listed": 8,
-  "text_chars": 15094
+  "text_chars": 15107
  },
  {
   "control_number": "32777",
@@ -1104,11 +1083,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "320c0d547cacda8d"
+   }
   },
   "listed": 9,
-  "text_chars": 3962
+  "text_chars": 3965
  },
  {
   "control_number": "33715",
@@ -1116,9 +1094,11 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 0.917,
   "codes_found": [
    "ARTC101",
+   "ARTC105",
+   "ARTC106",
    "ARTC107",
    "ARTC108",
    "ARTC111",
@@ -1129,26 +1109,26 @@
    "ARTC151"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
-   "title": "Art History Associate in Arts Degree for Transfer (AA-T)",
-   "h1": "Art History Associate in Arts Degree for Transfer (AA-T)",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=141",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    78,
-    79
+    141,
+    142,
+    143
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "ef97ea31178cd37f"
+   }
   },
   "listed": 12,
-  "text_chars": 7474
+  "text_chars": 15090
  },
  {
   "control_number": "33718",
@@ -1168,26 +1148,24 @@
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=77",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=78",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    77,
     78
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "262db76c86d6ec78"
+   }
   },
   "listed": 8,
-  "text_chars": 10420
+  "text_chars": 5176
  },
  {
   "control_number": "33776",
@@ -1218,11 +1196,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "65f66e8591d86d06"
+   }
   },
   "listed": 4,
-  "text_chars": 8259
+  "text_chars": 8261
  },
  {
   "control_number": "33838",
@@ -1265,11 +1242,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "fd923ec774c3689c"
+   }
   },
   "listed": 4,
-  "text_chars": 10155
+  "text_chars": 10163
  },
  {
   "control_number": "35195",
@@ -1304,11 +1280,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "9bb3d520b0e6267b"
+   }
   },
   "listed": 11,
-  "text_chars": 13602
+  "text_chars": 13613
  },
  {
   "control_number": "35273",
@@ -1343,11 +1318,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "c750162d5e41a456"
+   }
   },
   "listed": 10,
-  "text_chars": 14578
+  "text_chars": 14589
  },
  {
   "control_number": "38665",
@@ -1396,7 +1370,7 @@
   "award": "A.A- T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.812,
+  "coverage": 0.75,
   "codes_found": [
    "ANTHC111",
    "ECONC2002",
@@ -1408,30 +1382,28 @@
    "POLSC103",
    "SOCIC1000",
    "SOCIC161",
-   "SOSCC271",
    "STATC1000",
    "STATC1000H"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=113",
-   "title": "Political Science Associate in Arts Degree for Transfer (AA-T)",
-   "h1": "Political Science Associate in Arts Degree for Transfer (AA-T)",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=99",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    113,
-    114,
-    115,
-    116
+    99,
+    100,
+    101,
+    102
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "e2e71637acdd900b"
+   }
   },
   "listed": 16,
   "text_chars": 16000
@@ -1462,26 +1434,24 @@
    "PHILC131"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=93",
-   "title": "History Associate in Arts Degree for Transfer (AA-T)",
-   "h1": "History Associate in Arts Degree for Transfer (AA-T)",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=65",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    93,
-    94
+    65
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "38a34f416ee29efb"
+   }
   },
   "listed": 21,
-  "text_chars": 7469
+  "text_chars": 4595
  },
  {
   "control_number": "40250",
@@ -1514,8 +1484,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "923b10bd9bc8c4e7"
+   }
   },
   "listed": 7,
   "text_chars": 7696
@@ -1550,11 +1519,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "8c1a3342724a384d"
+   }
   },
   "listed": 5,
-  "text_chars": 9115
+  "text_chars": 9122
  },
  {
   "control_number": "40448",
@@ -1588,11 +1556,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "bf15f1be03277ba5"
+   }
   },
   "listed": 6,
-  "text_chars": 14938
+  "text_chars": 14951
  },
  {
   "control_number": "40449",
@@ -1626,11 +1593,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "9d476c4b7ae7c201"
+   }
   },
   "listed": 9,
-  "text_chars": 4789
+  "text_chars": 4788
  },
  {
   "control_number": "40707",
@@ -1660,8 +1626,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "b25779063f13a48e"
+   }
   },
   "listed": 4,
   "text_chars": 4250
@@ -1758,8 +1723,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "2d2b9567c314164b"
+   }
   },
   "listed": 24,
   "text_chars": 16000
@@ -1793,47 +1757,22 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "8f4a451268a98435"
+   }
   },
   "listed": 5,
-  "text_chars": 4170
+  "text_chars": 4168
  },
  {
   "control_number": "41740",
   "title": "Industrial Process Technician",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 1.0,
-  "codes_found": [
-   "DRFTC108",
-   "INDEC60",
-   "MCTLC107",
-   "PTECC101X",
-   "PTECC110X"
-  ],
-  "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=94",
-   "title": "Industrial Process Technician Certificate of Achievement",
-   "h1": "Industrial Process Technician Certificate of Achievement",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    94,
-    95
-   ],
-   "extractor": "pypdf",
-   "heading_named": true,
-   "hand_filed": {
-    "fetched_by": "Sam Lee",
-    "fetched_at": "2026-10-17",
-    "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "0a44015ca732d53e"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 5,
-  "text_chars": 6671
+  "text_chars": 0
  },
  {
   "control_number": "41968",
@@ -1870,11 +1809,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "7b753e5c49afcb57"
+   }
   },
   "listed": 11,
-  "text_chars": 9728
+  "text_chars": 9752
  },
  {
   "control_number": "42678",
@@ -1906,11 +1844,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "8e511384f800038c"
+   }
   },
   "listed": 8,
-  "text_chars": 14938
+  "text_chars": 14958
  },
  {
   "control_number": "43206",
@@ -1981,8 +1918,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "95221a1c9641659c"
+   }
   },
   "listed": 2,
   "text_chars": 4454
@@ -2027,11 +1963,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "17a81d22c72ad53e"
+   }
   },
   "listed": 14,
-  "text_chars": 14453
+  "text_chars": 14488
  },
  {
   "control_number": "44085",
@@ -2068,11 +2003,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "277d916e1b352d63"
+   }
   },
   "listed": 9,
-  "text_chars": 14797
+  "text_chars": 14816
  },
  {
   "control_number": "44097",
@@ -2090,26 +2024,24 @@
    "ITC75"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=109",
-   "title": "Microsoft Applications Specialist Certificate of Achievement",
-   "h1": "Microsoft Applications Specialist Certificate of Achievement",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=110",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    109,
     110
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "db075b081877148a"
+   }
   },
   "listed": 6,
-  "text_chars": 6758
+  "text_chars": 5146
  },
  {
   "control_number": "44364",
@@ -2147,8 +2079,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "d225632ff772dfb8"
+   }
   },
   "listed": 9,
   "text_chars": 16000
@@ -2203,11 +2134,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "031f8dc730177c35"
+   }
   },
   "listed": 28,
-  "text_chars": 9363
+  "text_chars": 9379
  },
  {
   "control_number": "44598",
@@ -2222,26 +2152,25 @@
    "ACADC102X"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=87",
-   "title": "Corrections Officer Certificate of Achievement",
-   "h1": "Corrections Officer Certificate of Achievement",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=131",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    87,
-    88
+    131,
+    132
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "90dcf81a17a734d2"
+   }
   },
   "listed": 3,
-  "text_chars": 6537
+  "text_chars": 11356
  },
  {
   "control_number": "44726",
@@ -2269,11 +2198,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "16c66a70a2f667f0"
+   }
   },
   "listed": 2,
-  "text_chars": 1442
+  "text_chars": 1444
  },
  {
   "control_number": "44727",
@@ -2301,11 +2229,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "7273ee90d17b286c"
+   }
   },
   "listed": 2,
-  "text_chars": 2983
+  "text_chars": 2986
  },
  {
   "control_number": "44728",
@@ -2337,25 +2264,23 @@
    "SWHSC104"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=115",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=116",
    "title": "",
    "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    115,
     116,
     117,
     118
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "6146294b6eeed84a"
+   }
   },
   "listed": 21,
   "text_chars": 16000
@@ -2390,8 +2315,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "0271577cbace2154"
+   }
   },
   "listed": 6,
   "text_chars": 4038
@@ -2425,11 +2349,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "e8aa26df8ae7a9a9"
+   }
   },
   "listed": 5,
-  "text_chars": 2799
+  "text_chars": 2803
  },
  {
   "control_number": "44996",
@@ -2443,26 +2366,24 @@
    "ITC805"
   ],
   "source": {
-   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=127",
-   "title": "Office Skills: Computer Basics Certificate of Completion",
-   "h1": "Office Skills: Computer Basics Certificate of Completion",
+   "url": "https://www.cerrocoso.edu/_resources/assets/documents/general-information/2026-2027-catalog.pdf#page=176",
+   "title": "",
+   "h1": "",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    127,
-    128
+    176
    ],
    "extractor": "pypdf",
-   "heading_named": true,
+   "heading_named": false,
    "hand_filed": {
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "6c95bc7eee0c1416"
+   }
   },
   "listed": 2,
-  "text_chars": 4707
+  "text_chars": 5541
  },
  {
   "control_number": "45087",
@@ -2497,8 +2418,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "b2d9b9e92df24502"
+   }
   },
   "listed": 8,
   "text_chars": 5830
@@ -2544,11 +2464,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "fee87ed52d86ea5c"
+   }
   },
   "listed": 16,
-  "text_chars": 10564
+  "text_chars": 10571
  },
  {
   "control_number": "45236",
@@ -2591,11 +2510,10 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "ac1a4294056c094c"
+   }
   },
   "listed": 16,
-  "text_chars": 10783
+  "text_chars": 10791
  },
  {
   "control_number": "45237",
@@ -2627,8 +2545,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "97dfbe8bf83a7335"
+   }
   },
   "listed": 6,
   "text_chars": 3857
@@ -2702,8 +2619,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "6fda7e7e97aeb59b"
+   }
   },
   "listed": 30,
   "text_chars": 11140
@@ -2749,8 +2665,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "72983ed4260360fc"
+   }
   },
   "listed": 15,
   "text_chars": 16000
@@ -2800,8 +2715,7 @@
     "fetched_by": "Sam Lee",
     "fetched_at": "2026-10-17",
     "sha256": "a01a1321caee137b86ef6769db86daf52af475ba64ed6e33b6c817c3547a3214"
-   },
-   "text_sha": "6fda7e7e97aeb59b"
+   }
   },
   "listed": 30,
   "text_chars": 11140
