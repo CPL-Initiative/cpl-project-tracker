@@ -61,36 +61,34 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
+   "pass": false,
+   "status": "incomplete",
    "computed": [
     38.0,
     38.0
    ],
    "stated": [
-    38.0,
-    38.0
+    65.0,
+    65.0
    ],
-   "against": "program",
-   "why": [],
-   "degree": {
+   "against": "degree",
+   "ge": null,
+   "why": [
+    "the record names the degree total and the Cal-GETC pattern, but no units for it"
+   ],
+   "major": {
     "pass": true,
     "status": "equal",
     "computed": [
-     72.0,
-     72.0
+     38.0,
+     38.0
     ],
     "stated": [
-     65.0,
-     65.0
+     38.0,
+     38.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "overlap": true
+    "against": "program",
+    "why": []
    }
   },
   "repeated": {
@@ -115,7 +113,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -136,8 +134,8 @@
     "max": 65
    },
    "ge_units": {
-    "min": 34,
-    "max": 34
+    "min": null,
+    "max": null
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -245,20 +243,14 @@
    "The 'Minimum of 18 semester units in the major' line is a generic ADT requirement, not this award's total."
   ]
  },
- "extracted_run": 43482160320,
+ "extracted_run": 43355014570,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Cal-GETC (https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/: Plus General Education Requirements (Cal-GETC) 34 (S648, d-calgetc-34-per-college-evidence-s648: Grossmont's transfer pages print their own Cal-GETC figure; Psychology AA-T 30978 and History AA-T 31814 quote it))"
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
   }
  ],
- "read_run": 43355014570
+ "read_run": "39061728041"
 }
