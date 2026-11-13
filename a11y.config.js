@@ -3837,6 +3837,14 @@ module.exports = {
     seed: (page) => seedCommonsDataView(page, "light", "districts"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
+  "commons-data-districts-dark": {
+    file: "index.html",
+    title: "CPL Commons: the data dashboard, colleges by district, dark",
+    routes: [{ hash: "commons/data/districts", name: "data-districts-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCommonsDataView(page, "dark", "districts"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "commons-data-apis-dark": {
     file: "index.html",
     title: "CPL Commons: the data dashboard, the API checklist, dark",

@@ -7,7 +7,10 @@
    tests/commons_data_controls.test.js pins the CSS rule; this script measures the rendered result. A figure is any
    value that reads as a number, a percentage or dollars; it fails when its text's line boxes sit on more than one line.
 
-   Usage:  node scripts/commons_data_values_check.js [--shots DIR] [--college "Skyline College"]
+   Run by hand (nothing in npm test or CI calls it; npm run a11y measures contrast and targets, not this):
+           node scripts/commons_data_values_check.js [--shots DIR] [--college "Skyline College"]
+   It also fails when the list's box (.cdd-wrap) scrolls sideways with a row open, and when the dictionary, API
+   checklist or district view's box does.
    Needs playwright (out of tree, as scripts/a11y.js does) and a Chromium. Serves the repo itself; nothing leaves the
    origin. Exits non-zero on a broken figure or a sideways scroll. */
 "use strict";
@@ -20,7 +23,7 @@ const argv = process.argv.slice(2);
 const flag = (k) => { const i = argv.indexOf(k); return i >= 0 ? argv[i + 1] : null; };
 const SHOTS = flag("--shots");
 const WHO = flag("--college") || "Skyline College";
-const WIDTHS = [1440, 1016, 768, 390];
+const WIDTHS = [1440, 1280, 1016, 768, 390, 320];
 
 function chromiumPath() {
   if (process.env.PLAYWRIGHT_CHROMIUM) return process.env.PLAYWRIGHT_CHROMIUM;
@@ -69,7 +72,7 @@ function serve() {
     await page.evaluate(() => { const x = document.querySelector(".cplfl-overlay.open #cplfl-close"); if (x) x.click(); });
     await page.waitForTimeout(400);
     const res = await page.evaluate((who) => {
-      const broken = [];
+      const broken = [], wide = [];
       const FIG = /^\s*\$?[\d,.]+%?\s*$/;
       const lines = (n) => { const r = document.createRange(); r.selectNodeContents(n); return new Set(Array.from(r.getClientRects()).map((x) => Math.round(x.top))).size; };
       const ids = Array.from(document.querySelectorAll("#cdd-colleges [data-expand]")).map((b) => b.getAttribute("data-expand"));
@@ -77,6 +80,8 @@ function serve() {
         const b = document.querySelector('#cdd-colleges [data-expand="' + id + '"]'); b.click();
         const more = document.getElementById("cdd-more-" + id);
         if (more) more.querySelectorAll("dd, .cdd-n, .cdd-num").forEach((d) => { if (FIG.test(d.textContent) && lines(d) > 1) broken.push(b.textContent + ": " + d.textContent.trim()); });
+        const wrap = document.querySelector("#cdd-colleges").closest(".cdd-wrap");
+        if (more && wrap.scrollWidth > wrap.clientWidth + 1) wide.push(b.textContent + " (" + (wrap.scrollWidth - wrap.clientWidth) + "px)");
         document.querySelector('#cdd-colleges [data-expand="' + id + '"]').click();
       });
       document.querySelectorAll("#cdd-colleges tbody tr[data-college] .cdd-n, #cdd-colleges tbody tr[data-college] .cdd-num").forEach((d) => {
@@ -84,11 +89,23 @@ function serve() {
       });
       const t = Array.from(document.querySelectorAll("#cdd-colleges [data-expand]")).filter((x) => x.textContent === who)[0];
       if (t) { t.click(); document.querySelector("#cdd-colleges tr.cdd-open").scrollIntoView(); }
-      return { colleges: ids.length, broken, sideways: document.documentElement.scrollWidth > window.innerWidth };
+      return { colleges: ids.length, broken, wide, sideways: document.documentElement.scrollWidth > window.innerWidth,
+        layout: getComputedStyle(document.querySelector("#cdd-colleges")).display };
     }, WHO);
-    const ok = !res.broken.length && !res.sideways && res.colleges > 0;
+    /* The other views: no box scrolls sideways. */
+    const views = {};
+    for (const v of ["districts", "dictionary", "apis"]) {
+      await page.evaluate((h) => { location.hash = h; }, "commons/data/" + v);
+      await page.waitForSelector("#commons-root #cdd-" + (v === "dictionary" ? "dict" : v), { state: "attached", timeout: 30000 });
+      await page.waitForTimeout(200);
+      views[v] = await page.evaluate(() => Array.from(document.querySelectorAll("#commons-root .cdd-wrap, #commons-root .cdd-view")).some((x) => x.scrollWidth > x.clientWidth + 1)
+        || document.documentElement.scrollWidth > window.innerWidth);
+    }
+    const viewsWide = Object.keys(views).filter((k) => views[k]);
+    const ok = !res.broken.length && !res.wide.length && !viewsWide.length && !res.sideways && res.colleges > 0;
     if (!ok) bad++;
-    console.log((ok ? "ok   " : "FAIL ") + w + "px: " + res.colleges + " colleges' rows, " + res.broken.length + " broken figures" + (res.sideways ? ", the page scrolls sideways" : "")
+    console.log((ok ? "ok   " : "FAIL ") + w + "px (list " + (res.layout === "block" ? "stacked" : "a table") + "): " + res.colleges + " colleges' rows, " + res.broken.length + " broken figures, "
+      + res.wide.length + " rows widening the list" + (res.wide.length ? " (" + res.wide.slice(0, 3).join("; ") + ")" : "") + (viewsWide.length ? ", sideways: " + viewsWide.join(", ") : "") + (res.sideways ? ", the page scrolls sideways" : "")
       + (res.broken.length ? " (" + res.broken.slice(0, 5).join("; ") + ")" : ""));
     if (SHOTS) {
       const box = await page.evaluate(() => {
