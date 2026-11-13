@@ -1,30 +1,9 @@
 {
  "_about": "Identity-anchored title suggestions for the CER unclassified-triage worklist (kb/_suggest_unclassified.py). Precedence per skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local course title; plus CareerOneStop authority matches when the registry is synced. One-click FILL chips — the curator always confirms; never auto-applied. `aligned` names each title's aligned course: the course its exhibit's credit recommendation names, as CCN > C-ID > M-ID > the college's course title (Sam, 2026-10-30); exam brands keep their names.",
- "_generated_at": "2026-11-12T20:24:07Z",
+ "_generated_at": "2026-11-13T16:59:20Z",
  "count": 0,
  "suggestions": {},
  "aligned": {
-  "Industry Training Evidence for AJ 61": {
-   "kind": "cid",
-   "id": "AJ 124",
-   "title": "Legal Aspects of Evidence",
-   "code": "AJ 61",
-   "college": "Las Positas College"
-  },
-  "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
-   "kind": "mid",
-   "id": "DANC M1222",
-   "title": "Modern Dance Techniques 1",
-   "code": "DANCETQ 141",
-   "college": "Los Angeles Pierce College"
-  },
-  "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II": {
-   "kind": "mid",
-   "id": "DANC M1251",
-   "title": "Modern Dance Techniques 2",
-   "code": "DANCETQ 142",
-   "college": "Los Angeles Pierce College"
-  },
   "Nor Cal Carpenters Training Hardwood Floor Layer Apprenticeship Level 2": {
    "kind": "mid",
    "id": "CNST M1129",

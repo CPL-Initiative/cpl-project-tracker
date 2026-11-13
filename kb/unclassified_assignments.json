@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-12T20:21:38Z",
-  "count": 2546,
+  "_synced_at": "2026-11-13T16:56:14Z",
+  "count": 2576,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -7858,6 +7858,12 @@
       "reviewed_at": "2026-11-11T01:17:26.041469+00:00",
       "unified_title": "Agricultural Business and Technology"
     },
+    "Credit by Exam-- CFPL ABT 133": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:03.722245+00:00",
+      "unified_title": "Facility Management for Food Safety"
+    },
     "Credit by Exam-Elementary American Sign Language 1": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
@@ -9974,6 +9980,18 @@
       "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
       "unified_title": "Modern Dance Techniques"
     },
+    "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
+      "issuing_agency": "CHAMPS High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:15.409179+00:00",
+      "unified_title": "Modern Dance Techniques 1"
+    },
+    "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II": {
+      "issuing_agency": "CHAMPS High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:17.272537+00:00",
+      "unified_title": "Modern Dance Techniques 2"
+    },
     "HIST 032: Cultural History of the Chicano": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -11036,6 +11054,168 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-07-07T23:55:50.236714+00:00",
       "unified_title": "Introduction to Computers"
+    },
+    "Industry Training Evidence for AJ 50": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:36:44.884129+00:00",
+      "unified_title": "Introduction to Administration of Justice"
+    },
+    "Industry Training Evidence for AJ 54": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:37:18.901059+00:00",
+      "unified_title": "Investigative Report Writing"
+    },
+    "Industry Training Evidence for AJ 60": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:38:53.24418+00:00",
+      "unified_title": "Concepts of Criminal Law"
+    },
+    "Industry Training Evidence for AJ 61": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:39:08.713508+00:00",
+      "unified_title": "Legal Aspects of Evidence"
+    },
+    "Industry Training Evidence for AJ 63": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:39:45.360909+00:00",
+      "unified_title": "Criminal Investigation"
+    },
+    "Industry Training Evidence for AJ 64": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:40:49.902805+00:00",
+      "unified_title": "Police Patrol Operations"
+    },
+    "Industry Training Evidence for AJ 66": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:41:49.096282+00:00",
+      "unified_title": "Juvenile Procedures"
+    },
+    "Industry Training Evidence for AJ 68": {
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:42:35.798856+00:00",
+      "unified_title": "Police Ethics and Leadership"
+    },
+    "Industry Training Evidence for AUTO A1": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:01.418391+00:00",
+      "unified_title": "ASE A1 — Engine Repair"
+    },
+    "Industry Training Evidence for AUTO A2": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:10.436127+00:00",
+      "unified_title": "ASE A2 — Automatic Transmission/Transaxle"
+    },
+    "Industry Training Evidence for AUTO A3": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:12.775948+00:00",
+      "unified_title": "ASE A3 — Manual Drive Train and Axles"
+    },
+    "Industry Training Evidence for AUTO A4": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:14.62365+00:00",
+      "unified_title": "ASE A4 — Suspension and Steering"
+    },
+    "Industry Training Evidence for AUTO A5": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:15.977676+00:00",
+      "unified_title": "ASE A5 — Brakes"
+    },
+    "Industry Training Evidence for AUTO A6": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:17.680346+00:00",
+      "unified_title": "ASE A6 — Electrical/Electronic Systems"
+    },
+    "Industry Training Evidence for AUTO A7": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:22.014049+00:00",
+      "unified_title": "ASE A7 — Heating and Air Conditioning"
+    },
+    "Industry Training Evidence for AUTO A8": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:24.127773+00:00",
+      "unified_title": "ASE A8 — Engine Performance"
+    },
+    "Industry Training Evidence for AUTO A9": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:27.738911+00:00",
+      "unified_title": "ASE A9 — Light Vehicle Diesel Engines"
+    },
+    "Industry Training Evidence for AUTO INT": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:44:15.628762+00:00",
+      "unified_title": "Introduction to Automotive Technology"
+    },
+    "Industry Training Evidence for AUTO INTL": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:44:26.353672+00:00",
+      "unified_title": "Introduction to Automotive Technology"
+    },
+    "Industry Training Evidence for AUTO L1": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:05.438463+00:00",
+      "unified_title": "ASE L1 — Advanced Engine Performance Specialist"
+    },
+    "Industry Training Evidence for AUTO L3": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:14.223091+00:00",
+      "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist"
+    },
+    "Industry Training Evidence for AUTO SDR": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:19.305781+00:00",
+      "unified_title": "Automotive Specified Diagnostic and Repair"
+    },
+    "Industry Training Evidence for AUTO SMOG": {
+      "issuing_agency": "California Bureau of Automotive Repair (BAR)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:24.324605+00:00",
+      "unified_title": "Smog Inspector - Level 1 Training"
+    },
+    "Industry Training Evidence for BUSN 65": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:44.565728+00:00",
+      "unified_title": "Federal Income Tax Accounting"
+    },
+    "Industry Training Evidence for CIS 66": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:47:22.144057+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
+    "Industry Training Evidence for CNT 52": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:47:52.212376+00:00",
+      "unified_title": "Introduction to Computer Networking"
+    },
+    "Industry Training Evidence for CNT 68": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:48:50.386223+00:00",
+      "unified_title": "Introduction to Digital Forensics"
     },
     "Industry for AJ 50": {
       "issuing_agency": "California Community Colleges",
@@ -15306,11 +15486,23 @@
     "AUTO 61A-Automotive Brake Systems-Credit by Exam": [
       "Brakes (ASE A5)"
     ],
+    "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": [
+      "Electrical/Electronic Systems (ASE A6)"
+    ],
+    "AUTOTEC-15: Auto Electricity and Electronics": [
+      "Electrical/Electronic Systems (ASE A6)"
+    ],
+    "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": [
+      "Heating and Air Conditioning (ASE A7)"
+    ],
     "Automotive Brake Systems": [
       "Brakes (ASE A5)"
     ],
     "Automotive Brake Systems AUTO 036 Cx": [
       "Brakes (ASE A5)"
+    ],
+    "Basic Automotive Air Conditioning Systems": [
+      "Heating and Air Conditioning (ASE A7)"
     ],
     "Brakes": [
       "Brakes (ASE A5)"
@@ -15340,7 +15532,7 @@
       "Automatic Transmission/Transaxle (ASE A2)"
     ],
     "Noncredit for AUTO A3": [
-      "Automotive Technology (ASE A3 Manual Drive Train and Axles)"
+      "Manual Drive Train and Axles (ASE A3)"
     ],
     "Noncredit for AUTO A4": [
       "Automotive Technology (ASE A4 Suspension and Steering)"
@@ -15348,14 +15540,26 @@
     "Noncredit for AUTO A5": [
       "Brakes (ASE A5)"
     ],
+    "Noncredit for AUTO A6": [
+      "Electrical/Electronic Systems (ASE A6)"
+    ],
+    "Noncredit for AUTO A7": [
+      "Heating and Air Conditioning (ASE A7)"
+    ],
     "Noncredit for AUTO A8": [
       "Engine Performance (ASE A8)"
+    ],
+    "Noncredit for AUTO A9": [
+      "Light Vehicle Diesel Engines (ASE A9)"
     ],
     "Noncredit for AUTO L1": [
       "Advanced Engine Performance Specialist (ASE L1)"
     ],
+    "Noncredit for AUTO L3": [
+      "Light Duty Hybrid/Electric Vehicle Specialist (ASE L3)"
+    ],
     "Noncredit for AUTO P1": [
-      "Powertrains: Modifications for Performance"
+      "Medium/Heavy Truck Parts Specialist (ASE P1)"
     ],
     "Suspension and Steering": [
       "Automotive Technology (ASE A4 Suspension and Steering)"

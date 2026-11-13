@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-11-13T06:18:00.923Z",
+  "scraped_at": "2026-11-13T16:56:00.369Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -183,17 +183,17 @@
         },
         {
           "college": "Los Angeles Pierce College",
-          "students": 2677,
-          "units": 37671,
-          "avgUnits": 14.072095629435935,
+          "students": 2678,
+          "units": 37673,
+          "avgUnits": 14.067587752053772,
           "transcriptionRate": 3.1,
-          "avgTranscribed": 0.442286141202839,
+          "avgTranscribed": 0.4421209858103062,
           "criteriaMetCount": 3,
-          "militaryStudents": 172,
+          "militaryStudents": 173,
           "nonMilitaryStudents": 2505,
           "apprenticeStudents": 0,
-          "savings": 36648545,
-          "yearImpact": 178441306,
+          "savings": 36652005,
+          "yearImpact": 178453440,
           "transcribedUnits": 1184
         },
         {
@@ -473,14 +473,14 @@
         },
         {
           "college": "Santa Ana College",
-          "students": 630,
+          "students": 632,
           "units": 2254.2,
-          "avgUnits": 3.578095238095238,
+          "avgUnits": 3.566772151898734,
           "transcriptionRate": 15.7,
-          "avgTranscribed": 0.5606349206349207,
+          "avgTranscribed": 0.558860759493671,
           "criteriaMetCount": 1,
           "militaryStudents": 394,
-          "nonMilitaryStudents": 236,
+          "nonMilitaryStudents": 238,
           "apprenticeStudents": 11,
           "savings": 3434588.5,
           "yearImpact": 12999061.600000001,
@@ -773,17 +773,17 @@
         },
         {
           "college": "Las Positas College",
-          "students": 131,
-          "units": 777,
-          "avgUnits": 5.931297709923665,
+          "students": 136,
+          "units": 807,
+          "avgUnits": 5.9338235294117645,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 1,
-          "militaryStudents": 129,
+          "militaryStudents": 134,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
-          "savings": 1313070,
-          "yearImpact": 4604853,
+          "savings": 1364970,
+          "yearImpact": 4786863,
           "transcribedUnits": 0
         },
         {
@@ -1253,17 +1253,17 @@
         },
         {
           "college": "Reedley College",
-          "students": 138,
-          "units": 563.5,
-          "avgUnits": 4.083333333333333,
+          "students": 139,
+          "units": 566.5,
+          "avgUnits": 4.075539568345324,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 134,
+          "militaryStudents": 135,
           "nonMilitaryStudents": 4,
           "apprenticeStudents": 0,
-          "savings": 888792.5,
-          "yearImpact": 3268792,
+          "savings": 893982.5,
+          "yearImpact": 3286993,
           "transcribedUnits": 0
         },
         {
@@ -1772,15 +1772,15 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "60,329",
+      "value": "60,338",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "31,947"
+          "value": "31,954"
         },
         {
           "label": "Workforce/Other",
-          "value": "28,488"
+          "value": "28,490"
         },
         {
           "label": "Apprentice",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 60329,
-    "Units": 289254.4,
+    "Students": 60338,
+    "Units": 289289.4,
     "TranscribedUnits": 85299.65,
-    "Savings": 412953200.25,
-    "YearImpact": 1667819307.3999999,
-    "MilitaryStudents": 31947,
-    "NonMilitaryStudents": 28488,
+    "Savings": 413013750.25,
+    "YearImpact": 1668031652.3999999,
+    "MilitaryStudents": 31954,
+    "NonMilitaryStudents": 28490,
     "AprenticeStudents": 960,
-    "AverageUnits": 4.794616187902999,
-    "TranscribedAverage": 1.4139079049876508
+    "AverageUnits": 4.7944810898604535,
+    "TranscribedAverage": 1.4136970068613477
   }
 }

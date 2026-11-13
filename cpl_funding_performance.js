@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 51892,
-  "pa": 47062,
+  "pe": 51899,
+  "pa": 47069,
   "ppa": 121,
   "p2": 3648,
   "p3": 16922,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 133,
   "pac": 5338,
   "ptc": 4663,
-  "pe_u": 1633029.95,
-  "pa_u": 288501.9,
+  "pe_u": 1633380.95,
+  "pa_u": 288536.9,
   "ppa_u": 752.5,
   "ppe_u": 7143.5,
   "pac_u": 38308.7,
@@ -1076,10 +1076,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 12
   },
   "LA Pierce": {
-   "pe": 2673,
-   "pe_u": 43814.0,
-   "pa": 2640,
-   "pa_u": 37662.0,
+   "pe": 2674,
+   "pe_u": 43860.0,
+   "pa": 2641,
+   "pa_u": 37664.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
@@ -1170,10 +1170,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 39
   },
   "Las Positas": {
-   "pe": 124,
-   "pe_u": 6316.0,
-   "pa": 124,
-   "pa_u": 759.0,
+   "pe": 129,
+   "pe_u": 6524.0,
+   "pa": 129,
+   "pa_u": 789.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 18.0,
@@ -1766,10 +1766,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 24
   },
   "Reedley College": {
-   "pe": 137,
-   "pe_u": 5132.5,
-   "pa": 117,
-   "pa_u": 563.5,
+   "pe": 138,
+   "pe_u": 5229.5,
+   "pa": 118,
+   "pa_u": 566.5,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -3196,8 +3196,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 170,
-    "pa": 137,
+    "pe": 171,
+    "pa": 138,
     "p3": 20
    },
    "Standardized Assessment": {
@@ -3236,8 +3236,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Las Positas": {
    "Military": {
-    "pe": 124,
-    "pa": 124,
+    "pe": 129,
+    "pa": 129,
     "p3": 0
    }
   },
@@ -3809,8 +3809,8 @@ window.CPL_FUNDING_PERF = {
     "p3": 0
    },
    "Military": {
-    "pe": 132,
-    "pa": 113,
+    "pe": 133,
+    "pa": 114,
     "p3": 0
    },
    "Portfolio Review": {
@@ -4477,8 +4477,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 31112,
-   "pa": 28062,
+   "pe": 31119,
+   "pa": 28069,
    "p3": 2690
   },
   "Military | Other": {
@@ -4534,13 +4534,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1633029.95,
-   "pa_u": 288501.9,
+   "pe_u": 1633380.95,
+   "pa_u": 288536.9,
    "p3_u": 85220.15
   },
   "map": {
-   "pe_u": 1640173.45,
-   "pa_u": 289254.4,
+   "pe_u": 1640524.45,
+   "pa_u": 289289.4,
    "p3_u": 85299.65
   },
   "ratio": {
@@ -4600,9 +4600,9 @@ window.CPL_FUNDING_PERF = {
   "Napa": true,
   "Sequoias": false,
   "Citrus": true,
+  "Las Positas": false,
   "Rio Hondo": false,
   "West Hills Lemoore": false,
-  "Las Positas": false,
   "East LA": false,
   "Irvine": true,
   "San Jose City": true,
@@ -4672,8 +4672,8 @@ window.CPL_FUNDING_PERF = {
  "vet_jst": {
   "LA Pierce": {
    "vets": 286,
-   "jst": 172,
-   "pct": 0.6014
+   "jst": 173,
+   "pct": 0.6049
   },
   "Santiago Canyon": {
    "vets": 232,
@@ -4920,6 +4920,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 220,
    "pct": 1.3253
   },
+  "Las Positas": {
+   "vets": 234,
+   "jst": 134,
+   "pct": 0.5726
+  },
   "Rio Hondo": {
    "vets": 203,
    "jst": 130,
@@ -4929,11 +4934,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 76,
    "jst": 21,
    "pct": 0.2763
-  },
-  "Las Positas": {
-   "vets": 234,
-   "jst": 129,
-   "pct": 0.5513
   },
   "East LA": {
    "vets": 642,
@@ -4992,8 +4992,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Reedley College": {
    "vets": 100,
-   "jst": 134,
-   "pct": 1.34
+   "jst": 135,
+   "pct": 1.35
   },
   "Laney": {
    "vets": 68,

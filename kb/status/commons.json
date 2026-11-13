@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T15:48:19Z",
+ "written_at": "2026-11-13T17:00:12Z",
  "rows": [
   {
    "key": "requirements",
@@ -98,14 +98,14 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2696,
-     "of": 5726,
-     "words": "titles carry a review stamp (1,236 a person's, 1,460 a cohort's); 2,749 credentials, 2,287 of 3,057 records stamped",
+     "n": 2726,
+     "of": 5756,
+     "words": "titles carry a review stamp (1,266 a person's, 1,460 a cohort's); 2,751 credentials, 2,293 of 3,063 records stamped",
      "open": "#exhibits/list"
     },
     {
-     "n": 1236,
-     "of": 5726,
+     "n": 1266,
+     "of": 5756,
      "words": "confirmed by a person",
      "open": "#exhibits/list",
      "error": null
@@ -166,22 +166,22 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-12T20:21:39Z",
+    "at": "2026-11-13T16:56:14Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5726,
-    "stamped": 2696,
-    "person": 1236,
+    "titles": 5756,
+    "stamped": 2726,
+    "person": 1266,
     "cohort": 1460,
-    "credentials": 2749,
-    "confirmed": 1236,
-    "records": 3057,
-    "records_stamped": 2287,
+    "credentials": 2751,
+    "confirmed": 1266,
+    "records": 3063,
+    "records_stamped": 2293,
     "saved_at": "2026-11-12T16:21:46Z",
-    "fold_at": "2026-11-12T20:21:39Z",
+    "fold_at": "2026-11-13T16:56:14Z",
     "map_titles": 5114,
-    "unclassified": 198,
+    "unclassified": 168,
     "left_map": 810,
     "below_80": 1117,
     "below_60": 235,
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-13T06:20:30+00:00",
+    "at": "2026-11-13T16:58:50+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -499,7 +499,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-13T06:18:12Z",
+    "at": "2026-11-13T16:56:11Z",
     "every_hours": 24
    },
    "facts": {
@@ -996,10 +996,10 @@
  "batches": [
   {
    "kind": "another-look",
-   "n": 3,
-   "of": 3,
+   "n": 5,
+   "of": 5,
    "open": "#exhibits/another-look/batch",
-   "title": "Another look at 3 exhibit titles",
+   "title": "Another look at 5 exhibit titles",
    "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
    "stop": "The batch ends when its cards are decided.",
    "rules": [
@@ -1027,9 +1027,25 @@
      "keys": [
       "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
      ]
+    },
+    {
+     "id": "52d207f24531",
+     "current": "Introduction to Automotive Technology",
+     "keys": [
+      "_UNCLASSIFIED::Industry Training Evidence for AUTO INT",
+      "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
+     ]
+    },
+    {
+     "id": "f6aa500ab48c",
+     "current": "Introduction to Computer Networking",
+     "keys": [
+      "_UNCLASSIFIED::Industry Training Evidence for CIS 66",
+      "_UNCLASSIFIED::Industry Training Evidence for CNT 52"
+     ]
     }
    ],
-   "at": "2026-11-13T14:46:22Z"
+   "at": "2026-11-13T16:59:37Z"
   },
   {
    "kind": "decision",
@@ -1094,10 +1110,10 @@
  ],
  "next_batch": {
   "kind": "another-look",
-  "n": 3,
-  "of": 3,
+  "n": 5,
+  "of": 5,
   "open": "#exhibits/another-look/batch",
-  "title": "Another look at 3 exhibit titles",
+  "title": "Another look at 5 exhibit titles",
   "teaches": "Keep what works, correct what does not; each answer teaches the next nightly sweep.",
   "stop": "The batch ends when its cards are decided.",
   "rules": [
@@ -1125,8 +1141,24 @@
     "keys": [
      "_UNCLASSIFIED::Credit by Exam-- CFPL ABT 132"
     ]
+   },
+   {
+    "id": "52d207f24531",
+    "current": "Introduction to Automotive Technology",
+    "keys": [
+     "_UNCLASSIFIED::Industry Training Evidence for AUTO INT",
+     "_UNCLASSIFIED::Industry Training Evidence for AUTO INTL"
+    ]
+   },
+   {
+    "id": "f6aa500ab48c",
+    "current": "Introduction to Computer Networking",
+    "keys": [
+     "_UNCLASSIFIED::Industry Training Evidence for CIS 66",
+     "_UNCLASSIFIED::Industry Training Evidence for CNT 52"
+    ]
    }
   ],
-  "at": "2026-11-13T14:46:22Z"
+  "at": "2026-11-13T16:59:37Z"
  }
 }
