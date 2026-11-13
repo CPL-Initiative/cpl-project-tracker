@@ -1,0 +1,74 @@
+{
+ "_about": "The data as it will stand after case 2 lands (one row), simulated locally on 2026-11-13 (S639: review an apply against the data as it will stand afterward). Written by hand from the run named in `how`.",
+ "how": "Simulated, not applied: a copy of kb/ took the cohort's one row (kb/_reclustering_s648_apply.py --overlay, the latest row winning reviewed_by as the real sync does), then export_unified_courses() ran on it through its UC_KB_DIR / UC_OUT_DIR seam; the same run on the untouched kb/ reproduced the committed unified_courses_*.js except their timestamps. Identities 49,561 to 49,560 (FIRE M1274 folds away); member rows 134,485 before and after, so no course counts twice. Only FIRE 130 X's and FIRE M1274's members changed and only their two in-browser rows differ. kb/_row_audit.py then ran on the laid-over state and on the untouched state in the same session.",
+ "identities": [
+  {
+   "id": "FIRE 130 X",
+   "before": {
+    "members": 23,
+    "units": [
+     3,
+     3
+    ],
+    "id_system": "C-ID",
+    "title": "Building Construction for Fire Protection",
+    "row_units": 3,
+    "in_browser_row": true
+   },
+   "after": {
+    "members": 51,
+    "units": [
+     3,
+     4
+    ],
+    "id_system": "C-ID",
+    "title": "Building Construction for Fire Protection",
+    "row_units": 3,
+    "in_browser_row": true
+   }
+  },
+  {
+   "id": "FIRE M1274",
+   "before": {
+    "members": 28,
+    "units": [
+     3,
+     4
+    ],
+    "id_system": "M-ID",
+    "title": "Building Construction for Fire Protection",
+    "row_units": 3.0,
+    "in_browser_row": true
+   },
+   "after": {
+    "members": 0,
+    "units": null,
+    "id_system": null,
+    "title": null,
+    "row_units": null,
+    "in_browser_row": false
+   }
+  }
+ ],
+ "members_changed": [
+  "FIRE 130 X",
+  "FIRE M1274"
+ ],
+ "data_rows_changed": [
+  "FIRE 130 X",
+  "FIRE M1274"
+ ],
+ "display_notes": [
+  "FIRE 130 X: members 23 to 51 and units 3 to 3-4 (FIRE M1274's 28 members join, Mt. San Jacinto FIRE 515 among them by map@rccd.edu's saved pointer); title kept. Eligible credits 667.4 to 1,022.4 and students 48 to 58: four credential titles new to the row, each recommending '3 hours in Building Construction for Fire Protection' (Fire Academy Experience 295.0 credits and 10 students; Professional Fire Service Experience 42.0; Firefighter I 18.0; SFT Fire Inspector 1B and 1C 0.0), as sound as the Firefighter 1 certification already on the row. Confidence reads 0.847 (none before); the evidence lane's FIRE 130 X group (score 10) closes, 164 to 163.",
+  "The adopter and potential college lists stay 5 and 6: FIRE M1274 has no entry in kb/coci_articulations.json identities, so the rollup skips it (a lane follow-up: rebuild the identities map).",
+  "Row audit, against a same-session baseline: one card differs. FIRE 130 X gains a merge-target card (kind X, faculty 0.97 ready, MC 0.679 needs_review, tags none, a suggested aggregate_from_members fix); totals 27,581 to 27,582 cards, ready 5,026 to 5,027, MC needs_review 1,709 to 1,710. FIRE M1274's card is unchanged."
+ ],
+ "files_changed": [
+  "by the apply: kb/migrations/.apply and the runner's receipt under kb/receipts/",
+  "by the nightly sync: kb/coci_curation.json (+1 row; FIRE M1274's entry reads as the cohort's)",
+  "by the export (scripts/daily_build.sh, excel_to_dashboard.py), simulated: unified_courses_data.js, unified_courses_members.js, unified_courses_index.js, unified_courses_details.js, unified_courses_member_desc.js, unified_courses_suggestions.js",
+  "by kb/_row_audit.py in the same run, simulated: kb/row_audit/latest.json and its dated report",
+  "not rebuilt nightly, so they keep FIRE M1274 until their own builders run: coci_lookup_data.js (kb/_build_coci_lookup.py) and cpl_pathways_roep_data.js (kb/_build_roep_display.py)"
+ ],
+ "tests": "On the simulated case-2 post-apply state (the export files, the overlay and the row audit laid over the worktree, then restored with git checkout): node tests/run.js, all 640 files passed (jsdom 29.1.1 installed locally, no-save); scripts/check_generated.sh flagged only the dependency map, for this branch's own files."
+}

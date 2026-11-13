@@ -398,6 +398,7 @@
     "public_library.test.js": 121,
     "pages_size_guard.test.js": 4,
     "service_caller_check.test.js": 30,
-    "district_profiles.test.js": 10
+    "district_profiles.test.js": 10,
+    "reclustering_honors.test.js": 39
   }
 }
