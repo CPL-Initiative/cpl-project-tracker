@@ -461,9 +461,14 @@ STEP
 # kb/exhibits_review.json and kb/exhibits_review_courses.json, and kb/exhibits_adoption.json
 # (the credential panel's Who could adopt it?, Exhibit Adoption's per-credential view, read from
 # this run's statewide_data.js and statewide_prescriptive.js); exhibits.js reads them. The
-# nightly cer-procedures.yml rebuilds them after its run too.
+# nightly cer-procedures.yml rebuilds them after its run too. --live reads the saved title assignments
+# with the public anon key the tab uses, so a card decided since step 3's sync stays decided (#3223,
+# S649); no secret, and it writes no row. --overlay-fresh: step 3 synced the overlay in this run, so the
+# stale guard is off here (a failed step 3 stops the run).
 step "Build the Exhibits review queue" <<'STEP'
-python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
+# Exit 3 is the builder's own refusal (a stale overlay), already said in its warning; anything else failed.
+rc=0; python3 kb/_build_exhibits_review.py --live --overlay-fresh --quiet || rc=$?
+if [ "$rc" != 0 ] && [ "$rc" != 3 ]; then echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."; fi
 STEP
 
 # Another look (Sam, 2026-10-31): titles already in the reference that still differ (an ASE test
