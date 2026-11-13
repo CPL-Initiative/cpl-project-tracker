@@ -23,8 +23,9 @@ insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,v
 ('p-first-read-pr-needs-display-build-s644','pitfall','A first-read college PR cannot go green without the display build','S644 (#3194): Santiago Canyon''s first-read PR stays red on roep_display_test until the committed display build covers every filed program, which needs the dated reads refreshed for the college. Plan the dated reads and the build as part of the read (#3197).',array['program-requirements','tests','pitfall'],'proposed','S644, PR 3194',null,null,'SkyWren (S644)',date '2026-11-12')
 on conflict (slug) do nothing returning slug;
 
--- SECOND STATEMENT, NOT RUN (written after the S644 sign-off notes; S645 runs it through the Supabase MCP and records
--- the time and the slugs returned here). ROLLBACK:
+-- SECOND STATEMENT, RUN by SkyFinch (S645), the conductor, through the Supabase MCP at about 02:45Z 2026-11-13, in
+-- one statement with S645's first four rows (kb/receipts/cpl_memory_s645_rows_2026-11-13.sql): both slugs returned,
+-- sam-first-display-run-explicit-go-2026-11-12 and d-santiago-canyon-display-held-s644. ROLLBACK:
 -- delete from cpl_memory where author = 'SkyWren (S644)' and slug in ('sam-first-display-run-explicit-go-2026-11-12', 'd-santiago-canyon-display-held-s644');
 insert into cpl_memory (slug,kind,title,summary,tags,status,source,verified_by,verified_at,author,event_date) values
 ('sam-first-display-run-explicit-go-2026-11-12','decision','Sam: the first live run of the new display apply waits for his explicit go','Sam via COBIx (#3111 6840755612, 5:09 PM PT 2026-11-12), COBIx''s wording: "the first live run of the new display apply goes out on Sam''s explicit go. After that first run, his 2026-10-10 standing go covers a display apply that follows a load that passed its checks. Each run still posts its confirmed record, rollback receipt and display minutes on the run-health line."',array['program-requirements','decision'],'verified','Sam, relayed by COBIx, #3111 comment 6840755612 (COBIx''s wording)','Sam Lee',now(),'SkyWren (S644)',date '2026-11-13'),

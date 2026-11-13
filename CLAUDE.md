@@ -684,7 +684,7 @@ handoffs: [`docs/INDEX.md`](docs/INDEX.md).
 
 **LLM wiki.** `CPLBrain` (`samueltlee/CPLBrain#671`), beside the COG vault.
 Read root `index.md` first, or `/wiki-query`. Promote a settled decision or
-fact with `/wiki-ingest`. Captures still land where they land.
+fact with `/wiki-ingest`.
 
 ---
 
@@ -734,10 +734,10 @@ stays here.
 >
 > **Retiring a lane: do not grep for it** — `lane_retirement_signal` already
 > ran that test and names the candidates; hand-grepping has been wrong every
-> time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
+> time. [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (now: [Sheet 187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) 3-5, [186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) 4-6 wait). An answer
+> ([Sheet 188](https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ) 6, [187](https://claude.ai/artifact/BbNrMfhrjxCx1hNhT9ACnA) 4-5, [186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) 4-6). An answer
 > changes its lane's marker in one PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |
