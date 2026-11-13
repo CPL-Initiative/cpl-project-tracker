@@ -1852,8 +1852,9 @@ def el_index_link_named(program_links, href: str) -> bool:
     the second (115 programs not found, run 43353452924)."""
     if program_links.search(href):
         return True
+    # Case-blind like EL_PROGRAM_PATH, which admits /catalog/<c>/Program,<slug> (S646 review).
     other = re.sub(r"(/catalog/[^/]+/program)([/,])", lambda m: m.group(1) + ("," if m.group(2) == "/" else "/"),
-                   href, count=1)
+                   href, count=1, flags=re.I)
     return other != href and bool(program_links.search(other))
 
 

@@ -3199,7 +3199,8 @@ check(C.el_index_link_named(rx, DVC_EL + "program/a-a-in-music-fall-2026")
       and not C.el_index_link_named(rx, "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program/old-fall-2020")
       and not C.el_index_link_named(rx, DVC_EL + "department/music")
       and C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/X/program,a")
-      and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a"),
+      and not C.el_index_link_named(re.compile(r"catalog/X/program/"), "https://h/catalog/Y/program,a")
+      and C.el_index_link_named(re.compile(r"catalog/X/program/", re.I), "https://h/catalog/X/Program,a"),
       "program_links names either form of one award's address, and nothing the swap does not make")
 
 if failures:
