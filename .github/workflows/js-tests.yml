@@ -163,7 +163,8 @@ jobs:
       # below. The full checkout took 2 min 33 s of every shard on 10-29.
       # A suite that starts reading another receipt fails here on ENOENT, so
       # name its file on a line of its own (library_qualify_draft.test.js reads
-      # its forward SQL, its proof and its rollback, S647).
+      # its forward SQL, its proof and its rollback, S647; first_light_marks.test.js
+      # reads its migration's applied receipt, S647).
       - uses: actions/checkout@v7
         with:
           filter: blob:none
@@ -177,6 +178,7 @@ jobs:
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_proof.sql
             /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_rollback.sql
+            /kb/receipts/migration_s643_first_light_marks_43310349633.json
       - uses: actions/setup-node@v7
         with:
           node-version: '20'

@@ -126,8 +126,10 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   when another `daily-dashboard` group run waits; deployed 17:19Z (*as reported*). Sam presses it first.
 - **One queue check (S643, #3184 `1ee58637`):** `docket-process` and `library-publish-now` import
   `_shared/group_queue.mjs`. **DECIDED (the S643 conductor; `d-docket-shared-queue-check-s643`):** merged, not
-  deployed; both wait for Sam's "deploy" ([Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4; `cpl-chat-deploy.yml`, `confirm=DEPLOY`, one function
-  per dispatch). The first deploy tests `_shared`.
+  deployed. **RULED: Sam said deploy both** (13:11Z 2026-11-13, [Open Asks Sheet 186](https://claude.ai/artifact/XFkUDiDttRRAPmYaUxLCrt) card 4).
+  **NOT YET DEPLOYED** — this session's Supabase connector is down, so it is the next session's first item: deploy
+  `docket-process`, then `library-publish-now`, from `main` through `cpl-chat-deploy.yml` (`confirm=DEPLOY`, one
+  function per dispatch), then this lane's smoke. The first deploy tests `_shared`.
 - **Pictures in a piece (Sam, 2026-11-11, #3095):** a PDF's pictures are cropped in the browser (`readPictures`),
   saved in `cpl_library_pictures`, placed by the drafter through a marker (`pictures.mjs`), checked on the card (Cover
   or crop, Leave it out; `regen.pictures_checked_by`), and written to `library/<slug>/img/` by `library_publish.py`. A
@@ -193,7 +195,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **① One card per project is built (S509, #2538).** `cpl_library.project` names a piece's project; pieces that share it draw as one card, a row per piece with its title as the link, and Edit, Regenerate and Details on each row (each acts on one record; the one departure from the mockup). Edit sets the project; a college's pair files under one. Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql` (13 projects of 2, read back). Test: `library` block (15).
 
-✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what is it for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form with the link and a title from the name. A dropped file filed as is asks for its SharePoint link: a record holds a link, never bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
+✅ **② The one panel is built (S509).** *Create or Remediate a Document* replaces the three add buttons, under the filters: drop or choose a file, or paste a link; *what for?* (Remediate, offered for a .pptx or .docx; Use it as background; File it as is); Instructions; *Start*. Start opens the brief (the instructions as *What it must say*, the kind read from their words, Sam's template defaults), the brief with the link or a text file's words as a source, or the filing form. A dropped file filed as is asks for its SharePoint link: a record holds a link, not bytes. A visual made for a college writes its pair from the brief's Save. Proceeded on the recommendation (S509's reading of Version 20). Test: `library` block (16).
 
 ✅ **③ Remediation in the browser is built (S509):** a dropped .pptx or .docx read here by `library_remediate.js` over the vendored `jszip.min.js`, *Fixed for you* and *Needs you*, *Remediate and download*, and *Draft from the picture* through `alt-text-draft`. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S517)*.
 
