@@ -205,6 +205,11 @@ try:
     check(A.applied_path(full, "123").endswith("_%s.applied_123.json" % BUILD), "the applied record sits beside the receipt")
     check(A.applied_path(full, "123", "Mt. San Antonio College").endswith(
           "_%s.applied_123_mt-san-antonio-college.json" % BUILD), "a --college run's record names its college")
+    check(A.applied_path(full, "123", None, "1") == A.applied_path(full, "123")
+          and A.applied_path(full, "123", None, "2").endswith("_%s.applied_123_2.json" % BUILD)
+          and A.applied_path(full, "123", "Mt. San Antonio College", "3").endswith(
+              "_%s.applied_123_3_mt-san-antonio-college.json" % BUILD),
+          "attempt 1 keeps the name; a re-run's attempt joins it")
 
     # S398: a receipt is gzipped from build fa8ee2a84935 on (72.7 MB of SQL against GitHub's
     # 100 MB file limit). The gzipped one stands for its build, parses to the same rows, and
@@ -305,6 +310,16 @@ try:
           and A.exit_code(rec) == 1,
           "a write that timed out four times and lands after the confirming read is still in the rollback")
 
+    # A row is refused only when every try was refused: a timeout, then a 400, can still land late.
+    t = table()
+    t.fail = {keys[14]: [("before", TimeoutError("timed out")), ("before", e400())],
+              keys[16]: [("before", urllib.error.HTTPError("https://x", 429, "Too Many Requests", None, None))]}
+    rec = A.apply(many, BUILD, full, "203e", request=t, sleep=nap, log=lambda *a: None)
+    t.rows[keys[14]] = many[14]["display"]          # the timed-out first try commits late
+    check(rec["unconfirmed"] == [keys[14]] and keys[14] in rec["rollback"]["reapply"][OLD]
+          and t.patches[keys[16]] == 2 and t.rows[keys[16]]["build"] == BUILD,
+          "a row whose tries were a timeout and then a 400 stays in the rollback; a 429 is retried")
+
     # A page shifted under the confirming read (a concurrent delete on an earlier page).
     t = table()
     t.on_first_patch = lambda: t.hide.add(keys[101])
@@ -370,13 +385,27 @@ try:
         for k in keys[-n:]:
             del t.rows[k]
         return t
-    t = gone(23)
+    # The line is max(1% of the statements, 30 keys): 30 for 2,350 statements.
+    t = gone(30)
     rec = A.apply(many, BUILD, full, "208", request=t, sleep=nap, log=lambda *a: None)
-    check(rec["missing"] == keys[-23:] and rec["written"] == 2327 and not any(k in t.rows for k in keys[-23:])
-          and A.exit_code(rec) == 0, "23 missing of 2,350 (under 1%%) are listed, never inserted, and exit 0")
-    rec = A.apply(many, BUILD, full, "209", request=gone(24), sleep=nap, log=lambda *a: None)
-    check(len(rec["missing"]) == 24 and rec["written"] == 2326 and A.exit_code(rec) == 1,
-          "24 missing of 2,350 (over 1%%: the wrong build) exit 1, though the rest are written")
+    check(rec["missing"] == keys[-30:] and rec["written"] == 2320 and not any(k in t.rows for k in keys[-30:])
+          and A.exit_code(rec) == 0, "30 missing of 2,350 (at the line) are listed, never inserted, and exit 0")
+    rec = A.apply(many, BUILD, full, "209", request=gone(31), sleep=nap, log=lambda *a: None)
+    check(len(rec["missing"]) == 31 and rec["written"] == 2319 and A.exit_code(rec) == 1,
+          "31 missing of 2,350 (over the line: the wrong build) exit 1, though the rest are written")
+    small = [r for r in many if r["college"] == "College A"][:40]
+    skeys = ["%s|%s" % (r["college"], r["control_number"]) for r in small]
+    t = table()
+    for k in skeys[:3]:
+        del t.rows[k]
+    rec = A.apply(small, BUILD, full, "209b", request=t, college="College A", sleep=nap, log=lambda *a: None)
+    check(rec["missing"] == skeys[:3] and rec["written"] == 37 and A.exit_code(rec) == 0,
+          "a --college run of 40 statements with 3 keys the table no longer holds exits 0 (7.5%, under 30 keys)")
+    t = table()
+    for k in skeys[:31]:
+        del t.rows[k]
+    rec = A.apply(small, BUILD, full, "209c", request=t, college="College A", sleep=nap, log=lambda *a: None)
+    check(len(rec["missing"]) == 31 and A.exit_code(rec) == 1, "31 of a small college's 40 missing exits 1")
 
     # A key a shifted page left out is re-read on its own before it is called missing.
     t = table()
@@ -405,7 +434,8 @@ try:
     A.PAGE, A.receipt_for = page, (lambda b: big)
     try:
         t = table()
-        code = A.main(["--apply", "--run", "300", "--college", "College B", "--workers", "4"], request=t, sleep=nap)
+        code = A.main(["--apply", "--run", "300", "--attempt", "1", "--college", "College B", "--workers", "4"],
+                      request=t, sleep=nap)
         mine = [k for k in keys if k.startswith("College B|")]
         rec = json.load(open(A.applied_path(big, "300", "College B")))
         check(code == 0 and sorted(t.patches) == sorted(mine) and rec["scope"] == "College B"
@@ -414,13 +444,18 @@ try:
         check(all("college=eq.College%20B" in p for m, p, _ in t.calls if m == "GET"),
               "a --college run reads only that college's rows")
         check(A.main(["--dry-run", "--college", "College Z"]) == 1, "a college no statement names is refused")
-        t = gone(30)
-        check(A.main(["--apply", "--run", "301"], request=t, sleep=nap) == 1
-              and len(json.load(open(A.applied_path(big, "301")))["missing"]) == 30,
-              "main exits 1 when more than 1% are missing, and the record lists every one")
+        t = gone(31)
+        check(A.main(["--apply", "--run", "301", "--attempt", "1"], request=t, sleep=nap) == 1
+              and len(json.load(open(A.applied_path(big, "301")))["missing"]) == 31,
+              "main exits 1 when more are missing than the line, and the record lists every one")
+        first = open(A.applied_path(big, "301")).read()
+        check(A.main(["--apply", "--run", "301", "--attempt", "2"], request=t, sleep=nap) == 1
+              and os.path.exists(A.applied_path(big, "301", None, "2"))
+              and open(A.applied_path(big, "301")).read() == first,
+              "a re-run's record is filed under its attempt and never writes over the first attempt's")
         open(big, "w").write("-- Generated by kb/_build_roep_display.py (build %s).\n" % BUILD)
         t = table()
-        check(A.main(["--apply", "--run", "302"], request=t, sleep=nap) == 1 and not t.calls,
+        check(A.main(["--apply", "--run", "302", "--attempt", "1"], request=t, sleep=nap) == 1 and not t.calls,
               "a receipt with no statement is refused before any read")
     finally:
         A.PAGE, A.receipt_for = saved

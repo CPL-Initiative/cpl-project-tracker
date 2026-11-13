@@ -45,13 +45,14 @@ HOW (S644). Until S644 it read and wrote one row at a time, in series: build
      response: a write whose response was lost still ends confirmed.
 Missing keys are listed and reported, and are not fatal by themselves: the
 run exits 1 when a planned row does not carry the build afterward, or when
-more than 1% of the statements are still missing (the wrong build), and 0
-otherwise. A key missing at the first read that the confirming read finds
+more statements are still missing than both 1% of them and 30 keys (the
+wrong build), and 0 otherwise. A key missing at the first read that the confirming read finds
 (a load inserted it mid-run) is listed as `present_now`: not written, run
 again. A receipt with no statement (or none of --college's) is refused.
 
 ROLLBACK (Rule 10 a2). The applied record beside the receipt
-(<receipt>.applied_<run>.json; a --college run adds the college's slug)
+(<receipt>.applied_<run>.json; a re-run adds its attempt above 1, from
+GITHUB_RUN_ATTEMPT, and a --college run adds the college's slug)
 files each planned row's before-build: a row that held no display goes back
 to null, and a row that held an older build goes back by re-applying that
 build's receipt. The rollback names every row the run may have written:
@@ -59,8 +60,8 @@ while the record is still a plan (state "planned" or "unconfirmed"), every
 planned row; once confirmed, every planned row it sent a write, errored and
 unconfirmed rows included (a PATCH that timed out can still commit after
 the confirming read), leaving out only a row never tried and a row the
-server refused outright (a 4xx) that the confirming read shows still holding
-its before-build. Naming an unwritten row is safe: putting it back to its
+server refused outright on every try (a 4xx other than 408 or 429) that the
+confirming read shows still holding its before-build. Naming an unwritten row is safe: putting it back to its
 before-build leaves it as it was. A
 row skipped as `already` was not written by this run and is not in its
 rollback; the earlier run that wrote it holds it in its own record. A
@@ -193,7 +194,8 @@ PAGE_ROWS = 1000      # PostgREST's max-rows; a page is ordered by the key, so p
 WORKERS = 8           # PATCHes at once
 TRIES = 4             # a PATCH or a page read, at most
 ERROR_STOP = 50       # past this many failed writes the rest are not tried (a dead key or host)
-MISSING_LINE = 0.01   # more than 1% of the statements missing means the wrong build
+MISSING_LINE = 0.01   # more than 1% of the statements missing means the wrong build,
+MISSING_FLOOR = 30    # and more than 30 keys, so a small college's few gone rows do not fail it
 RECHECK_MAX = 300     # missing keys re-read one at a time; past this the build is wrong anyway
 SHOW = 30             # missing keys printed
 
@@ -207,9 +209,10 @@ def _first(exc: BaseException) -> str:
 
 
 def _transient(exc: BaseException) -> bool:
-    """A 5xx, a timeout or a dropped connection is worth another try; a 4xx is not."""
+    """A 5xx, a 408 or 429, a timeout or a dropped connection is worth another
+    try; any other 4xx is not."""
     if isinstance(exc, urllib.error.HTTPError):
-        return exc.code >= 500
+        return exc.code >= 500 or exc.code in (408, 429)
     return isinstance(exc, (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionError,
                             http.client.HTTPException))
 
@@ -311,7 +314,7 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
 
     # 3. The writes, a bounded pool, each retried on a transient failure.
     failed, lock, stop, done = {}, threading.Lock(), threading.Event(), [0]
-    sent, refused = set(), set()     # sent a write; refused outright (a 4xx), so it cannot land late
+    sent, refused = set(), set()     # sent a write; every try refused by a 4xx, so none can land late
 
     def write(k: str) -> None:
         tried, no = False, False
@@ -321,12 +324,20 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
             tried = True
             where = _where(by_key[k]["college"], by_key[k]["control_number"])
             body = {"display": by_key[k]["display"]}
+            outcomes = []            # per try: True when the server refused it outright
+
+            def once():
+                try:
+                    return request("PATCH", "%s?select=control_number&%s" % (TABLE, where), body)
+                except Exception as exc:
+                    outcomes.append(isinstance(exc, urllib.error.HTTPError) and not _transient(exc))
+                    raise
             try:
-                back = _retry(lambda: request("PATCH", "%s?select=control_number&%s" % (TABLE, where), body), sleep)
+                back = _retry(once, sleep)
                 err = None if len(back) == 1 else "the write matched %d rows" % len(back)
             except Exception as exc:
                 err = _first(exc)
-                no = isinstance(exc, urllib.error.HTTPError) and not _transient(exc)
+                no = bool(outcomes) and all(outcomes)
         with lock:
             done[0] += 1
             if tried:
@@ -381,7 +392,7 @@ def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=N
 def exit_code(rec: dict) -> int:
     """1 when the run did not confirm, when a planned row does not carry the
     build after it (an error the confirming read resolved is not one), or when
-    more than 1% of the statements are still missing; 0 otherwise. A key a load
+    more are still missing than both 1% of the statements and 30 keys; 0 otherwise. A key a load
     inserted mid-run (present_now) is not missing; the next run writes it."""
     return 1 if rec["state"] != "confirmed" or rec["unconfirmed"] or over_line(rec) else 0
 
@@ -392,7 +403,10 @@ def still_missing(rec: dict) -> list:
 
 
 def over_line(rec: dict) -> bool:
-    return len(still_missing(rec)) > MISSING_LINE * rec["statements"]
+    """The wrong-build line: more missing than 1% of the statements and more
+    than MISSING_FLOOR keys, so a small --college run is not failed by the
+    few keys the table no longer holds."""
+    return len(still_missing(rec)) > max(MISSING_LINE * rec["statements"], MISSING_FLOOR)
 
 
 def read_receipt(path: str) -> str:
@@ -403,10 +417,14 @@ def read_receipt(path: str) -> str:
         return fh.read()
 
 
-def applied_path(receipt: str, run: str | None, college: str | None = None) -> str:
+def applied_path(receipt: str, run: str | None, college: str | None = None, attempt: str | None = None) -> str:
+    """<receipt stem>.applied_<run>[_<attempt>][_<college slug>].json; the
+    attempt only above 1, so a re-run of one workflow run never writes over
+    the first attempt's record."""
     stem = receipt[:-len(".gz")] if receipt.endswith(".gz") else receipt
+    tag = "_%d" % int(attempt) if attempt and str(attempt).isdigit() and int(attempt) > 1 else ""
     slug = "_" + re.sub(r"[^a-z0-9]+", "-", college.lower()).strip("-") if college else ""
-    return stem[:-len(".sql")] + ".applied_%s%s.json" % (run or "local", slug)
+    return stem[:-len(".sql")] + ".applied_%s%s%s.json" % (run or "local", tag, slug)
 
 
 def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
@@ -415,6 +433,8 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     mode.add_argument("--dry-run", action="store_true", help="parse the receipt; write nothing")
     mode.add_argument("--apply", action="store_true", help="write it with SUPABASE_SERVICE_KEY")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
+    ap.add_argument("--attempt", default=os.environ.get("GITHUB_RUN_ATTEMPT"),
+                    help="the run's attempt; above 1 it joins the applied record's name")
     ap.add_argument("--workers", type=int, default=WORKERS, help="PATCHes at once (default %d)" % WORKERS)
     ap.add_argument("--college", help="apply only this college's statements, as the receipt names it")
     args = ap.parse_args(argv)
@@ -445,7 +465,7 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     if request is None and not os.environ.get("SUPABASE_SERVICE_KEY"):
         print("SUPABASE_SERVICE_KEY is not set; the display write takes the service role.")
         return 2
-    out = applied_path(receipt, args.run, args.college)
+    out = applied_path(receipt, args.run, args.college, args.attempt)
     rec = apply(rows, build, receipt, args.run, request, out=out, workers=args.workers,
                 college=args.college, sleep=sleep)
     gone, now = still_missing(rec), rec.get("present_now", [])
@@ -462,7 +482,8 @@ def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     for e in rec["errors"][:SHOW]:
         print("  error %s: %s" % (e["key"], e["error"]))
     if over_line(rec):
-        print("FAIL: more than 1%% of the statements are missing (%d of %d); is this the build the table holds?"
+        print("FAIL: more than 1%% of the statements, and more than 30, are missing (%d of %d); "
+              "is this the build the table holds?"
               % (len(gone), rec["statements"]))
     return exit_code(rec)
 
