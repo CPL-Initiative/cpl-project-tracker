@@ -104,6 +104,7 @@ const P = "_UNCLASSIFIED::";
     await t.M.boot(); await settle();
     let raws = shownRaws(t);
     check("a title saved since the build does not come back on a reload", raws.indexOf("Industry Training Evidence for EMS 10") < 0);
+    check("and the card carries the saved title, never the stale proposal", t.M._state.data.held[0].saved === "Paramedic Theory 1");
     check("a title with a comma, quotes, parentheses and a backslash is matched by its exact raw title", raws.indexOf(ODD) < 0);
     check("a cleared assignment (an empty value) leaves the card open", raws.indexOf("Cleared Title") >= 0);
     check("a title with no save stays open", raws.indexOf("Open Title") >= 0);

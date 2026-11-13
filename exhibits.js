@@ -427,7 +427,7 @@
           var id = row.course_id || "", h = byRaw[id.slice(UNCLASS_PREFIX.length)];
           if (!h || row.field !== FIELD_TITLE || id.indexOf(UNCLASS_PREFIX) !== 0 || !String(row.value || "").trim()) return;
           if (h.step === CONFLICT && !((Date.parse(row.reviewed_at || "") || 0) > built)) return;
-          state.done[h.raw] = true; state.reviewSettled[h.raw] = true;
+          state.done[h.raw] = true; state.reviewSettled[h.raw] = true; h.saved = String(row.value).trim();  // shown as saved, never the stale proposal (COBIx, #3260)
         });
       });
     }).catch(function (e) { state.reviewReadErr = String(e && e.message || e); })
