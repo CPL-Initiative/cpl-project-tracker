@@ -1,0 +1,412 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/CPL-Initiative/cpl-project-tracker/kb/district_profiles/district_profile.schema.json",
+  "title": "District profile, schema 1",
+  "description": "One record per California Community College district: who it is, which systems it runs (student information system, curriculum system, catalog), how it codes credit for prior learning (CPL), how data moves between MAP and those systems, and which bot procedures cover each system. DRAFT by COBIx, 2026-11-12, for Sky and Sam. Every fact carries its own evidence (sources, a three-level confidence, checked_at). Unknown is null, never a guess. No staff names or emails live here: people are named by role, and contacts stay in map_college_contacts / college_contacts_harvest.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema", "profile_id", "district", "systems", "cpl_coding", "data_flows", "procedures", "provenance"],
+  "properties": {
+    "schema": { "const": 1 },
+    "profile_id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Stable slug, also the file name: kb/district_profiles/<profile_id>.json. Built from the district name (e.g. 'los-angeles')."
+    },
+
+    "district": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["name", "mis_district_code", "district_type", "colleges", "evidence"],
+      "properties": {
+        "name": { "type": "string", "description": "As kb/college_identity/<date>/crosswalk.json 'district' spells it (map_colleges.district)." },
+        "name_caps": { "type": ["string", "null"], "description": "The Chancellor's Office MIS Appendix A spelling (crosswalk 'district_caps')." },
+        "mis_district_code": { "type": ["string", "null"], "pattern": "^[0-9]{3}$" },
+        "district_type": { "enum": ["S", "M", null], "description": "S single-college, M multi-college (crosswalk 'district_type')." },
+        "website": { "type": ["string", "null"], "format": "uri" },
+        "colleges": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/college" }
+        },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+
+    "systems": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sis", "cms", "catalogs"],
+      "properties": {
+        "sis": { "$ref": "#/$defs/sis" },
+        "cms": { "$ref": "#/$defs/cms" },
+        "catalogs": {
+          "type": "array",
+          "description": "One entry per college. Mirrors program_source_registry plus the wave-scout contract (kb scout JSON, schema 1).",
+          "items": { "$ref": "#/$defs/catalog" }
+        },
+        "other_systems": {
+          "type": "array",
+          "description": "Degree audit, program mapper, transcript ordering, etc. Only when a source names them.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "product", "evidence"],
+            "properties": {
+              "role": { "enum": ["degree_audit", "program_mapper", "education_planning", "transcript_exchange", "lms", "other"] },
+              "product": { "type": ["string", "null"] },
+              "public_url": { "type": ["string", "null"], "format": "uri" },
+              "college_ids": { "type": ["array", "null"], "items": { "type": "integer" }, "description": "null = district-wide." },
+              "evidence": { "$ref": "#/$defs/evidence" }
+            }
+          }
+        }
+      }
+    },
+
+    "cpl_coding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["policies", "transcript_notation", "grading", "type_codes", "ownership", "map_integration"],
+      "properties": {
+        "policies": {
+          "type": "array",
+          "description": "Board policy / administrative procedure on CPL and on transcript notation.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["number", "title", "url", "evidence"],
+            "properties": {
+              "number": { "type": "string", "description": "e.g. 'AP 4235'." },
+              "title": { "type": "string" },
+              "url": { "type": ["string", "null"], "format": "uri" },
+              "last_revised": { "type": ["string", "null"], "format": "date" },
+              "evidence": { "$ref": "#/$defs/evidence" }
+            }
+          }
+        },
+        "transcript_notation": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["annotated", "cpl_type_shown", "notation_list_ref", "evidence"],
+          "properties": {
+            "annotated": { "type": ["boolean", "null"], "description": "Does the transcript say the credit came from CPL?" },
+            "cpl_type_shown": { "type": ["boolean", "null"], "description": "Does it name the CPL type (exam, military, credential, portfolio)?" },
+            "where": { "type": ["string", "null"], "description": "Where on the record (e.g. memorandum field, course line). null if not read." },
+            "notation_list_ref": { "type": ["string", "null"], "description": "The document holding the exact notation text (e.g. 'AP 4230 Appendix A')." },
+            "term_posting": { "type": ["string", "null"], "description": "Which term the credit posts to, by CPL type." },
+            "evidence": { "$ref": "#/$defs/evidence" }
+          }
+        },
+        "grading": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["by_type", "evidence"],
+          "properties": {
+            "by_type": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["map_cpl_types", "grading"],
+                "properties": {
+                  "map_cpl_types": { "type": "array", "items": { "$ref": "#/$defs/mapCplType" } },
+                  "local_label": { "type": ["string", "null"] },
+                  "grading": { "enum": ["letter_or_pnp", "pnp_only", "letter_only", "credit_no_grade", "unknown"] }
+                }
+              }
+            },
+            "evidence": { "$ref": "#/$defs/evidence" }
+          }
+        },
+        "type_codes": {
+          "type": "array",
+          "description": "Local SIS codes/notations for each CPL type, crosswalked to MAP's CPLTypeCode (kb/supabase_map_cx_exhibit_guidance.sql: M, IC, SA, Cx, PR, O). local_code null until a source shows it.",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["map_cpl_type", "local_label", "local_code", "auto_award", "evidence"],
+            "properties": {
+              "map_cpl_type": { "$ref": "#/$defs/mapCplType" },
+              "local_label": { "type": ["string", "null"], "description": "The district's own name for the type." },
+              "local_code": { "type": ["string", "null"], "description": "The SIS transfer/test/course code or notation used to post it." },
+              "exams": { "type": ["array", "null"], "items": { "type": "string" }, "description": "e.g. AP, IB, CLEP, DLPT, DSST for SA." },
+              "auto_award": { "type": ["boolean", "null"], "description": "Awarded on receipt of an official document without a petition." },
+              "evidence": { "$ref": "#/$defs/evidence" }
+            }
+          }
+        },
+        "ownership": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["policy_owner_role", "posting_owner_role", "coordination", "contacts_source", "evidence"],
+          "properties": {
+            "policy_owner_role": { "type": ["string", "null"], "description": "Role, never a name (e.g. 'District Academic Senate')." },
+            "posting_owner_role": { "type": ["string", "null"], "description": "Who keys CPL into the SIS (e.g. 'college Admissions and Records')." },
+            "coordination": { "type": ["string", "null"], "description": "District-run or college-run." },
+            "contacts_source": {
+              "type": "array",
+              "description": "Pointers to where named contacts live. Allowed roles mirror college_contacts_harvest.position and map_college_contacts columns.",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["table", "roles"],
+                "properties": {
+                  "table": { "enum": ["map_college_contacts", "college_contacts_harvest"] },
+                  "roles": {
+                    "type": "array",
+                    "items": { "enum": ["primary_contact", "cpl_coordinator", "vpaa", "vpss", "ceo", "district_ceo", "college_ceo", "vice_chancellor", "assoc_vice_chancellor", "assoc_vp", "dean_cte", "dean_instruction", "dean_ar", "vrc", "articulation_officer"] }
+                  }
+                }
+              }
+            },
+            "evidence": { "$ref": "#/$defs/evidence" }
+          }
+        },
+        "map_integration": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["district_state", "by_college", "evidence"],
+          "properties": {
+            "district_state": { "$ref": "#/$defs/integrationState" },
+            "by_college": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["college_id", "state", "evidence"],
+                "properties": {
+                  "college_id": { "type": "integer" },
+                  "state": { "$ref": "#/$defs/integrationState" },
+                  "what_moves": { "type": ["array", "null"], "items": { "$ref": "#/$defs/mapCplType" }, "description": "Which CPL types travel by this route." },
+                  "note": { "type": ["string", "null"] },
+                  "evidence": { "$ref": "#/$defs/evidence" }
+                }
+              }
+            },
+            "known_issues": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["summary", "evidence"],
+                "properties": {
+                  "summary": { "type": "string" },
+                  "status": { "enum": ["open", "resolved", "unknown"] },
+                  "evidence": { "$ref": "#/$defs/evidence" }
+                }
+              }
+            },
+            "evidence": { "$ref": "#/$defs/evidence" }
+          }
+        }
+      }
+    },
+
+    "data_flows": {
+      "type": "array",
+      "description": "Every hop data takes between MAP, the SIS, the curriculum system, the catalog and our harvest. 'redundant' marks a hop where the same fact is keyed twice by hand — the API targets.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "from", "to", "carries", "mode", "redundant", "evidence"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Standard ids so flows compare across districts: map_to_sis_cpl_posting, sis_to_map_transcribed, sis_to_map_batch_upload, cms_to_catalog, catalog_to_harvest, cms_to_harvest, cms_to_coci, sis_to_mis. Others allowed."
+          },
+          "from": { "$ref": "#/$defs/node" },
+          "to": { "$ref": "#/$defs/node" },
+          "carries": { "type": "string" },
+          "mode": { "enum": ["manual", "automated", "unknown"] },
+          "mechanism": { "enum": ["rekeyed_by_hand", "spreadsheet_batch_upload", "file_export", "api", "publish_from_cms", "web_harvest", "pdf_harvest", "other", "unknown"] },
+          "frequency": { "type": ["string", "null"] },
+          "redundant": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["flag"],
+            "properties": {
+              "flag": { "type": ["boolean", "null"], "description": "true = the same data is entered or read twice by hand; null = not known." },
+              "note": { "type": ["string", "null"] },
+              "api_candidate": { "type": ["boolean", "null"] }
+            }
+          },
+          "college_ids": { "type": ["array", "null"], "items": { "type": "integer" }, "description": "null = district-wide." },
+          "evidence": { "$ref": "#/$defs/evidence" }
+        }
+      }
+    },
+
+    "procedures": {
+      "type": "array",
+      "description": "Bot procedure docs (the 'how to' a district bot follows) per system. Paths are repo paths. Shared procedures (one per vendor) are preferred over per-district copies.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["system", "task", "doc", "status"],
+        "properties": {
+          "system": { "enum": ["sis", "cms", "catalog", "cpl_coding", "map", "other"] },
+          "vendor_key": { "type": ["string", "null"], "description": "e.g. 'peoplesoft_campus_solutions', 'elumen', 'pdf'. Lets one procedure serve a cluster." },
+          "task": { "type": "string", "description": "e.g. 'scout catalog', 'spot-check 5 records', 'read CPL notation list'." },
+          "doc": { "type": ["string", "null"], "description": "Repo path of the procedure, null if not written yet." },
+          "status": { "enum": ["none", "draft", "tested", "retired"] },
+          "last_run": { "type": ["string", "null"], "format": "date-time" }
+        }
+      }
+    },
+
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checked_at", "checked_by", "confidence", "sources"],
+      "properties": {
+        "checked_at": { "type": "string", "format": "date-time" },
+        "checked_by": { "type": "string", "description": "Bot or session that last checked the whole profile (e.g. 'COBIx', 'district-bot:los-angeles')." },
+        "confidence": { "$ref": "#/$defs/confidence", "description": "Overall: the lowest level among the required facts that are not null." },
+        "sources": {
+          "type": "array",
+          "description": "Every source cited anywhere in the profile, deduplicated. Each fact's evidence.sources points at ids here.",
+          "items": { "$ref": "#/$defs/source" }
+        },
+        "open_questions": { "type": "array", "items": { "type": "string" } },
+        "change_log": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["at", "by", "change"],
+            "properties": {
+              "at": { "type": "string", "format": "date-time" },
+              "by": { "type": "string" },
+              "change": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  },
+
+  "$defs": {
+    "confidence": {
+      "enum": ["strong", "partial", "limited"],
+      "description": "Sam's three-level indicator (ruling Nov 11, 2026, 1:38 PM PT: three levels, not stars). For system facts: strong = the district's or college's own current page, or the system's own public host, states it and was read on checked_at; partial = indirect (a repo record or machine census not re-read, a sibling college, an older official document, a vendor host that exists but was not opened); limited = secondhand, third-party, or older than one catalog year."
+    },
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sources", "confidence", "checked_at"],
+      "properties": {
+        "sources": { "type": "array", "items": { "type": "string" }, "description": "Source ids from provenance.sources." },
+        "confidence": { "anyOf": [ { "$ref": "#/$defs/confidence" }, { "type": "null" } ] },
+        "checked_at": { "type": ["string", "null"], "format": "date-time" },
+        "note": { "type": ["string", "null"] }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["id", "kind", "ref"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["public_page", "public_pdf", "repo_file", "supabase_table", "github_comment", "sam_ruling", "scout_file"] },
+        "ref": { "type": "string", "description": "URL, repo path with line, or table name." },
+        "title": { "type": ["string", "null"] },
+        "read_at": { "type": ["string", "null"], "format": "date-time" },
+        "http_status": { "type": ["integer", "null"] }
+      }
+    },
+    "college": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["college_id", "registry_name", "mis_college_code", "entity_kind"],
+      "properties": {
+        "college_id": { "type": ["integer", "null"], "description": "MAP's CollegeID (map_colleges.college_id). Not the MIS code." },
+        "registry_name": { "type": "string", "description": "program_source_registry.college — the key every harvest file uses." },
+        "short": { "type": ["string", "null"], "description": "college_short_names (the College Identity tab's Short name)." },
+        "mis_college_code": { "type": ["string", "null"], "pattern": "^[0-9]{3}$" },
+        "entity_kind": { "enum": ["college", "continuing_education", "partner"] },
+        "map_landing_page": { "type": ["string", "null"], "format": "uri", "description": "map_college_contacts.landing_page_url." }
+      }
+    },
+    "sis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["vendor", "product", "version", "scope", "evidence"],
+      "properties": {
+        "vendor": { "enum": ["ellucian", "oracle", null], "description": "Vendor of the student information system. null = not known." },
+        "product": { "enum": ["banner", "colleague", "peoplesoft_campus_solutions", "other", null], "description": "The three products named in the repo's statewide transcription training (CPL_Data.js project 3.2), plus other." },
+        "product_other": { "type": ["string", "null"] },
+        "version": { "type": ["string", "null"] },
+        "scope": { "enum": ["district", "college", null], "description": "One instance for the district, or one per college." },
+        "self_service_url": { "type": ["string", "null"], "format": "uri" },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+    "cms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["product", "scope", "public_view_url", "evidence"],
+      "properties": {
+        "product": { "enum": ["curriqunet_meta", "elumen", "coursedog", "courseleaf_cim", "other", null] },
+        "product_other": { "type": ["string", "null"] },
+        "scope": { "enum": ["district", "college", null] },
+        "public_view_url": { "type": ["string", "null"], "format": "uri", "description": "A public course/program view (program_source_registry.cms_public_view)." },
+        "publishes_catalog": { "type": ["boolean", "null"], "description": "Does the catalog come straight out of this system?" },
+        "previous_product": { "type": ["string", "null"] },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+    "catalog": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["college_id", "platform", "catalog_url", "catalog_year", "evidence"],
+      "properties": {
+        "college_id": { "type": ["integer", "null"] },
+        "platform": {
+          "enum": ["courseleaf", "acalog", "coursedog", "elumen", "curriqunet", "smartcatalog", "cleancatalog", "kuali", "webcms", "custom_html", "pdf", "flipbook", "other", "unknown"],
+          "description": "program_source_registry.catalog_platform check list. The scout's 'custom' maps to custom_html."
+        },
+        "format": { "enum": ["html_per_program", "single_pdf", "pdf_by_section", "flipbook", "unknown", null] },
+        "catalog_url": { "type": ["string", "null"], "format": "uri" },
+        "catalog_year": { "type": ["string", "null"], "pattern": "^[0-9]{4}-[0-9]{4}$" },
+        "best_method": { "enum": ["platform_reader", "pdf_extraction", "inference", "person", "unknown", null] },
+        "access": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "status": { "enum": ["ok", "blocked", "robots_disallow", "unreachable", "not_found", null] },
+            "robots_allows": { "type": ["boolean", "null"] },
+            "challenge": { "enum": ["none", "firewall", "cloudflare", "captcha", "other", null] },
+            "needs_render": { "type": ["boolean", "null"], "description": "Program pages print courses only after JavaScript runs." }
+          }
+        },
+        "fallback_hosts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["url", "kind"],
+            "properties": {
+              "url": { "type": "string", "format": "uri" },
+              "kind": { "enum": ["pdf", "college", "publisher", "archive"] },
+              "status": { "type": ["integer", "null"] }
+            }
+          }
+        },
+        "registry_disagrees": { "type": "array", "items": { "type": "object" }, "description": "As in the scout contract: field, registry, found." },
+        "evidence": { "$ref": "#/$defs/evidence" }
+      }
+    },
+    "mapCplType": {
+      "enum": ["M", "IC", "SA", "Cx", "PR", "O"],
+      "description": "MAP CPLTypeCode: M military, IC industry credential, SA standardized assessment (AP/IB/CLEP/DLPT/DSST), Cx credit by exam, PR portfolio review, O other (kb/supabase_map_cx_exhibit_guidance.sql:52). Apprenticeship has no MAP code (kb_curation cpl_type_override workaround)."
+    },
+    "integrationState": {
+      "enum": ["manual", "batch_upload", "api", "mixed", "none", "unknown"],
+      "description": "How CPL moves between MAP and the SIS. manual = rekeyed by Admissions and Records; batch_upload = MAP's spreadsheet upload; api = a system-to-system link; mixed = differs by CPL type."
+    },
+    "node": {
+      "enum": ["map", "sis", "cms", "catalog", "cobi_harvest", "coci", "mis", "student_document", "other"]
+    }
+  }
+}
