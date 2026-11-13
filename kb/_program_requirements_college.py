@@ -1756,6 +1756,7 @@ def el_pages_fast(reader, start: str, report: dict) -> list[dict]:
         report["elumen"].update(el_walk(reader, start, shell, catalog, slugs,
                                         set(hubs) | set(el_start_parts(start)), errors))
     slugs = slugs[:MAX_PAGES]
+    report["elumen"]["program_pages_listed"] = len(slugs)   # pages_account(): listed beside answered
     pages = []
     for i, slug in enumerate(slugs):
         html_text = el_html(el_fetch(reader, el_publish_url(start, ["program", slug], content=True), errors))
@@ -2857,6 +2858,8 @@ def capture_pdf(college: str, out_dir: str, programs: list[dict], reg: dict, rep
         report["pdf"]["hand_filed"]["addenda"] = [{k: a.get(k) for k in ("title", "url", "sha256")}
                                                   for a in hf["meta"].get("addenda") or []]
     report["loads"] = reader.loads
+    # One file listed; it answered when it gave any page's text (pages_account()).
+    report["pages_listed"], report["pages_answered"] = 1, (1 if pages else 0)
     print("%s: %d programs (%d with a course list), PDF %s pages by %s, %s"
           % (college, len(programs), len(listed), len(pages), extractor, pdf.get("access")), flush=True)
     recs = []
@@ -3020,6 +3023,7 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
             if i % 50 == 0:
                 print("  read %d of %d pages" % (i, len(queue)), flush=True)
         report["pages_read"] = len(pages)
+        report["pages_listed"], report["pages_answered"] = pages_account(report, platform, len(queue))
         if platform not in ("curriqunet", "elumen", "acalog"):
             report["child_pages"] = len(queue) - len(urls)
         report["banner_h1"] = drop_banner_h1(pages)
@@ -3063,6 +3067,26 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         pw.stop()
     report["loads"] = reader.loads
     return finish_capture(college, out_dir, recs, report, t0)
+
+
+def pages_account(report: dict, platform: str | None, queue_len: int) -> tuple[int, int]:
+    """The pages a capture listed to read and the pages that answered, whichever reader listed them
+    (S644). A capture that met HTTP 503s filed a partial read as if complete: Rio Hondo's reconcile
+    43142240927 read 34 of 328 pages and said nothing (lessons, S640). The wave's verify
+    (kb/_program_requirements_wave.py) holds a capture that answered under 90% of what it listed.
+    Listed: the page queue (a sitemap or index and its child pages; Acalog's program pages; eLumen's
+    rendered menu), else the reader's own list (curriQunet's entries, eLumen's publish slugs,
+    Coursedog's program search). Answered: the pages read whose text came back (pages_read)."""
+    answered = report.get("pages_read") or 0
+    if queue_len:
+        return queue_len, answered
+    if platform == "curriqunet":
+        return (report.get("curriqunet") or {}).get("entries_read") or 0, answered
+    if platform == "elumen":
+        return (report.get("elumen") or {}).get("program_pages_listed") or 0, answered
+    if platform == "coursedog":
+        return len((report.get("coursedog") or {}).get("catalog") or []), answered
+    return 0, answered
 
 
 def finish_capture(college: str, out_dir: str, recs: list[dict], report: dict, t0: float) -> int:

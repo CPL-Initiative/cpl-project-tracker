@@ -313,6 +313,13 @@ jobs:
       # a thousand rows. Pure-stdlib python; same non-required check.
       - name: Program requirements, one college (sitemap, matching, shards)
         run: python3 tests/program_requirements_college_test.py
+      # A wave (S644): several colleges in one dispatch. The plan refuses two reads on one host, a
+      # ninth college and a limit above $40; the price gate; each verify verdict; the table's sums.
+      # Python with PyYAML for the workflow's shape; same non-required check.
+      - name: Program requirements wave (plan, price, verify, file)
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/program_requirements_wave_test.py
       # The course outline census (S372, Sam 2026-10-12): which system each
       # college's course outlines open in, public or sign-in, and whether they
       # print SLOs. Reads pages only and writes no table. Pure-stdlib python.

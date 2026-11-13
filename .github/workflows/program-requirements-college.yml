@@ -95,8 +95,11 @@ on:
       - '.github/workflows/program-requirements-college.yml'
       - 'kb/_program_requirements_college.py'
 
+# One run at a time for a college on a branch. The college is in the group since S644: a wave
+# branch carries several colleges, and the conductor dispatches step=reread for each ready one;
+# with one group a branch, a third dispatch would replace (cancel) the second while it waited.
 concurrency:
-  group: program-requirements-college-${{ github.ref }}
+  group: program-requirements-college-${{ github.ref }}-${{ github.event.inputs.college }}
   cancel-in-progress: false
 
 jobs:

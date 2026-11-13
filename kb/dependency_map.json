@@ -4,10 +4,10 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 890,
+  "file_datasets": 893,
   "external_services": 195,
-  "consumers": 567,
-  "workflows": 69,
+  "consumers": 569,
+  "workflows": 70,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -10251,6 +10251,13 @@
      "line": 0
     },
     {
+     "id": "workflow:program-requirements-wave.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:second-reader.yml",
      "kind": "workflow",
      "direction": "run",
@@ -10298,6 +10305,19 @@
    "consumers": [
     {
      "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_program_requirements_wave.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -16061,6 +16081,10 @@
     {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
     }
    ],
    "served": false,
@@ -16727,6 +16751,10 @@
     {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
     }
    ],
    "served": false,
@@ -16772,7 +16800,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3693
+     "line": 3717
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 332
     }
    ],
    "served": true,
@@ -16933,6 +16968,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_wave": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/project_lifecycle.json": {
@@ -20179,7 +20225,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3690
+     "line": 3714
     }
    ],
    "served": false,
@@ -22186,6 +22232,13 @@
     },
     {
      "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -24740,6 +24793,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_wave_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_source_addenda_read_test.py": {
    "consumers": [
     {
@@ -27229,7 +27295,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3710
+     "line": 3734
     }
    ],
    "main_committers": []
@@ -27241,7 +27307,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3797
+     "line": 3821
     }
    ],
    "main_committers": []
@@ -32221,6 +32287,7 @@
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/program_requirements_wave_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
@@ -32631,6 +32698,24 @@
     "kb/_program_requirements_pilot.py"
    ],
    "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "program-requirements-wave.yml": {
+   "name": "Program requirements, a wave of colleges",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_wave.py",
+    "scripts/install_browser.sh",
+    "kb/_program_requirements_college.py"
+   ],
+   "adds": [
+    "kb/program_requirements_college",
+    "kb/hand_filed_catalogs",
+    "kb/program_requirements_wave"
+   ],
    "push": null,
    "deploys": [],
    "chain": [],
