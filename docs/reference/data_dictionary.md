@@ -92,7 +92,7 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 - **Stage:** Scheduled
 - **Purpose:** Course student learning outcomes as printed, for outcomes-first matching of CPL and courses.
 - **Owner / steward:** The college (SLO coordinator, curriculum office). Systems: eLumen, CurriQunet/Meta, Coursedog and others.
-- **Grain:** One row per college, course, source page and outcome block.
+- **Grain:** One row per college, course, source page and outcome block. A course is one college and code key, the code uppercased with its spaces and hyphens removed ("ANTH C141" and "ANTHC 141" are one course; an empty key is none), and an SLO matches a course on that key. The harvest row (`scripts/queue_status.py`) and the Commons data dashboard (`kb/_commons_data_live.py`) both count this way (`d-course-key-normalized-s648`).
 - **Refresh:** The nightly SLO read (step 11 of the scheduled sessions), colleges picked by `scripts/next_slo_colleges.py`; `kb/course_outcomes/queue.json` skips the none, held and parser colleges.
 - **How we procure or connect today:** The course-outline reader writes `kb/course_outcomes/<slug>/read_<run>_pNofM.json`, and `course_outcomes_load()` loads it (insert-only, service role).
 - **Access and terms:** Public outline pages only; a system behind a sign-in is a college ask.
