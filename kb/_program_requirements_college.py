@@ -4325,14 +4325,21 @@ def call_charge(cost_usd, usage) -> float:
     return 0.0
 
 
+HALT_WAIT_S = 20   # the pause before the one retry of a call the function answered 503 or 401 (extract)
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
             keep_from: str | None = None, force: set[str] | None = None,
-            ceiling_usd: float | None = None) -> int:
+            ceiling_usd: float | None = None, halt_wait_s: float = HALT_WAIT_S) -> int:
     """Send each source that needs a model call, score it and write its record under out_dir.
     ceiling_usd (the wave sets it to its limit; None, the default, is no ceiling): the run's
     actual cost is summed as each call comes back, and once it reaches the ceiling no further program
     is sent. The calls already in flight finish, so the run can pass the ceiling by at most `workers`
-    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json."""
+    programs' reads. A program not sent keeps its filed record and is listed in not_sent_<shard>.json.
+    A call the function answers 503 (its caller check could not reach the database) or 401 (the key
+    refused) is tried once more after halt_wait_s; answered so again, it halts the read the same way
+    (S647, Sheet 190 card 6): nothing more is sent, no record is written for it, the halt is written to
+    extract_halt_<shard>.json, and the step returns HALT_EXIT."""
     import _program_requirements_extract as X
     import _program_requirements_reconcile as R
     key = os.environ.get("SUPABASE_SERVICE_KEY")
@@ -4425,24 +4432,47 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     kept_lock = threading.Lock()
     spend = {"usd": 0.0, "stopped": False}
     not_sent: list[str] = []
+    halt: dict = {}
+
+    def keep_filed(cn: str) -> None:
+        # Not read: the filed record, if any, stays, so filing the run does not drop it.
+        path = os.path.join(keep_from or "", "records", cn + ".json")
+        if keep_from and os.path.isfile(path):
+            with open(path) as fh:
+                _write(os.path.join(out_dir, "records", cn + ".json"), json.load(fh))
 
     def one(src: dict) -> None:
         t0 = time.time()
-        if ceiling_usd is not None:
-            with kept_lock:
-                if spend["stopped"]:
-                    not_sent.append(src["control_number"])
-                    stopped = True
-                else:
-                    stopped = False
+        with kept_lock:
+            stopped = spend["stopped"] or bool(halt)
             if stopped:
-                # Not sent: the filed record, if any, stays, so filing the run does not drop it.
-                path = os.path.join(keep_from or "", "records", src["control_number"] + ".json")
-                if keep_from and os.path.isfile(path):
-                    with open(path) as fh:
-                        _write(os.path.join(out_dir, "records", src["control_number"] + ".json"), json.load(fh))
-                return
+                not_sent.append(src["control_number"])
+        if stopped:
+            keep_filed(src["control_number"])
+            return
         got = X.call(src, key)
+        h = X.halt_of(got)
+        if h and not halt and halt_wait_s:
+            # One more try after a pause, so a single slow probe does not end a long read (S647).
+            time.sleep(halt_wait_s)
+            got = X.call(src, key)
+            h = X.halt_of(got)
+        if h:
+            # The function answered 503 (its caller check could not reach the database) or 401 (the key was
+            # refused): every program would answer the same, so the read stops here, sends nothing more, and
+            # files no stub over a record (S647; run 43384599013 filed 121). The calls in flight finish.
+            with kept_lock:
+                first = not halt
+                if first:
+                    halt.update(h, control_number=src["control_number"])
+                not_sent.append(src["control_number"])
+            if first:
+                print("halted at %s: %s (HTTP %s%s). No further program is sent and no record is written "
+                      "over; the filed records stay." % (
+                          src["control_number"], h["cause"], h["status"],
+                          ", " + h["reason"] if h.get("reason") else ""), flush=True)
+            keep_filed(src["control_number"])
+            return
         if ceiling_usd is not None:
             with kept_lock:
                 spend["usd"] += call_charge(X.cost(got.get("model"), got.get("usage")), got.get("usage"))
@@ -4508,10 +4538,15 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
             list(pool.map(one, mine))
     finally:
         if not_sent:
+            # file_run keeps each listed program's previous sources.json entry, so the next run sends it again.
             _write(os.path.join(out_dir, "not_sent_%d.json" % shard),
                    {"ceiling_usd": ceiling_usd, "spent_usd": round(spend["usd"], 2),
-                    "programs": sorted(not_sent)})
-            print("ceiling: %d programs not sent" % len(not_sent), flush=True)
+                    "halted": dict(halt) or None, "programs": sorted(not_sent)})
+            print("%s: %d programs not sent" % ("halted" if halt else "ceiling", len(not_sent)), flush=True)
+        if halt:
+            # What stopped the read, for the wave's verdict and the job log (extract_halt).
+            _write(os.path.join(out_dir, "extract_halt_%d.json" % shard),
+                   dict(halt, run=run_id, shard=shard, not_sent=len(not_sent)))
         # A call that raises stops the step; the reads already paid for and kept are still filed
         # (the wave counts their cost from this file; S644 review).
         if kept_list:
@@ -4519,7 +4554,34 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
                    sorted(kept_list, key=lambda x: x["control_number"]))
             print("kept_passing: %d filed records kept where the read passed less or covered less" % len(kept_list),
                   flush=True)
+    if halt:
+        # The step ends red. The one-college workflow then files nothing (its file step needs this one to pass),
+        # and the wave files the records already read beside the filed ones the halt kept.
+        print("::error::%s" % halt_message(halt, len(not_sent)), flush=True)
+        return HALT_EXIT
     return 0
+
+
+HALT_EXIT = 3     # extract's exit when the function's answer stopped the read (X.halt_of)
+
+
+def halt_message(halt: dict, not_sent: int | None = None) -> str:
+    """The one line that names why a read stopped: the cause, the status, the function's reason."""
+    return ("the read stopped at %s: %s (HTTP %s%s)%s. Nothing was filed over a record; run it again once the "
+            "function answers." % (halt.get("control_number"), halt.get("cause"), halt.get("status"),
+                                   ", " + halt["reason"] if halt.get("reason") else "",
+                                   "; %d programs not sent" % not_sent if not_sent is not None else ""))
+
+
+def extract_halt(out_dir: str) -> dict | None:
+    """The first shard's halt in the run's out/ (extract_halt_<shard>.json), or None when no read stopped."""
+    for path in sorted(glob.glob(os.path.join(out_dir, "extract_halt_*.json"))):
+        try:
+            with open(path) as fh:
+                return json.load(fh)
+        except (OSError, ValueError):
+            continue
+    return None
 
 
 def kept_passing(keep_from: str | None, cn: str, new_score: dict | None, force: set[str] | None) -> dict | None:

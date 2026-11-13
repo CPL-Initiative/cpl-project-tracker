@@ -132,9 +132,40 @@ def _post(body: dict, key: str) -> dict:
         with urllib.request.urlopen(req, timeout=300) as resp:
             return json.loads(resp.read().decode())
     except urllib.error.HTTPError as exc:
-        return {"error": "HTTP %d: %s" % (exc.code, exc.read().decode()[:300])}
+        # The status rides beside the text, and the function's reason when it gives one, so a caller can tell
+        # an outage from a bad record (halt_of).
+        raw = exc.read().decode(errors="replace")
+        out = {"error": "HTTP %d: %s" % (exc.code, raw[:300]), "http_status": exc.code}
+        try:
+            answer = json.loads(raw)
+        except ValueError:
+            answer = None
+        if isinstance(answer, dict) and answer.get("reason"):
+            out["reason"] = str(answer["reason"])[:80]
+            out["detail"] = str(answer.get("detail") or "")[:200]
+        return out
     except Exception as exc:
         return {"error": str(exc).splitlines()[0][:300]}
+
+
+# A function answer that will be the same for every program, so a read stops at it rather than send the rest
+# (S647, Sam's Open Asks Sheet 190 card 6). Version 12 of the function answers 503 when its caller check could not
+# reach the database, and 401 only when the key is refused; before it, every failure answered 401, and Glendale's
+# run 43384599013 sent all 135 programs into a database outage and filed 121 error stubs. Neither costs a model call.
+HALT_STATUS = {
+    503: "the extraction function could not check the caller (the database did not answer)",
+    401: "the extraction function refused the service key",
+}
+
+
+def halt_of(got: dict | None) -> dict | None:
+    """{status, cause, reason, detail, error} when the function's answer stops the whole read (HALT_STATUS),
+    else None. reason and detail are the function's own words (upstream_timeout, upstream_http_503, ...)."""
+    status = (got or {}).get("http_status")
+    if status not in HALT_STATUS:
+        return None
+    return {"status": status, "cause": HALT_STATUS[status], "reason": got.get("reason"),
+            "detail": got.get("detail"), "error": str(got.get("error") or "")[:300]}
 
 
 def split_codes(closed: list[dict], text: str, n: int) -> list[list[str]]:
@@ -301,6 +332,9 @@ def call_in_parts(src: dict, key: str, body: dict, first: dict | None = None,
         if g.get("error") or not isinstance(g.get("record"), dict):
             out["stop_reason"] = g.get("stop_reason")
             out["error"] = "part %d of %d: %s" % (i, len(gots), g.get("error") or "no record")
+            for k in ("http_status", "reason", "detail"):
+                if g.get(k):
+                    out[k] = g[k]
             return out
     out["record"], _ = merge_parts([g["record"] for g in gots], src["text"])
     out["stop_reason"] = gots[-1].get("stop_reason")
