@@ -722,6 +722,55 @@ check(pr and pr.get("bound") == "number_after" and pr.get("named") and "Pre-\nEn
       "S647: a hyphen-wrapped heading binds by the number line from its first line: %r"
       % ((pr and (pr.get("after_unbound"), pr["text"][:80])),))
 
+# The review of #3214 (six findings). 1: a bare "Certificate" counts only in the own-heading test, so body
+# text naming another certificate leaves a block with no heading binding unnamed, as on main.
+FIRE_AS = {"control_number": "70007", "title": "Fire Technology", "award": AS}
+FIRE_CP = {"control_number": "70008", "title": "Fire Technology", "award": "Certificate of Proficiency"}
+WILD = "FIRE 101 Intro 3\nStudents may also earn the\nWildland Fire, Certificate\nFIRE 102 Next 3\n"
+wb = C.pdf_uniform_block(WILD, FIRE_AS, {"by_cn": {"70007": FIRE_AS}})
+check(wb["status"] == "unnamed" and not C._heading_shaped("Wildland Fire, Certificate", "FIRE 102 Next 3")
+      and C._award_keys("Certificate") == set(),
+      "review 1: body text 'Wildland Fire, Certificate' leaves the block unnamed, and binding: %r" % wb["status"])
+# 2: where the college lists two certificates of the title, a bare Certificate is nobody's own heading.
+PAIR = {"70004": FIRE_CA, "70008": FIRE_CP}
+CPB = ("Fire Technology, Certificate\nFIRE 101 Intro 3\nFIRE 102 Next 3\n"
+       "Fire Technology, Certificate of Proficiency\nFIRE 120 Hose 1\n")
+cb = C.pdf_uniform_block(CPB, FIRE_CP, {"by_cn": PAIR})
+check(cb["status"] == "named" and cb["text"].startswith("Fire Technology, Certificate of Proficiency")
+      and "FIRE 101" not in cb["text"]
+      and not C.pdf_own_heading("Fire Technology, Certificate", "", FIRE_CA, PAIR)
+      and not C.pdf_own_heading("Fire Technology, Certificate", "", FIRE_CP, PAIR)
+      and C.pdf_own_heading("Fire Technology, Certificate", "", FIRE_CA, {"70004": FIRE_CA, "70007": FIRE_AS}),
+      "review 2: a CA beside a CP of one title, a bare Certificate is ambiguous and never walked back over: %r"
+      % cb["text"][:60])
+# 3: a sentence wrapping mid-word is not a torn heading.
+COB = "Students build hands-on skills in a co-\nFire Technology, AS\nA.S. Degree\nFIRE 101 Intro 3\n"
+check(own_at(COB, FIRE_AS) == "Fire Technology, AS"
+      and C.pdf_uniform_block(COB, FIRE_AS, {"by_cn": {"70007": FIRE_AS}})["status"] == "named",
+      "review 3: 'skills in a co-' over 'Fire Technology, AS' leaves the heading its own")
+# 4: run-together transfer letters only after a comma.
+ASTR = {"control_number": "70009", "title": "Astronomy", "award": AST}
+check(not C.pdf_own_heading("Astronomy - AST", "", ASTR) and C.pdf_own_heading("Astronomy, AST", "", ASTR)
+      and C.pdf_own_heading("Astronomy - AS-T", "", ASTR),
+      "review 4: 'Astronomy - AST' is not read as AS-T; 'Astronomy, AST' is")
+# 5: a hyphen read either way is nobody's own where the college lists both spellings.
+PRELAW = {"control_number": "70010", "title": "Prelaw", "award": AA}
+PRE_LAW = {"control_number": "70011", "title": "Pre-Law", "award": AA}
+BOTH = {"70010": PRELAW, "70011": PRE_LAW}
+check(not C.pdf_own_heading("Pre- Law, AA", "", PRELAW, BOTH) and not C.pdf_own_heading("Pre- Law, AA", "", PRE_LAW, BOTH)
+      and C.pdf_own_heading("Pre- Law, AA", "", PRE_LAW, {"70011": PRE_LAW})
+      and C.pdf_own_heading("Pre-Law, AA", "", PRE_LAW, BOTH),
+      "review 5: 'Pre- Law' is ambiguous where Prelaw and Pre-Law are both listed")
+# 6: end to end, "Pre-" over "Engineering, AS" is never Engineering, AS's heading: its block is refused.
+ENGB = [ublock(p) for p in UPROGS]
+ENGB = ENGB[:8] + ["Pre-\nEngineering, AS\nA.S. Degree\nENGR 101 Intro 3\nENGR 102 Next 3\nControl Number: 70006\n"] + ENGB[8:]
+ENGC = ucatalog(ENGB)
+ectx = C.pdf_after_context(ENGC, UPROGS + [ENG], C.pdf_numbers_after(ENGC, UPROGS + [ENG]))
+er = C.pdf_best("u", ENGC, ENG, [{"code": "ENGR 101"}, {"code": "ENGR 102"}], "pypdf", numbers_after=ectx)
+check(er and not er.get("named") and er.get("after_unbound") == "block_names_other_program" and not er.get("text"),
+      "review 6: 'Pre-' over 'Engineering, AS' is refused for Engineering, AS end to end: %r"
+      % ((er and (er.get("bound"), er.get("named"), er.get("after_unbound"))),))
+
 # ── 7. Decisions 16 and 18: the number-line route keeps a filed record it cannot bind ─────────────
 # file_run files one read whole, for every college: a program the read does not carry loses its record
 # (decision 18 reversed 16(b), round 4's second reader). The number-line route's protection is the
