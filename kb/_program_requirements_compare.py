@@ -5,9 +5,11 @@ gave it.
 
 Read-only. A person reads the list before any load and restores a record from main by name
 (`git checkout origin/main -- kb/program_requirements_college/<slug>/records/<cn>.json`) where the
-college still offers the program. The read carries a program forward in code only when its own page
-answered a bot check (carry_refused in kb/_program_requirements_college.py); a program read as not found or
-as having lost its page may be one the college dropped, so this list is the person's to judge.
+college still offers the program. The read carries a program's record forward in code when its own page
+answered a bot check (carry_refused in kb/_program_requirements_college.py), and, since S647, keeps a passing
+filed record as filed when the read reached no page for the program (not_found or page_claimed; keep_no_read,
+named in summary.json's kept_no_read), unless the state lists the program in teach-out. What is left here is a
+record the new read replaced with one that passes less, or a record the keep did not cover, the person's to judge.
 
   python3 kb/_program_requirements_compare.py --college "Glendale Community College" \
       [--base origin/main] [--head HEAD] [--json]

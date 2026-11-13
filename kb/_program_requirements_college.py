@@ -2288,8 +2288,32 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
     for p in programs:
         if p["code"] in hrefs:
             p["href"] = hrefs[p["code"]]
-    info.update(listed=total, programs=len(programs), errors=errors, index_hrefs_used=len(hrefs))
+    named = cd_index_names(programs, index_all, root)
+    info.update(listed=total, programs=len(programs), errors=errors, index_hrefs_used=len(hrefs),
+                **({"names_from_index": named} if named else {}))
     return programs
+
+
+def cd_index_names(programs: list[dict], links: list, root: str) -> int:
+    """Name each program the search answered with no name of its own (none, or its code again) from the
+    index's link to its code, where that link's text is a name; returns how many it named. Glendale's
+    search names 15 of its 261 programs by code alone, all noncredit (NCCNA, NCCS, NCAMA, NCGW; capture of
+    run 43415972509), while its /programs index links NCCNA as "Certified Nursing Aide". Named by code, a
+    tab's heading names no program, so Certified Nursing Aide (40847), Customer Service (38973) and Google
+    Workspace (42263) read "no page read names the program" beside their own tabs."""
+    texts: dict[str, str] = {}
+    for link in links or []:
+        code = cd_href_code((link or {}).get("href") or "", root)
+        text = re.sub(r"\s+", " ", (link or {}).get("text") or "").strip()
+        if code and text and text.lower() != code.lower() and code not in texts:
+            texts[code] = text
+    n = 0
+    for p in programs:
+        name = (p.get("name") or "").strip()
+        if (not name or name.lower() == p["code"].lower()) and p["code"] in texts:
+            p["name"], p["name_from"] = texts[p["code"]], "index"
+            n += 1
+    return n
 
 
 def cd_course_units(data: dict) -> dict:
@@ -4865,6 +4889,90 @@ def carry_refused(keep_from: str, out_dir: str, cns: list[str], run_id: str | No
     return n
 
 
+# A read that reached no page for a program (S647, the conductor's decision on COBIx's finding 1 on #3202,
+# narrowing S646's "not_found and page_claimed are never carried"): a filed record that passes is never deleted
+# by such a read. It stays on file as filed, and the filing names it with the reason. A failing filed record
+# with no new read is dropped as before. The S646 rule kept the record of a program the college no longer
+# offers from standing as current; the state's status still guards that: a program the state lists in
+# teach-out (any status outside CURRENT_STATUS) is not kept. Glendale's filing of run 43415972509 removed four
+# passing records this way (18638 not_found; 19577, 21305, 37960 page_claimed). A gated PDF block (after_unbound)
+# keeps its record by the decision-14 path above, so it is left to that path.
+NO_PAGE_METHODS = ("not_found", "page_claimed")
+
+
+def keep_no_read(keep_from: str, out_dir: str, srcs: list[dict]) -> list[dict]:
+    """Copy each passing filed record (passes_live) of a program read as not_found or page_claimed into
+    out_dir's records, byte for byte as filed, and return one entry per record kept: its method and the
+    reason the read gave (the near miss's why, or the pages it lost), its state status (None where the
+    source names none), and the filed record's source and run."""
+    out = []
+    for src in srcs:
+        cn = src.get("control_number")
+        if not cn or src.get("method") not in NO_PAGE_METHODS or unbound_of(src):
+            continue
+        status = src.get("status")
+        if status is not None and str(status) not in CURRENT_STATUS:
+            continue
+        filed = _passing_filed(os.path.join(keep_from, "records", cn + ".json"))
+        if not filed:
+            continue
+        _write(os.path.join(out_dir, "records", cn + ".json"), filed)
+        near = src.get("near_miss") or {}
+        out.append({"control_number": cn, "title": src.get("title"), "award": src.get("award"),
+                    "method": src["method"], "status": status,
+                    "why": near.get("why") if src["method"] == "not_found" else "its pages went to other programs",
+                    "lost_pages": src.get("lost_pages") or src.get("pages") or [],
+                    "filed_source_url": filed.get("source_url"), "filed_run": filed.get("extracted_run")})
+    return out
+
+
+def kept_no_read_entries(out_dir: str) -> list[dict]:
+    """Every shard's kept_unbound_<shard>.json no_read entries, by control number."""
+    got: dict[str, dict] = {}
+    for path in sorted(glob.glob(os.path.join(out_dir, "kept_unbound_*.json"))):
+        with open(path) as fh:
+            for e in json.load(fh).get("no_read") or []:
+                got[e["control_number"]] = e
+    return [got[k] for k in sorted(got)]
+
+
+def refile_kept(college: str, from_dir: str, dest: str | None = None) -> int:
+    """The free local step (S647): apply keep_no_read to a college's committed filing, taking the filed
+    records from an earlier filing unpacked at from_dir (`git archive <sha> <folder>`). No page is loaded
+    and no model is called. The programs are the filing's own not_found and page_claimed lists
+    (capture.json); a committed account carries no state status, so each is kept as the state's file listed
+    it at capture (status None). summary.json names them (kept_no_read) and its counts are taken again
+    from the records; this run's spend and calls stay as filed."""
+    dest = dest or os.path.join(COLLEGE_DIR, slug_of(college))
+    with open(os.path.join(dest, "capture.json")) as fh:
+        report = json.load(fh)
+    have = {os.path.splitext(os.path.basename(p))[0] for p in glob.glob(os.path.join(dest, "records", "*.json"))}
+    srcs = [dict(e, method=m) for m in NO_PAGE_METHODS for e in report.get(m) or []
+            if e.get("control_number") not in have]
+    kept = keep_no_read(from_dir, dest, srcs)
+    path = os.path.join(dest, "summary.json")
+    summary = {}
+    if os.path.isfile(path):
+        with open(path) as fh:
+            summary = json.load(fh)
+    records = []
+    for p in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
+        with open(p) as fh:
+            records.append(json.load(fh))
+    fresh = summarize(records, report, summary.get("cost_usd_run"),
+                      {"calls": summary.get("extract_calls"), "failed": []})
+    for k in ("extracted", "errors", "passed_machine_checks", "failed", "cost_usd_filed", "cost_per_program"):
+        summary[k] = fresh[k]
+    named = {e["control_number"]: e for e in summary.get("kept_no_read") or []}
+    named.update({e["control_number"]: e for e in kept})
+    if named:
+        summary["kept_no_read"] = [named[k] for k in sorted(named)]
+    _write(path, summary)
+    print("kept %d passing filed records whose program this read reached no page for: %s"
+          % (len(kept), ", ".join("%s (%s)" % (e["control_number"], e["method"]) for e in kept) or "none"))
+    return 0
+
+
 def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: int = 6,
             keep_from: str | None = None, force: set[str] | None = None,
             ceiling_usd: float | None = None) -> int:
@@ -4891,7 +4999,8 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     if keep_from and shard == 0:
         # A refusal is no evidence about the program (S646): a program whose own page answered a bot check
         # keeps its filed record, for every college. A program read as not found or as having lost its page
-        # is not carried: the college may have dropped it (the compare gate lists those for a person).
+        # keeps a passing filed record as filed, and the filing names it (keep_no_read, S647); a failing one,
+        # or one the state lists in teach-out, is not kept.
         carried = carry_refused(keep_from, out_dir, refused, run_id)
         if carried:
             print("kept %d filed records whose program's page answered a bot check" % carried, flush=True)
@@ -4957,10 +5066,27 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
         skip = {e["control_number"] for e in forced_unbound}
         sources = [s for s in sources if s["control_number"] not in skip]
         fresh = [s for s in fresh if s["control_number"] not in skip]
-        if unbound_kept or forced_unbound:
-            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard),
-                   {"programs": unbound_kept, "forced_unbound": forced_unbound})
-        kept += len(unbound_kept)
+        # A program this read reached no page for keeps its passing filed record (keep_no_read, S647); shard 0
+        # alone, as carry_refused, so two shards never write one file twice. Its source entry stays the one
+        # the record was read from, as an unbound one's does (file_run).
+        no_read: list[dict] = []
+        if shard == 0:
+            no_srcs = []
+            for path in sorted(glob.glob(os.path.join(out_dir, "sources", "*.json"))):
+                with open(path) as fh:
+                    src = json.load(fh)
+                if src.get("method") in NO_PAGE_METHODS:
+                    no_srcs.append(src)
+            no_read = keep_no_read(keep_from, out_dir, no_srcs)
+            for e in no_read:
+                print("%-6s kept: %s (%s); the passing filed record stays" % (e["control_number"], e["method"],
+                                                                             e["why"]), flush=True)
+        if unbound_kept or forced_unbound or no_read:
+            acct = {"programs": unbound_kept + [e["control_number"] for e in no_read], "forced_unbound": forced_unbound}
+            if no_read:
+                acct["no_read"] = no_read
+            _write(os.path.join(out_dir, "kept_unbound_%d.json" % shard), acct)
+        kept += len(unbound_kept) + len(no_read)
         print("kept %d records filed from the same page or moved with the same text (%d moved); held %d; %d to "
               "extract, %d of them forced" % (kept, moved, len(holds), len(fresh),
                                              sum(1 for x in fresh if x["control_number"] in (force or ()))),
@@ -5412,8 +5538,13 @@ def file_run(college: str, out_dir: str, run_id: str | None) -> int:
     if kept:
         _write(os.path.join(dest, "kept_passing.json"), dict(run=run_id, programs=kept))
     if records or acct["calls"]:
-        _write(os.path.join(dest, "summary.json"),
-               dict(summarize(records, report, run_cost_of(out_dir, run_id, acct), acct), run=run_id))
+        summary = dict(summarize(records, report, run_cost_of(out_dir, run_id, acct), acct), run=run_id)
+        # The passing records kept where this read reached no page for the program, each with the reason
+        # (keep_no_read, S647); named only when there are any, so no other filing's account changes shape.
+        no_read = kept_no_read_entries(out_dir)
+        if no_read:
+            summary["kept_no_read"] = no_read
+        _write(os.path.join(dest, "summary.json"), summary)
     print("filed %d records and %d sources under %s" % (len(records), len(index), os.path.relpath(dest, os.path.dirname(HERE))))
     return 0
 
@@ -5654,7 +5785,7 @@ def reread_capture(out_dir: str) -> bool:
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("step", choices=["pin", "capture", "stage", "extract", "reconcile", "file", "check-extract",
-                                     "load", "reread"])
+                                     "load", "reread", "refile-kept"])
     ap.add_argument("--college", default="Cerritos College")
     ap.add_argument("--out", default="out")
     ap.add_argument("--shard", type=int, default=0)
@@ -5669,7 +5800,8 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--ceiling-usd", default=os.environ.get("EXTRACT_CEILING_USD", ""),
                     help="extract only: stop sending programs once the run's actual cost reaches this (the wave "
                          "sets its limit; empty, the default, is no ceiling)")
-    ap.add_argument("--from", dest="from_dir", default="", help="stage only: an earlier run's artifact, unpacked")
+    ap.add_argument("--from", dest="from_dir", default="", help="stage: an earlier run's artifact, unpacked; "
+                                                                "refile-kept: an earlier filing's college folder")
     ap.add_argument("--sources-run", default="", help="stage only: the run whose artifact --from holds")
     ap.add_argument("--extracted-run", default="", help="reread only: post this extraction run's records, not the newest's")
     args = ap.parse_args(argv)
@@ -5684,6 +5816,11 @@ def main(argv: list[str] | None = None) -> int:
         return stage_sources(args.college, args.from_dir, args.out, args.sources_run)
     if args.step == "check-extract":
         return check_extract(args.out)
+    if args.step == "refile-kept":
+        if not os.path.isdir(os.path.join(args.from_dir or "", "records")):
+            print("::error::refile-kept needs --from, an earlier filing's college folder holding records/")
+            return 2
+        return refile_kept(args.college, args.from_dir)
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":

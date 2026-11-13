@@ -3855,11 +3855,24 @@ with tempfile.TemporaryDirectory() as td:
                             "record": {"program": {"measure": "units", "total_units": {"min": 24, "max": 24}}, "blocks": []},
                             "score": {"coverage": {"pass": True, "placed": 9, "listed": 9}, "invented": {"pass": True},
                                       "arithmetic": {"status": "equal"}, "pass": True}}
-    for cn, method in (("02599", "page_challenged"), ("11191", "sitemap_page"), ("02600", "page_claimed"),
-                       ("02601", "not_found")):
-        open(os.path.join(keep_dir, "records", cn + ".json"), "w").write(json.dumps(filed_rec(cn)))
+    # S647 (the conductor's decision on COBIx's finding 1, #3202): a passing filed record of a program read
+    # not_found or page_claimed stays as filed, byte for byte, and is named with the reason; a failing one
+    # (02602), or one the state lists in teach-out (02604: the S646 rule's case, a program the college is
+    # retiring), is not kept.
+    failing_rec = lambda cn: dict(filed_rec(cn), score={"coverage": {"pass": False, "placed": 2, "listed": 9},
+                                                        "invented": {"pass": True}, "arithmetic": {"status": "equal"},
+                                                        "pass": False})
+    for cn, method, status, rec in (("02599", "page_challenged", "Active", filed_rec), ("11191", "sitemap_page", "Active", filed_rec),
+                                    ("02600", "page_claimed", "Active", filed_rec), ("02601", "not_found", "Approved", filed_rec),
+                                    ("02602", "not_found", "Active", failing_rec),
+                                    ("02604", "page_claimed", "Active - Teachout Only", filed_rec)):
+        C._write(os.path.join(keep_dir, "records", cn + ".json"), rec(cn))
         open(os.path.join(out_dir, "sources", cn + ".json"), "w").write(json.dumps(
-            {"control_number": cn, "method": method, "coverage": 0.0, "text": ""}))
+            {"control_number": cn, "method": method, "coverage": 0.0, "text": "", "status": status,
+             "title": "T", "award": "A.S. Degree",
+             **({"lost_pages": [tab("CDMT-AS")]} if method == "page_claimed" else {}),
+             **({"near_miss": {"why": "coarse net: the page's code tokens name 3 of 21 listed courses"}}
+                if method == "not_found" else {})}))
     old_key = os.environ.get("SUPABASE_SERVICE_KEY")
     os.environ["SUPABASE_SERVICE_KEY"] = "test-only: no source has text, so no call is made"
     try:
@@ -3874,9 +3887,22 @@ with tempfile.TemporaryDirectory() as td:
         else:
             os.environ["SUPABASE_SERVICE_KEY"] = old_key
     carried_files = sorted(os.listdir(os.path.join(out_dir, "records")))
-    check(carried_files == ["02599.json"],
-          "extract carries the page_challenged program's record and not the not_found, page_claimed or read one: %r"
-          % carried_files)
+    check(carried_files == ["02599.json", "02600.json", "02601.json"],
+          "extract carries the page_challenged program's record, keeps the passing not_found and page_claimed ones, "
+          "and drops the failing, the teach-out and the read one: %r" % carried_files)
+    check(all(open(os.path.join(out_dir, "records", cn + ".json"), "rb").read()
+              == open(os.path.join(keep_dir, "records", cn + ".json"), "rb").read() for cn in ("02600", "02601")),
+          "a record kept for no read is the filed file byte for byte (no year or carried_in stamped on it)")
+    with open(os.path.join(out_dir, "kept_unbound_0.json")) as fh:
+        no_read_acct = json.load(fh)
+    check(no_read_acct["programs"] == ["02600", "02601"]
+          and [(e["control_number"], e["method"], e["status"], e["why"]) for e in no_read_acct["no_read"]]
+          == [("02600", "page_claimed", "Active", "its pages went to other programs"),
+              ("02601", "not_found", "Approved", "coarse net: the page's code tokens name 3 of 21 listed courses")]
+          and no_read_acct["no_read"][0]["lost_pages"] == [tab("CDMT-AS")]
+          and no_read_acct["no_read"][1]["filed_run"] == "41055650373",
+          "the run lists each kept record with its method, status and reason: %r" % no_read_acct)
+    check(C.kept_no_read_entries(out_dir) == no_read_acct["no_read"], "and the filing reads them back")
     with open(os.path.join(out_dir, "records", "02599.json")) as fh:
         carried_rec = json.load(fh)
     check(carried_rec["catalog_year"] == "2025-2026" and carried_rec["carried_in"] == "43384599013"
@@ -3887,6 +3913,7 @@ with tempfile.TemporaryDirectory() as td:
     open(os.path.join(out_dir, "capture.json"), "w").write(json.dumps({"catalog_year": "2026-2027"}))
     open(os.path.join(out_dir, "records", "11191.json"), "w").write(json.dumps(filed_rec("11191")))
     cy_rows, _ = C.load_rows("Glendale Community College", folder=out_dir)
+    cy_rows = [r for r in cy_rows if r["control_number"] in ("02599", "11191")]
     check({r["control_number"]: r["catalog_year"] for r in cy_rows} == {"02599": "2025-2026", "11191": "2026-2027"},
           "a carried record loads under its own catalog year, a read one under the capture's: %r"
           % {r["control_number"]: r["catalog_year"] for r in cy_rows})
@@ -3901,7 +3928,80 @@ with tempfile.TemporaryDirectory() as td:
     check(C.carry_refused(keep, out, ["11143", "99999"]) == 1
           and sorted(os.listdir(os.path.join(out, "records"))) == ["11143.json"],
           "a refused program keeps its filed record; one with none is skipped; no other record is carried")
-check(C.REFUSED_METHODS == ("page_challenged",), "only a refusal is carried, never not_found or page_claimed")
+check(C.REFUSED_METHODS == ("page_challenged",) and C.NO_PAGE_METHODS == ("not_found", "page_claimed"),
+      "carry_refused carries a refusal alone; not_found and page_claimed keep a passing record by keep_no_read")
+
+# refile-kept (S647): the free local step over committed files. A filing whose read reached no page for four
+# programs gets their passing records back from the earlier filing byte for byte, a failing one stays dropped,
+# a record already filed is untouched, and summary.json names the kept ones and counts them.
+with tempfile.TemporaryDirectory() as td:
+    prior, dest = os.path.join(td, "prior"), os.path.join(td, "dest")
+    for d in (os.path.join(prior, "records"), os.path.join(dest, "records")):
+        os.makedirs(d)
+    rk_pass = lambda cn, run: {"college": "Glendale Community College", "control_number": cn, "title": "T",
+                               "award": "A.S. Degree", "source_url": "https://www.glendale.edu/c.pdf#page=71",
+                               "extracted_run": run, "cost_usd": 0.05,
+                               "record": {"program": {"measure": "units"}, "blocks": []},
+                               "score": {"coverage": {"pass": True}, "invented": {"pass": True},
+                                         "arithmetic": {"status": "equal"}, "pass": True}}
+    rk_fail = lambda cn: dict(rk_pass(cn, 41049220135), score={"coverage": {"pass": False}, "invented": {"pass": True},
+                                                               "arithmetic": {"status": "unequal"}, "pass": False})
+    for cn in ("18638", "21305"):
+        C._write(os.path.join(prior, "records", cn + ".json"), rk_pass(cn, 41049220135))
+    C._write(os.path.join(prior, "records", "02603.json"), rk_fail("02603"))
+    C._write(os.path.join(prior, "records", "21307.json"), rk_pass("21307", 41049220135))
+    C._write(os.path.join(dest, "records", "21307.json"), rk_pass("21307", 43415972509))
+    with open(os.path.join(dest, "capture.json"), "w") as fh:
+        json.dump({"college": "Glendale Community College", "programs": 4, "found": 1,
+                   "not_found": [{"control_number": "18638", "title": "T", "award": "A.A. Degree",
+                                  "near_miss": {"why": "coarse net: the page's code tokens name 15 of 135 listed courses"}},
+                                 {"control_number": "02603", "title": "T", "award": "A.A. Degree", "near_miss": None}],
+                   "page_claimed": [{"control_number": "21305", "title": "T", "award": "A.S. Degree",
+                                     "pages": [GL_ROOT + "/programs/CST-C/" + GL_SUFFIX]},
+                                    {"control_number": "21307", "title": "T", "award": "A.S. Degree", "pages": []}]}, fh)
+    with open(os.path.join(dest, "summary.json"), "w") as fh:
+        json.dump({"extracted": 1, "passed_machine_checks": 1, "cost_usd_run": 0.05, "extract_calls": 1}, fh)
+    import contextlib as _rk_ctx, io as _rk_io  # noqa: E401,E402
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        rk_rc = C.refile_kept("Glendale Community College", prior, dest)
+    rk_files = sorted(os.listdir(os.path.join(dest, "records")))
+    check(rk_rc == 0 and rk_files == ["18638.json", "21305.json", "21307.json"],
+          "refile-kept restores the passing no-read records and not the failing one: %r" % rk_files)
+    check(all(open(os.path.join(dest, "records", cn + ".json"), "rb").read()
+              == open(os.path.join(prior, "records", cn + ".json"), "rb").read() for cn in ("18638", "21305"))
+          and json.load(open(os.path.join(dest, "records", "21307.json")))["extracted_run"] == 43415972509,
+          "byte for byte, and a record this read filed is left as it is")
+    rk_sum = json.load(open(os.path.join(dest, "summary.json")))
+    check(rk_sum["extracted"] == 3 and rk_sum["passed_machine_checks"] == 3 and rk_sum["cost_usd_run"] == 0.05
+          and rk_sum["extract_calls"] == 1
+          and [(e["control_number"], e["method"], e["status"]) for e in rk_sum["kept_no_read"]]
+          == [("18638", "not_found", None), ("21305", "page_claimed", None)]
+          and rk_sum["kept_no_read"][1]["lost_pages"] == [GL_ROOT + "/programs/CST-C/" + GL_SUFFIX],
+          "the summary counts them, keeps the run's spend and calls, and names each with its reason: %r" % rk_sum)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest)
+    check(json.load(open(os.path.join(dest, "summary.json"))) == rk_sum, "a second refile changes nothing")
+
+# Coursedog names a program by its code alone for 15 of Glendale's 261 (all noncredit; capture of run
+# 43415972509), so the tab's heading named no program. The index's own link text names it; a program the
+# search does name keeps that name, and a link whose text is the code names nothing. Links from the filed capture.
+cdn_links = [{"text": "Administrative Medical Assistant", "href": GL_ROOT + "/programs/NCAMA"},
+             {"text": "Certified Nursing Aide", "href": GL_ROOT + "/programs/NCCNA"},
+             {"text": "Customer Service", "href": GL_ROOT + "/programs/NCCS"},
+             {"text": "NCHC", "href": GL_ROOT + "/programs/NCHC"},
+             {"text": "Something Else", "href": GL_ROOT + "/programs/AD%26D-AS"}]
+cdn_progs = [{"code": "NCCNA", "name": "NCCNA"}, {"code": "NCCS", "name": ""}, {"code": "NCHC", "name": "NCHC"},
+             {"code": "NCMA", "name": "NCMA"},
+             {"code": "AD&D-AS", "name": "Architectural Drafting & Design - Associate of Science"}]
+check(C.cd_index_names(cdn_progs, cdn_links, GL_ROOT) == 2
+      and [p["name"] for p in cdn_progs] == ["Certified Nursing Aide", "Customer Service", "NCHC", "NCMA",
+                                              "Architectural Drafting & Design - Associate of Science"]
+      and cdn_progs[0].get("name_from") == "index" and "name_from" not in cdn_progs[4],
+      "a program named by its code takes the index link's name; a named one keeps its own: %r" % cdn_progs)
+cdn_page = C.cd_page({"url": GL_ROOT + "/programs/NCCNA/" + GL_SUFFIX, "title": "NCCNA Program", "body": "", "content": ""},
+                     cdn_progs[0])
+check(C.label_score(cdn_page, {"title": "Certified Nursing Aide", "award": "Noncredit program"})[1] == 1.0,
+      "and its tab's heading then names the program in full")
 
 # The compare gate: every program passing on main whose branch record passes less, fails or is absent, with its
 # new method. Both sides are read from commits in a tiny repo built here (S647 review: the branch side once read
