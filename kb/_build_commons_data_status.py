@@ -427,7 +427,7 @@ def live_block(live_path: str | None, previous: dict | None) -> dict:
     else:
         bad = None
     if new is None:
-        why = bad or "no export at %s" % live_path
+        why = bad or "not read: no export at %s (the live step runs on a dispatch from main alone)" % live_path
     elif new.get("state") == "failed":
         why = new.get("error") or "the read failed"
     else:

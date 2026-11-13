@@ -42,8 +42,11 @@ jobs:
       # never a row; the two tables that name a person are read by count alone. The service key lives at this
       # step's scope only, and the export never falls back to the anon key. It writes out/ alone; the builder below
       # takes it with --live and stays the one writer of kb/status/commons_data.json. Fails soft: a failed read keeps
-      # the previous committed block, and the builder records the attempt.
+      # the previous committed block, and the builder records the attempt. From main alone (COBIx's finding 1 on
+      # #3232): the workflow dispatches on any ref, and a branch's own copy of the export must never run with the
+      # service key, so on a branch this step is skipped and the builder records the block as not read.
       - name: Commons data live counts (service key, counts only; fails soft)
+        if: github.ref == 'refs/heads/main'
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |

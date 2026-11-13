@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-13T14:56:48Z",
+ "written_at": "2026-11-13T15:05:16Z",
  "sources": {
   "universe": "kb/college_identity/2026-11-10/crosswalk.json",
   "harvest": "kb/program_requirements_college/<slug>/",
@@ -3610,7 +3610,7 @@
     "group": "Connected",
     "stage": "Connected",
     "owner": "CCCCO (COCI, the Chancellor's Office Curriculum Inventory); each college's curriculum office enters the content. A vendor operates COCI for the CO (*to confirm*).",
-    "procedure_today": "The COCI course list export saved to `kb/reference/coci_course_list.xlsx`; WestEd holds the current COCI (the partner exchange). The snapshot's date: May 21, 2026 *(COBIx, 2026-11-13; not verified in the repo)*; the register's WestEd entry calls our copy July's.",
+    "procedure_today": "The COCI course list export saved to `kb/reference/coci_course_list.xlsx`; WestEd holds the current COCI (the partner exchange). The snapshot's date is May 21, 2026, from the committed export itself (its sheet is named \"20260521 Course List from MAP C\", and the file was created and saved that day). The register's WestEd entry calls our COCI copy July's, which may be another copy; the conflict stays open (*to confirm*).",
     "planned_improvement": "A scheduled COCI pull (API *to confirm*); dedupe double-listed institutions; type untyped rows from MIS; derived descriptions with provenance (#3219).",
     "link": "docs/reference/data_dictionary.md#course-descriptions",
     "evidence": [
@@ -3618,7 +3618,7 @@
      "docs/reference/data_sources.md"
     ],
     "evidence_missing": [],
-    "unverified_claims": 1
+    "unverified_claims": 0
    },
    {
     "name": "CPL / MAP",

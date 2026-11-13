@@ -7,7 +7,10 @@ guards, each a way the export could break them:
   (1) ⭐ counts only: the tables that name a person are derived from the committed schemas, and every query the export
       sends over a full fixture run reads them by count alone, with no select; every other read selects only its
       allowed columns, never *, and no allowed column names a person;
-  (2) the guard refuses a row read of a person table, a select on a count, a select of *, an unlisted column or table;
+  (2) the guard refuses a row read of a person table, a select on a count, a select of *, an unlisted column or table,
+      and any query that names a person column (a filter, an or=, an order; COBIx's finding 3 on #3232);
+  (2b) every Range-paged read has a total order ending in the table's unique key, and tied rows across a page
+      boundary are each read once (COBIx's finding 2);
   (3) the passing filter is the census's rule: for every check combination it counts what
       _program_requirements_score.counts_passing_on_tab counts;
   (4) the figures over the fixture, through Range paging (pages of 2) and chunked control numbers (2 at a time):
@@ -16,7 +19,8 @@ guards, each a way the export could break them:
   (5) fail soft: a read that fails writes state "failed"; no service key reads nothing and names why (never anon);
       the builder keeps the previous block and records the attempt; a block that is not counts only is refused;
   (6) the overall bar is the quoted rule over the live block, basis live;
-  (7) the workflow: the service key at the export step's scope alone, the builder takes --live, one push.
+  (7) the workflow: the service key at the export step's scope alone, every step naming it on main alone (COBIx's
+      finding 1), the builder takes --live, one push.
 
 Run from the repo root: python3 tests/commons_data_live_test.py
 """
@@ -113,6 +117,11 @@ for label, call in [
     ("no select at all on a page read", ("page", "course_outcomes", "college=eq.X")),
     ("a column outside the list", ("page", "coci_program_courses", "select=college,course_title")),
     ("a table the export does not read", ("count", "map_users", "college=eq.X")),
+    ("a filter on a person column of a person table", ("count", "program_requirement_records", "checked_by=eq.Pat")),
+    ("a person column inside or=", ("count", "program_source_registry", "or=(corrected_by.is.null,college.eq.X)")),
+    ("a person column in an order", ("count", "program_requirement_records", "college=eq.X&order=checked_by")),
+    ("a person column, URL-encoded", ("count", "program_source_registry", "corrected%5Fby=not.is.null")),
+    ("a person column on a table without one", ("page", "course_outcomes", "select=college&checked_by=eq.X")),
 ]:
     try:
         L.guard(*call)
@@ -120,6 +129,41 @@ for label, call in [
     except L.Refused:
         refused = True
     check("(2) the guard refuses " + label, refused)
+check("(2) the person columns the guard refuses are every column in PEOPLE",
+      L.PERSON_COLUMNS == sorted({c for v in people.values() for c in v}) and L.PERSON_COLUMNS)
+check("(2) a column whose name only contains a person column's letters still passes (checked, not checked_by)",
+      L.guard("count", "program_requirement_records", "college=eq.X&checked=is.true") is None)
+
+# (2b) every Range-paged read has a total order ending in a unique key (COBIx's finding 2 on #3232)
+for table, qs in (("coci_college_programs", L.PROGRAMS_QS), ("coci_program_courses", L.COURSES_QS),
+                  ("course_outcomes", L.OUTCOMES_QS)):
+    order = re.search(r"(?:^|&)order=([^&]+)", qs).group(1).split(",")
+    uk = L.UNIQUE_KEY[table]
+    if uk:
+        check("(2b) %s's order ends in its unique key %s" % (table, uk), tuple(order[-len(uk):]) == uk, order)
+    else:
+        check("(2b) %s (no key in the repo) orders by every column it reads, so ties are identical tuples" % table,
+              set(L.COLUMN_READS[table]) <= set(order), order)
+check("(2b) course_outcomes' unique key is its schema's primary key",
+      re.search(r"^\s+id\s+bigint generated always as identity primary key", open(os.path.join(ROOT, SCHEMAS["course_outcomes"])).read(), re.M))
+check("(2b) coci_program_courses' unique key is its schema's primary key",
+      "primary key (college, program_control_number, course_control_number)" in open(os.path.join(ROOT, SCHEMAS["coci_program_courses"])).read())
+# tied rows across a page boundary: the fixture returns ties reversed on every other page, as a database may
+tied = L.Fixture({"course_outcomes": [{"id": i, "college": "Allan Hancock College", "course_code": "SAME %d" % (i % 2),
+                                       "kind": "slo" if i < 6 else "objective", "loaded_at": "2026-11-%02dT00:00:00Z" % i}
+                                      for i in range(1, 11)]})
+every = ["2026-11-%02dT00:00:00Z" % i for i in range(1, 11)]
+DR_PAGE = DR.PAGE
+DR.PAGE = 2
+try:
+    got = DR.paged(tied.page, "course_outcomes", L.OUTCOMES_QS)
+    old = DR.paged(tied.page, "course_outcomes", "select=college,course_code,kind,loaded_at&order=college,course_code")
+finally:
+    DR.PAGE = DR_PAGE
+check("(2b) ⭐ with the total order every tied row is read exactly once across the page boundaries",
+      sorted(r["loaded_at"] for r in got) == every, sorted(r["loaded_at"] for r in got))
+check("(2b) the fixture models the bug: the old order skips and repeats tied rows",
+      sorted(r["loaded_at"] for r in old) != every)
 
 # (3) the passing filter is the census's rule
 agree = True
@@ -228,6 +272,16 @@ with_key = [s.get("name") for s in steps if "SUPABASE_SERVICE_KEY" in json.dumps
 check("(7) ⭐ the service key sits on the export step alone, never on the job or the workflow",
       with_key == ["Commons data live counts (service key, counts only; fails soft)"]
       and "env" not in wf["jobs"]["census"] and "env" not in wf, with_key)
+def mentions_key(s):
+    return "SUPABASE_SERVICE_KEY" in json.dumps({k: v for k, v in s.items() if k != "name"})
+
+
+keyed = [s for s in steps if mentions_key(s)]
+check("(7) ⭐ every step that references SUPABASE_SERVICE_KEY runs on main alone (a branch dispatch never gets the key)",
+      keyed and all(re.fullmatch(r"\s*github\.ref\s*==\s*'refs/heads/main'\s*", str(s.get("if") or "")) for s in keyed),
+      [(s.get("name"), s.get("if")) for s in keyed])
+check("(7) the job carries no main-only condition of its own that would also skip the census on a branch",
+      "if" not in wf["jobs"]["census"])
 check("(7) the export runs before the builder, and the builder takes --live",
       [i for i, s in enumerate(steps) if "_commons_data_live.py" in (s.get("run") or "")][0]
       < [i for i, s in enumerate(steps) if "_build_commons_data_status.py --live out/commons_data_live.json" in (s.get("run") or "")][0])

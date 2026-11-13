@@ -139,7 +139,7 @@ connected). Stages are the register's: Found, Assessed, Asked, Connected, Schedu
 - **Owner / steward:** CCCCO (COCI, the Chancellor's Office Curriculum Inventory); each college's curriculum office enters the content. A vendor operates COCI for the CO (*to confirm*).
 - **Grain:** One row per COCI course (141,738 rows).
 - **Refresh:** A snapshot by hand when a new COCI extract arrives; no schedule.
-- **How we procure or connect today:** The COCI course list export saved to `kb/reference/coci_course_list.xlsx`; WestEd holds the current COCI (the partner exchange). The snapshot's date: May 21, 2026 *(COBIx, 2026-11-13; not verified in the repo)*; the register's WestEd entry calls our copy July's.
+- **How we procure or connect today:** The COCI course list export saved to `kb/reference/coci_course_list.xlsx`; WestEd holds the current COCI (the partner exchange). The snapshot's date is May 21, 2026, from the committed export itself (its sheet is named "20260521 Course List from MAP C", and the file was created and saved that day). The register's WestEd entry calls our COCI copy July's, which may be another copy; the conflict stays open (*to confirm*).
 - **Access and terms:** COCI public search; bulk export from the CO or WestEd.
 - **Planned improvements:** A scheduled COCI pull (API *to confirm*); dedupe double-listed institutions; type untyped rows from MIS; derived descriptions with provenance (#3219).
 - **Confidence method:** Limited: mechanical checks only; a one-off wrong-course description is not caught yet.

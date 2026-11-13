@@ -8,7 +8,8 @@ exports counts per college only, never rows. It runs with the Actions secret, no
 committed-files basis. Teachout and Approved can come the same way."
 
 WHERE IT RUNS. A step of .github/workflows/harvest-gap-census.yml (dispatch only, like the census), with the
-repository's existing SUPABASE_SERVICE_KEY at that step's scope alone. It writes out/commons_data_live.json on the
+repository's existing SUPABASE_SERVICE_KEY at that step's scope alone, and only on a run from main (the step's
+`if: github.ref == 'refs/heads/main'`): a branch's copy of this file never runs with the key. It writes out/commons_data_live.json on the
 runner, never a committed path; kb/_build_commons_data_status.py --live reads that file and stays the one writer of
 kb/status/commons_data.json, which the census job's one push commits. It writes no table, adds no grant, no
 function, no migration and no secret. Without the service key it reads nothing: it never falls back to the
@@ -23,8 +24,9 @@ leaves the runner and none is written to a file.
                                  college: all rows and rows a person confirmed (checked = true, a count).
     program_source_registry      per college: whether a row exists, and whether catalog_url, cms_public_view and a
                                  sequence source are held (booleans from counts; never a URL).
-  The other three are read a page at a time (Range, through the dated reads' own pager, whose exact count must hold
-  from the first page to the last) and only the columns in COLUMN_READS:
+  No query names a person column at all, not even as a filter. The other three are read a page at a time (Range,
+  through the dated reads' own pager, whose exact count must hold from the first page to the last; each in a total
+  order, UNIQUE_KEY) and only the columns in COLUMN_READS:
     coci_college_programs   college, control_number, status    (Active, Active - Teachout Only, Approved)
     coci_program_courses    college, program_control_number, course_code
     course_outcomes         college, course_code, kind, loaded_at
@@ -111,11 +113,19 @@ class Refused(Exception):
     """A read the counts-only guarantee does not allow."""
 
 
+PERSON_COLUMNS = sorted({c for cols in PEOPLE.values() for c in cols})
+
+
 def guard(method: str, table: str, qs: str) -> None:
     """Every read passes here first, live or fixture. A table that holds a person is read by count alone (no
-    select); any other table selects only its COLUMN_READS, never *."""
+    select); any other table selects only its COLUMN_READS, never *; and no query names a person column anywhere
+    (a filter, an order, an or=), so even a count cannot ask about a person (COBIx's finding 3 on #3232)."""
     params = urllib.parse.parse_qs(qs, keep_blank_values=True)
     sel = params.get("select")
+    said = urllib.parse.unquote(qs)
+    named = [c for c in PERSON_COLUMNS if re.search(r"(?<![A-Za-z0-9_])%s(?![A-Za-z0-9_])" % c, said)]
+    if named:
+        raise Refused("%s: the query names a person column (%s)" % (table, ", ".join(named)))
     if table in PEOPLE:
         if method != "count" or sel:
             raise Refused("%s holds a person (%s): count reads only, no select" % (table, ", ".join(PEOPLE[table])))
@@ -210,10 +220,28 @@ class Fixture:
         return len(self._rows(table, qs))
 
     def page(self, table: str, qs: str, start: int, size: int):
+        """One Range page in the query's order. Rows the order leaves tied come back in a different order on
+        every other page, as a database may return them, so a query without a total order skips and repeats
+        rows here the way it can live."""
         guard("page", table, qs)
         self.log.append(("page", table, qs))
-        sel = urllib.parse.parse_qs(qs).get("select", [""])[0].split(",")
+        params = urllib.parse.parse_qs(qs)
+        sel = params.get("select", [""])[0].split(",")
+        order = [o.split(".")[0] for o in params.get("order", [""])[0].split(",") if o]
         rows = self._rows(table, qs)
+
+        def key(r):
+            return tuple((r.get(c) is None, r.get(c) if isinstance(r.get(c), (int, float)) else str(r.get(c) or "")) for c in order)
+        rows.sort(key=key)
+        if (start // max(size, 1)) % 2:
+            out, i = [], 0
+            while i < len(rows):
+                j = i
+                while j < len(rows) and key(rows[j]) == key(rows[i]):
+                    j += 1
+                out += rows[i:j][::-1]
+                i = j
+            rows = out
         return [{c: r.get(c) for c in sel} for r in rows[start:start + size]], len(rows)
 
 
@@ -233,9 +261,18 @@ def code_key(code) -> str | None:
 
 PASSING_QS = "checks->>coverage=eq.true&checks->>invented=eq.true&checks->>arithmetic=" + in_list(S.TAB_PASSING)
 PLO_QS = "record->program->>outcomes=not.is.null&record->program->>outcomes=neq.%s" % q("[]")
-PROGRAMS_QS = "select=college,control_number,status&status=%s&order=college,control_number" % in_list(STATUSES)
-COURSES_QS = "select=college,program_control_number,course_code&order=college,program_control_number,course_code"
-OUTCOMES_QS = "select=college,course_code,kind,loaded_at&order=college,course_code"
+# Every Range-paged read has a total order (COBIx's finding 2 on #3232): over tied rows a database may return
+# pages in different orders, skipping one row and repeating another while the exact count still holds. The order
+# ends in the table's unique key where the committed schema names one (course_outcomes.id; coci_program_courses'
+# primary key). coci_college_programs has no schema in the repo, so its order covers every column read: rows it
+# leaves tied are identical (college, control_number, status) tuples, and the export keeps sets of those.
+UNIQUE_KEY = {"course_outcomes": ("id",),
+              "coci_program_courses": ("college", "program_control_number", "course_control_number"),
+              "coci_college_programs": None}
+PROGRAMS_QS = "select=college,control_number,status&status=%s&order=college,control_number,status" % in_list(STATUSES)
+COURSES_QS = ("select=college,program_control_number,course_code"
+              "&order=college,program_control_number,course_control_number")
+OUTCOMES_QS = "select=college,course_code,kind,loaded_at&order=college,course_code,kind,loaded_at,id"
 REGISTRY_QS = {
     "row": "",
     "catalog_link": "&catalog_url=not.is.null",
