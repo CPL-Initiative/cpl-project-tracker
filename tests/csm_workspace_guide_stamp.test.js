@@ -63,7 +63,7 @@ function read() {
 }
 function show(view, sel, side) { const st = W._state; st.view = view; st.sel = sel || null; st.side = side || ""; W.paint(); read(); }
 show("open", COLLEGE);
-show("accept", OTHER);
+show("ready", OTHER);
 show("notyet", null);
 show("open", COLLEGE, "people");
 show("open", COLLEGE, "log");
@@ -81,7 +81,7 @@ if (process.argv.indexOf("--restamp") >= 0) {
 const was = fs.existsSync(STAMP) ? JSON.parse(fs.readFileSync(STAMP, "utf8")).words : [];
 const added = now.filter((w) => was.indexOf(w) < 0), removed = was.filter((w) => now.indexOf(w) < 0);
 check("G1: the reading found the page (a title, the lists, a review, an email)", now.length > 60 &&
-  now.indexOf("h1: Funding Follow-up Dashboard") >= 0 && now.some((w) => /^option: Everything to do/.test(w)) && now.some((w) => /^button: Accept$/.test(w)));
+  now.indexOf("h1: Funding Follow-up Dashboard") >= 0 && now.some((w) => /^option: Every stage/.test(w)) && now.some((w) => /^button: Accept$/.test(w)));
 check("G2: ⭐ the dashboard's controls and labels are the ones the guide was written against. If this fails: update the guide " +
   "(CPLBrain/04-projects/cpl-initiative/funding-follow-up-guide/, then republish to https://claude.ai/artifact/XqJpfTdCWPhAkGFLA3gsBq), " +
   "then run `node tests/csm_workspace_guide_stamp.test.js --restamp`",
