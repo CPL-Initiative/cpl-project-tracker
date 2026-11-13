@@ -465,7 +465,9 @@ STEP
 # builder reads the saved title assignments live, so a card decided since step 3's sync stays decided
 # (#3223, S649); it writes no row.
 step "Build the Exhibits review queue" SUPABASE_SERVICE_KEY <<'STEP'
-python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."
+# Exit 3 is the builder's own refusal (a stale overlay), already said in its warning; anything else failed.
+rc=0; python3 kb/_build_exhibits_review.py --quiet || rc=$?
+if [ "$rc" != 0 ] && [ "$rc" != 3 ]; then echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run. Check the step log."; fi
 STEP
 
 # Another look (Sam, 2026-10-31): titles already in the reference that still differ (an ASE test

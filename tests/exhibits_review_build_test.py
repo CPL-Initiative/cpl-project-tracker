@@ -31,6 +31,9 @@ B = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(B)
 
 results = []
+# Every run of the builder here is a fixture run: the caller's service key never reaches it, so no test reads
+# live kb_curation (#3260 review).
+ENV = {k: v for k, v in os.environ.items() if k != "SUPABASE_SERVICE_KEY"}
 
 
 def check(name, cond, detail=""):
@@ -146,7 +149,7 @@ with tempfile.TemporaryDirectory() as root:
     data, courses, adoption = B.build(root)
     out = os.path.join(root, "kb", "exhibits_review.json")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root, "--quiet"],
-                       capture_output=True, text=True, timeout=120)
+                       capture_output=True, text=True, timeout=120, env=ENV)
     check("the builder exits 0 on a fixture root", r.returncode == 0, r.stderr[-400:])
     with open(out, encoding="utf-8") as f:
         written = json.load(f)
@@ -158,7 +161,7 @@ with tempfile.TemporaryDirectory() as root:
         written_adoption = json.load(f)
     stamp = written["written_at"]
     r2 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root],
-                        capture_output=True, text=True, timeout=120)
+                        capture_output=True, text=True, timeout=120, env=ENV)
     with open(out, encoding="utf-8") as f:
         again = json.load(f)
     check("a second run with nothing new leaves the file alone", "unchanged" in r2.stdout and again["written_at"] == stamp, r2.stdout)
@@ -679,8 +682,12 @@ check("a course-title proposal keeps the series its course names, with no series
       and "series_aliases" not in h3[PREP], h3.get(PREP))
 
 # A decided card stays decided (#3223, S649). Sam saved titles on Review; a rebuild on an overlay synced before
-# those saves put the cards back. The live set replaces the overlay (a save drops a card, a clear brings it back),
-# and a build from an overlay older than the committed file's read refuses to write the Review file.
+# those saves put the cards back. The live set replaces the overlay (a save drops a card, a clear brings it back);
+# the file lists the titles it left out as decided; and a build from an overlay that would bring one of them back
+# refuses to write the Review file. The guard compares content: the sync leaves `_synced_at` alone when nothing
+# changed, so a time cannot say the overlay is stale (#3260 review).
+import yaml  # noqa: E402
+
 with tempfile.TemporaryDirectory() as root4:
     for rel, obj in FIX.items():
         write(root4, rel, obj)
@@ -693,42 +700,113 @@ with tempfile.TemporaryDirectory() as root4:
     check("a live save drops its card though the overlay never heard of it", DM not in live_held, sorted(live_held))
     check("a live clear brings back a card the stale overlay still holds", SAVED in live_held, sorted(live_held))
     check("the conflict stays whatever the live set holds", JUV in live_held)
-    check("the file says it read the live set, and when",
-          d_live["sources"]["assignments"] == {"read": "live", "at": live_at}, d_live["sources"].get("assignments"))
+    check("the file says it read the live set, when, and which held titles it left out as decided",
+          d_live["sources"]["assignments"] == {"read": "live", "at": live_at, "decided": [DM]}, d_live["sources"].get("assignments"))
     d_over = B.build(root4)[0]
     check("with no live set the overlay decides and the file says so",
-          d_over["sources"]["assignments"]["read"] == "overlay" and SAVED not in {h["raw"] for h in d_over["held"]},
-          d_over["sources"].get("assignments"))
+          d_over["sources"]["assignments"]["read"] == "overlay" and d_over["sources"]["assignments"]["decided"] == [SAVED]
+          and SAVED not in {h["raw"] for h in d_over["held"]}, d_over["sources"].get("assignments"))
 
-    # The guard: overlay synced 08:56, the committed file read the decisions at 21:00.
-    over = dict(FIX["kb/unclassified_assignments.json"], _synced_at="2026-11-13T16:56:14Z")
-    write(root4, "kb/unclassified_assignments.json", over)
-    stale = B.build(root4)[0]
-    check("a build on an overlay older than the committed file's read is refused",
-          bool(B.stale_assignments(d_live, stale)), B.stale_assignments(d_live, stale))
+    # The guard, by content.
+    check("an overlay build that would bring back a title the committed file left out as decided is refused",
+          DM in B.stale_assignments(d_live, d_over), B.stale_assignments(d_live, d_over))
     check("a live build is never refused", B.stale_assignments(d_live, d_live) == "")
-    check("a build on the same overlay the file read is allowed", B.stale_assignments(stale, stale) == "")
     check("a file with no assignments stamp (written before #3223) is not a reason to refuse",
-          B.stale_assignments({"sources": {}}, stale) == "")
-    newer = dict(over, _synced_at="2026-11-13T22:00:00Z")
-    write(root4, "kb/unclassified_assignments.json", newer)
-    check("an overlay synced after the file's read is allowed", B.stale_assignments(d_live, B.build(root4)[0]) == "")
-    write(root4, "kb/unclassified_assignments.json", over)
+          B.stale_assignments({"sources": {}}, d_over) == "")
+    # The finding: an overlay with an old _synced_at but the same decided set as a live-stamped file.
+    write(root4, "kb/unclassified_assignments.json", {"_synced_at": "2026-11-13T16:56:14Z",
+                                                      "assignments": {DM: {"unified_title": "Digital Media Basics"}}})
+    same = B.build(root4)[0]
+    check("an overlay build over a live-stamped file with the same decided set is allowed, whatever its _synced_at",
+          B.stale_assignments(d_live, same) == "", B.stale_assignments(d_live, same))
 
     out4 = os.path.join(root4, "kb", "exhibits_review.json")
+
+    def run4(*extra):
+        return subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root4]
+                              + list(extra), capture_output=True, text=True, timeout=120, env=ENV)
+
     with open(out4, "w", encoding="utf-8") as f:
         f.write(B.dump(d_live, "held"))
-    env = {k: v for k, v in os.environ.items() if k != "SUPABASE_SERVICE_KEY"}
-    r4 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root4],
-                        capture_output=True, text=True, timeout=120, env=env)
+    r5 = run4()
+    with open(out4, encoding="utf-8") as f:
+        after = json.load(f)
+    check("the builder exits 0 and writes over a live-stamped file when its overlay holds the same decisions",
+          r5.returncode == 0 and after["sources"]["assignments"]["read"] == "overlay", (r5.returncode, r5.stdout[-300:]))
+
+    write(root4, "kb/unclassified_assignments.json", FIX["kb/unclassified_assignments.json"])
+    with open(out4, "w", encoding="utf-8") as f:
+        f.write(B.dump(d_live, "held"))
+    r4 = run4()
     with open(out4, encoding="utf-8") as f:
         kept = json.load(f)
-    check("the builder exits non-zero and leaves the committed file when its overlay is stale",
-          r4.returncode == 3 and "not rebuilt" in r4.stdout and kept["sources"]["assignments"]["read"] == "live"
-          and DM not in {h["raw"] for h in kept["held"]}, (r4.returncode, r4.stdout[-300:]))
+    check("the builder exits 3, says why once, and leaves the committed file when a decided card would come back",
+          r4.returncode == 3 and r4.stdout.count("::warning") == 1 and "would come back" in r4.stdout
+          and kept["sources"]["assignments"]["read"] == "live" and DM not in {h["raw"] for h in kept["held"]},
+          (r4.returncode, r4.stdout[-300:]))
     check("a live read's time alone is not a change worth writing",
           B._unstamped(d_live, "written_at") == B._unstamped(dict(d_live, sources=dict(d_live["sources"],
-                                                     assignments={"read": "live", "at": "2026-11-14T01:00:00Z"})), "written_at"))
+                                                     assignments=dict(d_live["sources"]["assignments"], at="2026-11-14T01:00:00Z"))), "written_at"))
+
+    # The live read itself, in process: the env gate, the read, a short read and a failed one fall back, said aloud.
+    import _apply_unclassified_triage as T  # noqa: E402
+    saved_env, saved_fetch, saved_total = os.environ.get("SUPABASE_SERVICE_KEY"), T.fetch_rows, B.live_total
+    rows = [{"course_id": "_UNCLASSIFIED::" + DM, "field": "unified_title_assignment", "value": "Digital Media Basics",
+             "reviewer_email": "x@example.org", "reviewed_at": "2026-11-13T20:00:00Z"}]
+    try:
+        os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        check("no service key, no live read", B.live_assignments() == (None, None))
+        os.environ["SUPABASE_SERVICE_KEY"] = "a-test-key-that-must-not-print"
+        T.fetch_rows, B.live_total = (lambda: rows), (lambda triage: 1)
+        got, at = B.live_assignments()
+        check("with the key the builder reads the live set", got == {DM: T.build_assignments(rows)[0][DM]} and at)
+        import io
+        import contextlib
+        buf = io.StringIO()
+        B.live_total = lambda triage: 2
+        with contextlib.redirect_stdout(buf):
+            short = B.live_assignments()
+        check("a read shorter than the exact count falls back to the overlay, said aloud", short == (None, None)
+              and "short read" in buf.getvalue(), buf.getvalue())
+
+        def boom():
+            raise RuntimeError("Bearer a-test-key-that-must-not-print refused")
+        T.fetch_rows, B.live_total = boom, (lambda triage: 1)
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            failed_read = B.live_assignments()
+        check("a failed read falls back to the overlay and names the error's type, never its text", failed_read == (None, None)
+              and "RuntimeError" in buf.getvalue() and "a-test-key" not in buf.getvalue(), buf.getvalue())
+        T.fetch_rows, B.live_total = (lambda: rows), (lambda triage: 1)
+        write(root4, "kb/unclassified_assignments.json", FIX["kb/unclassified_assignments.json"])
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            rc = B.main(["--root", root4, "--quiet"])
+        with open(out4, encoding="utf-8") as f:
+            via_main = json.load(f)
+        check("main() with the key builds from the live read and stamps it",
+              rc == 0 and via_main["sources"]["assignments"]["read"] == "live"
+              and DM not in {h["raw"] for h in via_main["held"]}, (rc, via_main["sources"].get("assignments")))
+    finally:
+        T.fetch_rows, B.live_total = saved_fetch, saved_total
+        if saved_env is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = saved_env
+
+# Both runs that rebuild the Review file give the builder the key, and only the key, and read exit 3 as the
+# builder's own refusal.
+with open(os.path.join(ROOT, ".github", "workflows", "cer-procedures.yml"), encoding="utf-8") as f:
+    wf = yaml.safe_load(f)
+step = [s for j in wf["jobs"].values() for s in j.get("steps") or [] if s.get("name") == "Build the Exhibits review queue"]
+check("cer-procedures.yml's Review step takes SUPABASE_SERVICE_KEY and nothing else, and reads exit 3 as a refusal",
+      len(step) == 1 and set((step[0].get("env") or {})) == {"SUPABASE_SERVICE_KEY"}
+      and '[ "$rc" != 3 ]' in step[0]["run"], step)
+with open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8") as f:
+    daily = f.read()
+check("daily_build.sh's Review step reads exit 3 as a refusal",
+      'step "Build the Exhibits review queue" SUPABASE_SERVICE_KEY' in daily
+      and 'rc=0; python3 kb/_build_exhibits_review.py --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

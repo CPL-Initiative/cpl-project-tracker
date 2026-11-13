@@ -32,10 +32,11 @@ What it joins, all committed files:
                                       live set replaces the overlay, so a save or a clear since the last sync
                                       counts (#3223, S649). The file records which set it read and when.
 
-A decided title stays decided (#3223, S649): a build with no live read refuses to write the Review file
-over one that read the decisions later than this build's overlay was synced (stale_assignments()), so a
-rebuild on a stale overlay cannot re-propose a card a person decided. Ship the code and let the nightly
-or daily run rebuild the file; the tab reconciles a card against kb_curation on load either way.
+A decided title stays decided (#3223, S649): the file lists the held titles it left out as decided, and a
+build with no live read refuses (exit 3) to write the Review file when one of them would come back as a card
+(stale_assignments()), so a rebuild on a stale overlay cannot re-propose a card a person decided. Ship the
+code and let the nightly or daily run rebuild the file; the tab reconciles a card against kb_curation on
+load either way.
 
 Students per title are not here: they are a reviewer-only read of map_student_credit, k=10
 (exhibit_title_students(), kb/migrations/), and the tab asks for them with each title's `ids`.
@@ -814,39 +815,67 @@ def name_list(creds, field):
     return sorted(out, key=str.lower)
 
 
+def live_total(triage):
+    """How many `_UNCLASSIFIED::` rows kb_curation holds now (PostgREST `Prefer: count=exact`), read before the rows
+    so a save landing between the two reads can only add rows, never trip the completeness check."""
+    import urllib.request
+    url = (triage.URL + "/rest/v1/kb_curation?select=course_id&course_id=like." + triage.KEY_PREFIX + "%25")
+    req = urllib.request.Request(url, headers={"apikey": triage.KEY, "Authorization": "Bearer " + triage.KEY,
+                                               "Prefer": "count=exact", "Range-Unit": "items", "Range": "0-0"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        span = r.headers.get("Content-Range") or ""
+    total = span.rsplit("/", 1)[-1]
+    if not total.isdigit():
+        raise ValueError("no row count in Content-Range")
+    return int(total)
+
+
 def live_assignments():
     """(assignments, read_at) read fresh from kb_curation when SUPABASE_SERVICE_KEY is set, else (None, None).
     One read path, kb/_apply_unclassified_triage.py's (Range-paginated, the same grouping, a clear drops the
-    title); this builder writes no row. A failed read falls back to the committed overlay, said aloud."""
+    title), checked complete against an exact count; this builder writes no row. A failed or short read falls
+    back to the committed overlay, said aloud (the error's type and code only: never its text, which can carry
+    the key)."""
     if not os.environ.get("SUPABASE_SERVICE_KEY"):
         return None, None
     try:
         import _apply_unclassified_triage as triage
         at = iso_now()
-        return triage.build_assignments(triage.fetch_rows())[0], at
+        total = live_total(triage)
+        rows = triage.fetch_rows()
+        if len(rows) < total:
+            raise ValueError("short read")
+        return triage.build_assignments(rows)[0], at
     except Exception as e:  # noqa: BLE001 - any failed read means the overlay, never a stop
+        why = type(e).__name__ + (" %s" % e.code if getattr(e, "code", None) else "")
+        if isinstance(e, ValueError):
+            why += ": " + str(e)
         print("::warning title=Exhibits review read the overlay::the live assignment read failed (%s); "
-              "the Review file is built from kb/unclassified_assignments.json" % e)
+              "the Review file is built from kb/unclassified_assignments.json" % why)
         return None, None
 
 
 def assignments_read(data):
-    """The `sources.assignments` stamp a Review file carries: {"read": "live"|"overlay", "at": ISO time}."""
+    """The `sources.assignments` stamp a Review file carries: {"read": "live"|"overlay", "at": the read or the
+    overlay's last change, "decided": the held raw titles this build left out because a title is saved for them}."""
     return ((data or {}).get("sources") or {}).get("assignments") or {}
 
 
 def stale_assignments(prior, data):
-    """Why `data` must not replace `prior`, or "". A build from the overlay may not overwrite a file that read
-    the decisions later than that overlay was synced: its cards would re-propose titles a person decided since."""
+    """Why `data` must not replace `prior`, or "". Content, not times: an overlay build is refused only when a raw
+    title the committed file left out as decided would come back as a card, which is the stale-overlay failure
+    itself (the sync leaves `_synced_at` alone when nothing changed, so a time says nothing). A live build reads
+    the decisions themselves, a clear included, and is never refused."""
     now, before = assignments_read(data), assignments_read(prior)
-    if now.get("read") == "live" or not before.get("at"):
+    if now.get("read") == "live":
         return ""
-    if (now.get("at") or "") < before["at"]:
-        return ("the committed Review file read the saved decisions at %s (%s), later than this build's overlay "
-                "(synced %s); a rebuild would bring back cards decided since. Ship the code only and let the "
-                "nightly or daily run rebuild it, or set SUPABASE_SERVICE_KEY for a live read."
-                % (before["at"], before.get("read", "?"), now.get("at") or "never"))
-    return ""
+    back = sorted(set(before.get("decided") or []) & {h.get("raw") for h in (data or {}).get("held") or []})
+    if not back:
+        return ""
+    return ("%d title%s the committed Review file left out as decided would come back as cards (%s), because this "
+            "build's overlay does not hold their saved titles. Ship the code only and let the nightly or daily run "
+            "rebuild it, or set SUPABASE_SERVICE_KEY for a live read."
+            % (len(back), "" if len(back) == 1 else "s", "; ".join(back[:3]) + ("; and more" if len(back) > 3 else "")))
 
 
 def build(root, live=None):
@@ -880,6 +909,10 @@ def build(root, live=None):
              if n.get("fold_report") or not cards
              or (n.get("raw_title") in still and n.get("raw_title") not in saved)]
     dropped = len(report.get("needs_you") or []) - len(needs)
+    # The titles left out because a title is saved for them: the guard's content (stale_assignments).
+    read["decided"] = sorted({n.get("raw_title") for n in report.get("needs_you") or []
+                              if not n.get("fold_report") and cards and n.get("raw_title") in still
+                              and n.get("raw_title") in saved})
     by_raw = exhibits_by_raw(statewide, [n.get("raw_title") for n in needs])
     adoption = adoption_file(statewide, prescriptive)
     # The titles in use (Sam, 2026-11-12): the reference's titles with their issuer, local titles and colleges, the
@@ -1086,7 +1119,7 @@ def _unstamped(d, stamp_key):
     """The file without its stamps: `stamp_key`, and a live read's time, which changes every run."""
     out = {k: v for k, v in (d or {}).items() if k != stamp_key}
     if stamp_key and assignments_read(out).get("read") == "live":
-        out["sources"] = dict(out["sources"], assignments={"read": "live"})
+        out["sources"] = dict(out["sources"], assignments={k: v for k, v in assignments_read(out).items() if k != "at"})
     return out
 
 
