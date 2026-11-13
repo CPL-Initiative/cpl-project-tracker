@@ -3332,7 +3332,11 @@
   var HERO_PHOTOS = [["hero-student-1.jpg", 598, 448], ["hero-architecture.jpg", 1001, 750], ["hero-welding-2.jpg", 1001, 750],
     ["hero-biotech.jpg", 1200, 900], ["hero-construction.jpg", 1001, 750], ["hero-health.jpg", 922, 692],
     ["hero-fashion.jpg", 1001, 750], ["hero-transportation.jpg", 1001, 750], ["hero-manufacturing.jpg", 1200, 900],
-    ["hero-ict.jpg", 1001, 750], ["hero-welding-1.jpg", 1001, 750]];
+    ["hero-ict.jpg", 1001, 750], ["hero-welding-1.jpg", 1001, 750], ["stories/2026-06-sierra-scaled.jpeg", 2560, 1920],
+    ["stories/2026-02-rociog.png", 282, 327], ["stories/2026-06-doron-original.png", 1254, 1254], ["stories/2026-02-erico.jpeg", 350, 350],
+    ["stories/2026-02-haleym.png", 270, 290], ["stories/2026-02-kevinb.jpg", 369, 524], ["stories/2026-02-josiash.png", 339, 414],
+    ["stories/2026-02-brandonk.png", 149, 155], ["stories/2026-02-koam.png", 253, 340], ["stories/2026-02-matthewm.png", 204, 210],
+    ["stories/2026-02-coreya.png", 126, 152], ["stories/2026-07-christian_withbg.png", 1067, 693], ["stories/2026-07-brody_withbg.png", 1067, 693]];
   var RECS_SHOWN = 4;
   var adoptState = { data: null, error: null, loading: null, sets: {} };
   function loadAdopt() {

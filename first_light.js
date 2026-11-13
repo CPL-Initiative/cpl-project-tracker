@@ -44,16 +44,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "Mount Corcoran",
-      artist: "Albert Bierstadt", year: "c. 1876-1877",
-      museum: "National Gallery of Art, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Albert%20Bierstadt%2C%20Mount%20Corcoran%2C%20c.%201876-1877%2C%20NGA%20166428.jpg?width=1600",
-      alt: "A sunlit snow-capped mountain rising above a still lake ringed by tall dark pines, with a deer at the water's edge.",
-      blurb: "Bierstadt built this towering Sierra Nevada peak from the granite, alpine lakes, and pine forests he had soaked up on his Western travels — but the mountain itself is invented. He first showed it plainly as 'Mountain Lake,' then renamed it for the Washington collector William Wilson Corcoran, even drawing up a map to fix its 'location.' The flattery worked; Corcoran bought it. The light pouring across the snowfields is pure Bierstadt theater.",
-      setting: "The snow peak, mirror lake, and dark conifers are the artist's idealized vision of California's Sierra Nevada, the range that made his name.",
-      lic: "Public domain · National Gallery of Art, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
       title: "The Tetons and the Snake River",
       artist: "Ansel Adams", year: "1942",
       museum: "U.S. National Archives (National Park Service Mural Project), Washington, D.C.",
@@ -63,36 +53,6 @@
       setting: "Adams made his name in California's High Sierra, and this federal commission is squarely public domain — the cleanest, freest body of his work.",
       mono: true,
       lic: "Public domain · U.S. National Archives (National Park Service Mural Project), Washington, D.C. · via Wikimedia Commons"
-    },
-    {
-      title: "Water Lilies",
-      artist: "Claude Monet", year: "c. 1915–1926",
-      museum: "The Nelson-Atkins Museum of Art, Kansas City",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Claude%20Monet%2C%20Water%20Lilies%2C%20ca.%201915-1926.jpg?width=1600",
-      alt: "A close, frameless view of a lily pond — floating green pads and pale blossoms drifting across rippling blue and lavender water that reflects the sky.",
-      blurb: "In his last decades Monet dug a water garden at Giverny, diverted a stream to feed it, and planted the lilies that would consume the rest of his life. He painted the pond hundreds of times, often looking straight down so the sky lives only as a reflection. By now his eyesight was failing to cataracts, yet the brush grew freer and the color bolder — petals and clouds dissolving into one shimmering surface where you can no longer tell water from light.",
-      setting: "These late panels were Monet's gift to a world recovering from war — vast, calming fields of color meant to soothe the eye and the spirit.",
-      lic: "Public domain · The Nelson-Atkins Museum of Art, Kansas City · via Wikimedia Commons"
-    },
-    {
-      title: "The White Horse",
-      artist: "John Constable", year: "1818–1819",
-      museum: "The Frick Collection, New York",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%2C%20The%20White%20Horse%2C%201818-1819%2C%20NGA%201146.jpg?width=1600",
-      alt: "A white horse standing on a wooden barge crossing a calm river, with lush green trees and a wide cloudy sky.",
-      blurb: "Constable grew up beside the River Stour and spent his life painting the working countryside he loved — barges, locks, and the slow business of moving goods by water. Here a tow horse rides a flat-bottomed ferry across the river because the towpath has switched banks. It was the first of his ambitious six-foot canvases, the big pictures that finally won him notice, and he kept it close, calling it one of his favorites.",
-      setting: "The Stour valley of Suffolk became 'Constable Country' — ordinary English farmland that he painted with the tenderness most artists saved for grand subjects.",
-      lic: "Public domain · The Frick Collection, New York · via Wikimedia Commons"
-    },
-    {
-      title: "The Great Wave off Kanagawa",
-      artist: "Katsushika Hokusai", year: "c. 1831",
-      museum: "Color woodblock print · Thirty-Six Views of Mount Fuji",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Thirty-Six%20Views%20of%20Mount%20Fuji-%20The%20Great%20Wave%20Off%20the%20Coast%20of%20Kanagawa%20-%20Google%20Art%20Project.jpg?width=1600",
-      alt: "A great cresting wave with clawlike foam towers over three slender boats, a small snow-capped Mount Fuji on the far horizon.",
-      blurb: "Hokusai was in his seventies when he designed this print for his series Thirty-Six Views of Mount Fuji. A claw of foam rears over three slender boats while the sacred mountain sits tiny and calm on the horizon — the wave, for one instant, taller than Fuji itself. He once said he wouldn't truly master his art until he was 110; he died at 88, still reaching. Few images on Earth are more recognized.",
-      setting: "From the woodblock series that fixed Mount Fuji in the world's imagination, printed in the thousands from carved cherry blocks.",
-      lic: "Public domain · Color woodblock print · Thirty-Six Views of Mount Fuji · via Wikimedia Commons"
     },
     {
       title: "The Mowers (When Hearts Beat as One)",
@@ -115,16 +75,6 @@
       lic: "Public domain · Gilcrease Museum, Tulsa · via Wikimedia Commons"
     },
     {
-      title: "Poppies (Les Coquelicots)",
-      artist: "Claude Monet", year: "1873",
-      museum: "Musée d'Orsay, Paris",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/1994-04-05%20-%20Les%20Coquelicots%20-%20Claude%20Monet.jpg?width=1600",
-      alt: "A green hillside scattered with red poppies under a soft blue sky, a woman with a parasol and a child walking through the tall grass.",
-      blurb: "Monet was thirty-three and living in Argenteuil, just downriver from Paris, when he painted this summer stroll. The woman and child in the foreground are likely his wife Camille and son Jean, echoed by a second pair near the top of the hill — a quiet trick that pulls your eye up through the grass. He let the poppies fall as loose dabs of red rather than tidy flowers. A year later it hung in the very first Impressionist exhibition, where critics scoffed at such unfinished-looking work.",
-      setting: "A drifting walk through a field on a bright afternoon — the kind of ordinary, sunlit moment the Impressionists insisted was worth painting.",
-      lic: "Public domain · Musée d'Orsay, Paris · via Wikimedia Commons"
-    },
-    {
       title: "Scene in Yosemite Valley",
       artist: "Albert Bierstadt", year: "c. 1864-1874",
       museum: "Dayton Art Institute, Dayton",
@@ -133,26 +83,6 @@
       blurb: "Bierstadt first reached Yosemite in 1863 and was overwhelmed — the sheer granite walls and falling water gave him a subject for the rest of his life. Here the valley opens in warm, hazy light, its cliffs softened by atmosphere and a quiet river threading the foreground. Paintings like this one carried Yosemite east to people who would never see it, and helped build the case for protecting it as public land.",
       setting: "Yosemite Valley, in California's Sierra Nevada, was set aside by Congress in 1864 — the first land the U.S. ever protected expressly for public preservation.",
       lic: "Public domain · Dayton Art Institute, Dayton · via Wikimedia Commons"
-    },
-    {
-      title: "Cotopaxi",
-      artist: "Frederic Edwin Church", year: "1855",
-      museum: "The Museum of Fine Arts, Houston",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Frederic%20Edwin%20Church%20-%20Cotopaxi%20-%2074.58%20-%20Museum%20of%20Fine%20Arts.jpg?width=1600",
-      alt: "A snow-capped volcano rising above a green valley under a luminous sky, with a waterfall and distant mountains.",
-      blurb: "Church traveled seven months through South America retracing the routes of the explorer Alexander von Humboldt, sketching volcanoes, jungles, and waterfalls along the way. Back in his studio he assembled those studies into sweeping panoramas like this one, with Ecuador's great cone Cotopaxi crowned in snow above a sunlit valley. Audiences paid admission to see such paintings unveiled, one canvas at a time, like a window onto the ends of the earth.",
-      setting: "Church was a star of the Hudson River School, the first American art movement, famous for landscapes that doubled as natural-history spectacle.",
-      lic: "Public domain · The Museum of Fine Arts, Houston · via Wikimedia Commons"
-    },
-    {
-      title: "Wanderer above the Sea of Fog",
-      artist: "Caspar David Friedrich", year: "c. 1818",
-      museum: "Hamburger Kunsthalle, Hamburg",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Caspar%20David%20Friedrich%20-%20Wanderer%20above%20the%20sea%20of%20fog.jpg?width=1600",
-      alt: "A man in a dark coat stands on a rocky outcrop with his back turned, gazing over rolling fog and distant mountain peaks.",
-      blurb: "A lone figure stands on a dark crag, his back to us, gazing across a sea of fog that swallows the peaks below. By turning the man away, Friedrich makes him a stand-in for you — you are the one on the summit, small before the vastness. It became the defining image of German Romanticism: the human soul humbled and exalted at once before nature.",
-      setting: "The Elbe Sandstone Mountains of Saxony, which Friedrich recombined from real sketches into an invented summit.",
-      lic: "Public domain · Hamburger Kunsthalle, Hamburg · via Wikimedia Commons"
     },
     {
       title: "Coastal Wildflowers",
@@ -175,16 +105,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "The Hay Wain",
-      artist: "John Constable", year: "1821",
-      museum: "The National Gallery, London",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/John%20Constable%20-%20The%20Hay%20Wain%20(1821).jpg?width=1600",
-      alt: "A wooden wagon stands in a shallow river beside a brick cottage under a wide sky of broken clouds, with green meadows and trees around.",
-      blurb: "Constable painted the ordinary countryside of his Suffolk boyhood — a hay wagon pausing in a shallow river, a cottage, a clouded English sky — and insisted that was enough for great art. Overlooked at home, it stunned Paris when shown there in 1824 and helped nudge French painting toward Impressionism. The dog, the wagon, the drifting clouds: nothing happens, and everything does.",
-      setting: "The River Stour at Flatford in Suffolk; Willy Lott's cottage still stands in what's now called 'Constable Country.'",
-      lic: "Public domain · The National Gallery, London · via Wikimedia Commons"
-    },
-    {
       title: "Mountain Lake",
       artist: "Edgar Payne", year: "c. 1920s",
       museum: "Phoenix Art Museum, Phoenix",
@@ -195,66 +115,6 @@
       lic: "Public domain · Phoenix Art Museum, Phoenix · via Wikimedia Commons"
     },
     {
-      title: "The Chasm of the Colorado",
-      artist: "Thomas Moran", year: "1873-1874",
-      museum: "Smithsonian American Art Museum, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Smithsonian-Moran-The%20Chasm%20of%20the%20Colorado-2287.jpg?width=1600",
-      alt: "A vast, storm-darkened canyon plunging into shadow, with sunlight and a faint rainbow breaking through clouds over jagged rock.",
-      blurb: "In 1873 Moran joined part of John Wesley Powell's survey to the Grand Canyon, hunting a companion to his celebrated Yellowstone canvas. The result is this vision of storm and abyss — shafts of light and a broken rainbow falling into a chasm that seems to have no bottom. Hung in the U.S. Capitol, paintings like this one helped persuade Congress that such places were worth saving for the nation.",
-      setting: "The Grand Canyon of the Colorado, carved across northern Arizona, stunned Moran into one of the most dramatic American landscapes ever painted.",
-      lic: "Public domain · Smithsonian American Art Museum, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
-      title: "Mother Rose Nursing Her Child",
-      artist: "Mary Cassatt", year: "c. 1900",
-      museum: "Private collection",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/1908%20Cassat%20Mother%20Rose%20Tela%20Aviv%20Museum%20of%20Art%20anagoria.jpg?width=1600",
-      alt: "A mother in soft light cradling and nursing her young child, their faces close together, rendered in warm, gentle tones.",
-      blurb: "An American from Pittsburgh, Cassatt built her career in Paris as the only U.S. painter invited to exhibit with the French Impressionists. She made the bond between mother and child her great subject, painting it with frank tenderness and not a trace of sugar. Here a mother bends close as she nurses, the two faces almost touching — a small, ordinary moment she treated as worthy of a master's full attention.",
-      setting: "Cassatt's unsentimental mother-and-child paintings became her signature; she was a key figure linking French Impressionism to American collectors and museums.",
-      lic: "Public domain · Private collection · via Wikimedia Commons"
-    },
-    {
-      title: "Saco Bay",
-      artist: "Winslow Homer", year: "1896",
-      museum: "Clark Art Institute, Williamstown",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Winslow%20Homer%20-%20Saco%20Bay%20(1896).jpg?width=1600",
-      alt: "Two women in long dresses standing on a grassy clifftop above a shimmering bay at twilight, baskets in hand.",
-      blurb: "Homer spent his later years on a rocky point at Prout's Neck, Maine, watching the sea in every weather. Here two young women pause on a headland at the end of the day, baskets in hand, as the water catches the last light. He spent decades learning to paint exactly this — the meeting of people, sea, and changing sky — and few American artists ever did it better.",
-      setting: "Homer is one of America's great painters of the sea; the Maine coast he settled into late in life gave him his most enduring subject.",
-      lic: "Public domain · Clark Art Institute, Williamstown · via Wikimedia Commons"
-    },
-    {
-      title: "Fine Wind, Clear Morning (Red Fuji)",
-      artist: "Katsushika Hokusai", year: "c. 1830–1832",
-      museum: "Color woodblock print · Thirty-Six Views of Mount Fuji",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Katsushika%20Hokusai%20-%20Fine%20Wind%2C%20Clear%20Morning%20(Gaif%C5%AB%20kaisei)%20-%20Google%20Art%20Project.jpg?width=1600",
-      alt: "A broad reddish-brown Mount Fuji with a snow-streaked summit rises against a blue sky scattered with small white clouds.",
-      blurb: "Also from the Thirty-Six Views, this is Fuji nearly alone — no wave, no travelers, just the mountain catching the first red-gold light of a late-summer dawn as a band of mackerel clouds drifts across deep blue. Collectors nicknamed it 'Red Fuji.' Hokusai reduces a whole mountain to three colors and a few perfect shapes, and somehow it reads as reverence.",
-      setting: "A companion to the Great Wave in the same series; the warm southerly summer wind turns Fuji's slopes to copper at sunrise.",
-      lic: "Public domain · Color woodblock print · Thirty-Six Views of Mount Fuji · via Wikimedia Commons"
-    },
-    {
-      title: "Italian Fishing Boats",
-      artist: "Edgar Payne", year: "c. 1920s",
-      museum: "Private collection",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Italian%20Fishing%20Boats%2C%20by%20Edgar%20Alwin%20Payne.jpg?width=1600",
-      alt: "A cluster of fishing boats with tall weathered orange and tan sails crowded together on calm harbor water.",
-      blurb: "Most people know Payne for mountains, but he was just as devoted to boats. He chased fishing fleets from the Channel Islands off California to the harbors of Brittany and Italy, drawn to the bold geometry of bright sails crowded against the water. Here the patched, sun-warmed sails of a Mediterranean fleet lean and overlap into a near-abstract tangle of color and shape.",
-      setting: "Payne sailed to the Channel Islands to paint boats at anchor and carried that love of sails across the Atlantic to the fishing ports of Europe.",
-      lic: "Public domain · Private collection · via Wikimedia Commons"
-    },
-    {
-      title: "Rainbow over the Grand Canyon of the Yellowstone",
-      artist: "Thomas Moran", year: "1900",
-      museum: "Smithsonian American Art Museum, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Rainbow%20over%20the%20Grand%20Canyon%20of%20the%20Yellowstone%2C%201900%2C%20by%20Thomas%20Moran%20-%20SAAM%20-%20DSC00847.JPG?width=1600",
-      alt: "A deep canyon of glowing yellow and orange cliffs with a waterfall and a rainbow rising through the mist, a river winding below.",
-      blurb: "Moran returned again and again to Yellowstone's golden canyon, the place that launched his reputation after the 1871 expedition. Here the cliffs blaze in yellows and rust while a rainbow arcs through the spray of the falls and the river runs far below. So closely was he tied to the region that he signed some works 'T-Y-M' — Thomas 'Yellowstone' Moran — and Mount Moran in the Tetons still carries his name.",
-      setting: "Moran's Yellowstone paintings helped convince Congress to create the world's first national park in 1872.",
-      lic: "Public domain · Smithsonian American Art Museum, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
       title: "Alcatraz and the Golden Gate, San Francisco Bay",
       artist: "Detroit Photographic Company", year: "c. 1898–1905",
       museum: "Library of Congress, Washington, D.C.",
@@ -262,66 +122,6 @@
       alt: "A color print of a calm bay with a rocky island at left, sailing ships on the water, and low golden hills meeting the sea in the distance.",
       blurb: "Decades before color film, the Detroit Photographic Company turned black-and-white negatives into glowing color using a Swiss process called photochrom — hand-tinted stone plates that built up an image one hue at a time. The result reads like memory: softer and warmer than real life. Here the bay opens toward the strait that ships had long called the Golden Gate, the island of Alcatraz still an army fort, the famous bridge decades from being built.",
       setting: "San Francisco Bay before the bridge that would later span the Golden Gate — a postcard view of California at the turn of the century.",
-      lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
-      title: "The Bridge at Sèvres",
-      artist: "Alfred Sisley", year: "1877",
-      museum: "National Gallery in Prague",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/1877%20Sisley%20Die%20Br%C3%BCcke%20bei%20S%C3%A8vres%20Nationalgalerie%20Prag%20anagoria.jpg?width=1600",
-      alt: "A low bridge crossing a calm river beneath a wide, cloud-filled sky, with riverbank greenery and soft reflections on the water.",
-      blurb: "Sisley, the son of English parents living in France, devoted himself almost entirely to landscape while his Impressionist friends turned to people and city life. He loved rivers, bridges, and above all skies — once writing that the sky must never be a mere backdrop, but the very heart of a picture. Here the Seine carries a soft reflection of clouds beneath a low stone bridge, the water and air sharing the same gentle, silvery light.",
-      setting: "A calm bend of the Seine on an ordinary day — the quiet, sky-filled kind of scene Sisley returned to all his life.",
-      lic: "Public domain · National Gallery in Prague · via Wikimedia Commons"
-    },
-    {
-      title: "Madonna of the Pomegranate",
-      artist: "Sandro Botticelli", year: "c. 1487",
-      museum: "Uffizi Gallery, Florence",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Sandro%20Botticelli%20-%20Madone%20%C3%A0%20la%20grenade.jpg?width=1600",
-      alt: "A circular painting of the Virgin holding the Christ Child, encircled by young angels with golden hair, a pomegranate in the Child's hand.",
-      blurb: "Painted at the height of Botticelli's fame in Medici Florence, this round panel sets the Virgin and Child among a ring of slender angels, all golden hair and falling drapery. The pomegranate the Child holds was an old symbol of both abundance and his coming sacrifice — sweetness and sorrow in one fruit. The tondo's curve gathers the gentle, downcast faces into a single hush of grace and light.",
-      setting: "The circular 'tondo' was a favorite Florentine format for the home; Botticelli, painter of the Birth of Venus, was its supreme master.",
-      lic: "Public domain · Uffizi Gallery, Florence · via Wikimedia Commons"
-    },
-    {
-      title: "The Oxbow",
-      artist: "Thomas Cole", year: "1836",
-      museum: "The Metropolitan Museum of Art, New York",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Cole%20Thomas%20The%20Oxbow%20(The%20Connecticut%20River%20near%20Northampton%201836).jpg?width=1600",
-      alt: "A sweeping landscape split between dark stormy wilderness at left and a sunlit cultivated valley at right, where a broad river loops in an oxbow bend.",
-      blurb: "Cole splits the canvas in two — on the left a dark wilderness of storm-bent trees and torn sky; on the right a sunlit valley tamed into farms, the river curling into its famous oxbow. The founder of the Hudson River School was asking America a question: how much of this wild continent to clear, and how much to keep wild? Look closely and his tiny self-portrait sits at the seam, painting.",
-      setting: "The Connecticut River seen from Mount Holyoke, Massachusetts, in the clearing after a thunderstorm.",
-      lic: "Public domain · The Metropolitan Museum of Art, New York · via Wikimedia Commons"
-    },
-    {
-      title: "Sunset, Canyon de Chelly",
-      artist: "Edgar Payne", year: "1916",
-      museum: "Private collection",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sunset%2C%20Canyon%20de%20Chelly.jpg?width=1600",
-      alt: "Towering red sandstone canyon walls catching warm sunset light, with small riders on the sandy canyon floor below.",
-      blurb: "In 1916 Payne and his family lived for months on and near the Navajo and Hopi lands of the Southwest, where he painted the great sandstone walls from every angle and hour of light. Tiny riders cross the canyon floor, dwarfed by cliffs that glow in the last sun. The scale and quiet here look forward, decades early, to the sweeping vistas of John Ford's Western films.",
-      setting: "Canyon de Chelly, in present-day Arizona, drew Payne east from his California coast and Sierra haunts in search of the dramatic desert light.",
-      lic: "Public domain · Private collection · via Wikimedia Commons"
-    },
-    {
-      title: "Cliffs of Green River, Wyoming",
-      artist: "Thomas Moran", year: "c. 1910",
-      museum: "White House, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Cliffs%20of%20Green%20River%2C%20Wyoming%2C%20by%20Thomas%20Moran.jpg?width=1600",
-      alt: "Warm sandstone cliffs glowing above a calm river, with mounted riders crossing the foreground and a soft rainbow in the sky.",
-      blurb: "The banded sandstone bluffs above the Green River were Moran's most beloved motif — he painted Castle Rock and its neighbors dozens of times across his career. In the warm light here, a small party of riders crosses the foreground while the cliffs glow apricot and lavender behind a faint rainbow. It was the first dramatic Western scenery Moran ever saw, on his way to Yellowstone in 1871, and it never let him go.",
-      setting: "The Green River cliffs in southwestern Wyoming gave Moran a lifelong subject he reworked from memory and sketch long after he last stood there.",
-      lic: "Public domain · White House, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
-      title: "Mission San Antonio de Padua, Monterey County",
-      artist: "Detroit Photographic Company", year: "1898",
-      museum: "Library of Congress, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mission%20San%20Antonio%20de%20Padua%2C%20Monterey%20County%2C%20California%2C%201898.jpg?width=1600",
-      alt: "A color photograph of an old adobe and brick mission church with a tall arched façade, low ruined walls beside it, under a broad sky.",
-      blurb: "Founded in 1771, San Antonio de Padua was the third of California's 21 Spanish missions, set in a quiet oak valley well inland from the coast. This photochrom catches it in soft, tinted color — the brick arches of its façade warm against a wide California sky. Of all the missions it kept perhaps the most rural setting, and to this day no town has grown up around it, leaving the long ruined corridors much as they appear here.",
-      setting: "The mission sits in the Jolon valley of Monterey County, ringed by oak-studded hills — one of the least altered of the California mission sites.",
       lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
     },
     {
@@ -335,16 +135,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "Yosemite",
-      artist: "Thomas Hill", year: "1890",
-      museum: "Dallas Museum of Art, Dallas",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Yosemite%20-%201984.31%20-%20Dallas%20Museum%20of%20Art.jpg?width=1600",
-      alt: "A sweeping Yosemite valley view with sunlit granite cliffs, a meadow and river below, and hazy mountains stretching into the distance.",
-      blurb: "Hill became the painter most identified with Yosemite, working from a studio at the Wawona Hotel and turning out grand views for tourists and patrons alike. In this towering canvas the valley falls away below sunlit granite domes, with a quiet river and meadow leading the eye toward distant peaks. Born in England and trained in the East, he found his life's subject in this single California valley.",
-      setting: "Yosemite's granite walls and waterfalls were Hill's near-constant subject; he painted them so often he became the valley's unofficial portraitist.",
-      lic: "Public domain · Dallas Museum of Art, Dallas · via Wikimedia Commons"
-    },
-    {
       title: "View from Smiley Heights, Redlands",
       artist: "Detroit Photographic Company", year: "c. 1898–1905",
       museum: "Library of Congress, Washington, D.C.",
@@ -353,16 +143,6 @@
       blurb: "At the turn of the century, Smiley Heights was one of Southern California's must-see sights — a hilltop pleasure garden the Smiley brothers planted above Redlands and opened to the public, threaded with carriage drives among palms, roses, and rare trees. From its terraces visitors looked clear across the orange-grove valley to snow on the San Bernardino Mountains. This photochrom sells exactly that promise: a manicured, semi-tropical California with winter peaks on the horizon.",
       setting: "Redlands, in the citrus country east of Los Angeles, where the Smiley family's famous garden drew tourists by the trainload.",
       lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
-    },
-    {
-      title: "Summer's Day",
-      artist: "Berthe Morisot", year: "c. 1879",
-      museum: "The National Gallery, London",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Morisot%20-%20a-summer-s-day.jpg?width=1600",
-      alt: "Two women in summer dresses sit in a small boat on rippling water, painted in loose, lively strokes with ducks nearby.",
-      blurb: "Morisot was a founding member of the Impressionists and one of the movement's finest painters, exhibiting alongside Monet and Renoir from the very first show. Here two young women drift in a small boat on a lake in the Bois de Boulogne, the Paris park where city-dwellers came to breathe. Her brushwork is quick and feathery — the water broken into restless dashes, the moment as fleeting and unguarded as a glance.",
-      setting: "An idle afternoon on the water — the kind of small, tender scene Morisot made luminous and entirely her own.",
-      lic: "Public domain · The National Gallery, London · via Wikimedia Commons"
     },
     {
       title: "Carmel Dunes",
@@ -415,17 +195,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "Chapel and Bell Tower, Mission San Juan Capistrano",
-      artist: "C. C. Pierce (California Historical Society)", year: "1901",
-      museum: "California Historical Society / USC Libraries",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Chapel%20and%20bell%20tower%20of%20Mission%20San%20Juan%20Capistrano%2C%201901%20(CHS-2093).jpg?width=1600",
-      alt: "A black-and-white photograph of an old mission's bell wall holding four bells, beside a low tile-roofed chapel and crumbling stone walls.",
-      blurb: "By 1901, when this photograph was made, Mission San Juan Capistrano was a romantic ruin — its great stone church toppled by an 1812 earthquake, its arcades open to the weather. Yet the little adobe Serra Chapel beside the four-bell campanario survived, and survives still: completed in 1782, it is the oldest standing building in California, the only chapel left where Father Junípero Serra himself said Mass. The mission is just as famous today for the swallows that return to it each spring.",
-      setting: "San Juan Capistrano, in Orange County, founded in 1776 — its weathered bell wall is one of the most photographed sights in California.",
-      mono: true,
-      lic: "Public domain · California Historical Society / USC Libraries · via Wikimedia Commons"
-    },
-    {
       title: "Headwaters of the San Joaquin",
       artist: "William Keith", year: "c. 1878",
       museum: "Private collection",
@@ -434,17 +203,6 @@
       blurb: "High in the Sierra, where the San Joaquin River begins as snowmelt, Keith finds a wild basin of granite, water, and weathered pine. He knew this backcountry firsthand from long mountain trips, often in the company of John Muir, and the painting carries the hush of real alpine country. Warm light rakes across the rocks while the far peaks dissolve into haze — grandeur rendered with a quiet, intimate touch.",
       setting: "The San Joaquin rises in California's high Sierra Nevada and runs down to water the Central Valley; Keith painted its rugged source country from memory and sketch.",
       lic: "Public domain · Private collection · via Wikimedia Commons"
-    },
-    {
-      title: "The Gamble House, Pasadena",
-      artist: "Frances Benjamin Johnston", year: "1917",
-      museum: "Library of Congress, Washington, D.C.",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/David%20Berry%20Gamble%20house%2C%204%20Westmoreland%20Place%2C%20Pasadena%2C%20California.%20View%20to%20sleeping%20porch%20LCCN00651250.jpg?width=1600",
-      alt: "A black-and-white photograph of the wooden Gamble House, its broad upper sleeping porches and deep overhanging eaves stepping out beneath the trees.",
-      blurb: "Brothers Charles and Henry Greene built this house in 1908 for the Gamble family of Procter & Gamble, and it became the great masterpiece of the American Arts and Crafts movement — all broad sheltering eaves, hand-shaped teak, and joinery left honestly visible. Frances Benjamin Johnston, one of the first women to make a career in photography, framed its great cantilevered sleeping porches, where the open-air timberwork shows the brothers' craft most plainly. The Greenes treated the whole house like a single piece of furniture, indoors and out.",
-      setting: "Pasadena, California — the Gamble House still stands as a museum, the finest surviving example of Greene and Greene's California craftsman work.",
-      mono: true,
-      lic: "Public domain · Library of Congress, Washington, D.C. · via Wikimedia Commons"
     },
     {
       title: "Mount San Antonio",
@@ -477,16 +235,6 @@
       lic: "Public domain · Boston Public Library, Print Department · via Wikimedia Commons"
     },
     {
-      title: "Almond Blossom",
-      artist: "Vincent van Gogh", year: "1890",
-      museum: "Van Gogh Museum, Amsterdam",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Amandelbloesem%20-%20s0176V1962%20-%20Van%20Gogh%20Museum.jpg?width=1600",
-      alt: "Branches heavy with white-and-pink almond blossoms spreading across a bright turquoise-blue sky.",
-      blurb: "When Van Gogh learned his brother Theo had a newborn son named after him, he painted this for the baby's bedroom — branches of almond blossom, the first trees to flower in the south of France, against a clear spring-blue sky. The flat, glowing design owes much to the Japanese prints he adored. Of all his work it is among the most serene: a gift of new life, made in the last months of his own.",
-      setting: "A burst of early blossom against open sky — Van Gogh's tender welcome to a baby nephew, and a promise of spring.",
-      lic: "Public domain · Van Gogh Museum, Amsterdam · via Wikimedia Commons"
-    },
-    {
       title: "Arroyo Seco, Pasadena",
       artist: "Franz A. Bischoff", year: "c. 1912",
       museum: "Private collection",
@@ -497,16 +245,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "Where Great Herds Come to Drink",
-      artist: "Charles Marion Russell", year: "1901",
-      museum: "Buffalo Bill Center of the West, Cody",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Charles%20M.%20Russell%20Where%20Great%20Herds%20Come%20To%20Drink%2C%201901.jpg?width=1600",
-      alt: "A large herd of buffalo gathered to drink at a wide river under a glowing sky, their shapes reflected in the calm water.",
-      blurb: "At a golden hour by a Western river, a great herd of buffalo gathers to drink, their dark shapes mirrored in still water under a vast luminous sky. Russell painted the bison as elegy — a tribute to the immense herds and the Native nations that depended on them, both vanishing as he worked. There is no action here, only stillness and light, and a deep tenderness for a wild country slipping away.",
-      setting: "Russell often mourned 'the West that has passed'; the buffalo, nearly exterminated by his lifetime, became his recurring symbol of that loss.",
-      lic: "Public domain · Buffalo Bill Center of the West, Cody · via Wikimedia Commons"
-    },
-    {
       title: "Southern California Landscape",
       artist: "Maurice Braun", year: "c. 1930s",
       museum: "San Diego Museum of Art, San Diego",
@@ -515,26 +253,6 @@
       blurb: "Braun moved to San Diego in 1909 and found in its open hills and back country a landscape that fit his temperament exactly. A devoted student of Theosophy, he painted nature as something luminous and serene, his colors cooled into a gentle harmony. Works like this one made him a defining figure of California Impressionism in the south of the state.",
       setting: "San Diego's rolling inland hills and valleys became Braun's lifelong subject after he settled there in 1909.",
       lic: "Public domain · San Diego Museum of Art, San Diego · via Wikimedia Commons"
-    },
-    {
-      title: "The Fall of the Cowboy",
-      artist: "Frederic Remington", year: "1895",
-      museum: "Amon Carter Museum of American Art, Fort Worth",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Fall%20of%20the%20Cowboy%2C%201895%2C%20by%20Frederic%20S.%20Remington.jpg?width=1600",
-      alt: "Two cowboys on horseback in a bleak snowy landscape, one dismounted at a barbed-wire fence gate under an overcast sky.",
-      blurb: "Two cowboys pause in a cold, muted winter landscape, one dismounting to open a barbed-wire gate — a small act that says everything. Remington meant the title literally: fences were closing the open range, and the free-riding cowboy's era was ending. Gone are the heroics of his earlier work; here the mood is quiet, gray, and elegiac, a eulogy for a way of life passing out of the American West.",
-      setting: "By the 1890s barbed wire and railroads were carving up the open range; Remington painted the cowboy not in triumph but in twilight.",
-      lic: "Public domain · Amon Carter Museum of American Art, Fort Worth · via Wikimedia Commons"
-    },
-    {
-      title: "Gray Weather, Grande Jatte",
-      artist: "Georges Seurat", year: "1888",
-      museum: "The Metropolitan Museum of Art, New York",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Gray%20Weather%2C%20Grand%20Jatte%20(1888)%20-%20Georges%20Seurat%20(Metropolitan%20Museum%20of%20Art).jpg?width=1600",
-      alt: "A calm green riverbank with slender trees and still water under a soft gray sky, painted in countless tiny dots of color.",
-      blurb: "Seurat built his pictures dot by patient dot, placing tiny touches of pure color side by side so they'd mix in the viewer's eye — a method he called Divisionism, grounded in the new science of how we see. He returned to the island of La Grande Jatte, the riverside park famous from his huge masterpiece, on an overcast day. Under soft gray light the trees, grass, and quiet water settle into a hushed, almost dreamlike calm.",
-      setting: "A still, cloudy afternoon on a Paris river island, composed from thousands of careful colored points into perfect serenity.",
-      lic: "Public domain · The Metropolitan Museum of Art, New York · via Wikimedia Commons"
     },
     {
       title: "Alpine Lake",
@@ -555,16 +273,6 @@
       blurb: "Hill was born in England in 1829, came to the United States as a teenager, and moved to California in 1861. He painted Yosemite for more than forty years. Here El Capitan rises on the left and Bridalveil Fall drops on the right, while a small figure fishes from the rocks in the river below.",
       setting: "The Merced River in Yosemite Valley, below El Capitan and Bridalveil Fall.",
       lic: "Public domain · Saint Louis Art Museum · via Wikimedia Commons"
-    },
-    {
-      title: "The Glory of the Heavens",
-      artist: "William Keith", year: "1891",
-      museum: "Fine Arts Museums of San Francisco (de Young)",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/'The%20Glory%20of%20the%20Heavens'%20by%20William%20Keith%2C%201891.JPG?width=1600",
-      alt: "A sky of orange and gold sunset light over dark rounded trees and a shadowed meadow.",
-      blurb: "William Keith was born in Scotland in 1839, came to New York as a boy, and moved to San Francisco in 1859, where he first worked as a wood engraver. In 1891 he met the painter George Inness, and his work turned toward mood and color. Here a sunset burns orange and gold over dark trees and a shadowed meadow.",
-      setting: "Open country near San Francisco Bay at sunset, painted the year Keith's style changed.",
-      lic: "Public domain · Fine Arts Museums of San Francisco (de Young) · via Wikimedia Commons"
     },
     {
       title: "Altadena Dawn",
@@ -604,16 +312,6 @@
       alt: "A rider on a horse leading a pack horse along a red rocky ledge, steep gray mountain peaks streaked with snow behind.",
       blurb: "Payne often put a rider and pack animals into his Sierra paintings, and he traveled the same way himself. A man on horseback leads a pack horse along a rocky ledge, the trail's red rock in front. Behind him rise steep gray peaks streaked with snow.",
       setting: "Bishop Pass, a high trail crossing of the Sierra crest above Bishop in the Owens Valley.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Indian at Work",
-      artist: "Carl Oscar Borg", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20-%20Vid%20l%C3%A4gerelden.jpg?width=1600",
-      alt: "A man in a white cloth kneels on pale sand, working the ground with a long stick, a flat desert and a low mesa behind him.",
-      blurb: "Borg was born in Sweden, went to sea as a young man, and reached California in 1903 with little formal training. The patron Phoebe Apperson Hearst later paid for him to study in Europe and to spend time among the Hopi and Navajo in Arizona, whose lands became his main subject. Here a single man kneels on open sand, working with a stick, the flat desert and a pale mesa stretching behind him.",
-      setting: "The open desert of northern Arizona, where Borg returned again and again from the 1910s on.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -667,16 +365,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "A Broadside of Mount Tamalpais",
-      artist: "William Keith", year: "1870",
-      museum: "Fine Arts Museums of San Francisco (de Young)",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Broadside%20of%20Mount%20Tamalpais%20by%20William%20Keith.JPG?width=1600",
-      alt: "A broad purple mountain behind green wooded hills, cattle grazing in a field in front, pink-lit clouds above.",
-      blurb: "Keith painted this early in his career, with the close, careful detail of his first years as a painter. Mount Tamalpais rises in purple shade behind green, wooded slopes. A few cattle graze in the field in front, and the clouds are lit pink.",
-      setting: "Mount Tamalpais in Marin County, the peak that rises north of the Golden Gate.",
-      lic: "Public domain · Fine Arts Museums of San Francisco (de Young) · via Wikimedia Commons"
-    },
-    {
       title: "Desert Rain",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -684,16 +372,6 @@
       alt: "Gray rain falling from tall clouds over a dark flat-topped mesa, three small riders on horseback crossing the desert below.",
       blurb: "Payne painted the Southwest from the 1910s on, often traveling to Navajo country in Arizona. A storm hangs over a dark mesa, with gray streaks of rain falling at the left. Three riders cross the open ground in front, small under the clouds.",
       setting: "The open desert of northern Arizona, where summer storms build over the mesas in the afternoon.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Shadows of Evening",
-      artist: "Frank Cuprien", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%201e5494a85b.jpg?width=1600",
-      alt: "Sunlit pale cliffs across a deep blue bay with small white sailboats, a dark rock at left and a small rock island in the water.",
-      blurb: "Cuprien was born in Brooklyn, studied painting in New York and Europe, and settled in Laguna Beach in the 1910s. He became known for the sea at the end of the day and helped found the Laguna Beach Art Association. Here the low sun lights the cliffs across the bay while the water in front has gone dark blue, with sailboats at anchor and a rock in the foreground.",
-      setting: "The coast near Laguna Beach, where Cuprien painted the water for more than thirty years.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -727,16 +405,6 @@
       lic: "Public domain · Dayton Art Institute · via Wikimedia Commons"
     },
     {
-      title: "Desert Skies",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Desert%20Skies.jpg?width=1600",
-      alt: "Tall red sandstone cliffs rising from a sandy canyon floor, a few small riders at their base, under a clear blue sky.",
-      blurb: "Payne went back to the canyons of Navajo country many times and painted their walls in every season. In this canvas the red sandstone cliffs rise straight up from the sandy floor, lit warm on one side and in shadow on the other. A few small riders cross at the base, and a clear sky fills the gap between the walls.",
-      setting: "A sandstone canyon on the Navajo Nation in northeastern Arizona, the kind Payne painted on his trips from the 1910s to the 1930s.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Carmel Valley",
       artist: "Mary DeNeale Morgan", year: "undated",
       museum: "Private collection",
@@ -747,16 +415,6 @@
       lic: "Public domain · Private collection · via Wikimedia Commons"
     },
     {
-      title: "Desert Sky",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Desert%20Sky.jpg?width=1600",
-      alt: "Tall white and gray clouds against a deep blue sky filling most of the picture, above a flat desert and a low red mesa.",
-      blurb: "Payne gave most of this canvas to the sky. Tall white clouds pile up against patches of deep blue, and the desert below is only a thin strip: a flat plain, a red mesa on the left and a low blue ridge on the right. The low horizon makes the open space above feel very large.",
-      setting: "The high desert of the Southwest, where the land is flat enough to show the whole sky at once.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Indian Canoes near Muir Glacier",
       artist: "Thomas Hill", year: "c. 1910",
       museum: "Anchorage Museum, Anchorage",
@@ -765,16 +423,6 @@
       blurb: "Hill traveled to Alaska late in the 1880s and painted Glacier Bay and its ice for years afterward. In this canvas pink and gray clouds wrap a sharp peak, and the water below is calm and pale. A canoe with several paddlers crosses the bay near the shore.",
       setting: "Glacier Bay in southeast Alaska, where Muir Glacier, named for John Muir, once met the sea.",
       lic: "Public domain · Anchorage Museum, Anchorage · via Wikimedia Commons"
-    },
-    {
-      title: "A Summer's Day",
-      artist: "William Keith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/A%20Summer's%20Day%20by%20William%20Keith.jpg?width=1600",
-      alt: "Tall dark trees along a stream with cattle wading at the edge, a flat field and white clouds in a blue sky beyond.",
-      blurb: "Keith painted many small pastoral scenes like this one for collectors in San Francisco. Tall trees stand along a stream, cattle wade at the water's edge, and a flat field stretches back to a line of trees. White clouds drift across a blue sky.",
-      setting: "Farm country in Northern California in summer, with cattle along a creek.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
       title: "Canyon Mission Viejo, Capistrano",
@@ -797,26 +445,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "The Other Side of the River",
-      artist: "Colin Campbell Cooper", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20campbell%20cooper%20the%20other%20side%20of%20the%20river023112).jpg?width=1600",
-      alt: "A row of white houses with red roofs among orange autumn trees, reflected in still water beyond a green marsh.",
-      blurb: "Cooper made his name in Philadelphia and New York painting city streets and skyscrapers, then moved to Santa Barbara in 1921. In this quieter picture a row of houses with white walls and red roofs sits among autumn trees on the far bank. The buildings reflect in still water, and a band of green marsh fills the foreground.",
-      setting: "A small town seen across a river in autumn, the subject Cooper turned to between his city scenes.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Canyon Riders",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Edgar%20Payne%20Canyon%20Riders.jpg?width=1600",
-      alt: "A line of small riders on horseback crossing a sandy wash below towering red and orange canyon cliffs.",
-      blurb: "Payne often placed small riders at the foot of huge rock walls to show their size. Here a line of horsemen crosses a sandy wash below cliffs painted in strong red and orange. The far rim of the canyon is pale cream, and the sky above it is almost white.",
-      setting: "A red rock canyon on the Navajo lands of northern Arizona.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "California Poppies and Eucalyptus",
       artist: "Granville Redmond", year: "undated",
       museum: "Collection not recorded",
@@ -835,16 +463,6 @@
       blurb: "Rose spent summers painting on the Monterey Peninsula after he came back from France. In this canvas a sandy track and a rail fence lead into a green valley with clumps of cypress. Bare tan hills rise behind it, and blue mountains sit under gray clouds on the horizon.",
       setting: "The hills behind Carmel-by-the-Sea, where dunes give way to pasture and cypress groves.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Irrigating at Strawberry Farm",
-      artist: "Thomas Hill", year: "undated",
-      museum: "The Bancroft Library, University of California, Berkeley",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Irrigating%20at%20Strawberry%20Farm.jpg?width=1600",
-      alt: "Workers in a flat green field, a jet of water rising from an irrigation pipe, a small gazebo by a pond and trees beyond.",
-      blurb: "This small gouache on board is a rare farm scene in Hill's work. Workers move across a flat green field, a jet of water rises from an irrigation pipe at the right, and a little gazebo stands by a pond. A row of trees and a white house sit along the horizon under low hills.",
-      setting: "A farm in California's valleys in the late 1800s, when irrigation was turning dry land into fields.",
-      lic: "Public domain · The Bancroft Library, University of California, Berkeley · via Wikimedia Commons"
     },
     {
       title: "An Autumnal Sunset on the Russian River (Evening Glow)",
@@ -925,16 +543,6 @@
       blurb: "This small oil on board shows a quieter side of Hill's Yosemite. A pink granite cliff rises above a still lake in warm light. A tight group of tall pines stands on the right bank, and the near shore is dry grass.",
       setting: "A lake in the Yosemite region, under granite cliffs warmed by late sun.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Approaching Storm",
-      artist: "William Keith", year: "1880",
-      museum: "The Metropolitan Museum of Art, New York",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Approaching%20Storm%20by%20William%20Keith%2C%201880.jpg?width=1600",
-      alt: "Dark storm clouds over a green field where farmhands load hay onto a wagon, a strip of pink light at the horizon.",
-      blurb: "A storm darkens the sky over a field where farmhands hurry to load hay onto a wagon pulled by a team. A strip of pink light shows at the horizon and on a pond in the distance. Keith painted the grass in deep green, almost black in the shadows.",
-      setting: "A hay field in the countryside of Northern California as a storm comes in.",
-      lic: "Public domain · The Metropolitan Museum of Art, New York · via Wikimedia Commons"
     },
     {
       title: "Early Morning",
@@ -1277,26 +885,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Through the Canyon",
-      artist: "Jack Wilkinson Smith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%204b0485ab76.jpg?width=1600",
-      alt: "A ruined reddish-brown wall with a doorway framed by an old wooden beam, bright sunlight on the ground beyond the opening.",
-      blurb: "This small oil on board is unusual among Smith's work, which is mostly open landscape. He painted the doorway of a ruined adobe or stone building, its wooden lintel still in place. Through the opening the ground beyond is bright with sun, while the old wall around it stays in shadow.",
-      setting: "A ruined building in the dry country of the Southwest, with sunlight showing through its empty doorway.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Pack Train",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Pack%20Train.jpg?width=1600",
-      alt: "A string of loaded pack mules and horses in shadow with a packer, a bright yellow sunlit slope behind them.",
-      blurb: "The pack train was Payne's way into the high country, and he painted the animals as often as the peaks. Here a string of loaded mules and horses stands in shadow, a packer among them. Behind them a slope blazes yellow in the sun, cut across by a dark band of shade.",
-      setting: "A trail in the Sierra Nevada, where pack animals carried camp gear and painting supplies into the backcountry.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Royal Arches and Half Dome, Yosemite",
       artist: "Thomas Hill", year: "undated",
       museum: "Collection not recorded",
@@ -1357,16 +945,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Open Door at the Governor's Palace",
-      artist: "Carl Oscar Borg", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Open%20Door%20at%20the%20Governor's%20Palace.jpg?width=1600",
-      alt: "A whitewashed pillar beside a large arched doorway leading into a dark passage, with several people seated in the shade by the wall.",
-      blurb: "Borg was drawn to old masonry as much as to open country, and he painted Spanish colonial buildings with care for their worn surfaces. Here a whitewashed pillar and an arched doorway frame a dark passage, with a bright opening at its far end. A few people sit in the shade by the wall, and the sun falls hard on the pale stone around them.",
-      setting: "An arched entry in an old whitewashed building, where people rest out of the midday sun.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Palace of Fine Arts, San Francisco",
       artist: "Colin Campbell Cooper", year: "c. 1915",
       museum: "Collection not recorded",
@@ -1397,26 +975,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "The Driving of the Last Spike",
-      artist: "Thomas Hill", year: "1881",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Driving%20Of%20The%20Last%20Spike.jpg?width=1600",
-      alt: "A large crowd of men in dark coats gathered around railroad tracks for a ceremony, under a hazy yellow sky.",
-      blurb: "Hill hoped Leland Stanford, a leader of the Central Pacific Railroad, would buy this large painting of the 1869 ceremony that finished the first transcontinental railroad. Stanford declined, and the picture stayed with Hill. It shows hundreds of people crowded around the tracks, many of them painted as portraits. It now hangs in the California State Railroad Museum in Sacramento.",
-      setting: "Promontory Summit, Utah, where the Central Pacific and Union Pacific lines met on May 10, 1869.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Cattle Grazing among Rolling Hills and Cloudy Skies",
-      artist: "William Keith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Cattle%20Grazing%20among%20Rolling%20Hills%20and%20Cloudy%20Skies%20by%20William%20Keith.jpg?width=1600",
-      alt: "Cattle grazing on a green slope with trees at left, a gray mountain beyond and large white clouds above.",
-      blurb: "This tall painting carries a long descriptive title given when it sold. Cattle graze on a green slope, a stand of trees grows at the left, and a gray mountain rises beyond. Large white clouds fill the top third of the canvas.",
-      setting: "The green hills of Northern California in spring.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Riders in Canyon de Chelly",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -1434,16 +992,6 @@
       alt: "A hillside covered in drifts of blue and purple lupine with yellow flowers between, low blue hills behind.",
       blurb: "This painting is mostly blue and purple: a hillside of lupine running in drifts toward a line of blue hills. Yellow flowers fill the spaces between the drifts. Redmond painted it with short, broken strokes so the colors mix in the eye.",
       setting: "A hillside in Southern California covered with lupine in spring.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Riders in Monument Valley, Arizona",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Riders%20in%20Monument%20Valley%2C%20Arizona.jpg?width=1600",
-      alt: "Orange sunlit buttes and mesas under dark gray storm clouds, two tiny riders crossing the shadowed plain in front.",
-      blurb: "Payne painted Monument Valley under a heavy sky, with the light coming from low on one side. The flat-topped buttes glow orange against dark gray clouds, and the plain in front is in shadow. Two tiny riders cross the open ground, giving the rock its scale.",
-      setting: "Monument Valley, on the Navajo Nation along the Arizona and Utah border, known for its sandstone buttes.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -1467,16 +1015,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Rosenlaui Heights",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Rosenlaui%20Heights.jpg?width=1600",
-      alt: "A broad snow-covered mountain massif above a green valley with a few wooden chalets and dark trees.",
-      blurb: "From 1922 to 1924 Payne lived and painted in Europe, working in the French and Swiss Alps and on the coasts of France and Italy. This canvas comes from the Swiss mountains. A broad snowy massif rises above a green valley, where a few wooden chalets sit among dark trees.",
-      setting: "Rosenlaui, a high valley in the Bernese Oberland of Switzerland, below glaciers and limestone peaks.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Arroyo Seco Bridge",
       artist: "Franz A. Bischoff", year: "1912",
       museum: "Collection not recorded",
@@ -1494,16 +1032,6 @@
       alt: "A mountain slope lit orange by evening sun above a calm lake, dark trees on the left shore and small figures at the edge.",
       blurb: "Hill painted Lake Tahoe from the 1860s on, returning to it in his late years. Here the evening sun turns a mountain slope orange above a calm lake. Dark trees stand on the left shore, and a few figures sit at the water's edge.",
       setting: "The basin of Lake Tahoe in the Sierra Nevada, on the California and Nevada line.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Cattle Watering along a River",
-      artist: "William Keith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Cattle%20Watering%20along%20a%20River%20by%20William%20Keith.jpg?width=1600",
-      alt: "Dark trees on both sides of a river under a gold evening sky, cattle drinking at the water's edge in shadow.",
-      blurb: "Keith painted this in the warm brown tones of his later years. Dark trees stand on both banks, and a gold evening sky glows in the gap between them. Cattle drink at the water's edge in the shadow.",
-      setting: "A river bottom in Northern California at the end of the day.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -1554,16 +1082,6 @@
       alt: "A jagged ridge lit gold and pink at the top, with a dark shaded slope, boulders and a small lake below.",
       blurb: "The title points to the shadow that covers most of this canvas. The late sun lights only the top of a jagged ridge in gold and pink, while the slope below is already dark green and gray. Boulders and a small lake sit in the shaded basin at the bottom.",
       setting: "The east side of the Sierra Nevada near Bishop, in Inyo County, where the mountains rise steeply from the Owens Valley.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "The Green Parasol",
-      artist: "Guy Rose", year: "1911",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20Green%20Parasol.JPG?width=1600",
-      alt: "A woman in a blue patterned robe sitting in the grass under a pale green parasol, willow branches hanging behind her.",
-      blurb: "Rose painted several pictures of women outdoors in Giverny, often in loose robes and with parasols. In this one a woman in a blue patterned robe sits in the grass under a pale green parasol. Willow branches hang down behind her, and light from the parasol falls green on her face.",
-      setting: "A garden by the water at Giverny, painted in Rose's last years in France.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -1627,16 +1145,6 @@
       lic: "Public domain · Smithsonian American Art Museum, Washington, D.C. · via Wikimedia Commons"
     },
     {
-      title: "Opalescence",
-      artist: "Frank Cuprien", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Frank%20Cuprien%20-%2087847c8b15.jpg?width=1600",
-      alt: "A calm sea with low waves in soft gray and lavender, a thin strip of distant land, and pale pink and gray clouds above.",
-      blurb: "Cuprien used the word opalescent for the shifting pinks, blues and grays of the sea at dusk, and he used it in the titles of several paintings. Here the water lies almost flat, with a few low waves near the shore. A thin strip of land shows on the horizon under a sky of soft colored clouds.",
-      setting: "The calm sea off Laguna Beach at the end of the day, which Cuprien inscribed on the back of the canvas.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Laguna Shore Line",
       artist: "Joseph Kleitsch", year: "undated",
       museum: "Collection not recorded",
@@ -1655,16 +1163,6 @@
       blurb: "By summer the grass on the hills around Carmel turns gold, and Morgan painted that color across most of this canvas. Dark green trees sit in clumps on the slope, their shapes bent by the wind. Gray hills fade into the distance behind them.",
       setting: "The hills around Carmel and the Monterey Peninsula in the dry season.",
       lic: "Public domain · Private collection · via Wikimedia Commons"
-    },
-    {
-      title: "Coastal Storm",
-      artist: "Granville Redmond", year: "1905",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Coastal%20storm.jpg?width=1600",
-      alt: "A single tree leaning in the wind on a brown grassy hill, dark storm clouds above and pale light on the distant sea.",
-      blurb: "Redmond painted this in his tonal style, with a narrow range of browns, grays and greens. A single tree on a grassy hill leans hard in the wind. Dark storm clouds fill the sky, and a band of pale light lies on the sea at the left.",
-      setting: "The bluffs above the Southern California coast as a winter storm comes in.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
       title: "The Interview",
@@ -1707,16 +1205,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Sierra Landscape",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Sierra%20Landscape.jpg?width=1600",
-      alt: "A dark mountain peak with patches of snow above a basin of scattered pines and a small dark lake.",
-      blurb: "This painting builds up from a dark foreground of pines and water to a dark peak at the top, with snow patches between. Payne kept almost the whole canvas in cool grays and greens, so the white snow and a little pink in the clouds carry the light.",
-      setting: "A high basin in the Sierra Nevada, with scattered pines below a dark granite peak.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "The Oak",
       artist: "Guy Rose", year: "1916",
       museum: "Collection not recorded",
@@ -1734,27 +1222,6 @@
       alt: "Brown and violet mountain ridges beyond a dry valley, with bare reddish trees in the foreground and white clouds behind.",
       blurb: "Payne painted this view in muted browns and violets, looking from a high point across a dry valley to ridge after ridge. A few bare trees with reddish branches stand in the foreground. White clouds rise behind the farthest range.",
       setting: "The San Gabriel Mountains, once called the Sierra Madre, above the San Gabriel Valley.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Under Western Skies",
-      artist: "Carl Oscar Borg", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Under%20Western%20Skies.jpg?width=1600",
-      alt: "A black-and-white print of dark storm clouds with shafts of light and rain falling over a flat desert plain and a low mesa.",
-      blurb: "Borg was a printmaker as well as a painter, and he made etchings of the same desert country he painted in oil. In this black-and-white image most of the sheet goes to the sky. Dark clouds open in the middle, and shafts of light and rain fall onto a flat plain, with a low mesa on the horizon.",
-      setting: "The open plateau of the Southwest, where a storm can be seen from many miles away.",
-      mono: true,
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Landscape",
-      artist: "Jack Wilkinson Smith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%2059048ecaa1.jpg?width=1600",
-      alt: "A painting in a gold frame of a rocky stream running between trees with yellow and orange autumn leaves.",
-      blurb: "This small oil on canvas laid on board is shown in its gold frame. Smith painted a stream running over rocks in autumn, with yellow and orange trees on both banks. He used short, broken strokes for the leaves and quick white marks for the water as it spills over the stones.",
-      setting: "A mountain stream in fall, the kind of scene Smith found on his trips into the Sierra.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -1798,16 +1265,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Landscape",
-      artist: "William Keith", year: "undated",
-      museum: "Fine Arts Museums of San Francisco (de Young)",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Landscape%20by%20William%20Keith.jpg?width=1600",
-      alt: "Dark trees framing a clearing with a small house in a patch of light, sunlit clouds showing through a gap in the leaves.",
-      blurb: "Keith gave many of his late paintings plain titles like this one. Here dark trees frame a clearing where a small house sits in a patch of light. Above, sunlit clouds open in a blue-green gap in the leaves.",
-      setting: "An oak grove in Northern California, painted in Keith's later, darker manner.",
-      lic: "Public domain · Fine Arts Museums of San Francisco (de Young) · via Wikimedia Commons"
-    },
-    {
       title: "Sierra Peaks",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -1816,26 +1273,6 @@
       blurb: "Payne painted these jagged peaks in a strong blue-violet, with snow running down the gullies in white. Pale granite slabs and a few twisted pines fill the foreground. A little blue lake shows at the lower left.",
       setting: "The jagged crest of the high Sierra Nevada, above the last trees.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "The Old Church at Cagnes",
-      artist: "Guy Rose", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Guy%20Rose%20-%20The%20old%20church%20at%20Cagnes.jpg?width=1600",
-      alt: "An old yellow church with an arched porch in strong sunlight, a dark cypress at left and a bare tree casting blue shadows.",
-      blurb: "Rose worked on the French Riviera as well as in Normandy. Here strong southern sun falls on the yellow walls of an old church with an arched porch. A dark cypress stands at the left, and a bare tree throws long blue shadows across the ground.",
-      setting: "Cagnes-sur-Mer, a hill town on the French Riviera between Nice and Antibes.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "The Sea I (Dolphins)",
-      artist: "William Ritschel", year: "c. 1928",
-      museum: "Honolulu Museum of Art",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/The%20Sea%201%20(Dolphins)%20by%20William%20Frederic%20Ritschel.jpg?width=1600",
-      alt: "Several dolphins leaping through deep blue ocean swells, a wave breaking white in front under a gray sky.",
-      blurb: "Ritschel traveled widely in the Pacific in the 1920s, painting in Hawaii and the South Seas. In this canvas a group of dolphins leaps through deep blue swells. A wave breaks white in the foreground, and the sky is gray above the water.",
-      setting: "The open Pacific, which Ritschel crossed on his painting trips.",
-      lic: "Public domain · Honolulu Museum of Art · via Wikimedia Commons"
     },
     {
       title: "Sierra Splendor",
@@ -1908,16 +1345,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Walpi Women",
-      artist: "Carl Oscar Borg", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Walpi%20Women.jpg?width=1600",
-      alt: "Several Hopi women in white shawls with red and blue bands stand together, a clay pot at their feet and a figure in feathers at left.",
-      blurb: "Borg began visiting the Hopi villages in the 1910s and returned many times, sketching daily life and ceremonies. He painted these women close up, in white shawls with red and blue bands, standing together with a clay water jar at their feet. A figure in feathers stands at the far left, and the sky behind them is pale.",
-      setting: "Walpi sits on the narrow top of First Mesa in northeastern Arizona, and Hopi families have lived there for more than three hundred years.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "The Lotus Pool, El Encanto, Santa Barbara",
       artist: "Colin Campbell Cooper", year: "c. 1921–1922",
       museum: "Reading Public Museum, Reading, Pennsylvania",
@@ -1968,16 +1395,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Picnic near Mount Chocorua",
-      artist: "Thomas Hill", year: "c. 1872",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20Picnic%20Near%20Mount%20Chocorua%20(c.%201872).jpg?width=1600",
-      alt: "People picnicking on a lakeshore under tall autumn trees, white tents by the water and a sharp mountain summit beyond.",
-      blurb: "Hill spent several years in New England around 1870 and painted in the White Mountains of New Hampshire. Here a group of people picnics on a lakeshore under tall trees turning gold. White tents stand by the water, and the sharp summit of Mount Chocorua rises in the distance.",
-      setting: "Mount Chocorua in the White Mountains of New Hampshire, a favorite subject of the Hudson River School painters.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Scene in Russian River Valley, Sonoma, California",
       artist: "William Keith", year: "1876",
       museum: "Collection not recorded",
@@ -2018,16 +1435,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Near Palm Canyon",
-      artist: "Mary DeNeale Morgan", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mary%20DeNeale%20Morgan%20Near%20Palm%20Canyon.jpg?width=1600",
-      alt: "Pale, feathery desert trees on sunlit sand below a large mountain painted in deep blue and rust, with white clouds on the ridge.",
-      blurb: "Morgan made trips to the desert near Palm Springs, far from her foggy Carmel coast. In this canvas pale, feathery trees stand on the sand below a mountain painted in deep blue and rust. A few white clouds sit along the ridge, and the bright ground takes up the lower half of the picture.",
-      setting: "The desert near Palm Canyon, south of Palm Springs, below the San Jacinto Mountains.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Sycamore in Autumn, Orange County Park",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -2035,16 +1442,6 @@
       alt: "A huge sycamore tree with a thick, spreading trunk and yellow autumn leaves, sunlight on the green grass below.",
       blurb: "A huge sycamore fills this canvas, its trunk splitting into wide limbs and its leaves turned yellow. Sunlight comes through the crown and lights the grass beneath in bright green. Payne painted the leaves with quick dabs of yellow and gold and let a little blue sky show through.",
       setting: "Orange County Park, opened in 1897 and now Irvine Regional Park, known for its old oaks and sycamores.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Pastoral Scene at Sunset",
-      artist: "Granville Redmond", year: "1912",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20Pastoral%20scene%20at%20sunset.jpg?width=1600",
-      alt: "A dark oak tree outlined against an orange sunset sky, a path leading to a small pond reflecting the light.",
-      blurb: "Redmond also acted in silent films, including several with his friend Charlie Chaplin. Here a dark oak stands against an orange sunset sky. A path leads down past a small pond that reflects the light, and the land around it has gone dark.",
-      setting: "Farm country in Southern California at the end of the day.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -2128,16 +1525,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "The Artist at His Easel",
-      artist: "Thomas Hill", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Thomas%20Hill%20-%20The%20artist%20at%20his%20easel.jpg?width=1600",
-      alt: "A painter in a dark coat seated at an easel in a forest of tall, slim white birch trees, light falling through the leaves.",
-      blurb: "This tall painting shows a painter at work outdoors, seated at his easel in a forest of slim white birches. Hill made studies in the open air before painting his large studio canvases, and this picture shows that practice. The light comes down through the trees onto the figure.",
-      setting: "A birch forest, of the kind Hill painted in the White Mountains of New England.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Stream through the Valley",
       artist: "William Keith", year: "1901",
       museum: "Collection not recorded",
@@ -2176,16 +1563,6 @@
       blurb: "Poppy fields made Brown popular with collectors, and he painted them for decades from his home in Pasadena. In this one the orange flowers run along the slope in the foreground, dark oaks stand in the middle distance, and snow still covers the peaks beyond. He placed spring in the valley and winter on the mountains in a single view, the way the San Gabriel foothills often look in March.",
       setting: "The foothills below the San Gabriel Mountains, where poppies bloom in spring while snow lingers on the high peaks.",
       lic: "Public domain · Pasadena Museum of History · via Wikimedia Commons"
-    },
-    {
-      title: "Scattered Sunlight in the Trees",
-      artist: "Jack Wilkinson Smith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%208794c08b34.jpg?width=1600",
-      alt: "Pale, twisting sycamore trunks under a dense green canopy, with patches of sunlight on the bark and the ground.",
-      blurb: "California sycamores have pale, mottled bark and trunks that twist and lean, and Smith gave them the whole canvas here. Light comes through gaps in the leaves and falls in patches on the bark and the ground. The trunks bend in different directions, and green and brown fill the space between them.",
-      setting: "A grove of sycamores along a creek in Southern California, where these trees grow in canyon bottoms.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
       title: "Mission Valley",
@@ -2298,26 +1675,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Village at the Base of the Mountain",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Edgar%20Payne%20Village%20at%20the%20Base%20of%20the%20Mountain.jpg?width=1600",
-      alt: "A steep forested mountainside above a green meadow, with a cluster of houses with red roofs at its foot.",
-      blurb: "Payne often painted farms and villages in Europe from above, with a mountain behind. In this painting a steep slope dark with forest fills the top of the canvas. Below it a green meadow holds a cluster of houses with red roofs.",
-      setting: "A farming village at the foot of a forested mountain, likely from Payne's European travels.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Wild Horses, Nevada",
-      artist: "Carl Oscar Borg", year: "1945",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%20Wild%20Horses%2C%20Nevada%201945.jpg?width=1600",
-      alt: "Four wild horses gallop across a sandy hilltop beneath tall white storm clouds, a flat-topped mesa and blue sky behind them.",
-      blurb: "Borg painted this two years before his death, late in a career spent on the land and animals of the West. A small band of wild horses runs along the top of a sandy rise, manes lifted. Behind them a storm builds over a flat-topped mesa, with rain already falling in gray streaks from the clouds.",
-      setting: "The basin and range country of Nevada, where bands of wild horses still roam open public land.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Pond's Edge",
       artist: "Mary DeNeale Morgan", year: "undated",
       museum: "Collection not recorded",
@@ -2398,16 +1755,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Indians of the Quinalt",
-      artist: "Jack Wilkinson Smith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Jack%20Wilkinson%20Smith%20-%20cd247628d4.jpg?width=1600",
-      alt: "Two people in a long canoe on a calm lake, one standing with a pole, tall dark fir trees and a far shore of yellow trees.",
-      blurb: "Smith traveled outside California for some subjects, and this one comes from the Pacific Northwest. Two people move across a still lake in a long canoe, one standing to push it along with a pole. Tall dark firs stand on the near shore, with yellow trees on the far bank in the distance.",
-      setting: "The Quinault country on the Olympic Peninsula in Washington, home of the Quinault people.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Monument Valley, Riverbed",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -2458,56 +1805,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "The Old Pond",
-      artist: "Granville Redmond", year: "1912",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Granville%20Redmond%20-%20The%20Old%20Pond.jpg?width=1600",
-      alt: "A small pond in a brown field with a path winding past it, a few dark trees on the rise under a gray-green sky.",
-      blurb: "This is one of Redmond's tonal paintings, done in browns and dull greens. A small pond lies in a brown field, a path winding past it. A few dark trees stand on the far rise against a gray-green sky.",
-      setting: "A pond in open country in Southern California at dusk.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Mountain Landscape",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Landscape.jpg?width=1600",
-      alt: "A gray and blue mountain with snow in its gullies above a blue lake, scattered pines on a snowy slope at right.",
-      blurb: "Payne painted this peak almost entirely in gray and blue, with white snow in its gullies. A blue lake fills the lower left, and a slope of scattered pines and snow comes down at the right. It reads as early summer, when the snow is just starting to go.",
-      setting: "A peak and lake in the high Sierra Nevada in early summer.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "In Walpi, Arizona",
-      artist: "Carl Oscar Borg", year: "1934",
-      museum: "Orange County Museum of Art",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Carl%20Oscar%20Borg%2C%20In%20Walpi%2C%20Arizona.jpg?width=1600",
-      alt: "Two horsemen, one in a red blanket, stop among stone houses in a village, their reflections in a puddle and haze over the walls.",
-      blurb: "Borg worked from what he saw in Walpi at a time when few outsiders were allowed in. In this scene two men on horseback, one wrapped in a red blanket, stop among the stone houses of the village. A puddle on the ground reflects them, and smoke or dust drifts across the pale walls behind.",
-      setting: "The Hopi village of Walpi on First Mesa, built of stone at the edge of a steep cliff.",
-      lic: "Public domain · Orange County Museum of Art · via Wikimedia Commons"
-    },
-    {
-      title: "Summer",
-      artist: "Colin Campbell Cooper", year: "1918",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Colin%20Campbell%20Cooper%2C%20Summer.jpg?width=1600",
-      alt: "Two young women in a rowboat among water lilies, one holding a yellow parasol and the other reaching toward a flower.",
-      blurb: "Cooper is best known for buildings and streets, so this painting of two women is a change of subject. They sit in a small rowboat among water lilies, one under a yellow parasol and one leaning out to pick a flower. Light comes through the parasol and falls in warm color on their dresses.",
-      setting: "A lily pond on a summer afternoon, a subject many American painters took up after the French Impressionists.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Mountain Range at Sunset",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Range%20at%20Sunset.jpg?width=1600",
-      alt: "Mountain peaks lit orange at sunset above a wide pale-blue snowfield, dark trees below and a large brown boulder at right.",
-      blurb: "In this painting the last light catches only the top of the peaks, turning them orange. A wide snowfield sweeps across the middle of the canvas in pale blue, and a dark band of trees runs below the peaks. A large brown boulder sits in the right foreground.",
-      setting: "A high snowfield below the peaks of the Sierra Nevada at sundown.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Yosemite",
       artist: "Thomas Hill", year: "1887",
       museum: "Blanton Museum of Art, The University of Texas at Austin",
@@ -2518,26 +1815,6 @@
       lic: "Public domain · Blanton Museum of Art, The University of Texas at Austin · via Wikimedia Commons"
     },
     {
-      title: "Wooded Landscape with Cattle at Water's Edge",
-      artist: "William Keith", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Wooded%20landscape%20with%20cattle%20at%20water's%20edge%20by%20William%20Keith.jpg?width=1600",
-      alt: "Dark trees along a stream with golden clouds behind them, a few cattle drinking in the shadow at the water.",
-      blurb: "This painting shows the dark, warm palette Keith used after he met George Inness in 1891. Dark trees stand along a stream, and golden clouds rise behind them. A few cattle drink in the shadow at the water's edge.",
-      setting: "Wooded farm country in Northern California at the end of the day.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Mountain Village",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Mountain%20Village%202.jpg?width=1600",
-      alt: "A tall dark fir tree at left, a valley village with red roofs below, and a long snowy mountain range in blue and lavender.",
-      blurb: "A tall dark fir frames the left side of this painting, and the eye travels past it into a broad valley. A village with red roofs sits among the trees below, and a long snowy range fills the horizon in pale blue and lavender.",
-      setting: "A mountain valley with a village, painted during Payne's travels in the European Alps.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "Summertime up the River",
       artist: "Mary DeNeale Morgan", year: "undated",
       museum: "Collection not recorded",
@@ -2545,16 +1822,6 @@
       alt: "White sycamore trunks leaning over turquoise river water, with yellow and purple flowers on the near bank.",
       blurb: "Morgan painted this square canvas in bright, flat color. White sycamore trunks lean over a stretch of turquoise water, and yellow and purple flowers fill the bank in front. More pale trunks stand in a row on the far side, with a purple hill behind.",
       setting: "The Carmel River upstream from the coast, where sycamores grow along the banks.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Navahos",
-      artist: "Edgar Payne", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Navahos.jpg?width=1600",
-      alt: "Two Navajo riders on brown horses coming toward the viewer across orange sand and sage, more riders and a yellow mesa behind.",
-      blurb: "Payne painted these two riders close up, which is unusual in his work. They ride toward the viewer across sage and orange sand, one wearing a red shirt. More riders follow on the slope behind, and a yellow mesa rises at the top of the canvas.",
-      setting: "The open sage country of the Navajo Nation in northern Arizona.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
@@ -2668,16 +1935,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Horses and Riders",
-      artist: "Carl Oscar Borg", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/H%C3%A4star%20och%20ryttare%20x%20Carl%20Oscar%20Borg.jpg?width=1600",
-      alt: "Two pale horses splash through foaming water, one ridden by a man in a wide sombrero, under a pale sky with a distant shore.",
-      blurb: "This painting came to Wikimedia Commons from a Swedish auction catalog, a reminder that Borg kept his ties to his home country all his life. Two pale horses splash through water, one carrying a rider in a wide sombrero. Borg kept the palette light, with white spray and a pale sky taking most of the space.",
-      setting: "A river or shallow crossing in the Southwest, painted in the light colors Borg used for heat and glare.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "The Lone Packer",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -2698,16 +1955,6 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     },
     {
-      title: "Landscape",
-      artist: "Guy Rose", year: "undated",
-      museum: "Collection not recorded",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Watercolor%20landscape%20painting%20by%20Guy%20Rose.jpg?width=1600",
-      alt: "A watercolor of a pale rock cliff at right, green and yellow shrubs on a slope at left, and a dry path in front.",
-      blurb: "This is a small watercolor, under a foot tall, and Rose's watercolors are less common than his oils. A pale rock cliff rises at the right, green and yellow shrubs grow on the slope at left, and a dry path runs across the front. The sky is left almost white.",
-      setting: "A dry, rocky slope on the California coast.",
-      lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
       title: "The Pack Train, Sierra Grande",
       artist: "Edgar Payne", year: "undated",
       museum: "Collection not recorded",
@@ -2716,16 +1963,6 @@
       blurb: "This large canvas, more than three feet wide, shows a pack train coming through a high valley. Riders and loaded animals move through sage and boulders at the lower right. Behind them a forest of pines climbs toward bare granite peaks streaked with snow.",
       setting: "A wide valley high in the Sierra Nevada, with forest giving way to bare granite above.",
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
-    },
-    {
-      title: "Untitled",
-      artist: "Thomas Hill", year: "1877",
-      museum: "Haggin Museum, Stockton",
-      img: "https://commons.wikimedia.org/wiki/Special:FilePath/Untitled%20(1877)%20by%20Thomas%20Hill.jpg?width=1600",
-      alt: "A stream cascading down in small falls through a dark autumn forest, a tall leaning tree trunk at right.",
-      blurb: "This tall painting carries no title from the artist. A stream comes down in a series of small falls through a dark forest, with autumn leaves on the trees. A tall leaning trunk crosses the right side, and light falls on the white water.",
-      setting: "A forest stream in the mountains, painted in the warm browns Hill used for autumn.",
-      lic: "Public domain · Haggin Museum, Stockton · via Wikimedia Commons"
     },
     {
       title: "Yosemite, Sentinel Rock",
@@ -2748,6 +1985,7 @@
       lic: "Public domain · Collection not recorded · via Wikimedia Commons"
     }
   ];
+  PAINTINGS.applied_through_mark_id = 76;
   /* FL-MANIFEST:END */
 
   var KEY_SEEN = "cplFirstLight.seen.v1";
