@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Public Health",
  "award": "A.S. T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
+ "source_url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10075,
+  "input_tokens": 6804,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10075,
-    "output_tokens": 1818,
+    "input_tokens": 6804,
+    "output_tokens": 1712,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1818,
+  "output_tokens": 1712,
   "output_tokens_details": {
-   "thinking_tokens": 458
+   "thinking_tokens": 391
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07666,
- "ms": 14395,
- "seconds": 14.6,
+ "cost_usd": 0.06146,
+ "ms": 13558,
+ "seconds": 13.6,
  "parts": null,
  "error": null,
  "score": {
@@ -76,20 +76,40 @@
     25.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     24.0,
+     25.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     35.0,
+     36.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -98,16 +118,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AS-T PUBLIC HEALTH",
+   "section_heading": "PH-AST - Public Health - Associate in Science for Transfer",
    "measure": "units",
    "total_units": {
     "min": 24,
@@ -120,25 +137,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Explain the role of public health in protecting and improving health across local, national, and global communities.",
-    "Discuss the biological, environmental, behavioral, and social determinants of health.",
-    "Find and utilize credible public health information sources.",
-    "Analyze health equity strategies such as community organizing, advocacy, and policy change."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -149,28 +161,28 @@
     "courses": [
      {
       "code": "BIOL 122",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 104",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 105",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "STAT C1000",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -178,7 +190,7 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "LIST A - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -189,28 +201,28 @@
     "courses": [
      {
       "code": "CHEM 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 120",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 121",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 112",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -218,7 +230,7 @@
     ]
    },
    {
-    "name": "List B",
+    "name": "LIST B - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -229,21 +241,21 @@
     "courses": [
      {
       "code": "HLTH 107",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYC C1000",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -251,7 +263,7 @@
     ]
    },
    {
-    "name": "List C",
+    "name": "LIST C - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -262,35 +274,35 @@
     "courses": [
      {
       "code": "HLTH 106",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "HLTH 108",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 128",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NUTR 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYC 105",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HLTH 108",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -301,31 +313,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside any course in this section; all course units are null.",
-   "HLTH 105 appears in the Required Core ('HLTH 104, 105') but is not in the closed list; recorded as a catalog addition.",
-   "List C prints 'HL TH 106, 108, 128'; HLTH 128 is matched to the closed-list entry 'HLTH128' (Nutrition For Physical Fitness and Disease Prevention).",
-   "Program learning outcomes are printed as run-on prose after the lead-in 'Upon completion of this program, students will be able to'; split into four outcomes at sentence boundaries, with line-break hyphenation ('improv-ing') rejoined.",
-   "Required Units for Major '24 - 25 units*' carries an asterisk whose footnote is not in the extracted text.",
-   "No general education pattern or degree total is printed in this section."
+   "HLTH 105 (Introduction to Public Health) is required in the catalog but not in the closed list; recorded as catalog addition.",
+   "Catalog prints HLTH 128; closed list stores it as 'HLTH128' (no space). Treated as the same course, not a catalog addition.",
+   "Catalog titles BIOL 121 'Introduction to Physiology'; closed list titles it 'Human Physiology'.",
+   "Degree total of 60 taken from 'Minimum Required Units for Degree (with GE) 60'. No GE pattern or GE units are named on the page.",
+   "A 'Program Learning Outcomes' tab appears in the page navigation, but no outcomes are printed in the provided text; outcomes left empty."
   ]
  },
- "extracted_run": 41049220135,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "STAT C1000": [
-     4.0,
-     4.0
-    ],
-    "PSYC C1000": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41040709338
+ "extracted_run": "43415972509"
 }

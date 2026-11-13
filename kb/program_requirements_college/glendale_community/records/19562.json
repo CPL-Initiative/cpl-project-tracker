@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Administrative Assistant",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+ "source_url": "https://catalog.glendale.edu/programs/ADAST-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11528,
+  "input_tokens": 6659,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11528,
-    "output_tokens": 1388,
+    "input_tokens": 6659,
+    "output_tokens": 1381,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,88 +30,72 @@
     "model": null
    }
   ],
-  "output_tokens": 1388,
+  "output_tokens": 1381,
   "output_tokens_details": {
-   "thinking_tokens": 802
+   "thinking_tokens": 251
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07387,
- "ms": 12196,
- "seconds": 12.7,
+ "cost_usd": 0.05426,
+ "ms": 12134,
+ "seconds": 12.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 11,
    "listed": 11,
-   "share": 0.0,
-   "missing": [
-    "BUSAD106",
-    "CABOT101",
-    "CABOT102",
-    "CABOT103",
-    "CABOT104",
-    "CABOT110",
-    "CABOT205",
-    "CABOT265",
-    "CABOT266",
-    "CABOT270",
-    "CABOT285"
-   ],
-   "unexplained": [
-    "BUSAD106",
-    "CABOT101",
-    "CABOT102",
-    "CABOT103",
-    "CABOT104",
-    "CABOT110",
-    "CABOT205",
-    "CABOT265",
-    "CABOT266",
-    "CABOT270",
-    "CABOT285"
-   ],
-   "none_placed": true,
-   "pass": false
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 4,
+   "codes": [
+    "ACCTG110",
+    "BUSAD110",
+    "BUSAD152",
+    "CABOT208"
+   ],
+   "flagged": [
+    "ACCTG110",
+    "BUSAD110",
+    "BUSAD152",
+    "CABOT208"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    30.0,
+    31.0
    ],
    "stated": [
     30.0,
     31.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 30.0-31.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -122,11 +106,11 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "COMPUTER APPLICATIONS AND BUSINESS OFFICE TECHNOLOGIES AS DEGREE OR CERTIFICATE — ADMINISTRATIVE ASSISTANT",
+   "section_heading": "ADAST-C - Administrative Assistant - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -147,16 +131,147 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "initiate and respond to correspondence effectively while using the latest automated technology, system software (Windows), and application software (Word, Excel, and Outlook) to perform more advanced skills; become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers to search a variety of databases for information; acquire the necessary knowledge and skills of accounting and bookkeeping to be able to use journals and ledgers to prepare balance sheets and income statements and be able to translate accounting records into a basis for sound decision making in a variety of businesses; be able to use a variety of office procedures to perform such tasks as sorting mail, filing and processing documents; develop interpersonal skills to conduct and participate in job interviews, practice effective human relation skills in business, handle telephone conversations with ease, and develop skills to communicate more effectively with customers and other employees verbally; and type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
-   ],
+   "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSAD 106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BUSAD 152",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 102",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 104",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 205",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 208",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 265",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CHOOSE TWO OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ACCTG 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUSAD 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CABOT 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 266",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CABOT 285",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [],
-  "notes": []
+  "notes": [
+   "The page header fields 'Minimum Required Units/Hours for Major' and 'Maximum Required Units/Hours for Major' both show 0, which conflicts with the printed 'TOTAL UNITS REQUIRED 30-31'; total_units uses 30-31.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but the extracted text prints no outcomes, so outcomes are empty.",
+   "The catalog prints CABOT 205 as 'Keyboard & Document Processing I'; the closed list titles it 'Keyboarding & Document Processing I'.",
+   "The award title in the request mentions an 18+ unit Certificate of Achievement; the catalog total is 30-31 units."
+  ]
  },
- "extracted_run": 40711704988,
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

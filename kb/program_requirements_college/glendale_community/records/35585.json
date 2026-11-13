@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Technical Theatre",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=114",
+ "source_url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7882,
+  "input_tokens": 6825,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7882,
-    "output_tokens": 2493,
+    "input_tokens": 6825,
+    "output_tokens": 1565,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2493,
+  "output_tokens": 1565,
   "output_tokens_details": {
-   "thinking_tokens": 1094
+   "thinking_tokens": 319
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08139,
- "ms": 20267,
- "seconds": 20.5,
+ "cost_usd": 0.0586,
+ "ms": 12383,
+ "seconds": 12.5,
  "parts": null,
  "error": null,
  "score": {
@@ -57,12 +57,12 @@
   "invented": {
    "count": 2,
    "codes": [
-    "TART122",
-    "TART172"
+    "THTR122",
+    "THTR172"
    ],
    "flagged": [
-    "TART122",
-    "TART172"
+    "THTR122",
+    "THTR172"
    ],
    "pass": true
   },
@@ -85,21 +85,19 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 1,
-   "not_verbatim": [
-    "production and performance within the theatre industry"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -108,7 +106,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "TECHNICAL THEATRE CERTIFICATE NON-DEGREE",
+   "section_heading": "TA-C - Technical Theatre - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 20,
@@ -129,16 +127,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "students will apply skills and knowledge of theatre in preparation for transferability or vocation; be able to analyze a play from script to performance; be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."
-   ],
-   "careers": [
-    "production and performance within the theatre industry"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -148,22 +142,22 @@
     },
     "courses": [
      {
-      "code": "T ART 101",
-      "units": 3.0,
+      "code": "THTR 101",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 171",
-      "units": 3.0,
+      "code": "THTR 171",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 173",
-      "units": 3.0,
+      "code": "THTR 173",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -171,9 +165,9 @@
     ]
    },
    {
-    "name": "Three units from the following",
-    "rule": "choose_units",
-    "minimum": 3,
+    "name": "CHOOSE ONE OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
     "option_group": null,
     "stated": {
      "min": null,
@@ -181,22 +175,22 @@
     },
     "courses": [
      {
-      "code": "T ART 100",
-      "units": 3.0,
+      "code": "THTR 100",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 103",
-      "units": 3.0,
+      "code": "THTR 103",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 172",
-      "units": 3.0,
+      "code": "THTR 172",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -204,7 +198,7 @@
     ]
    },
    {
-    "name": "Four units from the following",
+    "name": "CHOOSE FOUR UNITS FROM THE FOLLOWING",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -214,44 +208,44 @@
     },
     "courses": [
      {
-      "code": "T ART 180",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 180",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 181",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 181",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 182",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 182",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 183",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 183",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 184",
-      "units": 2.0,
-      "units_max": 4.0,
+      "code": "THTR 184",
+      "units": 2,
+      "units_max": 4,
       "alternatives": [],
       "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Four units from the following",
+    "name": "CHOOSE FOUR UNITS FROM THE FOLLOWING",
     "rule": "choose_units",
     "minimum": 4,
     "option_group": null,
@@ -261,36 +255,36 @@
     },
     "courses": [
      {
-      "code": "T ART 109",
-      "units": 2.0,
+      "code": "THTR 121",
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "T ART 110",
-      "units": 1.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "T ART 121",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "T ART 122",
-      "units": null,
+      "code": "THTR 122",
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
-      "code": "T ART 123",
-      "units": 3.0,
+      "code": "THTR 123",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 109",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 110",
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -301,82 +295,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints the subject as 'T ART' while the closed list uses 'THTR'; courses with matching numbers (100, 101, 103, 109, 110, 121, 123, 171, 173, 180-184) were treated as the same courses (catalog_addition false). T ART 172 and T ART 122 have no THTR counterpart in the closed list and are marked as catalog additions.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "The program learning outcomes are printed as one sentence joined by semicolons; recorded as a single entry word for word (lead-in 'Upon completion of this program,' omitted, hyphenation 'transfer-ability' joined).",
-   "Total of 20 units comes from 'Students must complete all required courses for a minimum of 20 units.'",
-   "The page labels this a 'CERTIFICATE NON-DEGREE'; the award requested is a Certificate of Achievement (16-<30 units), consistent with the 20-unit minimum."
+   "The page shows a 'Program Learning Outcomes' tab heading, but the extracted text prints no outcomes, so outcomes stay empty.",
+   "Total of 20 units is printed both as Minimum/Maximum Required Units for Major and as TOTAL UNITS REQUIRED.",
+   "THTR 172 and THTR 122 are not in the closed list and are recorded as catalog additions.",
+   "Course titles differ slightly from the closed list (e.g., THTR 121 'Stage Scenic Design I', THTR 123 'Fundamentals of Costume Design')."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "T ART 101": [
-     3.0,
-     3.0
-    ],
-    "T ART 171": [
-     3.0,
-     3.0
-    ],
-    "T ART 173": [
-     3.0,
-     3.0
-    ],
-    "T ART 100": [
-     3.0,
-     3.0
-    ],
-    "T ART 103": [
-     3.0,
-     3.0
-    ],
-    "T ART 172": [
-     3.0,
-     3.0
-    ],
-    "T ART 180": [
-     2.0,
-     4.0
-    ],
-    "T ART 181": [
-     2.0,
-     4.0
-    ],
-    "T ART 182": [
-     2.0,
-     4.0
-    ],
-    "T ART 183": [
-     2.0,
-     4.0
-    ],
-    "T ART 184": [
-     2.0,
-     4.0
-    ],
-    "T ART 109": [
-     2.0,
-     2.0
-    ],
-    "T ART 110": [
-     1.0,
-     1.0
-    ],
-    "T ART 121": [
-     3.0,
-     3.0
-    ],
-    "T ART 123": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

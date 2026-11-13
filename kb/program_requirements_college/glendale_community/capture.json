@@ -1617,7 +1617,7 @@
   "against": "kb/program_requirements_college/glendale_community",
   "kept": 0,
   "kept_moved": 0,
-  "programs": 134,
+  "programs": 238,
   "list": [
    {
     "control_number": "02547",
@@ -1628,6 +1628,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
     "was_coverage": 0.846,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02548",
+    "title": "Biological Sciences",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/BIO-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/BIO-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "02549",
+    "title": "Business Administration",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/BA-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/BA-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02550",
@@ -1670,6 +1690,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "02555",
+    "title": "Real Estate Broker",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "02556",
     "title": "General Office",
     "award": "A.S. Degree",
@@ -1678,6 +1708,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02557",
+    "title": "Mass Communications",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+    "coverage": 0.5,
+    "was_url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "02569",
+    "title": "Welding",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/WELD-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/WELD-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02570",
@@ -1698,6 +1748,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02572",
+    "title": "Music",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/MUSIC-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/MUSIC-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "02575",
@@ -1730,6 +1790,36 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "02588",
+    "title": "Speech/Communication",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/SC-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/SC-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "02598",
+    "title": "Administration of Justice",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/AJ-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AJ-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "02599",
+    "title": "Child Development: Teacher",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CDTP-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDTP-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "02602",
     "title": "Fire Technology",
     "award": "A.S. Degree",
@@ -1758,6 +1848,56 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02615",
+    "title": "Flight Attendant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "09482",
+    "title": "Electronics Technology Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/EET-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/EET-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10055",
+    "title": "Choreographic Studies & Dance Technique",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/CS%26DT-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CS%26DT-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10057",
+    "title": "Music",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/MUSIC-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/MUSIC-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "10412",
+    "title": "Animation, Visual Effects, and Game Design",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/AVGD-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AVGD-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "11143",
@@ -1810,6 +1950,46 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "11159",
+    "title": "Computer Science",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CS-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CS-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11161",
+    "title": "Computer Programmer",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11162",
+    "title": "Computer Software Technician",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11175",
+    "title": "Ceramics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CER-AS/completion-requirements-zaZdl",
+    "coverage": 0.9,
+    "was_url": "https://catalog.glendale.edu/programs/CER-AS/completion-requirements-zaZdl",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "11176",
     "title": "Theatre Arts: General",
     "award": "A.A. Degree",
@@ -1830,6 +2010,46 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "11189",
+    "title": "Child Development: Infant/Toddler",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CDITT-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDITT-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11190",
+    "title": "Child Development: School-Age Care",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CDSACT-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDSACT-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11191",
+    "title": "Child Development: Master Teacher",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CDMT-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDMT-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "11193",
+    "title": "Dietetic Services Supervisor",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/DSS-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DSS-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "12498",
     "title": "Two-Dimensional Art",
     "award": "A.A. Degree",
@@ -1838,6 +2058,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
     "was_coverage": 0.824,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "12499",
+    "title": "Graphic Design",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/GRPHD-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/GRPHD-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "12500",
@@ -1858,6 +2088,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "12502",
+    "title": "Entertainment Art",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl",
+    "coverage": 0.833,
+    "was_url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl",
+    "was_coverage": 0.833,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "12503",
@@ -1910,6 +2150,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "16972",
+    "title": "Insurance Specialist: Property & Casualty",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "17645",
     "title": "Web Development",
     "award": "A.S. Degree",
@@ -1918,6 +2168,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
     "was_coverage": 0.917,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "17760",
+    "title": "Real Estate Appraisal",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "18660",
@@ -2040,6 +2300,36 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "19563",
+    "title": "Insurance Specialist: Property & Casualty",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19564",
+    "title": "Real Estate Appraisal",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19565",
+    "title": "Real Estate Broker",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "19566",
     "title": "Marketing II",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2058,6 +2348,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=71",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "19569",
+    "title": "Engineering Technology - CAD",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19570",
+    "title": "Welding",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "19571",
@@ -2080,6 +2390,46 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "19574",
+    "title": "Child Development: Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19575",
+    "title": "Child Development: Master Teacher",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19576",
+    "title": "Child Development: School-Age Care",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "19578",
+    "title": "Child Development: Infant/Toddler",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "19581",
     "title": "Fire Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2100,6 +2450,36 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "21304",
+    "title": "Animation, Visual Effects, and Game Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21306",
+    "title": "Computer Science",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21307",
+    "title": "Computer Software Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "21308",
     "title": "Web Development",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2108,6 +2488,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
     "was_coverage": 0.917,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21314",
+    "title": "Ceramics",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl",
+    "coverage": 0.9,
+    "was_url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21315",
+    "title": "Music",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/MUSIC-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/MUSIC-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "21317",
@@ -2128,6 +2528,36 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=84",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21319",
+    "title": "Graphic Design",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21320",
+    "title": "Dietetic Services Supervisor",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "21323",
+    "title": "Administration of Justice",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "24010",
@@ -2220,6 +2650,26 @@
     "was_method": "not_found"
    },
    {
+    "control_number": "30031",
+    "title": "Human Resources Assistant II",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "30744",
+    "title": "Mathematics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl",
+    "coverage": 0.526,
+    "was_url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl",
+    "was_coverage": 0.526,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "30813",
     "title": "Sociology",
     "award": "A.A- T Degree",
@@ -2228,6 +2678,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=87",
     "was_coverage": 0.549,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30814",
+    "title": "Communication Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
+    "coverage": 0.846,
+    "was_url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "31928",
@@ -2240,6 +2700,56 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "32168",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
+    "coverage": 0.84,
+    "was_url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
+    "was_coverage": 0.84,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32178",
+    "title": "Geography",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl",
+    "coverage": 0.867,
+    "was_url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl",
+    "was_coverage": 0.867,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32199",
+    "title": "PHYSICS",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl",
+    "coverage": 0.545,
+    "was_url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl",
+    "was_coverage": 0.545,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32234",
+    "title": "English",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/ENGL%20AA-T/completion-requirements-zaZdl",
+    "coverage": 0.953,
+    "was_url": "https://catalog.glendale.edu/programs/ENGL%20AA-T/completion-requirements-zaZdl",
+    "was_coverage": 0.953,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32267",
+    "title": "Business Administration",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
+    "coverage": 0.8,
+    "was_url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "32394",
     "title": "Spanish",
     "award": "A.A- T Degree",
@@ -2250,6 +2760,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "32420",
+    "title": "Political Science",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl",
+    "coverage": 0.8,
+    "was_url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.8,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "32462",
     "title": "Psychology",
     "award": "A.A- T Degree",
@@ -2258,6 +2778,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=122",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "32463",
+    "title": "History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/HIST%20AA-T/completion-requirements-zaZdl",
+    "coverage": 0.86,
+    "was_url": "https://catalog.glendale.edu/programs/HIST%20AA-T/completion-requirements-zaZdl",
+    "was_coverage": 0.86,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "32605",
+    "title": "Philosophy",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
+    "coverage": 0.846,
+    "was_url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
+    "was_coverage": 0.846,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "32607",
@@ -2290,6 +2830,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "33294",
+    "title": "Art History",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/AH%20AA-T/completion-requirements-zaZdl",
+    "coverage": 0.923,
+    "was_url": "https://catalog.glendale.edu/programs/AH%20AA-T/completion-requirements-zaZdl",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "33295",
     "title": "Journalism",
     "award": "A.A- T Degree",
@@ -2320,6 +2870,26 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "33911",
+    "title": "Medical Coding Specialist",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "33934",
+    "title": "Medical Coding Specialist",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "35029",
     "title": "Digital Content Specialist",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2330,6 +2900,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "35283",
+    "title": "Biology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
+    "coverage": 0.818,
+    "was_url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "35473",
     "title": "Theatre Arts: Acting",
     "award": "A.A. Degree",
@@ -2338,6 +2918,36 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
     "was_coverage": 0.917,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "35585",
+    "title": "Technical Theatre",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35597",
+    "title": "Administrative Medical Assistant",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "35628",
+    "title": "Administrative Medical Assistant",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36102",
@@ -2370,6 +2980,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "36270",
+    "title": "Film, Television, and Electronic Media",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "36416",
     "title": "Civil Engineering",
     "award": "Certificate of Achievement requiring 60+S/90+Q units",
@@ -2378,6 +2998,36 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36419",
+    "title": "Engineering Technology - CAD",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36424",
+    "title": "Mechanical/Aerospace/Manufacturing Engineering",
+    "award": "Certificate of Achievement requiring 60+S/90+Q units",
+    "url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "36536",
+    "title": "Electrical Engineering",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
+    "coverage": 0.923,
+    "was_url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36580",
@@ -2420,6 +3070,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "36710",
+    "title": "Armenian Language",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ARMNL%20-%20AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "36711",
     "title": "French Language",
     "award": "A.A. Degree",
@@ -2458,6 +3118,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "36717",
+    "title": "Armenian Language",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "36720",
@@ -2530,6 +3200,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "36728",
+    "title": "Creative Writing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl",
+    "coverage": 0.923,
+    "was_url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "37070",
     "title": "Information Technology",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
@@ -2550,6 +3230,106 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "37854",
+    "title": "Computer Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/COMPEN-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/COMPEN-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37855",
+    "title": "Civil Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/CE-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CE-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37856",
+    "title": "Electrical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/EE-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/EE-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37857",
+    "title": "Mechanical Engineering",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/ME-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ME-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "37952",
+    "title": "Elementary Teacher Education",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl",
+    "coverage": 0.9,
+    "was_url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.9,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38144",
+    "title": "English: Creative Writing",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl",
+    "coverage": 0.923,
+    "was_url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl",
+    "was_coverage": 0.923,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "38717",
+    "title": "Social Justice: Gender Studies",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
+    "coverage": 0.885,
+    "was_url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.885,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39285",
+    "title": "Economics",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/ECON-AAT/completion-requirements-zaZdl",
+    "coverage": 0.583,
+    "was_url": "https://catalog.glendale.edu/programs/ECON-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.583,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39289",
+    "title": "Social Work and Human Services",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/SWHS-AAT/completion-requirements-zaZdl",
+    "coverage": 0.625,
+    "was_url": "https://catalog.glendale.edu/programs/SWHS-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.625,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39406",
+    "title": "Foreign Languages",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/FLS-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/FLS-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "39905",
     "title": "Fitness Specialist",
     "award": "A.S. Degree",
@@ -2558,6 +3338,116 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "39910",
+    "title": "Sports Coaching",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "39912",
+    "title": "Sports Coaching",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40808",
+    "title": "Transitional Kindergarten",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40814",
+    "title": "Geology",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "40863",
+    "title": "Mathematics",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/MATH-AS/completion-requirements-zaZdl",
+    "coverage": 0.5,
+    "was_url": "https://catalog.glendale.edu/programs/MATH-AS/completion-requirements-zaZdl",
+    "was_coverage": 0.5,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41379",
+    "title": "Cloud Computing",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41573",
+    "title": "Information Technology Technician",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41650",
+    "title": "Computer Networking",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41651",
+    "title": "Cybersecurity Specialist",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41729",
+    "title": "Healthcare Administration",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41730",
+    "title": "Healthcare Administration",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "41767",
@@ -2610,6 +3500,56 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "41826",
+    "title": "Digital Photography Technician",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41827",
+    "title": "Digital Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "41828",
+    "title": "Drone Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42126",
+    "title": "Digital Photography",
+    "award": "A.S. Degree",
+    "url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "42378",
+    "title": "Traditional Photography",
+    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+    "url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "42738",
     "title": "Digital Content Specialist",
     "award": "A.S. Degree",
@@ -2618,6 +3558,36 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=73",
     "was_coverage": 0.714,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "43038",
+    "title": "Business Administration 2.0",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
+    "coverage": 0.818,
+    "was_url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
+    "was_coverage": 0.818,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44351",
+    "title": "Intermediate ESL: Academic & Career Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/IEAC-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/IEAC-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44359",
+    "title": "Paramedic",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "44360",
@@ -2638,6 +3608,16 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=101",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44485",
+    "title": "Advanced ESL: Industrial Technology & Aviation Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "44486",
@@ -2670,6 +3650,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "44489",
+    "title": "Advanced ESL: Visual & Performing Arts Pathway",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/AEVPA-C/completion-requirements-zaZdl",
+    "coverage": 0.75,
+    "was_url": "https://catalog.glendale.edu/programs/AEVPA-C/completion-requirements-zaZdl",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "44568",
     "title": "Documentary Film Production",
     "award": "A.A. Degree",
@@ -2688,6 +3678,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=75",
     "was_coverage": 0.875,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "44570",
+    "title": "Film Studies",
+    "award": "A.A. Degree",
+    "url": "https://catalog.glendale.edu/programs/FS-AA/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/FS-AA/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "44571",
+    "title": "Film Studies",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "44572",
@@ -2740,6 +3750,16 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "44951",
+    "title": "Communication Studies 2.0",
+    "award": "A.A- T Degree",
+    "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
+    "coverage": 0.762,
+    "was_url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
+    "was_coverage": 0.762,
+    "was_method": "sitemap_page"
+   },
+   {
     "control_number": "45057",
     "title": "Social Media Marketing I",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
@@ -2768,6 +3788,26 @@
     "was_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=99",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45108",
+    "title": "Public Health",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
+    "coverage": 1.0,
+    "was_url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
+    "was_coverage": 1.0,
+    "was_method": "sitemap_page"
+   },
+   {
+    "control_number": "45150",
+    "title": "Nutrition and Dietetics",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl",
+    "coverage": 0.75,
+    "was_url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl",
+    "was_coverage": 0.75,
+    "was_method": "sitemap_page"
    },
    {
     "control_number": "45211",
@@ -2960,843 +4000,968 @@
     "was_method": "pdf_pages"
    }
   ],
-  "held_worse_window": [
-   {
-    "control_number": "02557",
-    "title": "Mass Communications",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl",
-    "coverage": 0.5,
-    "was_coverage": 0.875
-   },
-   {
-    "control_number": "12502",
-    "title": "Entertainment Art",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl",
-    "coverage": 0.833,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "30744",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl",
-    "coverage": 0.526,
-    "was_coverage": 0.737
-   },
-   {
-    "control_number": "30814",
-    "title": "Communication Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
-    "coverage": 0.846,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32168",
-    "title": "Administration of Justice",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
-    "coverage": 0.84,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32178",
-    "title": "Geography",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl",
-    "coverage": 0.867,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32234",
-    "title": "English",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/ENGL%20AA-T/completion-requirements-zaZdl",
-    "coverage": 0.953,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32267",
-    "title": "Business Administration",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
-    "coverage": 0.8,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32420",
-    "title": "Political Science",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl",
-    "coverage": 0.8,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32463",
-    "title": "History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/HIST%20AA-T/completion-requirements-zaZdl",
-    "coverage": 0.86,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32605",
-    "title": "Philosophy",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
-    "coverage": 0.846,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "33294",
-    "title": "Art History",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/AH%20AA-T/completion-requirements-zaZdl",
-    "coverage": 0.923,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36536",
-    "title": "Electrical Engineering",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl",
-    "coverage": 0.923,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36728",
-    "title": "Creative Writing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl",
-    "coverage": 0.923,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37952",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl",
-    "coverage": 0.9,
-    "was_coverage": 0.933
-   },
-   {
-    "control_number": "38144",
-    "title": "English: Creative Writing",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl",
-    "coverage": 0.923,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "39285",
-    "title": "Economics",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/ECON-AAT/completion-requirements-zaZdl",
-    "coverage": 0.583,
-    "was_coverage": 0.958
-   },
-   {
-    "control_number": "39289",
-    "title": "Social Work and Human Services",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/SWHS-AAT/completion-requirements-zaZdl",
-    "coverage": 0.625,
-    "was_coverage": 0.938
-   },
-   {
-    "control_number": "40863",
-    "title": "Mathematics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MATH-AS/completion-requirements-zaZdl",
-    "coverage": 0.5,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "43038",
-    "title": "Business Administration 2.0",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl",
-    "coverage": 0.818,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44489",
-    "title": "Advanced ESL: Visual & Performing Arts Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEVPA-C/completion-requirements-zaZdl",
-    "coverage": 0.75,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44951",
-    "title": "Communication Studies 2.0",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl",
-    "coverage": 0.762,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45150",
-    "title": "Nutrition and Dietetics",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl",
-    "coverage": 0.75,
-    "was_coverage": 1.0
-   }
-  ],
-  "held_no_gain": [
-   {
-    "control_number": "02548",
-    "title": "Biological Sciences",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/BIO-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02549",
-    "title": "Business Administration",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/BA-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02555",
-    "title": "Real Estate Broker",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02569",
-    "title": "Welding",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/WELD-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02572",
-    "title": "Music",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MUSIC-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02588",
-    "title": "Speech/Communication",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/SC-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02598",
-    "title": "Administration of Justice",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/AJ-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02599",
-    "title": "Child Development: Teacher",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CDTP-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "02615",
-    "title": "Flight Attendant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "09482",
-    "title": "Electronics Technology Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/EET-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10055",
-    "title": "Choreographic Studies & Dance Technique",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/CS%26DT-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10057",
-    "title": "Music",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/MUSIC-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "10412",
-    "title": "Animation, Visual Effects, and Game Design",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/AVGD-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11159",
-    "title": "Computer Science",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CS-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11161",
-    "title": "Computer Programmer",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11162",
-    "title": "Computer Software Technician",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11175",
-    "title": "Ceramics",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CER-AS/completion-requirements-zaZdl",
-    "coverage": 0.9,
-    "was_coverage": 0.9
-   },
-   {
-    "control_number": "11189",
-    "title": "Child Development: Infant/Toddler",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CDITT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11190",
-    "title": "Child Development: School-Age Care",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CDSACT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11191",
-    "title": "Child Development: Master Teacher",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CDMT-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "11193",
-    "title": "Dietetic Services Supervisor",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/DSS-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "12499",
-    "title": "Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/GRPHD-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "16972",
-    "title": "Insurance Specialist: Property & Casualty",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "17760",
-    "title": "Real Estate Appraisal",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19563",
-    "title": "Insurance Specialist: Property & Casualty",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19564",
-    "title": "Real Estate Appraisal",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19565",
-    "title": "Real Estate Broker",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19569",
-    "title": "Engineering Technology - CAD",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19570",
-    "title": "Welding",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19574",
-    "title": "Child Development: Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19575",
-    "title": "Child Development: Master Teacher",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19576",
-    "title": "Child Development: School-Age Care",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "19578",
-    "title": "Child Development: Infant/Toddler",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21304",
-    "title": "Animation, Visual Effects, and Game Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21306",
-    "title": "Computer Science",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21307",
-    "title": "Computer Software Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21314",
-    "title": "Ceramics",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl",
-    "coverage": 0.9,
-    "was_coverage": 0.9
-   },
-   {
-    "control_number": "21315",
-    "title": "Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/MUSIC-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21319",
-    "title": "Graphic Design",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21320",
-    "title": "Dietetic Services Supervisor",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "21323",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "30031",
-    "title": "Human Resources Assistant II",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "32199",
-    "title": "PHYSICS",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl",
-    "coverage": 0.545,
-    "was_coverage": 0.545
-   },
-   {
-    "control_number": "33911",
-    "title": "Medical Coding Specialist",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "33934",
-    "title": "Medical Coding Specialist",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "35283",
-    "title": "Biology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl",
-    "coverage": 0.818,
-    "was_coverage": 0.818
-   },
-   {
-    "control_number": "35585",
-    "title": "Technical Theatre",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "35597",
-    "title": "Administrative Medical Assistant",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "35628",
-    "title": "Administrative Medical Assistant",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36270",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36419",
-    "title": "Engineering Technology - CAD",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36424",
-    "title": "Mechanical/Aerospace/Manufacturing Engineering",
-    "award": "Certificate of Achievement requiring 60+S/90+Q units",
-    "url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36710",
-    "title": "Armenian Language",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "36717",
-    "title": "Armenian Language",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37854",
-    "title": "Computer Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/COMPEN-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37855",
-    "title": "Civil Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/CE-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37856",
-    "title": "Electrical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/EE-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "37857",
-    "title": "Mechanical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/ME-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "38717",
-    "title": "Social Justice: Gender Studies",
-    "award": "A.A- T Degree",
-    "url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl",
-    "coverage": 0.885,
-    "was_coverage": 0.885
-   },
-   {
-    "control_number": "39406",
-    "title": "Foreign Languages",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/FLS-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "39910",
-    "title": "Sports Coaching",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "39912",
-    "title": "Sports Coaching",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40808",
-    "title": "Transitional Kindergarten",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "40814",
-    "title": "Geology",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41379",
-    "title": "Cloud Computing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41573",
-    "title": "Information Technology Technician",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41650",
-    "title": "Computer Networking",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41651",
-    "title": "Cybersecurity Specialist",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41729",
-    "title": "Healthcare Administration",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41730",
-    "title": "Healthcare Administration",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41826",
-    "title": "Digital Photography Technician",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41827",
-    "title": "Digital Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "41828",
-    "title": "Drone Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42126",
-    "title": "Digital Photography",
-    "award": "A.S. Degree",
-    "url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "42378",
-    "title": "Traditional Photography",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44351",
-    "title": "Intermediate ESL: Academic & Career Preparation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/IEAC-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44359",
-    "title": "Paramedic",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44485",
-    "title": "Advanced ESL: Industrial Technology & Aviation Pathway",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44570",
-    "title": "Film Studies",
-    "award": "A.A. Degree",
-    "url": "https://catalog.glendale.edu/programs/FS-AA/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "44571",
-    "title": "Film Studies",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   },
-   {
-    "control_number": "45108",
-    "title": "Public Health",
-    "award": "A.S. T Degree",
-    "url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl",
-    "coverage": 1.0,
-    "was_coverage": 1.0
-   }
-  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
   "held_opens_on_list": []
  },
- "run": "43384599013"
+ "fingerprints": {
+  "02547": {
+   "sha256": "0e364881603586457b19bced3af902a5e876db43949197b648b8dcd2bd94060c",
+   "url": "https://catalog.glendale.edu/programs/AD%26D-AS/completion-requirements-zaZdl"
+  },
+  "02548": {
+   "sha256": "2c919a1a650b495eb00d100aeb34f8e8aab7df5ec62882e96403db7877373f8d",
+   "url": "https://catalog.glendale.edu/programs/BIO-AS/completion-requirements-zaZdl"
+  },
+  "02549": {
+   "sha256": "79b55d381dce8a63eeafd352fae62ce4176fc507755080b359b422e7436c2966",
+   "url": "https://catalog.glendale.edu/programs/BA-AA/completion-requirements-zaZdl"
+  },
+  "02550": {
+   "sha256": "08a767b98f63a6350be633470d751e7fc34f9a8a3269ed93fdef1b4794249749",
+   "url": "https://catalog.glendale.edu/programs/ACCTG-AS/completion-requirements-zaZdl"
+  },
+  "02551": {
+   "sha256": "c91f57fde9fc4c9a17d32b6a0545f13de23b84c54fb1e3425be69a94b7713d9c",
+   "url": "https://catalog.glendale.edu/programs/FP%26I-AS/completion-requirements-zaZdl"
+  },
+  "02552": {
+   "sha256": "2288f0946d542f0a4c934740e87b136264d987bc521f29f0a2d7f9d69feed35b",
+   "url": "https://catalog.glendale.edu/programs/MGMT-AS/completion-requirements-zaZdl"
+  },
+  "02553": {
+   "sha256": "7b9befcc4d34da52f0be17178ec7e5469218f7380f8af15954ea23d45f847c31",
+   "url": "https://catalog.glendale.edu/programs/MRKT-AS/completion-requirements-zaZdl"
+  },
+  "02555": {
+   "sha256": "b0aa0ec59dd63ac43c77a3fcf47ab748394f1736556a1276c2e06c5435647bd9",
+   "url": "https://catalog.glendale.edu/programs/RE-AS/completion-requirements-zaZdl"
+  },
+  "02556": {
+   "sha256": "ee0bfe5005d8d7efa5930117d221d0d6c639ef5469de8e9b4ea9d032daea0e15",
+   "url": "https://catalog.glendale.edu/programs/GO-AS/completion-requirements-zaZdl"
+  },
+  "02557": {
+   "sha256": "e72f69ee74d6cc33986aea8b7cf7452b50357456edc473c1239a8c870984f4a9",
+   "url": "https://catalog.glendale.edu/programs/MC-C/completion-requirements-zaZdl"
+  },
+  "02569": {
+   "sha256": "4c0b2f21a01ce2ff3211eae980bdd450f512acc51fd33050bba29d47684fd128",
+   "url": "https://catalog.glendale.edu/programs/WELD-AS/completion-requirements-zaZdl"
+  },
+  "02570": {
+   "sha256": "9324ab6e8753629165bd3c2ba2e374e61d6223a4a6ee66bfbc445a1e28bf1bc5",
+   "url": "https://catalog.glendale.edu/programs/ASC-AS/completion-requirements-zaZdl"
+  },
+  "02571": {
+   "sha256": "bc7b82d0d23ab60da6aaf28de891fd2a93cb82b8abdf05f4343c9efe7259862f",
+   "url": "https://catalog.glendale.edu/programs/VAAH-AA/completion-requirements-zaZdl"
+  },
+  "02572": {
+   "sha256": "22237d75cf560f77f507cf9439a541f106c46bb62b6be24a5b0a4a728d895508",
+   "url": "https://catalog.glendale.edu/programs/MUSIC-AS/completion-requirements-zaZdl"
+  },
+  "02575": {
+   "sha256": "f1a2c435c5f0eb072d855ce79a5a5692f3358671dfedc96adbbbaaf0b23954a8",
+   "url": "https://catalog.glendale.edu/programs/PHOTO-AS/completion-requirements-zaZdl"
+  },
+  "02580": {
+   "sha256": "576df6470ea0242b1e13e6f0da452e065ee5aab1ca20fd9e0f8cbd4b75cb4b22",
+   "url": "https://catalog.glendale.edu/programs/RN-AS/completion-requirements-zaZdl"
+  },
+  "02587": {
+   "sha256": "d3282b518782f78a09b2ead495ffb1e508524a96f07f278102584d5845b88785",
+   "url": "https://catalog.glendale.edu/programs/ENG-AA/completion-requirements-zaZdl"
+  },
+  "02588": {
+   "sha256": "d4ce70667dba13d6f2f2b9aaafec9a69b949465fbc97c5f6b8685641f0e0e8d9",
+   "url": "https://catalog.glendale.edu/programs/SC-AA/completion-requirements-zaZdl"
+  },
+  "02598": {
+   "sha256": "855cd9fb013e32ed922a5dacae4520f3ea0b2a38813e904e17bc83443e31408e",
+   "url": "https://catalog.glendale.edu/programs/AJ-AS/completion-requirements-zaZdl"
+  },
+  "02599": {
+   "sha256": "cce5c5650e358047057eee6202fb929f2ded867735376217e7d4377d259e21be",
+   "url": "https://catalog.glendale.edu/programs/CDTP-AS/completion-requirements-zaZdl"
+  },
+  "02602": {
+   "sha256": "8adef91dcca50154e481a3c1dac108c918d1fac0ed02c518feb951813295eb3e",
+   "url": "https://catalog.glendale.edu/programs/FT-AS/completion-requirements-zaZdl"
+  },
+  "02611": {
+   "sha256": "9248515434faf66ee4b7aa8b3c3f520b06ee3cb304b2fac639680d028fe4dfc4",
+   "url": "https://catalog.glendale.edu/programs/MACH-AS/completion-requirements-zaZdl"
+  },
+  "02612": {
+   "sha256": "666551852f82c3385f06d295013248688cb2254b3b69f08eb042ede6e7ad1b6b",
+   "url": "https://catalog.glendale.edu/programs/FTM-AA/completion-requirements-zaZdl"
+  },
+  "02615": {
+   "sha256": "a5e2e8319eb1cde3bf2b16623314e84303f282fdcc3f984b8c62c909644933ef",
+   "url": "https://catalog.glendale.edu/programs/FA-C/completion-requirements-zaZdl"
+  },
+  "09482": {
+   "sha256": "a46e34aa40d0c3bac65473d76af6c2d6a2b485fac6c661c524f3c1ad173009c5",
+   "url": "https://catalog.glendale.edu/programs/EET-AS/completion-requirements-zaZdl"
+  },
+  "10055": {
+   "sha256": "8ff997cede2e4a6851560570853d306ad0154bb4cd65f59be6d7f66e1e2a08a3",
+   "url": "https://catalog.glendale.edu/programs/CS%26DT-AA/completion-requirements-zaZdl"
+  },
+  "10057": {
+   "sha256": "de90cf5e0da2e0670b593e653ebec60377a3f82b5c62db9d490062424e51066f",
+   "url": "https://catalog.glendale.edu/programs/MUSIC-AA/completion-requirements-zaZdl"
+  },
+  "10412": {
+   "sha256": "c538e7a92193f20c31c34c054777b3407237b45955ca61eed3fd6e57eb12d1f0",
+   "url": "https://catalog.glendale.edu/programs/AVGD-AS/completion-requirements-zaZdl"
+  },
+  "11143": {
+   "sha256": "1f9d11b784d24ee57fd986748746f97f999c7ebb431b68d0f4b2f087c50abe3f",
+   "url": "https://catalog.glendale.edu/programs/GB-AS/completion-requirements-zaZdl"
+  },
+  "11144": {
+   "sha256": "e36a5915d366bd08f5390bfec0ba0a85286f18577402905f48c49871637fcbcf",
+   "url": "https://catalog.glendale.edu/programs/E%2FSB-AS/completion-requirements-zaZdl"
+  },
+  "11145": {
+   "sha256": "f44b96c885ad33af81b30bea930c2acefb9840779b1cced73d20a1dab2808101",
+   "url": "https://catalog.glendale.edu/programs/IB-AS/completion-requirements-zaZdl"
+  },
+  "11151": {
+   "sha256": "97faa3f80b12250adce527b259417884f919ada5a45e73e84ee85e4a860131df",
+   "url": "https://catalog.glendale.edu/programs/ADAST-AS/completion-requirements-zaZdl"
+  },
+  "11153": {
+   "sha256": "3da1bfe8355676de9e5abca622cb405bedb51107086ffb1b6e94759b1b15fd55",
+   "url": "https://catalog.glendale.edu/programs/ROC-C/completion-requirements-zaZdl"
+  },
+  "11159": {
+   "sha256": "f772bfc9ec28083238c1346d48bc7426120c2bdf234fef24f798e4fcc9876bd4",
+   "url": "https://catalog.glendale.edu/programs/CS-AS/completion-requirements-zaZdl"
+  },
+  "11161": {
+   "sha256": "e3b6337562106e3a8f9b9c6e663b77a946c67c5342c03b360cd1fa92a9f2f51c",
+   "url": "https://catalog.glendale.edu/programs/CP-C/completion-requirements-zaZdl"
+  },
+  "11162": {
+   "sha256": "fb969472489ef568de1136e2df849b3fb41b6b8751c6cd548507a87be13cc6ad",
+   "url": "https://catalog.glendale.edu/programs/CST-AS/completion-requirements-zaZdl"
+  },
+  "11175": {
+   "sha256": "2d74a8b03a0cb75ba1585e043074866eebe95fbccab38f6deeee8fe82872e1b4",
+   "url": "https://catalog.glendale.edu/programs/CER-AS/completion-requirements-zaZdl"
+  },
+  "11176": {
+   "sha256": "4be0012d0ca6377e1df6d169de13a445d0dca51ee4097c46a97a5a7e01e03a82",
+   "url": "https://catalog.glendale.edu/programs/TA-AA/completion-requirements-zaZdl"
+  },
+  "11177": {
+   "sha256": "da942966004fa4db609d8475e22e75096c7b88e7945343b938b9aef3624db0d9",
+   "url": "https://catalog.glendale.edu/programs/CS%26DT-AS/completion-requirements-zaZdl"
+  },
+  "11189": {
+   "sha256": "f5e16581bc2c80d4df29d975277ac05399b2f1bb798729a7a906103836d9f665",
+   "url": "https://catalog.glendale.edu/programs/CDITT-AS/completion-requirements-zaZdl"
+  },
+  "11190": {
+   "sha256": "de444b2f7cf456a27821dc9c2f4c99619dd05d67fc621b8284f43916a5f65b35",
+   "url": "https://catalog.glendale.edu/programs/CDSACT-AS/completion-requirements-zaZdl"
+  },
+  "11191": {
+   "sha256": "cdd776719bb7c5ea84ef7c4fecdf017b3a7abc86a62d96b7c9d18f45df8efb6a",
+   "url": "https://catalog.glendale.edu/programs/CDMT-AS/completion-requirements-zaZdl"
+  },
+  "11193": {
+   "sha256": "09a41ea64fe94f310aee6b6af21b4bae33c957173f7d4caf4ef4a9573a34ea1d",
+   "url": "https://catalog.glendale.edu/programs/DSS-AS/completion-requirements-zaZdl"
+  },
+  "12498": {
+   "sha256": "81e45c27869167b2ba88e52df724e3f40cac441b5333bafd8807517a29b1f6d8",
+   "url": "https://catalog.glendale.edu/programs/VA2D-AA/completion-requirements-zaZdl"
+  },
+  "12499": {
+   "sha256": "0df2f6802609926ccd560944eeadb558396de802e0c36fad3f009daae6271151",
+   "url": "https://catalog.glendale.edu/programs/GRPHD-AA/completion-requirements-zaZdl"
+  },
+  "12500": {
+   "sha256": "4ea66bc165d9166ccb58c50d83c60f172b8e89c9732aec7712dd67ea24082b8b",
+   "url": "https://catalog.glendale.edu/programs/VA3D-AA/completion-requirements-zaZdl"
+  },
+  "12501": {
+   "sha256": "b67a0ca7ddeb53cc0b25a8fa8bf104aa4d0b911439297f3fd5fa479c41e90f88",
+   "url": "https://catalog.glendale.edu/programs/VAP-AA/completion-requirements-zaZdl"
+  },
+  "12502": {
+   "sha256": "f9101064ee7470e2e08ce9ef1f5a6087bd535f42d74d306b0a5245491b82f3a8",
+   "url": "https://catalog.glendale.edu/programs/EA-AA/completion-requirements-zaZdl"
+  },
+  "12503": {
+   "sha256": "fc66b443b3bac3e3ab84cebb922c0af0870bd4abe3912976226a0b08993bc344",
+   "url": "https://catalog.glendale.edu/programs/IHC-AA/completion-requirements-zaZdl"
+  },
+  "12570": {
+   "sha256": "577dcd2173d777025314871f70492dfe372ed0eeeb00fe98ffc2f4cd21091da2",
+   "url": "https://catalog.glendale.edu/programs/TF-C/completion-requirements-zaZdl"
+  },
+  "12571": {
+   "sha256": "0a010b02e78ba755fe053f16f847793de3982b66e863d72d1928321b71daa992",
+   "url": "https://catalog.glendale.edu/programs/ACCTG-C/completion-requirements-zaZdl"
+  },
+  "12574": {
+   "sha256": "b1f8c33eb48e2919c7fccfd7a7730d7f9ca365c75aee94505c3a96c9dfc57c89",
+   "url": "https://catalog.glendale.edu/programs/FITS-C/completion-requirements-zaZdl"
+  },
+  "15584": {
+   "sha256": "9ae91cb82d4f90d7fbd90f7abfee32bee53cb39d126b6bee2933d2ed6ec9b170",
+   "url": "https://catalog.glendale.edu/programs/HS-AS/completion-requirements-zaZdl"
+  },
+  "16972": {
+   "sha256": "5c56877716ff0388d1e765b4f376085a72b4104160b51631e63442f9eedd1b91",
+   "url": "https://catalog.glendale.edu/programs/IS-AS/completion-requirements-zaZdl"
+  },
+  "17645": {
+   "sha256": "1ff691cca358e49577459bc4d8296405fd40fdd132e7757f27f4bde26148b463",
+   "url": "https://catalog.glendale.edu/programs/WB-AS/completion-requirements-zaZdl"
+  },
+  "17760": {
+   "sha256": "503bdd684fc66b92c5fa46e62c8a464f9fe5769fb2f6ed7b35423b246f01f4ae",
+   "url": "https://catalog.glendale.edu/programs/REA-AS/completion-requirements-zaZdl"
+  },
+  "18660": {
+   "sha256": "ecf2a215d0502333fc97337589079be713a55c2c1ccf06aeb5b0a03fdb7d160b",
+   "url": "https://catalog.glendale.edu/programs/VFA-C/completion-requirements-zaZdl"
+  },
+  "18661": {
+   "sha256": "0c7c121691c101cc80f0381783908922375017424cc653dec36e2c5fd95c61f1",
+   "url": "https://catalog.glendale.edu/programs/VRFA-C/completion-requirements-zaZdl"
+  },
+  "19110": {
+   "sha256": "2b5ad01cc8fc5d96b1b8fe393864e320b31a6fee646b0171a5c7f36321e15656",
+   "url": "https://catalog.glendale.edu/programs/DT-C/completion-requirements-zaZdl"
+  },
+  "19111": {
+   "sha256": "1452fb819e86ff767dfae370ea134b60c310a74038ccce2ef547d4925235e170",
+   "url": "https://catalog.glendale.edu/programs/DT-AS/completion-requirements-zaZdl"
+  },
+  "19365": {
+   "sha256": "082cd13d9bf13cc405ed7c54887d89827b6ddf6ceff04cb122fb738d4872f45b",
+   "url": "https://catalog.glendale.edu/programs/IPII-C/completion-requirements-zaZdl"
+  },
+  "19366": {
+   "sha256": "8981d6157f46c98d866fc1c86bd6b28bd0fcf02445f9602d17b7cb61e1cea426",
+   "url": "https://catalog.glendale.edu/programs/USA-C/completion-requirements-zaZdl"
+  },
+  "19555": {
+   "sha256": "ee0ec87542f60bbc4abbce8919159c6c3cf45586154728f2eac96c767b391aae",
+   "url": "https://catalog.glendale.edu/programs/GB-C/completion-requirements-zaZdl"
+  },
+  "19558": {
+   "sha256": "3fec55cda28bcb3174fa225c8822d41292279df5a02c574a007ef480bb6aceec",
+   "url": "https://catalog.glendale.edu/programs/FP%26III-C/completion-requirements-zaZdl"
+  },
+  "19559": {
+   "sha256": "705c206d982a6d365ab6a06128651da313bed0f170a1312272755ab4e3e0e8b6",
+   "url": "https://catalog.glendale.edu/programs/MGMTII-C/completion-requirements-zaZdl"
+  },
+  "19560": {
+   "sha256": "a5be39664cc8bb2f7e84612c7f3e842919f494fb255fecba8de6cae0b562dfd5",
+   "url": "https://catalog.glendale.edu/programs/E%2FSBII-C/completion-requirements-zaZdl"
+  },
+  "19561": {
+   "sha256": "7acfc8ff0749e9777881e0edbd5e24176b95e5ce00ab44117cd613972ab8674c",
+   "url": "https://catalog.glendale.edu/programs/IBII-C/completion-requirements-zaZdl"
+  },
+  "19562": {
+   "sha256": "0d931bc42bdc74a0949022f2dd9e9d4db7e66c23d4db5bdd1478eb00803e745e",
+   "url": "https://catalog.glendale.edu/programs/ADAST-C/completion-requirements-zaZdl"
+  },
+  "19563": {
+   "sha256": "9e0cc33c715c0da4becbbb2b398ac099dca72424ed0974f38566091174cad312",
+   "url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl"
+  },
+  "19564": {
+   "sha256": "a9783dccacfc92db57d0914ccf761ddc8c65e89331a7fa3ecfd0356159143112",
+   "url": "https://catalog.glendale.edu/programs/REA-C/completion-requirements-zaZdl"
+  },
+  "19565": {
+   "sha256": "028c0f46360964250759d9e25247d5d5a9ebab95d9c495beba16654dbbaeb255",
+   "url": "https://catalog.glendale.edu/programs/RE-C/completion-requirements-zaZdl"
+  },
+  "19566": {
+   "sha256": "b96dbfcca5b84a9e79c5480839fdddcc74a9b40bcf89653549a75e052bdcf081",
+   "url": "https://catalog.glendale.edu/programs/MRKTII-C/completion-requirements-zaZdl"
+  },
+  "19567": {
+   "sha256": "eaa29f9d0db3809a2ef46d13a58a595a3b2bfa2ea144c46916953a3a30d7303e",
+   "url": "https://catalog.glendale.edu/programs/GO-C/completion-requirements-zaZdl"
+  },
+  "19569": {
+   "sha256": "bd0fd5ce38083c2296d20915097b27cbca7b9c644198de7a87db58706885b6cd",
+   "url": "https://catalog.glendale.edu/programs/ETCDD-C/completion-requirements-zaZdl"
+  },
+  "19570": {
+   "sha256": "63e095bfbf13a1ab15a4fb56a777b40330067b71a639bf5df5576c201c650a43",
+   "url": "https://catalog.glendale.edu/programs/WELD-C/completion-requirements-zaZdl"
+  },
+  "19571": {
+   "sha256": "cb16b83d1cdbafa6fc9131bd365c965c1f9470808397be1224596fb5223d9b50",
+   "url": "https://catalog.glendale.edu/programs/MACH-C/completion-requirements-zaZdl"
+  },
+  "19573": {
+   "sha256": "c6463c711abe5fb32915483851e20fcf9fcfcaec14711bc704334ebabf85439e",
+   "url": "https://catalog.glendale.edu/programs/RN-C/completion-requirements-zaZdl"
+  },
+  "19574": {
+   "sha256": "af8dc46e7b252bdecbebed08c92a220f9663e8bcf711cce6c1845efc79b1aa5d",
+   "url": "https://catalog.glendale.edu/programs/CDTP-C/completion-requirements-zaZdl"
+  },
+  "19575": {
+   "sha256": "926d82a1270b69c73065ca06f7855b67e09499fd16b13a01c2ff28685affd554",
+   "url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl"
+  },
+  "19576": {
+   "sha256": "d8fafe038e5aa51b63bdaeb2e8877bd5de831c61b77db547a50787fe97b3909c",
+   "url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl"
+  },
+  "19578": {
+   "sha256": "638a927846154fa8e4979059c92af96ca1123ce4d2d24ecfaad93aff5bda921d",
+   "url": "https://catalog.glendale.edu/programs/CDITT-C/completion-requirements-zaZdl"
+  },
+  "19581": {
+   "sha256": "26bac476d83f144c822664dd53a668035224912fb0bba5f4c2a602a10d4f8327",
+   "url": "https://catalog.glendale.edu/programs/FT-C/completion-requirements-zaZdl"
+  },
+  "21299": {
+   "sha256": "ab4301ec4d631d6623f193c0f060c1429d6b9f139a101838e3fd410a63671b27",
+   "url": "https://catalog.glendale.edu/programs/AD%26D-C/completion-requirements-zaZdl"
+  },
+  "21304": {
+   "sha256": "95fef042d25b4faf4d31bb9a5f0811f770c6a0ad7bdbd77a2609ab7684c18ffb",
+   "url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl"
+  },
+  "21306": {
+   "sha256": "33bc5597391b930de4424fdc03620f18d1179fbb6450481423e507aac15141a2",
+   "url": "https://catalog.glendale.edu/programs/CS-C/completion-requirements-zaZdl"
+  },
+  "21307": {
+   "sha256": "b8a73f1b70607a2534988ef05ab0bf3b7f4ecbeecfafb74ed65199c76b845de5",
+   "url": "https://catalog.glendale.edu/programs/CST-C/completion-requirements-zaZdl"
+  },
+  "21308": {
+   "sha256": "93fa446fe61bba5061b2aee85e425d08b8d2c87de689f90cb77cc44bc2c47898",
+   "url": "https://catalog.glendale.edu/programs/WB-C/completion-requirements-zaZdl"
+  },
+  "21314": {
+   "sha256": "bb69566bebc533eafb53766411c780743812348ab6865e4605b141997752c572",
+   "url": "https://catalog.glendale.edu/programs/CER-C/completion-requirements-zaZdl"
+  },
+  "21315": {
+   "sha256": "48dbaf63e9f3051dc6e1dcec1e93a9290309a38b69fe9828cf4d529a9ef2934e",
+   "url": "https://catalog.glendale.edu/programs/MUSIC-C/completion-requirements-zaZdl"
+  },
+  "21317": {
+   "sha256": "3e0af8c19c5e41305b0fa18eff70cbcf7d26b5bdd39f509b75bd02c0db551ad9",
+   "url": "https://catalog.glendale.edu/programs/CS%26DT-C/completion-requirements-zaZdl"
+  },
+  "21318": {
+   "sha256": "b5b07338b77b7474ec8de6a75ce06d201330ff4f023d752bca203ed7b4b3d89f",
+   "url": "https://catalog.glendale.edu/programs/PHOTO-C/completion-requirements-zaZdl"
+  },
+  "21319": {
+   "sha256": "2ceacdfd2df40c5387538d6545f1a5785f400448cb241f52c35ad3b5e0dfd306",
+   "url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl"
+  },
+  "21320": {
+   "sha256": "16ef2b586accbd6fbe2d1efeeddca293019cbef00d8abcda3811155251d4ec9e",
+   "url": "https://catalog.glendale.edu/programs/DSS-C/completion-requirements-zaZdl"
+  },
+  "21323": {
+   "sha256": "0cb0e36fc7c13688e2b54548646252a911afbecea58d1e36c8589bc68de3432b",
+   "url": "https://catalog.glendale.edu/programs/AJ-C/completion-requirements-zaZdl"
+  },
+  "24010": {
+   "sha256": "e581e64020643a3e4dfa59172a0b4cd8d464cc22a98b47f5da412fc37d86e0a2",
+   "url": "https://catalog.glendale.edu/programs/NCABE/completion-requirements-zaZdl"
+  },
+  "24011": {
+   "sha256": "42bfcb2f38439e271a94e37333de1703d83080855ed8d363e116917c37a17690",
+   "url": "https://catalog.glendale.edu/programs/NCAC1/completion-requirements-zaZdl"
+  },
+  "24042": {
+   "sha256": "d993a04285473d5dcfd71e505a7fb8acfb72b27fc11432226dbea66cdf3480cc",
+   "url": "https://catalog.glendale.edu/programs/NCESL1/completion-requirements-zaZdl"
+  },
+  "24161": {
+   "sha256": "c276591485cda23fd8ffdadcb65f1158bd6e2069c3fd97053fb4d2e2b450a62c",
+   "url": "https://catalog.glendale.edu/programs/NCAC2/completion-requirements-zaZdl"
+  },
+  "24274": {
+   "sha256": "ab09576c95b2ba3cfcfea7a168a607f80a228ce18637de1f879fc878234e575b",
+   "url": "https://catalog.glendale.edu/programs/NCGED/completion-requirements-zaZdl"
+  },
+  "24356": {
+   "sha256": "cfee41ec3dc26eec44ab1fae8c3be142292f32aa07447156821ca6fc825ab0d0",
+   "url": "https://catalog.glendale.edu/programs/NCGOC1/completion-requirements-zaZdl"
+  },
+  "24377": {
+   "sha256": "cc6cd2db90559bf502daad72f5f0a966a180a566a7102fa123eb363113800cad",
+   "url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl"
+  },
+  "24381": {
+   "sha256": "6d87521badbec2441596eeb5e207f60e024f2fd5719d4744999f4561ad458502",
+   "url": "https://catalog.glendale.edu/programs/NCDFOC/completion-requirements-zaZdl"
+  },
+  "24432": {
+   "sha256": "27277549836528d32f72b41770bd0f0c786a8c4d9af11ad36c3f30a48b40e063",
+   "url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl"
+  },
+  "30031": {
+   "sha256": "d5e0da25238503b9600615270548bc1f17ee1847839a1b8c49a154bb1817b839",
+   "url": "https://catalog.glendale.edu/programs/HRAII-C/completion-requirements-zaZdl"
+  },
+  "30744": {
+   "sha256": "674fa8bf3f5c1cfc0ae64e66104f34b96ba6d5fcd341447f5cf3f06cc34a88b2",
+   "url": "https://catalog.glendale.edu/programs/MATH-AST/completion-requirements-zaZdl"
+  },
+  "30813": {
+   "sha256": "d186ab9436859a51c40724081a6844dff3d7d6f8df68ab2a782054d516c88964",
+   "url": "https://catalog.glendale.edu/programs/SOC-AAT/completion-requirements-zaZdl"
+  },
+  "30814": {
+   "sha256": "a279c7c6b123bd48e1e73b089837bd1162605686b65791ee275a3d5d82cc70d1",
+   "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl"
+  },
+  "31928": {
+   "sha256": "512a3c6f7381421a956b2a26c261b006c2f938c9d8d12118bd522256f4d89568",
+   "url": "https://catalog.glendale.edu/programs/KIN%20AAT/completion-requirements-zaZdl"
+  },
+  "32168": {
+   "sha256": "90b98baf04dd99ba59e3c28b67af59ba46d88696def000426dae449055b6f385",
+   "url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl"
+  },
+  "32178": {
+   "sha256": "b352531f9e2996b77805f581eda61ef31f327271a4100321cb3ed7288b045517",
+   "url": "https://catalog.glendale.edu/programs/AA-T%20GEOG/completion-requirements-zaZdl"
+  },
+  "32199": {
+   "sha256": "c6494e7c79873c69599132f3a30816e096757237fc7ce29c2ab1d2399c60f919",
+   "url": "https://catalog.glendale.edu/programs/AS-T%20PHY/completion-requirements-zaZdl"
+  },
+  "32234": {
+   "sha256": "3ec0d85cb7c49be927ad2708bd5f23a3020bcb8b5751727b99ccb6fa48936a0c",
+   "url": "https://catalog.glendale.edu/programs/ENGL%20AA-T/completion-requirements-zaZdl"
+  },
+  "32267": {
+   "sha256": "ae6a31dcfa0b066e62ef71819fdd213b0a13d099230d6e5b0a2b5e4282f7e8b2",
+   "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl"
+  },
+  "32394": {
+   "sha256": "e88663bf51b654e296f436f03e64eb318edc02a089cccea176a3adee6c856cb1",
+   "url": "https://catalog.glendale.edu/programs/SPAN-AAT/completion-requirements-zaZdl"
+  },
+  "32420": {
+   "sha256": "f40c98d141d76c19eb315f6391c4586ea4e1d072ec61b2abbf8b88408c18d998",
+   "url": "https://catalog.glendale.edu/programs/POL%20S%20AAT/completion-requirements-zaZdl"
+  },
+  "32462": {
+   "sha256": "d78b6459f79e9d7f617511e1f697481e0e2111b9e7c2b0f707e44bce938f7648",
+   "url": "https://catalog.glendale.edu/programs/PSYCH-%20AAT/completion-requirements-zaZdl"
+  },
+  "32463": {
+   "sha256": "b678694143dff34ef55e70ac5e49a0e2ec78147658a16a6d730ab838125c6824",
+   "url": "https://catalog.glendale.edu/programs/HIST%20AA-T/completion-requirements-zaZdl"
+  },
+  "32605": {
+   "sha256": "10bf77976f6b14f6fd1caf7244502e13ab585aa89c7137aa03f3e275d52603e1",
+   "url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl"
+  },
+  "32607": {
+   "sha256": "9eeff6427fbee33541b7ec0e8e4ab0664a2fa4a788c9e4ae293ef08ead7b6282",
+   "url": "https://catalog.glendale.edu/programs/AA-T%20ANTHR/completion-requirements-zaZdl"
+  },
+  "32707": {
+   "sha256": "d32cfcfd04a979d8d5cc52b71bf08ca22b8e817daa42035841f1a7ca839c5a91",
+   "url": "https://catalog.glendale.edu/programs/TA%20AA-T/completion-requirements-zaZdl"
+  },
+  "32738": {
+   "sha256": "1dc0cc1eebd39cde977512342938341e9ae8a6a44876583dbe5b231d8fbc16c6",
+   "url": "https://catalog.glendale.edu/programs/ECE%20AS-T/completion-requirements-zaZdl"
+  },
+  "33294": {
+   "sha256": "f1f04d7858b6fc1d6497d5b9f5bdb1f4a900e3b54cc6aa63a7fe3b9cac733e59",
+   "url": "https://catalog.glendale.edu/programs/AH%20AA-T/completion-requirements-zaZdl"
+  },
+  "33295": {
+   "sha256": "118b0fce9af97d8baca8b519e512210f7ab5a2af2b5db5662c6ff6d72c9d5427",
+   "url": "https://catalog.glendale.edu/programs/JOURN%20AA-T/completion-requirements-zaZdl"
+  },
+  "33598": {
+   "sha256": "f36db6ff11740c6572680159cc8a3a0f0ce3c327c69719a9d5dda1de95c5f7c0",
+   "url": "https://catalog.glendale.edu/programs/SA%20AA-T/completion-requirements-zaZdl"
+  },
+  "33665": {
+   "sha256": "1786d6b3358185881600e7682e2505476a7dc996526b269823150c13a8bcdb6f",
+   "url": "https://catalog.glendale.edu/programs/MSC%20AA-T/completion-requirements-zaZdl"
+  },
+  "33911": {
+   "sha256": "f413c17bdf994ac5dcb466819e66e7350f0e4e4dd9876dd155a8ba3f87648db5",
+   "url": "https://catalog.glendale.edu/programs/MCS-AS/completion-requirements-zaZdl"
+  },
+  "33934": {
+   "sha256": "fe69443a3f2059c480694387fb886fac7b3bf887da7758fff23918b7fd6c699b",
+   "url": "https://catalog.glendale.edu/programs/MCS-C/completion-requirements-zaZdl"
+  },
+  "35029": {
+   "sha256": "f0c2499761f92965c189b1bb1cec5da79a06b53fca0ad5f8ca9e2d62a4841610",
+   "url": "https://catalog.glendale.edu/programs/DCS%20-%20C/completion-requirements-zaZdl"
+  },
+  "35283": {
+   "sha256": "f6e65922a14bbb85cf9143999014ea87009d97dda2ed1efb736d67ef1f7c2677",
+   "url": "https://catalog.glendale.edu/programs/BIO%20AS-T/completion-requirements-zaZdl"
+  },
+  "35473": {
+   "sha256": "f1d178eb6d7f51971278f2684fc2df4a7dbf4c8d25284fba597b72cc3542f190",
+   "url": "https://catalog.glendale.edu/programs/TA%3AACT-AA/completion-requirements-zaZdl"
+  },
+  "35585": {
+   "sha256": "246d70bddd5ac7b8bcc8e2666acd39acb40f65bb94d2b0d68bf3830d0341e191",
+   "url": "https://catalog.glendale.edu/programs/TA-C/completion-requirements-zaZdl"
+  },
+  "35597": {
+   "sha256": "383a8923cd30c891e8dcf602a5a3d471f39010bd110bbb76091967574c6a490e",
+   "url": "https://catalog.glendale.edu/programs/AMA-C/completion-requirements-zaZdl"
+  },
+  "35628": {
+   "sha256": "2f6bc680218b1c12bf603e9466491a00523068a05bccfde9a36f8c7709c75af9",
+   "url": "https://catalog.glendale.edu/programs/AMA-AS/completion-requirements-zaZdl"
+  },
+  "36102": {
+   "sha256": "4950c6ba52529770c707add29a815954ac0630b51ba44726dc57b02315c815aa",
+   "url": "https://catalog.glendale.edu/programs/NCESL3/completion-requirements-zaZdl"
+  },
+  "36107": {
+   "sha256": "7ab48c401f9caf204d2e2678b67f921b24bda7aa4a36582e802c82075c4bbcf9",
+   "url": "https://catalog.glendale.edu/programs/NCESL2/completion-requirements-zaZdl"
+  },
+  "36155": {
+   "sha256": "cd13fc531e2082cd84b6b169a921a28ea24f6231cb1e889732327d5f49bd7f6b",
+   "url": "https://catalog.glendale.edu/programs/ASC-C/completion-requirements-zaZdl"
+  },
+  "36270": {
+   "sha256": "aa007bb9627de54aaa3ed21b3661f77ff8cdcacc3bab8b98a714cadb573f7af2",
+   "url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl"
+  },
+  "36416": {
+   "sha256": "c6630d85e47162af924a2d520aca5f51073ac6d8271d3c50f711083234cc7ca5",
+   "url": "https://catalog.glendale.edu/programs/CE-C/completion-requirements-zaZdl"
+  },
+  "36419": {
+   "sha256": "e8e8fc89c78f4c143e308d8d8064403d7c61a9b7f43c7a7fe26337f7e5e3a99a",
+   "url": "https://catalog.glendale.edu/programs/ETCDD-AS/completion-requirements-zaZdl"
+  },
+  "36424": {
+   "sha256": "04d2c623954d11fcbcbb62a3565080b810ca9150f377104a8467bcc0ec700b95",
+   "url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl"
+  },
+  "36536": {
+   "sha256": "2e05c2f2c8f9e9e142f447ed7350ae68c11d322086b51d97ed58adfe4bb60f23",
+   "url": "https://catalog.glendale.edu/programs/EE-C/completion-requirements-zaZdl"
+  },
+  "36580": {
+   "sha256": "a7fba0a8640214e2a018a9b6bb243ae1e643a382a608992e9998e01614f6ff12",
+   "url": "https://catalog.glendale.edu/programs/BIW-C/completion-requirements-zaZdl"
+  },
+  "36598": {
+   "sha256": "c0a3e0106365dd2eeb7a7d4d60cc7366579bb2cd9e8d62a4c6c09a49ccd5d1c4",
+   "url": "https://catalog.glendale.edu/programs/ITTII%20-%20AS/completion-requirements-zaZdl"
+  },
+  "36600": {
+   "sha256": "c11a6f30322895c4c5b1e920886adbe68f081cc950a6d2eea9c6e00e7dd55512",
+   "url": "https://catalog.glendale.edu/programs/ITTIII-%20AS/completion-requirements-zaZdl"
+  },
+  "36667": {
+   "sha256": "0b1d7c7051d0d9d8bf4f3af664f021a0344c5a0d74a0cab887a10d6cb9e81879",
+   "url": "https://catalog.glendale.edu/programs/ITALL%20-%20C/completion-requirements-zaZdl"
+  },
+  "36710": {
+   "sha256": "f3767efce249224ac5113a68db7d6324cc3c10b632c5ceeaa0b45aa29657b140",
+   "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20AA/completion-requirements-zaZdl"
+  },
+  "36711": {
+   "sha256": "11d1dd8ac32057ae3e4af7abeb16e89a663962850133a4541ff3b706baa999f4",
+   "url": "https://catalog.glendale.edu/programs/FRENL%20-%20AA/completion-requirements-zaZdl"
+  },
+  "36712": {
+   "sha256": "6788b8b88351babe957fc65f1a330181e3ca7bcea6217bf3c40eb89360b8fe56",
+   "url": "https://catalog.glendale.edu/programs/ITALL%20-%20AA/completion-requirements-zaZdl"
+  },
+  "36713": {
+   "sha256": "a17698439626d2ae8f77800abd888493d5292ebda6045c731b1eecd0af6be5d4",
+   "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20AA/completion-requirements-zaZdl"
+  },
+  "36714": {
+   "sha256": "ba945c88d4ed8625ca781aac68adac7da8ca772691f781b866b8a9bc4e53b63d",
+   "url": "https://catalog.glendale.edu/programs/SPANL%20-%20AA/completion-requirements-zaZdl"
+  },
+  "36717": {
+   "sha256": "9be4bfc5efe13f0e3f2141cdf54498cfc83749cdd83573bb754f37658e305011",
+   "url": "https://catalog.glendale.edu/programs/ARMNL%20-%20C/completion-requirements-zaZdl"
+  },
+  "36720": {
+   "sha256": "a37611a2d50814d7f28bf7013c6737b7e8c98754fc54051d9fa7a4182b34f3b6",
+   "url": "https://catalog.glendale.edu/programs/FRENL%20-%20C/completion-requirements-zaZdl"
+  },
+  "36722": {
+   "sha256": "159d3a0e609f2f1a966764f6de99fc22bb41a94e3c10d89ac93284900d5cd2f4",
+   "url": "https://catalog.glendale.edu/programs/PSPHY%20-%20AS/completion-requirements-zaZdl"
+  },
+  "36723": {
+   "sha256": "eaee7157e2238e079dbde54417bf2448010504f55359255d6d3420376a76fe23",
+   "url": "https://catalog.glendale.edu/programs/PSES%20-%20AS/completion-requirements-zaZdl"
+  },
+  "36724": {
+   "sha256": "a6f0fe6ee8a8bb7545a7592f09676e89e60d2d11bca81de43cd05aa714f65d50",
+   "url": "https://catalog.glendale.edu/programs/PSCHM%20-AS/completion-requirements-zaZdl"
+  },
+  "36725": {
+   "sha256": "2036c6135ba4a44f7d21ccc6762641d1646d2a7efb9c2260716743c8a0310dac",
+   "url": "https://catalog.glendale.edu/programs/PSAST%20-%20AS/completion-requirements-zaZdl"
+  },
+  "36726": {
+   "sha256": "050cfcd6b734923a141c0b148503aaa84bb7005180b5c3b46497ccc43a54ddf2",
+   "url": "https://catalog.glendale.edu/programs/JAPNL%20-%20C/completion-requirements-zaZdl"
+  },
+  "36727": {
+   "sha256": "e51fdce1ebaeb428cdcff99aae8e87f1753b083847c53b8f56ac8a1e03d67e0f",
+   "url": "https://catalog.glendale.edu/programs/SPANL%20-%20C/completion-requirements-zaZdl"
+  },
+  "36728": {
+   "sha256": "24a686f91f86d7842d85cf6bff409182afba00391b2cafb3f61db9687e0dfab1",
+   "url": "https://catalog.glendale.edu/programs/CW%20-%20C/completion-requirements-zaZdl"
+  },
+  "37070": {
+   "sha256": "31aa4d3fb93457066bf1525ca785f5a57473f5a568dfe87e659ea5d9edc6e46b",
+   "url": "https://catalog.glendale.edu/programs/CIS-C/completion-requirements-zaZdl"
+  },
+  "37071": {
+   "sha256": "29f55b43fbe2294b8577b6883f9476934fd8a75bacc0f430e9f72d97809d5976",
+   "url": "https://catalog.glendale.edu/programs/IT-AS/completion-requirements-zaZdl"
+  },
+  "37854": {
+   "sha256": "30995b809cd42faea428985ea734f45828f0e1fef9b3e2980f3acb8208ec8889",
+   "url": "https://catalog.glendale.edu/programs/COMPEN-AS/completion-requirements-zaZdl"
+  },
+  "37855": {
+   "sha256": "5b90754e28a984e16d888706b8a3f128aa0a90cdd79a0bc92c6ddfee22922e59",
+   "url": "https://catalog.glendale.edu/programs/CE-AS/completion-requirements-zaZdl"
+  },
+  "37856": {
+   "sha256": "a5a7a0832b6ba9c754cc493f3f3dd2709f0de6df6d52d88d7eda22ad0558bf34",
+   "url": "https://catalog.glendale.edu/programs/EE-AS/completion-requirements-zaZdl"
+  },
+  "37857": {
+   "sha256": "76cd66480226dcf4c8a3407474362c0428e55f145cc27066500cbccba853b85f",
+   "url": "https://catalog.glendale.edu/programs/ME-AS/completion-requirements-zaZdl"
+  },
+  "37952": {
+   "sha256": "43dbde7220d5ff020d7c0be316c248bd2a41492f86f81646bc6e4e6e3dd46c52",
+   "url": "https://catalog.glendale.edu/programs/ETE-AAT/completion-requirements-zaZdl"
+  },
+  "38144": {
+   "sha256": "68cca575a3f5145ba1c40516f18e7c93922687ab1c62e689c8fcbbf517662390",
+   "url": "https://catalog.glendale.edu/programs/ENG%3ACW-AA/completion-requirements-zaZdl"
+  },
+  "38717": {
+   "sha256": "e110e6d3ed58c23e81bf441df2ec7bcb28f53e3adedc0cbda29a10ddb78d7ed5",
+   "url": "https://catalog.glendale.edu/programs/SJGS-AAT/completion-requirements-zaZdl"
+  },
+  "39285": {
+   "sha256": "ee22de90373ea84a2c0158a9fe63c129362d8ad1df9093342b2dfc1d18c1b288",
+   "url": "https://catalog.glendale.edu/programs/ECON-AAT/completion-requirements-zaZdl"
+  },
+  "39289": {
+   "sha256": "eebd00f09e640db7817ee6f1d4462c9ff4e365c3743f9355572ff5a9607361bd",
+   "url": "https://catalog.glendale.edu/programs/SWHS-AAT/completion-requirements-zaZdl"
+  },
+  "39406": {
+   "sha256": "8ed98ca280aa2ab473e78edd782782151abf538a78f365db7a21f48409d72587",
+   "url": "https://catalog.glendale.edu/programs/FLS-AA/completion-requirements-zaZdl"
+  },
+  "39905": {
+   "sha256": "d4b63af1756ae0cb37d5281b0f9ff39af5c2a4da7f9b4d3c88b34353805a4793",
+   "url": "https://catalog.glendale.edu/programs/FITS-AS/completion-requirements-zaZdl"
+  },
+  "39910": {
+   "sha256": "8ea032ac19774c256d339ffbc15118405653821f0c3321bd8db71c72c3c1731b",
+   "url": "https://catalog.glendale.edu/programs/SPCO-AS/completion-requirements-zaZdl"
+  },
+  "39912": {
+   "sha256": "46a308d334e90fac490fb864f6f6460a053b98b92e087f9711588ebc60c50eae",
+   "url": "https://catalog.glendale.edu/programs/SPCO-C/completion-requirements-zaZdl"
+  },
+  "40808": {
+   "sha256": "7ab96d329a4b84104dffe48b8055114e503cc0d8b7cd7ce518ff84ed0e1bc206",
+   "url": "https://catalog.glendale.edu/programs/TK-C/completion-requirements-zaZdl"
+  },
+  "40814": {
+   "sha256": "57cd82823e63662c0b04838e1ff51bdbad6317478debf5d5a485c9af1eba7694",
+   "url": "https://catalog.glendale.edu/programs/GEOL-AST/completion-requirements-zaZdl"
+  },
+  "40863": {
+   "sha256": "66395a26035ea79ca0c48dd406645c6b30fad6f0ba67bd7f16c91a2a01eda991",
+   "url": "https://catalog.glendale.edu/programs/MATH-AS/completion-requirements-zaZdl"
+  },
+  "41379": {
+   "sha256": "433c09da59f71d641a181b274876ce4c4ac0506524133cefe15260226cd73ff4",
+   "url": "https://catalog.glendale.edu/programs/CCF-C/completion-requirements-zaZdl"
+  },
+  "41573": {
+   "sha256": "305ebe22d1542b14382acd97d8ac2f7082fb9a595b9c8e04b6c7276b28e307bb",
+   "url": "https://catalog.glendale.edu/programs/ITT-C/completion-requirements-zaZdl"
+  },
+  "41650": {
+   "sha256": "e7d8957b6b44708b1f9edaed626bcebd06b5d874bab9998d2bb5553ff10b553b",
+   "url": "https://catalog.glendale.edu/programs/CN-CERT/completion-requirements-zaZdl"
+  },
+  "41651": {
+   "sha256": "41dacb4e6a908fbf46a3b87eb8f9f6daf4dba227f656f0dee07dd8b1dad95af2",
+   "url": "https://catalog.glendale.edu/programs/CYBERSP-C/completion-requirements-zaZdl"
+  },
+  "41729": {
+   "sha256": "5adb9f42eb1cd2cca9959bc9daa47d126e8b32e0b39f0c399d376977a0878960",
+   "url": "https://catalog.glendale.edu/programs/HA-AS/completion-requirements-zaZdl"
+  },
+  "41730": {
+   "sha256": "b2acdf1a5ba2444eb958bc5c5e8885553c797dcb3cd50b80705a4d352e334909",
+   "url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl"
+  },
+  "41767": {
+   "sha256": "9944c8b6ebc24eeac5dfb542b5878f48f8c2cd26479763cafa8590bd91226472",
+   "url": "https://catalog.glendale.edu/programs/BT-AS/completion-requirements-zaZdl"
+  },
+  "41768": {
+   "sha256": "91e49bf0342986261f77a1e2b5f91c1a564831500e8224283d8c085e0fed86ee",
+   "url": "https://catalog.glendale.edu/programs/BTRA-C/completion-requirements-zaZdl"
+  },
+  "41775": {
+   "sha256": "f2773c628b38b7d6769c51f867d57c57540f7cb2bdf4d8b3380552a1ffe2fccc",
+   "url": "https://catalog.glendale.edu/programs/BT-C/completion-requirements-zaZdl"
+  },
+  "41776": {
+   "sha256": "c80e28fc8d2af4a50ba42e9d96dbd413816d52e25f8d5b1933c5ab877c20717a",
+   "url": "https://catalog.glendale.edu/programs/BTRT-C/completion-requirements-zaZdl"
+  },
+  "41825": {
+   "sha256": "c227899a950ce38c6e1368f9427c2008a39174710451e1e683924a6550ad15db",
+   "url": "https://catalog.glendale.edu/programs/PL-C/completion-requirements-zaZdl"
+  },
+  "41826": {
+   "sha256": "417da20ea11e06306deeaf921f1e1357a67067a59603123bc779c81bf0325cbe",
+   "url": "https://catalog.glendale.edu/programs/DIGPT-C/completion-requirements-zaZdl"
+  },
+  "41827": {
+   "sha256": "badfc2b21a3ad38efa4ebe1d78febc8268a3b48e0ce2537e7fc6a2bc4268ba6e",
+   "url": "https://catalog.glendale.edu/programs/DP-C/completion-requirements-zaZdl"
+  },
+  "41828": {
+   "sha256": "7bc865464bf6ddb0958f0b41fe710c33834d10412ff6c70cb1bb3379c009cb6a",
+   "url": "https://catalog.glendale.edu/programs/DRNP-C/completion-requirements-zaZdl"
+  },
+  "42126": {
+   "sha256": "cfb26f7a5ac777991290d55b9929c5a10fc88bf6cd2bdffbf0593160430b7b75",
+   "url": "https://catalog.glendale.edu/programs/DP-AS/completion-requirements-zaZdl"
+  },
+  "42378": {
+   "sha256": "a6e03e748fb79c672568a9ca029b99f37e809efd98196bd835c63c04768b7960",
+   "url": "https://catalog.glendale.edu/programs/TPH-C/completion-requirements-zaZdl"
+  },
+  "42738": {
+   "sha256": "0e64d02ccddff4c65587c388f231bbefa17bb46f0b34407d136be85864388239",
+   "url": "https://catalog.glendale.edu/programs/DCS-AS/completion-requirements-zaZdl"
+  },
+  "43038": {
+   "sha256": "ae6a31dcfa0b066e62ef71819fdd213b0a13d099230d6e5b0a2b5e4282f7e8b2",
+   "url": "https://catalog.glendale.edu/programs/BA2.0-AST/completion-requirements-zaZdl"
+  },
+  "44351": {
+   "sha256": "c7f859ee443bb792b33fa85b878b6dca35798cd86b4cc52a3fb086962e94a22a",
+   "url": "https://catalog.glendale.edu/programs/IEAC-C/completion-requirements-zaZdl"
+  },
+  "44359": {
+   "sha256": "f61009fd8c13c2101274741c6975f7d9b43c8ce1cab92b2dfbf560f472ab5e9e",
+   "url": "https://catalog.glendale.edu/programs/PARAMED-C/completion-requirements-zaZdl"
+  },
+  "44360": {
+   "sha256": "c73aa86aa802b799f46d1459d3b07949bc2c75464c60b236672c7405d3e6b8d0",
+   "url": "https://catalog.glendale.edu/programs/AEBEM-C/completion-requirements-zaZdl"
+  },
+  "44484": {
+   "sha256": "c92d849e7e635ca9f4a1408a43a722d4abee54dc80b813652b7ac5fbf96ce496",
+   "url": "https://catalog.glendale.edu/programs/AEHWPS-C/completion-requirements-zaZdl"
+  },
+  "44485": {
+   "sha256": "8f9dfc907bebd9bae10fa86915f694dce35c9c21659fd381fe44f559afff38e6",
+   "url": "https://catalog.glendale.edu/programs/AEITA-C/completion-requirements-zaZdl"
+  },
+  "44486": {
+   "sha256": "18308561a5c80e3fe957b3a2ede0706ff15398b8581a31700921205b46056aae",
+   "url": "https://catalog.glendale.edu/programs/AELC-C/completion-requirements-zaZdl"
+  },
+  "44487": {
+   "sha256": "53dc0385de102f4ce10e9960858b371a2b6d479b692d48f4166491a2d6b96b58",
+   "url": "https://catalog.glendale.edu/programs/AEPPP-C/completion-requirements-zaZdl"
+  },
+  "44488": {
+   "sha256": "81699870b42f6d6c619a077aaee519f9a9e71f2de91a0b1417924e28168ec673",
+   "url": "https://catalog.glendale.edu/programs/AESTEM-C/completion-requirements-zaZdl"
+  },
+  "44489": {
+   "sha256": "a1fc0985cd7f5c42cab0462d76e73961f72ec92dc42bbd4ff4a4b7f829472f7e",
+   "url": "https://catalog.glendale.edu/programs/AEVPA-C/completion-requirements-zaZdl"
+  },
+  "44568": {
+   "sha256": "af17c7c998ebecf69d70029d3770efa3ccb8c4dbdd81a33cb77fa2b947c50bd3",
+   "url": "https://catalog.glendale.edu/programs/DFP-AA/completion-requirements-zaZdl"
+  },
+  "44569": {
+   "sha256": "10b1c30b56dd207faed69b7b7976253fdbb8e054c893002039bb609677733ea5",
+   "url": "https://catalog.glendale.edu/programs/DFP-C/completion-requirements-zaZdl"
+  },
+  "44570": {
+   "sha256": "f53d6e2abd74cb454292d70eb02cfd956339e797ba0c92de0f7c092b87f01d06",
+   "url": "https://catalog.glendale.edu/programs/FS-AA/completion-requirements-zaZdl"
+  },
+  "44571": {
+   "sha256": "f646e0f1640f5236d90cc63174bd6ef9813030bda13c5ef0149219ae5385f269",
+   "url": "https://catalog.glendale.edu/programs/FS-C/completion-requirements-zaZdl"
+  },
+  "44572": {
+   "sha256": "14010a58ecdf6b0ad1e1ad03f6caf13ae8448a4c99b21e4f2d46b85b3123b7fd",
+   "url": "https://catalog.glendale.edu/programs/GL-C/completion-requirements-zaZdl"
+  },
+  "44640": {
+   "sha256": "70fcde05bd7c4727b043e53395d77fb5dbdaf1807ef0ea3d264e9b8182dcad81",
+   "url": "https://catalog.glendale.edu/programs/DS-AS/completion-requirements-zaZdl"
+  },
+  "44773": {
+   "sha256": "9678a319547c4c8de7cc0f4ad2d3e0c8a4b91c6e367c0951bb80326c178fd037",
+   "url": "https://catalog.glendale.edu/programs/MUSHI-C/completion-requirements-zaZdl"
+  },
+  "44774": {
+   "sha256": "22eaca5446659a0c71bc3a0e8554574733a2e4767804da55729aa40fb593394b",
+   "url": "https://catalog.glendale.edu/programs/MUSTH-C/completion-requirements-zaZdl"
+  },
+  "44775": {
+   "sha256": "6e9597b8eabedaab9993d92dacbcd07db5c15f8ab29f40dad8fd0cf791e4f9bb",
+   "url": "https://catalog.glendale.edu/programs/PIANO-C/completion-requirements-zaZdl"
+  },
+  "44951": {
+   "sha256": "a279c7c6b123bd48e1e73b089837bd1162605686b65791ee275a3d5d82cc70d1",
+   "url": "https://catalog.glendale.edu/programs/COM2.0-AAT/completion-requirements-zaZdl"
+  },
+  "45057": {
+   "sha256": "9cbf5059a5b616a807a10b743279489af159a9291dd791e5b0944175aca1b2af",
+   "url": "https://catalog.glendale.edu/programs/SMM1-C/completion-requirements-zaZdl"
+  },
+  "45068": {
+   "sha256": "07d9214879c9480f98151cecd296d017e67f8c22cea112133c915fd35a4b0bc8",
+   "url": "https://catalog.glendale.edu/programs/CALGETC/completion-requirements-zaZdl"
+  },
+  "45101": {
+   "sha256": "9b25b726bdac60188026bb3ec79e48ad42106e2f9282ba6f955352d2e82edc3a",
+   "url": "https://catalog.glendale.edu/programs/DATA-C/completion-requirements-zaZdl"
+  },
+  "45108": {
+   "sha256": "8f44c69dcfc67b9f0f6eb29c3746d09ef13da084dd58a77c37c400e60777bec6",
+   "url": "https://catalog.glendale.edu/programs/PH-AST/completion-requirements-zaZdl"
+  },
+  "45150": {
+   "sha256": "d48704fdfae2a65476e05f490f5de94819e03986d4d07af3e4f74080af80dd25",
+   "url": "https://catalog.glendale.edu/programs/ND-AST/completion-requirements-zaZdl"
+  },
+  "45211": {
+   "sha256": "bd09431c186bd9102641f4c3de4cf5f6501ec876c30b016143c54fe17ebcfae6",
+   "url": "https://catalog.glendale.edu/programs/V-C/completion-requirements-zaZdl"
+  },
+  "45212": {
+   "sha256": "d2028b5a74affb838b0622236b259643a22182c69e75cf73dbaf5d1268f1dcce",
+   "url": "https://catalog.glendale.edu/programs/WM-C/completion-requirements-zaZdl"
+  },
+  "45393": {
+   "sha256": "6e086560eee53ad2eddb519b5571d20c1edab42055905bd14d6721567b47e142",
+   "url": "https://catalog.glendale.edu/programs/SMM2-C/completion-requirements-zaZdl"
+  },
+  "45394": {
+   "sha256": "015cbe77f53d2adcbe3113aad1bc51d0d8e79801f42ccee9623d76a5f6b13ee8",
+   "url": "https://catalog.glendale.edu/programs/MRKTI-C/completion-requirements-zaZdl"
+  },
+  "45395": {
+   "sha256": "8d4239e92a8cfb3b453a379d2a05102c4b4b56e64128703dd19ba5aa9e824bc6",
+   "url": "https://catalog.glendale.edu/programs/MGMTI-C/completion-requirements-zaZdl"
+  },
+  "45396": {
+   "sha256": "31f365b44295111cce9c637cc3372c4eb3171b20546d3608a5ad359646cfba5b",
+   "url": "https://catalog.glendale.edu/programs/HRAI-C/completion-requirements-zaZdl"
+  },
+  "45397": {
+   "sha256": "e2b32cb310672ab846e78fb65cfa5cf5072237bde2b7e8b17215834a19c0dd06",
+   "url": "https://catalog.glendale.edu/programs/FP%26II-C/completion-requirements-zaZdl"
+  },
+  "45399": {
+   "sha256": "9f60943371c28d3663e846a26998936d465dbce97905c71eea1fd9abc3e981c6",
+   "url": "https://catalog.glendale.edu/programs/E%2FSBI-C/completion-requirements-zaZdl"
+  },
+  "45596": {
+   "sha256": "a732b5e77437d50161c84abd606e00315afac43d2664ac63ac8001bcefbecde4",
+   "url": "https://catalog.glendale.edu/programs/INTAD-C/completion-requirements-zaZdl"
+  },
+  "45681": {
+   "sha256": "0ecb91bebff35cea28129692f0647f5f8be0ab1406c798b58fde5fc9f686817b",
+   "url": "https://catalog.glendale.edu/programs/IPI-C/completion-requirements-zaZdl"
+  },
+  "45682": {
+   "sha256": "8ea25b942c1c5d148c786966d56c1c6dbf789efce27900eb3ac77dc338446f87",
+   "url": "https://catalog.glendale.edu/programs/IBI-C/completion-requirements-zaZdl"
+  },
+  "45854": {
+   "sha256": "9aa2462086f1ca16d8881b68eebccf6437d26360f5a27aa64f9e338608138b0c",
+   "url": "https://catalog.glendale.edu/programs/NCMOF/completion-requirements-zaZdl"
+  },
+  "45996": {
+   "sha256": "5ba1b4774dd5e3ef56d35f1cbc8cd8c1e7716615cbe972cd7732afe33f0c24c8",
+   "url": "https://catalog.glendale.edu/programs/CCAM-C/completion-requirements-zaZdl"
+  },
+  "46004": {
+   "sha256": "7119e5ce4f26bd44ebad675488fd8f7a7a6774e8127e3823c43df52a95e682f9",
+   "url": "https://catalog.glendale.edu/programs/CCLY-C/completion-requirements-zaZdl"
+  },
+  "46050": {
+   "sha256": "a5e89639e73c7fcfedd2645e1331f2e66bf5eb780e98461a7c9d36e4273f05e9",
+   "url": "https://catalog.glendale.edu/programs/CCMA-C/completion-requirements-zaZdl"
+  },
+  "46051": {
+   "sha256": "40bd6bbd8c7acea07dc630e1096b30f4730ac4d541b6a749675fe9391007c76a",
+   "url": "https://catalog.glendale.edu/programs/ENTA-C/completion-requirements-zaZdl"
+  },
+  "46052": {
+   "sha256": "780e4b4648a20f435e82ce3d47ea43af9b0a39a937a4c6ec209c1b53b22b06a1",
+   "url": "https://catalog.glendale.edu/programs/ENTL-C/completion-requirements-zaZdl"
+  },
+  "46053": {
+   "sha256": "0cd80f93b54387d3d48d74353f77222e287ecd576b0854bcabbc54601610305b",
+   "url": "https://catalog.glendale.edu/programs/FTP-C/completion-requirements-zaZdl"
+  },
+  "46054": {
+   "sha256": "589ebf34df00feebb79c58b2da28bc19877ff76f2e17ad04d823b7c958d2bed8",
+   "url": "https://catalog.glendale.edu/programs/ENTG-C/completion-requirements-zaZdl"
+  }
+ },
+ "staged_from": {
+  "run": "43384599013",
+  "proof": "the filed account equal but for its run, and 238 programs at their address and coverage",
+  "pages_loaded": 0
+ },
+ "run": "43415972509"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Fire Technology",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=104",
+ "source_url": "https://catalog.glendale.edu/programs/FT-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8051,
+  "input_tokens": 6729,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8051,
-    "output_tokens": 2158,
+    "input_tokens": 6729,
+    "output_tokens": 1223,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,65 +30,50 @@
     "model": null
    }
   ],
-  "output_tokens": 2158,
+  "output_tokens": 1223,
   "output_tokens_details": {
-   "thinking_tokens": 601
+   "thinking_tokens": 213
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07536,
- "ms": 16907,
- "seconds": 17.4,
+ "cost_usd": 0.05138,
+ "ms": 10534,
+ "seconds": 10.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 14,
-   "share": 0.929,
-   "missing": [
-    "EMT140"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 7,
-   "codes": [
-    "ADMJ117",
-    "FIRE107",
-    "FIRE109",
-    "FIRE110",
-    "FIRE111",
-    "FIRE115",
-    "FIRE151"
-   ],
-   "flagged": [
-    "ADMJ117",
-    "FIRE107",
-    "FIRE109",
-    "FIRE110",
-    "FIRE111",
-    "FIRE115",
-    "FIRE151"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     27.0,
     27.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 27.0-27.0; the catalog states 27.0-30.0"
    ]
   },
   "repeated": {
@@ -96,22 +81,19 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 2,
-   "not_verbatim": [
-    "fire prevention",
-    "fire fighting"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -120,11 +102,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "FIRE TECHNOLOGY CERTIFICATE",
+   "section_heading": "FT-C - Fire Technology - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -141,17 +123,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Upon completion of this program, students will discuss the skills required for fire prevention techniques; discuss the aspects of fire behavior; discuss the skills required for fire-fighting tactics and strategy; and discuss the skills required for the use of equipment used in fire protection."
-   ],
-   "careers": [
-    "fire prevention",
-    "fire fighting"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -162,35 +139,42 @@
     "courses": [
      {
       "code": "FIRE 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 102",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 103",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 104",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 105",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FIRE 106",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -198,9 +182,9 @@
     ]
    },
    {
-    "name": "A minimum of twelve units from the following courses",
+    "name": "CHOOSE A MINIMUM OF NINE UNITS FROM THE FOLLOWING",
     "rule": "choose_units",
-    "minimum": 12,
+    "minimum": 9,
     "option_group": null,
     "stated": {
      "min": null,
@@ -208,193 +192,71 @@
     },
     "courses": [
      {
-      "code": "FIRE 106",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "FIRE 107",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "FIRE 108",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     },
-     {
-      "code": "FIRE 109",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "FIRE 110",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "FIRE 111",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
       "code": "FIRE 112",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 114",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FIRE 115",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
       "code": "FIRE 116",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 117",
-      "units": 12.0,
+      "units": 12,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 118",
-      "units": 7.0,
+      "units": 7,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FIRE 119",
-      "units": 12.0,
+      "units": 12,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "FIRE 151",
-      "units": null,
+      "code": "EMT 140",
+      "units": 8.5,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ADMJ 117",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "EMT 140",
-    "why": "named only in the Verdugo Fire Academy and Verdugo Recruit Fire Academy sections, not in the Fire Technology certificate section"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside any course and no total for the certificate; units fields are null and total_units is null (not computed).",
-   "The Fire Technology section is headed 'CERTIFICATE' (not explicitly 'Certificate of Achievement'); the section text says 'This degree or certificate'. Reviewer should confirm this is the Certificate of Achievement named in the state file.",
-   "The note 'Students can also earn an AS by completing the General Education requirements' refers to a degree; no GE pattern is named for this certificate.",
-   "Program learning outcomes are printed as a single sentence with a semicolon-separated list; recorded as one entry with its lead-in, since splitting would alter the printed text. Ligature/spacing artifacts in the PDF text (e.g., 'ﬁ re') were normalized to 'fire'.",
-   "FIRE 107, 109, 110, 111, 115, 151 and ADMJ 117 appear in the elective list but are not in the closed list; marked as catalog additions."
+   "The page shows a 'Program Learning Outcomes' tab heading, but no outcomes are printed in the provided text; outcomes left empty.",
+   "Catalog states total 27-30 units (Minimum 27, Maximum 30), while the award type is listed as 16 to fewer than 30 units; the 30-unit maximum may exceed that award range — reviewer should check.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "FIRE 101": [
-     3.0,
-     3.0
-    ],
-    "FIRE 102": [
-     3.0,
-     3.0
-    ],
-    "FIRE 103": [
-     3.0,
-     3.0
-    ],
-    "FIRE 104": [
-     3.0,
-     3.0
-    ],
-    "FIRE 105": [
-     3.0,
-     3.0
-    ],
-    "FIRE 106": [
-     3.0,
-     3.0
-    ],
-    "FIRE 108": [
-     3.0,
-     3.0
-    ],
-    "FIRE 112": [
-     3.0,
-     3.0
-    ],
-    "FIRE 114": [
-     3.0,
-     3.0
-    ],
-    "FIRE 116": [
-     4.0,
-     4.0
-    ],
-    "FIRE 117": [
-     12.0,
-     12.0
-    ],
-    "FIRE 118": [
-     7.0,
-     7.0
-    ],
-    "FIRE 119": [
-     12.0,
-     12.0
-    ],
-    "ADMJ 117": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

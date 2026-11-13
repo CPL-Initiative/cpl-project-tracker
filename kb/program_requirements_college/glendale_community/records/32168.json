@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Administration of Justice",
  "award": "A.S. T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=116",
+ "source_url": "https://catalog.glendale.edu/programs/AS-T%20ADMJ/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12687,
+  "input_tokens": 7230,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12687,
-    "output_tokens": 2573,
+    "input_tokens": 7230,
+    "output_tokens": 2228,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2573,
+  "output_tokens": 2228,
   "output_tokens_details": {
-   "thinking_tokens": 841
+   "thinking_tokens": 627
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10221,
- "ms": 20117,
- "seconds": 20.7,
+ "cost_usd": 0.07348,
+ "ms": 17767,
+ "seconds": 18.0,
  "parts": null,
  "error": null,
  "score": {
@@ -69,24 +69,43 @@
    ],
    "stated": [
     18.0,
-    19.0
+    21.0
    ],
    "against": "program",
    "why": [],
-   "meets": true
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     21.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     39.0,
+     42.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -95,20 +114,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AS-T — ADMINISTRATION OF JUSTICE",
+   "section_heading": "AS-T ADMJ - Administration of Justice - Associate in Science for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18,
-    "max": 19
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -117,24 +133,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Identify major topics, developments, debates, and issues in the field of administration of justice.",
-    "Apply their knowledge of key concepts in administration of justice to discuss, analyze, and synthesize a variety of theoretical and practical foci within the discipline.",
-    "Gain a global, national, and local perspective on issues pertaining to the administration of justice preparing them for multiple pathways for future study and career opportunities."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -145,14 +157,14 @@
     "courses": [
      {
       "code": "ADMJ 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 103",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -160,46 +172,46 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "LIST A - CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "ADMJ 116",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 118",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 160",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 165",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -207,99 +219,99 @@
     ]
    },
    {
-    "name": "List B",
+    "name": "LIST B - CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "ADMJ 107",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 110",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 117",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 129",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 134",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 170",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ADMJ 201",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYC C1000",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC C1000H",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
       "catalog_addition": false
      },
      {
-      "code": "PSYCH 200",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "POLS C1000",
-      "units": 3.0,
+      "code": "PSYC 200",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 101H",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -314,24 +326,22 @@
      },
      {
       "code": "ECON 127",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STAT C1000",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [
        {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
         "code": "STAT C1000E",
-        "units": 5.0,
+        "units": 5,
         "catalog_addition": false
        },
        {
         "code": "STAT C1000H",
-        "units": 4.0,
+        "units": 4,
         "catalog_addition": false
        }
       ],
@@ -341,54 +351,14 @@
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "PSYC 200",
-    "why": "catalog prints it as \"PSYCH 200\" in List B, recorded as printed; likely the same course"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses; course units left null.",
-   "List B also allows any List A course not already used above (ADMJ 116, 118, 120, 160, 165); these are recorded once, in List A.",
-   "\"PSYCH 200\" appears to be a typo for PSYC 200 (Research Methods for Psychology); recorded as printed with catalog_addition true. Reviewer should confirm.",
-   "Required Units for Major 18-19 units carries an asterisk whose footnote is not in the provided text.",
-   "No general education pattern or degree total is printed in this section.",
-   "PDF text extraction has spacing artifacts (e.g., 'SOC 1 0 1 or 1 0 1 H, 200'); SOC 200 read from the 'SOC 101 or 101H, 200' sequence."
+   "List B also allows 'Any List A course not already used' (3 units); this is not a specific code and is not recorded as a course entry, and List A courses are not duplicated in List B.",
+   "The STAT C1000/C1000E/C1000H option is printed with units '4-5'; recorded per alternative as STAT C1000 4, STAT C1000E 5, STAT C1000H 4 (the 5 for C1000E inferred from the 4-5 range and the state file).",
+   "degree_total 60 is taken from the page field 'Minimum Required Units for Degree (with GE)'; it is a minimum, and no GE pattern or GE units are named on this page.",
+   "The page shows a 'Program Learning Outcomes' tab but no outcomes are printed in the provided text; outcomes left empty.",
+   "No careers are named in the text."
   ]
  },
- "extracted_run": 41049220135,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "PSYC C1000": [
-     3.0,
-     3.0
-    ],
-    "PSYC C1000H": [
-     3.0,
-     3.0
-    ],
-    "POLS C1000": [
-     3.0,
-     3.0
-    ],
-    "STAT C1000": [
-     4.0,
-     4.0
-    ],
-    "STAT C1000E": [
-     5.0,
-     5.0
-    ],
-    "STAT C1000H": [
-     4.0,
-     4.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

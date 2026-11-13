@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Animation, Visual Effects, and Game Design",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+ "source_url": "https://catalog.glendale.edu/programs/AVGD-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 10204,
+  "input_tokens": 6799,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 10204,
-    "output_tokens": 1989,
+    "input_tokens": 6799,
+    "output_tokens": 1547,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1989,
+  "output_tokens": 1547,
   "output_tokens_details": {
-   "thinking_tokens": 708
+   "thinking_tokens": 264
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0806,
- "ms": 16407,
- "seconds": 21.2,
+ "cost_usd": 0.05814,
+ "ms": 12896,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
@@ -83,12 +83,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ANIMATION, VISUAL EFFECTS, AND GAME DESIGN AS DEGREE OR CERTIFICATE",
+   "section_heading": "AVGD-C - Animation, Visual Effects, and Game Design - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -125,15 +125,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Create 2-D and 3-D character designs, storyboards, or animations.",
-    "Create video game play levels or assets."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -144,21 +141,21 @@
     "courses": [
      {
       "code": "ART 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 150",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 152",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -166,10 +163,10 @@
     ]
    },
    {
-    "name": "Animation Design",
+    "name": "Option 1: 2-D Animation Design",
     "rule": "all",
     "minimum": null,
-    "option_group": "Select one of the following options",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -177,28 +174,28 @@
     "courses": [
      {
       "code": "ART 201",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 205",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 209",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 210",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -206,10 +203,10 @@
     ]
    },
    {
-    "name": "Digital Character Design",
+    "name": "Option 2: 3-D Digital Character Design",
     "rule": "all",
     "minimum": null,
-    "option_group": "Select one of the following options",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -217,28 +214,28 @@
     "courses": [
      {
       "code": "ART 231",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 232",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 245",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 246",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -246,10 +243,10 @@
     ]
    },
    {
-    "name": "Character Rigging & Animation",
+    "name": "Option 3: 3-D Character Rigging and Animation",
     "rule": "all",
     "minimum": null,
-    "option_group": "Select one of the following options",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -257,21 +254,21 @@
     "courses": [
      {
       "code": "ART 233",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 234",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 235",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -282,43 +279,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the certificate ('AS DEGREE OR CERTIFICATE'); the requirements, the 18-21 unit total and the outcomes are shared by both awards.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "The catalog prints 'ART 246'; the closed list stores it as 'ART246'. These were treated as the same course, so it is not marked as a catalog addition.",
-   "ART 130 appears in the required courses but is not in the closed list, so it is marked as a catalog addition.",
-   "The third option's name prints as 'Character Rigging ӕ Animation' in the extracted text, which appears to be a garbled ampersand. It was recorded as 'Character Rigging & Animation'.",
-   "The outcome text was extracted with spurious spacing (e.g. 'd esi gns , sto ryboards'); the words were rejoined without other changes. The second outcome is read as a separate sentence after the shared lead-in."
+   "ART 246 is printed with a space in the catalog; the closed list stores it as 'ART246' with no units. Treated as the same course (catalog_addition false).",
+   "ART 130 (2-D Foundation) is required by the catalog but is not in the closed list; recorded as a catalog addition.",
+   "Catalog prints Minimum 18 / Maximum 21 units and 'TOTAL UNITS REQUIRED 18-21'; Options 1 and 2 total 12 units each and Option 3 totals 9 units, consistent with 18-21 with the 9-unit core.",
+   "Catalog title for ART 232 reads 'Intermediate 3-D Hard Surface Design I'.",
+   "No program learning outcomes or careers appear in the provided text (only the Completion Requirements tab was captured)."
   ]
  },
- "extracted_run": 41040709338,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ART 130": [
-     3.0,
-     3.0
-    ],
-    "ART 245": [
-     3.0,
-     3.0
-    ],
-    "ART 246": [
-     3.0,
-     3.0
-    ],
-    "ART 233": [
-     3.0,
-     3.0
-    ],
-    "ART 235": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

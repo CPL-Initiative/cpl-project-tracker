@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Development: School-Age Care",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+ "source_url": "https://catalog.glendale.edu/programs/CDSACT-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7868,
+  "input_tokens": 6755,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7868,
-    "output_tokens": 2688,
+    "input_tokens": 6755,
+    "output_tokens": 1089,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2688,
+  "output_tokens": 1089,
   "output_tokens_details": {
-   "thinking_tokens": 1386
+   "thinking_tokens": 165
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08523,
- "ms": 22713,
- "seconds": 23.3,
+ "cost_usd": 0.0488,
+ "ms": 9112,
+ "seconds": 9.2,
  "parts": null,
  "error": null,
  "score": {
@@ -79,21 +79,19 @@
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 2,
-   "not_verbatim": [
-    "teaching in a school-age child care setting"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -102,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "SCHOOL-AGE CARE",
+   "section_heading": "CDSACT-C - Child Development: School-Age Care - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -113,7 +111,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Glendale College Associate Degree General Education area 9A-D",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -123,17 +121,12 @@
     "max": 16
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Upon completion of this program, students will develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children; understand and value the importance and complex characteristics of children’s families and communities; use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development; articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals; plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children; and identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice."
-   ],
-   "careers": [
-    "teaching in a school-age child care setting",
-    "School Age Child Care"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -144,70 +137,70 @@
     "courses": [
      {
       "code": "CHLDV 133",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 135",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 137",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 138",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 140",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 141",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 142",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 150",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 156",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 182",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -218,61 +211,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints required courses as a compressed list ('CHLDV 133, 135, 137, ...') with no units beside each course; units left null. The section states 27 units of Child Development courses, recorded as total_units and as the block's stated total.",
-   "The certificate also requires 16 units of General Education (Glendale College Associate Degree GE area 9A-D, at least one course from 9a/9d.(2), 9b, 9c and 9d.(1)); recorded as ge_pattern and ge_units, not as a block. No combined total (27 + 16) is printed, so degree_total is null.",
-   "Program Learning Outcomes are printed once for the Child Development program as a whole (shared by all degree/certificate options) as a single run-on paragraph; recorded as one entry as printed, with ligatures, letter-spacing and line-break hyphenation normalized.",
-   "Careers: 'School Age Child Care' is taken from the overall program introduction, which also names Infant, Toddler, and/or Preschool Education and Early Childhood Administration and Supervision for other options."
+   "The certificate also requires 16 units of general education ('FOR CERTIFICATE ONLY - COMPLETE GENERAL EDUCATION UNITS IN ENGLISH/LANGUAGE ARTS, MATH/SCIENCE, SOCIAL SCIENCES, AND HUMANITIES'); no named GE pattern is given, so ge_pattern is null and ge_units records 16.",
+   "The page prints no combined total (major plus GE), so degree_total is null; total_units is the printed 27-unit major/certificate total.",
+   "A 'Program Learning Outcomes' tab heading appears in the page navigation, but the text prints no outcomes; outcomes left empty.",
+   "No careers are named in the text provided (Overview tab content not included)."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CHLDV 133": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 135": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 137": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 138": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 140": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 141": [
-     2.0,
-     2.0
-    ],
-    "CHLDV 142": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 150": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 156": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 182": [
-     1.0,
-     1.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

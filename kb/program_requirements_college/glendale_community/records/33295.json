@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Journalism",
  "award": "A.A- T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=119",
+ "source_url": "https://catalog.glendale.edu/programs/JOURN%20AA-T/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12732,
+  "input_tokens": 6954,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12732,
-    "output_tokens": 2119,
+    "input_tokens": 6954,
+    "output_tokens": 2307,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,84 +30,94 @@
     "model": null
    }
   ],
-  "output_tokens": 2119,
+  "output_tokens": 2307,
   "output_tokens_details": {
-   "thinking_tokens": 750
+   "thinking_tokens": 653
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09331,
- "ms": 16249,
- "seconds": 16.6,
+ "cost_usd": 0.07396,
+ "ms": 18470,
+ "seconds": 18.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 17,
    "listed": 20,
-   "share": 0.35,
+   "share": 0.85,
    "missing": [
-    "COMM104",
-    "COMM120",
     "ECON101",
     "ECON102",
-    "ECON102H",
-    "ECON127",
-    "MCOMM120",
-    "PHILO117",
-    "PHOTO100",
-    "POLS102",
-    "STATC1000",
-    "STATC1000E",
-    "STATC1000H"
+    "ECON102H"
    ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 3,
    "codes": [
-    "JOURN110",
-    "JOURN250"
+    "ECONC2001",
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "flagged": [
-    "JOURN110",
-    "JOURN250"
+    "ECONC2001",
+    "ECONC2002",
+    "ECONC2002H"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.5,
-    19.0
+    20.5
    ],
    "stated": [
     18.5,
-    20.0
+    20.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.5-19.0; the catalog states 18.5-20.0"
-   ]
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.5,
+     20.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     39.5,
+     41.5
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 1,
+   "program": 0,
    "courses": 0,
-   "count": 1,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -116,20 +126,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AA-T — JOURNALISM",
+   "section_heading": "JOURN AA-T - Journalism - Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18.5,
-    "max": 20
+    "max": 20.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -138,22 +145,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "the student will have the skills necessary to recognize and produce well-written news and feature articles; the ability to visually present news material (articles and pictures) in an appealing way; and demonstrate knowledge of what is newsworthy."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -163,6 +168,13 @@
     },
     "courses": [
      {
+      "code": "MCOMM 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
       "code": "JOURN 102",
       "units": 3.5,
       "units_max": null,
@@ -171,14 +183,7 @@
      },
      {
       "code": "JOURN 103",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "MCOMM 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -186,68 +191,138 @@
     ]
    },
    {
-    "name": "List A",
+    "name": "LIST A - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "JOURN 104",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "JOURN 110",
-      "units": 3.0,
+      "code": "MCOMM 120",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "JOURN 250",
-      "units": 3.5,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "List B",
+    "name": "LIST B - CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
-      "code": "ENGL 104",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "PHOTO 101",
-      "units": 3.0,
+      "code": "COMM 104",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "POL S 101",
-      "units": 3.0,
+      "code": "COMM 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECON C2001",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
+     },
+     {
+      "code": "ECON C2002",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ECON C2002H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "ENGL C1001",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHILO 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHOTO 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHOTO 101",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "POLS 102",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "STAT C1000",
+      "units": 4,
+      "units_max": 5,
+      "alternatives": [
+       {
+        "code": "STAT C1000E",
+        "units": 5,
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000H",
+        "units": 4,
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON 127",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      }
     ]
    }
@@ -255,91 +330,26 @@
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "COMM 104",
-    "why": "not in the Journalism section"
-   },
-   {
-    "code": "COMM 120",
-    "why": "not in the Journalism section"
-   },
-   {
     "code": "ECON 101",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ECON C2001 Principles of Microeconomics instead (likely renumbered)"
    },
    {
     "code": "ECON 102",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ECON C2002 Principles of Macroeconomics instead (likely renumbered)"
    },
    {
     "code": "ECON 102H",
-    "why": "not in the text"
-   },
-   {
-    "code": "ECON 127",
-    "why": "named only in other programs' sections (Political Science, Psychology)"
-   },
-   {
-    "code": "ENGL C1001",
-    "why": "not in the Journalism section; catalog lists ENGL 104 instead"
-   },
-   {
-    "code": "MCOMM 120",
-    "why": "not in the text"
-   },
-   {
-    "code": "PHILO 117",
-    "why": "named only in the Philosophy section"
-   },
-   {
-    "code": "PHOTO 100",
-    "why": "not in the Journalism section"
-   },
-   {
-    "code": "POL S 102",
-    "why": "not in the Journalism section; catalog lists POL S 101"
-   },
-   {
-    "code": "POLS C1000",
-    "why": "named only in other programs' sections"
-   },
-   {
-    "code": "STAT C1000",
-    "why": "named only in other programs' sections"
-   },
-   {
-    "code": "STAT C1000E",
-    "why": "named only in other programs' sections"
-   },
-   {
-    "code": "STAT C1000H",
-    "why": "named only in other programs' sections"
+    "why": "not in the text; catalog lists ECON C2002H instead (likely renumbered)"
    }
   ],
   "notes": [
-   "No units are printed beside individual courses; only list totals (List A 3 units, List B 6 units) and the major total 18.5-20 units are printed.",
-   "The single program learning outcome is printed as one run-on sentence after the lead-in 'Upon completion of this program,'; recorded as one entry. The PDF text shows 'well-writt en' (ligature break), read as 'well-written'.",
-   "Closed list codes MCOMM101 and PHOTO101 matched to catalog's MCOMM 101 and PHOTO 101.",
-   "The 'Required Units for Major' figure carries an asterisk whose footnote is not in the provided text.",
-   "No GE pattern or degree total is printed in this section."
+   "Catalog prints 'MCOMM 101', 'PHOTO 101' and 'POLS 102'; closed list stores 'MCOMM101', 'PHOTO101' and 'POL S 102'. Treated as the same courses (not catalog additions); reviewer should confirm.",
+   "ECON C2001, ECON C2002 and ECON C2002H are not in the closed list and are recorded as catalog additions; they appear to replace ECON 101, ECON 102 and ECON 102H.",
+   "STAT C1000/C1000E/C1000H printed with 4-5 units on one row; recorded STAT C1000 (4-5) with STAT C1000E (5) and STAT C1000H (4) as alternatives, plus ECON 127 (4) as the 'or' option. Individual units for the STAT variants taken from the printed range and closed list.",
+   "Degree total 60 taken from 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE units printed on this page.",
+   "Page shows a 'Program Learning Outcomes' tab but the captured text prints no outcomes; outcomes left empty.",
+   "No careers named in the captured text."
   ]
  },
- "extracted_run": 41049220135,
- "read_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ENGL 104": [
-     3.0,
-     3.0
-    ],
-    "POL S 101": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

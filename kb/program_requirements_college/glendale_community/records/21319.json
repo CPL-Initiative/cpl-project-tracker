@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Graphic Design",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
+ "source_url": "https://catalog.glendale.edu/programs/GRPHD-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7713,
+  "input_tokens": 6359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7713,
-    "output_tokens": 1572,
+    "input_tokens": 6359,
+    "output_tokens": 999,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1572,
+  "output_tokens": 999,
   "output_tokens_details": {
-   "thinking_tokens": 625
+   "thinking_tokens": 172
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06229,
- "ms": 12847,
- "seconds": 13.3,
+ "cost_usd": 0.04542,
+ "ms": 8738,
+ "seconds": 8.9,
  "parts": null,
  "error": null,
  "score": {
@@ -93,17 +93,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -114,7 +114,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "GRAPHIC DESIGN AA DEGREE OR CERTIFICATE",
+   "section_heading": "GRPHD-C - Graphic Design - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -135,94 +135,86 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "continually develop curriculum incorporating the critical elements of Graphic Design",
-    "continually develop curriculum incorporating the industry standard technical elements of Graphic Design",
-    "demonstrate articulation with surrounding 4 year institutions and with the local Graphic Design Community."
-   ],
-   "careers": [
-    "advertising/graphic design industry",
-    "entry-level production designers",
-    "junior graphic designers"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 30,
+     "max": 30
     },
     "courses": [
      {
       "code": "ART 132",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 133",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 134",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 135",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 136",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 137",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 250",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 251",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 255",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 160",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -233,62 +225,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the AA degree and the certificate together ('AA DEGREE OR CERTIFICATE'); the same required course list, 30-unit minimum, outcomes and careers apply to the certificate.",
-   "The catalog prints no units beside individual courses, so course units are null. The total is stated as 'a minimum of 30 units'.",
-   "The catalog prints the codes as 'ART 132, 133, ... 255'. These are expanded here with their subject.",
-   "ART 255 in the catalog is matched to the closed-list code ART255.",
-   "The program learning outcomes are printed as one semicolon-separated sentence. They are recorded as three separate outcomes, with the joining 'and' omitted from the third."
+   "ART 255 is matched to the closed-list entry 'ART255' (written without a space). The catalog titles it 'Motion Interface Design'; the state file titles it 'Web Motion Graphics'. A reviewer should confirm they are the same course.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but the extracted text prints no outcomes, so outcomes is empty.",
+   "The block total of 30 is taken from 'TOTAL UNITS REQUIRED 30'. It matches the 'Minimum/Maximum Required Units/Hours for Major' value of 30."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ART 132": [
-     3.0,
-     3.0
-    ],
-    "ART 133": [
-     3.0,
-     3.0
-    ],
-    "ART 134": [
-     3.0,
-     3.0
-    ],
-    "ART 135": [
-     3.0,
-     3.0
-    ],
-    "ART 136": [
-     3.0,
-     3.0
-    ],
-    "ART 137": [
-     3.0,
-     3.0
-    ],
-    "ART 250": [
-     3.0,
-     3.0
-    ],
-    "ART 251": [
-     3.0,
-     3.0
-    ],
-    "ART 255": [
-     3.0,
-     3.0
-    ],
-    "PHOTO 160": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "EnTech General",
  "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=265",
+ "source_url": "https://catalog.glendale.edu/programs/ENTG-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11215,
+  "input_tokens": 6401,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11215,
-    "output_tokens": 705,
+    "input_tokens": 6401,
+    "output_tokens": 1097,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,56 +30,55 @@
     "model": null
    }
   ],
-  "output_tokens": 705,
+  "output_tokens": 1097,
   "output_tokens_details": {
-   "thinking_tokens": 231
+   "thinking_tokens": 192
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05896,
- "ms": 7681,
- "seconds": 8.0,
+ "cost_usd": 0.04754,
+ "ms": 9680,
+ "seconds": 9.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 6,
    "listed": 7,
-   "share": 0.0,
+   "share": 0.857,
    "missing": [
-    "THTR171",
-    "THTR173",
-    "THTR181",
-    "THTR191",
-    "THTR192",
-    "THTR193",
-    "THTR194"
+    "THTR181"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 1,
+   "codes": [
+    "MUSIC181"
+   ],
+   "flagged": [
+    "MUSIC181"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    11.0,
+    11.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    11.0,
+    11.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -91,8 +90,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -103,15 +102,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "THEATRE ARTS",
+   "section_heading": "ENTG-C - EnTech General - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 11,
+    "max": 11
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -131,43 +130,94 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 171",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 173",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 181",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "CHOOSE ONE OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "THTR 191",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 192",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 193",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "THTR 194",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "THTR 171",
-    "why": "appears only as a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 173",
-    "why": "appears only as a course description; no program requirements in text"
-   },
-   {
     "code": "THTR 181",
-    "why": "appears only as a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 191",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR 194",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR192",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR193",
-    "why": "not in the text"
+    "why": "not in the text; the catalog lists MUSIC 181 Live Sound I (2 units) in the required courses instead"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 265-266, printed pages 262-263) contains only Theatre Arts and Welding course descriptions; the EnTech General Certificate of Achievement requirements section is not included, so no blocks, totals, outcomes or careers could be recorded.",
-   "The program's requirements are likely printed elsewhere in the catalog's programs section; a reviewer should check the correct page.",
-   "The closed list codes THTR192 and THTR193 are printed without a space and have no stored units."
+   "The catalog prints MUSIC 181 Live Sound I (2 units) where the closed list has THTR 181 Technical Theatre in Classical Production (2 units). MUSIC 181 is recorded as a catalog addition. A reviewer should check whether the state file's THTR 181 is a coding mismatch.",
+   "The closed list prints THTR192 and THTR193 without a space. They are matched to the catalog's THTR 192 and THTR 193, so they are not marked as catalog additions.",
+   "The page has a 'Program Learning Outcomes' tab, but the extracted text prints no outcomes, so outcomes are empty.",
+   "The catalog prints 'Minimum/Maximum Required Units/Hours for Major 11' and 'TOTAL UNITS REQUIRED 11'. These are consistent with 3+3+2 plus one 3-unit practicum."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "43415972509"
 }

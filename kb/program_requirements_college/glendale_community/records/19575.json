@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Child Development: Master Teacher",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=69",
+ "source_url": "https://catalog.glendale.edu/programs/CDMT-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7938,
+  "input_tokens": 6899,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7938,
-    "output_tokens": 2694,
+    "input_tokens": 6899,
+    "output_tokens": 1301,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2694,
+  "output_tokens": 1301,
   "output_tokens_details": {
-   "thinking_tokens": 1269
+   "thinking_tokens": 276
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08563,
- "ms": 24408,
- "seconds": 25.0,
+ "cost_usd": 0.05362,
+ "ms": 10314,
+ "seconds": 10.4,
  "parts": null,
  "error": null,
  "score": {
@@ -79,21 +79,19 @@
    "pass": true
   },
   "outcomes": {
-   "program": 6,
+   "program": 0,
    "courses": 0,
-   "count": 6,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 4,
-   "not_verbatim": [
-    "teaching careers in an early childhood setting"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
    "status": "n/a"
@@ -102,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MASTER TEACHER",
+   "section_heading": "CDMT-C - Child Development: Master Teacher - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -113,7 +111,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": "Glendale College Associate Degree General Education area 9A-D",
+   "ge_pattern": null,
    "degree_total": {
     "min": null,
     "max": null
@@ -123,108 +121,96 @@
     "max": 16
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "develop an understanding of young children, and of the multiple interacting influences on children’s development and learning in order to create environments that are healthy, respectful, supportive and challenging for all children",
-    "understand and value the importance and complex characteristics of children’s families and communities",
-    "use this understanding to create respectful, reciprocal relationships that support and empower families and involve families in their children’s learning and development",
-    "articulate and understand the goals, benefits, and uses of observation and assessment, develop competence in the use of observation, documentation and assessment techniques and tools to support teaching and learning in partnership with families and other professionals",
-    "plan and implement developmentally appropriate, culturally and linguistically relevant experiences that promote and/or support development and learning for all young children",
-    "identify as a member of the early childhood profession, understand and use ethical guidelines and other professional standards related to early childhood practice"
-   ],
-   "careers": [
-    "teaching careers in an early childhood setting",
-    "Infant, Toddler, and/or Preschool Education",
-    "School Age Child Care",
-    "Early Childhood Administration and Supervision"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 27,
+     "max": 27
     },
     "courses": [
      {
       "code": "CHLDV 133",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 135",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 138",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 140",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 141",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 142",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 150",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 156",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 176",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 180",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [
        {
         "code": "CHLDV 181",
-        "units": 1.0,
+        "units": 1,
         "catalog_addition": false
        },
        {
         "code": "CHLDV 182",
-        "units": 1.0,
+        "units": 1,
         "catalog_addition": false
        }
       ],
@@ -236,70 +222,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses; course units are left null. Using the state file's units the courses sum to 27, matching the stated 27 units of Child Development curriculum.",
-   "total_units is the 27 units of Child Development courses; the certificate also requires 16 units of General Education (Glendale Associate Degree GE area 9A-D, one course each from 9a or 9d(2), 9b, 9c, 9d(1)), recorded in ge_units. No combined total (43) is printed, so degree_total is null.",
-   "Program Learning Outcomes are printed once for the whole Child Development page (all degree/certificate options); the Master Teacher certificate shares them. They are printed as one semicolon-separated sentence after the lead-in 'Upon completion of this program, students will'; recorded as six entries split at the semicolons, with the joining 'and' before the last item dropped and PDF hyphenation/ligature breaks rejoined.",
-   "Careers: 'teaching careers in an early childhood setting' is from the Master Teacher section; the other three career fields come from the shared Child Development introduction covering all options.",
-   "The course listing abbreviates codes ('CHLDV 133, 135, ...'); each was expanded with the CHLDV subject."
+   "The page prints 'FOR CERTIFICATE ONLY - COMPLETE GENERAL EDUCATION UNITS IN ENGLISH/LANGUAGE ARTS, MATH/SCIENCE, SOCIAL SCIENCES, AND HUMANITIES' with 'TOTAL UNITS OF G.E. REQUIRED 16'; no named GE pattern, so ge_pattern is null and the 16 units are recorded in ge_units. No combined total (27 + 16) is printed, so degree_total is null.",
+   "Total 27 units is printed both as Minimum/Maximum Required Units for Major and as TOTAL UNITS OF REQUIRED COURSES.",
+   "A 'Program Learning Outcomes' tab heading appears in the page navigation, but no outcomes are printed in the provided text; outcomes left empty.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "CHLDV 133": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 135": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 138": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 140": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 141": [
-     2.0,
-     2.0
-    ],
-    "CHLDV 142": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 150": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 156": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 176": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 180": [
-     1.0,
-     1.0
-    ],
-    "CHLDV 181": [
-     1.0,
-     1.0
-    ],
-    "CHLDV 182": [
-     1.0,
-     1.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Philosophy",
  "award": "A.A- T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=121",
+ "source_url": "https://catalog.glendale.edu/programs/AA-T%20PHILO/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9852,
+  "input_tokens": 6742,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9852,
-    "output_tokens": 1858,
+    "input_tokens": 6742,
+    "output_tokens": 1627,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1858,
+  "output_tokens": 1627,
   "output_tokens_details": {
-   "thinking_tokens": 593
+   "thinking_tokens": 445
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07657,
- "ms": 15225,
- "seconds": 15.8,
+ "cost_usd": 0.05951,
+ "ms": 13665,
+ "seconds": 13.7,
  "parts": null,
  "error": null,
  "score": {
@@ -72,20 +72,40 @@
     18.0
    ],
    "against": "program",
-   "why": []
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     42.0,
+     42.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 2,
+   "program": 0,
    "courses": 0,
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -94,16 +114,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AA-T — PHILOSOPHY",
+   "section_heading": "AA-T PHILO - Philosophy - Associate in Arts for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -116,23 +133,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "iDemonstrate a critical understanding of the issues, arguments, and metaphors that structure our cultural lives.",
-    "Demonstrate a critical understanding of the issues, arguments, and metaphors that structure our political lives."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -142,8 +156,26 @@
     },
     "courses": [
      {
+      "code": "PHILO 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "PHILO 101H",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILO 116",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
       "code": "PHILO 117",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -151,7 +183,7 @@
     ]
    },
    {
-    "name": "Required Core: Select one course from the following",
+    "name": "LIST A - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -161,47 +193,15 @@
     },
     "courses": [
      {
-      "code": "PHILO 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "PHILO 101H",
-        "units": 3.0,
-        "catalog_addition": false
-       }
-      ],
-      "catalog_addition": false
-     },
-     {
-      "code": "PHILO 116",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "List A",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": 3,
-     "max": 3
-    },
-    "courses": [
-     {
       "code": "PHILO 119",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -209,39 +209,39 @@
     ]
    },
    {
-    "name": "List B",
+    "name": "LIST B - CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "HIST 170",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 115",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -249,23 +249,23 @@
     ]
    },
    {
-    "name": "List C",
+    "name": "LIST C - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "HUMAN 105",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "HUMAN 105H",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -273,7 +273,7 @@
      },
      {
       "code": "PHILO 121",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -284,74 +284,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints 'Required Core: ( 6 units total) Select one courses PHILO 117' then 'Select one course from the following: PHILO 101 or 101H, 116'. Read as PHILO 117 required plus one of PHILO 101/101H or PHILO 116; the 6-unit core total spans both core blocks, so no block-level stated was assigned.",
-   "List A also accepts any Required Core course not used above; List B accepts any List A course not used; List C accepts any List A or List B course not used. These cross-list options are not repeated as entries.",
-   "No units are printed beside individual courses; units left null.",
-   "First outcome is printed as 'iDemonstrate' (apparent extraction artifact); copied as printed.",
-   "Required Units for Major: 18 units* — asterisk footnote not included in the text. No GE pattern or degree total printed in this section."
+   "List A also allows 'Any course from Required Courses not used above' (e.g., PHILO 116 or PHILO 101/101H, whichever was not used in the required pair); not repeated in the List A block.",
+   "List B also allows 'Any List A course not already used' (PHILO 119/120); List C also allows 'Any course from List A or List B not used above'; these cross-list paths are not duplicated in blocks.",
+   "degree_total 60 taken from 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE units are named on this page.",
+   "Page shows a 'Program Learning Outcomes' tab but no outcomes text is included in the provided text; outcomes left empty.",
+   "PHILO 121 is printed with title 'Philosophy - Islam' in the catalog."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "PHILO 117": [
-     3.0,
-     3.0
-    ],
-    "PHILO 101": [
-     3.0,
-     3.0
-    ],
-    "PHILO 101H": [
-     3.0,
-     3.0
-    ],
-    "PHILO 116": [
-     3.0,
-     3.0
-    ],
-    "PHILO 119": [
-     3.0,
-     3.0
-    ],
-    "PHILO 120": [
-     3.0,
-     3.0
-    ],
-    "HIST 170": [
-     3.0,
-     3.0
-    ],
-    "HIST 180": [
-     3.0,
-     3.0
-    ],
-    "PHILO 115": [
-     3.0,
-     3.0
-    ],
-    "PHILO 130": [
-     3.0,
-     3.0
-    ],
-    "HUMAN 105": [
-     3.0,
-     3.0
-    ],
-    "HUMAN 105H": [
-     3.0,
-     3.0
-    ],
-    "PHILO 121": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

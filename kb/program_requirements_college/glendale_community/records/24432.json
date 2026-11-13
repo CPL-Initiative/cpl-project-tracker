@@ -1,0 +1,619 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "24432",
+ "shape": "other",
+ "title": "Certificate of Secondary Education Completion",
+ "award": null,
+ "source_url": "https://catalog.glendale.edu/programs/NCHSD/completion-requirements-zaZdl",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8677,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8677,
+    "output_tokens": 3710,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3710,
+  "output_tokens_details": {
+   "thinking_tokens": 735
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.10891,
+ "ms": 28881,
+ "seconds": 29.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 16,
+   "listed": 26,
+   "share": 0.615,
+   "missing": [
+    "ABSE21",
+    "ABSE22",
+    "ABSE27",
+    "ABSE48",
+    "ABSE70",
+    "DSL11",
+    "DSL13",
+    "DSL14",
+    "DSL49",
+    "DSL53"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 21,
+   "codes": [
+    "ABSE110",
+    "ABSE111",
+    "ABSE112",
+    "ABSE113",
+    "ABSE114",
+    "ABSE115",
+    "ABSE116",
+    "ABSE117",
+    "ABSE146",
+    "ABSE147",
+    "ABSE148",
+    "ABSE149",
+    "ABSE150",
+    "ABSE18",
+    "ABSE19",
+    "ABSE28",
+    "ABSE29",
+    "ABSE35",
+    "ABSE36",
+    "ABSE37",
+    "ABSE38"
+   ],
+   "flagged": [
+    "ABSE110",
+    "ABSE111",
+    "ABSE112",
+    "ABSE113",
+    "ABSE114",
+    "ABSE115",
+    "ABSE116",
+    "ABSE117",
+    "ABSE146",
+    "ABSE147",
+    "ABSE148",
+    "ABSE149",
+    "ABSE150",
+    "ABSE18",
+    "ABSE19",
+    "ABSE28",
+    "ABSE29",
+    "ABSE35",
+    "ABSE36",
+    "ABSE37",
+    "ABSE38"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    3200.0,
+    3200.0
+   ],
+   "stated": [
+    3200.0,
+    3200.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "NCHSD - High School Diploma",
+   "measure": "hours",
+   "total_units": {
+    "min": 3200,
+    "max": 3200
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "English (40 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 800,
+     "max": 800
+    },
+    "courses": [
+     {
+      "code": "ABSE110",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE111",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE112",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE113",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE114",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE115",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE116",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE117",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "World History (10 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 200,
+     "max": 200
+    },
+    "courses": [
+     {
+      "code": "ABSE40",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE41",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "United States History (10 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 200,
+     "max": 200
+    },
+    "courses": [
+     {
+      "code": "ABSE42",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE43",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "American Government (5 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 100,
+     "max": 100
+    },
+    "courses": [
+     {
+      "code": "ABSE44",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Economics (5 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 100,
+     "max": 100
+    },
+    "courses": [
+     {
+      "code": "ABSE45",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Science (includes Life and Physical Science) (20 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 400,
+     "max": 400
+    },
+    "courses": [
+     {
+      "code": "ABSE30",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE31",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE32",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE33",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Mathematics (includes Algebra 1 or higher) (20 credits)",
+    "rule": "choose_units",
+    "minimum": 400,
+    "option_group": null,
+    "stated": {
+     "min": 400,
+     "max": 400
+    },
+    "courses": [
+     {
+      "code": "ABSE23",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE24",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE28",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE29",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE18",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE19",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE35",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE36",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE37",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE38",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE25",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE26",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Health (5 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 100,
+     "max": 100
+    },
+    "courses": [
+     {
+      "code": "ABSE34",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Humanities (Art, Music, or Foreign Language) (10 credits)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 200,
+     "max": 200
+    },
+    "courses": [
+     {
+      "code": "ABSE149",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE150",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Electives (35 credits)",
+    "rule": "choose_units",
+    "minimum": 700,
+    "option_group": null,
+    "stated": {
+     "min": 700,
+     "max": 700
+    },
+    "courses": [
+     {
+      "code": "ABSE146",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE15",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ABSE147",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ABSE148",
+      "units": 100,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ABSE 21",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 22",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 27",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 48",
+    "why": "not in the text"
+   },
+   {
+    "code": "ABSE 70",
+    "why": "not in the text"
+   },
+   {
+    "code": "DSL 11",
+    "why": "not in the text"
+   },
+   {
+    "code": "DSL 13",
+    "why": "not in the text"
+   },
+   {
+    "code": "DSL 14",
+    "why": "not in the text"
+   },
+   {
+    "code": "DSL 49",
+    "why": "not in the text"
+   },
+   {
+    "code": "DSL 53",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Noncredit program counted in hours: each ABSE course is printed at 100 hours (5 credits); the program prints 'Total Hours 3200.0' and requires 160 credits. Block stated values are the printed Total Hours.",
+   "The page also prints 'Minimum Required Units/Hours for Major 20' and 'Maximum Required Units/Hours for Major 160'; these appear to be credit figures and conflict with the 3200-hour total; total_units uses the printed 3200 hours.",
+   "Mathematics block reads 'The following number of Credits' with 20 credits (400 hours) and lists 12 courses; recorded as choose_units 400 hours.",
+   "Electives: 35 credits (700 hours) needed; 'any of the courses not taken above can be used as an elective', so other program courses may also count beyond the four listed.",
+   "Humanities block is printed 'All of the following' with ART HISTORY 1A/1B, though the heading names Art, Music, or Foreign Language.",
+   "Competency Requirements (Reading, Writing, Mathematics) are met by exams (GED/HiSET, CASAS GOALS), not courses; not recorded as blocks.",
+   "Codes recorded as printed without a space (e.g. ABSE40); closed list uses 'ABSE 40'. ABSE33 printed as 'PHYSICAL SCIENCE 1B'.",
+   "Program Learning Outcomes tab named on page but no outcomes printed in this text.",
+   "Award type is null in input; page is the NCHSD High School Diploma, while the program title is Certificate of Secondary Education Completion; reviewer should confirm match."
+  ]
+ },
+ "extracted_run": "43415972509"
+}

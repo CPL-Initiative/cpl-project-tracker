@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Healthcare Administration",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=78",
+ "source_url": "https://catalog.glendale.edu/programs/HA-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7813,
+  "input_tokens": 6454,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7813,
-    "output_tokens": 1547,
+    "input_tokens": 6454,
+    "output_tokens": 666,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1547,
+  "output_tokens": 666,
   "output_tokens_details": {
-   "thinking_tokens": 606
+   "thinking_tokens": 0
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06219,
- "ms": 13156,
- "seconds": 13.5,
+ "cost_usd": 0.03914,
+ "ms": 5734,
+ "seconds": 5.8,
  "parts": null,
  "error": null,
  "score": {
@@ -79,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 2,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "HEALTHCARE ADMINISTRATION AS DEGREE OR CERTIFICATE",
+   "section_heading": "HA-C - Healthcare Administration - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 25,
@@ -121,79 +121,72 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Prepare students for a career in the healthcare industry by completing the Health Care Administration Certificate",
-    "Describe the value of personal and professional development, health and community service, and life-long learning in healthcare management",
-    "Analyze the impact of healthcare administration on healthcare delivery within the community."
-   ],
-   "careers": [
-    "entry-level coordination, assisting, and other support services",
-    "management and leadership roles in health services and related organizations and systems"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 25,
+     "max": 25
     },
     "courses": [
      {
       "code": "MOA 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 183",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 184",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 185",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 188",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 190",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 191",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MOA 192",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -204,53 +197,9 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the certificate; the same required courses, 25-unit total ('Students will complete 25 units') and outcomes list apply to both, and are recorded for the Certificate of Achievement.",
-   "The catalog prints no units beside individual courses, so course units are null; the closed list's units (3+4+3+3+3+3+3+3) sum to the stated 25.",
-   "Outcomes are separated by semicolons after the lead-in 'Upon completion of this program,'; PDF ligature/spacing artifacts ('Certi\ffi cate', spaced letters) were read as normal words.",
-   "Careers were taken from the description's 'prepares students for entry-level coordination, assisting, and other support services and management and leadership roles in health services and related organizations and systems'; reviewer may wish to check whether these phrases should be split further or treated as career roles."
+   "The Program Learning Outcomes tab is named in the page navigation, but its content is not in the provided text, so outcomes are empty.",
+   "The 'TOTAL UNITS REQUIRED 25' printed at the end of the required course table is recorded as the block's stated total and as the certificate total (major minimum and maximum are 25)."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MOA 180": [
-     3.0,
-     3.0
-    ],
-    "MOA 183": [
-     4.0,
-     4.0
-    ],
-    "MOA 184": [
-     3.0,
-     3.0
-    ],
-    "MOA 185": [
-     3.0,
-     3.0
-    ],
-    "MOA 188": [
-     3.0,
-     3.0
-    ],
-    "MOA 190": [
-     3.0,
-     3.0
-    ],
-    "MOA 191": [
-     3.0,
-     3.0
-    ],
-    "MOA 192": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "43415972509"
 }

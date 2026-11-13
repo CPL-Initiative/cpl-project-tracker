@@ -4,12 +4,12 @@
  "shape": "noncredit",
  "title": "General Office Clerk II",
  "award": "Noncredit program",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=271",
+ "source_url": "https://catalog.glendale.edu/programs/NCGOC3/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8997,
+  "input_tokens": 6307,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8997,
-    "output_tokens": 867,
+    "input_tokens": 6307,
+    "output_tokens": 1157,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,51 +30,59 @@
     "model": null
    }
   ],
-  "output_tokens": 867,
+  "output_tokens": 1157,
   "output_tokens_details": {
-   "thinking_tokens": 191
+   "thinking_tokens": 425
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05333,
- "ms": 7865,
- "seconds": 8.3,
+ "cost_usd": 0.04837,
+ "ms": 11099,
+ "seconds": 11.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "hours",
   "coverage": {
-   "placed": 6,
+   "placed": 3,
    "listed": 6,
-   "share": 1.0,
-   "missing": [],
+   "share": 0.5,
+   "missing": [
+    "STV138",
+    "STV31",
+    "STV50"
+   ],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 2,
+   "codes": [
+    "STV111",
+    "STV72"
+   ],
+   "flagged": [
+    "STV111",
+    "STV72"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    422.0,
+    422.0
    ],
    "stated": [
-    446.0,
-    446.0
+    422.0,
+    422.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -86,8 +94,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -98,15 +106,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "GENERAL OFFICE CLERK II CERTIFICATE",
+   "section_heading": "NCGOC3 - General Office Clerk III — Major Requirements: General Office Assistant II Certificate of Completion",
    "measure": "hours",
    "total_units": {
-    "min": 446,
-    "max": 446
+    "min": 422,
+    "max": 422
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -133,63 +141,69 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 422,
+     "max": 422
     },
     "courses": [
      {
-      "code": "STV 12",
-      "units": null,
+      "code": "STV12",
+      "units": 150,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STV 21",
-      "units": null,
+      "code": "STV21",
+      "units": 160,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STV 31",
-      "units": null,
+      "code": "STV72",
+      "units": 32,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "STV90",
+      "units": 48,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "STV 50",
-      "units": null,
+      "code": "STV111",
+      "units": 32,
       "units_max": null,
       "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STV 90",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "STV 138",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
+      "catalog_addition": true
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [],
+  "missing_explained": [
+   {
+    "code": "STV 138",
+    "why": "not in the text"
+   },
+   {
+    "code": "STV 31",
+    "why": "not in the text"
+   },
+   {
+    "code": "STV 50",
+    "why": "not in the text"
+   }
+  ],
   "notes": [
-   "Noncredit certificate counted in hours: 'Students must complete all 446 required hours to earn the certificate.' The catalog prints no hours beside individual courses, so course units are null.",
-   "Courses are printed in shorthand ('STV 12, 21, 31, 50, 90 and 138'); the STV subject is applied to each.",
-   "The footer of the page holding this section (page 271/printed 268) reads '2024–2025 Catalog', while the next page's footer reads '2025–2026'; a reviewer may want to confirm the section matches the 2025-2026 catalog year.",
-   "No program learning outcomes or named careers are printed for this certificate; the description mentions only work 'in an office setting' and 'most office departments'."
+   "Program mismatch: the requested program is General Office Clerk II, but the page is titled 'NCGOC3 - General Office Clerk III', and its requirements block is named 'General Office Assistant II Certificate of Completion'. This page may describe a different program. A reviewer should confirm the correct source page.",
+   "The page's course list differs from the closed list: STV72 and STV111 appear only in the catalog, and STV 138, STV 31 and STV 50 appear only in the closed list. This also suggests the page belongs to a different program.",
+   "The award is counted in hours (Total Hours 422.0). The course hours sum to the printed total of 422.",
+   "'Program Learning Outcomes' appears only as a navigation tab. The text prints no outcomes, so outcomes are empty."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "43415972509"
 }

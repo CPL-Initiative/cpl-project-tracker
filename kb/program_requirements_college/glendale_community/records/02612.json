@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Film, Television and Media Arts",
  "award": "A.A. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+ "source_url": "https://catalog.glendale.edu/programs/FTM-AA/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8511,
+  "input_tokens": 6848,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8511,
-    "output_tokens": 2317,
+    "input_tokens": 6848,
+    "output_tokens": 1992,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2317,
+  "output_tokens": 1992,
   "output_tokens_details": {
-   "thinking_tokens": 796
+   "thinking_tokens": 562
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08038,
- "ms": 18677,
- "seconds": 19.2,
+ "cost_usd": 0.06723,
+ "ms": 16226,
+ "seconds": 16.3,
  "parts": null,
  "error": null,
  "score": {
@@ -66,53 +66,66 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     19.0,
     22.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the record names no total"
-   ]
+    "the blocks and general education sum to 19.0-22.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     19.0,
+     22.0
+    ],
+    "stated": [
+     19.0,
+     22.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 1,
-   "not_verbatim": [
-    "film and television industry"
-   ],
-   "pass": false
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "FILM, TELEVISION AND MEDIA ARTS AA DEGREE",
+   "section_heading": "FTM-AA - Film, Television and Media Arts - Associate of Arts",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 19,
+    "max": 22
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -121,26 +134,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "demonstrate an effective ability to work as a member of a team to achieve the challenges of technical and conceptual goals oft he project from origination to the completion of the high quality final deliverable media productions.",
-    "Demonstrate an understanding of film aesthetics composition, film language, lighting and sound techniques to support the creative vision of the director",
-    "Demonstrate mastery of conceptual editing techniques to support storytelling and solving story problems through the use of editing dialogue, sound design, music, and sound effects to complete the creation of the master for final deliverables."
-   ],
-   "careers": [
-    "film and television industry"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -151,21 +158,21 @@
     "courses": [
      {
       "code": "MCOMM 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 130",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -173,7 +180,7 @@
     ]
    },
    {
-    "name": "Select one of the following (writing)",
+    "name": "CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -184,14 +191,14 @@
     "courses": [
      {
       "code": "FTVM 112",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -199,7 +206,7 @@
     ]
    },
    {
-    "name": "Select one of the following (foundation production)",
+    "name": "CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -210,14 +217,14 @@
     "courses": [
      {
       "code": "FTVM 131",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 132",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -225,7 +232,7 @@
     ]
    },
    {
-    "name": "Select one of the following (technical)",
+    "name": "CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -236,21 +243,21 @@
     "courses": [
      {
       "code": "FTVM 135",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 137",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 139",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -258,10 +265,10 @@
     ]
    },
    {
-    "name": "Option one",
+    "name": "Option One",
     "rule": "all",
     "minimum": null,
-    "option_group": "advanced production",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -269,25 +276,25 @@
     "courses": [
      {
       "code": "FTVM 270A",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 270B",
-      "units": 1.0,
-      "units_max": 2.0,
+      "units": 1,
+      "units_max": 2,
       "alternatives": [],
       "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Option two",
+    "name": "Option Two",
     "rule": "all",
     "minimum": null,
-    "option_group": "advanced production",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -295,7 +302,7 @@
     "courses": [
      {
       "code": "FTVM 271",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -303,10 +310,10 @@
     ]
    },
    {
-    "name": "Option 3",
+    "name": "Option Three",
     "rule": "all",
     "minimum": null,
-    "option_group": "advanced production",
+    "option_group": "CHOOSE ONE OF THE FOLLOWING OPTIONS",
     "stated": {
      "min": null,
      "max": null
@@ -314,8 +321,8 @@
     "courses": [
      {
       "code": "FTVM 272",
-      "units": 2.0,
-      "units_max": null,
+      "units": 2,
+      "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -325,46 +332,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside any course and no total for the major or degree; units are null throughout.",
-   "MCOMM 101 is required by the catalog but not in the closed list (catalog_addition).",
-   "Outcome text normalized from PDF extraction artifacts: split ligatures ('ﬁ nal', 'eﬀ ective') joined and line-break hyphenations ('understand-ing', 'sup-port') rejoined. The printed typo 'oft he' was kept as printed. The second outcome has no closing period in the source.",
-   "The first outcome is preceded by the lead-in 'Upon completion of this program, students will' (letter-spaced in the extraction), which was omitted.",
-   "Career entry 'film and television industry' is read from the description's 'pathway into the film and television industry'; reviewer may judge whether this counts as a career field."
+   "FTVM 272 units are printed as '23'; read as a lost hyphen for '2-3' (closed list stores 2). This reading is consistent with the stated 19-22 major total. Reviewer should verify.",
+   "FTVM 270B is printed as 1-2 units while the closed list stores 1.",
+   "MCOMM 101 is not in the closed list; recorded as a catalog addition.",
+   "Degree total of 60 taken from 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE unit figure is named on this page.",
+   "A 'Program Learning Outcomes' tab is listed but no outcomes are printed in the provided text; outcomes left empty.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": 41040709338,
- "read_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "FTVM 100": [
-     3.0,
-     3.0
-    ],
-    "FTVM 131": [
-     3.0,
-     3.0
-    ],
-    "FTVM 132": [
-     3.0,
-     3.0
-    ],
-    "FTVM 135": [
-     3.0,
-     3.0
-    ],
-    "FTVM 137": [
-     3.0,
-     3.0
-    ],
-    "FTVM 139": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

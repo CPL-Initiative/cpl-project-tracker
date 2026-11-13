@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Film, Television, and Electronic Media",
  "award": "A.S. T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=118",
+ "source_url": "https://catalog.glendale.edu/programs/FTEM-AST/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9168,
+  "input_tokens": 7684,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9168,
-    "output_tokens": 2995,
+    "input_tokens": 7684,
+    "output_tokens": 2797,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2995,
+  "output_tokens": 2797,
   "output_tokens_details": {
-   "thinking_tokens": 773
+   "thinking_tokens": 513
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09657,
- "ms": 23383,
- "seconds": 23.7,
+ "cost_usd": 0.08668,
+ "ms": 21672,
+ "seconds": 21.8,
  "parts": null,
  "error": null,
  "score": {
@@ -69,7 +69,7 @@
    "status": "equal",
    "computed": [
     18.0,
-    18.0
+    19.0
    ],
    "stated": [
     18.0,
@@ -77,20 +77,40 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true,
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     19.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "transfer": true,
+    "fill": [
+     41.0,
+     42.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -99,16 +119,13 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "AS-T — FILM, TELEVISION AND ELECTRONIC MEDIA",
+   "section_heading": "FTEM-AST - Film, Television, and Electronic Media - Associate in Science for Transfer",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -121,54 +138,50 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "apply concepts of composition, film language and lighting techniques to support the creative vision of the director",
-    "collaborate effectively as a member of a team to achieve the challenges of technical and conceptual goals of a project from origination to the completion of the high quality final deliverable media production",
-    "utilize conceptual editing techniques to support storytelling and solve story problems through the use of editing dialogue, sound design, music, and sound effects to complete the creation of the master for final deliverables."
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Core",
+    "name": "REQUIRED COURSES FOR MAJOR - CHOOSE TWO OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": 6,
-     "max": 6
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "MCOMM 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 112",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [
        {
         "code": "FTVM 120",
-        "units": 3.0,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -177,9 +190,9 @@
     ]
    },
    {
-    "name": "List A Area 1: Audio",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "LIST A - CHOOSE ONE FROM EACH AREA: Area 1: Audio",
+    "rule": "all",
+    "minimum": null,
     "option_group": null,
     "stated": {
      "min": null,
@@ -188,7 +201,7 @@
     "courses": [
      {
       "code": "FTVM 135",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -196,7 +209,7 @@
     ]
    },
    {
-    "name": "List A Area 2: Video or Film Production",
+    "name": "LIST A - CHOOSE ONE FROM EACH AREA: Area 2: Video or Film Production",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -207,14 +220,14 @@
     "courses": [
      {
       "code": "FTVM 131",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 132",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -222,25 +235,25 @@
     ]
    },
    {
-    "name": "List B",
+    "name": "LIST B - CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "ARTH 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 101",
-      "units": 3.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -248,166 +261,166 @@
     ]
    },
    {
-    "name": "List C",
-    "rule": "choose_courses",
-    "minimum": 1,
+    "name": "LIST C - CHOOSE ONE OR MORE OF THE FOLLOWING FOR A MINIMUM OF THREE UNITS",
+    "rule": "choose_units",
+    "minimum": 3,
     "option_group": null,
     "stated": {
-     "min": 3,
-     "max": 3
+     "min": null,
+     "max": null
     },
     "courses": [
      {
       "code": "ART 220",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 101",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 102",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 103",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 104",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 107",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 108",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 137",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 139",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 212",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 249",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 255",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 256",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 257",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 258",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 259",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 270A",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 270B",
-      "units": 1.0,
-      "units_max": 2.0,
+      "units": 1,
+      "units_max": 2,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 271",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 272",
-      "units": 2.0,
+      "units": 2,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 50",
-      "units": 1.0,
-      "units_max": 3.0,
+      "units": 1,
+      "units_max": 3,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -417,47 +430,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The catalog prints no units beside individual courses; course units are null. Block totals come from the printed parentheticals (Core 6 units, List A 6 units across both areas, List B 3 units, List C 3 units).",
-   "List A says 'Select one course from each area (6 units)'; recorded as two blocks (Area 1, Area 2), each choose 1, with the 6-unit total not attached to either block.",
-   "List B and List C also allow 'Any course not already used above'; these open options are not recorded as courses.",
-   "The outcomes are printed as one sentence after the lead-in 'Upon completion of this program, the students will have the skill to'; recorded as three outcomes split at the semicolons. PDF ligature spacing and line-break hyphens (e.g., 'fi lm', 'con-cepts', 'origina-tion', 'eﬀ ectively') were rejoined; reviewer should check.",
-   "Closed-list 'PHOTO101' matched to catalog 'PHOTO 101'. MCOMM 101 is not in the closed list and is marked as a catalog addition.",
-   "Required Units for Major: 18 units* — the asterisk's footnote is not in the text provided."
+   "Degree total of 60 taken from 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE units are named on the page.",
+   "The first block heading reads 'REQUIRED COURSES FOR MAJOR - CHOOSE TWO OF THE FOLLOWING'; recorded as choose 2 courses, with FTVM 112 or FTVM 120 as one choice. MCOMM 101 is not in the closed list.",
+   "List A 'choose one from each area': Area 1 lists only FTVM 135, recorded as a required block; Area 2 is choose one of FTVM 131/FTVM 132.",
+   "List B also allows 'Any course from List A not already used'; List C also allows 'Any course from List A or List B not already used'. These cross-list options are not duplicated in the blocks.",
+   "PHOTO 101 matches closed-list entry 'PHOTO101' (spacing differs); catalog prints 4 units, the state file stores none.",
+   "FTVM 255 is titled 'Field Sound Production' in the catalog vs 'Field Sound Production Practicum' in the closed list. FTVM 270B printed as 1-2 units and FTVM 50 as 1-3 units, while the closed list stores 1.",
+   "The page has a 'Program Learning Outcomes' tab but no outcomes are printed in the provided text; outcomes left empty. No careers named."
   ]
  },
- "extracted_run": 41040709338,
- "read_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "FTVM 100": [
-     3.0,
-     3.0
-    ],
-    "FTVM 135": [
-     3.0,
-     3.0
-    ],
-    "FTVM 131": [
-     3.0,
-     3.0
-    ],
-    "FTVM 132": [
-     3.0,
-     3.0
-    ],
-    "FTVM 137": [
-     3.0,
-     3.0
-    ],
-    "FTVM 139": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

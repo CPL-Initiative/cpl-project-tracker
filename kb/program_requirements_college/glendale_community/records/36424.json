@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Mechanical/Aerospace/Manufacturing Engineering",
  "award": "Certificate of Achievement requiring 60+S/90+Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=100",
+ "source_url": "https://catalog.glendale.edu/programs/ME-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12209,
+  "input_tokens": 6909,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12209,
-    "output_tokens": 2503,
+    "input_tokens": 6909,
+    "output_tokens": 1473,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2503,
+  "output_tokens": 1473,
   "output_tokens_details": {
-   "thinking_tokens": 948
+   "thinking_tokens": 267
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0989,
- "ms": 20782,
- "seconds": 21.3,
+ "cost_usd": 0.0571,
+ "ms": 11838,
+ "seconds": 11.9,
  "parts": null,
  "error": null,
  "score": {
@@ -83,13 +83,13 @@
    "pass": true
   },
   "outcomes": {
-   "program": 5,
+   "program": 0,
    "courses": 0,
-   "count": 5,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MECHANICAL, AEROSPACE, AND MANUFACTURING",
+   "section_heading": "ME-C - Engineering: Mechanical, Aerospace, and Manufacturing Engineering - Certificate of Achievement",
    "measure": "units",
    "total_units": {
     "min": 66,
@@ -125,141 +125,135 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "identify, formulate, and solve engineering problems by applying principles of engineering, science, and mathematics",
-    "apply the engineering design process to create engineering solutions that meet specified needs that integrates consideration of public health, safety, and welfare, as well as global, cultural, social, environmental, and economic factors",
-    "communicate technical information effectively with a range of audiences",
-    "function effectively on a team whose members together provide leadership, create a collaborative and inclusive environment, establish goals, plan tasks, and meet technical objectives",
-    "transfer to a bachelor’s degree program in order to finish preparing for a career in a specific discipline of mechanical, aerospace, or manufacturing engineering"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 66,
+     "max": 66
     },
     "courses": [
      {
       "code": "MATH 103E",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 104E",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 105",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 108",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 100",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 122",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 133",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 140",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ENGR 141",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 152",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 156",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 230",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 240",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGR 241",
-      "units": 4.0,
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -270,83 +264,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Section read: ENGINEERING CERTIFICATE > MECHANICAL, AEROSPACE, AND MANUFACTURING (catalog page 97/PDF page 100); Civil and Electrical sections on the same page were ignored.",
-   "The catalog prints no units beside individual courses, so course units are null; total 66 units is stated in the text ('Students must complete all required courses to total 66 units'). '(60 units or less)' refers to transfer training time, not the certificate total.",
-   "ENGR 230 and ENGR 241 match closed-list entries ENGR230 and ENGR241 (stored without a space); treated as the same courses.",
-   "ENGR 140 is printed in the required list but is not in the closed list; recorded as a catalog addition.",
-   "Program learning outcomes are printed as one semicolon-separated sentence; recorded as five outcomes with the lead-in 'Upon completion of this program, students will' and the connecting 'and' before the last item omitted, and PDF ligatures/hyphenation ('speciﬁ ed', 'eﬀ ectively', 'formu-late') normalized.",
-   "No careers or job titles are explicitly named; the final outcome mentions 'a career in a specific discipline of mechanical, aerospace, or manufacturing engineering', which a reviewer may wish to treat as career fields."
+   "ENGR 230 and ENGR 241 are printed with a space in the catalog; the closed list stores them as ENGR230 and ENGR241. Treated as the same courses (not catalog additions).",
+   "ENGR 140 (Materials Science and Engineering, 3 units) is printed in the catalog but is not in the closed list; recorded as a catalog addition.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but no outcomes are printed in the provided text; outcomes left empty.",
+   "Catalog prints minimum/maximum required units for major as 66 and TOTAL UNITS REQUIRED 66; course units sum to 66.",
+   "The award label '60+S/90+Q units' refers to the state award category; the catalog total is 66 units.",
+   "No careers are named in the provided text."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "MATH 103E": [
-     5.0,
-     5.0
-    ],
-    "MATH 104E": [
-     5.0,
-     5.0
-    ],
-    "MATH 105": [
-     5.0,
-     5.0
-    ],
-    "MATH 108": [
-     5.0,
-     5.0
-    ],
-    "PHY 101": [
-     5.0,
-     5.0
-    ],
-    "PHY 102": [
-     5.0,
-     5.0
-    ],
-    "CHEM 101": [
-     5.0,
-     5.0
-    ],
-    "ENGR 100": [
-     3.0,
-     3.0
-    ],
-    "ENGR 122": [
-     3.0,
-     3.0
-    ],
-    "ENGR 133": [
-     3.0,
-     3.0
-    ],
-    "ENGR 140": [
-     3.0,
-     3.0
-    ],
-    "ENGR 141": [
-     1.0,
-     1.0
-    ],
-    "ENGR 152": [
-     3.0,
-     3.0
-    ],
-    "ENGR 156": [
-     3.0,
-     3.0
-    ],
-    "ENGR 240": [
-     4.0,
-     4.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41009271854
+ "extracted_run": "43415972509"
 }

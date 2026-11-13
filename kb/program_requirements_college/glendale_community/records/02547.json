@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Architectural Drafting & Design",
  "award": "A.S. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=65",
+ "source_url": "https://catalog.glendale.edu/programs/AD%26D-AS/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8117,
+  "input_tokens": 6750,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8117,
-    "output_tokens": 2878,
+    "input_tokens": 6750,
+    "output_tokens": 1360,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,117 +30,98 @@
     "model": null
    }
   ],
-  "output_tokens": 2878,
+  "output_tokens": 1360,
   "output_tokens_details": {
-   "thinking_tokens": 888
+   "thinking_tokens": 364
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09003,
- "ms": 21902,
- "seconds": 22.9,
+ "cost_usd": 0.0542,
+ "ms": 12405,
+ "seconds": 13.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 11,
+   "placed": 13,
    "listed": 13,
-   "share": 0.846,
-   "missing": [
-    "ARCH229",
-    "ARCH251"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 13,
-   "codes": [
-    "ART130",
-    "ART150",
-    "BUSAD152",
-    "ENGL100",
-    "ENGL101",
-    "ENGL102",
-    "ENGL104",
-    "ENGR109",
-    "MATH100",
-    "MATH90",
-    "SPCH101",
-    "TED140",
-    "TED142"
-   ],
-   "flagged": [
-    "ART130",
-    "ART150",
-    "BUSAD152",
-    "ENGL100",
-    "ENGL101",
-    "ENGL102",
-    "ENGL104",
-    "ENGR109",
-    "MATH100",
-    "MATH90",
-    "SPCH101",
-    "TED140",
-    "TED142"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "unequal",
    "computed": [
-    43.0,
-    44.0
+    33.0,
+    33.0
    ],
    "stated": [
-    42.0,
-    46.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": null,
    "why": [
-    "the blocks sum to 43.0-44.0; the catalog states 42.0-46.0"
-   ]
+    "the blocks and general education sum to 33.0-33.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     33.0,
+     33.0
+    ],
+    "stated": [
+     33.0,
+     33.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 4,
+   "program": 0,
    "courses": 0,
-   "count": 4,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "ARCHITECTURAL DRAFTING AND DESIGN AS DEGREE OR CERTIFICATE",
+   "section_heading": "AD&D-AS - Architectural Drafting & Design - Associate of Science",
    "measure": "units",
    "total_units": {
-    "min": 42,
-    "max": 46
+    "min": 33,
+    "max": 33
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -149,29 +130,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "demonstrate techniques to accomplish drawings utilizing different computer aided design (CAD) software",
-    "develop a portfolio of their work (this portfolio will show the students best work from different classes within the department, discuss building construction techniques, principles, and building code)",
-    "demonstrate skills in the production of working drawings of residential and commercial structures",
-    "discuss how design/drawing techniques, application of the International Building Code (IBC), building construction techniques, and other standards affect the design of their structure."
-   ],
-   "careers": [
-    "architectural drafter and designer",
-    "permit technician",
-    "interior designer"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR/CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -182,276 +154,105 @@
     "courses": [
      {
       "code": "ARCH 101",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARCH 102",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 103",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 105",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 106",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 135",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ENGR 109",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one course from option 1",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "ARCH 102",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "ARCH 141",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARCH 250",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Select one course from option 2",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "ART 130",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      },
      {
-      "code": "ART 150",
-      "units": 3.0,
+      "code": "ARCH 141",
+      "units": 3,
       "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one course from option 3",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "BUSAD 152",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "SPCH 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one course from the following",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "T ED 140",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ENGL 100",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ENGL 101",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ENGL 102",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "ENGL 104",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     }
-    ]
-   },
-   {
-    "name": "Select one course from the following",
-    "rule": "choose_courses",
-    "minimum": 1,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "T ED 142",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH 100",
-      "units": 4.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
-     },
-     {
-      "code": "MATH 90",
-      "units": null,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
+      "alternatives": [
+       {
+        "code": "ARCH 229",
+        "units": 3,
+        "catalog_addition": false
+       },
+       {
+        "code": "ARCH 251",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
      }
     ]
    }
   ],
   "course_outcomes": [],
-  "missing_explained": [
-   {
-    "code": "ARCH 229",
-    "why": "not in the text"
-   },
-   {
-    "code": "ARCH 251",
-    "why": "not in the text"
-   }
-  ],
+  "missing_explained": [],
   "notes": [
-   "The section covers both the AS degree and the certificate ('AS DEGREE OR CERTIFICATE'); the award shares its requirements, 42-46 unit total, and Program Learning Outcomes with the certificate.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "Program Learning Outcomes are printed as one run-on sentence joined by semicolons after the lead-in 'Upon completion of this program, students will'; recorded as four outcomes split at the semicolons, with the joining 'and' before the last omitted. Ligature/hyphenation artifacts (e.g. 'di ﬀ erent', 'prin-ciples') were read as plain words.",
-   "T ED 140, ENGL 100 and T ED 142 are starred: 'Units earned for this course may not be counted toward graduation.'",
-   "The three 'option 1/2/3' selections are each required (one course from each), not alternatives to one another, so option_group is null.",
-   "No GE pattern or degree total is printed in this section."
+   "Major total read from 'Minimum/Maximum Required Units/Hours for Major 33'; the 11 required 3-unit choices sum to 33.",
+   "degree_total 60 taken from the page field 'Minimum Required Units for Degree (with GE) 60' printed for this award; reviewer may confirm it is the award's total rather than a generic minimum.",
+   "No general education pattern or GE units named in the text.",
+   "'TOTAL UNITS REQUIRED' row in the table prints no figure.",
+   "The page has a 'Program Learning Outcomes' tab, but no outcomes appear in the supplied text; outcomes left empty.",
+   "ARCH 141, ARCH 229 and ARCH 251 are printed as one 'or' row; recorded as one entry with alternatives."
   ]
  },
- "extracted_run": 41049220135,
- "read_run": 41040709338,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "SPCH 101": [
-     3.0,
-     3.0
-    ],
-    "ENGL 101": [
-     4.0,
-     4.0
-    ],
-    "ENGL 104": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "43415972509"
 }

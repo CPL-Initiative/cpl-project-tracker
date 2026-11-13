@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Addiction Studies Counseling",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=132",
+ "source_url": "https://catalog.glendale.edu/programs/ASC-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8783,
+  "input_tokens": 6838,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8783,
-    "output_tokens": 1055,
+    "input_tokens": 6838,
+    "output_tokens": 1525,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1055,
+  "output_tokens": 1525,
   "output_tokens_details": {
-   "thinking_tokens": 260
+   "thinking_tokens": 328
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05623,
- "ms": 9870,
- "seconds": 10.2,
+ "cost_usd": 0.05785,
+ "ms": 13137,
+ "seconds": 13.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 13,
    "listed": 13,
-   "share": 0.0,
-   "missing": [
-    "ADST101",
-    "ADST103",
-    "ADST105",
-    "ADST110",
-    "ADST111",
-    "ADST112",
-    "ADST114",
-    "ADST119",
-    "ADST152",
-    "ADST153",
-    "ADST154",
-    "ADST50",
-    "PSYCC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -75,17 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    39.0,
+    39.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,8 +84,8 @@
    "count": 0,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
-   "heading_without_outcomes": false,
+   "heading_printed": true,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -109,15 +96,15 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "ALCOHOL/DRUG STUDIES",
+   "section_heading": "ASC-C - Addiction Studies Counseling - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 39,
+    "max": 39
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -137,67 +124,179 @@
    "outcomes": [],
    "careers": []
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "AD ST 101",
-    "why": "not in a requirements list; named only as a prerequisite in course descriptions"
+    "name": "Core Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AD ST 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 103",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AD ST 103",
-    "why": "not in a requirements list; named only as a prerequisite or recommended preparation in course descriptions"
+    "name": "Behavioral Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AD ST 105",
-    "why": "not in a requirements list; named only as a prerequisite in a course description"
+    "name": "Skill Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AD ST 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AD ST 110",
-    "why": "only its course description appears; no program requirements in the text"
+    "name": "Family Course",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AD ST 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AD ST 111",
-    "why": "only its course description appears; no program requirements in the text"
+    "name": "Field Experience",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AD ST 154",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "AD ST 112",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 114",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 119",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 152",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 153",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 154",
-    "why": "only its course description appears; no program requirements in the text"
-   },
-   {
-    "code": "AD ST 50",
-    "why": "not in a requirements list; named only as a corequisite in course descriptions"
-   },
-   {
-    "code": "PSYC C1000",
-    "why": "not in a requirements list; named only as recommended preparation in course descriptions"
+    "name": "Field Placement/Internship",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AD ST 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 153",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AD ST 50",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 132, printed page 129 'ALCOHOL/DRUG STUDIES') contains only course descriptions for AD ST 110-154; it does not print the Addiction Studies Counseling Certificate of Achievement requirements, total units, outcomes or careers. The program requirements are likely on another catalog page and should be checked.",
-   "Section heading taken from the page footer 'ALCOHOL/DRUG STUDIES'.",
-   "Course descriptions print codes as 'ADST' in text and 'AD ST' in prerequisites."
+   "AD ST 50 is printed with units '2 x 1' (a 1-unit course taken twice); recorded as 2 units, which makes the course units sum to the printed total of 39. The state file stores 1 unit.",
+   "The page shows a 'Program Learning Outcomes' tab but the provided text prints no outcomes; outcomes left empty.",
+   "Catalog titles differ from state file for AD ST 112 ('Group Therapy and the Therapeutic Process') and AD ST 154 ('Self-Help Groups, Recovery, and Community Networking'); codes match.",
+   "Award title says Certificate of Achievement requiring 30 to fewer than 60 units; catalog total 39 is consistent."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "43415972509"
 }

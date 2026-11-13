@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Three-Dimensional Art",
  "award": "A.A. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=66",
+ "source_url": "https://catalog.glendale.edu/programs/VA3D-AA/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8102,
+  "input_tokens": 6705,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8102,
-    "output_tokens": 2313,
+    "input_tokens": 6705,
+    "output_tokens": 1748,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2313,
+  "output_tokens": 1748,
   "output_tokens_details": {
-   "thinking_tokens": 852
+   "thinking_tokens": 424
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07867,
- "ms": 18743,
- "seconds": 19.2,
+ "cost_usd": 0.06178,
+ "ms": 14672,
+ "seconds": 14.8,
  "parts": null,
  "error": null,
  "score": {
@@ -60,45 +60,66 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 5,
    "codes": [
-    "ART101",
-    "ART102",
-    "ART130"
+    "ART130",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H"
    ],
    "flagged": [
-    "ART101",
-    "ART102",
-    "ART130"
+    "ART130",
+    "ARTHC1100",
+    "ARTHC1100H",
+    "ARTHC1200",
+    "ARTHC1200H"
    ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    9.0,
-    9.0
+    18.0,
+    18.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    60.0,
+    60.0
+   ],
+   "against": "degree",
+   "ge": null,
    "why": [
-    "a required course in 'Three-dimensional: Required Courses' has no units",
-    "the record names no total"
-   ]
+    "the blocks and general education sum to 18.0-18.0; the catalog prints 60.0-60.0 for the degree"
+   ],
+   "major": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     18.0,
+     18.0
+    ],
+    "stated": [
+     18.0,
+     18.0
+    ],
+    "against": "program",
+    "why": []
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 8,
+   "program": 0,
    "courses": 0,
-   "count": 8,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
@@ -107,20 +128,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
  "record": {
   "program": {
-   "section_heading": "VISUAL ARTS - TWO/THREE DIMENSIONAL AA DEGREE (Three-dimensional)",
+   "section_heading": "VA3D-AA - Three-Dimensional Art - Associate of Arts",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -129,29 +147,20 @@
    },
    "ge_pattern": null,
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 60,
+    "max": 60
    },
    "ge_units": {
     "min": null,
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "define and use core concepts in 2D and 3D art",
-    "demonstrate skill in a broad range of media, materials and processes",
-    "describe, analyze and provide criticism of works of art in various media",
-    "prepare and organize art works for exhibition, if applicable",
-    "understand safe and hazard-free use of art materials and equipment",
-    "produce original work the demonstrate a high level of craft",
-    "prepare artist statements, resumes and collateral written materials",
-    "relate works of art to ideas from the study of art history and the humanities"
-   ],
+   "outcomes": [],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Three-dimensional: Required Courses",
+    "name": "REQUIRED COURSES FOR MAJOR",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -161,36 +170,46 @@
     },
     "courses": [
      {
-      "code": "ART 101",
-      "units": null,
-      "units_max": null,
-      "alternatives": [
-       {
-        "code": "ART 102",
-        "units": null,
-        "catalog_addition": true
-       }
-      ],
-      "catalog_addition": true
-     },
-     {
       "code": "ART 130",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ART 138",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "ARTH C1100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ARTH C1100H",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH C1200",
+        "units": 3,
+        "catalog_addition": true
+       },
+       {
+        "code": "ARTH C1200H",
+        "units": 3,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
      }
     ]
    },
    {
-    "name": "Three-dimensional: Select three courses from the following",
+    "name": "CHOOSE THREE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -201,63 +220,63 @@
     "courses": [
      {
       "code": "ART 152",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 157",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 179",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 180",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 181",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 186",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 187",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 190",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 280",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -269,46 +288,29 @@
   "missing_explained": [
    {
     "code": "ARTH 101",
-    "why": "named only in the Art History A.A. section"
+    "why": "not in the text; catalog lists ARTH C1100 (common course number) instead"
    },
    {
     "code": "ARTH 101H",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ARTH C1100H instead"
    },
    {
     "code": "ARTH 102",
-    "why": "named only in the Art History A.A. section"
+    "why": "not in the text; catalog lists ARTH C1200 instead"
    },
    {
     "code": "ARTH 102H",
-    "why": "not in the text"
+    "why": "not in the text; catalog lists ARTH C1200H instead"
    }
   ],
   "notes": [
-   "The catalog prints one A.A. degree, Visual Arts - Two/Three Dimensional, with 'Select one of the following:' Two-dimensional or Three-dimensional. Only the Three-dimensional option is recorded, as this program is Three-Dimensional Art; the Two-dimensional option (ART 101 or 102, 130, 150; three of ART 131, 151, 152, 160, 164, 166, 170, 179, 280, PHOTO 101) is not recorded.",
-   "The program learning outcomes are printed once for the combined Two/Three Dimensional degree and are shared by the Three-dimensional option.",
-   "The outcomes are printed as one run-in sentence separated by semicolons. They are split at the semicolons, the lead-in and the final 'and' are dropped, and PDF extraction artifacts are normalized: ligature splits 'deﬁ ne' to 'define' and 'writt en' to 'written', and line-break hyphens 'criti-cism' to 'criticism'. The catalog's typo 'the demonstrate' is kept as printed.",
-   "No units are printed beside any course and no program, degree or GE total is stated; all units fields are null.",
-   "ART 101, ART 102 and ART 130 appear in the required courses but are not in the closed list, so they are flagged as catalog additions."
+   "The ARTH row prints 'ARTH C1100/C1100H or ARTH C1200/C1200H' as one choice of 3 units; recorded as ARTH C1100 with C1100H, C1200 and C1200H as alternatives.",
+   "ARTH C1100/C1100H/C1200/C1200H appear to be Cal common-course-numbered replacements for closed-list ARTH 101/101H/102/102H; reviewer should confirm.",
+   "ART 130 (2-D Foundations) is required by the catalog but is not on the closed list.",
+   "degree_total 60 taken from the page's field 'Minimum Required Units for Degree (with GE) 60'; no GE pattern or GE units are named.",
+   "The page shows a 'Program Learning Outcomes' tab heading, but no outcomes are printed in the provided text; outcomes left empty.",
+   "Major total printed as both minimum and maximum 18 units, and 'MINIMUM UNITS REQUIRED 18'."
   ]
  },
- "extracted_run": 41040709338,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ART 130": [
-     3.0,
-     3.0
-    ],
-    "ART 138": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41012563119
+ "extracted_run": "43415972509"
 }

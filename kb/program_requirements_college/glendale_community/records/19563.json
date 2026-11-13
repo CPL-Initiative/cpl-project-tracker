@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Insurance Specialist: Property & Casualty",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=79",
+ "source_url": "https://catalog.glendale.edu/programs/IS-C/completion-requirements-zaZdl",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12368,
+  "input_tokens": 6750,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12368,
-    "output_tokens": 1957,
+    "input_tokens": 6750,
+    "output_tokens": 1232,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1957,
+  "output_tokens": 1232,
   "output_tokens_details": {
-   "thinking_tokens": 646
+   "thinking_tokens": 180
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08861,
- "ms": 16980,
- "seconds": 17.3,
+ "cost_usd": 0.05164,
+ "ms": 10528,
+ "seconds": 10.7,
  "parts": null,
  "error": null,
  "score": {
@@ -55,25 +55,21 @@
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "BUSAD204"
-   ],
-   "flagged": [
-    "BUSAD204"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": true,
    "status": "equal",
    "computed": [
-    32.0,
-    33.0
+    21.0,
+    26.0
    ],
    "stated": [
-    32.0,
-    33.0
+    21.0,
+    26.0
    ],
    "against": "program",
    "why": []
@@ -83,17 +79,17 @@
    "pass": true
   },
   "outcomes": {
-   "program": 3,
+   "program": 0,
    "courses": 0,
-   "count": 3,
+   "count": 0,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": false,
+   "heading_without_outcomes": true,
    "pass": true
   },
   "careers": {
-   "count": 7,
+   "count": 0,
    "not_verbatim": [],
    "pass": true
   },
@@ -104,11 +100,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "INSURANCE SPECIALIST: PROPERTY & CASUALTY AS DEGREE",
+   "section_heading": "IS-C - Insurance Specialist:Property and Casualty - Certificate of Achievement",
    "measure": "units",
    "total_units": {
-    "min": 32,
-    "max": 33
+    "min": 21,
+    "max": 26
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -125,24 +121,12 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [
-    "Describe and apply insurance concepts such as principles of indemnity, valued policy, and liability limits.",
-    "Describe elements of a contract, insurance contracts, and conditions commonly found in property and liability insurance policies.",
-    "Discuss loss exposures, personal risk insurance, and types of personal insurance policies."
-   ],
-   "careers": [
-    "appraiser",
-    "agent",
-    "estimator",
-    "senior administrative assistant",
-    "broker",
-    "underwriter",
-    "senior sales associate"
-   ]
+   "outcomes": [],
+   "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "REQUIRED COURSES FOR CERTIFICATE",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -152,71 +136,76 @@
     },
     "courses": [
      {
-      "code": "ACCTG 101",
-      "units": 5.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUSAD 101",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
-      "code": "BUSAD 106",
-      "units": 3.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": false
-     },
-     {
       "code": "BUSAD 111",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 112",
-      "units": 1.0,
+      "units": 1,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 113",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 114",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 115",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 116",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "CHOOSE TWO OF THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BUSAD 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUSAD 106",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 120",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -227,11 +216,18 @@
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
+     },
+     {
+      "code": "ACCTG 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
      }
     ]
    },
    {
-    "name": "Select one course from the following",
+    "name": "CHOOSE ONE OF THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 1,
     "option_group": null,
@@ -241,37 +237,18 @@
     },
     "courses": [
      {
-      "code": "CABOT 260",
-      "units": 4.0,
+      "code": "CS/IS 100",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
-      "code": "CS/IS 100",
-      "units": 3.0,
+      "code": "CABOT 260",
+      "units": 4,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
-     }
-    ]
-   },
-   {
-    "name": "Recommended courses",
-    "rule": "recommended",
-    "minimum": null,
-    "option_group": null,
-    "stated": {
-     "min": null,
-     "max": null
-    },
-    "courses": [
-     {
-      "code": "BUSAD 204",
-      "units": 1.0,
-      "units_max": null,
-      "alternatives": [],
-      "catalog_addition": true
      }
     ]
    }
@@ -279,69 +256,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The requested award is a Certificate of Achievement (16 to fewer than 30 units), but the supplied text prints only an 'AS DEGREE' section for Insurance Specialist: Property & Casualty, with a stated total of 32-33 units, which exceeds the certificate's unit range. The courses match the closed list exactly, so this record reads the AS degree section; a reviewer should check whether a separate certificate section exists elsewhere in the catalog.",
-   "The catalog prints units only for BUSAD 50 (1 unit); no units are printed beside the other courses.",
-   "ACCTG 101 is printed with a space; the closed list stores it as ACCTG101 and it is treated as the same course.",
-   "The careers list is taken from the program description ('roles such as ...'); the phrase 'positions in the insurance industry' was not recorded as a separate career."
+   "The catalog prints ACCTG 101 with a space; the closed list stores it as ACCTG101. Treated as the same course (catalog_addition false).",
+   "The page shows a 'Program Learning Outcomes' tab heading but the extracted text prints no outcomes; program.outcomes left empty.",
+   "Total 21-26 printed both as Minimum/Maximum Required Units for Major and as TOTAL UNITS REQUIRED.",
+   "The page names no careers."
   ]
  },
- "extracted_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BUSAD 101": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 106": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 111": [
-     1.0,
-     1.0
-    ],
-    "BUSAD 112": [
-     1.0,
-     1.0
-    ],
-    "BUSAD 113": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 114": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 115": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 116": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 120": [
-     3.0,
-     3.0
-    ],
-    "CABOT 260": [
-     4.0,
-     4.0
-    ],
-    "CS/IS 100": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 204": [
-     1.0,
-     1.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ],
- "read_run": 41009271854
+ "extracted_run": "43415972509"
 }
