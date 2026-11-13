@@ -7678,6 +7678,13 @@
      "line": 80
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 628
+    },
+    {
      "id": "script:kb/_seed_college_short_names.py",
      "kind": "script",
      "direction": "read",
@@ -14843,7 +14850,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 663
+     "line": 731
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -17576,7 +17583,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1143
+     "line": 1239
     }
    ],
    "served": true,
@@ -17589,7 +17596,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1148
+     "line": 1244
     }
    ],
    "served": true,
@@ -17602,7 +17609,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 981
+     "line": 1049
     }
    ],
    "served": true,
@@ -17615,7 +17622,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 966
+     "line": 1034
     }
    ],
    "served": false,

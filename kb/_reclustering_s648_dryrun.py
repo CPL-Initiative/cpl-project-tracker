@@ -573,14 +573,41 @@ def plan_case(w, case, report, alloc):
         if cur_gone.get("merge_into"):
             out["blockers"].append(f"{gone} already holds merge_into {cur_gone['merge_into']} "
                                    f"({cur_gone.get('reviewed_by')}): the slot is taken, so an INSERT cannot land")
-        if gone in w.merge_into.values():
-            out["notes"].append(f"{len(fb['pointed_at_by'])} curation pointers already fold into {gone}; the "
-                                "export follows the chain to the survivor (flatten_merge_chains)")
+        out["pointers_into_folded"] = []
+        for k in fb["pointed_at_by"]:
+            rec = w.cat.get(k) or w.sg.get(k) or {}
+            c = w.cur.get(k) or {}
+            out["pointers_into_folded"].append({
+                "row": [k, "merge_into", gone], "reviewed_by": c.get("reviewed_by"), "reviewed_at": c.get("reviewed_at"),
+                "course": f"{rec.get('college')} {rec.get('subject')} {rec.get('course_number')} {rec.get('common_title')}",
+                "fate": (f"unchanged. {gone} stays a live catalog record (no alias map is written and nothing is "
+                         "re-keyed, so kb/alias_chain.py never moves this row), and the export follows the row's "
+                         f"pointer through {gone}'s own merge_into to {surv} (flatten_merge_chains): the course "
+                         f"shows under {surv}, and deleting the cohort row returns it to {gone}")})
+        if fb["pointed_at_by"]:
+            out["notes"].append(f"{len(fb['pointed_at_by'])} curation pointers already fold into {gone} ("
+                                + "; ".join(f"{p['row'][0]} by {p['reviewed_by']}" for p in out["pointers_into_folded"])
+                                + f"); each stays as saved and the export follows it on to {surv}")
         if surv in w.merge_into:
             out["blockers"].append(f"the survivor {surv} itself folds into {w.merge_into[surv]}")
         if w.id_system(surv) == "C-ID" and surv not in w.cid_desc:
             out["notes"].append(f"{surv} is not in kb/reference/cid_descriptors.json, so the export titles it "
                                 "from its claimants")
+        inh = inherited_articulations(w, gone, surv)
+        out["inherited_articulations"] = inh
+        sus = [x for x in inh if x["suspect"]]
+        if sus:
+            x = sus[0]
+            out["blockers"].append(
+                f"{gone} carries the articulation of exhibit {x['exhibit_id']} *{x['exhibit_title']}* ("
+                f"{x['cpl_type']}, earned at {', '.join(x['earned_by_colleges'])}), whose unified title is "
+                f"*{x['unified_title']}* while its credit recommendation reads '{x['credit_recommendation']}' and "
+                f"its local course is {x['local_course']}: the title names another subject, so the record looks "
+                f"mis-filed at the title's unification (a college-wide credit-by-exam exhibit given one course's "
+                f"name). The merge would carry that title's {x['eligible_credits']} eligible credits and "
+                f"{x['students']} students into {surv}. Settled when the Exhibit Reference re-titles "
+                f"{x['exhibit_id']} by its credit recommendations (or the articulation moves off {gone}); then "
+                "the merge proceeds")
         if case["n"] == 3:
             out["blockers"].append(
                 "the report's own condition: a person checks whether a student takes both. Both minted records "
@@ -588,6 +615,47 @@ def plan_case(w, case, report, alloc):
                 "'required for the educational requirement for the California real estate salesperson license'; "
                 "REAL M1040: 'A State of California required course for the Real Estate Sales License exam'). "
                 "Read that way, a student takes both and the merge does not proceed; a person confirms")
+    return out
+
+
+_CR_TOTALS = {}
+
+
+def cr_totals():
+    """unified title -> (eligible credits, students served), from credential_reference_data.js (what the export's
+    CPL-impact columns read)."""
+    if not _CR_TOTALS:
+        with open(os.path.join(ROOT, "credential_reference_data.js"), encoding="utf-8") as f:
+            src = f.read()
+        doc = json.loads(src[src.index("{"):src.rindex("}") + 1])
+        for u in doc.get("unified_titles") or []:
+            _CR_TOTALS[u.get("ut")] = (u.get("eligible_credits"), u.get("students_served"))
+    return _CR_TOTALS
+
+
+def inherited_articulations(w, gone, surv):
+    """The articulation records a merge carries from the folded id into the survivor, with the CPL-impact figures
+    the survivor's row would add. A credit-by-exam record whose unified title shares no word with its own credit
+    recommendation is a suspect: an exam is named for the course it awards."""
+    arts = w.articulations.get("articulations", [])
+    have = {a.get("unified_title") for a in arts if a.get("course_id") == surv}
+    tot = cr_totals()
+    out = []
+    for a in arts:
+        if a.get("course_id") != gone:
+            continue
+        ut = a.get("unified_title")
+        cr = (a.get("credit_recommendations") or [""])[0]
+        crt = re.sub(r"^\s*[\d.]+\s*(semester\s+)?(hours?|units?)\s+in\s+", "", cr, flags=re.I)
+        cbe = (a.get("cpl_type_description") or "") == "Credit By Exam"
+        el, st = tot.get(ut, (None, None))
+        out.append({"exhibit_id": a.get("exhibit_id"), "exhibit_title": a.get("exhibit_title"), "unified_title": ut,
+                    "cpl_type": a.get("cpl_type_description"), "credit_recommendation": cr,
+                    "local_course": ", ".join(f"{c.get('subject')} {c.get('number')} {c.get('title')}"
+                                              for c in a.get("local_courses") or []),
+                    "earned_by_colleges": a.get("earned_by_colleges") or [],
+                    "eligible_credits": el, "students": st, "new_to_survivor": ut not in have,
+                    "suspect": cbe and title_agree(ut or "", crt) == 0.0})
     return out
 
 
@@ -868,7 +936,7 @@ def honors_questions(s):
     ]
 
 
-READY_CASES = (2, 4, 6)
+READY_CASES = (2, 6)  # case 4 held by the conductor, 2026-11-13: its merge carries a mis-filed articulation
 
 
 def apply_keys(cases):
@@ -905,7 +973,7 @@ def selects(w, cases):
             {"sql": f"select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
                     f"where course_id in ({q(keys)}) group by 1, 2 order by 1, 2;",
              "expect": {f"{f} / {'bot' if b else 'person'}": n for (f, b), n in sorted(by_field.items())},
-             "if_different": "a merge_into row on any of the three sources means its INSERT would be skipped: hold "
+             "if_different": "a merge_into row on a source key means its INSERT would be skipped: hold "
                              "that case. Any other new row since the overlay sync is a person's or a procedure's "
                              "work on an affected key: read it before applying (Rule 10a)."},
             {"sql": f"select count(*) from public.kb_curation where field = 'merge_into' and course_id in ({q(src)});",
@@ -914,8 +982,8 @@ def selects(w, cases):
             {"sql": f"select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation "
                     f"where field = 'merge_into' and value in ({q(touched)}) group by 1, 2 order by 1, 2;",
              "expect": {f"{v} / {'bot' if b else 'person'}": n for (v, b), n in sorted(ptr.items())},
-             "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 and MATH M1044 "
-                             "pass their pointers on to the survivor); a pointer onto the new id means the id is "
+             "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 "
+                             "passes its pointers on to the survivor); a pointer onto the new id means the id is "
                              "no longer free: re-cut the plan"},
             {"sql": f"select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' "
                     f"and (course_id in ({q(keys)}) or value in ({q(keys)}));",
@@ -1002,7 +1070,7 @@ def sheet_section(plan):
     m5 = by[5]["moves"][0]
     return [
         "## For the sheet", "",
-        "Four questions for Sam. Cases 2, 4 and 6 go forward on his ruling.", "",
+        "Five questions for Sam. Cases 2 and 6 go forward on his ruling.", "",
         "**1. Honors under an official C-ID or CCN.** He ruled that an Honors course gets its own M-ID with a declared "
         f"equivalence to its base. Of the {h['shares_base_identity']} Honors courses that share an identity with their "
         f"base, {h['honors_rows_leaving_official_ids']} sit under {h['new_mids_from_official_ids']} official C-ID or "
@@ -1028,6 +1096,23 @@ def sheet_section(plan):
         "records say the course is required for the California real estate salesperson license, which asks for Real "
         "Estate Principles and Real Estate Practice as two courses. Options: (a) keep them apart; (b) merge into "
         "REAL M1040 (units 0 to 4). Recommended: (a).", "",
+    ] + _sheet_case4(by[4])
+
+
+def _sheet_case4(c):
+    sus = [x for x in c.get("inherited_articulations") or [] if x["suspect"]]
+    if not sus:
+        return []
+    x = sus[0]
+    return [
+        "**5. MATH M1044 into MATH M1036: merge once the mis-filed articulation is settled?** The outcomes say "
+        "*College and Matrix Algebra* (San Diego Mesa, Miramar and City, one district) repeats *College Algebra*. "
+        f"MATH M1044 carries exhibit {x['exhibit_id']}, *{x['exhibit_title']}*, unified under the title "
+        f"*{x['unified_title']}* though its credit recommendation reads '{x['credit_recommendation']}'; that title "
+        f"totals {x['eligible_credits']:,.0f} eligible credits and {x['students']} students, so the merge would move "
+        "College Algebra's eligible credits from 19 to 4,866. Options: (a) re-title the exhibit on the Exhibit "
+        "Reference by its credit recommendation first, then merge; (b) merge now and carry the figure; (c) keep "
+        "the two apart. Recommended: (a).", "",
     ]
 
 
@@ -1040,9 +1125,10 @@ def write_md(plan, path):
          f"Alias chain: baseline `{plan['alias_chain']['baseline']}`, {len(plan['alias_chain']['pending_maps'])} "
          "maps pending, every named id resolves to itself and is live. Members file: "
          f"{plan['inputs']['members']}; curation overlay synced {plan['inputs']['curation_overlay_synced_at']}.", "",
-         "DECIDED (the S648 conductor, 2026-11-13, on #3245): cases 2, 4 and 6 go to review and apply, case 6 by "
+         "DECIDED (the S648 conductor, 2026-11-13, on #3245): cases 2 and 6 go to review and apply, case 6 by "
          "the INSERT-only path (deleting a saved curation row is on the hold list, whoever wrote it); cases 1, 3 and 5 "
-         "stay held and go to Sam on the sheet; nothing is minted for Honors.", "",
+         "stay held and go to Sam on the sheet; case 4 is held out of this apply until its mis-filed articulation is "
+         "settled (the conductor's second decision); nothing is minted for Honors.", "",
          "## The six", ""]
     for c in plan["cases"]:
         ids = ", ".join(c["identities"])
@@ -1073,6 +1159,16 @@ def write_md(plan, path):
             L.append(f"- folded members by why they sit there: {c['folded_members_by_provenance']}; their COCI "
                      f"C-ID claims: {c['folded_members_official_claims'] or 'none'}.")
             L.append(f"- mechanism: {c['mechanism']}.")
+            new = [x for x in c.get("inherited_articulations") or [] if x["new_to_survivor"]]
+            L.append(f"- articulations it carries: {len(c.get('inherited_articulations') or [])} records, "
+                     f"{len({x['unified_title'] for x in new})} titles new to {c['survivor']}: "
+                     + ("; ".join(sorted({f"*{x['unified_title']}* ({x['cpl_type']}, {x['eligible_credits']} eligible "
+                                          f"credits, {x['students']} students, CR '{x['credit_recommendation']}'"
+                                          + (", SUSPECT" if x["suspect"] else "") + ")" for x in new})) or "none")
+                     + ".")
+            for p in c.get("pointers_into_folded") or []:
+                L.append(f"- a saved pointer into {c['folds']}: {p['row'][0]} ({p['course']}), by {p['reviewed_by']} "
+                         f"at {p['reviewed_at']}: {p['fate']}.")
         L.append(f"- alias map: {c['alias_note']}.")
         for b in c["blockers"]:
             L.append(f"- BLOCKS: {b}.")

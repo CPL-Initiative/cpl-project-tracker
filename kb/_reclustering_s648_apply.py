@@ -1,13 +1,13 @@
 #!/usr/bin/env python3
-"""Re-clustering S648: the apply half for cases 2, 4 and 6, from the frozen plan. Nothing runs by default.
+"""Re-clustering S648: the apply half for cases 2 and 6, from the frozen plan. Nothing runs by default.
 
 THE RULINGS. Sam's "All six as recommended" (Open Asks Sheet 186 card 6, 13:16Z 2026-11-13,
-sam-sheet-186-six-cases-as-recommended-2026-11-13). The S648 conductor sent three cases forward (2026-11-13):
+sam-sheet-186-six-cases-as-recommended-2026-11-13). The S648 conductor sent two cases forward (2026-11-13):
   case 2  FIRE M1274 folds into FIRE 130 X       one kb_curation row (FIRE M1274, merge_into, FIRE 130 X)
-  case 4  MATH M1044 folds into MATH M1036       one kb_curation row (MATH M1044, merge_into, MATH M1036)
+  case 4  MATH M1044 into MATH M1036: HELD by the conductor (2026-11-13), the merge carries a mis-filed articulation
   case 6  Santa Ana BUS 115 leaves BUSI M1228    one kb_curation row (CN:CCC000609492, merge_into, <new id>) and
           one new catalog record for <new id>, Global Supply Chain and Logistics, Business.
-Cases 1, 3 and 5 are held for Sam (kb/reclustering_s648_out/2026-11-13/plan.md, For the sheet).
+Cases 1, 3, 4 and 5 are held for Sam (kb/reclustering_s648_out/2026-11-13/plan.md, For the sheet).
 
 WHY CASE 6 NEEDS A NEW ID. The course's own stand-alone, BUSI M10XW, already folds into BUSI M1228 by a bot's
 merge_into row (automerge-titlelane-v1@bot, 2026-06-13). Deleting a saved curation row is on the hold list whoever
@@ -51,7 +51,7 @@ COHORT = "reclustering-s648@bot"
 STAMP = "_recluster_s648_from"
 MIGRATION = "kb/migrations/2026-11-13_s648_reclustering_cohort.sql"
 ROLLBACK = "kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql"
-READY = (2, 4, 6)
+READY = (2, 6)  # case 4 held (the conductor, 2026-11-13): see plan.md
 
 
 def load_plan(path=PLAN):
@@ -166,20 +166,23 @@ def sql_text(plan):
     q = lambda s: "'" + str(s).replace("'", "''") + "'"
     keys = ", ".join(q(r[0]) for r in rows)
     head = [
-        "-- Re-clustering S648, cases 2, 4 and 6 (kb/reclustering_s648_out/2026-11-13/plan.md).",
+        "-- Re-clustering S648, cases 2 and 6 (kb/reclustering_s648_out/2026-11-13/plan.md).",
         "-- Sam, Open Asks Sheet 186 card 6, 13:16Z 2026-11-13: \"All six as recommended\"",
-        "-- (sam-sheet-186-six-cases-as-recommended-2026-11-13); the S648 conductor sent 2, 4 and 6 forward.",
+        "-- (sam-sheet-186-six-cases-as-recommended-2026-11-13); the S648 conductor sent 2 and 6 forward (case 4 held).",
         f"-- INSERT-only under the cohort {COHORT} (Rule 10a); a row whose (course_id, field) slot is taken",
         "-- is skipped, never overwritten. Written by kb/_reclustering_s648_apply.py --sql.",
         "-- Case 6's target id must be in kb/coci_minted_courses.json in the same window",
         "-- (kb/_reclustering_s648_apply.py --record).",
-        f"-- Rollback: {os.path.basename(ROLLBACK)} (delete by cohort; takes back only these rows).",
+        f"-- Rollback: {ROLLBACK} (delete by cohort; takes back only these rows, so it needs no",
+        "-- before-values: nothing here overwrites). One plain statement; RETURNING puts the rows that landed",
+        "-- into the runner's receipt (kb/receipts/migration_s648_reclustering_cohort_<run>.json, its `response`),",
+        "-- so a session that did not do the write can read what landed and roll it back from this header.",
         "",
         "insert into public.kb_curation (course_id, field, value, reviewer_email)",
         "values",
     ]
     vals = ",\n".join(f"  ({q(a)}, {q(b)}, {q(c)}, {q(COHORT)})" for a, b, c in rows)
-    tail = ["on conflict (course_id, field) do nothing;", "",
+    tail = ["on conflict (course_id, field) do nothing", "returning course_id, field, value, reviewer_email;", "",
             f"-- Read back: expect {len(rows)} rows, every one under {COHORT}.",
             f"--   select count(*) from public.kb_curation where reviewer_email = {q(COHORT)}"
             f" and field = 'merge_into' and course_id in ({keys});", ""]

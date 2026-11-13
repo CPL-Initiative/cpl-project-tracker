@@ -308,7 +308,7 @@
    "blockers": [],
    "notes": [
     "FIRE M1274 carries a person's curation (unified_title by map@rccd.edu); the merge_into row sits in its own slot, so it lands beside that row and the survivor's title shows",
-    "1 curation pointers already fold into FIRE M1274; the export follows the chain to the survivor (flatten_merge_chains)"
+    "1 curation pointers already fold into FIRE M1274 (FIRE M10CH by map@rccd.edu); each stays as saved and the export follows it on to FIRE 130 X"
    ],
    "survivor": "FIRE 130 X",
    "folds": "FIRE M1274",
@@ -330,6 +330,326 @@
    "mechanism": "kb_curation row (FIRE M1274, merge_into, FIRE 130 X), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
    "alias_map_entries": [],
    "alias_note": "none: a merge_into fold re-keys nothing; FIRE M1274 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias FIRE M1274 -> FIRE 130 X) is the alternative only between two M-IDs, and it would move every id-keyed class below",
+   "pointers_into_folded": [
+    {
+     "row": [
+      "FIRE M10CH",
+      "merge_into",
+      "FIRE M1274"
+     ],
+     "reviewed_by": "map@rccd.edu",
+     "reviewed_at": "2026-06-12T21:54:21.006861+00:00",
+     "course": "Mt. San Jacinto College FIRE 515 Building Construction for Fire Protection",
+     "fate": "unchanged. FIRE M1274 stays a live catalog record (no alias map is written and nothing is re-keyed, so kb/alias_chain.py never moves this row), and the export follows the row's pointer through FIRE M1274's own merge_into to FIRE 130 X (flatten_merge_chains): the course shows under FIRE 130 X, and deleting the cohort row returns it to FIRE M1274"
+    }
+   ],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCXS-BCFF-1-001",
+     "exhibit_title": "Building Construction for Fire Protection Credit by Exam",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCXS-BCFF2-1-001",
+     "exhibit_title": "Building Construction for Fire Protection",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRETEC 4 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Chaffey College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCXS-F3CF-1-001",
+     "exhibit_title": "FTECH 304\tBuilding Construction for Fire Protection - Credit by Exam",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCxS-BCFF1-1-001",
+     "exhibit_title": "Building Construction for Fire Protection FIRE 004 Cx",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFEC-1-001",
+     "exhibit_title": "Cal-JAC Firefighter EMT Certificate",
+     "unified_title": "Firefighter EMT Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIRE 8 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 3.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFFP1-1-001",
+     "exhibit_title": "Cal-JAC Fire Fighter Paramedic Journeyperson Certificate",
+     "unified_title": "Fire Fighter Paramedic Journeyperson Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chaffey College",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 0.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-CFJC-1-001",
+     "exhibit_title": "Cal-JAC Firefighter Journeyperson Certificate",
+     "unified_title": "Firefighter Journeyperson Certificate",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 2.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-F1C-1-001",
+     "exhibit_title": "Firefighter 1 Certification",
+     "unified_title": "Firefighter 1",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE 8 Building Construction for Fire Protection, FIRE B7 Building Construction for Fire Protection, FT 6 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection, F SC 53 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 626.4,
+     "students": 37,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICA-F1C1-1-001",
+     "exhibit_title": "Firefighter 1A Certification",
+     "unified_title": "Firefighter 1A",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIRE B7 Building Construction for Fire Protection, FIRETEC 4 Building Construction for Fire Protection, F SC 53 Building Construction for Fire Protection, FIPT 104 Building Construction for Fire Protection, FIRE 8 Building Construction for Fire Protection, FT 6 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Chabot College",
+      "Chaffey College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College",
+      "San Diego Miramar College",
+      "Sierra College"
+     ],
+     "eligible_credits": 3.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-BCFF-1-001",
+     "exhibit_title": "Building Construction for Fire Protection 1 or 1A or 2C Certification",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-BCFF1-1-001",
+     "exhibit_title": "Building Construction for Fire Protection",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 34 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Merced College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-F3CF-1-001",
+     "exhibit_title": "FTECH 304\tBuilding Construction for Fire Protection - Industry Certification",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FAE(1-1-001",
+     "exhibit_title": "FIT Academy Experience (FIT-S3A, FIT-S3. FIT-1/2/4)",
+     "unified_title": "Fire Academy Experience",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIT 4 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Moreno Valley College"
+     ],
+     "eligible_credits": 295.0,
+     "students": 10,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FC1A-1-001",
+     "exhibit_title": "Firefighter Certificate 1 A",
+     "unified_title": "Firefighter 1",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIPT 104 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 626.4,
+     "students": 37,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-NF1-1-001",
+     "exhibit_title": "NFPA Firefighter 1",
+     "unified_title": "Firefighter I",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE B7 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Bakersfield College",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 18.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-SCCF-1-001",
+     "exhibit_title": "SFT CFSTES Courses: Fire Inspector 1B and 1C (or former SFT Fire Marshal curriculum) OR Work Experience",
+     "unified_title": "SFT Fire Inspector 1B and 1C",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FTECH 304 Building Construction for Fire Protection",
+     "earned_by_colleges": [
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 0.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPPRA-F3BC-1-001",
+     "exhibit_title": "FTECH 304 Building Construction for Fire Protection - Portfolio Review",
+     "unified_title": "Building Construction for Fire Protection",
+     "cpl_type": "Portfolio Review",
+     "credit_recommendation": "3 hours in Building Construction for Fire Protection",
+     "local_course": "FTECH 304 Building Construction for Fire Protection, FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College",
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 33.0,
+     "students": 11,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPPRA-PFE-1-001",
+     "exhibit_title": "Professional fire experience",
+     "unified_title": "Professional Fire Service Experience",
+     "cpl_type": "Portfolio Review",
+     "credit_recommendation": "3 hours in Building Construction For Fire Protection",
+     "local_course": "FIR 104 Building Construction for Fire Protection, FIRE 4 Building Construction For Fire Protection",
+     "earned_by_colleges": [
+      "College of the Desert",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 42.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    }
+   ],
    "ready": true
   },
   {
@@ -396,7 +716,7 @@
    ],
    "notes": [
     "the report also pairs this case with REAL M1039 (strong, best outcomes 0.5986); that pair is outside the ruling and outside this plan",
-    "1 curation pointers already fold into REAL M1038; the export follows the chain to the survivor (flatten_merge_chains)"
+    "1 curation pointers already fold into REAL M1038 (REAL M10AD by automerge-v1@bot); each stays as saved and the export follows it on to REAL M1040"
    ],
    "survivor": "REAL M1040",
    "folds": "REAL M1038",
@@ -418,6 +738,115 @@
    "mechanism": "kb_curation row (REAL M1038, merge_into, REAL M1040), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
    "alias_map_entries": [],
    "alias_note": "none: a merge_into fold re-keys nothing; REAL M1038 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias REAL M1038 -> REAL M1040) is the alternative only between two M-IDs, and it would move every id-keyed class below",
+   "pointers_into_folded": [
+    {
+     "row": [
+      "REAL M10AD",
+      "merge_into",
+      "REAL M1038"
+     ],
+     "reviewed_by": "automerge-v1@bot",
+     "reviewed_at": "2026-06-12T22:47:01.69179+00:00",
+     "course": "Mt. San Jacinto College RE 502 Real Estate Practice",
+     "fate": "unchanged. REAL M1038 stays a live catalog record (no alias map is written and nothing is re-keyed, so kb/alias_chain.py never moves this row), and the export follows the row's pointer through REAL M1038's own merge_into to REAL M1040 (flatten_merge_chains): the course shows under REAL M1040, and deleting the cohort row returns it to REAL M1038"
+    }
+   ],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCXS-R3EP-1-001",
+     "exhibit_title": "RLES 381\tReal Estate Practice - Credit by Exam",
+     "unified_title": "Real Estate Practice",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "RLES 381 Real Estate Practice",
+     "earned_by_colleges": [
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 15.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-DREB-1-001",
+     "exhibit_title": "DRE Real Estate Broker v2",
+     "unified_title": "California Real Estate Broker License",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "REAL 212 Real Estate Practice, RES 155 Real Estate Practice, R E 184 Real Estate Practice",
+     "earned_by_colleges": [
+      "Citrus College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 117.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-DRES-1-001",
+     "exhibit_title": "DRE Real Estate Salesperson License v2",
+     "unified_title": "California Real Estate Salesperson License",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "REST 84 Real Estate Practice, RES 155 Real Estate Practice, R E 184 Real Estate Practice",
+     "earned_by_colleges": [
+      "Chabot College",
+      "City College of San Francisco",
+      "Lake Tahoe Community College"
+     ],
+     "eligible_credits": 39.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-FTRE-1-001",
+     "exhibit_title": "First Tuesday Real Estate School",
+     "unified_title": "First Tuesday Real Estate Courses",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practices",
+     "local_course": "RLE 81 Real Estate Practice",
+     "earned_by_colleges": [
+      "Riverside City College"
+     ],
+     "eligible_credits": 18.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-R3EP1-1-001",
+     "exhibit_title": "RLES 381\tReal Estate Practice - Industry Certification",
+     "unified_title": "Real Estate Practice",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practice",
+     "local_course": "RLES 381 Real Estate Practice",
+     "earned_by_colleges": [
+      "Modesto Junior College"
+     ],
+     "eligible_credits": 15.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPICI-RESP-1-001",
+     "exhibit_title": "Real Estate Salesperson: Principles and Practices",
+     "unified_title": "Real Estate Principles and Practices",
+     "cpl_type": "Industry Certification",
+     "credit_recommendation": "3 hours in Real Estate Practices",
+     "local_course": "RLE 81 Real Estate Practice",
+     "earned_by_colleges": [
+      "Riverside City College"
+     ],
+     "eligible_credits": 6.0,
+     "students": null,
+     "new_to_survivor": false,
+     "suspect": false
+    }
+   ],
    "ready": false
   },
   {
@@ -467,7 +896,9 @@
      "pointed_at_by": []
     }
    },
-   "blockers": [],
+   "blockers": [
+    "MATH M1044 carries the articulation of exhibit MAPCBES-CBES-1-001 *Credit By Exam San Diego City College* (Credit By Exam, earned at San Diego City College, San Diego Mesa College, San Diego Miramar College), whose unified title is *Basic Refrigeration & AC Lab* while its credit recommendation reads '3 hours in College and Matrix Algebra' and its local course is MATH 116 College and Matrix Algebra: the title names another subject, so the record looks mis-filed at the title's unification (a college-wide credit-by-exam exhibit given one course's name). The merge would carry that title's 4838.0 eligible credits and 330 students into MATH M1036. Settled when the Exhibit Reference re-titles MAPCBES-CBES-1-001 by its credit recommendations (or the articulation moves off MATH M1044); then the merge proceeds"
+   ],
    "notes": [
     "the report also pairs this case with MATH 150 (strong, best outcomes 0.6039); that pair is outside the ruling and outside this plan"
    ],
@@ -490,7 +921,44 @@
    "mechanism": "kb_curation row (MATH M1044, merge_into, MATH M1036), INSERT-only under reclustering-s648@bot; the export folds every member, articulation and curation pointer of the folded id through it",
    "alias_map_entries": [],
    "alias_note": "none: a merge_into fold re-keys nothing; MATH M1044 stays a reserved id that resolves to itself, and deleting the cohort row undoes the merge. A re-key merge (alias MATH M1044 -> MATH M1036) is the alternative only between two M-IDs, and it would move every id-keyed class below",
-   "ready": true
+   "pointers_into_folded": [],
+   "inherited_articulations": [
+    {
+     "exhibit_id": "MAPCBES-CAMA-1-001",
+     "exhibit_title": "College and Matrix Algebra",
+     "unified_title": "College and Matrix Algebra",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in College and Matrix Algebra",
+     "local_course": "MATH 116 College and Matrix Algebra",
+     "earned_by_colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 9.0,
+     "students": null,
+     "new_to_survivor": true,
+     "suspect": false
+    },
+    {
+     "exhibit_id": "MAPCBES-CBES-1-001",
+     "exhibit_title": "Credit By Exam San Diego City College",
+     "unified_title": "Basic Refrigeration & AC Lab",
+     "cpl_type": "Credit By Exam",
+     "credit_recommendation": "3 hours in College and Matrix Algebra",
+     "local_course": "MATH 116 College and Matrix Algebra",
+     "earned_by_colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "eligible_credits": 4838.0,
+     "students": 330,
+     "new_to_survivor": true,
+     "suspect": true
+    }
+   ],
+   "ready": false
   },
   {
    "n": 5,
@@ -1826,29 +2294,29 @@
  "kb_curation_selects": {
   "pre": [
    {
-    "sql": "select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;",
+    "sql": "select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274') group by 1, 2 order by 1, 2;",
     "expect": {
      "merge_into / bot": 1,
      "unified_title / person": 1,
      "unified_title / bot": 1
     },
-    "if_different": "a merge_into row on any of the three sources means its INSERT would be skipped: hold that case. Any other new row since the overlay sync is a person's or a procedure's work on an affected key: read it before applying (Rule 10a)."
+    "if_different": "a merge_into row on a source key means its INSERT would be skipped: hold that case. Any other new row since the overlay sync is a person's or a procedure's work on an affected key: read it before applying (Rule 10a)."
    },
    {
-    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id in ('FIRE M1274', 'MATH M1044', 'CN:CCC000609492');",
+    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id in ('FIRE M1274', 'CN:CCC000609492');",
     "expect": 0,
     "if_different": "a source already folds somewhere: the INSERT would be skipped, so hold that case"
    },
    {
-    "sql": "select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') group by 1, 2 order by 1, 2;",
+    "sql": "select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274') group by 1, 2 order by 1, 2;",
     "expect": {
      "BUSI M1228 / bot": 9,
      "FIRE M1274 / person": 1
     },
-    "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 and MATH M1044 pass their pointers on to the survivor); a pointer onto the new id means the id is no longer free: re-cut the plan"
+    "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 passes its pointers on to the survivor); a pointer onto the new id means the id is no longer free: re-cut the plan"
    },
    {
-    "sql": "select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' and (course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044') or value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274', 'MATH M1036', 'MATH M1044'));",
+    "sql": "select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' and (course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274') or value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274'));",
     "expect": 0,
     "if_different": "a pending title merge names an affected key: the curator's merge wins, hold that case"
    },
@@ -1870,11 +2338,6 @@
      "FIRE M1274",
      "merge_into",
      "FIRE 130 X"
-    ],
-    [
-     "MATH M1044",
-     "merge_into",
-     "MATH M1036"
     ]
    ],
    "if_different": "fewer rows: a slot was taken and its INSERT skipped (that case did not land); run the rollback and re-read"

@@ -65,9 +65,10 @@ check("(10) the committed migration pair equals what the frozen plan writes", ch
   (chk.stderr || chk.stdout || "").slice(-300));
 const mig = fs.readFileSync(path.join(ROOT, "kb/migrations/2026-11-13_s648_reclustering_cohort.sql"), "utf8")
   .split("\n").filter((l) => !/^\s*--/.test(l)).join("\n");
-check("(11) the migration only inserts, skips a taken slot, and writes under the cohort alone",
+check("(11) the migration is one plain INSERT that skips a taken slot and writes under the cohort alone",
   /insert into public\.kb_curation/i.test(mig) && /on conflict \(course_id, field\) do nothing/i.test(mig)
-  && !/\b(update|delete|truncate|drop)\b/i.test(mig)
+  && !/\b(update|delete|truncate|drop)\b/i.test(mig) && !/\bdo\s+\$|\$\$/i.test(mig)
+  && (mig.match(/;/g) || []).length === 1
   && (mig.match(/'reclustering-s648@bot'/g) || []).length === (mig.match(/^\s*\('/gm) || []).length,
   "the migration must be INSERT ... ON CONFLICT DO NOTHING, every row under reclustering-s648@bot, nothing else");
 
