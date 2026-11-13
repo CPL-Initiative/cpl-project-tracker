@@ -513,8 +513,12 @@ def leftover_code_proposal(prop, ex, courses, index, raw, wording=False):
     if hit:
         return dict(prop, title=hit["t"], issuer=hit["issuer"], source=SRC_OFFICIAL, alternates=alts,
                     **{"from": "the credential its course names (%s)" % titles[0] if titles else "its credit recommendation"})
+    # Sam's ruling of 2026-11-12 keeps a course title off an industry-certification exhibit: an exhibit on the `ic` path
+    # (a mix that includes it too, and MAP's CPL type where no id names a path) never takes one, whatever its units say.
+    paths = {exhibit_paths.path_of(i) for i in ex.get("ids") or []} - {""}
+    industry = "ic" in paths or (not paths and "Industry Certification" in (ex.get("types") or []))
     noncredit = bool(courses) and all(not c[3] for c in courses)
-    if titles and (is_credit_by_exam(ex) or noncredit or re.match(r"^\s*Noncredit\b", raw or "", re.I)):
+    if titles and not industry and (is_credit_by_exam(ex) or noncredit or re.match(r"^\s*Noncredit\b", raw or "", re.I)):
         own = titles[0]
         if CODE_IN_PARENS.search(own) or own == prop["title"]:
             return None

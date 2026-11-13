@@ -326,6 +326,31 @@ check("a noncredit card held for its code, whose credit line names the mirrored 
       (B.leftover_code_proposal(esl_prop, ex_esl, B.local_courses(ex_esl, CIX), IDX, "Noncredit Course for ESL 220A", wording=True)
        or {}).get("title") == "Intermediate Grammar for Reading and Writing"
       and B.leftover_code_proposal(esl_prop, ex_esl, B.local_courses(ex_esl, CIX), IDX, "Noncredit Course for ESL 220A") is None)
+# Sam's ruling of 2026-11-12: a course title stays off an industry-certification exhibit, whatever its units say.
+MEM["members"]["M3"] = [{"c": 0, "n": "FIRE 50", "t": "Fire Academy Skills", "u": None, "cn": "CCC4"}]
+CIX = B.course_index(MEM)
+fire_prop = {"title": "Fire Technology (FIRE 50)", "issuer": "California Community Colleges"}
+for ids, label in ((["MAPICI-IFF5-1-001"], "an industry-certification exhibit"),
+                   (["MAPICI-IFF5-1-001", "MAPCXS-IFF5-1-001"], "a mix of paths that includes industry certification")):
+    ex_fire = {"ids": ids, "art": ["Las Positas College"], "types": [], "recs": [["FIRE 50", "3 units"]]}
+    lcf = B.local_courses(ex_fire, CIX)
+    check(label + " whose course has no units keeps its proposal: no course title",
+          lcf and lcf[0][3] is None
+          and B.leftover_code_proposal(fire_prop, ex_fire, lcf, IDX, "Noncredit Industry Evidence for FIRE 50", wording=True) is None)
+ex_t = {"ids": [], "art": ["Las Positas College"], "types": ["Industry Certification"], "recs": [["FIRE 50", "3 units"]]}
+check("with no path in its ids, MAP's CPL type Industry Certification holds the course title off too",
+      B.leftover_code_proposal(fire_prop, ex_t, B.local_courses(ex_t, CIX), IDX, "Industry for FIRE 50", wording=True) is None)
+IDX2 = IDX + [{"t": "Emergency Medical Technician", "issuer": "National Registry of Emergency Medical Technicians (NREMT)",
+               "locals": 9, "adopted": 9}]
+MEM["members"]["M4"] = [{"c": 0, "n": "EMS 20", "t": "Emergency Medical Technician", "u": None, "cn": "CCC5"}]
+CIX = B.course_index(MEM)
+ex_ems = {"ids": ["MAPICI-IFE20-1-001"], "art": ["Las Positas College"], "types": [], "recs": [["EMS 20", "7 units"]]}
+got_ems = B.leftover_code_proposal({"title": "Emergency Medical Services (EMS 20)", "issuer": ""}, ex_ems,
+                                   B.local_courses(ex_ems, CIX), IDX2, "Industry Training Evidence for EMS 20", wording=True)
+got_cnt = B.leftover_code_proposal(prop, ex_cnt, lc, IDX2, "Industry Training Evidence for CNT 7285", wording=True)
+check("an industry certification still takes the official credential its course names: CNT 7285 and EMS 20",
+      got_cnt and got_cnt["title"] == "CompTIA Cloud+" and got_cnt["source"] == B.SRC_OFFICIAL
+      and got_ems and got_ems["title"] == "Emergency Medical Technician" and got_ems["source"] == B.SRC_OFFICIAL, (got_cnt, got_ems))
 check("a proposal with no course code left is never touched",
       B.leftover_code_proposal({"title": "Firefighter 1", "issuer": "x"}, ex_cnt, lc, IDX, "raw") is None)
 check("a college-issued title never counts as a named credential, nor does a one-word one",
