@@ -1,4 +1,4 @@
--- NOT YET RUN. Prepared 2026-11-13 by the S648 documents worker (the refresh) for the conductor to run in one execute_sql call.
+-- RUN 2026-11-13 at 20:16Z by the S648 conductor (4 rows inserted, 4 logged, longest summary 399).
 -- cpl_memory rows for SkyTanager (S648), conductor mode, after the first checkpoint: 4 rows (3 decisions, 1 pitfall), status
 -- proposed, for Sam to revise on Open Asks Sheet 194 (https://claude.ai/artifact/B6NYwHtu9cuMAEBqA9S6sq).
 -- INSERT ... ON CONFLICT (slug) DO NOTHING, then the cpl_memory_log append, then the verify. Every summary at most 400
