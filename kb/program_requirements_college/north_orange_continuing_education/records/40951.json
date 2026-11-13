@@ -1,0 +1,256 @@
+{
+ "college": "North Orange Continuing Education",
+ "control_number": "40951",
+ "shape": "noncredit",
+ "title": "ECE Preschool Teacher",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-teacher/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7512,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7512,
+    "output_tokens": 1426,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1426,
+  "output_tokens_details": {
+   "thinking_tokens": 413
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05857,
+ "ms": 11466,
+ "seconds": 11.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 10,
+   "listed": 10,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "ECED100",
+    "ECED110"
+   ],
+   "flagged": [
+    "ECED100",
+    "ECED110"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    306.0,
+    306.0
+   ],
+   "stated": [
+    306.0,
+    306.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "ECE Preschool Teacher",
+   "measure": "hours",
+   "total_units": {
+    "min": 306,
+    "max": 306
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "childcare and education support",
+    "preschool teacher"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Core Courses (Required 278 hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 278,
+     "max": 278
+    },
+    "courses": [
+     {
+      "code": "ECED 100",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECED 105",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 120",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 115",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 110",
+      "units": 54,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ECED 205",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Elective Courses (Required 36 Hours)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 36,
+     "max": 36
+    },
+    "courses": [
+     {
+      "code": "ECED 215",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 225",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 200",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ECED 220",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WFPR 100",
+      "units": 36,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "WFPR 101",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The core heading states 'Required 278 hours', but the six core courses' printed hours sum to 270; 270 + 36 elective hours equals the printed Total Hours of 306. The 278 figure appears to be a catalog error; stated records it as printed.",
+   "ECED 100 and ECED 110 are required core courses not in the closed list; recorded as catalog additions.",
+   "WFPR 101 has no hours printed beside it (listed as 'or' alternative to WFPR 100, 36 hours); the page says at least 36 hours in WFPR 100 or WFPR 101 must be completed.",
+   "Catalog says 'Must choose one of six courses'; WFPR 100/WFPR 101 counted as one choice with an alternative.",
+   "The text prints no program learning outcomes."
+  ]
+ },
+ "extracted_run": "43342034608"
+}
