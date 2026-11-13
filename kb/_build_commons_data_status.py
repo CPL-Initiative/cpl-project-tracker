@@ -32,10 +32,61 @@ Requirements tab reads; the page says so beside the figure and never mixes the t
 A figure no committed file supplies is null with its reason in "tba", and the page shows TBA (the house rule
 for an unmeasured metric), never a zero and never a stand-in.
 
+FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's later slices (commons_data.js):
+
+  "live"        the live counts per college, basis "live", never mixed with the committed-files figures above.
+                Written by kb/_commons_data_live.py on the census runner (the service key, counts only; its docstring
+                names every table and column it reads) and taken in here with --live PATH. Shape:
+                  {"basis": "live", "state": "read" | "not read yet", "read_at": UTC | null, "run_id": str | null,
+                   "source", "tables": {figure: table}, "rule": {...}, "reads": {"counts", "pages"},
+                   "statewide": {"colleges", "programs": {...}, "records": {...}, ...}, "unmatched": [COCI names],
+                   "colleges": {"<crosswalk college_id>": {
+                       "names": [COCI spellings],
+                       "programs": {"active", "teachout", "approved"},
+                       "records": {"total", "checked", "active", "active_passing", "active_with_plos", "teachout",
+                                   "teachout_passing", "teachout_with_plos", "approved", "approved_passing",
+                                   "approved_with_plos"},
+                       "program_courses": {"rows", "active_courses"},
+                       "outcomes": {"slo_courses", "slo_courses_on_active", "slo_loaded_at", "objective_courses",
+                                    "objective_courses_on_active", "objective_loaded_at"},
+                       "registry": {"row", "catalog_link", "course_outline_link", "sequence_source",
+                                    "sequence_checked"}}},
+                   "last_attempt": {"at", "run_id", "ok", "error"} | null, "flag": "internal"}
+                Until the first run: {"basis": "live", "state": "not read yet", "read_at": null, "colleges": {}, ...}
+                (LIVE_NOT_READ). FAIL SOFT: a failed read, a missing file, or a block that is not counts only keeps
+                the previous committed block whole and records the attempt in last_attempt (ok false, the error),
+                so the page shows the older read_at. With no --live the previous block is carried unchanged, so
+                --check holds between census runs.
+  "overall"     each college's overall completeness, from "live" alone, basis "live". COBIx's rule on #3215
+                (comment 1, "Rules Sam may revisit"), quoted: "Overall = (catalog source + program requirements
+                passing + (SLOs + PLOs)/2) / 3, the whole-harvest rule. Unread parts count as zero. Objectives,
+                descriptions, CPL, PPM, MIS, COE and every Planned bar are left out." and "Catalog source bar: checks
+                done out of 3 (catalog link, curriculum view, program maps)." The parts here: catalog = (catalog
+                link + curriculum view held + program maps checked) / 3 (the registry records a curriculum view
+                only when one is seen, so "checked" reads as "held" there); requirements = Active passing / Active;
+                SLOs = SLO courses on Active programs / courses on Active programs; PLOs = Active records with PLOs
+                / Active. Each part is clamped to 0..1, and a part with no denominator counts as zero.
+                  {"basis": "live", "state", "read_at", "rule", "flag": "shareable",
+                   "statewide": {"mean", "colleges"},
+                   "colleges": {"<college_id>": {"value": 0..1,
+                                                 "parts": {"catalog", "requirements", "slos", "plos"}}}}
+                A college the live read did not hold is absent (unread), never zero.
+  "dictionary"  one entry per dataset of docs/reference/data_dictionary.md, parsed from the doc (the one source):
+                  {"source", "flag": "internal", "errors": [...], "datasets": [{"name", "group", "stage", "owner",
+                   "procedure_today", "planned_improvement", "link", "evidence", "evidence_missing",
+                   "unverified_claims"}]}
+  "apis"        the doc's API connection checklist: each API, whether a connection is needed, its status and the
+                evidence in the repo for it. A row whose evidence is missing reads status "unverified", never the
+                status it claims (kept as "claimed").
+                  {"source", "flag": "internal", "connected", "total", "by_status": {...},
+                   "rows": [{"api", "holder", "needed", "status", "claimed", "priority", "evidence",
+                             "evidence_missing", "note"}]}
+
 Usage, from the repo root:
-  python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--check] [--quiet]
-Refresh: the harvest gap census workflow runs it after the census (fails soft). Guard:
-tests/commons_data_status_build_test.py; the view's guard is tests/commons_data.test.js.
+  python3 kb/_build_commons_data_status.py [--root DIR] [--out PATH] [--live PATH] [--check] [--quiet]
+Refresh: the harvest gap census workflow runs it after the census and the live export (fails soft). Guards:
+tests/commons_data_status_build_test.py and tests/commons_data_live_test.py; the view's guard is
+tests/commons_data.test.js.
 """
 from __future__ import annotations
 
@@ -76,10 +127,10 @@ TBA = {
     "confidence": "No spot-check receipt is committed yet (kb/spot_checks/). COBIx's tallies sit on the wave pull "
                   "requests; confidence reads strong, partial or limited once a receipt is filed.",
     "overall": "The overall bar averages catalog source, program requirements and outcomes (SLOs and PLOs "
-               "averaged). Catalog source, SLOs and PLOs per college are live tables, read in a later slice.",
-    "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table, "
-                         "which this slice does not read.",
-    "apis": "The API connection checklist (#3220) is not a committed file yet.",
+               "averaged), from live counts per college. It waits on the first live read of the census workflow.",
+    "teachout_approved": "Teachout and Approved programs are counted apart from Active in the live COCI table; "
+                         "the counts wait on the first live read of the census workflow.",
+    "apis": "The checklist is filed in the data dictionary; this tile shows it in the next slice of the page.",
     "jst": "The JST funnel waits on an authorized-student feed from CCCStart; counts only, when it exists.",
 }
 
@@ -87,13 +138,32 @@ RULE = {
     "basis": "committed files only: the programs each college's capture listed (the gap census's committed universe)",
     "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
     "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest "
-               "rule); TBA until the three parts are read per college",
+               "rule), from the live counts (key overall, basis live); unread parts count as zero",
     "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = one record "
                   "differs, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 "
                   "checked (a cross-college check), or 2 or more differ (display held). An unreachable page is not "
                   "a checked record; the newest receipt by checked_at counts",
     "age_days": AGE_DAYS,
 }
+
+
+DICTIONARY_DOC = "docs/reference/data_dictionary.md"
+DICT_SECTION = "## The datasets"
+API_SECTION = "## API connection checklist"
+DICT_LABELS = {   # the doc's labels, each on one line, to the key the page reads (None: required, not emitted)
+    "Group": "group", "Stage": "stage", "Purpose": None, "Owner / steward": "owner", "Grain": None, "Refresh": None,
+    "How we procure or connect today": "procedure_today", "Access and terms": None,
+    "Planned improvements": "planned_improvement", "Confidence method": None, "Evidence in the repo": "evidence",
+}
+GROUPS = ("Harvested", "Connected", "Planned")
+STAGES = ("Found", "Assessed", "Asked", "Connected", "Scheduled")   # the register's (docs/reference/data_sources.md)
+API_STATUSES = ("connected", "in progress", "planned", "not needed")
+UNVERIFIED_MARK = "not verified in the repo"
+
+LIVE_NOT_READ = {"basis": "live", "state": "not read yet", "read_at": None, "run_id": None,
+                 "source": "kb/_commons_data_live.py in harvest-gap-census.yml, the service key",
+                 "statewide": {}, "unmatched": [], "colleges": {}, "last_attempt": None, "flag": "internal"}
+LIVE_GROUPS = ("programs", "records", "program_courses", "outcomes", "registry")
 
 
 def iso_now() -> str:
@@ -232,7 +302,174 @@ def confidence(spot: dict | None, harvested: bool):
     return {"level": "limited", "why": said + "; fewer than %d records checked at this college" % STRONG_AT}
 
 
-def build(root: str) -> dict:
+def github_anchor(heading: str) -> str:
+    """The anchor GitHub gives a heading: lower case, punctuation dropped, each space a hyphen."""
+    return re.sub(r"[^\w\- ]", "", heading.strip().lower()).replace(" ", "-")
+
+
+def _section(text: str, head: str) -> str:
+    i = text.find("\n" + head + "\n")
+    if i < 0:
+        return ""
+    rest = text[i + len(head) + 2:]
+    j = re.search(r"^## ", rest, re.M)
+    return rest[:j.start()] if j else rest
+
+
+def evidence_items(cell: str | None) -> list[str]:
+    return [x for x in re.findall(r"`([^`]+)`", cell or "") if x.strip()]
+
+
+def evidence_ok(root: str, item: str) -> bool:
+    """A repo path that exists; `path::text` must also contain the text."""
+    path, _, needle = item.partition("::")
+    full = os.path.join(root, path.strip())
+    if not os.path.exists(full):
+        return False
+    if not needle:
+        return True
+    if os.path.isdir(full):
+        return False
+    with open(full, encoding="utf-8", errors="replace") as f:
+        return needle in f.read()
+
+
+def parse_dictionary(root: str) -> tuple[dict, dict]:
+    """The data dictionary's datasets and its API checklist, from the doc alone."""
+    path = os.path.join(root, DICTIONARY_DOC)
+    errors = []
+    if not os.path.exists(path):
+        return ({"source": DICTIONARY_DOC, "flag": "internal", "errors": ["the doc is missing"], "datasets": []},
+                {"source": DICTIONARY_DOC, "flag": "internal", "connected": 0, "total": 0, "by_status": {}, "rows": []})
+    with open(path, encoding="utf-8") as f:
+        text = f.read()
+    datasets = []
+    for block in re.split(r"^### ", _section(text, DICT_SECTION), flags=re.M)[1:]:
+        name, _, body = block.partition("\n")
+        name = name.strip()
+        got = {}
+        for label, val in re.findall(r"^- \*\*(.+?):\*\* (.*)$", body, re.M):
+            got[label] = val.strip()
+        missing = [lb for lb in DICT_LABELS if lb not in got]
+        if missing:
+            errors.append("%s: no %s" % (name, ", ".join(missing)))
+        if got.get("Group") not in GROUPS:
+            errors.append("%s: group %r is not one of %s" % (name, got.get("Group"), ", ".join(GROUPS)))
+        if got.get("Stage") not in STAGES:
+            errors.append("%s: stage %r is not one of the register's stages" % (name, got.get("Stage")))
+        ev = evidence_items(got.get("Evidence in the repo"))
+        e = {"name": name}
+        for label, key in DICT_LABELS.items():
+            if key and key != "evidence":
+                e[key] = got.get(label)
+        e.update({"link": DICTIONARY_DOC + "#" + github_anchor(name), "evidence": ev,
+                  "evidence_missing": [x for x in ev if not evidence_ok(root, x)],
+                  "unverified_claims": block.count(UNVERIFIED_MARK)})
+        datasets.append(e)
+    rows = []
+    for line in _section(text, API_SECTION).splitlines():
+        cells = [c.strip() for c in line.strip().strip("|").split("|")] if line.startswith("|") else []
+        if len(cells) != 7 or cells[0] in ("API", "") or set(cells[0]) <= set("-: "):
+            continue
+        api, holder, needed, claimed, priority, evidence, note = cells
+        ev = evidence_items(evidence)
+        miss = [x for x in ev if not evidence_ok(root, x)]
+        if claimed not in API_STATUSES:
+            errors.append("API %s: status %r is not one of %s" % (api, claimed, ", ".join(API_STATUSES)))
+        rows.append({"api": api, "holder": holder, "needed": needed,
+                     "status": claimed if ev and not miss else "unverified", "claimed": claimed,
+                     "priority": priority.lower() == "priority", "evidence": ev, "evidence_missing": miss, "note": note})
+    by_status = {}
+    for r in rows:
+        by_status[r["status"]] = by_status.get(r["status"], 0) + 1
+    dictionary = {"source": DICTIONARY_DOC, "flag": "internal", "errors": errors, "datasets": datasets}
+    apis = {"source": DICTIONARY_DOC + "#" + github_anchor(API_SECTION[3:]), "flag": "internal",
+            "connected": by_status.get("connected", 0), "total": len(rows), "by_status": by_status, "rows": rows}
+    return dictionary, apis
+
+
+def counts_only(block: dict) -> str | None:
+    """Why a live block is not counts only, or None. Every college figure is an int or a boolean, a *_at stamp,
+    or the college's COCI spellings; anything else (a row, a URL, a person's name) refuses the block."""
+    if block.get("basis") != "live" or block.get("state") != "read" or not block.get("read_at"):
+        return "not a read live block (basis %r, state %r)" % (block.get("basis"), block.get("state"))
+    cols = block.get("colleges")
+    if not isinstance(cols, dict):
+        return "no colleges"
+    allowed = set(LIVE_GROUPS) | {"names"}
+    for cid, e in cols.items():
+        if not isinstance(e, dict) or set(e) - allowed:
+            return "college %s carries %s" % (cid, sorted(set(e) - allowed) if isinstance(e, dict) else type(e).__name__)
+        if not all(isinstance(n, str) for n in e.get("names") or []):
+            return "college %s: names" % cid
+        for g in LIVE_GROUPS:
+            if not isinstance(e.get(g) or {}, dict):
+                return "college %s: %s is not a group of counts" % (cid, g)
+            for k, v in (e.get(g) or {}).items():
+                if k.endswith("_at"):
+                    ok = v is None or (isinstance(v, str) and len(v) <= 40)
+                else:
+                    ok = isinstance(v, (bool, int)) or v is None
+                if not ok:
+                    return "college %s: %s.%s is not a count" % (cid, g, k)
+    return None
+
+
+def live_block(live_path: str | None, previous: dict | None) -> dict:
+    """The live key: a new read, or the previous committed block kept whole (fail soft)."""
+    prev = previous if isinstance(previous, dict) and previous.get("basis") == "live" else dict(LIVE_NOT_READ)
+    if not live_path:
+        return prev
+    try:
+        new = _maybe(live_path)
+    except ValueError as e:   # a half-written export
+        new, bad = None, "the export is not JSON (%s)" % e
+    else:
+        bad = None
+    if new is None:
+        why = bad or "no export at %s" % live_path
+    elif new.get("state") == "failed":
+        why = new.get("error") or "the read failed"
+    else:
+        why = counts_only(new)
+    if why is None:
+        out = {"basis": "live", "state": "read"}
+        out.update({k: v for k, v in new.items() if k not in ("schema", "state", "basis")})
+        out["last_attempt"] = {"at": new["read_at"], "run_id": new.get("run_id"), "ok": True, "error": None}
+        out["flag"] = "internal"
+        return out
+    kept = dict(prev)
+    kept["last_attempt"] = {"at": (new or {}).get("at") or iso_now(), "run_id": (new or {}).get("run_id"), "ok": False,
+                            "error": "kept the previous block: " + str(why)[:300]}
+    return kept
+
+
+def _share(n, d) -> float:
+    return 0.0 if not d or n is None else max(0.0, min(1.0, n / d))
+
+
+def overall_block(live: dict) -> dict:
+    """Each college's overall bar from the live counts (the rule is quoted in the module docstring)."""
+    out = {"basis": "live", "state": live.get("state"), "read_at": live.get("read_at"), "rule": RULE["overall"],
+           "flag": "shareable", "statewide": {"mean": None, "colleges": 0}, "colleges": {}}
+    for cid, e in sorted((live.get("colleges") or {}).items(), key=lambda kv: (len(str(kv[0])), str(kv[0]))):
+        p, r, pc, o, g = (e.get(k) or {} for k in LIVE_GROUPS)
+        act = p.get("active")
+        parts = {
+            "catalog": round((int(bool(g.get("catalog_link"))) + int(bool(g.get("course_outline_link")))
+                              + int(bool(g.get("sequence_checked")))) / 3, 4),
+            "requirements": round(_share(r.get("active_passing"), act), 4),
+            "slos": round(_share(o.get("slo_courses_on_active"), pc.get("active_courses")), 4),
+            "plos": round(_share(r.get("active_with_plos"), act), 4),
+        }
+        val = (parts["catalog"] + parts["requirements"] + (parts["slos"] + parts["plos"]) / 2) / 3
+        out["colleges"][str(cid)] = {"value": round(val, 4), "parts": parts}
+    vals = [v["value"] for v in out["colleges"].values()]
+    out["statewide"] = {"mean": round(sum(vals) / len(vals), 4) if vals else None, "colleges": len(vals)}
+    return out
+
+
+def build(root: str, live_path: str | None = None, previous: dict | None = None) -> dict:
     cw_path = crosswalk_path(root)
     cw = load(root, os.path.relpath(cw_path, root))
     entities = [e for e in cw.get("colleges") or [] if e.get("entity_kind") in IN_SCOPE]
@@ -308,16 +545,27 @@ def build(root: str) -> dict:
         "confidence": {lv: sum(1 for c in colleges if c["confidence"] and c["confidence"]["level"] == lv)
                        for lv in ("strong", "partial", "limited")},
     }
+    if previous is None:
+        previous = _maybe(os.path.join(root, OUT)) or {}
+    live = live_block(live_path, previous.get("live"))
+    dictionary, apis = parse_dictionary(root)
+    tba = TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"}
+    if live.get("state") == "read":
+        tba = {k: v for k, v in tba.items() if k not in ("overall", "teachout_approved")}
     return {
         "schema": SCHEMA,
         "written_at": iso_now(),
         "sources": {"universe": os.path.relpath(cw_path, root), "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
                     "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS},
-        "rule": RULE, "fields": FIELDS, "tba": TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"},
+        "rule": RULE, "fields": FIELDS, "tba": tba,
         "statewide": statewide,
         "census_check": {"universe": census["universe"], "passing": census["passing"], "gap": census["gap"]},
         "unmatched": unmatched,
         "colleges": colleges,
+        "live": live,
+        "overall": overall_block(live),
+        "dictionary": dictionary,
+        "apis": apis,
     }
 
 
@@ -329,10 +577,12 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--root", default=os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     ap.add_argument("--out", default=None)
+    ap.add_argument("--live", default=None, help="the live export (kb/_commons_data_live.py's out file); without it "
+                                                  "the previous committed live block is kept")
     ap.add_argument("--check", action="store_true", help="exit 1 when the committed file differs (written_at aside)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
-    d = build(a.root)
+    d = build(a.root, a.live)
     out = a.out or os.path.join(a.root, OUT)
     if a.check:
         old = _maybe(out) or {}
@@ -343,8 +593,14 @@ def main(argv=None) -> int:
         f.write(dumps(d))
     if not a.quiet:
         s = d["statewide"]
-        print("%d colleges, %d harvested; %d of %d programs passing; %d unmatched names -> %s"
-              % (s["colleges"], s["harvested"], s["passing"], s["programs"], len(d["unmatched"]), os.path.relpath(out, a.root)))
+        print("%d colleges, %d harvested; %d of %d programs passing; %d unmatched names; live %s (%s); "
+              "%d datasets, %d of %d APIs connected -> %s"
+              % (s["colleges"], s["harvested"], s["passing"], s["programs"], len(d["unmatched"]), d["live"]["state"],
+                 d["live"]["read_at"] or "no read", len(d["dictionary"]["datasets"]), d["apis"]["connected"],
+                 d["apis"]["total"], os.path.relpath(out, a.root)))
+    la = d["live"].get("last_attempt")
+    if la and not la["ok"]:
+        print("::warning::the Commons live counts: " + la["error"])
     return 0
 
 

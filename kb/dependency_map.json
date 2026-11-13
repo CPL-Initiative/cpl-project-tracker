@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 920,
+  "file_datasets": 923,
   "external_services": 195,
-  "consumers": 579,
+  "consumers": 580,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -7900,6 +7900,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:docs/reference/data_dictionary.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_data_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 150
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:docs/reference/library_filer.md": {
    "consumers": [
     {
@@ -9858,6 +9871,19 @@
    "consumers": [
     {
      "id": "workflow:college-page-read.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_commons_data_live.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -13720,7 +13746,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 105
     }
    ],
    "served": true,
@@ -16185,7 +16211,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 106
     }
    ],
    "served": false,
@@ -19037,7 +19063,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 107
     }
    ],
    "served": false,
@@ -19135,7 +19161,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 102
     }
    ],
    "served": true,
@@ -23920,6 +23946,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/commons_data_live_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/commons_data_status_build_test.py": {
    "consumers": [
     {
@@ -28417,6 +28456,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -28447,6 +28493,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "script:kb/_program_requirements_pilot.py",
@@ -28547,6 +28600,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -31053,6 +31113,13 @@
      ]
     },
     {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
+    },
+    {
      "id": "module:program_requirements.js",
      "kind": "module",
      "direction": "read",
@@ -31134,6 +31201,13 @@
      "tabs": [
       "cpl-pathways"
      ]
+    },
+    {
+     "id": "module:kb/_commons_data_live.py",
+     "kind": "module",
+     "direction": "read",
+     "how": "seeded",
+     "line": 0
     },
     {
      "id": "module:program_requirements.js",
@@ -32737,6 +32811,7 @@
    "scripts": [
     "kb/_harvest_gap_census.py",
     "kb/_program_requirements_heading_agreement.py",
+    "kb/_commons_data_live.py",
     "kb/_build_commons_data_status.py"
    ],
    "adds": [
@@ -32817,6 +32892,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/commons_data_status_build_test.py",
+    "tests/commons_data_live_test.py",
     "kb/_build_commons_status.py",
     "tests/apply_concurrency_test.py",
     "tests/docket_rulings_test.py",
@@ -33776,6 +33852,7 @@
   "cr_progress.js",
   "exhibit_progress.js",
   "kb/_chatbox_ghost_delete.py",
+  "kb/_commons_data_live.py",
   "kb/_program_requirements_extract.py",
   "scripts/supabase_migrate.py"
  ],

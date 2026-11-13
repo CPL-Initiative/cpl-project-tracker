@@ -15,7 +15,13 @@ What it guards, each a way the page could mislead:
       checked_at), over fixture copies of two real receipts under tests/fixtures/spot_checks/ so a later receipt
       cannot turn main red: 4 agree and 1 differ reads partial; a 1-of-1 cross-college tally never reads strong;
       an unreachable page is not a checked record; a later settlement of ours moves only its own row; the newest
-      receipt by checked_at counts.
+      receipt by checked_at counts;
+  (8) the data dictionary is parsed from docs/reference/data_dictionary.md, the one source: one entry per dataset
+      heading, every label present, evidence that exists, and the committed file equal to the doc's parse;
+  (9) the API checklist: a status counts only with evidence in the repo, a claimed connection without it reads
+      unverified;
+  (10) the live block and the overall bar keep basis live, apart from the committed-files figures (the export
+      itself is guarded by tests/commons_data_live_test.py).
 
 Run from the repo root: python3 tests/commons_data_status_build_test.py
 """
@@ -90,7 +96,9 @@ check("(5) the statewide level counts are the college rows'", sum(S["confidence"
 check("(5) every field a college row carries has a flag, shareable or internal",
       all(set(c) == set(d["fields"]) for c in C) and set(d["fields"].values()) <= {"shareable", "internal"}, sorted(set(C[0]) ^ set(d["fields"])))
 check("(5) dollars and process notes are internal", all(d["fields"][k] == "internal" for k in ("cost_usd", "passed_at_read", "causes", "slo_queue", "scout")))
-check("(5) the overall bar, the API checklist and the JST funnel are TBA with reasons", all(d["tba"].get(k) for k in ("overall", "apis", "jst")))
+check("(5) the API checklist tile and the JST funnel are TBA with reasons", all(d["tba"].get(k) for k in ("apis", "jst")))
+check("(5) the overall bar is TBA with its reason exactly while the live counts are not read",
+      bool(d["tba"].get("overall")) == (d["live"]["state"] != "read") and ("teachout_approved" in d["tba"]) == (d["live"]["state"] != "read"))
 
 # (6) the thresholds, once
 check("(6) the age thresholds are in the file", d["rule"]["age_days"] == {"fresh": 7, "recent": 30})
@@ -147,6 +155,57 @@ check("(7) each committed receipt hashes to the README's sha256",
 # byte check would turn main red on every wave. The census workflow rebuilds it; the page names its build date.
 committed = json.load(open(os.path.join(ROOT, B.OUT), encoding="utf-8"))
 check("the committed file has the builder's shape", set(committed) == set(d) and committed["schema"] == d["schema"])
+
+# (8) the data dictionary: the doc is the one source (S647, #3220)
+doc = open(os.path.join(ROOT, B.DICTIONARY_DOC), encoding="utf-8").read()
+D = d["dictionary"]["datasets"]
+headings = re.findall(r"^### (.+)$", B._section(doc, B.DICT_SECTION), re.M)
+check("(8) the doc parses with no error (every label, a known group and a register stage)", d["dictionary"]["errors"] == [], d["dictionary"]["errors"][:3])
+check("(8) ⭐ one dictionary entry per dataset heading in the doc, in its order", [e["name"] for e in D] == [h.strip() for h in headings])
+check("(8) ⭐ the committed file's dictionary and checklist are the doc's (a doc edit without a rebuild fails here)",
+      committed.get("dictionary") == d["dictionary"] and committed.get("apis") == d["apis"])
+check("(8) the datasets the brief lists, Harvested, Connected and Planned (19 on #3220)", len(D) == 19
+      and {e["group"] for e in D} == set(B.GROUPS), len(D))
+check("(8) every entry names its owner, today's procedure, the planned improvement and its stage",
+      all(e["owner"] and e["procedure_today"] and e["planned_improvement"] and e["stage"] in B.STAGES for e in D))
+check("(8) every entry's evidence exists in the repo", all(e["evidence"] and not e["evidence_missing"] for e in D),
+      [(e["name"], e["evidence_missing"]) for e in D if e["evidence_missing"] or not e["evidence"]][:3])
+anchors = [e["link"].split("#", 1)[1] for e in D]
+check("(8) each entry links its own anchor in the doc", len(set(anchors)) == len(D) and all(e["link"].startswith(B.DICTIONARY_DOC + "#") for e in D))
+check("(8) the register links the dictionary, and the dictionary the register",
+      "data_dictionary.md" in open(os.path.join(ROOT, "docs", "reference", "data_sources.md"), encoding="utf-8").read()
+      and "data_sources.md" in doc)
+check("(8) student-level data never enters COBI, said where the draft says it", "Student-level data never enters COBI" in doc)
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "docs", "reference"))
+    shutil.copy(os.path.join(ROOT, "docs", "reference", "data_sources.md"), os.path.join(tmp, "docs", "reference"))
+    broken = doc.replace("- **Stage:** Scheduled\n", "", 1).replace(
+        "| MAP CustomReport API | MAP (RCCD / InfoTech) | yes | connected |  | `scripts/daily_build.sh::Fetch CustomReport from MAP API`",
+        "| MAP CustomReport API | MAP (RCCD / InfoTech) | yes | connected |  | `scripts/no_such_file.sh`", 1)
+    open(os.path.join(tmp, B.DICTIONARY_DOC), "w", encoding="utf-8").write(broken)
+    bd, ba = B.parse_dictionary(tmp)
+    check("(8) a dataset with no Stage line is an error", any("Stage" in e for e in bd["errors"]), bd["errors"][:2])
+    m = [r for r in ba["rows"] if r["api"] == "MAP CustomReport API"][0]
+    check("(9) ⭐ a claimed connection whose evidence is missing reads unverified, never connected",
+          m["status"] == "unverified" and m["claimed"] == "connected" and ba["connected"] == 0, m)
+
+# (9) the API checklist
+A = d["apis"]
+check("(9) fifteen APIs, one connected (the MAP CustomReport API)", A["total"] == 15 and A["connected"] == 1
+      and [r["api"] for r in A["rows"] if r["status"] == "connected"] == ["MAP CustomReport API"], A["by_status"])
+check("(9) every status is the vocabulary or unverified", all(r["status"] in B.API_STATUSES + ("unverified",) for r in A["rows"]))
+check("(9) a row with no evidence reads unverified", all(r["status"] == "unverified" for r in A["rows"] if not r["evidence"]))
+check("(9) the two priority APIs are CCCStart and the JST feed", sorted(r["api"][:8] for r in A["rows"] if r["priority"]) == ["CCCStart", "JST auth"])
+check("(9) by_status counts the rows", sum(A["by_status"].values()) == A["total"])
+
+# (10) the live block and the overall bar keep their own basis
+LV, OV = d["live"], d["overall"]
+check("(10) the live block names basis live and a state", LV["basis"] == "live" and LV["state"] in ("read", "not read yet"))
+check("(10) before its first read it carries an explicit not-read-yet block", LV["state"] == "read" or (LV["read_at"] is None and LV["colleges"] == {}))
+check("(10) every live college is a crosswalk college", set(LV["colleges"]) <= {str(c["id"]) for c in C})
+check("(10) the overall bar is basis live, with the live read time, and only for colleges the live read holds",
+      OV["basis"] == "live" and OV["read_at"] == LV["read_at"] and set(OV["colleges"]) == set(LV["colleges"]))
+check("(10) no college row mixes in a live figure", not any(k in c for c in C for k in ("live", "overall")))
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))

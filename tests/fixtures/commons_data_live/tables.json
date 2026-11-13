@@ -1,0 +1,45 @@
+{
+ "_about": "A made-up slice of the five tables kb/_commons_data_live.py reads, for tests/commons_data_live_test.py and `python3 kb/_commons_data_live.py --fixture`. Every value is invented; the person columns carry a stand-in name the export must never read.",
+ "coci_college_programs": [
+  {"college": "Allan Hancock College", "control_number": "A1", "status": "Active", "program_title": "Accounting AS"},
+  {"college": "Allan Hancock College", "control_number": "A2", "status": "Active", "program_title": "Biology AS-T"},
+  {"college": "Allan Hancock College", "control_number": "A3", "status": "Active", "program_title": "Welding CA"},
+  {"college": "Allan Hancock College", "control_number": "A4", "status": "Active", "program_title": "Nursing AS"},
+  {"college": "Allan Hancock College", "control_number": "A5", "status": "Active", "program_title": "Art AA"},
+  {"college": "Allan Hancock College", "control_number": "T1", "status": "Active - Teachout Only", "program_title": "Old Program"},
+  {"college": "Allan Hancock College", "control_number": "P1", "status": "Approved", "program_title": "New Program"},
+  {"college": "Allan Hancock College", "control_number": "X1", "status": "Inactive", "program_title": "Gone"},
+  {"college": "North Orange Continuing Education", "control_number": "N1", "status": "Active", "program_title": "ESL"},
+  {"college": "North Orange Continuing Education Credit", "control_number": "N2", "status": "Active", "program_title": "Office Skills"},
+  {"college": "North Orange Continuing Education Credit", "control_number": "N1", "status": "Active", "program_title": "ESL"},
+  {"college": "Nowhere College", "control_number": "Z1", "status": "Active", "program_title": "Not a college"}
+ ],
+ "program_requirement_records": [
+  {"college": "Allan Hancock College", "control_number": "A1", "checks": {"coverage": true, "invented": true, "arithmetic": "equal"}, "record": {"program": {"outcomes": []}}, "checked": true, "checked_by": "Pat Person (stand-in)"},
+  {"college": "Allan Hancock College", "control_number": "A2", "checks": {"coverage": true, "invented": true, "arithmetic": "unstated"}, "record": {"program": {"outcomes": ["Explain cells"]}}, "checked": false, "checked_by": null},
+  {"college": "Allan Hancock College", "control_number": "A3", "checks": {"coverage": false, "invented": true, "arithmetic": "equal"}, "record": {"program": {}}, "checked": false, "checked_by": null},
+  {"college": "Allan Hancock College", "control_number": "A4", "checks": {"coverage": true, "invented": true, "arithmetic": "unequal"}, "record": {"program": {"outcomes": ["Care"]}}, "checked": false, "checked_by": null},
+  {"college": "Allan Hancock College", "control_number": "T1", "checks": {"coverage": true, "invented": true, "arithmetic": "equal"}, "record": {"program": {"outcomes": []}}, "checked": false, "checked_by": null},
+  {"college": "Allan Hancock College", "control_number": "P1", "checks": {"coverage": true, "invented": false, "arithmetic": "equal"}, "record": {"program": {}}, "checked": false, "checked_by": null},
+  {"college": "North Orange Continuing Education", "control_number": "N1", "checks": {"coverage": true, "invented": true, "arithmetic": "equal"}, "record": {"program": {}}, "checked": false, "checked_by": null}
+ ],
+ "coci_program_courses": [
+  {"college": "Allan Hancock College", "program_control_number": "A1", "course_code": "ACCT 101", "course_title": "Accounting"},
+  {"college": "Allan Hancock College", "program_control_number": "A1", "course_code": "ACCT-102", "course_title": "Accounting II"},
+  {"college": "Allan Hancock College", "program_control_number": "A2", "course_code": "BIO 1", "course_title": "Biology"},
+  {"college": "Allan Hancock College", "program_control_number": "A2", "course_code": "ACCT 101", "course_title": "Accounting"},
+  {"college": "Allan Hancock College", "program_control_number": "T1", "course_code": "HIST 9", "course_title": "History"}
+ ],
+ "course_outcomes": [
+  {"college": "Allan Hancock College", "course_code": "ACCT101", "kind": "slo", "loaded_at": "2026-11-01T00:00:00Z", "outcomes": ["Balance a ledger"]},
+  {"college": "Allan Hancock College", "course_code": "ACCT 102", "kind": "slo", "loaded_at": "2026-11-03T00:00:00Z", "outcomes": ["Close a period"]},
+  {"college": "Allan Hancock College", "course_code": "ZZZ 9", "kind": "slo", "loaded_at": "2026-11-02T00:00:00Z", "outcomes": ["Off program"]},
+  {"college": "Allan Hancock College", "course_code": "BIO 1", "kind": "objective", "loaded_at": "2026-11-04T00:00:00Z", "outcomes": ["Use a microscope"]},
+  {"college": "Allan Hancock College", "course_code": "BIO 1", "kind": "other", "loaded_at": "2026-11-05T00:00:00Z", "outcomes": ["Ignored"]},
+  {"college": "Somewhere Else", "course_code": "ART 1", "kind": "slo", "loaded_at": "2026-11-05T00:00:00Z", "outcomes": ["Draw"]}
+ ],
+ "program_source_registry": [
+  {"college": "Allan Hancock College", "catalog_url": "https://catalog.example.edu/?q=hidden", "cms_public_view": null, "sequence_source": "none_found", "corrected_by": "Pat Person (stand-in)"},
+  {"college": "North Orange Continuing Education Credit", "catalog_url": null, "cms_public_view": "https://cms.example.edu/", "sequence_source": "ppm", "corrected_by": null}
+ ]
+}

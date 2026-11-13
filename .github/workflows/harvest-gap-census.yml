@@ -6,7 +6,9 @@ name: Harvest gap census
 # (coci_college_programs, program_requirement_records, program_source_registry, coci_program_courses)
 # and the committed per-college files; writes no table. Commits kb/status/harvest_gap_census.json
 # and .md, and the heading-agreement snapshot kb/status/harvest_heading_agreement.json and .md, to the
-# branch it ran on. Dispatch only: no schedule, no secret.
+# branch it ran on. Dispatch only: no schedule. The census itself takes no secret; one later step, the
+# Commons data dashboard's live counts (kb/_commons_data_live.py, #3215), reads with the existing
+# SUPABASE_SERVICE_KEY at that step's scope alone, counts per college only (COBIx's conditions, PR #3222).
 
 on:
   workflow_dispatch: {}
@@ -36,11 +38,24 @@ jobs:
             echo "::warning::the heading-agreement snapshot did not regenerate; the census files without it"
             git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md 2>/dev/null || true
           fi
-      # The Commons data dashboard's figures (#3215, commons_data.js at #commons/data), from the committed files
-      # alone; no network. Fails soft, as the heading agreement does.
-      - name: Commons data dashboard (committed files only; fails soft)
+      # The Commons data dashboard's live counts (#3215; COBIx's conditions on PR #3222): counts per college only,
+      # never a row; the two tables that name a person are read by count alone. The service key lives at this
+      # step's scope only, and the export never falls back to the anon key. It writes out/ alone; the builder below
+      # takes it with --live and stays the one writer of kb/status/commons_data.json. Fails soft: a failed read keeps
+      # the previous committed block, and the builder records the attempt.
+      - name: Commons data live counts (service key, counts only; fails soft)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: |
-          if ! python3 kb/_build_commons_data_status.py; then
+          if ! python3 kb/_commons_data_live.py --out out/commons_data_live.json; then
+            echo "::warning::the Commons live counts did not run; the builder keeps the previous block"
+          fi
+      # The Commons data dashboard's figures (#3215, commons_data.js at #commons/data): the committed files, the live
+      # counts above (key live, its own basis), the data dictionary and the API checklist. Fails soft, as the
+      # heading agreement does.
+      - name: Commons data dashboard (committed files and the live counts; fails soft)
+        run: |
+          if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json; then
             echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
             git checkout -- kb/status/commons_data.json 2>/dev/null || true
           fi

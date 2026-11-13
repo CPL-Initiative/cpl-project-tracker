@@ -74,13 +74,13 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cobi_live_session` | tabs: `admin` · pages: `CPL_Dashboard.html` | — |
 | `cobi_nav` | pages: `CPL_Dashboard.html` | tabs: `admin` |
 | `coci_college_offerings` | `edgefn:cpl-chat` | — |
-| `coci_college_programs` | tabs: `cpl-pathways`, `program-requirements` · scripts: `kb/_program_requirements_pilot.py` | — |
-| `coci_program_courses` | tabs: `cpl-pathways` · scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_college_programs` | tabs: `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_program_requirements_pilot.py` | — |
+| `coci_program_courses` | tabs: `cpl-pathways` · modules: `kb/_commons_data_live.py` · scripts: `kb/_program_requirements_pilot.py` | — |
 | `college` | scripts: `kb/_identity_daily_check.py` | — |
 | `college_contacts_harvest` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `college_geo` | `edgefn:cpl-chat` | — |
 | `college_short_names` | tabs: `college-identity` · scripts: `kb/_apply_college_short_names.py` | tabs: `college-identity` |
-| `course_outcomes` | tabs: `coci-lookup`, `cpl-pathways`, `program-requirements` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
+| `course_outcomes` | tabs: `coci-lookup`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_build_adopt_align.py`, `kb/_build_exhibit_slo_neighbors.py`, `kb/_mid_outcomes_compare.py` | — |
 | `cpl_adoption_interest` | tabs: `cpl-pathways` | tabs: `cpl-pathways` |
 | `cpl_comms` | tabs: `letters` | — |
 | `cpl_contract_deliverables` | tabs: `contracts` | — |
@@ -157,9 +157,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `personnel` | scripts: `excel_to_dashboard.py`, `kb/_load_budget.py`, `kb/_test_budget_cutover.py` | — |
 | `program_record_college_items` | tabs: `college-briefing`, `cpl-pathways`, `map-queue` | — |
 | `program_record_verdicts` | tabs: `program-requirements` | — |
-| `program_requirement_records` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_sync_program_checked.py`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
+| `program_requirement_records` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `chatbox/smoke_test.sh`, `kb/_sync_program_checked.py`, `scripts/catalog_framing.py` · `edgefn:cpl-chat` | — |
 | `program_source_addenda` | tabs: `program-requirements` | — |
-| `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
+| `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · modules: `kb/_commons_data_live.py` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci`, `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
 | `queue_todo_done` | tabs: `commons`, `program-requirements` | — |
@@ -451,6 +451,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `docs/catalog/index.json` | tabs: `governance` | — |
 | `docs/common_cr_reference_scope.md` | scripts: `kb/_build_cr_reference.py` | — |
 | `docs/reference/conductor_mode.md` | scripts: `kb/_docs_audit.py` | — |
+| `docs/reference/data_dictionary.md` | scripts: `kb/_build_commons_data_status.py` | — |
 | `docs/reference/library_filer.md` | scripts: `scripts/library_file.py` | — |
 | `docs/reference/mid_lifecycle.md` | scripts: `kb/_doctrine_scenarios.py` | — |
 | `docs/reference/statute/README.md` | scripts: `kb/_doctrine_scenarios.py` | — |
@@ -556,6 +557,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_chatbox_ghost_delete.py` | workflows: `chatbox-ghost-delete.yml` | — |
 | `kb/_college_contacts_harvest.py` | workflows: `college-contacts-harvest.yml` | — |
 | `kb/_college_page_read.py` | workflows: `college-page-read.yml` | — |
+| `kb/_commons_data_live.py` | workflows: `harvest-gap-census.yml` | — |
 | `kb/_course_outcomes_load.py` | workflows: `course-outcomes-load.yml` | — |
 | `kb/_course_outcomes_read.py` | workflows: `course-outcomes-read.yml` | — |
 | `kb/_course_outline_census.py` | workflows: `course-outline-census.yml` | — |
@@ -1080,6 +1082,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/college_contacts_harvest_sql_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_page_read_test.py` | workflows: `js-tests.yml` | — |
 | `tests/college_short_names_apply_test.py` | workflows: `js-tests.yml` | — |
+| `tests/commons_data_live_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_data_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/commons_status_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/context_budget_test.py` | workflows: `js-tests.yml` | — |
@@ -1457,8 +1460,9 @@ check these BY HAND before trusting an absence:
 - `cr_progress.js`
 - `exhibit_progress.js`
 - `kb/_chatbox_ghost_delete.py`
+- `kb/_commons_data_live.py`
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 920 file
-datasets · 195 external services · 579 consumers · 72 workflows · 41 tabs.
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 923 file
+datasets · 195 external services · 580 consumers · 72 workflows · 41 tabs.

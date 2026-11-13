@@ -521,6 +521,12 @@ jobs:
       # statewide figures are the college rows' sums, and an unread college is null, never zero.
       - name: Commons data dashboard builder
         run: python3 tests/commons_data_status_build_test.py
+      # Its live counts (S647, COBIx's conditions on #3222): counts only, the service key alone, fail soft, over a
+      # fixture; no network. PyYAML for the census workflow's shape.
+      - name: Commons data dashboard live counts
+        run: |
+          pip install --quiet pyyaml
+          python3 tests/commons_data_live_test.py
       # S639's lesson 1 (#3111, a main-red lesson): the Commons readers ran only against the committed
       # kb/status/commons.json, so a change to what its builder reads passed here and broke main at the
       # next daily rebuild. Rebuild it from this tree, then run every test that reads it against the
