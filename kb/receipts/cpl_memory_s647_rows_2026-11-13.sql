@@ -1,4 +1,4 @@
--- RUN by the conductor through the Supabase MCP: <stamp: time, slugs returned, creates per slug>
+-- RUN by the conductor through the Supabase MCP: 2026-11-13 12:37Z, 9 slugs returned, 9 create log rows (one per slug).
 -- cpl_memory rows for SkyPipit (S647, both halves), the Rule 9 checkpoint's step 10, prepared 2026-11-13 by the documents worker.
 -- INSERT ... ON CONFLICT (slug) DO NOTHING, then the cpl_memory_log append, then the verify (one call, three statements).
 -- Nine rows: six conductor decisions and patterns (proposed, for Sam to revise on Open Asks Sheet 190) and three of Sam's

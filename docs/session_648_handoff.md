@@ -200,9 +200,10 @@ when i wake up in a few hours he will have it in prod on our commons front porch
 
 ## Not refreshed / what the conductor ran
 
-The documents worker made no Supabase call, dispatched nothing and merged nothing; it published Sheet 190. **For the
-conductor:** step 10's statement (the receipt above) and step 12's headline and harvest rows; the worker stamps the run
-log with their results. `get_trigger` is not in this firing, so the run log's next run is not refreshed. **Refreshed:**
+The documents worker made no Supabase call, dispatched nothing and merged nothing; it published Sheet 190. **The
+conductor ran, at 12:37Z:** step 10's statement (nine slugs, nine create rows) and step 12's headline (20,282 active,
+14,525 complete by the tab's rule, 118 colleges; unchanged from S646, since nothing was loaded) and the harvest row,
+stamped with `queue_status.py`. `get_trigger` is not in this firing, so the run log's next run is not refreshed. **Refreshed:**
 the harvest lane (S646 paragraphs moved to the lessons doc, *Moved from the lane (S647)*, and an *S647* section), the
 commons lane (re-clustering detail moved to `commons_lessons.md`), the library lane, `conductor_mode.md`,
 `scheduled_sessions.md`, `blocked_sources.md` (College of the Desert), the Desert receipt's md5, the run log's session
