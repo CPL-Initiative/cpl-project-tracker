@@ -218,7 +218,7 @@ we don't need a refresh ... We don't want to accidentally send 2 of the same ema
 - **DECIDED, left as it is by his word:** the review's ticks and what Accept requires.
 - **Rollback:** one squash commit; no table or migration.
 
-**LIVE once its PR merges: the seven stages (2026-11-13, Malone in session; the plan and the mock are in the vault,
+**LIVE: the seven stages (2026-11-13, #3253, served 20:31Z; Malone in session; the plan and the mock are in the vault,
 `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).** His words: *"we need a different filter structure....
 because what we have is very confusing ... Ideally, it would be clean and sequential."* He and Sam ruled out a
 rebuild of the page (*"we can simply adjust the logic of the filters and the content of the email templates"*), so
@@ -261,8 +261,9 @@ the layout, the record, the review, the panel and the composer are untouched: th
   missing condition, the coordinator included; Sam's call of 2026-11-09 is that the dashboard writes no email for a
   missing coordinator, so the held follow-up leaves it out and a college held by it alone is owed no email, until he
   rules.
-- **The guide** was rewritten to the seven stages and its screenshots redrawn (version 5, same link), and the stamp
-  restamped in the same change.
+- **The guide** was rewritten to the seven stages and its screenshots redrawn (version 5, published 2026-11-13 to the
+  same link), and the stamp restamped in the same change. `cpl_memory`: `malone-funding-dash-seven-stages-2026-11-13`
+  and `q-held-follow-up-names-coordinator-2026-11-13` (receipt `kb/receipts/cpl_memory_funding_dash_seven_stages_2026-11-13.sql`).
 - **Rollback:** one squash commit; `git revert` restores the lists, the emails and the tests. Receipts written under
   the two new prefixes stay in `csm_log` as history and are read by nothing after a revert.
 Guards `tests/csm_workspace_stages.test.js` (the stage model), `tests/csm_workspace.test.js`, `tests/csm_workspace_templates.test.js` 1a to 1f.
