@@ -5,7 +5,7 @@
   "clear_minimum": "a sentence giving a kind of degree's least units in the major (pattern's n) is no major total: total_units equal to n is cleared, once the record reads a degree total",
   "order": "steps run in order: a clear runs before the fills that depend on it",
   "awards": "'associate': the steps read associate degrees only (a certificate's page prints its own total in the same words); 'transfer': transfer degrees only (AA-T, AS-T), for a figure such as Cal-GETC that a local degree never carries though its captured page may span the sibling transfer section; 'local': an associate degree that is no transfer degree; 'local_aa' / 'local_as': a local A.A. or A.S. only, never a transfer degree, for a local pattern that asks the two a different number of units (Las Positas's LPC-GE)",
-  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total)",
+  "set": "a figure the page's words point to, set from the step's value where the field is empty: the catalog prints it once for every degree on its own page (source, source_words) or states a rule the record keeps as a flag (Cerritos's minimum of 60, its electives as needed); only_without names a field that must be empty, only_with one that must be set (Los Angeles City, S639: a heading's 'Minimum of 60' is a floor only where the record holds that total; Victor Valley's Cal-GETC, only_with degree_total). A set of electives_fill_words files the catalog's own sentence that electives fill the total, where the page never prints the word elective (Grossmont, East Los Angeles, S644): the scorer's electives guard reads it, and only where the text prints it",
   "prefix_aliases": "the college's subject prefixes as its catalog prints them, mapped to the state file's: the scorer reads a placed code the file lists only under the other prefix as that listed course (never one the file lists as printed)",
   "course_renumbers": "courses the college renumbered after the state's file was written, the catalog's code mapped to the file's, each pair cited by the title and units both print: read wherever prefix_aliases is (the capture's coverage, the scorer, the second reader), and never where the file lists the printed code, so a pair retires once the file catches up",
   "course_units": "a course the record lists without units takes the units the page's own course data names (the vendor call the page made as it loaded, kept by the reader as the source's course_units): never a course the reading gave units, and the note names the call",
@@ -1128,6 +1128,86 @@
      "pattern": "General\\s+Education\\s+and\\s+Electives?(?:\\s+(?:Courses?|Units?))?\\s+\\d",
      "source": "https://bcc.curriqunet.com/catalog/view//iq/40739/41810/41811",
      "source_words": "Berkeley City A.A. and A.S. pages: 'General Education and Electives 30' between 'Major Requirements 30' and 'Total Units 60' (American Sign Language A.A. 01101; college page read 43138963119); Associate Degree Requirements: 'You must complete at least 18 units in general education' (college page read 43140339800)"
+    }
+   ]
+  },
+  "Grossmont College": {
+   "why": "S644, the harvest's NEXT 5 (the electives flag where a step files the catalog's own sentence). Grossmont's transfer degrees name Total Units 60 and Cal-GETC 34, the reading sets electives_fill_degree, and each fails only the scorer's electives guard: the page prints 'Units in the major 20-22', 'Plus General Education Requirements (Cal-GETC) 34', 'Total Units 60' and 'Complete transferable units as needed to reach 60.', and never the word elective (the readings' quotations in each record's notes, e.g. Psychology AA-T 30978 and Sociology AA-T 30977; diagnosis docs/harvest_wave3_diagnoses_s639.md, Grossmont cause A). The step files that sentence as electives_fill_words, and the guard (electives_named, kb/_program_requirements_score.py) accepts a text that prints it word for word. Measured on the filed records by kb/_program_requirements_readings_measure.py: 25 Grossmont records fail on the guard and 22 pass once it is answered (30978, 35805 and 37453 still fail on their sums); the readings of 23 quote the sentence. The field is read only by the guard, so the step moves no record that passes. Session decision for Sam to revise (d-electives-fill-words-s644), beside Sheet 120 card 1 and Sheet 81 card 2 without changing either; reversible by deleting this entry.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "electives_fill_words",
+     "value": "Complete transferable units as needed to reach 60",
+     "awards": "transfer",
+     "pattern": "Complete\\s+transferable\\s+units\\s+as\\s+needed\\s+to\\s+reach\\s+60\\b",
+     "source_words": "Grossmont AA-T and AS-T pages: 'Units in the major 20-22', 'Plus General Education Requirements (Cal-GETC) 34', 'Total Units 60', 'Complete transferable units as needed to reach 60.' (the readings of Psychology AA-T 30978 and Sociology AA-T 30977, notes)"
+    }
+   ]
+  },
+  "East Los Angeles College": {
+   "why": "S644, the harvest's NEXT 5. East Los Angeles's degrees say electives fill the degree without the word elective, so the scorer's electives guard fails them: transfer pages print 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (quoted by the readings of 32154, 32980, 33382, 37923, 42672 and 45935; 31017 and 35720 quote it in mixed case), local pages 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (43649, 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units'). Diagnosis docs/harvest_wave3_diagnoses_s639.md, East Los Angeles causes 1 and 3. The first three steps file the sentence as electives_fill_words, which the guard (electives_named) accepts where the text prints it. The fourth gives a transfer degree that names Cal-GETC and no units the 34 the ADT paragraph of the same section prints, 'Cal-GETC ... (34 semester/45 quarter units)' (quoted by the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632; 41097's reading saw it on page 130 and left ge_units empty), only where the record names the pattern and the degree total (only_with ge_pattern and degree_total), so a record that passes without a pattern, or holds its major alone, is never given units. Measured on the filed records by kb/_program_requirements_readings_measure.py: 20 records fail on the guard and 19 pass once it is answered (the readings of 10 quote a sentence word for word, the rest paraphrase it); with the fourth step, and its guard answered, 41097 passes as overlap and 35720 stays unequal (59-65 against 60). No passing record moves. Session decision for Sam to revise (d-electives-fill-words-s644); reversible by deleting this entry.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "electives_fill_words",
+     "value": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+     "awards": "transfer",
+     "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
+     "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS' (the readings of 32154, 32980, 33382, 37923, 42672, 45935, notes)"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_words",
+     "value": "ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS",
+     "awards": "transfer",
+     "pattern": "(?i)ADDITIONAL\\s+CSU\\s+UNITS\\s+TO\\s+REACH\\s+60\\s+CSU\\s+TRANSFERABLE\\s+UNITS",
+     "source_words": "ELAC transfer pages: 'COMPLETE ADDITIONAL CSU UNITS TO REACH 60 CSU TRANSFERABLE UNITS' (a reading's note, the same sentence without 'if needed')"
+    },
+    {
+     "kind": "set",
+     "field": "electives_fill_words",
+     "value": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+     "awards": "local",
+     "pattern": "(?i)ADDITIONAL\\s+DEGREE[-\\s]+APPLICABLE\\s+UNITS,?\\s+IF\\s+NEEDED,?\\s+TO\\s+REACH\\s+60\\s+UNITS",
+     "source_words": "ELAC local pages: 'COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.' (the readings of 43649 and 37956; 35309 and 41132 quote 'Complete additional degree applicable units, if needed, to reach 60 units')"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
+     "pattern": "\\(\\s*34\\s+semester\\s*/\\s*45\\s+quarter\\s+units\\s*\\)",
+     "source_words": "ELAC ADT paragraph: 'Completion of ... (Cal-GETC) course requirements ... (34 semester/45 quarter units)' (the readings of 31017, 32154, 32170, 33013, 33382, 41231 and 43632, notes; ELAC General Catalog 2026-2027, e.g. #page=130)"
+    }
+   ]
+  },
+  "Los Angeles Pierce College": {
+   "why": "S644, the harvest's lever 5 (general education given its units). Pierce's local degrees offer two patterns and the award table prints each one's units: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' (the reading of Child Development A.A. 08330, notes). A degree on either pattern carries 21 to 34 units of general education, as Monterey Peninsula's 'MPC General Education or Cal-GETC' (24-34), Columbia's CC-GE or Cal-GETC (21-34) and Los Angeles Valley's plans (27-34) read. The step sets that span only where the page prints both figures and the record names the pattern and the degree total (only_with ge_pattern and degree_total). Measured on the filed records by kb/_program_requirements_readings_measure.py: 08330 passes (57-70 against 60, within); no passing record moves. Session decision for Sam to revise (d-ge-pattern-units-s644); reversible by deleting this entry.",
+   "awards": "local",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 21,
+      "max": 34
+     },
+     "awards": "local",
+     "only_with": [
+      "ge_pattern",
+      "degree_total"
+     ],
+     "pattern": "Cal-?GETC\\s*\\(\\s*34\\s+units\\s*\\)[\\s\\S]{0,200}?LACCD\\s+GE\\s*\\(\\s*21\\s+units\\s*\\)|LACCD\\s+GE\\s*\\(\\s*21\\s+units\\s*\\)[\\s\\S]{0,200}?Cal-?GETC\\s*\\(\\s*34\\s+units\\s*\\)",
+     "source_words": "Pierce award table: 'Cal-GETC (34 units)' and 'LACCD GE (21 units)' (the reading of Child Development A.A. 08330, notes)"
     }
    ]
   }

@@ -978,6 +978,61 @@ check("a page whose 'units will vary' sits on an electives line, with no Cal-GET
       R.reconcile(rh, rh_text.replace("Cal-GETC Pattern (units will vary)", "Transferable Electives (units will vary)")
                   .replace("(Cal-GETC)", ""), RH, rh_filed["award"], steps=R.load_steps())[1] == [])
 
+print("S644: the electives sentence and the general education units, on each catalog's own words")
+ST = R.load_steps()
+GRC = ("Units in the major 20-22\nPlus General Education Requirements (Cal-GETC) 34\nTotal Units 60\n"
+       "Complete transferable units as needed to reach 60.")
+grc = {"program": {"total_units": {"min": 20, "max": 22}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 34, "max": 34}, "ge_pattern": "Cal-GETC", "electives_fill_degree": True},
+       "blocks": []}
+g_new, g_notes = R.reconcile(grc, GRC, "Grossmont College", "A.A- T Degree", steps=ST)
+check("Grossmont: a transfer degree files the sentence, and the scorer's guard reads it",
+      g_new["program"].get("electives_fill_words") == "Complete transferable units as needed to reach 60"
+      and S.degree_check(g_new["program"], (60.0, 60.0), 20.0, 22.0, [], GRC, "A.A- T Degree")["pass"]
+      and not S.degree_check(grc["program"], (60.0, 60.0), 20.0, 22.0, [], GRC, "A.A- T Degree")["pass"])
+check("Grossmont: a local degree is left alone", R.reconcile(grc, GRC, "Grossmont College", "A.S. Degree", steps=ST)[1] == [])
+ELT = ("COMPLETE THE FOLLOWING: 30-31 UNITS\nCAL-GETC GE PATTERN\nCOMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU "
+       "TRANSFERABLE UNITS\nTOTAL 60\nCompletion of the California General Education Transfer Curriculum (Cal-GETC) "
+       "course requirements (34 semester/45 quarter units)")
+elt = {"program": {"total_units": {"min": 30, "max": 31}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC", "electives_fill_degree": True},
+       "blocks": []}
+e_new, e_notes = R.reconcile(elt, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)
+ep = e_new["program"]
+check("East Los Angeles 41097's shape: the sentence and the ADT paragraph's 34 both filed, and the degree passes as overlap",
+      ep.get("electives_fill_words", "").startswith("ADDITIONAL CSU UNITS") and ep.get("ge_units") == {"min": 34, "max": 34}
+      and S.degree_check(ep, (60.0, 60.0), 30.0, 31.0, [], ELT, "A.S. T Degree").get("overlap"))
+no_pat = json.loads(json.dumps(elt))
+no_pat["program"]["ge_pattern"] = None
+check("East Los Angeles: a record naming no pattern takes no units",
+      (R.reconcile(no_pat, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)[0]["program"].get("ge_units")
+       or {}).get("min") is None)
+major_only = json.loads(json.dumps(elt))
+major_only["program"]["degree_total"] = {"min": None, "max": None}
+check("East Los Angeles: a record holding its major alone takes no units",
+      (R.reconcile(major_only, ELT, "East Los Angeles College", "A.S. T Degree", steps=ST)[0]["program"].get("ge_units")
+       or {}).get("min") is None)
+ELL = "COMPLETE ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS.\nTOTAL 60"
+ell = {"program": {"total_units": {"min": 30, "max": 30}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": 27, "max": 27}, "electives_fill_degree": True}, "blocks": []}
+l_new = R.reconcile(ell, ELL, "East Los Angeles College", "A.A. Degree", steps=ST)[0]["program"]
+check("East Los Angeles: a local degree files the local sentence and never the transfer one or the 34",
+      l_new.get("electives_fill_words", "").startswith("ADDITIONAL DEGREE-APPLICABLE")
+      and S.degree_check(l_new, (60.0, 60.0), 30.0, 30.0, [], ELL, "A.A. Degree")["pass"]
+      and R.reconcile(ell, ELL.replace("DEGREE-APPLICABLE", "CSU"), "East Los Angeles College", "A.A. Degree",
+                      steps=ST)[1] == [])
+PRC = "General Education Options\nCal-GETC (34 units)\nLACCD GE (21 units)\nTotal 60"
+prc = {"program": {"total_units": {"min": 36, "max": 36}, "degree_total": {"min": 60, "max": 60},
+                   "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC or LACCD GE"}, "blocks": []}
+p_new = R.reconcile(prc, PRC, "Los Angeles Pierce College", "A.A. Degree", steps=ST)[0]["program"]
+check("Pierce 08330: both printed figures give the span 21-34, and 57-70 against 60 passes as within",
+      p_new.get("ge_units") == {"min": 21, "max": 34}
+      and S.degree_check(p_new, (60.0, 60.0), 36.0, 36.0, [], PRC, "A.A. Degree").get("within"))
+check("Pierce: one figure alone sets nothing",
+      R.reconcile(prc, "Cal-GETC (34 units)\nTotal 60", "Los Angeles Pierce College", "A.A. Degree", steps=ST)[1] == [])
+check("Pierce: a transfer degree is left alone",
+      R.reconcile(prc, PRC, "Los Angeles Pierce College", "A.A- T Degree", steps=ST)[1] == [])
+
 failed = [n for n, ok in results if not ok]
 for n, ok in results:
     print(("ok   " if ok else "FAIL ") + n)

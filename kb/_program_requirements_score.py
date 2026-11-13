@@ -582,6 +582,34 @@ def places_none(score: dict | None) -> bool:
 
 
 ELECTIVE = re.compile(r"\belectives?\b", re.I)
+# A PDF's ligature stand-in glyph and the space the text prints after it ("elecƟ ves", Solano, S644).
+_LIGATURE_SPACED = re.compile("([%s]) ?" % "".join(_LIGATURES))
+
+
+def electives_named(prog: dict, text: str) -> bool:
+    """Whether the catalog text says electives fill the total a record says they fill: the word
+    itself, the word under a PDF's ligature stand-in ("elecƟ ves", as Solano's outcomes read it),
+    or the catalog's own sentence a reconcile step filed as electives_fill_words, which says the
+    same without the word (S644, the harvest's NEXT 5: Grossmont's 'Complete transferable units as
+    needed to reach 60', East Los Angeles's 'COMPLETE ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60
+    CSU TRANSFERABLE UNITS'). The sentence counts only where this text prints it, word for word
+    (letter case, punctuation and line breaks aside), so a later read of a page that no longer
+    prints it fails the guard again."""
+    if ELECTIVE.search(text):
+        return True
+    if _LIGATURE.search(text) and ELECTIVE.search(_LIGATURE_SPACED.sub(lambda m: _LIGATURES[m.group(1)], text)):
+        return True
+    words = prog.get("electives_fill_words")
+    if not isinstance(words, str) or not _words(words):
+        return False
+    return " %s " % _words(words) in " %s " % _words(text)
+
+
+def _words(s: str) -> str:
+    """The words of a text in order, lower case, punctuation and spacing dropped."""
+    return " ".join(re.findall(r"[a-z0-9]+", (s or "").lower()))
+
+
 # An associate degree for transfer, by the state file's award ("A.A- T Degree",
 # "A.S. T Degree") or the page's heading ("AA-T in Sociology for Transfer").
 TRANSFER = re.compile(r"\bA\.?\s?[AS]\.?[-\s]*T\b|\bfor transfer\b", re.I)
@@ -751,7 +779,7 @@ def degree_check(prog: dict, degree: tuple[float, float], lo: float, hi: float,
     g = ge or (0.0, 0.0)
     lo, hi = round(lo + g[0], 2), round(hi + g[1], 2)
     out["computed"] = [lo, hi]
-    if prog.get("electives_fill_degree") and text is not None and not ELECTIVE.search(text):
+    if prog.get("electives_fill_degree") and text is not None and not electives_named(prog, text):
         out["why"] = ["the record says electives fill the degree total, but the catalog text names no electives"]
         return out
     out.update(degree_verdict(prog, degree, lo, hi, award))
@@ -778,7 +806,36 @@ def hours_total_only(record: dict, stated: tuple[float, float] | None, text: str
                 if _num(entry.get("units")) or _num(entry.get("units_max")):
                     return False
     labels = list(HOURS_LABEL.finditer(text))
-    return bool(labels) and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels)
+    if labels and all(m.group(1) and abs(float(m.group(2)) - stated[0]) <= TOL for m in labels):
+        return True
+    return total_hours_printed(text, stated, labels)
+
+
+# "Total Hours 48-54", "Total Hours 216", "Non Credit - Total hours 630": the total printed after its
+# label with no colon, one figure or a range, the figure on the label's line or the next one.
+TOTAL_HOURS = re.compile(r"\bTotal\s+(?:Contact\s+)?Hours?\b[ \t]*:?[ \t]*(?:\n[ \t]*)?(\d+(?:\.\d+)?)"
+                         r"(?:[ \t]*[-–][ \t]*(\d+(?:\.\d+)?))?(?![\d.])", re.I)
+
+
+def total_hours_printed(text: str, stated: tuple[float, float], labels: list) -> bool:
+    """hours_total_only's second reading (S644, the harvest's NEXT 5): the same page, its total
+    printed as 'Total Hours N' or 'Total Hours N-M' with no colon (San Bernardino Valley's 19
+    noncredit certificates, 'Total Hours 48-54' over a UNITS column of 0, as each reading quotes
+    it; Coalinga's and Coastline's 'Total Hours 216', Hartnell's 'Non Credit - Total hours 630').
+    Read only where the first reading fails, so a page it passed still passes. Both ends of every
+    total the page prints must equal the record's, where the first reading compares the low end;
+    and a bare 'Hours: N' (a course's own) keeps it closed, as it keeps the first."""
+    if any(not m.group(1) for m in labels):
+        return False
+    totals = list(TOTAL_HOURS.finditer(text))
+    if not totals:
+        return False
+    for m in totals:
+        lo = float(m.group(1))
+        hi = float(m.group(2)) if m.group(2) else lo
+        if abs(lo - stated[0]) > TOL or abs(hi - stated[1]) > TOL:
+            return False
+    return True
 
 
 def score(record: dict, closed: list[dict], text: str | None = None, award: str | None = None,
@@ -849,7 +906,7 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         # guard: a text naming no electives keeps the record failing.
         fill = None
         if (not ok and not ge_included and degree is None and prog.get("electives_fill_degree")
-                and hi <= stated[0] + TOL and (text is None or ELECTIVE.search(text))):
+                and hi <= stated[0] + TOL and (text is None or electives_named(prog, text))):
             fill = [round(stated[0] - hi, 2), round(stated[1] - lo, 2)]
         ok = ok or ge_included or fill is not None
         arith = {"pass": ok, "status": "equal" if ok else "unequal",
