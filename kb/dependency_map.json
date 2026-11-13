@@ -15839,7 +15839,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 201
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -18645,7 +18645,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 198
+     "line": 202
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -21019,7 +21019,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 196
+     "line": 200
     },
     {
      "id": "script:kb/_build_adopt_page.py",
@@ -28982,7 +28982,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 94
+     "line": 95
     },
     {
      "id": "script:kb/_build_exhibit_slo_neighbors.py",

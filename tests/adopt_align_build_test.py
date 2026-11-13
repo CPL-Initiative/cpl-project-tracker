@@ -80,6 +80,20 @@ rows_path = os.path.join(root, "rows.json")
 write(root, "rows.json", rows)
 check("--outcomes writes the file", B.main(["--root", root, "--outcomes", rows_path, "--out", os.path.join(root, "y.json"), "--quiet"]) == 0 and os.path.exists(os.path.join(root, "y.json")))
 
+# Objectives share the table (kind objective, S584) and a reread gives them a newer read_run than the SLOs: they must
+# never stand in for a course's SLOs (COBIx on #3263).
+mixed = [{"college": "Alpha College", "course_code": "CIS 1", "kind": "slo", "read_run": 100,
+          "outcomes": ["Configure a secure network for a small office."]},
+         {"college": "Alpha College", "course_code": "CIS 1", "kind": "objective", "read_run": 200,
+          "outcomes": ["Describe the layers of the OSI model in detail."]}]
+idx = B.index_outcomes(mixed)
+only = list(idx.values())
+check("an objectives row with a newer read_run never replaces the SLO row",
+      len(only) == 1 and only[0]["kind"] == "slo" and only[0]["_outs"] == ["Configure a secure network for a small office."])
+check("a course with objectives and no SLOs has no outcomes row", B.index_outcomes(mixed[1:]) == {})
+src = open(os.path.join(ROOT, "kb", "_build_adopt_align.py")).read()
+check("the live read selects SLO rows only", "/rest/v1/course_outcomes?" in src and "&kind=eq.slo&" in src)
+
 failed = [r for r in results if not r[1]]
 for r in results:
     print(("PASS " if r[1] else "FAIL ") + r[0])

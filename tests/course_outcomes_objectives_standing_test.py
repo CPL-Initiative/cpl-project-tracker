@@ -556,6 +556,46 @@ def _():
         shutil.rmtree(tmp, ignore_errors=True)
 
 
+# Every place that reads the course_outcomes table, and how it names the kind (COBIx on #3263: a reader that keeps
+# the newest read_run per course with no kind takes a reread's objectives for SLOs).
+READERS = {
+    "coci_lookup.js": "kind=eq.slo",
+    "cpl_pathways.js": "kind=eq.slo",
+    "program_requirements.js": "kind=eq.slo",
+    "kb/_build_adopt_align.py": "kind=eq.slo",
+    "kb/_build_exhibit_slo_neighbors.py": "kind=eq.slo",
+    "kb/_mid_outcomes_compare.py": "keys on kind",
+    "kb/_commons_data_live.py": "counts by kind",
+    "scripts/queue_status.py": "o.kind = 'slo'",
+}
+TABLE_READ = re.compile(r"course_outcomes\?|from (public\.)?course_outcomes\b|\"course_outcomes\", OUTCOMES_QS", re.I)
+
+
+@check("GUARD: every reader of the course_outcomes table names a kind, so objectives never stand in for SLOs")
+def _():
+    skip = ("tests/", "kb/receipts/", "kb/migrations/", "kb/course_outcomes/", "docs/", "archive/",
+            "kb/_course_outcomes_load.py")
+    found = {}
+    for path in glob.glob(os.path.join(ROOT, "**", "*"), recursive=True):
+        rel = os.path.relpath(path, ROOT)
+        if (not os.path.isfile(path) or rel.startswith(skip) or "node_modules" in rel
+                or not rel.endswith((".py", ".js", ".ts", ".mjs", ".sql"))):
+            continue
+        try:
+            lines = open(path, encoding="utf-8").read().split("\n")
+        except (UnicodeDecodeError, OSError):
+            continue
+        for i, line in enumerate(lines):
+            if TABLE_READ.search(line) and not re.match(r"\s*(--|#|//|\*)", line) and "delete from" not in line:
+                found.setdefault(rel, []).append("\n".join(lines[max(0, i - 2):i + 4]))
+    assert set(found) == set(READERS), (sorted(set(found) - set(READERS)), sorted(set(READERS) - set(found)))
+    for rel, windows in found.items():
+        for w in windows:
+            assert "kind" in w or "OUTCOMES_QS" in w, (rel, w[:300])  # OUTCOMES_QS is held below
+    live = open(os.path.join(ROOT, "kb", "_commons_data_live.py")).read()
+    assert re.search(r'OUTCOMES_QS = "select=[^"]*\bkind\b', live), "the Commons live read no longer selects kind"
+
+
 @check("every list of what is collected from course outlines names objectives beside SLOs")
 def _():
     docs = {

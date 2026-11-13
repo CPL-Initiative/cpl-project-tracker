@@ -87,11 +87,12 @@ def cosine(a, b):
 # ── course_outcomes ───────────────────────────────────────────────────────────────────────────────────────────────
 
 def read_outcomes(key):
-    """Every course's newest read: college, course_code, course_title, outcomes. Range-paginated (Rule 10 b)."""
+    """Every course's SLO rows: college, course_code, course_title, outcomes. Range-paginated (Rule 10 b). kind=eq.slo:
+    the table also holds each course's objectives (kind objective, S584), which are not SLOs (COBIx on #3263)."""
     rows, start = [], 0
     while True:
         req = urllib.request.Request(
-            URL + "/rest/v1/course_outcomes?select=college,course_code,course_title,outcomes,read_run&order=id",
+            URL + "/rest/v1/course_outcomes?select=college,course_code,course_title,kind,outcomes,read_run&kind=eq.slo&order=id",
             headers={"apikey": key, "Authorization": "Bearer " + key, "Range-Unit": "items",
                      "Range": "%d-%d" % (start, start + PAGE - 1)})
         with urllib.request.urlopen(req, timeout=120) as r:
@@ -104,9 +105,12 @@ def read_outcomes(key):
 
 
 def index_outcomes(rows):
-    """(college, course key) -> the newest read's row, with its outcome texts cleaned."""
+    """(college, course key) -> the newest read's SLO row, with its outcome texts cleaned. A row of another kind (a
+    course's objectives) never stands in for its SLOs, whatever its read_run."""
     by = {}
     for r in rows:
+        if (r.get("kind") or "slo") != "slo":
+            continue
         k = (r.get("college"), course_key(r.get("course_code")))
         if not k[1]:
             continue
