@@ -61,34 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     23.0,
     24.0
    ],
    "stated": [
-    60.0,
-    60.0
+    23.0,
+    24.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     23.0,
-     24.0
+     57.0,
+     58.0
     ],
     "stated": [
-     23.0,
-     24.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     2.0,
+     3.0
+    ]
    }
   },
   "repeated": {
@@ -113,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +139,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -249,14 +254,20 @@
    "Career field 'STEM' taken from 'The study of mathematics is a gateway to a career in STEM.'"
   ]
  },
- "extracted_run": 43355014570,
+ "extracted_run": 43482160320,
  "reconciled": [
   {
-   "field": "electives_fill_words",
-   "was": null,
-   "now": "Complete transferable units as needed to reach 60",
-   "words": "Complete transferable units as needed to reach 60"
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Cal-GETC (https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/psychology-aat/: Plus General Education Requirements (Cal-GETC) 34 (S648, d-calgetc-34-per-college-evidence-s648: Grossmont's transfer pages print their own Cal-GETC figure; Psychology AA-T 30978 and History AA-T 31814 quote it))"
   }
  ],
- "read_run": "39061728041"
+ "read_run": 43355014570
 }
