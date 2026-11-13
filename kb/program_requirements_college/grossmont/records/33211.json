@@ -68,37 +68,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    52.0,
-    54.0
+    18.0,
+    20.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    20.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     20.0
+     52.0,
+     54.0
     ],
     "stated": [
-     18.0,
-     20.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     6.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -123,7 +125,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -167,7 +169,8 @@
     "politics",
     "medicine",
     "business"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -644,5 +647,14 @@
    "Careers taken from 'diverse fields such as ...' in the program description; these are fields where English skills are described as necessary."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

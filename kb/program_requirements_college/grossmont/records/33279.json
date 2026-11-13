@@ -61,37 +61,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    54.0,
-    56.0
+    20.0,
+    22.0
    ],
    "stated": [
-    60.0,
-    60.0
+    20.0,
+    22.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     20.0,
-     22.0
+     54.0,
+     56.0
     ],
     "stated": [
-     20.0,
-     22.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     4.0,
+     6.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,7 +152,8 @@
     "finance",
     "government",
     "general business"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -289,5 +292,14 @@
    "The 'Minimum of 18 semester units in the major' is a generic ADT rule; the major total recorded is the printed 'Units for the major 20-22'."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }
