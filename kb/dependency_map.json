@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 903,
+  "file_datasets": 909,
   "external_services": 195,
-  "consumers": 574,
+  "consumers": 575,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -451,7 +451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1563
+     "line": 1567
     }
    ],
    "main_committers": []
@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1519
+     "line": 1523
     }
    ],
    "main_committers": []
@@ -694,7 +694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1456
+     "line": 1460
     }
    ],
    "main_committers": []
@@ -2968,7 +2968,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1090
+     "line": 1094
     }
    ],
    "main_committers": []
@@ -10334,6 +10334,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_program_requirements_heading_agreement.py": {
+   "consumers": [
+    {
+     "id": "workflow:harvest-gap-census.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_program_requirements_pilot.py": {
    "consumers": [
     {
@@ -16840,7 +16853,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4021
+     "line": 4685
     }
    ],
    "served": true,
@@ -19146,6 +19159,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/status/harvest_heading_agreement.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_heading_agreement.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_heading_agreement.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_heading_agreement.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 65
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/status/harvest_no_closed_list.json": {
    "consumers": [
     {
@@ -20353,7 +20392,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4018
+     "line": 4682
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20361,6 +20400,19 @@
      "direction": "read",
      "how": "literal",
      "line": 350
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kept_unbound_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 4618
     }
    ],
    "served": false,
@@ -20977,7 +21029,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3996
+     "line": 4652
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -24961,6 +25013,32 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_heading_agreement_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_pdf_numbers_after_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_pilot_test.py": {
    "consumers": [
     {
@@ -27489,7 +27567,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4038
+     "line": 4702
     }
    ],
    "main_committers": []
@@ -27501,7 +27579,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4125
+     "line": 4789
     }
    ],
    "main_committers": []
@@ -32491,7 +32569,8 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
-    "kb/_harvest_gap_census.py"
+    "kb/_harvest_gap_census.py",
+    "kb/_program_requirements_heading_agreement.py"
    ],
    "adds": [
     "kb/status/harvest_gap_census.json",
@@ -32535,6 +32614,8 @@
     "tests/harvest_gap_census_test.py",
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/program_requirements_dated_reads_test.py",
+    "tests/program_requirements_heading_agreement_test.py",
+    "tests/program_requirements_pdf_numbers_after_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
@@ -33508,10 +33589,12 @@
   "docs",
   "kb/*_dryrun",
   "kb/coci_minted_courses.json",
+  "kb/harvest_scouting",
   "kb/receipts",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",
-  "kb/row_audit/*.md"
+  "kb/row_audit/*.md",
+  "kb/status/harvest_heading_agreement.json"
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",
