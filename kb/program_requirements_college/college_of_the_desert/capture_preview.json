@@ -1,0 +1,2257 @@
+{
+ "college": "College of the Desert",
+ "catalog_url": "https://catalog.collegeofthedesert.edu/",
+ "platform": "courseleaf",
+ "catalog_year": "2026-2027",
+ "programs": 374,
+ "with_closed_list": 365,
+ "started": "2026-11-13T11:23:30Z",
+ "procedure_step": {
+  "start": "https://collegeofthedesert.edu/students/catalog-schedule/default.php",
+  "follow": "2026-27 PDF Catalog",
+  "href": null,
+  "status": null,
+  "access": "unreachable"
+ },
+ "pdf": {
+  "url": "https://catalog.collegeofthedesert.edu/",
+  "access": "unreachable",
+  "status": null,
+  "bytes": null,
+  "pages_total": 0,
+  "error": "the 17740 bytes read are not a whole PDF (no %PDF head or no %%EOF tail)",
+  "chars_total": 0,
+  "pypdf_accepted": 0,
+  "sample": [],
+  "extractor": null,
+  "numbers_after": {
+   "after": 0,
+   "before": 0,
+   "after_mode": false,
+   "gated": false,
+   "read": "heading"
+  },
+  "unproven": []
+ },
+ "loads": 2,
+ "pages_listed": 1,
+ "pages_answered": 0,
+ "seconds": 42.0,
+ "found": 0,
+ "by_method": {
+  "no_closed_list": 9,
+  "not_found": 365
+ },
+ "shared_pages": {},
+ "not_found": [
+  {
+   "control_number": "04337",
+   "title": "Plant Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04338",
+   "title": "Environmental Horticulture",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04339",
+   "title": "Agri-Business",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04341",
+   "title": "Architectural Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04343",
+   "title": "Accounting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "04346",
+   "title": "Hospitality Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04352",
+   "title": "Computer Information Systems for Employment Preparation",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04354",
+   "title": "Air Conditioning & Refrigeration",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04356",
+   "title": "General Drafting",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04357",
+   "title": "Building Inspection Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "04361",
+   "title": "Registered Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04362",
+   "title": "Vocational Nursing",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04368",
+   "title": "Mathematics",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04370",
+   "title": "Chemistry",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04373",
+   "title": "Psychology",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04374",
+   "title": "Criminal Justice",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04376",
+   "title": "Fire Technology (employment preparation)",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "04384",
+   "title": "Early Childhood Education Site Supervisor",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "04385",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07906",
+   "title": "Turfgrass Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07907",
+   "title": "General Agriculture",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07908",
+   "title": "Natural Resources",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07911",
+   "title": "Golf Management",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07913",
+   "title": "Mass Communication",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07923",
+   "title": "Early Childhood Education Master Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "07924",
+   "title": "Early Childhood Education Teacher",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "07926",
+   "title": "Culinary Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07928",
+   "title": "Alcohol and Drug Studies",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "07929",
+   "title": "Social Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10195",
+   "title": "Natural Resources",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10196",
+   "title": "Environmental Horticulture",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10198",
+   "title": "Architectural Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10210",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "10225",
+   "title": "Basic Culinary Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "10226",
+   "title": "Intermediate Culinary Arts",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "12021",
+   "title": "Digital Design & Production",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "13485",
+   "title": "Advanced Transportation Technologies",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "13487",
+   "title": "Automotive Alternative Fuels",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "17880",
+   "title": "Liberal Arts: Arts, Humanities, and Communication Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "17882",
+   "title": "Liberal Arts: Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "17883",
+   "title": "Liberal Arts: Business and Technology",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18189",
+   "title": "Liberal Arts: Math and Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18684",
+   "title": "Automotive Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "18685",
+   "title": "Automotive Air Conditioning",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18686",
+   "title": "Automotive Steering, Suspension, & Alignment",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18687",
+   "title": "Automotive Electrical",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18688",
+   "title": "Automotive Emissions",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18689",
+   "title": "Automotive Engine Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18690",
+   "title": "Automotive General Service",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18691",
+   "title": "Automotive Transmission & Axle",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "18834",
+   "title": "Retail Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "19308",
+   "title": "Arborist Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "19309",
+   "title": "Landscape & Irrigation Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "19310",
+   "title": "Pest Management Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "19311",
+   "title": "Turfgrass Management Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21127",
+   "title": "Environmental Horticulture",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21128",
+   "title": "Turfgrass Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21129",
+   "title": "Architectural Technology",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21130",
+   "title": "Digital Design & Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21132",
+   "title": "Air Conditioning & Refrigeration",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21133",
+   "title": "General Drafting",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21134",
+   "title": "Construction Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21135",
+   "title": "Vocational Nursing",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21136",
+   "title": "Culinary Management",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21137",
+   "title": "Golf Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21138",
+   "title": "Alcohol and Drug Studies",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21139",
+   "title": "Criminal Justice",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "21140",
+   "title": "Fire Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "24006",
+   "title": "Basic Math",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24286",
+   "title": "English Proficiency: Life & Work Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24328",
+   "title": "Basic English",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24341",
+   "title": "Academic English",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24347",
+   "title": "Advanced English",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24378",
+   "title": "Reading",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24398",
+   "title": "Advanced Math",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "24399",
+   "title": "Secondary Education GED)",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "30534",
+   "title": "Real Estate Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "30546",
+   "title": "Communication Studies",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "30552",
+   "title": "Psychology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "30553",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31079",
+   "title": "Administration of Justice",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31154",
+   "title": "Musical Theatre",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31251",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31291",
+   "title": "Studio Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31367",
+   "title": "Mathematics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31508",
+   "title": "Adult High School Diploma",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "31532",
+   "title": "Fitness Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31538",
+   "title": "Reserve Police Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31721",
+   "title": "Business Administration",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31789",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "31807",
+   "title": "Human Resource Generalist",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31945",
+   "title": "Basic Fire Fighter",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "31946",
+   "title": "Police Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32369",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32370",
+   "title": "Anthropology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32380",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32391",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32392",
+   "title": "Journalism",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32393",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32846",
+   "title": "Elementary Teacher Education",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "32878",
+   "title": "Emergency Medical Services",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "32961",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33012",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33265",
+   "title": "Physics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33266",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33321",
+   "title": "Power Generation and Distribution",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "33331",
+   "title": "Desert Ecologist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "33438",
+   "title": "Health Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "33733",
+   "title": "Field Ranger",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35124",
+   "title": "Chemistry",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35125",
+   "title": "Biology",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35157",
+   "title": "Geology",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35274",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35372",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35385",
+   "title": "Music",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35406",
+   "title": "Fire Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35428",
+   "title": "Film, Television, and Electronic Media",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35447",
+   "title": "Global Studies",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35452",
+   "title": "Sports Medicine",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35461",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35476",
+   "title": "Child and Adolescent Development",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35516",
+   "title": "Hospitality Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35543",
+   "title": "Hospitality Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "35623",
+   "title": "Residential Gas Heating",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35624",
+   "title": "Commercial Gas Heating",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35626",
+   "title": "Heat Pumps",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35627",
+   "title": "Green HVAC Residential",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35778",
+   "title": "Lifeguard Training",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35780",
+   "title": "Water Safety Instructor",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35781",
+   "title": "Vocational ESLN",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35782",
+   "title": "Rational Numbers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35783",
+   "title": "Integers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35784",
+   "title": "Whole Numbers",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35793",
+   "title": "Automotive Braking Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35794",
+   "title": "Automotive Light and Medium Duty Diesel",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35810",
+   "title": "Facilities Operations Technician",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35811",
+   "title": "Green HVAC Commercial",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35812",
+   "title": "Building Automation Control",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35856",
+   "title": "Language and Thought",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35857",
+   "title": "Sentence",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35863",
+   "title": "Advanced Academic English as a Second Language Noncredit",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35907",
+   "title": "Organization",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35908",
+   "title": "Research & Argument",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35969",
+   "title": "Advanced First Aid and Safety, CPR/AED",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35980",
+   "title": "Building and Energy System Professional (BESP) Fundamentals",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "35996",
+   "title": "Proper HVAC System Preparation and System Charging",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35997",
+   "title": "Refrigerant Management and EPA-608 Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "35998",
+   "title": "Air Properties and Economizer Performance",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36029",
+   "title": "Computer Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36042",
+   "title": "Solar Battery Storage Installation & Maintenance",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36043",
+   "title": "Residential Solar Surveying & Planning",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36047",
+   "title": "Building Energy Consultant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36072",
+   "title": "Solar Site Planning Project",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36094",
+   "title": "General Business",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36095",
+   "title": "Early Childhood Education Associate Teacher",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36108",
+   "title": "Automotive Terminology",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36111",
+   "title": "Automotive Quick Service",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36119",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36122",
+   "title": "Public Health Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36126",
+   "title": "Small Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36127",
+   "title": "Agriculture Irrigation Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36128",
+   "title": "Agriculture Pest Management",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36129",
+   "title": "Agriculture Office Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36130",
+   "title": "Agriculture Food Safety",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36131",
+   "title": "Agriculture Office Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36132",
+   "title": "Basic Film Production",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36138",
+   "title": "General Business",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36139",
+   "title": "Agriculture Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36159",
+   "title": "Elementary Teacher Assistant Special Education, Bilingual",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36161",
+   "title": "Elementary Teacher Assistant Special Education",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36166",
+   "title": "Film Production",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36219",
+   "title": "Residential Solar Installation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36250",
+   "title": "Building Commissioning Technician",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36308",
+   "title": "Family Child Care",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36448",
+   "title": "Personal Trainer",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36513",
+   "title": "Spanish",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "36768",
+   "title": "Business Information Worker - Office Professional",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36769",
+   "title": "Business Information Worker - Office Manager",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36770",
+   "title": "Hybrid, Fuel-Cell, & Electric Vehicle",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36831",
+   "title": "Advanced Film Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "36899",
+   "title": "Baker",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36968",
+   "title": "Prep Cook",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "36969",
+   "title": "Bread Baker",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "37159",
+   "title": "Graphic Design and Marketing",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37209",
+   "title": "Building & Energy Systems Professionals",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37210",
+   "title": "Residential Solar",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37211",
+   "title": "Lighting and Controls Technology",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37288",
+   "title": "Environmental Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37291",
+   "title": "Basic Podcasting and Radio Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37413",
+   "title": "Computer Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "37421",
+   "title": "Basic Commercial Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37631",
+   "title": "Yoga Teacher Training",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37649",
+   "title": "Photography",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "37650",
+   "title": "Advanced Commercial Music",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38132",
+   "title": "Social Media Marketing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38133",
+   "title": "Business Information Worker - Legal Office Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38134",
+   "title": "BIW IV: Marketing Office Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38135",
+   "title": "BIW IV: Medical Office Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38140",
+   "title": "Applications and Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "38978",
+   "title": "Basic Correctional Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38979",
+   "title": "Basic Peace Officer",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38980",
+   "title": "Automotive Introductions",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38981",
+   "title": "Welding Technology SENSE Entry-Level Welder",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38983",
+   "title": "Film Post-Production",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "38985",
+   "title": "Film Production Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "39014",
+   "title": "Geographic Information Systems Essentials",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39015",
+   "title": "California Building Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39016",
+   "title": "New World of Work Adaptability",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39017",
+   "title": "New World of Work Analysis/Solution Mindset",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39018",
+   "title": "New World of Work Collaboration on the Job",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39019",
+   "title": "New World of Work Digital Fluency",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39020",
+   "title": "New World of Work Empathy on the Job",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39021",
+   "title": "New World of Work Entrepreneurial Mindset",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39022",
+   "title": "New World of Work Resilience on the Job",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39023",
+   "title": "New World of Work Self-Awareness",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39024",
+   "title": "New World of Work Social Diversity Awareness",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39025",
+   "title": "New World of Work Communication on the Job",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39116",
+   "title": "Public Safety",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "39166",
+   "title": "California Building/Fire Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39167",
+   "title": "California Electrical Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39168",
+   "title": "California Energy Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39169",
+   "title": "California Mechanical Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39170",
+   "title": "California Plumbing Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39171",
+   "title": "California Residential Codes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39172",
+   "title": "Photoshop Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39173",
+   "title": "CNG Essentials",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39174",
+   "title": "CNG Inspection",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39175",
+   "title": "CNG Installation Essentials",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39176",
+   "title": "Construction Technology Career Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39177",
+   "title": "Construction Technology Concrete and Masonry",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39178",
+   "title": "Construction Technology Drywall Installation and Finish",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39179",
+   "title": "Construction Technology Electrical",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39180",
+   "title": "Construction Technology Exterior Finishes",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39181",
+   "title": "Construction Technology Finish Carpentry",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39182",
+   "title": "Construction Technology Framing Carpentry",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39183",
+   "title": "Construction Technology Introduction",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39184",
+   "title": "Construction Technology Plumbing",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39185",
+   "title": "Construction Technology Site Preparation and Layout",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39318",
+   "title": "Career Exploration and Readiness",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39319",
+   "title": "Culinary Menu Planning",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39320",
+   "title": "Culinary Procurement and Cost Control",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39321",
+   "title": "Culinary Safety & Sanitation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39401",
+   "title": "Emergency Medical Services",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "39993",
+   "title": "Community Health Worker: Children and Families",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "39994",
+   "title": "Pharmacy Technician",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40129",
+   "title": "Culinary Catering",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40189",
+   "title": "Gas Metal Arc Welding",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40190",
+   "title": "Gas Tungsten Arc Welding",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40191",
+   "title": "Shielded Metal Arc Welding",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40192",
+   "title": "Geographic Information Systems Data Acquisition",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40194",
+   "title": "Geographic Information Systems for Business",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40195",
+   "title": "Geographic Information Systems Spatial Analysis",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40196",
+   "title": "Emergency Medical Responder",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40197",
+   "title": "Emergency Medical Responder Intermediate",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40225",
+   "title": "Automotive Oil Change",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40241",
+   "title": "Geographic Information Systems",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40584",
+   "title": "After Effects",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40587",
+   "title": "Business Information Worker - Real Estate Specialist",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "40591",
+   "title": "Basic Film Production",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40605",
+   "title": "Illustrator Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40606",
+   "title": "InDesign",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40607",
+   "title": "Film Production Scheduling and Budgeting",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40614",
+   "title": "Introduction to Screenwriting",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40615",
+   "title": "Introduction to Film",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "40616",
+   "title": "Premiere Pro",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41319",
+   "title": "Business Remote Worker",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41805",
+   "title": "Health and Wellness Coach",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "41866",
+   "title": "EDGE",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "41892",
+   "title": "Ethnic Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "41979",
+   "title": "Digital Design Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42037",
+   "title": "Information Competence and Academic Research",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42055",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42347",
+   "title": "Translating and Interpreting in Spanish in Health Care",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42348",
+   "title": "Translating and Interpreting in Spanish in the School Environment",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "42490",
+   "title": "Interaction Design",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42492",
+   "title": "PHYSICAL THERAPIST ASSISTANT AS",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "42578",
+   "title": "Animation",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42604",
+   "title": "Video Post-Production",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42607",
+   "title": "Graphic Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42663",
+   "title": "Web Design",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42847",
+   "title": "Arts Entrepreneurship in Printmaking",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42848",
+   "title": "Arts Entrepreneurship in Painting",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42850",
+   "title": "Arts Entrepreneurship in Drawing",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42851",
+   "title": "Arts Entrepreneurship in Sculpture",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "42965",
+   "title": "Automotive Safety & Sustainability",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43222",
+   "title": "Arts Entrepreneurship in Ceramics",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43245",
+   "title": "Pre-Algebra and Beginning Algebra",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43475",
+   "title": "Employment Preparation: Line Cook",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43476",
+   "title": "Employment Preparation: Entry Cook",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43477",
+   "title": "Catering: Banquets and Buffets",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43621",
+   "title": "Makerspace Basic Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "43624",
+   "title": "BIW I: Office Support & Technologies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43625",
+   "title": "BIW III: Remote Office Support & Technologies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43626",
+   "title": "BIW II: Office Support and Technologies",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43627",
+   "title": "BIW IV: Legal Office Specialist",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "43640",
+   "title": "Applications and Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44280",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44563",
+   "title": "Pre-Physical Therapist Assistant",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44683",
+   "title": "Foundations for Accessibility",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44685",
+   "title": "Entertainment Design and Technical Theatre - Basic",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44686",
+   "title": "Entertainment Design and Technical Theatre - Advanced",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44700",
+   "title": "College Mathematics Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44709",
+   "title": "Mathematics Study Skills",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44724",
+   "title": "Ethnic Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44725",
+   "title": "Design Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44730",
+   "title": "Graphic Design and Marketing",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44731",
+   "title": "Liberal Arts: Arts, Humanities, and Communication Studies",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44732",
+   "title": "Liberal Arts: Business and Technology",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44733",
+   "title": "Liberal Arts: Math and Science",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44734",
+   "title": "Liberal Arts: Social and Behavioral Sciences",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44735",
+   "title": "Health Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44854",
+   "title": "UC 7 Course Pattern",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "44856",
+   "title": "Interaction Design",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "44943",
+   "title": "Business Calculus Preparation",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "44964",
+   "title": "Health and Wellness Coaching",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45005",
+   "title": "Automotive Basic Electrical",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45006",
+   "title": "Automotive Manufacturer",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45013",
+   "title": "Sports Medicine",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45014",
+   "title": "Engineering",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45015",
+   "title": "Natural Resources",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45016",
+   "title": "Physical Therapist Assistant",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45018",
+   "title": "Alcohol and Drug Studies",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45022",
+   "title": "Marketing",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45054",
+   "title": "Marketing AS",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45078",
+   "title": "English",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45079",
+   "title": "Nutrition and Dietetics",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45084",
+   "title": "Automotive Basic Diagnostic",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45209",
+   "title": "Economics",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45210",
+   "title": "Agriculture Plant Science",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45249",
+   "title": "Art History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45250",
+   "title": "Theatre Arts",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45301",
+   "title": "Political Science",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45302",
+   "title": "History",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45323",
+   "title": "Project Management",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45324",
+   "title": "Commercial Drone Imaging",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45370",
+   "title": "Business Administration 2.0",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45373",
+   "title": "Automotive Basic Maintenance",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45392",
+   "title": "Quickbooks Training",
+   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45435",
+   "title": "Food Safety in the Workplace",
+   "award": "Noncredit program",
+   "near_miss": null
+  },
+  {
+   "control_number": "45437",
+   "title": "Public Health",
+   "award": "A.S. T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45438",
+   "title": "Sociology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45490",
+   "title": "Game Design & Development",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "45515",
+   "title": "Criminal Justice",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45516",
+   "title": "Fire Technology",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45521",
+   "title": "Accounting",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45527",
+   "title": "Early Childhood Education",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45565",
+   "title": "Kinesiology",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45566",
+   "title": "Communication Studies 2.0",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45567",
+   "title": "Geography",
+   "award": "A.A- T Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45639",
+   "title": "Golf Management",
+   "award": "A.A. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45687",
+   "title": "Turfgrass Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45689",
+   "title": "Environmental Horticulture",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45690",
+   "title": "Agri-Business",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45691",
+   "title": "Applications and Information Systems",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45692",
+   "title": "Building & Energy Systems Professionals",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45693",
+   "title": "Natural Resources",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45707",
+   "title": "CULINARY",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45708",
+   "title": "Hospitality Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45709",
+   "title": "Plant Science",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45710",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45711",
+   "title": "Construction Management",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45712",
+   "title": "Film Production",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45713",
+   "title": "General agriculture",
+   "award": "A.S. Degree",
+   "near_miss": null
+  },
+  {
+   "control_number": "45805",
+   "title": "Paramedic",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": null
+  },
+  {
+   "control_number": "46018",
+   "title": "Paramedic",
+   "award": "A.S. Degree",
+   "near_miss": null
+  }
+ ],
+ "page_claimed": [],
+ "coverage_bands": {
+  "0.5-0.8": 0,
+  "0.8-1.0": 0,
+  "1.0": 0
+ },
+ "would_extract": {
+  "against": "kb/program_requirements_college/college_of_the_desert",
+  "kept": 0,
+  "kept_moved": 0,
+  "programs": 0,
+  "list": [],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": [],
+  "refused_passing": [],
+  "forced_unbound": []
+ },
+ "run": "43416261637"
+}
