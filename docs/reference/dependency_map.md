@@ -434,7 +434,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_memory.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_news.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_pathways.js` | pages: `CPL_Dashboard.html` | committed by: `first-light-apply.yml` |
-| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `funding-model/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` | — |
+| `cpl_session.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `funding-model/index.html`, `prototype/ccr_atlas_v1.html`, `prototype/skyview.html` · scripts: `kb/_build_exhibits_review.py` | — |
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_writer.js` | pages: `CPL_Dashboard.html`, `kb-portal/index.html` | — |
 | `cr_progress.js` | tabs: `cr-reference` | — |

@@ -28,7 +28,7 @@ What it joins, all committed files:
   kb/exhibit_audit/latest.json        the Names tile, and which titles still wait: the daily fold can settle
                                       a held title between the nightly run and this build
   kb/unclassified_assignments.json    titles a person or a rule saved since, which the fold has not added
-  kb_curation (live, read only)       the same assignments read fresh when SUPABASE_SERVICE_KEY is set: the
+  kb_curation (live, read only)       the same assignments read fresh with --live, by the anon key the tab uses: the
                                       live set replaces the overlay, so a save or a clear since the last sync
                                       counts (#3223, S649). The file records which set it read and when.
 
@@ -53,7 +53,7 @@ kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit
 per-credential view folded into the Exhibits tab), which exhibits.js reads.
 
 Usage, from the repo root:
-  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet] [--no-live]
+  python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet] [--live]
 """
 import argparse
 import datetime as dt
@@ -815,37 +815,68 @@ def name_list(creds, field):
     return sorted(out, key=str.lower)
 
 
-def live_total(triage):
-    """How many `_UNCLASSIFIED::` rows kb_curation holds now (PostgREST `Prefer: count=exact`), read before the rows
-    so a save landing between the two reads can only add rows, never trip the completeness check."""
+LIVE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co"
+LIVE_PAGE = 1000
+UNCLASS_PREFIX = "_UNCLASSIFIED::"
+
+
+def anon_key():
+    """The public anon key the Exhibits tab itself reads with (cpl_session.js, the one the page ships), or
+    SUPABASE_ANON_KEY. Public by design: anon may select course_id, field, value and reviewed_at on kb_curation
+    (kb/migrations/2026-11-09_kb_curation_hide_reviewer_email.sql) under the read policy kb_curation_read."""
+    key = os.environ.get("SUPABASE_ANON_KEY")
+    if key:
+        return key
+    with open(os.path.join(os.path.dirname(HERE), "cpl_session.js"), encoding="utf-8") as f:
+        m = re.search(r'var SUPABASE_ANON = "([^"]+)"', f.read())
+    if not m:
+        raise ValueError("no anon key in cpl_session.js")
+    return m.group(1)
+
+
+def live_rows(key):
+    """Every non-clear `_UNCLASSIFIED::` unified_title_assignment row, read as the tab reads them: the anon key,
+    Range-paged (Rule 10 b), and checked complete against the first page's exact count."""
     import urllib.request
-    url = (triage.URL + "/rest/v1/kb_curation?select=course_id&course_id=like." + triage.KEY_PREFIX + "%25")
-    req = urllib.request.Request(url, headers={"apikey": triage.KEY, "Authorization": "Bearer " + triage.KEY,
-                                               "Prefer": "count=exact", "Range-Unit": "items", "Range": "0-0"})
-    with urllib.request.urlopen(req, timeout=30) as r:
-        span = r.headers.get("Content-Range") or ""
-    total = span.rsplit("/", 1)[-1]
-    if not total.isdigit():
+    url = (LIVE_URL + "/rest/v1/kb_curation?select=course_id,field,value"
+           "&course_id=like." + UNCLASS_PREFIX + "%25&field=eq.unified_title_assignment&order=course_id.asc")
+    rows, start, total = [], 0, None
+    while True:
+        headers = {"apikey": key, "Authorization": "Bearer " + key, "Accept": "application/json",
+                   "Range-Unit": "items", "Range": "%d-%d" % (start, start + LIVE_PAGE - 1)}
+        if start == 0:
+            headers["Prefer"] = "count=exact"
+        with urllib.request.urlopen(urllib.request.Request(url, headers=headers), timeout=30) as r:
+            page = json.load(r) or []
+            if start == 0:
+                span = (r.headers.get("Content-Range") or "").rsplit("/", 1)[-1]
+                total = int(span) if span.isdigit() else None
+        rows.extend(page)
+        if len(page) < LIVE_PAGE:
+            break
+        start += LIVE_PAGE
+    if total is None:
         raise ValueError("no row count in Content-Range")
-    return int(total)
+    if len(rows) < total:
+        raise ValueError("short read")
+    return rows
 
 
-def live_assignments():
-    """(assignments, read_at) read fresh from kb_curation when SUPABASE_SERVICE_KEY is set, else (None, None).
-    One read path, kb/_apply_unclassified_triage.py's (Range-paginated, the same grouping, a clear drops the
-    title), checked complete against an exact count; this builder writes no row. A failed or short read falls
-    back to the committed overlay, said aloud (the error's type and code only: never its text, which can carry
-    the key)."""
-    if not os.environ.get("SUPABASE_SERVICE_KEY"):
+def live_assignments(wanted=True):
+    """(assignments, read_at) read fresh from kb_curation when `wanted` (the runs pass --live), else (None, None).
+    The tab's rule: a raw title is decided when its unified_title_assignment is non-empty; a clear deletes the
+    row. This builder writes no row. A failed or short read falls back to the committed overlay, said aloud (the
+    error's type and code only)."""
+    if not wanted:
         return None, None
     try:
-        import _apply_unclassified_triage as triage
         at = iso_now()
-        total = live_total(triage)
-        rows = triage.fetch_rows()
-        if len(rows) < total:
-            raise ValueError("short read")
-        return triage.build_assignments(rows)[0], at
+        out = {}
+        for row in live_rows(anon_key()):
+            cid, v = row.get("course_id") or "", (row.get("value") or "").strip()
+            if cid.startswith(UNCLASS_PREFIX) and row.get("field") == "unified_title_assignment" and v:
+                out[cid[len(UNCLASS_PREFIX):]] = {"unified_title": v}
+        return out, at
     except Exception as e:  # noqa: BLE001 - any failed read means the overlay, never a stop
         why = type(e).__name__ + (" %s" % e.code if getattr(e, "code", None) else "")
         if isinstance(e, ValueError):
@@ -874,7 +905,7 @@ def stale_assignments(prior, data):
         return ""
     return ("%d title%s the committed Review file left out as decided would come back as cards (%s), because this "
             "build's overlay does not hold their saved titles. Ship the code only and let the nightly or daily run "
-            "rebuild it, or set SUPABASE_SERVICE_KEY for a live read."
+            "rebuild it, or build with --live."
             % (len(back), "" if len(back) == 1 else "s", "; ".join(back[:3]) + ("; and more" if len(back) > 3 else "")))
 
 
@@ -1152,9 +1183,10 @@ def main(argv=None):
     ap.add_argument("--root", default=os.path.dirname(HERE))
     ap.add_argument("--out", default=None, help="the review file (the courses file is written beside it)")
     ap.add_argument("--quiet", action="store_true")
-    ap.add_argument("--no-live", action="store_true", help="build from the committed overlay alone")
+    ap.add_argument("--live", action="store_true",
+                    help="read the saved title assignments from kb_curation (anon, read only); else the overlay decides")
     a = ap.parse_args(argv)
-    data, course_file, adoption = build(a.root, None if a.no_live else live_assignments())
+    data, course_file, adoption = build(a.root, live_assignments(a.live))
     out = a.out or os.path.join(a.root, OUT)
     courses_out = os.path.join(os.path.dirname(out), os.path.basename(COURSES_OUT))
     adoption_out = os.path.join(os.path.dirname(out), os.path.basename(ADOPTION_OUT))

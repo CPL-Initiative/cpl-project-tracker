@@ -748,65 +748,114 @@ with tempfile.TemporaryDirectory() as root4:
           B._unstamped(d_live, "written_at") == B._unstamped(dict(d_live, sources=dict(d_live["sources"],
                                                      assignments=dict(d_live["sources"]["assignments"], at="2026-11-14T01:00:00Z"))), "written_at"))
 
-    # The live read itself, in process: the env gate, the read, a short read and a failed one fall back, said aloud.
-    import _apply_unclassified_triage as T  # noqa: E402
-    saved_env, saved_fetch, saved_total = os.environ.get("SUPABASE_SERVICE_KEY"), T.fetch_rows, B.live_total
-    rows = [{"course_id": "_UNCLASSIFIED::" + DM, "field": "unified_title_assignment", "value": "Digital Media Basics",
-             "reviewer_email": "x@example.org", "reviewed_at": "2026-11-13T20:00:00Z"}]
+    # The live read itself, in process: the --live gate, the tab's anon key, the read, and a short or failed read
+    # falling back, said aloud.
+    saved_rows, saved_env = B.live_rows, os.environ.get("SUPABASE_ANON_KEY")
+    rows = [{"course_id": "_UNCLASSIFIED::" + DM, "field": "unified_title_assignment", "value": "Digital Media Basics"},
+            {"course_id": "_UNCLASSIFIED::" + SAVED, "field": "unified_title_assignment", "value": "  "}]
     try:
-        os.environ.pop("SUPABASE_SERVICE_KEY", None)
-        check("no service key, no live read", B.live_assignments() == (None, None))
-        os.environ["SUPABASE_SERVICE_KEY"] = "a-test-key-that-must-not-print"
-        T.fetch_rows, B.live_total = (lambda: rows), (lambda triage: 1)
-        got, at = B.live_assignments()
-        check("with the key the builder reads the live set", got == {DM: T.build_assignments(rows)[0][DM]} and at)
+        os.environ.pop("SUPABASE_ANON_KEY", None)
+        check("the key is the anon key the tab ships (cpl_session.js), never the service key",
+              json.loads(__import__("base64").urlsafe_b64decode(B.anon_key().split(".")[1] + "==")).get("role") == "anon")
+        check("without --live, no read", B.live_assignments(False) == (None, None))
+        seen = []
+        B.live_rows = lambda key: (seen.append(key), rows)[1]
+        got, at = B.live_assignments(True)
+        check("with --live the builder reads the live set by the tab's rule (an empty value is a clear)",
+              got == {DM: {"unified_title": "Digital Media Basics"}} and at and seen == [B.anon_key()], got)
         import io
         import contextlib
+
+        def short(key):
+            raise ValueError("short read")
+        B.live_rows = short
         buf = io.StringIO()
-        B.live_total = lambda triage: 2
         with contextlib.redirect_stdout(buf):
-            short = B.live_assignments()
-        check("a read shorter than the exact count falls back to the overlay, said aloud", short == (None, None)
+            fell = B.live_assignments(True)
+        check("a read shorter than the exact count falls back to the overlay, said aloud", fell == (None, None)
               and "short read" in buf.getvalue(), buf.getvalue())
 
-        def boom():
-            raise RuntimeError("Bearer a-test-key-that-must-not-print refused")
-        T.fetch_rows, B.live_total = boom, (lambda triage: 1)
+        def boom(key):
+            raise RuntimeError("Bearer some-key-text refused")
+        B.live_rows = boom
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf):
-            failed_read = B.live_assignments()
+            failed_read = B.live_assignments(True)
         check("a failed read falls back to the overlay and names the error's type, never its text", failed_read == (None, None)
-              and "RuntimeError" in buf.getvalue() and "a-test-key" not in buf.getvalue(), buf.getvalue())
-        T.fetch_rows, B.live_total = (lambda: rows), (lambda triage: 1)
+              and "RuntimeError" in buf.getvalue() and "some-key-text" not in buf.getvalue(), buf.getvalue())
+        B.live_rows = lambda key: rows
         write(root4, "kb/unclassified_assignments.json", FIX["kb/unclassified_assignments.json"])
         buf = io.StringIO()
         with contextlib.redirect_stdout(buf):
-            rc = B.main(["--root", root4, "--quiet"])
+            rc = B.main(["--root", root4, "--quiet", "--live"])
         with open(out4, encoding="utf-8") as f:
             via_main = json.load(f)
-        check("main() with the key builds from the live read and stamps it",
+        check("main() with --live builds from the live read and stamps it",
               rc == 0 and via_main["sources"]["assignments"]["read"] == "live"
               and DM not in {h["raw"] for h in via_main["held"]}, (rc, via_main["sources"].get("assignments")))
-    finally:
-        T.fetch_rows, B.live_total = saved_fetch, saved_total
-        if saved_env is None:
-            os.environ.pop("SUPABASE_SERVICE_KEY", None)
-        else:
-            os.environ["SUPABASE_SERVICE_KEY"] = saved_env
 
-# Both runs that rebuild the Review file give the builder the key, and only the key, and read exit 3 as the
+        # live_rows against a stub server: Range-paged, the exact count asked on the first page, a short read raises.
+        import http.server
+        import threading
+        asked = []
+
+        class Stub(http.server.BaseHTTPRequestHandler):
+            def do_GET(self):  # noqa: N802
+                asked.append((self.path, self.headers.get("Range"), self.headers.get("Prefer"), self.headers.get("apikey")))
+                lo = int(self.headers.get("Range").split("-")[0])
+                n = max(0, min(B.LIVE_PAGE, Stub.total - lo))
+                body = json.dumps([{"course_id": "_UNCLASSIFIED::t%d" % (lo + i), "field": "unified_title_assignment",
+                                    "value": "x"} for i in range(n)]).encode()
+                self.send_response(206)
+                self.send_header("Content-Range", "%d-%d/%d" % (lo, lo + n - 1, Stub.claimed))
+                self.end_headers()
+                self.wfile.write(body)
+
+            def log_message(self, *a):
+                pass
+        srv = http.server.HTTPServer(("127.0.0.1", 0), Stub)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        saved_url, B.LIVE_URL = B.LIVE_URL, "http://127.0.0.1:%d" % srv.server_port
+        B.live_rows = saved_rows
+        prox = {k: os.environ.pop(k) for k in list(os.environ) if k.lower() in ("http_proxy", "https_proxy", "all_proxy")}
+        os.environ["NO_PROXY"] = os.environ["no_proxy"] = "127.0.0.1"
+        try:
+            Stub.total = Stub.claimed = 1500
+            got_rows = B.live_rows("anon-test")
+            check("live_rows reads every page, asks the exact count on the first, and reads by the given key",
+                  len(got_rows) == 1500 and [a[1] for a in asked] == ["0-999", "1000-1999"] and asked[0][2] == "count=exact"
+                  and asked[1][2] is None and asked[0][3] == "anon-test" and "field=eq.unified_title_assignment" in asked[0][0]
+                  and "select=course_id,field,value&" in asked[0][0], asked)
+            Stub.total, Stub.claimed = 900, 1000
+            try:
+                B.live_rows("anon-test")
+                raised = ""
+            except ValueError as e:
+                raised = str(e)
+            check("a read shorter than the exact count raises", raised == "short read", raised)
+        finally:
+            srv.shutdown()
+            B.LIVE_URL = saved_url
+            os.environ.update(prox)
+    finally:
+        B.live_rows = saved_rows
+        if saved_env is None:
+            os.environ.pop("SUPABASE_ANON_KEY", None)
+        else:
+            os.environ["SUPABASE_ANON_KEY"] = saved_env
+
+# Both runs that rebuild the Review file read live with --live, take no secret for it, and read exit 3 as the
 # builder's own refusal.
 with open(os.path.join(ROOT, ".github", "workflows", "cer-procedures.yml"), encoding="utf-8") as f:
     wf = yaml.safe_load(f)
 step = [s for j in wf["jobs"].values() for s in j.get("steps") or [] if s.get("name") == "Build the Exhibits review queue"]
-check("cer-procedures.yml's Review step takes SUPABASE_SERVICE_KEY and nothing else, and reads exit 3 as a refusal",
-      len(step) == 1 and set((step[0].get("env") or {})) == {"SUPABASE_SERVICE_KEY"}
-      and '[ "$rc" != 3 ]' in step[0]["run"], step)
+check("cer-procedures.yml's Review step reads live with no secret, and reads exit 3 as a refusal",
+      len(step) == 1 and not step[0].get("env") and "--live" in step[0]["run"] and '[ "$rc" != 3 ]' in step[0]["run"], step)
 with open(os.path.join(ROOT, "scripts", "daily_build.sh"), encoding="utf-8") as f:
     daily = f.read()
-check("daily_build.sh's Review step reads exit 3 as a refusal",
-      'step "Build the Exhibits review queue" SUPABASE_SERVICE_KEY' in daily
-      and 'rc=0; python3 kb/_build_exhibits_review.py --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
+check("daily_build.sh's Review step reads live with no secret, and reads exit 3 as a refusal",
+      'step "Build the Exhibits review queue" <<\'STEP\'' in daily
+      and 'rc=0; python3 kb/_build_exhibits_review.py --live --quiet || rc=$?' in daily and '[ "$rc" != 3 ]' in daily)
 
 failed = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed), len(results)))
