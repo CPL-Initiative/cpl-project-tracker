@@ -18,6 +18,9 @@ after-reading on from a statewide count of the catalog's own lines; the S645 rev
   4. a refused or unbound program whose filed record passes keeps that record unless forced, and the
      capture's account names it (refused_passing, with the closing number);
   6. an empty slice never names a block's page; the extractor choice reads by the gated reading.
+  13. where the votes are uniform (no before vote, twenty after), a block binds by its number line
+     alone, refused only when its first strict heading is another listed program's, and an unnamed
+     one files after_unnamed with the block it judged; a section header at three page tops is passed over.
 
 The fixtures are the reviewers' constructions: the number at the heading, under the heading and
 after the program; a mixed catalog; a number that does not print; a stale or unlisted number; a
@@ -189,6 +192,74 @@ check(tb is not None and tb.get("after_unbound") == "block_names_no_listed_cours
       and tb["text"] == best(TABLE, PROGS[0])["text"],
       "a named block with no listed course goes to the heading picker: %r" % ((tb and tb.get("after_unbound")),))
 
+# ── 2b. A uniform catalog binds by the number line alone (decision 13) ─────────────────────────────
+NATO = ("Alpha Bravo Charlie Delta Echo Foxtrot Golf Hotel India Juliett Kilo Lima Mike November Oscar Papa "
+        "Quebec Romeo Sierra Tango Uniform Victor").split()
+UPROGS = [{"control_number": str(50000 + i), "title": t, "award": AA} for i, t in enumerate(NATO)]
+UCODE = {p["control_number"]: [{"code": "%s 1%02d" % (p["title"][:4].upper(), k)} for k in (1, 2)] for p in UPROGS}
+
+
+def ublock(p, head=None):
+    return "%s\nA.A. Degree\n%s 101 Intro 3\n%s 102 Next 3\nControl Number: %s\n" % (
+        head or "%s, AA" % p["title"], p["title"][:4].upper(), p["title"][:4].upper(), p["control_number"])
+
+
+def ucatalog(blocks):
+    return ["%s%s" % (HEADER.replace("92", str(200 + k)), "".join(blocks[k:k + 4])) for k in range(0, len(blocks), 4)]
+
+
+GOLF = UPROGS[5]   # Foxtrot: its course prefix FOXT never spells the title
+UNI = ucatalog([ublock(p, "Ballroom Dance Arts, AA" if p is GOLF else None) for p in UPROGS])
+uv = C.pdf_numbers_after(UNI, UPROGS)
+uctx = C.pdf_after_context(UNI, UPROGS, uv)
+check(uv["before"] == 0 and uv["after"] >= 20 and uctx["uniform"], "every number after its program reads as uniform: %r" % uv)
+g = C.pdf_best("u", UNI, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=uctx)
+check(g and g.get("bound") == "number_after" and g.get("after_unnamed") is True and g["coverage"] == 1.0
+      and g.get("judged", "").startswith("Ballroom Dance Arts, AA A.A. Degree"),
+      "uniform: a block that names no program binds by its number line and files the note: %r"
+      % ((g and (g.get("bound"), g.get("after_unnamed"), g.get("judged"))),))
+plain_u = C.pdf_best("u", UNI, UPROGS[0], UCODE["50000"], "pypdf", numbers_after=uctx)
+check(plain_u and plain_u.get("bound") == "number_after" and "after_unnamed" not in plain_u,
+      "and a named block files no note")
+# The block whose first strict heading is ANOTHER listed program's: Hotel's number line is lost, so India's
+# block opens on Hotel's heading (finding 9). Refused, with Hotel's number and the block it judged.
+LOST = ucatalog([ublock(p).replace("Control Number: 50007\n", "") for p in UPROGS])
+lctx = C.pdf_after_context(LOST, UPROGS, C.pdf_numbers_after(LOST, UPROGS))
+ind = C.pdf_best("u", LOST, UPROGS[8], UCODE["50008"], "pypdf", numbers_after=lctx)
+check(lctx["uniform"] and ind and ind.get("refused") == "50007" and ind.get("after_unbound") == "block_names_another"
+      and not ind["text"] and ind.get("judged", "").startswith("Hotel, AA"),
+      "uniform: a block whose first strict heading names another listed program is refused: %r"
+      % ((ind and (ind.get("refused"), ind.get("after_unbound"), ind.get("judged"))),))
+# A banner before the program's own heading is no other program's: the block binds, named.
+BANNER = ucatalog([ublock(p, "THE DEPARTMENT OF BALLROOM AND SOCIAL DANCE\nFoxtrot, AA") if p is GOLF else ublock(p) for p in UPROGS])
+bctx = C.pdf_after_context(BANNER, UPROGS, C.pdf_numbers_after(BANNER, UPROGS))
+bg = C.pdf_best("u", BANNER, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=bctx)
+check(bg and bg.get("bound") == "number_after" and bg.get("named") and "after_unnamed" not in bg,
+      "uniform: a banner before the program's heading still names it")
+# One before vote: the catalog is not uniform, and decision 2's title test binds (the unnamed block does not).
+MIX = UNI + ["%sControl Number: 59999\nZulu, AA\nA.A. Degree\nZULU 101 Intro 3\n" % HEADER]
+mprog = UPROGS + [{"control_number": "59999", "title": "Zulu", "award": AA}]
+mv = C.pdf_numbers_after(MIX, mprog)
+mxc = C.pdf_after_context(MIX, mprog, mv)
+mg = C.pdf_best("u", MIX, GOLF, UCODE[GOLF["control_number"]], "pypdf", numbers_after=mxc)
+check(mv["before"] == 1 and not mxc["uniform"] and mg is not None and mg.get("bound") is None
+      and mg.get("after_unbound") == "block_not_named",
+      "one before vote falls back to the title test: %r" % ((mv, mg and mg.get("after_unbound")),))
+# A section's header at the tops of three pages is passed over; at two, it is not.
+SEC = ["Non-Credit Programs / %d\nsccollege.edu\n%s" % (260 + k, b) for k, b in
+       enumerate(["Alpha, AA\nA.A. Degree\nALPH 101 3\nControl Number: 50000\n",
+                  "Bravo, AA\nA.A. Degree\nBRAV 101 3\nControl Number: 50001\n",
+                  "Charlie, AA\nA.A. Degree\nCHAR 101 3\nControl Number: 50002\n"])]
+check("non-credit programs / #" in C.pdf_running_lines(SEC), "a section header at three page tops is passed over")
+LONG = ["%d / Credit Programs\nsccollege.edu\nPage text %d\n" % (k, k) for k in range(40)] + SEC
+check("non-credit programs / #" in C.pdf_running_lines(LONG),
+      "three page tops of forty-three are enough: a section's header is no share of the catalog")
+check("non-credit programs / #" not in C.pdf_running_lines(SEC[:2]), "and at two it is not")
+sv = {"after": 20, "before": 0}
+sb = C.pdf_best("u", SEC, UPROGS[1], [{"code": "BRAV 101"}], "pypdf", numbers_after=C.pdf_after_context(SEC, UPROGS, sv))
+check(sb and sb.get("bound") == "number_after" and sb.get("named") and sb["pages"] == [2],
+      "a page-top block in a section opens on its own heading past the section header")
+
 # ── 3. Refuse narrowly ──────────────────────────────────────────────────────────────────────────
 # A mixed catalog: after-style pages, then a page that prints the number AT the heading (finding 3).
 ACC = {"control_number": "11858", "title": "Accounting", "award": AS}
@@ -233,10 +304,10 @@ check(C.pdf_closed_by("Control Number: 11856\nBiology, AS\nA.S. Degree\nControl 
 
 
 # ── 4. capture_pdf, both gate states, and the account ───────────────────────────────────────────
-def capture(pages, gated, progs=PROGS, folder=None):
+def capture(pages, gated, progs=PROGS, folder=None, course_of=None):
     tmp = tempfile.mkdtemp()
     os.makedirs(os.path.join(tmp, "sources"))
-    programs = [dict(p, shape="1", status="active", load_id="1", closed_list=courses(p)) for p in progs]
+    programs = [dict(p, shape="1", status="active", load_id="1", closed_list=(course_of or courses)(p)) for p in progs]
     saved = (C.read_hand_filed, R.load_steps, C.COLLEGE_DIR)
     C.read_hand_filed = lambda hf: {"url": "https://x.edu/c.pdf", "access": "hand_filed", "pages": pages,
                                     "extractor": "pypdf"}
@@ -277,6 +348,18 @@ check(choice and all(isinstance(n, dict) and n.get("by_cn") for n in choice),
 na = rep_on["pdf"]["numbers_after"]
 check(na["gated"] is True and na["read"] == "number_after" and na["after_mode"] is True,
       "gated: the capture files the votes and reads by number: %r" % na)
+check(na.get("binding") == "title" and "not uniform" in na.get("binding_why", ""),
+      "six after votes are not uniform: the title test binds, and the account says why: %r" % na)
+# A uniform catalog's capture: binding by the number line, and the unnamed pick filed with its note.
+with contextlib.redirect_stdout(io.StringIO()):
+    rep_u, src_u, _ = capture(UNI, True, UPROGS, course_of=lambda p: UCODE[p["control_number"]])
+nu = rep_u["pdf"]["numbers_after"]
+fx = [p for p in rep_u["pdf"]["picks"] if p["control_number"] == GOLF["control_number"]]
+check(nu.get("binding") == "number_line" and "binding_why" not in nu and fx and fx[0].get("after_unnamed") is True
+      and fx[0].get("judged", "").startswith("Ballroom Dance Arts, AA")
+      and sum(1 for p in rep_u["pdf"]["picks"] if p.get("after_unnamed")) == 1,
+      "uniform capture: binds by the number line and files the one unnamed pick with what it judged: %r"
+      % ((nu.get("binding"), fx and fx[0].get("after_unnamed")),))
 check(all(heads_in(src_on[p["control_number"]]["text"]) == [own_head(p)] for p in PROGS),
       "gated: every source holds its own program's block alone")
 check(all(src_on[p["control_number"]]["method"] == "pdf_pages" for p in PROGS)
@@ -319,8 +402,10 @@ try:
         rep, srcs, acct = capture(INTRO, True, folder=folder)
     check(srcs["11856"]["method"] == "not_found" and srcs["11856"]["after_unbound"]["refused"] == "35110",
           "the refused program is filed not_found with its closing number: %r" % srcs["11856"].get("after_unbound"))
-    check(acct == [{"control_number": "11856", "title": "Biology", "award": AS, "closed_by": "35110",
-                    "why": "block_not_named"}], "refused_passing names the passing one alone: %r" % acct)
+    check([{k: v for k, v in a.items() if k != "judged"} for a in acct or []]
+          == [{"control_number": "11856", "title": "Biology", "award": AS, "closed_by": "35110", "why": "block_not_named"}]
+          and (acct[0].get("judged") or "").startswith("Control Number: 11856 Biology, AS-T"),
+          "refused_passing names the passing one alone, with the window it judged: %r" % acct)
 
     # The extraction keeps that passing record unless forced, and the filing keeps its source entry.
     import _program_requirements_extract as X
