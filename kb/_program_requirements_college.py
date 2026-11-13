@@ -938,13 +938,20 @@ def tab_names_another(title: str | None, tab_title: str | None, others: set[str]
 
 def tab_title_link(title: str | None, heading: str | None) -> bool:
     """Whether a program's title ties it to a tab by its words: one of the heading's readings is the title
-    (heading_forms), or the tab's title holds every word of it (heading_title), as a "2.0" successor's tab holds
-    its predecessor's ("Business Administration 2.0" and Business Administration, 32267 and 43038; Communication
-    Studies 2.0 and Communication Studies, 30814 and 44951: Glendale's two shared pages, capture 43415972509)."""
+    (heading_forms), or the tab's title is the title plus numbers only, a "2.0" successor's tab ("Business
+    Administration 2.0" and Business Administration, 32267 and 43038; Communication Studies 2.0 and Communication
+    Studies, 30814 and 44951: Glendale's two shared pages, capture 43415972509). A tab whose title adds a word ties
+    nothing: History to Art History, Information Technology to Information Technology Technician. Over Glendale's
+    sources.json the rule ties three title pairs, all 2.0s (02549 and 32267 to 43038, 30814 to 44951); the looser
+    "every word of it" tied 134 (S648 review)."""
     own = _plain(title)
     if not own:
         return False
-    return own in heading_forms(heading) or set(own.split()) <= set(heading_title(heading).split())
+    if own in heading_forms(heading):
+        return True
+    tab = set(heading_title(heading).split())
+    extra = tab - set(own.split())
+    return set(own.split()) <= tab and bool(extra) and all(w.isdigit() for w in extra)
 
 
 def tab_control_owner(cand: dict, listed) -> str | None:
@@ -5119,10 +5126,9 @@ def wrong_tabs(dest: str, report: dict, owners: dict | None = None) -> list[dict
     cd = report.get("coursedog") or {}
     names = {e.get("code"): e.get("name") for e in cd.get("catalog") or []}
     named = {e.get("code"): e.get("control_number") for e in cd.get("catalog") or [] if e.get("control_number")}
-    # A page read's account stands in only for a capture that read no tab's program data: a capture that did
-    # names its own numbers, and an older account never overrides them.
-    if not named:
-        named = dict(owners or {})
+    # A page read's account stands in, tab by tab, where the capture heard no number: the capture wins wherever
+    # it heard one, and an older account never overrides it.
+    named = {**(owners or {}), **named}
     if not names and not named:
         return []
     try:
@@ -5177,7 +5183,7 @@ def tab_owners_file(path: str | None, college: str) -> dict[str, str]:
 
 
 def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: dict | None = None,
-                owners: dict | None = None) -> int:
+                owners: dict | None = None, main_dir: str | None = None) -> int:
     """The free local step (S647) over a college's committed filing, from an earlier filing unpacked at
     from_dir (`git archive <sha> <folder>`, the filing the kept records were read in). No page is loaded and
     no model is called.
@@ -5186,8 +5192,11 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: 
     program with neither is not kept, and a record this step kept earlier whose program no longer qualifies
     is removed.
     (2) A record read from a Coursedog tab that belongs to another listed program (wrong_tabs: the control number
-    the tab's own data names, from the capture or `owners`, or the tab's name) is held: the earlier filing's record
-    stands as filed, or none, and summary.json lists the read set aside (held_wrong_tab).
+    the tab's own data names, from the capture or `owners`, or the tab's name) is held: main's record stands as filed
+    there (main_dir, main's filing of the college; from_dir when none is given), or none when main has none, and
+    summary.json lists the read set aside (held_wrong_tab). A hold never deletes or replaces a record main holds; one
+    that fails on main is carried as it is, and summary.json (held_failing_on_main) and the printout name it, so the
+    load can skip it (d-keep-passing-record-no-read-s647; COBIx on #3202, 37070 and 12571).
     (3) Every record the filing kept from from_dir without a new read (its content equal to from_dir's)
     takes from_dir's catalog year where it names none (kept_year).
     summary.json's counts are taken again from the records; the run's spend and calls stay as filed."""
@@ -5214,17 +5223,22 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: 
     for cn in dropped:
         os.remove(rec_path(dest, cn))
     # (2)
+    main_dir = main_dir or from_dir
+    main_year = filed_year(main_dir)
     held_now = []
     for w in wrong_tabs(dest, report, owners):
-        filed = _filed(rec_path(from_dir, w["control_number"]))
+        filed = _filed(rec_path(main_dir, w["control_number"]))
         if filed:
-            _write(rec_path(dest, w["control_number"]), kept_year(filed, year))
+            _write(rec_path(dest, w["control_number"]), kept_year(filed, main_year))
         else:
             os.remove(rec_path(dest, w["control_number"]))
-        held_now.append(dict(w, reason=w.get("reason") or TAB_NAMES_ANOTHER,
-                             filed=bool(filed), filed_score=(filed or {}).get("score")))
+        held_now.append(dict(w, reason=w.get("reason") or TAB_NAMES_ANOTHER, filed=bool(filed),
+                             filed_score=(filed or {}).get("score"), filed_passes=_passing_filed_rec(filed)))
     held = {e["control_number"]: e for e in summary.get("held_wrong_tab") or []}
     held.update({e["control_number"]: e for e in held_now})
+    # Every held program whose record stands as main's and fails there: carried, and named for the load to skip.
+    failing_held = sorted(cn for cn in held if _filed(rec_path(dest, cn)) is not None
+                          and not _passing_filed_rec(_filed(rec_path(dest, cn))))
     # (3)
     stamped = 0
     strip = lambda r: {k: v for k, v in (r or {}).items() if k != "catalog_year"}
@@ -5248,16 +5262,21 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: 
         summary[k] = fresh[k]
     summary.pop("kept_no_read", None)
     summary.pop("held_wrong_tab", None)
+    summary.pop("held_failing_on_main", None)
     if kept:
         summary["kept_no_read"] = sorted(kept, key=lambda e: e["control_number"])
     if held:
         summary["held_wrong_tab"] = [held[k] for k in sorted(held)]
+    if failing_held:
+        summary["held_failing_on_main"] = failing_held
     _write(path, summary)
     print("kept %d passing records this read reached no page for (%s); removed %d (%s); held %d read from "
           "another program's tab (%s); %d kept records took the catalog year %s"
           % (len(kept), ", ".join("%s %s" % (e["control_number"], e["method"]) for e in kept) or "none",
              len(dropped), ", ".join(dropped) or "none", len(held_now),
              ", ".join(e["control_number"] for e in held_now) or "none", stamped, year))
+    print("held records that fail on main, carried as filed there for the load to skip: %d (%s)"
+          % (len(failing_held), ", ".join(failing_held) or "none"))
     return 0
 
 
@@ -6101,6 +6120,9 @@ def main(argv: list[str] | None = None) -> int:
                                                                 "refile-kept: an earlier filing's college folder")
     ap.add_argument("--status-file", default="", help="refile-kept: a coci_college_programs export with each "
                                                       "program's status (the gap census's --from shape)")
+    ap.add_argument("--main", dest="main_dir", default="", help="refile-kept: main's filing of the college (`git "
+                                                             "archive origin/main <folder>`); a hold restores main's "
+                                                             "record (default: --from)")
     ap.add_argument("--tab-owners", default="", help="refile-kept: a page read's account of the control numbers "
                                                      "Coursedog tabs' own program data named (tab_owners_file)")
     ap.add_argument("--sources-run", default="", help="stage only: the run whose artifact --from holds")
@@ -6122,7 +6144,8 @@ def main(argv: list[str] | None = None) -> int:
             print("::error::refile-kept needs --from, an earlier filing's college folder holding records/")
             return 2
         return refile_kept(args.college, args.from_dir, statuses=status_export(args.status_file or None, args.college),
-                           owners=tab_owners_file(args.tab_owners or None, args.college))
+                           owners=tab_owners_file(args.tab_owners or None, args.college),
+                           main_dir=args.main_dir or None)
     if args.step == "load":
         return load(args.college, args.run)
     if args.step == "reread":
