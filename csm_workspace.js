@@ -378,7 +378,7 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, checks: {}, lpOpen: {}, tplId: "lead", tplDraft: {}, msg: "", draft: {} };
+  var state = { view: "open", q: "", sel: null, checks: {}, lpOpen: {}, tplId: "nudge", tplDraft: {}, msg: "", draft: {} };
   // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
   // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
   // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
@@ -464,33 +464,53 @@
     if (ncWaiting(r)) k.push("nc");
     return k;
   }
-  function stageOf(r) {
-    if (waitingKinds(r).length) return "waiting";
-    // Fail-open, as the funding tab's gate: a condition still loading never reads as held.
-    if (r.part.confirmed) return r.gate.blocked ? "held" : "qual";
-    return "notyet";
-  }
+  /* THE SEVEN STAGES (Malone, 2026-11-13: "Ideally, it would be clean and sequential"; his D1 to D5 answers the same
+     day). One ordered workflow, every institution in exactly one stage, read from the facts the page already holds;
+     nothing is stored for it. The Noncredit CPL Lead steps (3, 4) do not apply to a college with no noncredit share,
+     and are already behind a college that holds the role in MAP or an accepted attestation, so a college that sends
+     everything with its confirmation passes from 2 to 5 or 6 with no email between. A noncredit attestation that
+     arrives before the confirmation is accepted waits at stage 1 or 2 and is reviewed from the record.
+     D1 (Sam, Sheet 113 card 1): the credit share qualifies while the noncredit share waits on the lead. The stages
+     are the order the team works in and change nothing about what qualifies; the row says so (creditQualifies). */
   var STAGES = [
-    { id: "notyet", label: "Not yet confirmed", what: "No participation confirmation on file." },
-    { id: "waiting", label: "Waiting on the team", what: "A confirmation or a noncredit attestation waits for review." },
-    { id: "held", label: "Confirmed, still held", what: "Confirmed, and a minimum condition is not yet met." },
-    { id: "qual", label: "Qualifies", what: "Every minimum condition is met." }];
+    { n: 1, id: "notyet", label: "No confirmation received", does: "Send the participation request" },
+    { n: 2, id: "partreview", label: "Confirmation to review", does: "Review the participation confirmation" },
+    { n: 3, id: "nolead", label: "Noncredit CPL Lead not received", does: "Send the Noncredit CPL Lead request" },
+    { n: 4, id: "ncreview", label: "Noncredit CPL Lead to review", does: "Review the noncredit attestation" },
+    { n: 5, id: "held", label: "Held by a condition", does: "Send the held follow-up" },
+    { n: 6, id: "ready", label: "All conditions met", does: "Send the qualifying email" },
+    { n: 7, id: "qual", label: "Qualifies", does: "Nothing to do" }];
+  function stageNum(r) {
+    if (!r.part.confirmed) return r.part.waiting ? 2 : 1;
+    if (ncWaiting(r)) return 4;
+    if (r.nc && !ncMet(r)) return 3;
+    // A condition still being read is not yet met (COBIx on PR 3253): the college waits at stage 5 with no email
+    // due, so the qualifying email, which tells a college it qualifies, is never offered on a figure not yet in.
+    if (r.gate.blocked || condPending(r)) return 5;
+    return isSent(r, "qualify") ? 7 : 6;
+  }
+  function condPending(r) { return !!r.gate.pending || r.conds.some(function (c) { return c.pending; }); }
+  // What the held follow-up may name. A missing CPL Coordinator is left out: Sam chases those himself and the
+  // dashboard writes no email for it (issue 3010, his call 1), until he rules otherwise.
+  function heldOpen(r) { return r.conds.filter(function (c) { return !c.met && !c.pending && c.kind !== "coord"; }); }
+  function stageOf(r) { return STAGES[stageNum(r) - 1].id; }
+  function creditQualifies(r) { var n = stageNum(r); return (n === 3 || n === 4) && !r.gate.blocked && !condPending(r); }
   function missingWords(r) {
     return r.conds.filter(function (c) { return !c.met && !c.pending; }).map(function (c) { return c.words; });
   }
-  /* Ready to send (issue 2967, item 3, designed in the csm-workspace lane): the college whose next email is due. Confirmed
-     and no Acceptance sent receipt: the acceptance, with the conditions still waiting. Not yet confirmed and no nudge
-     in 14 days: the nudge. A request waiting on the team: Accept first, from the review. Sent writes the receipt, so
-     the college leaves the queue. */
-  var NUDGE_SUBJ = /a participation confirmation for /;
+  // Told apart by subject, in any letter case: the wording saved 2026-11-12 capitalizes its subjects, and the old
+  // case-bound patterns no longer found a copy or a draft of it.
+  var NUDGE_SUBJ = /: (a )?participation confirmation for /i;
   /* Each email's receipt, and its undo (COBIx on issue 2967, 16:17Z): Sent writes "<prefix>: …"; It bounced writes
      "It bounced, <that receipt>", and the later of the two decides, so a bounce puts the college back in the queue. */
-  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent", lead: "Noncredit CPL Lead ask sent" };
+  var SENT = { accept: "Acceptance sent", accept_nc: "Attestation acceptance sent", nudge: "Nudge sent", lead: "Noncredit CPL Lead ask sent",
+    held: "Held follow-up sent", qualify: "Qualifying email sent" };
+  var HELD_SUBJ = /: remaining conditions for /i, QUAL_SUBJ = /: minimum conditions met for /i;
   /* The Noncredit CPL Lead ask (Sam, 2026-11-09: the ask is "for the role in MAP ... if they attest, we can accept that
      now as well"). Open when the noncredit share applies, the role is not in MAP, no attestation stands and none waits.
      A college owing the confirmation too gets both asks in one email ("both"), whose receipt is the nudge's, told
      apart by its subject. An ask counts as made for 14 days, as the nudge does. */
-  var BOTH_SUBJ = /: two steps for /, LEAD_SUBJ = /: the Noncredit CPL Lead role in MAP for /;
+  var BOTH_SUBJ = /: two steps for /i, LEAD_SUBJ = /: the Noncredit CPL Lead role in MAP for /i;
   /* ON, on Sam's word (2026-11-10, in session, having read them: "yes to all"). Held until then (COBIx on PR 3050; the
      hold list's "anything outward"). Their wording is a template a reviewer can change (Email templates, PR 3068). Set
      false and no lead ask is ever due again: a college owing the confirmation gets the plain nudge, and the Template
@@ -523,17 +543,32 @@
   function isSent(r, tpl) {
     return !!(state.sent || {})[r.key + "|" + tpl] || (tpl === "nudge" && !!(state.sent || {})[r.key + "|both"]) || !!lastSent(r, tpl);
   }
+  // A held follow-up counts as made for 14 days, as the Noncredit CPL Lead ask does, then comes due again.
+  function heldAsked(r) {
+    if ((state.sent || {})[r.key + "|held"]) return true;
+    var a = lastSent(r, "held");
+    return !!(a && String(a.created_at || "").slice(0, 10) >= plusDays(-14)) || sentOf(r, HELD_SUBJ, 14);
+  }
+  function nudgeAsked(r) {
+    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) || sentOf(r, BOTH_SUBJ, 14) && !bouncedSince(r, BOTH_SUBJ);
+  }
+  /* The one email a stage calls for, or "wait" when the stage is a review, or null when the email went and the
+     college has not answered. One email at each step (D2, D5): it says what the team accepted and what remains, so
+     an acceptance needs no email of its own. The acceptance stays in the Template menu for a reviewer who wants to
+     send one; it is never due, and its receipt moves no college. */
   function readyOf(r) {
-    // An acceptance that is owed comes before a second request still under review (found 2026-11-13: Alameda,
-    // Hartnell, LA Trade and LA Valley were confirmed with no acceptance sent, and their waiting noncredit
-    // attestation kept them out of Send an acceptance).
-    // state.sent bridges the moment between a Sent that saved and the log's re-read.
-    if (r.part.confirmed && !isSent(r, "accept")) return "accept";
-    if (r.nc && r.nc.standing && !isSent(r, "accept_nc")) return "accept_nc";
-    if (waitingKinds(r).length) return "wait";
-    if (r.part.confirmed) return leadOpen(r) && !leadAsked(r) ? "lead" : null;
-    return isSent(r, "nudge") || sentOf(r, NUDGE_SUBJ, 14) && !bouncedSince(r, NUDGE_SUBJ) ||
-      sentOf(r, BOTH_SUBJ, 14) && !bouncedSince(r, BOTH_SUBJ) ? null : "nudge";
+    var n = stageNum(r);
+    if (n === 2 || n === 4) return "wait";
+    if (n === 1) return nudgeAsked(r) ? null : "nudge";
+    // The switch still stops the lead ask (LEAD_MAIL_ON), and the held follow-up is due only for a condition it may name.
+    if (n === 3) return !LEAD_MAIL_ON || leadAsked(r) ? null : "lead";
+    if (n === 5) return !heldOpen(r).length || heldAsked(r) ? null : "held";
+    return n === 6 ? "qualify" : null;
+  }
+  // Where a college stands inside its stage: a review, an email to send, waiting on the college, or done.
+  function subOf(r) {
+    var rd = readyOf(r);
+    return rd === "wait" ? "review" : rd || draftedOf(r) ? "send" : stageNum(r) === 7 ? "done" : "wait";
   }
   /* COPIED OR DRAFTED, NOT YET MARKED SENT (found in session, 2026-11-12). A request copied or opened as a draft counts
      as asked for 14 days (readyOf), so the email stops being due and its Sent word left with it: the reviewer who
@@ -541,16 +576,18 @@
      This finds that copy or draft, while the ask is still owed and no Sent receipt follows it, so the record can
      keep offering Sent. What is due and when is unchanged. */
   var DRAFT_RE = /^(Email copied|Draft opened|Gmail draft opened): /;
+  var STAGE_OF_TPL = { nudge: 1, both: 1, lead: 3, held: 5, qualify: 6 };
   function draftedOf(r) {
-    if (!S.reviewer || waitingKinds(r).length || recTpl(r)) return null;
+    if (!S.reviewer || readyOf(r)) return null;
     var since = plusDays(-14), rows = logFor(r.key).filter(function (x) {
       return x.kind === "email" && DRAFT_RE.test(String(x.body || "")) && String(x.created_at || "").slice(0, 10) >= since;
     }).sort(function (a, b) { return String(a.created_at || "") < String(b.created_at || "") ? 1 : -1; });
     for (var i = 0; i < rows.length; i++) {
-      var b = String(rows[i].body || ""), tpl = BOTH_SUBJ.test(b) ? "both" : LEAD_SUBJ.test(b) ? "lead" : NUDGE_SUBJ.test(b) ? "nudge" : "";
+      var b = String(rows[i].body || ""), tpl = BOTH_SUBJ.test(b) ? "both" : LEAD_SUBJ.test(b) ? "lead" : NUDGE_SUBJ.test(b) ? "nudge" :
+        HELD_SUBJ.test(b) ? "held" : QUAL_SUBJ.test(b) ? "qualify" : "";
       if (!tpl) continue;
-      // Still owed: the confirmation for a request, the role for the lead ask.
-      if (tpl === "lead" ? !leadOpen(r) : r.part.confirmed) return null;
+      // Still owed: the email belongs to the stage the college is in now.
+      if (STAGE_OF_TPL[tpl] !== stageNum(r)) return null;
       var rc = lastSent(r, tpl === "both" ? "nudge" : tpl);
       if (rc && String(rc.created_at || "") >= String(rows[i].created_at || "")) return null;
       return { tpl: tpl, at: rows[i].created_at, how: /^Email copied/.test(b) ? "Copied" : "A draft was opened",
@@ -564,57 +601,39 @@
   function bouncedSince(r, re) {
     return logFor(r.key).some(function (x) { return /^It bounced, /.test(String(x.body || "")) && re.test(String(x.body || "")); });
   }
-  /* Not received (COBIx on issue 2967, 16:17Z): the acceptances confirmed before the CSM log went live
-     (2026-11-09) never reached the college: Exchange refused the shared mailbox's From line (SendAsDenied). They lead
-     the queue, each ready to resend. */
-  var LOG_LIVE = "2026-11-09";
-  function notReceived(r) {
-    var rd = readyOf(r), at = rd === "accept" ? r.part.confirmedAt : rd === "accept_nc" ? r.nc && r.nc.confirmedAt : "";
-    return !!at && String(at).slice(0, 10) < LOG_LIVE;
-  }
-  var READY_WORDS = { wait: "Accept first: review the request, then the acceptance is ready.",
-    accept: "Send the acceptance.", accept_nc: "Send the noncredit attestation acceptance.",
-    nudge: "Send the request for the participation confirmation.",
-    lead: "Ask the college to give its lead the Noncredit CPL Lead role in MAP." };
-  // One wording for the email that is due, whatever the list (COBIx on PR 3049): Ready to send and every other list
-  // read it from here, so the same email never reads two ways.
+  var READY_WORDS = { wait: "Review the request.", nudge: "Send the participation request.",
+    lead: "Send the Noncredit CPL Lead request.", held: "Send the held follow-up.", qualify: "Send the qualifying email." };
+  // One wording for the email that is due, whatever the list (COBIx on PR 3049), so the same email never reads two ways.
   function readyWords(r, rd) {
-    var mw = rd === "accept" ? missingWords(r) : [], still = mw.length ? " Still waiting: " + mw.join("; ") + "." : "";
-    if (notReceived(r)) return "Resend the " + (rd === "accept" ? "acceptance" : "noncredit attestation acceptance") + ": confirmed " +
-      shortDate(rd === "accept" ? r.part.confirmedAt : r.nc.confirmedAt) + ", and the first email did not reach the college." + still;
-    if (rd === "nudge" && leadOpen(r)) return "Send one email asking for the confirmation and the Noncredit CPL Lead role in MAP.";
-    return READY_WORDS[rd] + still;
+    var mw = rd === "held" ? heldOpen(r).map(function (c) { return c.words; }) : [];
+    return READY_WORDS[rd] + (mw.length ? " Still open: " + mw.join("; ") + "." : "") +
+      (rd === "nudge" && ncWaiting(r) ? " A noncredit attestation is already on file and waits for review." : "");
   }
-  // The email the college's state calls for: the one Ready to send holds, with both asks in one email where both are open.
-  function recTpl(r) { var rd = readyOf(r); return rd === "nudge" && leadOpen(r) ? "both" : SENT[rd] ? rd : null; }
+  // The email the college's stage calls for.
+  function recTpl(r) { var rd = readyOf(r); return SENT[rd] ? rd : null; }
+  var WENT = { 1: ["nudge", "participation request"], 3: ["lead", "Noncredit CPL Lead request"], 5: ["held", "held follow-up"] };
   function nextStep(r) {
     if (state.view === "emails") return emailRecord(r);
-    if ((state.view === "accept" || state.view === "request") && readyOf(r) && readyOf(r) !== "wait") return readyWords(r, readyOf(r));
-    // Outside Ready to send every line still names the email or the date (Malone, 2026-11-10: "each line a specific
-    // next action"), from the same readyOf the Ready to send list keeps, so the two lists cannot disagree.
-    var w = waitingKinds(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
-    if (w.length === 2) return "Review the participation confirmation" + sentOn(r.part.at) + " and the noncredit attestation, then accept or deny each.";
-    if (w[0] === "part") return "Review the participation confirmation" + sentOn(r.part.at) + ", then accept or deny it.";
-    if (w[0] === "nc") return "Review the noncredit attestation" + sentOn(r.nc.at) + ", then accept or deny it." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
+    // Every line names the email or the date (Malone, 2026-11-10: "each line a specific next action"), from the same
+    // readyOf every list keeps, so two lists cannot disagree.
+    var n = stageNum(r), sentOn = function (at) { return at ? " sent " + shortDate(at) : ""; };
+    if (n === 2) return ncWaiting(r) ? "Review the participation confirmation" + sentOn(r.part.at) + " and the noncredit attestation, then accept or deny each."
+      : "Review the participation confirmation" + sentOn(r.part.at) + ", then accept or deny it.";
+    if (n === 4) return "Review the noncredit attestation" + sentOn(r.nc.at) + ", then accept or deny it.";
+    // A follow-up a reviewer set comes first: its note says what to do, and the stage's email is still on the record.
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     var rd = readyOf(r);
     if (rd) return readyWords(r, rd);
     var dr = draftedOf(r);
     if (dr) return draftedWords(dr);
-    if (du) return "Nothing to send today. Follow up on " + shortDate(du.follow_up_on) + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
-    var st = stageOf(r);
-    if (st === "held") {
-      var m = missingWords(r);
-      return "Nothing to send. Still waiting: " + (m.length ? m.join("; ") : "a condition still pending") + ". No email goes out for " + (m.length > 1 ? "those" : "that") + ".";
-    }
-    if (st === "qual") return "Qualifies. Nothing waits.";
-    var ns = lastSent(r, "nudge");
-    return "Nothing to send today. The request for the confirmation went out" + (ns && ns.created_at ? " " + shortDate(ns.created_at) : " within the last two weeks") + ".";
+    if (n === 5 && !heldOpen(r).length) return r.gate.blocked ? "No email from the team. The college is held by its CPL Coordinator in MAP, which Sam follows up."
+      : "Nothing to send yet. A condition is still being read.";
+    if (n === 7) { var q = lastSent(r, "qualify"); return "Nothing to do. The qualifying email went out" + (q && q.created_at ? " " + shortDate(q.created_at) : "") + "."; }
+    var w = WENT[n], ns = lastSent(r, w[0]);
+    return "Waiting on the college. The " + w[1] + " went out" + (ns && ns.created_at ? " " + shortDate(ns.created_at) : " within the last two weeks") + ".";
   }
-  /* The two groups (Malone, 2026-11-10; the rule is the go-live note's item 4, built on Sam's go): Needs you holds a
-     request waiting on the team, an email ready to send and a follow-up due today or earlier; every other college
-     waits on the college. */
+  // What needs the team: a review, an email to send, a follow-up due today or earlier.
   function needsYou(r) {
     return toDo(r);
   }
@@ -624,9 +643,10 @@
     if (ncWaiting(r)) p.push(["ask", "NC attestation waiting"]);
     var du = dueOf(r);
     if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
-    if (notReceived(r)) p.push(["ask", "Not received"]);
-    var st = stageOf(r);
-    p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
+    var sg = STAGES[stageNum(r) - 1];
+    p.push(["", "Stage " + sg.n + ": " + sg.label]);
+    // D1 (Sam, Sheet 113 card 1): the lead is the next thing asked for, and the credit share does not wait on it.
+    if (creditQualifies(r)) p.push(["", "Credit share qualifies"]);
     // Every badge kept (Malone, 2026-11-10): what the noncredit share still lacks, what was accepted, when the nudge went.
     if (r.nc && r.nc.standing) p.push(["", "Attestation accepted"]);
     else if (r.nc && !ncMet(r) && !ncWaiting(r)) p.push(["", "No Noncredit CPL Lead"]);
@@ -645,47 +665,41 @@
     return { t: "", over: false };
   }
 
-  /* The menu in two groups, the work first (Sam's "go" on COBIx's proposal, PR 2990's thread and issue 2989,
-     2026-11-09: "having a prioritized set of easy buttons to push is always preferable"). To do holds the queues a CSM
-     acts on; Browse holds the lists a CSM reads. No view was renamed; Qualifies spells out what it means. */
-  /* THE LISTS, REDRAWN (asked in session, 2026-11-12: "the filters are many and the accuracy seems few"; a count of
-     14 colleges with a Noncredit CPL Lead met a filter that read 7). Each list was right by its own definition, but the
-     definitions overlapped and one question had no list: "All open items" left out the emails that were due and held
-     colleges with nothing to do, "Ready to send" held requests still under review, and a named Noncredit CPL Lead was
-     split across two lists of 7 (attestations waiting; the condition met) with no list of all 14.
-     Three groups now, each list named for exactly what it holds:
-       To do      what the team acts on. Everything to do is the four lists under it, a college counted once.
-       By stage   where a college stands. With Review a request these three hold every institution exactly once.
-       Look up    a fact about a college, whatever its stage. */
-  var GROUPS = [{ id: "todo", label: "To do" }, { id: "stage", label: "By stage" }, { id: "look", label: "Look up" }];
+  /* THE LISTS ARE THE SEVEN STAGES (Malone, 2026-11-13, his D3 and D4; the plan is in the vault,
+     20261113_Funding_Follow-up_Sequential_Stages_Plan.md). The lists of 2026-11-12 were built around what the reviewer
+     does next, and a college sat in several at once. Now: Every stage holds each institution once, under its stage;
+     each stage list holds its own colleges, the email to send apart from the colleges already asked; and three lists
+     stay for looking something up. A follow-up coming due is a flag on a row, never a list. */
+  var GROUPS = [{ id: "stage", label: "Stages" }, { id: "look", label: "Look up" }];
   function coordGap(r) { return r.conds.some(function (c) { return c.kind === "coord" && !c.met && !c.pending; }); }
   function followDue(r) { var du = dueOf(r); return !!(du && du.follow_up_on <= today()); }
-  function acceptDue(r) { var rd = readyOf(r); return rd === "accept" || rd === "accept_nc"; }
-  // A request is to send when it is due, or when it was copied or drafted and never marked Sent.
-  function requestDue(r) { var rd = readyOf(r); return rd === "nudge" || rd === "lead" || !!draftedOf(r); }
-  function toDo(r) { return waitingKinds(r).length > 0 || acceptDue(r) || requestDue(r) || followDue(r); }
-  // A Noncredit CPL Lead named by any route: the role in MAP, an attestation accepted, or an attestation waiting.
-  function ncNamed(r) { return !!(r.nc && (r.nc.lead || r.nc.standing || r.nc.waiting)); }
-  var VIEWS = {
-    open: { g: "todo", label: "Everything to do", keep: toDo },
-    review: { g: "todo", label: "Review a request", keep: function (r) { return stageOf(r) === "waiting"; } },
-    accept: { g: "todo", label: "Send an acceptance", keep: acceptDue },
-    request: { g: "todo", label: "Send a request", keep: requestDue },
-    follow: { g: "todo", label: "Follow up", keep: followDue },
-    notyet: { g: "stage", label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
-    held: { g: "stage", label: "Confirmed, held by a condition", keep: function (r) { return stageOf(r) === "held"; } },
-    qual: { g: "stage", label: "Qualifies (every condition met)", keep: function (r) { return stageOf(r) === "qual"; } },
-    confirmed: { g: "look", label: "Confirmed", keep: function (r) { return r.part.confirmed; } },
-    ncnamed: { g: "look", label: "Named a Noncredit CPL Lead (MAP or attestation)", keep: ncNamed },
-    // A missing coordinator is status only: no CSM email for it, and Sam chases the confirmed ones himself (issue 3010,
-    // his call 1). The first is the funding-held part of the second.
-    coord: { g: "look", label: "Confirmed, missing the CPL Coordinator in MAP",
-      keep: function (r) { return r.part.confirmed && coordGap(r); } },
-    nocoord: { g: "look", label: "No CPL Coordinator in MAP", keep: coordGap },
-    // Who accepted and what the log holds for each email (asked 2026-11-13: "maybe the dashboard says they are
-    // confirmed but we don't actually know for sure that email went out").
-    emails: { g: "look", label: "Email record (who accepted, what was sent)", keep: function (r) { return r.part.confirmed || !!(r.nc && r.nc.standing) || logFor(r.key).some(function (x) { return x.kind === "email"; }); } },
-    all: { g: "look", label: "All institutions", keep: function () { return true; } } };
+  // What the team acts on: a review, an email to send (due, or copied and never marked Sent), a follow-up due.
+  function toDo(r) { var sb = subOf(r); return sb === "review" || sb === "send" || followDue(r); }
+  var VIEWS = { open: { g: "stage", label: "Every stage", show: "institutions, by stage", keep: function () { return true; } } };
+  STAGES.forEach(function (sg) {
+    VIEWS[sg.id] = { g: "stage", n: sg.n, label: sg.n + ". " + sg.label, show: "at stage " + sg.n + ": " + sg.label.charAt(0).toLowerCase() + sg.label.slice(1),
+      bulk: sg.n === 1, keep: function (r) { return stageNum(r) === sg.n; } };
+  });
+  // A missing coordinator is the list Sam chases (issue 3010, his call 1); the held follow-up names it too (D5).
+  VIEWS.coord = { g: "look", label: "Confirmed, missing the CPL Coordinator in MAP", show: "confirmed, missing the CPL Coordinator in MAP",
+    keep: function (r) { return r.part.confirmed && coordGap(r); } };
+  // Who accepted and what the log holds for each email (asked 2026-11-13: "maybe the dashboard says they are
+  // confirmed but we don't actually know for sure that email went out").
+  VIEWS.emails = { g: "look", label: "Email record (who accepted, what was sent)", show: "in the email record",
+    keep: function (r) { return r.part.confirmed || !!(r.nc && r.nc.standing) || logFor(r.key).some(function (x) { return x.kind === "email"; }); } };
+  VIEWS.all = { g: "look", label: "All institutions", show: "institutions", keep: function () { return true; } };
+  // The groups a list draws: Every stage by stage; a stage by what the team does; a look-up list as one.
+  var SUB_LABEL = { review: "To review", send: "To send or follow up", wait: "Waiting on the college", done: "Done" };
+  function groupsOf(list) {
+    var v = VIEWS[state.view] || VIEWS.open;
+    if (state.view === "open") return STAGES.map(function (sg) {
+      return ["s" + sg.n, sg.n + ". " + sg.label, list.filter(function (r) { return stageNum(r) === sg.n; })];
+    });
+    if (!v.n) return [["all", v.label, list]];
+    return ["review", "send", "wait", "done"].map(function (k) {
+      return [k, SUB_LABEL[k], list.filter(function (r) { var sb = subOf(r); return (sb === "wait" && followDue(r) ? "send" : sb) === k; })];
+    });
+  }
   function whoOf(e) { return String(e || "").split("@")[0] || "a reviewer"; }
   // One email's standing in the log: the Sent receipt, else the latest copy or draft, else nothing.
   function mailStanding(r, tpl, subjRe) {
@@ -698,31 +712,23 @@
   var ACCEPT_SUBJ = /participation confirmation accepted for /i, ACCEPT_NC_SUBJ = /noncredit attestation[^:]* accepted for /i;
   function emailRecord(r) {
     var out = [];
+    if (stageNum(r) >= 6) { var q = lastSent(r, "qualify"); out.push(q ? "Qualifying email marked sent " + shortDate(q.created_at) + " by " + whoOf(q.by_email) + "." : "Qualifying email " + mailStanding(r, "qualify", QUAL_SUBJ) + "."); }
     if (r.part.confirmed) out.push("Confirmation accepted " + (shortDate(r.part.confirmedAt) || "") + (r.part.by ? " by " + whoOf(r.part.by) : "") + "; acceptance email " + mailStanding(r, "accept", ACCEPT_SUBJ) + ".");
     if (r.nc && r.nc.standing) out.push("Noncredit attestation accepted " + (shortDate(r.nc.confirmedAt) || "") + (r.nc.by ? " by " + whoOf(r.nc.by) : "") + "; acceptance email " + mailStanding(r, "accept_nc", ACCEPT_NC_SUBJ) + ".");
     if (!r.part.confirmed) { var n = lastSent(r, "nudge"); out.push(n ? "Request marked sent " + shortDate(n.created_at) + " by " + whoOf(n.by_email) + "." : draftedOf(r) ? draftedWords(draftedOf(r)) : "No request recorded."); }
     return out.join(" ");
   }
   // An address saved before the lists were redrawn opens the list that now holds the same colleges, or the nearest.
-  var VIEW_WAS = { send: "open", due: "follow", nc: "review", ncmet: "ncnamed", coordmet: "all" };
+  var VIEW_WAS = { send: "open", due: "open", follow: "open", accept: "open", request: "notyet", review: "partreview", nc: "ncreview",
+    confirmed: "emails", ncnamed: "all", ncmet: "all", coordmet: "all", nocoord: "coord" };
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrive() below opens. All open
      items is the tab's first view, so it reports the bare tab. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress(TAB, function () {
     return VIEWS[state.view] && state.view !== "open" ? TAB + "/" + state.view : TAB;
   });
-  var READY_RANK = { accept: 1, accept_nc: 2, lead: 3, nudge: 4, wait: 5 };
-  function sortRank(r) {
-    if (state.view === "accept" || state.view === "request") return notReceived(r) ? 0 : READY_RANK[readyOf(r)] != null ? READY_RANK[readyOf(r)] : 6;
-    var s = stageOf(r), du = dueOf(r), rd = readyOf(r);
-    // Needs you, most pressing first (COBIx on PR 3049): a request waiting on the team, an email that never reached
-    // the college, a follow-up due, then the emails in Ready to send's own order, so a resend is never buried under the
-    // colleges still owed their first nudge. Waiting on the college keeps the order by stage.
-    if (s === "waiting") return 0;
-    if (rd && rd !== "wait" && notReceived(r)) return 1;
-    if (du && du.follow_up_on <= today()) return 2;
-    if (rd && READY_RANK[rd] != null) return 2 + READY_RANK[rd];
-    return s === "held" ? 10 : du ? 11 : s === "notyet" ? 12 : 13;
-  }
+  // By stage, and inside a stage the team's work first: a review or an email to send, a follow-up due, then waiting.
+  var SUB_RANK = { review: 0, send: 1, wait: 3, done: 4 };
+  function sortRank(r) { var sb = subOf(r); return stageNum(r) * 10 + (sb === "wait" && followDue(r) ? 2 : SUB_RANK[sb]); }
   function shownRows() {
     if (!S) return [];
     var q = state.q.trim().toLowerCase(), v = VIEWS[state.view] || VIEWS.open;
@@ -947,15 +953,15 @@
     }).join("");
     return '<div class="pane" id="cw-queue" aria-labelledby="cw-q-h"><div class="pane-h">' +
       // The view's name follows the count in lower case, except a name that opens on an acronym (CPL, MAP keep theirs).
-      '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.label.replace(/^[A-Z][a-z]+/, function (m) { return m.toLowerCase(); })) + "</p>" +
+      '<p class="showing" id="cw-q-h"><b>' + list.length + "</b> " + esc(v.show) + "</p>" +
       '<label class="sr" for="cw-view">Show</label><select id="cw-view" class="search" data-view-select="1">' + opts + "</select>" +
       '<label class="sr" for="cw-q">Find a college</label><input id="cw-q" class="search" type="search" placeholder="Find a college or district" value="' + esc(state.q) + '">' +
       (v.bulk && S.reviewer ? '<div class="bulk"><button type="button" class="word" data-act="nudge">Nudge them (a mail merge)</button></div>' : "") +
-      "</div>" + (list.length ? [["you", "Needs you", list.filter(needsYou)], ["col", "Waiting on the college", list.filter(function (r) { return !needsYou(r); })]]
+      "</div>" + (list.length ? groupsOf(list)
         .filter(function (g) { return g[2].length; }).map(function (g) {
           // The live order stands inside each group (go-live note, item 5): sortRank, then the college's name.
           // An h2: the list's groups are the page's first sections under its title (a11y: h1 to h3 skipped a level
-          // once Everything to do put Needs you on the signed-out view, 2026-11-12). The class carries the look.
+          // once the grouped list reached the signed-out view, 2026-11-12). The class carries the look.
           return '<h2 class="qgroup" id="cw-qg-' + g[0] + '">' + g[1] + ' <span class="qgroup-n">' + g[2].length + '</span></h2>' +
             '<ul class="queue" data-group="' + g[0] + '" aria-labelledby="cw-qg-' + g[0] + '">' + g[2].map(function (r) {
               var ag = ageOf(r);
@@ -968,21 +974,20 @@
   }
   function condLabel(c) { return c.pending ? "Pending" : c.met ? "Met" : "Not met"; }
   function recOf(r) {
-    var t = recTpl(r), du = dueOf(r), alsoWaits = waitingKinds(r).length ? " Another request from the college also waits for review, open beside the record." : "";
-    if (waitingKinds(r).length && t !== "accept" && t !== "accept_nc") return { reason: "Review the request first", why: nextStep(r) + " The acceptance is ready once it is accepted.", review: true };
-    if (t === "accept") return notReceived(r)
-      ? { reason: "Resend the acceptance", why: "Confirmed " + shortDate(r.part.confirmedAt) + ". The first acceptance did not reach the college." }
-      : { reason: "Send the acceptance", why: "The participation confirmation is accepted" + (r.part.confirmedAt ? " (" + shortDate(r.part.confirmedAt) + ")" : "") + ", and no acceptance has gone out." + alsoWaits };
-    if (t === "accept_nc") return { reason: "Send the noncredit attestation acceptance", why: "The team accepted the attestation, and no acceptance has gone out." + alsoWaits };
-    if (t === "both") return { reason: "Send one email asking for both", why: r.name + " has not sent a participation confirmation, and MAP shows no Noncredit CPL Lead for it. One email asks for both." };
-    if (t === "nudge") return { reason: "Send the confirmation request", why: r.name + " has not sent a participation confirmation. This email asks for it." };
-    if (t === "lead") return { reason: "Send the Noncredit CPL Lead ask", why: r.nc && r.nc.leadNear
+    var t = recTpl(r), du = dueOf(r), n = stageNum(r), credit = creditQualifies(r) ? " The credit share qualifies now; the noncredit share waits on the lead." : "";
+    var accepted = r.part.confirmed ? " The email opens with what the team accepted, so no separate acceptance is needed." : "";
+    if (n === 2 || n === 4) return { reason: "Review the request", why: nextStep(r) + credit, review: true };
+    if (t === "nudge") return { reason: "Send the participation request", why: r.name + " has not sent a participation confirmation. This email asks for it and names every minimum condition, with where the college stands on each." +
+      (ncWaiting(r) ? " A noncredit attestation is already on file; its review is open beside the record." : "") };
+    if (t === "lead") return { reason: "Send the Noncredit CPL Lead request", why: (r.nc && r.nc.leadNear
       ? "The landing page lists a close title. The condition is met by the Noncredit CPL Lead role in MAP."
-      : "MAP shows no Noncredit CPL Lead for the college. The role in MAP meets the condition." };
-    if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
+      : "MAP shows no Noncredit CPL Lead for the college. The role in MAP meets the condition.") + accepted + credit };
+    if (t === "held") return { reason: "Send the held follow-up", why: "The college is confirmed and held by: " + heldOpen(r).map(function (c) { return c.words; }).join("; ") + "." + accepted };
+    if (t === "qualify") return { reason: "Send the qualifying email", why: "Every minimum condition is met. This email tells the college it qualifies." + accepted };
     // The line under the email says what to press; this one says why, so the two do not repeat each other.
-    if (draftedOf(r)) return { reason: "Mark the email as sent", why: "The log shows the request copied or opened as a draft, with no Sent after it." };
-    return { reason: "No email needed", why: nextStep(r) };
+    if (draftedOf(r)) return { reason: "Mark the email as sent", why: "The log shows the email copied or opened as a draft, with no Sent after it." };
+    if (du && du.follow_up_on <= today()) return { reason: "Follow up", why: nextStep(r) };
+    return { reason: "No email needed", why: nextStep(r) + credit };
   }
   /* Which part of the side panel shows. A request waiting on the team opens the review by itself, since reviewing it is
      why the reviewer is on the record (Sam, 2026-11-10: "why do we click on Review when that's what we're there to do?
@@ -1284,12 +1289,13 @@
   var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
   var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
   var TEMPLATES = [
-    { id: "accept", label: "The acceptance, with what still waits" },
-    { id: "accept_nc", label: "The noncredit attestation acceptance" },
+    { id: "nudge", label: "Stage 1: the participation request" },
+    { id: "lead", label: "Stage 3: the Noncredit CPL Lead request" },
+    { id: "held", label: "Stage 5: the held follow-up" },
+    { id: "qualify", label: "Stage 6: the qualifying email" },
+    { id: "accept", label: "The acceptance (optional)" },
+    { id: "accept_nc", label: "The noncredit attestation acceptance (optional)" },
     { id: "follow", label: "Follow up on a condition" },
-    { id: "nudge", label: "Nudge for the participation confirmation" },
-    { id: "lead", label: "The Noncredit CPL Lead ask (the role in MAP)" },
-    { id: "both", label: "Both asks in one email (the confirmation and the Noncredit CPL Lead)" },
     { id: "blank", label: "Blank" }];
 
   /* ── the email templates a reviewer can change (csm_templates, kb/migrations/2026-11-10_csm_templates.sql) ──
@@ -1302,35 +1308,46 @@
     follow: { subject: "CPL Implementation Funding: a follow-up for {college}",
       body: "Dear {name},\n\nThank you for your work on CPL Implementation Funding at {college}. In reviewing the college's record, the CPL Initiative team " +
         "noticed the following:\n\n{open_items}\n\nWe would welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team" },
-    nudge: { subject: "CPL Implementation Funding: a participation confirmation for {college}",
+    /* THE FOUR STAGE EMAILS (Malone, 2026-11-13, D5: "each email at a step includes all appropriate information for
+       acceptance or missing requirements"; a reviewer edits each before it goes). Each says what the team accepted
+       ({accepted}) and what remains for this college ({conditions}, {remaining}, {also_open}). The subjects keep the
+       capitals of the versions saved 2026-11-12, and the receipts are told apart by them (NUDGE_SUBJ and the rest). */
+    nudge: { subject: "CPL Implementation Funding: Participation Confirmation for {college}",
       body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Our records do not yet show a participation " +
-        "confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nThe CPL Implementation Funding page " +
-        "explains each condition and how to send it: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this " +
-        "note, a short reply will let us update our records.\n\nThe CPL Initiative team" },
-    // Drafted S624 for Sam's edit (go-live note, decision 4). The facts: the exact MAP title Noncredit CPL Lead meets
-    // the condition (his ruling, 2026-11-10, PR 3031), and an attestation on the funding page is accepted as well.
-    lead: { subject: "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for {college}",
-      body: "Dear {name},\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for {college}. MAP does not yet show " +
-        "a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the Noncredit CPL Lead role in MAP, under that exact title. " +
-        "{close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.\n\nThe CPL Implementation Funding page " +
-        "explains the condition: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive this note, a short reply " +
-        "will let us update our records.\n\nThe CPL Initiative team" },
-    both: { subject: "CPL Implementation Funding: two steps for {college}",
-      body: "Dear {name},\n\nThe CPL Initiative team is writing about CPL Implementation Funding for {college}. Two steps remain.\n\nFirst, our records do " +
-        "not yet show a participation confirmation, one of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nSecond, " +
-        "for the noncredit share: MAP does not yet show a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the " +
-        "Noncredit CPL Lead role in MAP, under that exact title. {close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is " +
-        "accepted as well.\n\nThe CPL Implementation Funding page explains each condition and how to send it: {funding_page}\n\nIf either is already on " +
-        "its way, or if someone else at {college} should receive this note, a short reply will let us update our records.\n\nThe CPL Initiative team" }
+        "confirmation, the first of the minimum conditions an institution meets to qualify for its award. {deadline}\n\nThe minimum conditions, and where " +
+        "{college} stands on each today:\n\n{conditions}\n\nThe CPL Implementation Funding page explains each condition and how to send it: {funding_page}\n\n" +
+        "Once the confirmation arrives and every condition above is met, our next email will be the one saying that {college} qualifies.\n\nIf the " +
+        "confirmation is already on its way, or if someone else at {college} should receive this note, a short reply will let us update our records.\n\n" +
+        "The CPL Initiative team" },
+    // The facts: the exact MAP title Noncredit CPL Lead meets the condition (Sam's ruling, 2026-11-10, PR 3031), and an
+    // attestation on the funding page is accepted as well.
+    lead: { subject: "CPL Implementation Funding: The Noncredit CPL Lead Role in MAP for {college}",
+      body: "Dear {name},\n\nThe CPL Initiative team is writing about the noncredit share of CPL Implementation Funding for {college}. {accepted}\n\nMAP does " +
+        "not yet show a Noncredit CPL Lead for {college}. The condition is met when the college's lead holds the Noncredit CPL Lead role in MAP, under that " +
+        "exact title. {close_title} A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well.\n\n{also_open}\n\nThe CPL " +
+        "Implementation Funding page explains the condition: {funding_page}\n\nIf it is already on its way, or if someone else at {college} should receive " +
+        "this note, a short reply will let us update our records.\n\nThe CPL Initiative team" },
+    held: { subject: "CPL Implementation Funding: Remaining Conditions for {college}",
+      body: "Dear {name},\n\nThank you for your work on CPL Implementation Funding at {college}. {accepted}\n\nBefore {college} qualifies for its award, the " +
+        "following remains open:\n\n{remaining}\n\nThe CPL Implementation Funding page explains each condition and how it is met: {funding_page}\n\nWe would " +
+        "welcome a reply when this is in place, or a note if we have misread it.\n\nThe CPL Initiative team" },
+    qualify: { subject: "CPL Implementation Funding: Minimum Conditions Met for {college}",
+      body: "Dear {name},\n\nThank you for your work on CPL Implementation Funding at {college}. {accepted}\n\nEvery minimum condition is now met, and {college} " +
+        "qualifies for its award. The CPL Implementation Funding page shows the award and what counts toward each priority: {funding_page}\n\nNothing " +
+        "further is needed from the college at this step.\n\nThe CPL Initiative team" }
   };
+  /* A version saved before the stage emails shipped holds the wording they replace, so it is an earlier version and
+     no longer in force. Nothing is deleted: Earlier versions still loads it, and a save made after this moment wins
+     as before. Only the two emails whose shipped wording changed are listed. */
+  var TPL_SINCE = { nudge: "2026-11-13T20:10:00Z", lead: "2026-11-13T20:10:00Z" };
   /* EVERY EMAIL THE PAGE WRITES IS HERE (asked in session, 2026-11-12: the editor held four and the page wrote more).
      The acceptance (one wording for the participation confirmation and the noncredit attestation, {request} naming
      which) and the follow-up on a request under review are the funding tab's emails; their saved versions live in
      the same store, and the funding tab writes from them too (setTemplates). Blank has no wording to keep. */
-  var TPL_EDITABLE = ["lead", "both", "nudge", "accept", "request_follow", "follow"];
+  var TPL_EDITABLE = ["nudge", "lead", "held", "qualify", "accept", "request_follow", "follow"];
   var TPL_FUND = { accept: 1, request_follow: 1 };
-  var TPL_EDIT_LABEL = { nudge: "Request for the participation confirmation", both: "Request for the confirmation and the Noncredit CPL Lead, in one email",
-    lead: "Request for the Noncredit CPL Lead role in MAP", accept: "Acceptance (participation confirmation or noncredit attestation)",
+  var TPL_EDIT_LABEL = { nudge: "Stage 1: the participation request", lead: "Stage 3: the Noncredit CPL Lead request",
+    held: "Stage 5: the held follow-up", qualify: "Stage 6: the qualifying email", accept: "Acceptance (participation confirmation or noncredit attestation)",
     request_follow: "Follow-up on a request under review", follow: "Follow-up on a condition still open" };
   var TPL_FUND_WORDS = [
     ["name", "the person the email is to"], ["college", "the college's name"],
@@ -1360,7 +1377,11 @@
     ["deadline", "the sentence naming the confirmation deadline, or nothing when none is set"],
     ["funding_page", "the public CPL Implementation Funding page"],
     ["close_title", "a sentence when the landing page lists a title close to Noncredit CPL Lead, or nothing"],
-    ["open_items", "the CO Monitor's note, or the conditions still open (follow-up)"]];
+    ["open_items", "the CO Monitor's note, or the conditions still open (follow-up)"],
+    ["accepted", "a sentence naming what the team has accepted from the college, or nothing"],
+    ["conditions", "every minimum condition, each with where the college stands"],
+    ["remaining", "the minimum conditions still open for the college"],
+    ["also_open", "the conditions still open besides the Noncredit CPL Lead, or nothing"]];
   var TPLS = { rows: [], loaded: false, error: "", seq: 0, asked: false, busy: false };
   function tplLabel(id) { if (TPL_EDIT_LABEL[id]) return TPL_EDIT_LABEL[id]; for (var i = 0; i < TEMPLATES.length; i++) if (TEMPLATES[i].id === id) return TEMPLATES[i].label; return id; }
   function tplRows(id) { return TPLS.rows.filter(function (x) { return x.template_id === id; }); }
@@ -1368,7 +1389,8 @@
   function tplOf(id) {
     var last = tplRows(id)[0];
     var d = tplDefault(id);
-    return last && !last.reset ? { subject: last.subject, body: last.body, row: last } : { subject: d.subject, body: d.body, row: last || null };
+    var old = !!(last && TPL_SINCE[id] && String(last.created_at || "") < TPL_SINCE[id]);
+    return last && !last.reset && !old ? { subject: last.subject, body: last.body, row: last } : { subject: d.subject, body: d.body, row: last || null, old: old };
   }
   function tplUnknown(text, id) {
     var known = {}, bad = [];
@@ -1389,11 +1411,34 @@
     return { name: name, college: r.name, funding_page: PUBLIC_FUNDING_URL,
       deadline: S && S.deadline ? "The deadline is " + longDay(S.deadline) + "." : "",
       close_title: r.nc && r.nc.leadNear ? "The college's CPL landing page in MAP lists a close title; the condition asks for the exact one, Noncredit CPL Lead." : "",
-      open_items: r.note || (missing.length ? missing.join("\n") : "Write what the college can do here.") };
+      open_items: r.note || (missing.length ? missing.join("\n") : "Write what the college can do here."),
+      accepted: acceptedWords(r), conditions: condLines(r, false).join("\n"), remaining: condLines(r, true).join("\n") || "Write what remains here.",
+      also_open: (function (o) { return o.length ? "The college's record also shows " + (o.length === 1 ? "this condition" : "these conditions") + " still open:\n\n" + o.join("\n") : ""; })(condLines(r, true, true)) };
+  }
+  // What the team has accepted, as one sentence for the college; nothing when nothing is accepted yet.
+  function acceptedWords(r) {
+    var got = [];
+    if (r.part.confirmed) got.push("the college's participation confirmation" + (r.part.confirmedAt ? " on " + longDay(r.part.confirmedAt) : ""));
+    if (r.nc && r.nc.standing) got.push("its Noncredit CPL Lead attestation");
+    return got.length ? "The CPL Initiative team has accepted " + got.join(" and ") + "." +
+      (r.nc && r.nc.lead && !r.nc.standing ? " MAP shows the college's Noncredit CPL Lead." : "") : "";
+  }
+  // The minimum conditions in the funding tab's own labels, one a line: all of them with their standing, or the open
+  // ones alone (openOnly), with or without the Noncredit CPL Lead (noLead).
+  function condLines(r, openOnly, noLead) {
+    var out = [];
+    r.conds.forEach(function (c) {
+      // An email that lists what remains leaves the coordinator to Sam (heldOpen); the full list still shows its standing.
+      if (openOnly ? !c.met && !c.pending && c.kind !== "coord" : true) out.push(String(c.label || c.words).replace(/[.\s]+$/, "") + (openOnly ? "" : ": " + (c.met ? "met" : c.pending ? "pending" : "not yet met")));
+    });
+    if (r.nc && !noLead && (!openOnly || !ncMet(r))) out.push("A Noncredit CPL Lead, for the noncredit share" +
+      (openOnly ? (ncWaiting(r) ? " (the attestation is under review)" : "") : ": " + (ncMet(r) ? "met" : ncWaiting(r) ? "the attestation is under review" : "not yet met")));
+    return out;
   }
   function tplRender(id, r, name, missing) {
     var t = tplOf(id), v = tplVars(r, name, missing);
-    return { subject: tplFill(t.subject, v), body: tplFill(t.body, v) };
+    // A word with nothing to say may have stood alone in its paragraph; the paragraph goes with it.
+    return { subject: tplFill(t.subject, v), body: tplFill(t.body, v).replace(/\n{3,}/g, "\n\n") };
   }
   function loadTemplates() {
     var R = rest();
@@ -1437,7 +1482,8 @@
     var id = TPL_EDITABLE.indexOf(state.tplId) >= 0 ? state.tplId : TPL_EDITABLE[0];
     var t = tplOf(id), d = (state.tplDraft || {})[id], subj = d ? d.subject : t.subject, body = d ? d.body : t.body;
     var rows = tplRows(id), r = state.sel ? rowOf(state.sel) : null;
-    var meta = t.row && !t.row.reset ? "Saved by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "."
+    var meta = t.old ? "The wording the dashboard ships with. The version saved " + shortDate(t.row.created_at) + " is under Earlier versions."
+      : t.row && !t.row.reset ? "Saved by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "."
       : t.row ? "Put back to the shipped wording by " + (t.row.by_email || "a reviewer") + ", " + shortDate(t.row.created_at) + "." : "The wording the dashboard ships with.";
     var prev = r ? (function () {
       var v = TPL_FUND[id] ? { name: "the person who sent it", college: r.name, request: "participation confirmation",
@@ -1482,14 +1528,15 @@
     var c = contactsOf(r), req = r.req && (r.req.part || null), nreq = r.req && r.req.nc;
     var to = null, toName = "", cc = [];
     var coord = firstOf(c, "CPL Coordinator"), vpaa = firstOf(c, "VPAA"), prim = primaryOf(c);
-    if (tplId === "follow" && (req || nreq)) {
+    var after = tplId === "follow" || tplId === "held" || tplId === "qualify";   // an email to a college the team has heard from
+    if (after && (req || nreq)) {
       to = req ? req.email : nreq.attestor_email; toName = req ? req.name : nreq.attestor_name;
       if (coord && coord.email.toLowerCase() !== String(to).toLowerCase()) cc.push(coord.email);
     } else if (prim) {
       to = prim.email; toName = prim.name;
-      if ((tplId === "nudge" || tplId === "both") && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
+      if (tplId === "nudge" && vpaa && vpaa.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(vpaa.email);
       if (tplId === "lead" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
-      if (tplId === "follow" && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
+      if (after && coord && coord.email.toLowerCase() !== prim.email.toLowerCase()) cc.push(coord.email);
     }
     var name = personWord(toName), college = r.name, missing = missingWords(r);
     var subject = "", body = "";
@@ -1559,7 +1606,7 @@
     if (CT.state !== "ready") return '<div><p class="k">Write an email</p><p class="gate">Reading the contacts on file&hellip;</p></div>';
     var m = mailOf(r);
     loadLogo();
-    var opts = TEMPLATES.filter(function (t) { return LEAD_MAIL_ON || (t.id !== "lead" && t.id !== "both"); })
+    var opts = TEMPLATES.filter(function (t) { return LEAD_MAIL_ON || t.id !== "lead"; })
       .map(function (t) { return '<option value="' + t.id + '"' + (t.id === m.tpl ? " selected" : "") + ">" + esc(t.label) + "</option>"; }).join("");
     // The preview first (Malone, 2026-11-10: recipient, subject and message apart, with Edit email). Edit email opens
     // the fields the composer always had; they stay in the page either way, so a draft is never lost to a fold. With no
@@ -1567,7 +1614,9 @@
     var due = !!recTpl(r), edit = !!(state.mailEdit || {})[r.key], open = due || edit, cc = allCc(m);
     // Sent is offered for the email that is due and no other (COBIx on PR 3050): a template switched by hand never
     // writes a receipt that would keep the real one from queueing.
-    var sentBtn = due && m.tpl === recTpl(r);
+    // An acceptance chosen by hand may be marked Sent too: its receipt feeds the Email record and moves no college.
+    var optional = (m.tpl === "accept" && r.part.confirmed) || (m.tpl === "accept_nc" && !!(r.nc && r.nc.standing));
+    var sentBtn = (due && m.tpl === recTpl(r)) || (edit && optional);
     var dr = due ? null : draftedOf(r);
     return '<div class="tpl" aria-labelledby="cw-mail-h"><div class="mail-h"><p class="k" id="cw-mail-h">' + (open ? "Email preview" : "Email") + "</p>" +
       '<button type="button" class="word" data-act="mailedit" aria-expanded="' + edit + '" aria-controls="cw-mail-edit">' +
@@ -1762,13 +1811,13 @@
     });
   }
   function todayHtml() {
-    // The five lists a reviewer opens most, in the order the work goes; each count is its menu view's own count.
+    // The seven stages in order; each count is its list's own count, and the seven sum to every institution.
     var go = function (view, label) {
       return '<button type="button" class="metric" data-view="' + view + '" aria-pressed="' + (state.view === view) + '"><span class="num">' +
         S.rows.filter(VIEWS[view].keep).length + '</span><span class="lab">' + label + "</span></button>";
     };
-    return '<div class="today" role="group" aria-label="Today">' + go("review", "Requests to review") + go("accept", "Acceptances to send") +
-      go("request", "Requests to send") + go("notyet", "Not yet confirmed") + go("held", "Confirmed and held") + go("qual", "Qualify") +
+    return '<div class="today" role="group" aria-label="The seven stages">' + go("notyet", "1. No confirmation") + go("partreview", "2. Confirmation to review") +
+      go("nolead", "3. No Noncredit CPL Lead") + go("ncreview", "4. Lead to review") + go("held", "5. Held") + go("ready", "6. Qualifying email to send") + go("qual", "7. Qualifies") +
       (S.deadline ? '<p class="deadline"><span class="lab">Confirmation due</span><span class="date">' + esc(shortDate(S.deadline)) + "</span></p>" : "") + "</div>" +
       '<p class="links today-more"><button type="button" class="word" data-condx="open" aria-expanded="' + !!state.condx + '" aria-controls="cw-condx">Funding conditions explained</button></p>';
   }
@@ -1935,7 +1984,7 @@
   function fundHtml() {
     var r = state.sel ? rowOf(state.sel) : null;
     var met = r ? r.conds.filter(function (c) { return c.met; }).length : 0, of = r ? r.conds.length : 0;
-    var qual = r && r.part.confirmed && !r.gate.blocked;
+    var qual = r && r.part.confirmed && !r.gate.blocked && !condPending(r);
     var row = function (k, v) { return '<tr><th scope="row">' + k + "</th><td>" + v + "</td></tr>"; };
     return '<aside class="drawer" id="cw-fund" aria-labelledby="cw-fund-h"' + (state.fund ? "" : " hidden") + '><div class="drawer-h"><h2 id="cw-fund-h" tabindex="-1">Implementation Funding</h2>' +
       '<button type="button" class="word" data-fund="close">Close</button></div>' +
@@ -2322,7 +2371,7 @@
   var wired = false, unsub = null;
   function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; state.side = ""; state.lpOpen = {}; state.psrc = ""; state.mailEdit = {}; state.fund = false; state.condx = false; state.doneOpen = {}; state.accOpen = false; state.tplOpen = false; state.tplMsg = ""; LOG.asked = false; TPLS.asked = false; }
   /* #csm-workspace/<view> opens that view of the action center, read after fresh() on every visit; a bare
-     #csm-workspace (what the side menu writes) or an unknown word keeps All open items. */
+     #csm-workspace (what the side menu writes) or an unknown word keeps Every stage. */
   function arrive() {
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival(TAB) : null;
     var want = a && a[0] ? (VIEW_WAS[a[0]] || a[0]) : "";
@@ -2332,7 +2381,7 @@
     ensureCss();
     var el = root(); if (!el) return;
     el.removeAttribute("style");   // the pane's loading placeholder (dashed, centered) goes once the tab paints
-    // A pick lasts the visit (Sam, 2026-10-21): every open starts on All open items, nothing chosen. tabs.js fires
+    // A pick lasts the visit (Sam, 2026-10-21): every open starts on Every stage, nothing chosen. tabs.js fires
     // onActivate once, so the module hears each later visit itself.
     fresh(); arrive();
     watchStart();
@@ -2386,7 +2435,7 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _views: VIEWS, _readyOf2: readyOf, _emailRecord: emailRecord, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _needsYou: needsYou, _recOf: recOf, _recTpl: recTpl, _draftedOf: draftedOf, _views: VIEWS, _readyOf2: readyOf, _stageNum: stageNum, _subOf: subOf, _pillsOf: pillsOf, _condLines: condLines, _emailRecord: emailRecord, _leadMail: function (on) { LEAD_MAIL_ON = !!on; }, _snapshot: function () { return S; },
     _log: function () { return LOG.rows; }, _dueOf: dueOf,
     _readAccess: readAccess,
     _setContacts: function (o) { CT.dir = o.dir || []; CT.landing = o.landing || []; CT.users = o.users || []; CT.state = "ready"; },

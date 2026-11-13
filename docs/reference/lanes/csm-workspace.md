@@ -1,7 +1,7 @@
 ---
 title: "CSM Workspace / the team's queue for each college — lane state"
 created: 2026-11-02
-updated: 2026-11-12
+updated: 2026-11-13
 tags: [reference, roadmap-lane, csm-workspace, implementation-funding, crm]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -104,10 +104,8 @@ List already carries the same control on its side panel (`pgrip` in `commons_lis
 
 **LIVE: the clarity mock, built (S624, 2026-11-10, on Sam's "go ahead and build it"; #3049, #3050 and the two after).**
 The page reads **Funding Follow-up Dashboard** (Malone, 2026-11-10: the MAP team does most of this work; the address
-stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is six metrics (2026-11-12),
-each opening its list, the deadline apart. The list sits in two groups, *Needs you* (a request waiting on the team, an
-email that is due, a follow-up due) above *Waiting on the college*, most pressing first; every row names the email or
-the date. The record is a table of conditions (Condition, Status, Next step), then *Recommended action* with the email as
+stays `#csm-workspace`, and the file, the lane and the identifiers keep the old name). The summary is the seven stage
+counts (2026-11-13), each opening its list, the deadline apart. Every row names the email or the date. The record is a table of conditions (Condition, Status, Next step), then *Recommended action* with the email as
 a preview and *Edit email*; the email is the one that is due (`recTpl`) in every list, and Sent is offered for that
 email alone. One side panel under the record holds People (one list: role, person, source), CPL landing page and
 History, and the review opens there; Accept says what it does. Access requests are one word in the header;
@@ -135,7 +133,7 @@ reviewer*; *Earlier versions* loads one back; *Put back the shipped wording* sav
 (insert-only, RLS `is_funding_reviewer()` select and insert, saver stamped from the JWT; DR-09; migration
 `kb/migrations/2026-11-10_csm_templates.sql`, rollback beside it, applied by run 42847222590). A save re-reads first and
 refuses to write over a teammate's newer version. With nothing saved the four emails match the old `seedMail` word for
-word in 32 cases (`tests/fixtures/csm_templates_shipped.json`). The two acceptances stay the funding tab's
+word (the fixture that pinned it went with the stage emails, 2026-11-13). The two acceptances stay the funding tab's
 (`acceptMail`).
 
 **LIVE once its PR merges: the plainer review, the conditions panel and the copied email (2026-11-12, asked in session
@@ -178,23 +176,9 @@ contained in the Email Template editor"*.
   attestations waiting* read 7 (8 less Chaffey, which holds the role) and *With a Noncredit CPL Lead* read 7 (5
   accepted and the 3 with the role, LA Mission in both); no list held the 14. *All open items* left out every email
   that was due and held colleges with nothing to do; *Ready to send* held requests still under review.
-- **The lists (`VIEWS`, three `GROUPS`).** **To do:** Everything to do (`open`, the four under it, a college once),
-  Review a request (`review`), Send an acceptance (`accept`), Send a request (`request`, due or copied and never marked
-  Sent), Follow up (`follow`, due today or earlier). **By stage:** Not yet confirmed (`notyet`), Confirmed, held by a
-  condition (`held`), Qualifies (`qual`); with Review a request these hold every institution exactly once. **Look up:**
-  Confirmed, Named a Noncredit CPL Lead (`ncnamed`: the role in MAP, an attestation accepted or one waiting), the two
-  coordinator lists, All institutions. An address saved earlier opens its successor (`VIEW_WAS`: send, due, nc, ncmet,
-  coordmet). *Needs you* is Everything to do (`toDo`), so a copied request stays there until it is marked Sent.
-  The six metrics: Requests to review, Acceptances to send, Requests to send, Not yet confirmed, Confirmed and held,
-  Qualify. Guards 14b2 to 14b4 (the divisions), 15e to 15i, 5b6, 10b, 10b2.
-- **Read on live facts (2026-11-12, the page run on the live confirmation, coordinator and log rows):** 118
-  institutions; Review a request 5, Send an acceptance 14, Send a request 99, Follow up 0; Not yet confirmed 99, held
-  and Qualifies 14 between them, Confirmed 14. The noncredit lists could not be redrawn outside COBI (they wait on
-  the full funding settings); they are pinned by tests and by the arithmetic above. **`csm_log` holds 6 rows and no
-  Sent receipt**, so every confirmed college reads as owed its acceptance and every other as owed its request: the
-  to-do lists stay full until the team presses Sent, or *Log this Nudge* after a mail merge.
-- **Every email is in Email templates (`TPL_EDITABLE`, six).** The three requests, the follow-up on a condition, and
-  now the funding tab's two: the acceptance (one wording for the confirmation and the attestation) and the follow-up
+- **The lists of 2026-11-12 are replaced by the seven stages** (below, *The seven stages*). What was found that day stands: the definitions overlapped, and `csm_log` held almost no Sent receipt.
+- **Every email is in Email templates (`TPL_EDITABLE`, seven since the stages).** The four stage emails, the follow-up on a condition, and
+  the funding tab's two: the acceptance (one wording for the confirmation and the attestation) and the follow-up
   on a request under review. Their saved versions live in `csm_templates` under `accept` and `request_follow`; the
   funding tab reads them when a reviewer's data loads (`csmTplLoad`) and the dashboard hands them back after a save
   (`setTemplates`), so both pages write the same words. With none saved the wording is the funding tab's own, and
@@ -209,7 +193,7 @@ contained in the Email Template editor"*.
   reads every control and label on the dashboard and fails when the set differs from the one the guide was written
   against, naming what was added and removed; the fix is the guide's update and `--restamp` in the same change.
 - **DECIDED 2026-11-12 (in session, recorded here for Sam and Malone to revise):** a copied request counts as to do
-  until marked Sent; the list group headings are second-level headings; six metrics in place of five.
+  until marked Sent; the list group headings are second-level headings.
 - **Rollback:** one squash commit; no table or migration. A template saved under `accept` or `request_follow` is a
   row in `csm_templates`, undone with *Put back the shipped wording*.
 
@@ -218,9 +202,6 @@ Malone in session).** His words: *"we should save who completes a step (attestat
 attestation request)"*; *"do refresh every minute, ideally a backend check first, if none of the data is different then
 we don't need a refresh ... We don't want to accidentally send 2 of the same email or send conflicting emails"*;
 *"put MAP@rccd.edu in bcc for the mailto: links. that way we at least always know that the map email is in the mix."*
-- **An acceptance owed comes before a second request under review (`readyOf`).** Read live 2026-11-13: Alameda,
-  Hartnell, LA Trade and LA Valley were confirmed with no Sent recorded, and their waiting noncredit attestation kept
-  them out of *Send an acceptance*. They now sit in both lists. Guard 14b5.
 - **Email record (`emails`, Look up; `emailRecord`).** Every confirmed college: who accepted and when, and what the log
   holds for the acceptance email (marked sent, copied or drafted with no Sent, or no record), each with the reviewer.
   Read live the same day: 17 confirmed, 3 acceptances marked Sent. Guard 14b6.
@@ -237,8 +218,64 @@ we don't need a refresh ... We don't want to accidentally send 2 of the same ema
 - **DECIDED, left as it is by his word:** the review's ticks and what Accept requires.
 - **Rollback:** one squash commit; no table or migration.
 
+**LIVE once its PR merges: the seven stages (2026-11-13, Malone in session; the plan and the mock are in the vault,
+`CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).** His words: *"we need a different filter structure....
+because what we have is very confusing ... Ideally, it would be clean and sequential."* He and Sam ruled out a
+rebuild of the page (*"we can simply adjust the logic of the filters and the content of the email templates"*), so
+the layout, the record, the review, the panel and the composer are untouched: three rules changed.
+- **The stage rule (`stageNum`, `STAGES`).** 1 No confirmation received (`notyet`), 2 Confirmation to review
+  (`partreview`), 3 Noncredit CPL Lead not received (`nolead`), 4 Noncredit CPL Lead to review (`ncreview`), 5 Held by
+  a condition (`held`), 6 All conditions met (`ready`), 7 Qualifies (`qual`). Every institution is in exactly one,
+  worked out each time from the snapshot and the log; nothing is stored. Stages 3 and 4 never apply to a college with
+  no noncredit share, with the role in MAP, or with an accepted attestation. An attestation that arrives before the
+  confirmation is accepted waits at stage 1 or 2 and is reviewed from the record. Stage 7 is stage 6 with a
+  *Qualifying email sent* receipt in `csm_log`; a bounce returns the college to 6. So the stage 7 count is the
+  colleges told they qualify, and stage 6 plus stage 7 is the colleges that meet every condition: on the first day
+  every such college sits at 6. A condition still being read keeps a college at 5 with no email due (`condPending`;
+  COBIx on #3253).
+- **The lists (`VIEWS`, two `GROUPS`).** *Stages:* Every stage (`open`, where the page opens, each college under its
+  stage) and the seven. *Look up:* Confirmed, missing the CPL Coordinator in MAP (`coord`, the list Sam chases), Email
+  record (`emails`), All institutions (`all`). Inside a stage the colleges are grouped To review, To send or follow up,
+  Waiting on the college, Done (`subOf`, `groupsOf`). A follow-up due is a flag on a row and lifts it into To send or
+  follow up. The summary is the seven counts in order. An address saved for a retired list opens its successor
+  (`VIEW_WAS`).
+- **One email a stage (`readyOf`).** 1 the participation request (`nudge`), 3 the Noncredit CPL Lead request (`lead`),
+  5 the held follow-up (`held`, due again after 14 days; never for a missing CPL Coordinator, `heldOpen`), 6 the
+  qualifying email (`qualify`). `LEAD_MAIL_ON` off still stops the lead request. Each says what the team
+  accepted (`{accepted}`) and what remains (`{conditions}`, `{remaining}`, `{also_open}`), so **an acceptance is
+  never due**; it stays in the Template menu and may be marked Sent, which feeds the Email record and moves no
+  college. The both-in-one email is retired (the participation request names every condition); its past receipts
+  still count. Receipts are told apart by subject in any letter case (the wording saved 2026-11-12 capitalizes its
+  subjects, and the old case-bound patterns had stopped finding a copy of it).
+- **Saved wording.** Read live 2026-11-13: each of the six templates had one version saved 2026-11-12. For the two
+  whose shipped wording changed (`nudge`, `lead`), a version saved before `TPL_SINCE` is an earlier version: still in
+  `csm_templates`, still under *Earlier versions*, no longer in force. The other four keep their saved versions.
+- **No table, migration or stored value changed.** The only writes are the `csm_log` receipts the page already wrote,
+  under two new prefixes (*Held follow-up sent*, *Qualifying email sent*).
+- **DECIDED 2026-11-13 (Malone in session, D1 to D5 of the plan):** D1 the credit share qualifies while the noncredit
+  share waits on the lead (Sam's Sheet 113 card 1 stands; the row reads *Credit share qualifies*); D2 an email may go
+  at each step and none is forced where a college sent everything at once; D3 To send apart from Waiting inside a
+  stage; D4 three look-up lists; D5 the templates follow the workflow, and a reviewer edits each before it goes.
+- **DECIDED in the build, for Malone and Sam to revise:** the page opens on Every stage; a reviewer's follow-up note
+  leads a row ahead of the stage's email. **Held for Sam (COBIx on #3253):** Malone's stage 5 email would name every
+  missing condition, the coordinator included; Sam's call of 2026-11-09 is that the dashboard writes no email for a
+  missing coordinator, so the held follow-up leaves it out and a college held by it alone is owed no email, until he
+  rules.
+- **The guide** was rewritten to the seven stages and its screenshots redrawn (version 5, same link), and the stamp
+  restamped in the same change.
+- **Rollback:** one squash commit; `git revert` restores the lists, the emails and the tests. Receipts written under
+  the two new prefixes stay in `csm_log` as history and are read by nothing after a revert.
+Guards `tests/csm_workspace_stages.test.js` (the stage model), `tests/csm_workspace.test.js`, `tests/csm_workspace_templates.test.js` 1a to 1f.
+
 ## NEXT
 
+00. **Open from the seven stages (2026-11-13):**
+   - **For Sam's read:** the wording of the four stage emails, the qualifying email above all (new, and it tells a
+     college it qualifies); whether the held follow-up may name a missing coordinator (it does not today).
+   - **Not yet ruled:** what a stage 1 row reads after December 31, 2026; a college at stage 3 that never names a
+     lead never reaches stage 6, so its credit share would qualify with no email saying so.
+   - **Not yet seen in a signed-in browser** on live data: the stage counts were read on the test roster and the
+     guide's sample colleges.
 0. **Left from the clarity mock's build** (the go-live note, `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/
    20261110_csm_workspace_go_live_checklist.md`):
    - **Ruled 2026-11-10 (Sam, *"yes to all"*):** the two new emails are on (`LEAD_MAIL_ON` true; their wording is a

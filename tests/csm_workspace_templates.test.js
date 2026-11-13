@@ -60,33 +60,45 @@ function setup(signedIn) {
   W._state.view = "all"; W._state.sel = COLLEGE; W.paint();
 
   // ── 1. the shipped wording ──
-  const lead = W._seedMail(COLLEGE, "lead"), both = W._seedMail(COLLEGE, "both"), nudge = W._seedMail(COLLEGE, "nudge");
-  check("1a: the lead ask reads as shipped: the subject names the college, the message names the role and the attestation, no brace is left",
-    lead.subject === "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for Pasadena" && /^Dear Ana Rivera,\n\n/.test(lead.body) &&
+  const lead = W._seedMail(COLLEGE, "lead"), nudge = W._seedMail(COLLEGE, "nudge"), held = W._seedMail(COLLEGE, "held"), qual = W._seedMail(COLLEGE, "qualify");
+  const clean = (m) => !/[{}]/.test(m.body + m.subject) && !/ {2}| \n|\n{3}/.test(m.body) && /^Dear Ana Rivera,\n\n/.test(m.body) && /\n\nThe CPL Initiative team$/.test(m.body);
+  if (process.env.SHOW_MAIL) [nudge, lead, held, qual].forEach((m) => console.log("\n=====\n" + m.subject + "\n---\n" + m.body));
+  check("1a: the Noncredit CPL Lead request reads as shipped: the subject names the college, the message names the role and the attestation, no brace is left",
+    lead.subject === "CPL Implementation Funding: The Noncredit CPL Lead Role in MAP for Pasadena" &&
     /under that exact title\. A Noncredit CPL Lead attestation on the CPL Implementation Funding page is accepted as well\./.test(lead.body) &&
-    /If it is already on its way, or if someone else at Pasadena should receive this note/.test(lead.body) && !/[{}]/.test(lead.body + lead.subject), lead.body);
-  check("1b: both asks read as shipped: two steps, the deadline sentence where one is set, and no doubled space or space before a line break",
-    both.subject === "CPL Implementation Funding: two steps for Pasadena" && /Two steps remain\.\n\nFirst, our records/.test(both.body) &&
-    /\n\nSecond, for the noncredit share: MAP does not yet show/.test(both.body) && /If either is already on its way/.test(both.body) &&
-    !/ {2}| \n/.test(both.body) && !/[{}]/.test(both.body), both.body);
-  check("1c: the nudge and the follow-up come from the same templates", /participation confirmation for Pasadena/.test(nudge.subject) &&
-    /a follow-up for Pasadena/.test(W._seedMail(COLLEGE, "follow").subject));
-  // COBIx on PR 3068: "reads exactly as before" is checked word for word, against the old seedMail's own output for all
-  // four emails, with and without a deadline, a close title and a CO Monitor's note (one with indents and doubled spaces).
+    /If it is already on its way, or if someone else at Pasadena should receive this note/.test(lead.body) && clean(lead), lead.body);
+  // Malone, 2026-11-13: "the participation request email would communicate all the requirements, nc lead, jsts,
+  // coordinator". Every condition the record shows is in the email, each with where the college stands.
   {
-    const SHIPPED = JSON.parse(fs.readFileSync(path.join(__dirname, "fixtures/csm_templates_shipped.json"), "utf8")).cases;
-    const snap = W._snapshot(), row = snap.rows.find((r) => r.key === COLLEGE), keep = { dl: snap.deadline, nc: row.nc, note: row.note };
-    const dl0 = snap.deadline || "2026-12-31", miss = [];
-    for (const dl of [dl0, null]) for (const near of [false, true]) for (const note of ["", "Line one\n    indented  two   spaces."]) {
-      snap.deadline = dl; row.nc = Object.assign({}, row.nc || {}, { leadNear: near }); row.note = note;
-      for (const t of ["lead", "both", "nudge", "follow"]) {
-        const k = [t, !!dl, near, !!note].join("|"), m = W._seedMail(COLLEGE, t);
-        if (SHIPPED[k] !== m.subject + "\n---\n" + m.body) miss.push(k);
-      }
-    }
-    snap.deadline = keep.dl; row.nc = keep.nc; row.note = keep.note;
-    check("1d: with nothing saved, all 32 cases read word for word as the dashboard wrote them before the templates", Object.keys(SHIPPED).length === 32 && miss.length === 0);
-    if (miss.length) console.log("1d differs: " + miss.join(", "));
+    const row = W._snapshot().rows.find((r) => r.key === COLLEGE);
+    check("1b: ⭐ the participation request names every minimum condition on the college's record, each with its standing, and the deadline where one is set",
+      nudge.subject === "CPL Implementation Funding: Participation Confirmation for Pasadena" && row.conds.length >= 2 &&
+      row.conds.every((c) => nudge.body.indexOf((c.label || c.words) + ": " + (c.met ? "met" : c.pending ? "pending" : "not yet met")) >= 0) &&
+      (!row.nc || /A Noncredit CPL Lead, for the noncredit share: /.test(nudge.body)) && clean(nudge), nudge.body);
+    check("1c: the held follow-up lists the open conditions alone, and the qualifying email says the college qualifies",
+      held.subject === "CPL Implementation Funding: Remaining Conditions for Pasadena" && /the following remains open:\n\n/.test(held.body) &&
+      row.conds.filter((c) => c.met).every((c) => held.body.indexOf(c.label || c.words) < 0) && clean(held) &&
+      qual.subject === "CPL Implementation Funding: Minimum Conditions Met for Pasadena" && /Every minimum condition is now met, and Pasadena qualifies for its award\./.test(qual.body) && clean(qual));
+    // D2 and D5: an email at a step says what the team accepted, so the acceptance needs no email of its own.
+    const keep = { part: row.part, nc: row.nc };
+    row.part = Object.assign({}, row.part, { confirmed: true, waiting: false, confirmedAt: "2026-11-11T18:00:00Z" });
+    row.nc = Object.assign({}, row.nc || {}, { standing: true, lead: false, waiting: false });
+    const h2 = W._seedMail(COLLEGE, "held"), q2 = W._seedMail(COLLEGE, "qualify"), l2 = W._seedMail(COLLEGE, "lead");
+    const said = "The CPL Initiative team has accepted the college's participation confirmation on November 11, 2026 and its Noncredit CPL Lead attestation.";
+    check("1d: ⭐ each stage email after the first opens with what the team accepted, and says nothing of it when nothing is accepted",
+      [h2, q2, l2].every((m) => m.body.indexOf(said) >= 0 && clean(m)) && !/has accepted/.test(lead.body + held.body + qual.body + nudge.body), h2.body);
+    row.part = keep.part; row.nc = keep.nc;
+    check("1e: the general follow-up keeps its wording", /a follow-up for Pasadena/.test(W._seedMail(COLLEGE, "follow").subject));
+  }
+  // A version saved before the stage emails shipped holds the wording they replace: it stays in the store as an
+  // earlier version, and the shipped wording is in force. A later save wins as before (2a onward).
+  {
+    W._tpls.rows = [{ id: 1, template_id: "nudge", subject: "Old subject for {college}", body: "Old words.", reset: false, by_email: "m@x.edu", created_at: "2026-11-12T20:18:26Z" },
+      { id: 2, template_id: "follow", subject: "Kept for {college}", body: "Kept words.", reset: false, by_email: "m@x.edu", created_at: "2026-11-12T20:16:00Z" }];
+    W._tpls.loaded = true;
+    check("1f: ⭐ a request wording saved before the stage emails is an earlier version, still held; a template whose shipped wording did not change keeps its saved version",
+      W._seedMail(COLLEGE, "nudge").subject === nudge.subject && W._tplOf("nudge").row.id === 1 && W._seedMail(COLLEGE, "follow").subject === "Kept for Pasadena");
+    W._tpls.rows = [];
   }
 
   // ── 5a. the pane, for a reviewer ──
@@ -95,9 +107,9 @@ function setup(signedIn) {
     word().getAttribute("aria-expanded") === "false" && !pn());
   clickEl(window, word());
   const pick = () => root.querySelector("#cw-tpls-id"), subj = () => root.querySelector("#cw-tpls-subj"), body = () => root.querySelector("#cw-tpls-body");
-  check("5b: opened, the pane offers every email the page writes (six), the lead ask first, with the shipped wording and the words that fill in",
-    !!pn() && Array.prototype.map.call(pick().options, (o) => o.value).join() === "lead,both,nudge,accept,request_follow,follow" && pick().value === "lead" &&
-    subj().value === "CPL Implementation Funding: the Noncredit CPL Lead role in MAP for {college}" && /\{close_title\}/.test(body().value) &&
+  check("5b: opened, the pane offers every email the page writes (seven), the four stage emails first in order, with the shipped wording and the words that fill in",
+    !!pn() && Array.prototype.map.call(pick().options, (o) => o.value).join() === "nudge,lead,held,qualify,accept,request_follow,follow" && pick().value === "nudge" &&
+    subj().value === "CPL Implementation Funding: Participation Confirmation for {college}" && /\{conditions\}/.test(body().value) &&
     /The wording the dashboard ships with\./.test(flat(pn())) && /\{deadline\}/.test(flat(pn())) && !!pn().querySelector('label[for="cw-tpls-body"]'));
   // Asked in session, 2026-11-12: "make sure that every single Email template is contained in the Email Template
   // editor". The acceptance and the follow-up on a request are the funding tab's emails; they are edited here too, and
@@ -113,9 +125,9 @@ function setup(signedIn) {
     choose("request_follow");
     check("5b3: the follow-up on a request under review opens with its wording", /a follow-up on the \{request\} for \{college\}/.test(subj().value) && /\{note\}/.test(body().value));
     check("5b4: every wording the record's Template menu offers has a place here (Blank has none to keep)",
-      ["accept", "accept_nc", "follow", "nudge", "lead", "both"].every((id) => pick().querySelector('option[value="' + (id === "accept_nc" ? "accept" : id) + '"]')) &&
+      ["accept", "accept_nc", "follow", "nudge", "lead", "held", "qualify"].every((id) => pick().querySelector('option[value="' + (id === "accept_nc" ? "accept" : id) + '"]')) &&
       (function () { const m = /var TEMPLATES = \[([\s\S]*?)\];/.exec(SRC); return !!m && (m[1].match(/\{ id: "[a-z_]+"/g) || []).join() ===
-        '{ id: "accept",{ id: "accept_nc",{ id: "follow",{ id: "nudge",{ id: "lead",{ id: "both",{ id: "blank"'; })());
+        '{ id: "nudge",{ id: "lead",{ id: "held",{ id: "qualify",{ id: "accept",{ id: "accept_nc",{ id: "follow",{ id: "blank"'; })());
     choose("lead");
   }
   check("5c: the preview shows the chosen college's email", /Preview for Pasadena/.test(flat(pn().querySelector("details.tplprev summary"))) &&
@@ -145,7 +157,7 @@ function setup(signedIn) {
   const next = W._seedMail(COLLEGE, "lead");
   check("2b: the next lead ask starts from it, the braces filled and the empty sentence leaving no stray space",
     next.body === "Dear Ana Rivera,\n\nA shorter ask for Pasadena.\n\nThe CPL Initiative team" && next.subject === lead.subject, JSON.stringify(next.body));
-  check("2c: the other templates are untouched", W._seedMail(COLLEGE, "both").body === both.body);
+  check("2c: the other templates are untouched", W._seedMail(COLLEGE, "nudge").body === nudge.body);
   check("2d: the pane names who saved the version in force, and offers the shipped wording back", /Saved by /.test(flat(pn())) && !!pn().querySelector("[data-tplreset]"));
 
   // ── 2e. a teammate's save while this one types ──
@@ -180,8 +192,8 @@ function setup(signedIn) {
     /Save to use it again/.test(flat(pn())));
   clickEl(window, pn().querySelector("[data-tpldiscard]"));
   check("4e: Discard my changes returns the box to the wording in force", body().value === W._tplOf("lead").body);
-  pick().value = "both"; pick().dispatchEvent(new window.Event("change", { bubbles: true }));
-  check("4f: choosing another template shows its wording", subj().value === "CPL Implementation Funding: two steps for {college}");
+  pick().value = "held"; pick().dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("4f: choosing another template shows its wording", subj().value === "CPL Implementation Funding: Remaining Conditions for {college}");
 
   // ── 5. the store ──
   check("5d: the table is the funding reviewers' alone, insert-only, stamped by a trigger, granted to the roles its policies name",
