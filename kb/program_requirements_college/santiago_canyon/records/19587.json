@@ -1,0 +1,203 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "19587",
+ "shape": "certificate",
+ "title": "Apprenticeship: Electricity, Sound Installer",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=324",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11134,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11134,
+    "output_tokens": 1075,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1075,
+  "output_tokens_details": {
+   "thinking_tokens": 369
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06604,
+ "ms": 10547,
+ "seconds": 10.9,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    27.0,
+    27.0
+   ],
+   "stated": [
+    27.0,
+    27.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Apprenticeship Electricity, Sound Installer, CA",
+   "measure": "units",
+   "total_units": {
+    "min": 27,
+    "max": 27
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "The following number of Credits",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 27,
+     "max": 27
+    },
+    "courses": [
+     {
+      "code": "AEL021",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL022",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL023",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL024",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL025",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AEL026",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Read only the 'Apprenticeship Electricity, Sound Installer, CA' Certificate of Achievement section (Control Number 19587); the A.S. degree printed just before it has the same courses and total.",
+   "The catalog prints codes as AEL021-AEL025; these were matched to closed-list AEL 21-AEL 25 as the same courses (zero-padding difference only), so catalog_addition is false.",
+   "The block's stated 27 is the program total printed in the Program Rules line (Total Credits 27.0 - 27.0); all six courses are required at 4.5 credits each.",
+   "No program learning outcomes or careers are printed for this award; the description mentions only that completion 'may lead to state journeyworker certification', which was not recorded as a career."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "c7e8b1856a5fc9eb",
+ "source_codes": [
+  "AEL21",
+  "AEL22",
+  "AEL23",
+  "AEL24",
+  "AEL25",
+  "AEL26"
+ ],
+ "source_coverage": 1.0
+}

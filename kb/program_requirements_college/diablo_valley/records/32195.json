@@ -1,0 +1,269 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "32195",
+ "shape": "degree",
+ "title": "mTech- Industrial maintenance machinist/mechanic",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-mtech-industrial-maintenance-machinist-mechanic-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7137,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7137,
+    "output_tokens": 1933,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1933,
+  "output_tokens_details": {
+   "thinking_tokens": 628
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.06721,
+ "ms": 15114,
+ "seconds": 15.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 13,
+   "listed": 13,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    20.0,
+    25.0
+   ],
+   "stated": [
+    20.0,
+    20.0
+   ],
+   "against": "program",
+   "why": [],
+   "meets": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 3,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. Degree Local Industrial Maintenance Machinist/Mechanic (mTECH)",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 20
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "DVC General Education (Option 1) or Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "discuss the role of the industrial maintenance machinist/mechanic in shop and field maintenance safety.",
+    "interpret blueprints and technical drawings for parts manufacturing and maintenance repair operations",
+    "grind high speed steel tool bits for general purpose turning and threading.",
+    "cut multiple lead and acme threads on a lathe.",
+    "use the vertical milling machine to drill holes, index, bore hole to a specified diameter and depth, mill surfaces and edges, and use an indicator to reference work.",
+    "replace a single mechanical seal in a centrifugal pump.",
+    "align a pump shaft to a motor to a specified tolerance."
+   ],
+   "careers": [
+    "industrial machinery mechanics",
+    "maintenance specialists or technicians",
+    "machinery maintenance workers"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "major requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CONST 110",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "EET 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC 166",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "ENGTC 268",
+        "units": 3,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC 175",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ENGTC 176",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus 0-5 units from",
+    "rule": "choose_units",
+    "minimum": 0,
+    "option_group": null,
+    "stated": {
+     "min": 0,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "ENGTC 111",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 121",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 135",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 191",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MATH 192",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g., 'CONST110'); recorded with a space to match the closed list.",
+   "The math block is headed 'plus 0-5 units from:' with '(Total 0)' and 'Complete the following number of credits: 0'; recorded minimum 0 and stated 0-5. The program total of 20 equals the required block alone, so the math units appear not to be counted in the printed total. Reviewer should check whether the math requirement is conditional (e.g., waived by prior competency).",
+   "The page offers Option 1 (DVC General Education) for non-transfer students and Cal-GETC for transfer students; no GE units or degree total are printed.",
+   "Program learning outcomes are printed for the program as a whole; this A.S. degree shares them."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

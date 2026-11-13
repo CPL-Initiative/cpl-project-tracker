@@ -110,6 +110,16 @@ def packed_codes(college: str, steps: dict | None = None) -> bool:
     return bool(conf.get("packed_codes"))
 
 
+def numbers_after(college: str, steps: dict | None = None) -> bool:
+    """Whether the college's catalog PDF prints each program's control number AFTER the program
+    (Santiago Canyon, S645), so the PDF reader binds a program to the block that ends at its own
+    number line (kb/_program_requirements_college.py pdf_best). Set by the college's entry alone,
+    with the votes that are its evidence (pdf_numbers_after_votes); the reader's own count of the
+    habit measures and never switches it (p-gate-free-text-reading-per-college-s644)."""
+    conf = (steps if steps is not None else load_steps()).get(college) or {}
+    return conf.get("pdf_numbers_after") is True
+
+
 def course_renumbers(college: str, steps: dict | None = None) -> dict:
     """{the file's code, normalized: the catalog's code, its subject spaced from its number}:
     what the capture looks for on the page in place of a renumbered listed course. The space

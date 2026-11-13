@@ -1,0 +1,429 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "18885",
+ "shape": "degree",
+ "title": "Public Health",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-public-health-for-transfer-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7472,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7472,
+    "output_tokens": 3048,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3048,
+  "output_tokens_details": {
+   "thinking_tokens": 859
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09085,
+ "ms": 24885,
+ "seconds": 25.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 14,
+   "listed": 20,
+   "share": 0.7,
+   "missing": [
+    "BIOSC102",
+    "BIOSC117",
+    "BIOSC119",
+    "BIOSC139",
+    "BIOSC140",
+    "BIOSC146"
+   ],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 11,
+   "codes": [
+    "BIOL117",
+    "BIOL119",
+    "BIOL139",
+    "BIOL140",
+    "BIOL146",
+    "BIOLC1000",
+    "PH100",
+    "PH126",
+    "PH128",
+    "PH230",
+    "PH250"
+   ],
+   "flagged": [
+    "BIOL117",
+    "BIOL119",
+    "BIOL139",
+    "BIOL140",
+    "BIOL146",
+    "BIOLC1000",
+    "PH100",
+    "PH126",
+    "PH128",
+    "PH230",
+    "PH250"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Public Health for Transfer",
+   "measure": "units",
+   "total_units": {
+    "min": 23,
+    "max": 25
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Cal-GETC",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "apply a multi-dimensional approach to health that incorporates the study of social, behavioral, and physiological sciences.",
+    "identify the basic concepts and terminologies of the public health discipline.",
+    "analyze the social determinants of health and strategies for eliminating disease, illness, and health disparities among diverse populations to improve health equity and health outcomes.",
+    "demonstrate behavior-changing techniques to individual and population health.",
+    "demonstrate the steps of community organization and health promotion programming.",
+    "develop preliminary skills to serve as an effective advocate for community and public health, and social and political change.",
+    "access credible public health information from various local, state, and national public health organizations and agencies."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "required core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 13,
+     "max": 14
+    },
+    "courses": [
+     {
+      "code": "BIOL C1000",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "BIOL 117",
+        "units": 4,
+        "catalog_addition": true
+       }
+      ],
+      "catalog_addition": true
+     },
+     {
+      "code": "BUS 240",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 130",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "LIst A - Select one of the following (minimum of 4 units)",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 119",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 139",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 140",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 146",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CHEM 108",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHEM 120",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List B - Select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PH 135",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 137",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 145",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List C - select one of the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "PH 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PH 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PH 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 128",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PH 132",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 152",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PH 230",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PH 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 102",
+    "why": "not in the text; catalog prints BIOL C1000 Introduction to Biology with Lab in its place (likely renumbered)"
+   },
+   {
+    "code": "BIOSC 117",
+    "why": "not in the text under this code; catalog prints BIOL 117 Human Biology with Laboratory (subject apparently renamed)"
+   },
+   {
+    "code": "BIOSC 119",
+    "why": "not in the text under this code; catalog prints BIOL 119 Fundamentals of Microbiology"
+   },
+   {
+    "code": "BIOSC 139",
+    "why": "not in the text under this code; catalog prints BIOL 139 Human Anatomy"
+   },
+   {
+    "code": "BIOSC 140",
+    "why": "not in the text under this code; catalog prints BIOL 140 Human Physiology"
+   },
+   {
+    "code": "BIOSC 146",
+    "why": "not in the text under this code; catalog prints BIOL 146 Principles of Microbiology"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without spaces (e.g., PH124, BIOLC1000); recorded with a space between subject and number.",
+   "Catalog uses subject BIOL where the closed list uses BIOSC; BIOL codes are flagged as catalog additions and the BIOSC codes listed as missing. Reviewer should confirm this is a subject rename.",
+   "The 60 CSU-transferable units sentence is the standard ADT requirement list, not a printed total for this award; degree_total left null. 'Minimum of 18 units in the major' is a generic ADT rule, not the major total; total_units taken from the printed 'Total 23-25'.",
+   "Cal-GETC is named as the GE pattern but no GE unit figure is printed.",
+   "The program learning outcomes are printed for the program page and recorded as this award's outcomes.",
+   "Catalog text begins mid-sentence ('jor or campus.'); the program description may be cut off, so careers could not be checked there."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

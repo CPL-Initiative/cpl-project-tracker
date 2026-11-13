@@ -1,0 +1,206 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "35269",
+ "shape": "certificate",
+ "title": "Network Technology Fundamentals",
+ "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program,certificate-of-achievement-in-network-technology-fundamentals-spring-2020",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6362,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6362,
+    "output_tokens": 1082,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1082,
+  "output_tokens_details": {
+   "thinking_tokens": 265
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04709,
+ "ms": 9036,
+ "seconds": 9.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 5,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Network Technology Fundamentals",
+   "measure": "units",
+   "total_units": {
+    "min": 19,
+    "max": 19
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "terminate, install, and test copper and fiber.",
+    "troubleshoot wireless access points and connections.",
+    "install, configure, and troubleshoot hardware, operating systems, and software applications.",
+    "identify computer components to make informed decisions when purchasing computer hardware and software.",
+    "build a simple ethernet network that includes end-devices and intermediary devices."
+   ],
+   "careers": [
+    "entry level positions in IT networking",
+    "cyber defense",
+    "network forensics",
+    "network security",
+    "cyber security"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Complete all of the following",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 19,
+     "max": 19
+    },
+    "courses": [
+     {
+      "code": "CNT103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT104",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT106",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT114",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNT120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "COMSC101",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Catalog prints codes without a space (e.g. CNT103); these match closed-list codes CNT 103, CNT 104, CNT 106, CNT 114, CNT 120, COMSC 101.",
+   "The block total (Total 19) is printed on the certificate heading 'Network Technology Fundamentals (Total 19)' and matches the program's 19.0 units.",
+   "The award line says 18 or greater semester units; the catalog states 19 units.",
+   "Program learning outcomes are printed for the program as a whole and the certificate shares them; they begin in lowercase as printed (lead-in appears to be cut off).",
+   "The certificate requires a 'C' grade or higher in each course used to meet a requirement."
+  ]
+ },
+ "extracted_run": "43353452924"
+}

@@ -1,0 +1,1656 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "18117",
+ "shape": "certificate",
+ "title": "CSU General Education Breadth",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=102",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 41467,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "output_tokens": 14981
+ },
+ "cost_usd": 0.46549,
+ "ms": 54300,
+ "seconds": 54.7,
+ "parts": 2,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 272,
+   "share": 0.0,
+   "missing": [
+    "ANTH100",
+    "ANTH100H",
+    "ANTH101",
+    "ANTH101L",
+    "ANTH103",
+    "ANTH104",
+    "ART100",
+    "ART100H",
+    "ART101",
+    "ART101H",
+    "ART102",
+    "ART102H",
+    "ASL110",
+    "ASL111",
+    "ASL113",
+    "ASL114",
+    "ASTR100L",
+    "ASTR102",
+    "ASTR103",
+    "ASTR104",
+    "BIOL109",
+    "BIOL109H",
+    "BIOL109HL",
+    "BIOL109L",
+    "BIOL115",
+    "BIOL139",
+    "BIOL149",
+    "BIOL177",
+    "BIOL190",
+    "BIOL190L",
+    "BIOL211",
+    "BIOL212",
+    "BIOL214",
+    "BIOL229",
+    "BIOL239",
+    "BIOL249",
+    "BIOL259",
+    "BIOL290",
+    "CDEV110",
+    "CDEVC1000",
+    "CHEM100",
+    "CHEM200A",
+    "CHEM200AH",
+    "CHNS101",
+    "CHNS102",
+    "CINE103",
+    "CINE104",
+    "CINE105",
+    "CJ101",
+    "CMPR100",
+    "CMPR105",
+    "CNSL101",
+    "CNSL113",
+    "CNSL116",
+    "CNSL150",
+    "COMM100H",
+    "COMM101",
+    "COMM111",
+    "COMM120",
+    "COMM120H",
+    "COMM225",
+    "COMM225H",
+    "COMMC1000",
+    "COMMC1004",
+    "DNCE100",
+    "ECONC2001",
+    "ECONC2002",
+    "EDUC101",
+    "ENGL231",
+    "ENGL232",
+    "ENGL233A",
+    "ENGL233B",
+    "ENGL241",
+    "ENGL242",
+    "ENGL243",
+    "ENGL270",
+    "ENGL271",
+    "ENGL272",
+    "ENGL278",
+    "ENGL279",
+    "ENGLC1000",
+    "ENGLC1000H",
+    "ENGLC1001",
+    "ENGLC1001H",
+    "ENGLC1003",
+    "ENGLC1003H",
+    "ERTH100",
+    "ERTH100L",
+    "ERTH111",
+    "ERTH120",
+    "ERTH121",
+    "ERTH130",
+    "ERTH160",
+    "ERTH200",
+    "ETHN101",
+    "FREN101",
+    "FREN102",
+    "FREN194",
+    "FREN201",
+    "FREN202",
+    "GEOG100",
+    "GEOG100H",
+    "GEOG101",
+    "GEOG101H",
+    "GEOG101L",
+    "GEOG102",
+    "GEOG102H",
+    "GEOG130",
+    "GEOG140",
+    "GSWS101",
+    "GSWS102",
+    "GSWS103",
+    "HIST101",
+    "HIST101H",
+    "HIST102",
+    "HIST102H",
+    "HIST118",
+    "HIST120",
+    "HIST120H",
+    "HIST122",
+    "HIST124",
+    "HIST126",
+    "HIST127",
+    "HIST132",
+    "HIST133",
+    "HIST152",
+    "HIST162",
+    "HISTC1002",
+    "HISTC1002H",
+    "IDS155",
+    "ITAL101",
+    "ITAL102",
+    "ITAL194",
+    "ITAL195",
+    "ITAL201",
+    "ITAL202",
+    "KIN100",
+    "KIN101",
+    "KIN102",
+    "KIN104",
+    "KIN109",
+    "KIN110",
+    "KIN111",
+    "KIN119",
+    "KIN120A",
+    "KIN120B",
+    "KIN121A",
+    "KIN123A",
+    "KIN123B",
+    "KIN125A",
+    "KIN125B",
+    "KIN126A",
+    "KIN126B",
+    "KIN127A",
+    "KIN127B",
+    "KIN127C",
+    "KIN140A",
+    "KIN140B",
+    "KIN140C",
+    "KIN146A",
+    "KIN146B",
+    "KIN146C",
+    "KIN147",
+    "KIN160A",
+    "KIN160B",
+    "KIN163A",
+    "KIN168A",
+    "KIN168B",
+    "KIN185A",
+    "KIN185B",
+    "KIN185C",
+    "KIN189A",
+    "KIN200",
+    "KIN201",
+    "KIN202",
+    "KIN203",
+    "KIN204",
+    "KIN240",
+    "KIN241",
+    "KIN242",
+    "KIN245",
+    "KIN246",
+    "KIN252",
+    "KIN255",
+    "KIN256",
+    "KIN257",
+    "KIN265",
+    "KIN267",
+    "KIN270",
+    "KIN271",
+    "KIN272",
+    "KIN273",
+    "KIN281",
+    "KIN283",
+    "MATH140",
+    "MATH150",
+    "MATH170",
+    "MATH171",
+    "MATH180",
+    "MATH180H",
+    "MATH185",
+    "MATH203",
+    "MATH280",
+    "MATH287",
+    "MATH290",
+    "MATH295",
+    "MUS101",
+    "MUS101H",
+    "MUS102",
+    "MUS103",
+    "MUS104",
+    "PHIL106",
+    "PHIL106H",
+    "PHIL108",
+    "PHIL110",
+    "PHIL111",
+    "PHIL112",
+    "PHIL115",
+    "PHIL118",
+    "PHIL120",
+    "PHYS100",
+    "PHYS150A",
+    "PHYS150B",
+    "PHYS250A",
+    "PHYS250B",
+    "PHYS250C",
+    "POLSC1000",
+    "POLSC1000H",
+    "POLT110",
+    "POLT201",
+    "POLT220",
+    "POLT221",
+    "POLT230",
+    "PSC100",
+    "PSYC157",
+    "PSYC160",
+    "PSYC170",
+    "PSYC180",
+    "PSYC190",
+    "PSYC200",
+    "PSYC220",
+    "PSYC230",
+    "PSYC240",
+    "PSYC250",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "READ150",
+    "SOC100",
+    "SOC100H",
+    "SOC115",
+    "SOC116",
+    "SOC120",
+    "SOC125",
+    "SOC130",
+    "SOC150",
+    "SOC220",
+    "SOC240",
+    "SPAN101",
+    "SPAN101A",
+    "SPAN101B",
+    "SPAN101H",
+    "SPAN102",
+    "SPAN110",
+    "SPAN111",
+    "SPAN194",
+    "SPAN195A",
+    "SPAN195B",
+    "SPAN201",
+    "SPAN202",
+    "STATC1000",
+    "STATC1000H",
+    "THEA100"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    39.0,
+    39.0
+   ],
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "California State University General Education Breadth (CSU), CA",
+   "measure": "units",
+   "total_units": {
+    "min": 39,
+    "max": 39
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "CSU General Education Breadth (Plan B)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "California State University General Education Breadth (CSU), CA",
+    "rule": "choose_units",
+    "minimum": 39,
+    "option_group": null,
+    "stated": {
+     "min": 39,
+     "max": 39
+    },
+    "courses": []
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "CHEM100",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "CHEM200A",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "CHEM200AH",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH100",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH111",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH120",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH121",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH130",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH160",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ERTH200",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "GEOG 101",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "GEOG 101H",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "GEOG 130",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PSC100",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 100",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 150A",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 150B",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 250A",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 250B",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "PHYS 250C",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5)"
+   },
+   {
+    "code": "ANTH101",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "BIOL 109",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "BIOL 109H",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "BIOL 115",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 139",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 149",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 177",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "BIOL 190",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "BIOL 211",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 229",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 239",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 249",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 259",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "BIOL 290",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B/5C)"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5B)"
+   },
+   {
+    "code": "ANTH101L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "ASTR 100L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "BIOL 109L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "BIOL 109HL",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "BIOL 190L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "ERTH100L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "GEOG 101L",
+    "why": "section prints no course list; named only in the preceding section (Control Number 45619, Area 5C)"
+   },
+   {
+    "code": "ETHN 101",
+    "why": "section prints no course list; named only in the preceding section (Area 6) and the Liberal Arts AA section"
+   },
+   {
+    "code": "ART 100",
+    "why": "section prints no course list; named only in the Liberal Arts: Arts, Humanities, and Communication AA section"
+   },
+   {
+    "code": "ART 100H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ART 102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ART 102H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ASL 110",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ASL 111",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "CINE 103",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "CINE 104",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM C1004",
+    "why": "section prints no course list; named only in the Liberal Arts AA section (as COMM100, now COMMC1004)"
+   },
+   {
+    "code": "COMM 100H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM 101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM C1000",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM 111",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM 120",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "COMM 120H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "DNCE 100",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1000",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1000H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1003",
+    "why": "section prints no course list; named only in the Liberal Arts AA section (as ENGL102, now ENGLC1003)"
+   },
+   {
+    "code": "ENGL C1003H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section (as ENGL102H, now ENGLC1003H)"
+   },
+   {
+    "code": "ENGL C1001",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL C1001H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 231",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 232",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 233A",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 233B",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 241",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 242",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 270",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 271",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 272",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 278",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ENGL 279",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "FREN101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "FREN102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "FREN194",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "FREN201",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "FREN202",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "GSWS 101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "GSWS 103",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 101H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 102H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 118",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 120",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 120H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST C1002",
+    "why": "section prints no course list; named only in the Liberal Arts AA section (as HIST121, now HISTC1002)"
+   },
+   {
+    "code": "HIST C1002H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section (as HIST121H, now HISTC1002H)"
+   },
+   {
+    "code": "HIST 124",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 127",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 132",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 133",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 152",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "HIST 162",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL194",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL195",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL201",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ITAL202",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 101H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 103",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "MUS 104",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 106",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 106H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 108",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 110",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 111",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 112",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 115",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 118",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "PHIL 120",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "READ 150",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 101",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 101H",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 101A",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 101B",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 102",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 110",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 111",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 194",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 195A",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 195B",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 201",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "SPAN 202",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "THEA 100",
+    "why": "section prints no course list; named only in the Liberal Arts AA section"
+   },
+   {
+    "code": "ANTH100",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH100H",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH103",
+    "why": "not in the text"
+   },
+   {
+    "code": "ANTH104",
+    "why": "not in the text"
+   },
+   {
+    "code": "ART 101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ART 101H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ASL 113",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ASL 114",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ASTR 102",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ASTR 103",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ASTR 104",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "BIOL 212",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "BIOL 214",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CDEV C1000",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CDEV110",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CHNS101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CHNS102",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CINE 105",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CJ101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CMPR 105",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CMPR100",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CNSL 101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CNSL 113",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CNSL 116",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "CNSL 150",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "COMM 225",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "COMM 225H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ECONC2001",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ECONC2002",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "EDUC 101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "ENGL 243",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GEOG 100",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GEOG 100H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GEOG 102H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GEOG 140",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "GSWS 102",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "HIST 122",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "HIST 126",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "IDS 155",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 100",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 101",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 102",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 104",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 109",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 110",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 111",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 119",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 120A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 120B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 121A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 123A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 123B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 125A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 125B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 126A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 126B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 127A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 127B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 127C",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 140A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 140B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 140C",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 146A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 146B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 146C",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 147",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 160A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 160B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 163A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 168A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 168B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 185A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 185B",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 185C",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 189A",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 200",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 201",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 202",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 203",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 204",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 240",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 241",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 242",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 245",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 246",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 252",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 255",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 256",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 257",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 265",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 267",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 270",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 271",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 272",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 273",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 281",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "KIN 283",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 140",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 150",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 170",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 171",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 180",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 180H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 185",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 203",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 280",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 287",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 290",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "MATH 295",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLSC1000",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLSC1000H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLT 110",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLT 201",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLT 220",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLT 221",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "POLT 230",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 157",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 160",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 170",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 180",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 190",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 220",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 230",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 240",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC 250",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 100",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 100H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 115",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 116",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 120",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 125",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 130",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 150",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 220",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "SOC 240",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "section prints no course list; award is completion of the CSU GE Breadth pattern"
+   }
+  ],
+  "notes": [
+   "The CSU GE Breadth Certificate of Achievement section (Control Number 18117) prints only: 'Unit Range for Completion : 39.0 - 39.0', 'Complete all CSU General Education Breadth Requirements (Plan B) to a minimum of 39 units.', and a program rule header '(Total Units 39.0 - 39.0) The following number of Units' with no courses listed beneath it. No blocks were recorded.",
+   "The Area 5A/5B/5C/6 course lists at the top of page 102 sit before the CSU GE heading and end with 'Control Number: 45619'; in this catalog the control number closes each program, so those lists belong to the preceding program (its Area 1-6 numbering suggests Cal-GETC), not to this award.",
+   "The certificate is itself the CSU GE Breadth pattern; ge_pattern names it and total_units records the printed 39 units. ge_units left null since no separate GE figure is printed apart from the award total.",
+   "No program learning outcomes or careers are printed for this award.",
+   "Part 2: The section for this award (Control Number 18117) prints only: 'Unit Range for Completion : 39.0 - 39.0', 'Complete all CSU General Education Breadth Requirements (Plan B) to a minimum of 39 units.', and a Program Rules header '(Total Units 39.0 - 39.0) The following number of Units' with no courses beneath it. The single block is recorded from that header with an empty course list.",
+   "Part 2: The Area 5A/5B/5C and Area 6 Ethnic Studies lists above it on page 102 end with Control Number 45619 and appear to belong to the preceding program (likely a Cal-GETC certificate), not this award; they were not read into this record.",
+   "Part 2: ge_pattern is set to the CSU GE Breadth pattern because the award itself is completion of that pattern; ge_units left null since 39 is recorded as the certificate's total_units. Reviewer may prefer ge_pattern null for a certificate.",
+   "Part 2: No program outcomes or careers are printed for this award.",
+   "Read in 2 parts, because one reply could not hold the whole record."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "63955efb88c7e09a",
+ "source_codes": [
+  "ANTH100",
+  "ANTH100H",
+  "ANTH101",
+  "ANTH101L",
+  "ANTH104",
+  "ART100",
+  "ART100H",
+  "ART101",
+  "ART101H",
+  "ART102",
+  "ART102H",
+  "ASL110",
+  "ASL111",
+  "ASTR100L",
+  "ASTR102",
+  "ASTR103",
+  "ASTR104",
+  "BIOL109",
+  "BIOL109H",
+  "BIOL109HL",
+  "BIOL109L",
+  "BIOL115",
+  "BIOL139",
+  "BIOL149",
+  "BIOL177",
+  "BIOL190",
+  "BIOL190L",
+  "BIOL211",
+  "BIOL229",
+  "BIOL239",
+  "BIOL249",
+  "BIOL259",
+  "BIOL290",
+  "CHEM100",
+  "CHEM200A",
+  "CHEM200AH",
+  "CINE103",
+  "CINE104",
+  "CNSL101",
+  "CNSL116",
+  "CNSL150",
+  "COMM100H",
+  "COMM101",
+  "COMM111",
+  "COMM120",
+  "COMM120H",
+  "COMM225",
+  "COMM225H",
+  "COMMC1000",
+  "COMMC1004",
+  "DNCE100",
+  "EDUC101",
+  "ENGL231",
+  "ENGL232",
+  "ENGL233A",
+  "ENGL233B",
+  "ENGL241",
+  "ENGL242",
+  "ENGL270",
+  "ENGL271",
+  "ENGL272",
+  "ENGL278",
+  "ENGL279",
+  "ENGLC1000",
+  "ENGLC1000H",
+  "ENGLC1001",
+  "ENGLC1001H",
+  "ENGLC1003",
+  "ENGLC1003H",
+  "ERTH100",
+  "ERTH100L",
+  "ERTH111",
+  "ERTH120",
+  "ERTH121",
+  "ERTH130",
+  "ERTH160",
+  "ERTH200",
+  "ETHN101",
+  "FREN101",
+  "FREN102",
+  "FREN194",
+  "FREN201",
+  "FREN202",
+  "GEOG101",
+  "GEOG101H",
+  "GEOG101L",
+  "GEOG130",
+  "GSWS101",
+  "GSWS102",
+  "GSWS103",
+  "HIST101",
+  "HIST101H",
+  "HIST102",
+  "HIST102H",
+  "HIST118",
+  "HIST120",
+  "HIST120H",
+  "HIST124",
+  "HIST127",
+  "HIST132",
+  "HIST133",
+  "HIST152",
+  "HIST162",
+  "HISTC1002",
+  "HISTC1002H",
+  "ITAL101",
+  "ITAL102",
+  "ITAL194",
+  "ITAL195",
+  "ITAL201",
+  "ITAL202",
+  "MATH140",
+  "MATH150",
+  "MATH171",
+  "MATH180",
+  "MATH180H",
+  "MATH185",
+  "MATH280",
+  "MATH287",
+  "MATH290",
+  "MATH295",
+  "MUS101",
+  "MUS101H",
+  "MUS102",
+  "MUS103",
+  "MUS104",
+  "PHIL106",
+  "PHIL106H",
+  "PHIL108",
+  "PHIL110",
+  "PHIL111",
+  "PHIL112",
+  "PHIL115",
+  "PHIL118",
+  "PHIL120",
+  "PHYS100",
+  "PHYS150A",
+  "PHYS150B",
+  "PHYS250A",
+  "PHYS250B",
+  "PHYS250C",
+  "PSC100",
+  "PSYC200",
+  "READ150",
+  "SPAN101",
+  "SPAN101A",
+  "SPAN101B",
+  "SPAN101H",
+  "SPAN102",
+  "SPAN110",
+  "SPAN111",
+  "SPAN194",
+  "SPAN195A",
+  "SPAN195B",
+  "SPAN201",
+  "SPAN202",
+  "STATC1000",
+  "STATC1000H",
+  "THEA100"
+ ],
+ "source_coverage": 0.585
+}

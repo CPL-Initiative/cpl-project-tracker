@@ -1,0 +1,235 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "37150",
+ "shape": "degree",
+ "title": "Audio Visual Technology",
+ "award": "A.S. Degree",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/a-s-in-audio-visual-technology-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6786,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6786,
+    "output_tokens": 1321,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1321,
+  "output_tokens_details": {
+   "thinking_tokens": 419
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05356,
+ "ms": 14176,
+ "seconds": 17.3,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 6,
+   "listed": 6,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "MUSX101",
+    "MUSX295"
+   ],
+   "flagged": [
+    "MUSX101",
+    "MUSX295"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 4,
+   "courses": 0,
+   "count": 4,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 2,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "A.S. in Audio Visual Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 22,
+    "max": 22
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "Local general education (A.S. Degree Local)",
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "analyze and describe the science and technology for basic audio, visual, and audiovisual systems integration.",
+    "set up and test an audio, video, and audiovisual network.",
+    "describe and explain the components of sound and hearing, and vision and light as they pertain to human perception and venue limitations.",
+    "display proper customer service and professional behavior."
+   ],
+   "careers": [
+    "Audiovisual (AV) technicians",
+    "audiovisual industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 20,
+     "max": 20
+    },
+    "courses": [
+     {
+      "code": "CNT103",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FTVE160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSX100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSX101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MUSX120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSX124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "plus at least 2 units from",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2
+    },
+    "courses": [
+     {
+      "code": "MUSX295",
+      "units": 1,
+      "units_max": 4,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Codes are printed without a space (e.g. CNT103); recorded as printed. MUSX101 and MUSX295 are not in the closed list and are marked as catalog additions.",
+   "The page states general education requirements 'as listed in the catalog' for this local A.S. degree but prints no GE unit figure and no degree total.",
+   "Careers taken from the description: 'Audiovisual (AV) technicians' and 'entry-level jobs in the audiovisual industry'; the description also mentions preparation for the Certified Technology Specialist (CTS) certification exam."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

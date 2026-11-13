@@ -1,0 +1,173 @@
+{
+ "college": "Santiago Canyon College",
+ "control_number": "37805",
+ "shape": "noncredit",
+ "title": "Nurse Assistant Acute Care",
+ "award": "Noncredit program",
+ "source_url": "https://www.sccollege.edu/uploads/campus/documents/SCC_2026_2027_Catalog.pdf#page=269",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8012,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8012,
+    "output_tokens": 662,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 662,
+  "output_tokens_details": {
+   "thinking_tokens": 171
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04529,
+ "ms": 6613,
+ "seconds": 6.8,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    222.0,
+    222.0
+   ],
+   "stated": [
+    222.0,
+    222.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Nurse Assistant Acute Care, CC",
+   "measure": "hours",
+   "total_units": {
+    "min": 222,
+    "max": 222
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "nurse assistants"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 222,
+     "max": 222
+    },
+    "courses": [
+     {
+      "code": "VMED070",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "VMED071",
+      "units": 132,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The catalog prints codes as VMED070 and VMED071; these were matched to the closed list's VMED 70 and VMED 71. The catalog titles VMED070 'Acute Care Theory for Nurse Assistants', while the closed list says 'for CNAs'.",
+   "This is a noncredit Certificate of Completion counted in hours; the totals and course figures are hours (90 + 132 = 222).",
+   "No program learning outcomes are printed for this award.",
+   "The career entry 'nurse assistants' is taken from the description 'designed to train nurse assistants for employment in the acute care facility'."
+  ]
+ },
+ "extracted_run": "43339249633",
+ "source_sha": "0b1819311dd2afbe",
+ "source_codes": [
+  "VMED70",
+  "VMED71"
+ ],
+ "source_coverage": 1.0
+}

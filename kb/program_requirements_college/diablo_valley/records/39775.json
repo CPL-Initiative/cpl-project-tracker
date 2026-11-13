@@ -1,0 +1,422 @@
+{
+ "college": "Diablo Valley College",
+ "control_number": "39775",
+ "shape": "certificate",
+ "title": "Drone Technology",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/program/certificate-of-achievement-in-drone-technology-fall-2026",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7438,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7438,
+    "output_tokens": 3052,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3052,
+  "output_tokens_details": {
+   "thinking_tokens": 969
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09079,
+ "ms": 24547,
+ "seconds": 24.7,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 20,
+   "listed": 26,
+   "share": 0.769,
+   "missing": [
+    "ARTDM136",
+    "BIOSC126",
+    "BIOSC170",
+    "FTVE160",
+    "FTVE165",
+    "GEOL120"
+   ],
+   "unexplained": [
+    "GEOL120"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 2,
+   "codes": [
+    "BIOL126",
+    "BIOL170"
+   ],
+   "flagged": [
+    "BIOL126",
+    "BIOL170"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Certificate of Achievement in Drone Technology",
+   "measure": "units",
+   "total_units": {
+    "min": 12,
+    "max": 12
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "explain the basics of drone flight preparation.",
+    "demonstrate how to download and post-process data acquired with a drone.",
+    "describe UAS laws, air space regulations, and licensing.",
+    "demonstrate the procedures for analyzing data obtained during a drone flight.",
+    "demonstrate how the data obtained from drone is applied in a selected profession.",
+    "explain the how data acquired by drone is used in geospatial applications."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "required courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 6,
+     "max": 6
+    },
+    "courses": [
+     {
+      "code": "GEOG 164",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 165",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Geography and Geospatial",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "GEOG 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 129",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "GEOG 160",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Administration of Justice",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADJUS 203",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 222",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADJUS 250",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Art Digital Media",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARTDM 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARTDM 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Biology and Environmental Science",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "BIOL 126",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "GEOG 140",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Business and Entrepreneurship",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ARCHI 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 124",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 170",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CONST 298",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "RE 162",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Horticulture",
+    "rule": "choose_units",
+    "minimum": 6,
+    "option_group": "Elective group",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "HORT 110",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 179",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 185",
+      "units": 1.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HORT 298",
+      "units": 0.5,
+      "units_max": 3,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "BIOSC 126",
+    "why": "catalog prints this course as BIOL126 (Ecology and Field Biology); recorded as BIOL 126"
+   },
+   {
+    "code": "BIOSC 170",
+    "why": "catalog prints this course as BIOL170 (Environmental Science); recorded as BIOL 170"
+   },
+   {
+    "code": "ARTDM 136",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTVE 160",
+    "why": "not in the text"
+   },
+   {
+    "code": "FTVE 165",
+    "why": "not in the text"
+   }
+  ],
+  "notes": [
+   "Catalog prints codes without spaces (e.g., GEOG164); recorded with a space between subject and number to match the closed list.",
+   "The elective section says 'complete at least 6 units from one of the following groups' (Total 6); each group is recorded as its own choose_units block with minimum 6 in option_group 'Elective group'. Each group prints '(Total 0)' and 'Complete the following number of credits: 0', which appears to be a placeholder; stated left null for the groups.",
+   "BIOL126 and BIOL170 are printed in the catalog but the closed list has BIOSC 126 and BIOSC 170 with the same titles; likely a subject-code difference. Reviewer should check.",
+   "CONST298 and HORT298 (Independent Study) printed as 0.5 - 3 units.",
+   "No careers are named beyond the general phrase 'careers that employ generalized or specialized applications of drones'; the FAA Part 107 commercial drone pilot exam is mentioned as an exam, not recorded as a career.",
+   "Outcomes copied as printed, including the wording 'explain the how data acquired by drone...'."
+  ]
+ },
+ "extracted_run": "43379378196"
+}

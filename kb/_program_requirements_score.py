@@ -1066,3 +1066,158 @@ def score(record: dict, closed: list[dict], text: str | None = None, award: str 
         "pass": (cov_ok and not unflagged and arith["pass"] and not rep_codes
                  and outs["pass"]),
     }
+
+
+# ── The record's own heading names its program's award (S644; reported, not in the pass rule) ──
+# Santiago Canyon's 2026-2027 catalog PDF prints "Control Number: N" AFTER each program, and the
+# reader cut each page from that line on, so a local degree's record held the transfer degree printed
+# next (COBIx, #3194 comment 6841001207: Economics AA 11943 and Sociology AA 11947 PASS holding their
+# AA-T's requirements). Coverage, invented and the arithmetic all pass on such a record: the two
+# degrees share most courses and each sums to its own total. The record's own section_heading names
+# the award it read, so a heading that names another award type than the state file's is a reason of
+# its own. heading_award_check() reports it beside the checks; passes_live and the tab's rule do not
+# read it until the conductor decides (kb/_program_requirements_heading_agreement.py measures what it
+# would fail, by college).
+_HEADING_DASH = str.maketrans({"‐": "-", "‑": "-", "‒": "-", "–": "-", "—": "-"})
+# A transfer degree as headings print it: "AS-T", "A.A.-T", "AA-T", "AAT", "ADT", "for Transfer",
+# "for UC Transfer", "A.A.-Transfer", "Associate in Arts Transfer Degree", "A.S. T Degree". The bare
+# letters never after a point: Hartnell's program codes "AS.AST" (Astronomy) and "AS.ADT" (Advanced
+# Diesel Technology) are local degrees.
+HEADING_TRANSFER = re.compile(
+    r"\bA\.?\s?[AS]\.?\s?-\s?T\b\.?|(?<![.\w])A[AS]T\b|(?<![.\w])ADT\b|\b(?:for|uc)\s+(?:uc\s+)?transfer\b"
+    r"|\b(?:arts|science)[\s-]+(?:uc\s+)?transfer\b|-\s*transfer\b|\btransfer\s+degree\b"
+    r"|\bA\.?\s?[AS]\.?\s?T\.?\s+degree\b|\bA\.\s?[AS]\.\s?T\b\.?", re.I)   # "A.A.T" (round 2, finding 13)
+HEADING_CERTIFICATE = re.compile(r"\bcertificates?\b|\bcert\b\.?", re.I)   # a bare "Cert" too (finding 14)
+# A certificate's letters, standing alone ("Construction Inspection for Public Works, CA").
+HEADING_CERTIFICATE_CODE = re.compile(r"(?:^|[\s,(:-])(?:CA|COA|CoA|CP|CC|CCL|NC)(?=\)|\s*$|\s*[,:(-])")
+# "Associate Degree Requirements" alone names no type: it is the college's general education section.
+HEADING_LOCAL = re.compile(r"\bA\.\s?[AS]\.(?!\s?-?\s?T\b)|\bassociates?\s+(?:in|of)\s+(?:arts|science)\b"
+                           r"|\bA[AS]\s+degree\b", re.I)
+# The bare letters, standing alone and not a transfer degree's ("General Marketing, AS").
+HEADING_LOCAL_CODE = re.compile(r"(?:^|[\s,(:/-])(?:AA|AS)(?![-\s]?T\b)(?=\)|\s*$|\s*[,:(/-]|\s+(?:in|degree|and|or|&)\s)")
+HEADING_BACHELOR = re.compile(r"\bbachelor|\bbaccalaureate|\bB\.\s?[AS]\.", re.I)
+HEADING_ANY_DEGREE = re.compile(r"\bdegrees?\b", re.I)
+# The model's own note that the program's heading is not in the text it read ("Not in the text (only
+# the ... A.S. degree section appears)", "No Career Specialist section in the text").
+HEADING_ABSENT = re.compile(r"\bnot (?:in|found in|printed in|present in|shown in) the (?:supplied |provided |given )?"
+                            r"text\b|\bnot in text\b|\bnot found\b|\bno\s+(?:[\w.'’:&/-]+\s+){0,9}section\b"
+                            r"|\bheading (?:is )?not\b|\bnot (?:printed|present|found)\b", re.I)
+# The state file's award, as a heading type.
+AWARD_TYPE = {"adt": "transfer", "as": "local_degree", "aa": "local_degree", "coa": "certificate",
+              "noncredit": "certificate", "bs": "bachelor"}
+DEGREE_TYPES = ("transfer", "local_degree", "bachelor")
+
+
+def award_type(award: str | None) -> str | None:
+    """The state file's award as one of transfer, local_degree, certificate (credit or noncredit)
+    or bachelor; None when the award names none of them."""
+    from _program_requirements_pilot import award_kind
+    return AWARD_TYPE.get(award_kind(award))
+
+
+# Words a heading prints that name no program: "Program Requirements", "Requirements for the Major",
+# "Associate in Science Degree Major Requirements", "Plan of Study Grid", "Cal-GETC Areas and Units".
+# A heading of these words alone says nothing about which program it heads.
+HEADING_GENERIC = set("""
+a aa aas aat adt ast as an and are area areas arts associate associates award awards b ba bs c ca cal catalog
+certificate certificates certification coa completion competency complete core course courses csu curriculum d
+degree degrees description education elective electives emphasis following for from general getc graduation grid i
+id identification ii iii igetc in local major majors minimum maximum noncredit numbering of option options or plan
+program programs proficiency recommended requirement requirements required science select sequence skills
+specialization study system t the to total transfer uc unit units with achievement additional list page section
+req reqs semester year first second third fourth fall spring summer pattern california ge breadth group
+outcomes learning career careers information descriptions chapter support field time listing listings availability
+per guide credit non after acceptance into active agreements exam is are be at on by this these other
+code codes state academic number control
+""".split())
+
+
+def heading_content_words(text: str | None) -> list[str]:
+    """The heading's words that could name a program: no generic word, no number or code ("W003304C")."""
+    return [w for w in re.findall(r"[a-z0-9]+", (text or "").lower())
+            if w not in HEADING_GENERIC and not re.search(r"\d", w) and len(w) > 1]
+
+
+def _without_title(heading: str, title: str) -> str:
+    """The heading with the program's own title taken out once, where the title alone names no award
+    type: Irvine Valley 44477 is COCI "Chemistry for UC", an A.S., and its heading "Chemistry for UC
+    Transfer - A.S. Degree" names no transfer degree (S645 review of #3201, finding 14). A title that
+    names a type itself ("Mathematics 2.0 for Transfer") stays, so its type still counts."""
+    words = re.findall(r"[A-Za-z0-9]+", title or "")
+    if not words or heading_award_types(title):
+        return heading
+    pat = r"(?<![A-Za-z0-9])" + r"[\W_]+".join(re.escape(w) for w in words) + r"(?![A-Za-z0-9])"
+    return re.sub(pat, " ", heading, count=1, flags=re.I)
+
+
+def heading_award_types(heading: str | None, title: str | None = None) -> set[str]:
+    """The award types a heading names. A transfer degree's words ("Associate in Arts in Sociology for
+    Transfer") name no local degree; a local degree beside it needs its own letters ("AS and AS-T").
+    A bare "Degrees" with no type names `degree` (any degree). Given the program's title, its words
+    are read as the title, never as an award (_without_title)."""
+    h = (heading or "").translate(_HEADING_DASH)
+    if title:
+        h = _without_title(h, title.translate(_HEADING_DASH))
+    out: set[str] = set()
+    transfer = bool(HEADING_TRANSFER.search(h))
+    if transfer:
+        out.add("transfer")
+    if HEADING_CERTIFICATE.search(h) or HEADING_CERTIFICATE_CODE.search(h):
+        out.add("certificate")
+    rest = HEADING_TRANSFER.sub(" ", h)
+    if transfer:
+        if HEADING_LOCAL_CODE.search(rest):
+            out.add("local_degree")
+    elif HEADING_LOCAL.search(rest) or HEADING_LOCAL_CODE.search(rest):
+        out.add("local_degree")
+    if HEADING_BACHELOR.search(h):
+        out.add("bachelor")
+    if not out.intersection(DEGREE_TYPES) and HEADING_ANY_DEGREE.search(h):
+        out.add("degree")
+    return out
+
+
+def heading_award_check(record: dict | None, award: str | None, control_number: str | None = None,
+                        title: str | None = None) -> dict:
+    """Whether the record's own section_heading names its program's award type. Fails only when the
+    heading names award types and none is the program's (status names_other_award, with the kind:
+    transfer_under_local_degree, local_degree_under_transfer, certificate_under_local_degree, ...).
+    A heading that names no award, an award the state file does not type, and the model's note that
+    the heading is not in its text (heading_absent) pass and are reported. A control number in the
+    heading proves nothing: at Santiago Canyon the model copied "(Control Number: 19588)" into the
+    heading of the certificate printed after the number, filed under the A.S. 19588 the number
+    closes. control_number is kept for the caller's report. Not read by passes_live or score() (S644).
+    Given the program's COCI title, its words are read as the title (heading_award_types), and a
+    heading that names another award and none of the title's words passes in a bucket of its own,
+    names_award_not_program. Pasadena prints one page for an A.S. and its certificate
+    ("...-as-cert-achievement/", "Requirements for the Certificate of Achievement"; the A.S. is the
+    certificate plus general education), so such a heading says which award's section the page opens
+    on and nothing of which program the record holds (S645 review of #3201, finding 15)."""
+    prog = (record or {}).get("program") or {}
+    heading = (prog.get("section_heading") or "").strip()
+    filed = award_type(award)
+    base = {"heading": heading or None, "filed": filed, "control_number": control_number}
+    if not heading:
+        return dict(base, **{"pass": True, "status": "unstated", "names": [], "why": []})
+    if HEADING_ABSENT.search(heading):
+        return dict(base, **{"pass": True, "status": "heading_absent", "names": [], "why": []})
+    names = heading_award_types(heading, title)
+    if not names or filed is None:
+        return dict(base, **{"pass": True, "status": "unstated", "names": sorted(names), "why": []})
+    if filed in names or ("degree" in names and filed in DEGREE_TYPES):
+        return dict(base, **{"pass": True, "status": "agrees", "names": sorted(names), "why": []})
+    kind = "%s_under_%s" % ("_or_".join(sorted(names)), filed)
+    from _program_requirements_pilot import title_tokens
+    tokens = title_tokens(title or "")
+    # Set aside only a heading that names no program at all (round 2, finding 12): one naming another
+    # program's words is a crossing, and still fails.
+    if tokens and not heading_content_words(heading):
+        return dict(base, **{"pass": True, "status": "names_award_not_program", "names": sorted(names),
+                             "kind": kind,
+                             "why": ["the record's heading %r names a %s and none of the program's title words: "
+                                     "a page printing one section for two awards heads both with it"
+                                     % (heading[:120], " or ".join(sorted(names)).replace("_", " "))]})
+    return dict(base, **{"pass": False, "status": "names_other_award", "names": sorted(names), "kind": kind,
+                         "why": ["the record's heading %r names a %s; the program is a %s"
+                                 % (heading[:120], " or ".join(sorted(names)).replace("_", " "),
+                                    filed.replace("_", " "))]})

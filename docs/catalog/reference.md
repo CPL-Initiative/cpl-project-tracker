@@ -36,11 +36,11 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [EACR — Exhibit & CR Adoption — lane state](../reference/lanes/eacr-exhibit-cr-adoption.md) | lanes | `eacr-exhibit-cr-adoption.md` | 2026-08-28 | 2026-10-31 |
 | [ESL packaging (the first fold) — lane state](../reference/lanes/esl-packaging.md) | lanes | `esl-packaging.md` | 2026-08-28 | 2026-09-27 |
 | [Excel→Supabase Phase 2-4 — lane state](../reference/lanes/excel-to-supabase.md) | lanes | `excel-to-supabase.md` | 2026-08-28 | 2026-08-28 |
-| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-12 |
+| [Governance & team enablement — lane state](../reference/lanes/governance-team-enablement.md) | lanes | `governance-team-enablement.md` | 2026-08-28 | 2026-11-13 |
 | [GR register / CO policy & regulation review — lane state](../reference/lanes/gr-register.md) | lanes | `gr-register.md` | 2026-08-28 | 2026-08-30 |
 | [Implementation Funding tab / the $35M model — lane state](../reference/lanes/implementation-funding.md) | lanes | `implementation-funding.md` | 2026-08-28 | 2026-11-12 |
 | [Letters, Memos & Reports / the communications register — lane state](../reference/lanes/communications.md) | lanes | `communications.md` | 2026-10-23 | 2026-10-24 |
-| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-12 |
+| [Library / where decks, films and documents live — lane state](../reference/lanes/library.md) | lanes | `library.md` | 2026-10-05 | 2026-11-13 |
 | [Local course ↔ CR alignment — lane state](../reference/lanes/local-course-cr-alignment.md) | lanes | `local-course-cr-alignment.md` | 2026-08-28 | 2026-11-07 |
 | [MAP Custom Reports (3 new) / ITPI automation — lane state](../reference/lanes/map-custom-reports.md) | lanes | `map-custom-reports.md` | 2026-08-28 | 2026-09-10 |
 | [MAP Users / student contact — lane state](../reference/lanes/map-users-student-contact.md) | lanes | `map-users-student-contact.md` | 2026-08-28 | 2026-08-28 |
@@ -63,7 +63,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [The Commons — one tracking system for the common references, and a Commons dash — lane state](../reference/lanes/commons.md) | lanes | `commons.md` | 2026-10-18 | 2026-11-13 |
 | [Title 5 §55050 → Ed. Code Article 9 — lane state](../reference/lanes/t5-55050-article-9.md) | lanes | `t5-55050-article-9.md` | 2026-08-28 | 2026-08-30 |
 | [Primary-source statutory and regulatory text](../reference/statute/README.md) | statute | `README.md` |  |  |
-| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-10-05 |
+| [Approval-prompt guards — why the allowlist never worked, and where the hooks must live](../reference/approval_prompt_hooks.md) | — | `approval_prompt_hooks.md` | 2026-09-19 | 2026-11-13 |
 | [Blocked sources: what a session does before a refused read becomes a card for Sam](../reference/blocked_sources.md) | — | `blocked_sources.md` | 2026-11-11 | 2026-11-11 |
 | [Branch policy — the full record (CLAUDE.md offload)](../reference/branch_policy.md) | — | `branch_policy.md` | 2026-08-28 | 2026-08-28 |
 | [COBIx on pull requests: the review loop without Sam in the middle](../reference/cobix_pr_loop.md) | — | `cobix_pr_loop.md` |  |  |
@@ -84,7 +84,7 @@ Deep reference `CLAUDE.md` points at rather than carries: the pipeline and build
 | [Scheduled sessions — what a session started by Sam's routine does](../reference/scheduled_sessions.md) | — | `scheduled_sessions.md` | 2026-10-04 | 2026-11-12 |
 | [SkyView — the engineering invariants](../reference/skyview_invariants.md) | — | `skyview_invariants.md` | 2026-09-09 | 2026-09-29 |
 | [The canonical credential model: issuer on the title, assessor on the local exhibit](../reference/canonical_credential_model.md) | — | `canonical_credential_model.md` | 2026-11-11 | 2026-11-11 |
-| [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-10-30 |
+| [The industry-credential watch agent](../reference/credential_watch_agent.md) | — | `credential_watch_agent.md` | 2026-09-30 | 2026-11-13 |
 | [The Library filer — every piece files itself to Drive](../reference/library_filer.md) | — | `library_filer.md` | 2026-10-06 | 2026-10-08 |
 | [The live-session banner — how a session announces itself, and the two things it cannot know](../reference/live_session_banner.md) | — | `live_session_banner.md` | 2026-09-10 | 2026-09-10 |
 | [Troubleshooting — dashboard, Pages, scrape, and the stop-hook false positives](../reference/troubleshooting.md) | — | `troubleshooting.md` | 2026-08-19 | 2026-08-19 |
