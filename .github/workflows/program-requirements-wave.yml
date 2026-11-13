@@ -1,0 +1,216 @@
+name: Program requirements, a wave of colleges
+
+# The program requirements harvest, several colleges in one dispatch (S644;
+# docs/program_requirements_harvest_lessons.md, "Running a wave"). Each college
+# is read by kb/_program_requirements_college.py, step by step, as
+# program-requirements-college.yml reads one; kb/_program_requirements_wave.py
+# plans, prices, verifies and files around it. No reading logic lives here.
+#
+#   plan   validates the dispatch (at most 8 colleges, each in
+#          program_source_registry by an anon read, none named twice, no two on
+#          one catalog host, limit_usd at most Sam's standing $40, the branch
+#          claude/harvest-wave-<wave>, never main) and emits the matrix.
+#   read   one job a college, pushing nothing, on the branch's head (so records a
+#          wave already filed count as kept): capture (free in model calls), a
+#          price (would_extract x the college's rate over its priced records,
+#          never below 0.08, plus 25%), the extraction only when extract is 1, the
+#          run is its first attempt, the capture answered 90% of its pages and the
+#          price is within the limit (it SPENDS MODEL CALLS), the file step into
+#          the job's checkout, then a verify against main's filed records, its
+#          cost read from the run's own out/ folder. Uploads the college's folder
+#          and its verify row (a provisional row from the price step until then).
+#
+# An extracting wave runs once: a re-run keeps the run id and its first commit
+# and would pay again for what the first attempt read, so plan and price refuse
+# any attempt above 1 with extract 1. Dispatch a new wave instead.
+#   file   one job: copies every college's folder into the branch and writes
+#          kb/program_requirements_wave/<wave>.json and .md, one commit, one push.
+#
+# Version 1 writes no table: the load, reread and display stay the college
+# workflow's dispatches (step=reread college=X on the wave branch), which the
+# conductor runs for each ready college after reading the one table.
+# kb/governance_surface_map.json dismisses this workflow with its reason.
+
+on:
+  workflow_dispatch:
+    inputs:
+      colleges:
+        description: "Colleges, comma-separated, as program_source_registry names them (at most 8, distinct catalog hosts)"
+        required: true
+      extract:
+        description: "0 = capture and price only (free); 1 = also extract where the price is within the limit (spends model calls)"
+        required: false
+        default: "0"
+      limit_usd:
+        description: "The most a college's extraction may cost, on the estimate (at most 40, Sam's standing limit)"
+        required: false
+        default: "40"
+      wave:
+        description: "The wave's short name; dispatch on claude/harvest-wave-<wave>"
+        required: true
+
+concurrency:
+  group: program-requirements-wave-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      matrix: ${{ steps.plan.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Plan the wave (names, hosts, limit, branch)
+        id: plan
+        env:
+          ATTEMPT: ${{ github.run_attempt }}
+          COLLEGES: ${{ github.event.inputs.colleges }}
+          EXTRACT: ${{ github.event.inputs.extract }}
+          LIMIT_USD: ${{ github.event.inputs.limit_usd }}
+          WAVE: ${{ github.event.inputs.wave }}
+          REF_NAME: ${{ github.ref_name }}
+        run: >-
+          python3 kb/_program_requirements_wave.py plan --colleges "$COLLEGES" --extract "$EXTRACT"
+          --limit-usd "$LIMIT_USD" --wave "$WAVE" --ref "$REF_NAME" --attempt "$ATTEMPT"
+
+  read:
+    needs: plan
+    name: read ${{ matrix.college }}
+    runs-on: ubuntu-latest
+    # Under a hosted runner's 360, so the steps that file a stopped job's price and records still run.
+    timeout-minutes: 345
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      max-parallel: 6
+      matrix:
+        include: ${{ fromJSON(needs.plan.outputs.matrix) }}
+    env:
+      COLLEGE: ${{ matrix.college }}
+      SLUG: ${{ matrix.slug }}
+      EXTRACT: ${{ github.event.inputs.extract }}
+      LIMIT_USD: ${{ github.event.inputs.limit_usd }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          # The branch's head, never the dispatch's commit: a re-run, or a wave after a wave, prices
+          # against what the branch has filed.
+          ref: ${{ github.ref_name }}
+      - name: Fetch main, the baseline the verify compares with
+        run: git fetch --depth 1 origin main:refs/remotes/origin/main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Install Playwright + Chromium, pypdf, pdfminer
+        run: |
+          pip install --quiet playwright pypdf pdfminer.six
+          bash scripts/install_browser.sh
+      - name: Pin a hand-filed copy's hash (kb/hand_filed_catalogs/; a no-op without a record)
+        run: python3 kb/_program_requirements_college.py pin --college "$COLLEGE"
+      - name: Capture
+        id: capture
+        env:
+          CENSUS_DELAY_MS: '4000'
+        run: python3 kb/_program_requirements_college.py capture --college "$COLLEGE" --out out --limit 0
+      - name: Price the extraction
+        id: price
+        env:
+          ATTEMPT: ${{ github.run_attempt }}
+        run: >-
+          python3 kb/_program_requirements_wave.py price --college "$COLLEGE" --out out --extract "$EXTRACT"
+          --limit-usd "$LIMIT_USD" --attempt "$ATTEMPT" --write "wave_out/$SLUG.wave.json"
+      - name: Extract and score
+        id: extract
+        if: steps.price.outputs.go == 'true'
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        # The hard stop: the run's actual cost is summed as calls come back, and at the limit no further
+        # program is sent (the calls in flight, six at most, finish).
+        run: >-
+          python3 kb/_program_requirements_college.py extract --college "$COLLEGE" --out out --workers 6 --force ""
+          --ceiling-usd "$LIMIT_USD"
+      - name: File the run into this job's checkout
+        id: file
+        # Records already paid for are filed even when the extraction stopped partway.
+        if: always() && steps.capture.outcome == 'success'
+        run: python3 kb/_program_requirements_college.py file --college "$COLLEGE" --out out
+      - name: Verify against main's filed records
+        if: always()
+        env:
+          CAPTURE_OUTCOME: ${{ steps.capture.outcome }}
+          EXTRACT_OUTCOME: ${{ steps.extract.outcome }}
+          FILE_OUTCOME: ${{ steps.file.outcome }}
+        run: >-
+          python3 kb/_program_requirements_wave.py verify --college "$COLLEGE" --out out --baseline-ref origin/main
+          --capture-outcome "$CAPTURE_OUTCOME" --extract-outcome "$EXTRACT_OUTCOME" --file-outcome "$FILE_OUTCOME"
+          --write "wave_out/$SLUG.wave.json"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          # The attempt is in the name: a re-run keeps the run id, and a name cannot be uploaded twice.
+          name: wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}
+          path: |
+            wave_out/${{ matrix.slug }}.wave.json
+            kb/program_requirements_college/${{ matrix.slug }}
+            kb/hand_filed_catalogs/${{ matrix.slug }}.json
+          if-no-files-found: warn
+          retention-days: 90
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: program-requirements-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}
+          path: out
+          retention-days: 90
+
+  file:
+    needs: [plan, read]
+    if: always() && needs.plan.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ github.ref_name }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - uses: actions/download-artifact@v7
+        # A college whose job uploaded nothing is a row "failed: no result", never a stopped filing.
+        continue-on-error: true
+        with:
+          pattern: wave-filed-${{ github.run_id }}-*
+          path: wave_artifacts
+      - name: File every college and the wave's table
+        env:
+          MATRIX: ${{ needs.plan.outputs.matrix }}
+          EXTRACT: ${{ github.event.inputs.extract }}
+          LIMIT_USD: ${{ github.event.inputs.limit_usd }}
+          WAVE: ${{ github.event.inputs.wave }}
+        run: >-
+          python3 kb/_program_requirements_wave.py file --wave "$WAVE" --artifacts wave_artifacts
+          --matrix "$MATRIX" --extract "$EXTRACT" --limit-usd "$LIMIT_USD"
+      - name: Commit to the wave branch, once
+        env:
+          WAVE: ${{ github.event.inputs.wave }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/program_requirements_college kb/hand_filed_catalogs kb/program_requirements_wave
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+          git commit -m "File the program requirements wave $WAVE (run ${{ github.run_id }})"
+          # The same push as the college workflow's receipts: ten tries, each after a random wait.
+          for i in 1 2 3 4 5 6 7 8 9 10; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          echo "::error::The wave $WAVE did not reach ${{ github.ref_name }} after 10 tries. Its colleges are in this run's artifacts wave-filed-${{ github.run_id }}-<attempt>-<college> (for each college, the latest attempt that extracted, else the latest): commit them by hand before any new wave."
+          exit 1

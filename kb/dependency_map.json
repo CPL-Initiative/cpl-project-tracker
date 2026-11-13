@@ -4,10 +4,10 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 894,
+  "file_datasets": 900,
   "external_services": 195,
-  "consumers": 569,
-  "workflows": 70,
+  "consumers": 572,
+  "workflows": 71,
   "data_js_files": 71,
   "tabs": 41
  },
@@ -451,7 +451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1514
+     "line": 1526
     }
    ],
    "main_committers": []
@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1470
+     "line": 1482
     }
    ],
    "main_committers": []
@@ -694,7 +694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1409
+     "line": 1419
     }
    ],
    "main_committers": []
@@ -2968,7 +2968,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1047
+     "line": 1056
     }
    ],
    "main_committers": []
@@ -5899,6 +5899,13 @@
      "direction": "read",
      "how": "literal",
      "line": 31
+    },
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 50
     }
    ],
    "served": false,
@@ -10264,6 +10271,13 @@
      "line": 0
     },
     {
+     "id": "workflow:program-requirements-wave.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:second-reader.yml",
      "kind": "workflow",
      "direction": "run",
@@ -10311,6 +10325,19 @@
    "consumers": [
     {
      "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_program_requirements_wave.py": {
+   "consumers": [
+    {
+     "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -16074,6 +16101,10 @@
     {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
     }
    ],
    "served": false,
@@ -16740,6 +16771,10 @@
     {
      "by": "workflow:program-requirements-college.yml",
      "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
     }
    ],
    "served": false,
@@ -16792,7 +16827,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3693
+     "line": 3846
     }
    ],
    "served": true,
@@ -16953,6 +16988,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/program_requirements_wave": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/project_lifecycle.json": {
@@ -19013,6 +19059,13 @@
      "direction": "read",
      "how": "literal",
      "line": 51
+    },
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "producers": [
@@ -19038,6 +19091,19 @@
     {
      "by": "workflow:harvest-gap-census.yml",
      "how": "commit"
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/status/harvest_no_closed_list.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_harvest_no_closed_list_diagnosis.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
     }
    ],
    "served": true,
@@ -20237,7 +20303,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 3690
+     "line": 3843
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 350
     }
    ],
    "served": false,
@@ -20845,6 +20918,26 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:not_sent_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 3821
+    },
+    {
+     "id": "script:kb/_program_requirements_wave.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 357
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:nudges/team_directory.json": {
@@ -22244,6 +22337,13 @@
     },
     {
      "id": "workflow:program-requirements-pilot.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-wave.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -24322,6 +24422,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/harvest_no_closed_list_diagnosis_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/ib_official_titles_test.py": {
    "consumers": [
     {
@@ -24799,6 +24912,19 @@
    "main_committers": []
   },
   "file:tests/program_requirements_reconcile_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/program_requirements_wave_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27300,7 +27426,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3710
+     "line": 3863
     }
    ],
    "main_committers": []
@@ -27312,7 +27438,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3797
+     "line": 3950
     }
    ],
    "main_committers": []
@@ -32314,7 +32440,9 @@
     "tests/program_requirements_pilot_test.py",
     "tests/program_requirements_reconcile_test.py",
     "tests/program_requirements_college_test.py",
+    "tests/program_requirements_wave_test.py",
     "tests/harvest_gap_census_test.py",
+    "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
@@ -32725,6 +32853,24 @@
     "kb/_program_requirements_pilot.py"
    ],
    "adds": [],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
+  "program-requirements-wave.yml": {
+   "name": "Program requirements, a wave of colleges",
+   "crons": [],
+   "scripts": [
+    "kb/_program_requirements_wave.py",
+    "scripts/install_browser.sh",
+    "kb/_program_requirements_college.py"
+   ],
+   "adds": [
+    "kb/program_requirements_college",
+    "kb/hand_filed_catalogs",
+    "kb/program_requirements_wave"
+   ],
    "push": null,
    "deploys": [],
    "chain": [],
