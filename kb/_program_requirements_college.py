@@ -4710,6 +4710,17 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             sources[src["control_number"]] = src
     os.makedirs(os.path.join(out_dir, "records"), exist_ok=True)
     changed, unread, rescored, moved = [], 0, 0, 0
+    # The college's filed programs, each with its title and section heading: the statewide Cal-GETC rule ends a
+    # record's section at the next sibling's heading and reads a legacy-and-2.0 pair (R.calgetc_hold, S648).
+    family = []
+    for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
+        try:
+            with open(path) as fh:
+                f = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        family.append({"control_number": f.get("control_number"), "title": f.get("title"),
+                       "section_heading": ((f.get("record") or {}).get("program") or {}).get("section_heading")})
     for path in sorted(glob.glob(os.path.join(keep_from, "records", "*.json"))):
         with open(path) as fh:
             filed = json.load(fh)
@@ -4725,10 +4736,25 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
             src = None
             moved += 1
         if src and isinstance(rec, dict):
+            sibs = [x for x in family if x["control_number"] != filed.get("control_number")]
             new, notes = R.reconcile(rec, src["text"], college, filed.get("award") or src.get("award"),
                                      course_units=src.get("course_units"),
-                                 course_hours=src.get("course_hours"))
+                                     course_hours=src.get("course_hours"), title=filed.get("title"),
+                                     siblings=sibs, control_number=filed.get("control_number"))
+            # Every record the statewide Cal-GETC rule asks about says filled or held, and why, so the compare
+            # gate shows the held ones beside the filled (S648).
+            trace = R.calgetc_trace(filed.get("control_number"), rec, notes, src["text"],
+                                    filed.get("award") or src.get("award"), filed.get("title"), sibs,
+                                    R.load_steps().get(college))
+            if trace:
+                print(trace, flush=True)
             if notes:
+                # A statewide fill a run made earlier keeps its note while its value stands, so the fill stays
+                # told apart from a catalog's own figure if the ruling is ever reversed (S648).
+                for old in filed.get("reconciled") or []:
+                    if old.get("statewide") and old not in notes \
+                            and (new.get("program") or {}).get(old.get("field")) == old.get("now"):
+                        notes = notes + [old]
                 filed = dict(filed, record=new, reconciled=notes, read_run=filed.get("extracted_run"),
                              extracted_run=int(run_id) if str(run_id or "").isdigit() else run_id,
                              score=S.score(new, src["closed_list"], src["text"], filed.get("award") or src.get("award"),

@@ -271,11 +271,156 @@ def statewide_cal_getc(records: list[dict]) -> dict:
     return rows
 
 
+CAL_GETC_PLAN = os.path.join(HERE, "program_requirements_calgetc_34_plan.json")
+# A figure beside Cal-GETC as a reading's notes quote the page (an estimate of the page gate, never a gate).
+NOTES_FIGURE = re.compile(r"(?:cal\s*-?\s*getc|general\s+education\s+transfer\s+curriculum)[^.;]{0,80}?\b\d{1,2}(?:\.\d{1,2})?"
+                          r"(?:\s*[-–]\s*\d{1,2})?\b|\b\d{1,2}(?:\s*[-–]\s*\d{1,2})?\s*units?[^.;]{0,40}?cal\s*-?\s*getc",
+                          re.I)
+
+
+def _git_head() -> tuple[str | None, str | None]:
+    import subprocess
+    try:
+        out = subprocess.run(["git", "-C", HERE, "log", "-1", "--format=%H %cI"], capture_output=True, text=True,
+                             check=True).stdout.split()
+        return out[0], out[1]
+    except (OSError, subprocess.CalledProcessError, IndexError):
+        return None, None
+
+
+# Records held by name until a person reads them again (the conductor, S648, from the second readers of #3244).
+HELD_BY_NAME = {
+    "Antelope Valley College": {"43028": "its page prints a GE table (39 CSU / 37 IGETC) and its sibling AS-Ts print "
+                                         "'Completion of Cal-GETC Units 35 units'"},
+    "Los Angeles Southwest College": {"33658": "its major reads 25 against a printed 'minimum of 37-39 units in the "
+                                               "major' (a draft catalog); held until the major is read again"},
+    "Sacramento City College": {"30700": "its section heading is not printed on its page"},
+}
+
+
+def cal_getc_34_plan(records: list[dict], commit: str | None = None, date: str | None = None,
+                     steps: dict | None = None) -> dict:
+    """Sam's ruling (Sheet 187 card 5, 13:19:50Z 2026-11-13: "Use 34 statewide"), measured once on the filed
+    records. A record is touched when the statewide rule's record gates admit it (R.calgetc_hold's: a transfer
+    degree, Cal-GETC alone, no general education units, a degree total of exactly 60, no UC-transfer heading or
+    title). Each touched record's standing with 34 filled (R.calgetc_standing, read by the scorer's degree_verdict:
+    exact, under with its basis "stated" or "sheet-81", overlap, short, unknown) is listed with its numbers; the
+    rule fills exact and under only, and holds an overlap record unless
+    the catalog states double counting (the notes are searched here and quoted; the rule reads the page). A
+    legacy number reading its "2.0" sibling's section is listed with its pair and left out of the apply. The
+    page gates (the section's own words: a printed figure, a partial Cal-GETC line, another pattern) read the
+    page text, which the files do not keep; they run in each college's reconcile run. likely_held_by_page_gate
+    estimates them from the reading's notes and never gates. A one-time measure: no CI step checks this file."""
+    steps = R.load_steps() if steps is None else steps
+    by_college = collections.defaultdict(list)
+    for f in records:
+        by_college[f["college"]].append(f)
+    colleges, pairs = {}, []
+    for college, fs in sorted(by_college.items()):
+        family = [{"control_number": f["control_number"], "title": f.get("title"),
+                   "section_heading": (f["record"].get("program") or {}).get("section_heading")} for f in fs]
+        rows = []
+        for f in sorted(fs, key=lambda x: x["control_number"]):
+            prog = f["record"].get("program") or {}
+            if not R.awards_match("transfer", f.get("award")) or not R._empty(prog.get("ge_units")) \
+                    or not R.CAL_GETC_ONLY.match(prog.get("ge_pattern") or ""):
+                continue
+            if R._lo_hi(prog.get("degree_total")) != (60.0, 60.0):
+                continue
+            if R.PARTIAL_TITLE.search(prog.get("section_heading") or "") or R.PARTIAL_TITLE.search(f.get("title") or ""):
+                continue
+            sibs = [x for x in family if x["control_number"] != f["control_number"]]
+            legacy = R.calgetc_legacy_of(f.get("title"), prog.get("section_heading"), sibs)
+            stand = R.calgetc_standing(prog, f.get("award"))
+            notes = " ".join(str(n) for n in f["record"].get("notes") or [])
+            row = {"control_number": f["control_number"], "title": f.get("title"),
+                   "section_heading": prog.get("section_heading"), **stand}
+            dc = R.DOUBLE_COUNT.search(notes)
+            if stand["standing"] == "overlap" and dc:
+                row["double_count_words"] = notes[max(0, dc.start() - 80):dc.end() + 80].strip()
+            if NOTES_FIGURE.search(notes):
+                row["likely_held_by_page_gate"] = True
+            if legacy:
+                row["legacy_of"] = legacy
+                pairs.append({"college": college, "legacy": f["control_number"], "two_point_oh": legacy,
+                              "section_heading": prog.get("section_heading")})
+            conf = steps.get(college) or {}
+            own = [st for st in conf.get("steps") or [] if st.get("kind") == "set" and st.get("field") == "ge_units"
+                   and R.awards_match(st.get("awards"), f.get("award"))]
+            named = (R.calgetc_step(conf) or {}).get("hold") or {}
+            if f["control_number"] in HELD_BY_NAME.get(college, {}):
+                row["route"], row["held"] = "held by name", HELD_BY_NAME[college][f["control_number"]]
+                row["fills"] = False
+            elif own:
+                # The college's own printed figure, by its set step (it runs first; the statewide rule never asks).
+                row["route"], row["figure"] = "college set step", own[0]["value"]
+                row["fills"] = True
+            elif R.calgetc_step(conf) is None:
+                row["route"], row["fills"] = "needs a page read", False
+            elif f["control_number"] in named:
+                row["route"], row["held"], row["fills"] = "held by name", named[f["control_number"]], False
+            else:
+                row["route"] = "statewide step"
+                row["fills"] = (not legacy and (stand["standing"] in ("exact", "under")
+                                                or (stand["standing"] == "overlap" and bool(dc))))
+            rows.append(row)
+        if rows:
+            colleges[college] = rows
+    allrows = [r for rs in colleges.values() for r in rs]
+    count = lambda pred: sum(1 for r in allrows if pred(r))
+    fill_by = {c: sum(1 for r in rs if r["fills"]) for c, rs in colleges.items()}
+    route_of = lambda c: sorted({r["route"] for r in colleges[c]})
+    return {"ruling": "sam-sheet-187-calgetc-34-statewide-2026-11-13 (Open Asks Sheet 187 card 5, 13:19:50Z "
+                      "2026-11-13: \"Use 34 statewide\")",
+            "rule": "kb/_program_requirements_reconcile.py statewide_cal_getc (calgetc_hold)",
+            "source_words": R.CAL_GETC_SOURCE,
+            "measured_on": {"commit": commit, "date": date, "records": "kb/program_requirements_college/*/records/",
+                            "kind": "a one-time measure of the committed records; no CI step checks it"},
+            "upper_bound": "the record gates only; the page gates run in each college's reconcile run",
+            "counts": {"touched": len(allrows), "colleges_touched": len(colleges),
+                       "exact": count(lambda r: r["standing"] == "exact"),
+                       "under": count(lambda r: r["standing"] == "under"),
+                       "under_basis_stated": count(lambda r: r.get("basis") == "stated"),
+                       "under_basis_sheet_81": count(lambda r: r.get("basis") == "sheet-81"),
+                       "overlap": count(lambda r: r["standing"] == "overlap"),
+                       "overlap_with_double_count_words": count(lambda r: "double_count_words" in r),
+                       "short": count(lambda r: r["standing"] == "short"),
+                       "unknown": count(lambda r: r["standing"] == "unknown"),
+                       "legacy_left_out": len(pairs),
+                       "fills": count(lambda r: r["fills"]),
+                       "fills_statewide": count(lambda r: r["fills"] and r["route"] == "statewide step"),
+                       "fills_college_set_step": count(lambda r: r["fills"] and r["route"] == "college set step"),
+                       "needs_a_page_read": count(lambda r: r["route"] == "needs a page read"),
+                       "fills_not_likely_held_by_page_gate": count(lambda r: r["fills"] and not r.get("likely_held_by_page_gate")),
+                       "colleges_filling": sum(1 for n in fill_by.values() if n)},
+            "fills_by_college": dict(sorted(((c, n) for c, n in fill_by.items() if n), key=lambda x: (-x[1], x[0]))),
+            "statewide_step_colleges": {c: fill_by[c] for c in colleges if "statewide step" in route_of(c)},
+            "college_set_step_colleges": {c: next(r["figure"] for r in colleges[c] if r.get("figure"))
+                                          for c in colleges if "college set step" in route_of(c)},
+            "needs_a_page_read": sorted(c for c in colleges if "needs a page read" in route_of(c)),
+            "held_by_name": [{"college": c, "control_number": r["control_number"], "why": r["held"]}
+                             for c, rs in colleges.items() for r in rs if r.get("held")],
+            "legacy_pairs": pairs,
+            "unknown_held": [{"college": c, "control_number": r["control_number"], "title": r.get("title"),
+                              "why": r.get("why")} for c, rs in colleges.items() for r in rs
+                             if r["standing"] == "unknown"],
+            "colleges": colleges}
+
+
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--json", action="store_true", help="print the measure as JSON, every key named")
+    ap.add_argument("--calgetc-plan", action="store_true",
+                    help="write the statewide Cal-GETC 34 plan (%s), a one-time measure, and print its counts"
+                         % os.path.relpath(CAL_GETC_PLAN, HERE))
     args = ap.parse_args(argv)
     records = list(filed_records())
+    if args.calgetc_plan:
+        plan = cal_getc_34_plan(records, *_git_head())
+        with open(CAL_GETC_PLAN, "w") as fh:
+            fh.write(json.dumps(plan, indent=1) + "\n")
+        print(json.dumps(plan["counts"]))
+        return 0
     steps = R.load_steps()
     hours = measure_hours(records, steps)
     elec = measure_electives(records, steps)
