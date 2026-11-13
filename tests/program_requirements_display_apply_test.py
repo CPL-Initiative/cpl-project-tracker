@@ -17,6 +17,22 @@ college's receipt is megabytes. The ways that goes wrong are known in advance:
   * The rollback is the before-build of every row written: null goes back to
     null, an older build goes back by its own receipt.
 
+S644 made the apply fast (69 minutes for 17,598 statements in series, run
+43310473532): before-values in pages, the writes in a bounded pool. Its
+failure modes, each pinned below against a fake table:
+
+  * A before-read that stops at the first page (PostgREST caps a page at
+    1,000) reports every later row missing and writes none of them.
+  * A pool that writes a row twice, or never, or a 5xx that ends the row
+    instead of retrying it.
+  * A rollback built from a write's response: a write that committed and lost
+    its response would leave the record without it. The record is finished
+    from a fresh read.
+  * A plan filed after the writes: a run canceled mid-write leaves no rollback.
+  * A row that already carries the build is written again (a re-run costs the
+    whole build), and a few missing keys fail a run that wrote everything
+    else, while a wrong build's thousands of missing keys must still fail it.
+
 Each is pinned against the module's own functions, with no network.
 Run from repo root: python3 tests/program_requirements_display_apply_test.py
 """
@@ -26,6 +42,10 @@ import os
 import shutil
 import sys
 import tempfile
+import threading
+import time
+import urllib.error
+import urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "kb"))
@@ -52,6 +72,7 @@ def stmt(college, cn, display):
 
 
 BUILD = "5be53871ebf4"
+OLD = "2360b83e8100"
 d1 = {"build": BUILD, "notes": [{"where": "Cerritos College's CourseLeaf reading procedure",
                                  "text": "a quote ' and a doubled '' and ::jsonb from inside"}]}
 d2 = {"build": BUILD, "counts": {"courses": 4}}
@@ -84,6 +105,79 @@ try:
 except SystemExit:
     check(True, "a page mixing builds is refused")
 
+
+class Table:
+    """program_requirement_records as PostgREST serves it: pages of at most
+    `cap` rows by limit and offset, a one-key GET, a one-key PATCH of display.
+    `on_patch(key, attempt)` may raise before the write ("before") or after it
+    commits ("after"), which is a lost response."""
+
+    def __init__(self, held, cap=1000):
+        self.rows = {k: ({"build": b} if b else None) for k, b in held.items()}
+        self.cap, self.calls, self.patches = cap, [], {}
+        self.lock, self.live, self.peak = threading.Lock(), 0, 0
+        self.hide = set()          # keys a page read leaves out (a page that shifted)
+        self.get_fail = set()      # keys whose one-key GET fails
+        self.fail = {}             # key -> list of ("before"|"after", exception), one per attempt
+        self.page_fail = []        # exceptions the next page reads raise, in turn
+        self.on_first_patch = None
+        self.delay = 0.0
+
+    def __call__(self, method, path_qs, body=None):
+        path, _, qs = path_qs.partition("?")
+        q = {k: v[0] for k, v in urllib.parse.parse_qs(qs, keep_blank_values=True).items()}
+        with self.lock:
+            self.calls.append((method, path_qs, body))
+        if method == "GET" and "limit" in q:
+            if self.page_fail:
+                raise self.page_fail.pop(0)
+            keys = sorted(k for k in self.rows if k not in self.hide)
+            if "college" in q:
+                keys = [k for k in keys if k.split("|")[0] == q["college"][3:]]
+            off, lim = int(q["offset"]), min(int(q["limit"]), self.cap)
+            return [{"college": k.split("|")[0], "control_number": k.split("|")[1],
+                     "build": (self.rows[k] or {}).get("build")} for k in keys[off:off + lim]]
+        k = "%s|%s" % (q["college"][3:], q["control_number"][3:])
+        if method == "GET":
+            if k in self.get_fail:
+                raise e400()
+            return [{"build": (self.rows[k] or {}).get("build")}] if k in self.rows else []
+        with self.lock:
+            first = not self.patches
+            n = self.patches[k] = self.patches.get(k, 0) + 1
+            self.live += 1
+            self.peak = max(self.peak, self.live)
+        try:
+            if first and self.on_first_patch:
+                self.on_first_patch()
+            if self.delay:
+                time.sleep(self.delay)
+            plan = self.fail.get(k, [])
+            when, exc = plan[n - 1] if n <= len(plan) else (None, None)
+            if when == "before":
+                raise exc
+            if k not in self.rows:
+                return []
+            self.rows[k] = body["display"]
+            if when == "after":
+                raise exc
+            return [{"control_number": k.split("|")[1]}]
+        finally:
+            with self.lock:
+                self.live -= 1
+
+
+def e503():
+    return urllib.error.HTTPError("https://x/rest/v1/t", 503, "Service Unavailable", None, None)
+
+
+def e400():
+    return urllib.error.HTTPError("https://x/rest/v1/t", 400, "Bad Request", None, None)
+
+
+naps = []
+nap = naps.append
+
 tmp = tempfile.mkdtemp()
 try:
     full = os.path.join(tmp, "program_requirement_records_display_2026-10-06_%s.sql" % BUILD)
@@ -92,28 +186,30 @@ try:
     open(os.path.join(tmp, "program_requirement_records_display_2026-10-08_%s_delta.sql" % BUILD), "w").write("")
     check(A.receipt_for(BUILD, tmp) == full, "the full receipt stands for the build, never a delta")
 
-    held = {"Cerritos College|02201": None, "Mt. San Antonio College|03086": "2360b83e8100"}
-    calls = []
-
-    def fake(method, path_qs, body=None):
-        calls.append((method, path_qs, body))
-        key = ("Cerritos College|02201" if "Cerritos" in path_qs else "Mt. San Antonio College|03086")
-        if method == "GET":
-            return [{"build": held[key]}]
-        return [{"control_number": key.split("|")[1]}]
-
-    rec = A.apply(rows, BUILD, full, "123", request=fake)
-    patches = [c for c in calls if c[0] == "PATCH"]
-    check(rec["written"] == 2 and not rec["errors"] and not rec["missing"], "both rows written")
-    check(all(set(b) == {"display"} for _, _, b in patches) and patches[0][2]["display"] == d1,
+    # The two-row receipt: what a PATCH carries, and the rollback's two shapes.
+    t = Table({"Cerritos College|02201": None, "Mt. San Antonio College|03086": OLD})
+    rec = A.apply(rows, BUILD, full, "123", request=t, sleep=nap, log=lambda *a: None)
+    patches = [c for c in t.calls if c[0] == "PATCH"]
+    check(rec["state"] == "confirmed" and rec["written"] == 2 and not rec["errors"] and not rec["missing"],
+          "both rows written and confirmed")
+    check(all(set(b) == {"display"} for _, _, b in patches)
+          and {json.dumps(b["display"], sort_keys=True) for _, _, b in patches}
+          == {json.dumps(d, sort_keys=True) for d in (d1, d2)},
           "a PATCH writes display alone, exactly as the receipt prints it")
-    check([c[0] for c in calls] == ["GET", "PATCH", "GET", "PATCH"], "each row's build is read before it is written")
-    check("college=eq.Cerritos%20College&control_number=eq.02201" in patches[0][1]
-          and "college=eq.Mt.%20San%20Antonio%20College" in patches[1][1], "each write is filtered to its key")
+    check(any("college=eq.Cerritos%20College&control_number=eq.02201" in p for _, p, _ in patches)
+          and any("college=eq.Mt.%20San%20Antonio%20College&control_number=eq.03086" in p for _, p, _ in patches),
+          "each write is filtered to its key")
     check(rec["rollback"]["to_null"] == ["Cerritos College|02201"]
-          and rec["rollback"]["reapply"] == {"2360b83e8100": ["Mt. San Antonio College|03086"]},
+          and rec["rollback"]["reapply"] == {OLD: ["Mt. San Antonio College|03086"]},
           "the rollback names what goes back to null and what goes back by its own receipt")
     check(A.applied_path(full, "123").endswith("_%s.applied_123.json" % BUILD), "the applied record sits beside the receipt")
+    check(A.applied_path(full, "123", "Mt. San Antonio College").endswith(
+          "_%s.applied_123_mt-san-antonio-college.json" % BUILD), "a --college run's record names its college")
+    check(A.applied_path(full, "123", None, "1") == A.applied_path(full, "123")
+          and A.applied_path(full, "123", None, "2").endswith("_%s.applied_123_2.json" % BUILD)
+          and A.applied_path(full, "123", "Mt. San Antonio College", "3").endswith(
+              "_%s.applied_123_3_mt-san-antonio-college.json" % BUILD),
+          "attempt 1 keeps the name; a re-run's attempt joins it")
 
     # S398: a receipt is gzipped from build fa8ee2a84935 on (72.7 MB of SQL against GitHub's
     # 100 MB file limit). The gzipped one stands for its build, parses to the same rows, and
@@ -137,13 +233,232 @@ try:
     finally:
         shutil.rmtree(zdir, ignore_errors=True)
 
-    def gone(method, path_qs, body=None):
-        return [] if method == "GET" and "03086" in path_qs else fake(method, path_qs, body)
+    # A build of 2,350 statements over a table of 2,350 rows, three colleges.
+    many = [{"college": "College %s" % "ABC"[i % 3], "control_number": "%05d" % i,
+             "display": {"build": BUILD, "i": i}} for i in range(2350)]
+    keys = ["%s|%s" % (r["college"], r["control_number"]) for r in many]
 
-    calls.clear()
-    rec = A.apply(rows, BUILD, full, "124", request=gone)
-    check(rec["missing"] == ["Mt. San Antonio College|03086"] and rec["written"] == 1,
-          "a key the table does not hold is named, never inserted")
+    def table(**kw):
+        return Table({k: (None if i % 5 == 0 else OLD) for i, k in enumerate(keys)}, **kw)
+
+    out = os.path.join(tmp, "applied.json")
+    t = table()
+    t.delay = 0.002
+    seen = {}
+
+    def peek():
+        seen.update(json.load(open(out)))
+    t.on_first_patch = peek
+    rec = A.apply(many, BUILD, full, "200", request=t, out=out, workers=8, sleep=nap, log=lambda *a: None)
+    pages = [p for m, p, _ in t.calls if m == "GET" and "limit=" in p]
+    first_patch = next(i for i, c in enumerate(t.calls) if c[0] == "PATCH")
+    check(len([p for m, p, _ in t.calls[:first_patch] if m == "GET"]) == 4
+          and all("order=college.asc,control_number.asc" in p for p in pages),
+          "the before-read is pages of 1,000 in a stable order, read to an empty page: 3 full and partial, 1 empty "
+          "(got %d GETs before the first write)" % len([c for c in t.calls[:first_patch] if c[0] == "GET"]))
+    check(not any(m == "GET" and "limit=" not in p for m, p, _ in t.calls),
+          "no row is read one at a time when the pages hold every key")
+    check(seen.get("state") == "planned" and len(seen.get("before", {})) == 2350
+          and seen["before"][keys[0]] is None and seen["before"][keys[1]] == OLD,
+          "the plan, every key and its before-build, is filed before the first write")
+    check(sorted(t.patches) == sorted(keys) and set(t.patches.values()) == {1},
+          "parallel writes land once each, on every planned row")
+    check(2 <= t.peak <= 8, "the writes run in a pool bounded by --workers (peak %d at once)" % t.peak)
+    check(rec["state"] == "confirmed" and rec["written"] == 2350 and rec["already"] == 0
+          and A.exit_code(rec) == 0, "every row confirmed by the second paged read; exit 0")
+    check(len(rec["rollback"]["to_null"]) == 470 and len(rec["rollback"]["reapply"][OLD]) == 1880,
+          "the rollback files every written row's before-build")
+    check(json.load(open(out)) == rec, "the applied record on disk is the finished one")
+
+    # A second run after a full one writes nothing.
+    t.calls.clear()
+    t.patches.clear()
+    rec = A.apply(many, BUILD, full, "201", request=t, sleep=nap, log=lambda *a: None)
+    check(not t.patches and rec["already"] == 2350 and rec["planned"] == 0 and A.exit_code(rec) == 0
+          and rec["rollback"]["to_null"] == [] and rec["rollback"]["reapply"] == {},
+          "a row already carrying the build is skipped and counted already, and is in no rollback")
+
+    # A 5xx is retried with backoff; a timeout too; a 4xx is not.
+    t = table()
+    naps.clear()
+    t.fail = {keys[7]: [("before", e503()), ("before", e503())], keys[8]: [("before", TimeoutError("timed out"))],
+              keys[9]: [("before", e400())]}
+    rec = A.apply(many, BUILD, full, "202", request=t, sleep=nap, log=lambda *a: None)
+    check(t.patches[keys[7]] == 3 and t.rows[keys[7]]["build"] == BUILD and t.patches[keys[8]] == 2,
+          "a write that met a 5xx or a timeout is tried again and lands")
+    check(sorted(naps) == [1, 1, 2], "the backoff sleeps 1 s, then 2 s (got %s)" % naps)
+    check(t.patches[keys[9]] == 1 and rec["unconfirmed"] == [keys[9]]
+          and rec["errors"] == [{"key": keys[9], "error": "HTTP Error 400: Bad Request", "confirmed": False}],
+          "a 4xx is not retried; the row is an error the confirming read does not resolve")
+    check(A.exit_code(rec) == 1 and keys[9] not in rec["rollback"]["to_null"] + rec["rollback"]["reapply"][OLD],
+          "an unresolved error exits 1, and the row it left as it was is not in the rollback")
+
+    t = table()
+    t.fail = {keys[3]: [("before", e503())] * 4}
+    rec = A.apply(many, BUILD, full, "203", request=t, sleep=nap, log=lambda *a: None)
+    check(t.patches[keys[3]] == 4 and rec["errors"][0]["key"] == keys[3] and A.exit_code(rec) == 1,
+          "four failed tries make the row an error, never a fifth")
+    check(keys[3] in rec["rollback"]["reapply"][OLD] and rec["unconfirmed"] == [keys[3]],
+          "a row whose writes all failed on a 5xx stays in the rollback: one of them may yet commit")
+
+    # A timed-out write that commits after the confirming read is in the rollback.
+    t = table()
+    t.fail = {keys[13]: [("before", TimeoutError("timed out"))] * 4}
+    rec = A.apply(many, BUILD, full, "203b", request=t, sleep=nap, log=lambda *a: None)
+    t.rows[keys[13]] = many[13]["display"]          # the server finishes the statement late
+    check(rec["unconfirmed"] == [keys[13]] and keys[13] in rec["rollback"]["reapply"][OLD]
+          and A.exit_code(rec) == 1,
+          "a write that timed out four times and lands after the confirming read is still in the rollback")
+
+    # A row is refused only when every try was refused: a timeout, then a 400, can still land late.
+    t = table()
+    t.fail = {keys[14]: [("before", TimeoutError("timed out")), ("before", e400())],
+              keys[16]: [("before", urllib.error.HTTPError("https://x", 429, "Too Many Requests", None, None))]}
+    rec = A.apply(many, BUILD, full, "203e", request=t, sleep=nap, log=lambda *a: None)
+    t.rows[keys[14]] = many[14]["display"]          # the timed-out first try commits late
+    check(rec["unconfirmed"] == [keys[14]] and keys[14] in rec["rollback"]["reapply"][OLD]
+          and t.patches[keys[16]] == 2 and t.rows[keys[16]]["build"] == BUILD,
+          "a row whose tries were a timeout and then a 400 stays in the rollback; a 429 is retried")
+
+    # A page shifted under the confirming read (a concurrent delete on an earlier page).
+    t = table()
+    t.on_first_patch = lambda: t.hide.add(keys[101])
+    rec = A.apply(many, BUILD, full, "203c", request=t, sleep=nap, log=lambda *a: None)
+    check(rec["written"] == 2350 and not rec["unconfirmed"] and keys[101] in rec["rollback"]["reapply"][OLD]
+          and A.exit_code(rec) == 0,
+          "a planned key the confirming pages miss is re-read on its own and confirmed")
+    t = table()
+
+    def shift():
+        t.hide.add(keys[101])
+        t.get_fail.add(keys[101])
+    t.on_first_patch = shift
+    rec = A.apply(many, BUILD, full, "203d", request=t, sleep=nap, log=lambda *a: None)
+    check(rec["unconfirmed"] == [keys[101]] and keys[101] in rec["rollback"]["reapply"][OLD]
+          and len(rec["rollback"]["reapply"][OLD]) + len(rec["rollback"]["to_null"]) == 2350
+          and A.exit_code(rec) == 1,
+          "a written key the confirming read cannot see exits 1 and stays in the rollback")
+
+    # A lost response: the write commits, every response is lost.
+    t = table()
+    t.fail = {keys[11]: [("after", TimeoutError("timed out"))] * 4, keys[12]: [("after", e503())]}
+    rec = A.apply(many, BUILD, full, "204", request=t, sleep=nap, log=lambda *a: None)
+    check(rec["errors"] == [{"key": keys[11], "error": "timed out", "confirmed": True}]
+          and keys[11] in rec["rollback"]["reapply"][OLD] and keys[12] in rec["rollback"]["reapply"][OLD]
+          and rec["written"] == 2350 and not rec["unconfirmed"],
+          "a write whose response was lost ends confirmed in the applied record, its before-build filed")
+    check(A.exit_code(rec) == 0, "an error the confirming read resolved does not fail the run")
+
+    # A confirming read that fails leaves the plan as the rollback: every planned row.
+    t = table()
+    real = t.__call__
+    reads = [0]
+
+    def flaky(method, path_qs, body=None):
+        if method == "GET" and "limit=" in path_qs and any(c[0] == "PATCH" for c in t.calls):
+            reads[0] += 1
+            raise e503()
+        return real(method, path_qs, body)
+    rec = A.apply(many, BUILD, full, "205", request=flaky, sleep=nap, log=lambda *a: None)
+    check(rec["state"] == "unconfirmed" and len(rec["unconfirmed"]) == 2350 and reads[0] == 4
+          and len(rec["rollback"]["to_null"]) + len(rec["rollback"]["reapply"][OLD]) == 2350
+          and A.exit_code(rec) == 1,
+          "a confirming read that fails four times leaves every planned row in the rollback and exits 1")
+
+    # A before-read that fails writes nothing.
+    t = table()
+    t.page_fail = [e400()]
+    rec = A.apply(many, BUILD, full, "206", request=t, out=out, sleep=nap, log=lambda *a: None)
+    check(rec["state"] == "not started" and not t.patches and A.exit_code(rec) == 1
+          and json.load(open(out))["state"] == "not started", "a failed before-read writes nothing, files why, exits 1")
+
+    # A dead host or key: the pool stops trying after ERROR_STOP failures.
+    t = table()
+    t.fail = {k: [("before", e400())] for k in keys}
+    rec = A.apply(many, BUILD, full, "207", request=t, sleep=nap, log=lambda *a: None)
+    check(sum(t.patches.values()) < A.ERROR_STOP + 16 and len(rec["unconfirmed"]) == 2350 and A.exit_code(rec) == 1,
+          "after %d failed writes the rest are not tried (%d tried)" % (A.ERROR_STOP, sum(t.patches.values())))
+
+    # Missing: a key no row holds is named, never inserted; the 1% line.
+    def gone(n):
+        t = table()
+        for k in keys[-n:]:
+            del t.rows[k]
+        return t
+    # The line is max(1% of the statements, 30 keys): 30 for 2,350 statements.
+    t = gone(30)
+    rec = A.apply(many, BUILD, full, "208", request=t, sleep=nap, log=lambda *a: None)
+    check(rec["missing"] == keys[-30:] and rec["written"] == 2320 and not any(k in t.rows for k in keys[-30:])
+          and A.exit_code(rec) == 0, "30 missing of 2,350 (at the line) are listed, never inserted, and exit 0")
+    rec = A.apply(many, BUILD, full, "209", request=gone(31), sleep=nap, log=lambda *a: None)
+    check(len(rec["missing"]) == 31 and rec["written"] == 2319 and A.exit_code(rec) == 1,
+          "31 missing of 2,350 (over the line: the wrong build) exit 1, though the rest are written")
+    small = [r for r in many if r["college"] == "College A"][:40]
+    skeys = ["%s|%s" % (r["college"], r["control_number"]) for r in small]
+    t = table()
+    for k in skeys[:3]:
+        del t.rows[k]
+    rec = A.apply(small, BUILD, full, "209b", request=t, college="College A", sleep=nap, log=lambda *a: None)
+    check(rec["missing"] == skeys[:3] and rec["written"] == 37 and A.exit_code(rec) == 0,
+          "a --college run of 40 statements with 3 keys the table no longer holds exits 0 (7.5%, under 30 keys)")
+    t = table()
+    for k in skeys[:31]:
+        del t.rows[k]
+    rec = A.apply(small, BUILD, full, "209c", request=t, college="College A", sleep=nap, log=lambda *a: None)
+    check(len(rec["missing"]) == 31 and A.exit_code(rec) == 1, "31 of a small college's 40 missing exits 1")
+
+    # A key a shifted page left out is re-read on its own before it is called missing.
+    t = table()
+    t.hide = {keys[100]}
+    rec = A.apply(many, BUILD, full, "210", request=t, sleep=nap, log=lambda *a: None)
+    check(not rec["missing"] and t.patches.get(keys[100]) == 1, "a key the pages missed but the table holds is written")
+
+    # A load inserts missing keys mid-run: present now, not written, not fatal, even past the 1% line.
+    t = gone(30)
+
+    def load():
+        for k in keys[-30:]:
+            t.rows[k] = None
+    t.on_first_patch = load
+    rec = A.apply(many, BUILD, full, "211", request=t, sleep=nap, log=lambda *a: None)
+    check(rec["missing"] == keys[-30:] and rec["present_now"] == keys[-30:] and A.still_missing(rec) == []
+          and not any(k in t.patches for k in keys[-30:]) and A.exit_code(rec) == 0,
+          "a key a load inserted mid-run is listed present_now, left unwritten, and does not fail the run")
+
+    # --college, through main().
+    page = os.path.join(tmp, "page.js")
+    open(page, "w").write('{"build": "%s"}' % BUILD)
+    big = os.path.join(tmp, "program_requirement_records_display_2026-11-13_%s.sql" % BUILD)
+    open(big, "w").write("\n".join(stmt(r["college"], r["control_number"], r["display"]) for r in many) + "\n")
+    saved = (A.PAGE, A.receipt_for)
+    A.PAGE, A.receipt_for = page, (lambda b: big)
+    try:
+        t = table()
+        code = A.main(["--apply", "--run", "300", "--attempt", "1", "--college", "College B", "--workers", "4"],
+                      request=t, sleep=nap)
+        mine = [k for k in keys if k.startswith("College B|")]
+        rec = json.load(open(A.applied_path(big, "300", "College B")))
+        check(code == 0 and sorted(t.patches) == sorted(mine) and rec["scope"] == "College B"
+              and rec["statements"] == len(mine) and rec["workers"] == 4,
+              "--college writes only that college's statements and its applied record names the scope")
+        check(all("college=eq.College%20B" in p for m, p, _ in t.calls if m == "GET"),
+              "a --college run reads only that college's rows")
+        check(A.main(["--dry-run", "--college", "College Z"]) == 1, "a college no statement names is refused")
+        t = gone(31)
+        check(A.main(["--apply", "--run", "301", "--attempt", "1"], request=t, sleep=nap) == 1
+              and len(json.load(open(A.applied_path(big, "301")))["missing"]) == 31,
+              "main exits 1 when more are missing than the line, and the record lists every one")
+        first = open(A.applied_path(big, "301")).read()
+        check(A.main(["--apply", "--run", "301", "--attempt", "2"], request=t, sleep=nap) == 1
+              and os.path.exists(A.applied_path(big, "301", None, "2"))
+              and open(A.applied_path(big, "301")).read() == first,
+              "a re-run's record is filed under its attempt and never writes over the first attempt's")
+        open(big, "w").write("-- Generated by kb/_build_roep_display.py (build %s).\n" % BUILD)
+        t = table()
+        check(A.main(["--apply", "--run", "302", "--attempt", "1"], request=t, sleep=nap) == 1 and not t.calls,
+              "a receipt with no statement is refused before any read")
+    finally:
+        A.PAGE, A.receipt_for = saved
 finally:
     shutil.rmtree(tmp)
 

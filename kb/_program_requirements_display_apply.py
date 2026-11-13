@@ -22,20 +22,57 @@ reviewed artifact; nothing here rebuilds it), with one PATCH a program on its
 key, writing display and nothing else. The verdict trigger
 (program_requirement_records_follow_verdict) re-applies the latest verdict
 from record and checks, which a display write leaves alone, so a person's
-Confirm survives.
+Confirm survives. --college "<name>" applies only that college's statements.
 
-ROLLBACK (Rule 10 a2). Before writing, it reads each row's current build and
-files it in the applied record beside the receipt
-(<receipt>.applied_<run>.json): a row that held no display goes back to null,
-and a row that held an older build goes back by re-applying that build's
-receipt. A display write on a checked program waits on Sam's go (his sheet 42
-card 2 practice); the dispatch is that go carried out, so the workflow never
-runs this on a push.
+HOW (S644). Until S644 it read and wrote one row at a time, in series: build
+8fbbcfb7a9c0's 17,598 statements took 69 minutes (run 43310473532). Now:
+  1. One paged read (1,000 rows a page, ordered by college and control number)
+     takes every row's key and display->>build. A statement whose key is not
+     in it is missing (up to 300 such keys are re-read one at a time: offset
+     paging has no snapshot, so a concurrent delete on an earlier page moves
+     a later row out of the read); a row already carrying this build is
+     skipped and counted `already`, so a run after a partial failure costs
+     only what is left.
+  2. The plan (every key to write and its before-build) is filed in the
+     applied record BEFORE the first write; a run canceled mid-write still
+     leaves its rollback behind.
+  3. The PATCHes run in a bounded pool (--workers, 8 by default), each retried
+     on a 5xx, a timeout or a dropped connection, with backoff, at most 4
+     tries; after that the row is an error.
+  4. A second paged read (with the same one-key re-read of up to 300 planned
+     keys it lacks) confirms which planned rows now carry the build, and the
+     applied record is finished from that read, never from a write's
+     response: a write whose response was lost still ends confirmed.
+Missing keys are listed and reported, and are not fatal by themselves: the
+run exits 1 when a planned row does not carry the build afterward, or when
+more statements are still missing than both 1% of them and 30 keys (the
+wrong build), and 0 otherwise. A key missing at the first read that the confirming read finds
+(a load inserted it mid-run) is listed as `present_now`: not written, run
+again. A receipt with no statement (or none of --college's) is refused.
+
+ROLLBACK (Rule 10 a2). The applied record beside the receipt
+(<receipt>.applied_<run>.json; a re-run adds its attempt above 1, from
+GITHUB_RUN_ATTEMPT, and a --college run adds the college's slug)
+files each planned row's before-build: a row that held no display goes back
+to null, and a row that held an older build goes back by re-applying that
+build's receipt. The rollback names every row the run may have written:
+while the record is still a plan (state "planned" or "unconfirmed"), every
+planned row; once confirmed, every planned row it sent a write, errored and
+unconfirmed rows included (a PATCH that timed out can still commit after
+the confirming read), leaving out only a row never tried and a row the
+server refused outright on every try (a 4xx other than 408 or 429) that the
+confirming read shows still holding its before-build. Naming an unwritten row is safe: putting it back to its
+before-build leaves it as it was. A
+row skipped as `already` was not written by this run and is not in its
+rollback; the earlier run that wrote it holds it in its own record. A
+display write on a checked program waits on Sam's go (his sheet 42 card 2
+practice); the dispatch is that go carried out, so the workflow never runs
+this on a push.
 
 Usage, from the repo root:
-  python3 kb/_program_requirements_display_apply.py --dry-run
+  python3 kb/_program_requirements_display_apply.py --dry-run [--college NAME]
       name the build and receipt, parse every statement, write nothing
-  python3 kb/_program_requirements_display_apply.py --apply [--run N]
+  python3 kb/_program_requirements_display_apply.py --apply [--run N] [--workers 8] [--college NAME]
       apply it with SUPABASE_SERVICE_KEY and file the applied record
 
 Guard: tests/program_requirements_display_apply_test.py.
@@ -46,13 +83,18 @@ import argparse
 import glob
 import gzip
 import hashlib
+import http.client
 import json
 import os
 import re
+import socket
 import sys
+import threading
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
+from concurrent.futures import ThreadPoolExecutor
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -148,43 +190,223 @@ def _where(college: str, control_number: str) -> str:
                                                    urllib.parse.quote(control_number, safe=""))
 
 
-def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=None) -> dict:
-    """Read each row's build, then write its display. Returns the applied
-    record; `request(method, path_qs, body)` is injectable for the test."""
-    request = request or (lambda m, p, b=None: _request(m, p, os.environ["SUPABASE_SERVICE_KEY"], b))
-    before, written, missing, errors = {}, [], [], []
-    for r in rows:
-        where = _where(r["college"], r["control_number"])
-        k = "%s|%s" % (r["college"], r["control_number"])
+PAGE_ROWS = 1000      # PostgREST's max-rows; a page is ordered by the key, so pages never shear
+WORKERS = 8           # PATCHes at once
+TRIES = 4             # a PATCH or a page read, at most
+ERROR_STOP = 50       # past this many failed writes the rest are not tried (a dead key or host)
+MISSING_LINE = 0.01   # more than 1% of the statements missing means the wrong build,
+MISSING_FLOOR = 30    # and more than 30 keys, so a small college's few gone rows do not fail it
+RECHECK_MAX = 300     # missing keys re-read one at a time; past this the build is wrong anyway
+SHOW = 30             # missing keys printed
+
+
+def _key(college: str, control_number: str) -> str:
+    return "%s|%s" % (college, control_number)
+
+
+def _first(exc: BaseException) -> str:
+    return (str(exc).splitlines() or [""])[0][:300] or type(exc).__name__
+
+
+def _transient(exc: BaseException) -> bool:
+    """A 5xx, a 408 or 429, a timeout or a dropped connection is worth another
+    try; any other 4xx is not."""
+    if isinstance(exc, urllib.error.HTTPError):
+        return exc.code >= 500 or exc.code in (408, 429)
+    return isinstance(exc, (urllib.error.URLError, TimeoutError, socket.timeout, ConnectionError,
+                            http.client.HTTPException))
+
+
+def _retry(call, sleep, tries: int = TRIES):
+    """call() until it returns, sleeping 1, 2, 4 s between tries of a transient failure."""
+    for i in range(tries):
         try:
-            got = request("GET", "%s?select=build:display->>build&%s" % (TABLE, where))
-            if len(got) != 1:
-                missing.append(k)
-                continue
-            before[k] = got[0].get("build")
-            back = request("PATCH", "%s?select=control_number&%s" % (TABLE, where), {"display": r["display"]})
-            if len(back) == 1:
-                written.append(k)
-            else:
-                errors.append({"key": k, "error": "the write matched %d rows" % len(back)})
-        except Exception as exc:          # the record still files what was written before it
-            errors.append({"key": k, "error": str(exc).splitlines()[0][:300]})
-            break
+            return call()
+        except Exception as exc:
+            if i == tries - 1 or not _transient(exc):
+                raise
+            sleep(2 ** i)
+
+
+def read_builds(request, college: str | None = None, sleep=time.sleep) -> dict:
+    """{key: display->>build} for every row (one college's with `college`), in
+    pages of PAGE_ROWS ordered by college and control number, read until an
+    empty page, so a server capping a page lower than PAGE_ROWS still reads whole."""
+    scope = "&college=eq.%s" % urllib.parse.quote(college, safe="") if college else ""
+    out, offset = {}, 0
+    while True:
+        qs = ("%s?select=college,control_number,build:display->>build%s"
+              "&order=college.asc,control_number.asc&limit=%d&offset=%d" % (TABLE, scope, PAGE_ROWS, offset))
+        page = _retry(lambda: request("GET", qs), sleep)
+        if not page:
+            return out
+        for r in page:
+            out[_key(r["college"], r["control_number"])] = r.get("build")
+        offset += len(page)
+
+
+def _rollback(before: dict, keys: list) -> dict:
+    held = sorted({before[k] for k in keys if before[k]})
+    return {
+        "to_null": [k for k in keys if before[k] is None],
+        "reapply": {b: [k for k in keys if before[k] == b] for b in held},
+        "how": "set display to null for to_null; for each build in reapply, re-apply that build's "
+               "full receipt (kb/receipts/program_requirement_records_display_*_<build>.sql, or .sql.gz) to those keys.",
+    }
+
+
+def _file(rec: dict, out: str | None) -> None:
+    if not out:
+        return
+    tmp = out + ".tmp"
+    with open(tmp, "w") as fh:
+        json.dump(rec, fh, ensure_ascii=False, indent=1)
+        fh.write("\n")
+    os.replace(tmp, out)
+
+
+def apply(rows: list[dict], build: str, receipt: str, run: str | None, request=None, *,
+          out: str | None = None, workers: int = WORKERS, college: str | None = None,
+          sleep=time.sleep, log=print) -> dict:
+    """Read every row's build in pages, file the plan to `out`, write the
+    planned rows in a pool, then confirm them with a second paged read and
+    finish the record from it. Returns the applied record;
+    `request(method, path_qs, body)` and `sleep` are injectable for the test."""
+    request = request or (lambda m, p, b=None: _request(m, p, os.environ["SUPABASE_SERVICE_KEY"], b))
     with open(receipt, "rb") as fh:
         md5 = hashlib.md5(fh.read()).hexdigest()
-    held = sorted({b for b in before.values() if b})
-    return {
+    rec = {
         "build": build, "receipt": os.path.relpath(receipt, ROOT), "receipt_md5": md5, "run": run,
+        "scope": college or "the whole build", "workers": workers,
         "at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "statements": len(rows), "written": len(written), "missing": missing, "errors": errors,
-        "before": before,
-        "rollback": {
-            "to_null": [k for k, b in before.items() if b is None and k in written],
-            "reapply": {b: [k for k, v in before.items() if v == b and k in written] for b in held},
-            "how": "set display to null for to_null; for each build in reapply, re-apply that build's "
-                   "full receipt (kb/receipts/program_requirement_records_display_*_<build>.sql, or .sql.gz) to those keys.",
-        },
+        "state": "planned", "statements": len(rows), "already": 0, "planned": 0, "written": None,
+        "missing": [], "present_now": [], "errors": [], "unconfirmed": [], "before": {},
+        "rollback": _rollback({}, []),
     }
+    by_key = {}
+    for r in rows:
+        by_key.setdefault(_key(r["college"], r["control_number"]), r)
+
+    # 1. Before-values, in pages; a key the pages lack is re-read on its own.
+    try:
+        held = read_builds(request, college, sleep)
+        missing = [k for k in by_key if k not in held]
+        if 0 < len(missing) <= RECHECK_MAX:
+            for k in missing:
+                where = _where(by_key[k]["college"], by_key[k]["control_number"])
+                got = _retry(lambda: request("GET", "%s?select=build:display->>build&%s" % (TABLE, where)), sleep)
+                if len(got) == 1:
+                    held[k] = got[0].get("build")
+    except Exception as exc:
+        rec["state"] = "not started"
+        rec["errors"].append({"key": None, "error": "the before-read: " + _first(exc)})
+        _file(rec, out)
+        return rec
+    rec["missing"] = [k for k in by_key if k not in held]
+    rec["already"] = sum(1 for k in by_key if k in held and held[k] == build)
+    plan = {k: held[k] for k in by_key if k in held and held[k] != build}
+    rec["planned"], rec["before"], rec["rollback"] = len(plan), plan, _rollback(plan, list(plan))
+
+    # 2. The plan is the rollback until the confirming read; it is filed before the first write.
+    _file(rec, out)
+    log("plan: %d to write, %d already carry %s, %d missing" % (len(plan), rec["already"], build,
+                                                                len(rec["missing"])))
+
+    # 3. The writes, a bounded pool, each retried on a transient failure.
+    failed, lock, stop, done = {}, threading.Lock(), threading.Event(), [0]
+    sent, refused = set(), set()     # sent a write; every try refused by a 4xx, so none can land late
+
+    def write(k: str) -> None:
+        tried, no = False, False
+        if stop.is_set():
+            err = "not tried: %d writes had failed" % ERROR_STOP
+        else:
+            tried = True
+            where = _where(by_key[k]["college"], by_key[k]["control_number"])
+            body = {"display": by_key[k]["display"]}
+            outcomes = []            # per try: True when the server refused it outright
+
+            def once():
+                try:
+                    return request("PATCH", "%s?select=control_number&%s" % (TABLE, where), body)
+                except Exception as exc:
+                    outcomes.append(isinstance(exc, urllib.error.HTTPError) and not _transient(exc))
+                    raise
+            try:
+                back = _retry(once, sleep)
+                err = None if len(back) == 1 else "the write matched %d rows" % len(back)
+            except Exception as exc:
+                err = _first(exc)
+                no = bool(outcomes) and all(outcomes)
+        with lock:
+            done[0] += 1
+            if tried:
+                sent.add(k)
+            if no:
+                refused.add(k)
+            if err:
+                failed[k] = err
+                if len(failed) >= ERROR_STOP:
+                    stop.set()
+            if done[0] % 2000 == 0:
+                log("  %d of %d written or tried, %d failed" % (done[0], len(plan), len(failed)))
+
+    with ThreadPoolExecutor(max_workers=max(1, workers)) as pool:
+        list(pool.map(write, plan))
+
+    # 4. Confirm from a fresh read, never from the writes' responses.
+    try:
+        post = read_builds(request, college, sleep)
+    except Exception as exc:
+        rec["state"] = "unconfirmed"
+        rec["errors"] = [{"key": k, "error": failed[k]} for k in plan if k in failed]
+        rec["errors"].append({"key": None, "error": "the confirming read: " + _first(exc)})
+        rec["unconfirmed"] = list(plan)
+        _file(rec, out)
+        return rec
+    # A planned key the pages lack is re-read on its own (a concurrent delete shifts a page).
+    for k in [k for k in plan if k not in post][:RECHECK_MAX]:
+        where = _where(by_key[k]["college"], by_key[k]["control_number"])
+        try:
+            got = _retry(lambda: request("GET", "%s?select=build:display->>build&%s" % (TABLE, where)), sleep)
+        except Exception:
+            continue                      # left absent: unconfirmed, and in the rollback if it was sent
+        if len(got) == 1:
+            post[k] = got[0].get("build")
+    confirmed = [k for k in plan if post.get(k) == build]
+    ok = set(confirmed)
+    rec["state"] = "confirmed"
+    rec["written"] = len(confirmed)
+    rec["errors"] = [{"key": k, "error": failed[k], "confirmed": k in ok} for k in plan if k in failed]
+    rec["unconfirmed"] = [k for k in plan if k not in ok]
+    rec["present_now"] = [k for k in rec["missing"] if k in post]
+    # Every row the run may have written: each one sent a write, but a row the server
+    # refused outright that still holds its before-build. A timed-out write can land late.
+    rec["rollback"] = _rollback(plan, [k for k in plan if k in sent
+                                       and not (k in refused and k in post and post[k] == plan[k])])
+    rec["finished"] = time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+    _file(rec, out)
+    return rec
+
+
+def exit_code(rec: dict) -> int:
+    """1 when the run did not confirm, when a planned row does not carry the
+    build after it (an error the confirming read resolved is not one), or when
+    more are still missing than both 1% of the statements and 30 keys; 0 otherwise. A key a load
+    inserted mid-run (present_now) is not missing; the next run writes it."""
+    return 1 if rec["state"] != "confirmed" or rec["unconfirmed"] or over_line(rec) else 0
+
+
+def still_missing(rec: dict) -> list:
+    now = set(rec.get("present_now", []))
+    return [k for k in rec["missing"] if k not in now]
+
+
+def over_line(rec: dict) -> bool:
+    """The wrong-build line: more missing than 1% of the statements and more
+    than MISSING_FLOOR keys, so a small --college run is not failed by the
+    few keys the table no longer holds."""
+    return len(still_missing(rec)) > max(MISSING_LINE * rec["statements"], MISSING_FLOOR)
 
 
 def read_receipt(path: str) -> str:
@@ -195,38 +417,75 @@ def read_receipt(path: str) -> str:
         return fh.read()
 
 
-def applied_path(receipt: str, run: str | None) -> str:
+def applied_path(receipt: str, run: str | None, college: str | None = None, attempt: str | None = None) -> str:
+    """<receipt stem>.applied_<run>[_<attempt>][_<college slug>].json; the
+    attempt only above 1, so a re-run of one workflow run never writes over
+    the first attempt's record."""
     stem = receipt[:-len(".gz")] if receipt.endswith(".gz") else receipt
-    return stem[:-len(".sql")] + ".applied_%s.json" % (run or "local")
+    tag = "_%d" % int(attempt) if attempt and str(attempt).isdigit() and int(attempt) > 1 else ""
+    slug = "_" + re.sub(r"[^a-z0-9]+", "-", college.lower()).strip("-") if college else ""
+    return stem[:-len(".sql")] + ".applied_%s%s%s.json" % (run or "local", tag, slug)
 
 
-def main(argv: list[str] | None = None) -> int:
+def main(argv: list[str] | None = None, request=None, sleep=time.sleep) -> int:
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     mode = ap.add_mutually_exclusive_group(required=True)
     mode.add_argument("--dry-run", action="store_true", help="parse the receipt; write nothing")
     mode.add_argument("--apply", action="store_true", help="write it with SUPABASE_SERVICE_KEY")
     ap.add_argument("--run", default=os.environ.get("GITHUB_RUN_ID"))
+    ap.add_argument("--attempt", default=os.environ.get("GITHUB_RUN_ATTEMPT"),
+                    help="the run's attempt; above 1 it joins the applied record's name")
+    ap.add_argument("--workers", type=int, default=WORKERS, help="PATCHes at once (default %d)" % WORKERS)
+    ap.add_argument("--college", help="apply only this college's statements, as the receipt names it")
     args = ap.parse_args(argv)
     build = page_build()
     receipt = receipt_for(build)
     rows = parse(read_receipt(receipt))
-    stale = [r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
+    if not rows:
+        print("REFUSING: the receipt of build %s (%s) holds no statement" % (build, os.path.relpath(receipt, ROOT)))
+        return 1
+    stale =[r["control_number"] for r in rows if (r["display"] or {}).get("build") != build]
     if stale:
         print("REFUSING: %d statements carry another build than %s (first: %s)" % (len(stale), build, stale[0]))
         return 1
-    print("build %s: %s, %d statements" % (build, os.path.relpath(receipt, ROOT), len(rows)))
+    keys = [_key(r["college"], r["control_number"]) for r in rows]
+    if len(set(keys)) != len(keys):
+        print("REFUSING: %d keys appear in more than one statement; parallel writes would land in no set order"
+              % (len(keys) - len(set(keys))))
+        return 1
+    if args.college:
+        rows = [r for r in rows if r["college"] == args.college]
+        if not rows:
+            print("REFUSING: no statement of build %s names the college %r" % (build, args.college))
+            return 1
+    print("build %s: %s, %d statements%s" % (build, os.path.relpath(receipt, ROOT), len(rows),
+                                             " of %s" % args.college if args.college else ""))
     if args.dry_run:
         return 0
-    if not os.environ.get("SUPABASE_SERVICE_KEY"):
+    if request is None and not os.environ.get("SUPABASE_SERVICE_KEY"):
         print("SUPABASE_SERVICE_KEY is not set; the display write takes the service role.")
         return 2
-    rec = apply(rows, build, receipt, args.run)
-    with open(applied_path(receipt, args.run), "w") as fh:
-        json.dump(rec, fh, ensure_ascii=False, indent=1)
-        fh.write("\n")
-    print("written %d of %d; missing %d; errors %d" % (rec["written"], len(rows), len(rec["missing"]),
-                                                       len(rec["errors"])))
-    return 1 if rec["errors"] or rec["missing"] else 0
+    out = applied_path(receipt, args.run, args.college, args.attempt)
+    rec = apply(rows, build, receipt, args.run, request, out=out, workers=args.workers,
+                college=args.college, sleep=sleep)
+    gone, now = still_missing(rec), rec.get("present_now", [])
+    if gone:
+        print("missing %d (no row holds the key): %s%s" % (len(gone), ", ".join(gone[:SHOW]),
+                                                         ", ..." if len(gone) > SHOW else ""))
+    if now:
+        print("present now, not written: run again (%d, a load inserted them mid-run): %s%s"
+              % (len(now), ", ".join(now[:SHOW]), ", ..." if len(now) > SHOW else ""))
+    print("%s: written %s of %d planned; %d already; missing %d; errors %d (%d resolved by the confirming read); "
+          "not confirmed %d" % (rec["state"], rec["written"] if rec["written"] is not None else "unknown",
+                                rec["planned"], rec["already"], len(rec["missing"]), len(rec["errors"]),
+                                sum(1 for e in rec["errors"] if e.get("confirmed")), len(rec["unconfirmed"])))
+    for e in rec["errors"][:SHOW]:
+        print("  error %s: %s" % (e["key"], e["error"]))
+    if over_line(rec):
+        print("FAIL: more than 1%% of the statements, and more than 30, are missing (%d of %d); "
+              "is this the build the table holds?"
+              % (len(gone), rec["statements"]))
+    return exit_code(rec)
 
 
 if __name__ == "__main__":
