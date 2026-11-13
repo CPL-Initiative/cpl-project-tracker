@@ -259,3 +259,7 @@ history moved 2026-09-17 to 2026-10-31. New rotations keep landing here.
 ## Moved from docs/INDEX.md's Update history (S643, 2026-11-12)
 
 - 2026-11-10 (SkyFermi, Library side session): handoff 635; the Library reads any file and drafts a new piece (#3077); Pages prune of kb/receipts (#3088); Pages deploys still timing out.
+
+## Moved from docs/INDEX.md's Update history (S644, 2026-11-13)
+
+- 2026-11-10 (S634 SkyBackward, Sam's session): Sheet 180 carried out: the CCR seed confirm for every remaining discipline (#3084), Alameda's semester sum (#3086), 10-Key's issuer (#3087), Las Positas's local GE (#3085, display running); the cer lane compacted (#3089); the dashboard's sign-in (#3092); handoff 636.

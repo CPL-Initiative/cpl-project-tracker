@@ -1,0 +1,28 @@
+{
+ "_readme": "S644, 2026-11-13. Capture-only run 43338146577 (branch claude/harvest-sjcc-s644) found 7 of San Jose City's 90 programs with a closed list. Each of the 82 not found has a near miss on a page whose address names its award and title (79 distinct degrees-certificates pages), yet the coarse net reads 0 of the program's listed courses there (Accounting A.S.: 0 of 9). The state's file stores this college's course codes as 'Accounting (ACCTG) 101' (718 of 748 rows in unified_courses_members.js), which norm_code() reads as ACCOUNTING(ACCTG)101 and never matches a printed ACCTG 101. This read loads two program pages as the capture reads them, to see the codes as the catalog prints them: one the capture missed (Accounting A.S.) and one it found (Art A.S.). Two loads, no model call. ANSWERED by page read 43344961799 (2 loads): both pages print the code as subject letters and a three-digit number in the Requirements tab, which the capture reads ('ACCTG 020\\tFinancial Accounting\\t5', 'ART 055A\\tLife Drawing I\\t3', 'PHOTO 022'). The page is right and the capture reaches it; the stored codes are what miss. The fix is in the reader: file_code() in kb/_program_requirements_college.py reads 'Accounting (ACCTG) 20' as ACCTG 20 before the net and the scorer key on it.",
+ "college": "San Jose City College",
+ "questions": {
+  "printed_codes": "How a San Jose City program page prints its course codes in the Requirements tab, as the capture reads it."
+ },
+ "keywords": [
+  "\\bACCTG ?\\d",
+  "\\bART ?\\d",
+  "Total Units"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.sjcc.edu/degrees-certificates/accounting/accounting-associate-science/",
+   "answers": [
+    "printed_codes"
+   ],
+   "capture_view": true
+  },
+  {
+   "url": "https://catalog.sjcc.edu/degrees-certificates/art/art-associate-science/",
+   "answers": [
+    "printed_codes"
+   ],
+   "capture_view": true
+  }
+ ]
+}

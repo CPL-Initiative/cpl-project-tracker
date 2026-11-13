@@ -112,6 +112,10 @@ jobs:
           # page. 2.0 GB of the 2.9 GB site on 2026-11-10, when the deploy's sync began timing out
           # (COBIx on #3077: the artifact was 1.6 GB, over Pages' 1 GB published-site limit).
           rm -rf _site/kb/receipts
+          # The harvest's heading-agreement snapshot (335 KB) and COBIx's scout files: read in the repo,
+          # never by a tab (S645, review of #3201). tests/pages_size_guard.test.js holds the list.
+          rm -rf _site/kb/harvest_scouting
+          rm -f  _site/kb/status/harvest_heading_agreement.json _site/kb/status/harvest_heading_agreement.md
           # GitHub Pages must skip Jekyll for a static site (the repo also ships a
           # root .nojekyll; this is belt + braces).
           touch _site/.nojekyll

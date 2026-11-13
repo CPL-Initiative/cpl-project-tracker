@@ -89,6 +89,10 @@ on:
         description: "read: 'site' reads a Coursedog catalog from its program search instead of its PDF procedure step (S449)"
         required: false
         default: ""
+      display_college:
+        description: "display: apply only this college's statements, as the receipt names it (empty = the whole build). Not the college input, whose default would scope every display (S645)"
+        required: false
+        default: ""
   push:
     branches: ['claude/**']
     paths:
@@ -165,6 +169,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/program_requirements_college kb/hand_filed_catalogs
+          # The heading-agreement snapshot reads the records the index holds, so it follows the add
+          # (its --check runs in CI; S645 review of #3201).
+          # Guarded: a snapshot that fails to regenerate never stops the records from filing.
+          if python3 kb/_program_requirements_heading_agreement.py; then
+            git add kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md
+          else
+            echo "::warning::the heading-agreement snapshot did not regenerate; the records file without it"
+            git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md || true
+          fi
           if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
           git commit -m "File the program requirements read of $COLLEGE (run ${{ github.run_id }})"
           for i in 1 2 3 4; do
@@ -260,7 +273,14 @@ jobs:
       - name: Apply the display build the page carries
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: python3 kb/_program_requirements_display_apply.py --apply
+          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}
+        # A college the receipt does not name is refused; empty applies the whole build.
+        run: |
+          if [ -n "$DISPLAY_COLLEGE" ]; then
+            python3 kb/_program_requirements_display_apply.py --apply --college "$DISPLAY_COLLEGE"
+          else
+            python3 kb/_program_requirements_display_apply.py --apply
+          fi
       # Only the receipts this run wrote (kb/receipts holds over a thousand files); an upload that fails
       # never fails a job whose write and push succeed: the push stays the gate.
       - uses: actions/upload-artifact@v7
@@ -273,12 +293,15 @@ jobs:
           retention-days: 90
       - name: Commit the applied record to the branch that ran it
         if: always()
+        # The message names a scoped run's college, so git log tells it from a whole-build run.
+        env:
+          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add kb/receipts
           if git diff --cached --quiet; then echo "no applied record"; exit 0; fi
-          git commit -m "Applied record: the page's display build (run ${{ github.run_id }})"
+          git commit -m "Applied record: the page's display build${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE} (run $GITHUB_RUN_ID)"
           for i in 1 2 3 4; do
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"

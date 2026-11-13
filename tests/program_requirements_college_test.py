@@ -223,6 +223,60 @@ check(byc["99999"]["closed_list"] == [] and byc["99999"]["status"] == "Active - 
 check([byc[k]["shape"] for k in ("42158", "41982", "45549", "36675")] == ["degree", "certificate", "adt", "noncredit"],
       "each program's shape comes from its award")
 
+# ── a code the state's file stores under its subject's name (San Jose City, S644) ──
+# The file stores "Accounting (ACCTG) 101"; the catalog prints ACCTG 101. Read as stored,
+# the coarse net named 0 of Accounting A.S.'s 9 listed courses on its own page and the
+# capture found 7 of 90 programs (capture-only run 43338146577).
+check(C.file_code("Accounting (ACCTG) 101") == "ACCTG 101"
+      and C.file_code("Kinesiology-Athletics, Men (KINAM) 012B") == "KINAM 012B"
+      and C.file_code("Art (ART) 027A") == "ART 027A"
+      and C.file_code("PSYCH (Psychology) 51") == "PSYCH 51",
+      "a code stored under its subject's name reads as the letters in capitals beside the number")
+check(C.file_code("AIRC 121") == "AIRC 121" and C.file_code("IWAP 40.1") == "IWAP 40.1"
+      and C.file_code(None) is None and C.file_code("Special (Topics) 9") == "Special (Topics) 9",
+      "a code already in its printed form, or with no capitals to read, is left as stored")
+# The page prints ACCTG 020 where the file, rewritten, says ACCTG 20: the normal form both the
+# net and the scorer key on reads them as one code, and a letter after the number stays.
+check(P.norm_code(C.file_code("Accounting (ACCTG) 20")) == P.norm_code("ACCTG 020") == "ACCTG20"
+      and P.norm_code(C.file_code("Art (ART) 055A")) == P.norm_code("ART 055A") == "ART55A"
+      and P.norm_code("ART 055A") != P.norm_code("ART 055B") and P.norm_code("ART 055A") != P.norm_code("ART 55"),
+      "the file's ACCTG 20 and the page's ACCTG 020 are one code; ART 055A keeps its letter")
+import _build_roep_display as RD  # noqa: E402
+import _harvest_no_closed_list_diagnosis as ND  # noqa: E402
+check(RD.ck("Accounting (ACCTG) 20") == RD.ck("ACCTG 020") and RD.ck("Art (ART) 055A") == RD.ck("ART 055A") != RD.ck("ART 055B")
+      and ND.norm_code("Air Conditioning (AIRC) 132") == ND.norm_code("AIRC 132"),
+      "the display builder's join and the no-closed-list diagnosis read a stored code through file_code()")
+# Other colleges' codes as the state's file and MAP store them (unified_courses_members.js,
+# kb/reference/coci_program_course_file.csv.gz), slashes, ampersands, campus letters and decimals
+# among them, and a course title with parentheses: none is rewritten.
+OTHER_CODES = ["HORT 001 F", "CYBR 100 F", "ATC 236 C", "CNA/N 626", "KIN/D 130A", "FAM &CS 91",
+               "M/LAT 030A", "HVAC/R 055C", "BNK/F 55", "CPSC-17", "IWAP 40.10", "CISN121", "ACCT 01AH",
+               "Red Hat Linux System Administration II (RH134)", "Introduction to Musical Instrument Digital Interface (MIDI)"]
+check(all(C.file_code(c) == c for c in OTHER_CODES),
+      "every other college's code passes through file_code() unchanged")
+other = C.group_programs([{"control_number": "1", "program_title": "X", "award": "A.S. Degree", "status": "Active"}],
+                         [{"program_control_number": "1", "course_control_number": str(n), "course_code": c, "units": 3, "load_id": "L"}
+                          for n, c in enumerate(OTHER_CODES)])[0]["closed_list"]
+check([c["code"] for c in other] == OTHER_CODES and not any("file_code" in c for c in other),
+      "another college's closed list is grouped exactly as stored, with no file_code beside any course")
+sj_progs = [{"control_number": "06185", "program_title": "Accounting", "award": "A.S. Degree", "status": "Active"}]
+sj_rows = [{"program_control_number": "06185", "course_control_number": str(n), "course_code": code, "units": 5, "load_id": "L"}
+           for n, code in enumerate(["Accounting (ACCTG) 20", "Accounting (ACCTG) 21", "Business (BUS) 071", "CIS 041"])]
+sj = C.group_programs(sj_progs, sj_rows)[0]["closed_list"]
+check([c["code"] for c in sj] == ["ACCTG 20", "ACCTG 21", "BUS 071", "CIS 041"]
+      and sj[0]["file_code"] == "Accounting (ACCTG) 20" and "file_code" not in sj[3],
+      "the closed list carries the printed code, the stored form kept beside it")
+# The Requirements tab as the capture read it on Accounting A.S.'s own page (page read 43344961799).
+SJ_TAB = ("[Tab: Requirements]\nMajor Requirements\nCourse List\nCourse\nTitle\nCredits\n"
+          "ACCTG 020\tFinancial Accounting\t5\nACCTG 021\tManagerial Accounting\t5\nACCTG 030\tQuickBooks\t3\n"
+          "BUS 071\tLegal Environment of Business\t3\nCIS 041\tIntroduction to Computer Information Systems\t3\n"
+          "Total Units\t35")
+check(C.net_hits(sj, C.page_codes(SJ_TAB)) == 4 and P.coverage(P.find_codes(SJ_TAB, sj), sj) == 1.0,
+      "the coarse net and the coverage test read every listed course on the program's own page")
+stored = P.closed_from_rows(sj_rows)
+check(C.net_hits(stored, C.page_codes(SJ_TAB)) == 1 and P.coverage(P.find_codes(SJ_TAB, stored), stored) == 0.25,
+      "read as stored, the page names only the one course already in its printed form (the S644 failure)")
+
 # ── the page each program is read from ──────────────────────────────────────
 AA_TEXT = "Field Ironworkers, A.A. Required courses IWAP 40.10 Rigging IWAP 40.20 Welding Total 60 units"
 CERT_TEXT = "Field Ironworkers Certificate of Achievement IWAP 40.10 IWAP 40.20 Total 30 units"
@@ -1102,6 +1156,41 @@ check("github.event.inputs.step == 'display'" in display_if and "github.event_na
       and "head_commit" not in display_if,
       "the display write runs only on a dispatch with step=display, never on a push: it changes checked "
       "programs, which waits on Sam's go")
+# S645: a display dispatch may name one college (the first live run of the parallel apply, North
+# Orange's 78 statements). Its own input, never `college` (default Cerritos would scope every display),
+# reaching the shell by env and a quoted variable; without it the step is the bare whole-build apply.
+_inputs = wf.split("workflow_dispatch:")[1].split("\n  push:")[0]
+_dc = _inputs.split("      display_college:\n")[1].split("\n      ")[0:3] if "      display_college:\n" in _inputs else []
+_apply = display_job.split("- name: Apply the display build the page carries")[1].split("- uses:")[0]
+_commit = display_job.split("- name: Commit the applied record to the branch that ran it")[1]
+_env_line = "          DISPLAY_COLLEGE: ${{ github.event.inputs.display_college }}"
+
+
+def _env_lines(st):
+    return [x for x in st.split("run: |")[0].splitlines() if "DISPLAY_COLLEGE" in x]
+
+
+def _run(st):
+    return st.split("run: |")[1]
+
+
+check(any(x.strip() == 'default: ""' for x in _dc)
+      and _env_lines(_apply) == [_env_line]
+      and "${{" not in _run(_apply)
+      and not re.search(r"inputs\.college\b", _apply)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=|read\s.*DISPLAY_COLLEGE", _run(_apply))
+      and 'if [ -n "$DISPLAY_COLLEGE" ]; then' in _apply
+      and '--apply --college "$DISPLAY_COLLEGE"\n' in _apply
+      and "else\n            python3 kb/_program_requirements_display_apply.py --apply\n          fi" in _apply,
+      "the display step takes display_college (empty by default) by env into --college, never assigned in the "
+      "shell and never the college input, and a bare --apply without it")
+_msg = [x for x in _run(_commit).splitlines() if "git commit" in x]
+check(_env_lines(_commit) == [_env_line]
+      and not re.search(r"inputs\.college\b", _commit)
+      and not re.search(r"DISPLAY_COLLEGE\s*=|export\s+DISPLAY_COLLEGE|:=", _run(_commit))
+      and len(_msg) == 1 and "${{" not in _msg[0] and "${DISPLAY_COLLEGE:+ of $DISPLAY_COLLEGE}" in _msg[0]
+      and "$GITHUB_RUN_ID" in _msg[0],
+      "the applied record's commit message names a scoped run's college, by env, with no ${{ }} in the line")
 check(wf.count("contents: write") == 3 and wf.count('git push origin "HEAD:${{ github.ref_name }}"') == 3
       and wf.count("git push") == 3,
       "each job writes only to the branch that ran it")
@@ -2943,6 +3032,114 @@ finally:
     else:
         os.environ["SUPABASE_SERVICE_KEY"] = _saved[1]
     shutil.rmtree(_hx, ignore_errors=True)
+
+# ── eLumen: a comma before the slug, and a program index on the college's own site (S644) ──
+# Diablo Valley's site links each award as dvc.elumenapp.com/catalog/DVC2026-2027Catalog/
+# program,<slug> (page read 43342288026); the content call catalog,program,<slug> prints the
+# award whole (43342877522); the menu names none (43343491672), so its index is
+# www.dvc.edu/academics/explore-our-programs?page=0..5, 77 areas (43341770461, 43344234543).
+check(C.el_program_links(SHELL, "2026-2027-Catalog") == [("ag-ed-as-fall-2026", "/"), ("culinary-coa-fall-2026", "/")]
+      and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
+      and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT, "/") == EPG,
+      "the slash form reads to the same slugs and the same addresses as before")
+check(C.el_program_urls(EL_LINKS + [{"text": "DVC", "href": EL_BASE + "program,a-s-in-x-fall-2020"}], EL_START)[-1]
+      == EL_BASE + "program,a-s-in-x-fall-2020"
+      and C.EL_PROGRAM_PATH.match("/catalog/DVC2026-2027Catalog/program,a-s-in-x-fall-2020")
+      and not C.EL_PROGRAM_PATH.match("/catalog/DVC2026-2027Catalog/program,"),
+      "a rendered menu's comma link is a program page, and keeps its comma")
+DVC_START = "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation"
+DVC_EL = "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/"
+DVC_SITE = "https://www.dvc.edu/academics/explore-our-programs"
+DVC_STEP = {"catalog": {"format": "html", "start": DVC_SITE, "pages": "?page=0..1",
+                        "follow": r"/academics/explore-our-programs/[a-z0-9-]+$",
+                        "program_links": r"dvc\.elumenapp\.com/catalog/DVC2026-2027Catalog/program,"}}
+st = C.el_index_step(DVC_STEP)
+check(st and st["pages"] == [DVC_SITE + "?page=0", DVC_SITE + "?page=1"]
+      and C.el_index_step({"catalog": dict(DVC_STEP["catalog"], pages=None)})["pages"] == [DVC_SITE],
+      "an index step lists start plus each page suffix, or start alone")
+check(all(C.el_index_step({"catalog": dict(DVC_STEP["catalog"], **bad)}) is None for bad in (
+          {"format": "pdf"}, {"start": "http://www.dvc.edu/x"}, {"follow": "("}, {"program_links": ""},
+          {"pages": "?page=5..0"}, {"pages": "?page=0..99"}, {"pages": "all"}))
+      and C.el_index_step(None) is None and C.el_index_step({"catalog": {"start": DVC_SITE}}) is None,
+      "a malformed index step is ignored, never guessed at")
+AREA = DVC_SITE + "/"
+DVC_LOADS = {
+    DVC_SITE + "?page=0": {"access": "ok", "status": 200, "links": [
+        {"text": "Learn more about\nAdministration of Justice", "href": AREA + "administration-justice"},
+        {"text": "Learn more about\nBusiness", "href": AREA + "business"},
+        {"text": "Learn more about\nBusiness Management", "href": AREA + "business-management"},
+        {"text": "Learn more about\nBusiness", "href": AREA + "business#top"},
+        {"text": "2", "href": DVC_SITE + "?page=1"},
+        {"text": "Learn More!", "href": "https://www.dvc.edu/academics/class-schedule-catalog"}]},
+    DVC_SITE + "?page=1": {"access": "error", "status": 503, "links": []},
+    AREA + "administration-justice": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science for Transfer - Administration of Justice",
+         "href": DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025"},
+        {"text": "Certificate of Achievement - Small Business Management/Entrepreneurship",
+         "href": DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024"},
+        {"text": "Learn More!", "href": "https://www.dvc.edu/academics/class-schedule-catalog"}]},
+    AREA + "business": {"access": "ok", "status": 200, "links": [
+        {"text": "Certificate of Achievement - Small Business Management/Entrepreneurship",
+         "href": DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024"},
+        {"text": "Certificate of Achievement - Police/Law Enforcement",
+         "href": DVC_EL + "program,certificate-of-achievement-in-police-law-enforcement-fall-2020"},
+        {"text": "Old year", "href": "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program,old-fall-2020"},
+        {"text": "Another host", "href": "https://lmc.elumenapp.com/catalog/DVC2026-2027Catalog/program,x"}]},
+    AREA + "business-management": {"access": "timeout", "status": None, "links": []},
+}
+DVC_PROG = ('<h2>A.S. in Administration of Justice for Transfer</h2><p>A.S. Degree for Transfer · 60 units</p>'
+            '<h4>Program Requirements</h4><h4>Administration of Justice for Transfer (Total 18)</h4>'
+            '<div class="new-rule"><span class="rule-name">ADJUS120 - Introduction to the Administration of Justice</span>'
+            '<span class="rule-credits"> 3</span></div>')
+loaded, dvc_asked = [], []
+
+
+def dvc_load(reader, url, cache, spa):
+    loaded.append(url)
+    return dict(DVC_LOADS.get(url) or {"access": "ok", "status": 200, "links": []})
+
+
+def dvc_fetch(reader, url, errors):
+    dvc_asked.append(url)
+    if ",program," in url:
+        return DVC_PROG
+    return json.dumps({"html": '<a href="DVC2026-2027Catalog/generalinformation">General Information</a>'})
+
+
+real_load, real_fetch = P.load, C.el_fetch
+P.load, C.el_fetch = dvc_load, dvc_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, DVC_START, rep, DVC_STEP, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+el = rep["elumen"]
+check([g["url"] for g in got_pages] == [
+          DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+          DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024",
+          DVC_EL + "program,certificate-of-achievement-in-police-law-enforcement-fall-2020"],
+      "the index's areas link each award once (one two areas share is read once), on this catalog and host "
+      "only, read at its comma address: %s" % [g["url"] for g in got_pages])
+check(el["index"] == {"index_pages": 2, "index_pages_failed": 1, "areas": 3, "areas_failed": 1,
+                      "index_programs": 3, "start": DVC_SITE}
+      and el["program_pages_listed"] == 3 and el["listing_failed"] == 2,
+      "a failed index page and a failed area page each count as a listing call lost: %s" % el)
+check(C.pages_account(dict(rep, pages_read=len(got_pages)), "elumen", 0) == (5, 3, 2),
+      "the capture counts the lost listing calls as listed and not answered")
+check(loaded.count(AREA + "business") == 1 and sum(1 for u in dvc_asked if ",program," in u) == 3
+      and "https://www.dvc.edu/academics/class-schedule-catalog" not in loaded,
+      "each area loads once, each award one content call, and no link the step does not name: %s" % loaded)
+check("ADJUS120" in got_pages[0]["body"] and got_pages[0]["title"] == "A.S. in Administration of Justice for Transfer",
+      "a content call reads as the award's page")
+loaded.clear()
+P.load, C.el_fetch = dvc_load, dvc_fetch
+try:
+    rep2 = {}
+    C.el_pages_fast(None, DVC_START, rep2, None, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+check(not loaded and "index" not in rep2["elumen"],
+      "with no index step in the procedure record, the college's site is never read")
 
 if failures:
     print("FAIL: %d" % len(failures))

@@ -1,0 +1,25 @@
+-- Receipt: program_source_registry, Diablo Valley College, its first procedure record (v2).
+-- Session 644 (SkyWren, the conductor), about 02:12Z 2026-11-13, through the Supabase connector.
+-- WRITTEN AFTER THE FACT from the session's record (the conductor's notes); the statement below restates the write,
+-- it was not copied from the call. Why: Diablo Valley had no procedure; #3195 (merged 326f1faa) added the eLumen
+-- comma form and the program-index step, from six free page reads.
+--
+-- THE WRITE (the table's one write path, guarded on the procedure's md5 before the write):
+-- md5 before: none (the row held no procedure). md5 after: 5511f5a5b0a03e77ea1c13260bfdfaee.
+-- procedure_by: 'SkyWren (S644, the conductor): the program-index step of #3195, from six free page reads'
+-- The record, as reported: version 2; hosts www.dvc.edu and dvc.elumenapp.com; a catalog step, format html,
+-- start https://www.dvc.edu/academics/explore-our-programs, pages ?page=0..5, follow
+-- /academics/explore-our-programs/[a-z0-9-]+$, program_links dvc\.elumenapp\.com/catalog/DVC2026-2027Catalog/program,
+-- select public.program_source_procedure_set(
+--   'Diablo Valley College',
+--   '<the v2 record above, as jsonb>',
+--   'SkyWren (S644, the conductor): the program-index step of #3195, from six free page reads',
+--   null);
+--
+-- ROLLBACK: the registry's history table holds the prior (null) version. The function cannot write null, so either
+-- restore that history row as the service role, or keep the record and remove its catalog step through the same
+-- function, guarded on the md5 after:
+-- select public.program_source_procedure_set(
+--   'Diablo Valley College',
+--   (select procedure - 'catalog' from program_source_registry where college = 'Diablo Valley College'),
+--   'rollback of the S644 catalog step', '5511f5a5b0a03e77ea1c13260bfdfaee');

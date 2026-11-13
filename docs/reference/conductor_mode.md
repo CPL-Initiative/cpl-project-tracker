@@ -1,7 +1,7 @@
 ---
 title: Conductor mode — how a session runs workers, COBIx and the merge gate
 date: 2026-11-11
-updated: 2026-11-12
+updated: 2026-11-13
 tags: [reference, conductor, governance-team-enablement, scheduled-sessions]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -139,6 +139,26 @@ at the top of each piece of work so Sam can change the dial before it runs.
   the handoff, then gives the one opening line (`CLAUDE.md`, *Sign off*).
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
+
+## What went wrong in S644, and what worked
+
+- A new workflow file cannot be dispatched until it is on `main` (the wave runner, #3191): merge first, then trial on
+  a branch.
+- The conductor missed COBIx's 00:21Z reply for forty minutes, and his finding on #3191's own thread was caught only
+  because the thread was read before the merge. Read COBIx's threads at every wake, not only before merging.
+- A fetch of ten full comments on #3111 cost about 10,000 tokens. Page with `perPage` 1 from the last page.
+- A regex reading of free catalog text (the no-colon hours reading, #3193) took three review rounds and still passed
+  constructed pages; gating it per college with positive evidence in the record's own section ended it. Gate first.
+- The conductor's own design rules were wrong twice (the price rate rule, widening `passes_live`), and review and the
+  existing tests caught both. A decision that changes a pinned test reverses someone's earlier decision: read why the
+  test exists before changing it.
+- `get_job_logs` returns the runner's cleanup as its tail; reproduce a lint failure locally.
+- A first-read college PR cannot go green without the display build (`tests/roep_display_test.py`), so plan the dated
+  reads and the build as part of the read (#3197 moves the dated reads to a runner job).
+- A worker's PR subscribes the session on its own, and each notice costs context.
+- Worked: the gap census before choosing work (one cause and one lever per program); one wave, one branch, one filing
+  job, agreed with COBIx before the build; COBIx's offers taken on Sam's relayed go. The container restarted at about
+  01:38Z and pushed work survived.
 
 ## What went wrong in S643, and what worked
 

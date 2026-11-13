@@ -29,6 +29,17 @@ function walk(dir, out) {
 const served = walk(".", []);
 const reach = served.filter((f) => fs.readFileSync(f, "utf8").indexOf("kb/receipts") >= 0);
 check("no served page or script reaches kb/receipts (" + served.length + " files)", served.length > 100 && reach.length === 0, reach.join(", "));
+// The harvest's internal files no tab reads (S645, review of #3201): pruned, and no served code names them.
+// A tab that comes to read one takes it off this list and out of the prune in the same change.
+const HARVEST_INTERNAL = [["rm -rf", "_site/kb/harvest_scouting"], ["rm -f", "_site/kb/status/harvest_heading_agreement.json"],
+                          ["rm -f", "_site/kb/status/harvest_heading_agreement.md"]];
+HARVEST_INTERNAL.forEach(([cmd, path]) => {
+  const at = assemble.indexOf(path);
+  check(path.replace("_site/", "") + " is pruned from the site", at >= 0 && assemble.lastIndexOf(cmd, at) >= 0);
+  const name = path.replace("_site/", "");
+  const reads = served.filter((f) => fs.readFileSync(f, "utf8").indexOf(name) >= 0);
+  check("no served page or script reaches " + name, reads.length === 0, reads.join(", "));
+});
 let failed = 0;
 results.forEach((r) => { if (!r[1]) failed++; console.log((r[1] ? "ok   " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n       " + r[2])); });
 console.log("\npages_size_guard.test.js: " + (results.length - failed) + "/" + results.length + " checks passed");
