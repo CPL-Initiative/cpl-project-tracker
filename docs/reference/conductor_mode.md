@@ -140,6 +140,16 @@ at the top of each piece of work so Sam can change the dial before it runs.
 - A wait on CI or a run ends the turn with one scheduled check-in (`send_later`), never a poll loop. S638 used 75% of
   its context in about five and a half hours, and each worker PR's subscription notice costs about 8,000 tokens.
 
+## What went wrong in S647, and what worked
+
+- The first half (08:55Z) stopped at about 10:12Z with no handoff. With the database refusing every query from about 09:29Z, it rightly held every apply: a session that cannot read a table back does not start a write to it. The 11:12Z firing read the stop from a green PR with COBIx's check left unmerged for an hour and every thread quiet at once, declared with draft #3221 before any other write, and took the queue under the same number.
+- The declaration PR must be refreshed within each half hour, or the next firing reads the session as stopped.
+- Reading three COBIx check comments in full cost about 25,000 tokens. Have a worker read the thread and report the tally.
+- `list_workflow_runs` on the college workflow returned every run's whole commit message (about 8,000 tokens). Find a run by its branch head or the applied record on `main`, then `get_workflow_run` by id.
+- A data receipt written as a `do` block cost a round trip: the repo's Supabase guard refuses it. Write one plain statement whose writes hang on one guard CTE. The conductor passes a receipt's text through a tool call, so a receipt that embeds a page costs its length twice.
+- Free disk fell to 5.3 GB with four worktrees. Remove a worker's worktree the moment its PR merges.
+- Worked: resuming a finished worker for the next branch; workers posting their own answer to COBIx on the PR thread; COBIx's reviews arriving within minutes of each push; a free capture before the paid read (College of the Desert's first capture failed for a reason unrelated to the change, at no cost).
+
 ## What went wrong in S646, and what worked
 
 - The conductor's decision 16(b) put a guard in `file_run`, which every college shares, and the second reader refuted it (decision 18 removed it). This is the third session running that a conductor design rule was wrong and review caught it: a decision that changes a pinned test gets a reader before anything is built on it.

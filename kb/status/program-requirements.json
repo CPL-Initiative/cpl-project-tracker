@@ -2,14 +2,14 @@
   "schema": 1,
   "project": "program-requirements",
   "written_at": "2026-11-13T08:22:25Z",
-  "session": 646,
-  "moniker": "SkyOriole",
+  "session": 647,
+  "moniker": "SkyPipit",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_647_handoff.md",
+  "handoff": "docs/session_648_handoff.md",
   "next_step": {
-    "title": "COBIx's checks, then Diablo Valley's display",
-    "text": "COBIx checks five records each of Diablo Valley, San Jose City and the rescore; each pull request merges on green, and Diablo Valley's display runs for it alone. Glendale's slow read and Santiago Canyon's paid read are read before either loads."
+    "title": "Glendale's load, then College of the Desert",
+    "text": "Glendale's reader holds 24432 as a wrong-page read, a small paid re-extract covers the programs whose page changes, one reader checks the changes, the compare tool runs, and then its records load. College of the Desert's paid read gets its pull request, a compare, a reread and its display build."
   },
   "calls": [
     {
@@ -275,12 +275,48 @@
       "link": "https://claude.ai/artifact/QmQVY3yBfeL8dXqQUFouCZ",
       "link_text": "Open Sheet 188",
       "part": "reading"
+    },
+    {
+      "title": "Deploy the extraction function's new error answer?",
+      "text": "While the database was unreachable on Nov 13, every call to the extraction function answered 401, which reads as a bad key, and a paid read at Glendale spent about $9 with nothing extracted. COBIx suggests the function answer 503 when the database fails and 401 only for a real refusal. It changes a deployed function, so it waits for your word.",
+      "if_no_reply": "The function keeps answering 401 on an outage; a session that sees 401 on every call checks the database before it spends.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program Requirements"
+      },
+      "part": "reading",
+      "link": "https://claude.ai/artifact/D3sp4Prwk3sueVtuAdDF6y",
+      "link_text": "Open Sheet 190"
     }
   ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-13T12:13:19Z",
+      "text": "Glendale's records wait to load: a passing record is kept when a read finds no page for its program, unless the program is no longer active, and 19577, in teach-out, is dropped. A free read of three catalog tabs found why the two CIS programs never got their own pages; the reader is fixed, and a small paid re-extract comes next."
+    },
+    {
+      "at": "2026-11-13T12:08:55Z",
+      "text": "College of the Desert's whole catalog was read in pieces at last: 358 programs extracted, 241 pass the machine checks (221 before). Not loaded yet."
+    },
+    {
+      "at": "2026-11-13T12:02:47Z",
+      "text": "The page shows the rescore at six colleges: the whole display build applied, 18,179 rows written with no errors. Three Monterey Peninsula programs in the build are not in the table."
+    },
+    {
+      "at": "2026-11-13T11:40:25Z",
+      "text": "San Jose City's 77 program records show on CPL Pathways and in Sierra, after COBIx's check (4 agree, 1 differs)."
+    },
+    {
+      "at": "2026-11-13T11:24:06Z",
+      "text": "Diablo Valley's 213 program records show on CPL Pathways and in Sierra, after COBIx's check of five."
+    },
+    {
+      "at": "2026-11-13T11:19:07Z",
+      "text": "Santiago Canyon's 216 program records show on CPL Pathways and in Sierra, after COBIx's check."
+    },
     {
       "at": "2026-11-13T08:10:00Z",
       "text": "Santiago Canyon holds 216 program records (was 192): a paid read of 67 programs, 47 pass, and a reread replaced 43. Its page waits on COBIx's check."
