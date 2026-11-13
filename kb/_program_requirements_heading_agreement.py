@@ -28,12 +28,20 @@ WHAT THIS MEASURES, from committed files only (read-only; writes no table):
     own number line and then names another program's title and award is a number printed AFTER its
     program; one that then names its own is printed BEFORE; one on the heading's own line is AT the
     heading.
-  * what heading_award_check would fail statewide among records passes_live passes today, by college:
-    the number the conductor needs before the check is wired into any pass rule. It is not wired here.
+  * what heading_award_check would fail statewide among records that pass on the committed files
+    (passes_live), by college: the number the conductor needs before the check is wired into any pass
+    rule. It is not wired here. A heading naming an award and none of the program's title words is
+    set aside in its own bucket (award_not_program: Pasadena prints one page for an A.S. and its
+    certificate, S645 review of #3201).
+
+The committed snapshot reads only the files this tree commits (git ls-files), and says the date of
+the newest capture it reads. A college folder on an unmerged branch never enters it: measure one with
+--extra and --college.
 
 Run from repo root:
-    python3 kb/_program_requirements_heading_agreement.py
-    python3 kb/_program_requirements_heading_agreement.py --extra PATH:LABEL   # a college folder off main
+    python3 kb/_program_requirements_heading_agreement.py            # writes the snapshot
+    python3 kb/_program_requirements_heading_agreement.py --check    # exit 1 when it is stale (check_generated.sh, CI)
+    python3 kb/_program_requirements_heading_agreement.py --extra PATH:LABEL --college SLUG   # a folder off main
 writes kb/status/harvest_heading_agreement.json and .md. Guard: tests/program_requirements_heading_agreement_test.py.
 """
 from __future__ import annotations
@@ -102,16 +110,40 @@ def content_words(text: str | None) -> list[str]:
             if w not in GENERIC and not re.search(r"\d", w) and len(w) > 1]
 
 
+VOWELS = set("aeiou")
+
+
+def _abbreviates(t: str, words_h: list[str], capitals: set[str]) -> bool:
+    """A COCI title token that abbreviates the heading's words (S645 review of #3201, finding 18:
+    Santa Rosa clips its COCI titles): a capitalized token of two to four letters that is the initials
+    of consecutive heading words ("CS Cybersecurity": CS for Computer Studies), a clipped token whose
+    letters run in order through the heading ("Mchtroncs:IndustrlMntnncTchncn" for Mechatronics:
+    Industrial Maintenance Technician), or a compound of five letters or more holding a heading word
+    of five or more ("cybersecurity" and "security")."""
+    if t in capitals and any("".join(w[0] for w in words_h[i:i + len(t)]) == t for i in range(len(words_h))):
+        return True
+    if len(t) >= 6 and sum(ch in VOWELS for ch in t) <= 0.25 * len(t):
+        it = iter("".join(words_h))
+        if all(ch in it for ch in t):
+            return True
+    return len(t) >= 5 and any(len(w) >= 5 and (w in t or t in w) for w in words_h)
+
+
 def names_other_title(heading: str | None, title: str | None) -> bool:
     """The heading names a program, and none of its naming words is the COCI title's: no title word,
     no shared stem of four letters or more, not the title's initials ("CIS" for Computer Information
-    Systems), not a word in the title's parentheses."""
+    Systems), not a word in the title's parentheses, and no title token that abbreviates the
+    heading's words (_abbreviates: Santa Rosa's clipped COCI titles)."""
     # A title of generic words alone ("IGETC", "CSU General Education Breadth") names no program to cross.
     tokens = [t for t in P.title_tokens(title or "") if t not in GENERIC]
     words_h = content_words(heading)
     if not tokens or not words_h:
         return False
     initials = "".join(t[0] for t in tokens)
+    every_word = [w for w in re.findall(r"[a-z0-9]+", (heading or "").lower()) if not re.search(r"\d", w)]
+    capitals = {w.lower() for w in re.findall(r"(?<![A-Za-z])[A-Z]{2,4}(?![A-Za-z])", title or "")}
+    if any(_abbreviates(t, every_word, capitals) for t in tokens):
+        return False
     for w in words_h:
         if w in tokens or w == initials:
             return False
@@ -126,7 +158,7 @@ def agreement(record: dict | None, title: str | None, award: str | None, cn: str
     with the reason (number, award, title, award_and_title; heading_absent, no_heading, award_unstated,
     generic_heading). A heading printing another program's control number disagrees ("Control Number:
     21666" on Santiago Canyon's 13230); one printing the program's own proves nothing (heading_award_check)."""
-    chk = S.heading_award_check(record, award, cn)
+    chk = S.heading_award_check(record, award, cn, title)
     heading = chk["heading"]
     share = title_share(heading, title) if heading else None
     out = {"heading": heading, "filed_type": chk["filed"], "heading_types": chk.get("names") or [],
@@ -138,6 +170,10 @@ def agreement(record: dict | None, title: str | None, award: str | None, cn: str
     printed = {norm_cn(m.group("num")) for m in CN_LABEL.finditer(heading)}
     if printed and norm_cn(cn) not in printed:
         return dict(out, verdict="disagree", reason="number", kind=chk.get("kind"), heading_names_a_program=True)
+    if chk["status"] == "names_award_not_program":
+        # Pasadena's class: a heading naming an award and no word of the program's title ("Requirements
+        # for the Certificate of Achievement" on the A.S. read from one "-as-cert-achievement/" page).
+        return dict(out, verdict="cannot_tell", reason="award_not_program", kind=chk.get("kind"))
     title_off = names_other_title(heading, title)
     award_off = chk["status"] == "names_other_award"
     named = bool(content_words(heading))
@@ -149,7 +185,32 @@ def agreement(record: dict | None, title: str | None, award: str | None, cn: str
     return dict(out, verdict="cannot_tell", reason="award_unstated" if named else "generic_heading")
 
 
+# The files the committed tree holds under the college folder (git ls-files), set by build(): a file
+# the tree does not hold (a capture in progress, a stray copy) is never read, so the snapshot and its
+# --check describe the commit alone. None reads the folder as it is (a --root or --extra outside git).
+TRACKED: set[str] | None = None
+
+
+def tracked_files(root: str) -> set[str] | None:
+    """The absolute paths git tracks under root, or None when root is outside a git tree."""
+    import subprocess
+    try:
+        top = subprocess.run(["git", "-C", root, "rev-parse", "--show-toplevel"], capture_output=True, text=True,
+                             check=True).stdout.strip()
+        out = subprocess.run(["git", "-C", top, "ls-files", "-z", "--", os.path.relpath(root, top)],
+                             capture_output=True, text=True, check=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return None
+    return {os.path.join(top, p) for p in out.split("\0") if p}
+
+
+def _readable(path: str) -> bool:
+    return TRACKED is None or os.path.abspath(path) in TRACKED
+
+
 def _load(path: str):
+    if not _readable(path):
+        return None
     try:
         with open(path) as f:
             return json.load(f)
@@ -308,6 +369,9 @@ def summarize(slug: str, cdir: str, read_from: str) -> dict:
            "check_would_fail_passing_transfer_local": sum(1 for r in fails if r.get("kind") in TRANSFER_LOCAL),
            "check_kinds_passing": dict(collections.Counter(r.get("kind") for r in fails)),
            "check_would_fail_passing_generic_heading": sum(1 for r in fails if not r.get("heading_names_a_program")),
+           "award_not_program": sum(1 for r in rows if r.get("reason") == "award_not_program"),
+           "award_not_program_passing": sum(1 for r in rows if r.get("reason") == "award_not_program"
+                                            and r["passes_live"]),
            "window_after": len(after), "window_after_passing": sum(1 for r in after if r["passes_live"]),
            "suspect": len(suspect), "suspect_passing": sum(1 for r in suspect if r["passes_live"]),
            "suspect_loaded": sum(1 for r in suspect if not r["places_none"]),
@@ -323,12 +387,15 @@ ROW_KEYS = ("control_number", "title", "award", "heading", "verdict", "reason", 
 
 
 def college_dirs(root: str, extra: list[str]) -> list[tuple[str, str, str]]:
-    """(slug, folder, read_from) for each college: the root's folders, then each --extra PATH:LABEL,
-    which replaces the root's folder of the same name."""
+    """(slug, folder, read_from) for each college: the root's folders that hold a records/ folder the
+    tree tracks, then each --extra PATH:LABEL, which replaces the root's folder of the same name (an ad
+    hoc measure only: the committed snapshot and its --check read the tree alone)."""
     out = {}
     if os.path.isdir(root):
         for d in sorted(os.listdir(root)):
-            if os.path.isdir(os.path.join(root, d, "records")):
+            rdir = os.path.join(root, d, "records")
+            if os.path.isdir(rdir) and (TRACKED is None or any(_readable(os.path.join(rdir, n))
+                                                               for n in os.listdir(rdir))):
                 out[d] = (d, os.path.join(root, d), "main")
     for e in extra:
         path, _, label = e.partition(":")
@@ -337,22 +404,44 @@ def college_dirs(root: str, extra: list[str]) -> list[tuple[str, str, str]]:
     return [out[k] for k in sorted(out)]
 
 
-def build(root: str = COLLEGE_DIR, extra: list[str] | None = None) -> dict:
-    colleges = [summarize(slug, path, read_from) for slug, path, read_from in college_dirs(root, extra or [])]
+TOTAL_KEYS = ("records", "agree", "disagree", "cannot_tell", "heading_absent", "disagree_passing",
+              "disagree_loaded", "check_would_fail_passing", "check_would_fail_passing_transfer_local",
+              "window_after", "window_after_passing", "suspect", "suspect_passing",
+              "check_would_fail_passing_generic_heading", "award_not_program", "award_not_program_passing")
+
+
+def build(root: str = COLLEGE_DIR, extra: list[str] | None = None, tracked: bool = True) -> dict:
+    """The report. tracked (the default, and always for the committed snapshot): only the files git
+    tracks under root are read (tracked_files); an --extra folder is read as it is."""
+    global TRACKED
+    TRACKED = tracked_files(root) if tracked else None
+    if TRACKED is not None:
+        for e in extra or []:
+            path = os.path.abspath(e.partition(":")[0])
+            for dirpath, _, names in os.walk(path):
+                TRACKED.update(os.path.join(dirpath, n) for n in names)
+    try:
+        colleges = [summarize(slug, path, read_from) for slug, path, read_from in college_dirs(root, extra or [])]
+        as_of = max((str(capture_of(path).get("started") or "")[:10]
+                     for _, path, _ in college_dirs(root, extra or [])), default="")
+    finally:
+        TRACKED = None
     pdf = [c for c in colleges if c["pdf_records"]]
     tot = collections.Counter()
     for c in colleges:
-        for k in ("records", "agree", "disagree", "cannot_tell", "heading_absent", "disagree_passing",
-                  "disagree_loaded", "check_would_fail_passing", "check_would_fail_passing_transfer_local",
-                  "window_after", "window_after_passing", "suspect", "suspect_passing",
-                  "check_would_fail_passing_generic_heading"):
+        for k in TOTAL_KEYS:
             tot[k] += c[k]
     return {
-        "_readme": ("Written by kb/_program_requirements_heading_agreement.py from committed files only. "
-                    "Each record's own heading (program.section_heading) against the program it is filed "
-                    "under (sources.json: COCI title and award). check_would_fail_passing counts the records "
-                    "passes_live passes today whose heading names another award type "
-                    "(heading_award_check, not in any pass rule)."),
+        "_readme": ("Written by kb/_program_requirements_heading_agreement.py from the files this tree commits "
+                    "(git ls-files), a dated snapshot: as_of is the newest capture it reads. Kept current by "
+                    "--check (scripts/check_generated.sh, CI). Each record's own heading "
+                    "(program.section_heading) against the program it is filed under (sources.json: COCI "
+                    "title and award). check_would_fail_passing counts the records that pass on the committed "
+                    "files (passes_live) whose heading names another award type (heading_award_check, in no "
+                    "pass rule). award_not_program counts headings that name an award and none of the "
+                    "program's title words, set aside (Pasadena's one page for an A.S. and its certificate)."),
+        "as_of": as_of,
+        "read_from": sorted({c["read_from"] for c in colleges}),
         "totals": dict(tot),
         # Ranked by suspect records: a heading that disagrees, or a window bound to the next program.
         "pdf_ranked_by_disagree": [c["slug"] for c in sorted(pdf, key=lambda c: (-c["pdf_suspect"], c["slug"]))],
@@ -365,15 +454,21 @@ def build(root: str = COLLEGE_DIR, extra: list[str] | None = None) -> dict:
 def markdown(rep: dict) -> str:
     t = rep["totals"]
     by = {c["slug"]: c for c in rep["colleges"]}
+    extra = [r for r in rep.get("read_from") or [] if r != "main"]
     lines = ["# Harvest heading agreement", "",
-             "Written by `kb/_program_requirements_heading_agreement.py` from committed files only. Each record's "
-             "own heading against the program it is filed under (COCI title and award). A snapshot; rerun the "
-             "script for today's.", "",
-             "All colleges: %d records, %d agree, %d disagree (%d of them pass), %d cannot tell (%d say the "
-             "heading is not in their text)." % (t["records"], t["agree"], t["disagree"], t["disagree_passing"],
-                                                 t["cannot_tell"], t["heading_absent"]),
-             "", "The heading check (a heading that names another award type) would fail %d records that pass "
-             "today, %d of them a transfer degree and a local degree crossed. It is in no pass rule."
+             "A dated snapshot, as of %s (the newest capture it reads), written by "
+             "`kb/_program_requirements_heading_agreement.py` from the files this tree commits%s, and kept "
+             "current by its `--check`. Each record's own heading against the program it is filed under (COCI "
+             "title and award)." % (rep.get("as_of") or "no capture",
+                                    "" if not extra else " plus folders read from %s" % ", ".join(extra)), "",
+             "All colleges: %d records, %d agree, %d disagree (%d of them pass on the committed files), %d cannot "
+             "tell (%d say the heading is not in their text; %d name an award and none of the program's title "
+             "words, %d of them passing, set aside)."
+             % (t["records"], t["agree"], t["disagree"], t["disagree_passing"], t["cannot_tell"],
+                t["heading_absent"], t["award_not_program"], t["award_not_program_passing"]),
+             "", "The heading check (a heading that names another award type and some of the program's title) "
+             "would fail %d records that pass on the committed files (passes_live), %d of them a transfer degree "
+             "and a local degree crossed. It is in no pass rule."
              % (t["check_would_fail_passing"], t["check_would_fail_passing_transfer_local"]), "",
              "A window bound to the next program (`after`) opens on the program's own control-number line and "
              "then names another program's title and award: the catalog prints the number after its program, "
@@ -394,34 +489,64 @@ def markdown(rep: dict) -> str:
             c["college"], c["read_from"], c["pdf_records"], c["pdf_agree"], c["pdf_disagree"],
             c["pdf_disagree_passing"], c["pdf_cannot_tell"], c["window_after"], c["window_after_passing"],
             c["pdf_suspect"], c["pdf_suspect_passing"], labels, prints))
-    lines += ["", "## What the heading check would fail, among records that pass today", "",
-              "| College | Would fail | Transfer and local crossed |", "|---|---:|---:|"]
+    lines += ["", "## What the heading check would fail, among records that pass on the committed files", "",
+              "| College | Would fail | Transfer and local crossed | Set aside: award, no title word (passing) |",
+              "|---|---:|---:|---:|"]
     for c in sorted(rep["colleges"], key=lambda c: (-c["check_would_fail_passing"], c["slug"])):
-        if c["check_would_fail_passing"]:
-            lines.append("| %s | %d | %d |" % (c["college"], c["check_would_fail_passing"],
-                                              c["check_would_fail_passing_transfer_local"]))
+        if c["check_would_fail_passing"] or c["award_not_program_passing"]:
+            lines.append("| %s | %d | %d | %d |" % (c["college"], c["check_would_fail_passing"],
+                                                   c["check_would_fail_passing_transfer_local"],
+                                                   c["award_not_program_passing"]))
     return "\n".join(lines) + "\n"
+
+
+def rendered(rep: dict) -> tuple[str, str]:
+    """The two files' text, as written."""
+    return json.dumps(rep, indent=1, sort_keys=False) + "\n", markdown(rep)
 
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--root", default=COLLEGE_DIR)
     ap.add_argument("--extra", action="append", default=[],
-                    help="PATH:LABEL, a college folder read from elsewhere (a branch), replacing main's")
+                    help="PATH:LABEL, a college folder read from elsewhere (a branch), replacing main's: an ad hoc "
+                         "measure, printed with --college or written to --out-json/--out-md elsewhere; the "
+                         "committed snapshot never carries one")
     ap.add_argument("--out-json", default=OUT_JSON)
     ap.add_argument("--out-md", default=OUT_MD)
     ap.add_argument("--college", help="print one college's disagreements and write nothing")
+    ap.add_argument("--check", action="store_true",
+                    help="exit 1 when the committed snapshot differs from what the tree's files give")
     a = ap.parse_args(argv)
+    if a.extra and not a.college and (os.path.abspath(a.out_json) == OUT_JSON or os.path.abspath(a.out_md) == OUT_MD
+                                      or a.check):
+        print("--extra reads a folder off this tree: print it with --college, or write it outside kb/status/")
+        return 2
     rep = build(a.root, a.extra)
     if a.college:
         c = next((c for c in rep["colleges"] if c["slug"] == a.college), None)
         print(json.dumps(c, indent=1))
         return 0 if c else 1
+    js, md = rendered(rep)
+    if a.check:
+        stale = []
+        for path, want in ((a.out_json, js), (a.out_md, md)):
+            try:
+                with open(path) as f:
+                    if f.read() != want:
+                        stale.append(os.path.relpath(path, os.path.dirname(HERE)))
+            except OSError:
+                stale.append(os.path.relpath(path, os.path.dirname(HERE)))
+        if stale:
+            print("STALE: %s; run python3 kb/_program_requirements_heading_agreement.py and commit both"
+                  % ", ".join(stale))
+            return 1
+        print("heading agreement snapshot is up to date")
+        return 0
     with open(a.out_json, "w") as f:
-        json.dump(rep, f, indent=1, sort_keys=False)
-        f.write("\n")
+        f.write(js)
     with open(a.out_md, "w") as f:
-        f.write(markdown(rep))
+        f.write(md)
     t = rep["totals"]
     print("%d records: %d agree, %d disagree (%d passing), %d cannot tell; the check would fail %d passing"
           % (t["records"], t["agree"], t["disagree"], t["disagree_passing"], t["cannot_tell"],

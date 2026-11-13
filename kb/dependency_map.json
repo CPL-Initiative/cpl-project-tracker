@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 906,
+  "file_datasets": 909,
   "external_services": 195,
   "consumers": 575,
   "workflows": 72,
@@ -10334,6 +10334,33 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_program_requirements_heading_agreement.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-college.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
+     "id": "workflow:program-requirements-wave.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_program_requirements_pilot.py": {
    "consumers": [
     {
@@ -16840,7 +16867,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4143
+     "line": 4325
     }
    ],
    "served": true,
@@ -19153,10 +19180,20 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 63
     }
    ],
-   "served": true,
+   "producers": [
+    {
+     "by": "workflow:program-requirements-college.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/status/harvest_heading_agreement.md": {
@@ -19166,7 +19203,17 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 56
+     "line": 64
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:program-requirements-college.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:program-requirements-wave.yml",
+     "how": "commit"
     }
    ],
    "served": true,
@@ -20379,7 +20426,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4140
+     "line": 4322
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20387,6 +20434,19 @@
      "direction": "read",
      "how": "literal",
      "line": 350
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kept_unbound_*.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 4300
     }
    ],
    "served": false,
@@ -21003,7 +21063,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4118
+     "line": 4300
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -25000,6 +25060,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/program_requirements_pdf_numbers_after_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/program_requirements_pilot_test.py": {
    "consumers": [
     {
@@ -27528,7 +27601,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4160
+     "line": 4342
     }
    ],
    "main_committers": []
@@ -27540,7 +27613,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4247
+     "line": 4429
     }
    ],
    "main_committers": []
@@ -32575,6 +32648,8 @@
     "tests/harvest_no_closed_list_diagnosis_test.py",
     "tests/program_requirements_dated_reads_test.py",
     "tests/program_requirements_heading_agreement_test.py",
+    "kb/_program_requirements_heading_agreement.py",
+    "tests/program_requirements_pdf_numbers_after_test.py",
     "tests/course_outline_census_test.py",
     "tests/mid_outcomes_compare_test.py",
     "tests/mq_title5_rename_test.py",
@@ -32952,11 +33027,14 @@
    "scripts": [
     "scripts/install_browser.sh",
     "kb/_program_requirements_college.py",
+    "kb/_program_requirements_heading_agreement.py",
     "kb/_program_requirements_display_apply.py"
    ],
    "adds": [
     "kb/program_requirements_college",
     "kb/hand_filed_catalogs",
+    "kb/status/harvest_heading_agreement.json",
+    "kb/status/harvest_heading_agreement.md",
     "kb/receipts",
     "kb/receipts"
    ],
@@ -33012,12 +33090,15 @@
    "scripts": [
     "kb/_program_requirements_wave.py",
     "scripts/install_browser.sh",
-    "kb/_program_requirements_college.py"
+    "kb/_program_requirements_college.py",
+    "kb/_program_requirements_heading_agreement.py"
    ],
    "adds": [
     "kb/program_requirements_college",
     "kb/hand_filed_catalogs",
-    "kb/program_requirements_wave"
+    "kb/program_requirements_wave",
+    "kb/status/harvest_heading_agreement.json",
+    "kb/status/harvest_heading_agreement.md"
    ],
    "push": null,
    "deploys": [],
@@ -33548,10 +33629,12 @@
   "docs",
   "kb/*_dryrun",
   "kb/coci_minted_courses.json",
+  "kb/harvest_scouting",
   "kb/receipts",
   "kb/reference/*.xlsx",
   "kb/reference/cos_certifications.json",
-  "kb/row_audit/*.md"
+  "kb/row_audit/*.md",
+  "kb/status/harvest_heading_agreement.json"
  ],
  "stale_risk": [
   "cpl_pathways_ccr_data.js rebuilt by kb/_build_cpl_pathway_ccr.py under daily-dashboard.yml but not in its commit list",

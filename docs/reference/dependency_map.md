@@ -590,6 +590,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_program_requirements_dated_reads.py` | workflows: `program-requirements-dated-reads.yml` | — |
 | `kb/_program_requirements_display_apply.py` | workflows: `program-requirements-college.yml` | — |
 | `kb/_program_requirements_extract.py` | workflows: `program-requirements-extract.yml` | — |
+| `kb/_program_requirements_heading_agreement.py` | workflows: `js-tests.yml`, `program-requirements-college.yml`, `program-requirements-wave.yml` | — |
 | `kb/_program_requirements_pilot.py` | workflows: `program-requirements-pilot.yml` | — |
 | `kb/_program_requirements_wave.py` | workflows: `program-requirements-wave.yml` | — |
 | `kb/_program_sequence_ppm.py` | workflows: `program-sequence-ppm.yml` | — |
@@ -853,8 +854,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/status/exhibit.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/status/harvest_gap_census.json` | scripts: `kb/_harvest_gap_census.py`, `kb/_harvest_no_closed_list_diagnosis.py` | committed by: `harvest-gap-census.yml` |
 | `kb/status/harvest_gap_census.md` | scripts: `kb/_harvest_gap_census.py` | committed by: `harvest-gap-census.yml` |
-| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
-| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | — |
+| `kb/status/harvest_heading_agreement.json` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
+| `kb/status/harvest_heading_agreement.md` | scripts: `kb/_program_requirements_heading_agreement.py` | committed by: `program-requirements-college.yml`, `program-requirements-wave.yml` |
 | `kb/status/harvest_no_closed_list.json` | scripts: `kb/_harvest_no_closed_list_diagnosis.py` | — |
 | `kb/status/mid_outcomes_compare_*.json` | none found | committed by: `mid-outcomes-compare.yml` |
 | `kb/status/mid_outcomes_compare_*.md` | none found | committed by: `mid-outcomes-compare.yml` |
@@ -901,6 +902,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/zband_retire_out/2026-09-03/materialized.json` | scripts: `kb/_uc_cur_promote.py`, `kb/_zband_retire_apply.py` | — |
 | `kb/zband_retire_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kept_passing_*.json` | scripts: `kb/_program_requirements_college.py`, `kb/_program_requirements_wave.py` | — |
+| `kept_unbound_*.json` | scripts: `kb/_program_requirements_college.py` | — |
 | `kpi_cards.js` | pages: `CPL_Dashboard.html` | — |
 | `kpi_history.json` | scripts: `excel_to_dashboard.py` | committed by: `daily-dashboard.yml` |
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
@@ -1163,6 +1165,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/program_requirements_dated_reads_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_display_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_heading_agreement_test.py` | workflows: `js-tests.yml` | — |
+| `tests/program_requirements_pdf_numbers_after_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_pilot_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_reconcile_test.py` | workflows: `js-tests.yml` | — |
 | `tests/program_requirements_wave_test.py` | workflows: `js-tests.yml` | — |
@@ -1446,5 +1449,5 @@ check these BY HAND before trusting an absence:
 - `kb/_program_requirements_extract.py`
 - `scripts/supabase_migrate.py`
 
-Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 906 file
+Coverage: 115 Supabase tables · 64 RPCs · 15 edge functions · 909 file
 datasets · 195 external services · 575 consumers · 72 workflows · 41 tabs.

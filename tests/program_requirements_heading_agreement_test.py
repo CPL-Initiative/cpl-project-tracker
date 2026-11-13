@@ -14,12 +14,18 @@ the committed or live files:
     tell, says which disagreeing records pass, reads a window that opens on its own number line and
     then names another program as bound to the next program (`after`), and counts what the check
     would fail among passing records;
-  * the reader (kb/_program_requirements_college.py) finds the habit in the catalog's own lines
-    (pdf_numbers_after), binds each program to the block that ENDS at its number, and refuses a
-    window another program's number closes; a catalog without the habit reads as before.
+  * the review's false alarms (S645 review of #3201): a COCI title's own words ("Chemistry for UC")
+    are no award; a heading naming an award and none of the title's words (Pasadena) is set aside in
+    its own bucket; Santa Rosa's clipped COCI titles still name their headings;
+  * the snapshot reads only the files the tree commits, says its date, keeps a branch's folder out,
+    and its --check fails once the tree moves.
+
+The reader's gated after-reading is pinned in tests/program_requirements_pdf_numbers_after_test.py.
 
 Run from repo root: python3 tests/program_requirements_heading_agreement_test.py
 """
+import contextlib
+import io
 import json
 import os
 import shutil
@@ -132,58 +138,74 @@ try:
 finally:
     shutil.rmtree(tmp)
 
-# ── 3. The reader: a catalog that prints the number after its program ────────────────────────────
-BIO_AS = [{"code": c} for c in ("BIOL 211", "CHEM 200A", "CHEM 200B")]
-BIO_AST = [{"code": c} for c in ("BIOL 211", "CHEM 200A", "MATH 180", "PHYS 150A")]
-ECON_AA = [{"code": c} for c in ("ECON 120", "ECON 121", "MATH 219")]
-PAGES = [
-    "Credit Programs\nArt, AA\nA.A. Degree\nART 100 Drawing 3\nControl Number: 11800\n"
-    "Biology, AS\nA.S. Degree\nUnit Range for Completion : 25.0 - 25.0\nBIOL 211 Cell Biology 4\nCHEM 200A General Chemistry 5\n",
-    "Credit Programs\nCHEM 200B General Chemistry 5\nTotal 25\nControl Number: 11856\n"
-    "Biology, AS-T\nA.S. Degree for Transfer\nUnit Range for Completion : 37.0 - 37.0\nBIOL 211 Cell Biology 4\n"
-    "CHEM 200A General Chemistry 5\nMATH 180 Calculus 4\nPHYS 150A Physics 4\nControl Number: 35110\n"
-    "Economics, AA\nA.A. Degree\nECON 120 Macroeconomics 3\nECON 121 Microeconomics 3\nMATH 219 Statistics 4\n"
-    "Control Number: 11943\nEconomics, AA-T\nA.A. Degree for Transfer\nECON 120 Macroeconomics 3\n",
-    "Credit Programs\nECON 121 Microeconomics 3\nMATH 219 Statistics 4\nControl Number: 35200\n",
-]
-PROGS = [{"control_number": "11800", "title": "Art", "award": AA},
-         {"control_number": "11856", "title": "Biology", "award": AS},
-         {"control_number": "35110", "title": "Biology", "award": AST},
-         {"control_number": "11943", "title": "Economics", "award": AA},
-         {"control_number": "35200", "title": "Economics", "award": AAT}]
-votes = C.pdf_numbers_after(PAGES, PROGS)
-check(votes["after_mode"] and votes["after"] >= 3 and votes["before"] == 0,
-      "the catalog's own lines show the number printed after its program: %r" % votes)
-old = C.pdf_best("https://x.edu/c.pdf", PAGES, PROGS[1], BIO_AS, "pypdf")
-check(old and "Biology, AS-T" in old["text"],
-      "without the habit read, the Biology A.S. window holds the AS-T printed after its number (the S644 misread)")
-new = C.pdf_best("https://x.edu/c.pdf", PAGES, PROGS[1], BIO_AS, "pypdf", numbers_after=True)
-check(new and new["pages"] == [1, 2] and new["coverage"] == 1.0 and "Biology, AS\nA.S. Degree" in new["text"]
-      and "AS-T" not in new["text"] and "Art, AA" not in new["text"] and new["bound"] == "number_after",
-      "the A.S. reads the block that ends at its own number, from the previous number line: %r"
-      % ((new and (new["pages"], new["text"][:120])),))
-ast = C.pdf_best("https://x.edu/c.pdf", PAGES, PROGS[2], BIO_AST, "pypdf", numbers_after=True)
-check(ast and ast["pages"] == [2] and "Biology, AS-T" in ast["text"] and "Economics" not in ast["text"]
-      and "Biology, AS\n" not in ast["text"], "the AS-T reads its own block: %r" % (ast and ast["text"][:160]))
-econ = C.pdf_best("https://x.edu/c.pdf", PAGES, PROGS[3], ECON_AA, "pypdf", numbers_after=True)
-check(econ and "Economics, AA\nA.A. Degree" in econ["text"] and "AA-T" not in econ["text"],
-      "Economics AA reads its own block, never the AA-T after its number: %r" % (econ and econ["text"][:160]))
-spanning = C.pdf_best("https://x.edu/c.pdf", PAGES, PROGS[4], ECON_AA, "pypdf", numbers_after=True)
-check(spanning and spanning["pages"] == [2, 3] and spanning["text"].count("Economics, AA-T") == 1,
-      "a block that runs onto the next page is read across it, back to the previous number: %r"
-      % (spanning and spanning["pages"]))
-# A program whose number the catalog does not print: its window is the one the picker finds, and the
-# first number it prints closes another program's block, so it is refused, never handed over.
-unprinted = {"control_number": "40000", "title": "Economics", "award": AA}
-ref = C.pdf_best("https://x.edu/c.pdf", PAGES, unprinted, ECON_AA, "pypdf", numbers_after=True)
-check(ref and ref.get("refused") and ref["coverage"] == 0.0 and not ref["text"],
-      "a window another program's number closes is refused: %r" % (ref and ref.get("refused")))
-# A catalog that prints the number at the heading keeps the reader as it was.
-BEFORE = ["Programs\nControl Number: 11856\nBiology, AS\nA.S. Degree\nBIOL 211 Cell Biology 4\nCHEM 200A Chemistry 5\n"
-          "CHEM 200B Chemistry 5\nControl Number: 35110\nBiology, AS-T\nA.S. Degree for Transfer\nBIOL 211 Cell 4\n"
-          "Control Number: 11943\nEconomics, AA\nA.A. Degree\nECON 120 Macro 3\n"]
-bv = C.pdf_numbers_after(BEFORE, PROGS)
-check(not bv["after_mode"] and bv["before"] >= 3, "numbers printed at each heading read as before: %r" % bv)
+# ── 3. The review's false alarms (S645 review of #3201) ─────────────────────────────────────────
+# Irvine Valley 44477 is COCI "Chemistry for UC", an A.S.: its title's words are the title, not a
+# transfer degree (finding 14).
+c = S.heading_award_check(rec("Chemistry for UC Transfer - A.S. Degree"), AS, "44477", "Chemistry for UC")
+check(c["pass"] and c["status"] == "agrees", "a title naming 'for UC' is no transfer degree: %r" % c)
+check(S.heading_award_types("Chemistry for UC Transfer - A.S. Degree") >= {"transfer"},
+      "without the title the words still read as a transfer degree (the alarm this fixes)")
+c = S.heading_award_check(rec("Mathematics 2.0 for Transfer"), AA, "46343", "Mathematics 2.0 for Transfer")
+check(not c["pass"] and c["kind"] == "transfer_under_local_degree",
+      "a title that names a type itself keeps it: %r" % c)
+c = S.heading_award_check(rec("Economics, AA-T"), AA, "11943", "Economics")
+check(not c["pass"] and c["kind"] == "transfer_under_local_degree", "the S644 misfile still fails with its title: %r" % c)
+# Pasadena 03105: one page for the A.S. and its certificate; a heading naming the award and no title word
+# goes to its own bucket, never a failure (finding 15).
+c = S.heading_award_check(rec("Requirements for the Certificate of Achievement"), AS, "03105", "Architecture")
+check(c["pass"] and c["status"] == "names_award_not_program" and c["kind"] == "certificate_under_local_degree"
+      and c["why"], "an award-only heading is set aside with its reason: %r" % c)
+c = S.heading_award_check(rec("Requirements for the Certificate of Achievement"), AS, "03105")
+check(not c["pass"], "without the program's title the check cannot set it aside")
+a = H.agreement(rec("Requirements for the Certificate of Achievement"), "Architecture", AS, "03105")
+check(a["verdict"] == "cannot_tell" and a["reason"] == "award_not_program", "the measure buckets it: %r" % a)
+# Santa Rosa's clipped COCI titles (finding 18).
+for heading, title in (("Computer Studies: Network and Systems Security Administration", "CS Cybersecurity"),
+                       ("Mechatronics: Industrial Maintenance Technician", "Mchtroncs:IndustrlMntnncTchncn")):
+    check(not H.names_other_title(heading, title), "a clipped title names its heading: %r / %r" % (heading, title))
+check(H.names_other_title("Chemistry", "Welding Technology"), "a heading naming another program still crosses")
+check(H.names_other_title("Department of Biology", "Art"), "a short title is no abbreviation of the heading's words")
+
+# ── 4. The snapshot reads the committed tree, and --check catches a stale one ───────────────────
+tmp = tempfile.mkdtemp()
+try:
+    import subprocess
+    repo = os.path.join(tmp, "repo")
+    col = os.path.join(repo, "colleges", "fixture_college")
+    os.makedirs(os.path.join(col, "records"))
+    for cn, heading in (("11943", "Economics, AA-T"), ("11944", "Economics, AA")):
+        with open(os.path.join(col, "records", cn + ".json"), "w") as f:
+            json.dump({"control_number": cn, "record": rec(heading),
+                       "score": {"coverage": {"pass": True}, "invented": {"pass": True},
+                                 "arithmetic": {"status": "equal"}}}, f)
+    with open(os.path.join(col, "sources.json"), "w") as f:
+        json.dump([{"control_number": "11943", "title": "Economics", "award": AA},
+                   {"control_number": "11944", "title": "Economics", "award": AA}], f)
+    subprocess.run(["git", "init", "-q", repo], check=True)
+    subprocess.run(["git", "-C", repo, "add", "colleges/fixture_college/sources.json",
+                    "colleges/fixture_college/records/11943.json"], check=True)
+    rep = H.build(os.path.join(repo, "colleges"))
+    check(rep["totals"]["records"] == 1 and rep["totals"]["check_would_fail_passing"] == 1,
+          "only the tracked record is read: %r" % rep["totals"])
+    check(H.build(os.path.join(repo, "colleges"), tracked=False)["totals"]["records"] == 2,
+          "and both without the tree's list")
+    out_json, out_md = os.path.join(tmp, "a.json"), os.path.join(tmp, "a.md")
+    root = os.path.join(repo, "colleges")
+    with contextlib.redirect_stdout(io.StringIO()):
+        H.main(["--root", root, "--out-json", out_json, "--out-md", out_md])
+        fresh = H.main(["--root", root, "--out-json", out_json, "--out-md", out_md, "--check"])
+        subprocess.run(["git", "-C", repo, "add", "colleges/fixture_college/records/11944.json"], check=True)
+        stale = H.main(["--root", root, "--out-json", out_json, "--out-md", out_md, "--check"])
+    check(fresh == 0 and stale == 1, "--check passes on a fresh snapshot and fails once the tree moves: %r"
+          % ((fresh, stale),))
+    md = open(out_md).read()
+    check("A dated snapshot, as of" in md and "pass on the committed files" in md and "today" not in md,
+          "the snapshot says it is dated and what 'pass' means")
+    with contextlib.redirect_stdout(io.StringIO()):
+        refused = H.main(["--extra", col + ":claude/x"])
+    check(refused == 2, "an --extra folder never enters the committed snapshot")
+finally:
+    shutil.rmtree(tmp)
 
 if failures:
     print("FAIL: %d" % len(failures))

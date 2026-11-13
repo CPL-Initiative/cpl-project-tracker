@@ -1115,11 +1115,26 @@ def award_type(award: str | None) -> str | None:
     return AWARD_TYPE.get(award_kind(award))
 
 
-def heading_award_types(heading: str | None) -> set[str]:
+def _without_title(heading: str, title: str) -> str:
+    """The heading with the program's own title taken out once, where the title alone names no award
+    type: Irvine Valley 44477 is COCI "Chemistry for UC", an A.S., and its heading "Chemistry for UC
+    Transfer - A.S. Degree" names no transfer degree (S645 review of #3201, finding 14). A title that
+    names a type itself ("Mathematics 2.0 for Transfer") stays, so its type still counts."""
+    words = re.findall(r"[A-Za-z0-9]+", title or "")
+    if not words or heading_award_types(title):
+        return heading
+    pat = r"(?<![A-Za-z0-9])" + r"[\W_]+".join(re.escape(w) for w in words) + r"(?![A-Za-z0-9])"
+    return re.sub(pat, " ", heading, count=1, flags=re.I)
+
+
+def heading_award_types(heading: str | None, title: str | None = None) -> set[str]:
     """The award types a heading names. A transfer degree's words ("Associate in Arts in Sociology for
     Transfer") name no local degree; a local degree beside it needs its own letters ("AS and AS-T").
-    A bare "Degrees" with no type names `degree` (any degree)."""
+    A bare "Degrees" with no type names `degree` (any degree). Given the program's title, its words
+    are read as the title, never as an award (_without_title)."""
     h = (heading or "").translate(_HEADING_DASH)
+    if title:
+        h = _without_title(h, title.translate(_HEADING_DASH))
     out: set[str] = set()
     transfer = bool(HEADING_TRANSFER.search(h))
     if transfer:
@@ -1139,7 +1154,8 @@ def heading_award_types(heading: str | None) -> set[str]:
     return out
 
 
-def heading_award_check(record: dict | None, award: str | None, control_number: str | None = None) -> dict:
+def heading_award_check(record: dict | None, award: str | None, control_number: str | None = None,
+                        title: str | None = None) -> dict:
     """Whether the record's own section_heading names its program's award type. Fails only when the
     heading names award types and none is the program's (status names_other_award, with the kind:
     transfer_under_local_degree, local_degree_under_transfer, certificate_under_local_degree, ...).
@@ -1147,7 +1163,13 @@ def heading_award_check(record: dict | None, award: str | None, control_number: 
     the heading is not in its text (heading_absent) pass and are reported. A control number in the
     heading proves nothing: at Santiago Canyon the model copied "(Control Number: 19588)" into the
     heading of the certificate printed after the number, filed under the A.S. 19588 the number
-    closes. control_number is kept for the caller's report. Not read by passes_live or score() (S644)."""
+    closes. control_number is kept for the caller's report. Not read by passes_live or score() (S644).
+    Given the program's COCI title, its words are read as the title (heading_award_types), and a
+    heading that names another award and none of the title's words passes in a bucket of its own,
+    names_award_not_program. Pasadena prints one page for an A.S. and its certificate
+    ("...-as-cert-achievement/", "Requirements for the Certificate of Achievement"; the A.S. is the
+    certificate plus general education), so such a heading says which award's section the page opens
+    on and nothing of which program the record holds (S645 review of #3201, finding 15)."""
     prog = (record or {}).get("program") or {}
     heading = (prog.get("section_heading") or "").strip()
     filed = award_type(award)
@@ -1156,12 +1178,20 @@ def heading_award_check(record: dict | None, award: str | None, control_number: 
         return dict(base, **{"pass": True, "status": "unstated", "names": [], "why": []})
     if HEADING_ABSENT.search(heading):
         return dict(base, **{"pass": True, "status": "heading_absent", "names": [], "why": []})
-    names = heading_award_types(heading)
+    names = heading_award_types(heading, title)
     if not names or filed is None:
         return dict(base, **{"pass": True, "status": "unstated", "names": sorted(names), "why": []})
     if filed in names or ("degree" in names and filed in DEGREE_TYPES):
         return dict(base, **{"pass": True, "status": "agrees", "names": sorted(names), "why": []})
     kind = "%s_under_%s" % ("_or_".join(sorted(names)), filed)
+    from _program_requirements_pilot import title_tokens
+    tokens = title_tokens(title or "")
+    if tokens and not set(tokens) & set(re.findall(r"[a-z0-9]+", heading.lower())):
+        return dict(base, **{"pass": True, "status": "names_award_not_program", "names": sorted(names),
+                             "kind": kind,
+                             "why": ["the record's heading %r names a %s and none of the program's title words: "
+                                     "a page printing one section for two awards heads both with it"
+                                     % (heading[:120], " or ".join(sorted(names)).replace("_", " "))]})
     return dict(base, **{"pass": False, "status": "names_other_award", "names": sorted(names), "kind": kind,
                          "why": ["the record's heading %r names a %s; the program is a %s"
                                  % (heading[:120], " or ".join(sorted(names)).replace("_", " "),
