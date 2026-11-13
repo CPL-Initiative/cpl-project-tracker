@@ -1,0 +1,134 @@
+{
+ "schema": 1,
+ "wave": "pr-3207-rescore-six",
+ "pr": 3207,
+ "head_sha": "e647443dbe7852c8bf8186bce1df543456007ee5",
+ "checked_at": "2026-11-13T09:05:00Z",
+ "checker": "cobi-cto (COBIx), by hand",
+ "sample_rule": "Sky's five movers from 6843185572, one per reading. One record per college, so the 2-differs hold rule cannot fire for any college; Los Angeles Pierce has no record in the sample.",
+ "loads": [
+  "robots.txt on 5 hosts",
+  "1 page on each of SBVC, Coalinga, Solano (PDF, sha256 07ecf1f5...19e2, last-modified 2026-05-18)",
+  "Wayback availability x2 and one archive fetch (500)"
+ ],
+ "records": [
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "35699",
+   "source_url": "https://catalog.valleycollege.edu/degree-certificate-program-index/vocational-education/job-readiness-skills-certificate-completion/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "48-54 hours",
+    "page": "48-54 hours"
+   },
+   "verdict": "agrees",
+   "evidence": "Required Courses: VOCED 600 0, VOCED 601 0, VOCED 602 0, VOCED 603 0; Total Hours 48-54"
+  },
+  {
+   "college": "Coalinga College",
+   "control_number": "44511",
+   "source_url": "https://coalingacollege.edu/catalog/2026-2027/programs-of-study/unmanned-aerial-system-remote-pilot.php",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "54 hours",
+    "page": "54 hours"
+   },
+   "verdict": "agrees",
+   "evidence": "Required Core Courses NC 180 N/A, NC 181 N/A, NC 188 N/A; Total Hours 54"
+  },
+  {
+   "college": "Grossmont College",
+   "control_number": "30977",
+   "source_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/sociology-aat/",
+   "page_reached": false,
+   "title_and_award_match": null,
+   "courses": null,
+   "units": [],
+   "choice_rules_match": null,
+   "total": {
+    "record": "19-20",
+    "page": null
+   },
+   "verdict": "page_unreachable",
+   "evidence": "robots.txt answered 202 with an empty body (a firewall challenge); no page load attempted. Web archive copy (2025-12-12) answered 500."
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "32154",
+   "source_url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf#page=167",
+   "page_reached": false,
+   "title_and_award_match": null,
+   "courses": null,
+   "units": [],
+   "choice_rules_match": null,
+   "total": {
+    "record": "60 degree (major total not printed)",
+    "page": null
+   },
+   "verdict": "page_unreachable",
+   "evidence": "robots.txt and the PDF both answered 403 'Blocked by Azure WAF' to the CPL Initiative user agent; no archive copy exists."
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "36302",
+   "source_url": "https://www.solano.edu/administrative-offices/academic-affairs/files/docs/archived-catalogs/pdf-catalogs/SolanoCatalog%2026-27%205.16.26.pdf#page=155",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "38",
+    "page": "38 (table); description says 40"
+   },
+   "verdict": "agrees",
+   "evidence": "BIOL 002 5, BIOL 003 5, CHEM 001-004 5 each, MATH C2210 4, MATH C2220 4; Required Major Total Units....38 [description: 'the 40-unit major']",
+   "note": "Record follows the table, which is the sum of the listed courses. The 40 in the description is the catalog disagreeing with itself: a question for the college, not a misread."
+  }
+ ],
+ "tally": {
+  "San Bernardino Valley College": {
+   "agrees": 1,
+   "differs": 0,
+   "page_unreachable": 0
+  },
+  "Coalinga College": {
+   "agrees": 1,
+   "differs": 0,
+   "page_unreachable": 0
+  },
+  "Grossmont College": {
+   "agrees": 0,
+   "differs": 0,
+   "page_unreachable": 1
+  },
+  "East Los Angeles College": {
+   "agrees": 0,
+   "differs": 0,
+   "page_unreachable": 1
+  },
+  "Solano Community College": {
+   "agrees": 1,
+   "differs": 0,
+   "page_unreachable": 0
+  }
+ },
+ "holds": []
+}

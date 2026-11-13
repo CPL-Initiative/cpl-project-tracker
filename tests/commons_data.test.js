@@ -8,6 +8,8 @@
 //       visit on #commons draws the first view again, and the filter is never stored;
 //   (4) ⭐ TBA where no committed file supplies the figure (overall, confidence, APIs, the JST funnel), never a number;
 //   (5) the age cue reads its thresholds from the file; the sort words; the search;
+//   (7) ⭐ with spot-check receipts, the three confidence figures each open the colleges at that level, and a row
+//       shows the level and its reason as the builder wrote them (the page derives no level of its own);
 //   (6) static: tokens only, no write path, no storage, th scope and a labeled scrolling region, no mock values.
 // The committed file itself is guarded by tests/commons_data_status_build_test.py.
 //
@@ -51,14 +53,14 @@ const DATA = {
 };
 const STATUS = { schema: 1, written_at: "2026-11-12T06:00:00Z", rows: [] };
 
-function load(hash) {
+function load(hash, data) {
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="tab-commons"><div id="commons-root">Loading</div></div></body></html>',
     { url: "https://example.org/index.html" + (hash || ""), runScripts: "dangerously" });
   const w = dom.window, calls = [];
   const bag = () => { const o = {}; return { getItem: (k) => (k in o ? o[k] : null), setItem: (k, v) => { o[k] = String(v); }, removeItem: (k) => { delete o[k]; }, _o: o }; };
   Object.defineProperty(w, "localStorage", { value: bag(), configurable: true });
   Object.defineProperty(w, "sessionStorage", { value: bag(), configurable: true });
-  const files = { "kb/status/commons_data.json": DATA, "kb/status/commons.json": STATUS };
+  const files = { "kb/status/commons_data.json": data || DATA, "kb/status/commons.json": STATUS };
   w.fetch = function (url, init) {
     calls.push([String(url), (init && init.method) || "GET"]);
     const hit = files[String(url)];
@@ -167,6 +169,31 @@ function plain(x, label) { return x.d.querySelector('.cdd-tile[data-tile="' + la
   const u = load("#commons/data/nonsense");
   await u.M.boot(); await settle();
   check("address 7: an unknown filter opens All", tile(u, "all").getAttribute("aria-pressed") === "true" && reported(u) === "commons/data");
+
+  // ── (7) confidence from the receipts ──
+  const LV = { 1: ["strong", "5 agree, 0 differ, 0 unreachable"], 2: ["partial", "4 agree, 1 differ, 0 unreachable"], 3: ["limited", "machine checks only; no spot-check yet"] };
+  const DATA2 = JSON.parse(JSON.stringify(DATA));
+  delete DATA2.tba.confidence;
+  DATA2.colleges.forEach((c) => { c.confidence = LV[c.id] ? { level: LV[c.id][0], why: LV[c.id][1] } : null; });
+  DATA2.colleges[0].spot_check = { agrees: 5, differs: 0, unreachable: 0 };
+  const k = load("#commons/data", DATA2);
+  await k.M.boot(); await settle();
+  check("confidence 1: no Confidence TBA tile once receipts are read", !plain(k, "Confidence"));
+  ["strong", "partial", "limited"].forEach(function (lv) {
+    const t = tile(k, lv);
+    t && t.click();
+    check("confidence 2 ⭐: the " + lv + " figure counts exactly the colleges it opens",
+      t && Number(txt(t.querySelector(".cdd-v"))) === rows(k).length && rows(k).length === 1
+      && rows(k)[0] === DATA2.colleges.filter((c) => c.confidence && c.confidence.level === lv)[0].name && k.w.location.hash === "#commons/data/" + lv);
+  });
+  tile(k, "partial").click();
+  check("confidence 3: the row shows the level and the builder's reason, not a bare word",
+    /^Partial 4 agree, 1 differ, 0 unreachable$/.test(txt(k.d.querySelector('#cdd-colleges tr[data-college="Beta College"] td[data-label="Confidence"]'))));
+  tile(k, "all").click();
+  check("confidence 4: an unread college reads TBA", txt(k.d.querySelector('#cdd-colleges tr[data-college="Delta College"] td[data-label="Confidence"]')) === "TBA");
+  k.d.querySelector('button.cdd-sort[data-sort="conf"]').click();
+  check("confidence 5: the column sorts strong first", rows(k)[0] === "Alpha College" && rows(k)[1] === "Beta College" && rows(k)[2] === "Gamma College");
+  check("confidence 6: the page derives no level of its own", !/agrees\s*>=|differs\s*>=|STRONG_AT/.test(SRC));
 
   const failed = results.filter((x) => !x[1]);
   results.forEach((x) => console.log((x[1] ? "PASS " : "FAIL ") + x[0]));

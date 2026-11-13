@@ -64,8 +64,14 @@
     gaps: { word: "Programs still to pass", test: function (c) { return c.harvested && c.gap > 0; } },
     slo: { word: "SLO read waiting", test: function (c) { return !!c.slo_queue; } },
     scouted: { word: "Scouted for a wave", test: function (c) { return !!c.scout; } },
-    noncredit: { word: "Continuing education", test: function (c) { return c.kind === "continuing_education"; } }
+    noncredit: { word: "Continuing education", test: function (c) { return c.kind === "continuing_education"; } },
+    strong: { word: "Confidence strong", test: function (c) { return level(c) === "strong"; } },
+    partial: { word: "Confidence partial", test: function (c) { return level(c) === "partial"; } },
+    limited: { word: "Confidence limited", test: function (c) { return level(c) === "limited"; } }
   };
+  /* The level the builder wrote from the rule (rule.confidence); the page never derives one of its own. */
+  function level(c) { return c && c.confidence ? c.confidence.level : null; }
+  var LEVEL_RANK = { strong: 3, partial: 2, limited: 1 };
   var FILTER_SORT = { gaps: { k: "gap", d: -1 }, unread: { k: "name", d: 1 } };
 
   function model(data) {
@@ -91,10 +97,13 @@
       { f: "gaps", v: fmt(n("gaps")), l: "Programs still to pass", d: fmt(S.gap) + " listed programs without a passing record; opens most first" },
       { f: "slo", v: fmt(n("slo")), l: "SLO read waiting", d: "Public pages print none, a hold names what it waits on, or a reader is still to build" },
       { f: "scouted", v: fmt(n("scouted")), l: "Scouted for a wave", d: fmt(S.scout_barrier) + " with an access barrier" },
+      M.tba.confidence ? { v: "TBA", l: "Confidence", d: M.tba.confidence, tba: true }
+        : { f: "strong", v: fmt(n("strong")), l: "Confidence strong", d: "5 or more spot-checked records at the college, all agreeing" },
+      M.tba.confidence ? null : { f: "partial", v: fmt(n("partial")), l: "Confidence partial", d: "A spot-checked record differs, or a page could not be reached" },
+      M.tba.confidence ? null : { f: "limited", v: fmt(n("limited")), l: "Confidence limited", d: "Machine checks only, or fewer than 5 records checked at the college" },
       { v: p == null ? "TBA" : Math.round(p * 100) + "%", l: "Program requirements passing", d: p == null ? "" : fmt(S.passing) + " of " + fmt(S.programs) + " listed programs pass the machine checks (committed files)" },
       { v: cp == null ? "TBA" : "$" + cp.toFixed(3), l: "Read cost per passing program", d: cp == null ? "" : "$" + Number(S.cost_usd).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " over " + fmt(S.passed_at_read) + " passing at read time, " + fmt(S.cost_receipts) + " receipts" },
       { v: "TBA", l: "Overall completeness", d: M.tba.overall || "" , tba: true },
-      { v: "TBA", l: "Confidence", d: M.tba.confidence || "", tba: !!M.tba.confidence },
       { v: "TBA", l: "APIs connected", d: M.tba.apis || "", tba: true },
       { v: "TBA", l: "JST funnel", d: M.tba.jst || "", tba: true }
     ];
@@ -107,7 +116,7 @@
     { k: "gap", label: "Still to pass", d0: -1, val: function (c) { return c.harvested ? c.gap : -1; } },
     { k: "read", label: "Last read", d0: -1, val: function (c) { return c.read_at ? new Date(c.read_at).getTime() : 0; } },
     { k: "cost", label: "Read cost per passing program", d0: -1, val: function (c) { var v = costPer(c); return v == null ? -1 : v; } },
-    { k: "conf", label: "Confidence", nosort: true, val: function () { return 0; } }
+    { k: "conf", label: "Confidence", d0: -1, val: function (c) { return LEVEL_RANK[level(c)] || 0; } }
   ];
   var SORT_WORDS = { 1: { name: "A to Z", other: "low first" }, "-1": { name: "Z to A", other: "high first" } };
 
@@ -155,7 +164,9 @@
       el("td", { "data-label": "Still to pass", cls: "cdd-num", text: c.harvested ? fmt(c.gap) : "" }),
       read,
       el("td", { "data-label": "Read cost per passing program", cls: "cdd-num", text: cp == null ? "" : "$" + cp.toFixed(3) }),
-      el("td", { "data-label": "Confidence", cls: c.spot_check ? "" : "cdd-quiet", text: c.spot_check ? "Spot-checked" : "TBA" })]);
+      el("td", { "data-label": "Confidence", cls: c.confidence ? "" : "cdd-quiet" }, c.confidence
+        ? [el("span", { cls: "cdd-level", text: c.confidence.level.charAt(0).toUpperCase() + c.confidence.level.slice(1) }), " ", el("span", { cls: "cdd-of", text: c.confidence.why })]
+        : ["TBA"])]);
   }
 
   var VIEW = { root: null, M: null, noted: null, now: null };
@@ -177,7 +188,7 @@
       "Built " + (day(M.written) || "on a date the file does not give") + ". A program count here is the programs each college's capture listed; the Program Requirements tab counts the live Active programs. Dates are Pacific time."]));
 
     var grid = el("div", { cls: "cdd-tiles", role: "group", "aria-label": "Statewide figures" });
-    tiles(M).forEach(function (t) {
+    tiles(M).filter(Boolean).forEach(function (t) {
       var kids = [el("span", { cls: "cdd-v" + (t.v === "TBA" ? " cdd-tba" : ""), text: t.v }), el("span", { cls: "cdd-l", text: t.l }), t.d ? el("span", { cls: "cdd-d", text: t.d }) : null];
       if (t.f) {
         var b = el("button", { type: "button", cls: "cdd-tile cdd-open", "data-filter": t.f, "aria-pressed": S.filter === t.f ? "true" : "false" }, kids);
@@ -328,7 +339,8 @@
     ".cdd-unread { font-weight:600; color:var(--cmn-ask-label); }",
     ".cdd-age { color:var(--cmn-muted); }",
     ".cdd-quiet { color:var(--cmn-muted); }",
-    ".cdd-c-name { width:27%; } .cdd-c-pr { width:25%; } .cdd-c-gap { width:10%; } .cdd-c-read { width:14%; } .cdd-c-cost { width:13%; } .cdd-c-conf { width:11%; }",
+    ".cdd-c-name { width:24%; } .cdd-c-pr { width:23%; } .cdd-c-gap { width:9%; } .cdd-c-read { width:13%; } .cdd-c-cost { width:12%; } .cdd-c-conf { width:19%; }",
+    ".cdd-level { display:block; font-weight:700; color:var(--cmn-heading); }",
     ".cdd-notes { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-radius:12px; padding:16px 20px; display:grid; gap:8px; }",
     ".cdd-notes ul { margin:0; padding-left:20px; display:grid; gap:4px; color:var(--cmn-ink-2); }",
     ".cdd-src { margin:0; color:var(--cmn-muted); font-size:.88rem; overflow-wrap:anywhere; }",

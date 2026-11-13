@@ -7,8 +7,9 @@ Dashboard's pattern (tiles that filter, a college list, later a side panel). Sli
 college list at #commons/data (commons_data.js draws them from the file this writes).
 
 WHAT IT READS, committed files only (it writes no table and calls no network):
-  kb/college_identity/2026-11-10/crosswalk.json   the universe: every college and continuing-education campus,
-                                                   by district (the two partner entities stay off this page).
+  kb/college_identity/<newest>/crosswalk.json     the universe, through kb/_college_identity_latest.py: every
+                                                   college and continuing-education campus, by district (the two
+                                                   partner entities stay off this page).
   kb/program_requirements_college/<slug>/          each harvested college's capture (capture.json "started", or
                                                    capture_preview.json on a pull request branch), its filed
                                                    records' scores and summary.json (cost_usd and the programs that
@@ -18,8 +19,11 @@ WHAT IT READS, committed files only (it writes no table and calls no network):
                                                    cause for each program without a passing record.
   kb/course_outcomes/queue.json                    the colleges whose course SLO read is none, held or parser.
   kb/harvest_scouting/scout-*.json                 COBIx's source scouts: recommendation, access challenge, date.
-  kb/spot_checks/*.check.json                      COBIx's spot-check receipts (schema 1: tally, holds, records),
-                                                   when one is committed. None is today, so confidence reads TBA.
+  kb/spot_checks/*.check.json                      COBIx's spot-check receipts, filed byte for byte as he posted
+                                                   them (schema 1: a top-level "tally" keyed by college name, a
+                                                   top-level "checked_at", "records", "holds").
+  kb/spot_checks/*.later.json                      ours, beside a receipt: a later settlement COBIx posted without
+                                                   JSON (kb/spot_checks/README.md names each source comment).
 
 ONE BASIS. Every program figure here is the committed files' own view (the census's --committed-only
 universe: the programs each capture listed). It is not the live table's Active count, which the Program
@@ -45,11 +49,13 @@ import sys
 
 SCHEMA = 1
 OUT = "kb/status/commons_data.json"
-CROSSWALK = "kb/college_identity/2026-11-10/crosswalk.json"
+CROSSWALK_DIR = "kb/college_identity"   # the newest dated baseline, asked of kb/_college_identity_latest.py
 COLLEGE_DIR = "kb/program_requirements_college"
 SLO_QUEUE = "kb/course_outcomes/queue.json"
 SCOUTS = "kb/harvest_scouting/scout-*.json"
 SPOT_CHECKS = "kb/spot_checks/*.check.json"
+SPOT_LATER = ".later.json"   # ours, beside <name>.check.json
+STRONG_AT = 5                # strong needs this many checked records at the college, all agreeing
 IN_SCOPE = ("college", "continuing_education")
 
 # The age cue on a stamp, in days, in one place (Sam, 1:23 AM PT on #3215): fresh within 7, recent within 30,
@@ -62,7 +68,7 @@ FIELDS = {
     "harvested": "shareable", "programs": "shareable", "passing": "shareable", "gap": "shareable",
     "read_at": "shareable", "read_kind": "internal", "slug": "internal", "causes": "internal",
     "cost_usd": "internal", "passed_at_read": "internal", "slo_queue": "internal", "scout": "internal",
-    "spot_check": "internal",
+    "spot_check": "internal", "confidence": "shareable",
 }
 
 # The figures slice 1 cannot read from a committed file, each with its reason (shown as TBA on the page).
@@ -82,8 +88,10 @@ RULE = {
     "passing": "coverage and invented true, arithmetic equal or unstated (the Program Requirements tab's own test)",
     "overall": "catalog source + program requirements passing + (SLOs + PLOs) / 2, divided by 3 (the whole-harvest "
                "rule); TBA until the three parts are read per college",
-    "confidence": "strong = 5 of 5 spot-checked records agree; partial = a difference or an unreachable page; "
-                  "limited = machine checks only, or 2 or more differ (display held)",
+    "confidence": "strong = 5 or more spot-checked records at the college, all agreeing; partial = one record "
+                  "differs, or 5 agree beside an unreachable page; limited = machine checks only, fewer than 5 "
+                  "checked (a cross-college check), or 2 or more differ (display held). An unreachable page is not "
+                  "a checked record; the newest receipt by checked_at counts",
     "age_days": AGE_DAYS,
 }
 
@@ -161,8 +169,72 @@ def _maybe(path: str):
         return json.load(f)
 
 
+def crosswalk_path(root: str) -> str:
+    """The newest identity baseline, asked of the one helper (never a dated folder named here)."""
+    sys.path.insert(0, os.path.join(root, "kb"))
+    import _college_identity_latest as CL  # noqa: E402
+    return CL.latest_crosswalk_path(os.path.join(root, CROSSWALK_DIR))
+
+
+def read_spot_checks(root: str, resolve, unmatched: list) -> dict:
+    """Each college's newest spot-check, read as COBIx posts it: a top-level "tally" keyed by college name and a
+    top-level "checked_at". A later settlement of ours (<name>.later.json, beside the receipt) moves a record's
+    unreachable count to agrees, and says so. When a college has more than one receipt, the newest by checked_at
+    counts (ties: the later file name)."""
+    spot = {}
+    for path in sorted(glob.glob(os.path.join(root, SPOT_CHECKS))):
+        rel = os.path.relpath(path, root)
+        s = load(root, rel)
+        later = _maybe(path[:-len(".check.json")] + SPOT_LATER) or {}
+        settled = {}
+        for r in later.get("records") or []:
+            settled.setdefault(r.get("college"), []).append(r)
+        for name, t in (s.get("tally") or {}).items():
+            cid = resolve(name)
+            if cid is None:
+                unmatched.append({"file": rel, "name": name})
+                continue
+            if not isinstance(t, dict):
+                continue
+            agrees, differs, unreachable = int(t.get("agrees") or 0), int(t.get("differs") or 0), int(t.get("page_unreachable") or 0)
+            notes = []
+            for r in settled.get(name) or []:
+                if r.get("was") == "page_unreachable" and r.get("now") == "agrees" and unreachable > 0:
+                    unreachable -= 1
+                    agrees += 1
+                    notes.append(r.get("control_number"))
+            entry = {"agrees": agrees, "differs": differs, "unreachable": unreachable,
+                     "checked_at": s.get("checked_at"), "file": rel, "pr": s.get("pr"),
+                     "settled_later": notes or None}
+            old = spot.get(cid)
+            if old is None or (entry["checked_at"] or "") >= (old["checked_at"] or ""):
+                spot[cid] = entry
+    return spot
+
+
+def confidence(spot: dict | None, harvested: bool):
+    """Sam's three levels (#3111, 2026-11-11), as COBIx's review of #3222 reads them. None for an unread college."""
+    if not harvested and not spot:
+        return None
+    if not spot:
+        return {"level": "limited", "why": "machine checks only; no spot-check yet"}
+    a, d, u = spot["agrees"], spot["differs"], spot["unreachable"]
+    checked = a + d
+    said = "%d agree, %d differ, %d unreachable" % (a, d, u)
+    if spot.get("settled_later"):
+        said += " (record %s agreed later against the captured text)" % ", ".join(spot["settled_later"])
+    if d >= 2:
+        return {"level": "limited", "why": said + "; display held"}
+    if d == 1:
+        return {"level": "partial", "why": said}
+    if checked >= STRONG_AT:
+        return {"level": "partial", "why": said} if u else {"level": "strong", "why": said}
+    return {"level": "limited", "why": said + "; fewer than %d records checked at this college" % STRONG_AT}
+
+
 def build(root: str) -> dict:
-    cw = load(root, CROSSWALK)
+    cw_path = crosswalk_path(root)
+    cw = load(root, os.path.relpath(cw_path, root))
     entities = [e for e in cw.get("colleges") or [] if e.get("entity_kind") in IN_SCOPE]
     resolve = Resolver(entities)
     unmatched = []
@@ -202,13 +274,7 @@ def build(root: str) -> dict:
             scouts[cid] = {"recommendation": c.get("recommendation"), "challenge": (c.get("access") or {}).get("challenge"),
                            "checked_at": c.get("checked_at"), "wave": s.get("wave")}
 
-    spot = {}
-    for path in sorted(glob.glob(os.path.join(root, SPOT_CHECKS))):
-        s = load(root, os.path.relpath(path, root))
-        for row in s.get("colleges") or []:
-            cid = resolve(row.get("college"))
-            if cid is not None and isinstance(row.get("tally"), dict):
-                spot[cid] = {"tally": row["tally"], "checked_at": row.get("checked_at"), "file": os.path.relpath(path, root)}
+    spot = read_spot_checks(root, resolve, unmatched)
 
     colleges = []
     for e in sorted(entities, key=lambda x: display_name(x["college_name"])):
@@ -222,6 +288,7 @@ def build(root: str) -> dict:
             "read_at": h["read_at"] if h else None, "read_kind": h["read_kind"] if h else None,
             "cost_usd": h["cost_usd"] if h else None, "passed_at_read": h["passed_at_read"] if h else None,
             "slo_queue": slo.get(cid), "scout": scouts.get(cid), "spot_check": spot.get(cid),
+            "confidence": confidence(spot.get(cid), h is not None),
         })
 
     hv = [c for c in colleges if c["harvested"]]
@@ -238,11 +305,13 @@ def build(root: str) -> dict:
         "slo_waiting": len(slo), "scouted": len(scouts),
         "scout_barrier": sum(1 for v in scouts.values() if (v.get("challenge") or "none") != "none" or v.get("recommendation") == "blocked"),
         "spot_checked": len(spot),
+        "confidence": {lv: sum(1 for c in colleges if c["confidence"] and c["confidence"]["level"] == lv)
+                       for lv in ("strong", "partial", "limited")},
     }
     return {
         "schema": SCHEMA,
         "written_at": iso_now(),
-        "sources": {"universe": CROSSWALK, "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
+        "sources": {"universe": os.path.relpath(cw_path, root), "harvest": COLLEGE_DIR + "/<slug>/", "census": "kb/_harvest_gap_census.py (committed-files functions)",
                     "slo_queue": SLO_QUEUE, "scouts": SCOUTS, "spot_checks": SPOT_CHECKS},
         "rule": RULE, "fields": FIELDS, "tba": TBA if not spot else {k: v for k, v in TBA.items() if k != "confidence"},
         "statewide": statewide,
