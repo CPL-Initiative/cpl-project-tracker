@@ -1,0 +1,2770 @@
+[
+ {
+  "control_number": "24032",
+  "title": "Fundamentals for Financial Office Applications Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24033",
+  "title": "Construction Technology - Electrical Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24063",
+  "title": "ESL Work Readiness",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1020",
+   "ESLA1025",
+   "ESLA1030",
+   "ESLA801",
+   "ESLA815"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-work-readiness/",
+   "title": "ESL Work Readiness < North Orange Continuing Education",
+   "h1": "ESL Work Readiness",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3206
+ },
+ {
+  "control_number": "24064",
+  "title": "Graphic, Design and Web Skills Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24087",
+  "title": "Construction Technology - General Contracting Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24114",
+  "title": "Management",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BMGR410",
+   "BMGR412",
+   "BMGR415",
+   "BMGR417",
+   "BMGR421",
+   "BMGR423",
+   "BMGR430",
+   "BMGR431",
+   "BMGR452",
+   "BMGR610",
+   "MS134",
+   "MS160",
+   "OTEC216",
+   "OTEC217",
+   "OTEC218"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/management-program/",
+   "title": "Management Program < North Orange Continuing Education",
+   "h1": "Management Program",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 15,
+  "text_chars": 2783
+ },
+ {
+  "control_number": "24115",
+  "title": "Workplace VESL Administrative Assistant",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA808"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-administrative-assistant/",
+   "title": "Workplace Vocational English as a Second Language: Administrative Assistant < North Orange Continuing Education",
+   "h1": "Workplace Vocational English as a Second Language: Administrative Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2853
+ },
+ {
+  "control_number": "24128",
+  "title": "Quality Assurance Management for Medical Devices",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "QAMD400",
+   "QAMD405",
+   "QAMD410",
+   "QAMD415",
+   "QAMD420",
+   "QAMD425"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/quality-assurance-management-certificate-medical-devices/",
+   "title": "Quality Assurance Management for Medical Devices < North Orange Continuing Education",
+   "h1": "Quality Assurance Management for Medical Devices",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3146
+ },
+ {
+  "control_number": "24163",
+  "title": "Workplace VESL Pharmacy Technician",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1025",
+   "ESLA808"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-pharmacy-technician/",
+   "title": "Workplace Vocational English as a Second Language: Pharmacy Technician < North Orange Continuing Education",
+   "h1": "Workplace Vocational English as a Second Language: Pharmacy Technician",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2927
+ },
+ {
+  "control_number": "24166",
+  "title": "Workplace VESL Electricity and Construction",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA808",
+   "ESLA995"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-electricity-construction/",
+   "title": "Workplace Vocational English as a Second Language: Electricity and Construction < North Orange Continuing Education",
+   "h1": "Workplace Vocational English as a Second Language: Electricity and Construction",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.75,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2935
+ },
+ {
+  "control_number": "24176",
+  "title": "Advanced Office Applications Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24208",
+  "title": "Secondary Education Certificate of Completion",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24258",
+  "title": "Secondary Education Certificate of Completion - GED Test Preparation",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24292",
+  "title": "Workplace VESL Early Childhood Education",
+  "award": null,
+  "shape": "other",
+  "method": "sitemap_page",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESLA1020"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/workplace-vocational-english-second-language-early-childhood-education/",
+   "title": "Workplace Vocational English as a Second Language: Early Childhood Education < North Orange Continuing Education",
+   "h1": "Workplace Vocational English as a Second Language: Early Childhood Education",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 0.8,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2933
+ },
+ {
+  "control_number": "24305",
+  "title": "Literacy Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24346",
+  "title": "Office Applications Essentials Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 5,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24404",
+  "title": "Early Childhood Education Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "24414",
+  "title": "Fundamental Computer Concepts & Skills Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 4,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31327",
+  "title": "Electrical Trainee Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 1,
+  "text_chars": 0
+ },
+ {
+  "control_number": "31595",
+  "title": "High School Diploma Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "IHSS100",
+   "IHSS101",
+   "IHSS102",
+   "IHSS105",
+   "IHSS109",
+   "IHSS110",
+   "IHSS113",
+   "IHSS116",
+   "IHSS118",
+   "IHSS119",
+   "IHSS121",
+   "IHSS122",
+   "IHSS153",
+   "IHSS163",
+   "IHSS170",
+   "IHSS173",
+   "IHSS174",
+   "IHSS181",
+   "IHSS183",
+   "IHSS300",
+   "IHSS305",
+   "IHSS306",
+   "IHSS310",
+   "IHSS311",
+   "IHSS315",
+   "IHSS316",
+   "IHSS317",
+   "IHSS318",
+   "IHSS345",
+   "IHSS346",
+   "IHSS347",
+   "IHSS348",
+   "IHSS415",
+   "IHSS416",
+   "IHSS417",
+   "IHSS418",
+   "IHSS660",
+   "IHSS992",
+   "IHSS993",
+   "IHSS994"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/high-school-diploma-program/",
+   "title": "High School Diploma Program (HSDP) < North Orange Continuing Education",
+   "h1": "High School Diploma Program (HSDP)",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 41,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "32943",
+  "title": "Graphic, Design and Web Skills Program",
+  "award": null,
+  "shape": "other",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33138",
+  "title": "Braille Transcribing Program",
+  "award": null,
+  "shape": "other",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "33698",
+  "title": "Funeral Service Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "FSRV100",
+   "FSRV110",
+   "FSRV120",
+   "FSRV125",
+   "FSRV126",
+   "MEDA101"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/funeral-service/funeral-service-assistant-certificate-program/",
+   "title": "Funeral Service Assistant < North Orange Continuing Education",
+   "h1": "Funeral Service Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 6,
+  "text_chars": 3124
+ },
+ {
+  "control_number": "37585",
+  "title": "Self-Advocacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37587",
+  "title": "Daily Living Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "37591",
+  "title": "Electrical Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ELET178",
+   "ELET190",
+   "ELET191",
+   "ELET192",
+   "ELET195",
+   "ELET196",
+   "MS160"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/construction/electrical-technology/",
+   "title": "Electrical Technology < North Orange Continuing Education",
+   "h1": "Electrical Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 1910
+ },
+ {
+  "control_number": "37673",
+  "title": "Improving Individual Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 3,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38319",
+  "title": "Administrative Professional",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 17,
+  "text_chars": 0
+ },
+ {
+  "control_number": "38320",
+  "title": "Business Information Worker I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BMGR415",
+   "OTEC100",
+   "OTEC105",
+   "OTEC110",
+   "OTEC200",
+   "OTEC201",
+   "OTEC202",
+   "OTEC210",
+   "OTEC211",
+   "OTEC215"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/",
+   "title": "Business < North Orange Continuing Education",
+   "h1": "Business",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.333,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "38527",
+  "title": "College Preparation, Math Skills 1",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABED115",
+   "ABED116"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-1/",
+   "title": "College Preparation, Math Skills 1 < North Orange Continuing Education",
+   "h1": "College Preparation, Math Skills 1",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2813
+ },
+ {
+  "control_number": "38528",
+  "title": "College Preparation, Math Skills 2",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABED116",
+   "ABED120"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-2/",
+   "title": "College Preparation, Math Skills 2 < North Orange Continuing Education",
+   "h1": "College Preparation, Math Skills 2",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2513
+ },
+ {
+  "control_number": "38529",
+  "title": "College Preparation, Math Skills 3",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABED117"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/math-preparation/math-preparation-math-skills-3/",
+   "title": "College Preparation, Math Skills 3 < North Orange Continuing Education",
+   "h1": "College Preparation, Math Skills 3",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2607
+ },
+ {
+  "control_number": "38690",
+  "title": "ESL for Academic Success I",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1060",
+   "ESLA1062"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-academic-success-i/",
+   "title": "ESL for Academic Success I < North Orange Continuing Education",
+   "h1": "ESL for Academic Success I",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2931
+ },
+ {
+  "control_number": "38691",
+  "title": "ESL for Academic Success II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1065",
+   "ESLA1067"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-academic-success-ii/",
+   "title": "ESL for Academic Success II < North Orange Continuing Education",
+   "h1": "ESL for Academic Success II",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2933
+ },
+ {
+  "control_number": "39322",
+  "title": "ESL Vocabulary Review",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA225",
+   "ESLA226"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-vocabulary-review/",
+   "title": "ESL Vocabulary Review < North Orange Continuing Education",
+   "h1": "ESL Vocabulary Review",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2907
+ },
+ {
+  "control_number": "39323",
+  "title": "ESL for Workforce Preparation, Basic",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 2,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39324",
+  "title": "ESL for Workforce Preparation, Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1054",
+   "ESLA1056"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-advanced/",
+   "title": "ESL for Workforce Preparation, Advanced < North Orange Continuing Education",
+   "h1": "ESL for Workforce Preparation, Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2914
+ },
+ {
+  "control_number": "39325",
+  "title": "ESL Specialty Courses",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA182",
+   "ESLA183",
+   "ESLA211",
+   "ESLA222",
+   "ESLA223",
+   "ESLA225",
+   "ESLA226",
+   "ESLA250",
+   "ESLA251",
+   "ESLA801",
+   "ESLA804",
+   "ESLA815"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/",
+   "title": "English as a Second Language < North Orange Continuing Education",
+   "h1": "English as a Second Language",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 16000
+ },
+ {
+  "control_number": "39363",
+  "title": "ESL Reading and Writing Skills, Intermediate to Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39364",
+  "title": "ESL Reading and Writing Skills, Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39461",
+  "title": "ESL Civics",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "39625",
+  "title": "GED/HiSET Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABED105",
+   "ABED106",
+   "ABED107",
+   "ABED405",
+   "ABED406",
+   "ABED407",
+   "ABED408",
+   "ABED409"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/",
+   "title": "Basic Skills < North Orange Continuing Education",
+   "h1": "Basic Skills",
+   "text_from": "innerText+tabs",
+   "label": {
+    "award": 0,
+    "title": 0.25,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 4150
+ },
+ {
+  "control_number": "39626",
+  "title": "ESL Grammar Review",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA222",
+   "ESLA223"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-grammar-review/",
+   "title": "ESL Grammar Review < North Orange Continuing Education",
+   "h1": "ESL Grammar Review",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2902
+ },
+ {
+  "control_number": "39629",
+  "title": "ESL Multiskills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA110",
+   "ESLA120"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-multiskills/",
+   "title": "ESL Multiskills < North Orange Continuing Education",
+   "h1": "ESL Multiskills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2858
+ },
+ {
+  "control_number": "39944",
+  "title": "Medical Assistant",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDA100",
+   "MEDA101",
+   "MEDA110",
+   "MEDA111",
+   "MEDA120",
+   "MEDA121",
+   "MEDA130",
+   "MEDA131",
+   "MEDA140",
+   "MEDA141",
+   "MEDA200",
+   "MEDA201",
+   "MEDA210",
+   "MEDA211",
+   "MEDA300",
+   "MEDO105",
+   "PTEC125"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/medical-assistant/",
+   "title": "Medical Assistant < North Orange Continuing Education",
+   "h1": "Medical Assistant",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3002
+ },
+ {
+  "control_number": "39945",
+  "title": "Personal Care Aide",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDO311",
+   "MEDO312",
+   "MEDO313"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/personal-care-aide/",
+   "title": "Personal Care Aide < North Orange Continuing Education",
+   "h1": "Personal Care Aide",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2054
+ },
+ {
+  "control_number": "39946",
+  "title": "Pharmacy Technician – Entry Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDO105",
+   "PTEC100",
+   "PTEC105",
+   "PTEC110",
+   "PTEC115",
+   "PTEC120",
+   "PTEC125",
+   "PTEC200",
+   "PTEC205",
+   "PTEC300"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_entry_level/",
+   "title": "Pharmacy Technician – Entry Level < North Orange Continuing Education",
+   "h1": "Pharmacy Technician – Entry Level",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 2479
+ },
+ {
+  "control_number": "39947",
+  "title": "Pharmacy Technician – Registration Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "MEDO105",
+   "PTEC100",
+   "PTEC105",
+   "PTEC110",
+   "PTEC115",
+   "PTEC120",
+   "PTEC125",
+   "PTEC200",
+   "PTEC205"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_registration_level/",
+   "title": "Pharmacy Technician – Registration Level < North Orange Continuing Education",
+   "h1": "Pharmacy Technician – Registration Level",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2315
+ },
+ {
+  "control_number": "39948",
+  "title": "Pharmacy Technician – Advanced Level",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 0.667,
+  "codes_found": [
+   "PTEC301",
+   "PTEC302"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/medical/pharmacy_technician_advanced_level/",
+   "title": "Pharmacy Technician – Advanced Level < North Orange Continuing Education",
+   "h1": "Pharmacy Technician – Advanced Level",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 2251
+ },
+ {
+  "control_number": "39986",
+  "title": "Braille Transcribing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ENCO200",
+   "ENCO201"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/braille-transcribing/braille-transcribing/",
+   "title": "Braille Transcribing < North Orange Continuing Education",
+   "h1": "Braille Transcribing",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2047
+ },
+ {
+  "control_number": "40939",
+  "title": "ESL Integrated Skills, Beginning Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA229",
+   "ESLA305"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-literacy/",
+   "title": "ESL Integrated Skills, Beginning Literacy < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Beginning Literacy",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3024
+ },
+ {
+  "control_number": "40940",
+  "title": "ESL Integrated Skills, Beginning Low",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA230",
+   "ESLA305"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-low/",
+   "title": "ESL Integrated Skills, Beginning Low < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Beginning Low",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3019
+ },
+ {
+  "control_number": "40941",
+  "title": "ESL Integrated Skills, Beginning High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA231",
+   "ESLA305"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-beginning-high/",
+   "title": "ESL Integrated Skills, Beginning High < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Beginning High",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3021
+ },
+ {
+  "control_number": "40942",
+  "title": "ESL Integrated Skills, Intermediate Low",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA232",
+   "ESLA307"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-intermediate-low/",
+   "title": "ESL Integrated Skills, Intermediate Low < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Intermediate Low",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3036
+ },
+ {
+  "control_number": "40943",
+  "title": "ESL Integrated Skills, Intermediate High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA233",
+   "ESLA307"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-intermediate-high/",
+   "title": "ESL Integrated Skills, Intermediate High < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Intermediate High",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3034
+ },
+ {
+  "control_number": "40944",
+  "title": "ESL Integrated Skills, Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA234",
+   "ESLA307"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-integrated-skills-advanced/",
+   "title": "ESL Integrated Skills, Advanced < North Orange Continuing Education",
+   "h1": "ESL Integrated Skills, Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3025
+ },
+ {
+  "control_number": "40945",
+  "title": "ESL Speaking Skills, Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "no_closed_list",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 0,
+  "text_chars": 0
+ },
+ {
+  "control_number": "40946",
+  "title": "ESL Speaking Skills, Intermediate to Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA183",
+   "ESLA223",
+   "ESLA226"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-speaking-skills-intermediate-to-advanced/",
+   "title": "ESL Speaking Skills, Intermediate to Advanced < North Orange Continuing Education",
+   "h1": "ESL Speaking Skills, Intermediate to Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 3,
+  "text_chars": 3045
+ },
+ {
+  "control_number": "40948",
+  "title": "ECE Preschool Assistant Teacher",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED105"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-assistant-teacher/",
+   "title": "ECE Preschool Assistant Teacher < North Orange Continuing Education",
+   "h1": "ECE Preschool Assistant Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 1,
+  "text_chars": 2914
+ },
+ {
+  "control_number": "40950",
+  "title": "ECE Infant Care Teacher",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED105",
+   "ECED115",
+   "ECED120",
+   "ECED205",
+   "ECED210"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-infant-care-teacher/",
+   "title": "ECE Infant Care Teacher < North Orange Continuing Education",
+   "h1": "ECE Infant Care Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3103
+ },
+ {
+  "control_number": "40951",
+  "title": "ECE Preschool Teacher",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED105",
+   "ECED115",
+   "ECED120",
+   "ECED200",
+   "ECED205",
+   "ECED215",
+   "ECED220",
+   "ECED225",
+   "WFPR100",
+   "WFPR101"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-teacher/",
+   "title": "ECE Preschool Teacher < North Orange Continuing Education",
+   "h1": "ECE Preschool Teacher",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 4152
+ },
+ {
+  "control_number": "40952",
+  "title": "ECE Preschool Director",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ECED105",
+   "ECED115",
+   "ECED120",
+   "ECED200",
+   "ECED205",
+   "ECED210",
+   "ECED215",
+   "ECED220",
+   "ECED225",
+   "ECED400",
+   "WFPR100",
+   "WFPR101"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/early-childhood-education/ece-preschool-director/",
+   "title": "ECE Preschool Director < North Orange Continuing Education",
+   "h1": "ECE Preschool Director",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 12,
+  "text_chars": 4068
+ },
+ {
+  "control_number": "41123",
+  "title": "Bookkeeping",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BUSA100",
+   "BUSA101",
+   "BUSA102",
+   "COMP650"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/bookkeeping/",
+   "title": "Bookkeeping < North Orange Continuing Education",
+   "h1": "Bookkeeping",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 3032
+ },
+ {
+  "control_number": "41619",
+  "title": "Classroom Essentials for Program Success",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "OTEC91",
+   "OTEC92"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/classroom-essentials-for-program-success/",
+   "title": "Classroom Essentials for Program Success < North Orange Continuing Education",
+   "h1": "Classroom Essentials for Program Success",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2288
+ },
+ {
+  "control_number": "41620",
+  "title": "Business Information Worker II",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 22,
+  "text_chars": 0
+ },
+ {
+  "control_number": "42314",
+  "title": "ESL for Community Involvement, Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA182",
+   "ESLA185",
+   "ESLA222",
+   "ESLA225",
+   "ESLA250",
+   "ESLA260",
+   "ESLA801"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-community-involvement-beginning/",
+   "title": "ESL for Community Involvement, Beginning < North Orange Continuing Education",
+   "h1": "ESL for Community Involvement, Beginning",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3258
+ },
+ {
+  "control_number": "42315",
+  "title": "ESL for Community Involvement, Intermediate to Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA181",
+   "ESLA183",
+   "ESLA223",
+   "ESLA226",
+   "ESLA251",
+   "ESLA261",
+   "ESLA815"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-community-involvement-intermediate-to-advanced/",
+   "title": "ESL for Community Involvement, Intermediate to Advanced < North Orange Continuing Education",
+   "h1": "ESL for Community Involvement, Intermediate to Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 7,
+  "text_chars": 3339
+ },
+ {
+  "control_number": "42316",
+  "title": "ESL for Workforce Preparation, Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1050",
+   "ESLA1052"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-workforce-preparation-intermediate/",
+   "title": "ESL for Workforce Preparation, Intermediate < North Orange Continuing Education",
+   "h1": "ESL for Workforce Preparation, Intermediate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2922
+ },
+ {
+  "control_number": "43316",
+  "title": "Entrepreneurship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "COMP650",
+   "ENTR100",
+   "ENTR105",
+   "ENTR115"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/entrepreneurship/",
+   "title": "Entrepreneurship < North Orange Continuing Education",
+   "h1": "Entrepreneurship",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2484
+ },
+ {
+  "control_number": "43317",
+  "title": "Career Exploration: Child Care Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR200",
+   "WFPR201"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-child-care-industry/",
+   "title": "Career Exploration: Child Care Industry < North Orange Continuing Education",
+   "h1": "Career Exploration: Child Care Industry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2914
+ },
+ {
+  "control_number": "43318",
+  "title": "Google IT Support Professional Pre-Apprenticeship",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "CIST100",
+   "CIST105",
+   "CIST110",
+   "CIST115",
+   "CIST120"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/computers/google-it-support-professional-pre-apprenticeship/",
+   "title": "Google IT Support Professional Pre-Apprenticeship < North Orange Continuing Education",
+   "h1": "Google IT Support Professional Pre-Apprenticeship",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 2727
+ },
+ {
+  "control_number": "43414",
+  "title": "ESL College Success Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1071",
+   "ESLA1073"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-college-success-skills/",
+   "title": "ESL College Success Skills < North Orange Continuing Education",
+   "h1": "ESL College Success Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2931
+ },
+ {
+  "control_number": "44018",
+  "title": "ESL Skill Review, Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA181",
+   "ESLA183",
+   "ESLA223",
+   "ESLA226",
+   "ESLA244"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-advanced/",
+   "title": "ESL Skill Review, Advanced < North Orange Continuing Education",
+   "h1": "ESL Skill Review, Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3224
+ },
+ {
+  "control_number": "44019",
+  "title": "ESL for the Arts",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA351",
+   "ESLA352",
+   "ESLA353",
+   "ESLA354"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-the-arts/",
+   "title": "ESL for the Arts < North Orange Continuing Education",
+   "h1": "ESL for the Arts",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 4,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "44025",
+  "title": "ESL Skill Review, Beginning High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA182",
+   "ESLA185",
+   "ESLA222",
+   "ESLA225",
+   "ESLA241"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-high/",
+   "title": "ESL Skill Review Beginning High < North Orange Continuing Education",
+   "h1": "ESL Skill Review Beginning High",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3157
+ },
+ {
+  "control_number": "44026",
+  "title": "ESL Skill Review, Beginning Literacy",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA182",
+   "ESLA185",
+   "ESLA222",
+   "ESLA225",
+   "ESLA239"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-literacy/",
+   "title": "ESL Skill Review Beginning Literacy < North Orange Continuing Education",
+   "h1": "ESL Skill Review Beginning Literacy",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3162
+ },
+ {
+  "control_number": "44027",
+  "title": "ESL Skill Review, Beginning Low",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA182",
+   "ESLA185",
+   "ESLA222",
+   "ESLA225",
+   "ESLA240"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-beginning-low/",
+   "title": "ESL Skill Review Beginning Low < North Orange Continuing Education",
+   "h1": "ESL Skill Review Beginning Low",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3156
+ },
+ {
+  "control_number": "44056",
+  "title": "ESL Skill Review, Intermediate Low",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA181",
+   "ESLA183",
+   "ESLA223",
+   "ESLA226",
+   "ESLA242"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-intermediate-low/",
+   "title": "ESL Skill Review Intermediate Low < North Orange Continuing Education",
+   "h1": "ESL Skill Review Intermediate Low",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3232
+ },
+ {
+  "control_number": "44079",
+  "title": "ESL Skill Review, Intermediate High",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA181",
+   "ESLA183",
+   "ESLA223",
+   "ESLA226",
+   "ESLA243"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-skill-review-intermediate-high/",
+   "title": "ESL Skill Review Intermediate High < North Orange Continuing Education",
+   "h1": "ESL Skill Review Intermediate High",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 5,
+  "text_chars": 3233
+ },
+ {
+  "control_number": "44168",
+  "title": "ESL Specialty Courses, Beginning",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA180",
+   "ESLA182",
+   "ESLA185",
+   "ESLA222",
+   "ESLA225",
+   "ESLA250",
+   "ESLA801"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-specialty-courses-beginning/",
+   "title": "ESL Specialty Courses, Beginning < North Orange Continuing Education",
+   "h1": "ESL Specialty Courses, Beginning",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 8,
+  "text_chars": 3241
+ },
+ {
+  "control_number": "44169",
+  "title": "ESL Specialty Courses, Intermediate to Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA181",
+   "ESLA183",
+   "ESLA186",
+   "ESLA211",
+   "ESLA223",
+   "ESLA226",
+   "ESLA251",
+   "ESLA804",
+   "ESLA815"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-specialty-courses-intermediate-to-advanced/",
+   "title": "ESL Specialty Courses, Intermediate to Advanced < North Orange Continuing Education",
+   "h1": "ESL Specialty Courses, Intermediate to Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 10,
+  "text_chars": 3428
+ },
+ {
+  "control_number": "44229",
+  "title": "Customer Relations",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BMGR415",
+   "BMGR431",
+   "COMP510",
+   "COMP650",
+   "COMP685",
+   "OTEC100",
+   "OTEC105",
+   "OTEC110",
+   "OTEC111",
+   "OTEC215",
+   "OTEC216",
+   "OTEC217",
+   "OTEC218",
+   "OTEC225",
+   "OTEC230",
+   "WFPR100",
+   "WFPR101"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/customer-relations/",
+   "title": "Customer Relations < North Orange Continuing Education",
+   "h1": "Customer Relations",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 17,
+  "text_chars": 3957
+ },
+ {
+  "control_number": "44243",
+  "title": "Career Exploration: Digital Marketing",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR232",
+   "WFPR233"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-digital-marketing/",
+   "title": "Career Exploration: Digital Marketing < North Orange Continuing Education",
+   "h1": "Career Exploration: Digital Marketing",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2914
+ },
+ {
+  "control_number": "44244",
+  "title": "Career Exploration: Healthcare Workers",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR236",
+   "WFPR237"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-healthcare-workers/",
+   "title": "Career Exploration: Healthcare Workers < North Orange Continuing Education",
+   "h1": "Career Exploration: Healthcare Workers",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2918
+ },
+ {
+  "control_number": "44245",
+  "title": "Career Exploration: Animal Care Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR204",
+   "WFPR205"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-animal-care-industry/",
+   "title": "Career Exploration: Animal Care Industry < North Orange Continuing Education",
+   "h1": "Career Exploration: Animal Care Industry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2918
+ },
+ {
+  "control_number": "44312",
+  "title": "Career Exploration: Workplace Technology Essentials",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR240",
+   "WFPR241"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-workplace-technology-essentials/",
+   "title": "Career Exploration: Workplace Technology Essentials < North Orange Continuing Education",
+   "h1": "Career Exploration: Workplace Technology Essentials",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2789
+ },
+ {
+  "control_number": "44472",
+  "title": "Office Assistant, Introduction",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BMGR415",
+   "COMP685",
+   "OTEC100",
+   "OTEC105",
+   "OTEC110",
+   "OTEC215",
+   "OTEC216",
+   "OTEC217",
+   "OTEC301"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-introduction/",
+   "title": "Office Assistant, Introduction < North Orange Continuing Education",
+   "h1": "Office Assistant, Introduction",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 3494
+ },
+ {
+  "control_number": "44476",
+  "title": "Office Assistant, Advanced",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "BMGR415",
+   "COMP510",
+   "COMP511",
+   "COMP685",
+   "OTEC100",
+   "OTEC105",
+   "OTEC110",
+   "OTEC215",
+   "OTEC216",
+   "OTEC217",
+   "OTEC218",
+   "OTEC225",
+   "OTEC301"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/business/office-assistant-advanced/",
+   "title": "Office Assistant, Advanced < North Orange Continuing Education",
+   "h1": "Office Assistant, Advanced",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 13,
+  "text_chars": 4025
+ },
+ {
+  "control_number": "44839",
+  "title": "ESL Precollege Reading and Writing, Intermediate",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLM1077"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-precollege-reading-and-writing,-intermediate/",
+   "title": "ESL Precollege Reading and Writing, Intermediate < North Orange Continuing Education",
+   "h1": "ESL Precollege Reading and Writing, Intermediate",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2905
+ },
+ {
+  "control_number": "45040",
+  "title": "Career Exploration: Career Paths in the Restaurant Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR212",
+   "WFPR213"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-career-paths-in-the-restaurant-industry/",
+   "title": "Career Exploration: Career Paths in the Restaurant Industry < North Orange Continuing Education",
+   "h1": "Career Exploration: Career Paths in the Restaurant Industry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2687
+ },
+ {
+  "control_number": "45041",
+  "title": "Career Exploration: Retail and Customer Services Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR224",
+   "WFPR225"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-retail-and-customer-services-skills/",
+   "title": "Career Exploration: Retail and Customer Services Skills < North Orange Continuing Education",
+   "h1": "Career Exploration: Retail and Customer Services Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "45042",
+  "title": "Career Exploration: Orientation to College and Survey of Career Fields",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR244",
+   "WFPR245"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-orientation-to-college-and-survey-of-career-fields/",
+   "title": "Career Exploration: Orientation to College and Survey of Career Fields < North Orange Continuing Education",
+   "h1": "Career Exploration: Orientation to College and Survey of Career Fields",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2727
+ },
+ {
+  "control_number": "45043",
+  "title": "Career Exploration: Guest Services",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR216",
+   "WFPR217"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-guest-services/",
+   "title": "Career Exploration: Guest Services < North Orange Continuing Education",
+   "h1": "Career Exploration: Guest Services",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2921
+ },
+ {
+  "control_number": "45044",
+  "title": "Career Exploration: Food Service Industry",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "WFPR220",
+   "WFPR221"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-food-service-industry/",
+   "title": "Career Exploration: Food Service Industry < North Orange Continuing Education",
+   "h1": "Career Exploration: Food Service Industry",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2589
+ },
+ {
+  "control_number": "45223",
+  "title": "ESL Employment Preparation Part A",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1200",
+   "ESLA1202"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-employment-preparation-part-a/",
+   "title": "ESL Employment Preparation Part A < North Orange Continuing Education",
+   "h1": "ESL Employment Preparation Part A",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2921
+ },
+ {
+  "control_number": "45224",
+  "title": "ESL Employment Preparation Part B",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1204",
+   "ESLA1205"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-employment-preparation-part-b/",
+   "title": "ESL Employment Preparation Part B < North Orange Continuing Education",
+   "h1": "ESL Employment Preparation Part B",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2953
+ },
+ {
+  "control_number": "45936",
+  "title": "GED/HiSET Test Preparation",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ABED102",
+   "ABED105",
+   "ABED106",
+   "ABED107",
+   "ABED405",
+   "ABED406",
+   "ABED407",
+   "ABED408",
+   "ABED409"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/basic-skills/ged-test-preparation/",
+   "title": "GED/HiSET Test Preparation < North Orange Continuing Education",
+   "h1": "GED/HiSET Test Preparation",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 9,
+  "text_chars": 2364
+ },
+ {
+  "control_number": "46026",
+  "title": "High School Diploma Program",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "page_claimed",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 65,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46110",
+  "title": "Career Exploration: Essential Employment Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 8,
+  "text_chars": 0
+ },
+ {
+  "control_number": "46248",
+  "title": "ESL Core Workplace Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1208",
+   "ESLA1209"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-core-workplace-communication/",
+   "title": "ESL Core Workplace Communication < North Orange Continuing Education",
+   "h1": "ESL Core Workplace Communication",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2950
+ },
+ {
+  "control_number": "46249",
+  "title": "ESL for Computers and Technology",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA816",
+   "ESLA817"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-computers-and-technology/",
+   "title": "ESL for Computers and Technology < North Orange Continuing Education",
+   "h1": "ESL for Computers and Technology",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2930
+ },
+ {
+  "control_number": "46251",
+  "title": "ESL for Entrepreneurs",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA1306"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-entrepreneurs/",
+   "title": "ESL for Entrepreneurs < North Orange Continuing Education",
+   "h1": "ESL for Entrepreneurs",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2913
+ },
+ {
+  "control_number": "46252",
+  "title": "ESL for Office Assistants",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1",
+   "ESLA1302"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-office-assistants/",
+   "title": "ESL for Office Assistants < North Orange Continuing Education",
+   "h1": "ESL for Office Assistants",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2911
+ },
+ {
+  "control_number": "46253",
+  "title": "ESL for Personal Care Aides",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "link_search",
+  "coverage": 0.5,
+  "codes_found": [
+   "ESLA1"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-for-office-assistants/",
+   "title": "ESL for Office Assistants < North Orange Continuing Education",
+   "h1": "ESL for Office Assistants",
+   "text_from": "innerText",
+   "label": null
+  },
+  "listed": 2,
+  "text_chars": 2847
+ },
+ {
+  "control_number": "46254",
+  "title": "ESL Workplace Communication for Career Advancement",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1210",
+   "ESLA1211"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-communication-for-career-advancement/",
+   "title": "ESL Workplace Communication for Career Advancement < North Orange Continuing Education",
+   "h1": "ESL Workplace Communication for Career Advancement",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2936
+ },
+ {
+  "control_number": "46255",
+  "title": "ESL Workplace Interpersonal Communication",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1212",
+   "ESLA1213"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-interpersonal-communication/",
+   "title": "ESL Workplace Interpersonal Communication < North Orange Continuing Education",
+   "h1": "ESL Workplace Interpersonal Communication",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2924
+ },
+ {
+  "control_number": "46256",
+  "title": "ESL Workplace Reading and Writing Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1206",
+   "ESLA1207"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-reading-and-writing-skills/",
+   "title": "ESL Workplace Reading and Writing Skills < North Orange Continuing Education",
+   "h1": "ESL Workplace Reading and Writing Skills",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2917
+ },
+ {
+  "control_number": "46257",
+  "title": "ESL Workplace Self-Empowerment",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "sitemap_page",
+  "coverage": 1.0,
+  "codes_found": [
+   "ESLA1214",
+   "ESLA1215"
+  ],
+  "source": {
+   "url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/english-second-language/esl-workplace-self-empowerment/",
+   "title": "ESL Workplace Self-Empowerment < North Orange Continuing Education",
+   "h1": "ESL Workplace Self-Empowerment",
+   "text_from": "innerText",
+   "label": {
+    "award": 0,
+    "title": 1.0,
+    "section": null,
+    "section_line": null,
+    "section_fit": 0.0
+   }
+  },
+  "listed": 2,
+  "text_chars": 2932
+ },
+ {
+  "control_number": "46260",
+  "title": "Workforce Foundations Skills",
+  "award": "Noncredit program",
+  "shape": "noncredit",
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
+  "listed": 18,
+  "text_chars": 0
+ }
+]
