@@ -4,9 +4,9 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 927,
+  "file_datasets": 931,
   "external_services": 195,
-  "consumers": 581,
+  "consumers": 582,
   "workflows": 72,
   "data_js_files": 71,
   "tabs": 41
@@ -11224,6 +11224,13 @@
      "line": 59
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 341
+    },
+    {
      "id": "script:kb/_title_consolidation_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -11515,6 +11522,13 @@
      "direction": "write",
      "how": "literal",
      "line": 205
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 336
     },
     {
      "id": "script:kb/_remint_apply_articulations.py",
@@ -11873,6 +11887,13 @@
      "direction": "write",
      "how": "literal",
      "line": 206
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 333
     },
     {
      "id": "script:kb/_remint_dryrun.py",
@@ -12319,6 +12340,13 @@
      "line": 202
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 330
+    },
+    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
@@ -12737,6 +12765,13 @@
      "line": 204
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 332
+    },
+    {
      "id": "script:kb/_rekey_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -13146,6 +13181,13 @@
      "direction": "write",
      "how": "literal",
      "line": 203
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 331
     },
     {
      "id": "script:kb/_rekey_promotions.py",
@@ -14603,6 +14645,13 @@
      "line": 162
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 337
+    },
+    {
      "id": "script:kb/_rekey_crnc_mirrors.py",
      "kind": "script",
      "direction": "read",
@@ -14767,6 +14816,13 @@
      "tabs": [
       "admin"
      ]
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 656
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -15047,6 +15103,13 @@
      "direction": "write",
      "how": "literal",
      "line": 207
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 467
     },
     {
      "id": "script:kb/_seed_authority_codes.py",
@@ -17358,6 +17421,13 @@
      "line": 220
     },
     {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 335
+    },
+    {
      "id": "script:kb/_rekey_promotions.py",
      "kind": "script",
      "direction": "read",
@@ -17477,6 +17547,45 @@
    "main_committers": [
     "workflow:library-publish.yml"
    ]
+  },
+  "file:kb/reclustering_s648_out/2026-11-13/honors_worklist.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 1021
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/2026-11-13/plan.md": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 1026
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reclustering_s648_out/<date>/fresh_read.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 892
+    }
+   ],
+   "served": false,
+   "main_committers": []
   },
   "file:kb/reference/CIPCode2020.csv": {
    "consumers": [
@@ -17800,6 +17909,13 @@
      "direction": "read",
      "how": "literal",
      "line": 139
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 338
     }
    ],
    "served": true,
@@ -17865,6 +17981,13 @@
      "direction": "read",
      "how": "literal",
      "line": 588
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 340
     },
     {
      "id": "script:kb/_row_audit.py",
@@ -18065,6 +18188,13 @@
      "direction": "read",
      "how": "literal",
      "line": 100
+    },
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 295
     },
     {
      "id": "script:kb/_remint_apply.py",
@@ -19388,6 +19518,19 @@
     {
      "by": "workflow:mid-outcomes-compare.yml",
      "how": "commit"
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:kb/status/mid_outcomes_compare_<date>.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_reclustering_s648_dryrun.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
     }
    ],
    "served": false,
