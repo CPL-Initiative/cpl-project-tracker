@@ -2944,6 +2944,114 @@ finally:
         os.environ["SUPABASE_SERVICE_KEY"] = _saved[1]
     shutil.rmtree(_hx, ignore_errors=True)
 
+# ── eLumen: a comma before the slug, and a program index on the college's own site (S644) ──
+# Diablo Valley's site links each award as dvc.elumenapp.com/catalog/DVC2026-2027Catalog/
+# program,<slug> (page read 43342288026); the content call catalog,program,<slug> prints the
+# award whole (43342877522); the menu names none (43343491672), so its index is
+# www.dvc.edu/academics/explore-our-programs?page=0..5, 77 areas (43341770461, 43344234543).
+check(C.el_program_links(SHELL, "2026-2027-Catalog") == [("ag-ed-as-fall-2026", "/"), ("culinary-coa-fall-2026", "/")]
+      and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT)["url"] == EL_BASE + "program/ag-ed-as-fall-2026"
+      and C.el_page(EL_START, "ag-ed-as-fall-2026", CONTENT, "/") == EPG,
+      "the slash form reads to the same slugs and the same addresses as before")
+check(C.el_program_urls(EL_LINKS + [{"text": "DVC", "href": EL_BASE + "program,a-s-in-x-fall-2020"}], EL_START)[-1]
+      == EL_BASE + "program,a-s-in-x-fall-2020"
+      and C.EL_PROGRAM_PATH.match("/catalog/DVC2026-2027Catalog/program,a-s-in-x-fall-2020")
+      and not C.EL_PROGRAM_PATH.match("/catalog/DVC2026-2027Catalog/program,"),
+      "a rendered menu's comma link is a program page, and keeps its comma")
+DVC_START = "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/generalinformation"
+DVC_EL = "https://dvc.elumenapp.com/catalog/DVC2026-2027Catalog/"
+DVC_SITE = "https://www.dvc.edu/academics/explore-our-programs"
+DVC_STEP = {"catalog": {"format": "html", "start": DVC_SITE, "pages": "?page=0..1",
+                        "follow": r"/academics/explore-our-programs/[a-z0-9-]+$",
+                        "program_links": r"dvc\.elumenapp\.com/catalog/DVC2026-2027Catalog/program,"}}
+st = C.el_index_step(DVC_STEP)
+check(st and st["pages"] == [DVC_SITE + "?page=0", DVC_SITE + "?page=1"]
+      and C.el_index_step({"catalog": dict(DVC_STEP["catalog"], pages=None)})["pages"] == [DVC_SITE],
+      "an index step lists start plus each page suffix, or start alone")
+check(all(C.el_index_step({"catalog": dict(DVC_STEP["catalog"], **bad)}) is None for bad in (
+          {"format": "pdf"}, {"start": "http://www.dvc.edu/x"}, {"follow": "("}, {"program_links": ""},
+          {"pages": "?page=5..0"}, {"pages": "?page=0..99"}, {"pages": "all"}))
+      and C.el_index_step(None) is None and C.el_index_step({"catalog": {"start": DVC_SITE}}) is None,
+      "a malformed index step is ignored, never guessed at")
+AREA = DVC_SITE + "/"
+DVC_LOADS = {
+    DVC_SITE + "?page=0": {"access": "ok", "status": 200, "links": [
+        {"text": "Learn more about\nAdministration of Justice", "href": AREA + "administration-justice"},
+        {"text": "Learn more about\nBusiness", "href": AREA + "business"},
+        {"text": "Learn more about\nBusiness Management", "href": AREA + "business-management"},
+        {"text": "Learn more about\nBusiness", "href": AREA + "business#top"},
+        {"text": "2", "href": DVC_SITE + "?page=1"},
+        {"text": "Learn More!", "href": "https://www.dvc.edu/academics/class-schedule-catalog"}]},
+    DVC_SITE + "?page=1": {"access": "error", "status": 503, "links": []},
+    AREA + "administration-justice": {"access": "ok", "status": 200, "links": [
+        {"text": "Associate in Science for Transfer - Administration of Justice",
+         "href": DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025"},
+        {"text": "Certificate of Achievement - Small Business Management/Entrepreneurship",
+         "href": DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024"},
+        {"text": "Learn More!", "href": "https://www.dvc.edu/academics/class-schedule-catalog"}]},
+    AREA + "business": {"access": "ok", "status": 200, "links": [
+        {"text": "Certificate of Achievement - Small Business Management/Entrepreneurship",
+         "href": DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024"},
+        {"text": "Certificate of Achievement - Police/Law Enforcement",
+         "href": DVC_EL + "program,certificate-of-achievement-in-police-law-enforcement-fall-2020"},
+        {"text": "Old year", "href": "https://dvc.elumenapp.com/catalog/DVC2025-2026Catalog/program,old-fall-2020"},
+        {"text": "Another host", "href": "https://lmc.elumenapp.com/catalog/DVC2026-2027Catalog/program,x"}]},
+    AREA + "business-management": {"access": "timeout", "status": None, "links": []},
+}
+DVC_PROG = ('<h2>A.S. in Administration of Justice for Transfer</h2><p>A.S. Degree for Transfer · 60 units</p>'
+            '<h4>Program Requirements</h4><h4>Administration of Justice for Transfer (Total 18)</h4>'
+            '<div class="new-rule"><span class="rule-name">ADJUS120 - Introduction to the Administration of Justice</span>'
+            '<span class="rule-credits"> 3</span></div>')
+loaded, dvc_asked = [], []
+
+
+def dvc_load(reader, url, cache, spa):
+    loaded.append(url)
+    return dict(DVC_LOADS.get(url) or {"access": "ok", "status": 200, "links": []})
+
+
+def dvc_fetch(reader, url, errors):
+    dvc_asked.append(url)
+    if ",program," in url:
+        return DVC_PROG
+    return json.dumps({"html": '<a href="DVC2026-2027Catalog/generalinformation">General Information</a>'})
+
+
+real_load, real_fetch = P.load, C.el_fetch
+P.load, C.el_fetch = dvc_load, dvc_fetch
+try:
+    rep = {}
+    got_pages = C.el_pages_fast(None, DVC_START, rep, DVC_STEP, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+el = rep["elumen"]
+check([g["url"] for g in got_pages] == [
+          DVC_EL + "program,a-s-in-administration-of-justice-for-transfer-fall-2025",
+          DVC_EL + "program,certificate-of-achievement-in-small-business-management-entrepreneurship-fall-2024",
+          DVC_EL + "program,certificate-of-achievement-in-police-law-enforcement-fall-2020"],
+      "the index's areas link each award once (one two areas share is read once), on this catalog and host "
+      "only, read at its comma address: %s" % [g["url"] for g in got_pages])
+check(el["index"] == {"index_pages": 2, "index_pages_failed": 1, "areas": 3, "areas_failed": 1,
+                      "index_programs": 3, "start": DVC_SITE}
+      and el["program_pages_listed"] == 3 and el["listing_failed"] == 2,
+      "a failed index page and a failed area page each count as a listing call lost: %s" % el)
+check(C.pages_account(dict(rep, pages_read=len(got_pages)), "elumen", 0) == (5, 3, 2),
+      "the capture counts the lost listing calls as listed and not answered")
+check(loaded.count(AREA + "business") == 1 and sum(1 for u in dvc_asked if ",program," in u) == 3
+      and "https://www.dvc.edu/academics/class-schedule-catalog" not in loaded,
+      "each area loads once, each award one content call, and no link the step does not name: %s" % loaded)
+check("ADJUS120" in got_pages[0]["body"] and got_pages[0]["title"] == "A.S. in Administration of Justice for Transfer",
+      "a content call reads as the award's page")
+loaded.clear()
+P.load, C.el_fetch = dvc_load, dvc_fetch
+try:
+    rep2 = {}
+    C.el_pages_fast(None, DVC_START, rep2, None, {})
+finally:
+    P.load, C.el_fetch = real_load, real_fetch
+check(not loaded and "index" not in rep2["elumen"],
+      "with no index step in the procedure record, the college's site is never read")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
