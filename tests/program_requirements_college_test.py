@@ -3452,6 +3452,35 @@ check(full_info["challenged"] == ["GB-AS", "SC-AA"] and full_info["miss_answers"
       "a full capture goes on past a challenge, files it as challenged and reads it as no page: %r"
       % {k: full_info.get(k) for k in ("challenged", "miss_answers")})
 
+# The tab's program data reaches the page and the catalog (S648): cd_heard reads a data call's number by its code,
+# and _cd_read carries it onto the tab's page and the catalog entry.
+class _Resp:
+    def __init__(self, url, data, method="GET"):
+        self.url, self._data, self.request = url, data, type("R", (), {"method": method})()
+
+    def json(self):
+        return self._data
+
+
+hd = {"call": None, "units": {}, "hours": {}, "named": {}}
+C.cd_heard(hd, _Resp(GL_ROOT.replace("catalog.glendale.edu", "app.coursedog.com")
+                     + "/api/v1/cm/glendale_peoplesoft_direct/programs?programGroupIds=GB-C&x=1",
+                     {"GB-C-1": {"code": "GB-C", "customFields": {"eL_programControlNumber": "12345"}}}))
+C.cd_heard(hd, _Resp("https://app.coursedog.com/api/v1/cm/s/programs?programGroupIds=MC-AS",
+                     {"MC-AS-1": {"code": "MC-AS", "name": "MC-AS"}}))
+check(hd["named"] == {"GB-C": "12345"}, "a data call names its code's number; a columns-only call names none: %r" % hd["named"])
+asked, fake = gl_session(set())
+P.load = fake
+try:
+    wire_info: dict = {}
+    wire_pages = C._cd_read(_ChallengeReader({}), GL_ROOT, GL_PROGS, wire_info, dict(heard0, named={"GB-C": "12345"}), {})
+finally:
+    P.load = real_load
+check([p.get("control_number") for p in wire_pages] == [None, None, "12345", None, None]
+      and [e.get("control_number") for e in wire_info["catalog"]] == [None, None, "12345", None, None],
+      "the number reaches its tab's page and its catalog entry, and no other: %r"
+      % [p.get("control_number") for p in wire_pages])
+
 # The re-read: only the named codes, 12 s between loads, the known tab suffix, and a stop at the first challenge.
 asked, fake = gl_session({"SC-AA"})
 P.load = fake
@@ -4129,6 +4158,37 @@ check(cn_given["24432"]["best"] is None and (cn_given["31597"]["best"] or {}).ge
 cn_given = C.assign(cn_progs[:1], [cn_new])
 check((cn_given["24432"]["best"] or {}).get("url") == NCHSD_URL,
       "a number no listed program holds settles nothing: the tab is read as before")
+# A program its words tie to the tab keeps reading it: Glendale's two shared pages (capture 43415972509), an ADT and
+# its "2.0" successor on the successor's tab. If the tab's data names the successor, the old program still reads it,
+# and the page stays shared. The number never overrides the title check: a tab printing another listed program's
+# title is refused though its data names this program.
+two_codes = ["BUSAD 101", "BUSAD 120", "ACCTG 101", "ACCTG 102", "ECON 101", "ECON 102", "MATH 136"]
+two_page = lambda code, name, named: C.cd_page({"url": GL_ROOT + "/programs/%s/%s" % (code, GL_SUFFIX),
+                                                "title": code + " Program", "body": " ".join(two_codes), "content": "",
+                                                "control_number_named": named}, {"code": code, "name": name})
+for old_cn, new_cn, old_t, new_t, code, name in (
+        ("32267", "43038", "Business Administration", "Business Administration 2.0", "BA2.0-AST",
+         "Business Administration 2.0 - Associate in Science for Transfer"),
+        ("30814", "44951", "Communication Studies", "Communication Studies 2.0", "COM2.0-AAT",
+         "Communication Studies 2.0 - Associate in Arts for Transfer")):
+    award = "A.S. T Degree" if code.endswith("AST") else "A.A- T Degree"
+    two_progs = [{"control_number": old_cn, "title": old_t, "award": award, "status": "Active - Teachout Only",
+                  "closed_list": [{"code": c} for c in two_codes]},
+                 {"control_number": new_cn, "title": new_t, "award": award, "status": "Active",
+                  "closed_list": [{"code": c} for c in two_codes]}]
+    pg = two_page(code, name, new_cn)
+    two_given = C.assign(two_progs, [pg])
+    check(all((two_given[k]["best"] or {}).get("url") == pg["url"] for k in (old_cn, new_cn))
+          and C.tab_title_link(old_t, pg["h1"]),
+          "%s keeps %s, shared with %s, though the tab's data names %s: %r"
+          % (old_cn, code, new_cn, new_cn, {k: (v["best"] or {}).get("url") for k, v in two_given.items()}))
+own_named = dict(tn_pages[0], control_number="37070")
+check(C.assign(tn_progs, [own_named])["37070"]["best"] is None,
+      "a tab printing another listed program is refused though its own data names this program")
+check(C.tab_title_link("Business Administration", "Business Administration 2.0 - Associate in Science for Transfer")
+      and not C.tab_title_link("Certificate of Secondary Education Completion", "NCHSD")
+      and not C.tab_title_link("Information Technology", "Computer Information Systems - Certificate of Achievement"),
+      "a title links to its own tab and its 2.0's, never to a tab whose words it lacks")
 check(C.tab_control_owner({"one_program": True, "names_control_number": "31597"}, {"24432": "", "31597": ""}) == "31597"
       and C.tab_control_owner({"one_program": False, "names_control_number": "31597"}, {"31597": ""}) is None
       and C.tab_control_owner({"one_program": True}, {"31597": ""}) is None,
@@ -4160,8 +4220,10 @@ with tempfile.TemporaryDirectory() as td:
     with open(os.path.join(dest, "summary.json"), "w") as fh:
         json.dump({"extracted": 1, "passed_machine_checks": 1, "cost_usd_run": 0.11, "extract_calls": 1}, fh)
     check(C.wrong_tabs(dest, cn_cap) == [], "without the tab's number, the NCHSD read looks like 24432's own")
-    owners_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "kb",
-                               "program_requirements_college", "glendale_community", "tab_owners.json")
+    owners_path = os.path.join(td, "tab_owners.json")      # the shape of glendale_community/tab_owners.json
+    with open(owners_path, "w") as fh:
+        json.dump({"college": "Glendale Community College", "run": "43423479582",
+                   "tabs": {"NCHSD": {"control_number": "31597", "field": "customFields.eL_programControlNumber"}}}, fh)
     cn_owners = C.tab_owners_file(owners_path, "Glendale Community College")
     try:
         C.tab_owners_file(owners_path, "Hartnell College")
@@ -4185,6 +4247,34 @@ with tempfile.TemporaryDirectory() as td:
                                                                           "control_number": "31597"}]))
     check([(w["control_number"], w["names"]) for w in C.wrong_tabs(dest, cn_cap2)] == [("24432", ["31597"])],
           "a capture's own catalog number holds the read the same way")
+    cn_cap3 = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[{"code": "NCHSD", "name": "NCHSD",
+                                                                          "control_number": "24432"}]))
+    check(C.wrong_tabs(dest, cn_cap3, {"NCHSD": "31597"}) == [],
+          "a page read's account never overrides the numbers a capture read itself")
+    # 32267 read BA2.0-AST, whose data may name 43038: its title ties it to the tab, so the read is never held.
+    os.remove(os.path.join(dest, "records", "24432.json"))
+    C._write(os.path.join(dest, "records", "32267.json"),
+             dict(rec_24432, control_number="32267", source_url=GL_ROOT + "/programs/BA2.0-AST/" + GL_SUFFIX))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "32267", "title": "Business Administration", "award": "A.S. T Degree"},
+                   {"control_number": "43038", "title": "Business Administration 2.0", "award": "A.S. T Degree"}], fh)
+    ba_cap = dict(cn_cap, coursedog=dict(cn_cap["coursedog"], catalog=[
+        {"code": "BA2.0-AST", "name": "Business Administration 2.0 - Associate in Science for Transfer",
+         "control_number": "43038"}]))
+    check(C.wrong_tabs(dest, ba_cap) == [], "32267's read of its 2.0 successor's tab is never held")
+    # A hold never removes a passing record the earlier filing (main's) holds: it restores it.
+    C._write(os.path.join(prior, "records", "24432.json"),
+             dict(rec_24432, source_url="https://www.glendale.edu/c.pdf#page=9", extracted_run="41049220135"))
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    os.remove(os.path.join(dest, "records", "32267.json"))
+    with open(os.path.join(dest, "sources.json"), "w") as fh:
+        json.dump([{"control_number": "24432", "title": "Certificate of Secondary Education Completion", "award": None},
+                   {"control_number": "31597", "title": "Adult High School Diploma", "award": "Noncredit program"}], fh)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners)
+    kept_24432 = json.load(open(os.path.join(dest, "records", "24432.json")))
+    check(kept_24432["source_url"].endswith("#page=9") and kept_24432["score"]["pass"],
+          "a held read restores the earlier filing's passing record, never deletes it")
 
 # A Coursedog tab's coarse net reads a run of numbers after one subject (run_net, S647). The CIS-C tab's text as
 # the free page read 43423479582 printed it (2026-11-13): Computer Information Systems' own tab, never a

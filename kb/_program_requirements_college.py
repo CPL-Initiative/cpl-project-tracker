@@ -936,11 +936,24 @@ def tab_names_another(title: str | None, tab_title: str | None, others: set[str]
     return not set(own.split()) <= set(tab.split())
 
 
+def tab_title_link(title: str | None, heading: str | None) -> bool:
+    """Whether a program's title ties it to a tab by its words: one of the heading's readings is the title
+    (heading_forms), or the tab's title holds every word of it (heading_title), as a "2.0" successor's tab holds
+    its predecessor's ("Business Administration 2.0" and Business Administration, 32267 and 43038; Communication
+    Studies 2.0 and Communication Studies, 30814 and 44951: Glendale's two shared pages, capture 43415972509)."""
+    own = _plain(title)
+    if not own:
+        return False
+    return own in heading_forms(heading) or set(own.split()) <= set(heading_title(heading).split())
+
+
 def tab_control_owner(cand: dict, listed) -> str | None:
     """The listed program a Coursedog tab belongs to by its own program data's control number
     (cd_program_control_number), or None: no tab, no number named, or a number the college's list does not hold.
-    A tab so owned is no candidate for any other program (assign) and a filed read from it by another program is
-    held (wrong_tabs). Glendale's NCHSD tab heads "NCHSD - High School Diploma", which no listed title is, and its
+    A tab so owned is no candidate for a program with no title link to it (tab_title_link), and a filed read from it
+    by such a program is held (wrong_tabs); a program its words tie to the tab reads it as before, so a page shared by
+    a program and its "2.0" successor stays shared, and the title check (tab_names_another) still applies to every
+    program, the owner included. Glendale's NCHSD tab heads "NCHSD - High School Diploma", which no listed title is, and its
     data names 31597; 24432 read it at coverage 0.615 with 21 invented codes (page read 43423479582, S648)."""
     named = cand.get("names_control_number")
     return named if cand.get("one_program") and named and named in listed else None
@@ -960,14 +973,15 @@ def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
         others = {t for k, t in plain.items() if k != cn and t != plain[cn]}
         # A heading any of whose readings is the program's own title is its tab ("Child Development - Teacher,
         # A.S." is Child Development - Teacher's, though its cut form names Child Development).
-        # A tab whose own program data names a listed program's control number is that program's alone
-        # (tab_control_owner, S648): Glendale's NCHSD tab names 31597, and 24432 read it.
+        # A tab whose own program data names another listed program's control number is no candidate for a program
+        # with no title link to it (tab_control_owner, tab_title_link, S648): Glendale's NCHSD tab names 31597, and
+        # 24432 read it. The number never overrides the title check.
         ranked[cn] = [c for c in cands
-                      if tab_control_owner(c, plain) in (None, cn)
-                      and (tab_control_owner(c, plain) == cn
-                           or not (c.get("one_program")
-                                   and plain[cn] not in heading_forms(c.get("heading"))
-                                   and tab_names_another(plain[cn], heading_title(c.get("heading")), others)))]
+                      if not (tab_control_owner(c, plain) not in (None, cn)
+                              and not tab_title_link(plain[cn], c.get("heading")))
+                      and not (c.get("one_program")
+                               and plain[cn] not in heading_forms(c.get("heading"))
+                               and tab_names_another(plain[cn], heading_title(c.get("heading")), others))]
     pos = {cn: 0 for cn in ranked}
     lost: dict[str, list[str]] = {}
     for _ in range(12):
@@ -2463,6 +2477,27 @@ def cd_page(got: dict, prog: dict) -> dict:
     return page
 
 
+def cd_heard(heard: dict, resp) -> None:
+    """One response a tab's scripts fetched, read into heard: a course search's units and hours (CD_COURSES, a
+    POST), or the control number a program data call names for its code (CD_PROGRAM_DATA, any method: the page
+    read printed it as a GET, and the method is not what tells it apart; S648)."""
+    url = getattr(resp, "url", "") or ""
+    try:
+        if CD_COURSES.search(url) and resp.request.method == "POST":
+            data = resp.json()
+            heard["units"].update(cd_course_units(data))
+            heard["hours"].update(cd_course_hours(data))
+            heard["call"] = heard["call"] or url.split("?", 1)[0]
+        elif CD_PROGRAM_DATA.search(url):
+            m = re.search(r"programGroupIds=([^&#]+)", url)
+            code = urllib.parse.unquote(m.group(1)) if m else None
+            named = cd_program_control_number(resp.json(), code)
+            if code and named:
+                heard.setdefault("named", {})[code] = named
+    except Exception:
+        pass
+
+
 def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
     from _program_source_census import site_root
     root = site_root(start).rstrip("/")
@@ -2475,23 +2510,7 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
     heard: dict = {"call": None, "units": {}, "hours": {}, "named": {}}
 
     def on_courses(resp):
-        if CD_COURSES.search(resp.url) and resp.request.method == "POST":
-            try:
-                data = resp.json()
-                heard["units"].update(cd_course_units(data))
-                heard["hours"].update(cd_course_hours(data))
-                heard["call"] = heard["call"] or resp.url.split("?", 1)[0]
-            except Exception:
-                pass
-        elif CD_PROGRAM_DATA.search(resp.url) and resp.request.method == "GET":
-            try:
-                m = re.search(r"programGroupIds=([^&#]+)", resp.url)
-                code = urllib.parse.unquote(m.group(1)) if m else None
-                named = cd_program_control_number(resp.json(), code)
-                if code and named:
-                    heard["named"][code] = named
-            except Exception:
-                pass
+        cd_heard(heard, resp)
     reader.page.on("response", on_courses)
     reread = report.get("reread")
     try:
@@ -5100,7 +5119,10 @@ def wrong_tabs(dest: str, report: dict, owners: dict | None = None) -> list[dict
     cd = report.get("coursedog") or {}
     names = {e.get("code"): e.get("name") for e in cd.get("catalog") or []}
     named = {e.get("code"): e.get("control_number") for e in cd.get("catalog") or [] if e.get("control_number")}
-    named.update(owners or {})
+    # A page read's account stands in only for a capture that read no tab's program data: a capture that did
+    # names its own numbers, and an older account never overrides them.
+    if not named:
+        named = dict(owners or {})
     if not names and not named:
         return []
     try:
@@ -5117,9 +5139,7 @@ def wrong_tabs(dest: str, report: dict, owners: dict | None = None) -> list[dict
         url = (rec or {}).get("source_url") or ""
         code = cd_href_code(url.rsplit("/", 1)[0], cd.get("root") or "") if rec else None
         owner = tab_control_owner({"one_program": bool(code), "names_control_number": named.get(code)}, plain)
-        if owner == cn:
-            continue
-        if owner:
+        if owner and owner != cn and not tab_title_link(s.get("title"), names.get(code) or code):
             out.append({"control_number": cn, "title": s.get("title"), "award": s.get("award"), "tab": code,
                         "tab_name": names.get(code), "names": [owner], "reason": TAB_OWNED_BY_ANOTHER,
                         "read_score": rec.get("score"), "read_run": rec.get("extracted_run")})
