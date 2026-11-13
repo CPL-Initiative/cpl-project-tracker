@@ -1,0 +1,184 @@
+{
+ "college": "North Orange Continuing Education",
+ "control_number": "45041",
+ "shape": "noncredit",
+ "title": "Career Exploration: Retail and Customer Services Skills",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.nocccd.edu/noce/career-development-college-preparation-cdcp-certificate-programs/workforce-preparation/career-exploration-retail-and-customer-services-skills/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 6877,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 6877,
+    "output_tokens": 1050,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1050,
+  "output_tokens_details": {
+   "thinking_tokens": 385
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.04851,
+ "ms": 8289,
+ "seconds": 8.6,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 2,
+   "listed": 2,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    180.0,
+    180.0
+   ],
+   "stated": [
+    180.0,
+    180.0
+   ],
+   "against": "program",
+   "why": []
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": false,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 16,
+   "not_verbatim": [
+    "Door-toDoor Sales Workers"
+   ],
+   "pass": false
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": true
+ },
+ "record": {
+  "program": {
+   "section_heading": "Career Exploration: Retail and Customer Services Skills",
+   "measure": "hours",
+   "total_units": {
+    "min": 180,
+    "max": 180
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": [
+    "Cashiers",
+    "Counter and Rental Clerks",
+    "Demonstrators and Product Promoters",
+    "Door-toDoor Sales Workers",
+    "News and Street Vendors and Related Workers",
+    "Stockers and Order Fillers",
+    "Account Representative",
+    "Call Center Representative",
+    "Client Services Representative",
+    "Customer Care Representative (CCR)",
+    "Customer Service Agent",
+    "Customer Service Representative (CSR)",
+    "Customer Service Specialist",
+    "Customer Support Representative (Customer Support Rep)",
+    "Guest Service Agent",
+    "Member Services Representative (Member Services Rep.)"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Core Courses (180 Hours)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 180,
+     "max": 180
+    },
+    "courses": [
+     {
+      "code": "WFPR 224",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WFPR 225",
+      "units": 90,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit Certificate of Completion (Program #3P45041) counted in hours; total 180 hours as printed.",
+   "The catalog titles WFPR 225 'Career Exploration: Retail Customer Experience Skills', while the closed list titles it 'Career Exploration: Consumer Services Skills'; same code, so treated as the closed-list course.",
+   "The text prints no program learning outcomes for this certificate.",
+   "Careers are copied as printed, including the catalog's spelling 'Door-toDoor Sales Workers'."
+  ]
+ },
+ "extracted_run": "43342034608"
+}
