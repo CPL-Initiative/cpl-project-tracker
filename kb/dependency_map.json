@@ -7907,7 +7907,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 185
+     "line": 186
     }
    ],
    "served": false,
@@ -7920,7 +7920,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 457
+     "line": 458
     }
    ],
    "served": false,
@@ -13759,7 +13759,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 114
+     "line": 115
     }
    ],
    "served": true,
@@ -16224,7 +16224,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 116
     }
    ],
    "served": false,
@@ -19076,7 +19076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 117
     }
    ],
    "served": false,
@@ -19089,7 +19089,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 118
+     "line": 119
     }
    ],
    "served": true,
@@ -19187,7 +19187,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 111
+     "line": 112
     }
    ],
    "served": true,
@@ -22128,7 +22128,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 389
+     "line": 390
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -22393,7 +22393,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 490
+     "line": 492
     }
    ],
    "served": true,
@@ -23421,7 +23421,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 490
+     "line": 492
     }
    ],
    "served": true,
@@ -32856,9 +32856,9 @@
    "name": "Harvest gap census",
    "crons": [],
    "scripts": [
+    "kb/_commons_data_live.py",
     "kb/_harvest_gap_census.py",
     "kb/_program_requirements_heading_agreement.py",
-    "kb/_commons_data_live.py",
     "kb/_build_commons_data_status.py"
    ],
    "adds": [

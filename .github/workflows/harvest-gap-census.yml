@@ -6,9 +6,16 @@ name: Harvest gap census
 # (coci_college_programs, program_requirement_records, program_source_registry, coci_program_courses)
 # and the committed per-college files; writes no table. Commits kb/status/harvest_gap_census.json
 # and .md, and the heading-agreement snapshot kb/status/harvest_heading_agreement.json and .md, to the
-# branch it ran on. Dispatch only: no schedule. The census itself takes no secret; one later step, the
-# Commons data dashboard's live counts (kb/_commons_data_live.py, #3215), reads with the existing
-# SUPABASE_SERVICE_KEY at that step's scope alone, counts per college only (COBIx's conditions, PR #3222).
+# branch it ran on. Dispatch only: no schedule.
+#
+# TWO JOBS (S647, #3232). The census job takes no secret and runs on any ref. The Commons data dashboard's live
+# counts (kb/_commons_data_live.py, #3215) run in their own job, `live-counts`, in the GitHub environment
+# `live-counts` (Sam, 2026-11-13: restricted to main, holding the service key; COBIx's recommendation on #3232), and
+# only on main. An environment with a branch policy refuses a whole job on another ref, so the census could not
+# share a job with it and still run on a branch. The export job hands the census job one artifact of counts,
+# scrubbed for the key before upload; the census job stays the one writer of kb/status/commons_data.json and makes
+# the one push. A skipped or failed export leaves no artifact: the builder keeps the previous block, records
+# "not read", and the census still commits.
 
 on:
   workflow_dispatch:
@@ -27,7 +34,48 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # The Commons data dashboard's live counts (#3215; COBIx's conditions on PR #3222): counts per college only, never
+  # a row; the two tables that name a person are read by count alone; never the anon key. Belt and braces: the `if`
+  # skips the job cleanly on a branch, and the environment's branch policy refuses it there whatever the file says.
+  # The secret's name inside the environment is assumed to be SUPABASE_SERVICE_KEY (an environment secret overrides
+  # the repository secret of the same name); if it is named otherwise, change the one `secrets.` reference below.
+  live-counts:
+    if: github.ref == 'refs/heads/main'
+    environment: live-counts
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      # It writes out/ alone and exits 0 on a failed read, with a failure class and never an exception's text.
+      - name: Commons data live counts (service key, counts only; fails soft)
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: python3 kb/_commons_data_live.py --out out/commons_data_live.json
+      # The last word before the upload (the review of #3232, finding 1): the file holds no run of the key's secret
+      # part. On a hit it names the file (never the key), deletes it and fails, so nothing is uploaded and the census
+      # job records "not read".
+      - name: No file holds the service key
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if ! python3 kb/_commons_data_live.py --scrub out; then
+            rm -rf out
+            exit 1
+          fi
+      - uses: actions/upload-artifact@v7
+        with:
+          name: commons-data-live-${{ github.run_id }}
+          path: out/commons_data_live.json
+          retention-days: 3
+
   census:
+    needs: live-counts
+    # Runs whatever the export did: skipped on a branch, failed, or read.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -47,24 +95,17 @@ jobs:
             echo "::warning::the heading-agreement snapshot did not regenerate; the census files without it"
             git checkout -- kb/status/harvest_heading_agreement.json kb/status/harvest_heading_agreement.md 2>/dev/null || true
           fi
-      # The Commons data dashboard's live counts (#3215; COBIx's conditions on PR #3222): counts per college only,
-      # never a row; the two tables that name a person are read by count alone. The service key lives at this
-      # step's scope only, and the export never falls back to the anon key. It writes out/ alone; the builder below
-      # takes it with --live and stays the one writer of kb/status/commons_data.json. Fails soft: a failed read keeps
-      # the previous committed block, and the builder records the attempt. From main alone (COBIx's finding 1 on
-      # #3232): the workflow dispatches on any ref, and a branch's own copy of the export must never run with the
-      # service key, so on a branch this step is skipped and the builder records the block as not read.
-      - name: Commons data live counts (service key, counts only; fails soft)
-        if: github.ref == 'refs/heads/main'
-        env:
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: |
-          if ! python3 kb/_commons_data_live.py --out out/commons_data_live.json; then
-            echo "::warning::the Commons live counts did not run; the builder keeps the previous block"
-          fi
+      # The live-counts job's one file of counts, when it ran; absent on a branch or after a failed export.
+      - name: The live counts, when the live-counts job filed them
+        if: needs.live-counts.result == 'success'
+        continue-on-error: true
+        uses: actions/download-artifact@v7
+        with:
+          name: commons-data-live-${{ github.run_id }}
+          path: out
       # The Commons data dashboard's figures (#3215, commons_data.js at #commons/data): the committed files, the live
-      # counts above (key live, its own basis), the data dictionary and the API checklist. Fails soft, as the
-      # heading agreement does.
+      # counts (key live, its own basis), the data dictionary and the API checklist. With no live file the builder
+      # keeps the previous block and records "not read". Fails soft, as the heading agreement does.
       - name: Commons data dashboard (committed files and the live counts; fails soft)
         env:
           ACCEPT_ACTIVE_SHIFT: ${{ inputs.accept_active_shift }}
@@ -77,19 +118,6 @@ jobs:
           if ! python3 kb/_build_commons_data_status.py --live out/commons_data_live.json $shift_arg; then
             echo "::warning::the Commons data dashboard did not regenerate; the census files without it"
             git checkout -- kb/status/commons_data.json 2>/dev/null || true
-          fi
-      # The last word before the commit and the artifact (the review of #3232, finding 1): no file this job wrote
-      # holds the service key or a 20-character run of it. On a hit it names the file (never the key), restores the
-      # status files, empties out/ and fails, so nothing that holds the key is committed or uploaded.
-      - name: No file holds the service key (main only)
-        if: github.ref == 'refs/heads/main'
-        env:
-          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
-        run: |
-          if ! python3 kb/_commons_data_live.py --scrub out kb/status; then
-            git checkout -- kb/status/
-            rm -rf out && mkdir -p out
-            exit 1
           fi
       - name: Commit to the branch that ran it
         run: |

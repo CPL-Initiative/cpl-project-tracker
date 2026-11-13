@@ -23,8 +23,10 @@ guards, each a way the export could break them:
   (5d) accept_active_shift takes one read outside the Active band, logged in the block with both counts and the
       run, and never waives the college floor or an empty read;
   (6) the overall bar is the quoted rule over the live block, basis live;
-  (7) the workflow: the service key at the export step's scope alone, every step naming it on main alone (COBIx's
-      finding 1), the builder takes --live, one push.
+  (7) the workflow: every job naming the service key declares the live-counts environment (Sam's, restricted to
+      main) and runs on main alone, every step naming it too; the key on steps alone; the export's file scrubbed
+      before its upload; the census job runs on a branch and after a failed export, takes the counts only when the
+      export succeeded, builds with --live, and makes the one push.
 
 Run from the repo root: python3 tests/commons_data_live_test.py
 """
@@ -434,45 +436,67 @@ check("(6) a part with no denominator counts as zero (North Orange has no course
 check("(6) overall names basis live and the read time", ov["basis"] == "live" and ov["read_at"] == block["read_at"])
 check("(6) before the first read there is no overall figure", B.overall_block(B.LIVE_NOT_READ)["colleges"] == {})
 
-# (7) the workflow
+# (7) the workflow: two jobs, the key in the live-counts environment alone (Sam's setting, COBIx's recommendation)
 wf_text = open(os.path.join(ROOT, ".github", "workflows", "harvest-gap-census.yml"), encoding="utf-8").read()
 import yaml  # noqa: E402
 wf = yaml.safe_load(wf_text)
-steps = wf["jobs"]["census"]["steps"]
-with_key = [s.get("name") for s in steps if "SUPABASE_SERVICE_KEY" in json.dumps(s.get("env") or {})]
-check("(7) ⭐ the service key sits on the export step and the scrub step alone, never on the job or the workflow",
-      with_key == ["Commons data live counts (service key, counts only; fails soft)", "No file holds the service key (main only)"]
-      and "env" not in wf["jobs"]["census"] and "env" not in wf, with_key)
-names = [s.get("name") for s in steps]
-check("(7) ⭐ the scrub runs after the builder and before the commit and the artifact upload",
-      names.index("No file holds the service key (main only)") > [i for i, s in enumerate(steps) if "_build_commons_data_status.py" in (s.get("run") or "")][0]
-      and names.index("No file holds the service key (main only)") < names.index("Commit to the branch that ran it")
-      and "--scrub out kb/status" in steps[names.index("No file holds the service key (main only)")]["run"])
-check("(5) a key that only ends in a newline is stripped, so urllib never sees the newline",
-      L.clean_key(DUMMY)[0] == DUMMY.strip() and "\n" not in L.clean_key(DUMMY)[0])
-def mentions_key(s):
-    return "SUPABASE_SERVICE_KEY" in json.dumps({k: v for k, v in s.items() if k != "name"})
+jobs = wf["jobs"]
+MAIN_ONLY = r"\s*github\.ref\s*==\s*'refs/heads/main'\s*"
+ENV_NAME = "live-counts"
 
 
-keyed = [s for s in steps if mentions_key(s)]
-check("(7) ⭐ every step that references SUPABASE_SERVICE_KEY runs on main alone (a branch dispatch never gets the key)",
-      keyed and all(re.fullmatch(r"\s*github\.ref\s*==\s*'refs/heads/main'\s*", str(s.get("if") or "")) for s in keyed),
-      [(s.get("name"), s.get("if")) for s in keyed])
-check("(7) the job carries no main-only condition of its own that would also skip the census on a branch",
-      "if" not in wf["jobs"]["census"])
-check("(7) the export runs before the builder, and the builder takes --live",
-      [i for i, s in enumerate(steps) if "_commons_data_live.py" in (s.get("run") or "")][0]
-      < [i for i, s in enumerate(steps) if "_build_commons_data_status.py --live out/commons_data_live.json" in (s.get("run") or "")][0])
-check("(7) one push, and the export's file is never added", wf_text.count("git push") == 1 and "git add out" not in wf_text
-      and "commons_data_live.json" not in [l for l in wf_text.splitlines() if "git add" in l].__str__())
+def mentions_key(x):
+    return "SUPABASE_SERVICE_KEY" in json.dumps({k: v for k, v in x.items() if k != "name"} if isinstance(x, dict) else x)
+
+
+def env_of(job):
+    e = job.get("environment")
+    return e.get("name") if isinstance(e, dict) else e
+
+
+keyed_jobs = {n: j for n, j in jobs.items() if mentions_key(j)}
+check("(7) ⭐ every job that references SUPABASE_SERVICE_KEY declares the environment live-counts and runs on main alone",
+      keyed_jobs and all(env_of(j) == ENV_NAME and re.fullmatch(MAIN_ONLY, str(j.get("if") or "")) for j in keyed_jobs.values()),
+      {n: (env_of(j), j.get("if")) for n, j in keyed_jobs.items()})
+check("(7) ⭐ every step that references SUPABASE_SERVICE_KEY runs on main alone, by its own if or its job's",
+      all(re.fullmatch(MAIN_ONLY, str(s.get("if") or j.get("if") or ""))
+          for j in jobs.values() for s in j.get("steps") or [] if mentions_key(s)))
+check("(7) the key sits on steps alone, never on a job's or the workflow's env",
+      "env" not in wf and not any(mentions_key(j.get("env") or {}) for j in jobs.values())
+      and all(not mentions_key({k: v for k, v in s.items() if k not in ("env", "name")}) for j in jobs.values() for s in j.get("steps") or []))
+lc, census = jobs.get("live-counts") or {}, jobs.get("census") or {}
+lc_steps, steps = lc.get("steps") or [], census.get("steps") or []
+check("(7) the live-counts job holds least permissions (contents read) and the census job no key and no environment",
+      lc.get("permissions") == {"contents": "read"} and not mentions_key(census) and "environment" not in census)
+check("(7) ⭐ the census job runs on a branch and after a failed export: it needs the export but runs unless cancelled",
+      census.get("needs") in ("live-counts", ["live-counts"]) and "!cancelled()" in str(census.get("if"))
+      and not re.search("refs/heads/main", str(census.get("if"))))
+lc_names = [s.get("name") or s.get("uses") for s in lc_steps]
+up = [i for i, s in enumerate(lc_steps) if "upload-artifact" in str(s.get("uses"))]
+scrub_i = [i for i, s in enumerate(lc_steps) if "--scrub out" in (s.get("run") or "")]
+check("(7) ⭐ the export's file is scrubbed for the key before its upload, and a hit deletes it and fails the job",
+      scrub_i and up and scrub_i[0] < up[0] and "rm -rf out" in lc_steps[scrub_i[0]]["run"]
+      and lc_steps[up[0]]["with"]["path"] == "out/commons_data_live.json", lc_names)
+dl = [i for i, s in enumerate(steps) if "download-artifact" in str(s.get("uses"))]
+bi = [i for i, s in enumerate(steps) if "_build_commons_data_status.py --live out/commons_data_live.json" in (s.get("run") or "")]
+check("(7) the census job takes the counts only when the export succeeded, never failing on their absence, then builds with --live",
+      dl and bi and dl[0] < bi[0] and steps[dl[0]].get("continue-on-error") is True
+      and "needs.live-counts.result == 'success'" in str(steps[dl[0]].get("if"))
+      and steps[dl[0]]["with"]["name"] == lc_steps[up[0]]["with"]["name"])
+check("(7) one writer and one push: only the census job commits, and the export's file is never added",
+      wf_text.count("git push") == 1 and "git push" not in json.dumps(lc) and "git add out" not in wf_text
+      and "commons_data_live.json" not in [ln for ln in wf_text.splitlines() if "git add" in ln].__str__())
+check("(7) the push keeps the one concurrency group", wf.get("concurrency", {}).get("group") == "harvest-gap-census-${{ github.ref_name }}")
 check("(7) the workflow stays dispatch only", list((wf.get(True) or wf.get("on") or {}).keys()) == ["workflow_dispatch"])
 inp = ((wf.get(True) or wf.get("on") or {})["workflow_dispatch"] or {}).get("inputs", {}).get("accept_active_shift") or {}
-builder_step = [s for s in steps if "_build_commons_data_status.py --live" in (s.get("run") or "")][0]
+builder_step = steps[bi[0]]
 check("(7) ⭐ accept_active_shift is a boolean dispatch input, default false, reaching the builder through env and logged",
       inp.get("type") == "boolean" and inp.get("default") is False
       and "inputs.accept_active_shift" in json.dumps(builder_step.get("env") or {})
       and "--accept-active-shift" in builder_step["run"] and "::notice::" in builder_step["run"]
       and "${{" not in builder_step["run"], inp)
+check("(5) a key that only ends in a newline is stripped, so urllib never sees the newline",
+      L.clean_key(DUMMY)[0] == DUMMY.strip() and "\n" not in L.clean_key(DUMMY)[0])
 
 failed_n = [n for n, ok in results if not ok]
 print("\n%d/%d checks passed" % (len(results) - len(failed_n), len(results)))

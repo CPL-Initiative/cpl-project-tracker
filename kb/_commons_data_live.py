@@ -7,13 +7,15 @@ exports counts per college only, never rows. It runs with the Actions secret, no
 `anon` grant. It carries its `read_at` and names its basis (live), so it never sits in one figure with the
 committed-files basis. Teachout and Approved can come the same way."
 
-WHERE IT RUNS. A step of .github/workflows/harvest-gap-census.yml (dispatch only, like the census), with the
-repository's existing SUPABASE_SERVICE_KEY at that step's scope alone, and only on a run from main (the step's
-`if: github.ref == 'refs/heads/main'`): a branch's copy of this file never runs with the key. It writes out/commons_data_live.json on the
-runner, never a committed path; kb/_build_commons_data_status.py --live reads that file and stays the one writer of
-kb/status/commons_data.json, which the census job's one push commits. It writes no table, adds no grant, no
-function, no migration and no secret. Without the service key it reads nothing: it never falls back to the
-public anon key.
+WHERE IT RUNS. The `live-counts` job of .github/workflows/harvest-gap-census.yml (dispatch only, like the census), in
+the GitHub environment `live-counts` that Sam set up on 2026-11-13 on COBIx's recommendation: restricted to main and
+holding the service key, read as SUPABASE_SERVICE_KEY at this step's scope alone. The job also carries
+`if: github.ref == 'refs/heads/main'`, so a branch run skips it cleanly; the environment refuses it there whatever a
+branch's copy of the workflow says. It writes out/commons_data_live.json on the runner, never a committed path; the
+job scrubs that file for the key and uploads it as the run's artifact of counts; the census job downloads it, and
+kb/_build_commons_data_status.py --live reads it and stays the one writer of kb/status/commons_data.json, which the
+census job's one push commits. It writes no table, adds no grant, no function, no migration and no secret. Without
+the service key it reads nothing: it never falls back to the public anon key.
 
 WHAT IT READS. Every read is a count, or a narrow column read reduced to counts in memory on the runner; no row
 leaves the runner and none is written to a file.
@@ -50,7 +52,7 @@ builder then keeps the previous committed block and records the attempt (last_at
 read_at. The class comes from the fixed ERROR_CLASSES, never an exception's text, which can carry the request's
 headers (the review of #3232, finding 1). The key is stripped when read and refused, by class alone, if it still
 holds whitespace or a control character; the export refuses to write anything that holds the key or a SCRUB_RUN-
-character run of it, and the workflow's last step before the commit runs --scrub over out/ and the status file. For
+character run of it, and the live-counts job runs --scrub over out/ before its upload (a hit deletes the file). For
 a JWT key only the signature (after the second dot) is tested, and a run that also sits in a committed anon key is
 skipped: both keys share the header and the start of the payload (COBIx, 6857150335).
 
@@ -556,7 +558,7 @@ def export(src, resolve, run_id: str | None) -> dict:
     except (Exception, SystemExit) as e:   # the dated reads' pager stops with SystemExit when a count moves
         return failed(at, run_id, *error_class(e))
     return {"schema": SCHEMA, "basis": "live", "state": "read", "read_at": at, "run_id": run_id,
-            "source": "kb/_commons_data_live.py in harvest-gap-census.yml, the service key",
+            "source": "kb/_commons_data_live.py in the live-counts job of harvest-gap-census.yml (the live-counts environment)",
             "tables": TABLES, "rule": RULE, "reads": {"counts": sum(1 for m, *_ in src.log if m == "count"),
                                                     "pages": sum(1 for m, *_ in src.log if m == "page")},
             "statewide": statewide(r["colleges"]), "unmatched": r["unmatched"], "colleges": r["colleges"]}

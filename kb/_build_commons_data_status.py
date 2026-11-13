@@ -35,8 +35,9 @@ for an unmeasured metric), never a zero and never a stand-in.
 FOUR MORE TOP-LEVEL KEYS (S647, #3215 and #3220), the contract with the view's later slices (commons_data.js):
 
   "live"        the live counts per college, basis "live", never mixed with the committed-files figures above.
-                Written by kb/_commons_data_live.py on the census runner (the service key, counts only; its docstring
-                names every table and column it reads) and taken in here with --live PATH. Shape:
+                Written by kb/_commons_data_live.py in the census workflow's live-counts job (main only, the
+                live-counts environment's service key, counts only; its docstring names every table and column it
+                reads), handed to the census job as an artifact and taken in here with --live PATH. Shape:
                   {"basis": "live", "state": "read" | "not read yet", "read_at": UTC | null, "run_id": str | null,
                    "source", "tables": {figure: table}, "rule": {...}, "reads": {"counts", "pages"},
                    "statewide": {"colleges", "programs": {...}, "records": {...}, ...}, "unmatched": [COCI names],
@@ -196,7 +197,7 @@ API_STATUSES = ("connected", "in progress", "planned", "not needed")
 UNVERIFIED_MARK = "not verified in the repo"
 
 LIVE_NOT_READ = {"basis": "live", "state": "not read yet", "read_at": None, "run_id": None,
-                 "source": "kb/_commons_data_live.py in harvest-gap-census.yml, the service key",
+                 "source": "kb/_commons_data_live.py in the live-counts job of harvest-gap-census.yml (the live-counts environment)",
                  "statewide": {}, "unmatched": [], "colleges": {}, "last_attempt": None, "flag": "internal"}
 LIVE_GROUPS = ("programs", "records", "program_courses", "outcomes", "registry")
 
