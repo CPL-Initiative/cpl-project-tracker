@@ -421,6 +421,9 @@ jobs:
               # conductor): the run's first build rebased cleanly a moment ago, so it is restored, rebased again
               # and pushed, as every clean rebase was before. The one rebuild is spent. A conflict has no clean
               # first build to fall back to, so it keeps its exit 1 above.
+              # The reset restores tracked files only: the failed rebuild's pip install from the new main and any
+              # untracked files it wrote stay in this job, so a step added after the push must not read the venv or
+              # the tree as the first build's (COBIx #3110, comment 6837874586).
               git reset -q --hard "$pre"
               { echo "LIVE_METRICS_STATUS=$first_status"; echo "SCRAPE_DETAIL=$first_detail"; } >> "$GITHUB_ENV"
               if ! git rebase origin/main; then

@@ -112,7 +112,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `factsheet_overrides` | pages: `fact-sheet/index.html` | pages: `fact-sheet/index.html` |
 | `findings` | scripts: `kb/_identity_daily_check.py` | — |
 | `first_light_apply_requests` | tabs: `first-light` · workflows: `first-light-apply.yml` | tabs: `first-light` |
-| `first_light_marks` | tabs: `first-light` | tabs: `first-light` |
+| `first_light_marks` | tabs: `first-light` · workflows: `first-light-apply.yml` | tabs: `first-light` |
 | `funding_access` | `edgefn:funding-door` | `edgefn:funding-door` |
 | `funding_access_requests` | none found | `edgefn:funding-door` |
 | `governance_owners` | tabs: `governance`, `map-queue` | tabs: `governance` |

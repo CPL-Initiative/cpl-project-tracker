@@ -528,7 +528,12 @@
     if (r.status === "opened" || r.status === "updated") {
       return '<p class="flt-p" data-req="' + esc(r.status) + '">The last Apply ' + (r.status === "opened" ? "opened " : "updated ") + pr + when + ". Sam merges it; until then the views are unchanged.</p>";
     }
-    if (r.status === "nothing") return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing to change.</p>";
+    // Nothing new: the stamp names the open pull request when its branch already carries the marks, or says in
+    // its detail which marks were held (first-light-apply.yml, the stamp step).
+    if (r.status === "nothing") {
+      if (r.pr_url) return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing new: " + pr + " already carries these marks. Sam merges it; until then the views are unchanged.</p>";
+      return '<p class="flt-p" data-req="nothing">The last Apply' + when + " found nothing to change" + (r.detail ? " (" + esc(r.detail) + ")" : "") + ".</p>";
+    }
     var run = r.run_url ? ' <a href="' + esc(r.run_url) + '">The run</a> says more.' : "";
     return '<p class="flt-p" data-req="failed">The last Apply' + when + " did not open a pull request" + (r.detail ? " (" + esc(r.detail) + ")" : "") + "." + run + "</p>";
   }

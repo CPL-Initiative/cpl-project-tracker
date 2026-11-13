@@ -235,6 +235,26 @@ const text = (w) => $(w, "#first-light-root").textContent;
     w2.go("first-light"); await settle();
     const a = $(w2, '[data-req="opened"] a');
     check("(g) the last Apply's pull request is a link", a && a.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" && /#4001/.test(a.textContent));
+    // A `nothing` stamp carries what first-light-apply.yml's stamp step wrote: the open pull request that already
+    // holds the marks, or, when a mark was held, the words saying so and no pull request (#3188 review).
+    const nothing = async (row) => {
+      const wn = boot({ hash: "#first-light/paintings", marks: [{ id: 1, item_set: "paintings", item_key: SEL[0].file, mark: "drop", collection: "rotation" }],
+        reqs: [Object.assign({ id: 5, status: "nothing", requested_at: "2026-11-12T20:00:00Z" }, row)] });
+      wn.go("first-light"); await settle();
+      return $(wn, '[data-req="nothing"]');
+    };
+    const pOpen = await nothing({ pr_number: 4001, pr_url: "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001", detail: "the open pull request already carries these marks" });
+    const aOpen = pOpen && pOpen.querySelector("a");
+    check("(g) ⭐ nothing new while a pull request carries the marks: the line links it",
+      aOpen && aOpen.getAttribute("href") === "https://github.com/CPL-Initiative/cpl-project-tracker/pull/4001" && /#4001/.test(aOpen.textContent) && /already carries these marks/.test(pOpen.textContent),
+      pOpen && pOpen.outerHTML);
+    const heldWords = "held: 1 marked item could not be applied (a painting not in the candidate pool, or a story photo missing from the stories file or sharing its name with another story)";
+    const pHeld = await nothing({ detail: heldWords });
+    check("(g) ⭐ held marks: the line says so in the stamp's words and links no pull request",
+      pHeld && !pHeld.querySelector("a") && pHeld.textContent.indexOf(heldWords) !== -1, pHeld && pHeld.outerHTML);
+    const pBare = await nothing({});
+    check("(g) nothing to change, nothing held, no pull request open: the plain line", pBare && /^The last Apply on [^(]+ found nothing to change\.$/.test(pBare.textContent) && !pBare.querySelector("a"),
+      pBare && pBare.outerHTML);
   }
 
   // ── (h) the candidates ───────────────────────────────────────────────────

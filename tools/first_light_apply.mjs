@@ -19,8 +19,10 @@
 //
 //   node tools/first_light_apply.mjs --plan  --out plan.json   reads the marks; says what would change
 //   node tools/first_light_apply.mjs --apply --plan plan.json  writes the files (fetching story photos)
-// Options: --marks <file.json> reads marks from a file instead of Supabase (tests); --root <dir> works on a copy
-// of the files (tests). Env: SUPABASE_URL, SUPABASE_SERVICE_KEY; FIRST_LIGHT_STORY_FIXTURE_DIR serves story photos
+// Options: --through <id> consumes only the marks with id at or below it: the workflow passes the highest mark id
+// its look read, so a mark filed after the look waits for the next run with its own request (COBIx #3110 comment
+// 6837874586, finding 1). --marks <file.json> reads marks from a file instead of Supabase (tests); --root <dir>
+// works on a copy of the files (tests). Env: SUPABASE_URL, SUPABASE_SERVICE_KEY; FIRST_LIGHT_STORY_FIXTURE_DIR serves story photos
 // from a folder (tests); FIRST_LIGHT_PLAYWRIGHT names the playwright module for the fallback fetch.
 import fs from "node:fs";
 import path from "node:path";
@@ -40,6 +42,11 @@ const readJson = (rel) => JSON.parse(fs.readFileSync(P(rel), "utf8"));
 const writeJson = (rel, v) => fs.writeFileSync(P(rel), JSON.stringify(v, null, 2) + "\n");
 
 function fail(msg) { console.error("first_light_apply: " + msg); process.exit(1); }
+
+// --through: a whole number, or absent (every mark read). Anything else refuses, so a bad value never widens the read.
+const THROUGH = opt("--through");
+if (THROUGH !== null && !/^[0-9]+$/.test(THROUGH)) fail("--through takes a mark id (a whole number), not " + JSON.stringify(THROUGH));
+const upTo = (rows) => (THROUGH === null ? rows : rows.filter((m) => (+m.id || 0) <= +THROUGH));
 
 async function readMarks() {
   const file = opt("--marks");
@@ -313,14 +320,14 @@ function body(pl) {
 }
 
 if (has("--plan") && !has("--apply")) {
-  const pl = plan(await readMarks());
+  const pl = plan(upTo(await readMarks()));
   const out = opt("--out");
   if (out) fs.writeFileSync(out, JSON.stringify(pl, null, 2));
   if (opt("--body")) fs.writeFileSync(opt("--body"), body(pl));
   console.log(JSON.stringify({ changed: pl.changed, needs_browser: pl.fetches.length > 0, summary: pl.summary, needs_words: pl.needs_words.length, held: pl.held }));
 } else if (has("--apply")) {
   const file = opt("--plan");
-  const pl = file ? JSON.parse(fs.readFileSync(file, "utf8")) : plan(await readMarks());
+  const pl = file ? JSON.parse(fs.readFileSync(file, "utf8")) : plan(upTo(await readMarks()));
   await apply(pl);
   if (opt("--body")) fs.writeFileSync(opt("--body"), body(pl));
   console.log("applied: " + pl.paintings.length + " paintings, " + pl.photos.length + " photos");
