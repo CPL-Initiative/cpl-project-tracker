@@ -154,7 +154,8 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: wave-filed-${{ github.run_id }}-${{ matrix.slug }}
+          # The attempt is in the name: a re-run keeps the run id, and a name cannot be uploaded twice.
+          name: wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}
           path: |
             wave_out/${{ matrix.slug }}.wave.json
             kb/program_requirements_college/${{ matrix.slug }}
@@ -164,7 +165,7 @@ jobs:
       - uses: actions/upload-artifact@v7
         if: always()
         with:
-          name: program-requirements-${{ github.run_id }}-${{ matrix.slug }}
+          name: program-requirements-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}
           path: out
           retention-days: 90
 
@@ -211,5 +212,5 @@ jobs:
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "${{ github.ref_name }}"
           done
-          echo "::error::The wave $WAVE did not reach ${{ github.ref_name }} after 10 tries. Its colleges are in this run's artifacts wave-filed-${{ github.run_id }}-*: commit them by hand before any new wave."
+          echo "::error::The wave $WAVE did not reach ${{ github.ref_name }} after 10 tries. Its colleges are in this run's artifacts wave-filed-${{ github.run_id }}-<attempt>-<college> (for each college, the latest attempt that extracted, else the latest): commit them by hand before any new wave."
           exit 1

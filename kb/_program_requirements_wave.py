@@ -484,9 +484,39 @@ def table_md(summary: dict) -> str:
     return "\n".join(lines) + "\n"
 
 
-def artifact_name(run_id, slug: str) -> str:
-    """The read job's upload for one college (program-requirements-wave.yml names it so)."""
-    return "wave-filed-%s-%s" % (run_id, slug)
+def artifact_name(run_id, slug: str, attempt=1) -> str:
+    """The read job's upload for one college (program-requirements-wave.yml names it so). The attempt is
+    in the name: a re-run keeps the run id, and a name cannot be uploaded twice in one run."""
+    return "wave-filed-%s-%s-%s" % (run_id, attempt, slug)
+
+
+def _row_of(art: str, slug: str) -> dict | None:
+    # Laid out from the root when the folder rode along; the verify row alone lands at the top.
+    return _read(os.path.join(art, "wave_out", slug + ".wave.json")) or _read(os.path.join(art, slug + ".wave.json"))
+
+
+def paid(row: dict) -> bool:
+    """An attempt that sent programs to the model, or was allowed to and stopped before its verify."""
+    ext = (row.get("outcomes") or {}).get("extract")
+    return (ext not in (None, "", "skipped") or (row.get("extracted") or 0) > 0 or (row.get("cost_usd") or 0) > 0
+            or bool(row.get("provisional") and row.get("allowed_usd")))
+
+
+def pick_attempt(artifacts: str, run_id, slug: str) -> tuple[str | None, dict | None, int | None]:
+    """The artifact the filing takes for one college: the latest attempt that paid for model calls, else
+    the latest attempt with a result. An extracting re-run never extracts (check_attempt), so a later
+    capture-only attempt never displaces the paid records of the first."""
+    pat = re.compile(r"^wave-filed-%s-(\d+)-%s$" % (re.escape(str(run_id)), re.escape(slug)))
+    found = []
+    for name in os.listdir(artifacts) if os.path.isdir(artifacts) else []:
+        m = pat.match(name)
+        row = _row_of(os.path.join(artifacts, name), slug) if m else None
+        if row:
+            found.append((int(m.group(1)), os.path.join(artifacts, name), row))
+    if not found:
+        return None, None, None
+    pick = max((f for f in found if paid(f[2])), default=None, key=lambda f: f[0]) or max(found, key=lambda f: f[0])
+    return pick[1], dict(pick[2], attempt=pick[0], attempts=sorted(f[0] for f in found)), pick[0]
 
 
 def file_wave(wave: str, artifacts: str, matrix: list[dict], run_id, extract: bool, limit: float,
@@ -498,9 +528,7 @@ def file_wave(wave: str, artifacts: str, matrix: list[dict], run_id, extract: bo
     rows = []
     for m in matrix:
         slug = m["slug"]
-        art = os.path.join(artifacts, artifact_name(run_id, slug))
-        # Laid out from the root when the folder rode along; the verify row alone lands at the top.
-        row = _read(os.path.join(art, "wave_out", slug + ".wave.json")) or _read(os.path.join(art, slug + ".wave.json"))
+        art, row, _attempt = pick_attempt(artifacts, run_id, slug)
         if not row:
             rows.append({"college": m["college"], "slug": slug, "hosts": m.get("hosts"),
                          "verdict": "failed: no result", "filed": False, "not_filed_why": "the job filed no result"})

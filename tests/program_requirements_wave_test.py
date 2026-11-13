@@ -332,7 +332,7 @@ try:
             "z": dict(W.verify("Z College", run, base, CAP, PRICED, RUN,
                                {"capture": "success", "extract": "failure", "file": "failure"}), cost_usd=0.5)}
     for slug, row in rows.items():
-        art = os.path.join(arts, W.artifact_name(RUN, slug))
+        art = os.path.join(arts, W.artifact_name(RUN, slug, 1))
         os.makedirs(os.path.join(art, "wave_out"))
         with open(os.path.join(art, "wave_out", slug + ".wave.json"), "w") as fh:
             json.dump(row, fh)
@@ -409,8 +409,10 @@ check(up and up[0] < lnames.index("Commit the receipt to the branch that ran it"
 for _job in ("load", "display"):
     _ups = [x for x in cwf["jobs"][_job]["steps"] if str(x.get("uses", "")).startswith("actions/upload-artifact")]
     check(_ups and all(x["with"]["path"] == "kb/receipts/*${{ github.run_id }}*" and x.get("continue-on-error") is True
-                       for x in _ups),
-          "the %s job uploads only this run's receipts, and its upload never fails the job" % _job)
+                       and x["with"]["name"] == "receipts-${{ github.run_id }}-${{ github.run_attempt }}" for x in _ups)
+          and "receipts-${{ github.run_id }}-${{ github.run_attempt }}: commit it by hand" in college_wf,
+          "the %s job uploads only this run's receipts under a name carrying its attempt, and its upload never "
+          "fails the job" % _job)
 check("for i in 1 2 3 4 5 6 7 8 9 10; do" in push["run"] and "RANDOM" in push["run"]
       and "::error::" in push["run"] and push["run"].rstrip().endswith("exit 1"),
       "the receipt's push tries ten times at random waits, then fails loudly naming the artifact")
@@ -436,10 +438,17 @@ check(read["timeout-minutes"] < 360, "the job stops under the runner's limit, so
 # Second read, 4: the wave's one push tries as the receipts' does, and its error names what to commit.
 _push = next(x for x in jobs["file"]["steps"] if x.get("name") == "Commit to the wave branch, once")["run"]
 check("for i in 1 2 3 4 5 6 7 8 9 10; do" in _push and "RANDOM" in _push
-      and "wave-filed-${{ github.run_id }}-*" in _push and "before any new wave" in _push,
+      and "wave-filed-${{ github.run_id }}-<attempt>-<college>" in _push and "before any new wave" in _push,
       "the wave's push tries ten times at random waits and names the artifacts to commit by hand")
 _filed_up = next(x for x in read["steps"] if str(x.get("with", {}).get("name", "")).startswith("wave-filed-"))
 check(_filed_up["with"]["retention-days"] == 90, "the wave-filed artifacts are kept 90 days")
+# COBIx (6840501911): a re-run keeps the run id, and a name cannot be uploaded twice in one run, so every
+# upload names its attempt.
+_names = [x["with"]["name"] for x in read["steps"] if str(x.get("uses", "")).startswith("actions/upload-artifact")]
+check(_names and all("${{ github.run_id }}-${{ github.run_attempt }}-" in n for n in _names)
+      and W.artifact_name("5", "x", 2) == "wave-filed-5-2-x"
+      and _filed_up["with"]["name"] == "wave-filed-${{ github.run_id }}-${{ github.run_attempt }}-${{ matrix.slug }}",
+      "each of the wave's uploads names its attempt: %r" % _names)
 # Second read, 2: the wave's extraction stops at its limit; the college workflow's does not change.
 check('--ceiling-usd "$LIMIT_USD"' in ext["run"] and "ceiling" not in college_wf.lower(),
       "the wave passes its limit as the extraction's ceiling; the college workflow sets none")
@@ -647,6 +656,36 @@ finally:
         os.environ.pop("SUPABASE_SERVICE_KEY", None)
     else:
         os.environ["SUPABASE_SERVICE_KEY"] = _saved[3]
+    shutil.rmtree(_t, ignore_errors=True)
+
+# The pick (COBIx 6840501911): for each college the latest attempt that paid for model calls, else the
+# latest. A capture-only re-run of an extracting wave never displaces attempt 1's paid records.
+_t = tempfile.mkdtemp()
+try:
+    def _art(attempt, slug, row):
+        d = os.path.join(_t, W.artifact_name("9", slug, attempt), "wave_out")
+        os.makedirs(d)
+        json.dump(row, open(os.path.join(d, slug + ".wave.json"), "w"))
+    _paid = {"verdict": "ready", "extracted": 40, "cost_usd": 3.1, "outcomes": {"capture": "success", "extract": "success", "file": "success"}}
+    _later = {"verdict": "held: a re-run never extracts (dispatch a new wave)", "extracted": 0, "cost_usd": 0,
+              "outcomes": {"capture": "success", "extract": "skipped", "file": "success"}}
+    _art(1, "a", _paid)
+    _art(2, "a", _later)
+    _art(3, "a", _later)
+    _, row_a, at_a = W.pick_attempt(_t, "9", "a")
+    check(at_a == 1 and row_a["cost_usd"] == 3.1 and row_a["attempts"] == [1, 2, 3],
+          "a capture-only re-run never displaces the paid attempt: picked %r" % at_a)
+    _art(1, "b", {"verdict": "failed: capture", "outcomes": {"capture": "failure", "extract": "skipped"}})
+    _art(2, "b", {"verdict": "captured", "outcomes": {"capture": "success", "extract": "skipped", "file": "success"}})
+    check(W.pick_attempt(_t, "9", "b")[2] == 2, "with no paid attempt, the latest attempt is filed")
+    _art(1, "c", {"provisional": True, "allowed_usd": 12.0, "verdict": "failed: the job did not finish after its price"})
+    _art(2, "c", {"verdict": "captured", "outcomes": {"capture": "success", "extract": "skipped", "file": "success"}})
+    check(W.pick_attempt(_t, "9", "c")[2] == 1,
+          "an attempt allowed to spend that stopped before its verify still outranks a later capture-only one")
+    _art(1, "a_b", _later)
+    check(W.pick_attempt(_t, "9", "a")[1]["attempts"] == [1, 2, 3] and W.pick_attempt(_t, "9", "z") == (None, None, None),
+          "a college's attempts are its own (a_b is not a), and a college with none has no pick")
+finally:
     shutil.rmtree(_t, ignore_errors=True)
 
 if failures:

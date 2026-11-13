@@ -219,7 +219,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          name: receipts-${{ github.run_id }}
+          name: receipts-${{ github.run_id }}-${{ github.run_attempt }}
           path: kb/receipts/*${{ github.run_id }}*
           if-no-files-found: ignore
           retention-days: 90
@@ -236,7 +236,7 @@ jobs:
             git push origin "HEAD:${{ github.ref_name }}" && exit 0
             sleep $((i * 3 + RANDOM % 20)); git pull --rebase origin "${{ github.ref_name }}"
           done
-          echo "::error::The receipt did not reach ${{ github.ref_name }} after 10 tries. It is in this run's artifact receipts-${{ github.run_id }}: commit it by hand before anything else."
+          echo "::error::The receipt did not reach ${{ github.ref_name }} after 10 tries. It is in this run's artifact receipts-${{ github.run_id }}-${{ github.run_attempt }}: commit it by hand before anything else."
           exit 1
 
   display:
@@ -267,7 +267,7 @@ jobs:
         if: always()
         continue-on-error: true
         with:
-          name: receipts-${{ github.run_id }}
+          name: receipts-${{ github.run_id }}-${{ github.run_attempt }}
           path: kb/receipts/*${{ github.run_id }}*
           if-no-files-found: ignore
           retention-days: 90
