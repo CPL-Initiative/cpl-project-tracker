@@ -188,7 +188,7 @@ def file_code(code: str | None) -> str | None:
     """The code a catalog prints for one the state's file stores under its subject's name,
     or the code as stored: "Accounting (ACCTG) 101" -> "ACCTG 101", "PSYCH (Psychology) 51"
     -> "PSYCH 51". A code with nothing in capitals on either side is left alone."""
-    m = NAMED_SUBJECT.match(code or "")
+    m = NAMED_SUBJECT.match(code) if isinstance(code, str) else None
     if not m:
         return code
     for side in (m.group("b"), m.group("a")):

@@ -235,6 +235,30 @@ check(C.file_code("Accounting (ACCTG) 101") == "ACCTG 101"
 check(C.file_code("AIRC 121") == "AIRC 121" and C.file_code("IWAP 40.1") == "IWAP 40.1"
       and C.file_code(None) is None and C.file_code("Special (Topics) 9") == "Special (Topics) 9",
       "a code already in its printed form, or with no capitals to read, is left as stored")
+# The page prints ACCTG 020 where the file, rewritten, says ACCTG 20: the normal form both the
+# net and the scorer key on reads them as one code, and a letter after the number stays.
+check(P.norm_code(C.file_code("Accounting (ACCTG) 20")) == P.norm_code("ACCTG 020") == "ACCTG20"
+      and P.norm_code(C.file_code("Art (ART) 055A")) == P.norm_code("ART 055A") == "ART55A"
+      and P.norm_code("ART 055A") != P.norm_code("ART 055B") and P.norm_code("ART 055A") != P.norm_code("ART 55"),
+      "the file's ACCTG 20 and the page's ACCTG 020 are one code; ART 055A keeps its letter")
+import _build_roep_display as RD  # noqa: E402
+import _harvest_no_closed_list_diagnosis as ND  # noqa: E402
+check(RD.ck("Accounting (ACCTG) 20") == RD.ck("ACCTG 020") and RD.ck("Art (ART) 055A") == RD.ck("ART 055A") != RD.ck("ART 055B")
+      and ND.norm_code("Air Conditioning (AIRC) 132") == ND.norm_code("AIRC 132"),
+      "the display builder's join and the no-closed-list diagnosis read a stored code through file_code()")
+# Other colleges' codes as the state's file and MAP store them (unified_courses_members.js,
+# kb/reference/coci_program_course_file.csv.gz), slashes, ampersands, campus letters and decimals
+# among them, and a course title with parentheses: none is rewritten.
+OTHER_CODES = ["HORT 001 F", "CYBR 100 F", "ATC 236 C", "CNA/N 626", "KIN/D 130A", "FAM &CS 91",
+               "M/LAT 030A", "HVAC/R 055C", "BNK/F 55", "CPSC-17", "IWAP 40.10", "CISN121", "ACCT 01AH",
+               "Red Hat Linux System Administration II (RH134)", "Introduction to Musical Instrument Digital Interface (MIDI)"]
+check(all(C.file_code(c) == c for c in OTHER_CODES),
+      "every other college's code passes through file_code() unchanged")
+other = C.group_programs([{"control_number": "1", "program_title": "X", "award": "A.S. Degree", "status": "Active"}],
+                         [{"program_control_number": "1", "course_control_number": str(n), "course_code": c, "units": 3, "load_id": "L"}
+                          for n, c in enumerate(OTHER_CODES)])[0]["closed_list"]
+check([c["code"] for c in other] == OTHER_CODES and not any("file_code" in c for c in other),
+      "another college's closed list is grouped exactly as stored, with no file_code beside any course")
 sj_progs = [{"control_number": "06185", "program_title": "Accounting", "award": "A.S. Degree", "status": "Active"}]
 sj_rows = [{"program_control_number": "06185", "course_control_number": str(n), "course_code": code, "units": 5, "load_id": "L"}
            for n, code in enumerate(["Accounting (ACCTG) 20", "Accounting (ACCTG) 21", "Business (BUS) 071", "CIS 041"])]
