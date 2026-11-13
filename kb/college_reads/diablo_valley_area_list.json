@@ -1,5 +1,5 @@
 {
- "_readme": "S645, 2026-11-13. Diablo Valley's paid read (run 43353452924) listed 112 program pages for 267 programs: the program-index step read the six grid pages and 72 program areas (the grid holds 77: read 6, run 43344234543), and 115 programs had no page. They fall in whole areas (Dental, Early Childhood Education, Culinary Arts, Kinesiology, Music, Philosophy, Spanish, Japanese and Russian, Dance, Drama, ESL, Psychology, Sociology, English, History, Plumbing and Steamfitting). The capture filed no list of the areas it read. This read loads the six grid pages once each and prints every area address, to name the five the step's follow pattern (/academics/explore-our-programs/[a-z0-9-]+$) did not take and the slugs of the areas whose programs were not found. No model call.",
+ "_readme": "S645, 2026-11-13. Diablo Valley's paid read (run 43353452924) listed 112 program pages for 267 programs: the program-index step read the six grid pages and 72 program areas (the grid holds 77: read 6, run 43344234543), and 115 programs had no page. They fall in whole areas (Dental, Early Childhood Education, Culinary Arts, Kinesiology, Music, Philosophy, Spanish, Japanese and Russian, Dance, Drama, ESL, Psychology, Sociology, English, History, Plumbing and Steamfitting). The capture filed no list of the areas it read. This read loads the six grid pages once each and prints every area address, to name the five the step's follow pattern (/academics/explore-our-programs/[a-z0-9-]+$) did not take and the slugs of the areas whose programs were not found. No model call. Answered by run 43362895655 (6 loads): the grid lists 72 areas, every card at https://www.dvc.edu/academics/explore-our-programs/<slug> (addiction-studies to work-experience-wrkx-program), which the follow pattern takes; the 77 of read 6 assumed 13 cards on every page. The paid read read all 72.",
  "college": "Diablo Valley College",
  "questions": {
   "area_links": "What address does each card on this grid page link, and does any area link a shape other than /academics/explore-our-programs/<slug> (a trailing slash, a query, another path, another host)?"
@@ -8,11 +8,47 @@
   "Learn more about"
  ],
  "pages": [
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=0", "answers": ["area_links"], "links": "explore-our-programs|Learn more"},
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=1", "answers": ["area_links"], "links": "explore-our-programs|Learn more"},
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=2", "answers": ["area_links"], "links": "explore-our-programs|Learn more"},
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=3", "answers": ["area_links"], "links": "explore-our-programs|Learn more"},
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=4", "answers": ["area_links"], "links": "explore-our-programs|Learn more"},
-  {"url": "https://www.dvc.edu/academics/explore-our-programs?page=5", "answers": ["area_links"], "links": "explore-our-programs|Learn more"}
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=0",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  },
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=1",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  },
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=2",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  },
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=3",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  },
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=4",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  },
+  {
+   "url": "https://www.dvc.edu/academics/explore-our-programs?page=5",
+   "answers": [
+    "area_links"
+   ],
+   "links": "explore-our-programs|Learn more"
+  }
  ]
 }
