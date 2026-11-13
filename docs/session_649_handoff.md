@@ -9,27 +9,22 @@ obsidian-folder: cpl-project-tracker/handoffs
 
 # You are SkyOriole (Session 649)
 
-From SkyTanager, S648. This is the **refresh** of the S648 checkpoint (#3251 `3fa25f10`, vault CPLBrain#779 `6245f8e4`),
-a **light** checkpoint written by a documents worker at about 20:15Z 2026-11-13 **while the session continued**:
-Glendale's load had run and its rereads were still to come. Start from it now, and read the Glendale table before you
-act on Glendale. Facts come from the conductor's two records (18:36Z, and the addendum stamped 20:27Z; where they
-differ the addendum wins), `origin/main` at `d679a4e3` and the merged squash commits; a fact marked *as reported* was
-not re-read. The addendum's clock ran ahead: GitHub and the machine read about 20:12Z when its "20:15Z" read and
-"20:25Z" dispatch were written, so order events by run id and commit, not by those stamps.
+From SkyTanager, S648. This is the S648 checkpoint (#3251 `3fa25f10`, vault CPLBrain#779 `6245f8e4`), refreshed at
+about 20:15Z (#3254 `170e436f`) and brought to the session's final state at 21:35Z 2026-11-13 (`date -u`), on `main`
+at `f2883f87`. A fact marked *as reported* was not re-read. Times come from GitHub's timestamps or `date -u`; the
+conductor's messages ran about 15 minutes ahead from 19:25Z on, so order events by run id and commit.
 
 **How S648 ran.** Conductor mode (Fable 5.2 conductor, Opus 5.5 workers, ultracode on), from 17:05Z on handoff 648, Sam
-in session (he wrote once, about 17:30Z: *"see cobix 3229 comments"*). The Supabase connector was up all session. No
-other session was live at 17:06Z. Fourteen PRs merged; two stay open (#3202, #3250).
+in session (about 17:30Z: *"see cobix 3229 comments"*; about 20:45Z, on College Data Collection, below). The Supabase connector was up all session. No
+other session was live at 17:06Z. Every S648 PR merged except #3250, which waits on Sam.
 
 ## First things, in order
 
-1. **Glendale (#3202, draft, branch `claude/harvest-glendale-s645`, head `2a0e4631`). Read the table first:**
-   `select count(*), count(*) filter (where extracted_run in (43415972509, 43497305929)), count(*) filter (where public.program_record_machine_pass(checks)) from program_requirement_records where college='Glendale Community College'`.
-   Before the load: 226 live, 121 passing. The load ran (run 43498802104; its receipt on the branch records 31
-   inserted). After the whole plan: **257 live, 174 on the two runs, 182 passing.** Then finish whichever remain, in
-   order: `step=reread force=43415972509` (replaces 139), `step=reread force=43497305929` (replaces 4), the display
-   build, COBIx's five-record spot-check on #3202 (31597, 42263, 02603, 18639, 18640; asked, not posted at writing), the
-   merge on a green `test`. Plan: `kb/program_requirements_college/glendale_community/load_plan_s648.json` (on the branch).
+1. **College Data Collection (`#commons/data`).** Read COBIx's answers on issue #3229 first (asked about 20:49Z and
+   21:05Z: any control on the live page that opens nothing; which planned items to build next and the data each needs),
+   then look at the deployed page once Pages has #3257 (`f2883f87`, merged 21:34Z). Build only what has a committed
+   source. Still Coming next: each cause's programs (the data carries counts only), curriculum-view and pathway links
+   (the registry holds no addresses), the College view (Sam's word).
 2. **The FIRE merge's daily run.** Case 2 of the re-clustering is applied (FIRE M1274 into FIRE 130 X). The daily run
    dispatched after it committed at 19:53Z (`d679a4e3`) and FIRE M1274 left `unified_courses_index.js`. Confirm on FIRE
    130 X: members 23 to 51, units 3 to 4, eligible credits 667.4 to 1,022.4, students 48 to 58, and a new row-audit card
@@ -55,8 +50,9 @@ names. Before any merge, read COBIx from the last comment (`perPage` 1 from the 
 
 ## If you are the scheduled session (the CPL Queue routine)
 
-**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 (after the table read; the
-display go of 2026-10-10 stands for every college; merging publishes, so COBIx's spot-check first), 2, 3, 4, 5, 6.
+**Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 (only what has a committed
+source; the College view waits on Sam), 2, 3, 4, 5, 6; the display go of 2026-10-10 stands for every college, and a
+merge that publishes waits on COBIx's spot-check.
 **Never run by a session without his word:** anything on Sheet 194 cards 2 to 6 (the BUSI row delete included); #3250;
 the four held re-clustering cases; the CVMA rows (a person's rows); removing the repository copy of
 `SUPABASE_SERVICE_KEY` (his setting); anything on the `CLAUDE.md` hold list. #2894 is his.
@@ -100,11 +96,8 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 
 | PR or branch | State | Next |
 |---|---|---|
-| this refresh, tracker `claude/checkpoint-s648-refresh` | draft | merge on a green `test` |
-| this refresh, vault `claude/checkpoint-s648-refresh` (Sheet 194's source, the session note) | draft | merge after the tracker PR |
-| #3202 `claude/harvest-glendale-s645` (`2a0e4631`) | draft; loaded, rereads to come | *First things* 1 |
 | #3250 `claude/harvest-set-step-standing-s648` (`77c37ba7`) | draft; reverses Sheet 82 card 2 | Sam's ruling, Sheet 194 card 6 |
-| merged: #3227 `dcba4c45`, #3242 `e8985e00`, #3240 `ae9dda52`, #3243 `ac7c6595`, #3241 `bbfbb6bb`, #3246 `57d99e14`, #3244 `74ad28b9`, #3247 `7cd72253`, #3251 `3fa25f10`, #3248 `2e5bcfc9`, #3239 `d8220db4`, #3252 `933b0dcd`, #3245 `c09ef2b3`; vault CPLBrain#779 `6245f8e4` | merged on green | none |
+| merged: #3227 `dcba4c45`, #3242 `e8985e00`, #3240 `ae9dda52`, #3243 `ac7c6595`, #3241 `bbfbb6bb`, #3246 `57d99e14`, #3244 `74ad28b9`, #3247 `7cd72253`, #3251 `3fa25f10`, #3248 `2e5bcfc9`, #3239 `d8220db4`, #3252 `933b0dcd`, #3245 `c09ef2b3`, #3254 `170e436f` (the refresh), #3202 `24554037` (Glendale, 20:40Z), #3257 `f2883f87` (College Data Collection, 21:34Z); vault CPLBrain#779 `6245f8e4` and the refresh's vault PR | merged on green | none |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
 
 Workers do not survive the session; brief a fresh worker per branch from its diff and this ledger.
@@ -117,9 +110,21 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
   (applied record `99edbb11`); live read: 46136 at `ge_units` 34, passing (*as reported*). 46141 waits for the next
   reconcile; its fill by the printed figure is consistent with Sheet 82 card 2.
 - **#3245** re-clustering: case 2 applied (below). Its review (6 agents, 16 confirmed) moved the BUSI split to a hold.
-- **Glendale** reads: free 43472166835 (261 of 261 pages, 242 programs, 220 tabs with a control number); paid
-  43497305929 (73 calls, 0 failed, $5.12 on a $7.30 estimate); load 43498802104. The load's hold guard failed open
-  (the file step dropped the hold list); fixed on the branch, test added.
+- **Glendale, done (#3202 `24554037`).** Reads: free 43472166835 (261 of 261 pages, 242 programs, 220 tabs with a
+  control number); paid 43497305929 (73 calls, 0 failed, $5.12 on a $7.30 estimate). Load 43498802104 (31 inserted),
+  rereads 43499265092 (139) and 43499651868 (4), the display dispatched from `main` about 20:40Z for build
+  `812c94929f6f`. The conductor's live read about 20:48Z (*as reported*): 257 live, 242 on the build, 182 passing, 0
+  checked; the other 15 are rows the load left untouched, among them the failing 2025-26 PDF reads 24377 and 37070 and
+  teach-out 19577. COBIx's spot-check was clean (20:08Z); his three follow-ups are the harvest lane's NEXT. The load's
+  hold guard had failed open (the file step dropped the hold list); fixed in the PR, test added.
+- **#3257 College Data Collection.** Sam, in session about 20:45Z: *"working on the college data collection tab and
+  some formatting fixes needed. make sure any card that has what looks like a link opens up to something. continue
+  with any further planned development on this page"* and *"ping cobix for any help needed"*. Merged after a six-agent
+  review (12 findings fixed): figures no longer break one digit per line; the opened row's cards flow in columns; a
+  control walk test (`tests/commons_data_controls.test.js`); links open in a new tab and say so; the view *Colleges by
+  district* (`#commons/data/districts`, a district's colleges at `#commons/data/district/<slug>`); records failing each
+  machine check. The list stacks one block per college when its box is under 760px (windows of 901 to 1100 with the
+  side menu open). `scripts/commons_data_values_check.js` is run by hand.
 
 ## Live data written, each with its undo
 
@@ -128,7 +133,8 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
   Undo: one guarded delete (cohort, field `merge_into`, course_id FIRE M1274), `kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql`.
 - **Grossmont 46136:** reread 43485423251, before-values in its receipt; display build `3604c0bfe9bb` (each prior
   build filed).
-- **Glendale:** load 43498802104 (31 rows; its receipt is the rollback); the rereads to come carry before-values.
+- **Glendale:** load 43498802104 (31 rows; its receipt is the rollback); rereads 43499265092 and 43499651868 (their
+  receipts carry before-values); display build `812c94929f6f` (each prior build filed).
 - **`cpl_memory`:** the twelve S648 decision rows (receipt `kb/receipts/cpl_memory_s648_rows_2026-11-13.sql`, RUN about
   18:47Z), Sam's two rows; undo by slug. The four refresh rows are not yet written.
 - **Model spend:** College of the Desert 43421133593 $1.44; Glendale 43497305929 $5.12.
@@ -137,7 +143,8 @@ Workers do not survive the session; brief a fresh worker per branch from its dif
 ## Decisions to honor
 
 **Sam's:** his #3229 words (relayed by COBIx, 7:13 AM PT, verbatim in the vault braindump): confidence and completeness
-up, review down; no expectation of double work; college staff directions later, through a signed-in Sierra.
+up, review down; no expectation of double work; college staff directions later, through a signed-in Sierra. His
+20:45Z words on College Data Collection (above): every control that looks like a link opens something.
 
 **The conductor's**, each a row, a DECIDED line and part of a card on Sheet 194: the twelve of the first checkpoint, and
 `d-fire-m1274-into-fire-130x-applied-s648`, `d-busi-split-held-for-delete-s648` (commons),
@@ -158,12 +165,13 @@ question with Sam. #3217 stays parked.
 
 ## Open work, in order (from the lanes' NEXT lines)
 
-1. **`program-requirements-harvest`:** (1) Glendale; (2) a stored hold for Desert 10195 and the one-college workflow
+1. **`program-requirements-harvest`:** (1) COBIx's three Glendale follow-ups (the unaliased `PSYCH 104` row; 31597's
+   Electives block; a "minimum total of N" rule for 18639); (2) a stored hold for Desert 10195 and the one-college workflow
    that files nothing after a mid-read halt; (3) the reading-procedure check; (4) the PDF reader's wrapped-heading
    follow-ups; (5) Cosumnes River, Cerro Coso and the 17 page reads; (6) Monterey Peninsula's three build-only programs;
    (7) the district phase 0 builder and the CMS probe; (8) the wave's sample, census follow-ups, Copper Mountain, the
    catalog-year rule, De Anza, Redwoods; (9) the headline's own-list rule, chip and note (a migration and a rescore).
-2. **`commons`:** (1) confirm the FIRE figures, then rebuild the identities map; (2) price the model pass for Sam; (3) a
+2. **`commons`:** (0) College Data Collection, *First things* 1; (1) confirm the FIRE figures, then rebuild the identities map; (2) price the model pass for Sam; (3) a
    potential-CPL column; (4) the Leadership outlines; the census re-run's result; #3219 (Sam approves).
 3. **`cer-procedures`:** the rename batch; wiring `series_aliases` into `kb/credential_aliases.py`; its NEXT list.
 4. **`governance-team-enablement`:** keyed workflows into environments; `kb/_second_reader.py` exits 0 when the database
@@ -194,8 +202,7 @@ a wiki line for the FIRE merge (no wiki page tracks re-clustering cases).
 
 ## Let go
 
-The documents worker subscribed to no PR and scheduled nothing. **Publishing Sheet 194 registered an artifact watch on
-the S648 session** (the tool arms one on every publish); the conductor drops it with Sheet 193's at sign-off and names
-both in its own sign-off.
+Every PR subscription was dropped as it was created; no check-in is pending. The artifact watches on Sheets 193 and 194
+are dropped by the conductor at sign-off.
 
 Greetings, you are SkyOriole (Session 649), see SkyTanager's handoff — `docs/session_649_handoff.md` (https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/docs/session_649_handoff.md) — let's keep rolling with our queue.
