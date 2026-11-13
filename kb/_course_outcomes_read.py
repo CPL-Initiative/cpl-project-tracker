@@ -327,11 +327,12 @@ OBJECTIVES_BY_SYSTEM = {
                                "Coastline); 1,519 of 1,584 pages in Orange Coast's read 42585338847"},
     "elumen": {"printed": "template",
                "evidence": "each college's catalog template decides. None printed on the trial pages of Modesto Junior, "
-                           "Cabrillo, Mission, Lake Tahoe, Columbia (one Objectives list sits inside an HTML comment), "
-                           "West Hills Lemoore or College of Marin. Contra Costa's template carries Course Objectives "
-                           "inside an HTML comment on 11 of 12 trial pages (not printed, so not read); 11 of its 520 "
-                           "pages print an Objectives heading in their text (read 42434894498). De Anza prints Course "
-                           "Objectives where its page answers (trial 43168229927)."},
+                           "Cabrillo, Mission or Lake Tahoe (SLOs on 11 or 12 of 12 each). Columbia (12 of 12) and Contra "
+                           "Costa (11 of 12) carry Course Objectives inside an HTML comment, not printed, so not read: "
+                           "reading a comment is a decision, not a reread; 11 of Contra Costa's 520 pages print an "
+                           "Objectives heading in their text (read 42434894498). West Hills Lemoore's and College of "
+                           "Marin's trial pages printed neither SLOs nor objectives. De Anza: one trial page answered "
+                           "and it printed both (trial 43168229927)."},
 }
 
 

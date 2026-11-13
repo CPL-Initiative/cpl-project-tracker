@@ -61,7 +61,9 @@ jobs:
           host=$(sed -n 's/^host=//p' kb/course_outcomes/.load)
           # kind=objective posts the objective rows only (the objectives reread, S649); absent, every row.
           kind=$(sed -n 's/^kind=//p' kb/course_outcomes/.load)
-          python3 kb/_course_outcomes_load.py --host "$host" --kind "${kind:-all}"
+          # slugs= keeps only the reads that name those colleges (the Coast district files three under cccd).
+          slugs=$(sed -n 's/^slugs=//p' kb/course_outcomes/.load)
+          python3 kb/_course_outcomes_load.py --host "$host" --kind "${kind:-all}" --slugs "$slugs"
 
       - name: Commit the receipt to this branch
         if: always()

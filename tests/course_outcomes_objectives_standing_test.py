@@ -14,6 +14,8 @@ import json
 import os
 import re
 import sys
+import shutil
+import tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "kb", "course_outcomes")
@@ -183,6 +185,8 @@ def _():
             continue
         if slug in named:
             continue
+        if printed is not True and all("objectives" in r for r in rows):
+            continue  # the objectives reader ran, and this system's template printed none: the record names why
         bad.append((host, slug, system, printed, "SLOs and no objectives, and the reread plan does not name it"))
     assert not bad, bad
 
@@ -200,7 +204,8 @@ def _():
         assert slo and len(obj) * 2 >= len(slo), (host, slug, len(obj), len(slo))
 
 
-@check("the reread plan covers every SLO college without objectives, holds De Anza and College of Marin, reads none twice")
+@check("the reread plan covers every SLO college without objectives (a landed step may stay until it moves to done), "
+       "holds De Anza and College of Marin, reads none twice")
 def _():
     reads = newest_reads()
     no_obj = {slug for (host, slug), docs in reads.items()
@@ -208,7 +213,10 @@ def _():
               and not all("objectives" in r for d in docs for r in d["rows"])}
     planned = {s for step in PLAN["order"] for s in step["slugs"]}
     skipped = {r["slug"] for r in PLAN["not_reread"] if r["state"] == "none_printed"}
-    assert no_obj == planned | skipped, (sorted(no_obj - planned - skipped), sorted((planned | skipped) - no_obj))
+    assert no_obj <= planned | skipped, sorted(no_obj - planned - skipped)
+    done = {r["slug"] for r in PLAN["done"]}
+    assert not (done & no_obj), sorted(done & no_obj)
+    assert not (done & planned), sorted(done & planned)
     assert {"de_anza", "college_of_marin"} <= {r["slug"] for r in PLAN["held"]}
     assert not ({"de_anza", "college_of_marin"} & planned)
     for r in PLAN["not_reread"]:
@@ -232,7 +240,8 @@ def _():
             assert lines.get("slugs"), s["host"]
         else:
             assert lines.get("catalog") in s["slugs"], s["host"]
-        assert s["load"] == ["host=%s" % s["host"], "kind=objective"], s["load"]
+        assert s["load"] == ["host=%s" % s["host"], "kind=objective",
+                             "slugs=%s" % ",".join(sorted(s["slugs"]))], s["load"]
         assert s["branch"].startswith("claude/slo-objectives-"), s["branch"]
         assert os.path.isdir(os.path.join(OUT, s["host"])), s["host"]
     cccd = [s for s in steps if s["host"] == "cccd"]
@@ -255,6 +264,7 @@ def _():
     assert rec["rollback"] == "delete from public.course_outcomes where id in (7);", rec["rollback"]
     wf = open(os.path.join(ROOT, ".github", "workflows", "course-outcomes-load.yml")).read()
     assert "s/^kind=//p" in wf and '--kind "${kind:-all}"' in wf, "the load workflow does not pass kind"
+    assert "s/^slugs=//p" in wf and '--slugs "$slugs"' in wf, "the load workflow does not pass slugs"
 
 
 @check("the load stays insert-only with kind in the key, so an objective row never replaces an SLO row")
@@ -263,6 +273,180 @@ def _():
     assert "on conflict (college, course_code, source_url, kind, fingerprint) do nothing" in sql
     body = sql.split("create or replace function public.course_outcomes_load", 1)[1]
     assert not re.search(r"^\s*(update|delete)\b", body, re.I | re.M), "an update or delete in the load function"
+
+
+CUESTA = os.path.join(OUT, "trial_42573515439", "read.json")
+
+
+@check("read_one, the path a full read takes, files the objectives keys and items from a pinned curriQunet page")
+def _():
+    folder = os.path.dirname(CUESTA)
+    row = json.load(open(CUESTA))["rows"][0]
+    stem = re.sub(r"[^A-Za-z0-9]+", "_", row["code"])
+    page = {"status": 200, "final_url": row["report"], "title": row["code"],
+            "html": gzip.open(os.path.join(folder, stem + ".html.gz"), "rt").read(),
+            "body": open(os.path.join(folder, stem + ".txt")).read()}
+    saved = read.cor.load_full
+    read.cor.load_full = lambda reader, url: page
+    try:
+        got = read.read_one(None, {"code": row["code"], "report": row["report"]})
+    finally:
+        read.cor.load_full = saved
+    for k in ("objectives", "objectives_heading", "objectives_lead", "objectives_fingerprint"):
+        assert k in got, k
+    assert got["objectives"] and got["outcomes"], (len(got["objectives"]), len(got["outcomes"]))
+
+
+class FakeTable:
+    """course_outcomes under the migration's unique key; fail_on: the call that commits, then raises."""
+    def __init__(self, seed=(), fail_on=None):
+        self.rows, self.calls, self.fail_on, self.next_id = {}, 0, fail_on, 1000
+        for r in seed:
+            self.put(r)
+
+    @staticmethod
+    def key(r):
+        return (r["college"], r["course_code"], r["source_url"], r.get("kind", "slo"), r["fingerprint"])
+
+    def put(self, r):
+        if self.key(r) in self.rows:
+            return None
+        self.next_id += 1
+        self.rows[self.key(r)] = dict(r, id=self.next_id)
+        return self.next_id
+
+    def rpc(self, body, key):
+        self.calls += 1
+        ins, kept = [], 0
+        for r in body["p_rows"]:
+            new = self.put(r)
+            if new is None:
+                kept += 1
+            else:
+                ins.append({"id": new, "college": r["college"], "course_code": r["course_code"],
+                            "kind": r.get("kind", "slo")})
+        if self.calls == self.fail_on:
+            raise TimeoutError("timed out")
+        return {"inserted_keys": ins, "kept": kept}
+
+
+def run_main(table, argv, batch=None):
+    """load.main against the pinned Cuesta read and a fake table, receipts in a temp dir: (exit, receipt)."""
+    saved = (load.read_files, load._rpc, load.RECEIPTS, load.BATCH, os.environ.get("SUPABASE_SERVICE_KEY"))
+    tmp = tempfile.mkdtemp(prefix="co_load_")
+    load.read_files = lambda host, slugs=None: [CUESTA]
+    load._rpc = table.rpc
+    load.RECEIPTS = tmp
+    if batch:
+        load.BATCH = batch
+    os.environ["SUPABASE_SERVICE_KEY"] = "dummy"
+    try:
+        code = load.main(argv)
+    finally:
+        load.read_files, load._rpc, load.RECEIPTS, load.BATCH = saved[:4]
+        if saved[4] is None:
+            os.environ.pop("SUPABASE_SERVICE_KEY", None)
+        else:
+            os.environ["SUPABASE_SERVICE_KEY"] = saved[4]
+    files = glob.glob(os.path.join(tmp, "*.json"))
+    rec = json.load(open(files[0])) if files else None
+    shutil.rmtree(tmp, ignore_errors=True)
+    return code, rec
+
+
+@check("main() with --kind objective: every posted row an objective, held_back the SLO count, ids exactly the inserts")
+def _():
+    rows, _ = load.rows_from([CUESTA], "cuesta")
+    slo = [r for r in rows if r["kind"] == "slo"]
+    obj = [r for r in rows if r["kind"] == "objective"]
+    table = FakeTable(seed=slo + obj[:3])  # the SLOs and three objectives already loaded
+    before = set(table.rows)
+    code, rec = run_main(table, ["--host", "cuesta", "--run", "1234567", "--kind", "objective"])
+    assert code == 0 and rec, (code, rec)
+    new = [v for k, v in table.rows.items() if k not in before]
+    assert all(v["kind"] == "objective" for v in new) and len(new) == len(obj) - 3, len(new)
+    assert rec["kind"] == "objective" and rec["held_back"] == len(slo), (rec["held_back"], len(slo))
+    assert rec["posted"] == len(obj) and rec["kept"] == 3, (rec["posted"], rec["kept"])
+    assert sorted(k["id"] for k in rec["inserted_keys"]) == sorted(v["id"] for v in new)
+    assert all(k["kind"] == "objective" for k in rec["inserted_keys"])
+
+
+def _apply_delete(table, stmt):
+    """A receipt's rollback_by_key, applied to the fake: kind in (...) and (college, read_run) in (...)."""
+    head, tail = stmt.split("and (college, read_run) in", 1)
+    kinds = set(re.findall(r"'([a-z]+)'", head))
+    pairs = {(c.replace("''", "'"), int(run)) for c, run in re.findall(r"\('((?:[^']|'')*)', (\d+)\)", tail)}
+    gone = [k for k, v in table.rows.items()
+            if v.get("kind", "slo") in kinds and (v["college"], int(v["read_run"])) in pairs]
+    for k in gone:
+        del table.rows[k]
+    return len(gone)
+
+
+@check("UNDO: a batch that commits and loses its response is covered by the receipt's rollback_by_key")
+def _():
+    rows, _ = load.rows_from([CUESTA], "cuesta")
+    assert len([r for r in rows if r["kind"] == "objective"]) > 10
+    table = FakeTable(fail_on=2)
+    code, rec = run_main(table, ["--host", "cuesta", "--run", "1234567", "--kind", "objective"], batch=5)
+    assert code == 1 and rec["error"].startswith("batch 2"), (code, rec and rec["error"])
+    held = len(table.rows)
+    assert held == 10 and len(rec["inserted_keys"]) == 5, (held, len(rec["inserted_keys"]))  # 5 rows no id names
+    assert rec["posted"] == 10, rec["posted"]  # the batches sent, the failed one included
+    assert _apply_delete(table, rec["rollback_by_key"]) == held and not table.rows, len(table.rows)
+
+
+@check("rollback_by_key never reaches another kind or another read of the same college, and doubles a quote")
+def _():
+    rows, _ = load.rows_from([CUESTA], "cuesta")
+    slo = [r for r in rows if r["kind"] == "slo"]
+    obj = [r for r in rows if r["kind"] == "objective"]
+    other = dict(obj[0], read_run="999999999", fingerprint="x" * 32)
+    table = FakeTable(seed=slo + obj + [other])
+    _apply_delete(table, load.rollback_by_key(obj))
+    left = list(table.rows.values())
+    assert len(left) == len(slo) + 1, len(left)
+    assert {v["kind"] for v in left if v["read_run"] != "999999999"} == {"slo"}
+    assert "Jacinto''s" in load.rollback_by_key([dict(obj[0], college="Mt. San Jacinto's")])
+
+
+@check("a kind= load that finds no rows of that kind fails loudly, so a stale kind= line cannot pass as a load")
+def _():
+    saved = load.only_kind
+    load.only_kind = lambda rows, kind: ([], len(rows))
+    table = FakeTable()
+    try:
+        code, rec = run_main(table, ["--host", "cuesta", "--run", "1234567", "--kind", "objective"])
+    finally:
+        load.only_kind = saved
+    assert code == 1 and rec is None and table.calls == 0, (code, rec, table.calls)
+
+
+@check("--slugs keeps the Coast district's other colleges out of one college's load")
+def _():
+    all_ = load.read_files("cccd")
+    for slug in ("golden_west", "coastline_community", "orange_coast"):
+        only = load.read_files("cccd", [slug])
+        assert only and {json.load(open(p))["slugs"] for p in only} == {slug}, slug
+    mixed = {json.load(open(p))["slugs"] for p in all_}
+    assert {"golden_west", "orange_coast"} <= mixed, mixed  # unfiltered, one college's load reposts the others
+
+
+@check("the Commons outcomes card counts each slice once, from its newest run, so a reread never doubles it")
+def _():
+    cs = _mod("commons_status", "kb/_build_commons_status.py")
+    tmp = tempfile.mkdtemp(prefix="co_cs_")
+    dst = os.path.join(tmp, "kb", "course_outcomes", "laspositas")
+    os.makedirs(dst)
+    one = glob.glob(os.path.join(OUT, "laspositas", "read_*.json"))
+    for p in one:
+        d = json.load(open(p))
+        json.dump(d, open(os.path.join(dst, os.path.basename(p)), "w"))
+        d["run"] = str(int(d["run"]) + 1)
+        json.dump(d, open(os.path.join(dst, "read_%s_p%dof%d.json" % (d["run"], d["part"], d["of"])), "w"))
+    got = cs.building_outcomes(tmp)
+    want = sum(json.load(open(p))["summary"]["outcomes"] for p in one)
+    assert got["facts"]["outcomes"] == want and got["facts"]["reads"] == len(one), (got["facts"], want)
 
 
 @check("every list of what is collected from course outlines names objectives beside SLOs")

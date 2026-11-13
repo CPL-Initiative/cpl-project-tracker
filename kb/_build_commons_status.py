@@ -665,13 +665,23 @@ def building_credentials(root):
 
 def building_outcomes(root):
     """Course outcomes: every committed outline read under kb/course_outcomes/<college>/read_*.json."""
-    files = sorted(glob.glob(os.path.join(root, "kb", "course_outcomes", "*", "read_*.json")))
-    if not files:
+    found = sorted(glob.glob(os.path.join(root, "kb", "course_outcomes", "*", "read_*.json")))
+    if not found:
         raise FileNotFoundError("kb/course_outcomes/*/read_*.json")
-    outcomes, courses, colleges, latest = 0, 0, set(), ""
-    for f in files:
+    # A later read of the same colleges and slice supersedes an earlier one (the objectives reread, S649): count each
+    # (folder, slugs, part, of) once, from its newest run, so a reread never doubles the card.
+    newest = {}
+    for f in found:
         with open(f, encoding="utf-8") as fh:
             d = json.load(fh)
+        key = (os.path.dirname(f), str(d.get("slugs") or ""), d.get("part"), d.get("of"))
+        run = int(d["run"]) if str(d.get("run") or "").isdigit() else 0
+        if key not in newest or run > newest[key][0]:
+            newest[key] = (run, f, d)
+    files = sorted(v[1] for v in newest.values())
+    outcomes, courses, colleges, latest = 0, 0, set(), ""
+    for f in files:
+        d = next(v[2] for v in newest.values() if v[1] == f)
         sm = d.get("summary") or {}
         o = sm.get("outcomes")
         if isinstance(o, int):

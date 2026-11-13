@@ -72,12 +72,17 @@ def fingerprint(outcomes: list[str]) -> str:
     return hashlib.md5(json.dumps(outcomes, ensure_ascii=False).encode()).hexdigest()
 
 
-def read_files(host: str) -> list[str]:
-    """The newest complete read of each slice: a later run's slice replaces an earlier one."""
+def read_files(host: str, slugs: list[str] | None = None) -> list[str]:
+    """The newest complete read of each slice: a later run's slice replaces an earlier one. With slugs, only the
+    reads whose slugs name one of them (the Coast district files three colleges under cccd: an objectives reread of
+    one college must not repost the others)."""
     best: dict[tuple, tuple] = {}
+    want = set(slugs or [])
     for path in glob.glob(os.path.join(OUT_DIR, host, "read_*_p*of*.json")):
         d = json.load(open(path))
         if not d.get("complete"):
+            continue
+        if want and not (want & set(str(d.get("slugs") or "").split(","))):
             continue
         key = (d["part"], d["of"])
         if key not in best or int(d["run"]) > int(best[key][0]):
@@ -169,18 +174,46 @@ def _rpc(body: dict, key: str) -> dict:
         return json.loads(resp.read().decode() or "{}")
 
 
+def _lit(v) -> str:
+    return "'%s'" % str(v).replace("'", "''")
+
+
+def rollback_by_key(sent: list[dict]) -> str | None:
+    """The delete that holds when a batch's response is lost (S649 review of #3263): every row this load could have
+    inserted carries one of the sent rows' (college, read_run) pairs and kinds. read_run is a column of
+    course_outcomes (chatbox/supabase_course_outcomes.sql), filed from the read, so a reread's fresh run scopes it
+    exactly. It also takes rows an earlier load of the same read inserted, so run it only to undo every load of
+    that read."""
+    sent = [r for r in sent if r.get("college") and str(r.get("read_run") or "").isdigit()]
+    if not sent:
+        return None
+    kinds = sorted({r.get("kind") or "slo" for r in sent})
+    pairs = sorted({(r["college"], str(r["read_run"])) for r in sent})
+    return ("delete from public.course_outcomes where kind in (%s) and (college, read_run) in (%s);"
+            % (", ".join(_lit(k) for k in kinds), ", ".join("(%s, %s)" % (_lit(c), int(run)) for c, run in pairs)))
+
+
 def receipt_of(host: str, run: str, paths: list[str], rows: list[dict], skipped: list[dict],
-               results: list[dict], error: str | None, kind: str = "all", held_back: int = 0) -> dict:
+               results: list[dict], error: str | None, kind: str = "all", held_back: int = 0,
+               sent: list[dict] | None = None) -> dict:
+    """sent: the rows in batches actually posted (a batch that raised is counted: it may have committed).
+    Default every row."""
+    sent = rows if sent is None else sent
     ids = [k["id"] for res in results for k in res.get("inserted_keys") or []]
     return {
         "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
         "host": host, "load_run": run, "reads": [os.path.relpath(p, os.path.dirname(HERE)) for p in paths],
         "kind": kind, "held_back": held_back,
-        "posted": len(rows), "inserted": len(ids), "kept": sum(res.get("kept", 0) for res in results),
+        "posted": len(sent), "inserted": len(ids), "kept": sum(res.get("kept", 0) for res in results),
         "skipped": len(skipped), "skipped_rows": skipped, "error": error,
         "inserted_keys": [k for res in results for k in res.get("inserted_keys") or []],
         "rollback": ("delete from public.course_outcomes where id in (%s);" % ", ".join(map(str, ids)))
                     if ids else None,
+        "rollback_by_key": rollback_by_key(sent),
+        "rollback_note": ("rollback deletes the ids the responses named. When error is set, a batch may have "
+                          "committed without its response: use rollback_by_key, which takes every row of the "
+                          "sent kinds and (college, read_run) pairs, including any an earlier load of the same "
+                          "read inserted."),
     }
 
 
@@ -191,13 +224,19 @@ def main(argv=None) -> int:
     ap.add_argument("--dry", action="store_true")
     ap.add_argument("--kind", default="all", choices=KINDS,
                     help="objective: post the objective rows only (the objectives reread); default every row")
+    ap.add_argument("--slugs", default="", help="only the reads whose slugs name one of these (comma list)")
     a = ap.parse_args(argv)
-    paths = read_files(a.host)
+    paths = read_files(a.host, [x for x in a.slugs.split(",") if x])
     if not paths:
         print("no complete read filed for %s" % a.host)
         return 2
     rows, skipped = rows_from(paths, a.host)
     rows, held_back = only_kind(rows, a.kind)
+    if a.kind != "all" and not rows:
+        # A kind= line left in .load must never turn a later ordinary load into a silent no-op.
+        print("kind=%s found no %s rows in the reads of %s: nothing to load. A stale kind= line in "
+              "kb/course_outcomes/.load? Remove it for an ordinary load." % (a.kind, a.kind, a.host))
+        return 1
     colleges: dict[str, int] = {}
     for r in rows:
         colleges[r["college"]] = colleges.get(r["college"], 0) + 1
@@ -213,21 +252,23 @@ def main(argv=None) -> int:
     if not a.run.isdigit():
         print("a numeric run id is required (--run, or GITHUB_RUN_ID)")
         return 2
-    results, error = [], None
+    results, error, sent = [], None, []
     for i in range(0, len(rows), BATCH):
+        batch = rows[i:i + BATCH]
+        sent.extend(batch)  # counted before the call: a batch that raises may still have committed
         try:
-            results.append(_rpc({"p_run": a.run, "p_rows": rows[i:i + BATCH]}, key))
+            results.append(_rpc({"p_run": a.run, "p_rows": batch}, key))
         except Exception as exc:  # the receipt still files what loaded before it
-            error = "batch %d: %s" % (i // BATCH + 1, str(exc).splitlines()[0][:300])
+            error = "batch %d: %s" % (i // BATCH + 1, (str(exc).splitlines() or [type(exc).__name__])[0][:300])
             break
-    receipt = receipt_of(a.host, a.run, paths, rows, skipped, results, error, a.kind, held_back)
+    receipt = receipt_of(a.host, a.run, paths, rows, skipped, results, error, a.kind, held_back, sent)
     os.makedirs(RECEIPTS, exist_ok=True)
     path = os.path.join(RECEIPTS, "course_outcomes_%s_%s.json" % (a.host, a.run))
     with open(path, "w") as f:
         json.dump(receipt, f, ensure_ascii=False, indent=1)
         f.write("\n")
     print("load: %d posted, %d inserted, %d kept%s; receipt %s"
-          % (len(rows), receipt["inserted"], receipt["kept"], "; STOPPED at " + error if error else "",
+          % (receipt["posted"], receipt["inserted"], receipt["kept"], "; STOPPED at " + error if error else "",
              os.path.relpath(path, os.path.dirname(HERE))))
     return 1 if error else 0
 
