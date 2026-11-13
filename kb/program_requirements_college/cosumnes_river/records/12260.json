@@ -86,21 +86,31 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "(Observation, Documentation and Assessment) Utilize authentic assessment strategies based on observation, reflection, documentation, and interpretation of childrenâ€™s development to inform teaching practices.",
+    "(Leadership) Understanding and commitment to leadership development that empowers, encourages, cultivates, and supports self and others to become agents of change and advocate for high-quality early care and education experiences for all children, support for families, and professional stature of educators."
+   ],
+   "why": [
+    "not in the catalog text as printed: (Observation, Documentation and Assessment) Utilize authentic assessment strateg",
+    "not in the catalog text as printed: (Leadership) Understanding and commitment to leadership development that empower"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 4,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "supervising teacher",
+    "lead teacher",
+    "mentor teacher"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -430,5 +440,6 @@
    "Career list taken from the Career Information section of the Master Teacher certificate."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43521338550,
+ "read_run": "39047009824"
 }

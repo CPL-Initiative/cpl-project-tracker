@@ -102,16 +102,38 @@
    "program": 6,
    "courses": 0,
    "count": 6,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Differentiate between scientifically derived knowledge versus pseudoscience within the field of psychology and demonstrate understanding of the scientific method.",
+    "Demonstrate familiarity with the major concepts and theoretical perspectives in psychology.",
+    "Define and apply basic psychological terminology regarding behavior, cognition, and emotion, and be able to express it clearly when writing or speaking about psychology.",
+    "Evaluate psychological data, use the scientific method, predict likely outcomes, interpret basic statistical measures, draw reasonable conclusions, recognize the ethical implications of these conclusions, and apply these conclusions to personal, community, and scientific problems.",
+    "Employ and integrate psychological principles that lay the foundation for life-long personal growth and development of interpersonal, occupational and social skills.",
+    "Recognize the complexity of social, cultural, and international diversity and demonstrate appropriate interpersonal and social skills in interactions with a diverse population using principles of equity, justice, and inclusion."
+   ],
+   "why": [
+    "not in the catalog text as printed: Differentiate between scientifically derived knowledge versus pseudoscience with",
+    "not in the catalog text as printed: Demonstrate familiarity with the major concepts and theoretical perspectives in ",
+    "not in the catalog text as printed: Define and apply basic psychological terminology regarding behavior, cognition, ",
+    "not in the catalog text as printed: Evaluate psychological data, use the scientific method, predict likely outcomes,",
+    "not in the catalog text as printed: Employ and integrate psychological principles that lay the foundation for life-l",
+    "not in the catalog text as printed: Recognize the complexity of social, cultural, and international diversity and de"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 8,
-   "not_verbatim": [],
-   "pass": true
+   "not_verbatim": [
+    "sales",
+    "marketing",
+    "teaching",
+    "law enforcement",
+    "clinical practice",
+    "Clinical psychologists",
+    "Research psychologists"
+   ],
+   "pass": false
   },
   "degree": {
    "status": "read"
@@ -280,5 +302,6 @@
    "Careers 'Clinical psychologists' and 'Research psychologists' are drawn from the Career Information paragraph describing psychologists with graduate degrees."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43521338550,
+ "read_run": "39047009824"
 }

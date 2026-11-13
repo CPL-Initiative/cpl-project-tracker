@@ -90,23 +90,32 @@
    "program": 13,
    "courses": 0,
    "count": 13,
-   "not_verbatim": [],
-   "why": [],
+   "not_verbatim": [
+    "Understand typical new car dealership hierarchy, structure, and standard procedures."
+   ],
+   "why": [
+    "not in the catalog text as printed: Understand typical new car dealership hierarchy, structure, and standard procedu"
+   ],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": true
+   "pass": false
   },
   "careers": {
    "count": 8,
    "not_verbatim": [
-    "Ford/Lincoln Specialized Technician (in any of the Service Technician Specialty Training [STST] areas)"
+    "Light Duty Diesel Technician",
+    "Ford/Lincoln Specialized Technician (in any of the Service Technician Specialty Training [STST] areas)",
+    "Ford/Lincoln Engine Master Technician",
+    "Ford/Lincoln Chassis Master Technician",
+    "Ford/Lincoln Drivetrain Master Technician",
+    "Ford/Lincoln Senior Master Technician"
    ],
    "pass": false
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {
@@ -399,5 +408,6 @@
    "AMT 385, AMT 131 and AMT 498 are not in the closed list and are marked catalog_addition."
   ]
  },
- "extracted_run": "39047009824"
+ "extracted_run": 43521338550,
+ "read_run": "39047009824"
 }
