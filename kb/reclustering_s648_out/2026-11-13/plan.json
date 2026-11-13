@@ -21,8 +21,8 @@
   "note": "the ids were named after the newest applied map; each resolves to itself"
  },
  "inputs": {
-  "members": "unified_courses_members.js (generated 2026-11-13 16:56)",
-  "curation_overlay_synced_at": "2026-11-13T16:56:11Z",
+  "members": "unified_courses_members.js (generated 2026-11-13 18:39)",
+  "curation_overlay_synced_at": "2026-11-13T18:38:30Z",
   "districts": "kb/college_identity/2026-11-10/crosswalk.json",
   "report": "kb/status/mid_outcomes_compare_2026-11-12.json"
  },
@@ -184,7 +184,7 @@
      "leaf_merge_into": {},
      "leaf_promotion_targets": {},
      "sits_by": "asccc_approval",
-     "to": "returns to its own stand-alone record",
+     "to": "held: the official claim or approval stands",
      "target_id": "CRIM M10WC",
      "proposed_new_id": null,
      "proposed_discipline": "Administration of Justice",
@@ -194,11 +194,12 @@
        "members_in_its_own_record": 1,
        "live_row": false,
        "merge_into": null,
-       "merge_into_by": null
+       "merge_into_by": null,
+       "merge_into_at": null
       }
      },
      "held": true,
-     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism yet sets an ASCCC approval aside",
+     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
      "claim_hold_signals": {
       "no_asccc_approval": false,
       "subject_disagrees_with_every_other_member": false,
@@ -231,13 +232,13 @@
      "leaf_merge_into": {},
      "leaf_promotion_targets": {},
      "sits_by": "coci_cid_claim",
-     "to": "a new stand-alone M-ID",
-     "target_id": "CRIM M11UI",
-     "proposed_new_id": "CRIM M11UI",
+     "to": "held: the official claim or approval stands",
+     "target_id": null,
+     "proposed_new_id": null,
      "proposed_discipline": "Administration of Justice",
      "leaf_facts": {},
      "held": true,
-     "mechanism": "HELD for a person: the member sits under the official id by the college's own COCI C-ID claim. kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism yet sets an ASCCC approval aside",
+     "mechanism": "HELD for a person: the member sits under the official id by the college's own COCI C-ID claim. kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
      "claim_hold_signals": {
       "no_asccc_approval": false,
       "subject_disagrees_with_every_other_member": false,
@@ -249,7 +250,7 @@
    ],
    "stays_count": 97,
    "alias_map_entries": [],
-   "alias_note": "none: the identity keeps its id; each moved member leaves by a CN: re-home row, and a new stand-alone id is a mint, so it enters ALIAS_MAPS only if the apply writes a receipt map (CN:<control number> -> new id) for kb/_rekey_* tools to read",
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
    "ready": false
   },
   {
@@ -307,6 +308,8 @@
    },
    "blockers": [],
    "notes": [
+    "the adopter and potential college lists on FIRE 130 X's row do not follow the merge: FIRE M1274 has no entry in kb/coci_articulations.json identities, so the export's rollup skips it. Queued as a lane follow-up: rebuild the identities map",
+    "after the sync, FIRE M1274's overlay entry reads as reclustering-s648@bot's (the newest row wins reviewed_by and reviewed_at in kb/_apply_curation.py), while map@rccd.edu's 2026-06-12 unified_title row itself stays untouched in the table",
     "FIRE M1274 carries a person's curation (unified_title by map@rccd.edu); the merge_into row sits in its own slot, so it lands beside that row and the survivor's title shows",
     "1 curation pointers already fold into FIRE M1274 (FIRE M10CH by map@rccd.edu); each stays as saved and the export follows it on to FIRE 130 X"
    ],
@@ -900,6 +903,7 @@
     "MATH M1044 carries the articulation of exhibit MAPCBES-CBES-1-001 *Credit By Exam San Diego City College* (Credit By Exam, earned at San Diego City College, San Diego Mesa College, San Diego Miramar College), whose unified title is *Basic Refrigeration & AC Lab* while its credit recommendation reads '3 hours in College and Matrix Algebra' and its local course is MATH 116 College and Matrix Algebra: the title names another subject, so the record looks mis-filed at the title's unification (a college-wide credit-by-exam exhibit given one course's name). The merge would carry that title's 4838.0 eligible credits and 330 students into MATH M1036. Settled when the Exhibit Reference re-titles MAPCBES-CBES-1-001 by its credit recommendations (or the articulation moves off MATH M1044); then the merge proceeds"
    ],
    "notes": [
+    "the adopter and potential college lists on MATH M1036's row do not follow the merge: MATH M1044 has no entry in kb/coci_articulations.json identities, so the export's rollup skips it. Queued as a lane follow-up: rebuild the identities map",
     "the report also pairs this case with MATH 150 (strong, best outcomes 0.6039); that pair is outside the ruling and outside this plan"
    ],
    "survivor": "MATH M1036",
@@ -1119,9 +1123,9 @@
       ]
      },
      "sits_by": "asccc_approval",
-     "to": "a new stand-alone M-ID",
-     "target_id": "MUSI M12TG",
-     "proposed_new_id": "MUSI M12TG",
+     "to": "held: the official claim or approval stands",
+     "target_id": null,
+     "proposed_new_id": null,
      "proposed_discipline": "Music",
      "leaf_facts": {
       "MUSI M1429": {
@@ -1129,11 +1133,12 @@
        "members_in_its_own_record": 18,
        "live_row": false,
        "merge_into": null,
-       "merge_into_by": null
+       "merge_into_by": null,
+       "merge_into_at": null
       }
      },
      "held": true,
-     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism yet sets an ASCCC approval aside",
+     "mechanism": "HELD for a person: the member sits under the official id by an ASCCC C-ID approval (kb/cid_articulation_joins.json, routed by the export). kb/reference/cid_claim_holds.json sets a COCI claim aside only on its four signals, none of which a split by outcomes supplies, and no mechanism sets an ASCCC approval aside",
      "claim_hold_signals": {
       "no_asccc_approval": false,
       "subject_disagrees_with_every_other_member": false,
@@ -1145,7 +1150,7 @@
    ],
    "stays_count": 89,
    "alias_map_entries": [],
-   "alias_note": "none: the identity keeps its id; each moved member leaves by a CN: re-home row, and a new stand-alone id is a mint, so it enters ALIAS_MAPS only if the apply writes a receipt map (CN:<control number> -> new id) for kb/_rekey_* tools to read",
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
    "ready": false
   },
   {
@@ -1190,7 +1195,9 @@
      ]
     }
    },
-   "blockers": [],
+   "blockers": [
+    "Needs Sam's word: Santa Ana College BUS 115 returns to its own record BUSI M10XW only by removing the row (BUSI M10XW, merge_into, BUSI M1228) that automerge-titlelane-v1@bot saved at 2026-06-13T17:47:56.243497+00:00; the insert-only route leaves the residue named in the move"
+   ],
    "notes": [],
    "groups": [
     {
@@ -1248,9 +1255,9 @@
      },
      "leaf_promotion_targets": {},
      "sits_by": "leaf_merge_into",
-     "to": "a new stand-alone M-ID",
-     "target_id": "BUSI M11TU",
-     "proposed_new_id": "BUSI M11TU",
+     "to": "held: returns to its own record only when Sam allows removing one saved row",
+     "target_id": "BUSI M10XW",
+     "proposed_new_id": null,
      "proposed_discipline": "Business",
      "leaf_facts": {
       "BUSI M10XW": {
@@ -1258,31 +1265,30 @@
        "members_in_its_own_record": 1,
        "live_row": false,
        "merge_into": "BUSI M1228",
-       "merge_into_by": "automerge-titlelane-v1@bot"
+       "merge_into_by": "automerge-titlelane-v1@bot",
+       "merge_into_at": "2026-06-13T17:47:56.243497+00:00"
       }
      },
-     "held": false,
-     "mechanism": "INSERT-only: kb_curation row (CN:CCC000609492, merge_into, BUSI M11TU) under reclustering-s648@bot, and the new catalog record BUSI M11TU (kb/_reclustering_s648_apply.py --record). Its own stand-alone BUSI M10XW stays folded into BUSI M1228 by the row automerge-titlelane-v1@bot saved, which is never deleted, and keeps no member"
+     "held": true,
+     "mechanism": "HELD for Sam's word. Route A (clean): remove the row (BUSI M10XW, merge_into, BUSI M1228) that automerge-titlelane-v1@bot saved at 2026-06-13T17:47:56.243497+00:00, its before-value written to the receipt first so a re-INSERT undoes it; the course returns to BUSI M10XW, its own record. Route B (insert-only): a CN:CCC000609492 row re-homing the course onto a newly minted stand-alone. Route B leaves residue: BUSI M10XW stays a merge member of BUSI M1228 through the bot's row, so BUSI M1228 keeps the course's title variant, count and aggregates, and a second identity is minted beside a live sibling record (BUSI M10XW)"
     }
    ],
    "stays_count": 23,
    "alias_map_entries": [],
-   "alias_note": "none: the identity keeps its id; each moved member leaves by a CN: re-home row, and a new stand-alone id is a mint, so it enters ALIAS_MAPS only if the apply writes a receipt map (CN:<control number> -> new id) for kb/_rekey_* tools to read",
-   "ready": true
+   "alias_note": "none: the identity keeps its id, and no move is planned for this apply",
+   "ready": false
   }
  ],
  "affected_ids": [
   "AJ 160",
-  "BUSI M11TU",
+  "BUSI M10XW",
   "BUSI M1228",
   "CRIM M10WC",
-  "CRIM M11UI",
   "FIRE 130 X",
   "FIRE M1274",
   "MATH M1036",
   "MATH M1044",
   "MUS 130",
-  "MUSI M12TG",
   "REAL M1038",
   "REAL M1040"
  ],
@@ -2294,53 +2300,49 @@
  "kb_curation_selects": {
   "pre": [
    {
-    "sql": "select field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274') group by 1, 2 order by 1, 2;",
+    "sql": "select course_id, field, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where course_id in ('FIRE M1274', 'FIRE 130 X') group by 1, 2, 3 order by 1, 2, 3;",
     "expect": {
-     "merge_into / bot": 1,
-     "unified_title / person": 1,
-     "unified_title / bot": 1
+     "FIRE M1274 | unified_title | person": 1
     },
-    "if_different": "a merge_into row on a source key means its INSERT would be skipped: hold that case. Any other new row since the overlay sync is a person's or a procedure's work on an affected key: read it before applying (Rule 10a)."
+    "if_different": "a row a person or procedure saved on FIRE M1274 or FIRE 130 X since the overlay sync: read it before applying, and a merge_into row on either holds the apply"
    },
    {
-    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id in ('FIRE M1274', 'CN:CCC000609492');",
+    "sql": "select count(*) from public.kb_curation where field = 'merge_into' and course_id = 'FIRE M1274';",
     "expect": 0,
-    "if_different": "a source already folds somewhere: the INSERT would be skipped, so hold that case"
+    "if_different": "FIRE M1274 already folds somewhere: the INSERT would be skipped; hold"
    },
    {
-    "sql": "select value, (reviewer_email like '%@bot') as bot, count(*) from public.kb_curation where field = 'merge_into' and value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'FIRE 130 X', 'FIRE M1274') group by 1, 2 order by 1, 2;",
-    "expect": {
-     "BUSI M1228 / bot": 9,
-     "FIRE M1274 / person": 1
-    },
-    "if_different": "a pointer added since the sync now follows the fold too (FIRE M1274 passes its pointers on to the survivor); a pointer onto the new id means the id is no longer free: re-cut the plan"
+    "sql": "select course_id, (reviewer_email like '%@bot') as bot from public.kb_curation where field = 'merge_into' and value = 'FIRE M1274' order by 1;",
+    "expect": [
+     [
+      "FIRE M10CH",
+      false
+     ]
+    ],
+    "if_different": "another pointer into FIRE M1274: it follows the fold to FIRE 130 X too; read it before applying"
    },
    {
-    "sql": "select count(*) from public.kb_curation where field = 'unified_title_merge_confirm' and (course_id in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274') or value in ('BUSI M10XW', 'BUSI M11TU', 'BUSI M1228', 'CN:CCC000609492', 'FIRE 130 X', 'FIRE M1274'));",
+    "sql": "select count(*) from public.kb_curation where field = 'merge_dismissed' and (value like '%FIRE M1274%' or value like '%FIRE 130 X%');",
     "expect": 0,
-    "if_different": "a pending title merge names an affected key: the curator's merge wins, hold that case"
+    "if_different": "a person chose 'Keep as-is' on a group naming one of the two: their choice wins; hold"
    },
    {
     "sql": "select count(*) from public.kb_curation where reviewer_email = 'reclustering-s648@bot';",
     "expect": 0,
-    "if_different": "the cohort already wrote (P0): the apply ran, in part or whole; read the rows first"
+    "if_different": "the cohort already wrote (P0): read its rows before anything else"
    }
   ],
+  "dropped": "unified_title_merge_confirm is not read: credential_reference.js writes those rows under _CREDENTIAL_REVIEW::<unified title> keys for credential renames, so a course id never appears there and the read returns 0 by construction",
   "post": {
    "sql": "select course_id, field, value from public.kb_curation where reviewer_email = 'reclustering-s648@bot' order by 1;",
    "expect": [
-    [
-     "CN:CCC000609492",
-     "merge_into",
-     "BUSI M11TU"
-    ],
     [
      "FIRE M1274",
      "merge_into",
      "FIRE 130 X"
     ]
    ],
-   "if_different": "fewer rows: a slot was taken and its INSERT skipped (that case did not land); run the rollback and re-read"
+   "if_different": "no row: the slot was taken and the INSERT skipped; nothing landed, nothing to undo"
   }
  },
  "honors": {
@@ -4747,35 +4749,41 @@
  },
  "apply_sequence": [
   {
-   "step": 0,
-   "when": "one window: open after the 12:17 UTC run has committed (about 12:45), close before 06:17 the next morning; no cron fires inside it (06:17, 09:17, 12:17)",
-   "what": "fresh read: the five pre-apply SELECTs through the Supabase MCP, each against its expected result",
-   "receipt": "kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results)",
+   "step": "i",
+   "when": "a window clear of 06:17, 09:17 and 12:17 UTC; steps i to iv within minutes of each other, and no merge stands between the read and the write",
+   "what": "the conductor runs the five pre-apply SELECTs (Supabase MCP), each against its expected result",
+   "receipt": "kb/reclustering_s648_out/2026-11-13/fresh_read.json (the five results, with the time)",
    "undo": "nothing written"
   },
   {
-   "step": 1,
-   "what": "this PR merged on a green test: it carries the plan, both scripts, and the migration pair (inert until triggered). Then, on a claude/* branch off main: python3 kb/_reclustering_s648_apply.py --record (adds the case 6 record; P0, P1, P2 gates), commit",
-   "receipt": "the commit: kb/coci_minted_courses.json + 1 record, stamp _recluster_s648_from",
-   "undo": "python3 kb/_reclustering_s648_apply.py --undo-record, or git revert"
+   "step": "ii",
+   "what": "within minutes, on this branch, set kb/migrations/.apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and name=s648_reclustering_cohort, commit, push. supabase-migrate.yml applies the file on that claude/** push; it needs nothing on main",
+   "receipt": "the push",
+   "undo": "set .apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, name=s648_reclustering_cohort_rollback, push"
   },
   {
-   "step": 2,
-   "what": "on the same branch, set kb/migrations/.apply to file=kb/migrations/2026-11-13_s648_reclustering_cohort.sql and name=s648_reclustering_cohort, commit, push. supabase-migrate.yml runs on the claude/* push (it does not need main), posts the file, and commits its receipt to the branch",
-   "receipt": "kb/receipts/ (the workflow's), plus the post-apply SELECT's result in kb/reclustering_s648_out/2026-11-13/post_read.json",
-   "undo": "set kb/migrations/.apply to the rollback pair (file=kb/migrations/2026-11-13_s648_reclustering_cohort_rollback.sql, name=s648_reclustering_cohort_rollback) and push: delete by cohort"
+   "step": "iii",
+   "what": "the runner commits its receipt to the branch: kb/receipts/migration_s648_reclustering_cohort_<run>.json, whose response holds the RETURNING row",
+   "receipt": "that file",
+   "undo": "the rollback names the one row; its own receipt lands beside it"
   },
   {
-   "step": 3,
-   "what": "open the branch's PR, merge on a green test (record + .apply + receipt on main), then dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the three rows into kb/coci_curation.json and the export rebuilds",
-   "receipt": "the runner's commit",
-   "undo": "steps 2 and 1 undone, then one more dispatch"
-  },
-  {
-   "step": 4,
-   "what": "read the rebuilt unified_courses_members.js against post_apply_simulated in plan.json",
-   "receipt": "a line in the lane",
+   "step": "iv",
+   "what": "the post-apply SELECT, against its expected result",
+   "receipt": "kb/reclustering_s648_out/2026-11-13/post_read.json",
    "undo": "-"
+  },
+  {
+   "step": "v",
+   "what": "the PR merges on a green test (code, plan, migration pair, .apply, receipts)",
+   "receipt": "the merge commit",
+   "undo": "git revert (the data row is undone by step ii's undo)"
+  },
+  {
+   "step": "vi",
+   "what": "dispatch daily-dashboard.yml once: kb/_apply_curation.py folds the row into kb/coci_curation.json and the export rebuilds; read the members file against post_apply_simulated.json",
+   "receipt": "the runner's commit",
+   "undo": "step ii's undo, then one more dispatch"
   }
  ]
 }

@@ -7682,7 +7682,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 628
+     "line": 651
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -11900,7 +11900,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 117
+     "line": 147
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -12352,13 +12352,6 @@
      "direction": "write",
      "how": "literal",
      "line": 202
-    },
-    {
-     "id": "script:kb/_reclustering_s648_apply.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 49
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -13202,13 +13195,6 @@
      "direction": "write",
      "how": "literal",
      "line": 203
-    },
-    {
-     "id": "script:kb/_reclustering_s648_apply.py",
-     "kind": "script",
-     "direction": "read",
-     "how": "literal",
-     "line": 87
     },
     {
      "id": "script:kb/_reclustering_s648_dryrun.py",
@@ -14850,7 +14836,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 731
+     "line": 754
     },
     {
      "id": "script:scripts/ui_pass.py",
@@ -17603,7 +17589,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1239
+     "line": 1262
     }
    ],
    "served": true,
@@ -17616,7 +17602,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1244
+     "line": 1267
     }
    ],
    "served": true,
@@ -17629,7 +17615,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1049
+     "line": 1045
     }
    ],
    "served": true,
@@ -17642,7 +17628,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1034
+     "line": 1040
     }
    ],
    "served": false,
