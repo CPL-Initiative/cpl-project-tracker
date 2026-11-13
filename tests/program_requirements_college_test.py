@@ -2465,8 +2465,31 @@ for code in ("A", "B", "C", "D", "E", "F", "G"):
     C.cd_note_miss(gl_info, code, gl_over)
 C.cd_note_miss(gl_info, "H", {"access": "unreachable", "status": None, "error": "Timeout 30000ms exceeded."})
 gl_acc = gl_info["miss_pages"][0]
-check(gl_info["miss_answers"] == {"ok 200": 7, "unreachable None": 1} and len(gl_info["miss_pages"]) == C.CD_MISS_KEEP,
-      "every miss is counted by what it answered, the first few kept in full: %r" % gl_info.get("miss_answers"))
+check(gl_info["miss_answers"] == {"ok 200": 7, "unreachable None": 1} and len(gl_info["miss_pages"]) == C.CD_MISS_KEEP + 1
+      and gl_info["miss_pages"][-1]["code"] == "H",
+      "every miss is counted by what it answered; the first few and the first of each other answer are kept in full: %r"
+      % gl_info.get("miss_answers"))
+# Glendale's second capture (run 43361595138, S645): each overview that answered showed the tabs "Overview ·
+# Completion Requirements · Program Learning Outcomes", and the 50 that answered 405 and the one 404 are as many
+# as its codes carrying a mark beyond letters, digits and a hyphen (51).
+check(bool(C.CD_REQUISITES.search("Completion Requirements")) and not C.CD_REQUISITES.search("Program Learning Outcomes")
+      and not C.CD_REQUISITES.search("NCAMA - Administrative Medical Assistant"),
+      "Glendale's Completion Requirements tab is the program's list")
+GL_ROOT = "https://catalog.glendale.edu"
+check(C.cd_href_code(GL_ROOT + "/programs/AS-T%20ADMJ", GL_ROOT) == "AS-T ADMJ"
+      and C.cd_href_code(GL_ROOT + "/programs/AD%26D-AS/", GL_ROOT) == "AD&D-AS"
+      and C.cd_href_code(GL_ROOT + "/programs/E%2FSB-AS", GL_ROOT) == "E/SB-AS"
+      and C.cd_href_code("https://www.glendale.edu/programs/X", GL_ROOT) is None,
+      "an index link names its program's code, unescaped")
+gl_hrefs = C.cd_index_hrefs([{"href": GL_ROOT + "/programs/NCAMA"}, {"href": GL_ROOT + "/programs/AS-T%20ADMJ"},
+                             {"href": GL_ROOT + "/programs/E%2FSB-AS"}, {"href": GL_ROOT + "/programs/OTHER"}],
+                            GL_ROOT, ["NCAMA", "AS-T ADMJ", "E/SB-AS", "ACCTG-C"])
+check(gl_hrefs == {"NCAMA": GL_ROOT + "/programs/NCAMA", "AS-T ADMJ": GL_ROOT + "/programs/AS-T%20ADMJ",
+                   "E/SB-AS": GL_ROOT + "/programs/E%2FSB-AS"},
+      "each code takes the index's own address where the index links it, and only then: %r" % gl_hrefs)
+check(bool(C.CD_CODE_MARK.search("AS-T ADMJ")) and bool(C.CD_CODE_MARK.search("BA2.0-AST"))
+      and not C.CD_CODE_MARK.search("ACCTG-AS") and not C.CD_CODE_MARK.search("NCAMA"),
+      "a code with a mark beyond letters, digits and a hyphen is told apart")
 check(gl_acc["text"].startswith("Page not found We could not find") and len(gl_acc["text"]) == 200
       and gl_acc["program_link_texts"] == ["Program Requirements"] and gl_acc["clickables"] == ["Overview", "Program Requirements"]
       and gl_acc["status"] == 200 and gl_acc["final_url"].endswith("/programs/ACCTG-AS"),

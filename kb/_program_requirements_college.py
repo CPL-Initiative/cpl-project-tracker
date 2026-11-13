@@ -1963,7 +1963,10 @@ CD_LIMIT = 250
 # The course data a Requirements tab's own scripts fetch as it loads: each course's
 # credits.creditHours (Hartnell, page read 39930495321, S454), where the tab prints none.
 CD_COURSES = re.compile(r"/courses/search/", re.I)
-CD_REQUISITES = re.compile(r"^\s*requi(?:site|rement)s\b", re.I)
+# Glendale's catalog names the tab Completion Requirements (/programs/NCAMA/overview-aoYks shows "Overview ·
+# Completion Requirements · Program Learning Outcomes" in each of the five overviews the account kept; capture
+# run 43361595138, S645), and none of its 210 overviews that answered 200 named a Requisites or Requirements tab.
+CD_REQUISITES = re.compile(r"^\s*(?:completion\s+)?requi(?:site|rement)s\b", re.I)
 CD_TOTAL = re.compile(r"Total (?:Required )?Credits", re.I)
 # The award a program's name ends in, "Accounting (AA)", in the words the award
 # matcher reads (P.AWARD_WORDS); a certificate's letters vary by college.
@@ -2061,8 +2064,34 @@ def cd_note_miss(info: dict, code: str, page: dict) -> None:
     answers = info.setdefault("miss_answers", {})
     answers[key] = answers.get(key, 0) + 1
     kept = info.setdefault("miss_pages", [])
-    if len(kept) < CD_MISS_KEEP:
+    # The first few, and the first of every other answer, so a rarer failure is filed in full too.
+    seen = {"%s %s" % (k.get("access"), k.get("status")) for k in kept}
+    if len(kept) < CD_MISS_KEEP or (key not in seen and len(kept) < CD_MISS_KEEP + 4):
         kept.append(cd_miss_account(code, page))
+
+
+# A code carrying a mark beyond letters, digits and a hyphen ("AS-T ADMJ", "AD&D-AS", "E/SB-AS", "ENG:CW-AA",
+# "BA2.0-AST"): Glendale's 51 such codes are as many as its overviews that answered 405 (50) or 404 (1) in run
+# 43361595138, so the reader takes each program's address from the index's own link where the index has one.
+CD_CODE_MARK = re.compile(r"[^A-Za-z0-9\-]")
+
+
+def cd_href_code(href: str, root: str) -> str | None:
+    """The program code an index link names: its path after /programs/, unescaped, without a trailing slash."""
+    base = root.rstrip("/") + "/programs/"
+    if not (href or "").startswith(base):
+        return None
+    return urllib.parse.unquote(href[len(base):].split("?", 1)[0].split("#", 1)[0]).rstrip("/") or None
+
+
+def cd_index_hrefs(links: list, root: str, codes: list) -> dict:
+    """{code: the index's own address for it}, for each code an index link names exactly."""
+    want, out = set(codes), {}
+    for link in links or []:
+        c = cd_href_code(link.get("href") or "", root)
+        if c in want and c not in out:
+            out[c] = link["href"]
+    return out
 
 
 def cd_miss_account(code: str, over: dict) -> dict:
@@ -2113,19 +2142,22 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
                 answers.append({"error": str(exc).splitlines()[0][:160]})
     reader.page.route(CD_SEARCH, on_route)
     reader.page.on("response", on_response)
-    index_links: list = []
+    index_all: list = []
     try:
         reader.load(root + "/programs")
         reader.page.wait_for_timeout(2500)
         try:
-            index_links = cd_index_links({"links": reader.page.evaluate(CD_LINKS_JS)}, root)
+            index_all = cd_index_links({"links": reader.page.evaluate(CD_LINKS_JS)}, root, keep=2000)
         except Exception:
             pass
     finally:
         reader.page.unroute(CD_SEARCH, on_route)
         reader.page.remove_listener("response", on_response)
     info = report.setdefault("coursedog", {"root": root})
-    info["index_program_links"] = index_links
+    info["index_program_links"] = index_all[:8]
+    info["index_program_links_n"] = len(index_all)
+    info["index_program_links_marked"] = [l for l in index_all
+                                          if CD_CODE_MARK.search(cd_href_code(l["href"], root) or "")][:8]
     if not heard or not answers or "error" in answers[0]:
         info["error"] = ("the program search made no search call" if not heard
                          else "the search call's answer was not read: %s" % (answers[:1] or "none"))
@@ -2154,7 +2186,11 @@ def cd_list(reader, start: str, report: dict) -> list[dict]:
         if not data.get("data"):
             break
         skip += len(data["data"])
-    info.update(listed=total, programs=len(programs), errors=errors)
+    hrefs = cd_index_hrefs(index_all, root, [p["code"] for p in programs])
+    for p in programs:
+        if p["code"] in hrefs:
+            p["href"] = hrefs[p["code"]]
+    info.update(listed=total, programs=len(programs), errors=errors, index_hrefs_used=len(hrefs))
     return programs
 
 
@@ -2239,7 +2275,7 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
 def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict) -> list[dict]:
     suffix, pages, direct, missed = None, [], 0, []
     for i, prog in enumerate(programs):
-        base = "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))
+        base = (prog.get("href") or "%s/programs/%s" % (root, urllib.parse.quote(prog["code"]))).rstrip("/")
         got = None
         heard["units"], heard["hours"] = {}, {}
         if suffix:
