@@ -1,7 +1,7 @@
 ---
 title: A receipt too large for the connector applies from the runner
 created: 2026-10-10
-updated: 2026-10-10
+updated: 2026-11-13
 tags: [methodology, supabase, data-write, rollback, ci]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -32,7 +32,7 @@ The receipt is the artifact that was reviewed and that the go was given for. The
 
 ### Read before you write, and commit what you read
 
-Rule 10(a2) asks that a data write be reversible from its receipt. For a write that replaces values, the before-values are the rollback, so the job reads each row's current value immediately before writing it and commits the set beside the receipt. Here: `<receipt>.applied_<run>.json`, naming which rows go back to null and which go back by an older build's own receipt.
+Rule 10(a2) asks that a data write be reversible from its receipt. For a write that replaces values, the before-values are the rollback, so the job reads every row's current value before its first write and commits the set beside the receipt. Since S644 it reads them in pages, files that plan before the first write (a canceled run still leaves its rollback), and finishes the record from a fresh read after the writes, never from a write's response. Here: `<receipt>.applied_<run>.json`, naming which rows go back to null and which go back by an older build's own receipt.
 
 ### Write only the column the receipt owns
 
