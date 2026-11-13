@@ -1,9 +1,5 @@
-<!-- The guide panel (Ally Barker, 2026-11-12: "Make sure the links open to a side bar view of those visuals instead of
-     opening seperate tabs"; "Each card should be clickable and should show a sidebar with the visual"). Each card's link
-     is a plain https link, so without this script it opens its guide in the same tab. With it, the whole card opens the
-     guide in a panel on the right: a modal dialog with a focus trap, Escape and Close shut it and hand focus back to the
-     card, and Open in a new tab stays as the plain way out. A link to this page's own #how-to-confirm shows that section
-     in the panel. Session-built (S647); library_publish.py checks only <main> on a new piece, so this frame survives. -->
+<!-- The guide panel (S647; Ally Barker, 2026-11-12: links open "a side bar view of those visuals"). A card is a plain
+     link; with this script it opens beside the page in a modal dialog. Source: scripts/library_drafts/ in the tracker. -->
 <style>
 .card a.open::after { content: ""; position: absolute; inset: 0; border-radius: 11px; }
 .card:has(a.open:hover) { border-color: var(--line-strong); }

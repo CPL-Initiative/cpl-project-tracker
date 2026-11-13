@@ -40,6 +40,19 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
   // (1)
   check("(1) draft.html is what build.mjs makes from its source", build() === html);
   check("(1) the page stays small enough to store and paste (under 60 KB)", html.length < 60000, html.length + " characters");
+  // The SQL rebuilds the page on the server from Draft 1 (the card's draft in the same starter frame) by fromDraft1's
+  // steps; a Draft 1 made the way the card makes one must come out as this page, whatever its own words were.
+  const { fromDraft1 } = await import(path.join(DIR, "build.mjs"));
+  const d1 = np.buildNewPage(fs.readFileSync(path.join(ROOT, "library", np.STARTER_SLUG, "index.html"), "utf8"), SLUG,
+    { title: "Confirm & Qualify", description: 'A "page" & more', published: "Published by the Chancellor's Office. Draft 1.",
+      main: '<main id="main"><div class="hero"><h1>Confirm</h1></div><section aria-labelledby="g"><h2 id="g">Guides</h2><p>x</p></section></main>' }).html;
+  check("(1) from Draft 1, the server's steps make exactly this page (fromDraft1)", fromDraft1(d1) === html);
+  const md5 = require("crypto").createHash("md5").update(html, "utf8").digest("hex");
+  const sqlBase = path.join(ROOT, "kb", "receipts", "cpl_library_s647_" + SLUG);
+  const fwd = fs.readFileSync(sqlBase + ".sql", "utf8"), proof = fs.readFileSync(sqlBase + "_proof.sql", "utf8");
+  check("(1) the proof and the forward SQL expect this page's md5 and length (write_receipt.py ran after build.mjs)",
+    proof.includes(`'${md5}'`) && fwd.includes(`'${md5}'`) && fwd.includes(`length(v_html) <> ${html.length}`), md5);
+  check("(1) the forward SQL carries the pieces, never the whole page", fwd.length < 20000 && !fwd.includes("<!doctype html>"), fwd.length + " bytes");
 
   // (2)
   check("(2) the <main> passes the drafter's allowlist (new_page.mjs mainProblems)", np.mainProblems(main).length === 0, np.mainProblems(main).join("; "));

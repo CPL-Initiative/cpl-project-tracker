@@ -1,7 +1,8 @@
 {
-  "_about": "Rule 10 receipt (a2) for kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql: two guarded UPDATEs of cpl_library and one INSERT into cpl_library_drafts. The before-values below are the conductor's reads of 2026-11-13 09:12Z and 09:35Z (unchanged between them). cpl_library_history files each prior row whole when the write runs; the rollback restores from it, and carries mwdvs6l1's regen as a literal as well.",
+  "_about": "Rule 10 receipt (a2) for kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql: one DO block that builds the page on the server from Draft 1 and checks its md5, then one INSERT into cpl_library_drafts and two guarded UPDATEs of cpl_library, each required to touch exactly one row. The before-values are the conductor's read of 2026-11-13 at about 09:14Z. cpl_library_history files each prior row whole when the write runs; the rollback restores from it. The rollback sets updated_by back to 'Ally Barker', so the history row it files carries her name, not the bot's.",
   "session": "S647 (SkyPipit), worker for the CPL Library's carried request",
   "cohort": "library-s647@bot",
+  "proof": "kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_proof.sql (read-only; expects matches = true)",
   "draft": {
     "id": "b18c5759-b55b-4341-b3fc-f59c1fd5bcf6",
     "library_id": "4660a13b-984e-4030-a83b-762c507510a7",
@@ -9,13 +10,18 @@
     "based_on": "draft 0aeed57a-9855-4abe-84be-3afa59839fa3",
     "made_by": "S647 session",
     "source": "scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/",
-    "html_chars": 50285
+    "md5": "087e2c7c08e4b653fc4d76332006b376",
+    "chars": 49995,
+    "built_from": "Draft 1 (0aeed57a-9855-4abe-84be-3afa59839fa3) on the server: build.mjs fromDraft1's steps"
   },
   "rows": {
     "how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1": {
       "id": "4660a13b-984e-4030-a83b-762c507510a7",
       "guard_updated_at": "2026-11-12 18:28:48.277161+00",
       "before": {
+        "status": "requested",
+        "url": null,
+        "retired_at": null,
         "updated_at": "2026-11-12 18:28:48.277161+00",
         "updated_by": "Ally Barker",
         "note": null,
@@ -34,9 +40,9 @@
         }
       },
       "after": {
-        "regen": "draft_id b18c5759-b55b-4341-b3fc-f59c1fd5bcf6, ready_at now, based_on_draft 0aeed57a-9855-4abe-84be-3afa59839fa3, Draft 1 under earlier",
-        "refresh_note": "Carried from how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5 (Ally Barker, 2026-11-12): We need three separate cards. The third card should read \"How to confirm\". Each card should be clickable and should show a sidebar with the visual. Add the links in each box to the appropriate visual e.g. \"how to add your CPL coordinator and noncredit lead into MAP\". Make sure the links open to a side bar view of those visuals instead of opening seperate tabs.",
-        "rebuild_from": "node scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs (cpl-project-tracker) writes draft.html from main.html and panel.html in the starter page's frame; write_receipt.py stores it as the card's draft. Publish it on the card writes library/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/.",
+        "regen": "draft_id b18c5759-b55b-4341-b3fc-f59c1fd5bcf6, ready_at at write time, based_on_draft 0aeed57a-9855-4abe-84be-3afa59839fa3, Draft 1 under earlier",
+        "refresh_note": "Carried from how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5 (Ally Barker, 2026-11-12): three clickable cards, the third How to confirm, each opening its visual in a side bar, with the links in each box.",
+        "rebuild_from": "node scripts/library_drafts/how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1/build.mjs (cpl-project-tracker); write_receipt.py stores it as the card's draft.",
         "updated_by": "library-s647@bot"
       }
     },
@@ -44,6 +50,9 @@
       "id": "f1078c28-d9fc-423b-bfc3-0832ae5e43fd",
       "guard_updated_at": "2026-11-12 18:19:23.709551+00",
       "before": {
+        "status": "requested",
+        "url": null,
+        "retired_at": null,
         "updated_at": "2026-11-12 18:19:23.709551+00",
         "updated_by": "Ally Barker",
         "note": null,
@@ -71,10 +80,12 @@
       "after": {
         "regen": null,
         "refresh_note": null,
-        "note": "Superseded by how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1 (S647, 2026-11-13): Ally Barker's last ask here (2026-11-12 18:19 UTC, \"Add the links in each box to the appropriate visual e.g. \"how to add your CPL coordinator and noncredit lead into MAP\"\") is answered by that record's Draft 2, b18c5759-b55b-4341-b3fc-f59c1fd5bcf6. This record's two drafts stay in cpl_library_drafts (ab6214c8, 62fd17cc). Retiring this duplicate is Ally's press.",
-        "updated_by": "library-s647@bot"
+        "note": "Superseded by how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1 (S647, 2026-11-13): its Draft 2 answers this record's last ask (Ally Barker, 2026-11-12 18:19 UTC). Drafts ab6214c8 and 62fd17cc stay. Retiring this duplicate is Ally's press.",
+        "updated_by": "library-s647@bot",
+        "status": "unchanged (requested); retiring it is Ally's press"
       }
     }
   },
-  "rollback": "begin;\n-- Restore both rows from the history row the forward write filed (cpl_library_history_trg, changed_by library-s647@bot), only while\n-- each row still stands as the forward write left it.\nupdate public.cpl_library l\nset regen = h.before->'regen', refresh_note = h.before->>'refresh_note', rebuild_from = h.before->>'rebuild_from',\n    note = h.before->>'note', updated_by = h.before->>'updated_by'\nfrom (select distinct on (library_id) library_id, before from public.cpl_library_history\n      where changed_by = 'library-s647@bot' and library_id in ('4660a13b-984e-4030-a83b-762c507510a7', 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd')\n      order by library_id, changed_at asc) h\nwhere l.id = h.library_id and l.updated_by = 'library-s647@bot';\n-- mwdvs6l1's regen as a literal, should the history row be missing:\n-- update public.cpl_library set regen = '{\"publish\": \"show\", \"draft_id\": \"0aeed57a-9855-4abe-84be-3afa59839fa3\", \"ready_at\": \"2026-11-12T18:28:48.221Z\", \"draft_url\": null, \"new_piece\": true, \"drafted_by\": \"Ally Barker\", \"drafted_with\": \"library-revise-draft\", \"requested_at\": \"2026-11-12T18:28:27.851Z\", \"requested_by\": \"Ally Barker\"}'::jsonb, refresh_note = null, rebuild_from = null, updated_by = 'Ally Barker'\n--   where id = '4660a13b-984e-4030-a83b-762c507510a7' and updated_by = 'library-s647@bot';\ndelete from public.cpl_library_drafts where id = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6' and made_by = 'S647 session' and published_at is null;\ncommit;"
+  "rollback": "kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_rollback.sql",
+  "rollback_sql": "-- Rollback for cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql. Restores both rows from the history rows the forward write filed\n-- (cpl_library_history_trg, changed_by library-s647@bot), only while each still stands as the forward write left it, and raises,\n-- changing nothing, unless both restores touch exactly one row; only then deletes the stored draft. The restore sets\n-- updated_by back to 'Ally Barker', so cpl_library_history files the rollback itself under her name.\ndo $$\ndeclare v_n int;\nbegin\n  update public.cpl_library l\n  set regen = h.before->'regen', refresh_note = h.before->>'refresh_note', rebuild_from = h.before->>'rebuild_from',\n      note = h.before->>'note', updated_by = h.before->>'updated_by'\n  from (select before from public.cpl_library_history where library_id = '4660a13b-984e-4030-a83b-762c507510a7' and changed_by = 'library-s647@bot'\n        order by changed_at asc limit 1) h\n  where l.id = '4660a13b-984e-4030-a83b-762c507510a7' and l.updated_by = 'library-s647@bot' and l.regen->>'draft_id' = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6';\n  get diagnostics v_n = row_count;\n  if v_n <> 1 then raise exception 'S647 rollback: how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1 is not as the forward write left it (% rows)', v_n; end if;\n\n  update public.cpl_library l\n  set regen = h.before->'regen', refresh_note = h.before->>'refresh_note', note = h.before->>'note',\n      updated_by = h.before->>'updated_by'\n  from (select before from public.cpl_library_history where library_id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and changed_by = 'library-s647@bot'\n        order by changed_at asc limit 1) h\n  where l.id = 'f1078c28-d9fc-423b-bfc3-0832ae5e43fd' and l.updated_by = 'library-s647@bot' and l.regen is null and l.note like 'Superseded by how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1%';\n  get diagnostics v_n = row_count;\n  if v_n <> 1 then raise exception 'S647 rollback: how-to-confirm-and-qualify-for-cpl-funding-mwdv9pl5 is not as the forward write left it (% rows)', v_n; end if;\n\n  delete from public.cpl_library_drafts where id = 'b18c5759-b55b-4341-b3fc-f59c1fd5bcf6' and made_by = 'S647 session' and published_at is null;\n  get diagnostics v_n = row_count;\n  raise notice 'S647 rollback: both rows restored; % draft row deleted', v_n;\nend $$;\n"
 }

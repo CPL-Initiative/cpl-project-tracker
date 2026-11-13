@@ -221,17 +221,17 @@ section { display: grid; gap: 16px; min-width: 0; }
 <h1>How to Confirm and Qualify for CPL Funding</h1>
 <p class="sub">Four minimum conditions, and a guide to each</p>
 <div class="title-accent" aria-hidden="true"></div>
-<p class="lede">A college qualifies for CPL Implementation Funding when it meets four minimum conditions, which the Chancellor&#x27;s Office publishes on the CPL Initiative Funding page. The MAP team wrote a guide for each. Select a card to open its guide beside this page.</p>
+<p class="lede">A college qualifies for CPL Implementation Funding when it meets four minimum conditions, which the Chancellor&#x27;s Office publishes on the CPL Initiative Funding page. Two guides from the MAP team cover three of them, and the steps on this page cover local confirmation. Select a card to open a guide, or the steps, beside this page.</p>
 </div></div>
 <div class="body">
 
 <section aria-labelledby="h-conditions">
 <h2 id="h-conditions">The four minimum conditions</h2>
 <ol class="cards four steps">
-<li class="card"><b>CPL Coordinator</b><p>CPL Coordinator assigned on MAP and CPL Assistant email listed on the college CPL Landing Page.</p></li>
-<li class="card"><b>Local confirmation</b><p>Local confirmation on file by December 31, 2026.</p></li>
-<li class="card"><b>Veterans&#x27; JSTs</b><p>Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP and processed for CPL.</p></li>
-<li class="card"><b>Noncredit CPL Lead</b><p>For the noncredit CPL funding: Assign in MAP a Noncredit CPL Lead who meets regularly with the CPL Coordinator and attest to this on the CPL Funding Dashboard.</p></li>
+<li class="card"><h3>CPL Coordinator</h3><p>CPL Coordinator assigned on MAP and CPL Assistant email listed on the college CPL Landing Page.</p></li>
+<li class="card"><h3>Local confirmation</h3><p>Local confirmation on file by December 31, 2026.</p></li>
+<li class="card"><h3>Veterans&#x27; JSTs</h3><p>Minimum of 75% of enrolled veteran Joint Services Transcripts uploaded in MAP and processed for CPL.</p></li>
+<li class="card"><h3>Noncredit CPL Lead</h3><p>For the noncredit CPL funding: Assign in MAP a Noncredit CPL Lead who meets regularly with the CPL Coordinator and attest to this on the CPL Funding Dashboard.</p></li>
 </ol>
 </section>
 
@@ -247,10 +247,10 @@ section { display: grid; gap: 16px; min-width: 0; }
 <section id="how-to-confirm" aria-labelledby="h-confirm">
 <h2 id="h-confirm">How to confirm</h2>
 <ol class="cards four steps">
-<li class="card"><b>Find your college</b><p>Open the <a href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/" target="_blank" rel="noopener">CPL Initiative Funding page</a> and find your college in its table of institutions.</p></li>
-<li class="card"><b>Select Confirm</b><p>Select Confirm beside your college&#x27;s name. A short form opens.</p></li>
-<li class="card"><b>Give your email, name and title</b><p>Start with your college or district email address, then give your name and title: vice president of academic affairs, vice president of student services, college president, or another senior administrator. Submitting attests that you are an administrator asking for your college to take part.</p></li>
-<li class="card"><b>Watch for the confirmation</b><p>CPL Initiative staff review the request and email a confirmation. Until they approve it, your college&#x27;s row reads Awaiting CPL Initiative Confirmation. Then the condition shows as complete.</p></li>
+<li class="card"><h3>Find your college</h3><p>Open the <a href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/" target="_blank" rel="noopener">CPL Initiative Funding page</a> and find your college in its table of institutions.</p></li>
+<li class="card"><h3>Select the Confirm button</h3><p>Select the Confirm button beside your college&#x27;s name. Its words carry the deadline, or read Confirm now once the deadline has passed. A short form opens.</p></li>
+<li class="card"><h3>Give your email, name and title</h3><p>Start with your college or district email address, then give your name and title: vice president of academic affairs, vice president of student services, college president, or another senior administrator. Submitting attests that you are an administrator asking for your college to take part.</p></li>
+<li class="card"><h3>Watch for the confirmation</h3><p>CPL Initiative staff review the request and email a confirmation. Until they approve it, your college&#x27;s row reads Awaiting CPL Initiative Confirmation. Then the condition shows as complete.</p></li>
 </ol>
 <p class="intro">Questions go to the MAP team at <a href="mailto:map@rccd.edu">map@rccd.edu</a>.</p>
 </section>
@@ -260,12 +260,8 @@ section { display: grid; gap: 16px; min-width: 0; }
 <p>Published by the California Community Colleges Chancellor's Office, Credit for Prior Learning Initiative. Draft 2, November 13, 2026.</p>
 <p>Licensed CC BY 4.0.</p>
 </div></footer>
-<!-- The guide panel (Ally Barker, 2026-11-12: "Make sure the links open to a side bar view of those visuals instead of
-     opening seperate tabs"; "Each card should be clickable and should show a sidebar with the visual"). Each card's link
-     is a plain https link, so without this script it opens its guide in the same tab. With it, the whole card opens the
-     guide in a panel on the right: a modal dialog with a focus trap, Escape and Close shut it and hand focus back to the
-     card, and Open in a new tab stays as the plain way out. A link to this page's own #how-to-confirm shows that section
-     in the panel. Session-built (S647); library_publish.py checks only <main> on a new piece, so this frame survives. -->
+<!-- The guide panel (S647; Ally Barker, 2026-11-12: links open "a side bar view of those visuals"). A card is a plain
+     link; with this script it opens beside the page in a modal dialog. Source: scripts/library_drafts/ in the tracker. -->
 <style>
 .card a.open::after { content: ""; position: absolute; inset: 0; border-radius: 11px; }
 .card:has(a.open:hover) { border-color: var(--line-strong); }
