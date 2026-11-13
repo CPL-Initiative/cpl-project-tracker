@@ -80,9 +80,8 @@
     24.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 23.0-25.0; the catalog states 23.0-24.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
@@ -104,9 +103,7 @@
      8.0,
      10.0
     ]
-   },
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   }
   },
   "repeated": {
    "codes": [],
@@ -171,7 +168,8 @@
     "pool manager",
     "camp counselor",
     "theme park attendant"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -419,5 +417,14 @@
    "Text before the section heading (activity courses, 9-unit electives) belongs to the preceding Kinesiology program and was not read."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

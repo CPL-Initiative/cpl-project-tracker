@@ -74,8 +74,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     39.0,
     39.0
@@ -89,8 +89,10 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    22.0,
+    22.0
    ]
   },
   "repeated": {
@@ -115,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +148,8 @@
    ],
    "careers": [
     "construction management"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -251,5 +254,14 @@
    "Note says this is a high-unit major; student may waive LACCD GE Area 4a (3 units) or Area 7 (3 units)."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

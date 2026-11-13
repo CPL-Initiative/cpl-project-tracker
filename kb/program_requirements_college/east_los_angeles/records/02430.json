@@ -85,8 +85,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     56.0,
     58.0
@@ -100,8 +100,10 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    2.0,
+    5.0
    ]
   },
   "repeated": {
@@ -126,7 +128,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -160,7 +162,8 @@
     "architectural office",
     "environmental design",
     "related design-focused industry"
-   ]
+   ],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -318,5 +321,14 @@
    "Note: 6 units of major courses may be double counted in LACCD GE areas 2 and 3; high-unit major per AP 4100, student may waive LACCD GE Area 4a or Area 7 (3 units)."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

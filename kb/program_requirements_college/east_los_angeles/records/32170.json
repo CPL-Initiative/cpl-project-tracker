@@ -67,8 +67,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     52.0,
     53.0
@@ -82,8 +82,10 @@
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    7.0,
+    8.0
    ]
   },
   "repeated": {
@@ -108,7 +110,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -138,7 +140,8 @@
     "Garner a critical understanding of the complex interplay between social circumstances and individual experience.",
     "Understand and express in writing the implementation of methods for a social scientific research project."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -339,5 +342,14 @@
    "No careers named in this section."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }
