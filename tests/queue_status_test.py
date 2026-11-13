@@ -151,6 +151,23 @@ fs = M.harvest_faults(bad)
 check("have past of, and a missing part, are named", any("coci" in f for f in fs) and any("careers" in f for f in fs), fs)
 check("the query reads every key the block needs, and the active programs from COCI",
       all(k in M.HARVEST_SQL for k in M.HARVEST_KEYS) and "status = 'Active'" in M.HARVEST_SQL, M.HARVEST_SQL[:80])
+# One course key in both places (d-course-key-normalized-s648): the harvest row counted raw (college, code)
+# pairs and matched SLOs on the raw code (89,192 and 12,815 on 2026-11-13), the Commons dashboard the key
+# (88,736 and 13,293). A raw-code distinct or match must not return.
+_hs = re.sub(r"\s+", " ", M.HARVEST_SQL)
+check("the harvest row counts a course by its key and matches an SLO on the key, never on the raw code",
+      M.COURSE_KEY_SQL == "upper(regexp_replace(%s, '[\\s-]+', '', 'g'))"
+      and "select distinct pc.college, upper(regexp_replace(pc.course_code, '[\\s-]+', '', 'g')) code_key" in _hs
+      and "upper(regexp_replace(o.course_code, '[\\s-]+', '', 'g')) = c.code_key" in _hs
+      and "<> ''" in _hs
+      and not re.search(r"distinct pc\.college, pc\.course_code\b", _hs)
+      and not re.search(r"o\.course_code = c\.course_code", _hs), _hs[:400])
+sys.path.insert(0, os.path.join(ROOT, "kb"))
+import _commons_data_live as _CDL  # noqa: E402
+_key = lambda c: re.sub(r"[\s-]+", "", c).upper()   # what the SQL key does, in Python
+check("the SQL key and the Commons dashboard's code_key agree on spelling variants",
+      all(_CDL.code_key(c) == (_key(c) or None) for c in ("ANTH C141", "ANTHC 141", "anth-c 141", " ", "CS/IS 101"))
+      and _CDL.code_key("ANTH C141") == _CDL.code_key("ANTHC 141") and _CDL.code_key(" ") is None, "")
 check("the view draws the same five parts the block holds",
       set(re.findall(r'\{ id: "([a-z]+)", title: "[^"]+", note:', open(os.path.join(ROOT, "program_requirements.js"), encoding="utf-8").read()))
       == set(M.WHOLE_PARTS), sorted(M.WHOLE_PARTS))
