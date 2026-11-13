@@ -848,6 +848,11 @@ _HOURS_WORD = re.compile(r"\b(?:hours?|hrs?)\b", re.I)
 _NUMBER = re.compile(r"\d+(?:\.\d+)?")
 _NOTHING = re.compile(r"(?<![\w.])(?:0(?:\.0+)?|N/A)(?![\w.])", re.I)
 _PER_COURSE = re.compile(r"\b(?:each|per)\s+course\b", re.I)
+# The total's whole line: the label, an optional colon, a figure or a range, an optional final period.
+_TOTAL_LINE = re.compile(r"[ \t]*Total\s+(?:Contact\s+)?Hours?[ \t]*:?[ \t]*(?:\n[ \t]*)?\d+(?:\.\d+)?"
+                         r"(?:[ \t]*(?:[-\u2013]|to)[ \t]*\d+(?:\.\d+)?)?[ \t]*\.?[ \t]*", re.I)
+# A course-code-shaped token: a capital subject and a course number that is not 0 ("VOCED 620", "ESL 501").
+_CODE_SHAPE = re.compile(r"\b[A-Z][A-Z&/]{1,7}[ \t]*-?[ \t]*(?:[1-9]\d{0,3}|0\d{1,3})[A-Z]{0,2}\b")
 
 
 def _code_pattern(code: str) -> re.Pattern | None:
@@ -893,6 +898,15 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
     line_start = sec.rfind("\n", 0, t.start()) + 1
     if _PER_COURSE.search(sec[max(0, sec.rfind("\n", 0, max(0, line_start - 1)) + 1):t.end()]):
         return False
+    # The total's line is the total and nothing else, and the line after it says nothing of each course
+    # (the final read of #3193: 'Total Hours 48-54 per course', '(each course)', 'plus 18 lab').
+    line_end = sec.find("\n", t.end())
+    line_end = len(sec) if line_end < 0 else line_end
+    if not _TOTAL_LINE.fullmatch(sec[line_start:line_end]):
+        return False
+    after = sec[line_end + 1:].split("\n", 1)[0] if line_end < len(sec) else ""
+    if _PER_COURSE.search(after):
+        return False
     for h in _HOURS_FIRST.finditer(sec):
         if not (t.start() <= h.start() and h.end() <= t.end()):
             return False
@@ -908,12 +922,29 @@ def total_hours_printed(text: str, stated: tuple[float, float], labels: list, re
     hits = sorted(((m.start(), m.end()) for p in pats for m in p.finditer(sec, 0, t.start())), key=lambda x: x[0])
     if any(not p.search(sec, 0, t.start()) for p in pats):
         return False
+    # Between the heading and the total, every course-code-shaped token is a listed course (a later
+    # program's rows cannot stand in for this record's), and no listed code comes back after the last
+    # listed course's first row.
+    for m in _CODE_SHAPE.finditer(sec, 0, t.start()):
+        if not any(p.fullmatch(m.group(0)) for p in pats):
+            return False
+    firsts = [p.search(sec, 0, t.start()).start() for p in pats]
+    seen_first = set(firsts)
+    if any(a > max(firsts) and a not in seen_first for a, _ in hits):
+        return False
     for k, (a, b) in enumerate(hits):
         row = sec[b:hits[k + 1][0] if k + 1 < len(hits) else t.start()]
         if not _NOTHING.search(row):
             return False
         if any(float(n) != 0 for n in _NUMBER.findall(_NOTHING.sub(" ", row))):
             return False
+    # Below the total, a listed course's line printing a figure other than 0 is that course's hours.
+    for p in pats:
+        for m in p.finditer(sec, t.end()):
+            ln_end = sec.find("\n", m.end())
+            rest = sec[m.end():len(sec) if ln_end < 0 else ln_end]
+            if any(float(n) != 0 for n in _NUMBER.findall(rest)):
+                return False
     return True
 
 

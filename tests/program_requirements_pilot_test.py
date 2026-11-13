@@ -2394,6 +2394,19 @@ ADV = {
     "no heading on the page": SBVC_NC.replace(SBVC_HEAD + "\n", ""),
     "a total the record does not hold": SBVC_NC.replace("48-54", "48-60"),
     "a listed course the page does not show": SBVC_NC.replace("VOCED 603\tCustomer Service\t0\n", ""),
+    # The final read of #3193: the total's line is the total and nothing else.
+    "'per course' after the figure": SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54 per course"),
+    "'(each course)' after the figure": SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54 (each course)"),
+    "'plus 18 lab' after the figure": SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54 plus 18 lab"),
+    "', 60 with internship' after the figure": SBVC_NC.replace("Total Hours\t48-54", "Total Hours 48-54, 60 with internship"),
+    "'each course' on the line after": SBVC_NC + "\nfor each course in the sequence",
+    # An unlisted course-code-shaped token, or a listed code back again, before the total.
+    "an unlisted course row before the total": SBVC_NC.replace("VOCED 603\tCustomer Service\t0\n",
+                                                               "VOCED 603\tCustomer Service\t0\nVOCED 620\tCustodial\t0\n"),
+    "a listed code back again before the total": SBVC_NC.replace("VOCED 603\tCustomer Service\t0\n",
+                                                                 "VOCED 603\tCustomer Service\t0\nVOCED 600\tJob Search\t0\n"),
+    # Per-course hours printed below the total.
+    "a listed course's hours below the total": SBVC_NC + "\nVOCED 600 Job Search Skills 18\nVOCED 601 Resume Writing 12",
 }
 for _why, _t in ADV.items():
     check(S.score(sbvc, SBVC_LIST, _t, "Noncredit program")["arithmetic"]["status"] != "equal",
