@@ -61,20 +61,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     216.0,
     216.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Core Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +94,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -129,7 +125,8 @@
     "Students will develop a paragraph using lower-intermediate level grammar.",
     "Students will create a presentation about their background, job skills, and educational experiences."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -181,5 +178,14 @@
    "The page heading is 'English as a Second Language - Non Credit' with the award subheading 'English as a Second Language Certificate of Competency'."
   ]
  },
- "extracted_run": "39032865307"
+ "extracted_run": 43355010411,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t\t2"
+  }
+ ],
+ "read_run": "39032865307"
 }

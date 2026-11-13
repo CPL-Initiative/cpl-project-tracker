@@ -72,11 +72,8 @@
     26.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 26.0-33.0; the catalog states 26.0-26.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -347,5 +344,6 @@
    "The program student learning outcomes are printed on the program page above this certificate, which is the only award on the page."
   ]
  },
- "extracted_run": "39032865307"
+ "extracted_run": 43355010411,
+ "read_run": "39032865307"
 }
