@@ -22,16 +22,16 @@ decision rows wait in a NOT YET RUN receipt.
 ## First things, in order
 
 1. **Run `kb/receipts/cpl_memory_s648_rows_2026-11-13.sql`** if its first line still says NOT YET RUN (twelve
-   proposed rows, every summary at most 400 characters, longest 388; one call of three statements). Then read the
+   proposed rows, every summary at most 400 characters, longest 389; one call of three statements). Then read the
    replies on [Open Asks Sheet 193](https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU) and on [Sheet 192](https://claude.ai/artifact/1Kt8Yg88NWUpFduHLofWHQ)
    before acting on anything either names.
-2. **Cal-GETC 34 (#3244, merged), Grossmont first.** `claude/harvest-calgetc-grossmont-s648`: `step=reconcile` was
-   dispatched 18:24Z (*as reported*; not read at writing). Read the run, compare against `main`, `step=reread`, the
-   display build, PR, merge on a green `test` after COBIx's spot-check. Then Cosumnes River (the statewide step, 30566,
+2. **Cal-GETC 34 (#3244, merged), Grossmont first.** `claude/harvest-calgetc-grossmont-s648`: reconcile 43482160320 filled 46136
+   and also 46141 (total 65, 38 + 34 = 72; restored on the branch, refilled by the next reconcile); `step=reread`
+   `force=43482160320` for 46136 from about 18:46Z (*as reported*). Read it, compare against `main`, the display build, PR, merge on a green `test` after COBIx's spot-check. Then Cosumnes River (the statewide step, 30566,
    33072, 39656) and Cerro Coso (`set` 35 from p.65, six programs), one college each. Held by name: Antelope Valley
    43028, Los Angeles Southwest 33658, Sacramento City 30700, Cuyamaca 46530.
-3. **Glendale (#3202, draft, head `e6d66dbd`, not loaded).** The free whole-college slow read on `5dc35578` was
-   dispatched about 17:35Z (*as reported*). After it files: refile with `--main`, one reader on the last delta, a small
+3. **Glendale (#3202, draft, head `e6d66dbd`, not loaded).** The free whole-college slow read is run 43472166835,
+   due about 19:40Z (*as reported*). After it files: refile with `--main`, one reader on the last delta, a small
    paid extraction (estimate under $1, limit $40), the compare tool, `step=load` (skips 12571 and 37070), the display.
 4. **Re-clustering (#3245, draft, nothing applied).** Reduce it to its two ready cases (FIRE M1274 into FIRE 130 X;
    the BUSI M1228 split, insert-only, new BUSI M11TU), a review of at most 9 agents, then apply both in one window clear
@@ -56,7 +56,7 @@ from the last page) on #3202, #3245 and #3248; never `get` #3111 or #3110.
 **Safe unattended, in this order,** each under Rule 10 and its playbook: *First things* 1 (INSERT-only, rollback in
 its header), 2 (the display go of 2026-10-10 stands for every college; merging publishes, so COBIx's spot-check
 first), 3 up to its load (paid extraction within $40, after the reader), 5, 6, 8. **Never run by a session without his
-word:** anything on Sheet 193 cards 3 to 5; the four held re-clustering cases; the CVMA rows (a person's rows); removing
+word:** anything on Sheet 193 cards 3 to 6; #3250; the four held re-clustering cases; the CVMA rows (a person's rows); removing
 the repository copy of `SUPABASE_SERVICE_KEY` (his setting); anything on the `CLAUDE.md` hold list. #2894 is his.
 
 ## You are the conductor
@@ -103,6 +103,7 @@ a migration says: it applies on the push of the `.apply` change, before any merg
 | #3202 `claude/harvest-glendale-s645` (`e6d66dbd`) | draft, free read running | *First things* 3 |
 | #3245 `claude/reclustering-six-cases-s648` | draft, plan only | *First things* 4 |
 | #3248 `claude/exhibits-shared-titles-s648` (`3aa3ad85`) | draft, test running | *First things* 5 |
+| #3250 `claude/harvest-set-step-standing-s648` | draft; reverses Sheet 82 card 2 | Sam's ruling, Sheet 193 card 6 |
 | `claude/harvest-calgetc-grossmont-s648` | no PR; reconcile dispatched 18:24Z | *First things* 2 |
 | #3227 `dcba4c45`, #3242 `e8985e00`, #3240 `ae9dda52`, #3243 `ac7c6595`, #3241 `bbfbb6bb`, #3246 `57d99e14`, #3244 `74ad28b9`, #3247 `7cd72253` | merged on green | none |
 | #2894 `claude/cobix-inbox` | Sam's | untouched |
@@ -151,12 +152,14 @@ PT note, *"college collection changes don't seem to have hit cobi yet"*, came be
 
 ## Waits for Sam
 
-[Open Asks Sheet 193](https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU) is current (`SHEET_ID` `2026-11-13-open-asks-193`, published about 18:42Z, a fresh store, `replies` empty at publish by a list read). Cards 1 and 2 are
-decisions to revise. Cards 3 to 5 wait, each *Yours to rule*: **3** re-clustering, a picker per question (Honors reach:
+[Open Asks Sheet 193](https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU) is current (`SHEET_ID` `2026-11-13-open-asks-193`, Version 1 published about 18:42Z, Version 2 about 18:45Z adding card 6 with no card moved, a fresh store, `replies` empty at publish by a list read). Cards 1 and 2 are
+decisions to revise. Cards 3 to 6 wait, each *Yours to rule*: **3** re-clustering, a picker per question (Honors reach:
 M-IDs only, recommended, 3 new M-IDs, or official ids too, 136; AJ 160, MUS 130 and REAL M1038 with M1040, each keep
 recommended; MATH M1044 into M1036, merge after the refrigeration lab articulation is settled, and who settles it);
 **4** the three CVMA rows (fix the two typos; name the agency for Water Treatment Facilities or remove that row);
-**5** Sheet 192 card 4 carried: the Las Positas cards (22, 17 still department plus code). COBIx is also raising the
+**5** Sheet 192 card 4 carried: the Las Positas cards (22, 17 still department plus code); **6** draft #3250, which
+would hold a `set` step's figure on an overlap transfer degree and so reverse his Sheet 82 card 2 (merge or close; 76
+records at 14 colleges already in overlap stay either way). COBIx is also raising the
 CompTIA exam-series question with Sam. #3217 (the CVC chip) stays parked.
 
 ## Open work, in order (from the lanes' NEXT lines)
@@ -198,6 +201,9 @@ view (no roadmap row, auditor count or re-mint moved); `kb/README.md` and `READM
 - Length-check a prepared receipt against the table's constraints when it is written.
 - A reader runs the code before a dispatch that touches shared reader code.
 - Per-college evidence in config, never a pattern over catalog prose, for a figure a ruling fills.
+- Read the memory rows for the checks a rule leans on before reviewing it: a transfer degree past its total passes by
+  Sam's Sheet 82 card 2, and three review rounds called it a fault. The statewide fill's hold on overlap records (24)
+  is the conductor's stricter choice, on Sheet 193 card 1.
 - A compare before each load; never repost an artifact that a restore undid.
 
 ## Let go

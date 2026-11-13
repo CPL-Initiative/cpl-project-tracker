@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-13T18:42:18Z",
+  "written_at": "2026-11-13T18:45:42Z",
   "session": 648,
   "moniker": "SkyTanager",
   "run": "the conductor, with Sam in session",
@@ -307,6 +307,13 @@
         "at": "2026-11-13",
         "words": "Sheet 190 card 6, his go at 13:21Z. Merged in pull request 3227 and deployed in S648."
       }
+    },
+    {
+      "title": "Merge or close pull request 3250, which would reverse Sheet 82 card 2",
+      "text": "On October 14 you ruled that a transfer degree whose major and GE run past its total passes. Draft 3250 would let a college's printed GE figure hold such a record. 76 records at 14 colleges in overlap stay either way.",
+      "if_no_reply": "Pull request 3250 stays unmerged and your Sheet 82 ruling stands.",
+      "link": "https://claude.ai/artifact/XNwKc2jLizwx4baMK6mZWU",
+      "link_text": "Open Sheet 193"
     }
   ],
   "notes": {
