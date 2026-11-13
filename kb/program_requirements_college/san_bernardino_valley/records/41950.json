@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     132.0,
     144.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -129,7 +125,8 @@
     "Demonstrate knowledge needed to create and effectively pitch a business plan to prospective lenders and investors.",
     "Identify and apply the key managerial roles of planning, organizing, staffing, leading and controlling applications in entrepreneurial settings."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -195,5 +192,14 @@
    "No careers or job titles are named in the program description."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

@@ -94,38 +94,37 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
-    20.0,
-    33.0
+    54.0,
+    67.0
    ],
    "stated": [
-    20.0,
-    27.0
+    60.0,
+    60.0
    ],
-   "against": "program",
+   "against": "degree",
+   "ge": [
+    34.0,
+    34.0
+   ],
    "why": [
-    "the blocks sum to 20.0-33.0; the catalog states 20.0-27.0"
+    "the record says electives fill the degree total, but the catalog text names no electives"
    ],
-   "degree": {
-    "pass": false,
-    "status": "incomplete",
+   "major": {
+    "pass": true,
+    "status": "equal",
     "computed": [
-     54.0,
-     67.0
+     20.0,
+     33.0
     ],
     "stated": [
-     60.0,
-     60.0
+     20.0,
+     27.0
     ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [
-     "the record says electives fill the degree total, but the catalog text names no electives"
-    ]
+    "against": "program",
+    "why": [],
+    "meets": true
    }
   },
   "repeated": {
@@ -821,5 +820,6 @@
    "Catalog prints codes with leading zeros (ANATOMY 001, BUS 015, etc.); matched to closed-list codes without zeros. Catalog also lists HEALTH 011 under List A, which is not in the closed list."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "read_run": "39063389278"
 }

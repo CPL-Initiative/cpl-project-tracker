@@ -85,7 +85,6 @@
   "arithmetic": {
    "pass": true,
    "status": "equal",
-   "meets": true,
    "computed": [
     18.0,
     20.0
@@ -96,7 +95,7 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -342,6 +341,6 @@
    "The page states the standard ADT requirement of 60 CSU-transferable units including Cal-GETC and at least 18 units in the major; read as generic ADT boilerplate, so degree_total is null. Cal-GETC units are not printed."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

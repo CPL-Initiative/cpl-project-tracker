@@ -67,22 +67,19 @@
    "pass": false
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     24.5,
     24.5
    ],
    "stated": [
-    60.0,
-    60.0
+    24.5,
+    24.5
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
@@ -90,11 +87,16 @@
      24.5
     ],
     "stated": [
-     24.5,
-     24.5
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     35.5,
+     35.5
+    ]
    }
   },
   "repeated": {
@@ -315,6 +317,6 @@
    "Catalog codes use leading zeros/spacing (HSW 001, COUN 064, SOCI 002, SOCI C1000) matching closed-list HSW 1, COUN 64, SOC 2, SOCIC1000; treated as the same courses."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

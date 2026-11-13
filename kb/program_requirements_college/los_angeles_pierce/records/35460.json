@@ -74,11 +74,8 @@
     27.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 20.0-33.0; the catalog states 20.0-27.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -549,6 +546,6 @@
    "Program learning outcomes are printed for the program; this AA-T is the only award in the section."
   ]
  },
- "extracted_run": 39018421038,
- "read_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": 39018421038
 }

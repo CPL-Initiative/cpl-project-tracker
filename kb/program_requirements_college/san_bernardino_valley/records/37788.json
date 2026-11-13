@@ -130,7 +130,8 @@
     "Develop and demonstrate a progressive cumulation of skills in reading, listening, speaking and writing in the English language in various real-world situations that are necessary to advance to the composition-based ESL courses.",
     "Recognize and anticipate cultural bias through collaborative activities that foster English language acquisition."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -195,5 +196,14 @@
    "ESL 601 is listed only as a recommended course and is not on the closed list (catalog_addition true); it does not count toward the total."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

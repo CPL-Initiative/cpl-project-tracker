@@ -85,7 +85,25 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     30.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": null,
+    "why": [],
+    "fill": [
+     30.0,
+     34.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -240,6 +258,6 @@
    "No careers are named in the program's own section."
   ]
  },
- "extracted_run": 39037377728,
- "read_run": "39035226783"
+ "extracted_run": 43355021555,
+ "read_run": 39037377728
 }

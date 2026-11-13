@@ -70,7 +70,7 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    25.0,
+    26.0,
     31.0
    ],
    "stated": [
@@ -135,7 +135,8 @@
     "Apply knowledge from anatomy, chemistry, biology, physiology, psychology and math as a basis for understanding the role of food for Nutrition and Dietetics transfer degree.",
     "Examine and explain the relationship between diet, lifestyle, behavior, and health, within the framework of cultural and social influences."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -290,5 +291,14 @@
    "FAM & CS 021 and SOC 125 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

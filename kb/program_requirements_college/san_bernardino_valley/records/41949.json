@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     96.0,
     108.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses:' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -130,7 +126,8 @@
     "Master a range of listening skills that you can use on the job and in your personal life.",
     "Develop knowledge, skills, and judgment around human communication that facilitate their ability to work collaboratively with others."
    ],
-   "careers": []
+   "careers": [],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -197,5 +194,14 @@
    "No careers or job titles are named for the program; the description mentions small business owners and staff only generally."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t9"
+  }
+ ],
+ "read_run": "38748858322"
 }

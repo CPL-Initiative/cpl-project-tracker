@@ -61,37 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    68.0,
-    68.0
-   ],
-   "stated": [
-    60.0,
-    60.0
-   ],
-   "against": "degree",
-   "ge": [
     34.0,
     34.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "stated": [
+    34.0,
+    34.0
    ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     34.0,
-     34.0
+     68.0,
+     68.0
     ],
     "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
      34.0,
      34.0
     ],
-    "against": "program",
-    "why": []
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -116,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -158,7 +157,8 @@
     "Database Administration",
     "Network Security",
     "Web Development"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -240,5 +240,14 @@
    "Closed-list code 'CSIS294' (no space, units not stored) matched to catalog 'CSIS-294' (4 units)."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

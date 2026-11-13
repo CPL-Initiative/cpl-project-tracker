@@ -134,7 +134,8 @@
    "careers": [
     "entry-level clerk in a business office",
     "office worker"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -202,5 +203,14 @@
    "'office worker' is taken from the program learning outcomes text; 'entry-level clerk in a business office' from the program description."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t1"
+  }
+ ],
+ "read_run": "38748858322"
 }

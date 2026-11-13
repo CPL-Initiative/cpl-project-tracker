@@ -159,10 +159,11 @@ jobs:
         shard: [1, 2, 3, 4, 5, 6]
     steps:
       # Everything but kb/receipts/ (1.6 GB of the 3.8 GB tree, measured
-      # 2026-10-29), which only three suites read, one file each: they are named
-      # back in below. The full checkout took 2 min 33 s of every shard on 10-29.
+      # 2026-10-29), which only a few suites read: their files are named back in
+      # below. The full checkout took 2 min 33 s of every shard on 10-29.
       # A suite that starts reading another receipt fails here on ENOENT, so
-      # name its file on a line of its own.
+      # name its file on a line of its own (library_qualify_draft.test.js reads
+      # its forward SQL, its proof and its rollback, S647).
       - uses: actions/checkout@v7
         with:
           filter: blob:none
@@ -173,6 +174,9 @@ jobs:
             /kb/receipts/program_requirement_records_load_2026-10-04.sql
             /kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql
             /kb/receipts/cobi_nav_first_light_magic_link_2026-11-12_s642.sql
+            /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1.sql
+            /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_proof.sql
+            /kb/receipts/cpl_library_s647_how-to-confirm-and-qualify-for-cpl-funding-mwdvs6l1_rollback.sql
       - uses: actions/setup-node@v7
         with:
           node-version: '20'

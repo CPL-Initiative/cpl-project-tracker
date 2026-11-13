@@ -82,8 +82,8 @@
     "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
      52.0,
      52.0
@@ -97,8 +97,10 @@
      34.0,
      34.0
     ],
-    "why": [
-     "the record says electives fill the degree total, but the catalog text names no electives"
+    "why": [],
+    "fill": [
+     8.0,
+     8.0
     ]
    }
   },
@@ -156,7 +158,8 @@
    ],
    "careers": [
     "professional and community theatre"
-   ]
+   ],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -465,5 +468,14 @@
    "Career entry taken from 'assisting students towards employment in the professional and community theatre'."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }
