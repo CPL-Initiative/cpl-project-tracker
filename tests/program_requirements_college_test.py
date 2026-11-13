@@ -4318,6 +4318,32 @@ with tempfile.TemporaryDirectory() as td:
           and json.load(open(os.path.join(dest, "summary.json"))).get("held_failing_on_main") == ["24432"]
           and "fail on main, carried as filed there for the load to skip: 1 (24432)" in rk_out.getvalue(),
           "a held record that fails on main is carried as it is and named: %s" % rk_out.getvalue().strip()[-160:])
+    # The load skips it (COBIx on #3202, 17:29Z): load_rows reads held_failing_on_main.
+    C._write(os.path.join(dest, "records", "31597.json"),
+             dict(rec_24432, control_number="31597", source_url=NCHSD_URL, extracted_run="43415972509",
+                  record={"program": {"measure": "hours", "total_units": {"min": 3200, "max": 3200}}, "blocks": []},
+                  score={"coverage": {"pass": True, "placed": 1}, "invented": {"pass": True},
+                         "arithmetic": {"status": "equal"}, "pass": True}))
+    for _r in ("24432", "31597"):
+        _f = json.load(open(os.path.join(dest, "records", _r + ".json")))
+        _f["college"] = "Glendale Community College"
+        json.dump(_f, open(os.path.join(dest, "records", _r + ".json"), "w"))
+    ld_rows, ld_skipped = C.load_rows("Glendale Community College", folder=dest)
+    check([r["control_number"] for r in ld_rows] == ["31597"]
+          and [(x["control_number"], "held_failing_on_main" in x["why"]) for x in ld_skipped] == [("24432", True)],
+          "the load skips a held record that fails on main and posts the rest: %r" % (ld_skipped,))
+    os.remove(os.path.join(dest, "records", "31597.json"))
+    # main's copy read a refused tab too: it is not restored, and the program is listed for a person.
+    C._write(os.path.join(maind, "records", "24432.json"), dict(main_fail, source_url=NCHSD_URL))
+    C._write(os.path.join(dest, "records", "24432.json"), rec_24432)
+    with _rk_ctx.redirect_stdout(_rk_io.StringIO()):
+        C.refile_kept("Glendale Community College", prior, dest, {}, owners=cn_owners, main_dir=maind)
+    _held = {e["control_number"]: e for e in json.load(open(os.path.join(dest, "summary.json")))["held_wrong_tab"]}
+    check(not os.path.exists(os.path.join(dest, "records", "24432.json"))
+          and "a tab the rule refuses too" in (_held["24432"].get("for_person") or "")
+          and _held["24432"]["filed"] is False,
+          "a held record whose main copy reads a refused tab is not restored, and is listed for a person: %r"
+          % _held.get("24432"))
 
 # A Coursedog tab's coarse net reads a run of numbers after one subject (run_net, S647). The CIS-C tab's text as
 # the free page read 43423479582 printed it (2026-11-13): Computer Information Systems' own tab, never a

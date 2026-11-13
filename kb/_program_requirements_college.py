@@ -5118,11 +5118,12 @@ TAB_NAMES_ANOTHER = "the tab prints another listed program (tab_names_another)"
 TAB_OWNED_BY_ANOTHER = "the tab's own program data names another listed program's control number (tab_control_owner)"
 
 
-def wrong_tabs(dest: str, report: dict, owners: dict | None = None) -> list[dict]:
+def wrong_tabs(dest: str, report: dict, owners: dict | None = None, records_dir: str | None = None) -> list[dict]:
     """The filed records read from a Coursedog tab that belongs to another listed program, from the filing's own
     account: first the control number the tab's own program data names (capture.json's coursedog catalog, or
     `owners`, {code: control number} from a page read's account, tab_owners_file), then the tab's catalog name
-    against the titles of the programs sources.json lists (tab_names_another)."""
+    against the titles of the programs sources.json lists (tab_names_another). records_dir reads another filing's
+    records against the same account (main's, so a hold can tell whether main's copy read a refused tab too)."""
     cd = report.get("coursedog") or {}
     names = {e.get("code"): e.get("name") for e in cd.get("catalog") or []}
     named = {e.get("code"): e.get("control_number") for e in cd.get("catalog") or [] if e.get("control_number")}
@@ -5140,7 +5141,7 @@ def wrong_tabs(dest: str, report: dict, owners: dict | None = None) -> list[dict
     out = []
     for s in srcs:
         cn = s["control_number"]
-        path = os.path.join(dest, "records", cn + ".json")
+        path = os.path.join(records_dir or os.path.join(dest, "records"), cn + ".json")
         rec = _filed(path)
         url = (rec or {}).get("source_url") or ""
         code = cd_href_code(url.rsplit("/", 1)[0], cd.get("root") or "") if rec else None
@@ -5226,14 +5227,22 @@ def refile_kept(college: str, from_dir: str, dest: str | None = None, statuses: 
     main_dir = main_dir or from_dir
     main_year = filed_year(main_dir)
     held_now = []
+    # main's copy read a tab the rule now refuses too (COBIx on #3202, 17:29Z): it is not restored, and the
+    # program is listed for a person (for_person).
+    main_wrong = {e["control_number"]: e for e in wrong_tabs(dest, report, owners, os.path.join(main_dir, "records"))}
     for w in wrong_tabs(dest, report, owners):
         filed = _filed(rec_path(main_dir, w["control_number"]))
+        person = None
+        if filed and w["control_number"] in main_wrong:
+            person = "main's copy reads %s, a tab the rule refuses too" % (main_wrong[w["control_number"]].get("tab"))
+            filed = None
         if filed:
             _write(rec_path(dest, w["control_number"]), kept_year(filed, main_year))
-        else:
+        elif os.path.isfile(rec_path(dest, w["control_number"])):
             os.remove(rec_path(dest, w["control_number"]))
         held_now.append(dict(w, reason=w.get("reason") or TAB_NAMES_ANOTHER, filed=bool(filed),
-                             filed_score=(filed or {}).get("score"), filed_passes=_passing_filed_rec(filed)))
+                             filed_score=(filed or {}).get("score"), filed_passes=_passing_filed_rec(filed),
+                             **({"for_person": person} if person else {})))
     held = {e["control_number"]: e for e in summary.get("held_wrong_tab") or []}
     held.update({e["control_number"]: e for e in held_now})
     # Every held program whose record stands as main's and fails there: carried, and named for the load to skip.
@@ -5888,6 +5897,11 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
     dest = folder or os.path.join(COLLEGE_DIR, slug_of(college))
     with open(os.path.join(dest, "capture.json")) as fh:
         year = json.load(fh).get("catalog_year")
+    try:
+        with open(os.path.join(dest, "summary.json")) as fh:
+            failing_held = set(json.load(fh).get("held_failing_on_main") or [])
+    except (OSError, ValueError):
+        failing_held = set()
     rows, skipped = [], []
     for path in sorted(glob.glob(os.path.join(dest, "records", "*.json"))):
         with open(path) as fh:
@@ -5900,6 +5914,10 @@ def load_rows(college: str, folder: str | None = None) -> tuple[list[dict], list
         why = None
         if rec.get("college") != college:
             why = "a record of %s" % rec.get("college")
+        elif key in failing_held:
+            # A program refile-kept held from another program's tab whose record stands as main's and fails there
+            # (summary.json held_failing_on_main; COBIx on #3202): never loaded until a read of its own passes.
+            why = "held from another program's tab; main's record fails (held_failing_on_main)"
         elif rec.get("error"):
             why = "extraction error: %s" % str(rec["error"])[:120]
         elif not isinstance(program, dict) or not isinstance(record.get("blocks"), list):
