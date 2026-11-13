@@ -1,0 +1,1083 @@
+{
+  "schema": 1,
+  "profile_id": "los-angeles",
+  "district": {
+    "name": "Los Angeles Community College District",
+    "name_caps": "LOS ANGELES CCD",
+    "mis_district_code": "740",
+    "district_type": "M",
+    "website": "https://www.laccd.edu/",
+    "colleges": [
+      {
+        "college_id": 49,
+        "registry_name": "East Los Angeles College",
+        "short": "East LA",
+        "mis_college_code": "748",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 69,
+        "registry_name": "Los Angeles City College",
+        "short": "LA City",
+        "mis_college_code": "741",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 70,
+        "registry_name": "Los Angeles Harbor College",
+        "short": "LA Harbor",
+        "mis_college_code": "742",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 71,
+        "registry_name": "Los Angeles Mission College",
+        "short": "LA Mission",
+        "mis_college_code": "743",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 72,
+        "registry_name": "Los Angeles Pierce College",
+        "short": "LA Pierce",
+        "mis_college_code": "744",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 73,
+        "registry_name": "Los Angeles Southwest College",
+        "short": "LA Southwest",
+        "mis_college_code": "745",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 74,
+        "registry_name": "Los Angeles Trade Technical College",
+        "short": "LA Trade",
+        "mis_college_code": "746",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 75,
+        "registry_name": "Los Angeles Valley College",
+        "short": "LA Valley",
+        "mis_college_code": "747",
+        "entity_kind": "college",
+        "map_landing_page": null
+      },
+      {
+        "college_id": 115,
+        "registry_name": "West Los Angeles College",
+        "short": "West LA",
+        "mis_college_code": "749",
+        "entity_kind": "college",
+        "map_landing_page": null
+      }
+    ],
+    "evidence": {
+      "sources": [
+        "crosswalk",
+        "mis_codes"
+      ],
+      "confidence": "strong",
+      "checked_at": "2026-11-10T00:00:00Z",
+      "note": "Nine colleges, MIS district 740, all roster-bridged to MAP CollegeIDs."
+    }
+  },
+  "systems": {
+    "sis": {
+      "vendor": "oracle",
+      "product": "peoplesoft_campus_solutions",
+      "product_other": null,
+      "version": "9.2",
+      "scope": "district",
+      "self_service_url": null,
+      "evidence": {
+        "sources": [
+          "laccd_sis_faqs",
+          "laccd_oit",
+          "elac_sis"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "District OIT: the PeopleSoft SIS is the system of record for all LACCD students; SIS FAQs announce the 9.2 upgrade. Self-service URL left null (sign-in portal; not needed by a bot)."
+      }
+    },
+    "cms": {
+      "product": "elumen",
+      "product_other": null,
+      "scope": "district",
+      "public_view_url": "https://laccd.elumenapp.com/",
+      "publishes_catalog": false,
+      "previous_product": null,
+      "evidence": {
+        "sources": [
+          "laccd_epie_curriculum",
+          "laccd_elumen_host"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "EPIE Curriculum Support links 'Curriculum Management System (eLumen)' for the nine colleges; laccd.elumenapp.com answers 200 (a JavaScript dashboard). publishes_catalog=false because six colleges publish a PDF and three a web page (registry); not confirmed with the district. Registry cms_public_view is null for all nine colleges: a registry gap to file."
+      }
+    },
+    "catalogs": [
+      {
+        "college_id": 49,
+        "platform": "custom_html",
+        "format": "pdf_by_section",
+        "catalog_url": "https://www.elac.edu/academic-resources/catalog",
+        "catalog_year": null,
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Registry names a catalog landing page with no year; not scouted yet."
+        }
+      },
+      {
+        "college_id": 69,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Weekly census read; not re-scouted by COBIx."
+        }
+      },
+      {
+        "college_id": 70,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Weekly census read; not re-scouted by COBIx."
+        }
+      },
+      {
+        "college_id": 71,
+        "platform": "custom_html",
+        "format": "pdf_by_section",
+        "catalog_url": "https://www.lamc.edu/academics/calendar-schedules/schedules-catalog",
+        "catalog_year": null,
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Registry names a catalog landing page with no year; not scouted yet."
+        }
+      },
+      {
+        "college_id": 72,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Weekly census read; not re-scouted by COBIx."
+        }
+      },
+      {
+        "college_id": 73,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Row hand-corrected 2026-10-17; census does not overwrite it."
+        }
+      },
+      {
+        "college_id": 74,
+        "platform": "custom_html",
+        "format": "unknown",
+        "catalog_url": "https://www.lattc.edu/academic-resources/catalog",
+        "catalog_year": null,
+        "best_method": "unknown",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Registry names a catalog landing page with no year; not scouted yet."
+        }
+      },
+      {
+        "college_id": 75,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Weekly census read; not re-scouted by COBIx."
+        }
+      },
+      {
+        "college_id": 115,
+        "platform": "pdf",
+        "format": "single_pdf",
+        "catalog_url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+        "catalog_year": "2026-2027",
+        "best_method": "pdf_extraction",
+        "access": {
+          "status": "ok",
+          "robots_allows": null,
+          "challenge": null,
+          "needs_render": null
+        },
+        "fallback_hosts": [],
+        "registry_disagrees": [],
+        "evidence": {
+          "sources": [
+            "registry"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-08T16:58:00Z",
+          "note": "Weekly census read; not re-scouted by COBIx."
+        }
+      }
+    ],
+    "other_systems": []
+  },
+  "cpl_coding": {
+    "policies": [
+      {
+        "number": "BP 4235",
+        "title": "Credit for Prior Learning",
+        "url": "https://go.boarddocs.com/ca/laccd/Board.nsf/files/BYHVKT80D7C8/$file/BP%204235%20Credit%20for%20prior%20learning.pdf",
+        "last_revised": null,
+        "evidence": {
+          "sources": [
+            "laccd_bp4235"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-13T01:45:00Z",
+          "note": "Seen through a search result, not opened."
+        }
+      },
+      {
+        "number": "AP 4235",
+        "title": "Credit for Prior Learning",
+        "url": "https://go.boarddocs.com/ca/laccd/Board.nsf/goto?id=D86TSR78CEF4&open=",
+        "last_revised": "2024-08-15",
+        "evidence": {
+          "sources": [
+            "laccd_ap4235"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z"
+        }
+      },
+      {
+        "number": "AP 4230",
+        "title": "Grading, Academic Record Symbols, and Student Transcript Notations",
+        "url": "https://go.boarddocs.com/ca/laccd/Board.nsf/goto?id=CNENLM601C66&open=",
+        "last_revised": null,
+        "evidence": {
+          "sources": [
+            "laccd_ap4230"
+          ],
+          "confidence": "partial",
+          "checked_at": "2026-11-13T01:45:00Z",
+          "note": "Seen through a search result; Appendix A (the notation text) not read."
+        }
+      }
+    ],
+    "transcript_notation": {
+      "annotated": true,
+      "cpl_type_shown": true,
+      "where": null,
+      "notation_list_ref": "AP 4230 Appendix A",
+      "term_posting": "Credit by Exam and Portfolio Review post credit and grade to a specific term; other types not stated.",
+      "evidence": {
+        "sources": [
+          "laccd_ap4235",
+          "laccd_ap4230"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "AP 4235 section 'Transcribing CPL'. AP 4230 says approved notations go in the transcript's memorandum field, consistent across all LACCD colleges (search snippet, partial); 'where' stays null until Appendix A is read."
+      }
+    },
+    "grading": {
+      "by_type": [
+        {
+          "map_cpl_types": [
+            "Cx",
+            "PR"
+          ],
+          "local_label": "Credit by Exam, Portfolio Review",
+          "grading": "letter_or_pnp"
+        },
+        {
+          "map_cpl_types": [
+            "M",
+            "IC",
+            "SA",
+            "O"
+          ],
+          "local_label": "All other CPL types",
+          "grading": "pnp_only"
+        }
+      ],
+      "evidence": {
+        "sources": [
+          "laccd_ap4235"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "'Pass/No Pass' only where P/NP is ordinarily available for the course, for Cx and PR."
+      }
+    },
+    "type_codes": [
+      {
+        "map_cpl_type": "M",
+        "local_label": "Military Training and Service (JST, ACE Military Guide, MAP)",
+        "local_code": null,
+        "exams": null,
+        "auto_award": true,
+        "evidence": {
+          "sources": [
+            "laccd_ap4235"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z",
+          "note": "AP 4235: may be awarded automatically on receipt of official transcripts; students may decline."
+        }
+      },
+      {
+        "map_cpl_type": "SA",
+        "local_label": "Standardized External Exams",
+        "local_code": null,
+        "exams": [
+          "AP",
+          "IB",
+          "CLEP",
+          "DLPT",
+          "DSST"
+        ],
+        "auto_award": true,
+        "evidence": {
+          "sources": [
+            "laccd_ap4235",
+            "lapc_cpl",
+            "lavc_cpl"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z",
+          "note": "LAVC: AP credit should appear on the transcript within ten business days of scores arriving."
+        }
+      },
+      {
+        "map_cpl_type": "IC",
+        "local_label": "Industry Certification",
+        "local_code": null,
+        "exams": null,
+        "auto_award": null,
+        "evidence": {
+          "sources": [
+            "laccd_ap4235"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z"
+        }
+      },
+      {
+        "map_cpl_type": "Cx",
+        "local_label": "Credit by Exam",
+        "local_code": null,
+        "exams": null,
+        "auto_award": false,
+        "evidence": {
+          "sources": [
+            "laccd_ap4235",
+            "lapc_cpl"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z",
+          "note": "Faculty-run exam per course; student petitions."
+        }
+      },
+      {
+        "map_cpl_type": "PR",
+        "local_label": "Portfolio Review",
+        "local_code": null,
+        "exams": null,
+        "auto_award": false,
+        "evidence": {
+          "sources": [
+            "laccd_ap4235"
+          ],
+          "confidence": "strong",
+          "checked_at": "2026-11-13T01:45:00Z"
+        }
+      }
+    ],
+    "ownership": {
+      "policy_owner_role": "District Academic Senate (recommends; Chancellor adopts AP)",
+      "posting_owner_role": "College Admissions and Records",
+      "coordination": "College-run under a district procedure: each college writes local protocols and names its CPL coordinator.",
+      "contacts_source": [
+        {
+          "table": "map_college_contacts",
+          "roles": [
+            "cpl_coordinator",
+            "primary_contact"
+          ]
+        },
+        {
+          "table": "college_contacts_harvest",
+          "roles": [
+            "dean_ar",
+            "articulation_officer"
+          ]
+        }
+      ],
+      "evidence": {
+        "sources": [
+          "laccd_bp4235",
+          "laccd_ap4235",
+          "lapc_cpl"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "Posting owner inferred from LAPC (scores go to Admissions and Records) and the statewide MAP note that A&R enters credit; partial for colleges other than Pierce and Valley."
+      }
+    },
+    "map_integration": {
+      "district_state": "mixed",
+      "by_college": [
+        {
+          "college_id": 72,
+          "state": "batch_upload",
+          "what_moves": [
+            "Cx",
+            "SA"
+          ],
+          "note": "Pierce batch-uploaded Cx, AP and IB credit already posted in the SIS into MAP, then cleaned the upload up (Sam, Nov 11, 2026).",
+          "evidence": {
+            "sources": [
+              "sam_pierce",
+              "lane_governance"
+            ],
+            "confidence": "strong",
+            "checked_at": "2026-11-11T22:52:00Z"
+          }
+        },
+        {
+          "college_id": 49,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 69,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 70,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 71,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 73,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 74,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 75,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        },
+        {
+          "college_id": 115,
+          "state": "unknown",
+          "what_moves": null,
+          "note": null,
+          "evidence": {
+            "sources": [
+              "briefing_no_link"
+            ],
+            "confidence": "limited",
+            "checked_at": "2026-11-13T01:45:00Z",
+            "note": "Statewide default: no automatic MAP-to-SIS link; A&R rekeys. Not confirmed for this college."
+          }
+        }
+      ],
+      "known_issues": [
+        {
+          "summary": "Aug 28, 2026 cleanup worklist: 14,348 'transcribed, no units' rows, 94% at LA Pierce and Merced, called an ingest gap.",
+          "status": "unknown",
+          "evidence": {
+            "sources": [
+              "lane_cleanup"
+            ],
+            "confidence": "partial",
+            "checked_at": "2026-08-28T00:00:00Z",
+            "note": "May be the same batch upload Sam called cleaned up on Nov 11; not re-measured."
+          }
+        }
+      ],
+      "evidence": {
+        "sources": [
+          "briefing_no_link",
+          "sam_pierce",
+          "cpl_data_n2n"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-13T01:45:00Z",
+        "note": "No API between MAP and LACCD's PeopleSoft is recorded in the repo. The only PeopleSoft integration named is planned for American River (Los Rios), not LACCD."
+      }
+    }
+  },
+  "data_flows": [
+    {
+      "id": "map_to_sis_cpl_posting",
+      "from": "map",
+      "to": "sis",
+      "carries": "Approved CPL plan (courses, units, CPL type) to be posted on the transcript",
+      "mode": "manual",
+      "mechanism": "rekeyed_by_hand",
+      "frequency": "per student",
+      "redundant": {
+        "flag": true,
+        "note": "Faculty-approved CPL lives in MAP; A&R keys the same courses into PeopleSoft.",
+        "api_candidate": true
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "briefing_no_link",
+          "lapc_cpl"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-13T01:45:00Z"
+      }
+    },
+    {
+      "id": "sis_to_map_transcribed",
+      "from": "sis",
+      "to": "map",
+      "carries": "'Transcribed' status per student CPL line",
+      "mode": "manual",
+      "mechanism": "rekeyed_by_hand",
+      "frequency": "per student",
+      "redundant": {
+        "flag": true,
+        "note": "Status already exists in the SIS; staff tick Transcribe in MAP (funding Completion counts it).",
+        "api_candidate": true
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "funding_faq"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-13T01:45:00Z"
+      }
+    },
+    {
+      "id": "sis_to_map_batch_upload",
+      "from": "sis",
+      "to": "map",
+      "carries": "Cx, AP and IB credit already awarded in the SIS",
+      "mode": "manual",
+      "mechanism": "spreadsheet_batch_upload",
+      "frequency": null,
+      "redundant": {
+        "flag": true,
+        "note": "Same award entered twice (SIS, then MAP); errors needed cleanup.",
+        "api_candidate": true
+      },
+      "college_ids": [
+        72
+      ],
+      "evidence": {
+        "sources": [
+          "sam_pierce",
+          "funding_faq"
+        ],
+        "confidence": "strong",
+        "checked_at": "2026-11-11T22:52:00Z"
+      }
+    },
+    {
+      "id": "cms_to_catalog",
+      "from": "cms",
+      "to": "catalog",
+      "carries": "Approved course outlines and program requirements",
+      "mode": "unknown",
+      "mechanism": "unknown",
+      "frequency": "yearly catalog",
+      "redundant": {
+        "flag": null,
+        "note": "Six colleges publish PDFs, three web pages; whether they are generated from eLumen is not known.",
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "registry",
+          "laccd_epie_curriculum"
+        ],
+        "confidence": "limited",
+        "checked_at": "2026-11-13T01:45:00Z"
+      }
+    },
+    {
+      "id": "catalog_to_harvest",
+      "from": "catalog",
+      "to": "cobi_harvest",
+      "carries": "Program requirements read into program_requirement_records",
+      "mode": "automated",
+      "mechanism": "pdf_harvest",
+      "frequency": "per wave / weekly census",
+      "redundant": {
+        "flag": true,
+        "note": "We re-read a PDF that eLumen may already hold as structured data; eLumen's public view could replace PDF extraction (as De Anza's eLumen publish API did).",
+        "api_candidate": true
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [
+          "registry",
+          "backlog_deanza"
+        ],
+        "confidence": "partial",
+        "checked_at": "2026-11-13T01:45:00Z"
+      }
+    },
+    {
+      "id": "cms_to_coci",
+      "from": "cms",
+      "to": "coci",
+      "carries": "Course and program approvals to the Chancellor's Office Curriculum Inventory",
+      "mode": "unknown",
+      "mechanism": "unknown",
+      "frequency": null,
+      "redundant": {
+        "flag": null,
+        "note": null,
+        "api_candidate": null
+      },
+      "college_ids": null,
+      "evidence": {
+        "sources": [],
+        "confidence": null,
+        "checked_at": null,
+        "note": "Not checked."
+      }
+    }
+  ],
+  "procedures": [
+    {
+      "system": "catalog",
+      "vendor_key": "pdf",
+      "task": "Scout catalog sources (scout contract schema 1)",
+      "doc": null,
+      "status": "draft",
+      "last_run": null
+    },
+    {
+      "system": "catalog",
+      "vendor_key": "pdf",
+      "task": "Spot-check 5 records per college against the catalog",
+      "doc": null,
+      "status": "draft",
+      "last_run": null
+    },
+    {
+      "system": "cms",
+      "vendor_key": "elumen",
+      "task": "Read courses and programs from the public eLumen view",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    },
+    {
+      "system": "cpl_coding",
+      "vendor_key": null,
+      "task": "Read AP 4230 Appendix A and record the notation text per CPL type",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    },
+    {
+      "system": "sis",
+      "vendor_key": "peoplesoft_campus_solutions",
+      "task": "Describe how A&R posts CPL in PeopleSoft (needs the district; no public source)",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    },
+    {
+      "system": "map",
+      "vendor_key": null,
+      "task": "Check MAP batch-upload results against SIS-posted totals (aggregate only)",
+      "doc": null,
+      "status": "none",
+      "last_run": null
+    }
+  ],
+  "provenance": {
+    "checked_at": "2026-11-13T01:45:00Z",
+    "checked_by": "COBIx",
+    "confidence": "partial",
+    "sources": [
+      {
+        "id": "crosswalk",
+        "kind": "repo_file",
+        "ref": "kb/college_identity/2026-11-10/crosswalk.json",
+        "title": "College identity crosswalk (map_colleges + MIS Appendix A)",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "mis_codes",
+        "kind": "repo_file",
+        "ref": "kb/reference/mis_district_college_codes.json",
+        "title": "Chancellor's Office MIS Appendix A district and college codes",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "registry",
+        "kind": "supabase_table",
+        "ref": "public.program_source_registry (read-only SELECT, COBI project)",
+        "title": "Program source registry, census of 2026-11-08",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "laccd_sis_faqs",
+        "kind": "public_page",
+        "ref": "https://www.laccd.edu/students/sis-faqs",
+        "title": "SIS FAQs | LACCD ('PeopleSoft SIS 9.2 is here!')",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "laccd_oit",
+        "kind": "public_page",
+        "ref": "https://www.laccd.edu/offices/oit/overview",
+        "title": "IT Department Overview | LACCD",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "elac_sis",
+        "kind": "public_page",
+        "ref": "https://www.elac.edu/offices/it/sis",
+        "title": "Student SIS | ELAC (PeopleSoft Campus Solutions)",
+        "read_at": null,
+        "http_status": null
+      },
+      {
+        "id": "laccd_epie_curriculum",
+        "kind": "public_page",
+        "ref": "https://www.laccd.edu/offices/epie/curriculum-info",
+        "title": "EPIE Curriculum Support | LACCD",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "laccd_elumen_host",
+        "kind": "public_page",
+        "ref": "https://laccd.elumenapp.com/",
+        "title": "LACCD eLumen dashboard",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "laccd_bp4235",
+        "kind": "public_pdf",
+        "ref": "https://go.boarddocs.com/ca/laccd/Board.nsf/files/BYHVKT80D7C8/$file/BP%204235%20Credit%20for%20prior%20learning.pdf",
+        "title": "BP 4235 Credit for Prior Learning",
+        "read_at": null,
+        "http_status": null
+      },
+      {
+        "id": "laccd_ap4235",
+        "kind": "public_page",
+        "ref": "https://go.boarddocs.com/ca/laccd/Board.nsf/goto?id=D86TSR78CEF4&open=",
+        "title": "AP 4235 Credit for Prior Learning (rev. Aug 15, 2024)",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "laccd_ap4230",
+        "kind": "public_page",
+        "ref": "https://go.boarddocs.com/ca/laccd/Board.nsf/goto?id=CNENLM601C66&open=",
+        "title": "AP 4230 Grading, Academic Record Symbols, and Student Transcript Notations",
+        "read_at": null,
+        "http_status": null
+      },
+      {
+        "id": "lapc_cpl",
+        "kind": "public_page",
+        "ref": "https://www.lapc.edu/academic-resources/cpl",
+        "title": "Credit for Prior Learning | LAPC",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "lavc_cpl",
+        "kind": "public_page",
+        "ref": "https://www.lavc.edu/academics/credit-for-prior-learning",
+        "title": "Credit for Prior Learning | LAVC",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": 200
+      },
+      {
+        "id": "sam_pierce",
+        "kind": "github_comment",
+        "ref": "https://github.com/CPL-Initiative/cpl-project-tracker/issues/3111#issuecomment-6809029855",
+        "title": "Sam, Nov 11, 2026, 2:52 PM PT, relayed by COBIx (Pierce batch upload of Cx, AP, IB)",
+        "read_at": null,
+        "http_status": null
+      },
+      {
+        "id": "lane_governance",
+        "kind": "repo_file",
+        "ref": "docs/reference/lanes/governance-team-enablement.md:32",
+        "title": "Governance lane: the Pierce question is closed",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "lane_cleanup",
+        "kind": "repo_file",
+        "ref": "docs/reference/lanes/cpl-cleanup-worklist.md:24",
+        "title": "CPL clean-up worklist P2 (Aug 28, 2026)",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "briefing_no_link",
+        "kind": "repo_file",
+        "ref": "college_briefing.js:2678-2681",
+        "title": "College briefing: A&R enters credit in the college's own system; no automatic link between MAP and that system",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "funding_faq",
+        "kind": "repo_file",
+        "ref": "cpl_funding.js:4248-4254",
+        "title": "Funding FAQ: batch upload to MAP in an Excel file; Transcribe in MAP, or batch upload it",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "cpl_data_n2n",
+        "kind": "repo_file",
+        "ref": "CPL_Data.js:987",
+        "title": "N2N/Prism pilot update: PeopleSoft integration planned for American River",
+        "read_at": "2026-11-13T01:45:00Z",
+        "http_status": null
+      },
+      {
+        "id": "backlog_deanza",
+        "kind": "repo_file",
+        "ref": "/workspace/cobix/backlog/backlog.md (COBIx, not in repo)",
+        "title": "Blocked-sources backlog: De Anza eLumen publish API",
+        "read_at": null,
+        "http_status": null
+      }
+    ],
+    "open_questions": [
+      "Exact transcript notation text and SIS codes per CPL type (AP 4230 Appendix A).",
+      "Do the eight colleges other than Pierce transcribe CPL into MAP by hand, by batch upload, or not at all?",
+      "Is any catalog generated from eLumen, or typeset separately?",
+      "Who at the district runs PeopleSoft configuration for CPL (role only)?"
+    ],
+    "change_log": [
+      {
+        "at": "2026-11-13T01:45:00Z",
+        "by": "COBIx",
+        "change": "First draft, schema 1."
+      }
+    ]
+  }
+}
