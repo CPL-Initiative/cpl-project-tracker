@@ -603,6 +603,8 @@ def candidates(program: dict, pages: list[dict]) -> list[dict]:
                     "text": text, "field": field,
                     "got": pg["got"], "label": {"award": award_hit, "title": title, "section": section,
                                                 "section_line": heading, "section_fit": fit},
+                    "heading": pg.get("h1") or "", "program": {"title": program.get("title") or "",
+                                                                "status": program.get("status")},
                     "key": (award_hit, title, round(cov, 3))})
     out.sort(key=lambda c: c["key"], reverse=True)
     return out
@@ -862,9 +864,43 @@ def page_winners(claims: list[tuple[str, dict]]) -> set[str]:
         return keep
     if named:
         top = max(c["label"]["title"] for _, c in named)
-        return {cn for cn, c in named if c["label"]["title"] == top}
+        return heading_owner([(cn, c) for cn, c in named if c["label"]["title"] == top])
     best = max(claims, key=lambda x: (x[1]["label"]["title"], x[1]["coverage"], len(x[1]["found"]), -int(x[0]) if x[0].isdigit() else 0))
     return {best[0]}
+
+
+CURRENT_STATUS = ("Active", "Approved")   # a program the state lists as offered, not in teach-out
+
+
+def heading_title(heading: str | None) -> str:
+    """The title part of a page's heading, plain: before a Coursedog name's " - <award>" tail and
+    before a comma ("Public Health Science, A.S.-T")."""
+    h = heading or ""
+    h = h.rpartition(" - ")[0] or h
+    return _plain(h.split(",", 1)[0])
+
+
+def heading_owner(tied: list[tuple[str, dict]]) -> set[str]:
+    """Claimants tied on the page's award and title share: two different Active programs never share
+    one page's list on that tie alone (the S646 conductor's ruling). When every claimant is Active, their
+    titles differ, and the page's own heading prints exactly one claimant's full title, that claimant keeps
+    the page and the others move on. Glendale's titles nest (Child Development: Teacher in Child
+    Development: Master Teacher, Management I in Management II, Information Technology in Information
+    Technology Technician), so each pair tied on the other's page (capture 43366669415). Two state records
+    of one program, an Active one beside its Teachout Only one (Communication Studies and Communication
+    Studies 2.0), still share."""
+    keep = {cn for cn, _ in tied}
+    if len(tied) < 2:
+        return keep
+    progs = [c.get("program") or {} for _, c in tied]
+    titles = [_plain(p.get("title")) for p in progs]
+    if any(not str(p.get("status") or "") in CURRENT_STATUS for p in progs) or len(set(titles)) < len(titles):
+        return keep
+    head = {heading_title(c.get("heading")) for _, c in tied}
+    if len(head) != 1:
+        return keep
+    owners = [cn for (cn, _), t in zip(tied, titles) if t and t in head]
+    return set(owners) if len(owners) == 1 else keep
 
 
 def assign(programs: list[dict], pages: list[dict]) -> dict[str, dict]:
@@ -2296,6 +2332,8 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
         if reread:
             return _cd_read(reader, root, programs, info, heard, cache, only=reread["codes"],
                             suffix=reread.get("suffix"))
+        if report.get("slow"):
+            return _cd_read(reader, root, programs, info, heard, cache, slow=True)
         return _cd_read(reader, root, programs, info, heard, cache)
     finally:
         reader.page.remove_listener("response", on_courses)
@@ -2309,6 +2347,15 @@ def cd_pages(reader, start: str, report: dict, cache: dict) -> list[dict]:
 # beside the full capture it does not replace, and never extracts.
 CD_REREAD_ROUTE = "challenged"
 CD_REREAD_DELAY_S = 12.0
+# The whole read at the re-read's pace (route=slow, S646): Glendale's re-read loaded its 34 refused
+# programs at 12 s with no challenge (run 43379067418), and neither capture keeps a page's text for a
+# later extraction to use, so a paid read loads every page again. A slow read stops at its first
+# challenge like the re-read, and a capture cut short so is never extracted.
+CD_SLOW_ROUTE = "slow"
+
+
+def is_slow(route: str | None) -> bool:
+    return (route or "").strip().lower() == CD_SLOW_ROUTE
 CAPTURE_FILES = ("capture_preview.json", "capture.json", "capture_reread.json")
 
 
@@ -2377,15 +2424,20 @@ def cd_challenged_programs(programs: list[dict], info: dict) -> dict[str, str]:
 
 
 def _cd_stop(info: dict, programs: list[dict], i: int, challenged: list) -> None:
-    """A re-read's stop at its first challenge: the codes not yet tried stay named for the next one."""
+    """A re-read's or slow read's stop at its first challenge: the codes not yet tried stay named for the
+    next one."""
     rest = [p["code"] for p in programs[i + 1:]]
     challenged.extend(rest)
-    info["reread"].update(stopped_at=programs[i]["code"], not_tried=len(rest))
+    info["reread" if "reread" in info else "slow"].update(stopped_at=programs[i]["code"], not_tried=len(rest))
 
 
 def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, cache: dict,
-             only: list | None = None, suffix: str | None = None) -> list[dict]:
+             only: list | None = None, suffix: str | None = None, slow: bool = False) -> list[dict]:
     pages, direct, missed, challenged = [], 0, [], []
+    if slow:
+        reader.delay = max(reader.delay, CD_REREAD_DELAY_S)
+        info["slow"] = {"delay_s": reader.delay}
+    stop = only is not None or slow
     if only is not None:
         # The re-read: only the named codes, slower, and no load past the first challenge.
         want = set(only)
@@ -2408,7 +2460,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
             missed.append(prog["code"])
             challenged.append(prog["code"])
             cd_note_miss(info, prog["code"], got)
-            if only is not None:
+            if stop:
                 _cd_stop(info, programs, i, challenged)
                 break
             continue
@@ -2421,7 +2473,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
                 cd_note_miss(info, prog["code"], over)
                 if over.get("access") == "challenge":
                     challenged.append(prog["code"])
-                    if only is not None:
+                    if stop:
                         _cd_stop(info, programs, i, challenged)
                         break
                 continue
@@ -2433,7 +2485,7 @@ def _cd_read(reader, root: str, programs: list[dict], info: dict, heard: dict, c
                 cd_note_miss(info, prog["code"], got)
                 if got.get("access") == "challenge":
                     challenged.append(prog["code"])
-                    if only is not None:
+                    if stop:
                         _cd_stop(info, programs, i, challenged)
                         break
                 continue
@@ -3362,6 +3414,10 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
                 print(report["stopped"])
                 return 1
             report["reread"] = plan
+        elif is_slow(os.environ.get("CAPTURE_ROUTE")):
+            report["slow"] = True
+            report["route"] = ("slow (the whole site read at %.0f s between loads, stopping at the first challenge)"
+                               % CD_REREAD_DELAY_S)
             report["route"] = ("challenged (the %d codes %s named as %s, at %.0f s between loads, stopping at the "
                                "first challenge)" % (len(plan["codes"]), plan["from"], plan["named_as"], CD_REREAD_DELAY_S))
     elif reads_as_pdf(reg) and (start or reg.get("procedure")):
@@ -3374,8 +3430,9 @@ def capture(college: str, out_dir: str, limit: int = 0) -> int:
         return finish_capture(college, out_dir, recs, report, t0)
     # A college's own HTML catalog (custom_html, S404) takes CourseLeaf's road: its
     # sitemap, or its front page's program indexes, then each page's children.
-    if report.get("reread") and platform != "coursedog":
-        report["stopped"] = "route=challenged reads a Coursedog catalog only; %s reads %s" % (college, platform)
+    if (report.get("reread") or report.get("slow")) and platform != "coursedog":
+        report["stopped"] = "route=%s reads a Coursedog catalog only; %s reads %s" % (
+            os.environ.get("CAPTURE_ROUTE"), college, platform)
         _write(os.path.join(out_dir, "capture.json"), report)
         print(report["stopped"])
         return 1
@@ -4504,12 +4561,14 @@ def _write(path: str, obj) -> None:
 
 
 def reread_capture(out_dir: str) -> bool:
-    """Whether the run's capture is a route=challenged re-read (a partial read by design)."""
+    """Whether the run's capture is partial: a route=challenged re-read (partial by design), or a
+    route=slow read a challenge cut short."""
     try:
         with open(os.path.join(out_dir, "capture.json")) as fh:
-            return bool(json.load(fh).get("reread"))
+            rep = json.load(fh)
     except (OSError, ValueError):
         return False
+    return bool(rep.get("reread") or ((rep.get("coursedog") or {}).get("slow") or {}).get("stopped_at"))
 
 
 def main(argv: list[str] | None = None) -> int:
@@ -4541,13 +4600,16 @@ def main(argv: list[str] | None = None) -> int:
         return reread(args.college, args.run, extracted_run=args.extracted_run or None)
     if args.step == "reconcile":
         if reread_capture(args.out):
-            print("::error::a route=challenged capture reads only the refused codes; reconcile on a full capture")
-            return 1
+            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+                  "filed as it is and never reconciled")
+            return 0
         return reconcile_filed(args.college, args.out, args.run, os.path.join(COLLEGE_DIR, slug_of(args.college)))
     if args.step == "extract":
         if reread_capture(args.out):
-            print("::error::a route=challenged capture reads only the refused codes; it never extracts (dispatch extract=0)")
-            return 1
+            # Filed as a capture alone (file_run), so the account of where it stopped is kept; nothing is paid.
+            print("::warning::a partial capture (route=challenged, or a route=slow read a challenge stopped) is "
+                  "filed as it is and never extracted")
+            return 0
         keep = None if args.fresh else os.path.join(COLLEGE_DIR, slug_of(args.college))
         force = forced(keep, args.force) if keep and args.force else None
         ceiling = float(args.ceiling_usd) if str(args.ceiling_usd or "").strip() else None

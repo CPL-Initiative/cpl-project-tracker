@@ -3182,7 +3182,8 @@ GL_CHALLENGE = {"url": "https://catalog.glendale.edu/programs/DFP-AA", "status":
 check(P.is_challenge(GL_CHALLENGE) and P.is_challenge({"title": "Just a moment...", "access": "blocked"})
       and not P.is_challenge({"title": "GB-AS Program | Glendale Community College Catalog", "h1": "General Business",
                               "access": "ok"})
-      and not P.is_challenge({"title": "", "access": "robots_disallow"}),
+      and not P.is_challenge({"title": "", "access": "robots_disallow"})
+      and not P.is_challenge({"title": "Security Check Point Operations - Certificate", "status": 200, "access": "ok"}),
       "a page whose title or heading names a bot check is a challenge, and only such a page")
 
 
@@ -3319,6 +3320,85 @@ ge_given = C.assign([calgetc, speech], [ge_page])
 check((ge_given["45068"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CALGETC")
       and ge_given["02588"]["best"] is None and ge_given["02588"]["lost"] == [],
       "a program never files the pattern's page as one it lost: %r" % {k: v["lost"] for k, v in ge_given.items()})
+
+# Two different current programs never share one page's list on a title tie alone (the S646 conductor's
+# ruling). Glendale's titles nest, and each pair tied on the longer title's page (capture 43366669415's
+# shared_pages; statuses from coci_programs_data.js): the page goes to the program whose full title its
+# own heading prints, and the other moves on to its own page.
+NEST_TAB = "Completion Requirements\nCD 101 Child Growth\nCD 102 Families\nCD 110 Curriculum\nTotal Required Credits\n27"
+
+
+def nest_page(code, name):
+    url = GL_ROOT + "/programs/%s/%s" % (urllib.parse.quote(code, safe=""), GL_SUFFIX)
+    return C.cd_page({"url": url, "final_url": url, "title": "%s Program | Glendale Community College Catalog" % code,
+                      "body": NEST_TAB, "content": NEST_TAB}, {"code": code, "name": name})
+
+
+nest_courses = [{"code": c} for c in ("CD 101", "CD 102", "CD 110")]
+cd_teacher = {"control_number": "02599", "title": "Child Development: Teacher", "award": "A.S. Degree",
+              "status": "Active", "closed_list": nest_courses}
+cd_master = {"control_number": "11191", "title": "Child Development: Master Teacher", "award": "A.S. Degree",
+             "status": "Active", "closed_list": nest_courses}
+mt_page = nest_page("CDMT-AS", "Child Development: Master Teacher - Associate of Science")
+tp_page = nest_page("CDTP-AS", "Child Development: Teacher - Associate of Science")
+nest_given = C.assign([cd_teacher, cd_master], [mt_page])
+check((nest_given["11191"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDMT-AS")
+      and nest_given["02599"]["best"] is None,
+      "the Master Teacher page goes to Master Teacher alone; Teacher reads no page from it: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in nest_given.items()})
+nest_given = C.assign([cd_teacher, cd_master], [mt_page, tp_page])
+check((nest_given["11191"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDMT-AS")
+      and (nest_given["02599"]["best"] or {}).get("url", "").startswith(GL_ROOT + "/programs/CDTP-AS"),
+      "with its own page in the capture, Teacher reads its own: %r"
+      % {k: (v["best"] or {}).get("url") for k, v in nest_given.items()})
+mg_page = nest_page("MGMTII-C", "Management II - Certificate of Achievement")
+mg1 = {"control_number": "45395", "title": "Management I", "award": "Certificate of Achievement requiring 8S/12Q",
+       "status": "Active", "closed_list": nest_courses}
+mg2 = {"control_number": "19559", "title": "Management II", "award": "Certificate of Achievement requiring 16S/24Q",
+       "status": "Active", "closed_list": nest_courses}
+it_page = nest_page("ITT-C", "Information Technology Technician - Certificate of Achievement")
+it1 = {"control_number": "37070", "title": "Information Technology", "award": "Certificate of Achievement requiring 16S/24Q",
+       "status": "Active", "closed_list": nest_courses}
+it2 = {"control_number": "41573", "title": "Information Technology Technician",
+       "award": "Certificate of Achievement requiring 16S/24Q", "status": "Active", "closed_list": nest_courses}
+mg_given, it_given = C.assign([mg1, mg2], [mg_page]), C.assign([it1, it2], [it_page])
+check(mg_given["19559"]["best"] and mg_given["45395"]["best"] is None
+      and it_given["41573"]["best"] and it_given["37070"]["best"] is None,
+      "Management II and Information Technology Technician keep their own pages: %r"
+      % [sorted(k for k, v in g.items() if v["best"]) for g in (mg_given, it_given)])
+# Two records of one program, an Active one beside its Teachout Only one, still share (COM2.0-AAT: 30814
+# Communication Studies, Teachout Only, and 44951 Communication Studies 2.0, Active, both 18 units).
+com_page = nest_page("COM2.0-AAT", "Communication Studies 2.0 - Associate in Arts for Transfer")
+com_old = {"control_number": "30814", "title": "Communication Studies", "award": "A.A- T Degree",
+           "status": "Active - Teachout Only", "closed_list": nest_courses}
+com_new = {"control_number": "44951", "title": "Communication Studies 2.0", "award": "A.A- T Degree",
+           "status": "Active", "closed_list": nest_courses}
+com_given = C.assign([com_old, com_new], [com_page])
+check(com_given["30814"]["best"] and com_given["44951"]["best"],
+      "an old and a new record of one program still share its page")
+check(C.heading_title("Child Development: Master Teacher - Associate of Science associate in science")
+      == "child development master teacher" and C.heading_title("Public Health Science, A.S.-T") == "public health science",
+      "a heading's title part is read before its award tail or its comma")
+
+# route=slow: the whole read at the re-read's pace, stopping at its first challenge; a read so stopped is
+# filed and never extracted.
+asked, fake = gl_session({"SC-AA"})
+P.load = fake
+slow2 = _ChallengeReader({})
+try:
+    sl_info: dict = {}
+    sl_pages = C._cd_read(slow2, GL_ROOT, GL_PROGS, sl_info, dict(heard0), {}, slow=True)
+finally:
+    P.load = real_load
+check([p["code"] for p in sl_pages] == ["ACCTG-AS", "GB-AS", "GB-C"] and sl_info["challenged"] == ["SC-AA", "MC-AS"]
+      and sl_info["slow"] == {"delay_s": 12.0, "stopped_at": "SC-AA", "not_tried": 1} and slow2.delay == 12.0,
+      "a slow read reads every code at 12 s and stops at the first challenge: %r" % sl_info.get("slow"))
+check(C.is_slow("slow") and not C.is_slow("site") and C.prefer_site("coursedog", "slow"), "route=slow is a site read")
+with tempfile.TemporaryDirectory() as td:
+    open(os.path.join(td, "capture.json"), "w").write(json.dumps({"coursedog": {"slow": sl_info["slow"]}}))
+    stopped = C.reread_capture(td)
+    open(os.path.join(td, "capture.json"), "w").write(json.dumps({"coursedog": {"slow": {"delay_s": 12.0}}}))
+    check(stopped and not C.reread_capture(td), "a slow read a challenge stopped is partial; one that finished is not")
 
 if failures:
     print("FAIL: %d" % len(failures))

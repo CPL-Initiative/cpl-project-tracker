@@ -630,16 +630,22 @@ def open_reader(delay_ms: int):
 # 43366669415), which the census's access reading files as unreachable. A challenge is its own
 # answer kind, a refusal, so a capture never reads it as a page or a program as absent from the
 # catalog. The reader never tries to pass one (docs/reference/blocked_sources.md).
+# The exact phrases count on any answer; the broader ones only on an answer other than 200, so a real
+# page that names a security check or a captcha in its title is still read (COBIx on #3202).
 CHALLENGE_TITLE = re.compile(
-    r"confirm you are (?:a )?human|verify (?:that )?you are (?:a )?human|are you a (?:robot|human)|"
+    r"confirm you are (?:a )?human|verify (?:that )?you are (?:a )?human|are you a (?:robot|human)", re.I)
+CHALLENGE_TITLE_REFUSED = re.compile(
     r"just a moment|captcha|security check|bot verification|pardon our interruption", re.I)
 
 
 def is_challenge(got: dict | None) -> bool:
     """A load that served a bot check: its title or heading names one."""
     got = got or {}
-    return got.get("access") != "robots_disallow" and bool(
-        CHALLENGE_TITLE.search(got.get("title") or "") or CHALLENGE_TITLE.search(got.get("h1") or ""))
+    if got.get("access") == "robots_disallow":
+        return False
+    words = (got.get("title") or "") + "\n" + (got.get("h1") or "")
+    return bool(CHALLENGE_TITLE.search(words)
+                or (got.get("status") != 200 and CHALLENGE_TITLE_REFUSED.search(words)))
 
 
 def load(reader, url: str, cache: dict, spa: bool) -> dict:

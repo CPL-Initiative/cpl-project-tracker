@@ -4,7 +4,7 @@
   "supabase_tables": 115,
   "rpcs": 64,
   "edge_functions": 15,
-  "file_datasets": 903,
+  "file_datasets": 904,
   "external_services": 195,
   "consumers": 574,
   "workflows": 72,
@@ -451,7 +451,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1588
+     "line": 1624
     }
    ],
    "main_committers": []
@@ -498,7 +498,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1544
+     "line": 1580
     }
    ],
    "main_committers": []
@@ -694,7 +694,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1481
+     "line": 1517
     }
    ],
    "main_committers": []
@@ -2727,7 +2727,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1113
+     "line": 1119
     }
    ],
    "main_committers": []
@@ -2842,7 +2842,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1115
+     "line": 1121
     }
    ],
    "main_committers": []
@@ -2854,7 +2854,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1116
+     "line": 1122
     }
    ],
    "main_committers": []
@@ -2968,7 +2968,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1115
+     "line": 1151
     }
    ],
    "main_committers": []
@@ -3094,7 +3094,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 1114
+     "line": 1120
     }
    ],
    "main_committers": []
@@ -16826,6 +16826,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/program_requirements_college/glendale_community/capture_reread.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_program_requirements_college.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 2359
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/program_requirements_college/los_angeles_city/kept_passing.json": {
    "consumers": [
     {
@@ -16840,7 +16853,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4275
+     "line": 4332
     }
    ],
    "served": true,
@@ -20353,7 +20366,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4272
+     "line": 4329
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -20977,7 +20990,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 4250
+     "line": 4307
     },
     {
      "id": "script:kb/_program_requirements_wave.py",
@@ -27489,7 +27502,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4292
+     "line": 4349
     }
    ],
    "main_committers": []
@@ -27501,7 +27514,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 4379
+     "line": 4436
     }
    ],
    "main_committers": []
