@@ -61,37 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    61.0,
-    61.0
+    27.0,
+    27.0
    ],
    "stated": [
-    60.0,
-    60.0
+    27.0,
+    27.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     27.0,
-     27.0
+     61.0,
+     61.0
     ],
     "stated": [
-     27.0,
-     27.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -116,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +146,8 @@
     "Define the scientific method and apply it to observed geologic phenomena.",
     "Interpret geologic processes using underlying chemical properties and physical laws. Measure, manipulate, and interpret scientific data."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -223,5 +223,14 @@
    "The description mentions 'Geologists' only in describing the discipline, not as a career outcome; no careers recorded."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

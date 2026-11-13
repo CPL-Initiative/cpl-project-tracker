@@ -157,10 +157,19 @@ def family_title(family, title):
 
 
 def exception(title):
-    """The member a person codes by hand: its mix holds an "or" or a part no ASE code names, so the parser cannot code
-    it fully. {"title", "mix", "tests", "with"}; None for a fully coded mix or a title with none."""
+    """The member a person codes by hand: the parser cannot code its mix (family_read's "unparseable": an "or", a part
+    that mixes a test code with other words, or no ASE test). {"title", "mix", "tests", "with", "why"}; None for a
+    coded mix or a title with none.
+
+    A part no ASE code names is coded as written, after "with" (family_read), and is no exception: Sam, 5:38 AM PT
+    2026-11-13 (#3228), on the eleven "titles to code by hand": "I think you and sky could just use a routine to do the
+    hand titling-- I would just defer to it's mix as written unless there was an obvious error". The routine is this
+    parser; what it cannot read is the obvious error left for him."""
     got = from_title(title)
     if not got or got["coded"]:
         return None
+    read = family_read("", title)
+    if read["status"] != "unparseable":
+        return None
     p = parts(title)
-    return {"title": title, "mix": got["label"], "tests": p["tests"], "with": p["with"]}
+    return {"title": title, "mix": got["label"], "tests": p["tests"], "with": p["with"], "why": read["why"]}

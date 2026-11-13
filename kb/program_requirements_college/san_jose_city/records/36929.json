@@ -1,0 +1,223 @@
+{
+ "college": "San Jose City College",
+ "control_number": "36929",
+ "shape": "noncredit",
+ "title": "ESL in Career and College - Intermediate",
+ "award": "Noncredit program",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/english-as-a-second-language/english-as-a-second-language-certificate-competency/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7068,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7068,
+    "output_tokens": 1246,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 1246,
+  "output_tokens_details": {
+   "thinking_tokens": 372
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.05319,
+ "ms": 11208,
+ "seconds": 11.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "hours",
+  "coverage": {
+   "placed": 3,
+   "listed": 3,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "ESL500",
+    "ESL531",
+    "ESL532"
+   ],
+   "flagged": [
+    "ESL500",
+    "ESL531",
+    "ESL532"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": [
+    160.0,
+    160.0
+   ],
+   "against": "program",
+   "why": [
+    "a required course in 'Student must take these courses.' has no units",
+    "'Choose the third course from one of the following:' chooses 1 courses but 0 carry units"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 5,
+   "courses": 0,
+   "count": 5,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ESL In Career and College: intermediate - Certificate of Competency",
+   "measure": "hours",
+   "total_units": {
+    "min": 160,
+    "max": 160
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Communicate effectively at the workplace using appropriate career-specific vocabulary.",
+    "Distinguish main ideas from details in oral or written communication.",
+    "Write and edit compositions at the intermediate level of proficiency.",
+    "Follow instructions, ask questions, and respond appropriately.",
+    "Demonstrate the ability to use information technology."
+   ],
+   "careers": []
+  },
+  "blocks": [
+   {
+    "name": "Student must take these courses.",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 532",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 550",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Choose the third course from one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ESL 531",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 510",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ESL 500",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "ESL 542",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Noncredit program: the catalog states 'At least three courses with a minimum total number of hours of 160', so measure is hours and total_units records the 160-hour minimum. The page also prints 'Total Units 0'.",
+   "The catalog prints 0 in the Credits column beside each course and no hours per course, so course units are left null rather than recording 0 credits as hours.",
+   "Section heading reads 'ESL In Career and College: intermediate - Certificate of Competency' under the page title 'English As a Second Language - ESL Certificate of Competency'; the award matches the requested program.",
+   "Description mentions preparing students 'to progress in a career path' but names no specific career, so careers is empty.",
+   "The page's catalog year is not shown in the text (footer copyright 2021); reviewer may confirm it reflects 2026-2027."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

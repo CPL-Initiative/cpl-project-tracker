@@ -1,7 +1,7 @@
 ---
 title: "EACR — Exhibit & CR Adoption — lane state"
 created: 2026-08-28
-updated: 2026-10-31
+updated: 2026-11-13
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -25,6 +25,8 @@ could-adopt college already teaches, Request Quick Adopt; `kb/exhibits_adoption.
 exports and Create Handout, named the Credential Catalog. The tab is retired (Sam, Open Asks Sheet 148 card 2): off the side
 menu since Sam hid its `cobi_nav` row at 23:51Z 2026-10-30, still open at `#exhibit-adoption`, its files kept. Its 2026-09-24
 ruling travels with the fold: no could-adopt list on any screen comes from `potential_names` (the TOP and C-ID overlap).
+
+**The Exhibits work of S647 (#3233 `d2d51532`, 2026-11-13).** The per-credential view lives in the Exhibits tab, so the fixes Sam asked for that afternoon land there: Review's side panel shows the aligned local course first and opens each MAP source id as a summary; Another look and the rename batch stop returning decided titles; a proposal takes an official credential name only on the industry-certification path and a course title only for credit by exam and noncredit (`d-exhibits-course-title-gate-s647`). Three items wait for Sam's ruling and the issuer-word follow-up is open: state, decisions and NEXT in [`cer-procedures`](cer-procedures.md), *The Exhibits fixes of #3223 and #3228*.
 
 ## Status
 

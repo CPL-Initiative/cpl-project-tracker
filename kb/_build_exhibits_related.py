@@ -177,10 +177,15 @@ def build(root="."):
             if got["kind"] == "fits":
                 fits += 1
                 continue
+            if got["kind"] == "standards":
+                continue   # a course taught to the standard (cert_naming.is_standards; Sam's ruling A): it stands
             if approved:
                 continue   # approved: the credential rename dry-run carries it from here
-            if got["proposed"] and (ov.get("cert_rename_kept") or "") == got["proposed"]:
-                continue   # skipped: this proposal was declined
+            # Skipped: this proposal was declined, or, for a row with no proposal, the title kept as it is. A keep-as-is
+            # answers only the empty proposal, as the tab reads it, so a proposal that appears later returns the row.
+            kept = (ov.get("cert_rename_kept") or "").strip()
+            if kept and kept == (got["proposed"] or t):
+                continue
             if t in on_card:
                 left += 1   # its own card in Another look decides it
                 continue

@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.0,
+    21.0,
     24.0
    ],
    "stated": [
@@ -71,14 +71,13 @@
     23.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 20.0-24.0; the catalog states 21.0-23.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     76.0,
+     77.0,
      82.0
     ],
     "stated": [
@@ -116,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -554,5 +553,6 @@
    "Description mentions 'a vast range of occupations' but names no specific careers."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "read_run": "38748858322"
 }

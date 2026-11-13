@@ -58,7 +58,6 @@ RULE_LABEL = {"reviewer": "rule 1, a person's issuer set with the fold",
               "standards": "rule 2b, taught to the standard",
               "additive": "rule 3, additive"}
 FOLD_FIELDS = ("unified_title_override", "unified_title_merge_confirm")
-_STANDARDS_WORDS = re.compile(r"\bstandards?\s*$", re.I)
 
 
 def norm(s):
@@ -93,8 +92,7 @@ def is_cert_form(title):
 def standards_body(title):
     """The certifying body's issuer when the title is a course taught to its standard, "<name> (ASE <code>
     standards)", else None. Only ASE has the form today (cert_naming.FAMILIES)."""
-    m = cert_naming.PAREN_FORM.match((title or "").strip())
-    if m and _STANDARDS_WORDS.search(m.group("words") or ""):
+    if cert_naming.is_standards(title):   # the one reading of the form (kb/cert_naming.py)
         return cert_naming.ASE_ISSUER
     return None
 

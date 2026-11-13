@@ -437,8 +437,10 @@
           if (!c) return;
           if (row.field === FIELD_KEPT || (row.field === FIELD_SUPERSEDES && row.value === c.current)) state.sw.done[c.id] = true;
         });
+        state.sw.readErr = "";
       })
-      .catch(function () { /* the file's cards stand */ });
+      // The file's cards stand, and the view says so: a card decided since the build may show again (#3228).
+      .catch(function (e) { state.sw.readErr = String(e && e.message || e); });
   }
   function sweepRule(id) {
     var rules = (state.sw.data && state.sw.data.rules) || [];
@@ -962,7 +964,10 @@
     draw();
     return box;
   }
-  function withRelated(cardEl, o) { return el("div", { cls: "exh-with-rel" }, [cardEl, relatedPanel(o)]); }
+  function withRelated(cardEl, o) {
+    var side = o.top ? el("div", { cls: "exh-side" }, [o.top, relatedPanel(o)]) : relatedPanel(o);
+    return el("div", { cls: "exh-with-rel" }, [cardEl, side]);
+  }
 
   /* ── The statewide or most-used title, and related titles changed from the panel (Sam, 2026-11-12) ──
      "for the firefighter academy example, it should be renamed "Firefighter 1" which is the statewide exhibit ... it
@@ -1309,7 +1314,9 @@
     var open = renameOpen(b), renames = [], skips = [], left = [];
     open.forEach(function (r) {
       var t = renameTitle(r);
-      if (renameSkipped(r)) { if (r.proposed) skips.push(r); else left.push(r); }
+      // A skip is saved for every row, one with no proposal too (its keep names the title kept as it is): before #3228
+      // a skipped row with no proposal saved nothing and came back with every rebuild.
+      if (renameSkipped(r)) skips.push(r);
       else if (t && t !== r.current) renames.push({ r: r, to: t });
       else left.push(r);
     });
@@ -1335,7 +1342,7 @@
       if (x.merge) rows.push({ course_id: id, field: FIELD_MERGE_CONFIRM, value: x.to, reviewer_email: email, reviewed_at: when });
     });
     plan.skips.forEach(function (r) {
-      rows.push({ course_id: CRED_PREFIX + r.current, field: FIELD_RENAME_KEPT, value: r.proposed, reviewer_email: email, reviewed_at: lead });
+      rows.push({ course_id: CRED_PREFIX + r.current, field: FIELD_RENAME_KEPT, value: r.proposed || r.current, reviewer_email: email, reviewed_at: lead });
     });
     return rows;
   }
@@ -1373,10 +1380,12 @@
           var r = byId[row.course_id];
           if (!r || !row.value) return;
           if (row.field === FIELD_CRED_TITLE && row.value !== r.current) state.rb.done[r.current] = "renamed";
-          if (row.field === FIELD_RENAME_KEPT && row.value === r.proposed) state.rb.done[r.current] = "skipped";
+          if (row.field === FIELD_RENAME_KEPT && row.value === (r.proposed || r.current)) state.rb.done[r.current] = "skipped";
         });
+        state.rb.readErr = "";
       })
-      .catch(function () { /* the file's rows stand */ });
+      // The file's rows stand, and the batch says so: a decision saved since the build may show again (#3228).
+      .catch(function (e) { state.rb.readErr = String(e && e.message || e); });
   }
   /* Students who hold credit under each title in the batch: an allowed reviewer only, k=10 in the database. */
   function loadRenameStudents() {
@@ -1440,8 +1449,10 @@
         var t = renameTitle(r), x = null;
         plan = renamePlan(b);
         plan.renames.forEach(function (p) { if (p.r === r) x = p; });
-        fate.textContent = renameSkipped(r) ? (r.proposed ? "Skipped: keeps its title" : "Left as it is")
-          : !t || t === r.current ? "Left as it is" : x && x.merge ? "Renamed, and folded into the title of that name" : "Renamed";
+        // Until the batch is saved nothing is renamed, so the row says what approving will do (#3228: a row read
+        // "Renamed" before any save, and Sam took it for a decision that had not held).
+        fate.textContent = renameSkipped(r) ? "Skipped: keeps its title"
+          : !t || t === r.current ? "Left as it is" : x && x.merge ? "Folds into the title of that name on approval" : "Renames on approval";
       }
       inp.addEventListener("input", function () { state.rb.drafts[r.current] = inp.value; say(); count(); });
       if (skipped) inp.disabled = true;
@@ -1478,10 +1489,17 @@
     box.appendChild(acts);
     return box;
   }
+  /* The saved decisions could not be read from COBI, so the file's cards or rows stand as built (#3228 fix 1). */
+  function unreadNote(built, err, what) {
+    return el("p", { cls: "exh-small exh-unread", role: "status", text: "The decisions saved since " + stamp(built)
+      + " could not be read from COBI (" + err + "), so a " + what + " decided since then may show again here. Your saves are kept; "
+      + "reload to read them, or wait for tonight's rebuild." });
+  }
   function renderRename(wrap) {
     var d = state.rel.data, bs = renameBatches();
     wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
       + "One batch a certification issuer." + ((d.waiting || []).length ? " Waiting until this one is decided: " + d.waiting.join(", ") + "." : "") }));
+    if (state.rb.readErr) wrap.appendChild(unreadNote(d.generated_at, state.rb.readErr, "row"));
     wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.note || "" }));
     if (state.rb.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
       var mount = el("div", { cls: "exh-signin" });
@@ -1503,15 +1521,18 @@
       if (!ex.length) return;
       var box = el("section", { cls: "exh-card exh-rb exh-famx", "aria-labelledby": "exh-famx-h-" + i });
       box.appendChild(el("h3", { cls: "exh-q", id: "exh-famx-h-" + i, text: name + ": titles to code by hand (" + fmt(ex.length) + ")" }));
-      box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Each title carries the family. The parser could not code its tests fully: "
-        + "the mix holds an “or”, or a part that is not an ASE test. A part that is not an ASE test joins the bundle with its ASE tests. "
-        + "Say what each mix is; its proposed title waits in the batch below." }));
+      // Sam, 5:38 AM PT 2026-11-13 (#3228): "I would just defer to it's mix as written unless there was an obvious error".
+      // Every other member is named from its mix as written (kb/test_mix.py); these are the mixes the parser cannot read.
+      box.appendChild(el("p", { cls: "exh-small exh-muted", text: "Each title carries the family. Every other bundle is named from its mix "
+        + "as written, a part that is not an ASE test after “with” (Sam, 2026-11-13). The parser cannot read these, for the reason under "
+        + "each title, so none is in the batch below; each waits for a person to say what its mix is." }));
       var cols = el("colgroup", null, ["40%", "24%", "18%", "18%"].map(function (w) { var c = el("col"); c.style.width = w; return c; }));
       var head = el("thead", null, [el("tr", null, ["Title", "Its mix as written", "ASE tests", "With"].map(function (h) {
         return el("th", { scope: "col", text: h }); }))]);
       var tb = el("tbody");
       ex.forEach(function (e) {
-        tb.appendChild(el("tr", null, [el("th", { scope: "row", text: e.title }), el("td", { text: e.mix }),
+        tb.appendChild(el("tr", null, [el("th", { scope: "row" }, [el("span", { text: e.title }),
+          e.why ? el("span", { cls: "exh-muted exh-small exh-famx-why", text: "Why: " + e.why }) : null]), el("td", { text: e.mix }),
           el("td", { text: (e.tests || []).join(", ") || "None" }), el("td", { text: (e.with || []).join(", ") || "Nothing else" })]));
       });
       box.appendChild(el("div", { cls: "exh-rb-scroll", role: "region", tabindex: "0", "aria-label": name + " titles to code by hand" }, [
@@ -1925,6 +1946,7 @@
     if (state.sw.batchMode) return renderBatch(wrap);
     wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
       + "Each card names its rule; a change moves its local titles at the nightly fold." }));
+    if (state.sw.readErr) wrap.appendChild(unreadNote(d.generated_at, state.sw.readErr, "card"));
     wrap.appendChild(sweepRules());
     var list = sweepShown();
     if (state.sw.cur >= list.length) state.sw.cur = Math.max(0, list.length - 1);
@@ -2116,6 +2138,47 @@
     }
     return box;
   }
+  /* Course details above Words in common (Sam, 4:57 AM PT 2026-11-13, #3223): "the course details link is very helpful but
+     should have the details listed in a section above Words in common on sidebar. the local course title has been the
+     most helpful thing for me to see in many of these decisions". The Review file carries each card's local courses
+     (kb/_build_exhibits_review.py local_courses), so the section draws with the card and reads nothing more; Course details
+     on the card still opens the full panel. Its MAP exhibits too (Sam, 5:04 AM PT: "is there a way to have the source:
+     mapid links open to the sidebar ... so the user is not taken out of the tab to get lost?"): each is named here from
+     what COBI holds, with Open in MAP, a new tab, for the rest (COBIx: a native summary first, no frame of MAP's page). */
+  var THIN_DESC = 80;
+  function courseSummary(h) {
+    var rows = h.local_courses || [];
+    var box = el("section", { cls: "exh-rel exh-cdsum", "aria-labelledby": "exh-cdsum-h" });
+    box.appendChild(el("h4", { cls: "exh-q exh-small", id: "exh-cdsum-h", text: "Course details" }));
+    if (!rows.length) box.appendChild(el("p", { cls: "exh-muted exh-small", text: "No local course is on file for this exhibit in the data COBI reads." }));
+    rows.forEach(function (r) {
+      var units = r[3] ? r[3] + (r[3] === 1 ? " unit" : " units") : "Noncredit";
+      var sec = el("div", { cls: "exh-cd-course" });
+      sec.appendChild(el("b", { cls: "exh-rel-t exh-cd-title", text: r[2] || "No course title on file" }));
+      sec.appendChild(el("p", { cls: "exh-muted exh-small", text: [college(r[0]), r[1], units].filter(Boolean).join(" · ") }));
+      if (r[5]) sec.appendChild(el("p", { cls: "exh-small", text: "Credit recommendation: " + r[5] }));
+      var d = r[6] || "";
+      if (!d) sec.appendChild(el("p", { cls: "exh-muted exh-small", text: "No COCI description on file." }));
+      else {
+        sec.appendChild(el("p", { cls: "exh-small exh-cd-desc", text: "COCI description: " + d }));
+        // #3219: a COCI description is often unreliable for a noncredit course, and a thin one settles nothing.
+        if (!r[3] || d.length < THIN_DESC) sec.appendChild(el("p", { cls: "exh-muted exh-small exh-cd-lead", text: !r[3]
+          ? "Read it as a lead only: COCI descriptions of noncredit courses are often out of date or copied from another course."
+          : "Read it as a lead only: the description is too short to settle the title." }));
+      }
+      box.appendChild(sec);
+    });
+    if (h.ids && h.ids.length) {
+      var m = el("div", { cls: "exh-cdsum-map", id: "exh-cdsum-map", tabindex: "-1" }, [el("h5", { cls: "exh-rel-tier", text: "In MAP" })]);
+      h.ids.slice(0, 3).forEach(function (id) {
+        m.appendChild(el("p", { cls: "exh-small" }, [el("b", { text: id }), " · " + h.raw + ", " + shortList(whoBuilt(h)) + " · ",
+          el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: "Open in MAP", "aria-label": "Open " + id + " in MAP, in a new tab" })]));
+      });
+      if (h.ids.length > 3) m.appendChild(el("p", { cls: "exh-muted exh-small", text: "and " + (h.ids.length - 3) + " more exhibits" }));
+      box.appendChild(m);
+    }
+    return box;
+  }
   function studentsLine(h) {
     var s = studentsOf(h);
     var many = h.ids && h.ids.length > 1 ? "these exhibits" : "this exhibit";
@@ -2237,9 +2300,13 @@
     c.appendChild(el("p", { cls: "exh-why", text: studentsLine(h) + " · " + h.why }));
     if (h.ids && h.ids.length) {
       var src = el("p", { cls: "exh-small" }, ["Source: "]);
+      var inSide = state.cd.open !== h.raw;
       h.ids.slice(0, 3).forEach(function (id, k) {
         if (k) src.appendChild(document.createTextNode(", "));
-        src.appendChild(el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id + " in MAP" }));
+        // Sam, 2026-11-13 (#3223): the id opens its summary in the side panel; Open in MAP there leaves the tab.
+        src.appendChild(inSide ? word(id, function () { var m = document.getElementById("exh-cdsum-map"); if (m) m.focus(); },
+          { cls: "exh-w exh-small", "aria-controls": "exh-cdsum-map", "aria-label": id + ", shown in the side panel" })
+          : el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id + " in MAP" }));
       });
       if (h.ids.length > 3) src.appendChild(document.createTextNode(" and " + (h.ids.length - 3) + " more"));
       var cdOpen = state.cd.open === h.raw;
@@ -2319,7 +2386,7 @@
         + (state.students ? " · most students first" : " · most colleges first") }),
       el("span", { text: next ? "Next: " + next.raw + ", " + shortList(whoBuilt(next)) : "" })]));
     if (state.cd.open === h.raw) return el("div", { cls: "exh-with-rel" }, [c, courseDetailsPanel(h)]);
-    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true,
+    return withRelated(c, { key: "r:" + h.raw, title: title, issuer: issuer, issuer0: h.issuer, raw: h.raw, skip: [], actions: true, top: courseSummary(h),
       use: function (r) { useRow(r); drawAlign(); } });
     function useRow(r) {
       title.value = r.t;
@@ -5047,6 +5114,13 @@
     ".exh-cd-facts dt { color:var(--text-muted); }",
     ".exh-cd-facts dd { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
     ".exh-cd-desc { color:var(--text-body); }",
+    /* The side column on a Review card: Course details above Related titles (issue 3223), and the notes of issue 3228. */
+    ".exh-side { display:grid; gap:16px; align-content:start; min-width:0; }",
+    ".exh-cdsum-map { display:grid; gap:4px; min-width:0; }",
+    ".exh-cdsum-map p { margin:0; overflow-wrap:anywhere; }",
+    ".exh-cdsum-map:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-unread { margin:0 0 8px; border-left:3px solid var(--seal-blue-text); background:var(--surface-subtle); padding:6px 10px; color:var(--text-body); }",
+    ".exh-famx-why { display:block; }",
     ".exh-rule-notes p, .exh-rule-notes ol { margin:4px 0; }",
     ".exh-rb-scroll { overflow-x:auto; min-width:0; }",
     ".exh-rb-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.88rem; }",

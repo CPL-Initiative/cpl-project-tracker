@@ -72,7 +72,7 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    51.0,
+    52.0,
     52.0
    ],
    "stated": [
@@ -316,5 +316,6 @@
    "JOURNAL 202 and ENGLISH 102 are marked with an asterisk (prerequisite). ENGLISH 102 is printed with title 'Academic Writing and Literature' and an OR to ENGL C1001."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "read_run": "39063389278"
 }

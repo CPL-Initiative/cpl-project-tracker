@@ -1,0 +1,271 @@
+{
+  "folded": [
+    {
+      "raw": "Credit by Exam-- CFPL ABT 133",
+      "assigned": "Facility Management for Food Safety",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:03.722245+00:00"
+    },
+    {
+      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
+      "assigned": "Modern Dance Techniques 1",
+      "issuer": "CHAMPS High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:15.409179+00:00"
+    },
+    {
+      "raw": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
+      "assigned": "Modern Dance Techniques 2",
+      "issuer": "CHAMPS High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:17.272537+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 50",
+      "assigned": "Introduction to Administration of Justice",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:36:44.884129+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 54",
+      "assigned": "Investigative Report Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:37:18.901059+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 60",
+      "assigned": "Concepts of Criminal Law",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:38:53.24418+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 61",
+      "assigned": "Legal Aspects of Evidence",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:39:08.713508+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 63",
+      "assigned": "Criminal Investigation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:39:45.360909+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 64",
+      "assigned": "Police Patrol Operations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:40:49.902805+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 66",
+      "assigned": "Juvenile Procedures",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:41:49.096282+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AJ 68",
+      "assigned": "Police Ethics and Leadership",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:42:35.798856+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A1",
+      "assigned": "ASE A1 — Engine Repair",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:01.418391+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A2",
+      "assigned": "ASE A2 — Automatic Transmission/Transaxle",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:10.436127+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A3",
+      "assigned": "ASE A3 — Manual Drive Train and Axles",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:12.775948+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A4",
+      "assigned": "ASE A4 — Suspension and Steering",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:14.62365+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A5",
+      "assigned": "ASE A5 — Brakes",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:15.977676+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A6",
+      "assigned": "ASE A6 — Electrical/Electronic Systems",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:17.680346+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A7",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:22.014049+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A8",
+      "assigned": "ASE A8 — Engine Performance",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:24.127773+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO A9",
+      "assigned": "ASE A9 — Light Vehicle Diesel Engines",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:43:27.738911+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO INT",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:44:15.628762+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO INTL",
+      "assigned": "Introduction to Automotive Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:44:26.353672+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO L1",
+      "assigned": "ASE L1 — Advanced Engine Performance Specialist",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:05.438463+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO L3",
+      "assigned": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:14.223091+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO SDR",
+      "assigned": "Automotive Specified Diagnostic and Repair",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:19.305781+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for AUTO SMOG",
+      "assigned": "Smog Inspector - Level 1 Training",
+      "issuer": "California Bureau of Automotive Repair (BAR)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:24.324605+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for BUSN 65",
+      "assigned": "Federal Income Tax Accounting",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:45:44.565728+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for CIS 66",
+      "assigned": "Introduction to Computer Networking",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:47:22.144057+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for CNT 52",
+      "assigned": "Introduction to Computer Networking",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:47:52.212376+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for CNT 68",
+      "assigned": "Introduction to Digital Forensics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:48:50.386223+00:00"
+    }
+  ],
+  "superseded": [],
+  "revised": [],
+  "credential_moved": [],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Credit by Exam-- CFPL ABT 133",
+      "assigned": "Facility Management for Food Safety",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:03.722245+00:00"
+    },
+    {
+      "raw": "Industry Training Evidence for CNT 68",
+      "assigned": "Introduction to Digital Forensics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:48:50.386223+00:00"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Modern Dance Techniques 1",
+      "issuer": "CHAMPS High School",
+      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:15.409179+00:00"
+    },
+    {
+      "title": "Modern Dance Techniques 2",
+      "issuer": "CHAMPS High School",
+      "raw": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:35:17.272537+00:00"
+    },
+    {
+      "title": "Juvenile Procedures",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "raw": "Industry Training Evidence for AJ 66",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:41:49.096282+00:00"
+    },
+    {
+      "title": "Police Ethics and Leadership",
+      "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+      "raw": "Industry Training Evidence for AJ 68",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-13T12:42:35.798856+00:00"
+    }
+  ],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 30,
+  "unified_titles_count": 5756
+}

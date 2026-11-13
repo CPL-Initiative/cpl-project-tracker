@@ -6809,6 +6809,538 @@
    "hints": "196a80f23c",
    "asked": "2026-10-31"
   },
+  "Apprenticeship Training Evidence for ACL 115": {
+   "raw_title": "Apprenticeship Training Evidence for ACL 115",
+   "unified_title": "Apprenticeship (ACL 115)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. 'Apprenticeship Training Evidence for' is mechanism phrasing and was stripped. The ACL 115 course title could not be resolved without the Las Positas COCI lookup, so the code-form fallback is used. The sponsoring apprenticeship committee (issuer) is unknown and left null for a person to resolve.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 1": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 1",
+   "unified_title": "Apprenticeship (APAG 1)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The Las Positas APAG course title is unresolved, so the code-form fallback is used pending a COCI lookup. The apprenticeship sponsor (issuer) is unknown and left null.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 1L": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 1L",
+   "unified_title": "Apprenticeship (APAG 1L)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The lab course APAG 1L is kept distinct from the lecture APAG 1. The course title is unresolved pending a COCI lookup, and the sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 2": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 2",
+   "unified_title": "Apprenticeship (APAG 2)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 2L": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 2L",
+   "unified_title": "Apprenticeship (APAG 2L)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 3": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 3",
+   "unified_title": "Apprenticeship (APAG 3)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 3L": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 3L",
+   "unified_title": "Apprenticeship (APAG 3L)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 4": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 4",
+   "unified_title": "Apprenticeship (APAG 4)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APAG 4L": {
+   "raw_title": "Apprenticeship Training Evidence for APAG 4L",
+   "unified_title": "Apprenticeship (APAG 4L)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 100": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 100",
+   "unified_title": "Apprenticeship (APCL 100)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. APCL may be Las Positas's floor-covering (carpet/linoleum) apprenticeship series, but this is unverified, so the code-form fallback is used. The sponsor (likely a floor-covering apprenticeship committee) is unconfirmed and left null.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 101": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 101",
+   "unified_title": "Apprenticeship (APCL 101)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 102": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 102",
+   "unified_title": "Apprenticeship (APCL 102)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 103": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 103",
+   "unified_title": "Apprenticeship (APCL 103)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 104": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 104",
+   "unified_title": "Apprenticeship (APCL 104)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 105": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 105",
+   "unified_title": "Apprenticeship (APCL 105)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.4,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 106": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 106",
+   "unified_title": "Apprenticeship (APCL 106)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code, so the code-only lookup applies. The Las Positas COCI title for APCL 106 could not be checked, so the title falls back to the <Discipline> (<code>) form. The sponsoring apprenticeship committee (possibly a Northern CA trade JATC such as CTCNC) is unverified, so the issuer is left open for review.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 107": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 107",
+   "unified_title": "Apprenticeship (APCL 107)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 107 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 108": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 108",
+   "unified_title": "Apprenticeship (APCL 108)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 108 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 109": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 109",
+   "unified_title": "Apprenticeship (APCL 109)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 109 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 110": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 110",
+   "unified_title": "Apprenticeship (APCL 110)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 110 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 111": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 111",
+   "unified_title": "Apprenticeship (APCL 111)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 111 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 112": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 112",
+   "unified_title": "Apprenticeship (APCL 112)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 112 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 113": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 113",
+   "unified_title": "Apprenticeship (APCL 113)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 113 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 114": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 114",
+   "unified_title": "Apprenticeship (APCL 114)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 114 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APCL 116": {
+   "raw_title": "Apprenticeship Training Evidence for APCL 116",
+   "unified_title": "Apprenticeship (APCL 116)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APCL 116 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APMT 51": {
+   "raw_title": "Apprenticeship Training Evidence for APMT 51",
+   "unified_title": "Apprenticeship (APMT 51)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APMT 51 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APMT 52": {
+   "raw_title": "Apprenticeship Training Evidence for APMT 52",
+   "unified_title": "Apprenticeship (APMT 52)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APMT 52 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
+  "Apprenticeship Training Evidence for APMT 53": {
+   "raw_title": "Apprenticeship Training Evidence for APMT 53",
+   "unified_title": "Apprenticeship (APMT 53)",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.45,
+   "confidence_issuer": 0.3,
+   "confidence_trainer": 0.3,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ],
+   "_notes": "Title is a course code; the Las Positas COCI title for APMT 53 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "rules": "75e72fb99f8c",
+   "hints": "4f53cda18c",
+   "asked": "2026-11-13"
+  },
   "Arc Welding High School Articulation": {
    "raw_title": "Arc Welding High School Articulation",
    "unified_title": "Arc Welding",

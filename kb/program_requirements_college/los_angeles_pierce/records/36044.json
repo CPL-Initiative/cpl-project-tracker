@@ -82,15 +82,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Be able to analyze and interpret the contributions of Chicana/os in the fine arts, literature, and popular culture in the United States."
-   ],
-   "why": [
-    "not in the catalog text as printed: Be able to analyze and interpret the contributions of Chicana/os in the fine art"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -256,5 +252,6 @@
    "Program description and careers text precede this page and are not in the excerpt; no careers named in the provided text."
   ]
  },
- "extracted_run": "39006383070"
+ "extracted_run": 43355018296,
+ "read_run": "39006383070"
 }

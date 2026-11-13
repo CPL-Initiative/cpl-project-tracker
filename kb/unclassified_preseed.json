@@ -1,123 +1,405 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-12T16:21:44Z",
- "_queue_count": 180,
+ "_generated_at": "2026-11-13T15:48:00Z",
+ "_queue_count": 198,
  "_counts": {
-  "staged": 143,
-  "needs_you": 179,
+  "staged": 162,
+  "needs_you": 198,
   "not_yet_asked": 0
  },
  "_residual": [],
  "staged": {
-  "AP Government Exam": {
-   "title": "AP United States Government and Politics",
-   "issuer": "College Board",
-   "confidence": 0.95,
-   "via": "ap",
-   "note": "College Board's official AP exam name, read from the title.",
-   "procedure": "brand-family"
-  },
-  "Credit by Exam - ACADEMIC PLANNING": {
-   "title": "Academic Planning",
-   "issuer": "California Community Colleges",
+  "Apprenticeship Training Evidence for ACL 115": {
+   "title": "Apprenticeship (ACL 115)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "Mended the cx hint to title case. The exact Irvine Valley course title (CCN/C-ID/COCI) was not verified.",
+   "confidence": 0.4,
+   "note": "Code-only title. 'Apprenticeship Training Evidence for' is mechanism phrasing and was stripped. The ACL 115 course title could not be resolved without the Las Positas COCI lookup, so the code-form fallback is used. The sponsoring apprenticeship committee (issuer) is unknown and left null for a person to resolve.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
     "Rule 5c",
-    "mechanism-collapses"
+    "Rule 1",
+    "Rule 9"
    ]
   },
-  "Elevators Training Center Apprenticeship Journeyperson": {
-   "title": "Elevator Constructor Apprenticeship — Journeyperson",
-   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+  "Apprenticeship Training Evidence for APAG 1": {
+   "title": "Apprenticeship (APAG 1)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.5,
-   "note": "Follows the house Elevator Constructor Apprenticeship shape. The issuer is assumed to be NEIEP (IUEC program) and should be confirmed against the DAS sponsor for American River College's region.",
+   "confidence": 0.4,
+   "note": "Code-only title. The Las Positas APAG course title is unresolved, so the code-form fallback is used pending a COCI lookup. The apprenticeship sponsor (issuer) is unknown and left null.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 4",
-    "apprenticeship-trades",
-    "Rule 7",
-    "join-when-likely-one"
-   ],
-   "trainer": "Elevators Training Center"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
-  "Elevators Training Center Apprenticeship Level 1": {
-   "title": "Elevator Constructor Apprenticeship — Level 1",
-   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+  "Apprenticeship Training Evidence for APAG 1L": {
+   "title": "Apprenticeship (APAG 1L)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.5,
-   "note": "The level does not map cleanly onto the NEIEP RC100–RC800 semester keys, so it is kept as a level. Confirm the issuer (NEIEP vs a local DAS sponsor).",
+   "confidence": 0.4,
+   "note": "Code-only title. The lab course APAG 1L is kept distinct from the lecture APAG 1. The course title is unresolved pending a COCI lookup, and the sponsor is unknown.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 4",
-    "apprenticeship-trades",
-    "Rule 7",
-    "arabic-level-numerals"
-   ],
-   "trainer": "Elevators Training Center"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
-  "Elevators Training Center Apprenticeship Level 2": {
-   "title": "Elevator Constructor Apprenticeship — Level 2",
-   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+  "Apprenticeship Training Evidence for APAG 2": {
+   "title": "Apprenticeship (APAG 2)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.5,
-   "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "confidence": 0.4,
+   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 4",
-    "apprenticeship-trades",
-    "Rule 7",
-    "arabic-level-numerals"
-   ],
-   "trainer": "Elevators Training Center"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
-  "Elevators Training Center Apprenticeship Level 3": {
-   "title": "Elevator Constructor Apprenticeship — Level 3",
-   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+  "Apprenticeship Training Evidence for APAG 2L": {
+   "title": "Apprenticeship (APAG 2L)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.5,
-   "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "confidence": 0.4,
+   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 4",
-    "apprenticeship-trades",
-    "Rule 7",
-    "arabic-level-numerals"
-   ],
-   "trainer": "Elevators Training Center"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
-  "Elevators Training Center Apprenticeship Level 4": {
-   "title": "Elevator Constructor Apprenticeship — Level 4",
-   "issuer": "National Elevator Industry Educational Program (NEIEP)",
+  "Apprenticeship Training Evidence for APAG 3": {
+   "title": "Apprenticeship (APAG 3)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.5,
-   "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer.",
+   "confidence": 0.4,
+   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
    "procedure": "classifier",
    "rests_on": [
-    "Rule 4",
-    "apprenticeship-trades",
-    "Rule 7",
-    "arabic-level-numerals"
-   ],
-   "trainer": "Elevators Training Center"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
-  "Firefighter Recruit Academy Certificate": {
-   "title": "Firefighter 1 Academy",
-   "issuer": "California State Fire Training (SFT)",
+  "Apprenticeship Training Evidence for APAG 3L": {
+   "title": "Apprenticeship (APAG 3L)",
+   "issuer": "",
    "via": "classifier",
-   "confidence": 0.7,
-   "note": "Treated as a recruit academy and joined to the SFT Firefighter 1 Academy family. The academy provider is not named, so the trainer is set to 'varies by academy'.",
+   "confidence": 0.4,
+   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
    "procedure": "classifier",
    "rests_on": [
-    "brand-family",
-    "join-when-likely-one",
-    "Rule 7"
-   ],
-   "trainer": "varies by academy"
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APAG 4": {
+   "title": "Apprenticeship (APAG 4)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APAG 4L": {
+   "title": "Apprenticeship (APAG 4L)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 100": {
+   "title": "Apprenticeship (APCL 100)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. APCL may be Las Positas's floor-covering (carpet/linoleum) apprenticeship series, but this is unverified, so the code-form fallback is used. The sponsor (likely a floor-covering apprenticeship committee) is unconfirmed and left null.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 101": {
+   "title": "Apprenticeship (APCL 101)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 102": {
+   "title": "Apprenticeship (APCL 102)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 103": {
+   "title": "Apprenticeship (APCL 103)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 104": {
+   "title": "Apprenticeship (APCL 104)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 105": {
+   "title": "Apprenticeship (APCL 105)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.4,
+   "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 106": {
+   "title": "Apprenticeship (APCL 106)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code, so the code-only lookup applies. The Las Positas COCI title for APCL 106 could not be checked, so the title falls back to the <Discipline> (<code>) form. The sponsoring apprenticeship committee (possibly a Northern CA trade JATC such as CTCNC) is unverified, so the issuer is left open for review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 107": {
+   "title": "Apprenticeship (APCL 107)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 107 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 108": {
+   "title": "Apprenticeship (APCL 108)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 108 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 109": {
+   "title": "Apprenticeship (APCL 109)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 109 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 110": {
+   "title": "Apprenticeship (APCL 110)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 110 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 111": {
+   "title": "Apprenticeship (APCL 111)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 111 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 112": {
+   "title": "Apprenticeship (APCL 112)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 112 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 113": {
+   "title": "Apprenticeship (APCL 113)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 113 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 114": {
+   "title": "Apprenticeship (APCL 114)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 114 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APCL 116": {
+   "title": "Apprenticeship (APCL 116)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APCL 116 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APMT 51": {
+   "title": "Apprenticeship (APMT 51)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APMT 51 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APMT 52": {
+   "title": "Apprenticeship (APMT 52)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APMT 52 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
+  },
+  "Apprenticeship Training Evidence for APMT 53": {
+   "title": "Apprenticeship (APMT 53)",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.45,
+   "note": "Title is a course code; the Las Positas COCI title for APMT 53 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 9"
+   ]
   },
   "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I": {
    "title": "Modern Dance Techniques 1",
@@ -1858,19 +2140,6 @@
     "course-identity",
     "Rule 5c",
     "mechanism-collapses"
-   ]
-  },
-  "Public Safety Leadership & Administration Experience BSEM-LD8": {
-   "title": "Public Safety Leadership and Administration Experience",
-   "issuer": "",
-   "via": "classifier",
-   "confidence": 0.65,
-   "note": "Stripped the local code BSEM-LD8, which looks like an emergency-management lower-division experience slot similar to the 'Emergency Management Experience' family. This is a work-experience credit with no identifiable issuing body, so the issuer is left null for review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 8",
-    "Rule 9"
    ]
   },
   "Sacramento Electrical Training Center Apprenticeship Level 1": {

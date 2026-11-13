@@ -1,0 +1,426 @@
+{
+ "college": "San Jose City College",
+ "control_number": "30403",
+ "shape": "degree",
+ "title": "Medical Assisting: Administrative",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-associate-science/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7868,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7868,
+    "output_tokens": 3215,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 3215,
+  "output_tokens_details": {
+   "thinking_tokens": 1001
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09577,
+ "ms": 25276,
+ "seconds": 25.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 12,
+   "listed": 12,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 15,
+   "codes": [
+    "ADS71",
+    "BIOL61",
+    "BIOL71",
+    "CA100D",
+    "CA5",
+    "FCS19",
+    "FCS70",
+    "HED11",
+    "MA12",
+    "MA20",
+    "MA21",
+    "MA22",
+    "MA23",
+    "MA4",
+    "PSYCC1000"
+   ],
+   "flagged": [
+    "ADS71",
+    "BIOL61",
+    "BIOL71",
+    "CA100D",
+    "CA5",
+    "FCS19",
+    "FCS70",
+    "HED11",
+    "MA12",
+    "MA20",
+    "MA21",
+    "MA22",
+    "MA23",
+    "MA4",
+    "PSYCC1000"
+   ],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    33.0,
+    34.0
+   ],
+   "stated": [
+    33.0,
+    34.0
+   ],
+   "against": "program",
+   "why": [
+    "'Approved Program Electives (as needed to reach 60 units)' chooses units but names no minimum"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 8,
+   "courses": 0,
+   "count": 8,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 4,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Medical Assisting: Administrative - Associate in Science",
+   "measure": "units",
+   "total_units": {
+    "min": 33,
+    "max": 34
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "General Education Requirements",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 27,
+    "max": 27
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Execute administrative medical front office skills including billing and coding procedures, health insurance form processing, patient and patient record/chart management, and public relations.",
+    "Apply knowledge of the human body, medical terminology and disease to front office administrative protocols and procedures.",
+    "Exercise compliance with regard to HIPAA privacy practices, and be able to explain these guidelines to both patients and other health professionals.",
+    "Adhere to, and support, OSHA and other regulatory agency safety guidelines overseeing the practice of medicine and implement such safety protocols.",
+    "Prepare for Certified Medical Assistant/CMA exam and/or the Registered Medical Assistant (RMA) exam.",
+    "Effectively communicate with patients and other health care personnel while exercising the highest level of professional conduct.",
+    "Integrate practical experience during an externship within a medical office setting.",
+    "Service the community by filling a need for certified, well-trained front office medical assistants."
+   ],
+   "careers": [
+    "administrative (front office) medical assistant",
+    "Medical Office",
+    "Medical Clinic",
+    "Hospitals"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Required Courses:",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 26,
+     "max": 26
+    },
+    "courses": [
+     {
+      "code": "CA 100D",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HSCI 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 005",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 006",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 007",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 009",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 011",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MA 012",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Complete one of the following BUS courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "BUS 007A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BUS 008",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Complete one of the following courses:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 4,
+     "max": 5
+    },
+    "courses": [
+     {
+      "code": "BIOL 020",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "BIOL 071",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 004",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Approved Program Electives (as needed to reach 60 units)",
+    "rule": "choose_units",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADS 071",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "BIOL 061",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CA 005",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CA 010A",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CA 011",
+      "units": 1,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FCS 019",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "FCS 070",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "HED 011",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 020",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 021",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 022",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MA 023",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PSYC C1000",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Approved Program Electives are taken 'as needed to reach 60 units'; no unit minimum printed, so the block's minimum is null and electives_fill_degree is true. Major (33-34) plus GE (27) already reaches 60 at the high end of the major range.",
+   "Degree table prints Major Requirements 33-34, General Education Requirements 27, Total Units 60; GE pattern is not named beyond 'General Education Requirements'.",
+   "Degree also requires two courses for the U.S. History, Constitution, and American Ideals Requirement (US-1, US-2, US-3); not recorded as a block.",
+   "Closed-list title differences: BUS 8 'Business English and Writing' vs catalog BUS 008 'Business Communication'; MA 9 'Electronic Medical Records and Medical Billing' vs catalog 'Electronic Health Records and Medical Billing'. Matched by code.",
+   "Closed-list CA010A and CA011 matched to catalog CA 010A and CA 011 in the electives list.",
+   "The program learning outcomes list is printed on the program page's outcomes tab and recorded for this A.S. award; the description says the program also offers a certificate, which may share it."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

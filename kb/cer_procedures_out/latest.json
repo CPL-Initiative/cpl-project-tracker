@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-12T16:21:44Z",
+ "_generated_at": "2026-11-13T15:48:00Z",
  "procedures_hash": "75e72fb99f8c",
- "queue": 180,
+ "queue": 198,
  "saved_not_folded": 0,
- "waiting": 180,
- "proposed": 143,
- "needs_you_count": 179,
+ "waiting": 198,
+ "proposed": 162,
+ "needs_you_count": 198,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,14 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 1,
-   "held": 20,
-   "sample": [
-    [
-     "AP Government Exam",
-     "AP United States Government and Politics"
-    ]
-   ]
+   "settled": 0,
+   "held": 19,
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -87,7 +82,7 @@
     "skill": "Rule 5e"
    },
    "settled": 0,
-   "held": 65,
+   "held": 60,
    "sample": []
   },
   {
@@ -117,7 +112,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 78,
+   "held": 104,
    "sample": []
   },
   {
@@ -208,7 +203,7 @@
     "skill": "Rule 5h"
    },
    "settled": 0,
-   "held": 24,
+   "held": 20,
    "sample": []
   },
   {
@@ -238,7 +233,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 33,
+   "held": 31,
    "sample": []
   },
   {
@@ -253,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 60,
+   "held": 58,
    "sample": []
   },
   {
@@ -267,41 +262,379 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 177,
+   "held": 196,
    "sample": []
   }
  ],
  "classifier_run": {
-  "calls": 1,
-  "answered": 1,
+  "calls": 2,
+  "answered": 2,
   "errors": [],
-  "cost_usd": 0.37
+  "cost_usd": 0.86
  },
  "needs_you": [
   {
-   "raw_title": "Credit By Exam- CFPL ABT 135",
-   "why": "the classifier's title has a course code left in",
+   "raw_title": "Apprenticeship Training Evidence for ACL 115",
+   "why": "the classifier is unsure (0.40)",
    "proposal": {
-    "title": "Agricultural Business and Technology (ABT 135)",
-    "issuer": "California Community Colleges",
-    "confidence": 0.45,
-    "note": "CFPL (Credit for Prior Learning) and the mechanism were stripped. Hartnell's ABT 135 course title could not be looked up in COCI, so the title falls back to discipline plus code; verify the course title. The cx hint kept the code and CFPL, so it was set aside."
+    "title": "Apprenticeship (ACL 115)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. 'Apprenticeship Training Evidence for' is mechanism phrasing and was stripped. The ACL 115 course title could not be resolved without the Las Positas COCI lookup, so the code-form fallback is used. The sponsoring apprenticeship committee (issuer) is unknown and left null for a person to resolve."
    },
    "colleges": [
-    "Hartnell College"
+    "Las Positas College"
    ]
   },
   {
-   "raw_title": "Credit by Exam - ACADEMIC PLANNING",
-   "why": "the classifier is unsure (0.70)",
+   "raw_title": "Apprenticeship Training Evidence for APAG 1",
+   "why": "the classifier is unsure (0.40)",
    "proposal": {
-    "title": "Academic Planning",
-    "issuer": "California Community Colleges",
-    "confidence": 0.7,
-    "note": "Mended the cx hint to title case. The exact Irvine Valley course title (CCN/C-ID/COCI) was not verified."
+    "title": "Apprenticeship (APAG 1)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The Las Positas APAG course title is unresolved, so the code-form fallback is used pending a COCI lookup. The apprenticeship sponsor (issuer) is unknown and left null."
    },
    "colleges": [
-    "Irvine Valley College"
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 1L",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 1L)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The lab course APAG 1L is kept distinct from the lecture APAG 1. The course title is unresolved pending a COCI lookup, and the sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 2",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 2)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 2L",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 2L)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 3",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 3)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 3L",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 3L)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 4",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 4)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The Las Positas APAG course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APAG 4L",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APAG 4L)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only lab course title. The course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unknown."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 100",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 100)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. APCL may be Las Positas's floor-covering (carpet/linoleum) apprenticeship series, but this is unverified, so the code-form fallback is used. The sponsor (likely a floor-covering apprenticeship committee) is unconfirmed and left null."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 101",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 101)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 102",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 102)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 103",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 103)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 104",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 104)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 105",
+   "why": "the classifier is unsure (0.40)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 105)",
+    "issuer": "",
+    "confidence": 0.4,
+    "note": "Code-only title. The APCL course title is unresolved pending a COCI lookup. The apprenticeship sponsor is unconfirmed."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 106",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 106)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code, so the code-only lookup applies. The Las Positas COCI title for APCL 106 could not be checked, so the title falls back to the <Discipline> (<code>) form. The sponsoring apprenticeship committee (possibly a Northern CA trade JATC such as CTCNC) is unverified, so the issuer is left open for review."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 107",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 107)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 107 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 108",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 108)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 108 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 109",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 109)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 109 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 110",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 110)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 110 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 111",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 111)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 111 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 112",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 112)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 112 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 113",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 113)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 113 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 114",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 114)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 114 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APCL 116",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APCL 116)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APCL 116 could not be checked, so it falls back to the <Discipline> (<code>) form. The apprenticeship sponsor is unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APMT 51",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APMT 51)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APMT 51 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APMT 52",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APMT 52)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APMT 52 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
+   ]
+  },
+  {
+   "raw_title": "Apprenticeship Training Evidence for APMT 53",
+   "why": "the classifier is unsure (0.45)",
+   "proposal": {
+    "title": "Apprenticeship (APMT 53)",
+    "issuer": "",
+    "confidence": 0.45,
+    "note": "Title is a course code; the Las Positas COCI title for APMT 53 could not be checked, so it falls back to the <Discipline> (<code>) form. The trade and apprenticeship sponsor are unverified, so the issuer is left open."
+   },
+   "colleges": [
+    "Las Positas College"
    ]
   },
   {
@@ -315,84 +648,6 @@
    },
    "colleges": [
     "Hartnell College"
-   ]
-  },
-  {
-   "raw_title": "Elevators Training Center Apprenticeship Journeyperson",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Elevator Constructor Apprenticeship — Journeyperson",
-    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-    "confidence": 0.5,
-    "note": "Follows the house Elevator Constructor Apprenticeship shape. The issuer is assumed to be NEIEP (IUEC program) and should be confirmed against the DAS sponsor for American River College's region."
-   },
-   "colleges": [
-    "American River College"
-   ]
-  },
-  {
-   "raw_title": "Elevators Training Center Apprenticeship Level 1",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Elevator Constructor Apprenticeship — Level 1",
-    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-    "confidence": 0.5,
-    "note": "The level does not map cleanly onto the NEIEP RC100–RC800 semester keys, so it is kept as a level. Confirm the issuer (NEIEP vs a local DAS sponsor)."
-   },
-   "colleges": [
-    "American River College"
-   ]
-  },
-  {
-   "raw_title": "Elevators Training Center Apprenticeship Level 2",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Elevator Constructor Apprenticeship — Level 2",
-    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-    "confidence": 0.5,
-    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
-   },
-   "colleges": [
-    "American River College"
-   ]
-  },
-  {
-   "raw_title": "Elevators Training Center Apprenticeship Level 3",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Elevator Constructor Apprenticeship — Level 3",
-    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-    "confidence": 0.5,
-    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
-   },
-   "colleges": [
-    "American River College"
-   ]
-  },
-  {
-   "raw_title": "Elevators Training Center Apprenticeship Level 4",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Elevator Constructor Apprenticeship — Level 4",
-    "issuer": "National Elevator Industry Educational Program (NEIEP)",
-    "confidence": 0.5,
-    "note": "The level does not map cleanly onto the NEIEP RC semester keys. Confirm the issuer."
-   },
-   "colleges": [
-    "American River College"
-   ]
-  },
-  {
-   "raw_title": "Firefighter Recruit Academy Certificate",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "Firefighter 1 Academy",
-    "issuer": "California State Fire Training (SFT)",
-    "confidence": 0.7,
-    "note": "Treated as a recruit academy and joined to the SFT Firefighter 1 Academy family. The academy provider is not named, so the trainer is set to 'varies by academy'."
-   },
-   "colleges": [
-    "American River College"
    ]
   },
   {
@@ -2512,19 +2767,6 @@
    },
    "colleges": [
     "Las Positas College"
-   ]
-  },
-  {
-   "raw_title": "Public Safety Leadership & Administration Experience BSEM-LD8",
-   "why": "the classifier is unsure (0.65)",
-   "proposal": {
-    "title": "Public Safety Leadership and Administration Experience",
-    "issuer": "",
-    "confidence": 0.65,
-    "note": "Stripped the local code BSEM-LD8, which looks like an emergency-management lower-division experience slot similar to the 'Emergency Management Experience' family. This is a work-experience credit with no identifiable issuing body, so the issuer is left null for review."
-   },
-   "colleges": [
-    "Moreno Valley College"
    ]
   },
   {

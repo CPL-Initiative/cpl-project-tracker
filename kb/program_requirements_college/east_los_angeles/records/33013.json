@@ -80,7 +80,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    19.0,
+    21.0,
     24.0
    ],
    "stated": [
@@ -89,13 +89,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 19.0-24.0; the catalog states 22.0-24.0"
+    "the blocks sum to 21.0-24.0; the catalog states 22.0-24.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     53.0,
+     55.0,
      58.0
     ],
     "stated": [
@@ -110,7 +110,7 @@
     "why": [],
     "fill": [
      2.0,
-     7.0
+     5.0
     ]
    }
   },
@@ -166,7 +166,8 @@
     "Identify the general path of human evolution and the evidence in support of it.",
     "Utilize empiricism, scientific principles, and/ or the scientific method in order to analyze data from an anthropological perspective."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS"
   },
   "blocks": [
    {
@@ -440,5 +441,14 @@
    "Additional CSU-transferable units, if needed, fill the 60-unit degree; no units printed for them."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE UNITS",
+   "words": "ADDITIONAL CSU UNITS, IF NEEDED, TO REACH 60 CSU TRANSFERABLE \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

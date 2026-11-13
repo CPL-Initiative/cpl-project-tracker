@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 187,
  "with_closed_list": 154,
- "started": "2026-10-22T09:17:34Z",
+ "started": "2026-11-13T02:52:39Z",
  "scope": "/grossmont/",
  "sitemap": {
   "url": "https://catalog.gcccd.edu/sitemap.xml",
@@ -14,19 +14,24 @@
   "nested": 0,
   "program_pages": 0,
   "refused": null,
-  "errors": null
+  "errors": null,
+  "failed": null
  },
- "index_fallback": 157,
- "pages_read": 158,
+ "index_fallback": 159,
+ "index_failed": [],
+ "listing_failed": 0,
+ "pages_read": 160,
+ "pages_listed": 162,
+ "pages_answered": 160,
  "child_pages": 3,
  "banner_h1": "Academic Catalog",
- "loads": 162,
- "seconds": 788.4,
- "found": 144,
+ "loads": 164,
+ "seconds": 798.5,
+ "found": 145,
  "by_method": {
   "no_closed_list": 33,
-  "page_claimed": 10,
-  "sitemap_page": 144
+  "page_claimed": 9,
+  "sitemap_page": 145
  },
  "shared_pages": {
   "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/stem/biological-sciences-pre-allied-health-as/": [
@@ -182,14 +187,6 @@
    ]
   },
   {
-   "control_number": "18775",
-   "title": "CSU General Education Breadth",
-   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-   "pages": [
-    "https://catalog.gcccd.edu/grossmont/general-education-transfer/"
-   ]
-  },
-  {
    "control_number": "19821",
    "title": "University Studies: Communication and Language Arts",
    "award": "A.A. Degree",
@@ -243,75 +240,39 @@
  ],
  "coverage_bands": {
   "0.5-0.8": 7,
-  "0.8-1.0": 17,
+  "0.8-1.0": 18,
   "1.0": 120
  },
  "would_extract": {
   "against": "kb/program_requirements_college/grossmont",
-  "kept": 138,
-  "programs": 6,
+  "kept": 143,
+  "kept_moved": 0,
+  "programs": 2,
   "list": [
    {
-    "control_number": "05029",
-    "title": "Law Enforcement",
-    "award": "A.S. Degree",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/law-enforcement-as-certificate-achievement/",
-    "coverage": 1.0,
+    "control_number": "18775",
+    "title": "CSU General Education Breadth",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/",
+    "coverage": 0.976,
     "was_url": null,
     "was_coverage": 0.0,
     "was_method": "page_claimed"
    },
    {
-    "control_number": "05030",
-    "title": "Corrections",
-    "award": "A.S. Degree",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/corrections-as-certificate-achievement/",
-    "coverage": 0.929,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "08787",
-    "title": "Forensic Technology",
-    "award": "A.S. Degree",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/forensic-technology-as-certificate-achievement/",
+    "control_number": "32017",
+    "title": "Administration of Justice",
+    "award": "A.S. T Degree",
+    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/administration-justice-ast/",
     "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "12272",
-    "title": "Security Management",
-    "award": "A.S. Degree",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/social-behavioral-sciences/security-management-as-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "14288",
-    "title": "Arabic",
-    "award": "A.A. Degree",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/language-communication/arabic-aa-certificate-achievement/",
-    "coverage": 1.0,
-    "was_url": null,
-    "was_coverage": 0.0,
-    "was_method": "page_claimed"
-   },
-   {
-    "control_number": "32879",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-aa-cert-achievement/",
-    "coverage": 1.0,
-    "was_url": "https://catalog.gcccd.edu/grossmont/associate-degree-programs-certificates/visual-performing-arts/photography-cert-achievement/",
+    "was_url": "https://catalog.gcccd.edu/grossmont/general-education-transfer/",
     "was_coverage": 1.0,
     "was_method": "sitemap_page"
    }
-  ]
+  ],
+  "held_worse_window": [],
+  "held_no_gain": [],
+  "held_opens_on_list": []
  },
- "run": "39753931343"
+ "run": "43355014570"
 }

@@ -1,0 +1,332 @@
+{
+ "college": "San Jose City College",
+ "control_number": "18921",
+ "shape": "certificate",
+ "title": "Air Conditioning & Refrigeration Technology 3",
+ "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+ "source_url": "https://catalog.sjcc.edu/degrees-certificates/air-conditioning-refrigeration-technology/air-conditioning-refrigeration-technology-certificate-achievement-level-3/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 8130,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 8130,
+    "output_tokens": 2783,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2783,
+  "output_tokens_details": {
+   "thinking_tokens": 852
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.08818,
+ "ms": 21898,
+ "seconds": 22.2,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 16,
+   "listed": 18,
+   "share": 0.889,
+   "missing": [
+    "FACILITIESMA",
+    "FACILITIESMAINTENANCETECHNOLOGY(FMT)"
+   ],
+   "unexplained": [
+    "FACILITIESMA",
+    "FACILITIESMAINTENANCETECHNOLOGY(FMT)"
+   ],
+   "none_placed": false,
+   "pass": false
+  },
+  "invented": {
+   "count": 3,
+   "codes": [
+    "AIRC132",
+    "FMT105",
+    "FMT123"
+   ],
+   "flagged": [
+    "AIRC132"
+   ],
+   "pass": false
+  },
+  "arithmetic": {
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    32.0,
+    32.5
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "against": "program",
+   "why": [],
+   "meets": true
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 6,
+   "courses": 0,
+   "count": 6,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 1,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "n/a"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Air Conditioning and Refrigeration Technology - Certificate of Achievement Level 3",
+   "measure": "units",
+   "total_units": {
+    "min": 32,
+    "max": 32
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [
+    "Recognize the components that constitute Residential and Commercial Air Conditioning and Refrigeration systems. Perform Maintenance and Repair on complex Air Conditioning and Refrigeration systems.",
+    "Competence in analyzing, maintaining, servicing and commissioning Air Conditioning and Refrigeration systems. Problem-solve and troubleshoot complex Air Conditioning and Refrigeration systems using analytical and methodical practices.",
+    "Ability to interpret and process Wiring Diagrams and Pipe Diagrams. Demonstrate proficiency in writing service reports in both hard and soft copy.",
+    "Competence and skill in maintaining energy efficient Air Conditioning and Refrigeration equipment. Recognize and be capable of implementing modern technologies so as to maintain proper and efficient functionality of Air Conditioning and Refrigeration systems",
+    "Demonstrate the ability to work as an individual and in groups of all social and economic backgrounds. Demonstrate awareness of Global Warming, Green House Gases Effect and Ozone Depletion as related to use of common Refrigerants.",
+    "Demonstrate honesty and integrity when dealing with customers and employers. Exercise professional courtesy in the workplace."
+   ],
+   "careers": [
+    "air conditioning and refrigeration industry"
+   ]
+  },
+  "blocks": [
+   {
+    "name": "Certificate Requirements",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "AIRC 121",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRC 122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRC 131",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRC 132",
+      "units": 4.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "AIRC 133",
+      "units": 2,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRC 141",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "AIRC 142",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 100",
+      "units": 3.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one of the following:",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 2,
+     "max": 2.5
+    },
+    "courses": [
+     {
+      "code": "AIRC 145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 130",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Approved Program Electives",
+    "rule": "choose_units",
+    "minimum": 0.5,
+    "option_group": null,
+    "stated": {
+     "min": 0.5,
+     "max": 0.5
+    },
+    "courses": [
+     {
+      "code": "AIRC 138",
+      "units": 1,
+      "units_max": 8,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CIS 041",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 102A",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CNSTR 102B",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 104",
+      "units": 2.5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 120",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 122",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FMT 123",
+      "units": 4,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The closed-list entry with code 'Facilities Maintenance Technology (FMT)' (Introduction to Industrial Electronics and Controls) is read as catalog FMT 105; the entry 'FacilitiesMa' (Intermediate Programmable Logic Controllers) as FMT 123; 'AIRC138' as AIRC 138; 'CIS 41' as catalog CIS 041. These were marked not catalog additions; reviewer should confirm.",
+   "AIRC 132 Refrigeration Service (4.5) is required in the catalog but absent from the closed list.",
+   "The catalog prints no units beside the three courses in 'Select one of the following:'; only the block total 2-2.5.",
+   "Outcomes come from the page's single Program Learning Outcomes tab, which the program shares; each printed line contains two sentences and is recorded as one entry as printed. The fourth outcome has no final period in the text.",
+   "Career entry is taken from the description's 'employment in the air conditioning and refrigeration industry'; it names an industry rather than a job title.",
+   "Required courses (29.5) + one choice (2-2.5) + electives (0.5) align with the stated total of 32."
+  ]
+ },
+ "extracted_run": "43357106423"
+}

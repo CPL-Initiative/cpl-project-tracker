@@ -872,6 +872,7 @@
   /* The view a sign-in link returns to (cpl_session.js viewAddress); the address arrival() below opens. */
   if (window.CPL_SESSION && CPL_SESSION.viewAddress) CPL_SESSION.viewAddress("commons", function () {
     if (ASE.on) return window.CPL_COMMONS_ASE ? CPL_COMMONS_ASE.address() : "commons/ase";
+    if (DATA.on) return window.CPL_COMMONS_DATA ? CPL_COMMONS_DATA.address() : "commons/data";
     if (BATCH.pin) return "commons/case/" + BATCH.pin;
     return show === "all" ? "commons" : "commons/" + show;
   });
@@ -890,6 +891,20 @@
     if (window.CPL_COMMONS_ASE || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
     return new Promise(function (res) { CPL_TABS.loadScript("commons_ase.js", "CPL_COMMONS_ASE", function () { res(go()); }); });
   }
+  /* The Commons data dashboard (#3215, slice 1): each college's datasets, how far each has come, what is in the way.
+     #commons/data, #commons/data/<filter> and #commons/data[/<filter>]/college/<slug> (slice 2: that college's side
+     panel) open it; commons_data.js draws it from kb/status/commons_data.json. */
+  var DATA = { on: false, filter: "" };
+  function showData(root) {
+    function go() {
+      if (!window.CPL_COMMONS_DATA) { notice(root, "The data dashboard (commons_data.js) could not be loaded. Reload the tab to try again."); return null; }
+      /* The view reports each address it moves to (a filter, a panel opened or closed); DATA.filter follows it, so a
+         session renewal's redraw opens the view as it stands, never the arrival's stale college (#3231 review). */
+      return CPL_COMMONS_DATA.boot(root, DATA.filter, { noted: function (h) { seenHash = h; DATA.filter = String(h || "").replace(/^#?commons\/data\/?/, ""); } });
+    }
+    if (window.CPL_COMMONS_DATA || !(window.CPL_TABS && CPL_TABS.loadScript)) return Promise.resolve(go());
+    return new Promise(function (res) { CPL_TABS.loadScript("commons_data.js", "CPL_COMMONS_DATA", function () { res(go()); }); });
+  }
   window.addEventListener("cpl-tab-activated", function (e) { if (e && e.detail && e.detail.tab !== "commons") away = true; });
   function arrive() {
     var h = String(location.hash || ""), visit = away || h !== seenHash;
@@ -897,7 +912,9 @@
     if (!visit) return false;
     var a = window.CPL_SESSION && CPL_SESSION.arrival ? CPL_SESSION.arrival("commons") : null;
     ASE.on = !!(a && a[0] === "ase");
+    DATA.on = !!(a && a[0] === "data");
     if (ASE.on) { ASE.title = a.slice(1).join("/"); return true; }
+    if (DATA.on) { DATA.filter = a.slice(1).join("/"); return true; }   // a filter, a college (college/<slug>) or both
     if (a && a[0] === "case" && a[1]) { BATCH.pin = a.slice(1).join("/"); return true; }
     if (a && SHOWS.indexOf(a[0]) >= 0) { show = a[0]; return true; }
     return false;
@@ -907,15 +924,16 @@
      surfaces"). Only once the tab has drawn. */
   var reboot = null;
   window.addEventListener("cpl-session-changed", function () {
-    if ((!redraw && !ASE.on) || reboot || !document.getElementById(ROOT_ID)) return;
+    if ((!redraw && !ASE.on && !DATA.on) || reboot || !document.getElementById(ROOT_ID)) return;
     reboot = Promise.resolve(boot()).then(function () { reboot = null; }, function () { reboot = null; });
   });
   /* boot() runs once; a later visit on an address that names a filter word redraws the cards on it. */
   window.addEventListener("cpl-tab-activated", function (e) {
     if (!(e && e.detail && e.detail.tab === "commons")) return;
-    var wasAse = ASE.on, root = document.getElementById(ROOT_ID);
+    var wasAse = ASE.on || DATA.on, root = document.getElementById(ROOT_ID);
     var named = arrive();
     if (ASE.on) { if (named) showAse(root); return; }
+    if (DATA.on) { if (named) showData(root); return; }
     if (wasAse) { boot(); return; }
     if (named && redraw) redraw();
     /* each visit counts the batch again, so one finished in Exhibits reads done on the way back (#2963 step 1) */
@@ -942,7 +960,8 @@
       el("p", { cls: "cmn-lede", text: countWords(cards.length).replace(/^./, function (ch) { return ch.toUpperCase(); }) + " common references the California Community Colleges keep together for credit for prior learning." }),
       el("p", { cls: "cmn-sub" }, ["Each college keeps its own catalog. The Commons gives every college one shared name to point to and shows how its own version lines up with it. ",
         el("span", { cls: "cmn-note", text: data && data.written_at ? "Figures read " + stampOf(data.written_at) + "." : "" })]),
-      el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."])
+      el("p", { cls: "cmn-sub", id: "cmn-ase-line" }, ["The first slice a student sees: ", el("a", { href: "#commons/ase", text: "where an ASE certification can count" }), ", at every college."]),
+      el("p", { cls: "cmn-sub", id: "cmn-data-line" }, ["Each college's data, how far each dataset has come and what is in the way: ", el("a", { href: "#commons/data", text: "the data dashboard" }), "."])
     ]));
 
     /* the decisions waiting on Sam: the band below lists them, and a decision batch closes once its call is answered */
@@ -1147,6 +1166,7 @@
     root.textContent = "Reading the Commons…";
     arrive();
     if (ASE.on) return showAse(root);
+    if (DATA.on) return showData(root);
     return load().then(function (r) {
       render(root, r.data, r.S, new Date());
       return Promise.resolve(batchRefresh && batchRefresh()).then(function () { return r; }, function () { return r; });
@@ -1325,9 +1345,9 @@
      theme every role mapped onto a First Light dark token, so no color is invented there (Rule 4 holds: the dark
      roles live in both HTMLs' :root). */
   var TOKENS = [
-    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-done-bg:#E3F4EA; --cmn-done-fg:#1E5B37; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
-    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); }",
-    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); } }"
+    "#tab-commons { --cmn-page:#F5FAFF; --cmn-page-end:#EEF6FB; --cmn-surface:#FFFFFF; --cmn-ink:#17243B; --cmn-ink-2:#3E4C61; --cmn-muted:#58677D; --cmn-heading:#082B61; --cmn-title:#072C66; --cmn-link:#0D5BC6; --cmn-accent:#1671D9; --cmn-gold:#F4B300; --cmn-line:#D9E4EF; --cmn-line-soft:#E8EEF5; --cmn-track:#E3ECF5; --cmn-pill-bg:#EAF4FE; --cmn-pill-fg:#355A80; --cmn-ask-bg:#FFF4D6; --cmn-ask-fg:#5C4000; --cmn-ask-label:#5C4000; --cmn-done-bg:#E3F4EA; --cmn-done-fg:#1E5B37; --cmn-dialog:#FFFFFF; --cmn-serif:Georgia,'Times New Roman',serif; --cmn-sans:Inter,ui-sans-serif,system-ui,sans-serif; }",
+    ":root[data-theme=\"dark\"] #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); --cmn-dialog:var(--surface-opaque); }",
+    "@media (prefers-color-scheme: dark) { :root:not([data-theme=\"light\"]) #tab-commons { --cmn-page:var(--surface-muted); --cmn-page-end:var(--surface-muted); --cmn-surface:var(--surface); --cmn-ink:var(--text-body); --cmn-ink-2:var(--text-body); --cmn-muted:var(--text-muted); --cmn-heading:var(--text-strong); --cmn-title:var(--text-strong); --cmn-link:var(--cobalt); --cmn-accent:var(--cobalt); --cmn-gold:var(--gold-accent); --cmn-line:var(--border); --cmn-line-soft:var(--border); --cmn-track:var(--surface-muted); --cmn-pill-bg:var(--surface-muted); --cmn-pill-fg:var(--text-body); --cmn-ask-bg:var(--mustard-fill); --cmn-ask-fg:var(--on-mustard); --cmn-ask-label:var(--mustard-text); --cmn-done-bg:var(--surface-muted); --cmn-done-fg:var(--text-strong); --cmn-dialog:var(--surface-opaque); } }"
   ].join("\n");
   var FONT_HREF = "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap";
   function ensureCss() {

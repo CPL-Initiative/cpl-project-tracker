@@ -61,37 +61,36 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    69.0,
-    70.0
+    35.0,
+    36.0
    ],
    "stated": [
-    60.0,
-    60.0
+    35.0,
+    36.0
    ],
-   "against": "degree",
-   "ge": [
-    34.0,
-    34.0
-   ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     35.0,
-     36.0
+     69.0,
+     70.0
     ],
     "stated": [
-     35.0,
-     36.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
    }
   },
   "repeated": {
@@ -116,7 +115,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -149,7 +148,8 @@
     "Explain causes of climate change (natural and anthropogenic influences), consequences of climate change and strategies for addressing the human influence.",
     "Demonstrate comfort and competence in interpreting and working with numerical data to weigh evidence, draw conclusions, and solve problems in biological applications."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "Complete transferable units as needed to reach 60"
   },
   "blocks": [
    {
@@ -266,5 +266,14 @@
    "Program Learning Outcomes are printed on the page for the program; recorded for this A.S.-T award."
   ]
  },
- "extracted_run": "39061728041"
+ "extracted_run": 43355014570,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "Complete transferable units as needed to reach 60",
+   "words": "Complete transferable units as needed to reach 60"
+  }
+ ],
+ "read_run": "39061728041"
 }

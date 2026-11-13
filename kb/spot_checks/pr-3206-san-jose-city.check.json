@@ -1,0 +1,120 @@
+{
+ "schema": 1,
+ "wave": "pr-3206-san-jose-city",
+ "pr": 3206,
+ "head_sha": "c3cc4f5c52189d1865a753c7db731c5a1d13fddc",
+ "checked_at": "2026-11-13T09:05:00Z",
+ "checker": "cobi-cto (COBIx), by hand",
+ "sample_rule": "Sky named no sample. Drawn from the 77 loaded keys (receipt of load run 43360857288), ordered by sha256('43357106423:'+control_number) using the read run id; first two passing degrees (degree or ADT), first two passing certificates, first failing record.",
+ "loads": [
+  "robots.txt (degrees-certificates/ allowed)",
+  "5 program pages, 4 s apart"
+ ],
+ "records": [
+  {
+   "college": "San Jose City College",
+   "control_number": "33073",
+   "source_url": "https://catalog.sjcc.edu/degrees-certificates/art/studio-arts-associate-arts-transfer/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "24",
+    "page": "24"
+   },
+   "verdict": "agrees",
+   "evidence": "Required Core: 12 ... List A: Complete One Course 3 ... List B: Complete Three Courses 9 ... ART 055A Life Drawing I 3 / or ART 026 Intermediate Drawing ... Total Units 24"
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "42529",
+   "source_url": "https://catalog.sjcc.edu/degrees-certificates/computer-science/computer-science-associate-science-transfer/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "33",
+    "page": "33"
+   },
+   "verdict": "agrees",
+   "evidence": "CIS 024C or CIS 054 or CIS 084; CIS 055; CIS 087; MATH 080; MATH 071 or MATH 071H; MATH 072; PHYS 004A; BIOL 004A; Total Units 33"
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "18390",
+   "source_url": "https://catalog.sjcc.edu/degrees-certificates/laser-technology/laser-technology-certificate-achievement-level-1/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "16",
+    "page": "16"
+   },
+   "verdict": "agrees",
+   "evidence": "LASER 100 4; LASER 101 4; LASER 102 4; LASER 103 4; Total Units 16",
+   "note": "Inventory award says 18 or more units; the page prints 16. A catalog/inventory disagreement for the college, not a misread."
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "30443",
+   "source_url": "https://catalog.sjcc.edu/degrees-certificates/medical-assisting/medical-assisting-administrative-certificate-achievement-level-3/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": true,
+   "total": {
+    "record": "33-34",
+    "page": "33-34"
+   },
+   "verdict": "agrees",
+   "evidence": "Required Courses: 26 ... Complete one BUS course from the following: 3 BUS 007A or BUS 008 ... Select one course from the following: 4-5 ... Total Units 33-34"
+  },
+  {
+   "college": "San Jose City College",
+   "control_number": "37604",
+   "source_url": "https://catalog.sjcc.edu/degrees-certificates/spanish/spanish-associate-arts-transfer/",
+   "page_reached": true,
+   "title_and_award_match": true,
+   "courses": {
+    "on_page_missing_from_record": [],
+    "in_record_not_on_page": []
+   },
+   "units": [],
+   "choice_rules_match": false,
+   "total": {
+    "record": "19-25",
+    "page": "19-25"
+   },
+   "verdict": "differs",
+   "evidence": "OPTION 1 ... Complete One Course from List A 3-5; OPTION 2 ... Complete Two Courses from List A 6-8; OPTION 3 ... Complete Three Courses from List A 9-11",
+   "note": "Courses match. The List A count tied to each option is held only in a note; the List A block is min 1 for every option. Already fails the arithmetic check, so it shows as failing."
+  }
+ ],
+ "tally": {
+  "San Jose City College": {
+   "agrees": 4,
+   "differs": 1,
+   "page_unreachable": 0
+  }
+ },
+ "holds": []
+}

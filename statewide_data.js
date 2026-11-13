@@ -33108,13 +33108,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-IFB6-1-001"
       ],
-      "title": "Industry Training Evidence for BUSN 65",
-      "unified_title": "Industry Training Evidence for BUSN 65",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Federal Income Tax Accounting",
+      "unified_title": "Federal Income Tax Accounting",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for BUSN 65"
@@ -42339,168 +42339,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-AITA-1-001",
-      "exhibit_ids": [
-        "MAPICI-AITA-1-001"
-      ],
-      "title": "Introduction to Administration of Justice",
-      "unified_title": "Introduction to Administration of Justice",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ADJU201 Introduction to Administration of Justice"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Modesto Junior College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADJU 201",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-AITA-1-001",
-          "title": "ADJU201 Introduction to Administration of Justice",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Modesto Junior College": 3.0
-      },
-      "adopter_lines": {
-        "Modesto Junior College": 1
-      },
-      "adopter_rec_idx": {
-        "Modesto Junior College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPCXS-CCP-1-001",
       "exhibit_ids": [
         "MAPCXS-CCP-1-001"
@@ -43789,168 +43627,6 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Norco College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-CITE-1-001",
-      "exhibit_ids": [
-        "MAPICI-CITE-1-001"
-      ],
-      "title": "Legal Aspects of Evidence",
-      "unified_title": "Legal Aspects of Evidence",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "CRIM-06 Introduction to Evidence"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Merced College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "CRIM 06",
-          "credit": "3 hours in Introduction to Evidence"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-CITE-1-001",
-          "title": "CRIM-06 Introduction to Evidence",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Merced College": 3.0
-      },
-      "adopter_lines": {
-        "Merced College": 1
-      },
-      "adopter_rec_idx": {
-        "Merced College": [
           0
         ]
       },
@@ -48281,168 +47957,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-IA5-1-001",
-      "exhibit_ids": [
-        "MAPICI-IA5-1-001"
-      ],
-      "title": "Industry Training Evidence for AJ 50",
-      "unified_title": "Industry Training Evidence for AJ 50",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AJ 50"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "AJ 50",
-          "credit": "3 units in AJ 50 Introduction to Administration of Justice"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IA5-1-001",
-          "title": "Industry Training Evidence for AJ 50",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 3.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPMM-ITCL-1-001",
       "exhibit_ids": [
         "MAPMM-ITCL-1-001"
@@ -49581,13 +49095,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-IFA5-1-001"
       ],
-      "title": "Industry Training Evidence for AJ 54",
-      "unified_title": "Industry Training Evidence for AJ 54",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Investigative Report Writing",
+      "unified_title": "Investigative Report Writing",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for AJ 54"
@@ -49739,503 +49253,17 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-IFA6-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFA6-1-001"
-      ],
-      "title": "Industry Training Evidence for AJ 60",
-      "unified_title": "Industry Training Evidence for AJ 60",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AJ 60"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "AJ 60",
-          "credit": "3 units in AJ 60 Criminal Law"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFA6-1-001",
-          "title": "Industry Training Evidence for AJ 60",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 3.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFA61-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFA61-1-001"
-      ],
-      "title": "Industry Training Evidence for AJ 61",
-      "unified_title": "Industry Training Evidence for AJ 61",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AJ 61"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "AJ 61",
-          "credit": "3 units in AJ 61 Evidence"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFA61-1-001",
-          "title": "Industry Training Evidence for AJ 61",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 3.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFA62-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFA62-1-001"
-      ],
-      "title": "Industry Training Evidence for AJ 63",
-      "unified_title": "Industry Training Evidence for AJ 63",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AJ 63"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 100,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "AJ 63",
-          "credit": "3 units in AJ 63 Criminal Investigation"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFA62-1-001",
-          "title": "Industry Training Evidence for AJ 63",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 3.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
       "exhibit_id": "MAPICI-IFA63-1-001",
       "exhibit_ids": [
         "MAPICI-IFA63-1-001"
       ],
-      "title": "Industry Training Evidence for AJ 64",
-      "unified_title": "Industry Training Evidence for AJ 64",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Police Patrol Operations",
+      "unified_title": "Police Patrol Operations",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for AJ 64"
@@ -50391,13 +49419,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-IFA64-1-001"
       ],
-      "title": "Industry Training Evidence for AJ 66",
-      "unified_title": "Industry Training Evidence for AJ 66",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Juvenile Procedures",
+      "unified_title": "Juvenile Procedures",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for AJ 66"
@@ -50553,13 +49581,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-IFA65-1-001"
       ],
-      "title": "Industry Training Evidence for AJ 68",
-      "unified_title": "Industry Training Evidence for AJ 68",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Police Ethics and Leadership",
+      "unified_title": "Police Ethics and Leadership",
+      "is_classified": true,
+      "issuing_agency": "American Council on Education (ACE)",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for AJ 68"
@@ -51894,6 +50922,185 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
+      "exhibit_id": "MAPICI-AITA-1-001|MAPICI-IA5-1-001",
+      "exhibit_ids": [
+        "MAPICI-AITA-1-001",
+        "MAPICI-IA5-1-001"
+      ],
+      "title": "Introduction to Administration of Justice",
+      "unified_title": "Introduction to Administration of Justice",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.8,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ADJU201 Introduction to Administration of Justice",
+        "Industry Training Evidence for AJ 50"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Las Positas College",
+        "Modesto Junior College"
+      ],
+      "potential": 99,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "ADJU 201",
+          "credit": "3 hours in Introduction to Administration of Justice"
+        },
+        {
+          "course": "AJ 50",
+          "credit": "3 units in AJ 50 Introduction to Administration of Justice"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-AITA-1-001",
+          "title": "ADJU201 Introduction to Administration of Justice",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IA5-1-001",
+          "title": "Industry Training Evidence for AJ 50",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0,
+        "Modesto Junior College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1,
+        "Modesto Junior College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          1
+        ],
+        "Modesto Junior College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 6.0
+    },
+    {
       "exhibit_id": "MAPCXS-A0CI-1-001|MAPCXS-CIAC-1-001",
       "exhibit_ids": [
         "MAPCXS-A0CI-1-001",
@@ -52253,22 +51460,22 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
-      "exhibit_id": "MAPICI-A1CI-1-001|MAPICI-CITI-1-001",
+      "exhibit_id": "MAPICI-CITE-1-001|MAPICI-IFA61-1-001",
       "exhibit_ids": [
-        "MAPICI-A1CI-1-001",
-        "MAPICI-CITI-1-001"
+        "MAPICI-CITE-1-001",
+        "MAPICI-IFA61-1-001"
       ],
-      "title": "Criminal Investigation",
-      "unified_title": "Criminal Investigation",
+      "title": "Legal Aspects of Evidence",
+      "unified_title": "Legal Aspects of Evidence",
       "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "AJ 108 Criminal Investigation",
-        "CRIM-08 Introduction to Investigation"
+        "CRIM-06 Introduction to Evidence",
+        "Industry Training Evidence for AJ 61"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Public and Protective Services",
@@ -52280,8 +51487,8 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 2,
       "adopter_names": [
-        "Merced College",
-        "Mt. San Jacinto College"
+        "Las Positas College",
+        "Merced College"
       ],
       "potential": 99,
       "potential_names": [
@@ -52330,7 +51537,6 @@ window.CPL_STATEWIDE = {
         "Imperial Valley College",
         "Irvine Valley College",
         "Lake Tahoe Community College",
-        "Las Positas College",
         "Lassen College",
         "Lemoore College",
         "Long Beach City College",
@@ -52352,6 +51558,7 @@ window.CPL_STATEWIDE = {
         "Moorpark College",
         "Moreno Valley College",
         "Mt. San Antonio College",
+        "Mt. San Jacinto College",
         "Napa Valley College",
         "Norco College",
         "Ohlone College",
@@ -52388,43 +51595,43 @@ window.CPL_STATEWIDE = {
       "total_addressable": 101,
       "credit_recs": [
         {
-          "course": "CRIM 08",
-          "credit": "3 hours in Introduction to Investigation"
+          "course": "CRIM 06",
+          "credit": "3 hours in Introduction to Evidence"
         },
         {
-          "course": "AJ 108",
-          "credit": "3 hours in Criminal Investigation"
+          "course": "AJ 61",
+          "credit": "3 units in AJ 61 Evidence"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPICI-A1CI-1-001",
-          "title": "AJ 108 Criminal Investigation",
+          "id": "MAPICI-CITE-1-001",
+          "title": "CRIM-06 Introduction to Evidence",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPICI-CITI-1-001",
-          "title": "CRIM-08 Introduction to Investigation",
+          "id": "MAPICI-IFA61-1-001",
+          "title": "Industry Training Evidence for AJ 61",
           "units": 3.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Merced College": 3.0,
-        "Mt. San Jacinto College": 3.0
+        "Las Positas College": 3.0,
+        "Merced College": 3.0
       },
       "adopter_lines": {
-        "Merced College": 1,
-        "Mt. San Jacinto College": 1
+        "Las Positas College": 1,
+        "Merced College": 1
       },
       "adopter_rec_idx": {
+        "Las Positas College": [
+          1
+        ],
         "Merced College": [
           0
-        ],
-        "Mt. San Jacinto College": [
-          1
         ]
       },
       "peer_units_median": 3.0,
@@ -54470,202 +53677,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 6.0
     },
     {
-      "exhibit_id": "MAPICI-A1CL-1-001|MAPICI-A2OC-1-001|MAPICI-CCL-1-001",
-      "exhibit_ids": [
-        "MAPICI-A1CL-1-001",
-        "MAPICI-A2OC-1-001",
-        "MAPICI-CCL-1-001"
-      ],
-      "title": "Concepts of Criminal Law",
-      "unified_title": "Concepts of Criminal Law",
-      "is_classified": true,
-      "issuing_agency": "American Council on Education (ACE)",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ADJU 203\tConcepts of Criminal Law - Industry Certification",
-        "AJ 101 Criminal Law",
-        "CRIM-04 Criminal Law"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Public and Protective Services",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "128"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 3,
-      "adopter_names": [
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Jacinto College"
-      ],
-      "potential": 98,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lassen College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 101,
-      "credit_recs": [
-        {
-          "course": "ADJU 203",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "CRIM 04",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 101",
-          "credit": "3 hours in Criminal Law"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A1CL-1-001",
-          "title": "AJ 101 Criminal Law",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-A2OC-1-001",
-          "title": "ADJU 203\tConcepts of Criminal Law - Industry Certification",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCL-1-001",
-          "title": "CRIM-04 Criminal Law",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Merced College": 3.0,
-        "Modesto Junior College": 3.0,
-        "Mt. San Jacinto College": 3.0
-      },
-      "adopter_lines": {
-        "Merced College": 1,
-        "Modesto Junior College": 1,
-        "Mt. San Jacinto College": 1
-      },
-      "adopter_rec_idx": {
-        "Merced College": [
-          1
-        ],
-        "Modesto Junior College": [
-          0
-        ],
-        "Mt. San Jacinto College": [
-          2
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 9.0
-    },
-    {
       "exhibit_id": "MAPCXS-A2P--1-001|MAPCXS-CBEP1-1-001|MAPCXS-DE-A4-1-001",
       "exhibit_ids": [
         "MAPCXS-A2P--1-001",
@@ -55632,7 +54643,7 @@ window.CPL_STATEWIDE = {
       "title": "Juvenile Procedures",
       "unified_title": "Juvenile Procedures",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
       "training_agency": "",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
@@ -55813,6 +54824,202 @@ window.CPL_STATEWIDE = {
         ],
         "Los Angeles Pierce College": [
           2
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 9.0
+    },
+    {
+      "exhibit_id": "MAPICI-A1CI-1-001|MAPICI-CITI-1-001|MAPICI-IFA62-1-001",
+      "exhibit_ids": [
+        "MAPICI-A1CI-1-001",
+        "MAPICI-CITI-1-001",
+        "MAPICI-IFA62-1-001"
+      ],
+      "title": "Criminal Investigation",
+      "unified_title": "Criminal Investigation",
+      "is_classified": true,
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AJ 108 Criminal Investigation",
+        "CRIM-08 Introduction to Investigation",
+        "Industry Training Evidence for AJ 63"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Las Positas College",
+        "Merced College",
+        "Mt. San Jacinto College"
+      ],
+      "potential": 98,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "CRIM 08",
+          "credit": "3 hours in Introduction to Investigation"
+        },
+        {
+          "course": "AJ 108",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AJ 63",
+          "credit": "3 units in AJ 63 Criminal Investigation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A1CI-1-001",
+          "title": "AJ 108 Criminal Investigation",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CITI-1-001",
+          "title": "CRIM-08 Introduction to Investigation",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFA62-1-001",
+          "title": "Industry Training Evidence for AJ 63",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0,
+        "Merced College": 3.0,
+        "Mt. San Jacinto College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1,
+        "Merced College": 1,
+        "Mt. San Jacinto College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          2
+        ],
+        "Merced College": [
+          0
+        ],
+        "Mt. San Jacinto College": [
+          1
         ]
       },
       "peer_units_median": 3.0,
@@ -56638,6 +55845,219 @@ window.CPL_STATEWIDE = {
         ],
         "Modesto Junior College": [
           0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 12.0
+    },
+    {
+      "exhibit_id": "MAPICI-A1CL-1-001|MAPICI-A2OC-1-001|MAPICI-CCL-1-001|MAPICI-IFA6-1-001",
+      "exhibit_ids": [
+        "MAPICI-A1CL-1-001",
+        "MAPICI-A2OC-1-001",
+        "MAPICI-CCL-1-001",
+        "MAPICI-IFA6-1-001"
+      ],
+      "title": "Concepts of Criminal Law",
+      "unified_title": "Concepts of Criminal Law",
+      "is_classified": true,
+      "issuing_agency": "American Council on Education (ACE)",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ADJU 203\tConcepts of Criminal Law - Industry Certification",
+        "AJ 101 Criminal Law",
+        "CRIM-04 Criminal Law",
+        "Industry Training Evidence for AJ 60"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
+      "top_codes": [
+        "128"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 4,
+      "adopter_names": [
+        "Las Positas College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Jacinto College"
+      ],
+      "potential": 97,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cuesta College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Lassen College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 101,
+      "credit_recs": [
+        {
+          "course": "ADJU 203",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "CRIM 04",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 101",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 60",
+          "credit": "3 units in AJ 60 Criminal Law"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A1CL-1-001",
+          "title": "AJ 101 Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-A2OC-1-001",
+          "title": "ADJU 203\tConcepts of Criminal Law - Industry Certification",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCL-1-001",
+          "title": "CRIM-04 Criminal Law",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFA6-1-001",
+          "title": "Industry Training Evidence for AJ 60",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 3.0,
+        "Merced College": 3.0,
+        "Modesto Junior College": 3.0,
+        "Mt. San Jacinto College": 3.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 1,
+        "Merced College": 1,
+        "Modesto Junior College": 1,
+        "Mt. San Jacinto College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          3
+        ],
+        "Merced College": [
+          1
+        ],
+        "Modesto Junior College": [
+          0
+        ],
+        "Mt. San Jacinto College": [
+          2
         ]
       },
       "peer_units_median": 3.0,
@@ -113699,6 +113119,10 @@ window.CPL_STATEWIDE = {
           "credit": "3 hours in Community Relations"
         },
         {
+          "course": "CJ 101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
           "course": "ADJU 1",
           "credit": "3 hours in Community Relations"
         },
@@ -113905,10 +113329,6 @@ window.CPL_STATEWIDE = {
         {
           "course": "CJ 058",
           "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 101",
-          "credit": "3 hours in Intro to Administration of Justice"
         },
         {
           "course": "ADJ 202",
@@ -114548,14 +113968,14 @@ window.CPL_STATEWIDE = {
           144
         ],
         "Barstow Community College": [
-          47,
           48,
           49,
           50,
           51,
           52,
           53,
-          54
+          54,
+          55
         ],
         "Butte College": [
           8,
@@ -114564,24 +113984,24 @@ window.CPL_STATEWIDE = {
         "Cabrillo College": [
           24,
           25,
-          65,
           66,
           67,
           68,
           69,
-          70
+          70,
+          71
         ],
         "Cerro Coso Community College": [
-          71,
           72,
           73,
           74,
           75,
           76,
-          94,
+          77,
           95,
           96,
-          97
+          97,
+          98
         ],
         "Chabot College": [
           155,
@@ -114603,8 +114023,8 @@ window.CPL_STATEWIDE = {
           126
         ],
         "City College of San Francisco": [
-          55,
-          56
+          56,
+          57
         ],
         "College of San Mateo": [
           12,
@@ -114668,22 +114088,22 @@ window.CPL_STATEWIDE = {
           112
         ],
         "Lake Tahoe Community College": [
-          77,
           78,
           79,
           80,
           81,
-          82
+          82,
+          83
         ],
         "Lemoore College": [
           18,
-          57,
           58,
           59,
           60,
           61,
           62,
           63,
+          64,
           102,
           145
         ],
@@ -114739,7 +114159,7 @@ window.CPL_STATEWIDE = {
         "Napa Valley College": [
           20,
           21,
-          83
+          84
         ],
         "Norco College": [
           0,
@@ -114778,7 +114198,7 @@ window.CPL_STATEWIDE = {
           9
         ],
         "San Joaquin Delta College": [
-          84,
+          85,
           136
         ],
         "Shasta College": [
@@ -114807,15 +114227,14 @@ window.CPL_STATEWIDE = {
           40,
           41,
           46,
-          64,
-          98,
+          65,
+          99,
           103
         ],
         "Victor Valley College": [
-          99
+          47
         ],
         "Woodland Community College": [
-          85,
           86,
           87,
           88,
@@ -114823,7 +114242,8 @@ window.CPL_STATEWIDE = {
           90,
           91,
           92,
-          93
+          93,
+          94
         ]
       },
       "peer_units_median": 21.0,
@@ -149888,135 +149308,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-SCL-1-001",
-      "exhibit_ids": [
-        "MAPICI-SCL-1-001"
-      ],
-      "title": "Smog Inspector - Level 1 Training",
-      "unified_title": "Smog Inspector - Level 1 Training",
-      "is_classified": true,
-      "issuing_agency": "California Bureau of Automotive Repair (BAR)",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Smog Check License"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Columbia College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AT 141",
-          "credit": "4 hours in Smog Check Inspector and Repair"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-SCL-1-001",
-          "title": "Smog Check License",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Columbia College": 4.0
-      },
-      "adopter_lines": {
-        "Columbia College": 1
-      },
-      "adopter_rec_idx": {
-        "Columbia College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
       "exhibit_id": "MAPICI-ASEX-1-001",
       "exhibit_ids": [
         "MAPICI-ASEX-1-001"
@@ -151764,264 +151055,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-IFAA-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A1",
-      "unified_title": "Industry Training Evidence for AUTO A1",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A1"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A1",
-          "credit": "4 units in AUTO A1 Engine Repair"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA-1-001",
-          "title": "Industry Training Evidence for AUTO A1",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA1-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA1-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A2",
-      "unified_title": "Industry Training Evidence for AUTO A2",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A2"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A2",
-          "credit": "4 units in AUTO A2 Automatic Transmission Transaxle"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA1-1-001",
-          "title": "Industry Training Evidence for AUTO A2",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
       "exhibit_id": "MAPCXN-NFAA1-1-001",
       "exhibit_ids": [
         "MAPCXN-NFAA1-1-001"
@@ -152131,135 +151164,6 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPCXN-NFAA1-1-001",
           "title": "Noncredit Course for AUTO A2",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA2-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA2-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A3",
-      "unified_title": "Industry Training Evidence for AUTO A3",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A3"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A3",
-          "credit": "4 units in AUTO A3 Manual Drive Train and Axles"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA2-1-001",
-          "title": "Industry Training Evidence for AUTO A3",
           "units": 4.0,
           "lines": 1
         }
@@ -152409,1178 +151313,17 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-IFAA3-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA3-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A4",
-      "unified_title": "Industry Training Evidence for AUTO A4",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A4"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A4",
-          "credit": "4 units in AUTO A4 Suspension and Steering"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA3-1-001",
-          "title": "Industry Training Evidence for AUTO A4",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA4-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA4-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A5",
-      "unified_title": "Industry Training Evidence for AUTO A5",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A5"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A5",
-          "credit": "4 units in AUTO A5 Brakes"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA4-1-001",
-          "title": "Industry Training Evidence for AUTO A5",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA5-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA5-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A6",
-      "unified_title": "Industry Training Evidence for AUTO A6",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A6"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A6",
-          "credit": "5 units in AUTO A6 Electrical Electronic Systems"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA5-1-001",
-          "title": "Industry Training Evidence for AUTO A6",
-          "units": 5.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 5.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 5.0,
-      "peer_units_max": 5.0,
-      "rec_units_total": 5.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA6-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA6-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A7",
-      "unified_title": "Industry Training Evidence for AUTO A7",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A7"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A7",
-          "credit": "4 units in AUTO A7 Automotive Heating and Air Conditioning"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA6-1-001",
-          "title": "Industry Training Evidence for AUTO A7",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA7-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA7-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A8",
-      "unified_title": "Industry Training Evidence for AUTO A8",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A8"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A8",
-          "credit": "5 units in AUTO A8 Engine Performance"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA7-1-001",
-          "title": "Industry Training Evidence for AUTO A8",
-          "units": 5.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 5.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 5.0,
-      "peer_units_max": 5.0,
-      "rec_units_total": 5.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAA8-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAA8-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO A9",
-      "unified_title": "Industry Training Evidence for AUTO A9",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO A9"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO A9",
-          "credit": "4 units in AUTO A9 Light Vehicle Diesel Engines"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAA8-1-001",
-          "title": "Industry Training Evidence for AUTO A9",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAL-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAL-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO L1",
-      "unified_title": "Industry Training Evidence for AUTO L1",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO L1"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO L1",
-          "credit": "5 units in AUTO L1 Advanced Engine Performance"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAL-1-001",
-          "title": "Industry Training Evidence for AUTO L1",
-          "units": 5.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 5.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 5.0,
-      "peer_units_max": 5.0,
-      "rec_units_total": 5.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAI-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAI-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO INT",
-      "unified_title": "Industry Training Evidence for AUTO INT",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO INT"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO INT",
-          "credit": "2 units in AUTO INT Automotive Service and Introduction Lecture"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAI-1-001",
-          "title": "Industry Training Evidence for AUTO INT",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 2.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 2.0,
-      "peer_units_max": 2.0,
-      "rec_units_total": 2.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAI1-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAI1-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO INTL",
-      "unified_title": "Industry Training Evidence for AUTO INTL",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO INTL"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO INTL",
-          "credit": "2 units in AUTO INTL Automotive Service and Introduction Hands-On Lab"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAI1-1-001",
-          "title": "Industry Training Evidence for AUTO INTL",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 2.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 2.0,
-      "peer_units_max": 2.0,
-      "rec_units_total": 2.0
-    },
-    {
       "exhibit_id": "MAPICI-IFAS-1-001",
       "exhibit_ids": [
         "MAPICI-IFAS-1-001"
       ],
-      "title": "Industry Training Evidence for AUTO SDR",
-      "unified_title": "Industry Training Evidence for AUTO SDR",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Automotive Specified Diagnostic and Repair",
+      "unified_title": "Automotive Specified Diagnostic and Repair",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for AUTO SDR"
@@ -153697,135 +151440,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 5.0,
       "peer_units_max": 5.0,
       "rec_units_total": 5.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFAS1-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAS1-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO SMOG",
-      "unified_title": "Industry Training Evidence for AUTO SMOG",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO SMOG"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 67,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Fullerton College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTO SMOG",
-          "credit": "5.5 units in AUTO SMOG Smog Level One and Level Two"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAS1-1-001",
-          "title": "Industry Training Evidence for AUTO SMOG",
-          "units": 5.5,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 5.5
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 5.5,
-      "peer_units_max": 5.5,
-      "rec_units_total": 5.5
     },
     {
       "exhibit_id": "MAPICI-ASE(42-1-001",
@@ -157306,22 +154920,22 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 5.0
     },
     {
-      "exhibit_id": "MAPICI-A6C-1-001|MAPICO-IITA-1-001",
+      "exhibit_id": "MAPICI-IFAS1-1-001|MAPICI-SCL-1-001",
       "exhibit_ids": [
-        "MAPICI-A6C-1-001",
-        "MAPICO-IITA-1-001"
+        "MAPICI-IFAS1-1-001",
+        "MAPICI-SCL-1-001"
       ],
-      "title": "Introduction to Automotive Technology",
-      "unified_title": "Introduction to Automotive Technology",
+      "title": "Smog Inspector - Level 1 Training",
+      "unified_title": "Smog Inspector - Level 1 Training",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "California Bureau of Automotive Repair (BAR)",
       "training_agency": "",
       "confidence_title": 1.0,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "AUTO 600 Completion",
-        "IC- Introduction to Automotive Technology"
+        "Industry Training Evidence for AUTO SMOG",
+        "Smog Check License"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -157333,8 +154947,8 @@ window.CPL_STATEWIDE = {
       "collaborative_type": "Local",
       "adopters": 2,
       "adopter_names": [
-        "Long Beach City College",
-        "Mt. San Jacinto College"
+        "Columbia College",
+        "Las Positas College"
       ],
       "potential": 66,
       "potential_names": [
@@ -157355,7 +154969,6 @@ window.CPL_STATEWIDE = {
         "College of the Desert",
         "College of the Redwoods",
         "College of the Sequoias",
-        "Columbia College",
         "Compton College",
         "Contra Costa College",
         "Copper Mountain College",
@@ -157372,8 +154985,8 @@ window.CPL_STATEWIDE = {
         "Golden West College",
         "Hartnell College",
         "Imperial Valley College",
-        "Las Positas College",
         "Lassen College",
+        "Long Beach City College",
         "Los Angeles Pierce College",
         "Los Angeles Trade Technical College",
         "Los Medanos College",
@@ -157382,6 +154995,7 @@ window.CPL_STATEWIDE = {
         "MiraCosta College",
         "Modesto Junior College",
         "Monterey Peninsula College",
+        "Mt. San Jacinto College",
         "Oxnard College",
         "Palo Verde College",
         "Palomar College",
@@ -157408,48 +155022,48 @@ window.CPL_STATEWIDE = {
       "total_addressable": 68,
       "credit_recs": [
         {
-          "course": "AUTO 200",
-          "credit": "3 hours in Introduction to Automotive Technology"
+          "course": "AT 141",
+          "credit": "4 hours in Smog Check Inspector and Repair"
         },
         {
-          "course": "AUME 700",
-          "credit": "4 hours in Introduction to Automotive Technology"
+          "course": "AUTO SMOG",
+          "credit": "5.5 units in AUTO SMOG Smog Level One and Level Two"
         }
       ],
       "authoritative_recs": [],
       "exhibit_records": [
         {
-          "id": "MAPICI-A6C-1-001",
-          "title": "AUTO 600 Completion",
-          "units": 3.0,
+          "id": "MAPICI-IFAS1-1-001",
+          "title": "Industry Training Evidence for AUTO SMOG",
+          "units": 5.5,
           "lines": 1
         },
         {
-          "id": "MAPICO-IITA-1-001",
-          "title": "IC- Introduction to Automotive Technology",
+          "id": "MAPICI-SCL-1-001",
+          "title": "Smog Check License",
           "units": 4.0,
           "lines": 1
         }
       ],
       "adopter_units": {
-        "Long Beach City College": 3.0,
-        "Mt. San Jacinto College": 4.0
+        "Columbia College": 4.0,
+        "Las Positas College": 5.5
       },
       "adopter_lines": {
-        "Long Beach City College": 1,
-        "Mt. San Jacinto College": 1
+        "Columbia College": 1,
+        "Las Positas College": 1
       },
       "adopter_rec_idx": {
-        "Long Beach City College": [
+        "Columbia College": [
           0
         ],
-        "Mt. San Jacinto College": [
+        "Las Positas College": [
           1
         ]
       },
-      "peer_units_median": 3.5,
-      "peer_units_max": 4.0,
-      "rec_units_total": 7.0
+      "peer_units_median": 4.75,
+      "peer_units_max": 5.5,
+      "rec_units_total": 9.5
     },
     {
       "exhibit_id": "MAPPRA-A1A--1-001",
@@ -162657,6 +160271,182 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 4.0,
       "rec_units_total": 9.0
+    },
+    {
+      "exhibit_id": "MAPICI-A6C-1-001|MAPICI-IFAI-1-001|MAPICI-IFAI1-1-001|MAPICO-IITA-1-001",
+      "exhibit_ids": [
+        "MAPICI-A6C-1-001",
+        "MAPICI-IFAI-1-001",
+        "MAPICI-IFAI1-1-001",
+        "MAPICO-IITA-1-001"
+      ],
+      "title": "Introduction to Automotive Technology",
+      "unified_title": "Introduction to Automotive Technology",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "AUTO 600 Completion",
+        "IC- Introduction to Automotive Technology",
+        "Industry Training Evidence for AUTO INT",
+        "Industry Training Evidence for AUTO INTL"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Las Positas College",
+        "Long Beach City College",
+        "Mt. San Jacinto College"
+      ],
+      "potential": 65,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Lassen College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "AUTO 200",
+          "credit": "3 hours in Introduction to Automotive Technology"
+        },
+        {
+          "course": "AUME 700",
+          "credit": "4 hours in Introduction to Automotive Technology"
+        },
+        {
+          "course": "AUTO INT",
+          "credit": "2 units in AUTO INT Automotive Service and Introduction Lecture"
+        },
+        {
+          "course": "AUTO INTL",
+          "credit": "2 units in AUTO INTL Automotive Service and Introduction Hands-On Lab"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-A6C-1-001",
+          "title": "AUTO 600 Completion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAI-1-001",
+          "title": "Industry Training Evidence for AUTO INT",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAI1-1-001",
+          "title": "Industry Training Evidence for AUTO INTL",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICO-IITA-1-001",
+          "title": "IC- Introduction to Automotive Technology",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Las Positas College": 4.0,
+        "Long Beach City College": 3.0,
+        "Mt. San Jacinto College": 4.0
+      },
+      "adopter_lines": {
+        "Las Positas College": 2,
+        "Long Beach City College": 1,
+        "Mt. San Jacinto College": 1
+      },
+      "adopter_rec_idx": {
+        "Las Positas College": [
+          2,
+          3
+        ],
+        "Long Beach City College": [
+          0
+        ],
+        "Mt. San Jacinto College": [
+          1
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 11.0
     },
     {
       "exhibit_id": "MAPCBEN-AFSB-1-001",
@@ -186337,14 +184127,15 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-A6C11-1-001|MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001",
+      "exhibit_id": "MAPICI-A6C11-1-001|MAPICI-AC(A8-1-001|MAPICI-ASE(1-1-001|MAPICI-ASE(26-1-001|MAPICI-ASE(36-1-001|MAPICI-ASE(8-1-001|MAPICI-IFAA8-1-001",
       "exhibit_ids": [
         "MAPICI-A6C11-1-001",
         "MAPICI-AC(A8-1-001",
         "MAPICI-ASE(1-1-001",
         "MAPICI-ASE(26-1-001",
         "MAPICI-ASE(36-1-001",
-        "MAPICI-ASE(8-1-001"
+        "MAPICI-ASE(8-1-001",
+        "MAPICI-IFAA8-1-001"
       ],
       "title": "ASE A9 — Light Vehicle Diesel Engines",
       "unified_title": "ASE A9 — Light Vehicle Diesel Engines",
@@ -186360,7 +184151,8 @@ window.CPL_STATEWIDE = {
         "Automotive Service Excellence (A9)",
         "Automotive Service Excellence (ASE) A9",
         "Automotive Service Excellence (ASE) A9 Certificate",
-        "Automotive Service Excellence (ASE) A9 Certificate Light Vehicle Diesel Engines"
+        "Automotive Service Excellence (ASE) A9 Certificate Light Vehicle Diesel Engines",
+        "Industry Training Evidence for AUTO A9"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -186485,6 +184277,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO 219",
           "credit": "3 hours in Automotive Light DIesel Engines"
+        },
+        {
+          "course": "AUTO A9",
+          "credit": "4 units in AUTO A9 Light Vehicle Diesel Engines"
         }
       ],
       "authoritative_recs": [],
@@ -186524,6 +184320,12 @@ window.CPL_STATEWIDE = {
           "title": "Automotive Service Excellence (A9)",
           "units": 9.0,
           "lines": 3
+        },
+        {
+          "id": "MAPICI-IFAA8-1-001",
+          "title": "Industry Training Evidence for AUTO A9",
+          "units": 4.0,
+          "lines": 1
         }
       ],
       "adopter_units": {
@@ -186531,7 +184333,7 @@ window.CPL_STATEWIDE = {
         "College of the Desert": 4.0,
         "Copper Mountain College": 4.0,
         "De Anza College": 4.5,
-        "Las Positas College": 3.0,
+        "Las Positas College": 7.0,
         "Long Beach City College": 3.0,
         "Riverside City College": 8.0,
         "Santa Ana College": 6.0
@@ -186541,7 +184343,7 @@ window.CPL_STATEWIDE = {
         "College of the Desert": 1,
         "Copper Mountain College": 1,
         "De Anza College": 1,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Long Beach City College": 1,
         "Riverside City College": 2,
         "Santa Ana College": 2
@@ -186560,7 +184362,8 @@ window.CPL_STATEWIDE = {
           3
         ],
         "Las Positas College": [
-          6
+          6,
+          10
         ],
         "Long Beach City College": [
           9
@@ -186574,9 +184377,9 @@ window.CPL_STATEWIDE = {
           8
         ]
       },
-      "peer_units_median": 4.0,
+      "peer_units_median": 4.25,
       "peer_units_max": 8.0,
-      "rec_units_total": 35.5
+      "rec_units_total": 39.5
     },
     {
       "exhibit_id": "MAPICI-RESP-1-001",
@@ -213042,14 +210845,15 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001|MAPICI-ASEL2-1-001",
+      "exhibit_id": "CPLICI-ASEL-1-001|MAPICI-AEPA-1-001|MAPICI-ASE(2-1-001|MAPICI-ASE(24-1-001|MAPICI-ASEL1-1-001|MAPICI-ASEL2-1-001|MAPICI-IFAL-1-001",
       "exhibit_ids": [
         "CPLICI-ASEL-1-001",
         "MAPICI-AEPA-1-001",
         "MAPICI-ASE(2-1-001",
         "MAPICI-ASE(24-1-001",
         "MAPICI-ASEL1-1-001",
-        "MAPICI-ASEL2-1-001"
+        "MAPICI-ASEL2-1-001",
+        "MAPICI-IFAL-1-001"
       ],
       "title": "ASE L1 — Advanced Engine Performance Specialist",
       "unified_title": "ASE L1 — Advanced Engine Performance Specialist",
@@ -213065,7 +210869,8 @@ window.CPL_STATEWIDE = {
         "Automotive Service Excellence (ASE) L1: Advanced Engine Performance Specialist Certification Test",
         "Automotive Service Excellence L1 - Advanced Engine Performance Specialist",
         "Automotive Services Excellence L1 Certificate",
-        "Automotive Services Excellence L1 Certificate + Practical Assessment"
+        "Automotive Services Excellence L1 Certificate + Practical Assessment",
+        "Industry Training Evidence for AUTO L1"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -213194,6 +210999,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO G131",
           "credit": "4.5 hours in Engine Performance: Advanced"
+        },
+        {
+          "course": "AUTO L1",
+          "credit": "5 units in AUTO L1 Advanced Engine Performance"
         }
       ],
       "authoritative_recs": [
@@ -213241,6 +211050,12 @@ window.CPL_STATEWIDE = {
           "title": "Automotive Service Excellence L1 - Advanced Engine Performance Specialist",
           "units": 4.5,
           "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAL-1-001",
+          "title": "Industry Training Evidence for AUTO L1",
+          "units": 5.0,
+          "lines": 1
         }
       ],
       "adopter_units": {
@@ -213250,7 +211065,7 @@ window.CPL_STATEWIDE = {
         "De Anza College": 9.0,
         "Evergreen Valley College": 2.5,
         "Golden West College": 4.5,
-        "Las Positas College": 3.0,
+        "Las Positas College": 8.0,
         "Lassen College": 3.0,
         "Merced College": 3.0,
         "San Diego Miramar College": 2.0
@@ -213262,7 +211077,7 @@ window.CPL_STATEWIDE = {
         "De Anza College": 2,
         "Evergreen Valley College": 1,
         "Golden West College": 1,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Lassen College": 1,
         "Merced College": 1,
         "San Diego Miramar College": 1
@@ -213288,7 +211103,8 @@ window.CPL_STATEWIDE = {
           10
         ],
         "Las Positas College": [
-          2
+          2,
+          11
         ],
         "Lassen College": [
           3
@@ -213302,7 +211118,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 9.0,
-      "rec_units_total": 37.0
+      "rec_units_total": 42.0
     },
     {
       "exhibit_id": "MAPICI-FTRE-1-001",
@@ -229890,20 +227706,22 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
-      "exhibit_id": "MAPCXS-D1-M-1-001",
+      "exhibit_id": "MAPCXS-D1-M-1-001|MAPCXS-HSA--1-001",
       "exhibit_ids": [
-        "MAPCXS-D1-M-1-001"
+        "MAPCXS-D1-M-1-001",
+        "MAPCXS-HSA--1-001"
       ],
       "title": "Modern Dance Techniques 1",
       "unified_title": "Modern Dance Techniques 1",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "CHAMPS High School",
       "training_agency": "",
       "confidence_title": 0.85,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "DANCETQ 141 - Modern Dance Techniques I"
+        "DANCETQ 141 - Modern Dance Techniques I",
+        "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
@@ -229986,6 +227804,12 @@ window.CPL_STATEWIDE = {
         {
           "id": "MAPCXS-D1-M-1-001",
           "title": "DANCETQ 141 - Modern Dance Techniques I",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPCXS-HSA--1-001",
+          "title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
           "units": 1.0,
           "lines": 1
         }
@@ -230122,20 +227946,22 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 1.0
     },
     {
-      "exhibit_id": "MAPCXS-D1-M1-1-001",
+      "exhibit_id": "MAPCXS-D1-M1-1-001|MAPCXS-HSA-1-1-001",
       "exhibit_ids": [
-        "MAPCXS-D1-M1-1-001"
+        "MAPCXS-D1-M1-1-001",
+        "MAPCXS-HSA-1-1-001"
       ],
       "title": "Modern Dance Techniques 2",
       "unified_title": "Modern Dance Techniques 2",
       "is_classified": true,
-      "issuing_agency": "California Community Colleges",
+      "issuing_agency": "CHAMPS High School",
       "training_agency": "",
       "confidence_title": 0.85,
       "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
-        "DANCETQ 142 - Modern Dance Techniques II"
+        "DANCETQ 142 - Modern Dance Techniques II",
+        "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
@@ -230220,233 +228046,7 @@ window.CPL_STATEWIDE = {
           "title": "DANCETQ 142 - Modern Dance Techniques II",
           "units": 1.0,
           "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 1.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPCXS-HSA--1-001",
-      "exhibit_ids": [
-        "MAPCXS-HSA--1-001"
-      ],
-      "title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
-      "unified_title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Fine and Applied Arts",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "50",
-      "top_codes": [
-        "76"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Cypress College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Irvine Valley College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Southwest College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
-        {
-          "course": "DANCETQ 141",
-          "credit": "1 hour in Modern Dance Techniques I"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-HSA--1-001",
-          "title": "HIGH SCHOOL ARTICULATION - CHAMPS: DANCETQ 141 Modern Dance Techniques I",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 1.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPCXS-HSA-1-1-001",
-      "exhibit_ids": [
-        "MAPCXS-HSA-1-1-001"
-      ],
-      "title": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
-      "unified_title": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Fine and Applied Arts",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "50",
-      "top_codes": [
-        "76"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 54,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Sequoias",
-        "Cypress College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Irvine Valley College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles Southwest College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College"
-      ],
-      "total_addressable": 55,
-      "credit_recs": [
-        {
-          "course": "DANCETQ 142",
-          "credit": "1 hour in Modern Dance Techniques II"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
+        },
         {
           "id": "MAPCXS-HSA-1-1-001",
           "title": "HIGH SCHOOL ARTICULATION: CHAMPS  – DANCETQ 142 - Modern Dance Techniques II",
@@ -237295,13 +234895,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-IFC6-1-001"
       ],
-      "title": "Industry Training Evidence for CNT 68",
-      "unified_title": "Industry Training Evidence for CNT 68",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Introduction to Digital Forensics",
+      "unified_title": "Introduction to Digital Forensics",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Industry Training Evidence for CNT 68"
@@ -237519,19 +235119,21 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "MAPICI-IFC5-1-001",
+      "exhibit_id": "MAPICI-IFC5-1-001|MAPICI-IFC61-1-001",
       "exhibit_ids": [
-        "MAPICI-IFC5-1-001"
+        "MAPICI-IFC5-1-001",
+        "MAPICI-IFC61-1-001"
       ],
-      "title": "Industry Training Evidence for CNT 52",
-      "unified_title": "Industry Training Evidence for CNT 52",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Introduction to Computer Networking",
+      "unified_title": "Introduction to Computer Networking",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
+        "Industry Training Evidence for CIS 66",
         "Industry Training Evidence for CNT 52"
       ],
       "cpl_type": "Industry Certification",
@@ -237606,6 +235208,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "CNT 52",
           "credit": "3 units in CNT 52/CIS 66 Networking Fundamentals"
+        },
+        {
+          "course": "CIS 66",
+          "credit": "3 units in CIS 66/CNT 52 Networking Fundamentals"
         }
       ],
       "authoritative_recs": [],
@@ -237615,115 +235221,7 @@ window.CPL_STATEWIDE = {
           "title": "Industry Training Evidence for CNT 52",
           "units": 3.0,
           "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 3.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "MAPICI-IFC61-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFC61-1-001"
-      ],
-      "title": "Industry Training Evidence for CIS 66",
-      "unified_title": "Industry Training Evidence for CIS 66",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for CIS 66"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Information Technology",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "35"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 52,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Cabrillo College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Coastline Community College",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "El Camino College",
-        "Foothill College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Hartnell College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Ventura College",
-        "West Los Angeles College",
-        "West Valley College"
-      ],
-      "total_addressable": 53,
-      "credit_recs": [
-        {
-          "course": "CIS 66",
-          "credit": "3 units in CIS 66/CNT 52 Networking Fundamentals"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
+        },
         {
           "id": "MAPICI-IFC61-1-001",
           "title": "Industry Training Evidence for CIS 66",
@@ -237732,19 +235230,20 @@ window.CPL_STATEWIDE = {
         }
       ],
       "adopter_units": {
-        "Las Positas College": 3.0
+        "Las Positas College": 6.0
       },
       "adopter_lines": {
-        "Las Positas College": 1
+        "Las Positas College": 2
       },
       "adopter_rec_idx": {
         "Las Positas College": [
-          0
+          0,
+          1
         ]
       },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 3.0
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 6.0
     },
     {
       "exhibit_id": "MAPCXO-FOPN-1-001",
@@ -246928,376 +244427,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0.0
     },
     {
-      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-A6C6-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-ASE3-1-001|MAPICI-ASE31-1-001|MAPICI-MDTA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE3-1-001",
-        "MAPICI-A6C6-1-001",
-        "MAPICI-AC(A3-1-001",
-        "MAPICI-ASE(18-1-001",
-        "MAPICI-ASE(30-1-001",
-        "MAPICI-ASE3-1-001",
-        "MAPICI-ASE31-1-001",
-        "MAPICI-MDTA-1-001"
-      ],
-      "title": "ASE A3 — Manual Drive Train and Axles",
-      "unified_title": "ASE A3 — Manual Drive Train and Axles",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
-        "Auto 613 Completion",
-        "Automotive Service Excellence (ASE) A3 Certificate",
-        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
-        "Automotive Service Excellence 3 (A3) - Manual Drive Train & Axles",
-        "Automotive Services Excellence 3 (A3) Certificate",
-        "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment",
-        "Manual Drive Train and Axles ASE A3"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 19,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Golden West College",
-        "Lassen College",
-        "Long Beach City College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 49,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 432",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO B48",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 077",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AT 66",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 36",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AT 122",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 220",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 077L",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTOMO 301",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 063A",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUT 144",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
-        },
-        {
-          "course": "AUTO 172G",
-          "credit": "2 hours in Manual Drive Train and Axles"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 3",
-          "credit": "4 hours in Man Drivetrain Systems"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 121",
-          "credit": "2 hours in Manual Transmission and Drivetrain Systems"
-        },
-        {
-          "course": "AUTO 016",
-          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
-        },
-        {
-          "course": "AUTO 213",
-          "credit": "3 hours in Automotive Manual Transmission"
-        },
-        {
-          "course": "AUTO G150",
-          "credit": "4 hours in Manual Drive Trains & Axles"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems",
-          "cid": "",
-          "eids": [
-            "CPLICI-ASE3-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "CPLICI-ASE3-1-001",
-          "title": "Automotive Services Excellence 3 (A3) Certificate",
-          "units": 42.0,
-          "lines": 14
-        },
-        {
-          "id": "MAPICI-A6C6-1-001",
-          "title": "Auto 613 Completion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AC(A3-1-001",
-          "title": "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
-          "units": 12.0,
-          "lines": 3
-        },
-        {
-          "id": "MAPICI-ASE(18-1-001",
-          "title": "Automotive Service Excellence (ASE) A3 Certificate",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(30-1-001",
-          "title": "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE3-1-001",
-          "title": "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE31-1-001",
-          "title": "Automotive Service Excellence 3 (A3) - Manual Drive Train & Axles",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MDTA-1-001",
-          "title": "Manual Drive Train and Axles ASE A3",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Chaffey College": 3.0,
-        "College of the Desert": 3.0,
-        "Columbia College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 4.0,
-        "De Anza College": 3.0,
-        "East Los Angeles College": 3.0,
-        "Evergreen Valley College": 2.0,
-        "Golden West College": 4.0,
-        "Lassen College": 3.0,
-        "Long Beach City College": 3.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Riverside City College": 8.0,
-        "San Bernardino Valley College": 9.0,
-        "San Diego Miramar College": 2.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Chaffey College": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 1,
-        "De Anza College": 1,
-        "East Los Angeles College": 1,
-        "Evergreen Valley College": 1,
-        "Golden West College": 1,
-        "Lassen College": 1,
-        "Long Beach City College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Rio Hondo College": 1,
-        "Riverside City College": 2,
-        "San Bernardino Valley College": 3,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          1
-        ],
-        "Chaffey College": [
-          0
-        ],
-        "College of the Desert": [
-          19
-        ],
-        "Columbia College": [
-          6
-        ],
-        "Contra Costa College": [
-          13
-        ],
-        "Copper Mountain College": [
-          17
-        ],
-        "De Anza College": [
-          11
-        ],
-        "East Los Angeles College": [
-          10
-        ],
-        "Evergreen Valley College": [
-          18
-        ],
-        "Golden West College": [
-          21
-        ],
-        "Lassen College": [
-          4
-        ],
-        "Long Beach City College": [
-          20
-        ],
-        "Mendocino College": [
-          12
-        ],
-        "Merced College": [
-          5
-        ],
-        "Rio Hondo College": [
-          7
-        ],
-        "Riverside City College": [
-          15,
-          16
-        ],
-        "San Bernardino Valley College": [
-          2,
-          8,
-          9
-        ],
-        "San Diego Miramar College": [
-          14
-        ],
-        "Santa Ana College": [
-          3
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 9.0,
-      "rec_units_total": 68.0
-    },
-    {
       "exhibit_id": "MAPICI-SC1-1-001|MAPICI-SC2-1-001|MAPICI-SFHC-1-001|MAPICI-SMCA-1-001",
       "exhibit_ids": [
         "MAPICI-SC1-1-001",
@@ -248452,6 +245581,393 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "CPLICI-ASE3-1-001|MAPICI-A6C6-1-001|MAPICI-AC(A3-1-001|MAPICI-ASE(18-1-001|MAPICI-ASE(30-1-001|MAPICI-ASE3-1-001|MAPICI-ASE31-1-001|MAPICI-IFAA2-1-001|MAPICI-MDTA-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE3-1-001",
+        "MAPICI-A6C6-1-001",
+        "MAPICI-AC(A3-1-001",
+        "MAPICI-ASE(18-1-001",
+        "MAPICI-ASE(30-1-001",
+        "MAPICI-ASE3-1-001",
+        "MAPICI-ASE31-1-001",
+        "MAPICI-IFAA2-1-001",
+        "MAPICI-MDTA-1-001"
+      ],
+      "title": "ASE A3 — Manual Drive Train and Axles",
+      "unified_title": "ASE A3 — Manual Drive Train and Axles",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
+        "Auto 613 Completion",
+        "Automotive Service Excellence (ASE) A3 Certificate",
+        "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
+        "Automotive Service Excellence 3 (A3) - Manual Drive Train & Axles",
+        "Automotive Services Excellence 3 (A3) Certificate",
+        "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment",
+        "Industry Training Evidence for AUTO A3",
+        "Manual Drive Train and Axles ASE A3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 20,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chaffey College",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Golden West College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO B48",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 077",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 113",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AT 66",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 36",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AT 122",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 220",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 077L",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTOMO 301",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 063A",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUT 144",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUSER 117",
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems"
+        },
+        {
+          "course": "AUTO 172G",
+          "credit": "2 hours in Manual Drive Train and Axles"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 3",
+          "credit": "4 hours in Man Drivetrain Systems"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 121",
+          "credit": "2 hours in Manual Transmission and Drivetrain Systems"
+        },
+        {
+          "course": "AUTO 016",
+          "credit": "3 hours in Automotive Manual Transmissions & Drive Train Systems"
+        },
+        {
+          "course": "AUTO 213",
+          "credit": "3 hours in Automotive Manual Transmission"
+        },
+        {
+          "course": "AUTO G150",
+          "credit": "4 hours in Manual Drive Trains & Axles"
+        },
+        {
+          "course": "AUTO A3",
+          "credit": "4 units in AUTO A3 Manual Drive Train and Axles"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automotive Manual Transmissions and Drive Train Systems",
+          "cid": "",
+          "eids": [
+            "CPLICI-ASE3-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "CPLICI-ASE3-1-001",
+          "title": "Automotive Services Excellence 3 (A3) Certificate",
+          "units": 42.0,
+          "lines": 14
+        },
+        {
+          "id": "MAPICI-A6C6-1-001",
+          "title": "Auto 613 Completion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AC(A3-1-001",
+          "title": "ASE CERTIFICATION (A3) A3 – MANUAL DRIVE TRAIN & AXLES",
+          "units": 12.0,
+          "lines": 3
+        },
+        {
+          "id": "MAPICI-ASE(18-1-001",
+          "title": "Automotive Service Excellence (ASE) A3 Certificate",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(30-1-001",
+          "title": "Automotive Service Excellence (ASE) A3 Certificate Manual Drive Train & Axles",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE3-1-001",
+          "title": "Automotive Services Excellence 3 (A3) Certificate + Practical Assessment",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE31-1-001",
+          "title": "Automotive Service Excellence 3 (A3) - Manual Drive Train & Axles",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAA2-1-001",
+          "title": "Industry Training Evidence for AUTO A3",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-MDTA-1-001",
+          "title": "Manual Drive Train and Axles ASE A3",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0,
+        "Chaffey College": 3.0,
+        "College of the Desert": 3.0,
+        "Columbia College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 4.0,
+        "De Anza College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Evergreen Valley College": 2.0,
+        "Golden West College": 4.0,
+        "Las Positas College": 4.0,
+        "Lassen College": 3.0,
+        "Long Beach City College": 3.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Riverside City College": 8.0,
+        "San Bernardino Valley College": 9.0,
+        "San Diego Miramar College": 2.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Chaffey College": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 1,
+        "De Anza College": 1,
+        "East Los Angeles College": 1,
+        "Evergreen Valley College": 1,
+        "Golden West College": 1,
+        "Las Positas College": 1,
+        "Lassen College": 1,
+        "Long Beach City College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Rio Hondo College": 1,
+        "Riverside City College": 2,
+        "San Bernardino Valley College": 3,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          1
+        ],
+        "Chaffey College": [
+          0
+        ],
+        "College of the Desert": [
+          19
+        ],
+        "Columbia College": [
+          6
+        ],
+        "Contra Costa College": [
+          13
+        ],
+        "Copper Mountain College": [
+          17
+        ],
+        "De Anza College": [
+          11
+        ],
+        "East Los Angeles College": [
+          10
+        ],
+        "Evergreen Valley College": [
+          18
+        ],
+        "Golden West College": [
+          21
+        ],
+        "Las Positas College": [
+          22
+        ],
+        "Lassen College": [
+          4
+        ],
+        "Long Beach City College": [
+          20
+        ],
+        "Mendocino College": [
+          12
+        ],
+        "Merced College": [
+          5
+        ],
+        "Rio Hondo College": [
+          7
+        ],
+        "Riverside City College": [
+          15,
+          16
+        ],
+        "San Bernardino Valley College": [
+          2,
+          8,
+          9
+        ],
+        "San Diego Miramar College": [
+          14
+        ],
+        "Santa Ana College": [
+          3
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 9.0,
+      "rec_units_total": 72.0
     },
     {
       "exhibit_id": "MAPICA-MPC-1-001|MAPICA-MPE-1-001",
@@ -249919,7 +247435,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.5
     },
     {
-      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-ASE(45-1-001|MAPICI-ASE8-1-001|MAPICI-ASE82-1-001|MAPICI-EPAA-1-001|MAPICO-IEPI-1-001|MAPICO-IPI-1-001",
+      "exhibit_id": "CPLICI-ASE8-1-001|MAPICI-AC(A7-1-001|MAPICI-ASE(22-1-001|MAPICI-ASE(35-1-001|MAPICI-ASE(45-1-001|MAPICI-ASE8-1-001|MAPICI-ASE82-1-001|MAPICI-EPAA-1-001|MAPICI-IFAA7-1-001|MAPICO-IEPI-1-001|MAPICO-IPI-1-001",
       "exhibit_ids": [
         "CPLICI-ASE8-1-001",
         "MAPICI-AC(A7-1-001",
@@ -249929,6 +247445,7 @@ window.CPL_STATEWIDE = {
         "MAPICI-ASE8-1-001",
         "MAPICI-ASE82-1-001",
         "MAPICI-EPAA-1-001",
+        "MAPICI-IFAA7-1-001",
         "MAPICO-IEPI-1-001",
         "MAPICO-IPI-1-001"
       ],
@@ -249950,7 +247467,8 @@ window.CPL_STATEWIDE = {
         "Automotive Services Excellence 8 (A8) Certificate + Practical Assessment",
         "Engine Performance ASE A8",
         "IC- Engine Performance II",
-        "IC-Engine Performance I"
+        "IC-Engine Performance I",
+        "Industry Training Evidence for AUTO A8"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -250129,6 +247647,10 @@ window.CPL_STATEWIDE = {
           "credit": "4.5 hours in Engine Performance: Basic Theory/Diagnosis"
         },
         {
+          "course": "AUTO A8",
+          "credit": "5 units in AUTO A8 Engine Performance"
+        },
+        {
           "course": "A S T 020",
           "credit": "4 hours in Advanced Engine Diagnostics and Performance"
         }
@@ -250192,6 +247714,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPICI-IFAA7-1-001",
+          "title": "Industry Training Evidence for AUTO A8",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
           "id": "MAPICO-IEPI-1-001",
           "title": "IC- Engine Performance II",
           "units": 4.0,
@@ -250215,7 +247743,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 3.0,
         "Evergreen Valley College": 2.5,
         "Golden West College": 4.5,
-        "Las Positas College": 3.0,
+        "Las Positas College": 8.0,
         "Lassen College": 3.0,
         "Long Beach City College": 3.0,
         "Los Angeles Pierce College": 4.0,
@@ -250238,7 +247766,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 1,
         "Evergreen Valley College": 1,
         "Golden West College": 1,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Lassen College": 1,
         "Long Beach City College": 1,
         "Los Angeles Pierce College": 1,
@@ -250282,7 +247810,8 @@ window.CPL_STATEWIDE = {
           22
         ],
         "Las Positas College": [
-          3
+          3,
+          23
         ],
         "Lassen College": [
           4
@@ -250291,7 +247820,7 @@ window.CPL_STATEWIDE = {
           19
         ],
         "Los Angeles Pierce College": [
-          23
+          24
         ],
         "Mendocino College": [
           11
@@ -250320,7 +247849,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 8.0,
-      "rec_units_total": 79.0
+      "rec_units_total": 84.0
     },
     {
       "exhibit_id": "MAPICA-3A-1-001",
@@ -251672,401 +249201,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-A6C9-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE(40-1-001|MAPICI-ASE7-1-001|MAPICI-ASE71-1-001|MAPICI-CCSA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE7-1-001",
-        "MAPICI-A6C9-1-001",
-        "MAPICI-AAC-1-001",
-        "MAPICI-AC(A6-1-001",
-        "MAPICI-ASE(34-1-001",
-        "MAPICI-ASE(40-1-001",
-        "MAPICI-ASE7-1-001",
-        "MAPICI-ASE71-1-001",
-        "MAPICI-CCSA-1-001"
-      ],
-      "title": "ASE A7 — Heating and Air Conditioning",
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE A7 Certificate",
-        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-        "Auto 617 Completion",
-        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-        "Automotive Service Excellence (ASE) ASE A7",
-        "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
-        "Automotive Services Excellence 7 (A7) Certificate",
-        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
-        "Climate Control Systems ASE A7"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 22,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Golden West College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 46,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 416",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO B49",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 056",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 117",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 44",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 112",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 240",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTOMO 701",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 066.",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUT 146",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUSER 238",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 169G",
-          "credit": "2 hours in Climate Control Systems"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 7",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 135",
-          "credit": "2 hours in Air Conditioning Systems"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
-        },
-        {
-          "course": "AUTO 217",
-          "credit": "3 hours in Automotive Air Conditioning"
-        },
-        {
-          "course": "A S T 007",
-          "credit": "3 hours in Air Conditioning"
-        },
-        {
-          "course": "AUTO G160",
-          "credit": "4 hours in Heating And Air Conditioning"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
-          "cid": "",
-          "eids": [
-            "CPLICI-ASE7-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "CPLICI-ASE7-1-001",
-          "title": "Automotive Services Excellence 7 (A7) Certificate",
-          "units": 39.0,
-          "lines": 13
-        },
-        {
-          "id": "MAPICI-A6C9-1-001",
-          "title": "Auto 617 Completion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AAC-1-001",
-          "title": "ASE A7 Certificate",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AC(A6-1-001",
-          "title": "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-          "units": 16.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-ASE(34-1-001",
-          "title": "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-          "units": 0,
-          "lines": 0
-        },
-        {
-          "id": "MAPICI-ASE(40-1-001",
-          "title": "Automotive Service Excellence (ASE) ASE A7",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE7-1-001",
-          "title": "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE71-1-001",
-          "title": "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCSA-1-001",
-          "title": "Climate Control Systems ASE A7",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Chaffey College": 3.0,
-        "City College of San Francisco": 3.0,
-        "College of the Desert": 4.0,
-        "Columbia College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 4.0,
-        "De Anza College": 3.0,
-        "East Los Angeles College": 3.0,
-        "Evergreen Valley College": 2.0,
-        "Golden West College": 4.0,
-        "Lassen College": 3.0,
-        "Long Beach City College": 3.0,
-        "Los Angeles Pierce College": 3.0,
-        "Los Medanos College": 4.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Riverside City College": 8.0,
-        "San Bernardino Valley College": 3.0,
-        "San Diego Miramar College": 2.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Chaffey College": 1,
-        "City College of San Francisco": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 1,
-        "De Anza College": 1,
-        "East Los Angeles College": 1,
-        "Evergreen Valley College": 1,
-        "Golden West College": 1,
-        "Lassen College": 1,
-        "Long Beach City College": 1,
-        "Los Angeles Pierce College": 1,
-        "Los Medanos College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Rio Hondo College": 1,
-        "Riverside City College": 2,
-        "San Bernardino Valley College": 1,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          1
-        ],
-        "Chaffey College": [
-          0
-        ],
-        "City College of San Francisco": [
-          6
-        ],
-        "College of the Desert": [
-          19
-        ],
-        "Columbia College": [
-          7
-        ],
-        "Contra Costa College": [
-          12
-        ],
-        "Copper Mountain College": [
-          16
-        ],
-        "De Anza College": [
-          10
-        ],
-        "East Los Angeles College": [
-          9
-        ],
-        "Evergreen Valley College": [
-          18
-        ],
-        "Golden West College": [
-          22
-        ],
-        "Lassen College": [
-          4
-        ],
-        "Long Beach City College": [
-          20
-        ],
-        "Los Angeles Pierce College": [
-          21
-        ],
-        "Los Medanos College": [
-          17
-        ],
-        "Mendocino College": [
-          11
-        ],
-        "Merced College": [
-          5
-        ],
-        "Rio Hondo College": [
-          8
-        ],
-        "Riverside City College": [
-          14,
-          15
-        ],
-        "San Bernardino Valley College": [
-          2
-        ],
-        "San Diego Miramar College": [
-          13
-        ],
-        "Santa Ana College": [
-          3
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 8.0,
-      "rec_units_total": 73.0
     },
     {
       "exhibit_id": "MAPICI-PNLI-1-001",
@@ -253706,7 +250840,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-ASE4-1-001|MAPICI-ASE41-1-001|MAPICI-SSAH-1-001",
+      "exhibit_id": "CPLICI-ASE4-1-001|MAPICI-A0-A-1-001|MAPICI-A0-A1-1-001|MAPICI-AC(A2-1-001|MAPICI-ASE(19-1-001|MAPICI-ASE(31-1-001|MAPICI-ASE4-1-001|MAPICI-ASE41-1-001|MAPICI-IFAA3-1-001|MAPICI-SSAH-1-001",
       "exhibit_ids": [
         "CPLICI-ASE4-1-001",
         "MAPICI-A0-A-1-001",
@@ -253716,6 +250850,7 @@ window.CPL_STATEWIDE = {
         "MAPICI-ASE(31-1-001",
         "MAPICI-ASE4-1-001",
         "MAPICI-ASE41-1-001",
+        "MAPICI-IFAA3-1-001",
         "MAPICI-SSAH-1-001"
       ],
       "title": "ASE A4 — Suspension and Steering",
@@ -253735,6 +250870,7 @@ window.CPL_STATEWIDE = {
         "Automotive Service Excellence 4 (A4) - Suspension & Steering",
         "Automotive Services Excellence 4 (A4) Certificate",
         "Automotive Services Excellence 4 (A4) Certificate + Practical Assessment",
+        "Industry Training Evidence for AUTO A4",
         "Suspension, Steering and Handling ASE A4"
       ],
       "cpl_type": "Industry Certification",
@@ -253924,6 +251060,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO G141",
           "credit": "4.5 hours in Automotive Chassis: Steering & Suspension"
+        },
+        {
+          "course": "AUTO A4",
+          "credit": "4 units in AUTO A4 Suspension and Steering"
         }
       ],
       "authoritative_recs": [
@@ -253985,6 +251125,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPICI-IFAA3-1-001",
+          "title": "Industry Training Evidence for AUTO A4",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPICI-SSAH-1-001",
           "title": "Suspension, Steering and Handling ASE A4",
           "units": 2.0,
@@ -254004,7 +251150,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 3.0,
         "Evergreen Valley College": 3.0,
         "Golden West College": 4.5,
-        "Las Positas College": 3.0,
+        "Las Positas College": 7.0,
         "Lassen College": 3.0,
         "Long Beach City College": 3.0,
         "Los Medanos College": 4.0,
@@ -254029,7 +251175,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 1,
         "Evergreen Valley College": 1,
         "Golden West College": 1,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Lassen College": 1,
         "Long Beach City College": 1,
         "Los Medanos College": 1,
@@ -254079,7 +251225,8 @@ window.CPL_STATEWIDE = {
           25
         ],
         "Las Positas College": [
-          4
+          4,
+          26
         ],
         "Lassen College": [
           5
@@ -254117,7 +251264,419 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 8.0,
-      "rec_units_total": 81.5
+      "rec_units_total": 85.5
+    },
+    {
+      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-A6C9-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE(40-1-001|MAPICI-ASE7-1-001|MAPICI-ASE71-1-001|MAPICI-CCSA-1-001|MAPICI-IFAA6-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE7-1-001",
+        "MAPICI-A6C9-1-001",
+        "MAPICI-AAC-1-001",
+        "MAPICI-AC(A6-1-001",
+        "MAPICI-ASE(34-1-001",
+        "MAPICI-ASE(40-1-001",
+        "MAPICI-ASE7-1-001",
+        "MAPICI-ASE71-1-001",
+        "MAPICI-CCSA-1-001",
+        "MAPICI-IFAA6-1-001"
+      ],
+      "title": "ASE A7 — Heating and Air Conditioning",
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE A7 Certificate",
+        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+        "Auto 617 Completion",
+        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+        "Automotive Service Excellence (ASE) ASE A7",
+        "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
+        "Automotive Services Excellence 7 (A7) Certificate",
+        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
+        "Climate Control Systems ASE A7",
+        "Industry Training Evidence for AUTO A7"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 23,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Golden West College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 45,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 416",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO B49",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 056",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 117",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 44",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 112",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 240",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTOMO 701",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 066.",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUT 146",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUSER 238",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 169G",
+          "credit": "2 hours in Climate Control Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 7",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 113",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 135",
+          "credit": "2 hours in Air Conditioning Systems"
+        },
+        {
+          "course": "AUTO 018",
+          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
+        },
+        {
+          "course": "AUTO 217",
+          "credit": "3 hours in Automotive Air Conditioning"
+        },
+        {
+          "course": "A S T 007",
+          "credit": "3 hours in Air Conditioning"
+        },
+        {
+          "course": "AUTO G160",
+          "credit": "4 hours in Heating And Air Conditioning"
+        },
+        {
+          "course": "AUTO A7",
+          "credit": "4 units in AUTO A7 Automotive Heating and Air Conditioning"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
+          "cid": "",
+          "eids": [
+            "CPLICI-ASE7-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "CPLICI-ASE7-1-001",
+          "title": "Automotive Services Excellence 7 (A7) Certificate",
+          "units": 39.0,
+          "lines": 13
+        },
+        {
+          "id": "MAPICI-A6C9-1-001",
+          "title": "Auto 617 Completion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AAC-1-001",
+          "title": "ASE A7 Certificate",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AC(A6-1-001",
+          "title": "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+          "units": 16.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-ASE(34-1-001",
+          "title": "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+          "units": 0,
+          "lines": 0
+        },
+        {
+          "id": "MAPICI-ASE(40-1-001",
+          "title": "Automotive Service Excellence (ASE) ASE A7",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE7-1-001",
+          "title": "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE71-1-001",
+          "title": "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCSA-1-001",
+          "title": "Climate Control Systems ASE A7",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAA6-1-001",
+          "title": "Industry Training Evidence for AUTO A7",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0,
+        "Chaffey College": 3.0,
+        "City College of San Francisco": 3.0,
+        "College of the Desert": 4.0,
+        "Columbia College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 4.0,
+        "De Anza College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Evergreen Valley College": 2.0,
+        "Golden West College": 4.0,
+        "Las Positas College": 4.0,
+        "Lassen College": 3.0,
+        "Long Beach City College": 3.0,
+        "Los Angeles Pierce College": 3.0,
+        "Los Medanos College": 4.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Riverside City College": 8.0,
+        "San Bernardino Valley College": 3.0,
+        "San Diego Miramar College": 2.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Chaffey College": 1,
+        "City College of San Francisco": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 1,
+        "De Anza College": 1,
+        "East Los Angeles College": 1,
+        "Evergreen Valley College": 1,
+        "Golden West College": 1,
+        "Las Positas College": 1,
+        "Lassen College": 1,
+        "Long Beach City College": 1,
+        "Los Angeles Pierce College": 1,
+        "Los Medanos College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Rio Hondo College": 1,
+        "Riverside City College": 2,
+        "San Bernardino Valley College": 1,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          1
+        ],
+        "Chaffey College": [
+          0
+        ],
+        "City College of San Francisco": [
+          6
+        ],
+        "College of the Desert": [
+          19
+        ],
+        "Columbia College": [
+          7
+        ],
+        "Contra Costa College": [
+          12
+        ],
+        "Copper Mountain College": [
+          16
+        ],
+        "De Anza College": [
+          10
+        ],
+        "East Los Angeles College": [
+          9
+        ],
+        "Evergreen Valley College": [
+          18
+        ],
+        "Golden West College": [
+          22
+        ],
+        "Las Positas College": [
+          23
+        ],
+        "Lassen College": [
+          4
+        ],
+        "Long Beach City College": [
+          20
+        ],
+        "Los Angeles Pierce College": [
+          21
+        ],
+        "Los Medanos College": [
+          17
+        ],
+        "Mendocino College": [
+          11
+        ],
+        "Merced College": [
+          5
+        ],
+        "Rio Hondo College": [
+          8
+        ],
+        "Riverside City College": [
+          14,
+          15
+        ],
+        "San Bernardino Valley College": [
+          2
+        ],
+        "San Diego Miramar College": [
+          13
+        ],
+        "Santa Ana College": [
+          3
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 77.0
     },
     {
       "exhibit_id": "MAPICI-O3A1-1-001|MAPICI-OST3-1-001",
@@ -256890,445 +254449,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-A6C5-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ASE(44-1-001|MAPICI-ASE2-1-001|MAPICI-ASE21-1-001|MAPICI-ATAA-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE2-1-001",
-        "MAPICI-A6C5-1-001",
-        "MAPICI-AC(A1-1-001",
-        "MAPICI-ASE(17-1-001",
-        "MAPICI-ASE(28-1-001",
-        "MAPICI-ASE(29-1-001",
-        "MAPICI-ASE(44-1-001",
-        "MAPICI-ASE2-1-001",
-        "MAPICI-ASE21-1-001",
-        "MAPICI-ATAA-1-001"
-      ],
-      "title": "ASE A2 — Automatic Transmission/Transaxle",
-      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
-        "Auto 612 Completion",
-        "Automatic Transmissions/Axles ASE A2",
-        "Automotive Service Excellence (ASE) A2",
-        "Automotive Service Excellence (ASE) A2 Certificate",
-        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
-        "Automotive Service Excellence 2 (A2) - Automatic Transmission/Transaxle",
-        "Automotive Services Excellence (ASE) 2",
-        "Automotive Services Excellence 2 (A2) Certificate",
-        "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 24,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Chaffey College",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Golden West College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Shasta College"
-      ],
-      "potential": 44,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 432",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO B46",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 075",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 112",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AT 68",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AT 132",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 230",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 075L",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTOMO 201",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUT 52",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 063.",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 64",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUT 145",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUSER 117",
-          "credit": "3 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO 174G",
-          "credit": "2 hours in Automatic Transmissions/Axles"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 2",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 045",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 130",
-          "credit": "4 hours in Auto Transmissions/Transaxles"
-        },
-        {
-          "course": "AUTO 120",
-          "credit": "2.5 hours in Automatic Transmission Systems"
-        },
-        {
-          "course": "AUTO 017",
-          "credit": "3 hours in Automatic Transmissions & Transaxles"
-        },
-        {
-          "course": "AUTO 212",
-          "credit": "3 hours in Automotive Automatic Transmission"
-        },
-        {
-          "course": "AUTO 162",
-          "credit": "3 hours in Auto Transmissions and Transaxles"
-        },
-        {
-          "course": "AUTO G151",
-          "credit": "4 hours in Automatic Transmissions and Transaxles"
-        },
-        {
-          "course": "A S T 006",
-          "credit": "5 hours in Automatic Transmissions"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Automatic Transmissions and Transaxles",
-          "cid": "AUTO 120 X",
-          "eids": [
-            "CPLICI-ASE2-1-001"
-          ]
-        },
-        {
-          "credit": "3 hours in Auto Transmissions and Transaxles",
-          "cid": "",
-          "eids": [
-            "MAPICI-ASE(29-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "CPLICI-ASE2-1-001",
-          "title": "Automotive Services Excellence 2 (A2) Certificate",
-          "units": 45.0,
-          "lines": 15
-        },
-        {
-          "id": "MAPICI-A6C5-1-001",
-          "title": "Auto 612 Completion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AC(A1-1-001",
-          "title": "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
-          "units": 20.0,
-          "lines": 5
-        },
-        {
-          "id": "MAPICI-ASE(17-1-001",
-          "title": "Automotive Service Excellence (ASE) A2 Certificate",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(28-1-001",
-          "title": "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(29-1-001",
-          "title": "Automotive Services Excellence (ASE) 2",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(44-1-001",
-          "title": "Automotive Service Excellence (ASE) A2",
-          "units": 5.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE2-1-001",
-          "title": "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment",
-          "units": 2.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE21-1-001",
-          "title": "Automotive Service Excellence 2 (A2) - Automatic Transmission/Transaxle",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ATAA-1-001",
-          "title": "Automatic Transmissions/Axles ASE A2",
-          "units": 2.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Barstow Community College": 3.0,
-        "Butte College": 3.0,
-        "Chaffey College": 3.0,
-        "College of the Desert": 3.0,
-        "Columbia College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 8.0,
-        "De Anza College": 3.0,
-        "East Los Angeles College": 3.0,
-        "Evergreen Valley College": 2.5,
-        "Golden West College": 4.0,
-        "Lassen College": 3.0,
-        "Long Beach City College": 3.0,
-        "Los Angeles Pierce College": 5.0,
-        "Los Medanos College": 4.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Riverside City College": 8.0,
-        "San Bernardino Valley College": 6.0,
-        "San Diego Miramar College": 2.0,
-        "Santa Ana College": 3.0,
-        "Shasta College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Barstow Community College": 1,
-        "Butte College": 1,
-        "Chaffey College": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 2,
-        "De Anza College": 1,
-        "East Los Angeles College": 1,
-        "Evergreen Valley College": 1,
-        "Golden West College": 1,
-        "Lassen College": 1,
-        "Long Beach City College": 1,
-        "Los Angeles Pierce College": 1,
-        "Los Medanos College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Rio Hondo College": 1,
-        "Riverside City College": 2,
-        "San Bernardino Valley College": 2,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 1,
-        "Shasta College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          1
-        ],
-        "Barstow Community College": [
-          13
-        ],
-        "Butte College": [
-          9
-        ],
-        "Chaffey College": [
-          0
-        ],
-        "College of the Desert": [
-          22
-        ],
-        "Columbia College": [
-          5
-        ],
-        "Contra Costa College": [
-          14
-        ],
-        "Copper Mountain College": [
-          18,
-          19
-        ],
-        "De Anza College": [
-          10
-        ],
-        "East Los Angeles College": [
-          8
-        ],
-        "Evergreen Valley College": [
-          21
-        ],
-        "Golden West College": [
-          25
-        ],
-        "Lassen College": [
-          4
-        ],
-        "Long Beach City College": [
-          23
-        ],
-        "Los Angeles Pierce College": [
-          26
-        ],
-        "Los Medanos College": [
-          20
-        ],
-        "Mendocino College": [
-          12
-        ],
-        "Merced College": [
-          11
-        ],
-        "Rio Hondo College": [
-          6
-        ],
-        "Riverside City College": [
-          16,
-          17
-        ],
-        "San Bernardino Valley College": [
-          2,
-          7
-        ],
-        "San Diego Miramar College": [
-          15
-        ],
-        "Santa Ana College": [
-          3
-        ],
-        "Shasta College": [
-          24
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 8.0,
-      "rec_units_total": 87.5
-    },
-    {
-      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-A6C8-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001|MAPICI-ASE5-1-001|MAPICI-ASE51-1-001|MAPICO-IBS-1-001",
+      "exhibit_id": "CPLICI-ASE5-1-001|MAPICI-A6C8-1-001|MAPICI-ABSA-1-001|MAPICI-AC(A4-1-001|MAPICI-ASE(20-1-001|MAPICI-ASE(32-1-001|MAPICI-ASE(6-1-001|MAPICI-ASE5-1-001|MAPICI-ASE51-1-001|MAPICI-IFAA4-1-001|MAPICO-IBS-1-001",
       "exhibit_ids": [
         "CPLICI-ASE5-1-001",
         "MAPICI-A6C8-1-001",
@@ -257339,6 +254460,7 @@ window.CPL_STATEWIDE = {
         "MAPICI-ASE(6-1-001",
         "MAPICI-ASE5-1-001",
         "MAPICI-ASE51-1-001",
+        "MAPICI-IFAA4-1-001",
         "MAPICO-IBS-1-001"
       ],
       "title": "ASE A5 — Brakes",
@@ -257359,7 +254481,8 @@ window.CPL_STATEWIDE = {
         "Automotive Services Excellence (A5: Brakes) Certificate",
         "Automotive Services Excellence 5 (A5) Certificate",
         "Automotive Services Excellence 5 (A5) Certificate + Practical Assessment",
-        "IC-Automotive Brake Systems"
+        "IC-Automotive Brake Systems",
+        "Industry Training Evidence for AUTO A5"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -257560,6 +254683,10 @@ window.CPL_STATEWIDE = {
         {
           "course": "AUTO G140",
           "credit": "5 hours in Automotive Chassis: Brakes"
+        },
+        {
+          "course": "AUTO A5",
+          "credit": "4 units in AUTO A5 Brakes"
         }
       ],
       "authoritative_recs": [
@@ -257627,6 +254754,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPICI-IFAA4-1-001",
+          "title": "Industry Training Evidence for AUTO A5",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
           "id": "MAPICO-IBS-1-001",
           "title": "IC-Automotive Brake Systems",
           "units": 4.0,
@@ -257646,7 +254779,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 3.0,
         "Evergreen Valley College": 2.5,
         "Golden West College": 5.0,
-        "Las Positas College": 3.0,
+        "Las Positas College": 7.0,
         "Lassen College": 3.0,
         "Long Beach City College": 3.0,
         "Los Medanos College": 4.0,
@@ -257672,7 +254805,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 1,
         "Evergreen Valley College": 1,
         "Golden West College": 1,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Lassen College": 1,
         "Long Beach City College": 1,
         "Los Medanos College": 1,
@@ -257725,7 +254858,8 @@ window.CPL_STATEWIDE = {
           28
         ],
         "Las Positas College": [
-          4
+          4,
+          29
         ],
         "Lassen College": [
           5
@@ -257766,7 +254900,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 12.0,
-      "rec_units_total": 97.5
+      "rec_units_total": 101.5
     },
     {
       "exhibit_id": "MAPPRA-SI1-1-001|MAPPRA-SI2-1-001",
@@ -260481,6 +257615,461 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 7.0
     },
     {
+      "exhibit_id": "CPLICI-ASE2-1-001|MAPICI-A6C5-1-001|MAPICI-AC(A1-1-001|MAPICI-ASE(17-1-001|MAPICI-ASE(28-1-001|MAPICI-ASE(29-1-001|MAPICI-ASE(44-1-001|MAPICI-ASE2-1-001|MAPICI-ASE21-1-001|MAPICI-ATAA-1-001|MAPICI-IFAA1-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE2-1-001",
+        "MAPICI-A6C5-1-001",
+        "MAPICI-AC(A1-1-001",
+        "MAPICI-ASE(17-1-001",
+        "MAPICI-ASE(28-1-001",
+        "MAPICI-ASE(29-1-001",
+        "MAPICI-ASE(44-1-001",
+        "MAPICI-ASE2-1-001",
+        "MAPICI-ASE21-1-001",
+        "MAPICI-ATAA-1-001",
+        "MAPICI-IFAA1-1-001"
+      ],
+      "title": "ASE A2 — Automatic Transmission/Transaxle",
+      "unified_title": "ASE A2 — Automatic Transmission/Transaxle",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
+        "Auto 612 Completion",
+        "Automatic Transmissions/Axles ASE A2",
+        "Automotive Service Excellence (ASE) A2",
+        "Automotive Service Excellence (ASE) A2 Certificate",
+        "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
+        "Automotive Service Excellence 2 (A2) - Automatic Transmission/Transaxle",
+        "Automotive Services Excellence (ASE) 2",
+        "Automotive Services Excellence 2 (A2) Certificate",
+        "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment",
+        "Industry Training Evidence for AUTO A2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 25,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Chaffey College",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Golden West College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Shasta College"
+      ],
+      "potential": 43,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 432",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO B46",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 075",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 112",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AT 68",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AT 132",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 230",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 075L",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTOMO 201",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUT 52",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 063.",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 64",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUT 145",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 53",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUSER 117",
+          "credit": "3 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO 174G",
+          "credit": "2 hours in Automatic Transmissions/Axles"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 2",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 045",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
+        },
+        {
+          "course": "AUTO 130",
+          "credit": "4 hours in Auto Transmissions/Transaxles"
+        },
+        {
+          "course": "AUTO 120",
+          "credit": "2.5 hours in Automatic Transmission Systems"
+        },
+        {
+          "course": "AUTO 017",
+          "credit": "3 hours in Automatic Transmissions & Transaxles"
+        },
+        {
+          "course": "AUTO 212",
+          "credit": "3 hours in Automotive Automatic Transmission"
+        },
+        {
+          "course": "AUTO 162",
+          "credit": "3 hours in Auto Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO G151",
+          "credit": "4 hours in Automatic Transmissions and Transaxles"
+        },
+        {
+          "course": "AUTO A2",
+          "credit": "4 units in AUTO A2 Automatic Transmission Transaxle"
+        },
+        {
+          "course": "A S T 006",
+          "credit": "5 hours in Automatic Transmissions"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Automatic Transmissions and Transaxles",
+          "cid": "AUTO 120 X",
+          "eids": [
+            "CPLICI-ASE2-1-001"
+          ]
+        },
+        {
+          "credit": "3 hours in Auto Transmissions and Transaxles",
+          "cid": "",
+          "eids": [
+            "MAPICI-ASE(29-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "CPLICI-ASE2-1-001",
+          "title": "Automotive Services Excellence 2 (A2) Certificate",
+          "units": 45.0,
+          "lines": 15
+        },
+        {
+          "id": "MAPICI-A6C5-1-001",
+          "title": "Auto 612 Completion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AC(A1-1-001",
+          "title": "ASE CERTIFICATION (A2) A2 – AUTOMATIC TRANSMISSION/TRANSAXLE",
+          "units": 20.0,
+          "lines": 5
+        },
+        {
+          "id": "MAPICI-ASE(17-1-001",
+          "title": "Automotive Service Excellence (ASE) A2 Certificate",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(28-1-001",
+          "title": "Automotive Service Excellence (ASE) A2 Certificate Automatic Transmission/Transaxle",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(29-1-001",
+          "title": "Automotive Services Excellence (ASE) 2",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(44-1-001",
+          "title": "Automotive Service Excellence (ASE) A2",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE2-1-001",
+          "title": "Automotive Services Excellence 2 (A2) Certificate + Practical Assessment",
+          "units": 2.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE21-1-001",
+          "title": "Automotive Service Excellence 2 (A2) - Automatic Transmission/Transaxle",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ATAA-1-001",
+          "title": "Automatic Transmissions/Axles ASE A2",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAA1-1-001",
+          "title": "Industry Training Evidence for AUTO A2",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0,
+        "Barstow Community College": 3.0,
+        "Butte College": 3.0,
+        "Chaffey College": 3.0,
+        "College of the Desert": 3.0,
+        "Columbia College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 8.0,
+        "De Anza College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Evergreen Valley College": 2.5,
+        "Golden West College": 4.0,
+        "Las Positas College": 4.0,
+        "Lassen College": 3.0,
+        "Long Beach City College": 3.0,
+        "Los Angeles Pierce College": 5.0,
+        "Los Medanos College": 4.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Riverside City College": 8.0,
+        "San Bernardino Valley College": 6.0,
+        "San Diego Miramar College": 2.0,
+        "Santa Ana College": 3.0,
+        "Shasta College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Barstow Community College": 1,
+        "Butte College": 1,
+        "Chaffey College": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 2,
+        "De Anza College": 1,
+        "East Los Angeles College": 1,
+        "Evergreen Valley College": 1,
+        "Golden West College": 1,
+        "Las Positas College": 1,
+        "Lassen College": 1,
+        "Long Beach City College": 1,
+        "Los Angeles Pierce College": 1,
+        "Los Medanos College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Rio Hondo College": 1,
+        "Riverside City College": 2,
+        "San Bernardino Valley College": 2,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 1,
+        "Shasta College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          1
+        ],
+        "Barstow Community College": [
+          13
+        ],
+        "Butte College": [
+          9
+        ],
+        "Chaffey College": [
+          0
+        ],
+        "College of the Desert": [
+          22
+        ],
+        "Columbia College": [
+          5
+        ],
+        "Contra Costa College": [
+          14
+        ],
+        "Copper Mountain College": [
+          18,
+          19
+        ],
+        "De Anza College": [
+          10
+        ],
+        "East Los Angeles College": [
+          8
+        ],
+        "Evergreen Valley College": [
+          21
+        ],
+        "Golden West College": [
+          25
+        ],
+        "Las Positas College": [
+          26
+        ],
+        "Lassen College": [
+          4
+        ],
+        "Long Beach City College": [
+          23
+        ],
+        "Los Angeles Pierce College": [
+          27
+        ],
+        "Los Medanos College": [
+          20
+        ],
+        "Mendocino College": [
+          12
+        ],
+        "Merced College": [
+          11
+        ],
+        "Rio Hondo College": [
+          6
+        ],
+        "Riverside City College": [
+          16,
+          17
+        ],
+        "San Bernardino Valley College": [
+          2,
+          7
+        ],
+        "San Diego Miramar College": [
+          15
+        ],
+        "Santa Ana College": [
+          3
+        ],
+        "Shasta College": [
+          24
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 91.5
+    },
+    {
       "exhibit_id": "MAPOA-CAFP-1-001",
       "exhibit_ids": [
         "MAPOA-CAFP-1-001"
@@ -260815,490 +258404,7 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
-      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-A6C4-1-001|MAPICI-AAER-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001|MAPICI-ASE(41-1-001|MAPICI-ASE1-1-001|MAPICI-ASEA4-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE1-1-001",
-        "MAPICI-A6C4-1-001",
-        "MAPICI-AAER-1-001",
-        "MAPICI-AC(A-1-001",
-        "MAPICI-ASE(11-1-001",
-        "MAPICI-ASE(12-1-001",
-        "MAPICI-ASE(16-1-001",
-        "MAPICI-ASE(27-1-001",
-        "MAPICI-ASE(41-1-001",
-        "MAPICI-ASE1-1-001",
-        "MAPICI-ASEA4-1-001"
-      ],
-      "title": "ASE A1 — Engine Repair",
-      "unified_title": "ASE A1 — Engine Repair",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
-      "quality_flag": "suspect_course_as_exhibit",
-      "raw_titles": [
-        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
-        "Auto 611 Completion",
-        "Automotive Service Excellence (ASE) A1",
-        "Automotive Service Excellence (ASE) A1 Certificate",
-        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
-        "Automotive Service Excellence 1 (A1) - Engine Repair",
-        "Automotive Service Excellence A1",
-        "Automotive Services Excellence (A1) certificate",
-        "Automotive Services Excellence 1 (A1) Certificate",
-        "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 26,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of Marin",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Golden West College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 42,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Butte College",
-        "Cerritos College",
-        "College of Alameda",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Las Positas College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 68,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 10",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTOTEC 427",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AT 72",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 156G",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 54",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AT 102",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 160",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 090L",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTOMO 111",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 064.",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 61",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUT 140",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 110A",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 112",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUSER 115",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 010",
-          "credit": "3 hours in Engine Repair"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 1A",
-          "credit": "4 hours in Auto Engine Repair Upper"
-        },
-        {
-          "course": "AUT 1B",
-          "credit": "4 hours in Auto Engine Repair Lower"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 171",
-          "credit": "3 hours in Engine Systems"
-        },
-        {
-          "course": "AUTO 53",
-          "credit": "4 hours in Engine Repair"
-        },
-        {
-          "course": "AUTO 015",
-          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
-        },
-        {
-          "course": "AUTO 211",
-          "credit": "3 hours in Automotive Engine Repair"
-        },
-        {
-          "course": "ATEC 1",
-          "credit": "4 hours in Automotive Engines"
-        },
-        {
-          "course": "AUTO B20",
-          "credit": "4 hours in Engine Theory, Design and Diagnosis"
-        },
-        {
-          "course": "AUTO B21",
-          "credit": "4 hours in Upper Engine Systems and Machining"
-        },
-        {
-          "course": "AUTO G110",
-          "credit": "5 hours in Engine Repair"
-        },
-        {
-          "course": "A S T 001",
-          "credit": "5 hours in Automotive Engines"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Engine Repair",
-          "cid": "",
-          "eids": [
-            "CPLICI-ASE1-1-001"
-          ]
-        },
-        {
-          "credit": "4 hours in Engine Repair",
-          "cid": "",
-          "eids": [
-            "MAPICI-ASE(12-1-001"
-          ]
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "CPLICI-ASE1-1-001",
-          "title": "Automotive Services Excellence 1 (A1) Certificate",
-          "units": 60.0,
-          "lines": 20
-        },
-        {
-          "id": "MAPICI-A6C4-1-001",
-          "title": "Auto 611 Completion",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AAER-1-001",
-          "title": "Automotive Service Excellence 1 (A1) - Engine Repair",
-          "units": 5.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AC(A-1-001",
-          "title": "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
-          "units": 16.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-ASE(11-1-001",
-          "title": "Automotive Services Excellence (A1) certificate",
-          "units": 8.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-ASE(12-1-001",
-          "title": "Automotive Service Excellence (ASE) A1 Certificate",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(16-1-001",
-          "title": "Automotive Service Excellence (ASE) A1 Certificate",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(27-1-001",
-          "title": "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(41-1-001",
-          "title": "Automotive Service Excellence (ASE) A1",
-          "units": 5.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE1-1-001",
-          "title": "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASEA4-1-001",
-          "title": "Automotive Service Excellence A1",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 8.0,
-        "Barstow Community College": 7.0,
-        "Chabot College": 4.0,
-        "Chaffey College": 6.0,
-        "Citrus College": 3.0,
-        "City College of San Francisco": 3.0,
-        "College of Marin": 3.0,
-        "College of the Desert": 4.0,
-        "Columbia College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 7.0,
-        "De Anza College": 3.0,
-        "East Los Angeles College": 3.0,
-        "Evergreen Valley College": 3.0,
-        "Golden West College": 5.0,
-        "Lassen College": 3.0,
-        "Long Beach City College": 3.0,
-        "Los Angeles Pierce College": 5.0,
-        "Los Medanos College": 3.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Riverside City College": 12.0,
-        "San Bernardino Valley College": 6.0,
-        "San Diego Miramar College": 3.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 2,
-        "Barstow Community College": 2,
-        "Chabot College": 1,
-        "Chaffey College": 2,
-        "Citrus College": 1,
-        "City College of San Francisco": 1,
-        "College of Marin": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 2,
-        "De Anza College": 1,
-        "East Los Angeles College": 1,
-        "Evergreen Valley College": 1,
-        "Golden West College": 1,
-        "Lassen College": 1,
-        "Long Beach City College": 1,
-        "Los Angeles Pierce College": 1,
-        "Los Medanos College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Rio Hondo College": 1,
-        "Riverside City College": 3,
-        "San Bernardino Valley College": 2,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          29,
-          30
-        ],
-        "Barstow Community College": [
-          15,
-          25
-        ],
-        "Chabot College": [
-          28
-        ],
-        "Chaffey College": [
-          0,
-          1
-        ],
-        "Citrus College": [
-          19
-        ],
-        "City College of San Francisco": [
-          7
-        ],
-        "College of Marin": [
-          16
-        ],
-        "College of the Desert": [
-          26
-        ],
-        "Columbia College": [
-          8
-        ],
-        "Contra Costa College": [
-          18
-        ],
-        "Copper Mountain College": [
-          2,
-          23
-        ],
-        "De Anza College": [
-          12
-        ],
-        "East Los Angeles College": [
-          11
-        ],
-        "Evergreen Valley College": [
-          24
-        ],
-        "Golden West College": [
-          31
-        ],
-        "Lassen College": [
-          5
-        ],
-        "Long Beach City College": [
-          27
-        ],
-        "Los Angeles Pierce College": [
-          32
-        ],
-        "Los Medanos College": [
-          17
-        ],
-        "Mendocino College": [
-          14
-        ],
-        "Merced College": [
-          13
-        ],
-        "Rio Hondo College": [
-          9
-        ],
-        "Riverside City College": [
-          20,
-          21,
-          22
-        ],
-        "San Bernardino Valley College": [
-          3,
-          10
-        ],
-        "San Diego Miramar College": [
-          6
-        ],
-        "Santa Ana College": [
-          4
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 12.0,
-      "rec_units_total": 112.0
-    },
-    {
-      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-A61-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASE(43-1-001|MAPICI-ASE6-1-001|MAPICI-ASE61-1-001|MAPICI-ASE62-1-001|MAPICI-ASEA3-1-001|MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001|MAPICI-BEAE-1-001|MAPICO-IAEI-1-001|MAPICO-IEI-1-001",
+      "exhibit_id": "CPLICI-ASE6-1-001|MAPICI-A61-1-001|MAPICI-AC(A5-1-001|MAPICI-ACA+-1-001|MAPICI-ASE(21-1-001|MAPICI-ASE(33-1-001|MAPICI-ASE(43-1-001|MAPICI-ASE6-1-001|MAPICI-ASE61-1-001|MAPICI-ASE62-1-001|MAPICI-ASEA3-1-001|MAPICI-ATEF-1-001|MAPICI-ATEF1-1-001|MAPICI-BEAE-1-001|MAPICI-IFAA5-1-001|MAPICO-IAEI-1-001|MAPICO-IEI-1-001",
       "exhibit_ids": [
         "CPLICI-ASE6-1-001",
         "MAPICI-A61-1-001",
@@ -261314,6 +258420,7 @@ window.CPL_STATEWIDE = {
         "MAPICI-ATEF-1-001",
         "MAPICI-ATEF1-1-001",
         "MAPICI-BEAE-1-001",
+        "MAPICI-IFAA5-1-001",
         "MAPICO-IAEI-1-001",
         "MAPICO-IEI-1-001"
       ],
@@ -261341,7 +258448,8 @@ window.CPL_STATEWIDE = {
         "Automotive Technology Electrical Fundamentals (116A/B)",
         "Basic Electricity and Electrical Systems Fundamentals ASE A6",
         "IC- Automotive Electrical/Electronics I",
-        "IC-Automotive Electrical/Electronics II"
+        "IC-Automotive Electrical/Electronics II",
+        "Industry Training Evidence for AUTO A6"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Engineering and Industrial Technologies",
@@ -261564,6 +258672,10 @@ window.CPL_STATEWIDE = {
           "credit": "5 hours in Electrical/Electronic Systems: Advanced"
         },
         {
+          "course": "AUTO A6",
+          "credit": "5 units in AUTO A6 Electrical Electronic Systems"
+        },
+        {
           "course": "A S T 004",
           "credit": "5 hours in Starting and Charging Systems/Automotive Electrical Circuits"
         }
@@ -261663,6 +258775,12 @@ window.CPL_STATEWIDE = {
           "lines": 1
         },
         {
+          "id": "MAPICI-IFAA5-1-001",
+          "title": "Industry Training Evidence for AUTO A6",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
           "id": "MAPICO-IAEI-1-001",
           "title": "IC- Automotive Electrical/Electronics I",
           "units": 4.0,
@@ -261688,7 +258806,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 3.0,
         "Evergreen Valley College": 3.0,
         "Golden West College": 10.0,
-        "Las Positas College": 3.0,
+        "Las Positas College": 8.0,
         "Lassen College": 3.0,
         "Long Beach City College": 3.0,
         "Los Angeles Pierce College": 5.0,
@@ -261716,7 +258834,7 @@ window.CPL_STATEWIDE = {
         "East Los Angeles College": 1,
         "Evergreen Valley College": 1,
         "Golden West College": 2,
-        "Las Positas College": 1,
+        "Las Positas College": 2,
         "Lassen College": 1,
         "Long Beach City College": 1,
         "Los Angeles Pierce College": 1,
@@ -261771,7 +258889,8 @@ window.CPL_STATEWIDE = {
           33
         ],
         "Las Positas College": [
-          5
+          5,
+          34
         ],
         "Lassen College": [
           6
@@ -261780,7 +258899,7 @@ window.CPL_STATEWIDE = {
           28
         ],
         "Los Angeles Pierce College": [
-          34
+          35
         ],
         "Los Angeles Trade Technical College": [
           23
@@ -261822,7 +258941,7 @@ window.CPL_STATEWIDE = {
       },
       "peer_units_median": 3.0,
       "peer_units_max": 21.0,
-      "rec_units_total": 120.0
+      "rec_units_total": 125.0
     },
     {
       "exhibit_id": "MAPCBEN-ITWD-1-001",
@@ -262967,6 +260086,506 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "CPLICI-ASE1-1-001|MAPICI-A6C4-1-001|MAPICI-AAER-1-001|MAPICI-AC(A-1-001|MAPICI-ASE(11-1-001|MAPICI-ASE(12-1-001|MAPICI-ASE(16-1-001|MAPICI-ASE(27-1-001|MAPICI-ASE(41-1-001|MAPICI-ASE1-1-001|MAPICI-ASEA4-1-001|MAPICI-IFAA-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE1-1-001",
+        "MAPICI-A6C4-1-001",
+        "MAPICI-AAER-1-001",
+        "MAPICI-AC(A-1-001",
+        "MAPICI-ASE(11-1-001",
+        "MAPICI-ASE(12-1-001",
+        "MAPICI-ASE(16-1-001",
+        "MAPICI-ASE(27-1-001",
+        "MAPICI-ASE(41-1-001",
+        "MAPICI-ASE1-1-001",
+        "MAPICI-ASEA4-1-001",
+        "MAPICI-IFAA-1-001"
+      ],
+      "title": "ASE A1 — Engine Repair",
+      "unified_title": "ASE A1 — Engine Repair",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.95,
+      "quality_flag": "suspect_course_as_exhibit",
+      "raw_titles": [
+        "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
+        "Auto 611 Completion",
+        "Automotive Service Excellence (ASE) A1",
+        "Automotive Service Excellence (ASE) A1 Certificate",
+        "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
+        "Automotive Service Excellence 1 (A1) - Engine Repair",
+        "Automotive Service Excellence A1",
+        "Automotive Services Excellence (A1) certificate",
+        "Automotive Services Excellence 1 (A1) Certificate",
+        "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment",
+        "Industry Training Evidence for AUTO A1"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 27,
+      "adopter_names": [
+        "Bakersfield College",
+        "Barstow Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Golden West College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 41,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Butte College",
+        "Cerritos College",
+        "College of Alameda",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 68,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 10",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTOTEC 427",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 018",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 090",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 111",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AT 72",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 156G",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 54",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AT 102",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 160",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 090L",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTOMO 111",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 064.",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 61",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUT 140",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 53",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 110A",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 112",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUSER 115",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 010",
+          "credit": "3 hours in Engine Repair"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 1A",
+          "credit": "4 hours in Auto Engine Repair Upper"
+        },
+        {
+          "course": "AUT 1B",
+          "credit": "4 hours in Auto Engine Repair Lower"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 171",
+          "credit": "3 hours in Engine Systems"
+        },
+        {
+          "course": "AUTO 53",
+          "credit": "4 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO 015",
+          "credit": "4 hours in Automotive Engine Diagnosis & Repair"
+        },
+        {
+          "course": "AUTO 211",
+          "credit": "3 hours in Automotive Engine Repair"
+        },
+        {
+          "course": "ATEC 1",
+          "credit": "4 hours in Automotive Engines"
+        },
+        {
+          "course": "AUTO B20",
+          "credit": "4 hours in Engine Theory, Design and Diagnosis"
+        },
+        {
+          "course": "AUTO B21",
+          "credit": "4 hours in Upper Engine Systems and Machining"
+        },
+        {
+          "course": "AUTO G110",
+          "credit": "5 hours in Engine Repair"
+        },
+        {
+          "course": "AUTO A1",
+          "credit": "4 units in AUTO A1 Engine Repair"
+        },
+        {
+          "course": "A S T 001",
+          "credit": "5 hours in Automotive Engines"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Engine Repair",
+          "cid": "",
+          "eids": [
+            "CPLICI-ASE1-1-001"
+          ]
+        },
+        {
+          "credit": "4 hours in Engine Repair",
+          "cid": "",
+          "eids": [
+            "MAPICI-ASE(12-1-001"
+          ]
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "CPLICI-ASE1-1-001",
+          "title": "Automotive Services Excellence 1 (A1) Certificate",
+          "units": 60.0,
+          "lines": 20
+        },
+        {
+          "id": "MAPICI-A6C4-1-001",
+          "title": "Auto 611 Completion",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AAER-1-001",
+          "title": "Automotive Service Excellence 1 (A1) - Engine Repair",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AC(A-1-001",
+          "title": "ASE CERTIFICATION (A1) A1 – ENGINE REPAIR",
+          "units": 16.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-ASE(11-1-001",
+          "title": "Automotive Services Excellence (A1) certificate",
+          "units": 8.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-ASE(12-1-001",
+          "title": "Automotive Service Excellence (ASE) A1 Certificate",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(16-1-001",
+          "title": "Automotive Service Excellence (ASE) A1 Certificate",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(27-1-001",
+          "title": "Automotive Service Excellence (ASE) A1 Certificate Engine Repair",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(41-1-001",
+          "title": "Automotive Service Excellence (ASE) A1",
+          "units": 5.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE1-1-001",
+          "title": "Automotive Services Excellence 1 (A1) Certificate + Practical Assessment",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASEA4-1-001",
+          "title": "Automotive Service Excellence A1",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAA-1-001",
+          "title": "Industry Training Evidence for AUTO A1",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0,
+        "Barstow Community College": 7.0,
+        "Chabot College": 4.0,
+        "Chaffey College": 6.0,
+        "Citrus College": 3.0,
+        "City College of San Francisco": 3.0,
+        "College of Marin": 3.0,
+        "College of the Desert": 4.0,
+        "Columbia College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 7.0,
+        "De Anza College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Evergreen Valley College": 3.0,
+        "Golden West College": 5.0,
+        "Las Positas College": 4.0,
+        "Lassen College": 3.0,
+        "Long Beach City College": 3.0,
+        "Los Angeles Pierce College": 5.0,
+        "Los Medanos College": 3.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Riverside City College": 12.0,
+        "San Bernardino Valley College": 6.0,
+        "San Diego Miramar College": 3.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2,
+        "Barstow Community College": 2,
+        "Chabot College": 1,
+        "Chaffey College": 2,
+        "Citrus College": 1,
+        "City College of San Francisco": 1,
+        "College of Marin": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 2,
+        "De Anza College": 1,
+        "East Los Angeles College": 1,
+        "Evergreen Valley College": 1,
+        "Golden West College": 1,
+        "Las Positas College": 1,
+        "Lassen College": 1,
+        "Long Beach City College": 1,
+        "Los Angeles Pierce College": 1,
+        "Los Medanos College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Rio Hondo College": 1,
+        "Riverside City College": 3,
+        "San Bernardino Valley College": 2,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          29,
+          30
+        ],
+        "Barstow Community College": [
+          15,
+          25
+        ],
+        "Chabot College": [
+          28
+        ],
+        "Chaffey College": [
+          0,
+          1
+        ],
+        "Citrus College": [
+          19
+        ],
+        "City College of San Francisco": [
+          7
+        ],
+        "College of Marin": [
+          16
+        ],
+        "College of the Desert": [
+          26
+        ],
+        "Columbia College": [
+          8
+        ],
+        "Contra Costa College": [
+          18
+        ],
+        "Copper Mountain College": [
+          2,
+          23
+        ],
+        "De Anza College": [
+          12
+        ],
+        "East Los Angeles College": [
+          11
+        ],
+        "Evergreen Valley College": [
+          24
+        ],
+        "Golden West College": [
+          31
+        ],
+        "Las Positas College": [
+          32
+        ],
+        "Lassen College": [
+          5
+        ],
+        "Long Beach City College": [
+          27
+        ],
+        "Los Angeles Pierce College": [
+          33
+        ],
+        "Los Medanos College": [
+          17
+        ],
+        "Mendocino College": [
+          14
+        ],
+        "Merced College": [
+          13
+        ],
+        "Rio Hondo College": [
+          9
+        ],
+        "Riverside City College": [
+          20,
+          21,
+          22
+        ],
+        "San Bernardino Valley College": [
+          3,
+          10
+        ],
+        "San Diego Miramar College": [
+          6
+        ],
+        "Santa Ana College": [
+          4
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 12.0,
+      "rec_units_total": 116.0
     },
     {
       "exhibit_id": "MAPCBEN-ITCA-1-001",
@@ -358053,182 +355672,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-AL-1-001|MAPICI-ASE(10-1-001|MAPICI-ASE(25-1-001|MAPICI-ASE(3-1-001|MAPICI-ASEL3-1-001",
-      "exhibit_ids": [
-        "MAPICI-AL-1-001",
-        "MAPICI-ASE(10-1-001",
-        "MAPICI-ASE(25-1-001",
-        "MAPICI-ASE(3-1-001",
-        "MAPICI-ASEL3-1-001"
-      ],
-      "title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
-      "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.92,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE L3",
-        "Automotive Service Excellence (ASE) L3 Certificate",
-        "Automotive Service Excellence (ASE) L3 Certification",
-        "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
-        "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "165"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Bakersfield College",
-        "College of the Desert",
-        "De Anza College",
-        "Golden West College",
-        "Merced College"
-      ],
-      "potential": 22,
-      "potential_names": [
-        "American River College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Copper Mountain College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Las Positas College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Mission College",
-        "Modesto Junior College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Rosa Junior College"
-      ],
-      "total_addressable": 27,
-      "credit_recs": [
-        {
-          "course": "AUTO 067A",
-          "credit": "4.5 hours in Hybrid Electric Vehicles"
-        },
-        {
-          "course": "AUTO 067B",
-          "credit": "4.5 hours in Plug-In Electric Vehicle Technology"
-        },
-        {
-          "course": "AUTO B71AN",
-          "credit": "0 hours in Electric Vehicle Motor Technology"
-        },
-        {
-          "course": "AUTO B71BN",
-          "credit": "0 hours in Electric Vehicle Battery Technology"
-        },
-        {
-          "course": "AUTO B71CN",
-          "credit": "0 hours in Electric Vehicle Power Management"
-        },
-        {
-          "course": "AUTO B71DN",
-          "credit": "0 hours in Electric Vehicle Auxiliary Systems"
-        },
-        {
-          "course": "AUTO 59",
-          "credit": "4.5 hours in Introduction to Electrified Vehicles"
-        },
-        {
-          "course": "AUTO 043A",
-          "credit": "3 hours in Intro to Hybrid, Electric & Fuel-Cell Vehicle Technology"
-        },
-        {
-          "course": "AUTO G170",
-          "credit": "3 hours in Hybrid and Electric Vehicle Introduction"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-AL-1-001",
-          "title": "ASE L3",
-          "units": 4.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(10-1-001",
-          "title": "Automotive Service Excellence (ASE) L3 Certification",
-          "units": 0.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-ASE(25-1-001",
-          "title": "Automotive Service Excellence (ASE) L3 Certificate",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE(3-1-001",
-          "title": "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
-          "units": 9.0,
-          "lines": 2
-        },
-        {
-          "id": "MAPICI-ASEL3-1-001",
-          "title": "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 0.0,
-        "College of the Desert": 3.0,
-        "De Anza College": 9.0,
-        "Golden West College": 3.0,
-        "Merced College": 4.5
-      },
-      "adopter_lines": {
-        "Bakersfield College": 4,
-        "College of the Desert": 1,
-        "De Anza College": 2,
-        "Golden West College": 1,
-        "Merced College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          2,
-          3,
-          4,
-          5
-        ],
-        "College of the Desert": [
-          7
-        ],
-        "De Anza College": [
-          0,
-          1
-        ],
-        "Golden West College": [
-          8
-        ],
-        "Merced College": [
-          6
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 9.0,
-      "rec_units_total": 19.5
-    },
-    {
       "exhibit_id": "MAPICA-IBEW-1-001|MAPICA-IBOE-1-001|MAPICA-IIWA-1-001",
       "exhibit_ids": [
         "MAPICA-IBEW-1-001",
@@ -359969,90 +357412,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 5.0
     },
     {
-      "exhibit_id": "MAPICI-IFAL1-1-001",
-      "exhibit_ids": [
-        "MAPICI-IFAL1-1-001"
-      ],
-      "title": "Industry Training Evidence for AUTO L3",
-      "unified_title": "Industry Training Evidence for AUTO L3",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Industry Training Evidence for AUTO L3"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "165"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Las Positas College"
-      ],
-      "potential": 22,
-      "potential_names": [
-        "American River College",
-        "Cerritos College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "Copper Mountain College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Fresno City College",
-        "Golden West College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Mendocino College",
-        "Mission College",
-        "Modesto Junior College",
-        "Palomar College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Rosa Junior College"
-      ],
-      "total_addressable": 23,
-      "credit_recs": [
-        {
-          "course": "AUTO L3",
-          "credit": "4 units in AUTO L3 Light Duty Hybrid Electrical Vehicles"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-IFAL1-1-001",
-          "title": "Industry Training Evidence for AUTO L3",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Las Positas College": 4.0
-      },
-      "adopter_lines": {
-        "Las Positas College": 1
-      },
-      "adopter_rec_idx": {
-        "Las Positas College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
       "exhibit_id": "MAPICI-IFH51-1-001",
       "exhibit_ids": [
         "MAPICI-IFH51-1-001"
@@ -360303,6 +357662,199 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-AL-1-001|MAPICI-ASE(10-1-001|MAPICI-ASE(25-1-001|MAPICI-ASE(3-1-001|MAPICI-ASEL3-1-001|MAPICI-IFAL1-1-001",
+      "exhibit_ids": [
+        "MAPICI-AL-1-001",
+        "MAPICI-ASE(10-1-001",
+        "MAPICI-ASE(25-1-001",
+        "MAPICI-ASE(3-1-001",
+        "MAPICI-ASEL3-1-001",
+        "MAPICI-IFAL1-1-001"
+      ],
+      "title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.92,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE L3",
+        "Automotive Service Excellence (ASE) L3 Certificate",
+        "Automotive Service Excellence (ASE) L3 Certification",
+        "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
+        "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
+        "Industry Training Evidence for AUTO L3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "165"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 6,
+      "adopter_names": [
+        "Bakersfield College",
+        "College of the Desert",
+        "De Anza College",
+        "Golden West College",
+        "Las Positas College",
+        "Merced College"
+      ],
+      "potential": 21,
+      "potential_names": [
+        "American River College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "Copper Mountain College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Mission College",
+        "Modesto Junior College",
+        "Palomar College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Rosa Junior College"
+      ],
+      "total_addressable": 27,
+      "credit_recs": [
+        {
+          "course": "AUTO 067A",
+          "credit": "4.5 hours in Hybrid Electric Vehicles"
+        },
+        {
+          "course": "AUTO 067B",
+          "credit": "4.5 hours in Plug-In Electric Vehicle Technology"
+        },
+        {
+          "course": "AUTO B71AN",
+          "credit": "0 hours in Electric Vehicle Motor Technology"
+        },
+        {
+          "course": "AUTO B71BN",
+          "credit": "0 hours in Electric Vehicle Battery Technology"
+        },
+        {
+          "course": "AUTO B71CN",
+          "credit": "0 hours in Electric Vehicle Power Management"
+        },
+        {
+          "course": "AUTO B71DN",
+          "credit": "0 hours in Electric Vehicle Auxiliary Systems"
+        },
+        {
+          "course": "AUTO 59",
+          "credit": "4.5 hours in Introduction to Electrified Vehicles"
+        },
+        {
+          "course": "AUTO 043A",
+          "credit": "3 hours in Intro to Hybrid, Electric & Fuel-Cell Vehicle Technology"
+        },
+        {
+          "course": "AUTO G170",
+          "credit": "3 hours in Hybrid and Electric Vehicle Introduction"
+        },
+        {
+          "course": "AUTO L3",
+          "credit": "4 units in AUTO L3 Light Duty Hybrid Electrical Vehicles"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-AL-1-001",
+          "title": "ASE L3",
+          "units": 4.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(10-1-001",
+          "title": "Automotive Service Excellence (ASE) L3 Certification",
+          "units": 0.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-ASE(25-1-001",
+          "title": "Automotive Service Excellence (ASE) L3 Certificate",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE(3-1-001",
+          "title": "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
+          "units": 9.0,
+          "lines": 2
+        },
+        {
+          "id": "MAPICI-ASEL3-1-001",
+          "title": "Automotive Service Excellence L3 - Light Duty Hybrid/Electric Vehicle Specialist",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAL1-1-001",
+          "title": "Industry Training Evidence for AUTO L3",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 0.0,
+        "College of the Desert": 3.0,
+        "De Anza College": 9.0,
+        "Golden West College": 3.0,
+        "Las Positas College": 4.0,
+        "Merced College": 4.5
+      },
+      "adopter_lines": {
+        "Bakersfield College": 4,
+        "College of the Desert": 1,
+        "De Anza College": 2,
+        "Golden West College": 1,
+        "Las Positas College": 1,
+        "Merced College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "College of the Desert": [
+          7
+        ],
+        "De Anza College": [
+          0,
+          1
+        ],
+        "Golden West College": [
+          8
+        ],
+        "Las Positas College": [
+          9
+        ],
+        "Merced College": [
+          6
+        ]
+      },
+      "peer_units_median": 3.5,
+      "peer_units_max": 9.0,
+      "rec_units_total": 23.5
     },
     {
       "exhibit_id": "MAPICI-ASE(37-1-001|MAPICI-ASEF-1-001",
@@ -408194,13 +405746,13 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXI-CBEC2-1-001"
       ],
-      "title": "Credit by Exam-- CFPL ABT 133",
-      "unified_title": "Credit by Exam-- CFPL ABT 133",
-      "is_classified": false,
-      "issuing_agency": "",
+      "title": "Facility Management for Food Safety",
+      "unified_title": "Facility Management for Food Safety",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
       "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
       "quality_flag": "",
       "raw_titles": [
         "Credit by Exam-- CFPL ABT 133"
@@ -408208,7 +405760,7 @@ window.CPL_STATEWIDE = {
       "cpl_type": "Credit By Exam",
       "discipline": "Not Mapped",
       "sector": "",
-      "cip_sector": "",
+      "cip_sector": "52",
       "top_codes": [
         "252"
       ],
@@ -435300,7 +432852,7 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-11-13T06:17:10",
+  "generated_at": "2026-11-13T16:55:07",
   "total_credit_recs": 16604,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",

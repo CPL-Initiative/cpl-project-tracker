@@ -60,20 +60,16 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
-   "computed": [
-    0.0,
-    0.0
-   ],
+   "pass": true,
+   "status": "equal",
+   "total_only": true,
+   "computed": null,
    "stated": [
     432.0,
     486.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +93,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -130,7 +126,8 @@
    ],
    "careers": [
     "automotive interiors technician"
-   ]
+   ],
+   "hours_total_printed": true
   },
   "blocks": [
    {
@@ -181,5 +178,14 @@
    "The page navigation also lists an Automotive Interiors Certificate of Achievement (credit). Only the Certificate of Completion section was read."
   ]
  },
- "extracted_run": "38748858322"
+ "extracted_run": 43355003065,
+ "reconciled": [
+  {
+   "field": "hours_total_printed",
+   "was": null,
+   "now": true,
+   "words": "Total Hours\t4"
+  }
+ ],
+ "read_run": "38748858322"
 }

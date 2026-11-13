@@ -77,8 +77,8 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     45.0,
     45.0
@@ -92,8 +92,10 @@
     27.0,
     27.0
    ],
-   "why": [
-    "the record says electives fill the degree total, but the catalog text names no electives"
+   "why": [],
+   "fill": [
+    15.0,
+    15.0
    ]
   },
   "repeated": {
@@ -104,15 +106,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Delineate the literary, artistic, scientific, political and/or other contributions of women throughout history."
-   ],
-   "why": [
-    "not in the catalog text as printed: Delineate the literary, artistic, scientific, political and/or other contributio"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -122,7 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -151,7 +149,8 @@
     "Delineate the literary, artistic, scientific, political and/or other contributions of women throughout history.",
     "Analyze how women’s diverse experiences are affected by society’s values, beliefs, traditions, and institutions, as well as race, ethnicity, social class, politics, nationality , religion, sexual orientation, and gender identity."
    ],
-   "careers": []
+   "careers": [],
+   "electives_fill_words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS"
   },
   "blocks": [
    {
@@ -367,5 +366,14 @@
    "Outcome 2 printed 'nationality , religion' with a space before the comma; copied as printed. Outcome 1 'and/ or' line break read as 'and/or'."
   ]
  },
- "extracted_run": "39063389278"
+ "extracted_run": 43357061643,
+ "reconciled": [
+  {
+   "field": "electives_fill_words",
+   "was": null,
+   "now": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 UNITS",
+   "words": "ADDITIONAL DEGREE-APPLICABLE UNITS, IF NEEDED, TO REACH 60 \nUNITS"
+  }
+ ],
+ "read_run": "39063389278"
 }

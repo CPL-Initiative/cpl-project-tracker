@@ -85,7 +85,7 @@ function load(opts) {
       return ok((init.body && /E-ASE A5/.test(init.body)) ? [{ key: "ASE A5 — Brakes", students: 41, suppressed: false },
         { key: "Automotive Technology (ASE A5 Brakes)", students: null, suppressed: true }] : []);
     }
-    if (/\/rest\/v1\/kb_curation\?select=/.test(url)) return ok(opts.saved || []);
+    if (/\/rest\/v1\/kb_curation\?select=/.test(url)) return opts.savedFail ? bad(503) : ok(opts.saved || []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return bad(404);
   };
@@ -205,8 +205,10 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
     /Local exhibits: 9 by industry certification, assessed by ASE; 2 by credit by exam, assessed by the college/.test(txt(trs[0].children[0])));
   check("a student count under ten is never shown", txt(trs[1].children[4]) === "Fewer than 10");
   check("a title with no students reads None", txt(trs[2].children[4]) === "None");
-  check("each row says what approving does: renamed, folded into the title of that name, or left as it is",
-    /^Renamed\b/.test(txt(trs[0].children[5])) && /folded into the title of that name/.test(txt(trs[1].children[5])) && /Left as it is/.test(txt(trs[3].children[5])));
+  // #3228 (Sam, 2026-11-13): a row read "Renamed" before any save, and he took the unsaved plan for a decision.
+  check("each row says what approving will do, and nothing reads as renamed before the save",
+    /^Renames on approval\b/.test(txt(trs[0].children[5])) && /Folds into the title of that name on approval/.test(txt(trs[1].children[5]))
+    && /Left as it is/.test(txt(trs[3].children[5])) && !trs.some(function (tr) { return /^Renamed\b/.test(txt(tr.children[5])); }));
   check("opening the batch writes nothing", writes(t).length === 0);
   let go = Array.from(bcard.querySelectorAll(".exh-acts button"))[0];
   check("the approval control counts the renames", txt(go) === "Approve the batch (3 renames)");
@@ -260,6 +262,29 @@ function item(d, title) { return Array.from(panel(d).querySelectorAll(".exh-rel-
   await t.M.boot(); await settle();
   check("a rename saved after the file was built is read back and leaves the batch; a skip of another proposal does not",
     t.M._renameCount() === 3 && t.calls.some(function (c) { return /field=in\.\(unified_title_override,cert_rename_kept\)/.test(c.url) && /reviewed_at=gt\./.test(c.url); }));
+
+  // #3228: a skip on a row with no proposed title saved nothing on main, so the row came back with every rebuild.
+  t = load({ signedIn: true, hash: "#exhibits/rename-batch" });
+  await t.M.boot(); await settle();
+  byText(t.d.querySelectorAll("section.exh-rb tbody tr")[3], "button", "Skip").click(); await settle();
+  Array.from(t.d.querySelectorAll("section.exh-rb tbody tr")).forEach(function (tr, i) {
+    if (i < 3) byText(tr, "button", "Skip").click();
+  });
+  await settle();
+  Array.from(t.d.querySelectorAll("section.exh-rb .exh-acts button"))[0].click(); await settle();
+  byText(t.d, "section.exh-rb .exh-acts button", "Save the batch").click(); await settle();
+  const kept = rowsOf(t).find(function (r) { return r.course_id === "_CREDENTIAL_REVIEW::ASE Bundle — P1, P2"; });
+  check("a skip on a row with no proposed title saves the title kept as it is, and the row leaves the batch",
+    kept && kept.field === "cert_rename_kept" && kept.value === "ASE Bundle — P1, P2" && t.M._renameCount() === 0);
+  t = load({ signedIn: true, saved: [{ course_id: "_CREDENTIAL_REVIEW::ASE Bundle — P1, P2", field: "cert_rename_kept", value: "ASE Bundle — P1, P2", reviewed_at: "2026-11-11T09:00:00Z" }] });
+  await t.M.boot(); await settle();
+  check("and read back on the next visit, that keep holds the row out", t.M._renameCount() === 3);
+  // #3228 fix 1: a failed read of the saved decisions left the file's rows with no word on main.
+  t = load({ signedIn: true, hash: "#exhibits/rename-batch", savedFail: true });
+  await t.M.boot(); await settle();
+  check("when the saved decisions cannot be read, the batch says so and that a decided row may show again",
+    /could not be read from COBI \(HTTP 503\), so a row decided since then may show again here/.test(txt(t.d.querySelector(".exh-unread")))
+    && t.d.querySelector(".exh-unread").getAttribute("role") === "status");
 
   // Signed out: the batch reads, and nothing saves.
   t = load({ hash: "#exhibits/rename-batch" });
